@@ -27,7 +27,7 @@ cheatsheet:
         - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
         - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Want, uk: "Бажання", es: "Deseo" }, rule: { en: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; short form ", { term: "'d" }], uk: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; скорочена форма ", { term: "'d" }], es: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; forma contraída ", { term: "'d" }] }, ex: { examples: [[I', { target: d like }, " a coffee, please."], [I', { target: d like to }, " book a table."]] }, tr: { uk: { examples: ["Я хотів би каву, будь ласка.", "Я хотів би забронювати столик."] }, es: { examples: ["Me gustaría un café, por favor.", "Me gustaría reservar una mesa."] } } }
+        - { level: A1, point: { en: Want, uk: "Бажання", es: "Deseo" }, rule: { en: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; short form ", { term: "'d" }], uk: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; скорочена форма ", { term: "'d" }], es: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; forma contraída ", { term: "'d" }] }, ex: { examples: [[I, { target: "'d like" }, " a coffee, please."], [I, { target: "'d like to" }, " book a table."]] }, tr: { uk: { examples: ["Я хотів би каву, будь ласка.", "Я хотів би забронювати столик."] }, es: { examples: ["Me gustaría un café, por favor.", "Me gustaría reservar una mesa."] } } }
         - { level: A1, point: { en: Question and offer, uk: "Питання й пропозиція", es: "Pregunta y ofrecimiento" }, rule: { en: [{ pattern: [Would, { slot: subject }, { slot: V }] }, "; no ", { term: do }], uk: [{ pattern: [Would, { slot: subject }, { slot: V }] }, "; без ", { term: do }], es: [{ pattern: [Would, { slot: subject }, { slot: V }] }, "; sin ", { term: do }] }, ex: [{ target: Would }, " you ", { target: like }, " some cake?"], tr: { uk: "Хочеш трохи торта?", es: "¿Te gustaría un poco de pastel?" } }
         - { level: B1, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, "; negative ", { term: wouldn't }], uk: [{ pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, "; заперечна форма ", { term: wouldn't }], es: [{ pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, "; forma negativa ", { term: wouldn't }] }, ex: { examples: [["She ", { target: would }, " help."], ["I ", { target: wouldn't }, " go."]] }, tr: { uk: { examples: ["Вона б допомогла.", "Я б не пішов."] }, es: { examples: ["Ella ayudaría.", "Yo no iría."] } } }
         - { level: B1, point: { en: Polite request, uk: "Ввічливе прохання", es: "Petición cortés" }, rule: { en: [{ term: [Would you, { gap: true }, "?"] }, " asks politely for help"], uk: [{ term: [Would you, { gap: true }, "?"] }, " ввічливо просить про допомогу"], es: [{ term: [Would you, { gap: true }, "?"] }, " pide ayuda con cortesía"] }, ex: [{ target: Would }, " you pass the salt, please?"], tr: { uk: "Чи не міг би ти передати сіль, будь ласка?", es: "¿Podrías pasarme la sal, por favor?" } }
@@ -83,10 +83,10 @@ sections:
           - { key: short, label: { en: Short form, uk: "Скорочена форма", es: "Forma contraída" }, features: { contraction: short } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, features: { person: 1, number: sg }, full: I would, short: I'd, ex: [I', { target: d }, " like a tea."] }
-          - { level: B1, features: { person: 2 }, full: you would, short: you'd, ex: [You', { target: d }, " like her."] }
-          - { level: B1, features: { person: 3, number: sg }, full: [{ alternatives: [he, she, it] }, " would"], short: { alternatives: [he'd, she'd, it'd] }, ex: [She', { target: d }, " love it."] }
-          - { level: B1, features: [{ person: 1, number: pl }, { person: 3, number: pl }], full: [{ alternatives: [we, they] }, " would"], short: { alternatives: [we'd, they'd] }, ex: [We', { target: d }, " go."] }
+          - { level: A1, features: { person: 1, number: sg }, full: I would, short: I'd, ex: [I, { target: "'d" }, " like a tea."] }
+          - { level: B1, features: { person: 2 }, full: you would, short: you'd, ex: [You, { target: "'d" }, " like her."] }
+          - { level: B1, features: { person: 3, number: sg }, full: [{ alternatives: [he, she, it] }, " would"], short: { alternatives: [he'd, she'd, it'd] }, ex: [She, { target: "'d" }, " love it."] }
+          - { level: B1, features: [{ person: 1, number: pl }, { person: 3, number: pl }], full: [{ alternatives: [we, they] }, " would"], short: { alternatives: [we'd, they'd] }, ex: [We, { target: "'d" }, " go."] }
           - { level: B1, features: { polarity: neg }, full: would not, short: wouldn't, ex: ["They ", { target: wouldn't }, " mind."] }
       - type: list
         items:
@@ -96,7 +96,7 @@ sections:
               en: [{ pattern: [{ term: "'d" }, { slot: base verb }] }, " = ", { term: would }, ". ", { pattern: [{ term: "'d" }, { slot: past participle }] }, " = ", { term: had }, ":"]
               uk: [{ pattern: [{ term: "'d" }, { slot: base verb }] }, " = ", { term: would }, ". ", { pattern: [{ term: "'d" }, { slot: past participle }] }, " = ", { term: had }, ":"]
               es: [{ pattern: [{ term: "'d" }, { slot: base verb }] }, " = ", { term: would }, ". ", { pattern: [{ term: "'d" }, { slot: past participle }] }, " = ", { term: had }, ":"]
-            ex: { examples: [[I', { target: d }, " go. ", { gloss: { en: = I would go, uk: "= I would go", es: "= I would go" } }], [I', { target: d }, " gone. ", { gloss: { en: = I had gone, uk: "= I had gone", es: "= I had gone" } }]] }
+            ex: { examples: [[I, { target: "'d" }, " go. ", { gloss: { en: = I would go, uk: "= I would go", es: "= I would go" } }], [I, { target: "'d" }, " gone. ", { gloss: { en: = I had gone, uk: "= I had gone", es: "= I had gone" } }]] }
             tr: { uk: { examples: ["Я б пішов.", "Я вже пішов."] }, es: { examples: ["Yo iría.", "Ya me había ido."] } }
           - type: note
             level: B1
@@ -116,7 +116,7 @@ sections:
         rows:
           - { level: B1, form: { en: "would (weak, in a sentence)", uk: "would (слабка форма, у реченні)", es: "would (forma débil, dentro de la oración)" }, sound: { ipa: wəd }, ex: [{ target: Would }, " you help? ", { ipa: wəd juː ˈhelp }], tr: { uk: "Ти б допоміг?", es: "¿Ayudarías?" } }
           - { level: B1, form: { en: "would (strong, at the end)", uk: "would (сильна форма, у кінці)", es: "would (forma fuerte, al final)" }, sound: { ipa: wʊd }, ex: ["Yes, I ", { target: would }, ". ", { ipa: jes aɪ ˈwʊd }], tr: { uk: "Так, я б допоміг.", es: "Sí, te ayudaría." } }
-          - { level: A1, form: I'd, sound: { ipa: aɪd }, ex: [I', { target: d }, " like tea. ", { ipa: aɪd ˈlaɪk tiː }], tr: { uk: "Я хотів би чаю.", es: "Me gustaría té." } }
+          - { level: A1, form: I'd, sound: { ipa: aɪd }, ex: [I, { target: "'d" }, " like tea. ", { ipa: aɪd ˈlaɪk tiː }], tr: { uk: "Я хотів би чаю.", es: "Me gustaría té." } }
           - { level: B1, form: wouldn't, sound: { ipa: ˈwʊdnt }, ex: ["I ", { target: wouldn't }, " go. ", { ipa: aɪ ˈwʊdnt ɡəʊ }], tr: { uk: "Я б не пішов.", es: "No iría." } }
       - type: list
         items:
@@ -135,8 +135,8 @@ sections:
           - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, { slot: noun }] }], uk: ["Ввічливе бажання: ", { pattern: [would like, { slot: noun }] }], es: ["Un deseo cortés: ", { pattern: [would like, { slot: noun }] }] }, ex: [I', { target: d like }, " a coffee, please."], tr: { uk: "Я хотів би каву, будь ласка.", es: "Me gustaría un café, por favor." } }
-          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, to V] }], uk: ["Ввічливе бажання: ", { pattern: [would like, to V] }], es: ["Un deseo cortés: ", { pattern: [would like, to V] }] }, ex: [I', { target: d like to }, " book a table."], tr: { uk: "Я хотів би забронювати столик.", es: "Me gustaría reservar una mesa." } }
+          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, { slot: noun }] }], uk: ["Ввічливе бажання: ", { pattern: [would like, { slot: noun }] }], es: ["Un deseo cortés: ", { pattern: [would like, { slot: noun }] }] }, ex: [I, { target: "'d like" }, " a coffee, please."], tr: { uk: "Я хотів би каву, будь ласка.", es: "Me gustaría un café, por favor." } }
+          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, to V] }], uk: ["Ввічливе бажання: ", { pattern: [would like, to V] }], es: ["Un deseo cortés: ", { pattern: [would like, to V] }] }, ex: [I, { target: "'d like to" }, " book a table."], tr: { uk: "Я хотів би забронювати столик.", es: "Me gustaría reservar una mesa." } }
           - { level: A1, use: { en: Offers and invitations, uk: "Пропозиції й запрошення", es: "Ofrecimientos e invitaciones" }, ex: [{ target: Would }, " you ", { target: like }, " some cake?"], tr: { uk: "Хочеш трохи торта?", es: "¿Te gustaría un poco de pastel?" } }
           - { level: B1, use: { en: Offering to do something (would like me to), uk: "Пропозиція щось зробити (would like me to)", es: "Ofrecerse a hacer algo (would like me to)" }, ex: [{ target: Would }, " you ", { target: like me to }, " carry that?"], tr: { uk: "Хочеш, я це понесу?", es: "¿Quieres que lo lleve?" } }
           - { level: B1, use: { en: Polite requests, uk: "Ввічливі прохання", es: "Peticiones corteses" }, ex: [{ target: Would }, " you pass the salt, please?"], tr: { uk: "Чи не міг би ти передати сіль, будь ласка?", es: "¿Podrías pasarme la sal, por favor?" } }

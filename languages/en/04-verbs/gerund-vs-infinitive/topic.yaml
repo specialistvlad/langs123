@@ -78,7 +78,7 @@ sections:
           - { level: B1, verb: hope, ex: ["We ", { target: hope to see }, " you soon."], tr: { uk: "Сподіваємося скоро тебе побачити.", es: "Esperamos verte pronto." } }
           - { level: B1, verb: plan, ex: ["He ", { target: plans to study }, " abroad."], tr: { uk: "Він планує навчатися за кордоном.", es: "Planea estudiar en el extranjero." } }
           - { level: B1, verb: need, ex: ["You ", { target: need to rest }, "."], tr: { uk: "Тобі потрібно відпочити.", es: "Necesitas descansar." } }
-          - { level: B1, verb: { alternatives: [would like, would love] }, ex: [I', { target: d like to book }, " a table."], tr: { uk: "Я хотів би забронювати столик.", es: "Quisiera reservar una mesa." } }
+          - { level: B1, verb: { alternatives: [would like, would love] }, ex: [I, { target: "'d like to book" }, " a table."], tr: { uk: "Я хотів би забронювати столик.", es: "Quisiera reservar una mesa." } }
           - { level: B1, verb: "learn, agree, promise, manage", ex: ["She ", { target: learned to swim }, "."], tr: { uk: "Вона навчилася плавати.", es: "Aprendió a nadar." } }
       - type: list
         items:
@@ -137,8 +137,8 @@ sections:
       - type: comparison
         columns:
           - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
-          - { key: ing, label: { en: { pattern: [{ slot: "-ing" }], follows: true }, uk: { pattern: [{ slot: "-ing" }], follows: true }, es: { pattern: [{ slot: "-ing" }], follows: true } }, features: { verbform: ger } }
-          - { key: to, label: { en: { pattern: [to, { slot: infinitive }], follows: true }, uk: { pattern: [to, { slot: infinitive }], follows: true }, es: { pattern: [to, { slot: infinitive }], follows: true } }, features: { verbform: inf } }
+          - { key: ing, label: { pattern: [{ slot: "-ing" }], follows: true }, features: { verbform: ger } }
+          - { key: to, label: { pattern: [to, { slot: infinitive }], follows: true }, features: { verbform: inf } }
         rows:
           - { level: B1, verb: stop, ing: { ex: ["He ", { target: stopped smoking }, ". ", { gloss: { en: He quit., uk: "Він кинув.", es: "Lo dejó." } }], tr: { uk: "Він перестав курити.", es: "Dejó de fumar." } }, to: { ex: ["He ", { target: stopped to smoke }, ". ", { gloss: { en: He paused in order to smoke., uk: "Він зробив паузу, щоб покурити.", es: "Hizo una pausa para fumar." } }], tr: { uk: "Він зупинився, щоб покурити.", es: "Se paró a fumar." } } }
           - { level: B1, verb: remember, ing: { ex: ["I ", { target: remember locking }, " the door. ", { gloss: { en: I recall the action., uk: "Я пригадую цю дію.", es: "Recuerdo la acción." } }], tr: { uk: "Я пам’ятаю, що замкнув двері.", es: "Recuerdo haber cerrado la puerta con llave." } }, to: { ex: [{ target: Remember to lock }, " the door. ", { gloss: { en: Do not forget., uk: "Не забудь.", es: "No lo olvides." } }], tr: { uk: "Не забудь замкнути двері.", es: "Acuérdate de cerrar la puerta con llave." } } }

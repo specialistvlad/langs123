@@ -161,8 +161,8 @@ sections:
           - { level: A1, ending: { en: most verbs, uk: "більшість дієслів", es: "la mayoría de los verbos" }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [work, works] }, { mapping: [read, reads] }] }, tr: { uk: { examples: ["працювати", "читати"] }, es: { examples: ["trabajar", "leer"] } } }
           - { level: A1, ending: "-s, -ss, -sh, -ch, -x, -z", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [pass, passes] }, { mapping: [wash, washes] }, { mapping: [watch, watches] }, { mapping: [fix, fixes] }] }, tr: { uk: { examples: ["передавати", "мити", "дивитися", "лагодити"] }, es: { examples: ["pasar", "lavar", "mirar", "arreglar"] } } }
           - { level: A1, ending: "-o", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [go, goes] }, { mapping: [do, does] }] }, tr: { uk: { examples: ["йти", "робити"] }, es: { examples: ["ir", "hacer"] } } }
-          - { level: A1, ending: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ies] }, ex: { examples: [{ mapping: [study, studies] }, { mapping: [try, tries] }] }, tr: { uk: { examples: ["вчитися", "пробувати"] }, es: { examples: ["estudiar", "intentar"] } } }
-          - { level: A1, ending: { en: { pattern: [{ slot: vowel }, "y"] }, uk: { pattern: [{ slot: vowel }, "y"] }, es: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [play, plays] }, { mapping: [buy, buys] }] }, tr: { uk: { examples: ["грати", "купувати"] }, es: { examples: ["jugar", "comprar"] } } }
+          - { level: A1, ending: { pattern: [{ slot: consonant }, "y"] }, rule: { mapping: ["y", ies] }, ex: { examples: [{ mapping: [study, studies] }, { mapping: [try, tries] }] }, tr: { uk: { examples: ["вчитися", "пробувати"] }, es: { examples: ["estudiar", "intentar"] } } }
+          - { level: A1, ending: { pattern: [{ slot: vowel }, "y"] }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [play, plays] }, { mapping: [buy, buys] }] }, tr: { uk: { examples: ["грати", "купувати"] }, es: { examples: ["jugar", "comprar"] } } }
           - { level: A1, ending: have, rule: { en: own form, uk: "власна форма", es: "forma propia" }, ex: { mapping: [have, has] }, tr: { uk: "мати", es: "tener" } }
       - type: usage
         columns:
@@ -298,8 +298,8 @@ sections:
         rows:
           - { level: A1, ending: { en: most verbs, uk: "більшість дієслів", es: "la mayoría de los verbos" }, rule: { pattern: [{ ending: ed }], follows: true }, ex: { examples: [{ mapping: [work, worked] }, { mapping: [watch, watched] }, { mapping: [visit, visited] }] }, tr: { uk: { examples: ["працювати", "дивитися", "відвідувати"] }, es: { examples: ["trabajar", "mirar", "visitar"] } } }
           - { level: A1, ending: "-e", rule: { pattern: [{ ending: d }], follows: true }, ex: { examples: [{ mapping: [live, lived] }, { mapping: [like, liked] }, { mapping: [arrive, arrived] }] }, tr: { uk: { examples: ["жити", "подобатися", "прибувати"] }, es: { examples: ["vivir", "gustar", "llegar"] } } }
-          - { level: A1, ending: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ied] }, ex: { examples: [{ mapping: [study, studied] }, { mapping: [try, tried] }] }, tr: { uk: { examples: ["вчитися", "пробувати"] }, es: { examples: ["estudiar", "intentar"] } } }
-          - { level: A1, ending: { en: { pattern: [{ slot: vowel }, "y"] }, uk: { pattern: [{ slot: vowel }, "y"] }, es: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: ed }], follows: true }, ex: { examples: [{ mapping: [play, played] }, { mapping: [stay, stayed] }] }, tr: { uk: { examples: ["грати", "залишатися"] }, es: { examples: ["jugar", "quedarse"] } } }
+          - { level: A1, ending: { pattern: [{ slot: consonant }, "y"] }, rule: { mapping: ["y", ied] }, ex: { examples: [{ mapping: [study, studied] }, { mapping: [try, tried] }] }, tr: { uk: { examples: ["вчитися", "пробувати"] }, es: { examples: ["estudiar", "intentar"] } } }
+          - { level: A1, ending: { pattern: [{ slot: vowel }, "y"] }, rule: { pattern: [{ ending: ed }], follows: true }, ex: { examples: [{ mapping: [play, played] }, { mapping: [stay, stayed] }] }, tr: { uk: { examples: ["грати", "залишатися"] }, es: { examples: ["jugar", "quedarse"] } } }
           - { level: A1, ending: { en: { pattern: ["1 vowel", "1 consonant, one syllable"] }, uk: { pattern: ["1 голосний", "1 приголосний, один склад"] }, es: { pattern: ["1 vocal", "1 consonante, una sílaba"] } }, rule: { en: { pattern: [double the consonant, ed] }, uk: { pattern: ["подвоїти приголосний", ed] }, es: { pattern: ["duplicar la consonante", ed] } }, ex: { examples: [{ mapping: [stop, stopped] }, { mapping: [plan, planned] }] }, tr: { uk: { examples: ["зупинятися", "планувати"] }, es: { examples: ["parar", "planear"] } } }
       - type: usage
         columns:
@@ -398,7 +398,7 @@ sections:
           - { key: structure, label: { en: Structure, uk: "Структура", es: "Estructura" } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, features: { polarity: pos, interrogativity: decl }, form: "+", structure: { pattern: [{ alternatives: [will, "'ll"] }, { slot: V }] }, ex: [I', { target: ll help }, " you."] }
+          - { level: A2, features: { polarity: pos, interrogativity: decl }, form: "+", structure: { pattern: [{ alternatives: [will, "'ll"] }, { slot: V }] }, ex: [I, { target: "'ll help" }, " you."] }
           - { level: A2, features: { polarity: neg, interrogativity: decl }, form: "−", structure: { pattern: [{ alternatives: [will not, won't] }, { slot: V }] }, ex: ["He ", { target: won't come }, "."] }
           - { level: A2, features: { polarity: pos, interrogativity: int }, form: "?", structure: { pattern: [will, { slot: subject }, { slot: V }] }, ex: [{ target: Will }, " she ", { target: come }, "?"] }
           - { level: A2, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, structure: { alternatives: ["Yes, I will.", "No, I won't."] }, ex: { exchange: [[{ target: Will }, " you call?"], ["Yes, I ", { target: will }, "."]] } }
@@ -420,10 +420,10 @@ sections:
           - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: Decision at the moment of speaking, uk: "Рішення в момент мовлення", es: "Decisión en el momento de hablar" }, ex: [It's cold. I', { target: ll close }, " the window."], tr: { uk: "Холодно. Я зачиню вікно.", es: "Hace frío. Voy a cerrar la ventana." } }
-          - { level: A2, use: { en: Offers, uk: "Пропозиції допомоги", es: "Ofrecimientos" }, ex: [I', { target: ll carry }, " your bag."], tr: { uk: "Я понесу твою сумку.", es: "Te llevo la bolsa." } }
+          - { level: A2, use: { en: Decision at the moment of speaking, uk: "Рішення в момент мовлення", es: "Decisión en el momento de hablar" }, ex: [It's cold. I, { target: "'ll close" }, " the window."], tr: { uk: "Холодно. Я зачиню вікно.", es: "Hace frío. Voy a cerrar la ventana." } }
+          - { level: A2, use: { en: Offers, uk: "Пропозиції допомоги", es: "Ofrecimientos" }, ex: [I, { target: "'ll carry" }, " your bag."], tr: { uk: "Я понесу твою сумку.", es: "Te llevo la bolsa." } }
           - { level: A2, use: { en: Promises, uk: "Обіцянки", es: "Promesas" }, ex: ["I ", { target: won't tell }, " anyone."], tr: { uk: "Я нікому не скажу.", es: "No se lo diré a nadie." } }
-          - { level: A2, use: { en: Opinions and predictions (I think), uk: "Думки та прогнози (I think)", es: "Opiniones y predicciones (I think)" }, ex: [I think she', { target: ll win }, "."], tr: { uk: "Думаю, вона виграє.", es: "Creo que ganará." } }
+          - { level: A2, use: { en: Opinions and predictions (I think), uk: "Думки та прогнози (I think)", es: "Opiniones y predicciones (I think)" }, ex: [I think she, { target: "'ll win" }, "."], tr: { uk: "Думаю, вона виграє.", es: "Creo que ganará." } }
       - type: list
         items:
           - type: rule
@@ -452,7 +452,7 @@ sections:
         rows:
           - { level: A2, past: { ex: did, tr: { uk: "минулий час", es: "pasado" } }, present: { ex: { alternatives: [do, does] }, tr: { uk: "теперішній час", es: "presente" } }, future: { ex: will, tr: { uk: "майбутній час", es: "futuro" } } }
           - { level: A2, past: { ex: "yesterday, last week, ago", tr: { uk: "учора, минулого тижня, тому", es: "ayer, la semana pasada, hace" } }, present: { ex: ["every day, usually, on ", { weekday: Mondays, value: 1 }], tr: { uk: "щодня, зазвичай, по понеділках", es: "todos los días, normalmente, los lunes" } }, future: { ex: "tomorrow, next week, soon", tr: { uk: "завтра, наступного тижня, скоро", es: "mañana, la semana próxima, pronto" } } }
-          - { level: A2, past: { ex: ["I ", { target: worked }, " yesterday."], tr: { uk: "Учора я працював.", es: "Ayer trabajé." } }, present: { ex: ["I ", { target: work }, " every day."], tr: { uk: "Я працюю щодня.", es: "Trabajo todos los días." } }, future: { ex: [I', { target: ll work }, " tomorrow."], tr: { uk: "Завтра я працюватиму.", es: "Mañana trabajaré." } } }
+          - { level: A2, past: { ex: ["I ", { target: worked }, " yesterday."], tr: { uk: "Учора я працював.", es: "Ayer trabajé." } }, present: { ex: ["I ", { target: work }, " every day."], tr: { uk: "Я працюю щодня.", es: "Trabajo todos los días." } }, future: { ex: [I, { target: "'ll work" }, " tomorrow."], tr: { uk: "Завтра я працюватиму.", es: "Mañana trabajaré." } } }
           - { level: A2, past: { ex: [{ target: Did }, " she ", { target: call }, "?"], tr: { uk: "Вона дзвонила?", es: "¿Llamó ella?" } }, present: { ex: [{ target: Does }, " she ", { target: call }, "?"], tr: { uk: "Вона дзвонить?", es: "¿Llama ella?" } }, future: { ex: [{ target: Will }, " she ", { target: call }, "?"], tr: { uk: "Вона подзвонить?", es: "¿Llamará ella?" } } }
           - { level: A2, past: { ex: ["He ", { target: didn't }, " come."], tr: { uk: "Він не прийшов.", es: "Él no vino." } }, present: { ex: ["He ", { target: doesn't }, " come."], tr: { uk: "Він не приходить.", es: "Él no viene." } }, future: { ex: ["He ", { target: won't }, " come."], tr: { uk: "Він не прийде.", es: "Él no vendrá." } } }
 

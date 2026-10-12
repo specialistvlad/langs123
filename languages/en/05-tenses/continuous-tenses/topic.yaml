@@ -119,9 +119,9 @@ sections:
           - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, features: { person: 1, number: sg }, subject: I, form: { pattern: [{ alternatives: [am, "'m"] }, { slot: V-ing }] }, ex: [I', { target: m reading }, "."] }
-          - { level: A1, features: { person: 3, number: sg }, subject: { alternatives: [he, she, it] }, form: { pattern: [{ alternatives: [is, "'s"] }, { slot: V-ing }] }, ex: [He', { target: s reading }, "."] }
-          - { level: A1, features: [{ person: 2 }, { person: 1, number: pl }, { person: 3, number: pl }], subject: { alternatives: [you, we, they] }, form: { pattern: [{ alternatives: [are, "'re"] }, { slot: V-ing }] }, ex: [They', { target: re reading }, "."] }
+          - { level: A1, features: { person: 1, number: sg }, subject: I, form: { pattern: [{ alternatives: [am, "'m"] }, { slot: V-ing }] }, ex: [I, { target: "'m reading" }, "."] }
+          - { level: A1, features: { person: 3, number: sg }, subject: { alternatives: [he, she, it] }, form: { pattern: [{ alternatives: [is, "'s"] }, { slot: V-ing }] }, ex: [He, { target: "'s reading" }, "."] }
+          - { level: A1, features: [{ person: 2 }, { person: 1, number: pl }, { person: 3, number: pl }], subject: { alternatives: [you, we, they] }, form: { pattern: [{ alternatives: [are, "'re"] }, { slot: V-ing }] }, ex: [They, { target: "'re reading" }, "."] }
           - { level: A1, features: { person: 3, number: sg }, subject: { en: singular noun, uk: "іменник в однині", es: "sustantivo en singular" }, form: { pattern: [is, { slot: V-ing }] }, ex: ["My sister ", { target: is reading }, "."] }
       - type: list
         items:
@@ -151,8 +151,8 @@ sections:
           - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: Actions happening now, uk: "Дії, що відбуваються зараз", es: "Acciones que ocurren ahora" }, ex: [I', { target: m cooking }, " dinner."], tr: { uk: "Я готую вечерю.", es: "Estoy preparando la cena." } }
-          - { level: A1, use: { en: Temporary situations, uk: "Тимчасові ситуації", es: "Situaciones temporales" }, ex: [I', { target: m staying }, " with my sister this week."], tr: { uk: "Цього тижня я живу в сестри.", es: "Esta semana me estoy quedando en casa de mi hermana." } }
+          - { level: A1, use: { en: Actions happening now, uk: "Дії, що відбуваються зараз", es: "Acciones que ocurren ahora" }, ex: [I, { target: "'m cooking" }, " dinner."], tr: { uk: "Я готую вечерю.", es: "Estoy preparando la cena." } }
+          - { level: A1, use: { en: Temporary situations, uk: "Тимчасові ситуації", es: "Situaciones temporales" }, ex: [I, { target: "'m staying" }, " with my sister this week."], tr: { uk: "Цього тижня я живу в сестри.", es: "Esta semana me estoy quedando en casa de mi hermana." } }
           - { level: A1, use: { en: Changes and trends around now, uk: "Зміни й тенденції цього періоду", es: "Cambios y tendencias del momento" }, ex: ["Prices ", { target: are going }, " up."], tr: { uk: "Ціни зростають.", es: "Los precios están subiendo." } }
       - type: list
         items:
@@ -233,7 +233,7 @@ sections:
           - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, use: { en: In progress at a future moment, uk: "Дія триватиме в певний момент майбутнього", es: "En curso en un momento del futuro" }, ex: [This time tomorrow I', { target: ll be flying }, " to Rome."], tr: { uk: "Завтра о цій порі я летітиму до Рима.", es: "Mañana a esta hora estaré volando a Roma." } }
+          - { level: B1, use: { en: In progress at a future moment, uk: "Дія триватиме в певний момент майбутнього", es: "En curso en un momento del futuro" }, ex: [This time tomorrow I, { target: "'ll be flying" }, " to Rome."], tr: { uk: "Завтра о цій порі я летітиму до Рима.", es: "Mañana a esta hora estaré volando a Roma." } }
           - { level: B1, use: { en: Polite questions about plans, uk: "Ввічливі запитання про плани", es: "Preguntas corteses sobre planes" }, ex: [{ target: Will }, " you ", { target: be using }, " the car tonight?"], tr: { uk: "Ти будеш користуватися машиною сьогодні ввечері?", es: "¿Vas a usar el auto esta noche?" } }
       - type: list
         items:
@@ -270,10 +270,10 @@ sections:
       - type: comparison
         columns:
           - { key: continuous, label: { en: Continuous, uk: "Continuous", es: "Continuo" }, features: { aspect: prog } }
-          - { key: simple, label: { en: Simple, uk: "Simple", es: "Simple" } }
+          - { key: simple, label: Simple }
         rows:
           - { level: A1, continuous: { en: "in progress, temporary", uk: "триває зараз, тимчасово", es: "en curso, temporal" }, simple: { en: "habit, fact, finished event", uk: "звичка, факт, завершена подія", es: "hábito, hecho, suceso terminado" } }
-          - { level: A1, continuous: { ex: [I', { target: m drinking }, " tea now."], tr: { uk: "Я зараз п’ю чай.", es: "Ahora estoy tomando té." } }, simple: { ex: ["I ", { target: drink }, " tea every day."], tr: { uk: "Я щодня п’ю чай.", es: "Tomo té todos los días." } } }
+          - { level: A1, continuous: { ex: [I, { target: "'m drinking" }, " tea now."], tr: { uk: "Я зараз п’ю чай.", es: "Ahora estoy tomando té." } }, simple: { ex: ["I ", { target: drink }, " tea every day."], tr: { uk: "Я щодня п’ю чай.", es: "Tomo té todos los días." } } }
           - { level: A1, continuous: { ex: ["What ", { target: are }, " you ", { target: doing }, "? ", { gloss: { en: = now, uk: "= зараз", es: "= ahora" } }], tr: { uk: "Що ти робиш?", es: "¿Qué estás haciendo?" } }, simple: { ex: ["What ", { target: do }, " you ", { target: do }, "? ", { gloss: { en: = your job, uk: "= твоя робота", es: "= tu trabajo" } }], tr: { uk: "Ким ти працюєш?", es: "¿A qué te dedicas?" } } }
           - { level: A2, continuous: { ex: ["I ", { target: was walking }, " home", { gap: true }], tr: { uk: "Я йшов додому…", es: "Iba caminando a casa…" } }, simple: { ex: [{ gap: true }, "when I ", { target: saw }, " Tom."], tr: { uk: "…коли я побачив Тома.", es: "…cuando vi a Tom." } } }
       - type: list
