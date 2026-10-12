@@ -1,7 +1,8 @@
 // Text as HTML: escaping, and the marks of the data as elements that name what each piece is
 // (CONVENTIONS.md §12): bold for a form or a word a rule is about, italics for a sound or a meaning.
-import { type Explain, type Localized, type Mark, type Text, type TopicRef } from "../../scripts/lib.ts";
-import { foldText, type MarkName, reading, textIn, type TextOutput } from "../../scripts/text.ts";
+import { type Explain, type Localized, type Mark, slotName, type Text, type TopicRef } from "../../scripts/lib.ts";
+import { type FoldContext, foldText, type MarkName, reading, textIn, type TextOutput } from "../../scripts/text.ts";
+import { LEARNED } from "../../scripts/text-walk.ts";
 
 // Turns a topic ID into a page URL; null marks a topic without a page yet.
 export type LinkFn = (target: TopicRef | undefined, explain: Explain, from: TopicRef) => string | null;
@@ -24,12 +25,24 @@ export function escapeHtml(text: string): string {
 export const STRONG = new Set<MarkName>(["target", "aux", "subj", "verb", "ending", "stress", "term", "letter", "signal"]);
 export const EMPHASIS = new Set<MarkName>(["sound", "l1", "gloss"]);
 
+// On a page in another language than the one being learned, every piece names its language for screen
+// readers: a form of the language being learned inside an explanation, and a gloss or a named slot inside
+// an example. A variant names its variety beside its form, so it takes the language of the text around it.
+function markLang(name: MarkName, m: Mark, c: FoldContext, ctx: Ctx): string {
+  if (ctx.explain === ctx.ref.lang) return "";
+  if (!c.plain) return LEARNED.has(name) && name !== "variant" ? ctx.ref.lang : "";
+  const slot = (m as { slot?: unknown }).slot;
+  const named = name === "slot" && (typeof slot !== "string" || slotName(slot, ctx.explain) !== slot);
+  return name === "gloss" || name === "l1" || named ? ctx.explain : "";
+}
+
 function htmlOutput(ctx: Ctx): TextOutput<string> {
   return {
     text: escapeHtml,
     join: (parts) => parts.join(""),
-    mark(name: MarkName, inner: string, m: Mark): string {
-      const attrs = ` data-mark="${name}"`;
+    mark(name: MarkName, inner: string, m: Mark, c: FoldContext): string {
+      const lang = markLang(name, m, c, ctx);
+      const attrs = ` data-mark="${name}"${lang === "" ? "" : ` lang="${lang}"`}`;
       if (STRONG.has(name)) return `<strong${attrs}>${inner}</strong>`;
       if (EMPHASIS.has(name)) return `<em${attrs}>${inner}</em>`;
       if (name === "link") {
@@ -52,8 +65,10 @@ function htmlOutput(ctx: Ctx): TextOutput<string> {
 }
 
 // Text in the language being learned (plain) or explaining it; examples in a summary read as sentences.
+// Text in the language being learned, on a page in another language, names its language.
 export function inline(value: Text, ctx: Ctx, plain: boolean, sentences = false): string {
-  return foldText(value, htmlOutput(ctx), { ...reading(ctx.explain, plain), sentences });
+  const html = foldText(value, htmlOutput(ctx), { ...reading(ctx.explain, plain), sentences });
+  return plain && ctx.explain !== ctx.ref.lang && html !== "" ? `<span lang="${ctx.ref.lang}">${html}</span>` : html;
 }
 
 // Explanation text in the reader's language.

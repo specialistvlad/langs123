@@ -98,3 +98,32 @@ describe("every mark is an element that names it", () => {
     expect([...MARKS].filter((n) => !named.has(n))).toEqual([]);
   });
 });
+
+describe("on a page in another language, every piece names its language", () => {
+  const uk: Ctx = { ...ctx, explain: "uk" };
+  test("text in the language being learned is English; on an English page nothing names it", () => {
+    expect(inline(["She ", { target: "works" }, "."], uk, true)).toBe(
+      '<span lang="en">She <strong data-mark="target">works</strong>.</span>',
+    );
+    expect(inline(["She ", { target: "works" }, "."], ctx, true)).toBe('She <strong data-mark="target">works</strong>.');
+  });
+  test("a form inside an explanation is English, and a variant takes the language around it", () => {
+    expect(inline(["Після ", { term: "Did" }, " — ", { ipa: "dɪd" }], uk, false)).toBe(
+      'Після <strong data-mark="term" lang="en">Did</strong> — <span data-mark="ipa">/dɪd/</span>',
+    );
+    expect(inline([{ variant: "on the weekend", variety: "en-US" }], uk, false)).toBe(
+      '<span data-mark="variant" data-variety="en-US">амер.: on the weekend</span>',
+    );
+  });
+  test("a gloss and a named slot inside an example are in the reader's language; V reads as written", () => {
+    expect(inline(["I'd go. ", { gloss: { uk: "= я б пішов", en: "= I would go" } }], uk, true)).toBe(
+      '<span lang="en">I&#39;d go. <em data-mark="gloss" lang="uk">(= я б пішов)</em></span>',
+    );
+    expect(inline({ pattern: [{ slot: "subject" }, "can", { slot: "V" }] }, uk, true)).toBe(
+      '<span lang="en"><span data-mark="pattern"><span data-mark="slot" lang="uk">підмет</span> + can + <span data-mark="slot">V</span></span></span>',
+    );
+    expect(inline({ slot: { uk: "година", en: "clock time" } }, uk, true)).toBe(
+      '<span lang="en"><span data-mark="slot" lang="uk">година</span></span>',
+    );
+  });
+});

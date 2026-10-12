@@ -54,7 +54,8 @@ const JOINERS: Record<(typeof LIST_MARKS)[number], string> = {
 export interface TextOutput<T> {
   text(s: string): T;
   join(parts: T[]): T;
-  mark(name: MarkName, inner: T, m: Mark): T;
+  // c: the text the mark stands in, in the language being learned (plain) or explaining it.
+  mark(name: MarkName, inner: T, m: Mark, c: FoldContext): T;
 }
 
 export interface FoldContext {
@@ -76,7 +77,7 @@ export function foldText<T>(t: Text, out: TextOutput<T>, c: FoldContext): T {
 function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
   const name = markName(m);
   const fold = (t: Text, over: Partial<FoldContext> = {}): T => foldText(t, out, { ...c, ...over });
-  const wrap = (inner: T): T => out.mark(name, inner, m);
+  const wrap = (inner: T): T => out.mark(name, inner, m, c);
   const inParens = (inner: T): T => out.join([out.text("("), inner, out.text(")")]);
   switch (name) {
     case "ipa":

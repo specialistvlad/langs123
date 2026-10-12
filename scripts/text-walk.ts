@@ -14,7 +14,7 @@ export interface TextVisitor {
 
 // Marks whose text is in the language being learned, wherever they stand: the forms, words, letters
 // and values a rule is about.
-const LEARNED = new Set<MarkName>([
+export const LEARNED = new Set<MarkName>([
   "target",
   "aux",
   "subj",

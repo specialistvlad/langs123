@@ -239,6 +239,9 @@ leaves out the key of a cell with nothing in it.
   an item, a paragraph or an example cell renders as *— translation* after the example.
 - When the two languages are the same, examples stand alone: a `tr` carries every explanation
   language but the language being learned.
+- A page names the language of each piece for screen readers: text in the language being learned,
+  and every mark of §12 that holds it inside an explanation, carries that language; a gloss or a
+  named slot inside an example carries the reader's.
 - A paradigm stands alone in every track: it shows the pattern, and the examples below it carry the
   translations.
 - Typical errors match the readers. When the explanation language differs from the language
