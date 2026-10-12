@@ -2,7 +2,7 @@
 import { EXPLAIN_CODES, type Explain, explainName, filled, LEVELS, SITE, say } from "../../scripts/lib.ts";
 import { INFO_ICON } from "./icons.ts";
 import { escapeHtml } from "./html.ts";
-import { creditsUrl } from "./urls.ts";
+import { creditsUrl, homeUrl } from "./urls.ts";
 
 // Interface wording keys this app shows, all from languages/interface.yaml.
 const TEXT_KEYS = [
@@ -116,7 +116,8 @@ export interface PageOptions {
   title: string;
   description: string;
   path: string;
-  alternates?: { lang: Explain; path: string }[];
+  // The same page in each explanation language; the home page adds x-default.
+  alternates?: { lang: string; path: string }[];
   controls?: string;
   nav?: string;
   rail?: string;
@@ -137,7 +138,7 @@ const NAV_SCROLL = `(function(){var n=document.getElementById("sidebar"),o=docum
 function credits(o: PageOptions): string {
   const label = escapeHtml(say("credits", o.lang));
   const current = o.kind === "credits" ? ' aria-current="page"' : "";
-  return `<a class="tool" href="${creditsUrl()}" title="${label}" aria-label="${label}"${current}>${INFO_ICON}</a>`;
+  return `<a class="tool" href="${creditsUrl(o.lang)}" title="${label}" aria-label="${label}"${current}>${INFO_ICON}</a>`;
 }
 
 export function page(o: PageOptions): string {
@@ -163,7 +164,7 @@ export function page(o: PageOptions): string {
 <body>
   <header class="topbar">
     ${filled(o.nav) ? '<button class="menu" id="menu" type="button" aria-label="Menu">☰</button>' : ""}
-    <a class="brand" href="/">${escapeHtml(SITE.name)}</a>
+    <a class="brand" href="${homeUrl(o.lang)}">${escapeHtml(SITE.name)}</a>
     <div class="controls">${o.controls ?? ""}</div>
     <div class="tools">
       ${credits(o)}

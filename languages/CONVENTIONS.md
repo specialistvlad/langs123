@@ -158,6 +158,7 @@ named after its mark.
 |---|---|
 | `id`, `lang`, `kind`, `tags`, `concepts`, `related` | identity and links |
 | `status` | `draft` or `approved`, per explanation language |
+| `translated` | per explanation language but the source, the fingerprint of the source text its text follows (§6) |
 | `title` | localized |
 | `summary` | `lead` and `rule`, localized, and the rule's examples in `ex`; the rules below |
 | `cheatsheet` | `content`: the whole topic in one table, section 00 (§8) |
@@ -239,6 +240,12 @@ leaves out the key of a cell with nothing in it.
   an item, a paragraph or an example cell renders as *— translation* after the example.
 - When the two languages are the same, examples stand alone: a `tr` carries every explanation
   language but the language being learned.
+- Translations follow the source: English, the first explanation language of `site.yaml`. Every other
+  explanation language carries in `translated` the fingerprint of the source text its text was written
+  from: one hash per part, the title and summary, the cheatsheet, then each section, over the English
+  explanations and the text in the language being learned. `npm run check` names every part whose
+  source changed since; once the translation catches up, `npm run translated -- {id} {lang}` stamps it
+  again. An error row for other speakers stays outside the fingerprint.
 - A page names the language of each piece for screen readers: text in the language being learned,
   and every mark of §12 that holds it inside an explanation, carries that language; a gloss or a
   named slot inside an example carries the reader's.
@@ -335,8 +342,10 @@ Topics in different languages pair through shared `concepts` keys. Every key liv
 Every page has a clean, stable, named URL.
 
 ```
-/                                              home
-/credits/                                      credits: authors, licences, how to credit
+/                                              home, in the first explanation language
+/{explain}/                                    home, in every other explanation language
+/credits/, /{explain}/credits/                 credits: authors, licences, how to credit
+/404.html, /{explain}/404.html                 missing page; the host serves the nearest one up the path
 /{explain}/{language}/                         track home
 /{explain}/{language}/{section}/{topic}/       topic
 /{explain}/{language}/cheatsheets/             cheatsheet index
@@ -351,6 +360,9 @@ Every page has a clean, stable, named URL.
 | `{topic}` | topic slug | `simple-tenses` |
 | `{sheet}` | `a0`…`c2` (level), `a0-a1`…`a0-c2` (progressive), up to the highest level the topics reach; `{section}`, `{section}/{topic}` | `a0-b1` |
 
+- Every page names its counterparts in the other explanation languages with `hreflang`; the home
+  pages add the root as `x-default`. The top bar and the menu lead to the home and credits pages in the
+  page's language.
 - URLs use lowercase ASCII letters, digits, hyphens and slashes, and end with `/`.
 - URLs come from slugs, never from titles. A published slug stays fixed.
 - A page carries the choice of each switch it has in query parameters, so a shared link opens the
@@ -368,7 +380,8 @@ Topics are written one at a time. The next topic starts only after the current o
 
 1. Copy `templates/topic.yaml` into the topic folder and write it in every explanation language,
    with its cheatsheet; set `status` to `draft` for each.
-2. Run `npm run check` until it reports no problems.
+2. Run `npm run translated -- {id}` once every explanation language is written, then `npm run check`
+   until it reports no problems.
 3. Hand the topic to the owner for review in the web app (`npm start`).
 4. Apply the requested changes; repeat until the owner approves.
 5. Set `status` to `approved` for every explanation language.

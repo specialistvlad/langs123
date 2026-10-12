@@ -1,7 +1,7 @@
-// The credits page, the one place that names the content's authors, both licences and how to credit the
-// content; every page's top bar links to it.
-import { say, SITE } from "../../../scripts/lib.ts";
-import { type Context, homeLanguage } from "../context.ts";
+// The credits page, in each explanation language, the one place that names the content's authors, both
+// licences and how to credit the content; every page's top bar links to the one in its language.
+import { type Explain, say, SITE } from "../../../scripts/lib.ts";
+import { alternates, type Context, EXPLAINS } from "../context.ts";
 import { page } from "../layout.ts";
 import { escapeHtml } from "../html.ts";
 import { creditsUrl } from "../urls.ts";
@@ -9,8 +9,11 @@ import { creditsUrl } from "../urls.ts";
 const link = (href: string, text: string, attrs = ""): string => `<a href="${escapeHtml(href)}"${attrs}>${escapeHtml(text)}</a>`;
 
 export function creditsPage(ctx: Context): void {
+  for (const e of EXPLAINS) creditsIn(ctx, e);
+}
+
+function creditsIn(ctx: Context, e: Explain): void {
   const { o } = ctx;
-  const e = homeLanguage();
   const site = SITE.name;
   const { content, code } = SITE.licences;
   const words = (key: string): string => escapeHtml(say(key, e, { site }));
@@ -35,13 +38,14 @@ export function creditsPage(ctx: Context): void {
     `<p class="muted">${words("nameNote")}</p></article>`,
   ].join("\n");
   ctx.add(
-    creditsUrl(),
+    creditsUrl(e),
     page({
       kind: "credits",
       lang: e,
       title: `${say("credits", e)} — ${site}`,
       description: say("creditsDescription", e, { site }),
-      path: creditsUrl(),
+      path: creditsUrl(e),
+      alternates: alternates(creditsUrl),
       main,
       dev: o.dev,
       siteUrl: o.siteUrl,

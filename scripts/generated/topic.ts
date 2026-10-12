@@ -117,6 +117,16 @@ export interface Langs123Topic {
     uk: Status;
     es: Status;
   };
+  /**
+   * Per explanation language but the source, the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section (npm run translated).
+   */
+  translated?: {
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^[a-z]{2}$".
+     */
+    [k: string]: string;
+  };
   title: Localized;
   summary: Summary;
   /**

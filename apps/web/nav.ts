@@ -22,8 +22,8 @@ export function orderSwitch(explain: Explain): string {
 // Sidebar head: the logo, which small screens show here in place of the top bar's (media.css), and
 // back to the home page, where the language is chosen.
 export const navHome = (explain: Explain): string =>
-  `<a class="nav-brand" href="${homeUrl()}">${escapeHtml(SITE.name)}</a>` +
-  `<a class="nav-home" href="${homeUrl()}">${escapeHtml(ui(explain).chooseLanguage)}</a>`;
+  `<a class="nav-brand" href="${homeUrl(explain)}">${escapeHtml(SITE.name)}</a>` +
+  `<a class="nav-home" href="${homeUrl(explain)}">${escapeHtml(ui(explain).chooseLanguage)}</a>`;
 
 export function trackNav(track: Track, current?: TopicRef): string {
   const { ctx, explain, lang } = track;

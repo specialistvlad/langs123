@@ -71,6 +71,20 @@
         }
       }
     },
+    "translated": {
+      "description": "Per explanation language but the source, the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section (npm run translated).",
+      "type": "object",
+      "additionalProperties": false,
+      "propertyNames": {
+        "$ref": "#/definitions/explain"
+      },
+      "patternProperties": {
+        "^[a-z]{2}$": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}( [0-9a-f]{6})*$"
+        }
+      }
+    },
     "title": {
       "$ref": "#/definitions/localized"
     },

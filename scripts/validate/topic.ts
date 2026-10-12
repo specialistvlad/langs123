@@ -5,6 +5,7 @@ import { checkLevels } from "./topic-levels.ts";
 import { checkSummary } from "./topic-summary.ts";
 import { links } from "./notation.ts";
 import { checkText } from "./topic-text.ts";
+import { checkTranslated } from "./topic-translated.ts";
 
 export function checkTopic(ref: TopicRef, topic: Topic, ids: Set<string>, concepts: Concepts, report: Report): void {
   const where = ref.path;
@@ -20,4 +21,5 @@ export function checkTopic(ref: TopicRef, topic: Topic, ids: Set<string>, concep
   }
   checkText(topic, where, report);
   checkSummary(topic, where, report);
+  checkTranslated(topic, where, report);
 }

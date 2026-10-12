@@ -6,17 +6,18 @@ tags: [questions, negatives, wh-questions, auxiliaries]
 concepts: [questions-negatives]
 related: [en.sentence-building.word-order, en.tenses.simple-tenses, en.verbs.to-be, en.modals.can-could, en.sentence-building.question-tags]
 status: { en: draft, uk: draft, es: draft }
+translated: { uk: "2c72c7 bea31b 533bb7 9ec55b 6efacd 0d4320 7ec2b7 56efbb 059a09 730986 d73725", es: "2c72c7 bea31b 533bb7 9ec55b 6efacd 0d4320 7ec2b7 56efbb 059a09 730986 d73725" }
 
 title: { en: Questions and negatives, uk: Питання та заперечення, es: Preguntas y negaciones }
 summary:
   lead:
-    en: "Yes/no questions, wh-questions, short answers and negatives, with be, modals and every other verb."
-    uk: "Загальні та спеціальні питання, короткі відповіді й заперечення з be, модальними й усіма іншими дієсловами."
-    es: "Preguntas de sí o no y con palabra interrogativa, respuestas cortas y negaciones con be, verbos modales y los demás verbos."
+    en: ["Yes/no questions, wh-questions, short answers and negatives, with ", { term: be }, ", modals and every other verb."]
+    uk: ["Загальні та спеціальні питання, короткі відповіді й заперечення з ", { term: be }, ", модальними й усіма іншими дієсловами."]
+    es: ["Preguntas de sí o no y con palabra interrogativa, respuestas cortas y negaciones con ", { term: be }, ", verbos modales y los demás verbos."]
   rule:
-    en: "Be and modals invert or take not; other verbs use do, does or did with the base verb:"
-    uk: "Be і модальні дієслова стають перед підметом або беруть not; інші дієслова вживають do, does чи did з початковою формою:"
-    es: "Be y los verbos modales van antes del sujeto o llevan not; los demás verbos usan do, does o did con la forma base:"
+    en: [{ term: Be }, " and modals invert or take ", { term: not }, "; other verbs use ", { term: do }, ", ", { term: does }, " or ", { term: did }, " with the base verb:"]
+    uk: [{ term: Be }, " і модальні дієслова стають перед підметом або беруть ", { term: not }, "; інші дієслова вживають ", { term: do }, ", ", { term: does }, " чи ", { term: did }, " з початковою формою:"]
+    es: [{ term: Be }, " y los verbos modales van antes del sujeto o llevan ", { term: not }, "; los demás verbos usan ", { term: do }, ", ", { term: does }, " o ", { term: did }, " con la forma base:"]
   ex: [{ target: Do }, " you ", { target: like }, " tea?"]
 
 cheatsheet:
@@ -27,15 +28,15 @@ cheatsheet:
         - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
         - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: "Negative: be, modals", uk: "Заперечення: be, модальні дієслова", es: "Negación: be y verbos modales" }, rule: { pattern: [{ slot: subject }, { alternatives: [be, modal] }, not] }, ex: { examples: [["They ", { target: are not }, " at home."], ["He ", { target: can't }, " drive."]] }, tr: { uk: { examples: ["Вони не вдома.", "Він не вміє водити."] }, es: { examples: ["No están en casa.", "Él no sabe conducir."] } } }
-        - { level: A1, point: { en: "Question: be, modals", uk: "Питання: be, модальні дієслова", es: "Pregunta: be y verbos modales" }, rule: { pattern: [{ alternatives: [be, modal] }, { slot: subject }] }, ex: { examples: [[{ target: Are }, " they at home?"], [{ target: Can }, " he drive?"]] }, tr: { uk: { examples: ["Вони вдома?", "Він уміє водити?"] }, es: { examples: ["¿Están en casa?", "¿Él sabe conducir?"] } } }
+        - { level: A1, point: { en: ["Negative: ", { term: be }, ", modals"], uk: ["Заперечення: ", { term: be }, ", модальні дієслова"], es: ["Negación: ", { term: be }, " y verbos modales"] }, rule: { pattern: [{ slot: subject }, { alternatives: [be, modal] }, not] }, ex: { examples: [["They ", { target: are not }, " at home."], ["He ", { target: can't }, " drive."]] }, tr: { uk: { examples: ["Вони не вдома.", "Він не вміє водити."] }, es: { examples: ["No están en casa.", "Él no sabe conducir."] } } }
+        - { level: A1, point: { en: ["Question: ", { term: be }, ", modals"], uk: ["Питання: ", { term: be }, ", модальні дієслова"], es: ["Pregunta: ", { term: be }, " y verbos modales"] }, rule: { pattern: [{ alternatives: [be, modal] }, { slot: subject }] }, ex: { examples: [[{ target: Are }, " they at home?"], [{ target: Can }, " he drive?"]] }, tr: { uk: { examples: ["Вони вдома?", "Він уміє водити?"] }, es: { examples: ["¿Están en casa?", "¿Él sabe conducir?"] } } }
         - { level: A1, point: { en: "Negative: other verbs", uk: "Заперечення: інші дієслова", es: "Negación: otros verbos" }, rule: { pattern: [{ slot: subject }, { alternatives: [don't, doesn't, didn't] }, { slot: base verb }] }, ex: ["He ", { target: doesn't like }, " jazz."], tr: { uk: "Він не любить джаз.", es: "A él no le gusta el jazz." } }
         - { level: A1, point: { en: "Question: other verbs", uk: "Питання: інші дієслова", es: "Pregunta: otros verbos" }, rule: { pattern: [{ alternatives: [do, does, did] }, { slot: subject }, { slot: base verb }] }, ex: [{ target: Did }, " you ", { target: call }, " her?"], tr: { uk: "Ти їй дзвонив?", es: "¿La llamaste?" } }
-        - { level: A1, point: "do, does, did", rule: { en: [{ takes: [{ alternatives: [I, you, we, they] }, do] }, ", ", { takes: [{ alternatives: [he, she, it] }, does] }, ", ", { takes: [past, did] }], uk: [{ takes: [{ alternatives: [I, you, we, they] }, do] }, ", ", { takes: [{ alternatives: [he, she, it] }, does] }, ", ", { takes: ["минулий час", did] }], es: [{ takes: [{ alternatives: [I, you, we, they] }, do] }, ", ", { takes: [{ alternatives: [he, she, it] }, does] }, ", ", { takes: ["pasado", did] }] }, ex: [{ target: Do }, " you ", { target: like }, " jazz?"], tr: { uk: "Ти любиш джаз?", es: "¿Te gusta el jazz?" } }
+        - { level: A1, point: "do, does, did", rule: { en: [{ takes: [{ alternatives: [{ term: I }, { term: you }, { term: we }, { term: they }] }, { term: do }] }, ", ", { takes: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, { term: does }] }, ", ", { takes: [past, { term: did }] }], uk: [{ takes: [{ alternatives: [{ term: I }, { term: you }, { term: we }, { term: they }] }, { term: do }] }, ", ", { takes: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, { term: does }] }, ", ", { takes: ["минулий час", { term: did }] }], es: [{ takes: [{ alternatives: [{ term: I }, { term: you }, { term: we }, { term: they }] }, { term: do }] }, ", ", { takes: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, { term: does }] }, ", ", { takes: ["pasado", { term: did }] }] }, ex: [{ target: Do }, " you ", { target: like }, " jazz?"], tr: { uk: "Ти любиш джаз?", es: "¿Te gusta el jazz?" } }
         - { level: A1, point: { en: Wh-question, uk: "Спеціальне питання", es: "Pregunta con palabra interrogativa" }, rule: { pattern: [{ slot: wh-word }, { slot: { en: auxiliary, uk: "допоміжне дієслово", es: "auxiliar" } }, { slot: subject }, { slot: base verb }] }, ex: { examples: [[{ target: Where do }, " you ", { target: live }, "?"], [{ target: Where are }, " you from?"]] }, tr: { uk: { examples: ["Де ти живеш?", "Звідки ти?"] }, es: { examples: ["¿Dónde vives?", "¿De dónde eres?"] } } }
-        - { level: A1, point: { en: Subject question, uk: "Питання до підмета", es: "Pregunta sobre el sujeto" }, rule: { en: ["no ", { alternatives: [do, does, did] }, "; the verb takes the tense"], uk: ["без ", { alternatives: [do, does, did] }, "; дієслово саме стоїть у потрібному часі"], es: ["sin ", { alternatives: [do, does, did] }, "; el verbo lleva el tiempo verbal"] }, ex: [{ target: Who called }, " you?"], tr: { uk: "Хто тобі дзвонив?", es: "¿Quién te llamó?" } }
-        - { level: A1, point: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, rule: { en: "repeat the be, modal or auxiliary verb", uk: "повтори be, модальне чи допоміжне дієслово", es: "repite be, el verbo modal o el auxiliar" }, ex: { examples: [["Yes, she ", { target: can }, "."], ["No, she ", { target: can't }, "."]] }, tr: { uk: { examples: ["Так, вона вміє.", "Ні, вона не вміє."] }, es: { examples: ["Sí, ella sabe.", "No, ella no sabe."] } } }
-        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["after ", { alternatives: [do, does, did] }, " the verb is the base form"], uk: ["після ", { alternatives: [do, does, did] }, " дієслово стоїть у початковій формі"], es: ["después de ", { alternatives: [do, does, did] }, " el verbo va en forma base"] }, ex: ["Did you ", { target: go }, "?"], tr: { uk: "Ти ходив?", es: "¿Fuiste?" } }
+        - { level: A1, point: { en: Subject question, uk: "Питання до підмета", es: "Pregunta sobre el sujeto" }, rule: { en: ["no ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "; the verb takes the tense"], uk: ["без ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "; дієслово саме стоїть у потрібному часі"], es: ["sin ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "; el verbo lleva el tiempo verbal"] }, ex: [{ target: Who called }, " you?"], tr: { uk: "Хто тобі дзвонив?", es: "¿Quién te llamó?" } }
+        - { level: A1, point: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, rule: { en: ["repeat the ", { term: be }, ", modal or auxiliary verb"], uk: ["повтори ", { term: be }, ", модальне чи допоміжне дієслово"], es: ["repite ", { term: be }, ", el verbo modal o el auxiliar"] }, ex: { examples: [["Yes, she ", { target: can }, "."], ["No, she ", { target: can't }, "."]] }, tr: { uk: { examples: ["Так, вона вміє.", "Ні, вона не вміє."] }, es: { examples: ["Sí, ella sabe.", "No, ella no sabe."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["after ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " the verb is the base form"], uk: ["після ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " дієслово стоїть у початковій формі"], es: ["después de ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " el verbo va en forma base"] }, ex: ["Did you ", { target: go }, "?"], tr: { uk: "Ти ходив?", es: "¿Fuiste?" } }
 
 sections:
   - title: { en: Overview, uk: "Огляд", es: "Visión general" }
@@ -72,15 +73,15 @@ sections:
           - type: rule
             level: A1
             text:
-              en: [{ term: be }, " and ", { term: can }, ", ", { term: will }, ", ", { term: should }, ", ", { term: must }, " need no ", { alternatives: [do, does, did] }, "."]
-              uk: [{ term: be }, " і ", { term: can }, ", ", { term: will }, ", ", { term: should }, ", ", { term: must }, " не потребують ", { alternatives: [do, does, did] }, "."]
-              es: [{ term: be }, " y ", { term: can }, ", ", { term: will }, ", ", { term: should }, ", ", { term: must }, " no necesitan ", { alternatives: [do, does, did] }, "."]
+              en: [{ term: be }, " and ", { term: can }, ", ", { term: will }, ", ", { term: should }, ", ", { term: must }, " need no ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
+              uk: [{ term: be }, " і ", { term: can }, ", ", { term: will }, ", ", { term: should }, ", ", { term: must }, " не потребують ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
+              es: [{ term: be }, " y ", { term: can }, ", ", { term: will }, ", ", { term: should }, ", ", { term: must }, " no necesitan ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
           - type: rule
             level: A1
             text:
-              en: [{ term: am not }, " has the short form ", { term: I'm not }, ": I'm not ready."]
-              uk: [{ term: am not }, " має скорочену форму ", { term: I'm not }, ": I'm not ready."]
-              es: [{ term: am not }, " tiene la forma contraída ", { term: I'm not }, ": I'm not ready."]
+              en: [{ term: am not }, " has the short form ", { term: I'm not }, ": ", { term: I'm not ready }, "."]
+              uk: [{ term: am not }, " має скорочену форму ", { term: I'm not }, ": ", { term: I'm not ready }, "."]
+              es: [{ term: am not }, " tiene la forma contraída ", { term: I'm not }, ": ", { term: I'm not ready }, "."]
           - type: rule
             level: A1
             text:
@@ -99,25 +100,25 @@ sections:
           - { key: use, label: { en: Subject and tense, uk: "Підмет і час", es: "Sujeto y tiempo verbal" } }
           - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, aux: { alternatives: [do, don't] }, use: { en: [{ alternatives: [I, you, we, they] }, ", present"], uk: [{ alternatives: [I, you, we, they] }, ", теперішній час"], es: [{ alternatives: [I, you, we, they] }, ", presente"] }, ex: [{ target: Do }, " you ", { target: like }, " jazz?"], tr: { uk: "Ти любиш джаз?", es: "¿Te gusta el jazz?" } }
-          - { level: A1, aux: { alternatives: [does, doesn't] }, use: { en: [{ alternatives: [he, she, it] }, ", present"], uk: [{ alternatives: [he, she, it] }, ", теперішній час"], es: [{ alternatives: [he, she, it] }, ", presente"] }, ex: ["He ", { target: doesn't like }, " jazz."], tr: { uk: "Він не любить джаз.", es: "A él no le gusta el jazz." } }
+          - { level: A1, aux: { alternatives: [do, don't] }, use: { en: [{ alternatives: [{ term: I }, { term: you }, { term: we }, { term: they }] }, ", present"], uk: [{ alternatives: [{ term: I }, { term: you }, { term: we }, { term: they }] }, ", теперішній час"], es: [{ alternatives: [{ term: I }, { term: you }, { term: we }, { term: they }] }, ", presente"] }, ex: [{ target: Do }, " you ", { target: like }, " jazz?"], tr: { uk: "Ти любиш джаз?", es: "¿Te gusta el jazz?" } }
+          - { level: A1, aux: { alternatives: [does, doesn't] }, use: { en: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, ", present"], uk: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, ", теперішній час"], es: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, ", presente"] }, ex: ["He ", { target: doesn't like }, " jazz."], tr: { uk: "Він не любить джаз.", es: "A él no le gusta el jazz." } }
           - { level: A1, aux: { alternatives: [did, didn't] }, use: { en: "every subject, past", uk: "будь-який підмет, минулий час", es: "cualquier sujeto, pasado" }, ex: [{ target: Did }, " you ", { target: call }, " her?"], tr: { uk: "Ти їй дзвонив?", es: "¿La llamaste?" } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
-              en: ["The negative order is ", { pattern: [{ slot: subject }, { alternatives: [don't, doesn't, didn't] }, { slot: base verb }] }, ":"]
-              uk: ["Порядок слів у запереченні такий: ", { pattern: [{ slot: subject }, { alternatives: [don't, doesn't, didn't] }, { slot: base verb }] }, ":"]
-              es: ["El orden en la negación es ", { pattern: [{ slot: subject }, { alternatives: [don't, doesn't, didn't] }, { slot: base verb }] }, ":"]
+              en: ["The negative order is ", { pattern: [{ slot: subject }, { alternatives: [{ term: don't }, { term: doesn't }, { term: didn't }] }, { slot: base verb }] }, ":"]
+              uk: ["Порядок слів у запереченні такий: ", { pattern: [{ slot: subject }, { alternatives: [{ term: don't }, { term: doesn't }, { term: didn't }] }, { slot: base verb }] }, ":"]
+              es: ["El orden en la negación es ", { pattern: [{ slot: subject }, { alternatives: [{ term: don't }, { term: doesn't }, { term: didn't }] }, { slot: base verb }] }, ":"]
             ex: ["We ", { target: didn't see }, " him."]
             tr: { uk: "Ми його не бачили.", es: "No lo vimos." }
           - type: rule
             level: A1
             text:
-              en: ["The question order is ", { pattern: [{ alternatives: [do, does, did] }, { slot: subject }, { slot: base verb }] }, ":"]
-              uk: ["Порядок слів у питанні такий: ", { pattern: [{ alternatives: [do, does, did] }, { slot: subject }, { slot: base verb }] }, ":"]
-              es: ["El orden en la pregunta es ", { pattern: [{ alternatives: [do, does, did] }, { slot: subject }, { slot: base verb }] }, ":"]
+              en: ["The question order is ", { pattern: [{ alternatives: [{ term: do }, { term: does }, { term: did }] }, { slot: subject }, { slot: base verb }] }, ":"]
+              uk: ["Порядок слів у питанні такий: ", { pattern: [{ alternatives: [{ term: do }, { term: does }, { term: did }] }, { slot: subject }, { slot: base verb }] }, ":"]
+              es: ["El orden en la pregunta es ", { pattern: [{ alternatives: [{ term: do }, { term: does }, { term: did }] }, { slot: subject }, { slot: base verb }] }, ":"]
             ex: [{ target: Does }, " she ", { target: work }, " here?"]
             tr: { uk: "Вона тут працює?", es: "¿Ella trabaja aquí?" }
           - type: rule
@@ -211,9 +212,9 @@ sections:
           - type: rule
             level: A1
             text:
-              en: ["With ", { term: be }, " the order is ", { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ":"]
-              uk: ["З ", { term: be }, " порядок слів такий: ", { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ":"]
-              es: ["Con ", { term: be }, " el orden es ", { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ":"]
+              en: ["With ", { term: be }, " the order is ", { pattern: [{ slot: wh-word }, { term: be }, { slot: subject }] }, ":"]
+              uk: ["З ", { term: be }, " порядок слів такий: ", { pattern: [{ slot: wh-word }, { term: be }, { slot: subject }] }, ":"]
+              es: ["Con ", { term: be }, " el orden es ", { pattern: [{ slot: wh-word }, { term: be }, { slot: subject }] }, ":"]
             ex: [{ target: Where are }, " you from?"]
             tr: { uk: "Звідки ти?", es: "¿De dónde eres?" }
           - type: rule
@@ -227,9 +228,9 @@ sections:
           - type: rule
             level: A1
             text:
-              en: [{ term: how many }, " takes a plural noun, ", { term: how much }, " an uncountable noun: ", { examples: [How many eggs?, How much milk?] }]
-              uk: [{ term: how many }, " вживається з іменником у множині, ", { term: how much }, " — з незлічуваним іменником: ", { examples: [How many eggs?, How much milk?] }]
-              es: [{ term: how many }, " lleva un sustantivo en plural, ", { term: how much }, " un sustantivo incontable: ", { examples: [How many eggs?, How much milk?] }]
+              en: [{ term: how many }, " takes a plural noun, ", { term: how much }, " an uncountable noun: ", { examples: [{ term: How many eggs? }, { term: How much milk? }] }]
+              uk: [{ term: how many }, " вживається з іменником у множині, ", { term: how much }, " — з незлічуваним іменником: ", { examples: [{ term: How many eggs? }, { term: How much milk? }] }]
+              es: [{ term: how many }, " lleva un sustantivo en plural, ", { term: how much }, " un sustantivo incontable: ", { examples: [{ term: How many eggs? }, { term: How much milk? }] }]
 
   - title: { en: "Form: subject questions", uk: "Форма: питання до підмета", es: "Forma: preguntas sobre el sujeto" }
     role: form
@@ -248,9 +249,9 @@ sections:
           - type: rule
             level: A1
             text:
-              en: ["When the question word is the subject, the question has no ", { alternatives: [do, does, did] }, "."]
-              uk: ["Коли питальне слово є підметом, у питанні немає ", { alternatives: [do, does, did] }, "."]
-              es: ["Cuando la palabra interrogativa es el sujeto, la pregunta no lleva ", { alternatives: [do, does, did] }, "."]
+              en: ["When the question word is the subject, the question has no ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
+              uk: ["Коли питальне слово є підметом, у питанні немає ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
+              es: ["Cuando la palabra interrogativa es el sujeto, la pregunta no lleva ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
           - type: rule
             level: A1
             text:
@@ -277,9 +278,9 @@ sections:
           - type: rule
             level: A1
             text:
-              en: "A short answer repeats the be, modal or auxiliary verb from the question."
-              uk: "Коротка відповідь повторює дієслово be, модальне чи допоміжне дієслово з питання."
-              es: "La respuesta corta repite el verbo be, el modal o el auxiliar de la pregunta."
+              en: ["A short answer repeats the ", { term: be }, ", modal or auxiliary verb from the question."]
+              uk: ["Коротка відповідь повторює дієслово ", { term: be }, ", модальне чи допоміжне дієслово з питання."]
+              es: ["La respuesta corta repite el verbo ", { term: be }, ", el modal o el auxiliar de la pregunta."]
           - type: rule
             level: A1
             text:
@@ -312,6 +313,12 @@ sections:
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: Did you went?, right: ["Did you ", { target: go }, "?"], rule: { en: after did the verb is in the base form, uk: "після did дієслово стоїть у початковій формі", es: "después de did el verbo va en forma base" } }
-          - { level: A1, wrong: Who did call you?, right: [{ target: Who called }, " you?"], rule: { en: a subject question has no did, uk: "у питанні до підмета немає did", es: "una pregunta sobre el sujeto no lleva did" } }
-          - { level: A1, wrong: Do she like tea?, right: [{ target: Does }, " she like tea?"], rule: { en: { takes: [{ alternatives: [he, she, it] }, does] }, uk: { takes: [{ alternatives: [he, she, it] }, does] }, es: { takes: [{ alternatives: [he, she, it] }, does] } } }
+          - { level: A1, wrong: Did you went?, right: ["Did you ", { target: go }, "?"], rule: { en: ["after ", { term: did }, " the verb is in the base form"], uk: ["після ", { term: did }, " дієслово стоїть у початковій формі"], es: ["después de ", { term: did }, " el verbo va en forma base"] } }
+          - { level: A1, wrong: Who did call you?, right: [{ target: Who called }, " you?"], rule: { en: ["a subject question has no ", { term: did }], uk: ["у питанні до підмета немає ", { term: did }], es: ["una pregunta sobre el sujeto no lleva ", { term: did }] } }
+          - { level: A1, wrong: Do she like tea?, right: [{ target: Does }, " she like tea?"], rule: { en: { takes: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, { term: does }] }, uk: { takes: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, { term: does }] }, es: { takes: [{ alternatives: [{ term: he }, { term: she }, { term: it }] }, { term: does }] } } }
+          - { level: A1, speakers: [uk], wrong: You like coffee?, right: [{ target: Do }, " you like coffee?"], rule: { uk: ["Питання починається з допоміжного дієслова ", { term: do }, ", ", { term: does }, " чи ", { term: did }, "; українське «Ти любиш каву?» будується без нього"] } }
+          - { level: A1, speakers: [uk], wrong: Where you live?, right: ["Where ", { target: do }, " you live?"], rule: { uk: ["Після питального слова потрібне допоміжне дієслово ", { term: do }, ", ", { term: does }, " чи ", { term: did }, "; українське «Де ти живеш?» обходиться без нього"] } }
+          - { level: A1, speakers: [uk], wrong: I don't know nothing., right: ["I don't know ", { target: anything }, "."], rule: { uk: ["В англійському реченні одне заперечення: ", { term: don't know anything }, " або ", { term: know nothing }, "; українське «нічого не знаю» має два"] } }
+          - { level: A1, speakers: [es], wrong: What means this word?, right: ["What ", { target: does }, " this word ", { target: mean }, "?"], rule: { es: ["Cuando ", { term: what }, " es el objeto, la pregunta lleva ", { term: do }, " o ", { term: does }, " y el verbo va en forma base"] } }
+          - { level: A1, speakers: [es], wrong: I no like jazz., right: ["I ", { target: don't }, " like jazz."], rule: { es: ["La negación lleva el auxiliar ", { term: don't }, ", ", { term: doesn't }, " o ", { term: didn't }, " delante del verbo en forma base; en español basta «no»"] } }
+          - { level: A1, speakers: [es], wrong: I don't know nothing., right: ["I don't know ", { target: anything }, "."], rule: { es: ["En inglés la oración lleva una sola negación: ", { term: don't know anything }, " o ", { term: know nothing }, "; en español «no sé nada» lleva dos"] } }
