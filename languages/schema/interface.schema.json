@@ -16,6 +16,13 @@
       "additionalProperties": {
         "$ref": "#/definitions/localized"
       }
+    },
+    "slots": {
+      "description": "The name of each slot code of CONVENTIONS.md §12 in every explanation language; a code without a name renders as written.",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/localized"
+      }
     }
   },
   "definitions": {
@@ -24,10 +31,20 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "en"
+        "en",
+        "uk",
+        "es"
       ],
       "properties": {
         "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uk": {
+          "type": "string",
+          "minLength": 1
+        },
+        "es": {
           "type": "string",
           "minLength": 1
         }

@@ -5,34 +5,40 @@ kind: grammar
 tags: [demonstratives, determiners, pronouns]
 concepts: [demonstratives]
 related: [en.nouns-determiners.plurals, en.nouns-determiners.articles-a-an-the, en.verbs.to-be, en.pronouns.personal-pronouns]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "This, That, These, Those" }
+title: { en: "This, That, These, Those", uk: "Вказівні слова: this, that, these, those", es: "Demostrativos: this, that, these, those" }
 summary:
-  lead: { en: "This and these point to things near you; that and those point to things far away, in the singular and the plural." }
-  rule: { en: "These and those go with plural nouns and are:" }
+  lead:
+    en: "This and these point to things near you; that and those point to things far away, in the singular and the plural."
+    uk: "This і these вказують на предмети поблизу, that і those — на предмети далеко, в однині та множині."
+    es: "This y these señalan cosas cercanas; that y those señalan cosas lejanas, en singular y en plural."
+  rule:
+    en: "These and those go with plural nouns and are:"
+    uk: "These і those стоять з іменниками в множині та з дієсловом are:"
+    es: "These y those van con sustantivos plurales y con el verbo are:"
   ex: { examples: [[{ target: These }, " are my keys."], [{ target: Those }, " shoes ", { target: are }, " nice."]] }
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: use, label: { en: Use } }
-        - { key: near, label: { en: Near }, features: { deixis: prox } }
-        - { key: far, label: { en: Far }, features: { deixis: dist } }
+        - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+        - { key: near, label: { en: Near, uk: "Близько", es: "Cerca" }, features: { deixis: prox } }
+        - { key: far, label: { en: Far, uk: "Далеко", es: "Lejos" }, features: { deixis: dist } }
       rows:
-        - { level: A0, features: { number: sg }, use: { en: Before a singular noun }, near: [{ target: this }, " bag"], far: [{ target: that }, " bag"] }
-        - { level: A0, features: { number: pl }, use: { en: Before a plural noun }, near: [{ target: these }, " shoes"], far: [{ target: those }, " shoes"] }
-        - { level: A0, features: { number: sg }, use: { en: "Alone, with is" }, near: [{ target: This is }, " my bag."], far: [{ target: That is }, " my bag."] }
-        - { level: A0, features: { number: pl }, use: { en: "Alone, with are" }, near: [{ target: These are }, " my keys."], far: [{ target: Those are }, " my shoes."] }
-        - { level: A0, use: { en: Introducing people }, near: [{ target: This is }, " Ana."] }
-        - { level: A0, use: { en: On the phone }, near: ["Hi, ", { target: this is }, " Tom."], far: ["Is ", { target: that }, " Ana? ", { variant: ["Is ", { target: this }, " Ana?"], variety: en-US }] }
-        - { level: A1, features: { number: sg }, use: { en: Instead of a known noun }, near: ["I like ", { target: this one }, "."], far: ["I like ", { target: that one }, "."] }
-        - { level: A1, features: { number: sg }, use: { en: ["Time: ", { alternatives: [now, then] }] }, near: [{ target: this }, " morning"], far: [{ target: that }, " day"] }
-        - { level: A1, use: { en: Something just said or done }, far: [{ target: That's }, " great!"] }
+        - { level: A0, features: { number: sg }, use: { en: Before a singular noun, uk: "Перед іменником в однині", es: "Antes de un sustantivo singular" }, near: [{ target: this }, " bag"], far: [{ target: that }, " bag"] }
+        - { level: A0, features: { number: pl }, use: { en: Before a plural noun, uk: "Перед іменником у множині", es: "Antes de un sustantivo plural" }, near: [{ target: these }, " shoes"], far: [{ target: those }, " shoes"] }
+        - { level: A0, features: { number: sg }, use: { en: "Alone, with is", uk: "Окремо, з is", es: "Solo, con is" }, near: [{ target: This is }, " my bag."], far: [{ target: That is }, " my bag."] }
+        - { level: A0, features: { number: pl }, use: { en: "Alone, with are", uk: "Окремо, з are", es: "Solo, con are" }, near: [{ target: These are }, " my keys."], far: [{ target: Those are }, " my shoes."] }
+        - { level: A0, use: { en: Introducing people, uk: "Представлення людей", es: "Presentaciones" }, near: [{ target: This is }, " Ana."] }
+        - { level: A0, use: { en: On the phone, uk: "По телефону", es: "Por teléfono" }, near: ["Hi, ", { target: this is }, " Tom."], far: ["Is ", { target: that }, " Ana? ", { variant: ["Is ", { target: this }, " Ana?"], variety: en-US }] }
+        - { level: A1, features: { number: sg }, use: { en: Instead of a known noun, uk: "Замість відомого іменника", es: "En lugar de un sustantivo conocido" }, near: ["I like ", { target: this one }, "."], far: ["I like ", { target: that one }, "."] }
+        - { level: A1, features: { number: sg }, use: { en: ["Time: ", { alternatives: [now, then] }], uk: ["Час: ", { alternatives: ["зараз", "тоді"] }], es: ["Tiempo: ", { alternatives: ["ahora", "entonces"] }] }, near: [{ target: this }, " morning"], far: [{ target: that }, " day"] }
+        - { level: A1, use: { en: Something just said or done, uk: "Щойно сказане або зроблене", es: "Algo que se acaba de decir o hacer" }, far: [{ target: That's }, " great!"] }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -41,41 +47,47 @@ sections:
             level: A0
             text:
               en: ["The four words never change for masculine or feminine: ", { term: this }, " man, ", { term: this }, " woman."]
+              uk: ["Усі чотири слова не змінюються за родом: ", { term: this }, " man, ", { term: this }, " woman."]
+              es: ["Las cuatro palabras no cambian según el género: ", { term: this }, " man, ", { term: this }, " woman."]
 
-  - title: { en: "Form: before a noun or alone" }
+  - title: { en: "Form: before a noun or alone", uk: "Форма: перед іменником або окремо", es: "Forma: antes de un sustantivo o solo" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A0, form: { en: { pattern: [{ slot: singular noun }], follows: true } }, ex: [{ target: This }, " bag is new."] }
-          - { level: A0, form: { en: { pattern: [{ slot: plural noun }], follows: true } }, ex: [{ target: Those }, " shoes are nice."] }
-          - { level: A0, form: { en: alone }, ex: { examples: [[{ target: This }, " is my bag."], [{ target: Those }, " are my shoes."]] } }
-          - { level: A1, form: { pattern: [one], follows: true }, ex: ["I like ", { target: that one }, "."] }
+          - { level: A0, form: { en: { pattern: [{ slot: singular noun }], follows: true }, uk: { pattern: [{ slot: singular noun }], follows: true }, es: { pattern: [{ slot: singular noun }], follows: true } }, ex: [{ target: This }, " bag is new."], tr: { uk: "Ця сумка нова.", es: "Este bolso es nuevo." } }
+          - { level: A0, form: { en: { pattern: [{ slot: plural noun }], follows: true }, uk: { pattern: [{ slot: plural noun }], follows: true }, es: { pattern: [{ slot: plural noun }], follows: true } }, ex: [{ target: Those }, " shoes are nice."], tr: { uk: "Ті туфлі гарні.", es: "Esos zapatos son bonitos." } }
+          - { level: A0, form: { en: alone, uk: "окремо", es: "solo" }, ex: { examples: [[{ target: This }, " is my bag."], [{ target: Those }, " are my shoes."]] }, tr: { uk: { examples: ["Це моя сумка.", "То мої туфлі."] }, es: { examples: ["Este es mi bolso.", "Esos son mis zapatos."] } } }
+          - { level: A1, form: { pattern: [one], follows: true }, ex: ["I like ", { target: that one }, "."], tr: { uk: "Мені подобається той.", es: "Me gusta ese." } }
       - type: list
         items:
           - type: rule
             level: A0
             text:
               en: [{ pattern: [{ alternatives: [this, that] }, { slot: singular noun }, { term: is }] }, "; ", { pattern: [{ alternatives: [these, those] }, { slot: plural noun }, { term: are }] }, "."]
+              uk: [{ pattern: [{ alternatives: [this, that] }, { slot: singular noun }, { term: is }] }, "; ", { pattern: [{ alternatives: [these, those] }, { slot: plural noun }, { term: are }] }, "."]
+              es: [{ pattern: [{ alternatives: [this, that] }, { slot: singular noun }, { term: is }] }, "; ", { pattern: [{ alternatives: [these, those] }, { slot: plural noun }, { term: are }] }, "."]
           - type: rule
             level: A1
             text:
               en: [{ term: one }, " replaces a singular noun already known: this one, that one."]
+              uk: [{ term: one }, " замінює вже відомий іменник в однині: this one, that one."]
+              es: [{ term: one }, " sustituye a un sustantivo singular ya conocido: this one, that one."]
 
-  - title: { en: "Pronunciation: this and these" }
+  - title: { en: "Pronunciation: this and these", uk: "Вимова: this і these", es: "Pronunciación: this y these" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Word } }
-          - { key: ipa, label: { en: Sound } }
-          - { key: vowel, label: { en: Vowel } }
+          - { key: word, label: { en: Word, uk: "Слово", es: "Palabra" } }
+          - { key: ipa, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: vowel, label: { en: Vowel, uk: "Голосний", es: "Vocal" } }
         rows:
-          - { level: A0, word: this, ipa: { ipa: ðɪs }, vowel: { en: ["short ", { ipa: ɪ }] } }
-          - { level: A0, word: these, ipa: { ipa: ðiːz }, vowel: { en: ["long ", { ipa: iː }] } }
+          - { level: A0, word: this, ipa: { ipa: ðɪs }, vowel: { en: ["short ", { ipa: ɪ }], uk: ["короткий ", { ipa: ɪ }], es: [{ ipa: ɪ }, " corta"] } }
+          - { level: A0, word: these, ipa: { ipa: ðiːz }, vowel: { en: ["long ", { ipa: iː }], uk: ["довгий ", { ipa: iː }], es: [{ ipa: iː }, " larga"] } }
           - { level: A0, word: that, ipa: { ipa: ðæt }, vowel: { ipa: æ } }
           - { level: A0, word: those, ipa: { ipa: ðəʊz }, vowel: { ipa: əʊ } }
       - type: list
@@ -84,28 +96,32 @@ sections:
             level: A0
             text:
               en: ["All four start with ", { ipa: ð }, ", the voiced th."]
+              uk: ["Усі чотири починаються зі звука ", { ipa: ð }, " — дзвінкого th."]
+              es: ["Las cuatro empiezan con ", { ipa: ð }, ", la th sonora."]
           - type: rule
             level: A0
             text:
               en: [{ term: these }, " and ", { term: those }, " end in ", { ipa: z }, "; ", { term: this }, " ends in ", { ipa: s }, "."]
+              uk: [{ term: these }, " і ", { term: those }, " закінчуються на ", { ipa: z }, "; ", { term: this }, " — на ", { ipa: s }, "."]
+              es: [{ term: these }, " y ", { term: those }, " terminan en ", { ipa: z }, "; ", { term: this }, " termina en ", { ipa: s }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A0, use: { en: Introducing people }, ex: [{ target: This is }, " Ana. She's my sister."] }
-          - { level: A0, use: { en: ["On the phone: ", { alternatives: [you, the other person] }] }, ex: ["Hi, ", { target: this is }, " Tom. Is ", { target: that }, " Ana? ", { variant: ["Is ", { target: this }, " Ana?"], variety: en-US }] }
-          - { level: A1, use: { en: ["Time: ", { alternatives: [now, then] }] }, ex: { examples: [[{ target: this }, " morning"], [{ target: that }, " day"]] } }
-          - { level: A1, use: { en: Something just said or done }, ex: { examples: [[{ target: That's }, " great!"], [{ target: That's }, " right."]] } }
+          - { level: A0, use: { en: Introducing people, uk: "Представлення людей", es: "Presentaciones" }, ex: [{ target: This is }, " Ana. She's my sister."], tr: { uk: "Це Ана. Вона моя сестра.", es: "Esta es Ana. Es mi hermana." } }
+          - { level: A0, use: { en: ["On the phone: ", { alternatives: [you, the other person] }], uk: ["По телефону: ", { alternatives: ["ти", "співрозмовник"] }], es: ["Por teléfono: ", { alternatives: ["tú", "la otra persona"] }] }, ex: ["Hi, ", { target: this is }, " Tom. Is ", { target: that }, " Ana? ", { variant: ["Is ", { target: this }, " Ana?"], variety: en-US }], tr: { uk: "Привіт, це Том. Це Ана?", es: "Hola, soy Tom. ¿Eres Ana?" } }
+          - { level: A1, use: { en: ["Time: ", { alternatives: [now, then] }], uk: ["Час: ", { alternatives: ["зараз", "тоді"] }], es: ["Tiempo: ", { alternatives: ["ahora", "entonces"] }] }, ex: { examples: [[{ target: this }, " morning"], [{ target: that }, " day"]] }, tr: { uk: { examples: ["цього ранку", "того дня"] }, es: { examples: ["esta mañana", "ese día"] } } }
+          - { level: A1, use: { en: Something just said or done, uk: "Щойно сказане або зроблене", es: "Algo que se acaba de decir o hacer" }, ex: { examples: [[{ target: That's }, " great!"], [{ target: That's }, " right."]] }, tr: { uk: { examples: ["Це чудово!", "Це правильно."] }, es: { examples: ["¡Eso es genial!", "Eso es correcto."] } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A0, wrong: this books, right: [{ target: these }, " books"], rule: { en: { takes: [plural noun, { alternatives: [these, those] }] } } }
-          - { level: A0, wrong: These is my keys., right: ["These ", { target: are }, " my keys."], rule: { en: { pattern: [{ alternatives: [these, those] }, are] } } }
+          - { level: A0, wrong: this books, right: [{ target: these }, " books"], rule: { en: { takes: [plural noun, { alternatives: [these, those] }] }, uk: { takes: ["іменник у множині", { alternatives: [these, those] }] }, es: { takes: ["sustantivo plural", { alternatives: [these, those] }] } } }
+          - { level: A0, wrong: These is my keys., right: ["These ", { target: are }, " my keys."], rule: { en: { pattern: [{ alternatives: [these, those] }, are] }, uk: { pattern: [{ alternatives: [these, those] }, are] }, es: { pattern: [{ alternatives: [these, those] }, are] } } }

@@ -14,7 +14,8 @@ describe("readers", () => {
 
 describe("every text of a topic", () => {
   test("each place, with its kind of text", () => {
-    const texts = [...topicTexts(SAMPLE, ["en"])].map((t) => `${t.path} ${t.plain ? "plain" : "explained"} ${JSON.stringify(t.text)}`);
+    // A reader of another language than the one being learned meets every place, translations included.
+    const texts = [...topicTexts(SAMPLE, ["uk"])].map((t) => `${t.path} ${t.plain ? "plain" : "explained"} ${JSON.stringify(t.text)}`);
     expect(texts).toEqual([
       'title explained "Sample"',
       'summary.lead explained "Lead."',

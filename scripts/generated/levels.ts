@@ -23,4 +23,6 @@ export interface LevelScale {
  */
 export interface Localized {
   en: string;
+  uk: string;
+  es: string;
 }

@@ -5,140 +5,169 @@ kind: grammar
 tags: [clauses, relative, who, which, that]
 concepts: [relative-clauses]
 related: [en.sentence-building.conjunctions-linkers, en.sentence-building.passive-voice, en.sentence-building.word-order]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Relative Clauses }
+title: { en: Relative Clauses, uk: Означальні підрядні речення, es: Oraciones de relativo }
 summary:
-  lead: { en: "Relative clauses add information about a noun with who for people, which for things, that, whose and where." }
-  rule: { en: "Who, which and that replace the noun and the clause has no second pronoun:" }
+  lead:
+    en: "Relative clauses add information about a noun with who for people, which for things, that, whose and where."
+    uk: "Означальні підрядні речення додають інформацію про іменник за допомогою who для людей, which для предметів, that, whose і where."
+    es: "Las oraciones de relativo añaden información sobre un sustantivo con who para personas, which para cosas, that, whose y where."
+  rule:
+    en: "Who, which and that replace the noun and the clause has no second pronoun:"
+    uk: "Who, which і that замінюють іменник, тож у підрядному реченні немає другого займенника:"
+    es: "Who, which y that sustituyen al sustantivo y la oración no lleva un segundo pronombre:"
   ex: ["The woman ", { target: who }, " lives here is my aunt."]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: B1, point: { en: Form }, rule: { en: [{ pattern: [{ slot: noun }, { alternatives: [who, which, that] }, { slot: clause }] }, "; right after the noun"] }, ex: ["The woman ", { target: who lives next door }, " is a nurse."] }
-        - { level: B1, point: "who, which", rule: { en: [{ term: who }, " for people, ", { term: which }, " for things"] }, ex: { examples: [["The woman ", { target: who }, " lives next door is a nurse."], ["The book ", { target: which }, " I bought was cheap."]] } }
-        - { level: B1, point: that, rule: { en: "people or things, in defining clauses only" }, ex: ["The film ", { target: that }, " we saw was long."] }
-        - { level: B1, point: whose, rule: { en: possession; a noun follows }, ex: ["The man ", { target: whose }, " car was stolen called the police."] }
-        - { level: B1, point: where, rule: { en: places }, ex: ["The café ", { target: where }, " we met has closed."] }
-        - { level: B1, point: { en: Subject pronoun }, rule: { en: "stays: a verb follows" }, ex: ["The girl ", { target: who speaks }, " French is my cousin."] }
-        - { level: B1, point: { en: Object pronoun }, rule: { en: can be left out in a defining clause only }, ex: ["The film ", { target: I saw }, " was long."] }
-        - { level: B1, point: { en: Defining }, rule: { en: says which one; no commas }, ex: ["The man ", { target: who called }, " is my uncle."] }
-        - { level: B1, point: { en: Non-defining }, rule: { en: ["extra information in commas; ", { alternatives: [who, which, whose, where] }] }, ex: ["Paris, ", { target: which }, " I visited in ", { date: May, value: "--05" }, ", is beautiful."] }
-        - { level: B1, point: { en: Trap }, rule: { en: [{ term: where }, " already includes the preposition"] }, ex: ["The house ", { target: where I live }, " is old."] }
+        - { level: B1, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: [{ pattern: [{ slot: noun }, { alternatives: [who, which, that] }, { slot: clause }] }, "; right after the noun"], uk: [{ pattern: [{ slot: noun }, { alternatives: [who, which, that] }, { slot: clause }] }, "; одразу після іменника"], es: [{ pattern: [{ slot: noun }, { alternatives: [who, which, that] }, { slot: clause }] }, "; justo después del sustantivo"] }, ex: ["The woman ", { target: who lives next door }, " is a nurse."], tr: { uk: "Жінка, яка живе по сусідству, — медсестра.", es: "La mujer que vive al lado es enfermera." } }
+        - { level: B1, point: "who, which", rule: { en: [{ term: who }, " for people, ", { term: which }, " for things"], uk: [{ term: who }, " для людей, ", { term: which }, " для предметів"], es: [{ term: who }, " para personas, ", { term: which }, " para cosas"] }, ex: { examples: [["The woman ", { target: who }, " lives next door is a nurse."], ["The book ", { target: which }, " I bought was cheap."]] }, tr: { uk: { examples: ["Жінка, яка живе по сусідству, — медсестра.", "Книга, яку я купив, була дешевою."] }, es: { examples: ["La mujer que vive al lado es enfermera.", "El libro que compré era barato."] } } }
+        - { level: B1, point: that, rule: { en: "people or things, in defining clauses only", uk: "люди або предмети, лише в обмежувальних реченнях", es: "personas o cosas, solo en oraciones especificativas" }, ex: ["The film ", { target: that }, " we saw was long."], tr: { uk: "Фільм, який ми дивилися, був довгим.", es: "La película que vimos era larga." } }
+        - { level: B1, point: whose, rule: { en: possession; a noun follows, uk: "належність; далі йде іменник", es: "posesión; le sigue un sustantivo" }, ex: ["The man ", { target: whose }, " car was stolen called the police."], tr: { uk: "Чоловік, чию машину вкрали, викликав поліцію.", es: "El hombre cuyo auto fue robado llamó a la policía." } }
+        - { level: B1, point: where, rule: { en: places, uk: "місця", es: "lugares" }, ex: ["The café ", { target: where }, " we met has closed."], tr: { uk: "Кафе, де ми зустрілися, закрилося.", es: "El café donde nos encontramos ha cerrado." } }
+        - { level: B1, point: { en: Subject pronoun, uk: "Займенник-підмет", es: "Pronombre sujeto" }, rule: { en: "stays: a verb follows", uk: "не опускається: далі йде дієслово", es: "no se omite: sigue un verbo" }, ex: ["The girl ", { target: who speaks }, " French is my cousin."], tr: { uk: "Дівчина, яка розмовляє французькою, — моя двоюрідна сестра.", es: "La chica que habla francés es mi prima." } }
+        - { level: B1, point: { en: Object pronoun, uk: "Займенник-додаток", es: "Pronombre objeto" }, rule: { en: can be left out in a defining clause only, uk: "можна опустити лише в обмежувальному реченні", es: "se puede omitir solo en una oración especificativa" }, ex: ["The film ", { target: I saw }, " was long."], tr: { uk: "Фільм, який я бачив, був довгим.", es: "La película que vi era larga." } }
+        - { level: B1, point: { en: Defining, uk: "Обмежувальні", es: "Especificativas" }, rule: { en: says which one; no commas, uk: "указує, який саме; без ком", es: "indica cuál; sin comas" }, ex: ["The man ", { target: who called }, " is my uncle."], tr: { uk: "Чоловік, який телефонував, — мій дядько.", es: "El hombre que llamó es mi tío." } }
+        - { level: B1, point: { en: Non-defining, uk: "Необмежувальні", es: "Explicativas" }, rule: { en: ["extra information in commas; ", { alternatives: [who, which, whose, where] }], uk: ["додаткова інформація між комами; ", { alternatives: [who, which, whose, where] }], es: ["información extra entre comas; ", { alternatives: [who, which, whose, where] }] }, ex: ["Paris, ", { target: which }, " I visited in ", { date: May, value: "--05" }, ", is beautiful."], tr: { uk: "Париж, який я відвідав у травні, прекрасний.", es: "París, que visité en mayo, es hermoso." } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: where }, " already includes the preposition"], uk: [{ term: where }, " уже містить прийменник"], es: [{ term: where }, " ya incluye la preposición"] }, ex: ["The house ", { target: where I live }, " is old."], tr: { uk: "Будинок, у якому я живу, старий.", es: "La casa donde vivo es vieja." } }
 
 sections:
-  - title: { en: "Form: relative pronouns" }
+  - title: { en: "Form: relative pronouns", uk: "Форма: відносні займенники", es: "Forma: pronombres relativos" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: pronoun, label: { en: Word } }
-          - { key: refers, label: { en: Refers to } }
-          - { key: ex, label: { en: Example } }
+          - { key: pronoun, label: { en: Word, uk: "Слово", es: "Palabra" } }
+          - { key: refers, label: { en: Refers to, uk: "Стосується", es: "Se refiere a" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, pronoun: who, refers: { en: people }, ex: ["The woman ", { target: who }, " lives next door is a nurse."] }
-          - { level: B1, pronoun: which, refers: { en: things }, ex: ["The book ", { target: which }, " I bought was cheap."] }
-          - { level: B1, pronoun: that, refers: { en: people or things (defining clauses) }, ex: ["The film ", { target: that }, " we saw was long."] }
-          - { level: B1, pronoun: whose, refers: { en: possession }, ex: ["The man ", { target: whose }, " car was stolen called the police."] }
-          - { level: B1, pronoun: where, refers: { en: places }, ex: ["The café ", { target: where }, " we met has closed."] }
+          - { level: B1, pronoun: who, refers: { en: people, uk: "людей", es: "personas" }, ex: ["The woman ", { target: who }, " lives next door is a nurse."], tr: { uk: "Жінка, яка живе по сусідству, — медсестра.", es: "La mujer que vive al lado es enfermera." } }
+          - { level: B1, pronoun: which, refers: { en: things, uk: "предметів", es: "cosas" }, ex: ["The book ", { target: which }, " I bought was cheap."], tr: { uk: "Книга, яку я купив, була дешевою.", es: "El libro que compré era barato." } }
+          - { level: B1, pronoun: that, refers: { en: people or things (defining clauses), uk: "людей або предметів (обмежувальні речення)", es: "personas o cosas (oraciones especificativas)" }, ex: ["The film ", { target: that }, " we saw was long."], tr: { uk: "Фільм, який ми дивилися, був довгим.", es: "La película que vimos era larga." } }
+          - { level: B1, pronoun: whose, refers: { en: possession, uk: "належності", es: "posesión" }, ex: ["The man ", { target: whose }, " car was stolen called the police."], tr: { uk: "Чоловік, чию машину вкрали, викликав поліцію.", es: "El hombre cuyo auto fue robado llamó a la policía." } }
+          - { level: B1, pronoun: where, refers: { en: places, uk: "місць", es: "lugares" }, ex: ["The café ", { target: where }, " we met has closed."], tr: { uk: "Кафе, де ми зустрілися, закрилося.", es: "El café donde nos encontramos ha cerrado." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: A relative clause comes straight after the noun it describes.
+              uk: "Означальне підрядне речення стоїть одразу після іменника, який воно описує."
+              es: "La oración de relativo va justo después del sustantivo que describe."
           - type: rule
             level: B1
             text:
               en: [{ term: whose }, " is followed by a noun: whose car, whose idea."]
+              uk: [{ term: whose }, " після нього йде іменник: whose car, whose idea."]
+              es: [{ term: whose }, " va seguido de un sustantivo: whose car, whose idea."]
           - type: rule
             level: B1
             text:
               en: [{ term: where }, " includes the preposition: the house ", { term: where }, " I live."]
+              uk: [{ term: where }, " містить прийменник: the house ", { term: where }, " I live."]
+              es: [{ term: where }, " incluye la preposición: the house ", { term: where }, " I live."]
           - type: rule
             level: B1
             text:
               en: [{ term: whom }, " is the formal object form: The man ", { term: whom }, " I met. Everyday English uses ", { term: who }, " or no pronoun."]
+              uk: [{ term: whom }, " — формальна форма додатка: The man ", { term: whom }, " I met. У повсякденній англійській вживають ", { term: who }, " або взагалі обходяться без займенника."]
+              es: [{ term: whom }, " es la forma formal del objeto: The man ", { term: whom }, " I met. El inglés cotidiano usa ", { term: who }, " o ningún pronombre."]
 
-  - title: { en: "Form: defining clauses" }
+  - title: { en: "Form: defining clauses", uk: "Форма: обмежувальні речення (defining)", es: "Forma: oraciones especificativas (defining)" }
     role: form
     content:
       - type: prose
         level: B1
         text:
           en: A defining clause says which person or thing. It has no commas.
+          uk: "Обмежувальне підрядне речення вказує, про яку саме особу чи про який предмет ідеться. В англійській мові воно не виділяється комами."
+          es: "Una oración especificativa dice de qué persona o cosa se habla. No lleva comas."
         ex: ["The man ", { target: who called }, " is my uncle."]
+        tr: { uk: "Чоловік, який телефонував, — мій дядько.", es: "El hombre que llamó es mi tío." }
       - type: comparison
         columns:
-          - { key: role, label: { en: The pronoun is } }
-          - { key: with, label: { en: With pronoun } }
-          - { key: without, label: { en: Without pronoun } }
+          - { key: role, label: { en: The pronoun is, uk: "Роль займенника", es: "El pronombre es" } }
+          - { key: with, label: { en: With pronoun, uk: "З займенником", es: "Con pronombre" } }
+          - { key: without, label: { en: Without pronoun, uk: "Без займенника", es: "Sin pronombre" } }
         rows:
-          - { level: B1, role: { en: subject (verb follows) }, with: ["The girl ", { target: who speaks }, " French is my cousin."] }
-          - { level: B1, role: { en: object (subject follows) }, with: ["The film ", { target: that I saw }, " was long."], without: ["The film ", { target: I saw }, " was long."] }
-          - { level: B1, role: { en: object of a preposition }, with: ["The man ", { target: who I spoke to }, " was kind."], without: ["The man ", { target: I spoke to }, " was kind."] }
+          - { level: B1, role: { en: subject (verb follows), uk: "підмет (далі йде дієслово)", es: "sujeto (sigue un verbo)" }, with: { ex: ["The girl ", { target: who speaks }, " French is my cousin."], tr: { uk: "Дівчина, яка розмовляє французькою, — моя двоюрідна сестра.", es: "La chica que habla francés es mi prima." } } }
+          - { level: B1, role: { en: object (subject follows), uk: "додаток (далі йде підмет)", es: "objeto (sigue un sujeto)" }, with: { ex: ["The film ", { target: that I saw }, " was long."], tr: { uk: "Фільм, який я бачив, був довгим.", es: "La película que vi era larga." } }, without: { ex: ["The film ", { target: I saw }, " was long."], tr: { uk: "Фільм, який я бачив, був довгим.", es: "La película que vi era larga." } } }
+          - { level: B1, role: { en: object of a preposition, uk: "додаток прийменника", es: "objeto de una preposición" }, with: { ex: ["The man ", { target: who I spoke to }, " was kind."], tr: { uk: "Чоловік, з яким я розмовляв, був добрим.", es: "El hombre con quien hablé era amable." } }, without: { ex: ["The man ", { target: I spoke to }, " was kind."], tr: { uk: "Чоловік, з яким я розмовляв, був добрим.", es: "El hombre con quien hablé era amable." } } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["A subject pronoun stays: ", { alternatives: [who, which, that] }, " is followed by a verb."]
+              uk: ["Займенник-підмет не опускається: після ", { alternatives: [who, which, that] }, " іде дієслово."]
+              es: ["El pronombre sujeto no se omite: ", { alternatives: [who, which, that] }, " va seguido de un verbo."]
           - type: rule
             level: B1
             text:
               en: ["An object pronoun can be left out: ", { alternatives: [who, which, that] }, " is followed by a subject."]
+              uk: ["Займенник-додаток можна опустити: після ", { alternatives: [who, which, that] }, " іде підмет."]
+              es: ["El pronombre objeto se puede omitir: ", { alternatives: [who, which, that] }, " va seguido de un sujeto."]
           - type: rule
             level: B1
             text:
               en: In everyday English the preposition goes to the end of the clause.
+              uk: "У повсякденній англійській прийменник стоїть наприкінці підрядного речення."
+              es: "En el inglés cotidiano la preposición va al final de la oración."
 
-  - title: { en: "Form: non-defining clauses" }
+  - title: { en: "Form: non-defining clauses", uk: "Форма: необмежувальні речення (non-defining)", es: "Forma: oraciones explicativas (non-defining)" }
     role: form
     content:
       - type: prose
         level: B1
         text:
           en: A non-defining clause adds extra information. Commas separate it from the rest.
+          uk: "Необмежувальне підрядне речення додає додаткову інформацію. Від решти речення його відокремлюють комами."
+          es: "Una oración explicativa añade información extra. Se separa del resto con comas."
         ex: ["My uncle, ", { target: who lives in Leeds }, ", is a doctor."]
+        tr: { uk: "Мій дядько, який живе в Лідсі, — лікар.", es: "Mi tío, que vive en Leeds, es médico." }
       - type: comparison
         columns:
-          - { key: feature, label: { en: Feature } }
-          - { key: defining, label: { en: Defining } }
-          - { key: nondefining, label: { en: Non-defining } }
+          - { key: feature, label: { en: Feature, uk: "Ознака", es: "Característica" } }
+          - { key: defining, label: { en: Defining, uk: "Обмежувальні", es: "Especificativas" } }
+          - { key: nondefining, label: { en: Non-defining, uk: "Необмежувальні", es: "Explicativas" } }
         rows:
-          - { level: B1, feature: { en: Information }, defining: { en: says which one }, nondefining: { en: "extra, can be removed" } }
-          - { level: B1, feature: { en: Commas }, defining: { en: none }, nondefining: { en: "yes, and a pause in speech" } }
-          - { level: B1, feature: { en: Pronouns }, defining: { alternatives: [who, which, that] }, nondefining: { alternatives: [who, which, whose, where] } }
-          - { level: B1, feature: { en: Leave out the object pronoun }, defining: { en: possible }, nondefining: { en: never } }
+          - { level: B1, feature: { en: Information, uk: "Інформація", es: "Información" }, defining: { en: says which one, uk: "указує, який саме", es: "indica cuál" }, nondefining: { en: "extra, can be removed", uk: "додаткова, її можна прибрати", es: "extra, se puede quitar" } }
+          - { level: B1, feature: { en: Commas, uk: "Коми", es: "Comas" }, defining: { en: none, uk: "немає", es: "ninguna" }, nondefining: { en: "yes, and a pause in speech", uk: "є, а в мовленні — пауза", es: "sí, y una pausa al hablar" } }
+          - { level: B1, feature: { en: Pronouns, uk: "Займенники", es: "Pronombres" }, defining: { alternatives: [who, which, that] }, nondefining: { alternatives: [who, which, whose, where] } }
+          - { level: B1, feature: { en: Leave out the object pronoun, uk: "Опущення займенника-додатка", es: "Omitir el pronombre objeto" }, defining: { en: possible, uk: "можливе", es: "posible" }, nondefining: { en: never, uk: "ніколи", es: "nunca" } }
       - type: usage
         columns:
-          - { key: ex, label: { en: Example } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, ex: ["Paris, ", { target: which }, " I visited in ", { date: May, value: "--05" }, ", is beautiful."] }
-          - { level: B1, ex: ["Tom, ", { target: whose }, " brother is a chef, cooks well."] }
+          - { level: B1, ex: ["Paris, ", { target: which }, " I visited in ", { date: May, value: "--05" }, ", is beautiful."], tr: { uk: "Париж, який я відвідав у травні, прекрасний.", es: "París, que visité en mayo, es hermoso." } }
+          - { level: B1, ex: ["Tom, ", { target: whose }, " brother is a chef, cooks well."], tr: { uk: "Том, чий брат — кухар, добре готує.", es: "Tom, cuyo hermano es cocinero, cocina bien." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: which }, " can refer to a whole clause:"]
+              uk: [{ term: which }, " може стосуватися цілого речення:"]
+              es: [{ term: which }, " puede referirse a toda una oración:"]
             ex: ["He passed the exam, ", { target: which }, " surprised everyone."]
+            tr: { uk: "Він склав іспит, що всіх здивувало.", es: "Aprobó el examen, lo que sorprendió a todos." }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: B1, wrong: The man which lives next door is a doctor., right: ["The man ", { target: who }, " lives next door is a doctor."], rule: { en: { takes: [people, who or that] } } }
-          - { level: B1, wrong: The house where I live in is old., right: { alternatives: [["The house ", { target: where I live }, " is old."], ["The house ", { target: I live in }, " is old."]] }, rule: { en: where includes the preposition } }
-          - { level: B1, wrong: "My uncle, that lives in Leeds, is a doctor.", right: ["My uncle, ", { target: who }, " lives in Leeds, is a doctor."], rule: { en: non-defining clauses use who or which } }
-          - { level: B1, wrong: The film that I saw it was long., right: The film that I saw was long., rule: { en: the pronoun stands for the object } }
-          - { level: B1, wrong: I know a man lives in Paris., right: ["I know a man ", { target: who }, " lives in Paris."], rule: { en: a subject pronoun stays } }
-          - { level: B1, wrong: ["Paris, which I visited it in ", { date: May, value: "--05" }, ", is beautiful."], right: ["Paris, which I visited in ", { date: May, value: "--05" }, ", is beautiful."], rule: { en: which stands for the object } }
-          - { level: B1, wrong: ["Paris which I visited in ", { date: May, value: "--05" }, " is beautiful."], right: ["Paris, which I visited in ", { date: May, value: "--05" }, ", is beautiful."], rule: { en: non-defining clauses need commas } }
+          - { level: B1, wrong: The man which lives next door is a doctor., right: ["The man ", { target: who }, " lives next door is a doctor."], rule: { en: { takes: [people, who or that] }, uk: { takes: ["люди", "who або that"] }, es: { takes: ["personas", "who o that"] } } }
+          - { level: B1, wrong: The house where I live in is old., right: { alternatives: [["The house ", { target: where I live }, " is old."], ["The house ", { target: I live in }, " is old."]] }, rule: { en: where includes the preposition, uk: "where вже містить прийменник", es: "where ya incluye la preposición" } }
+          - { level: B1, wrong: "My uncle, that lives in Leeds, is a doctor.", right: ["My uncle, ", { target: who }, " lives in Leeds, is a doctor."], rule: { en: non-defining clauses use who or which, uk: "необмежувальні речення вживаються з who або which", es: "las oraciones explicativas usan who o which" } }
+          - { level: B1, wrong: The film that I saw it was long., right: The film that I saw was long., rule: { en: the pronoun stands for the object, uk: "займенник замінює додаток", es: "el pronombre sustituye al objeto" } }
+          - { level: B1, wrong: I know a man lives in Paris., right: ["I know a man ", { target: who }, " lives in Paris."], rule: { en: a subject pronoun stays, uk: "займенник-підмет не опускається", es: "el pronombre sujeto no se omite" } }
+          - { level: B1, wrong: ["Paris, which I visited it in ", { date: May, value: "--05" }, ", is beautiful."], right: ["Paris, which I visited in ", { date: May, value: "--05" }, ", is beautiful."], rule: { en: which stands for the object, uk: "which замінює додаток", es: "which sustituye al objeto" } }
+          - { level: B1, wrong: ["Paris which I visited in ", { date: May, value: "--05" }, " is beautiful."], right: ["Paris, which I visited in ", { date: May, value: "--05" }, ", is beautiful."], rule: { en: non-defining clauses need commas, uk: "необмежувальні речення потребують ком", es: "las oraciones explicativas llevan comas" } }

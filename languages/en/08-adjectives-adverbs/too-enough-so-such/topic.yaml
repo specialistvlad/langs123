@@ -5,81 +5,95 @@ kind: grammar
 tags: [adjectives, adverbs, degree]
 concepts: [degree]
 related: [en.adjectives-adverbs.comparatives-superlatives, en.adjectives-adverbs.adjective-order, en.nouns-determiners.quantifiers-some-any-much-many]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "Too, Enough, So and Such" }
+title: { en: "Too, Enough, So and Such", uk: "Too, enough, so і such", es: "Too, enough, so y such" }
 summary:
-  lead: { en: "Too, enough, so and such say how much of a quality: too hot, hot enough, so hot, such a hot day." }
-  rule: { en: "Enough follows the adjective, so goes with an adjective and such with a noun:" }
+  lead:
+    en: "Too, enough, so and such say how much of a quality: too hot, hot enough, so hot, such a hot day."
+    uk: "Too, enough, so і such показують міру якості: too hot, hot enough, so hot, such a hot day."
+    es: "Too, enough, so y such indican el grado de una cualidad: too hot, hot enough, so hot, such a hot day."
+  rule:
+    en: "Enough follows the adjective, so goes with an adjective and such with a noun:"
+    uk: "Enough стоїть після прикметника, so вживається з прикметником, а such — з іменником:"
+    es: "Enough va después del adjetivo, so se usa con un adjetivo y such con un sustantivo:"
   ex: { examples: [["big ", { target: enough }], [{ target: so }, " nice"], [{ target: such a }, " nice day."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: B1, point: { pattern: [too, { alternatives: [adjective, adverb] }] }, rule: { en: ["more than is good; the result follows with ", { pattern: [to, { slot: V }] }] }, ex: ["The box is ", { target: too }, " heavy ", { target: for me to }, " lift."] }
-        - { level: B1, point: { alternatives: [{ pattern: [{ slot: adjective }, enough] }, { pattern: [enough, { slot: noun }] }] }, rule: { en: enough follows an adjective and comes before a noun }, ex: { examples: [["She is old ", { target: enough }, " to drive."], ["We have ", { target: enough }, " chairs."]] } }
-        - { level: B1, point: { pattern: [so, { alternatives: [adjective, adverb] }] }, rule: { en: ["the result follows with ", { term: that }] }, ex: ["I was ", { target: so }, " tired ", { target: that }, " I fell asleep."] }
-        - { level: B1, point: { alternatives: [{ pattern: [such a, { slot: adjective }, { slot: singular noun }] }, { pattern: [such, { slot: adjective }, { slot: plural noun }] }] }, rule: { en: "such goes with a noun, so with an adjective or adverb" }, ex: { examples: [["It's ", { target: such a }, " good film."], ["They are ", { target: such }, " nice people."]] } }
-        - { level: B1, point: { en: Trap }, rule: { en: { pattern: [not, { slot: adjective }, enough] } }, ex: ["The room is ", { target: not big enough }, "."] }
-        - { level: B1, point: { en: Trap }, rule: { en: { pattern: [so many, { slot: plural noun }] } }, ex: ["I have ", { target: so many }, " friends."] }
+        - { level: B1, point: { pattern: [too, { alternatives: [adjective, adverb] }] }, rule: { en: ["more than is good; the result follows with ", { pattern: [to, { slot: V }] }], uk: ["більше, ніж треба; результат вводить ", { pattern: [to, { slot: V }] }], es: ["más de lo conveniente; el resultado sigue con ", { pattern: [to, { slot: V }] }] }, ex: ["The box is ", { target: too }, " heavy ", { target: for me to }, " lift."], tr: { uk: "Коробка надто важка, щоб я міг її підняти.", es: "La caja es demasiado pesada para que yo la levante." } }
+        - { level: B1, point: { alternatives: [{ pattern: [{ slot: adjective }, enough] }, { pattern: [enough, { slot: noun }] }] }, rule: { en: enough follows an adjective and comes before a noun, uk: "enough стоїть після прикметника й перед іменником", es: "enough va después del adjetivo y antes del sustantivo" }, ex: { examples: [["She is old ", { target: enough }, " to drive."], ["We have ", { target: enough }, " chairs."]] }, tr: { uk: { examples: ["Вона достатньо доросла, щоб водити машину.", "У нас достатньо стільців."] }, es: { examples: ["Ella tiene edad suficiente para conducir.", "Tenemos suficientes sillas."] } } }
+        - { level: B1, point: { pattern: [so, { alternatives: [adjective, adverb] }] }, rule: { en: ["the result follows with ", { term: that }], uk: ["результат вводить ", { term: that }], es: ["el resultado sigue con ", { term: that }] }, ex: ["I was ", { target: so }, " tired ", { target: that }, " I fell asleep."], tr: { uk: "Я так втомився, що заснув.", es: "Estaba tan cansado que me quedé dormido." } }
+        - { level: B1, point: { alternatives: [{ pattern: [such a, { slot: adjective }, { slot: singular noun }] }, { pattern: [such, { slot: adjective }, { slot: plural noun }] }] }, rule: { en: "such goes with a noun, so with an adjective or adverb", uk: "such вживається з іменником, so — з прикметником чи прислівником", es: "such va con un sustantivo, so con un adjetivo o adverbio" }, ex: { examples: [["It's ", { target: such a }, " good film."], ["They are ", { target: such }, " nice people."]] }, tr: { uk: { examples: ["Це такий хороший фільм.", "Вони такі приємні люди."] }, es: { examples: ["Es una película tan buena.", "Son personas tan simpáticas."] } } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: { pattern: [not, { slot: adjective }, enough] }, uk: { pattern: [not, { slot: adjective }, enough] }, es: { pattern: [not, { slot: adjective }, enough] } }, ex: ["The room is ", { target: not big enough }, "."], tr: { uk: "Кімната недостатньо велика.", es: "La habitación no es lo bastante grande." } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: { pattern: [so many, { slot: plural noun }] }, uk: { pattern: [so many, { slot: plural noun }] }, es: { pattern: [so many, { slot: plural noun }] } }, ex: ["I have ", { target: so many }, " friends."], tr: { uk: "У мене так багато друзів.", es: "Tengo tantos amigos." } }
 
 sections:
-  - title: { en: "Form: too and enough" }
+  - title: { en: "Form: too and enough", uk: "Форма: too і enough", es: "Forma: too y enough" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, pattern: { pattern: [too, { alternatives: [adjective, adverb] }] }, ex: ["This coffee is ", { target: too }, " hot."] }
-          - { level: B1, pattern: { pattern: [too, { slot: adjective }, { optional: for person }, to, { slot: V }] }, ex: ["The box is ", { target: too }, " heavy ", { target: for me to }, " lift."] }
-          - { level: B1, pattern: { pattern: [{ alternatives: [too much, too many] }, { slot: noun }] }, ex: ["There are ", { target: too many }, " people."] }
-          - { level: B1, pattern: { pattern: [{ alternatives: [adjective, adverb] }, enough] }, ex: ["She is old ", { target: enough }, " to drive."] }
-          - { level: B1, pattern: { pattern: [enough, { slot: noun }] }, ex: ["We have ", { target: enough }, " chairs."] }
-          - { level: B1, pattern: { pattern: [not, { slot: adjective }, enough] }, ex: ["The room isn't big ", { target: enough }, "."] }
+          - { level: B1, pattern: { pattern: [too, { alternatives: [adjective, adverb] }] }, ex: ["This coffee is ", { target: too }, " hot."], tr: { uk: "Ця кава надто гаряча.", es: "Este café está demasiado caliente." } }
+          - { level: B1, pattern: { pattern: [too, { slot: adjective }, { optional: for person }, to, { slot: V }] }, ex: ["The box is ", { target: too }, " heavy ", { target: for me to }, " lift."], tr: { uk: "Коробка надто важка, щоб я міг її підняти.", es: "La caja es demasiado pesada para que yo la levante." } }
+          - { level: B1, pattern: { pattern: [{ alternatives: [too much, too many] }, { slot: noun }] }, ex: ["There are ", { target: too many }, " people."], tr: { uk: "Тут надто багато людей.", es: "Hay demasiadas personas." } }
+          - { level: B1, pattern: { pattern: [{ alternatives: [adjective, adverb] }, enough] }, ex: ["She is old ", { target: enough }, " to drive."], tr: { uk: "Вона достатньо доросла, щоб водити машину.", es: "Ella tiene edad suficiente para conducir." } }
+          - { level: B1, pattern: { pattern: [enough, { slot: noun }] }, ex: ["We have ", { target: enough }, " chairs."], tr: { uk: "У нас достатньо стільців.", es: "Tenemos suficientes sillas." } }
+          - { level: B1, pattern: { pattern: [not, { slot: adjective }, enough] }, ex: ["The room isn't big ", { target: enough }, "."], tr: { uk: "Кімната недостатньо велика.", es: "La habitación no es lo bastante grande." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: too }, " means more than is good. It has a negative result."]
+              uk: [{ term: too }, " означає більше, ніж треба. Результат негативний."]
+              es: [{ term: too }, " significa más de lo conveniente. Tiene un resultado negativo."]
           - type: rule
             level: B1
             text:
               en: [{ term: enough }, " follows an adjective or adverb and comes before a noun."]
+              uk: [{ term: enough }, " стоїть після прикметника чи прислівника й перед іменником."]
+              es: [{ term: enough }, " va después de un adjetivo o adverbio y antes de un sustantivo."]
 
-  - title: { en: "Form: so and such" }
+  - title: { en: "Form: so and such", uk: "Форма: so і such", es: "Forma: so y such" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, pattern: { pattern: [so, { slot: adjective }] }, ex: ["The film is ", { target: so }, " good."] }
-          - { level: B1, pattern: { pattern: [so, { slot: adverb }] }, ex: ["He speaks ", { target: so }, " quickly."] }
-          - { level: B1, pattern: { pattern: [{ alternatives: [so many, so much] }, { slot: noun }] }, ex: ["I have ", { target: so many }, " friends."] }
-          - { level: B1, pattern: { pattern: [{ alternatives: [such a, an] }, { slot: adjective }, { slot: singular noun }] }, ex: ["It's ", { target: such a }, " good film."] }
-          - { level: B1, pattern: { pattern: [such, { slot: adjective }, [{ alternatives: [plural, uncountable] }, " noun"]] }, ex: ["They are ", { target: such }, " nice people."] }
-          - { level: B1, pattern: { pattern: [{ alternatives: [so, ["such ", { gap: true }, " that"]] }, { slot: result }] }, ex: ["I was ", { target: so }, " tired ", { target: that }, " I fell asleep."] }
+          - { level: B1, pattern: { pattern: [so, { slot: adjective }] }, ex: ["The film is ", { target: so }, " good."], tr: { uk: "Фільм такий гарний.", es: "La película es tan buena." } }
+          - { level: B1, pattern: { pattern: [so, { slot: adverb }] }, ex: ["He speaks ", { target: so }, " quickly."], tr: { uk: "Він говорить так швидко.", es: "Habla tan rápido." } }
+          - { level: B1, pattern: { pattern: [{ alternatives: [so many, so much] }, { slot: noun }] }, ex: ["I have ", { target: so many }, " friends."], tr: { uk: "У мене так багато друзів.", es: "Tengo tantos amigos." } }
+          - { level: B1, pattern: { pattern: [{ alternatives: [such a, an] }, { slot: adjective }, { slot: singular noun }] }, ex: ["It's ", { target: such a }, " good film."], tr: { uk: "Це такий хороший фільм.", es: "Es una película tan buena." } }
+          - { level: B1, pattern: { pattern: [such, { slot: adjective }, [{ alternatives: [plural, uncountable] }, " noun"]] }, ex: ["They are ", { target: such }, " nice people."], tr: { uk: "Вони такі приємні люди.", es: "Son personas tan simpáticas." } }
+          - { level: B1, pattern: { pattern: [{ alternatives: [so, ["such ", { gap: true }, " that"]] }, { slot: result }] }, ex: ["I was ", { target: so }, " tired ", { target: that }, " I fell asleep."], tr: { uk: "Я так втомився, що заснув.", es: "Estaba tan cansado que me quedé dormido." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: such }, " goes with a noun: such a day. ", { term: so }, " goes with an adjective or adverb: so hot."]
+              uk: [{ term: such }, " вживається з іменником: such a day. ", { term: so }, " вживається з прикметником або прислівником: so hot."]
+              es: [{ term: such }, " va con un sustantivo: such a day. ", { term: so }, " va con un adjetivo o adverbio: so hot."]
           - type: rule
             level: B1
             text:
               en: [{ alternatives: [{ term: a }, { term: an }] }, " comes after such: such ", { term: a }, " big house."]
+              uk: [{ alternatives: [{ term: a }, { term: an }] }, " стоїть після such: such ", { term: a }, " big house."]
+              es: [{ alternatives: [{ term: a }, { term: an }] }, " va después de such: such ", { term: a }, " big house."]
 
-  - title: { en: "Compare: very and too" }
+  - title: { en: "Compare: very and too", uk: "Порівняння: very і too", es: "Comparación: very y too" }
     role: compare
     content:
       - type: comparison
@@ -87,14 +101,14 @@ sections:
           - { key: very, label: very }
           - { key: too, label: too }
         rows:
-          - { level: B1, very: { en: "a high degree, no problem" }, too: { en: "more than is good, a problem" } }
-          - { level: B1, very: ["It's ", { target: very }, " hot, but I like it."], too: ["It's ", { target: too }, " hot. I can't sit outside."] }
-          - { level: B1, very: ["The bag is ", { target: very }, " heavy, but I can lift it."], too: ["The bag is ", { target: too }, " heavy to lift."] }
+          - { level: B1, very: { en: "a high degree, no problem", uk: "висока міра, проблеми немає", es: "un grado alto, sin problema" }, too: { en: "more than is good, a problem", uk: "більше, ніж треба, і це проблема", es: "más de lo conveniente, un problema" } }
+          - { level: B1, very: { ex: ["It's ", { target: very }, " hot, but I like it."], tr: { uk: "Дуже спекотно, але мені подобається.", es: "Hace mucho calor, pero me gusta." } }, too: { ex: ["It's ", { target: too }, " hot. I can't sit outside."], tr: { uk: "Надто спекотно. Я не можу сидіти надворі.", es: "Hace demasiado calor. No puedo estar fuera." } } }
+          - { level: B1, very: { ex: ["The bag is ", { target: very }, " heavy, but I can lift it."], tr: { uk: "Сумка дуже важка, але я можу її підняти.", es: "La bolsa es muy pesada, pero puedo levantarla." } }, too: { ex: ["The bag is ", { target: too }, " heavy to lift."], tr: { uk: "Сумка надто важка, щоб її підняти.", es: "La bolsa es demasiado pesada para levantarla." } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: B1, wrong: The room is not enough big., right: ["The room is ", { target: not big enough }, "."], rule: { en: { pattern: [not, { slot: adjective }, enough] } } }
-          - { level: B1, wrong: I have so much friends., right: ["I have ", { target: so many }, " friends."], rule: { en: { pattern: [many, { slot: plural noun }] } } }
+          - { level: B1, wrong: The room is not enough big., right: ["The room is ", { target: not big enough }, "."], rule: { en: { pattern: [not, { slot: adjective }, enough] }, uk: { pattern: [not, { slot: adjective }, enough] }, es: { pattern: [not, { slot: adjective }, enough] } } }
+          - { level: B1, wrong: I have so much friends., right: ["I have ", { target: so many }, " friends."], rule: { en: { pattern: [many, { slot: plural noun }] }, uk: { pattern: [many, { slot: plural noun }] }, es: { pattern: [many, { slot: plural noun }] } } }

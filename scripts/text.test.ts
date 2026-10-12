@@ -72,6 +72,11 @@ describe("every mark reads as its text", () => {
     const named = new Set(cases.map(([m]) => markName(m)));
     expect([...MARKS].filter((n) => !named.has(n))).toEqual([]);
   });
+  test("a slot code reads in the reader's language; V and its forms read as written", () => {
+    expect(plainText({ pattern: [{ slot: "subject" }, "can", { slot: "V" }] }, reading("uk", true))).toBe("підмет + can + V");
+    expect(plainText({ pattern: [{ slot: "subject" }, "can", { slot: "V" }] }, reading("es", true))).toBe("sujeto + can + V");
+    expect(read({ pattern: [{ slot: "subject" }, "can", { slot: "V" }] })).toBe("subject + can + V");
+  });
   test("a mark names one thing; anything else is not a mark", () => {
     expect(markName({ date: "July", value: "--07" })).toBe("date");
     expect(() => markName({ bold: "x" } as unknown as Mark)).toThrow("Not a mark");

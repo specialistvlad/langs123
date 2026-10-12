@@ -3,7 +3,7 @@
 import { describe, expect, test } from "bun:test";
 import Ajv from "ajv";
 import { join } from "node:path";
-import { CONTENT, type Localized, type Text, type Topic } from "../lib.ts";
+import { CONTENT, EXPLAIN_CODES, type Localized, type Text, type Topic } from "../lib.ts";
 import { problemsAfter, SAMPLE, sampleBlocks } from "../sample-topic.ts";
 import { links } from "./notation.ts";
 import { checkSummary } from "./topic-summary.ts";
@@ -55,7 +55,7 @@ describe("the topic template", () => {
       .replaceAll('"{A1}"', "A1")
       .replaceAll('"{A2}"', "A2")
       .replace('"{lang}.{section}.{topic}"', "en.section.topic")
-      .replace('"{en.section.topic}"', "en.section.topic");
+      .replaceAll('"{en.section.topic}"', "en.section.topic");
     const schema = (await Bun.file(join(CONTENT, "schema", "topic.schema.json")).json()) as object;
     const validate = new Ajv({ allErrors: true, strict: true }).compile(schema);
     const topic = Bun.YAML.parse(filled) as Topic;
@@ -83,7 +83,14 @@ describe("every place a localized value sits carries each explanation language i
     ["sections[0].content[2].rows[0].tr", (t) => void Object.assign(entry(t, 2, "rows"), { tr: none })],
   ];
   test.each(places)("%s", (path, change) => {
-    expect(problems(change)).toContain(`${path} has no "en" text`);
+    // A translation carries every explanation language but the language being learned.
+    const langs = path.endsWith(".tr") ? EXPLAIN_CODES.filter((l) => l !== "en") : EXPLAIN_CODES;
+    expect(problems(change)).toEqual(langs.map((l) => `${path} has no "${l}" text`));
+  });
+  test("a translation into the language being learned is left out", () => {
+    expect(problems((t) => void Object.assign(block(t, 0), { tr: { en: "Prose tr." } }))).toEqual(
+      EXPLAIN_CODES.filter((l) => l !== "en").map((l) => `sections[0].content[0].tr has no "${l}" text`),
+    );
   });
   test("a section, a row or an error row for other readers needs only theirs", () => {
     expect(problems((t) => void Object.assign(t.sections[0] as object, { readers: [], title: none }))).toEqual([]);

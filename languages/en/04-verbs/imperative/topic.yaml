@@ -5,33 +5,39 @@ kind: grammar
 tags: [verbs, imperative, instructions]
 concepts: [imperative]
 related: [en.verbs.to-be, en.tenses.simple-tenses, en.modals.can-could, en.sentence-building.questions-negatives, en.prepositions.place-movement]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Imperative }
+title: { en: Imperative, uk: Наказовий спосіб, es: El imperativo }
 summary:
-  lead: { en: "The imperative gives instructions, directions, invitations and warnings with the base verb, Don't and Let's." }
-  rule: { en: "The verb is the bare base form with no subject and no to:" }
+  lead:
+    en: "The imperative gives instructions, directions, invitations and warnings with the base verb, Don't and Let's."
+    uk: "Наказовий спосіб дає інструкції, вказівки, запрошення й застереження за допомогою початкової форми дієслова, Don't і Let's."
+    es: "El imperativo da instrucciones, indicaciones, invitaciones y advertencias con la forma base del verbo, Don't y Let's."
+  rule:
+    en: "The verb is the bare base form with no subject and no to:"
+    uk: "Дієслово стоїть у початковій формі, без підмета й без to:"
+    es: "El verbo va en la forma base, sin sujeto y sin to:"
   ex: { examples: [[{ target: Open }, " the door."], [{ target: Don't open }, " it."], { target: Let's go. }] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Affirmative }, rule: { en: "the base verb for every person, with no subject and no -s" }, ex: [{ target: Open }, " the door."] }
-        - { level: A1, point: { en: Negative }, rule: { en: [{ pattern: [Don't, { slot: V }] }, ", also before ", { term: be }] }, ex: [{ target: Don't be }, " late."] }
-        - { level: A1, point: { en: Suggestion }, rule: { en: [{ pattern: [Let's, { slot: V }] }, ": includes the speaker, invites others to join"] }, ex: [{ target: Let's go }, " to the beach."] }
-        - { level: A1, point: { en: Negative suggestion }, rule: { en: { pattern: [Let's not, { slot: V }] } }, ex: { target: Let's not wait. } }
-        - { level: A1, point: { en: Use }, rule: { en: "instructions, directions, orders" }, ex: [{ target: Turn }, " left and ", { target: go straight on }, "."] }
-        - { level: A1, point: { en: Use }, rule: { en: "invitations, offers, warnings" }, ex: { examples: [[{ target: Come }, " in."], { target: Look out! }] } }
-        - { level: A1, point: { en: Politeness }, rule: { en: [{ term: please }, " at the start or the end makes a request friendly"] }, ex: [{ target: Please }, " sit down."] }
-        - { level: A1, point: { en: Trap }, rule: { en: ["after ", { term: Don't }, " and ", { term: Let's }, ": the base verb, no ", { term: to }] }, ex: { examples: [["Don't ", { target: open }, " it."], ["Let's ", { target: go }, "."]] } }
+        - { level: A1, point: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, rule: { en: "the base verb for every person, with no subject and no -s", uk: "початкова форма для всіх осіб, без підмета й без -s", es: "la forma base para todas las personas, sin sujeto y sin -s" }, ex: [{ target: Open }, " the door."], tr: { uk: "Відчини двері.", es: "Abre la puerta." } }
+        - { level: A1, point: { en: Negative, uk: "Заперечення", es: "Negación" }, rule: { en: [{ pattern: [Don't, { slot: V }] }, ", also before ", { term: be }], uk: [{ pattern: [Don't, { slot: V }] }, ", також перед ", { term: be }], es: [{ pattern: [Don't, { slot: V }] }, ", también delante de ", { term: be }] }, ex: [{ target: Don't be }, " late."], tr: { uk: "Не запізнюйся.", es: "No llegues tarde." } }
+        - { level: A1, point: { en: Suggestion, uk: "Пропозиція", es: "Sugerencia" }, rule: { en: [{ pattern: [Let's, { slot: V }] }, ": includes the speaker, invites others to join"], uk: [{ pattern: [Let's, { slot: V }] }, ": включає мовця, запрошує інших приєднатися"], es: [{ pattern: [Let's, { slot: V }] }, ": incluye al hablante, invita a otros a unirse"] }, ex: [{ target: Let's go }, " to the beach."], tr: { uk: "Ходімо на пляж.", es: "Vamos a la playa." } }
+        - { level: A1, point: { en: Negative suggestion, uk: "Заперечна пропозиція", es: "Sugerencia negativa" }, rule: { en: { pattern: [Let's not, { slot: V }] }, uk: { pattern: [Let's not, { slot: V }] }, es: { pattern: [Let's not, { slot: V }] } }, ex: { target: Let's not wait. }, tr: { uk: "Не чекаймо.", es: "No esperemos." } }
+        - { level: A1, point: { en: Use, uk: "Вживання", es: "Uso" }, rule: { en: "instructions, directions, orders", uk: "інструкції, вказівки, накази", es: "instrucciones, indicaciones, órdenes" }, ex: [{ target: Turn }, " left and ", { target: go straight on }, "."], tr: { uk: "Поверни ліворуч і йди прямо.", es: "Gira a la izquierda y sigue recto." } }
+        - { level: A1, point: { en: Use, uk: "Вживання", es: "Uso" }, rule: { en: "invitations, offers, warnings", uk: "запрошення, пропозиції, застереження", es: "invitaciones, ofrecimientos, advertencias" }, ex: { examples: [[{ target: Come }, " in."], { target: Look out! }] }, tr: { uk: { examples: ["Заходь.", "Обережно!"] }, es: { examples: ["Pasa.", "¡Cuidado!"] } } }
+        - { level: A1, point: { en: Politeness, uk: "Ввічливість", es: "Cortesía" }, rule: { en: [{ term: please }, " at the start or the end makes a request friendly"], uk: [{ term: please }, " на початку або в кінці робить прохання дружнім"], es: [{ term: please }, " al principio o al final hace amable la petición"] }, ex: [{ target: Please }, " sit down."], tr: { uk: "Сідай, будь ласка.", es: "Siéntate, por favor." } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["after ", { term: Don't }, " and ", { term: Let's }, ": the base verb, no ", { term: to }], uk: ["після ", { term: Don't }, " і ", { term: Let's }, ": початкова форма, без ", { term: to }], es: ["después de ", { term: Don't }, " y ", { term: Let's }, ": la forma base, sin ", { term: to }] }, ex: { examples: [["Don't ", { target: open }, " it."], ["Let's ", { target: go }, "."]] }, tr: { uk: { examples: ["Не відчиняй його.", "Ходімо."] }, es: { examples: ["No lo abras.", "Vamos."] } } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -40,126 +46,146 @@ sections:
             level: A1
             text:
               en: The imperative has no subject and no tense. The verb is in the base form.
+              uk: "Наказовий спосіб не має ні підмета, ні часу. Дієслово стоїть у початковій формі."
+              es: "El imperativo no tiene sujeto ni tiempo. El verbo va en la forma base."
 
-  - title: { en: "Form: affirmative" }
+  - title: { en: "Form: affirmative", uk: "Форма: ствердження", es: "Forma: afirmativa" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Verb } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, verb: { en: action verb }, ex: { examples: [[{ target: Sit }, " down."], [{ target: Close }, " your books."]] } }
-          - { level: A1, verb: be, ex: { examples: [[{ target: Be }, " quiet."], [{ target: Be }, " careful."]] } }
+          - { level: A1, verb: { en: action verb, uk: "дієслово дії", es: "verbo de acción" }, ex: { examples: [[{ target: Sit }, " down."], [{ target: Close }, " your books."]] }, tr: { uk: { examples: ["Сідай.", "Закрийте книжки."] }, es: { examples: ["Siéntate.", "Cierren los libros."] } } }
+          - { level: A1, verb: be, ex: { examples: [[{ target: Be }, " quiet."], [{ target: Be }, " careful."]] }, tr: { uk: { examples: ["Тихо.", "Будь обережний."] }, es: { examples: ["Silencio.", "Ten cuidado."] } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "The imperative is the base verb for every person:"
+              uk: "Наказовий спосіб — це початкова форма дієслова для всіх осіб:"
+              es: "El imperativo es la forma base del verbo para todas las personas:"
             ex: { examples: [[{ target: Come }, " in."], [{ target: Be }, " quiet."]] }
+            tr: { uk: { examples: ["Заходь.", "Тихо."] }, es: { examples: ["Pasa.", "Silencio."] } }
           - type: rule
             level: A1
             text:
               en: ["A name or ", { term: everybody }, " opens the sentence to say who is spoken to:"]
+              uk: ["Ім’я або ", { term: everybody }, " на початку речення показує, до кого звертаються:"]
+              es: ["Un nombre o ", { term: everybody }, " al principio de la oración indica a quién se habla:"]
             ex: { examples: [[{ target: "Tom, come" }, " here."], { target: "Everybody, listen." }] }
+            tr: { uk: { examples: ["Томе, іди сюди.", "Усі, слухайте."] }, es: { examples: ["Tom, ven aquí.", "Todos, escuchen."] } }
 
-  - title: { en: "Form: negative" }
+  - title: { en: "Form: negative", uk: "Форма: заперечення", es: "Forma: negativa" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, pattern: { pattern: [Don't, { slot: V }] }, ex: [{ target: Don't touch }, " it."] }
-          - { level: A1, pattern: { pattern: [Don't be, { slot: adjective }] }, ex: [{ target: Don't be }, " late."] }
-          - { level: A1, pattern: { pattern: [Do not, { slot: V }] }, ex: { target: Do not enter. } }
+          - { level: A1, pattern: { pattern: [Don't, { slot: V }] }, ex: [{ target: Don't touch }, " it."], tr: { uk: "Не чіпай це.", es: "No lo toques." } }
+          - { level: A1, pattern: { pattern: [Don't be, { slot: adjective }] }, ex: [{ target: Don't be }, " late."], tr: { uk: "Не запізнюйся.", es: "No llegues tarde." } }
+          - { level: A1, pattern: { pattern: [Do not, { slot: V }] }, ex: { target: Do not enter. }, tr: { uk: "Не входити.", es: "No entrar." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: Don't }, " goes before the base verb, also before ", { term: be }, "."]
+              uk: [{ term: Don't }, " стоїть перед початковою формою дієслова, також перед ", { term: be }, "."]
+              es: [{ term: Don't }, " va delante de la forma base, también delante de ", { term: be }, "."]
           - type: rule
             level: A1
             text:
               en: [{ term: Do not }, " is the full form. Signs and notices use it."]
+              uk: [{ term: Do not }, " — повна форма. Її вживають на табличках і в оголошеннях."]
+              es: [{ term: Do not }, " es la forma completa. Se usa en carteles y avisos."]
 
-  - title: { en: "Form: Let's" }
+  - title: { en: "Form: Let's", uk: "Форма: Let's", es: "Forma: Let's" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, pattern: { pattern: [Let's, { slot: V }] }, ex: [{ target: Let's go }, " to the beach."] }
-          - { level: A1, pattern: { pattern: [Let's not, { slot: V }] }, ex: { target: Let's not wait. } }
-          - { level: A1, pattern: { pattern: [Shall we, [{ slot: V }, "?"]] }, ex: [{ target: Shall we eat }, " now?"] }
+          - { level: A1, pattern: { pattern: [Let's, { slot: V }] }, ex: [{ target: Let's go }, " to the beach."], tr: { uk: "Ходімо на пляж.", es: "Vamos a la playa." } }
+          - { level: A1, pattern: { pattern: [Let's not, { slot: V }] }, ex: { target: Let's not wait. }, tr: { uk: "Не чекаймо.", es: "No esperemos." } }
+          - { level: A1, pattern: { pattern: [Shall we, [{ slot: V }, "?"]] }, ex: [{ target: Shall we eat }, " now?"], tr: { uk: "Може, поїмо зараз?", es: "¿Comemos ya?" } }
       - type: usage
         columns:
-          - { key: answer, label: { en: Answer } }
-          - { key: ex, label: { en: Example } }
+          - { key: answer, label: { en: Answer, uk: "Відповідь", es: "Respuesta" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, answer: { en: agree }, ex: { examples: [["Yes, ", { target: let's }, "."], Good idea.] } }
-          - { level: A1, answer: { en: refuse }, ex: { examples: [["No, ", { target: let's not }, "."], "Sorry, I can't."] } }
+          - { level: A1, answer: { en: agree, uk: "згода", es: "aceptar" }, ex: { examples: [["Yes, ", { target: let's }, "."], Good idea.] }, tr: { uk: { examples: ["Так, давай.", "Гарна ідея."] }, es: { examples: ["Sí, vamos.", "Buena idea."] } } }
+          - { level: A1, answer: { en: refuse, uk: "відмова", es: "rechazar" }, ex: { examples: [["No, ", { target: let's not }, "."], "Sorry, I can't."] }, tr: { uk: { examples: ["Ні, не треба.", "Вибач, я не можу."] }, es: { examples: ["No, mejor no.", "Lo siento, no puedo."] } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: Let's }, " = ", { term: let us }, . It includes the speaker and invites others to join.]
+              uk: [{ term: Let's }, " = ", { term: let us }, ". Ця форма включає мовця й запрошує інших приєднатися."]
+              es: [{ term: Let's }, " = ", { term: let us }, ". Incluye al hablante e invita a otros a unirse."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: Instructions }, ex: [{ target: Add }, " two eggs and ", { target: mix }, " well."] }
-          - { level: A1, use: { en: Directions }, ex: [{ target: Turn }, " left and ", { target: go straight on }, ". ", { variant: { target: go straight }, variety: en-US }] }
-          - { level: A1, use: { en: Invitations and offers }, ex: [{ target: Come }, " in. ", { target: Have }, " a seat."] }
-          - { level: A1, use: { en: Warnings }, ex: { examples: [{ target: Look out! }, [{ target: Be }, " careful!"]] } }
-          - { level: A1, use: { en: Orders }, ex: { examples: [{ target: Stop! }, [{ target: Listen }, ", please."]] } }
-          - { level: A1, use: { en: "Signs, notices" }, ex: [{ target: Keep }, " off the grass."] }
+          - { level: A1, use: { en: Instructions, uk: "Інструкції", es: "Instrucciones" }, ex: [{ target: Add }, " two eggs and ", { target: mix }, " well."], tr: { uk: "Додай два яйця й добре перемішай.", es: "Añade dos huevos y mezcla bien." } }
+          - { level: A1, use: { en: Directions, uk: "Як пройти", es: "Indicaciones" }, ex: [{ target: Turn }, " left and ", { target: go straight on }, ". ", { variant: { target: go straight }, variety: en-US }], tr: { uk: "Поверни ліворуч і йди прямо.", es: "Gira a la izquierda y sigue recto." } }
+          - { level: A1, use: { en: Invitations and offers, uk: "Запрошення й пропозиції", es: "Invitaciones y ofrecimientos" }, ex: [{ target: Come }, " in. ", { target: Have }, " a seat."], tr: { uk: "Заходь. Сідай.", es: "Pasa. Siéntate." } }
+          - { level: A1, use: { en: Warnings, uk: "Застереження", es: "Advertencias" }, ex: { examples: [{ target: Look out! }, [{ target: Be }, " careful!"]] }, tr: { uk: { examples: ["Обережно!", "Будь обережний!"] }, es: { examples: ["¡Cuidado!", "¡Ten cuidado!"] } } }
+          - { level: A1, use: { en: Orders, uk: "Накази", es: "Órdenes" }, ex: { examples: [{ target: Stop! }, [{ target: Listen }, ", please."]] }, tr: { uk: { examples: ["Стій!", "Слухай, будь ласка."] }, es: { examples: ["¡Para!", "Escucha, por favor."] } } }
+          - { level: A1, use: { en: "Signs, notices", uk: "Таблички, оголошення", es: "Carteles, avisos" }, ex: [{ target: Keep }, " off the grass."], tr: { uk: "По газону не ходити.", es: "Prohibido pisar el césped." } }
       - type: list
         items:
           - type: note
             level: A1
             text:
               en: ["For directions with place words see ", { link: Place and Movement, to: en.prepositions.place-movement }, "."]
+              uk: ["Про вказівки зі словами місця див. ", { link: "Прийменники місця й руху", to: en.prepositions.place-movement }, "."]
+              es: ["Para indicaciones con palabras de lugar, ver ", { link: "Preposiciones de lugar y movimiento", to: en.prepositions.place-movement }, "."]
 
-  - title: { en: Politeness }
+  - title: { en: Politeness, uk: "Ввічливість", es: "Cortesía" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: way, label: { en: Way } }
-          - { key: ex, label: { en: Example } }
+          - { key: way, label: { en: Way, uk: "Спосіб", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, way: { en: please at the start }, ex: [{ target: Please }, " sit down."] }
-          - { level: A1, way: { en: please at the end }, ex: ["Sit down, ", { target: please }, "."] }
-          - { level: A1, way: { en: a question with Could you… }, ex: [{ target: Could you }, " open the window, ", { target: please }, "?"] }
+          - { level: A1, way: { en: please at the start, uk: "please на початку", es: "please al principio" }, ex: [{ target: Please }, " sit down."], tr: { uk: "Сідай, будь ласка.", es: "Siéntate, por favor." } }
+          - { level: A1, way: { en: please at the end, uk: "please в кінці", es: "please al final" }, ex: ["Sit down, ", { target: please }, "."], tr: { uk: "Сідай, будь ласка.", es: "Siéntate, por favor." } }
+          - { level: A1, way: { en: a question with Could you…, uk: "питання з Could you…", es: "una pregunta con Could you…" }, ex: [{ target: Could you }, " open the window, ", { target: please }, "?"], tr: { uk: "Чи не міг би ти відчинити вікно, будь ласка?", es: "¿Podrías abrir la ventana, por favor?" } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["A bare imperative sounds direct. ", { term: please }, " makes a request friendly."]
+              uk: ["Сам наказовий спосіб звучить прямо. ", { term: please }, " робить прохання дружнім."]
+              es: ["Un imperativo solo suena directo. ", { term: please }, " hace amable la petición."]
           - type: note
             level: A1
             text:
               en: ["Requests to strangers and in formal situations use ", { term: [Could you, { gap: true }, "?"] }, " See ", { link: Can and Could, to: en.modals.can-could }, "."]
+              uk: ["У проханнях до незнайомих людей і в офіційних ситуаціях уживають ", { term: [Could you, { gap: true }, "?"] }, " Див. ", { link: "Can і could", to: en.modals.can-could }, "."]
+              es: ["En peticiones a desconocidos y en situaciones formales se usa ", { term: [Could you, { gap: true }, "?"] }, " Ver ", { link: "Can y could", to: en.modals.can-could }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: Not open the door., right: [{ target: Don't open }, " the door."], rule: { en: { takes: [negative imperative, { pattern: [Don't, { slot: V }] }] } } }
-          - { level: A1, wrong: Don't to open the door., right: ["Don't ", { target: open }, " the door."], rule: { en: { pattern: [Don't, "base verb, no to"] } } }
-          - { level: A1, wrong: Opens the door., right: [{ target: Open }, " the door."], rule: { en: the imperative has no -s } }
-          - { level: A1, wrong: Let's to go., right: ["Let's ", { target: go }, "."], rule: { en: { pattern: [Let's, "base verb, no to"] } } }
+          - { level: A1, wrong: Not open the door., right: [{ target: Don't open }, " the door."], rule: { en: { takes: [negative imperative, { pattern: [Don't, { slot: V }] }] }, uk: { takes: ["заперечний наказ", { pattern: [Don't, { slot: V }] }] }, es: { takes: ["imperativo negativo", { pattern: [Don't, { slot: V }] }] } } }
+          - { level: A1, wrong: Don't to open the door., right: ["Don't ", { target: open }, " the door."], rule: { en: { pattern: [Don't, "base verb, no to"] }, uk: { pattern: [Don't, "початкова форма, без to"] }, es: { pattern: [Don't, "forma base, sin to"] } } }
+          - { level: A1, wrong: Opens the door., right: [{ target: Open }, " the door."], rule: { en: the imperative has no -s, uk: "у наказовому способі немає -s", es: "el imperativo no lleva -s" } }
+          - { level: A1, wrong: Let's to go., right: ["Let's ", { target: go }, "."], rule: { en: { pattern: [Let's, "base verb, no to"] }, uk: { pattern: [Let's, "початкова форма, без to"] }, es: { pattern: [Let's, "forma base, sin to"] } } }

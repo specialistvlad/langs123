@@ -5,43 +5,49 @@ kind: grammar
 tags: [nouns, plural, spelling]
 concepts: [number]
 related: [en.nouns-determiners.countable-uncountable, en.nouns-determiners.articles-a-an-the, en.nouns-determiners.possessive-s, en.tenses.simple-tenses]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Plurals }
+title: { en: Plurals, uk: Множина іменників, es: El plural }
 summary:
-  lead: { en: ["Most nouns add -s (books), nouns ending in s, sh, ch or x add -es, and ", { pattern: [{ slot: consonant }, "y"] }, " becomes -ies."] }
-  rule: { en: "Irregular plurals take no -s and people takes a plural verb:" }
+  lead:
+    en: ["Most nouns add -s (books), nouns ending in s, sh, ch or x add -es, and ", { pattern: [{ slot: consonant }, "y"] }, " becomes -ies."]
+    uk: ["Більшість іменників додають -s (books), іменники на s, sh, ch або x додають -es, а ", { pattern: [{ slot: consonant }, "y"] }, " перетворюється на -ies."]
+    es: ["La mayoría de los sustantivos añaden -s (books), los terminados en s, sh, ch o x añaden -es, y ", { pattern: [{ slot: consonant }, "y"] }, " pasa a -ies."]
+  rule:
+    en: "Irregular plurals take no -s and people takes a plural verb:"
+    uk: "Неправильні форми множини не мають -s, а people вживається з дієсловом у множині:"
+    es: "Los plurales irregulares no llevan -s y people lleva el verbo en plural:"
   ex: { examples: [["three ", { target: children }], ["The ", { target: people are }, " nice."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A0, point: { en: Most nouns }, rule: { pattern: [{ ending: s }], follows: true }, ex: ["two ", { target: books }] }
-        - { level: A0, point: "-s, -ss, -sh, -ch, -x, -z", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [bus, { target: buses }] }, { mapping: [box, { target: boxes }] }] } }
-        - { level: A0, point: { en: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ies] }, ex: { mapping: [city, { target: cities }] } }
-        - { level: A0, point: { en: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: s }], follows: true }, ex: { mapping: [boy, { target: boys }] } }
-        - { level: A1, point: { en: { alternatives: ["-o", "-f", "-fe"] } }, rule: { en: [{ pattern: [some, es] }, "; ", { mapping: [{ alternatives: ["-f", "-fe"] }, ves] }] }, ex: { examples: [{ mapping: [potato, { target: potatoes }] }, { mapping: [knife, { target: knives }] }] } }
-        - { level: A0, point: { en: Irregular }, rule: { en: "no -s: man, woman, child, person" }, ex: ["three ", { target: children }] }
-        - { level: A1, point: { en: "foot, tooth, mouse" }, rule: { en: irregular }, ex: { examples: [{ target: feet }, { target: teeth }, { target: mice }] } }
-        - { level: A1, point: "jeans, trousers, glasses", rule: { en: "plural only, plural verb" }, ex: ["My jeans ", { target: are }, " new."] }
-        - { level: A1, point: { en: Sound of -s }, rule: { en: [{ ipa: s }, " after voiceless sounds, ", { ipa: z }, " after voiced sounds, ", { ipa: ɪz }, " after ", { ipa: s z ʃ tʃ dʒ }] }, ex: { examples: [["cups ", { target: { ipa: kʌps } }], ["dogs ", { target: { ipa: dɒɡz } }], ["buses ", { target: { ipa: ˈbʌsɪz } }]] } }
-        - { level: A0, point: { en: Trap }, rule: { en: "people takes a plural verb" }, ex: ["The people ", { target: are }, " nice."] }
-        - { level: A1, point: { en: Trap }, rule: { en: "sheep and fish keep one form" }, ex: ["two ", { target: sheep }] }
+        - { level: A0, point: { en: Most nouns, uk: "Більшість іменників", es: "La mayoría de los sustantivos" }, rule: { pattern: [{ ending: s }], follows: true }, ex: ["two ", { target: books }], tr: { uk: "дві книги", es: "dos libros" } }
+        - { level: A0, point: "-s, -ss, -sh, -ch, -x, -z", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [bus, { target: buses }] }, { mapping: [box, { target: boxes }] }] }, tr: { uk: { examples: ["автобуси", "коробки"] }, es: { examples: ["autobuses", "cajas"] } } }
+        - { level: A0, point: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ies] }, ex: { mapping: [city, { target: cities }] }, tr: { uk: "міста", es: "ciudades" } }
+        - { level: A0, point: { en: { pattern: [{ slot: vowel }, "y"] }, uk: { pattern: [{ slot: vowel }, "y"] }, es: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: s }], follows: true }, ex: { mapping: [boy, { target: boys }] }, tr: { uk: "хлопці", es: "chicos" } }
+        - { level: A1, point: { en: { alternatives: ["-o", "-f", "-fe"] }, uk: { alternatives: ["-o", "-f", "-fe"] }, es: { alternatives: ["-o", "-f", "-fe"] } }, rule: { en: [{ pattern: [some, es] }, "; ", { mapping: [{ alternatives: ["-f", "-fe"] }, ves] }], uk: [{ pattern: ["деякі", es] }, "; ", { mapping: [{ alternatives: ["-f", "-fe"] }, ves] }], es: [{ pattern: ["algunos", es] }, "; ", { mapping: [{ alternatives: ["-f", "-fe"] }, ves] }] }, ex: { examples: [{ mapping: [potato, { target: potatoes }] }, { mapping: [knife, { target: knives }] }] }, tr: { uk: { examples: ["картопля", "ножі"] }, es: { examples: ["papas", "cuchillos"] } } }
+        - { level: A0, point: { en: Irregular, uk: "Неправильні форми", es: "Irregulares" }, rule: { en: "no -s: man, woman, child, person", uk: "без -s: man, woman, child, person", es: "sin -s: man, woman, child, person" }, ex: ["three ", { target: children }], tr: { uk: "троє дітей", es: "tres niños" } }
+        - { level: A1, point: { en: "foot, tooth, mouse", uk: "foot, tooth, mouse", es: "foot, tooth, mouse" }, rule: { en: irregular, uk: "неправильні форми", es: "formas irregulares" }, ex: { examples: [{ target: feet }, { target: teeth }, { target: mice }] }, tr: { uk: { examples: ["ноги", "зуби", "миші"] }, es: { examples: ["pies", "dientes", "ratones"] } } }
+        - { level: A1, point: "jeans, trousers, glasses", rule: { en: "plural only, plural verb", uk: "лише множина, дієслово в множині", es: "solo plural, verbo en plural" }, ex: ["My jeans ", { target: are }, " new."], tr: { uk: "Мої джинси нові.", es: "Mis jeans son nuevos." } }
+        - { level: A1, point: { en: Sound of -s, uk: "Вимова закінчення -s", es: "Pronunciación de -s" }, rule: { en: [{ ipa: s }, " after voiceless sounds, ", { ipa: z }, " after voiced sounds, ", { ipa: ɪz }, " after ", { ipa: s z ʃ tʃ dʒ }], uk: [{ ipa: s }, " після глухих звуків, ", { ipa: z }, " після дзвінких звуків, ", { ipa: ɪz }, " після ", { ipa: s z ʃ tʃ dʒ }], es: [{ ipa: s }, " después de sonidos sordos, ", { ipa: z }, " después de sonidos sonoros, ", { ipa: ɪz }, " después de ", { ipa: s z ʃ tʃ dʒ }] }, ex: { examples: [["cups ", { target: { ipa: kʌps } }], ["dogs ", { target: { ipa: dɒɡz } }], ["buses ", { target: { ipa: ˈbʌsɪz } }]] }, tr: { uk: { examples: ["чашки", "собаки", "автобуси"] }, es: { examples: ["tazas", "perros", "autobuses"] } } }
+        - { level: A0, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "people takes a plural verb", uk: "people вживається з дієсловом у множині", es: "people lleva el verbo en plural" }, ex: ["The people ", { target: are }, " nice."], tr: { uk: "Ці люди приємні.", es: "La gente es amable." } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "sheep and fish keep one form", uk: "sheep і fish не змінюють форму", es: "sheep y fish conservan una sola forma" }, ex: ["two ", { target: sheep }], tr: { uk: "дві вівці", es: "dos ovejas" } }
 
 sections:
-  - title: { en: "Form: regular plurals" }
+  - title: { en: "Form: regular plurals", uk: "Форма: правильна множина", es: "Forma: plurales regulares" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: singular, label: { en: Singular }, features: { number: sg } }
-          - { key: plural, label: { en: Plural }, features: { number: pl } }
-          - { key: ex, label: { en: Example } }
+          - { key: singular, label: { en: Singular, uk: "Однина", es: "Singular" }, features: { number: sg } }
+          - { key: plural, label: { en: Plural, uk: "Множина", es: "Plural" }, features: { number: pl } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A0, singular: a book, plural: [two book, { ending: s }], ex: ["I have two ", { target: books }, "."] }
           - { level: A0, singular: a car, plural: [three car, { ending: s }], ex: ["There are three ", { target: cars }, " here."] }
@@ -52,77 +58,94 @@ sections:
             level: A0
             text:
               en: ["Most nouns add ", { term: "-s" }, " in the plural."]
+              uk: ["Більшість іменників у множині додають ", { term: "-s" }, "."]
+              es: ["La mayoría de los sustantivos añaden ", { term: "-s" }, " en el plural."]
           - type: rule
             level: A0
             text:
               en: ["Adjectives stay the same: ", { mapping: [["a ", { term: red }, " car"], ["two ", { term: red }, " cars"]] }, "."]
+              uk: ["Прикметники не змінюються: ", { mapping: [["a ", { term: red }, " car"], ["two ", { term: red }, " cars"]] }, "."]
+              es: ["Los adjetivos no cambian: ", { mapping: [["a ", { term: red }, " car"], ["two ", { term: red }, " cars"]] }, "."]
           - type: rule
             level: A0
             text:
               en: "A plural subject takes a plural verb:"
+              uk: "Підмет у множині вживається з дієсловом у множині:"
+              es: "Un sujeto en plural lleva el verbo en plural:"
             ex: ["The books ", { target: are }, " new."]
+            tr: { uk: "Книги нові.", es: "Los libros son nuevos." }
           - type: note
             level: A0
             text:
               en: ["Uncountable nouns have no plural: see ", { link: Countable and uncountable nouns, to: en.nouns-determiners.countable-uncountable }, "."]
+              uk: ["Незлічувані іменники не мають множини: див. ", { link: "Злічувані та незлічувані іменники", to: en.nouns-determiners.countable-uncountable }, "."]
+              es: ["Los sustantivos incontables no tienen plural: ver ", { link: "Sustantivos contables e incontables", to: en.nouns-determiners.countable-uncountable }, "."]
 
-  - title: { en: "Spelling: -s and -es" }
+  - title: { en: "Spelling: -s and -es", uk: "Правопис: -s і -es", es: "Ortografía: -s y -es" }
     role: spelling
     content:
       - type: usage
         columns:
-          - { key: ending, label: { en: Noun ending } }
-          - { key: rule, label: { en: Rule } }
-          - { key: ex, label: { en: Examples } }
+          - { key: ending, label: { en: Noun ending, uk: "Закінчення іменника", es: "Terminación del sustantivo" } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A0, ending: { en: most nouns }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [book, books] }, { mapping: [day, days] }] } }
-          - { level: A0, ending: "-s, -ss, -sh, -ch, -x, -z", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [bus, buses] }, { mapping: [glass, glasses] }, { mapping: [dish, dishes] }, { mapping: [watch, watches] }, { mapping: [box, boxes] }] } }
-          - { level: A0, ending: { en: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ies] }, ex: { examples: [{ mapping: [city, cities] }, { mapping: [baby, babies] }] } }
-          - { level: A0, ending: { en: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [boy, boys] }, { mapping: [key, keys] }] } }
-          - { level: A1, ending: { en: [{ pattern: [{ slot: consonant }, o] }, ": some nouns"] }, rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [potato, potatoes] }, { mapping: [tomato, tomatoes] }] } }
-          - { level: A1, ending: "-f, -fe", rule: { mapping: [ves], follows: true }, ex: { examples: [{ mapping: [leaf, leaves] }, { mapping: [knife, knives] }, { mapping: [wife, wives] }, { mapping: [half, halves] }] } }
+          - { level: A0, ending: { en: most nouns, uk: "більшість іменників", es: "la mayoría de los sustantivos" }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [book, books] }, { mapping: [day, days] }] }, tr: { uk: { examples: ["книги", "дні"] }, es: { examples: ["libros", "días"] } } }
+          - { level: A0, ending: "-s, -ss, -sh, -ch, -x, -z", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [bus, buses] }, { mapping: [glass, glasses] }, { mapping: [dish, dishes] }, { mapping: [watch, watches] }, { mapping: [box, boxes] }] }, tr: { uk: { examples: ["автобуси", "склянки", "тарілки", "годинники", "коробки"] }, es: { examples: ["autobuses", "vasos", "platos", "relojes", "cajas"] } } }
+          - { level: A0, ending: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ies] }, ex: { examples: [{ mapping: [city, cities] }, { mapping: [baby, babies] }] }, tr: { uk: { examples: ["міста", "немовлята"] }, es: { examples: ["ciudades", "bebés"] } } }
+          - { level: A0, ending: { en: { pattern: [{ slot: vowel }, "y"] }, uk: { pattern: [{ slot: vowel }, "y"] }, es: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [boy, boys] }, { mapping: [key, keys] }] }, tr: { uk: { examples: ["хлопці", "ключі"] }, es: { examples: ["chicos", "llaves"] } } }
+          - { level: A1, ending: { en: [{ pattern: [{ slot: consonant }, o] }, ": some nouns"], uk: [{ pattern: [{ slot: consonant }, o] }, ": деякі іменники"], es: [{ pattern: [{ slot: consonant }, o] }, ": algunos sustantivos"] }, rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [potato, potatoes] }, { mapping: [tomato, tomatoes] }] }, tr: { uk: { examples: ["картопля", "помідори"] }, es: { examples: ["papas", "tomates"] } } }
+          - { level: A1, ending: "-f, -fe", rule: { mapping: [ves], follows: true }, ex: { examples: [{ mapping: [leaf, leaves] }, { mapping: [knife, knives] }, { mapping: [wife, wives] }, { mapping: [half, halves] }] }, tr: { uk: { examples: ["листки", "ножі", "дружини", "половини"] }, es: { examples: ["hojas", "cuchillos", "esposas", "mitades"] } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Other nouns in -o add only -s: ", { mapping: [photo, photos] }, ", ", { mapping: [piano, pianos] }, ", ", { mapping: [kilo, kilos] }, "."]
+              uk: ["Інші іменники на -o додають лише -s: ", { mapping: [photo, photos] }, ", ", { mapping: [piano, pianos] }, ", ", { mapping: [kilo, kilos] }, "."]
+              es: ["Otros sustantivos en -o solo añaden -s: ", { mapping: [photo, photos] }, ", ", { mapping: [piano, pianos] }, ", ", { mapping: [kilo, kilos] }, "."]
           - type: rule
             level: A1
             text:
               en: ["Some nouns in -f add only -s: ", { mapping: [roof, roofs] }, ", ", { mapping: [chef, chefs] }, "."]
+              uk: ["Деякі іменники на -f додають лише -s: ", { mapping: [roof, roofs] }, ", ", { mapping: [chef, chefs] }, "."]
+              es: ["Algunos sustantivos en -f solo añaden -s: ", { mapping: [roof, roofs] }, ", ", { mapping: [chef, chefs] }, "."]
 
-  - title: { en: "Pronunciation: the -s ending" }
+  - title: { en: "Pronunciation: the -s ending", uk: "Вимова: закінчення -s", es: "Pronunciación: la terminación -s" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: sound, label: { en: Sound } }
-          - { key: after, label: { en: After } }
-          - { key: ex, label: { en: Examples } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: after, label: { en: After, uk: "Після", es: "Después de" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A1, sound: { ipa: s }, after: { en: ["voiceless sounds ", { ipa: p t k f θ }] }, ex: { examples: [["cups ", { ipa: kʌps }], ["books ", { ipa: bʊks }], ["months ", { ipa: mʌnθs }]] } }
-          - { level: A1, sound: { ipa: z }, after: { en: voiced sounds and vowels }, ex: { examples: [["dogs ", { ipa: dɒɡz }], ["pens ", { ipa: penz }], ["days ", { ipa: deɪz }]] } }
-          - { level: A1, sound: { ipa: ɪz }, after: { ipa: s z ʃ tʃ dʒ }, ex: { examples: [["buses ", { ipa: ˈbʌsɪz }], ["dishes ", { ipa: ˈdɪʃɪz }], ["pages ", { ipa: ˈpeɪdʒɪz }]] } }
+          - { level: A1, sound: { ipa: s }, after: { en: ["voiceless sounds ", { ipa: p t k f θ }], uk: ["глухі звуки ", { ipa: p t k f θ }], es: ["sonidos sordos ", { ipa: p t k f θ }] }, ex: { examples: [["cups ", { ipa: kʌps }], ["books ", { ipa: bʊks }], ["months ", { ipa: mʌnθs }]] }, tr: { uk: { examples: ["чашки", "книги", "місяці"] }, es: { examples: ["tazas", "libros", "meses"] } } }
+          - { level: A1, sound: { ipa: z }, after: { en: voiced sounds and vowels, uk: "дзвінкі звуки й голосні", es: "sonidos sonoros y vocales" }, ex: { examples: [["dogs ", { ipa: dɒɡz }], ["pens ", { ipa: penz }], ["days ", { ipa: deɪz }]] }, tr: { uk: { examples: ["собаки", "ручки", "дні"] }, es: { examples: ["perros", "bolígrafos", "días"] } } }
+          - { level: A1, sound: { ipa: ɪz }, after: { ipa: s z ʃ tʃ dʒ }, ex: { examples: [["buses ", { ipa: ˈbʌsɪz }], ["dishes ", { ipa: ˈdɪʃɪz }], ["pages ", { ipa: ˈpeɪdʒɪz }]] }, tr: { uk: { examples: ["автобуси", "тарілки", "сторінки"] }, es: { examples: ["autobuses", "platos", "páginas"] } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["In ", { term: houses }, " ", { ipa: ˈhaʊzɪz }, ", the s of house becomes ", { ipa: z }, "."]
+              uk: ["У слові ", { term: houses }, " ", { ipa: ˈhaʊzɪz }, " s зі слова house стає ", { ipa: z }, "."]
+              es: ["En ", { term: houses }, " ", { ipa: ˈhaʊzɪz }, ", la s de house pasa a ", { ipa: z }, "."]
           - type: note
             level: A1
             text:
               en: ["The same rule gives the sound of the verb ending: see ", { link: Present simple, to: en.tenses.simple-tenses }, "."]
+              uk: ["Те саме правило визначає вимову закінчення дієслова: див. ", { link: "Present Simple", to: en.tenses.simple-tenses }, "."]
+              es: ["La misma regla da el sonido de la terminación verbal: ver ", { link: "Presente simple", to: en.tenses.simple-tenses }, "."]
 
-  - title: { en: Irregular plurals }
+  - title: { en: Irregular plurals, uk: "Неправильні форми множини", es: "Plurales irregulares" }
     role: own
     content:
       - type: paradigm
         columns:
-          - { key: singular, label: { en: Singular }, features: { number: sg } }
-          - { key: plural, label: { en: Plural }, features: { number: pl } }
-          - { key: ipa, label: { en: Pronunciation } }
+          - { key: singular, label: { en: Singular, uk: "Однина", es: "Singular" }, features: { number: sg } }
+          - { key: plural, label: { en: Plural, uk: "Множина", es: "Plural" }, features: { number: pl } }
+          - { key: ipa, label: { en: Pronunciation, uk: "Вимова", es: "Pronunciación" } }
         rows:
           - { level: A0, singular: man, plural: { target: men }, ipa: { ipa: men } }
           - { level: A0, singular: woman, plural: { target: women }, ipa: { ipa: ˈwɪmɪn } }
@@ -137,41 +160,50 @@ sections:
             level: A0
             text:
               en: ["Irregular plurals take no -s: two ", { term: children }, ", three ", { term: men }, "."]
+              uk: ["Неправильні форми множини не мають -s: two ", { term: children }, ", three ", { term: men }, "."]
+              es: ["Los plurales irregulares no llevan -s: two ", { term: children }, ", three ", { term: men }, "."]
           - type: rule
             level: A0
             text:
               en: [{ term: people }, " is plural and takes a plural verb:"]
+              uk: [{ term: people }, " — це множина, тому дієслово теж стоїть у множині:"]
+              es: [{ term: people }, " es plural y lleva el verbo en plural:"]
             ex: ["The people here ", { target: are }, " friendly."]
+            tr: { uk: "Люди тут привітні.", es: "La gente de aquí es amable." }
 
-  - title: { en: Same form and plural-only nouns }
+  - title: { en: Same form and plural-only nouns, uk: "Однакова форма та іменники лише в множині", es: "Misma forma y sustantivos solo en plural" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: group, label: { en: Group } }
-          - { key: nouns, label: { en: Nouns } }
-          - { key: ex, label: { en: Example } }
+          - { key: group, label: { en: Group, uk: "Група", es: "Grupo" } }
+          - { key: nouns, label: { en: Nouns, uk: "Іменники", es: "Sustantivos" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, group: { en: same singular and plural }, nouns: "sheep, fish", ex: ["one sheep, two ", { target: sheep }] }
-          - { level: A1, group: { en: "plural only: things with two parts" }, nouns: "trousers, jeans, glasses, scissors", ex: ["My jeans ", { target: are }, " new."] }
+          - { level: A1, group: { en: same singular and plural, uk: "однакова форма в однині й множині", es: "misma forma en singular y plural" }, nouns: "sheep, fish", ex: ["one sheep, two ", { target: sheep }], tr: { uk: "одна вівця, дві вівці", es: "una oveja, dos ovejas" } }
+          - { level: A1, group: { en: "plural only: things with two parts", uk: "лише множина: предмети з двох частин", es: "solo plural: objetos con dos partes" }, nouns: "trousers, jeans, glasses, scissors", ex: ["My jeans ", { target: are }, " new."], tr: { uk: "Мої джинси нові.", es: "Mis jeans son nuevos." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Count plural-only nouns with ", { term: a pair of }, ": a pair of jeans, two pairs of glasses."]
+              uk: ["Такі іменники лічать за допомогою ", { term: a pair of }, ": a pair of jeans, two pairs of glasses."]
+              es: ["Los sustantivos que solo existen en plural se cuentan con ", { term: a pair of }, ": a pair of jeans, two pairs of glasses."]
           - type: note
             level: A1
             variety: en-US
             text:
               en: ["trousers are ", { term: pants }, "."]
+              uk: ["trousers в американській англійській називають ", { term: pants }, "."]
+              es: ["trousers se dice ", { term: pants }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A0, wrong: three childs, right: ["three ", { target: children }], rule: { en: irregular plural } }
-          - { level: A0, wrong: The people is nice., right: ["The people ", { target: are }, " nice."], rule: { en: { pattern: [people, plural verb] } } }
-          - { level: A0, wrong: { examples: [two babys, two boxs] }, right: { examples: [["two ", { target: babies }], ["two ", { target: boxes }]] }, rule: { en: { examples: [{ mapping: [{ pattern: [{ slot: consonant }, "y"] }, ies] }, { mapping: ["-x", "-es"] }] } } }
-          - { level: A1, wrong: two sheeps, right: ["two ", { target: sheep }], rule: { en: sheep has the same form } }
+          - { level: A0, wrong: three childs, right: ["three ", { target: children }], rule: { en: irregular plural, uk: "неправильна форма множини", es: "plural irregular" } }
+          - { level: A0, wrong: The people is nice., right: ["The people ", { target: are }, " nice."], rule: { en: { pattern: [people, plural verb] }, uk: { pattern: [people, "дієслово в множині"] }, es: { pattern: [people, "verbo en plural"] } } }
+          - { level: A0, wrong: { examples: [two babys, two boxs] }, right: { examples: [["two ", { target: babies }], ["two ", { target: boxes }]] }, rule: { en: { examples: [{ mapping: [{ pattern: [{ slot: consonant }, "y"] }, ies] }, { mapping: ["-x", "-es"] }] }, uk: { examples: [{ mapping: [{ pattern: [{ slot: consonant }, "y"] }, ies] }, { mapping: ["-x", "-es"] }] }, es: { examples: [{ mapping: [{ pattern: [{ slot: consonant }, "y"] }, ies] }, { mapping: ["-x", "-es"] }] } } }
+          - { level: A1, wrong: two sheeps, right: ["two ", { target: sheep }], rule: { en: sheep has the same form, uk: "sheep має однакову форму", es: "sheep tiene la misma forma" } }

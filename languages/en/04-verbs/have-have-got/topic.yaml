@@ -5,34 +5,40 @@ kind: grammar
 tags: [verbs, have, possession]
 concepts: [have]
 related: [en.verbs.to-be, en.tenses.simple-tenses, en.verbs.there-is-are, en.nouns-determiners.possessive-s, en.sentence-building.questions-negatives]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Have and Have Got }
+title: { en: Have and Have Got, uk: Have і have got, es: Have y have got }
 summary:
-  lead: { en: "Have and have got for possession, family and features; have alone for everyday actions." }
-  rule: { en: ["Have takes ", { alternatives: [do, does] }, " and have got takes ", { alternatives: [have, has] }, ":"] }
+  lead:
+    en: "Have and have got for possession, family and features; have alone for everyday actions."
+    uk: "Have і have got — для володіння, родини й ознак; лише have — для повсякденних дій."
+    es: "Have y have got para posesión, familia y características; solo have para acciones cotidianas."
+  rule:
+    en: ["Have takes ", { alternatives: [do, does] }, " and have got takes ", { alternatives: [have, has] }, ":"]
+    uk: ["Have вживається з ", { alternatives: [do, does] }, ", а have got — з ", { alternatives: [have, has] }, ":"]
+    es: ["Have lleva ", { alternatives: [do, does] }, " y have got lleva ", { alternatives: [have, has] }, ":"]
   ex: { examples: [["I ", { target: don't have }, " a car."], ["I ", { target: haven't got }, " a car."]] }
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: form, label: { en: Form } }
+        - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
         - { key: have, label: have }
         - { key: got, label: have got }
       rows:
-        - { level: A1, features: { polarity: pos, interrogativity: decl }, form: { en: ["Affirmative: ", { alternatives: [I, you, we, they] }] }, have: ["I ", { target: have }, " a car."], got: [I', { target: ve got }, " a car."] }
-        - { level: A1, features: { polarity: pos, interrogativity: decl, person: 3, number: sg }, form: { en: ["Affirmative: ", { alternatives: [he, she, it] }] }, have: ["She ", { target: has }, " a car."], got: [She', { target: s got }, " a car."] }
-        - { level: A1, features: { polarity: neg, interrogativity: decl }, form: { en: ["Negative: ", { alternatives: [I, you, we, they] }] }, have: ["I ", { target: don't have }, " a car."], got: ["I ", { target: haven't got }, " a car."] }
-        - { level: A1, features: { polarity: neg, interrogativity: decl, person: 3, number: sg }, form: { en: ["Negative: ", { alternatives: [he, she, it] }] }, have: ["He ", { target: doesn't have }, " a car."], got: ["He ", { target: hasn't got }, " a car."] }
-        - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: ["Question: ", { alternatives: [I, you, we, they] }] }, have: [{ target: Do }, " you ", { target: have }, " a car?"], got: [{ target: Have }, " you ", { target: got }, " a car?"] }
-        - { level: A1, features: { polarity: pos, interrogativity: int, person: 3, number: sg }, form: { en: ["Question: ", { alternatives: [he, she, it] }] }, have: [{ target: Does }, " she ", { target: have }, " a car?"], got: [{ target: Has }, " she ", { target: got }, " a car?"] }
-        - { level: A1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer }, have: { alternatives: [["Yes, I ", { target: do }, "."], ["No, I ", { target: don't }, "."]] }, got: { alternatives: [["Yes, I ", { target: have }, "."], ["No, I ", { target: haven't }, "."]] } }
-        - { level: A1, features: { interrogativity: decl, polarity: pos }, form: { en: "Actions: only have" }, have: ["I ", { target: have }, " breakfast at 8."] }
-        - { level: A1, features: { interrogativity: decl, polarity: pos }, form: { en: Style }, have: { en: "neutral, also in writing" }, got: { en: "informal, mostly speech" } }
+        - { level: A1, features: { polarity: pos, interrogativity: decl }, form: { en: ["Affirmative: ", { alternatives: [I, you, we, they] }], uk: ["Ствердження: ", { alternatives: [I, you, we, they] }], es: ["Afirmación: ", { alternatives: [I, you, we, they] }] }, have: ["I ", { target: have }, " a car."], got: [I', { target: ve got }, " a car."] }
+        - { level: A1, features: { polarity: pos, interrogativity: decl, person: 3, number: sg }, form: { en: ["Affirmative: ", { alternatives: [he, she, it] }], uk: ["Ствердження: ", { alternatives: [he, she, it] }], es: ["Afirmación: ", { alternatives: [he, she, it] }] }, have: ["She ", { target: has }, " a car."], got: [She', { target: s got }, " a car."] }
+        - { level: A1, features: { polarity: neg, interrogativity: decl }, form: { en: ["Negative: ", { alternatives: [I, you, we, they] }], uk: ["Заперечення: ", { alternatives: [I, you, we, they] }], es: ["Negación: ", { alternatives: [I, you, we, they] }] }, have: ["I ", { target: don't have }, " a car."], got: ["I ", { target: haven't got }, " a car."] }
+        - { level: A1, features: { polarity: neg, interrogativity: decl, person: 3, number: sg }, form: { en: ["Negative: ", { alternatives: [he, she, it] }], uk: ["Заперечення: ", { alternatives: [he, she, it] }], es: ["Negación: ", { alternatives: [he, she, it] }] }, have: ["He ", { target: doesn't have }, " a car."], got: ["He ", { target: hasn't got }, " a car."] }
+        - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: ["Question: ", { alternatives: [I, you, we, they] }], uk: ["Питання: ", { alternatives: [I, you, we, they] }], es: ["Pregunta: ", { alternatives: [I, you, we, they] }] }, have: [{ target: Do }, " you ", { target: have }, " a car?"], got: [{ target: Have }, " you ", { target: got }, " a car?"] }
+        - { level: A1, features: { polarity: pos, interrogativity: int, person: 3, number: sg }, form: { en: ["Question: ", { alternatives: [he, she, it] }], uk: ["Питання: ", { alternatives: [he, she, it] }], es: ["Pregunta: ", { alternatives: [he, she, it] }] }, have: [{ target: Does }, " she ", { target: have }, " a car?"], got: [{ target: Has }, " she ", { target: got }, " a car?"] }
+        - { level: A1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, have: { alternatives: [["Yes, I ", { target: do }, "."], ["No, I ", { target: don't }, "."]] }, got: { alternatives: [["Yes, I ", { target: have }, "."], ["No, I ", { target: haven't }, "."]] } }
+        - { level: A1, features: { interrogativity: decl, polarity: pos }, form: { en: "Actions: only have", uk: "Дії: лише have", es: "Acciones: solo have" }, have: ["I ", { target: have }, " breakfast at 8."] }
+        - { level: A1, features: { interrogativity: decl, polarity: pos }, form: { en: Style, uk: "Стиль", es: "Estilo" }, have: { en: "neutral, also in writing", uk: "нейтральний, також на письмі", es: "neutro, también por escrito" }, got: { en: "informal, mostly speech", uk: "неформальний, переважно в мовленні", es: "informal, sobre todo en el habla" } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -41,17 +47,21 @@ sections:
             level: A1
             text:
               en: [{ term: have }, " and ", { term: have got }, " have the same meaning for possession, family and features."]
+              uk: [{ term: have }, " і ", { term: have got }, " мають однакове значення для володіння, родини й ознак."]
+              es: [{ term: have }, " y ", { term: have got }, " tienen el mismo significado para posesión, familia y características."]
           - type: rule
             level: A1
             text:
               en: ["Actions (have breakfast, have a shower) take only ", { term: have }, "."]
+              uk: ["Дії (have breakfast, have a shower) вживаються лише з ", { term: have }, "."]
+              es: ["Las acciones (have breakfast, have a shower) llevan solo ", { term: have }, "."]
 
-  - title: { en: "Form: affirmative" }
+  - title: { en: "Form: affirmative", uk: "Форма: ствердження", es: "Forma: afirmativa" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
           - { key: have, label: have }
           - { key: got, label: have got }
         rows:
@@ -63,18 +73,23 @@ sections:
             level: A1
             text:
               en: [{ alternatives: [he, she, it] }, " takes ", { term: has }, ":"]
+              uk: [{ alternatives: [he, she, it] }, " вживається з ", { term: has }, ":"]
+              es: [{ alternatives: [he, she, it] }, " lleva ", { term: has }, ":"]
             ex: ["She ", { target: has }, " a dog."]
+            tr: { uk: "У неї є собака.", es: "Ella tiene un perro." }
           - type: rule
             level: A1
             text:
               en: ["Speech and messages use the short forms ", { term: "'ve got" }, " and ", { term: "'s got" }, "."]
+              uk: ["У мовленні й повідомленнях уживають скорочені форми ", { term: "'ve got" }, " та ", { term: "'s got" }, "."]
+              es: ["En el habla y en los mensajes se usan las formas contraídas ", { term: "'ve got" }, " y ", { term: "'s got" }, "."]
 
-  - title: { en: "Form: negative" }
+  - title: { en: "Form: negative", uk: "Форма: заперечення", es: "Forma: negativa" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
           - { key: have, label: have }
           - { key: got, label: have got }
         rows:
@@ -86,18 +101,23 @@ sections:
             level: A1
             text:
               en: [{ term: have }, " makes the negative with ", { alternatives: [{ term: don't }, { term: doesn't }] }, " and the base form:"]
+              uk: [{ term: have }, " утворює заперечення за допомогою ", { alternatives: [{ term: don't }, { term: doesn't }] }, " і початкової форми:"]
+              es: [{ term: have }, " forma la negación con ", { alternatives: [{ term: don't }, { term: doesn't }] }, " y la forma base:"]
             ex: ["He doesn't ", { target: have }, "."]
+            tr: { uk: "У нього немає.", es: "Él no tiene." }
           - type: rule
             level: A1
             text:
               en: [{ term: have got }, " makes the negative with ", { alternatives: [{ term: haven't }, { term: hasn't }] }, " before ", { term: got }, "."]
+              uk: [{ term: have got }, " утворює заперечення за допомогою ", { alternatives: [{ term: haven't }, { term: hasn't }] }, " перед ", { term: got }, "."]
+              es: [{ term: have got }, " forma la negación con ", { alternatives: [{ term: haven't }, { term: hasn't }] }, " antes de ", { term: got }, "."]
 
-  - title: { en: "Form: questions" }
+  - title: { en: "Form: questions", uk: "Форма: питання", es: "Forma: preguntas" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
           - { key: have, label: have }
           - { key: got, label: have got }
         rows:
@@ -109,16 +129,19 @@ sections:
             level: A1
             text:
               en: "Wh-questions put the wh-word first:"
+              uk: "У питаннях з wh-словом воно стоїть на першому місці:"
+              es: "En las preguntas con palabra interrogativa (wh-), esa palabra va primero:"
             ex: { examples: [["How many brothers ", { target: do }, " you ", { target: have }, "?"], ["What ", { target: have }, " you ", { target: got }, "?"]] }
+            tr: { uk: { examples: ["Скільки в тебе братів?", "Що в тебе є?"] }, es: { examples: ["¿Cuántos hermanos tienes?", "¿Qué tienes?"] } }
 
-  - title: { en: "Form: short answers" }
+  - title: { en: "Form: short answers", uk: "Форма: короткі відповіді", es: "Forma: respuestas cortas" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: question, label: { en: Question } }
-          - { key: "yes", label: { en: "Yes" }, features: { polarity: pos } }
-          - { key: "no", label: { en: "No" }, features: { polarity: neg } }
+          - { key: question, label: { en: Question, uk: "Питання", es: "Pregunta" } }
+          - { key: "yes", label: { en: "Yes", uk: "Так", es: "Sí" }, features: { polarity: pos } }
+          - { key: "no", label: { en: "No", uk: "Ні", es: "No" }, features: { polarity: neg } }
         rows:
           - { level: A1, question: Do you have a bike?, "yes": ["Yes, I ", { target: do }, "."], "no": ["No, I ", { target: don't }, "."] }
           - { level: A1, question: Does she have a bike?, "yes": ["Yes, she ", { target: does }, "."], "no": ["No, she ", { target: doesn't }, "."] }
@@ -130,62 +153,67 @@ sections:
             level: A1
             text:
               en: ["A short answer ends with the auxiliary from the question: ", { alternatives: [do, does] }, " or ", { alternatives: [have, has] }, "."]
+              uk: ["Коротка відповідь закінчується допоміжним дієсловом із питання: ", { alternatives: [do, does] }, " або ", { alternatives: [have, has] }, "."]
+              es: ["La respuesta corta termina con el verbo auxiliar de la pregunta: ", { alternatives: [do, does] }, " o ", { alternatives: [have, has] }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: Possession }, ex: ["I ", { target: have }, " a new phone."] }
-          - { level: A1, use: { en: Family and friends }, ex: [She', { target: s got }, " two sisters."] }
-          - { level: A1, use: { en: "Features, appearance" }, ex: { examples: [["He ", { target: has }, " blue eyes."], ["My flat ", { target: has }, " a balcony."]] } }
-          - { level: A1, use: { en: "Illness, pain" }, ex: [I', { target: ve got }, " a headache."] }
-          - { level: A1, use: { en: "Work, appointments" }, ex: [I', { target: ve got }, " a meeting at 3."] }
+          - { level: A1, use: { en: Possession, uk: "Володіння", es: "Posesión" }, ex: ["I ", { target: have }, " a new phone."], tr: { uk: "У мене новий телефон.", es: "Tengo un teléfono nuevo." } }
+          - { level: A1, use: { en: Family and friends, uk: "Родина й друзі", es: "Familia y amigos" }, ex: [She', { target: s got }, " two sisters."], tr: { uk: "У неї дві сестри.", es: "Ella tiene dos hermanas." } }
+          - { level: A1, use: { en: "Features, appearance", uk: "Ознаки, зовнішність", es: "Características, aspecto" }, ex: { examples: [["He ", { target: has }, " blue eyes."], ["My flat ", { target: has }, " a balcony."]] }, tr: { uk: { examples: ["У нього сині очі.", "У моїй квартирі є балкон."] }, es: { examples: ["Él tiene los ojos azules.", "Mi apartamento tiene un balcón."] } } }
+          - { level: A1, use: { en: "Illness, pain", uk: "Хвороба, біль", es: "Enfermedad, dolor" }, ex: [I', { target: ve got }, " a headache."], tr: { uk: "У мене болить голова.", es: "Tengo dolor de cabeza." } }
+          - { level: A1, use: { en: "Work, appointments", uk: "Робота, зустрічі", es: "Trabajo, citas" }, ex: [I', { target: ve got }, " a meeting at 3."], tr: { uk: "У мене зустріч о третій.", es: "Tengo una reunión a las tres." } }
 
-  - title: { en: Have for actions }
+  - title: { en: Have for actions, uk: "Have для дій", es: "Have para acciones" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: group, label: { en: Group } }
-          - { key: ex, label: { en: Example } }
+          - { key: group, label: { en: Group, uk: "Група", es: "Grupo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, group: { en: Meals and drinks }, ex: { examples: [["I ", { target: have }, " breakfast at 8."], ["Let's ", { target: have }, " a coffee."]] } }
-          - { level: A1, group: { en: Washing }, ex: ["She ", { target: has }, " a shower every morning."] }
-          - { level: A1, group: { en: "Rest, fun" }, ex: { examples: [["We ", { target: have }, " a rest."], ["They ", { target: have }, " a party."]] } }
-          - { level: A1, group: { en: Talking }, ex: ["I ", { target: have }, " a chat with Tom."] }
+          - { level: A1, group: { en: Meals and drinks, uk: "Їжа й напої", es: "Comidas y bebidas" }, ex: { examples: [["I ", { target: have }, " breakfast at 8."], ["Let's ", { target: have }, " a coffee."]] }, tr: { uk: { examples: ["Я снідаю о восьмій.", "Давай вип’ємо кави."] }, es: { examples: ["Desayuno a las ocho.", "Tomemos un café."] } } }
+          - { level: A1, group: { en: Washing, uk: "Миття", es: "Aseo" }, ex: ["She ", { target: has }, " a shower every morning."], tr: { uk: "Вона щоранку приймає душ.", es: "Ella se ducha todas las mañanas." } }
+          - { level: A1, group: { en: "Rest, fun", uk: "Відпочинок, розваги", es: "Descanso, diversión" }, ex: { examples: [["We ", { target: have }, " a rest."], ["They ", { target: have }, " a party."]] }, tr: { uk: { examples: ["Ми відпочиваємо.", "Вони влаштовують вечірку."] }, es: { examples: ["Descansamos.", "Ellos hacen una fiesta."] } } }
+          - { level: A1, group: { en: Talking, uk: "Розмова", es: "Conversación" }, ex: ["I ", { target: have }, " a chat with Tom."], tr: { uk: "Я розмовляю з Томом.", es: "Charlo con Tom." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["In this use ", { term: have }, " is a main verb, so questions and negatives take ", { alternatives: [{ term: do }, { term: does }] }, ":"]
+              uk: ["У цьому значенні ", { term: have }, " — основне дієслово, тому питання й заперечення утворюються за допомогою ", { alternatives: [{ term: do }, { term: does }] }, ":"]
+              es: ["En este uso ", { term: have }, " es un verbo principal, por eso las preguntas y las negaciones llevan ", { alternatives: [{ term: do }, { term: does }] }, ":"]
             ex: { examples: [["What time ", { target: do }, " you ", { target: have }, " lunch?"], ["I ", { target: don't have }, " breakfast."]] }
+            tr: { uk: { examples: ["О котрій ти обідаєш?", "Я не снідаю."] }, es: { examples: ["¿A qué hora almuerzas?", "No desayuno."] } }
 
-  - title: { en: "Compare: have and have got" }
+  - title: { en: "Compare: have and have got", uk: "Порівняння: have і have got", es: "Comparación: have y have got" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: point, label: { en: Point } }
+          - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
           - { key: have, label: have }
           - { key: got, label: have got }
         rows:
-          - { level: A1, point: { en: Style }, have: { en: "neutral, also in writing" }, got: { en: "informal, mostly speech" } }
-          - { level: A1, point: { en: Region }, have: { en: { variant: the usual form, variety: en-US } }, got: { en: common in British English } }
-          - { level: A1, point: { en: Example }, have: ["Do you ", { target: have }, " a pen?"], got: [{ target: Have }, " you ", { target: got }, " a pen?"] }
+          - { level: A1, point: { en: Style, uk: "Стиль", es: "Estilo" }, have: { en: "neutral, also in writing", uk: "нейтральний, також на письмі", es: "neutro, también por escrito" }, got: { en: "informal, mostly speech", uk: "неформальний, переважно в мовленні", es: "informal, sobre todo en el habla" } }
+          - { level: A1, point: { en: Region, uk: "Регіон", es: "Región" }, have: { en: { variant: the usual form, variety: en-US }, uk: { variant: "звичайна форма", variety: en-US }, es: { variant: "la forma habitual", variety: en-US } }, got: { en: common in British English, uk: "поширена в британській англійській", es: "frecuente en el inglés británico" } }
+          - { level: A1, point: { en: Example, uk: "Приклад", es: "Ejemplo" }, have: { ex: ["Do you ", { target: have }, " a pen?"], tr: { uk: "У тебе є ручка?", es: "¿Tienes un bolígrafo?" } }, got: { ex: [{ target: Have }, " you ", { target: got }, " a pen?"], tr: { uk: "У тебе є ручка?", es: "¿Tienes un bolígrafo?" } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: She have a dog., right: ["She ", { target: has }, " a dog."], rule: { en: { takes: [{ alternatives: [he, she, it] }, has] } } }
-          - { level: A1, wrong: Do you have got a car?, right: { alternatives: [[{ target: Do }, " you ", { target: have }, " a car?"], [{ target: Have }, " you ", { target: got }, " a car?"]] }, rule: { en: "do goes with have, not with have got" } }
-          - { level: A1, wrong: I don't have got a car., right: { alternatives: [["I ", { target: haven't got }, " a car."], ["I ", { target: don't have }, " a car."]] }, rule: { en: "choose one pattern: have or have got" } }
-          - { level: A1, wrong: Does she has a car?, right: ["Does she ", { target: have }, " a car?"], rule: { en: { pattern: [does, { slot: base verb }] } } }
-          - { level: A1, wrong: She don't have a car., right: ["She ", { target: doesn't have }, " a car."], rule: { en: { takes: [{ alternatives: [he, she, it] }, doesn't] } } }
-          - { level: A1, wrong: I have got breakfast at 8., right: ["I ", { target: have }, " breakfast at 8."], rule: { en: actions take have only } }
+          - { level: A1, wrong: She have a dog., right: ["She ", { target: has }, " a dog."], rule: { en: { takes: [{ alternatives: [he, she, it] }, has] }, uk: { takes: [{ alternatives: [he, she, it] }, has] }, es: { takes: [{ alternatives: [he, she, it] }, has] } } }
+          - { level: A1, wrong: Do you have got a car?, right: { alternatives: [[{ target: Do }, " you ", { target: have }, " a car?"], [{ target: Have }, " you ", { target: got }, " a car?"]] }, rule: { en: "do goes with have, not with have got", uk: "do вживається з have, а не з have got", es: "do va con have, no con have got" } }
+          - { level: A1, wrong: I don't have got a car., right: { alternatives: [["I ", { target: haven't got }, " a car."], ["I ", { target: don't have }, " a car."]] }, rule: { en: "choose one pattern: have or have got", uk: "обирайте одну схему: have або have got", es: "elige una sola estructura: have o have got" } }
+          - { level: A1, wrong: Does she has a car?, right: ["Does she ", { target: have }, " a car?"], rule: { en: { pattern: [does, { slot: base verb }] }, uk: { pattern: [does, { slot: base verb }] }, es: { pattern: [does, { slot: base verb }] } } }
+          - { level: A1, wrong: She don't have a car., right: ["She ", { target: doesn't have }, " a car."], rule: { en: { takes: [{ alternatives: [he, she, it] }, doesn't] }, uk: { takes: [{ alternatives: [he, she, it] }, doesn't] }, es: { takes: [{ alternatives: [he, she, it] }, doesn't] } } }
+          - { level: A1, wrong: I have got breakfast at 8., right: ["I ", { target: have }, " breakfast at 8."], rule: { en: actions take have only, uk: "дії вживаються лише з have", es: "las acciones llevan solo have" } }

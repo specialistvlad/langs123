@@ -5,180 +5,220 @@ kind: grammar
 tags: [conjunctions, linkers, connectors, punctuation]
 concepts: [linkers]
 related: [en.sentence-building.conditionals-0-1-2, en.sentence-building.word-order, en.tenses.future-forms, en.sentence-building.questions-negatives]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Conjunctions and Linkers }
+title: { en: Conjunctions and Linkers, uk: Сполучники та слова-зв’язки, es: Conjunciones y conectores }
 summary:
-  lead: { en: "Linkers join ideas: and adds, but contrasts, or offers a choice, because gives a reason and so gives a result." }
-  rule: { en: "A comma comes before but and so between two clauses:" }
+  lead:
+    en: "Linkers join ideas: and adds, but contrasts, or offers a choice, because gives a reason and so gives a result."
+    uk: "Слова-зв’язки поєднують думки: and додає, but протиставляє, or дає вибір, because називає причину, а so — наслідок."
+    es: "Los conectores unen ideas: and suma, but contrasta, or ofrece una opción, because da una razón y so da un resultado."
+  rule:
+    en: "A comma comes before but and so between two clauses:"
+    uk: "Між двома частинами речення перед but і so ставлять кому:"
+    es: "Entre dos oraciones, antes de but y so va una coma:"
   ex: { examples: [I was tired, [{ target: so }, " I left."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: "and, or", rule: { en: [{ term: and }, " adds an idea, ", { term: or }, " gives a choice; usually no comma before them"] }, ex: { examples: [["I like tea ", { target: and }, " coffee."], ["Do you want tea ", { target: or }, " coffee?"]] } }
-        - { level: A1, point: "but, so", rule: { en: [{ term: but }, " contrasts, ", { term: so }, " gives a result; usually a comma before them"] }, ex: { examples: [["I like tea, ", { target: but }, " I don't like coffee."], ["I'm tired, ", { target: so }, " I go to bed."]] } }
-        - { level: A1, point: because, rule: { en: gives the reason; a clause follows }, ex: ["I'm tired ", { target: because }, " I work late."] }
-        - { level: A2, point: "when, before, after", rule: { en: a time clause; the present simple talks about the future }, ex: [{ target: When }, " I arrive, I'll call you."] }
-        - { level: A2, point: "also, too", rule: { en: [{ term: also }, " goes before the main verb and after be; ", { term: too }, " goes at the end"] }, ex: { examples: [["I ", { target: also }, " speak French."], ["I speak French ", { target: too }, "."]] } }
-        - { level: B1, point: however, rule: { en: starts a new sentence; a comma follows }, ex: ["It was raining. ", { target: However }, ", we went out."] }
-        - { level: B1, point: so that, rule: { en: gives a purpose; a clause follows }, ex: ["I left early ", { target: so that }, " I could catch the bus."] }
-        - { level: B1, point: unless, rule: { en: [{ term: unless }, " means ", { term: ["if ", { gap: true }, " not"] }] }, ex: ["We stay in ", { target: unless }, " it stops raining."] }
-        - { level: A2, point: { en: Trap }, rule: { en: [{ term: because of }, " is followed by a noun"] }, ex: ["We stayed in ", { target: because of }, " the rain."] }
-        - { level: B1, point: { en: Trap }, rule: { en: [{ term: although }, " joins two clauses and replaces ", { term: but }] }, ex: [{ target: Although }, " it was raining, we went out."] }
+        - { level: A1, point: "and, or", rule: { en: [{ term: and }, " adds an idea, ", { term: or }, " gives a choice; usually no comma before them"], uk: [{ term: and }, " додає думку, ", { term: or }, " дає вибір; перед ними зазвичай немає коми"], es: [{ term: and }, " suma una idea, ", { term: or }, " ofrece una opción; normalmente sin coma delante"] }, ex: { examples: [["I like tea ", { target: and }, " coffee."], ["Do you want tea ", { target: or }, " coffee?"]] }, tr: { uk: { examples: ["Я люблю чай і каву.", "Ти хочеш чаю чи кави?"] }, es: { examples: ["Me gustan el té y el café.", "¿Quieres té o café?"] } } }
+        - { level: A1, point: "but, so", rule: { en: [{ term: but }, " contrasts, ", { term: so }, " gives a result; usually a comma before them"], uk: [{ term: but }, " протиставляє, ", { term: so }, " називає наслідок; перед ними зазвичай ставлять кому"], es: [{ term: but }, " contrasta, ", { term: so }, " da un resultado; normalmente con coma delante"] }, ex: { examples: [["I like tea, ", { target: but }, " I don't like coffee."], ["I'm tired, ", { target: so }, " I go to bed."]] }, tr: { uk: { examples: ["Я люблю чай, але не люблю каву.", "Я втомився, тому йду спати."] }, es: { examples: ["Me gusta el té, pero no me gusta el café.", "Estoy cansado, así que me voy a la cama."] } } }
+        - { level: A1, point: because, rule: { en: gives the reason; a clause follows, uk: "називає причину; далі йде речення", es: "da la razón; sigue una oración" }, ex: ["I'm tired ", { target: because }, " I work late."], tr: { uk: "Я втомився, бо пізно працюю.", es: "Estoy cansado porque trabajo hasta tarde." } }
+        - { level: A2, point: "when, before, after", rule: { en: a time clause; the present simple talks about the future, uk: "підрядне речення часу; Present Simple говорить про майбутнє", es: "una oración de tiempo; el presente simple habla del futuro" }, ex: [{ target: When }, " I arrive, I'll call you."], tr: { uk: "Коли я приїду, я тобі зателефоную.", es: "Cuando llegue, te llamaré." } }
+        - { level: A2, point: "also, too", rule: { en: [{ term: also }, " goes before the main verb and after be; ", { term: too }, " goes at the end"], uk: [{ term: also }, " стоїть перед основним дієсловом і після be; ", { term: too }, " — у кінці"], es: [{ term: also }, " va antes del verbo principal y después de be; ", { term: too }, " va al final"] }, ex: { examples: [["I ", { target: also }, " speak French."], ["I speak French ", { target: too }, "."]] }, tr: { uk: { examples: ["Я також розмовляю французькою.", "Я розмовляю французькою теж."] }, es: { examples: ["También hablo francés.", "Hablo francés también."] } } }
+        - { level: B1, point: however, rule: { en: starts a new sentence; a comma follows, uk: "починає нове речення; далі йде кома", es: "abre una oración nueva; sigue una coma" }, ex: ["It was raining. ", { target: However }, ", we went out."], tr: { uk: "Йшов дощ. Проте ми вийшли.", es: "Llovía. Sin embargo, salimos." } }
+        - { level: B1, point: so that, rule: { en: gives a purpose; a clause follows, uk: "називає мету; далі йде речення", es: "da la finalidad; sigue una oración" }, ex: ["I left early ", { target: so that }, " I could catch the bus."], tr: { uk: "Я вийшов раніше, щоб устигнути на автобус.", es: "Salí temprano para alcanzar el autobús." } }
+        - { level: B1, point: unless, rule: { en: [{ term: unless }, " means ", { term: ["if ", { gap: true }, " not"] }], uk: [{ term: unless }, " означає ", { term: ["if ", { gap: true }, " not"] }], es: [{ term: unless }, " significa ", { term: ["if ", { gap: true }, " not"] }] }, ex: ["We stay in ", { target: unless }, " it stops raining."], tr: { uk: "Ми залишаємося вдома, якщо дощ не припиниться.", es: "Nos quedamos en casa a menos que deje de llover." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: because of }, " is followed by a noun"], uk: [{ term: because of }, " вимагає після себе іменника"], es: [{ term: because of }, " va seguido de un sustantivo"] }, ex: ["We stayed in ", { target: because of }, " the rain."], tr: { uk: "Ми залишилися вдома через дощ.", es: "Nos quedamos en casa por la lluvia." } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: although }, " joins two clauses and replaces ", { term: but }], uk: [{ term: although }, " поєднує дві частини речення й замінює ", { term: but }], es: [{ term: although }, " une dos oraciones y sustituye a ", { term: but }] }, ex: [{ target: Although }, " it was raining, we went out."], tr: { uk: "Хоча йшов дощ, ми вийшли.", es: "Aunque llovía, salimos." } }
 
 sections:
-  - title: { en: "Basic linkers: and, but, or, because, so" }
+  - title: { en: "Basic linkers: and, but, or, because, so", uk: "Основні слова-зв’язки: and, but, or, because, so", es: "Conectores básicos: and, but, or, because, so" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: linker, label: { en: Linker } }
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: linker, label: { en: Linker, uk: "Слово-зв’язка", es: "Conector" } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, linker: and, use: { en: adds an idea }, ex: ["I like tea ", { target: and }, " coffee."] }
-          - { level: A1, linker: but, use: { en: shows a contrast }, ex: ["I like tea, ", { target: but }, " I don't like coffee."] }
-          - { level: A1, linker: or, use: { en: gives a choice }, ex: ["Do you want tea ", { target: or }, " coffee?"] }
-          - { level: A1, linker: because, use: { en: gives the reason }, ex: ["I'm tired ", { target: because }, " I work late."] }
-          - { level: A1, linker: so, use: { en: gives the result }, ex: ["I'm tired, ", { target: so }, " I go to bed."] }
+          - { level: A1, linker: and, use: { en: adds an idea, uk: "додає думку", es: "suma una idea" }, ex: ["I like tea ", { target: and }, " coffee."], tr: { uk: "Я люблю чай і каву.", es: "Me gustan el té y el café." } }
+          - { level: A1, linker: but, use: { en: shows a contrast, uk: "показує протиставлення", es: "muestra un contraste" }, ex: ["I like tea, ", { target: but }, " I don't like coffee."], tr: { uk: "Я люблю чай, але не люблю каву.", es: "Me gusta el té, pero no me gusta el café." } }
+          - { level: A1, linker: or, use: { en: gives a choice, uk: "дає вибір", es: "ofrece una opción" }, ex: ["Do you want tea ", { target: or }, " coffee?"], tr: { uk: "Ти хочеш чаю чи кави?", es: "¿Quieres té o café?" } }
+          - { level: A1, linker: because, use: { en: gives the reason, uk: "називає причину", es: "da la razón" }, ex: ["I'm tired ", { target: because }, " I work late."], tr: { uk: "Я втомився, бо пізно працюю.", es: "Estoy cansado porque trabajo hasta tarde." } }
+          - { level: A1, linker: so, use: { en: gives the result, uk: "називає наслідок", es: "da el resultado" }, ex: ["I'm tired, ", { target: so }, " I go to bed."], tr: { uk: "Я втомився, тому йду спати.", es: "Estoy cansado, así que me voy a la cama." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Between two full clauses, ", { term: but }, " and ", { term: so }, " usually take a comma before them:"]
+              uk: ["Між двома повними реченнями перед ", { term: but }, " і ", { term: so }, " зазвичай ставлять кому:"]
+              es: ["Entre dos oraciones completas, ", { term: but }, " y ", { term: so }, " suelen llevar coma delante:"]
             ex: ["I was tired, ", { target: so }, " I left."]
+            tr: { uk: "Я втомився, тому пішов.", es: "Estaba cansado, así que me fui." }
           - type: rule
             level: A1
             text:
               en: [{ term: and }, ", ", { term: or }, " and ", { term: because }, " usually have no comma before them."]
+              uk: ["Перед ", { term: and }, ", ", { term: or }, " і ", { term: because }, " зазвичай коми немає."]
+              es: ["Delante de ", { term: and }, ", ", { term: or }, " y ", { term: because }, " normalmente no hay coma."]
           - type: rule
             level: A1
             text:
               en: [{ term: because }, " is followed by a clause: a subject and a verb."]
+              uk: [{ term: because }, " вимагає після себе речення: підмета й дієслова."]
+              es: [{ term: because }, " va seguido de una oración: un sujeto y un verbo."]
           - type: rule
             level: A2
             text:
               en: [{ term: because of }, " is followed by a noun:"]
+              uk: [{ term: because of }, " вимагає після себе іменника:"]
+              es: [{ term: because of }, " va seguido de un sustantivo:"]
             ex: ["We stayed in ", { target: because of }, " the rain."]
+            tr: { uk: "Ми залишилися вдома через дощ.", es: "Nos quedamos en casa por la lluvia." }
 
-  - title: { en: "Time linkers: when, before, after, then" }
+  - title: { en: "Time linkers: when, before, after, then", uk: "Слова-зв’язки часу: when, before, after, then", es: "Conectores de tiempo: when, before, after, then" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: linker, label: { en: Linker } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: linker, label: { en: Linker, uk: "Слово-зв’язка", es: "Conector" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, linker: when, pattern: { pattern: [when, { slot: clause }] }, ex: [{ target: When }, " I get home, I cook."] }
-          - { level: A2, linker: before, pattern: { pattern: [before, { slot: clause }] }, ex: ["I wash my hands ", { target: before }, " I eat."] }
-          - { level: A2, linker: after, pattern: { pattern: [after, { slot: clause }] }, ex: ["We go home ", { target: after }, " the film ends."] }
-          - { level: A2, linker: then, pattern: [{ slot: clause }, ", ", { pattern: [then, { slot: clause }] }], ex: ["I had lunch, ", { target: then }, " I went home."] }
+          - { level: A2, linker: when, pattern: { pattern: [when, { slot: clause }] }, ex: [{ target: When }, " I get home, I cook."], tr: { uk: "Коли я приходжу додому, я готую.", es: "Cuando llego a casa, cocino." } }
+          - { level: A2, linker: before, pattern: { pattern: [before, { slot: clause }] }, ex: ["I wash my hands ", { target: before }, " I eat."], tr: { uk: "Я мию руки, перш ніж їсти.", es: "Me lavo las manos antes de comer." } }
+          - { level: A2, linker: after, pattern: { pattern: [after, { slot: clause }] }, ex: ["We go home ", { target: after }, " the film ends."], tr: { uk: "Ми йдемо додому після того, як закінчується фільм.", es: "Nos vamos a casa después de que termina la película." } }
+          - { level: A2, linker: then, pattern: [{ slot: clause }, ", ", { pattern: [then, { slot: clause }] }], ex: ["I had lunch, ", { target: then }, " I went home."], tr: { uk: "Я пообідав, потім пішов додому.", es: "Almorcé, luego me fui a casa." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: "A time clause that starts the sentence takes a comma after it:"
+              uk: "Підрядне речення часу на початку речення відокремлюють комою:"
+              es: "Una oración de tiempo al principio va seguida de coma:"
             ex: [{ target: When }, " it rains, we stay in."]
+            tr: { uk: "Коли йде дощ, ми залишаємося вдома.", es: "Cuando llueve, nos quedamos en casa." }
           - type: rule
             level: A2
             text:
               en: ["After ", { term: when }, ", ", { term: before }, " and ", { term: after }, " the present simple talks about the future:"]
+              uk: ["Після ", { term: when }, ", ", { term: before }, " і ", { term: after }, " Present Simple говорить про майбутнє:"]
+              es: ["Después de ", { term: when }, ", ", { term: before }, " y ", { term: after }, " el presente simple habla del futuro:"]
             ex: [{ target: When }, " I arrive, I'll call you."]
+            tr: { uk: "Коли я приїду, я тобі зателефоную.", es: "Cuando llegue, te llamaré." }
 
-  - title: { en: "Adding: also, too, as well as, in addition" }
+  - title: { en: "Adding: also, too, as well as, in addition", uk: "Додавання: also, too, as well as, in addition", es: "Añadir: also, too, as well as, in addition" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: linker, label: { en: Linker } }
-          - { key: ex, label: { en: Example } }
+          - { key: linker, label: { en: Linker, uk: "Слово-зв’язка", es: "Conector" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, linker: also, ex: { examples: [["I ", { target: also }, " speak French."], ["She is ", { target: also }, " a nurse."]] } }
-          - { level: A2, linker: too, ex: ["I speak French ", { target: too }, "."] }
-          - { level: B1, linker: as well as, ex: ["She speaks French ", { target: as well as }, " Spanish."] }
-          - { level: B1, linker: in addition, ex: [{ target: In addition }, ", the hotel has a pool."] }
+          - { level: A2, linker: also, ex: { examples: [["I ", { target: also }, " speak French."], ["She is ", { target: also }, " a nurse."]] }, tr: { uk: { examples: ["Я також розмовляю французькою.", "Вона також медсестра."] }, es: { examples: ["También hablo francés.", "Ella también es enfermera."] } } }
+          - { level: A2, linker: too, ex: ["I speak French ", { target: too }, "."], tr: { uk: "Я розмовляю французькою теж.", es: "Hablo francés también." } }
+          - { level: B1, linker: as well as, ex: ["She speaks French ", { target: as well as }, " Spanish."], tr: { uk: "Вона розмовляє французькою, а також іспанською.", es: "Habla francés además de español." } }
+          - { level: B1, linker: in addition, ex: [{ target: In addition }, ", the hotel has a pool."], tr: { uk: "Крім того, у готелі є басейн.", es: "Además, el hotel tiene piscina." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: also }, " goes before the main verb and after be. ", { term: too }, " goes at the end."]
+              uk: [{ term: also }, " стоїть перед основним дієсловом і після be. ", { term: too }, " стоїть у кінці."]
+              es: [{ term: also }, " va antes del verbo principal y después de be. ", { term: too }, " va al final."]
           - type: rule
             level: B1
             text:
               en: [{ term: as well as }, " is followed by a noun or an -ing form."]
+              uk: [{ term: as well as }, " вимагає після себе іменника або форми на -ing."]
+              es: [{ term: as well as }, " va seguido de un sustantivo o de una forma en -ing."]
           - type: rule
             level: B1
             text:
               en: [{ term: in addition }, " starts a sentence and is followed by a comma."]
+              uk: [{ term: in addition }, " починає речення, після нього ставлять кому."]
+              es: [{ term: in addition }, " abre la oración y va seguido de coma."]
 
-  - title: { en: "Contrast: although, however, while" }
+  - title: { en: "Contrast: although, however, while", uk: "Протиставлення: although, however, while", es: "Contraste: although, however, while" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: linker, label: { en: Linker } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: linker, label: { en: Linker, uk: "Слово-зв’язка", es: "Conector" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, linker: although, pattern: [{ pattern: [although, { slot: clause }] }, ", ", { slot: clause }], ex: [{ target: Although }, " it was raining, we went out."] }
-          - { level: B1, linker: however, pattern: "sentence. However, sentence", ex: ["It was raining. ", { target: However }, ", we went out."] }
-          - { level: B1, linker: while, pattern: [{ pattern: [while, { slot: clause }] }, ", ", { slot: clause }], ex: [{ target: While }, " I like tea, my wife prefers coffee."] }
+          - { level: B1, linker: although, pattern: [{ pattern: [although, { slot: clause }] }, ", ", { slot: clause }], ex: [{ target: Although }, " it was raining, we went out."], tr: { uk: "Хоча йшов дощ, ми вийшли.", es: "Aunque llovía, salimos." } }
+          - { level: B1, linker: however, pattern: "sentence. However, sentence", ex: ["It was raining. ", { target: However }, ", we went out."], tr: { uk: "Йшов дощ. Проте ми вийшли.", es: "Llovía. Sin embargo, salimos." } }
+          - { level: B1, linker: while, pattern: [{ pattern: [while, { slot: clause }] }, ", ", { slot: clause }], ex: [{ target: While }, " I like tea, my wife prefers coffee."], tr: { uk: "Тоді як я люблю чай, моя дружина віддає перевагу каві.", es: "Mientras que a mí me gusta el té, mi esposa prefiere el café." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: although }, " joins two clauses in one sentence and replaces ", { term: but }, "."]
+              uk: [{ term: although }, " поєднує дві частини в одному реченні й замінює ", { term: but }, "."]
+              es: [{ term: although }, " une dos oraciones en una frase y sustituye a ", { term: but }, "."]
           - type: rule
             level: B1
             text:
               en: [{ term: even though }, " is a stronger ", { term: although }, ":"]
+              uk: [{ term: even though }, " — сильніший варіант ", { term: although }, ":"]
+              es: [{ term: even though }, " es un ", { term: although }, " más fuerte:"]
             ex: [{ target: Even though }, " I was tired, I went out."]
+            tr: { uk: "Незважаючи на те, що я втомився, я вийшов.", es: "A pesar de que estaba cansado, salí." }
           - type: rule
             level: B1
             text:
               en: [{ term: however }, " usually starts a new sentence and is followed by a comma."]
+              uk: [{ term: however }, " зазвичай починає нове речення, після нього ставлять кому."]
+              es: [{ term: however }, " suele abrir una oración nueva y va seguido de coma."]
           - type: rule
             level: B1
             text:
               en: [{ term: while }, " also means ", { gloss: at the same time }, ":"]
+              uk: [{ term: while }, " ще означає ", { gloss: "одночасно" }, ":"]
+              es: [{ term: while }, " también significa ", { gloss: "al mismo tiempo" }, ":"]
             ex: ["I read ", { target: while }, " I eat."]
+            tr: { uk: "Я читаю, поки їм.", es: "Leo mientras como." }
 
-  - title: { en: "Purpose and condition: so that, unless" }
+  - title: { en: "Purpose and condition: so that, unless", uk: "Мета й умова: so that, unless", es: "Finalidad y condición: so that, unless" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: linker, label: { en: Linker } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: linker, label: { en: Linker, uk: "Слово-зв’язка", es: "Conector" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, linker: so that, pattern: { pattern: [so that, { slot: clause }] }, ex: ["I left early ", { target: so that }, " I could catch the bus."] }
-          - { level: B1, linker: unless, pattern: { equivalence: [unless, ["if ", { gap: true }, " not"]] }, ex: ["We stay in ", { target: unless }, " it stops raining."] }
+          - { level: B1, linker: so that, pattern: { pattern: [so that, { slot: clause }] }, ex: ["I left early ", { target: so that }, " I could catch the bus."], tr: { uk: "Я вийшов раніше, щоб устигнути на автобус.", es: "Salí temprano para alcanzar el autobús." } }
+          - { level: B1, linker: unless, pattern: { equivalence: [unless, ["if ", { gap: true }, " not"]] }, ex: ["We stay in ", { target: unless }, " it stops raining."], tr: { uk: "Ми залишаємося вдома, якщо дощ не припиниться.", es: "Nos quedamos en casa a menos que deje de llover." } }
       - type: list
         items:
           - type: note
             level: B1
             text:
               en: ["More on ", { term: unless }, ": ", { link: "Conditionals: Zero, First and Second", to: en.sentence-building.conditionals-0-1-2 }, "."]
+              uk: ["Докладніше про ", { term: unless }, ": ", { link: "Умовні речення: нульовий, перший і другий тип", to: en.sentence-building.conditionals-0-1-2 }, "."]
+              es: ["Más sobre ", { term: unless }, ": ", { link: "Condicionales: cero, primero y segundo", to: en.sentence-building.conditionals-0-1-2 }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: B1, wrong: "Although it was raining, but we went out.", right: "Although it was raining, we went out.", rule: { en: although replaces but } }
-          - { level: A2, wrong: We stayed in because the rain., right: ["We stayed in ", { target: because of }, " the rain."], rule: { en: [{ pattern: [because, { slot: clause }] }, ", ", { pattern: [because of, { slot: noun }] }] } }
-          - { level: A2, wrong: We stayed in because of it was raining., right: ["We stayed in ", { target: because }, " it was raining."], rule: { en: { pattern: [because of, noun only] } } }
-          - { level: B1, wrong: "It was cold, however we went out.", right: ["It was cold. ", { target: However }, ", we went out."], rule: { en: however starts a new sentence and takes a comma } }
-          - { level: A2, wrong: I speak French also., right: { alternatives: [["I ", { target: also }, " speak French."], ["I speak French ", { target: too }, "."]] }, rule: { en: "also goes before the main verb, too at the end" } }
+          - { level: B1, wrong: "Although it was raining, but we went out.", right: "Although it was raining, we went out.", rule: { en: although replaces but, uk: "although замінює but", es: "although sustituye a but" } }
+          - { level: A2, wrong: We stayed in because the rain., right: ["We stayed in ", { target: because of }, " the rain."], rule: { en: [{ pattern: [because, { slot: clause }] }, ", ", { pattern: [because of, { slot: noun }] }], uk: [{ pattern: [because, { slot: clause }] }, ", ", { pattern: [because of, { slot: noun }] }], es: [{ pattern: [because, { slot: clause }] }, ", ", { pattern: [because of, { slot: noun }] }] } }
+          - { level: A2, wrong: We stayed in because of it was raining., right: ["We stayed in ", { target: because }, " it was raining."], rule: { en: { pattern: [because of, noun only] }, uk: { pattern: [because of, "лише іменник"] }, es: { pattern: [because of, "solo sustantivo"] } } }
+          - { level: B1, wrong: "It was cold, however we went out.", right: ["It was cold. ", { target: However }, ", we went out."], rule: { en: however starts a new sentence and takes a comma, uk: "however починає нове речення і потребує коми", es: "however abre una oración nueva y lleva coma" } }
+          - { level: A2, wrong: I speak French also., right: { alternatives: [["I ", { target: also }, " speak French."], ["I speak French ", { target: too }, "."]] }, rule: { en: "also goes before the main verb, too at the end", uk: "also стоїть перед основним дієсловом, too — у кінці", es: "also va antes del verbo principal, too al final" } }

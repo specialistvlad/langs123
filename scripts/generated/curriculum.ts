@@ -53,4 +53,6 @@ export interface Langs123Curriculum {
 }
 export interface Localized {
   en: string;
+  uk: string;
+  es: string;
 }

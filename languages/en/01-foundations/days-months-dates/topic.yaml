@@ -5,130 +5,152 @@ kind: foundations
 tags: [days, months, dates, years]
 concepts: [dates]
 related: [en.foundations.numbers, en.foundations.telling-time, en.prepositions.time-in-on-at]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "Days, Months and Dates" }
+title: { en: "Days, Months and Dates", uk: "Дні, місяці та дати", es: "Días, meses y fechas" }
 summary:
-  lead: { en: "The days of the week, the months, and how to say and write dates and years." }
-  rule: { en: "Days and months always start with a capital letter, and dates are said with ordinals:" }
+  lead:
+    en: "The days of the week, the months, and how to say and write dates and years."
+    uk: "Дні тижня, місяці та те, як називати й записувати дати й роки."
+    es: "Los días de la semana, los meses y cómo decir y escribir fechas y años."
+  rule:
+    en: "Days and months always start with a capital letter, and dates are said with ordinals:"
+    uk: "В англійській назви днів і місяців завжди починаються з великої літери, а дати називають порядковими числівниками:"
+    es: "En inglés, los días y los meses siempre empiezan con mayúscula, y las fechas se dicen con ordinales:"
   ex: { examples: [["on ", { target: { weekday: Monday, value: 1 } }], [{ date: ["the ", { target: third }, " of ", { target: July }], value: "--07-03" }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A0, point: { en: Days }, rule: { en: ["Monday to Friday are ", { term: weekdays }, "; Saturday and Sunday are ", { term: the weekend }] }, ex: { examples: [{ target: { weekday: Monday, value: 1 } }, { target: { weekday: Friday, value: 5 } }, { target: the weekend }] } }
-        - { level: A0, point: { en: Months }, rule: { en: "twelve months, from January to December" }, ex: { examples: [{ target: { date: January, value: "--01" } }, { target: { date: June, value: "--06" } }, { target: { date: December, value: "--12" } }] } }
-        - { level: A0, point: { en: Day of the month }, rule: { en: "say the day as an ordinal, then of and the month" }, ex: { mapping: ["5 May", { date: ["the ", { target: fifth }, " of May"], value: "--05-05" }] } }
-        - { level: A0, point: { en: Date order }, rule: { en: ["day, month, year (", { variant: "month, day, year", variety: en-US }, ")"] }, ex: { equivalence: ["04/07/2026", { target: { date: 4 July, value: "--07-04" } }] } }
-        - { level: A0, point: { en: Years }, rule: { en: ["two pairs of digits; 00 is ", { term: hundred }, ", 01–09 take ", { term: oh }] }, ex: { examples: [[{ target: nineteen }, " ninety-nine"], ["nineteen ", { target: hundred }], ["nineteen ", { target: oh }, " five"]] } }
-        - { level: A0, point: { en: After 2000 }, rule: { en: ["2000–2009: two thousand ", { pattern: [{ optional: and }, { slot: unit }] }, "; from 2010 both forms are common"] }, ex: { examples: [["two thousand ", { target: and }, " eight"], [{ target: twenty }, " twenty-six"]] } }
-        - { level: A0, point: { en: Asking the date }, rule: { en: ["ask ", { term: What's the date today? }, " and answer with an ordinal"] }, ex: ["It's ", { date: ["the ", { target: tenth }, " of ", October], value: "--10-10" }, "."] }
-        - { level: A0, point: { en: Capitals }, rule: { en: days and months start with a capital letter }, ex: { examples: [{ target: [{ letter: M }, onday] }, { target: [{ letter: J }, une] }] } }
-        - { level: A0, point: { en: Trap }, rule: { en: ["the first ", { letter: d }, " in Wednesday is silent"] }, ex: [{ weekday: Wednesday, value: 3 }, " ", { target: { ipa: ˈwenzdeɪ } }] }
+        - { level: A0, point: { en: Days, uk: "Дні", es: "Días" }, rule: { en: ["Monday to Friday are ", { term: weekdays }, "; Saturday and Sunday are ", { term: the weekend }], uk: ["Monday to Friday — ", { term: weekdays }, "; Saturday і Sunday — ", { term: the weekend }], es: ["Monday to Friday son ", { term: weekdays }, "; Saturday y Sunday son ", { term: the weekend }] }, ex: { examples: [{ target: { weekday: Monday, value: 1 } }, { target: { weekday: Friday, value: 5 } }, { target: the weekend }] }, tr: { uk: { examples: ["понеділок", "п’ятниця", "вихідні"] }, es: { examples: ["lunes", "viernes", "el fin de semana"] } } }
+        - { level: A0, point: { en: Months, uk: "Місяці", es: "Meses" }, rule: { en: "twelve months, from January to December", uk: "дванадцять місяців, від January до December", es: "doce meses, de January a December" }, ex: { examples: [{ target: { date: January, value: "--01" } }, { target: { date: June, value: "--06" } }, { target: { date: December, value: "--12" } }] }, tr: { uk: { examples: ["січень", "червень", "грудень"] }, es: { examples: ["enero", "junio", "diciembre"] } } }
+        - { level: A0, point: { en: Day of the month, uk: "День місяця", es: "Día del mes" }, rule: { en: "say the day as an ordinal, then of and the month", uk: "день називають порядковим числівником, потім of і місяць", es: "el día se dice con un ordinal, luego of y el mes" }, ex: { mapping: ["5 May", { date: ["the ", { target: fifth }, " of May"], value: "--05-05" }] }, tr: { uk: "5 травня", es: "5 de mayo" } }
+        - { level: A0, point: { en: Date order, uk: "Порядок дати", es: "Orden de la fecha" }, rule: { en: ["day, month, year (", { variant: "month, day, year", variety: en-US }, ")"], uk: ["день, місяць, рік (", { variant: "місяць, день, рік", variety: en-US }, ")"], es: ["día, mes, año (", { variant: "mes, día, año", variety: en-US }, ")"] }, ex: { equivalence: ["04/07/2026", { target: { date: 4 July, value: "--07-04" } }] }, tr: { uk: "4 липня 2026 року", es: "4 de julio de 2026" } }
+        - { level: A0, point: { en: Years, uk: "Роки", es: "Años" }, rule: { en: ["two pairs of digits; 00 is ", { term: hundred }, ", 01–09 take ", { term: oh }], uk: ["дві пари цифр; 00 — ", { term: hundred }, ", 01–09 — з ", { term: oh }], es: ["dos pares de dígitos; 00 es ", { term: hundred }, ", 01–09 llevan ", { term: oh }] }, ex: { examples: [[{ target: nineteen }, " ninety-nine"], ["nineteen ", { target: hundred }], ["nineteen ", { target: oh }, " five"]] }, tr: { uk: { examples: ["1999", "1900", "1905"] }, es: { examples: ["1999", "1900", "1905"] } } }
+        - { level: A0, point: { en: After 2000, uk: "Після 2000 року", es: "Después de 2000" }, rule: { en: ["2000–2009: two thousand ", { pattern: [{ optional: and }, { slot: unit }] }, "; from 2010 both forms are common"], uk: ["2000–2009: two thousand ", { pattern: [{ optional: and }, { slot: unit }] }, "; з 2010 року поширені обидві форми"], es: ["2000–2009: two thousand ", { pattern: [{ optional: and }, { slot: unit }] }, "; desde 2010 son comunes las dos formas"] }, ex: { examples: [["two thousand ", { target: and }, " eight"], [{ target: twenty }, " twenty-six"]] }, tr: { uk: { examples: ["2008", "2026"] }, es: { examples: ["2008", "2026"] } } }
+        - { level: A0, point: { en: Asking the date, uk: "Питання про дату", es: "Preguntar la fecha" }, rule: { en: ["ask ", { term: What's the date today? }, " and answer with an ordinal"], uk: ["питання ", { term: What's the date today? }, ", відповідь — порядковим числівником"], es: ["se pregunta ", { term: What's the date today? }, " y se responde con un ordinal"] }, ex: ["It's ", { date: ["the ", { target: tenth }, " of ", October], value: "--10-10" }, "."], tr: { uk: "Сьогодні десяте жовтня.", es: "Hoy es diez de octubre." } }
+        - { level: A0, point: { en: Capitals, uk: "Великі літери", es: "Mayúsculas" }, rule: { en: days and months start with a capital letter, uk: "в англійській назви днів і місяців починаються з великої літери", es: "en inglés, los días y los meses empiezan con mayúscula" }, ex: { examples: [{ target: [{ letter: M }, onday] }, { target: [{ letter: J }, une] }] }, tr: { uk: { examples: ["понеділок", "червень"] }, es: { examples: ["lunes", "junio"] } } }
+        - { level: A0, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["the first ", { letter: d }, " in Wednesday is silent"], uk: ["перша ", { letter: d }, " у Wednesday не вимовляється"], es: ["la primera ", { letter: d }, " de Wednesday es muda"] }, ex: [{ weekday: Wednesday, value: 3 }, " ", { target: { ipa: ˈwenzdeɪ } }], tr: { uk: "середа", es: "miércoles" } }
 
 sections:
-  - title: { en: Days of the week }
+  - title: { en: Days of the week, uk: "Дні тижня", es: "Días de la semana" }
     role: own
     content:
       - type: inventory
         set: days
         columns:
-          - { key: day, label: { en: Day } }
-          - { key: ipa, label: { en: Pronunciation } }
-          - { key: short, label: { en: Short } }
+          - { key: day, label: { en: Day, uk: "День", es: "Día" } }
+          - { key: ipa, label: { en: Pronunciation, uk: "Вимова", es: "Pronunciación" } }
+          - { key: short, label: { en: Short, uk: "Скорочення", es: "Abreviatura" } }
         rows:
-          - { level: A0, value: 1, day: Monday, ipa: { ipa: ˈmʌndeɪ }, short: Mon }
-          - { level: A0, value: 2, day: Tuesday, ipa: { ipa: ˈtjuːzdeɪ }, short: Tue }
-          - { level: A0, value: 3, day: Wednesday, ipa: { ipa: ˈwenzdeɪ }, short: Wed }
-          - { level: A0, value: 4, day: Thursday, ipa: { ipa: ˈθɜːzdeɪ }, short: Thu }
-          - { level: A0, value: 5, day: Friday, ipa: { ipa: ˈfraɪdeɪ }, short: Fri }
-          - { level: A0, value: 6, day: Saturday, ipa: { ipa: ˈsætədeɪ }, short: Sat }
-          - { level: A0, value: 7, day: Sunday, ipa: { ipa: ˈsʌndeɪ }, short: Sun }
+          - { level: A0, value: 1, day: Monday, ipa: { ipa: ˈmʌndeɪ }, short: Mon, tr: { uk: "понеділок", es: "lunes" } }
+          - { level: A0, value: 2, day: Tuesday, ipa: { ipa: ˈtjuːzdeɪ }, short: Tue, tr: { uk: "вівторок", es: "martes" } }
+          - { level: A0, value: 3, day: Wednesday, ipa: { ipa: ˈwenzdeɪ }, short: Wed, tr: { uk: "середа", es: "miércoles" } }
+          - { level: A0, value: 4, day: Thursday, ipa: { ipa: ˈθɜːzdeɪ }, short: Thu, tr: { uk: "четвер", es: "jueves" } }
+          - { level: A0, value: 5, day: Friday, ipa: { ipa: ˈfraɪdeɪ }, short: Fri, tr: { uk: "п’ятниця", es: "viernes" } }
+          - { level: A0, value: 6, day: Saturday, ipa: { ipa: ˈsætədeɪ }, short: Sat, tr: { uk: "субота", es: "sábado" } }
+          - { level: A0, value: 7, day: Sunday, ipa: { ipa: ˈsʌndeɪ }, short: Sun, tr: { uk: "неділя", es: "domingo" } }
       - type: list
         items:
           - type: rule
             level: A0
             text:
               en: "Days and months always start with a capital letter:"
+              uk: "В англійській назви днів і місяців завжди починаються з великої літери:"
+              es: "En inglés, los días y los meses siempre empiezan con mayúscula:"
             ex: [{ letter: M }, "onday, ", { letter: J }, une.]
+            tr: { uk: "понеділок, червень", es: "lunes, junio" }
           - type: rule
             level: A0
             text:
               en: ["Wednesday has a silent first d: ", { ipa: ˈwenzdeɪ }, "."]
+              uk: ["У слові Wednesday перша d німа: ", { ipa: ˈwenzdeɪ }, "."]
+              es: ["En Wednesday la primera d es muda: ", { ipa: ˈwenzdeɪ }, "."]
           - type: rule
             level: A0
             text:
               en: ["Saturday and Sunday are ", { term: the weekend }, "; the other days are ", { term: weekdays }, "."]
+              uk: ["Saturday і Sunday — ", { term: the weekend }, ", решта днів — ", { term: weekdays }, "."]
+              es: ["Saturday y Sunday son ", { term: the weekend }, "; los demás días son ", { term: weekdays }, "."]
 
-  - title: { en: Months }
+  - title: { en: Months, uk: "Місяці", es: "Meses" }
     role: own
     content:
       - type: inventory
         set: months
         columns:
-          - { key: month, label: { en: Month } }
-          - { key: ipa, label: { en: Pronunciation } }
-          - { key: short, label: { en: Short } }
+          - { key: month, label: { en: Month, uk: "Місяць", es: "Mes" } }
+          - { key: ipa, label: { en: Pronunciation, uk: "Вимова", es: "Pronunciación" } }
+          - { key: short, label: { en: Short, uk: "Скорочення", es: "Abreviatura" } }
         rows:
-          - { level: A0, value: "--01", month: January, ipa: { ipa: ˈdʒænjuəri }, short: Jan }
-          - { level: A0, value: "--02", month: February, ipa: { ipa: ˈfebruəri }, short: Feb }
-          - { level: A0, value: "--03", month: March, ipa: { ipa: mɑːtʃ }, short: Mar }
-          - { level: A0, value: "--04", month: April, ipa: { ipa: ˈeɪprəl }, short: Apr }
-          - { level: A0, value: "--05", month: May, ipa: { ipa: meɪ }, short: May }
-          - { level: A0, value: "--06", month: June, ipa: { ipa: dʒuːn }, short: Jun }
-          - { level: A0, value: "--07", month: July, ipa: { ipa: dʒuˈlaɪ }, short: Jul }
-          - { level: A0, value: "--08", month: August, ipa: { ipa: ˈɔːɡəst }, short: Aug }
-          - { level: A0, value: "--09", month: September, ipa: { ipa: sepˈtembə }, short: Sep }
-          - { level: A0, value: "--10", month: October, ipa: { ipa: ɒkˈtəʊbə }, short: Oct }
-          - { level: A0, value: "--11", month: November, ipa: { ipa: nəʊˈvembə }, short: Nov }
-          - { level: A0, value: "--12", month: December, ipa: { ipa: dɪˈsembə }, short: Dec }
+          - { level: A0, value: "--01", month: January, ipa: { ipa: ˈdʒænjuəri }, short: Jan, tr: { uk: "січень", es: "enero" } }
+          - { level: A0, value: "--02", month: February, ipa: { ipa: ˈfebruəri }, short: Feb, tr: { uk: "лютий", es: "febrero" } }
+          - { level: A0, value: "--03", month: March, ipa: { ipa: mɑːtʃ }, short: Mar, tr: { uk: "березень", es: "marzo" } }
+          - { level: A0, value: "--04", month: April, ipa: { ipa: ˈeɪprəl }, short: Apr, tr: { uk: "квітень", es: "abril" } }
+          - { level: A0, value: "--05", month: May, ipa: { ipa: meɪ }, short: May, tr: { uk: "травень", es: "mayo" } }
+          - { level: A0, value: "--06", month: June, ipa: { ipa: dʒuːn }, short: Jun, tr: { uk: "червень", es: "junio" } }
+          - { level: A0, value: "--07", month: July, ipa: { ipa: dʒuˈlaɪ }, short: Jul, tr: { uk: "липень", es: "julio" } }
+          - { level: A0, value: "--08", month: August, ipa: { ipa: ˈɔːɡəst }, short: Aug, tr: { uk: "серпень", es: "agosto" } }
+          - { level: A0, value: "--09", month: September, ipa: { ipa: sepˈtembə }, short: Sep, tr: { uk: "вересень", es: "septiembre" } }
+          - { level: A0, value: "--10", month: October, ipa: { ipa: ɒkˈtəʊbə }, short: Oct, tr: { uk: "жовтень", es: "octubre" } }
+          - { level: A0, value: "--11", month: November, ipa: { ipa: nəʊˈvembə }, short: Nov, tr: { uk: "листопад", es: "noviembre" } }
+          - { level: A0, value: "--12", month: December, ipa: { ipa: dɪˈsembə }, short: Dec, tr: { uk: "грудень", es: "diciembre" } }
 
-  - title: { en: Dates }
+  - title: { en: Dates, uk: "Дати", es: "Fechas" }
     role: own
     content:
       - type: inventory
         set: dates
         columns:
-          - { key: written, label: { en: Written } }
-          - { key: said, label: { en: Said } }
+          - { key: written, label: { en: Written, uk: "Як пишеться", es: "Cómo se escribe" } }
+          - { key: said, label: { en: Said, uk: "Як читається", es: "Cómo se dice" } }
         rows:
-          - { level: A0, value: "--05-05", written: { examples: ["5 May", "5/5"] }, said: ["the ", { target: fifth }, " of May"] }
-          - { level: A0, value: "--06-01", written: { examples: ["1 June", "1/6"] }, said: ["the ", { target: first }, " of June"] }
-          - { level: A0, value: "--03-22", written: { examples: ["22 March", "22/3"] }, said: ["the ", { target: twenty-second }, " of March"] }
+          - { level: A0, value: "--05-05", written: { examples: ["5 May", "5/5"] }, said: ["the ", { target: fifth }, " of May"], tr: { uk: "5 травня", es: "5 de mayo" } }
+          - { level: A0, value: "--06-01", written: { examples: ["1 June", "1/6"] }, said: ["the ", { target: first }, " of June"], tr: { uk: "1 червня", es: "1 de junio" } }
+          - { level: A0, value: "--03-22", written: { examples: ["22 March", "22/3"] }, said: ["the ", { target: twenty-second }, " of March"], tr: { uk: "22 березня", es: "22 de marzo" } }
       - type: list
         items:
           - type: note
             level: A0
             text:
               en: ["Say the day as an ordinal number: the ", { term: third }, " of July. Ordinals: ", { link: Numbers, to: en.foundations.numbers }, "."]
+              uk: ["День називають порядковим числівником: the ", { term: third }, " of July. Порядкові числівники: ", { link: "Числа", to: en.foundations.numbers }, "."]
+              es: ["El día se dice con un número ordinal: the ", { term: third }, " of July. Ordinales: ", { link: "Los números", to: en.foundations.numbers }, "."]
           - type: rule
             level: A0
             text:
               en: "British order: day, month, year. 04/07/2026 is 4 July."
+              uk: "Британський порядок: день, місяць, рік. 04/07/2026 — це 4 липня."
+              es: "Orden británico: día, mes y año. 04/07/2026 es el 4 de julio."
           - type: note
             level: A0
             variety: en-US
             text:
               en: ["month, day, year. 04/07/2026 is April 7; say ", { date: April seventh, value: "--04-07" }, "."]
+              uk: ["місяць, день, рік. 04/07/2026 — це 7 квітня; читається ", { date: April seventh, value: "--04-07" }, "."]
+              es: ["mes, día y año. 04/07/2026 es el 7 de abril; se dice ", { date: April seventh, value: "--04-07" }, "."]
           - type: rule
             level: A0
             text:
               en: ["Ask the date with ", { term: What's the date today? }]
+              uk: ["Дату запитують так: ", { term: What's the date today? }]
+              es: ["La fecha se pregunta así: ", { term: What's the date today? }]
             ex: ["It's ", { date: ["the ", { target: tenth }, " of ", October], value: "--10-10" }, "."]
+            tr: { uk: "Сьогодні десяте жовтня.", es: "Hoy es diez de octubre." }
 
-  - title: { en: Years }
+  - title: { en: Years, uk: "Роки", es: "Años" }
     role: own
     content:
       - type: inventory
         set: years
         columns:
-          - { key: year, label: { en: Year } }
-          - { key: said, label: { en: Said } }
+          - { key: year, label: { en: Year, uk: "Рік", es: "Año" } }
+          - { key: said, label: { en: Said, uk: "Як читається", es: "Cómo se dice" } }
         rows:
           - { level: A0, value: "1999", year: "1999", said: [{ target: nineteen }, " ninety-nine"] }
           - { level: A0, value: "1900", year: "1900", said: ["nineteen ", { target: hundred }] }
@@ -142,19 +164,25 @@ sections:
             level: A0
             text:
               en: ["Say most years in two pairs of digits: ", { mapping: [{ date: { examples: ["19", "99"] }, value: "1999" }, nineteen ninety-nine] }, "."]
+              uk: ["Більшість років читають двома парами цифр: ", { mapping: [{ date: { examples: ["19", "99"] }, value: "1999" }, nineteen ninety-nine] }, "."]
+              es: ["La mayoría de los años se dicen en dos pares de dígitos: ", { mapping: [{ date: { examples: ["19", "99"] }, value: "1999" }, nineteen ninety-nine] }, "."]
           - type: rule
             level: A0
             text:
               en: ["Say 00 as ", { term: hundred }, " and 01 to 09 with ", { term: oh }, ": nineteen hundred, nineteen oh five."]
+              uk: ["00 читається як ", { term: hundred }, ", а 01–09 — з ", { term: oh }, ": nineteen hundred, nineteen oh five."]
+              es: ["El 00 se dice ", { term: hundred }, " y del 01 al 09 se usa ", { term: oh }, ": nineteen hundred, nineteen oh five."]
           - type: rule
             level: A0
             text:
               en: ["2000–2009: two thousand ", { pattern: [{ optional: and }, { slot: unit }] }, ". From 2010, both forms are common."]
+              uk: ["2000–2009: two thousand ", { pattern: [{ optional: and }, { slot: unit }] }, ". З 2010 року поширені обидві форми."]
+              es: ["2000–2009: two thousand ", { pattern: [{ optional: and }, { slot: unit }] }, ". Desde 2010 son comunes las dos formas."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A0, wrong: [{ weekday: Wednesday, value: 3 }, " ", { ipa: ˈwednzdeɪ }], right: [{ weekday: Wednesday, value: 3 }, " ", { target: { ipa: ˈwenzdeɪ } }], rule: { en: the first d is silent } }
-          - { level: A0, wrong: ["the five of ", { date: May, value: "--05" }], right: { date: ["the ", { target: fifth }, " of ", May], value: "--05-05" }, rule: { en: days are ordinals } }
+          - { level: A0, wrong: [{ weekday: Wednesday, value: 3 }, " ", { ipa: ˈwednzdeɪ }], right: [{ weekday: Wednesday, value: 3 }, " ", { target: { ipa: ˈwenzdeɪ } }], rule: { en: the first d is silent, uk: "перша d німа", es: "la primera d es muda" } }
+          - { level: A0, wrong: ["the five of ", { date: May, value: "--05" }], right: { date: ["the ", { target: fifth }, " of ", May], value: "--05-05" }, rule: { en: days are ordinals, uk: "день називають порядковим числівником", es: "el día se dice con un ordinal" } }

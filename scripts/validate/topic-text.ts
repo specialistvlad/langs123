@@ -36,15 +36,23 @@ export function checkText(topic: Topic, where: string, report: Report): void {
       if (own === undefined) report(where, `${path} has no "${l}" text`);
     }
   };
+  // A translation carries each explanation language that renders it but the language being learned (§6).
+  const needTr = (value: Localized | undefined, path: string, langs: Explain[]): void => {
+    need(
+      value,
+      path,
+      langs.filter((l) => l !== topic.lang),
+    );
+  };
   const cell = (value: Cell | undefined, path: string, langs: Explain[]): void => {
     if (value === undefined) return;
-    if (typeof value === "object" && !Array.isArray(value) && "ex" in value && "tr" in value) need(value.tr, `${path}.tr`, langs);
+    if (typeof value === "object" && !Array.isArray(value) && "ex" in value && "tr" in value) needTr(value.tr, `${path}.tr`, langs);
     else if (isLocalizedValue(value)) need(value, path, langs);
   };
   const item = (it: Item, path: string, langs: Explain[]): void => {
     const own = scope(it, langs);
     need(it.text, `${path}.text`, own);
-    need(it.tr, `${path}.tr`, own);
+    needTr(it.tr, `${path}.tr`, own);
   };
   const table = (block: TableBlock, path: string, langs: Explain[]): void => {
     const keys = block.columns.map((c) => c.key);
@@ -71,7 +79,7 @@ export function checkText(topic: Topic, where: string, report: Report): void {
         if (!ROW_KEYS.has(key) && !keys.includes(key)) report(where, `${path}.rows[${k}] has "${key}", which no column holds`);
       }
       for (const c of block.columns) cell(row[c.key] as Cell | undefined, `${path}.rows[${k}].${c.key}`, scope(c, rowLangs));
-      need(row.tr, `${path}.rows[${k}].tr`, rowLangs);
+      needTr(row.tr, `${path}.rows[${k}].tr`, rowLangs);
       if (block.type === "paradigm" && row.tr !== undefined) {
         report(where, `${path}.rows[${k}] translates a paradigm row: the examples carry the translations`);
       }
@@ -102,7 +110,7 @@ export function checkText(topic: Topic, where: string, report: Report): void {
       const inner = scope(block, langs);
       if (block.type === "prose") {
         need(block.text, `${p}.text`, inner);
-        need(block.tr, `${p}.tr`, inner);
+        needTr(block.tr, `${p}.tr`, inner);
       }
       if (block.type === "list") {
         block.items.forEach((it, k) => {

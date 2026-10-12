@@ -5,36 +5,42 @@ kind: grammar
 tags: [verbs, modals, ability, permission, requests]
 concepts: [ability]
 related: [en.modals.must-have-to, en.modals.should, en.modals.may-might, en.modals.would, en.sentence-building.questions-negatives, en.tenses.simple-tenses]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Can and Could }
+title: { en: Can and Could, uk: Can і could, es: Can y could }
 summary:
-  lead: { en: "Can for ability, permission and requests; could for past ability, polite requests and possibility." }
-  rule: { en: "Can and could never change and take the base verb without to:" }
+  lead:
+    en: "Can for ability, permission and requests; could for past ability, polite requests and possibility."
+    uk: "Can виражає вміння, дозвіл і прохання; could — вміння в минулому, ввічливі прохання й можливість."
+    es: "Can expresa habilidad, permiso y peticiones; could, habilidad en el pasado, peticiones corteses y posibilidad."
+  rule:
+    en: "Can and could never change and take the base verb without to:"
+    uk: "Can і could не змінюються й вживаються з початковою формою дієслова без to:"
+    es: "Can y could nunca cambian y van con la forma base del verbo, sin to:"
   ex: ["She ", { target: can }, " swim. ", { target: Can }, " she swim?"]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Form }, rule: { en: [{ pattern: [{ slot: subject }, can, { slot: base verb }] }, "; one form for every subject"] }, ex: ["She ", { target: can }, " swim."] }
-        - { level: A1, point: { en: Negative }, rule: { en: [{ term: can't }, "; the full form is ", { term: cannot }, ", one word"] }, ex: ["I ", { target: can't }, " swim."] }
-        - { level: A1, point: { en: Question }, rule: { en: [{ pattern: [Can, { slot: subject }, { slot: base verb }] }, "; no ", { term: do }] }, ex: [{ target: Can }, " you swim?"] }
-        - { level: A1, point: { en: Ability }, rule: { en: [{ term: can }, " for skills"] }, ex: ["I ", { target: can }, " cook pasta."] }
-        - { level: A1, point: { en: Permission }, rule: { en: [{ term: can }, " allows, ", { term: can't }, " forbids; ask with ", { term: [Can I, { gap: true }, "?"] }] }, ex: { examples: [["You ", { target: can }, " park here."], [{ target: Can }, " I open the window?"]] } }
-        - { level: A1, point: { en: Request }, rule: { en: [{ term: [Can you, { gap: true }, "?"] }, " asks for help"] }, ex: [{ target: Can }, " you help me, please?"] }
-        - { level: A2, point: { en: Past ability }, rule: { en: [{ term: could }, " for general ability in the past"] }, ex: ["I ", { target: could }, " run fast when I was young."] }
-        - { level: A2, point: { en: Polite request }, rule: { en: [{ term: Could }, " is more polite than ", { term: can }] }, ex: [{ target: Could }, " you open the door, please?"] }
-        - { level: A2, point: { en: Possibility }, rule: { en: [{ term: could }, " says what may happen"] }, ex: ["It ", { target: could }, " rain later."] }
-        - { level: A2, point: { en: Other tenses }, rule: { en: [{ term: be able to }, " takes the place of ", { term: can }] }, ex: ["I'll ", { target: be able to }, " help you tomorrow."] }
-        - { level: A2, point: { en: Trap }, rule: { en: ["a single success in the past takes ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: able to }] }, ex: ["The fire was big, but we ", { target: were able to }, " escape."] }
+        - { level: A1, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: [{ pattern: [{ slot: subject }, can, { slot: base verb }] }, "; one form for every subject"], uk: [{ pattern: [{ slot: subject }, can, { slot: base verb }] }, "; одна форма для всіх підметів"], es: [{ pattern: [{ slot: subject }, can, { slot: base verb }] }, "; una sola forma para todos los sujetos"] }, ex: ["She ", { target: can }, " swim."], tr: { uk: "Вона вміє плавати.", es: "Ella sabe nadar." } }
+        - { level: A1, point: { en: Negative, uk: "Заперечення", es: "Negación" }, rule: { en: [{ term: can't }, "; the full form is ", { term: cannot }, ", one word"], uk: [{ term: can't }, "; повна форма — ", { term: cannot }, ", одне слово"], es: [{ term: can't }, "; la forma completa es ", { term: cannot }, ", una sola palabra"] }, ex: ["I ", { target: can't }, " swim."], tr: { uk: "Я не вмію плавати.", es: "No sé nadar." } }
+        - { level: A1, point: { en: Question, uk: "Питання", es: "Pregunta" }, rule: { en: [{ pattern: [Can, { slot: subject }, { slot: base verb }] }, "; no ", { term: do }], uk: [{ pattern: [Can, { slot: subject }, { slot: base verb }] }, "; без ", { term: do }], es: [{ pattern: [Can, { slot: subject }, { slot: base verb }] }, "; sin ", { term: do }] }, ex: [{ target: Can }, " you swim?"], tr: { uk: "Ти вмієш плавати?", es: "¿Sabes nadar?" } }
+        - { level: A1, point: { en: Ability, uk: "Вміння", es: "Habilidad" }, rule: { en: [{ term: can }, " for skills"], uk: [{ term: can }, " для навичок"], es: [{ term: can }, " para destrezas"] }, ex: ["I ", { target: can }, " cook pasta."], tr: { uk: "Я вмію готувати пасту.", es: "Sé cocinar pasta." } }
+        - { level: A1, point: { en: Permission, uk: "Дозвіл", es: "Permiso" }, rule: { en: [{ term: can }, " allows, ", { term: can't }, " forbids; ask with ", { term: [Can I, { gap: true }, "?"] }], uk: [{ term: can }, " дозволяє, ", { term: can't }, " забороняє; дозволу просять так: ", { term: [Can I, { gap: true }, "?"] }], es: [{ term: can }, " permite, ", { term: can't }, " prohíbe; para pedir permiso: ", { term: [Can I, { gap: true }, "?"] }] }, ex: { examples: [["You ", { target: can }, " park here."], [{ target: Can }, " I open the window?"]] }, tr: { uk: { examples: ["Тут можна паркуватися.", "Можна мені відчинити вікно?"] }, es: { examples: ["Puedes estacionar aquí.", "¿Puedo abrir la ventana?"] } } }
+        - { level: A1, point: { en: Request, uk: "Прохання", es: "Petición" }, rule: { en: [{ term: [Can you, { gap: true }, "?"] }, " asks for help"], uk: [{ term: [Can you, { gap: true }, "?"] }, " просить про допомогу"], es: [{ term: [Can you, { gap: true }, "?"] }, " pide ayuda"] }, ex: [{ target: Can }, " you help me, please?"], tr: { uk: "Можеш мені допомогти, будь ласка?", es: "¿Puedes ayudarme, por favor?" } }
+        - { level: A2, point: { en: Past ability, uk: "Вміння в минулому", es: "Habilidad en el pasado" }, rule: { en: [{ term: could }, " for general ability in the past"], uk: [{ term: could }, " для загального вміння в минулому"], es: [{ term: could }, " para la habilidad general en el pasado"] }, ex: ["I ", { target: could }, " run fast when I was young."], tr: { uk: "У молодості я міг швидко бігати.", es: "Podía correr rápido cuando era joven." } }
+        - { level: A2, point: { en: Polite request, uk: "Ввічливе прохання", es: "Petición cortés" }, rule: { en: [{ term: Could }, " is more polite than ", { term: can }], uk: [{ term: Could }, " ввічливіше за ", { term: can }], es: [{ term: Could }, " es más cortés que ", { term: can }] }, ex: [{ target: Could }, " you open the door, please?"], tr: { uk: "Чи не міг би ти відчинити двері, будь ласка?", es: "¿Podrías abrir la puerta, por favor?" } }
+        - { level: A2, point: { en: Possibility, uk: "Можливість", es: "Posibilidad" }, rule: { en: [{ term: could }, " says what may happen"], uk: [{ term: could }, " говорить про те, що може статися"], es: [{ term: could }, " dice lo que puede pasar"] }, ex: ["It ", { target: could }, " rain later."], tr: { uk: "Пізніше може піти дощ.", es: "Más tarde podría llover." } }
+        - { level: A2, point: { en: Other tenses, uk: "Інші часи", es: "Otros tiempos" }, rule: { en: [{ term: be able to }, " takes the place of ", { term: can }], uk: [{ term: be able to }, " замінює ", { term: can }], es: [{ term: be able to }, " ocupa el lugar de ", { term: can }] }, ex: ["I'll ", { target: be able to }, " help you tomorrow."], tr: { uk: "Завтра я зможу тобі допомогти.", es: "Mañana podré ayudarte." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["a single success in the past takes ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: able to }], uk: ["одноразовий успіх у минулому вимагає ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: able to }], es: ["un éxito concreto en el pasado lleva ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: able to }] }, ex: ["The fire was big, but we ", { target: were able to }, " escape."], tr: { uk: "Пожежа була велика, але нам вдалося втекти.", es: "El incendio era grande, pero logramos escapar." } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -43,92 +49,117 @@ sections:
             level: A1
             text:
               en: [{ term: can }, " and ", { term: could }, " have one form for every subject: I can, she can."]
+              uk: [{ term: can }, " і ", { term: could }, " мають одну форму для всіх підметів: I can, she can."]
+              es: [{ term: can }, " y ", { term: could }, " tienen una sola forma para todos los sujetos: I can, she can."]
           - type: rule
             level: A1
             text:
               en: ["The verb after ", { term: can }, " or ", { term: could }, " is in the base form:"]
+              uk: ["Дієслово після ", { term: can }, " або ", { term: could }, " стоїть у початковій формі:"]
+              es: ["El verbo después de ", { term: can }, " o ", { term: could }, " va en la forma base:"]
             ex: ["She can ", { target: swim }, "."]
+            tr: { uk: "Вона вміє плавати.", es: "Ella sabe nadar." }
           - type: rule
             level: A1
             text:
               en: ["Questions and negatives need no ", { term: do }, ":"]
+              uk: ["Питанням і запереченням не потрібне ", { term: do }, ":"]
+              es: ["Las preguntas y las negaciones no necesitan ", { term: do }, ":"]
             ex: { examples: [[{ target: Can }, " you swim?"], ["I ", { target: can't }, " swim."]] }
+            tr: { uk: { examples: ["Ти вмієш плавати?", "Я не вмію плавати."] }, es: { examples: ["¿Sabes nadar?", "No sé nadar."] } }
           - type: rule
             level: A1
             text:
               en: ["The written negative is ", { term: can't }, "; the full form is ", { term: cannot }, ", one word."]
+              uk: ["Письмове заперечення — ", { term: can't }, "; повна форма — ", { term: cannot }, ", одне слово."]
+              es: ["La negación escrita es ", { term: can't }, "; la forma completa es ", { term: cannot }, ", una sola palabra."]
 
-  - title: { en: "Pronunciation: can and can't" }
+  - title: { en: "Pronunciation: can and can't", uk: "Вимова: can і can't", es: "Pronunciación: can y can't" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, form: { en: "can (weak, in a sentence)" }, sound: { ipa: kən }, ex: ["I ", { target: can }, " swim. ", { ipa: aɪ kən ˈswɪm }] }
-          - { level: A1, form: { en: "can (strong, at the end or for emphasis)" }, sound: { ipa: kæn }, ex: ["Yes, I ", { target: can }, ". ", { ipa: jes aɪ ˈkæn }] }
-          - { level: A1, form: can't, sound: [{ ipa: kɑːnt }, " ", { variant: { ipa: kænt }, variety: en-US }], ex: ["I ", { target: can't }, " swim. ", { ipa: aɪ ˈkɑːnt swɪm }] }
+          - { level: A1, form: { en: "can (weak, in a sentence)", uk: "can (слабка форма, у реченні)", es: "can (forma débil, dentro de la oración)" }, sound: { ipa: kən }, ex: ["I ", { target: can }, " swim. ", { ipa: aɪ kən ˈswɪm }], tr: { uk: "Я вмію плавати.", es: "Sé nadar." } }
+          - { level: A1, form: { en: "can (strong, at the end or for emphasis)", uk: "can (сильна форма, в кінці речення або для підкреслення)", es: "can (forma fuerte, al final o para enfatizar)" }, sound: { ipa: kæn }, ex: ["Yes, I ", { target: can }, ". ", { ipa: jes aɪ ˈkæn }], tr: { uk: "Так, можу.", es: "Sí, puedo." } }
+          - { level: A1, form: can't, sound: [{ ipa: kɑːnt }, " ", { variant: { ipa: kænt }, variety: en-US }], ex: ["I ", { target: can't }, " swim. ", { ipa: aɪ ˈkɑːnt swɪm }], tr: { uk: "Я не вмію плавати.", es: "No sé nadar." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["In a statement the stress falls on the main verb, so ", { term: can }, " is short."]
+              uk: ["У ствердженні наголос падає на основне дієслово, тому ", { term: can }, " звучить коротко."]
+              es: ["En una afirmación el acento recae en el verbo principal, por eso ", { term: can }, " suena breve."]
           - type: rule
             level: A1
             text:
               en: [{ term: can't }, " is always stressed and has a long vowel in British English."]
+              uk: [{ term: can't }, " завжди під наголосом і має довгий голосний у британській англійській."]
+              es: [{ term: can't }, " siempre lleva acento y tiene una vocal larga en inglés británico."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: "Ability: skills (can)" }, ex: ["I ", { target: can }, " cook pasta."] }
-          - { level: A1, use: { en: "Permission: what is allowed (can)" }, ex: ["You ", { target: can }, " park here."] }
-          - { level: A1, use: { en: Not allowed (can't) }, ex: ["You ", { target: can't }, " smoke here."] }
-          - { level: A1, use: { en: Asking for permission (Can I…?) }, ex: [{ target: Can }, " I open the window?"] }
-          - { level: A1, use: { en: Requests (Can you…?) }, ex: [{ target: Can }, " you help me, please?"] }
-          - { level: A2, use: { en: "Senses: see, hear, smell" }, ex: ["I ", { target: can }, " hear music."] }
-          - { level: A2, use: { en: General ability in the past (could) }, ex: ["I ", { target: could }, " run fast when I was young."] }
-          - { level: A2, use: { en: Polite requests (Could you…?) }, ex: [{ target: Could }, " you open the door, please?"] }
-          - { level: A2, use: { en: Polite permission (Could I…?) }, ex: [{ target: Could }, " I use your phone?"] }
-          - { level: A2, use: { en: Possibility }, ex: ["It ", { target: could }, " rain later."] }
+          - { level: A1, use: { en: "Ability: skills (can)", uk: "Вміння: навички (can)", es: "Habilidad: destrezas (can)" }, ex: ["I ", { target: can }, " cook pasta."], tr: { uk: "Я вмію готувати пасту.", es: "Sé cocinar pasta." } }
+          - { level: A1, use: { en: "Permission: what is allowed (can)", uk: "Дозвіл: що дозволено (can)", es: "Permiso: lo que está permitido (can)" }, ex: ["You ", { target: can }, " park here."], tr: { uk: "Тут можна паркуватися.", es: "Puedes estacionar aquí." } }
+          - { level: A1, use: { en: Not allowed (can't), uk: "Заборона (can't)", es: "Prohibición (can't)" }, ex: ["You ", { target: can't }, " smoke here."], tr: { uk: "Тут не можна курити.", es: "Aquí no se puede fumar." } }
+          - { level: A1, use: { en: Asking for permission (Can I…?), uk: "Прохання про дозвіл (Can I…?)", es: "Pedir permiso (Can I…?)" }, ex: [{ target: Can }, " I open the window?"], tr: { uk: "Можна мені відчинити вікно?", es: "¿Puedo abrir la ventana?" } }
+          - { level: A1, use: { en: Requests (Can you…?), uk: "Прохання (Can you…?)", es: "Peticiones (Can you…?)" }, ex: [{ target: Can }, " you help me, please?"], tr: { uk: "Можеш мені допомогти, будь ласка?", es: "¿Puedes ayudarme, por favor?" } }
+          - { level: A2, use: { en: "Senses: see, hear, smell", uk: "Органи чуття: бачити, чути, нюхати", es: "Los sentidos: ver, oír, oler" }, ex: ["I ", { target: can }, " hear music."], tr: { uk: "Я чую музику.", es: "Oigo música." } }
+          - { level: A2, use: { en: General ability in the past (could), uk: "Загальне вміння в минулому (could)", es: "Habilidad general en el pasado (could)" }, ex: ["I ", { target: could }, " run fast when I was young."], tr: { uk: "У молодості я міг швидко бігати.", es: "Podía correr rápido cuando era joven." } }
+          - { level: A2, use: { en: Polite requests (Could you…?), uk: "Ввічливі прохання (Could you…?)", es: "Peticiones corteses (Could you…?)" }, ex: [{ target: Could }, " you open the door, please?"], tr: { uk: "Чи не міг би ти відчинити двері, будь ласка?", es: "¿Podrías abrir la puerta, por favor?" } }
+          - { level: A2, use: { en: Polite permission (Could I…?), uk: "Ввічливе прохання про дозвіл (Could I…?)", es: "Permiso cortés (Could I…?)" }, ex: [{ target: Could }, " I use your phone?"], tr: { uk: "Чи можна мені скористатися твоїм телефоном?", es: "¿Podría usar tu teléfono?" } }
+          - { level: A2, use: { en: Possibility, uk: "Можливість", es: "Posibilidad" }, ex: ["It ", { target: could }, " rain later."], tr: { uk: "Пізніше може піти дощ.", es: "Más tarde podría llover." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: Could }, " is more polite than ", { term: can }, " in a request. The answer uses ", { term: can }, ":"]
+              uk: [{ term: Could }, " ввічливіше за ", { term: can }, " у проханні. У відповіді вживають ", { term: can }, ":"]
+              es: [{ term: Could }, " es más cortés que ", { term: can }, " en una petición. La respuesta usa ", { term: can }, ":"]
             ex: { exchange: [[{ target: Could }, " I sit here?"], ["Yes, of course you ", { target: can }, "."]] }
+            tr: { uk: "Чи можна мені тут сісти? — Так, звісно, можна.", es: "¿Podría sentarme aquí? — Sí, claro que puedes." }
           - type: rule
             level: A2
             text:
               en: [{ term: be able to }, " takes the place of ", { term: can }, " in other tenses:"]
+              uk: [{ term: be able to }, " замінює ", { term: can }, " в інших часах:"]
+              es: [{ term: be able to }, " ocupa el lugar de ", { term: can }, " en otros tiempos:"]
             ex: ["I'll ", { target: be able to }, " help you tomorrow."]
+            tr: { uk: "Завтра я зможу тобі допомогти.", es: "Mañana podré ayudarte." }
           - type: rule
             level: A2
             text:
               en: ["A single success in the past takes ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: able to }, ":"]
+              uk: ["Одноразовий успіх у минулому вимагає ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: able to }, ":"]
+              es: ["Un éxito concreto en el pasado lleva ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: able to }, ":"]
             ex: ["The fire was big, but we ", { target: were able to }, " escape."]
+            tr: { uk: "Пожежа була велика, але нам вдалося втекти.", es: "El incendio era grande, pero logramos escapar." }
           - type: note
             level: A2
             text:
               en: ["For other possibility words see ", { link: May and Might, to: en.modals.may-might }, "."]
+              uk: ["Про інші слова на позначення можливості див. ", { link: "May і might", to: en.modals.may-might }, "."]
+              es: ["Para otras palabras de posibilidad, ver ", { link: "May y might", to: en.modals.may-might }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: She cans swim., right: ["She ", { target: can }, " swim."], rule: { en: can has no -s } }
-          - { level: A1, wrong: I can to swim., right: ["I can ", { target: swim }, "."], rule: { en: [{ pattern: [can, { slot: base verb }] }, ; no to] } }
-          - { level: A1, wrong: Do you can swim?, right: [{ target: Can }, " you swim?"], rule: { en: questions with can need no do } }
-          - { level: A1, wrong: I don't can swim., right: ["I ", { target: can't }, " swim."], rule: { en: negative = can't } }
-          - { level: A2, wrong: I can swim when I was five., right: ["I ", { target: could }, " swim when I was five."], rule: { en: { takes: [past ability, could] } } }
-          - { level: A1, wrong: She can swims., right: ["She can ", { target: swim }, "."], rule: { en: { pattern: [can, { slot: base verb }] } } }
+          - { level: A1, wrong: She cans swim., right: ["She ", { target: can }, " swim."], rule: { en: can has no -s, uk: "can не має -s", es: "can no lleva -s" } }
+          - { level: A1, wrong: I can to swim., right: ["I can ", { target: swim }, "."], rule: { en: [{ pattern: [can, { slot: base verb }] }, ; no to], uk: [{ pattern: [can, { slot: base verb }] }, "; без to"], es: [{ pattern: [can, { slot: base verb }] }, "; sin to"] } }
+          - { level: A1, wrong: Do you can swim?, right: [{ target: Can }, " you swim?"], rule: { en: questions with can need no do, uk: "у питаннях з can не потрібне do", es: "las preguntas con can no necesitan do" } }
+          - { level: A1, wrong: I don't can swim., right: ["I ", { target: can't }, " swim."], rule: { en: negative = can't, uk: "заперечна форма — can't", es: "la negación es can't" } }
+          - { level: A2, wrong: I can swim when I was five., right: ["I ", { target: could }, " swim when I was five."], rule: { en: { takes: [past ability, could] }, uk: { takes: ["вміння в минулому", could] }, es: { takes: ["habilidad en el pasado", could] } } }
+          - { level: A1, wrong: She can swims., right: ["She can ", { target: swim }, "."], rule: { en: { pattern: [can, { slot: base verb }] }, uk: { pattern: [can, { slot: base verb }] }, es: { pattern: [can, { slot: base verb }] } } }

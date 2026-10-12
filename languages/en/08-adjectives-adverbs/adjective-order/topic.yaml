@@ -5,117 +5,138 @@ kind: grammar
 tags: [adjectives, word order]
 concepts: [adjectives]
 related: [en.verbs.to-be, en.nouns-determiners.plurals, en.sentence-building.word-order, en.adjectives-adverbs.comparatives-superlatives]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Adjectives and Adjective Order }
+title: { en: Adjectives and Adjective Order, uk: Прикметники та їхній порядок, es: Los adjetivos y su orden }
 summary:
-  lead: { en: "Where adjectives go, their fixed order, and -ed and -ing adjectives." }
-  rule: { en: "Adjectives go before a noun, take no plural -s, and put size before colour and age before material:" }
+  lead:
+    en: "Where adjectives go, their fixed order, and -ed and -ing adjectives."
+    uk: "Місце прикметників, їхній сталий порядок і прикметники на -ed та -ing."
+    es: "Dónde van los adjetivos, su orden fijo y los adjetivos en -ed y -ing."
+  rule:
+    en: "Adjectives go before a noun, take no plural -s, and put size before colour and age before material:"
+    uk: "Прикметники стоять перед іменником, не набувають -s у множині, а розмір ставлять перед кольором і вік — перед матеріалом:"
+    es: "Los adjetivos van delante del sustantivo, no toman -s de plural y colocan el tamaño antes que el color y la edad antes que el material:"
   ex: { examples: [["a ", { target: big red }, " bag"], ["an ", { target: old wooden }, " table."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { pattern: [{ slot: adjective }, { slot: noun }] }, rule: { en: the adjective goes before the noun }, ex: ["She has a ", { target: new }, " phone."] }
-        - { level: A1, point: { pattern: [{ slot: verb }, { slot: adjective }] }, rule: { en: "the verb is be, look, feel, sound, taste or smell" }, ex: ["You ", { target: look tired }, "."] }
-        - { level: A2, point: { en: Several adjectives }, rule: { en: "opinion, size, age, shape, colour, origin, material, purpose" }, ex: ["a ", { target: nice old wooden }, " chair"] }
-        - { level: A2, point: { alternatives: ["-ed", "-ing"] }, rule: { en: "-ed: how a person feels; -ing: what causes it" }, ex: { examples: [["I'm ", { target: bored }, "."], ["The film is ", { target: boring }, "."]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: one form for singular and plural }, ex: ["two ", { target: red }, " cars"] }
-        - { level: A2, point: { en: Trap }, rule: { en: "size before colour, age before material" }, ex: { examples: [["a ", { target: big red }, " bag"], ["an ", { target: old wooden }, " table"]] } }
+        - { level: A1, point: { pattern: [{ slot: adjective }, { slot: noun }] }, rule: { en: the adjective goes before the noun, uk: "прикметник стоїть перед іменником", es: "el adjetivo va delante del sustantivo" }, ex: ["She has a ", { target: new }, " phone."], tr: { uk: "У неї новий телефон.", es: "Ella tiene un teléfono nuevo." } }
+        - { level: A1, point: { pattern: [{ slot: verb }, { slot: adjective }] }, rule: { en: "the verb is be, look, feel, sound, taste or smell", uk: "дієслово — be, look, feel, sound, taste або smell", es: "el verbo es be, look, feel, sound, taste o smell" }, ex: ["You ", { target: look tired }, "."], tr: { uk: "У тебе втомлений вигляд.", es: "Pareces cansado." } }
+        - { level: A2, point: { en: Several adjectives, uk: "Кілька прикметників", es: "Varios adjetivos" }, rule: { en: "opinion, size, age, shape, colour, origin, material, purpose", uk: "оцінка, розмір, вік, форма, колір, походження, матеріал, призначення", es: "opinión, tamaño, edad, forma, color, origen, material, propósito" }, ex: ["a ", { target: nice old wooden }, " chair"], tr: { uk: "гарний старий дерев’яний стілець", es: "una bonita silla vieja de madera" } }
+        - { level: A2, point: { alternatives: ["-ed", "-ing"] }, rule: { en: "-ed: how a person feels; -ing: what causes it", uk: "-ed: як почувається людина; -ing: що це викликає", es: "-ed: cómo se siente una persona; -ing: lo que lo causa" }, ex: { examples: [["I'm ", { target: bored }, "."], ["The film is ", { target: boring }, "."]] }, tr: { uk: { examples: ["Мені нудно.", "Фільм нудний."] }, es: { examples: ["Estoy aburrido.", "La película es aburrida."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: one form for singular and plural, uk: "одна форма для однини й множини", es: "una sola forma para singular y plural" }, ex: ["two ", { target: red }, " cars"], tr: { uk: "дві червоні машини", es: "dos autos rojos" } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "size before colour, age before material", uk: "розмір перед кольором, вік перед матеріалом", es: "tamaño antes que color, edad antes que material" }, ex: { examples: [["a ", { target: big red }, " bag"], ["an ", { target: old wooden }, " table"]] }, tr: { uk: { examples: ["велика червона сумка", "старий дерев’яний стіл"] }, es: { examples: ["una bolsa grande y roja", "una mesa vieja de madera"] } } }
 
 sections:
-  - title: { en: "Form: position and agreement" }
+  - title: { en: "Form: position and agreement", uk: "Форма: місце й узгодження", es: "Forma: posición y concordancia" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: position, label: { en: Position } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: position, label: { en: Position, uk: "Місце", es: "Posición" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, position: { en: before a noun }, pattern: { pattern: [{ slot: adjective }, { slot: noun }] }, ex: ["She has a ", { target: new }, " phone."] }
-          - { level: A1, position: { en: after be }, pattern: { pattern: [be, { slot: adjective }] }, ex: ["My phone ", { target: is new }, "."] }
-          - { level: A1, position: { en: "after look, feel, sound, taste, smell" }, pattern: { pattern: [{ slot: verb }, { slot: adjective }] }, ex: ["You ", { target: look tired }, "."] }
-          - { level: A1, position: { en: before a plural noun }, pattern: { pattern: [{ slot: adjective }, { slot: plural noun }] }, ex: ["I like ", { target: old }, " films."] }
+          - { level: A1, position: { en: before a noun, uk: "перед іменником", es: "delante de un sustantivo" }, pattern: { pattern: [{ slot: adjective }, { slot: noun }] }, ex: ["She has a ", { target: new }, " phone."], tr: { uk: "У неї новий телефон.", es: "Ella tiene un teléfono nuevo." } }
+          - { level: A1, position: { en: after be, uk: "після be", es: "después de be" }, pattern: { pattern: [be, { slot: adjective }] }, ex: ["My phone ", { target: is new }, "."], tr: { uk: "Мій телефон новий.", es: "Mi teléfono es nuevo." } }
+          - { level: A1, position: { en: "after look, feel, sound, taste, smell", uk: "після look, feel, sound, taste, smell", es: "después de look, feel, sound, taste, smell" }, pattern: { pattern: [{ slot: verb }, { slot: adjective }] }, ex: ["You ", { target: look tired }, "."], tr: { uk: "У тебе втомлений вигляд.", es: "Pareces cansado." } }
+          - { level: A1, position: { en: before a plural noun, uk: "перед іменником у множині", es: "delante de un sustantivo en plural" }, pattern: { pattern: [{ slot: adjective }, { slot: plural noun }] }, ex: ["I like ", { target: old }, " films."], tr: { uk: "Я люблю старі фільми.", es: "Me gustan las películas antiguas." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "An adjective has one form for singular and plural, masculine and feminine."
+              uk: "Прикметник має одну форму для однини й множини, чоловічого й жіночого роду."
+              es: "El adjetivo tiene una sola forma para singular y plural, masculino y femenino."
 
-  - title: { en: "Form: order of adjectives" }
+  - title: { en: "Form: order of adjectives", uk: "Форма: порядок прикметників", es: "Forma: orden de los adjetivos" }
     role: form
     content:
       - type: prose
         level: A2
         text:
           en: "Several adjectives before a noun follow a fixed order:"
+          uk: "Кілька прикметників перед іменником стоять у сталому порядку:"
+          es: "Varios adjetivos delante de un sustantivo siguen un orden fijo:"
       - type: usage
         columns:
-          - { key: order, label: { en: Order } }
-          - { key: type, label: { en: Type } }
-          - { key: ex, label: { en: Example } }
+          - { key: order, label: { en: Order, uk: "Порядок", es: "Orden" } }
+          - { key: type, label: { en: Type, uk: "Тип", es: "Tipo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, order: "1", type: { en: opinion }, ex: ["a ", { target: lovely }, " day"] }
-          - { level: A2, order: "2", type: { en: size }, ex: ["a ", { target: big }, " dog"] }
-          - { level: A2, order: "3", type: { en: age }, ex: ["an ", { target: old }, " car"] }
-          - { level: A2, order: "4", type: { en: shape }, ex: ["a ", { target: round }, " table"] }
-          - { level: A2, order: "5", type: { en: colour }, ex: ["a ", { target: blue }, " shirt"] }
-          - { level: A2, order: "6", type: { en: origin }, ex: ["a ", { target: Spanish }, " guitar"] }
-          - { level: A2, order: "7", type: { en: material }, ex: ["a ", { target: wooden }, " box"] }
-          - { level: A2, order: "8", type: { en: [purpose (, { pattern: [{ slot: noun }], follows: true }, ")"] }, ex: ["a ", { target: running }, " shoe"] }
+          - { level: A2, order: "1", type: { en: opinion, uk: "оцінка", es: "opinión" }, ex: ["a ", { target: lovely }, " day"], tr: { uk: "чудовий день", es: "un día encantador" } }
+          - { level: A2, order: "2", type: { en: size, uk: "розмір", es: "tamaño" }, ex: ["a ", { target: big }, " dog"], tr: { uk: "великий пес", es: "un perro grande" } }
+          - { level: A2, order: "3", type: { en: age, uk: "вік", es: "edad" }, ex: ["an ", { target: old }, " car"], tr: { uk: "стара машина", es: "un auto viejo" } }
+          - { level: A2, order: "4", type: { en: shape, uk: "форма", es: "forma" }, ex: ["a ", { target: round }, " table"], tr: { uk: "круглий стіл", es: "una mesa redonda" } }
+          - { level: A2, order: "5", type: { en: colour, uk: "колір", es: "color" }, ex: ["a ", { target: blue }, " shirt"], tr: { uk: "синя сорочка", es: "una camisa azul" } }
+          - { level: A2, order: "6", type: { en: origin, uk: "походження", es: "origen" }, ex: ["a ", { target: Spanish }, " guitar"], tr: { uk: "іспанська гітара", es: "una guitarra española" } }
+          - { level: A2, order: "7", type: { en: material, uk: "матеріал", es: "material" }, ex: ["a ", { target: wooden }, " box"], tr: { uk: "дерев’яна скринька", es: "una caja de madera" } }
+          - { level: A2, order: "8", type: { en: [purpose (, { pattern: [{ slot: noun }], follows: true }, ")"], uk: ["призначення (", { pattern: [{ slot: noun }], follows: true }, ")"], es: ["propósito (", { pattern: [{ slot: noun }], follows: true }, ")"] }, ex: ["a ", { target: running }, " shoe"], tr: { uk: "кросівок для бігу", es: "un zapato para correr" } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: "Opinion comes first, material and purpose come last:"
+              uk: "Спочатку йде оцінка, а матеріал і призначення — в кінці:"
+              es: "La opinión va primero; el material y el propósito van al final:"
             ex: ["a ", { target: nice old wooden }, " chair"]
+            tr: { uk: "гарний старий дерев’яний стілець", es: "una bonita silla vieja de madera" }
           - type: rule
             level: A2
             text:
               en: "Most phrases use two or three adjectives:"
+              uk: "У більшості словосполучень два-три прикметники:"
+              es: "La mayoría de las frases usan dos o tres adjetivos:"
             ex: { examples: [["a ", { target: small black }, " cat"], [{ target: long dark }, " hair"]] }
+            tr: { uk: { examples: ["маленький чорний кіт", "довге темне волосся"] }, es: { examples: ["un gato pequeño y negro", "pelo largo y oscuro"] } }
           - type: rule
             level: A2
             text:
               en: ["After be, the last two adjectives are joined with ", { term: and }, ":"]
+              uk: ["Після be останні два прикметники сполучаються словом ", { term: and }, ":"]
+              es: ["Después de be, los dos últimos adjetivos se unen con ", { term: and }, ":"]
             ex: ["The room is ", { target: big and bright }, "."]
+            tr: { uk: "Кімната велика й світла.", es: "La habitación es grande y luminosa." }
 
-  - title: { en: "Use: -ed and -ing adjectives" }
+  - title: { en: "Use: -ed and -ing adjectives", uk: "Вживання: прикметники на -ed і -ing", es: "Uso: adjetivos en -ed y -ing" }
     role: use
     content:
       - type: comparison
         columns:
-          - { key: pair, label: { en: Pair } }
-          - { key: ed, label: { en: "-ed: how a person feels" } }
-          - { key: ing, label: { en: "-ing: what causes the feeling" } }
+          - { key: pair, label: { en: Pair, uk: "Пара", es: "Pareja" } }
+          - { key: ed, label: { en: "-ed: how a person feels", uk: "-ed: як почувається людина", es: "-ed: cómo se siente una persona" } }
+          - { key: ing, label: { en: "-ing: what causes the feeling", uk: "-ing: що викликає почуття", es: "-ing: lo que causa la sensación" } }
         rows:
-          - { level: A2, pair: { alternatives: [bored, boring] }, ed: ["I'm ", { target: bored }, "."], ing: ["The film is ", { target: boring }, "."] }
-          - { level: A2, pair: { alternatives: [interested, interesting] }, ed: ["She's ", { target: interested }, " in art."], ing: ["The book is ", { target: interesting }, "."] }
-          - { level: A2, pair: { alternatives: [excited, exciting] }, ed: ["We're ", { target: excited }, "."], ing: ["The game is ", { target: exciting }, "."] }
-          - { level: A2, pair: { alternatives: [tired, tiring] }, ed: ["I'm ", { target: tired }, "."], ing: ["The job is ", { target: tiring }, "."] }
-          - { level: A2, pair: { alternatives: [surprised, surprising] }, ed: ["He's ", { target: surprised }, "."], ing: ["The news is ", { target: surprising }, "."] }
+          - { level: A2, pair: { alternatives: [bored, boring] }, ed: { ex: ["I'm ", { target: bored }, "."], tr: { uk: "Мені нудно.", es: "Estoy aburrido." } }, ing: { ex: ["The film is ", { target: boring }, "."], tr: { uk: "Фільм нудний.", es: "La película es aburrida." } } }
+          - { level: A2, pair: { alternatives: [interested, interesting] }, ed: { ex: ["She's ", { target: interested }, " in art."], tr: { uk: "Вона цікавиться мистецтвом.", es: "Ella está interesada en el arte." } }, ing: { ex: ["The book is ", { target: interesting }, "."], tr: { uk: "Книжка цікава.", es: "El libro es interesante." } } }
+          - { level: A2, pair: { alternatives: [excited, exciting] }, ed: { ex: ["We're ", { target: excited }, "."], tr: { uk: "Ми в захваті.", es: "Estamos emocionados." } }, ing: { ex: ["The game is ", { target: exciting }, "."], tr: { uk: "Гра захоплива.", es: "El juego es emocionante." } } }
+          - { level: A2, pair: { alternatives: [tired, tiring] }, ed: { ex: ["I'm ", { target: tired }, "."], tr: { uk: "Я втомився.", es: "Estoy cansado." } }, ing: { ex: ["The job is ", { target: tiring }, "."], tr: { uk: "Ця робота втомлива.", es: "El trabajo es agotador." } } }
+          - { level: A2, pair: { alternatives: [surprised, surprising] }, ed: { ex: ["He's ", { target: surprised }, "."], tr: { uk: "Він здивований.", es: "Está sorprendido." } }, ing: { ex: ["The news is ", { target: surprising }, "."], tr: { uk: "Ця новина несподівана.", es: "La noticia es sorprendente." } } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: "-ed describes how a person feels; -ing describes the person or thing that causes the feeling."
+              uk: "-ed описує, як почувається людина; -ing описує людину чи річ, що викликає це почуття."
+              es: "-ed describe cómo se siente una persona; -ing describe a la persona o la cosa que causa esa sensación."
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: two reds cars, right: ["two ", { target: red }, " cars"], rule: { en: adjectives take no plural -s } }
-          - { level: A1, wrong: You look tiredly., right: ["You look ", { target: tired }, "."], rule: { en: { pattern: [{ alternatives: [look, feel] }, { slot: adjective }] } } }
-          - { level: A2, wrong: a wooden old table, right: ["an ", { target: old wooden }, " table"], rule: { en: age before material } }
-          - { level: A2, wrong: a red big bag, right: ["a ", { target: big red }, " bag"], rule: { en: size before colour } }
-          - { level: A2, wrong: The film is bored., right: ["The film is ", { target: boring }, "."], rule: { en: the cause takes -ing } }
+          - { level: A1, wrong: two reds cars, right: ["two ", { target: red }, " cars"], rule: { en: adjectives take no plural -s, uk: "прикметники не набувають -s у множині", es: "los adjetivos no toman -s de plural" } }
+          - { level: A1, wrong: You look tiredly., right: ["You look ", { target: tired }, "."], rule: { en: { pattern: [{ alternatives: [look, feel] }, { slot: adjective }] }, uk: { pattern: [{ alternatives: [look, feel] }, { slot: adjective }] }, es: { pattern: [{ alternatives: [look, feel] }, { slot: adjective }] } } }
+          - { level: A2, wrong: a wooden old table, right: ["an ", { target: old wooden }, " table"], rule: { en: age before material, uk: "вік перед матеріалом", es: "edad antes que material" } }
+          - { level: A2, wrong: a red big bag, right: ["a ", { target: big red }, " bag"], rule: { en: size before colour, uk: "розмір перед кольором", es: "tamaño antes que color" } }
+          - { level: A2, wrong: The film is bored., right: ["The film is ", { target: boring }, "."], rule: { en: the cause takes -ing, uk: "для причини вживається -ing", es: "la causa lleva -ing" } }

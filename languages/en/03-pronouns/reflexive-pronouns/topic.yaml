@@ -5,33 +5,39 @@ kind: grammar
 tags: [pronouns, reflexive, myself, each other]
 concepts: [reflexive, pronouns]
 related: [en.pronouns.personal-pronouns, en.pronouns.indefinite-pronouns, en.verbs.phrasal-verbs-core, en.tenses.simple-tenses]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Reflexive Pronouns }
+title: { en: Reflexive Pronouns, uk: Зворотні займенники, es: Pronombres reflexivos }
 summary:
-  lead: { en: "Reflexive pronouns (myself, yourself, themselves) show that the subject and the object are the same person." }
-  rule: { en: "Routine verbs such as get up and get dressed take no reflexive:" }
+  lead:
+    en: "Reflexive pronouns (myself, yourself, themselves) show that the subject and the object are the same person."
+    uk: "Зворотні займенники (myself, yourself, themselves) показують, що підмет і додаток — та сама особа."
+    es: "Los pronombres reflexivos (myself, yourself, themselves) muestran que el sujeto y el objeto son la misma persona."
+  rule:
+    en: "Routine verbs such as get up and get dressed take no reflexive:"
+    uk: "Дієслова щоденних дій, як-от get up і get dressed, вживаються без зворотного займенника:"
+    es: "Los verbos de la rutina diaria, como get up y get dressed, no llevan pronombre reflexivo:"
   ex: { examples: [["I ", { target: get up }], ["I ", { target: get dressed }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: { alternatives: [myself, yourself, himself, herself, itself] }, rule: { en: ["singular forms end in ", { term: "-self" }] }, ex: ["She talks to ", { target: herself }, "."] }
-        - { level: A2, point: { alternatives: [ourselves, yourselves, themselves] }, rule: { en: ["plural forms end in ", { term: "-selves" }, "; yourselves = several people"] }, ex: ["They looked at ", { target: themselves }, " in the mirror."] }
-        - { level: A2, point: { en: Same person }, rule: { en: the object is the same person as the subject }, ex: ["I burnt ", { target: myself }, " in the kitchen."] }
-        - { level: A2, point: { en: Emphasis }, rule: { en: that person and nobody else }, ex: ["I made the cake ", { target: myself }, "."] }
-        - { level: A2, point: { pattern: [by, { slot: { en: reflexive } }] }, rule: { en: "alone, without help" }, ex: ["He lives ", { target: by himself }, "."] }
-        - { level: A2, point: { en: Routine verbs }, rule: { en: "everyday verbs stand alone: get dressed, relax, sit down" }, ex: ["I ", { target: get dressed }, " quickly."] }
-        - { level: A2, point: each other, rule: { en: { takes: [each person, the other person] } }, ex: ["They looked at ", { target: each other }, "."] }
-        - { level: A2, point: { en: Trap }, rule: { alternatives: [{ pattern: [him, self] }, { pattern: [them, selves] }] }, ex: { examples: [["He hurt ", { target: himself }, "."], ["They enjoyed ", { target: themselves }, "."]] } }
+        - { level: A2, point: { alternatives: [myself, yourself, himself, herself, itself] }, rule: { en: ["singular forms end in ", { term: "-self" }], uk: ["форми однини закінчуються на ", { term: "-self" }], es: ["las formas del singular terminan en ", { term: "-self" }] }, ex: ["She talks to ", { target: herself }, "."], tr: { uk: "Вона розмовляє сама з собою.", es: "Ella habla consigo misma." } }
+        - { level: A2, point: { alternatives: [ourselves, yourselves, themselves] }, rule: { en: ["plural forms end in ", { term: "-selves" }, "; yourselves = several people"], uk: ["форми множини закінчуються на ", { term: "-selves" }, "; yourselves = кілька людей"], es: ["las formas del plural terminan en ", { term: "-selves" }, "; yourselves = varias personas"] }, ex: ["They looked at ", { target: themselves }, " in the mirror."], tr: { uk: "Вони подивилися на себе в дзеркало.", es: "Se miraron a sí mismos en el espejo." } }
+        - { level: A2, point: { en: Same person, uk: "Та сама особа", es: "La misma persona" }, rule: { en: the object is the same person as the subject, uk: "додаток — та сама особа, що й підмет", es: "el objeto es la misma persona que el sujeto" }, ex: ["I burnt ", { target: myself }, " in the kitchen."], tr: { uk: "Я обпікся на кухні.", es: "Me quemé en la cocina." } }
+        - { level: A2, point: { en: Emphasis, uk: "Підсилення", es: "Énfasis" }, rule: { en: that person and nobody else, uk: "саме ця особа і ніхто інший", es: "esa persona y nadie más" }, ex: ["I made the cake ", { target: myself }, "."], tr: { uk: "Я сам спік торт.", es: "Hice el pastel yo mismo." } }
+        - { level: A2, point: { pattern: [by, { slot: { en: reflexive, uk: "зворотний займенник", es: "pronombre reflexivo" } }] }, rule: { en: "alone, without help", uk: "сам, без допомоги", es: "solo, sin ayuda" }, ex: ["He lives ", { target: by himself }, "."], tr: { uk: "Він живе сам.", es: "Vive solo." } }
+        - { level: A2, point: { en: Routine verbs, uk: "Дієслова щоденних дій", es: "Verbos de rutina" }, rule: { en: "everyday verbs stand alone: get dressed, relax, sit down", uk: "щоденні дієслова вживаються без займенника: get dressed, relax, sit down", es: "los verbos cotidianos van sin pronombre: get dressed, relax, sit down" }, ex: ["I ", { target: get dressed }, " quickly."], tr: { uk: "Я швидко одягаюся.", es: "Me visto rápido." } }
+        - { level: A2, point: each other, rule: { en: { takes: [each person, the other person] }, uk: { takes: ["кожна особа", "інша особа"] }, es: { takes: ["cada persona", "la otra persona"] } }, ex: ["They looked at ", { target: each other }, "."], tr: { uk: "Вони подивилися одне на одного.", es: "Se miraron el uno al otro." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { alternatives: [{ pattern: [him, self] }, { pattern: [them, selves] }] }, ex: { examples: [["He hurt ", { target: himself }, "."], ["They enjoyed ", { target: themselves }, "."]] }, tr: { uk: { examples: ["Він забився.", "Вони добре розважилися."] }, es: { examples: ["Se hizo daño.", "Se divirtieron."] } } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -40,52 +46,60 @@ sections:
             level: A2
             text:
               en: ["Singular forms end in ", { term: "-self" }, "; plural forms end in ", { term: "-selves" }, "."]
+              uk: ["Форми однини закінчуються на ", { term: "-self" }, ", а форми множини — на ", { term: "-selves" }, "."]
+              es: ["Las formas del singular terminan en ", { term: "-self" }, "; las del plural, en ", { term: "-selves" }, "."]
           - type: rule
             level: A2
             text:
               en: [{ term: you }, " has two forms: ", { term: yourself }, " for one person, ", { term: yourselves }, " for several."]
+              uk: [{ term: you }, " має дві форми: ", { term: yourself }, " для однієї особи, ", { term: yourselves }, " для кількох."]
+              es: [{ term: you }, " tiene dos formas: ", { term: yourself }, " para una persona, ", { term: yourselves }, " para varias."]
           - type: rule
             level: A2
             text:
               en: ["The stress falls on -self: myself ", { ipa: maɪˈself }, ", themselves ", { ipa: ðəmˈselvz }, "."]
+              uk: ["Наголос падає на -self: myself ", { ipa: maɪˈself }, ", themselves ", { ipa: ðəmˈselvz }, "."]
+              es: ["El acento recae en -self: myself ", { ipa: maɪˈself }, ", themselves ", { ipa: ðəmˈselvz }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: object = subject }, ex: ["I burnt ", { target: myself }, " in the kitchen."] }
-          - { level: A2, use: { en: "after a preposition, same person" }, ex: ["She talks to ", { target: herself }, "."] }
-          - { level: A2, use: { en: "emphasis: that person and nobody else" }, ex: ["I made the cake ", { target: myself }, "."] }
-          - { level: A2, use: { en: { pattern: [by, "reflexive = alone, without help"] } }, ex: ["He lives ", { target: by himself }, "."] }
-          - { level: A2, use: { en: fixed expressions }, ex: { examples: [["Enjoy ", { target: yourselves }, "!"], ["Make ", { target: yourself }, " at home."]] } }
+          - { level: A2, use: { en: object = subject, uk: "додаток = підмет", es: "objeto = sujeto" }, ex: ["I burnt ", { target: myself }, " in the kitchen."], tr: { uk: "Я обпікся на кухні.", es: "Me quemé en la cocina." } }
+          - { level: A2, use: { en: "after a preposition, same person", uk: "після прийменника, та сама особа", es: "después de una preposición, la misma persona" }, ex: ["She talks to ", { target: herself }, "."], tr: { uk: "Вона розмовляє сама з собою.", es: "Ella habla consigo misma." } }
+          - { level: A2, use: { en: "emphasis: that person and nobody else", uk: "підсилення: саме ця особа і ніхто інший", es: "énfasis: esa persona y nadie más" }, ex: ["I made the cake ", { target: myself }, "."], tr: { uk: "Я сам спік торт.", es: "Hice el pastel yo mismo." } }
+          - { level: A2, use: { en: { pattern: [by, "reflexive = alone, without help"] }, uk: { pattern: [by, "зворотний займенник = сам, без допомоги"] }, es: { pattern: [by, "reflexivo = solo, sin ayuda"] } }, ex: ["He lives ", { target: by himself }, "."], tr: { uk: "Він живе сам.", es: "Vive solo." } }
+          - { level: A2, use: { en: fixed expressions, uk: "сталі вирази", es: "expresiones fijas" }, ex: { examples: [["Enjoy ", { target: yourselves }, "!"], ["Make ", { target: yourself }, " at home."]] }, tr: { uk: { examples: ["Гарно розважтеся!", "Почувайся як удома."] }, es: { examples: ["¡Diviértanse!", "Siéntete como en casa."] } } }
 
-  - title: { en: "Everyday routines: the verb alone" }
+  - title: { en: "Everyday routines: the verb alone", uk: "Щоденні дії: дієслово без займенника", es: "Rutinas diarias: el verbo solo" }
     role: own
     content:
       - type: prose
         level: A2
         text:
           en: "These everyday verbs take no reflexive pronoun:"
+          uk: "Ці щоденні дієслова вживаються без зворотного займенника:"
+          es: "Estos verbos cotidianos no llevan pronombre reflexivo:"
       - type: usage
         columns:
-          - { key: verb, label: { en: Verb } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, verb: { alternatives: [get up, wake up] }, ex: ["I ", { target: get up }, " at seven."] }
-          - { level: A2, verb: have a shower, ex: ["He ", { target: has a shower }, " every morning."] }
-          - { level: A2, verb: get dressed, ex: ["I ", { target: get dressed }, " quickly."] }
-          - { level: A2, verb: sit down, ex: ["Please ", { target: sit down }, "."] }
-          - { level: A2, verb: feel, ex: ["I ", { target: feel }, " tired."] }
-          - { level: A2, verb: relax, ex: ["We ", { target: relax }, " at the weekend."] }
-          - { level: A2, verb: remember, ex: ["I ", { target: remember }, " her."] }
-          - { level: A2, verb: meet, ex: ["We ", { target: met }, " in ", { date: "2019", value: "2019" }, "."] }
-          - { level: A2, verb: worry, ex: ["Don't ", { target: worry }, "."] }
+          - { level: A2, verb: { alternatives: [get up, wake up] }, ex: ["I ", { target: get up }, " at seven."], tr: { uk: "Я встаю о сьомій.", es: "Me levanto a las siete." } }
+          - { level: A2, verb: have a shower, ex: ["He ", { target: has a shower }, " every morning."], tr: { uk: "Він щоранку приймає душ.", es: "Se ducha todas las mañanas." } }
+          - { level: A2, verb: get dressed, ex: ["I ", { target: get dressed }, " quickly."], tr: { uk: "Я швидко одягаюся.", es: "Me visto rápido." } }
+          - { level: A2, verb: sit down, ex: ["Please ", { target: sit down }, "."], tr: { uk: "Сідай, будь ласка.", es: "Siéntate, por favor." } }
+          - { level: A2, verb: feel, ex: ["I ", { target: feel }, " tired."], tr: { uk: "Я почуваюся втомленим.", es: "Me siento cansado." } }
+          - { level: A2, verb: relax, ex: ["We ", { target: relax }, " at the weekend."], tr: { uk: "Ми відпочиваємо на вихідних.", es: "Nos relajamos el fin de semana." } }
+          - { level: A2, verb: remember, ex: ["I ", { target: remember }, " her."], tr: { uk: "Я пам’ятаю її.", es: "La recuerdo." } }
+          - { level: A2, verb: meet, ex: ["We ", { target: met }, " in ", { date: "2019", value: "2019" }, "."], tr: { uk: "Ми зустрілися 2019 року.", es: "Nos conocimos en 2019." } }
+          - { level: A2, verb: worry, ex: ["Don't ", { target: worry }, "."], tr: { uk: "Не хвилюйся.", es: "No te preocupes." } }
 
-  - title: { en: "Compare: themselves and each other" }
+  - title: { en: "Compare: themselves and each other", uk: "Порівняння: themselves і each other", es: "Comparación: themselves y each other" }
     role: compare
     content:
       - type: comparison
@@ -93,15 +107,15 @@ sections:
           - { key: self, label: themselves }
           - { key: other, label: each other }
         rows:
-          - { level: A2, self: { en: { takes: [each person, the same person] } }, other: { en: { takes: [each person, the other person] } } }
-          - { level: A2, self: ["They looked at ", { target: themselves }, " in the mirror."], other: ["They looked at ", { target: each other }, "."] }
-          - { level: A2, self: ["We blamed ", { target: ourselves }, "."], other: ["We blamed ", { target: each other }, "."] }
+          - { level: A2, self: { en: { takes: [each person, the same person] }, uk: { takes: ["кожна особа", "та сама особа"] }, es: { takes: ["cada persona", "la misma persona"] } }, other: { en: { takes: [each person, the other person] }, uk: { takes: ["кожна особа", "інша особа"] }, es: { takes: ["cada persona", "la otra persona"] } } }
+          - { level: A2, self: { ex: ["They looked at ", { target: themselves }, " in the mirror."], tr: { uk: "Вони подивилися на себе в дзеркало.", es: "Se miraron a sí mismos en el espejo." } }, other: { ex: ["They looked at ", { target: each other }, "."], tr: { uk: "Вони подивилися одне на одного.", es: "Se miraron el uno al otro." } } }
+          - { level: A2, self: { ex: ["We blamed ", { target: ourselves }, "."], tr: { uk: "Ми звинуватили самих себе.", es: "Nos culpamos a nosotros mismos." } }, other: { ex: ["We blamed ", { target: each other }, "."], tr: { uk: "Ми звинуватили одне одного.", es: "Nos culpamos el uno al otro." } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: He hurt hisself., right: ["He hurt ", { target: himself }, "."], rule: { en: { pattern: [him, self] } } }
-          - { level: A2, wrong: They enjoyed theirselves., right: ["They enjoyed ", { target: themselves }, "."], rule: { en: { pattern: [them, selves] } } }
-          - { level: A2, wrong: "Help yourself, children!", right: ["Help ", { target: yourselves }, ", children!"], rule: { en: { takes: [several people, yourselves] } } }
+          - { level: A2, wrong: He hurt hisself., right: ["He hurt ", { target: himself }, "."], rule: { en: { pattern: [him, self] }, uk: { pattern: [him, self] }, es: { pattern: [him, self] } } }
+          - { level: A2, wrong: They enjoyed theirselves., right: ["They enjoyed ", { target: themselves }, "."], rule: { en: { pattern: [them, selves] }, uk: { pattern: [them, selves] }, es: { pattern: [them, selves] } } }
+          - { level: A2, wrong: "Help yourself, children!", right: ["Help ", { target: yourselves }, ", children!"], rule: { en: { takes: [several people, yourselves] }, uk: { takes: ["кілька людей", yourselves] }, es: { takes: ["varias personas", yourselves] } } }

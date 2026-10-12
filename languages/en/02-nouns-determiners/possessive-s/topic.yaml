@@ -5,110 +5,133 @@ kind: grammar
 tags: [nouns, possession, apostrophe]
 concepts: [possession]
 related: [en.nouns-determiners.plurals, en.pronouns.personal-pronouns, en.nouns-determiners.articles-a-an-the, en.nouns-determiners.demonstratives-this-that]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Possessive 's }
+title: { en: Possessive 's, uk: "Присвійний 's", es: "El posesivo 's" }
 summary:
-  lead: { en: [{ pattern: [Noun, "'s"] }, " shows who something belongs to, and ' alone follows a plural in -s."] }
-  rule: { en: "The owner comes first and the thing after it takes no article:" }
+  lead:
+    en: [{ pattern: [Noun, "'s"] }, " shows who something belongs to, and ' alone follows a plural in -s."]
+    uk: [{ pattern: ["Іменник", "'s"] }, " показує, кому щось належить, а після множини на -s стоїть лише '."]
+    es: [{ pattern: ["Sustantivo", "'s"] }, " indica a quién pertenece algo, y después de un plural en -s basta con '."]
+  rule:
+    en: "The owner comes first and the thing after it takes no article:"
+    uk: "Спочатку йде власник, а річ після нього стоїть без артикля:"
+    es: "Primero va el poseedor y la cosa que sigue no lleva artículo:"
   ex: { examples: [[{ target: Ana's }, " car"], ["my ", { target: parents' }, " house"], ["the ", { target: children's }, " room."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Singular noun }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: [{ target: Ana's }, " car"] }
-        - { level: A1, point: { en: Plural in -s }, rule: { pattern: [{ ending: "'" }], follows: true }, ex: ["my ", { target: parents }, "' house"] }
-        - { level: A1, point: { en: Irregular plural }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: ["the ", { target: children's }, " room"] }
-        - { level: A1, point: { en: Two owners }, rule: { en: "'s on the last name" }, ex: ["Tom and ", { target: Ana's }, " flat"] }
-        - { level: A1, point: { en: "'s or of" }, rule: { en: "'s for people and animals, of for things" }, ex: ["the end ", { target: of }, " the film"] }
-        - { level: A1, point: { en: Without the noun }, rule: { en: "someone's home or shop" }, ex: ["at the ", { target: doctor's }] }
-        - { level: A1, point: { en: Word order }, rule: { en: "owner first, thing after, no article" }, ex: [{ target: my sister's }, " phone"] }
-        - { level: A1, point: { en: Trap }, rule: { en: [{ term: Whose }, " asks about the owner; ", { term: "Who's" }, " means who is"] }, ex: { contrast: [[{ target: Whose }, " bag?"], [{ target: Who's }, " there?"]] } }
+        - { level: A1, point: { en: Singular noun, uk: "Іменник в однині", es: "Sustantivo singular" }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: [{ target: Ana's }, " car"], tr: { uk: "машина Ани", es: "el coche de Ana" } }
+        - { level: A1, point: { en: Plural in -s, uk: "Множина на -s", es: "Plural en -s" }, rule: { pattern: [{ ending: "'" }], follows: true }, ex: ["my ", { target: parents }, "' house"], tr: { uk: "дім моїх батьків", es: "la casa de mis padres" } }
+        - { level: A1, point: { en: Irregular plural, uk: "Неправильна множина", es: "Plural irregular" }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: ["the ", { target: children's }, " room"], tr: { uk: "кімната дітей", es: "la habitación de los niños" } }
+        - { level: A1, point: { en: Two owners, uk: "Двоє власників", es: "Dos poseedores" }, rule: { en: "'s on the last name", uk: "'s на останньому імені", es: "'s en el último nombre" }, ex: ["Tom and ", { target: Ana's }, " flat"], tr: { uk: "квартира Тома й Ани", es: "el apartamento de Tom y Ana" } }
+        - { level: A1, point: { en: "'s or of", uk: "'s чи of", es: "'s o of" }, rule: { en: "'s for people and animals, of for things", uk: "'s для людей і тварин, of — для речей", es: "'s para personas y animales, of para cosas" }, ex: ["the end ", { target: of }, " the film"], tr: { uk: "кінець фільму", es: "el final de la película" } }
+        - { level: A1, point: { en: Without the noun, uk: "Без іменника", es: "Sin el sustantivo" }, rule: { en: "someone's home or shop", uk: "чийсь дім або крамниця", es: "la casa o la tienda de alguien" }, ex: ["at the ", { target: doctor's }], tr: { uk: "у лікаря", es: "en el consultorio del médico" } }
+        - { level: A1, point: { en: Word order, uk: "Порядок слів", es: "Orden de las palabras" }, rule: { en: "owner first, thing after, no article", uk: "спочатку власник, потім річ, без артикля", es: "primero el poseedor, luego la cosa, sin artículo" }, ex: [{ target: my sister's }, " phone"], tr: { uk: "телефон моєї сестри", es: "el teléfono de mi hermana" } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: Whose }, " asks about the owner; ", { term: "Who's" }, " means who is"], uk: [{ term: Whose }, " питає про власника; ", { term: "Who's" }, " означає who is"], es: [{ term: Whose }, " pregunta por el poseedor; ", { term: "Who's" }, " significa who is"] }, ex: { contrast: [[{ target: Whose }, " bag?"], [{ target: Who's }, " there?"]] }, tr: { uk: { examples: ["Чия сумка?", "Хто там?"] }, es: { examples: ["¿De quién es el bolso?", "¿Quién está ahí?"] } } }
 
 sections:
-  - title: { en: "Form: 's and '" }
+  - title: { en: "Form: 's and '", uk: "Форма: 's і '", es: "Forma: 's y '" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: owner, label: { en: Owner } }
-          - { key: form, label: { en: Add } }
-          - { key: ex, label: { en: Example } }
+          - { key: owner, label: { en: Owner, uk: "Власник", es: "Poseedor" } }
+          - { key: form, label: { en: Add, uk: "Додається", es: "Se añade" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, owner: { en: singular noun }, form: "'s", ex: [{ target: Ana's }, " car"] }
-          - { level: A1, owner: { en: plural ending in -s }, form: "'", ex: ["my ", { target: parents }, "' house"] }
-          - { level: A1, owner: { en: "irregular plural: children, men, women, people" }, form: "'s", ex: ["the ", { target: children's }, " room"] }
-          - { level: A1, owner: { en: name ending in -s }, form: { alternatives: ["'s", "'"] }, ex: { examples: [{ target: James's }, [{ target: James }, "' bike"]] } }
-          - { level: A1, owner: { en: two owners of one thing }, form: { en: "'s on the last name" }, ex: ["Tom and ", { target: Ana's }, " flat"] }
+          - { level: A1, owner: { en: singular noun, uk: "іменник в однині", es: "sustantivo singular" }, form: "'s", ex: [{ target: Ana's }, " car"], tr: { uk: "машина Ани", es: "el coche de Ana" } }
+          - { level: A1, owner: { en: plural ending in -s, uk: "множина на -s", es: "plural terminado en -s" }, form: "'", ex: ["my ", { target: parents }, "' house"], tr: { uk: "дім моїх батьків", es: "la casa de mis padres" } }
+          - { level: A1, owner: { en: "irregular plural: children, men, women, people", uk: "неправильна множина: children, men, women, people", es: "plural irregular: children, men, women, people" }, form: "'s", ex: ["the ", { target: children's }, " room"], tr: { uk: "кімната дітей", es: "la habitación de los niños" } }
+          - { level: A1, owner: { en: name ending in -s, uk: "ім’я на -s", es: "nombre terminado en -s" }, form: { alternatives: ["'s", "'"] }, ex: { examples: [{ target: James's }, [{ target: James }, "' bike"]] }, tr: { uk: { examples: ["велосипед Джеймса", "велосипед Джеймса"] }, es: { examples: ["la bicicleta de James", "la bicicleta de James"] } } }
+          - { level: A1, owner: { en: two owners of one thing, uk: "двоє власників однієї речі", es: "dos poseedores de una misma cosa" }, form: { en: "'s on the last name", uk: "'s на останньому імені", es: "'s en el último nombre" }, ex: ["Tom and ", { target: Ana's }, " flat"], tr: { uk: "квартира Тома й Ани", es: "el apartamento de Tom y Ana" } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["The owner comes first, then the thing: ", { term: my sister's }, " phone."]
+              uk: ["Спочатку йде власник, потім річ: ", { term: my sister's }, " phone."]
+              es: ["Primero va el poseedor y después la cosa: ", { term: my sister's }, " phone."]
           - type: rule
             level: A1
             text:
               en: "The thing after 's takes no article:"
+              uk: "Річ після 's стоїть без артикля:"
+              es: "La cosa después de 's no lleva artículo:"
             ex: ["Ana's ", { target: car }, "."]
+            tr: { uk: "Машина Ани.", es: "El coche de Ana." }
           - type: rule
             level: A1
             text:
               en: "'s also shortens is and has:"
+              uk: "'s також скорочує is і has:"
+              es: "'s también abrevia is y has:"
             ex: { equivalence: [[{ target: Ana's }, " tired"], Ana is tired.] }
+            tr: { uk: "Ана втомилася.", es: "Ana está cansada." }
 
-  - title: { en: "Pronunciation: 's" }
+  - title: { en: "Pronunciation: 's", uk: "Вимова: 's", es: "Pronunciación: 's" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, sound: { ipa: s }, ex: ["Mark's ", { ipa: mɑːks }] }
-          - { level: A1, sound: { ipa: z }, ex: ["Ana's ", { ipa: ˈænəz }] }
-          - { level: A1, sound: { ipa: ɪz }, ex: ["James's ", { ipa: ˈdʒeɪmzɪz }] }
+          - { level: A1, sound: { ipa: s }, ex: ["Mark's ", { ipa: mɑːks }], tr: { uk: "Марка", es: "de Mark" } }
+          - { level: A1, sound: { ipa: z }, ex: ["Ana's ", { ipa: ˈænəz }], tr: { uk: "Ани", es: "de Ana" } }
+          - { level: A1, sound: { ipa: ɪz }, ex: ["James's ", { ipa: ˈdʒeɪmzɪz }], tr: { uk: "Джеймса", es: "de James" } }
       - type: list
         items:
           - type: note
             level: A1
             text:
               en: ["'s follows the sound rules of the plural -s. See ", { link: Plurals, to: en.nouns-determiners.plurals }, "."]
+              uk: ["'s підпорядковується тим самим правилам вимови, що й закінчення -s множини. Див. ", { link: "Множина іменників", to: en.nouns-determiners.plurals }, "."]
+              es: ["'s sigue las reglas de sonido de la -s del plural. Ver ", { link: "El plural", to: en.nouns-determiners.plurals }, "."]
           - type: rule
             level: A1
             text:
               en: ["' after a plural -s adds no sound: parents' ", { ipa: ˈpeərənts }, "."]
+              uk: ["' після -s множини не додає звуку: parents' ", { ipa: ˈpeərənts }, "."]
+              es: ["' después de la -s del plural no añade ningún sonido: parents' ", { ipa: ˈpeərənts }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: People }, ex: ["my ", { target: brother's }, " job"] }
-          - { level: A1, use: { en: Animals }, ex: ["the ", { target: dog's }, " bed"] }
-          - { level: A1, use: { en: "Someone's home or shop, without the noun" }, ex: { examples: [["at my ", { target: mum's }], ["at the ", { target: doctor's }]] } }
-          - { level: A1, use: { en: Answer to Whose…? }, ex: { exchange: [Whose bag is this?, ["It's ", { target: Ana's }, "."]] } }
+          - { level: A1, use: { en: People, uk: "Люди", es: "Personas" }, ex: ["my ", { target: brother's }, " job"], tr: { uk: "робота мого брата", es: "el trabajo de mi hermano" } }
+          - { level: A1, use: { en: Animals, uk: "Тварини", es: "Animales" }, ex: ["the ", { target: dog's }, " bed"], tr: { uk: "лежанка собаки", es: "la cama del perro" } }
+          - { level: A1, use: { en: "Someone's home or shop, without the noun", uk: "Чийсь дім або крамниця, без іменника", es: "La casa o la tienda de alguien, sin el sustantivo" }, ex: { examples: [["at my ", { target: mum's }], ["at the ", { target: doctor's }]] }, tr: { uk: { examples: ["у моєї мами", "у лікаря"] }, es: { examples: ["en casa de mi mamá", "en el consultorio del médico"] } } }
+          - { level: A1, use: { en: Answer to Whose…?, uk: "Відповідь на Whose…?", es: "Respuesta a Whose…?" }, ex: { exchange: [Whose bag is this?, ["It's ", { target: Ana's }, "."]] }, tr: { uk: "Чия це сумка? — Це Ани.", es: "¿De quién es este bolso? — Es de Ana." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Ask about the owner with ", { pattern: [{ term: Whose }, { slot: noun }] }, ":"]
+              uk: ["Про власника питають за допомогою ", { pattern: [{ term: Whose }, { slot: noun }] }, ":"]
+              es: ["Se pregunta por el poseedor con ", { pattern: [{ term: Whose }, { slot: noun }] }, ":"]
             ex: [{ target: Whose }, " bag is this?"]
+            tr: { uk: "Чия це сумка?", es: "¿De quién es este bolso?" }
           - type: note
             level: A1
             text:
               en: ["my, your, his… and mine, yours, his…: see ", { link: Personal pronouns, to: en.pronouns.personal-pronouns }, "."]
+              uk: ["my, your, his… і mine, yours, his…: див. ", { link: "Особові займенники", to: en.pronouns.personal-pronouns }, "."]
+              es: ["my, your, his… y mine, yours, his…: ver ", { link: "Pronombres personales", to: en.pronouns.personal-pronouns }, "."]
 
-  - title: { en: "Compare: 's and of" }
+  - title: { en: "Compare: 's and of", uk: "Порівняння: 's і of", es: "Comparación: 's y of" }
     role: compare
     content:
       - type: comparison
@@ -116,15 +139,15 @@ sections:
           - { key: s, label: "'s" }
           - { key: of, label: of }
         rows:
-          - { level: A1, s: { en: people and animals }, of: { en: things and places } }
-          - { level: A1, s: ["my ", { target: friend's }, " name"], of: ["the name ", { target: of }, " the street"] }
-          - { level: A1, s: ["the ", { target: cat's }, " food"], of: ["the end ", { target: of }, " the film"] }
+          - { level: A1, s: { en: people and animals, uk: "люди й тварини", es: "personas y animales" }, of: { en: things and places, uk: "речі й місця", es: "cosas y lugares" } }
+          - { level: A1, s: { ex: ["my ", { target: friend's }, " name"], tr: { uk: "ім’я мого друга", es: "el nombre de mi amigo" } }, of: { ex: ["the name ", { target: of }, " the street"], tr: { uk: "назва вулиці", es: "el nombre de la calle" } } }
+          - { level: A1, s: { ex: ["the ", { target: cat's }, " food"], tr: { uk: "їжа кота", es: "la comida del gato" } }, of: { ex: ["the end ", { target: of }, " the film"], tr: { uk: "кінець фільму", es: "el final de la película" } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: my parents's house, right: ["my ", { target: parents }, "' house"], rule: { en: { takes: [plural in -s, { pattern: [{ ending: "'" }], follows: true }] } } }
-          - { level: A1, wrong: the childrens' room, right: ["the ", { target: children's }, " room"], rule: { en: { takes: [irregular plural, { pattern: [{ ending: "'s" }], follows: true }] } } }
-          - { level: A1, wrong: Who's bag is this?, right: [{ target: Whose }, " bag is this?"], rule: { en: who's = who is } }
+          - { level: A1, wrong: my parents's house, right: ["my ", { target: parents }, "' house"], rule: { en: { takes: [plural in -s, { pattern: [{ ending: "'" }], follows: true }] }, uk: { takes: ["множина на -s", { pattern: [{ ending: "'" }], follows: true }] }, es: { takes: ["plural en -s", { pattern: [{ ending: "'" }], follows: true }] } } }
+          - { level: A1, wrong: the childrens' room, right: ["the ", { target: children's }, " room"], rule: { en: { takes: [irregular plural, { pattern: [{ ending: "'s" }], follows: true }] }, uk: { takes: ["неправильна множина", { pattern: [{ ending: "'s" }], follows: true }] }, es: { takes: ["plural irregular", { pattern: [{ ending: "'s" }], follows: true }] } } }
+          - { level: A1, wrong: Who's bag is this?, right: [{ target: Whose }, " bag is this?"], rule: { en: who's = who is, uk: "who's означає who is", es: "who's significa who is" } }

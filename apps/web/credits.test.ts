@@ -1,7 +1,7 @@
 // The credits live on one page: every page's top bar links to it, no page has a footer, and the credits
 // page names the content's authors, both licences, the credit line and the ways to contribute.
 import { describe, expect, test } from "bun:test";
-import { SITE } from "../../scripts/lib.ts";
+import { type Explain, SITE, say } from "../../scripts/lib.ts";
 import { readPage, testSite } from "./test-site.ts";
 
 const pages = await testSite();
@@ -12,7 +12,7 @@ describe.each(pages)("%s", (path) => {
     const tools = [...doc.querySelectorAll(".topbar .tools > *")].map((el) => el.getAttribute("href") ?? el.id);
     expect(tools).toEqual(["/credits/", "theme"]);
     const link = doc.querySelector('.topbar a[href="/credits/"]');
-    expect(link?.getAttribute("aria-label")).toBe("Credits");
+    expect(link?.getAttribute("aria-label")).toBe(say("credits", doc.documentElement.getAttribute("lang") as Explain));
     expect(link?.getAttribute("aria-current")).toBe(path === "credits/index.html" ? "page" : null);
     expect(doc.querySelector("footer")).toBeNull();
   });

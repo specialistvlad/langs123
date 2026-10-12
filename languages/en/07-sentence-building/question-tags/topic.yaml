@@ -5,156 +5,181 @@ kind: grammar
 tags: [questions, tags, intonation]
 concepts: [question-tags]
 related: [en.sentence-building.questions-negatives, en.tenses.simple-tenses, en.tenses.perfect-tenses]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Question Tags }
+title: { en: Question Tags, uk: Розділові питання, es: Preguntas coletilla }
 summary:
-  lead: { en: Question tags are short questions added to a statement to check or confirm it. }
-  rule: { en: "A positive statement takes a negative tag and a negative statement a positive tag, with the same auxiliary:" }
+  lead:
+    en: Question tags are short questions added to a statement to check or confirm it.
+    uk: "Розділові питання (question tags) — це короткі питання, які додають до речення, щоб перевірити або підтвердити його."
+    es: "Las preguntas coletilla son preguntas cortas que se añaden a una oración para comprobarla o confirmarla."
+  rule:
+    en: "A positive statement takes a negative tag and a negative statement a positive tag, with the same auxiliary:"
+    uk: "Після стверджувального речення стоїть заперечний tag, після заперечного — стверджувальний, з тим самим допоміжним дієсловом:"
+    es: "Una oración afirmativa lleva una coletilla negativa y una oración negativa, una coletilla afirmativa, con el mismo auxiliar:"
   ex: { examples: [It's cold, [{ target: isn't it }, "?"]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: B1, point: { en: Form }, rule: { en: "positive statement, negative tag; negative statement, positive tag" }, ex: { examples: [["It's cold, ", { target: isn't it }, "?"], ["It isn't cold, ", { target: is it }, "?"]] } }
-        - { level: B1, point: { en: Pronoun }, rule: { en: [{ pattern: [auxiliary, pronoun] }, "; the pronoun replaces the subject"] }, ex: ["Tom is late, isn't ", { target: he }, "?"] }
-        - { level: B1, point: be, rule: { alternatives: [isn't, aren't, wasn't, weren't] }, ex: ["They ", { target: were }, " late, ", { target: weren't they }, "?"] }
-        - { level: B1, point: { en: Other verbs }, rule: { en: ["present: ", { alternatives: [don't, doesn't] }, "; past: ", didn't] }, ex: { examples: [["She ", { target: works }, " here, ", { target: doesn't she }, "?"], ["He ", { target: left }, " early, ", { target: didn't he }, "?"]] } }
-        - { level: B1, point: "have, modals", rule: { en: repeat the auxiliary or modal }, ex: { examples: [["You've ", { target: finished }, ", ", { target: haven't you }, "?"], ["You ", { target: can }, " swim, ", { target: can't you }, "?"]] } }
-        - { level: B1, point: I am, rule: aren't I, ex: [I', { target: m }, " right, ", { target: aren't I }, "?"] }
-        - { level: B1, point: { en: "Let's, command" }, rule: { en: [{ takes: [Let's, shall we] }, "; ", { takes: [command, will you] }] }, ex: { examples: [[{ target: Let's }, " go, ", { target: shall we }, "?"], [{ target: Open }, " the door, ", { target: will you }, "?"]] } }
-        - { level: B1, point: { en: Use }, rule: { en: "check something, make conversation or ask politely" }, ex: ["You're from Madrid, ", { target: aren't you }, "?"] }
-        - { level: B1, point: { en: Intonation }, rule: { en: ["falling ", { intonation: fall }, ": you are sure; rising ", { intonation: rise }, ": a real question"] }, ex: { examples: [["It's a lovely day, ", { target: isn't it }, "? ", { intonation: fall }], ["You haven't seen my keys, ", { target: have you }, "? ", { intonation: rise }]] } }
-        - { level: B1, point: { en: Trap }, rule: { en: [{ alternatives: [{ term: nobody }, { term: nothing }, { term: never }] }, " make the statement negative: positive tag"] }, ex: [{ target: Nobody }, " called, ", { target: did they }, "?"] }
+        - { level: B1, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: "positive statement, negative tag; negative statement, positive tag", uk: "стверджувальне речення, заперечний tag; заперечне речення, стверджувальний tag", es: "oración afirmativa, coletilla negativa; oración negativa, coletilla afirmativa" }, ex: { examples: [["It's cold, ", { target: isn't it }, "?"], ["It isn't cold, ", { target: is it }, "?"]] }, tr: { uk: { examples: ["Холодно, правда?", "Не холодно, правда?"] }, es: { examples: ["Hace frío, ¿no?", "No hace frío, ¿verdad?"] } } }
+        - { level: B1, point: { en: Pronoun, uk: "Займенник", es: "Pronombre" }, rule: { en: [{ pattern: [auxiliary, pronoun] }, "; the pronoun replaces the subject"], uk: [{ pattern: ["допоміжне дієслово", "займенник"] }, "; займенник замінює підмет"], es: [{ pattern: ["verbo auxiliar", "pronombre"] }, "; el pronombre sustituye al sujeto"] }, ex: ["Tom is late, isn't ", { target: he }, "?"], tr: { uk: "Том запізнюється, правда ж?", es: "Tom llega tarde, ¿no?" } }
+        - { level: B1, point: be, rule: { alternatives: [isn't, aren't, wasn't, weren't] }, ex: ["They ", { target: were }, " late, ", { target: weren't they }, "?"], tr: { uk: "Вони запізнилися, чи не так?", es: "Llegaron tarde, ¿no?" } }
+        - { level: B1, point: { en: Other verbs, uk: "Інші дієслова", es: "Otros verbos" }, rule: { en: ["present: ", { alternatives: [don't, doesn't] }, "; past: ", didn't], uk: ["теперішній час: ", { alternatives: [don't, doesn't] }, "; минулий час: ", didn't], es: ["presente: ", { alternatives: [don't, doesn't] }, "; pasado: ", didn't] }, ex: { examples: [["She ", { target: works }, " here, ", { target: doesn't she }, "?"], ["He ", { target: left }, " early, ", { target: didn't he }, "?"]] }, tr: { uk: { examples: ["Вона тут працює, правда?", "Він рано пішов, так?"] }, es: { examples: ["Ella trabaja aquí, ¿no?", "Se fue temprano, ¿no?"] } } }
+        - { level: B1, point: "have, modals", rule: { en: repeat the auxiliary or modal, uk: "повтори допоміжне чи модальне дієслово", es: "repite el auxiliar o el modal" }, ex: { examples: [["You've ", { target: finished }, ", ", { target: haven't you }, "?"], ["You ", { target: can }, " swim, ", { target: can't you }, "?"]] }, tr: { uk: { examples: ["Ти закінчив, так?", "Ти вмієш плавати, так?"] }, es: { examples: ["Has terminado, ¿no?", "Sabes nadar, ¿no?"] } } }
+        - { level: B1, point: I am, rule: aren't I, ex: [I', { target: m }, " right, ", { target: aren't I }, "?"], tr: { uk: "Я правий, чи не так?", es: "Tengo razón, ¿no?" } }
+        - { level: B1, point: { en: "Let's, command", uk: "Let's, наказ", es: "Let's, orden" }, rule: { en: [{ takes: [Let's, shall we] }, "; ", { takes: [command, will you] }], uk: [{ takes: [Let's, shall we] }, "; ", { takes: ["наказ", will you] }], es: [{ takes: [Let's, shall we] }, "; ", { takes: ["orden", will you] }] }, ex: { examples: [[{ target: Let's }, " go, ", { target: shall we }, "?"], [{ target: Open }, " the door, ", { target: will you }, "?"]] }, tr: { uk: { examples: ["Ходімо, гаразд?", "Відчини двері, добре?"] }, es: { examples: ["Vamos, ¿te parece?", "Abre la puerta, ¿sí?"] } } }
+        - { level: B1, point: { en: Use, uk: "Вживання", es: "Uso" }, rule: { en: "check something, make conversation or ask politely", uk: "перевірити щось, підтримати розмову або ввічливо попросити", es: "comprobar algo, conversar o pedir con cortesía" }, ex: ["You're from Madrid, ", { target: aren't you }, "?"], tr: { uk: "Ти з Мадрида, так?", es: "Eres de Madrid, ¿verdad?" } }
+        - { level: B1, point: { en: Intonation, uk: "Інтонація", es: "Entonación" }, rule: { en: ["falling ", { intonation: fall }, ": you are sure; rising ", { intonation: rise }, ": a real question"], uk: ["спадна ", { intonation: fall }, ": мовець упевнений; висхідна ", { intonation: rise }, ": справжнє питання"], es: ["descendente ", { intonation: fall }, ": el hablante está seguro; ascendente ", { intonation: rise }, ": una pregunta real"] }, ex: { examples: [["It's a lovely day, ", { target: isn't it }, "? ", { intonation: fall }], ["You haven't seen my keys, ", { target: have you }, "? ", { intonation: rise }]] }, tr: { uk: { examples: ["Чудовий день, правда?", "Ти не бачив моїх ключів, правда?"] }, es: { examples: ["Es un día precioso, ¿verdad?", "No has visto mis llaves, ¿verdad?"] } } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ alternatives: [{ term: nobody }, { term: nothing }, { term: never }] }, " make the statement negative: positive tag"], uk: [{ alternatives: [{ term: nobody }, { term: nothing }, { term: never }] }, " роблять речення заперечним: стверджувальний tag"], es: [{ alternatives: [{ term: nobody }, { term: nothing }, { term: never }] }, " hacen negativa la oración: coletilla afirmativa"] }, ex: [{ target: Nobody }, " called, ", { target: did they }, "?"], tr: { uk: "Ніхто не дзвонив, правда?", es: "Nadie llamó, ¿verdad?" } }
 
 sections:
-  - title: { en: "Form: auxiliary and pronoun" }
+  - title: { en: "Form: auxiliary and pronoun", uk: "Форма: допоміжне дієслово й займенник", es: "Forma: auxiliar y pronombre" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: statement, label: { en: Statement } }
-          - { key: tag, label: { en: Tag } }
-          - { key: ex, label: { en: Example } }
+          - { key: statement, label: { en: Statement, uk: "Речення", es: "Oración" } }
+          - { key: tag, label: { en: Tag, uk: "Tag", es: "Coletilla" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, statement: { en: positive }, tag: { en: negative }, ex: ["It's cold, ", { target: isn't it }, "?"] }
-          - { level: B1, statement: { en: negative }, tag: { en: positive }, ex: ["It isn't cold, ", { target: is it }, "?"] }
+          - { level: B1, statement: { en: positive, uk: "стверджувальне", es: "afirmativa" }, tag: { en: negative, uk: "заперечний", es: "negativa" }, ex: ["It's cold, ", { target: isn't it }, "?"], tr: { uk: "Холодно, правда?", es: "Hace frío, ¿no?" } }
+          - { level: B1, statement: { en: negative, uk: "заперечне", es: "negativa" }, tag: { en: positive, uk: "стверджувальний", es: "afirmativa" }, ex: ["It isn't cold, ", { target: is it }, "?"], tr: { uk: "Не холодно, правда?", es: "No hace frío, ¿verdad?" } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["The tag is an ", { pattern: [auxiliary, a pronoun] }, ": isn't ", { term: it }, ", doesn't ", { term: she }, "."]
+              uk: ["Tag — це ", { pattern: ["допоміжне дієслово", "займенник"] }, ": isn't ", { term: it }, ", doesn't ", { term: she }, "."]
+              es: ["La coletilla es ", { pattern: ["verbo auxiliar", "pronombre"] }, ": isn't ", { term: it }, ", doesn't ", { term: she }, "."]
           - type: rule
             level: B1
             text:
               en: "The pronoun replaces the subject:"
+              uk: "Займенник замінює підмет:"
+              es: "El pronombre sustituye al sujeto:"
             ex: ["Tom is late, isn't ", { target: he }, "?"]
+            tr: { uk: "Том запізнюється, правда ж?", es: "Tom llega tarde, ¿no?" }
           - type: rule
             level: B1
             text:
               en: "The negative tag uses the short form: isn't, doesn't, can't."
+              uk: "Заперечний tag має скорочену форму: isn't, doesn't, can't."
+              es: "La coletilla negativa usa la forma contraída: isn't, doesn't, can't."
 
-  - title: { en: "Form: the auxiliary matches the verb" }
+  - title: { en: "Form: the auxiliary matches the verb", uk: "Форма: допоміжне дієслово відповідає дієслову", es: "Forma: el auxiliar concuerda con el verbo" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Verb in the statement } }
-          - { key: tag, label: { en: Tag } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Verb in the statement, uk: "Дієслово в реченні", es: "Verbo de la oración" } }
+          - { key: tag, label: { en: Tag, uk: "Tag", es: "Coletilla" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, verb: be, tag: { alternatives: [isn't, aren't, wasn't, weren't] }, ex: ["They ", { target: were }, " late, ", { target: weren't they }, "?"] }
-          - { level: B1, verb: { en: present simple (other verbs) }, tag: { alternatives: [don't, doesn't] }, ex: ["She ", { target: works }, " here, ", { target: doesn't she }, "?"] }
-          - { level: B1, verb: { en: past simple (other verbs) }, tag: didn't, ex: ["He ", { target: left }, " early, ", { target: didn't he }, "?"] }
-          - { level: B1, verb: { pattern: [{ alternatives: [have, has, had] }, { slot: { en: participle } }] }, tag: { alternatives: [haven't, hasn't, hadn't] }, ex: ["You've ", { target: finished }, ", ", { target: haven't you }, "?"] }
-          - { level: B1, verb: ["will, can, must, should", { gap: true }], tag: the same modal, ex: ["You ", { target: can }, " swim, ", { target: can't you }, "?"] }
+          - { level: B1, verb: be, tag: { alternatives: [isn't, aren't, wasn't, weren't] }, ex: ["They ", { target: were }, " late, ", { target: weren't they }, "?"], tr: { uk: "Вони запізнилися, чи не так?", es: "Llegaron tarde, ¿no?" } }
+          - { level: B1, verb: { en: present simple (other verbs), uk: "Present Simple (інші дієслова)", es: "presente simple (otros verbos)" }, tag: { alternatives: [don't, doesn't] }, ex: ["She ", { target: works }, " here, ", { target: doesn't she }, "?"], tr: { uk: "Вона тут працює, правда?", es: "Ella trabaja aquí, ¿no?" } }
+          - { level: B1, verb: { en: past simple (other verbs), uk: "Past Simple (інші дієслова)", es: "pasado simple (otros verbos)" }, tag: didn't, ex: ["He ", { target: left }, " early, ", { target: didn't he }, "?"], tr: { uk: "Він рано пішов, так?", es: "Se fue temprano, ¿no?" } }
+          - { level: B1, verb: { pattern: [{ alternatives: [have, has, had] }, { slot: { en: participle, uk: "Past Participle", es: "participio pasado" } }] }, tag: { alternatives: [haven't, hasn't, hadn't] }, ex: ["You've ", { target: finished }, ", ", { target: haven't you }, "?"], tr: { uk: "Ти закінчив, так?", es: "Has terminado, ¿no?" } }
+          - { level: B1, verb: ["will, can, must, should", { gap: true }], tag: { en: the same modal, uk: "те саме модальне дієслово", es: "el mismo verbo modal" }, ex: ["You ", { target: can }, " swim, ", { target: can't you }, "?"], tr: { uk: "Ти вмієш плавати, так?", es: "Sabes nadar, ¿no?" } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: "When the statement has an auxiliary or a modal, the tag repeats it."
+              uk: "Якщо в реченні є допоміжне чи модальне дієслово, tag повторює його."
+              es: "Cuando la oración tiene un auxiliar o un modal, la coletilla lo repite."
           - type: rule
             level: B1
             text:
               en: ["When it has no auxiliary, the tag uses ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
+              uk: ["Якщо допоміжного дієслова немає, tag використовує ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
+              es: ["Cuando no tiene auxiliar, la coletilla usa ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
 
-  - title: { en: "Form: special cases" }
+  - title: { en: "Form: special cases", uk: "Форма: особливі випадки", es: "Forma: casos especiales" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: start, label: { en: Statement } }
-          - { key: tag, label: { en: Tag } }
-          - { key: ex, label: { en: Example } }
+          - { key: start, label: { en: Statement, uk: "Речення", es: "Oración" } }
+          - { key: tag, label: { en: Tag, uk: "Tag", es: "Coletilla" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, start: I am, tag: aren't I, ex: [I', { target: m }, " right, ", { target: aren't I }, "?"] }
-          - { level: B1, start: Let's, tag: shall we, ex: [{ target: Let's }, " go, ", { target: shall we }, "?"] }
-          - { level: B1, start: { en: command }, tag: will you, ex: [{ target: Open }, " the door, ", { target: will you }, "?"] }
-          - { level: B1, start: { en: negative command }, tag: will you, ex: [{ target: Don't }, " be late, ", { target: will you }, "?"] }
-          - { level: B1, start: { alternatives: [There is, are] }, tag: [{ alternatives: [isn't, aren't] }, " there"], ex: [{ target: There's }, " a bus, ", { target: isn't there }, "?"] }
-          - { level: B1, start: "everybody, somebody, nobody", tag: they, ex: [{ target: Everybody }, " came, ", { target: didn't they }, "?"] }
-          - { level: B1, start: "nobody, nothing, never", tag: { en: positive tag }, ex: [{ target: Nobody }, " called, ", { target: did they }, "?"] }
+          - { level: B1, start: I am, tag: aren't I, ex: [I', { target: m }, " right, ", { target: aren't I }, "?"], tr: { uk: "Я правий, чи не так?", es: "Tengo razón, ¿no?" } }
+          - { level: B1, start: Let's, tag: shall we, ex: [{ target: Let's }, " go, ", { target: shall we }, "?"], tr: { uk: "Ходімо, гаразд?", es: "Vamos, ¿te parece?" } }
+          - { level: B1, start: { en: command, uk: "наказ", es: "orden" }, tag: will you, ex: [{ target: Open }, " the door, ", { target: will you }, "?"], tr: { uk: "Відчини двері, добре?", es: "Abre la puerta, ¿sí?" } }
+          - { level: B1, start: { en: negative command, uk: "заперечний наказ", es: "orden negativa" }, tag: will you, ex: [{ target: Don't }, " be late, ", { target: will you }, "?"], tr: { uk: "Не запізнюйся, добре?", es: "No llegues tarde, ¿sí?" } }
+          - { level: B1, start: { alternatives: [There is, are] }, tag: [{ alternatives: [isn't, aren't] }, " there"], ex: [{ target: There's }, " a bus, ", { target: isn't there }, "?"], tr: { uk: "Є автобус, чи не так?", es: "Hay un autobús, ¿no?" } }
+          - { level: B1, start: "everybody, somebody, nobody", tag: they, ex: [{ target: Everybody }, " came, ", { target: didn't they }, "?"], tr: { uk: "Усі прийшли, чи не так?", es: "Todos vinieron, ¿no?" } }
+          - { level: B1, start: "nobody, nothing, never", tag: { en: positive tag, uk: "стверджувальний tag", es: "coletilla afirmativa" }, ex: [{ target: Nobody }, " called, ", { target: did they }, "?"], tr: { uk: "Ніхто не дзвонив, правда?", es: "Nadie llamó, ¿verdad?" } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: Nobody }, ", ", { term: nothing }, " and ", { term: never }, " make the statement negative, so the tag is positive."]
+              uk: [{ term: Nobody }, ", ", { term: nothing }, " і ", { term: never }, " роблять речення заперечним, тому tag стверджувальний."]
+              es: [{ term: Nobody }, ", ", { term: nothing }, " y ", { term: never }, " hacen negativa la oración, por eso la coletilla es afirmativa."]
           - type: rule
             level: B1
             text:
               en: ["A tag after a command is a polite request. ", { term: won't you }, " is more friendly: Come in, won't you?"]
+              uk: ["Tag після наказу звучить як ввічливе прохання. ", { term: won't you }, " звучить дружніше: Come in, won't you?"]
+              es: ["Una coletilla después de una orden es una petición cortés. ", { term: won't you }, " es más amable: Come in, won't you?"]
 
-  - title: { en: "Pronunciation: intonation" }
+  - title: { en: "Pronunciation: intonation", uk: "Вимова: інтонація", es: "Pronunciación: entonación" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: tone, label: { en: Tone } }
-          - { key: meaning, label: { en: Meaning } }
-          - { key: ex, label: { en: Example } }
+          - { key: tone, label: { en: Tone, uk: "Інтонація", es: "Entonación" } }
+          - { key: meaning, label: { en: Meaning, uk: "Значення", es: "Significado" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, tone: { en: ["falling ", { intonation: fall }] }, meaning: { en: you are sure and want agreement }, ex: ["It's a lovely day, ", { target: isn't it }, "? ", { intonation: fall }] }
-          - { level: B1, tone: { en: ["rising ", { intonation: rise }] }, meaning: { en: you are not sure and ask a real question }, ex: ["You haven't seen my keys, ", { target: have you }, "? ", { intonation: rise }] }
+          - { level: B1, tone: { en: ["falling ", { intonation: fall }], uk: ["спадна ", { intonation: fall }], es: ["descendente ", { intonation: fall }] }, meaning: { en: you are sure and want agreement, uk: "мовець упевнений і чекає згоди", es: "el hablante está seguro y espera acuerdo" }, ex: ["It's a lovely day, ", { target: isn't it }, "? ", { intonation: fall }], tr: { uk: "Чудовий день, правда?", es: "Es un día precioso, ¿verdad?" } }
+          - { level: B1, tone: { en: ["rising ", { intonation: rise }], uk: ["висхідна ", { intonation: rise }], es: ["ascendente ", { intonation: rise }] }, meaning: { en: you are not sure and ask a real question, uk: "мовець не впевнений і ставить справжнє питання", es: "el hablante no está seguro y hace una pregunta real" }, ex: ["You haven't seen my keys, ", { target: have you }, "? ", { intonation: rise }], tr: { uk: "Ти не бачив моїх ключів, правда?", es: "No has visto mis llaves, ¿verdad?" } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: The voice falls or rises on the tag.
+              uk: "На tag голос спадає або підвищується."
+              es: "En la coletilla la voz baja o sube."
           - type: rule
             level: B1
             text:
               en: ["A rising tag expects the answer ", { term: "yes" }, " or ", { term: "no" }, "."]
+              uk: ["Tag з висхідною інтонацією очікує відповіді ", { term: "yes" }, " або ", { term: "no" }, "."]
+              es: ["Una coletilla con entonación ascendente espera la respuesta ", { term: "yes" }, " o ", { term: "no" }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, use: { en: Checking something you think is true }, ex: ["You're from Madrid, ", { target: aren't you }, "?"] }
-          - { level: B1, use: { en: Making conversation }, ex: ["Lovely weather, ", { target: isn't it }, "?"] }
-          - { level: B1, use: { en: Asking politely for help }, ex: ["You couldn't lend me a pen, ", { target: could you }, "?"] }
+          - { level: B1, use: { en: Checking something you think is true, uk: "Перевірка того, що вважаєш правдою", es: "Comprobar algo que crees verdadero" }, ex: ["You're from Madrid, ", { target: aren't you }, "?"], tr: { uk: "Ти з Мадрида, так?", es: "Eres de Madrid, ¿verdad?" } }
+          - { level: B1, use: { en: Making conversation, uk: "Підтримання розмови", es: "Mantener una conversación" }, ex: ["Lovely weather, ", { target: isn't it }, "?"], tr: { uk: "Чудова погода, правда?", es: "Hace un tiempo precioso, ¿verdad?" } }
+          - { level: B1, use: { en: Asking politely for help, uk: "Ввічливе прохання про допомогу", es: "Pedir ayuda con cortesía" }, ex: ["You couldn't lend me a pen, ", { target: could you }, "?"], tr: { uk: "Ти не міг би позичити мені ручку?", es: "¿No podrías prestarme un bolígrafo?" } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: B1, wrong: "You like tea, aren't you?", right: ["You like tea, ", { target: don't you }, "?"], rule: { en: ["the tag matches the verb: ", { mapping: [like, don't] }] } }
-          - { level: B1, wrong: "She works here, isn't she?", right: ["She works here, ", { target: doesn't she }, "?"], rule: { en: { takes: [["present simple, ", { alternatives: [he, she, it] }], doesn't] } } }
-          - { level: B1, wrong: "He doesn't like it, doesn't he?", right: ["He doesn't like it, ", { target: does he }, "?"], rule: { en: { takes: [negative statement, positive tag] } } }
-          - { level: B1, wrong: "Let's go, will we?", right: ["Let's go, ", { target: shall we }, "?"], rule: { en: { takes: [Let's, shall we] } } }
-          - { level: B1, wrong: "Open the door, don't you?", right: ["Open the door, ", { target: will you }, "?"], rule: { en: { takes: [command, will you] } } }
-          - { level: B1, wrong: "Tom is late, isn't Tom?", right: ["Tom is late, isn't ", { target: he }, "?"], rule: { en: the tag uses a pronoun } }
-          - { level: B1, wrong: "Nobody called, didn't they?", right: ["Nobody called, ", { target: did they }, "?"], rule: { en: { takes: [nobody is negative, positive tag] } } }
+          - { level: B1, wrong: "You like tea, aren't you?", right: ["You like tea, ", { target: don't you }, "?"], rule: { en: ["the tag matches the verb: ", { mapping: [like, don't] }], uk: ["tag відповідає дієслову: ", { mapping: [like, don't] }], es: ["la coletilla concuerda con el verbo: ", { mapping: [like, don't] }] } }
+          - { level: B1, wrong: "She works here, isn't she?", right: ["She works here, ", { target: doesn't she }, "?"], rule: { en: { takes: [["present simple, ", { alternatives: [he, she, it] }], doesn't] }, uk: { takes: [["Present Simple, ", { alternatives: [he, she, it] }], doesn't] }, es: { takes: [["presente simple, ", { alternatives: [he, she, it] }], doesn't] } } }
+          - { level: B1, wrong: "He doesn't like it, doesn't he?", right: ["He doesn't like it, ", { target: does he }, "?"], rule: { en: { takes: [negative statement, positive tag] }, uk: { takes: ["заперечне речення", "стверджувальний tag"] }, es: { takes: ["oración negativa", "coletilla afirmativa"] } } }
+          - { level: B1, wrong: "Let's go, will we?", right: ["Let's go, ", { target: shall we }, "?"], rule: { en: { takes: [Let's, shall we] }, uk: { takes: [Let's, shall we] }, es: { takes: [Let's, shall we] } } }
+          - { level: B1, wrong: "Open the door, don't you?", right: ["Open the door, ", { target: will you }, "?"], rule: { en: { takes: [command, will you] }, uk: { takes: ["наказ", will you] }, es: { takes: ["orden", will you] } } }
+          - { level: B1, wrong: "Tom is late, isn't Tom?", right: ["Tom is late, isn't ", { target: he }, "?"], rule: { en: the tag uses a pronoun, uk: "tag містить займенник", es: "la coletilla usa un pronombre" } }
+          - { level: B1, wrong: "Nobody called, didn't they?", right: ["Nobody called, ", { target: did they }, "?"], rule: { en: { takes: [nobody is negative, positive tag] }, uk: { takes: ["nobody — заперечне слово", "стверджувальний tag"] }, es: { takes: ["nobody es una palabra negativa", "coletilla afirmativa"] } } }

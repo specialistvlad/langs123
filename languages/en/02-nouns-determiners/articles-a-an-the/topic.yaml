@@ -5,37 +5,43 @@ kind: grammar
 tags: [articles, determiners, nouns]
 concepts: [articles]
 related: [en.nouns-determiners.countable-uncountable, en.nouns-determiners.plurals, en.nouns-determiners.quantifiers-some-any-much-many, en.nouns-determiners.demonstratives-this-that, en.nouns-determiners.possessive-s]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "Articles: a, an, the" }
+title: { en: "Articles: a, an, the", uk: "Артиклі: a, an, the", es: "Artículos: a, an, the" }
 summary:
-  lead: { en: "A and an for one thing, the for a thing both people know, and no article for things in general." }
-  rule: { en: [The first sound decides a or an (, { term: an }, " hour, ", { term: a }, " university), and general plurals and uncountable nouns take no article:"] }
+  lead:
+    en: "A and an for one thing, the for a thing both people know, and no article for things in general."
+    uk: "A і an вживаються з одним предметом, the — з предметом, відомим обом співрозмовникам, а для речей загалом артикль не потрібен."
+    es: "A y an acompañan a una cosa, the a algo que ambos conocen, y las cosas en general van sin artículo."
+  rule:
+    en: [The first sound decides a or an (, { term: an }, " hour, ", { term: a }, " university), and general plurals and uncountable nouns take no article:"]
+    uk: ["Вибір a чи an залежить від першого звука (", { term: an }, " hour, ", { term: a }, " university), а загальна множина й незлічувані іменники вживаються без артикля:"]
+    es: ["El primer sonido decide entre a y an (", { term: an }, " hour, ", { term: a }, " university); los plurales generales y los incontables no llevan artículo:"]
   ex: ["I like ", { target: dogs }, "."]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Form }, rule: { en: [{ term: a }, " before a consonant sound, ", { term: an }, " before a vowel sound"] }, ex: { examples: [[{ target: a }, " book"], [{ target: an }, " apple"]] } }
-        - { level: A1, point: { alternatives: [a, an] }, rule: { en: "one thing, a job, or a first mention" }, ex: ["She's ", { target: a }, " doctor."] }
-        - { level: A1, point: the, rule: { en: "a thing we both know, or already mentioned" }, ex: ["There's a cat. ", { target: The }, " cat is black."] }
-        - { level: A1, point: the, rule: { en: "the only one; superlatives and ordinals" }, ex: { examples: [[{ target: the }, " sun"], [{ target: the }, " best"], [{ target: the }, " first time"]] } }
-        - { level: A2, point: the, rule: { en: "rivers, seas, oceans, mountain ranges" }, ex: { examples: [[{ target: the }, " Thames"], [{ target: the }, " Atlantic"], [{ target: the }, " Alps"]] } }
-        - { level: A2, point: the, rule: { en: "countries with a plural name, Kingdom or States" }, ex: { examples: [[{ target: the }, " UK"], [{ target: the }, " USA"], [{ target: the }, " Netherlands"]] } }
-        - { level: B1, point: the, rule: { en: [{ pattern: [the, { slot: adjective }] }, " means a group of people"] }, ex: { examples: [[{ target: the }, " rich"], [{ target: the }, " young"]] } }
-        - { level: A1, point: { en: No article }, rule: { en: "plural and uncountable nouns in general; meals; names" }, ex: { examples: [["I like ", { target: dogs }, "."], ["We have ", { target: lunch }, " at two."]] } }
-        - { level: A2, point: { en: No article }, rule: { en: "home, work, school, bed; transport after by" }, ex: { examples: [["go ", { target: home }], ["at ", { target: work }], ["by ", { target: bus }]] } }
-        - { level: B1, point: { en: No article }, rule: { en: ["hospital, prison, church for their purpose; ", { term: the }, " for the building"] }, ex: ["He's in ", { target: hospital }, "."] }
-        - { level: A1, point: { en: Trap }, rule: { en: "the first sound decides, not the letter" }, ex: { examples: [[{ target: a }, " university"], [{ target: an }, " hour"]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: "most countries take no article" }, ex: ["I live in ", { target: Spain }, "."] }
+        - { level: A1, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: [{ term: a }, " before a consonant sound, ", { term: an }, " before a vowel sound"], uk: [{ term: a }, " перед приголосним звуком, ", { term: an }, " перед голосним звуком"], es: [{ term: a }, " delante de un sonido consonántico, ", { term: an }, " delante de un sonido vocálico"] }, ex: { examples: [[{ target: a }, " book"], [{ target: an }, " apple"]] }, tr: { uk: { examples: ["книжка", "яблуко"] }, es: { examples: ["un libro", "una manzana"] } } }
+        - { level: A1, point: { alternatives: [a, an] }, rule: { en: "one thing, a job, or a first mention", uk: "один предмет, професія або перша згадка", es: "una cosa, una profesión o una primera mención" }, ex: ["She's ", { target: a }, " doctor."], tr: { uk: "Вона лікарка.", es: "Ella es médica." } }
+        - { level: A1, point: the, rule: { en: "a thing we both know, or already mentioned", uk: "предмет, відомий нам обом, або вже згаданий", es: "algo que ambos conocemos o que ya se mencionó" }, ex: ["There's a cat. ", { target: The }, " cat is black."], tr: { uk: "Там кіт. Цей кіт чорний.", es: "Hay un gato. El gato es negro." } }
+        - { level: A1, point: the, rule: { en: "the only one; superlatives and ordinals", uk: "єдиний у своєму роді; найвищий ступінь і порядкові числівники", es: "el único; superlativos y ordinales" }, ex: { examples: [[{ target: the }, " sun"], [{ target: the }, " best"], [{ target: the }, " first time"]] }, tr: { uk: { examples: ["сонце", "найкращий", "перший раз"] }, es: { examples: ["el sol", "el mejor", "la primera vez"] } } }
+        - { level: A2, point: the, rule: { en: "rivers, seas, oceans, mountain ranges", uk: "річки, моря, океани, гірські хребти", es: "ríos, mares, océanos, cordilleras" }, ex: { examples: [[{ target: the }, " Thames"], [{ target: the }, " Atlantic"], [{ target: the }, " Alps"]] }, tr: { uk: { examples: ["Темза", "Атлантичний океан", "Альпи"] }, es: { examples: ["el Támesis", "el Atlántico", "los Alpes"] } } }
+        - { level: A2, point: the, rule: { en: "countries with a plural name, Kingdom or States", uk: "країни з назвою у множині, Kingdom або States", es: "países con nombre plural, Kingdom o States" }, ex: { examples: [[{ target: the }, " UK"], [{ target: the }, " USA"], [{ target: the }, " Netherlands"]] }, tr: { uk: { examples: ["Велика Британія", "США", "Нідерланди"] }, es: { examples: ["el Reino Unido", "Estados Unidos", "los Países Bajos"] } } }
+        - { level: B1, point: the, rule: { en: [{ pattern: [the, { slot: adjective }] }, " means a group of people"], uk: [{ pattern: [the, { slot: adjective }] }, " означає групу людей"], es: [{ pattern: [the, { slot: adjective }] }, " designa a un grupo de personas"] }, ex: { examples: [[{ target: the }, " rich"], [{ target: the }, " young"]] }, tr: { uk: { examples: ["багаті", "молодь"] }, es: { examples: ["los ricos", "los jóvenes"] } } }
+        - { level: A1, point: { en: No article, uk: "Без артикля", es: "Sin artículo" }, rule: { en: "plural and uncountable nouns in general; meals; names", uk: "іменники у множині й незлічувані загалом; прийоми їжі; імена", es: "plurales e incontables en general; comidas; nombres" }, ex: { examples: [["I like ", { target: dogs }, "."], ["We have ", { target: lunch }, " at two."]] }, tr: { uk: { examples: ["Я люблю собак.", "Ми обідаємо о другій."] }, es: { examples: ["Me gustan los perros.", "Almorzamos a las dos."] } } }
+        - { level: A2, point: { en: No article, uk: "Без артикля", es: "Sin artículo" }, rule: { en: "home, work, school, bed; transport after by", uk: "home, work, school, bed; транспорт після by", es: "home, work, school, bed; transporte después de by" }, ex: { examples: [["go ", { target: home }], ["at ", { target: work }], ["by ", { target: bus }]] }, tr: { uk: { examples: ["іти додому", "на роботі", "автобусом"] }, es: { examples: ["ir a casa", "en el trabajo", "en autobús"] } } }
+        - { level: B1, point: { en: No article, uk: "Без артикля", es: "Sin artículo" }, rule: { en: ["hospital, prison, church for their purpose; ", { term: the }, " for the building"], uk: ["hospital, prison, church, коли важливе їхнє призначення; ", { term: the }, " для самої будівлі"], es: ["hospital, prison, church para su función; ", { term: the }, " para el edificio"] }, ex: ["He's in ", { target: hospital }, "."], tr: { uk: "Він лежить у лікарні.", es: "Está hospitalizado." } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "the first sound decides, not the letter", uk: "вирішує перший звук, а не літера", es: "decide el primer sonido, no la letra" }, ex: { examples: [[{ target: a }, " university"], [{ target: an }, " hour"]] }, tr: { uk: { examples: ["університет", "година"] }, es: { examples: ["una universidad", "una hora"] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "most countries take no article", uk: "більшість країн — без артикля", es: "la mayoría de los países no llevan artículo" }, ex: ["I live in ", { target: Spain }, "."], tr: { uk: "Я живу в Іспанії.", es: "Vivo en España." } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -44,114 +50,127 @@ sections:
             level: A1
             text:
               en: [{ alternatives: [a, an] }, " go only with singular countable nouns. See ", { link: Countable and uncountable, to: en.nouns-determiners.countable-uncountable }, "."]
+              uk: [{ alternatives: [a, an] }, " вживаються лише зі злічуваними іменниками в однині. Див. ", { link: "Злічувані та незлічувані іменники", to: en.nouns-determiners.countable-uncountable }, "."]
+              es: [{ alternatives: [a, an] }, " solo se usan con sustantivos contables en singular. Ver ", { link: "Sustantivos contables e incontables", to: en.nouns-determiners.countable-uncountable }, "."]
           - type: rule
             level: A1
             text:
               en: [{ term: the }, " goes with all nouns: singular, plural and uncountable."]
+              uk: [{ term: the }, " вживається з усіма іменниками: в однині, у множині й незлічуваними."]
+              es: [{ term: the }, " va con todos los sustantivos: singulares, plurales e incontables."]
 
-  - title: { en: "Form: a or an" }
+  - title: { en: "Form: a or an", uk: "Форма: a чи an", es: "Forma: a o an" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: before, label: { en: Next word starts with } }
-          - { key: article, label: { en: Article } }
-          - { key: ex, label: { en: Example } }
+          - { key: before, label: { en: Next word starts with, uk: "Наступне слово починається з", es: "La palabra siguiente empieza con" } }
+          - { key: article, label: { en: Article, uk: "Артикль", es: "Artículo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, before: { en: a consonant sound }, article: a, ex: { examples: [[{ target: a }, " book"], [{ target: a }, " big apple"]] } }
-          - { level: A1, before: { en: a vowel sound }, article: an, ex: { examples: [[{ target: an }, " apple"], [{ target: an }, " old book"]] } }
+          - { level: A1, before: { en: a consonant sound, uk: "приголосного звука", es: "un sonido consonántico" }, article: a, ex: { examples: [[{ target: a }, " book"], [{ target: a }, " big apple"]] }, tr: { uk: { examples: ["книжка", "велике яблуко"] }, es: { examples: ["un libro", "una manzana grande"] } } }
+          - { level: A1, before: { en: a vowel sound, uk: "голосного звука", es: "un sonido vocálico" }, article: an, ex: { examples: [[{ target: an }, " apple"], [{ target: an }, " old book"]] }, tr: { uk: { examples: ["яблуко", "стара книжка"] }, es: { examples: ["una manzana", "un libro viejo"] } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["The first sound decides, not the letter: ", { term: an }, " hour ", { ipa: ˈaʊə }, ", ", { term: a }, " university ", { ipa: juːnɪˈvɜːsəti }, "."]
+              uk: ["Вирішує перший звук, а не літера: ", { term: an }, " hour ", { ipa: ˈaʊə }, ", ", { term: a }, " university ", { ipa: juːnɪˈvɜːsəti }, "."]
+              es: ["Decide el primer sonido, no la letra: ", { term: an }, " hour ", { ipa: ˈaʊə }, ", ", { term: a }, " university ", { ipa: juːnɪˈvɜːsəti }, "."]
           - type: rule
             level: A1
             text:
               en: ["The article goes before the adjective, so the adjective decides: ", { term: an }, " old car, ", { term: a }, " new car."]
+              uk: ["Артикль стоїть перед прикметником, тому вирішує прикметник: ", { term: an }, " old car, ", { term: a }, " new car."]
+              es: ["El artículo va antes del adjetivo, así que decide el adjetivo: ", { term: an }, " old car, ", { term: a }, " new car."]
 
-  - title: { en: "Pronunciation: a, an, the" }
+  - title: { en: "Pronunciation: a, an, the", uk: "Вимова: a, an, the", es: "Pronunciación: a, an, the" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Word } }
-          - { key: before, label: { en: Before } }
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: word, label: { en: Word, uk: "Слово", es: "Palabra" } }
+          - { key: before, label: { en: Before, uk: "Перед", es: "Antes de" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, word: a, before: { en: consonant sound }, sound: { ipa: ə }, ex: ["a book ", { ipa: ə ˈbʊk }] }
-          - { level: A1, word: an, before: { en: vowel sound }, sound: { ipa: ən }, ex: ["an egg ", { ipa: ən ˈeɡ }] }
-          - { level: A1, word: the, before: { en: consonant sound }, sound: { ipa: ðə }, ex: ["the book ", { ipa: ðə ˈbʊk }] }
-          - { level: A1, word: the, before: { en: vowel sound }, sound: { ipa: ði }, ex: ["the egg ", { ipa: ði ˈeɡ }] }
+          - { level: A1, word: a, before: { en: consonant sound, uk: "приголосний звук", es: "sonido consonántico" }, sound: { ipa: ə }, ex: { ex: ["a book ", { ipa: ə ˈbʊk }], tr: { uk: "книжка", es: "un libro" } } }
+          - { level: A1, word: an, before: { en: vowel sound, uk: "голосний звук", es: "sonido vocálico" }, sound: { ipa: ən }, ex: { ex: ["an egg ", { ipa: ən ˈeɡ }], tr: { uk: "яйце", es: "un huevo" } } }
+          - { level: A1, word: the, before: { en: consonant sound, uk: "приголосний звук", es: "sonido consonántico" }, sound: { ipa: ðə }, ex: { ex: ["the book ", { ipa: ðə ˈbʊk }], tr: { uk: "книжка", es: "el libro" } } }
+          - { level: A1, word: the, before: { en: vowel sound, uk: "голосний звук", es: "sonido vocálico" }, sound: { ipa: ði }, ex: { ex: ["the egg ", { ipa: ði ˈeɡ }], tr: { uk: "яйце", es: "el huevo" } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "Articles are weak and unstressed: the stress falls on the noun."
+              uk: "Артиклі слабкі й ненаголошені: наголос падає на іменник."
+              es: "Los artículos son débiles y átonos: el acento cae en el sustantivo."
 
-  - title: { en: ["Use: ", { alternatives: [a, an] }] }
+  - title: { en: ["Use: ", { alternatives: [a, an] }], uk: ["Вживання: ", { alternatives: [a, an] }], es: ["Uso: ", { alternatives: [a, an] }] }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: "one thing, any one" }, ex: ["I have ", { target: a }, " car."] }
-          - { level: A1, use: { en: first mention; then the }, ex: ["There's ", { target: a }, " cat. ", { target: The }, " cat is black."] }
-          - { level: A1, use: { en: jobs }, ex: ["She's ", { target: a }, " doctor."] }
-          - { level: A1, use: { en: what something is }, ex: ["It's ", { target: an }, " orange."] }
-          - { level: A2, use: { en: "rate: per" }, ex: { examples: [["twice ", { target: a }, " week"], ["£3 ", { target: a }, " kilo"]] } }
-          - { level: A2, use: { en: exclamations with what }, ex: ["What ", { target: a }, " nice day!"] }
+          - { level: A1, use: { en: "one thing, any one", uk: "один предмет, будь-який", es: "una cosa, cualquiera" }, ex: ["I have ", { target: a }, " car."], tr: { uk: "У мене є машина.", es: "Tengo un coche." } }
+          - { level: A1, use: { en: first mention; then the, uk: "перша згадка; далі the", es: "primera mención; después the" }, ex: ["There's ", { target: a }, " cat. ", { target: The }, " cat is black."], tr: { uk: "Там кіт. Цей кіт чорний.", es: "Hay un gato. El gato es negro." } }
+          - { level: A1, use: { en: jobs, uk: "професії", es: "profesiones" }, ex: ["She's ", { target: a }, " doctor."], tr: { uk: "Вона лікарка.", es: "Ella es médica." } }
+          - { level: A1, use: { en: what something is, uk: "що це таке", es: "qué es algo" }, ex: ["It's ", { target: an }, " orange."], tr: { uk: "Це апельсин.", es: "Es una naranja." } }
+          - { level: A2, use: { en: "rate: per", uk: "частота й ціна: per", es: "frecuencia y precio: per" }, ex: { examples: [["twice ", { target: a }, " week"], ["£3 ", { target: a }, " kilo"]] }, tr: { uk: { examples: ["двічі на тиждень", "3 фунти за кілограм"] }, es: { examples: ["dos veces por semana", "3 libras el kilo"] } } }
+          - { level: A2, use: { en: exclamations with what, uk: "вигуки з what", es: "exclamaciones con what" }, ex: ["What ", { target: a }, " nice day!"], tr: { uk: "Який чудовий день!", es: "¡Qué día tan bonito!" } }
 
-  - title: { en: "Use: the" }
+  - title: { en: "Use: the", uk: "Вживання: the", es: "Uso: the" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: we both know which }, ex: ["Close ", { target: the }, " door, please."] }
-          - { level: A1, use: { en: the only one }, ex: { examples: [[{ target: the }, " sun"], [{ target: the }, " world"]] } }
-          - { level: A1, use: { en: superlatives and ordinals }, ex: { examples: [[{ target: the }, " best"], [{ target: the }, " first time"]] } }
-          - { level: A2, use: { en: musical instruments }, ex: ["She plays ", { target: the }, " piano. ", { variant: ["often ", { term: plays piano }], variety: en-US }] }
-          - { level: A2, use: { en: "rivers, seas, oceans, mountain ranges" }, ex: { examples: [[{ target: the }, " Thames"], [{ target: the }, " Atlantic"], [{ target: the }, " Alps"]] } }
-          - { level: A2, use: { en: "countries with Kingdom, States, Republic or a plural name" }, ex: { examples: [[{ target: the }, " UK"], [{ target: the }, " USA"], [{ target: the }, " Netherlands"]] } }
-          - { level: B1, use: { en: [{ pattern: [the, { slot: adjective }] }, ": a group of people"] }, ex: { examples: [[{ target: the }, " rich"], [{ target: the }, " young"]] } }
+          - { level: A1, use: { en: we both know which, uk: "ми обоє знаємо, який саме", es: "ambos sabemos cuál" }, ex: ["Close ", { target: the }, " door, please."], tr: { uk: "Зачини двері, будь ласка.", es: "Cierra la puerta, por favor." } }
+          - { level: A1, use: { en: the only one, uk: "єдиний у своєму роді", es: "el único" }, ex: { examples: [[{ target: the }, " sun"], [{ target: the }, " world"]] }, tr: { uk: { examples: ["сонце", "світ"] }, es: { examples: ["el sol", "el mundo"] } } }
+          - { level: A1, use: { en: superlatives and ordinals, uk: "найвищий ступінь порівняння й порядкові числівники", es: "superlativos y ordinales" }, ex: { examples: [[{ target: the }, " best"], [{ target: the }, " first time"]] }, tr: { uk: { examples: ["найкращий", "перший раз"] }, es: { examples: ["el mejor", "la primera vez"] } } }
+          - { level: A2, use: { en: musical instruments, uk: "музичні інструменти", es: "instrumentos musicales" }, ex: ["She plays ", { target: the }, " piano. ", { variant: ["often ", { term: plays piano }], variety: en-US }], tr: { uk: "Вона грає на піаніно.", es: "Ella toca el piano." } }
+          - { level: A2, use: { en: "rivers, seas, oceans, mountain ranges", uk: "річки, моря, океани, гірські хребти", es: "ríos, mares, océanos, cordilleras" }, ex: { examples: [[{ target: the }, " Thames"], [{ target: the }, " Atlantic"], [{ target: the }, " Alps"]] }, tr: { uk: { examples: ["Темза", "Атлантичний океан", "Альпи"] }, es: { examples: ["el Támesis", "el Atlántico", "los Alpes"] } } }
+          - { level: A2, use: { en: "countries with Kingdom, States, Republic or a plural name", uk: "країни зі словами Kingdom, States, Republic або з назвою у множині", es: "países con Kingdom, States, Republic o con nombre plural" }, ex: { examples: [[{ target: the }, " UK"], [{ target: the }, " USA"], [{ target: the }, " Netherlands"]] }, tr: { uk: { examples: ["Велика Британія", "США", "Нідерланди"] }, es: { examples: ["el Reino Unido", "Estados Unidos", "los Países Bajos"] } } }
+          - { level: B1, use: { en: [{ pattern: [the, { slot: adjective }] }, ": a group of people"], uk: [{ pattern: [the, { slot: adjective }] }, ": група людей"], es: [{ pattern: [the, { slot: adjective }] }, ": un grupo de personas"] }, ex: { examples: [[{ target: the }, " rich"], [{ target: the }, " young"]] }, tr: { uk: { examples: ["багаті", "молодь"] }, es: { examples: ["los ricos", "los jóvenes"] } } }
 
-  - title: { en: "Use: no article" }
+  - title: { en: "Use: no article", uk: "Вживання: без артикля", es: "Uso: sin artículo" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: plural nouns in general }, ex: ["I like ", { target: dogs }, "."] }
-          - { level: A1, use: { en: uncountable nouns in general }, ex: { examples: [[{ target: Life }, " is hard."], ["I love ", { target: music }, "."]] } }
-          - { level: A1, use: { en: meals }, ex: ["We have ", { target: lunch }, " at two."] }
-          - { level: A1, use: { en: "languages, school subjects, sports" }, ex: { examples: [["I speak ", { target: Spanish }, "."], ["I play ", { target: football }, "."]] } }
-          - { level: A1, use: { en: "names, most countries and cities" }, ex: [{ target: Mr Smith }, " lives in ", { target: London }, "."] }
-          - { level: A2, use: { en: "home, work, school, bed" }, ex: { examples: [["go ", { target: home }], ["at ", { target: work }], ["go to ", { target: bed }]] } }
-          - { level: A2, use: { en: transport after by }, ex: { examples: [["by ", { target: bus }], ["by ", { target: train }]] } }
-          - { level: B1, use: { en: "hospital, prison, church, university for their main purpose" }, ex: ["He's in ", { target: hospital }, ". ", { variant: ["in ", { target: the }, " hospital"], variety: en-US }] }
+          - { level: A1, use: { en: plural nouns in general, uk: "іменники у множині загалом", es: "sustantivos plurales en general" }, ex: ["I like ", { target: dogs }, "."], tr: { uk: "Я люблю собак.", es: "Me gustan los perros." } }
+          - { level: A1, use: { en: uncountable nouns in general, uk: "незлічувані іменники загалом", es: "sustantivos incontables en general" }, ex: { examples: [[{ target: Life }, " is hard."], ["I love ", { target: music }, "."]] }, tr: { uk: { examples: ["Життя важке.", "Я люблю музику."] }, es: { examples: ["La vida es dura.", "Me encanta la música."] } } }
+          - { level: A1, use: { en: meals, uk: "прийоми їжі", es: "comidas" }, ex: ["We have ", { target: lunch }, " at two."], tr: { uk: "Ми обідаємо о другій.", es: "Almorzamos a las dos." } }
+          - { level: A1, use: { en: "languages, school subjects, sports", uk: "мови, шкільні предмети, види спорту", es: "idiomas, asignaturas, deportes" }, ex: { examples: [["I speak ", { target: Spanish }, "."], ["I play ", { target: football }, "."]] }, tr: { uk: { examples: ["Я розмовляю іспанською.", "Я граю у футбол."] }, es: { examples: ["Hablo español.", "Juego al fútbol."] } } }
+          - { level: A1, use: { en: "names, most countries and cities", uk: "імена, більшість країн і міст", es: "nombres, la mayoría de los países y ciudades" }, ex: [{ target: Mr Smith }, " lives in ", { target: London }, "."], tr: { uk: "Містер Сміт живе в Лондоні.", es: "El señor Smith vive en Londres." } }
+          - { level: A2, use: { en: "home, work, school, bed", uk: "home, work, school, bed", es: "home, work, school, bed" }, ex: { examples: [["go ", { target: home }], ["at ", { target: work }], ["go to ", { target: bed }]] }, tr: { uk: { examples: ["іти додому", "на роботі", "лягати спати"] }, es: { examples: ["ir a casa", "en el trabajo", "irse a la cama"] } } }
+          - { level: A2, use: { en: transport after by, uk: "транспорт після by", es: "transporte después de by" }, ex: { examples: [["by ", { target: bus }], ["by ", { target: train }]] }, tr: { uk: { examples: ["автобусом", "потягом"] }, es: { examples: ["en autobús", "en tren"] } } }
+          - { level: B1, use: { en: "hospital, prison, church, university for their main purpose", uk: "hospital, prison, church, university, коли важливе їхнє головне призначення", es: "hospital, prison, church, university cuando importa su función principal" }, ex: ["He's in ", { target: hospital }, ". ", { variant: ["in ", { target: the }, " hospital"], variety: en-US }], tr: { uk: "Він лежить у лікарні.", es: "Está hospitalizado." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: "For the building itself, use the:"
+              uk: "Для самої будівлі вживають the:"
+              es: "Para el edificio en sí, se usa the:"
             ex: ["I went to ", { target: the }, " hospital to visit him."]
+            tr: { uk: "Я ходив до лікарні, щоб його провідати.", es: "Fui al hospital a visitarlo." }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: a apple, right: [{ target: an }, " apple"], rule: { en: an before a vowel sound } }
-          - { level: A1, wrong: an university, right: [{ target: a }, " university"], rule: { en: ["university starts with ", { ipa: j }] } }
-          - { level: A1, wrong: I live in the Spain., right: ["I live in ", { target: Spain }, "."], rule: { en: "most countries: no article" } }
+          - { level: A1, wrong: a apple, right: [{ target: an }, " apple"], rule: { en: an before a vowel sound, uk: "an стоїть перед голосним звуком", es: "an va delante de un sonido vocálico" } }
+          - { level: A1, wrong: an university, right: [{ target: a }, " university"], rule: { en: ["university starts with ", { ipa: j }], uk: ["university починається зі звука ", { ipa: j }], es: ["university empieza con el sonido ", { ipa: j }] } }
+          - { level: A1, wrong: I live in the Spain., right: ["I live in ", { target: Spain }, "."], rule: { en: "most countries: no article", uk: "більшість країн: без артикля", es: "la mayoría de los países: sin artículo" } }

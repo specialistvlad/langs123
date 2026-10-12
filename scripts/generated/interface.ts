@@ -7,10 +7,18 @@ export interface InterfaceWording {
   text: {
     [k: string]: Localized;
   };
+  /**
+   * The name of each slot code of CONVENTIONS.md §12 in every explanation language; a code without a name renders as written.
+   */
+  slots?: {
+    [k: string]: Localized;
+  };
 }
 /**
  * Text in every explanation language.
  */
 export interface Localized {
   en: string;
+  uk: string;
+  es: string;
 }

@@ -5,19 +5,25 @@ kind: grammar
 tags: [verbs, be, present, past, future]
 concepts: [be]
 related: [en.pronouns.personal-pronouns, en.tenses.simple-tenses, en.verbs.there-is-are, en.verbs.have-have-got]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: To be }
+title: { en: To be, uk: Дієслово to be, es: El verbo to be }
 summary:
-  lead: { en: "Am, is, are, was, were and will be: the verb for name, age, nationality, job, feelings and place." }
-  rule: { en: "Be needs no helper and the subject is always in the sentence:" }
+  lead:
+    en: "Am, is, are, was, were and will be: the verb for name, age, nationality, job, feelings and place."
+    uk: "Am, is, are, was, were і will be: дієслово для імені, віку, національності, професії, почуттів і місця."
+    es: "Am, is, are, was, were y will be: el verbo para el nombre, la edad, la nacionalidad, la profesión, los sentimientos y el lugar."
+  rule:
+    en: "Be needs no helper and the subject is always in the sentence:"
+    uk: "Be не потребує допоміжного дієслова, і підмет у реченні обов’язковий:"
+    es: "Be no necesita verbo auxiliar y el sujeto siempre aparece en la oración:"
   ex: { examples: [[{ target: Are }, " you a student?"], [{ target: It is }, " cold."]] }
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: tense, label: { en: Tense } }
+        - { key: tense, label: { en: Tense, uk: "Час", es: "Tiempo" } }
         - { key: qh, slot: verb, features: { interrogativity: int, polarity: pos } }
         - { key: qs, slot: subj, features: { interrogativity: int, polarity: pos } }
         - { key: qv, slot: rest, features: { interrogativity: int, polarity: pos } }
@@ -28,60 +34,68 @@ cheatsheet:
         - { key: nh, slot: verb, features: { interrogativity: decl, polarity: neg } }
         - { key: nv, slot: rest, features: { interrogativity: decl, polarity: neg } }
       rows:
-        - { level: A2, features: { tense: fut, person: 1, number: sg }, tense: { en: Future }, qh: { target: Will }, qs: I, qv: [{ target: be }, " late?"], ss: I, sh: { target: will be }, sv: late., ns: I, nh: { target: won't be }, nv: late. }
-        - { level: A2, features: { tense: fut, person: 2 }, tense: { en: Future }, qh: { target: Will }, qs: you, qv: [{ target: be }, " late?"], ss: You, sh: { target: will be }, sv: late., ns: You, nh: { target: won't be }, nv: late. }
-        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: masc }, tense: { en: Future }, qh: { target: Will }, qs: he, qv: [{ target: be }, " late?"], ss: He, sh: { target: will be }, sv: late., ns: He, nh: { target: won't be }, nv: late. }
-        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: fem }, tense: { en: Future }, qh: { target: Will }, qs: she, qv: [{ target: be }, " late?"], ss: She, sh: { target: will be }, sv: late., ns: She, nh: { target: won't be }, nv: late. }
-        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: neut }, tense: { en: Future }, qh: { target: Will }, qs: it, qv: [{ target: be }, " late?"], ss: It, sh: { target: will be }, sv: late., ns: It, nh: { target: won't be }, nv: late. }
-        - { level: A2, features: { tense: fut, person: 1, number: pl }, tense: { en: Future }, qh: { target: Will }, qs: we, qv: [{ target: be }, " late?"], ss: We, sh: { target: will be }, sv: late., ns: We, nh: { target: won't be }, nv: late. }
-        - { level: A2, features: { tense: fut, person: 3, number: pl }, tense: { en: Future }, qh: { target: Will }, qs: they, qv: [{ target: be }, " late?"], ss: They, sh: { target: will be }, sv: late., ns: They, nh: { target: won't be }, nv: late. }
-        - { level: A0, features: { tense: prs, person: 1, number: sg }, tense: { en: Present }, qh: { target: Am }, qs: I, qv: late?, ss: I, sh: { target: am }, sv: late., ns: I, nh: { target: am not }, nv: late. }
-        - { level: A0, features: { tense: prs, person: 2 }, tense: { en: Present }, qh: { target: Are }, qs: you, qv: late?, ss: You, sh: { target: are }, sv: late., ns: You, nh: { target: aren't }, nv: late. }
-        - { level: A0, features: { tense: prs, person: 3, number: sg, gender: masc }, tense: { en: Present }, qh: { target: Is }, qs: he, qv: late?, ss: He, sh: { target: is }, sv: late., ns: He, nh: { target: isn't }, nv: late. }
-        - { level: A0, features: { tense: prs, person: 3, number: sg, gender: fem }, tense: { en: Present }, qh: { target: Is }, qs: she, qv: late?, ss: She, sh: { target: is }, sv: late., ns: She, nh: { target: isn't }, nv: late. }
-        - { level: A0, features: { tense: prs, person: 3, number: sg, gender: neut }, tense: { en: Present }, qh: { target: Is }, qs: it, qv: late?, ss: It, sh: { target: is }, sv: late., ns: It, nh: { target: isn't }, nv: late. }
-        - { level: A0, features: { tense: prs, person: 1, number: pl }, tense: { en: Present }, qh: { target: Are }, qs: we, qv: late?, ss: We, sh: { target: are }, sv: late., ns: We, nh: { target: aren't }, nv: late. }
-        - { level: A0, features: { tense: prs, person: 3, number: pl }, tense: { en: Present }, qh: { target: Are }, qs: they, qv: late?, ss: They, sh: { target: are }, sv: late., ns: They, nh: { target: aren't }, nv: late. }
-        - { level: A1, features: { tense: pst, person: 1, number: sg }, tense: { en: Past }, qh: { target: Was }, qs: I, qv: late?, ss: I, sh: { target: was }, sv: late., ns: I, nh: { target: wasn't }, nv: late. }
-        - { level: A1, features: { tense: pst, person: 2 }, tense: { en: Past }, qh: { target: Were }, qs: you, qv: late?, ss: You, sh: { target: were }, sv: late., ns: You, nh: { target: weren't }, nv: late. }
-        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: masc }, tense: { en: Past }, qh: { target: Was }, qs: he, qv: late?, ss: He, sh: { target: was }, sv: late., ns: He, nh: { target: wasn't }, nv: late. }
-        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: fem }, tense: { en: Past }, qh: { target: Was }, qs: she, qv: late?, ss: She, sh: { target: was }, sv: late., ns: She, nh: { target: wasn't }, nv: late. }
-        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: neut }, tense: { en: Past }, qh: { target: Was }, qs: it, qv: late?, ss: It, sh: { target: was }, sv: late., ns: It, nh: { target: wasn't }, nv: late. }
-        - { level: A1, features: { tense: pst, person: 1, number: pl }, tense: { en: Past }, qh: { target: Were }, qs: we, qv: late?, ss: We, sh: { target: were }, sv: late., ns: We, nh: { target: weren't }, nv: late. }
-        - { level: A1, features: { tense: pst, person: 3, number: pl }, tense: { en: Past }, qh: { target: Were }, qs: they, qv: late?, ss: They, sh: { target: were }, sv: late., ns: They, nh: { target: weren't }, nv: late. }
+        - { level: A2, features: { tense: fut, person: 1, number: sg }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { target: Will }, qs: I, qv: [{ target: be }, " late?"], ss: I, sh: { target: will be }, sv: late., ns: I, nh: { target: won't be }, nv: late. }
+        - { level: A2, features: { tense: fut, person: 2 }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { target: Will }, qs: you, qv: [{ target: be }, " late?"], ss: You, sh: { target: will be }, sv: late., ns: You, nh: { target: won't be }, nv: late. }
+        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: masc }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { target: Will }, qs: he, qv: [{ target: be }, " late?"], ss: He, sh: { target: will be }, sv: late., ns: He, nh: { target: won't be }, nv: late. }
+        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: fem }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { target: Will }, qs: she, qv: [{ target: be }, " late?"], ss: She, sh: { target: will be }, sv: late., ns: She, nh: { target: won't be }, nv: late. }
+        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: neut }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { target: Will }, qs: it, qv: [{ target: be }, " late?"], ss: It, sh: { target: will be }, sv: late., ns: It, nh: { target: won't be }, nv: late. }
+        - { level: A2, features: { tense: fut, person: 1, number: pl }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { target: Will }, qs: we, qv: [{ target: be }, " late?"], ss: We, sh: { target: will be }, sv: late., ns: We, nh: { target: won't be }, nv: late. }
+        - { level: A2, features: { tense: fut, person: 3, number: pl }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { target: Will }, qs: they, qv: [{ target: be }, " late?"], ss: They, sh: { target: will be }, sv: late., ns: They, nh: { target: won't be }, nv: late. }
+        - { level: A0, features: { tense: prs, person: 1, number: sg }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { target: Am }, qs: I, qv: late?, ss: I, sh: { target: am }, sv: late., ns: I, nh: { target: am not }, nv: late. }
+        - { level: A0, features: { tense: prs, person: 2 }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { target: Are }, qs: you, qv: late?, ss: You, sh: { target: are }, sv: late., ns: You, nh: { target: aren't }, nv: late. }
+        - { level: A0, features: { tense: prs, person: 3, number: sg, gender: masc }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { target: Is }, qs: he, qv: late?, ss: He, sh: { target: is }, sv: late., ns: He, nh: { target: isn't }, nv: late. }
+        - { level: A0, features: { tense: prs, person: 3, number: sg, gender: fem }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { target: Is }, qs: she, qv: late?, ss: She, sh: { target: is }, sv: late., ns: She, nh: { target: isn't }, nv: late. }
+        - { level: A0, features: { tense: prs, person: 3, number: sg, gender: neut }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { target: Is }, qs: it, qv: late?, ss: It, sh: { target: is }, sv: late., ns: It, nh: { target: isn't }, nv: late. }
+        - { level: A0, features: { tense: prs, person: 1, number: pl }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { target: Are }, qs: we, qv: late?, ss: We, sh: { target: are }, sv: late., ns: We, nh: { target: aren't }, nv: late. }
+        - { level: A0, features: { tense: prs, person: 3, number: pl }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { target: Are }, qs: they, qv: late?, ss: They, sh: { target: are }, sv: late., ns: They, nh: { target: aren't }, nv: late. }
+        - { level: A1, features: { tense: pst, person: 1, number: sg }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { target: Was }, qs: I, qv: late?, ss: I, sh: { target: was }, sv: late., ns: I, nh: { target: wasn't }, nv: late. }
+        - { level: A1, features: { tense: pst, person: 2 }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { target: Were }, qs: you, qv: late?, ss: You, sh: { target: were }, sv: late., ns: You, nh: { target: weren't }, nv: late. }
+        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: masc }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { target: Was }, qs: he, qv: late?, ss: He, sh: { target: was }, sv: late., ns: He, nh: { target: wasn't }, nv: late. }
+        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: fem }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { target: Was }, qs: she, qv: late?, ss: She, sh: { target: was }, sv: late., ns: She, nh: { target: wasn't }, nv: late. }
+        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: neut }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { target: Was }, qs: it, qv: late?, ss: It, sh: { target: was }, sv: late., ns: It, nh: { target: wasn't }, nv: late. }
+        - { level: A1, features: { tense: pst, person: 1, number: pl }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { target: Were }, qs: we, qv: late?, ss: We, sh: { target: were }, sv: late., ns: We, nh: { target: weren't }, nv: late. }
+        - { level: A1, features: { tense: pst, person: 3, number: pl }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { target: Were }, qs: they, qv: late?, ss: They, sh: { target: were }, sv: late., ns: They, nh: { target: weren't }, nv: late. }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: prose
         level: A0
         text:
           en: [{ term: be }, " has its own form in each tense: ", { term: will be }, " for the future, ", { alternatives: [{ term: am }, { term: is }, { term: are }] }, " for the present, ", { alternatives: [{ term: was }, { term: were }] }, " for the past."]
+          uk: [{ term: be }, " має власну форму в кожному часі: ", { term: will be }, " для майбутнього, ", { alternatives: [{ term: am }, { term: is }, { term: are }] }, " для теперішнього, ", { alternatives: [{ term: was }, { term: were }] }, " для минулого."]
+          es: [{ term: be }, " tiene su propia forma en cada tiempo: ", { term: will be }, " para el futuro, ", { alternatives: [{ term: am }, { term: is }, { term: are }] }, " para el presente, ", { alternatives: [{ term: was }, { term: were }] }, " para el pasado."]
       - type: list
         items:
           - type: rule
             level: A0
             text:
               en: ["be needs no helper: in questions it goes before the subject, in negatives it takes ", { term: not }, "."]
+              uk: ["Дієслово be не потребує допоміжного: у питаннях воно стоїть перед підметом, у запереченнях до нього додається ", { term: not }, "."]
+              es: ["El verbo be no necesita auxiliar: en las preguntas va antes del sujeto, en las negaciones lleva ", { term: not }, "."]
           - type: rule
             level: A0
             text:
               en: ["Present and past forms change with the person; ", { term: will be }, " is the same for everyone."]
+              uk: ["Форми теперішнього й минулого часу змінюються за особами; ", { term: will be }, " однакове для всіх."]
+              es: ["Las formas del presente y del pasado cambian según la persona; ", { term: will be }, " es igual para todos."]
           - type: rule
             level: A0
             text:
               en: [{ term: you }, " takes ", { term: are }, " and ", { term: were }, ", for one person and for many."]
+              uk: [{ term: you }, " вживається з ", { term: are }, " і ", { term: were }, ", і для однієї особи, і для багатьох."]
+              es: [{ term: you }, " lleva ", { term: are }, " y ", { term: were }, ", tanto para una persona como para varias."]
 
-  - title: { en: "Present: short forms" }
+  - title: { en: "Present: short forms", uk: "Теперішній час: скорочені форми", es: "Presente: formas contraídas" }
     role: form
     features: { tense: prs }
     content:
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject } }
-          - { key: full, label: { en: Full form }, features: { contraction: full } }
-          - { key: short, label: { en: Short form }, features: { contraction: short } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
+          - { key: full, label: { en: Full form, uk: "Повна форма", es: "Forma completa" }, features: { contraction: full } }
+          - { key: short, label: { en: Short form, uk: "Скорочена форма", es: "Forma contraída" }, features: { contraction: short } }
         rows:
           - { level: A0, features: { person: 1, number: sg }, subject: I, full: ["I ", { target: am }, " a student."], short: [I', { target: m }, " a student."] }
           - { level: A0, features: { person: 2 }, subject: you, full: ["You ", { target: are }, " late."], short: [You', { target: re }, " late."] }
@@ -96,45 +110,55 @@ sections:
             level: A0
             text:
               en: Speech and messages use the short forms.
+              uk: "У мовленні й повідомленнях вживаються скорочені форми."
+              es: "En el habla y en los mensajes se usan las formas contraídas."
           - type: rule
             level: A0
             text:
               en: ["Negatives: ", { term: isn't }, " and ", { term: aren't }, " are usual; ", { term: I'm not }, " is the only short form with I."]
+              uk: ["Заперечення: ", { term: isn't }, " і ", { term: aren't }, " — звичайні форми; ", { term: I'm not }, " — єдина скорочена форма з I."]
+              es: ["Negaciones: ", { term: isn't }, " y ", { term: aren't }, " son las habituales; ", { term: I'm not }, " es la única forma contraída con I."]
           - type: rule
             level: A0
             text:
               en: ["A noun subject takes ", { term: is }, " (singular) or ", { term: are }, " (plural):"]
+              uk: ["Іменник-підмет вживається з ", { term: is }, " (однина) або ", { term: are }, " (множина):"]
+              es: ["Un sujeto sustantivo lleva ", { term: is }, " (singular) o ", { term: are }, " (plural):"]
             ex: ["My parents ", { target: are }, " doctors."]
+            tr: { uk: "Мої батьки — лікарі.", es: "Mis padres son médicos." }
 
-  - title: { en: "Present: questions and short answers" }
+  - title: { en: "Present: questions and short answers", uk: "Теперішній час: питання й короткі відповіді", es: "Presente: preguntas y respuestas cortas" }
     role: form
     features: { tense: prs }
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A0, form: { pattern: [be, { slot: subject }] }, ex: [{ target: Are }, " you a student?"] }
-          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["Where ", { target: are }, " you from?"] }
-          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["What ", { target: is }, " your name?"] }
-          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["How old ", { target: are }, " you?"] }
-          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["How ", { target: are }, " you?"] }
+          - { level: A0, form: { pattern: [be, { slot: subject }] }, ex: [{ target: Are }, " you a student?"], tr: { uk: "Ти студент?", es: "¿Eres estudiante?" } }
+          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["Where ", { target: are }, " you from?"], tr: { uk: "Звідки ти?", es: "¿De dónde eres?" } }
+          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["What ", { target: is }, " your name?"], tr: { uk: "Як тебе звати?", es: "¿Cómo te llamas?" } }
+          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["How old ", { target: are }, " you?"], tr: { uk: "Скільки тобі років?", es: "¿Cuántos años tienes?" } }
+          - { level: A0, form: { pattern: [{ slot: wh-word }, be, { slot: subject }] }, ex: ["How ", { target: are }, " you?"], tr: { uk: "Як справи?", es: "¿Cómo estás?" } }
       - type: list
         items:
           - type: rule
             level: A0
             text:
               en: "A short answer repeats be; the positive answer takes the full form:"
+              uk: "Коротка відповідь повторює be; стверджувальна відповідь має повну форму:"
+              es: "La respuesta corta repite be; la respuesta afirmativa lleva la forma completa:"
             ex: { exchange: [Are you tired?, { alternatives: [["Yes, I ", { target: am }, "."], ["No, I'", { target: m not }, "."]] }] }
+            tr: { uk: "Ти втомився? — Так, втомився; ні, не втомився.", es: "¿Estás cansado? — Sí, lo estoy; no, no lo estoy." }
 
-  - title: { en: "Past: was and were" }
+  - title: { en: "Past: was and were", uk: "Минулий час: was і were", es: "Pasado: was y were" }
     role: form
     features: { tense: pst }
     content:
       - type: paradigm
         columns:
-          - { key: form, label: { en: Form } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
           - { key: singular, label: { alternatives: [I, he, she, it] }, features: [{ person: 1, number: sg }, { person: 3, number: sg }] }
           - { key: plural, label: { alternatives: [you, we, they] }, features: [{ person: 2 }, { person: 1, number: pl }, { person: 3, number: pl }] }
         rows:
@@ -147,74 +171,90 @@ sections:
             level: A1
             text:
               en: ["A short answer repeats ", { alternatives: [was, were] }, ":"]
+              uk: ["Коротка відповідь повторює ", { alternatives: [was, were] }, ":"]
+              es: ["La respuesta corta repite ", { alternatives: [was, were] }, ":"]
             ex: { exchange: [Were you there?, { alternatives: [["Yes, I ", { target: was }, "."], ["No, I ", { target: wasn't }, "."]] }] }
+            tr: { uk: "Ти там був? — Так, був; ні, не був.", es: "¿Estuviste allí? — Sí, estuve; no, no estuve." }
           - type: rule
             level: A1
             text:
               en: ["Birth takes ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: born }, ":"]
+              uk: ["Для народження вживають ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: born }, ":"]
+              es: ["Para el nacimiento se usa ", { alternatives: [{ term: was }, { term: were }] }, " ", { term: born }, ":"]
             ex: ["I ", { target: was born }, " in ", { date: "1995", value: "1995" }, "."]
+            tr: { uk: "Я народився 1995 року.", es: "Nací en 1995." }
           - type: rule
             level: A1
             text:
               en: "Time words: yesterday, last night, last week, in 2010."
+              uk: "Слова часу: yesterday, last night, last week, in 2010."
+              es: "Palabras de tiempo: yesterday, last night, last week, in 2010."
 
-  - title: { en: "Future: will be" }
+  - title: { en: "Future: will be", uk: "Майбутній час: will be", es: "Futuro: will be" }
     role: form
     features: { tense: fut }
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: A future state or place }, ex: [I', { target: ll be }, " at home tomorrow."] }
-          - { level: A2, use: { en: Predictions }, ex: ["It ", { target: will be }, " sunny at the weekend."] }
-          - { level: A2, use: { en: Questions about the future }, ex: [{ target: Will }, " you ", { target: be }, " there?"] }
+          - { level: A2, use: { en: A future state or place, uk: "Майбутній стан або місце", es: "Un estado o lugar futuro" }, ex: [I', { target: ll be }, " at home tomorrow."], tr: { uk: "Завтра я буду вдома.", es: "Mañana estaré en casa." } }
+          - { level: A2, use: { en: Predictions, uk: "Прогнози", es: "Predicciones" }, ex: ["It ", { target: will be }, " sunny at the weekend."], tr: { uk: "На вихідних буде сонячно.", es: "El fin de semana hará sol." } }
+          - { level: A2, use: { en: Questions about the future, uk: "Питання про майбутнє", es: "Preguntas sobre el futuro" }, ex: [{ target: Will }, " you ", { target: be }, " there?"], tr: { uk: "Ти там будеш?", es: "¿Estarás allí?" } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: "Short forms: I'll be, she'll be, won't be."
+              uk: "Скорочені форми: I'll be, she'll be, won't be."
+              es: "Formas contraídas: I'll be, she'll be, won't be."
           - type: note
             level: A2
             text:
               en: ["More about will: ", { link: Simple Tenses, to: en.tenses.simple-tenses }, "."]
+              uk: ["Докладніше про will: ", { link: "Прості часи (Simple)", to: en.tenses.simple-tenses }, "."]
+              es: ["Más sobre will: ", { link: "Tiempos simples", to: en.tenses.simple-tenses }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A0, use: { en: Name }, ex: ["My name ", { target: is }, " Anna."] }
-          - { level: A0, use: { en: Age }, ex: { examples: [[I', { target: m }, " 20."], ["He ", { target: is }, " 30 years old."]] } }
-          - { level: A0, use: { en: Nationality and origin }, ex: { examples: [[She', { target: s }, " Spanish."], [We', { target: re }, " from Madrid."]] } }
-          - { level: A0, use: { en: Job }, ex: [He', { target: s }, " a teacher."] }
-          - { level: A0, use: { en: Description }, ex: ["The house ", { target: is }, " big."] }
-          - { level: A0, use: { en: Feelings and states }, ex: { examples: [[I', { target: m }, " hungry."], [They', { target: re }, " tired."]] } }
-          - { level: A0, use: { en: Place }, ex: ["The keys ", { target: are }, " on the table."] }
-          - { level: A0, use: { en: "Weather, time, dates" }, ex: { examples: [[It', { target: s }, " sunny."], [It', { target: s }, " 5 o'clock."]] } }
+          - { level: A0, use: { en: Name, uk: "Ім’я", es: "Nombre" }, ex: ["My name ", { target: is }, " Anna."], tr: { uk: "Мене звати Анна.", es: "Me llamo Anna." } }
+          - { level: A0, use: { en: Age, uk: "Вік", es: "Edad" }, ex: { examples: [[I', { target: m }, " 20."], ["He ", { target: is }, " 30 years old."]] }, tr: { uk: { examples: ["Мені 20 років.", "Йому 30 років."] }, es: { examples: ["Tengo 20 años.", "Él tiene 30 años."] } } }
+          - { level: A0, use: { en: Nationality and origin, uk: "Національність і походження", es: "Nacionalidad y origen" }, ex: { examples: [[She', { target: s }, " Spanish."], [We', { target: re }, " from Madrid."]] }, tr: { uk: { examples: ["Вона іспанка.", "Ми з Мадрида."] }, es: { examples: ["Es española.", "Somos de Madrid."] } } }
+          - { level: A0, use: { en: Job, uk: "Професія", es: "Profesión" }, ex: [He', { target: s }, " a teacher."], tr: { uk: "Він учитель.", es: "Es profesor." } }
+          - { level: A0, use: { en: Description, uk: "Опис", es: "Descripción" }, ex: ["The house ", { target: is }, " big."], tr: { uk: "Будинок великий.", es: "La casa es grande." } }
+          - { level: A0, use: { en: Feelings and states, uk: "Почуття й стани", es: "Sentimientos y estados" }, ex: { examples: [[I', { target: m }, " hungry."], [They', { target: re }, " tired."]] }, tr: { uk: { examples: ["Я голодний.", "Вони втомилися."] }, es: { examples: ["Tengo hambre.", "Están cansados."] } } }
+          - { level: A0, use: { en: Place, uk: "Місце", es: "Lugar" }, ex: ["The keys ", { target: are }, " on the table."], tr: { uk: "Ключі на столі.", es: "Las llaves están sobre la mesa." } }
+          - { level: A0, use: { en: "Weather, time, dates", uk: "Погода, час, дати", es: "Clima, hora, fechas" }, ex: { examples: [[It', { target: s }, " sunny."], [It', { target: s }, " 5 o'clock."]] }, tr: { uk: { examples: ["Сонячно.", "Зараз п’ята година."] }, es: { examples: ["Hace sol.", "Son las cinco."] } } }
       - type: list
         items:
           - type: note
             level: A0
             text:
               en: ["A job takes ", { alternatives: [{ term: a }, { term: an }] }, ": He is ", { term: a }, " teacher. See ", { link: Articles, to: en.nouns-determiners.articles-a-an-the }, "."]
+              uk: ["Назва професії вживається з ", { alternatives: [{ term: a }, { term: an }] }, ": He is ", { term: a }, " teacher. Див. ", { link: "Артиклі: a, an, the", to: en.nouns-determiners.articles-a-an-the }, "."]
+              es: ["Una profesión lleva ", { alternatives: [{ term: a }, { term: an }] }, ": He is ", { term: a }, " teacher. Ver ", { link: "Artículos: a, an, the", to: en.nouns-determiners.articles-a-an-the }, "."]
           - type: note
             level: A0
             text:
               en: ["Weather and time use the subject ", { term: it }, ": ", { term: It }, " is cold. For ", { term: there is }, ", see ", { link: { alternatives: [There is, there are] }, to: en.verbs.there-is-are }, "."]
+              uk: ["Погода й час вживаються з підметом ", { term: it }, ": ", { term: It }, " is cold. Про ", { term: there is }, " див. ", { link: "There is і there are", to: en.verbs.there-is-are }, "."]
+              es: ["El clima y la hora llevan el sujeto ", { term: it }, ": ", { term: It }, " is cold. Sobre ", { term: there is }, ", ver ", { link: "There is y there are", to: en.verbs.there-is-are }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A0, wrong: Do you be a student?, right: [{ target: Are }, " you a student?"], rule: { en: be makes questions by itself } }
-          - { level: A0, wrong: She are happy., right: ["She ", { target: is }, " happy."], rule: { en: { takes: [{ alternatives: [he, she, it] }, is] } } }
-          - { level: A1, wrong: We was at home., right: ["We ", { target: were }, " at home."], rule: { en: { takes: [{ alternatives: [you, we, they] }, were] } } }
-          - { level: A1, wrong: Did you be at home?, right: [{ target: Were }, " you at home?"], rule: { en: be makes past questions by itself } }
-          - { level: A2, wrong: I will at home tomorrow., right: ["I ", { target: will be }, " at home tomorrow."], rule: { en: { pattern: [will, be] } } }
+          - { level: A0, wrong: Do you be a student?, right: [{ target: Are }, " you a student?"], rule: { en: be makes questions by itself, uk: "be сам утворює питання", es: "be forma las preguntas por sí mismo" } }
+          - { level: A0, wrong: She are happy., right: ["She ", { target: is }, " happy."], rule: { en: { takes: [{ alternatives: [he, she, it] }, is] }, uk: { takes: [{ alternatives: [he, she, it] }, is] }, es: { takes: [{ alternatives: [he, she, it] }, is] } } }
+          - { level: A1, wrong: We was at home., right: ["We ", { target: were }, " at home."], rule: { en: { takes: [{ alternatives: [you, we, they] }, were] }, uk: { takes: [{ alternatives: [you, we, they] }, were] }, es: { takes: [{ alternatives: [you, we, they] }, were] } } }
+          - { level: A1, wrong: Did you be at home?, right: [{ target: Were }, " you at home?"], rule: { en: be makes past questions by itself, uk: "be сам утворює питання в минулому часі", es: "be forma las preguntas en pasado por sí mismo" } }
+          - { level: A2, wrong: I will at home tomorrow., right: ["I ", { target: will be }, " at home tomorrow."], rule: { en: { pattern: [will, be] }, uk: { pattern: [will, be] }, es: { pattern: [will, be] } } }

@@ -1,6 +1,6 @@
 // Text and its marks (CONVENTIONS.md §12): what each mark is, how text folds into output with its
 // separators, and how to walk it.
-import { EXPLAIN, type Explain, type Localized, type Mark, say, type Text, type Variety } from "./lib.ts";
+import { EXPLAIN, type Explain, type Localized, type Mark, say, slotName, type Text, type Variety } from "./lib.ts";
 
 // A localized value names explanation languages only; an empty one names none, and the check reports it.
 export const isLocalized = (value: object): value is Localized => Object.keys(value).every((k) => k in EXPLAIN);
@@ -87,7 +87,7 @@ function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
       return wrap(out.text("…"));
     case "slot": {
       const slot = (m as { slot: string | Localized }).slot;
-      return wrap(typeof slot === "string" ? out.text(slot) : fold(textIn(slot, c.explain), { plain: false }));
+      return wrap(typeof slot === "string" ? out.text(slotName(slot, c.explain)) : fold(textIn(slot, c.explain), { plain: false }));
     }
     case "gloss": {
       const g = (m as { gloss: Text | Localized }).gloss;

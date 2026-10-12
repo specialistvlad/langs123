@@ -61,6 +61,9 @@ export function say(key: string, explain: Explain, values: Record<string, string
   });
 }
 
+// A slot code of a pattern in an explanation language; a code without a name renders as written.
+export const slotName = (code: string, explain: Explain): string => INTERFACE.slots?.[code]?.[explain] ?? code;
+
 // "A and B", "A, B and C" in an explanation language.
 export const listOf = (items: string[], explain: Explain): string => new Intl.ListFormat(explain, { type: "conjunction" }).format(items);
 

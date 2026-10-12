@@ -5,34 +5,40 @@ kind: grammar
 tags: [quantifiers, determiners, nouns, some, any, much, many]
 concepts: [quantifiers]
 related: [en.nouns-determiners.countable-uncountable, en.nouns-determiners.articles-a-an-the, en.nouns-determiners.plurals, en.pronouns.indefinite-pronouns]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "Quantifiers: some, any, much, many" }
+title: { en: "Quantifiers: some, any, much, many", uk: "Кількісні слова: some, any, much, many", es: "Cuantificadores: some, any, much, many" }
 summary:
-  lead: { en: "Some, any, much, many, a lot of, a few and a little say how much or how many without an exact number." }
-  rule: { en: "Some goes in affirmative sentences, and any in negatives and questions:" }
+  lead:
+    en: "Some, any, much, many, a lot of, a few and a little say how much or how many without an exact number."
+    uk: "Some, any, much, many, a lot of, a few і a little вказують кількість без точного числа."
+    es: "Some, any, much, many, a lot of, a few y a little indican cantidad sin dar un número exacto."
+  rule:
+    en: "Some goes in affirmative sentences, and any in negatives and questions:"
+    uk: "Some вживається в стверджувальних реченнях, а any — у заперечних і в питаннях:"
+    es: "Some va en oraciones afirmativas, y any en negativas y en preguntas:"
   ex: ["I have ", { target: some }, " milk but I don't have ", { target: any }, " eggs."]
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: use, label: { en: Use } }
-        - { key: countable, label: { en: Plural countable noun }, features: { countability: count, number: pl } }
-        - { key: uncountable, label: { en: Uncountable noun }, features: { countability: mass } }
+        - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+        - { key: countable, label: { en: Plural countable noun, uk: "Злічуваний іменник у множині", es: "Sustantivo contable en plural" }, features: { countability: count, number: pl } }
+        - { key: uncountable, label: { en: Uncountable noun, uk: "Незлічуваний іменник", es: "Sustantivo incontable" }, features: { countability: mass } }
       rows:
-        - { level: A1, features: { polarity: pos, interrogativity: decl }, use: { en: Affirmative }, countable: { alternatives: [[{ target: some }, " apples"], [{ target: a lot of }, " apples"]] }, uncountable: { alternatives: [[{ target: some }, " milk"], [{ target: a lot of }, " milk"]] } }
-        - { level: A1, features: { polarity: neg, interrogativity: decl }, use: { en: Negative }, countable: { alternatives: [["not ", { target: any }, " apples"], ["not ", { target: many }, " apples"]] }, uncountable: { alternatives: [["not ", { target: any }, " milk"], ["not ", { target: much }, " milk"]] } }
-        - { level: A1, features: { polarity: pos, interrogativity: int }, use: { en: Question }, countable: { alternatives: [[{ target: any }, " apples?"], [{ target: many }, " apples?"]] }, uncountable: { alternatives: [[{ target: any }, " milk?"], [{ target: much }, " milk?"]] } }
+        - { level: A1, features: { polarity: pos, interrogativity: decl }, use: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, countable: { alternatives: [[{ target: some }, " apples"], [{ target: a lot of }, " apples"]] }, uncountable: { alternatives: [[{ target: some }, " milk"], [{ target: a lot of }, " milk"]] } }
+        - { level: A1, features: { polarity: neg, interrogativity: decl }, use: { en: Negative, uk: "Заперечення", es: "Negación" }, countable: { alternatives: [["not ", { target: any }, " apples"], ["not ", { target: many }, " apples"]] }, uncountable: { alternatives: [["not ", { target: any }, " milk"], ["not ", { target: much }, " milk"]] } }
+        - { level: A1, features: { polarity: pos, interrogativity: int }, use: { en: Question, uk: "Питання", es: "Pregunta" }, countable: { alternatives: [[{ target: any }, " apples?"], [{ target: many }, " apples?"]] }, uncountable: { alternatives: [[{ target: any }, " milk?"], [{ target: much }, " milk?"]] } }
         - { level: A1, features: { interrogativity: int }, use: [How, { gap: true }, "?"], countable: [{ target: How many }, " apples?"], uncountable: [{ target: How much }, " milk?"] }
-        - { level: A2, features: { polarity: pos, interrogativity: int }, use: { en: "Offer, request" }, countable: ["Would you like ", { target: some }, " apples?"], uncountable: ["Can I have ", { target: some }, " milk?"] }
-        - { level: A2, use: { en: A small number or amount }, countable: [{ target: a few }, " apples"], uncountable: [{ target: a little }, " milk"] }
-        - { level: A2, use: { en: ["None: ", { pattern: ["no", { slot: noun }] }] }, countable: [{ target: "no" }, " apples"], uncountable: [{ target: "no" }, " milk"] }
-        - { level: B1, use: { en: Not enough }, countable: [{ target: few }, " apples"], uncountable: [{ target: little }, " milk"] }
-        - { level: B1, use: { en: ["None: ", { pattern: [none of, { slot: noun }] }] }, countable: [{ target: None of }, " the apples"], uncountable: [{ target: None of }, " the milk"] }
+        - { level: A2, features: { polarity: pos, interrogativity: int }, use: { en: "Offer, request", uk: "Пропозиція, прохання", es: "Ofrecimiento, petición" }, countable: ["Would you like ", { target: some }, " apples?"], uncountable: ["Can I have ", { target: some }, " milk?"] }
+        - { level: A2, use: { en: A small number or amount, uk: "Невелика кількість", es: "Una cantidad pequeña" }, countable: [{ target: a few }, " apples"], uncountable: [{ target: a little }, " milk"] }
+        - { level: A2, use: { en: ["None: ", { pattern: ["no", { slot: noun }] }], uk: ["Жодного: ", { pattern: ["no", { slot: noun }] }], es: ["Ninguno: ", { pattern: ["no", { slot: noun }] }] }, countable: [{ target: "no" }, " apples"], uncountable: [{ target: "no" }, " milk"] }
+        - { level: B1, use: { en: Not enough, uk: "Замало", es: "Insuficiente" }, countable: [{ target: few }, " apples"], uncountable: [{ target: little }, " milk"] }
+        - { level: B1, use: { en: ["None: ", { pattern: [none of, { slot: noun }] }], uk: ["Жодного: ", { pattern: [none of, { slot: noun }] }], es: ["Ninguno: ", { pattern: [none of, { slot: noun }] }] }, countable: [{ target: None of }, " the apples"], uncountable: [{ target: None of }, " the milk"] }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -41,112 +47,137 @@ sections:
             level: A1
             text:
               en: ["Which nouns are countable: ", { link: Countable and uncountable nouns, to: en.nouns-determiners.countable-uncountable }, "."]
+              uk: ["Які іменники злічувані: ", { link: "Злічувані та незлічувані іменники", to: en.nouns-determiners.countable-uncountable }, "."]
+              es: ["Qué sustantivos son contables: ", { link: "Sustantivos contables e incontables", to: en.nouns-determiners.countable-uncountable }, "."]
 
-  - title: { en: Some and any }
+  - title: { en: Some and any, uk: "Some і any", es: "Some y any" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: "affirmative: some" }, ex: ["There are ", { target: some }, " eggs in the fridge."] }
-          - { level: A1, use: { en: "negative: any" }, ex: ["We don't have ", { target: any }, " bread."] }
-          - { level: A1, use: { en: "question: any" }, ex: ["Is there ", { target: any }, " sugar?"] }
-          - { level: A2, use: { en: "offer: some" }, ex: ["Would you like ", { target: some }, " tea?"] }
-          - { level: A2, use: { en: "request: some" }, ex: ["Can I have ", { target: some }, " water?"] }
-          - { level: B1, use: { en: any = it doesn't matter which }, ex: ["Take ", { target: any }, " seat."] }
+          - { level: A1, use: { en: "affirmative: some", uk: "ствердження: some", es: "afirmación: some" }, ex: ["There are ", { target: some }, " eggs in the fridge."], tr: { uk: "У холодильнику є кілька яєць.", es: "Hay unos huevos en el refrigerador." } }
+          - { level: A1, use: { en: "negative: any", uk: "заперечення: any", es: "negación: any" }, ex: ["We don't have ", { target: any }, " bread."], tr: { uk: "У нас немає хліба.", es: "No tenemos pan." } }
+          - { level: A1, use: { en: "question: any", uk: "питання: any", es: "pregunta: any" }, ex: ["Is there ", { target: any }, " sugar?"], tr: { uk: "Чи є цукор?", es: "¿Hay azúcar?" } }
+          - { level: A2, use: { en: "offer: some", uk: "пропозиція: some", es: "ofrecimiento: some" }, ex: ["Would you like ", { target: some }, " tea?"], tr: { uk: "Хочеш трохи чаю?", es: "¿Quieres un poco de té?" } }
+          - { level: A2, use: { en: "request: some", uk: "прохання: some", es: "petición: some" }, ex: ["Can I have ", { target: some }, " water?"], tr: { uk: "Можна мені трохи води?", es: "¿Me das un poco de agua?" } }
+          - { level: B1, use: { en: any = it doesn't matter which, uk: "any = байдуже який", es: "any = no importa cuál" }, ex: ["Take ", { target: any }, " seat."], tr: { uk: "Сідай на будь-яке місце.", es: "Toma cualquier asiento." } }
       - type: list
         items:
           - type: note
             level: A2
             text:
               en: ["somebody, anything… follow the same rules: ", { link: Indefinite pronouns, to: en.pronouns.indefinite-pronouns }, "."]
+              uk: ["somebody, anything… підлягають тим самим правилам: ", { link: "Неозначені займенники", to: en.pronouns.indefinite-pronouns }, "."]
+              es: ["somebody, anything… siguen las mismas reglas: ", { link: "Pronombres indefinidos", to: en.pronouns.indefinite-pronouns }, "."]
 
-  - title: { en: "Much, many, a lot of" }
+  - title: { en: "Much, many, a lot of", uk: "Much, many, a lot of", es: "Much, many, a lot of" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Quantifier } }
-          - { key: with, label: { en: With } }
-          - { key: ex, label: { en: Example } }
+          - { key: word, label: { en: Quantifier, uk: "Кількісне слово", es: "Cuantificador" } }
+          - { key: with, label: { en: With, uk: "З чим", es: "Con" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, word: many, with: { en: plural countable }, ex: ["There aren't ", { target: many }, " shops here."] }
-          - { level: A1, word: much, with: { en: uncountable }, ex: ["I don't have ", { target: much }, " time."] }
-          - { level: A1, word: { alternatives: [a lot of, lots of] }, with: { en: both }, ex: ["She has ", { target: a lot of }, " friends."] }
+          - { level: A1, word: many, with: { en: plural countable, uk: "злічуваний у множині", es: "contable en plural" }, ex: ["There aren't ", { target: many }, " shops here."], tr: { uk: "Тут небагато магазинів.", es: "Aquí no hay muchas tiendas." } }
+          - { level: A1, word: much, with: { en: uncountable, uk: "незлічуваний", es: "incontable" }, ex: ["I don't have ", { target: much }, " time."], tr: { uk: "У мене небагато часу.", es: "No tengo mucho tiempo." } }
+          - { level: A1, word: { alternatives: [a lot of, lots of] }, with: { en: both, uk: "обидва", es: "ambos" }, ex: ["She has ", { target: a lot of }, " friends."], tr: { uk: "У неї багато друзів.", es: "Tiene muchos amigos." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Affirmative sentences take ", { term: a lot of }, ":"]
+              uk: ["У стверджувальних реченнях уживають ", { term: a lot of }, ":"]
+              es: ["Las oraciones afirmativas llevan ", { term: a lot of }, ":"]
             ex: ["I have ", { target: a lot of }, " friends."]
+            tr: { uk: "У мене багато друзів.", es: "Tengo muchos amigos." }
           - type: rule
             level: A1
             text:
               en: [{ term: lots of }, " means a lot of; it is informal."]
+              uk: [{ term: lots of }, " означає a lot of; це розмовна форма."]
+              es: [{ term: lots of }, " significa a lot of; es informal."]
           - type: rule
             level: A1
             text:
               en: [{ pattern: [{ term: How many }, { slot: plural noun }] }, "; ", { pattern: [{ term: How much }, { slot: uncountable noun }] }, "."]
+              uk: [{ pattern: [{ term: How many }, { slot: plural noun }] }, "; ", { pattern: [{ term: How much }, { slot: uncountable noun }] }, "."]
+              es: [{ pattern: [{ term: How many }, { slot: plural noun }] }, "; ", { pattern: [{ term: How much }, { slot: uncountable noun }] }, "."]
           - type: rule
             level: A1
             text:
               en: [{ term: How much }, " also asks the price:"]
+              uk: [{ term: How much }, " також запитує про ціну:"]
+              es: [{ term: How much }, " también pregunta el precio:"]
             ex: [{ target: How much }, " is this jacket?"]
+            tr: { uk: "Скільки коштує ця куртка?", es: "¿Cuánto cuesta esta chaqueta?" }
           - type: rule
             level: A2
             text:
               en: [{ term: many }, " also works in affirmative sentences; affirmative ", { term: much }, " is formal."]
+              uk: [{ term: many }, " уживається і в стверджувальних реченнях; ", { term: much }, " у ствердженні звучить офіційно."]
+              es: [{ term: many }, " también se usa en oraciones afirmativas; ", { term: much }, " en afirmativas es formal."]
             ex: [{ target: Many }, " people work from home."]
+            tr: { uk: "Багато людей працюють удома.", es: "Muchas personas trabajan desde casa." }
 
-  - title: { en: "A few, a little, few, little" }
+  - title: { en: "A few, a little, few, little", uk: "A few, a little, few, little", es: "A few, a little, few, little" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Quantifier } }
-          - { key: ex, label: { en: Example } }
+          - { key: word, label: { en: Quantifier, uk: "Кількісне слово", es: "Cuantificador" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, word: { en: { pattern: [a few, { slot: plural noun }] } }, ex: ["I have ", { target: a few }, " friends here."] }
-          - { level: A2, word: { en: { pattern: [a little, { slot: uncountable noun }] } }, ex: ["There's ", { target: a little }, " milk left."] }
-          - { level: B1, word: { en: { pattern: [few, { slot: plural noun }] } }, ex: [{ target: Few }, " people came."] }
-          - { level: B1, word: { en: { pattern: [little, { slot: uncountable noun }] } }, ex: ["We have ", { target: little }, " time."] }
+          - { level: A2, word: { en: { pattern: [a few, { slot: plural noun }] }, uk: { pattern: [a few, { slot: plural noun }] }, es: { pattern: [a few, { slot: plural noun }] } }, ex: ["I have ", { target: a few }, " friends here."], tr: { uk: "У мене тут кілька друзів.", es: "Tengo unos cuantos amigos aquí." } }
+          - { level: A2, word: { en: { pattern: [a little, { slot: uncountable noun }] }, uk: { pattern: [a little, { slot: uncountable noun }] }, es: { pattern: [a little, { slot: uncountable noun }] } }, ex: ["There's ", { target: a little }, " milk left."], tr: { uk: "Залишилося трохи молока.", es: "Queda un poco de leche." } }
+          - { level: B1, word: { en: { pattern: [few, { slot: plural noun }] }, uk: { pattern: [few, { slot: plural noun }] }, es: { pattern: [few, { slot: plural noun }] } }, ex: [{ target: Few }, " people came."], tr: { uk: "Прийшло мало людей.", es: "Vinieron pocas personas." } }
+          - { level: B1, word: { en: { pattern: [little, { slot: uncountable noun }] }, uk: { pattern: [little, { slot: uncountable noun }] }, es: { pattern: [little, { slot: uncountable noun }] } }, ex: ["We have ", { target: little }, " time."], tr: { uk: "У нас мало часу.", es: "Tenemos poco tiempo." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ alternatives: [{ term: a few }, { term: a little }] }, " = some, a small number or amount. ", { alternatives: [{ term: few }, { term: little }] }, " = not many, not much: not enough."]
+              uk: [{ alternatives: [{ term: a few }, { term: a little }] }, " = some: невелика кількість. ", { alternatives: [{ term: few }, { term: little }] }, " = not many, not much: цього замало."]
+              es: [{ alternatives: [{ term: a few }, { term: a little }] }, " = some: una cantidad pequeña. ", { alternatives: [{ term: few }, { term: little }] }, " = not many, not much: no es suficiente."]
 
-  - title: { en: No and none }
+  - title: { en: No and none, uk: "No і none", es: "No y none" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, form: { pattern: ["no", { slot: noun }] }, ex: ["There's ", { target: "no" }, " milk."] }
-          - { level: B1, form: { en: none (no noun after it) }, ex: { exchange: [How many eggs are there?, [{ target: None }, "."]] } }
-          - { level: B1, form: { pattern: [none of, { alternatives: [the, [my, { gap: true }]] }, { slot: noun }] }, ex: [{ target: None of }, " my friends came."] }
+          - { level: A2, form: { pattern: ["no", { slot: noun }] }, ex: ["There's ", { target: "no" }, " milk."], tr: { uk: "Молока немає.", es: "No hay leche." } }
+          - { level: B1, form: { en: none (no noun after it), uk: "none (без іменника після нього)", es: "none (sin sustantivo después)" }, ex: { exchange: [How many eggs are there?, [{ target: None }, "."]] }, tr: { uk: "Скільки там яєць? — Жодного.", es: "¿Cuántos huevos hay? — Ninguno." } }
+          - { level: B1, form: { pattern: [none of, { alternatives: [the, [my, { gap: true }]] }, { slot: noun }] }, ex: [{ target: None of }, " my friends came."], tr: { uk: "Жоден із моїх друзів не прийшов.", es: "Ninguno de mis amigos vino." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ pattern: [{ term: "no" }, { slot: noun }] }, " = ", { pattern: [{ term: not any }, { slot: noun }] }, ":"]
+              uk: [{ pattern: [{ term: "no" }, { slot: noun }] }, " = ", { pattern: [{ term: not any }, { slot: noun }] }, ":"]
+              es: [{ pattern: [{ term: "no" }, { slot: noun }] }, " = ", { pattern: [{ term: not any }, { slot: noun }] }, ":"]
             ex: { equivalence: [["There's ", { target: "no" }, " milk"], ["There isn't ", { target: any }, " milk."]] }
+            tr: { uk: "Молока немає.", es: "No hay leche." }
           - type: rule
             level: A2
             text:
               en: [{ term: "no" }, " and ", { term: none }, " take an affirmative verb:"]
+              uk: [{ term: "no" }, " і ", { term: none }, " вживаються зі стверджувальним дієсловом:"]
+              es: [{ term: "no" }, " y ", { term: none }, " llevan un verbo afirmativo:"]
             ex: ["There ", { target: is }, " no milk."]
+            tr: { uk: "Молока немає.", es: "No hay leche." }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: There isn't some milk., right: ["There isn't ", { target: any }, " milk."], rule: { en: { mapping: [negative, any] } } }
+          - { level: A1, wrong: There isn't some milk., right: ["There isn't ", { target: any }, " milk."], rule: { en: { mapping: [negative, any] }, uk: { mapping: ["заперечення", any] }, es: { mapping: ["negación", any] } } }

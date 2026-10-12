@@ -5,19 +5,25 @@ kind: grammar
 tags: [verbs, tenses, continuous, present, past, future]
 concepts: [continuous, present-tense, past-tense, future]
 related: [en.tenses.tense-map, en.tenses.simple-tenses, en.tenses.perfect-tenses, en.verbs.to-be, en.tenses.future-forms, en.sentence-building.questions-negatives]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Continuous Tenses }
+title: { en: Continuous Tenses, uk: "Тривалі часи (Continuous)", es: Tiempos continuos }
 summary:
-  lead: { en: "Present, past and future continuous: be plus the verb with -ing for actions in progress at a moment." }
-  rule: { en: "Every continuous form needs be before the -ing verb:" }
+  lead:
+    en: "Present, past and future continuous: be plus the verb with -ing for actions in progress at a moment."
+    uk: "Present, Past і Future Continuous: be та дієслово з -ing для дій, що тривають у певний момент."
+    es: "Presente, pasado y futuro continuos: be más el verbo con -ing para las acciones en curso en un momento dado."
+  rule:
+    en: "Every continuous form needs be before the -ing verb:"
+    uk: "Кожна форма Continuous потребує be перед дієсловом з -ing:"
+    es: "Cada forma continua necesita be antes del verbo con -ing:"
   ex: { examples: [["She ", { target: is reading }, " now."], [{ target: Was }, " she ", { target: reading }, "?"]] }
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: tense, label: { en: Tense } }
+        - { key: tense, label: { en: Tense, uk: "Час", es: "Tiempo" } }
         - { key: qh, slot: aux, features: { interrogativity: int, polarity: pos } }
         - { key: qs, slot: subj, features: { interrogativity: int, polarity: pos } }
         - { key: qv, slot: verb, features: { interrogativity: int, polarity: pos } }
@@ -28,131 +34,152 @@ cheatsheet:
         - { key: nh, slot: aux, features: { interrogativity: decl, polarity: neg } }
         - { key: nv, slot: verb, features: { interrogativity: decl, polarity: neg } }
       rows:
-        - { level: B1, features: { tense: fut, aspect: prog, person: 1, number: sg }, tense: { en: Future }, qh: { aux: Will }, qs: I, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: I, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: I, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
-        - { level: B1, features: { tense: fut, aspect: prog, person: 2 }, tense: { en: Future }, qh: { aux: Will }, qs: you, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: You, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: You, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
-        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: sg, gender: masc }, tense: { en: Future }, qh: { aux: Will }, qs: he, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: He, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: He, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
-        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: sg, gender: fem }, tense: { en: Future }, qh: { aux: Will }, qs: she, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: She, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: She, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
-        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: sg, gender: neut }, tense: { en: Future }, qh: { aux: Will }, qs: it, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: It, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: It, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
-        - { level: B1, features: { tense: fut, aspect: prog, person: 1, number: pl }, tense: { en: Future }, qh: { aux: Will }, qs: we, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: We, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: We, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
-        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: pl }, tense: { en: Future }, qh: { aux: Will }, qs: they, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: They, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: They, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
-        - { level: A1, features: { tense: prs, aspect: prog, person: 1, number: sg }, tense: { en: Present }, qh: { aux: Am }, qs: I, qv: [work, { ending: ing }, "?"], ss: I, sh: { aux: am }, sv: [work, { ending: ing }, "."], ns: I, nh: { aux: am not }, nv: [work, { ending: ing }, "."] }
-        - { level: A1, features: { tense: prs, aspect: prog, person: 2 }, tense: { en: Present }, qh: { aux: Are }, qs: you, qv: [work, { ending: ing }, "?"], ss: You, sh: { aux: are }, sv: [work, { ending: ing }, "."], ns: You, nh: { aux: aren't }, nv: [work, { ending: ing }, "."] }
-        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: sg, gender: masc }, tense: { en: Present }, qh: { aux: Is }, qs: he, qv: [work, { ending: ing }, "?"], ss: He, sh: { aux: is }, sv: [work, { ending: ing }, "."], ns: He, nh: { aux: isn't }, nv: [work, { ending: ing }, "."] }
-        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: sg, gender: fem }, tense: { en: Present }, qh: { aux: Is }, qs: she, qv: [work, { ending: ing }, "?"], ss: She, sh: { aux: is }, sv: [work, { ending: ing }, "."], ns: She, nh: { aux: isn't }, nv: [work, { ending: ing }, "."] }
-        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: sg, gender: neut }, tense: { en: Present }, qh: { aux: Is }, qs: it, qv: [work, { ending: ing }, "?"], ss: It, sh: { aux: is }, sv: [work, { ending: ing }, "."], ns: It, nh: { aux: isn't }, nv: [work, { ending: ing }, "."] }
-        - { level: A1, features: { tense: prs, aspect: prog, person: 1, number: pl }, tense: { en: Present }, qh: { aux: Are }, qs: we, qv: [work, { ending: ing }, "?"], ss: We, sh: { aux: are }, sv: [work, { ending: ing }, "."], ns: We, nh: { aux: aren't }, nv: [work, { ending: ing }, "."] }
-        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: pl }, tense: { en: Present }, qh: { aux: Are }, qs: they, qv: [work, { ending: ing }, "?"], ss: They, sh: { aux: are }, sv: [work, { ending: ing }, "."], ns: They, nh: { aux: aren't }, nv: [work, { ending: ing }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog, person: 1, number: sg }, tense: { en: Past }, qh: { aux: Was }, qs: I, qv: [work, { ending: ing }, "?"], ss: I, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: I, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog, person: 2 }, tense: { en: Past }, qh: { aux: Were }, qs: you, qv: [work, { ending: ing }, "?"], ss: You, sh: { aux: were }, sv: [work, { ending: ing }, "."], ns: You, nh: { aux: weren't }, nv: [work, { ending: ing }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: sg, gender: masc }, tense: { en: Past }, qh: { aux: Was }, qs: he, qv: [work, { ending: ing }, "?"], ss: He, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: He, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: sg, gender: fem }, tense: { en: Past }, qh: { aux: Was }, qs: she, qv: [work, { ending: ing }, "?"], ss: She, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: She, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: sg, gender: neut }, tense: { en: Past }, qh: { aux: Was }, qs: it, qv: [work, { ending: ing }, "?"], ss: It, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: It, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog, person: 1, number: pl }, tense: { en: Past }, qh: { aux: Were }, qs: we, qv: [work, { ending: ing }, "?"], ss: We, sh: { aux: were }, sv: [work, { ending: ing }, "."], ns: We, nh: { aux: weren't }, nv: [work, { ending: ing }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: pl }, tense: { en: Past }, qh: { aux: Were }, qs: they, qv: [work, { ending: ing }, "?"], ss: They, sh: { aux: were }, sv: [work, { ending: ing }, "."], ns: They, nh: { aux: weren't }, nv: [work, { ending: ing }, "."] }
+        - { level: B1, features: { tense: fut, aspect: prog, person: 1, number: sg }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { aux: Will }, qs: I, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: I, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: I, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
+        - { level: B1, features: { tense: fut, aspect: prog, person: 2 }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { aux: Will }, qs: you, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: You, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: You, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
+        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: sg, gender: masc }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { aux: Will }, qs: he, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: He, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: He, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
+        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: sg, gender: fem }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { aux: Will }, qs: she, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: She, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: She, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
+        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: sg, gender: neut }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { aux: Will }, qs: it, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: It, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: It, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
+        - { level: B1, features: { tense: fut, aspect: prog, person: 1, number: pl }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { aux: Will }, qs: we, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: We, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: We, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
+        - { level: B1, features: { tense: fut, aspect: prog, person: 3, number: pl }, tense: { en: Future, uk: "Майбутній", es: "Futuro" }, qh: { aux: Will }, qs: they, qv: [{ aux: be }, " work", { ending: ing }, "?"], ss: They, sh: { aux: will be }, sv: [work, { ending: ing }, "."], ns: They, nh: { aux: won't be }, nv: [work, { ending: ing }, "."] }
+        - { level: A1, features: { tense: prs, aspect: prog, person: 1, number: sg }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { aux: Am }, qs: I, qv: [work, { ending: ing }, "?"], ss: I, sh: { aux: am }, sv: [work, { ending: ing }, "."], ns: I, nh: { aux: am not }, nv: [work, { ending: ing }, "."] }
+        - { level: A1, features: { tense: prs, aspect: prog, person: 2 }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { aux: Are }, qs: you, qv: [work, { ending: ing }, "?"], ss: You, sh: { aux: are }, sv: [work, { ending: ing }, "."], ns: You, nh: { aux: aren't }, nv: [work, { ending: ing }, "."] }
+        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: sg, gender: masc }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { aux: Is }, qs: he, qv: [work, { ending: ing }, "?"], ss: He, sh: { aux: is }, sv: [work, { ending: ing }, "."], ns: He, nh: { aux: isn't }, nv: [work, { ending: ing }, "."] }
+        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: sg, gender: fem }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { aux: Is }, qs: she, qv: [work, { ending: ing }, "?"], ss: She, sh: { aux: is }, sv: [work, { ending: ing }, "."], ns: She, nh: { aux: isn't }, nv: [work, { ending: ing }, "."] }
+        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: sg, gender: neut }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { aux: Is }, qs: it, qv: [work, { ending: ing }, "?"], ss: It, sh: { aux: is }, sv: [work, { ending: ing }, "."], ns: It, nh: { aux: isn't }, nv: [work, { ending: ing }, "."] }
+        - { level: A1, features: { tense: prs, aspect: prog, person: 1, number: pl }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { aux: Are }, qs: we, qv: [work, { ending: ing }, "?"], ss: We, sh: { aux: are }, sv: [work, { ending: ing }, "."], ns: We, nh: { aux: aren't }, nv: [work, { ending: ing }, "."] }
+        - { level: A1, features: { tense: prs, aspect: prog, person: 3, number: pl }, tense: { en: Present, uk: "Теперішній", es: "Presente" }, qh: { aux: Are }, qs: they, qv: [work, { ending: ing }, "?"], ss: They, sh: { aux: are }, sv: [work, { ending: ing }, "."], ns: They, nh: { aux: aren't }, nv: [work, { ending: ing }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog, person: 1, number: sg }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { aux: Was }, qs: I, qv: [work, { ending: ing }, "?"], ss: I, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: I, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog, person: 2 }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { aux: Were }, qs: you, qv: [work, { ending: ing }, "?"], ss: You, sh: { aux: were }, sv: [work, { ending: ing }, "."], ns: You, nh: { aux: weren't }, nv: [work, { ending: ing }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: sg, gender: masc }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { aux: Was }, qs: he, qv: [work, { ending: ing }, "?"], ss: He, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: He, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: sg, gender: fem }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { aux: Was }, qs: she, qv: [work, { ending: ing }, "?"], ss: She, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: She, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: sg, gender: neut }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { aux: Was }, qs: it, qv: [work, { ending: ing }, "?"], ss: It, sh: { aux: was }, sv: [work, { ending: ing }, "."], ns: It, nh: { aux: wasn't }, nv: [work, { ending: ing }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog, person: 1, number: pl }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { aux: Were }, qs: we, qv: [work, { ending: ing }, "?"], ss: We, sh: { aux: were }, sv: [work, { ending: ing }, "."], ns: We, nh: { aux: weren't }, nv: [work, { ending: ing }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog, person: 3, number: pl }, tense: { en: Past, uk: "Минулий", es: "Pasado" }, qh: { aux: Were }, qs: they, qv: [work, { ending: ing }, "?"], ss: They, sh: { aux: were }, sv: [work, { ending: ing }, "."], ns: They, nh: { aux: weren't }, nv: [work, { ending: ing }, "."] }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: prose
         level: A1
         text:
           en: ["Each continuous tense is ", { pattern: [{ term: be }, { slot: verb }, { term: "-ing" }] }, ": ", { term: will be }, " for the future, ", { alternatives: [{ term: am }, { term: is }, { term: are }] }, " for the present, ", { alternatives: [{ term: was }, { term: were }] }, " for the past."]
+          uk: ["Кожен час Continuous має форму ", { pattern: [{ term: be }, { slot: verb }, { term: "-ing" }] }, ": ", { term: will be }, " для майбутнього, ", { alternatives: [{ term: am }, { term: is }, { term: are }] }, " для теперішнього, ", { alternatives: [{ term: was }, { term: were }] }, " для минулого."]
+          es: ["Cada tiempo continuo se forma con ", { pattern: [{ term: be }, { slot: verb }, { term: "-ing" }] }, ": ", { term: will be }, " para el futuro, ", { alternatives: [{ term: am }, { term: is }, { term: are }] }, " para el presente, ", { alternatives: [{ term: was }, { term: were }] }, " para el pasado."]
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["In questions be goes before the subject; in negatives it takes ", { term: not }, ": isn't, wasn't, won't be."]
+              uk: ["У питаннях be стоїть перед підметом; у запереченнях після нього стоїть ", { term: not }, ": isn't, wasn't, won't be."]
+              es: ["En las preguntas, be va antes del sujeto; en las negaciones lleva ", { term: not }, ": isn't, wasn't, won't be."]
           - type: rule
             level: A1
             text:
               en: ["The main verb always ends in ", { term: "-ing" }, ", in every tense and for every person."]
+              uk: ["Основне дієслово завжди закінчується на ", { term: "-ing" }, " в усіх часах і для всіх осіб."]
+              es: ["El verbo principal siempre termina en ", { term: "-ing" }, ", en todos los tiempos y para todas las personas."]
           - type: rule
             level: A1
             text:
               en: ["Be changes with the person in the present and past; ", { term: will be }, " is the same for everyone."]
+              uk: ["Be змінюється залежно від особи в теперішньому й минулому часі; ", { term: will be }, " однакове для всіх."]
+              es: ["Be cambia según la persona en presente y pasado; ", { term: will be }, " es igual para todos."]
           - type: rule
             level: A1
             text:
               en: "Speech and messages use short forms: I'm, she's, they're, won't be."
+              uk: "У мовленні й повідомленнях уживають скорочені форми: I'm, she's, they're, won't be."
+              es: "En el habla y en los mensajes se usan formas contraídas: I'm, she's, they're, won't be."
 
-  - title: { en: The -ing form }
+  - title: { en: The -ing form, uk: "Форма на -ing", es: "La forma en -ing" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: ending, label: { en: Verb ending } }
-          - { key: rule, label: { en: Spelling } }
-          - { key: ex, label: { en: Examples } }
+          - { key: ending, label: { en: Verb ending, uk: "Закінчення дієслова", es: "Terminación del verbo" } }
+          - { key: rule, label: { en: Spelling, uk: "Правопис", es: "Ortografía" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A1, ending: { en: most verbs }, rule: { pattern: [{ ending: ing }], follows: true }, ex: { examples: [{ mapping: [work, working] }, { mapping: [play, playing] }, { mapping: [go, going] }] } }
-          - { level: A1, ending: "-e", rule: { en: { pattern: [drop e, ing] } }, ex: { examples: [{ mapping: [make, making] }, { mapping: [write, writing] }, { mapping: [come, coming] }] } }
-          - { level: A1, ending: "-ee", rule: { pattern: [{ ending: ing }], follows: true }, ex: { examples: [{ mapping: [see, seeing] }, { mapping: [agree, agreeing] }] } }
-          - { level: A1, ending: "-ie", rule: { mapping: [ie, ying] }, ex: { examples: [{ mapping: [lie, lying] }, { mapping: [die, dying] }] } }
-          - { level: A1, ending: { en: { pattern: ["1 vowel", "1 consonant, one syllable"] } }, rule: { en: { pattern: [double the consonant, ing] } }, ex: { examples: [{ mapping: [run, running] }, { mapping: [sit, sitting] }, { mapping: [swim, swimming] }] } }
-          - { level: A1, ending: "-w, -x, -y", rule: { en: { pattern: ["ing, single consonant"], follows: true } }, ex: { examples: [{ mapping: [show, showing] }, { mapping: [fix, fixing] }, { mapping: [stay, staying] }] } }
+          - { level: A1, ending: { en: most verbs, uk: "більшість дієслів", es: "la mayoría de los verbos" }, rule: { pattern: [{ ending: ing }], follows: true }, ex: { examples: [{ mapping: [work, working] }, { mapping: [play, playing] }, { mapping: [go, going] }] }, tr: { uk: { examples: ["працювати", "грати", "йти"] }, es: { examples: ["trabajar", "jugar", "ir"] } } }
+          - { level: A1, ending: "-e", rule: { en: { pattern: [drop e, ing] }, uk: { pattern: ["відкинути e", ing] }, es: { pattern: ["quitar la e", ing] } }, ex: { examples: [{ mapping: [make, making] }, { mapping: [write, writing] }, { mapping: [come, coming] }] }, tr: { uk: { examples: ["робити", "писати", "приходити"] }, es: { examples: ["hacer", "escribir", "venir"] } } }
+          - { level: A1, ending: "-ee", rule: { pattern: [{ ending: ing }], follows: true }, ex: { examples: [{ mapping: [see, seeing] }, { mapping: [agree, agreeing] }] }, tr: { uk: { examples: ["бачити", "погоджуватися"] }, es: { examples: ["ver", "estar de acuerdo"] } } }
+          - { level: A1, ending: "-ie", rule: { mapping: [ie, ying] }, ex: { examples: [{ mapping: [lie, lying] }, { mapping: [die, dying] }] }, tr: { uk: { examples: ["брехати", "помирати"] }, es: { examples: ["mentir", "morir"] } } }
+          - { level: A1, ending: { en: { pattern: ["1 vowel", "1 consonant, one syllable"] }, uk: { pattern: ["1 голосний", "1 приголосний, один склад"] }, es: { pattern: ["1 vocal", "1 consonante, una sílaba"] } }, rule: { en: { pattern: [double the consonant, ing] }, uk: { pattern: ["подвоїти приголосний", ing] }, es: { pattern: ["duplicar la consonante", ing] } }, ex: { examples: [{ mapping: [run, running] }, { mapping: [sit, sitting] }, { mapping: [swim, swimming] }] }, tr: { uk: { examples: ["бігти", "сидіти", "плавати"] }, es: { examples: ["correr", "sentarse", "nadar"] } } }
+          - { level: A1, ending: "-w, -x, -y", rule: { en: { pattern: ["ing, single consonant"], follows: true }, uk: { pattern: ["ing, без подвоєння приголосного"], follows: true }, es: { pattern: ["ing, sin duplicar la consonante"], follows: true } }, ex: { examples: [{ mapping: [show, showing] }, { mapping: [fix, fixing] }, { mapping: [stay, staying] }] }, tr: { uk: { examples: ["показувати", "лагодити", "залишатися"] }, es: { examples: ["mostrar", "arreglar", "quedarse"] } } }
 
-  - title: { en: "Present continuous: form" }
+  - title: { en: "Present continuous: form", uk: "Present Continuous: форма", es: "Presente continuo: forma" }
     role: form
     features: { tense: prs, aspect: prog }
     content:
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A1, features: { person: 1, number: sg }, subject: I, form: { pattern: [{ alternatives: [am, "'m"] }, { slot: V-ing }] }, ex: [I', { target: m reading }, "."] }
           - { level: A1, features: { person: 3, number: sg }, subject: { alternatives: [he, she, it] }, form: { pattern: [{ alternatives: [is, "'s"] }, { slot: V-ing }] }, ex: [He', { target: s reading }, "."] }
           - { level: A1, features: [{ person: 2 }, { person: 1, number: pl }, { person: 3, number: pl }], subject: { alternatives: [you, we, they] }, form: { pattern: [{ alternatives: [are, "'re"] }, { slot: V-ing }] }, ex: [They', { target: re reading }, "."] }
-          - { level: A1, features: { person: 3, number: sg }, subject: { en: singular noun }, form: { pattern: [is, { slot: V-ing }] }, ex: ["My sister ", { target: is reading }, "."] }
+          - { level: A1, features: { person: 3, number: sg }, subject: { en: singular noun, uk: "іменник в однині", es: "sustantivo en singular" }, form: { pattern: [is, { slot: V-ing }] }, ex: ["My sister ", { target: is reading }, "."] }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "A short answer repeats be; the positive answer takes the full form:"
+              uk: "Коротка відповідь повторює be; у ствердній відповіді вживається повна форма:"
+              es: "La respuesta corta repite be; la respuesta afirmativa usa la forma completa:"
             ex: { exchange: [Are you working?, { alternatives: [["Yes, I ", { target: am }, "."], ["No, I'", { target: m not }, "."]] }] }
+            tr: { uk: { examples: ["Ти працюєш? — Так, працюю.", "Ти працюєш? — Ні, не працюю."] }, es: { examples: ["¿Estás trabajando? — Sí, estoy trabajando.", "¿Estás trabajando? — No, no estoy trabajando."] } }
           - type: rule
             level: A1
             text:
               en: ["A wh-word goes first: ", { pattern: [{ slot: wh-word }, { alternatives: [am, is, are] }, { slot: subject }, { slot: V-ing }] }, "."]
+              uk: ["Питальне слово стоїть першим: ", { pattern: [{ slot: wh-word }, { alternatives: [am, is, are] }, { slot: subject }, { slot: V-ing }] }, "."]
+              es: ["La palabra interrogativa va primero: ", { pattern: [{ slot: wh-word }, { alternatives: [am, is, are] }, { slot: subject }, { slot: V-ing }] }, "."]
             ex: ["What ", { target: are }, " you ", { target: doing }, "?"]
+            tr: { uk: "Що ти робиш?", es: "¿Qué estás haciendo?" }
 
-  - title: { en: "Present continuous: use" }
+  - title: { en: "Present continuous: use", uk: "Present Continuous: вживання", es: "Presente continuo: uso" }
     role: use
     features: { tense: prs, aspect: prog }
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: Actions happening now }, ex: [I', { target: m cooking }, " dinner."] }
-          - { level: A1, use: { en: Temporary situations }, ex: [I', { target: m staying }, " with my sister this week."] }
-          - { level: A1, use: { en: Changes and trends around now }, ex: ["Prices ", { target: are going }, " up."] }
+          - { level: A1, use: { en: Actions happening now, uk: "Дії, що відбуваються зараз", es: "Acciones que ocurren ahora" }, ex: [I', { target: m cooking }, " dinner."], tr: { uk: "Я готую вечерю.", es: "Estoy preparando la cena." } }
+          - { level: A1, use: { en: Temporary situations, uk: "Тимчасові ситуації", es: "Situaciones temporales" }, ex: [I', { target: m staying }, " with my sister this week."], tr: { uk: "Цього тижня я живу в сестри.", es: "Esta semana me estoy quedando en casa de mi hermana." } }
+          - { level: A1, use: { en: Changes and trends around now, uk: "Зміни й тенденції цього періоду", es: "Cambios y tendencias del momento" }, ex: ["Prices ", { target: are going }, " up."], tr: { uk: "Ціни зростають.", es: "Los precios están subiendo." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "Time words: now, right now, at the moment, today, this week, Look!"
+              uk: "Слова-маркери: now, right now, at the moment, today, this week, Look!"
+              es: "Palabras clave: now, right now, at the moment, today, this week, Look!"
             ex: [{ signal: Look! }, " It's snow", { ending: ing }, "."]
+            tr: { uk: "Дивись! Іде сніг.", es: "¡Mira! Está nevando." }
           - type: note
             level: A1
             text:
               en: ["Plans and arrangements for the future: see ", { link: Future forms, to: en.tenses.future-forms }, "."]
+              uk: ["Плани й домовленості на майбутнє: див. ", { link: "Способи вираження майбутнього", to: en.tenses.future-forms }, "."]
+              es: ["Planes y compromisos para el futuro: ver ", { link: "Formas de futuro", to: en.tenses.future-forms }, "."]
 
-  - title: { en: "Past continuous: form" }
+  - title: { en: "Past continuous: form", uk: "Past Continuous: форма", es: "Pasado continuo: forma" }
     role: form
     features: { tense: pst, aspect: prog }
     content:
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A2, features: [{ person: 1, number: sg }, { person: 3, number: sg }], subject: { alternatives: [I, he, she, it] }, form: { pattern: [was, { slot: V-ing }] }, ex: ["She ", { target: was reading }, "."] }
           - { level: A2, features: [{ person: 2 }, { person: 1, number: pl }, { person: 3, number: pl }], subject: { alternatives: [you, we, they] }, form: { pattern: [were, { slot: V-ing }] }, ex: ["We ", { target: were reading }, "."] }
@@ -162,99 +189,113 @@ sections:
             level: A2
             text:
               en: ["A short answer repeats ", { alternatives: [was, were] }, ":"]
+              uk: ["Коротка відповідь повторює ", { alternatives: [was, were] }, ":"]
+              es: ["La respuesta corta repite ", { alternatives: [was, were] }, ":"]
             ex: { exchange: [Were you sleeping?, { alternatives: [["Yes, I ", { target: was }, "."], ["No, I ", { target: wasn't }, "."]] }] }
+            tr: { uk: { examples: ["Ти спав? — Так, спав.", "Ти спав? — Ні, не спав."] }, es: { examples: ["¿Estabas durmiendo? — Sí, estaba durmiendo.", "¿Estabas durmiendo? — No, no estaba durmiendo."] } }
           - type: rule
             level: A2
             text:
               en: ["A wh-word goes first: ", { pattern: [{ slot: wh-word }, { alternatives: [was, were] }, { slot: subject }, { slot: V-ing }] }, "."]
+              uk: ["Питальне слово стоїть першим: ", { pattern: [{ slot: wh-word }, { alternatives: [was, were] }, { slot: subject }, { slot: V-ing }] }, "."]
+              es: ["La palabra interrogativa va primero: ", { pattern: [{ slot: wh-word }, { alternatives: [was, were] }, { slot: subject }, { slot: V-ing }] }, "."]
             ex: ["What ", { target: were }, " you ", { target: doing }, " at 8?"]
+            tr: { uk: "Що ти робив о восьмій?", es: "¿Qué estabas haciendo a las 8?" }
 
-  - title: { en: "Past continuous: use" }
+  - title: { en: "Past continuous: use", uk: "Past Continuous: вживання", es: "Pasado continuo: uso" }
     role: use
     features: { tense: pst, aspect: prog }
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: In progress at a past moment }, ex: ["At 8 o'clock I ", { target: was having }, " dinner."] }
-          - { level: A2, use: { en: Background to a story }, ex: ["The sun ", { target: was shining }, " and children ", { target: were playing }, "."] }
-          - { level: A2, use: { en: [Interrupted action (, { pattern: [when, { slot: past simple }] }, ")"] }, ex: ["I ", { target: was cooking }, " when the phone ", { target: rang }, "."] }
-          - { level: A2, use: { en: Two actions at the same time (while) }, ex: ["While I ", { target: was cooking }, ", he ", { target: was watching }, " TV."] }
+          - { level: A2, use: { en: In progress at a past moment, uk: "Дія триває в певний момент минулого", es: "En curso en un momento del pasado" }, ex: ["At 8 o'clock I ", { target: was having }, " dinner."], tr: { uk: "О восьмій годині я вечеряв.", es: "A las ocho yo estaba cenando." } }
+          - { level: A2, use: { en: Background to a story, uk: "Тло розповіді", es: "Escenario de una historia" }, ex: ["The sun ", { target: was shining }, " and children ", { target: were playing }, "."], tr: { uk: "Світило сонце, і діти гралися.", es: "Brillaba el sol y los niños jugaban." } }
+          - { level: A2, use: { en: [Interrupted action (, { pattern: [when, { slot: past simple }] }, ")"], uk: ["Перервана дія (", { pattern: [when, { slot: past simple }] }, ")"], es: ["Acción interrumpida (", { pattern: [when, { slot: past simple }] }, ")"] }, ex: ["I ", { target: was cooking }, " when the phone ", { target: rang }, "."], tr: { uk: "Я готував, коли задзвонив телефон.", es: "Estaba cocinando cuando sonó el teléfono." } }
+          - { level: A2, use: { en: Two actions at the same time (while), uk: "Дві дії одночасно (while)", es: "Dos acciones al mismo tiempo (while)" }, ex: ["While I ", { target: was cooking }, ", he ", { target: was watching }, " TV."], tr: { uk: "Поки я готував, він дивився телевізор.", es: "Mientras yo cocinaba, él estaba viendo la televisión." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: while }, " comes before the long action; ", { term: when }, " comes before the short action that interrupts it."]
+              uk: [{ term: while }, " стоїть перед довгою дією, а ", { term: when }, " — перед короткою дією, що її перериває."]
+              es: [{ term: while }, " va antes de la acción larga; ", { term: when }, " va antes de la acción corta que la interrumpe."]
 
-  - title: { en: "Future continuous: form and use" }
+  - title: { en: "Future continuous: form and use", uk: "Future Continuous: форма й вживання", es: "Futuro continuo: forma y uso" }
     role: form
     features: { tense: fut, aspect: prog }
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, use: { en: In progress at a future moment }, ex: [This time tomorrow I', { target: ll be flying }, " to Rome."] }
-          - { level: B1, use: { en: Polite questions about plans }, ex: [{ target: Will }, " you ", { target: be using }, " the car tonight?"] }
+          - { level: B1, use: { en: In progress at a future moment, uk: "Дія триватиме в певний момент майбутнього", es: "En curso en un momento del futuro" }, ex: [This time tomorrow I', { target: ll be flying }, " to Rome."], tr: { uk: "Завтра о цій порі я летітиму до Рима.", es: "Mañana a esta hora estaré volando a Roma." } }
+          - { level: B1, use: { en: Polite questions about plans, uk: "Ввічливі запитання про плани", es: "Preguntas corteses sobre planes" }, ex: [{ target: Will }, " you ", { target: be using }, " the car tonight?"], tr: { uk: "Ти будеш користуватися машиною сьогодні ввечері?", es: "¿Vas a usar el auto esta noche?" } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: "Time words: this time tomorrow, at 8 tonight, all day tomorrow."
+              uk: "Слова-маркери: this time tomorrow, at 8 tonight, all day tomorrow."
+              es: "Palabras clave: this time tomorrow, at 8 tonight, all day tomorrow."
 
-  - title: { en: Stative verbs }
+  - title: { en: Stative verbs, uk: "Дієслова стану", es: "Verbos de estado" }
     role: own
     content:
       - type: prose
         level: A1
         text:
           en: "Verbs for states take the simple tenses, also for what is true right now."
+          uk: "Дієслова стану вживаються в простих часах, також для того, що є правдою саме зараз."
+          es: "Los verbos de estado se usan en los tiempos simples, también para lo que es verdad ahora mismo."
       - type: usage
         columns:
-          - { key: group, label: { en: Group } }
-          - { key: verbs, label: { en: Verbs } }
-          - { key: ex, label: { en: Example } }
+          - { key: group, label: { en: Group, uk: "Група", es: "Grupo" } }
+          - { key: verbs, label: { en: Verbs, uk: "Дієслова", es: "Verbos" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, group: { en: Feelings }, verbs: "like, love, hate, want, need, prefer", ex: ["I ", { target: want }, " a coffee."] }
-          - { level: A1, group: { en: Thinking }, verbs: { en: "know, think (= believe), understand, remember, mean" }, ex: ["I ", { target: understand }, " you."] }
-          - { level: A2, group: { en: Possession }, verbs: { en: "have (= own), own, belong" }, ex: ["This bag ", { target: belongs }, " to me."] }
-          - { level: A2, group: { en: "Senses, being" }, verbs: "see, hear, seem, cost", ex: ["It ", { target: costs }, " £10."] }
+          - { level: A1, group: { en: Feelings, uk: "Почуття", es: "Sentimientos" }, verbs: "like, love, hate, want, need, prefer", ex: ["I ", { target: want }, " a coffee."], tr: { uk: "Я хочу каву.", es: "Quiero un café." } }
+          - { level: A1, group: { en: Thinking, uk: "Мислення", es: "Pensamiento" }, verbs: { en: "know, think (= believe), understand, remember, mean", uk: "know, think (= вважати), understand, remember, mean", es: "know, think (= creer), understand, remember, mean" }, ex: ["I ", { target: understand }, " you."], tr: { uk: "Я тебе розумію.", es: "Te entiendo." } }
+          - { level: A2, group: { en: Possession, uk: "Володіння", es: "Posesión" }, verbs: { en: "have (= own), own, belong", uk: "have (= володіти), own, belong", es: "have (= poseer), own, belong" }, ex: ["This bag ", { target: belongs }, " to me."], tr: { uk: "Ця сумка належить мені.", es: "Esta bolsa me pertenece." } }
+          - { level: A2, group: { en: "Senses, being", uk: "Сприйняття, стан", es: "Sentidos, estado" }, verbs: "see, hear, seem, cost", ex: ["It ", { target: costs }, " £10."], tr: { uk: "Це коштує 10 фунтів.", es: "Cuesta 10 libras." } }
 
-  - title: { en: "Compare: continuous and simple" }
+  - title: { en: "Compare: continuous and simple", uk: "Порівняння: Continuous і Simple", es: "Comparación: tiempos continuos y simples" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: continuous, label: { en: Continuous }, features: { aspect: prog } }
-          - { key: simple, label: { en: Simple } }
+          - { key: continuous, label: { en: Continuous, uk: "Continuous", es: "Continuo" }, features: { aspect: prog } }
+          - { key: simple, label: { en: Simple, uk: "Simple", es: "Simple" } }
         rows:
-          - { level: A1, continuous: { en: "in progress, temporary" }, simple: { en: "habit, fact, finished event" } }
-          - { level: A1, continuous: [I', { target: m drinking }, " tea now."], simple: ["I ", { target: drink }, " tea every day."] }
-          - { level: A1, continuous: ["What ", { target: are }, " you ", { target: doing }, "? ", { gloss: { en: = now } }], simple: ["What ", { target: do }, " you ", { target: do }, "? ", { gloss: { en: = your job } }] }
-          - { level: A2, continuous: ["I ", { target: was walking }, " home", { gap: true }], simple: [{ gap: true }, "when I ", { target: saw }, " Tom."] }
+          - { level: A1, continuous: { en: "in progress, temporary", uk: "триває зараз, тимчасово", es: "en curso, temporal" }, simple: { en: "habit, fact, finished event", uk: "звичка, факт, завершена подія", es: "hábito, hecho, suceso terminado" } }
+          - { level: A1, continuous: { ex: [I', { target: m drinking }, " tea now."], tr: { uk: "Я зараз п’ю чай.", es: "Ahora estoy tomando té." } }, simple: { ex: ["I ", { target: drink }, " tea every day."], tr: { uk: "Я щодня п’ю чай.", es: "Tomo té todos los días." } } }
+          - { level: A1, continuous: { ex: ["What ", { target: are }, " you ", { target: doing }, "? ", { gloss: { en: = now, uk: "= зараз", es: "= ahora" } }], tr: { uk: "Що ти робиш?", es: "¿Qué estás haciendo?" } }, simple: { ex: ["What ", { target: do }, " you ", { target: do }, "? ", { gloss: { en: = your job, uk: "= твоя робота", es: "= tu trabajo" } }], tr: { uk: "Ким ти працюєш?", es: "¿A qué te dedicas?" } } }
+          - { level: A2, continuous: { ex: ["I ", { target: was walking }, " home", { gap: true }], tr: { uk: "Я йшов додому…", es: "Iba caminando a casa…" } }, simple: { ex: [{ gap: true }, "when I ", { target: saw }, " Tom."], tr: { uk: "…коли я побачив Тома.", es: "…cuando vi a Tom." } } }
       - type: list
         items:
           - type: note
             level: A1
             text:
               en: ["Simple forms: ", { link: Simple Tenses, to: en.tenses.simple-tenses }, "."]
+              uk: ["Форми Simple: ", { link: "Прості часи (Simple)", to: en.tenses.simple-tenses }, "."]
+              es: ["Formas simples: ", { link: "Tiempos simples", to: en.tenses.simple-tenses }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: She working now., right: ["She ", { target: is working }, " now."], rule: { en: be is required } }
-          - { level: A1, wrong: I am work now., right: ["I'm ", { target: working }, " now."], rule: { en: { pattern: [be, { slot: V-ing }] } } }
-          - { level: A1, wrong: What you are doing?, right: ["What ", { target: are you }, " doing?"], rule: { en: be goes before the subject } }
-          - { level: A1, wrong: Does she working?, right: [{ target: Is }, " she working?"], rule: { en: questions start with be } }
-          - { level: A1, wrong: He is runing., right: ["He is ", { target: running }, "."], rule: { en: { mapping: [{ pattern: [one vowel, one consonant] }, double it] } } }
-          - { level: A1, wrong: I am knowing the answer., right: ["I ", { target: know }, " the answer."], rule: { en: { takes: [stative verbs, simple tenses] } } }
-          - { level: A2, wrong: "When I was walking home, I was seeing an accident.", right: [{ gap: true }, "I ", { target: saw }, " an accident."], rule: { en: { takes: [short interrupting action, past simple] } } }
-          - { level: A2, wrong: We was playing., right: ["We ", { target: were }, " playing."], rule: { en: { takes: [{ alternatives: [you, we, they] }, were] } } }
-          - { level: B1, wrong: I will flying tomorrow., right: ["I ", { target: will be flying }, " tomorrow."], rule: { en: { pattern: [will be, { slot: V-ing }] } } }
+          - { level: A1, wrong: She working now., right: ["She ", { target: is working }, " now."], rule: { en: be is required, uk: "be обов’язкове", es: "be es obligatorio" } }
+          - { level: A1, wrong: I am work now., right: ["I'm ", { target: working }, " now."], rule: { en: { pattern: [be, { slot: V-ing }] }, uk: { pattern: [be, { slot: V-ing }] }, es: { pattern: [be, { slot: V-ing }] } } }
+          - { level: A1, wrong: What you are doing?, right: ["What ", { target: are you }, " doing?"], rule: { en: be goes before the subject, uk: "be стоїть перед підметом", es: "be va antes del sujeto" } }
+          - { level: A1, wrong: Does she working?, right: [{ target: Is }, " she working?"], rule: { en: questions start with be, uk: "питання починаються з be", es: "las preguntas empiezan con be" } }
+          - { level: A1, wrong: He is runing., right: ["He is ", { target: running }, "."], rule: { en: { mapping: [{ pattern: [one vowel, one consonant] }, double it] }, uk: { mapping: [{ pattern: ["один голосний", "один приголосний"] }, "подвоїти приголосний"] }, es: { mapping: [{ pattern: ["una vocal", "una consonante"] }, "duplicar la consonante"] } } }
+          - { level: A1, wrong: I am knowing the answer., right: ["I ", { target: know }, " the answer."], rule: { en: { takes: [stative verbs, simple tenses] }, uk: { takes: ["дієслова стану", "прості часи"] }, es: { takes: ["verbos de estado", "tiempos simples"] } } }
+          - { level: A2, wrong: "When I was walking home, I was seeing an accident.", right: [{ gap: true }, "I ", { target: saw }, " an accident."], rule: { en: { takes: [short interrupting action, past simple] }, uk: { takes: ["коротка дія, що перериває", "Past Simple"] }, es: { takes: ["acción corta que interrumpe", "pasado simple"] } } }
+          - { level: A2, wrong: We was playing., right: ["We ", { target: were }, " playing."], rule: { en: { takes: [{ alternatives: [you, we, they] }, were] }, uk: { takes: [{ alternatives: [you, we, they] }, were] }, es: { takes: [{ alternatives: [you, we, they] }, were] } } }
+          - { level: B1, wrong: I will flying tomorrow., right: ["I ", { target: will be flying }, " tomorrow."], rule: { en: { pattern: [will be, { slot: V-ing }] }, uk: { pattern: [will be, { slot: V-ing }] }, es: { pattern: [will be, { slot: V-ing }] } } }

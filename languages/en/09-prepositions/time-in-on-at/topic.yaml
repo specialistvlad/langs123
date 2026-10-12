@@ -5,32 +5,38 @@ kind: grammar
 tags: [prepositions, time, at, "on", in]
 concepts: [prepositions-time]
 related: [en.foundations.telling-time, en.foundations.days-months-dates, en.prepositions.place-movement]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "Time: In, On, At" }
+title: { en: "Time: In, On, At", uk: "Прийменники часу: in, on, at", es: "Preposiciones de tiempo: in, on, at" }
 summary:
-  lead: { en: "At goes with clock times, on with days and dates, and in with months, years and seasons." }
-  rule: { en: "The period gets longer from at to on to in, and next, last, this and every take no preposition:" }
+  lead:
+    en: "At goes with clock times, on with days and dates, and in with months, years and seasons."
+    uk: "At вживається з точним часом, on — з днями й датами, in — з місяцями, роками й порами року."
+    es: "At va con las horas, on con días y fechas, e in con meses, años y estaciones."
+  rule:
+    en: "The period gets longer from at to on to in, and next, last, this and every take no preposition:"
+    uk: "Період довшає від at до on і до in, а next, last, this і every прийменника не мають:"
+    es: "El período se alarga de at a on y a in, y next, last, this y every no llevan preposición:"
   ex: { examples: [[{ target: at }, " 7 o'clock"], [{ target: "on" }, " ", { weekday: Monday, value: 1 }], [{ target: in }, " ", { date: July, value: "--07" }], [{ target: next }, " ", { weekday: Friday, value: 5 }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: at, rule: { en: "clock times, night, midday, Christmas, Easter" }, ex: { examples: [[{ target: at }, " ", { time: "9:30", value: "09:30" }], { target: at night }] } }
-        - { level: A1, point: "on", rule: { en: "days, dates and a day with its part of the day" }, ex: { examples: [{ target: ["on ", { weekday: Monday, value: 1 }, " morning"] }, { target: ["on ", { date: "5 May", value: "--05-05" }] }] } }
-        - { level: A1, point: in, rule: { en: "months, seasons, years, morning, afternoon, evening" }, ex: { examples: [[{ target: in }, " ", { date: January, value: "--01" }], { target: in summer }] } }
-        - { level: A1, point: { en: Length }, rule: { en: "the period gets longer from at to on to in" }, ex: { examples: [[{ target: at }, " 7 o'clock"], [{ target: "on" }, " ", { weekday: Monday, value: 1 }], [{ target: in }, " ", { date: July, value: "--07" }]] } }
-        - { level: A1, point: { en: No preposition }, rule: { en: "before this, next, last, every, today, tomorrow" }, ex: { examples: [["I'm busy ", { target: this week }, "."], ["I walk ", { target: every morning }, "."]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: "dates take on, months take in" }, ex: { examples: [["My birthday is ", { target: "on" }, " ", { date: "5 May", value: "--05-05" }, "."], ["It's cold ", { target: in }, " ", { date: January, value: "--01" }, "."]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: "the weekend takes at" }, ex: ["We relax ", { target: at the weekend }, ". ", { variant: { target: on the weekend }, variety: en-US }] }
+        - { level: A1, point: at, rule: { en: "clock times, night, midday, Christmas, Easter", uk: "точний час, night, midday, Christmas, Easter", es: "hora del reloj, night, midday, Christmas, Easter" }, ex: { examples: [[{ target: at }, " ", { time: "9:30", value: "09:30" }], { target: at night }] }, tr: { uk: { examples: ["о 9:30", "уночі"] }, es: { examples: ["a las 9:30", "por la noche"] } } }
+        - { level: A1, point: "on", rule: { en: "days, dates and a day with its part of the day", uk: "дні, дати й день із частиною доби", es: "días, fechas y un día con su parte del día" }, ex: { examples: [{ target: ["on ", { weekday: Monday, value: 1 }, " morning"] }, { target: ["on ", { date: "5 May", value: "--05-05" }] }] }, tr: { uk: { examples: ["у понеділок уранці", "5 травня"] }, es: { examples: ["el lunes por la mañana", "el 5 de mayo"] } } }
+        - { level: A1, point: in, rule: { en: "months, seasons, years, morning, afternoon, evening", uk: "місяці, пори року, роки, morning, afternoon, evening", es: "meses, estaciones, años, morning, afternoon, evening" }, ex: { examples: [[{ target: in }, " ", { date: January, value: "--01" }], { target: in summer }] }, tr: { uk: { examples: ["у січні", "влітку"] }, es: { examples: ["en enero", "en verano"] } } }
+        - { level: A1, point: { en: Length, uk: "Тривалість", es: "Duración" }, rule: { en: "the period gets longer from at to on to in", uk: "період довшає від at до on і до in", es: "el período se alarga de at a on y a in" }, ex: { examples: [[{ target: at }, " 7 o'clock"], [{ target: "on" }, " ", { weekday: Monday, value: 1 }], [{ target: in }, " ", { date: July, value: "--07" }]] }, tr: { uk: { examples: ["о 7-й годині", "у понеділок", "у липні"] }, es: { examples: ["a las 7", "el lunes", "en julio"] } } }
+        - { level: A1, point: { en: No preposition, uk: "Без прийменника", es: "Sin preposición" }, rule: { en: "before this, next, last, every, today, tomorrow", uk: "перед this, next, last, every, today, tomorrow", es: "delante de this, next, last, every, today, tomorrow" }, ex: { examples: [["I'm busy ", { target: this week }, "."], ["I walk ", { target: every morning }, "."]] }, tr: { uk: { examples: ["Цього тижня я зайнятий.", "Я гуляю щоранку."] }, es: { examples: ["Estoy ocupado esta semana.", "Camino todas las mañanas."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "dates take on, months take in", uk: "дати вживаються з on, місяці з in", es: "las fechas llevan on, los meses llevan in" }, ex: { examples: [["My birthday is ", { target: "on" }, " ", { date: "5 May", value: "--05-05" }, "."], ["It's cold ", { target: in }, " ", { date: January, value: "--01" }, "."]] }, tr: { uk: { examples: ["Мій день народження 5 травня.", "У січні холодно."] }, es: { examples: ["Mi cumpleaños es el 5 de mayo.", "En enero hace frío."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "the weekend takes at", uk: "the weekend вживається з at", es: "the weekend lleva at" }, ex: ["We relax ", { target: at the weekend }, ". ", { variant: { target: on the weekend }, variety: en-US }], tr: { uk: "Ми відпочиваємо на вихідних.", es: "Descansamos el fin de semana." } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -39,53 +45,57 @@ sections:
             level: A1
             text:
               en: "The period gets longer from at, to on, to in."
+              uk: "Період довшає від at до on і до in."
+              es: "El período se alarga de at a on y a in."
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { pattern: [at, { slot: { en: clock time } }] }, ex: ["The class starts ", { target: at }, " ", { time: "9:30", value: "09:30" }, "."] }
-          - { level: A1, use: { pattern: [at, "night, midday, midnight"] }, ex: ["I sleep badly ", { target: at night }, "."] }
-          - { level: A1, use: { pattern: [at, the weekend] }, ex: ["We relax ", { target: at the weekend }, ". ", { variant: { target: on the weekend }, variety: en-US }] }
-          - { level: A1, use: { pattern: [at, "Christmas, Easter"] }, ex: ["We visit my gran ", { target: at Christmas }, "."] }
-          - { level: A1, use: { pattern: ["on", { slot: day }] }, ex: ["I work ", { target: ["on ", { weekday: Mondays, value: 1 }] }, "."] }
-          - { level: A1, use: { pattern: ["on", { slot: day }, { slot: { en: part of the day } }] }, ex: ["See you ", { target: ["on ", { weekday: Monday, value: 1 }, " morning"] }, "."] }
-          - { level: A1, use: { pattern: ["on", { slot: date }] }, ex: ["My birthday is ", { target: ["on ", { date: "5 May", value: "--05-05" }] }, "."] }
-          - { level: A1, use: { pattern: ["on", { slot: { en: a special day } }] }, ex: ["We have a party ", { target: on New Year's Day }, "."] }
-          - { level: A1, use: { pattern: [in, "morning, afternoon, evening"] }, ex: ["I study ", { target: in the evening }, "."] }
-          - { level: A1, use: { pattern: [in, { slot: month }] }, ex: ["It's cold ", { target: ["in ", { date: January, value: "--01" }] }, "."] }
-          - { level: A1, use: { pattern: [in, { slot: { en: season } }] }, ex: ["We go to the beach ", { target: in summer }, "."] }
-          - { level: A1, use: { pattern: [in, { slot: year }] }, ex: ["She was born ", { target: ["in ", { date: "1998", value: "1998" }] }, "."] }
+          - { level: A1, use: { pattern: [at, { slot: { en: clock time, uk: "точний час", es: "hora del reloj" } }] }, ex: ["The class starts ", { target: at }, " ", { time: "9:30", value: "09:30" }, "."], tr: { uk: "Урок починається о 9:30.", es: "La clase empieza a las 9:30." } }
+          - { level: A1, use: { pattern: [at, "night, midday, midnight"] }, ex: ["I sleep badly ", { target: at night }, "."], tr: { uk: "Уночі я погано сплю.", es: "Duermo mal por la noche." } }
+          - { level: A1, use: { pattern: [at, the weekend] }, ex: ["We relax ", { target: at the weekend }, ". ", { variant: { target: on the weekend }, variety: en-US }], tr: { uk: "Ми відпочиваємо на вихідних.", es: "Descansamos el fin de semana." } }
+          - { level: A1, use: { pattern: [at, "Christmas, Easter"] }, ex: ["We visit my gran ", { target: at Christmas }, "."], tr: { uk: "На Різдво ми відвідуємо мою бабусю.", es: "En Navidad visitamos a mi abuela." } }
+          - { level: A1, use: { pattern: ["on", { slot: day }] }, ex: ["I work ", { target: ["on ", { weekday: Mondays, value: 1 }] }, "."], tr: { uk: "Я працюю по понеділках.", es: "Trabajo los lunes." } }
+          - { level: A1, use: { pattern: ["on", { slot: day }, { slot: { en: part of the day, uk: "частина доби", es: "parte del día" } }] }, ex: ["See you ", { target: ["on ", { weekday: Monday, value: 1 }, " morning"] }, "."], tr: { uk: "До зустрічі в понеділок уранці.", es: "Nos vemos el lunes por la mañana." } }
+          - { level: A1, use: { pattern: ["on", { slot: date }] }, ex: ["My birthday is ", { target: ["on ", { date: "5 May", value: "--05-05" }] }, "."], tr: { uk: "Мій день народження 5 травня.", es: "Mi cumpleaños es el 5 de mayo." } }
+          - { level: A1, use: { pattern: ["on", { slot: { en: a special day, uk: "особливий день", es: "día especial" } }] }, ex: ["We have a party ", { target: on New Year's Day }, "."], tr: { uk: "У Новий рік ми влаштовуємо вечірку.", es: "El Día de Año Nuevo hacemos una fiesta." } }
+          - { level: A1, use: { pattern: [in, "morning, afternoon, evening"] }, ex: ["I study ", { target: in the evening }, "."], tr: { uk: "Увечері я навчаюся.", es: "Estudio por la tarde." } }
+          - { level: A1, use: { pattern: [in, { slot: month }] }, ex: ["It's cold ", { target: ["in ", { date: January, value: "--01" }] }, "."], tr: { uk: "У січні холодно.", es: "En enero hace frío." } }
+          - { level: A1, use: { pattern: [in, { slot: { en: season, uk: "пора року", es: "estación" } }] }, ex: ["We go to the beach ", { target: in summer }, "."], tr: { uk: "Влітку ми ходимо на пляж.", es: "En verano vamos a la playa." } }
+          - { level: A1, use: { pattern: [in, { slot: year }] }, ex: ["She was born ", { target: ["in ", { date: "1998", value: "1998" }] }, "."], tr: { uk: "Вона народилася 1998 року.", es: "Ella nació en 1998." } }
 
-  - title: { en: No preposition }
+  - title: { en: No preposition, uk: "Без прийменника", es: "Sin preposición" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Word } }
-          - { key: ex, label: { en: Example } }
+          - { key: word, label: { en: Word, uk: "Слово", es: "Palabra" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, word: { pattern: [this, "morning, week, year"] }, ex: ["I'm busy ", { target: this week }, "."] }
-          - { level: A1, word: { pattern: [{ alternatives: [next, last] }, "day, week, month"] }, ex: { examples: [["We meet ", { target: ["next ", { weekday: Monday, value: 1 }] }, "."], ["He called ", { target: last night }, "."]] } }
-          - { level: A1, word: { pattern: [every, "day, week, year"] }, ex: ["I walk ", { target: every morning }, "."] }
-          - { level: A1, word: "today, tonight, tomorrow, yesterday", ex: ["Call me ", { target: tomorrow morning }, "."] }
+          - { level: A1, word: { pattern: [this, "morning, week, year"] }, ex: ["I'm busy ", { target: this week }, "."], tr: { uk: "Цього тижня я зайнятий.", es: "Estoy ocupado esta semana." } }
+          - { level: A1, word: { pattern: [{ alternatives: [next, last] }, "day, week, month"] }, ex: { examples: [["We meet ", { target: ["next ", { weekday: Monday, value: 1 }] }, "."], ["He called ", { target: last night }, "."]] }, tr: { uk: { examples: ["Ми зустрічаємося наступного понеділка.", "Він телефонував учора ввечері."] }, es: { examples: ["Nos vemos el próximo lunes.", "Llamó anoche."] } } }
+          - { level: A1, word: { pattern: [every, "day, week, year"] }, ex: ["I walk ", { target: every morning }, "."], tr: { uk: "Я гуляю щоранку.", es: "Camino todas las mañanas." } }
+          - { level: A1, word: "today, tonight, tomorrow, yesterday", ex: ["Call me ", { target: tomorrow morning }, "."], tr: { uk: "Зателефонуй мені завтра вранці.", es: "Llámame mañana por la mañana." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "Before this, next, last, every, today and tomorrow, the time word stands alone."
+              uk: "Перед this, next, last, every, today і tomorrow прийменника немає: слово, що називає час, стоїть без нього."
+              es: "Delante de this, next, last, every, today y tomorrow no hay preposición: la palabra de tiempo va sola."
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: The film starts on 8 o'clock., right: ["The film starts ", { target: at }, " 8 o'clock."], rule: { en: { takes: [clock times, at] } } }
-          - { level: A1, wrong: ["My birthday is in ", { date: "5 May", value: "--05-05" }, "."], right: ["My birthday is ", { target: "on" }, " ", { date: "5 May", value: "--05-05" }, "."], rule: { en: { mapping: [dates, "on"] } } }
-          - { level: A1, wrong: We relax in the weekend., right: ["We relax ", { target: at }, " the weekend."], rule: { en: [at the weekend (, { variant: on the weekend, variety: en-US }, ")"] } }
-          - { level: A1, wrong: ["It's cold on ", { date: January, value: "--01" }, "."], right: ["It's cold ", { target: in }, " ", { date: January, value: "--01" }, "."], rule: { en: { mapping: [months, in] } } }
+          - { level: A1, wrong: The film starts on 8 o'clock., right: ["The film starts ", { target: at }, " 8 o'clock."], rule: { en: { takes: [clock times, at] }, uk: { takes: ["точний час", at] }, es: { takes: ["hora del reloj", at] } } }
+          - { level: A1, wrong: ["My birthday is in ", { date: "5 May", value: "--05-05" }, "."], right: ["My birthday is ", { target: "on" }, " ", { date: "5 May", value: "--05-05" }, "."], rule: { en: { mapping: [dates, "on"] }, uk: { mapping: ["дати", "on"] }, es: { mapping: ["fechas", "on"] } } }
+          - { level: A1, wrong: We relax in the weekend., right: ["We relax ", { target: at }, " the weekend."], rule: { en: [at the weekend (, { variant: on the weekend, variety: en-US }, ")"], uk: [at the weekend (, { variant: on the weekend, variety: en-US }, ")"], es: [at the weekend (, { variant: on the weekend, variety: en-US }, ")"] } }
+          - { level: A1, wrong: ["It's cold on ", { date: January, value: "--01" }, "."], right: ["It's cold ", { target: in }, " ", { date: January, value: "--01" }, "."], rule: { en: { mapping: [months, in] }, uk: { mapping: ["місяці", in] }, es: { mapping: ["meses", in] } } }

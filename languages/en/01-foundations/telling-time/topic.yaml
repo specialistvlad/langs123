@@ -5,48 +5,57 @@ kind: foundations
 tags: [time, clock, hours]
 concepts: [telling-time]
 related: [en.foundations.numbers, en.foundations.days-months-dates, en.prepositions.time-in-on-at]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Telling the Time }
+title: { en: Telling the Time, uk: Котра година, es: La hora }
 summary:
-  lead: { en: "How to ask the time and say it in numbers, and with past and to." }
-  rule: { en: ["Say the hour first, then the minutes: 7:05 is ", { term: seven oh five }, ", and o'clock follows only a full hour:"] }
+  lead:
+    en: "How to ask the time and say it in numbers, and with past and to."
+    uk: "Як запитати, котра година, і назвати час числами та за допомогою слів past і to."
+    es: "Cómo preguntar la hora y decirla con números, y con past y to."
+  rule:
+    en: ["Say the hour first, then the minutes: 7:05 is ", { term: seven oh five }, ", and o'clock follows only a full hour:"]
+    uk: ["Спочатку називають годину, потім хвилини: 7:05 — це ", { term: seven oh five }, ", а o'clock стоїть лише після повної години:"]
+    es: ["Se dice primero la hora y luego los minutos: 7:05 es ", { term: seven oh five }, ", y o'clock solo va después de una hora completa:"]
   ex: [{ target: seven o'clock }, "."]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A0, point: { en: Asking }, rule: { en: ["answer with ", { pattern: [It's, { slot: the time }] }] }, ex: { exchange: [What time is it?, { target: It's seven thirty. }] } }
-        - { level: A0, point: { en: Numbers }, rule: { en: ["say the hour, then the minutes; 1–9 minutes take ", { term: oh }] }, ex: { mapping: [{ time: "7:05", value: "07:05" }, ["seven ", { target: oh }, " five"]] } }
-        - { level: A0, point: o'clock, rule: { en: ["a full hour takes ", { term: o'clock }] }, ex: ["seven ", { target: o'clock }] }
-        - { level: A1, point: past, rule: { en: "minutes 1–30: past the hour" }, ex: { examples: [["five ", { target: past }, " three"], [{ optional: a }, " ", { target: quarter past }, " three"], [{ target: half past }, " three"]] } }
-        - { level: A1, point: to, rule: { en: "minutes 31–59: to the next hour; say the minutes first" }, ex: { examples: [["twenty ", { target: to }, " four"], [{ optional: a }, " ", { target: quarter to }, " four"]] } }
-        - { level: A1, point: minutes, rule: { en: ["minutes that are not 5, 10, 15… add ", { term: minutes }] }, ex: ["three ", { target: minutes }, " past six"] }
-        - { level: A1, point: { alternatives: [a.m., p.m.] }, rule: { en: [{ term: a.m. }, " is midnight to midday; ", { term: p.m. }, " is midday to midnight"] }, ex: { examples: [["seven ", { target: a.m. }], ["three ", { target: p.m. }]] } }
-        - { level: A1, point: { en: Parts of the day }, rule: { en: add the part of the day after the time }, ex: { examples: [["seven in the ", { target: morning }], ["three in the ", { target: afternoon }], ["eight in the ", { target: evening }], ["eleven at ", { target: night }]] } }
-        - { level: A1, point: { en: "24 hours" }, rule: { en: "speech uses 12 hours; timetables use the 24-hour clock" }, ex: { mapping: [{ time: "19:30", value: "19:30" }, { target: nineteen thirty }] } }
-        - { level: A1, point: US, rule: { en: ["use ", { term: after }, " for ", { term: past }, " and ", { term: of }, " for ", { term: to }] }, ex: { examples: [["a quarter ", { target: after }, " three"], ["ten ", { target: of }, " four"]] }, variety: en-US }
-        - { level: A0, point: { en: Trap }, rule: { en: ["minutes replace ", { term: o'clock }] }, ex: ["seven ", { target: fifteen }] }
+        - { level: A0, point: { en: Asking, uk: "Як запитати", es: "Preguntar" }, rule: { en: ["answer with ", { pattern: [It's, { slot: the time }] }], uk: ["відповідь за схемою ", { pattern: [It's, { slot: the time }] }], es: ["se responde con ", { pattern: [It's, { slot: the time }] }] }, ex: { exchange: [What time is it?, { target: It's seven thirty. }] }, tr: { uk: "Котра година? — Сьома тридцять.", es: "¿Qué hora es? — Son las siete y media." } }
+        - { level: A0, point: { en: Numbers, uk: "Числа", es: "Números" }, rule: { en: ["say the hour, then the minutes; 1–9 minutes take ", { term: oh }], uk: ["спочатку години, потім хвилини; перед хвилинами 1–9 стоїть ", { term: oh }], es: ["primero la hora, luego los minutos; los minutos 1–9 llevan ", { term: oh }] }, ex: { mapping: [{ time: "7:05", value: "07:05" }, ["seven ", { target: oh }, " five"]] }, tr: { uk: "7:05 — сьома нуль п’ять", es: "7:05 — las siete y cinco" } }
+        - { level: A0, point: o'clock, rule: { en: ["a full hour takes ", { term: o'clock }], uk: ["після повної години стоїть ", { term: o'clock }], es: ["una hora en punto lleva ", { term: o'clock }] }, ex: ["seven ", { target: o'clock }], tr: { uk: "сьома година", es: "las siete en punto" } }
+        - { level: A1, point: past, rule: { en: "minutes 1–30: past the hour", uk: "хвилини 1–30: після години (past)", es: "minutos 1–30: después de la hora (past)" }, ex: { examples: [["five ", { target: past }, " three"], [{ optional: a }, " ", { target: quarter past }, " three"], [{ target: half past }, " three"]] }, tr: { uk: { examples: ["п’ять хвилин по третій", "чверть на четверту", "пів на четверту"] }, es: { examples: ["las tres y cinco", "las tres y cuarto", "las tres y media"] } } }
+        - { level: A1, point: to, rule: { en: "minutes 31–59: to the next hour; say the minutes first", uk: "хвилини 31–59: до наступної години (to); спершу хвилини", es: "minutos 31–59: para la hora siguiente (to); primero los minutos" }, ex: { examples: [["twenty ", { target: to }, " four"], [{ optional: a }, " ", { target: quarter to }, " four"]] }, tr: { uk: { examples: ["за двадцять хвилин четверта", "за чверть четверта"] }, es: { examples: ["las cuatro menos veinte", "las cuatro menos cuarto"] } } }
+        - { level: A1, point: minutes, rule: { en: ["minutes that are not 5, 10, 15… add ", { term: minutes }], uk: ["якщо хвилин не 5, 10, 15…, додається ", { term: minutes }], es: ["si los minutos no son 5, 10, 15…, se añade ", { term: minutes }] }, ex: ["three ", { target: minutes }, " past six"], tr: { uk: "три хвилини по шостій", es: "las seis y tres minutos" } }
+        - { level: A1, point: { alternatives: [a.m., p.m.] }, rule: { en: [{ term: a.m. }, " is midnight to midday; ", { term: p.m. }, " is midday to midnight"], uk: [{ term: a.m. }, " — від півночі до полудня; ", { term: p.m. }, " — від полудня до півночі"], es: [{ term: a.m. }, " va de medianoche a mediodía; ", { term: p.m. }, " va de mediodía a medianoche"] }, ex: { examples: [["seven ", { target: a.m. }], ["three ", { target: p.m. }]] }, tr: { uk: { examples: ["сьома ранку", "третя дня"] }, es: { examples: ["las siete de la mañana", "las tres de la tarde"] } } }
+        - { level: A1, point: { en: Parts of the day, uk: "Частини доби", es: "Partes del día" }, rule: { en: add the part of the day after the time, uk: "після часу додають частину доби", es: "después de la hora se añade la parte del día" }, ex: { examples: [["seven in the ", { target: morning }], ["three in the ", { target: afternoon }], ["eight in the ", { target: evening }], ["eleven at ", { target: night }]] }, tr: { uk: { examples: ["сьома ранку", "третя дня", "восьма вечора", "одинадцята ночі"] }, es: { examples: ["las siete de la mañana", "las tres de la tarde", "las ocho de la noche", "las once de la noche"] } } }
+        - { level: A1, point: { en: "24 hours", uk: "24 години", es: "24 horas" }, rule: { en: "speech uses 12 hours; timetables use the 24-hour clock", uk: "у мовленні — 12 годин, у розкладах — 24-годинний формат", es: "al hablar se usan 12 horas; los horarios usan 24 horas" }, ex: { mapping: [{ time: "19:30", value: "19:30" }, { target: nineteen thirty }] }, tr: { uk: "19:30 — дев’ятнадцята тридцять", es: "19:30 — diecinueve treinta" } }
+        - { level: A1, point: US, rule: { en: ["use ", { term: after }, " for ", { term: past }, " and ", { term: of }, " for ", { term: to }], uk: ["вживайте ", { term: after }, " замість ", { term: past }, " і ", { term: of }, " замість ", { term: to }], es: ["se usa ", { term: after }, " en lugar de ", { term: past }, " y ", { term: of }, " en lugar de ", { term: to }] }, ex: { examples: [["a quarter ", { target: after }, " three"], ["ten ", { target: of }, " four"]] }, tr: { uk: { examples: ["чверть на четверту", "за десять хвилин четверта"] }, es: { examples: ["las tres y cuarto", "las cuatro menos diez"] } }, variety: en-US }
+        - { level: A0, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["minutes replace ", { term: o'clock }], uk: ["хвилини замінюють ", { term: o'clock }], es: ["los minutos reemplazan a ", { term: o'clock }] }, ex: ["seven ", { target: fifteen }], tr: { uk: "сьома п’ятнадцять", es: "las siete y quince" } }
 
 sections:
-  - title: { en: The time in numbers }
+  - title: { en: The time in numbers, uk: "Час у числах", es: "La hora en números" }
     role: own
     content:
       - type: prose
         level: A0
         text:
           en: ["Ask ", { term: What time is it? }, " or ", { term: What's the time? }, " Answer with ", { pattern: [{ term: It's }, { slot: the time }] }, "."]
+          uk: ["Час запитують так: ", { term: What time is it? }, " або ", { term: What's the time? }, " Відповідають за схемою ", { pattern: [{ term: It's }, { slot: the time }] }, "."]
+          es: ["Se pregunta ", { term: What time is it? }, " o ", { term: What's the time? }, " Se responde con ", { pattern: [{ term: It's }, { slot: the time }] }, "."]
         ex: It's seven thirty.
+        tr: { uk: "Сьома тридцять.", es: "Son las siete y media." }
       - type: inventory
         set: times
         columns:
-          - { key: time, label: { en: Time } }
-          - { key: said, label: { en: Said } }
+          - { key: time, label: { en: Time, uk: "Час", es: "Hora" } }
+          - { key: said, label: { en: Said, uk: "Як читається", es: "Cómo se dice" } }
         rows:
           - { level: A0, value: "07:00", time: "7:00", said: ["seven ", { target: o'clock }] }
           - { level: A0, value: "07:05", time: "7:05", said: ["seven ", { target: oh }, " five"] }
@@ -60,19 +69,23 @@ sections:
             level: A0
             text:
               en: ["Say the hour, then the minutes. 1–9 minutes take ", { term: oh }, ": ", { mapping: ["7:05", ["seven ", { term: oh }, " five"]] }, "."]
+              uk: ["Спочатку називають годину, потім хвилини. Перед хвилинами 1–9 стоїть ", { term: oh }, ": ", { mapping: ["7:05", ["seven ", { term: oh }, " five"]] }, "."]
+              es: ["Se dice la hora y luego los minutos. Los minutos 1–9 llevan ", { term: oh }, ": ", { mapping: ["7:05", ["seven ", { term: oh }, " five"]] }, "."]
           - type: rule
             level: A0
             text:
               en: [{ term: o'clock }, " ", { ipa: əˈklɒk }, " goes only with full hours: seven o'clock."]
+              uk: [{ term: o'clock }, " ", { ipa: əˈklɒk }, " вживається лише з повними годинами: seven o'clock."]
+              es: [{ term: o'clock }, " ", { ipa: əˈklɒk }, " se usa solo con horas en punto: seven o'clock."]
 
-  - title: { en: Past and to }
+  - title: { en: Past and to, uk: "Past і to", es: "Past y to" }
     role: own
     content:
       - type: inventory
         set: times
         columns:
-          - { key: time, label: { en: Time } }
-          - { key: said, label: { en: Said } }
+          - { key: time, label: { en: Time, uk: "Час", es: "Hora" } }
+          - { key: said, label: { en: Said, uk: "Як читається", es: "Cómo se dice" } }
         rows:
           - { level: A1, value: "03:05", time: "3:05", said: ["five ", { target: past }, " three"] }
           - { level: A1, value: "03:15", time: "3:15", said: [{ optional: a }, " ", { target: quarter past }, " three"] }
@@ -87,28 +100,36 @@ sections:
             level: A1
             text:
               en: ["Minutes 1–30: ", { term: past }, " the hour. Minutes 31–59: ", { term: to }, " the next hour."]
+              uk: ["Хвилини 1–30: ", { term: past }, " — після години. Хвилини 31–59: ", { term: to }, " — до наступної години."]
+              es: ["Minutos 1–30: ", { term: past }, ", después de la hora. Minutos 31–59: ", { term: to }, ", antes de la hora siguiente."]
           - type: rule
             level: A1
             text:
               en: ["Say the minutes first, then the hour: twenty ", { term: to }, " four."]
+              uk: ["Спочатку називають хвилини, потім годину: twenty ", { term: to }, " four."]
+              es: ["Primero se dicen los minutos y luego la hora: twenty ", { term: to }, " four."]
           - type: rule
             level: A1
             text:
               en: ["Minutes that are not 5, 10, 15… add ", { term: minutes }, ": three ", { term: minutes }, " past six."]
+              uk: ["Якщо хвилин не 5, 10, 15…, додається ", { term: minutes }, ": three ", { term: minutes }, " past six."]
+              es: ["Si los minutos no son 5, 10, 15…, se añade ", { term: minutes }, ": three ", { term: minutes }, " past six."]
           - type: note
             level: A1
             variety: en-US
             text:
               en: [{ term: after }, " for past, ", { term: of }, " for to: a quarter ", { term: after }, " three, ten ", { term: of }, " four."]
+              uk: [{ term: after }, " замість past, ", { term: of }, " замість to: a quarter ", { term: after }, " three, ten ", { term: of }, " four."]
+              es: [{ term: after }, " en lugar de past, ", { term: of }, " en lugar de to: a quarter ", { term: after }, " three, ten ", { term: of }, " four."]
 
-  - title: { en: Parts of the day }
+  - title: { en: Parts of the day, uk: "Частини доби", es: "Partes del día" }
     role: own
     content:
       - type: inventory
         set: times
         columns:
-          - { key: time, label: { en: Time } }
-          - { key: said, label: { en: Said } }
+          - { key: time, label: { en: Time, uk: "Час", es: "Hora" } }
+          - { key: said, label: { en: Said, uk: "Як читається", es: "Cómo se dice" } }
         rows:
           - { level: A1, value: "07:00", time: "07:00", said: { alternatives: [["seven ", { target: a.m. }], ["seven in the ", { target: morning }]] } }
           - { level: A1, value: "12:00", time: "12:00", said: { alternatives: [{ target: midday }, ["twelve ", { target: noon }]] } }
@@ -122,14 +143,18 @@ sections:
             level: A1
             text:
               en: [{ term: a.m. }, " = from midnight to midday; ", { term: p.m. }, " = from midday to midnight."]
+              uk: [{ term: a.m. }, " = від півночі до полудня; ", { term: p.m. }, " = від полудня до півночі."]
+              es: [{ term: a.m. }, " = de medianoche a mediodía; ", { term: p.m. }, " = de mediodía a medianoche."]
           - type: rule
             level: A1
             text:
               en: ["In speech, the 12-hour clock is usual. Timetables use 24 hours: 19:30 = ", { time: nineteen thirty, value: "19:30" }, "."]
+              uk: ["У мовленні зазвичай вживають 12-годинний формат. У розкладах — 24 години: 19:30 = ", { time: nineteen thirty, value: "19:30" }, "."]
+              es: ["Al hablar se usa normalmente el reloj de 12 horas. Los horarios usan 24 horas: 19:30 = ", { time: nineteen thirty, value: "19:30" }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A0, wrong: seven o'clock fifteen, right: ["seven ", { target: fifteen }], rule: { en: o'clock only with full hours } }
+          - { level: A0, wrong: seven o'clock fifteen, right: ["seven ", { target: fifteen }], rule: { en: o'clock only with full hours, uk: "o'clock лише з повними годинами", es: "o'clock solo con horas en punto" } }

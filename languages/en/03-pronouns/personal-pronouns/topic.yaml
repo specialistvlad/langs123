@@ -5,90 +5,111 @@ kind: grammar
 tags: [pronouns, subject, object, possessives]
 concepts: [pronouns, possession]
 related: [en.verbs.to-be, en.nouns-determiners.possessive-s, en.nouns-determiners.demonstratives-this-that, en.pronouns.indefinite-pronouns]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Personal Pronouns }
+title: { en: Personal Pronouns, uk: Особові займенники, es: Pronombres personales }
 summary:
-  lead: { en: "Subject, object and possessive forms of the personal pronouns: I, me, my, mine." }
-  rule: { en: "English always states the subject, even with weather and time:" }
+  lead:
+    en: "Subject, object and possessive forms of the personal pronouns: I, me, my, mine."
+    uk: "Особові займенники в ролі підмета й додатка та присвійні форми: I, me, my, mine."
+    es: "Las formas de sujeto, de objeto y posesivas de los pronombres personales: I, me, my, mine."
+  rule:
+    en: "English always states the subject, even with weather and time:"
+    uk: "В англійській підмет називають завжди, навіть у реченнях про погоду й час:"
+    es: "En inglés el sujeto siempre se expresa, incluso con el clima y la hora:"
   ex: [{ target: It }, " is cold."]
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: forms, label: { en: Pronouns } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: forms, label: { en: Pronouns, uk: "Займенники", es: "Pronombres" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A0, features: { case: nom }, point: { en: Subject }, forms: { alternatives: [I, you, he, she, it, we, they] }, rule: { en: goes before the verb }, ex: [{ target: She }, "'s a teacher."] }
-        - { level: A1, features: { case: acc }, point: { en: Object }, forms: { alternatives: [me, you, him, her, it, us, them] }, rule: { en: goes after a verb or a preposition }, ex: ["Can you help ", { target: me }, "?"] }
-        - { level: A0, features: { case: gen, wordclass: det }, point: { en: { pattern: [Possessive, { slot: noun }] } }, forms: { alternatives: [my, your, his, her, its, our, their] }, rule: { en: "goes before a noun, with no article" }, ex: [{ target: My }, " name is Tom."] }
-        - { level: A1, features: { case: gen, wordclass: pro }, point: { en: Possessive alone }, forms: { alternatives: [mine, yours, his, hers, ours, theirs] }, rule: { en: "stands alone, without a noun" }, ex: ["This bag is ", { target: mine }, "."] }
-        - { level: A0, features: { person: 3, number: sg, gender: neut, case: nom }, point: { en: "Weather, time" }, forms: it, rule: { en: "no real subject: it fills the place" }, ex: [{ target: It }, "'s cold today."] }
-        - { level: A0, features: { person: 3, number: sg, gender: neut, case: gen, wordclass: det }, point: { en: Trap }, forms: its, rule: { en: "its has no apostrophe; it's = it is" }, ex: ["The dog wants ", { target: its }, " food."] }
-        - { level: A1, features: { case: gen, wordclass: pro }, point: { en: Trap }, forms: { alternatives: [yours, hers, ours, theirs] }, rule: { en: no apostrophe }, ex: ["Is this ", { target: yours }, "?"] }
+        - { level: A0, features: { case: nom }, point: { en: Subject, uk: "Підмет", es: "Sujeto" }, forms: { alternatives: [I, you, he, she, it, we, they] }, rule: { en: goes before the verb, uk: "стоїть перед дієсловом", es: "va antes del verbo" }, ex: [{ target: She }, "'s a teacher."] }
+        - { level: A1, features: { case: acc }, point: { en: Object, uk: "Додаток", es: "Objeto" }, forms: { alternatives: [me, you, him, her, it, us, them] }, rule: { en: goes after a verb or a preposition, uk: "стоїть після дієслова або прийменника", es: "va después de un verbo o de una preposición" }, ex: ["Can you help ", { target: me }, "?"] }
+        - { level: A0, features: { case: gen, wordclass: det }, point: { en: { pattern: [Possessive, { slot: noun }] }, uk: { pattern: ["Присвійний", { slot: noun }] }, es: { pattern: ["Posesivo", { slot: noun }] } }, forms: { alternatives: [my, your, his, her, its, our, their] }, rule: { en: "goes before a noun, with no article", uk: "стоїть перед іменником, без артикля", es: "va antes de un sustantivo, sin artículo" }, ex: [{ target: My }, " name is Tom."] }
+        - { level: A1, features: { case: gen, wordclass: pro }, point: { en: Possessive alone, uk: "Присвійний без іменника", es: "Posesivo solo" }, forms: { alternatives: [mine, yours, his, hers, ours, theirs] }, rule: { en: "stands alone, without a noun", uk: "стоїть сам, без іменника", es: "va solo, sin sustantivo" }, ex: ["This bag is ", { target: mine }, "."] }
+        - { level: A0, features: { person: 3, number: sg, gender: neut, case: nom }, point: { en: "Weather, time", uk: "Погода, час", es: "Clima, hora" }, forms: it, rule: { en: "no real subject: it fills the place", uk: "справжнього підмета немає: it займає його місце", es: "no hay sujeto real: it ocupa su lugar" }, ex: [{ target: It }, "'s cold today."] }
+        - { level: A0, features: { person: 3, number: sg, gender: neut, case: gen, wordclass: det }, point: { en: Trap, uk: "Пастка", es: "Trampa" }, forms: its, rule: { en: "its has no apostrophe; it's = it is", uk: "its пишеться без апострофа; it's = it is", es: "its no lleva apóstrofo; it's = it is" }, ex: ["The dog wants ", { target: its }, " food."] }
+        - { level: A1, features: { case: gen, wordclass: pro }, point: { en: Trap, uk: "Пастка", es: "Trampa" }, forms: { alternatives: [yours, hers, ours, theirs] }, rule: { en: no apostrophe, uk: "без апострофа", es: "sin apóstrofo" }, ex: ["Is this ", { target: yours }, "?"] }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: prose
         level: A1
         text:
           en: "Subject before the verb, object after it, possessive before a noun or alone:"
+          uk: "Підмет стоїть перед дієсловом, додаток — після нього, присвійний займенник — перед іменником або сам по собі:"
+          es: "El sujeto va antes del verbo, el objeto después, y el posesivo antes de un sustantivo o solo:"
         ex: [{ target: We }, " like ", { target: them }, ". ", { target: Their }, " house is next to ", { target: ours }, "."]
+        tr: { uk: "Вони нам подобаються. Їхній будинок поруч із нашим.", es: "Nos caen bien. Su casa está al lado de la nuestra." }
 
-  - title: { en: "Form: subject pronouns" }
+  - title: { en: "Form: subject pronouns", uk: "Форма: займенники-підмети", es: "Forma: pronombres sujeto" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: pronoun, label: { en: Pronoun } }
-          - { key: refers, label: { en: Refers to } }
-          - { key: ex, label: { en: Example } }
+          - { key: pronoun, label: { en: Pronoun, uk: "Займенник", es: "Pronombre" } }
+          - { key: refers, label: { en: Refers to, uk: "Позначає", es: "Se refiere a" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A0, features: { person: 1, number: sg }, pronoun: I, refers: { en: the speaker }, ex: [{ target: I }, "'m Tom."] }
-          - { level: A0, features: { person: 2 }, pronoun: you, refers: { en: the listener or listeners }, ex: [{ target: You }, "'re late."] }
-          - { level: A0, features: { person: 3, number: sg, gender: masc }, pronoun: he, refers: { en: a man or a boy }, ex: [{ target: He }, "'s my brother."] }
-          - { level: A0, features: { person: 3, number: sg, gender: fem }, pronoun: she, refers: { en: a woman or a girl }, ex: [{ target: She }, "'s a teacher."] }
-          - { level: A0, features: { person: 3, number: sg, gender: neut }, pronoun: it, refers: { en: a thing or an animal }, ex: [{ target: It }, "'s new."] }
-          - { level: A0, features: { person: 1, number: pl }, pronoun: we, refers: { en: the speaker and others }, ex: [{ target: We }, "'re from Spain."] }
-          - { level: A0, features: { person: 3, number: pl }, pronoun: they, refers: { en: people or things }, ex: [{ target: They }, "'re here."] }
+          - { level: A0, features: { person: 1, number: sg }, pronoun: I, refers: { en: the speaker, uk: "мовця", es: "el hablante" }, ex: [{ target: I }, "'m Tom."] }
+          - { level: A0, features: { person: 2 }, pronoun: you, refers: { en: the listener or listeners, uk: "співрозмовника або співрозмовників", es: "el oyente o los oyentes" }, ex: [{ target: You }, "'re late."] }
+          - { level: A0, features: { person: 3, number: sg, gender: masc }, pronoun: he, refers: { en: a man or a boy, uk: "чоловіка або хлопчика", es: "un hombre o un niño" }, ex: [{ target: He }, "'s my brother."] }
+          - { level: A0, features: { person: 3, number: sg, gender: fem }, pronoun: she, refers: { en: a woman or a girl, uk: "жінку або дівчинку", es: "una mujer o una niña" }, ex: [{ target: She }, "'s a teacher."] }
+          - { level: A0, features: { person: 3, number: sg, gender: neut }, pronoun: it, refers: { en: a thing or an animal, uk: "предмет або тварину", es: "una cosa o un animal" }, ex: [{ target: It }, "'s new."] }
+          - { level: A0, features: { person: 1, number: pl }, pronoun: we, refers: { en: the speaker and others, uk: "мовця та інших", es: "el hablante y otros" }, ex: [{ target: We }, "'re from Spain."] }
+          - { level: A0, features: { person: 3, number: pl }, pronoun: they, refers: { en: people or things, uk: "людей або предмети", es: "personas o cosas" }, ex: [{ target: They }, "'re here."] }
       - type: list
         items:
           - type: rule
             level: A0
             text:
               en: [{ term: I }, " is always a capital letter:"]
+              uk: [{ term: I }, " завжди пишеться з великої літери:"]
+              es: [{ term: I }, " siempre se escribe con mayúscula:"]
             ex: ["Tom and ", { target: I }, "."]
+            tr: { uk: "Том і я.", es: "Tom y yo." }
           - type: rule
             level: A0
             text:
               en: [{ term: you }, " is one word for one or many people, friends or strangers."]
+              uk: [{ term: you }, " — одне слово для однієї людини чи кількох, для друзів і для незнайомих."]
+              es: [{ term: you }, " es una sola palabra para una o varias personas, amigos o desconocidos."]
           - type: rule
             level: A0
             text:
               en: [{ term: we }, " and ", { term: they }, " have no gender: ", { term: they }, " = men, women or things."]
+              uk: [{ term: we }, " і ", { term: they }, " не мають роду: ", { term: they }, " = чоловіки, жінки або предмети."]
+              es: [{ term: we }, " y ", { term: they }, " no tienen género: ", { term: they }, " = hombres, mujeres o cosas."]
           - type: rule
             level: A0
             text:
               en: ["Pets often take ", { term: he }, " or ", { term: she }, ":"]
+              uk: ["Про домашніх тварин часто кажуть ", { term: he }, " або ", { term: she }, ":"]
+              es: ["A las mascotas se las llama a menudo ", { term: he }, " o ", { term: she }, ":"]
             ex: ["Max is our dog. ", { target: He }, "'s two."]
+            tr: { uk: "Макс — наш собака. Йому два роки.", es: "Max es nuestro perro. Tiene dos años." }
 
-  - title: { en: "Form: object pronouns" }
+  - title: { en: "Form: object pronouns", uk: "Форма: займенники-додатки", es: "Forma: pronombres objeto" }
     role: form
     content:
       - type: prose
         level: A1
         text:
           en: The object pronoun goes after the verb or after a preposition.
+          uk: "Займенник-додаток стоїть після дієслова або після прийменника."
+          es: "El pronombre objeto va después del verbo o de una preposición."
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject }, features: { case: nom } }
-          - { key: object, label: { en: Object }, features: { case: acc } }
-          - { key: ex, label: { en: Example } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" }, features: { case: nom } }
+          - { key: object, label: { en: Object, uk: "Додаток", es: "Objeto" }, features: { case: acc } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A1, features: { person: 1, number: sg }, subject: I, object: me, ex: ["Can you help ", { target: me }, "?"] }
           - { level: A1, features: { person: 2 }, subject: you, object: you, ex: ["I love ", { target: you }, "."] }
@@ -103,20 +124,25 @@ sections:
             level: A1
             text:
               en: "Short answers and answers with be take the object form:"
+              uk: "У коротких відповідях і відповідях із be вживають форму додатка:"
+              es: "Las respuestas cortas y las respuestas con be llevan la forma de objeto:"
             ex: { exchange: [Who's there?, { alternatives: [["It's ", { target: me }, "."], [{ target: Me }, " too."]] }] }
+            tr: { uk: "Хто там? — Це я. Я теж.", es: "¿Quién es? — Soy yo. Yo también." }
 
-  - title: { en: "Form: my, your, his…" }
+  - title: { en: "Form: my, your, his…", uk: "Форма: my, your, his…", es: "Forma: my, your, his…" }
     role: form
     content:
       - type: prose
         level: A0
         text:
           en: "my, your, his… go before a noun and show the owner."
+          uk: "my, your, his… стоять перед іменником і показують власника."
+          es: "my, your, his… van antes de un sustantivo e indican el poseedor."
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject }, features: { case: nom } }
-          - { key: possessive, label: { en: Possessive }, features: { case: gen, wordclass: det } }
-          - { key: ex, label: { en: Example } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" }, features: { case: nom } }
+          - { key: possessive, label: { en: Possessive, uk: "Присвійний", es: "Posesivo" }, features: { case: gen, wordclass: det } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A0, features: { person: 1, number: sg }, subject: I, possessive: my, ex: [{ target: My }, " name is Tom."] }
           - { level: A0, features: { person: 2 }, subject: you, possessive: your, ex: ["What's ", { target: your }, " name?"] }
@@ -131,37 +157,51 @@ sections:
             level: A0
             text:
               en: [{ term: his }, " or ", { term: her }, " depends on the owner:"]
+              uk: [{ term: his }, " чи ", { term: her }, " залежить від власника:"]
+              es: [{ term: his }, " o ", { term: her }, " depende del poseedor:"]
             ex: ["Tom and ", { target: his }, " sister, Ana and ", { target: her }, " brother."]
+            tr: { uk: "Том і його сестра, Ана і її брат.", es: "Tom y su hermana, Ana y su hermano." }
           - type: rule
             level: A0
             text:
               en: ["The possessive never changes for the thing: ", { term: my }, " book, ", { term: my }, " books."]
+              uk: ["Присвійний займенник не змінюється залежно від предмета: ", { term: my }, " book, ", { term: my }, " books."]
+              es: ["El posesivo no cambia según la cosa poseída: ", { term: my }, " book, ", { term: my }, " books."]
           - type: rule
             level: A0
             text:
               en: ["No article before it: ", { term: my }, " car."]
+              uk: ["Перед ним немає артикля: ", { term: my }, " car."]
+              es: ["No lleva artículo delante: ", { term: my }, " car."]
           - type: rule
             level: A0
             text:
               en: [{ term: its }, " has no apostrophe; ", { term: it's }, " = it is."]
+              uk: [{ term: its }, " пишеться без апострофа; ", { term: it's }, " = it is."]
+              es: [{ term: its }, " no lleva apóstrofo; ", { term: it's }, " = it is."]
           - type: rule
             level: A1
             text:
               en: "Body parts and clothes take a possessive:"
+              uk: "Із частинами тіла й одягом уживають присвійний займенник:"
+              es: "Con las partes del cuerpo y la ropa se usa un posesivo:"
             ex: { examples: [["I wash ", { target: my }, " hands."], ["Take off ", { target: your }, " coat."]] }
+            tr: { uk: { examples: ["Я мию руки.", "Зніми пальто."] }, es: { examples: ["Me lavo las manos.", "Quítate el abrigo."] } }
 
-  - title: { en: "Form: mine, yours, his…" }
+  - title: { en: "Form: mine, yours, his…", uk: "Форма: mine, yours, his…", es: "Forma: mine, yours, his…" }
     role: form
     content:
       - type: prose
         level: A1
         text:
           en: "mine, yours, his… stand alone, without a noun."
+          uk: "mine, yours, his… стоять самостійно, без іменника."
+          es: "mine, yours, his… van solos, sin sustantivo."
       - type: paradigm
         columns:
-          - { key: possessive, label: { en: { pattern: [{ slot: noun }], follows: true } }, features: { case: gen, wordclass: det } }
-          - { key: alone, label: { en: Alone }, features: { case: gen, wordclass: pro } }
-          - { key: ex, label: { en: Example } }
+          - { key: possessive, label: { en: { pattern: [{ slot: noun }], follows: true }, uk: { pattern: [{ slot: noun }], follows: true }, es: { pattern: [{ slot: noun }], follows: true } }, features: { case: gen, wordclass: det } }
+          - { key: alone, label: { en: Alone, uk: "Без іменника", es: "Solo" }, features: { case: gen, wordclass: pro } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A1, features: { person: 1, number: sg }, possessive: my, alone: mine, ex: ["This bag is ", { target: mine }, "."] }
           - { level: A1, features: { person: 2 }, possessive: your, alone: yours, ex: ["Is this ", { target: yours }, "?"] }
@@ -175,41 +215,51 @@ sections:
             level: A1
             text:
               en: "No noun after it and no article before it:"
+              uk: "Після нього немає іменника, а перед ним — артикля:"
+              es: "Después no va sustantivo y delante no va artículo:"
             ex: ["It's ", { target: mine }, "."]
+            tr: { uk: "Це моє.", es: "Es mío." }
           - type: rule
             level: A1
             text:
               en: "No apostrophe: yours, hers, ours, theirs."
+              uk: "Без апострофа: yours, hers, ours, theirs."
+              es: "Sin apóstrofo: yours, hers, ours, theirs."
           - type: rule
             level: A1
             text:
               en: [{ term: a friend of mine }, " = one of my friends:"]
+              uk: [{ term: a friend of mine }, " = one of my friends:"]
+              es: [{ term: a friend of mine }, " = one of my friends:"]
             ex: ["Ana is ", { target: a friend of mine }, "."]
+            tr: { uk: "Ана — моя подруга.", es: "Ana es amiga mía." }
 
-  - title: { en: "It for weather, time and distance" }
+  - title: { en: "It for weather, time and distance", uk: "It у реченнях про погоду, час і відстань", es: "It para el clima, la hora y la distancia" }
     role: own
     content:
       - type: prose
         level: A0
         text:
           en: ["Weather, time and distance have no real subject. ", { term: it }, " fills the place."]
+          uk: ["У реченнях про погоду, час і відстань немає справжнього підмета. ", { term: it }, " займає його місце."]
+          es: ["El clima, la hora y la distancia no tienen un sujeto real. ", { term: it }, " ocupa su lugar."]
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A0, use: { en: Weather }, ex: [{ target: It }, "'s cold today."] }
-          - { level: A0, use: { en: Time }, ex: [{ target: It }, "'s five o'clock."] }
-          - { level: A0, use: { en: Days and dates }, ex: [{ target: It }, "'s ", { weekday: Monday, value: 1 }, "."] }
-          - { level: A1, use: { en: Distance }, ex: [{ target: It }, "'s two kilometres to the station."] }
-          - { level: A1, use: { en: { pattern: [it, be, { slot: adjective }, to, { slot: V }] } }, ex: [{ target: It }, "'s easy to cook pasta."] }
+          - { level: A0, use: { en: Weather, uk: "Погода", es: "Clima" }, ex: [{ target: It }, "'s cold today."], tr: { uk: "Сьогодні холодно.", es: "Hoy hace frío." } }
+          - { level: A0, use: { en: Time, uk: "Час", es: "Hora" }, ex: [{ target: It }, "'s five o'clock."], tr: { uk: "Зараз п’ята година.", es: "Son las cinco." } }
+          - { level: A0, use: { en: Days and dates, uk: "Дні й дати", es: "Días y fechas" }, ex: [{ target: It }, "'s ", { weekday: Monday, value: 1 }, "."], tr: { uk: "Сьогодні понеділок.", es: "Hoy es lunes." } }
+          - { level: A1, use: { en: Distance, uk: "Відстань", es: "Distancia" }, ex: [{ target: It }, "'s two kilometres to the station."], tr: { uk: "До вокзалу два кілометри.", es: "Hasta la estación hay dos kilómetros." } }
+          - { level: A1, use: { en: { pattern: [it, be, { slot: adjective }, to, { slot: V }] }, uk: { pattern: [it, be, { slot: adjective }, to, { slot: V }] }, es: { pattern: [it, be, { slot: adjective }, to, { slot: V }] } }, ex: [{ target: It }, "'s easy to cook pasta."], tr: { uk: "Готувати пасту легко.", es: "Es fácil cocinar pasta." } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A0, wrong: The dog wants it's food., right: ["The dog wants ", { target: its }, " food."], rule: { en: its = possessive; it's = it is } }
-          - { level: A1, wrong: I know he., right: ["I know ", { target: him }, "."], rule: { en: "after the verb: object form" } }
-          - { level: A1, wrong: The bag is my., right: ["The bag is ", { target: mine }, "."], rule: { en: { takes: [no noun after it, mine] } } }
-          - { level: A1, wrong: Is this your's?, right: ["Is this ", { target: yours }, "?"], rule: { en: no apostrophe } }
+          - { level: A0, wrong: The dog wants it's food., right: ["The dog wants ", { target: its }, " food."], rule: { en: its = possessive; it's = it is, uk: "its = присвійний; it's = it is", es: "its = posesivo; it's = it is" } }
+          - { level: A1, wrong: I know he., right: ["I know ", { target: him }, "."], rule: { en: "after the verb: object form", uk: "після дієслова: форма додатка", es: "después del verbo: forma de objeto" } }
+          - { level: A1, wrong: The bag is my., right: ["The bag is ", { target: mine }, "."], rule: { en: { takes: [no noun after it, mine] }, uk: { takes: ["немає іменника після нього", mine] }, es: { takes: ["sin sustantivo después", mine] } } }
+          - { level: A1, wrong: Is this your's?, right: ["Is this ", { target: yours }, "?"], rule: { en: no apostrophe, uk: "без апострофа", es: "sin apóstrofo" } }

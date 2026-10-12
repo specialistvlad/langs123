@@ -5,19 +5,25 @@ kind: grammar
 tags: [verbs, tenses, simple, present, past, future]
 concepts: [present-tense, past-tense, future]
 related: [en.tenses.tense-map, en.verbs.to-be, en.verbs.irregular-verbs-table, en.tenses.future-forms, en.tenses.used-to, en.sentence-building.questions-negatives, en.adjectives-adverbs.adverbs-frequency-manner]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Simple Tenses }
+title: { en: Simple Tenses, uk: "Прості часи (Simple)", es: Tiempos simples }
 summary:
-  lead: { en: "Past, present and future simple: do or does, did and will make questions and negatives, and the main verb stays in its base form." }
-  rule: { en: "Once a helper appears, the main verb loses -s and -ed:" }
+  lead:
+    en: "Past, present and future simple: do or does, did and will make questions and negatives, and the main verb stays in its base form."
+    uk: "У Past Simple, Present Simple і Future Simple питання й заперечення утворюють do або does, did і will, а основне дієслово стоїть у початковій формі."
+    es: "En los tiempos simples de presente, pasado y futuro, do o does, did y will forman las preguntas y las negaciones, y el verbo principal queda en la forma base."
+  rule:
+    en: "Once a helper appears, the main verb loses -s and -ed:"
+    uk: "Коли з’являється допоміжне дієслово, основне дієслово втрачає -s і -ed:"
+    es: "Cuando aparece un verbo auxiliar, el verbo principal pierde -s y -ed:"
   ex: { examples: [["She ", { target: doesn't like }, " tea."], [{ target: Did }, " he ", { target: go }, "?"]] }
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: tense, label: { en: Tense } }
+        - { key: tense, label: { en: Tense, uk: "Час", es: "Tiempo" } }
         - { key: qh, slot: aux, features: { interrogativity: int, polarity: pos } }
         - { key: qs, slot: subj, features: { interrogativity: int, polarity: pos } }
         - { key: qv, slot: verb, features: { interrogativity: int, polarity: pos } }
@@ -28,167 +34,204 @@ cheatsheet:
         - { key: nh, slot: aux, features: { interrogativity: decl, polarity: neg } }
         - { key: nv, slot: verb, features: { interrogativity: decl, polarity: neg } }
       rows:
-        - { level: A2, features: { tense: fut, person: 1, number: sg }, tense: { en: Future }, qh: { aux: Will }, qs: I, qv: work?, ss: I, sh: { aux: will }, sv: work., ns: I, nh: { aux: won't }, nv: work. }
-        - { level: A2, features: { tense: fut, person: 2 }, tense: { en: Future }, qh: { aux: Will }, qs: you, qv: work?, ss: You, sh: { aux: will }, sv: work., ns: You, nh: { aux: won't }, nv: work. }
-        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: masc }, tense: { en: Future }, qh: { aux: Will }, qs: he, qv: work?, ss: He, sh: { aux: will }, sv: work., ns: He, nh: { aux: won't }, nv: work. }
-        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: fem }, tense: { en: Future }, qh: { aux: Will }, qs: she, qv: work?, ss: She, sh: { aux: will }, sv: work., ns: She, nh: { aux: won't }, nv: work. }
-        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: neut }, tense: { en: Future }, qh: { aux: Will }, qs: it, qv: work?, ss: It, sh: { aux: will }, sv: work., ns: It, nh: { aux: won't }, nv: work. }
-        - { level: A2, features: { tense: fut, person: 1, number: pl }, tense: { en: Future }, qh: { aux: Will }, qs: we, qv: work?, ss: We, sh: { aux: will }, sv: work., ns: We, nh: { aux: won't }, nv: work. }
-        - { level: A2, features: { tense: fut, person: 3, number: pl }, tense: { en: Future }, qh: { aux: Will }, qs: they, qv: work?, ss: They, sh: { aux: will }, sv: work., ns: They, nh: { aux: won't }, nv: work. }
-        - { level: A1, features: { tense: prs, person: 1, number: sg }, tense: { en: Present }, qh: { aux: Do }, qs: I, qv: work?, ss: I, sv: work., ns: I, nh: { aux: don't }, nv: work. }
-        - { level: A1, features: { tense: prs, person: 2 }, tense: { en: Present }, qh: { aux: Do }, qs: you, qv: work?, ss: You, sv: work., ns: You, nh: { aux: don't }, nv: work. }
-        - { level: A1, features: { tense: prs, person: 3, number: sg, gender: masc }, tense: { en: Present }, qh: { aux: Does }, qs: he, qv: work?, ss: He, sv: [work, { ending: s }, "."], ns: He, nh: { aux: doesn't }, nv: work. }
-        - { level: A1, features: { tense: prs, person: 3, number: sg, gender: fem }, tense: { en: Present }, qh: { aux: Does }, qs: she, qv: work?, ss: She, sv: [work, { ending: s }, "."], ns: She, nh: { aux: doesn't }, nv: work. }
-        - { level: A1, features: { tense: prs, person: 3, number: sg, gender: neut }, tense: { en: Present }, qh: { aux: Does }, qs: it, qv: work?, ss: It, sv: [work, { ending: s }, "."], ns: It, nh: { aux: doesn't }, nv: work. }
-        - { level: A1, features: { tense: prs, person: 1, number: pl }, tense: { en: Present }, qh: { aux: Do }, qs: we, qv: work?, ss: We, sv: work., ns: We, nh: { aux: don't }, nv: work. }
-        - { level: A1, features: { tense: prs, person: 3, number: pl }, tense: { en: Present }, qh: { aux: Do }, qs: they, qv: work?, ss: They, sv: work., ns: They, nh: { aux: don't }, nv: work. }
-        - { level: A1, features: { tense: pst, person: 1, number: sg }, tense: { en: Past }, qh: { aux: Did }, qs: I, qv: work?, ss: I, sv: [work, { ending: ed }, "."], ns: I, nh: { aux: didn't }, nv: work. }
-        - { level: A1, features: { tense: pst, person: 2 }, tense: { en: Past }, qh: { aux: Did }, qs: you, qv: work?, ss: You, sv: [work, { ending: ed }, "."], ns: You, nh: { aux: didn't }, nv: work. }
-        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: masc }, tense: { en: Past }, qh: { aux: Did }, qs: he, qv: work?, ss: He, sv: [work, { ending: ed }, "."], ns: He, nh: { aux: didn't }, nv: work. }
-        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: fem }, tense: { en: Past }, qh: { aux: Did }, qs: she, qv: work?, ss: She, sv: [work, { ending: ed }, "."], ns: She, nh: { aux: didn't }, nv: work. }
-        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: neut }, tense: { en: Past }, qh: { aux: Did }, qs: it, qv: work?, ss: It, sv: [work, { ending: ed }, "."], ns: It, nh: { aux: didn't }, nv: work. }
-        - { level: A1, features: { tense: pst, person: 1, number: pl }, tense: { en: Past }, qh: { aux: Did }, qs: we, qv: work?, ss: We, sv: [work, { ending: ed }, "."], ns: We, nh: { aux: didn't }, nv: work. }
-        - { level: A1, features: { tense: pst, person: 3, number: pl }, tense: { en: Past }, qh: { aux: Did }, qs: they, qv: work?, ss: They, sv: [work, { ending: ed }, "."], ns: They, nh: { aux: didn't }, nv: work. }
+        - { level: A2, features: { tense: fut, person: 1, number: sg }, tense: { en: Future, uk: "Future", es: "Futuro" }, qh: { aux: Will }, qs: I, qv: work?, ss: I, sh: { aux: will }, sv: work., ns: I, nh: { aux: won't }, nv: work. }
+        - { level: A2, features: { tense: fut, person: 2 }, tense: { en: Future, uk: "Future", es: "Futuro" }, qh: { aux: Will }, qs: you, qv: work?, ss: You, sh: { aux: will }, sv: work., ns: You, nh: { aux: won't }, nv: work. }
+        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: masc }, tense: { en: Future, uk: "Future", es: "Futuro" }, qh: { aux: Will }, qs: he, qv: work?, ss: He, sh: { aux: will }, sv: work., ns: He, nh: { aux: won't }, nv: work. }
+        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: fem }, tense: { en: Future, uk: "Future", es: "Futuro" }, qh: { aux: Will }, qs: she, qv: work?, ss: She, sh: { aux: will }, sv: work., ns: She, nh: { aux: won't }, nv: work. }
+        - { level: A2, features: { tense: fut, person: 3, number: sg, gender: neut }, tense: { en: Future, uk: "Future", es: "Futuro" }, qh: { aux: Will }, qs: it, qv: work?, ss: It, sh: { aux: will }, sv: work., ns: It, nh: { aux: won't }, nv: work. }
+        - { level: A2, features: { tense: fut, person: 1, number: pl }, tense: { en: Future, uk: "Future", es: "Futuro" }, qh: { aux: Will }, qs: we, qv: work?, ss: We, sh: { aux: will }, sv: work., ns: We, nh: { aux: won't }, nv: work. }
+        - { level: A2, features: { tense: fut, person: 3, number: pl }, tense: { en: Future, uk: "Future", es: "Futuro" }, qh: { aux: Will }, qs: they, qv: work?, ss: They, sh: { aux: will }, sv: work., ns: They, nh: { aux: won't }, nv: work. }
+        - { level: A1, features: { tense: prs, person: 1, number: sg }, tense: { en: Present, uk: "Present", es: "Presente" }, qh: { aux: Do }, qs: I, qv: work?, ss: I, sv: work., ns: I, nh: { aux: don't }, nv: work. }
+        - { level: A1, features: { tense: prs, person: 2 }, tense: { en: Present, uk: "Present", es: "Presente" }, qh: { aux: Do }, qs: you, qv: work?, ss: You, sv: work., ns: You, nh: { aux: don't }, nv: work. }
+        - { level: A1, features: { tense: prs, person: 3, number: sg, gender: masc }, tense: { en: Present, uk: "Present", es: "Presente" }, qh: { aux: Does }, qs: he, qv: work?, ss: He, sv: [work, { ending: s }, "."], ns: He, nh: { aux: doesn't }, nv: work. }
+        - { level: A1, features: { tense: prs, person: 3, number: sg, gender: fem }, tense: { en: Present, uk: "Present", es: "Presente" }, qh: { aux: Does }, qs: she, qv: work?, ss: She, sv: [work, { ending: s }, "."], ns: She, nh: { aux: doesn't }, nv: work. }
+        - { level: A1, features: { tense: prs, person: 3, number: sg, gender: neut }, tense: { en: Present, uk: "Present", es: "Presente" }, qh: { aux: Does }, qs: it, qv: work?, ss: It, sv: [work, { ending: s }, "."], ns: It, nh: { aux: doesn't }, nv: work. }
+        - { level: A1, features: { tense: prs, person: 1, number: pl }, tense: { en: Present, uk: "Present", es: "Presente" }, qh: { aux: Do }, qs: we, qv: work?, ss: We, sv: work., ns: We, nh: { aux: don't }, nv: work. }
+        - { level: A1, features: { tense: prs, person: 3, number: pl }, tense: { en: Present, uk: "Present", es: "Presente" }, qh: { aux: Do }, qs: they, qv: work?, ss: They, sv: work., ns: They, nh: { aux: don't }, nv: work. }
+        - { level: A1, features: { tense: pst, person: 1, number: sg }, tense: { en: Past, uk: "Past", es: "Pasado" }, qh: { aux: Did }, qs: I, qv: work?, ss: I, sv: [work, { ending: ed }, "."], ns: I, nh: { aux: didn't }, nv: work. }
+        - { level: A1, features: { tense: pst, person: 2 }, tense: { en: Past, uk: "Past", es: "Pasado" }, qh: { aux: Did }, qs: you, qv: work?, ss: You, sv: [work, { ending: ed }, "."], ns: You, nh: { aux: didn't }, nv: work. }
+        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: masc }, tense: { en: Past, uk: "Past", es: "Pasado" }, qh: { aux: Did }, qs: he, qv: work?, ss: He, sv: [work, { ending: ed }, "."], ns: He, nh: { aux: didn't }, nv: work. }
+        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: fem }, tense: { en: Past, uk: "Past", es: "Pasado" }, qh: { aux: Did }, qs: she, qv: work?, ss: She, sv: [work, { ending: ed }, "."], ns: She, nh: { aux: didn't }, nv: work. }
+        - { level: A1, features: { tense: pst, person: 3, number: sg, gender: neut }, tense: { en: Past, uk: "Past", es: "Pasado" }, qh: { aux: Did }, qs: it, qv: work?, ss: It, sv: [work, { ending: ed }, "."], ns: It, nh: { aux: didn't }, nv: work. }
+        - { level: A1, features: { tense: pst, person: 1, number: pl }, tense: { en: Past, uk: "Past", es: "Pasado" }, qh: { aux: Did }, qs: we, qv: work?, ss: We, sv: [work, { ending: ed }, "."], ns: We, nh: { aux: didn't }, nv: work. }
+        - { level: A1, features: { tense: pst, person: 3, number: pl }, tense: { en: Past, uk: "Past", es: "Pasado" }, qh: { aux: Did }, qs: they, qv: work?, ss: They, sv: [work, { ending: ed }, "."], ns: They, nh: { aux: didn't }, nv: work. }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: prose
         level: A1
         text:
           en: ["Each simple tense has a helper verb: ", { term: will }, " for the future, ", { alternatives: [{ term: do }, { term: does }] }, " for the present, ", { term: did }, " for the past."]
+          uk: ["У кожному простому часі є допоміжне дієслово: ", { term: will }, " для майбутнього, ", { alternatives: [{ term: do }, { term: does }] }, " для теперішнього, ", { term: did }, " для минулого."]
+          es: ["Cada tiempo simple tiene un verbo auxiliar: ", { term: will }, " para el futuro, ", { alternatives: [{ term: do }, { term: does }] }, " para el presente, ", { term: did }, " para el pasado."]
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["In questions the helper goes before the subject; in negatives it takes ", { term: not }, ": don't, doesn't, didn't, won't."]
+              uk: ["У питаннях допоміжне дієслово стоїть перед підметом; у запереченнях воно приєднує ", { term: not }, ": don't, doesn't, didn't, won't."]
+              es: ["En las preguntas el auxiliar va antes del sujeto; en las negaciones lleva ", { term: not }, ": don't, doesn't, didn't, won't."]
           - type: rule
             level: A1
             text:
               en: "After every helper the main verb is in the base form:"
+              uk: "Після кожного допоміжного дієслова основне дієслово стоїть у початковій формі:"
+              es: "Después de cualquier auxiliar, el verbo principal va en la forma base:"
             ex: { examples: [["Does she ", { target: work }, "?"], ["She didn't ", { target: work }, "."]] }
+            tr: { uk: { examples: ["Вона працює?", "Вона не працювала."] }, es: { examples: ["¿Trabaja ella?", "Ella no trabajó."] } }
           - type: rule
             level: A1
             text:
               en: ["Present and past statements have no helper: the verb itself takes ", { term: "-s" }, " (he, she, it) or ", { term: "-ed" }, "."]
+              uk: ["У ствердженнях Present Simple і Past Simple допоміжного дієслова немає: саме дієслово приймає ", { term: "-s" }, " (he, she, it) або ", { term: "-ed" }, "."]
+              es: ["Las afirmaciones en presente y en pasado no llevan auxiliar: el propio verbo toma ", { term: "-s" }, " (he, she, it) o ", { term: "-ed" }, "."]
           - type: rule
             level: A1
             text:
               en: [{ term: will }, " and ", { term: did }, " are the same for every person; only the present changes with he, she, it."]
+              uk: [{ term: will }, " і ", { term: did }, " однакові для всіх осіб; лише Present Simple змінюється з he, she, it."]
+              es: [{ term: will }, " y ", { term: did }, " son iguales para todas las personas; solo el presente cambia con he, she, it."]
           - type: note
             level: A1
             text:
               en: [{ term: be }, " has its own forms: ", { alternatives: [am, is, are] }, ", ", { alternatives: [was, were] }, ". See ", { link: To be, to: en.verbs.to-be }, "."]
+              uk: [{ term: be }, " має власні форми: ", { alternatives: [am, is, are] }, ", ", { alternatives: [was, were] }, ". Див. ", { link: "Дієслово to be", to: en.verbs.to-be }, "."]
+              es: [{ term: be }, " tiene formas propias: ", { alternatives: [am, is, are] }, ", ", { alternatives: [was, were] }, ". Ver ", { link: "El verbo to be", to: en.verbs.to-be }, "."]
 
-  - title: { en: "Present simple: form" }
+  - title: { en: "Present simple: form", uk: "Present Simple: форма", es: "Presente simple: forma" }
     role: form
     features: { tense: prs }
     content:
       - type: paradigm
         columns:
-          - { key: subject, label: { en: Subject } }
-          - { key: verb, label: { en: Verb } }
-          - { key: ex, label: { en: Example } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A1, features: [{ person: 1, number: sg }, { person: 2 }, { person: 1, number: pl }, { person: 3, number: pl }], subject: { alternatives: [I, you, we, they] }, verb: V, ex: ["I ", { target: live }, " in Madrid."] }
           - { level: A1, features: { person: 3, number: sg }, subject: { alternatives: [he, she, it] }, verb: V-s, ex: ["She ", { target: lives }, " in Madrid."] }
-          - { level: A1, features: { person: 3, number: sg }, subject: { en: singular noun }, verb: V-s, ex: ["My brother ", { target: lives }, " in Madrid."] }
-          - { level: A1, features: { person: 3, number: pl }, subject: { en: plural noun }, verb: V, ex: ["My parents ", { target: live }, " in Madrid."] }
+          - { level: A1, features: { person: 3, number: sg }, subject: { en: singular noun, uk: "іменник в однині", es: "sustantivo en singular" }, verb: V-s, ex: ["My brother ", { target: lives }, " in Madrid."] }
+          - { level: A1, features: { person: 3, number: pl }, subject: { en: plural noun, uk: "іменник у множині", es: "sustantivo en plural" }, verb: V, ex: ["My parents ", { target: live }, " in Madrid."] }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "A short answer repeats the helper:"
+              uk: "Коротка відповідь повторює допоміжне дієслово:"
+              es: "La respuesta corta repite el auxiliar:"
             ex: { exchange: [Do you like tea?, { alternatives: [["Yes, I ", { target: do }, "."], ["No, I ", { target: don't }, "."]] }] }
+            tr: { uk: { examples: ["Ти любиш чай? — Так, люблю.", "Ти любиш чай? — Ні, не люблю."] }, es: { examples: ["¿Te gusta el té? — Sí, me gusta.", "¿Te gusta el té? — No, no me gusta."] } }
           - type: rule
             level: A1
             text:
               en: ["A wh-word goes first: ", { pattern: [{ slot: wh-word }, { alternatives: [do, does] }, { slot: subject }, { slot: verb }] }, "."]
+              uk: ["Питальне слово стоїть першим: ", { pattern: [{ slot: wh-word }, { alternatives: [do, does] }, { slot: subject }, { slot: verb }] }, "."]
+              es: ["La palabra interrogativa va primero: ", { pattern: [{ slot: wh-word }, { alternatives: [do, does] }, { slot: subject }, { slot: verb }] }, "."]
             ex: ["Where ", { target: does }, " he ", { target: live }, "?"]
+            tr: { uk: "Де він живе?", es: "¿Dónde vive él?" }
           - type: rule
             level: A2
             text:
               en: ["When ", { term: who }, " or ", { term: what }, " is the subject, the verb follows directly, with -s:"]
+              uk: ["Коли ", { term: who }, " або ", { term: what }, " є підметом, дієслово йде одразу після нього й має -s:"]
+              es: ["Cuando ", { term: who }, " o ", { term: what }, " es el sujeto, el verbo va justo después y lleva -s:"]
             ex: ["Who ", { target: lives }, " here?"]
+            tr: { uk: "Хто тут живе?", es: "¿Quién vive aquí?" }
           - type: note
             level: A1
             text:
               en: ["More question patterns: ", { link: Questions and negatives, to: en.sentence-building.questions-negatives }, "."]
+              uk: ["Більше схем питань: ", { link: "Питання та заперечення", to: en.sentence-building.questions-negatives }, "."]
+              es: ["Más estructuras de preguntas: ", { link: "Preguntas y negaciones", to: en.sentence-building.questions-negatives }, "."]
 
-  - title: { en: "Present simple: the -s ending" }
+  - title: { en: "Present simple: the -s ending", uk: "Present Simple: закінчення -s", es: "Presente simple: la terminación -s" }
     role: own
     features: { tense: prs }
     content:
       - type: usage
         columns:
-          - { key: ending, label: { en: Verb ending } }
-          - { key: rule, label: { en: Spelling } }
-          - { key: ex, label: { en: Examples } }
+          - { key: ending, label: { en: Verb ending, uk: "Закінчення дієслова", es: "Terminación del verbo" } }
+          - { key: rule, label: { en: Spelling, uk: "Правопис", es: "Ortografía" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A1, ending: { en: most verbs }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [work, works] }, { mapping: [read, reads] }] } }
-          - { level: A1, ending: "-s, -ss, -sh, -ch, -x, -z", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [pass, passes] }, { mapping: [wash, washes] }, { mapping: [watch, watches] }, { mapping: [fix, fixes] }] } }
-          - { level: A1, ending: "-o", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [go, goes] }, { mapping: [do, does] }] } }
-          - { level: A1, ending: { en: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ies] }, ex: { examples: [{ mapping: [study, studies] }, { mapping: [try, tries] }] } }
-          - { level: A1, ending: { en: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [play, plays] }, { mapping: [buy, buys] }] } }
-          - { level: A1, ending: have, rule: { en: own form }, ex: { mapping: [have, has] } }
+          - { level: A1, ending: { en: most verbs, uk: "більшість дієслів", es: "la mayoría de los verbos" }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [work, works] }, { mapping: [read, reads] }] }, tr: { uk: { examples: ["працювати", "читати"] }, es: { examples: ["trabajar", "leer"] } } }
+          - { level: A1, ending: "-s, -ss, -sh, -ch, -x, -z", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [pass, passes] }, { mapping: [wash, washes] }, { mapping: [watch, watches] }, { mapping: [fix, fixes] }] }, tr: { uk: { examples: ["передавати", "мити", "дивитися", "лагодити"] }, es: { examples: ["pasar", "lavar", "mirar", "arreglar"] } } }
+          - { level: A1, ending: "-o", rule: { pattern: [{ ending: es }], follows: true }, ex: { examples: [{ mapping: [go, goes] }, { mapping: [do, does] }] }, tr: { uk: { examples: ["йти", "робити"] }, es: { examples: ["ir", "hacer"] } } }
+          - { level: A1, ending: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ies] }, ex: { examples: [{ mapping: [study, studies] }, { mapping: [try, tries] }] }, tr: { uk: { examples: ["вчитися", "пробувати"] }, es: { examples: ["estudiar", "intentar"] } } }
+          - { level: A1, ending: { en: { pattern: [{ slot: vowel }, "y"] }, uk: { pattern: [{ slot: vowel }, "y"] }, es: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: s }], follows: true }, ex: { examples: [{ mapping: [play, plays] }, { mapping: [buy, buys] }] }, tr: { uk: { examples: ["грати", "купувати"] }, es: { examples: ["jugar", "comprar"] } } }
+          - { level: A1, ending: have, rule: { en: own form, uk: "власна форма", es: "forma propia" }, ex: { mapping: [have, has] }, tr: { uk: "мати", es: "tener" } }
       - type: usage
         columns:
-          - { key: sound, label: { en: Sound } }
-          - { key: after, label: { en: After } }
-          - { key: ex, label: { en: Examples } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: after, label: { en: After, uk: "Після", es: "Después de" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A2, sound: { ipa: s }, after: { en: ["voiceless sounds ", { ipa: p t k f θ }] }, ex: { examples: [["stops ", { ipa: stɒps }], ["works ", { ipa: wɜːks }], ["laughs ", { ipa: lɑːfs }]] } }
-          - { level: A2, sound: { ipa: z }, after: { en: voiced sounds and vowels }, ex: { examples: [["lives ", { ipa: lɪvz }], ["plays ", { ipa: pleɪz }], ["goes ", { ipa: ɡəʊz }]] } }
-          - { level: A2, sound: { ipa: ɪz }, after: { ipa: s z ʃ tʃ dʒ }, ex: { examples: [["washes ", { ipa: ˈwɒʃɪz }], ["watches ", { ipa: ˈwɒtʃɪz }], ["uses ", { ipa: ˈjuːzɪz }]] } }
+          - { level: A2, sound: { ipa: s }, after: { en: ["voiceless sounds ", { ipa: p t k f θ }], uk: ["глухі звуки ", { ipa: p t k f θ }], es: ["sonidos sordos ", { ipa: p t k f θ }] }, ex: { examples: [["stops ", { ipa: stɒps }], ["works ", { ipa: wɜːks }], ["laughs ", { ipa: lɑːfs }]] }, tr: { uk: { examples: ["зупиняється", "працює", "сміється"] }, es: { examples: ["se detiene", "trabaja", "se ríe"] } } }
+          - { level: A2, sound: { ipa: z }, after: { en: voiced sounds and vowels, uk: "дзвінкі звуки й голосні", es: "sonidos sonoros y vocales" }, ex: { examples: [["lives ", { ipa: lɪvz }], ["plays ", { ipa: pleɪz }], ["goes ", { ipa: ɡəʊz }]] }, tr: { uk: { examples: ["живе", "грає", "йде"] }, es: { examples: ["vive", "juega", "va"] } } }
+          - { level: A2, sound: { ipa: ɪz }, after: { ipa: s z ʃ tʃ dʒ }, ex: { examples: [["washes ", { ipa: ˈwɒʃɪz }], ["watches ", { ipa: ˈwɒtʃɪz }], ["uses ", { ipa: ˈjuːzɪz }]] }, tr: { uk: { examples: ["миє", "дивиться", "використовує"] }, es: { examples: ["lava", "mira", "usa"] } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Three verbs change their vowel sound: does ", { ipa: dʌz }, ", says ", { ipa: sez }, ", has ", { ipa: hæz }, "."]
+              uk: ["Три дієслова змінюють голосний звук: does ", { ipa: dʌz }, ", says ", { ipa: sez }, ", has ", { ipa: hæz }, "."]
+              es: ["Tres verbos cambian el sonido de la vocal: does ", { ipa: dʌz }, ", says ", { ipa: sez }, ", has ", { ipa: hæz }, "."]
 
-  - title: { en: "Present simple: use" }
+  - title: { en: "Present simple: use", uk: "Present Simple: вживання", es: "Presente simple: uso" }
     role: use
     features: { tense: prs }
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: Habits and routines }, ex: ["I ", { target: get up }, " at 7."] }
-          - { level: A1, use: { en: Facts and general truths }, ex: ["Water ", { target: boils }, " at 100 °C."] }
-          - { level: A1, use: { en: Permanent states }, ex: ["She ", { target: lives }, " in London."] }
-          - { level: A1, use: { en: "Likes, dislikes, opinions" }, ex: { examples: [["I ", { target: like }, " coffee."], ["I ", { target: think }, " so."]] } }
-          - { level: A1, use: { en: Jobs and regular activities }, ex: ["He ", { target: teaches }, " maths."] }
-          - { level: A2, use: { en: Timetables and schedules (future) }, ex: ["The train ", { target: leaves }, " at ", { time: "6:15", value: "06:15" }, "."] }
-          - { level: A2, use: { en: Instructions and directions }, ex: ["You ", { target: turn }, " left at the bank."] }
+          - { level: A1, use: { en: Habits and routines, uk: "Звички й розпорядок", es: "Hábitos y rutinas" }, ex: ["I ", { target: get up }, " at 7."], tr: { uk: "Я встаю о сьомій.", es: "Me levanto a las 7." } }
+          - { level: A1, use: { en: Facts and general truths, uk: "Факти й загальні істини", es: "Hechos y verdades generales" }, ex: ["Water ", { target: boils }, " at 100 °C."], tr: { uk: "Вода кипить при 100 °C.", es: "El agua hierve a 100 °C." } }
+          - { level: A1, use: { en: Permanent states, uk: "Постійні стани", es: "Estados permanentes" }, ex: ["She ", { target: lives }, " in London."], tr: { uk: "Вона живе в Лондоні.", es: "Ella vive en Londres." } }
+          - { level: A1, use: { en: "Likes, dislikes, opinions", uk: "Уподобання, антипатії, думки", es: "Gustos, disgustos, opiniones" }, ex: { examples: [["I ", { target: like }, " coffee."], ["I ", { target: think }, " so."]] }, tr: { uk: { examples: ["Я люблю каву.", "Я так думаю."] }, es: { examples: ["Me gusta el café.", "Eso creo."] } } }
+          - { level: A1, use: { en: Jobs and regular activities, uk: "Професії та регулярні заняття", es: "Trabajos y actividades regulares" }, ex: ["He ", { target: teaches }, " maths."], tr: { uk: "Він викладає математику.", es: "Él enseña matemáticas." } }
+          - { level: A2, use: { en: Timetables and schedules (future), uk: "Розклади й графіки (майбутнє)", es: "Horarios y calendarios (futuro)" }, ex: ["The train ", { target: leaves }, " at ", { time: "6:15", value: "06:15" }, "."], tr: { uk: "Потяг відправляється о 6:15.", es: "El tren sale a las 6:15." } }
+          - { level: A2, use: { en: Instructions and directions, uk: "Інструкції та вказівки", es: "Instrucciones e indicaciones" }, ex: ["You ", { target: turn }, " left at the bank."], tr: { uk: "Біля банку повертаєш ліворуч.", es: "En el banco giras a la izquierda." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "Frequency adverbs go before the main verb and after be:"
+              uk: "Прислівники частотності стоять перед основним дієсловом і після be:"
+              es: "Los adverbios de frecuencia van antes del verbo principal y después de be:"
             ex: { examples: [["I ", { target: often }, " walk to work."], ["She is ", { target: always }, " late."]] }
+            tr: { uk: { examples: ["Я часто ходжу на роботу пішки.", "Вона завжди запізнюється."] }, es: { examples: ["A menudo voy al trabajo caminando.", "Ella siempre llega tarde."] } }
           - type: rule
             level: A1
             text:
               en: "Time expressions go at the end:"
+              uk: "Вирази часу стоять у кінці речення:"
+              es: "Las expresiones de tiempo van al final:"
             ex: { examples: [["I swim ", { target: every day }, "."], ["She works late ", { target: ["on ", { weekday: Mondays, value: 1 }] }, "."]] }
+            tr: { uk: { examples: ["Я плаваю щодня.", "Вона працює допізна по понеділках."] }, es: { examples: ["Nado todos los días.", "Ella trabaja hasta tarde los lunes."] } }
           - type: rule
             level: A2
             text:
               en: "Verbs for states take the present simple, also for now:"
+              uk: "Дієслова стану вживаються в Present Simple, навіть коли йдеться про теперішній момент:"
+              es: "Los verbos de estado van en presente simple, también para el momento actual:"
             ex: { examples: [["I ", { target: know }, " the answer."], ["I ", { target: want }, " a coffee."]] }
+            tr: { uk: { examples: ["Я знаю відповідь.", "Я хочу кави."] }, es: { examples: ["Sé la respuesta.", "Quiero un café."] } }
           - type: note
             level: A1
             text:
               en: ["All frequency adverbs: ", { link: Adverbs of frequency and manner, to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
+              uk: ["Усі прислівники частотності: ", { link: "Прислівники частотності та способу дії", to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
+              es: ["Todos los adverbios de frecuencia: ", { link: "Adverbios de frecuencia y de modo", to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
 
-  - title: { en: "Past simple: form" }
+  - title: { en: "Past simple: form", uk: "Past Simple: форма", es: "Pasado simple: forma" }
     role: form
     features: { tense: pst }
     content:
@@ -198,77 +241,93 @@ sections:
             level: A1
             text:
               en: [{ term: be }, " has its own past, with no helper: ", { alternatives: [was, were] }, ". See ", { link: To be, to: en.verbs.to-be }, "."]
+              uk: [{ term: be }, " має власну форму минулого часу, без допоміжного дієслова: ", { alternatives: [was, were] }, ". Див. ", { link: "Дієслово to be", to: en.verbs.to-be }, "."]
+              es: [{ term: be }, " tiene su propio pasado, sin auxiliar: ", { alternatives: [was, were] }, ". Ver ", { link: "El verbo to be", to: en.verbs.to-be }, "."]
             ex: { examples: [["I ", { target: was }, " at home."], [{ target: Were }, " you there?"]] }
+            tr: { uk: { examples: ["Я був удома.", "Ти був там?"] }, es: { examples: ["Estaba en casa.", "¿Estabas allí?"] } }
       - type: prose
         level: A1
         text:
           en: "Every other verb has one past form for every person:"
+          uk: "Кожне інше дієслово має одну форму минулого часу для всіх осіб:"
+          es: "Todos los demás verbos tienen una sola forma de pasado para todas las personas:"
       - type: usage
         columns:
-          - { key: type, label: { en: Verb type } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: type, label: { en: Verb type, uk: "Тип дієслова", es: "Tipo de verbo" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, type: { en: regular }, form: V-ed, ex: ["I ", { target: watched }, " TV."] }
-          - { level: A1, type: { en: irregular }, form: { en: own form }, ex: ["I ", { target: saw }, " a film."] }
+          - { level: A1, type: { en: regular, uk: "правильне", es: "regular" }, form: V-ed, ex: ["I ", { target: watched }, " TV."], tr: { uk: "Я дивився телевізор.", es: "Miré la televisión." } }
+          - { level: A1, type: { en: irregular, uk: "неправильне", es: "irregular" }, form: { en: own form, uk: "власна форма", es: "forma propia" }, ex: ["I ", { target: saw }, " a film."], tr: { uk: "Я подивився фільм.", es: "Vi una película." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "A short answer repeats the helper:"
+              uk: "Коротка відповідь повторює допоміжне дієслово:"
+              es: "La respuesta corta repite el auxiliar:"
             ex: { exchange: [Did you like it?, { alternatives: [["Yes, I ", { target: did }, "."], ["No, I ", { target: didn't }, "."]] }] }
+            tr: { uk: { examples: ["Тобі сподобалося? — Так, сподобалося.", "Тобі сподобалося? — Ні, не сподобалося."] }, es: { examples: ["¿Te gustó? — Sí, me gustó.", "¿Te gustó? — No, no me gustó."] } }
           - type: rule
             level: A1
             text:
               en: ["A wh-word goes first: ", { pattern: [{ slot: wh-word }, did, { slot: subject }, { slot: verb }] }, "."]
+              uk: ["Питальне слово стоїть першим: ", { pattern: [{ slot: wh-word }, did, { slot: subject }, { slot: verb }] }, "."]
+              es: ["La palabra interrogativa va primero: ", { pattern: [{ slot: wh-word }, did, { slot: subject }, { slot: verb }] }, "."]
             ex: ["Where ", { target: did }, " they ", { target: go }, "?"]
+            tr: { uk: "Куди вони пішли?", es: "¿Adónde fueron?" }
           - type: rule
             level: A2
             text:
               en: ["When ", { term: who }, " or ", { term: what }, " is the subject, the verb is in the past directly:"]
+              uk: ["Коли ", { term: who }, " або ", { term: what }, " є підметом, дієслово одразу стоїть у минулому часі:"]
+              es: ["Cuando ", { term: who }, " o ", { term: what }, " es el sujeto, el verbo va directamente en pasado:"]
             ex: { examples: [["Who ", { target: called }, " you?"], ["What ", { target: happened }, "?"]] }
+            tr: { uk: { examples: ["Хто тобі дзвонив?", "Що сталося?"] }, es: { examples: ["¿Quién te llamó?", "¿Qué pasó?"] } }
 
-  - title: { en: "Past simple: the -ed ending" }
+  - title: { en: "Past simple: the -ed ending", uk: "Past Simple: закінчення -ed", es: "Pasado simple: la terminación -ed" }
     role: own
     features: { tense: pst }
     content:
       - type: usage
         columns:
-          - { key: ending, label: { en: Verb ending } }
-          - { key: rule, label: { en: Spelling } }
-          - { key: ex, label: { en: Examples } }
+          - { key: ending, label: { en: Verb ending, uk: "Закінчення дієслова", es: "Terminación del verbo" } }
+          - { key: rule, label: { en: Spelling, uk: "Правопис", es: "Ortografía" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A1, ending: { en: most verbs }, rule: { pattern: [{ ending: ed }], follows: true }, ex: { examples: [{ mapping: [work, worked] }, { mapping: [watch, watched] }, { mapping: [visit, visited] }] } }
-          - { level: A1, ending: "-e", rule: { pattern: [{ ending: d }], follows: true }, ex: { examples: [{ mapping: [live, lived] }, { mapping: [like, liked] }, { mapping: [arrive, arrived] }] } }
-          - { level: A1, ending: { en: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ied] }, ex: { examples: [{ mapping: [study, studied] }, { mapping: [try, tried] }] } }
-          - { level: A1, ending: { en: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: ed }], follows: true }, ex: { examples: [{ mapping: [play, played] }, { mapping: [stay, stayed] }] } }
-          - { level: A1, ending: { en: { pattern: ["1 vowel", "1 consonant, one syllable"] } }, rule: { en: { pattern: [double the consonant, ed] } }, ex: { examples: [{ mapping: [stop, stopped] }, { mapping: [plan, planned] }] } }
+          - { level: A1, ending: { en: most verbs, uk: "більшість дієслів", es: "la mayoría de los verbos" }, rule: { pattern: [{ ending: ed }], follows: true }, ex: { examples: [{ mapping: [work, worked] }, { mapping: [watch, watched] }, { mapping: [visit, visited] }] }, tr: { uk: { examples: ["працювати", "дивитися", "відвідувати"] }, es: { examples: ["trabajar", "mirar", "visitar"] } } }
+          - { level: A1, ending: "-e", rule: { pattern: [{ ending: d }], follows: true }, ex: { examples: [{ mapping: [live, lived] }, { mapping: [like, liked] }, { mapping: [arrive, arrived] }] }, tr: { uk: { examples: ["жити", "подобатися", "прибувати"] }, es: { examples: ["vivir", "gustar", "llegar"] } } }
+          - { level: A1, ending: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ied] }, ex: { examples: [{ mapping: [study, studied] }, { mapping: [try, tried] }] }, tr: { uk: { examples: ["вчитися", "пробувати"] }, es: { examples: ["estudiar", "intentar"] } } }
+          - { level: A1, ending: { en: { pattern: [{ slot: vowel }, "y"] }, uk: { pattern: [{ slot: vowel }, "y"] }, es: { pattern: [{ slot: vowel }, "y"] } }, rule: { pattern: [{ ending: ed }], follows: true }, ex: { examples: [{ mapping: [play, played] }, { mapping: [stay, stayed] }] }, tr: { uk: { examples: ["грати", "залишатися"] }, es: { examples: ["jugar", "quedarse"] } } }
+          - { level: A1, ending: { en: { pattern: ["1 vowel", "1 consonant, one syllable"] }, uk: { pattern: ["1 голосний", "1 приголосний, один склад"] }, es: { pattern: ["1 vocal", "1 consonante, una sílaba"] } }, rule: { en: { pattern: [double the consonant, ed] }, uk: { pattern: ["подвоїти приголосний", ed] }, es: { pattern: ["duplicar la consonante", ed] } }, ex: { examples: [{ mapping: [stop, stopped] }, { mapping: [plan, planned] }] }, tr: { uk: { examples: ["зупинятися", "планувати"] }, es: { examples: ["parar", "planear"] } } }
       - type: usage
         columns:
-          - { key: sound, label: { en: Sound } }
-          - { key: after, label: { en: After } }
-          - { key: ex, label: { en: Examples } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: after, label: { en: After, uk: "Після", es: "Después de" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A2, sound: { ipa: t }, after: { en: ["voiceless sounds ", { ipa: p k f s ʃ tʃ θ }] }, ex: { examples: [["stopped ", { ipa: stɒpt }], ["worked ", { ipa: wɜːkt }], ["watched ", { ipa: wɒtʃt }]] } }
-          - { level: A2, sound: { ipa: d }, after: { en: voiced sounds and vowels }, ex: { examples: [["lived ", { ipa: lɪvd }], ["played ", { ipa: pleɪd }], ["opened ", { ipa: ˈəʊpənd }]] } }
-          - { level: A2, sound: { ipa: ɪd }, after: { ipa: t d }, ex: { examples: [["wanted ", { ipa: ˈwɒntɪd }], ["needed ", { ipa: ˈniːdɪd }], ["visited ", { ipa: ˈvɪzɪtɪd }]] } }
+          - { level: A2, sound: { ipa: t }, after: { en: ["voiceless sounds ", { ipa: p k f s ʃ tʃ θ }], uk: ["глухі звуки ", { ipa: p k f s ʃ tʃ θ }], es: ["sonidos sordos ", { ipa: p k f s ʃ tʃ θ }] }, ex: { examples: [["stopped ", { ipa: stɒpt }], ["worked ", { ipa: wɜːkt }], ["watched ", { ipa: wɒtʃt }]] }, tr: { uk: { examples: ["зупинився", "працював", "дивився"] }, es: { examples: ["se detuvo", "trabajó", "miró"] } } }
+          - { level: A2, sound: { ipa: d }, after: { en: voiced sounds and vowels, uk: "дзвінкі звуки й голосні", es: "sonidos sonoros y vocales" }, ex: { examples: [["lived ", { ipa: lɪvd }], ["played ", { ipa: pleɪd }], ["opened ", { ipa: ˈəʊpənd }]] }, tr: { uk: { examples: ["жив", "грав", "відчинив"] }, es: { examples: ["vivió", "jugó", "abrió"] } } }
+          - { level: A2, sound: { ipa: ɪd }, after: { ipa: t d }, ex: { examples: [["wanted ", { ipa: ˈwɒntɪd }], ["needed ", { ipa: ˈniːdɪd }], ["visited ", { ipa: ˈvɪzɪtɪd }]] }, tr: { uk: { examples: ["хотів", "потребував", "відвідав"] }, es: { examples: ["quiso", "necesitó", "visitó"] } } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["The ending adds a syllable only after ", { ipa: t }, " and ", { ipa: d }, ": wanted has two syllables, worked has one."]
+              uk: ["Закінчення додає склад лише після ", { ipa: t }, " і ", { ipa: d }, ": wanted має два склади, worked — один."]
+              es: ["La terminación añade una sílaba solo después de ", { ipa: t }, " y ", { ipa: d }, ": wanted tiene dos sílabas, worked tiene una."]
 
-  - title: { en: "Past simple: irregular verbs" }
+  - title: { en: "Past simple: irregular verbs", uk: "Past Simple: неправильні дієслова", es: "Pasado simple: verbos irregulares" }
     role: own
     features: { tense: pst }
     content:
       - type: paradigm
         columns:
-          - { key: base, label: { en: Base verb }, features: { verbform: inf } }
-          - { key: past, label: { en: Past simple }, features: { tense: pst } }
-          - { key: ex, label: { en: Example } }
+          - { key: base, label: { en: Base verb, uk: "Початкова форма", es: "Forma base" }, features: { verbform: inf } }
+          - { key: past, label: { en: Past simple, uk: "Past Simple", es: "Pasado simple" }, features: { tense: pst } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A1, base: go, past: went, ex: ["We ", { target: went }, " home."] }
           - { level: A1, base: have, past: had, ex: ["I ", { target: had }, " lunch."] }
@@ -288,109 +347,126 @@ sections:
             level: A1
             text:
               en: ["The irregular form is only for statements; questions and negatives take ", { pattern: [did, { slot: base verb }] }, ":"]
+              uk: ["Неправильна форма стоїть лише в ствердженнях; питання й заперечення вживають ", { pattern: [did, { slot: base verb }] }, ":"]
+              es: ["La forma irregular solo se usa en afirmaciones; las preguntas y las negaciones llevan ", { pattern: [did, { slot: base verb }] }, ":"]
             ex: ["Did you ", { target: go }, "?"]
+            tr: { uk: "Ти ходив?", es: "¿Fuiste?" }
           - type: note
             level: A1
             text:
               en: ["More verbs: ", { link: Irregular verbs table, to: en.verbs.irregular-verbs-table }, "."]
+              uk: ["Більше дієслів: ", { link: "Таблиця неправильних дієслів", to: en.verbs.irregular-verbs-table }, "."]
+              es: ["Más verbos: ", { link: "Tabla de verbos irregulares", to: en.verbs.irregular-verbs-table }, "."]
 
-  - title: { en: "Past simple: use" }
+  - title: { en: "Past simple: use", uk: "Past Simple: вживання", es: "Pasado simple: uso" }
     role: use
     features: { tense: pst }
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: Finished actions at a stated past time }, ex: ["I ", { target: visited }, " Paris last year."] }
-          - { level: A1, use: { en: Past states }, ex: ["She ", { target: was }, " ill on ", { weekday: Monday, value: 1 }, "."] }
-          - { level: A1, use: { en: Sequences of events }, ex: ["I ", { target: got up }, ", ", { target: had }, " a shower and ", { target: left }, "."] }
-          - { level: A2, use: { en: Past habits that are over }, ex: ["When I was a child, I ", { target: played }, " outside every day."] }
+          - { level: A1, use: { en: Finished actions at a stated past time, uk: "Завершені дії в названий момент минулого", es: "Acciones terminadas en un momento concreto del pasado" }, ex: ["I ", { target: visited }, " Paris last year."], tr: { uk: "Торік я відвідав Париж.", es: "El año pasado visité París." } }
+          - { level: A1, use: { en: Past states, uk: "Минулі стани", es: "Estados del pasado" }, ex: ["She ", { target: was }, " ill on ", { weekday: Monday, value: 1 }, "."], tr: { uk: "У понеділок вона хворіла.", es: "El lunes estuvo enferma." } }
+          - { level: A1, use: { en: Sequences of events, uk: "Послідовність подій", es: "Secuencia de hechos" }, ex: ["I ", { target: got up }, ", ", { target: had }, " a shower and ", { target: left }, "."], tr: { uk: "Я встав, прийняв душ і пішов.", es: "Me levanté, me di una ducha y salí." } }
+          - { level: A2, use: { en: Past habits that are over, uk: "Минулі звички, яких уже немає", es: "Hábitos del pasado que ya terminaron" }, ex: ["When I was a child, I ", { target: played }, " outside every day."], tr: { uk: "Коли я був дитиною, я щодня гуляв надворі.", es: "Cuando era niño, jugaba al aire libre todos los días." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Time words: yesterday, last week, in 2020, two years ago. ", { term: ago }, " comes after the period:"]
+              uk: ["Слова-маркери часу: yesterday, last week, in 2020, two years ago. ", { term: ago }, " стоїть після позначення періоду:"]
+              es: ["Palabras de tiempo: yesterday, last week, in 2020, two years ago. ", { term: ago }, " va después del período de tiempo:"]
             ex: ["She left two days ", { target: ago }, "."]
+            tr: { uk: "Вона поїхала два дні тому.", es: "Se fue hace dos días." }
           - type: note
             level: A2
             text:
               en: ["Past habits also take ", { term: used to }, ": see ", { link: Used to, to: en.tenses.used-to }, "."]
+              uk: ["Минулі звички можна передати й за допомогою ", { term: used to }, ": див. ", { link: "Used to", to: en.tenses.used-to }, "."]
+              es: ["Los hábitos del pasado también pueden expresarse con ", { term: used to }, ": ver ", { link: "Used to", to: en.tenses.used-to }, "."]
 
-  - title: { en: "Future simple: form" }
+  - title: { en: "Future simple: form", uk: "Future Simple: форма", es: "Futuro simple: forma" }
     role: form
     features: { tense: fut }
     content:
       - type: paradigm
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: structure, label: { en: Structure } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: structure, label: { en: Structure, uk: "Структура", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A2, features: { polarity: pos, interrogativity: decl }, form: "+", structure: { pattern: [{ alternatives: [will, "'ll"] }, { slot: V }] }, ex: [I', { target: ll help }, " you."] }
           - { level: A2, features: { polarity: neg, interrogativity: decl }, form: "−", structure: { pattern: [{ alternatives: [will not, won't] }, { slot: V }] }, ex: ["He ", { target: won't come }, "."] }
           - { level: A2, features: { polarity: pos, interrogativity: int }, form: "?", structure: { pattern: [will, { slot: subject }, { slot: V }] }, ex: [{ target: Will }, " she ", { target: come }, "?"] }
-          - { level: A2, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer }, structure: { alternatives: ["Yes, I will.", "No, I won't."] }, ex: { exchange: [[{ target: Will }, " you call?"], ["Yes, I ", { target: will }, "."]] } }
+          - { level: A2, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, structure: { alternatives: ["Yes, I will.", "No, I won't."] }, ex: { exchange: [[{ target: Will }, " you call?"], ["Yes, I ", { target: will }, "."]] } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["Speech and messages use ", { term: "'ll" }, " and ", { term: won't }, ": 'll is ", { ipa: l }, " after a vowel, ", { ipa: əl }, " after a consonant; won't is ", { ipa: wəʊnt }, "."]
+              uk: ["У мовленні й повідомленнях вживають ", { term: "'ll" }, " і ", { term: won't }, ": 'll звучить ", { ipa: l }, " після голосного, ", { ipa: əl }, " після приголосного; won't звучить ", { ipa: wəʊnt }, "."]
+              es: ["En el habla y en los mensajes se usan ", { term: "'ll" }, " y ", { term: won't }, ": 'll suena ", { ipa: l }, " después de una vocal, ", { ipa: əl }, " después de una consonante; won't suena ", { ipa: wəʊnt }, "."]
 
-  - title: { en: "Future simple: use" }
+  - title: { en: "Future simple: use", uk: "Future Simple: вживання", es: "Futuro simple: uso" }
     role: use
     features: { tense: fut }
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: Decision at the moment of speaking }, ex: [It's cold. I', { target: ll close }, " the window."] }
-          - { level: A2, use: { en: Offers }, ex: [I', { target: ll carry }, " your bag."] }
-          - { level: A2, use: { en: Promises }, ex: ["I ", { target: won't tell }, " anyone."] }
-          - { level: A2, use: { en: Opinions and predictions (I think) }, ex: [I think she', { target: ll win }, "."] }
+          - { level: A2, use: { en: Decision at the moment of speaking, uk: "Рішення в момент мовлення", es: "Decisión en el momento de hablar" }, ex: [It's cold. I', { target: ll close }, " the window."], tr: { uk: "Холодно. Я зачиню вікно.", es: "Hace frío. Voy a cerrar la ventana." } }
+          - { level: A2, use: { en: Offers, uk: "Пропозиції допомоги", es: "Ofrecimientos" }, ex: [I', { target: ll carry }, " your bag."], tr: { uk: "Я понесу твою сумку.", es: "Te llevo la bolsa." } }
+          - { level: A2, use: { en: Promises, uk: "Обіцянки", es: "Promesas" }, ex: ["I ", { target: won't tell }, " anyone."], tr: { uk: "Я нікому не скажу.", es: "No se lo diré a nadie." } }
+          - { level: A2, use: { en: Opinions and predictions (I think), uk: "Думки та прогнози (I think)", es: "Opiniones y predicciones (I think)" }, ex: [I think she', { target: ll win }, "."], tr: { uk: "Думаю, вона виграє.", es: "Creo que ganará." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: probably }, " goes after will and before won't:"]
+              uk: [{ term: probably }, " стоїть після will і перед won't:"]
+              es: [{ term: probably }, " va después de will y antes de won't:"]
             ex: { examples: [["It will ", { target: probably }, " rain."], ["It ", { target: probably }, " won't rain."]] }
+            tr: { uk: { examples: ["Мабуть, піде дощ.", "Дощу, мабуть, не буде."] }, es: { examples: ["Probablemente lloverá.", "Probablemente no lloverá."] } }
           - type: note
             level: A2
             text:
               en: ["Plans and arrangements take going to or the present continuous: see ", { link: Future forms, to: en.tenses.future-forms }, "."]
+              uk: ["Плани та домовленості вживаються з going to або Present Continuous: див. ", { link: "Способи вираження майбутнього", to: en.tenses.future-forms }, "."]
+              es: ["Los planes y los compromisos acordados usan going to o el presente continuo: ver ", { link: "Formas de futuro", to: en.tenses.future-forms }, "."]
 
-  - title: { en: "Compare: past, present and future" }
+  - title: { en: "Compare: past, present and future", uk: "Порівняння: минуле, теперішнє й майбутнє", es: "Comparación: pasado, presente y futuro" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: past, label: { en: Past simple }, features: { tense: pst } }
-          - { key: present, label: { en: Present simple }, features: { tense: prs } }
-          - { key: future, label: { en: Future simple }, features: { tense: fut } }
+          - { key: past, label: { en: Past simple, uk: "Past Simple", es: "Pasado simple" }, features: { tense: pst } }
+          - { key: present, label: { en: Present simple, uk: "Present Simple", es: "Presente simple" }, features: { tense: prs } }
+          - { key: future, label: { en: Future simple, uk: "Future Simple", es: "Futuro simple" }, features: { tense: fut } }
         rows:
-          - { level: A2, past: did, present: { alternatives: [do, does] }, future: will }
-          - { level: A2, past: "yesterday, last week, ago", present: ["every day, usually, on ", { weekday: Mondays, value: 1 }], future: "tomorrow, next week, soon" }
-          - { level: A2, past: ["I ", { target: worked }, " yesterday."], present: ["I ", { target: work }, " every day."], future: [I', { target: ll work }, " tomorrow."] }
-          - { level: A2, past: [{ target: Did }, " she ", { target: call }, "?"], present: [{ target: Does }, " she ", { target: call }, "?"], future: [{ target: Will }, " she ", { target: call }, "?"] }
-          - { level: A2, past: ["He ", { target: didn't }, " come."], present: ["He ", { target: doesn't }, " come."], future: ["He ", { target: won't }, " come."] }
+          - { level: A2, past: { ex: did, tr: { uk: "минулий час", es: "pasado" } }, present: { ex: { alternatives: [do, does] }, tr: { uk: "теперішній час", es: "presente" } }, future: { ex: will, tr: { uk: "майбутній час", es: "futuro" } } }
+          - { level: A2, past: { ex: "yesterday, last week, ago", tr: { uk: "учора, минулого тижня, тому", es: "ayer, la semana pasada, hace" } }, present: { ex: ["every day, usually, on ", { weekday: Mondays, value: 1 }], tr: { uk: "щодня, зазвичай, по понеділках", es: "todos los días, normalmente, los lunes" } }, future: { ex: "tomorrow, next week, soon", tr: { uk: "завтра, наступного тижня, скоро", es: "mañana, la semana próxima, pronto" } } }
+          - { level: A2, past: { ex: ["I ", { target: worked }, " yesterday."], tr: { uk: "Учора я працював.", es: "Ayer trabajé." } }, present: { ex: ["I ", { target: work }, " every day."], tr: { uk: "Я працюю щодня.", es: "Trabajo todos los días." } }, future: { ex: [I', { target: ll work }, " tomorrow."], tr: { uk: "Завтра я працюватиму.", es: "Mañana trabajaré." } } }
+          - { level: A2, past: { ex: [{ target: Did }, " she ", { target: call }, "?"], tr: { uk: "Вона дзвонила?", es: "¿Llamó ella?" } }, present: { ex: [{ target: Does }, " she ", { target: call }, "?"], tr: { uk: "Вона дзвонить?", es: "¿Llama ella?" } }, future: { ex: [{ target: Will }, " she ", { target: call }, "?"], tr: { uk: "Вона подзвонить?", es: "¿Llamará ella?" } } }
+          - { level: A2, past: { ex: ["He ", { target: didn't }, " come."], tr: { uk: "Він не прийшов.", es: "Él no vino." } }, present: { ex: ["He ", { target: doesn't }, " come."], tr: { uk: "Він не приходить.", es: "Él no viene." } }, future: { ex: ["He ", { target: won't }, " come."], tr: { uk: "Він не прийде.", es: "Él no vendrá." } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: She work here., right: ["She ", { target: works }, " here."], rule: { en: { takes: [{ alternatives: [he, she, it] }, V-s] } } }
-          - { level: A1, wrong: He doesn't works., right: ["He doesn't ", { target: work }, "."], rule: { en: { pattern: [{ slot: helper }, { slot: base verb }] } } }
-          - { level: A1, wrong: Where you live?, right: ["Where ", { target: do }, " you live?"], rule: { en: questions need a helper } }
-          - { level: A1, wrong: Did you went there?, right: ["Did you ", { target: go }, " there?"], rule: { en: { pattern: [did, { slot: base verb }] } } }
-          - { level: A1, wrong: She didn't called., right: ["She didn't ", { target: call }, "."], rule: { en: { pattern: [didn't, { slot: base verb }] } } }
-          - { level: A1, wrong: I goed home., right: ["I ", { target: went }, " home."], rule: { en: { mapping: [go, went (irregular verb)] } } }
-          - { level: A1, wrong: Did he was late?, right: [{ target: Was }, " he late?"], rule: { en: be makes questions by itself } }
-          - { level: A2, wrong: He will goes., right: ["He will ", { target: go }, "."], rule: { en: { pattern: [will, { slot: base verb }] } } }
-          - { level: A2, wrong: Do you will come?, right: [{ target: Will }, " you come?"], rule: { en: will makes questions by itself } }
+          - { level: A1, wrong: She work here., right: ["She ", { target: works }, " here."], rule: { en: { takes: [{ alternatives: [he, she, it] }, V-s] }, uk: { takes: [{ alternatives: [he, she, it] }, V-s] }, es: { takes: [{ alternatives: [he, she, it] }, V-s] } } }
+          - { level: A1, wrong: He doesn't works., right: ["He doesn't ", { target: work }, "."], rule: { en: { pattern: [{ slot: helper }, { slot: base verb }] }, uk: { pattern: [{ slot: helper }, { slot: base verb }] }, es: { pattern: [{ slot: helper }, { slot: base verb }] } } }
+          - { level: A1, wrong: Where you live?, right: ["Where ", { target: do }, " you live?"], rule: { en: questions need a helper, uk: "питання потребують допоміжного дієслова", es: "las preguntas necesitan un auxiliar" } }
+          - { level: A1, wrong: Did you went there?, right: ["Did you ", { target: go }, " there?"], rule: { en: { pattern: [did, { slot: base verb }] }, uk: { pattern: [did, { slot: base verb }] }, es: { pattern: [did, { slot: base verb }] } } }
+          - { level: A1, wrong: She didn't called., right: ["She didn't ", { target: call }, "."], rule: { en: { pattern: [didn't, { slot: base verb }] }, uk: { pattern: [didn't, { slot: base verb }] }, es: { pattern: [didn't, { slot: base verb }] } } }
+          - { level: A1, wrong: I goed home., right: ["I ", { target: went }, " home."], rule: { en: { mapping: [go, went (irregular verb)] }, uk: { mapping: [go, "went (неправильне дієслово)"] }, es: { mapping: [go, "went (verbo irregular)"] } } }
+          - { level: A1, wrong: Did he was late?, right: [{ target: Was }, " he late?"], rule: { en: be makes questions by itself, uk: "be сам утворює питання, без допоміжного дієслова", es: "be forma las preguntas sin auxiliar" } }
+          - { level: A2, wrong: He will goes., right: ["He will ", { target: go }, "."], rule: { en: { pattern: [will, { slot: base verb }] }, uk: { pattern: [will, { slot: base verb }] }, es: { pattern: [will, { slot: base verb }] } } }
+          - { level: A2, wrong: Do you will come?, right: [{ target: Will }, " you come?"], rule: { en: will makes questions by itself, uk: "will сам утворює питання, без допоміжного дієслова", es: "will forma las preguntas sin auxiliar" } }

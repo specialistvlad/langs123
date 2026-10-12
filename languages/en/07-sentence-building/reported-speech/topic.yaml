@@ -5,97 +5,115 @@ kind: grammar
 tags: [reported-speech, backshift, say, tell]
 concepts: [reported-speech]
 related: [en.sentence-building.questions-negatives, en.sentence-building.word-order, en.tenses.perfect-tenses, en.verbs.gerund-vs-infinitive]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Reported Speech }
+title: { en: Reported Speech, uk: Непряма мова, es: El estilo indirecto }
 summary:
-  lead: { en: "Reported speech tells what someone said without quoting it, with say, tell and ask." }
-  rule: { en: "After a past verb the tense moves one step back and questions take statement order:" }
+  lead:
+    en: "Reported speech tells what someone said without quoting it, with say, tell and ask."
+    uk: "Непряма мова передає чиїсь слова без цитування за допомогою дієслів say, tell і ask."
+    es: "El estilo indirecto cuenta lo que alguien dijo sin citarlo, con say, tell y ask."
+  rule:
+    en: "After a past verb the tense moves one step back and questions take statement order:"
+    uk: "Після дієслова в минулому часі час зсувається на один крок назад, а питання мають порядок слів розповідного речення:"
+    es: "Después de un verbo en pasado el tiempo retrocede un paso y las preguntas siguen el orden de una afirmación:"
   ex: ["She asked where I ", { target: lived }, "."]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: B1, point: say, rule: { en: [{ pattern: [say, { optional: that }, { slot: clause }] }, "; no person, or ", { pattern: [to, { slot: person }] }] }, ex: ["She ", { target: said }, " ", { optional: that }, " she was tired."] }
-        - { level: B1, point: tell, rule: { en: { pattern: [tell, { slot: person }, { optional: that }, { slot: clause }] } }, ex: ["She ", { target: told me }, " ", { optional: that }, " she was tired."] }
-        - { level: B1, point: { en: { alternatives: [present simple, present continuous] } }, rule: { en: { mapping: [{ alternatives: [past simple, past continuous] }], follows: true } }, ex: { examples: [["He said he ", { target: worked }, " there."], ["She said she ", { target: was waiting }, "."]] } }
-        - { level: B1, point: { en: { alternatives: [past simple, present perfect] } }, rule: { en: { mapping: [past perfect], follows: true } }, ex: { examples: [["He said he ", { target: had left }, "."], ["She said she ", { target: had finished }, "."]] } }
-        - { level: B1, point: { alternatives: [will, can, must] }, rule: { mapping: [{ alternatives: [would, could, had to] }], follows: true }, ex: { examples: [["He said he ", { target: would call }, "."], ["She said she ", { target: could }, " swim."]] } }
-        - { level: B1, point: { en: No change }, rule: { en: "would, could, should, might; a fact still true; after says (present)" }, ex: { examples: [["She said she ", { target: lives }, " in Paris."], ["She says she ", { target: is }, " tired."]] } }
-        - { level: B1, point: { en: Pronouns and time }, rule: { en: ["pronouns follow the speaker; ", { mapping: [today, that day] }, ", ", { mapping: [tomorrow, the next day] }] }, ex: ["Anna said ", { target: she }, " was tired."] }
-        - { level: B1, point: { en: Questions }, rule: { en: ["yes/no questions take ", { term: if }, " or ", { term: whether }, "; wh-questions keep the wh-word"] }, ex: ["She asked ", { target: if }, " I ", { target: liked }, " tea."] }
-        - { level: B1, point: { en: Commands }, rule: { pattern: [{ alternatives: [told, asked] }, { slot: person }, [{ optional: not }, " to"], { slot: V }] }, ex: ["He ", { target: told us not to be }, " late."] }
-        - { level: B1, point: { en: Trap }, rule: { en: ["a reported question has statement order, with no ", { alternatives: [do, does, did] }] }, ex: ["She asked me where I ", { target: lived }, "."] }
+        - { level: B1, point: say, rule: { en: [{ pattern: [say, { optional: that }, { slot: clause }] }, "; no person, or ", { pattern: [to, { slot: person }] }], uk: [{ pattern: [say, { optional: that }, { slot: clause }] }, "; без особи або ", { pattern: [to, { slot: person }] }], es: [{ pattern: [say, { optional: that }, { slot: clause }] }, "; sin persona, o ", { pattern: [to, { slot: person }] }] }, ex: ["She ", { target: said }, " ", { optional: that }, " she was tired."], tr: { uk: "Вона сказала, що втомилася.", es: "Dijo que estaba cansada." } }
+        - { level: B1, point: tell, rule: { en: { pattern: [tell, { slot: person }, { optional: that }, { slot: clause }] }, uk: { pattern: [tell, { slot: person }, { optional: that }, { slot: clause }] }, es: { pattern: [tell, { slot: person }, { optional: that }, { slot: clause }] } }, ex: ["She ", { target: told me }, " ", { optional: that }, " she was tired."], tr: { uk: "Вона сказала мені, що втомилася.", es: "Me dijo que estaba cansada." } }
+        - { level: B1, point: { en: { alternatives: [present simple, present continuous] }, uk: { alternatives: ["Present Simple", "Present Continuous"] }, es: { alternatives: ["presente simple", "presente continuo"] } }, rule: { en: { mapping: [{ alternatives: [past simple, past continuous] }], follows: true }, uk: { mapping: [{ alternatives: ["Past Simple", "Past Continuous"] }], follows: true }, es: { mapping: [{ alternatives: ["pasado simple", "pasado continuo"] }], follows: true } }, ex: { examples: [["He said he ", { target: worked }, " there."], ["She said she ", { target: was waiting }, "."]] }, tr: { uk: { examples: ["Він сказав, що працює там.", "Вона сказала, що чекає."] }, es: { examples: ["Dijo que trabajaba allí.", "Dijo que estaba esperando."] } } }
+        - { level: B1, point: { en: { alternatives: [past simple, present perfect] }, uk: { alternatives: ["Past Simple", "Present Perfect"] }, es: { alternatives: ["pasado simple", "presente perfecto"] } }, rule: { en: { mapping: [past perfect], follows: true }, uk: { mapping: ["Past Perfect"], follows: true }, es: { mapping: ["pasado perfecto"], follows: true } }, ex: { examples: [["He said he ", { target: had left }, "."], ["She said she ", { target: had finished }, "."]] }, tr: { uk: { examples: ["Він сказав, що пішов.", "Вона сказала, що закінчила."] }, es: { examples: ["Dijo que se había ido.", "Dijo que había terminado."] } } }
+        - { level: B1, point: { alternatives: [will, can, must] }, rule: { mapping: [{ alternatives: [would, could, had to] }], follows: true }, ex: { examples: [["He said he ", { target: would call }, "."], ["She said she ", { target: could }, " swim."]] }, tr: { uk: { examples: ["Він сказав, що зателефонує.", "Вона сказала, що вміє плавати."] }, es: { examples: ["Dijo que llamaría.", "Dijo que sabía nadar."] } } }
+        - { level: B1, point: { en: No change, uk: "Без змін", es: "Sin cambios" }, rule: { en: "would, could, should, might; a fact still true; after says (present)", uk: "would, could, should, might; факт, що й досі правдивий; після says (теперішній час)", es: "would, could, should, might; un hecho que sigue siendo cierto; después de says (presente)" }, ex: { examples: [["She said she ", { target: lives }, " in Paris."], ["She says she ", { target: is }, " tired."]] }, tr: { uk: { examples: ["Вона сказала, що живе в Парижі.", "Вона каже, що втомилася."] }, es: { examples: ["Dijo que vive en París.", "Dice que está cansada."] } } }
+        - { level: B1, point: { en: Pronouns and time, uk: "Займенники й слова часу", es: "Pronombres y expresiones de tiempo" }, rule: { en: ["pronouns follow the speaker; ", { mapping: [today, that day] }, ", ", { mapping: [tomorrow, the next day] }], uk: ["займенники відповідають мовцеві; ", { mapping: [today, that day] }, ", ", { mapping: [tomorrow, the next day] }], es: ["los pronombres siguen al hablante; ", { mapping: [today, that day] }, ", ", { mapping: [tomorrow, the next day] }] }, ex: ["Anna said ", { target: she }, " was tired."], tr: { uk: "Анна сказала, що вона втомилася.", es: "Anna dijo que estaba cansada." } }
+        - { level: B1, point: { en: Questions, uk: "Питання", es: "Preguntas" }, rule: { en: ["yes/no questions take ", { term: if }, " or ", { term: whether }, "; wh-questions keep the wh-word"], uk: ["загальні питання вживаються з ", { term: if }, " або ", { term: whether }, "; wh-питання зберігають питальне слово"], es: ["las preguntas de sí o no llevan ", { term: if }, " o ", { term: whether }, "; las preguntas con wh- conservan la palabra interrogativa"] }, ex: ["She asked ", { target: if }, " I ", { target: liked }, " tea."], tr: { uk: "Вона запитала, чи я люблю чай.", es: "Me preguntó si me gustaba el té." } }
+        - { level: B1, point: { en: Commands, uk: "Накази", es: "Órdenes" }, rule: { pattern: [{ alternatives: [told, asked] }, { slot: person }, [{ optional: not }, " to"], { slot: V }] }, ex: ["He ", { target: told us not to be }, " late."], tr: { uk: "Він сказав нам не запізнюватися.", es: "Nos dijo que no llegáramos tarde." } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["a reported question has statement order, with no ", { alternatives: [do, does, did] }], uk: ["непряме питання має порядок слів розповідного речення, без ", { alternatives: [do, does, did] }], es: ["una pregunta indirecta tiene el orden de una afirmación, sin ", { alternatives: [do, does, did] }] }, ex: ["She asked me where I ", { target: lived }, "."], tr: { uk: "Вона запитала мене, де я живу.", es: "Me preguntó dónde vivía." } }
 
 sections:
-  - title: { en: "Form: say and tell" }
+  - title: { en: "Form: say and tell", uk: "Форма: say і tell", es: "Forma: say y tell" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Verb } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, verb: say, pattern: { pattern: [say, { optional: that }, { slot: clause }] }, ex: ["She ", { target: said }, " ", { optional: that }, " she was tired."] }
-          - { level: B1, verb: tell, pattern: { pattern: [tell, { slot: person }, { optional: that }, { slot: clause }] }, ex: ["She ", { target: told me }, " ", { optional: that }, " she was tired."] }
-          - { level: B1, verb: say, pattern: { pattern: [say, to, { slot: person }] }, ex: ["She ", { target: said to me }, " that she was tired."] }
+          - { level: B1, verb: say, pattern: { pattern: [say, { optional: that }, { slot: clause }] }, ex: ["She ", { target: said }, " ", { optional: that }, " she was tired."], tr: { uk: "Вона сказала, що втомилася.", es: "Dijo que estaba cansada." } }
+          - { level: B1, verb: tell, pattern: { pattern: [tell, { slot: person }, { optional: that }, { slot: clause }] }, ex: ["She ", { target: told me }, " ", { optional: that }, " she was tired."], tr: { uk: "Вона сказала мені, що втомилася.", es: "Me dijo que estaba cansada." } }
+          - { level: B1, verb: say, pattern: { pattern: [say, to, { slot: person }] }, ex: ["She ", { target: said to me }, " that she was tired."], tr: { uk: "Вона сказала мені, що втомилася.", es: "Me dijo que estaba cansada." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: tell }, " always has a person after it. ", { term: say }, " has no person, or ", { pattern: [{ term: to }, { slot: person }] }, "."]
+              uk: [{ term: tell }, " завжди має після себе особу. ", { term: say }, " вживається без особи або з ", { pattern: [{ term: to }, { slot: person }] }, "."]
+              es: [{ term: tell }, " siempre lleva una persona después. ", { term: say }, " no lleva persona, o lleva ", { pattern: [{ term: to }, { slot: person }] }, "."]
 
-  - title: { en: "Form: backshift" }
+  - title: { en: "Form: backshift", uk: "Форма: зсув часів (backshift)", es: "Forma: cambio de tiempos (backshift)" }
     role: form
     content:
       - type: prose
         level: B1
         text:
           en: "After a past reporting verb (said, told, asked), the tense usually moves one step back."
+          uk: "Після дієслова в минулому часі (said, told, asked) час зазвичай зсувається на один крок назад."
+          es: "Después de un verbo introductorio en pasado (said, told, asked), el tiempo suele retroceder un paso."
       - type: usage
         columns:
-          - { key: direct, label: { en: Direct speech } }
-          - { key: reported, label: { en: Reported speech } }
-          - { key: ex, label: { en: Example } }
+          - { key: direct, label: { en: Direct speech, uk: "Пряма мова", es: "Estilo directo" } }
+          - { key: reported, label: { en: Reported speech, uk: "Непряма мова", es: "Estilo indirecto" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, direct: present simple, reported: past simple, ex: { mapping: [["“I ", { target: work }, " here.”"], ["He said he ", { target: worked }, " there."]] } }
-          - { level: B1, direct: present continuous, reported: past continuous, ex: { mapping: [[“I', { target: m waiting }, ".”"], ["She said she ", { target: was waiting }, "."]] } }
-          - { level: B1, direct: past simple, reported: past perfect, ex: { mapping: [["“I ", { target: left }, ".”"], ["He said he ", { target: had left }, "."]] } }
-          - { level: B1, direct: present perfect, reported: past perfect, ex: { mapping: [[“I', { target: ve finished }, ".”"], ["She said she ", { target: had finished }, "."]] } }
-          - { level: B1, direct: will, reported: would, ex: { mapping: [[“I', { target: ll call }, ".”"], ["He said he ", { target: would call }, "."]] } }
-          - { level: B1, direct: must, reported: had to, ex: { mapping: [["“I ", { target: must }, " go.”"], ["She said she ", { target: had to }, " go."]] } }
-          - { level: B1, direct: can, reported: could, ex: { mapping: [["“I ", { target: can }, " swim.”"], ["She said she ", { target: could }, " swim."]] } }
+          - { level: B1, direct: { en: present simple, uk: "Present Simple", es: "presente simple" }, reported: { en: past simple, uk: "Past Simple", es: "pasado simple" }, ex: { mapping: [["“I ", { target: work }, " here.”"], ["He said he ", { target: worked }, " there."]] }, tr: { uk: "«Я працюю тут». Він сказав, що працює там.", es: "«Trabajo aquí». Dijo que trabajaba allí." } }
+          - { level: B1, direct: { en: present continuous, uk: "Present Continuous", es: "presente continuo" }, reported: { en: past continuous, uk: "Past Continuous", es: "pasado continuo" }, ex: { mapping: [[“I', { target: m waiting }, ".”"], ["She said she ", { target: was waiting }, "."]] }, tr: { uk: "«Я чекаю». Вона сказала, що чекає.", es: "«Estoy esperando». Dijo que estaba esperando." } }
+          - { level: B1, direct: { en: past simple, uk: "Past Simple", es: "pasado simple" }, reported: { en: past perfect, uk: "Past Perfect", es: "pasado perfecto" }, ex: { mapping: [["“I ", { target: left }, ".”"], ["He said he ", { target: had left }, "."]] }, tr: { uk: "«Я пішов». Він сказав, що пішов.", es: "«Me fui». Dijo que se había ido." } }
+          - { level: B1, direct: { en: present perfect, uk: "Present Perfect", es: "presente perfecto" }, reported: { en: past perfect, uk: "Past Perfect", es: "pasado perfecto" }, ex: { mapping: [[“I', { target: ve finished }, ".”"], ["She said she ", { target: had finished }, "."]] }, tr: { uk: "«Я закінчила». Вона сказала, що закінчила.", es: "«He terminado». Dijo que había terminado." } }
+          - { level: B1, direct: will, reported: would, ex: { mapping: [[“I', { target: ll call }, ".”"], ["He said he ", { target: would call }, "."]] }, tr: { uk: "«Я зателефоную». Він сказав, що зателефонує.", es: "«Llamaré». Dijo que llamaría." } }
+          - { level: B1, direct: must, reported: had to, ex: { mapping: [["“I ", { target: must }, " go.”"], ["She said she ", { target: had to }, " go."]] }, tr: { uk: "«Мені треба йти». Вона сказала, що їй треба йти.", es: "«Debo irme». Dijo que tenía que irse." } }
+          - { level: B1, direct: can, reported: could, ex: { mapping: [["“I ", { target: can }, " swim.”"], ["She said she ", { target: could }, " swim."]] }, tr: { uk: "«Я вмію плавати». Вона сказала, що вміє плавати.", es: "«Sé nadar». Dijo que sabía nadar." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: would }, ", ", { term: could }, ", ", { term: should }, " and ", { term: might }, " stay the same."]
+              uk: [{ term: would }, ", ", { term: could }, ", ", { term: should }, " і ", { term: might }, " не змінюються."]
+              es: [{ term: would }, ", ", { term: could }, ", ", { term: should }, " y ", { term: might }, " no cambian."]
           - type: rule
             level: B1
             text:
               en: "The tense can stay when the fact is still true:"
+              uk: "Час може не змінюватися, якщо факт досі правдивий:"
+              es: "El tiempo puede quedarse igual si el hecho sigue siendo cierto:"
             ex: ["She said she ", { target: lives }, " in Paris."]
+            tr: { uk: "Вона сказала, що живе в Парижі.", es: "Dijo que vive en París." }
           - type: rule
             level: B1
             text:
               en: ["After ", { term: says }, " (present) the tense stays:"]
+              uk: ["Після ", { term: says }, " (теперішній час) дієслово не змінює форму:"]
+              es: ["Después de ", { term: says }, " (presente) el tiempo no cambia:"]
             ex: ["She says she ", { target: is }, " tired."]
+            tr: { uk: "Вона каже, що втомилася.", es: "Dice que está cansada." }
 
-  - title: { en: "Form: pronouns and time words" }
+  - title: { en: "Form: pronouns and time words", uk: "Форма: займенники й слова на позначення часу", es: "Forma: pronombres y expresiones de tiempo" }
     role: form
     content:
       - type: comparison
         columns:
-          - { key: direct, label: { en: Direct } }
-          - { key: reported, label: { en: Reported } }
+          - { key: direct, label: { en: Direct, uk: "Пряма мова", es: "Estilo directo" } }
+          - { key: reported, label: { en: Reported, uk: "Непряма мова", es: "Estilo indirecto" } }
         rows:
           - { level: B1, direct: { alternatives: [I, my] }, reported: { alternatives: [he, she, his, her] } }
           - { level: B1, direct: { alternatives: [we, our] }, reported: { alternatives: [they, their] } }
@@ -114,60 +132,71 @@ sections:
             level: B1
             text:
               en: "Pronouns follow the speaker:"
+              uk: "Займенники відповідають мовцеві:"
+              es: "Los pronombres siguen al hablante:"
             ex: { mapping: ["“I'm tired,” said Anna", ["Anna said ", { target: she }, " was tired."]] }
+            tr: { uk: "«Я втомилася», — сказала Анна. Анна сказала, що вона втомилася.", es: "«Estoy cansada», dijo Anna. Anna dijo que estaba cansada." }
           - type: rule
             level: B1
             text:
               en: Time words stay the same when the report is made on the same day.
+              uk: "Слова на позначення часу не змінюються, якщо повідомляють у той самий день."
+              es: "Las expresiones de tiempo no cambian si se informa el mismo día."
 
-  - title: { en: "Form: reported questions" }
+  - title: { en: "Form: reported questions", uk: "Форма: непрямі питання", es: "Forma: preguntas indirectas" }
     role: form
     content:
       - type: comparison
         columns:
-          - { key: type, label: { en: Question } }
-          - { key: direct, label: { en: Direct } }
-          - { key: reported, label: { en: Reported } }
+          - { key: type, label: { en: Question, uk: "Питання", es: "Pregunta" } }
+          - { key: direct, label: { en: Direct, uk: "Пряма мова", es: "Estilo directo" } }
+          - { key: reported, label: { en: Reported, uk: "Непряма мова", es: "Estilo indirecto" } }
         rows:
-          - { level: B1, type: { alternatives: ["Yes", "no"] }, direct: “Do you like tea?”, reported: ["She asked ", { target: if }, " I ", { target: liked }, " tea."] }
-          - { level: B1, type: Wh-, direct: “Where do you live?”, reported: ["She asked ", { target: where }, " I ", { target: lived }, "."] }
-          - { level: B1, type: Wh-, direct: “What is your name?”, reported: ["She asked ", { target: what }, " my name ", { target: was }, "."] }
+          - { level: B1, type: { alternatives: ["Yes", "no"] }, direct: { ex: “Do you like tea?”, tr: { uk: "«Ти любиш чай?»", es: "«¿Te gusta el té?»" } }, reported: { ex: ["She asked ", { target: if }, " I ", { target: liked }, " tea."], tr: { uk: "Вона запитала, чи я люблю чай.", es: "Me preguntó si me gustaba el té." } } }
+          - { level: B1, type: Wh-, direct: { ex: “Where do you live?”, tr: { uk: "«Де ти живеш?»", es: "«¿Dónde vives?»" } }, reported: { ex: ["She asked ", { target: where }, " I ", { target: lived }, "."], tr: { uk: "Вона запитала, де я живу.", es: "Me preguntó dónde vivía." } } }
+          - { level: B1, type: Wh-, direct: { ex: “What is your name?”, tr: { uk: "«Як тебе звати?»", es: "«¿Cómo te llamas?»" } }, reported: { ex: ["She asked ", { target: what }, " my name ", { target: was }, "."], tr: { uk: "Вона запитала, як мене звати.", es: "Me preguntó cómo me llamaba." } } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["A reported question has statement order: ", { pattern: [{ slot: subject }, { slot: verb }] }, ", with no ", { alternatives: [do, does, did] }, "."]
+              uk: ["Непряме питання має порядок слів розповідного речення: ", { pattern: [{ slot: subject }, { slot: verb }] }, ", без ", { alternatives: [do, does, did] }, "."]
+              es: ["Una pregunta indirecta tiene el orden de una afirmación: ", { pattern: [{ slot: subject }, { slot: verb }] }, ", sin ", { alternatives: [do, does, did] }, "."]
           - type: rule
             level: B1
             text:
               en: [{ alternatives: ["Yes", "no"] }, " questions take ", { term: if }, " or ", { term: whether }, . The sentence ends with a full stop.]
+              uk: ["Питання ", { alternatives: ["Yes", "no"] }, " вживаються з ", { term: if }, " або ", { term: whether }, ". Речення закінчується крапкою."]
+              es: ["Las preguntas ", { alternatives: ["Yes", "no"] }, " llevan ", { term: if }, " o ", { term: whether }, ". La oración termina con punto final."]
           - type: rule
             level: B1
             text:
               en: Tenses and pronouns change as in statements.
+              uk: "Часи й займенники змінюються так само, як у розповідних реченнях."
+              es: "Los tiempos y los pronombres cambian como en las afirmaciones."
 
-  - title: { en: "Form: reported commands" }
+  - title: { en: "Form: reported commands", uk: "Форма: непрямі накази", es: "Forma: órdenes indirectas" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: type, label: { en: Type } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: type, label: { en: Type, uk: "Тип", es: "Tipo" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, type: { en: Command }, pattern: { pattern: [told, { slot: person }, to, { slot: V }] }, ex: { mapping: [“Sit down.”, ["He ", { target: told me to sit }, " down."]] } }
-          - { level: B1, type: { en: Request }, pattern: { pattern: [asked, { slot: person }, to, { slot: V }] }, ex: { mapping: [“Please help.”, ["She ", { target: asked me to help }, "."]] } }
-          - { level: B1, type: { en: Negative }, pattern: { pattern: [told, { slot: person }, not to, { slot: V }] }, ex: { mapping: [“Don't be late.”, ["He ", { target: told us not to be }, " late."]] } }
+          - { level: B1, type: { en: Command, uk: "Наказ", es: "Orden" }, pattern: { pattern: [told, { slot: person }, to, { slot: V }] }, ex: { mapping: [“Sit down.”, ["He ", { target: told me to sit }, " down."]] }, tr: { uk: "«Сядь». Він сказав мені сісти.", es: "«Siéntate». Me dijo que me sentara." } }
+          - { level: B1, type: { en: Request, uk: "Прохання", es: "Petición" }, pattern: { pattern: [asked, { slot: person }, to, { slot: V }] }, ex: { mapping: [“Please help.”, ["She ", { target: asked me to help }, "."]] }, tr: { uk: "«Допоможи, будь ласка». Вона попросила мене допомогти.", es: "«Ayuda, por favor». Me pidió que ayudara." } }
+          - { level: B1, type: { en: Negative, uk: "Заперечення", es: "Negación" }, pattern: { pattern: [told, { slot: person }, not to, { slot: V }] }, ex: { mapping: [“Don't be late.”, ["He ", { target: told us not to be }, " late."]] }, tr: { uk: "«Не запізнюйтеся». Він сказав нам не запізнюватися.", es: "«No lleguen tarde». Nos dijo que no llegáramos tarde." } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: B1, wrong: She said me that she was tired., right: { alternatives: [["She ", { target: told }, " me that she was tired."], ["She ", { target: said }, " that she was tired."]] }, rule: { en: say has no person; tell needs one } }
-          - { level: B1, wrong: He told that he was late., right: ["He ", { target: said }, " that he was late."], rule: { en: tell needs a person } }
-          - { level: B1, wrong: She asked me where did I live., right: ["She asked me where I ", { target: lived }, "."], rule: { en: reported questions use statement order } }
-          - { level: B1, wrong: He asked me do I like tea., right: ["He asked me ", { target: if }, " I liked tea."], rule: { en: { takes: [[{ alternatives: ["yes", "no"] }, " questions"], { alternatives: [if, whether] }] } } }
-          - { level: B1, wrong: He said me to sit down., right: ["He ", { target: told }, " me ", { target: to sit }, " down."], rule: { en: { pattern: [told, { slot: person }, to, { slot: V }] } } }
-          - { level: B1, wrong: He said he will come., right: ["He said he ", { target: would }, " come."], rule: { en: { takes: [will, would after a past verb] } } }
+          - { level: B1, wrong: She said me that she was tired., right: { alternatives: [["She ", { target: told }, " me that she was tired."], ["She ", { target: said }, " that she was tired."]] }, rule: { en: say has no person; tell needs one, uk: "say без особи; tell потребує особи", es: "say no lleva persona; tell la necesita" } }
+          - { level: B1, wrong: He told that he was late., right: ["He ", { target: said }, " that he was late."], rule: { en: tell needs a person, uk: "tell потребує особи", es: "tell necesita una persona" } }
+          - { level: B1, wrong: She asked me where did I live., right: ["She asked me where I ", { target: lived }, "."], rule: { en: reported questions use statement order, uk: "непрямі питання мають порядок слів розповідного речення", es: "las preguntas indirectas usan el orden de una afirmación" } }
+          - { level: B1, wrong: He asked me do I like tea., right: ["He asked me ", { target: if }, " I liked tea."], rule: { en: { takes: [[{ alternatives: ["yes", "no"] }, " questions"], { alternatives: [if, whether] }] }, uk: { takes: [["питання ", { alternatives: ["yes", "no"] }], { alternatives: [if, whether] }] }, es: { takes: [["preguntas ", { alternatives: ["yes", "no"] }], { alternatives: [if, whether] }] } } }
+          - { level: B1, wrong: He said me to sit down., right: ["He ", { target: told }, " me ", { target: to sit }, " down."], rule: { en: { pattern: [told, { slot: person }, to, { slot: V }] }, uk: { pattern: [told, { slot: person }, to, { slot: V }] }, es: { pattern: [told, { slot: person }, to, { slot: V }] } } }
+          - { level: B1, wrong: He said he will come., right: ["He said he ", { target: would }, " come."], rule: { en: { takes: [will, would after a past verb] }, uk: { takes: [will, "would після дієслова в минулому часі"] }, es: { takes: [will, "would después de un verbo en pasado"] } } }

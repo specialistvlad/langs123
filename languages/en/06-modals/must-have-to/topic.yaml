@@ -5,163 +5,191 @@ kind: grammar
 tags: [verbs, modals, obligation]
 concepts: [obligation]
 related: [en.modals.should, en.modals.can-could, en.modals.may-might, en.tenses.simple-tenses, en.sentence-building.questions-negatives]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Must and Have To }
+title: { en: Must and Have To, uk: Must і have to, es: Must y have to }
 summary:
-  lead: { en: Must and have to for obligation; mustn't for prohibition; don't have to for no obligation. }
-  rule: { en: "Mustn't forbids and don't have to means it is not necessary:" }
+  lead:
+    en: Must and have to for obligation; mustn't for prohibition; don't have to for no obligation.
+    uk: "Must і have to виражають обов’язок, mustn't — заборону, don't have to — відсутність обов’язку."
+    es: "Must y have to expresan obligación; mustn't, prohibición; don't have to, ausencia de obligación."
+  rule:
+    en: "Mustn't forbids and don't have to means it is not necessary:"
+    uk: "Mustn't забороняє, а don't have to означає, що це не обов’язково:"
+    es: "Mustn't prohíbe y don't have to significa que no es necesario:"
   ex: { examples: [["You ", { target: mustn't }, " park here."], ["You ", { target: don't have to }, " pay."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: { en: "Form: must" }, rule: { en: [{ pattern: [{ slot: subject }, must, { slot: V }] }, "; one form for every subject"] }, ex: ["She ", { target: must }, " study."] }
-        - { level: A2, point: { en: "Form: have to" }, rule: { en: [{ term: have to }, ", but ", { term: has to }, " with he, she, it"] }, ex: { examples: [["We ", { target: have to }, " leave."], ["He ", { target: has to }, " leave."]] } }
-        - { level: A2, point: { en: "Question, negative" }, rule: { en: [{ term: have to }, " takes ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " and then the base form"] }, ex: { examples: [[{ target: Do }, " you ", { target: have to }, " leave?"], ["She ", { target: doesn't have to }, " leave."]] } }
-        - { level: A2, point: must, rule: { en: "the speaker's own view or a written rule" }, ex: { examples: [["I ", { target: must }, " save more money."], ["Visitors ", { target: must }, " sign in."]] } }
-        - { level: A2, point: have to, rule: { en: "the situation or another person decides; common in speech" }, ex: ["I ", { target: have to }, " get up at six for work."] }
-        - { level: A2, point: mustn't, rule: { en: forbidden }, ex: ["You ", { target: mustn't }, " use your phone here."] }
-        - { level: A2, point: don't have to, rule: { en: "not necessary: you can choose" }, ex: ["You ", { target: don't have to }, " come."] }
-        - { level: A2, point: { en: Trap }, rule: { en: [{ term: had to }, " is the past of ", { term: must }] }, ex: ["I ", { target: had to }, " work on ", { weekday: Saturday, value: 6 }, "."] }
+        - { level: A2, point: { en: "Form: must", uk: "Форма: must", es: "Forma: must" }, rule: { en: [{ pattern: [{ slot: subject }, must, { slot: V }] }, "; one form for every subject"], uk: [{ pattern: [{ slot: subject }, must, { slot: V }] }, "; одна форма для всіх підметів"], es: [{ pattern: [{ slot: subject }, must, { slot: V }] }, "; una sola forma para todos los sujetos"] }, ex: ["She ", { target: must }, " study."], tr: { uk: "Вона повинна вчитися.", es: "Ella debe estudiar." } }
+        - { level: A2, point: { en: "Form: have to", uk: "Форма: have to", es: "Forma: have to" }, rule: { en: [{ term: have to }, ", but ", { term: has to }, " with he, she, it"], uk: [{ term: have to }, ", але ", { term: has to }, " з he, she, it"], es: [{ term: have to }, ", pero ", { term: has to }, " con he, she, it"] }, ex: { examples: [["We ", { target: have to }, " leave."], ["He ", { target: has to }, " leave."]] }, tr: { uk: { examples: ["Нам треба йти.", "Йому треба йти."] }, es: { examples: ["Tenemos que irnos.", "Él tiene que irse."] } } }
+        - { level: A2, point: { en: "Question, negative", uk: "Питання, заперечення", es: "Pregunta, negación" }, rule: { en: [{ term: have to }, " takes ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " and then the base form"], uk: [{ term: have to }, " вживається з ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, ", далі стоїть початкова форма"], es: [{ term: have to }, " lleva ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " y después la forma base"] }, ex: { examples: [[{ target: Do }, " you ", { target: have to }, " leave?"], ["She ", { target: doesn't have to }, " leave."]] }, tr: { uk: { examples: ["Тобі треба йти?", "Їй не обов’язково йти."] }, es: { examples: ["¿Tienes que irte?", "Ella no tiene que irse."] } } }
+        - { level: A2, point: must, rule: { en: "the speaker's own view or a written rule", uk: "власна думка мовця або письмове правило", es: "la opinión del hablante o una norma escrita" }, ex: { examples: [["I ", { target: must }, " save more money."], ["Visitors ", { target: must }, " sign in."]] }, tr: { uk: { examples: ["Мені треба заощаджувати більше грошей.", "Відвідувачі повинні зареєструватися."] }, es: { examples: ["Debo ahorrar más dinero.", "Los visitantes deben registrarse."] } } }
+        - { level: A2, point: have to, rule: { en: "the situation or another person decides; common in speech", uk: "вирішують обставини чи інша особа; часто в мовленні", es: "decide la situación u otra persona; frecuente en el habla" }, ex: ["I ", { target: have to }, " get up at six for work."], tr: { uk: "Мені доводиться вставати о шостій на роботу.", es: "Tengo que levantarme a las seis para ir al trabajo." } }
+        - { level: A2, point: mustn't, rule: { en: forbidden, uk: "заборонено", es: "prohibido" }, ex: ["You ", { target: mustn't }, " use your phone here."], tr: { uk: "Тут не можна користуватися телефоном.", es: "No debes usar el teléfono aquí." } }
+        - { level: A2, point: don't have to, rule: { en: "not necessary: you can choose", uk: "не обов’язково: можна вибирати", es: "no es necesario: puedes elegir" }, ex: ["You ", { target: don't have to }, " come."], tr: { uk: "Тобі не обов’язково приходити.", es: "No tienes que venir." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: had to }, " is the past of ", { term: must }], uk: [{ term: had to }, " — минулий час від ", { term: must }], es: [{ term: had to }, " es el pasado de ", { term: must }] }, ex: ["I ", { target: had to }, " work on ", { weekday: Saturday, value: 6 }, "."], tr: { uk: "Мені довелося працювати в суботу.", es: "Tuve que trabajar el sábado." } }
 
 sections:
-  - title: { en: "Form: must" }
+  - title: { en: "Form: must", uk: "Форма: must", es: "Forma: must" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative }, pattern: { pattern: [{ slot: subject }, must, { slot: V }] }, ex: ["She ", { target: must }, " study."] }
-          - { level: A2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, pattern: { pattern: [{ slot: subject }, mustn't, { slot: V }] }, ex: ["You ", { target: mustn't }, " touch it."] }
-          - { level: A2, features: { polarity: pos, interrogativity: int }, form: { en: Question }, pattern: { pattern: [Must, { slot: subject }, { slot: V }] }, ex: [{ target: Must }, " I go now?"] }
+          - { level: A2, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, pattern: { pattern: [{ slot: subject }, must, { slot: V }] }, ex: ["She ", { target: must }, " study."] }
+          - { level: A2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: "Заперечення", es: "Negación" }, pattern: { pattern: [{ slot: subject }, mustn't, { slot: V }] }, ex: ["You ", { target: mustn't }, " touch it."] }
+          - { level: A2, features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: "Питання", es: "Pregunta" }, pattern: { pattern: [Must, { slot: subject }, { slot: V }] }, ex: [{ target: Must }, " I go now?"] }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: must }, " has one form for every subject and takes the base verb:"]
+              uk: [{ term: must }, " має одну форму для всіх підметів і вживається з початковою формою дієслова:"]
+              es: [{ term: must }, " tiene una sola forma para todos los sujetos y va con la forma base del verbo:"]
             ex: ["She must ", { target: study }, "."]
+            tr: { uk: "Вона повинна вчитися.", es: "Ella debe estudiar." }
           - type: rule
             level: A2
             text:
               en: [{ term: must }, " has no past form. The past is ", { term: had to }, "."]
+              uk: [{ term: must }, " не має форми минулого часу. Для минулого вживають ", { term: had to }, "."]
+              es: [{ term: must }, " no tiene forma de pasado. El pasado es ", { term: had to }, "."]
           - type: rule
             level: A2
             text:
               en: ["Questions with ", { term: must }, " are formal and rare. Speech prefers ", { term: [Do I have to, { gap: true }, "?"] }]
+              uk: ["Питання з ", { term: must }, " звучать офіційно й трапляються рідко. У мовленні переважає ", { term: [Do I have to, { gap: true }, "?"] }]
+              es: ["Las preguntas con ", { term: must }, " son formales y poco frecuentes. En el habla se prefiere ", { term: [Do I have to, { gap: true }, "?"] }]
 
-  - title: { en: "Form: have to" }
+  - title: { en: "Form: have to", uk: "Форма: have to", es: "Forma: have to" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, features: [{ polarity: pos, interrogativity: decl, person: 1, number: sg }, { polarity: pos, interrogativity: decl, person: 2 }, { polarity: pos, interrogativity: decl, person: 1, number: pl }, { polarity: pos, interrogativity: decl, person: 3, number: pl }], form: { en: [Affirmative (, { alternatives: [I, you, we, they] }, ")"] }, pattern: { pattern: [have to, { slot: V }] }, ex: ["We ", { target: have to }, " leave."] }
-          - { level: A2, features: { polarity: pos, interrogativity: decl, person: 3, number: sg }, form: { en: [Affirmative (, { alternatives: [he, she, it] }, ")"] }, pattern: { pattern: [has to, { slot: V }] }, ex: ["He ", { target: has to }, " leave."] }
-          - { level: A2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, pattern: { pattern: [[{ alternatives: [don't, doesn't] }, " have to"], { slot: V }] }, ex: ["She ", { target: doesn't have to }, " leave."] }
-          - { level: A2, features: { polarity: pos, interrogativity: int }, form: { en: Question }, pattern: { pattern: [{ alternatives: [Do, Does] }, { slot: subject }, have to, { slot: V }] }, ex: [{ target: Do }, " you ", { target: have to }, " leave?"] }
-          - { level: A2, features: { tense: pst }, form: { en: Past }, pattern: { pattern: [had to, { slot: V }] }, ex: ["I ", { target: had to }, " leave."] }
-          - { level: A2, features: [{ tense: pst, polarity: neg, interrogativity: decl }, { tense: pst, polarity: pos, interrogativity: int }], form: { en: Past negative and question }, pattern: { alternatives: [didn't have to, ["Did ", { gap: true }, " have to"]] }, ex: [{ target: Did }, " you ", { target: have to }, " pay?"] }
+          - { level: A2, features: [{ polarity: pos, interrogativity: decl, person: 1, number: sg }, { polarity: pos, interrogativity: decl, person: 2 }, { polarity: pos, interrogativity: decl, person: 1, number: pl }, { polarity: pos, interrogativity: decl, person: 3, number: pl }], form: { en: [Affirmative (, { alternatives: [I, you, we, they] }, ")"], uk: ["Ствердження (", { alternatives: [I, you, we, they] }, ")"], es: ["Afirmación (", { alternatives: [I, you, we, they] }, ")"] }, pattern: { pattern: [have to, { slot: V }] }, ex: ["We ", { target: have to }, " leave."] }
+          - { level: A2, features: { polarity: pos, interrogativity: decl, person: 3, number: sg }, form: { en: [Affirmative (, { alternatives: [he, she, it] }, ")"], uk: ["Ствердження (", { alternatives: [he, she, it] }, ")"], es: ["Afirmación (", { alternatives: [he, she, it] }, ")"] }, pattern: { pattern: [has to, { slot: V }] }, ex: ["He ", { target: has to }, " leave."] }
+          - { level: A2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: "Заперечення", es: "Negación" }, pattern: { pattern: [[{ alternatives: [don't, doesn't] }, " have to"], { slot: V }] }, ex: ["She ", { target: doesn't have to }, " leave."] }
+          - { level: A2, features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: "Питання", es: "Pregunta" }, pattern: { pattern: [{ alternatives: [Do, Does] }, { slot: subject }, have to, { slot: V }] }, ex: [{ target: Do }, " you ", { target: have to }, " leave?"] }
+          - { level: A2, features: { tense: pst }, form: { en: Past, uk: "Минулий час", es: "Pasado" }, pattern: { pattern: [had to, { slot: V }] }, ex: ["I ", { target: had to }, " leave."] }
+          - { level: A2, features: [{ tense: pst, polarity: neg, interrogativity: decl }, { tense: pst, polarity: pos, interrogativity: int }], form: { en: Past negative and question, uk: "Заперечення й питання в минулому часі", es: "Negación y pregunta en pasado" }, pattern: { alternatives: [didn't have to, ["Did ", { gap: true }, " have to"]] }, ex: [{ target: Did }, " you ", { target: have to }, " pay?"] }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: have to }, " works like a main verb: it takes ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " in questions and negatives."]
+              uk: [{ term: have to }, " діє як основне дієслово: у питаннях і запереченнях воно вживається з ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
+              es: [{ term: have to }, " funciona como un verbo principal: en preguntas y negaciones lleva ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, "."]
           - type: rule
             level: A2
             text:
               en: ["After ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " the verb is in the base form:"]
+              uk: ["Після ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " дієслово стоїть у початковій формі:"]
+              es: ["Después de ", { alternatives: [{ term: do }, { term: does }, { term: did }] }, " el verbo va en la forma base:"]
             ex: ["Does she ", { target: have }, " to leave?"]
+            tr: { uk: "Їй треба йти?", es: "¿Tiene que irse?" }
 
-  - title: { en: "Pronunciation: have to and must" }
+  - title: { en: "Pronunciation: have to and must", uk: "Вимова: have to і must", es: "Pronunciación: have to y must" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, form: have to, sound: { ipa: ˈhæf tə }, ex: ["I ", { target: have to }, " go. ", { ipa: aɪ ˈhæf tə ɡəʊ }] }
-          - { level: A2, form: has to, sound: { ipa: ˈhæs tə }, ex: ["She ", { target: has to }, " go. ", { ipa: ʃi ˈhæs tə ɡəʊ }] }
-          - { level: A2, form: had to, sound: { ipa: ˈhæd tə }, ex: ["We ", { target: had to }, " go. ", { ipa: wi ˈhæd tə ɡəʊ }] }
-          - { level: A2, form: mustn't, sound: { ipa: ˈmʌsnt }, ex: ["You ", { target: mustn't }, " go. ", { ipa: juː ˈmʌsnt ɡəʊ }] }
+          - { level: A2, form: have to, sound: { ipa: ˈhæf tə }, ex: ["I ", { target: have to }, " go. ", { ipa: aɪ ˈhæf tə ɡəʊ }], tr: { uk: "Мені треба йти.", es: "Tengo que irme." } }
+          - { level: A2, form: has to, sound: { ipa: ˈhæs tə }, ex: ["She ", { target: has to }, " go. ", { ipa: ʃi ˈhæs tə ɡəʊ }], tr: { uk: "Їй треба йти.", es: "Ella tiene que irse." } }
+          - { level: A2, form: had to, sound: { ipa: ˈhæd tə }, ex: ["We ", { target: had to }, " go. ", { ipa: wi ˈhæd tə ɡəʊ }], tr: { uk: "Нам довелося піти.", es: "Tuvimos que irnos." } }
+          - { level: A2, form: mustn't, sound: { ipa: ˈmʌsnt }, ex: ["You ", { target: mustn't }, " go. ", { ipa: juː ˈmʌsnt ɡəʊ }], tr: { uk: "Тобі не можна йти.", es: "No debes irte." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["Before ", { term: to }, " the final sound of ", { term: have }, " changes to ", { ipa: f }, ", ", { term: has }, " to ", { ipa: s }, " and ", { term: had }, " stays ", { ipa: d }, "."]
+              uk: ["Перед ", { term: to }, " кінцевий звук у ", { term: have }, " змінюється на ", { ipa: f }, ", у ", { term: has }, " — на ", { ipa: s }, ", а ", { term: had }, " зберігає ", { ipa: d }, "."]
+              es: ["Antes de ", { term: to }, " el sonido final de ", { term: have }, " cambia a ", { ipa: f }, ", el de ", { term: has }, " a ", { ipa: s }, " y ", { term: had }, " conserva ", { ipa: d }, "."]
           - type: rule
             level: A2
             text:
               en: ["The first ", { letter: t }, " of ", { term: mustn't }, " is silent."]
+              uk: ["Перша літера ", { letter: t }, " у ", { term: mustn't }, " німа."]
+              es: ["La primera ", { letter: t }, " de ", { term: mustn't }, " es muda."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: "Personal obligation: the speaker decides (must)" }, ex: ["I ", { target: must }, " save more money."] }
-          - { level: A2, use: { en: Written rules and signs (must) }, ex: ["Visitors ", { target: must }, " sign in."] }
-          - { level: A2, use: { en: Strong recommendation (must) }, ex: ["You ", { target: must }, " try this cake!"] }
-          - { level: A2, use: { en: Obligation from the situation or another person (have to) }, ex: ["I ", { target: have to }, " get up at six for work."] }
-          - { level: A2, use: { en: Prohibition (mustn't) }, ex: ["You ", { target: mustn't }, " use your phone here."] }
-          - { level: A2, use: { en: "No obligation: it is not necessary (don't have to)" }, ex: ["You ", { target: don't have to }, " come."] }
-          - { level: A2, use: { en: Past obligation (had to) }, ex: ["I ", { target: had to }, " work on ", { weekday: Saturday, value: 6 }, "."] }
+          - { level: A2, use: { en: "Personal obligation: the speaker decides (must)", uk: "Особистий обов’язок: вирішує мовець (must)", es: "Obligación personal: decide el hablante (must)" }, ex: ["I ", { target: must }, " save more money."], tr: { uk: "Мені треба заощаджувати більше грошей.", es: "Debo ahorrar más dinero." } }
+          - { level: A2, use: { en: Written rules and signs (must), uk: "Письмові правила й таблички (must)", es: "Normas escritas y carteles (must)" }, ex: ["Visitors ", { target: must }, " sign in."], tr: { uk: "Відвідувачі повинні зареєструватися.", es: "Los visitantes deben registrarse." } }
+          - { level: A2, use: { en: Strong recommendation (must), uk: "Наполеглива рекомендація (must)", es: "Recomendación firme (must)" }, ex: ["You ", { target: must }, " try this cake!"], tr: { uk: "Ти обов’язково маєш спробувати цей торт!", es: "¡Tienes que probar este pastel!" } }
+          - { level: A2, use: { en: Obligation from the situation or another person (have to), uk: "Обов’язок через обставини чи іншу особу (have to)", es: "Obligación por la situación o por otra persona (have to)" }, ex: ["I ", { target: have to }, " get up at six for work."], tr: { uk: "Мені доводиться вставати о шостій на роботу.", es: "Tengo que levantarme a las seis para ir al trabajo." } }
+          - { level: A2, use: { en: Prohibition (mustn't), uk: "Заборона (mustn't)", es: "Prohibición (mustn't)" }, ex: ["You ", { target: mustn't }, " use your phone here."], tr: { uk: "Тут не можна користуватися телефоном.", es: "No debes usar el teléfono aquí." } }
+          - { level: A2, use: { en: "No obligation: it is not necessary (don't have to)", uk: "Немає обов’язку: це не обов’язково (don't have to)", es: "Sin obligación: no es necesario (don't have to)" }, ex: ["You ", { target: don't have to }, " come."], tr: { uk: "Тобі не обов’язково приходити.", es: "No tienes que venir." } }
+          - { level: A2, use: { en: Past obligation (had to), uk: "Обов’язок у минулому (had to)", es: "Obligación en el pasado (had to)" }, ex: ["I ", { target: had to }, " work on ", { weekday: Saturday, value: 6 }, "."], tr: { uk: "Мені довелося працювати в суботу.", es: "Tuve que trabajar el sábado." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: must }, " expresses the speaker's own view or a written rule; ", { term: have to }, " expresses facts outside the speaker."]
+              uk: [{ term: must }, " виражає власну думку мовця або письмове правило; ", { term: have to }, " виражає обставини, які не залежать від мовця."]
+              es: [{ term: must }, " expresa la opinión del propio hablante o una norma escrita; ", { term: have to }, " expresa hechos ajenos al hablante."]
           - type: rule
             level: A2
             text:
               en: ["In everyday speech ", { term: have to }, " is more common than ", { term: must }, "."]
+              uk: ["У повсякденному мовленні ", { term: have to }, " вживають частіше, ніж ", { term: must }, "."]
+              es: ["En el habla cotidiana ", { term: have to }, " es más frecuente que ", { term: must }, "."]
           - type: note
             level: A2
             text:
               en: ["For advice that is not an obligation see ", { link: Should, to: en.modals.should }, "."]
+              uk: ["Про пораду, яка не є обов’язком, див. ", { link: "Should", to: en.modals.should }, "."]
+              es: ["Para consejos que no son una obligación, ver ", { link: "Should", to: en.modals.should }, "."]
 
-  - title: { en: "Compare: mustn't and don't have to" }
+  - title: { en: "Compare: mustn't and don't have to", uk: "Порівняння: mustn't і don't have to", es: "Comparación: mustn't y don't have to" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: row, label: { en: Point } }
+          - { key: row, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
           - { key: mustnt, label: mustn't }
           - { key: dont, label: don't have to }
         rows:
-          - { level: A2, row: { en: Meaning }, mustnt: { en: forbidden }, dont: { en: "not necessary: you can choose" } }
-          - { level: A2, row: { en: Example }, mustnt: ["You ", { target: mustn't }, " tell Ana. It's a secret."], dont: ["You ", { target: don't have to }, " tell Ana. I can do it."] }
-          - { level: A2, row: { en: Example }, mustnt: ["Children ", { target: mustn't }, " cross alone."], dont: ["Children ", { target: don't have to }, " wear a uniform."] }
+          - { level: A2, row: { en: Meaning, uk: "Значення", es: "Significado" }, mustnt: { en: forbidden, uk: "заборонено", es: "prohibido" }, dont: { en: "not necessary: you can choose", uk: "не обов’язково: можна вибирати", es: "no es necesario: puedes elegir" } }
+          - { level: A2, row: { en: Example, uk: "Приклад", es: "Ejemplo" }, mustnt: { ex: ["You ", { target: mustn't }, " tell Ana. It's a secret."], tr: { uk: "Тобі не можна розповідати про це Ані. Це секрет.", es: "No debes decírselo a Ana. Es un secreto." } }, dont: { ex: ["You ", { target: don't have to }, " tell Ana. I can do it."], tr: { uk: "Тобі не обов’язково розповідати Ані. Я можу це зробити.", es: "No tienes que decírselo a Ana. Puedo hacerlo yo." } } }
+          - { level: A2, row: { en: Example, uk: "Приклад", es: "Ejemplo" }, mustnt: { ex: ["Children ", { target: mustn't }, " cross alone."], tr: { uk: "Дітям не можна переходити дорогу самостійно.", es: "Los niños no deben cruzar solos." } }, dont: { ex: ["Children ", { target: don't have to }, " wear a uniform."], tr: { uk: "Дітям не обов’язково носити форму.", es: "Los niños no tienen que llevar uniforme." } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: You don't must smoke here., right: ["You ", { target: mustn't }, " smoke here."], rule: { en: negative of must = mustn't } }
-          - { level: A2, wrong: She musts go., right: ["She ", { target: must }, " go."], rule: { en: must has no -s } }
-          - { level: A2, wrong: She must to go., right: ["She must ", { target: go }, "."], rule: { en: [{ pattern: [must, { slot: base verb }] }, ; no to] } }
-          - { level: A2, wrong: He have to work., right: ["He ", { target: has to }, " work."], rule: { en: { takes: [{ alternatives: [he, she, it] }, has to] } } }
-          - { level: A2, wrong: Do I must go?, right: { alternatives: [[{ target: Do }, " I ", { target: have to }, " go?"], [{ target: Must }, " I go?"]] }, rule: { en: have to takes do; must forms its own question } }
-          - { level: A2, wrong: She doesn't has to work., right: ["She doesn't ", { target: have to }, " work."], rule: { en: { pattern: [doesn't, base form] } } }
-          - { level: A2, wrong: I must work yesterday., right: ["I ", { target: had to }, " work yesterday."], rule: { en: { takes: [past of must, had to] } } }
+          - { level: A2, wrong: You don't must smoke here., right: ["You ", { target: mustn't }, " smoke here."], rule: { en: negative of must = mustn't, uk: "заперечення від must — mustn't", es: "la negación de must es mustn't" } }
+          - { level: A2, wrong: She musts go., right: ["She ", { target: must }, " go."], rule: { en: must has no -s, uk: "must не має -s", es: "must no lleva -s" } }
+          - { level: A2, wrong: She must to go., right: ["She must ", { target: go }, "."], rule: { en: [{ pattern: [must, { slot: base verb }] }, ; no to], uk: [{ pattern: [must, { slot: base verb }] }, "; без to"], es: [{ pattern: [must, { slot: base verb }] }, "; sin to"] } }
+          - { level: A2, wrong: He have to work., right: ["He ", { target: has to }, " work."], rule: { en: { takes: [{ alternatives: [he, she, it] }, has to] }, uk: { takes: [{ alternatives: [he, she, it] }, has to] }, es: { takes: [{ alternatives: [he, she, it] }, has to] } } }
+          - { level: A2, wrong: Do I must go?, right: { alternatives: [[{ target: Do }, " I ", { target: have to }, " go?"], [{ target: Must }, " I go?"]] }, rule: { en: have to takes do; must forms its own question, uk: "have to вживається з do; must сам утворює питання", es: "have to lleva do; must forma su propia pregunta" } }
+          - { level: A2, wrong: She doesn't has to work., right: ["She doesn't ", { target: have to }, " work."], rule: { en: { pattern: [doesn't, base form] }, uk: { pattern: [doesn't, "початкова форма"] }, es: { pattern: [doesn't, "forma base"] } } }
+          - { level: A2, wrong: I must work yesterday., right: ["I ", { target: had to }, " work yesterday."], rule: { en: { takes: [past of must, had to] }, uk: { takes: ["минулий час від must", had to] }, es: { takes: ["pasado de must", had to] } } }

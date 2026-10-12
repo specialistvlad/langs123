@@ -5,149 +5,173 @@ kind: grammar
 tags: [verbs, tenses, future]
 concepts: [future]
 related: [en.tenses.continuous-tenses, en.tenses.simple-tenses, en.tenses.tense-map, en.sentence-building.conditionals-0-1-2]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Future Forms }
+title: { en: Future Forms, uk: Способи вираження майбутнього, es: Formas de futuro }
 summary:
-  lead: { en: "Plans, arrangements, decisions, offers and predictions with going to, the present continuous, will and the present simple." }
-  rule: { en: "A plan made before speaking takes going to, a decision made while speaking takes will:" }
+  lead:
+    en: "Plans, arrangements, decisions, offers and predictions with going to, the present continuous, will and the present simple."
+    uk: "Плани, домовленості, рішення, пропозиції та прогнози виражаються через going to, Present Continuous, will і Present Simple."
+    es: "Planes, acuerdos, decisiones, ofrecimientos y predicciones con going to, el presente continuo, will y el presente simple."
+  rule:
+    en: "A plan made before speaking takes going to, a decision made while speaking takes will:"
+    uk: "План, складений до розмови, вимагає going to, а рішення під час розмови — will:"
+    es: "Un plan hecho antes de hablar lleva going to; una decisión tomada al hablar lleva will:"
   ex: { examples: [[{ target: I'm going to }, " visit Ana."], [{ target: I'll }, " open the door."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { pattern: [[{ alternatives: [am, is, are] }, " going to"], { slot: V }] }, rule: { en: "plans and intentions; predictions with evidence" }, ex: { examples: [[We', { target: re going to }, " visit Granada."], [Look at those clouds. It', { target: s going to }, " rain."]] } }
-        - { level: A1, point: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, rule: { en: "present continuous: a fixed arrangement, with a future time" }, ex: [I', { target: m seeing }, " the dentist on ", { weekday: Friday, value: 5 }, "."] }
-        - { level: A2, point: { pattern: [{ alternatives: [will, "'ll", "won't"] }, { slot: V }] }, rule: { en: "decisions now, offers, promises, opinions (I think)" }, ex: { examples: [[It's cold. I', { target: ll close }, " the window."], [I think she', { target: ll win }, "."]] } }
-        - { level: A2, point: { alternatives: [V, V-s] }, rule: { en: "present simple: timetables" }, ex: ["The train ", { target: leaves }, " at ", { time: "6:15", value: "06:15" }, "."] }
-        - { level: B1, point: { en: Prediction }, rule: { en: "opinion or guess (I think): will; evidence now: going to" }, ex: { examples: [[I think it', { target: ll }, " be a good year."], [Watch out! You', { target: re going to }, " fall."]] } }
-        - { level: B1, point: { en: Arrangement or intention }, rule: { en: "fixed arrangement: present continuous; intention: going to" }, ex: { examples: [[I', { target: m meeting }, " Sam at 8."], [I', { target: m going to }, " learn Italian."]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: plans take going to }, ex: [I', { target: m going to buy }, " a car tomorrow."] }
-        - { level: A2, point: { en: Trap }, rule: { en: will makes questions by itself }, ex: [{ target: Will }, " you come?"] }
+        - { level: A1, point: { pattern: [[{ alternatives: [am, is, are] }, " going to"], { slot: V }] }, rule: { en: "plans and intentions; predictions with evidence", uk: "плани й наміри; прогнози з опорою на факти", es: "planes e intenciones; predicciones con evidencia" }, ex: { examples: [[We', { target: re going to }, " visit Granada."], [Look at those clouds. It', { target: s going to }, " rain."]] }, tr: { uk: { examples: ["Ми збираємося відвідати Гранаду.", "Подивись на ті хмари. Буде дощ."] }, es: { examples: ["Vamos a visitar Granada.", "Mira esas nubes. Va a llover."] } } }
+        - { level: A1, point: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, rule: { en: "present continuous: a fixed arrangement, with a future time", uk: "Present Continuous: чітка домовленість із вказівкою на майбутній час", es: "presente continuo: un plan acordado, con una referencia de futuro" }, ex: [I', { target: m seeing }, " the dentist on ", { weekday: Friday, value: 5 }, "."], tr: { uk: "У п’ятницю я йду до стоматолога.", es: "El viernes voy al dentista." } }
+        - { level: A2, point: { pattern: [{ alternatives: [will, "'ll", "won't"] }, { slot: V }] }, rule: { en: "decisions now, offers, promises, opinions (I think)", uk: "рішення в момент мовлення, пропозиції, обіцянки, думки (I think)", es: "decisiones en el momento, ofrecimientos, promesas, opiniones (I think)" }, ex: { examples: [[It's cold. I', { target: ll close }, " the window."], [I think she', { target: ll win }, "."]] }, tr: { uk: { examples: ["Холодно. Я зачиню вікно.", "Думаю, вона виграє."] }, es: { examples: ["Hace frío. Cerraré la ventana.", "Creo que ganará."] } } }
+        - { level: A2, point: { alternatives: [V, V-s] }, rule: { en: "present simple: timetables", uk: "Present Simple: розклади", es: "presente simple: horarios" }, ex: ["The train ", { target: leaves }, " at ", { time: "6:15", value: "06:15" }, "."], tr: { uk: "Потяг відправляється о 6:15.", es: "El tren sale a las 6:15." } }
+        - { level: B1, point: { en: Prediction, uk: "Прогноз", es: "Predicción" }, rule: { en: "opinion or guess (I think): will; evidence now: going to", uk: "думка чи припущення (I think): will; докази зараз: going to", es: "opinión o suposición (I think): will; evidencia actual: going to" }, ex: { examples: [[I think it', { target: ll }, " be a good year."], [Watch out! You', { target: re going to }, " fall."]] }, tr: { uk: { examples: ["Думаю, це буде добрий рік.", "Обережно! Ти впадеш."] }, es: { examples: ["Creo que será un buen año.", "¡Cuidado! Te vas a caer."] } } }
+        - { level: B1, point: { en: Arrangement or intention, uk: "Домовленість або намір", es: "Plan acordado o intención" }, rule: { en: "fixed arrangement: present continuous; intention: going to", uk: "чітка домовленість: Present Continuous; намір: going to", es: "plan acordado: presente continuo; intención: going to" }, ex: { examples: [[I', { target: m meeting }, " Sam at 8."], [I', { target: m going to }, " learn Italian."]] }, tr: { uk: { examples: ["Я зустрічаюся із Семом о 8.", "Я збираюся вивчати італійську."] }, es: { examples: ["Me veo con Sam a las 8.", "Voy a aprender italiano."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: plans take going to, uk: "плани виражає going to", es: "los planes llevan going to" }, ex: [I', { target: m going to buy }, " a car tomorrow."], tr: { uk: "Завтра я збираюся купити машину.", es: "Mañana voy a comprar un auto." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: will makes questions by itself, uk: "will сам утворює питання", es: "will forma preguntas por sí solo" }, ex: [{ target: Will }, " you come?"], tr: { uk: "Ти прийдеш?", es: "¿Vendrás?" } }
 
 sections:
-  - title: { en: "Form: be going to" }
+  - title: { en: "Form: be going to", uk: "Форма: be going to", es: "Forma: be going to" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: structure, label: { en: Structure } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: structure, label: { en: Structure, uk: "Структура", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative }, structure: { pattern: [{ alternatives: [am, is, are] }, going to, { slot: V }] }, ex: ["She ", { target: is going to }, " study."] }
-          - { level: A1, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, structure: { pattern: [{ alternatives: [am, is, are] }, not, going to, { slot: V }] }, ex: ["We ", { target: aren't going to }, " wait."] }
-          - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: Question }, structure: { pattern: [{ alternatives: [Am, Is, Are] }, { slot: subject }, going to, [{ slot: V }, "?"]] }, ex: [{ target: Are }, " you ", { target: going to }, " cook?"] }
+          - { level: A1, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, structure: { pattern: [{ alternatives: [am, is, are] }, going to, { slot: V }] }, ex: ["She ", { target: is going to }, " study."] }
+          - { level: A1, features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: "Заперечення", es: "Negación" }, structure: { pattern: [{ alternatives: [am, is, are] }, not, going to, { slot: V }] }, ex: ["We ", { target: aren't going to }, " wait."] }
+          - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: "Питання", es: "Pregunta" }, structure: { pattern: [{ alternatives: [Am, Is, Are] }, { slot: subject }, going to, [{ slot: V }, "?"]] }, ex: [{ target: Are }, " you ", { target: going to }, " cook?"] }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: going to }, " stays the same for every person; only ", { term: be }, " changes."]
+              uk: [{ term: going to }, " однакове для всіх осіб; змінюється лише ", { term: be }, "."]
+              es: [{ term: going to }, " es igual para todas las personas; solo cambia ", { term: be }, "."]
           - type: rule
             level: A1
             text:
               en: ["After ", { term: to }, " the verb is in the base form:"]
+              uk: ["Після ", { term: to }, " дієслово стоїть у початковій формі:"]
+              es: ["Después de ", { term: to }, " el verbo va en la forma base:"]
             ex: ["I'm going to ", { target: eat }, "."]
+            tr: { uk: "Я збираюся їсти.", es: "Voy a comer." }
 
-  - title: { en: "Form: will" }
+  - title: { en: "Form: will", uk: "Форма: will", es: "Forma: will" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: structure, label: { en: Structure } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: structure, label: { en: Structure, uk: "Структура", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative }, structure: { pattern: [{ alternatives: [will, "'ll"] }, { slot: V }] }, ex: [I', { target: ll help }, " you."] }
-          - { level: A2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, structure: { pattern: [{ alternatives: [will not, won't] }, { slot: V }] }, ex: ["He ", { target: won't come }, "."] }
-          - { level: A2, features: { polarity: pos, interrogativity: int }, form: { en: Question }, structure: { pattern: [Will, { slot: subject }, [{ slot: V }, "?"]] }, ex: [{ target: Will }, " you ", { target: call }, " me?"] }
-          - { level: A2, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer }, structure: { alternatives: ["Yes, I will.", "No, I won't."] }, ex: { exchange: [[{ target: Will }, " she come?"], ["Yes, she ", { target: will }, "."]] } }
+          - { level: A2, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, structure: { pattern: [{ alternatives: [will, "'ll"] }, { slot: V }] }, ex: [I', { target: ll help }, " you."] }
+          - { level: A2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: "Заперечення", es: "Negación" }, structure: { pattern: [{ alternatives: [will not, won't] }, { slot: V }] }, ex: ["He ", { target: won't come }, "."] }
+          - { level: A2, features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: "Питання", es: "Pregunta" }, structure: { pattern: [Will, { slot: subject }, [{ slot: V }, "?"]] }, ex: [{ target: Will }, " you ", { target: call }, " me?"] }
+          - { level: A2, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, structure: { alternatives: ["Yes, I will.", "No, I won't."] }, ex: { exchange: [[{ target: Will }, " she come?"], ["Yes, she ", { target: will }, "."]] } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: will }, " is the same for every person and takes the base verb: she ", { term: will go }, "."]
+              uk: [{ term: will }, " однаковий для всіх осіб і вживається з початковою формою дієслова: she ", { term: will go }, "."]
+              es: [{ term: will }, " es igual para todas las personas y lleva el verbo en forma base: she ", { term: will go }, "."]
           - type: rule
             level: A2
             text:
               en: ["Speech uses ", { term: "'ll" }, " (I'll, she'll) and ", { term: won't }, "."]
+              uk: ["У мовленні вживають ", { term: "'ll" }, " (I'll, she'll) і ", { term: won't }, "."]
+              es: ["En el habla se usan ", { term: "'ll" }, " (I'll, she'll) y ", { term: won't }, "."]
 
-  - title: { en: "Pronunciation: gonna and 'll" }
+  - title: { en: "Pronunciation: gonna and 'll", uk: "Вимова: gonna і 'll", es: "Pronunciación: gonna y 'll" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: written, label: { en: Written } }
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: written, label: { en: Written, uk: "Як пишеться", es: "Cómo se escribe" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, written: going to, sound: { mapping: [{ ipa: ˈɡəʊɪŋ tə }, ["informal ", { ipa: ˈɡɒnə }]] }, ex: ["I'm ", { target: going to }, " call him."] }
-          - { level: A2, written: "'ll", sound: [{ ipa: əl }, " after a consonant, ", { ipa: l }, " after a vowel"], ex: [She', { target: ll }, " call you."] }
-          - { level: A2, written: won't, sound: { ipa: wəʊnt }, ex: ["It ", { target: won't }, " rain."] }
+          - { level: A1, written: going to, sound: { en: { mapping: [{ ipa: ˈɡəʊɪŋ tə }, ["informal ", { ipa: ˈɡɒnə }]] }, uk: { mapping: [{ ipa: ˈɡəʊɪŋ tə }, ["розмовне ", { ipa: ˈɡɒnə }]] }, es: { mapping: [{ ipa: ˈɡəʊɪŋ tə }, ["informal ", { ipa: ˈɡɒnə }]] } }, ex: ["I'm ", { target: going to }, " call him."], tr: { uk: "Я збираюся йому подзвонити.", es: "Voy a llamarlo." } }
+          - { level: A2, written: "'ll", sound: { en: [{ ipa: əl }, " after a consonant, ", { ipa: l }, " after a vowel"], uk: [{ ipa: əl }, " після приголосного, ", { ipa: l }, " після голосного"], es: [{ ipa: əl }, " después de consonante, ", { ipa: l }, " después de vocal"] }, ex: [She', { target: ll }, " call you."], tr: { uk: "Вона тобі подзвонить.", es: "Ella te llamará." } }
+          - { level: A2, written: won't, sound: { ipa: wəʊnt }, ex: ["It ", { target: won't }, " rain."], tr: { uk: "Дощу не буде.", es: "No lloverá." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: gonna }, " is informal speech; writing and exams use ", { term: going to }, "."]
+              uk: [{ term: gonna }, " належить до неформального мовлення; на письмі й на іспитах вживають ", { term: going to }, "."]
+              es: [{ term: gonna }, " es del habla informal; en la escritura y en los exámenes se usa ", { term: going to }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: "going to: plans and intentions" }, ex: [We', { target: re going to }, " visit Granada."] }
-          - { level: A1, use: { en: "going to: prediction with evidence" }, ex: [Look at those clouds. It', { target: s going to }, " rain."] }
-          - { level: A1, use: { en: "present continuous: fixed arrangements" }, ex: [I', { target: m seeing }, " the dentist on ", { weekday: Friday, value: 5 }, "."] }
-          - { level: A2, use: { en: "will: decision at the moment of speaking" }, ex: [It's cold. I', { target: ll close }, " the window."] }
-          - { level: A2, use: { en: "will: offers" }, ex: [I', { target: ll carry }, " your bag."] }
-          - { level: A2, use: { en: "will: promises" }, ex: ["I ", { target: won't tell }, " anyone."] }
-          - { level: A2, use: { en: "will: opinions and predictions (I think)" }, ex: [I think she', { target: ll }, " win."] }
-          - { level: A2, use: { en: "present simple: timetables" }, ex: ["The train ", { target: leaves }, " at ", { time: "6:15", value: "06:15" }, "."] }
+          - { level: A1, use: { en: "going to: plans and intentions", uk: "going to: плани й наміри", es: "going to: planes e intenciones" }, ex: [We', { target: re going to }, " visit Granada."], tr: { uk: "Ми збираємося відвідати Гранаду.", es: "Vamos a visitar Granada." } }
+          - { level: A1, use: { en: "going to: prediction with evidence", uk: "going to: прогноз з опорою на факти", es: "going to: predicción con evidencia" }, ex: [Look at those clouds. It', { target: s going to }, " rain."], tr: { uk: "Подивись на ті хмари. Буде дощ.", es: "Mira esas nubes. Va a llover." } }
+          - { level: A1, use: { en: "present continuous: fixed arrangements", uk: "Present Continuous: чіткі домовленості", es: "presente continuo: planes acordados" }, ex: [I', { target: m seeing }, " the dentist on ", { weekday: Friday, value: 5 }, "."], tr: { uk: "У п’ятницю я йду до стоматолога.", es: "El viernes voy al dentista." } }
+          - { level: A2, use: { en: "will: decision at the moment of speaking", uk: "will: рішення в момент мовлення", es: "will: decisión en el momento de hablar" }, ex: [It's cold. I', { target: ll close }, " the window."], tr: { uk: "Холодно. Я зачиню вікно.", es: "Hace frío. Cerraré la ventana." } }
+          - { level: A2, use: { en: "will: offers", uk: "will: пропозиції", es: "will: ofrecimientos" }, ex: [I', { target: ll carry }, " your bag."], tr: { uk: "Я понесу твою сумку.", es: "Llevaré tu bolso." } }
+          - { level: A2, use: { en: "will: promises", uk: "will: обіцянки", es: "will: promesas" }, ex: ["I ", { target: won't tell }, " anyone."], tr: { uk: "Я нікому не скажу.", es: "No se lo diré a nadie." } }
+          - { level: A2, use: { en: "will: opinions and predictions (I think)", uk: "will: думки та прогнози (I think)", es: "will: opiniones y predicciones (I think)" }, ex: [I think she', { target: ll }, " win."], tr: { uk: "Думаю, вона виграє.", es: "Creo que ganará." } }
+          - { level: A2, use: { en: "present simple: timetables", uk: "Present Simple: розклади", es: "presente simple: horarios" }, ex: ["The train ", { target: leaves }, " at ", { time: "6:15", value: "06:15" }, "."], tr: { uk: "Потяг відправляється о 6:15.", es: "El tren sale a las 6:15." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: The present continuous needs a future time and a plan with a fixed person or place.
+              uk: "Present Continuous потребує вказівки на майбутній час і плану з визначеною особою чи місцем."
+              es: "El presente continuo necesita una referencia de futuro y un plan con una persona o un lugar concretos."
           - type: note
             level: A1
             text:
               en: ["See ", { link: Present continuous, to: en.tenses.continuous-tenses }, " and ", { link: Present simple, to: en.tenses.simple-tenses }, "."]
+              uk: ["Див. ", { link: "Present Continuous", to: en.tenses.continuous-tenses }, " і ", { link: "Present Simple", to: en.tenses.simple-tenses }, "."]
+              es: ["Ver ", { link: "Presente continuo", to: en.tenses.continuous-tenses }, " y ", { link: "Presente simple", to: en.tenses.simple-tenses }, "."]
 
-  - title: { en: Signal words }
+  - title: { en: Signal words, uk: "Слова-маркери", es: "Palabras clave" }
     role: signals
     content:
       - type: usage
         columns:
-          - { key: expression, label: { en: Expression } }
-          - { key: ex, label: { en: Example } }
+          - { key: expression, label: { en: Expression, uk: "Вираз", es: "Expresión" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, expression: { alternatives: [tomorrow, tonight] }, ex: ["We're ", { target: going to }, " cook ", { signal: tonight }, "."] }
-          - { level: A1, expression: { alternatives: [next week, month, year] }, ex: ["I'm travelling ", { signal: next week }, "."] }
-          - { level: A1, expression: { alternatives: [["on ", { weekday: Friday, value: 5 }], at the weekend] }, ex: ["She's leaving ", { signal: ["on ", { weekday: Friday, value: 5 }] }, "."] }
-          - { level: A2, expression: { alternatives: [in two days, in a minute] }, ex: ["I'll call you ", { signal: in a minute }, "."] }
-          - { level: A2, expression: { alternatives: [soon, later] }, ex: ["He'll be here ", { signal: soon }, "."] }
-          - { level: A2, expression: { alternatives: [I think, probably] }, ex: ["It'll ", { signal: probably }, " rain."] }
+          - { level: A1, expression: { alternatives: [tomorrow, tonight] }, ex: ["We're ", { target: going to }, " cook ", { signal: tonight }, "."], tr: { uk: "Сьогодні ввечері ми збираємося готувати.", es: "Esta noche vamos a cocinar." } }
+          - { level: A1, expression: { alternatives: [next week, month, year] }, ex: ["I'm travelling ", { signal: next week }, "."], tr: { uk: "Наступного тижня я їду в подорож.", es: "Viajo la semana que viene." } }
+          - { level: A1, expression: { alternatives: [["on ", { weekday: Friday, value: 5 }], at the weekend] }, ex: ["She's leaving ", { signal: ["on ", { weekday: Friday, value: 5 }] }, "."], tr: { uk: "У п’ятницю вона від’їжджає.", es: "Ella se va el viernes." } }
+          - { level: A2, expression: { alternatives: [in two days, in a minute] }, ex: ["I'll call you ", { signal: in a minute }, "."], tr: { uk: "Я зателефоную тобі за хвилину.", es: "Te llamaré en un minuto." } }
+          - { level: A2, expression: { alternatives: [soon, later] }, ex: ["He'll be here ", { signal: soon }, "."], tr: { uk: "Він скоро буде тут.", es: "Pronto estará aquí." } }
+          - { level: A2, expression: { alternatives: [I think, probably] }, ex: ["It'll ", { signal: probably }, " rain."], tr: { uk: "Ймовірно, піде дощ.", es: "Probablemente lloverá." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: probably }, " goes after ", { term: will }, " and before ", { term: won't }, ":"]
+              uk: [{ term: probably }, " стоїть після ", { term: will }, " і перед ", { term: won't }, ":"]
+              es: [{ term: probably }, " va después de ", { term: will }, " y antes de ", { term: won't }, ":"]
             ex: { examples: [["It will ", { target: probably }, " rain."], ["It ", { target: probably }, " won't rain."]] }
+            tr: { uk: { examples: ["Ймовірно, піде дощ.", "Ймовірно, дощу не буде."] }, es: { examples: ["Probablemente lloverá.", "Probablemente no lloverá."] } }
 
-  - title: { en: "Compare: will and going to" }
+  - title: { en: "Compare: will and going to", uk: "Порівняння: will і going to", es: "Comparación: will y going to" }
     role: compare
     content:
       - type: comparison
@@ -155,25 +179,28 @@ sections:
           - { key: will, label: will }
           - { key: going, label: going to }
         rows:
-          - { level: A2, will: { en: decision made now }, going: { en: plan made before } }
-          - { level: A2, will: [The phone is ringing. I', { target: ll answer }, " it."], going: [I', { target: m going to call }, " Tom tonight. I decided yesterday."] }
-          - { level: B1, will: { en: opinion or guess (I think) }, going: { en: evidence now } }
-          - { level: B1, will: [I think it', { target: ll }, " be a good year."], going: [Watch out! You', { target: re going to }, " fall."] }
+          - { level: A2, will: { en: decision made now, uk: "рішення, ухвалене зараз", es: "decisión tomada ahora" }, going: { en: plan made before, uk: "план, складений раніше", es: "plan hecho antes" } }
+          - { level: A2, will: { ex: [The phone is ringing. I', { target: ll answer }, " it."], tr: { uk: "Телефон дзвонить. Я відповім.", es: "Suena el teléfono. Contestaré yo." } }, going: { ex: [I', { target: m going to call }, " Tom tonight. I decided yesterday."], tr: { uk: "Сьогодні ввечері я збираюся зателефонувати Томові. Я вирішив ще вчора.", es: "Esta noche voy a llamar a Tom. Lo decidí ayer." } } }
+          - { level: B1, will: { en: opinion or guess (I think), uk: "думка чи припущення (I think)", es: "opinión o suposición (I think)" }, going: { en: evidence now, uk: "докази зараз", es: "evidencia actual" } }
+          - { level: B1, will: { ex: [I think it', { target: ll }, " be a good year."], tr: { uk: "Думаю, це буде добрий рік.", es: "Creo que será un buen año." } }, going: { ex: [Watch out! You', { target: re going to }, " fall."], tr: { uk: "Обережно! Ти впадеш.", es: "¡Cuidado! Te vas a caer." } } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["A fixed arrangement takes the present continuous; an intention takes ", { term: going to }, ":"]
+              uk: ["Чітка домовленість вимагає Present Continuous, а намір — ", { term: going to }, ":"]
+              es: ["Un plan acordado lleva el presente continuo; una intención lleva ", { term: going to }, ":"]
             ex: { examples: [[I', { target: m meeting }, " Sam at 8."], [I', { target: m going to }, " learn Italian."]] }
+            tr: { uk: { examples: ["Я зустрічаюся із Семом о 8.", "Я збираюся вивчати італійську."] }, es: { examples: ["Me veo con Sam a las 8.", "Voy a aprender italiano."] } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: I buy a car tomorrow., right: [I', { target: m going to buy }, " a car tomorrow."], rule: { en: plans take going to } }
-          - { level: A1, wrong: I'm going to to travel., right: ["I'm going to ", { target: travel }, "."], rule: { en: { pattern: [going to, { slot: base verb }] } } }
-          - { level: A1, wrong: She is going to goes., right: ["She is going to ", { target: go }, "."], rule: { en: { pattern: [going to, { slot: base verb }] } } }
-          - { level: A2, wrong: He will goes., right: ["He will ", { target: go }, "."], rule: { en: { pattern: [will, { slot: base verb }] } } }
-          - { level: A2, wrong: Do you will come?, right: [{ target: Will }, " you come?"], rule: { en: will makes questions by itself } }
+          - { level: A1, wrong: I buy a car tomorrow., right: [I', { target: m going to buy }, " a car tomorrow."], rule: { en: plans take going to, uk: "плани виражає going to", es: "los planes llevan going to" } }
+          - { level: A1, wrong: I'm going to to travel., right: ["I'm going to ", { target: travel }, "."], rule: { en: { pattern: [going to, { slot: base verb }] }, uk: { pattern: [going to, { slot: base verb }] }, es: { pattern: [going to, { slot: base verb }] } } }
+          - { level: A1, wrong: She is going to goes., right: ["She is going to ", { target: go }, "."], rule: { en: { pattern: [going to, { slot: base verb }] }, uk: { pattern: [going to, { slot: base verb }] }, es: { pattern: [going to, { slot: base verb }] } } }
+          - { level: A2, wrong: He will goes., right: ["He will ", { target: go }, "."], rule: { en: { pattern: [will, { slot: base verb }] }, uk: { pattern: [will, { slot: base verb }] }, es: { pattern: [will, { slot: base verb }] } } }
+          - { level: A2, wrong: Do you will come?, right: [{ target: Will }, " you come?"], rule: { en: will makes questions by itself, uk: "will сам утворює питання", es: "will forma preguntas por sí solo" } }

@@ -3,67 +3,79 @@
 # Every row, list item and paragraph carries its level; sections and the topic take their range from them.
 # The fields name what each piece of content is (CONVENTIONS.md §12): a string with marks is a list of
 # parts, ["I ", { target: work }, " here."]; a string without marks stays a string.
+# Explanation text carries every explanation language; an example carries its translation into each
+# explanation language but the language being learned, in tr (CONVENTIONS.md §6).
 id: "{lang}.{section}.{topic}"
 lang: en
 kind: grammar
 tags: []
 concepts: []
 related: []
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "{Title}" }
+title: { en: "{Title}", uk: "{Title}", es: "{Title}" }
 summary:
-  lead: { en: "{The forms and what they do, one sentence of at most 160 characters.}" }
-  rule: { en: "{The rule to get right:}" }
+  lead: { en: "{The forms and what they do, one sentence of at most 160 characters.}", uk: "{The lead in Ukrainian.}", es: "{The lead in Spanish.}" }
+  rule: { en: "{The rule to get right:}", uk: "{The rule in Ukrainian:}", es: "{The rule in Spanish:}" }
   ex: ["{Example with the }", { target: "{target form}" }, "."]
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: form, label: { en: Form } }
-        - { key: ex, label: { en: Example } }
+        - { key: form, label: { en: Form, uk: Форма, es: Forma } }
+        - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo } }
       rows:
-        - { level: "{A1}", features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative }, ex: ["She ", { target: "{works}" }, "."] }
-        - { level: "{A1}", features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, ex: ["She ", { target: "{doesn't work}" }, "."] }
-        - { level: "{A2}", features: { polarity: pos, interrogativity: int }, form: { en: Question }, ex: [{ aux: Does }, " she ", { target: work }, "?"] }
+        - { level: "{A1}", features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: Ствердження, es: Afirmación }, ex: ["She ", { target: "{works}" }, "."] }
+        - { level: "{A1}", features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: Заперечення, es: Negación }, ex: ["She ", { target: "{doesn't work}" }, "."] }
+        - { level: "{A2}", features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: Питання, es: Pregunta }, ex: [{ aux: Does }, " she ", { target: work }, "?"] }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: Огляд, es: Visión general }
     role: overview
     content:
       - type: list
         items:
           - type: rule
             level: "{A1}"
-            text: { en: "{One rule, at most 20 words:}" }
+            text: { en: "{One rule, at most 20 words:}", uk: "{The rule in Ukrainian:}", es: "{The rule in Spanish:}" }
             ex: ["{Its example with the }", { target: "{target}" }, "."]
+            tr: { uk: "{The example in Ukrainian.}", es: "{The example in Spanish.}" }
           - type: note
             level: "{A1}"
-            text: { en: ["{A note. See }", { link: "{Other topic}", to: "{en.section.topic}" }, "."] }
+            text:
+              en: ["{A note. See }", { link: "{Other topic}", to: "{en.section.topic}" }, "."]
+              uk: ["{The note in Ukrainian. See }", { link: "{Other topic in Ukrainian}", to: "{en.section.topic}" }, "."]
+              es: ["{The note in Spanish. See }", { link: "{Other topic in Spanish}", to: "{en.section.topic}" }, "."]
 
-  - title: { en: "Form: {form}" }
+  - title: { en: "Form: {form}", uk: "Форма: {form}", es: "Forma: {form}" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: Форма, es: Forma } }
+          - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo } }
         rows:
-          - { level: "{A1}", form: { pattern: [{ slot: subject }, "{form}", { slot: V }] }, ex: "{Example}" }
+          - { level: "{A1}", form: { pattern: [{ slot: subject }, "{form}", { slot: V }] }, ex: "{Example}", tr: { uk: "{Translation}", es: "{Translation}" } }
 
-  - title: { en: Use }
+  - title: { en: Use, uk: Вживання, es: Uso }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: Вживання, es: Uso } }
+          - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo } }
         rows:
-          - { level: "{A1}", use: { en: "{use}" }, ex: ["{Example with the }", { target: "{target}" }, "."] }
-          - { level: "{A2}", use: { en: "{use}" }, ex: { examples: ["{One example.}", "{Another example.}"] } }
+          - level: "{A1}"
+            use: { en: "{use}", uk: "{use}", es: "{use}" }
+            ex: ["{Example with the }", { target: "{target}" }, "."]
+            tr: { uk: "{Translation}", es: "{Translation}" }
+          - level: "{A2}"
+            use: { en: "{use}", uk: "{use}", es: "{use}" }
+            ex: { examples: ["{One example.}", "{Another example.}"] }
+            tr: { uk: { examples: ["{One translation.}", "{Another translation.}"] }, es: { examples: ["{One translation.}", "{Another translation.}"] } }
 
-  - title: { en: "Compare: {this} and {that}" }
+  - title: { en: "Compare: {this} and {that}", uk: "Порівняння: {this} і {that}", es: "Comparación: {this} y {that}" }
     role: compare
     content:
       - type: comparison
@@ -71,12 +83,14 @@ sections:
           - { key: this, label: "{this}" }
           - { key: that, label: "{that}" }
         rows:
-          - { level: "{A2}", this: { en: "{meaning}" }, that: { en: "{meaning}" } }
-          - { level: "{A2}", this: ["{Example with }", { target: "{this}" }, "."], that: ["{Example with }", { target: "{that}" }, "."] }
+          - { level: "{A2}", this: { en: "{meaning}", uk: "{meaning}", es: "{meaning}" }, that: { en: "{meaning}", uk: "{meaning}", es: "{meaning}" } }
+          - level: "{A2}"
+            this: { ex: ["{Example with }", { target: "{this}" }, "."], tr: { uk: "{Translation}", es: "{Translation}" } }
+            that: { ex: ["{Example with }", { target: "{that}" }, "."], tr: { uk: "{Translation}", es: "{Translation}" } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: Типові помилки, es: Errores frecuentes }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: "{A1}", wrong: "{wrong}", right: ["{right with the }", { target: "{fix}" }], rule: { en: "{rule}" } }
+          - { level: "{A1}", wrong: "{wrong}", right: ["{right with the }", { target: "{fix}" }], rule: { en: "{rule}", uk: "{rule}", es: "{rule}" } }

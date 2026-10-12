@@ -5,176 +5,195 @@ kind: grammar
 tags: [adverbs, frequency, manner]
 concepts: [adverbs]
 related: [en.tenses.simple-tenses, en.adjectives-adverbs.adjective-order, en.verbs.to-be, en.sentence-building.word-order]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Adverbs of frequency and manner }
+title: { en: Adverbs of frequency and manner, uk: Прислівники частотності та способу дії, es: Adverbios de frecuencia y de modo }
 summary:
-  lead: { en: "Frequency adverbs say how often things happen (always, never); manner adverbs say how they happen (slowly, well)." }
-  rule: { en: "Frequency adverbs go before the main verb but after be:" }
+  lead:
+    en: "Frequency adverbs say how often things happen (always, never); manner adverbs say how they happen (slowly, well)."
+    uk: "Прислівники частотності показують, як часто щось відбувається (always, never), а прислівники способу дії — як воно відбувається (slowly, well)."
+    es: "Los adverbios de frecuencia dicen con qué frecuencia ocurren las cosas (always, never); los de modo dicen cómo ocurren (slowly, well)."
+  rule:
+    en: "Frequency adverbs go before the main verb but after be:"
+    uk: "Прислівники частотності стоять перед основним дієсловом, але після be:"
+    es: "Los adverbios de frecuencia van antes del verbo principal, pero después de be:"
   ex: { examples: [["I ", { target: always }, " go."], ["I am ", { target: always }, " tired."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Frequency }, rule: { en: "how often: always (100%), usually, often, sometimes, never (0%)" }, ex: ["I ", { target: always }, " walk to work."] }
-        - { level: A2, point: { en: Manner }, rule: { en: ["how it happens: ", { pattern: [{ slot: adjective }, { ending: ly }] }, "; ", { mapping: ["y", ily] }] }, ex: { examples: [["He walks ", { target: slowly }, "."], ["They sing ", { target: happily }, "."]] } }
-        - { level: A2, point: { en: "Manner: irregular" }, rule: { en: "fast, hard, late and early keep the adjective's form" }, ex: ["He runs ", { target: fast }, "."] }
-        - { level: A1, point: "How often?", rule: { en: frequency expressions go at the end }, ex: { exchange: [How often do you swim?, ["I swim ", { target: every day }, "."]] } }
-        - { level: A1, point: { en: "Frequency: position" }, rule: { en: "before the main verb, after be" }, ex: { examples: [["I ", { target: often }, " walk."], ["She is ", { target: always }, " late."]] } }
-        - { level: A2, point: { en: "Frequency: with an auxiliary" }, rule: { en: between the auxiliary and the main verb }, ex: ["I can ", { target: never }, " find my keys."] }
-        - { level: A2, point: { en: "Manner: position" }, rule: { en: "after the verb, or after the object" }, ex: ["He opened the door ", { target: slowly }, "."] }
-        - { level: A2, point: { en: Trap }, rule: { en: good describes a noun; well describes a verb }, ex: ["She sings ", { target: well }, "."] }
+        - { level: A1, point: { en: Frequency, uk: "Частотність", es: "Frecuencia" }, rule: { en: "how often: always (100%), usually, often, sometimes, never (0%)", uk: "як часто: always (100%), usually, often, sometimes, never (0%)", es: "con qué frecuencia: always (100%), usually, often, sometimes, never (0%)" }, ex: ["I ", { target: always }, " walk to work."], tr: { uk: "Я завжди ходжу на роботу пішки.", es: "Siempre voy al trabajo a pie." } }
+        - { level: A2, point: { en: Manner, uk: "Спосіб дії", es: "Modo" }, rule: { en: ["how it happens: ", { pattern: [{ slot: adjective }, { ending: ly }] }, "; ", { mapping: ["y", ily] }], uk: ["як це відбувається: ", { pattern: [{ slot: adjective }, { ending: ly }] }, "; ", { mapping: ["y", ily] }], es: ["cómo ocurre: ", { pattern: [{ slot: adjective }, { ending: ly }] }, "; ", { mapping: ["y", ily] }] }, ex: { examples: [["He walks ", { target: slowly }, "."], ["They sing ", { target: happily }, "."]] }, tr: { uk: { examples: ["Він ходить повільно.", "Вони співають радісно."] }, es: { examples: ["Camina despacio.", "Cantan alegremente."] } } }
+        - { level: A2, point: { en: "Manner: irregular", uk: "Спосіб дії: винятки", es: "Modo: irregulares" }, rule: { en: "fast, hard, late and early keep the adjective's form", uk: "fast, hard, late і early мають ту саму форму, що й прикметник", es: "fast, hard, late y early conservan la forma del adjetivo" }, ex: ["He runs ", { target: fast }, "."], tr: { uk: "Він бігає швидко.", es: "Corre rápido." } }
+        - { level: A1, point: "How often?", rule: { en: frequency expressions go at the end, uk: "вирази частотності стоять наприкінці", es: "las expresiones de frecuencia van al final" }, ex: { exchange: [How often do you swim?, ["I swim ", { target: every day }, "."]] }, tr: { uk: "Як часто ти плаваєш? — Я плаваю щодня.", es: "¿Con qué frecuencia nadas? — Nado todos los días." } }
+        - { level: A1, point: { en: "Frequency: position", uk: "Частотність: місце", es: "Frecuencia: posición" }, rule: { en: "before the main verb, after be", uk: "перед основним дієсловом, після be", es: "antes del verbo principal, después de be" }, ex: { examples: [["I ", { target: often }, " walk."], ["She is ", { target: always }, " late."]] }, tr: { uk: { examples: ["Я часто ходжу пішки.", "Вона завжди запізнюється."] }, es: { examples: ["Camino a menudo.", "Ella siempre llega tarde."] } } }
+        - { level: A2, point: { en: "Frequency: with an auxiliary", uk: "Частотність: з допоміжним дієсловом", es: "Frecuencia: con verbo auxiliar" }, rule: { en: between the auxiliary and the main verb, uk: "між допоміжним і основним дієсловом", es: "entre el verbo auxiliar y el verbo principal" }, ex: ["I can ", { target: never }, " find my keys."], tr: { uk: "Я ніколи не можу знайти свої ключі.", es: "Nunca puedo encontrar mis llaves." } }
+        - { level: A2, point: { en: "Manner: position", uk: "Спосіб дії: місце", es: "Modo: posición" }, rule: { en: "after the verb, or after the object", uk: "після дієслова або після додатка", es: "después del verbo o después del objeto" }, ex: ["He opened the door ", { target: slowly }, "."], tr: { uk: "Він повільно відчинив двері.", es: "Abrió la puerta despacio." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: good describes a noun; well describes a verb, uk: "good описує іменник, well — дієслово", es: "good describe un sustantivo; well describe un verbo" }, ex: ["She sings ", { target: well }, "."], tr: { uk: "Вона добре співає.", es: "Ella canta bien." } }
 
 sections:
-  - title: { en: "Form: frequency adverbs" }
+  - title: { en: "Form: frequency adverbs", uk: "Форма: прислівники частотності", es: "Forma: adverbios de frecuencia" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: adverb, label: { en: Adverb } }
-          - { key: often, label: { en: How often } }
-          - { key: ex, label: { en: Example } }
+          - { key: adverb, label: { en: Adverb, uk: "Прислівник", es: "Adverbio" } }
+          - { key: often, label: { en: How often, uk: "Як часто", es: "Con qué frecuencia" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, adverb: always, often: "100%", ex: ["I ", { target: always }, " walk to work."] }
-          - { level: A1, adverb: usually, often: ≈ 90%, ex: ["She ", { target: usually }, " has toast."] }
-          - { level: A1, adverb: often, often: ≈ 70%, ex: ["We ", { target: often }, " eat out."] }
-          - { level: A1, adverb: sometimes, often: ≈ 50%, ex: ["They ", { target: sometimes }, " call me."] }
-          - { level: A1, adverb: rarely, often: ≈ 10%, ex: ["He ", { target: rarely }, " drives."] }
-          - { level: A1, adverb: never, often: "0%", ex: ["I ", { target: never }, " drink coffee."] }
+          - { level: A1, adverb: always, often: "100%", ex: ["I ", { target: always }, " walk to work."], tr: { uk: "Я завжди ходжу на роботу пішки.", es: "Siempre voy al trabajo a pie." } }
+          - { level: A1, adverb: usually, often: ≈ 90%, ex: ["She ", { target: usually }, " has toast."], tr: { uk: "Вона зазвичай їсть грінки.", es: "Normalmente come tostadas." } }
+          - { level: A1, adverb: often, often: ≈ 70%, ex: ["We ", { target: often }, " eat out."], tr: { uk: "Ми часто ходимо в ресторани.", es: "A menudo comemos fuera." } }
+          - { level: A1, adverb: sometimes, often: ≈ 50%, ex: ["They ", { target: sometimes }, " call me."], tr: { uk: "Вони іноді мені телефонують.", es: "A veces me llaman." } }
+          - { level: A1, adverb: rarely, often: ≈ 10%, ex: ["He ", { target: rarely }, " drives."], tr: { uk: "Він рідко водить машину.", es: "Rara vez conduce." } }
+          - { level: A1, adverb: never, often: "0%", ex: ["I ", { target: never }, " drink coffee."], tr: { uk: "Я ніколи не п’ю каву.", es: "Nunca tomo café." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: hardly ever }, " (≈ 5%) is close to never:"]
+              uk: [{ term: hardly ever }, " (≈ 5%) майже дорівнює never:"]
+              es: [{ term: hardly ever }, " (≈ 5%) se acerca a never:"]
             ex: ["We ", { target: hardly ever }, " go out."]
+            tr: { uk: "Ми майже ніколи нікуди не ходимо.", es: "Casi nunca salimos." }
 
-  - title: { en: "Form: position of frequency adverbs" }
+  - title: { en: "Form: position of frequency adverbs", uk: "Форма: місце прислівників частотності", es: "Forma: posición de los adverbios de frecuencia" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: position, label: { en: Position } }
-          - { key: ex, label: { en: Example } }
+          - { key: position, label: { en: Position, uk: "Місце", es: "Posición" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, position: { en: before the main verb }, ex: ["I ", { target: often }, " walk."] }
-          - { level: A1, position: { en: after be }, ex: ["She is ", { target: always }, " late."] }
-          - { level: A2, position: { en: between auxiliary and main verb }, ex: ["I can ", { target: never }, " find my keys."] }
-          - { level: A2, position: { en: { alternatives: [after don't, doesn't] } }, ex: ["He doesn't ", { target: always }, " call."] }
+          - { level: A1, position: { en: before the main verb, uk: "перед основним дієсловом", es: "antes del verbo principal" }, ex: ["I ", { target: often }, " walk."], tr: { uk: "Я часто ходжу пішки.", es: "Camino a menudo." } }
+          - { level: A1, position: { en: after be, uk: "після be", es: "después de be" }, ex: ["She is ", { target: always }, " late."], tr: { uk: "Вона завжди запізнюється.", es: "Ella siempre llega tarde." } }
+          - { level: A2, position: { en: between auxiliary and main verb, uk: "між допоміжним і основним дієсловом", es: "entre el verbo auxiliar y el verbo principal" }, ex: ["I can ", { target: never }, " find my keys."], tr: { uk: "Я ніколи не можу знайти свої ключі.", es: "Nunca puedo encontrar mis llaves." } }
+          - { level: A2, position: { en: { alternatives: [after don't, doesn't] }, uk: { alternatives: ["після don't", "doesn't"] }, es: { alternatives: ["después de don't", "doesn't"] } }, ex: ["He doesn't ", { target: always }, " call."], tr: { uk: "Він не завжди дзвонить.", es: "No siempre llama." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: sometimes }, " also goes at the start:"]
+              uk: [{ term: sometimes }, " може також стояти на початку речення:"]
+              es: [{ term: sometimes }, " también puede ir al principio:"]
             ex: [{ target: Sometimes }, " I work from home."]
+            tr: { uk: "Іноді я працюю вдома.", es: "A veces trabajo desde casa." }
 
-  - title: { en: "Form: how often?" }
+  - title: { en: "Form: how often?", uk: "Форма: як часто?", es: "Forma: ¿con qué frecuencia?" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: question, label: { en: Question } }
-          - { key: answer, label: { en: Answer } }
+          - { key: question, label: { en: Question, uk: "Питання", es: "Pregunta" } }
+          - { key: answer, label: { en: Answer, uk: "Відповідь", es: "Respuesta" } }
         rows:
-          - { level: A1, question: How often do you swim?, answer: ["I swim ", { target: every day }, "."] }
-          - { level: A1, question: How often does she cook?, answer: ["She cooks ", { target: once a week }, "."] }
-          - { level: A1, question: How often do they visit you?, answer: ["They visit ", { target: twice a month }, "."] }
+          - { level: A1, question: How often do you swim?, answer: ["I swim ", { target: every day }, "."], tr: { uk: "Як часто ти плаваєш? — Я плаваю щодня.", es: "¿Con qué frecuencia nadas? — Nado todos los días." } }
+          - { level: A1, question: How often does she cook?, answer: ["She cooks ", { target: once a week }, "."], tr: { uk: "Як часто вона готує? — Вона готує раз на тиждень.", es: "¿Con qué frecuencia cocina? — Cocina una vez a la semana." } }
+          - { level: A1, question: How often do they visit you?, answer: ["They visit ", { target: twice a month }, "."], tr: { uk: "Як часто вони тебе відвідують? — Вони відвідують мене двічі на місяць.", es: "¿Con qué frecuencia te visitan? — Me visitan dos veces al mes." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "Frequency expressions go at the end: every day, once a week, three times a year."
+              uk: "Вирази частотності стоять наприкінці речення: every day, once a week, three times a year."
+              es: "Las expresiones de frecuencia van al final: every day, once a week, three times a year."
 
-  - title: { en: "Form: manner adverbs" }
+  - title: { en: "Form: manner adverbs", uk: "Форма: прислівники способу дії", es: "Forma: adverbios de modo" }
     role: form
     content:
       - type: comparison
         columns:
-          - { key: adjective, label: { en: Adjective } }
-          - { key: adverb, label: { en: Adverb } }
-          - { key: ex, label: { en: Example } }
+          - { key: adjective, label: { en: Adjective, uk: "Прикметник", es: "Adjetivo" } }
+          - { key: adverb, label: { en: Adverb, uk: "Прислівник", es: "Adverbio" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, adjective: slow, adverb: slowly, ex: ["He walks ", { target: slowly }, "."] }
-          - { level: A2, adjective: careful, adverb: carefully, ex: ["Drive ", { target: carefully }, "."] }
-          - { level: A2, adjective: quiet, adverb: quietly, ex: ["They talk ", { target: quietly }, "."] }
+          - { level: A2, adjective: slow, adverb: slowly, ex: ["He walks ", { target: slowly }, "."], tr: { uk: "Він ходить повільно.", es: "Camina despacio." } }
+          - { level: A2, adjective: careful, adverb: carefully, ex: ["Drive ", { target: carefully }, "."], tr: { uk: "Їдь обережно.", es: "Conduce con cuidado." } }
+          - { level: A2, adjective: quiet, adverb: quietly, ex: ["They talk ", { target: quietly }, "."], tr: { uk: "Вони розмовляють тихо.", es: "Hablan en voz baja." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["A manner adverb says how someone does something. Most are ", { pattern: [{ slot: adjective }, { term: "-ly" }] }, "."]
+              uk: ["Прислівник способу дії показує, як хтось щось робить. Більшість із них мають форму ", { pattern: [{ slot: adjective }, { term: "-ly" }] }, "."]
+              es: ["Un adverbio de modo dice cómo hace alguien algo. La mayoría tiene la forma ", { pattern: [{ slot: adjective }, { term: "-ly" }] }, "."]
 
-  - title: { en: "Spelling: -ly" }
+  - title: { en: "Spelling: -ly", uk: "Правопис: -ly", es: "Ortografía: -ly" }
     role: spelling
     content:
       - type: usage
         columns:
-          - { key: ending, label: { en: Ending } }
-          - { key: rule, label: { en: Rule } }
-          - { key: ex, label: { en: Examples } }
+          - { key: ending, label: { en: Ending, uk: "Закінчення", es: "Terminación" } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A2, ending: { en: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ily] }, ex: { examples: [{ mapping: [happy, happily] }, { mapping: [easy, easily] }] } }
-          - { level: A2, ending: "-le", rule: { mapping: ["-le", ly] }, ex: { examples: [{ mapping: [simple, simply] }, { mapping: [terrible, terribly] }] } }
-          - { level: A2, ending: "-ic", rule: { pattern: [{ ending: ally }], follows: true }, ex: { mapping: [basic, basically] } }
-          - { level: A2, ending: "-ue", rule: { mapping: ["-ue", uly] }, ex: { mapping: ["true", truly] } }
+          - { level: A2, ending: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", ily] }, ex: { examples: [{ mapping: [happy, happily] }, { mapping: [easy, easily] }] }, tr: { uk: { examples: ["щасливий — щасливо", "легкий — легко"] }, es: { examples: ["feliz — felizmente", "fácil — fácilmente"] } } }
+          - { level: A2, ending: "-le", rule: { mapping: ["-le", ly] }, ex: { examples: [{ mapping: [simple, simply] }, { mapping: [terrible, terribly] }] }, tr: { uk: { examples: ["простий — просто", "жахливий — жахливо"] }, es: { examples: ["simple — simplemente", "terrible — terriblemente"] } } }
+          - { level: A2, ending: "-ic", rule: { pattern: [{ ending: ally }], follows: true }, ex: { mapping: [basic, basically] }, tr: { uk: "основний — в основному", es: "básico — básicamente" } }
+          - { level: A2, ending: "-ue", rule: { mapping: ["-ue", uly] }, ex: { mapping: ["true", truly] }, tr: { uk: "справжній — по-справжньому", es: "verdadero — verdaderamente" } }
 
-  - title: { en: "Form: irregular manner adverbs" }
+  - title: { en: "Form: irregular manner adverbs", uk: "Форма: винятки серед прислівників способу дії", es: "Forma: adverbios de modo irregulares" }
     role: form
     content:
       - type: comparison
         columns:
-          - { key: adjective, label: { en: Adjective } }
-          - { key: adverb, label: { en: Adverb } }
-          - { key: ex, label: { en: Example } }
+          - { key: adjective, label: { en: Adjective, uk: "Прикметник", es: "Adjetivo" } }
+          - { key: adverb, label: { en: Adverb, uk: "Прислівник", es: "Adverbio" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, adjective: good, adverb: well, ex: ["She sings ", { target: well }, "."] }
-          - { level: A2, adjective: fast, adverb: fast, ex: ["He runs ", { target: fast }, "."] }
-          - { level: A2, adjective: hard, adverb: hard, ex: ["They work ", { target: hard }, "."] }
-          - { level: A2, adjective: late, adverb: late, ex: ["I arrived ", { target: late }, "."] }
-          - { level: A2, adjective: early, adverb: early, ex: ["We got up ", { target: early }, "."] }
+          - { level: A2, adjective: good, adverb: well, ex: ["She sings ", { target: well }, "."], tr: { uk: "Вона добре співає.", es: "Ella canta bien." } }
+          - { level: A2, adjective: fast, adverb: fast, ex: ["He runs ", { target: fast }, "."], tr: { uk: "Він бігає швидко.", es: "Corre rápido." } }
+          - { level: A2, adjective: hard, adverb: hard, ex: ["They work ", { target: hard }, "."], tr: { uk: "Вони наполегливо працюють.", es: "Trabajan duro." } }
+          - { level: A2, adjective: late, adverb: late, ex: ["I arrived ", { target: late }, "."], tr: { uk: "Я приїхав пізно.", es: "Llegué tarde." } }
+          - { level: A2, adjective: early, adverb: early, ex: ["We got up ", { target: early }, "."], tr: { uk: "Ми встали рано.", es: "Nos levantamos temprano." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: hardly }, " means almost not, and ", { term: lately }, " means recently:"]
+              uk: [{ term: hardly }, " означає «майже не», а ", { term: lately }, " — «останнім часом»:"]
+              es: [{ term: hardly }, " significa «casi no», y ", { term: lately }, " significa «últimamente»:"]
             ex: ["She ", { target: hardly }, " speaks."]
+            tr: { uk: "Вона майже не говорить.", es: "Casi no habla." }
 
-  - title: { en: "Form: position of manner adverbs" }
+  - title: { en: "Form: position of manner adverbs", uk: "Форма: місце прислівників способу дії", es: "Forma: posición de los adverbios de modo" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: position, label: { en: Position } }
-          - { key: ex, label: { en: Example } }
+          - { key: position, label: { en: Position, uk: "Місце", es: "Posición" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, position: { en: after the verb }, ex: ["She sings ", { target: beautifully }, "."] }
-          - { level: A2, position: { en: after the object }, ex: ["He opened the door ", { target: slowly }, "."] }
+          - { level: A2, position: { en: after the verb, uk: "після дієслова", es: "después del verbo" }, ex: ["She sings ", { target: beautifully }, "."], tr: { uk: "Вона чудово співає.", es: "Canta maravillosamente." } }
+          - { level: A2, position: { en: after the object, uk: "після додатка", es: "después del objeto" }, ex: ["He opened the door ", { target: slowly }, "."], tr: { uk: "Він повільно відчинив двері.", es: "Abrió la puerta despacio." } }
 
-  - title: { en: "Compare: good and well" }
+  - title: { en: "Compare: good and well", uk: "Порівняння: good і well", es: "Comparación: good y well" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: good, label: { en: good (adjective) } }
-          - { key: well, label: { en: well (adverb) } }
+          - { key: good, label: { en: good (adjective), uk: "good (прикметник)", es: "good (adjetivo)" } }
+          - { key: well, label: { en: well (adverb), uk: "well (прислівник)", es: "well (adverbio)" } }
         rows:
-          - { level: A2, good: { en: describes a noun }, well: { en: describes a verb } }
-          - { level: A2, good: ["She is a ", { target: good }, " singer."], well: ["She sings ", { target: well }, "."] }
-          - { level: A2, good: ["The food is ", { target: good }, "."], well: ["He speaks English ", { target: well }, "."] }
+          - { level: A2, good: { en: describes a noun, uk: "описує іменник", es: "describe un sustantivo" }, well: { en: describes a verb, uk: "описує дієслово", es: "describe un verbo" } }
+          - { level: A2, good: { ex: ["She is a ", { target: good }, " singer."], tr: { uk: "Вона гарна співачка.", es: "Es una buena cantante." } }, well: { ex: ["She sings ", { target: well }, "."], tr: { uk: "Вона добре співає.", es: "Canta bien." } } }
+          - { level: A2, good: { ex: ["The food is ", { target: good }, "."], tr: { uk: "Їжа смачна.", es: "La comida está buena." } }, well: { ex: ["He speaks English ", { target: well }, "."], tr: { uk: "Він добре говорить англійською.", es: "Habla bien inglés." } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: She sings good., right: ["She sings ", { target: well }, "."], rule: { en: [{ pattern: [good, { slot: noun }] }, ", ", { pattern: [well, { slot: verb }] }] } }
-          - { level: A2, wrong: He walks careful., right: ["He walks ", { target: carefully }, "."], rule: { en: ["manner adverb = ", { pattern: [{ slot: adjective }, "-ly"] }] } }
-          - { level: A2, wrong: They work hardly., right: ["They work ", { target: hard }, "."], rule: { en: hard = hard; hardly = almost not } }
+          - { level: A2, wrong: She sings good., right: ["She sings ", { target: well }, "."], rule: { en: [{ pattern: [good, { slot: noun }] }, ", ", { pattern: [well, { slot: verb }] }], uk: [{ pattern: [good, { slot: noun }] }, ", ", { pattern: [well, { slot: verb }] }], es: [{ pattern: [good, { slot: noun }] }, ", ", { pattern: [well, { slot: verb }] }] } }
+          - { level: A2, wrong: He walks careful., right: ["He walks ", { target: carefully }, "."], rule: { en: ["manner adverb = ", { pattern: [{ slot: adjective }, "-ly"] }], uk: ["прислівник способу дії = ", { pattern: [{ slot: adjective }, "-ly"] }], es: ["adverbio de modo = ", { pattern: [{ slot: adjective }, "-ly"] }] } }
+          - { level: A2, wrong: They work hardly., right: ["They work ", { target: hard }, "."], rule: { en: hard = hard; hardly = almost not, uk: "hard = hard; hardly = «майже не»", es: "hard = hard; hardly = «casi no»" } }

@@ -1,6 +1,10 @@
 // A small topic for tests: every block type, and text in every place a topic holds it.
-import type { Topic } from "./lib.ts";
+import { EXPLAIN_CODES, type Localized, type Topic } from "./lib.ts";
 import type { Report } from "./validate/report.ts";
+
+// Text in every explanation language, and a translation into each one but the language being learned.
+const all = (text: string): Localized => Object.fromEntries(EXPLAIN_CODES.map((l) => [l, text]));
+const tr = (text: string): Localized => Object.fromEntries(EXPLAIN_CODES.filter((l) => l !== "en").map((l) => [l, text]));
 
 export const SAMPLE: Topic = {
   id: "en.sample.topic",
@@ -9,28 +13,28 @@ export const SAMPLE: Topic = {
   tags: [],
   concepts: [],
   related: [],
-  status: { en: "draft" },
-  title: { en: "Sample" },
-  summary: { lead: { en: "Lead." }, rule: { en: "Rule:" }, ex: "Ex." },
+  status: Object.fromEntries(EXPLAIN_CODES.map((l) => [l, "draft"])) as Topic["status"],
+  title: all("Sample"),
+  summary: { lead: all("Lead."), rule: all("Rule:"), ex: "Ex." },
   cheatsheet: {
-    content: [{ type: "usage", columns: [{ key: "use", label: { en: "Use" } }], rows: [{ level: "A1", use: { en: "use" } }] }],
+    content: [{ type: "usage", columns: [{ key: "use", label: all("Use") }], rows: [{ level: "A1", use: all("use") }] }],
   },
   sections: [
     {
-      title: { en: "One" },
+      title: all("One"),
       role: "own",
       content: [
-        { type: "prose", level: "A1", text: { en: "Prose." }, ex: "Prose ex.", tr: { en: "Prose tr." } },
-        { type: "list", items: [{ type: "rule", level: "A1", text: { en: "Item." }, ex: "Item ex.", tr: { en: "Item tr." } }] },
+        { type: "prose", level: "A1", text: all("Prose."), ex: "Prose ex.", tr: tr("Prose tr.") },
+        { type: "list", items: [{ type: "rule", level: "A1", text: all("Item."), ex: "Item ex.", tr: tr("Item tr.") }] },
         {
           type: "comparison",
           columns: [
             { key: "a", label: "a" },
-            { key: "b", label: { en: "b" } },
+            { key: "b", label: all("b") },
           ],
-          rows: [{ level: "A2", a: { ex: "Cell ex.", tr: { en: "Cell tr." } }, b: { en: "cell" }, tr: { en: "Row tr." } }],
+          rows: [{ level: "A2", a: { ex: "Cell ex.", tr: tr("Cell tr.") }, b: all("cell"), tr: tr("Row tr.") }],
         },
-        { type: "errors", rows: [{ level: "A1", wrong: "Wrong.", right: "Right.", rule: { en: "Rule." } }] },
+        { type: "errors", rows: [{ level: "A1", wrong: "Wrong.", right: "Right.", rule: all("Rule.") }] },
       ],
     },
   ],

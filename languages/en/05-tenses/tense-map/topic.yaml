@@ -5,36 +5,42 @@ kind: reference
 tags: [verbs, tenses, overview]
 concepts: [tenses]
 related: [en.tenses.simple-tenses, en.tenses.continuous-tenses, en.tenses.perfect-tenses, en.tenses.future-forms, en.tenses.used-to]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Tense map }
+title: { en: Tense map, uk: Карта часів, es: Mapa de los tiempos }
 summary:
-  lead: { en: "Every tense on one page, placed by time and aspect, with form, main use, example and time words." }
-  rule: { en: ["Time words and meaning choose the tense: yesterday takes the past simple (I ", { target: played }, "), now takes the present continuous (I ", { target: am playing }, ")."] }
+  lead:
+    en: "Every tense on one page, placed by time and aspect, with form, main use, example and time words."
+    uk: "Усі часи на одній сторінці, розподілені за часом і видом, з формою, головним вживанням, прикладом і словами-маркерами."
+    es: "Todos los tiempos en una página, ubicados por tiempo y aspecto, con forma, uso principal, ejemplo y palabras clave."
+  rule:
+    en: ["Time words and meaning choose the tense: yesterday takes the past simple (I ", { target: played }, "), now takes the present continuous (I ", { target: am playing }, ")."]
+    uk: ["Слова-маркери й значення визначають час: yesterday вимагає Past Simple (I ", { target: played }, "), now — Present Continuous (I ", { target: am playing }, ")."]
+    es: ["Las palabras clave y el significado eligen el tiempo: yesterday pide el pasado simple (I ", { target: played }, "), now pide el presente continuo (I ", { target: am playing }, ")."]
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: tense, label: { en: Tense } }
-        - { key: form, label: { en: Form } }
-        - { key: meaning, label: { en: Meaning } }
-        - { key: ex, label: { en: Example } }
+        - { key: tense, label: { en: Tense, uk: "Час", es: "Tiempo" } }
+        - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+        - { key: meaning, label: { en: Meaning, uk: "Значення", es: "Significado" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, features: { tense: prs }, tense: { en: { link: Present simple, to: en.tenses.simple-tenses } }, form: { alternatives: [V, V-s] }, meaning: { en: "habits, facts, permanent states" }, ex: ["I ", { signal: always }, " ", { target: walk }, " to work."] }
-        - { level: A1, features: { tense: prs, aspect: prog }, tense: { en: { link: Present continuous, to: en.tenses.continuous-tenses } }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, meaning: { en: "now, temporary situations" }, ex: [I', { target: m working }, " ", { signal: now }, "."] }
-        - { level: A2, features: { tense: prs, aspect: prf }, tense: { en: { link: Present perfect, to: en.tenses.perfect-tenses } }, form: { pattern: [{ alternatives: [have, has] }, { slot: V-ed }] }, meaning: { en: past events that matter now }, ex: [I', { target: ve }, " ", { signal: never }, " ", { target: been }, " to Rome."] }
-        - { level: A1, features: { tense: pst }, tense: { en: { link: Past simple, to: en.tenses.simple-tenses } }, form: { alternatives: [V-ed, irregular] }, meaning: { en: finished events }, ex: ["I ", { target: worked }, " ", { signal: yesterday }, "."] }
-        - { level: A2, features: { tense: pst, aspect: prog }, tense: { en: { link: Past continuous, to: en.tenses.continuous-tenses } }, form: { pattern: [{ alternatives: [was, were] }, { slot: V-ing }] }, meaning: { en: in progress at a past moment }, ex: ["I ", { target: was working }, " ", { signal: at eight }, "."] }
-        - { level: A2, features: { tense: pst, aspect: hab }, tense: { en: { link: Used to, to: en.tenses.used-to } }, form: { pattern: [used to, { slot: V }] }, meaning: { en: "past habits and states, over now" }, ex: ["I ", { target: used to swim }, " ", { signal: when I was a child }, "."] }
-        - { level: B1, features: { tense: pst, aspect: prf }, tense: { en: { link: Past perfect, to: en.tenses.perfect-tenses } }, form: { pattern: [had, { slot: V-ed }] }, meaning: { en: before another past event }, ex: ["She ", { target: had left }, " ", { signal: before }, " I arrived."] }
-        - { level: A1, features: { tense: fut }, tense: { en: { link: Going to, to: en.tenses.future-forms } }, form: { pattern: [[{ alternatives: [am, is, are] }, " going to"], { slot: V }] }, meaning: { en: "plans, predictions with evidence" }, ex: [We', { target: re going to }, " cook ", { signal: tonight }, "."] }
-        - { level: A1, features: { tense: fut, aspect: prog }, tense: { en: [{ link: Present continuous, to: en.tenses.continuous-tenses }, " for the future"] }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, meaning: { en: arrangements }, ex: [I', { target: m leaving }, " ", { signal: tomorrow }, "."] }
-        - { level: A2, features: { tense: fut }, tense: { en: { link: Will, to: en.tenses.future-forms } }, form: { pattern: [will, { slot: V }] }, meaning: { en: "decisions, offers, promises, opinions" }, ex: ["I ", { signal: think }, " it'", { target: ll rain }, "."] }
-        - { level: A2, features: { tense: fut }, tense: { en: [{ link: Present simple, to: en.tenses.simple-tenses }, " for the future"] }, form: { alternatives: [V, V-s] }, meaning: { en: timetables }, ex: ["The train ", { target: leaves }, " at six."] }
+        - { level: A1, features: { tense: prs }, tense: { en: { link: Present simple, to: en.tenses.simple-tenses }, uk: { link: "Present Simple", to: en.tenses.simple-tenses }, es: { link: "Presente simple", to: en.tenses.simple-tenses } }, form: { alternatives: [V, V-s] }, meaning: { en: "habits, facts, permanent states", uk: "звички, факти, постійні стани", es: "hábitos, hechos, estados permanentes" }, ex: ["I ", { signal: always }, " ", { target: walk }, " to work."] }
+        - { level: A1, features: { tense: prs, aspect: prog }, tense: { en: { link: Present continuous, to: en.tenses.continuous-tenses }, uk: { link: "Present Continuous", to: en.tenses.continuous-tenses }, es: { link: "Presente continuo", to: en.tenses.continuous-tenses } }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, meaning: { en: "now, temporary situations", uk: "зараз, тимчасові ситуації", es: "ahora, situaciones temporales" }, ex: [I', { target: m working }, " ", { signal: now }, "."] }
+        - { level: A2, features: { tense: prs, aspect: prf }, tense: { en: { link: Present perfect, to: en.tenses.perfect-tenses }, uk: { link: "Present Perfect", to: en.tenses.perfect-tenses }, es: { link: "Presente perfecto", to: en.tenses.perfect-tenses } }, form: { pattern: [{ alternatives: [have, has] }, { slot: V-ed }] }, meaning: { en: past events that matter now, uk: "минулі події, важливі зараз", es: "hechos pasados que importan ahora" }, ex: [I', { target: ve }, " ", { signal: never }, " ", { target: been }, " to Rome."] }
+        - { level: A1, features: { tense: pst }, tense: { en: { link: Past simple, to: en.tenses.simple-tenses }, uk: { link: "Past Simple", to: en.tenses.simple-tenses }, es: { link: "Pasado simple", to: en.tenses.simple-tenses } }, form: { alternatives: [V-ed, irregular] }, meaning: { en: finished events, uk: "завершені події", es: "hechos terminados" }, ex: ["I ", { target: worked }, " ", { signal: yesterday }, "."] }
+        - { level: A2, features: { tense: pst, aspect: prog }, tense: { en: { link: Past continuous, to: en.tenses.continuous-tenses }, uk: { link: "Past Continuous", to: en.tenses.continuous-tenses }, es: { link: "Pasado continuo", to: en.tenses.continuous-tenses } }, form: { pattern: [{ alternatives: [was, were] }, { slot: V-ing }] }, meaning: { en: in progress at a past moment, uk: "дія триває в певний момент у минулому", es: "en curso en un momento del pasado" }, ex: ["I ", { target: was working }, " ", { signal: at eight }, "."] }
+        - { level: A2, features: { tense: pst, aspect: hab }, tense: { en: { link: Used to, to: en.tenses.used-to }, uk: { link: "Used to", to: en.tenses.used-to }, es: { link: "Used to", to: en.tenses.used-to } }, form: { pattern: [used to, { slot: V }] }, meaning: { en: "past habits and states, over now", uk: "звички й стани в минулому, яких уже немає", es: "hábitos y estados pasados que ya no existen" }, ex: ["I ", { target: used to swim }, " ", { signal: when I was a child }, "."] }
+        - { level: B1, features: { tense: pst, aspect: prf }, tense: { en: { link: Past perfect, to: en.tenses.perfect-tenses }, uk: { link: "Past Perfect", to: en.tenses.perfect-tenses }, es: { link: "Pasado perfecto", to: en.tenses.perfect-tenses } }, form: { pattern: [had, { slot: V-ed }] }, meaning: { en: before another past event, uk: "до іншої події в минулому", es: "antes de otro hecho pasado" }, ex: ["She ", { target: had left }, " ", { signal: before }, " I arrived."] }
+        - { level: A1, features: { tense: fut }, tense: { en: { link: Going to, to: en.tenses.future-forms }, uk: { link: "Going to", to: en.tenses.future-forms }, es: { link: "Going to", to: en.tenses.future-forms } }, form: { pattern: [[{ alternatives: [am, is, are] }, " going to"], { slot: V }] }, meaning: { en: "plans, predictions with evidence", uk: "плани, прогнози на основі очевидних ознак", es: "planes, predicciones con pruebas" }, ex: [We', { target: re going to }, " cook ", { signal: tonight }, "."] }
+        - { level: A1, features: { tense: fut, aspect: prog }, tense: { en: [{ link: Present continuous, to: en.tenses.continuous-tenses }, " for the future"], uk: [{ link: "Present Continuous", to: en.tenses.continuous-tenses }, " для майбутнього"], es: [{ link: "Presente continuo", to: en.tenses.continuous-tenses }, " para el futuro"] }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, meaning: { en: arrangements, uk: "домовленості", es: "planes acordados" }, ex: [I', { target: m leaving }, " ", { signal: tomorrow }, "."] }
+        - { level: A2, features: { tense: fut }, tense: { en: { link: Will, to: en.tenses.future-forms }, uk: { link: "Will", to: en.tenses.future-forms }, es: { link: "Will", to: en.tenses.future-forms } }, form: { pattern: [will, { slot: V }] }, meaning: { en: "decisions, offers, promises, opinions", uk: "рішення, пропозиції, обіцянки, думки", es: "decisiones, ofrecimientos, promesas, opiniones" }, ex: ["I ", { signal: think }, " it'", { target: ll rain }, "."] }
+        - { level: A2, features: { tense: fut }, tense: { en: [{ link: Present simple, to: en.tenses.simple-tenses }, " for the future"], uk: [{ link: "Present Simple", to: en.tenses.simple-tenses }, " для майбутнього"], es: [{ link: "Presente simple", to: en.tenses.simple-tenses }, " para el futuro"] }, form: { alternatives: [V, V-s] }, meaning: { en: timetables, uk: "розклади", es: "horarios" }, ex: ["The train ", { target: leaves }, " at six."] }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -43,83 +49,87 @@ sections:
             level: A1
             text:
               en: "Read the table by time: past on the left, now in the middle, future on the right."
+              uk: "Таблицю читають за часом: минуле ліворуч, теперішнє посередині, майбутнє праворуч."
+              es: "La tabla se lee por tiempo: pasado a la izquierda, presente en el centro y futuro a la derecha."
           - type: rule
             level: A1
             text:
               en: Simple = the fact or event. In progress = while it happens. Perfect = before another moment.
+              uk: "Simple = факт або подія. Continuous = поки дія триває. Perfect = до іншого моменту."
+              es: "Simple = el hecho o el suceso. Continuo = mientras ocurre. Perfecto = antes de otro momento."
 
-  - title: { en: Present }
+  - title: { en: Present, uk: "Теперішній час", es: "Presente" }
     role: own
     features: { tense: prs }
     content:
       - type: usage
         columns:
-          - { key: tense, label: { en: Tense and main use } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: tense, label: { en: Tense and main use, uk: "Час і головне вживання", es: "Tiempo y uso principal" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, tense: { en: [{ link: Present simple, to: en.tenses.simple-tenses }, ": habits, facts, permanent states"] }, form: { alternatives: [V, V-s] }, ex: ["I ", { target: work }, " here."] }
-          - { level: A1, tense: { en: [{ link: Present continuous, to: en.tenses.continuous-tenses }, ": now, temporary situations"] }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, ex: [I', { target: m working }, " now."] }
-          - { level: A2, tense: { en: [{ link: Present perfect, to: en.tenses.perfect-tenses }, ": past events that matter now"] }, form: { pattern: [{ alternatives: [have, has] }, { slot: V-ed }] }, ex: [I', { target: ve lost }, " my keys."] }
+          - { level: A1, tense: { en: [{ link: Present simple, to: en.tenses.simple-tenses }, ": habits, facts, permanent states"], uk: [{ link: "Present Simple", to: en.tenses.simple-tenses }, ": звички, факти, постійні стани"], es: [{ link: "Presente simple", to: en.tenses.simple-tenses }, ": hábitos, hechos, estados permanentes"] }, form: { alternatives: [V, V-s] }, ex: ["I ", { target: work }, " here."], tr: { uk: "Я працюю тут.", es: "Trabajo aquí." } }
+          - { level: A1, tense: { en: [{ link: Present continuous, to: en.tenses.continuous-tenses }, ": now, temporary situations"], uk: [{ link: "Present Continuous", to: en.tenses.continuous-tenses }, ": зараз, тимчасові ситуації"], es: [{ link: "Presente continuo", to: en.tenses.continuous-tenses }, ": ahora, situaciones temporales"] }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, ex: [I', { target: m working }, " now."], tr: { uk: "Я зараз працюю.", es: "Ahora estoy trabajando." } }
+          - { level: A2, tense: { en: [{ link: Present perfect, to: en.tenses.perfect-tenses }, ": past events that matter now"], uk: [{ link: "Present Perfect", to: en.tenses.perfect-tenses }, ": минулі події, важливі зараз"], es: [{ link: "Presente perfecto", to: en.tenses.perfect-tenses }, ": hechos pasados que importan ahora"] }, form: { pattern: [{ alternatives: [have, has] }, { slot: V-ed }] }, ex: [I', { target: ve lost }, " my keys."], tr: { uk: "Я загубив ключі.", es: "He perdido las llaves." } }
 
-  - title: { en: Past }
+  - title: { en: Past, uk: "Минулий час", es: "Pasado" }
     role: own
     features: { tense: pst }
     content:
       - type: usage
         columns:
-          - { key: tense, label: { en: Tense and main use } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: tense, label: { en: Tense and main use, uk: "Час і головне вживання", es: "Tiempo y uso principal" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, tense: { en: [{ link: Past simple, to: en.tenses.simple-tenses }, ": finished events"] }, form: { alternatives: [V-ed, irregular] }, ex: ["I ", { target: worked }, " yesterday."] }
-          - { level: A2, tense: { en: [{ link: Past continuous, to: en.tenses.continuous-tenses }, ": in progress at a past moment"] }, form: { pattern: [{ alternatives: [was, were] }, { slot: V-ing }] }, ex: ["I ", { target: was working }, " at eight."] }
-          - { level: A2, tense: { en: [{ link: Used to, to: en.tenses.used-to }, ": past habits and states, over now"] }, form: { pattern: [used to, { slot: V }] }, ex: ["I ", { target: used to smoke }, "."] }
-          - { level: B1, tense: { en: [{ link: Past perfect, to: en.tenses.perfect-tenses }, ": before another past event"] }, form: { pattern: [had, { slot: V-ed }] }, ex: ["She ", { target: had left }, " before I arrived."] }
+          - { level: A1, tense: { en: [{ link: Past simple, to: en.tenses.simple-tenses }, ": finished events"], uk: [{ link: "Past Simple", to: en.tenses.simple-tenses }, ": завершені події"], es: [{ link: "Pasado simple", to: en.tenses.simple-tenses }, ": hechos terminados"] }, form: { alternatives: [V-ed, irregular] }, ex: ["I ", { target: worked }, " yesterday."], tr: { uk: "Вчора я працював.", es: "Ayer trabajé." } }
+          - { level: A2, tense: { en: [{ link: Past continuous, to: en.tenses.continuous-tenses }, ": in progress at a past moment"], uk: [{ link: "Past Continuous", to: en.tenses.continuous-tenses }, ": дія триває в певний момент у минулому"], es: [{ link: "Pasado continuo", to: en.tenses.continuous-tenses }, ": en curso en un momento del pasado"] }, form: { pattern: [{ alternatives: [was, were] }, { slot: V-ing }] }, ex: ["I ", { target: was working }, " at eight."], tr: { uk: "О восьмій я працював.", es: "A las ocho estaba trabajando." } }
+          - { level: A2, tense: { en: [{ link: Used to, to: en.tenses.used-to }, ": past habits and states, over now"], uk: [{ link: "Used to", to: en.tenses.used-to }, ": звички й стани в минулому, яких уже немає"], es: [{ link: "Used to", to: en.tenses.used-to }, ": hábitos y estados pasados que ya no existen"] }, form: { pattern: [used to, { slot: V }] }, ex: ["I ", { target: used to smoke }, "."], tr: { uk: "Раніше я курив.", es: "Antes fumaba." } }
+          - { level: B1, tense: { en: [{ link: Past perfect, to: en.tenses.perfect-tenses }, ": before another past event"], uk: [{ link: "Past Perfect", to: en.tenses.perfect-tenses }, ": до іншої події в минулому"], es: [{ link: "Pasado perfecto", to: en.tenses.perfect-tenses }, ": antes de otro hecho pasado"] }, form: { pattern: [had, { slot: V-ed }] }, ex: ["She ", { target: had left }, " before I arrived."], tr: { uk: "Вона пішла до того, як я прийшов.", es: "Ella se había ido antes de que yo llegara." } }
 
-  - title: { en: Future }
+  - title: { en: Future, uk: "Майбутній час", es: "Futuro" }
     role: own
     features: { tense: fut }
     content:
       - type: usage
         columns:
-          - { key: tense, label: { en: Tense and main use } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: tense, label: { en: Tense and main use, uk: "Час і головне вживання", es: "Tiempo y uso principal" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, tense: { en: [{ link: Future forms, to: en.tenses.future-forms }, ": going to: plans, predictions with evidence"] }, form: { pattern: [[{ alternatives: [am, is, are] }, " going to"], { slot: V }] }, ex: [I', { target: m going to }, " buy a car."] }
-          - { level: A1, tense: { en: [{ link: Present continuous, to: en.tenses.continuous-tenses }, ": arrangements"] }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, ex: [I', { target: m meeting }, " Ana at six."] }
-          - { level: A2, tense: { en: [{ link: Future forms, to: en.tenses.future-forms }, ": will: decisions, offers, promises, opinions"] }, form: { pattern: [will, { slot: V }] }, ex: [I', { target: ll help }, " you."] }
-          - { level: A2, tense: { en: [{ link: Present simple, to: en.tenses.simple-tenses }, ": timetables"] }, form: { alternatives: [V, V-s] }, ex: ["The train ", { target: leaves }, " at six."] }
+          - { level: A1, tense: { en: [{ link: Future forms, to: en.tenses.future-forms }, ": going to: plans, predictions with evidence"], uk: [{ link: "Способи вираження майбутнього", to: en.tenses.future-forms }, ": going to: плани, прогнози на основі очевидних ознак"], es: [{ link: "Formas de futuro", to: en.tenses.future-forms }, ": going to: planes, predicciones con pruebas"] }, form: { pattern: [[{ alternatives: [am, is, are] }, " going to"], { slot: V }] }, ex: [I', { target: m going to }, " buy a car."], tr: { uk: "Я збираюся купити машину.", es: "Voy a comprar un coche." } }
+          - { level: A1, tense: { en: [{ link: Present continuous, to: en.tenses.continuous-tenses }, ": arrangements"], uk: [{ link: "Present Continuous", to: en.tenses.continuous-tenses }, ": домовленості"], es: [{ link: "Presente continuo", to: en.tenses.continuous-tenses }, ": planes acordados"] }, form: { pattern: [{ alternatives: [am, is, are] }, { slot: V-ing }] }, ex: [I', { target: m meeting }, " Ana at six."], tr: { uk: "Я зустрічаюся з Аною о шостій.", es: "Me encuentro con Ana a las seis." } }
+          - { level: A2, tense: { en: [{ link: Future forms, to: en.tenses.future-forms }, ": will: decisions, offers, promises, opinions"], uk: [{ link: "Способи вираження майбутнього", to: en.tenses.future-forms }, ": will: рішення, пропозиції, обіцянки, думки"], es: [{ link: "Formas de futuro", to: en.tenses.future-forms }, ": will: decisiones, ofrecimientos, promesas, opiniones"] }, form: { pattern: [will, { slot: V }] }, ex: [I', { target: ll help }, " you."], tr: { uk: "Я тобі допоможу.", es: "Te ayudaré." } }
+          - { level: A2, tense: { en: [{ link: Present simple, to: en.tenses.simple-tenses }, ": timetables"], uk: [{ link: "Present Simple", to: en.tenses.simple-tenses }, ": розклади"], es: [{ link: "Presente simple", to: en.tenses.simple-tenses }, ": horarios"] }, form: { alternatives: [V, V-s] }, ex: ["The train ", { target: leaves }, " at six."], tr: { uk: "Потяг відправляється о шостій.", es: "El tren sale a las seis." } }
 
-  - title: { en: Signal words }
+  - title: { en: Signal words, uk: "Слова-маркери", es: "Palabras clave" }
     role: signals
     content:
       - type: usage
         columns:
-          - { key: marker, label: { en: Time word } }
-          - { key: tense, label: { en: Tense } }
-          - { key: ex, label: { en: Example } }
+          - { key: marker, label: { en: Time word, uk: "Слово-маркер", es: "Palabra clave" } }
+          - { key: tense, label: { en: Tense, uk: "Час", es: "Tiempo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, marker: { en: "always, every day, usually" }, tense: { en: { link: Present simple, to: en.tenses.simple-tenses } }, ex: ["I ", { signal: always }, " walk to work."] }
-          - { level: A1, marker: { en: "now, at the moment, this week" }, tense: { en: { link: Present continuous, to: en.tenses.continuous-tenses } }, ex: ["She's cooking ", { signal: now }, "."] }
-          - { level: A1, marker: { en: "yesterday, last week, ago, in 2020" }, tense: { en: { link: Past simple, to: en.tenses.simple-tenses } }, ex: ["We met ", { signal: last week }, "."] }
-          - { level: A1, marker: { en: "tomorrow, next week, tonight" }, tense: { en: { link: Future forms, to: en.tenses.future-forms } }, ex: ["I'm leaving ", { signal: tomorrow }, "."] }
-          - { level: A2, marker: { en: "while, at 8 last night" }, tense: { en: { link: Past continuous, to: en.tenses.continuous-tenses } }, ex: ["I was reading ", { signal: at 8 last night }, "."] }
-          - { level: A2, marker: { en: "when I was a child, years ago" }, tense: { en: { link: Used to, to: en.tenses.used-to } }, ex: ["I ", { target: used to }, " swim ", { signal: when I was a child }, "."] }
-          - { level: A2, marker: { en: "ever, never, just, already, yet" }, tense: { en: { link: Present perfect, to: en.tenses.perfect-tenses } }, ex: ["I've ", { signal: never }, " been to Rome."] }
-          - { level: A2, marker: { en: "I think, probably" }, tense: { en: { link: Future forms, to: en.tenses.future-forms } }, ex: ["I ", { signal: think }, " it'll rain."] }
-          - { level: B1, marker: { en: "for, since" }, tense: { en: { link: Present perfect, to: en.tenses.perfect-tenses } }, ex: ["I've lived here ", { signal: since }, " ", { date: "2019", value: "2019" }, "."] }
-          - { level: B1, marker: { en: "by the time, after, before (earlier action)" }, tense: { en: { link: Past perfect, to: en.tenses.perfect-tenses } }, ex: [{ signal: By the time }, " I arrived, it ", { target: had closed }, "."] }
+          - { level: A1, marker: { en: "always, every day, usually", uk: "always, every day, usually", es: "always, every day, usually" }, tense: { en: { link: Present simple, to: en.tenses.simple-tenses }, uk: { link: "Present Simple", to: en.tenses.simple-tenses }, es: { link: "Presente simple", to: en.tenses.simple-tenses } }, ex: ["I ", { signal: always }, " walk to work."], tr: { uk: "Я завжди ходжу на роботу пішки.", es: "Siempre voy a pie al trabajo." } }
+          - { level: A1, marker: { en: "now, at the moment, this week", uk: "now, at the moment, this week", es: "now, at the moment, this week" }, tense: { en: { link: Present continuous, to: en.tenses.continuous-tenses }, uk: { link: "Present Continuous", to: en.tenses.continuous-tenses }, es: { link: "Presente continuo", to: en.tenses.continuous-tenses } }, ex: ["She's cooking ", { signal: now }, "."], tr: { uk: "Вона зараз готує.", es: "Ahora está cocinando." } }
+          - { level: A1, marker: { en: "yesterday, last week, ago, in 2020", uk: "yesterday, last week, ago, in 2020", es: "yesterday, last week, ago, in 2020" }, tense: { en: { link: Past simple, to: en.tenses.simple-tenses }, uk: { link: "Past Simple", to: en.tenses.simple-tenses }, es: { link: "Pasado simple", to: en.tenses.simple-tenses } }, ex: ["We met ", { signal: last week }, "."], tr: { uk: "Ми зустрілися минулого тижня.", es: "Nos vimos la semana pasada." } }
+          - { level: A1, marker: { en: "tomorrow, next week, tonight", uk: "tomorrow, next week, tonight", es: "tomorrow, next week, tonight" }, tense: { en: { link: Future forms, to: en.tenses.future-forms }, uk: { link: "Способи вираження майбутнього", to: en.tenses.future-forms }, es: { link: "Formas de futuro", to: en.tenses.future-forms } }, ex: ["I'm leaving ", { signal: tomorrow }, "."], tr: { uk: "Я їду завтра.", es: "Me voy mañana." } }
+          - { level: A2, marker: { en: "while, at 8 last night", uk: "while, at 8 last night", es: "while, at 8 last night" }, tense: { en: { link: Past continuous, to: en.tenses.continuous-tenses }, uk: { link: "Past Continuous", to: en.tenses.continuous-tenses }, es: { link: "Pasado continuo", to: en.tenses.continuous-tenses } }, ex: ["I was reading ", { signal: at 8 last night }, "."], tr: { uk: "Вчора ввечері о восьмій я читав.", es: "Ayer a las ocho de la noche estaba leyendo." } }
+          - { level: A2, marker: { en: "when I was a child, years ago", uk: "when I was a child, years ago", es: "when I was a child, years ago" }, tense: { en: { link: Used to, to: en.tenses.used-to }, uk: { link: "Used to", to: en.tenses.used-to }, es: { link: "Used to", to: en.tenses.used-to } }, ex: ["I ", { target: used to }, " swim ", { signal: when I was a child }, "."], tr: { uk: "У дитинстві я плавав.", es: "Cuando era niño, nadaba." } }
+          - { level: A2, marker: { en: "ever, never, just, already, yet", uk: "ever, never, just, already, yet", es: "ever, never, just, already, yet" }, tense: { en: { link: Present perfect, to: en.tenses.perfect-tenses }, uk: { link: "Present Perfect", to: en.tenses.perfect-tenses }, es: { link: "Presente perfecto", to: en.tenses.perfect-tenses } }, ex: ["I've ", { signal: never }, " been to Rome."], tr: { uk: "Я ніколи не був у Римі.", es: "Nunca he estado en Roma." } }
+          - { level: A2, marker: { en: "I think, probably", uk: "I think, probably", es: "I think, probably" }, tense: { en: { link: Future forms, to: en.tenses.future-forms }, uk: { link: "Способи вираження майбутнього", to: en.tenses.future-forms }, es: { link: "Formas de futuro", to: en.tenses.future-forms } }, ex: ["I ", { signal: think }, " it'll rain."], tr: { uk: "Думаю, піде дощ.", es: "Creo que lloverá." } }
+          - { level: B1, marker: { en: "for, since", uk: "for, since", es: "for, since" }, tense: { en: { link: Present perfect, to: en.tenses.perfect-tenses }, uk: { link: "Present Perfect", to: en.tenses.perfect-tenses }, es: { link: "Presente perfecto", to: en.tenses.perfect-tenses } }, ex: ["I've lived here ", { signal: since }, " ", { date: "2019", value: "2019" }, "."], tr: { uk: "Я живу тут із 2019 року.", es: "Vivo aquí desde 2019." } }
+          - { level: B1, marker: { en: "by the time, after, before (earlier action)", uk: "by the time, after, before (раніша дія)", es: "by the time, after, before (acción anterior)" }, tense: { en: { link: Past perfect, to: en.tenses.perfect-tenses }, uk: { link: "Past Perfect", to: en.tenses.perfect-tenses }, es: { link: "Pasado perfecto", to: en.tenses.perfect-tenses } }, ex: [{ signal: By the time }, " I arrived, it ", { target: had closed }, "."], tr: { uk: "Коли я прийшов, уже зачинили.", es: "Cuando llegué, ya había cerrado." } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: Please be quiet. I study., right: [Please be quiet. I', { target: m studying }, "."], rule: { en: { takes: [now, [present continuous (, { link: Present continuous, to: en.tenses.continuous-tenses }, ")"]] } } }
-          - { level: A1, wrong: I am wanting a coffee., right: ["I ", { target: want }, " a coffee."], rule: { en: { takes: [verbs of state, [present simple (, { link: Present simple, to: en.tenses.simple-tenses }, ")"]] } } }
-          - { level: A1, wrong: I have seen him yesterday., right: ["I ", { target: saw }, " him yesterday."], rule: { en: { takes: [finished time, [past simple (, { link: Past simple, to: en.tenses.simple-tenses }, ")"]] } } }
-          - { level: B1, wrong: ["I live here since ", { date: "2019", value: "2019" }, "."], right: ["I ", { target: have lived }, " here since ", { date: "2019", value: "2019" }, "."], rule: { en: { mapping: [{ pattern: [{ alternatives: [since, for] }, state up to now] }, [present perfect (, { link: Present perfect, to: en.tenses.perfect-tenses }, ")"]] } } }
-          - { level: A2, wrong: I use to play football., right: ["I ", { target: used to }, " play football."], rule: { en: { takes: [past habit, [{ pattern: [used to, { slot: base verb }] }, " (", { link: Used to, to: en.tenses.used-to }, ")"]] } } }
-          - { level: B1, wrong: "When I arrived, the film has already started.", right: ["When I arrived, the film ", { target: had }, " already ", { target: started }, "."], rule: { en: { takes: [earlier past action, [past perfect (, { link: Past perfect, to: en.tenses.perfect-tenses }, ")"]] } } }
+          - { level: A1, wrong: Please be quiet. I study., right: [Please be quiet. I', { target: m studying }, "."], rule: { en: { takes: [now, [present continuous (, { link: Present continuous, to: en.tenses.continuous-tenses }, ")"]] }, uk: { takes: [now, ["Present Continuous (", { link: "Present Continuous", to: en.tenses.continuous-tenses }, ")"]] }, es: { takes: [now, ["presente continuo (", { link: "Presente continuo", to: en.tenses.continuous-tenses }, ")"]] } } }
+          - { level: A1, wrong: I am wanting a coffee., right: ["I ", { target: want }, " a coffee."], rule: { en: { takes: [verbs of state, [present simple (, { link: Present simple, to: en.tenses.simple-tenses }, ")"]] }, uk: { takes: ["дієслова стану", ["Present Simple (", { link: "Present Simple", to: en.tenses.simple-tenses }, ")"]] }, es: { takes: ["verbos de estado", ["presente simple (", { link: "Presente simple", to: en.tenses.simple-tenses }, ")"]] } } }
+          - { level: A1, wrong: I have seen him yesterday., right: ["I ", { target: saw }, " him yesterday."], rule: { en: { takes: [finished time, [past simple (, { link: Past simple, to: en.tenses.simple-tenses }, ")"]] }, uk: { takes: ["завершений час", ["Past Simple (", { link: "Past Simple", to: en.tenses.simple-tenses }, ")"]] }, es: { takes: ["tiempo terminado", ["pasado simple (", { link: "Pasado simple", to: en.tenses.simple-tenses }, ")"]] } } }
+          - { level: B1, wrong: ["I live here since ", { date: "2019", value: "2019" }, "."], right: ["I ", { target: have lived }, " here since ", { date: "2019", value: "2019" }, "."], rule: { en: { mapping: [{ pattern: [{ alternatives: [since, for] }, state up to now] }, [present perfect (, { link: Present perfect, to: en.tenses.perfect-tenses }, ")"]] }, uk: { mapping: [{ pattern: [{ alternatives: [since, for] }, "стан до цього часу"] }, ["Present Perfect (", { link: "Present Perfect", to: en.tenses.perfect-tenses }, ")"]] }, es: { mapping: [{ pattern: [{ alternatives: [since, for] }, "estado hasta ahora"] }, ["presente perfecto (", { link: "Presente perfecto", to: en.tenses.perfect-tenses }, ")"]] } } }
+          - { level: A2, wrong: I use to play football., right: ["I ", { target: used to }, " play football."], rule: { en: { takes: [past habit, [{ pattern: [used to, { slot: base verb }] }, " (", { link: Used to, to: en.tenses.used-to }, ")"]] }, uk: { takes: ["звичка в минулому", [{ pattern: [used to, { slot: base verb }] }, " (", { link: "Used to", to: en.tenses.used-to }, ")"]] }, es: { takes: ["hábito pasado", [{ pattern: [used to, { slot: base verb }] }, " (", { link: "Used to", to: en.tenses.used-to }, ")"]] } } }
+          - { level: B1, wrong: "When I arrived, the film has already started.", right: ["When I arrived, the film ", { target: had }, " already ", { target: started }, "."], rule: { en: { takes: [earlier past action, [past perfect (, { link: Past perfect, to: en.tenses.perfect-tenses }, ")"]] }, uk: { takes: ["раніша дія в минулому", ["Past Perfect (", { link: "Past Perfect", to: en.tenses.perfect-tenses }, ")"]] }, es: { takes: ["acción pasada anterior", ["pasado perfecto (", { link: "Pasado perfecto", to: en.tenses.perfect-tenses }, ")"]] } } }

@@ -5,196 +5,234 @@ kind: grammar
 tags: [verbs, tenses, past, habits]
 concepts: [past-habits, past-tense]
 related: [en.tenses.simple-tenses, en.tenses.continuous-tenses, en.sentence-building.questions-negatives, en.tenses.tense-map]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Used to }
+title: { en: Used to, uk: Used to, es: Used to }
 summary:
-  lead: { en: "Used to for past habits and states that are over now, such as living in Rome years ago." }
-  rule: { en: "After did and didn't the verb is use to, without the d:" }
+  lead:
+    en: "Used to for past habits and states that are over now, such as living in Rome years ago."
+    uk: "Used to виражає минулі звички й стани, яких уже немає, наприклад життя в Римі багато років тому."
+    es: "Used to expresa hábitos y estados del pasado que ya terminaron, por ejemplo vivir en Roma hace años."
+  rule:
+    en: "After did and didn't the verb is use to, without the d:"
+    uk: "Після did і didn't дієслово має вигляд use to, без d:"
+    es: "Después de did y didn't el verbo es use to, sin la d:"
   ex: { examples: [[{ target: Did }, " you ", { target: use to }, " play?"], ["I ", { target: didn't use to }, " like fish."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: { en: Affirmative }, rule: { en: [{ pattern: [used to, { slot: V }] }, ": the same for every subject"] }, ex: ["She ", { target: used to live }, " in Rome."] }
-        - { level: A2, point: { en: Negative }, rule: { pattern: [didn't use to, { slot: V }] }, ex: ["We ", { target: didn't use to have }, " a car."] }
-        - { level: A2, point: { en: Question }, rule: { pattern: [Did, { slot: subject }, use to, { slot: V }] }, ex: { exchange: [[{ target: Did }, " you ", { target: use to }, " walk to school?"], ["Yes, I ", { target: did }, "."]] } }
-        - { level: A2, point: { en: Use }, rule: { en: past habits and states that are over now }, ex: { examples: [["I ", { target: used to walk }, " to school."], ["We ", { target: used to have }, " a dog."]] } }
-        - { level: A2, point: { en: Past simple }, rule: { en: "a single event, or a stated time or number" }, ex: ["I ", { target: lived }, " in Paris for two years."] }
-        - { level: A2, point: { en: Position }, rule: { en: [{ term: always }, ", ", { term: often }, " and ", { term: never }, " go before ", { term: used to }] }, ex: ["He ", { target: always used to }, " be late."] }
-        - { level: A2, point: { en: Sound }, rule: { en: ["the d is silent: ", { term: used to }, " sounds like ", { sound: use-ta }] }, ex: ["I ", { target: used to }, " swim."] }
-        - { level: A2, point: { en: Trap }, rule: { en: "the affirmative keeps the d: used to" }, ex: ["I ", { target: used to }, " play football."] }
-        - { level: A2, point: { en: Trap }, rule: { en: "after did and didn't the d goes: use to" }, ex: ["I didn't ", { target: use to }, " like it."] }
+        - { level: A2, point: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, rule: { en: [{ pattern: [used to, { slot: V }] }, ": the same for every subject"], uk: [{ pattern: [used to, { slot: V }] }, ": однаково для всіх підметів"], es: [{ pattern: [used to, { slot: V }] }, ": igual para todos los sujetos"] }, ex: ["She ", { target: used to live }, " in Rome."], tr: { uk: "Раніше вона жила в Римі.", es: "Antes vivía en Roma." } }
+        - { level: A2, point: { en: Negative, uk: "Заперечення", es: "Negación" }, rule: { pattern: [didn't use to, { slot: V }] }, ex: ["We ", { target: didn't use to have }, " a car."], tr: { uk: "Раніше в нас не було машини.", es: "Antes no teníamos auto." } }
+        - { level: A2, point: { en: Question, uk: "Питання", es: "Pregunta" }, rule: { pattern: [Did, { slot: subject }, use to, { slot: V }] }, ex: { exchange: [[{ target: Did }, " you ", { target: use to }, " walk to school?"], ["Yes, I ", { target: did }, "."]] }, tr: { uk: "Ти ходив до школи пішки? — Так, ходив.", es: "¿Ibas a la escuela caminando? — Sí, iba." } }
+        - { level: A2, point: { en: Use, uk: "Вживання", es: "Uso" }, rule: { en: past habits and states that are over now, uk: "минулі звички й стани, яких уже немає", es: "hábitos y estados del pasado que ya terminaron" }, ex: { examples: [["I ", { target: used to walk }, " to school."], ["We ", { target: used to have }, " a dog."]] }, tr: { uk: { examples: ["Раніше я ходив до школи пішки.", "Раніше в нас був собака."] }, es: { examples: ["Antes iba a la escuela caminando.", "Antes teníamos un perro."] } } }
+        - { level: A2, point: { en: Past simple, uk: "Past Simple", es: "Pasado simple" }, rule: { en: "a single event, or a stated time or number", uk: "одна подія, або названий час чи кількість разів", es: "un hecho único, o un tiempo o número de veces indicado" }, ex: ["I ", { target: lived }, " in Paris for two years."], tr: { uk: "Я жив у Парижі два роки.", es: "Viví en París durante dos años." } }
+        - { level: A2, point: { en: Position, uk: "Місце", es: "Posición" }, rule: { en: [{ term: always }, ", ", { term: often }, " and ", { term: never }, " go before ", { term: used to }], uk: [{ term: always }, ", ", { term: often }, " і ", { term: never }, " стоять перед ", { term: used to }], es: [{ term: always }, ", ", { term: often }, " y ", { term: never }, " van antes de ", { term: used to }] }, ex: ["He ", { target: always used to }, " be late."], tr: { uk: "Він завжди запізнювався.", es: "Siempre llegaba tarde." } }
+        - { level: A2, point: { en: Sound, uk: "Звук", es: "Sonido" }, rule: { en: ["the d is silent: ", { term: used to }, " sounds like ", { sound: use-ta }], uk: ["літера d німа: ", { term: used to }, " звучить як ", { sound: use-ta }], es: ["la letra d es muda: ", { term: used to }, " suena como ", { sound: use-ta }] }, ex: ["I ", { target: used to }, " swim."], tr: { uk: "Раніше я плавав.", es: "Antes nadaba." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "the affirmative keeps the d: used to", uk: "у ствердженні d зберігається: used to", es: "la afirmación conserva la d: used to" }, ex: ["I ", { target: used to }, " play football."], tr: { uk: "Раніше я грав у футбол.", es: "Antes jugaba al fútbol." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "after did and didn't the d goes: use to", uk: "після did і didn't d зникає: use to", es: "después de did y didn't la d desaparece: use to" }, ex: ["I didn't ", { target: use to }, " like it."], tr: { uk: "Раніше мені це не подобалося.", es: "Antes no me gustaba." } }
 
 sections:
-  - title: { en: "Form: affirmative" }
+  - title: { en: "Form: affirmative", uk: "Форма: ствердження", es: "Forma: afirmativa" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: subject, label: { en: Subject } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, subject: { en: all subjects }, form: { pattern: [used to, { slot: V }] }, ex: ["She ", { target: used to live }, " in Rome."] }
+          - { level: A2, subject: { en: all subjects, uk: "усі підмети", es: "todos los sujetos" }, form: { pattern: [used to, { slot: V }] }, ex: ["She ", { target: used to live }, " in Rome."], tr: { uk: "Раніше вона жила в Римі.", es: "Antes vivía en Roma." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: "The form is the same for every subject:"
+              uk: "Форма однакова для всіх підметів:"
+              es: "La forma es la misma para todos los sujetos:"
             ex: [{ alternatives: [I, he, they] }, " ", { target: used to }, " live here."]
+            tr: { uk: { examples: ["Раніше я жив тут.", "Раніше він жив тут.", "Раніше вони жили тут."] }, es: { examples: ["Antes yo vivía aquí.", "Antes él vivía aquí.", "Antes ellos vivían aquí."] } }
           - type: rule
             level: A2
             text:
               en: [{ term: used to }, " is followed by the base verb: used to ", { term: play }, "."]
+              uk: [{ term: used to }, " вживається з початковою формою дієслова: used to ", { term: play }, "."]
+              es: [{ term: used to }, " va seguido de la forma base del verbo: used to ", { term: play }, "."]
           - type: rule
             level: A2
             text:
               en: [{ term: used to }, " exists only in the past."]
+              uk: [{ term: used to }, " існує тільки в минулому часі."]
+              es: [{ term: used to }, " existe solo en pasado."]
 
-  - title: { en: "Form: negative" }
+  - title: { en: "Form: negative", uk: "Форма: заперечення", es: "Forma: negativa" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: subject, label: { en: Subject } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: subject, label: { en: Subject, uk: "Підмет", es: "Sujeto" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, subject: { en: all subjects }, form: { pattern: [didn't use to, { slot: V }] }, ex: ["We ", { target: didn't use to have }, " a car."] }
+          - { level: A2, subject: { en: all subjects, uk: "усі підмети", es: "todos los sujetos" }, form: { pattern: [didn't use to, { slot: V }] }, ex: ["We ", { target: didn't use to have }, " a car."], tr: { uk: "Раніше в нас не було машини.", es: "Antes no teníamos auto." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["After ", { term: didn't }, " the form is ", { term: use to }, ", with no -d."]
+              uk: ["Після ", { term: didn't }, " форма має вигляд ", { term: use to }, ", без -d."]
+              es: ["Después de ", { term: didn't }, " la forma es ", { term: use to }, ", sin -d."]
           - type: rule
             level: A2
             text:
               en: [{ term: never }, " also makes a negative:"]
+              uk: [{ term: never }, " теж утворює заперечення:"]
+              es: [{ term: never }, " también forma una oración negativa:"]
             ex: ["I ", { target: never used to }, " like fish."]
+            tr: { uk: "Раніше я ніколи не любив рибу.", es: "Antes nunca me gustaba el pescado." }
 
-  - title: { en: "Form: questions" }
+  - title: { en: "Form: questions", uk: "Форма: питання", es: "Forma: preguntas" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: aux, label: { en: { pattern: [Auxiliary, { slot: subject }] } } }
-          - { key: verb, label: { en: Verb } }
-          - { key: ex, label: { en: Example } }
+          - { key: aux, label: { en: { pattern: [Auxiliary, { slot: subject }] }, uk: { pattern: ["Допоміжне дієслово", { slot: subject }] }, es: { pattern: ["Verbo auxiliar", { slot: subject }] } } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, aux: { pattern: [Did, { slot: subject }] }, verb: { pattern: [use to, { slot: V }] }, ex: [{ target: Did }, " you ", { target: use to walk }, " to school?"] }
-          - { level: A2, aux: { pattern: [{ slot: wh-word }, did, { slot: subject }] }, verb: { pattern: [use to, { slot: V }] }, ex: ["Where ", { target: did }, " you ", { target: use to live }, "?"] }
+          - { level: A2, aux: { pattern: [Did, { slot: subject }] }, verb: { pattern: [use to, { slot: V }] }, ex: [{ target: Did }, " you ", { target: use to walk }, " to school?"], tr: { uk: "Ти ходив до школи пішки?", es: "¿Ibas a la escuela caminando?" } }
+          - { level: A2, aux: { pattern: [{ slot: wh-word }, did, { slot: subject }] }, verb: { pattern: [use to, { slot: V }] }, ex: ["Where ", { target: did }, " you ", { target: use to live }, "?"], tr: { uk: "Де ти жив раніше?", es: "¿Dónde vivías antes?" } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["After ", { term: Did }, " the form is ", { term: use to }, ", with no -d."]
+              uk: ["Після ", { term: Did }, " форма має вигляд ", { term: use to }, ", без -d."]
+              es: ["Después de ", { term: Did }, " la forma es ", { term: use to }, ", sin -d."]
           - type: rule
             level: A2
             text:
               en: "A short answer repeats did:"
+              uk: "Коротка відповідь повторює did:"
+              es: "La respuesta corta repite did:"
             ex: { examples: [["Yes, I ", { target: did }, "."], ["No, I ", { target: didn't }, "."]] }
+            tr: { uk: { examples: ["Так, бувало.", "Ні, не бувало."] }, es: { examples: ["Sí, lo hacía.", "No, no lo hacía."] } }
 
-  - title: { en: "Pronunciation: used to" }
+  - title: { en: "Pronunciation: used to", uk: "Вимова: used to", es: "Pronunciación: used to" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: ipa, label: IPA }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ipa, label: { en: IPA, uk: "МФА", es: "AFI" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, form: used to, ipa: { ipa: ˈjuːst tə }, ex: ["I ", { target: used to }, " swim."] }
-          - { level: A2, form: use to, ipa: { ipa: juːs tə }, ex: ["Did you ", { target: use to }, " swim?"] }
+          - { level: A2, form: used to, ipa: { ipa: ˈjuːst tə }, ex: ["I ", { target: used to }, " swim."], tr: { uk: "Раніше я плавав.", es: "Antes nadaba." } }
+          - { level: A2, form: use to, ipa: { ipa: juːs tə }, ex: ["Did you ", { target: use to }, " swim?"], tr: { uk: "Ти раніше плавав?", es: "¿Antes nadabas?" } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["The ", { letter: d }, " is silent in speech: used to sounds like ", { sound: use-ta }, "."]
+              uk: ["Літера ", { letter: d }, " у мовленні німа: used to звучить як ", { sound: use-ta }, "."]
+              es: ["La letra ", { letter: d }, " es muda al hablar: used to suena como ", { sound: use-ta }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: Past habits }, ex: ["I ", { target: used to walk }, " to school."] }
-          - { level: A2, use: { en: Past states }, ex: ["We ", { target: used to have }, " a dog."] }
-          - { level: A2, use: { en: Past situations that changed }, ex: ["There ", { target: used to be }, " a cinema here."] }
+          - { level: A2, use: { en: Past habits, uk: "Минулі звички", es: "Hábitos del pasado" }, ex: ["I ", { target: used to walk }, " to school."], tr: { uk: "Раніше я ходив до школи пішки.", es: "Antes iba a la escuela caminando." } }
+          - { level: A2, use: { en: Past states, uk: "Минулі стани", es: "Estados del pasado" }, ex: ["We ", { target: used to have }, " a dog."], tr: { uk: "Раніше в нас був собака.", es: "Antes teníamos un perro." } }
+          - { level: A2, use: { en: Past situations that changed, uk: "Минулі ситуації, які змінилися", es: "Situaciones del pasado que cambiaron" }, ex: ["There ", { target: used to be }, " a cinema here."], tr: { uk: "Колись тут був кінотеатр.", es: "Antes había un cine aquí." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: The habit or state is over now. The speaker compares past and present.
+              uk: "Звичка чи стан тепер закінчилися. Мовець порівнює минуле й теперішнє."
+              es: "El hábito o el estado ya terminó. El hablante compara el pasado con el presente."
 
-  - title: { en: Signal words }
+  - title: { en: Signal words, uk: "Слова-маркери", es: "Palabras clave" }
     role: signals
     content:
       - type: usage
         columns:
-          - { key: expression, label: { en: Expression } }
-          - { key: ex, label: { en: Example } }
+          - { key: expression, label: { en: Expression, uk: "Вираз", es: "Expresión" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, expression: { alternatives: [when I was a child, young] }, ex: [{ signal: When I was a child }, ", I used to climb trees."] }
-          - { level: A2, expression: in those days, ex: ["People used to write letters ", { signal: in those days }, "."] }
-          - { level: A2, expression: years ago, ex: ["I used to smoke ", { signal: years ago }, "."] }
-          - { level: A2, expression: { alternatives: [always, often, never] }, ex: ["He ", { signal: always }, " used to be late."] }
-          - { level: A2, expression: but now, ex: ["I used to run, ", { signal: but now }, " I swim."] }
+          - { level: A2, expression: { alternatives: [when I was a child, young] }, ex: [{ signal: When I was a child }, ", I used to climb trees."], tr: { uk: "Коли я був дитиною, я лазив по деревах.", es: "Cuando era niño, trepaba a los árboles." } }
+          - { level: A2, expression: in those days, ex: ["People used to write letters ", { signal: in those days }, "."], tr: { uk: "Тоді люди писали листи.", es: "En aquella época la gente escribía cartas." } }
+          - { level: A2, expression: years ago, ex: ["I used to smoke ", { signal: years ago }, "."], tr: { uk: "Багато років тому я курив.", es: "Hace años fumaba." } }
+          - { level: A2, expression: { alternatives: [always, often, never] }, ex: ["He ", { signal: always }, " used to be late."], tr: { uk: "Він завжди запізнювався.", es: "Siempre llegaba tarde." } }
+          - { level: A2, expression: but now, ex: ["I used to run, ", { signal: but now }, " I swim."], tr: { uk: "Раніше я бігав, а тепер плаваю.", es: "Antes corría, pero ahora nado." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: always }, ", ", { term: often }, " and ", { term: never }, " go before ", { term: used to }, ":"]
+              uk: [{ term: always }, ", ", { term: often }, " і ", { term: never }, " стоять перед ", { term: used to }, ":"]
+              es: [{ term: always }, ", ", { term: often }, " y ", { term: never }, " van antes de ", { term: used to }, ":"]
             ex: ["He ", { target: always }, " used to be late."]
+            tr: { uk: "Він завжди запізнювався.", es: "Siempre llegaba tarde." }
 
-  - title: { en: "Compare: used to vs past simple" }
+  - title: { en: "Compare: used to vs past simple", uk: "Порівняння: used to і Past Simple", es: "Comparación: used to y pasado simple" }
     role: compare
     content:
       - type: comparison
         columns:
           - { key: used, label: Used to, features: { aspect: hab, tense: pst } }
-          - { key: simple, label: Past simple, features: { tense: pst } }
+          - { key: simple, label: { en: Past simple, uk: "Past Simple", es: "Pasado simple" }, features: { tense: pst } }
         rows:
-          - { level: A2, used: { en: "past habits and states, over now" }, simple: { en: "finished actions, stated time or number" } }
-          - { level: A2, used: ["I ", { target: used to live }, " in Paris."], simple: ["I ", { target: lived }, " in Paris for two years."] }
-          - { level: A2, used: ["We ", { target: used to eat }, " out on ", { weekday: Fridays, value: 5 }, "."], simple: ["We ", { target: ate }, " out last ", { weekday: Friday, value: 5 }, "."] }
-          - { level: A2, used: [{ target: Did }, " you ", { target: use to }, " have a dog?"], simple: [{ target: Did }, " you ", { target: have }, " a dog last year?"] }
+          - { level: A2, used: { en: "past habits and states, over now", uk: "минулі звички й стани, яких уже немає", es: "hábitos y estados del pasado que ya terminaron" }, simple: { en: "finished actions, stated time or number", uk: "завершені дії, названий час або кількість разів", es: "acciones terminadas, con tiempo o número de veces indicado" } }
+          - { level: A2, used: { ex: ["I ", { target: used to live }, " in Paris."], tr: { uk: "Раніше я жив у Парижі.", es: "Antes vivía en París." } }, simple: { ex: ["I ", { target: lived }, " in Paris for two years."], tr: { uk: "Я жив у Парижі два роки.", es: "Viví en París durante dos años." } } }
+          - { level: A2, used: { ex: ["We ", { target: used to eat }, " out on ", { weekday: Fridays, value: 5 }, "."], tr: { uk: "Раніше ми ходили в ресторан по п’ятницях.", es: "Antes comíamos fuera los viernes." } }, simple: { ex: ["We ", { target: ate }, " out last ", { weekday: Friday, value: 5 }, "."], tr: { uk: "Минулої п’ятниці ми ходили в ресторан.", es: "El viernes pasado comimos fuera." } } }
+          - { level: A2, used: { ex: [{ target: Did }, " you ", { target: use to }, " have a dog?"], tr: { uk: "У тебе раніше був собака?", es: "¿Antes tenías un perro?" } }, simple: { ex: [{ target: Did }, " you ", { target: have }, " a dog last year?"], tr: { uk: "У тебе торік був собака?", es: "¿Tenías un perro el año pasado?" } } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: "A single event takes the past simple:"
+              uk: "Одноразова подія вживається в Past Simple:"
+              es: "Un hecho único va en pasado simple:"
             ex: ["I ", { target: visited }, " Rome in ", { date: May, value: "--05" }, "."]
+            tr: { uk: "Я відвідав Рим у травні.", es: "Visité Roma en mayo." }
           - type: rule
             level: A2
             text:
               en: "A habit with a time expression takes either form:"
+              uk: "Звичка з позначенням часу допускає обидві форми:"
+              es: "Un hábito con una expresión de tiempo admite las dos formas:"
             ex: ["I ", { target: played }, " football every ", { weekday: Saturday, value: 6 }, "."]
+            tr: { uk: "Я грав у футбол щосуботи.", es: "Jugaba al fútbol todos los sábados." }
           - type: note
             level: A2
             text:
               en: ["See ", { link: Past simple, to: en.tenses.simple-tenses }, "."]
+              uk: ["Див. ", { link: "Past Simple", to: en.tenses.simple-tenses }, "."]
+              es: ["Ver ", { link: "Pasado simple", to: en.tenses.simple-tenses }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: I use to play football., right: ["I ", { target: used to }, " play football."], rule: { en: { takes: [affirmative, "used to, with -d"] } } }
-          - { level: A2, wrong: Did you used to play?, right: ["Did you ", { target: use to }, " play?"], rule: { en: { takes: [after did, use to] } } }
-          - { level: A2, wrong: I didn't used to like it., right: ["I didn't ", { target: use to }, " like it."], rule: { en: { takes: [after didn't, use to] } } }
-          - { level: A2, wrong: I used to playing football., right: ["I used to ", { target: play }, " football."], rule: { en: { pattern: [used to, { slot: base verb }] } } }
+          - { level: A2, wrong: I use to play football., right: ["I ", { target: used to }, " play football."], rule: { en: { takes: [affirmative, "used to, with -d"] }, uk: { takes: ["ствердження", "used to, з -d"] }, es: { takes: ["afirmación", "used to, con -d"] } } }
+          - { level: A2, wrong: Did you used to play?, right: ["Did you ", { target: use to }, " play?"], rule: { en: { takes: [after did, use to] }, uk: { takes: ["після did", use to] }, es: { takes: ["después de did", use to] } } }
+          - { level: A2, wrong: I didn't used to like it., right: ["I didn't ", { target: use to }, " like it."], rule: { en: { takes: [after didn't, use to] }, uk: { takes: ["після didn't", use to] }, es: { takes: ["después de didn't", use to] } } }
+          - { level: A2, wrong: I used to playing football., right: ["I used to ", { target: play }, " football."], rule: { en: { pattern: [used to, { slot: base verb }] }, uk: { pattern: [used to, { slot: base verb }] }, es: { pattern: [used to, { slot: base verb }] } } }

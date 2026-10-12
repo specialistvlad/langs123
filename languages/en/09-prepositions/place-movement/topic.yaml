@@ -5,154 +5,173 @@ kind: grammar
 tags: [prepositions, place, movement, transport]
 concepts: [prepositions-place]
 related: [en.prepositions.time-in-on-at, en.verbs.phrasal-verbs-core, en.verbs.there-is-are]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Place and Movement }
+title: { en: Place and Movement, uk: Прийменники місця й руху, es: Preposiciones de lugar y movimiento }
 summary:
-  lead: { en: "In, on, at and under say where something is; to, into, out of and through say where it goes." }
-  rule: { en: "In is inside a space, on touches a surface and at is a point:" }
+  lead:
+    en: "In, on, at and under say where something is; to, into, out of and through say where it goes."
+    uk: "In, on, at і under показують, де щось знаходиться; to, into, out of і through — куди воно рухається."
+    es: "In, on, at y under dicen dónde está algo; to, into, out of y through dicen adónde va."
+  rule:
+    en: "In is inside a space, on touches a surface and at is a point:"
+    uk: "In — це всередині простору, on торкається поверхні, а at — це точка:"
+    es: "In es dentro de un espacio, on toca una superficie y at es un punto:"
   ex: { examples: [[{ target: in }, " the bag"], [{ target: "on" }, " the table"], [{ target: at }, " the door."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: in, rule: { en: "inside a space, in a town or country" }, ex: { examples: [[{ target: in }, " the bag"], [{ target: in }, " Madrid"]] } }
-        - { level: A1, point: "on", rule: { en: touching a surface }, ex: { examples: [[{ target: "on" }, " the table"], [{ target: "on" }, " the wall"]] } }
-        - { level: A1, point: at, rule: { en: a point or a place for its purpose }, ex: { examples: [[{ target: at }, " the door"], [{ target: at }, " home"]] } }
-        - { level: A1, point: { en: Fixed phrases }, rule: { en: ["without ", { term: the }, ": at home, at work, in bed, to school"] }, ex: { examples: [["She's ", { target: at work }, "."], ["I go ", { target: to work }, "."]] } }
-        - { level: A1, point: "behind, near", rule: { en: go straight before the noun }, ex: ["I live ", { target: near }, " the park."] }
-        - { level: A1, point: { alternatives: [to, from] }, rule: { en: movement to and from a place; home follows go directly }, ex: { examples: [["We go ", { target: to }, " the beach."], ["I go ", { target: home }, "."]] } }
-        - { level: A2, point: { examples: [{ mapping: [in, into] }, { mapping: ["on", onto] }, { mapping: [at, to] }] }, rule: { en: place becomes movement }, ex: { examples: [["She goes ", { target: into }, " the kitchen."], ["The cat jumps ", { target: onto }, " the sofa."]] } }
-        - { level: A2, point: "along, across, through", rule: { en: the path of the movement }, ex: { examples: [["We walk ", { target: across }, " the bridge."], ["The train goes ", { target: through }, " a tunnel."]] } }
-        - { level: A2, point: arrive, rule: { en: [{ term: arrive in }, " a city or country; ", { term: arrive at }, " a building"] }, ex: { examples: [["We arrive ", { target: in }, " Paris."], ["I arrive ", { target: at }, " the office."]] } }
-        - { level: A2, point: { en: Transport }, rule: { en: [{ term: get on }, " a bus, train, plane, bike; ", { term: get in }, " a car, taxi"] }, ex: { examples: [["I get ", { target: "on" }, " the bus."], ["She gets ", { target: in }, " the taxi."]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: [{ term: next to }, " and ", { term: in front of }, " keep ", { term: to }, " and ", { term: of }] }, ex: { examples: [[{ target: next to }, " the café"], [{ target: in front of }, " the school"]] } }
+        - { level: A1, point: in, rule: { en: "inside a space, in a town or country", uk: "усередині простору, в місті чи країні", es: "dentro de un espacio, en una ciudad o un país" }, ex: { examples: [[{ target: in }, " the bag"], [{ target: in }, " Madrid"]] }, tr: { uk: { examples: ["у сумці", "у Мадриді"] }, es: { examples: ["en la bolsa", "en Madrid"] } } }
+        - { level: A1, point: "on", rule: { en: touching a surface, uk: "торкається поверхні", es: "en contacto con una superficie" }, ex: { examples: [[{ target: "on" }, " the table"], [{ target: "on" }, " the wall"]] }, tr: { uk: { examples: ["на столі", "на стіні"] }, es: { examples: ["sobre la mesa", "en la pared"] } } }
+        - { level: A1, point: at, rule: { en: a point or a place for its purpose, uk: "точка або місце за призначенням", es: "un punto o un lugar según su función" }, ex: { examples: [[{ target: at }, " the door"], [{ target: at }, " home"]] }, tr: { uk: { examples: ["біля дверей", "вдома"] }, es: { examples: ["en la puerta", "en casa"] } } }
+        - { level: A1, point: { en: Fixed phrases, uk: "Сталі вирази", es: "Expresiones fijas" }, rule: { en: ["without ", { term: the }, ": at home, at work, in bed, to school"], uk: ["без ", { term: the }, ": at home, at work, in bed, to school"], es: ["sin ", { term: the }, ": at home, at work, in bed, to school"] }, ex: { examples: [["She's ", { target: at work }, "."], ["I go ", { target: to work }, "."]] }, tr: { uk: { examples: ["Вона на роботі.", "Я йду на роботу."] }, es: { examples: ["Ella está en el trabajo.", "Voy al trabajo."] } } }
+        - { level: A1, point: "behind, near", rule: { en: go straight before the noun, uk: "стоять безпосередньо перед іменником", es: "van directamente delante del sustantivo" }, ex: ["I live ", { target: near }, " the park."], tr: { uk: "Я живу біля парку.", es: "Vivo cerca del parque." } }
+        - { level: A1, point: { alternatives: [to, from] }, rule: { en: movement to and from a place; home follows go directly, uk: "рух до місця й від місця; home стоїть одразу після go", es: "movimiento hacia un lugar y desde él; home va directamente después de go" }, ex: { examples: [["We go ", { target: to }, " the beach."], ["I go ", { target: home }, "."]] }, tr: { uk: { examples: ["Ми йдемо на пляж.", "Я йду додому."] }, es: { examples: ["Vamos a la playa.", "Voy a casa."] } } }
+        - { level: A2, point: { examples: [{ mapping: [in, into] }, { mapping: ["on", onto] }, { mapping: [at, to] }] }, rule: { en: place becomes movement, uk: "місце стає рухом", es: "el lugar pasa a ser movimiento" }, ex: { examples: [["She goes ", { target: into }, " the kitchen."], ["The cat jumps ", { target: onto }, " the sofa."]] }, tr: { uk: { examples: ["Вона заходить на кухню.", "Кіт стрибає на диван."] }, es: { examples: ["Ella entra en la cocina.", "El gato salta sobre el sofá."] } } }
+        - { level: A2, point: "along, across, through", rule: { en: the path of the movement, uk: "шлях руху", es: "el recorrido del movimiento" }, ex: { examples: [["We walk ", { target: across }, " the bridge."], ["The train goes ", { target: through }, " a tunnel."]] }, tr: { uk: { examples: ["Ми йдемо через міст.", "Потяг їде через тунель."] }, es: { examples: ["Cruzamos el puente a pie.", "El tren pasa por un túnel."] } } }
+        - { level: A2, point: arrive, rule: { en: [{ term: arrive in }, " a city or country; ", { term: arrive at }, " a building"], uk: [{ term: arrive in }, " — для міста чи країни; ", { term: arrive at }, " — для будівлі"], es: [{ term: arrive in }, " para una ciudad o un país; ", { term: arrive at }, " para un edificio"] }, ex: { examples: [["We arrive ", { target: in }, " Paris."], ["I arrive ", { target: at }, " the office."]] }, tr: { uk: { examples: ["Ми приїжджаємо до Парижа.", "Я приходжу в офіс."] }, es: { examples: ["Llegamos a París.", "Llego a la oficina."] } } }
+        - { level: A2, point: { en: Transport, uk: "Транспорт", es: "Transporte" }, rule: { en: [{ term: get on }, " a bus, train, plane, bike; ", { term: get in }, " a car, taxi"], uk: [{ term: get on }, " a bus, train, plane, bike; ", { term: get in }, " a car, taxi"], es: [{ term: get on }, " a bus, train, plane, bike; ", { term: get in }, " a car, taxi"] }, ex: { examples: [["I get ", { target: "on" }, " the bus."], ["She gets ", { target: in }, " the taxi."]] }, tr: { uk: { examples: ["Я сідаю в автобус.", "Вона сідає в таксі."] }, es: { examples: ["Subo al autobús.", "Ella se sube al taxi."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: next to }, " and ", { term: in front of }, " keep ", { term: to }, " and ", { term: of }], uk: [{ term: next to }, " і ", { term: in front of }, " зберігають ", { term: to }, " та ", { term: of }], es: [{ term: next to }, " y ", { term: in front of }, " conservan ", { term: to }, " y ", { term: of }] }, ex: { examples: [[{ target: next to }, " the café"], [{ target: in front of }, " the school"]] }, tr: { uk: { examples: ["поруч із кафе", "перед школою"] }, es: { examples: ["al lado del café", "delante de la escuela"] } } }
 
 sections:
-  - title: { en: "Place: where something is" }
+  - title: { en: "Place: where something is", uk: "Місце: де щось знаходиться", es: "Lugar: dónde está algo" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: prep, label: { en: Preposition } }
-          - { key: ex, label: { en: Example } }
+          - { key: prep, label: { en: Preposition, uk: "Прийменник", es: "Preposición" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, prep: in, ex: ["The keys are ", { target: in }, " the bag."] }
-          - { level: A1, prep: "on", ex: ["The phone is ", { target: "on" }, " the table."] }
-          - { level: A1, prep: at, ex: ["She is ", { target: at }, " the door."] }
-          - { level: A1, prep: under, ex: ["The cat is ", { target: under }, " the chair."] }
-          - { level: A1, prep: next to, ex: ["The bank is ", { target: next to }, " the café."] }
-          - { level: A1, prep: between, ex: ["The shop is ", { target: between }, " the bank and the café."] }
-          - { level: A1, prep: behind, ex: ["The garden is ", { target: behind }, " the house."] }
-          - { level: A1, prep: in front of, ex: ["The bus stop is ", { target: in front of }, " the school."] }
-          - { level: A2, prep: opposite, ex: ["The hotel is ", { target: opposite }, " the station."] }
-          - { level: A1, prep: near, ex: ["I live ", { target: near }, " the park."] }
+          - { level: A1, prep: in, ex: ["The keys are ", { target: in }, " the bag."], tr: { uk: "Ключі в сумці.", es: "Las llaves están en la bolsa." } }
+          - { level: A1, prep: "on", ex: ["The phone is ", { target: "on" }, " the table."], tr: { uk: "Телефон на столі.", es: "El teléfono está sobre la mesa." } }
+          - { level: A1, prep: at, ex: ["She is ", { target: at }, " the door."], tr: { uk: "Вона біля дверей.", es: "Ella está en la puerta." } }
+          - { level: A1, prep: under, ex: ["The cat is ", { target: under }, " the chair."], tr: { uk: "Кіт під стільцем.", es: "El gato está debajo de la silla." } }
+          - { level: A1, prep: next to, ex: ["The bank is ", { target: next to }, " the café."], tr: { uk: "Банк поруч із кафе.", es: "El banco está al lado del café." } }
+          - { level: A1, prep: between, ex: ["The shop is ", { target: between }, " the bank and the café."], tr: { uk: "Магазин між банком і кафе.", es: "La tienda está entre el banco y el café." } }
+          - { level: A1, prep: behind, ex: ["The garden is ", { target: behind }, " the house."], tr: { uk: "Сад за будинком.", es: "El jardín está detrás de la casa." } }
+          - { level: A1, prep: in front of, ex: ["The bus stop is ", { target: in front of }, " the school."], tr: { uk: "Автобусна зупинка перед школою.", es: "La parada de autobús está delante de la escuela." } }
+          - { level: A2, prep: opposite, ex: ["The hotel is ", { target: opposite }, " the station."], tr: { uk: "Готель навпроти вокзалу.", es: "El hotel está frente a la estación." } }
+          - { level: A1, prep: near, ex: ["I live ", { target: near }, " the park."], tr: { uk: "Я живу біля парку.", es: "Vivo cerca del parque." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: behind }, ", ", { term: opposite }, " and ", { term: near }, " go straight before the noun: near the park."]
+              uk: [{ term: behind }, ", ", { term: opposite }, " і ", { term: near }, " стоять безпосередньо перед іменником: near the park."]
+              es: [{ term: behind }, ", ", { term: opposite }, " y ", { term: near }, " van directamente delante del sustantivo: near the park."]
 
-  - title: { en: "In, on, at: place" }
+  - title: { en: "In, on, at: place", uk: "In, on, at: місце", es: "In, on, at: lugar" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { pattern: [in, { slot: { en: "room, building, town, country" } }] }, ex: { examples: [["He lives ", { target: in }, " Madrid."], ["It's ", { target: in }, " the kitchen."]] } }
-          - { level: A1, use: { pattern: [in, "bed, hospital"] }, ex: ["I'm ", { target: in }, " bed. ", { variant: { target: in the hospital }, variety: en-US }] }
-          - { level: A1, use: { pattern: ["on", { slot: { en: "surface, wall, floor" } }] }, ex: ["The picture is ", { target: "on" }, " the wall."] }
-          - { level: A1, use: { pattern: [at, "home, work, school, university"] }, ex: { examples: [["She's ", { target: at }, " home."], ["He's ", { target: at }, " work."]] } }
-          - { level: A1, use: { pattern: [at, { slot: { en: point or event } }] }, ex: { examples: [["I'm ", { target: at }, " the bus stop."], ["We're ", { target: at }, " a party."]] } }
+          - { level: A1, use: { pattern: [in, { slot: { en: "room, building, town, country", uk: "кімната, будівля, місто, країна", es: "habitación, edificio, ciudad, país" } }] }, ex: { examples: [["He lives ", { target: in }, " Madrid."], ["It's ", { target: in }, " the kitchen."]] }, tr: { uk: { examples: ["Він живе в Мадриді.", "Це на кухні."] }, es: { examples: ["Él vive en Madrid.", "Está en la cocina."] } } }
+          - { level: A1, use: { pattern: [in, "bed, hospital"] }, ex: ["I'm ", { target: in }, " bed. ", { variant: { target: in the hospital }, variety: en-US }], tr: { uk: "Я в ліжку.", es: "Estoy en la cama." } }
+          - { level: A1, use: { pattern: ["on", { slot: { en: "surface, wall, floor", uk: "поверхня, стіна, підлога", es: "superficie, pared, suelo" } }] }, ex: ["The picture is ", { target: "on" }, " the wall."], tr: { uk: "Картина на стіні.", es: "El cuadro está en la pared." } }
+          - { level: A1, use: { pattern: [at, "home, work, school, university"] }, ex: { examples: [["She's ", { target: at }, " home."], ["He's ", { target: at }, " work."]] }, tr: { uk: { examples: ["Вона вдома.", "Він на роботі."] }, es: { examples: ["Ella está en casa.", "Él está en el trabajo."] } } }
+          - { level: A1, use: { pattern: [at, { slot: { en: point or event, uk: "точка або подія", es: "punto o evento" } }] }, ex: { examples: [["I'm ", { target: at }, " the bus stop."], ["We're ", { target: at }, " a party."]] }, tr: { uk: { examples: ["Я на автобусній зупинці.", "Ми на вечірці."] }, es: { examples: ["Estoy en la parada de autobús.", "Estamos en una fiesta."] } } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: at home }, ", ", { term: at work }, ", ", { term: at school }, " and ", { term: in bed }, " are fixed phrases without ", { term: the }, "."]
+              uk: [{ term: at home }, ", ", { term: at work }, ", ", { term: at school }, " і ", { term: in bed }, " — сталі вирази без ", { term: the }, "."]
+              es: [{ term: at home }, ", ", { term: at work }, ", ", { term: at school }, " y ", { term: in bed }, " son expresiones fijas sin ", { term: the }, "."]
           - type: rule
             level: A1
             text:
               en: [{ term: in }, " = inside a space. ", { term: "on" }, " = touching a surface. ", { term: at }, " = a point or a place for its purpose."]
+              uk: [{ term: in }, " = усередині простору. ", { term: "on" }, " = торкається поверхні. ", { term: at }, " = точка або місце за призначенням."]
+              es: [{ term: in }, " = dentro de un espacio. ", { term: "on" }, " = en contacto con una superficie. ", { term: at }, " = un punto o un lugar según su función."]
 
-  - title: { en: "Movement: where something goes" }
+  - title: { en: "Movement: where something goes", uk: "Рух: куди щось рухається", es: "Movimiento: adónde va algo" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: prep, label: { en: Preposition } }
-          - { key: ex, label: { en: Example } }
+          - { key: prep, label: { en: Preposition, uk: "Прийменник", es: "Preposición" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, prep: to, ex: ["We go ", { target: to }, " the beach."] }
-          - { level: A1, prep: from, ex: ["She comes ", { target: from }, " Italy."] }
-          - { level: A2, prep: into, ex: ["He walks ", { target: into }, " the room."] }
-          - { level: A2, prep: out of, ex: ["She gets ", { target: out of }, " the car."] }
-          - { level: A2, prep: onto, ex: ["The cat jumps ", { target: onto }, " the sofa."] }
-          - { level: A2, prep: up, ex: ["We walk ", { target: up }, " the hill."] }
-          - { level: A2, prep: down, ex: ["He runs ", { target: down }, " the stairs."] }
-          - { level: A2, prep: along, ex: ["Walk ", { target: along }, " the river."] }
-          - { level: A2, prep: across, ex: ["We walk ", { target: across }, " the bridge."] }
-          - { level: A2, prep: through, ex: ["The train goes ", { target: through }, " a tunnel."] }
-          - { level: A2, prep: past, ex: ["Walk ", { target: past }, " the bank."] }
-          - { level: A2, prep: towards, ex: ["The dog runs ", { target: towards }, " me."] }
+          - { level: A1, prep: to, ex: ["We go ", { target: to }, " the beach."], tr: { uk: "Ми йдемо на пляж.", es: "Vamos a la playa." } }
+          - { level: A1, prep: from, ex: ["She comes ", { target: from }, " Italy."], tr: { uk: "Вона з Італії.", es: "Ella viene de Italia." } }
+          - { level: A2, prep: into, ex: ["He walks ", { target: into }, " the room."], tr: { uk: "Він заходить у кімнату.", es: "Él entra en la habitación." } }
+          - { level: A2, prep: out of, ex: ["She gets ", { target: out of }, " the car."], tr: { uk: "Вона виходить з машини.", es: "Ella se baja del auto." } }
+          - { level: A2, prep: onto, ex: ["The cat jumps ", { target: onto }, " the sofa."], tr: { uk: "Кіт стрибає на диван.", es: "El gato salta sobre el sofá." } }
+          - { level: A2, prep: up, ex: ["We walk ", { target: up }, " the hill."], tr: { uk: "Ми піднімаємося на пагорб.", es: "Subimos la colina a pie." } }
+          - { level: A2, prep: down, ex: ["He runs ", { target: down }, " the stairs."], tr: { uk: "Він біжить сходами вниз.", es: "Él baja corriendo las escaleras." } }
+          - { level: A2, prep: along, ex: ["Walk ", { target: along }, " the river."], tr: { uk: "Йди вздовж річки.", es: "Camina a lo largo del río." } }
+          - { level: A2, prep: across, ex: ["We walk ", { target: across }, " the bridge."], tr: { uk: "Ми йдемо через міст.", es: "Cruzamos el puente a pie." } }
+          - { level: A2, prep: through, ex: ["The train goes ", { target: through }, " a tunnel."], tr: { uk: "Потяг їде через тунель.", es: "El tren pasa por un túnel." } }
+          - { level: A2, prep: past, ex: ["Walk ", { target: past }, " the bank."], tr: { uk: "Пройди повз банк.", es: "Pasa por delante del banco." } }
+          - { level: A2, prep: towards, ex: ["The dog runs ", { target: towards }, " me."], tr: { uk: "Собака біжить до мене.", es: "El perro corre hacia mí." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: home }, " follows go, come and get directly: go ", { term: home }, "."]
+              uk: [{ term: home }, " стоїть одразу після go, come і get: go ", { term: home }, "."]
+              es: [{ term: home }, " va directamente después de go, come y get: go ", { term: home }, "."]
           - type: rule
             level: A1
             text:
               en: [{ term: to school }, ", ", { term: to work }, " and ", { term: to bed }, " are fixed phrases without ", { term: the }, ":"]
+              uk: [{ term: to school }, ", ", { term: to work }, " і ", { term: to bed }, " — сталі вирази без ", { term: the }, ":"]
+              es: [{ term: to school }, ", ", { term: to work }, " y ", { term: to bed }, " son expresiones fijas sin ", { term: the }, ":"]
             ex: ["I go ", { target: to work }, "."]
+            tr: { uk: "Я йду на роботу.", es: "Voy al trabajo." }
           - type: rule
             level: A1
             text:
               en: [{ term: towards }, " ", { ipa: təˈwɔːdz }, " (", { variant: { term: toward }, variety: en-US }, ")."]
+              uk: [{ term: towards }, " ", { ipa: təˈwɔːdz }, " (", { variant: { term: toward }, variety: en-US }, ")."]
+              es: [{ term: towards }, " ", { ipa: təˈwɔːdz }, " (", { variant: { term: toward }, variety: en-US }, ")."]
 
-  - title: { en: Arriving and transport }
+  - title: { en: Arriving and transport, uk: "Прибуття й транспорт", es: "Llegada y transporte" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { pattern: [arrive in, { slot: { en: "city, country" } }] }, ex: ["We arrive ", { target: in }, " Paris at noon."] }
-          - { level: A2, use: { pattern: [arrive at, { slot: { en: "building, station, event" } }] }, ex: ["I arrive ", { target: at }, " the office at nine."] }
-          - { level: A2, use: arrive home, ex: ["She arrives ", { target: home }, " late."] }
-          - { level: A2, use: { pattern: [{ alternatives: [get on, "off"] }, "bus, train, plane, bike"] }, ex: { examples: [["I get ", { target: "on" }, " the bus here."], ["He gets ", { target: "off" }, " the train."]] } }
-          - { level: A2, use: { pattern: [{ alternatives: [get in, out of] }, "car, taxi"] }, ex: { examples: [["She gets ", { target: in }, " the taxi."], ["He gets ", { target: out of }, " the car."]] } }
-          - { level: A2, use: { pattern: [by, { slot: { en: transport } }] }, ex: { examples: [["I go to school ", { target: by bus }, "."], ["We go ", { target: on foot }, "."]] } }
-          - { level: A2, use: { examples: [{ pattern: ["on", "bus, train, plane, bike"] }, { pattern: [in, "car, taxi"] }] }, ex: { examples: [["I'm ", { target: "on" }, " the train."], ["She's ", { target: in }, " the car."]] } }
+          - { level: A2, use: { pattern: [arrive in, { slot: { en: "city, country", uk: "місто, країна", es: "ciudad, país" } }] }, ex: ["We arrive ", { target: in }, " Paris at noon."], tr: { uk: "Ми приїжджаємо до Парижа опівдні.", es: "Llegamos a París al mediodía." } }
+          - { level: A2, use: { pattern: [arrive at, { slot: { en: "building, station, event", uk: "будівля, станція, подія", es: "edificio, estación, evento" } }] }, ex: ["I arrive ", { target: at }, " the office at nine."], tr: { uk: "Я приходжу в офіс о дев’ятій.", es: "Llego a la oficina a las nueve." } }
+          - { level: A2, use: arrive home, ex: ["She arrives ", { target: home }, " late."], tr: { uk: "Вона приходить додому пізно.", es: "Ella llega a casa tarde." } }
+          - { level: A2, use: { pattern: [{ alternatives: [get on, "off"] }, "bus, train, plane, bike"] }, ex: { examples: [["I get ", { target: "on" }, " the bus here."], ["He gets ", { target: "off" }, " the train."]] }, tr: { uk: { examples: ["Я сідаю на автобус тут.", "Він виходить з потяга."] }, es: { examples: ["Subo al autobús aquí.", "Él se baja del tren."] } } }
+          - { level: A2, use: { pattern: [{ alternatives: [get in, out of] }, "car, taxi"] }, ex: { examples: [["She gets ", { target: in }, " the taxi."], ["He gets ", { target: out of }, " the car."]] }, tr: { uk: { examples: ["Вона сідає в таксі.", "Він виходить з машини."] }, es: { examples: ["Ella se sube al taxi.", "Él se baja del auto."] } } }
+          - { level: A2, use: { pattern: [by, { slot: { en: transport, uk: "транспорт", es: "transporte" } }] }, ex: { examples: [["I go to school ", { target: by bus }, "."], ["We go ", { target: on foot }, "."]] }, tr: { uk: { examples: ["Я їжджу до школи автобусом.", "Ми йдемо пішки."] }, es: { examples: ["Voy a la escuela en autobús.", "Vamos a pie."] } } }
+          - { level: A2, use: { examples: [{ pattern: ["on", "bus, train, plane, bike"] }, { pattern: [in, "car, taxi"] }] }, ex: { examples: [["I'm ", { target: "on" }, " the train."], ["She's ", { target: in }, " the car."]] }, tr: { uk: { examples: ["Я в потязі.", "Вона в машині."] }, es: { examples: ["Estoy en el tren.", "Ella está en el auto."] } } }
 
-  - title: { en: "Compare: place and movement" }
+  - title: { en: "Compare: place and movement", uk: "Порівняння: місце й рух", es: "Comparación: lugar y movimiento" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: place, label: { en: Place } }
-          - { key: movement, label: { en: Movement } }
+          - { key: place, label: { en: Place, uk: "Місце", es: "Lugar" } }
+          - { key: movement, label: { en: Movement, uk: "Рух", es: "Movimiento" } }
         rows:
-          - { level: A2, place: ["She is ", { target: in }, " the kitchen."], movement: ["She goes ", { target: into }, " the kitchen."] }
-          - { level: A2, place: ["The cat is ", { target: "on" }, " the sofa."], movement: ["The cat jumps ", { target: onto }, " the sofa."] }
-          - { level: A2, place: ["He is ", { target: at }, " school."], movement: ["He goes ", { target: to }, " school."] }
+          - { level: A2, place: { ex: ["She is ", { target: in }, " the kitchen."], tr: { uk: "Вона на кухні.", es: "Ella está en la cocina." } }, movement: { ex: ["She goes ", { target: into }, " the kitchen."], tr: { uk: "Вона заходить на кухню.", es: "Ella entra en la cocina." } } }
+          - { level: A2, place: { ex: ["The cat is ", { target: "on" }, " the sofa."], tr: { uk: "Кіт на дивані.", es: "El gato está en el sofá." } }, movement: { ex: ["The cat jumps ", { target: onto }, " the sofa."], tr: { uk: "Кіт стрибає на диван.", es: "El gato salta sobre el sofá." } } }
+          - { level: A2, place: { ex: ["He is ", { target: at }, " school."], tr: { uk: "Він у школі.", es: "Él está en la escuela." } }, movement: { ex: ["He goes ", { target: to }, " school."], tr: { uk: "Він іде до школи.", es: "Él va a la escuela." } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: The school is in front the park., right: ["The school is ", { target: in front of }, " the park."], rule: { en: in front of needs of } }
-          - { level: A1, wrong: I live at London., right: ["I live ", { target: in }, " London."], rule: { en: { takes: [towns and countries, in] } } }
-          - { level: A2, wrong: I get in the bus., right: ["I get ", { target: "on" }, " the bus."], rule: { en: { takes: ["bus, train, plane", get on] } } }
-          - { level: A2, wrong: She gets on the taxi., right: ["She gets ", { target: in }, " the taxi."], rule: { en: { takes: ["car, taxi", { alternatives: [get in, out of] }] } } }
+          - { level: A1, wrong: The school is in front the park., right: ["The school is ", { target: in front of }, " the park."], rule: { en: in front of needs of, uk: "in front of потребує of", es: "in front of necesita of" } }
+          - { level: A1, wrong: I live at London., right: ["I live ", { target: in }, " London."], rule: { en: { takes: [towns and countries, in] }, uk: { takes: ["міста й країни", in] }, es: { takes: ["ciudades y países", in] } } }
+          - { level: A2, wrong: I get in the bus., right: ["I get ", { target: "on" }, " the bus."], rule: { en: { takes: ["bus, train, plane", get on] }, uk: { takes: ["bus, train, plane", get on] }, es: { takes: ["bus, train, plane", get on] } } }
+          - { level: A2, wrong: She gets on the taxi., right: ["She gets ", { target: in }, " the taxi."], rule: { en: { takes: ["car, taxi", { alternatives: [get in, out of] }] }, uk: { takes: ["car, taxi", { alternatives: [get in, out of] }] }, es: { takes: ["car, taxi", { alternatives: [get in, out of] }] } } }

@@ -5,33 +5,39 @@ kind: grammar
 tags: [verbs, modals, possibility, permission]
 concepts: [possibility]
 related: [en.modals.can-could, en.modals.must-have-to, en.modals.would, en.tenses.future-forms, en.sentence-building.conditionals-0-1-2]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: May and Might }
+title: { en: May and Might, uk: May і might, es: May y might }
 summary:
-  lead: { en: Might and may for possibility; may for formal permission. }
-  rule: { en: "Might and may take no -s, no to and no do, and the negative is might not:" }
+  lead:
+    en: Might and may for possibility; may for formal permission.
+    uk: "Might і may виражають можливість, а may ще й офіційний дозвіл."
+    es: "Might y may expresan posibilidad; may, además, permiso formal."
+  rule:
+    en: "Might and may take no -s, no to and no do, and the negative is might not:"
+    uk: "Might і may не мають -s, не вживаються з to й do, а заперечення — might not:"
+    es: "Might y may no llevan -s, ni to, ni do, y la negación es might not:"
   ex: { examples: [["She ", { target: might }, " come."], ["He ", { target: might not }, " come."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: { en: Form }, rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [might, may] }, { slot: base verb }] }, "; one form for every subject"] }, ex: ["She ", { target: might }, " come."] }
-        - { level: A2, point: { en: Negative }, rule: { alternatives: [might not, may not] }, ex: ["He ", { target: might not }, " come."] }
-        - { level: A2, point: { en: Possibility }, rule: { en: "something possible, now or in the future" }, ex: { examples: [["She ", { target: might }, " be at home."], ["We ", { target: might }, " go to the beach."]] } }
-        - { level: A2, point: { en: Might or may }, rule: { en: [{ term: might }, " sounds a little less sure"] }, ex: { examples: [["It ", { target: might }, " rain."], ["It ", { target: may }, " rain."]] } }
-        - { level: A2, point: { en: Possibility question }, rule: { en: ["ask with ", { pattern: [{ term: think }, { term: will }] }] }, ex: ["Do you think it ", { target: will }, " rain?"] }
-        - { level: B1, point: { en: Permission }, rule: { en: [{ pattern: [May, { slot: subject }, { slot: base verb }] }, " asks; ", { term: may }, " allows in formal rules"] }, ex: { examples: [[{ target: May }, " I use your phone?"], ["Guests ", { target: may }, " use the pool until 10."]] } }
-        - { level: B1, point: { en: Certainty }, rule: { en: [{ term: will }, " is sure, ", { term: probably }, " very likely, ", { alternatives: [{ term: may }, { term: might }] }, " possible"] }, ex: { examples: [["She ", { target: will }, " come."], ["She'll ", { target: probably }, " come."], ["She ", { target: may }, " come."]] } }
-        - { level: A2, point: { en: Trap }, rule: { en: [{ term: may be }, " follows the subject; ", { term: maybe }, " starts a clause"] }, ex: { examples: [["He ", { target: may be }, " late."], [{ target: Maybe }, " he is late."]] } }
+        - { level: A2, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [might, may] }, { slot: base verb }] }, "; one form for every subject"], uk: [{ pattern: [{ slot: subject }, { alternatives: [might, may] }, { slot: base verb }] }, "; одна форма для всіх підметів"], es: [{ pattern: [{ slot: subject }, { alternatives: [might, may] }, { slot: base verb }] }, "; una sola forma para todos los sujetos"] }, ex: ["She ", { target: might }, " come."], tr: { uk: "Вона, можливо, прийде.", es: "Puede que ella venga." } }
+        - { level: A2, point: { en: Negative, uk: "Заперечення", es: "Negación" }, rule: { alternatives: [might not, may not] }, ex: ["He ", { target: might not }, " come."], tr: { uk: "Він, можливо, не прийде.", es: "Puede que él no venga." } }
+        - { level: A2, point: { en: Possibility, uk: "Можливість", es: "Posibilidad" }, rule: { en: "something possible, now or in the future", uk: "щось можливе зараз або в майбутньому", es: "algo posible, ahora o en el futuro" }, ex: { examples: [["She ", { target: might }, " be at home."], ["We ", { target: might }, " go to the beach."]] }, tr: { uk: { examples: ["Вона, можливо, вдома.", "Можливо, ми підемо на пляж."] }, es: { examples: ["Puede que esté en casa.", "Quizá vayamos a la playa."] } } }
+        - { level: A2, point: { en: Might or may, uk: "Might чи may", es: "Might o may" }, rule: { en: [{ term: might }, " sounds a little less sure"], uk: [{ term: might }, " звучить трохи менш упевнено"], es: [{ term: might }, " suena un poco menos seguro"] }, ex: { examples: [["It ", { target: might }, " rain."], ["It ", { target: may }, " rain."]] }, tr: { uk: { examples: ["Може, й піде дощ.", "Можливо, піде дощ."] }, es: { examples: ["Podría llover.", "Puede que llueva."] } } }
+        - { level: A2, point: { en: Possibility question, uk: "Питання про можливість", es: "Pregunta sobre posibilidad" }, rule: { en: ["ask with ", { pattern: [{ term: think }, { term: will }] }], uk: ["питання ставлять так: ", { pattern: [{ term: think }, { term: will }] }], es: ["se pregunta con ", { pattern: [{ term: think }, { term: will }] }] }, ex: ["Do you think it ", { target: will }, " rain?"], tr: { uk: "Як гадаєш, піде дощ?", es: "¿Crees que lloverá?" } }
+        - { level: B1, point: { en: Permission, uk: "Дозвіл", es: "Permiso" }, rule: { en: [{ pattern: [May, { slot: subject }, { slot: base verb }] }, " asks; ", { term: may }, " allows in formal rules"], uk: [{ pattern: [May, { slot: subject }, { slot: base verb }] }, " просить дозволу; ", { term: may }, " дозволяє у формальних правилах"], es: [{ pattern: [May, { slot: subject }, { slot: base verb }] }, " pide permiso; ", { term: may }, " permite en normas formales"] }, ex: { examples: [[{ target: May }, " I use your phone?"], ["Guests ", { target: may }, " use the pool until 10."]] }, tr: { uk: { examples: ["Можна мені скористатися твоїм телефоном?", "Гості можуть користуватися басейном до десятої."] }, es: { examples: ["¿Puedo usar tu teléfono?", "Los huéspedes pueden usar la piscina hasta las 10."] } } }
+        - { level: B1, point: { en: Certainty, uk: "Ступінь упевненості", es: "Grado de certeza" }, rule: { en: [{ term: will }, " is sure, ", { term: probably }, " very likely, ", { alternatives: [{ term: may }, { term: might }] }, " possible"], uk: [{ term: will }, " — упевнено, ", { term: probably }, " — дуже ймовірно, ", { alternatives: [{ term: may }, { term: might }] }, " — можливо"], es: [{ term: will }, " es seguro, ", { term: probably }, " muy probable, ", { alternatives: [{ term: may }, { term: might }] }, " posible"] }, ex: { examples: [["She ", { target: will }, " come."], ["She'll ", { target: probably }, " come."], ["She ", { target: may }, " come."]] }, tr: { uk: { examples: ["Вона прийде.", "Вона, ймовірно, прийде.", "Вона, можливо, прийде."] }, es: { examples: ["Ella vendrá.", "Probablemente vendrá.", "Puede que venga."] } } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: may be }, " follows the subject; ", { term: maybe }, " starts a clause"], uk: [{ term: may be }, " стоїть після підмета; ", { term: maybe }, " починає речення"], es: [{ term: may be }, " va después del sujeto; ", { term: maybe }, " empieza una oración"] }, ex: { examples: [["He ", { target: may be }, " late."], [{ target: Maybe }, " he is late."]] }, tr: { uk: { examples: ["Він, можливо, запізнюється.", "Можливо, він запізнюється."] }, es: { examples: ["Puede que llegue tarde.", "Quizá llegue tarde."] } } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -40,119 +46,146 @@ sections:
             level: A2
             text:
               en: [{ term: might }, " and ", { term: may }, " have one form for every subject: she might, she may."]
+              uk: [{ term: might }, " і ", { term: may }, " мають одну форму для всіх підметів: she might, she may."]
+              es: [{ term: might }, " y ", { term: may }, " tienen una sola forma para todos los sujetos: she might, she may."]
           - type: rule
             level: A2
             text:
               en: ["The verb after ", { term: might }, " or ", { term: may }, " is in the base form:"]
+              uk: ["Дієслово після ", { term: might }, " або ", { term: may }, " стоїть у початковій формі:"]
+              es: ["El verbo después de ", { term: might }, " o ", { term: may }, " va en la forma base:"]
             ex: ["It might ", { target: rain }, "."]
+            tr: { uk: "Може піти дощ.", es: "Podría llover." }
           - type: rule
             level: A2
             text:
               en: ["The negative is ", { alternatives: [{ term: might not }, { term: may not }] }, "."]
+              uk: ["Заперечення — ", { alternatives: [{ term: might not }, { term: may not }] }, "."]
+              es: ["La negación es ", { alternatives: [{ term: might not }, { term: may not }] }, "."]
           - type: rule
             level: B1
             text:
               en: ["Questions with ", { term: may }, " ask for permission, with ", { term: may }, " before the subject:"]
+              uk: ["Питання з ", { term: may }, " просять дозволу; ", { term: may }, " стоїть перед підметом:"]
+              es: ["Las preguntas con ", { term: may }, " piden permiso, y ", { term: may }, " va antes del sujeto:"]
             ex: [{ target: May }, " I sit here?"]
+            tr: { uk: "Можна мені тут сісти?", es: "¿Puedo sentarme aquí?" }
           - type: rule
             level: A2
             text:
               en: ["A question about possibility uses ", { pattern: [{ term: think }, { term: will }] }, ":"]
+              uk: ["Питання про можливість ставлять за схемою ", { pattern: [{ term: think }, { term: will }] }, ":"]
+              es: ["Una pregunta sobre posibilidad usa ", { pattern: [{ term: think }, { term: will }] }, ":"]
             ex: ["Do you think it ", { target: will }, " rain?"]
+            tr: { uk: "Як гадаєш, піде дощ?", es: "¿Crees que lloverá?" }
 
-  - title: { en: "Pronunciation: may and might" }
+  - title: { en: "Pronunciation: may and might", uk: "Вимова: may і might", es: "Pronunciación: may y might" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, form: might, sound: { ipa: maɪt }, ex: ["It ", { target: might }, " rain. ", { ipa: ɪt maɪt reɪn }] }
-          - { level: A2, form: may, sound: { ipa: meɪ }, ex: ["It ", { target: may }, " rain. ", { ipa: ɪt meɪ reɪn }] }
-          - { level: A2, form: maybe, sound: { ipa: ˈmeɪbi }, ex: [{ target: Maybe }, " later. ", { ipa: ˈmeɪbi ˈleɪtə }] }
+          - { level: A2, form: might, sound: { ipa: maɪt }, ex: ["It ", { target: might }, " rain. ", { ipa: ɪt maɪt reɪn }], tr: { uk: "Може піти дощ.", es: "Podría llover." } }
+          - { level: A2, form: may, sound: { ipa: meɪ }, ex: ["It ", { target: may }, " rain. ", { ipa: ɪt meɪ reɪn }], tr: { uk: "Можливо, піде дощ.", es: "Puede que llueva." } }
+          - { level: A2, form: maybe, sound: { ipa: ˈmeɪbi }, ex: [{ target: Maybe }, " later. ", { ipa: ˈmeɪbi ˈleɪtə }], tr: { uk: "Можливо, пізніше.", es: "Quizá más tarde." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["The ", { term: gh }, " in might is silent: ", { ipa: maɪt }, "."]
+              uk: ["Буквосполучення ", { term: gh }, " у слові might не вимовляється: ", { ipa: maɪt }, "."]
+              es: ["El grupo ", { term: gh }, " de might no se pronuncia: ", { ipa: maɪt }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: Possibility now }, ex: ["She ", { target: might }, " be at home."] }
-          - { level: A2, use: { en: Possibility in the future }, ex: ["We ", { target: might }, " go to the beach."] }
-          - { level: A2, use: { en: Possibility that something is not true }, ex: ["He ", { target: might not }, " know."] }
-          - { level: B1, use: { en: Formal permission (May I…?) }, ex: [{ target: May }, " I use your phone?"] }
-          - { level: B1, use: { en: "Formal rules: what is allowed" }, ex: ["Guests ", { target: may }, " use the pool until 10."] }
+          - { level: A2, use: { en: Possibility now, uk: "Можливість зараз", es: "Posibilidad ahora" }, ex: ["She ", { target: might }, " be at home."], tr: { uk: "Вона, можливо, вдома.", es: "Puede que esté en casa." } }
+          - { level: A2, use: { en: Possibility in the future, uk: "Можливість у майбутньому", es: "Posibilidad en el futuro" }, ex: ["We ", { target: might }, " go to the beach."], tr: { uk: "Можливо, ми підемо на пляж.", es: "Quizá vayamos a la playa." } }
+          - { level: A2, use: { en: Possibility that something is not true, uk: "Можливість того, що щось не відповідає дійсності", es: "Posibilidad de que algo no sea cierto" }, ex: ["He ", { target: might not }, " know."], tr: { uk: "Можливо, він не знає.", es: "Puede que no lo sepa." } }
+          - { level: B1, use: { en: Formal permission (May I…?), uk: "Офіційний дозвіл (May I…?)", es: "Permiso formal (May I…?)" }, ex: [{ target: May }, " I use your phone?"], tr: { uk: "Можна мені скористатися твоїм телефоном?", es: "¿Puedo usar tu teléfono?" } }
+          - { level: B1, use: { en: "Formal rules: what is allowed", uk: "Формальні правила: що дозволено", es: "Normas formales: lo que está permitido" }, ex: ["Guests ", { target: may }, " use the pool until 10."], tr: { uk: "Гості можуть користуватися басейном до десятої.", es: "Los huéspedes pueden usar la piscina hasta las 10." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: might }, " and ", { term: may }, " are close in meaning; ", { term: might }, " sounds a little less sure."]
+              uk: [{ term: might }, " і ", { term: may }, " близькі за значенням; ", { term: might }, " звучить трохи менш упевнено."]
+              es: [{ term: might }, " y ", { term: may }, " tienen un significado parecido; ", { term: might }, " suena un poco menos seguro."]
           - type: note
             level: A2
             text:
               en: [{ term: could }, " also expresses possibility: It ", { term: could }, " rain. See ", { link: Can and Could, to: en.modals.can-could }, "."]
+              uk: [{ term: could }, " теж виражає можливість: It ", { term: could }, " rain. Див. ", { link: "Can і could", to: en.modals.can-could }, "."]
+              es: [{ term: could }, " también expresa posibilidad: It ", { term: could }, " rain. Ver ", { link: "Can y could", to: en.modals.can-could }, "."]
 
-  - title: { en: Signal words }
+  - title: { en: Signal words, uk: "Слова-маркери", es: "Palabras clave" }
     role: signals
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Word } }
-          - { key: ex, label: { en: Example } }
+          - { key: word, label: { en: Word, uk: "Слово", es: "Palabra" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, word: maybe, ex: [{ signal: Maybe }, " she is busy."] }
-          - { level: A2, word: perhaps, ex: [{ signal: Perhaps }, " we can meet later."] }
-          - { level: A2, word: probably, ex: ["She'll ", { signal: probably }, " come."] }
-          - { level: A2, word: I'm not sure, ex: [{ signal: I'm not sure. }, " It might rain."] }
+          - { level: A2, word: maybe, ex: [{ signal: Maybe }, " she is busy."], tr: { uk: "Можливо, вона зайнята.", es: "Quizá esté ocupada." } }
+          - { level: A2, word: perhaps, ex: [{ signal: Perhaps }, " we can meet later."], tr: { uk: "Можливо, ми зможемо зустрітися пізніше.", es: "Quizá podamos vernos más tarde." } }
+          - { level: A2, word: probably, ex: ["She'll ", { signal: probably }, " come."], tr: { uk: "Вона, ймовірно, прийде.", es: "Probablemente vendrá." } }
+          - { level: A2, word: I'm not sure, ex: [{ signal: I'm not sure. }, " It might rain."], tr: { uk: "Я не впевнений. Може піти дощ.", es: "No estoy seguro. Podría llover." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: maybe }, " is one word and starts a clause:"]
+              uk: [{ term: maybe }, " — одне слово, воно починає речення:"]
+              es: [{ term: maybe }, " es una sola palabra y empieza una oración:"]
             ex: [{ target: Maybe }, " he is late."]
+            tr: { uk: "Можливо, він запізнюється.", es: "Quizá llegue tarde." }
           - type: rule
             level: A2
             text:
               en: [{ term: may be }, " is two words and follows the subject:"]
+              uk: [{ term: may be }, " — два слова, воно стоїть після підмета:"]
+              es: [{ term: may be }, " son dos palabras y va después del sujeto:"]
             ex: ["He ", { target: may be }, " late."]
+            tr: { uk: "Він, можливо, запізнюється.", es: "Puede que llegue tarde." }
 
-  - title: { en: Degrees of certainty }
+  - title: { en: Degrees of certainty, uk: "Ступені впевненості", es: "Grados de certeza" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: degree, label: { en: Certainty } }
-          - { key: ex, label: { en: Example } }
+          - { key: degree, label: { en: Certainty, uk: "Упевненість", es: "Certeza" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, degree: { en: sure }, ex: { examples: [["She ", { target: will }, " come."], ["She ", { target: won't }, " come."]] } }
-          - { level: B1, degree: { en: very likely }, ex: ["She'll ", { target: probably }, " come."] }
-          - { level: B1, degree: { en: possible }, ex: { examples: [["She ", { target: may }, " come."], ["She ", { target: might }, " come."]] } }
+          - { level: B1, degree: { en: sure, uk: "упевнено", es: "seguro" }, ex: { examples: [["She ", { target: will }, " come."], ["She ", { target: won't }, " come."]] }, tr: { uk: { examples: ["Вона прийде.", "Вона не прийде."] }, es: { examples: ["Ella vendrá.", "Ella no vendrá."] } } }
+          - { level: B1, degree: { en: very likely, uk: "дуже ймовірно", es: "muy probable" }, ex: ["She'll ", { target: probably }, " come."], tr: { uk: "Вона, ймовірно, прийде.", es: "Probablemente vendrá." } }
+          - { level: B1, degree: { en: possible, uk: "можливо", es: "posible" }, ex: { examples: [["She ", { target: may }, " come."], ["She ", { target: might }, " come."]] }, tr: { uk: { examples: ["Вона, можливо, прийде.", "Вона, може, й прийде."] }, es: { examples: ["Puede que ella venga.", "Ella podría venir."] } } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["Use ", { term: will }, " when you are sure and ", { alternatives: [{ term: may }, { term: might }] }, " when you are not."]
+              uk: ["Вживай ", { term: will }, ", коли ти впевнений, і ", { alternatives: [{ term: may }, { term: might }] }, ", коли ні."]
+              es: ["Usa ", { term: will }, " cuando estás seguro y ", { alternatives: [{ term: may }, { term: might }] }, " cuando no lo estás."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: It mights rain., right: ["It ", { target: might }, " rain."], rule: { en: might has no -s } }
-          - { level: A2, wrong: It might to rain., right: ["It might ", { target: rain }, "."], rule: { en: [{ pattern: [might, { slot: base verb }] }, ; no to] } }
-          - { level: A2, wrong: I don't might go., right: ["I ", { target: might not }, " go."], rule: { en: negative = might not } }
-          - { level: A2, wrong: He maybe at home., right: { alternatives: [["He ", { target: may be }, " at home."], [{ target: Maybe }, " he is at home."]] }, rule: { en: may be after the subject; maybe at the start } }
-          - { level: A2, wrong: She might will come., right: ["She ", { target: might }, " come."], rule: { en: a modal verb takes no second modal } }
+          - { level: A2, wrong: It mights rain., right: ["It ", { target: might }, " rain."], rule: { en: might has no -s, uk: "might не має -s", es: "might no lleva -s" } }
+          - { level: A2, wrong: It might to rain., right: ["It might ", { target: rain }, "."], rule: { en: [{ pattern: [might, { slot: base verb }] }, ; no to], uk: [{ pattern: [might, { slot: base verb }] }, "; без to"], es: [{ pattern: [might, { slot: base verb }] }, "; sin to"] } }
+          - { level: A2, wrong: I don't might go., right: ["I ", { target: might not }, " go."], rule: { en: negative = might not, uk: "заперечення — might not", es: "la negación es might not" } }
+          - { level: A2, wrong: He maybe at home., right: { alternatives: [["He ", { target: may be }, " at home."], [{ target: Maybe }, " he is at home."]] }, rule: { en: may be after the subject; maybe at the start, uk: "may be стоїть після підмета, maybe — на початку речення", es: "may be va después del sujeto; maybe, al principio" } }
+          - { level: A2, wrong: She might will come., right: ["She ", { target: might }, " come."], rule: { en: a modal verb takes no second modal, uk: "після модального дієслова не стоїть друге модальне", es: "un verbo modal no admite otro modal después" } }

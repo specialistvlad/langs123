@@ -19,7 +19,8 @@ explained in N languages.
 - Every topic exists in every explanation language: one topic file holds its explanations in each
   (§4), its examples translated into each (§6) and the typical errors of each one's speakers.
 - Topics in different languages pair through shared `concepts` keys (§9).
-- The library holds one track: English (`en`) explained in English.
+- The library holds English (`en`) in three tracks: explained in English, Ukrainian (`uk`) and
+  Spanish (`es`).
 - Explanations use short sentences, present tense and plain words.
 - **English** topics use British spelling and British IPA. US differences appear inline, prefixed
   `US:`, for example *at the weekend (US: on the weekend)*.
@@ -45,7 +46,7 @@ languages/
 |---|---|---|
 | `site.yaml` | `schema/site.schema.json` | product name, URLs, the credit and licences every page shows, explanation languages with their names and `enabled` switch |
 | `levels.yaml` | `schema/levels.schema.json` | the level scale: code, name, description, hue per level |
-| `interface.yaml` | `schema/interface.schema.json` | interface wording by key, per explanation language; block headings and column titles the generator writes |
+| `interface.yaml` | `schema/interface.schema.json` | interface wording by key, per explanation language; block headings and column titles the generator writes; the name of each slot code (§12) |
 | `curriculum.yaml` | `schema/curriculum.schema.json` | languages (with an `enabled` switch) → sections → topics (slug, optional title, levels of a planned topic); the study path: levels → topic IDs |
 | `concepts.yaml` | `schema/concepts.schema.json` | concept key → title, description |
 | `{lang}/{NN-section}/{topic}/topic.yaml` | `schema/topic.schema.json` | one topic, all explanation languages |
@@ -137,8 +138,8 @@ named after its mark.
 | Type | Form | Use |
 |---|---|---|
 | text | `"I live in Madrid."`, `["I ", { target: live }, " in Madrid."]`, `{ target: lives }` | text in the language being learned: examples, forms, words; the same in every explanation language |
-| localized | `{ en: … }` | explanation text, one text per explanation language |
-| example | `{ ex: …, tr: { en: … } }` | an example in a cell, with its translations (§6) |
+| localized | `{ en: …, uk: …, es: … }` | explanation text, one text per explanation language |
+| example | `{ ex: …, tr: { uk: …, es: … } }` | an example in a cell, with its translations (§6) |
 
 - Marks name each piece the reader should notice: the form the topic teaches is a `target`, a helper
   verb an `aux`, an ending an `ending`, a word an explanation discusses a `term`. The renderer
@@ -236,7 +237,8 @@ leaves out the key of a cell with nothing in it.
 - When the explanation language differs from the language being learned, every example carries
   a translation into it: `tr` on a row adds a column named after the explanation language; `tr` on
   an item, a paragraph or an example cell renders as *— translation* after the example.
-- When the two languages are the same, examples stand alone.
+- When the two languages are the same, examples stand alone: a `tr` carries every explanation
+  language but the language being learned.
 - A paradigm stands alone in every track: it shows the pattern, and the examples below it carry the
   translations.
 - Typical errors match the readers. When the explanation language differs from the language
@@ -504,6 +506,9 @@ The slot list: `V`, `V-s`, `V-ing`, `V-ed`, `-ing`, `subject`, `verb`, `base ver
 `superlative`, `wh-word`, `person`, `clause`, `past participle`, `infinitive`, `present`, `past`,
 `past simple`, `number`, `unit`, `hyphen`, `result`, `agent`, `helper`, `consonant`, `vowel`,
 `the time`, `day`, `date`, `month`, `year`.
+
+The renderer writes each slot code in the reader's language, from `slots` in `interface.yaml`; `V`,
+`V-s`, `V-ing`, `V-ed` and `-ing` read as written.
 
 Marks nest: `{ target: { ipa: θɜːˈtiːn } }` marks a transcription as the form taught. The text of
 `target`, `aux`, `subj`, `verb`, `ending`, `stress`, `term`, `letter`, `signal`, `sound`, `optional`,

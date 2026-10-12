@@ -5,34 +5,40 @@ kind: grammar
 tags: [phrasal-verbs, verbs, particles]
 concepts: [phrasal-verbs]
 related: [en.prepositions.place-movement, en.prepositions.time-in-on-at, en.pronouns.personal-pronouns]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: "Phrasal Verbs: Core" }
+title: { en: "Phrasal Verbs: Core", uk: "Фразові дієслова: основні", es: "Phrasal verbs: los básicos" }
 summary:
-  lead: { en: [{ pattern: [Verb, particle] }, " with a new meaning: get up, turn it off, look for, run out of."] }
-  rule: { en: "A pronoun goes between the verb and the particle of a separable verb:" }
+  lead:
+    en: [{ pattern: [Verb, particle] }, " with a new meaning: get up, turn it off, look for, run out of."]
+    uk: [{ pattern: ["Дієслово", "частка"] }, " з новим значенням: get up, turn it off, look for, run out of."]
+    es: [{ pattern: ["Verbo", "partícula"] }, " con un nuevo significado: get up, turn it off, look for, run out of."]
+  rule:
+    en: "A pronoun goes between the verb and the particle of a separable verb:"
+    uk: "У роздільного дієслова займенник стоїть між дієсловом і часткою:"
+    es: "En un verbo separable, el pronombre va entre el verbo y la partícula:"
   ex: [{ target: Turn it off. }, " ", { target: Pick it up. }]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: { en: Phrasal verb }, rule: { en: [{ pattern: [{ slot: verb }, a particle] }, "; the particle gives the verb a new meaning"] }, ex: ["I'm ", { target: looking for }, " my keys."] }
-        - { level: A2, point: { en: Separable }, rule: { en: a noun goes before or after the particle }, ex: { alternatives: [["Turn ", { target: "off" }, " the light."], ["Turn the light ", { target: "off" }, "."]] } }
-        - { level: A2, point: { en: Inseparable }, rule: { en: the object always follows the particle }, ex: ["Look ", { target: after }, " the baby."] }
-        - { level: A2, point: { en: Daily routine }, rule: { en: "wake up, get up, put on, take off, turn on" }, ex: ["She ", { target: puts on }, " her coat."] }
-        - { level: A2, point: { en: Going and coming }, rule: { en: "go out, come in, come back, pick up" }, ex: ["I ", { target: pick up }, " the children at three."] }
-        - { level: A2, point: { en: Looking and finding out }, rule: { en: "look for, look after, look up, find out, fill in" }, ex: [{ target: Look up }, " the word."] }
-        - { level: B1, point: { en: Continuing and stopping }, rule: { en: "carry on, run out of, get on with, look forward to" }, ex: ["We ", { target: ran out of }, " milk."] }
-        - { level: A2, point: { en: Trap }, rule: { en: "a separable verb takes a pronoun in the middle" }, ex: { target: Turn it off. } }
-        - { level: B1, point: { en: Trap }, rule: { en: [{ term: look forward to }, " takes a noun or the -ing form"] }, ex: ["I look forward to ", { target: seeing }, " you."] }
+        - { level: A2, point: { en: Phrasal verb, uk: "Фразове дієслово", es: "Phrasal verb" }, rule: { en: [{ pattern: [{ slot: verb }, a particle] }, "; the particle gives the verb a new meaning"], uk: [{ pattern: [{ slot: verb }, "частка"] }, "; частка надає дієслову нового значення"], es: [{ pattern: [{ slot: verb }, "partícula"] }, "; la partícula da al verbo un nuevo significado"] }, ex: ["I'm ", { target: looking for }, " my keys."], tr: { uk: "Я шукаю свої ключі.", es: "Estoy buscando mis llaves." } }
+        - { level: A2, point: { en: Separable, uk: "Роздільні", es: "Separables" }, rule: { en: a noun goes before or after the particle, uk: "іменник стоїть перед часткою або після неї", es: "el sustantivo va antes o después de la partícula" }, ex: { alternatives: [["Turn ", { target: "off" }, " the light."], ["Turn the light ", { target: "off" }, "."]] }, tr: { uk: "Вимкни світло.", es: "Apaga la luz." } }
+        - { level: A2, point: { en: Inseparable, uk: "Нероздільні", es: "Inseparables" }, rule: { en: the object always follows the particle, uk: "додаток завжди стоїть після частки", es: "el objeto siempre va después de la partícula" }, ex: ["Look ", { target: after }, " the baby."], tr: { uk: "Доглядай за дитиною.", es: "Cuida al bebé." } }
+        - { level: A2, point: { en: Daily routine, uk: "Щоденний розпорядок", es: "Rutina diaria" }, rule: { en: "wake up, get up, put on, take off, turn on", uk: "wake up, get up, put on, take off, turn on", es: "wake up, get up, put on, take off, turn on" }, ex: ["She ", { target: puts on }, " her coat."], tr: { uk: "Вона одягає пальто.", es: "Ella se pone el abrigo." } }
+        - { level: A2, point: { en: Going and coming, uk: "Іти й повертатися", es: "Ir y venir" }, rule: { en: "go out, come in, come back, pick up", uk: "go out, come in, come back, pick up", es: "go out, come in, come back, pick up" }, ex: ["I ", { target: pick up }, " the children at three."], tr: { uk: "Я забираю дітей о третій.", es: "Recojo a los niños a las tres." } }
+        - { level: A2, point: { en: Looking and finding out, uk: "Шукати й дізнаватися", es: "Buscar y averiguar" }, rule: { en: "look for, look after, look up, find out, fill in", uk: "look for, look after, look up, find out, fill in", es: "look for, look after, look up, find out, fill in" }, ex: [{ target: Look up }, " the word."], tr: { uk: "Знайди слово в словнику.", es: "Busca la palabra." } }
+        - { level: B1, point: { en: Continuing and stopping, uk: "Продовжувати й припиняти", es: "Continuar y parar" }, rule: { en: "carry on, run out of, get on with, look forward to", uk: "carry on, run out of, get on with, look forward to", es: "carry on, run out of, get on with, look forward to" }, ex: ["We ", { target: ran out of }, " milk."], tr: { uk: "У нас закінчилося молоко.", es: "Se nos acabó la leche." } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "a separable verb takes a pronoun in the middle", uk: "у роздільного дієслова займенник стоїть посередині", es: "el verbo separable lleva el pronombre en medio" }, ex: { target: Turn it off. }, tr: { uk: "Вимкни його.", es: "Apágalo." } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: look forward to }, " takes a noun or the -ing form"], uk: [{ term: look forward to }, " вживається з іменником або формою на -ing"], es: [{ term: look forward to }, " lleva un sustantivo o la forma en -ing"] }, ex: ["I look forward to ", { target: seeing }, " you."], tr: { uk: "З нетерпінням чекаю зустрічі з тобою.", es: "Tengo muchas ganas de verte." } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -41,148 +47,165 @@ sections:
             level: A2
             text:
               en: ["A phrasal verb is a ", { pattern: [{ slot: verb }, a particle] }, ": ", { pattern: [get, up] }, ", ", { pattern: [turn, "off"] }, ", ", { pattern: [look, for] }, "."]
+              uk: ["Фразове дієслово — це ", { pattern: [{ slot: verb }, "частка"] }, ": ", { pattern: [get, up] }, ", ", { pattern: [turn, "off"] }, ", ", { pattern: [look, for] }, "."]
+              es: ["Un phrasal verb es ", { pattern: [{ slot: verb }, "partícula"] }, ": ", { pattern: [get, up] }, ", ", { pattern: [turn, "off"] }, ", ", { pattern: [look, for] }, "."]
           - type: rule
             level: A2
             text:
               en: "The particle (up, off, on, out, back, down, in, for, after) gives the verb a new meaning."
+              uk: "Частка (up, off, on, out, back, down, in, for, after) надає дієслову нового значення."
+              es: "La partícula (up, off, on, out, back, down, in, for, after) da al verbo un nuevo significado."
           - type: rule
             level: A2
             text:
               en: Phrasal verbs are very common in everyday speech.
+              uk: "Фразові дієслова дуже поширені в повсякденному мовленні."
+              es: "Los phrasal verbs son muy comunes en el habla cotidiana."
 
-  - title: { en: "Form: with an object" }
+  - title: { en: "Form: with an object", uk: "Форма: з додатком", es: "Forma: con objeto" }
     role: form
     content:
       - type: comparison
         columns:
-          - { key: kind, label: { en: Type } }
-          - { key: noun, label: { en: With a noun } }
-          - { key: pronoun, label: { en: With a pronoun } }
+          - { key: kind, label: { en: Type, uk: "Тип", es: "Tipo" } }
+          - { key: noun, label: { en: With a noun, uk: "З іменником", es: "Con un sustantivo" } }
+          - { key: pronoun, label: { en: With a pronoun, uk: "Із займенником", es: "Con un pronombre" } }
         rows:
-          - { level: A2, kind: { en: Separable }, noun: { alternatives: [["Turn ", { target: "off" }, " the light."], ["Turn the light ", { target: "off" }, "."]] }, pronoun: ["Turn ", { target: it }, " off."] }
-          - { level: A2, kind: { en: Inseparable }, noun: ["Look ", { target: after }, " the baby."], pronoun: ["Look after ", { target: him }, "."] }
-          - { level: A2, kind: { en: No object }, noun: ["Sit ", { target: down }, ", please."] }
+          - { level: A2, kind: { en: Separable, uk: "Роздільні", es: "Separables" }, noun: { ex: { alternatives: [["Turn ", { target: "off" }, " the light."], ["Turn the light ", { target: "off" }, "."]] }, tr: { uk: "Вимкни світло.", es: "Apaga la luz." } }, pronoun: { ex: ["Turn ", { target: it }, " off."], tr: { uk: "Вимкни його.", es: "Apágalo." } } }
+          - { level: A2, kind: { en: Inseparable, uk: "Нероздільні", es: "Inseparables" }, noun: { ex: ["Look ", { target: after }, " the baby."], tr: { uk: "Доглядай за дитиною.", es: "Cuida al bebé." } }, pronoun: { ex: ["Look after ", { target: him }, "."], tr: { uk: "Доглядай за ним.", es: "Cuídalo." } } }
+          - { level: A2, kind: { en: No object, uk: "Без додатка", es: "Sin objeto" }, noun: { ex: ["Sit ", { target: down }, ", please."], tr: { uk: "Сідай, будь ласка.", es: "Siéntate, por favor." } } }
       - type: usage
         columns:
-          - { key: kind, label: { en: Type } }
-          - { key: verbs, label: { en: Verbs } }
+          - { key: kind, label: { en: Type, uk: "Тип", es: "Tipo" } }
+          - { key: verbs, label: { en: Verbs, uk: "Дієслова", es: "Verbos" } }
         rows:
-          - { level: A2, kind: { en: Separable }, verbs: "wake sb up, put on, take off, turn on, turn off, try on, pick up, drop off, look up, fill in, write down, work out, give up" }
-          - { level: A2, kind: { en: Inseparable }, verbs: "look for, look after, get on with, look forward to, run out of" }
-          - { level: A2, kind: { en: No object }, verbs: "wake up, get up, sit down, stand up, go out, come in, come back, set off, grow up, go on, carry on" }
+          - { level: A2, kind: { en: Separable, uk: "Роздільні", es: "Separables" }, verbs: "wake sb up, put on, take off, turn on, turn off, try on, pick up, drop off, look up, fill in, write down, work out, give up" }
+          - { level: A2, kind: { en: Inseparable, uk: "Нероздільні", es: "Inseparables" }, verbs: "look for, look after, get on with, look forward to, run out of" }
+          - { level: A2, kind: { en: No object, uk: "Без додатка", es: "Sin objeto" }, verbs: "wake up, get up, sit down, stand up, go out, come in, come back, set off, grow up, go on, carry on" }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["With a separable verb, a pronoun goes between the verb and the particle: pick ", { term: it }, " up."]
+              uk: ["У роздільного дієслова займенник стоїть між дієсловом і часткою: pick ", { term: it }, " up."]
+              es: ["Con un verbo separable, el pronombre va entre el verbo y la partícula: pick ", { term: it }, " up."]
           - type: rule
             level: A2
             text:
               en: ["A noun goes before or after the particle: pick up ", { alternatives: [the bag, pick] }, " the bag up."]
+              uk: ["Іменник стоїть перед часткою або після неї: pick up ", { alternatives: [the bag, pick] }, " the bag up."]
+              es: ["El sustantivo va antes o después de la partícula: pick up ", { alternatives: [the bag, pick] }, " the bag up."]
           - type: rule
             level: A2
             text:
               en: ["With an inseparable verb, the object always follows the particle: look after ", { term: them }, "."]
+              uk: ["У нероздільного дієслова додаток завжди стоїть після частки: look after ", { term: them }, "."]
+              es: ["Con un verbo inseparable, el objeto siempre va después de la partícula: look after ", { term: them }, "."]
           - type: rule
             level: A2
             text:
               en: [{ term: find out }, " usually takes its object after the particle: find out the price."]
+              uk: [{ term: find out }, " зазвичай має додаток після частки: find out the price."]
+              es: [{ term: find out }, " suele llevar su objeto después de la partícula: find out the price."]
           - type: rule
             level: B1
             text:
               en: [{ term: look forward to }, " and ", { term: give up }, " are followed by a noun or the -ing form:"]
+              uk: [{ term: look forward to }, " і ", { term: give up }, " вживаються з іменником або формою на -ing:"]
+              es: [{ term: look forward to }, " y ", { term: give up }, " van seguidos de un sustantivo o de la forma en -ing:"]
             ex: { examples: [["I look forward to ", { target: seeing }, " you."], ["He gave up ", { target: smoking }, "."]] }
+            tr: { uk: { examples: ["З нетерпінням чекаю зустрічі з тобою.", "Він кинув палити."] }, es: { examples: ["Tengo muchas ganas de verte.", "Dejó de fumar."] } }
 
-  - title: { en: "Pronunciation: stress" }
+  - title: { en: "Pronunciation: stress", uk: "Вимова: наголос", es: "Pronunciación: acento" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: kind, label: { en: Type } }
-          - { key: stress, label: { en: Stress } }
-          - { key: ex, label: { en: Examples } }
+          - { key: kind, label: { en: Type, uk: "Тип", es: "Tipo" } }
+          - { key: stress, label: { en: Stress, uk: "Наголос", es: "Acento" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A2, kind: { en: Particle with its own meaning }, stress: { en: on the particle }, ex: { examples: [["get up ", { ipa: ˌɡet ˈʌp }], ["turn off ", { ipa: ˌtɜːn ˈɒf }], ["pick up ", { ipa: ˌpɪk ˈʌp }]] } }
-          - { level: A2, kind: { en: { pattern: [Verb, preposition] } }, stress: { en: on the verb }, ex: { examples: [["look for ", { ipa: ˈlʊk fə }], ["look after ", { ipa: ˈlʊk ˌɑːftə }]] } }
+          - { level: A2, kind: { en: Particle with its own meaning, uk: "Частка з власним значенням", es: "Partícula con significado propio" }, stress: { en: on the particle, uk: "на частці", es: "en la partícula" }, ex: { examples: [["get up ", { ipa: ˌɡet ˈʌp }], ["turn off ", { ipa: ˌtɜːn ˈɒf }], ["pick up ", { ipa: ˌpɪk ˈʌp }]] }, tr: { uk: { examples: ["вставати", "вимикати", "забирати"] }, es: { examples: ["levantarse", "apagar", "recoger"] } } }
+          - { level: A2, kind: { en: { pattern: [Verb, preposition] }, uk: { pattern: ["Дієслово", "прийменник"] }, es: { pattern: ["Verbo", "preposición"] } }, stress: { en: on the verb, uk: "на дієслові", es: "en el verbo" }, ex: { examples: [["look for ", { ipa: ˈlʊk fə }], ["look after ", { ipa: ˈlʊk ˌɑːftə }]] }, tr: { uk: { examples: ["шукати", "доглядати"] }, es: { examples: ["buscar", "cuidar de"] } } }
 
-  - title: { en: Daily routine }
+  - title: { en: Daily routine, uk: "Щоденний розпорядок", es: "Rutina diaria" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Phrasal verb } }
-          - { key: meaning, label: { en: Meaning } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Phrasal verb, uk: "Фразове дієслово", es: "Phrasal verb" } }
+          - { key: meaning, label: { en: Meaning, uk: "Значення", es: "Significado" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, verb: wake up, meaning: { en: stop sleeping }, ex: ["I ", { target: wake up }, " at six."] }
-          - { level: A2, verb: get up, meaning: { en: leave your bed }, ex: ["We ", { target: get up }, " at seven."] }
-          - { level: A2, verb: put on, meaning: { en: start wearing clothes }, ex: ["She ", { target: puts on }, " her coat."] }
-          - { level: A2, verb: take off, meaning: { en: remove clothes }, ex: ["He ", { target: takes off }, " his shoes."] }
-          - { level: A2, verb: try on, meaning: { en: wear clothes to check them }, ex: ["Can I ", { target: try on }, " this jacket?"] }
-          - { level: A2, verb: turn on, meaning: { en: start a light or a machine }, ex: [{ target: Turn on }, " the TV."] }
-          - { level: A2, verb: turn off, meaning: { en: stop a light or a machine }, ex: [{ target: Turn }, " the light ", { target: "off" }, "."] }
-          - { level: A2, verb: sit down, meaning: { en: move to a seat }, ex: ["Please ", { target: sit down }, "."] }
-          - { level: A2, verb: stand up, meaning: { en: move to your feet }, ex: ["Everyone ", { target: stands up }, "."] }
+          - { level: A2, verb: wake up, meaning: { en: stop sleeping, uk: "перестати спати", es: "dejar de dormir" }, ex: ["I ", { target: wake up }, " at six."], tr: { uk: "Я прокидаюся о шостій.", es: "Me despierto a las seis." } }
+          - { level: A2, verb: get up, meaning: { en: leave your bed, uk: "вставати з ліжка", es: "salir de la cama" }, ex: ["We ", { target: get up }, " at seven."], tr: { uk: "Ми встаємо о сьомій.", es: "Nos levantamos a las siete." } }
+          - { level: A2, verb: put on, meaning: { en: start wearing clothes, uk: "почати носити одяг", es: "empezar a llevar ropa" }, ex: ["She ", { target: puts on }, " her coat."], tr: { uk: "Вона одягає пальто.", es: "Ella se pone el abrigo." } }
+          - { level: A2, verb: take off, meaning: { en: remove clothes, uk: "знімати одяг", es: "quitarse la ropa" }, ex: ["He ", { target: takes off }, " his shoes."], tr: { uk: "Він знімає взуття.", es: "Él se quita los zapatos." } }
+          - { level: A2, verb: try on, meaning: { en: wear clothes to check them, uk: "приміряти одяг, щоб перевірити його", es: "ponerse ropa para probarla" }, ex: ["Can I ", { target: try on }, " this jacket?"], tr: { uk: "Можна приміряти цю куртку?", es: "¿Puedo probarme esta chaqueta?" } }
+          - { level: A2, verb: turn on, meaning: { en: start a light or a machine, uk: "увімкнути світло чи пристрій", es: "encender una luz o una máquina" }, ex: [{ target: Turn on }, " the TV."], tr: { uk: "Увімкни телевізор.", es: "Enciende el televisor." } }
+          - { level: A2, verb: turn off, meaning: { en: stop a light or a machine, uk: "вимкнути світло чи пристрій", es: "apagar una luz o una máquina" }, ex: [{ target: Turn }, " the light ", { target: "off" }, "."], tr: { uk: "Вимкни світло.", es: "Apaga la luz." } }
+          - { level: A2, verb: sit down, meaning: { en: move to a seat, uk: "сісти на місце", es: "ir a un asiento" }, ex: ["Please ", { target: sit down }, "."], tr: { uk: "Сідай, будь ласка.", es: "Siéntate, por favor." } }
+          - { level: A2, verb: stand up, meaning: { en: move to your feet, uk: "підвестися", es: "ponerse de pie" }, ex: ["Everyone ", { target: stands up }, "."], tr: { uk: "Усі встають.", es: "Todos se levantan." } }
 
-  - title: { en: Going and coming }
+  - title: { en: Going and coming, uk: "Іти й повертатися", es: "Ir y venir" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Phrasal verb } }
-          - { key: meaning, label: { en: Meaning } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Phrasal verb, uk: "Фразове дієслово", es: "Phrasal verb" } }
+          - { key: meaning, label: { en: Meaning, uk: "Значення", es: "Significado" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, verb: go out, meaning: { en: leave home to do something }, ex: ["We ", { target: go out }, " on ", { weekday: Fridays, value: 5 }, "."] }
-          - { level: A2, verb: come in, meaning: { en: enter }, ex: [{ target: Come in }, ", please."] }
-          - { level: A2, verb: come back, meaning: { en: return }, ex: ["I ", { target: come back }, " at six."] }
-          - { level: A2, verb: pick up, meaning: { en: collect a person or a thing }, ex: ["I ", { target: pick up }, " the children at three."] }
-          - { level: B1, verb: set off, meaning: { en: start a journey }, ex: ["We ", { target: set off }, " at eight."] }
-          - { level: B1, verb: drop off, meaning: { en: leave a person or a thing somewhere }, ex: ["I ", { target: drop }, " the kids ", { target: "off" }, " at school."] }
-          - { level: B1, verb: grow up, meaning: { en: become an adult }, ex: ["She ", { target: grew up }, " in Leeds."] }
+          - { level: A2, verb: go out, meaning: { en: leave home to do something, uk: "піти з дому, щоб чимось зайнятися", es: "salir de casa para hacer algo" }, ex: ["We ", { target: go out }, " on ", { weekday: Fridays, value: 5 }, "."], tr: { uk: "Щоп’ятниці ми кудись ходимо.", es: "Salimos los viernes." } }
+          - { level: A2, verb: come in, meaning: { en: enter, uk: "увійти", es: "entrar" }, ex: [{ target: Come in }, ", please."], tr: { uk: "Заходь, будь ласка.", es: "Pasa, por favor." } }
+          - { level: A2, verb: come back, meaning: { en: return, uk: "повернутися", es: "volver" }, ex: ["I ", { target: come back }, " at six."], tr: { uk: "Я повертаюся о шостій.", es: "Vuelvo a las seis." } }
+          - { level: A2, verb: pick up, meaning: { en: collect a person or a thing, uk: "забрати людину чи річ", es: "recoger a una persona o una cosa" }, ex: ["I ", { target: pick up }, " the children at three."], tr: { uk: "Я забираю дітей о третій.", es: "Recojo a los niños a las tres." } }
+          - { level: B1, verb: set off, meaning: { en: start a journey, uk: "вирушити в дорогу", es: "iniciar un viaje" }, ex: ["We ", { target: set off }, " at eight."], tr: { uk: "Ми вирушаємо о восьмій.", es: "Salimos a las ocho." } }
+          - { level: B1, verb: drop off, meaning: { en: leave a person or a thing somewhere, uk: "залишити людину чи річ десь", es: "dejar a una persona o una cosa en algún lugar" }, ex: ["I ", { target: drop }, " the kids ", { target: "off" }, " at school."], tr: { uk: "Я відвожу дітей до школи.", es: "Dejo a los niños en la escuela." } }
+          - { level: B1, verb: grow up, meaning: { en: become an adult, uk: "стати дорослим", es: "hacerse adulto" }, ex: ["She ", { target: grew up }, " in Leeds."], tr: { uk: "Вона виросла в Лідсі.", es: "Ella creció en Leeds." } }
 
-  - title: { en: Looking and finding out }
+  - title: { en: Looking and finding out, uk: "Шукати й дізнаватися", es: "Buscar y averiguar" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Phrasal verb } }
-          - { key: meaning, label: { en: Meaning } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Phrasal verb, uk: "Фразове дієслово", es: "Phrasal verb" } }
+          - { key: meaning, label: { en: Meaning, uk: "Значення", es: "Significado" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, verb: look for, meaning: { en: try to find }, ex: ["I'm ", { target: looking for }, " my keys."] }
-          - { level: A2, verb: look after, meaning: { en: take care of }, ex: ["She ", { target: looks after }, " her gran."] }
-          - { level: A2, verb: look up, meaning: { en: search in a dictionary or online }, ex: [{ target: Look up }, " the word."] }
-          - { level: A2, verb: find out, meaning: { en: learn a fact }, ex: ["I want to ", { target: find out }, " the price."] }
-          - { level: A2, verb: fill in, meaning: { en: write information on a form }, ex: [{ target: Fill in }, " this form. ", { variant: { target: fill out }, variety: en-US }] }
-          - { level: A2, verb: write down, meaning: { en: put on paper }, ex: [{ target: Write down }, " my number."] }
-          - { level: B1, verb: work out, meaning: { en: solve or calculate }, ex: ["I can't ", { target: work out }, " the answer."] }
+          - { level: A2, verb: look for, meaning: { en: try to find, uk: "намагатися знайти", es: "intentar encontrar" }, ex: ["I'm ", { target: looking for }, " my keys."], tr: { uk: "Я шукаю свої ключі.", es: "Estoy buscando mis llaves." } }
+          - { level: A2, verb: look after, meaning: { en: take care of, uk: "піклуватися про", es: "cuidar de" }, ex: ["She ", { target: looks after }, " her gran."], tr: { uk: "Вона доглядає за бабусею.", es: "Ella cuida de su abuela." } }
+          - { level: A2, verb: look up, meaning: { en: search in a dictionary or online, uk: "шукати в словнику чи в інтернеті", es: "buscar en un diccionario o en línea" }, ex: [{ target: Look up }, " the word."], tr: { uk: "Знайди слово в словнику.", es: "Busca la palabra." } }
+          - { level: A2, verb: find out, meaning: { en: learn a fact, uk: "дізнатися факт", es: "enterarse de un dato" }, ex: ["I want to ", { target: find out }, " the price."], tr: { uk: "Я хочу дізнатися ціну.", es: "Quiero averiguar el precio." } }
+          - { level: A2, verb: fill in, meaning: { en: write information on a form, uk: "вписати дані у форму", es: "escribir datos en un formulario" }, ex: [{ target: Fill in }, " this form. ", { variant: { target: fill out }, variety: en-US }], tr: { uk: "Заповни цю форму.", es: "Completa este formulario." } }
+          - { level: A2, verb: write down, meaning: { en: put on paper, uk: "записати на папері", es: "poner por escrito" }, ex: [{ target: Write down }, " my number."], tr: { uk: "Запиши мій номер.", es: "Anota mi número." } }
+          - { level: B1, verb: work out, meaning: { en: solve or calculate, uk: "розв’язати або обчислити", es: "resolver o calcular" }, ex: ["I can't ", { target: work out }, " the answer."], tr: { uk: "Я не можу вирахувати відповідь.", es: "No puedo calcular la respuesta." } }
 
-  - title: { en: Continuing and stopping }
+  - title: { en: Continuing and stopping, uk: "Продовжувати й припиняти", es: "Continuar y parar" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Phrasal verb } }
-          - { key: meaning, label: { en: Meaning } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Phrasal verb, uk: "Фразове дієслово", es: "Phrasal verb" } }
+          - { key: meaning, label: { en: Meaning, uk: "Значення", es: "Significado" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, verb: go on, meaning: { en: continue }, ex: ["Please ", { target: go on }, "."] }
-          - { level: A2, verb: give up, meaning: { en: stop trying or stop a habit }, ex: { examples: [["I ", { target: give up }, "!"], ["He ", { target: gave up }, " smoking."]] } }
-          - { level: B1, verb: carry on, meaning: { en: continue }, ex: [{ target: Carry on }, " working."] }
-          - { level: B1, verb: run out of, meaning: { en: have no more }, ex: ["We ", { target: ran out of }, " milk."] }
-          - { level: B1, verb: look forward to, meaning: { en: wait for with pleasure }, ex: ["I ", { target: look forward to }, " the weekend."] }
-          - { level: B1, verb: get on with, meaning: { en: have a good relationship with }, ex: ["I ", { target: get on with }, " my sister."] }
+          - { level: A2, verb: go on, meaning: { en: continue, uk: "продовжувати", es: "continuar" }, ex: ["Please ", { target: go on }, "."], tr: { uk: "Продовжуй, будь ласка.", es: "Continúa, por favor." } }
+          - { level: A2, verb: give up, meaning: { en: stop trying or stop a habit, uk: "перестати намагатися або кинути звичку", es: "dejar de intentarlo o dejar un hábito" }, ex: { examples: [["I ", { target: give up }, "!"], ["He ", { target: gave up }, " smoking."]] }, tr: { uk: { examples: ["Здаюся!", "Він кинув палити."] }, es: { examples: ["¡Me rindo!", "Dejó de fumar."] } } }
+          - { level: B1, verb: carry on, meaning: { en: continue, uk: "продовжувати", es: "continuar" }, ex: [{ target: Carry on }, " working."], tr: { uk: "Продовжуй працювати.", es: "Sigue trabajando." } }
+          - { level: B1, verb: run out of, meaning: { en: have no more, uk: "більше не мати", es: "quedarse sin" }, ex: ["We ", { target: ran out of }, " milk."], tr: { uk: "У нас закінчилося молоко.", es: "Se nos acabó la leche." } }
+          - { level: B1, verb: look forward to, meaning: { en: wait for with pleasure, uk: "з радістю чекати", es: "esperar con ilusión" }, ex: ["I ", { target: look forward to }, " the weekend."], tr: { uk: "Я з нетерпінням чекаю вихідних.", es: "Espero con ilusión el fin de semana." } }
+          - { level: B1, verb: get on with, meaning: { en: have a good relationship with, uk: "добре ладнати з", es: "llevarse bien con" }, ex: ["I ", { target: get on with }, " my sister."], tr: { uk: "Я добре ладнаю з сестрою.", es: "Me llevo bien con mi hermana." } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: Turn off it., right: { target: Turn it off. }, rule: { en: [{ pattern: [separable verb, pronoun] }, ": the pronoun goes in the middle"] } }
-          - { level: A2, wrong: Can you wake up me at seven?, right: ["Can you ", { target: wake me up }, " at seven?"], rule: { en: the pronoun goes between wake and up } }
-          - { level: A2, wrong: She looks them after., right: ["She ", { target: looks after them }, "."], rule: { en: "inseparable verb: the object follows the particle" } }
-          - { level: B1, wrong: We ran out milk., right: ["We ran out ", { target: of }, " milk."], rule: { en: run out of needs of } }
-          - { level: B1, wrong: I look forward to see you., right: ["I look forward to ", { target: seeing }, " you."], rule: { en: "to is a preposition: noun or -ing" } }
-          - { level: B1, wrong: He gave up to smoke., right: ["He gave up ", { target: smoking }, "."], rule: { en: { pattern: [give up, { slot: "-ing" }] } } }
+          - { level: A2, wrong: Turn off it., right: { target: Turn it off. }, rule: { en: [{ pattern: [separable verb, pronoun] }, ": the pronoun goes in the middle"], uk: [{ pattern: ["роздільне дієслово", "займенник"] }, ": займенник стоїть посередині"], es: [{ pattern: ["verbo separable", "pronombre"] }, ": el pronombre va en medio"] } }
+          - { level: A2, wrong: Can you wake up me at seven?, right: ["Can you ", { target: wake me up }, " at seven?"], rule: { en: the pronoun goes between wake and up, uk: "займенник стоїть між wake і up", es: "el pronombre va entre wake y up" } }
+          - { level: A2, wrong: She looks them after., right: ["She ", { target: looks after them }, "."], rule: { en: "inseparable verb: the object follows the particle", uk: "нероздільне дієслово: додаток стоїть після частки", es: "verbo inseparable: el objeto va después de la partícula" } }
+          - { level: B1, wrong: We ran out milk., right: ["We ran out ", { target: of }, " milk."], rule: { en: run out of needs of, uk: "run out of потребує of", es: "run out of necesita of" } }
+          - { level: B1, wrong: I look forward to see you., right: ["I look forward to ", { target: seeing }, " you."], rule: { en: "to is a preposition: noun or -ing", uk: "to тут прийменник: іменник або форма на -ing", es: "to es una preposición: sustantivo o forma en -ing" } }
+          - { level: B1, wrong: He gave up to smoke., right: ["He gave up ", { target: smoking }, "."], rule: { en: { pattern: [give up, { slot: "-ing" }] }, uk: { pattern: [give up, { slot: "-ing" }] }, es: { pattern: [give up, { slot: "-ing" }] } } }

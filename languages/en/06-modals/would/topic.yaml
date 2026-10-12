@@ -5,69 +5,83 @@ kind: grammar
 tags: [verbs, modals, politeness, conditionals]
 concepts: [conditional-mood, past-habits]
 related: [en.sentence-building.conditionals-0-1-2, en.tenses.used-to, en.modals.can-could, en.modals.should, en.tenses.perfect-tenses]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Would }
+title: { en: Would, uk: Would, es: Would }
 summary:
-  lead: { en: "Would like for offers and wants; would for polite requests, imagined situations and past habits." }
-  rule: { en: "Would has one form for every subject and takes the base verb:" }
+  lead:
+    en: "Would like for offers and wants; would for polite requests, imagined situations and past habits."
+    uk: "Would like — для пропозицій і бажань; would — для ввічливих прохань, уявних ситуацій і минулих звичок."
+    es: "Would like para ofrecimientos y deseos; would para peticiones corteses, situaciones imaginarias y hábitos del pasado."
+  rule:
+    en: "Would has one form for every subject and takes the base verb:"
+    uk: "Would має одну форму для всіх підметів і вимагає початкової форми дієслова:"
+    es: "Would tiene una sola forma para todos los sujetos y va seguido de la forma base:"
   ex: { examples: [[{ target: Would }, " you like a coffee?"], ["I ", { target: would }, " like tea."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Want }, rule: { en: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; short form ", { term: "'d" }] }, ex: { examples: [[I', { target: d like }, " a coffee, please."], [I', { target: d like to }, " book a table."]] } }
-        - { level: A1, point: { en: Question and offer }, rule: { en: [{ pattern: [Would, { slot: subject }, { slot: V }] }, "; no ", { term: do }] }, ex: [{ target: Would }, " you ", { target: like }, " some cake?"] }
-        - { level: B1, point: { en: Form }, rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, "; negative ", { term: wouldn't }] }, ex: { examples: [["She ", { target: would }, " help."], ["I ", { target: wouldn't }, " go."]] } }
-        - { level: B1, point: { en: Polite request }, rule: { en: [{ term: [Would you, { gap: true }, "?"] }, " asks politely for help"] }, ex: [{ target: Would }, " you pass the salt, please?"] }
-        - { level: B1, point: { en: Imagined situation }, rule: { en: ["with ", { term: if }, ": ", { pattern: [if, { slot: past simple }] }, ", ", { pattern: [would, { slot: base verb }] }] }, ex: { examples: [["I ", { target: would }, " buy a boat."], ["If I had more time, I ", { target: would }, " learn Italian."]] } }
-        - { level: B1, point: { en: Past habit }, rule: { en: "repeated actions; the sentence needs a past time frame" }, ex: ["When I was a child, we ", { target: would }, " play outside every day."] }
-        - { level: B1, point: { en: Trap }, rule: { en: [{ term: used to }, " for a past state: live, be, have, know"] }, ex: ["When I was young, I ", { target: used to }, " live in Paris."] }
+        - { level: A1, point: { en: Want, uk: "Бажання", es: "Deseo" }, rule: { en: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; short form ", { term: "'d" }], uk: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; скорочена форма ", { term: "'d" }], es: [{ pattern: [would like, { alternatives: [{ slot: noun }, ["to ", { slot: base verb }]] }] }, "; forma contraída ", { term: "'d" }] }, ex: { examples: [[I', { target: d like }, " a coffee, please."], [I', { target: d like to }, " book a table."]] }, tr: { uk: { examples: ["Я хотів би каву, будь ласка.", "Я хотів би забронювати столик."] }, es: { examples: ["Me gustaría un café, por favor.", "Me gustaría reservar una mesa."] } } }
+        - { level: A1, point: { en: Question and offer, uk: "Питання й пропозиція", es: "Pregunta y ofrecimiento" }, rule: { en: [{ pattern: [Would, { slot: subject }, { slot: V }] }, "; no ", { term: do }], uk: [{ pattern: [Would, { slot: subject }, { slot: V }] }, "; без ", { term: do }], es: [{ pattern: [Would, { slot: subject }, { slot: V }] }, "; sin ", { term: do }] }, ex: [{ target: Would }, " you ", { target: like }, " some cake?"], tr: { uk: "Хочеш трохи торта?", es: "¿Te gustaría un poco de pastel?" } }
+        - { level: B1, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, "; negative ", { term: wouldn't }], uk: [{ pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, "; заперечна форма ", { term: wouldn't }], es: [{ pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, "; forma negativa ", { term: wouldn't }] }, ex: { examples: [["She ", { target: would }, " help."], ["I ", { target: wouldn't }, " go."]] }, tr: { uk: { examples: ["Вона б допомогла.", "Я б не пішов."] }, es: { examples: ["Ella ayudaría.", "Yo no iría."] } } }
+        - { level: B1, point: { en: Polite request, uk: "Ввічливе прохання", es: "Petición cortés" }, rule: { en: [{ term: [Would you, { gap: true }, "?"] }, " asks politely for help"], uk: [{ term: [Would you, { gap: true }, "?"] }, " ввічливо просить про допомогу"], es: [{ term: [Would you, { gap: true }, "?"] }, " pide ayuda con cortesía"] }, ex: [{ target: Would }, " you pass the salt, please?"], tr: { uk: "Чи не міг би ти передати сіль, будь ласка?", es: "¿Podrías pasarme la sal, por favor?" } }
+        - { level: B1, point: { en: Imagined situation, uk: "Уявна ситуація", es: "Situación imaginaria" }, rule: { en: ["with ", { term: if }, ": ", { pattern: [if, { slot: past simple }] }, ", ", { pattern: [would, { slot: base verb }] }], uk: ["з ", { term: if }, ": ", { pattern: [if, { slot: past simple }] }, ", ", { pattern: [would, { slot: base verb }] }], es: ["con ", { term: if }, ": ", { pattern: [if, { slot: past simple }] }, ", ", { pattern: [would, { slot: base verb }] }] }, ex: { examples: [["I ", { target: would }, " buy a boat."], ["If I had more time, I ", { target: would }, " learn Italian."]] }, tr: { uk: { examples: ["Я б купив човен.", "Якби в мене було більше часу, я б вивчив італійську."] }, es: { examples: ["Compraría un barco.", "Si tuviera más tiempo, aprendería italiano."] } } }
+        - { level: B1, point: { en: Past habit, uk: "Минула звичка", es: "Hábito del pasado" }, rule: { en: "repeated actions; the sentence needs a past time frame", uk: "повторювані дії; у реченні потрібні часові рамки минулого", es: "acciones repetidas; la oración necesita un marco temporal pasado" }, ex: ["When I was a child, we ", { target: would }, " play outside every day."], tr: { uk: "Коли я був дитиною, ми щодня гралися надворі.", es: "Cuando era niño, jugábamos afuera todos los días." } }
+        - { level: B1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: used to }, " for a past state: live, be, have, know"], uk: [{ term: used to }, " для минулого стану: live, be, have, know"], es: [{ term: used to }, " para un estado del pasado: live, be, have, know"] }, ex: ["When I was young, I ", { target: used to }, " live in Paris."], tr: { uk: "Коли я був молодим, я жив у Парижі.", es: "Cuando era joven, vivía en París." } }
 
 sections:
-  - title: { en: "Form: would" }
+  - title: { en: "Form: would", uk: "Форма: would", es: "Forma: would" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative }, pattern: { pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, ex: ["She ", { target: would }, " help."] }
-          - { level: B1, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, pattern: { pattern: [{ slot: subject }, wouldn't, { slot: V }] }, ex: ["I ", { target: wouldn't }, " go."] }
-          - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: Question }, pattern: { pattern: [Would, { slot: subject }, { slot: V }] }, ex: [{ target: Would }, " you like tea?"] }
-          - { level: B1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer }, pattern: { alternatives: [["Yes, ", { gap: true }, " would."], ["No, ", { gap: true }, " wouldn't."]] }, ex: { examples: [["Yes, I ", { target: would }, "."], ["No, I ", { target: wouldn't }, "."]] } }
+          - { level: B1, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, pattern: { pattern: [{ slot: subject }, { alternatives: [would, "'d"] }, { slot: V }] }, ex: ["She ", { target: would }, " help."] }
+          - { level: B1, features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: "Заперечення", es: "Negación" }, pattern: { pattern: [{ slot: subject }, wouldn't, { slot: V }] }, ex: ["I ", { target: wouldn't }, " go."] }
+          - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: "Питання", es: "Pregunta" }, pattern: { pattern: [Would, { slot: subject }, { slot: V }] }, ex: [{ target: Would }, " you like tea?"] }
+          - { level: B1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, pattern: { alternatives: [["Yes, ", { gap: true }, " would."], ["No, ", { gap: true }, " wouldn't."]] }, ex: { examples: [["Yes, I ", { target: would }, "."], ["No, I ", { target: wouldn't }, "."]] } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: would }, " has one form for every subject: I would, she would."]
+              uk: [{ term: would }, " має одну форму для всіх підметів: I would, she would."]
+              es: [{ term: would }, " tiene una sola forma para todos los sujetos: I would, she would."]
           - type: rule
             level: B1
             text:
               en: ["The verb after ", { term: would }, " is in the base form:"]
+              uk: ["Дієслово після ", { term: would }, " стоїть у початковій формі:"]
+              es: ["El verbo después de ", { term: would }, " va en la forma base:"]
             ex: ["She would ", { target: help }, "."]
+            tr: { uk: "Вона б допомогла.", es: "Ella ayudaría." }
           - type: rule
             level: B1
             text:
               en: ["Questions and negatives need no ", { term: do }, ":"]
+              uk: ["У питаннях і запереченнях ", { term: do }, " не потрібне:"]
+              es: ["Las preguntas y las negaciones no necesitan ", { term: do }, ":"]
             ex: { examples: [[{ target: Would }, " you go?"], ["I ", { target: wouldn't }, " go."]] }
+            tr: { uk: { examples: ["Ти б пішов?", "Я б не пішов."] }, es: { examples: ["¿Irías?", "No iría."] } }
 
-  - title: { en: "Form: short forms" }
+  - title: { en: "Form: short forms", uk: "Форма: скорочені форми", es: "Forma: formas contraídas" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: full, label: { en: Full form }, features: { contraction: full } }
-          - { key: short, label: { en: Short form }, features: { contraction: short } }
-          - { key: ex, label: { en: Example } }
+          - { key: full, label: { en: Full form, uk: "Повна форма", es: "Forma completa" }, features: { contraction: full } }
+          - { key: short, label: { en: Short form, uk: "Скорочена форма", es: "Forma contraída" }, features: { contraction: short } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
           - { level: A1, features: { person: 1, number: sg }, full: I would, short: I'd, ex: [I', { target: d }, " like a tea."] }
           - { level: B1, features: { person: 2 }, full: you would, short: you'd, ex: [You', { target: d }, " like her."] }
@@ -80,93 +94,111 @@ sections:
             level: B1
             text:
               en: [{ pattern: [{ term: "'d" }, { slot: base verb }] }, " = ", { term: would }, ". ", { pattern: [{ term: "'d" }, { slot: past participle }] }, " = ", { term: had }, ":"]
-            ex: { examples: [[I', { target: d }, " go. ", { gloss: { en: = I would go } }], [I', { target: d }, " gone. ", { gloss: { en: = I had gone } }]] }
+              uk: [{ pattern: [{ term: "'d" }, { slot: base verb }] }, " = ", { term: would }, ". ", { pattern: [{ term: "'d" }, { slot: past participle }] }, " = ", { term: had }, ":"]
+              es: [{ pattern: [{ term: "'d" }, { slot: base verb }] }, " = ", { term: would }, ". ", { pattern: [{ term: "'d" }, { slot: past participle }] }, " = ", { term: had }, ":"]
+            ex: { examples: [[I', { target: d }, " go. ", { gloss: { en: = I would go, uk: "= I would go", es: "= I would go" } }], [I', { target: d }, " gone. ", { gloss: { en: = I had gone, uk: "= I had gone", es: "= I had gone" } }]] }
+            tr: { uk: { examples: ["Я б пішов.", "Я вже пішов."] }, es: { examples: ["Yo iría.", "Ya me había ido."] } }
           - type: note
             level: B1
             text:
               en: ["See ", { link: Past perfect, to: en.tenses.perfect-tenses }, "."]
+              uk: ["Див. ", { link: "Past Perfect", to: en.tenses.perfect-tenses }, "."]
+              es: ["Ver ", { link: "Pasado perfecto", to: en.tenses.perfect-tenses }, "."]
 
-  - title: { en: "Pronunciation: would and 'd" }
+  - title: { en: "Pronunciation: would and 'd", uk: "Вимова: would і 'd", es: "Pronunciación: would y 'd" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, form: { en: "would (weak, in a sentence)" }, sound: { ipa: wəd }, ex: [{ target: Would }, " you help? ", { ipa: wəd juː ˈhelp }] }
-          - { level: B1, form: { en: "would (strong, at the end)" }, sound: { ipa: wʊd }, ex: ["Yes, I ", { target: would }, ". ", { ipa: jes aɪ ˈwʊd }] }
-          - { level: A1, form: I'd, sound: { ipa: aɪd }, ex: [I', { target: d }, " like tea. ", { ipa: aɪd ˈlaɪk tiː }] }
-          - { level: B1, form: wouldn't, sound: { ipa: ˈwʊdnt }, ex: ["I ", { target: wouldn't }, " go. ", { ipa: aɪ ˈwʊdnt ɡəʊ }] }
+          - { level: B1, form: { en: "would (weak, in a sentence)", uk: "would (слабка форма, у реченні)", es: "would (forma débil, dentro de la oración)" }, sound: { ipa: wəd }, ex: [{ target: Would }, " you help? ", { ipa: wəd juː ˈhelp }], tr: { uk: "Ти б допоміг?", es: "¿Ayudarías?" } }
+          - { level: B1, form: { en: "would (strong, at the end)", uk: "would (сильна форма, у кінці)", es: "would (forma fuerte, al final)" }, sound: { ipa: wʊd }, ex: ["Yes, I ", { target: would }, ". ", { ipa: jes aɪ ˈwʊd }], tr: { uk: "Так, я б допоміг.", es: "Sí, te ayudaría." } }
+          - { level: A1, form: I'd, sound: { ipa: aɪd }, ex: [I', { target: d }, " like tea. ", { ipa: aɪd ˈlaɪk tiː }], tr: { uk: "Я хотів би чаю.", es: "Me gustaría té." } }
+          - { level: B1, form: wouldn't, sound: { ipa: ˈwʊdnt }, ex: ["I ", { target: wouldn't }, " go. ", { ipa: aɪ ˈwʊdnt ɡəʊ }], tr: { uk: "Я б не пішов.", es: "No iría." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["The ", { letter: l }, " in would and wouldn't is silent: would is ", { ipa: wʊd }, " when strong."]
+              uk: ["Літера ", { letter: l }, " у would і wouldn't німа: у сильній формі would читається ", { ipa: wʊd }, "."]
+              es: ["La ", { letter: l }, " de would y wouldn't es muda: en su forma fuerte, would se pronuncia ", { ipa: wʊd }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, { slot: noun }] }] }, ex: [I', { target: d like }, " a coffee, please."] }
-          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, to V] }] }, ex: [I', { target: d like to }, " book a table."] }
-          - { level: A1, use: { en: Offers and invitations }, ex: [{ target: Would }, " you ", { target: like }, " some cake?"] }
-          - { level: B1, use: { en: Offering to do something (would like me to) }, ex: [{ target: Would }, " you ", { target: like me to }, " carry that?"] }
-          - { level: B1, use: { en: Polite requests }, ex: [{ target: Would }, " you pass the salt, please?"] }
-          - { level: B1, use: { en: Imagined situations }, ex: ["I ", { target: would }, " buy a boat."] }
-          - { level: B1, use: { en: Imagined situations with if }, ex: ["If I had more time, I ", { target: would }, " learn Italian."] }
-          - { level: B1, use: { en: "Past habits: repeated actions" }, ex: ["When I was a child, we ", { target: would }, " play outside every day."] }
+          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, { slot: noun }] }], uk: ["Ввічливе бажання: ", { pattern: [would like, { slot: noun }] }], es: ["Un deseo cortés: ", { pattern: [would like, { slot: noun }] }] }, ex: [I', { target: d like }, " a coffee, please."], tr: { uk: "Я хотів би каву, будь ласка.", es: "Me gustaría un café, por favor." } }
+          - { level: A1, use: { en: ["A polite want: ", { pattern: [would like, to V] }], uk: ["Ввічливе бажання: ", { pattern: [would like, to V] }], es: ["Un deseo cortés: ", { pattern: [would like, to V] }] }, ex: [I', { target: d like to }, " book a table."], tr: { uk: "Я хотів би забронювати столик.", es: "Me gustaría reservar una mesa." } }
+          - { level: A1, use: { en: Offers and invitations, uk: "Пропозиції й запрошення", es: "Ofrecimientos e invitaciones" }, ex: [{ target: Would }, " you ", { target: like }, " some cake?"], tr: { uk: "Хочеш трохи торта?", es: "¿Te gustaría un poco de pastel?" } }
+          - { level: B1, use: { en: Offering to do something (would like me to), uk: "Пропозиція щось зробити (would like me to)", es: "Ofrecerse a hacer algo (would like me to)" }, ex: [{ target: Would }, " you ", { target: like me to }, " carry that?"], tr: { uk: "Хочеш, я це понесу?", es: "¿Quieres que lo lleve?" } }
+          - { level: B1, use: { en: Polite requests, uk: "Ввічливі прохання", es: "Peticiones corteses" }, ex: [{ target: Would }, " you pass the salt, please?"], tr: { uk: "Чи не міг би ти передати сіль, будь ласка?", es: "¿Podrías pasarme la sal, por favor?" } }
+          - { level: B1, use: { en: Imagined situations, uk: "Уявні ситуації", es: "Situaciones imaginarias" }, ex: ["I ", { target: would }, " buy a boat."], tr: { uk: "Я б купив човен.", es: "Compraría un barco." } }
+          - { level: B1, use: { en: Imagined situations with if, uk: "Уявні ситуації з if", es: "Situaciones imaginarias con if" }, ex: ["If I had more time, I ", { target: would }, " learn Italian."], tr: { uk: "Якби в мене було більше часу, я б вивчив італійську.", es: "Si tuviera más tiempo, aprendería italiano." } }
+          - { level: B1, use: { en: "Past habits: repeated actions", uk: "Минулі звички: повторювані дії", es: "Hábitos del pasado: acciones repetidas" }, ex: ["When I was a child, we ", { target: would }, " play outside every day."], tr: { uk: "Коли я був дитиною, ми щодня гралися надворі.", es: "Cuando era niño, jugábamos afuera todos los días." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: would like }, " is a polite form of ", { term: want }, ": I'd like tea."]
+              uk: [{ term: would like }, " — ввічлива форма ", { term: want }, ": I'd like tea."]
+              es: [{ term: would like }, " es una forma cortés de ", { term: want }, ": I'd like tea."]
           - type: rule
             level: A1
             text:
               en: [{ term: would like }, " takes ", { pattern: [{ term: to }, { slot: base verb }] }, ":"]
+              uk: [{ term: would like }, " вимагає ", { pattern: [{ term: to }, { slot: base verb }] }, ":"]
+              es: [{ term: would like }, " va seguido de ", { pattern: [{ term: to }, { slot: base verb }] }, ":"]
             ex: ["I'd like ", { target: to go }, "."]
+            tr: { uk: "Я хотів би піти.", es: "Me gustaría ir." }
           - type: note
             level: B1
             text:
               en: ["An imagined situation with ", { term: if }, " takes ", { pattern: [{ term: if }, { slot: past simple }] }, ", ", { pattern: [{ term: would }, { slot: base verb }] }, ". See ", { link: Conditionals, to: en.sentence-building.conditionals-0-1-2 }, "."]
+              uk: ["Уявна ситуація з ", { term: if }, " має схему ", { pattern: [{ term: if }, { slot: past simple }] }, ", ", { pattern: [{ term: would }, { slot: base verb }] }, ". Див. ", { link: "Умовні речення: нульовий, перший і другий тип", to: en.sentence-building.conditionals-0-1-2 }, "."]
+              es: ["Una situación imaginaria con ", { term: if }, " lleva ", { pattern: [{ term: if }, { slot: past simple }] }, ", ", { pattern: [{ term: would }, { slot: base verb }] }, ". Ver ", { link: "Condicionales: cero, primero y segundo", to: en.sentence-building.conditionals-0-1-2 }, "."]
           - type: rule
             level: B1
             text:
               en: ["A past habit with ", { term: would }, " needs a past time frame: When I was young, I would…"]
+              uk: ["Минула звичка з ", { term: would }, " потребує часових рамок минулого: When I was young, I would…"]
+              es: ["Un hábito del pasado con ", { term: would }, " necesita un marco temporal pasado: When I was young, I would…"]
 
-  - title: { en: "Compare: would and used to" }
+  - title: { en: "Compare: would and used to", uk: "Порівняння: would і used to", es: "Comparación: would y used to" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: row, label: { en: Point } }
+          - { key: row, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
           - { key: would, label: would }
           - { key: used, label: used to, features: { aspect: hab, tense: pst } }
         rows:
-          - { level: B1, row: { en: Meaning }, would: { en: repeated past actions }, used: { en: repeated past actions and past states } }
-          - { level: B1, row: { en: Action }, would: ["We ", { target: would }, " swim every summer."], used: ["We ", { target: used to }, " swim every summer."] }
-          - { level: B1, row: { en: State }, used: ["I ", { target: used to }, " live in Leeds."] }
+          - { level: B1, row: { en: Meaning, uk: "Значення", es: "Significado" }, would: { en: repeated past actions, uk: "повторювані дії в минулому", es: "acciones repetidas en el pasado" }, used: { en: repeated past actions and past states, uk: "повторювані дії та стани в минулому", es: "acciones repetidas y estados del pasado" } }
+          - { level: B1, row: { en: Action, uk: "Дія", es: "Acción" }, would: { ex: ["We ", { target: would }, " swim every summer."], tr: { uk: "Кожного літа ми плавали.", es: "Cada verano nadábamos." } }, used: { ex: ["We ", { target: used to }, " swim every summer."], tr: { uk: "Раніше ми щоліта плавали.", es: "Antes nadábamos todos los veranos." } } }
+          - { level: B1, row: { en: State, uk: "Стан", es: "Estado" }, used: { ex: ["I ", { target: used to }, " live in Leeds."], tr: { uk: "Раніше я жив у Лідсі.", es: "Antes vivía en Leeds." } } }
       - type: list
         items:
           - type: note
             level: B1
             text:
               en: ["A past state (live, be, have, know) takes ", { term: used to }, ". See ", { link: Used to, to: en.tenses.used-to }, "."]
+              uk: ["Минулий стан (live, be, have, know) вимагає ", { term: used to }, ". Див. ", { link: "Used to", to: en.tenses.used-to }, "."]
+              es: ["Un estado del pasado (live, be, have, know) lleva ", { term: used to }, ". Ver ", { link: "Used to", to: en.tenses.used-to }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: Do you would like a coffee?, right: [{ target: Would }, " you like a coffee?"], rule: { en: questions with would need no do } }
-          - { level: A1, wrong: I would like going., right: ["I'd like ", { target: to go }, "."], rule: { en: { pattern: [would like, to, { slot: base verb }] } } }
-          - { level: B1, wrong: She would likes tea., right: ["She would ", { target: like }, " tea."], rule: { en: { pattern: [would, { slot: base verb }] } } }
-          - { level: B1, wrong: "When I was young, I would live in Paris.", right: ["When I was young, I ", { target: used to }, " live in Paris."], rule: { en: past states take used to } }
+          - { level: A1, wrong: Do you would like a coffee?, right: [{ target: Would }, " you like a coffee?"], rule: { en: questions with would need no do, uk: "у питаннях із would не потрібне do", es: "las preguntas con would no necesitan do" } }
+          - { level: A1, wrong: I would like going., right: ["I'd like ", { target: to go }, "."], rule: { en: { pattern: [would like, to, { slot: base verb }] }, uk: { pattern: [would like, to, { slot: base verb }] }, es: { pattern: [would like, to, { slot: base verb }] } } }
+          - { level: B1, wrong: She would likes tea., right: ["She would ", { target: like }, " tea."], rule: { en: { pattern: [would, { slot: base verb }] }, uk: { pattern: [would, { slot: base verb }] }, es: { pattern: [would, { slot: base verb }] } } }
+          - { level: B1, wrong: "When I was young, I would live in Paris.", right: ["When I was young, I ", { target: used to }, " live in Paris."], rule: { en: past states take used to, uk: "для минулих станів уживається used to", es: "los estados del pasado llevan used to" } }

@@ -5,32 +5,38 @@ kind: grammar
 tags: [verbs, modals, advice, opinions]
 concepts: [advice]
 related: [en.modals.must-have-to, en.modals.can-could, en.modals.would, en.sentence-building.conditionals-0-1-2, en.sentence-building.questions-negatives]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Should }
+title: { en: Should, uk: Should, es: Should }
 summary:
-  lead: { en: Should and shouldn't for advice and opinions. }
-  rule: { en: "Should takes the base verb with every subject and needs no do in questions:" }
+  lead:
+    en: Should and shouldn't for advice and opinions.
+    uk: "Should і shouldn't виражають пораду й думку."
+    es: "Should y shouldn't expresan consejo y opinión."
+  rule:
+    en: "Should takes the base verb with every subject and needs no do in questions:"
+    uk: "Should стоїть з початковою формою дієслова при будь-якому підметі й не потребує do в питаннях:"
+    es: "Should va con la forma base del verbo con cualquier sujeto y no necesita do en las preguntas:"
   ex: ["You ", { target: should }, " go. ", { target: Should }, " I go?"]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: { en: Form }, rule: { en: [{ pattern: [{ slot: subject }, should, { slot: base verb }] }, "; one form for every subject"] }, ex: ["You ", { target: should }, " see a doctor."] }
-        - { level: A2, point: { en: Negative }, rule: { en: [{ term: shouldn't }, "; no ", { term: do }] }, ex: ["You ", { target: shouldn't }, " work so late."] }
-        - { level: A2, point: { en: Question }, rule: { en: [{ pattern: [Should, { slot: subject }, { slot: base verb }] }, "; no ", { term: do }] }, ex: { examples: [[{ target: Should }, " I take the bus?"], ["What ", { target: should }, " I do?"]] } }
-        - { level: A2, point: { en: Advice }, rule: { en: [{ term: should }, " for a good idea, ", { term: shouldn't }, " for a bad one"] }, ex: { examples: [["You ", { target: should }, " drink more water."], ["You ", { target: shouldn't }, " eat so much sugar."]] } }
-        - { level: A2, point: { en: Opinion }, rule: { en: "what you think is right or good" }, ex: ["I ", { target: think }, " the government ", { target: should }, " build more parks."] }
-        - { level: A2, point: { en: Should or must }, rule: { en: [{ term: should }, ": advice or a mild duty; ", { term: must }, ": a strong obligation or a rule"] }, ex: { examples: [["You ", { target: should }, " wear a coat."], ["You ", { target: must }, " wear a seat belt."]] } }
-        - { level: A2, point: { en: Trap }, rule: { en: ["a negative opinion puts ", { term: don't }, " on ", { term: think }] }, ex: ["I ", { target: don't think }, " you should go."] }
+        - { level: A2, point: { en: Form, uk: "Форма", es: "Forma" }, rule: { en: [{ pattern: [{ slot: subject }, should, { slot: base verb }] }, "; one form for every subject"], uk: [{ pattern: [{ slot: subject }, should, { slot: base verb }] }, "; одна форма для всіх підметів"], es: [{ pattern: [{ slot: subject }, should, { slot: base verb }] }, "; una sola forma para todos los sujetos"] }, ex: ["You ", { target: should }, " see a doctor."], tr: { uk: "Тобі слід піти до лікаря.", es: "Deberías ir al médico." } }
+        - { level: A2, point: { en: Negative, uk: "Заперечення", es: "Negación" }, rule: { en: [{ term: shouldn't }, "; no ", { term: do }], uk: [{ term: shouldn't }, "; без ", { term: do }], es: [{ term: shouldn't }, "; sin ", { term: do }] }, ex: ["You ", { target: shouldn't }, " work so late."], tr: { uk: "Тобі не слід так пізно працювати.", es: "No deberías trabajar tan tarde." } }
+        - { level: A2, point: { en: Question, uk: "Питання", es: "Pregunta" }, rule: { en: [{ pattern: [Should, { slot: subject }, { slot: base verb }] }, "; no ", { term: do }], uk: [{ pattern: [Should, { slot: subject }, { slot: base verb }] }, "; без ", { term: do }], es: [{ pattern: [Should, { slot: subject }, { slot: base verb }] }, "; sin ", { term: do }] }, ex: { examples: [[{ target: Should }, " I take the bus?"], ["What ", { target: should }, " I do?"]] }, tr: { uk: { examples: ["Чи їхати мені автобусом?", "Що мені робити?"] }, es: { examples: ["¿Debería tomar el autobús?", "¿Qué debería hacer?"] } } }
+        - { level: A2, point: { en: Advice, uk: "Порада", es: "Consejo" }, rule: { en: [{ term: should }, " for a good idea, ", { term: shouldn't }, " for a bad one"], uk: [{ term: should }, " для доброї ідеї, ", { term: shouldn't }, " для поганої"], es: [{ term: should }, " para una buena idea, ", { term: shouldn't }, " para una mala"] }, ex: { examples: [["You ", { target: should }, " drink more water."], ["You ", { target: shouldn't }, " eat so much sugar."]] }, tr: { uk: { examples: ["Тобі слід пити більше води.", "Тобі не слід їсти стільки цукру."] }, es: { examples: ["Deberías beber más agua.", "No deberías comer tanta azúcar."] } } }
+        - { level: A2, point: { en: Opinion, uk: "Думка", es: "Opinión" }, rule: { en: "what you think is right or good", uk: "те, що ти вважаєш правильним або добрим", es: "lo que crees que es correcto o bueno" }, ex: ["I ", { target: think }, " the government ", { target: should }, " build more parks."], tr: { uk: "Я думаю, що уряду слід будувати більше парків.", es: "Creo que el gobierno debería construir más parques." } }
+        - { level: A2, point: { en: Should or must, uk: "Should чи must", es: "Should o must" }, rule: { en: [{ term: should }, ": advice or a mild duty; ", { term: must }, ": a strong obligation or a rule"], uk: [{ term: should }, ": порада або м’який обов’язок; ", { term: must }, ": сильний обов’язок або правило"], es: [{ term: should }, ": consejo o deber leve; ", { term: must }, ": obligación fuerte o regla"] }, ex: { examples: [["You ", { target: should }, " wear a coat."], ["You ", { target: must }, " wear a seat belt."]] }, tr: { uk: { examples: ["Тобі слід одягнути пальто.", "Ти мусиш пристебнути ремінь безпеки."] }, es: { examples: ["Deberías ponerte un abrigo.", "Debes usar el cinturón de seguridad."] } } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: ["a negative opinion puts ", { term: don't }, " on ", { term: think }], uk: ["заперечну думку виражає ", { term: don't }, " перед ", { term: think }], es: ["la opinión negativa lleva ", { term: don't }, " con ", { term: think }] }, ex: ["I ", { target: don't think }, " you should go."], tr: { uk: "Не думаю, що тобі слід іти.", es: "No creo que debas ir." } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -39,86 +45,103 @@ sections:
             level: A2
             text:
               en: [{ term: should }, " has one form for every subject: I should, she should."]
+              uk: [{ term: should }, " має одну форму для всіх підметів: I should, she should."]
+              es: [{ term: should }, " tiene una sola forma para todos los sujetos: I should, she should."]
           - type: rule
             level: A2
             text:
               en: ["The verb after ", { term: should }, " is in the base form:"]
+              uk: ["Дієслово після ", { term: should }, " стоїть у початковій формі:"]
+              es: ["El verbo después de ", { term: should }, " va en la forma base:"]
             ex: ["You should ", { target: rest }, "."]
+            tr: { uk: "Тобі слід відпочити.", es: "Deberías descansar." }
           - type: rule
             level: A2
             text:
               en: ["Questions and negatives need no ", { term: do }, ":"]
+              uk: ["Питання й заперечення не потребують ", { term: do }, ":"]
+              es: ["Las preguntas y las negaciones no necesitan ", { term: do }, ":"]
             ex: { examples: [[{ target: Should }, " I go?"], ["You ", { target: shouldn't }, " go."]] }
+            tr: { uk: { examples: ["Чи слід мені йти?", "Тобі не слід іти."] }, es: { examples: ["¿Debería ir?", "No deberías ir."] } }
           - type: rule
             level: A2
             text:
               en: ["The negative opinion puts ", { term: don't }, " on ", { term: think }, ":"]
+              uk: ["Заперечну думку виражає ", { term: don't }, " перед ", { term: think }, ":"]
+              es: ["La opinión negativa lleva ", { term: don't }, " con ", { term: think }, ":"]
             ex: ["I ", { target: don't think }, " you should go."]
+            tr: { uk: "Не думаю, що тобі слід іти.", es: "No creo que debas ir." }
 
-  - title: { en: "Pronunciation: should and shouldn't" }
+  - title: { en: "Pronunciation: should and shouldn't", uk: "Вимова: should і shouldn't", es: "Pronunciación: should y shouldn't" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: sound, label: { en: Sound } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, form: { en: "should (weak, in a sentence)" }, sound: { ipa: ʃəd }, ex: ["You ", { target: should }, " rest. ", { ipa: juː ʃəd ˈrest }] }
-          - { level: A2, form: { en: "should (strong, at the end)" }, sound: { ipa: ʃʊd }, ex: ["Yes, you ", { target: should }, ". ", { ipa: jes juː ˈʃʊd }] }
-          - { level: A2, form: shouldn't, sound: { ipa: ˈʃʊdnt }, ex: ["You ", { target: shouldn't }, " go. ", { ipa: juː ˈʃʊdnt ɡəʊ }] }
+          - { level: A2, form: { en: "should (weak, in a sentence)", uk: "should (слабка форма, у реченні)", es: "should (forma débil, dentro de la oración)" }, sound: { ipa: ʃəd }, ex: ["You ", { target: should }, " rest. ", { ipa: juː ʃəd ˈrest }], tr: { uk: "Тобі слід відпочити.", es: "Deberías descansar." } }
+          - { level: A2, form: { en: "should (strong, at the end)", uk: "should (сильна форма, у кінці)", es: "should (forma fuerte, al final)" }, sound: { ipa: ʃʊd }, ex: ["Yes, you ", { target: should }, ". ", { ipa: jes juː ˈʃʊd }], tr: { uk: "Так, слід.", es: "Sí, deberías." } }
+          - { level: A2, form: shouldn't, sound: { ipa: ˈʃʊdnt }, ex: ["You ", { target: shouldn't }, " go. ", { ipa: juː ˈʃʊdnt ɡəʊ }], tr: { uk: "Тобі не слід іти.", es: "No deberías ir." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["The ", { letter: l }, " in should and shouldn't is silent: should is ", { ipa: ʃʊd }, " when strong."]
+              uk: ["Літера ", { letter: l }, " у should і shouldn't німа: у сильній формі should звучить ", { ipa: ʃʊd }, "."]
+              es: ["La letra ", { letter: l }, " de should y shouldn't es muda: en su forma fuerte, should suena ", { ipa: ʃʊd }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: "Advice: a good idea" }, ex: ["You ", { target: should }, " drink more water."] }
-          - { level: A2, use: { en: "Advice against: a bad idea" }, ex: ["You ", { target: shouldn't }, " eat so much sugar."] }
-          - { level: A2, use: { en: Asking for advice }, ex: ["What ", { target: should }, " I do?"] }
-          - { level: A2, use: { en: Giving an opinion }, ex: ["I think the government ", { target: should }, " build more parks."] }
-          - { level: A2, use: { en: A mild duty }, ex: ["We ", { target: should }, " leave now. It's late."] }
+          - { level: A2, use: { en: "Advice: a good idea", uk: "Порада: гарна ідея", es: "Consejo: una buena idea" }, ex: ["You ", { target: should }, " drink more water."], tr: { uk: "Тобі слід пити більше води.", es: "Deberías beber más agua." } }
+          - { level: A2, use: { en: "Advice against: a bad idea", uk: "Порада не робити: погана ідея", es: "Consejo en contra: una mala idea" }, ex: ["You ", { target: shouldn't }, " eat so much sugar."], tr: { uk: "Тобі не слід їсти стільки цукру.", es: "No deberías comer tanta azúcar." } }
+          - { level: A2, use: { en: Asking for advice, uk: "Прохання про пораду", es: "Pedir consejo" }, ex: ["What ", { target: should }, " I do?"], tr: { uk: "Що мені робити?", es: "¿Qué debería hacer?" } }
+          - { level: A2, use: { en: Giving an opinion, uk: "Висловлення думки", es: "Dar una opinión" }, ex: ["I think the government ", { target: should }, " build more parks."], tr: { uk: "Я думаю, що уряду слід будувати більше парків.", es: "Creo que el gobierno debería construir más parques." } }
+          - { level: A2, use: { en: A mild duty, uk: "М’який обов’язок", es: "Un deber leve" }, ex: ["We ", { target: should }, " leave now. It's late."], tr: { uk: "Нам слід іти. Вже пізно.", es: "Deberíamos irnos ya. Es tarde." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: [{ term: should }, " gives advice and opinions; the listener decides whether to follow them."]
+              uk: [{ term: should }, " виражає поради й думки; слухач сам вирішує, чи прислухатися до них."]
+              es: [{ term: should }, " expresa consejos y opiniones; el oyente decide si los sigue."]
 
-  - title: { en: "Compare: should and must" }
+  - title: { en: "Compare: should and must", uk: "Порівняння: should і must", es: "Comparación: should y must" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: row, label: { en: Point } }
+          - { key: row, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
           - { key: should, label: should }
           - { key: must, label: must }
         rows:
-          - { level: A2, row: { en: Meaning }, should: { en: "advice, a good idea" }, must: { en: "strong obligation, a rule" } }
-          - { level: A2, row: { en: Example }, should: ["You ", { target: should }, " wear a coat."], must: ["You ", { target: must }, " wear a seat belt."] }
+          - { level: A2, row: { en: Meaning, uk: "Значення", es: "Significado" }, should: { en: "advice, a good idea", uk: "порада, гарна ідея", es: "consejo, una buena idea" }, must: { en: "strong obligation, a rule", uk: "сильний обов’язок, правило", es: "obligación fuerte, una regla" } }
+          - { level: A2, row: { en: Example, uk: "Приклад", es: "Ejemplo" }, should: { ex: ["You ", { target: should }, " wear a coat."], tr: { uk: "Тобі слід одягнути пальто.", es: "Deberías ponerte un abrigo." } }, must: { ex: ["You ", { target: must }, " wear a seat belt."], tr: { uk: "Ти мусиш пристебнути ремінь безпеки.", es: "Debes usar el cinturón de seguridad." } } }
       - type: list
         items:
           - type: note
             level: A2
             text:
               en: ["See ", { link: Must and Have To, to: en.modals.must-have-to }, "."]
+              uk: ["Див. ", { link: "Must і have to", to: en.modals.must-have-to }, "."]
+              es: ["Ver ", { link: "Must y have to", to: en.modals.must-have-to }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: She shoulds go., right: ["She ", { target: should }, " go."], rule: { en: should has no -s } }
-          - { level: A2, wrong: You should to see a doctor., right: ["You should ", { target: see }, " a doctor."], rule: { en: [{ pattern: [should, { slot: base verb }] }, ; no to] } }
-          - { level: A2, wrong: Do I should go?, right: [{ target: Should }, " I go?"], rule: { en: questions with should need no do } }
-          - { level: A2, wrong: I think you don't should go., right: ["I ", { target: don't think }, " you should go."], rule: { en: ["negative opinion: I don't ", { pattern: [think, should] }] } }
-          - { level: A2, wrong: Should he goes?, right: ["Should he ", { target: go }, "?"], rule: { en: { pattern: [should, { slot: base verb }] } } }
+          - { level: A2, wrong: She shoulds go., right: ["She ", { target: should }, " go."], rule: { en: should has no -s, uk: "у should немає -s", es: "should no lleva -s" } }
+          - { level: A2, wrong: You should to see a doctor., right: ["You should ", { target: see }, " a doctor."], rule: { en: [{ pattern: [should, { slot: base verb }] }, ; no to], uk: [{ pattern: [should, { slot: base verb }] }, "; без to"], es: [{ pattern: [should, { slot: base verb }] }, "; sin to"] } }
+          - { level: A2, wrong: Do I should go?, right: [{ target: Should }, " I go?"], rule: { en: questions with should need no do, uk: "питання з should не потребують do", es: "las preguntas con should no necesitan do" } }
+          - { level: A2, wrong: I think you don't should go., right: ["I ", { target: don't think }, " you should go."], rule: { en: ["negative opinion: I don't ", { pattern: [think, should] }], uk: ["заперечна думка: I don't ", { pattern: [think, should] }], es: ["opinión negativa: I don't ", { pattern: [think, should] }] } }
+          - { level: A2, wrong: Should he goes?, right: ["Should he ", { target: go }, "?"], rule: { en: { pattern: [should, { slot: base verb }] }, uk: { pattern: [should, { slot: base verb }] }, es: { pattern: [should, { slot: base verb }] } } }

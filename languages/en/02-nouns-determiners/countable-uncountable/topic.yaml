@@ -5,33 +5,39 @@ kind: grammar
 tags: [nouns, countable, uncountable]
 concepts: [countability]
 related: [en.nouns-determiners.plurals, en.nouns-determiners.articles-a-an-the, en.nouns-determiners.quantifiers-some-any-much-many]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Countable and Uncountable Nouns }
+title: { en: Countable and Uncountable Nouns, uk: Злічувані та незлічувані іменники, es: Sustantivos contables e incontables }
 summary:
-  lead: { en: "Countable nouns are counted one by one (a book, two books); uncountable nouns are masses and ideas (water, advice)." }
-  rule: { en: "Uncountable nouns take no a or an, no plural and a singular verb:" }
+  lead:
+    en: "Countable nouns are counted one by one (a book, two books); uncountable nouns are masses and ideas (water, advice)."
+    uk: "Злічувані іменники лічать поштучно (a book, two books); незлічувані називають речовини й ідеї (water, advice)."
+    es: "Los sustantivos contables se cuentan uno por uno (a book, two books); los incontables nombran sustancias e ideas (water, advice)."
+  rule:
+    en: "Uncountable nouns take no a or an, no plural and a singular verb:"
+    uk: "Незлічувані іменники не мають a чи an, не мають множини й вживаються з дієсловом в однині:"
+    es: "Los sustantivos incontables no llevan a ni an, no tienen plural y llevan el verbo en singular:"
   ex: ["The news ", { target: is }, " good."]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A1, point: { en: Countable }, rule: { en: [{ alternatives: [a, an] }, " in the singular, -s in the plural"] }, ex: { examples: [{ target: a book }, ["two ", { target: books }]] } }
-        - { level: A1, point: { en: Uncountable }, rule: { en: ["masses, materials, ideas: no ", { alternatives: [a, an] }, ", no plural"] }, ex: ["I like ", { target: music }, "."] }
-        - { level: A1, point: { en: Verb }, rule: { en: "a singular verb, also for news" }, ex: { examples: [["The water ", { target: is }, " cold."], ["The news ", { target: is }, " good."]] } }
-        - { level: A1, point: { en: Unit }, rule: { en: "count it with a unit; the unit takes the plural" }, ex: { examples: [["a ", { target: glass of }, " water"], ["a ", { target: piece of }, " advice"], ["two ", { target: cups of }, " coffee"]] } }
-        - { level: A2, point: { en: Groups of things }, rule: { en: "groups of things are uncountable too" }, ex: { examples: [{ target: furniture }, { target: luggage }, { target: homework }] } }
-        - { level: A2, point: { en: Both }, rule: { en: "some nouns are both; the meaning changes" }, ex: { contrast: [["I like ", { target: coffee }, "."], ["Two ", { target: coffees }, ", please."]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: "advice and information: some, or a piece of" }, ex: { alternatives: [{ target: a piece of advice }, { target: some advice }] } }
-        - { level: A1, point: { en: Trap }, rule: { en: [{ term: work }, " is uncountable; a ", { term: job }, " is countable"] }, ex: ["She has a good ", { target: job }, "."] }
+        - { level: A1, point: { en: Countable, uk: "Злічувані", es: "Contables" }, rule: { en: [{ alternatives: [a, an] }, " in the singular, -s in the plural"], uk: [{ alternatives: [a, an] }, " в однині, -s у множині"], es: [{ alternatives: [a, an] }, " en singular, -s en plural"] }, ex: { examples: [{ target: a book }, ["two ", { target: books }]] }, tr: { uk: { examples: ["книга", "дві книги"] }, es: { examples: ["un libro", "dos libros"] } } }
+        - { level: A1, point: { en: Uncountable, uk: "Незлічувані", es: "Incontables" }, rule: { en: ["masses, materials, ideas: no ", { alternatives: [a, an] }, ", no plural"], uk: ["речовини, матеріали, ідеї: без ", { alternatives: [a, an] }, ", без множини"], es: ["sustancias, materiales, ideas: sin ", { alternatives: [a, an] }, ", sin plural"] }, ex: ["I like ", { target: music }, "."], tr: { uk: "Я люблю музику.", es: "Me gusta la música." } }
+        - { level: A1, point: { en: Verb, uk: "Дієслово", es: "Verbo" }, rule: { en: "a singular verb, also for news", uk: "дієслово в однині, також після news", es: "verbo en singular, también con news" }, ex: { examples: [["The water ", { target: is }, " cold."], ["The news ", { target: is }, " good."]] }, tr: { uk: { examples: ["Вода холодна.", "Новини хороші."] }, es: { examples: ["El agua está fría.", "Las noticias son buenas."] } } }
+        - { level: A1, point: { en: Unit, uk: "Одиниця", es: "Unidad" }, rule: { en: "count it with a unit; the unit takes the plural", uk: "лічіть за допомогою одиниці; одиниця стоїть у множині", es: "se cuenta con una unidad; la unidad va en plural" }, ex: { examples: [["a ", { target: glass of }, " water"], ["a ", { target: piece of }, " advice"], ["two ", { target: cups of }, " coffee"]] }, tr: { uk: { examples: ["склянка води", "порада", "дві чашки кави"] }, es: { examples: ["un vaso de agua", "un consejo", "dos tazas de café"] } } }
+        - { level: A2, point: { en: Groups of things, uk: "Групи предметів", es: "Grupos de cosas" }, rule: { en: "groups of things are uncountable too", uk: "групи предметів теж незлічувані", es: "los grupos de cosas también son incontables" }, ex: { examples: [{ target: furniture }, { target: luggage }, { target: homework }] }, tr: { uk: { examples: ["меблі", "багаж", "домашнє завдання"] }, es: { examples: ["el mobiliario", "el equipaje", "la tarea"] } } }
+        - { level: A2, point: { en: Both, uk: "Обидва типи", es: "Ambos tipos" }, rule: { en: "some nouns are both; the meaning changes", uk: "деякі іменники бувають обох типів; значення змінюється", es: "algunos sustantivos son de ambos tipos; el significado cambia" }, ex: { contrast: [["I like ", { target: coffee }, "."], ["Two ", { target: coffees }, ", please."]] }, tr: { uk: { examples: ["Я люблю каву.", "Дві кави, будь ласка."] }, es: { examples: ["Me gusta el café.", "Dos cafés, por favor."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "advice and information: some, or a piece of", uk: "advice та information: some або a piece of", es: "advice e information: some o a piece of" }, ex: { alternatives: [{ target: a piece of advice }, { target: some advice }] }, tr: { uk: { examples: ["одна порада", "кілька порад"] }, es: { examples: ["un consejo", "algún consejo"] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: work }, " is uncountable; a ", { term: job }, " is countable"], uk: [{ term: work }, " — незлічуваний; a ", { term: job }, " — злічуваний"], es: [{ term: work }, " es incontable; a ", { term: job }, " es contable"] }, ex: ["She has a good ", { target: job }, "."], tr: { uk: "У неї хороша робота.", es: "Ella tiene un buen trabajo." } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -40,78 +46,89 @@ sections:
             level: A1
             text:
               en: ["A singular countable noun needs a word before it: ", { term: a }, " book, ", { term: the }, " book, ", { term: my }, " book."]
+              uk: ["Злічуваний іменник в однині потребує перед собою слова: ", { term: a }, " book, ", { term: the }, " book, ", { term: my }, " book."]
+              es: ["Un sustantivo contable en singular necesita una palabra delante: ", { term: a }, " book, ", { term: the }, " book, ", { term: my }, " book."]
           - type: note
             level: A1
             text:
               en: ["Articles: ", { link: "Articles: a, an, the", to: en.nouns-determiners.articles-a-an-the }, ". ", { alternatives: [How much, how many] }, ": ", { link: Quantifiers, to: en.nouns-determiners.quantifiers-some-any-much-many }, "."]
+              uk: ["Артиклі: ", { link: "Артиклі: a, an, the", to: en.nouns-determiners.articles-a-an-the }, ". ", { alternatives: [How much, how many] }, ": ", { link: "Кількісні слова: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, "."]
+              es: ["Artículos: ", { link: "Artículos: a, an, the", to: en.nouns-determiners.articles-a-an-the }, ". ", { alternatives: [How much, how many] }, ": ", { link: "Cuantificadores: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, "."]
 
-  - title: { en: Common uncountable nouns }
+  - title: { en: Common uncountable nouns, uk: "Поширені незлічувані іменники", es: "Sustantivos incontables frecuentes" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: group, label: { en: Group } }
-          - { key: nouns, label: { en: Nouns } }
+          - { key: group, label: { en: Group, uk: "Група", es: "Grupo" } }
+          - { key: nouns, label: { en: Nouns, uk: "Іменники", es: "Sustantivos" } }
         rows:
-          - { level: A1, group: { en: Food and drink }, nouns: "water, milk, coffee, tea, bread, rice, cheese, meat, sugar" }
-          - { level: A1, group: { en: Materials }, nouns: "wood, glass, paper, plastic, gold" }
-          - { level: A1, group: { en: Ideas and information }, nouns: "advice, information, news, help, music" }
-          - { level: A1, group: { en: Others }, nouns: "money, weather, work" }
-          - { level: A2, group: { en: Groups of things }, nouns: ["furniture, luggage ", { variant: baggage, variety: en-US }, ", equipment, homework, traffic"] }
+          - { level: A1, group: { en: Food and drink, uk: "Їжа й напої", es: "Comida y bebida" }, nouns: "water, milk, coffee, tea, bread, rice, cheese, meat, sugar" }
+          - { level: A1, group: { en: Materials, uk: "Матеріали", es: "Materiales" }, nouns: "wood, glass, paper, plastic, gold" }
+          - { level: A1, group: { en: Ideas and information, uk: "Ідеї та інформація", es: "Ideas e información" }, nouns: "advice, information, news, help, music" }
+          - { level: A1, group: { en: Others, uk: "Інше", es: "Otros" }, nouns: "money, weather, work" }
+          - { level: A2, group: { en: Groups of things, uk: "Групи предметів", es: "Grupos de cosas" }, nouns: ["furniture, luggage ", { variant: baggage, variety: en-US }, ", equipment, homework, traffic"] }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: [{ term: news }, " ends in -s but is uncountable:"]
+              uk: [{ term: news }, " закінчується на -s, але є незлічуваним:"]
+              es: [{ term: news }, " termina en -s, pero es incontable:"]
             ex: ["The news ", { target: is }, " good."]
+            tr: { uk: "Новини хороші.", es: "Las noticias son buenas." }
 
-  - title: { en: Counting uncountable nouns }
+  - title: { en: Counting uncountable nouns, uk: "Як лічити незлічувані іменники", es: "Cómo contar los sustantivos incontables" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: unit, label: { en: Unit } }
-          - { key: ex, label: { en: Example } }
+          - { key: unit, label: { en: Unit, uk: "Одиниця", es: "Unidad" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, unit: a glass of, ex: ["a ", { target: glass of }, " water"] }
-          - { level: A1, unit: a cup of, ex: ["a ", { target: cup of }, " tea"] }
-          - { level: A1, unit: a bottle of, ex: ["two ", { target: bottles of }, " milk"] }
-          - { level: A1, unit: a slice of, ex: ["a ", { target: slice of }, " cheese"] }
-          - { level: A1, unit: a kilo of, ex: ["a ", { target: kilo of }, " rice"] }
-          - { level: A1, unit: a piece of, ex: { examples: [["a ", { target: piece of }, " cake"], advice, furniture] } }
-          - { level: A2, unit: a loaf of, ex: ["a ", { target: loaf of }, " bread"] }
+          - { level: A1, unit: a glass of, ex: ["a ", { target: glass of }, " water"], tr: { uk: "склянка води", es: "un vaso de agua" } }
+          - { level: A1, unit: a cup of, ex: ["a ", { target: cup of }, " tea"], tr: { uk: "чашка чаю", es: "una taza de té" } }
+          - { level: A1, unit: a bottle of, ex: ["two ", { target: bottles of }, " milk"], tr: { uk: "дві пляшки молока", es: "dos botellas de leche" } }
+          - { level: A1, unit: a slice of, ex: ["a ", { target: slice of }, " cheese"], tr: { uk: "шматочок сиру", es: "una rebanada de queso" } }
+          - { level: A1, unit: a kilo of, ex: ["a ", { target: kilo of }, " rice"], tr: { uk: "кілограм рису", es: "un kilo de arroz" } }
+          - { level: A1, unit: a piece of, ex: { examples: [["a ", { target: piece of }, " cake"], advice, furniture] }, tr: { uk: { examples: ["шматок торта", "порада", "предмет меблів"] }, es: { examples: ["un trozo de pastel", "un consejo", "un mueble"] } } }
+          - { level: A2, unit: a loaf of, ex: ["a ", { target: loaf of }, " bread"], tr: { uk: "буханець хліба", es: "una barra de pan" } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["The unit is countable and takes the plural: two ", { term: cups }, " of coffee."]
+              uk: ["Одиниця є злічуваною й стоїть у множині: two ", { term: cups }, " of coffee."]
+              es: ["La unidad es contable y va en plural: two ", { term: cups }, " of coffee."]
 
-  - title: { en: Countable and uncountable meanings }
+  - title: { en: Countable and uncountable meanings, uk: "Злічуване й незлічуване значення", es: "Significados contables e incontables" }
     role: own
     content:
       - type: prose
         level: A2
         text:
           en: Some nouns are both. The meaning changes.
+          uk: "Деякі іменники бувають і злічуваними, і незлічуваними. Значення змінюється."
+          es: "Algunos sustantivos son contables e incontables a la vez. El significado cambia."
       - type: comparison
         columns:
-          - { key: uncountable, label: { en: Uncountable }, features: { countability: mass } }
-          - { key: countable, label: { en: Countable }, features: { countability: count } }
+          - { key: uncountable, label: { en: Uncountable, uk: "Незлічуваний", es: "Incontable" }, features: { countability: mass } }
+          - { key: countable, label: { en: Countable, uk: "Злічуваний", es: "Contable" }, features: { countability: count } }
         rows:
-          - { level: A2, uncountable: ["I like ", { target: coffee }, "."], countable: ["Two ", { target: coffees }, ", please."] }
-          - { level: A2, uncountable: ["She has long ", { target: hair }, "."], countable: ["There's ", { target: a hair }, " in my soup."] }
-          - { level: A2, uncountable: ["a sheet of ", { target: paper }], countable: ["I buy ", { target: a paper }, " every day."] }
-          - { level: A2, uncountable: ["There's no ", { target: room }, " in the car."], countable: ["The flat has three ", { target: rooms }, "."] }
+          - { level: A2, uncountable: { ex: ["I like ", { target: coffee }, "."], tr: { uk: "Я люблю каву.", es: "Me gusta el café." } }, countable: { ex: ["Two ", { target: coffees }, ", please."], tr: { uk: "Дві кави, будь ласка.", es: "Dos cafés, por favor." } } }
+          - { level: A2, uncountable: { ex: ["She has long ", { target: hair }, "."], tr: { uk: "У неї довге волосся.", es: "Ella tiene el pelo largo." } }, countable: { ex: ["There's ", { target: a hair }, " in my soup."], tr: { uk: "У моєму супі волосина.", es: "Hay un pelo en mi sopa." } } }
+          - { level: A2, uncountable: { ex: ["a sheet of ", { target: paper }], tr: { uk: "аркуш паперу", es: "una hoja de papel" } }, countable: { ex: ["I buy ", { target: a paper }, " every day."], tr: { uk: "Я щодня купую газету.", es: "Compro un periódico todos los días." } } }
+          - { level: A2, uncountable: { ex: ["There's no ", { target: room }, " in the car."], tr: { uk: "У машині немає місця.", es: "No hay espacio en el auto." } }, countable: { ex: ["The flat has three ", { target: rooms }, "."], tr: { uk: "У квартирі три кімнати.", es: "El apartamento tiene tres habitaciones." } } }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: an advice, right: { alternatives: [{ target: a piece of advice }, { target: some advice }] }, rule: { en: ["uncountable: no ", { alternatives: [a, an] }] } }
-          - { level: A1, wrong: The news are good., right: ["The news ", { target: is }, " good."], rule: { en: { pattern: [news, singular verb] } } }
-          - { level: A2, wrong: a bread, right: { alternatives: [{ target: a loaf of bread }, { target: some bread }] }, rule: { en: count it with a unit } }
-          - { level: A1, wrong: She has a good work., right: ["She has a good ", { target: job }, "."], rule: { en: work is uncountable; a job is countable } }
-          - { level: A1, wrong: What a terrible weather!, right: ["What ", { target: terrible weather }, "!"], rule: { en: ["weather: no ", { alternatives: [a, an] }] } }
+          - { level: A1, wrong: an advice, right: { alternatives: [{ target: a piece of advice }, { target: some advice }] }, rule: { en: ["uncountable: no ", { alternatives: [a, an] }], uk: ["незлічуваний: без ", { alternatives: [a, an] }], es: ["incontable: sin ", { alternatives: [a, an] }] } }
+          - { level: A1, wrong: The news are good., right: ["The news ", { target: is }, " good."], rule: { en: { pattern: [news, singular verb] }, uk: { pattern: [news, "дієслово в однині"] }, es: { pattern: [news, "verbo en singular"] } } }
+          - { level: A2, wrong: a bread, right: { alternatives: [{ target: a loaf of bread }, { target: some bread }] }, rule: { en: count it with a unit, uk: "лічіть за допомогою одиниці", es: "se cuenta con una unidad" } }
+          - { level: A1, wrong: She has a good work., right: ["She has a good ", { target: job }, "."], rule: { en: work is uncountable; a job is countable, uk: "work — незлічуваний, a job — злічуваний", es: "work es incontable; a job es contable" } }
+          - { level: A1, wrong: What a terrible weather!, right: ["What ", { target: terrible weather }, "!"], rule: { en: ["weather: no ", { alternatives: [a, an] }], uk: ["weather: без ", { alternatives: [a, an] }], es: ["weather: sin ", { alternatives: [a, an] }] } }

@@ -5,142 +5,166 @@ kind: grammar
 tags: [verb-patterns, gerund, infinitive]
 concepts: [verb-patterns]
 related: [en.sentence-building.reported-speech, en.sentence-building.questions-negatives, en.tenses.future-forms]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Gerund vs Infinitive }
+title: { en: Gerund vs Infinitive, uk: Герундій чи інфінітив, es: Gerundio o infinitivo }
 summary:
-  lead: { en: ["Verbs followed by -ing, verbs followed by ", { pattern: [to, { slot: infinitive }] }, ", and verbs that take both with a change of meaning."] }
-  rule: { en: "The verb before decides the form:" }
+  lead:
+    en: ["Verbs followed by -ing, verbs followed by ", { pattern: [to, { slot: infinitive }] }, ", and verbs that take both with a change of meaning."]
+    uk: ["Дієслова з формою на -ing, дієслова з ", { pattern: [to, { slot: infinitive }] }, " і дієслова, що вживаються з обома формами зі зміною значення."]
+    es: ["Verbos seguidos de -ing, verbos seguidos de ", { pattern: [to, { slot: infinitive }] }, " y verbos que admiten ambas formas con un cambio de significado."]
+  rule:
+    en: "The verb before decides the form:"
+    uk: "Форму визначає попереднє дієслово:"
+    es: "El verbo anterior decide la forma:"
   ex: { examples: [["I ", { target: enjoy cooking }], ["I ", { target: want to cook }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: form, label: { en: Form } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: B1, form: { pattern: [{ slot: verb }, { slot: "-ing" }] }, rule: { en: "after enjoy, finish, mind, avoid, suggest" }, ex: ["I ", { target: enjoy cooking }, "."] }
-        - { level: B1, form: { pattern: [{ slot: verb }, to, { slot: V }] }, rule: { en: "after want, decide, hope, plan, need" }, ex: ["They ", { target: decided to move }, "."] }
-        - { level: B1, form: { pattern: [{ alternatives: [want, need, would like] }, { slot: person }, to, { slot: V }] }, rule: { en: a person can come before to }, ex: ["I ", { target: want you to come }, "."] }
-        - { level: B1, form: { pattern: [{ slot: { en: preposition } }, { slot: "-ing" }] }, rule: { en: "after a preposition: interested in, before, without" }, ex: ["Wash your hands ", { target: before eating }, "."] }
-        - { level: B1, form: { en: [{ term: "-ing" }, " as the subject"] }, rule: { en: the -ing form works as a noun }, ex: [{ target: Swimming }, " is good for you."] }
-        - { level: B1, form: { pattern: [look forward to, { slot: "-ing" }] }, rule: { en: [{ term: to }, " is a preposition here"] }, ex: ["I look forward to ", { target: seeing }, " you."] }
-        - { level: B1, form: { pattern: [stop, { alternatives: [{ slot: "-ing" }, { pattern: [to, { slot: V }] }] }] }, rule: { en: [{ term: "-ing" }, " means he quit; ", { term: to }, " means he paused in order to smoke"] }, ex: { examples: [["He ", { target: stopped smoking }, "."], ["He ", { target: stopped to smoke }, "."]] } }
-        - { level: B1, form: { pattern: [remember, { alternatives: [{ slot: "-ing" }, { pattern: [to, { slot: V }] }] }] }, rule: { en: [{ term: "-ing" }, " recalls the action; ", { term: to }, " means do not forget"] }, ex: { examples: [["I ", { target: remember locking }, " it."], [{ target: Remember to lock }, " it."]] } }
-        - { level: B1, form: { pattern: [try, { alternatives: [{ slot: "-ing" }, { pattern: [to, { slot: V }] }] }] }, rule: { en: [{ term: "-ing" }, " tests it; ", { term: to }, " makes an effort"] }, ex: { examples: [[{ target: Try adding }, " salt."], ["I ", { target: tried to open }, " it."]] } }
-        - { level: B1, form: { en: Either form }, rule: { en: "like, love, hate, prefer: almost the same meaning" }, ex: { examples: [["I ", { target: like }, " swimming."], ["I ", { target: like }, " to swim."]] } }
+        - { level: B1, form: { pattern: [{ slot: verb }, { slot: "-ing" }] }, rule: { en: "after enjoy, finish, mind, avoid, suggest", uk: "після enjoy, finish, mind, avoid, suggest", es: "después de enjoy, finish, mind, avoid, suggest" }, ex: ["I ", { target: enjoy cooking }, "."], tr: { uk: "Мені подобається готувати.", es: "Disfruto cocinando." } }
+        - { level: B1, form: { pattern: [{ slot: verb }, to, { slot: V }] }, rule: { en: "after want, decide, hope, plan, need", uk: "після want, decide, hope, plan, need", es: "después de want, decide, hope, plan, need" }, ex: ["They ", { target: decided to move }, "."], tr: { uk: "Вони вирішили переїхати.", es: "Decidieron mudarse." } }
+        - { level: B1, form: { pattern: [{ alternatives: [want, need, would like] }, { slot: person }, to, { slot: V }] }, rule: { en: a person can come before to, uk: "перед to може стояти особа", es: "una persona puede ir antes de to" }, ex: ["I ", { target: want you to come }, "."], tr: { uk: "Я хочу, щоб ти прийшов.", es: "Quiero que vengas." } }
+        - { level: B1, form: { pattern: [{ slot: { en: preposition, uk: "прийменник", es: "preposición" } }, { slot: "-ing" }] }, rule: { en: "after a preposition: interested in, before, without", uk: "після прийменника: interested in, before, without", es: "después de una preposición: interested in, before, without" }, ex: ["Wash your hands ", { target: before eating }, "."], tr: { uk: "Мий руки перед їжею.", es: "Lávate las manos antes de comer." } }
+        - { level: B1, form: { en: [{ term: "-ing" }, " as the subject"], uk: [{ term: "-ing" }, " як підмет"], es: [{ term: "-ing" }, " como sujeto"] }, rule: { en: the -ing form works as a noun, uk: "форма на -ing виконує роль іменника", es: "la forma en -ing funciona como sustantivo" }, ex: [{ target: Swimming }, " is good for you."], tr: { uk: "Плавання корисне для тебе.", es: "Nadar es bueno para ti." } }
+        - { level: B1, form: { pattern: [look forward to, { slot: "-ing" }] }, rule: { en: [{ term: to }, " is a preposition here"], uk: [{ term: to }, " тут — прийменник"], es: [{ term: to }, " aquí es una preposición"] }, ex: ["I look forward to ", { target: seeing }, " you."], tr: { uk: "Я з нетерпінням чекаю зустрічі з тобою.", es: "Tengo muchas ganas de verte." } }
+        - { level: B1, form: { pattern: [stop, { alternatives: [{ slot: "-ing" }, { pattern: [to, { slot: V }] }] }] }, rule: { en: [{ term: "-ing" }, " means he quit; ", { term: to }, " means he paused in order to smoke"], uk: [{ term: "-ing" }, " означає, що він кинув; ", { term: to }, " означає, що він зупинився, щоб покурити"], es: [{ term: "-ing" }, " significa que lo dejó; ", { term: to }, " significa que se detuvo para fumar"] }, ex: { examples: [["He ", { target: stopped smoking }, "."], ["He ", { target: stopped to smoke }, "."]] }, tr: { uk: { examples: ["Він кинув курити.", "Він зупинився, щоб покурити."] }, es: { examples: ["Dejó de fumar.", "Se detuvo para fumar."] } } }
+        - { level: B1, form: { pattern: [remember, { alternatives: [{ slot: "-ing" }, { pattern: [to, { slot: V }] }] }] }, rule: { en: [{ term: "-ing" }, " recalls the action; ", { term: to }, " means do not forget"], uk: [{ term: "-ing" }, " означає пам’ятати про минулу дію; ", { term: to }, " означає не забути"], es: [{ term: "-ing" }, " significa recordar la acción; ", { term: to }, " significa no olvidar"] }, ex: { examples: [["I ", { target: remember locking }, " it."], [{ target: Remember to lock }, " it."]] }, tr: { uk: { examples: ["Я пам’ятаю, що замкнув його.", "Не забудь замкнути його."] }, es: { examples: ["Recuerdo haberlo cerrado con llave.", "Acuérdate de cerrarlo con llave."] } } }
+        - { level: B1, form: { pattern: [try, { alternatives: [{ slot: "-ing" }, { pattern: [to, { slot: V }] }] }] }, rule: { en: [{ term: "-ing" }, " tests it; ", { term: to }, " makes an effort"], uk: [{ term: "-ing" }, " означає спробувати, що вийде; ", { term: to }, " означає докласти зусиль"], es: [{ term: "-ing" }, " significa probar algo; ", { term: to }, " significa hacer un esfuerzo"] }, ex: { examples: [[{ target: Try adding }, " salt."], ["I ", { target: tried to open }, " it."]] }, tr: { uk: { examples: ["Спробуй додати солі.", "Я намагався його відчинити."] }, es: { examples: ["Prueba a añadir sal.", "Intenté abrirlo."] } } }
+        - { level: B1, form: { en: Either form, uk: "Обидві форми", es: "Ambas formas" }, rule: { en: "like, love, hate, prefer: almost the same meaning", uk: "like, love, hate, prefer: значення майже однакове", es: "like, love, hate, prefer: casi el mismo significado" }, ex: { examples: [["I ", { target: like }, " swimming."], ["I ", { target: like }, " to swim."]] }, tr: { uk: { examples: ["Мені подобається плавати.", "Я люблю плавати."] }, es: { examples: ["Me gusta nadar.", "Me gusta nadar."] } } }
 
 sections:
-  - title: { en: ["Form: ", { pattern: [{ slot: verb }, { slot: "-ing" }] }] }
+  - title: { en: ["Form: ", { pattern: [{ slot: verb }, { slot: "-ing" }] }], uk: ["Форма: ", { pattern: [{ slot: verb }, { slot: "-ing" }] }], es: ["Forma: ", { pattern: [{ slot: verb }, { slot: "-ing" }] }] }
     role: form
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Verb } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, verb: enjoy, ex: ["I ", { target: enjoy cooking }, "."] }
-          - { level: B1, verb: finish, ex: ["She ", { target: finished reading }, " the book."] }
-          - { level: B1, verb: mind, ex: ["Do you ", { target: mind waiting }, "?"] }
-          - { level: B1, verb: avoid, ex: ["He ", { target: avoids driving }, " at night."] }
-          - { level: B1, verb: suggest, ex: ["I ", { target: suggest taking }, " a taxi."] }
-          - { level: B1, verb: keep, ex: ["She ", { target: keeps asking }, " questions."] }
-          - { level: B1, verb: "practise, consider, can't stand", ex: ["I ", { target: can't stand waiting }, "."] }
+          - { level: B1, verb: enjoy, ex: ["I ", { target: enjoy cooking }, "."], tr: { uk: "Мені подобається готувати.", es: "Disfruto cocinando." } }
+          - { level: B1, verb: finish, ex: ["She ", { target: finished reading }, " the book."], tr: { uk: "Вона дочитала книжку.", es: "Ella terminó de leer el libro." } }
+          - { level: B1, verb: mind, ex: ["Do you ", { target: mind waiting }, "?"], tr: { uk: "Ти не заперечуєш почекати?", es: "¿Te importa esperar?" } }
+          - { level: B1, verb: avoid, ex: ["He ", { target: avoids driving }, " at night."], tr: { uk: "Він уникає водіння вночі.", es: "Evita conducir de noche." } }
+          - { level: B1, verb: suggest, ex: ["I ", { target: suggest taking }, " a taxi."], tr: { uk: "Я пропоную взяти таксі.", es: "Sugiero tomar un taxi." } }
+          - { level: B1, verb: keep, ex: ["She ", { target: keeps asking }, " questions."], tr: { uk: "Вона не перестає ставити питання.", es: "Ella sigue haciendo preguntas." } }
+          - { level: B1, verb: "practise, consider, can't stand", ex: ["I ", { target: can't stand waiting }, "."], tr: { uk: "Я терпіти не можу чекати.", es: "No soporto esperar." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["These verbs are followed by ", { term: "-ing" }, ":"]
+              uk: ["Після цих дієслів стоїть ", { term: "-ing" }, ":"]
+              es: ["Estos verbos van seguidos de ", { term: "-ing" }, ":"]
             ex: ["I enjoy ", { target: cooking }, "."]
+            tr: { uk: "Мені подобається готувати.", es: "Disfruto cocinando." }
 
-  - title: { en: ["Form: ", { pattern: [{ slot: verb }, to, { slot: infinitive }] }] }
+  - title: { en: ["Form: ", { pattern: [{ slot: verb }, to, { slot: infinitive }] }], uk: ["Форма: ", { pattern: [{ slot: verb }, to, { slot: infinitive }] }], es: ["Forma: ", { pattern: [{ slot: verb }, to, { slot: infinitive }] }] }
     role: form
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Verb } }
-          - { key: ex, label: { en: Example } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, verb: want, ex: ["I ", { target: want to go }, " home."] }
-          - { level: B1, verb: decide, ex: ["They ", { target: decided to move }, "."] }
-          - { level: B1, verb: hope, ex: ["We ", { target: hope to see }, " you soon."] }
-          - { level: B1, verb: plan, ex: ["He ", { target: plans to study }, " abroad."] }
-          - { level: B1, verb: need, ex: ["You ", { target: need to rest }, "."] }
-          - { level: B1, verb: { alternatives: [would like, would love] }, ex: [I', { target: d like to book }, " a table."] }
-          - { level: B1, verb: "learn, agree, promise, manage", ex: ["She ", { target: learned to swim }, "."] }
+          - { level: B1, verb: want, ex: ["I ", { target: want to go }, " home."], tr: { uk: "Я хочу піти додому.", es: "Quiero irme a casa." } }
+          - { level: B1, verb: decide, ex: ["They ", { target: decided to move }, "."], tr: { uk: "Вони вирішили переїхати.", es: "Decidieron mudarse." } }
+          - { level: B1, verb: hope, ex: ["We ", { target: hope to see }, " you soon."], tr: { uk: "Сподіваємося скоро тебе побачити.", es: "Esperamos verte pronto." } }
+          - { level: B1, verb: plan, ex: ["He ", { target: plans to study }, " abroad."], tr: { uk: "Він планує навчатися за кордоном.", es: "Planea estudiar en el extranjero." } }
+          - { level: B1, verb: need, ex: ["You ", { target: need to rest }, "."], tr: { uk: "Тобі потрібно відпочити.", es: "Necesitas descansar." } }
+          - { level: B1, verb: { alternatives: [would like, would love] }, ex: [I', { target: d like to book }, " a table."], tr: { uk: "Я хотів би забронювати столик.", es: "Quisiera reservar una mesa." } }
+          - { level: B1, verb: "learn, agree, promise, manage", ex: ["She ", { target: learned to swim }, "."], tr: { uk: "Вона навчилася плавати.", es: "Aprendió a nadar." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["These verbs are followed by ", { pattern: [{ term: to }, { slot: base verb }] }, "."]
+              uk: ["Після цих дієслів стоїть ", { pattern: [{ term: to }, { slot: base verb }] }, "."]
+              es: ["Estos verbos van seguidos de ", { pattern: [{ term: to }, { slot: base verb }] }, "."]
           - type: rule
             level: B1
             text:
               en: ["With ", { term: want }, ", ", { term: need }, " and ", { term: would like }, ", a person can come before ", { term: to }, ":"]
+              uk: ["Після ", { term: want }, ", ", { term: need }, " і ", { term: would like }, " перед ", { term: to }, " може стояти особа:"]
+              es: ["Con ", { term: want }, ", ", { term: need }, " y ", { term: would like }, ", puede haber una persona antes de ", { term: to }, ":"]
             ex: ["I ", { target: want you to come }, "."]
+            tr: { uk: "Я хочу, щоб ти прийшов.", es: "Quiero que vengas." }
 
-  - title: { en: "Form: after prepositions and as subject" }
+  - title: { en: "Form: after prepositions and as subject", uk: "Форма: після прийменників і як підмет", es: "Forma: después de preposiciones y como sujeto" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Position } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Position, uk: "Місце", es: "Posición" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: B1, use: { en: after a preposition }, ex: ["I'm interested ", { target: in learning }, " Spanish."] }
-          - { level: B1, use: { en: after a preposition }, ex: ["Wash your hands ", { target: before eating }, "."] }
-          - { level: B1, use: { en: after a preposition }, ex: ["She left ", { target: without saying }, " goodbye."] }
-          - { level: B1, use: { en: as the subject }, ex: [{ target: Swimming }, " is good for you."] }
-          - { level: B1, use: { en: after look forward to }, ex: ["I look forward to ", { target: seeing }, " you."] }
+          - { level: B1, use: { en: after a preposition, uk: "після прийменника", es: "después de una preposición" }, ex: ["I'm interested ", { target: in learning }, " Spanish."], tr: { uk: "Я цікавлюся вивченням іспанської.", es: "Me interesa aprender español." } }
+          - { level: B1, use: { en: after a preposition, uk: "після прийменника", es: "después de una preposición" }, ex: ["Wash your hands ", { target: before eating }, "."], tr: { uk: "Мий руки перед їжею.", es: "Lávate las manos antes de comer." } }
+          - { level: B1, use: { en: after a preposition, uk: "після прийменника", es: "después de una preposición" }, ex: ["She left ", { target: without saying }, " goodbye."], tr: { uk: "Вона пішла, не попрощавшись.", es: "Se fue sin decir adiós." } }
+          - { level: B1, use: { en: as the subject, uk: "як підмет", es: "como sujeto" }, ex: [{ target: Swimming }, " is good for you."], tr: { uk: "Плавання корисне для тебе.", es: "Nadar es bueno para ti." } }
+          - { level: B1, use: { en: after look forward to, uk: "після look forward to", es: "después de look forward to" }, ex: ["I look forward to ", { target: seeing }, " you."], tr: { uk: "Я з нетерпінням чекаю зустрічі з тобою.", es: "Tengo muchas ganas de verte." } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: ["A verb after a preposition takes ", { term: "-ing" }, "."]
+              uk: ["Дієслово після прийменника має форму ", { term: "-ing" }, "."]
+              es: ["Un verbo después de una preposición lleva ", { term: "-ing" }, "."]
           - type: rule
             level: B1
             text:
               en: ["In ", { term: look forward to }, ", ", { term: to }, " is a preposition, so ", { term: "-ing" }, " follows."]
+              uk: ["У ", { term: look forward to }, " слово ", { term: to }, " — прийменник, тому далі стоїть ", { term: "-ing" }, "."]
+              es: ["En ", { term: look forward to }, ", ", { term: to }, " es una preposición, por eso sigue ", { term: "-ing" }, "."]
           - type: rule
             level: B1
             text:
               en: The -ing form works as a noun and can be the subject.
+              uk: "Форма на -ing виконує роль іменника і може бути підметом."
+              es: "La forma en -ing funciona como sustantivo y puede ser el sujeto."
 
-  - title: { en: Verbs with both forms }
+  - title: { en: Verbs with both forms, uk: "Дієслова з обома формами", es: "Verbos con ambas formas" }
     role: own
     content:
       - type: comparison
         columns:
-          - { key: verb, label: { en: Verb } }
-          - { key: ing, label: { en: { pattern: [{ slot: "-ing" }], follows: true } }, features: { verbform: ger } }
-          - { key: to, label: { en: { pattern: [to, { slot: infinitive }], follows: true } }, features: { verbform: inf } }
+          - { key: verb, label: { en: Verb, uk: "Дієслово", es: "Verbo" } }
+          - { key: ing, label: { en: { pattern: [{ slot: "-ing" }], follows: true }, uk: { pattern: [{ slot: "-ing" }], follows: true }, es: { pattern: [{ slot: "-ing" }], follows: true } }, features: { verbform: ger } }
+          - { key: to, label: { en: { pattern: [to, { slot: infinitive }], follows: true }, uk: { pattern: [to, { slot: infinitive }], follows: true }, es: { pattern: [to, { slot: infinitive }], follows: true } }, features: { verbform: inf } }
         rows:
-          - { level: B1, verb: stop, ing: ["He ", { target: stopped smoking }, ". ", { gloss: { en: He quit. } }], to: ["He ", { target: stopped to smoke }, ". ", { gloss: { en: He paused in order to smoke. } }] }
-          - { level: B1, verb: remember, ing: ["I ", { target: remember locking }, " the door. ", { gloss: { en: I recall the action. } }], to: [{ target: Remember to lock }, " the door. ", { gloss: { en: Do not forget. } }] }
-          - { level: B1, verb: try, ing: [{ target: Try adding }, " salt. ", { gloss: { en: Test it. } }], to: ["I ", { target: tried to open }, " it. ", { gloss: { en: I made an effort. } }] }
+          - { level: B1, verb: stop, ing: { ex: ["He ", { target: stopped smoking }, ". ", { gloss: { en: He quit., uk: "Він кинув.", es: "Lo dejó." } }], tr: { uk: "Він перестав курити.", es: "Dejó de fumar." } }, to: { ex: ["He ", { target: stopped to smoke }, ". ", { gloss: { en: He paused in order to smoke., uk: "Він зробив паузу, щоб покурити.", es: "Hizo una pausa para fumar." } }], tr: { uk: "Він зупинився, щоб покурити.", es: "Se paró a fumar." } } }
+          - { level: B1, verb: remember, ing: { ex: ["I ", { target: remember locking }, " the door. ", { gloss: { en: I recall the action., uk: "Я пригадую цю дію.", es: "Recuerdo la acción." } }], tr: { uk: "Я пам’ятаю, що замкнув двері.", es: "Recuerdo haber cerrado la puerta con llave." } }, to: { ex: [{ target: Remember to lock }, " the door. ", { gloss: { en: Do not forget., uk: "Не забудь.", es: "No lo olvides." } }], tr: { uk: "Не забудь замкнути двері.", es: "Acuérdate de cerrar la puerta con llave." } } }
+          - { level: B1, verb: try, ing: { ex: [{ target: Try adding }, " salt. ", { gloss: { en: Test it., uk: "Перевір, що вийде.", es: "Prueba a ver qué pasa." } }], tr: { uk: "Спробуй додати солі.", es: "Prueba a añadir sal." } }, to: { ex: ["I ", { target: tried to open }, " it. ", { gloss: { en: I made an effort., uk: "Я доклав зусиль.", es: "Hice un esfuerzo." } }], tr: { uk: "Я намагався це відчинити.", es: "Intenté abrirlo." } } }
       - type: list
         items:
           - type: rule
             level: B1
             text:
               en: [{ term: like }, ", ", { term: love }, ", ", { term: hate }, " and ", { term: prefer }, " take either form, with almost the same meaning."]
+              uk: [{ term: like }, ", ", { term: love }, ", ", { term: hate }, " і ", { term: prefer }, " можуть мати будь-яку з двох форм, значення майже однакове."]
+              es: [{ term: like }, ", ", { term: love }, ", ", { term: hate }, " y ", { term: prefer }, " admiten cualquiera de las dos formas, con casi el mismo significado."]
           - type: rule
             level: B1
             text:
               en: { examples: [["I ", { target: like }, " swimming."], ["I ", { target: like }, " to swim."]] }
+              uk: { examples: [["I ", { target: like }, " swimming."], ["I ", { target: like }, " to swim."]] }
+              es: { examples: [["I ", { target: like }, " swimming."], ["I ", { target: like }, " to swim."]] }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: B1, wrong: I enjoy to cook., right: ["I enjoy ", { target: cooking }, "."], rule: { en: { takes: ["enjoy, finish, mind, avoid, suggest, keep", "-ing"] } } }
-          - { level: B1, wrong: She decided going home., right: ["She decided ", { target: to go }, " home."], rule: { en: { takes: ["want, decide, hope, plan, need", { pattern: [to, { slot: infinitive }] }] } } }
-          - { level: B1, wrong: I'm interested in learn Spanish., right: ["I'm interested in ", { target: learning }, " Spanish."], rule: { en: { takes: [after a preposition, "-ing"] } } }
-          - { level: B1, wrong: He suggested to go by train., right: ["He suggested ", { target: going }, " by train."], rule: { en: { pattern: [suggest, { slot: "-ing" }] } } }
-          - { level: B1, wrong: I look forward to see you., right: ["I look forward to ", { target: seeing }, " you."], rule: { en: { takes: [to is a preposition here, "-ing"] } } }
+          - { level: B1, wrong: I enjoy to cook., right: ["I enjoy ", { target: cooking }, "."], rule: { en: { takes: ["enjoy, finish, mind, avoid, suggest, keep", "-ing"] }, uk: { takes: ["enjoy, finish, mind, avoid, suggest, keep", "-ing"] }, es: { takes: ["enjoy, finish, mind, avoid, suggest, keep", "-ing"] } } }
+          - { level: B1, wrong: She decided going home., right: ["She decided ", { target: to go }, " home."], rule: { en: { takes: ["want, decide, hope, plan, need", { pattern: [to, { slot: infinitive }] }] }, uk: { takes: ["want, decide, hope, plan, need", { pattern: [to, { slot: infinitive }] }] }, es: { takes: ["want, decide, hope, plan, need", { pattern: [to, { slot: infinitive }] }] } } }
+          - { level: B1, wrong: I'm interested in learn Spanish., right: ["I'm interested in ", { target: learning }, " Spanish."], rule: { en: { takes: [after a preposition, "-ing"] }, uk: { takes: ["після прийменника", "-ing"] }, es: { takes: ["después de una preposición", "-ing"] } } }
+          - { level: B1, wrong: He suggested to go by train., right: ["He suggested ", { target: going }, " by train."], rule: { en: { pattern: [suggest, { slot: "-ing" }] }, uk: { pattern: [suggest, { slot: "-ing" }] }, es: { pattern: [suggest, { slot: "-ing" }] } } }
+          - { level: B1, wrong: I look forward to see you., right: ["I look forward to ", { target: seeing }, " you."], rule: { en: { takes: [to is a preposition here, "-ing"] }, uk: { takes: ["to тут — прийменник", "-ing"] }, es: { takes: ["to aquí es una preposición", "-ing"] } } }

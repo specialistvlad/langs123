@@ -5,32 +5,38 @@ kind: grammar
 tags: [verbs, there-is, existence]
 concepts: [existence]
 related: [en.verbs.to-be, en.nouns-determiners.countable-uncountable, en.nouns-determiners.quantifiers-some-any-much-many, en.prepositions.place-movement, en.sentence-building.questions-negatives]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: There Is and There Are }
+title: { en: There Is and There Are, uk: There is і there are, es: There is y there are }
 summary:
-  lead: { en: ["There is and there are say that something exists or is in a place, with ", { alternatives: [a, some, any, numbers] }, "."] }
-  rule: { en: "There is goes with singular and uncountable nouns, there are with plural nouns:" }
+  lead:
+    en: ["There is and there are say that something exists or is in a place, with ", { alternatives: [a, some, any, numbers] }, "."]
+    uk: ["There is і there are показують, що щось існує або є в певному місці; далі стоять ", { alternatives: [a, some, any, "числівник"] }, "."]
+    es: ["There is y there are indican que algo existe o está en un lugar, con ", { alternatives: [a, some, any, "números"] }, "."]
+  rule:
+    en: "There is goes with singular and uncountable nouns, there are with plural nouns:"
+    uk: "There is вживається з іменниками в однині та незлічуваними, there are — з іменниками в множині:"
+    es: "There is va con sustantivos singulares e incontables, there are con sustantivos plurales:"
   ex: { examples: [[{ target: There is }, " a park."], [{ target: There are }, " two beds."]] }
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: form, label: { en: Form } }
-        - { key: singular, label: { en: Singular }, features: { number: sg, countability: count } }
-        - { key: plural, label: { en: Plural }, features: { number: pl } }
-        - { key: uncountable, label: { en: Uncountable }, features: { countability: mass } }
+        - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+        - { key: singular, label: { en: Singular, uk: "Однина", es: "Singular" }, features: { number: sg, countability: count } }
+        - { key: plural, label: { en: Plural, uk: "Множина", es: "Plural" }, features: { number: pl } }
+        - { key: uncountable, label: { en: Uncountable, uk: "Незлічувані", es: "Incontables" }, features: { countability: mass } }
       rows:
-        - { level: A1, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative }, singular: ["There ", { target: is }, " a park."], plural: ["There ", { target: are }, " two parks."], uncountable: ["There ", { target: is }, " some milk."] }
-        - { level: A1, features: { polarity: pos, interrogativity: decl, contraction: short }, form: { en: Short form }, singular: [There', { target: s }, " a park."], uncountable: [There', { target: s }, " some milk."] }
-        - { level: A1, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, singular: ["There ", { target: isn't }, " a park."], plural: ["There ", { target: aren't }, " any parks."], uncountable: ["There ", { target: isn't }, " any milk."] }
-        - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: Question }, singular: [{ target: Is there }, " a park?"], plural: [{ target: Are there }, " any parks?"], uncountable: [{ target: Is there }, " any milk?"] }
-        - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: "How many, how much" }, plural: ["How many parks ", { target: are there }, "?"], uncountable: ["How much milk ", { target: is there }, "?"] }
-        - { level: A1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer }, singular: { alternatives: [["Yes, there ", { target: is }, "."], ["No, there ", { target: isn't }, "."]] }, plural: { alternatives: [["Yes, there ", { target: are }, "."], ["No, there ", { target: aren't }, "."]] }, uncountable: { alternatives: [["Yes, there ", { target: is }, "."], ["No, there ", { target: isn't }, "."]] } }
+        - { level: A1, features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: "Ствердження", es: "Afirmación" }, singular: ["There ", { target: is }, " a park."], plural: ["There ", { target: are }, " two parks."], uncountable: ["There ", { target: is }, " some milk."] }
+        - { level: A1, features: { polarity: pos, interrogativity: decl, contraction: short }, form: { en: Short form, uk: "Скорочена форма", es: "Forma contraída" }, singular: [There', { target: s }, " a park."], uncountable: [There', { target: s }, " some milk."] }
+        - { level: A1, features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: "Заперечення", es: "Negación" }, singular: ["There ", { target: isn't }, " a park."], plural: ["There ", { target: aren't }, " any parks."], uncountable: ["There ", { target: isn't }, " any milk."] }
+        - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: "Питання", es: "Pregunta" }, singular: [{ target: Is there }, " a park?"], plural: [{ target: Are there }, " any parks?"], uncountable: [{ target: Is there }, " any milk?"] }
+        - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: "How many, how much", uk: "How many, how much", es: "How many, how much" }, plural: ["How many parks ", { target: are there }, "?"], uncountable: ["How much milk ", { target: is there }, "?"] }
+        - { level: A1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta" }, singular: { alternatives: [["Yes, there ", { target: is }, "."], ["No, there ", { target: isn't }, "."]] }, plural: { alternatives: [["Yes, there ", { target: are }, "."], ["No, there ", { target: aren't }, "."]] }, uncountable: { alternatives: [["Yes, there ", { target: is }, "."], ["No, there ", { target: isn't }, "."]] } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -39,82 +45,97 @@ sections:
             level: A1
             text:
               en: [{ term: there }, " is the subject. The verb ", { term: be }, " agrees with the noun that follows."]
+              uk: [{ term: there }, " — підмет. Дієслово ", { term: be }, " узгоджується з іменником, що стоїть після нього."]
+              es: [{ term: there }, " es el sujeto. El verbo ", { term: be }, " concuerda con el sustantivo que sigue."]
 
-  - title: { en: "Form: affirmative" }
+  - title: { en: "Form: affirmative", uk: "Форма: ствердження", es: "Forma: afirmativa" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: noun, label: { en: Noun } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: noun, label: { en: Noun, uk: "Іменник", es: "Sustantivo" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, features: { number: sg, countability: count }, noun: { en: singular countable }, form: { pattern: [{ alternatives: [there is, there's] }, { alternatives: [a, an] }] }, ex: [There', { target: s }, " a cat in the garden."] }
-          - { level: A1, features: { number: pl }, noun: { en: plural }, form: { pattern: [there are, { alternatives: [some, number] }] }, ex: ["There ", { target: are }, " three chairs."] }
-          - { level: A1, features: { countability: mass }, noun: { en: uncountable }, form: { pattern: [there is, some] }, ex: ["There ", { target: is }, " some milk."] }
+          - { level: A1, features: { number: sg, countability: count }, noun: { en: singular countable, uk: "злічуваний в однині", es: "contable en singular" }, form: { pattern: [{ alternatives: [there is, there's] }, { alternatives: [a, an] }] }, ex: [There', { target: s }, " a cat in the garden."] }
+          - { level: A1, features: { number: pl }, noun: { en: plural, uk: "множина", es: "plural" }, form: { pattern: [there are, { alternatives: [some, { slot: number }] }] }, ex: ["There ", { target: are }, " three chairs."] }
+          - { level: A1, features: { countability: mass }, noun: { en: uncountable, uk: "незлічуваний", es: "incontable" }, form: { pattern: [there is, some] }, ex: ["There ", { target: is }, " some milk."] }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["Speech and messages use the short form ", { term: there's }, ". ", { term: there are }, " has no short form."]
+              uk: ["У мовленні й повідомленнях уживають скорочену форму ", { term: there's }, ". У ", { term: there are }, " скороченої форми немає."]
+              es: ["En el habla y en los mensajes se usa la forma contraída ", { term: there's }, ". ", { term: there are }, " no tiene forma contraída."]
           - type: rule
             level: A1
             text:
               en: "A list takes the verb of the first noun:"
+              uk: "У переліку дієслово узгоджується з першим іменником:"
+              es: "En una enumeración, el verbo concuerda con el primer sustantivo:"
             ex: ["There ", { target: is }, " a bed and two chairs."]
+            tr: { uk: "Є ліжко й два стільці.", es: "Hay una cama y dos sillas." }
 
-  - title: { en: "Form: negative" }
+  - title: { en: "Form: negative", uk: "Форма: заперечення", es: "Forma: negativa" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: noun, label: { en: Noun } }
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: noun, label: { en: Noun, uk: "Іменник", es: "Sustantivo" } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, features: { number: sg, countability: count }, noun: { en: singular countable }, form: { pattern: [there isn't, { alternatives: [a, an] }] }, ex: ["There ", { target: isn't }, " a bank here."] }
-          - { level: A1, features: { number: pl }, noun: { en: plural }, form: { pattern: [there aren't, any] }, ex: ["There ", { target: aren't any }, " shops."] }
-          - { level: A1, features: { countability: mass }, noun: { en: uncountable }, form: { pattern: [there isn't, any] }, ex: ["There ", { target: isn't any }, " water."] }
+          - { level: A1, features: { number: sg, countability: count }, noun: { en: singular countable, uk: "злічуваний в однині", es: "contable en singular" }, form: { pattern: [there isn't, { alternatives: [a, an] }] }, ex: ["There ", { target: isn't }, " a bank here."] }
+          - { level: A1, features: { number: pl }, noun: { en: plural, uk: "множина", es: "plural" }, form: { pattern: [there aren't, any] }, ex: ["There ", { target: aren't any }, " shops."] }
+          - { level: A1, features: { countability: mass }, noun: { en: uncountable, uk: "незлічуваний", es: "incontable" }, form: { pattern: [there isn't, any] }, ex: ["There ", { target: isn't any }, " water."] }
 
-  - title: { en: "Form: questions" }
+  - title: { en: "Form: questions", uk: "Форма: питання", es: "Forma: preguntas" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form } }
-          - { key: ex, label: { en: Example } }
+          - { key: form, label: { en: Form, uk: "Форма", es: "Forma" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, form: { pattern: [Is there, { alternatives: [a, any] }] }, ex: [{ target: Is there }, " a bank near here?"] }
-          - { level: A1, form: { pattern: [Are there, any] }, ex: [{ target: Are there any }, " shops?"] }
-          - { level: A1, form: ["How many ", { gap: true }, " are there?"], ex: ["How many people ", { target: are there }, "?"] }
-          - { level: A1, form: ["How much ", { gap: true }, " is there?"], ex: ["How much milk ", { target: is there }, "?"] }
-          - { level: A1, form: ["What is there ", { gap: true }, "?"], ex: [What', { target: s there }, " in the fridge?"] }
+          - { level: A1, form: { pattern: [Is there, { alternatives: [a, any] }] }, ex: [{ target: Is there }, " a bank near here?"], tr: { uk: "Чи є тут поблизу банк?", es: "¿Hay un banco cerca de aquí?" } }
+          - { level: A1, form: { pattern: [Are there, any] }, ex: [{ target: Are there any }, " shops?"], tr: { uk: "Чи є тут магазини?", es: "¿Hay tiendas?" } }
+          - { level: A1, form: ["How many ", { gap: true }, " are there?"], ex: ["How many people ", { target: are there }, "?"], tr: { uk: "Скільки там людей?", es: "¿Cuántas personas hay?" } }
+          - { level: A1, form: ["How much ", { gap: true }, " is there?"], ex: ["How much milk ", { target: is there }, "?"], tr: { uk: "Скільки є молока?", es: "¿Cuánta leche hay?" } }
+          - { level: A1, form: ["What is there ", { gap: true }, "?"], ex: [What', { target: s there }, " in the fridge?"], tr: { uk: "Що є в холодильнику?", es: "¿Qué hay en el refrigerador?" } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: ["A question puts ", { term: be }, " before ", { term: there }, ":"]
+              uk: ["У питанні ", { term: be }, " стоїть перед ", { term: there }, ":"]
+              es: ["En una pregunta, ", { term: be }, " va delante de ", { term: there }, ":"]
             ex: { mapping: [There is, [{ target: Is there }, { gap: true }, "?"]] }
+            tr: { uk: "Є … — Чи є …?", es: "Hay … — ¿Hay …?" }
           - type: rule
             level: A1
             text:
               en: [{ term: How many }, " goes with plural nouns, ", { term: how much }, " with uncountable nouns."]
+              uk: [{ term: How many }, " вживається з іменниками в множині, ", { term: how much }, " — з незлічуваними."]
+              es: [{ term: How many }, " va con sustantivos plurales, ", { term: how much }, " con sustantivos incontables."]
           - type: rule
             level: A1
             text:
               en: ["A ", { alternatives: [how many, how much] }, " question ends with ", { term: there }, ":"]
+              uk: ["Питання з ", { alternatives: [how many, how much] }, " закінчується словом ", { term: there }, ":"]
+              es: ["Una pregunta con ", { alternatives: [how many, how much] }, " termina en ", { term: there }, ":"]
             ex: ["How many people are ", { target: there }, "?"]
+            tr: { uk: "Скільки там людей?", es: "¿Cuántas personas hay?" }
 
-  - title: { en: "Form: short answers" }
+  - title: { en: "Form: short answers", uk: "Форма: короткі відповіді", es: "Forma: respuestas cortas" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: question, label: { en: Question } }
-          - { key: "yes", label: { en: "Yes" }, features: { polarity: pos } }
-          - { key: "no", label: { en: "No" }, features: { polarity: neg } }
+          - { key: question, label: { en: Question, uk: "Питання", es: "Pregunta" } }
+          - { key: "yes", label: { en: "Yes", uk: "Так", es: "Sí" }, features: { polarity: pos } }
+          - { key: "no", label: { en: "No", uk: "Ні", es: "No" }, features: { polarity: neg } }
         rows:
           - { level: A1, question: Is there a bank here?, "yes": ["Yes, there ", { target: is }, "."], "no": ["No, there ", { target: isn't }, "."] }
           - { level: A1, question: Are there any shops?, "yes": ["Yes, there ", { target: are }, "."], "no": ["No, there ", { target: aren't }, "."] }
@@ -124,76 +145,88 @@ sections:
             level: A1
             text:
               en: "A positive short answer has the full form:"
+              uk: "Стверджувальна коротка відповідь має повну форму:"
+              es: "Una respuesta corta afirmativa lleva la forma completa:"
             ex: ["Yes, there ", { target: is }, "."]
+            tr: { uk: "Так, є.", es: "Sí, hay." }
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, use: { en: Say that something exists }, ex: ["There ", { target: is }, " a cinema in my town."] }
-          - { level: A1, use: { en: Say what is in a place }, ex: ["There ", { target: are }, " two beds in the room."] }
-          - { level: A1, use: { en: Describe a room or a town }, ex: ["There ", { target: is }, " a big park near the station."] }
-          - { level: A1, use: { en: Ask about places and things }, ex: [{ target: Is there }, " a toilet here?"] }
+          - { level: A1, use: { en: Say that something exists, uk: "Сказати, що щось існує", es: "Decir que algo existe" }, ex: ["There ", { target: is }, " a cinema in my town."], tr: { uk: "У моєму місті є кінотеатр.", es: "Hay un cine en mi ciudad." } }
+          - { level: A1, use: { en: Say what is in a place, uk: "Сказати, що є в певному місці", es: "Decir qué hay en un lugar" }, ex: ["There ", { target: are }, " two beds in the room."], tr: { uk: "У кімнаті є два ліжка.", es: "Hay dos camas en la habitación." } }
+          - { level: A1, use: { en: Describe a room or a town, uk: "Описати кімнату або місто", es: "Describir una habitación o una ciudad" }, ex: ["There ", { target: is }, " a big park near the station."], tr: { uk: "Біля станції є великий парк.", es: "Hay un parque grande cerca de la estación." } }
+          - { level: A1, use: { en: Ask about places and things, uk: "Запитати про місця й речі", es: "Preguntar por lugares y cosas" }, ex: [{ target: Is there }, " a toilet here?"], tr: { uk: "Чи є тут туалет?", es: "¿Hay un baño aquí?" } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "A place phrase follows, or opens, the sentence:"
+              uk: "Словосполучення місця стоїть у кінці речення або на його початку:"
+              es: "Una expresión de lugar va al final de la oración o al principio:"
             ex: ["There is a cat ", { target: on the sofa }, "."]
+            tr: { uk: "На дивані є кіт.", es: "Hay un gato en el sofá." }
           - type: note
             level: A1
             text:
               en: ["For place words see ", { link: Place and Movement, to: en.prepositions.place-movement }, "."]
+              uk: ["Про слова місця див. ", { link: "Прийменники місця й руху", to: en.prepositions.place-movement }, "."]
+              es: ["Para las palabras de lugar, ver ", { link: "Preposiciones de lugar y movimiento", to: en.prepositions.place-movement }, "."]
 
-  - title: { en: "With a, some, any and numbers" }
+  - title: { en: "With a, some, any and numbers", uk: "З a, some, any і числівниками", es: "Con a, some, any y números" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Word } }
-          - { key: rule, label: { en: Rule } }
-          - { key: ex, label: { en: Example } }
+          - { key: word, label: { en: Word, uk: "Слово", es: "Palabra" } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, word: { alternatives: [a, an] }, rule: { en: "singular countable, + and ?" }, ex: [There', { target: s a }, " bus stop."] }
-          - { level: A1, word: some, rule: { en: "plural or uncountable, +" }, ex: ["There are ", { target: some }, " apples."] }
-          - { level: A1, word: any, rule: { en: "plural or uncountable, − and ?" }, ex: ["Are there ", { target: any }, " apples?"] }
-          - { level: A1, word: { en: number }, rule: { en: "plural, + − ?" }, ex: ["There are ", { target: four }, " apples."] }
+          - { level: A1, word: { alternatives: [a, an] }, rule: { en: "singular countable, + and ?", uk: "злічуваний в однині, + і ?", es: "contable en singular, + y ?" }, ex: [There', { target: s a }, " bus stop."], tr: { uk: "Є автобусна зупинка.", es: "Hay una parada de autobús." } }
+          - { level: A1, word: some, rule: { en: "plural or uncountable, +", uk: "множина або незлічуваний, +", es: "plural o incontable, +" }, ex: ["There are ", { target: some }, " apples."], tr: { uk: "Є кілька яблук.", es: "Hay unas manzanas." } }
+          - { level: A1, word: any, rule: { en: "plural or uncountable, − and ?", uk: "множина або незлічуваний, − і ?", es: "plural o incontable, − y ?" }, ex: ["Are there ", { target: any }, " apples?"], tr: { uk: "Чи є яблука?", es: "¿Hay manzanas?" } }
+          - { level: A1, word: { en: number, uk: "числівник", es: "número" }, rule: { en: "plural, + − ?", uk: "множина, + − ?", es: "plural, + − ?" }, ex: ["There are ", { target: four }, " apples."], tr: { uk: "Є чотири яблука.", es: "Hay cuatro manzanas." } }
       - type: list
         items:
           - type: note
             level: A1
             text:
               en: ["See ", { link: "Quantifiers: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, " and ", { link: Countable and Uncountable Nouns, to: en.nouns-determiners.countable-uncountable }, "."]
+              uk: ["Див. ", { link: "Кількісні слова: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, " і ", { link: "Злічувані та незлічувані іменники", to: en.nouns-determiners.countable-uncountable }, "."]
+              es: ["Ver ", { link: "Cuantificadores: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, " y ", { link: "Sustantivos contables e incontables", to: en.nouns-determiners.countable-uncountable }, "."]
 
-  - title: { en: "Compare: there is and it is" }
+  - title: { en: "Compare: there is and it is", uk: "Порівняння: there is і it is", es: "Comparación: there is y it is" }
     role: compare
     content:
       - type: comparison
         columns:
-          - { key: point, label: { en: Point } }
+          - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
           - { key: there, label: { alternatives: [there is, are] } }
           - { key: it, label: it is }
         rows:
-          - { level: A1, point: { en: Job }, there: { en: introduces something new }, it: { en: talks about something known } }
-          - { level: A1, point: { en: Example }, there: [{ target: There is }, " a dog in the garden."], it: [{ target: It is }, " a big dog."] }
-          - { level: A1, point: { en: Question }, there: [{ target: Is there }, " a shop near here?"], it: [{ target: Is it }, " open?"] }
+          - { level: A1, point: { en: Job, uk: "Функція", es: "Función" }, there: { en: introduces something new, uk: "вводить щось нове", es: "introduce algo nuevo" }, it: { en: talks about something known, uk: "говорить про щось відоме", es: "habla de algo conocido" } }
+          - { level: A1, point: { en: Example, uk: "Приклад", es: "Ejemplo" }, there: { ex: [{ target: There is }, " a dog in the garden."], tr: { uk: "У саду є собака.", es: "Hay un perro en el jardín." } }, it: { ex: [{ target: It is }, " a big dog."], tr: { uk: "Це великий собака.", es: "Es un perro grande." } } }
+          - { level: A1, point: { en: Question, uk: "Питання", es: "Pregunta" }, there: { ex: [{ target: Is there }, " a shop near here?"], tr: { uk: "Чи є тут поблизу магазин?", es: "¿Hay una tienda cerca de aquí?" } }, it: { ex: [{ target: Is it }, " open?"], tr: { uk: "Чи відчинено?", es: "¿Está abierto?" } } }
       - type: list
         items:
           - type: note
             level: A1
             text:
               en: ["See ", { link: To be, to: en.verbs.to-be }, "."]
+              uk: ["Див. ", { link: "Дієслово to be", to: en.verbs.to-be }, "."]
+              es: ["Ver ", { link: "El verbo to be", to: en.verbs.to-be }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: There is two cats., right: ["There ", { target: are }, " two cats."], rule: { en: { takes: [plural noun, there are] } } }
-          - { level: A1, wrong: There are a cat., right: ["There ", { target: is }, " a cat."], rule: { en: { takes: [singular noun, there is] } } }
-          - { level: A1, wrong: There isn't some milk., right: ["There isn't ", { target: any }, " milk."], rule: { en: negatives take any } }
+          - { level: A1, wrong: There is two cats., right: ["There ", { target: are }, " two cats."], rule: { en: { takes: [plural noun, there are] }, uk: { takes: ["іменник у множині", there are] }, es: { takes: ["sustantivo plural", there are] } } }
+          - { level: A1, wrong: There are a cat., right: ["There ", { target: is }, " a cat."], rule: { en: { takes: [singular noun, there is] }, uk: { takes: ["іменник в однині", there is] }, es: { takes: ["sustantivo singular", there is] } } }
+          - { level: A1, wrong: There isn't some milk., right: ["There isn't ", { target: any }, " milk."], rule: { en: negatives take any, uk: "заперечення вимагає any", es: "la negación lleva any" } }

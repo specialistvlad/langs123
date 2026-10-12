@@ -55,10 +55,18 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "en"
+        "en",
+        "uk",
+        "es"
       ],
       "properties": {
         "en": {
+          "$ref": "#/definitions/status"
+        },
+        "uk": {
+          "$ref": "#/definitions/status"
+        },
+        "es": {
           "$ref": "#/definitions/status"
         }
       }
@@ -105,7 +113,9 @@
     },
     "explain": {
       "enum": [
-        "en"
+        "en",
+        "uk",
+        "es"
       ]
     },
     "status": {
@@ -1243,6 +1253,12 @@
       "minProperties": 1,
       "properties": {
         "en": {
+          "$ref": "#/definitions/text"
+        },
+        "uk": {
+          "$ref": "#/definitions/text"
+        },
+        "es": {
           "$ref": "#/definitions/text"
         }
       }

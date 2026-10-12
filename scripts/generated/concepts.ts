@@ -11,4 +11,6 @@ export interface Langs123Concepts {
 }
 export interface Localized {
   en: string;
+  uk: string;
+  es: string;
 }

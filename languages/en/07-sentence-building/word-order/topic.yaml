@@ -5,31 +5,37 @@ kind: grammar
 tags: [word-order, sentences, syntax]
 concepts: [word-order]
 related: [en.sentence-building.questions-negatives, en.adjectives-adverbs.adjective-order, en.adjectives-adverbs.adverbs-frequency-manner, en.tenses.simple-tenses]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Word Order }
+title: { en: Word Order, uk: Порядок слів, es: El orden de las palabras }
 summary:
-  lead: { en: "The order of subject, verb, object, adjectives and adverbs in an English sentence." }
-  rule: { en: "The subject is always present and the adjective comes before the noun:" }
+  lead:
+    en: "The order of subject, verb, object, adjectives and adverbs in an English sentence."
+    uk: "Порядок підмета, дієслова, додатка, прикметників і прислівників в англійському реченні."
+    es: "El orden del sujeto, el verbo, el objeto, los adjetivos y los adverbios en una oración inglesa."
+  rule:
+    en: "The subject is always present and the adjective comes before the noun:"
+    uk: "Підмет у реченні є завжди, а прикметник стоїть перед іменником:"
+    es: "El sujeto siempre está presente y el adjetivo va antes del sustantivo:"
   ex: { examples: [[{ target: It }, " is cold."], ["I have a ", { target: red car }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A0, point: { en: Order }, rule: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: object } }, { slot: { en: place } }, { slot: { en: time } }] }, ex: [{ target: My sister buys bread in the shop every day }, "."] }
-        - { level: A0, point: { en: Subject }, rule: { en: the subject is always present }, ex: [{ target: It }, " is cold."] }
-        - { level: A0, point: { en: Adjective }, rule: { en: comes before the noun }, ex: ["I have a ", { target: red car }, "."] }
-        - { level: A1, point: { en: Time first }, rule: { en: "a time phrase can start the sentence, often with a comma" }, ex: [{ target: Last summer }, ", we went to Italy."] }
-        - { level: A1, point: { en: Frequency adverb }, rule: { en: "before the main verb, after be" }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] } }
-        - { level: A1, point: { en: Trap }, rule: { en: place comes before time }, ex: ["I went ", { target: to London yesterday }, "."] }
+        - { level: A0, point: { en: Order, uk: "Порядок", es: "Orden" }, rule: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: object, uk: "додаток", es: "objeto" } }, { slot: { en: place, uk: "місце", es: "lugar" } }, { slot: { en: time, uk: "час", es: "tiempo" } }] }, ex: [{ target: My sister buys bread in the shop every day }, "."], tr: { uk: "Моя сестра щодня купує хліб у магазині.", es: "Mi hermana compra pan en la tienda todos los días." } }
+        - { level: A0, point: { en: Subject, uk: "Підмет", es: "Sujeto" }, rule: { en: the subject is always present, uk: "підмет завжди присутній", es: "el sujeto siempre está presente" }, ex: [{ target: It }, " is cold."], tr: { uk: "Холодно.", es: "Hace frío." } }
+        - { level: A0, point: { en: Adjective, uk: "Прикметник", es: "Adjetivo" }, rule: { en: comes before the noun, uk: "стоїть перед іменником", es: "va antes del sustantivo" }, ex: ["I have a ", { target: red car }, "."], tr: { uk: "У мене червона машина.", es: "Tengo un coche rojo." } }
+        - { level: A1, point: { en: Time first, uk: "Час на початку", es: "Tiempo al principio" }, rule: { en: "a time phrase can start the sentence, often with a comma", uk: "зворот часу може відкривати речення, часто з комою", es: "una expresión de tiempo puede abrir la oración, a menudo con coma" }, ex: [{ target: Last summer }, ", we went to Italy."], tr: { uk: "Минулого літа ми їздили до Італії.", es: "El verano pasado fuimos a Italia." } }
+        - { level: A1, point: { en: Frequency adverb, uk: "Прислівник частотності", es: "Adverbio de frecuencia" }, rule: { en: "before the main verb, after be", uk: "перед основним дієсловом, після be", es: "antes del verbo principal, después de be" }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] }, tr: { uk: { examples: ["Я завжди снідаю.", "Вона завжди запізнюється."] }, es: { examples: ["Siempre desayuno.", "Siempre llega tarde."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: place comes before time, uk: "місце стоїть перед часом", es: "el lugar va antes del tiempo" }, ex: ["I went ", { target: to London yesterday }, "."], tr: { uk: "Вчора я їздив до Лондона.", es: "Fui a Londres ayer." } }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -38,77 +44,91 @@ sections:
             level: A0
             text:
               en: "The order is subject, verb, object (SVO), then place, then time."
+              uk: "Порядок такий: підмет, дієслово, додаток (SVO), потім місце, потім час."
+              es: "El orden es sujeto, verbo, objeto (SVO), luego lugar y luego tiempo."
           - type: note
             level: A0
             text:
               en: ["Questions change the order. See ", { link: Questions and negatives, to: en.sentence-building.questions-negatives }, "."]
+              uk: ["У питаннях порядок слів змінюється. Див. ", { link: "Питання та заперечення", to: en.sentence-building.questions-negatives }, "."]
+              es: ["Las preguntas cambian el orden. Ver ", { link: "Preguntas y negaciones", to: en.sentence-building.questions-negatives }, "."]
 
-  - title: { en: "Form: statements" }
+  - title: { en: "Form: statements", uk: "Форма: стверджувальні речення", es: "Forma: oraciones afirmativas" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: rule, label: { en: Rule } }
-          - { key: ex, label: { en: Example } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A0, rule: { en: The subject is always present. }, ex: { examples: [[{ target: It }, " is cold."], [{ target: She }, " lives in Madrid."]] } }
-          - { level: A0, rule: { en: The verb comes right after the subject. }, ex: ["My friend ", { target: came }, " early."] }
-          - { level: A0, rule: { en: The object comes right after the verb. }, ex: ["I ", { target: drink tea }, " at night."] }
-          - { level: A0, rule: { en: An adjective comes before the noun. }, ex: ["I have a ", { target: red car }, "."] }
+          - { level: A0, rule: { en: The subject is always present., uk: "Підмет завжди присутній.", es: "El sujeto siempre está presente." }, ex: { examples: [[{ target: It }, " is cold."], [{ target: She }, " lives in Madrid."]] }, tr: { uk: { examples: ["Холодно.", "Вона живе в Мадриді."] }, es: { examples: ["Hace frío.", "Ella vive en Madrid."] } } }
+          - { level: A0, rule: { en: The verb comes right after the subject., uk: "Дієслово стоїть одразу після підмета.", es: "El verbo va justo después del sujeto." }, ex: ["My friend ", { target: came }, " early."], tr: { uk: "Мій друг прийшов рано.", es: "Mi amigo llegó temprano." } }
+          - { level: A0, rule: { en: The object comes right after the verb., uk: "Додаток стоїть одразу після дієслова.", es: "El objeto va justo después del verbo." }, ex: ["I ", { target: drink tea }, " at night."], tr: { uk: "Я п’ю чай уночі.", es: "Bebo té por la noche." } }
+          - { level: A0, rule: { en: An adjective comes before the noun., uk: "Прикметник стоїть перед іменником.", es: "El adjetivo va antes del sustantivo." }, ex: ["I have a ", { target: red car }, "."], tr: { uk: "У мене червона машина.", es: "Tengo un coche rojo." } }
       - type: list
         items:
           - type: note
             level: A0
             text:
               en: ["For two or more adjectives, see ", { link: Adjective order, to: en.adjectives-adverbs.adjective-order }, "."]
+              uk: ["Про два й більше прикметників див. ", { link: "Прикметники та їхній порядок", to: en.adjectives-adverbs.adjective-order }, "."]
+              es: ["Para dos o más adjetivos, ver ", { link: "Los adjetivos y su orden", to: en.adjectives-adverbs.adjective-order }, "."]
 
-  - title: { en: Place and time }
+  - title: { en: Place and time, uk: "Місце й час", es: "Lugar y tiempo" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: rule, label: { en: Rule } }
-          - { key: ex, label: { en: Example } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, rule: { en: Place comes before time. }, ex: ["I went ", { target: to London }, " ", { target: last year }, "."] }
-          - { level: A1, rule: { en: A time word can also start the sentence. }, ex: [{ target: Last year }, " I went to London."] }
+          - { level: A1, rule: { en: Place comes before time., uk: "Місце стоїть перед часом.", es: "El lugar va antes del tiempo." }, ex: ["I went ", { target: to London }, " ", { target: last year }, "."], tr: { uk: "Торік я їздив до Лондона.", es: "Fui a Londres el año pasado." } }
+          - { level: A1, rule: { en: A time word can also start the sentence., uk: "Слово зі значенням часу може стояти й на початку речення.", es: "Una palabra de tiempo también puede abrir la oración." }, ex: [{ target: Last year }, " I went to London."], tr: { uk: "Торік я їздив до Лондона.", es: "El año pasado fui a Londres." } }
       - type: list
         items:
           - type: rule
             level: A1
             text:
               en: "A time phrase at the start often takes a comma:"
+              uk: "Зворот часу на початку речення часто відокремлюють комою:"
+              es: "Una expresión de tiempo al principio suele llevar coma:"
             ex: [{ target: Last summer }, ", we went to Italy."]
+            tr: { uk: "Минулого літа ми їздили до Італії.", es: "El verano pasado fuimos a Italia." }
           - type: rule
             level: A1
             text:
               en: "A place or time word follows the object:"
+              uk: "Слово місця або часу стоїть після додатка:"
+              es: "Una palabra de lugar o de tiempo va después del objeto:"
             ex: ["I met ", { target: Ana }, " in the park."]
+            tr: { uk: "Я зустрів Ану в парку.", es: "Me encontré con Ana en el parque." }
 
-  - title: { en: Adverbs }
+  - title: { en: Adverbs, uk: "Прислівники", es: "Adverbios" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: adverb, label: { en: Adverb } }
-          - { key: position, label: { en: Position } }
-          - { key: ex, label: { en: Example } }
+          - { key: adverb, label: { en: Adverb, uk: "Прислівник", es: "Adverbio" } }
+          - { key: position, label: { en: Position, uk: "Місце", es: "Posición" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A1, adverb: always, position: { en: "before the main verb, after be" }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] } }
-          - { level: A1, adverb: really, position: { en: before the main verb }, ex: ["I ", { target: really }, " like jazz."] }
-          - { level: A1, adverb: { alternatives: [very much, a lot] }, position: { en: "at the end, after the object" }, ex: ["I like coffee ", { target: very much }, "."] }
+          - { level: A1, adverb: always, position: { en: "before the main verb, after be", uk: "перед основним дієсловом, після be", es: "antes del verbo principal, después de be" }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] }, tr: { uk: { examples: ["Я завжди снідаю.", "Вона завжди запізнюється."] }, es: { examples: ["Siempre desayuno.", "Siempre llega tarde."] } } }
+          - { level: A1, adverb: really, position: { en: before the main verb, uk: "перед основним дієсловом", es: "antes del verbo principal" }, ex: ["I ", { target: really }, " like jazz."], tr: { uk: "Мені справді подобається джаз.", es: "De verdad me gusta el jazz." } }
+          - { level: A1, adverb: { alternatives: [very much, a lot] }, position: { en: "at the end, after the object", uk: "в кінці, після додатка", es: "al final, después del objeto" }, ex: ["I like coffee ", { target: very much }, "."], tr: { uk: "Я дуже люблю каву.", es: "Me gusta mucho el café." } }
       - type: list
         items:
           - type: note
             level: A1
             text:
               en: ["More on frequency adverbs: ", { link: Adverbs of frequency and manner, to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
+              uk: ["Докладніше про прислівники частотності: ", { link: "Прислівники частотності та способу дії", to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
+              es: ["Más sobre los adverbios de frecuencia: ", { link: "Adverbios de frecuencia y de modo", to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: I went yesterday to London., right: ["I went ", { target: to London yesterday }, "."], rule: { en: place before time } }
-          - { level: A1, wrong: I eat always breakfast., right: ["I ", { target: always eat }, " breakfast."], rule: { en: frequency adverbs go before the main verb } }
-          - { level: A1, wrong: She always is late., right: ["She ", { target: is always }, " late."], rule: { en: frequency adverbs go after be } }
+          - { level: A1, wrong: I went yesterday to London., right: ["I went ", { target: to London yesterday }, "."], rule: { en: place before time, uk: "місце перед часом", es: "el lugar antes del tiempo" } }
+          - { level: A1, wrong: I eat always breakfast., right: ["I ", { target: always eat }, " breakfast."], rule: { en: frequency adverbs go before the main verb, uk: "прислівники частотності стоять перед основним дієсловом", es: "los adverbios de frecuencia van antes del verbo principal" } }
+          - { level: A1, wrong: She always is late., right: ["She ", { target: is always }, " late."], rule: { en: frequency adverbs go after be, uk: "прислівники частотності стоять після be", es: "los adverbios de frecuencia van después de be" } }

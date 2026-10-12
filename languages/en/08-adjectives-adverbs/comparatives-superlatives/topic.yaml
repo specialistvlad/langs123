@@ -5,76 +5,86 @@ kind: grammar
 tags: [adjectives, comparison]
 concepts: [comparison]
 related: [en.adjectives-adverbs.adjective-order, en.adjectives-adverbs.too-enough-so-such, en.verbs.to-be]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Comparatives and Superlatives }
+title: { en: Comparatives and Superlatives, uk: Ступені порівняння прикметників, es: Comparativos y superlativos }
 summary:
-  lead: { en: "Comparatives and superlatives compare things: taller than, the tallest, as tall as." }
-  rule: { en: "Short adjectives add -er and -est, and long adjectives take more and the most:" }
+  lead:
+    en: "Comparatives and superlatives compare things: taller than, the tallest, as tall as."
+    uk: "Вищий і найвищий ступені порівняння зіставляють предмети: taller than, the tallest, as tall as."
+    es: "Los comparativos y superlativos comparan cosas: taller than, the tallest, as tall as."
+  rule:
+    en: "Short adjectives add -er and -est, and long adjectives take more and the most:"
+    uk: "Короткі прикметники беруть -er і -est, а довгі — more і the most:"
+    es: "Los adjetivos cortos añaden -er y -est, y los largos llevan more y the most:"
   ex: { examples: [["She is ", { target: taller }, " than me."], ["This bag is ", { target: more expensive }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: { en: "One syllable, or two ending in -y" }, rule: { alternatives: [{ pattern: [{ ending: er }], follows: true }, { pattern: [{ ending: est }], follows: true }] }, ex: { examples: [["Trains are ", { target: faster }, " than buses."], ["It's ", { target: the cheapest }, "."]] } }
-        - { level: A2, point: { en: Spelling }, rule: { en: "add r after -e; y becomes i; double one final consonant" }, ex: { examples: [{ mapping: [nice, { target: nicer }] }, { mapping: [happy, { target: happier }] }, { mapping: [big, { target: bigger }] }] } }
-        - { level: A2, point: { en: Other adjectives of two or more syllables }, rule: { alternatives: [{ pattern: [more, { slot: adjective }] }, { pattern: [the most, { slot: adjective }] }] }, ex: ["This bag is ", { target: more expensive }, "."] }
-        - { level: A2, point: { en: Irregular }, rule: { examples: [{ mapping: [good, better, the best] }, { mapping: [bad, worse, the worst] }] }, ex: ["It's ", { target: the best }, " film of the year."] }
-        - { level: A2, point: { pattern: [{ slot: comparative }, than] }, rule: { en: "compares two things; speech has an object pronoun after than" }, ex: ["She is ", { target: taller than }, " me."] }
-        - { level: A2, point: { pattern: [the, { slot: superlative }, { alternatives: [in, of] }] }, rule: { en: "top of three or more; in a place or group, of a number" }, ex: ["She is ", { target: the tallest }, " in the class."] }
-        - { level: A2, point: { alternatives: [{ pattern: [as, { slot: adjective }, as] }, { pattern: [not as, { slot: adjective }, as] }] }, rule: { en: "equal; not equal" }, ex: { examples: [["My flat is ", { target: as big as }, " yours."], ["Tea is ", { target: not as strong as }, " coffee."]] } }
-        - { level: A2, point: { en: Trap }, rule: { en: "better and worse are already comparatives" }, ex: ["This is ", { target: better }, "."] }
+        - { level: A2, point: { en: "One syllable, or two ending in -y", uk: "Один склад або два склади, що закінчуються на -y", es: "Una sílaba, o dos terminadas en -y" }, rule: { alternatives: [{ pattern: [{ ending: er }], follows: true }, { pattern: [{ ending: est }], follows: true }] }, ex: { examples: [["Trains are ", { target: faster }, " than buses."], ["It's ", { target: the cheapest }, "."]] }, tr: { uk: { examples: ["Потяги швидші за автобуси.", "Це найдешевше."] }, es: { examples: ["Los trenes son más rápidos que los autobuses.", "Es el más barato."] } } }
+        - { level: A2, point: { en: Spelling, uk: "Правопис", es: "Ortografía" }, rule: { en: "add r after -e; y becomes i; double one final consonant", uk: "після -e додаємо r; y стає i; одну кінцеву приголосну подвоюємо", es: "se añade r después de -e; y pasa a i; se duplica una consonante final" }, ex: { examples: [{ mapping: [nice, { target: nicer }] }, { mapping: [happy, { target: happier }] }, { mapping: [big, { target: bigger }] }] }, tr: { uk: { examples: ["приємний, приємніший", "щасливий, щасливіший", "великий, більший"] }, es: { examples: ["agradable, más agradable", "feliz, más feliz", "grande, más grande"] } } }
+        - { level: A2, point: { en: Other adjectives of two or more syllables, uk: "Інші прикметники з двох і більше складів", es: "Otros adjetivos de dos o más sílabas" }, rule: { alternatives: [{ pattern: [more, { slot: adjective }] }, { pattern: [the most, { slot: adjective }] }] }, ex: ["This bag is ", { target: more expensive }, "."], tr: { uk: "Ця сумка дорожча.", es: "Este bolso es más caro." } }
+        - { level: A2, point: { en: Irregular, uk: "Неправильні форми", es: "Formas irregulares" }, rule: { examples: [{ mapping: [good, better, the best] }, { mapping: [bad, worse, the worst] }] }, ex: ["It's ", { target: the best }, " film of the year."], tr: { uk: "Це найкращий фільм року.", es: "Es la mejor película del año." } }
+        - { level: A2, point: { pattern: [{ slot: comparative }, than] }, rule: { en: "compares two things; speech has an object pronoun after than", uk: "порівнює два предмети; у мовленні після than стоїть займенник-додаток", es: "compara dos cosas; en el habla, después de than va un pronombre objeto" }, ex: ["She is ", { target: taller than }, " me."], tr: { uk: "Вона вища за мене.", es: "Ella es más alta que yo." } }
+        - { level: A2, point: { pattern: [the, { slot: superlative }, { alternatives: [in, of] }] }, rule: { en: "top of three or more; in a place or group, of a number", uk: "перше серед трьох і більше; in — місце чи група, of — число", es: "el primero entre tres o más; in con un lugar o grupo, of con un número" }, ex: ["She is ", { target: the tallest }, " in the class."], tr: { uk: "Вона найвища в класі.", es: "Ella es la más alta de la clase." } }
+        - { level: A2, point: { alternatives: [{ pattern: [as, { slot: adjective }, as] }, { pattern: [not as, { slot: adjective }, as] }] }, rule: { en: "equal; not equal", uk: "рівність; нерівність", es: "igualdad; desigualdad" }, ex: { examples: [["My flat is ", { target: as big as }, " yours."], ["Tea is ", { target: not as strong as }, " coffee."]] }, tr: { uk: { examples: ["Моя квартира така ж велика, як твоя.", "Чай не такий міцний, як кава."] }, es: { examples: ["Mi apartamento es tan grande como el tuyo.", "El té no es tan fuerte como el café."] } } }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: "better and worse are already comparatives", uk: "better і worse уже є вищим ступенем", es: "better y worse ya son comparativos" }, ex: ["This is ", { target: better }, "."], tr: { uk: "Це краще.", es: "Esto es mejor." } }
 
 sections:
-  - title: { en: "Form: comparative and superlative" }
+  - title: { en: "Form: comparative and superlative", uk: "Форма: вищий і найвищий ступені порівняння", es: "Forma: comparativo y superlativo" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: adjective, label: { en: Adjective }, features: { degree: pos } }
-          - { key: comparative, label: { en: Comparative }, features: { degree: cmpr } }
-          - { key: superlative, label: { en: Superlative }, features: { degree: sprl } }
+          - { key: adjective, label: { en: Adjective, uk: "Прикметник", es: "Adjetivo" }, features: { degree: pos } }
+          - { key: comparative, label: { en: Comparative, uk: "Вищий ступінь", es: "Comparativo" }, features: { degree: cmpr } }
+          - { key: superlative, label: { en: Superlative, uk: "Найвищий ступінь", es: "Superlativo" }, features: { degree: sprl } }
         rows:
-          - { level: A2, adjective: { en: "one syllable: cheap" }, comparative: [cheap, { ending: er }], superlative: [the cheap, { ending: est }] }
-          - { level: A2, adjective: { en: "two syllables ending in -y: easy" }, comparative: [eas, { ending: ier }], superlative: [the eas, { ending: iest }] }
-          - { level: A2, adjective: { en: "two or more syllables: expensive" }, comparative: [{ target: more }, " expensive"], superlative: ["the ", { target: most }, " expensive"] }
+          - { level: A2, adjective: { en: "one syllable: cheap", uk: "один склад: cheap", es: "una sílaba: cheap" }, comparative: [cheap, { ending: er }], superlative: [the cheap, { ending: est }] }
+          - { level: A2, adjective: { en: "two syllables ending in -y: easy", uk: "два склади на -y: easy", es: "dos sílabas terminadas en -y: easy" }, comparative: [eas, { ending: ier }], superlative: [the eas, { ending: iest }] }
+          - { level: A2, adjective: { en: "two or more syllables: expensive", uk: "два й більше складів: expensive", es: "dos o más sílabas: expensive" }, comparative: [{ target: more }, " expensive"], superlative: ["the ", { target: most }, " expensive"] }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["Some two-syllable adjectives take both: ", { mapping: [clever, { alternatives: [cleverer, more clever] }] }, "."]
+              uk: ["Деякі двоскладові прикметники мають обидві форми: ", { mapping: [clever, { alternatives: [cleverer, more clever] }] }, "."]
+              es: ["Algunos adjetivos de dos sílabas admiten ambas formas: ", { mapping: [clever, { alternatives: [cleverer, more clever] }] }, "."]
           - type: rule
             level: A2
             text:
               en: ["Use ", { term: the }, " before a superlative: the cheapest."]
+              uk: ["Перед найвищим ступенем порівняння вживають ", { term: the }, ": the cheapest."]
+              es: ["Delante de un superlativo se usa ", { term: the }, ": the cheapest."]
 
-  - title: { en: "Spelling: -er and -est" }
+  - title: { en: "Spelling: -er and -est", uk: "Правопис: -er і -est", es: "Ortografía: -er y -est" }
     role: spelling
     content:
       - type: usage
         columns:
-          - { key: ending, label: { en: Ending } }
-          - { key: rule, label: { en: Rule } }
-          - { key: ex, label: { en: Examples } }
+          - { key: ending, label: { en: Ending, uk: "Закінчення", es: "Terminación" } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+          - { key: ex, label: { en: Examples, uk: "Приклади", es: "Ejemplos" } }
         rows:
-          - { level: A2, ending: "-e", rule: { alternatives: [{ pattern: [{ ending: r }], follows: true }, { pattern: [{ ending: st }], follows: true }] }, ex: { mapping: [nice, nicer, nicest] } }
-          - { level: A2, ending: { en: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", { alternatives: [ier, iest] }] }, ex: { mapping: [happy, happier, happiest] } }
-          - { level: A2, ending: { en: [{ pattern: [one vowel, one consonant] }, " (not w, y)"] }, rule: { en: double the consonant }, ex: { examples: [{ mapping: [big, bigger, biggest] }, { mapping: [hot, hotter, hottest] }] } }
+          - { level: A2, ending: "-e", rule: { alternatives: [{ pattern: [{ ending: r }], follows: true }, { pattern: [{ ending: st }], follows: true }] }, ex: { mapping: [nice, nicer, nicest] }, tr: { uk: "приємний, приємніший, найприємніший", es: "agradable, más agradable, el más agradable" } }
+          - { level: A2, ending: { en: { pattern: [{ slot: consonant }, "y"] }, uk: { pattern: [{ slot: consonant }, "y"] }, es: { pattern: [{ slot: consonant }, "y"] } }, rule: { mapping: ["y", { alternatives: [ier, iest] }] }, ex: { mapping: [happy, happier, happiest] }, tr: { uk: "щасливий, щасливіший, найщасливіший", es: "feliz, más feliz, el más feliz" } }
+          - { level: A2, ending: { en: [{ pattern: [one vowel, one consonant] }, " (not w, y)"], uk: [{ pattern: ["одна голосна", "одна приголосна"] }, " (не w, y)"], es: [{ pattern: ["una vocal", "una consonante"] }, " (no w, y)"] }, rule: { en: double the consonant, uk: "приголосна подвоюється", es: "se duplica la consonante" }, ex: { examples: [{ mapping: [big, bigger, biggest] }, { mapping: [hot, hotter, hottest] }] }, tr: { uk: { examples: ["великий, більший, найбільший", "гарячий, гарячіший, найгарячіший"] }, es: { examples: ["grande, más grande, el más grande", "caliente, más caliente, el más caliente"] } } }
 
-  - title: { en: "Form: irregular" }
+  - title: { en: "Form: irregular", uk: "Форма: неправильні форми", es: "Forma: formas irregulares" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: adjective, label: { en: Adjective }, features: { degree: pos } }
-          - { key: comparative, label: { en: Comparative }, features: { degree: cmpr } }
-          - { key: superlative, label: { en: Superlative }, features: { degree: sprl } }
+          - { key: adjective, label: { en: Adjective, uk: "Прикметник", es: "Adjetivo" }, features: { degree: pos } }
+          - { key: comparative, label: { en: Comparative, uk: "Вищий ступінь", es: "Comparativo" }, features: { degree: cmpr } }
+          - { key: superlative, label: { en: Superlative, uk: "Найвищий ступінь", es: "Superlativo" }, features: { degree: sprl } }
         rows:
           - { level: A2, adjective: good, comparative: better, superlative: the best }
           - { level: A2, adjective: bad, comparative: worse, superlative: the worst }
@@ -82,47 +92,56 @@ sections:
           - { level: A2, adjective: little, comparative: less, superlative: the least }
           - { level: A2, adjective: { alternatives: [much, many] }, comparative: more, superlative: the most }
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: pattern, label: { en: Pattern } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: pattern, label: { en: Pattern, uk: "Схема", es: "Estructura" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: compare two things }, pattern: { pattern: [{ slot: comparative }, than] }, ex: ["Trains are ", { target: faster than }, " buses."] }
-          - { level: A2, use: { en: less than }, pattern: { pattern: [less, { slot: adjective }, than] }, ex: ["Buses are ", { target: less expensive than }, " taxis."] }
-          - { level: A2, use: { en: a big or small difference }, pattern: { pattern: [{ alternatives: [a lot, much, a bit] }, { slot: comparative }] }, ex: ["This room is ", { target: a lot bigger }, "."] }
-          - { level: A2, use: { en: the top of three or more }, pattern: { pattern: [the, { slot: superlative }] }, ex: ["It's ", { target: the best }, " film of the year."] }
-          - { level: A2, use: { en: equal }, pattern: { pattern: [as, { slot: adjective }, as] }, ex: ["My flat is ", { target: as big as }, " yours."] }
-          - { level: A2, use: { en: not equal }, pattern: { pattern: [not as, { slot: adjective }, as] }, ex: ["Tea is ", { target: not as strong as }, " coffee."] }
+          - { level: A2, use: { en: compare two things, uk: "порівняння двох предметів", es: "comparar dos cosas" }, pattern: { pattern: [{ slot: comparative }, than] }, ex: ["Trains are ", { target: faster than }, " buses."], tr: { uk: "Потяги швидші за автобуси.", es: "Los trenes son más rápidos que los autobuses." } }
+          - { level: A2, use: { en: less than, uk: "менше, ніж", es: "menos que" }, pattern: { pattern: [less, { slot: adjective }, than] }, ex: ["Buses are ", { target: less expensive than }, " taxis."], tr: { uk: "Автобуси менш дорогі, ніж таксі.", es: "Los autobuses son menos caros que los taxis." } }
+          - { level: A2, use: { en: a big or small difference, uk: "велика або мала різниця", es: "una diferencia grande o pequeña" }, pattern: { pattern: [{ alternatives: [a lot, much, a bit] }, { slot: comparative }] }, ex: ["This room is ", { target: a lot bigger }, "."], tr: { uk: "Ця кімната набагато більша.", es: "Esta habitación es mucho más grande." } }
+          - { level: A2, use: { en: the top of three or more, uk: "перше місце серед трьох і більше", es: "el primero entre tres o más" }, pattern: { pattern: [the, { slot: superlative }] }, ex: ["It's ", { target: the best }, " film of the year."], tr: { uk: "Це найкращий фільм року.", es: "Es la mejor película del año." } }
+          - { level: A2, use: { en: equal, uk: "рівність", es: "igualdad" }, pattern: { pattern: [as, { slot: adjective }, as] }, ex: ["My flat is ", { target: as big as }, " yours."], tr: { uk: "Моя квартира така ж велика, як твоя.", es: "Mi apartamento es tan grande como el tuyo." } }
+          - { level: A2, use: { en: not equal, uk: "нерівність", es: "desigualdad" }, pattern: { pattern: [not as, { slot: adjective }, as] }, ex: ["Tea is ", { target: not as strong as }, " coffee."], tr: { uk: "Чай не такий міцний, як кава.", es: "El té no es tan fuerte como el café." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["After a superlative, ", { term: in }, " goes with a place or group:"]
+              uk: ["Після найвищого ступеня порівняння ", { term: in }, " вживається з місцем або групою:"]
+              es: ["Después de un superlativo, ", { term: in }, " se usa con un lugar o un grupo:"]
             ex: { examples: [["the tallest girl ", { target: in }, " the class"], ["the biggest city ", { target: in }, " Spain"]] }
+            tr: { uk: { examples: ["найвища дівчина в класі", "найбільше місто в Іспанії"] }, es: { examples: ["la chica más alta de la clase", "la ciudad más grande de España"] } }
           - type: rule
             level: A2
             text:
               en: ["After a superlative, ", { term: of }, " goes with a number or a plural:"]
+              uk: ["Після найвищого ступеня порівняння ", { term: of }, " вживається з числом або множиною:"]
+              es: ["Después de un superlativo, ", { term: of }, " se usa con un número o un plural:"]
             ex: { examples: [["the best ", { target: of }, " the three"], ["the oldest ", { target: of }, " all"]] }
+            tr: { uk: { examples: ["найкращий із трьох", "найстарший з усіх"] }, es: { examples: ["el mejor de los tres", "el más viejo de todos"] } }
           - type: rule
             level: A2
             text:
               en: ["After ", { term: than }, ", speech uses an object pronoun:"]
+              uk: ["Після ", { term: than }, " у мовленні вживають займенник-додаток:"]
+              es: ["Después de ", { term: than }, ", en el habla se usa un pronombre objeto:"]
             ex: ["She is taller than ", { target: me }, "."]
+            tr: { uk: "Вона вища за мене.", es: "Ella es más alta que yo." }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: This is more better., right: ["This is ", { target: better }, "."], rule: { en: "better, worse are already comparatives" } }
-          - { level: A2, wrong: more happy, right: { target: happier }, rule: { en: { mapping: [{ pattern: [{ slot: consonant }, "y"] }, "-ier"] } } }
-          - { level: A2, wrong: He is more tall than me., right: ["He is ", { target: taller }, " than me."], rule: { en: short adjectives take -er } }
-          - { level: A2, wrong: He is the most tall., right: ["He is ", { target: the tallest }, "."], rule: { en: ["three or more: ", { pattern: [the, "-est"] }] } }
-          - { level: A2, wrong: the best of the world, right: ["the best ", { target: in }, " the world"], rule: { en: { pattern: [in, place or group] } } }
-          - { level: A2, wrong: This is expensiver., right: ["This is ", { target: more expensive }, "."], rule: { en: long adjectives take more } }
+          - { level: A2, wrong: This is more better., right: ["This is ", { target: better }, "."], rule: { en: "better, worse are already comparatives", uk: "better і worse уже є вищим ступенем", es: "better y worse ya son comparativos" } }
+          - { level: A2, wrong: more happy, right: { target: happier }, rule: { en: { mapping: [{ pattern: [{ slot: consonant }, "y"] }, "-ier"] }, uk: { mapping: [{ pattern: [{ slot: consonant }, "y"] }, "-ier"] }, es: { mapping: [{ pattern: [{ slot: consonant }, "y"] }, "-ier"] } } }
+          - { level: A2, wrong: He is more tall than me., right: ["He is ", { target: taller }, " than me."], rule: { en: short adjectives take -er, uk: "короткі прикметники беруть -er", es: "los adjetivos cortos llevan -er" } }
+          - { level: A2, wrong: He is the most tall., right: ["He is ", { target: the tallest }, "."], rule: { en: ["three or more: ", { pattern: [the, "-est"] }], uk: ["три й більше: ", { pattern: [the, "-est"] }], es: ["tres o más: ", { pattern: [the, "-est"] }] } }
+          - { level: A2, wrong: the best of the world, right: ["the best ", { target: in }, " the world"], rule: { en: { pattern: [in, place or group] }, uk: { pattern: [in, "місце чи група"] }, es: { pattern: [in, "lugar o grupo"] } } }
+          - { level: A2, wrong: This is expensiver., right: ["This is ", { target: more expensive }, "."], rule: { en: long adjectives take more, uk: "довгі прикметники беруть more", es: "los adjetivos largos llevan more" } }

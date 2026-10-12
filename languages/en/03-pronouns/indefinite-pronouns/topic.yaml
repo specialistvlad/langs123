@@ -5,32 +5,38 @@ kind: grammar
 tags: [pronouns, indefinite, some, any, "no", every]
 concepts: [indefinite-pronouns]
 related: [en.nouns-determiners.quantifiers-some-any-much-many, en.pronouns.personal-pronouns]
-status: { en: draft }
+status: { en: draft, uk: draft, es: draft }
 
-title: { en: Indefinite Pronouns }
+title: { en: Indefinite Pronouns, uk: Неозначені займенники, es: Pronombres indefinidos }
 summary:
-  lead: { en: "Somebody, anything, nowhere and everyone name unknown or general people, things and places, in four families: some-, any-, no- and every-." }
-  rule: { en: "English uses one negative word per clause:" }
+  lead:
+    en: "Somebody, anything, nowhere and everyone name unknown or general people, things and places, in four families: some-, any-, no- and every-."
+    uk: "Somebody, anything, nowhere і everyone називають невідомих або загальних людей, речі й місця в чотирьох групах: some-, any-, no- та every-."
+    es: "Somebody, anything, nowhere y everyone nombran personas, cosas y lugares desconocidos o generales, en cuatro familias: some-, any-, no- y every-."
+  rule:
+    en: "English uses one negative word per clause:"
+    uk: "В англійській у реченні вживають лише одне заперечне слово:"
+    es: "El inglés usa una sola palabra negativa por oración:"
   ex: { examples: [["I don't know ", { target: anything }], ["or I know ", { target: nothing }, "."]] }
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: point, label: { en: Point } }
-        - { key: words, label: { en: Words }, features: { wordclass: pro, definiteness: indf } }
-        - { key: rule, label: { en: Rule } }
-        - { key: ex, label: { en: Example } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
+        - { key: words, label: { en: Words, uk: "Слова", es: "Palabras" }, features: { wordclass: pro, definiteness: indf } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
       rows:
-        - { level: A2, point: some-, words: { alternatives: [somebody, someone, something, somewhere] }, rule: { en: "affirmative sentences, offers and requests" }, ex: ["I saw ", { target: somebody }, " in the garden."] }
-        - { level: A2, point: any-, words: { alternatives: [anybody, anyone, anything, anywhere] }, rule: { en: ["after ", { term: not }, " and in questions"] }, ex: { examples: [["I didn't see ", { target: anybody }, "."], ["Did ", { target: anyone }, " call?"]] } }
-        - { level: A2, point: "no-", words: { alternatives: [nobody, no one, nothing, nowhere] }, rule: { en: "the verb stays affirmative: one negative word" }, ex: ["I saw ", { target: nothing }, "."] }
-        - { level: A2, point: every-, words: { alternatives: [everybody, everyone, everything, everywhere] }, rule: { en: means all }, ex: [{ target: Everything }, " is ready."] }
-        - { level: A2, point: { en: Verb }, words: everybody, rule: { en: indefinite pronouns take a singular verb }, ex: [{ target: Everybody is }, " here."] }
-        - { level: A2, point: { en: Trap }, words: nobody, rule: { en: { takes: [negative subject, nobody] } }, ex: [{ target: Nobody }, " came."] }
+        - { level: A2, point: some-, words: { alternatives: [somebody, someone, something, somewhere] }, rule: { en: "affirmative sentences, offers and requests", uk: "стверджувальні речення, пропозиції та прохання", es: "oraciones afirmativas, ofrecimientos y peticiones" }, ex: ["I saw ", { target: somebody }, " in the garden."] }
+        - { level: A2, point: any-, words: { alternatives: [anybody, anyone, anything, anywhere] }, rule: { en: ["after ", { term: not }, " and in questions"], uk: ["після ", { term: not }, " і в питаннях"], es: ["después de ", { term: not }, " y en preguntas"] }, ex: { examples: [["I didn't see ", { target: anybody }, "."], ["Did ", { target: anyone }, " call?"]] } }
+        - { level: A2, point: "no-", words: { alternatives: [nobody, no one, nothing, nowhere] }, rule: { en: "the verb stays affirmative: one negative word", uk: "дієслово стверджувальне: одне заперечне слово", es: "el verbo es afirmativo: una sola palabra negativa" }, ex: ["I saw ", { target: nothing }, "."] }
+        - { level: A2, point: every-, words: { alternatives: [everybody, everyone, everything, everywhere] }, rule: { en: means all, uk: "означає «усі, усе»", es: "significa «todos, todo»" }, ex: [{ target: Everything }, " is ready."] }
+        - { level: A2, point: { en: Verb, uk: "Дієслово", es: "Verbo" }, words: everybody, rule: { en: indefinite pronouns take a singular verb, uk: "неозначені займенники вживаються з дієсловом в однині", es: "los pronombres indefinidos llevan el verbo en singular" }, ex: [{ target: Everybody is }, " here."] }
+        - { level: A2, point: { en: Trap, uk: "Пастка", es: "Trampa" }, words: nobody, rule: { en: { takes: [negative subject, nobody] }, uk: { takes: ["заперечний підмет", nobody] }, es: { takes: ["sujeto negativo", nobody] } }, ex: [{ target: Nobody }, " came."] }
 
 sections:
-  - title: { en: Overview }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
     role: overview
     content:
       - type: list
@@ -39,49 +45,62 @@ sections:
             level: A2
             text:
               en: "-body and -one mean the same: somebody = someone."
+              uk: "-body і -one означають те саме: somebody = someone."
+              es: "-body y -one significan lo mismo: somebody = someone."
           - type: rule
             level: A2
             text:
               en: [{ term: no one }, " is two words; the others are one word."]
+              uk: [{ term: no one }, " пишеться як два слова, решта — як одне."]
+              es: [{ term: no one }, " se escribe en dos palabras; las demás, en una."]
           - type: note
             level: A2
             text:
               en: ["some-, any- and no- follow the rules of some, any and no: see ", { link: Quantifiers, to: en.nouns-determiners.quantifiers-some-any-much-many }, "."]
+              uk: ["some-, any- і no- підпорядковуються правилам some, any і no: див. ", { link: "Кількісні слова: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, "."]
+              es: ["some-, any- y no- siguen las reglas de some, any y no: ver ", { link: "Cuantificadores: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, "."]
 
-  - title: { en: "Form: verb and word order" }
+  - title: { en: "Form: verb and word order", uk: "Форма: дієслово й порядок слів", es: "Forma: verbo y orden de las palabras" }
     role: form
     content:
       - type: prose
         level: A2
         text:
           en: Indefinite pronouns take a singular verb.
+          uk: "Неозначені займенники вживаються з дієсловом в однині."
+          es: "Los pronombres indefinidos llevan el verbo en singular."
       - type: usage
         columns:
-          - { key: pronoun, label: { en: Pronoun } }
-          - { key: ex, label: { en: Example } }
+          - { key: pronoun, label: { en: Pronoun, uk: "Займенник", es: "Pronombre" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, pronoun: everybody, ex: [{ target: Everybody is }, " here."] }
-          - { level: A2, pronoun: somebody, ex: [{ target: Somebody wants }, " to see you."] }
-          - { level: A2, pronoun: nothing, ex: [{ target: Nothing is }, " open on ", { weekday: Sundays, value: 7 }, "."] }
+          - { level: A2, pronoun: everybody, ex: [{ target: Everybody is }, " here."], tr: { uk: "Усі тут.", es: "Todos están aquí." } }
+          - { level: A2, pronoun: somebody, ex: [{ target: Somebody wants }, " to see you."], tr: { uk: "Хтось хоче тебе бачити.", es: "Alguien quiere verte." } }
+          - { level: A2, pronoun: nothing, ex: [{ target: Nothing is }, " open on ", { weekday: Sundays, value: 7 }, "."], tr: { uk: "По неділях нічого не працює.", es: "Los domingos no abre nada." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["To refer back to somebody, everyone…, use ", { alternatives: [{ term: they }, { term: them }, { term: their }] }, ":"]
+              uk: ["Щоб далі говорити про somebody, everyone…, уживають ", { alternatives: [{ term: they }, { term: them }, { term: their }] }, ":"]
+              es: ["Para referirse de nuevo a somebody, everyone…, se usa ", { alternatives: [{ term: they }, { term: them }, { term: their }] }, ":"]
             ex: ["Somebody left ", { target: their }, " bag."]
+            tr: { uk: "Хтось залишив свою сумку.", es: "Alguien dejó su bolso." }
           - type: rule
             level: A2
             text:
               en: ["Adjectives and ", { term: else }, " go after: something ", { term: new }, ", somebody ", { term: else }, "."]
+              uk: ["Прикметники й ", { term: else }, " стоять після займенника: something ", { term: new }, ", somebody ", { term: else }, "."]
+              es: ["Los adjetivos y ", { term: else }, " van después: something ", { term: new }, ", somebody ", { term: else }, "."]
 
-  - title: { en: Pronunciation }
+  - title: { en: Pronunciation, uk: "Вимова", es: "Pronunciación" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Word } }
-          - { key: ipa, label: { en: Sound } }
+          - { key: word, label: { en: Word, uk: "Слово", es: "Palabra" } }
+          - { key: ipa, label: { en: Sound, uk: "Звук", es: "Sonido" } }
         rows:
           - { level: A2, word: somebody, ipa: { ipa: ˈsʌmbədi } }
           - { level: A2, word: someone, ipa: { ipa: ˈsʌmwʌn } }
@@ -95,50 +114,63 @@ sections:
             level: A2
             text:
               en: The stress falls on the first syllable.
+              uk: "Наголос падає на перший склад."
+              es: "El acento recae en la primera sílaba."
           - type: rule
             level: A2
             text:
               en: [{ term: any }, " is ", { ipa: ˈeni }, ", with the vowel of ", { term: bed }, "."]
+              uk: [{ term: any }, " читається ", { ipa: ˈeni }, ", із голосним як у ", { term: bed }, "."]
+              es: [{ term: any }, " se pronuncia ", { ipa: ˈeni }, ", con la vocal de ", { term: bed }, "."]
           - type: rule
             level: A2
             text:
               en: [{ term: nothing }, " has ", { ipa: ʌ }, ", like ", { term: some }, "; ", { term: nobody }, " has ", { ipa: əʊ }, ", like ", { term: "no" }, "."]
+              uk: [{ term: nothing }, " має ", { ipa: ʌ }, ", як у ", { term: some }, "; ", { term: nobody }, " має ", { ipa: əʊ }, ", як у ", { term: "no" }, "."]
+              es: [{ term: nothing }, " tiene ", { ipa: ʌ }, ", como ", { term: some }, "; ", { term: nobody }, " tiene ", { ipa: əʊ }, ", como ", { term: "no" }, "."]
           - type: rule
             level: A2
             text:
               en: [{ term: every }, " has two syllables: ", { ipa: ˈevri }, "."]
+              uk: [{ term: every }, " має два склади: ", { ipa: ˈevri }, "."]
+              es: [{ term: every }, " tiene dos sílabas: ", { ipa: ˈevri }, "."]
 
-  - title: { en: Use }
+  - title: { en: Use, uk: "Вживання", es: "Uso" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use } }
-          - { key: ex, label: { en: Example } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
         rows:
-          - { level: A2, use: { en: "affirmative: some-" }, ex: ["I saw ", { target: somebody }, " in the garden."] }
-          - { level: A2, use: { en: "negative: not … any-" }, ex: ["I didn't see ", { target: anybody }, "."] }
-          - { level: A2, use: { en: "question: any-" }, ex: ["Did ", { target: anyone }, " call?"] }
-          - { level: A2, use: { en: "offer or request: some-" }, ex: ["Would you like ", { target: something }, " to drink?"] }
-          - { level: A2, use: { en: { pattern: [no-, affirmative verb] } }, ex: ["I saw ", { target: nothing }, "."] }
-          - { level: A2, use: { en: "one-word answer: no-" }, ex: { exchange: [What did you buy?, [{ target: Nothing }, "."]] } }
-          - { level: A2, use: { en: every- = all }, ex: [{ target: Everything }, " is ready."] }
+          - { level: A2, use: { en: "affirmative: some-", uk: "ствердження: some-", es: "afirmación: some-" }, ex: ["I saw ", { target: somebody }, " in the garden."], tr: { uk: "Я бачив когось у саду.", es: "Vi a alguien en el jardín." } }
+          - { level: A2, use: { en: "negative: not … any-", uk: "заперечення: not … any-", es: "negación: not … any-" }, ex: ["I didn't see ", { target: anybody }, "."], tr: { uk: "Я нікого не бачив.", es: "No vi a nadie." } }
+          - { level: A2, use: { en: "question: any-", uk: "питання: any-", es: "pregunta: any-" }, ex: ["Did ", { target: anyone }, " call?"], tr: { uk: "Хтось дзвонив?", es: "¿Llamó alguien?" } }
+          - { level: A2, use: { en: "offer or request: some-", uk: "пропозиція або прохання: some-", es: "ofrecimiento o petición: some-" }, ex: ["Would you like ", { target: something }, " to drink?"], tr: { uk: "Хочеш чогось випити?", es: "¿Quieres algo de beber?" } }
+          - { level: A2, use: { en: { pattern: [no-, affirmative verb] }, uk: { pattern: [no-, "стверджувальне дієслово"] }, es: { pattern: [no-, "verbo afirmativo"] } }, ex: ["I saw ", { target: nothing }, "."], tr: { uk: "Я нічого не бачив.", es: "No vi nada." } }
+          - { level: A2, use: { en: "one-word answer: no-", uk: "відповідь одним словом: no-", es: "respuesta de una palabra: no-" }, ex: { exchange: [What did you buy?, [{ target: Nothing }, "."]] }, tr: { uk: "Що ти купив? — Нічого.", es: "¿Qué compraste? — Nada." } }
+          - { level: A2, use: { en: every- = all, uk: "every- = усі, усе", es: "every- = todos, todo" }, ex: [{ target: Everything }, " is ready."], tr: { uk: "Усе готово.", es: "Todo está listo." } }
       - type: list
         items:
           - type: rule
             level: A2
             text:
               en: ["One negative word only: ", { term: ["not ", { gap: true }, " anybody"] }, " or ", { term: nobody }, "."]
+              uk: ["Лише одне заперечне слово: ", { term: ["not ", { gap: true }, " anybody"] }, " або ", { term: nobody }, "."]
+              es: ["Una sola palabra negativa: ", { term: ["not ", { gap: true }, " anybody"] }, " o ", { term: nobody }, "."]
           - type: rule
             level: A2
             text:
               en: ["A negative subject is ", { term: no- }, ", with an affirmative verb:"]
+              uk: ["Заперечний підмет утворюють із ", { term: no- }, ", а дієслово стоїть у стверджувальній формі:"]
+              es: ["Un sujeto negativo lleva ", { term: no- }, " y el verbo va en afirmativo:"]
             ex: [{ target: Nobody }, " came."]
+            tr: { uk: "Ніхто не прийшов.", es: "No vino nadie." }
 
-  - title: { en: Typical errors }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: Anybody came., right: [{ target: Nobody }, " came."], rule: { en: { takes: [negative subject, nobody] } } }
-          - { level: A2, wrong: Everybody are here., right: ["Everybody ", { target: is }, " here."], rule: { en: singular verb } }
+          - { level: A2, wrong: Anybody came., right: [{ target: Nobody }, " came."], rule: { en: { takes: [negative subject, nobody] }, uk: { takes: ["заперечний підмет", nobody] }, es: { takes: ["sujeto negativo", nobody] } } }
+          - { level: A2, wrong: Everybody are here., right: ["Everybody ", { target: is }, " here."], rule: { en: singular verb, uk: "дієслово в однині", es: "verbo en singular" } }

@@ -1,7 +1,7 @@
 // npm run check catches text that is not written in the §12 vocabulary: the inline notation the marks
 // replace, a mark left incomplete, and a localized value without a language.
 import { describe, expect, test } from "bun:test";
-import type { ErrorsBlock, ListBlock, Localized, ProseBlock, Text, Topic } from "../lib.ts";
+import { EXPLAIN_CODES, type ErrorsBlock, type ListBlock, type Localized, type ProseBlock, type Text, type Topic } from "../lib.ts";
 import { problemsAfter, sampleBlocks } from "../sample-topic.ts";
 import { LEARNED_NOTATION, NOTATION } from "./notation.ts";
 import { checkText } from "./topic-text.ts";
@@ -14,7 +14,7 @@ const errors = (t: Topic): ErrorsBlock => sampleBlocks(t)[3] as ErrorsBlock;
 const explaining =
   (value: Text) =>
   (t: Topic): void => {
-    prose(t).text = { en: value };
+    prose(t).text = Object.fromEntries(EXPLAIN_CODES.map((l) => [l, value]));
   };
 const learned =
   (value: unknown) =>
@@ -115,12 +115,12 @@ describe("every localized value carries each explanation language", () => {
       problems((t) => {
         t.title = none;
       }),
-    ).toEqual(['title has no "en" text']);
+    ).toEqual(EXPLAIN_CODES.map((l) => `title has no "${l}" text`));
     expect(
       problems((t) => {
         list(t).items[0] = { type: "rule", level: "A1", text: none };
       }),
-    ).toEqual(['sections[0].content[1].items[0].text has no "en" text']);
+    ).toEqual(EXPLAIN_CODES.map((l) => `sections[0].content[1].items[0].text has no "${l}" text`));
     expect(
       problems((t) => {
         const [row] = errors(t).rows;

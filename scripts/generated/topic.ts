@@ -1,7 +1,7 @@
 // Generated from languages/schema/topic.schema.json by npm run types. Edit the schema, then regenerate.
 
 export type TopicId = string;
-export type Explain = "en";
+export type Explain = "en" | "uk" | "es";
 export type Status = "draft" | "approved";
 /**
  * Text: a string, one mark, or a list of parts.
@@ -114,6 +114,8 @@ export interface Langs123Topic {
   related: TopicId[];
   status: {
     en: Status;
+    uk: Status;
+    es: Status;
   };
   title: Localized;
   summary: Summary;
@@ -133,6 +135,8 @@ export interface Langs123Topic {
  */
 export interface Localized {
   en?: Text;
+  uk?: Text;
+  es?: Text;
 }
 /**
  * The form the topic teaches; in an error, the corrected part.
