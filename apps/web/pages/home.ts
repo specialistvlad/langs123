@@ -8,8 +8,8 @@ import { badge } from "../parts.ts";
 import { homeUrl, notFoundUrl, trackUrl } from "../urls.ts";
 
 // Each home page leads to every track through a matrix: a row per language to learn, named in the home
-// page's language, and a column per explanation language, under its own name, the home page's language
-// first; each cell opens that track and shows its levels. The first explanation language's home, at the
+// page's language with its levels and topics, and a column per explanation language, under its own name,
+// the home page's language first; each cell is an arrow into that track. The first explanation language's home, at the
 // root, is the default for other readers.
 export function homePage(ctx: Context): void {
   const { o, refs } = ctx;
@@ -34,12 +34,15 @@ export function homePage(ctx: Context): void {
     const head = `<thead><tr>${corner}${order.map((e) => `<th scope="col" lang="${e}">${escapeHtml(explainName(e))}</th>`).join("")}</tr></thead>`;
     const body = ctx.languages
       .map((lang) => {
-        const levels = join(refs.filter((r) => r.lang === lang.code).map((r) => refRange(r)));
+        const own = refs.filter((r) => r.lang === lang.code);
+        const written = own.filter((r) => r.topic !== null).length;
+        // A cell is an arrow into its track; the row names the language once, with its levels and topics.
         const cells = order.map((e) => {
           const name = escapeHtml(`${ui(e).track(localize(lang.name, e))}, ${ui(e).explained}`);
-          return `<td><a href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" aria-label="${name}" title="${name}">${badge(levels)}</a></td>`;
+          return `<td><a href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" aria-label="${name}" title="${name}"><span class="go" aria-hidden="true">→</span></a></td>`;
         });
-        return `<tr><th scope="row">${escapeHtml(localize(lang.name, home))}</th>${cells.join("")}</tr>`;
+        const about = `${badge(join(own.map((r) => refRange(r))))} <span>${escapeHtml(say("written", home, { n: written, total: own.length }))}</span>`;
+        return `<tr><th scope="row"><span class="name">${escapeHtml(localize(lang.name, home))}</span><span class="about">${about}</span></th>${cells.join("")}</tr>`;
       })
       .join("");
     ctx.add(

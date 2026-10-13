@@ -363,8 +363,9 @@ Every page has a clean, stable, named URL.
 | `{topic}` | topic slug | `simple-tenses` |
 | `{sheet}` | `a0`…`c2` (level), `a0-a1`…`a0-c2` (progressive), up to the highest level the topics reach; `{section}`, `{section}/{topic}` | `a0-b1` |
 
-- The home page is a matrix: a row per language being learned, a column per explanation language
-  under its own name, the page's own language first; each cell opens that track and shows its levels.
+- The home page is a matrix: a row per language being learned, with its levels and topics, a column
+  per explanation language under its own name, the page's own language first; each cell is an arrow
+  into that track.
   The top bar's language switch shows the page's language and opens into a list of every one.
 - Every page names its counterparts in the other explanation languages with `hreflang`; the home
   pages add the root as `x-default`. The top bar and the menu lead to the home and credits pages in the

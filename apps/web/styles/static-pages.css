@@ -104,11 +104,38 @@
 .matrix .axis-y::after {
   content: " ↓";
 }
+.doc .matrix th[scope="row"] .name {
+  display: block;
+  font-size: 15px;
+}
+.doc .matrix th[scope="row"] .about {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
 .matrix td a {
   display: inline-block;
-  padding: 6px 8px;
-  border-radius: 8px;
   text-decoration: none;
+}
+.matrix .go {
+  display: inline-block;
+  min-width: 36px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 600;
+  transition:
+    background 0.12s ease,
+    color 0.12s ease;
+}
+.doc .matrix td:is(:hover, :focus-within) .go {
+  background: var(--accent);
+  color: var(--surface);
 }
 .doc .matrix tbody tr:is(:hover, :focus-within) > *,
 .doc .matrix tbody .col-on {
