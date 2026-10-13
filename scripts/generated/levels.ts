@@ -25,4 +25,12 @@ export interface Localized {
   en: string;
   uk: string;
   es: string;
+  pt: string;
+  fr: string;
+  de: string;
+  it: string;
+  pl: string;
+  tr: string;
+  id: string;
+  vi: string;
 }

@@ -2,7 +2,7 @@
 // the marks the renderer knows, and, for every mark shown in bold or italics, a rule in the stylesheet.
 import { describe, expect, test } from "bun:test";
 import { join } from "node:path";
-import { CONTENT } from "../../scripts/lib.ts";
+import { CONTENT, EXPLAIN_CODES } from "../../scripts/lib.ts";
 import { LIST_MARKS, MARKS } from "../../scripts/text.ts";
 import { EMPHASIS, STRONG } from "./html.ts";
 
@@ -95,7 +95,13 @@ describe("CONVENTIONS.md §12, the topic schema and the renderer name the same t
     expect(sorted(roles)).toEqual(sorted(prop(def("section"), "role").enum ?? []));
   });
   test("attributes are fields of the schema, and every field of the schema is named in CONVENTIONS.md", () => {
-    const fields = new Set(Object.values(schema.definitions).flatMap((d) => Object.keys(d.properties ?? {})));
+    // The explanation languages of site.yaml key localized values; every other property is a field, and tr
+    // (a translation) and id (a topic's ID) are fields besides.
+    const fields = new Set(
+      Object.values(schema.definitions)
+        .flatMap((d) => Object.keys(d.properties ?? {}))
+        .filter((f) => !(EXPLAIN_CODES as string[]).includes(f) || ["tr", "id"].includes(f)),
+    );
     for (const attribute of names("Attributes")) expect(fields.has(attribute)).toBe(true);
     const named = new Set(ticked(conventions.replace(/```[^]*?```/g, "")));
     expect([...fields].filter((f) => !named.has(f))).toEqual([]);

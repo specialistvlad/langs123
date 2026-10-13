@@ -32,41 +32,28 @@ const TEXT_KEYS = [
   "topics",
   "notFound",
   "backHome",
+  "print",
+  "editOn",
+  "editTitle",
 ] as const;
 
-// Web-only wording: actions this app offers.
-interface WebText {
-  print: string;
-  editOn: string;
-  editTitle: string;
-}
-const WEB: Partial<Record<Explain, WebText>> = {
-  en: { print: "Print", editOn: "Edit on", editTitle: "Edit this topic on GitHub" },
-  uk: { print: "Друк", editOn: "Редагувати на", editTitle: "Редагувати цю тему на GitHub" },
-  es: { print: "Imprimir", editOn: "Editar en", editTitle: "Editar este tema en GitHub" },
+export type Ui = Record<(typeof TEXT_KEYS)[number], string> & {
+  explained: string;
+  track: (name: string) => string;
+  written: (n: number, total: number) => string;
 };
 
-export type Ui = Record<(typeof TEXT_KEYS)[number], string> &
-  WebText & {
-    explained: string;
-    track: (name: string) => string;
-    written: (n: number, total: number) => string;
-  };
-
 function makeUi(e: Explain): Ui {
-  const web = WEB[e];
-  if (web === undefined) throw new Error(`apps/web/layout.ts has no web wording for "${e}"`);
   const text = Object.fromEntries(TEXT_KEYS.map((key) => [key, say(key, e)])) as Record<(typeof TEXT_KEYS)[number], string>;
   return {
     ...text,
-    ...web,
     explained: say("explained", e, { name: explainName(e) }),
     track: (name: string) => say("track", e, { name }),
     written: (n: number, total: number) => say("written", e, { n, total }),
   };
 }
 
-// Interface wording per explanation language: languages/interface.yaml plus the web-only actions.
+// Interface wording per explanation language, from languages/interface.yaml.
 const UI = new Map(EXPLAIN_CODES.map((e) => [e, makeUi(e)]));
 export function ui(explain: Explain): Ui {
   const t = UI.get(explain);
@@ -82,8 +69,15 @@ export interface Choice {
 
 export const seg = (label: string, inner: string): string =>
   `<div class="control"><span>${escapeHtml(label)}</span><div class="seg">${inner}</div></div>`;
-const linkSeg = (label: string, choices: Choice[]): string =>
-  seg(label, choices.map((c) => `<a href="${c.href}"${c.on ? ' class="on" aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`).join(""));
+// The language switch: the current language, opening into a list of every language (client-seg.ts closes
+// it on a tap elsewhere or Escape).
+function languageMenu(label: string, choices: Choice[]): string {
+  const current = choices.find((c) => c.on) ?? choices[0];
+  const links = choices
+    .map((c) => `<a href="${c.href}"${c.on ? ' class="on" aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`)
+    .join("");
+  return `<div class="control"><span>${escapeHtml(label)}</span><details class="seg lang-menu"><summary>${escapeHtml(current?.label ?? "")}</summary><div class="menu-list">${links}</div></details></div>`;
+}
 
 export interface ControlsOptions {
   explain: Explain;
@@ -95,7 +89,7 @@ export interface ControlsOptions {
 export function controls(o: ControlsOptions): string {
   const t = ui(o.explain);
   // One explanation language leaves nothing to switch.
-  const parts = o.read.length > 1 ? [linkSeg(t.read, o.read)] : [];
+  const parts = o.read.length > 1 ? [languageMenu(t.read, o.read)] : [];
   if (o.level === true) {
     parts.push(seg(t.level, LEVELS.map((l) => `<button type="button" class="lvl-${l}" data-set-level="${l}">${l}</button>`).join("")));
   }

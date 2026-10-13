@@ -3,7 +3,8 @@
 The foundations of languages as open data: sounds, writing, numbers, dates, time and grammar, every
 line marked with its CEFR level. Each language being learned is explained in each explanation
 language, so the library grows as N languages, each explained in N languages. It holds English from
-A0 to B1, explained in English, Ukrainian and Spanish.
+A0 to B1, explained in English, Ukrainian, Spanish, Portuguese, French, German, Italian, Polish,
+Turkish, Indonesian and Vietnamese.
 
 **Site:** https://langs123.com
 

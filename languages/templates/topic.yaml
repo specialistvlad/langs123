@@ -11,71 +11,79 @@ kind: grammar
 tags: []
 concepts: []
 related: []
-status: { en: draft, uk: draft, es: draft }
+status: { en: draft, uk: draft, es: draft, pt: draft, fr: draft, de: draft, it: draft, pl: draft, tr: draft, id: draft, vi: draft }
 
-title: { en: "{Title}", uk: "{Title}", es: "{Title}" }
+title: { en: "{Title}", uk: "{Title}", es: "{Title}", pt: "{Title}", fr: "{Title}", de: "{Title}", it: "{Title}", pl: "{Title}", tr: "{Title}", id: "{Title}", vi: "{Title}" }
 summary:
-  lead: { en: "{The forms and what they do, one sentence of at most 160 characters.}", uk: "{The lead in Ukrainian.}", es: "{The lead in Spanish.}" }
-  rule: { en: "{The rule to get right:}", uk: "{The rule in Ukrainian:}", es: "{The rule in Spanish:}" }
+  lead: { en: "{The forms and what they do, one sentence of at most 160 characters.}", uk: "{The lead in Ukrainian.}", es: "{The lead in Spanish.}", pt: "{The lead in Portuguese.}", fr: "{The lead in French.}", de: "{The lead in German.}", it: "{The lead in Italian.}", pl: "{The lead in Polish.}", tr: "{The lead in Turkish.}", id: "{The lead in Indonesian.}", vi: "{The lead in Vietnamese.}" }
+  rule: { en: "{The rule to get right:}", uk: "{The rule in Ukrainian:}", es: "{The rule in Spanish:}", pt: "{The rule in Portuguese:}", fr: "{The rule in French:}", de: "{The rule in German:}", it: "{The rule in Italian:}", pl: "{The rule in Polish:}", tr: "{The rule in Turkish:}", id: "{The rule in Indonesian:}", vi: "{The rule in Vietnamese:}" }
   ex: ["{Example with the }", { target: "{target form}" }, "."]
 
 cheatsheet:
   content:
     - type: paradigm
       columns:
-        - { key: form, label: { en: Form, uk: Форма, es: Forma } }
-        - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo } }
+        - { key: form, label: { en: Form, uk: Форма, es: Forma, pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+        - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo, pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
       rows:
-        - { level: "{A1}", features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: Ствердження, es: Afirmación }, ex: ["She ", { target: "{works}" }, "."] }
-        - { level: "{A1}", features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: Заперечення, es: Negación }, ex: ["She ", { target: "{doesn't work}" }, "."] }
-        - { level: "{A2}", features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: Питання, es: Pregunta }, ex: [{ aux: Does }, " she ", { target: work }, "?"] }
+        - { level: "{A1}", features: { polarity: pos, interrogativity: decl }, form: { en: Affirmative, uk: Ствердження, es: Afirmación, pt: "Afirmação", fr: "Affirmation", de: "Bejahung", it: "Affermazione", pl: "Twierdzenie", tr: "Olumlu", id: "Positif", vi: "Khẳng định" }, ex: ["She ", { target: "{works}" }, "."] }
+        - { level: "{A1}", features: { polarity: neg, interrogativity: decl }, form: { en: Negative, uk: Заперечення, es: Negación, pt: "Negação", fr: "Négation", de: "Verneinung", it: "Negazione", pl: "Przeczenie", tr: "Olumsuz", id: "Negatif", vi: "Phủ định" }, ex: ["She ", { target: "{doesn't work}" }, "."] }
+        - { level: "{A2}", features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: Питання, es: Pregunta, pt: "Pergunta", fr: "Question", de: "Frage", it: "Domanda", pl: "Pytanie", tr: "Soru", id: "Pertanyaan", vi: "Câu hỏi" }, ex: [{ aux: Does }, " she ", { target: work }, "?"] }
 
 sections:
-  - title: { en: Overview, uk: Огляд, es: Visión general }
+  - title: { en: Overview, uk: Огляд, es: Visión general, pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
     role: overview
     content:
       - type: list
         items:
           - type: rule
             level: "{A1}"
-            text: { en: "{One rule, at most 20 words:}", uk: "{The rule in Ukrainian:}", es: "{The rule in Spanish:}" }
+            text: { en: "{One rule, at most 20 words:}", uk: "{The rule in Ukrainian:}", es: "{The rule in Spanish:}", pt: "{The rule in Portuguese:}", fr: "{The rule in French:}", de: "{The rule in German:}", it: "{The rule in Italian:}", pl: "{The rule in Polish:}", tr: "{The rule in Turkish:}", id: "{The rule in Indonesian:}", vi: "{The rule in Vietnamese:}" }
             ex: ["{Its example with the }", { target: "{target}" }, "."]
-            tr: { uk: "{The example in Ukrainian.}", es: "{The example in Spanish.}" }
+            tr: { uk: "{The example in Ukrainian.}", es: "{The example in Spanish.}", pt: "{The example in Portuguese.}", fr: "{The example in French.}", de: "{The example in German.}", it: "{The example in Italian.}", pl: "{The example in Polish.}", tr: "{The example in Turkish.}", id: "{The example in Indonesian.}", vi: "{The example in Vietnamese.}" }
           - type: note
             level: "{A1}"
             text:
               en: ["{A note. See }", { link: "{Other topic}", to: "{en.section.topic}" }, "."]
               uk: ["{The note in Ukrainian. See }", { link: "{Other topic in Ukrainian}", to: "{en.section.topic}" }, "."]
               es: ["{The note in Spanish. See }", { link: "{Other topic in Spanish}", to: "{en.section.topic}" }, "."]
+              pt: ["{The note in Portuguese. See }", { link: "{Other topic in Portuguese}", to: "{en.section.topic}" }, "."]
+              fr: ["{The note in French. See }", { link: "{Other topic in French}", to: "{en.section.topic}" }, "."]
+              de: ["{The note in German. See }", { link: "{Other topic in German}", to: "{en.section.topic}" }, "."]
+              it: ["{The note in Italian. See }", { link: "{Other topic in Italian}", to: "{en.section.topic}" }, "."]
+              pl: ["{The note in Polish. See }", { link: "{Other topic in Polish}", to: "{en.section.topic}" }, "."]
+              tr: ["{The note in Turkish. See }", { link: "{Other topic in Turkish}", to: "{en.section.topic}" }, "."]
+              id: ["{The note in Indonesian. See }", { link: "{Other topic in Indonesian}", to: "{en.section.topic}" }, "."]
+              vi: ["{The note in Vietnamese. See }", { link: "{Other topic in Vietnamese}", to: "{en.section.topic}" }, "."]
 
-  - title: { en: "Form: {form}", uk: "Форма: {form}", es: "Forma: {form}" }
+  - title: { en: "Form: {form}", uk: "Форма: {form}", es: "Forma: {form}", pt: "Forma: {form}", fr: "Forme : {form}", de: "Form: {form}", it: "Forma: {form}", pl: "Forma: {form}", tr: "Biçim: {form}", id: "Bentuk: {form}", vi: "Dạng: {form}" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form, uk: Форма, es: Forma } }
-          - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo } }
+          - { key: form, label: { en: Form, uk: Форма, es: Forma, pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo, pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
-          - { level: "{A1}", form: { pattern: [{ slot: subject }, "{form}", { slot: V }] }, ex: "{Example}", tr: { uk: "{Translation}", es: "{Translation}" } }
+          - { level: "{A1}", form: { pattern: [{ slot: subject }, "{form}", { slot: V }] }, ex: "{Example}", tr: { uk: "{Translation}", es: "{Translation}", pt: "{Translation}", fr: "{Translation}", de: "{Translation}", it: "{Translation}", pl: "{Translation}", tr: "{Translation}", id: "{Translation}", vi: "{Translation}" } }
 
-  - title: { en: Use, uk: Вживання, es: Uso }
+  - title: { en: Use, uk: Вживання, es: Uso, pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use, uk: Вживання, es: Uso } }
-          - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo } }
+          - { key: use, label: { en: Use, uk: Вживання, es: Uso, pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: ex, label: { en: Example, uk: Приклад, es: Ejemplo, pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
           - level: "{A1}"
-            use: { en: "{use}", uk: "{use}", es: "{use}" }
+            use: { en: "{use}", uk: "{use}", es: "{use}", pt: "{use}", fr: "{use}", de: "{use}", it: "{use}", pl: "{use}", tr: "{use}", id: "{use}", vi: "{use}" }
             ex: ["{Example with the }", { target: "{target}" }, "."]
-            tr: { uk: "{Translation}", es: "{Translation}" }
+            tr: { uk: "{Translation}", es: "{Translation}", pt: "{Translation}", fr: "{Translation}", de: "{Translation}", it: "{Translation}", pl: "{Translation}", tr: "{Translation}", id: "{Translation}", vi: "{Translation}" }
           - level: "{A2}"
-            use: { en: "{use}", uk: "{use}", es: "{use}" }
+            use: { en: "{use}", uk: "{use}", es: "{use}", pt: "{use}", fr: "{use}", de: "{use}", it: "{use}", pl: "{use}", tr: "{use}", id: "{use}", vi: "{use}" }
             ex: { examples: ["{One example.}", "{Another example.}"] }
-            tr: { uk: { examples: ["{One translation.}", "{Another translation.}"] }, es: { examples: ["{One translation.}", "{Another translation.}"] } }
+            tr: { uk: { examples: ["{One translation.}", "{Another translation.}"] }, es: { examples: ["{One translation.}", "{Another translation.}"] }, pt: { examples: ["{One translation.}", "{Another translation.}"] }, fr: { examples: ["{One translation.}", "{Another translation.}"] }, de: { examples: ["{One translation.}", "{Another translation.}"] }, it: { examples: ["{One translation.}", "{Another translation.}"] }, pl: { examples: ["{One translation.}", "{Another translation.}"] }, tr: { examples: ["{One translation.}", "{Another translation.}"] }, id: { examples: ["{One translation.}", "{Another translation.}"] }, vi: { examples: ["{One translation.}", "{Another translation.}"] } }
 
-  - title: { en: "Compare: {this} and {that}", uk: "Порівняння: {this} і {that}", es: "Comparación: {this} y {that}" }
+  - title: { en: "Compare: {this} and {that}", uk: "Порівняння: {this} і {that}", es: "Comparación: {this} y {that}", pt: "Comparação: {this} e {that}", fr: "Comparaison : {this} et {that}", de: "Vergleich: {this} und {that}", it: "Confronto: {this} e {that}", pl: "Porównanie: {this} i {that}", tr: "Karşılaştırma: {this} ve {that}", id: "Perbandingan: {this} dan {that}", vi: "So sánh: {this} và {that}" }
     role: compare
     content:
       - type: comparison
@@ -83,14 +91,14 @@ sections:
           - { key: this, label: "{this}" }
           - { key: that, label: "{that}" }
         rows:
-          - { level: "{A2}", this: { en: "{meaning}", uk: "{meaning}", es: "{meaning}" }, that: { en: "{meaning}", uk: "{meaning}", es: "{meaning}" } }
+          - { level: "{A2}", this: { en: "{meaning}", uk: "{meaning}", es: "{meaning}", pt: "{meaning}", fr: "{meaning}", de: "{meaning}", it: "{meaning}", pl: "{meaning}", tr: "{meaning}", id: "{meaning}", vi: "{meaning}" }, that: { en: "{meaning}", uk: "{meaning}", es: "{meaning}", pt: "{meaning}", fr: "{meaning}", de: "{meaning}", it: "{meaning}", pl: "{meaning}", tr: "{meaning}", id: "{meaning}", vi: "{meaning}" } }
           - level: "{A2}"
-            this: { ex: ["{Example with }", { target: "{this}" }, "."], tr: { uk: "{Translation}", es: "{Translation}" } }
-            that: { ex: ["{Example with }", { target: "{that}" }, "."], tr: { uk: "{Translation}", es: "{Translation}" } }
+            this: { ex: ["{Example with }", { target: "{this}" }, "."], tr: { uk: "{Translation}", es: "{Translation}", pt: "{Translation}", fr: "{Translation}", de: "{Translation}", it: "{Translation}", pl: "{Translation}", tr: "{Translation}", id: "{Translation}", vi: "{Translation}" } }
+            that: { ex: ["{Example with }", { target: "{that}" }, "."], tr: { uk: "{Translation}", es: "{Translation}", pt: "{Translation}", fr: "{Translation}", de: "{Translation}", it: "{Translation}", pl: "{Translation}", tr: "{Translation}", id: "{Translation}", vi: "{Translation}" } }
 
-  - title: { en: Typical errors, uk: Типові помилки, es: Errores frecuentes }
+  - title: { en: Typical errors, uk: Типові помилки, es: Errores frecuentes, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: "{A1}", wrong: "{wrong}", right: ["{right with the }", { target: "{fix}" }], rule: { en: "{rule}", uk: "{rule}", es: "{rule}" } }
+          - { level: "{A1}", wrong: "{wrong}", right: ["{right with the }", { target: "{fix}" }], rule: { en: "{rule}", uk: "{rule}", es: "{rule}", pt: "{rule}", fr: "{rule}", de: "{rule}", it: "{rule}", pl: "{rule}", tr: "{rule}", id: "{rule}", vi: "{rule}" } }

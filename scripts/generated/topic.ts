@@ -1,7 +1,7 @@
 // Generated from languages/schema/topic.schema.json by npm run types. Edit the schema, then regenerate.
 
 export type TopicId = string;
-export type Explain = "en" | "uk" | "es";
+export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi";
 export type Status = "draft" | "approved";
 /**
  * Text: a string, one mark, or a list of parts.
@@ -116,6 +116,14 @@ export interface Langs123Topic {
     en: Status;
     uk: Status;
     es: Status;
+    pt: Status;
+    fr: Status;
+    de: Status;
+    it: Status;
+    pl: Status;
+    tr: Status;
+    id: Status;
+    vi: Status;
   };
   /**
    * Per explanation language but the source, the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section (npm run translated).
@@ -147,6 +155,14 @@ export interface Localized {
   en?: Text;
   uk?: Text;
   es?: Text;
+  pt?: Text;
+  fr?: Text;
+  de?: Text;
+  it?: Text;
+  pl?: Text;
+  tr?: Text;
+  id?: Text;
+  vi?: Text;
 }
 /**
  * The form the topic teaches; in an error, the corrected part.

@@ -1,16 +1,17 @@
 // npm run check names the parts of a topic whose source text changed since its translations were stamped,
-// and asks for a stamp a translation lacks; text in the other languages and rows for other speakers leave
-// the fingerprint as it is.
+// and asks for a stamp a translation lacks; text in the other languages, inside an example too, and rows
+// for other speakers leave the fingerprint as it is.
 import { describe, expect, test } from "bun:test";
-import { changedParts, fingerprint, sourceParts } from "../fingerprint.ts";
-import type { ErrorsBlock, ListBlock, Topic } from "../lib.ts";
+import { changedParts, fingerprint, SOURCE, sourceParts } from "../fingerprint.ts";
+import { EXPLAIN_CODES, type ErrorsBlock, type ListBlock, type Topic } from "../lib.ts";
 import { problemsAfter, SAMPLE, sampleBlocks } from "../sample-topic.ts";
 import { checkTranslated } from "./topic-translated.ts";
 
-// The sample, stamped as up to date in every language, then changed.
+// The explanation languages that translate the source, and the sample stamped as up to date in each, then changed.
+const others = EXPLAIN_CODES.filter((e) => e !== SOURCE);
 const stamped = (change: (t: Topic) => void): string[] =>
   problemsAfter((t) => {
-    t.translated = { uk: fingerprint(SAMPLE), es: fingerprint(SAMPLE) };
+    t.translated = Object.fromEntries(others.map((e) => [e, fingerprint(SAMPLE)]));
     change(t);
   }, checkTranslated);
 
@@ -35,20 +36,23 @@ describe("the fingerprint", () => {
 describe("the check", () => {
   test("a stamped topic passes, and a missing stamp is asked for", () => {
     expect(stamped(() => undefined)).toEqual([]);
-    expect(problemsAfter(() => undefined, checkTranslated)).toEqual([
-      'translated has no "uk" fingerprint: once the uk text is written, run npm run translated -- en.sample.topic uk',
-      'translated has no "es" fingerprint: once the es text is written, run npm run translated -- en.sample.topic es',
-    ]);
+    expect(problemsAfter(() => undefined, checkTranslated)).toEqual(
+      others.map(
+        (e) => `translated has no "${e}" fingerprint: once the ${e} text is written, run npm run translated -- en.sample.topic ${e}`,
+      ),
+    );
   });
   test("a change to the source text names the part in every translation", () => {
     expect(
       stamped((t) => {
         t.title.en = "Another title";
       }),
-    ).toEqual([
-      "the uk text predates the en text in the title and summary: bring it up to date, then run npm run translated -- en.sample.topic uk",
-      "the es text predates the en text in the title and summary: bring it up to date, then run npm run translated -- en.sample.topic es",
-    ]);
+    ).toEqual(
+      others.map(
+        (e) =>
+          `the ${e} text predates the en text in the title and summary: bring it up to date, then run npm run translated -- en.sample.topic ${e}`,
+      ),
+    );
   });
   test("text in the other languages, and an error row for other speakers, leave the fingerprint as it is", () => {
     expect(
@@ -63,5 +67,13 @@ describe("the check", () => {
         });
       }),
     ).toEqual([]);
+  });
+  test("a translation added to a localized piece of an example, such as a slot's name, leaves the fingerprint as it is", () => {
+    const t = structuredClone(SAMPLE);
+    const [item] = (sampleBlocks(t)[1] as ListBlock).items;
+    if (item) item.ex = { pattern: ["take", { slot: { en: "noun", uk: "іменник" } }] };
+    const before = fingerprint(t);
+    if (item) item.ex = { pattern: ["take", { slot: { en: "noun", uk: "іменник", es: "sustantivo" } }] };
+    expect(fingerprint(t)).toBe(before);
   });
 });

@@ -1,16 +1,27 @@
 // The credits live on one page: every page's top bar links to it, no page has a footer, and the credits
 // page names the content's authors, both licences, the credit line and the ways to contribute.
 import { describe, expect, test } from "bun:test";
+import { join } from "node:path";
+import { parseHTML } from "linkedom";
 import { ENABLED_EXPLAIN, type Explain, SITE, say } from "../../scripts/lib.ts";
-import { readPage, testSite } from "./test-site.ts";
+import { readPage, SITE_DIR, testSite } from "./test-site.ts";
 import { creditsUrl, homeUrl, notFoundUrl } from "./urls.ts";
 
 const pages = await testSite();
 
+// A page's language, its top bar alone, parsed, and whether it has a footer: every page is checked, so
+// the test reads only what it checks.
+async function topBar(path: string): Promise<{ lang: Explain; doc: Document; footer: boolean }> {
+  const html = await Bun.file(join(SITE_DIR, path)).text();
+  const start = html.indexOf('<header class="topbar"');
+  const bar = start < 0 ? "" : html.slice(start, html.indexOf("</header>", start) + "</header>".length);
+  const lang = (/<html lang="([a-z]+)"/.exec(html)?.[1] ?? "") as Explain;
+  return { lang, doc: parseHTML(`<html><body>${bar}</body></html>`).document, footer: /<footer[\s>]/.test(html) };
+}
+
 describe.each(pages)("%s", (path) => {
   test("the top bar links to the credits page beside the theme switch, and the page has no footer", async () => {
-    const doc = await readPage(path);
-    const lang = doc.documentElement.getAttribute("lang") as Explain;
+    const { lang, doc, footer } = await topBar(path);
     const credits = creditsUrl(lang);
     const tools = [...doc.querySelectorAll(".topbar .tools > *")].map((el) => el.getAttribute("href") ?? el.id);
     expect(tools).toEqual([credits, "theme"]);
@@ -18,7 +29,7 @@ describe.each(pages)("%s", (path) => {
     expect(link?.getAttribute("aria-label")).toBe(say("credits", lang));
     expect(link?.getAttribute("aria-current")).toBe(`/${path}` === `${credits}index.html` ? "page" : null);
     expect(doc.querySelector(".topbar .brand")?.getAttribute("href")).toBe(homeUrl(lang));
-    expect(doc.querySelector("footer")).toBeNull();
+    expect(footer).toBe(false);
   });
 });
 
@@ -53,7 +64,8 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
     expect(home.querySelector('link[hreflang="x-default"]')?.getAttribute("href")).toBe(
       `http://127.0.0.1${homeUrl(ENABLED_EXPLAIN[0] ?? e)}`,
     );
-    expect(home.querySelector(".track-link")?.getAttribute("hreflang")).toBe(e);
+    // The matrix's first column is the home page's own language.
+    expect(home.querySelector("table.matrix tbody td a")?.getAttribute("hreflang")).toBe(e);
   });
   test("the missing page leads back to the home page in the language", async () => {
     const doc = await readPage(file(notFoundUrl(e)));

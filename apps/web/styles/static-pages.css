@@ -37,48 +37,90 @@
   color: var(--muted);
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  margin-top: 24px;
+/* The home page's matrix: a row per language to learn, a column per explanation language. A cell under
+   the pointer or the keyboard lights up, with its row and, through client-matrix.ts, its column. */
+.doc.home {
+  max-width: 1240px;
 }
-
-.card {
-  padding: 18px 20px;
+.matrix-wrap {
+  overflow-x: auto;
+  margin-top: 24px;
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--surface);
   box-shadow: var(--shadow);
 }
-
-.doc .card h2 {
-  margin: 0 0 4px;
-  padding-top: 0;
-  border-top: 0;
-  font-size: 18px;
+.doc .matrix {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
 }
-
-.track-link {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: var(--surface-2);
+.doc .matrix :is(th, td) {
+  padding: 12px 14px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition:
+    background 0.12s ease,
+    color 0.12s ease;
+}
+.doc .matrix th {
   color: var(--text);
-  text-decoration: none;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
 }
-
-.track-link:hover {
-  background: var(--accent-soft);
+.doc .matrix :is(thead th:not(.corner), td) {
+  padding-inline: 6px;
 }
-.track-link span {
+.doc .matrix thead th:not(.corner) {
+  min-width: 64px;
   font-size: 13px;
+  white-space: normal;
+}
+.doc .matrix tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.doc .matrix :is(th[scope="row"], .corner) {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+}
+.doc .matrix th[scope="row"] {
+  background: var(--surface);
+}
+.doc .matrix .corner span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--muted);
 }
-.doc .track-link strong {
-  color: var(--text);
+.matrix .axis-x::after {
+  content: " →";
+}
+.matrix .axis-y::after {
+  content: " ↓";
+}
+.matrix td a {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.doc .matrix tbody tr:is(:hover, :focus-within) > *,
+.doc .matrix tbody .col-on {
+  background: var(--surface-2);
+}
+.doc .matrix tbody tr:is(:hover, :focus-within) > th,
+.doc .matrix thead .col-on {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.doc .matrix tbody tr td:is(:hover, :focus-within) {
+  background: var(--accent-soft);
 }
 
 .doc .topic-list {

@@ -63,10 +63,10 @@
     padding: 20px 16px 60px;
   }
   /* A switch shows its current choice alone; tapping it opens every choice (client-seg.ts) */
-  .seg:not(.open) > :not(.on) {
+  .seg:not(.open, .lang-menu) > :not(.on) {
     display: none;
   }
-  .seg:not(.open) > .on::after {
+  .seg:not(.open, .lang-menu) > .on::after {
     content: "▾";
     margin-left: 6px;
     font-size: 0.85em;

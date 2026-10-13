@@ -5,38 +5,54 @@ kind: grammar
 tags: [word-order, sentences, syntax]
 concepts: [word-order]
 related: [en.sentence-building.questions-negatives, en.adjectives-adverbs.adjective-order, en.adjectives-adverbs.adverbs-frequency-manner, en.tenses.simple-tenses]
-status: { en: draft, uk: draft, es: draft }
-translated: { uk: "58ae58 dfeedb 25a4b7 e0b76e 452c5b e881a4 8e0f84", es: "58ae58 dfeedb 25a4b7 e0b76e 452c5b e881a4 8e0f84" }
+status: { en: draft, uk: draft, es: draft, pt: draft, fr: draft, de: draft, it: draft, pl: draft, tr: draft, id: draft, vi: draft }
+translated: { uk: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", es: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", pt: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", fr: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", de: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", it: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", pl: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", tr: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", id: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84", vi: "58ae58 8063dd 25a4b7 e0b76e 452c5b e881a4 8e0f84" }
 
-title: { en: Word Order, uk: Порядок слів, es: El orden de las palabras }
+title: { en: Word Order, uk: Порядок слів, es: El orden de las palabras, pt: "Ordem das palavras", fr: "Ordre des mots", de: "Wortstellung", it: "L'ordine delle parole", pl: "Szyk zdania", tr: "Sözcük sırası", id: "Urutan kata", vi: "Trật tự từ" }
 summary:
   lead:
     en: "The order of subject, verb, object, adjectives and adverbs in an English sentence."
     uk: "Порядок підмета, дієслова, додатка, прикметників і прислівників в англійському реченні."
     es: "El orden del sujeto, el verbo, el objeto, los adjetivos y los adverbios en una oración inglesa."
+    pt: "A ordem do sujeito, do verbo, do objeto, dos adjetivos e dos advérbios em uma frase em inglês."
+    fr: "L’ordre du sujet, du verbe, du complément, des adjectifs et des adverbes dans une phrase anglaise."
+    de: "Die Reihenfolge von Subjekt, Verb, Objekt, Adjektiven und Adverbien im englischen Satz."
+    it: "L'ordine di soggetto, verbo, complemento oggetto, aggettivi e avverbi in una frase inglese."
+    pl: "Kolejność podmiotu, czasownika, dopełnienia, przymiotników i przysłówków w zdaniu angielskim."
+    tr: "İngilizce bir cümlede özne, fiil, nesne, sıfatların ve zarfların sırası."
+    id: "Urutan subjek, kata kerja, objek, kata sifat, dan kata keterangan dalam kalimat bahasa Inggris."
+    vi: "Trật tự của chủ ngữ, động từ, tân ngữ, tính từ và trạng từ trong câu tiếng Anh."
   rule:
     en: "The subject is always present and the adjective comes before the noun:"
     uk: "Підмет у реченні є завжди, а прикметник стоїть перед іменником:"
     es: "El sujeto siempre está presente y el adjetivo va antes del sustantivo:"
+    pt: "O sujeito sempre está presente e o adjetivo vem antes do substantivo:"
+    fr: "Le sujet est toujours exprimé et l’adjectif se place avant le nom :"
+    de: "Das Subjekt ist immer vorhanden, und das Adjektiv steht vor dem Nomen:"
+    it: "Il soggetto è sempre presente e l'aggettivo va prima del sostantivo:"
+    pl: "Podmiot jest w zdaniu zawsze, a przymiotnik stoi przed rzeczownikiem:"
+    tr: "Özne her zaman bulunur ve sıfat ismin önünde gelir:"
+    id: "Subjek selalu ada dan kata sifat diletakkan sebelum kata benda:"
+    vi: "Chủ ngữ luôn có mặt và tính từ đứng trước danh từ:"
   ex: { examples: [[{ target: It }, " is cold."], ["I have a ", { target: red car }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
-        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
-        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
       rows:
-        - { level: A0, point: { en: Order, uk: "Порядок", es: "Orden" }, rule: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: object, uk: "додаток", es: "objeto" } }, { slot: { en: place, uk: "місце", es: "lugar" } }, { slot: { en: time, uk: "час", es: "tiempo" } }] }, ex: [{ target: My sister buys bread in the shop every day }, "."], tr: { uk: "Моя сестра щодня купує хліб у магазині.", es: "Mi hermana compra pan en la tienda todos los días." } }
-        - { level: A0, point: { en: Subject, uk: "Підмет", es: "Sujeto" }, rule: { en: the subject is always present, uk: "підмет завжди присутній", es: "el sujeto siempre está presente" }, ex: [{ target: It }, " is cold."], tr: { uk: "Холодно.", es: "Hace frío." } }
-        - { level: A0, point: { en: Adjective, uk: "Прикметник", es: "Adjetivo" }, rule: { en: comes before the noun, uk: "стоїть перед іменником", es: "va antes del sustantivo" }, ex: ["I have a ", { target: red car }, "."], tr: { uk: "У мене червона машина.", es: "Tengo un coche rojo." } }
-        - { level: A1, point: { en: Time first, uk: "Час на початку", es: "Tiempo al principio" }, rule: { en: "a time phrase can start the sentence, often with a comma", uk: "зворот часу може відкривати речення, часто з комою", es: "una expresión de tiempo puede abrir la oración, a menudo con coma" }, ex: [{ target: Last summer }, ", we went to Italy."], tr: { uk: "Минулого літа ми їздили до Італії.", es: "El verano pasado fuimos a Italia." } }
-        - { level: A1, point: { en: Frequency adverb, uk: "Прислівник частотності", es: "Adverbio de frecuencia" }, rule: { en: ["before the main verb, after ", { term: be }], uk: ["перед основним дієсловом, після ", { term: be }], es: ["antes del verbo principal, después de ", { term: be }] }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] }, tr: { uk: { examples: ["Я завжди снідаю.", "Вона завжди запізнюється."] }, es: { examples: ["Siempre desayuno.", "Siempre llega tarde."] } } }
-        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: place comes before time, uk: "місце стоїть перед часом", es: "el lugar va antes del tiempo" }, ex: ["I went ", { target: to London yesterday }, "."], tr: { uk: "Вчора я їздив до Лондона.", es: "Fui a Londres ayer." } }
+        - { level: A0, point: { en: Order, uk: "Порядок", es: "Orden", pt: "Ordem", fr: "Ordre", de: "Reihenfolge", it: "Ordine", pl: "Kolejność", tr: "Sıra", id: "Urutan", vi: "Thứ tự" }, rule: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: object, uk: "додаток", es: "objeto", pt: "objeto", fr: "complément", de: "Objekt", it: "complemento oggetto", pl: "dopełnienie", tr: "nesne", id: "objek", vi: "tân ngữ" } }, { slot: { en: place, uk: "місце", es: "lugar", pt: "lugar", fr: "lieu", de: "Ort", it: "luogo", pl: "miejsce", tr: "yer", id: "tempat", vi: "nơi chốn" } }, { slot: { en: time, uk: "час", es: "tiempo", pt: "tempo", fr: "moment", de: "Zeit", it: "tempo", pl: "czas", tr: "zaman", id: "waktu", vi: "thời gian" } }] }, ex: [{ target: My sister buys bread in the shop every day }, "."], tr: { uk: "Моя сестра щодня купує хліб у магазині.", es: "Mi hermana compra pan en la tienda todos los días.", pt: "Minha irmã compra pão na loja todos os dias.", fr: "Ma sœur achète du pain au magasin tous les jours.", de: "Meine Schwester kauft jeden Tag Brot im Laden.", it: "Mia sorella compra il pane al negozio ogni giorno.", pl: "Moja siostra codziennie kupuje chleb w sklepie.", tr: "Kız kardeşim her gün dükkândan ekmek alır.", id: "Kakak perempuan saya membeli roti di toko setiap hari.", vi: "Chị tôi mua bánh mì ở cửa hàng mỗi ngày." } }
+        - { level: A0, point: { en: Subject, uk: "Підмет", es: "Sujeto", pt: "Sujeito", fr: "Sujet", de: "Subjekt", it: "Soggetto", pl: "Podmiot", tr: "Özne", id: "Subjek", vi: "Chủ ngữ" }, rule: { en: the subject is always present, uk: "підмет завжди присутній", es: "el sujeto siempre está presente", pt: "o sujeito sempre está presente", fr: "le sujet est toujours exprimé", de: "das Subjekt ist immer vorhanden", it: "il soggetto è sempre presente", pl: "podmiot jest zawsze obecny", tr: "özne her zaman bulunur", id: "subjek selalu ada", vi: "chủ ngữ luôn có mặt" }, ex: [{ target: It }, " is cold."], tr: { uk: "Холодно.", es: "Hace frío.", pt: "Está frio.", fr: "Il fait froid.", de: "Es ist kalt.", it: "Fa freddo.", pl: "Jest zimno.", tr: "Hava soğuk.", id: "Cuaca dingin.", vi: "Trời lạnh." } }
+        - { level: A0, point: { en: Adjective, uk: "Прикметник", es: "Adjetivo", pt: "Adjetivo", fr: "Adjectif", de: "Adjektiv", it: "Aggettivo", pl: "Przymiotnik", tr: "Sıfat", id: "Kata sifat", vi: "Tính từ" }, rule: { en: comes before the noun, uk: "стоїть перед іменником", es: "va antes del sustantivo", pt: "vem antes do substantivo", fr: "se place avant le nom", de: "steht vor dem Nomen", it: "va prima del sostantivo", pl: "stoi przed rzeczownikiem", tr: "isimden önce gelir", id: "diletakkan sebelum kata benda", vi: "đứng trước danh từ" }, ex: ["I have a ", { target: red car }, "."], tr: { uk: "У мене червона машина.", es: "Tengo un coche rojo.", pt: "Eu tenho um carro vermelho.", fr: "J’ai une voiture rouge.", de: "Ich habe ein rotes Auto.", it: "Ho una macchina rossa.", pl: "Mam czerwony samochód.", tr: "Kırmızı bir arabam var.", id: "Saya punya mobil merah.", vi: "Tôi có một chiếc xe màu đỏ." } }
+        - { level: A1, point: { en: Time first, uk: "Час на початку", es: "Tiempo al principio", pt: "Tempo no início", fr: "Moment en tête", de: "Zeitangabe am Anfang", it: "Il tempo all'inizio", pl: "Czas na początku", tr: "Zaman başta", id: "Waktu di awal", vi: "Thời gian đứng đầu câu" }, rule: { en: "a time phrase can start the sentence, often with a comma", uk: "зворот часу може відкривати речення, часто з комою", es: "una expresión de tiempo puede abrir la oración, a menudo con coma", pt: "uma expressão de tempo pode abrir a frase, muitas vezes com vírgula", fr: "une indication de temps peut ouvrir la phrase, souvent suivie d’une virgule", de: "eine Zeitangabe kann am Satzanfang stehen, oft mit Komma", it: "un'espressione di tempo può aprire la frase, spesso con la virgola", pl: "wyrażenie czasu może otwierać zdanie, często z przecinkiem", tr: "zaman ifadesi cümleyi açabilir, çoğunlukla virgülle", id: "keterangan waktu dapat membuka kalimat, sering diikuti koma", vi: "cụm chỉ thời gian có thể mở đầu câu, thường kèm dấu phẩy" }, ex: [{ target: Last summer }, ", we went to Italy."], tr: { uk: "Минулого літа ми їздили до Італії.", es: "El verano pasado fuimos a Italia.", pt: "No verão passado, nós fomos para a Itália.", fr: "L’été dernier, nous sommes allés en Italie.", de: "Letzten Sommer sind wir nach Italien gefahren.", it: "L'estate scorsa siamo andati in Italia.", pl: "Zeszłego lata pojechaliśmy do Włoch.", tr: "Geçen yaz İtalya’ya gittik.", id: "Musim panas lalu, kami pergi ke Italia.", vi: "Mùa hè năm ngoái, chúng tôi đã đi Ý." } }
+        - { level: A1, point: { en: Frequency adverb, uk: "Прислівник частотності", es: "Adverbio de frecuencia", pt: "Advérbio de frequência", fr: "Adverbe de fréquence", de: "Häufigkeitsadverb", it: "Avverbio di frequenza", pl: "Przysłówek częstotliwości", tr: "Sıklık zarfı", id: "Kata keterangan frekuensi", vi: "Trạng từ chỉ tần suất" }, rule: { en: ["before the main verb, after ", { term: be }], uk: ["перед основним дієсловом, після ", { term: be }], es: ["antes del verbo principal, después de ", { term: be }], pt: ["antes do verbo principal, depois de ", { term: "be" }], fr: ["avant le verbe principal, après ", { term: "be" }], de: ["vor dem Hauptverb, nach ", { term: "be" }], it: ["prima del verbo principale, dopo ", { term: "be" }], pl: ["przed czasownikiem głównym, po ", { term: "be" }], tr: ["ana fiilden önce, ", { term: "be" }, " fiilinden sonra"], id: ["sebelum kata kerja utama, setelah ", { term: "be" }], vi: ["trước động từ chính, sau ", { term: "be" }] }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] }, tr: { uk: { examples: ["Я завжди снідаю.", "Вона завжди запізнюється."] }, es: { examples: ["Siempre desayuno.", "Siempre llega tarde."] }, pt: { examples: ["Eu sempre tomo café da manhã.", "Ela está sempre atrasada."] }, fr: { examples: ["Je prends toujours le petit-déjeuner.", "Elle est toujours en retard."] }, de: { examples: ["Ich frühstücke immer.", "Sie kommt immer zu spät."] }, it: { examples: ["Faccio sempre colazione.", "È sempre in ritardo."] }, pl: { examples: ["Zawsze jem śniadanie.", "Ona zawsze się spóźnia."] }, tr: { examples: ["Her zaman kahvaltı yaparım.", "O her zaman geç kalır."] }, id: { examples: ["Saya selalu sarapan.", "Dia selalu terlambat."] }, vi: { examples: ["Tôi luôn ăn sáng.", "Cô ấy luôn đến muộn."] } } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }, rule: { en: place comes before time, uk: "місце стоїть перед часом", es: "el lugar va antes del tiempo", pt: "o lugar vem antes do tempo", fr: "le lieu vient avant le moment", de: "der Ort steht vor der Zeit", it: "il luogo viene prima del tempo", pl: "miejsce stoi przed czasem", tr: "yer zamandan önce gelir", id: "tempat diletakkan sebelum waktu", vi: "nơi chốn đứng trước thời gian" }, ex: ["I went ", { target: to London yesterday }, "."], tr: { uk: "Вчора я їздив до Лондона.", es: "Fui a Londres ayer.", pt: "Eu fui para Londres ontem.", fr: "Je suis allé à Londres hier.", de: "Ich war gestern in London.", it: "Sono andato a Londra ieri.", pl: "Wczoraj pojechałem do Londynu.", tr: "Dün Londra’ya gittim.", id: "Kemarin saya pergi ke London.", vi: "Hôm qua tôi đã đến London." } }
 
 sections:
-  - title: { en: Overview, uk: "Огляд", es: "Visión general" }
+  - title: { en: Overview, uk: "Огляд", es: "Visión general", pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
     role: overview
     content:
       - type: list
@@ -47,25 +63,41 @@ sections:
               en: "The order is subject, verb, object (SVO), then place, then time."
               uk: "Порядок такий: підмет, дієслово, додаток (SVO), потім місце, потім час."
               es: "El orden es sujeto, verbo, objeto (SVO), luego lugar y luego tiempo."
+              pt: "A ordem é sujeito, verbo, objeto (SVO), depois lugar e depois tempo."
+              fr: "L’ordre est sujet, verbe, complément (SVO), puis lieu, puis moment."
+              de: "Die Reihenfolge ist Subjekt, Verb, Objekt (SVO), dann Ort, dann Zeit."
+              it: "L'ordine è soggetto, verbo, complemento oggetto (SVO), poi luogo, poi tempo."
+              pl: "Kolejność jest taka: podmiot, czasownik, dopełnienie (SVO), potem miejsce, potem czas."
+              tr: "Sıra şöyledir: özne, fiil, nesne (SVO), sonra yer, sonra zaman."
+              id: "Urutannya: subjek, kata kerja, objek (SVO), lalu tempat, lalu waktu."
+              vi: "Trật tự là chủ ngữ, động từ, tân ngữ (SVO), rồi đến nơi chốn, rồi đến thời gian."
           - type: note
             level: A0
             text:
               en: ["Questions change the order. See ", { link: Questions and negatives, to: en.sentence-building.questions-negatives }, "."]
               uk: ["У питаннях порядок слів змінюється. Див. ", { link: "Питання та заперечення", to: en.sentence-building.questions-negatives }, "."]
               es: ["Las preguntas cambian el orden. Ver ", { link: "Preguntas y negaciones", to: en.sentence-building.questions-negatives }, "."]
+              pt: ["As perguntas mudam a ordem. Ver ", { link: "Perguntas e negações", to: "en.sentence-building.questions-negatives" }, "."]
+              fr: ["Les questions changent l’ordre. Voir ", { link: "Questions et négations", to: "en.sentence-building.questions-negatives" }, "."]
+              de: ["Fragen ändern die Reihenfolge. Siehe ", { link: "Fragen und Verneinung", to: "en.sentence-building.questions-negatives" }, "."]
+              it: ["Le domande cambiano l'ordine. Vedi ", { link: "Domande e negazioni", to: "en.sentence-building.questions-negatives" }, "."]
+              pl: ["Pytania zmieniają szyk. Zob. ", { link: "Pytania i przeczenia", to: "en.sentence-building.questions-negatives" }, "."]
+              tr: ["Soru cümleleri sırayı değiştirir. Bkz. ", { link: "Sorular ve olumsuz cümleler", to: "en.sentence-building.questions-negatives" }, "."]
+              id: ["Pertanyaan mengubah urutan. Lihat ", { link: "Pertanyaan dan kalimat negatif", to: "en.sentence-building.questions-negatives" }, "."]
+              vi: ["Câu hỏi thay đổi trật tự. Xem ", { link: "Câu hỏi và câu phủ định", to: "en.sentence-building.questions-negatives" }, "."]
 
-  - title: { en: "Form: statements", uk: "Форма: стверджувальні речення", es: "Forma: oraciones afirmativas" }
+  - title: { en: "Form: statements", uk: "Форма: стверджувальні речення", es: "Forma: oraciones afirmativas", pt: "Forma: frases afirmativas", fr: "Forme : phrases affirmatives", de: "Form: Aussagesätze", it: "Forma: frasi affermative", pl: "Forma: zdania twierdzące", tr: "Biçim: olumlu cümleler", id: "Bentuk: kalimat pernyataan", vi: "Dạng: câu trần thuật" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
-          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
-          - { level: A0, rule: { en: The subject is always present., uk: "Підмет завжди присутній.", es: "El sujeto siempre está presente." }, ex: { examples: [[{ target: It }, " is cold."], [{ target: She }, " lives in Madrid."]] }, tr: { uk: { examples: ["Холодно.", "Вона живе в Мадриді."] }, es: { examples: ["Hace frío.", "Ella vive en Madrid."] } } }
-          - { level: A0, rule: { en: The verb comes right after the subject., uk: "Дієслово стоїть одразу після підмета.", es: "El verbo va justo después del sujeto." }, ex: ["My friend ", { target: came }, " early."], tr: { uk: "Мій друг прийшов рано.", es: "Mi amigo llegó temprano." } }
-          - { level: A0, rule: { en: The object comes right after the verb., uk: "Додаток стоїть одразу після дієслова.", es: "El objeto va justo después del verbo." }, ex: ["I ", { target: drink tea }, " at night."], tr: { uk: "Я п’ю чай уночі.", es: "Bebo té por la noche." } }
-          - { level: A0, rule: { en: An adjective comes before the noun., uk: "Прикметник стоїть перед іменником.", es: "El adjetivo va antes del sustantivo." }, ex: ["I have a ", { target: red car }, "."], tr: { uk: "У мене червона машина.", es: "Tengo un coche rojo." } }
+          - { level: A0, rule: { en: The subject is always present., uk: "Підмет завжди присутній.", es: "El sujeto siempre está presente.", pt: "O sujeito sempre está presente.", fr: "Le sujet est toujours exprimé.", de: "Das Subjekt ist immer vorhanden.", it: "Il soggetto è sempre presente.", pl: "Podmiot jest zawsze obecny.", tr: "Özne her zaman bulunur.", id: "Subjek selalu ada.", vi: "Chủ ngữ luôn có mặt." }, ex: { examples: [[{ target: It }, " is cold."], [{ target: She }, " lives in Madrid."]] }, tr: { uk: { examples: ["Холодно.", "Вона живе в Мадриді."] }, es: { examples: ["Hace frío.", "Ella vive en Madrid."] }, pt: { examples: ["Está frio.", "Ela mora em Madri."] }, fr: { examples: ["Il fait froid.", "Elle habite à Madrid."] }, de: { examples: ["Es ist kalt.", "Sie wohnt in Madrid."] }, it: { examples: ["Fa freddo.", "Lei vive a Madrid."] }, pl: { examples: ["Jest zimno.", "Ona mieszka w Madrycie."] }, tr: { examples: ["Hava soğuk.", "O Madrid’de yaşıyor."] }, id: { examples: ["Cuaca dingin.", "Dia tinggal di Madrid."] }, vi: { examples: ["Trời lạnh.", "Cô ấy sống ở Madrid."] } } }
+          - { level: A0, rule: { en: The verb comes right after the subject., uk: "Дієслово стоїть одразу після підмета.", es: "El verbo va justo después del sujeto.", pt: "O verbo vem logo depois do sujeito.", fr: "Le verbe se place juste après le sujet.", de: "Das Verb steht direkt nach dem Subjekt.", it: "Il verbo viene subito dopo il soggetto.", pl: "Czasownik stoi tuż po podmiocie.", tr: "Fiil hemen öznenin arkasından gelir.", id: "Kata kerja berada tepat setelah subjek.", vi: "Động từ đứng ngay sau chủ ngữ." }, ex: ["My friend ", { target: came }, " early."], tr: { uk: "Мій друг прийшов рано.", es: "Mi amigo llegó temprano.", pt: "Meu amigo chegou cedo.", fr: "Mon ami est arrivé tôt.", de: "Mein Freund kam früh.", it: "Il mio amico è arrivato presto.", pl: "Mój przyjaciel przyszedł wcześnie.", tr: "Arkadaşım erken geldi.", id: "Teman saya datang lebih awal.", vi: "Bạn tôi đã đến sớm." } }
+          - { level: A0, rule: { en: The object comes right after the verb., uk: "Додаток стоїть одразу після дієслова.", es: "El objeto va justo después del verbo.", pt: "O objeto vem logo depois do verbo.", fr: "Le complément se place juste après le verbe.", de: "Das Objekt steht direkt nach dem Verb.", it: "Il complemento oggetto viene subito dopo il verbo.", pl: "Dopełnienie stoi tuż po czasowniku.", tr: "Nesne hemen fiilin arkasından gelir.", id: "Objek berada tepat setelah kata kerja.", vi: "Tân ngữ đứng ngay sau động từ." }, ex: ["I ", { target: drink tea }, " at night."], tr: { uk: "Я п’ю чай уночі.", es: "Bebo té por la noche.", pt: "Eu bebo chá à noite.", fr: "Je bois du thé la nuit.", de: "Ich trinke nachts Tee.", it: "Bevo il tè la sera.", pl: "Piję herbatę w nocy.", tr: "Geceleri çay içerim.", id: "Saya minum teh pada malam hari.", vi: "Tôi uống trà vào buổi tối." } }
+          - { level: A0, rule: { en: An adjective comes before the noun., uk: "Прикметник стоїть перед іменником.", es: "El adjetivo va antes del sustantivo.", pt: "O adjetivo vem antes do substantivo.", fr: "L’adjectif se place avant le nom.", de: "Ein Adjektiv steht vor dem Nomen.", it: "L'aggettivo va prima del sostantivo.", pl: "Przymiotnik stoi przed rzeczownikiem.", tr: "Sıfat ismin önünde gelir.", id: "Kata sifat diletakkan sebelum kata benda.", vi: "Tính từ đứng trước danh từ." }, ex: ["I have a ", { target: red car }, "."], tr: { uk: "У мене червона машина.", es: "Tengo un coche rojo.", pt: "Eu tenho um carro vermelho.", fr: "J’ai une voiture rouge.", de: "Ich habe ein rotes Auto.", it: "Ho una macchina rossa.", pl: "Mam czerwony samochód.", tr: "Kırmızı bir arabam var.", id: "Saya punya mobil merah.", vi: "Tôi có một chiếc xe màu đỏ." } }
       - type: list
         items:
           - type: note
@@ -74,17 +106,25 @@ sections:
               en: ["For two or more adjectives, see ", { link: Adjective order, to: en.adjectives-adverbs.adjective-order }, "."]
               uk: ["Про два й більше прикметників див. ", { link: "Прикметники та їхній порядок", to: en.adjectives-adverbs.adjective-order }, "."]
               es: ["Para dos o más adjetivos, ver ", { link: "Los adjetivos y su orden", to: en.adjectives-adverbs.adjective-order }, "."]
+              pt: ["Para dois ou mais adjetivos, ver ", { link: "Adjetivos e sua ordem", to: "en.adjectives-adverbs.adjective-order" }, "."]
+              fr: ["Pour deux adjectifs ou plus, voir ", { link: "Adjectifs et ordre des adjectifs", to: "en.adjectives-adverbs.adjective-order" }, "."]
+              de: ["Zu zwei oder mehr Adjektiven siehe ", { link: "Adjektive und ihre Reihenfolge", to: "en.adjectives-adverbs.adjective-order" }, "."]
+              it: ["Per due o più aggettivi, vedi ", { link: "Gli aggettivi e il loro ordine", to: "en.adjectives-adverbs.adjective-order" }, "."]
+              pl: ["O dwóch lub więcej przymiotnikach zob. ", { link: "Przymiotniki i ich kolejność", to: "en.adjectives-adverbs.adjective-order" }, "."]
+              tr: ["İki veya daha fazla sıfat için bkz. ", { link: "Sıfatlar ve sıfat sırası", to: "en.adjectives-adverbs.adjective-order" }, "."]
+              id: ["Untuk dua kata sifat atau lebih, lihat ", { link: "Kata sifat dan urutan kata sifat", to: "en.adjectives-adverbs.adjective-order" }, "."]
+              vi: ["Với hai tính từ trở lên, xem ", { link: "Tính từ và trật tự tính từ", to: "en.adjectives-adverbs.adjective-order" }, "."]
 
-  - title: { en: Place and time, uk: "Місце й час", es: "Lugar y tiempo" }
+  - title: { en: Place and time, uk: "Місце й час", es: "Lugar y tiempo", pt: "Lugar e tempo", fr: "Lieu et moment", de: "Ort und Zeit", it: "Luogo e tempo", pl: "Miejsce i czas", tr: "Yer ve zaman", id: "Tempat dan waktu", vi: "Nơi chốn và thời gian" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
-          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+          - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
-          - { level: A1, rule: { en: Place comes before time., uk: "Місце стоїть перед часом.", es: "El lugar va antes del tiempo." }, ex: ["I went ", { target: to London }, " ", { target: last year }, "."], tr: { uk: "Торік я їздив до Лондона.", es: "Fui a Londres el año pasado." } }
-          - { level: A1, rule: { en: A time word can also start the sentence., uk: "Слово зі значенням часу може стояти й на початку речення.", es: "Una palabra de tiempo también puede abrir la oración." }, ex: [{ target: Last year }, " I went to London."], tr: { uk: "Торік я їздив до Лондона.", es: "El año pasado fui a Londres." } }
+          - { level: A1, rule: { en: Place comes before time., uk: "Місце стоїть перед часом.", es: "El lugar va antes del tiempo.", pt: "O lugar vem antes do tempo.", fr: "Le lieu vient avant le moment.", de: "Der Ort steht vor der Zeit.", it: "Il luogo viene prima del tempo.", pl: "Miejsce stoi przed czasem.", tr: "Yer zamandan önce gelir.", id: "Tempat diletakkan sebelum waktu.", vi: "Nơi chốn đứng trước thời gian." }, ex: ["I went ", { target: to London }, " ", { target: last year }, "."], tr: { uk: "Торік я їздив до Лондона.", es: "Fui a Londres el año pasado.", pt: "Eu fui para Londres no ano passado.", fr: "Je suis allé à Londres l’année dernière.", de: "Ich war letztes Jahr in London.", it: "Sono andato a Londra l'anno scorso.", pl: "W zeszłym roku pojechałem do Londynu.", tr: "Geçen yıl Londra’ya gittim.", id: "Tahun lalu saya pergi ke London.", vi: "Năm ngoái tôi đã đến London." } }
+          - { level: A1, rule: { en: A time word can also start the sentence., uk: "Слово зі значенням часу може стояти й на початку речення.", es: "Una palabra de tiempo también puede abrir la oración.", pt: "Uma palavra de tempo também pode abrir a frase.", fr: "Une indication de temps peut aussi ouvrir la phrase.", de: "Eine Zeitangabe kann auch am Satzanfang stehen.", it: "Una parola di tempo può anche aprire la frase.", pl: "Słowo oznaczające czas może też otwierać zdanie.", tr: "Zaman sözcüğü cümleyi de açabilir.", id: "Kata waktu juga dapat membuka kalimat.", vi: "Từ chỉ thời gian cũng có thể mở đầu câu." }, ex: [{ target: Last year }, " I went to London."], tr: { uk: "Торік я їздив до Лондона.", es: "El año pasado fui a Londres.", pt: "No ano passado eu fui para Londres.", fr: "L’année dernière, je suis allé à Londres.", de: "Letztes Jahr war ich in London.", it: "L'anno scorso sono andato a Londra.", pl: "W zeszłym roku pojechałem do Londynu.", tr: "Geçen yıl Londra’ya gittim.", id: "Tahun lalu saya pergi ke London.", vi: "Năm ngoái tôi đã đến London." } }
       - type: list
         items:
           - type: rule
@@ -93,29 +133,45 @@ sections:
               en: "A time phrase at the start often takes a comma:"
               uk: "Зворот часу на початку речення часто відокремлюють комою:"
               es: "Una expresión de tiempo al principio suele llevar coma:"
+              pt: "Uma expressão de tempo no início costuma levar vírgula:"
+              fr: "Une indication de temps en début de phrase est souvent suivie d’une virgule :"
+              de: "Nach einer Zeitangabe am Satzanfang steht oft ein Komma:"
+              it: "Un'espressione di tempo all'inizio prende spesso la virgola:"
+              pl: "Wyrażenie czasu na początku zdania często oddziela się przecinkiem:"
+              tr: "Başta yer alan zaman ifadesinden sonra çoğunlukla virgül gelir:"
+              id: "Keterangan waktu di awal kalimat sering diikuti koma:"
+              vi: "Cụm chỉ thời gian ở đầu câu thường kèm dấu phẩy:"
             ex: [{ target: Last summer }, ", we went to Italy."]
-            tr: { uk: "Минулого літа ми їздили до Італії.", es: "El verano pasado fuimos a Italia." }
+            tr: { uk: "Минулого літа ми їздили до Італії.", es: "El verano pasado fuimos a Italia.", pt: "No verão passado, nós fomos para a Itália.", fr: "L’été dernier, nous sommes allés en Italie.", de: "Letzten Sommer sind wir nach Italien gefahren.", it: "L'estate scorsa siamo andati in Italia.", pl: "Zeszłego lata pojechaliśmy do Włoch.", tr: "Geçen yaz İtalya’ya gittik.", id: "Musim panas lalu, kami pergi ke Italia.", vi: "Mùa hè năm ngoái, chúng tôi đã đi Ý." }
           - type: rule
             level: A1
             text:
               en: "A place or time word follows the object:"
               uk: "Слово місця або часу стоїть після додатка:"
               es: "Una palabra de lugar o de tiempo va después del objeto:"
+              pt: "Uma palavra de lugar ou de tempo vem depois do objeto:"
+              fr: "Une indication de lieu ou de temps se place après le complément :"
+              de: "Eine Orts- oder Zeitangabe steht nach dem Objekt:"
+              it: "Una parola di luogo o di tempo viene dopo il complemento oggetto:"
+              pl: "Słowo oznaczające miejsce lub czas stoi po dopełnieniu:"
+              tr: "Yer veya zaman sözcüğü nesneden sonra gelir:"
+              id: "Kata tempat atau waktu berada setelah objek:"
+              vi: "Từ chỉ nơi chốn hoặc thời gian đứng sau tân ngữ:"
             ex: ["I met ", { target: Ana }, " in the park."]
-            tr: { uk: "Я зустрів Ану в парку.", es: "Me encontré con Ana en el parque." }
+            tr: { uk: "Я зустрів Ану в парку.", es: "Me encontré con Ana en el parque.", pt: "Eu encontrei a Ana no parque.", fr: "J’ai rencontré Ana au parc.", de: "Ich habe Ana im Park getroffen.", it: "Ho incontrato Ana al parco.", pl: "Spotkałem Anę w parku.", tr: "Ana’yla parkta buluştum.", id: "Saya bertemu Ana di taman.", vi: "Tôi đã gặp Ana ở công viên." }
 
-  - title: { en: Adverbs, uk: "Прислівники", es: "Adverbios" }
+  - title: { en: Adverbs, uk: "Прислівники", es: "Adverbios", pt: "Advérbios", fr: "Adverbes", de: "Adverbien", it: "Avverbi", pl: "Przysłówki", tr: "Zarflar", id: "Kata keterangan", vi: "Trạng từ" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: adverb, label: { en: Adverb, uk: "Прислівник", es: "Adverbio" } }
-          - { key: position, label: { en: Position, uk: "Місце", es: "Posición" } }
-          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+          - { key: adverb, label: { en: Adverb, uk: "Прислівник", es: "Adverbio", pt: "Advérbio", fr: "Adverbe", de: "Adverb", it: "Avverbio", pl: "Przysłówek", tr: "Zarf", id: "Kata keterangan", vi: "Trạng từ" } }
+          - { key: position, label: { en: Position, uk: "Місце", es: "Posición", pt: "Posição", fr: "Position", de: "Stellung", it: "Posizione", pl: "Pozycja", tr: "Konum", id: "Posisi", vi: "Vị trí" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
-          - { level: A1, adverb: always, position: { en: ["before the main verb, after ", { term: be }], uk: ["перед основним дієсловом, після ", { term: be }], es: ["antes del verbo principal, después de ", { term: be }] }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] }, tr: { uk: { examples: ["Я завжди снідаю.", "Вона завжди запізнюється."] }, es: { examples: ["Siempre desayuno.", "Siempre llega tarde."] } } }
-          - { level: A1, adverb: really, position: { en: before the main verb, uk: "перед основним дієсловом", es: "antes del verbo principal" }, ex: ["I ", { target: really }, " like jazz."], tr: { uk: "Мені справді подобається джаз.", es: "De verdad me gusta el jazz." } }
-          - { level: A1, adverb: { alternatives: [very much, a lot] }, position: { en: "at the end, after the object", uk: "в кінці, після додатка", es: "al final, después del objeto" }, ex: ["I like coffee ", { target: very much }, "."], tr: { uk: "Я дуже люблю каву.", es: "Me gusta mucho el café." } }
+          - { level: A1, adverb: always, position: { en: ["before the main verb, after ", { term: be }], uk: ["перед основним дієсловом, після ", { term: be }], es: ["antes del verbo principal, después de ", { term: be }], pt: ["antes do verbo principal, depois de ", { term: "be" }], fr: ["avant le verbe principal, après ", { term: "be" }], de: ["vor dem Hauptverb, nach ", { term: "be" }], it: ["prima del verbo principale, dopo ", { term: "be" }], pl: ["przed czasownikiem głównym, po ", { term: "be" }], tr: ["ana fiilden önce, ", { term: "be" }, " fiilinden sonra"], id: ["sebelum kata kerja utama, setelah ", { term: "be" }], vi: ["trước động từ chính, sau ", { term: "be" }] }, ex: { examples: [["I ", { target: always }, " eat breakfast."], ["She is ", { target: always }, " late."]] }, tr: { uk: { examples: ["Я завжди снідаю.", "Вона завжди запізнюється."] }, es: { examples: ["Siempre desayuno.", "Siempre llega tarde."] }, pt: { examples: ["Eu sempre tomo café da manhã.", "Ela está sempre atrasada."] }, fr: { examples: ["Je prends toujours le petit-déjeuner.", "Elle est toujours en retard."] }, de: { examples: ["Ich frühstücke immer.", "Sie kommt immer zu spät."] }, it: { examples: ["Faccio sempre colazione.", "È sempre in ritardo."] }, pl: { examples: ["Zawsze jem śniadanie.", "Ona zawsze się spóźnia."] }, tr: { examples: ["Her zaman kahvaltı yaparım.", "O her zaman geç kalır."] }, id: { examples: ["Saya selalu sarapan.", "Dia selalu terlambat."] }, vi: { examples: ["Tôi luôn ăn sáng.", "Cô ấy luôn đến muộn."] } } }
+          - { level: A1, adverb: really, position: { en: before the main verb, uk: "перед основним дієсловом", es: "antes del verbo principal", pt: "antes do verbo principal", fr: "avant le verbe principal", de: "vor dem Hauptverb", it: "prima del verbo principale", pl: "przed czasownikiem głównym", tr: "ana fiilden önce", id: "sebelum kata kerja utama", vi: "trước động từ chính" }, ex: ["I ", { target: really }, " like jazz."], tr: { uk: "Мені справді подобається джаз.", es: "De verdad me gusta el jazz.", pt: "Eu realmente gosto de jazz.", fr: "J’aime vraiment le jazz.", de: "Ich mag Jazz wirklich.", it: "Il jazz mi piace davvero.", pl: "Naprawdę lubię jazz.", tr: "Caz müziğini gerçekten severim.", id: "Saya sungguh menyukai musik jazz.", vi: "Tôi thật sự thích nhạc jazz." } }
+          - { level: A1, adverb: { alternatives: [very much, a lot] }, position: { en: "at the end, after the object", uk: "в кінці, після додатка", es: "al final, después del objeto", pt: "no fim, depois do objeto", fr: "à la fin, après le complément", de: "am Ende, nach dem Objekt", it: "alla fine, dopo il complemento oggetto", pl: "na końcu, po dopełnieniu", tr: "sonda, nesneden sonra", id: "di akhir, setelah objek", vi: "ở cuối câu, sau tân ngữ" }, ex: ["I like coffee ", { target: very much }, "."], tr: { uk: "Я дуже люблю каву.", es: "Me gusta mucho el café.", pt: "Eu gosto muito de café.", fr: "J’aime beaucoup le café.", de: "Ich mag Kaffee sehr.", it: "Mi piace molto il caffè.", pl: "Bardzo lubię kawę.", tr: "Kahveyi çok severim.", id: "Saya sangat suka kopi.", vi: "Tôi rất thích cà phê." } }
       - type: list
         items:
           - type: note
@@ -124,15 +180,23 @@ sections:
               en: ["More on frequency adverbs: ", { link: Adverbs of frequency and manner, to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
               uk: ["Докладніше про прислівники частотності: ", { link: "Прислівники частотності та способу дії", to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
               es: ["Más sobre los adverbios de frecuencia: ", { link: "Adverbios de frecuencia y de modo", to: en.adjectives-adverbs.adverbs-frequency-manner }, "."]
+              pt: ["Mais sobre os advérbios de frequência: ", { link: "Advérbios de frequência e de modo", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
+              fr: ["Plus sur les adverbes de fréquence : ", { link: "Adverbes de fréquence et de manière", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
+              de: ["Mehr zu Häufigkeitsadverbien: ", { link: "Adverbien der Häufigkeit und der Art und Weise", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
+              it: ["Altro sugli avverbi di frequenza: ", { link: "Avverbi di frequenza e di modo", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
+              pl: ["Więcej o przysłówkach częstotliwości: ", { link: "Przysłówki częstotliwości i sposobu", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
+              tr: ["Sıklık zarfları hakkında daha fazlası: ", { link: "Sıklık ve durum zarfları", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
+              id: ["Selengkapnya tentang kata keterangan frekuensi: ", { link: "Kata keterangan frekuensi dan cara", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
+              vi: ["Thêm về trạng từ chỉ tần suất: ", { link: "Trạng từ chỉ tần suất và cách thức", to: "en.adjectives-adverbs.adverbs-frequency-manner" }, "."]
 
-  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: I went yesterday to London., right: ["I went ", { target: to London yesterday }, "."], rule: { en: place before time, uk: "місце перед часом", es: "el lugar antes del tiempo" } }
-          - { level: A1, wrong: I eat always breakfast., right: ["I ", { target: always eat }, " breakfast."], rule: { en: frequency adverbs go before the main verb, uk: "прислівники частотності стоять перед основним дієсловом", es: "los adverbios de frecuencia van antes del verbo principal" } }
-          - { level: A1, wrong: She always is late., right: ["She ", { target: is always }, " late."], rule: { en: ["frequency adverbs go after ", { term: be }], uk: ["прислівники частотності стоять після ", { term: be }], es: ["los adverbios de frecuencia van después de ", { term: be }] } }
+          - { level: A1, wrong: I went yesterday to London., right: ["I went ", { target: to London yesterday }, "."], rule: { en: place before time, uk: "місце перед часом", es: "el lugar antes del tiempo", pt: "lugar antes de tempo", fr: "le lieu avant le moment", de: "der Ort vor der Zeit", it: "il luogo prima del tempo", pl: "miejsce przed czasem", tr: "yer zamandan önce", id: "tempat sebelum waktu", vi: "nơi chốn trước thời gian" } }
+          - { level: A1, wrong: I eat always breakfast., right: ["I ", { target: always eat }, " breakfast."], rule: { en: frequency adverbs go before the main verb, uk: "прислівники частотності стоять перед основним дієсловом", es: "los adverbios de frecuencia van antes del verbo principal", pt: "os advérbios de frequência vão antes do verbo principal", fr: "les adverbes de fréquence se placent avant le verbe principal", de: "Häufigkeitsadverbien stehen vor dem Hauptverb", it: "gli avverbi di frequenza vanno prima del verbo principale", pl: "przysłówki częstotliwości stoją przed czasownikiem głównym", tr: "sıklık zarfları ana fiilden önce gelir", id: "kata keterangan frekuensi diletakkan sebelum kata kerja utama", vi: "trạng từ chỉ tần suất đứng trước động từ chính" } }
+          - { level: A1, wrong: She always is late., right: ["She ", { target: is always }, " late."], rule: { en: ["frequency adverbs go after ", { term: be }], uk: ["прислівники частотності стоять після ", { term: be }], es: ["los adverbios de frecuencia van después de ", { term: be }], pt: ["os advérbios de frequência vão depois de ", { term: "be" }], fr: ["les adverbes de fréquence se placent après ", { term: "be" }], de: ["Häufigkeitsadverbien stehen nach ", { term: "be" }], it: ["gli avverbi di frequenza vanno dopo ", { term: "be" }], pl: ["przysłówki częstotliwości stoją po ", { term: "be" }], tr: ["sıklık zarfları ", { term: "be" }, " fiilinden sonra gelir"], id: ["kata keterangan frekuensi diletakkan setelah ", { term: "be" }], vi: ["trạng từ chỉ tần suất đứng sau ", { term: "be" }] } }
           - { level: A1, speakers: [uk], wrong: I like very much football., right: ["I like football ", { target: very much }, "."], rule: { uk: [{ term: very much }, " стоїть у кінці, після додатка; українською «дуже люблю футбол»"] } }
           - { level: A0, speakers: [es], wrong: I have a car red., right: ["I have a ", { target: red car }, "."], rule: { es: ["el adjetivo va antes del sustantivo: ", { term: a red car }, "; en español «un coche rojo»"] } }
           - { level: A1, speakers: [es], wrong: Always I get up early., right: ["I ", { target: always }, " get up early."], rule: { es: [{ term: always }, " va antes del verbo principal, no al principio de la oración"] } }

@@ -5,53 +5,69 @@ kind: grammar
 tags: [nouns, possession, apostrophe]
 concepts: [possession]
 related: [en.nouns-determiners.plurals, en.pronouns.personal-pronouns, en.nouns-determiners.articles-a-an-the, en.nouns-determiners.demonstratives-this-that]
-status: { en: draft, uk: draft, es: draft }
-translated: { uk: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", es: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c" }
+status: { en: draft, uk: draft, es: draft, pt: draft, fr: draft, de: draft, it: draft, pl: draft, tr: draft, id: draft, vi: draft }
+translated: { uk: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", es: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", pt: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", fr: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", de: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", it: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", pl: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", tr: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", id: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c", vi: "30da81 39a780 b1111b 3889ad 6f408e 72b3be ed474c" }
 
-title: { en: Possessive 's, uk: "Присвійний 's", es: "El posesivo 's" }
+title: { en: Possessive 's, uk: "Присвійний 's", es: "El posesivo 's", pt: "O possessivo 's", fr: "Le génitif 's", de: "Der s-Genitiv", it: "Il genitivo sassone 's", pl: "Dopełniacz saksoński 's", tr: "İyelik 's", id: "Kepemilikan dengan 's", vi: "Sở hữu cách 's" }
 summary:
   lead:
     en: [{ pattern: [Noun, "'s"] }, " shows who something belongs to, and ' alone follows a plural in -s."]
     uk: [{ pattern: ["Іменник", "'s"] }, " показує, кому щось належить, а після множини на -s стоїть лише '."]
     es: [{ pattern: ["Sustantivo", "'s"] }, " indica a quién pertenece algo, y después de un plural en -s basta con '."]
+    pt: [{ pattern: ["Substantivo", "'s"] }, " indica a quem algo pertence, e depois de um plural em -s basta '."]
+    fr: [{ pattern: ["Nom", "'s"] }, " indique à qui appartient quelque chose, et après un pluriel en -s l’apostrophe seule suffit."]
+    de: [{ pattern: ["Nomen", "'s"] }, " zeigt, wem etwas gehört, und nach einem Plural auf -s steht nur '."]
+    it: [{ pattern: ["Sostantivo", "'s"] }, " indica a chi appartiene qualcosa, e dopo un plurale in -s basta '."]
+    pl: [{ pattern: ["Rzeczownik", "'s"] }, " pokazuje, do kogo coś należy, a po liczbie mnogiej na -s stoi sam '."]
+    tr: [{ pattern: ["İsim", "'s"] }, " bir şeyin kime ait olduğunu gösterir; -s ile biten bir çoğuldan sonra yalnızca ' gelir."]
+    id: [{ pattern: ["Kata benda", "'s"] }, " menunjukkan milik siapa sesuatu, dan ' saja dipakai setelah bentuk jamak berakhiran -s."]
+    vi: [{ pattern: ["Danh từ", "'s"] }, " cho biết vật thuộc về ai; sau danh từ số nhiều có đuôi -s chỉ cần dấu '."]
   rule:
     en: "The owner comes first and the thing after it takes no article:"
     uk: "Спочатку йде власник, а річ після нього стоїть без артикля:"
     es: "Primero va el poseedor y la cosa que sigue no lleva artículo:"
+    pt: "Primeiro vem o possuidor, e a coisa que vem depois não leva artigo:"
+    fr: "Le possesseur vient en premier et la chose qui suit ne prend pas d’article :"
+    de: "Zuerst steht der Besitzer, und die folgende Sache hat keinen Artikel:"
+    it: "Prima viene il possessore e la cosa che segue non prende l'articolo:"
+    pl: "Najpierw stoi właściciel, a rzecz po nim nie ma przedimka:"
+    tr: "Önce sahip gelir, ondan sonraki şey artikel almaz:"
+    id: "Pemilik berada di depan dan benda yang mengikutinya tidak memakai artikel:"
+    vi: "Người sở hữu đứng trước và vật đứng sau không có mạo từ:"
   ex: { examples: [[{ target: Ana's }, " car"], ["my ", { target: parents' }, " house"], ["the ", { target: children's }, " room."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto" } }
-        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla" } }
-        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+        - { key: point, label: { en: Point, uk: "Аспект", es: "Aspecto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: rule, label: { en: Rule, uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
       rows:
-        - { level: A1, point: { en: Singular noun, uk: "Іменник в однині", es: "Sustantivo singular" }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: [{ target: Ana's }, " car"], tr: { uk: "машина Ани", es: "el coche de Ana" } }
-        - { level: A1, point: { en: Plural in -s, uk: "Множина на -s", es: "Plural en -s" }, rule: { pattern: [{ ending: "'" }], follows: true }, ex: ["my ", { target: parents }, "' house"], tr: { uk: "дім моїх батьків", es: "la casa de mis padres" } }
-        - { level: A1, point: { en: Irregular plural, uk: "Неправильна множина", es: "Plural irregular" }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: ["the ", { target: children's }, " room"], tr: { uk: "кімната дітей", es: "la habitación de los niños" } }
-        - { level: A1, point: { en: Two owners, uk: "Двоє власників", es: "Dos poseedores" }, rule: { en: "'s on the last name", uk: "'s на останньому імені", es: "'s en el último nombre" }, ex: ["Tom and ", { target: Ana's }, " flat"], tr: { uk: "квартира Тома й Ани", es: "el apartamento de Tom y Ana" } }
-        - { level: A1, point: { en: ["'s or ", { term: of }], uk: ["'s чи ", { term: of }], es: ["'s o ", { term: of }] }, rule: { en: ["'s for people and animals, ", { term: of }, " for things"], uk: ["'s для людей і тварин, ", { term: of }, " — для речей"], es: ["'s para personas y animales, ", { term: of }, " para cosas"] }, ex: ["the end ", { target: of }, " the film"], tr: { uk: "кінець фільму", es: "el final de la película" } }
-        - { level: A1, point: { en: Without the noun, uk: "Без іменника", es: "Sin el sustantivo" }, rule: { en: "someone's home or shop", uk: "чийсь дім або крамниця", es: "la casa o la tienda de alguien" }, ex: ["at the ", { target: doctor's }], tr: { uk: "у лікаря", es: "en el consultorio del médico" } }
-        - { level: A1, point: { en: Word order, uk: "Порядок слів", es: "Orden de las palabras" }, rule: { en: "owner first, thing after, no article", uk: "спочатку власник, потім річ, без артикля", es: "primero el poseedor, luego la cosa, sin artículo" }, ex: [{ target: my sister's }, " phone"], tr: { uk: "телефон моєї сестри", es: "el teléfono de mi hermana" } }
-        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa" }, rule: { en: [{ term: Whose }, " asks about the owner; ", { term: "Who's" }, " means ", { term: who is }], uk: [{ term: Whose }, " питає про власника; ", { term: "Who's" }, " означає ", { term: who is }], es: [{ term: Whose }, " pregunta por el poseedor; ", { term: "Who's" }, " significa ", { term: who is }] }, ex: { contrast: [[{ target: Whose }, " bag?"], [{ target: Who's }, " there?"]] }, tr: { uk: { examples: ["Чия сумка?", "Хто там?"] }, es: { examples: ["¿De quién es el bolso?", "¿Quién está ahí?"] } } }
+        - { level: A1, point: { en: Singular noun, uk: "Іменник в однині", es: "Sustantivo singular", pt: "Substantivo no singular", fr: "Nom singulier", de: "Nomen im Singular", it: "Sostantivo singolare", pl: "Rzeczownik w liczbie pojedynczej", tr: "Tekil isim", id: "Kata benda tunggal", vi: "Danh từ số ít" }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: [{ target: Ana's }, " car"], tr: { uk: "машина Ани", es: "el coche de Ana", pt: "o carro da Ana", fr: "la voiture d’Ana", de: "Anas Auto", it: "la macchina di Ana", pl: "samochód Ani", tr: "Ana’nın arabası", id: "mobil Ana", vi: "xe của Ana" } }
+        - { level: A1, point: { en: Plural in -s, uk: "Множина на -s", es: "Plural en -s", pt: "Plural em -s", fr: "Pluriel en -s", de: "Plural auf -s", it: "Plurale in -s", pl: "Liczba mnoga na -s", tr: "-s ile biten çoğul", id: "Jamak berakhiran -s", vi: "Số nhiều có đuôi -s" }, rule: { pattern: [{ ending: "'" }], follows: true }, ex: ["my ", { target: parents }, "' house"], tr: { uk: "дім моїх батьків", es: "la casa de mis padres", pt: "a casa dos meus pais", fr: "la maison de mes parents", de: "das Haus meiner Eltern", it: "la casa dei miei genitori", pl: "dom moich rodziców", tr: "anne babamın evi", id: "rumah orang tua saya", vi: "nhà của bố mẹ tôi" } }
+        - { level: A1, point: { en: Irregular plural, uk: "Неправильна множина", es: "Plural irregular", pt: "Plural irregular", fr: "Pluriel irrégulier", de: "unregelmäßiger Plural", it: "Plurale irregolare", pl: "Nieregularna liczba mnoga", tr: "Düzensiz çoğul", id: "Jamak tidak beraturan", vi: "Số nhiều bất quy tắc" }, rule: { pattern: [{ ending: "'s" }], follows: true }, ex: ["the ", { target: children's }, " room"], tr: { uk: "кімната дітей", es: "la habitación de los niños", pt: "o quarto das crianças", fr: "la chambre des enfants", de: "das Zimmer der Kinder", it: "la camera dei bambini", pl: "pokój dzieci", tr: "çocukların odası", id: "kamar anak-anak", vi: "phòng của bọn trẻ" } }
+        - { level: A1, point: { en: Two owners, uk: "Двоє власників", es: "Dos poseedores", pt: "Dois possuidores", fr: "Deux possesseurs", de: "Zwei Besitzer", it: "Due possessori", pl: "Dwóch właścicieli", tr: "İki sahip", id: "Dua pemilik", vi: "Hai người sở hữu" }, rule: { en: "'s on the last name", uk: "'s на останньому імені", es: "'s en el último nombre", pt: "'s no último nome", fr: "'s sur le dernier nom", de: "'s am letzten Namen", it: "'s sull'ultimo nome", pl: "'s przy ostatnim imieniu", tr: "'s son isme eklenir", id: "'s pada nama terakhir", vi: "'s đặt sau tên cuối" }, ex: ["Tom and ", { target: Ana's }, " flat"], tr: { uk: "квартира Тома й Ани", es: "el apartamento de Tom y Ana", pt: "o apartamento do Tom e da Ana", fr: "l’appartement de Tom et d’Ana", de: "die Wohnung von Tom und Ana", it: "l'appartamento di Tom e Ana", pl: "mieszkanie Toma i Ani", tr: "Tom ile Ana’nın dairesi", id: "apartemen Tom dan Ana", vi: "căn hộ của Tom và Ana" } }
+        - { level: A1, point: { en: ["'s or ", { term: of }], uk: ["'s чи ", { term: of }], es: ["'s o ", { term: of }], pt: ["'s ou ", { term: "of" }], fr: ["'s ou ", { term: "of" }], de: ["'s oder ", { term: "of" }], it: ["'s o ", { term: "of" }], pl: ["'s czy ", { term: "of" }], tr: ["'s veya ", { term: "of" }], id: ["'s atau ", { term: "of" }], vi: ["'s hoặc ", { term: "of" }] }, rule: { en: ["'s for people and animals, ", { term: of }, " for things"], uk: ["'s для людей і тварин, ", { term: of }, " — для речей"], es: ["'s para personas y animales, ", { term: of }, " para cosas"], pt: ["'s para pessoas e animais, ", { term: "of" }, " para coisas"], fr: ["'s pour les personnes et les animaux, ", { term: "of" }, " pour les choses"], de: ["'s für Personen und Tiere, ", { term: "of" }, " für Dinge"], it: ["'s per persone e animali, ", { term: "of" }, " per le cose"], pl: ["'s dla osób i zwierząt, ", { term: "of" }, " dla rzeczy"], tr: ["insanlar ve hayvanlar için 's, eşyalar için ", { term: "of" }], id: ["'s untuk orang dan hewan, ", { term: "of" }, " untuk benda"], vi: ["'s dùng cho người và động vật, ", { term: "of" }, " dùng cho đồ vật"] }, ex: ["the end ", { target: of }, " the film"], tr: { uk: "кінець фільму", es: "el final de la película", pt: "o final do filme", fr: "la fin du film", de: "das Ende des Films", it: "la fine del film", pl: "koniec filmu", tr: "filmin sonu", id: "akhir film itu", vi: "đoạn kết của bộ phim" } }
+        - { level: A1, point: { en: Without the noun, uk: "Без іменника", es: "Sin el sustantivo", pt: "Sem o substantivo", fr: "Sans le nom", de: "Ohne das Nomen", it: "Senza il sostantivo", pl: "Bez rzeczownika", tr: "İsim olmadan", id: "Tanpa kata benda", vi: "Không có danh từ" }, rule: { en: "someone's home or shop", uk: "чийсь дім або крамниця", es: "la casa o la tienda de alguien", pt: "a casa ou a loja de alguém", fr: "la maison ou le magasin de quelqu’un", de: "Haus oder Geschäft von jemandem", it: "la casa o il negozio di qualcuno", pl: "czyjś dom lub sklep", tr: "birinin evi veya dükkânı", id: "rumah atau toko seseorang", vi: "nhà hoặc cửa hàng của ai đó" }, ex: ["at the ", { target: doctor's }], tr: { uk: "у лікаря", es: "en el consultorio del médico", pt: "no consultório do médico", fr: "chez le médecin", de: "beim Arzt", it: "dal dottore", pl: "u lekarza", tr: "doktorun muayenehanesinde", id: "di tempat praktik dokter", vi: "ở phòng khám của bác sĩ" } }
+        - { level: A1, point: { en: Word order, uk: "Порядок слів", es: "Orden de las palabras", pt: "Ordem das palavras", fr: "Ordre des mots", de: "Wortstellung", it: "Ordine delle parole", pl: "Kolejność wyrazów", tr: "Sözcük sırası", id: "Urutan kata", vi: "Trật tự từ" }, rule: { en: "owner first, thing after, no article", uk: "спочатку власник, потім річ, без артикля", es: "primero el poseedor, luego la cosa, sin artículo", pt: "primeiro o possuidor, depois a coisa, sem artigo", fr: "d’abord le possesseur, puis la chose, sans article", de: "Besitzer zuerst, dann die Sache, ohne Artikel", it: "prima il possessore, poi la cosa, senza articolo", pl: "najpierw właściciel, potem rzecz, bez przedimka", tr: "önce sahip, sonra şey, artikel yok", id: "pemilik lebih dahulu, lalu bendanya, tanpa artikel", vi: "người sở hữu đứng trước, vật đứng sau, không có mạo từ" }, ex: [{ target: my sister's }, " phone"], tr: { uk: "телефон моєї сестри", es: "el teléfono de mi hermana", pt: "o telefone da minha irmã", fr: "le téléphone de ma sœur", de: "das Handy meiner Schwester", it: "il telefono di mia sorella", pl: "telefon mojej siostry", tr: "kız kardeşimin telefonu", id: "ponsel kakak perempuan saya", vi: "điện thoại của chị tôi" } }
+        - { level: A1, point: { en: Trap, uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }, rule: { en: [{ term: Whose }, " asks about the owner; ", { term: "Who's" }, " means ", { term: who is }], uk: [{ term: Whose }, " питає про власника; ", { term: "Who's" }, " означає ", { term: who is }], es: [{ term: Whose }, " pregunta por el poseedor; ", { term: "Who's" }, " significa ", { term: who is }], pt: [{ term: "Whose" }, " pergunta pelo possuidor; ", { term: "Who's" }, " significa ", { term: "who is" }], fr: [{ term: "Whose" }, " interroge sur le possesseur ; ", { term: "Who's" }, " signifie ", { term: "who is" }], de: [{ term: "Whose" }, " fragt nach dem Besitzer; ", { term: "Who's" }, " = ", { term: "who is" }], it: [{ term: "Whose" }, " chiede chi è il possessore; ", { term: "Who's" }, " significa ", { term: "who is" }], pl: [{ term: "Whose" }, " pyta o właściciela; ", { term: "Who's" }, " znaczy ", { term: "who is" }], tr: [{ term: "Whose" }, " sahibi sorar; ", { term: "Who's" }, ", ", { term: "who is" }, " anlamına gelir"], id: [{ term: "Whose" }, " menanyakan pemilik; ", { term: "Who's" }, " berarti ", { term: "who is" }], vi: [{ term: "Whose" }, " hỏi về người sở hữu; ", { term: "Who's" }, " nghĩa là ", { term: "who is" }] }, ex: { contrast: [[{ target: Whose }, " bag?"], [{ target: Who's }, " there?"]] }, tr: { uk: { examples: ["Чия сумка?", "Хто там?"] }, es: { examples: ["¿De quién es el bolso?", "¿Quién está ahí?"] }, pt: { examples: ["De quem é a bolsa?", "Quem está aí?"] }, fr: { examples: ["À qui est ce sac ?", "Qui est là ?"] }, de: { examples: ["Wessen Tasche?", "Wer ist da?"] }, it: { examples: ["Di chi è la borsa?", "Chi c'è?"] }, pl: { examples: ["Czyja to torba?", "Kto tam?"] }, tr: { examples: ["Kimin çantası?", "Orada kim var?"] }, id: { examples: ["Tas siapa?", "Siapa di sana?"] }, vi: { examples: ["Cái túi của ai?", "Ai ở đó?"] } } }
 
 sections:
-  - title: { en: "Form: 's and '", uk: "Форма: 's і '", es: "Forma: 's y '" }
+  - title: { en: "Form: 's and '", uk: "Форма: 's і '", es: "Forma: 's y '", pt: "Forma: 's e '", fr: "Forme : 's et '", de: "Form: 's und '", it: "Forma: 's e '", pl: "Forma: 's i '", tr: "Biçim: 's ve '", id: "Bentuk: 's dan '", vi: "Dạng: 's và '" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: owner, label: { en: Owner, uk: "Власник", es: "Poseedor" } }
-          - { key: form, label: { en: Add, uk: "Додається", es: "Se añade" } }
-          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+          - { key: owner, label: { en: Owner, uk: "Власник", es: "Poseedor", pt: "Possuidor", fr: "Possesseur", de: "Besitzer", it: "Possessore", pl: "Właściciel", tr: "Sahip", id: "Pemilik", vi: "Người sở hữu" } }
+          - { key: form, label: { en: Add, uk: "Додається", es: "Se añade", pt: "Acrescenta-se", fr: "On ajoute", de: "Wird angehängt", it: "Si aggiunge", pl: "Dodaje się", tr: "Eklenen", id: "Ditambahkan", vi: "Thêm vào" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
-          - { level: A1, owner: { en: singular noun, uk: "іменник в однині", es: "sustantivo singular" }, form: "'s", ex: [{ target: Ana's }, " car"], tr: { uk: "машина Ани", es: "el coche de Ana" } }
-          - { level: A1, owner: { en: plural ending in -s, uk: "множина на -s", es: "plural terminado en -s" }, form: "'", ex: ["my ", { target: parents }, "' house"], tr: { uk: "дім моїх батьків", es: "la casa de mis padres" } }
-          - { level: A1, owner: { en: ["irregular plural: ", { term: children }, ", ", { term: men }, ", ", { term: women }, ", ", { term: people }], uk: ["неправильна множина: ", { term: children }, ", ", { term: men }, ", ", { term: women }, ", ", { term: people }], es: ["plural irregular: ", { term: children }, ", ", { term: men }, ", ", { term: women }, ", ", { term: people }] }, form: "'s", ex: ["the ", { target: children's }, " room"], tr: { uk: "кімната дітей", es: "la habitación de los niños" } }
-          - { level: A1, owner: { en: name ending in -s, uk: "ім’я на -s", es: "nombre terminado en -s" }, form: { alternatives: ["'s", "'"] }, ex: { examples: [{ target: James's }, [{ target: James }, "' bike"]] }, tr: { uk: { examples: ["велосипед Джеймса", "велосипед Джеймса"] }, es: { examples: ["la bicicleta de James", "la bicicleta de James"] } } }
-          - { level: A1, owner: { en: two owners of one thing, uk: "двоє власників однієї речі", es: "dos poseedores de una misma cosa" }, form: { en: "'s on the last name", uk: "'s на останньому імені", es: "'s en el último nombre" }, ex: ["Tom and ", { target: Ana's }, " flat"], tr: { uk: "квартира Тома й Ани", es: "el apartamento de Tom y Ana" } }
+          - { level: A1, owner: { en: singular noun, uk: "іменник в однині", es: "sustantivo singular", pt: "substantivo no singular", fr: "nom singulier", de: "Nomen im Singular", it: "sostantivo singolare", pl: "rzeczownik w liczbie pojedynczej", tr: "tekil isim", id: "kata benda tunggal", vi: "danh từ số ít" }, form: "'s", ex: [{ target: Ana's }, " car"], tr: { uk: "машина Ани", es: "el coche de Ana", pt: "o carro da Ana", fr: "la voiture d’Ana", de: "Anas Auto", it: "la macchina di Ana", pl: "samochód Ani", tr: "Ana’nın arabası", id: "mobil Ana", vi: "xe của Ana" } }
+          - { level: A1, owner: { en: plural ending in -s, uk: "множина на -s", es: "plural terminado en -s", pt: "plural terminado em -s", fr: "pluriel en -s", de: "Plural auf -s", it: "plurale in -s", pl: "liczba mnoga zakończona na -s", tr: "-s ile biten çoğul", id: "jamak berakhiran -s", vi: "số nhiều có đuôi -s" }, form: "'", ex: ["my ", { target: parents }, "' house"], tr: { uk: "дім моїх батьків", es: "la casa de mis padres", pt: "a casa dos meus pais", fr: "la maison de mes parents", de: "das Haus meiner Eltern", it: "la casa dei miei genitori", pl: "dom moich rodziców", tr: "anne babamın evi", id: "rumah orang tua saya", vi: "nhà của bố mẹ tôi" } }
+          - { level: A1, owner: { en: ["irregular plural: ", { term: children }, ", ", { term: men }, ", ", { term: women }, ", ", { term: people }], uk: ["неправильна множина: ", { term: children }, ", ", { term: men }, ", ", { term: women }, ", ", { term: people }], es: ["plural irregular: ", { term: children }, ", ", { term: men }, ", ", { term: women }, ", ", { term: people }], pt: ["plural irregular: ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }], fr: ["pluriel irrégulier : ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }], de: ["unregelmäßiger Plural: ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }], it: ["plurale irregolare: ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }], pl: ["nieregularna liczba mnoga: ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }], tr: ["düzensiz çoğul: ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }], id: ["jamak tidak beraturan: ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }], vi: ["số nhiều bất quy tắc: ", { term: "children" }, ", ", { term: "men" }, ", ", { term: "women" }, ", ", { term: "people" }] }, form: "'s", ex: ["the ", { target: children's }, " room"], tr: { uk: "кімната дітей", es: "la habitación de los niños", pt: "o quarto das crianças", fr: "la chambre des enfants", de: "das Zimmer der Kinder", it: "la camera dei bambini", pl: "pokój dzieci", tr: "çocukların odası", id: "kamar anak-anak", vi: "phòng của bọn trẻ" } }
+          - { level: A1, owner: { en: name ending in -s, uk: "ім’я на -s", es: "nombre terminado en -s", pt: "nome terminado em -s", fr: "nom terminé par -s", de: "Name auf -s", it: "nome che termina in -s", pl: "imię zakończone na -s", tr: "-s ile biten ad", id: "nama berakhiran -s", vi: "tên có đuôi -s" }, form: { alternatives: ["'s", "'"] }, ex: { examples: [{ target: James's }, [{ target: James }, "' bike"]] }, tr: { uk: { examples: ["велосипед Джеймса", "велосипед Джеймса"] }, es: { examples: ["la bicicleta de James", "la bicicleta de James"] }, pt: { examples: ["a bicicleta do James", "a bicicleta do James"] }, fr: { examples: ["le vélo de James", "le vélo de James"] }, de: { examples: ["das Fahrrad von James", "das Fahrrad von James"] }, it: { examples: ["la bici di James", "la bici di James"] }, pl: { examples: ["rower Jamesa", "rower Jamesa"] }, tr: { examples: ["James’in bisikleti", "James’in bisikleti"] }, id: { examples: ["sepeda James", "sepeda James"] }, vi: { examples: ["xe đạp của James", "xe đạp của James"] } } }
+          - { level: A1, owner: { en: two owners of one thing, uk: "двоє власників однієї речі", es: "dos poseedores de una misma cosa", pt: "dois possuidores de uma mesma coisa", fr: "deux possesseurs d’une même chose", de: "zwei Besitzer einer Sache", it: "due possessori di una stessa cosa", pl: "dwóch właścicieli jednej rzeczy", tr: "tek bir şeyin iki sahibi", id: "dua pemilik satu benda", vi: "hai người cùng sở hữu một vật" }, form: { en: "'s on the last name", uk: "'s на останньому імені", es: "'s en el último nombre", pt: "'s no último nome", fr: "'s sur le dernier nom", de: "'s am letzten Namen", it: "'s sull'ultimo nome", pl: "'s przy ostatnim imieniu", tr: "'s son isme eklenir", id: "'s pada nama terakhir", vi: "'s đặt sau tên cuối" }, ex: ["Tom and ", { target: Ana's }, " flat"], tr: { uk: "квартира Тома й Ани", es: "el apartamento de Tom y Ana", pt: "o apartamento do Tom e da Ana", fr: "l’appartement de Tom et d’Ana", de: "die Wohnung von Tom und Ana", it: "l'appartamento di Tom e Ana", pl: "mieszkanie Toma i Ani", tr: "Tom ile Ana’nın dairesi", id: "apartemen Tom dan Ana", vi: "căn hộ của Tom và Ana" } }
       - type: list
         items:
           - type: rule
@@ -60,34 +76,58 @@ sections:
               en: ["The owner comes first, then the thing: ", { term: my sister's }, " ", { term: phone }, "."]
               uk: ["Спочатку йде власник, потім річ: ", { term: my sister's }, " ", { term: phone }, "."]
               es: ["Primero va el poseedor y después la cosa: ", { term: my sister's }, " ", { term: phone }, "."]
+              pt: ["Primeiro vem o possuidor e depois a coisa: ", { term: "my sister's" }, " ", { term: "phone" }, "."]
+              fr: ["Le possesseur vient en premier, puis la chose : ", { term: "my sister's" }, " ", { term: "phone" }, "."]
+              de: ["Zuerst steht der Besitzer, dann die Sache: ", { term: "my sister's" }, " ", { term: "phone" }, "."]
+              it: ["Prima viene il possessore, poi la cosa: ", { term: "my sister's" }, " ", { term: "phone" }, "."]
+              pl: ["Najpierw stoi właściciel, potem rzecz: ", { term: "my sister's" }, " ", { term: "phone" }, "."]
+              tr: ["Önce sahip, sonra şey gelir: ", { term: "my sister's" }, " ", { term: "phone" }, "."]
+              id: ["Pemilik lebih dahulu, lalu bendanya: ", { term: "my sister's" }, " ", { term: "phone" }, "."]
+              vi: ["Người sở hữu đứng trước, rồi đến vật: ", { term: "my sister's" }, " ", { term: "phone" }, "."]
           - type: rule
             level: A1
             text:
               en: "The thing after 's takes no article:"
               uk: "Річ після 's стоїть без артикля:"
               es: "La cosa después de 's no lleva artículo:"
+              pt: "A coisa depois de 's não leva artigo:"
+              fr: "La chose qui suit 's ne prend pas d’article :"
+              de: "Die Sache nach 's hat keinen Artikel:"
+              it: "La cosa dopo 's non prende l'articolo:"
+              pl: "Rzecz po 's nie ma przedimka:"
+              tr: "'s sonrasındaki şey artikel almaz:"
+              id: "Benda setelah 's tidak memakai artikel:"
+              vi: "Vật đứng sau 's không có mạo từ:"
             ex: ["Ana's ", { target: car }, "."]
-            tr: { uk: "Машина Ани.", es: "El coche de Ana." }
+            tr: { uk: "Машина Ани.", es: "El coche de Ana.", pt: "O carro da Ana.", fr: "La voiture d’Ana.", de: "Das Auto von Ana.", it: "La macchina di Ana.", pl: "Samochód Ani.", tr: "Ana’nın arabası.", id: "Mobil Ana.", vi: "Xe của Ana." }
           - type: rule
             level: A1
             text:
               en: ["'s also shortens ", { term: is }, " and ", { term: has }, ":"]
               uk: ["'s також скорочує ", { term: is }, " і ", { term: has }, ":"]
               es: ["'s también abrevia ", { term: is }, " y ", { term: has }, ":"]
+              pt: ["'s também abrevia ", { term: "is" }, " e ", { term: "has" }, ":"]
+              fr: ["'s abrège aussi ", { term: "is" }, " et ", { term: "has" }, " :"]
+              de: ["'s kürzt auch ", { term: "is" }, " und ", { term: "has" }, " ab:"]
+              it: ["'s abbrevia anche ", { term: "is" }, " e ", { term: "has" }, ":"]
+              pl: ["'s skraca także ", { term: "is" }, " i ", { term: "has" }, ":"]
+              tr: ["'s ayrıca ", { term: "is" }, " ve ", { term: "has" }, " sözcüklerini kısaltır:"]
+              id: ["'s juga menyingkat ", { term: "is" }, " dan ", { term: "has" }, ":"]
+              vi: ["'s cũng là dạng rút gọn của ", { term: "is" }, " và ", { term: "has" }, ":"]
             ex: { equivalence: [[{ target: Ana's }, " tired"], Ana is tired.] }
-            tr: { uk: "Ана втомилася.", es: "Ana está cansada." }
+            tr: { uk: "Ана втомилася.", es: "Ana está cansada.", pt: "A Ana está cansada.", fr: "Ana est fatiguée.", de: "Ana ist müde.", it: "Ana è stanca.", pl: "Ana jest zmęczona.", tr: "Ana yorgun.", id: "Ana lelah.", vi: "Ana đang mệt." }
 
-  - title: { en: "Pronunciation: 's", uk: "Вимова: 's", es: "Pronunciación: 's" }
+  - title: { en: "Pronunciation: 's", uk: "Вимова: 's", es: "Pronunciación: 's", pt: "Pronúncia: 's", fr: "Prononciation : 's", de: "Aussprache: 's", it: "Pronuncia: 's", pl: "Wymowa: 's", tr: "Telaffuz: 's", id: "Pelafalan: 's", vi: "Phát âm: 's" }
     role: pronunciation
     content:
       - type: usage
         columns:
-          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido" } }
-          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+          - { key: sound, label: { en: Sound, uk: "Звук", es: "Sonido", pt: "Som", fr: "Son", de: "Laut", it: "Suono", pl: "Dźwięk", tr: "Ses", id: "Bunyi", vi: "Âm" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
-          - { level: A1, sound: { ipa: s }, ex: ["Mark's ", { ipa: mɑːks }], tr: { uk: "Марка", es: "de Mark" } }
-          - { level: A1, sound: { ipa: z }, ex: ["Ana's ", { ipa: ˈænəz }], tr: { uk: "Ани", es: "de Ana" } }
-          - { level: A1, sound: { ipa: ɪz }, ex: ["James's ", { ipa: ˈdʒeɪmzɪz }], tr: { uk: "Джеймса", es: "de James" } }
+          - { level: A1, sound: { ipa: s }, ex: ["Mark's ", { ipa: mɑːks }], tr: { uk: "Марка", es: "de Mark", pt: "do Mark", fr: "de Mark", de: "von Mark", it: "di Mark", pl: "Marka", tr: "Mark’ın", id: "milik Mark", vi: "của Mark" } }
+          - { level: A1, sound: { ipa: z }, ex: ["Ana's ", { ipa: ˈænəz }], tr: { uk: "Ани", es: "de Ana", pt: "da Ana", fr: "d’Ana", de: "von Ana", it: "di Ana", pl: "Ani", tr: "Ana’nın", id: "milik Ana", vi: "của Ana" } }
+          - { level: A1, sound: { ipa: ɪz }, ex: ["James's ", { ipa: ˈdʒeɪmzɪz }], tr: { uk: "Джеймса", es: "de James", pt: "do James", fr: "de James", de: "von James", it: "di James", pl: "Jamesa", tr: "James’in", id: "milik James", vi: "của James" } }
       - type: list
         items:
           - type: note
@@ -96,25 +136,41 @@ sections:
               en: ["'s follows the sound rules of the plural -s. See ", { link: Plurals, to: en.nouns-determiners.plurals }, "."]
               uk: ["'s підпорядковується тим самим правилам вимови, що й закінчення -s множини. Див. ", { link: "Множина іменників", to: en.nouns-determiners.plurals }, "."]
               es: ["'s sigue las reglas de sonido de la -s del plural. Ver ", { link: "El plural", to: en.nouns-determiners.plurals }, "."]
+              pt: ["'s segue as regras de som do -s do plural. Ver ", { link: "O plural", to: "en.nouns-determiners.plurals" }, "."]
+              fr: ["'s suit les règles de prononciation du -s du pluriel. Voir ", { link: "Le pluriel", to: "en.nouns-determiners.plurals" }, "."]
+              de: ["'s folgt den Lautregeln des Plural-s. Siehe ", { link: "Plural", to: "en.nouns-determiners.plurals" }, "."]
+              it: ["'s segue le regole di pronuncia della -s del plurale. Vedi ", { link: "Il plurale", to: "en.nouns-determiners.plurals" }, "."]
+              pl: ["'s podlega tym samym regułom wymowy co -s liczby mnogiej. Zob. ", { link: "Liczba mnoga", to: "en.nouns-determiners.plurals" }, "."]
+              tr: ["'s, çoğul -s ekinin ses kurallarına uyar. Bkz. ", { link: "Tekil ve çoğul", to: "en.nouns-determiners.plurals" }, "."]
+              id: ["'s mengikuti aturan bunyi -s jamak. Lihat ", { link: "Bentuk jamak", to: "en.nouns-determiners.plurals" }, "."]
+              vi: ["'s theo các quy tắc phát âm của -s số nhiều. Xem ", { link: "Danh từ số nhiều", to: "en.nouns-determiners.plurals" }, "."]
           - type: rule
             level: A1
             text:
               en: ["' after a plural -s adds no sound: ", { term: "parents'" }, " ", { ipa: ˈpeərənts }, "."]
               uk: ["' після -s множини не додає звуку: ", { term: "parents'" }, " ", { ipa: ˈpeərənts }, "."]
               es: ["' después de la -s del plural no añade ningún sonido: ", { term: "parents'" }, " ", { ipa: ˈpeərənts }, "."]
+              pt: ["' depois do -s do plural não acrescenta nenhum som: ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
+              fr: ["Après le -s d’un pluriel, ' n’ajoute aucun son : ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
+              de: ["' nach einem Plural-s fügt keinen Laut hinzu: ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
+              it: ["' dopo la -s del plurale non aggiunge nessun suono: ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
+              pl: ["' po -s liczby mnogiej nie dodaje dźwięku: ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
+              tr: ["Çoğul -s ekinden sonra gelen ' ses eklemez: ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
+              id: ["' setelah -s jamak tidak menambah bunyi: ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
+              vi: ["Dấu ' sau -s số nhiều không thêm âm nào: ", { term: "parents'" }, " ", { ipa: "ˈpeərənts" }, "."]
 
-  - title: { en: Use, uk: "Вживання", es: "Uso" }
+  - title: { en: Use, uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso" } }
-          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo" } }
+          - { key: use, label: { en: Use, uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: ex, label: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
-          - { level: A1, use: { en: People, uk: "Люди", es: "Personas" }, ex: ["my ", { target: brother's }, " job"], tr: { uk: "робота мого брата", es: "el trabajo de mi hermano" } }
-          - { level: A1, use: { en: Animals, uk: "Тварини", es: "Animales" }, ex: ["the ", { target: dog's }, " bed"], tr: { uk: "лежанка собаки", es: "la cama del perro" } }
-          - { level: A1, use: { en: "Someone's home or shop, without the noun", uk: "Чийсь дім або крамниця, без іменника", es: "La casa o la tienda de alguien, sin el sustantivo" }, ex: { examples: [["at my ", { target: mum's }], ["at the ", { target: doctor's }]] }, tr: { uk: { examples: ["у моєї мами", "у лікаря"] }, es: { examples: ["en casa de mi mamá", "en el consultorio del médico"] } } }
-          - { level: A1, use: { en: ["Answer to ", { term: [Whose, { gap: true }, "?"] }], uk: ["Відповідь на ", { term: [Whose, { gap: true }, "?"] }], es: ["Respuesta a ", { term: [Whose, { gap: true }, "?"] }] }, ex: { exchange: [Whose bag is this?, ["It's ", { target: Ana's }, "."]] }, tr: { uk: "Чия це сумка? — Це Ани.", es: "¿De quién es este bolso? — Es de Ana." } }
+          - { level: A1, use: { en: People, uk: "Люди", es: "Personas", pt: "Pessoas", fr: "Personnes", de: "Personen", it: "Persone", pl: "Osoby", tr: "İnsanlar", id: "Orang", vi: "Người" }, ex: ["my ", { target: brother's }, " job"], tr: { uk: "робота мого брата", es: "el trabajo de mi hermano", pt: "o trabalho do meu irmão", fr: "le travail de mon frère", de: "der Beruf meines Bruders", it: "il lavoro di mio fratello", pl: "praca mojego brata", tr: "erkek kardeşimin işi", id: "pekerjaan kakak laki-laki saya", vi: "công việc của anh trai tôi" } }
+          - { level: A1, use: { en: Animals, uk: "Тварини", es: "Animales", pt: "Animais", fr: "Animaux", de: "Tiere", it: "Animali", pl: "Zwierzęta", tr: "Hayvanlar", id: "Hewan", vi: "Động vật" }, ex: ["the ", { target: dog's }, " bed"], tr: { uk: "лежанка собаки", es: "la cama del perro", pt: "a cama do cachorro", fr: "le lit du chien", de: "das Bett des Hundes", it: "la cuccia del cane", pl: "legowisko psa", tr: "köpeğin yatağı", id: "tempat tidur anjing itu", vi: "giường của con chó" } }
+          - { level: A1, use: { en: "Someone's home or shop, without the noun", uk: "Чийсь дім або крамниця, без іменника", es: "La casa o la tienda de alguien, sin el sustantivo", pt: "A casa ou a loja de alguém, sem o substantivo", fr: "La maison ou le magasin de quelqu’un, sans le nom", de: "Haus oder Geschäft von jemandem, ohne das Nomen", it: "La casa o il negozio di qualcuno, senza il sostantivo", pl: "Czyjś dom lub sklep, bez rzeczownika", tr: "Birinin evi veya dükkânı, isim olmadan", id: "Rumah atau toko seseorang, tanpa kata benda", vi: "Nhà hoặc cửa hàng của ai đó, không có danh từ" }, ex: { examples: [["at my ", { target: mum's }], ["at the ", { target: doctor's }]] }, tr: { uk: { examples: ["у моєї мами", "у лікаря"] }, es: { examples: ["en casa de mi mamá", "en el consultorio del médico"] }, pt: { examples: ["na casa da minha mãe", "no consultório do médico"] }, fr: { examples: ["chez ma mère", "chez le médecin"] }, de: { examples: ["bei meiner Mama", "beim Arzt"] }, it: { examples: ["da mia mamma", "dal dottore"] }, pl: { examples: ["u mojej mamy", "u lekarza"] }, tr: { examples: ["annemlerde", "doktorun muayenehanesinde"] }, id: { examples: ["di rumah ibu saya", "di tempat praktik dokter"] }, vi: { examples: ["ở nhà mẹ tôi", "ở phòng khám của bác sĩ"] } } }
+          - { level: A1, use: { en: ["Answer to ", { term: [Whose, { gap: true }, "?"] }], uk: ["Відповідь на ", { term: [Whose, { gap: true }, "?"] }], es: ["Respuesta a ", { term: [Whose, { gap: true }, "?"] }], pt: ["Resposta a ", { term: ["Whose", { gap: true }, "?"] }], fr: ["Réponse à ", { term: ["Whose", { gap: true }, "?"] }], de: ["Antwort auf ", { term: ["Whose", { gap: true }, "?"] }], it: ["Risposta a ", { term: ["Whose", { gap: true }, "?"] }], pl: ["Odpowiedź na ", { term: ["Whose", { gap: true }, "?"] }], tr: [{ term: ["Whose", { gap: true }, "?"] }, " sorusunun cevabı"], id: ["Jawaban untuk ", { term: ["Whose", { gap: true }, "?"] }], vi: ["Trả lời cho ", { term: ["Whose", { gap: true }, "?"] }] }, ex: { exchange: [Whose bag is this?, ["It's ", { target: Ana's }, "."]] }, tr: { uk: "Чия це сумка? — Це Ани.", es: "¿De quién es este bolso? — Es de Ana.", pt: "De quem é esta bolsa? — É da Ana.", fr: "À qui est ce sac ? — C’est à Ana.", de: "Wem gehört diese Tasche? — Sie gehört Ana.", it: "Di chi è questa borsa? — È di Ana.", pl: "Czyja to torba? — To torba Ani.", tr: "Bu çanta kimin? — Ana’nın.", id: "Tas ini milik siapa? — Milik Ana.", vi: "Cái túi này của ai? — Của Ana." } }
       - type: list
         items:
           - type: rule
@@ -123,16 +179,32 @@ sections:
               en: ["Ask about the owner with ", { pattern: [{ term: Whose }, { slot: noun }] }, ":"]
               uk: ["Про власника питають за допомогою ", { pattern: [{ term: Whose }, { slot: noun }] }, ":"]
               es: ["Se pregunta por el poseedor con ", { pattern: [{ term: Whose }, { slot: noun }] }, ":"]
+              pt: ["Pergunta-se pelo possuidor com ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, ":"]
+              fr: ["On interroge sur le possesseur avec ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, " :"]
+              de: ["Nach dem Besitzer fragt man mit ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, ":"]
+              it: ["Si chiede del possessore con ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, ":"]
+              pl: ["O właściciela pyta się za pomocą ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, ":"]
+              tr: ["Sahip hakkında ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, " ile sorulur:"]
+              id: ["Menanyakan pemilik dengan ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, ":"]
+              vi: ["Hỏi về người sở hữu bằng ", { pattern: [{ term: "Whose" }, { slot: "noun" }] }, ":"]
             ex: [{ target: Whose }, " bag is this?"]
-            tr: { uk: "Чия це сумка?", es: "¿De quién es este bolso?" }
+            tr: { uk: "Чия це сумка?", es: "¿De quién es este bolso?", pt: "De quem é esta bolsa?", fr: "À qui est ce sac ?", de: "Wessen Tasche ist das?", it: "Di chi è questa borsa?", pl: "Czyja to torba?", tr: "Bu çanta kimin?", id: "Tas ini milik siapa?", vi: "Cái túi này của ai?" }
           - type: note
             level: A1
             text:
               en: [{ term: my }, ", ", { term: your }, ", ", { term: his }, "… and ", { term: mine }, ", ", { term: yours }, ", ", { term: his }, "…: see ", { link: Personal pronouns, to: en.pronouns.personal-pronouns }, "."]
               uk: [{ term: my }, ", ", { term: your }, ", ", { term: his }, "… і ", { term: mine }, ", ", { term: yours }, ", ", { term: his }, "…: див. ", { link: "Особові займенники", to: en.pronouns.personal-pronouns }, "."]
               es: [{ term: my }, ", ", { term: your }, ", ", { term: his }, "… y ", { term: mine }, ", ", { term: yours }, ", ", { term: his }, "…: ver ", { link: "Pronombres personales", to: en.pronouns.personal-pronouns }, "."]
+              pt: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… e ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "…: ver ", { link: "Pronomes pessoais", to: "en.pronouns.personal-pronouns" }, "."]
+              fr: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… et ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "… : voir ", { link: "Pronoms personnels", to: "en.pronouns.personal-pronouns" }, "."]
+              de: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… und ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "…: siehe ", { link: "Personalpronomen", to: "en.pronouns.personal-pronouns" }, "."]
+              it: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… e ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "…: vedi ", { link: "Pronomi personali", to: "en.pronouns.personal-pronouns" }, "."]
+              pl: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… i ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "…: zob. ", { link: "Zaimki osobowe", to: "en.pronouns.personal-pronouns" }, "."]
+              tr: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… ve ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "…: bkz. ", { link: "Kişi zamirleri", to: "en.pronouns.personal-pronouns" }, "."]
+              id: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… dan ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "…: lihat ", { link: "Kata ganti orang", to: "en.pronouns.personal-pronouns" }, "."]
+              vi: [{ term: "my" }, ", ", { term: "your" }, ", ", { term: "his" }, "… và ", { term: "mine" }, ", ", { term: "yours" }, ", ", { term: "his" }, "…: xem ", { link: "Đại từ nhân xưng", to: "en.pronouns.personal-pronouns" }, "."]
 
-  - title: { en: "Compare: 's and of", uk: "Порівняння: 's і of", es: "Comparación: 's y of" }
+  - title: { en: "Compare: 's and of", uk: "Порівняння: 's і of", es: "Comparación: 's y of", pt: "Comparação: 's e of", fr: "Comparaison : 's et of", de: "Vergleich: 's und of", it: "Confronto: 's e of", pl: "Porównanie: 's i of", tr: "Karşılaştırma: 's ve of", id: "Perbandingan: 's dan of", vi: "So sánh: 's và of" }
     role: compare
     content:
       - type: comparison
@@ -140,18 +212,18 @@ sections:
           - { key: s, label: "'s" }
           - { key: of, label: of }
         rows:
-          - { level: A1, s: { en: people and animals, uk: "люди й тварини", es: "personas y animales" }, of: { en: things and places, uk: "речі й місця", es: "cosas y lugares" } }
-          - { level: A1, s: { ex: ["my ", { target: friend's }, " name"], tr: { uk: "ім’я мого друга", es: "el nombre de mi amigo" } }, of: { ex: ["the name ", { target: of }, " the street"], tr: { uk: "назва вулиці", es: "el nombre de la calle" } } }
-          - { level: A1, s: { ex: ["the ", { target: cat's }, " food"], tr: { uk: "їжа кота", es: "la comida del gato" } }, of: { ex: ["the end ", { target: of }, " the film"], tr: { uk: "кінець фільму", es: "el final de la película" } } }
+          - { level: A1, s: { en: people and animals, uk: "люди й тварини", es: "personas y animales", pt: "pessoas e animais", fr: "personnes et animaux", de: "Personen und Tiere", it: "persone e animali", pl: "osoby i zwierzęta", tr: "insanlar ve hayvanlar", id: "orang dan hewan", vi: "người và động vật" }, of: { en: things and places, uk: "речі й місця", es: "cosas y lugares", pt: "coisas e lugares", fr: "choses et lieux", de: "Dinge und Orte", it: "cose e luoghi", pl: "rzeczy i miejsca", tr: "eşyalar ve yerler", id: "benda dan tempat", vi: "đồ vật và địa điểm" } }
+          - { level: A1, s: { ex: ["my ", { target: friend's }, " name"], tr: { uk: "ім’я мого друга", es: "el nombre de mi amigo", pt: "o nome do meu amigo", fr: "le nom de mon ami", de: "der Name meines Freundes", it: "il nome del mio amico", pl: "imię mojego przyjaciela", tr: "arkadaşımın adı", id: "nama teman saya", vi: "tên của bạn tôi" } }, of: { ex: ["the name ", { target: of }, " the street"], tr: { uk: "назва вулиці", es: "el nombre de la calle", pt: "o nome da rua", fr: "le nom de la rue", de: "der Name der Straße", it: "il nome della strada", pl: "nazwa ulicy", tr: "sokağın adı", id: "nama jalan itu", vi: "tên của con phố" } } }
+          - { level: A1, s: { ex: ["the ", { target: cat's }, " food"], tr: { uk: "їжа кота", es: "la comida del gato", pt: "a comida do gato", fr: "la nourriture du chat", de: "das Futter der Katze", it: "il cibo del gatto", pl: "jedzenie kota", tr: "kedinin maması", id: "makanan kucing itu", vi: "thức ăn của con mèo" } }, of: { ex: ["the end ", { target: of }, " the film"], tr: { uk: "кінець фільму", es: "el final de la película", pt: "o final do filme", fr: "la fin du film", de: "das Ende des Films", it: "la fine del film", pl: "koniec filmu", tr: "filmin sonu", id: "akhir film itu", vi: "đoạn kết của bộ phim" } } }
 
-  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes" }
+  - title: { en: Typical errors, uk: "Типові помилки", es: "Errores frecuentes", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: my parents's house, right: ["my ", { target: parents }, "' house"], rule: { en: { takes: [plural in -s, { pattern: [{ ending: "'" }], follows: true }] }, uk: { takes: ["множина на -s", { pattern: [{ ending: "'" }], follows: true }] }, es: { takes: ["plural en -s", { pattern: [{ ending: "'" }], follows: true }] } } }
-          - { level: A1, wrong: the childrens' room, right: ["the ", { target: children's }, " room"], rule: { en: { takes: [irregular plural, { pattern: [{ ending: "'s" }], follows: true }] }, uk: { takes: ["неправильна множина", { pattern: [{ ending: "'s" }], follows: true }] }, es: { takes: ["plural irregular", { pattern: [{ ending: "'s" }], follows: true }] } } }
-          - { level: A1, wrong: Who's bag is this?, right: [{ target: Whose }, " bag is this?"], rule: { en: [{ term: who's }, " = ", { term: who is }], uk: [{ term: who's }, " означає ", { term: who is }], es: [{ term: who's }, " significa ", { term: who is }] } }
+          - { level: A1, wrong: my parents's house, right: ["my ", { target: parents }, "' house"], rule: { en: { takes: [plural in -s, { pattern: [{ ending: "'" }], follows: true }] }, uk: { takes: ["множина на -s", { pattern: [{ ending: "'" }], follows: true }] }, es: { takes: ["plural en -s", { pattern: [{ ending: "'" }], follows: true }] }, pt: { takes: ["plural em -s", { pattern: [{ ending: "'" }], follows: true }] }, fr: { takes: ["pluriel en -s", { pattern: [{ ending: "'" }], follows: true }] }, de: { takes: ["Plural auf -s", { pattern: [{ ending: "'" }], follows: true }] }, it: { takes: ["plurale in -s", { pattern: [{ ending: "'" }], follows: true }] }, pl: { takes: ["liczba mnoga na -s", { pattern: [{ ending: "'" }], follows: true }] }, tr: { takes: ["-s ile biten çoğul", { pattern: [{ ending: "'" }], follows: true }] }, id: { takes: ["jamak berakhiran -s", { pattern: [{ ending: "'" }], follows: true }] }, vi: { takes: ["số nhiều có đuôi -s", { pattern: [{ ending: "'" }], follows: true }] } } }
+          - { level: A1, wrong: the childrens' room, right: ["the ", { target: children's }, " room"], rule: { en: { takes: [irregular plural, { pattern: [{ ending: "'s" }], follows: true }] }, uk: { takes: ["неправильна множина", { pattern: [{ ending: "'s" }], follows: true }] }, es: { takes: ["plural irregular", { pattern: [{ ending: "'s" }], follows: true }] }, pt: { takes: ["plural irregular", { pattern: [{ ending: "'s" }], follows: true }] }, fr: { takes: ["pluriel irrégulier", { pattern: [{ ending: "'s" }], follows: true }] }, de: { takes: ["unregelmäßiger Plural", { pattern: [{ ending: "'s" }], follows: true }] }, it: { takes: ["plurale irregolare", { pattern: [{ ending: "'s" }], follows: true }] }, pl: { takes: ["nieregularna liczba mnoga", { pattern: [{ ending: "'s" }], follows: true }] }, tr: { takes: ["düzensiz çoğul", { pattern: [{ ending: "'s" }], follows: true }] }, id: { takes: ["jamak tidak beraturan", { pattern: [{ ending: "'s" }], follows: true }] }, vi: { takes: ["số nhiều bất quy tắc", { pattern: [{ ending: "'s" }], follows: true }] } } }
+          - { level: A1, wrong: Who's bag is this?, right: [{ target: Whose }, " bag is this?"], rule: { en: [{ term: who's }, " = ", { term: who is }], uk: [{ term: who's }, " означає ", { term: who is }], es: [{ term: who's }, " significa ", { term: who is }], pt: [{ term: "who's" }, " significa ", { term: "who is" }], fr: [{ term: "who's" }, " = ", { term: "who is" }], de: [{ term: "who's" }, " = ", { term: "who is" }], it: [{ term: "who's" }, " significa ", { term: "who is" }], pl: [{ term: "who's" }, " znaczy ", { term: "who is" }], tr: [{ term: "who's" }, " = ", { term: "who is" }], id: [{ term: "who's" }, " berarti ", { term: "who is" }], vi: [{ term: "who's" }, " = ", { term: "who is" }] } }
           - { level: A1, speakers: [uk], wrong: the car of my father, right: ["my ", { target: father's }, " car"], rule: { uk: ["для людей і тварин — 's, а не ", { term: of }, "; українському родовому відмінку відповідає 's"] } }
           - { level: A1, speakers: [es], wrong: the house of my friend, right: ["my ", { target: friend's }, " house"], rule: { es: ["para personas y animales se usa 's, no ", { term: of }, "; el español dice la casa de mi amigo"] } }
           - { level: A1, speakers: [es], wrong: This bag is of Ana., right: ["This bag is ", { target: Ana's }, "."], rule: { es: ["sin sustantivo, el poseedor lleva 's, no ", { term: of }, "; el español dice es de Ana"] } }

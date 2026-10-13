@@ -33,7 +33,7 @@ npm run verify     # every check CI runs
   short sentences in plain words.
 - `npm run check` validates the data against the schemas and the conventions; a pull request passes
   it before review.
-- A topic's Ukrainian and Spanish text follows its English. After a change to the English,
+- A topic's text in every other explanation language follows its English. After a change to the English,
   `npm run check` names the parts whose translations lag behind: update them and run
   `npm run translated -- {id}`, or name them in the pull request for a native speaker to update.
 - One topic per pull request keeps review quick.

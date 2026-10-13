@@ -19,8 +19,11 @@ explained in N languages.
 - Every topic exists in every explanation language: one topic file holds its explanations in each
   (§4), its examples translated into each (§6) and the typical errors of each one's speakers.
 - Topics in different languages pair through shared `concepts` keys (§9).
-- The library holds English (`en`) in three tracks: explained in English, Ukrainian (`uk`) and
-  Spanish (`es`).
+- The library holds English (`en`) in eleven tracks: explained in English, Ukrainian (`uk`), Spanish
+  (`es`), Portuguese (`pt`, Brazilian), French (`fr`), German (`de`), Italian (`it`), Polish (`pl`),
+  Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`).
+- An explanation language is data alone: its entry in `site.yaml` and its text in the files of
+  `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.
 - **English** topics use British spelling and British IPA. US differences appear inline, prefixed
   `US:`, for example *at the weekend (US: on the weekend)*.
@@ -360,6 +363,9 @@ Every page has a clean, stable, named URL.
 | `{topic}` | topic slug | `simple-tenses` |
 | `{sheet}` | `a0`…`c2` (level), `a0-a1`…`a0-c2` (progressive), up to the highest level the topics reach; `{section}`, `{section}/{topic}` | `a0-b1` |
 
+- The home page is a matrix: a row per language being learned, a column per explanation language
+  under its own name, the page's own language first; each cell opens that track and shows its levels.
+  The top bar's language switch shows the page's language and opens into a list of every one.
 - Every page names its counterparts in the other explanation languages with `hreflang`; the home
   pages add the root as `x-default`. The top bar and the menu lead to the home and credits pages in the
   page's language.

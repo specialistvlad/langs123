@@ -4,9 +4,18 @@
 import { createHash } from "node:crypto";
 import { topicTexts } from "./content.ts";
 import { EXPLAIN_CODES, type Explain, type Topic } from "./lib.ts";
-import { plainText, reading, textIn } from "./text.ts";
+import { isLocalized, plainText, reading, textIn } from "./text.ts";
 
 export const SOURCE: Explain = EXPLAIN_CODES[0] ?? "en";
+
+// Text with each localized piece inside it, such as a slot's name in an example, in the source language
+// alone: a translation added there leaves the source as it is.
+function sourceOnly(v: unknown): unknown {
+  if (Array.isArray(v)) return v.map(sourceOnly);
+  if (typeof v !== "object" || v === null) return v;
+  if (isLocalized(v)) return (v as Record<string, unknown>)[SOURCE];
+  return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, sourceOnly(x)]));
+}
 
 const hash = (texts: string[]): string => createHash("sha256").update(texts.join("\n")).digest("hex").slice(0, 6);
 
@@ -18,7 +27,7 @@ export function sourceParts(topic: Topic): string[] {
     if (t.langs.length === 0) continue;
     const section = /^sections\[(\d+)\]/.exec(t.path)?.[1];
     const n = t.path.startsWith("cheatsheet") ? 1 : section === undefined ? 0 : Number(section) + 2;
-    parts[n]?.push(JSON.stringify(t.text));
+    parts[n]?.push(JSON.stringify(sourceOnly(t.text)));
   }
   return parts.map(hash);
 }

@@ -4,22 +4,77 @@
   "title": "langs123 concepts",
   "description": "Language-neutral keys that pair topics across languages.",
   "type": "object",
-  "propertyNames": { "pattern": "^[a-z0-9-]+$" },
+  "propertyNames": {
+    "pattern": "^[a-z0-9-]+$"
+  },
   "additionalProperties": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["title", "description"],
+    "required": [
+      "title",
+      "description"
+    ],
     "properties": {
-      "title": { "$ref": "#/definitions/localized" },
-      "description": { "$ref": "#/definitions/localized" }
+      "title": {
+        "$ref": "#/definitions/localized"
+      },
+      "description": {
+        "$ref": "#/definitions/localized"
+      }
     }
   },
   "definitions": {
     "localized": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["en", "uk", "es"],
-      "properties": { "en": { "type": "string" }, "uk": { "type": "string" }, "es": { "type": "string" } }
+      "required": [
+        "en",
+        "uk",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "pl",
+        "tr",
+        "id",
+        "vi"
+      ],
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "uk": {
+          "type": "string"
+        },
+        "es": {
+          "type": "string"
+        },
+        "pt": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        },
+        "it": {
+          "type": "string"
+        },
+        "pl": {
+          "type": "string"
+        },
+        "tr": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "vi": {
+          "type": "string"
+        }
+      }
     }
   }
 }

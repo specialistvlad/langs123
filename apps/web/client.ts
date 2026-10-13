@@ -1,7 +1,8 @@
-// Progressive enhancement for the static pages: level filter, view, order, compact switches, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, live reload.
+// Progressive enhancement for the static pages: level filter, view, order, compact switches, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, the home matrix's columns, live reload.
 // The build bundles it with its modules into client.js for the browser.
 import { closingMenu, hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
+import { matrixColumns } from "./client-matrix.ts";
 import { studyStep } from "./client-path.ts";
 import { collapsibleSwitches } from "./client-seg.ts";
 
@@ -42,6 +43,7 @@ import { collapsibleSwitches } from "./client-seg.ts";
   collapsibleSwitches();
   hidingBar();
   closingMenu();
+  matrixColumns();
 
   const THEMES = ["auto", "light", "dark"];
   function applyTheme(name: string): void {
