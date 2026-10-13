@@ -37,7 +37,7 @@ npm run verify     # every check CI runs
 ## Layout
 
 ```
-language-navigator/
+langs123/
 ├── languages/                 the library: the CC BY 4.0 part of the project
 │   ├── CONVENTIONS.md         rules for the data
 │   ├── site.yaml              name, URLs, credit and licences, explanation languages
