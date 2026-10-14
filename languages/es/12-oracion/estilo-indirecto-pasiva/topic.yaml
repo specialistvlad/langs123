@@ -1,0 +1,215 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.estilo-indirecto-pasiva
+lang: es
+kind: grammar
+tags: [reported-speech, passive, se, sentence]
+concepts: [reported-speech, passive]
+related: [es.pasados.preterito-imperfecto, es.subjuntivo.subjuntivo-formas, es.oracion.preguntas-negacion, es.presente.verbos-reflexivos]
+status: { en: draft, es: draft }
+translated: { es: "543f3b a297c4 6ab0f0 6f2eb4 2d2175 b85ee7 de882a" }
+
+title: { en: Reported Speech and Passive se, es: Estilo indirecto y pasiva con se }
+summary:
+  lead:
+    en: ["Reported speech passes on words with ", { term: decir que }, " and ", { term: preguntar si }, "; passive ", { term: se }, " leaves out who acts: ", { term: se venden casas }, "."]
+    es: ["El estilo indirecto transmite palabras con ", { term: decir que }, " y ", { term: preguntar si }, "; la pasiva con ", { term: se }, " omite quién actúa: ", { term: se venden casas }, "."]
+  rule:
+    en: ["After ", { term: dice que }, " the tense stays; after ", { term: dijo que }, ", a present becomes the imperfect:"]
+    es: ["Detrás de ", { term: dice que }, " el tiempo se mantiene; detrás de ", { term: dijo que }, ", el presente pasa a imperfecto:"]
+  ex: { examples: [["Dice que ", { target: tiene }, " sueño."], ["Dijo que ", { target: tenía }, " sueño."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { en: Reporting now, es: Transmitir ahora }
+          rule:
+            en: [{ term: dice que }, ": the same tense, the person changes"]
+            es: [{ term: dice que }, ": el mismo tiempo, cambia la persona"]
+          ex: ["Dice que ", { target: tiene }, " hambre."]
+          tr: { en: "She says she's hungry." }
+        - level: B1
+          point: { en: Reporting the past, es: Transmitir en pasado }
+          rule:
+            en: [{ term: dijo que }, ": a present becomes the imperfect"]
+            es: [{ term: dijo que }, ": el presente pasa a imperfecto"]
+          ex: ["Dijo que ", { target: tenía }, " sueño."]
+          tr: { en: "He said he was sleepy." }
+        - level: B1
+          point: { en: Orders, es: Órdenes }
+          rule:
+            en: [{ term: dice que }, " with the present subjunctive"]
+            es: [{ term: dice que }, " con presente de subjuntivo"]
+          ex: ["Dice que ", { target: te sientes }, "."]
+          tr: { en: "She says you should sit down." }
+        - level: B1
+          point: { en: Questions, es: Preguntas }
+          rule:
+            en: [{ term: si }, " for yes-no questions; question words stay, with their accent"]
+            es: [{ term: si }, " para preguntas de sí o no; los interrogativos se mantienen, con tilde"]
+          ex: { examples: [["Pregunta ", { target: si }, " vienes."], ["Me preguntó ", { target: dónde }, " vivía."]] }
+          tr: { en: { examples: ["She's asking if you're coming.", "He asked me where I lived."] } }
+        - level: B1
+          point: { en: Passive se, es: Pasiva con se }
+          rule:
+            en: [{ term: se }, " with the verb agreeing with the thing"]
+            es: [{ term: se }, " con el verbo en concordancia con la cosa"]
+          ex: { examples: [{ target: Se vende casa. }, { target: Se venden casas. }] }
+          tr: { en: { examples: ["House for sale.", "Houses for sale."] } }
+        - level: B1
+          point: { en: Impersonal se, es: Se impersonal }
+          rule:
+            en: [{ term: se }, " with a singular verb: people in general"]
+            es: [{ term: se }, " con el verbo en singular: la gente en general"]
+          ex: ["En este restaurante ", { target: se come }, " muy bien."]
+          tr: { en: "You eat very well in this restaurant." }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: "pronouns and possessives change with the speaker"
+            es: "los pronombres y los posesivos cambian con el hablante"
+          ex: { mapping: ["Mi casa es pequeña.", ["Dice que ", { target: su }, " casa es pequeña."]] }
+          tr: { en: { mapping: ["My house is small.", "She says her house is small."] } }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["a plural thing takes a plural verb: ", { term: se venden }]
+            es: ["una cosa en plural lleva el verbo en plural: ", { term: se venden }]
+          ex: ["Aquí ", { target: se hablan }, " tres idiomas."]
+          tr: { en: "Three languages are spoken here." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["Reported speech passes on what someone said with a verb of saying and ", { term: que }, "."]
+              es: ["El estilo indirecto transmite lo que alguien dijo con un verbo de lengua y ", { term: que }, "."]
+          - type: rule
+            level: B1
+            text:
+              en: ["Passive ", { term: se }, " tells what is done without saying who does it."]
+              es: ["La pasiva con ", { term: se }, " dice qué se hace sin decir quién lo hace."]
+
+  - title: { en: "Form: reported speech", es: "Forma: estilo indirecto" }
+    role: form
+    content:
+      - type: comparison
+        columns:
+          - { key: said, label: { en: Words said, es: Palabras dichas } }
+          - { key: reported, label: { en: Reported, es: Estilo indirecto } }
+        rows:
+          - level: B1
+            said: { ex: "Tengo hambre.", tr: { en: "I'm hungry." } }
+            reported: { ex: ["Dice que ", { target: tiene }, " hambre."], tr: { en: "She says she's hungry." } }
+          - level: B1
+            said: { ex: "Vivo en Lima.", tr: { en: "I live in Lima." } }
+            reported: { ex: ["Me dijo que ", { target: vivía }, " en Lima."], tr: { en: "He told me he lived in Lima." } }
+          - level: B1
+            said: { ex: { target: Siéntate. }, tr: { en: "Sit down." } }
+            reported: { ex: ["Dice que ", { target: te sientes }, "."], tr: { en: "She says you should sit down." } }
+          - level: B1
+            said: { ex: "¿Vienes?", tr: { en: "Are you coming?" } }
+            reported: { ex: ["Pregunta ", { target: si }, " vienes."], tr: { en: "She's asking if you're coming." } }
+          - level: B1
+            said: { ex: "¿Dónde vives?", tr: { en: "Where do you live?" } }
+            reported: { ex: ["Me preguntó ", { target: dónde }, " vivía."], tr: { en: "He asked me where I lived." } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["After ", { term: dice que }, ", the tense stays; the person, the pronouns and the possessives change to fit the new speaker."]
+              es: ["Detrás de ", { term: dice que }, ", el tiempo se mantiene; la persona, los pronombres y los posesivos cambian según el nuevo hablante."]
+          - type: rule
+            level: B1
+            text:
+              en: ["After ", { term: dijo que }, ", a present becomes the imperfect:"]
+              es: ["Detrás de ", { term: dijo que }, ", el presente pasa a imperfecto:"]
+            ex: { mapping: ["Estoy cansada.", ["Dijo que ", { target: estaba }, " cansada."]] }
+            tr: { en: { mapping: ["I'm tired.", "She said she was tired."] } }
+          - type: rule
+            level: B1
+            text:
+              en: ["An order becomes ", { term: que }, " with the present subjunctive:"]
+              es: ["Una orden pasa a ", { term: que }, " con presente de subjuntivo:"]
+            ex: { mapping: [{ target: Ven. }, ["Dice que ", { target: vengas }, "."]] }
+            tr: { en: { mapping: ["Come.", "She says you should come."] } }
+          - type: rule
+            level: B1
+            text:
+              en: ["A yes-no question takes ", { term: si }, "; a question word stays, with its accent."]
+              es: ["Una pregunta de sí o no lleva ", { term: si }, "; el interrogativo se mantiene, con su tilde."]
+          - type: note
+            level: B1
+            text:
+              en: ["The forms of the subjunctive: ", { link: "Present Subjunctive: Forms", to: es.subjuntivo.subjuntivo-formas }, "."]
+              es: ["Las formas del subjuntivo: ", { link: "El presente de subjuntivo: formas", to: es.subjuntivo.subjuntivo-formas }, "."]
+
+  - title: { en: "Form: passive and impersonal se", es: "Forma: pasiva e impersonal con se" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern, es: Estructura } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: B1, pattern: { pattern: [se, { slot: { en: singular verb, es: verbo en singular } }, { slot: singular noun }] }, ex: { target: Se vende casa. }, tr: { en: "House for sale." } }
+          - level: B1
+            pattern: { pattern: [se, { slot: { en: plural verb, es: verbo en plural } }, { slot: plural noun }] }
+            ex: { examples: [{ target: Se venden casas. }, { target: Se alquilan bicicletas. }] }
+            tr: { en: { examples: ["Houses for sale.", "Bikes for hire."] } }
+          - level: B1
+            pattern: { pattern: [se, { slot: { en: singular verb, es: verbo en singular } }] }
+            ex: { examples: [["En este restaurante ", { target: se come }, " muy bien."], ["¿Cómo ", { target: se dice }, " esto en español?"]] }
+            tr: { en: { examples: ["You eat very well in this restaurant.", "How do you say this in Spanish?"] } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: "The verb agrees with the thing: singular for one, plural for several."
+              es: "El verbo concuerda con la cosa: singular para una, plural para varias."
+          - type: rule
+            level: B1
+            text:
+              en: "With no thing named, the verb stays singular and speaks of people in general."
+              es: "Sin una cosa nombrada, el verbo queda en singular y habla de la gente en general."
+          - type: note
+            level: B1
+            text:
+              en: ["Signs and adverts use it: ", { alternatives: [{ term: Se vende }, { term: Se alquila }, { term: Se busca }] }, "."]
+              es: ["Los carteles y los anuncios lo usan: ", { alternatives: [{ term: Se vende }, { term: Se alquila }, { term: Se busca }] }, "."]
+
+  - title: { en: "Compare: dice que with indicative and subjunctive", es: "Comparación: dice que con indicativo y subjuntivo" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: info, label: { en: Information, es: Información } }
+          - { key: order, label: { en: Order, es: Orden } }
+        rows:
+          - { level: B1, info: { en: the indicative passes on a fact, es: el indicativo transmite un hecho }, order: { en: the subjunctive passes on an order, es: el subjuntivo transmite una orden } }
+          - level: B1
+            info: { ex: ["Dice que ", { target: viene }, "."], tr: { en: "She says she's coming." } }
+            order: { ex: ["Dice que ", { target: vengas }, "."], tr: { en: "She says you should come." } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: "Dice tiene hambre.", right: ["Dice ", { target: que }, " tiene hambre."], rule: { en: [{ term: que }, " never drops after ", { term: decir }], es: [{ term: que }, " nunca se omite detrás de ", { term: decir }] } }
+          - { level: B1, speakers: [en], wrong: "Dijo a mí que vivía en Lima.", right: [{ target: Me dijo }, " que vivía en Lima."], rule: { en: ["the person told is a pronoun before the verb: ", { term: me dijo }] } }
+          - { level: B1, wrong: "Mi madre dice que vienes a casa ya.", right: ["Mi madre dice que ", { target: vengas }, " a casa ya."], rule: { en: "an order passed on takes the subjunctive", es: "una orden transmitida lleva subjuntivo" } }
+          - { level: B1, wrong: "Me preguntó donde vivía.", right: ["Me preguntó ", { target: dónde }, " vivía."], rule: { en: "a reported question word keeps its accent", es: "el interrogativo transmitido mantiene la tilde" } }
+          - { level: B1, wrong: "Se vende casas.", right: [{ target: Se venden }, " casas."], rule: { en: "the verb agrees with the thing", es: "el verbo concuerda con la cosa" } }

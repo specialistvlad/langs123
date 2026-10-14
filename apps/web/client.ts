@@ -1,30 +1,16 @@
-// Progressive enhancement for the static pages: level filter, view, order, compact switches, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, the home matrix's columns, live reload.
+// Progressive enhancement for the static pages: level filter, variety, view, order, compact switches, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, the home matrix's columns, live reload.
 // The build bundles it with its modules into client.js for the browser.
 import { closingMenu, hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
 import { matrixColumns } from "./client-matrix.ts";
 import { studyStep } from "./client-path.ts";
 import { collapsibleSwitches } from "./client-seg.ts";
+import { store } from "./client-store.ts";
+import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
 
 (() => {
   "use strict";
   const root = document.documentElement;
-  const store = {
-    get(key: string): string | null {
-      try {
-        return localStorage.getItem(key);
-      } catch {
-        return null;
-      }
-    },
-    set(key: string, value: string): void {
-      try {
-        localStorage.setItem(key, value);
-      } catch {
-        // Storage is off: the preference lasts for this page only.
-      }
-    },
-  };
 
   // Start-up fills in the level and view, so the buttons only follow them.
   function mark(): void {
@@ -37,6 +23,7 @@ import { collapsibleSwitches } from "./client-seg.ts";
     document.querySelectorAll<HTMLElement>("[data-set-order]").forEach((b) => {
       b.classList.toggle("on", b.dataset["setOrder"] === root.dataset["order"]);
     });
+    markVariety(root);
   }
 
   const step = studyStep(root);
@@ -65,6 +52,12 @@ import { collapsibleSwitches } from "./client-seg.ts";
     if (view !== undefined) choose("view", view);
     const order = target.closest<HTMLElement>("[data-set-order]")?.dataset["setOrder"];
     if (order !== undefined) choose("order", order);
+    const variety = target.closest<HTMLElement>("[data-set-variety]")?.dataset["setVariety"];
+    if (variety !== undefined) {
+      chooseVariety(root, variety);
+      showState();
+      refresh();
+    }
     if (target.closest("#print")) window.print();
     if (target.closest("#menu")) document.body.classList.toggle("nav-open");
     if (target.closest("#theme")) {
@@ -74,12 +67,14 @@ import { collapsibleSwitches } from "./client-seg.ts";
     }
   });
 
-  // A page carries the choice of each switch it has in its address, ?level=a1 and ?view=cheatsheet,
-  // so a shared link opens the same state.
+  // A page carries the choice of each switch it has in its address, ?level=a1, ?variety=es-es and
+  // ?view=cheatsheet, so a shared link opens the same state.
   function showState(): void {
     const url = new URL(location.href);
     const level = root.dataset["level"];
     if (filled(level) && document.querySelector("[data-set-level]")) url.searchParams.set("level", level.toLowerCase());
+    const variety = root.dataset["variety"];
+    if (filled(variety) && document.querySelector("[data-set-variety]")) url.searchParams.set("variety", variety.toLowerCase());
     if (document.querySelector("[data-set-view]")) url.searchParams.set("view", root.dataset["view"] ?? "extended");
     if (url.href !== location.href) history.replaceState(history.state, "", url);
   }
@@ -104,6 +99,7 @@ import { collapsibleSwitches } from "./client-seg.ts";
   const params = new URL(location.href).searchParams;
   const askedLevel = (params.get("level") ?? "").toUpperCase();
   if (document.querySelector(`[data-set-level="${askedLevel}"]`)) root.dataset["level"] = askedLevel;
+  askedVariety(root);
   const askedView = params.get("view");
   if (askedView === "cheatsheet" || askedView === "extended") root.dataset["view"] = askedView;
   if (!filled(root.dataset["view"])) root.dataset["view"] = "extended";

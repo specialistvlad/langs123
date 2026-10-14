@@ -1,0 +1,286 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.preguntas-negacion
+lang: es
+kind: grammar
+tags: [questions, negation, sentence]
+concepts: [questions-negatives]
+related: [es.oracion.conectores, es.sustantivo-determinantes.indefinidos, es.presente.presente-regular, es.pronombres.pronombres-sujeto]
+status: { en: draft, es: draft }
+translated: { es: "50ae4e e86757 8909b0 160134 5ab4c0 588685 82fcb5 143060" }
+
+title: { en: Questions and Negatives, es: Preguntas y negación }
+summary:
+  lead:
+    en: ["A question opens with ", { letter: ¿ }, " and closes with ", { letter: "?" }, ", and ", { term: no }, " before the verb makes a sentence negative."]
+    es: ["Una pregunta se abre con ", { letter: ¿ }, " y se cierra con ", { letter: "?" }, ", y ", { term: no }, " delante del verbo hace negativa la oración."]
+  rule:
+    en: "A yes-no question keeps the word order of a statement; only the marks and the voice change:"
+    es: "Una pregunta de sí o no mantiene el orden de una afirmación; solo cambian los signos y la entonación:"
+  ex: { examples: ["Tienes hermanos.", { target: ¿Tienes hermanos? }] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A0
+          point: { en: Question marks, es: Signos de interrogación }
+          rule:
+            en: [{ letter: ¿ }, " opens and ", { letter: "?" }, " closes every question"]
+            es: [{ letter: ¿ }, " abre y ", { letter: "?" }, " cierra toda pregunta"]
+          ex: { target: ¿Hablas inglés? }
+          tr: { en: "Do you speak English?" }
+        - level: A0
+          point: { en: Negative, es: Negación }
+          rule:
+            en: [{ term: no }, " goes right before the verb"]
+            es: [{ term: no }, " va justo delante del verbo"]
+          ex: [{ target: No hablo }, " inglés."]
+          tr: { en: "I don't speak English." }
+        - level: A0
+          point: { en: Answers, es: Respuestas }
+          rule:
+            en: ["the first ", { term: no }, " answers, the second makes the verb negative"]
+            es: ["el primer ", { term: no }, " responde, el segundo niega el verbo"]
+          ex: { exchange: ["¿Tienes hermanos?", ["No, ", { target: no tengo }, " hermanos."]] }
+          tr: { en: { exchange: ["Have you got any brothers or sisters?", "No, I haven't got any brothers or sisters."] } }
+        - level: A1
+          point: { en: Question words, es: Interrogativos }
+          rule:
+            en: [{ alternatives: [{ term: qué }, { term: quién }, { term: dónde }, { term: cómo }, { term: cuánto }, { term: por qué }] }, " open the question, with a written accent"]
+            es: [{ alternatives: [{ term: qué }, { term: quién }, { term: dónde }, { term: cómo }, { term: cuánto }, { term: por qué }] }, " abren la pregunta, con tilde"]
+          ex: ["¿", { target: Dónde }, " vives?"]
+          tr: { en: "Where do you live?" }
+        - level: A1
+          point: { en: Agreeing, es: Coincidir }
+          rule:
+            en: [{ term: también }, " after a statement, ", { term: tampoco }, " after a negative"]
+            es: [{ term: también }, " tras una afirmación, ", { term: tampoco }, " tras una negación"]
+          ex: { exchange: ["No hablo francés.", ["Yo ", { target: tampoco }, "."]] }
+          tr: { en: { exchange: ["I don't speak French.", "Neither do I."] } }
+        - level: A2
+          point: { en: Time, es: Tiempo }
+          rule:
+            en: [{ term: cuándo }, " asks about time"]
+            es: [{ term: cuándo }, " pregunta por el tiempo"]
+          ex: ["¿", { target: Cuándo }, " empiezas las vacaciones?"]
+          tr: { en: "When do your holidays start?" }
+        - level: A2
+          point: { en: Choice, es: Elección }
+          rule:
+            en: ["two options joined by ", { term: o }]
+            es: ["dos opciones unidas por ", { term: o }]
+          ex: ["¿Prefieres té ", { target: o }, " café?"]
+          tr: { en: "Do you prefer tea or coffee?" }
+        - level: A2
+          point: { en: Double negative, es: Doble negación }
+          rule:
+            en: [{ term: no }, " before the verb, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " after it"]
+            es: [{ term: no }, " delante del verbo, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " detrás"]
+          ex: [{ target: No }, " he estado ", { target: nunca }, " en México."]
+          tr: { en: "I've never been to Mexico." }
+        - level: B1
+          point: { en: Which, es: Cuál }
+          rule:
+            en: [{ term: qué }, " before a noun, ", { term: cuál }, " alone"]
+            es: [{ term: qué }, " delante de un sustantivo, ", { term: cuál }, " solo"]
+          ex: { examples: [["¿", { target: Qué }, " libro quieres?"], ["¿", { target: Cuál }, " quieres?"]] }
+          tr: { en: { examples: ["Which book do you want?", "Which one do you want?"] } }
+        - level: B1
+          point: { en: Prepositions, es: Preposiciones }
+          rule:
+            en: "the preposition comes first, before the question word"
+            es: "la preposición va primero, delante del interrogativo"
+          ex: ["¿", { target: Con quién }, " trabajas?"]
+          tr: { en: "Who do you work with?" }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: nunca }, " before the verb takes no ", { term: no }]
+            es: [{ term: nunca }, " delante del verbo no lleva ", { term: no }]
+          ex: [{ target: Nunca }, " como carne."]
+          tr: { en: "I never eat meat." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: ["A question is marked at both ends: ", { letter: ¿ }, " at the start, ", { letter: "?" }, " at the end."]
+              es: ["Una pregunta se marca en los dos extremos: ", { letter: ¿ }, " al principio, ", { letter: "?" }, " al final."]
+          - type: rule
+            level: A0
+            text:
+              en: "In a yes-no question, the voice rises at the end:"
+              es: "En una pregunta de sí o no, la entonación sube al final:"
+            ex: ["¿Tienes hermanos? ", { intonation: rise }]
+            tr: { en: "Have you got any brothers or sisters?" }
+          - type: note
+            level: A0
+            readers: [en]
+            text:
+              en: ["Spanish has no helper like English ", { l1: do }, ": the verb alone makes the question."]
+
+  - title: { en: "Form: yes-no questions", es: "Forma: preguntas de sí o no" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: question, label: { en: Question, es: Pregunta } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A0, question: { en: The order of a statement, es: El orden de una afirmación }, ex: { target: ¿Hablas español? }, tr: { en: "Do you speak Spanish?" } }
+          - { level: A0, question: { en: With the subject first, es: Con el sujeto delante }, ex: { target: ¿Ana vive aquí? }, tr: { en: "Does Ana live here?" } }
+          - level: A1
+            question: { en: With the subject after the verb, es: Con el sujeto detrás del verbo }
+            ex: { examples: [{ target: ¿Vive Ana aquí? }, { target: ¿Habla usted inglés? }] }
+            tr: { en: { examples: ["Does Ana live here?", "Do you speak English?"] } }
+          - level: A2
+            question: { en: "Checking: ¿verdad?, ¿no?", es: "Para confirmar: ¿verdad?, ¿no?" }
+            ex: { examples: [["Vives en Lima, ", { target: ¿verdad? }], ["Es tarde, ", { target: ¿no? }]] }
+            tr: { en: { examples: ["You live in Lima, don't you?", "It's late, isn't it?"] } }
+          - { level: A2, question: { en: A choice between two, es: Una elección entre dos }, ex: ["¿Prefieres té ", { target: o }, " café?"], tr: { en: "Do you prefer tea or coffee?" } }
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: "The subject can stay out, go first, or follow the verb; the question means the same."
+              es: "El sujeto puede omitirse, ir delante o ir detrás del verbo; la pregunta significa lo mismo."
+
+  - title: { en: "Form: question words", es: "Forma: los interrogativos" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { en: Word, es: Palabra } }
+          - { key: asks, label: { en: Asks about, es: Pregunta por } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, word: qué, asks: { en: things and actions, es: cosas y acciones }, ex: ["¿", { target: Qué }, " haces?"], tr: { en: "What are you doing?" } }
+          - { level: A1, word: { alternatives: [quién, quiénes] }, asks: { en: people, es: personas }, ex: ["¿", { target: Quién }, " es esa chica?"], tr: { en: "Who is that girl?" } }
+          - level: A1
+            word: dónde
+            asks: { en: places, es: lugares }
+            ex: { examples: [["¿", { target: Dónde }, " vives?"], ["¿De ", { target: dónde }, " eres?"]] }
+            tr: { en: { examples: ["Where do you live?", "Where are you from?"] } }
+          - { level: A1, word: cómo, asks: { en: manner, es: el modo }, ex: ["¿", { target: Cómo }, " te llamas?"], tr: { en: "What's your name?" } }
+          - { level: A1, word: { alternatives: [cuánto, cuánta, cuántos, cuántas] }, asks: { en: amount, es: la cantidad }, ex: ["¿", { target: Cuántos }, " años tienes?"], tr: { en: "How old are you?" } }
+          - { level: A1, word: por qué, asks: { en: the reason, es: la causa }, ex: ["¿", { target: Por qué }, " estudias español?"], tr: { en: "Why are you studying Spanish?" } }
+          - { level: A2, word: cuándo, asks: { en: time, es: el tiempo }, ex: ["¿", { target: Cuándo }, " empiezas las vacaciones?"], tr: { en: "When do your holidays start?" } }
+          - { level: B1, word: { alternatives: [cuál, cuáles] }, asks: { en: one of a known set, es: uno de un grupo conocido }, ex: ["¿", { target: Cuál }, " prefieres?"], tr: { en: "Which one do you prefer?" } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "Every question word carries a written accent and opens its question."
+              es: "Todo interrogativo lleva tilde y abre su pregunta."
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: cuánto }, " agrees with its noun: ", { alternatives: [{ term: cuántos años }, { term: cuántas hermanas }] }, "."]
+              es: [{ term: cuánto }, " concuerda con su sustantivo: ", { alternatives: [{ term: cuántos años }, { term: cuántas hermanas }] }, "."]
+          - type: rule
+            level: B1
+            text:
+              en: "A preposition goes before the question word, at the start of the question:"
+              es: "La preposición va delante del interrogativo, al principio de la pregunta:"
+            ex: { examples: [["¿", { target: Con quién }, " trabajas?"], ["¿", { target: A quién }, " llamas?"]] }
+            tr: { en: { examples: ["Who do you work with?", "Who are you calling?"] } }
+
+  - title: { en: "Form: negatives", es: "Forma: la negación" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern, es: Estructura } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A0, pattern: { pattern: [no, { slot: verb }] }, ex: [{ target: No hablo }, " inglés."], tr: { en: "I don't speak English." } }
+          - level: A1
+            pattern: { pattern: [no, { slot: { en: pronoun, es: pronombre } }, { slot: verb }] }
+            ex: { examples: [{ target: No lo sé. }, { target: No me gusta. }] }
+            tr: { en: { examples: ["I don't know.", "I don't like it."] } }
+          - level: A2
+            pattern: { pattern: [no, { slot: verb }, { alternatives: [nunca, nada, nadie] }] }
+            ex: { examples: [[{ target: No }, " quiero ", { target: nada }, "."], [{ target: No }, " veo a ", { target: nadie }, "."]] }
+            tr: { en: { examples: ["I don't want anything.", "I can't see anybody."] } }
+          - { level: A2, pattern: { pattern: [nunca, { slot: verb }] }, ex: [{ target: Nunca }, " como carne."], tr: { en: "I never eat meat." } }
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: "In an answer, the first no answers the question and the second makes the verb negative:"
+              es: "En una respuesta, el primer no responde a la pregunta y el segundo niega el verbo:"
+            ex: { exchange: ["¿Eres de aquí?", ["No, ", { target: no soy }, " de aquí."]] }
+            tr: { en: { exchange: ["Are you from here?", "No, I'm not from here."] } }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: no }, " goes before the pronouns in front of the verb."]
+              es: [{ term: no }, " va delante de los pronombres que preceden al verbo."]
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: también }, " agrees with a statement, ", { term: tampoco }, " with a negative:"]
+              es: [{ term: también }, " coincide con una afirmación, ", { term: tampoco }, ", con una negación:"]
+            ex: { examples: [{ exchange: ["Soy de Chile.", ["Yo ", { target: también }, "."]] }, { exchange: ["No hablo francés.", ["Yo ", { target: tampoco }, "."]] }] }
+            tr: { en: { examples: [{ exchange: ["I'm from Chile.", "So am I."] }, { exchange: ["I don't speak French.", "Neither do I."] }] } }
+          - type: rule
+            level: A2
+            text:
+              en: ["After the verb, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " need ", { term: no }, " before the verb; before the verb, they stand alone."]
+              es: ["Detrás del verbo, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " necesitan ", { term: no }, " delante del verbo; delante del verbo, van solos."]
+          - type: note
+            level: A2
+            text:
+              en: ["More negative words: ", { link: "Indefinites: algo, nadie, ningún", to: es.sustantivo-determinantes.indefinidos }, "."]
+              es: ["Más palabras negativas: ", { link: "Los indefinidos: algo, nadie, ningún", to: es.sustantivo-determinantes.indefinidos }, "."]
+
+  - title: { en: "Compare: qué and cuál", es: "Comparación: qué y cuál" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: que, label: qué }
+          - { key: cual, label: cuál }
+        rows:
+          - { level: B1, que: { en: "before a noun; with ser, a definition", es: "delante de un sustantivo; con ser, una definición" }, cual: { en: "alone, for one of a known set; with ser, a piece of data", es: "solo, para uno de un grupo conocido; con ser, un dato" } }
+          - level: B1
+            que: { ex: ["¿", { target: Qué }, " libro quieres?"], tr: { en: "Which book do you want?" } }
+            cual: { ex: ["¿", { target: Cuál }, " quieres?"], tr: { en: "Which one do you want?" } }
+          - level: B1
+            que: { ex: ["¿", { target: Qué }, " es esto?"], tr: { en: "What is this?" } }
+            cual: { ex: ["¿", { target: Cuál }, " es tu número de teléfono?"], tr: { en: "What's your phone number?" } }
+      - type: list
+        items:
+          - type: note
+            level: B1
+            variety: es-419
+            text:
+              en: ["In everyday Latin American speech, ", { term: cuál }, " also goes before a noun; careful speech and writing keep ", { term: qué }, ":"]
+              es: ["En el habla cotidiana de Latinoamérica, ", { term: cuál }, " también va delante de un sustantivo; la lengua cuidada y escrita usa ", { term: qué }, ":"]
+            ex: ["¿", { target: Cuál }, " libro quieres?"]
+            tr: { en: "Which book do you want?" }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A0, wrong: "Hablas inglés?", right: { target: ¿Hablas inglés? }, rule: { en: ["a question opens with ", { letter: ¿ }], es: ["una pregunta se abre con ", { letter: ¿ }] } }
+          - { level: A1, wrong: "¿Donde vives?", right: ["¿", { target: Dónde }, " vives?"], rule: { en: "question words carry a written accent", es: "los interrogativos llevan tilde" } }
+          - { level: A1, wrong: "Yo también no.", right: ["Yo ", { target: tampoco }, "."], rule: { en: ["a negative takes ", { term: tampoco }], es: ["una negación lleva ", { term: tampoco }] } }
+          - { level: A1, speakers: [en], wrong: "¿Qué es tu nombre?", right: ["¿", { target: Cómo te llamas }, "?"], rule: { en: ["a name takes ", { term: ¿Cómo te llamas? }, " or ", { term: ¿Cuál es tu nombre? }] } }
+          - { level: A2, wrong: "Nunca no como carne.", right: [{ target: Nunca }, " como carne."], rule: { en: [{ term: nunca }, " before the verb stands alone"], es: [{ term: nunca }, " delante del verbo va solo"] } }
+          - { level: A2, wrong: "No tengo algo.", right: ["No tengo ", { target: nada }, "."], rule: { en: ["a negative sentence takes ", { term: nada }], es: ["una oración negativa lleva ", { term: nada }] } }
+          - { level: B1, wrong: "¿Cuál es esto?", right: ["¿", { target: Qué }, " es esto?"], rule: { en: ["a definition takes ", { term: qué }], es: ["una definición lleva ", { term: qué }] } }

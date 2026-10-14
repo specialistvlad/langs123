@@ -1,18 +1,20 @@
 // Text as HTML: escaping, and the marks of the data as elements that name what each piece is
 // (CONVENTIONS.md §12): bold for a form or a word a rule is about, italics for a sound or a meaning.
-import { type Explain, type Localized, type Mark, slotName, type Text, type TopicRef } from "../../scripts/lib.ts";
+import { type Explain, type Localized, type Mark, slotName, type Text, type TopicRef, type Variety } from "../../scripts/lib.ts";
 import { type FoldContext, foldText, type MarkName, reading, textIn, type TextOutput } from "../../scripts/text.ts";
 import { LEARNED } from "../../scripts/text-walk.ts";
 
 // Turns a topic ID into a page URL; null marks a topic without a page yet.
 export type LinkFn = (target: TopicRef | undefined, explain: Explain, from: TopicRef) => string | null;
 
-// One topic rendered in one explanation language.
+// One topic rendered in one explanation language. A language being learned with varieties names them:
+// its elements tagged with a variety show only while the reader has chosen that variety.
 export interface Ctx {
   ref: TopicRef;
   explain: Explain;
   refs: TopicRef[];
   link: LinkFn;
+  varieties?: Variety[] | undefined;
 }
 
 const ENTITIES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };

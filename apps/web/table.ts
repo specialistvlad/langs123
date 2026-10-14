@@ -5,27 +5,35 @@ import { type Level, lv } from "../../scripts/lib.ts";
 
 export const classAttr = (names: string[]): string => (names.length > 0 ? ` class="${names.join(" ")}"` : "");
 
-// Rows that open a new block of a merged first column: merges stop there and a gap row comes first.
-export function blockStarts(grid: string[][], levels: Level[], mergeFirst: boolean): Set<number> {
+// Rows that open a new block of a merged first column: merges stop there and a gap row comes first. A
+// change of level starts a block, and so does a change of variety where the rows name one.
+export function blockStarts(grid: string[][], levels: Level[], mergeFirst: boolean, varieties: (string | undefined)[] = []): Set<number> {
   const starts = new Set<number>();
   if (!mergeFirst) return starts;
   for (let r = 1; r < grid.length; r++) {
-    if (grid[r]?.[0] !== grid[r - 1]?.[0] || levels[r] !== levels[r - 1]) starts.add(r);
+    if (grid[r]?.[0] !== grid[r - 1]?.[0] || levels[r] !== levels[r - 1] || varieties[r] !== varieties[r - 1]) starts.add(r);
   }
   return starts;
 }
 
 // Row spans for merge columns: a cell joins the one above when both read the same, the rows share a
-// level and no block starts between them, so the level filter hides whole merged cells. A span of
-// 0 marks a joined cell.
-export function spans(grid: string[][], levels: Level[], merge: boolean[], starts: Set<number>): number[][] {
+// level and a variety, and no block starts between them, so the level filter and the variety switch
+// hide whole merged cells. A span of 0 marks a joined cell.
+export function spans(
+  grid: string[][],
+  levels: Level[],
+  merge: boolean[],
+  starts: Set<number>,
+  varieties: (string | undefined)[] = [],
+): number[][] {
   const out = grid.map((cells) => cells.map(() => 1));
   merge.forEach((on, c) => {
     if (!on) return;
     let top = 0;
     for (let r = 1; r < grid.length; r++) {
       const topRow = out[top];
-      if (topRow !== undefined && !starts.has(r) && grid[r]?.[c] === grid[top]?.[c] && levels[r] === levels[top]) {
+      const same = grid[r]?.[c] === grid[top]?.[c] && levels[r] === levels[top] && varieties[r] === varieties[top];
+      if (topRow !== undefined && !starts.has(r) && same) {
         topRow[c] = (topRow[c] ?? 1) + 1;
         (out[r] ?? [])[c] = 0;
       } else top = r;

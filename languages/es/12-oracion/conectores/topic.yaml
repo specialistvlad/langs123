@@ -1,0 +1,256 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.conectores
+lang: es
+kind: grammar
+tags: [linkers, conjunctions, sentence]
+concepts: [linkers]
+related: [es.oracion.condicionales, es.oracion.relativas, es.oracion.preguntas-negacion, es.subjuntivo.subjuntivo-cuando-para-que]
+status: { en: draft, es: draft }
+translated: { es: "0a4812 253071 4cad52 d1ba11 00c14b 2965ff 842c0b 4825b1 230967" }
+
+title: { en: Linkers, es: Los conectores }
+summary:
+  lead:
+    en: ["Linkers join ideas: ", { term: y }, " adds, ", { term: o }, " offers a choice, ", { term: pero }, " contrasts, ", { term: porque }, " gives a reason and ", { term: por eso }, " a result."]
+    es: ["Los conectores unen ideas: ", { term: y }, " suma, ", { term: o }, " ofrece una elección, ", { term: pero }, " contrasta, ", { term: porque }, " da una causa y ", { term: por eso }, ", una consecuencia."]
+  rule:
+    en: ["The reason follows the main clause with ", { term: porque }, ", or comes first with ", { term: como }, ":"]
+    es: ["La causa va detrás de la oración principal con ", { term: porque }, ", o delante con ", { term: como }, ":"]
+  ex: { examples: [["No salgo ", { target: porque }, " llueve."], [{ target: Como }, " llueve, no salgo."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Adding, es: Suma }
+          rule:
+            en: [{ term: y }, " joins two words or two clauses"]
+            es: [{ term: y }, " une dos palabras o dos oraciones"]
+          ex: ["Soy americana ", { target: y }, " vivo en Los Ángeles."]
+          tr: { en: "I'm American and I live in Los Angeles." }
+        - level: A1
+          point: { en: Choice, es: Elección }
+          rule:
+            en: [{ term: o }, " offers a choice"]
+            es: [{ term: o }, " ofrece una elección"]
+          ex: ["¿Eres americano ", { target: o }, " inglés?"]
+          tr: { en: "Are you American or English?" }
+        - level: A1
+          point: { en: Contrast, es: Contraste }
+          rule:
+            en: [{ term: pero }, " sets two facts against each other, after a comma"]
+            es: [{ term: pero }, " opone dos hechos, detrás de una coma"]
+          ex: ["Soy alemán, ", { target: pero }, " vivo en Suiza."]
+          tr: { en: "I'm German, but I live in Switzerland." }
+        - level: A1
+          point: { en: Negative, es: Negación }
+          rule:
+            en: ["after a negative, ", { term: ni }, " adds the next item"]
+            es: ["tras una negación, ", { term: ni }, " añade el siguiente elemento"]
+          ex: ["No me gusta el otoño ", { target: ni }, " el invierno."]
+          tr: { en: "I don't like autumn or winter." }
+        - level: A1
+          point: { en: Reason, es: Causa }
+          rule:
+            en: [{ term: porque }, " gives a reason, after the main clause"]
+            es: [{ term: porque }, " da una causa, detrás de la oración principal"]
+          ex: ["Estoy en España ", { target: porque }, " me gusta."]
+          tr: { en: "I'm in Spain because I like it." }
+        - level: A2
+          point: { en: Spelling, es: Ortografía }
+          rule:
+            en: [{ mapping: [{ term: y }, { term: e }] }, " before ", { letter: i }, ", ", { mapping: [{ term: o }, { term: u }] }, " before ", { letter: o }]
+            es: [{ mapping: [{ term: y }, { term: e }] }, " delante de ", { letter: i }, ", ", { mapping: [{ term: o }, { term: u }] }, " delante de ", { letter: o }]
+          ex: { examples: [["padre ", { target: e }, " hijo"], ["siete ", { target: u }, " ocho"]] }
+          tr: { en: { examples: ["father and son", "seven or eight"] } }
+        - level: A2
+          point: { en: Result, es: Consecuencia }
+          rule:
+            en: [{ term: por eso }, " opens the result"]
+            es: [{ term: por eso }, " introduce la consecuencia"]
+          ex: ["Está enfermo. ", { target: Por eso }, " no ha venido."]
+          tr: { en: "He's ill. That's why he hasn't come." }
+        - level: A2
+          point: { en: Time, es: Tiempo }
+          rule:
+            en: [{ term: cuando }, " with the present for what usually happens"]
+            es: [{ term: cuando }, " con presente para lo que suele pasar"]
+          ex: [{ target: Cuando }, " llueve, me quedo en casa."]
+          tr: { en: "When it rains, I stay at home." }
+        - level: B1
+          point: { en: Reason first, es: Causa primero }
+          rule:
+            en: [{ term: como }, " gives the reason before the main clause"]
+            es: [{ term: como }, " da la causa delante de la oración principal"]
+          ex: [{ target: Como }, " no venías, empecé a cenar."]
+          tr: { en: "As you weren't coming, I started dinner." }
+        - level: B1
+          point: { en: Contrast, es: Contraste }
+          rule:
+            en: [{ alternatives: [{ term: aunque }, { term: sin embargo }] }, ": a fact that goes against the other"]
+            es: [{ alternatives: [{ term: aunque }, { term: sin embargo }] }, ": un hecho que va en contra del otro"]
+          ex: ["Lo entiendo todo, ", { target: aunque }, " no hablo bien."]
+          tr: { en: "I understand everything, although I don't speak well." }
+        - level: B1
+          point: { en: Result, es: Consecuencia }
+          rule:
+            en: [{ term: así que }, " joins the result to the cause"]
+            es: [{ term: así que }, " une la consecuencia a la causa"]
+          ex: ["No había entradas, ", { target: así que }, " no la vimos."]
+          tr: { en: "There were no tickets left, so we didn't see it." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "A linker joins two words or two clauses and shows how they relate: adding, choice, contrast, reason, result or time."
+              es: "Un conector une dos palabras o dos oraciones y muestra su relación: suma, elección, contraste, causa, consecuencia o tiempo."
+          - type: rule
+            level: A1
+            text:
+              en: ["A comma goes before ", { term: pero }, ", never before ", { term: y }, " in a simple list:"]
+              es: ["Delante de ", { term: pero }, " va coma, y nunca delante de ", { term: y }, " en una enumeración simple:"]
+            ex: ["Tengo un hermano ", { target: y }, " una hermana, ", { target: pero }, " no tengo primos."]
+            tr: { en: "I've got a brother and a sister, but I haven't got any cousins." }
+
+  - title: { en: "Use: adding and choosing", es: "Uso: suma y elección" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { en: Linker, es: Conector } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, linker: y, use: { en: adding, es: suma }, ex: ["Soy americana ", { target: y }, " vivo en Los Ángeles."], tr: { en: "I'm American and I live in Los Angeles." } }
+          - { level: A1, linker: o, use: { en: a choice, es: una elección }, ex: ["¿Eres americano ", { target: o }, " inglés?"], tr: { en: "Are you American or English?" } }
+          - { level: A1, linker: ni, use: { en: adding after a negative, es: suma tras una negación }, ex: ["No me gusta el otoño ", { target: ni }, " el invierno."], tr: { en: "I don't like autumn or winter." } }
+          - { level: A2, linker: e, use: { en: "y before i, hi", es: "y delante de i, hi" }, ex: ["Quiero verte ", { target: e }, " ir a tu casa."], tr: { en: "I want to see you and go to your house." } }
+          - { level: A2, linker: u, use: { en: "o before o, ho", es: "o delante de o, ho" }, ex: ["Compra siete ", { target: u }, " ocho botellas de leche."], tr: { en: "Buy seven or eight bottles of milk." } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: y }, " becomes ", { term: e }, " before a word that starts with the sound ", { letter: i }, ": ", { alternatives: [{ term: padre e hijo }, { term: inglés e italiano }] }, "."]
+              es: [{ term: y }, " pasa a ", { term: e }, " delante de una palabra que empieza por el sonido ", { letter: i }, ": ", { alternatives: [{ term: padre e hijo }, { term: inglés e italiano }] }, "."]
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: o }, " becomes ", { term: u }, " before a word that starts with the sound ", { letter: o }, ": ", { alternatives: [{ term: siete u ocho }, { term: mujer u hombre }] }, "."]
+              es: [{ term: o }, " pasa a ", { term: u }, " delante de una palabra que empieza por el sonido ", { letter: o }, ": ", { alternatives: [{ term: siete u ocho }, { term: mujer u hombre }] }, "."]
+          - type: note
+            level: A2
+            text:
+              en: [{ term: y }, " stays before ", { letter: hie }, ", which sounds like ", { letter: ye }, ": ", { term: agua y hielo }, "."]
+              es: [{ term: y }, " se mantiene delante de ", { letter: hie }, ", que suena como ", { letter: ye }, ": ", { term: agua y hielo }, "."]
+
+  - title: { en: "Use: contrast", es: "Uso: contraste" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { en: Linker, es: Conector } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, linker: pero, use: { en: two facts set against each other, es: dos hechos opuestos }, ex: ["Soy alemán, ", { target: pero }, " vivo en Suiza."], tr: { en: "I'm German, but I live in Switzerland." } }
+          - { level: B1, linker: aunque, use: { en: "a fact that goes against the other, in the same sentence", es: "un hecho que va en contra del otro, en la misma oración" }, ex: ["Lo entiendo todo, ", { target: aunque }, " no hablo bien."], tr: { en: "I understand everything, although I don't speak well." } }
+          - { level: B1, linker: sin embargo, use: { en: "the contrast at the start of a new sentence or clause", es: "el contraste al principio de una nueva oración" }, ex: ["Acepté; ", { target: sin embargo }, ", no estaba seguro."], tr: { en: "I accepted; however, I wasn't sure." } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: aunque }, " with the indicative states a real fact, like ", { term: pero }, "."]
+              es: [{ term: aunque }, " con indicativo presenta un hecho real, como ", { term: pero }, "."]
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: sin embargo }, " sits between commas, or after a semicolon or a full stop."]
+              es: [{ term: sin embargo }, " va entre comas, o detrás de punto y coma o de punto."]
+
+  - title: { en: "Use: reason and result", es: "Uso: causa y consecuencia" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { en: Linker, es: Conector } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, linker: porque, use: { en: "the reason, after the main clause", es: "la causa, detrás de la oración principal" }, ex: ["Estoy en España ", { target: porque }, " me gusta."], tr: { en: "I'm in Spain because I like it." } }
+          - { level: B1, linker: como, use: { en: "the reason, before the main clause", es: "la causa, delante de la oración principal" }, ex: [{ target: Como }, " no venías, empecé a cenar."], tr: { en: "As you weren't coming, I started dinner." } }
+          - { level: A2, linker: por eso, use: { en: the result, es: la consecuencia }, ex: ["Está enfermo. ", { target: Por eso }, " no ha venido."], tr: { en: "He's ill. That's why he hasn't come." } }
+          - { level: A2, linker: entonces, use: { en: what follows from what was said, es: lo que se deduce de lo dicho }, ex: [{ target: Entonces }, " quedamos mañana, ¿no?"], tr: { en: "So we'll meet tomorrow, then?" } }
+          - { level: B1, linker: así que, use: { en: "the result, in the same sentence", es: "la consecuencia, en la misma oración" }, ex: ["No había entradas, ", { target: así que }, " no la vimos."], tr: { en: "There were no tickets left, so we didn't see it." } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: porque }, " is one word and answers; ", { term: por qué }, " is two words and asks:"]
+              es: [{ term: porque }, " es una palabra y responde; ", { term: por qué }, " son dos palabras y pregunta:"]
+            ex: { exchange: [["¿", { target: Por qué }, " estudias español?"], [{ target: Porque }, " me gusta."]] }
+            tr: { en: { exchange: ["Why are you studying Spanish?", "Because I like it."] } }
+
+  - title: { en: "Use: time", es: "Uso: tiempo" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { en: Linker, es: Conector } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, linker: cuando, use: { en: "with the present, what usually happens", es: "con presente, lo que suele pasar" }, ex: [{ target: Cuando }, " llueve, me quedo en casa."], tr: { en: "When it rains, I stay at home." } }
+          - { level: A2, linker: { pattern: [antes de, { slot: infinitive }] }, use: { en: the earlier action, es: la acción anterior }, ex: ["Me lavo los dientes ", { target: antes de acostarme }, "."], tr: { en: "I brush my teeth before going to bed." } }
+          - { level: A2, linker: { pattern: [después de, { slot: infinitive }] }, use: { en: the later action, es: la acción posterior }, ex: ["A veces doy un paseo ", { target: después de cenar }, "."], tr: { en: "Sometimes I go for a walk after dinner." } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: antes de }, " and ", { term: después de }, " take the infinitive when both actions have the same subject."]
+              es: [{ term: antes de }, " y ", { term: después de }, " llevan infinitivo cuando las dos acciones tienen el mismo sujeto."]
+          - type: note
+            level: B1
+            text:
+              en: [{ term: cuando }, " about the future takes the subjunctive: ", { link: "Subjunctive after cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+              es: [{ term: cuando }, " referido al futuro lleva subjuntivo: ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+
+  - title: { en: "Compare: porque and como", es: "Comparación: porque y como" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: porque, label: porque }
+          - { key: como, label: como }
+        rows:
+          - { level: B1, porque: { en: after the main clause, es: detrás de la oración principal }, como: { en: before the main clause, es: delante de la oración principal } }
+          - level: B1
+            porque: { ex: ["No salgo ", { target: porque }, " llueve."], tr: { en: "I'm not going out because it's raining." } }
+            como: { ex: [{ target: Como }, " llueve, no salgo."], tr: { en: "As it's raining, I'm not going out." } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: "No me gusta el otoño y el invierno.", right: ["No me gusta el otoño ", { target: ni }, " el invierno."], rule: { en: ["after a negative, ", { term: ni }, " adds the next item"], es: ["tras una negación, ", { term: ni }, " añade el siguiente elemento"] } }
+          - { level: A1, wrong: "¿Porqué estudias español?", right: ["¿", { target: Por qué }, " estudias español?"], rule: { en: ["the question takes two words: ", { term: por qué }], es: ["la pregunta lleva dos palabras: ", { term: por qué }] } }
+          - { level: A2, wrong: "padre y hijo", right: ["padre ", { target: e }, " hijo"], rule: { en: [{ term: y }, " becomes ", { term: e }, " before ", { letter: i }], es: [{ term: y }, " pasa a ", { term: e }, " delante de ", { letter: i }] } }
+          - { level: A2, wrong: "siete o ocho", right: ["siete ", { target: u }, " ocho"], rule: { en: [{ term: o }, " becomes ", { term: u }, " before ", { letter: o }], es: [{ term: o }, " pasa a ", { term: u }, " delante de ", { letter: o }] } }
+          - { level: A2, wrong: "Antes de me acuesto, leo un poco.", right: [{ target: Antes de acostarme }, ", leo un poco."], rule: { en: [{ term: antes de }, " takes the infinitive"], es: [{ term: antes de }, " lleva infinitivo"] } }
+          - { level: A2, speakers: [en], wrong: "Estudio español porque mi trabajo.", right: ["Estudio español ", { target: por }, " mi trabajo."], rule: { en: ["a noun as the reason takes ", { term: por }, "; ", { term: porque }, " takes a clause"] } }
+          - { level: B1, wrong: "Aunque estoy cansado, pero voy al trabajo.", right: [{ target: Aunque }, " estoy cansado, voy al trabajo."], rule: { en: [{ term: aunque }, " already marks the contrast, so ", { term: pero }, " stays out"], es: [{ term: aunque }, " ya marca el contraste, así que ", { term: pero }, " sobra"] } }

@@ -31,7 +31,8 @@ export function sheetPages(track: Track): void {
       }),
     ].join("\n");
 
-  const sheetControls = (pathFor: (e: Explain) => string): string => controls({ explain, read: readChoices(explain, pathFor) });
+  const sheetControls = (pathFor: (e: Explain) => string): string =>
+    controls({ explain, read: readChoices(explain, pathFor, track.explains), varieties: lang.varieties });
 
   const indexHtml = groupKeys
     .map((g) => {
@@ -50,10 +51,11 @@ export function sheetPages(track: Track): void {
       title: `${t.sheets} — ${trackTitle}`,
       description: `${t.sheets}: ${trackTitle}, ${t.explained}.`,
       path: sheetsUrl(explain, lang),
-      alternates: alternates((e) => sheetsUrl(e, lang)),
+      alternates: alternates((e) => sheetsUrl(e, lang), track.explains),
       controls: sheetControls((e) => sheetsUrl(e, lang)),
       nav: sheetNav(),
       main: `<article class="doc"><h1>${escapeHtml(t.sheets)}</h1><blockquote><p>${escapeHtml(t.sheetsIntro)}</p></blockquote><div class="sheet-index lanes">${indexHtml}</div></article>`,
+      varieties: lang.varieties,
       dev: o.dev,
       siteUrl: o.siteUrl,
     }),
@@ -68,10 +70,11 @@ export function sheetPages(track: Track): void {
         title: `${s.title} — ${trackTitle}`,
         description: `${s.title}: ${trackTitle}, ${t.explained}.`,
         path: sheetUrl(explain, lang, s.id),
-        alternates: alternates((e) => sheetUrl(e, lang, s.id)),
+        alternates: alternates((e) => sheetUrl(e, lang, s.id), track.explains),
         controls: sheetControls((e) => sheetUrl(e, lang, s.id)),
         nav: sheetNav(s),
         main: `<article class="doc sheet">${s.html}</article>`,
+        varieties: lang.varieties,
         dev: o.dev,
         siteUrl: o.siteUrl,
       }),

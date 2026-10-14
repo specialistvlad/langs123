@@ -1,8 +1,8 @@
 # Conventions
 
-Rules for all language data: every language being learned, in every explanation language. They keep
-the library consistent for readers, for the build scripts and for the web app. `npm run check`
-enforces them.
+Rules for all language data: every language being learned, in each of its explanation languages.
+They keep the library consistent for readers, for the build scripts and for the web app. `npm run
+check` enforces them.
 
 **The data names meaning; the renderer decides how it looks.** Every field, block, mark and
 attribute says what a piece of content is: a paradigm cell, a helper verb, an ending, a typical
@@ -11,22 +11,38 @@ every level. §12 holds the vocabulary.
 
 ## 1. Languages and variants
 
-A track is one language being learned, explained in one explanation language. Every language being
-learned is written for every explanation language, so the library grows as N languages, each
-explained in N languages.
+A track is one language being learned, explained in one explanation language. A language being
+learned is written for the explanation languages its entry in `curriculum.yaml` lists, so the library
+grows toward N languages, each explained in N languages.
 
 - `curriculum.yaml` lists the languages being learned and `site.yaml` the explanation languages.
-- Every topic exists in every explanation language: one topic file holds its explanations in each
-  (§4), its examples translated into each (§6) and the typical errors of each one's speakers.
+- `explain` on a language being learned lists the explanation languages it is written for, the
+  source first (§6); a language without it is written for every one. Its tracks, its cells in the home
+  matrix, its `hreflang` links and its sitemap entries follow that list (§10).
+- Every topic exists in each explanation language of its language: one topic file holds its
+  explanations in each (§4), its examples translated into each (§6) and the typical errors of each
+  one's speakers.
 - Topics in different languages pair through shared `concepts` keys (§9).
 - The library holds English (`en`) in eleven tracks: explained in English, Ukrainian (`uk`), Spanish
   (`es`), Portuguese (`pt`, Brazilian), French (`fr`), German (`de`), Italian (`it`), Polish (`pl`),
-  Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`).
+  Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). It holds Spanish (`es`) in two: explained
+  in English and in Spanish.
 - An explanation language is data alone: its entry in `site.yaml` and its text in the files of
   `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.
 - **English** topics use British spelling and British IPA. US differences appear inline, prefixed
   `US:`, for example *at the weekend (US: on the weekend)*.
+- **Spanish** topics follow the Plan Curricular del Instituto Cervantes (PCIC): its grammar inventory
+  sets the topics and the level of each rule, and its reference norm sets the forms. Spanish text opens
+  questions and exclamations with ¿ and ¡ and writes every accent: *¿Estás bien?*
+- **Varieties.** `varieties` on a language being learned lists the varieties a reader chooses
+  between, the default first. Spanish has Latin America (`es-419`), the default, and Spain (`es-ES`).
+  An element of one variety carries `variety`, and an element without it serves every variety: the
+  `vosotros` forms and the rules about them carry `es-ES`, a rule that holds in Latin America alone,
+  such as `ustedes` as the one plural of `tú`, carries `es-419`. Voseo appears in an `es-419` note.
+- The pages of a language with varieties carry a Variety switch beside the level filter: they open on
+  the default and show the chosen variety's elements with those of every variety. A list or table
+  whose leaves all belong to one variety hides with them; the rest of a section serves every variety.
 
 ## 2. Data files
 
@@ -50,7 +66,7 @@ languages/
 | `site.yaml` | `schema/site.schema.json` | product name, URLs, the credit and licences every page shows, explanation languages with their names and `enabled` switch |
 | `levels.yaml` | `schema/levels.schema.json` | the level scale: code, name, description, hue per level |
 | `interface.yaml` | `schema/interface.schema.json` | interface wording by key, per explanation language; block headings and column titles the generator writes; the name of each slot code (§12) |
-| `curriculum.yaml` | `schema/curriculum.schema.json` | languages (with an `enabled` switch) → sections → topics (slug, optional title, levels of a planned topic); the study path: levels → topic IDs |
+| `curriculum.yaml` | `schema/curriculum.schema.json` | languages (with an `enabled` switch, their explanation languages and varieties) → sections → topics (slug, optional title, levels of a planned topic); the study path: levels → topic IDs |
 | `concepts.yaml` | `schema/concepts.schema.json` | concept key → title, description |
 | `{lang}/{NN-section}/{topic}/topic.yaml` | `schema/topic.schema.json` | one topic, all explanation languages |
 
@@ -243,9 +259,9 @@ leaves out the key of a cell with nothing in it.
   an item, a paragraph or an example cell renders as *— translation* after the example.
 - When the two languages are the same, examples stand alone: a `tr` carries every explanation
   language but the language being learned.
-- Translations follow the source: English, the first explanation language of `site.yaml`. Every other
-  explanation language carries in `translated` the fingerprint of the source text its text was written
-  from: one hash per part, the title and summary, the cheatsheet, then each section, over the English
+- Translations follow the source: English, the first explanation language of `site.yaml` and of every
+  language's `explain`. Every other explanation language of the topic's language carries in `translated`
+  the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section, over the English
   explanations and the text in the language being learned. `npm run check` names every part whose
   source changed since; once the translation catches up, `npm run translated -- {id} {lang}` stamps it
   again. An error row for other speakers stays outside the fingerprint.
@@ -305,7 +321,7 @@ The renderer writes the symbols from the structures and marks of §12:
 | /…/ | `ipa` |
 | ( ) | `optional`, `variant` and `gloss` in the language being learned |
 | … | `gap` |
-| US:, British: | `variant`, and an item with its `variety` |
+| US:, British:, Latin America:, Spain: | `variant`, and an item with its `variety` |
 | ↗ ↘ | `intonation` |
 
 ## 8. Cheatsheets
@@ -350,7 +366,7 @@ Every page has a clean, stable, named URL.
 /credits/, /{explain}/credits/                 credits: authors, licences, how to credit
 /404.html, /{explain}/404.html                 missing page; the host serves the nearest one up the path
 /{explain}/{language}/                         track home
-/{explain}/{language}/{section}/{topic}/       topic
+/{explain}/{language}/{section}/{topic}/       topic: /en/spanish/ser-estar-hay-gustar/ser-estar/
 /{explain}/{language}/cheatsheets/             cheatsheet index
 /{explain}/{language}/cheatsheets/{sheet}/     cheatsheet
 ```
@@ -358,25 +374,26 @@ Every page has a clean, stable, named URL.
 | Segment | Value | Example |
 |---|---|---|
 | `{explain}` | explanation language code | `en` |
-| `{language}` | `slug` of the learned language in `curriculum.yaml` | `english` |
+| `{language}` | `slug` of the learned language in `curriculum.yaml` | `english`, `spanish` |
 | `{section}` | section slug, without its number | `tenses`, `foundations` |
 | `{topic}` | topic slug | `simple-tenses` |
 | `{sheet}` | `a0`…`c2` (level), `a0-a1`…`a0-c2` (progressive), up to the highest level the topics reach; `{section}`, `{section}/{topic}` | `a0-b1` |
 
 - The home page is a matrix: a row per language being learned, with its levels and topics, a column
   per explanation language under its own name, the page's own language first; each cell is an arrow
-  into that track.
+  into that track, and empty where the language is not written for that explanation language.
   The top bar's language switch shows the page's language and opens into a list of every one.
-- Every page names its counterparts in the other explanation languages with `hreflang`; the home
-  pages add the root as `x-default`. The top bar and the menu lead to the home and credits pages in the
+- Every page names its counterparts in the other explanation languages of its track with `hreflang`;
+  the home pages add the root as `x-default`. The top bar and the menu lead to the home and credits pages in the
   page's language.
 - URLs use lowercase ASCII letters, digits, hyphens and slashes, and end with `/`.
 - URLs come from slugs, never from titles. A published slug stays fixed.
 - A page carries the choice of each switch it has in query parameters, so a shared link opens the
   same state: `?level=a0`…`?level=c2` on topic and track pages, `?view=cheatsheet` or
-  `?view=extended` on topic pages. A page opened without them takes the reader's last choice, and
-  the highest level and Extended the first time. The theme and the grouping (By level or
-  Categories) live in the browser.
+  `?view=extended` on topic pages, and `?variety=es-419` or `?variety=es-es` on the pages of a
+  language with varieties. A page opened without them takes the reader's last choice, and the
+  highest level, Extended and the default variety the first time. The theme, the grouping (By level
+  or Categories) and the variety of each language live in the browser.
 - A study-path link carries its step, `?step=a0`…`?step=c2`, on topic pages (§2).
 - Page state never travels in percent-encoded text or fragments.
 - Section slugs are unique within a language; topic slugs are unique within a section.
@@ -385,13 +402,13 @@ Every page has a clean, stable, named URL.
 
 Topics are written one at a time. The next topic starts only after the current one is approved.
 
-1. Copy `templates/topic.yaml` into the topic folder and write it in every explanation language,
-   with its cheatsheet; set `status` to `draft` for each.
-2. Run `npm run translated -- {id}` once every explanation language is written, then `npm run check`
+1. Copy `templates/topic.yaml` into the topic folder and write it in each explanation language of its
+   language, with its cheatsheet; set `status` to `draft` for each.
+2. Run `npm run translated -- {id}` once each explanation language is written, then `npm run check`
    until it reports no problems.
 3. Hand the topic to the owner for review in the web app (`npm start`).
 4. Apply the requested changes; repeat until the owner approves.
-5. Set `status` to `approved` for every explanation language.
+5. Set `status` to `approved` for each explanation language.
 6. Move to the next topic on the study path.
 
 ## 12. Semantic data
@@ -422,7 +439,7 @@ exactly the names below, and `npm run check` rejects the inline notation they re
 | `gender` | `masc`, `fem`, `neut` |
 | `case` | `nom`, `acc`, `gen` |
 | `tense` | `prs`, `pst`, `fut` |
-| `aspect` | `prog`, `prf`, `hab` |
+| `aspect` | `prog`, `prf`, `hab`, `pfv`, `ipfv` |
 | `mood` | `ind`, `imp`, `sbjv`, `cond` |
 | `polarity` | `pos`, `neg` |
 | `interrogativity` | `decl`, `int` |
@@ -559,7 +576,7 @@ can show it in the reader's language beside the lesson's written form.
 | `level` | the item's level (§3) |
 | `readers` | the explanation languages an element serves |
 | `speakers` | the first languages of the speakers an error row is typical for |
-| `variety` | the variety of the language being learned an element or a variant belongs to, as a BCP 47 tag: `en-US`; `en-GB` when absent |
+| `variety` | the variety of the language being learned an element or a variant belongs to, as a BCP 47 tag: `en-GB`, `en-US`, `es-419`, `es-ES`; an English element without it is British, and an element of a language with varieties serves every variety (§1) |
 | `features` | the grammar features of a row, a column or a section |
 | `value` | the value of an inventory member or of a value mark |
 | `follows` | a `mapping`, `takes` or `pattern` that continues the form under discussion: `true` |

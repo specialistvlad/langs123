@@ -1,0 +1,189 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.articulos
+lang: es
+kind: grammar
+tags: [articles, determiners, nouns]
+concepts: [articles]
+related: [es.sustantivo-determinantes.genero, es.sustantivo-determinantes.plural, es.ser-estar-hay-gustar.hay-esta, es.sustantivo-determinantes.cuantificadores, es.fundamentos.dias-meses-fechas]
+status: { en: draft, es: draft }
+translated: { es: "fe5cd6 c63de4 cbd83c 84d1b6 20a889 2db393" }
+
+title: { en: Articles, es: El artículo }
+summary:
+  lead:
+    en: ["The articles agree with the noun: ", { term: el }, ", ", { term: la }, ", ", { term: los }, ", ", { term: las }, " mean “the”, and ", { term: un }, ", ", { term: una }, ", ", { term: unos }, ", ", { term: unas }, " mean “a” or “some”."]
+    es: ["El artículo concuerda con el sustantivo: ", { term: el }, ", ", { term: la }, ", ", { term: los }, ", ", { term: las }, " son determinados, y ", { term: un }, ", ", { term: una }, ", ", { term: unos }, ", ", { term: unas }, ", indeterminados."]
+  rule:
+    en: ["Things in general take ", { term: el }, " or ", { term: la }, ", and a job after ", { term: ser }, " takes no article:"]
+    es: ["Las cosas en general llevan artículo determinado, y la profesión después de ", { term: ser }, " no lleva artículo:"]
+  ex: { examples: [["Me gusta ", { target: el }, " café."], ["Soy ", { target: profesor }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Definite, es: Determinado }
+          rule: { alternatives: [{ term: el }, { term: la }, { term: los }, { term: las }] }
+          ex: ["¿Dónde está ", { target: el }, " baño?"]
+          tr: { en: Where is the bathroom? }
+        - level: A1
+          point: { en: Indefinite, es: Indeterminado }
+          rule: { alternatives: [{ term: un }, { term: una }, { term: unos }, { term: unas }] }
+          ex: ["Tengo ", { target: un }, " hermano."]
+          tr: { en: I have a brother. }
+        - level: A1
+          point: { en: Contractions, es: Contracciones }
+          rule: { en: [{ mapping: [{ term: a el }, { term: al }] }, ", ", { mapping: [{ term: de el }, { term: del }] }], es: [{ mapping: [{ term: a el }, { term: al }] }, ", ", { mapping: [{ term: de el }, { term: del }] }] }
+          ex: ["Voy ", { target: al }, " mercado."]
+          tr: { en: "I'm going to the market." }
+        - level: A1
+          point: { en: In general, es: En general }
+          rule: { en: things in general take the definite article, es: las cosas en general llevan artículo determinado }
+          ex: ["Me gustan ", { target: los }, " perros."]
+          tr: { en: I like dogs. }
+        - level: A1
+          point: { en: Days, es: Días }
+          rule: { en: [{ term: el lunes }, " means “on Monday”"], es: [{ term: el lunes }, " sin preposición"] }
+          ex: ["Te llamo ", { target: el }, " lunes."]
+          tr: { en: "I'll call you on Monday." }
+        - level: A1
+          point: { en: No article, es: Sin artículo }
+          rule: { en: ["a job after ", { term: ser }], es: ["la profesión después de ", { term: ser }] }
+          ex: ["Ana es ", { target: profesora }, "."]
+          tr: { en: Ana is a teacher. }
+        - level: A2
+          point: { en: No article, es: Sin artículo }
+          rule: { en: an amount that is not counted, es: una cantidad sin contar }
+          ex: ["Compro ", { target: pan }, "."]
+          tr: { en: "I'm buying bread." }
+        - level: A2
+          point: { en: Stressed a, es: A tónica }
+          rule: { en: [{ term: el }, " before a feminine noun in stressed a"], es: [{ term: el }, " ante un femenino con a tónica"] }
+          ex: [{ target: El }, " agua está fría."]
+          tr: { en: The water is cold. }
+        - level: A2
+          point: { en: Body, es: Cuerpo }
+          rule: { en: the article instead of a possessive, es: el artículo en lugar del posesivo }
+          ex: ["Me duele ", { target: la }, " cabeza."]
+          tr: { en: My head hurts. }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule: { en: ["no ", { term: un }, " or ", { term: una }, " before a job"], es: ["sin ", { term: un }, " ni ", { term: una }, " ante la profesión"] }
+          ex: ["Mi padre es ", { target: médico }, "."]
+          tr: { en: My father is a doctor. }
+
+sections:
+  - title: { en: "Form: the articles", es: "Forma: los artículos" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: kind, label: { en: Article, es: Artículo } }
+          - { key: masc, label: { en: Masculine, es: Masculino }, features: { gender: masc } }
+          - { key: fem, label: { en: Feminine, es: Femenino }, features: { gender: fem } }
+        rows:
+          - { level: A1, features: { definiteness: def, number: sg }, kind: { en: "Definite, singular", es: "Determinado, singular" }, masc: [{ target: el }, " libro"], fem: [{ target: la }, " casa"] }
+          - { level: A1, features: { definiteness: def, number: pl }, kind: { en: "Definite, plural", es: "Determinado, plural" }, masc: [{ target: los }, " libros"], fem: [{ target: las }, " casas"] }
+          - { level: A1, features: { definiteness: indf, number: sg }, kind: { en: "Indefinite, singular", es: "Indeterminado, singular" }, masc: [{ target: un }, " libro"], fem: [{ target: una }, " casa"] }
+          - { level: A1, features: { definiteness: indf, number: pl }, kind: { en: "Indefinite, plural", es: "Indeterminado, plural" }, masc: [{ target: unos }, " libros"], fem: [{ target: unas }, " casas"] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ mapping: [{ term: a el }, { term: al }] }, " and ", { mapping: [{ term: de el }, { term: del }] }, "; the other articles never join."]
+              es: [{ mapping: [{ term: a el }, { term: al }] }, " y ", { mapping: [{ term: de el }, { term: del }] }, "; los demás artículos nunca se unen."]
+            ex: ["Salgo ", { target: del }, " trabajo y voy ", { target: al }, " parque."]
+            tr: { en: "I leave work and go to the park." }
+          - type: rule
+            level: A2
+            text:
+              en: ["A feminine noun that starts with a stressed a takes ", { term: el }, " and ", { term: un }, " in the singular; its adjective stays feminine."]
+              es: ["El sustantivo femenino que empieza por a tónica lleva ", { term: el }, " y ", { term: un }, " en singular; su adjetivo sigue en femenino."]
+            ex: [{ target: El }, " agua está ", { target: fría }, "."]
+            tr: { en: The water is cold. }
+          - type: rule
+            level: A2
+            text:
+              en: ["In the plural, the article is feminine again: ", { mapping: [{ term: el aula }, { term: las aulas }] }, "."]
+              es: ["En plural, el artículo vuelve al femenino: ", { mapping: [{ term: el aula }, { term: las aulas }] }, "."]
+          - type: rule
+            level: A2
+            text:
+              en: ["Before a number, ", { term: unos }, " and ", { term: unas }, " mean “about”:"]
+              es: ["Delante de un número, ", { term: unos }, " y ", { term: unas }, " significan “más o menos”:"]
+            ex: ["Tengo ", { target: unos }, " veinte libros."]
+            tr: { en: I have about twenty books. }
+
+  - title: { en: "Use: the definite article", es: "Uso: el artículo determinado" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: Something both people know, es: Algo que conocen los dos }, ex: ["Cierra ", { target: la }, " puerta, por favor."], tr: { en: "Close the door, please." } }
+          - { level: A1, use: { en: Things in general, es: Las cosas en general }, ex: ["Me gustan ", { target: los }, " perros."], tr: { en: I like dogs. } }
+          - level: A1
+            use: { en: "Days of the week: “on”", es: "Días de la semana" }
+            ex: { examples: [["Te llamo ", { target: el }, " lunes."], ["El museo cierra ", { target: los }, " lunes."]] }
+            tr: { en: { examples: ["I'll call you on Monday.", The museum closes on Mondays.] } }
+          - { level: A1, use: { en: The hour, es: La hora }, ex: ["La clase es a ", { target: las }, " nueve."], tr: { en: The class is at nine. } }
+          - { level: A2, use: { en: "Body parts and clothes, instead of a possessive", es: "Partes del cuerpo y ropa, en lugar del posesivo" }, ex: ["Me lavo ", { target: las }, " manos."], tr: { en: I wash my hands. } }
+          - { level: A2, use: { en: A title when talking about someone, es: El tratamiento al hablar de alguien }, ex: [{ target: La }, " señora Pérez no está."], tr: { en: "Mrs Pérez isn't here." } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "Speaking to someone, the title takes no article:"
+              es: "Al hablar con alguien, el tratamiento no lleva artículo:"
+            ex: ["Buenos días, ", { target: señora Pérez }, "."]
+            tr: { en: "Good morning, Mrs Pérez." }
+
+  - title: { en: "Use: the indefinite article and no article", es: "Uso: el artículo indeterminado y la ausencia de artículo" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, use: { en: Something new in the conversation, es: Algo nuevo en la conversación }, ex: ["Hay ", { target: un }, " banco en la esquina."], tr: { en: "There's a bank on the corner." } }
+          - { level: A1, use: { en: One of many, es: Uno entre muchos }, ex: ["Tengo ", { target: una }, " pregunta."], tr: { en: I have a question. } }
+          - { level: A1, use: { en: "No article: a job or a nationality after ser", es: "Sin artículo: profesión o nacionalidad después de ser" }, ex: ["Mi padre es ", { target: médico }, "."], tr: { en: My father is a doctor. } }
+          - { level: A2, use: { en: "No article: an amount that is not counted", es: "Sin artículo: una cantidad sin contar" }, ex: ["Compro ", { target: pan }, " y ", { target: huevos }, "."], tr: { en: "I'm buying bread and eggs." } }
+          - { level: A1, use: { en: "No article: hay with no amount", es: "Sin artículo: hay sin cantidad" }, ex: ["No hay ", { target: agua }, "."], tr: { en: "There's no water." } }
+          - { level: A2, use: { en: "No article: a language after hablar", es: "Sin artículo: la lengua después de hablar" }, ex: ["Hablo ", { target: español }, " e inglés."], tr: { en: I speak Spanish and English. } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "A job takes an article when an adjective describes it:"
+              es: "La profesión lleva artículo cuando un adjetivo la describe:"
+            ex: ["Es ", { target: un }, " médico muy bueno."]
+            tr: { en: "He's a very good doctor." }
+          - type: note
+            level: A1
+            text:
+              en: [{ term: hay }, " takes ", { term: un }, ", ", { term: una }, " or no article, and ", { term: está }, " takes ", { term: el }, " or ", { term: la }, ": see ", { link: Hay and Está, to: es.ser-estar-hay-gustar.hay-esta }, "."]
+              es: [{ term: hay }, " lleva ", { term: un }, ", ", { term: una }, " o ningún artículo, y ", { term: está }, " lleva ", { term: el }, " o ", { term: la }, ": ver ", { link: Hay y está, to: es.ser-estar-hay-gustar.hay-esta }, "."]
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Voy a el parque., right: ["Voy ", { target: al }, " parque."], rule: { en: { mapping: [{ term: a el }, { term: al }] }, es: { mapping: [{ term: a el }, { term: al }] } } }
+          - { level: A1, wrong: Mi madre es una profesora., right: ["Mi madre es ", { target: profesora }, "."], rule: { en: ["a job after ", { term: ser }, " takes no article"], es: ["la profesión después de ", { term: ser }, " no lleva artículo"] } }
+          - { level: A1, wrong: Me gusta café., right: ["Me gusta ", { target: el }, " café."], rule: { en: "things in general take the definite article", es: "las cosas en general llevan artículo determinado" } }
+          - { level: A2, wrong: La agua está fría., right: [{ target: El }, " agua está fría."], rule: { en: [{ term: el }, " before a feminine noun in stressed a"], es: [{ term: el }, " ante un femenino con a tónica"] } }
+          - { level: A2, wrong: Me lavo mis manos., right: ["Me lavo ", { target: las }, " manos."], rule: { en: "body parts take the article", es: "las partes del cuerpo llevan el artículo" } }
+          - { level: A1, speakers: [en], wrong: Te llamo en el lunes., right: ["Te llamo ", { target: el lunes }, "."], rule: { en: ["a day takes ", { term: el }, " with no word for “on”"] } }

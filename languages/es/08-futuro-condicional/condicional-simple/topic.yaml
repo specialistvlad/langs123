@@ -1,0 +1,192 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.futuro-condicional.condicional-simple
+lang: es
+kind: grammar
+tags: [verbs, conditional, mood]
+concepts: [conditional-mood]
+related: [es.futuro-condicional.futuro-simple, es.imperativo-perifrasis.poder-deber-tener-que, es.ser-estar-hay-gustar.gustar, es.oracion.estilo-indirecto-pasiva, es.oracion.condicionales]
+status: { en: draft, es: draft }
+translated: { es: "a5239d 24ebbd 905837 a522fe 687561 e5df22 0b832f" }
+
+title: { en: "Conditional: comería", es: "El condicional simple: comería" }
+summary:
+  lead:
+    en: ["The conditional adds ", { alternatives: [{ term: "-ía" }, { term: "-ías" }, { term: "-íamos" }, { term: "-ían" }] }, " to the infinitive for polite requests, advice and wishes."]
+    es: ["El condicional añade ", { alternatives: [{ term: "-ía" }, { term: "-ías" }, { term: "-íamos" }, { term: "-ían" }] }, " al infinitivo para pedir con cortesía, aconsejar y desear."]
+  rule:
+    en: ["The conditional takes the stems of the future, so ", { term: tener }, " gives ", { term: tendría }, ":"]
+    es: ["El condicional usa las raíces del futuro, así que ", { term: tener }, " da ", { term: tendría }, ":"]
+  ex: { examples: [["¿", { target: Podrías }, " ayudarme?"], ["Yo no ", { target: tendría }, " miedo."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: hablar }, ": ", { alternatives: [{ term: hablaría }, { term: hablarías }, { term: hablaríamos }, { term: hablarían }] }]
+            es: [{ term: hablar }, ": ", { alternatives: [{ term: hablaría }, { term: hablarías }, { term: hablaríamos }, { term: hablarían }] }]
+          ex: [{ target: Viviría }, " en la playa."]
+          tr: { en: "I'd live by the beach." }
+        - level: B1
+          variety: es-ES
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: vosotros }, ": ", { alternatives: [{ term: hablaríais }, { term: comeríais }, { term: viviríais }] }]
+            es: [{ term: vosotros }, ": ", { alternatives: [{ term: hablaríais }, { term: comeríais }, { term: viviríais }] }]
+          ex: ["¿", { target: Vendríais }, " conmigo?"]
+          tr: { en: Would you come with me? }
+        - level: B1
+          point: { en: Irregular stems, es: Raíces irregulares }
+          rule:
+            en: ["the stems of the future: ", { alternatives: [{ term: tendría }, { term: podría }, { term: haría }, { term: diría }] }]
+            es: ["las raíces del futuro: ", { alternatives: [{ term: tendría }, { term: podría }, { term: haría }, { term: diría }] }]
+          ex: [{ target: Haría }, " cualquier cosa por ti."]
+          tr: { en: "I'd do anything for you." }
+        - level: B1
+          point: { en: Use, es: Uso }
+          rule:
+            en: "a polite request"
+            es: "una petición cortés"
+          ex: ["¿", { target: Podría }, " cerrar la ventana?"]
+          tr: { en: Could you close the window? }
+        - level: B1
+          point: { en: Use, es: Uso }
+          rule:
+            en: "a wish"
+            es: "un deseo"
+          ex: [{ target: Me gustaría }, " ir a Cuba."]
+          tr: { en: "I'd like to go to Cuba." }
+        - level: B1
+          point: { en: Use, es: Uso }
+          rule:
+            en: ["advice: ", { term: deberías }]
+            es: ["un consejo: ", { term: deberías }]
+          ex: [{ target: Deberías }, " descansar."]
+          tr: { en: You should rest. }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["every form carries ", { term: í }]
+            es: ["todas las formas llevan ", { term: í }]
+          ex: [{ target: Comería }, " algo."]
+          tr: { en: "I'd eat something." }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: gustar }, " keeps its pattern: ", { term: me gustaría }]
+            es: [{ term: gustar }, " mantiene su estructura: ", { term: me gustaría }]
+          ex: [{ target: Nos gustaría }, " verte."]
+          tr: { en: "We'd like to see you." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: "The conditional is one word: the infinitive and an ending."
+              es: "El condicional es una sola palabra: el infinitivo y una terminación."
+          - type: rule
+            level: B1
+            text:
+              en: "It softens what is said: a polite request, advice or a wish."
+              es: "Suaviza lo que se dice: una petición cortés, un consejo o un deseo."
+          - type: note
+            level: B1
+            text:
+              en: ["The same irregular stems: ", { link: Simple Future, to: es.futuro-condicional.futuro-simple }, "."]
+              es: ["Las mismas raíces irregulares: ", { link: El futuro simple, to: es.futuro-condicional.futuro-simple }, "."]
+
+  - title: { en: "Form: regular verbs", es: "Forma: verbos regulares" }
+    role: form
+    features: { mood: cond }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { en: Person, es: Persona } }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+          - { key: ir, label: vivir }
+        rows:
+          - { level: B1, features: { person: 1, number: sg }, person: yo, ar: ["hablar", { ending: ía }], er: ["comer", { ending: ía }], ir: ["vivir", { ending: ía }] }
+          - { level: B1, features: { person: 2, number: sg, politeness: infm }, person: tú, ar: ["hablar", { ending: ías }], er: ["comer", { ending: ías }], ir: ["vivir", { ending: ías }] }
+          - { level: B1, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, ar: ["hablar", { ending: ía }], er: ["comer", { ending: ía }], ir: ["vivir", { ending: ía }] }
+          - { level: B1, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, ar: ["hablar", { ending: íamos }], er: ["comer", { ending: íamos }], ir: ["vivir", { ending: íamos }] }
+          - { level: B1, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, ar: ["hablar", { ending: íais }], er: ["comer", { ending: íais }], ir: ["vivir", { ending: íais }] }
+          - { level: B1, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, ar: ["hablar", { ending: ían }], er: ["comer", { ending: ían }], ir: ["vivir", { ending: ían }] }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["Verbs in ", { term: "-ar" }, ", ", { term: "-er" }, " and ", { term: "-ir" }, " share the same endings, and every one carries a written accent on ", { term: í }, "."]
+              es: ["Los verbos en ", { term: "-ar" }, ", ", { term: "-er" }, " e ", { term: "-ir" }, " comparten las terminaciones, y todas llevan tilde en la ", { term: í }, "."]
+          - type: rule
+            level: B1
+            text:
+              en: ["The forms of ", { term: yo }, " and ", { term: él }, " are the same, so the subject often appears:"]
+              es: ["Las formas de ", { term: yo }, " y de ", { term: él }, " son iguales, por eso el sujeto suele aparecer:"]
+            ex: ["Ella ", { target: hablaría }, " con él."]
+            tr: { en: She would talk to him. }
+
+  - title: { en: "Form: irregular verbs", es: "Forma: verbos irregulares" }
+    role: form
+    features: { mood: cond }
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { en: Verb, es: Verbo } }
+          - { key: stem, label: { en: Stem, es: Raíz } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: B1, verb: tener, stem: "tendr-", ex: ["Yo no ", { target: tendría }, " miedo."], tr: { en: "I wouldn't be afraid." } }
+          - { level: B1, verb: poder, stem: "podr-", ex: ["¿", { target: Podrías }, " repetir?"], tr: { en: Could you say that again? } }
+          - { level: B1, verb: salir, stem: "saldr-", ex: ["Con este tiempo, no ", { target: saldría }, "."], tr: { en: "In this weather, I wouldn't go out." } }
+          - { level: B1, verb: poner, stem: "pondr-", ex: ["¿Dónde ", { target: pondrías }, " la mesa?"], tr: { en: Where would you put the table? } }
+          - { level: B1, verb: venir, stem: "vendr-", ex: ["¿", { target: Vendrías }, " conmigo?"], tr: { en: Would you come with me? } }
+          - { level: B1, verb: hacer, stem: "har-", ex: ["¿Qué ", { target: harías }, " tú?"], tr: { en: What would you do? } }
+          - { level: B1, verb: decir, stem: "dir-", ex: ["Yo no ", { target: diría }, " eso."], tr: { en: "I wouldn't say that." } }
+          - { level: B1, verb: querer, stem: "querr-", ex: [{ target: Querría }, " hablar con el director."], tr: { en: "I'd like to speak to the director." } }
+          - { level: B1, verb: saber, stem: "sabr-", ex: ["No ", { target: sabría }, " qué decir."], tr: { en: "I wouldn't know what to say." } }
+          - { level: B1, verb: haber, stem: "habr-", ex: ["¿", { target: Habría }, " otra opción?"], tr: { en: Would there be another option? } }
+
+  - title: { en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: B1, use: { en: A polite request, es: Una petición cortés }, ex: ["¿", { target: Podría }, " ayudarme?"], tr: { en: Could you help me? } }
+          - { level: B1, use: { en: A wish, es: Un deseo }, ex: [{ target: Me encantaría }, " conocer Chile."], tr: { en: "I'd love to visit Chile." } }
+          - { level: B1, use: { en: Advice, es: Un consejo }, ex: [{ target: Deberías }, " dormir más."], tr: { en: You should sleep more. } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["With ", { term: gustar }, ", ", { term: encantar }, " and ", { term: importar }, ", the conditional softens a wish or a request:"]
+              es: ["Con ", { term: gustar }, ", ", { term: encantar }, " e ", { term: importar }, ", el condicional suaviza un deseo o una petición:"]
+            ex: ["¿Te ", { target: importaría }, " esperar un momento?"]
+            tr: { en: Would you mind waiting a moment? }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: Yo gustaría un café., right: [{ target: Me gustaría }, " un café."], rule: { en: [{ term: gustar }, " takes ", { term: me }, ": ", { term: me gustaría }], es: [{ term: gustar }, " lleva ", { term: me }, ": ", { term: me gustaría }] } }
+          - { level: B1, wrong: ¿Podería ayudarme?, right: ["¿", { target: Podría }, " ayudarme?"], rule: { en: [{ term: poder }, " has the stem ", { term: "podr-" }], es: [{ term: poder }, " tiene la raíz ", { term: "podr-" }] } }
+          - { level: B1, wrong: Tenería miedo., right: [{ target: Tendría }, " miedo."], rule: { en: [{ term: tener }, " has the stem ", { term: "tendr-" }], es: [{ term: tener }, " tiene la raíz ", { term: "tendr-" }] } }
+          - { level: B1, wrong: Comeria algo., right: [{ target: Comería }, " algo."], rule: { en: ["every form carries a written accent on ", { term: í }], es: ["todas las formas llevan tilde en la ", { term: í }] } }
+          - { level: B1, speakers: [en], wrong: "Cuando era niño, jugaría en la calle.", right: ["Cuando era niño, ", { target: jugaba }, " en la calle."], rule: { en: ["a past habit takes the imperfect, ", { term: jugaba }, ", not the conditional"] } }

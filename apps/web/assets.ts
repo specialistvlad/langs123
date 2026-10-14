@@ -1,4 +1,5 @@
-// Files every page loads: the stylesheet, the browser script and the level colours.
+// Files every page loads: the stylesheet, the browser script, and the level colours with the level filter
+// and the variety switch.
 import { join } from "node:path";
 import { LEVEL_INFO } from "../../scripts/lib.ts";
 import { levelColoursCss } from "./level-colours.ts";
@@ -60,4 +61,29 @@ export function levelsCss(): string {
   // Previous, next and Up next of the other levels (sequence.ts), at every level the top one included.
   const around = codes.map((code) => `html[data-level="${code}"] [data-at]:not([data-at~="${code}"]) { display: none !important; }`);
   return [levelColoursCss(), ...switcher, ...filter, ...around].join("\n") + "\n";
+}
+
+// The variety switch, for each language being learned with varieties (curriculum.yaml): the page names
+// the chosen variety in data-variety on <html>, and every element tagged with another of its varieties
+// hides. An element whose leaves start later in the chosen variety (data-level-{variety}) follows the
+// level filter from there. levels.css carries these rules after the level filter.
+export function varietiesCss(varieties: readonly (readonly string[])[]): string {
+  const codes = LEVEL_INFO.map((l) => l.code);
+  const rules = varieties.flatMap((list) =>
+    list.flatMap((chosen) => {
+      const others = list.filter((v) => v !== chosen).map((v) => `[data-variety="${v}"]`);
+      const attr = `data-level-${chosen.toLowerCase()}`;
+      const filter = codes.flatMap((code, i) => {
+        const above = codes.slice(i + 1).map((c) => `[${attr}="${c}"]`);
+        if (above.length === 0) return [];
+        const at = `html[data-variety="${chosen}"][data-level="${code}"]`;
+        return [
+          `${at}:is([data-page="topic"], [data-page="track"]) :is(${above.join(", ")}):not(.toc > li) { display: none !important; }`,
+          `${at}[data-page="topic"] .toc > li:is(${above.join(", ")}) { opacity: 0.4; pointer-events: none; }`,
+        ];
+      });
+      return [`html[data-variety="${chosen}"] :is(${others.join(", ")}) { display: none !important; }`, ...filter];
+    }),
+  );
+  return rules.map((r) => `${r}\n`).join("");
 }

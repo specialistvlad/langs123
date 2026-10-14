@@ -1,0 +1,273 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.genero
+lang: es
+kind: grammar
+tags: [nouns, gender, agreement, articles]
+concepts: [gender]
+related: [es.sustantivo-determinantes.articulos, es.sustantivo-determinantes.plural, es.adjetivo-adverbio.adjetivo-concordancia, es.sustantivo-determinantes.demostrativos]
+status: { en: draft, es: draft }
+translated: { es: "7bed5e 947712 03f4ab f666fa 4d7fec 193a6b 004bbd" }
+
+title: { en: Gender, es: El género }
+summary:
+  lead:
+    en: ["Every noun is masculine or feminine: most nouns in -o are masculine, ", { term: el libro }, ", and most in -a are feminine, ", { term: la casa }, "."]
+    es: ["Todo sustantivo es masculino o femenino: en -o suele ser masculino, ", { term: el libro }, ", y en -a, femenino, ", { term: la casa }, "."]
+  rule:
+    en: "Articles and adjectives take the gender of their noun:"
+    es: "El artículo y el adjetivo toman el género de su sustantivo:"
+  ex: { examples: [[{ target: el }, " libro ", { target: nuevo }], [{ target: la }, " casa ", { target: nueva }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Masculine, es: Masculino }
+          rule: { en: most nouns in -o, es: casi todos los sustantivos en -o }
+          ex: [{ target: el }, " libro"]
+          tr: { en: the book }
+        - level: A1
+          point: { en: Feminine, es: Femenino }
+          rule: { en: most nouns in -a, es: casi todos los sustantivos en -a }
+          ex: [{ target: la }, " casa"]
+          tr: { en: the house }
+        - level: A1
+          point: { en: Other endings, es: Otras terminaciones }
+          rule: { en: "-e or a consonant: learn the article with the noun", es: "-e o consonante: aprende el artículo con el sustantivo" }
+          ex: { examples: [[{ target: el }, " café"], [{ target: la }, " noche"]] }
+          tr: { en: { examples: [the coffee, the night] } }
+        - level: A1
+          point: { en: People, es: Personas }
+          rule: { mapping: [{ term: "-o" }, { term: "-a" }] }
+          ex: { examples: [[{ target: la }, " niña"], [{ target: la }, " amiga"]] }
+          tr: { en: { examples: [the girl, the (female) friend] } }
+        - level: A2
+          point: { en: "People in -or", es: "Personas en -or" }
+          rule: { en: "the feminine adds -a", es: "el femenino añade -a" }
+          ex: { mapping: [profesor, { target: profesora }] }
+          tr: { en: (female) teacher }
+        - level: A2
+          point: { en: One form for both, es: Una forma para los dos }
+          rule: { en: "-ista, -nte: the article shows the sex", es: "-ista, -nte: el artículo indica el sexo" }
+          ex: { examples: [[{ target: el }, " estudiante"], [{ target: la }, " estudiante"]] }
+          tr: { en: { examples: [the (male) student, the (female) student] } }
+        - level: A2
+          point: { en: Feminine endings, es: Terminaciones femeninas }
+          rule: { en: "-ción, -sión, -dad, -tad, -tud", es: "-ción, -sión, -dad, -tad, -tud" }
+          ex: { examples: [[{ target: la }, " canción"], [{ target: la }, " ciudad"]] }
+          tr: { en: { examples: [the song, the city] } }
+        - level: A2
+          point: { en: Masculine endings, es: Terminaciones masculinas }
+          rule: { en: "-aje, -or, and -ma in many nouns", es: "-aje, -or, y -ma en muchos sustantivos" }
+          ex: { examples: [[{ target: el }, " viaje"], [{ target: el }, " problema"]] }
+          tr: { en: { examples: [the trip, the problem] } }
+        - level: A1
+          point: { en: Agreement, es: Concordancia }
+          rule: { en: articles and adjectives follow the noun, es: el artículo y el adjetivo siguen al sustantivo }
+          ex: ["una casa ", { target: blanca }]
+          tr: { en: a white house }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: día }, " is masculine although it ends in -a"]
+            es: [{ term: día }, " es masculino aunque termina en -a"]
+          ex: [{ target: Buenos días }, "."]
+          tr: { en: Good morning. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: mano }, " is feminine although it ends in -o"]
+            es: [{ term: mano }, " es femenino aunque termina en -o"]
+          ex: ["Tengo las manos ", { target: frías }, "."]
+          tr: { en: My hands are cold. }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "Every noun is masculine or feminine, nouns for things too."
+              es: "Todo sustantivo es masculino o femenino, también los que nombran cosas."
+          - type: rule
+            level: A1
+            text:
+              en: "The words that go with a noun take its gender: articles, adjectives, demonstratives and possessives."
+              es: "Las palabras que acompañan al sustantivo toman su género: artículos, adjetivos, demostrativos y posesivos."
+            ex: [{ target: Esta }, " casa es ", { target: nueva }, "."]
+            tr: { en: This house is new. }
+          - type: rule
+            level: A1
+            text:
+              en: "The ending gives a clue, and the article shows the gender for sure: learn each noun with its article."
+              es: "La terminación da una pista, y el artículo muestra el género con seguridad: aprende cada sustantivo con su artículo."
+          - type: note
+            level: A1
+            text:
+              en: ["The forms of the articles: see ", { link: Articles, to: es.sustantivo-determinantes.articulos }, "."]
+              es: ["Las formas del artículo: ver ", { link: El artículo, to: es.sustantivo-determinantes.articulos }, "."]
+
+  - title: { en: "Form: gender by ending", es: "Forma: el género según la terminación" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: ending, label: { en: Ending, es: Terminación } }
+          - { key: gender, label: { en: Gender, es: Género } }
+          - { key: ex, label: { en: Examples, es: Ejemplos } }
+        rows:
+          - level: A1
+            ending: "-o"
+            gender: { en: masculine, es: masculino }
+            ex: { examples: [[{ target: el }, " libro"], [{ target: el }, " vaso"]] }
+            tr: { en: { examples: [the book, the glass] } }
+          - level: A1
+            ending: "-a"
+            gender: { en: feminine, es: femenino }
+            ex: { examples: [[{ target: la }, " casa"], [{ target: la }, " mesa"]] }
+            tr: { en: { examples: [the house, the table] } }
+          - level: A1
+            ending: { en: "-e, a consonant", es: "-e, una consonante" }
+            gender: { en: either, es: cualquiera de los dos }
+            ex: { examples: [[{ target: el }, " hotel"], [{ target: la }, " leche"]] }
+            tr: { en: { examples: [the hotel, the milk] } }
+          - level: A2
+            ending: "-ción, -sión"
+            gender: { en: feminine, es: femenino }
+            ex: { examples: [[{ target: la }, " canción"], [{ target: la }, " televisión"]] }
+            tr: { en: { examples: [the song, the television] } }
+          - level: A2
+            ending: "-dad, -tad, -tud"
+            gender: { en: feminine, es: femenino }
+            ex: { examples: [[{ target: la }, " ciudad"], [{ target: la }, " amistad"], [{ target: la }, " salud"]] }
+            tr: { en: { examples: [the city, friendship, health] } }
+          - level: A2
+            ending: "-aje"
+            gender: { en: masculine, es: masculino }
+            ex: { examples: [[{ target: el }, " viaje"], [{ target: el }, " mensaje"]] }
+            tr: { en: { examples: [the trip, the message] } }
+          - level: A2
+            ending: "-or"
+            gender: { en: masculine, es: masculino }
+            ex: { examples: [[{ target: el }, " color"], [{ target: el }, " amor"]] }
+            tr: { en: { examples: [the colour, love] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["A few frequent nouns break the pattern: ", { term: el día }, ", ", { term: el mapa }, ", ", { term: la mano }, "."]
+              es: ["Unos pocos sustantivos frecuentes rompen la regla: ", { term: el día }, ", ", { term: el mapa }, ", ", { term: la mano }, "."]
+          - type: rule
+            level: A2
+            text:
+              en: ["Many nouns in -ma are masculine: ", { term: el problema }, ", ", { term: el tema }, ", ", { term: el idioma }, ", ", { term: el programa }, "."]
+              es: ["Muchos sustantivos en -ma son masculinos: ", { term: el problema }, ", ", { term: el tema }, ", ", { term: el idioma }, ", ", { term: el programa }, "."]
+            ex: ["El español es un idioma ", { target: bonito }, "."]
+            tr: { en: Spanish is a beautiful language. }
+          - type: rule
+            level: A1
+            text:
+              en: ["A short form keeps the gender of the full word: ", { mapping: [{ term: la fotografía }, { term: la foto }] }, ", ", { mapping: [{ term: la motocicleta }, { term: la moto }] }, "."]
+              es: ["La forma corta conserva el género de la palabra completa: ", { mapping: [{ term: la fotografía }, { term: la foto }] }, ", ", { mapping: [{ term: la motocicleta }, { term: la moto }] }, "."]
+          - type: note
+            level: A2
+            text:
+              en: [{ term: flor }, " is feminine although it ends in -or."]
+              es: [{ term: flor }, " es femenino aunque termina en -or."]
+          - type: note
+            level: A2
+            text:
+              en: ["A feminine noun that starts with a stressed a takes ", { term: el }, " in the singular: ", { term: el agua }, ". See ", { link: Articles, to: es.sustantivo-determinantes.articulos }, "."]
+              es: ["Un sustantivo femenino que empieza por a tónica lleva ", { term: el }, " en singular: ", { term: el agua }, ". Ver ", { link: El artículo, to: es.sustantivo-determinantes.articulos }, "."]
+
+  - title: { en: Nouns for people, es: Sustantivos de persona }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: masc, label: { en: Masculine, es: Masculino }, features: { gender: masc } }
+          - { key: fem, label: { en: Feminine, es: Femenino }, features: { gender: fem } }
+        rows:
+          - { level: A1, masc: ["el niñ", { ending: o }], fem: ["la niñ", { ending: a }] }
+          - { level: A1, masc: ["el amig", { ending: o }], fem: ["la amig", { ending: a }] }
+          - { level: A2, masc: el profesor, fem: ["la profesor", { ending: a }] }
+          - { level: A2, masc: el señor, fem: ["la señor", { ending: a }] }
+          - { level: A2, masc: [{ target: el }, " estudiante"], fem: [{ target: la }, " estudiante"] }
+          - { level: A2, masc: [{ target: el }, " periodista"], fem: [{ target: la }, " periodista"] }
+          - { level: A1, masc: el padre, fem: la madre }
+          - { level: A1, masc: el hombre, fem: la mujer }
+          - { level: A2, masc: el actor, fem: la actriz }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "For people, -o changes to -a."
+              es: "En las personas, la -o pasa a -a."
+          - type: rule
+            level: A2
+            text:
+              en: ["A final consonant adds -a: ", { mapping: [{ term: el profesor }, { term: la profesora }] }, "."]
+              es: ["La consonante final añade -a: ", { mapping: [{ term: el profesor }, { term: la profesora }] }, "."]
+          - type: rule
+            level: A2
+            text:
+              en: "Nouns in -ista and most nouns in -nte keep one form, and the article shows the sex."
+              es: "Los sustantivos en -ista y la mayoría de los terminados en -nte tienen una sola forma, y el artículo indica el sexo."
+            ex: [{ target: La }, " estudiante es de Chile."]
+            tr: { en: The student is from Chile. }
+          - type: rule
+            level: A1
+            text:
+              en: "A group of men and women takes the masculine plural."
+              es: "Un grupo de hombres y mujeres lleva el masculino plural."
+            ex: ["Tengo dos ", { target: hermanos }, ": Luis y Marta."]
+            tr: { en: "I have a brother and a sister: Luis and Marta." }
+
+  - title: { en: Agreement, es: La concordancia }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: word, label: { en: Word, es: Palabra } }
+          - { key: masc, label: { en: Masculine, es: Masculino }, features: { gender: masc } }
+          - { key: fem, label: { en: Feminine, es: Femenino }, features: { gender: fem } }
+        rows:
+          - { level: A1, word: { en: Article, es: Artículo }, masc: [{ target: un }, " libro"], fem: [{ target: una }, " casa"] }
+          - { level: A1, word: { en: Adjective in -o, es: Adjetivo en -o }, masc: ["un libro ", { target: nuevo }], fem: ["una casa ", { target: nueva }] }
+          - { level: A1, word: { en: "Adjective in -e or a consonant", es: "Adjetivo en -e o en consonante" }, masc: ["un libro ", { target: grande }], fem: ["una casa ", { target: grande }] }
+          - { level: A1, word: { en: Demonstrative, es: Demostrativo }, masc: [{ target: este }, " libro"], fem: [{ target: esta }, " casa"] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "An adjective in -o changes to -a; an adjective in -e or a consonant keeps one form."
+              es: "El adjetivo en -o pasa a -a; el adjetivo en -e o en consonante tiene una sola forma."
+          - type: note
+            level: A1
+            text:
+              en: ["Where adjectives go, and more on agreement: see ", { link: "Adjectives: Agreement and Position", to: es.adjetivo-adverbio.adjetivo-concordancia }, "."]
+              es: ["Dónde va el adjetivo, y más sobre la concordancia: ver ", { link: "El adjetivo: concordancia y posición", to: es.adjetivo-adverbio.adjetivo-concordancia }, "."]
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: la día, right: [{ target: el }, " día"], rule: { en: [{ term: día }, " is masculine"], es: [{ term: día }, " es masculino"] } }
+          - { level: A2, wrong: el mano, right: [{ target: la }, " mano"], rule: { en: [{ term: mano }, " is feminine"], es: [{ term: mano }, " es femenino"] } }
+          - { level: A1, wrong: una casa blanco, right: ["una casa ", { target: blanca }], rule: { en: "the adjective takes the gender of the noun", es: "el adjetivo toma el género del sustantivo" } }
+          - { level: A2, wrong: la problema, right: [{ target: el }, " problema"], rule: { en: ["many nouns in -ma are masculine: ", { term: el problema }], es: ["muchos sustantivos en -ma son masculinos: ", { term: el problema }] } }
+          - { level: A2, wrong: el canción, right: [{ target: la }, " canción"], rule: { en: "nouns in -ción are feminine", es: "los sustantivos en -ción son femeninos" } }
+          - { level: A1, wrong: el foto, right: [{ target: la }, " foto"], rule: { en: [{ term: la foto }, " is short for ", { term: la fotografía }], es: [{ term: la foto }, " es la forma corta de ", { term: la fotografía }] } }
+          - { level: A2, speakers: [en], wrong: Mi madre es profesor., right: ["Mi madre es ", { target: profesora }, "."], rule: { en: ["a job noun changes for a woman: ", { mapping: [{ term: profesor }, { term: profesora }] }] } }

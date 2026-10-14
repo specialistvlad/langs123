@@ -11,7 +11,7 @@ the page's address, quote what is wrong and, when you know it, the correct versi
 ## Change a topic
 
 Each topic lives in one file, `languages/{lang}/{NN-section}/{topic}/topic.yaml`, which holds it in
-every explanation language.
+each explanation language of its language.
 
 **In the browser.** *Edit on GitHub* at the top of a topic page opens its file in GitHub's editor.
 Saving proposes the change as a pull request, and CI checks it.

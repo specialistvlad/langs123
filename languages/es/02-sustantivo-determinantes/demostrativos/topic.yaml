@@ -1,0 +1,192 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.demostrativos
+lang: es
+kind: grammar
+tags: [demonstratives, determiners, pronouns]
+concepts: [demonstratives]
+related: [es.sustantivo-determinantes.genero, es.sustantivo-determinantes.articulos, es.sustantivo-determinantes.posesivos, es.adjetivo-adverbio.adverbios]
+status: { en: draft, es: draft }
+translated: { es: "3661a9 7e72bc aa267d 35195f 0fa4be e54fc7" }
+
+title: { en: "This, That, That Over There", es: Los demostrativos }
+summary:
+  lead:
+    en: [{ term: Este }, " points to things near me, ", { term: ese }, " to things near you, and ", { term: aquel }, " to things far from us both."]
+    es: [{ term: Este }, " señala lo que está cerca de mí; ", { term: ese }, ", lo que está cerca de ti; y ", { term: aquel }, ", lo que está lejos de los dos."]
+  rule:
+    en: "The demonstrative agrees with its noun in gender and number:"
+    es: "El demostrativo concuerda con su sustantivo en género y número:"
+  ex: { examples: [[{ target: esta }, " casa"], [{ target: estos }, " zapatos"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Near me, es: Cerca de mí }
+          rule: { alternatives: [{ term: este }, { term: esta }, { term: estos }, { term: estas }] }
+          ex: [{ target: Este }, " libro es nuevo."]
+          tr: { en: This book is new. }
+        - level: A1
+          point: { en: Near you, es: Cerca de ti }
+          rule: { alternatives: [{ term: ese }, { term: esa }, { term: esos }, { term: esas }] }
+          ex: ["¿Cuánto cuesta ", { target: esa }, " mochila?"]
+          tr: { en: How much is that backpack? }
+        - level: A1
+          point: { en: Far from us both, es: Lejos de los dos }
+          rule: { alternatives: [{ term: aquel }, { term: aquella }, { term: aquellos }, { term: aquellas }] }
+          ex: [{ target: Aquella }, " casa es de mi abuela."]
+          tr: { en: "That house over there is my grandmother's." }
+        - level: A1
+          point: { en: Agreement, es: Concordancia }
+          rule: { en: gender and number of the noun, es: género y número del sustantivo }
+          ex: ["Me gustan ", { target: estos }, " zapatos."]
+          tr: { en: I like these shoes. }
+        - level: A1
+          point: { en: Alone, es: Solo }
+          rule: { en: "for a known noun, with no written accent", es: "en lugar de un sustantivo conocido, sin tilde" }
+          ex: ["No quiero este libro; quiero ", { target: ese }, "."]
+          tr: { en: "I don't want this book; I want that one." }
+        - level: A1
+          point: { en: Neuter, es: Neutro }
+          rule: { en: [{ term: esto }, ", ", { term: eso }, ": a thing with no name yet"], es: [{ term: esto }, ", ", { term: eso }, ": una cosa sin nombrar"] }
+          ex: ["¿Qué es ", { target: esto }, "?"]
+          tr: { en: What is this? }
+        - level: A2
+          point: { en: What was said, es: Lo dicho }
+          rule: { en: [{ term: eso }, " for what someone just said"], es: [{ term: eso }, " para lo que alguien acaba de decir"] }
+          ex: [{ target: Eso }, " es verdad."]
+          tr: { en: "That's true." }
+        - level: A2
+          point: { en: Time, es: Tiempo }
+          rule: { en: ["the present period: ", { term: este año }], es: ["el periodo actual: ", { term: este año }] }
+          ex: [{ target: Esta }, " semana tengo exámenes."]
+          tr: { en: I have exams this week. }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule: { en: ["before a noun, ", { term: este }, ", never ", { term: esto }], es: ["delante de un sustantivo, ", { term: este }, " y nunca ", { term: esto }] }
+          ex: ["Quiero ", { target: este }, " pastel."]
+          tr: { en: I want this cake. }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule: { en: ["introducing a person: ", { alternatives: [{ term: este }, { term: esta }] }], es: ["para presentar a alguien: ", { alternatives: [{ term: este }, { term: esta }] }] }
+          ex: [{ target: Este }, " es mi hermano."]
+          tr: { en: This is my brother. }
+
+sections:
+  - title: { en: "Form: three distances", es: "Forma: tres distancias" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: distance, label: { en: Distance, es: Distancia } }
+          - { key: sg, label: { en: Singular, es: Singular }, features: { number: sg } }
+          - { key: pl, label: { en: Plural, es: Plural }, features: { number: pl } }
+        rows:
+          - { level: A1, features: { deixis: prox }, distance: { en: near me, es: cerca de mí }, sg: { alternatives: [{ target: este }, { target: esta }] }, pl: { alternatives: [{ target: estos }, { target: estas }] } }
+          - { level: A1, distance: { en: near you, es: cerca de ti }, sg: { alternatives: [{ target: ese }, { target: esa }] }, pl: { alternatives: [{ target: esos }, { target: esas }] } }
+          - { level: A1, features: { deixis: dist }, distance: { en: far from us both, es: lejos de los dos }, sg: { alternatives: [{ target: aquel }, { target: aquella }] }, pl: { alternatives: [{ target: aquellos }, { target: aquellas }] } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "The demonstrative goes before the noun and agrees with it in gender and number:"
+              es: "El demostrativo va delante del sustantivo y concuerda con él en género y número:"
+            ex: ["Me gustan ", { target: estas }, " camisas."]
+            tr: { en: I like these shirts. }
+          - type: rule
+            level: A1
+            text:
+              en: ["The masculine singular ends in -e: ", { term: este }, ", ", { term: ese }, "."]
+              es: ["El masculino singular termina en -e: ", { term: este }, ", ", { term: ese }, "."]
+          - type: rule
+            level: A1
+            text:
+              en: ["The masculine singular of the far form ends in -l: ", { term: aquel }, "."]
+              es: ["El masculino singular de la forma lejana termina en -l: ", { term: aquel }, "."]
+          - type: rule
+            level: A1
+            text:
+              en: "Alone, the demonstrative takes the place of a known noun and has no written accent:"
+              es: "Solo, el demostrativo ocupa el lugar de un sustantivo conocido y no lleva tilde:"
+            ex: ["No quiero este libro; quiero ", { target: ese }, "."]
+            tr: { en: "I don't want this book; I want that one." }
+          - type: rule
+            level: A1
+            text:
+              en: "Introducing a person, the demonstrative takes the person’s gender:"
+              es: "Para presentar a una persona se usa el demostrativo de su género:"
+            ex: [{ target: Esta }, " es mi amiga Lucía."]
+            tr: { en: This is my friend Lucía. }
+
+  - title: { en: "Neuter: esto, eso, aquello", es: "Neutro: esto, eso, aquello" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form, es: Forma } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, features: { deixis: prox }, form: esto, use: { en: a thing near me with no name yet, es: "una cosa cerca de mí, sin nombrar" }, ex: ["¿Qué es ", { target: esto }, "?"], tr: { en: What is this? } }
+          - { level: A1, form: eso, use: { en: a thing near you with no name yet, es: "una cosa cerca de ti, sin nombrar" }, ex: ["¿Qué es ", { target: eso }, "?"], tr: { en: What is that? } }
+          - { level: A2, form: eso, use: { en: what someone just said or did, es: lo que alguien acaba de decir o hacer }, ex: [{ target: Eso }, " es verdad."], tr: { en: "That's true." } }
+          - { level: A1, features: { deixis: dist }, form: aquello, use: { en: a thing far from us both, es: una cosa lejos de los dos }, ex: ["¿Qué es ", { target: aquello }, "?"], tr: { en: What is that over there? } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "The neuter forms never go before a noun and have no plural."
+              es: "Las formas neutras nunca van delante de un sustantivo y no tienen plural."
+
+  - title: { en: "Use: place and time", es: "Uso: lugar y tiempo" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, use: { en: Near the speaker, es: Cerca del que habla }, ex: [{ target: Esta }, " silla está libre."], tr: { en: This chair is free. } }
+          - { level: A1, use: { en: Near the listener, es: Cerca del que escucha }, ex: ["¿Cuánto cuesta ", { target: esa }, " mochila?"], tr: { en: How much is that backpack? } }
+          - { level: A1, use: { en: Far from both, es: Lejos de los dos }, ex: [{ target: Aquella }, " casa es de mi abuela."], tr: { en: "That house over there is my grandmother's." } }
+          - level: A2
+            use: { en: The present period, es: El periodo actual }
+            ex: { examples: [[{ target: Esta }, " semana tengo exámenes."], [{ target: Este }, " año viajo a Perú."]] }
+            tr: { en: { examples: [I have exams this week., "This year I'm travelling to Peru."] } }
+          - { level: A2, use: { en: A time long ago, es: Un tiempo lejano }, ex: ["En ", { target: aquella }, " época vivíamos en Lima."], tr: { en: In those days we lived in Lima. } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["The place adverbs match the three distances: ", { term: aquí }, " with ", { term: este }, ", ", { term: ahí }, " with ", { term: ese }, ", ", { term: allí }, " with ", { term: aquel }, "."]
+              es: ["Los adverbios de lugar siguen las tres distancias: ", { term: aquí }, " con ", { term: este }, ", ", { term: ahí }, " con ", { term: ese }, ", ", { term: allí }, " con ", { term: aquel }, "."]
+            ex: [{ target: Aquel }, " edificio de ", { target: allí }, " es el hospital."]
+            tr: { en: That building over there is the hospital. }
+          - type: note
+            level: A2
+            variety: es-419
+            text:
+              en: ["In Latin America, ", { term: acá }, " and ", { term: allá }, " are the everyday words for “here” and “there”:"]
+              es: ["En Latinoamérica, ", { term: acá }, " y ", { term: allá }, " son las palabras habituales para “aquí” y “allí”:"]
+            ex: ["Ven ", { target: acá }, "."]
+            tr: { en: Come here. }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: esto libro, right: [{ target: este }, " libro"], rule: { en: ["before a noun, ", { term: este }], es: ["delante de un sustantivo, ", { term: este }] } }
+          - { level: A1, wrong: estes libros, right: [{ target: estos }, " libros"], rule: { en: { mapping: [{ term: este }, { term: estos }] }, es: { mapping: [{ term: este }, { term: estos }] } } }
+          - { level: A1, wrong: ¿Qué es este?, right: ["¿Qué es ", { target: esto }, "?"], rule: { en: ["a thing with no name yet takes ", { term: esto }], es: ["una cosa sin nombrar lleva ", { term: esto }] } }
+          - { level: A1, wrong: Esto es mi hermano., right: [{ target: Este }, " es mi hermano."], rule: { en: ["a person takes ", { term: este }, " or ", { term: esta }], es: ["una persona lleva ", { term: este }, " o ", { term: esta }] } }
+          - { level: A2, wrong: esta problema, right: [{ target: este }, " problema"], rule: { en: [{ term: problema }, " is masculine"], es: [{ term: problema }, " es masculino"] } }
+          - { level: A1, wrong: aquello casa, right: [{ target: aquella }, " casa"], rule: { en: ["before a feminine noun, ", { term: aquella }], es: ["delante de un femenino, ", { term: aquella }] } }

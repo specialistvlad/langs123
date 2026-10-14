@@ -1,7 +1,7 @@
 // The home pages, one per explanation language, where the language is chosen, and the missing pages.
 import { type Explain, explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
 import { join, refRange } from "../../../scripts/levels.ts";
-import { alternates, type Context, EXPLAINS, homeLanguage, readChoices } from "../context.ts";
+import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
 import { controls, page, ui } from "../layout.ts";
 import { escapeHtml } from "../html.ts";
 import { badge } from "../parts.ts";
@@ -9,8 +9,9 @@ import { homeUrl, notFoundUrl, trackUrl } from "../urls.ts";
 
 // Each home page leads to every track through a matrix: a row per language to learn, named in the home
 // page's language with its levels and topics, and a column per explanation language, under its own name,
-// the home page's language first; each cell is an arrow into that track. The first explanation language's home, at the
-// root, is the default for other readers.
+// the home page's language first; each cell is an arrow into that track, and empty where the language is not
+// explained in that column's language. The first explanation language's home, at the root, is the default for
+// other readers.
 export function homePage(ctx: Context): void {
   const { o, refs } = ctx;
   // The levels the curriculum covers: written topics by their data, planned ones by their entry.
@@ -36,8 +37,11 @@ export function homePage(ctx: Context): void {
       .map((lang) => {
         const own = refs.filter((r) => r.lang === lang.code);
         const written = own.filter((r) => r.topic !== null).length;
-        // A cell is an arrow into its track; the row names the language once, with its levels and topics.
+        // A cell is an arrow into its track, and empty where the language is not explained in that column's
+        // language; the row names the language once, with its levels and topics.
+        const explains = explainsOf(lang);
         const cells = order.map((e) => {
+          if (!explains.includes(e)) return '<td class="none"></td>';
           const name = escapeHtml(`${ui(e).track(localize(lang.name, e))}, ${ui(e).explained}`);
           return `<td><a href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" aria-label="${name}" title="${name}"><span class="go" aria-hidden="true">→</span></a></td>`;
         });

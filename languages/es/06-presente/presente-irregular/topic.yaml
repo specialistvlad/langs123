@@ -1,0 +1,361 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.presente.presente-irregular
+lang: es
+kind: grammar
+tags: [verbs, present, irregular, stem-changing]
+concepts: [present-tense, irregular-verbs]
+related: [es.presente.presente-regular, es.pasados.verbos-irregulares, es.ser-estar-hay-gustar.ser-estar, es.futuro-condicional.ir-a-infinitivo, es.presente.verbos-reflexivos]
+status: { en: draft, es: draft }
+translated: { es: "e7f93b b25c72 cb0aca 286deb f440c8 004821 f4b5ab 9c4920" }
+
+title: { en: "Present Tense: Irregular Verbs", es: "El presente: verbos irregulares" }
+summary:
+  lead:
+    en: ["Some verbs change the vowel of their stem (", { term: quiero }, ", ", { term: puedo }, ", ", { term: pido }, "), some change only ", { term: yo }, " (", { term: hago }, ", ", { term: conozco }, "), and ", { term: ir }, " is irregular throughout."]
+    es: ["Unos verbos cambian la vocal de la raíz (", { term: quiero }, ", ", { term: puedo }, ", ", { term: pido }, "), otros solo la forma de ", { term: yo }, " (", { term: hago }, ", ", { term: conozco }, "), e ", { term: ir }, " es irregular en todo."]
+  rule:
+    en: ["The stem vowel changes only where the stress falls on it, so ", { term: nosotros }, " keeps it:"]
+    es: ["La vocal de la raíz cambia solo cuando lleva el acento, por eso ", { term: nosotros }, " la conserva:"]
+  ex: { examples: [[{ target: Quiero }, " café."], [{ target: Queremos }, " café."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Set phrases, es: Frases hechas }
+          rule:
+            en: ["first met as whole phrases: ", { alternatives: [{ term: quiero }, { term: ["tengo ", { gap: true }, " años"] }, { term: voy a }] }]
+            es: ["primero se usan como frases enteras: ", { alternatives: [{ term: quiero }, { term: ["tengo ", { gap: true }, " años"] }, { term: voy a }] }]
+          ex: { examples: [[{ target: Quiero }, " un café."], [{ target: Tengo }, " veinte años."], [{ target: Voy }, " a clase."]] }
+          tr: { en: { examples: ["I want a coffee.", "I'm twenty.", "I'm going to class."] } }
+        - level: A2
+          point: { mapping: [{ term: e }, { term: ie }] }
+          rule:
+            en: [{ term: querer }, ": ", { alternatives: [{ term: quiero }, { term: quieres }, { term: quiere }, { term: queremos }, { term: quieren }] }]
+            es: [{ term: querer }, ": ", { alternatives: [{ term: quiero }, { term: quieres }, { term: quiere }, { term: queremos }, { term: quieren }] }]
+          ex: [{ target: Quiero }, " un café."]
+          tr: { en: I want a coffee. }
+        - level: A2
+          point: { mapping: [{ term: o }, { term: ue }] }
+          rule:
+            en: [{ term: poder }, ": ", { alternatives: [{ term: puedo }, { term: puedes }, { term: puede }, { term: podemos }, { term: pueden }] }]
+            es: [{ term: poder }, ": ", { alternatives: [{ term: puedo }, { term: puedes }, { term: puede }, { term: podemos }, { term: pueden }] }]
+          ex: ["¿", { target: Puedes }, " venir mañana?"]
+          tr: { en: Can you come tomorrow? }
+        - level: A2
+          point: { mapping: [{ term: u }, { term: ue }] }
+          rule:
+            en: [{ term: jugar }, ": ", { alternatives: [{ term: juego }, { term: juegas }, { term: juega }, { term: jugamos }, { term: juegan }] }]
+            es: [{ term: jugar }, ": ", { alternatives: [{ term: juego }, { term: juegas }, { term: juega }, { term: jugamos }, { term: juegan }] }]
+          ex: ["Los niños ", { target: juegan }, " en el parque."]
+          tr: { en: The children play in the park. }
+        - level: A2
+          point: { en: Yo in -go, es: Yo en -go }
+          rule:
+            en: [{ alternatives: [{ term: hago }, { term: pongo }, { term: salgo }] }, "; the other persons are regular"]
+            es: [{ alternatives: [{ term: hago }, { term: pongo }, { term: salgo }] }, "; las demás personas son regulares"]
+          ex: [{ target: Salgo }, " de casa a las ocho."]
+          tr: { en: I leave home at eight. }
+        - level: A2
+          point: [{ term: tener }, ", ", { term: venir }]
+          rule:
+            en: [{ term: "-go" }, " in yo, ", { term: ie }, " in the stressed forms: ", { alternatives: [{ term: tengo }, { term: tienes }] }]
+            es: [{ term: "-go" }, " en yo, ", { term: ie }, " en las formas tónicas: ", { alternatives: [{ term: tengo }, { term: tienes }] }]
+          ex: [{ target: Tengo }, " dos hermanos."]
+          tr: { en: I have two brothers. }
+        - level: A2
+          point: { term: ir }
+          rule:
+            en: { alternatives: [{ term: voy }, { term: vas }, { term: va }, { term: vamos }, { term: van }] }
+            es: { alternatives: [{ term: voy }, { term: vas }, { term: va }, { term: vamos }, { term: van }] }
+          ex: [{ target: Voy }, " al cine."]
+          tr: { en: "I'm going to the cinema." }
+        - level: A2
+          point: { en: Stress, es: Acento }
+          rule:
+            en: "the vowel changes only where the stress falls on it"
+            es: "la vocal cambia solo cuando lleva el acento"
+          ex: { examples: [[{ target: Puedo }, " ir."], [{ target: Podemos }, " ir."]] }
+          tr: { en: { examples: [I can go., We can go.] } }
+        - level: A2
+          point: { mapping: [{ term: e }, { term: i }] }
+          rule:
+            en: [{ term: pedir }, ": ", { alternatives: [{ term: pido }, { term: pides }, { term: pide }, { term: pedimos }, { term: piden }] }]
+            es: [{ term: pedir }, ": ", { alternatives: [{ term: pido }, { term: pides }, { term: pide }, { term: pedimos }, { term: piden }] }]
+          ex: ["Siempre ", { target: pido }, " lo mismo."]
+          tr: { en: I always order the same thing. }
+        - level: A2
+          point: { en: Yo in -zco, es: Yo en -zco }
+          rule:
+            en: { alternatives: [{ term: conozco }, { term: parezco }, { term: traduzco }] }
+            es: { alternatives: [{ term: conozco }, { term: parezco }, { term: traduzco }] }
+          ex: ["No ", { target: conozco }, " Lima."]
+          tr: { en: "I don't know Lima." }
+        - level: A2
+          point: { en: Other yo forms, es: Otras formas de yo }
+          rule:
+            en: { alternatives: [{ term: sé }, { term: doy }, { term: veo }, { term: traigo }] }
+            es: { alternatives: [{ term: sé }, { term: doy }, { term: veo }, { term: traigo }] }
+          ex: ["No ", { target: sé }, "."]
+          tr: { en: "I don't know." }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: nosotros }, " keeps the vowel of the infinitive"]
+            es: [{ term: nosotros }, " conserva la vocal del infinitivo"]
+          ex: ["¿", { target: Podemos }, " entrar?"]
+          tr: { en: Can we come in? }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: decir }, " changes twice: ", { alternatives: [{ term: digo }, { term: dices }] }]
+            es: [{ term: decir }, " cambia dos veces: ", { alternatives: [{ term: digo }, { term: dices }] }]
+          ex: ["Siempre ", { target: dice }, " la verdad."]
+          tr: { en: She always tells the truth. }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: ["A beginner meets ", { term: quiero }, ", ", { term: ["tengo ", { gap: true }, " años"] }, " and ", { term: voy a }, " as whole phrases:"]
+              es: ["Al empezar, ", { term: quiero }, ", ", { term: ["tengo ", { gap: true }, " años"] }, " y ", { term: voy a }, " se usan como frases enteras:"]
+            ex: { examples: [[{ target: Quiero }, " un café."], [{ target: Tengo }, " veinte años."], [{ target: Voy }, " a clase."]] }
+            tr: { en: { examples: ["I want a coffee.", "I'm twenty.", "I'm going to class."] } }
+          - type: rule
+            level: A2
+            text:
+              en: "An irregular verb takes the regular endings; its stem changes."
+              es: "Un verbo irregular lleva las terminaciones regulares; lo que cambia es la raíz."
+          - type: rule
+            level: A2
+            text:
+              en: "A stem-changing verb changes the last vowel of its stem where the stress falls on it."
+              es: "Un verbo con cambio vocálico cambia la última vocal de la raíz cuando lleva el acento."
+          - type: rule
+            level: A2
+            text:
+              en: ["Some verbs change only in ", { term: yo }, ", and ", { term: ir }, " changes everywhere."]
+              es: ["Algunos verbos cambian solo en ", { term: yo }, ", e ", { term: ir }, " cambia en todas las personas."]
+          - type: note
+            level: A2
+            text:
+              en: ["The regular endings: ", { link: "Present Tense: Regular Verbs", to: es.presente.presente-regular }, "."]
+              es: ["Las terminaciones regulares: ", { link: "El presente: verbos regulares", to: es.presente.presente-regular }, "."]
+          - type: note
+            level: A2
+            text:
+              en: ["Every tense of the common irregular verbs: ", { link: Irregular Verbs Table, to: es.pasados.verbos-irregulares }, "."]
+              es: ["Todos los tiempos de los irregulares frecuentes: ", { link: Tabla de verbos irregulares, to: es.pasados.verbos-irregulares }, "."]
+
+  - title: { en: "Form: stem changes", es: "Forma: cambios en la raíz" }
+    role: form
+    features: { tense: prs }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { en: Person, es: Persona } }
+          - { key: querer, label: querer }
+          - { key: poder, label: poder }
+          - { key: jugar, label: jugar }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, person: yo, querer: ["qu", { letter: ie }, "ro"], poder: ["p", { letter: ue }, "do"], jugar: ["j", { letter: ue }, "go"] }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm }, person: tú, querer: ["qu", { letter: ie }, "res"], poder: ["p", { letter: ue }, "des"], jugar: ["j", { letter: ue }, "gas"] }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, querer: ["qu", { letter: ie }, "re"], poder: ["p", { letter: ue }, "de"], jugar: ["j", { letter: ue }, "ga"] }
+          - { level: A2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, querer: queremos, poder: podemos, jugar: jugamos }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, querer: queréis, poder: podéis, jugar: jugáis }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, querer: ["qu", { letter: ie }, "ren"], poder: ["p", { letter: ue }, "den"], jugar: ["j", { letter: ue }, "gan"] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["Like ", { term: querer }, ": ", { alternatives: [{ term: empezar }, { term: pensar }, { term: cerrar }, { term: entender }, { term: preferir }] }, "."]
+              es: ["Como ", { term: querer }, ": ", { alternatives: [{ term: empezar }, { term: pensar }, { term: cerrar }, { term: entender }, { term: preferir }] }, "."]
+            ex: ["La clase ", { target: empieza }, " a las nueve."]
+            tr: { en: The class starts at nine. }
+          - type: rule
+            level: A2
+            text:
+              en: ["Like ", { term: poder }, ": ", { alternatives: [{ term: dormir }, { term: volver }, { term: contar }, { term: encontrar }, { term: costar }] }, "."]
+              es: ["Como ", { term: poder }, ": ", { alternatives: [{ term: dormir }, { term: volver }, { term: contar }, { term: encontrar }, { term: costar }] }, "."]
+            ex: ["¿Cuánto ", { target: cuesta }, "?"]
+            tr: { en: How much is it? }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: jugar }, " is the one verb that changes ", { term: u }, " to ", { term: ue }, "."]
+              es: [{ term: jugar }, " es el único verbo que cambia ", { term: u }, " por ", { term: ue }, "."]
+          - type: note
+            level: A2
+            variety: es-ES
+            text:
+              en: [{ term: vosotros }, " keeps the vowel too: ", { alternatives: [{ term: queréis }, { term: podéis }, { term: jugáis }] }, "."]
+              es: [{ term: vosotros }, " también conserva la vocal: ", { alternatives: [{ term: queréis }, { term: podéis }, { term: jugáis }] }, "."]
+          - type: note
+            level: A2
+            variety: es-419
+            text:
+              en: ["In Argentina and Uruguay, ", { term: vos }, " keeps the vowel of the infinitive: ", { alternatives: [{ term: vos querés }, { term: vos podés }] }, "."]
+              es: ["En Argentina y Uruguay, ", { term: vos }, " conserva la vocal del infinitivo: ", { alternatives: [{ term: vos querés }, { term: vos podés }] }, "."]
+      - type: paradigm
+        columns:
+          - { key: person, label: { en: Person, es: Persona } }
+          - { key: pedir, label: pedir }
+          - { key: servir, label: servir }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, person: yo, pedir: ["p", { letter: i }, "do"], servir: ["s", { letter: i }, "rvo"] }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm }, person: tú, pedir: ["p", { letter: i }, "des"], servir: ["s", { letter: i }, "rves"] }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, pedir: ["p", { letter: i }, "de"], servir: ["s", { letter: i }, "rve"] }
+          - { level: A2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, pedir: pedimos, servir: servimos }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, pedir: pedís, servir: servís }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, pedir: ["p", { letter: i }, "den"], servir: ["s", { letter: i }, "rven"] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["Only verbs in ", { term: "-ir" }, " change ", { term: e }, " to ", { term: i }, ": ", { alternatives: [{ term: repetir }, { term: servir }, { term: seguir }, { term: vestir }] }, "."]
+              es: ["Solo los verbos en ", { term: "-ir" }, " cambian ", { term: e }, " por ", { term: i }, ": ", { alternatives: [{ term: repetir }, { term: servir }, { term: seguir }, { term: vestir }] }, "."]
+            ex: ["¿Me ", { target: repites }, " el número?"]
+            tr: { en: Can you say the number again? }
+
+  - title: { en: "Form: irregular yo", es: "Forma: yo irregular" }
+    role: form
+    features: { tense: prs }
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { en: Verb, es: Verbo } }
+          - { key: yo, label: yo }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, verb: hacer, yo: hago, ex: [{ target: Hago }, " la cena."], tr: { en: I make dinner. } }
+          - { level: A2, verb: poner, yo: pongo, ex: [{ target: Pongo }, " la mesa."], tr: { en: I lay the table. } }
+          - { level: A2, verb: salir, yo: salgo, ex: [{ target: Salgo }, " de casa a las ocho."], tr: { en: I leave home at eight. } }
+          - { level: A2, verb: conocer, yo: conozco, ex: ["No ", { target: conozco }, " Lima."], tr: { en: "I don't know Lima." } }
+          - { level: A2, verb: traducir, yo: traduzco, ex: [{ target: Traduzco }, " libros."], tr: { en: I translate books. } }
+          - { level: A2, verb: saber, yo: sé, ex: ["No ", { target: sé }, " nadar."], tr: { en: "I can't swim." } }
+          - { level: A2, verb: dar, yo: doy, ex: [{ target: Doy }, " clases de inglés."], tr: { en: I teach English. } }
+          - { level: A2, verb: ver, yo: veo, ex: [{ target: Veo }, " la tele por la noche."], tr: { en: I watch TV in the evening. } }
+          - { level: A2, verb: traer, yo: traigo, ex: [{ target: Traigo }, " el postre."], tr: { en: "I'm bringing dessert." } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["These verbs change only in ", { term: yo }, "; the other persons are regular:"]
+              es: ["Estos verbos cambian solo en ", { term: yo }, "; las demás personas son regulares:"]
+            ex: { exchange: [["¿Qué ", { target: haces }, "?"], [{ target: Hago }, " la cena."]] }
+            tr: { en: { exchange: [What are you doing?, "I'm making dinner."] } }
+          - type: rule
+            level: A2
+            text:
+              en: ["Most verbs in ", { term: "-ecer" }, ", ", { term: "-ocer" }, " and ", { term: "-ucir" }, " take ", { term: "-zco" }, " in ", { term: yo }, ": ", { alternatives: [{ term: parezco }, { term: conozco }, { term: conduzco }] }, "."]
+              es: ["La mayoría de los verbos en ", { term: "-ecer" }, ", ", { term: "-ocer" }, " y ", { term: "-ucir" }, " llevan ", { term: "-zco" }, " en ", { term: yo }, ": ", { alternatives: [{ term: parezco }, { term: conozco }, { term: conduzco }] }, "."]
+      - type: paradigm
+        columns:
+          - { key: person, label: { en: Person, es: Persona } }
+          - { key: tener, label: tener }
+          - { key: venir, label: venir }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, person: yo, tener: ["ten", { letter: g }, "o"], venir: ["ven", { letter: g }, "o"] }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm }, person: tú, tener: ["t", { letter: ie }, "nes"], venir: ["v", { letter: ie }, "nes"] }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, tener: ["t", { letter: ie }, "ne"], venir: ["v", { letter: ie }, "ne"] }
+          - { level: A2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, tener: tenemos, venir: venimos }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, tener: tenéis, venir: venís }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, tener: ["t", { letter: ie }, "nen"], venir: ["v", { letter: ie }, "nen"] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: tener }, " and ", { term: venir }, " take ", { term: "-go" }, " in ", { term: yo }, " and ", { term: ie }, " in the other stressed forms:"]
+              es: [{ term: tener }, " y ", { term: venir }, " llevan ", { term: "-go" }, " en ", { term: yo }, " e ", { term: ie }, " en las demás formas tónicas:"]
+            ex: ["¿", { target: Vienes }, " conmigo?"]
+            tr: { en: Are you coming with me? }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: decir }, " takes ", { term: digo }, " and changes ", { term: e }, " to ", { term: i }, ": ", { alternatives: [{ term: digo }, { term: dices }, { term: dice }, { term: decimos }, { term: dicen }] }, "."]
+              es: [{ term: decir }, " lleva ", { term: digo }, " y cambia ", { term: e }, " por ", { term: i }, ": ", { alternatives: [{ term: digo }, { term: dices }, { term: dice }, { term: decimos }, { term: dicen }] }, "."]
+            ex: ["Siempre ", { target: dice }, " la verdad."]
+            tr: { en: She always tells the truth. }
+
+  - title: { en: "Form: ir", es: "Forma: ir" }
+    role: form
+    features: { tense: prs }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { en: Person, es: Persona } }
+          - { key: ir, label: ir }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, person: yo, ir: { target: voy } }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm }, person: tú, ir: { target: vas } }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, ir: { target: va } }
+          - { level: A2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, ir: { target: vamos } }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, ir: { target: vais } }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, ir: { target: van } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: ir }, " takes ", { term: a }, " before a place, and ", { term: a }, " with ", { term: el }, " becomes ", { term: al }, ":"]
+              es: [{ term: ir }, " lleva ", { term: a }, " delante de un lugar, y ", { term: a }, " con ", { term: el }, " se convierte en ", { term: al }, ":"]
+            ex: [{ target: Vamos }, " al mercado."]
+            tr: { en: "We're going to the market." }
+          - type: note
+            level: A2
+            text:
+              en: ["Two more verbs irregular throughout: ", { link: Ser and Estar, to: es.ser-estar-hay-gustar.ser-estar }, "."]
+              es: ["Otros dos verbos irregulares en todo: ", { link: Ser y estar, to: es.ser-estar-hay-gustar.ser-estar }, "."]
+          - type: note
+            level: A2
+            text:
+              en: ["Plans with ", { term: ir }, ": ", { link: Future with Ir a, to: es.futuro-condicional.ir-a-infinitivo }, "."]
+              es: ["Los planes con ", { term: ir }, ": ", { link: Ir a con infinitivo, to: es.futuro-condicional.ir-a-infinitivo }, "."]
+
+  - title: { en: "Spelling: -uir, seguir and elegir", es: "Ortografía: -uir, seguir y elegir" }
+    role: spelling
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["Verbs in ", { term: "-uir" }, " add ", { term: "y" }, " before an ending that starts with a vowel: ", { alternatives: [{ term: construyo }, { term: construyes }, { term: construyen }] }, "."]
+              es: ["Los verbos en ", { term: "-uir" }, " añaden ", { term: "y" }, " delante de una terminación que empieza por vocal: ", { alternatives: [{ term: construyo }, { term: construyes }, { term: construyen }] }, "."]
+            ex: [{ target: Construyen }, " un hotel."]
+            tr: { en: "They're building a hotel." }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: seguir }, " drops the ", { term: u }, " in ", { term: yo }, ", ", { term: sigo }, ", and ", { term: elegir }, " writes ", { term: j }, ", ", { term: elijo }, ", to keep the sound:"]
+              es: [{ term: seguir }, " pierde la ", { term: u }, " en ", { term: yo }, ", ", { term: sigo }, ", y ", { term: elegir }, " escribe ", { term: j }, ", ", { term: elijo }, ", para mantener el sonido:"]
+            ex: [{ target: Elijo }, " el rojo."]
+            tr: { en: "I'll take the red one." }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Quero un café., right: [{ target: Quiero }, " un café."], rule: { en: ["the stressed ", { term: e }, " of ", { term: querer }, " becomes ", { term: ie }], es: ["la ", { term: e }, " tónica de ", { term: querer }, " pasa a ", { term: ie }] } }
+          - { level: A2, wrong: Puedemos ir., right: [{ target: Podemos }, " ir."], rule: { en: [{ term: nosotros }, " keeps the vowel of the infinitive"], es: [{ term: nosotros }, " conserva la vocal del infinitivo"] } }
+          - { level: A2, wrong: Haco la cena., right: [{ target: Hago }, " la cena."], rule: { en: [{ term: hacer }, " has ", { term: hago }, " in ", { term: yo }], es: [{ term: hacer }, " tiene ", { term: hago }, " en ", { term: yo }] } }
+          - { level: A2, wrong: Tieno dos hermanos., right: [{ target: Tengo }, " dos hermanos."], rule: { en: [{ term: yo }, " of ", { term: tener }, " is ", { term: tengo }], es: ["la forma de ", { term: yo }, " de ", { term: tener }, " es ", { term: tengo }] } }
+          - { level: A2, wrong: Yo vo al cine., right: ["Yo ", { target: voy }, " al cine."], rule: { en: [{ term: yo }, " of ", { term: ir }, " is ", { term: voy }], es: ["la forma de ", { term: yo }, " de ", { term: ir }, " es ", { term: voy }] } }
+          - { level: A2, wrong: Repeto la pregunta., right: [{ target: Repito }, " la pregunta."], rule: { en: ["the stressed ", { term: e }, " of ", { term: repetir }, " becomes ", { term: i }], es: ["la ", { term: e }, " tónica de ", { term: repetir }, " pasa a ", { term: i }] } }
+          - { level: A2, wrong: Conoco a Ana., right: [{ target: Conozco }, " a Ana."], rule: { en: [{ term: conocer }, " takes ", { term: "-zco" }, " in ", { term: yo }], es: [{ term: conocer }, " lleva ", { term: "-zco" }, " en ", { term: yo }] } }
+          - { level: A2, wrong: No sabo., right: ["No ", { target: sé }, "."], rule: { en: [{ term: yo }, " of ", { term: saber }, " is ", { term: sé }], es: ["la forma de ", { term: yo }, " de ", { term: saber }, " es ", { term: sé }] } }

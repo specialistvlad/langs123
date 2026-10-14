@@ -28,7 +28,7 @@ function compose(track: Track, title: string, topics: TopicRef[], level?: Level)
   const { ctx, lang, explain } = track;
   const groups: { section: CurriculumSection; cards: Card[] }[] = [];
   for (const ref of topics) {
-    const html = cheatsheetHtml({ ref, explain, refs: ctx.refs, link: ctx.link }, level);
+    const html = cheatsheetHtml({ ref, explain, refs: ctx.refs, link: ctx.link, varieties: lang.varieties }, level);
     if (!filled(html)) continue;
     const last = groups.at(-1);
     if (last?.section === ref.section) last.cards.push({ ref, html });

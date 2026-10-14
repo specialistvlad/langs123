@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.pronombres.combinacion-pronombres
+lang: es
+kind: grammar
+tags: [pronouns, object, se lo, pronoun order]
+concepts: [object-pronouns]
+related: [es.pronombres.objeto-directo, es.pronombres.objeto-indirecto, es.imperativo-perifrasis.imperativo-afirmativo, es.fundamentos.pronunciacion-acentuacion]
+status: { en: draft, es: draft }
+translated: { es: "a7a4d3 122949 9548b5 08e66a f655cc 8f081a" }
+
+title: { en: "Two Pronouns Together: se lo", es: "Combinación de pronombres: se lo" }
+summary:
+  lead:
+    en: ["With two object pronouns, the indirect one comes first: ", { term: me lo }, ", ", { term: te la }, ", ", { term: nos los }, "."]
+    es: ["Con dos pronombres de objeto, el indirecto va primero: ", { term: me lo }, ", ", { term: te la }, ", ", { term: nos los }, "."]
+  rule:
+    en: [{ term: Le }, " and ", { term: les }, " become ", { term: se }, " before ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
+    es: [{ term: Le }, " y ", { term: les }, " se convierten en ", { term: se }, " delante de ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
+  ex: { examples: [["¿El libro? ", { target: Se lo }, " doy a Ana."], ["¿Las llaves? ", { target: Se las }, " dejo a tus padres."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { en: Order, es: Orden }
+          rule:
+            en: { pattern: [{ slot: { en: indirect object, es: objeto indirecto } }, { slot: { en: direct object, es: objeto directo } }] }
+            es: { pattern: [{ slot: { en: indirect object, es: objeto indirecto } }, { slot: { en: direct object, es: objeto directo } }] }
+          ex: ["¿El dinero? ", { target: Te lo }, " doy mañana."]
+          tr: { en: "The money? I'll give it to you tomorrow." }
+        - level: A2
+          point: se
+          rule:
+            en: [{ mapping: [{ alternatives: [{ term: le }, { term: les }] }, { term: se }] }, " before ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }]
+            es: [{ mapping: [{ alternatives: [{ term: le }, { term: les }] }, { term: se }] }, " delante de ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }]
+          ex: ["¿Las llaves? ", { target: Se las }, " doy a Pedro."]
+          tr: { en: "The keys? I'm giving them to Pedro." }
+        - level: B1
+          variety: es-ES
+          point: os
+          rule:
+            en: [{ term: os }, " comes first too: ", { term: os lo }, ", ", { term: os las }]
+            es: [{ term: os }, " también va primero: ", { term: os lo }, ", ", { term: os las }]
+          ex: ["¿Las fotos? ", { target: Os las }, " mando hoy."]
+          tr: { en: "The photos? I'll send them to you today." }
+        - level: A2
+          point: { en: Clarity, es: Claridad }
+          rule:
+            en: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a ellos }] }, " show who ", { term: se }, " is"]
+            es: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a ellos }] }, " aclaran a quién se refiere ", { term: se }]
+          ex: [{ target: Se lo }, " digo ", { target: a ella }, "."]
+          tr: { en: "I'll tell her." }
+        - level: B1
+          point: { en: Position, es: Posición }
+          rule:
+            en: "both before a conjugated verb, side by side"
+            es: "los dos delante del verbo conjugado, juntos"
+          ex: ["No ", { target: me lo }, " dice."]
+          tr: { en: "He doesn't tell me." }
+        - level: B1
+          point: { en: Position, es: Posición }
+          rule:
+            en: "both attached to an infinitive or a gerund, or both before the phrase"
+            es: "los dos unidos al infinitivo o al gerundio, o los dos delante"
+          ex: { equivalence: [["Voy a ", { target: dártelo }], [{ target: Te lo }, " voy a dar"]] }
+          tr: { en: "I'm going to give it to you." }
+        - level: B1
+          point: { en: Command, es: Imperativo }
+          rule:
+            en: "both attached to an affirmative command"
+            es: "los dos unidos al imperativo afirmativo"
+          ex: [{ target: Dámelo }, "."]
+          tr: { en: Give it to me. }
+        - level: B1
+          point: { en: Accent, es: Tilde }
+          rule:
+            en: "the verb keeps its stress, so it takes a written accent"
+            es: "el verbo mantiene su acento, así que lleva tilde"
+          ex: { examples: [{ target: dártelo }, { target: dándoselo }] }
+          tr: { en: { examples: [to give it to you, giving it to him] } }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: le }, " never stands before ", { term: lo }, ": it is always ", { term: se lo }]
+            es: [{ term: le }, " nunca va delante de ", { term: lo }, ": siempre es ", { term: se lo }]
+          ex: [{ target: Se lo }, " explico."]
+          tr: { en: "I'll explain it to him." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "A sentence can carry two object pronouns: the indirect one, to whom, and the direct one, what."
+              es: "Una frase puede llevar dos pronombres de objeto: el indirecto, a quién, y el directo, qué."
+            ex: ["¿El libro? ", { target: Se lo }, " doy a Ana."]
+            tr: { en: "The book? I'm giving it to Ana." }
+          - type: note
+            level: A2
+            text:
+              en: ["Each pronoun alone: ", { link: "Direct Object Pronouns", to: es.pronombres.objeto-directo }, " and ", { link: "Indirect Object Pronouns", to: es.pronombres.objeto-indirecto }, "."]
+              es: ["Cada pronombre por separado: ", { link: "El objeto directo", to: es.pronombres.objeto-directo }, " y ", { link: "El objeto indirecto", to: es.pronombres.objeto-indirecto }, "."]
+
+  - title: { en: "Form: the pairs", es: "Forma: las combinaciones" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: indirect, label: { en: Indirect object, es: Objeto indirecto } }
+          - { key: sg, label: { alternatives: [lo, la] } }
+          - { key: pl, label: { alternatives: [los, las] } }
+        rows:
+          - { level: B1, features: { person: 1, number: sg }, indirect: me, sg: { alternatives: [{ target: me lo }, { target: me la }] }, pl: { alternatives: [{ target: me los }, { target: me las }] } }
+          - { level: B1, features: { person: 2, number: sg, politeness: infm }, indirect: te, sg: { alternatives: [{ target: te lo }, { target: te la }] }, pl: { alternatives: [{ target: te los }, { target: te las }] } }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], indirect: le, sg: { alternatives: [{ target: se lo }, { target: se la }] }, pl: { alternatives: [{ target: se los }, { target: se las }] } }
+          - { level: B1, features: { person: 1, number: pl }, indirect: nos, sg: { alternatives: [{ target: nos lo }, { target: nos la }] }, pl: { alternatives: [{ target: nos los }, { target: nos las }] } }
+          - { level: B1, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, indirect: os, sg: { alternatives: [{ target: os lo }, { target: os la }] }, pl: { alternatives: [{ target: os los }, { target: os las }] } }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], indirect: les, sg: { alternatives: [{ target: se lo }, { target: se la }] }, pl: { alternatives: [{ target: se los }, { target: se las }] } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: "The indirect pronoun always comes first:"
+              es: "El pronombre indirecto siempre va primero:"
+            ex: ["¿", { target: Me lo }, " prestas?"]
+            tr: { en: Will you lend it to me? }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: le }, " and ", { term: les }, " become ", { term: se }, " before ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
+              es: [{ term: le }, " y ", { term: les }, " se convierten en ", { term: se }, " delante de ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
+            ex: ["¿El regalo? ", { target: Se lo }, " doy a mi madre."]
+            tr: { en: "The present? I'm giving it to my mother." }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: se }, " can stand for ", { term: le }, " or ", { term: les }, ", so ", { pattern: [{ term: a }, { slot: person }] }, " often follows to make it clear:"]
+              es: [{ term: se }, " puede valer por ", { term: le }, " o por ", { term: les }, ", así que a menudo sigue ", { pattern: [{ term: a }, { slot: person }] }, " para aclararlo:"]
+            ex: { examples: [[{ target: Se lo }, " digo ", { target: a ella }, "."], [{ target: Se lo }, " digo ", { target: a ellos }, "."]] }
+            tr: { en: { examples: ["I'll tell her.", "I'll tell them."] } }
+          - type: note
+            level: B1
+            variety: es-419
+            text:
+              en: ["In informal Latin American speech, a plural receiver often shows on the second pronoun: ", { term: se los dije }, " for “I told them”. Careful writing keeps ", { term: se lo dije }, "."]
+              es: ["En el habla informal de Latinoamérica, el plural del receptor suele marcarse en el segundo pronombre: ", { term: se los dije }, " por “se lo dije a ellos”. La escritura cuidada mantiene ", { term: se lo dije }, "."]
+
+  - title: { en: Where the pronouns go, es: Dónde van los pronombres }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Position, es: Posición } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: B1, use: { en: "Both before a conjugated verb, side by side", es: "Los dos delante del verbo conjugado, juntos" }, ex: [{ target: Te lo }, " traigo mañana."], tr: { en: "I'll bring it to you tomorrow." } }
+          - { level: A2, use: { en: [{ term: "no" }, " before both"], es: [{ term: "no" }, " delante de los dos"] }, ex: ["No ", { target: se lo }, " digo."], tr: { en: "I'm not telling him." } }
+          - { level: B1, use: { en: "With an infinitive: both attached, or both before the phrase", es: "Con infinitivo: los dos unidos, o los dos delante" }, ex: { equivalence: [["Voy a ", { target: dártelo }], [{ target: Te lo }, " voy a dar"]] }, tr: { en: "I'm going to give it to you." } }
+          - { level: B1, use: { en: "With a gerund: both attached, or both before the phrase", es: "Con gerundio: los dos unidos, o los dos delante" }, ex: { equivalence: [["Estoy ", { target: explicándoselo }], [{ target: Se lo }, " estoy explicando"]] }, tr: { en: "I'm explaining it to him." } }
+          - { level: B1, use: { en: Both attached to an affirmative command, es: Los dos unidos al imperativo afirmativo }, ex: { examples: [[{ target: Dámelo }, "."], [{ target: Dígaselo }, " a su hija."]] }, tr: { en: { examples: [Give it to me., Tell your daughter.] } } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: "The two pronouns stay together: both before the verb, or both attached to it."
+              es: "Los dos pronombres van juntos: los dos delante del verbo, o los dos unidos a él."
+          - type: rule
+            level: B1
+            text:
+              en: "A verb with two pronouns attached keeps its stress, so it takes a written accent:"
+              es: "El verbo con dos pronombres unidos mantiene su acento, así que lleva tilde:"
+            ex: { examples: [{ target: dártelo }, { target: dándoselo }, { target: dígamelo }] }
+            tr: { en: { examples: [to give it to you, giving it to him, tell it to me] } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Le lo doy., right: [{ target: Se lo }, " doy."], rule: { en: [{ term: le }, " becomes ", { term: se }, " before ", { term: lo }], es: [{ term: le }, " se convierte en ", { term: se }, " delante de ", { term: lo }] } }
+          - { level: B1, wrong: Lo te doy., right: [{ target: Te lo }, " doy."], rule: { en: "the indirect pronoun comes first", es: "el pronombre indirecto va primero" } }
+          - { level: B1, wrong: Voy a te lo dar., right: ["Voy a ", { target: dártelo }, "."], rule: { en: "both pronouns join the infinitive, or both go before the phrase", es: "los dos pronombres se unen al infinitivo, o los dos van delante" } }
+          - { level: B1, wrong: Te voy a darlo., right: [{ target: Te lo }, " voy a dar."], rule: { en: "the two pronouns stay together", es: "los dos pronombres van juntos" } }
+          - { level: B1, wrong: Damelo., right: [{ target: Dámelo }, "."], rule: { en: "the command keeps its stress: written accent", es: "el imperativo mantiene su acento: lleva tilde" } }
+          - { level: B1, speakers: [en], wrong: Lo doy a él., right: [{ target: Se lo }, " doy a él."], rule: { en: ["“give it to him” takes both pronouns: ", { term: se lo }] } }

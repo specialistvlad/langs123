@@ -1,0 +1,286 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.adjetivo-adverbio.comparativos-superlativos
+lang: es
+kind: grammar
+tags: [adjectives, comparison, comparatives, superlatives]
+concepts: [comparison]
+related: [es.adjetivo-adverbio.adjetivo-concordancia, es.adjetivo-adverbio.adverbios, es.sustantivo-determinantes.cuantificadores]
+status: { en: draft, es: draft }
+translated: { es: "3639f3 57ba82 18c8d4 bf16b0 f7f70f 457473 561cc1 65d425" }
+
+title: { en: Comparatives and Superlatives, es: Comparativos y superlativos }
+summary:
+  lead:
+    en: ["Comparatives and superlatives compare people and things: ", { term: más alto que }, ", ", { term: tan alto como }, ", ", { term: el más alto }, ", ", { term: altísimo }, "."]
+    es: ["Los comparativos y los superlativos comparan personas y cosas: ", { term: más alto que }, ", ", { term: tan alto como }, ", ", { term: el más alto }, ", ", { term: altísimo }, "."]
+  rule:
+    en: ["Comparisons of more or less take ", { term: que }, ", and comparisons of equality take ", { term: como }, ":"]
+    es: ["La comparación de superioridad o inferioridad lleva ", { term: que }, ", y la de igualdad, ", { term: como }, ":"]
+  ex: { examples: [["Ana es ", { target: más alta que }, " yo."], ["Ana es ", { target: tan alta como }, " yo."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { pattern: [más, { slot: adjective }, que] }
+          rule: { en: "more … than", es: superioridad }
+          ex: ["El avión es ", { target: más rápido que }, " el tren."]
+          tr: { en: The plane is faster than the train. }
+        - level: A2
+          point: { pattern: [menos, { slot: adjective }, que] }
+          rule: { en: "less … than", es: inferioridad }
+          ex: ["La fruta es ", { target: menos cara que }, " la carne."]
+          tr: { en: Fruit is less expensive than meat. }
+        - level: A2
+          point: { pattern: [tan, { slot: adjective }, como] }
+          rule: { en: "as … as", es: igualdad }
+          ex: ["Mi casa es ", { target: tan grande como }, " la tuya."]
+          tr: { en: My house is as big as yours. }
+        - level: A2
+          point: { alternatives: [mejor, peor] }
+          rule:
+            en: [{ term: mejor }, " and ", { term: peor }, " compare ", { term: bueno }, " and ", { term: malo }]
+            es: [{ term: mejor }, " y ", { term: peor }, " comparan ", { term: bueno }, " y ", { term: malo }]
+          ex: ["Este café es ", { target: mejor que }, " ese."]
+          tr: { en: This coffee is better than that one. }
+        - level: A2
+          point: { alternatives: [mayor, menor] }
+          rule:
+            en: "older and younger, for people"
+            es: "más edad y menos edad, para personas"
+          ex: ["Mi hermano es ", { target: mayor que }, " yo."]
+          tr: { en: My brother is older than me. }
+        - level: B1
+          point: { en: Superlative, es: Superlativo }
+          rule:
+            en: [{ pattern: [{ alternatives: [el, la, los, las] }, más, { slot: adjective }, de] }, " the group"]
+            es: [{ pattern: [{ alternatives: [el, la, los, las] }, más, { slot: adjective }, de] }, " el grupo"]
+          ex: ["Es ", { target: la más alta de }, " la clase."]
+          tr: { en: "She's the tallest in the class." }
+        - level: B1
+          point: -ísimo
+          rule:
+            en: "very, very: drop the last vowel and add -ísimo"
+            es: "muy, muy: se quita la última vocal y se añade -ísimo"
+          ex: ["La comida está ", { target: buenísima }, "."]
+          tr: { en: The food is really good. }
+        - level: B1
+          point: más de
+          rule:
+            en: [{ term: más de }, " and ", { term: menos de }, " before a number"]
+            es: [{ term: más de }, " y ", { term: menos de }, " delante de un número"]
+          ex: ["Hay ", { target: más de }, " cien personas."]
+          tr: { en: There are more than a hundred people. }
+        - level: A2
+          point: { pattern: [{ alternatives: [tanto, tanta, tantos, tantas] }, { slot: noun }, como] }
+          rule:
+            en: "as much or as many: it agrees with the noun"
+            es: "igualdad con un nombre: concuerda con él"
+          ex: ["No tengo ", { target: tantos }, " libros ", { target: como }, " tú."]
+          tr: { en: "I don't have as many books as you." }
+        - level: A2
+          point: { pattern: [{ slot: verb }, tanto como] }
+          rule:
+            en: [{ term: tanto }, " after a verb never changes"]
+            es: [{ term: tanto }, " detrás de un verbo no cambia"]
+          ex: ["Trabajas ", { target: tanto como }, " yo."]
+          tr: { en: You work as much as I do. }
+        - level: B1
+          point: { pattern: [igual de, { slot: adjective }, que] }
+          rule: { en: just as, es: igualdad }
+          ex: ["Es ", { target: igual de alto que }, " su padre."]
+          tr: { en: "He's just as tall as his father." }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["after ", { term: que }, " and ", { term: como }, ", the subject pronoun"]
+            es: ["detrás de ", { term: que }, " y ", { term: como }, ", el pronombre sujeto"]
+          ex: ["Eres más alto que ", { target: yo }, "."]
+          tr: { en: You are taller than me. }
+
+sections:
+  - title: { en: "Form: comparatives", es: "Forma: los comparativos" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: comparison, label: { en: Comparison, es: Comparación } }
+          - { key: pattern, label: { en: Pattern, es: Estructura } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, comparison: { en: more, es: superioridad }, pattern: { pattern: [más, { slot: adjective }, que] }, ex: ["El avión es ", { target: más rápido que }, " el tren."], tr: { en: The plane is faster than the train. } }
+          - { level: A2, comparison: { en: less, es: inferioridad }, pattern: { pattern: [menos, { slot: adjective }, que] }, ex: ["La fruta es ", { target: menos cara que }, " la carne."], tr: { en: Fruit is less expensive than meat. } }
+          - { level: A2, comparison: { en: equal, es: igualdad }, pattern: { pattern: [tan, { slot: adjective }, como] }, ex: ["Ana es ", { target: tan alta como }, " su madre."], tr: { en: Ana is as tall as her mother. } }
+          - { level: A2, comparison: { en: not equal, es: desigualdad }, pattern: { pattern: ["no", { slot: verb }, tan, { slot: adjective }, como] }, ex: ["El tren ", { target: no es tan rápido como }, " el avión."], tr: { en: "The train isn't as fast as the plane." } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "The adjective agrees with the first noun:"
+              es: "El adjetivo concuerda con el primer nombre:"
+            ex: ["Las montañas son ", { target: más altas }, " que los edificios."]
+            tr: { en: The mountains are higher than the buildings. }
+          - type: rule
+            level: A2
+            text:
+              en: ["After ", { term: que }, " and ", { term: como }, ", a pronoun takes its subject form:"]
+              es: ["Detrás de ", { term: que }, " y ", { term: como }, ", el pronombre va en su forma de sujeto:"]
+            ex: { examples: [["Eres más alto que ", { target: yo }, "."], ["Canto tan mal como ", { target: tú }, "."]] }
+            tr: { en: { examples: [You are taller than me., I sing as badly as you.] } }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: más }, ", ", { term: menos }, " and ", { term: tan }, " also go before adverbs:"]
+              es: [{ term: más }, ", ", { term: menos }, " y ", { term: tan }, " también van delante de adverbios:"]
+            ex: ["Ana habla ", { target: más despacio que }, " Luis."]
+            tr: { en: Ana speaks more slowly than Luis. }
+          - type: rule
+            level: B1
+            text:
+              en: ["Before a number, ", { term: más de }, " and ", { term: menos de }, " replace ", { term: más que }, ":"]
+              es: ["Delante de un número, ", { term: más de }, " y ", { term: menos de }, " sustituyen a ", { term: más que }, ":"]
+            ex: ["Hay ", { target: más de }, " cien personas."]
+            tr: { en: There are more than a hundred people. }
+
+  - title: { en: "Form: irregular", es: "Forma: los irregulares" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: adjective, label: { en: Adjective, es: Adjetivo }, features: { degree: pos } }
+          - { key: comparative, label: { en: Comparative, es: Comparativo }, features: { degree: cmpr } }
+          - { key: superlative, label: { en: Superlative, es: Superlativo }, features: { degree: sprl } }
+        rows:
+          - { level: A2, adjective: bueno, comparative: { target: mejor }, superlative: ["el ", { target: mejor }] }
+          - { level: A2, adjective: malo, comparative: { target: peor }, superlative: ["el ", { target: peor }] }
+          - { level: A2, adjective: { en: [{ term: grande }, ", for age"], es: [{ term: grande }, ", para la edad"] }, comparative: { target: mayor }, superlative: ["el ", { target: mayor }] }
+          - { level: A2, adjective: { en: [{ term: pequeño }, ", for age"], es: [{ term: pequeño }, ", para la edad"] }, comparative: { target: menor }, superlative: ["el ", { target: menor }] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: mejor }, " and ", { term: peor }, " already mean more good and more bad:"]
+              es: [{ term: mejor }, " y ", { term: peor }, " ya significan más bueno y más malo:"]
+            ex: ["Tu idea es ", { target: mejor }, " que la mía."]
+            tr: { en: Your idea is better than mine. }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: mayor }, " and ", { term: menor }, " compare the age of people; ", { term: más grande }, " compares size:"]
+              es: [{ term: mayor }, " y ", { term: menor }, " comparan la edad de las personas; ", { term: más grande }, " compara el tamaño:"]
+            ex: { examples: [["Mi hermana es ", { target: menor }, " que yo."], ["Mi casa es ", { target: más grande }, " que la tuya."]] }
+            tr: { en: { examples: [My sister is younger than me., My house is bigger than yours.] } }
+          - type: rule
+            level: A2
+            text:
+              en: "These forms are the same for both genders and add -es in the plural:"
+              es: "Estas formas son iguales para los dos géneros y añaden -es en plural:"
+            ex: ["Son mis hermanas ", { target: mayores }, "."]
+            tr: { en: They are my older sisters. }
+
+  - title: { en: Superlatives, es: Los superlativos }
+    role: form
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["The superlative is ", { pattern: [{ alternatives: [el, la, los, las] }, { alternatives: [más, menos] }, { slot: adjective }] }, ":"]
+              es: ["El superlativo es ", { pattern: [{ alternatives: [el, la, los, las] }, { alternatives: [más, menos] }, { slot: adjective }] }, ":"]
+            ex: ["Es ", { target: la más alta }, " de la clase."]
+            tr: { en: "She's the tallest in the class." }
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: de }, " names the group, where English uses in or of:"]
+              es: [{ term: de }, " introduce el grupo:"]
+            ex: ["Es el río más largo ", { target: del }, " mundo."]
+            tr: { en: "It's the longest river in the world." }
+          - type: rule
+            level: B1
+            text:
+              en: ["The noun goes between the article and ", { term: más }, ":"]
+              es: ["El nombre va entre el artículo y ", { term: más }, ":"]
+            ex: ["Es ", { target: la ciudad más grande }, " del país."]
+            tr: { en: "It's the biggest city in the country." }
+          - type: rule
+            level: B1
+            text:
+              en: [{ alternatives: [{ term: el mejor }, { term: el peor }, { term: el mayor }, { term: el menor }] }, " take no ", { term: más }, ":"]
+              es: [{ alternatives: [{ term: el mejor }, { term: el peor }, { term: el mayor }, { term: el menor }] }, " no llevan ", { term: más }, ":"]
+            ex: ["Es ", { target: el mejor }, " restaurante de la ciudad."]
+            tr: { en: "It's the best restaurant in the city." }
+
+  - title: { en: "Very, very: -ísimo", es: "Muy, muy: -ísimo" }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["To say very, very, drop the last vowel and add ", { term: -ísimo }, "; it agrees like any adjective:"]
+              es: ["Para decir muy, muy, se quita la última vocal y se añade ", { term: -ísimo }, "; concuerda como cualquier adjetivo:"]
+            ex: { examples: [["un libro ", { target: carísimo }], ["una película ", { target: buenísima }]] }
+            tr: { en: { examples: [a really expensive book, a really good film] } }
+          - type: rule
+            level: B1
+            text:
+              en: ["It says the same as ", { term: muy }, ", with more force:"]
+              es: ["Dice lo mismo que ", { term: muy }, ", con más fuerza:"]
+            ex: { equivalence: [muy caro, { target: carísimo }] }
+          - type: rule
+            level: B1
+            text:
+              en: ["After a consonant, ", { term: -ísimo }, " joins the whole word:"]
+              es: ["Detrás de consonante, ", { term: -ísimo }, " se une a la palabra entera:"]
+            ex: { mapping: [fácil, { target: facilísimo }] }
+          - type: rule
+            level: B1
+            text:
+              en: "The spelling changes to keep the sound:"
+              es: "La ortografía cambia para mantener el sonido:"
+            ex: { examples: [{ mapping: [rico, { target: riquísimo }] }, { mapping: [largo, { target: larguísimo }] }, { mapping: [feliz, { target: felicísimo }] }] }
+
+  - title: { en: "Use: nouns and verbs", es: "Uso: con nombres y verbos" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: pattern, label: { en: Pattern, es: Estructura } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: "a noun, more or less", es: "un nombre, más o menos" }, pattern: { pattern: [{ alternatives: [más, menos] }, { slot: noun }, que] }, ex: ["Tengo ", { target: más }, " trabajo ", { target: que }, " tú."], tr: { en: I have more work than you. } }
+          - { level: A2, use: { en: "a noun, as much or as many", es: "un nombre, igualdad" }, pattern: { pattern: [{ alternatives: [tanto, tanta, tantos, tantas] }, { slot: noun }, como] }, ex: ["No tengo ", { target: tantos }, " amigos ", { target: como }, " tú."], tr: { en: "I don't have as many friends as you." } }
+          - { level: A2, use: { en: "a verb", es: "un verbo" }, pattern: { pattern: [{ slot: verb }, { alternatives: [más que, menos que, tanto como] }] }, ex: ["Trabajas ", { target: tanto como }, " yo."], tr: { en: You work as much as I do. } }
+          - { level: B1, use: { en: "an adjective, just as", es: "un adjetivo, igualdad" }, pattern: { pattern: [igual de, { slot: adjective }, que] }, ex: ["Es ", { target: igual de alto que }, " su padre."], tr: { en: "He's just as tall as his father." } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: tanto }, " before a noun agrees with it; after a verb it stays ", { term: tanto }, "."]
+              es: [{ term: tanto }, " delante de un nombre concuerda con él; detrás de un verbo no cambia."]
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Es más alto como yo., right: ["Es más alto ", { target: que }, " yo."], rule: { en: [{ term: más }, " takes ", { term: que }], es: [{ term: más }, " lleva ", { term: que }] } }
+          - { level: A2, wrong: Es tan alto que yo., right: ["Es tan alto ", { target: como }, " yo."], rule: { en: [{ term: tan }, " takes ", { term: como }], es: [{ term: tan }, " lleva ", { term: como }] } }
+          - { level: A2, wrong: Este café es más bueno., right: ["Este café es ", { target: mejor }, "."], rule: { en: [{ term: bueno }, " compares as ", { term: mejor }], es: [{ term: bueno }, " se compara con ", { term: mejor }] } }
+          - { level: B1, wrong: Es el más alto en la clase., right: ["Es el más alto ", { target: de }, " la clase."], rule: { en: ["the group after a superlative takes ", { term: de }], es: ["el grupo detrás de un superlativo lleva ", { term: de }] } }
+          - { level: B1, wrong: Tengo más que veinte libros., right: ["Tengo ", { target: más de }, " veinte libros."], rule: { en: ["before a number, ", { term: más de }], es: ["delante de un número, ", { term: más de }] } }
+          - { level: B1, wrong: Es muy carísimo., right: ["Es ", { target: carísimo }, "."], rule: { en: [{ term: -ísimo }, " already means very"], es: [{ term: -ísimo }, " ya significa muy"] } }
+          - { level: A2, speakers: [en], wrong: Es más alto que mí., right: ["Es más alto que ", { target: yo }, "."], rule: { en: ["after ", { term: que }, ", the subject pronoun, unlike me in English"] } }
+          - { level: A2, wrong: Tengo tanto amigos como tú., right: ["Tengo ", { target: tantos }, " amigos como tú."], rule: { en: [{ term: tanto }, " agrees with the noun"], es: [{ term: tanto }, " concuerda con el nombre"] } }

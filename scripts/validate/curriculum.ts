@@ -1,9 +1,32 @@
 // The study path of a language being learned: per level, lowest first, the topics to study at that
 // level. A step is a topic at a level, so a written topic has a step at every level its leaves hold
 // and at no other; a planned topic's steps sit inside its planned range.
-import { type CurriculumLanguage, type Level, lv, type TopicRef } from "../lib.ts";
+import { SOURCE } from "../fingerprint.ts";
+import { type CurriculumLanguage, type Explain, explainOf, type Level, lv, type TopicRef } from "../lib.ts";
 import { contains, refRange, topicLevels } from "../levels.ts";
 import type { Report } from "./report.ts";
+
+// A language being learned: its explanation languages start with the source, its varieties are its own,
+// and its section and topic titles carry exactly its explanation languages.
+export function checkLanguage(language: CurriculumLanguage, report: Report): void {
+  const where = "curriculum.yaml";
+  const explain = explainOf(language);
+  if (explain[0] !== SOURCE) report(where, `${language.code}: explain starts with ${SOURCE}, the source the translations follow`);
+  for (const v of language.varieties ?? []) {
+    if (!v.startsWith(`${language.code}-`)) report(where, `${language.code}: variety ${v} belongs to another language`);
+  }
+  const titles = (title: Partial<Record<Explain, string>> | undefined, what: string): void => {
+    if (title === undefined) return;
+    for (const l of explain) if (title[l] === undefined) report(where, `${what} has no "${l}" title`);
+    for (const l of Object.keys(title)) {
+      if (!(explain as string[]).includes(l)) report(where, `${what} has a "${l}" title, which ${language.code} is not written for`);
+    }
+  };
+  for (const section of language.sections) {
+    titles(section.title, `${language.code} section ${section.dir}`);
+    for (const topic of section.topics) titles(topic.title, `${language.code} topic ${section.dir}/${topic.slug}`);
+  }
+}
 
 const held = (ref: TopicRef): Level[] => (ref.topic ? topicLevels(ref.topic) : []);
 

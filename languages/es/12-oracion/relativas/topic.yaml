@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.relativas
+lang: es
+kind: grammar
+tags: [relative-clauses, que, quien, sentence]
+concepts: [relative-clauses]
+related: [es.oracion.conectores, es.oracion.preguntas-negacion, es.pronombres.objeto-directo, es.preposiciones.preposiciones-basicas]
+status: { en: draft, es: draft }
+translated: { es: "8b8225 315456 c8916d 02bc93 192f59 8b83a0 ff6e53 c9fefe" }
+
+title: { en: Relative Clauses, es: Las oraciones de relativo }
+summary:
+  lead:
+    en: ["A relative clause after ", { term: que }, " describes a noun: ", { term: la profesora que tengo }, "; ", { term: quien }, " follows a preposition for people."]
+    es: ["Una oración de relativo con ", { term: que }, " describe un sustantivo: ", { term: la profesora que tengo }, "; ", { term: quien }, " sigue a una preposición para personas."]
+  rule:
+    en: ["The word ", { term: que }, " always joins the clause to its noun and never drops:"]
+    es: ["La palabra ", { term: que }, " siempre une la oración a su sustantivo y nunca se omite:"]
+  ex: ["El libro ", { target: que }, " leo es muy bueno."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Subject, es: Sujeto }
+          rule:
+            en: [{ term: que }, " is the subject of the clause"]
+            es: [{ term: que }, " es el sujeto de la oración"]
+          ex: ["Tengo una amiga ", { target: que }, " vive en Lima."]
+          tr: { en: "I've got a friend who lives in Lima." }
+        - level: A1
+          point: { en: Object, es: Objeto }
+          rule:
+            en: [{ term: que }, " is the object of the clause"]
+            es: [{ term: que }, " es el objeto de la oración"]
+          ex: ["La profesora ", { target: que }, " tengo es muy buena."]
+          tr: { en: "The teacher I've got is very good." }
+        - level: A2
+          point: { en: Tense, es: Tiempo }
+          rule:
+            en: "the clause takes the tense it needs"
+            es: "la oración lleva el tiempo que necesita"
+          ex: ["El libro ", { target: que }, " compré ayer es muy bueno."]
+          tr: { en: "The book I bought yesterday is very good." }
+        - level: B1
+          point: { en: People, es: Personas }
+          rule:
+            en: ["after a preposition, ", { term: quien }, " for people"]
+            es: ["detrás de una preposición, ", { term: quien }, " para personas"]
+          ex: ["El chico ", { target: con quien }, " trabajo es de Chile."]
+          tr: { en: "The boy I work with is from Chile." }
+        - level: B1
+          point: { en: Places, es: Lugares }
+          rule:
+            en: [{ pattern: [{ alternatives: [aquí, allí] }, es donde] }, ": pointing to a place"]
+            es: [{ pattern: [{ alternatives: [aquí, allí] }, es donde] }, ": para señalar un lugar"]
+          ex: ["Allí es ", { target: donde }, " vivo."]
+          tr: { en: "That's where I live." }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: que }, " never drops"]
+            es: [{ term: que }, " nunca se omite"]
+          ex: ["El libro ", { target: que }, " leo es interesante."]
+          tr: { en: "The book I'm reading is interesting." }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["right after a noun, people take ", { term: que }, ", not ", { term: quien }]
+            es: ["justo detrás de un sustantivo, las personas llevan ", { term: que }, ", no ", { term: quien }]
+          ex: ["El médico ", { target: que }, " vino ayer es muy simpático."]
+          tr: { en: "The doctor who came yesterday is very nice." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "A relative clause describes a noun and comes right after it."
+              es: "Una oración de relativo describe un sustantivo y va justo detrás de él."
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: que }, " serves for people and things, and never changes:"]
+              es: [{ term: que }, " sirve para personas y cosas, y no cambia nunca:"]
+            ex: { examples: [["la amiga ", { target: que }, " viene conmigo"], ["un libro ", { target: que }, " lees"]] }
+            tr: { en: { examples: ["the friend who's coming with me", "a book you're reading"] } }
+          - type: note
+            level: A1
+            readers: [en]
+            text:
+              en: ["English can leave out ", { l1: that }, "; Spanish always says ", { term: que }, "."]
+
+  - title: { en: "Form: que", es: "Forma: que" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: role, label: { en: Role, es: Función } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, role: { en: Subject, es: Sujeto }, ex: ["Vivo en una casa ", { target: que }, " tiene tres habitaciones."], tr: { en: "I live in a house that has three bedrooms." } }
+          - { level: A1, role: { en: Object, es: Objeto }, ex: ["La profesora ", { target: que }, " tengo es muy buena."], tr: { en: "The teacher I've got is very good." } }
+          - { level: A2, role: { en: With the past, es: Con el pasado }, ex: ["El libro ", { target: que }, " compré ayer es muy bueno."], tr: { en: "The book I bought yesterday is very good." } }
+          - { level: A2, role: { en: With the future, es: Con el futuro }, ex: ["La película ", { target: que }, " vamos a ver es mexicana."], tr: { en: "The film we're going to see is Mexican." } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: que }, " keeps the same form for every noun: ", { alternatives: [{ term: la casa que }, { term: los libros que }] }, "."]
+              es: [{ term: que }, " tiene la misma forma con todos los sustantivos: ", { alternatives: [{ term: la casa que }, { term: los libros que }] }, "."]
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: que }, " already stands for the noun, so no pronoun repeats it:"]
+              es: [{ term: que }, " ya representa al sustantivo, así que ningún pronombre lo repite:"]
+            ex: ["El libro ", { target: que }, " compré es muy bueno."]
+            tr: { en: "The book I bought is very good." }
+
+  - title: { en: "Form: quien", es: "Forma: quien" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern, es: Estructura } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: B1, pattern: { pattern: [{ slot: { en: preposition, es: preposición } }, quien] }, ex: ["El chico ", { target: con quien }, " trabajo es de Chile."], tr: { en: "The boy I work with is from Chile." } }
+          - { level: B1, pattern: { pattern: [a, quien] }, ex: ["El chico ", { target: a quien }, " saludaste es mi primo."], tr: { en: "The boy you said hello to is my cousin." } }
+          - { level: B1, pattern: { pattern: [{ slot: { en: preposition, es: preposición } }, quienes] }, ex: ["Los amigos ", { target: con quienes }, " viajo son muy divertidos."], tr: { en: "The friends I travel with are great fun." } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: quien }, " refers to people only, and its plural is ", { term: quienes }, "."]
+              es: [{ term: quien }, " se refiere solo a personas, y su plural es ", { term: quienes }, "."]
+          - type: rule
+            level: B1
+            text:
+              en: ["Right after a noun, people take ", { term: que }, ", not ", { term: quien }, ":"]
+              es: ["Justo detrás de un sustantivo, las personas llevan ", { term: que }, ", no ", { term: quien }, ":"]
+            ex: ["El médico ", { target: que }, " vino ayer es muy simpático."]
+            tr: { en: "The doctor who came yesterday is very nice." }
+
+  - title: { en: "Form: donde", es: "Forma: donde" }
+    role: form
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: donde }, " points to a place, often after ", { alternatives: [{ term: aquí es }, { term: allí es }] }, ":"]
+              es: [{ term: donde }, " señala un lugar, a menudo detrás de ", { alternatives: [{ term: aquí es }, { term: allí es }] }, ":"]
+            ex: { examples: [["Aquí es ", { target: donde }, " trabajo."], ["Allí es ", { target: donde }, " voy."]] }
+            tr: { en: { examples: ["This is where I work.", "That's where I'm going."] } }
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: donde }, " that joins has no accent; ", { term: dónde }, " that asks has one."]
+              es: [{ term: donde }, " que une no lleva tilde; ", { term: dónde }, " que pregunta, sí."]
+
+  - title: { en: "Compare: que and quien", es: "Comparación: que y quien" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: que, label: que }
+          - { key: quien, label: quien }
+        rows:
+          - { level: B1, que: { en: "people and things, right after the noun", es: "personas y cosas, justo detrás del sustantivo" }, quien: { en: "people only, after a preposition", es: "solo personas, detrás de una preposición" } }
+          - level: B1
+            que: { ex: ["el chico ", { target: que }, " trabaja aquí"], tr: { en: "the boy who works here" } }
+            quien: { ex: ["el chico ", { target: con quien }, " trabajo"], tr: { en: "the boy I work with" } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, speakers: [en], wrong: "El libro leo es interesante.", right: ["El libro ", { target: que }, " leo es interesante."], rule: { en: [{ term: que }, " never drops"] } }
+          - { level: A2, wrong: "El libro que lo compré es muy bueno.", right: ["El libro ", { target: que }, " compré es muy bueno."], rule: { en: [{ term: que }, " already stands for the noun"], es: [{ term: que }, " ya representa al sustantivo"] } }
+          - { level: B1, wrong: "La profesora quien tengo es muy buena.", right: ["La profesora ", { target: que }, " tengo es muy buena."], rule: { en: ["right after a noun, ", { term: que }], es: ["justo detrás de un sustantivo, ", { term: que }] } }
+          - { level: B1, wrong: "El chico con que trabajo es de Chile.", right: ["El chico ", { target: con quien }, " trabajo es de Chile."], rule: { en: ["after a preposition, a person takes ", { term: quien }, " or ", { term: el que }], es: ["detrás de una preposición, una persona lleva ", { term: quien }, " o ", { term: el que }] } }
+          - { level: B1, wrong: "Aquí es dónde trabajo.", right: ["Aquí es ", { target: donde }, " trabajo."], rule: { en: [{ term: donde }, " that joins has no accent"], es: [{ term: donde }, " que une no lleva tilde"] } }

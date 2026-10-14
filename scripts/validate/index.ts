@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { type Concepts, CONTENT, loadConcepts, loadCurriculum, loadTopics, readYaml, ROOT, type TopicRef } from "../lib.ts";
 import { parseRange } from "../levels.ts";
 import { checkConfig } from "./config.ts";
-import { checkPath } from "./curriculum.ts";
+import { checkLanguage, checkPath } from "./curriculum.ts";
 import { type Problem, type Report, schemaErrors } from "./report.ts";
 import { checkTopic } from "./topic.ts";
 
@@ -44,7 +44,12 @@ export async function validate(): Promise<Problem[]> {
   }
 
   for (const ref of refs) await checkRef(ref, ids, concepts, report);
-  if (curriculumValid) for (const language of curriculum.languages) checkPath(language, refs, report);
+  if (curriculumValid) {
+    for (const language of curriculum.languages) {
+      checkLanguage(language, report);
+      checkPath(language, refs, report);
+    }
+  }
   return problems;
 }
 

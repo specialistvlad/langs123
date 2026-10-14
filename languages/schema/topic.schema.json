@@ -52,21 +52,9 @@
       }
     },
     "status": {
+      "description": "Per explanation language of the topic's language (curriculum.yaml), draft or approved.",
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "en",
-        "uk",
-        "es",
-        "pt",
-        "fr",
-        "de",
-        "it",
-        "pl",
-        "tr",
-        "id",
-        "vi"
-      ],
       "properties": {
         "en": {
           "$ref": "#/definitions/status"
@@ -101,7 +89,8 @@
         "vi": {
           "$ref": "#/definitions/status"
         }
-      }
+      },
+      "minProperties": 1
     },
     "translated": {
       "description": "Per explanation language but the source, the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section (npm run translated).",
@@ -180,7 +169,7 @@
     },
     "topicId": {
       "type": "string",
-      "pattern": "^en\\.[a-z0-9-]+\\.[a-z0-9-]+$"
+      "pattern": "^[a-z]{2}\\.[a-z0-9-]+\\.[a-z0-9-]+$"
     },
     "readers": {
       "description": "Explanation languages an element serves; all when absent.",
@@ -192,10 +181,12 @@
       "uniqueItems": true
     },
     "variety": {
-      "description": "A variety of the language being learned, as a BCP 47 tag; en-GB when absent.",
+      "description": "A variety of the language being learned, as a BCP 47 tag. English: en-GB when absent. A language with varieties in curriculum.yaml: an element without one serves every variety.",
       "enum": [
         "en-GB",
-        "en-US"
+        "en-US",
+        "es-419",
+        "es-ES"
       ]
     },
     "features": {
@@ -338,7 +329,9 @@
               "enum": [
                 "prog",
                 "prf",
-                "hab"
+                "hab",
+                "pfv",
+                "ipfv"
               ]
             },
             {
@@ -347,7 +340,9 @@
                 "enum": [
                   "prog",
                   "prf",
-                  "hab"
+                  "hab",
+                  "pfv",
+                  "ipfv"
                 ]
               },
               "minItems": 2,

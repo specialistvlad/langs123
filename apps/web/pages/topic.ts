@@ -26,7 +26,7 @@ export function topicPages(track: Track): void {
   for (const ref of written) {
     const topic = ref.topic;
     if (topic === null) continue;
-    const rctx = { ref, explain, refs: ctx.refs, link: ctx.link };
+    const rctx = { ref, explain, refs: ctx.refs, link: ctx.link, varieties: lang.varieties };
     const all = guideSections(rctx);
     const range = join(all.map((s) => s.range));
     if (range === null) continue;
@@ -39,7 +39,7 @@ export function topicPages(track: Track): void {
         const cls = s.kind === "cheatsheet" ? "part cheatsheet" : "part";
         const anchor = idOf.get(s);
         const id = anchor === undefined ? "" : ` id="${anchor}"`;
-        return `<section class="${cls}"${id}${levelAttrs(s.range)}><h2>${s.heading}${badge(s.range)}</h2>${s.html}</section>`;
+        return `<section class="${cls}"${id}${levelAttrs(s.range)}${s.varietyLevels}><h2>${s.heading}${badge(s.range)}</h2>${s.html}</section>`;
       })
       .join("\n");
 
@@ -47,7 +47,7 @@ export function topicPages(track: Track): void {
     // lists, and the next topic.
     const tocItems = all.map((s) => {
       const guide = s.kind === "cheatsheet" ? "" : ' class="guide"';
-      return `<li${guide}${levelAttrs(s.range)}><a href="#${idOf.get(s) ?? ""}"><span class="name">${s.heading}</span>${listBadge(s.range)}</a></li>`;
+      return `<li${guide}${levelAttrs(s.range)}${s.varietyLevels}><a href="#${idOf.get(s) ?? ""}"><span class="name">${s.heading}</span>${listBadge(s.range)}</a></li>`;
     });
     const rail = `<h4>${escapeHtml(t.onThisPage)}</h4><ol class="toc">${tocItems.join("")}</ol>${upNext(track, ref)}`;
     const actions = [
@@ -68,13 +68,15 @@ export function topicPages(track: Track): void {
         title: `${title} — ${trackTitle}`,
         description: plainText(textIn(summary.lead, explain), reading(explain, false)),
         path: topicUrl(explain, lang, ref),
-        alternates: alternates((e) => topicUrl(e, lang, ref)),
+        alternates: alternates((e) => topicUrl(e, lang, ref), track.explains),
         controls: controls({
           explain,
-          read: readChoices(explain, (e) => topicUrl(e, lang, ref)),
+          read: readChoices(explain, (e) => topicUrl(e, lang, ref), track.explains),
           level: true,
+          varieties: lang.varieties,
           view: true,
         }),
+        varieties: lang.varieties,
         nav: trackNav(track, ref),
         rail,
         main: `<article class="doc${range.from === range.to ? " one-level" : ""}">${pagers(track, ref, "top")}${head}${intro}${empty}<div class="sections lanes">${sections}</div>${pagers(track, ref, "bottom")}</article>`,

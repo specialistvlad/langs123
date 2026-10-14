@@ -1,5 +1,6 @@
 // Page shell, controls and interface text for the static site.
-import { EXPLAIN_CODES, type Explain, explainName, filled, LEVELS, SITE, say } from "../../scripts/lib.ts";
+import { EXPLAIN_CODES, type Explain, explainName, filled, LEVELS, SITE, say, type Variety } from "../../scripts/lib.ts";
+import { varietyName } from "../../scripts/text.ts";
 import { INFO_ICON } from "./icons.ts";
 import { escapeHtml } from "./html.ts";
 import { creditsUrl, homeUrl } from "./urls.ts";
@@ -8,6 +9,7 @@ import { creditsUrl, homeUrl } from "./urls.ts";
 const TEXT_KEYS = [
   "read",
   "level",
+  "variety",
   "view",
   "extended",
   "upTo",
@@ -83,6 +85,8 @@ export interface ControlsOptions {
   explain: Explain;
   read: Choice[];
   level?: boolean;
+  // The varieties of the language being learned the reader chooses between, the default first.
+  varieties?: Variety[] | undefined;
   view?: boolean;
 }
 
@@ -92,6 +96,12 @@ export function controls(o: ControlsOptions): string {
   const parts = o.read.length > 1 ? [languageMenu(t.read, o.read)] : [];
   if (o.level === true) {
     parts.push(seg(t.level, LEVELS.map((l) => `<button type="button" class="lvl-${l}" data-set-level="${l}">${l}</button>`).join("")));
+  }
+  if (o.varieties !== undefined) {
+    const buttons = o.varieties.map(
+      (v) => `<button type="button" data-set-variety="${v}">${escapeHtml(varietyName(v, o.explain))}</button>`,
+    );
+    parts.push(seg(t.variety, buttons.join("")));
   }
   if (o.view === true) {
     parts.push(
@@ -112,6 +122,9 @@ export interface PageOptions {
   path: string;
   // The same page in each explanation language; the home page adds x-default.
   alternates?: { lang: string; path: string }[];
+  // The varieties of the language being learned, the default first: the page shows the default's
+  // elements until the reader chooses another.
+  varieties?: Variety[] | undefined;
   controls?: string;
   nav?: string;
   rail?: string;
@@ -121,7 +134,11 @@ export interface PageOptions {
 }
 
 // Applies saved viewer preferences before first paint.
-const PREFS = `try{var d=document.documentElement,p=new URLSearchParams(location.search),s=localStorage,l=(p.get("level")||"").toUpperCase(),v=p.get("view");if(${JSON.stringify(LEVELS)}.indexOf(l)>=0)s.setItem("ln-level",l);if(v==="cheatsheet"||v==="extended")s.setItem("ln-view",v);d.dataset.level=s.getItem("ln-level")||"${LEVELS.at(-1) ?? ""}";d.dataset.view=s.getItem("ln-view")==="cheatsheet"?"cheatsheet":"extended";d.dataset.order=s.getItem("ln-order")==="path"?"path":"categories";var t=s.getItem("ln-theme");if(t&&t!=="auto")d.dataset.theme=t}catch(e){}`;
+const PREFS = `var d=document.documentElement,p=new URLSearchParams(location.search),s=localStorage,l=(p.get("level")||"").toUpperCase(),v=p.get("view");if(${JSON.stringify(LEVELS)}.indexOf(l)>=0)s.setItem("ln-level",l);if(v==="cheatsheet"||v==="extended")s.setItem("ln-view",v);d.dataset.level=s.getItem("ln-level")||"${LEVELS.at(-1) ?? ""}";d.dataset.view=s.getItem("ln-view")==="cheatsheet"?"cheatsheet":"extended";d.dataset.order=s.getItem("ln-order")==="path"?"path":"categories";var t=s.getItem("ln-theme");if(t&&t!=="auto")d.dataset.theme=t`;
+// A page with varieties keeps the reader's choice per language being learned, ln-variety-es; the address
+// (?variety=es-es) wins, and the page opens on the default it names.
+const VARIETY_PREFS = `;var vs=d.dataset.varieties.split(" "),f=function(x){return vs.filter(function(y){return y.toLowerCase()===x.toLowerCase()})[0]},k="ln-variety-"+vs[0].split("-")[0],a=f(p.get("variety")||"");if(a)s.setItem(k,a);a=f(s.getItem(k)||"");if(a)d.dataset.variety=a`;
+const prefs = (varieties: boolean): string => `try{${PREFS}${varieties ? VARIETY_PREFS : ""}}catch(e){}`;
 
 // Runs right after the sidebar, before first paint: restores the scroll position the same menu had on
 // the previous page (client.ts saves it on leaving), then brings the current page's entry into view:
@@ -135,11 +152,15 @@ function credits(o: PageOptions): string {
   return `<a class="tool" href="${creditsUrl(o.lang)}" title="${label}" aria-label="${label}"${current}>${INFO_ICON}</a>`;
 }
 
+// The default variety on the page, and the ones the reader chooses between.
+const varietyAttrs = (varieties: Variety[] | undefined): string =>
+  varieties === undefined ? "" : ` data-variety="${varieties[0] ?? ""}" data-varieties="${varieties.join(" ")}"`;
+
 export function page(o: PageOptions): string {
   const url = (path: string): string => `${o.siteUrl}${path}`;
   const alternates = (o.alternates ?? []).map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${url(a.path)}">`).join("\n  ");
   return `<!doctype html>
-<html lang="${o.lang}" data-page="${o.kind}" data-dev="${o.dev ? 1 : 0}">
+<html lang="${o.lang}" data-page="${o.kind}" data-dev="${o.dev ? 1 : 0}"${varietyAttrs(o.varieties)}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -153,7 +174,7 @@ export function page(o: PageOptions): string {
   <meta property="og:url" content="${url(o.path)}">
   <link rel="stylesheet" href="/levels.css">
   <link rel="stylesheet" href="/style.css">
-  <script>${PREFS}</script>
+  <script>${prefs(o.varieties !== undefined)}</script>
 </head>
 <body>
   <header class="topbar">

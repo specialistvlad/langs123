@@ -1,8 +1,9 @@
 // The study path holds one step for every level of every written topic, inside the curriculum and
-// lowest level first.
+// lowest level first; a language being learned lists its explanation languages from the source, its own
+// varieties, and titles in exactly its explanation languages.
 import { describe, expect, test } from "bun:test";
 import { type CurriculumLanguage, loadCurriculum, loadTopics } from "../lib.ts";
-import { checkPath } from "./curriculum.ts";
+import { checkLanguage, checkPath } from "./curriculum.ts";
 
 const curriculum = await loadCurriculum();
 const refs = await loadTopics(curriculum);
@@ -47,5 +48,43 @@ describe("the study path", () => {
       p["A0"] = a0;
     });
     expect(messages).toContain("path en: levels run lowest first (A1, A2, B1, A0)");
+  });
+});
+
+// The language problems after changing a copy of the Spanish entry.
+const found = curriculum.languages.find((l) => l.code === "es");
+if (!found) throw new Error("curriculum.yaml has no Spanish");
+const spanish: CurriculumLanguage = found;
+function languageMessages(change: (language: CurriculumLanguage) => void): string[] {
+  const language = structuredClone(spanish);
+  change(language);
+  const messages: string[] = [];
+  checkLanguage(language, (_, message) => messages.push(message));
+  return messages;
+}
+
+describe("a language being learned", () => {
+  test("every language as it is passes", () => {
+    const messages: string[] = [];
+    for (const language of curriculum.languages) checkLanguage(language, (_, message) => messages.push(message));
+    expect(messages).toEqual([]);
+  });
+  test("its explanation languages start with the source", () => {
+    expect(languageMessages((l) => (l.explain = ["es", "en"]))).toEqual(["es: explain starts with en, the source the translations follow"]);
+  });
+  test("its varieties are its own", () => {
+    expect(languageMessages((l) => (l.varieties = ["es-419", "en-GB"]))).toEqual(["es: variety en-GB belongs to another language"]);
+  });
+  test("its section and topic titles carry exactly its explanation languages", () => {
+    const messages = languageMessages((l) => {
+      const [section] = l.sections;
+      const [topic] = section?.topics ?? [];
+      if (section) delete section.title.es;
+      if (topic?.title) topic.title.uk = "Алфавіт";
+    });
+    expect(messages).toEqual([
+      'es section 01-fundamentos has no "es" title',
+      'es topic 01-fundamentos/alfabeto-ortografia has a "uk" title, which es is not written for',
+    ]);
   });
 });
