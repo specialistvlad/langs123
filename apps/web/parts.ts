@@ -1,6 +1,7 @@
 // Small HTML and text pieces the pages share: level badges and attributes, anchors, edit links.
 import { type Block, type Explain, type Level, lv, SITE, type TopicRef } from "../../scripts/lib.ts";
 import { join, leaves, type Range, refRange } from "../../scripts/levels.ts";
+import type { Ctx } from "./html.ts";
 
 // Opens the file in GitHub's editor (a fork for anyone without write access).
 export const editUrl = (path: string): string => `${SITE.repository}/edit/main/${path}`;
@@ -73,3 +74,13 @@ export function varietyLevelAttrs(blocks: Block[], explain: Explain, varieties: 
 
 // The range of some curriculum topics in an explanation language.
 export const refsRange = (refs: TopicRef[], explain: Explain): Range | null => join(refs.map((r) => refRange(r, explain)));
+
+const hasVariant = (v: unknown): boolean =>
+  Array.isArray(v) ? v.some(hasVariant) : typeof v === "object" && v !== null && ("variant" in v || Object.values(v).some(hasVariant));
+
+// On a language with varieties, a cell whose text has variants holds a copy in each variety: the chosen
+// copy reads as plain text, and the others keep the column as wide as theirs (levels.css).
+export function byVariety(value: unknown, ctx: Ctx, html: (c: Ctx) => string): string {
+  if (ctx.varieties === undefined || !hasVariant(value)) return html(ctx);
+  return ctx.varieties.map((v) => `<span class="cell-variety" data-variety="${v}">${html({ ...ctx, pick: v })}</span>`).join("");
+}

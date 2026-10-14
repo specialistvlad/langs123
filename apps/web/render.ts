@@ -4,7 +4,7 @@ import { serves, shows, type TableBlock, tableShape } from "../../scripts/conten
 import { isLocalized, reading } from "../../scripts/text.ts";
 import { type Ctx, escapeHtml, explained, learned, translation } from "./html.ts";
 import { blockRange } from "../../scripts/levels.ts";
-import { badge, blockVariety, levelAttrs, single, varietyAttr, varietyLevelAttrs } from "./parts.ts";
+import { badge, blockVariety, byVariety, levelAttrs, single, varietyAttr, varietyLevelAttrs } from "./parts.ts";
 import { blockStarts, classAttr, GAP_CELL, gapLevel, gapsAfter, headHtml, spans } from "./table.ts";
 import {
   type Block,
@@ -64,9 +64,11 @@ const isExample = (value: Cell): value is Example => typeof value === "object" &
 // A cell: explanation text, text in the language being learned, or an example with its translation.
 function cell(value: Cell | undefined, ctx: Ctx): string {
   if (value === undefined) return "";
-  if (isExample(value)) return learned(value.ex, ctx) + translation(value.tr, ctx);
-  if (typeof value === "object" && !Array.isArray(value) && isLocalized(value)) return explained(value, ctx);
-  return learned(value, ctx);
+  return byVariety(value, ctx, (c) => {
+    if (isExample(value)) return learned(value.ex, c) + translation(value.tr, c);
+    if (typeof value === "object" && !Array.isArray(value) && isLocalized(value)) return explained(value, c);
+    return learned(value, c);
+  });
 }
 
 const wrap = (inner: string): string => `<div class="table-wrap">${inner}</div>`;
@@ -114,7 +116,7 @@ function tableHtml(block: TableBlock, ctx: Ctx, from: Level): string {
   const empty = shape.slots ? "" : "—";
   const grid = shape.rows.map((r) => {
     const cells = shape.columns.map((c) => (r[c.key] === undefined ? empty : cell(r[c.key] as Cell, ctx)));
-    if (shape.translation) cells.push(r.tr === undefined ? "" : explained(r.tr, ctx));
+    if (shape.translation) cells.push(r.tr === undefined ? "" : cell(r.tr, ctx));
     return cells;
   });
   const levels = shape.rows.map((r) => r.level);
@@ -153,9 +155,7 @@ function errorsHtml(block: ErrorsBlock, ctx: Ctx, from: Level): string {
   const rows = block.rows.filter((r) => serves(r, ctx.explain));
   const withRule = rows.some((r) => r.rule !== undefined);
   const titles = ["✗", "✓", ...(withRule ? [say("ruleColumn", ctx.explain)] : [])].map(escapeHtml);
-  const body = rows.map((r) =>
-    row(r.level, from, [learned(r.wrong, ctx), learned(r.right, ctx), ...(withRule ? [explained(r.rule, ctx)] : [])]),
-  );
+  const body = rows.map((r) => row(r.level, from, [cell(r.wrong, ctx), cell(r.right, ctx), ...(withRule ? [cell(r.rule, ctx)] : [])]));
   return wrap(
     `<table class="errors">${headHtml(titles.map((title) => ({ title, group: undefined, center: false })))}<tbody>${body.join("")}</tbody></table>`,
   );

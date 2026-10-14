@@ -15,6 +15,8 @@ export interface Ctx {
   refs: TopicRef[];
   link: LinkFn;
   varieties?: Variety[] | undefined;
+  // A copy of a table cell in one variety.
+  pick?: Variety | undefined;
 }
 
 const ENTITIES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
@@ -61,15 +63,30 @@ function htmlOutput(ctx: Ctx): TextOutput<string> {
       const extra =
         (value === undefined ? "" : ` data-value="${escapeHtml(String(value))}"`) +
         (variety === undefined ? "" : ` data-variety="${variety}"`);
-      return `<span${attrs}${extra}>${inner}</span>`;
+      const shown =
+        name === "variant" && c.swap === true && c.pick === undefined ? varietyLabel(m as { variety: Variety }, c, ctx, inner) : inner;
+      return `<span${attrs}${extra}>${shown}</span>`;
     },
+    swap: (variants) => variants.join(""),
   };
+}
+
+// A variant shows its form; its variety's name stays for screen readers and copied text.
+function varietyLabel(m: { variety: Variety }, c: FoldContext, ctx: Ctx, form: string): string {
+  const lang = ctx.explain === ctx.ref.lang ? "" : ` lang="${ctx.explain}"`;
+  const label = `<span class="sr-only"${lang}>${c.plain ? "(" : ""}${escapeHtml(c.variety(m.variety))}: </span>`;
+  return label + form + (c.plain ? `<span class="sr-only">)</span>` : "");
 }
 
 // Text in the language being learned (plain) or explaining it; examples in a summary read as sentences.
 // Text in the language being learned, on a page in another language, names its language.
 export function inline(value: Text, ctx: Ctx, plain: boolean, sentences = false): string {
-  const html = foldText(value, htmlOutput(ctx), { ...reading(ctx.explain, plain), sentences });
+  const html = foldText(value, htmlOutput(ctx), {
+    ...reading(ctx.explain, plain),
+    sentences,
+    swap: ctx.varieties !== undefined,
+    ...(ctx.pick === undefined ? {} : { pick: ctx.pick }),
+  });
   return plain && ctx.explain !== ctx.ref.lang && html !== "" ? `<span lang="${ctx.ref.lang}">${html}</span>` : html;
 }
 

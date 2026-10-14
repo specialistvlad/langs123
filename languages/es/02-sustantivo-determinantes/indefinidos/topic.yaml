@@ -6,7 +6,7 @@ tags: [indefinites, pronouns, determiners, negation]
 concepts: [indefinite-pronouns]
 related: [es.sustantivo-determinantes.cuantificadores, es.oracion.preguntas-negacion, es.pronombres.objeto-directo]
 status: { en: draft, es: draft }
-translated: { es: "c6d7ef 65ac1c 1aca03 7c0bc9 7f5cd0 58552e" }
+translated: { es: "c6d7ef 44cfaf 1aca03 d0af6b 0ce1d2 ec6f9e" }
 
 title: { en: "Indefinites: algo, nadie, ningún", es: "Los indefinidos: algo, nadie, ningún" }
 summary:
@@ -27,11 +27,16 @@ cheatsheet:
         - { key: ex, label: { en: Example, es: Ejemplo } }
       rows:
         - level: A2
+          point: { en: Short answers, es: Respuestas cortas }
+          rule: { en: [{ alternatives: [{ term: Nada }, { term: Nadie }, { term: Nunca }] }, " answer a question alone"], es: [{ alternatives: [{ term: Nada }, { term: Nadie }, { term: Nunca }] }, " responden solos a una pregunta"] }
+          ex: { exchange: ["¿Qué quieres?", [{ target: Nada }, "."]] }
+          tr: { en: { exchange: [What do you want?, Nothing.] } }
+        - level: B1
           point: { en: Things, es: Cosas }
           rule: { contrast: [{ term: algo }, { term: nada }] }
           ex: ["¿Quieres ", { target: algo }, "?"]
           tr: { en: Do you want something? }
-        - level: A2
+        - level: B1
           point: { en: People, es: Personas }
           rule: { contrast: [{ term: alguien }, { term: nadie }] }
           ex: ["¿Hay ", { target: alguien }, " en casa?"]
@@ -41,7 +46,7 @@ cheatsheet:
           rule: { contrast: [{ alternatives: [{ term: algún }, { term: alguna }] }, { alternatives: [{ term: ningún }, { term: ninguna }] }] }
           ex: ["¿Tienes ", { target: alguna }, " pregunta?"]
           tr: { en: Do you have any questions? }
-        - level: A2
+        - level: B1
           point: { en: Before the verb, es: Delante del verbo }
           rule: { en: ["the negative word alone, with no ", { term: no }], es: ["la palabra negativa sola, sin ", { term: no }] }
           ex: [{ target: Nadie }, " sabe la respuesta."]
@@ -51,16 +56,11 @@ cheatsheet:
           rule: { en: [{ term: algún }, ", ", { term: ningún }, " before a masculine singular noun"], es: [{ term: algún }, ", ", { term: ningún }, " delante de un masculino singular"] }
           ex: ["No tengo ", { target: ningún }, " problema."]
           tr: { en: I have no problem. }
-        - level: A2
+        - level: B1
           point: { en: People as objects, es: Personas como objeto }
           rule: { en: [{ term: a alguien }, ", ", { term: a nadie }], es: [{ term: a alguien }, ", ", { term: a nadie }] }
           ex: ["No conozco ", { target: a nadie }, " aquí."]
           tr: { en: "I don't know anyone here." }
-        - level: B1
-          point: { en: Any at all, es: Cualquiera }
-          rule: { en: [{ term: cualquier }, " before a noun, ", { term: cualquiera }, " alone"], es: [{ term: cualquier }, " delante del sustantivo, ", { term: cualquiera }, " solo"] }
-          ex: ["Puedes llamarme ", { target: cualquier }, " día."]
-          tr: { en: You can call me any day. }
         - level: B1
           point: { en: One of a group, es: Uno de un grupo }
           rule: { pattern: [{ alternatives: [{ term: alguno de }, { term: ninguno de }] }, { slot: plural noun }] }
@@ -87,8 +87,8 @@ sections:
           - { key: pos, label: { en: Positive, es: Afirmativo }, features: { polarity: pos } }
           - { key: neg, label: { en: Negative, es: Negativo }, features: { polarity: neg } }
         rows:
-          - { level: A2, kind: { en: things, es: cosas }, pos: { target: algo }, neg: { target: nada } }
-          - { level: A2, kind: { en: people, es: personas }, pos: { target: alguien }, neg: { target: nadie } }
+          - { level: B1, kind: { en: things, es: cosas }, pos: { target: algo }, neg: { target: nada } }
+          - { level: B1, kind: { en: people, es: personas }, pos: { target: alguien }, neg: { target: nadie } }
           - { level: B1, kind: { en: before a noun, es: delante del sustantivo }, pos: { alternatives: [{ target: algún }, { target: alguna }, { target: algunos }, { target: algunas }] }, neg: { alternatives: [{ target: ningún }, { target: ninguna }] } }
           - { level: B1, kind: { en: alone, es: solo }, pos: { alternatives: [{ target: alguno }, { target: alguna }, { target: algunos }, { target: algunas }] }, neg: { alternatives: [{ target: ninguno }, { target: ninguna }] } }
           - { level: A2, kind: { en: time, es: tiempo }, pos: { alternatives: [{ target: alguna vez }, { target: siempre }] }, neg: { target: nunca } }
@@ -102,7 +102,7 @@ sections:
             ex: { examples: [[{ target: algún }, " día"], [{ target: ningún }, " problema"]] }
             tr: { en: { examples: [some day, no problem] } }
           - type: rule
-            level: A2
+            level: B1
             text:
               en: [{ term: algo }, ", ", { term: nada }, ", ", { term: alguien }, " and ", { term: nadie }, " never change."]
               es: [{ term: algo }, ", ", { term: nada }, ", ", { term: alguien }, " y ", { term: nadie }, " no cambian."]
@@ -124,13 +124,13 @@ sections:
         rows:
           - level: A2
             pattern: { pattern: [{ term: no }, { slot: verb }, { alternatives: [{ term: nada }, { term: nadie }, { term: nunca }] }] }
-            ex: [{ target: No }, " veo a ", { target: nadie }, "."]
-            tr: { en: "I can't see anyone." }
-          - level: A2
+            ex: [{ target: No }, " veo ", { target: nada }, "."]
+            tr: { en: "I can't see anything." }
+          - level: B1
             pattern: { pattern: [{ alternatives: [{ term: nada }, { term: nadie }, { term: nunca }] }, { slot: verb }] }
             ex: [{ target: Nadie }, " me llama."]
             tr: { en: Nobody calls me. }
-          - level: A2
+          - level: B1
             pattern: { en: a question, es: una pregunta }
             ex: ["¿Necesitas ", { target: algo }, "?"]
             tr: { en: Do you need anything? }
@@ -139,29 +139,34 @@ sections:
           - type: rule
             level: A2
             text:
-              en: ["A negative word after the verb needs ", { term: no }, " before the verb; a negative word before the verb stands alone."]
-              es: ["La palabra negativa detrás del verbo necesita ", { term: no }, " delante; la palabra negativa delante del verbo va sola."]
+              en: ["A negative word after the verb needs ", { term: no }, " before the verb."]
+              es: ["La palabra negativa detrás del verbo necesita ", { term: no }, " delante."]
           - type: rule
-            level: A2
+            level: B1
+            text:
+              en: "A negative word before the verb stands alone."
+              es: "La palabra negativa delante del verbo va sola."
+          - type: rule
+            level: B1
             readers: [en]
             text:
               en: ["English “any” in a question is ", { term: algo }, " or ", { term: alguien }, ":"]
             ex: ["¿Hay ", { target: alguien }, " en casa?"]
             tr: { en: Is anyone at home? }
           - type: rule
-            level: A2
+            level: B1
             text:
               en: [{ term: alguien }, " and ", { term: nadie }, " as an object take ", { term: a }, ":"]
               es: [{ term: alguien }, " y ", { term: nadie }, " como objeto llevan ", { term: a }, ":"]
             ex: ["¿Conoces ", { target: a alguien }, " en Lima?"]
             tr: { en: Do you know anyone in Lima? }
           - type: note
-            level: A2
+            level: B1
             text:
               en: ["The personal ", { term: a }, ": see ", { link: Direct Object Pronouns and Personal a, to: es.pronombres.objeto-directo }, "."]
               es: ["La ", { term: a }, " personal: ver ", { link: El objeto directo y la a personal, to: es.pronombres.objeto-directo }, "."]
 
-  - title: { en: "Use: cualquier and ninguno de", es: "Uso: cualquier y ninguno de" }
+  - title: { en: "Use: alguno de and ninguno de", es: "Uso: alguno de y ninguno de" }
     role: use
     content:
       - type: usage
@@ -170,8 +175,6 @@ sections:
           - { key: use, label: { en: Use, es: Uso } }
           - { key: ex, label: { en: Example, es: Ejemplo } }
         rows:
-          - { level: B1, form: cualquier, use: { en: "before a singular noun: any at all", es: "delante de un sustantivo singular: no importa cuál" }, ex: ["Puedes llamarme ", { target: cualquier }, " día."], tr: { en: You can call me any day. } }
-          - { level: B1, form: cualquiera, use: { en: "alone: any one at all", es: "solo: no importa cuál" }, ex: ["Elige ", { target: cualquiera }, "."], tr: { en: Pick any one. } }
           - level: B1
             form: { pattern: [{ alternatives: [{ term: alguno de }, { term: ninguno de }] }, { slot: plural noun }] }
             use: { en: one of a group, es: uno de un grupo }
@@ -187,11 +190,6 @@ sections:
           - type: rule
             level: B1
             text:
-              en: [{ term: cualquier }, " is the same before a masculine and a feminine noun: ", { term: cualquier día }, ", ", { term: cualquier casa }, "."]
-              es: [{ term: cualquier }, " no cambia delante de un masculino ni de un femenino: ", { term: cualquier día }, ", ", { term: cualquier casa }, "."]
-          - type: rule
-            level: B1
-            text:
               en: [{ term: ninguno de }, " takes a singular verb:"]
               es: [{ term: ninguno de }, " lleva el verbo en singular:"]
             ex: [{ target: Ninguno }, " de ellos ", { target: vino }, "."]
@@ -203,9 +201,8 @@ sections:
       - type: errors
         rows:
           - { level: A2, wrong: Tengo nada., right: [{ target: No }, " tengo nada."], rule: { en: [{ term: nada }, " after the verb needs ", { term: no }], es: [{ term: nada }, " detrás del verbo necesita ", { term: no }] } }
-          - { level: A2, wrong: Nadie no viene., right: [{ target: Nadie }, " viene."], rule: { en: ["before the verb, no ", { term: no }], es: ["delante del verbo, sin ", { term: no }] } }
+          - { level: B1, wrong: Nadie no viene., right: [{ target: Nadie }, " viene."], rule: { en: ["before the verb, no ", { term: no }], es: ["delante del verbo, sin ", { term: no }] } }
           - { level: B1, wrong: No tengo ningunos hermanos., right: ["No tengo ", { target: ningún }, " hermano."], rule: { en: [{ term: ninguno }, " is singular"], es: [{ term: ninguno }, " va en singular"] } }
           - { level: B1, wrong: alguno día, right: [{ target: algún }, " día"], rule: { en: "-o drops before a masculine singular noun", es: "la -o cae delante de un masculino singular" } }
-          - { level: A2, wrong: No conozco nadie., right: ["No conozco ", { target: a }, " nadie."], rule: { en: ["a person as an object takes ", { term: a }], es: ["la persona como objeto lleva ", { term: a }] } }
-          - { level: B1, wrong: cualquiera día, right: [{ target: cualquier }, " día"], rule: { en: [{ term: cualquier }, " before a noun"], es: [{ term: cualquier }, " delante del sustantivo"] } }
+          - { level: B1, wrong: No conozco nadie., right: ["No conozco ", { target: a }, " nadie."], rule: { en: ["a person as an object takes ", { term: a }], es: ["la persona como objeto lleva ", { term: a }] } }
           - { level: A2, speakers: [en], wrong: No tengo algo., right: ["No tengo ", { target: nada }, "."], rule: { en: ["in a negative, “anything” is ", { term: nada }] } }

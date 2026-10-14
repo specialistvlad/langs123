@@ -1,7 +1,8 @@
 // The Variety switch in a browser: a page of a language with varieties opens on the default and shows
 // its elements with those of every variety; choosing another shows that variety's elements instead,
 // carries the choice in the address and keeps it for the next page; the address wins over the kept
-// choice; a page without scripts shows the default.
+// choice; a page without scripts shows the default; switching moves no column of a table, the rows of
+// the other variety lie flat, and a cell with variants reads as the chosen variety's plain text.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import { join } from "node:path";
@@ -36,7 +37,7 @@ async function fresh(scripts = true): Promise<Page> {
 const url = (path: string): string => new URL(path, server.url).href;
 // Whether the page shows any element of a variety, and the variety <html> names.
 const shows = (page: Page, variety: string): Promise<boolean> =>
-  page.$$eval(`main [data-variety="${variety}"]`, (els) => els.some((el) => el.checkVisibility()));
+  page.$$eval(`main [data-variety="${variety}"]`, (els) => els.some((el) => el.checkVisibility({ visibilityProperty: true })));
 const chosen = (page: Page): Promise<string | undefined> => page.evaluate(() => document.documentElement.dataset["variety"]);
 
 test(
@@ -80,6 +81,65 @@ test(
     await page.goto(url(TOPIC));
     expect(await shows(page, "es-419")).toBe(true);
     expect(await shows(page, "es-ES")).toBe(false);
+    await page.context().close();
+  },
+  SLOW,
+);
+
+// The place of every header cell of the page's tables, and the height of each row of another variety.
+const layout = (page: Page): Promise<{ columns: string[]; others: number[] }> =>
+  page.evaluate(() => {
+    const current = document.documentElement.dataset["variety"];
+    const columns = [...document.querySelectorAll("main table")].map((t) =>
+      [...t.querySelectorAll("th")]
+        .map((th) => `${Math.round(th.getBoundingClientRect().x)}+${Math.round(th.getBoundingClientRect().width)}`)
+        .join(" "),
+    );
+    const others = [...document.querySelectorAll("main tr[data-variety]")]
+      .filter((tr) => tr.getAttribute("data-variety") !== current)
+      .map((tr) => tr.getBoundingClientRect().height);
+    return { columns, others };
+  });
+// The text a table cell shows: the copy in the chosen variety where it holds one per variety.
+const cellText = (page: Page, cell: string): Promise<string> =>
+  page.$eval(cell, (td) =>
+    [...td.querySelectorAll(".cell-variety")]
+      .filter((c) => c.checkVisibility({ visibilityProperty: true }))
+      .map((c) => c.textContent)
+      .join(""),
+  );
+
+test.each([
+  ["/en/spanish/fundamentos/alfabeto-ortografia/", false],
+  ["/en/spanish/presente/presente-regular/", true],
+])(
+  "switching the variety on %s keeps every column in place and the other variety's rows flat",
+  async (path, rows) => {
+    const page = await fresh();
+    await page.goto(url(`${path}?view=extended`));
+    const latam = await layout(page);
+    await page.click('[data-set-variety="es-ES"]');
+    const spain = await layout(page);
+    expect(spain.columns).toEqual(latam.columns);
+    expect(latam.others.length > 0).toBe(rows);
+    expect([...latam.others, ...spain.others].every((h) => h < 1)).toBe(true);
+    await page.context().close();
+  },
+  SLOW,
+);
+
+test(
+  "a cell with variants reads as the chosen variety's plain text",
+  async () => {
+    const page = await fresh();
+    const v = 'tr[data-value="v"] td:nth-child(2)';
+    const sheet = 'xpath=//section[contains(@class, "cheatsheet")]//tr[td[1][normalize-space(.)="v and w"]]/td[2]';
+    await page.goto(url("/en/spanish/fundamentos/alfabeto-ortografia/?view=extended"));
+    expect(await cellText(page, v)).toBe("ve");
+    expect(await cellText(page, sheet)).toBe("v is called ve, and w doble u");
+    await page.click('[data-set-variety="es-ES"]');
+    expect(await cellText(page, v)).toBe("uve");
+    expect(await cellText(page, sheet)).toBe("v is called uve, and w uve doble");
     await page.context().close();
   },
   SLOW,

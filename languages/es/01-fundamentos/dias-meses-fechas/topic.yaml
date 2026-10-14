@@ -6,7 +6,7 @@ tags: [days, months, dates, years]
 concepts: [dates]
 related: [es.fundamentos.numeros, es.fundamentos.la-hora, es.preposiciones.preposiciones-basicas]
 status: { en: draft, es: draft }
-translated: { es: "7e3d46 6ad055 afb1f3 441ef4 4bcf59 8e40fe 0b9d3f" }
+translated: { es: "7e3d46 f38915 afb1f3 441ef4 1ce523 8e40fe 0b9d3f" }
 
 title: { en: "Days, Months and Dates", es: "Días, meses y fechas" }
 summary:
@@ -69,20 +69,11 @@ cheatsheet:
           ex: { date: [{ target: el }, " 22 ", { target: de }, " marzo"], value: "--03-22" }
           tr: { en: 22 March }
         - level: A0
-          variety: es-419
           point: { en: The first, es: El día 1 }
           rule:
-            en: [{ term: el primero }, " for the first day of the month"]
-            es: [{ term: el primero }, " para el primer día del mes"]
+            en: [{ alternatives: [{ term: el primero }, { term: el uno }] }, " for the first day of the month: both are correct"]
+            es: [{ alternatives: [{ term: el primero }, { term: el uno }] }, " para el primer día del mes: los dos son correctos"]
           ex: { date: ["el ", { target: primero }, " de mayo"], value: "--05-01" }
-          tr: { en: 1 May }
-        - level: A0
-          variety: es-ES
-          point: { en: The first, es: El día 1 }
-          rule:
-            en: [{ term: el uno }, " for the first day of the month"]
-            es: [{ term: el uno }, " para el primer día del mes"]
-          ex: { date: ["el ", { target: uno }, " de mayo"], value: "--05-01" }
           tr: { en: 1 May }
         - level: A0
           point: { en: Years, es: Años }
@@ -212,8 +203,7 @@ sections:
           - { level: A0, value: "--05-05", written: "5/5", said: [{ target: el }, " cinco ", { target: de }, " mayo"], tr: { en: 5 May } }
           - { level: A0, value: "--03-22", written: "22/3", said: [{ target: el }, " veintidós ", { target: de }, " marzo"], tr: { en: 22 March } }
           - { level: A0, value: "--12-31", written: "31/12", said: [{ target: el }, " treinta y uno ", { target: de }, " diciembre"], tr: { en: 31 December } }
-          - { level: A0, variety: es-419, value: "--01-01", written: "1/1", said: ["el ", { target: primero }, " de enero"], tr: { en: 1 January } }
-          - { level: A0, variety: es-ES, value: "--01-01", written: "1/1", said: ["el ", { target: uno }, " de enero"], tr: { en: 1 January } }
+          - { level: A0, value: "--01-01", written: "1/1", said: { alternatives: [["el ", { target: primero }, " de enero"], ["el ", { target: uno }, " de enero"]] }, tr: { en: 1 January } }
       - type: list
         items:
           - type: rule
@@ -225,20 +215,11 @@ sections:
             tr: { en: I arrive on 3 June. }
           - type: rule
             level: A0
-            variety: es-419
             text:
-              en: ["The first day of the month is ", { term: el primero }, ":"]
-              es: ["El primer día del mes es ", { term: el primero }, ":"]
-            ex: ["Hoy es ", { date: ["el ", { target: primero }, " de octubre"], value: "--10-01" }, "."]
-            tr: { en: Today is the first of October. }
-          - type: rule
-            level: A0
-            variety: es-ES
-            text:
-              en: ["The first day of the month is ", { term: el uno }, ":"]
-              es: ["El primer día del mes es ", { term: el uno }, ":"]
-            ex: ["Hoy es ", { date: ["el ", { target: uno }, " de octubre"], value: "--10-01" }, "."]
-            tr: { en: Today is the first of October. }
+              en: ["The first day of the month is ", { term: el primero }, " or ", { term: el uno }, "; both are heard everywhere, ", { term: el primero }, " more in Latin America and ", { term: el uno }, " more in Spain:"]
+              es: ["El primer día del mes es ", { term: el primero }, " o ", { term: el uno }, "; los dos se oyen en todas partes, ", { term: el primero }, " más en Latinoamérica y ", { term: el uno }, " más en España:"]
+            ex: { examples: [["Hoy es ", { date: ["el ", { target: primero }, " de octubre"], value: "--10-01" }, "."], ["Hoy es ", { date: ["el ", { target: uno }, " de octubre"], value: "--10-01" }, "."]] }
+            tr: { en: { examples: [Today is the first of October., Today is the first of October.] } }
           - type: rule
             level: A0
             text:

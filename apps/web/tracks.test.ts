@@ -58,11 +58,15 @@ test("a page of a language without varieties has no Variety switch", async () =>
   expect(doc.querySelector("[data-set-variety]")).toBeNull();
 });
 
-test("levels.css hides, for each chosen variety, the elements of the others", async () => {
+test("levels.css hides, for each chosen variety, the elements of the others, keeping rows and cell copies in the column widths", async () => {
   const css = await Bun.file(join(SITE_DIR, "levels.css")).text();
   for (const chosen of spanish.varieties ?? []) {
     for (const other of (spanish.varieties ?? []).filter((v) => v !== chosen)) {
-      expect(css).toContain(`html[data-variety="${chosen}"] :is([data-variety="${other}"]) { display: none !important; }`);
+      const page = `html[data-variety="${chosen}"]`;
+      const tag = `:is([data-variety="${other}"])`;
+      expect(css).toContain(`${page} ${tag}:not(tr, .cell-variety) { display: none !important; }`);
+      expect(css).toContain(`${page} :is(tr, .cell-variety)${tag} { visibility: hidden; overflow: hidden; }`);
+      expect(css).toContain(`${page} :is(tr${tag} :is(td, td *), .cell-variety${tag}, .cell-variety${tag} *) { height: 0 !important;`);
     }
   }
 });

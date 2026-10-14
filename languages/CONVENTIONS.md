@@ -40,9 +40,16 @@ grows toward N languages, each explained in N languages.
   An element of one variety carries `variety`, and an element without it serves every variety: the
   `vosotros` forms and the rules about them carry `es-ES`, a rule that holds in Latin America alone,
   such as `ustedes` as the one plural of `tú`, carries `es-419`. Voseo appears in an `es-419` note.
+- **Swaps.** Where the varieties say one thing differently, the text holds a `variant` of each,
+  side by side: `[{ variant: ve, variety: es-419 }, " ", { variant: uve, variety: es-ES }]`. Text
+  outside the variants serves every variety. A form shared by both stays plain text.
 - The pages of a language with varieties carry a Variety switch beside the level filter: they open on
   the default and show the chosen variety's elements with those of every variety. A list or table
   whose leaves all belong to one variety hides with them; the rest of a section serves every variety.
+  Switching moves no column: a table row of another variety keeps its place in the column widths
+  with no height, and a table cell with variants holds a copy in each variety, the chosen one read
+  as plain text. Outside tables the chosen variety's form stands alone, with its variety's name kept
+  for screen readers.
 
 ## 2. Data files
 
@@ -539,7 +546,7 @@ structure; text without marks is one string.
 | `optional` | an optional part | He said (that) he was tired. | that |
 | `gap` | an open slot, or the gap in a split form | Could you…? | … |
 | `intonation` | the voice rising or falling: `rise`, `fall` | Really? ↗ | ↗ |
-| `variant` | the form in another variety, with its `variety` | at the weekend (US: on the weekend) | on the weekend |
+| `variant` | the form in another variety, with its `variety`; on a language with varieties, the form of its `variety`, shown to readers of that variety (§1) | at the weekend (US: on the weekend) | on the weekend |
 
 The slot list: `V`, `V-s`, `V-ing`, `V-ed`, `-ing`, `subject`, `verb`, `base verb`, `noun`,
 `plural noun`, `singular noun`, `uncountable noun`, `adjective`, `adverb`, `comparative`,

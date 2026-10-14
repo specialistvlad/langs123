@@ -87,7 +87,7 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
       for (let e: Element | null = el; e && e !== document.documentElement; e = e.parentElement) if (rank(e) > at || other(e)) return false;
       return true;
     };
-    const visible = (el: Element): boolean => el.checkVisibility();
+    const visible = (el: Element): boolean => el.checkVisibility({ visibilityProperty: true });
     const name = (el: Element): string =>
       `${el.tagName.toLowerCase()} ${el.getAttribute("data-level") ?? ""} "${el.textContent.slice(0, 40)}"`;
     const measure = (): Seen => {
