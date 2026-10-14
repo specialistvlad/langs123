@@ -65,13 +65,21 @@ export function levelsCss(): string {
 
 // The variety switch, for each language being learned with varieties (curriculum.yaml): the page names
 // the chosen variety in data-variety on <html>, and every element tagged with another of its varieties
-// hides. An element whose leaves start later in the chosen variety (data-level-{variety}) follows the
+// hides. A table row, or a table cell's copy, of another variety keeps its place in the column widths
+// with no height, so switching moves no column. An element whose leaves start later in the chosen variety (data-level-{variety}) follows the
 // level filter from there. levels.css carries these rules after the level filter.
 export function varietiesCss(varieties: readonly (readonly string[])[]): string {
   const codes = LEVEL_INFO.map((l) => l.code);
   const rules = varieties.flatMap((list) =>
     list.flatMap((chosen) => {
       const others = list.filter((v) => v !== chosen).map((v) => `[data-variety="${v}"]`);
+      const page = `html[data-variety="${chosen}"]`;
+      const other = `:is(${others.join(", ")})`;
+      const hidden = [
+        `${page} ${other}:not(tr, .cell-variety) { display: none !important; }`,
+        `${page} :is(tr, .cell-variety)${other} { visibility: hidden; overflow: hidden; }`,
+        `${page} :is(tr${other} :is(td, td *), .cell-variety${other}, .cell-variety${other} *) { height: 0 !important; min-height: 0 !important; padding-block: 0 !important; margin-block: 0 !important; border-block-width: 0 !important; line-height: 0 !important; }`,
+      ];
       const attr = `data-level-${chosen.toLowerCase()}`;
       const filter = codes.flatMap((code, i) => {
         const above = codes.slice(i + 1).map((c) => `[${attr}="${c}"]`);
@@ -82,7 +90,7 @@ export function varietiesCss(varieties: readonly (readonly string[])[]): string 
           `${at}[data-page="topic"] .toc > li:is(${above.join(", ")}) { opacity: 0.4; pointer-events: none; }`,
         ];
       });
-      return [`html[data-variety="${chosen}"] :is(${others.join(", ")}) { display: none !important; }`, ...filter];
+      return [...hidden, ...filter];
     }),
   );
   return rules.map((r) => `${r}\n`).join("");

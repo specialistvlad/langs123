@@ -56,6 +56,8 @@ export interface TextOutput<T> {
   join(parts: T[]): T;
   // c: the text the mark stands in, in the language being learned (plain) or explaining it.
   mark(name: MarkName, inner: T, m: Mark, c: FoldContext): T;
+  // Neighbouring variants as one swap, where the context swaps them.
+  swap?: (variants: T[]) => T;
 }
 
 export interface FoldContext {
@@ -66,13 +68,34 @@ export interface FoldContext {
   variety: (v: Variety) => string;
   // Examples in a summary follow each other in the sentence: a comma after a phrase, a space after a sentence.
   sentences?: boolean;
+  // On a language with varieties the reader's choice picks a variant: each shows its form alone, and
+  // neighbouring variants, apart from the spaces between them, stand as one.
+  swap?: boolean;
+  // A copy of the text in one variety: its variants show, and the other varieties' go.
+  pick?: Variety;
 }
 
 export function foldText<T>(t: Text, out: TextOutput<T>, c: FoldContext): T {
   if (typeof t === "string") return out.text(t);
-  if (Array.isArray(t)) return out.join(t.map((p) => foldText(p, out, c)));
-  return foldMark(t, out, c);
+  if (!Array.isArray(t)) return foldMark(t, out, c);
+  const swap = c.swap === true ? out.swap : undefined;
+  if (swap === undefined) return out.join(t.map((p) => foldText(p, out, c)));
+  // Each run of neighbouring variants folds into one swap, without the spaces between them.
+  const parts: T[] = [];
+  let run: T[] = [];
+  for (const [n, p] of t.entries()) {
+    if (isVariant(p)) run.push(foldText(p, out, c));
+    else if (!(run.length > 0 && typeof p === "string" && p.trim() === "" && isVariant(t[n + 1] ?? ""))) {
+      if (run.length > 0) parts.push(swap(run));
+      run = [];
+      parts.push(foldText(p, out, c));
+    }
+  }
+  if (run.length > 0) parts.push(swap(run));
+  return out.join(parts);
 }
+
+const isVariant = (p: Text): boolean => typeof p === "object" && !Array.isArray(p) && markName(p) === "variant";
 
 function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
   const name = markName(m);
@@ -99,6 +122,8 @@ function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
       return wrap(inParens(fold((m as { optional: Text }).optional)));
     case "variant": {
       const v = m as { variant: Text; variety: Variety };
+      if (c.pick !== undefined && v.variety !== c.pick) return out.text("");
+      if (c.swap === true) return wrap(fold(v.variant));
       const inner = out.join([out.text(`${c.variety(v.variety)}: `), fold(v.variant)]);
       return wrap(c.plain ? inParens(inner) : inner);
     }
