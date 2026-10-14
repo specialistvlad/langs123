@@ -23,24 +23,14 @@
     z-index: 25;
     background: rgba(0, 0, 0, 0.25);
   }
-  .menu {
-    display: inline-block;
-  }
   .topbar {
-    flex-wrap: wrap;
-    padding: 10px 16px;
-    gap: 10px;
+    padding: 0 10px;
+    gap: 6px;
   }
-  /* The switches take the logo's place; an open switch moves them to a row of their own */
-  .topbar:has(.controls .control) .brand {
+  /* The breadcrumb keeps the site, the track's flag and the page */
+  .crumbs li:not(:first-child, :last-child) .crumb-text,
+  .crumbs li:not(:first-child, :last-child):not(:has(.crumb-icon)) {
     display: none;
-  }
-  .controls:has(.seg.open) {
-    order: 3;
-    flex-basis: 100%;
-  }
-  .tools {
-    margin-left: auto;
   }
   .layout {
     grid-template-columns: 1fr;
@@ -62,15 +52,54 @@
   .content {
     padding: 20px 16px 60px;
   }
-  /* A switch shows its current choice alone; tapping it opens every choice (client-seg.ts) */
-  .seg:not(.open, .lang-menu) > :not(.on) {
+  /* A page with the menu: the bottom bar holds the menu, the level, the variety, More and Next, and
+     the top bar keeps the breadcrumb alone */
+  body.has-bar .content {
+    padding-bottom: 96px;
+  }
+  body.has-bar .topbar .tools,
+  .lesson-bar .chips {
     display: none;
   }
-  .seg:not(.open, .lang-menu) > .on::after {
-    content: "▾";
-    margin-left: 6px;
-    font-size: 0.85em;
-    opacity: 0.6;
+  .bottom-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 22;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    height: calc(60px + env(safe-area-inset-bottom));
+    padding: 4px 6px env(safe-area-inset-bottom);
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter: saturate(1.4) blur(12px);
+    border-top: 1px solid var(--border);
+  }
+  /* Panels open as sheets along the bottom */
+  .panel[popover],
+  .panel[popover]:not([style*="top"]) {
+    inset: auto 0 0;
+    width: auto;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    padding: 16px 16px calc(22px + env(safe-area-inset-bottom));
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.18);
+  }
+  .panel[popover]::backdrop {
+    background: rgba(0, 0, 0, 0.28);
+  }
+  .panel .seg {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .page-icon {
+    font-size: 28px;
+  }
+  .doc .doc-head h1 {
+    font-size: 28px;
   }
   /* The top bar slides away while the reader scrolls down and returns on a scroll up (client-bar.ts) */
   .topbar {
@@ -78,11 +107,6 @@
   }
   html.bar-hidden .topbar {
     transform: translateY(-100%);
-  }
-  /* An open switch takes the whole row, its label beside its choices */
-  .control:has(.seg.open) {
-    flex-basis: 100%;
-    flex-wrap: nowrap;
   }
 }
 
@@ -102,7 +126,9 @@
   .topbar,
   .sidebar,
   .rail,
-  .doc-head .actions,
+  .page-tools,
+  .lesson-bar,
+  .bottom-bar,
   .pagers {
     display: none;
   }

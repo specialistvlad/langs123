@@ -39,6 +39,11 @@ const url = (path: string): string => new URL(path, server.url).href;
 const shows = (page: Page, variety: string): Promise<boolean> =>
   page.$$eval(`main [data-variety="${variety}"]`, (els) => els.some((el) => el.checkVisibility({ visibilityProperty: true })));
 const chosen = (page: Page): Promise<string | undefined> => page.evaluate(() => document.documentElement.dataset["variety"]);
+// Chooses a variety in the panel its chip opens.
+async function choose(page: Page, variety: string): Promise<void> {
+  await page.click('.topbar [popovertarget="variety-panel"]');
+  await page.click(`#variety-panel [data-set-variety="${variety}"]`);
+}
 
 test(
   "a page opens on Latin America and shows its elements alone",
@@ -59,7 +64,7 @@ test(
   async () => {
     const page = await fresh();
     await page.goto(url(TOPIC));
-    await page.click('[data-set-variety="es-ES"]');
+    await choose(page, "es-ES");
     expect(await chosen(page)).toBe("es-ES");
     expect(await shows(page, "es-ES")).toBe(true);
     expect(await shows(page, "es-419")).toBe(false);
@@ -118,7 +123,7 @@ test.each([
     const page = await fresh();
     await page.goto(url(`${path}?view=extended`));
     const latam = await layout(page);
-    await page.click('[data-set-variety="es-ES"]');
+    await choose(page, "es-ES");
     const spain = await layout(page);
     expect(spain.columns).toEqual(latam.columns);
     expect(latam.others.length > 0).toBe(rows);
@@ -137,7 +142,7 @@ test(
     await page.goto(url("/en/spanish/fundamentos/alfabeto-ortografia/?view=extended"));
     expect(await cellText(page, v)).toBe("ve");
     expect(await cellText(page, sheet)).toBe("v is called ve, and w doble u");
-    await page.click('[data-set-variety="es-ES"]');
+    await choose(page, "es-ES");
     expect(await cellText(page, v)).toBe("uve");
     expect(await cellText(page, sheet)).toBe("v is called uve, and w uve doble");
     await page.context().close();

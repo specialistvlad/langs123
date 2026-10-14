@@ -17,8 +17,8 @@ grows toward N languages, each explained in N languages.
 
 - `curriculum.yaml` lists the languages being learned and `site.yaml` the explanation languages.
 - `explain` on a language being learned lists the explanation languages it is written for, the
-  source first (§6); a language without it is written for every one. Its tracks, its cells in the home
-  matrix, its `hreflang` links and its sitemap entries follow that list (§10).
+  source first (§6); a language without it is written for every one. Its tracks, the links on its
+  home page card, its `hreflang` links and its sitemap entries follow that list (§10).
 - Every topic exists in each explanation language of its language: one topic file holds its
   explanations in each (§4), its examples translated into each (§6) and the typical errors of each
   one's speakers.
@@ -43,7 +43,7 @@ grows toward N languages, each explained in N languages.
 - **Swaps.** Where the varieties say one thing differently, the text holds a `variant` of each,
   side by side: `[{ variant: ve, variety: es-419 }, " ", { variant: uve, variety: es-ES }]`. Text
   outside the variants serves every variety. A form shared by both stays plain text.
-- The pages of a language with varieties carry a Variety switch beside the level filter: they open on
+- The pages of a language with varieties carry a Variety chip beside the Level chip: they open on
   the default and show the chosen variety's elements with those of every variety. A list or table
   whose leaves all belong to one variety hides with them; the rest of a section serves every variety.
   Switching moves no column: a table row of another variety keeps its place in the column widths
@@ -386,13 +386,14 @@ Every page has a clean, stable, named URL.
 | `{topic}` | topic slug | `simple-tenses` |
 | `{sheet}` | `a0`…`c2` (level), `a0-a1`…`a0-c2` (progressive), up to the highest level the topics reach; `{section}`, `{section}/{topic}` | `a0-b1` |
 
-- The home page is a matrix: a row per language being learned, with its levels and topics, a column
-  per explanation language under its own name, the page's own language first; each cell is an arrow
-  into that track, and empty where the language is not written for that explanation language.
-  The top bar's language switch shows the page's language and opens into a list of every one.
+- The home page holds a card per language being learned: its flag (`flag` in `curriculum.yaml`), its
+  name and levels, and a link into each track, under the explanation language's own name, the page's
+  own language first.
+- The top bar is a breadcrumb from the home page to the page, then the language the page is read in,
+  which opens into a list of every one, the credits and the theme. The menu opens on the track
+  switcher, which lists every track and leads to the home page, and a search that filters the index.
 - Every page names its counterparts in the other explanation languages of its track with `hreflang`;
-  the home pages add the root as `x-default`. The top bar and the menu lead to the home and credits pages in the
-  page's language.
+  the home pages add the root as `x-default`.
 - URLs use lowercase ASCII letters, digits, hyphens and slashes, and end with `/`.
 - URLs come from slugs, never from titles. A published slug stays fixed.
 - A page carries the choice of each switch it has in query parameters, so a shared link opens the

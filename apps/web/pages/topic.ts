@@ -1,16 +1,17 @@
 // Topic pages: the cheatsheet as section 00, the guide in numbered sections, and the rail beside them.
-import { type Explain, say } from "../../../scripts/lib.ts";
+import { type Explain, localize, say } from "../../../scripts/lib.ts";
 import { join } from "../../../scripts/levels.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
 import { guideSections } from "../guide.ts";
-import { GITHUB_ICON, PRINT_ICON } from "../icons.ts";
-import { controls, page } from "../layout.ts";
+import { pageTools, viewTabs } from "../chrome.ts";
+import { page } from "../layout.ts";
 import { trackNav } from "../nav.ts";
-import { pagers, upNext } from "../sequence.ts";
+import { readingMinutes } from "../reading-time.ts";
+import { barNext, pagers, upNext } from "../sequence.ts";
 import { plainText, reading, textIn } from "../../../scripts/text.ts";
 import { anchorIds, badge, editUrl, levelAttrs, listBadge } from "../parts.ts";
 import { escapeHtml, explained, inline } from "../html.ts";
-import { topicUrl } from "../urls.ts";
+import { topicUrl, trackUrl } from "../urls.ts";
 
 // What a view shows when the level filter sits below everything in it: a note and a button that
 // sets the level where the view starts. views.css shows it for its view below that level.
@@ -50,12 +51,17 @@ export function topicPages(track: Track): void {
       return `<li${guide}${levelAttrs(s.range)}${s.varietyLevels}><a href="#${idOf.get(s) ?? ""}"><span class="name">${s.heading}</span>${listBadge(s.range)}</a></li>`;
     });
     const rail = `<h4>${escapeHtml(t.onThisPage)}</h4><ol class="toc">${tocItems.join("")}</ol>${upNext(track, ref)}`;
-    const actions = [
-      `<a class="tool edit" href="${editUrl(ref.path)}" rel="noopener" title="${escapeHtml(t.editTitle)}" aria-label="${escapeHtml(`${t.editOn} GitHub`)}">${escapeHtml(t.editOn)}${GITHUB_ICON}</a>`,
-      `<button class="tool" id="print" type="button" title="${escapeHtml(t.print)}" aria-label="${escapeHtml(t.print)}">${PRINT_ICON}</button>`,
-    ].join("");
     const title = plainText(textIn(topic.title, explain), reading(explain, false));
-    const head = `<header class="doc-head"><h1>${inline(textIn(topic.title, explain), rctx, false)}${badge(range)}</h1><div class="actions">${actions}</div></header>`;
+    const section = localize(ref.section.title, explain);
+    const minutes = readingMinutes(topic, explain, lang.varieties?.[0]);
+    const props = [
+      badge(range),
+      `<span class="prop">${escapeHtml(section)}</span>`,
+      `<span class="prop" title="${escapeHtml(t.readingTime)}"><span aria-hidden="true">◷</span> ${escapeHtml(t.minutes(minutes))}</span>`,
+    ].join("");
+    const head =
+      `<header class="doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${inline(textIn(topic.title, explain), rctx, false)}</h1></div>` +
+      `<p class="props">${props}</p><div class="lesson-bar">${viewTabs(explain)}</div></header>`;
     // The summary: its lead, its rule and the rule's examples, read as one paragraph.
     const { summary } = topic;
     const example = summary.ex === undefined ? "" : ` ${inline(summary.ex, rctx, true, true)}`;
@@ -69,17 +75,14 @@ export function topicPages(track: Track): void {
         description: plainText(textIn(summary.lead, explain), reading(explain, false)),
         path: topicUrl(explain, lang, ref),
         alternates: alternates((e) => topicUrl(e, lang, ref), track.explains),
-        controls: controls({
-          explain,
-          read: readChoices(explain, (e) => topicUrl(e, lang, ref), track.explains),
-          level: true,
-          varieties: lang.varieties,
-          view: true,
-        }),
+        read: readChoices(explain, (e) => topicUrl(e, lang, ref), track.explains),
+        level: true,
+        crumbs: [{ label: trackTitle, href: trackUrl(explain, lang), icon: lang.flag }, { label: section }, { label: title }],
         varieties: lang.varieties,
         nav: trackNav(track, ref),
         rail,
-        main: `<article class="doc${range.from === range.to ? " one-level" : ""}">${pagers(track, ref, "top")}${head}${intro}${empty}<div class="sections lanes">${sections}</div>${pagers(track, ref, "bottom")}</article>`,
+        next: barNext(track, ref),
+        main: `<article class="doc${range.from === range.to ? " one-level" : ""}">${head}${intro}${empty}<div class="sections lanes">${sections}</div>${pagers(track, ref, "bottom")}${pageTools(t, editUrl(ref.path))}</article>`,
         dev: o.dev,
         siteUrl: o.siteUrl,
       }),

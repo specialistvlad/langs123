@@ -1,0 +1,146 @@
+// The page chrome: the language menu, the view tabs, the level and variety chips, the breadcrumb, the
+// panels the chips open and the bottom bar on phones.
+import { type Explain, filled, LEVELS, SITE, say, type Variety } from "../../scripts/lib.ts";
+import { varietyName } from "../../scripts/text.ts";
+import { GITHUB_ICON, INFO_ICON, PRINT_ICON } from "./icons.ts";
+import { escapeHtml } from "./html.ts";
+import type { PageOptions } from "./layout.ts";
+import { type Ui, ui } from "./ui.ts";
+import { creditsUrl, homeUrl } from "./urls.ts";
+
+export interface Choice {
+  label: string;
+  href: string;
+  on: boolean;
+}
+
+// The language a page is read in: the current one, opening into a list of every one (client-seg.ts closes
+// it on a tap elsewhere or Escape).
+export function languageMenu(label: string, choices: Choice[]): string {
+  const current = choices.find((c) => c.on) ?? choices[0];
+  return `<details class="seg lang-menu"><summary aria-label="${escapeHtml(label)}"><span class="lang-icon" aria-hidden="true">文</span>${escapeHtml(current?.label ?? "")}</summary><div class="menu-list">${languageLinks(choices)}</div></details>`;
+}
+const languageLinks = (choices: Choice[]): string =>
+  choices.map((c) => `<a href="${c.href}"${c.on ? ' class="on" aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`).join("");
+
+// The view of a topic as tabs: the cheatsheet alone, or the full lesson.
+export function viewTabs(explain: Explain): string {
+  const t = ui(explain);
+  return `<div class="tabs" role="group" aria-label="${escapeHtml(t.view)}"><button type="button" data-set-view="cheatsheet">${escapeHtml(t.sheet)}</button><button type="button" data-set-view="extended">${escapeHtml(t.fullLesson)}</button></div>`;
+}
+
+export interface ChipsOptions {
+  explain: Explain;
+  level?: boolean | undefined;
+  // The varieties of the language being learned the reader chooses between, the default first.
+  varieties?: Variety[] | undefined;
+}
+
+// Print, on a page worth printing: at the end of the lesson and in More on phones.
+export const printButton = (t: Ui, cls: string): string =>
+  `<button class="${cls}" type="button" data-print>${PRINT_ICON}<span>${escapeHtml(t.print)}</span></button>`;
+
+// The end of a lesson: edit its file on GitHub, and print it.
+export const pageTools = (t: Ui, edit: string | undefined): string =>
+  `<div class="page-tools">${
+    edit === undefined
+      ? ""
+      : `<a class="page-tool edit" href="${edit}" rel="noopener">${GITHUB_ICON}<span>${escapeHtml(t.editPage)}</span></a>`
+  }${printButton(t, "page-tool")}</div>`;
+
+// The level and variety a page shows, as chips that open their panels (page()): the chip names the choice.
+export function chips(o: ChipsOptions): string {
+  const t = ui(o.explain);
+  const parts: string[] = [];
+  if (o.level === true) {
+    const upTo = `${t.upTo} {level}`;
+    parts.push(
+      `<button type="button" class="chip" popovertarget="level-panel" aria-label="${escapeHtml(t.level)}"><span class="level-dot" aria-hidden="true"></span><span data-level-label data-all="${escapeHtml(t.allLevels)}" data-up-to="${escapeHtml(upTo)}">${escapeHtml(t.allLevels)}</span><span class="caret" aria-hidden="true">▾</span></button>`,
+    );
+  }
+  if (o.varieties !== undefined) {
+    const first = o.varieties[0];
+    parts.push(
+      `<button type="button" class="chip" popovertarget="variety-panel" aria-label="${escapeHtml(t.variety)}"><span aria-hidden="true">🌎</span><span data-variety-label>${escapeHtml(first === undefined ? "" : varietyName(first, o.explain))}</span><span class="caret" aria-hidden="true">▾</span></button>`,
+    );
+  }
+  return parts.length === 0 ? "" : `<div class="chips">${parts.join("")}</div>`;
+}
+
+// One step of the breadcrumb; the last is the page itself.
+export interface Crumb {
+  label: string;
+  href?: string;
+  icon?: string;
+}
+
+// The link to the credits page, marked current on that page; in More it carries its name.
+export function credits(o: PageOptions, named: boolean): string {
+  const label = escapeHtml(say("credits", o.lang));
+  const current = o.kind === "credits" ? ' aria-current="page"' : "";
+  const name = named ? `<span>${label}</span>` : "";
+  return `<a class="tool" href="${creditsUrl(o.lang)}" title="${label}" aria-label="${label}"${current}>${INFO_ICON}${name}</a>`;
+}
+export const themeButton = (t: Ui, named: boolean): string =>
+  `<button class="tool" type="button" data-theme-toggle title="${escapeHtml(t.theme)}" aria-label="${escapeHtml(t.theme)}"><span aria-hidden="true">◐</span>${named ? `<span>${escapeHtml(t.theme)}</span>` : ""}</button>`;
+
+// The site, then the page's crumbs; the last one is the page.
+export function breadcrumb(o: PageOptions, t: Ui): string {
+  const crumbs: Crumb[] = [{ label: SITE.name, href: homeUrl(o.lang) }, ...(o.crumbs ?? [])];
+  // The site's crumb stays a link on its own home page, where it is also the page.
+  const items = crumbs.map((c, i) => {
+    const last = i === crumbs.length - 1;
+    const icon = filled(c.icon) ? `<span class="crumb-icon" aria-hidden="true">${c.icon}</span>` : "";
+    const label = `${icon}<span class="crumb-text">${escapeHtml(c.label)}</span>`;
+    const cls = i === 0 ? "crumb brand" : "crumb";
+    const current = last ? ' aria-current="page"' : "";
+    return c.href !== undefined && (!last || i === 0)
+      ? `<li><a class="${cls}" href="${c.href}"${current}>${label}</a></li>`
+      : `<li><span class="${cls}"${current}>${label}</span></li>`;
+  });
+  return `<nav class="crumbs" aria-label="${escapeHtml(t.breadcrumb)}"><ol>${items.join("")}</ol></nav>`;
+}
+
+// The panels the chips and the bottom bar open (popovers): under their chip on wide screens, a sheet
+// on phones (client-panel.ts, panels.css).
+export function panels(o: PageOptions, t: Ui, more: boolean): string {
+  const out: string[] = [];
+  if (o.level === true) {
+    const buttons = LEVELS.map((l) => `<button type="button" class="lvl-${l}" data-set-level="${l}">${l}</button>`).join("");
+    out.push(
+      `<div class="panel" id="level-panel" popover><p class="panel-title">${escapeHtml(t.level)}</p><div class="seg">${buttons}</div><p class="panel-note">${escapeHtml(t.levelHidden)}</p></div>`,
+    );
+  }
+  if (o.varieties !== undefined) {
+    const buttons = o.varieties
+      .map((v) => `<button type="button" data-set-variety="${v}">${escapeHtml(varietyName(v, o.lang))}</button>`)
+      .join("");
+    out.push(
+      `<div class="panel" id="variety-panel" popover><p class="panel-title">${escapeHtml(t.variety)}</p><div class="seg">${buttons}</div></div>`,
+    );
+  }
+  if (more) {
+    const read =
+      (o.read ?? []).length > 1
+        ? `<p class="panel-title">${escapeHtml(t.read)}</p><div class="menu-list">${languageLinks(o.read ?? [])}</div>`
+        : "";
+    out.push(
+      `<div class="panel" id="more-panel" popover>${read}<div class="panel-tools">${o.kind === "topic" || o.kind === "sheet" ? printButton(t, "tool") : ""}${credits(o, true)}${themeButton(t, true)}</div></div>`,
+    );
+  }
+  return out.join("\n  ");
+}
+
+// The bottom bar on phones: the menu, the level and variety panels, More and the next page.
+export function bottomBar(o: PageOptions, t: Ui): string {
+  const item = (icon: string, label: string, attrs: string): string =>
+    `<button type="button" class="bar-item" ${attrs}><span class="bar-icon" aria-hidden="true">${icon}</span><span>${escapeHtml(label)}</span></button>`;
+  const parts = [
+    `<button class="bar-item menu" id="menu" type="button"><span class="bar-icon" aria-hidden="true">☰</span><span>${escapeHtml(t.index)}</span></button>`,
+  ];
+  if (o.level === true) parts.push(item('<span class="level-dot"></span>', t.level, 'popovertarget="level-panel"'));
+  if (o.varieties !== undefined) parts.push(item("🌎", t.variety, 'popovertarget="variety-panel"'));
+  parts.push(item("⋯", t.more, 'popovertarget="more-panel"'));
+  if (filled(o.next)) parts.push(o.next);
+  return `<nav class="bottom-bar" aria-label="${escapeHtml(t.more)}">${parts.join("")}</nav>`;
+}

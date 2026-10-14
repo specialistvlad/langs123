@@ -94,7 +94,7 @@ describe.each(topicPages)("%s", (path) => {
   test("the header, the rail and the menu agree with the sections", async () => {
     const doc = await readPage(path);
     const sections = [...doc.querySelectorAll("section.part")];
-    expect(doc.querySelector(".doc-head h1 .lvl")?.textContent).toBe(rangeOf(sections));
+    expect(doc.querySelector(".doc-head .props .lvl")?.textContent).toBe(rangeOf(sections));
     for (const li of doc.querySelectorAll(".toc > li")) {
       const target = doc.getElementById(li.querySelector("a")?.getAttribute("href")?.slice(1) ?? "");
       expect(target === null ? "missing" : label(from(li), to(li))).toBe(target === null ? "missing" : label(from(target), to(target)));

@@ -44,7 +44,18 @@ html[data-order="path"] [data-order="categories"] {
   display: none;
 }
 .nav-order {
-  margin: 12px 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 18px 0 8px 8px;
+}
+.nav-label {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 /* On the study path the menu highlights the step being read alone (client.ts) */
 .nav-list[data-order="path"] a.on:not([aria-current="step"]) {
@@ -55,9 +66,6 @@ html[data-order="path"] [data-order="categories"] {
 .nav-order .seg button {
   padding: 4px 8px;
   font-size: 12px;
-}
-.index-order {
-  margin-top: 14px;
 }
 
 /* Sidebar level badges */
@@ -89,18 +97,6 @@ html[data-order="path"] [data-order="categories"] {
   }
   .content {
     min-width: 0;
-  }
-  .controls {
-    min-width: 0;
-    gap: 8px 12px;
-  }
-  .control {
-    flex-wrap: wrap;
-    min-width: 0;
-  }
-  .seg {
-    max-width: 100%;
-    overflow-x: auto;
   }
   .doc h1 {
     font-size: 24px;

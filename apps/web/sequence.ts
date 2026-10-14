@@ -110,6 +110,21 @@ export function pagers(track: Track, ref: TopicRef, where: "top" | "bottom"): st
   return `<div class="pagers ${where}">${rows.join("")}</div>`;
 }
 
+// Next in the bottom bar on phones: the same next page as the pagers, per grouping and level.
+export function barNext(track: Track, ref: TopicRef): string {
+  const { t } = track;
+  return placed(track, ref)
+    .flatMap(({ attrs, around: a }) => {
+      const e = a.next;
+      if (!e) return [];
+      const label = a.restart ? t.startOver : t.next;
+      return [
+        `<a class="bar-item bar-next" href="${e.href}"${attrs} title="${escapeHtml(e.title)}"><span class="bar-icon" aria-hidden="true">${a.restart ? "↺" : "→"}</span><span>${escapeHtml(label)}</span></a>`,
+      ];
+    })
+    .join("");
+}
+
 // Up next in the rail: the next page with its first sentence and range, or the first page to start over.
 export function upNext(track: Track, ref: TopicRef): string {
   const { t } = track;
