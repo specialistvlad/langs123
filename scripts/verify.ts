@@ -10,7 +10,13 @@ const test = (file: string): Check => [file, ["bun", "test", `./${file}`]];
 
 // The unit test files that check every built page run in a process of their own, which parses each
 // page once; the rest run in another, with coverage.
-const PAGE_CHECKS = ["apps/web/path.test.ts", "apps/web/levels.test.ts", "apps/web/marks.test.ts", "apps/web/credits.test.ts"];
+const PAGE_CHECKS = [
+  "apps/web/path.test.ts",
+  "apps/web/levels.test.ts",
+  "apps/web/marks.test.ts",
+  "apps/web/credits.test.ts",
+  "apps/web/tracks.test.ts",
+];
 const UNIT: Check[] = [
   ["unit tests, with coverage", ["bun", "test", "--coverage", ...PAGE_CHECKS.map((file) => `--path-ignore-patterns=${file}`)]],
   ["checks on every built page", ["bun", "test", ...PAGE_CHECKS.map((file) => `./${file}`)]],

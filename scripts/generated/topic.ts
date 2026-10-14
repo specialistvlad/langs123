@@ -41,9 +41,9 @@ export type Mark =
   | SlotMark
   | PatternMark;
 /**
- * A variety of the language being learned, as a BCP 47 tag; en-GB when absent.
+ * A variety of the language being learned, as a BCP 47 tag. English: en-GB when absent. A language with varieties in curriculum.yaml: an element without one serves every variety.
  */
-export type Variety = "en-GB" | "en-US";
+export type Variety = "en-GB" | "en-US" | "es-419" | "es-ES";
 export type Part = string | Mark;
 export type Block = ProseBlock | ListBlock | ParadigmBlock | UsageBlock | ComparisonBlock | InventoryBlock | ErrorsBlock;
 /**
@@ -112,18 +112,21 @@ export interface Langs123Topic {
   tags: string[];
   concepts: string[];
   related: TopicId[];
+  /**
+   * Per explanation language of the topic's language (curriculum.yaml), draft or approved.
+   */
   status: {
-    en: Status;
-    uk: Status;
-    es: Status;
-    pt: Status;
-    fr: Status;
-    de: Status;
-    it: Status;
-    pl: Status;
-    tr: Status;
-    id: Status;
-    vi: Status;
+    en?: Status;
+    uk?: Status;
+    es?: Status;
+    pt?: Status;
+    fr?: Status;
+    de?: Status;
+    it?: Status;
+    pl?: Status;
+    tr?: Status;
+    id?: Status;
+    vi?: Status;
   };
   /**
    * Per explanation language but the source, the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section (npm run translated).
@@ -492,7 +495,7 @@ export interface FeatureBundle {
   gender?: ("masc" | "fem" | "neut") | ("masc" | "fem" | "neut")[];
   case?: ("nom" | "acc" | "gen") | ("nom" | "acc" | "gen")[];
   tense?: ("prs" | "pst" | "fut") | ("prs" | "pst" | "fut")[];
-  aspect?: ("prog" | "prf" | "hab") | ("prog" | "prf" | "hab")[];
+  aspect?: ("prog" | "prf" | "hab" | "pfv" | "ipfv") | ("prog" | "prf" | "hab" | "pfv" | "ipfv")[];
   mood?: ("ind" | "imp" | "sbjv" | "cond") | ("ind" | "imp" | "sbjv" | "cond")[];
   polarity?: ("pos" | "neg") | ("pos" | "neg")[];
   interrogativity?: ("decl" | "int") | ("decl" | "int")[];

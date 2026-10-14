@@ -1,4 +1,5 @@
-// Stamps the fingerprint of the source text on a topic's translations, once they are up to date with it.
+// Stamps the fingerprint of the source text on a topic's translations, once they are up to date with it: each
+// explanation language the topic's language is written for, but the source.
 // Run: npm run translated -- <topic id or file>… <language>…   (no language: every one but the source)
 //      npm run translated -- --all
 import { relative } from "node:path";
@@ -27,9 +28,11 @@ for (const ref of chosen) {
   if (ref.topic === null) continue;
   const print = fingerprint(ref.topic);
   const old = (ref.topic.translated ?? {}) as Partial<Record<Explain, string>>;
-  const now = Object.fromEntries(others.map((l) => [l, (langs.length === 0 || langs.includes(l) ? print : old[l]) ?? print]));
-  const line = `translated: { ${others.map((l) => `${l}: "${now[l]}"`).join(", ")} }`;
+  // The topic's own explanation languages but the source.
+  const own = ref.explain.filter((l) => l !== SOURCE);
+  const now = Object.fromEntries(own.map((l) => [l, (langs.length === 0 || langs.includes(l) ? print : old[l]) ?? print]));
+  const line = `translated: { ${own.map((l) => `${l}: "${now[l]}"`).join(", ")} }`;
   const next = /^translated: .*$/m.test(text) ? text.replace(/^translated: .*$/m, line) : text.replace(/^(status: .*)$/m, `$1\n${line}`);
   await Bun.write(file, next);
-  console.log(`  ✓ ${ref.id}: ${(langs.length ? langs : others).join(", ")}`);
+  console.log(`  ✓ ${ref.id}: ${(langs.length ? langs.filter((l) => own.includes(l)) : own).join(", ")}`);
 }

@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.pronombres.pronombres-sujeto
+lang: es
+kind: grammar
+tags: [pronouns, subject, persons]
+concepts: [pronouns]
+related: [es.pronombres.tu-usted-vosotros-ustedes, es.pronombres.pronombres-preposicion, es.pronombres.objeto-directo, es.ser-estar-hay-gustar.ser-estar, es.presente.presente-regular]
+status: { en: draft, es: draft }
+translated: { es: "dbec1f 9c0d61 470eb3 f8af5d 11ac41 b37e25" }
+
+title: { en: Subject Pronouns, es: Los pronombres sujeto }
+summary:
+  lead:
+    en: ["Subject pronouns name who acts: ", { term: yo }, ", ", { term: tú }, ", ", { term: él }, ", ", { term: ella }, ", ", { term: usted }, ", ", { term: nosotros }, ", ", { term: ellos }, ", ", { term: ustedes }, "."]
+    es: ["Los pronombres sujeto dicen quién actúa: ", { term: yo }, ", ", { term: tú }, ", ", { term: él }, ", ", { term: ella }, ", ", { term: usted }, ", ", { term: nosotros }, ", ", { term: ellos }, ", ", { term: ustedes }, "."]
+  rule:
+    en: "The verb ending already names the person, so the pronoun drops unless it marks a contrast:"
+    es: "La terminación del verbo ya indica la persona, así que el pronombre se omite si no marca un contraste:"
+  ex: { examples: [[{ target: Trabajo }, " en un banco."], [{ target: Yo }, " trabajo y ", { target: él }, " estudia."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A0
+          point: { en: Singular, es: Singular }
+          rule:
+            en: { alternatives: [{ term: yo }, { term: tú }, { term: él }, { term: ella }, { term: usted }] }
+            es: { alternatives: [{ term: yo }, { term: tú }, { term: él }, { term: ella }, { term: usted }] }
+          ex: ["¿", { target: Tú }, " eres Pablo?"]
+          tr: { en: Are you Pablo? }
+        - level: A0
+          point: { en: Plural, es: Plural }
+          rule:
+            en: { alternatives: [{ term: nosotros }, { term: nosotras }, { term: ellos }, { term: ellas }, { term: ustedes }] }
+            es: { alternatives: [{ term: nosotros }, { term: nosotras }, { term: ellos }, { term: ellas }, { term: ustedes }] }
+          ex: [{ target: Ellos }, " son mis padres."]
+          tr: { en: They're my parents. }
+        - level: A0
+          variety: es-419
+          point: { en: Plural “you”, es: Plural de “tú” }
+          rule:
+            en: [{ term: ustedes }, " for any group: friends or strangers"]
+            es: [{ term: ustedes }, " para cualquier grupo: amigos o desconocidos"]
+          ex: ["¿", { target: Ustedes }, " son hermanos?"]
+          tr: { en: Are you brothers? }
+        - level: A0
+          variety: es-ES
+          point: { en: Plural “you”, es: Plural de “tú” }
+          rule:
+            en: [{ alternatives: [{ term: vosotros }, { term: vosotras }] }, " for friends and family, ", { term: ustedes }, " for strangers"]
+            es: [{ alternatives: [{ term: vosotros }, { term: vosotras }] }, " en confianza, ", { term: ustedes }, " con desconocidos"]
+          ex: ["¿", { target: Vosotros }, " sois hermanos?"]
+          tr: { en: Are you brothers? }
+        - level: A1
+          point: { en: Usted, es: Usted }
+          rule:
+            en: ["formal “you”: it takes the verb form of ", { term: él }]
+            es: ["“tú” formal: lleva la forma del verbo de ", { term: él }]
+          ex: ["¿", { target: Usted habla }, " inglés?"]
+          tr: { en: Do you speak English? }
+        - level: A1
+          point: { en: No pronoun, es: Sin pronombre }
+          rule:
+            en: "the verb ending names the person, so the pronoun drops"
+            es: "la terminación del verbo indica la persona y el pronombre se omite"
+          ex: [{ target: Vivo }, " en Lima."]
+          tr: { en: I live in Lima. }
+        - level: A1
+          point: { en: Contrast, es: Contraste }
+          rule:
+            en: "the pronoun stays to set two people apart"
+            es: "el pronombre aparece para distinguir a dos personas"
+          ex: [{ target: Yo }, " trabajo y ", { target: tú }, " estudias."]
+          tr: { en: I work and you study. }
+        - level: A1
+          point: { en: Mixed group, es: Grupo mixto }
+          rule:
+            en: ["men and women together take ", { term: nosotros }, " or ", { term: ellos }]
+            es: ["hombres y mujeres juntos llevan ", { term: nosotros }, " o ", { term: ellos }]
+          ex: ["¿Ana y Pedro? ", { target: Ellos }, " también son de Chile."]
+          tr: { en: Ana and Pedro? They're from Chile too. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: "“it” as a subject has no pronoun: the verb stands alone"
+            es: "el tiempo y la hora no llevan pronombre: el verbo va solo"
+          ex: [{ target: Llueve }, "."]
+          tr: { en: "It's raining." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: "A subject pronoun names who does the action: the speaker, the listener or someone else."
+              es: "El pronombre sujeto dice quién hace la acción: quien habla, quien escucha u otra persona."
+            ex: [{ target: Ella }, " es médica."]
+            tr: { en: "She's a doctor." }
+          - type: note
+            level: A1
+            text:
+              en: ["Choosing between ", { term: tú }, ", ", { term: usted }, " and their plurals: ", { link: "Forms of Address", to: es.pronombres.tu-usted-vosotros-ustedes }, "."]
+              es: ["Cómo elegir entre ", { term: tú }, ", ", { term: usted }, " y sus plurales: ", { link: "Tú, usted, vosotros, ustedes", to: es.pronombres.tu-usted-vosotros-ustedes }, "."]
+          - type: note
+            level: A1
+            text:
+              en: ["After a preposition, the pronouns take other forms: ", { link: "Pronouns after Prepositions", to: es.pronombres.pronombres-preposicion }, "."]
+              es: ["Después de una preposición, los pronombres cambian de forma: ", { link: "Pronombres con preposición", to: es.pronombres.pronombres-preposicion }, "."]
+
+  - title: { en: "Form: the pronouns", es: "Forma: los pronombres" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: pronoun, label: { en: Pronoun, es: Pronombre } }
+          - { key: refers, label: { en: Refers to, es: Se refiere a } }
+        rows:
+          - { level: A0, features: { person: 1, number: sg }, pronoun: { target: yo }, refers: { en: the speaker, es: quien habla } }
+          - { level: A0, features: { person: 2, number: sg, politeness: infm }, pronoun: { target: tú }, refers: { en: one listener you know well, es: una persona de confianza que escucha } }
+          - { level: A0, features: { person: 2, number: sg, politeness: form }, pronoun: { target: usted }, refers: { en: "one listener, formally", es: "una persona que escucha, con respeto" } }
+          - { level: A0, features: { person: 3, number: sg, gender: masc }, pronoun: { target: él }, refers: { en: a man or a boy, es: un hombre o un niño } }
+          - { level: A0, features: { person: 3, number: sg, gender: fem }, pronoun: { target: ella }, refers: { en: a woman or a girl, es: una mujer o una niña } }
+          - { level: A0, features: { person: 1, number: pl, gender: masc }, pronoun: { target: nosotros }, refers: { en: the speaker and others, es: quien habla y otras personas } }
+          - { level: A0, features: { person: 1, number: pl, gender: fem }, pronoun: { target: nosotras }, refers: { en: the speaker and other women, es: quien habla y otras mujeres } }
+          - { level: A0, variety: es-ES, features: { person: 2, number: pl, politeness: infm, gender: masc }, pronoun: { target: vosotros }, refers: { en: listeners you know well, es: personas de confianza que escuchan } }
+          - { level: A0, variety: es-ES, features: { person: 2, number: pl, politeness: infm, gender: fem }, pronoun: { target: vosotras }, refers: { en: women you know well, es: mujeres de confianza que escuchan } }
+          - { level: A0, variety: es-ES, features: { person: 2, number: pl, politeness: form }, pronoun: { target: ustedes }, refers: { en: "listeners, formally", es: "personas que escuchan, con respeto" } }
+          - { level: A0, variety: es-419, features: { person: 2, number: pl }, pronoun: { target: ustedes }, refers: { en: any group of listeners, es: cualquier grupo que escucha } }
+          - { level: A0, features: { person: 3, number: pl, gender: masc }, pronoun: { target: ellos }, refers: { en: "men, or men and women", es: "hombres, u hombres y mujeres" } }
+          - { level: A0, features: { person: 3, number: pl, gender: fem }, pronoun: { target: ellas }, refers: { en: women only, es: solo mujeres } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: usted }, " and ", { term: ustedes }, " take the verb forms of ", { term: él }, " and ", { term: ellos }, ":"]
+              es: [{ term: usted }, " y ", { term: ustedes }, " llevan las formas del verbo de ", { term: él }, " y ", { term: ellos }, ":"]
+            ex: { examples: [["¿", { target: Usted vive }, " aquí?"], [{ target: Ustedes trabajan }, " mucho."]] }
+            tr: { en: { examples: [Do you live here?, You work a lot.] } }
+          - type: rule
+            level: A1
+            text:
+              en: ["A group of men and women takes the masculine forms ", { term: nosotros }, " and ", { term: ellos }, ":"]
+              es: ["Un grupo de hombres y mujeres lleva las formas masculinas ", { term: nosotros }, " y ", { term: ellos }, ":"]
+            ex: ["¿Ana y Pedro? ", { target: Ellos }, " también son de Chile."]
+            tr: { en: Ana and Pedro? They're from Chile too. }
+          - type: note
+            level: A1
+            variety: es-419
+            text:
+              en: ["In Argentina, Uruguay and much of Central America, ", { term: vos }, " takes the place of ", { term: tú }, "."]
+              es: ["En Argentina, Uruguay y buena parte de Centroamérica, ", { term: vos }, " ocupa el lugar de ", { term: tú }, "."]
+
+  - title: { en: When the pronoun appears, es: Cuándo aparece el pronombre }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, use: { en: "No pronoun: the verb ending names the person", es: "Sin pronombre: la terminación del verbo indica la persona" }, ex: [{ target: Hablo }, " español."], tr: { en: I speak Spanish. } }
+          - { level: A1, use: { en: Contrast between two people, es: Contraste entre dos personas }, ex: [{ target: Yo }, " trabajo y ", { target: tú }, " estudias."], tr: { en: I work and you study. } }
+          - { level: A2, use: { en: ["To make the person clear, when ", { term: él }, ", ", { term: ella }, " and ", { term: usted }, " share a verb form"], es: ["Para aclarar la persona, cuando ", { term: él }, ", ", { term: ella }, " y ", { term: usted }, " comparten la forma del verbo"] }, ex: ["¿", { target: Usted }, " es el profesor?"], tr: { en: Are you the teacher? } }
+          - level: A2
+            use: { en: A short answer without a verb, es: Una respuesta corta sin verbo }
+            ex: { exchange: ["¿Quién habla inglés?", [{ target: Yo }, "."]] }
+            tr: { en: { exchange: [Who speaks English?, I do.] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "The weather, the time and “it” as a subject take no pronoun: the verb stands alone."
+              es: "El tiempo, la hora y otras frases sin sujeto personal no llevan pronombre: el verbo va solo."
+            ex: { examples: [[{ target: Llueve }, "."], [{ target: Es }, " tarde."]] }
+            tr: { en: { examples: ["It's raining.", "It's late."] } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A0, wrong: "¿Tú es Pablo?", right: ["¿Tú ", { target: eres }, " Pablo?"], rule: { en: [{ term: tú }, " takes its own verb form: ", { term: eres }], es: [{ term: tú }, " lleva su propia forma del verbo: ", { term: eres }] } }
+          - { level: A1, wrong: "¿Usted hablas inglés?", right: ["¿Usted ", { target: habla }, " inglés?"], rule: { en: [{ term: usted }, " takes the verb form of ", { term: él }], es: [{ term: usted }, " lleva la forma del verbo de ", { term: él }] } }
+          - { level: A1, wrong: Ellas son mis padres., right: [{ target: Ellos }, " son mis padres."], rule: { en: "a mother and a father together take the masculine form", es: "una madre y un padre juntos llevan la forma masculina" } }
+          - { level: A2, speakers: [en], wrong: Ello es tarde., right: [{ target: Es }, " tarde."], rule: { en: ["“it” as a subject has no pronoun: ", { term: es tarde }] } }

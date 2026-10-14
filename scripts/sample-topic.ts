@@ -13,7 +13,7 @@ export const SAMPLE: Topic = {
   tags: [],
   concepts: [],
   related: [],
-  status: Object.fromEntries(EXPLAIN_CODES.map((l) => [l, "draft"])) as Topic["status"],
+  status: Object.fromEntries(EXPLAIN_CODES.map((l) => [l, "draft"])),
   title: all("Sample"),
   summary: { lead: all("Lead."), rule: all("Rule:"), ex: "Ex." },
   cheatsheet: {

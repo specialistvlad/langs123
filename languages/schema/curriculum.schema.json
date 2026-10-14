@@ -25,9 +25,9 @@
         ],
         "properties": {
           "code": {
-            "enum": [
-              "en"
-            ]
+            "type": "string",
+            "pattern": "^[a-z]{2}$",
+            "description": "ISO 639-1 code of the language being learned; its topics live in languages/{code}/"
           },
           "enabled": {
             "type": "boolean",
@@ -40,6 +40,24 @@
           },
           "name": {
             "$ref": "#/definitions/localized"
+          },
+          "explain": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/definitions/explain"
+            },
+            "description": "The explanation languages the language is written for, the source language of site.yaml first; every explanation language when absent."
+          },
+          "varieties": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/definitions/variety"
+            },
+            "description": "The varieties a reader chooses between, the default first. An element tagged with a variety shows only while that variety is chosen."
           },
           "sections": {
             "type": "array",
@@ -58,7 +76,7 @@
                   "pattern": "^\\d\\d-[a-z0-9-]+$"
                 },
                 "title": {
-                  "$ref": "#/definitions/localized"
+                  "$ref": "#/definitions/trackLocalized"
                 },
                 "topics": {
                   "type": "array",
@@ -80,7 +98,7 @@
                         "description": "Planned range of a topic without a topic file; a written topic takes its range from its data."
                       },
                       "title": {
-                        "$ref": "#/definitions/localized"
+                        "$ref": "#/definitions/trackLocalized"
                       }
                     }
                   }
@@ -123,6 +141,30 @@
         "C2"
       ]
     },
+    "explain": {
+      "enum": [
+        "en",
+        "uk",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "pl",
+        "tr",
+        "id",
+        "vi"
+      ]
+    },
+    "variety": {
+      "description": "A variety of a language being learned, as a BCP 47 tag.",
+      "enum": [
+        "en-GB",
+        "en-US",
+        "es-419",
+        "es-ES"
+      ]
+    },
     "localized": {
       "type": "object",
       "additionalProperties": false,
@@ -139,6 +181,47 @@
         "id",
         "vi"
       ],
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "uk": {
+          "type": "string"
+        },
+        "es": {
+          "type": "string"
+        },
+        "pt": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        },
+        "it": {
+          "type": "string"
+        },
+        "pl": {
+          "type": "string"
+        },
+        "tr": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "vi": {
+          "type": "string"
+        }
+      }
+    },
+    "trackLocalized": {
+      "description": "Text in each explanation language of the language being learned; npm run check requires exactly those.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
       "properties": {
         "en": {
           "type": "string"

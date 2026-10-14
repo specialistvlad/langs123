@@ -1,6 +1,6 @@
 // Small HTML and text pieces the pages share: level badges and attributes, anchors, edit links.
-import { type Explain, type Level, SITE, type TopicRef } from "../../scripts/lib.ts";
-import { join, type Range, refRange } from "../../scripts/levels.ts";
+import { type Block, type Explain, type Level, lv, SITE, type TopicRef } from "../../scripts/lib.ts";
+import { join, leaves, type Range, refRange } from "../../scripts/levels.ts";
 
 // Opens the file in GitHub's editor (a fork for anyone without write access).
 export const editUrl = (path: string): string => `${SITE.repository}/edit/main/${path}`;
@@ -45,6 +45,31 @@ export const listBadge = (r: Range | null): string =>
 
 // What the level filter reads: an element hides while the filter sits below its lowest level.
 export const levelAttrs = (r: Range | null): string => (r === null ? "" : ` data-level="${r.from}" data-to="${r.to}"`);
+
+// What the variety switch reads: an element of one variety shows while the reader has chosen it.
+export const varietyAttr = (variety: string | undefined): string => (variety === undefined ? "" : ` data-variety="${variety}"`);
+
+// On a language with varieties, the variety every leaf of a block shares, so the block hides with them.
+export function blockVariety(block: Block, varieties: readonly string[] | undefined): string | undefined {
+  if (varieties === undefined) return undefined;
+  const tags = new Set(leaves(block).map((leaf) => (leaf as { variety?: string }).variety));
+  const [only] = tags;
+  return tags.size === 1 ? only : undefined;
+}
+
+// On a language with varieties, the lowest level of blocks for each variety whose leaves start above
+// `from`, as data-level-{variety}: the level filter hides the blocks with the last leaf that variety shows.
+export function varietyLevelAttrs(blocks: Block[], explain: Explain, varieties: readonly string[] | undefined, from: Level): string {
+  if (varieties === undefined) return "";
+  const all = blocks.flatMap((b) => leaves(b, explain)) as { level: Level; variety?: string }[];
+  return varieties
+    .map((v) => {
+      const own = all.filter((l) => l.variety === undefined || l.variety === v).map((l) => l.level);
+      const low = own.reduce<Level | null>((a, l) => (a === null || lv(l) < lv(a) ? l : a), null);
+      return low === null || low === from ? "" : ` data-level-${v.toLowerCase()}="${low}"`;
+    })
+    .join("");
+}
 
 // The range of some curriculum topics in an explanation language.
 export const refsRange = (refs: TopicRef[], explain: Explain): Range | null => join(refs.map((r) => refRange(r, explain)));

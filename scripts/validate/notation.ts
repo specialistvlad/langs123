@@ -1,7 +1,7 @@
 // The marks of a topic's text: no string holds the inline notation the marks replace, every mark is whole,
 // every value is a real one, and every localized gloss or slot carries the languages its text serves.
 import { topicTexts } from "../content.ts";
-import { EXPLAIN_CODES, type Localized, type Mark, type Topic } from "../lib.ts";
+import { EXPLAIN_CODES, type Explain, type Localized, type Mark, type Topic } from "../lib.ts";
 import { isLocalized, LIST_MARKS, markName } from "../text.ts";
 import { walkText } from "../text-walk.ts";
 import type { Report } from "./report.ts";
@@ -49,8 +49,8 @@ export function validDate(value: string): boolean {
 
 const isLocalizedValue = (v: unknown): v is Localized => typeof v === "object" && v !== null && !Array.isArray(v) && isLocalized(v);
 
-export function checkMarks(topic: Topic, where: string, report: Report): void {
-  for (const { text, path, plain, langs } of topicTexts(topic, EXPLAIN_CODES)) {
+export function checkMarks(topic: Topic, where: string, report: Report, explain: readonly Explain[] = EXPLAIN_CODES): void {
+  for (const { text, path, plain, langs } of topicTexts(topic, explain)) {
     walkText(
       text,
       {

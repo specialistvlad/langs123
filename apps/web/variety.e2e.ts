@@ -1,0 +1,86 @@
+// The Variety switch in a browser: a page of a language with varieties opens on the default and shows
+// its elements with those of every variety; choosing another shows that variety's elements instead,
+// carries the choice in the address and keeps it for the next page; the address wins over the kept
+// choice; a page without scripts shows the default.
+// Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
+import { afterAll, beforeAll, expect, test } from "bun:test";
+import { join } from "node:path";
+import { type Browser, chromium, type Page } from "playwright";
+import { SITE_DIR, testSite } from "./test-site.ts";
+
+await testSite();
+const SLOW = 30_000;
+const server = Bun.serve({
+  hostname: "127.0.0.1",
+  port: 0,
+  fetch: (req) => {
+    const file = decodeURIComponent(new URL(req.url).pathname);
+    return new Response(Bun.file(join(SITE_DIR, file.endsWith("/") ? `${file}index.html` : file)));
+  },
+});
+const TOPIC = "/en/spanish/ser-estar-hay-gustar/ser-estar/";
+let browser: Browser;
+beforeAll(async () => {
+  browser = await chromium.launch();
+}, SLOW);
+afterAll(async () => {
+  await browser.close();
+  await server.stop();
+});
+
+// A fresh page with storage of its own, so each test starts from the first visit.
+async function fresh(scripts = true): Promise<Page> {
+  const context = await browser.newContext({ javaScriptEnabled: scripts });
+  return context.newPage();
+}
+const url = (path: string): string => new URL(path, server.url).href;
+// Whether the page shows any element of a variety, and the variety <html> names.
+const shows = (page: Page, variety: string): Promise<boolean> =>
+  page.$$eval(`main [data-variety="${variety}"]`, (els) => els.some((el) => el.checkVisibility()));
+const chosen = (page: Page): Promise<string | undefined> => page.evaluate(() => document.documentElement.dataset["variety"]);
+
+test(
+  "a page opens on Latin America and shows its elements alone",
+  async () => {
+    const page = await fresh();
+    await page.goto(url(TOPIC));
+    expect(await chosen(page)).toBe("es-419");
+    expect(await shows(page, "es-419")).toBe(true);
+    expect(await shows(page, "es-ES")).toBe(false);
+    expect(await page.$eval('[data-set-variety="es-419"]', (b) => b.classList.contains("on"))).toBe(true);
+    await page.context().close();
+  },
+  SLOW,
+);
+
+test(
+  "choosing Spain shows its elements, carries it in the address and keeps it for the next page",
+  async () => {
+    const page = await fresh();
+    await page.goto(url(TOPIC));
+    await page.click('[data-set-variety="es-ES"]');
+    expect(await chosen(page)).toBe("es-ES");
+    expect(await shows(page, "es-ES")).toBe(true);
+    expect(await shows(page, "es-419")).toBe(false);
+    expect(new URL(page.url()).searchParams.get("variety")).toBe("es-es");
+    await page.goto(url("/es/spanish/"));
+    expect(await chosen(page)).toBe("es-ES");
+    await page.goto(url(`${TOPIC}?variety=es-419`));
+    expect(await chosen(page)).toBe("es-419");
+    expect(await shows(page, "es-ES")).toBe(false);
+    await page.context().close();
+  },
+  SLOW,
+);
+
+test(
+  "a page without scripts shows Latin America",
+  async () => {
+    const page = await fresh(false);
+    await page.goto(url(TOPIC));
+    expect(await shows(page, "es-419")).toBe(true);
+    expect(await shows(page, "es-ES")).toBe(false);
+    await page.context().close();
+  },
+  SLOW,
+);

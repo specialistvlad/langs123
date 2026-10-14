@@ -1,0 +1,185 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.pronombres.pronombres-preposicion
+lang: es
+kind: grammar
+tags: [pronouns, prepositions, conmigo, contigo]
+concepts: [pronouns]
+related: [es.pronombres.pronombres-sujeto, es.pronombres.objeto-indirecto, es.ser-estar-hay-gustar.gustar, es.preposiciones.preposiciones-basicas]
+status: { en: draft, es: draft }
+translated: { es: "c5943e 761017 d7274e cb2203 52d04f 5fd4c6 7b890a 009200" }
+
+title: { en: "Pronouns after Prepositions: mí, ti, conmigo", es: "Pronombres con preposición: mí, ti, conmigo" }
+summary:
+  lead:
+    en: ["After a preposition, ", { term: yo }, " and ", { term: tú }, " become ", { term: mí }, " and ", { term: ti }, ", and the other persons keep their subject forms."]
+    es: ["Después de preposición, ", { term: yo }, " y ", { term: tú }, " pasan a ", { term: mí }, " y ", { term: ti }, ", y las demás personas mantienen su forma de sujeto."]
+  rule:
+    en: [{ term: Con }, " joins ", { term: mí }, " and ", { term: ti }, " into ", { term: conmigo }, " and ", { term: contigo }, ":"]
+    es: [{ term: Con }, " se une a ", { term: mí }, " y a ", { term: ti }, " en ", { term: conmigo }, " y ", { term: contigo }, ":"]
+  ex: { examples: [["¿Vienes ", { target: conmigo }, "?"], ["Quiero hablar ", { target: contigo }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ mapping: [{ term: yo }, { term: mí }] }, ", ", { mapping: [{ term: tú }, { term: ti }] }]
+            es: [{ mapping: [{ term: yo }, { term: mí }] }, ", ", { mapping: [{ term: tú }, { term: ti }] }]
+          ex: ["Este café es para ", { target: mí }, "."]
+          tr: { en: This coffee is for me. }
+        - level: A2
+          point: { en: Form, es: Forma }
+          rule:
+            en: ["the rest as subject forms: ", { term: él }, ", ", { term: ella }, ", ", { term: usted }, ", ", { term: nosotros }, ", ", { term: ellos }, ", ", { term: ustedes }]
+            es: ["las demás como formas de sujeto: ", { term: él }, ", ", { term: ella }, ", ", { term: usted }, ", ", { term: nosotros }, ", ", { term: ellos }, ", ", { term: ustedes }]
+          ex: ["Hablo con ", { target: ella }, "."]
+          tr: { en: "I'm talking to her." }
+        - level: A2
+          variety: es-ES
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: vosotros }, " and ", { term: vosotras }, " keep their form"]
+            es: [{ term: vosotros }, " y ", { term: vosotras }, " mantienen su forma"]
+          ex: ["Es para ", { target: vosotros }, "."]
+          tr: { en: "It's for you." }
+        - level: A2
+          variety: es-419
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: vos }, " keeps its form: ", { term: para vos }, ", ", { term: con vos }]
+            es: [{ term: vos }, " mantiene su forma: ", { term: para vos }, ", ", { term: con vos }]
+          ex: ["Esto es para ", { target: vos }, "."]
+          tr: { en: This is for you. }
+        - level: A2
+          point: con
+          rule:
+            en: [{ term: conmigo }, " and ", { term: contigo }, " for “with me” and “with you” (", { term: tú }, ")"]
+            es: [{ term: conmigo }, " y ", { term: contigo }, " para ", { term: yo }, " y ", { term: tú }]
+          ex: ["¿Vienes ", { target: conmigo }, "?"]
+          tr: { en: Are you coming with me? }
+        - level: B1
+          point: { en: Subject forms, es: Formas de sujeto }
+          rule:
+            en: [{ alternatives: [{ term: entre }, { term: según }, { term: excepto }] }, " take ", { term: yo }, " and ", { term: tú }]
+            es: [{ alternatives: [{ term: entre }, { term: según }, { term: excepto }] }, " llevan ", { term: yo }, " y ", { term: tú }]
+          ex: ["Entre ", { target: tú }, " y ", { target: yo }, "."]
+          tr: { en: Between you and me. }
+        - level: A2
+          point: { en: Emphasis, es: Énfasis }
+          rule:
+            en: [{ alternatives: [{ term: a mí }, { term: a ti }] }, " go with ", { alternatives: [{ term: me }, { term: te }] }, " to stress the person"]
+            es: [{ alternatives: [{ term: a mí }, { term: a ti }] }, " acompañan a ", { alternatives: [{ term: me }, { term: te }] }, " para destacar a la persona"]
+          ex: [{ target: A mí }, " me encanta."]
+          tr: { en: I love it. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: mí }, " takes a written accent; ", { term: ti }, " never does"]
+            es: [{ term: mí }, " lleva tilde; ", { term: ti }, ", nunca"]
+          ex: ["Esto es para ", { target: ti }, "."]
+          tr: { en: This is for you. }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["A pronoun after a preposition such as ", { alternatives: [{ term: a }, { term: de }, { term: con }, { term: para }, { term: sin }] }, " takes its prepositional form."]
+              es: ["Un pronombre después de una preposición como ", { alternatives: [{ term: a }, { term: de }, { term: con }, { term: para }, { term: sin }] }, " toma su forma preposicional."]
+            ex: ["Vivo cerca de ", { target: ellos }, "."]
+            tr: { en: I live near them. }
+          - type: note
+            level: A2
+            text:
+              en: ["The forms before the verb: ", { link: "Subject Pronouns", to: es.pronombres.pronombres-sujeto }, "."]
+              es: ["Las formas que van delante del verbo: ", { link: "Los pronombres sujeto", to: es.pronombres.pronombres-sujeto }, "."]
+
+  - title: { en: "Form: the pronouns", es: "Forma: los pronombres" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: subject, label: { en: Subject, es: Sujeto } }
+          - { key: prep, label: { en: After a preposition, es: Después de preposición } }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, subject: yo, prep: { target: mí } }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm }, subject: tú, prep: { target: ti } }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], subject: { alternatives: [él, ella, usted] }, prep: { alternatives: [{ target: él }, { target: ella }, { target: usted }] } }
+          - { level: A2, features: { person: 1, number: pl }, subject: { alternatives: [nosotros, nosotras] }, prep: { alternatives: [{ target: nosotros }, { target: nosotras }] } }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, subject: { alternatives: [vosotros, vosotras] }, prep: { alternatives: [{ target: vosotros }, { target: vosotras }] } }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], subject: { alternatives: [ellos, ellas, ustedes] }, prep: { alternatives: [{ target: ellos }, { target: ellas }, { target: ustedes }] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: mí }, " takes a written accent, unlike the possessive ", { term: mi }, "; ", { term: ti }, " never takes one:"]
+              es: [{ term: mí }, " lleva tilde, a diferencia del posesivo ", { term: mi }, "; ", { term: ti }, " nunca la lleva:"]
+            ex: ["Este regalo es para ", { target: mí }, " y ese es para ", { target: ti }, "."]
+            tr: { en: This present is for me and that one is for you. }
+          - type: note
+            level: A2
+            variety: es-419
+            text:
+              en: ["Where ", { term: vos }, " replaces ", { term: tú }, ", it keeps its form after a preposition:"]
+              es: ["Donde ", { term: vos }, " sustituye a ", { term: tú }, ", mantiene su forma después de preposición:"]
+            ex: ["Esto es para ", { target: vos }, "."]
+            tr: { en: This is for you. }
+
+  - title: { en: "Con: conmigo, contigo", es: "Con: conmigo, contigo" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: ["“With me”: ", { term: conmigo }], es: ["Primera persona: ", { term: conmigo }] }, ex: ["¿Vienes ", { target: conmigo }, "?"], tr: { en: Are you coming with me? } }
+          - { level: A2, use: { en: ["“With you”: ", { term: contigo }], es: ["Segunda persona: ", { term: contigo }] }, ex: ["Quiero hablar ", { target: contigo }, "."], tr: { en: I want to talk to you. } }
+          - { level: A2, use: { en: "Every other person: no change", es: "Las demás personas: sin cambio" }, ex: ["Salgo ", { target: con ellos }, "."], tr: { en: "I'm going out with them." } }
+
+  - title: { en: Prepositions with yo and tú, es: Preposiciones con yo y tú }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: [{ alternatives: [{ term: entre }, { term: según }, { term: excepto }] }, " take the subject forms ", { term: yo }, " and ", { term: tú }, ":"]
+              es: [{ alternatives: [{ term: entre }, { term: según }, { term: excepto }] }, " llevan las formas de sujeto ", { term: yo }, " y ", { term: tú }, ":"]
+            ex: { examples: [["Entre ", { target: tú }, " y ", { target: yo }, "."], ["Según ", { target: tú }, ", es fácil."]] }
+            tr: { en: { examples: [Between you and me., "According to you, it's easy."] } }
+
+  - title: { en: "A mí, a ti for emphasis", es: "A mí, a ti para dar énfasis" }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ alternatives: [{ term: a mí }, { term: a ti }, { term: a él }] }, " and the rest go with ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, " to stress the person or set up a contrast:"]
+              es: [{ alternatives: [{ term: a mí }, { term: a ti }, { term: a él }] }, " y los demás acompañan a ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, " para destacar a la persona o contrastar:"]
+            ex: { examples: [[{ target: A mí }, " me encanta."], [{ target: A ti }, " te toca."]] }
+            tr: { en: { examples: [I love it., "It's your turn."] } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Es para yo., right: ["Es para ", { target: mí }, "."], rule: { en: [{ term: yo }, " becomes ", { term: mí }, " after a preposition"], es: [{ term: yo }, " pasa a ", { term: mí }, " después de preposición"] } }
+          - { level: A2, wrong: "¿Vienes con mí?", right: ["¿Vienes ", { target: conmigo }, "?"], rule: { en: ["“with me” is ", { term: conmigo }], es: ["con la primera persona se dice ", { term: conmigo }] } }
+          - { level: A2, wrong: Es para tí., right: ["Es para ", { target: ti }, "."], rule: { en: [{ term: ti }, " has no written accent"], es: [{ term: ti }, " no lleva tilde"] } }
+          - { level: B1, wrong: Entre mí y ti., right: ["Entre ", { target: tú }, " y ", { target: yo }, "."], rule: { en: [{ term: entre }, " takes ", { term: yo }, " and ", { term: tú }], es: [{ term: entre }, " lleva ", { term: yo }, " y ", { term: tú }] } }

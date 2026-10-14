@@ -1,0 +1,185 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.cuantificadores
+lang: es
+kind: grammar
+tags: [quantifiers, determiners, nouns]
+concepts: [quantifiers]
+related: [es.sustantivo-determinantes.articulos, es.sustantivo-determinantes.indefinidos, es.adjetivo-adverbio.adverbios, es.sustantivo-determinantes.plural]
+status: { en: draft, es: draft }
+translated: { es: "3c5ded f3f6c4 97227a ecc72e b4de6f" }
+
+title: { en: Quantifiers, es: Los cuantificadores }
+summary:
+  lead:
+    en: [{ term: Mucho }, ", ", { term: poco }, ", ", { term: todo }, " and ", { term: otro }, " say how much or how many, and they agree with their noun in gender and number."]
+    es: [{ term: Mucho }, ", ", { term: poco }, ", ", { term: todo }, " y ", { term: otro }, " indican cantidad y concuerdan con su sustantivo en género y número."]
+  rule:
+    en: [{ term: Otro }, " never takes ", { term: un }, ", and ", { term: todo }, " takes the article:"]
+    es: [{ term: Otro }, " nunca lleva ", { term: un }, ", y ", { term: todo }, " lleva artículo:"]
+  ex: { examples: [["Quiero ", { target: otro }, " café."], ["Trabajo ", { target: todos los }, " días."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { term: mucho }
+          rule: { en: "a lot of; agrees with the noun", es: "gran cantidad; concuerda con el sustantivo" }
+          ex: { examples: [[{ target: mucha }, " agua"], [{ target: muchos }, " libros"]] }
+          tr: { en: { examples: [a lot of water, a lot of books] } }
+        - level: A1
+          point: { term: poco }
+          rule: { en: "little, few: not enough", es: "pequeña cantidad: no basta" }
+          ex: ["Tengo ", { target: poco }, " tiempo."]
+          tr: { en: I have little time. }
+        - level: A1
+          point: { term: un poco de }
+          rule: { en: "a little: there is some", es: "cantidad pequeña, pero la hay" }
+          ex: ["¿Quieres ", { target: un poco de }, " agua?"]
+          tr: { en: Would you like a little water? }
+        - level: A2
+          point: { term: todo }
+          rule: { en: the whole or every one, es: la totalidad }
+          ex: ["Trabajo ", { target: todos los }, " días."]
+          tr: { en: I work every day. }
+        - level: A1
+          point: { en: After a verb, es: Después de un verbo }
+          rule: { en: [{ term: mucho }, " and ", { term: poco }, " never change"], es: [{ term: mucho }, " y ", { term: poco }, " no cambian"] }
+          ex: ["Mi hijo come ", { target: mucho }, "."]
+          tr: { en: My son eats a lot. }
+        - level: A1
+          point: { term: bastante }
+          rule: { en: "enough, quite a lot; plural -s", es: "suficiente; plural en -s" }
+          ex: ["Hay ", { target: bastantes }, " sillas."]
+          tr: { en: There are enough chairs. }
+        - level: A2
+          point: { term: demasiado }
+          rule: { en: more than is good, es: más de lo conveniente }
+          ex: ["Hay ", { target: demasiado }, " ruido."]
+          tr: { en: "There's too much noise." }
+        - level: B1
+          point: { term: cada }
+          rule: { en: never changes; singular noun, es: no cambia; sustantivo en singular }
+          ex: ["Voy al gimnasio ", { target: cada }, " semana."]
+          tr: { en: I go to the gym every week. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule: { en: [{ term: otro }, " never takes ", { term: un }], es: [{ term: otro }, " nunca lleva ", { term: un }] }
+          ex: ["Quiero ", { target: otro }, " café."]
+          tr: { en: I want another coffee. }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule: { en: [{ term: gente }, " is feminine singular"], es: [{ term: gente }, " es femenino singular"] }
+          ex: ["Hay ", { target: mucha }, " gente."]
+          tr: { en: There are a lot of people. }
+
+sections:
+  - title: { en: "Form: agreement", es: "Forma: la concordancia" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: word, label: { en: Word, es: Palabra } }
+          - { key: sg, label: { en: Singular, es: Singular }, features: { number: sg } }
+          - { key: pl, label: { en: Plural, es: Plural }, features: { number: pl } }
+        rows:
+          - { level: A1, word: mucho, sg: { alternatives: [{ target: mucho }, { target: mucha }] }, pl: { alternatives: [{ target: muchos }, { target: muchas }] } }
+          - { level: A1, word: poco, sg: { alternatives: [{ target: poco }, { target: poca }] }, pl: { alternatives: [{ target: pocos }, { target: pocas }] } }
+          - { level: A2, word: todo, sg: { alternatives: [{ target: todo }, { target: toda }] }, pl: { alternatives: [{ target: todos }, { target: todas }] } }
+          - { level: A2, word: otro, sg: { alternatives: [{ target: otro }, { target: otra }] }, pl: { alternatives: [{ target: otros }, { target: otras }] } }
+          - { level: A2, word: demasiado, sg: { alternatives: [{ target: demasiado }, { target: demasiada }] }, pl: { alternatives: [{ target: demasiados }, { target: demasiadas }] } }
+          - { level: A1, word: bastante, sg: { target: bastante }, pl: { target: bastantes } }
+          - { level: B1, word: varios, pl: { alternatives: [{ target: varios }, { target: varias }] } }
+          - { level: B1, word: cada, sg: { target: cada } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "The quantifier agrees with its noun: singular with an uncountable noun, plural with a countable one."
+              es: "El cuantificador concuerda con su sustantivo: singular con un incontable, plural con un contable."
+            ex: { examples: [[{ target: poca }, " leche"], [{ target: pocos }, " huevos"]] }
+            tr: { en: { examples: [little milk, few eggs] } }
+          - type: rule
+            level: A1
+            text:
+              en: "Alone, the quantifier takes the gender and number of the noun it stands for:"
+              es: "Solo, el cuantificador toma el género y el número del sustantivo al que sustituye:"
+            ex: { exchange: ["¿Tienes amigos aquí?", ["Sí, ", { target: muchos }, "."]] }
+            tr: { en: { exchange: [Do you have friends here?, "Yes, lots."] } }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: mucho }, " and ", { term: poco }, " after a verb never change:"]
+              es: [{ term: mucho }, " y ", { term: poco }, " después de un verbo no cambian:"]
+            ex: ["Mi hijo come ", { target: mucho }, "."]
+            tr: { en: My son eats a lot. }
+          - type: note
+            level: A1
+            text:
+              en: [{ term: muy }, " and ", { term: mucho }, ": see ", { link: Adverbs, to: es.adjetivo-adverbio.adverbios }, "."]
+              es: [{ term: muy }, " y ", { term: mucho }, ": ver ", { link: Los adverbios, to: es.adjetivo-adverbio.adverbios }, "."]
+
+  - title: { en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { en: Word, es: Palabra } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, word: mucho, use: { en: a large amount, es: una cantidad grande }, ex: ["Tengo ", { target: muchos }, " amigos."], tr: { en: I have a lot of friends. } }
+          - { level: A1, word: poco, use: { en: "a small amount, not enough", es: "una cantidad pequeña, insuficiente" }, ex: ["Hay ", { target: pocas }, " personas."], tr: { en: There are few people. } }
+          - { level: A1, word: un poco de, use: { en: "a small amount, and there is some", es: "una cantidad pequeña, pero la hay" }, ex: ["Tengo ", { target: un poco de }, " hambre."], tr: { en: "I'm a little hungry." } }
+          - level: A2
+            word: todo
+            use: { en: "the whole, or every one", es: "completo, o cada uno" }
+            ex: { examples: [["Estudio ", { target: toda la }, " tarde."], ["Corro ", { target: todos los }, " días."]] }
+            tr: { en: { examples: [I study all afternoon., I run every day.] } }
+          - { level: A2, word: otro, use: { en: "one more, or a different one", es: "uno más, o uno distinto" }, ex: ["¿Me das ", { target: otra }, " servilleta?"], tr: { en: Can you give me another napkin? } }
+          - { level: A1, word: bastante, use: { en: "enough, quite a lot", es: "suficiente" }, ex: ["Tenemos ", { target: bastante }, " comida."], tr: { en: We have enough food. } }
+          - { level: A2, word: demasiado, use: { en: more than is good, es: más de lo conveniente }, ex: ["Comes ", { target: demasiados }, " dulces."], tr: { en: You eat too many sweets. } }
+          - { level: B1, word: varios, use: { en: "some, more than two", es: "algunos, más de dos" }, ex: ["Tengo ", { target: varias }, " preguntas."], tr: { en: I have several questions. } }
+          - { level: B1, word: cada, use: { en: every single one, es: uno por uno }, ex: [{ target: Cada }, " alumno tiene un libro."], tr: { en: Each student has a book. } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: poco }, " says that it is not enough; ", { term: un poco de }, " says that there is some:"]
+              es: [{ term: poco }, " dice que no basta; ", { term: un poco de }, " dice que hay algo:"]
+            ex: { examples: [["Tengo ", { target: poco }, " dinero."], ["Tengo ", { target: un poco de }, " dinero."]] }
+            tr: { en: { examples: [I have little money., I have a little money.] } }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: todo }, " goes before the article: ", { term: todo el día }, ", ", { term: todas las semanas }, "."]
+              es: [{ term: todo }, " va delante del artículo: ", { term: todo el día }, ", ", { term: todas las semanas }, "."]
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: otro }, " never takes ", { term: un }, " or ", { term: una }, "."]
+              es: [{ term: otro }, " nunca lleva ", { term: un }, " ni ", { term: una }, "."]
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: cada }, " never changes and goes with a singular noun."]
+              es: [{ term: cada }, " no cambia y va con un sustantivo en singular."]
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Quiero un otro café., right: ["Quiero ", { target: otro }, " café."], rule: { en: [{ term: otro }, " never takes ", { term: un }], es: [{ term: otro }, " nunca lleva ", { term: un }] } }
+          - { level: A1, wrong: Hay mucho gente., right: ["Hay ", { target: mucha }, " gente."], rule: { en: [{ term: gente }, " is feminine singular"], es: [{ term: gente }, " es femenino singular"] } }
+          - { level: A1, wrong: un poco agua, right: [{ target: un poco de }, " agua"], rule: { en: { pattern: [{ term: un poco de }, { slot: noun }] }, es: { pattern: [{ term: un poco de }, { slot: noun }] } } }
+          - { level: A2, wrong: todos días, right: [{ target: todos los }, " días"], rule: { en: [{ term: todo }, " takes the article"], es: [{ term: todo }, " lleva artículo"] } }
+          - { level: A1, wrong: Mi hijo come muchos., right: ["Mi hijo come ", { target: mucho }, "."], rule: { en: ["after a verb, ", { term: mucho }, " never changes"], es: ["después de un verbo, ", { term: mucho }, " no cambia"] } }
+          - { level: B1, wrong: cada días, right: [{ target: cada }, " día"], rule: { en: [{ term: cada }, " takes a singular noun"], es: [{ term: cada }, " lleva el sustantivo en singular"] } }
+          - { level: A1, speakers: [en], wrong: Me gusta muy mucho., right: ["Me gusta ", { target: mucho }, "."], rule: { en: [{ term: mucho }, " alone means “very much”"] } }

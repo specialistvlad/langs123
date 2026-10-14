@@ -4,7 +4,7 @@ import { serves, shows, type TableBlock, tableShape } from "../../scripts/conten
 import { isLocalized, reading } from "../../scripts/text.ts";
 import { type Ctx, escapeHtml, explained, learned, translation } from "./html.ts";
 import { blockRange } from "../../scripts/levels.ts";
-import { badge, levelAttrs, single } from "./parts.ts";
+import { badge, blockVariety, levelAttrs, single, varietyAttr, varietyLevelAttrs } from "./parts.ts";
 import { blockStarts, classAttr, GAP_CELL, gapLevel, gapsAfter, headHtml, spans } from "./table.ts";
 import {
   type Block,
@@ -119,9 +119,11 @@ function tableHtml(block: TableBlock, ctx: Ctx, from: Level): string {
   });
   const levels = shape.rows.map((r) => r.level);
   const r = (n: number): Level => levels[n] ?? from;
+  // A row of one variety shows while the reader has chosen it, on a track with varieties.
+  const varieties = shape.rows.map((leaf) => (ctx.varieties === undefined ? undefined : leaf.variety));
   const merged = shape.columns.map((c) => shape.slots && c.slot !== "subj");
-  const starts = blockStarts(grid, levels, merged[0] === true);
-  const span = spans(grid, levels, [...merged, false], starts);
+  const starts = blockStarts(grid, levels, merged[0] === true, varieties);
+  const span = spans(grid, levels, [...merged, false], starts, varieties);
   const center = shape.columns.map(() => shape.slots);
   const groups = shape.columns.map((c) => {
     const name = sentenceName(c, ctx.explain);
@@ -129,15 +131,18 @@ function tableHtml(block: TableBlock, ctx: Ctx, from: Level): string {
   });
   const gaps = gapsAfter(groups);
   const width = grid[0]?.length ?? 0;
+  // A gap row hides along with the row of one variety below it.
   const spacer = (n: number): string =>
-    `<tr class="gap-row"${leafAttr(gapLevel(r(n - 1), r(n)))}><td colspan="${width + gaps.filter(Boolean).length}"></td></tr>`;
+    `<tr class="gap-row"${leafAttr(gapLevel(r(n - 1), r(n)))}${varietyAttr(varieties[n])}><td colspan="${width + gaps.filter(Boolean).length}"></td></tr>`;
   const end = (n: number): boolean[] | undefined => span[n]?.map((s) => n + s === grid.length);
   const value = (n: number): string => {
     const v = shape.rows[n]?.value;
     return v === undefined ? "" : ` data-value="${escapeHtml(String(v))}"`;
   };
   const rows = grid.map(
-    (cells, n) => (starts.has(n) ? spacer(n) : "") + row(r(n), from, cells, { span: span[n], center, gaps, end: end(n) }, value(n)),
+    (cells, n) =>
+      (starts.has(n) ? spacer(n) : "") +
+      row(r(n), from, cells, { span: span[n], center, gaps, end: end(n) }, value(n) + varietyAttr(varieties[n])),
   );
   const header = headHtml(titles.map((title, n) => ({ title, group: groups[n], center: center[n] === true })));
   const compact = shape.slots ? ' class="compact"' : "";
@@ -183,7 +188,7 @@ function blockHtml(b: Block, ctx: Ctx, parent: Level): string | null {
   const html = range === null ? null : contentHtml(b, ctx, range.from);
   if (range === null || html === null) return null;
   const head = lv(range.from) > lv(parent) ? `<div class="blk-level">${badge(range)}</div>` : "";
-  return `<div class="blk"${levelAttrs(range)}>${head}${html}</div>`;
+  return `<div class="blk"${levelAttrs(range)}${varietyLevelAttrs([b], ctx.explain, ctx.varieties, range.from)}${varietyAttr(blockVariety(b, ctx.varieties))}>${head}${html}</div>`;
 }
 
 // The blocks of a section or cheatsheet whose lowest level is parent.

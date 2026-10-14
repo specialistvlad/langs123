@@ -1,0 +1,203 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.posesivos
+lang: es
+kind: grammar
+tags: [possessives, determiners, pronouns]
+concepts: [possession]
+related: [es.sustantivo-determinantes.articulos, es.sustantivo-determinantes.demostrativos, es.pronombres.pronombres-sujeto, es.pronombres.tu-usted-vosotros-ustedes]
+status: { en: draft, es: draft }
+translated: { es: "864d25 de7c8c cbd671 8db9d6 79e891 ff2310" }
+
+title: { en: Possessives, es: Los posesivos }
+summary:
+  lead:
+    en: [{ term: Mi }, ", ", { term: tu }, ", ", { term: su }, " go before the noun and ", { term: mío }, ", ", { term: tuyo }, ", ", { term: suyo }, " after it; both agree with the thing owned."]
+    es: [{ term: Mi }, ", ", { term: tu }, ", ", { term: su }, " van delante del sustantivo, y ", { term: mío }, ", ", { term: tuyo }, ", ", { term: suyo }, ", detrás; todos concuerdan con lo poseído."]
+  rule:
+    en: "The possessive agrees with the thing owned, not with the owner:"
+    es: "El posesivo concuerda con lo poseído, no con el poseedor:"
+  ex: { examples: [["Luis vive con ", { target: sus }, " padres."], [{ target: Nuestra }, " casa es grande."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Before the noun, es: Delante del sustantivo }
+          rule: { alternatives: [{ term: mi }, { term: tu }, { term: su }, { term: nuestro }, { term: su }] }
+          ex: [{ target: Mi }, " casa es pequeña."]
+          tr: { en: My house is small. }
+        - level: A1
+          variety: es-ES
+          point: { en: Before the noun, es: Delante del sustantivo }
+          rule: { en: [{ term: vosotros }, ": ", { term: vuestro }], es: [{ term: vosotros }, ": ", { term: vuestro }] }
+          ex: ["¿Es ", { target: vuestra }, " casa?"]
+          tr: { en: Is it your house? }
+        - level: A1
+          point: { en: Agreement, es: Concordancia }
+          rule: { en: the number of the thing owned; nuestro also its gender, es: el número de lo poseído; nuestro también su género }
+          ex: [{ target: Nuestros }, " hijos viven en Quito."]
+          tr: { en: Our children live in Quito. }
+        - level: A1
+          point: { en: Owner as a noun, es: Poseedor sustantivo }
+          rule: { pattern: [{ term: de }, { slot: { en: owner, es: poseedor } }] }
+          ex: ["la casa ", { target: de Ana }]
+          tr: { en: "Ana's house" }
+        - level: A2
+          point: { en: After ser, es: Después de ser }
+          rule: { alternatives: [{ term: mío }, { term: tuyo }, { term: suyo }, { term: nuestro }, { term: suyo }] }
+          ex: ["Esta mochila es ", { target: mía }, "."]
+          tr: { en: This backpack is mine. }
+        - level: A2
+          point: { en: Alone, es: Solo }
+          rule: { en: the article and the long form, es: el artículo y la forma tónica }
+          ex: ["Mi casa es grande, y ", { target: la tuya }, " es bonita."]
+          tr: { en: "My house is big, and yours is pretty." }
+        - level: A2
+          point: { en: After the noun, es: Detrás del sustantivo }
+          rule: { en: one of several, es: uno entre varios }
+          ex: ["Marta es una amiga ", { target: mía }, "."]
+          tr: { en: Marta is a friend of mine. }
+        - level: B1
+          point: { en: A clear owner, es: Un poseedor claro }
+          rule: { en: [{ term: de él }, ", ", { term: de ella }, ", ", { term: de usted }, " instead of ", { term: su }], es: [{ term: de él }, ", ", { term: de ella }, ", ", { term: de usted }, " en lugar de ", { term: su }] }
+          ex: ["Llevé la maleta ", { target: de ella }, "."]
+          tr: { en: I carried her suitcase. }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule: { en: [{ term: su }, " is his, her, its, their, and your for ", { term: usted }], es: [{ term: su }, " sirve para él, ella, ellos, ellas y ", { term: usted }] }
+          ex: ["Ana vive con ", { target: su }, " hermano."]
+          tr: { en: Ana lives with her brother. }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule: { en: [{ term: mis }, " before a plural noun"], es: [{ term: mis }, " delante de un plural"] }
+          ex: [{ target: Mis }, " padres son de Cuba."]
+          tr: { en: My parents are from Cuba. }
+
+sections:
+  - title: { en: "Form: before the noun", es: "Forma: delante del sustantivo" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: owner, label: { en: Owner, es: Poseedor } }
+          - { key: one, label: { en: One thing, es: Una cosa } }
+          - { key: more, label: { en: Several things, es: Varias cosas } }
+        rows:
+          - { level: A1, features: { person: 1, number: sg }, owner: yo, one: { target: mi }, more: { target: mis } }
+          - { level: A1, features: { person: 2, number: sg, politeness: infm }, owner: tú, one: { target: tu }, more: { target: tus } }
+          - { level: A1, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], owner: { alternatives: [él, ella, usted] }, one: { target: su }, more: { target: sus } }
+          - { level: A1, features: { person: 1, number: pl }, owner: { alternatives: [nosotros, nosotras] }, one: { alternatives: [{ target: nuestro }, { target: nuestra }] }, more: { alternatives: [{ target: nuestros }, { target: nuestras }] } }
+          - { level: A1, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, owner: { alternatives: [vosotros, vosotras] }, one: { alternatives: [{ target: vuestro }, { target: vuestra }] }, more: { alternatives: [{ target: vuestros }, { target: vuestras }] } }
+          - { level: A1, features: [{ person: 3, number: pl }, { person: 2, number: pl }], owner: { alternatives: [ellos, ellas, ustedes] }, one: { target: su }, more: { target: sus } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "The possessive agrees with the thing owned, not with the owner:"
+              es: "El posesivo concuerda con lo poseído, no con el poseedor:"
+            ex: ["Luis vive con ", { target: sus }, " padres."]
+            tr: { en: Luis lives with his parents. }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: nuestro }, " also agrees in gender; the other short forms change only for number."]
+              es: [{ term: nuestro }, " también concuerda en género; las demás formas átonas solo cambian de número."]
+            ex: [{ target: Nuestra }, " casa es grande."]
+            tr: { en: Our house is big. }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: su }, " means his, her, its, their, and your for ", { term: usted }, " and ", { term: ustedes }, "."]
+              es: [{ term: su }, " remite a él, ella, ellos, ellas, ", { term: usted }, " y ", { term: ustedes }, "."]
+            ex: ["Ana vive con ", { target: su }, " hermano."]
+            tr: { en: Ana lives with her brother. }
+          - type: note
+            level: A1
+            variety: es-419
+            text:
+              en: ["In Latin America, the plural “your” is always ", { term: su }, ", the possessive of ", { term: ustedes }, ":"]
+              es: ["En Latinoamérica, el posesivo para varias personas a las que se habla es siempre ", { term: su }, ", el de ", { term: ustedes }, ":"]
+            ex: ["Chicos, ¿dónde está ", { target: su }, " profesor?"]
+            tr: { en: "Guys, where is your teacher?" }
+          - type: note
+            level: A1
+            variety: es-ES
+            text:
+              en: [{ term: vuestro }, " is the possessive of ", { term: vosotros }, ":"]
+              es: [{ term: vuestro }, " es el posesivo de ", { term: vosotros }, ":"]
+            ex: ["Chicos, ¿dónde está ", { target: vuestro }, " profesor?"]
+            tr: { en: "Guys, where is your teacher?" }
+
+  - title: { en: "Form: after the noun and alone", es: "Forma: detrás del sustantivo y solo" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: owner, label: { en: Owner, es: Poseedor } }
+          - { key: one, label: { en: One thing, es: Una cosa } }
+          - { key: more, label: { en: Several things, es: Varias cosas } }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, owner: yo, one: { alternatives: [{ target: mío }, { target: mía }] }, more: { alternatives: [{ target: míos }, { target: mías }] } }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm }, owner: tú, one: { alternatives: [{ target: tuyo }, { target: tuya }] }, more: { alternatives: [{ target: tuyos }, { target: tuyas }] } }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], owner: { alternatives: [él, ella, usted] }, one: { alternatives: [{ target: suyo }, { target: suya }] }, more: { alternatives: [{ target: suyos }, { target: suyas }] } }
+          - { level: A2, features: { person: 1, number: pl }, owner: { alternatives: [nosotros, nosotras] }, one: { alternatives: [{ target: nuestro }, { target: nuestra }] }, more: { alternatives: [{ target: nuestros }, { target: nuestras }] } }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, owner: { alternatives: [vosotros, vosotras] }, one: { alternatives: [{ target: vuestro }, { target: vuestra }] }, more: { alternatives: [{ target: vuestros }, { target: vuestras }] } }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], owner: { alternatives: [ellos, ellas, ustedes] }, one: { alternatives: [{ target: suyo }, { target: suya }] }, more: { alternatives: [{ target: suyos }, { target: suyas }] } }
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: "After ser: whose it is", es: "Después de ser: de quién es" }, ex: ["Esta mochila es ", { target: mía }, "."], tr: { en: This backpack is mine. } }
+          - { level: A2, use: { en: "With the article, in place of the noun", es: "Con el artículo, en lugar del sustantivo" }, ex: ["Mi casa es grande, y ", { target: la tuya }, " es bonita."], tr: { en: "My house is big, and yours is pretty." } }
+          - { level: A2, use: { en: "After a noun: one of several", es: "Detrás de un sustantivo: uno entre varios" }, ex: ["Marta es una amiga ", { target: mía }, "."], tr: { en: Marta is a friend of mine. } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "The long form agrees with the thing owned in gender and number."
+              es: "La forma tónica concuerda con lo poseído en género y número."
+
+  - title: { en: "Use: de and a clear owner", es: "Uso: de y un poseedor claro" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, use: { en: [{ pattern: [{ term: de }, { slot: { en: owner, es: poseedor } }] }, ", where English uses ’s"], es: { pattern: [{ term: de }, { slot: { en: owner, es: poseedor } }] } }, ex: ["la casa ", { target: de Ana }], tr: { en: "Ana's house" } }
+          - { level: A1, use: { en: [{ pattern: [{ term: de }, { term: el }, { slot: { en: owner, es: poseedor } }] }, ": ", { term: del }], es: [{ pattern: [{ term: de }, { term: el }, { slot: { en: owner, es: poseedor } }] }, ": ", { term: del }] }, ex: ["la oficina ", { target: del }, " director"], tr: { en: "the director's office" } }
+          - { level: A2, use: { en: [{ pattern: [{ alternatives: [{ term: el }, { term: la }] }, { term: de }, { slot: { en: owner, es: poseedor } }] }, ", for a noun already named"], es: [{ pattern: [{ alternatives: [{ term: el }, { term: la }] }, { term: de }, { slot: { en: owner, es: poseedor } }] }, ", para un sustantivo ya nombrado"] }, ex: ["Mi casa y ", { target: la de }, " Pedro están cerca."], tr: { en: "My house and Pedro's are close." } }
+          - level: B1
+            use: { en: [{ pattern: [{ term: de }, { alternatives: [{ term: él }, { term: ella }, { term: usted }] }] }, ", for a clear owner"], es: [{ pattern: [{ term: de }, { alternatives: [{ term: él }, { term: ella }, { term: usted }] }] }, ", para un poseedor claro"] }
+            ex: ["Ana y Luis vinieron, y yo llevé la maleta ", { target: de él }, "."]
+            tr: { en: "Ana and Luis came, and I carried his suitcase." }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: su }, " can point to several owners; ", { term: de él }, ", ", { term: de ella }, ", ", { term: de usted }, " or ", { term: de ellos }, " names the one meant."]
+              es: [{ term: su }, " puede remitir a varios poseedores; ", { term: de él }, ", ", { term: de ella }, ", ", { term: de usted }, " o ", { term: de ellos }, " indica cuál."]
+            ex: ["¿Es la maleta ", { target: de usted }, " o ", { target: de él }, "?"]
+            tr: { en: Is it your suitcase or his? }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: mi libros, right: [{ target: mis }, " libros"], rule: { en: "the possessive agrees with the thing owned", es: "el posesivo concuerda con lo poseído" } }
+          - { level: A1, wrong: nuestro casa, right: [{ target: nuestra }, " casa"], rule: { en: [{ term: nuestro }, " agrees in gender too"], es: [{ term: nuestro }, " también concuerda en género"] } }
+          - { level: A2, wrong: Este libro es mi., right: ["Este libro es ", { target: mío }, "."], rule: { en: ["after ", { term: ser }, ", the long form"], es: ["después de ", { term: ser }, ", la forma tónica"] } }
+          - { level: A2, wrong: Mi casa es grande y tuya es pequeña., right: ["Mi casa es grande y ", { target: la tuya }, " es pequeña."], rule: { en: "alone, the long form takes the article", es: "sola, la forma tónica lleva artículo" } }
+          - { level: A2, wrong: un amigo de mí, right: ["un amigo ", { target: mío }], rule: { en: ["“of mine” is ", { term: mío }, " after the noun"], es: "la forma tónica va detrás del sustantivo" } }
+          - { level: A1, speakers: [en], wrong: Ana casa, right: ["la casa ", { target: de Ana }], rule: { en: ["Spanish has no ’s: ", { pattern: [{ term: de }, { slot: { en: owner } }] }] } }

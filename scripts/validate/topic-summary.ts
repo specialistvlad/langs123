@@ -1,6 +1,6 @@
 // The summary: a lead that stands alone, then the rule to get right with its examples, about the language itself.
 import { plainText, reading } from "../text.ts";
-import { EXPLAIN_CODES, filled, LEVELS, type Text, type Topic } from "../lib.ts";
+import { EXPLAIN_CODES, type Explain, filled, LEVELS, type Text, type Topic } from "../lib.ts";
 import type { Report } from "./report.ts";
 
 const LEAD_CHARS = 160;
@@ -10,9 +10,9 @@ const PAGE = /\b(the|this) (page|topic)\b/i;
 const OPENER = /(^|[.!?]\s+)(you need|use it|a learner needs)\b/i;
 const LEVEL = new RegExp(`\\b(${LEVELS.join("|")})\\b`);
 
-export function checkSummary(topic: Topic, where: string, report: Report): void {
+export function checkSummary(topic: Topic, where: string, report: Report, explain: readonly Explain[] = EXPLAIN_CODES): void {
   const { summary } = topic;
-  for (const l of EXPLAIN_CODES) {
+  for (const l of explain) {
     const leadText: Text | undefined = summary.lead[l];
     const ruleText: Text | undefined = summary.rule[l];
     if (leadText === undefined || ruleText === undefined) continue;

@@ -1,0 +1,278 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.adjetivo-adverbio.adverbios
+lang: es
+kind: grammar
+tags: [adverbs, manner, frequency, place, time]
+concepts: [adverbs]
+related: [es.adjetivo-adverbio.adjetivo-concordancia, es.adjetivo-adverbio.comparativos-superlativos, es.sustantivo-determinantes.cuantificadores, es.oracion.preguntas-negacion]
+status: { en: draft, es: draft }
+translated: { es: "174fd5 9cb182 baa84c 09298c c8ef71 93accc a00c9e" }
+
+title: { en: Adverbs, es: Los adverbios }
+summary:
+  lead:
+    en: ["Adverbs say how, when, where and how much: ", { term: rápidamente }, ", ", { term: siempre }, ", ", { term: aquí }, ", ", { term: muy }, "; many end in ", { term: -mente }, "."]
+    es: ["Los adverbios dicen cómo, cuándo, dónde y cuánto: ", { term: rápidamente }, ", ", { term: siempre }, ", ", { term: aquí }, ", ", { term: muy }, "; muchos terminan en ", { term: -mente }, "."]
+  rule:
+    en: ["Before an adjective comes ", { term: muy }, ", and after a verb, ", { term: mucho }, ":"]
+    es: ["Delante de un adjetivo va ", { term: muy }, ", y detrás de un verbo, ", { term: mucho }, ":"]
+  ex: { examples: [["Es ", { target: muy }, " caro."], ["Trabajo ", { target: mucho }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { alternatives: [bien, mal] }
+          rule:
+            en: ["the adverbs of ", { term: bueno }, " and ", { term: malo }]
+            es: ["los adverbios de ", { term: bueno }, " y ", { term: malo }]
+          ex: ["Hablas ", { target: bien }, " español."]
+          tr: { en: You speak Spanish well. }
+        - level: A1
+          point: muy
+          rule:
+            en: "before an adjective or an adverb"
+            es: "delante de un adjetivo o de un adverbio"
+          ex: ["Es ", { target: muy }, " simpática."]
+          tr: { en: "She's very nice." }
+        - level: A1
+          point: mucho
+          rule:
+            en: "after a verb; as an adverb it never changes"
+            es: "detrás de un verbo; como adverbio no cambia"
+          ex: ["Trabajo ", { target: mucho }, "."]
+          tr: { en: I work a lot. }
+        - level: A1
+          point: { en: Place, es: Lugar }
+          rule:
+            en: [{ alternatives: [{ term: aquí }, { term: ahí }, { term: allí }] }, ": here, there, over there"]
+            es: [{ alternatives: [{ term: aquí }, { term: ahí }, { term: allí }] }, ": cerca de mí, cerca de ti, lejos"]
+          ex: ["El libro está ", { target: aquí }, "."]
+          tr: { en: The book is here. }
+        - level: A1
+          variety: es-419
+          point: { alternatives: [acá, allá] }
+          rule:
+            en: ["more common than ", { term: aquí }, " and ", { term: allí }]
+            es: ["más frecuentes que ", { term: aquí }, " y ", { term: allí }]
+          ex: ["Ven ", { target: acá }, "."]
+          tr: { en: Come here. }
+        - level: A1
+          point: { en: Time, es: Tiempo }
+          rule: { alternatives: [hoy, mañana, ahora, después] }
+          ex: [{ target: Mañana }, " tengo clase."]
+          tr: { en: Tomorrow I have class. }
+        - level: A1
+          point: { en: Frequency, es: Frecuencia }
+          rule: { alternatives: [siempre, normalmente, todos los días, a veces] }
+          ex: [{ target: Siempre }, " desayuno en casa."]
+          tr: { en: I always have breakfast at home. }
+        - level: A2
+          point: nunca
+          rule:
+            en: ["before the verb, or after it with ", { term: "no" }, " in front"]
+            es: ["delante del verbo, o detrás con ", { term: "no" }, " delante"]
+          ex: { examples: [[{ target: Nunca }, " bebo café."], [{ target: "No" }, " bebo café ", { target: nunca }, "."]] }
+          tr: { en: { examples: [I never drink coffee., I never drink coffee.] } }
+        - level: A1
+          point: { alternatives: [también, tampoco] }
+          rule:
+            en: [{ term: también }, " agrees with a positive, ", { term: tampoco }, " with a negative"]
+            es: [{ term: también }, " acompaña a una afirmación, ", { term: tampoco }, " a una negación"]
+          ex: { exchange: ["No tengo hambre.", ["Yo ", { target: tampoco }, "."]] }
+          tr: { en: { exchange: ["I'm not hungry.", Me neither.] } }
+        - level: A2
+          point: -mente
+          rule: { pattern: [{ slot: { en: feminine adjective, es: adjetivo femenino } }, "-mente"] }
+          ex: { examples: [{ mapping: [lenta, { target: lentamente }] }, { mapping: [fácil, { target: fácilmente }] }] }
+        - level: A2
+          point: { alternatives: [ya, todavía] }
+          rule:
+            en: [{ term: ya }, ": already; ", { term: todavía }, ": still; ", { term: todavía no }, ": not yet"]
+            es: [{ term: ya }, ": algo ha pasado; ", { term: todavía }, ": sigue igual; ", { term: todavía no }, ": aún no ha pasado"]
+          ex: [{ target: Todavía }, " vivo con mis padres."]
+          tr: { en: I still live with my parents. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: "the adjective keeps its written accent before -mente"
+            es: "el adjetivo mantiene su tilde delante de -mente"
+          ex: { mapping: [rápida, { target: rápidamente }] }
+
+sections:
+  - title: { en: "Use: how and how much", es: "Uso: cómo y cuánto" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: adverb, label: { en: Adverb, es: Adverbio } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, adverb: { target: bien }, use: { en: ["well: the adverb of ", { term: bueno }], es: ["el adverbio de ", { term: bueno }] }, ex: ["Cocinas muy ", { target: bien }, "."], tr: { en: You cook very well. } }
+          - { level: A1, adverb: { target: mal }, use: { en: ["badly: the adverb of ", { term: malo }], es: ["el adverbio de ", { term: malo }] }, ex: ["Duermo ", { target: mal }, "."], tr: { en: I sleep badly. } }
+          - { level: A1, adverb: { target: muy }, use: { en: "very, before an adjective or an adverb", es: "delante de un adjetivo o de un adverbio" }, ex: ["Estoy ", { target: muy }, " cansado."], tr: { en: "I'm very tired." } }
+          - { level: A1, adverb: { target: mucho }, use: { en: "a lot, after a verb", es: "en gran cantidad, detrás de un verbo" }, ex: ["Llueve ", { target: mucho }, "."], tr: { en: It rains a lot. } }
+          - { level: A1, adverb: { target: poco }, use: { en: "not much, after a verb", es: "en poca cantidad, detrás de un verbo" }, ex: ["Como ", { target: poco }, "."], tr: { en: "I don't eat much." } }
+          - { level: A1, adverb: { target: bastante }, use: { en: "quite, fairly", es: "en cantidad suficiente o algo alta" }, ex: ["Es ", { target: bastante }, " caro."], tr: { en: "It's quite expensive." } }
+          - { level: A2, adverb: { target: demasiado }, use: { en: "too, too much", es: "más de lo necesario" }, ex: ["Hablas ", { target: demasiado }, "."], tr: { en: You talk too much. } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: muy }, " goes before an adjective or an adverb, and ", { term: mucho }, " after a verb:"]
+              es: [{ term: muy }, " va delante de un adjetivo o de un adverbio, y ", { term: mucho }, ", detrás de un verbo:"]
+            ex: { examples: [["Es ", { target: muy }, " rico."], ["Me gusta ", { target: mucho }, "."]] }
+            tr: { en: { examples: ["It's very tasty.", I like it a lot.] } }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: mucho }, " after a verb never changes; before a noun it agrees with the noun:"]
+              es: [{ term: mucho }, " detrás de un verbo no cambia; delante de un nombre concuerda con él:"]
+            ex: { examples: [["Leo ", { target: mucho }, "."], ["Leo ", { target: muchos }, " libros."]] }
+            tr: { en: { examples: [I read a lot., I read many books.] } }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: mejor }, " and ", { term: peor }, " are also the comparatives of ", { term: bien }, " and ", { term: mal }, ":"]
+              es: [{ term: mejor }, " y ", { term: peor }, " son también los comparativos de ", { term: bien }, " y ", { term: mal }, ":"]
+            ex: ["Hoy me siento ", { target: mejor }, "."]
+            tr: { en: Today I feel better. }
+
+  - title: { en: "Form: -mente", es: "Forma: -mente" }
+    role: form
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["Add ", { term: -mente }, " to the feminine form of the adjective:"]
+              es: ["Se añade ", { term: -mente }, " a la forma femenina del adjetivo:"]
+            ex: { examples: [{ mapping: [lenta, { target: lentamente }] }, { mapping: [tranquila, { target: tranquilamente }] }] }
+          - type: rule
+            level: A2
+            text:
+              en: ["An adjective with one form for both genders adds ", { term: -mente }, " as it is:"]
+              es: ["Un adjetivo con una sola forma para los dos géneros añade ", { term: -mente }, " sin cambios:"]
+            ex: { examples: [{ mapping: [fácil, { target: fácilmente }] }, { mapping: [feliz, { target: felizmente }] }] }
+          - type: rule
+            level: A2
+            text:
+              en: "The adjective keeps its written accent:"
+              es: "El adjetivo mantiene su tilde:"
+            ex: { mapping: [rápida, { target: rápidamente }] }
+          - type: rule
+            level: A2
+            text:
+              en: ["With two such adverbs in a row, only the last takes ", { term: -mente }, ":"]
+              es: ["Con dos de estos adverbios seguidos, solo el último lleva ", { term: -mente }, ":"]
+            ex: ["Habla ", { target: clara y lentamente }, "."]
+            tr: { en: She speaks clearly and slowly. }
+          - type: note
+            level: A2
+            text:
+              en: ["In everyday speech, some adjectives work as adverbs too: ", { term: rápido }, ", ", { term: claro }, ", ", { term: alto }, "."]
+              es: ["En el habla diaria, algunos adjetivos funcionan también como adverbios: ", { term: rápido }, ", ", { term: claro }, ", ", { term: alto }, "."]
+            ex: ["Habla más ", { target: rápido }, "."]
+            tr: { en: Speak faster. }
+
+  - title: { en: "Use: place and time", es: "Uso: lugar y tiempo" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: adverb, label: { en: Adverb, es: Adverbio } }
+          - { key: meaning, label: { en: Meaning, es: Significado } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, adverb: { target: aquí }, meaning: { en: here, es: el lugar de quien habla }, ex: ["Vivo ", { target: aquí }, "."], tr: { en: I live here. } }
+          - { level: A1, adverb: { target: ahí }, meaning: { en: "there, near you", es: cerca de quien escucha }, ex: ["Deja el libro ", { target: ahí }, "."], tr: { en: Leave the book there. } }
+          - { level: A1, adverb: { target: allí }, meaning: { en: over there, es: lejos de los dos }, ex: [{ target: Allí }, " está el museo."], tr: { en: The museum is over there. } }
+          - { level: A1, variety: es-419, adverb: { target: acá }, meaning: { en: here, es: aquí }, ex: ["Ven ", { target: acá }, "."], tr: { en: Come here. } }
+          - { level: A1, variety: es-419, adverb: { target: allá }, meaning: { en: over there, es: allí }, ex: [{ target: Allá }, " está el museo."], tr: { en: The museum is over there. } }
+          - { level: A1, adverb: { target: hoy }, meaning: { en: today, es: este día }, ex: [{ target: Hoy }, " es lunes."], tr: { en: Today is Monday. } }
+          - { level: A1, adverb: { target: mañana }, meaning: { en: tomorrow, es: el día después de hoy }, ex: [{ target: Mañana }, " voy al médico."], tr: { en: "Tomorrow I'm going to the doctor." } }
+          - { level: A1, adverb: { target: ahora }, meaning: { en: now, es: en este momento }, ex: [{ target: Ahora }, " no puedo."], tr: { en: "I can't now." } }
+          - { level: A1, adverb: { target: después }, meaning: { en: "later, afterwards", es: más tarde }, ex: ["Te llamo ", { target: después }, "."], tr: { en: "I'll call you later." } }
+          - { level: A2, adverb: { target: ya }, meaning: { en: already, es: algo ha pasado }, ex: [{ target: Ya }, " es tarde."], tr: { en: "It's already late." } }
+          - { level: A2, adverb: { target: todavía }, meaning: { en: still, es: algo sigue igual }, ex: [{ target: Todavía }, " vivo con mis padres."], tr: { en: I still live with my parents. } }
+          - { level: A2, adverb: { target: todavía no }, meaning: { en: not yet, es: algo no ha pasado aún }, ex: [{ target: Todavía no }, " lo sé."], tr: { en: "I don't know yet." } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: aquí }, " is near the speaker, ", { term: ahí }, " near the listener, and ", { term: allí }, " far from both."]
+              es: [{ term: aquí }, " está cerca de quien habla, ", { term: ahí }, ", cerca de quien escucha, y ", { term: allí }, ", lejos de los dos."]
+          - type: note
+            level: A1
+            text:
+              en: [{ term: mañana }, " is tomorrow; ", { term: la mañana }, " is the morning:"]
+              es: [{ term: mañana }, " es el día siguiente; ", { term: la mañana }, " es la parte del día:"]
+            ex: [{ target: Mañana }, " por ", { target: la mañana }, " trabajo."]
+            tr: { en: Tomorrow morning I work. }
+
+  - title: { en: "Frequency and position", es: "Frecuencia y posición" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: adverb, label: { en: Adverb, es: Adverbio } }
+          - { key: meaning, label: { en: Meaning, es: Significado } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, adverb: { target: siempre }, meaning: { en: always, es: todas las veces }, ex: [{ target: Siempre }, " desayuno en casa."], tr: { en: I always have breakfast at home. } }
+          - { level: A1, adverb: { target: normalmente }, meaning: { en: usually, es: casi siempre }, ex: [{ target: Normalmente }, " ceno a las ocho."], tr: { en: I usually have dinner at eight. } }
+          - { level: A1, adverb: { target: todos los días }, meaning: { en: every day, es: cada día }, ex: [{ target: Todos los días }, " camino al trabajo."], tr: { en: I walk to work every day. } }
+          - { level: A1, adverb: { target: a veces }, meaning: { en: sometimes, es: algunas veces }, ex: [{ target: A veces }, " cocino."], tr: { en: Sometimes I cook. } }
+          - { level: A2, adverb: { target: nunca }, meaning: { en: never, es: ninguna vez }, ex: [{ target: Nunca }, " como carne."], tr: { en: I never eat meat. } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: nunca }, " goes before the verb, or after it with ", { term: "no" }, " before the verb:"]
+              es: [{ term: nunca }, " va delante del verbo, o detrás con ", { term: "no" }, " delante del verbo:"]
+            ex: { examples: [[{ target: Nunca }, " como carne."], [{ target: "No" }, " como carne ", { target: nunca }, "."]] }
+            tr: { en: { examples: [I never eat meat., I never eat meat.] } }
+          - type: rule
+            level: A1
+            text:
+              en: "Adverbs of manner usually go right after the verb:"
+              es: "Los adverbios de modo suelen ir justo detrás del verbo:"
+            ex: ["Habla ", { target: bien }, " inglés."]
+            tr: { en: She speaks English well. }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: también }, " agrees with a positive statement:"]
+              es: [{ term: también }, " acompaña a una afirmación:"]
+            ex: { exchange: ["Tengo hambre.", ["Yo ", { target: también }, "."]] }
+            tr: { en: { exchange: ["I'm hungry.", Me too.] } }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: tampoco }, " agrees with a negative statement:"]
+              es: [{ term: tampoco }, " acompaña a una negación:"]
+            ex: { exchange: ["No tengo hambre.", ["Yo ", { target: tampoco }, "."]] }
+            tr: { en: { exchange: ["I'm not hungry.", Me neither.] } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Es mucho caro., right: ["Es ", { target: muy }, " caro."], rule: { en: [{ term: muy }, " goes before an adjective"], es: [{ term: muy }, " va delante de un adjetivo"] } }
+          - { level: A1, wrong: Me gusta muy., right: ["Me gusta ", { target: mucho }, "."], rule: { en: [{ term: mucho }, " goes after a verb"], es: [{ term: mucho }, " va detrás de un verbo"] } }
+          - { level: A1, wrong: Habla español bueno., right: ["Habla español ", { target: bien }, "."], rule: { en: ["the adverb is ", { term: bien }], es: ["el adverbio es ", { term: bien }] } }
+          - { level: A2, wrong: Nunca no como carne., right: [{ target: Nunca }, " como carne."], rule: { en: [{ term: nunca }, " before the verb takes no ", { term: "no" }], es: [{ term: nunca }, " delante del verbo no lleva ", { term: "no" }] } }
+          - { level: A1, wrong: Yo también no., right: ["Yo ", { target: tampoco }, "."], rule: { en: ["agreeing with a negative takes ", { term: tampoco }], es: ["para coincidir con una negación se usa ", { term: tampoco }] } }
+          - { level: A2, wrong: rápidomente, right: { target: rápidamente }, rule: { en: [{ term: -mente }, " joins the feminine form"], es: [{ term: -mente }, " se une a la forma femenina"] } }
+          - { level: A2, wrong: rapidamente, right: { target: rápidamente }, rule: { en: the adjective keeps its accent, es: el adjetivo mantiene su tilde } }

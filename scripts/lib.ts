@@ -109,6 +109,10 @@ export async function readYaml<T>(path: string): Promise<T> {
 }
 
 export const loadCurriculum = (): Promise<Curriculum> => readYaml<Curriculum>(join(CONTENT, "curriculum.yaml"));
+
+// The explanation languages a language being learned is written for, the source first: the ones its
+// curriculum entry lists, else every explanation language of site.yaml.
+export const explainOf = (lang: Pick<CurriculumLanguage, "explain">): Explain[] => lang.explain ?? [...EXPLAIN_CODES];
 export const loadConcepts = (): Promise<Concepts> => readYaml<Concepts>(join(CONTENT, "concepts.yaml"));
 
 export const topicPath = (lang: string, section: string, slug: string): string => `languages/${lang}/${section}/${slug}/topic.yaml`;
@@ -123,6 +127,8 @@ export interface TopicRef {
   order: number;
   path: string;
   topic: Topic | null;
+  // The explanation languages the topic is written for: its language's (explainOf).
+  explain: Explain[];
 }
 
 // Every curriculum entry, in study order, with its topic data when the topic file exists.
@@ -135,7 +141,8 @@ export async function loadTopics(curriculum?: Curriculum): Promise<TopicRef[]> {
         const path = topicPath(lang.code, section.dir, entry.slug);
         const file = Bun.file(join(ROOT, path));
         const topic = (await file.exists()) ? await readYaml<Topic>(join(ROOT, path)) : null;
-        refs.push({ id: topicId(lang.code, section.dir, entry.slug), lang: lang.code, section, entry, order: i + 1, path, topic });
+        const explain = explainOf(lang);
+        refs.push({ id: topicId(lang.code, section.dir, entry.slug), lang: lang.code, section, entry, order: i + 1, path, topic, explain });
       }
     }
   }

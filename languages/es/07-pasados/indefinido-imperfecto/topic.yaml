@@ -1,0 +1,259 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.pasados.indefinido-imperfecto
+lang: es
+kind: grammar
+tags: [verbs, tenses, past, preterite, imperfect, aspect, narration]
+concepts: [aspect, past-tense]
+related: [es.pasados.preterito-indefinido, es.pasados.preterito-imperfecto, es.pasados.perfecto-indefinido, es.pasados.pluscuamperfecto, es.presente.estar-gerundio]
+status: { en: draft, es: draft }
+translated: { es: "fddfc5 aeeaa2 e46ed6 caa1a9 637d5e 122821 716db1 c630d1" }
+
+title: { en: Preterite or Imperfect, es: Indefinido o imperfecto }
+summary:
+  lead:
+    en: ["The preterite tells finished events, and the imperfect describes the scene around them: ", { term: llovía cuando salí }, "."]
+    es: ["El indefinido cuenta los hechos terminados, y el imperfecto describe el escenario que los rodea: ", { term: llovía cuando salí }, "."]
+  rule:
+    en: "The event that breaks in takes the preterite, and the action going on takes the imperfect:"
+    es: "La acción que interrumpe lleva el indefinido, y la acción en curso, el imperfecto:"
+  ex: [{ target: Estaba }, " en la ducha cuando ", { target: sonó }, " el teléfono."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { en: Preterite, es: Indefinido }
+          rule:
+            en: "a finished event: what happened"
+            es: "un hecho terminado: lo que pasó"
+          ex: ["Ayer ", { target: comí }, " paella."]
+          tr: { en: I had paella yesterday. }
+        - level: A2
+          point: { en: Imperfect, es: Imperfecto }
+          rule:
+            en: "the scene: how things were"
+            es: "el escenario: cómo eran las cosas"
+          ex: ["La paella ", { target: estaba }, " muy rica."]
+          tr: { en: The paella was delicious. }
+        - level: A2
+          point: { en: Preterite, es: Indefinido }
+          rule:
+            en: "one time, or a stated number of times"
+            es: "una vez, o un número concreto de veces"
+          ex: ["El verano pasado ", { target: fui }, " tres veces a la playa."]
+          tr: { en: Last summer I went to the beach three times. }
+        - level: A2
+          point: { en: Imperfect, es: Imperfecto }
+          rule:
+            en: "a habit, with no number"
+            es: "un hábito, sin número de veces"
+          ex: ["Cada verano ", { target: iba }, " a la playa."]
+          tr: { en: I went to the beach every summer. }
+        - level: B1
+          point: { en: Both, es: Los dos }
+          rule:
+            en: "the action going on in the imperfect, the event in the preterite"
+            es: "la acción en curso en imperfecto, el hecho en indefinido"
+          ex: ["Yo ", { target: dormía }, " cuando ", { target: sonó }, " el teléfono."]
+          tr: { en: I was sleeping when the phone rang. }
+        - level: B1
+          point: { en: Both, es: Los dos }
+          rule:
+            en: [{ pattern: [{ term: estaba }, { slot: { en: gerund, es: gerundio } }] }, " for an action in progress"]
+            es: [{ pattern: [{ term: estaba }, { slot: { en: gerund, es: gerundio } }] }, " para una acción en curso"]
+          ex: [{ target: Estábamos cenando }, " cuando ", { target: llegó }, " Pedro."]
+          tr: { en: We were having dinner when Pedro arrived. }
+        - level: B1
+          point: { en: Both, es: Los dos }
+          rule:
+            en: ["a whole event judged: ", { term: fue }, "; a description: ", { term: era }]
+            es: ["un hecho valorado en su conjunto: ", { term: fue }, "; una descripción: ", { term: era }]
+          ex: { examples: [["El viaje ", { target: fue }, " genial."], ["El hotel ", { target: era }, " bonito."]] }
+          tr: { en: { examples: [The trip was great., The hotel was nice.] } }
+        - level: B1
+          point: { en: Meaning, es: Significado }
+          rule:
+            en: [{ term: conocí }, " is meeting someone; ", { term: conocía }, " is knowing them"]
+            es: [{ term: conocí }, " es el primer encuentro; ", { term: conocía }, " es el trato ya existente"]
+          ex: [{ target: Conocí }, " a Laura en una fiesta."]
+          tr: { en: I met Laura at a party. }
+        - level: B1
+          point: { en: Meaning, es: Significado }
+          rule:
+            en: [{ term: supe }, " is finding out; ", { term: sabía }, " is knowing"]
+            es: [{ term: supe }, " es enterarse; ", { term: sabía }, " es saber ya"]
+          ex: [{ target: Supe }, " la noticia por la radio."]
+          tr: { en: I found out the news on the radio. }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: "a period with its length, now over, takes the preterite"
+            es: "un período con su duración, ya terminado, lleva el indefinido"
+          ex: [{ target: Estuve }, " dos horas en el banco."]
+          tr: { en: I was at the bank for two hours. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["a stage of life is the scene: ", { term: cuando era niño }]
+            es: ["una etapa de la vida es el escenario: ", { term: cuando era niño }]
+          ex: ["Cuando ", { target: era }, " niño, ", { target: vivía }, " en Cali."]
+          tr: { en: "When I was a child, I lived in Cali." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "The two tenses show the same past from two sides: the preterite sees the whole event, the imperfect sees it going on."
+              es: "Los dos tiempos muestran el mismo pasado desde dos lados: el indefinido ve el hecho entero; el imperfecto, su desarrollo."
+            ex: { examples: [["Ayer ", { target: llovió }, " todo el día."], ["Ayer ", { target: llovía }, " cuando salí."]] }
+            tr: { en: { examples: [It rained all day yesterday., It was raining when I went out yesterday.] } }
+          - type: rule
+            level: A2
+            text:
+              en: ["The time word alone does not choose: the same ", { term: ayer }, " works with both tenses."]
+              es: ["La palabra de tiempo sola no decide: el mismo ", { term: ayer }, " sirve para los dos tiempos."]
+          - type: note
+            level: A2
+            text:
+              en: ["The forms: ", { link: Preterite, to: es.pasados.preterito-indefinido }, " and ", { link: Imperfect, to: es.pasados.preterito-imperfecto }, "."]
+              es: ["Las formas: ", { link: El pretérito indefinido, to: es.pasados.preterito-indefinido }, " y ", { link: El pretérito imperfecto, to: es.pasados.preterito-imperfecto }, "."]
+
+  - title: { en: "Compare: preterite and imperfect", es: "Comparación: indefinido e imperfecto" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: preterite, label: { en: Preterite, es: Indefinido }, features: { tense: pst, aspect: pfv } }
+          - { key: imperfect, label: { en: Imperfect, es: Imperfecto }, features: { tense: pst, aspect: ipfv } }
+        rows:
+          - { level: A2, preterite: { en: "a finished event: what happened", es: "un hecho terminado: lo que pasó" }, imperfect: { en: "the scene: how things were", es: "el escenario: cómo eran las cosas" } }
+          - level: A2
+            preterite: { ex: ["Ayer ", { target: comí }, " paella."], tr: { en: I had paella yesterday. } }
+            imperfect: { ex: ["La paella ", { target: estaba }, " muy rica."], tr: { en: The paella was delicious. } }
+          - { level: A2, preterite: { en: "one time, or a stated number of times", es: "una vez, o un número concreto de veces" }, imperfect: { en: "a habit, with no number", es: "un hábito, sin número de veces" } }
+          - level: A2
+            preterite: { ex: ["El verano pasado ", { target: fui }, " tres veces a la playa."], tr: { en: Last summer I went to the beach three times. } }
+            imperfect: { ex: ["Cada verano ", { target: iba }, " a la playa."], tr: { en: I went to the beach every summer. } }
+          - { level: B1, preterite: { en: "a period with its length, now over", es: "un período con su duración, ya terminado" }, imperfect: { en: "the background, with no end in view", es: "el fondo, sin final a la vista" } }
+          - level: B1
+            preterite: { ex: [{ target: Viví }, " dos años en Bogotá."], tr: { en: I lived in Bogotá for two years. } }
+            imperfect: { ex: ["Cuando ", { target: vivía }, " en Bogotá, ", { target: trabajaba }, " en un hotel."], tr: { en: "When I lived in Bogotá, I worked in a hotel." } }
+          - level: A2
+            preterite: { ex: "ayer, el lunes, una vez, de repente", tr: { en: "yesterday, on Monday, once, suddenly" } }
+            imperfect: { ex: "antes, siempre, cada día, normalmente", tr: { en: "before, always, every day, usually" } }
+
+  - title: { en: "Use: one action breaks into another", es: "Uso: una acción interrumpe a otra" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern, es: Estructura } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            pattern: { pattern: [{ slot: { en: imperfect, es: imperfecto } }, { term: cuando }, { slot: { en: preterite, es: indefinido } }] }
+            ex: ["Yo ", { target: dormía }, " cuando ", { target: sonó }, " el teléfono."]
+            tr: { en: I was sleeping when the phone rang. }
+          - level: B1
+            pattern: { pattern: [{ term: mientras }, { slot: { en: imperfect, es: imperfecto } }, { slot: { en: preterite, es: indefinido } }] }
+            ex: [{ signal: Mientras }, " ", { target: cocinaba }, ", se ", { target: fue }, " la luz."]
+            tr: { en: "While I was cooking, the power went out." }
+          - level: B1
+            pattern: { pattern: [{ term: estaba }, { slot: { en: gerund, es: gerundio } }, { term: cuando }, { slot: { en: preterite, es: indefinido } }] }
+            ex: [{ target: Estábamos cenando }, " cuando ", { target: llegó }, " Pedro."]
+            tr: { en: We were having dinner when Pedro arrived. }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["Two actions going on at the same time both take the imperfect, often joined by ", { term: mientras }, ":"]
+              es: ["Dos acciones en curso al mismo tiempo llevan imperfecto, a menudo unidas por ", { term: mientras }, ":"]
+            ex: [{ signal: Mientras }, " yo ", { target: leía }, ", ella ", { target: escuchaba }, " música."]
+            tr: { en: "While I was reading, she was listening to music." }
+          - type: rule
+            level: A2
+            text:
+              en: "Events one after another all take the preterite:"
+              es: "Los hechos que se suceden llevan todos el indefinido:"
+            ex: [{ target: Abrí }, " la puerta, ", { target: entré }, " y ", { target: encendí }, " la luz."]
+            tr: { en: "I opened the door, went in and turned on the light." }
+
+  - title: { en: Telling a story, es: Contar una historia }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: "A story sets the scene with the imperfect, then moves forward with the preterite:"
+              es: "Una historia pinta el escenario con el imperfecto y avanza con el indefinido:"
+            ex: [{ target: Era }, " domingo y ", { target: hacía }, " sol. De repente, ", { target: empezó }, " a llover."]
+            tr: { en: "It was Sunday and it was sunny. Suddenly it started to rain." }
+          - type: rule
+            level: B1
+            text:
+              en: ["A judgement of a whole event takes ", { term: fue }, "; a description of how it was takes ", { term: era }, ":"]
+              es: ["La valoración de un hecho entero lleva ", { term: fue }, "; la descripción de cómo era, ", { term: era }, ":"]
+            ex: { examples: [["El concierto ", { target: fue }, " increíble."], ["La música ", { target: era }, " muy buena."]] }
+            tr: { en: { examples: [The concert was amazing., The music was very good.] } }
+
+  - title: { en: Verbs that change their meaning, es: Verbos que cambian de significado }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { en: Verb, es: Verbo } }
+          - { key: preterite, label: { en: Preterite, es: Indefinido }, features: { tense: pst, aspect: pfv } }
+          - { key: imperfect, label: { en: Imperfect, es: Imperfecto }, features: { tense: pst, aspect: ipfv } }
+        rows:
+          - level: B1
+            verb: conocer
+            preterite: { ex: [{ target: Conocí }, " a Laura en una fiesta."], tr: { en: I met Laura at a party. } }
+            imperfect: { ex: ["Ya ", { target: conocía }, " a Laura."], tr: { en: I already knew Laura. } }
+          - level: B1
+            verb: saber
+            preterite: { ex: [{ target: Supe }, " la noticia por la radio."], tr: { en: I found out the news on the radio. } }
+            imperfect: { ex: ["No ", { target: sabía }, " nada."], tr: { en: "I didn't know anything." } }
+          - level: B1
+            verb: querer
+            preterite: { ex: ["Ana no ", { target: quiso }, " venir."], tr: { en: Ana refused to come. } }
+            imperfect: { ex: ["Ana no ", { target: quería }, " venir."], tr: { en: "Ana didn't want to come." } }
+          - level: B1
+            verb: poder
+            preterite: { ex: ["Por fin ", { target: pude }, " dormir."], tr: { en: I finally managed to sleep. } }
+            imperfect: { ex: ["No ", { target: podía }, " dormir."], tr: { en: "I couldn't sleep." } }
+          - level: B1
+            verb: tener
+            preterite: { ex: [{ target: Tuve }, " una idea."], tr: { en: I had an idea. } }
+            imperfect: { ex: [{ target: Tenía }, " un coche viejo."], tr: { en: I had an old car. } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: "With these verbs, the preterite tells the moment something happened, and the imperfect the state that lasted."
+              es: "Con estos verbos, el indefinido cuenta el momento en que algo pasó, y el imperfecto, el estado que duraba."
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Cuando fui niño viví en Quito., right: ["Cuando ", { target: era }, " niño, ", { target: vivía }, " en Quito."], rule: { en: "a stage of life is the scene: imperfect", es: "una etapa de la vida es el escenario: imperfecto" } }
+          - { level: B1, wrong: Cuando sonó el teléfono dormí., right: ["Cuando sonó el teléfono, ", { target: dormía }, "."], rule: { en: "the action going on takes the imperfect", es: "la acción en curso lleva el imperfecto" } }
+          - { level: B1, wrong: Vivía dos años en Bogotá., right: [{ target: Viví }, " dos años en Bogotá."], rule: { en: "a period with its length, now over: preterite", es: "un período con su duración, ya terminado: indefinido" } }
+          - { level: A2, wrong: Antes fui al gimnasio todos los días., right: ["Antes ", { target: iba }, " al gimnasio todos los días."], rule: { en: "a past habit takes the imperfect", es: "un hábito pasado lleva el imperfecto" } }
+          - { level: B1, wrong: Conocía a mi novio en 2018., right: [{ target: Conocí }, " a mi novio en ", { date: "2018", value: "2018" }, "."], rule: { en: [{ term: conocí }, " is the moment you meet someone"], es: [{ term: conocí }, " es el momento del primer encuentro"] } }
+          - { level: A2, speakers: [en], wrong: Cuando era joven jugué al tenis cada sábado., right: ["Cuando era joven, ", { target: jugaba }, " al tenis cada sábado."], rule: { en: ["English ", { l1: played }, " can be a habit; Spanish uses the imperfect for it"] } }

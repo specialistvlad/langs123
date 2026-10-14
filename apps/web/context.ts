@@ -1,5 +1,5 @@
 // What every page builder shares: build options, curriculum data, links and the page list.
-import { type CurriculumLanguage, ENABLED_EXPLAIN, type Explain, explainName, type TopicRef } from "../../scripts/lib.ts";
+import { type CurriculumLanguage, ENABLED_EXPLAIN, type Explain, explainName, explainOf, type TopicRef } from "../../scripts/lib.ts";
 import type { Choice, Ui } from "./layout.ts";
 import type { Stage } from "./path.ts";
 import type { LinkFn } from "./html.ts";
@@ -32,6 +32,8 @@ export interface Track {
   ctx: Context;
   lang: CurriculumLanguage;
   explain: Explain;
+  // The explanation languages readers see the language in: its counterparts of this track.
+  explains: Explain[];
   t: Ui;
   title: string;
   langRefs: TopicRef[];
@@ -42,6 +44,9 @@ export interface Track {
 
 export const EXPLAINS = ENABLED_EXPLAIN;
 
+// The explanation languages readers see a language being learned in: those it is written for, enabled.
+export const explainsOf = (lang: CurriculumLanguage): Explain[] => explainOf(lang).filter((e) => EXPLAINS.includes(e));
+
 // The home page and the missing page speak the first enabled explanation language.
 export function homeLanguage(): Explain {
   const [home] = EXPLAINS;
@@ -49,10 +54,10 @@ export function homeLanguage(): Explain {
   return home;
 }
 
-// The choice whose link leads to this page is on.
-export function readChoices(explain: Explain, pathFor: (e: Explain) => string): Choice[] {
+// The choice whose link leads to this page is on; a track's pages offer the languages it is explained in.
+export function readChoices(explain: Explain, pathFor: (e: Explain) => string, langs: readonly Explain[] = EXPLAINS): Choice[] {
   const here = pathFor(explain);
-  return EXPLAINS.map((e) => ({ label: explainName(e), href: pathFor(e), on: pathFor(e) === here }));
+  return langs.map((e) => ({ label: explainName(e), href: pathFor(e), on: pathFor(e) === here }));
 }
-export const alternates = (pathFor: (e: Explain) => string): { lang: Explain; path: string }[] =>
-  EXPLAINS.map((e) => ({ lang: e, path: pathFor(e) }));
+export const alternates = (pathFor: (e: Explain) => string, langs: readonly Explain[] = EXPLAINS): { lang: Explain; path: string }[] =>
+  langs.map((e) => ({ lang: e, path: pathFor(e) }));

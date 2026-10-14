@@ -1,0 +1,261 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.fundamentos.la-hora
+lang: es
+kind: foundations
+tags: [time, clock, hours]
+concepts: [telling-time]
+related: [es.fundamentos.numeros, es.fundamentos.dias-meses-fechas, es.preposiciones.preposiciones-basicas]
+status: { en: draft, es: draft }
+translated: { es: "5a8bbb 5334a6 84870c 7afe3c 48ea3d 794140 65ac3c" }
+
+title: { en: Telling the Time, es: La hora }
+summary:
+  lead:
+    en: ["The time with ", { term: es la una }, " and ", { term: son las }, ", the minutes with ", { term: y }, " and ", { term: menos }, ", and ", { term: a las }, " for when something happens."]
+    es: ["La hora con ", { term: es la una }, " y ", { term: son las }, ", los minutos con ", { term: y }, " y ", { term: menos }, ", y ", { term: a las }, " para decir cuándo pasa algo."]
+  rule:
+    en: ["One o'clock takes ", { term: es la }, ", and every other hour ", { term: son las }, ":"]
+    es: ["La una lleva ", { term: es la }, ", y las demás horas, ", { term: son las }, ":"]
+  ex: { examples: [[{ target: Es la }, " una."], [{ target: Son las }, " tres."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A0
+          point: { en: Asking, es: Preguntar }
+          rule:
+            en: ["ask ", { term: ¿Qué hora es? }, " and answer with ", { term: es }, " or ", { term: son }]
+            es: ["se pregunta ", { term: ¿Qué hora es? }, " y se responde con ", { term: es }, " o ", { term: son }]
+          ex: { exchange: ["¿Qué hora es?", [{ target: Son las }, " ", { time: tres, value: "03:00" }, "."]] }
+          tr: { en: { exchange: [What time is it?, "It's three o'clock."] } }
+        - level: A0
+          point: { en: The hour, es: La hora }
+          rule:
+            en: [{ term: es la una }, "; every other hour takes ", { term: son las }]
+            es: [{ term: es la una }, "; las demás horas llevan ", { term: son las }]
+          ex: { examples: [[{ target: Es la }, " una."], [{ target: Son las }, " dos."]] }
+          tr: { en: { examples: ["It's one o'clock.", "It's two o'clock."] } }
+        - level: A0
+          point: en punto
+          rule: { en: a full hour, es: una hora exacta }
+          ex: ["Son las cinco ", { target: en punto }, "."]
+          tr: { en: "It's five o'clock." }
+        - level: A0
+          point: { en: "Minutes 1–30", es: "Minutos 1–30" }
+          rule:
+            en: ["the hour, ", { term: y }, ", the minutes"]
+            es: ["la hora, ", { term: y }, ", los minutos"]
+          ex: { time: ["las dos ", { target: y }, " diez"], value: "02:10" }
+          tr: { en: ten past two }
+        - level: A0
+          point: { alternatives: [cuarto, media] }
+          rule:
+            en: [{ term: cuarto }, " is 15 minutes, ", { term: media }, " is 30"]
+            es: [{ term: cuarto }, " son 15 minutos, ", { term: media }, ", 30"]
+          ex: { examples: [{ time: ["las tres ", { target: y cuarto }], value: "03:15" }, { time: ["las tres ", { target: y media }], value: "03:30" }] }
+          tr: { en: { examples: [quarter past three, half past three] } }
+        - level: A1
+          point: { en: "Minutes 31–59", es: "Minutos 31–59" }
+          rule:
+            en: ["the next hour, ", { term: menos }, ", the minutes left"]
+            es: ["la hora siguiente, ", { term: menos }, ", los minutos que faltan"]
+          ex: { examples: [{ time: ["las cuatro ", { target: menos }, " diez"], value: "03:50" }, { time: ["las cuatro ", { target: menos cuarto }], value: "03:45" }] }
+          tr: { en: { examples: [ten to four, quarter to four] } }
+        - level: A1
+          variety: es-419
+          point: { en: "Minutes 31–59", es: "Minutos 31–59" }
+          rule:
+            en: ["also the minutes left, ", { term: para }, ", the next hour"]
+            es: ["también los minutos que faltan, ", { term: para }, ", la hora siguiente"]
+          ex: { time: ["diez ", { target: para }, " las cuatro"], value: "03:50" }
+          tr: { en: ten to four }
+        - level: A1
+          point: a las
+          rule:
+            en: [{ term: a las }, " and the time for when something happens; ", { term: a la una }]
+            es: [{ term: a las }, " y la hora para decir cuándo pasa algo; ", { term: a la una }]
+          ex: ["La clase empieza ", { target: a las }, " nueve."]
+          tr: { en: The class starts at nine. }
+        - level: A1
+          point: { en: Parts of the day, es: Partes del día }
+          rule:
+            en: [{ alternatives: [{ term: de la mañana }, { term: de la tarde }, { term: de la noche }] }, " after the time"]
+            es: [{ alternatives: [{ term: de la mañana }, { term: de la tarde }, { term: de la noche }] }, " detrás de la hora"]
+          ex: { time: ["las ocho ", { target: de la noche }], value: "20:00" }
+          tr: { en: eight in the evening }
+        - level: A1
+          point: { en: "24 hours", es: "24 horas" }
+          rule:
+            en: "speech uses 12 hours; timetables use 24"
+            es: "al hablar se usan 12 horas; los horarios usan 24"
+          ex: { mapping: [{ time: "18:30", value: "18:30" }, { target: { time: las dieciocho treinta, value: "18:30" } }] }
+        - level: A0
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["the hour always takes ", { term: la }, " or ", { term: las }]
+            es: ["la hora siempre lleva ", { term: la }, " o ", { term: las }]
+          ex: ["Son ", { target: las }, " tres."]
+          tr: { en: "It's three o'clock." }
+
+sections:
+  - title: { en: The hours, es: Las horas }
+    role: own
+    content:
+      - type: inventory
+        set: times
+        columns:
+          - { key: time, label: { en: Time, es: Hora } }
+          - { key: said, label: { en: Said, es: Se dice } }
+        rows:
+          - { level: A0, value: "01:00", time: "1:00", said: [{ target: es la }, " una"], tr: { en: "it's one o'clock" } }
+          - { level: A0, value: "02:00", time: "2:00", said: [{ target: son las }, " dos"], tr: { en: "it's two o'clock" } }
+          - { level: A0, value: "07:00", time: "7:00", said: [{ target: son las }, " siete"], tr: { en: "it's seven o'clock" } }
+          - { level: A0, value: "12:00", time: "12:00", said: [{ target: son las }, " doce"], tr: { en: "it's twelve o'clock" } }
+          - { level: A0, value: "05:00", time: "5:00", said: ["son las cinco ", { target: en punto }], tr: { en: "it's five o'clock sharp" } }
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: ["Ask the time with ", { term: ¿Qué hora es? }, ":"]
+              es: ["La hora se pregunta con ", { term: ¿Qué hora es? }, ":"]
+            ex: { exchange: ["¿Qué hora es?", [{ target: Son las }, " ", { time: siete, value: "07:00" }, "."]] }
+            tr: { en: { exchange: [What time is it?, "It's seven o'clock."] } }
+          - type: rule
+            level: A0
+            text:
+              en: ["One o'clock is singular, ", { term: es la una }, "; every other hour is plural, ", { term: son las }, "."]
+              es: ["La una va en singular, ", { term: es la una }, "; las demás horas, en plural, ", { term: son las }, "."]
+          - type: rule
+            level: A0
+            text:
+              en: ["The hour takes ", { term: la }, " or ", { term: las }, " because it counts ", { term: horas }, ", a feminine word."]
+              es: ["La hora lleva ", { term: la }, " o ", { term: las }, " porque cuenta ", { term: horas }, ", una palabra femenina."]
+          - type: note
+            level: A1
+            variety: es-419
+            text:
+              en: ["Mexico and Central America also ask ", { term: ¿Qué horas son? }, "."]
+              es: ["En México y Centroamérica también se pregunta ", { term: ¿Qué horas son? }, "."]
+
+  - title: { en: The minutes, es: Los minutos }
+    role: own
+    content:
+      - type: inventory
+        set: times
+        columns:
+          - { key: time, label: { en: Time, es: Hora } }
+          - { key: said, label: { en: Said, es: Se dice } }
+        rows:
+          - { level: A0, value: "03:05", time: "3:05", said: ["las tres ", { target: y }, " cinco"], tr: { en: five past three } }
+          - { level: A0, value: "03:15", time: "3:15", said: ["las tres ", { target: y cuarto }], tr: { en: quarter past three } }
+          - { level: A0, value: "03:20", time: "3:20", said: ["las tres ", { target: y }, " veinte"], tr: { en: twenty past three } }
+          - { level: A0, value: "03:30", time: "3:30", said: ["las tres ", { target: y media }], tr: { en: half past three } }
+          - { level: A1, value: "03:40", time: "3:40", said: ["las cuatro ", { target: menos }, " veinte"], tr: { en: twenty to four } }
+          - { level: A1, value: "03:45", time: "3:45", said: ["las cuatro ", { target: menos cuarto }], tr: { en: quarter to four } }
+          - { level: A1, value: "03:55", time: "3:55", said: ["las cuatro ", { target: menos }, " cinco"], tr: { en: five to four } }
+          - { level: A1, variety: es-419, value: "03:45", time: "3:45", said: [{ target: un cuarto para }, " las cuatro"], tr: { en: quarter to four } }
+          - { level: A1, variety: es-419, value: "03:50", time: "3:50", said: ["diez ", { target: para }, " las cuatro"], tr: { en: ten to four } }
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: ["From 1 to 30 minutes, ", { term: y }, " and the minutes follow the hour."]
+              es: ["De 1 a 30 minutos, ", { term: y }, " y los minutos van detrás de la hora."]
+          - type: rule
+            level: A1
+            text:
+              en: ["From 31 to 59, ", { term: menos }, " takes the minutes left away from the next hour."]
+              es: ["De 31 a 59, ", { term: menos }, " resta los minutos que faltan a la hora siguiente."]
+          - type: rule
+            level: A1
+            variety: es-419
+            text:
+              en: ["Latin America also says the minutes left, ", { term: para }, " and the next hour:"]
+              es: ["En Latinoamérica también se dicen los minutos que faltan, ", { term: para }, " y la hora siguiente:"]
+            ex: [{ target: Faltan }, " diez ", { target: para }, " las cuatro."]
+            tr: { en: "It's ten to four." }
+
+  - title: { en: "When: a las", es: "Cuándo: a las" }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: a la una }, " and ", { term: a las }, " with the time say when something happens:"]
+              es: [{ term: a la una }, " y ", { term: a las }, " con la hora dicen cuándo pasa algo:"]
+            ex: { examples: [["La clase empieza ", { target: a las }, " nueve."], ["Comemos ", { target: a la }, " una."]] }
+            tr: { en: { examples: [The class starts at nine., We have lunch at one.] } }
+          - type: rule
+            level: A1
+            text:
+              en: ["Ask with ", { term: ["¿A qué hora ", { gap: true }, "?"] }, ":"]
+              es: ["Se pregunta con ", { term: ["¿A qué hora ", { gap: true }, "?"] }, ":"]
+            ex: { exchange: ["¿A qué hora abre el banco?", [{ target: A las }, " ocho y media."]] }
+            tr: { en: { exchange: [What time does the bank open?, At half past eight.] } }
+          - type: rule
+            level: A1
+            text:
+              en: [{ term: de }, " and ", { term: a }, " give the start and the end of a span:"]
+              es: [{ term: de }, " y ", { term: a }, " dan el principio y el final de un tiempo:"]
+            ex: ["Trabajo ", { target: de }, " nueve ", { target: a }, " cinco."]
+            tr: { en: I work from nine to five. }
+
+  - title: { en: Parts of the day, es: Las partes del día }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: phrase, label: { en: Phrase, es: Expresión } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, phrase: de la mañana, use: { en: from dawn to midday, es: desde el amanecer hasta el mediodía }, ex: { time: ["las ocho ", { target: de la mañana }], value: "08:00" }, tr: { en: eight in the morning } }
+          - { level: A1, phrase: de la tarde, use: { en: from midday until dark, es: desde el mediodía hasta que anochece }, ex: { time: ["las cinco ", { target: de la tarde }], value: "17:00" }, tr: { en: five in the afternoon } }
+          - { level: A1, phrase: de la noche, use: { en: from dark to midnight, es: desde que anochece hasta medianoche }, ex: { time: ["las diez ", { target: de la noche }], value: "22:00" }, tr: { en: ten at night } }
+          - { level: A1, phrase: de la madrugada, use: { en: from midnight to dawn, es: desde medianoche hasta el amanecer }, ex: { time: ["las tres ", { target: de la madrugada }], value: "03:00" }, tr: { en: three in the morning } }
+          - { level: A1, phrase: el mediodía, use: { en: twelve noon, es: las doce del día }, ex: { target: al mediodía }, tr: { en: at midday } }
+          - { level: A1, phrase: la medianoche, use: { en: twelve at night, es: las doce de la noche }, ex: { target: a medianoche }, tr: { en: at midnight } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: ["Without a clock time, ", { term: por la mañana }, ", ", { term: por la tarde }, " and ", { term: por la noche }, " say when:"]
+              es: ["Sin hora exacta, ", { term: por la mañana }, ", ", { term: por la tarde }, " y ", { term: por la noche }, " dicen cuándo:"]
+            ex: ["Estudio ", { target: por la tarde }, "."]
+            tr: { en: I study in the afternoon. }
+          - type: note
+            level: A1
+            variety: es-419
+            text:
+              en: ["Latin America also says ", { term: en la mañana }, ", ", { term: en la tarde }, " and ", { term: en la noche }, ":"]
+              es: ["En Latinoamérica también se dice ", { term: en la mañana }, ", ", { term: en la tarde }, " y ", { term: en la noche }, ":"]
+            ex: ["Estudio ", { target: en la tarde }, "."]
+            tr: { en: I study in the afternoon. }
+          - type: rule
+            level: A1
+            text:
+              en: "In speech, the 12-hour clock is usual; timetables use 24 hours:"
+              es: "Al hablar se usa el reloj de 12 horas; los horarios usan 24 horas:"
+            ex: { mapping: [{ time: "18:30", value: "18:30" }, { target: { time: las dieciocho treinta, value: "18:30" } }] }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A0, wrong: Es las tres., right: [{ target: Son }, " las tres."], rule: { en: ["from two on, the hour takes ", { term: son }], es: ["desde las dos, la hora lleva ", { term: son }] } }
+          - { level: A0, wrong: Son la una., right: [{ target: Es }, " la una."], rule: { en: ["one o'clock takes ", { term: es }], es: ["la una lleva ", { term: es }] } }
+          - { level: A0, wrong: Son tres., right: ["Son ", { target: las }, " tres."], rule: { en: ["the hour takes ", { term: las }], es: ["la hora lleva ", { term: las }] } }
+          - { level: A0, wrong: Son las tres y medio., right: ["Son las tres y ", { target: media }, "."], rule: { en: [{ term: media }, " agrees with ", { term: hora }, ", a feminine word"], es: [{ term: media }, " concuerda con ", { term: hora }, ", una palabra femenina"] } }
+          - { level: A0, speakers: [en], wrong: ¿Qué tiempo es?, right: ["¿Qué ", { target: hora }, " es?"], rule: { en: [{ term: tiempo }, " is the weather or time in general; clock time is ", { term: hora }] } }
+          - { level: A1, wrong: La clase es en las nueve., right: ["La clase es ", { target: a las }, " nueve."], rule: { en: ["a clock time takes ", { term: a las }], es: ["la hora del reloj lleva ", { term: a las }] } }

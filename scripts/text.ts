@@ -156,8 +156,16 @@ const PLAIN: TextOutput<string> = { text: (s) => s, join: (p) => p.join(""), mar
 // The text a reader sees, without markup.
 export const plainText = (t: Text, c: FoldContext): string => foldText(t, PLAIN, c);
 
-// A variety's name in an explanation language: "US".
-export const varietyName = (v: Variety, explain: Explain): string => say(v === "en-US" ? "varietyUs" : "varietyGb", explain);
+// Each variety's name in interface.yaml.
+const VARIETY_KEYS: Record<Variety, string> = {
+  "en-GB": "varietyGb",
+  "en-US": "varietyUs",
+  "es-419": "varietyLatam",
+  "es-ES": "varietySpain",
+};
+
+// A variety's name in an explanation language: "US", "Spain".
+export const varietyName = (v: Variety, explain: Explain): string => say(VARIETY_KEYS[v], explain);
 
 // How text reads in an explanation language: in the language being learned (plain) or explaining it.
 export const reading = (explain: Explain, plain: boolean): FoldContext => ({ explain, plain, variety: (v) => varietyName(v, explain) });

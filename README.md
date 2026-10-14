@@ -1,17 +1,18 @@
 # langs123
 
 The foundations of languages as open data: sounds, writing, numbers, dates, time and grammar, every
-line marked with its CEFR level. Each language being learned is explained in each explanation
-language, so the library grows as N languages, each explained in N languages. It holds English from
-A0 to B1, explained in English, Ukrainian, Spanish, Portuguese, French, German, Italian, Polish,
-Turkish, Indonesian and Vietnamese.
+line marked with its CEFR level. Each language being learned is explained in the explanation
+languages it lists, so the library grows toward N languages, each explained in N languages. It holds
+English from A0 to B1, explained in English, Ukrainian, Spanish, Portuguese, French, German, Italian,
+Polish, Turkish, Indonesian and Vietnamese, and Spanish from A0 to B1 after the Instituto Cervantes
+curriculum, explained in English and Spanish, Latin American by default with Spain a switch away.
 
 **Site:** https://langs123.com
 
 ## The library
 
 - **Tracks.** A track is one language being learned, explained in one explanation language. One
-  topic file holds a topic for every explanation language, and concept keys pair the same subject
+  topic file holds a topic for each explanation language of its language, and concept keys pair the same subject
   across languages ([languages/CONVENTIONS.md](languages/CONVENTIONS.md) §1, §9).
 - **Topics.** Each topic explains one part of the language system: a summary, a cheatsheet of the
   whole topic, then rules, examples and typical errors (§5, §8).

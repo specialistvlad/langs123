@@ -1,0 +1,236 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.adjetivo-adverbio.adjetivo-concordancia
+lang: es
+kind: grammar
+tags: [adjectives, agreement, gender, number, position]
+concepts: [adjectives]
+related: [es.sustantivo-determinantes.genero, es.sustantivo-determinantes.plural, es.adjetivo-adverbio.comparativos-superlativos, es.ser-estar-hay-gustar.ser-estar]
+status: { en: draft, es: draft }
+translated: { es: "28c93e 1cb655 50d557 1caed0 333294 8ad0fe" }
+
+title: { en: "Adjectives: Agreement and Position", es: "El adjetivo: concordancia y posición" }
+summary:
+  lead:
+    en: ["Adjectives agree with their noun in gender and number and usually follow it: ", { term: una casa blanca }, ", ", { term: unos libros nuevos }, "."]
+    es: ["El adjetivo concuerda con el nombre en género y número y suele ir detrás: ", { term: una casa blanca }, ", ", { term: unos libros nuevos }, "."]
+  rule:
+    en: ["An adjective in ", { term: -o }, " changes to ", { alternatives: [{ term: -a }, { term: -os }, { term: -as }] }, " with its noun:"]
+    es: ["Un adjetivo en ", { term: -o }, " cambia a ", { alternatives: [{ term: -a }, { term: -os }, { term: -as }] }, " según el nombre:"]
+  ex: { examples: [["un chico ", { target: alto }], ["unas chicas ", { target: altas }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Ending in -o, es: Terminado en -o }
+          rule:
+            en: ["four forms: ", { alternatives: [{ term: -o }, { term: -a }, { term: -os }, { term: -as }] }]
+            es: ["cuatro formas: ", { alternatives: [{ term: -o }, { term: -a }, { term: -os }, { term: -as }] }]
+          ex: { examples: [["un libro ", { target: blanco }], ["unas casas ", { target: blancas }]] }
+          tr: { en: { examples: [a white book, some white houses] } }
+        - level: A1
+          point: { en: Ending in -e or a consonant, es: Terminado en -e o consonante }
+          rule:
+            en: "one form for both genders"
+            es: "una sola forma para los dos géneros"
+          ex: { examples: [["un examen ", { target: fácil }], ["una pregunta ", { target: fácil }]] }
+          tr: { en: { examples: [an easy exam, an easy question] } }
+        - level: A1
+          point: { en: Nationality, es: Nacionalidad }
+          rule:
+            en: "a consonant ending adds -a for the feminine"
+            es: "la terminación en consonante añade -a para el femenino"
+          ex: { examples: [["un chico ", { target: español }], ["una chica ", { target: española }]] }
+          tr: { en: { examples: [a Spanish boy, a Spanish girl] } }
+        - level: A1
+          point: { en: Plural, es: Plural }
+          rule:
+            en: "-s after a vowel, -es after a consonant"
+            es: "-s detrás de vocal, -es detrás de consonante"
+          ex: { examples: [{ mapping: [verde, { target: verdes }] }, { mapping: [azul, { target: azules }] }] }
+        - level: A1
+          point: { en: Position, es: Posición }
+          rule:
+            en: "after the noun as a rule"
+            es: "detrás del nombre por regla general"
+          ex: ["un vestido ", { target: rojo }]
+          tr: { en: a red dress }
+        - level: A1
+          point: { en: Mixed group, es: Grupo mixto }
+          rule:
+            en: "masculine and feminine nouns together take the masculine plural"
+            es: "nombres masculinos y femeninos juntos llevan el masculino plural"
+          ex: ["Juan y Ana son ", { target: simpáticos }, "."]
+          tr: { en: Juan and Ana are nice. }
+        - level: A2
+          point: "-or"
+          rule:
+            en: "adds -a for the feminine"
+            es: "añade -a para el femenino"
+          ex: ["una mujer ", { target: trabajadora }]
+          tr: { en: a hard-working woman }
+        - level: B1
+          point: { alternatives: [buen, mal] }
+          rule:
+            en: [{ term: bueno }, " and ", { term: malo }, " drop -o before a masculine singular noun"]
+            es: [{ term: bueno }, " y ", { term: malo }, " pierden la -o delante de un nombre masculino singular"]
+          ex: { examples: [["un ", { target: buen }, " libro"], ["un ", { target: mal }, " día"]] }
+          tr: { en: { examples: [a good book, a bad day] } }
+        - level: B1
+          point: gran
+          rule:
+            en: [{ term: grande }, " becomes ", { term: gran }, " before any singular noun and means great"]
+            es: [{ term: grande }, " pasa a ", { term: gran }, " delante de cualquier nombre singular y significa importante"]
+          ex: { examples: [["una ", { target: gran }, " idea"], ["un ", { target: gran }, " país"]] }
+          tr: { en: { examples: [a great idea, a great country] } }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: "the noun's gender decides, even when it ends in -a"
+            es: "decide el género del nombre, aunque termine en -a"
+          ex: ["el mapa ", { target: nuevo }]
+          tr: { en: the new map }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "An adjective agrees with its noun in gender and number:"
+              es: "El adjetivo concuerda con el nombre en género y número:"
+            ex: { examples: [["el gato ", { target: negro }], ["las gatas ", { target: negras }]] }
+            tr: { en: { examples: [the black cat, the black cats] } }
+          - type: rule
+            level: A1
+            text:
+              en: "Most adjectives go after the noun:"
+              es: "La mayoría de los adjetivos van detrás del nombre:"
+            ex: ["Tengo una casa ", { target: grande }, "."]
+            tr: { en: I have a big house. }
+          - type: note
+            level: A1
+            text:
+              en: ["The gender of the noun decides the form: see ", { link: Gender, to: es.sustantivo-determinantes.genero }, "."]
+              es: ["El género del nombre decide la forma: ver ", { link: El género, to: es.sustantivo-determinantes.genero }, "."]
+
+  - title: { en: "Form: agreement", es: "Forma: la concordancia" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: type, label: { en: Adjective, es: Adjetivo } }
+          - { key: sg, label: { en: Singular, es: Singular }, features: { number: sg } }
+          - { key: pl, label: { en: Plural, es: Plural }, features: { number: pl } }
+        rows:
+          - { level: A1, features: { gender: masc }, type: { en: "-o, masculine", es: "-o, masculino" }, sg: { target: alto }, pl: { target: altos } }
+          - { level: A1, features: { gender: fem }, type: { en: "-o, feminine", es: "-o, femenino" }, sg: { target: alta }, pl: { target: altas } }
+          - { level: A1, features: [{ gender: masc }, { gender: fem }], type: { en: "-e, both genders", es: "-e, los dos géneros" }, sg: { target: grande }, pl: { target: grandes } }
+          - { level: A1, features: [{ gender: masc }, { gender: fem }], type: { en: "consonant, both genders", es: "consonante, los dos géneros" }, sg: { target: azul }, pl: { target: azules } }
+          - { level: A2, features: [{ gender: masc }, { gender: fem }], type: { en: "-z, both genders", es: "-z, los dos géneros" }, sg: { target: feliz }, pl: { target: felices } }
+          - { level: A1, features: { gender: masc }, type: { en: "nationality, masculine", es: "nacionalidad, masculino" }, sg: { target: español }, pl: { target: españoles } }
+          - { level: A1, features: { gender: fem }, type: { en: "nationality, feminine", es: "nacionalidad, femenino" }, sg: { target: española }, pl: { target: españolas } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: ["Adjectives in ", { term: -o }, " have four forms: ", { alternatives: [{ term: alto }, { term: alta }, { term: altos }, { term: altas }] }, "."]
+              es: ["Los adjetivos en ", { term: -o }, " tienen cuatro formas: ", { alternatives: [{ term: alto }, { term: alta }, { term: altos }, { term: altas }] }, "."]
+          - type: rule
+            level: A1
+            text:
+              en: "Adjectives in -e or a consonant have one form for both genders:"
+              es: "Los adjetivos en -e o en consonante tienen una sola forma para los dos géneros:"
+            ex: { examples: [["un examen ", { target: fácil }], ["una pregunta ", { target: fácil }]] }
+            tr: { en: { examples: [an easy exam, an easy question] } }
+          - type: rule
+            level: A1
+            text:
+              en: "The plural adds -s after a vowel and -es after a consonant:"
+              es: "El plural añade -s detrás de vocal y -es detrás de consonante:"
+            ex: { examples: [{ mapping: [verde, { target: verdes }] }, { mapping: [azul, { target: azules }] }] }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: -z }, " changes to ", { term: -ces }, " in the plural:"]
+              es: [{ term: -z }, " cambia a ", { term: -ces }, " en plural:"]
+            ex: { mapping: [feliz, { target: felices }] }
+          - type: rule
+            level: A1
+            text:
+              en: "Nationalities ending in a consonant add -a for the feminine, and a final accent drops:"
+              es: "Las nacionalidades en consonante añaden -a para el femenino, y la tilde final desaparece:"
+            ex: { examples: [{ mapping: [inglés, { target: inglesa }] }, { mapping: [alemán, { target: alemana }] }] }
+          - type: rule
+            level: A2
+            text:
+              en: ["Adjectives in ", { term: -or }, " also add -a:"]
+              es: ["Los adjetivos en ", { term: -or }, " también añaden -a:"]
+            ex: ["Mi madre es muy ", { target: trabajadora }, "."]
+            tr: { en: My mother is very hard-working. }
+          - type: rule
+            level: A1
+            text:
+              en: "Masculine and feminine nouns together take the masculine plural:"
+              es: "Nombres masculinos y femeninos juntos llevan el masculino plural:"
+            ex: ["Juan y Ana son ", { target: simpáticos }, "."]
+            tr: { en: Juan and Ana are nice. }
+          - type: rule
+            level: A1
+            text:
+              en: "The noun's gender decides the form, even when the noun ends in -a:"
+              es: "El género del nombre decide la forma, aunque el nombre termine en -a:"
+            ex: { examples: [["el mapa ", { target: nuevo }], ["el día ", { target: bonito }]] }
+            tr: { en: { examples: [the new map, the lovely day] } }
+
+  - title: { en: Position, es: La posición }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: position, label: { en: Position, es: Posición } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, position: { en: after the noun, es: detrás del nombre }, use: { en: "the usual place: it tells this thing from others", es: "la posición habitual: distingue esta cosa de otras" }, ex: ["un vestido ", { target: rojo }], tr: { en: a red dress } }
+          - { level: B1, position: { en: before the noun, es: delante del nombre }, use: { en: "a quality the speaker stresses or takes as given", es: "una cualidad que se destaca o se da por sabida" }, ex: ["Tienes una ", { target: bonita }, " sonrisa."], tr: { en: You have a lovely smile. } }
+          - { level: B1, position: { en: before the noun, es: delante del nombre }, use: { en: [{ term: buen }, ", ", { term: mal }, ", ", { term: gran }], es: [{ term: buen }, ", ", { term: mal }, ", ", { term: gran }] }, ex: ["Es un ", { target: buen }, " amigo."], tr: { en: "He's a good friend." } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: bueno }, " and ", { term: malo }, " drop -o before a masculine singular noun:"]
+              es: [{ term: bueno }, " y ", { term: malo }, " pierden la -o delante de un nombre masculino singular:"]
+            ex: { examples: [["un ", { target: buen }, " día"], ["un ", { target: mal }, " momento"]] }
+            tr: { en: { examples: [a good day, a bad moment] } }
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: grande }, " becomes ", { term: gran }, " before a singular noun of either gender:"]
+              es: [{ term: grande }, " pasa a ", { term: gran }, " delante de un nombre singular de cualquier género:"]
+            ex: { examples: [["una ", { target: gran }, " idea"], ["un ", { target: gran }, " país"]] }
+            tr: { en: { examples: [a great idea, a great country] } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: una casa blanco, right: ["una casa ", { target: blanca }], rule: { en: the adjective agrees in gender, es: el adjetivo concuerda en género } }
+          - { level: A1, wrong: los libros nuevo, right: ["los libros ", { target: nuevos }], rule: { en: the adjective agrees in number, es: el adjetivo concuerda en número } }
+          - { level: A1, wrong: el mapa nueva, right: ["el mapa ", { target: nuevo }], rule: { en: [{ term: mapa }, " is masculine: the noun's gender decides"], es: [{ term: mapa }, " es masculino: decide el género del nombre"] } }
+          - { level: A1, wrong: Juan y Ana son simpáticas., right: ["Juan y Ana son ", { target: simpáticos }, "."], rule: { en: a mixed group takes the masculine plural, es: un grupo mixto lleva el masculino plural } }
+          - { level: A1, wrong: unas chicas inglésas, right: ["unas chicas ", { target: inglesas }], rule: { en: ["the accent of ", { term: inglés }, " drops when it adds an ending"], es: ["la tilde de ", { term: inglés }, " desaparece al añadir una terminación"] } }
+          - { level: A1, speakers: [en], wrong: un rojo vestido, right: ["un vestido ", { target: rojo }], rule: { en: "colours and most adjectives go after the noun" } }
+          - { level: B1, wrong: un bueno libro, right: ["un ", { target: buen }, " libro"], rule: { en: [{ term: bueno }, " drops -o before a masculine singular noun"], es: [{ term: bueno }, " pierde la -o delante de un nombre masculino singular"] } }
+          - { level: B1, wrong: una grande idea, right: ["una ", { target: gran }, " idea"], rule: { en: [{ term: grande }, " becomes ", { term: gran }, " before a singular noun"], es: [{ term: grande }, " pasa a ", { term: gran }, " delante de un nombre singular"] } }

@@ -3,6 +3,7 @@ import { plainText, reading, textIn } from "../../scripts/text.ts";
 import { type Block, type Explain, type Level, say, type Text, type Topic } from "../../scripts/lib.ts";
 import { contentRange, type Range, sectionRange, upTo } from "../../scripts/levels.ts";
 import { type Ctx, escapeHtml, inline } from "./html.ts";
+import { varietyLevelAttrs } from "./parts.ts";
 import { blocksHtml } from "./render.ts";
 
 export type SectionKind = "cheatsheet" | "body";
@@ -13,6 +14,8 @@ export interface GuideSection {
   title: string;
   heading: string;
   range: Range;
+  // Where a variety's leaves start above the range: data-level-{variety} attributes.
+  varietyLevels: string;
   kind: SectionKind;
   html: string;
 }
@@ -59,6 +62,7 @@ export function guideSections(ctx: Ctx): GuideSection[] {
     title: p.title,
     heading: p.heading === null ? escapeHtml(p.title) : inline(p.heading, ctx, false),
     range: p.range,
+    varietyLevels: varietyLevelAttrs(p.content, ctx.explain, ctx.varieties, p.range.from),
     kind: p.kind,
     html: blocksHtml(p.content, ctx, p.range.from),
   }));

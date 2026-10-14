@@ -1,0 +1,231 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.pronombres.objeto-directo
+lang: es
+kind: grammar
+tags: [pronouns, object, personal a, lo, la]
+concepts: [object-pronouns, pronouns]
+related: [es.pronombres.objeto-indirecto, es.pronombres.combinacion-pronombres, es.pronombres.pronombres-sujeto, es.pronombres.tu-usted-vosotros-ustedes]
+status: { en: draft, es: draft }
+translated: { es: "1f7119 f50872 a76c66 646faa 26e611 f0bc83 39379b c4a427" }
+
+title: { en: Direct Object Pronouns and Personal a, es: El objeto directo y la a personal }
+summary:
+  lead:
+    en: [{ term: Lo }, ", ", { term: la }, ", ", { term: los }, " and ", { term: las }, " replace a direct object, and a specific person as direct object takes ", { term: a }, "."]
+    es: [{ term: Lo }, ", ", { term: la }, ", ", { term: los }, " y ", { term: las }, " sustituyen al objeto directo, y una persona concreta como objeto directo lleva ", { term: a }, "."]
+  rule:
+    en: "The pronoun goes before a conjugated verb:"
+    es: "El pronombre va delante del verbo conjugado:"
+  ex: { examples: [["¿El pan? ", { target: Lo }, " compro yo."], ["¿Y Ana? ", { target: La }, " veo mañana."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { en: Form, es: Forma }
+          rule:
+            en: { alternatives: [{ term: me }, { term: te }, { term: lo }, { term: la }, { term: nos }, { term: los }, { term: las }] }
+            es: { alternatives: [{ term: me }, { term: te }, { term: lo }, { term: la }, { term: nos }, { term: los }, { term: las }] }
+          ex: [{ target: Te }, " quiero."]
+          tr: { en: I love you. }
+        - level: A2
+          variety: es-ES
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: os }, " for ", { term: vosotros }]
+            es: [{ term: os }, " para ", { term: vosotros }]
+          ex: [{ target: Os }, " espero en casa."]
+          tr: { en: "I'll wait for you at home." }
+        - level: A2
+          point: { en: Gender and number, es: Género y número }
+          rule:
+            en: "the pronoun takes the gender and number of the noun"
+            es: "el pronombre toma el género y el número del sustantivo"
+          ex: ["¿La sopa? ", { target: La }, " hago yo."]
+          tr: { en: "The soup? I'll make it." }
+        - level: A2
+          point: { en: Position, es: Posición }
+          rule:
+            en: "before a conjugated verb"
+            es: "delante del verbo conjugado"
+          ex: [{ target: Lo }, " compro hoy."]
+          tr: { en: "I'm buying it today." }
+        - level: A2
+          point: { en: Position, es: Posición }
+          rule:
+            en: "attached to an infinitive or a gerund, or before the whole phrase"
+            es: "unido al infinitivo o al gerundio, o delante de todo el grupo"
+          ex: { equivalence: [["Voy a ", { target: comprarlo }], [{ target: Lo }, " voy a comprar"]] }
+          tr: { en: "I'm going to buy it." }
+        - level: A2
+          point: { en: Personal a, es: A personal }
+          rule:
+            en: [{ term: a }, " before a specific person or a pet"]
+            es: [{ term: a }, " delante de una persona concreta o una mascota"]
+          ex: ["Veo ", { target: a }, " María."]
+          tr: { en: I can see María. }
+        - level: B1
+          point: { en: Personal a, es: A personal }
+          rule:
+            en: [{ term: a }, " before ", { alternatives: [{ term: quién }, { term: alguien }, { term: nadie }] }]
+            es: [{ term: a }, " delante de ", { alternatives: [{ term: quién }, { term: alguien }, { term: nadie }] }]
+          ex: ["No conozco ", { target: a }, " nadie."]
+          tr: { en: "I don't know anybody." }
+        - level: A2
+          point: { en: An idea, es: Una idea }
+          rule:
+            en: [{ term: lo }, " replaces an idea or a whole sentence"]
+            es: [{ term: lo }, " sustituye a una idea o a una frase entera"]
+          ex: ["No ", { target: lo }, " sé."]
+          tr: { en: "I don't know." }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: tener }, " takes no ", { term: a }, ", even before people"]
+            es: [{ term: tener }, " no lleva ", { term: a }, ", ni siquiera con personas"]
+          ex: [{ target: Tengo dos }, " hermanos."]
+          tr: { en: I have two brothers. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: { mapping: [{ term: a el }, { term: al }] }
+            es: { mapping: [{ term: a el }, { term: al }] }
+          ex: ["Llamo ", { target: al }, " médico."]
+          tr: { en: "I'm calling the doctor." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "The direct object receives the action of the verb: what or whom."
+              es: "El objeto directo recibe la acción del verbo: qué o a quién."
+            ex: ["Compro ", { target: el pan }, "."]
+            tr: { en: "I'm buying the bread." }
+          - type: rule
+            level: A2
+            text:
+              en: "A pronoun replaces a direct object that is already known:"
+              es: "Un pronombre sustituye a un objeto directo ya conocido:"
+            ex: ["¿El pan? ", { target: Lo }, " compro yo."]
+            tr: { en: "The bread? I'll buy it." }
+          - type: note
+            level: A2
+            text:
+              en: ["Pronouns for “to whom” or “for whom”: ", { link: "Indirect Object Pronouns", to: es.pronombres.objeto-indirecto }, "."]
+              es: ["Los pronombres de “a quién” o “para quién”: ", { link: "El objeto indirecto", to: es.pronombres.objeto-indirecto }, "."]
+
+  - title: { en: "Form: the pronouns", es: "Forma: los pronombres" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: subject, label: { en: Subject, es: Sujeto } }
+          - { key: object, label: { en: Direct object, es: Objeto directo } }
+        rows:
+          - { level: A2, features: { person: 1, number: sg, case: acc }, subject: yo, object: { target: me } }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm, case: acc }, subject: tú, object: { target: te } }
+          - { level: A2, features: [{ person: 3, number: sg, gender: masc, case: acc }, { person: 2, number: sg, politeness: form, gender: masc, case: acc }], subject: { alternatives: [él, usted] }, object: { target: lo } }
+          - { level: A2, features: [{ person: 3, number: sg, gender: fem, case: acc }, { person: 2, number: sg, politeness: form, gender: fem, case: acc }], subject: { alternatives: [ella, usted] }, object: { target: la } }
+          - { level: A2, features: { person: 1, number: pl, case: acc }, subject: { alternatives: [nosotros, nosotras] }, object: { target: nos } }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm, case: acc }, subject: { alternatives: [vosotros, vosotras] }, object: { target: os } }
+          - { level: A2, features: [{ person: 3, number: pl, gender: masc, case: acc }, { person: 2, number: pl, gender: masc, case: acc }], subject: { alternatives: [ellos, ustedes] }, object: { target: los } }
+          - { level: A2, features: [{ person: 3, number: pl, gender: fem, case: acc }, { person: 2, number: pl, gender: fem, case: acc }], subject: { alternatives: [ellas, ustedes] }, object: { target: las } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, " take the gender and number of the noun they replace:"]
+              es: [{ alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, " toman el género y el número del sustantivo que sustituyen:"]
+            ex: { examples: [["¿Los zapatos? ", { target: Los }, " compro hoy."], ["¿Las llaves? ", { target: Las }, " tengo yo."]] }
+            tr: { en: { examples: ["The shoes? I'm buying them today.", "The keys? I've got them."] } }
+  - title: { en: Where the pronoun goes, es: Dónde va el pronombre }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Position, es: Posición } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: Before a conjugated verb, es: Delante del verbo conjugado }, ex: [{ target: Lo }, " compro hoy."], tr: { en: "I'm buying it today." } }
+          - { level: A2, use: { en: ["Between ", { term: "no" }, " and the verb"], es: ["Entre ", { term: "no" }, " y el verbo"] }, ex: ["No ", { target: la }, " conozco."], tr: { en: "I don't know her." } }
+          - { level: A2, use: { en: "With an infinitive: attached, or before the whole phrase", es: "Con infinitivo: unido, o delante de todo el grupo" }, ex: { equivalence: [["Voy a ", { target: comprarlo }], [{ target: Lo }, " voy a comprar"]] }, tr: { en: "I'm going to buy it." } }
+          - { level: A2, use: { en: "With a gerund: attached, or before the whole phrase", es: "Con gerundio: unido, o delante de todo el grupo" }, ex: { equivalence: [["Estoy ", { target: leyéndolo }], [{ target: Lo }, " estoy leyendo"]] }, tr: { en: "I'm reading it." } }
+          - { level: A2, use: { en: Attached to an affirmative command, es: Unido al imperativo afirmativo }, ex: [{ target: Cómpralo }, "."], tr: { en: Buy it. } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "A gerund or a command with a pronoun attached keeps its stress, so it takes a written accent:"
+              es: "El gerundio o el imperativo con un pronombre unido mantiene su acento y lleva tilde:"
+            ex: { examples: [{ target: leyéndolo }, { target: cómpralo }] }
+            tr: { en: { examples: [reading it, buy it] } }
+
+  - title: { en: The personal a, es: La a personal }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: [{ term: a }, ": a specific person"], es: [{ term: a }, ": una persona concreta"] }, ex: ["Veo ", { target: a }, " María."], tr: { en: I can see María. } }
+          - { level: A2, use: { en: [{ term: a }, ": a pet"], es: [{ term: a }, ": una mascota"] }, ex: ["Paseo ", { target: a }, " mi perro."], tr: { en: I walk my dog. } }
+          - level: B1
+            use: { en: [{ term: a }, ": ", { alternatives: [{ term: quién }, { term: alguien }, { term: nadie }] }], es: [{ term: a }, ": ", { alternatives: [{ term: quién }, { term: alguien }, { term: nadie }] }] }
+            ex: { examples: [["¿", { target: A }, " quién buscas?"], ["No conozco ", { target: a }, " nadie."]] }
+            tr: { en: { examples: [Who are you looking for?, "I don't know anyone."] } }
+          - { level: A2, use: { en: ["No ", { term: a }, ": a thing"], es: ["Sin ", { term: a }, ": una cosa"] }, ex: ["Veo ", { target: la casa }, "."], tr: { en: I can see the house. } }
+          - { level: A2, use: { en: ["No ", { term: a }, ": ", { term: tener }], es: ["Sin ", { term: a }, ": ", { term: tener }] }, ex: [{ target: Tengo dos }, " hermanos."], tr: { en: I have two brothers. } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: a }, " and ", { term: el }, " join into ", { term: al }, ":"]
+              es: [{ term: a }, " y ", { term: el }, " se unen en ", { term: al }, ":"]
+            ex: ["Llamo ", { target: al }, " médico."]
+            tr: { en: "I'm calling the doctor." }
+
+  - title: { en: Lo for an idea, es: Lo para una idea }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: lo }, " replaces an idea or a whole sentence:"]
+              es: [{ term: lo }, " sustituye a una idea o a una frase entera:"]
+            ex: { exchange: ["¿Sabes dónde vive Ana?", ["No, no ", { target: lo }, " sé."]] }
+            tr: { en: { exchange: [Do you know where Ana lives?, "No, I don't know."] } }
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: lo }, " also replaces an adjective after ", { term: estar }, ":"]
+              es: [{ term: lo }, " también sustituye a un adjetivo después de ", { term: estar }, ":"]
+            ex: { exchange: ["¿Estás cansada?", ["Sí, ", { target: lo }, " estoy."]] }
+            tr: { en: { exchange: [Are you tired?, "Yes, I am."] } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Compro lo hoy., right: [{ target: Lo }, " compro hoy."], rule: { en: "the pronoun goes before a conjugated verb", es: "el pronombre va delante del verbo conjugado" } }
+          - { level: A2, wrong: Voy a lo comprar., right: ["Voy a ", { target: comprarlo }, "."], rule: { en: "the pronoun joins the infinitive or goes before the whole phrase", es: "el pronombre se une al infinitivo o va delante de todo el grupo" } }
+          - { level: A2, wrong: "¿La sopa? Lo hago yo.", right: ["¿La sopa? ", { target: La }, " hago yo."], rule: { en: ["the pronoun takes the gender of the noun: ", { term: la sopa }], es: ["el pronombre toma el género del sustantivo: ", { term: la sopa }] } }
+          - { level: A2, wrong: Veo María., right: ["Veo ", { target: a }, " María."], rule: { en: ["a specific person takes ", { term: a }], es: ["una persona concreta lleva ", { term: a }] } }
+          - { level: A2, wrong: Tengo a dos hermanos., right: [{ target: Tengo dos }, " hermanos."], rule: { en: [{ term: tener }, " takes no ", { term: a }], es: [{ term: tener }, " no lleva ", { term: a }] } }
+          - { level: A2, speakers: [en], wrong: Veo él., right: [{ target: Lo }, " veo."], rule: { en: ["“him” as a direct object is ", { term: lo }, ", before the verb"] } }

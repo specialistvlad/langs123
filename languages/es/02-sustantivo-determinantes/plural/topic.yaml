@@ -1,0 +1,212 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.plural
+lang: es
+kind: grammar
+tags: [nouns, plural, number, spelling, agreement]
+concepts: [number]
+related: [es.sustantivo-determinantes.genero, es.sustantivo-determinantes.articulos, es.adjetivo-adverbio.adjetivo-concordancia, es.fundamentos.pronunciacion-acentuacion]
+status: { en: draft, es: draft }
+translated: { es: "d23978 74aabd fc3525 6a2d5b 3f028d 44b578" }
+
+title: { en: Plurals, es: El plural }
+summary:
+  lead:
+    en: ["A noun in a vowel adds -s, ", { term: casas }, "; a noun in a consonant adds -es, ", { term: ciudades }, "; and -z becomes -ces, ", { term: lápices }, "."]
+    es: ["El sustantivo en vocal añade -s, ", { term: casas }, "; en consonante añade -es, ", { term: ciudades }, "; y la -z pasa a -ces, ", { term: lápices }, "."]
+  rule:
+    en: "The article and the adjective go plural with the noun:"
+    es: "El artículo y el adjetivo van en plural con el sustantivo:"
+  ex: { examples: [[{ target: las }, " casas ", { target: blancas }], [{ target: los }, " lápices ", { target: rojos }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { en: Vowel, es: Vocal }
+          rule: { pattern: [{ ending: s }], follows: true }
+          ex: { mapping: [casa, { target: casas }] }
+          tr: { en: houses }
+        - level: A1
+          point: { en: Consonant, es: Consonante }
+          rule: { pattern: [{ ending: es }], follows: true }
+          ex: { mapping: [ciudad, { target: ciudades }] }
+          tr: { en: cities }
+        - level: A2
+          point: "-z"
+          rule: { mapping: [z, ces] }
+          ex: { mapping: [lápiz, { target: lápices }] }
+          tr: { en: pencils }
+        - level: A1
+          point: { en: Agreement, es: Concordancia }
+          rule: { en: article and adjective go plural too, es: el artículo y el adjetivo también van en plural }
+          ex: [{ target: las }, " casas ", { target: blancas }]
+          tr: { en: the white houses }
+        - level: A2
+          point: { en: Unstressed -s, es: "-s en sílaba átona" }
+          rule: { en: no change, es: no cambia }
+          ex: { mapping: ["el lunes", { target: los lunes }] }
+          tr: { en: Mondays }
+        - level: A2
+          point: { en: Written accent, es: Tilde }
+          rule: { en: "the stress stays: the accent comes or goes", es: "el acento no se mueve: la tilde aparece o desaparece" }
+          ex: { examples: [{ mapping: [canción, { target: canciones }] }, { mapping: [joven, { target: jóvenes }] }] }
+          tr: { en: { examples: [songs, young people] } }
+        - level: A2
+          point: { en: Plural only, es: Solo en plural }
+          rule: { en: one object with a plural name, es: un objeto con nombre en plural }
+          ex: ["Mis ", { target: pantalones }, " son nuevos."]
+          tr: { en: My trousers are new. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["-z becomes -c: ", { term: lápices }, ", ", { term: veces }]
+            es: ["la -z pasa a -c: ", { term: lápices }, ", ", { term: veces }]
+          ex: ["Tengo dos ", { target: lápices }, "."]
+          tr: { en: I have two pencils. }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: gente }, " is singular"]
+            es: [{ term: gente }, " es singular"]
+          ex: ["La gente ", { target: es }, " amable."]
+          tr: { en: People are friendly. }
+
+sections:
+  - title: { en: "Form: -s and -es", es: "Forma: -s y -es" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: ending, label: { en: Noun ending, es: Terminación del sustantivo } }
+          - { key: rule, label: { en: Plural, es: Plural } }
+          - { key: ex, label: { en: Examples, es: Ejemplos } }
+        rows:
+          - level: A1
+            ending: { en: unstressed vowel, es: vocal átona }
+            rule: { pattern: [{ ending: s }], follows: true }
+            ex: { examples: [{ mapping: [casa, { target: casas }] }, { mapping: [libro, { target: libros }] }, { mapping: [calle, { target: calles }] }] }
+            tr: { en: { examples: [houses, books, streets] } }
+          - level: A1
+            ending: { en: "stressed -á, -é, -ó", es: "-á, -é, -ó tónicas" }
+            rule: { pattern: [{ ending: s }], follows: true }
+            ex: { examples: [{ mapping: [café, { target: cafés }] }, { mapping: [sofá, { target: sofás }] }] }
+            tr: { en: { examples: [coffees, sofas] } }
+          - level: A1
+            ending: { en: consonant, es: consonante }
+            rule: { pattern: [{ ending: es }], follows: true }
+            ex: { examples: [{ mapping: [ciudad, { target: ciudades }] }, { mapping: [papel, { target: papeles }] }, { mapping: [mes, { target: meses }] }] }
+            tr: { en: { examples: [cities, papers, months] } }
+          - level: A2
+            ending: "-z"
+            rule: { mapping: [z, ces] }
+            ex: { examples: [{ mapping: [lápiz, { target: lápices }] }, { mapping: [vez, { target: veces }] }] }
+            tr: { en: { examples: [pencils, times] } }
+          - level: A2
+            ending: { en: "-s in an unstressed syllable", es: "-s en sílaba átona" }
+            rule: { en: no change, es: no cambia }
+            ex: { examples: [{ mapping: ["el lunes", { target: los lunes }] }, { mapping: ["la crisis", { target: las crisis }] }] }
+            tr: { en: { examples: [Mondays, crises] } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "The article and the adjective go plural with the noun:"
+              es: "El artículo y el adjetivo van en plural con el sustantivo:"
+            ex: [{ target: Los }, " zapatos ", { target: nuevos }, " son caros."]
+            tr: { en: The new shoes are expensive. }
+          - type: rule
+            level: A2
+            text:
+              en: ["With an unchanged noun, the article shows the number: ", { mapping: [{ term: el lunes }, { term: los lunes }] }, "."]
+              es: ["Cuando el sustantivo no cambia, el artículo indica el número: ", { mapping: [{ term: el lunes }, { term: los lunes }] }, "."]
+            ex: [{ target: Los }, " lunes tengo clase."]
+            tr: { en: I have class on Mondays. }
+          - type: note
+            level: A1
+            text:
+              en: ["A group of men and women takes the masculine plural: see ", { link: Gender, to: es.sustantivo-determinantes.genero }, "."]
+              es: ["Un grupo de hombres y mujeres lleva el masculino plural: ver ", { link: El género, to: es.sustantivo-determinantes.genero }, "."]
+
+  - title: { en: "Spelling: the written accent", es: "Ortografía: la tilde" }
+    role: spelling
+    content:
+      - type: usage
+        columns:
+          - { key: change, label: { en: Change, es: Cambio } }
+          - { key: ex, label: { en: Examples, es: Ejemplos } }
+        rows:
+          - level: A2
+            change: { en: "-ón, -és lose the accent", es: "-ón, -és pierden la tilde" }
+            ex: { examples: [{ mapping: [canción, { target: canciones }] }, { mapping: [inglés, { target: ingleses }] }] }
+            tr: { en: { examples: [songs, English people] } }
+          - level: A2
+            change: { en: "-en gains an accent", es: "-en gana tilde" }
+            ex: { examples: [{ mapping: [joven, { target: jóvenes }] }, { mapping: [examen, { target: exámenes }] }] }
+            tr: { en: { examples: [young people, exams] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "The plural keeps the stress on the same syllable, and the written accent comes or goes to show it."
+              es: "El plural mantiene el acento en la misma sílaba, y la tilde aparece o desaparece para marcarlo."
+          - type: note
+            level: A2
+            text:
+              en: ["The rules of the written accent: see ", { link: Sounds and Stress, to: es.fundamentos.pronunciacion-acentuacion }, "."]
+              es: ["Las reglas de la tilde: ver ", { link: Pronunciación y acentuación, to: es.fundamentos.pronunciacion-acentuacion }, "."]
+
+  - title: { en: Nouns with one number, es: Sustantivos con un solo número }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: noun, label: { en: Noun, es: Sustantivo } }
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            variety: es-419
+            noun: "los lentes, los anteojos"
+            use: { en: plural for one object, es: plural para un solo objeto }
+            ex: ["Mis ", { target: lentes }, " son nuevos."]
+            tr: { en: My glasses are new. }
+          - level: A2
+            variety: es-ES
+            noun: las gafas
+            use: { en: plural for one object, es: plural para un solo objeto }
+            ex: ["Mis ", { target: gafas }, " son nuevas."]
+            tr: { en: My glasses are new. }
+          - level: A2
+            noun: los pantalones
+            use: { en: plural for one object, es: plural para un solo objeto }
+            ex: ["Estos ", { target: pantalones }, " son caros."]
+            tr: { en: These trousers are expensive. }
+          - level: A2
+            noun: las vacaciones
+            use: { en: plural only, es: solo en plural }
+            ex: ["Las ", { target: vacaciones }, " empiezan en julio."]
+            tr: { en: The holidays start in July. }
+          - level: A2
+            noun: la gente
+            use: { en: "singular, with a singular verb", es: "singular, con el verbo en singular" }
+            ex: ["La ", { target: gente es }, " muy amable."]
+            tr: { en: People are very friendly. }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: dos lápizes, right: ["dos ", { target: lápices }], rule: { en: { mapping: [{ term: "-z" }, { term: "-ces" }] }, es: { mapping: [{ term: "-z" }, { term: "-ces" }] } } }
+          - { level: A1, wrong: las ciudads, right: ["las ", { target: ciudades }], rule: { en: "a consonant adds -es", es: "la consonante añade -es" } }
+          - { level: A1, wrong: las casa blancas, right: ["las ", { target: casas }, " blancas"], rule: { en: "the noun goes plural too", es: "el sustantivo también va en plural" } }
+          - { level: A2, wrong: las canciónes, right: ["las ", { target: canciones }], rule: { en: "the plural of -ón has no accent", es: "el plural de -ón no lleva tilde" } }
+          - { level: A2, wrong: los luneses, right: ["los ", { target: lunes }], rule: { en: "-s in an unstressed syllable stays the same", es: "la -s en sílaba átona no cambia" } }
+          - { level: A2, speakers: [en], wrong: La gente son amables., right: ["La gente ", { target: es }, " amable."], rule: { en: [{ term: gente }, " is singular, unlike English ", { l1: people }] } }

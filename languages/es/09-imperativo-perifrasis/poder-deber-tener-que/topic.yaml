@@ -1,0 +1,287 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.imperativo-perifrasis.poder-deber-tener-que
+lang: es
+kind: grammar
+tags: [verbs, modals, infinitive, obligation]
+concepts: [ability, obligation, advice, periphrases]
+related: [es.imperativo-perifrasis.perifrasis-aspectuales, es.presente.presente-irregular, es.futuro-condicional.condicional-simple, es.pronombres.objeto-directo]
+status: { en: draft, es: draft }
+translated: { es: "691ca8 6406b5 2748e9 288e54 e51009 ad2c1a 783bf6 fdb214 d1313e" }
+
+title: { en: "Can, Must, Should: poder, deber, tener que", es: "Poder, deber, tener que, hay que" }
+summary:
+  lead:
+    en: [{ term: Poder }, " says what is possible or allowed, ", { term: saber }, " what someone has learned, ", { term: tener que }, " and ", { term: deber }, " what is necessary, ", { term: hay que }, " what everyone must do."]
+    es: [{ term: Poder }, " dice qué es posible o está permitido, ", { term: saber }, ", qué se ha aprendido, ", { term: tener que }, " y ", { term: deber }, ", qué es necesario, ", { term: hay que }, ", qué debe hacer todo el mundo."]
+  rule:
+    en: "The first verb changes for the person, and the second stays in the infinitive:"
+    es: "El primer verbo cambia según la persona, y el segundo queda en infinitivo:"
+  ex: { examples: [[{ target: Puedo ir }, " mañana."], [{ target: Tenemos que trabajar }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { en: Permission, es: Permiso }
+          rule:
+            en: [{ pattern: [{ term: ¿Puedo }, { slot: infinitive }] }, ": asking if something is allowed"]
+            es: [{ pattern: [{ term: ¿Puedo }, { slot: infinitive }] }, ": preguntar si algo está permitido"]
+          ex: ["¿", { target: Puedo abrir }, " la ventana?"]
+          tr: { en: "Can I open the window?" }
+        - level: A2
+          point: { en: Requests, es: Peticiones }
+          rule:
+            en: [{ pattern: [{ term: ¿Puedes }, { slot: infinitive }] }, ": asking someone to do something"]
+            es: [{ pattern: [{ term: ¿Puedes }, { slot: infinitive }] }, ": pedir a alguien que haga algo"]
+          ex: ["¿", { target: Puedes repetir }, ", por favor?"]
+          tr: { en: "Can you repeat that, please?" }
+        - level: A2
+          point: { en: Skills, es: Habilidades }
+          rule:
+            en: [{ pattern: [{ term: saber }, { slot: infinitive }] }, ": something someone has learned to do"]
+            es: [{ pattern: [{ term: saber }, { slot: infinitive }] }, ": algo que alguien ha aprendido a hacer"]
+          ex: [{ target: Sé nadar }, "."]
+          tr: { en: "I can swim." }
+        - level: A2
+          point: { en: Ability now, es: Capacidad ahora }
+          rule:
+            en: [{ term: poder }, ": whether someone is able to do something now"]
+            es: [{ term: poder }, ": si alguien es capaz de hacer algo ahora"]
+          ex: ["Hoy no ", { target: puedo salir }, "."]
+          tr: { en: "I can't go out today." }
+        - level: A2
+          point: { en: Obligation, es: Obligación }
+          rule:
+            en: [{ pattern: [{ term: tener que }, { slot: infinitive }] }, ": what one person needs to do"]
+            es: [{ pattern: [{ term: tener que }, { slot: infinitive }] }, ": lo que una persona necesita hacer"]
+          ex: [{ target: Tengo que trabajar }, " el sábado."]
+          tr: { en: "I have to work on Saturday." }
+        - level: A2
+          point: { en: Obligation, es: Obligación }
+          rule:
+            en: [{ pattern: [{ term: hay que }, { slot: infinitive }] }, ": what everyone needs to do, with no subject"]
+            es: [{ pattern: [{ term: hay que }, { slot: infinitive }] }, ": lo que todos necesitan hacer, sin sujeto"]
+          ex: [{ target: Hay que pagar }, " antes de entrar."]
+          tr: { en: "You have to pay before going in." }
+        - level: A2
+          point: { en: Pronouns, es: Pronombres }
+          rule:
+            en: "before the conjugated verb, or at the end of the infinitive"
+            es: "delante del verbo conjugado, o al final del infinitivo"
+          ex: { examples: [[{ target: Lo tengo que hacer }, "."], [{ target: Tengo que hacerlo }, "."]] }
+          tr: { en: { examples: ["I have to do it.", "I have to do it."] } }
+        - level: B1
+          point: { en: Duty, es: Deber }
+          rule:
+            en: [{ pattern: [{ term: deber }, { slot: infinitive }] }, ": what is right or required"]
+            es: [{ pattern: [{ term: deber }, { slot: infinitive }] }, ": lo que es correcto u obligatorio"]
+          ex: [{ target: Debes decir }, " la verdad."]
+          tr: { en: "You must tell the truth." }
+        - level: B1
+          point: { en: Advice, es: Consejo }
+          rule:
+            en: [{ pattern: [{ term: deberías }, { slot: infinitive }] }, ": a piece of advice"]
+            es: [{ pattern: [{ term: deberías }, { slot: infinitive }] }, ": un consejo"]
+          ex: [{ target: Deberías descansar }, "."]
+          tr: { en: "You should rest." }
+        - level: A2
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: tener }, " takes ", { term: que }, " before the infinitive"]
+            es: [{ term: tener }, " lleva ", { term: que }, " delante del infinitivo"]
+          ex: [{ target: Tengo que irme }, "."]
+          tr: { en: "I have to go." }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: no tener que }, ": not necessary; ", { term: no deber }, ": not allowed"]
+            es: [{ term: no tener que }, ": no es necesario; ", { term: no deber }, ": no está permitido"]
+          ex: { examples: [[{ target: No tienes que venir }, "."], [{ target: No debes fumar }, " aquí."]] }
+          tr: { en: { examples: ["You don't have to come.", "You mustn't smoke here."] } }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "These verbs take an infinitive after them; only the first verb changes for the person:"
+              es: "Estos verbos llevan un infinitivo detrás; solo el primer verbo cambia según la persona:"
+            ex: ["¿", { target: Puedes venir }, " mañana?"]
+            tr: { en: "Can you come tomorrow?" }
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: tener que }, " and ", { term: hay que }, " take ", { term: que }, " before the infinitive; ", { term: poder }, ", ", { term: saber }, " and ", { term: deber }, " take nothing."]
+              es: [{ term: tener que }, " y ", { term: hay que }, " llevan ", { term: que }, " delante del infinitivo; ", { term: poder }, ", ", { term: saber }, " y ", { term: deber }, " no llevan nada."]
+          - type: note
+            level: A2
+            text:
+              en: ["Verbs that say when or how often something happens: ", { link: "Verb Phrases: acabar de, volver a, soler", to: es.imperativo-perifrasis.perifrasis-aspectuales }, "."]
+              es: ["Verbos que dicen cuándo o con qué frecuencia pasa algo: ", { link: "Perífrasis: acabar de, volver a, soler", to: es.imperativo-perifrasis.perifrasis-aspectuales }, "."]
+
+  - title: { en: "Form: poder and saber", es: "Forma: poder y saber" }
+    role: form
+    features: { tense: prs }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { en: Person, es: Persona } }
+          - { key: poder, label: poder }
+          - { key: saber, label: saber }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, person: yo, poder: { target: puedo }, saber: { target: sé } }
+          - { level: A2, features: { person: 2, number: sg, politeness: infm }, person: tú, poder: { target: puedes }, saber: { target: sabes } }
+          - { level: A2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, poder: { target: puede }, saber: { target: sabe } }
+          - { level: A2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, poder: { target: podemos }, saber: { target: sabemos } }
+          - { level: A2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, poder: { target: podéis }, saber: { target: sabéis } }
+          - { level: A2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, poder: { target: pueden }, saber: { target: saben } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: poder }, " changes ", { letter: o }, " to ", { letter: ue }, " when the stress falls on the stem: ", { alternatives: [{ term: puedo }, { term: puedes }, { term: pueden }] }, "."]
+              es: [{ term: poder }, " cambia ", { letter: o }, " por ", { letter: ue }, " cuando el acento cae en la raíz: ", { alternatives: [{ term: puedo }, { term: puedes }, { term: pueden }] }, "."]
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: saber }, " is irregular only in the ", { term: yo }, " form: ", { term: sé }, ", with a written accent."]
+              es: [{ term: saber }, " solo es irregular en la forma de ", { term: yo }, ": ", { term: sé }, ", con tilde."]
+          - type: note
+            level: B1
+            text:
+              en: [{ term: deber }, " is a regular ", { term: "-er" }, " verb: ", { alternatives: [{ term: debo }, { term: debes }, { term: debe }] }, "."]
+              es: [{ term: deber }, " es un verbo regular en ", { term: "-er" }, ": ", { alternatives: [{ term: debo }, { term: debes }, { term: debe }] }, "."]
+
+  - title: { en: "Use: poder and saber", es: "Uso: poder y saber" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: Asking for permission, es: Pedir permiso }, ex: ["¿", { target: Puedo abrir }, " la ventana?"], tr: { en: "Can I open the window?" } }
+          - level: A2
+            use: { en: Asking someone to do something, es: Pedir a alguien que haga algo }
+            ex: { examples: [["¿", { target: Puedes repetir }, ", por favor?"], ["¿", { target: Puede hablar }, " más despacio?"]] }
+            tr: { en: { examples: ["Can you repeat that, please?", "Could you speak more slowly?"] } }
+          - level: A2
+            use: { en: "A skill someone has learned: saber", es: "Una habilidad aprendida: saber" }
+            ex: { examples: [[{ target: Sé nadar }, "."], ["¿", { target: Sabes cocinar }, "?"]] }
+            tr: { en: { examples: ["I can swim.", "Can you cook?"] } }
+          - { level: A2, use: { en: Being able to do something now, es: Poder hacer algo ahora }, ex: ["Hoy no ", { target: puedo salir }, ": tengo mucho trabajo."], tr: { en: "I can't go out today: I've got a lot of work." } }
+          - { level: B1, use: { en: Saying something is not allowed, es: Decir que algo no está permitido }, ex: ["En el hospital ", { target: no puedes hablar }, " alto."], tr: { en: "You can't talk loudly in the hospital." } }
+          - { level: B1, use: { en: Asking what is allowed in a place, es: Preguntar qué está permitido en un lugar }, ex: ["¿", { target: Se puede fumar }, " aquí?"], tr: { en: "Is smoking allowed here?" } }
+
+  - title: { en: "Use: tener que, hay que, deber", es: "Uso: tener que, hay que, deber" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: "What one person needs to do: tener que", es: "Lo que una persona necesita hacer: tener que" }, ex: [{ target: Tengo que trabajar }, " el sábado."], tr: { en: "I have to work on Saturday." } }
+          - { level: A2, use: { en: "What everyone needs to do: hay que", es: "Lo que todos necesitan hacer: hay que" }, ex: [{ target: Hay que pagar }, " antes de entrar."], tr: { en: "You have to pay before going in." } }
+          - level: A2
+            use: { en: "What nobody needs to do, or, in a rule, what nobody should do: no hay que", es: "Lo que nadie necesita hacer o, en una norma, lo que nadie debe hacer: no hay que" }
+            ex: { examples: [["Para estar en forma ", { target: no hay que hacer }, " mucho ejercicio."], [{ target: No hay que hablar }, " en el cine."]] }
+            tr: { en: { examples: ["You don't need to do a lot of exercise to keep fit.", "You shouldn't talk in the cinema."] } }
+          - { level: A2, use: { en: "Something not necessary: no tener que", es: "Algo que no es necesario: no tener que" }, ex: ["Mañana ", { target: no tengo que trabajar }, "."], tr: { en: "I don't have to work tomorrow." } }
+          - level: B1
+            use: { en: "What is right or required: deber", es: "Lo que es correcto u obligatorio: deber" }
+            ex: { examples: [[{ target: Debes decir }, " la verdad."], [{ target: No debes hablar }, " así."]] }
+            tr: { en: { examples: ["You must tell the truth.", "You mustn't talk like that."] } }
+          - level: B1
+            use: { en: "Advice: deberías", es: "Consejos: deberías" }
+            ex: { examples: [[{ target: Deberías descansar }, "."], [{ target: Deberíamos hablar }, " con él."]] }
+            tr: { en: { examples: ["You should rest.", "We should talk to him."] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: tener que }, " changes for the person; ", { term: hay que }, " never changes:"]
+              es: [{ term: tener que }, " cambia según la persona; ", { term: hay que }, " no cambia nunca:"]
+            ex: { examples: [[{ target: Tenemos que salir }, " ya."], [{ target: Hay que salir }, " ya."]] }
+            tr: { en: { examples: ["We have to leave now.", "It's time to leave."] } }
+          - type: rule
+            level: B1
+            text:
+              en: [{ term: no tener que }, " says something is not necessary; ", { term: no deber }, " says it is not allowed:"]
+              es: [{ term: no tener que }, " dice que algo no es necesario; ", { term: no deber }, ", que no está permitido:"]
+            ex: { examples: [[{ target: No tienes que venir }, "."], [{ target: No debes fumar }, " aquí."]] }
+            tr: { en: { examples: ["You don't have to come.", "You mustn't smoke here."] } }
+          - type: note
+            level: B1
+            text:
+              en: [{ term: deberías }, " is the conditional of ", { term: deber }, ": ", { link: Conditional, to: es.futuro-condicional.condicional-simple }, "."]
+              es: [{ term: deberías }, " es el condicional de ", { term: deber }, ": ", { link: El condicional simple, to: es.futuro-condicional.condicional-simple }, "."]
+
+  - title: { en: Pronouns with these verbs, es: Pronombres con estos verbos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { en: Verb, es: Verbo } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            verb: poder
+            ex: { examples: [[{ target: Lo puedo hacer }, "."], [{ target: Puedo hacerlo }, "."]] }
+            tr: { en: { examples: ["I can do it.", "I can do it."] } }
+          - level: A2
+            verb: tener que
+            ex: { examples: [[{ target: Me tengo que ir }, "."], [{ target: Tengo que irme }, "."]] }
+            tr: { en: { examples: ["I have to go.", "I have to go."] } }
+          - level: A2
+            verb: hay que
+            ex: [{ target: Hay que hacerlo }, " hoy."]
+            tr: { en: "It has to be done today." }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: "A pronoun goes before the conjugated verb or joins the end of the infinitive; both mean the same."
+              es: "El pronombre va delante del verbo conjugado o se une al final del infinitivo; las dos formas significan lo mismo."
+          - type: rule
+            level: A2
+            text:
+              en: ["With ", { term: hay que }, ", the pronoun always joins the end of the infinitive."]
+              es: ["Con ", { term: hay que }, ", el pronombre siempre se une al final del infinitivo."]
+
+  - title: { en: "Compare: saber and poder", es: "Comparación: saber y poder" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: saber, label: saber }
+          - { key: poder, label: poder }
+        rows:
+          - { level: A2, saber: { en: a skill someone has learned, es: una habilidad que alguien ha aprendido }, poder: { en: being able or allowed now, es: poder hacerlo o tener permiso ahora } }
+          - level: A2
+            saber: { ex: [{ target: Sé nadar }, "."], tr: { en: "I can swim." } }
+            poder: { ex: ["Hoy no ", { target: puedo nadar }, ": hace frío."], tr: { en: "I can't swim today: it's cold." } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: "Puedo nado.", right: [{ target: Puedo nadar }, "."], rule: { en: "the second verb is an infinitive", es: "el segundo verbo va en infinitivo" } }
+          - { level: A2, speakers: [en], wrong: "No puedo cocinar: nunca aprendí.", right: [{ target: No sé cocinar }, ": nunca aprendí."], rule: { en: ["a skill never learned takes ", { term: no saber }] } }
+          - { level: A2, wrong: "Tengo trabajar.", right: [{ target: Tengo que trabajar }, "."], rule: { en: [{ term: tener }, " takes ", { term: que }, " before the infinitive"], es: [{ term: tener }, " lleva ", { term: que }, " delante del infinitivo"] } }
+          - { level: A2, wrong: "Lo hay que hacer.", right: [{ target: Hay que hacerlo }, "."], rule: { en: ["with ", { term: hay que }, ", the pronoun joins the infinitive"], es: ["con ", { term: hay que }, ", el pronombre se une al infinitivo"] } }
+          - { level: B1, wrong: "No tienes que fumar aquí.", right: [{ target: No debes fumar }, " aquí."], rule: { en: ["not allowed takes ", { term: no deber }, "; ", { term: no tener que }, " means not necessary"], es: ["lo prohibido lleva ", { term: no deber }, "; ", { term: no tener que }, " significa que no es necesario"] } }
+          - { level: B1, wrong: "Debes de estudiar más.", right: [{ target: Debes estudiar }, " más."], rule: { en: ["obligation takes ", { term: deber }, " with no ", { term: de }], es: ["la obligación lleva ", { term: deber }, " sin ", { term: de }] } }

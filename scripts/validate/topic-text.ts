@@ -8,7 +8,7 @@ import type { Report } from "./report.ts";
 
 // The value each kind of inventory gives its members.
 const VALUES: Record<string, (v: unknown) => boolean> = {
-  letters: (v) => typeof v === "string" && /^[a-z]$/.test(v),
+  letters: (v) => typeof v === "string" && /^\p{Ll}$/u.test(v),
   sounds: (v) => typeof v === "string" && v.length > 0,
   numbers: (v) => typeof v === "number",
   ordinals: (v) => typeof v === "number" && Number.isInteger(v) && v >= 1,
@@ -28,7 +28,7 @@ const sentenceOf = (f: FeatureBundle | FeatureBundle[] | undefined): string =>
 
 // Every localized value carries each explanation language that renders it; every table holds what its
 // type names.
-export function checkText(topic: Topic, where: string, report: Report): void {
+export function checkText(topic: Topic, where: string, report: Report, explain: readonly Explain[] = EXPLAIN_CODES): void {
   const need = (value: Localized | undefined, path: string, langs: Explain[]): void => {
     if (value === undefined) return;
     for (const l of langs) {
@@ -130,7 +130,7 @@ export function checkText(topic: Topic, where: string, report: Report): void {
     });
   };
 
-  const all = [...EXPLAIN_CODES];
+  const all = [...explain];
   need(topic.title, "title", all);
   need(topic.summary.lead, "summary.lead", all);
   need(topic.summary.rule, "summary.rule", all);
@@ -140,7 +140,7 @@ export function checkText(topic: Topic, where: string, report: Report): void {
     blocks(s.content, `sections[${i}].content`, langs);
   });
   blocks(topic.cheatsheet.content, "cheatsheet.content", all);
-  checkMarks(topic, where, report);
+  checkMarks(topic, where, report, explain);
 }
 
 const isLocalizedValue = (v: unknown): v is Localized => typeof v === "object" && v !== null && !Array.isArray(v) && isLocalized(v);

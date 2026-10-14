@@ -2,7 +2,7 @@
 // Run: npm run build   (SITE_URL sets the public URL for canonical links and the sitemap; the site is served from the domain root)
 import { join } from "node:path";
 import { type CurriculumLanguage, filled, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
-import { type BuildOptions, type Context, EXPLAINS, type Page } from "./context.ts";
+import { type BuildOptions, type Context, explainsOf, type Page } from "./context.ts";
 import { studyPath } from "./path.ts";
 import { ui } from "./layout.ts";
 import { writeSite } from "./output.ts";
@@ -25,8 +25,12 @@ export async function build(o: BuildOptions): Promise<number> {
     if (lang === undefined) throw new Error(`${ref.id}: language "${ref.lang}" is not in curriculum.yaml`);
     return lang;
   };
-  // Readers see enabled languages only; links into a disabled one stay plain text.
-  const link: LinkFn = (target, explain) => (target?.topic && langOf(target).enabled ? topicUrl(explain, langOf(target), target) : null);
+  // Readers see enabled languages only, in the explanation languages each is written for; links elsewhere
+  // stay plain text.
+  const link: LinkFn = (target, explain) =>
+    target?.topic && langOf(target).enabled && explainsOf(langOf(target)).includes(explain)
+      ? topicUrl(explain, langOf(target), target)
+      : null;
   const pages: Page[] = [];
   const ctx: Context = {
     o,
@@ -43,10 +47,11 @@ export async function build(o: BuildOptions): Promise<number> {
   for (const lang of ctx.languages) {
     const langRefs = refs.filter((r) => r.lang === lang.code);
     const written = langRefs.filter((r) => r.topic);
-    for (const explain of EXPLAINS) {
+    const explains = explainsOf(lang);
+    for (const explain of explains) {
       const t = ui(explain);
       const path = studyPath(lang, explain, langRefs);
-      const track = { ctx, lang, explain, t, title: t.track(localize(lang.name, explain)), langRefs, written, path };
+      const track = { ctx, lang, explain, explains, t, title: t.track(localize(lang.name, explain)), langRefs, written, path };
       trackIndex(track);
       topicPages(track);
       sheetPages(track);
@@ -54,7 +59,11 @@ export async function build(o: BuildOptions): Promise<number> {
   }
   notFoundPage(ctx);
 
-  await writeSite(pages, o);
+  await writeSite(
+    pages,
+    o,
+    ctx.languages.flatMap((l) => (l.varieties === undefined ? [] : [l.varieties])),
+  );
   return pages.length;
 }
 

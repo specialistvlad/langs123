@@ -1,0 +1,173 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.condicionales
+lang: es
+kind: grammar
+tags: [conditionals, si, sentence]
+concepts: [conditionals]
+related: [es.oracion.conectores, es.futuro-condicional.futuro-simple, es.imperativo-perifrasis.imperativo-afirmativo, es.subjuntivo.subjuntivo-cuando-para-que]
+status: { en: draft, es: draft }
+translated: { es: "47c7b7 af0f9c 403b30 b97baf 101199 12c06d c76388 80ca57" }
+
+title: { en: Conditional Sentences, es: Las oraciones condicionales }
+summary:
+  lead:
+    en: ["A conditional sentence puts the condition after ", { term: si }, " in the present, and the result in the present, the future or the imperative."]
+    es: ["Una oración condicional pone la condición detrás de ", { term: si }, " en presente, y el resultado en presente, en futuro o en imperativo."]
+  rule:
+    en: ["After ", { term: si }, ", the verb stays in the present, even about the future:"]
+    es: ["Detrás de ", { term: si }, ", el verbo va en presente, también para hablar del futuro:"]
+  ex: { examples: [[{ target: Si tengo }, " tiempo, voy."], [{ target: Si tengo }, " tiempo, iré."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ pattern: [si, { slot: present }] }, ", then the present"]
+            es: [{ pattern: [si, { slot: present }] }, ", y después el presente"]
+          ex: [{ target: Si quieres }, ", ", { target: puedes }, " venir."]
+          tr: { en: "If you want, you can come." }
+        - level: A2
+          point: { en: Use, es: Uso }
+          rule:
+            en: "what usually happens when the condition holds"
+            es: "lo que suele pasar cuando se cumple la condición"
+          ex: [{ target: Si como }, " mucho, me ", { target: duele }, " el estómago."]
+          tr: { en: "If I eat a lot, I get a stomach ache." }
+        - level: A2
+          point: { en: Comma, es: Coma }
+          rule:
+            en: ["a comma follows the ", { term: si }, " clause when it comes first"]
+            es: ["una coma sigue a la oración con ", { term: si }, " cuando va primero"]
+          ex: { examples: [[{ target: Si llueve }, ", no salgo."], ["No salgo ", { target: si llueve }, "."]] }
+          tr: { en: { examples: ["If it rains, I don't go out.", "I don't go out if it rains."] } }
+        - level: A2
+          point: { en: Spelling, es: Ortografía }
+          rule:
+            en: [{ term: si }, " means if, ", { term: sí }, " with an accent means yes"]
+            es: [{ term: si }, " es condicional, ", { term: sí }, " con tilde es afirmación"]
+          ex: { examples: [[{ target: Si }, " quieres, vamos."], [{ target: Sí }, ", claro."]] }
+          tr: { en: { examples: ["If you want, let's go.", "Yes, of course."] } }
+        - level: B1
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ pattern: [si, { slot: present }] }, ", then the future"]
+            es: [{ pattern: [si, { slot: present }] }, ", y después el futuro"]
+          ex: [{ target: Si tengo }, " tiempo, ", { target: iré }, "."]
+          tr: { en: "If I have time, I'll go." }
+        - level: B1
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ pattern: [si, { slot: present }] }, ", then the imperative"]
+            es: [{ pattern: [si, { slot: present }] }, ", y después el imperativo"]
+          ex: [{ target: Si puedes }, ", ", { target: ayúdame }, "."]
+          tr: { en: "If you can, help me." }
+        - level: B1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: ["never the future after ", { term: si }]
+            es: ["nunca futuro detrás de ", { term: si }]
+          ex: [{ target: Si viene }, " Carlota, iremos al cine."]
+          tr: { en: "If Carlota comes, we'll go to the cinema." }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: ["A conditional sentence has two parts: the condition with ", { term: si }, ", and the result."]
+              es: ["Una oración condicional tiene dos partes: la condición con ", { term: si }, ", y el resultado."]
+          - type: rule
+            level: A2
+            text:
+              en: ["Either part can come first; a comma follows the ", { term: si }, " clause when it opens the sentence:"]
+              es: ["Cualquiera de las dos partes puede ir primero; una coma sigue a la oración con ", { term: si }, " cuando abre la frase:"]
+            ex: { examples: [[{ target: Si llueve }, ", no salgo."], ["No salgo ", { target: si llueve }, "."]] }
+            tr: { en: { examples: ["If it rains, I don't go out.", "I don't go out if it rains."] } }
+
+  - title: { en: Form, es: Forma }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern, es: Estructura } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, pattern: { pattern: [si, { slot: present }, { slot: present }] }, ex: [{ target: Si quieres }, " ir al cine, ", { target: puedes }, " comprar la entrada por internet."], tr: { en: "If you want to go to the cinema, you can buy the ticket online." } }
+          - { level: B1, pattern: { pattern: [si, { slot: present }, { slot: { en: future, es: futuro } }] }, ex: [{ target: Si tengo }, " tiempo, ", { target: iré }, "."], tr: { en: "If I have time, I'll go." } }
+          - { level: B1, pattern: { pattern: [si, { slot: present }, { slot: { en: imperative, es: imperativo } }] }, ex: [{ target: Si tienes }, " frío, ", { target: cierra }, " la ventana."], tr: { en: "If you're cold, close the window." } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              en: ["After ", { term: si }, ", the verb stays in the present, even when the condition is in the future:"]
+              es: ["Detrás de ", { term: si }, ", el verbo va en presente, también cuando la condición está en el futuro:"]
+            ex: [{ target: Si viene }, " Carlota, iremos al cine."]
+            tr: { en: "If Carlota comes, we'll go to the cinema." }
+
+  - title: { en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A2, use: { en: What usually happens, es: Lo que suele pasar }, ex: [{ target: Si como }, " mucho, me ", { target: duele }, " el estómago."], tr: { en: "If I eat a lot, I get a stomach ache." } }
+          - { level: A2, use: { en: A condition now, es: Una condición ahora }, ex: [{ target: Si tienes }, " hambre, ", { target: hay }, " fruta en la cocina."], tr: { en: "If you're hungry, there's fruit in the kitchen." } }
+          - { level: A2, use: { en: Offers, es: Ofrecimientos }, ex: [{ target: Si quieres }, ", te ", { target: ayudo }, "."], tr: { en: "If you like, I'll help you." } }
+          - { level: B1, use: { en: A future condition, es: Una condición futura }, ex: [{ target: Si hace }, " sol mañana, ", { target: iremos }, " a la playa."], tr: { en: "If it's sunny tomorrow, we'll go to the beach." } }
+          - { level: B1, use: { en: Instructions, es: Instrucciones }, ex: [{ target: Si llegas }, " tarde, ", { target: llámame }, "."], tr: { en: "If you're late, call me." } }
+
+  - title: { en: "Spelling: si and sí", es: "Ortografía: si y sí" }
+    role: spelling
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              en: [{ term: si }, " without an accent introduces a condition; ", { term: sí }, " with an accent means yes:"]
+              es: [{ term: si }, " sin tilde introduce una condición; ", { term: sí }, " con tilde es una afirmación:"]
+            ex: { exchange: ["¿Vienes a la fiesta?", [{ target: Sí }, ", ", { target: si }, " tengo tiempo."]] }
+            tr: { en: { exchange: ["Are you coming to the party?", "Yes, if I have time."] } }
+
+  - title: { en: "Compare: si and cuando", es: "Comparación: si y cuando" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: si, label: si }
+          - { key: cuando, label: cuando }
+        rows:
+          - { level: B1, si: { en: it may happen or not, es: puede pasar o no }, cuando: { en: it will happen; only the moment is open, es: "va a pasar; solo el momento está abierto" } }
+          - level: B1
+            si: { ex: [{ target: Si viene }, " Ana, la saludo."], tr: { en: "If Ana comes, I'll say hello to her." } }
+            cuando: { ex: [{ target: Cuando llegue }, " a casa, te llamo."], tr: { en: "When I get home, I'll call you." } }
+      - type: list
+        items:
+          - type: note
+            level: B1
+            text:
+              en: [{ term: cuando }, " about the future takes the subjunctive: ", { link: "Subjunctive after cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+              es: [{ term: cuando }, " referido al futuro lleva subjuntivo: ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: "Sí quieres, vamos.", right: [{ target: Si }, " quieres, vamos."], rule: { en: [{ term: si }, " for a condition has no accent"], es: [{ term: si }, " condicional no lleva tilde"] } }
+          - { level: B1, wrong: "Si lloverá, no saldremos.", right: [{ target: Si llueve }, ", no saldremos."], rule: { en: ["after ", { term: si }, ", the present, never the future"], es: ["detrás de ", { term: si }, ", presente, nunca futuro"] } }
+          - { level: B1, wrong: "Si llegues tarde, llámame.", right: [{ target: Si llegas }, " tarde, llámame."], rule: { en: ["after ", { term: si }, ", the present indicative, not the subjunctive"], es: ["detrás de ", { term: si }, ", presente de indicativo, no subjuntivo"] } }

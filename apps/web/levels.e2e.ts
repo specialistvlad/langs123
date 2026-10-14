@@ -1,7 +1,7 @@
 // The level filter in a browser: on every topic and track page, each level button shows exactly what
 // starts at or below it, leaves no table or list empty, greys out the rail entries above it, keeps
 // every badge's range and fades the badge halves above it, and shows the empty-view note only when
-// nothing is left.
+// nothing is left. A page with varieties shows the default variety's elements and those of every variety.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import { join } from "node:path";
@@ -66,7 +66,12 @@ interface Seen {
 async function look(page: Page, levels: readonly string[]): Promise<Record<string, Seen>> {
   return page.evaluate((order) => {
     let at = -1;
-    const rank = (el: Element): number => order.indexOf(el.getAttribute("data-level") ?? "");
+    // An element starts at its level in the chosen variety where it names one, else at its level.
+    const rank = (el: Element): number => {
+      const variety = document.documentElement.dataset["variety"];
+      const own = variety === undefined ? null : el.getAttribute(`data-level-${variety.toLowerCase()}`);
+      return order.indexOf(own ?? el.getAttribute("data-level") ?? "");
+    };
     // The Cheatsheet view shows section 00 alone.
     const viewed = (el: Element): boolean =>
       document.documentElement.dataset["view"] !== "cheatsheet" || el.closest("section.part:not(.cheatsheet)") === null;
@@ -74,9 +79,12 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
     const ordered = (el: Element): boolean =>
       (el.closest("body [data-order]")?.getAttribute("data-order") ?? "categories") ===
       (document.documentElement.dataset["order"] ?? "categories");
+    // The variety switch shows the elements of the chosen variety and those of every variety.
+    const chosen = document.documentElement.dataset["variety"];
+    const other = (e: Element): boolean => chosen !== undefined && (e.getAttribute("data-variety") ?? chosen) !== chosen;
     const fits = (el: Element): boolean => {
       if (!viewed(el) || !ordered(el)) return false;
-      for (let e: Element | null = el; e && e !== document.documentElement; e = e.parentElement) if (rank(e) > at) return false;
+      for (let e: Element | null = el; e && e !== document.documentElement; e = e.parentElement) if (rank(e) > at || other(e)) return false;
       return true;
     };
     const visible = (el: Element): boolean => el.checkVisibility();

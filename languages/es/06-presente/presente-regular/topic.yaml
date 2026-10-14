@@ -1,0 +1,274 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.presente.presente-regular
+lang: es
+kind: grammar
+tags: [verbs, present, regular]
+concepts: [present-tense]
+related: [es.presente.presente-irregular, es.presente.verbos-reflexivos, es.presente.estar-gerundio, es.ser-estar-hay-gustar.ser-estar, es.pronombres.pronombres-sujeto, es.oracion.preguntas-negacion]
+status: { en: draft, es: draft }
+translated: { es: "50d881 422821 4556f4 7986bc 42694f 0d8017 16473b 98965c 179070" }
+
+title: { en: "Present Tense: Regular Verbs", es: "El presente: verbos regulares" }
+summary:
+  lead:
+    en: ["Regular verbs in ", { term: "-ar" }, ", ", { term: "-er" }, " and ", { term: "-ir" }, " drop the infinitive ending and add one ending per person: ", { term: hablo }, ", ", { term: comes }, ", ", { term: vive }, "."]
+    es: ["Los verbos regulares en ", { term: "-ar" }, ", ", { term: "-er" }, " e ", { term: "-ir" }, " cambian la terminación del infinitivo por una para cada persona: ", { term: hablo }, ", ", { term: comes }, ", ", { term: vive }, "."]
+  rule:
+    en: "Each person has its own ending, so the subject pronoun usually drops:"
+    es: "Cada persona tiene su propia terminación, por eso el pronombre sujeto suele omitirse:"
+  ex: { examples: [[{ target: Hablo }, " español."], ["¿", { target: Vives }, " en Lima?"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point, es: Punto } }
+        - { key: rule, label: { en: Rule, es: Regla } }
+        - { key: ex, label: { en: Example, es: Ejemplo } }
+      rows:
+        - level: A0
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: hablar }, ": ", { alternatives: [{ term: hablo }, { term: hablas }, { term: habla }, { term: hablamos }, { term: hablan }] }]
+            es: [{ term: hablar }, ": ", { alternatives: [{ term: hablo }, { term: hablas }, { term: habla }, { term: hablamos }, { term: hablan }] }]
+          ex: [{ target: Hablo }, " español."]
+          tr: { en: I speak Spanish. }
+        - level: A0
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: comer }, ": ", { alternatives: [{ term: como }, { term: comes }, { term: come }, { term: comemos }, { term: comen }] }]
+            es: [{ term: comer }, ": ", { alternatives: [{ term: como }, { term: comes }, { term: come }, { term: comemos }, { term: comen }] }]
+          ex: ["¿Qué ", { target: comes }, "?"]
+          tr: { en: What do you eat? }
+        - level: A0
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: vivir }, ": ", { alternatives: [{ term: vivo }, { term: vives }, { term: vive }, { term: vivimos }, { term: viven }] }]
+            es: [{ term: vivir }, ": ", { alternatives: [{ term: vivo }, { term: vives }, { term: vive }, { term: vivimos }, { term: viven }] }]
+          ex: ["Mis padres ", { target: viven }, " en Lima."]
+          tr: { en: My parents live in Lima. }
+        - level: A0
+          variety: es-ES
+          point: { en: Form, es: Forma }
+          rule:
+            en: [{ term: vosotros }, ": ", { alternatives: [{ term: habláis }, { term: coméis }, { term: vivís }] }]
+            es: [{ term: vosotros }, ": ", { alternatives: [{ term: habláis }, { term: coméis }, { term: vivís }] }]
+          ex: ["¿Dónde ", { target: vivís }, "?"]
+          tr: { en: Where do you live? }
+        - level: A0
+          point: { en: Person, es: Persona }
+          rule:
+            en: "the ending names the person; the pronoun usually drops"
+            es: "la terminación indica la persona; el pronombre suele omitirse"
+          ex: [{ target: Vivo }, " en Quito."]
+          tr: { en: I live in Quito. }
+        - level: A1
+          point: { en: Use, es: Uso }
+          rule:
+            en: "what happens now, habits and facts"
+            es: "lo que pasa ahora, los hábitos y los hechos"
+          ex: ["Todos los días ", { target: camino }, " al trabajo."]
+          tr: { en: I walk to work every day. }
+        - level: A1
+          point: { en: Negative, es: Negación }
+          rule:
+            en: [{ term: "no" }, " goes before the verb"]
+            es: [{ term: "no" }, " va delante del verbo"]
+          ex: [{ target: No como }, " carne."]
+          tr: { en: "I don't eat meat." }
+        - level: A1
+          point: { en: Question, es: Pregunta }
+          rule:
+            en: "the same words, between ¿ and ?, with a rising voice"
+            es: "las mismas palabras, entre ¿ y ?, con la voz que sube"
+          ex: ["¿", { target: Hablas }, " inglés?"]
+          tr: { en: Do you speak English? }
+        - level: A0
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: usted }, " takes the forms of ", { term: él }, " and ", { term: ella }]
+            es: [{ term: usted }, " lleva las formas de ", { term: él }, " y ", { term: ella }]
+          ex: ["¿", { target: Habla }, " usted inglés?"]
+          tr: { en: Do you speak English? }
+        - level: A1
+          point: { en: Trap, es: Trampa }
+          rule:
+            en: [{ term: "-er" }, " and ", { term: "-ir" }, " differ with ", { term: nosotros }]
+            es: [{ term: "-er" }, " e ", { term: "-ir" }, " se distinguen con ", { term: nosotros }]
+          ex: { examples: [[{ target: Comemos }, " aquí."], [{ target: Vivimos }, " aquí."]] }
+          tr: { en: { examples: [We eat here., We live here.] } }
+
+sections:
+  - title: { en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: ["Every infinitive ends in ", { term: "-ar" }, ", ", { term: "-er" }, " or ", { term: "-ir" }, "; the stem is the part before it: ", { mapping: [{ term: hablar }, { term: "habl-" }] }, "."]
+              es: ["Todo infinitivo termina en ", { term: "-ar" }, ", ", { term: "-er" }, " o ", { term: "-ir" }, "; la raíz es la parte anterior: ", { mapping: [{ term: hablar }, { term: "habl-" }] }, "."]
+          - type: rule
+            level: A0
+            text:
+              en: "A regular verb keeps its stem and adds an ending for each person."
+              es: "Un verbo regular mantiene la raíz y añade una terminación para cada persona."
+          - type: rule
+            level: A0
+            text:
+              en: "The ending names the person, so the subject pronoun usually drops:"
+              es: "La terminación indica la persona, por eso el pronombre sujeto suele omitirse:"
+            ex: [{ target: Trabajo }, " en un banco."]
+            tr: { en: I work in a bank. }
+          - type: note
+            level: A0
+            text:
+              en: ["The pronouns themselves: ", { link: Subject Pronouns, to: es.pronombres.pronombres-sujeto }, "."]
+              es: ["Los pronombres: ", { link: Los pronombres sujeto, to: es.pronombres.pronombres-sujeto }, "."]
+          - type: note
+            level: A1
+            text:
+              en: ["Verbs that change their stem: ", { link: "Present Tense: Irregular Verbs", to: es.presente.presente-irregular }, "."]
+              es: ["Los verbos que cambian la raíz: ", { link: "El presente: verbos irregulares", to: es.presente.presente-irregular }, "."]
+
+  - title: { en: "Form: -ar, -er and -ir", es: "Forma: -ar, -er e -ir" }
+    role: form
+    features: { tense: prs }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { en: Person, es: Persona } }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+          - { key: ir, label: vivir }
+        rows:
+          - { level: A0, features: { person: 1, number: sg }, person: yo, ar: ["habl", { ending: o }], er: ["com", { ending: o }], ir: ["viv", { ending: o }] }
+          - { level: A0, features: { person: 2, number: sg, politeness: infm }, person: tú, ar: ["habl", { ending: as }], er: ["com", { ending: es }], ir: ["viv", { ending: es }] }
+          - { level: A0, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, ar: ["habl", { ending: a }], er: ["com", { ending: e }], ir: ["viv", { ending: e }] }
+          - { level: A0, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, ar: ["habl", { ending: amos }], er: ["com", { ending: emos }], ir: ["viv", { ending: imos }] }
+          - { level: A0, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, ar: ["habl", { ending: áis }], er: ["com", { ending: éis }], ir: ["viv", { ending: ís }] }
+          - { level: A0, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, ar: ["habl", { ending: an }], er: ["com", { ending: en }], ir: ["viv", { ending: en }] }
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              en: ["Verbs in ", { term: "-er" }, " and ", { term: "-ir" }, " share their endings, except with ", { term: nosotros }, ": ", { term: comemos }, ", ", { term: vivimos }, "."]
+              es: ["Los verbos en ", { term: "-er" }, " e ", { term: "-ir" }, " comparten las terminaciones, salvo con ", { term: nosotros }, ": ", { term: comemos }, ", ", { term: vivimos }, "."]
+          - type: rule
+            level: A0
+            text:
+              en: [{ term: usted }, " takes the forms of ", { term: él }, " and ", { term: ella }, ", and ", { term: ustedes }, " those of ", { term: ellos }, ":"]
+              es: [{ term: usted }, " lleva las formas de ", { term: él }, " y ", { term: ella }, ", y ", { term: ustedes }, ", las de ", { term: ellos }, ":"]
+            ex: ["¿", { target: Trabaja }, " usted aquí?"]
+            tr: { en: Do you work here? }
+          - type: note
+            level: A0
+            variety: es-419
+            text:
+              en: [{ term: ustedes }, " is the plural of both ", { term: tú }, " and ", { term: usted }, ":"]
+              es: [{ term: ustedes }, " es el plural de ", { term: tú }, " y de ", { term: usted }, ":"]
+            ex: ["¿Ustedes ", { target: viven }, " cerca?"]
+            tr: { en: Do you live nearby? }
+          - type: note
+            level: A0
+            variety: es-ES
+            text:
+              en: [{ term: vosotros }, " is the informal plural, and its endings carry a written accent: ", { alternatives: [{ term: habláis }, { term: coméis }, { term: vivís }] }, "."]
+              es: [{ term: vosotros }, " es el plural informal, y sus terminaciones llevan tilde: ", { alternatives: [{ term: habláis }, { term: coméis }, { term: vivís }] }, "."]
+          - type: note
+            level: A1
+            variety: es-419
+            text:
+              en: ["In Argentina and Uruguay, ", { term: vos }, " takes the place of ", { term: tú }, ", with its own forms: ", { alternatives: [{ term: vos hablás }, { term: vos comés }, { term: vos vivís }] }, "."]
+              es: ["En Argentina y Uruguay, ", { term: vos }, " ocupa el lugar de ", { term: tú }, ", con sus propias formas: ", { alternatives: [{ term: vos hablás }, { term: vos comés }, { term: vos vivís }] }, "."]
+
+  - title: { en: "Pronunciation: stress", es: "Pronunciación: el acento" }
+    role: pronunciation
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "The stress falls on the stem in the singular and with ellos:"
+              es: "El acento cae en la raíz en el singular y con ellos:"
+            ex: { examples: [[{ stress: ha }, "blo"], [{ stress: co }, "men"]] }
+            tr: { en: { examples: [I speak, they eat] } }
+          - type: rule
+            level: A1
+            text:
+              en: ["With ", { term: nosotros }, ", the stress moves to the ending:"]
+              es: ["Con ", { term: nosotros }, ", el acento pasa a la terminación:"]
+            ex: { examples: [["ha", { stress: bla }, "mos"], ["vi", { stress: vi }, "mos"]] }
+            tr: { en: { examples: [we speak, we live] } }
+
+  - title: { en: "Form: negatives and questions", es: "Forma: negación y preguntas" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form, es: Forma } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, form: { pattern: [{ term: "no" }, { slot: verb }] }, ex: [{ target: No hablo }, " francés."], tr: { en: "I don't speak French." } }
+          - { level: A1, form: { en: Yes or no question, es: Pregunta de sí o no }, ex: ["¿", { target: Hablas }, " inglés?"], tr: { en: Do you speak English? } }
+          - { level: A1, form: { pattern: [{ slot: wh-word }, { slot: verb }] }, ex: ["¿Dónde ", { target: trabajas }, "?"], tr: { en: Where do you work? } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "A question keeps the words of the statement; ¿ and ? frame it, and the voice rises at the end."
+              es: "Una pregunta mantiene las palabras de la afirmación; ¿ y ? la enmarcan, y la voz sube al final."
+          - type: note
+            level: A1
+            text:
+              en: ["More on both: ", { link: Questions and Negatives, to: es.oracion.preguntas-negacion }, "."]
+              es: ["Más sobre las dos: ", { link: Preguntas y negación, to: es.oracion.preguntas-negacion }, "."]
+
+  - title: { en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use, es: Uso } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, use: { en: What happens now, es: Lo que pasa ahora }, ex: ["Ahora ", { target: leo }, " un libro."], tr: { en: "I'm reading a book now." } }
+          - { level: A1, use: { en: Habits, es: Hábitos }, ex: ["Todos los días ", { target: camino }, " al trabajo."], tr: { en: I walk to work every day. } }
+          - { level: A1, use: { en: Facts and states, es: Hechos y estados }, ex: ["Mi hermana ", { target: vive }, " en Bogotá."], tr: { en: My sister lives in Bogotá. } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              en: "The present also names an action in progress, where English uses -ing:"
+              es: "El presente también expresa una acción en curso:"
+            ex: { exchange: [["¿Qué ", { target: lees }, "?"], [{ target: Leo }, " una novela."]] }
+            tr: { en: { exchange: [What are you reading?, "I'm reading a novel."] } }
+
+  - title: { en: Signal words, es: Marcadores }
+    role: signals
+    content:
+      - type: usage
+        columns:
+          - { key: signal, label: { en: Word, es: Palabra } }
+          - { key: ex, label: { en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, signal: ahora, ex: [{ signal: Ahora }, " ", { target: estudio }, " en casa."], tr: { en: "I'm studying at home now." } }
+          - { level: A1, signal: siempre, ex: [{ signal: Siempre }, " ", { target: llego }, " tarde."], tr: { en: I always arrive late. } }
+          - { level: A1, signal: todos los días, ex: [{ signal: Todos los días }, " ", { target: desayuno }, " con mi familia."], tr: { en: I have breakfast with my family every day. } }
+          - { level: A1, signal: a veces, ex: [{ signal: A veces }, " ", { target: cocinamos }, " juntos."], tr: { en: Sometimes we cook together. } }
+          - { level: A1, signal: los domingos, ex: [{ signal: Los domingos }, " ", { target: visitamos }, " a mis abuelos."], tr: { en: On Sundays we visit my grandparents. } }
+
+  - title: { en: Typical errors, es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A0, wrong: Yo habla español., right: ["Yo ", { target: hablo }, " español."], rule: { en: [{ term: yo }, " takes ", { term: "-o" }], es: [{ term: yo }, " lleva ", { term: "-o" }] } }
+          - { level: A0, wrong: ¿Usted hablas inglés?, right: ["¿Usted ", { target: habla }, " inglés?"], rule: { en: [{ term: usted }, " takes the forms of ", { term: él }], es: [{ term: usted }, " lleva las formas de ", { term: él }] } }
+          - { level: A1, wrong: Nosotros vivemos en Lima., right: ["Nosotros ", { target: vivimos }, " en Lima."], rule: { en: ["verbs in ", { term: "-ir" }, " take ", { term: "-imos" }, " with ", { term: nosotros }], es: ["los verbos en ", { term: "-ir" }, " llevan ", { term: "-imos" }, " con ", { term: nosotros }] } }
+          - { level: A1, wrong: Hablo no francés., right: [{ target: No hablo }, " francés."], rule: { en: [{ term: "no" }, " goes before the verb"], es: [{ term: "no" }, " va delante del verbo"] } }
