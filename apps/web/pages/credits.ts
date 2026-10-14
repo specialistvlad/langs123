@@ -46,6 +46,7 @@ function creditsIn(ctx: Context, e: Explain): void {
       description: say("creditsDescription", e, { site }),
       path: creditsUrl(e),
       alternates: alternates(creditsUrl),
+      crumbs: [{ label: say("credits", e) }],
       main,
       dev: o.dev,
       siteUrl: o.siteUrl,

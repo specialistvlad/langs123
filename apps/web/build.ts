@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { type CurriculumLanguage, filled, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
 import { type BuildOptions, type Context, explainsOf, type Page } from "./context.ts";
 import { studyPath } from "./path.ts";
-import { ui } from "./layout.ts";
+import { ui } from "./ui.ts";
 import { writeSite } from "./output.ts";
 import { creditsPage } from "./pages/credits.ts";
 import { homePage, notFoundPage } from "./pages/home.ts";

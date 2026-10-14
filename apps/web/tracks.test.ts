@@ -1,6 +1,6 @@
 // A language being learned is built for the explanation languages it lists: its pages exist in those
-// alone, name only those as counterparts and offer only those in the language switch, and the home
-// matrix leaves the other cells empty. A language with varieties opens on its default variety and offers
+// alone, name only those as counterparts and offer only those in the language switch, and its card on
+// the home page links those alone. A language with varieties opens on its default variety and offers
 // each in a Variety switch; levels.css hides the elements of the varieties not chosen.
 import { describe, expect, test } from "bun:test";
 import { join } from "node:path";
@@ -38,16 +38,14 @@ describe.each(spanishPages)("%s", (path) => {
 });
 
 describe.each(ENABLED_EXPLAIN)("the home page in %s", (home) => {
-  test("leads into each track of every language, and leaves a cell empty where a language is not explained", async () => {
+  test("has a card per language that links each explanation language it is written for, the home page's own first", async () => {
     const doc = await readPage(homeFile(home));
-    const columns = [...doc.querySelectorAll(".matrix thead th[lang]")].map((th) => th.getAttribute("lang") ?? "");
     for (const lang of curriculum.languages.filter((l) => l.enabled)) {
-      const row = [...doc.querySelectorAll(".matrix tbody tr")].find((tr) => tr.querySelector(`a[href$="/${lang.slug}/"]`) !== null);
-      const cells = [...(row?.querySelectorAll("td") ?? [])];
-      const own = explainOf(lang);
-      expect(cells.map((td) => td.querySelector("a")?.getAttribute("hreflang") ?? null)).toEqual(
-        columns.map((e) => ((own as string[]).includes(e) ? e : null)),
-      );
+      const card = [...doc.querySelectorAll(".lang-card")].find((c) => c.querySelector(`a[href$="/${lang.slug}/"]`) !== null);
+      const linked = [...(card?.querySelectorAll(".explains a") ?? [])].map((a) => a.getAttribute("hreflang") ?? "");
+      const own = explainOf(lang).filter((e) => ENABLED_EXPLAIN.includes(e));
+      expect(new Set(linked)).toEqual(new Set(own));
+      expect(linked[0]).toBe(own.includes(home) ? home : own[0]);
     }
   });
 });

@@ -1,118 +1,8 @@
-// Page shell, controls and interface text for the static site.
-import { EXPLAIN_CODES, type Explain, explainName, filled, LEVELS, SITE, say, type Variety } from "../../scripts/lib.ts";
-import { varietyName } from "../../scripts/text.ts";
-import { INFO_ICON } from "./icons.ts";
+// The page shell: head, top bar, layout, the panels and the bottom bar, and the scripts that run before first paint.
+import { type Explain, filled, LEVELS, type Variety } from "../../scripts/lib.ts";
+import { bottomBar, breadcrumb, type Choice, chips, type Crumb, credits, languageMenu, panels, themeButton } from "./chrome.ts";
 import { escapeHtml } from "./html.ts";
-import { creditsUrl, homeUrl } from "./urls.ts";
-
-// Interface wording keys this app shows, all from languages/interface.yaml.
-const TEXT_KEYS = [
-  "read",
-  "level",
-  "variety",
-  "view",
-  "extended",
-  "upTo",
-  "index",
-  "chooseLanguage",
-  "trackIntro",
-  "pathIntro",
-  "grouping",
-  "byLevel",
-  "categories",
-  "onThisPage",
-  "upNext",
-  "previous",
-  "next",
-  "startOver",
-  "sheets",
-  "sheet",
-  "sheetsIntro",
-  "levels",
-  "progressive",
-  "sections",
-  "topics",
-  "notFound",
-  "backHome",
-  "print",
-  "editOn",
-  "editTitle",
-] as const;
-
-export type Ui = Record<(typeof TEXT_KEYS)[number], string> & {
-  explained: string;
-  track: (name: string) => string;
-  written: (n: number, total: number) => string;
-};
-
-function makeUi(e: Explain): Ui {
-  const text = Object.fromEntries(TEXT_KEYS.map((key) => [key, say(key, e)])) as Record<(typeof TEXT_KEYS)[number], string>;
-  return {
-    ...text,
-    explained: say("explained", e, { name: explainName(e) }),
-    track: (name: string) => say("track", e, { name }),
-    written: (n: number, total: number) => say("written", e, { n, total }),
-  };
-}
-
-// Interface wording per explanation language, from languages/interface.yaml.
-const UI = new Map(EXPLAIN_CODES.map((e) => [e, makeUi(e)]));
-export function ui(explain: Explain): Ui {
-  const t = UI.get(explain);
-  if (t === undefined) throw new Error(`No interface wording for "${explain}"`);
-  return t;
-}
-
-export interface Choice {
-  label: string;
-  href: string;
-  on: boolean;
-}
-
-export const seg = (label: string, inner: string): string =>
-  `<div class="control"><span>${escapeHtml(label)}</span><div class="seg">${inner}</div></div>`;
-// The language switch: the current language, opening into a list of every language (client-seg.ts closes
-// it on a tap elsewhere or Escape).
-function languageMenu(label: string, choices: Choice[]): string {
-  const current = choices.find((c) => c.on) ?? choices[0];
-  const links = choices
-    .map((c) => `<a href="${c.href}"${c.on ? ' class="on" aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`)
-    .join("");
-  return `<div class="control"><span>${escapeHtml(label)}</span><details class="seg lang-menu"><summary>${escapeHtml(current?.label ?? "")}</summary><div class="menu-list">${links}</div></details></div>`;
-}
-
-export interface ControlsOptions {
-  explain: Explain;
-  read: Choice[];
-  level?: boolean;
-  // The varieties of the language being learned the reader chooses between, the default first.
-  varieties?: Variety[] | undefined;
-  view?: boolean;
-}
-
-export function controls(o: ControlsOptions): string {
-  const t = ui(o.explain);
-  // One explanation language leaves nothing to switch.
-  const parts = o.read.length > 1 ? [languageMenu(t.read, o.read)] : [];
-  if (o.level === true) {
-    parts.push(seg(t.level, LEVELS.map((l) => `<button type="button" class="lvl-${l}" data-set-level="${l}">${l}</button>`).join("")));
-  }
-  if (o.varieties !== undefined) {
-    const buttons = o.varieties.map(
-      (v) => `<button type="button" data-set-variety="${v}">${escapeHtml(varietyName(v, o.explain))}</button>`,
-    );
-    parts.push(seg(t.variety, buttons.join("")));
-  }
-  if (o.view === true) {
-    parts.push(
-      seg(
-        t.view,
-        `<button type="button" data-set-view="cheatsheet">${t.sheet}</button><button type="button" data-set-view="extended">${t.extended}</button>`,
-      ),
-    );
-  }
-  return parts.join("");
-}
+import { ui } from "./ui.ts";
 
 export interface PageOptions {
   kind: "home" | "track" | "topic" | "sheets" | "sheet" | "credits" | "404";
@@ -125,10 +15,17 @@ export interface PageOptions {
   // The varieties of the language being learned, the default first: the page shows the default's
   // elements until the reader chooses another.
   varieties?: Variety[] | undefined;
-  controls?: string;
+  // The page in each explanation language it is read in.
+  read?: Choice[];
+  // The level filter applies to the page.
+  level?: boolean;
+  // Where the page sits, after the site itself.
+  crumbs?: Crumb[];
   nav?: string;
   rail?: string;
   main: string;
+  // The next page, per grouping and level, for the bottom bar on phones (sequence.ts).
+  next?: string;
   dev: boolean;
   siteUrl: string;
 }
@@ -143,22 +40,18 @@ const prefs = (varieties: boolean): string => `try{${PREFS}${varieties ? VARIETY
 // Runs right after the sidebar, before first paint: restores the scroll position the same menu had on
 // the previous page (client.ts saves it on leaving), then brings the current page's entry into view:
 // by level, the step its address names (?step=a1), else the highest step the level filter shows.
-const NAV_SCROLL = `(function(){var n=document.getElementById("sidebar"),o=document.documentElement.dataset.order||"categories",k=n.querySelector(".nav-track").getAttribute("href")+"#"+o+n.childElementCount;n.dataset.key=k;try{var v=JSON.parse(sessionStorage.getItem("ln-nav"));if(v&&v.k===k)n.scrollTop=v.t}catch(e){}var w=(new URLSearchParams(location.search).get("step")||"").toUpperCase(),s=[].filter.call(n.querySelectorAll('[data-order="path"] a.on'),function(a){return a.offsetHeight>0}),c=o==="path"?s.filter(function(a){return a.dataset.level===w})[0]||s.pop():n.querySelector("[aria-current=page]");if(c){var r=c.getBoundingClientRect(),b=n.getBoundingClientRect();if(r.top<b.top||r.bottom>b.bottom)n.scrollTop+=r.top-b.top-(b.height-r.height)/2}})()`;
-
-// The top bar's link to the credits page, marked current on that page.
-function credits(o: PageOptions): string {
-  const label = escapeHtml(say("credits", o.lang));
-  const current = o.kind === "credits" ? ' aria-current="page"' : "";
-  return `<a class="tool" href="${creditsUrl(o.lang)}" title="${label}" aria-label="${label}"${current}>${INFO_ICON}</a>`;
-}
+const NAV_SCROLL = `(function(){var n=document.getElementById("sidebar"),o=document.documentElement.dataset.order||"categories",k=n.querySelector(".nav-track").getAttribute("href")+"#"+o+n.childElementCount;n.dataset.key=k;try{var v=JSON.parse(sessionStorage.getItem("ln-nav"));if(v&&v.k===k)n.scrollTop=v.t}catch(e){}var w=(new URLSearchParams(location.search).get("step")||"").toUpperCase(),s=[].filter.call(n.querySelectorAll('[data-order="path"] a.on'),function(a){return a.offsetHeight>0}),c=o==="path"?s.filter(function(a){return a.dataset.level===w})[0]||s.pop():n.querySelector(".nav-list [aria-current=page]");if(c){var r=c.getBoundingClientRect(),b=n.getBoundingClientRect();if(r.top<b.top||r.bottom>b.bottom)n.scrollTop+=r.top-b.top-(b.height-r.height)/2}})()`;
 
 // The default variety on the page, and the ones the reader chooses between.
 const varietyAttrs = (varieties: Variety[] | undefined): string =>
   varieties === undefined ? "" : ` data-variety="${varieties[0] ?? ""}" data-varieties="${varieties.join(" ")}"`;
 
 export function page(o: PageOptions): string {
+  const t = ui(o.lang);
   const url = (path: string): string => `${o.siteUrl}${path}`;
   const alternates = (o.alternates ?? []).map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${url(a.path)}">`).join("\n  ");
+  const hasNav = filled(o.nav);
+  const read = (o.read ?? []).length > 1 ? languageMenu(t.read, o.read ?? []) : "";
   return `<!doctype html>
 <html lang="${o.lang}" data-page="${o.kind}" data-dev="${o.dev ? 1 : 0}"${varietyAttrs(o.varieties)}>
 <head>
@@ -176,21 +69,18 @@ export function page(o: PageOptions): string {
   <link rel="stylesheet" href="/style.css">
   <script>${prefs(o.varieties !== undefined)}</script>
 </head>
-<body>
+<body${hasNav ? ' class="has-bar"' : ""}>
   <header class="topbar">
-    ${filled(o.nav) ? '<button class="menu" id="menu" type="button" aria-label="Menu">☰</button>' : ""}
-    <a class="brand" href="${homeUrl(o.lang)}">${escapeHtml(SITE.name)}</a>
-    <div class="controls">${o.controls ?? ""}</div>
-    <div class="tools">
-      ${credits(o)}
-      <button class="tool" id="theme" type="button" title="Theme">◐</button>
-    </div>
+    ${breadcrumb(o, t)}
+    <div class="tools">${chips({ explain: o.lang, level: o.level, varieties: o.varieties })}${read}${credits(o, false)}${themeButton(t, false)}</div>
   </header>
-  <div class="layout${filled(o.nav) ? "" : " no-nav"}${filled(o.rail) ? " has-rail" : ""}">
-    ${filled(o.nav) ? `<nav class="sidebar" id="sidebar">${o.nav}</nav><script>${NAV_SCROLL}</script>` : ""}
+  <div class="layout${hasNav ? "" : " no-nav"}${filled(o.rail) ? " has-rail" : ""}">
+    ${hasNav ? `<nav class="sidebar" id="sidebar">${o.nav}</nav><script>${NAV_SCROLL}</script>` : ""}
     <main class="content">${o.main}</main>
     ${filled(o.rail) ? `<aside class="rail">${o.rail}</aside>` : ""}
   </div>
+  ${hasNav ? bottomBar(o, t) : ""}
+  ${panels(o, t, hasNav)}
   <script src="/client.js" defer></script>
 </body>
 </html>

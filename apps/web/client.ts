@@ -1,10 +1,13 @@
-// Progressive enhancement for the static pages: level filter, variety, view, order, compact switches, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, the home matrix's columns, live reload.
+// Progressive enhancement for the static pages: level filter, variety, view, order, the chips and their panels, the sidebar search, closing menus, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, live reload.
 // The build bundles it with its modules into client.js for the browser.
 import { closingMenu, hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
-import { matrixColumns } from "./client-matrix.ts";
+import { markChips } from "./client-chips.ts";
+import { closePanel, panels } from "./client-panel.ts";
 import { studyStep } from "./client-path.ts";
-import { collapsibleSwitches } from "./client-seg.ts";
+import { searchIndex } from "./client-search.ts";
+import { themeToggle } from "./client-theme.ts";
+import { closingMenus } from "./client-seg.ts";
 import { store } from "./client-store.ts";
 import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
 
@@ -24,30 +27,26 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
       b.classList.toggle("on", b.dataset["setOrder"] === root.dataset["order"]);
     });
     markVariety(root);
+    markChips(root);
   }
 
   const step = studyStep(root);
-  collapsibleSwitches();
+  closingMenus();
+  panels();
+  searchIndex();
   hidingBar();
   closingMenu();
-  matrixColumns();
 
-  const THEMES = ["auto", "light", "dark"];
-  function applyTheme(name: string): void {
-    if (name === "auto") delete root.dataset["theme"];
-    else root.dataset["theme"] = name;
-    const button = document.getElementById("theme");
-    if (button) button.title = `Theme: ${name}`;
-  }
-  const savedTheme = store.get("ln-theme");
-  let theme = savedTheme !== null && savedTheme !== "" ? savedTheme : "auto";
-  applyTheme(theme);
+  themeToggle(root);
 
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
     const level = target.closest<HTMLElement>("[data-set-level]")?.dataset["setLevel"];
-    if (level !== undefined) choose("level", level);
+    if (level !== undefined) {
+      choose("level", level);
+      closePanel(target);
+    }
     const view = target.closest<HTMLElement>("[data-set-view]")?.dataset["setView"];
     if (view !== undefined) choose("view", view);
     const order = target.closest<HTMLElement>("[data-set-order]")?.dataset["setOrder"];
@@ -57,14 +56,10 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
       chooseVariety(root, variety);
       showState();
       refresh();
+      closePanel(target);
     }
-    if (target.closest("#print")) window.print();
+    if (target.closest("[data-print]")) window.print();
     if (target.closest("#menu")) document.body.classList.toggle("nav-open");
-    if (target.closest("#theme")) {
-      theme = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length] ?? "auto";
-      applyTheme(theme);
-      store.set("ln-theme", theme);
-    }
   });
 
   // A page carries the choice of each switch it has in its address, ?level=a1, ?variety=es-es and
@@ -104,7 +99,7 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   if (askedView === "cheatsheet" || askedView === "extended") root.dataset["view"] = askedView;
   if (!filled(root.dataset["view"])) root.dataset["view"] = "extended";
   if (!filled(root.dataset["level"])) {
-    root.dataset["level"] = document.querySelector<HTMLElement>("[data-set-level]:last-child")?.dataset["setLevel"] ?? "";
+    root.dataset["level"] = document.querySelector<HTMLElement>("#level-panel [data-set-level]:last-child")?.dataset["setLevel"] ?? "";
   }
   if (root.dataset["order"] !== "path") root.dataset["order"] = "categories";
   showState();

@@ -19,6 +19,7 @@
           "code",
           "enabled",
           "slug",
+          "flag",
           "name",
           "sections",
           "path"
@@ -37,6 +38,11 @@
             "type": "string",
             "pattern": "^[a-z]+$",
             "description": "URL segment of the language being learned"
+          },
+          "flag": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The page icon of the language being learned: a flag emoji that marks its pages and links"
           },
           "name": {
             "$ref": "#/definitions/localized"

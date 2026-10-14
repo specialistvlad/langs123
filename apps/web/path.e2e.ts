@@ -33,6 +33,11 @@ afterAll(async () => {
 
 const open = (address: string): Promise<unknown> => page.goto(new URL(address, server.url).href);
 const shown = (selector: string): Promise<boolean> => page.locator(selector).first().isVisible();
+// Chooses a level in the panel its chip opens.
+async function chooseLevel(code: string): Promise<void> {
+  await page.click('.topbar [popovertarget="level-panel"]');
+  await page.click(`#level-panel [data-set-level="${code}"]`);
+}
 // The menu's visible study-path entries: each heading's level, and each step's level and link.
 const menu = (): Promise<string[]> =>
   page.$$eval('.nav-list[data-order="path"] :is(h4, a)', (els) =>
@@ -75,7 +80,7 @@ test(
     await page.click('.nav-order [data-set-order="path"]');
     expect(await current()).toBe("/en/english/verbs/to-be/?step=a0");
     expect(await next()).toBe("/en/english/sentence-building/word-order/?step=a0");
-    await page.click('.seg [data-set-level="A1"]');
+    await chooseLevel("A1");
     expect(await current()).toBe("/en/english/verbs/to-be/?step=a1#past-was-and-were");
     expect(await next()).toBe("/en/english/tenses/simple-tenses/?step=a1");
   },
@@ -97,7 +102,7 @@ test(
     await page.click('.nav-list[data-order="path"] a[data-level="A2"][href^="/en/english/verbs/irregular-verbs-table/"]');
     expect(await current()).toMatch(/^\/en\/english\/verbs\/irregular-verbs-table\/\?step=a2/);
     // A filter below the step shows the highest step it leaves.
-    await page.click('.seg [data-set-level="A1"]');
+    await chooseLevel("A1");
     expect(await current()).toBe("/en/english/verbs/irregular-verbs-table/?step=a1");
   },
   SLOW,
@@ -106,9 +111,9 @@ test(
 test(
   "with the level filter on, previous and next move through the pages it shows and start over after the last",
   async () => {
-    // The visible row above the title: its previous and next, as label and link.
+    // The visible row below the guide: its previous and next, as label and link.
     const row = async (): Promise<string[]> =>
-      page.$$eval(".pagers.top .pager-prev, .pagers.top .pager-next", (els) =>
+      page.$$eval(".pagers.bottom .pager-prev, .pagers.bottom .pager-next", (els) =>
         els
           .filter((el) => el.checkVisibility())
           .map((el) => `${el.querySelector(".dir")?.textContent ?? ""} ${el.getAttribute("href") ?? "off"}`),
@@ -125,28 +130,26 @@ test(
       "Start over ↺ /en/english/foundations/alphabet-spelling/?step=a0",
     ]);
     // A higher level lets the path go on.
-    await page.click('.seg [data-set-level="A1"]');
+    await chooseLevel("A1");
     expect((await row())[1]).toBe("Next → /en/english/foundations/pronunciation-ipa/?step=a1#consonant-sounds");
   },
   SLOW,
 );
 
 test(
-  "at every level, the top level included, a page shows one row of previous and next above the title, one below the guide and one Up next",
+  "at every level, the top level included, a page shows one row of previous and next below the guide and one Up next",
   async () => {
-    // How many of each show: the rows above and below, and Up next in the rail.
+    // How many of each show: the row below the guide, and Up next in the rail.
     const counts = (): Promise<number[]> =>
-      page.$$eval(".pagers.top .pager, .pagers.bottom .pager, .up-next", (els) =>
-        [".pagers.top .pager", ".pagers.bottom .pager", ".up-next"].map(
-          (s) => els.filter((el) => el.matches(s) && el.checkVisibility()).length,
-        ),
+      page.$$eval(".pagers.bottom .pager, .up-next", (els) =>
+        [".pagers.bottom .pager", ".up-next"].map((s) => els.filter((el) => el.matches(s) && el.checkVisibility()).length),
       );
     for (const order of ["categories", "path"]) {
       await open("/en/english/");
       await page.click(`.nav-order [data-set-order="${order}"]`);
       for (const level of LEVELS) {
         await open(`/en/english/tenses/tense-map/?level=${level.toLowerCase()}`);
-        expect({ order, level, counts: await counts() }).toEqual({ order, level, counts: [1, 1, 1] });
+        expect({ order, level, counts: await counts() }).toEqual({ order, level, counts: [1, 1] });
       }
     }
   },

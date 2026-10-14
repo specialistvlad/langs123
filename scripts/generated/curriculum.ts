@@ -26,6 +26,10 @@ export interface Langs123Curriculum {
      * URL segment of the language being learned
      */
     slug: string;
+    /**
+     * The page icon of the language being learned: a flag emoji that marks its pages and links
+     */
+    flag: string;
     name: Localized;
     /**
      * The explanation languages the language is written for, the source language of site.yaml first; every explanation language when absent.

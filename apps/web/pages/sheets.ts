@@ -1,9 +1,10 @@
 // Cheatsheet pages: the index of a track's sheets and one page per sheet.
 import type { Explain } from "../../../scripts/lib.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
-import { controls, page } from "../layout.ts";
-import { navHome } from "../nav.ts";
-import { badge } from "../parts.ts";
+import { pageTools } from "../chrome.ts";
+import { page } from "../layout.ts";
+import { navHead } from "../nav.ts";
+import { badge, editUrl } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
 import { sheetsUrl, sheetUrl, trackUrl } from "../urls.ts";
 import { type Sheet, sheetsOf } from "./sheet-content.ts";
@@ -15,10 +16,9 @@ export function sheetPages(track: Track): void {
   const groups = { levels: t.levels, progressive: t.progressive, sections: t.sections, topics: t.topics } as const;
   const groupKeys = Object.keys(groups) as (keyof typeof groups)[];
   const sheetNav = (current?: Sheet): string =>
-    [
-      navHome(explain),
-      `<a class="nav-track" href="${trackUrl(explain, lang)}">${escapeHtml(t.index)}</a>`,
-      ...groupKeys.flatMap((g) => {
+    navHead(track, current === undefined ? "sheets" : null) +
+    `<div class="nav-list">${groupKeys
+      .flatMap((g) => {
         const list = sheets.filter((s) => s.group === g);
         if (list.length === 0) return [];
         return [
@@ -28,11 +28,18 @@ export function sheetPages(track: Track): void {
               `<a href="${sheetUrl(explain, lang, s.id)}"${s === current ? ' class="on" aria-current="page"' : ""}><span class="name">${escapeHtml(s.label)}</span></a>`,
           ),
         ];
-      }),
-    ].join("\n");
+      })
+      .join("\n")}</div>`;
 
-  const sheetControls = (pathFor: (e: Explain) => string): string =>
-    controls({ explain, read: readChoices(explain, pathFor, track.explains), varieties: lang.varieties });
+  const shared = (pathFor: (e: Explain) => string) => ({
+    lang: explain,
+    alternates: alternates(pathFor, track.explains),
+    read: readChoices(explain, pathFor, track.explains),
+    varieties: lang.varieties,
+    dev: o.dev,
+    siteUrl: o.siteUrl,
+  });
+  const trackCrumb = { label: trackTitle, href: trackUrl(explain, lang), icon: lang.flag };
 
   const indexHtml = groupKeys
     .map((g) => {
@@ -46,18 +53,14 @@ export function sheetPages(track: Track): void {
   ctx.add(
     sheetsUrl(explain, lang),
     page({
+      ...shared((e) => sheetsUrl(e, lang)),
       kind: "sheets",
-      lang: explain,
       title: `${t.sheets} — ${trackTitle}`,
       description: `${t.sheets}: ${trackTitle}, ${t.explained}.`,
       path: sheetsUrl(explain, lang),
-      alternates: alternates((e) => sheetsUrl(e, lang), track.explains),
-      controls: sheetControls((e) => sheetsUrl(e, lang)),
+      crumbs: [trackCrumb, { label: t.sheets }],
       nav: sheetNav(),
-      main: `<article class="doc"><h1>${escapeHtml(t.sheets)}</h1><blockquote><p>${escapeHtml(t.sheetsIntro)}</p></blockquote><div class="sheet-index lanes">${indexHtml}</div></article>`,
-      varieties: lang.varieties,
-      dev: o.dev,
-      siteUrl: o.siteUrl,
+      main: `<article class="doc"><header class="doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${escapeHtml(t.sheets)}</h1></div></header><blockquote><p>${escapeHtml(t.sheetsIntro)}</p></blockquote><div class="sheet-index lanes">${indexHtml}</div></article>`,
     }),
   );
 
@@ -65,18 +68,14 @@ export function sheetPages(track: Track): void {
     ctx.add(
       sheetUrl(explain, lang, s.id),
       page({
+        ...shared((e) => sheetUrl(e, lang, s.id)),
         kind: "sheet",
-        lang: explain,
         title: `${s.title} — ${trackTitle}`,
         description: `${s.title}: ${trackTitle}, ${t.explained}.`,
         path: sheetUrl(explain, lang, s.id),
-        alternates: alternates((e) => sheetUrl(e, lang, s.id), track.explains),
-        controls: sheetControls((e) => sheetUrl(e, lang, s.id)),
+        crumbs: [trackCrumb, { label: t.sheets, href: sheetsUrl(explain, lang) }, { label: s.label }],
         nav: sheetNav(s),
-        main: `<article class="doc sheet">${s.html}</article>`,
-        varieties: lang.varieties,
-        dev: o.dev,
-        siteUrl: o.siteUrl,
+        main: `<article class="doc sheet">${s.html}${pageTools(t, s.path === undefined ? undefined : editUrl(s.path))}</article>`,
       }),
     );
   }

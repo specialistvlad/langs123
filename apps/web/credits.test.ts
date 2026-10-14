@@ -20,11 +20,20 @@ async function topBar(path: string): Promise<{ lang: Explain; doc: Document; foo
 }
 
 describe.each(pages)("%s", (path) => {
-  test("the top bar links to the credits page beside the theme switch, and the page has no footer", async () => {
+  test("the top bar holds the chips and the language a page is read in, then the credits beside the theme switch, and the page has no footer", async () => {
     const { lang, doc, footer } = await topBar(path);
     const credits = creditsUrl(lang);
-    const tools = [...doc.querySelectorAll(".topbar .tools > *")].map((el) => el.getAttribute("href") ?? el.id);
-    expect(tools).toEqual([credits, "theme"]);
+    const tools = [...doc.querySelectorAll(".topbar .tools > *")].map((el) =>
+      el.matches(".chips")
+        ? "chips"
+        : el.matches("details.lang-menu")
+          ? "language"
+          : (el.getAttribute("href") ?? (el.hasAttribute("data-theme-toggle") ? "theme" : el.tagName)),
+    );
+    expect(tools.filter((t) => t !== "chips" && t !== "language")).toEqual([credits, "theme"]);
+    expect(tools.join(" ")).toBe(
+      [tools.includes("chips") ? "chips" : "", tools.includes("language") ? "language" : "", credits, "theme"].filter(Boolean).join(" "),
+    );
     const link = doc.querySelector(`.topbar a[href="${credits}"]`);
     expect(link?.getAttribute("aria-label")).toBe(say("credits", lang));
     expect(link?.getAttribute("aria-current")).toBe(`/${path}` === `${credits}index.html` ? "page" : null);
@@ -64,8 +73,8 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
     expect(home.querySelector('link[hreflang="x-default"]')?.getAttribute("href")).toBe(
       `http://127.0.0.1${homeUrl(ENABLED_EXPLAIN[0] ?? e)}`,
     );
-    // The matrix's first column is the home page's own language.
-    expect(home.querySelector("table.matrix tbody td a")?.getAttribute("hreflang")).toBe(e);
+    // A language's card lists the home page's own language first.
+    expect(home.querySelector(".lang-card .explains a")?.getAttribute("hreflang")).toBe(e);
   });
   test("the missing page leads back to the home page in the language", async () => {
     const doc = await readPage(file(notFoundUrl(e)));

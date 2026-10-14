@@ -14,6 +14,8 @@ export interface Sheet {
   group: "levels" | "progressive" | "sections" | "topics";
   label: string;
   range: Range | null;
+  // A topic's sheet: the topic's file.
+  path?: string;
   html: string;
 }
 
@@ -102,6 +104,7 @@ export function sheetsOf(track: Track): Sheet[] {
       label: name,
       range: refRange(ref, explain),
       title: `${t.sheet}: ${name}`,
+      path: ref.path,
     };
     push(s, compose(track, s.title, [ref]));
   }

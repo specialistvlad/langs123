@@ -1,6 +1,7 @@
 // What every page builder shares: build options, curriculum data, links and the page list.
 import { type CurriculumLanguage, ENABLED_EXPLAIN, type Explain, explainName, explainOf, type TopicRef } from "../../scripts/lib.ts";
-import type { Choice, Ui } from "./layout.ts";
+import type { Choice } from "./chrome.ts";
+import type { Ui } from "./ui.ts";
 import type { Stage } from "./path.ts";
 import type { LinkFn } from "./html.ts";
 

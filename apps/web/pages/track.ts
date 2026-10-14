@@ -2,11 +2,11 @@
 import { topicTitle } from "../../../scripts/content.ts";
 import { localize, SITE } from "../../../scripts/lib.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
-import { controls, page } from "../layout.ts";
-import { orderSwitch, trackNav } from "../nav.ts";
+import { page } from "../layout.ts";
+import { orderButtons, trackNav } from "../nav.ts";
 import { pathCards } from "../path.ts";
 import { refRange } from "../../../scripts/levels.ts";
-import { levelAttrs, listBadge, refsRange } from "../parts.ts";
+import { badge, levelAttrs, listBadge, refsRange } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
 import { topicUrl, trackUrl } from "../urls.ts";
 
@@ -31,9 +31,10 @@ export function trackIndex(track: Track): void {
     })
     .join("");
   const indexHead =
-    `<header class="index-head"><p class="eyebrow">${escapeHtml(localize(lang.name, explain))} · ${escapeHtml(t.explained)}</p>` +
-    `<h1>${escapeHtml(t.index)}</h1><p class="lead" data-order="categories">${escapeHtml(t.trackIntro)}</p>` +
-    `<p class="lead" data-order="path">${escapeHtml(t.pathIntro)}</p><div class="index-order">${orderSwitch(explain)}</div></header>`;
+    `<header class="index-head doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${escapeHtml(trackTitle)}</h1></div>` +
+    `<p class="props">${badge(refsRange(langRefs, explain))}<span class="prop">${escapeHtml(t.explained)}</span></p>` +
+    `<p class="lead" data-order="categories">${escapeHtml(t.trackIntro)}</p><p class="lead" data-order="path">${escapeHtml(t.pathIntro)}</p>` +
+    `<div class="lesson-bar"><div class="tabs index-order" role="group" aria-label="${escapeHtml(t.grouping)}">${orderButtons(explain)}</div></div></header>`;
   ctx.add(
     trackUrl(explain, lang),
     page({
@@ -43,12 +44,9 @@ export function trackIndex(track: Track): void {
       description: `${trackTitle}, ${t.explained}: ${t.written(written.length, langRefs.length)}.`,
       path: trackUrl(explain, lang),
       alternates: alternates((e) => trackUrl(e, lang), track.explains),
-      controls: controls({
-        explain,
-        read: readChoices(explain, (e) => trackUrl(e, lang), track.explains),
-        level: true,
-        varieties: lang.varieties,
-      }),
+      read: readChoices(explain, (e) => trackUrl(e, lang), track.explains),
+      level: true,
+      crumbs: [{ label: trackTitle, icon: lang.flag }],
       varieties: lang.varieties,
       nav: trackNav(track),
       main: `<article class="doc index">${indexHead}<div class="index-grid lanes" data-order="categories">${sectionsHtml}</div><div class="index-grid lanes" data-order="path">${pathCards(track.path, explain)}</div></article>`,

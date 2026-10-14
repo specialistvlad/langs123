@@ -44,7 +44,7 @@ describe.each(steps.map((a) => [`${levelOf(a)} ${a.getAttribute("href") ?? ""}`,
     const anchor = href.split("#")[1];
     if (anchor === undefined) {
       // The topic's lowest level: the page opens at the top.
-      expect(doc.querySelector(".doc-head h1 .lvl")?.getAttribute("data-from")).toBe(level);
+      expect(doc.querySelector(".doc-head .props .lvl")?.getAttribute("data-from")).toBe(level);
       return;
     }
     const section = doc.querySelector(`[id="${anchor}"]`);
@@ -82,15 +82,18 @@ describe("a topic page", () => {
     const restart = after === undefined && first !== undefined && first !== list[i];
     return { prev: prev?.href, next: after?.href ?? (restart ? first.href : undefined), restart };
   }
-  // The rows of a page for one grouping (and one step) at a level, above the title, below the guide and in the rail.
+  // The rows of a page for one grouping (and one step) at a level: below the guide, in the bottom bar and in the rail.
   function seen(doc: Document, rows: string, level: string): (Lead & { upNext: string | undefined })[] {
     const at = `[data-at~="${level}"]`;
-    const out = ["top", "bottom"].map((where) => {
+    const out = ["bottom"].map((where) => {
       const row = doc.querySelectorAll(`.pagers.${where} .pager${rows}${at}`);
       expect(row.length).toBe(1);
       const prev = doc.querySelector(`.pagers.${where} .pager${rows}${at} .pager-prev`);
       const next = doc.querySelector(`.pagers.${where} .pager${rows}${at} .pager-next`);
       expect(prev?.matches("a") ?? false).not.toBe(prev?.matches(".off") ?? false);
+      // The bottom bar's Next leads where the row's next does.
+      const bar = doc.querySelector(`.bottom-bar .bar-next${rows}${at}`)?.getAttribute("href") ?? undefined;
+      expect(bar).toBe(next?.getAttribute("href") ?? undefined);
       return {
         prev: prev?.getAttribute("href") ?? undefined,
         next: next?.getAttribute("href") ?? undefined,
@@ -128,14 +131,14 @@ describe("a topic page", () => {
 
   test("at A0, by category: To be sits between Personal Pronouns and Word Order, Word Order starts over at The Alphabet, The Alphabet has no previous", async () => {
     const at = (doc: Document, side: string): string | null | undefined =>
-      doc.querySelector(`.pagers.top .pager[data-order="categories"][data-at~="A0"] .${side}`)?.getAttribute("href");
+      doc.querySelector(`.pagers.bottom .pager[data-order="categories"][data-at~="A0"] .${side}`)?.getAttribute("href");
     const toBe = await readPage("en/english/verbs/to-be/index.html");
     expect(at(toBe, "pager-prev")).toBe("/en/english/pronouns/personal-pronouns/");
     expect(at(toBe, "pager-next")).toBe("/en/english/sentence-building/word-order/");
     const wordOrder = await readPage("en/english/sentence-building/word-order/index.html");
     expect(at(wordOrder, "pager-next")).toBe("/en/english/foundations/alphabet-spelling/");
     const alphabet = await readPage("en/english/foundations/alphabet-spelling/index.html");
-    expect(alphabet.querySelector('.pagers.top .pager[data-order="categories"][data-at~="A0"] .pager-prev.off')).not.toBeNull();
+    expect(alphabet.querySelector('.pagers.bottom .pager[data-order="categories"][data-at~="A0"] .pager-prev.off')).not.toBeNull();
   });
 
   test("To be at A0 leads to Word Order", async () => {

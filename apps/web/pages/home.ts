@@ -2,16 +2,16 @@
 import { type Explain, explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
 import { join, refRange } from "../../../scripts/levels.ts";
 import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
-import { controls, page, ui } from "../layout.ts";
+import { page } from "../layout.ts";
+import { ui } from "../ui.ts";
 import { escapeHtml } from "../html.ts";
 import { badge } from "../parts.ts";
 import { homeUrl, notFoundUrl, trackUrl } from "../urls.ts";
 
-// Each home page leads to every track through a matrix: a row per language to learn, named in the home
-// page's language with its levels and topics, and a column per explanation language, under its own name,
-// the home page's language first; each cell is an arrow into that track, and empty where the language is not
-// explained in that column's language. The first explanation language's home, at the root, is the default for
-// other readers.
+// Each home page leads to every track: a card per language to learn, named in the home page's language
+// with its flag and levels, and a link to each explanation language it is written for, under that
+// language's own name, the home page's language first. The first explanation language's home, at the
+// root, is the default for other readers.
 export function homePage(ctx: Context): void {
   const { o, refs } = ctx;
   // The levels the curriculum covers: written topics by their data, planned ones by their entry.
@@ -30,23 +30,22 @@ export function homePage(ctx: Context): void {
         home,
       ),
     };
-    const order = [home, ...EXPLAINS.filter((e) => e !== home)];
-    const corner = `<th class="corner" scope="col"><span class="axis-x">${escapeHtml(say("matrixExplained", home))}</span><span class="axis-y">${escapeHtml(say("matrixLearn", home))}</span></th>`;
-    const head = `<thead><tr>${corner}${order.map((e) => `<th scope="col" lang="${e}">${escapeHtml(explainName(e))}</th>`).join("")}</tr></thead>`;
-    const body = ctx.languages
+    const title = say("homeTitle", home, homeValues);
+    const description = say("homeDescription", home, homeValues);
+    const cards = ctx.languages
       .map((lang) => {
         const own = refs.filter((r) => r.lang === lang.code);
-        const written = own.filter((r) => r.topic !== null).length;
-        // A cell is an arrow into its track, and empty where the language is not explained in that column's
-        // language; the row names the language once, with its levels and topics.
         const explains = explainsOf(lang);
-        const cells = order.map((e) => {
-          if (!explains.includes(e)) return '<td class="none"></td>';
-          const name = escapeHtml(`${ui(e).track(localize(lang.name, e))}, ${ui(e).explained}`);
-          return `<td><a href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" aria-label="${name}" title="${name}"><span class="go" aria-hidden="true">→</span></a></td>`;
-        });
-        const about = `${badge(join(own.map((r) => refRange(r))))} <span>${escapeHtml(say("written", home, { n: written, total: own.length }))}</span>`;
-        return `<tr><th scope="row"><span class="name">${escapeHtml(localize(lang.name, home))}</span><span class="about">${about}</span></th>${cells.join("")}</tr>`;
+        const order = [...explains.filter((e) => e === home), ...explains.filter((e) => e !== home)];
+        const links = order
+          .map((e) => {
+            const name = escapeHtml(`${ui(e).track(localize(lang.name, e))}, ${ui(e).explained}`);
+            const here = e === home ? ' class="here"' : "";
+            return `<li><a href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" aria-label="${name}" title="${name}"${here}>${escapeHtml(explainName(e))}</a></li>`;
+          })
+          .join("");
+        const head = `<header><span class="page-icon" aria-hidden="true">${lang.flag}</span><h2>${escapeHtml(localize(lang.name, home))}</h2>${badge(join(own.map((r) => refRange(r))))}</header>`;
+        return `<section class="lang-card">${head}<p class="card-label">${escapeHtml(say("matrixExplained", home))}</p><ul class="explains">${links}</ul></section>`;
       })
       .join("");
     ctx.add(
@@ -54,12 +53,12 @@ export function homePage(ctx: Context): void {
       page({
         kind: "home",
         lang: home,
-        title: say("homeTitle", home, homeValues),
-        description: say("homeDescription", home, homeValues),
+        title,
+        description,
         path: homeUrl(home),
         alternates: [...alternates(homeUrl), { lang: "x-default", path: homeUrl(homeLanguage()) }],
-        controls: controls({ explain: home, read: readChoices(home, homeUrl) }),
-        main: `<article class="doc home"><div class="matrix-wrap"><table class="matrix">${head}<tbody>${body}</tbody></table></div></article>`,
+        read: readChoices(home, homeUrl),
+        main: `<article class="doc home"><header class="home-head"><h1>${escapeHtml(title)}</h1><p class="lead">${escapeHtml(description)}</p></header><div class="lang-cards">${cards}</div></article>`,
         dev: o.dev,
         siteUrl: o.siteUrl,
       }),
@@ -81,6 +80,7 @@ export function notFoundPage(ctx: Context): void {
         title: `${ui(lang).notFound} — ${SITE.name}`,
         description: ui(lang).notFound,
         path: notFoundUrl(lang),
+        crumbs: [{ label: ui(lang).notFound }],
         main: `<article class="doc"><h1>${languages.map((e) => `<span lang="${e}">${escapeHtml(ui(e).notFound)}</span>`).join(" · ")}</h1><p>${links.join(" · ")}</p></article>`,
         dev: o.dev,
         siteUrl: o.siteUrl,
