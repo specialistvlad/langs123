@@ -1,0 +1,310 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.foundations.vowels-consonants
+lang: uk
+kind: foundations
+tags: [sounds, vowels, consonants, pronunciation]
+concepts: [pronunciation]
+related: [uk.foundations.alphabet-handwriting, uk.foundations.soft-sign-apostrophe, uk.foundations.stress]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "09d507 f42e86 eaea74 521632 43c52f 281132 782d0d 84eed1", es: "09d507 f42e86 eaea74 521632 43c52f 281132 782d0d 84eed1" }
+
+title: { uk: Голосні й приголосні, en: Vowels and Consonants, es: Vocales y consonantes }
+summary:
+  lead:
+    uk: "Шість голосних звуків, тверді й м’які, дзвінкі й глухі приголосні та звуки дж і дз."
+    en: "The six vowel sounds, hard and soft, voiced and voiceless consonants, and the sounds дж and дз."
+    es: "Los seis sonidos vocálicos, las consonantes duras y blandas, sonoras y sordas, y los sonidos дж y дз."
+  rule:
+    uk: "Дзвінкі приголосні в кінці слова звучать дзвінко:"
+    en: "Voiced consonants stay voiced at the end of a word:"
+    es: "Las consonantes sonoras siguen sonoras al final de la palabra:"
+  ex: { examples: [["ду", { target: { letter: б } }], ["ні", { target: { letter: ж } }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A0
+          point: { uk: Голосні звуки, en: Vowel sounds, es: Sonidos vocálicos }
+          rule:
+            uk: ["шість: ", { alternatives: [{ ipa: a }, { ipa: ɔ }, { ipa: u }, { ipa: ɛ }, { ipa: ɪ }, { ipa: i }] }]
+            en: ["six: ", { alternatives: [{ ipa: a }, { ipa: ɔ }, { ipa: u }, { ipa: ɛ }, { ipa: ɪ }, { ipa: i }] }]
+            es: ["seis: ", { alternatives: [{ ipa: a }, { ipa: ɔ }, { ipa: u }, { ipa: ɛ }, { ipa: ɪ }, { ipa: i }] }]
+          ex: { examples: [[{ target: { letter: о́ } }, "зеро"], ["л", { target: { letter: і́ } }, "то"]] }
+          tr: { en: { examples: [lake, summer] }, es: { examples: [lago, verano] } }
+        - level: A0
+          point: { uk: "И та і", en: "И and і", es: "И y і" }
+          rule:
+            uk: [{ letter: и }, " — ", { ipa: ɪ }, ", ", { letter: і }, " — ", { ipa: i }]
+            en: [{ letter: и }, " is ", { ipa: ɪ }, ", ", { letter: і }, " is ", { ipa: i }]
+            es: [{ letter: и }, " es ", { ipa: ɪ }, "; ", { letter: і }, ", ", { ipa: i }]
+          ex: { examples: [["м", { target: { letter: и } }], ["м", { target: { letter: і́ } }, "сто"]] }
+          tr: { en: { examples: [we, city] }, es: { examples: [nosotros, ciudad] } }
+        - level: A1
+          point: { uk: "Е та и без наголосу", en: "Unstressed е and и", es: "е y и átonas" }
+          rule:
+            uk: "звучать близько; пишуть, як під наголосом"
+            en: "sound alike; spell them as in the stressed form"
+            es: "suenan parecidas; se escriben como en la forma tónica"
+          ex: { mapping: [["с", { target: { letter: е } }, "стра́"], "се́стри"] }
+          tr: { en: { mapping: [sister, sisters] }, es: { mapping: [hermana, hermanas] } }
+        - level: A1
+          point: { uk: "О без наголосу", en: "Unstressed о", es: "о átona" }
+          rule:
+            uk: ["зазвичай ", { ipa: ɔ }]
+            en: ["usually ", { ipa: ɔ }]
+            es: ["por lo general ", { ipa: ɔ }]
+          ex: ["м", { target: { letter: о } }, "л", { target: { letter: о } }, "ко́"]
+          tr: { en: milk, es: leche }
+        - level: A1
+          point: { uk: Тверді й м’які, en: Hard and soft, es: Duras y blandas }
+          rule:
+            uk: "розрізняють слова"
+            en: "tell words apart"
+            es: "distinguen palabras"
+          ex: { contrast: [["пала́", { target: { letter: ц } }], ["па́ле", { target: { letter: ць } }]] }
+          tr: { en: { contrast: [palace, finger] }, es: { contrast: [palacio, dedo] } }
+        - level: A1
+          point: { uk: "Перед і та е", en: "Before і and е", es: "Ante і y е" }
+          rule:
+            uk: ["перед ", { letter: і }, " приголосна м’яка, перед ", { letter: е }, " — тверда"]
+            en: ["a consonant is soft before ", { letter: і }, " and hard before ", { letter: е }]
+            es: ["la consonante es blanda ante ", { letter: і }, " y dura ante ", { letter: е }]
+          ex: { examples: [["л", { target: { letter: і } }, "с"], ["т", { target: { letter: е́ } }, "ма"]] }
+          tr: { en: { examples: [forest, topic] }, es: { examples: [bosque, tema] } }
+        - level: A1
+          point: { uk: Дзвінкі й глухі, en: Voiced and voiceless, es: Sonoras y sordas }
+          rule:
+            uk: "розрізняють слова"
+            en: "tell words apart"
+            es: "distinguen palabras"
+          ex: { contrast: [[{ target: { letter: д } }, "і́ло"], [{ target: { letter: т } }, "і́ло"]] }
+          tr: { en: { contrast: ["deed, matter", body] }, es: { contrast: ["asunto, obra", cuerpo] } }
+        - level: A1
+          point: { uk: Дж і дз, en: Дж and дз, es: Дж y дз }
+          rule:
+            uk: ["одна приголосна: ", { ipa: d͡ʒ }, ", ", { ipa: d͡z }]
+            en: ["one consonant each: ", { ipa: d͡ʒ }, ", ", { ipa: d͡z }]
+            es: ["una sola consonante: ", { ipa: d͡ʒ }, ", ", { ipa: d͡z }]
+          ex: { examples: [[{ target: { letter: дж } }, "и́нси"], [{ target: { letter: дз } }, "е́ркало"]] }
+          tr: { en: { examples: [jeans, mirror] }, es: { examples: [vaqueros, espejo] } }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["у кінці складу після голосної ", { letter: в }, " звучить як ", { ipa: u̯ }]
+            en: ["at the end of a syllable after a vowel, ", { letter: в }, " sounds ", { ipa: u̯ }]
+            es: ["a final de sílaba tras vocal, ", { letter: в }, " suena ", { ipa: u̯ }]
+          ex: { examples: [["Льві", { target: { letter: в } }], ["за́", { target: { letter: в } }, "тра"]] }
+          tr: { en: { examples: [Lviv, tomorrow] }, es: { examples: [Lviv, mañana] } }
+
+sections:
+  - title: { uk: Голосні звуки, en: Vowel sounds, es: Los sonidos vocálicos }
+    role: own
+    content:
+      - type: prose
+        level: A0
+        text:
+          uk: ["Голосних звуків шість. Літери ", { letter: я }, ", ", { letter: ю }, ", ", { letter: є }, ", ", { letter: ї }, " не мають окремих звуків: це ", { ipa: j }, " і голосний або м’якість приголосної перед голосним."]
+          en: ["There are six vowel sounds. The letters ", { letter: я }, ", ", { letter: ю }, ", ", { letter: є }, " and ", { letter: ї }, " have no sounds of their own: they write ", { ipa: j }, " and a vowel, or a soft consonant before a vowel."]
+          es: ["Hay seis sonidos vocálicos. Las letras ", { letter: я }, ", ", { letter: ю }, ", ", { letter: є }, " y ", { letter: ї }, " no tienen sonido propio: escriben ", { ipa: j }, " y una vocal, o una consonante blanda ante vocal."]
+      - type: inventory
+        set: sounds
+        columns:
+          - { key: sound, label: { uk: Звук, en: Sound, es: Sonido } }
+          - { key: letter, label: { uk: Літера, en: Letter, es: Letra } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - { level: A0, value: a, sound: [{ ipa: a }, " ", { sound: a }], letter: { letter: а }, ex: { ex: ["м", { letter: а́ }, "м", { letter: а }], tr: { en: mum, es: mamá } } }
+          - { level: A0, value: ɔ, sound: [{ ipa: ɔ }, " ", { sound: o }], letter: { letter: о }, ex: { ex: ["м", { letter: о́ }, "ре"], tr: { en: sea, es: mar } } }
+          - { level: A0, value: u, sound: [{ ipa: u }, " ", { sound: u }], letter: { letter: у }, ex: { ex: ["д", { letter: у }, "б"], tr: { en: oak, es: roble } } }
+          - { level: A0, value: ɛ, sound: [{ ipa: ɛ }, " ", { sound: e }], letter: { letter: е }, ex: { ex: ["н", { letter: е́ }, "бо"], tr: { en: sky, es: cielo } } }
+          - { level: A0, value: ɪ, sound: [{ ipa: ɪ }, " ", { sound: y }], letter: { letter: и }, ex: { ex: ["р", { letter: и́ }, "ба"], tr: { en: fish, es: pez } } }
+          - { level: A0, value: i, sound: [{ ipa: i }, " ", { sound: i }], letter: { letter: і }, ex: { ex: ["л", { letter: і́ }, "то"], tr: { en: summer, es: verano } } }
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              uk: "Голосний під наголосом звучить трохи довше й чіткіше."
+              en: "A stressed vowel sounds a little longer and clearer."
+              es: "La vocal tónica suena un poco más larga y más clara."
+            ex: молоко́
+            tr: { en: milk, es: leche }
+          - type: note
+            level: A0
+            text:
+              uk: ["Латиницею звуки подано за національною системою транслітерації 2010 року: ", { link: Абетка, to: uk.foundations.alphabet-handwriting }, "."]
+              en: ["The Latin forms follow the national transliteration of 2010: ", { link: The Cyrillic Alphabet, to: uk.foundations.alphabet-handwriting }, "."]
+              es: ["Las formas latinas siguen la transliteración nacional de 2010: ", { link: El alfabeto cirílico, to: uk.foundations.alphabet-handwriting }, "."]
+
+  - title: { uk: Голосні без наголосу, en: Unstressed vowels, es: Las vocales átonas }
+    role: pronunciation
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            rule:
+              uk: [{ letter: е }, " без наголосу звучить близько до ", { letter: и }]
+              en: ["unstressed ", { letter: е }, " sounds close to ", { letter: и }]
+              es: [{ letter: е }, " átona suena cerca de ", { letter: и }]
+            ex: { examples: [["с", { target: { letter: е } }, "стра́"], ["в", { target: { letter: е } }, "че́ря"]] }
+            tr: { en: { examples: [sister, dinner] }, es: { examples: [hermana, cena] } }
+          - level: A1
+            rule:
+              uk: [{ letter: и }, " без наголосу звучить близько до ", { letter: е }]
+              en: ["unstressed ", { letter: и }, " sounds close to ", { letter: е }]
+              es: [{ letter: и }, " átona suena cerca de ", { letter: е }]
+            ex: { examples: [["з", { target: { letter: и } }, "ма́"], ["в", { target: { letter: и } }, "де́лка"]] }
+            tr: { en: { examples: [winter, fork] }, es: { examples: [invierno, tenedor] } }
+          - level: A1
+            rule:
+              uk: [{ letter: о }, " і ", { letter: а }, " без наголосу звучать майже так само, як під наголосом"]
+              en: ["unstressed ", { letter: о }, " and ", { letter: а }, " sound almost the same as stressed ones"]
+              es: [{ letter: о }, " y ", { letter: а }, " átonas suenan casi igual que las tónicas"]
+            ex: { examples: [["г", { target: { letter: о } }, "л", { target: { letter: о } }, "ва́"], ["м", { target: { letter: о } }, "л", { target: { letter: о } }, "ко́"]] }
+            tr: { en: { examples: [head, milk] }, es: { examples: [cabeza, leche] } }
+          - level: A1
+            rule:
+              uk: [{ letter: о }, " без наголосу перед складом із наголошеним ", { letter: у }, " звучить близько до ", { letter: у }]
+              en: ["unstressed ", { letter: о }, " before a syllable with a stressed ", { letter: у }, " sounds close to ", { letter: у }]
+              es: [{ letter: о }, " átona ante una sílaba con ", { letter: у }, " tónica suena cerca de ", { letter: у }]
+            ex: ["к", { target: { letter: о } }, "жу́х"]
+            tr: { en: sheepskin coat, es: zamarra }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Щоб написати ", { letter: е }, " чи ", { letter: и }, " без наголосу, знайдіть форму, де ця голосна під наголосом:"]
+              en: ["To spell an unstressed ", { letter: е }, " or ", { letter: и }, ", find a form where that vowel is stressed:"]
+              es: ["Para escribir una ", { letter: е }, " o una ", { letter: и }, " átonas, busque una forma donde esa vocal lleve el acento:"]
+            ex: { examples: [{ mapping: ["сестра́", [{ target: се́ }, "стри"]] }, { mapping: ["зима́", [{ target: зи́ }, "ми"]] }] }
+            tr: { en: { examples: [{ mapping: [sister, sisters] }, { mapping: [winter, winters] }] }, es: { examples: [{ mapping: [hermana, hermanas] }, { mapping: [invierno, inviernos] }] } }
+
+  - title: { uk: Тверді й м’які приголосні, en: Hard and soft consonants, es: Consonantes duras y blandas }
+    role: pronunciation
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            rule:
+              uk: ["перед ", { letter: і }, " приголосна м’яка"]
+              en: ["a consonant before ", { letter: і }, " is soft"]
+              es: ["ante ", { letter: і }, " la consonante es blanda"]
+            ex: { examples: [["л", { target: { letter: і } }, "с"], ["Р", { target: { letter: і́ } }, "вне"]] }
+            tr: { en: { examples: [forest, Rivne] }, es: { examples: [bosque, Rivne] } }
+          - level: A1
+            rule:
+              uk: ["перед ", { letter: и }, " приголосна тверда"]
+              en: ["a consonant before ", { letter: и }, " is hard"]
+              es: ["ante ", { letter: и }, " la consonante es dura"]
+            ex: { examples: [["л", { target: { letter: и } }, "ст"], ["Р", { target: { letter: и } }, "м"]] }
+            tr: { en: { examples: [letter, Rome] }, es: { examples: [carta, Roma] } }
+          - level: A1
+            rule:
+              uk: ["перед ", { letter: е }, " приголосна тверда"]
+              en: ["a consonant before ", { letter: е }, " is hard"]
+              es: ["ante ", { letter: е }, " la consonante es dura"]
+            ex: { examples: [["т", { target: { letter: е́ } }, "ма"], ["н", { target: { letter: е } }, "ді́ля"], ["кол", { target: { letter: е́ } }, "га"]] }
+            tr: { en: { examples: [topic, Sunday, colleague] }, es: { examples: [tema, domingo, colega] } }
+          - level: A1
+            rule:
+              uk: ["перед ", { letter: ь }, ", ", { letter: я }, ", ", { letter: ю }, ", ", { letter: є }, " приголосна м’яка"]
+              en: ["a consonant before ", { letter: ь }, ", ", { letter: я }, ", ", { letter: ю }, " or ", { letter: є }, " is soft"]
+              es: ["ante ", { letter: ь }, ", ", { letter: я }, ", ", { letter: ю }, " o ", { letter: є }, " la consonante es blanda"]
+            ex: { examples: [["па́ле", { target: { letter: ць } }], ["ди́н", { target: { letter: я } }]] }
+            tr: { en: { examples: [finger, melon] }, es: { examples: [dedo, melón] } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Тверда чи м’яка приголосна розрізняє слова:"
+              en: "A hard or a soft consonant can tell words apart:"
+              es: "Una consonante dura o blanda puede distinguir palabras:"
+            ex: { contrast: [["пала́", { target: ц }], ["па́ле", { target: ць }]] }
+            tr: { en: { contrast: [palace, finger] }, es: { contrast: [palacio, dedo] } }
+          - type: note
+            level: A1
+            text:
+              uk: ["Кінцеве ", { letter: ь }, " і м’якість приголосних: ", { link: М’який знак і апостроф, to: uk.foundations.soft-sign-apostrophe }, "."]
+              en: ["Final ", { letter: ь }, " and soft consonants: ", { link: Soft Sign and Apostrophe, to: uk.foundations.soft-sign-apostrophe }, "."]
+              es: ["La ", { letter: ь }, " final y las consonantes blandas: ", { link: El signo blando y el apóstrofo, to: uk.foundations.soft-sign-apostrophe }, "."]
+
+  - title: { uk: Дзвінкі й глухі приголосні, en: Voiced and voiceless consonants, es: Consonantes sonoras y sordas }
+    role: pronunciation
+    content:
+      - type: comparison
+        columns:
+          - { key: voiced, label: { uk: Дзвінкі, en: Voiced, es: Sonoras } }
+          - { key: voiceless, label: { uk: Глухі, en: Voiceless, es: Sordas } }
+        rows:
+          - { level: A1, voiced: { alternatives: [{ letter: б }, { letter: д }, { letter: з }, { letter: ж }] }, voiceless: { alternatives: [{ letter: п }, { letter: т }, { letter: с }, { letter: ш }] } }
+          - { level: A1, voiced: { alternatives: [{ letter: г }, { letter: ґ }, { letter: дз }, { letter: дж }] }, voiceless: { alternatives: [{ letter: х }, { letter: к }, { letter: ц }, { letter: ч }] } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Дзвінка чи глуха приголосна розрізняє слова:"
+              en: "A voiced or a voiceless consonant can tell words apart:"
+              es: "Una consonante sonora o sorda puede distinguir palabras:"
+            ex: { contrast: [[{ target: г }, "оло́дний"], [{ target: х }, "оло́дний"]] }
+            tr: { en: { contrast: [hungry, cold] }, es: { contrast: [hambriento, frío] } }
+          - type: rule
+            level: A1
+            text:
+              uk: "У кінці слова дзвінкі приголосні звучать дзвінко, як пишуться:"
+              en: "At the end of a word, voiced consonants stay voiced, as they are written:"
+              es: "Al final de la palabra, las sonoras siguen sonoras, como se escriben:"
+            ex: { examples: [["хлі", { target: б }], ["ні", { target: ж }], ["са", { target: д }]] }
+            tr: { en: { examples: [bread, knife, garden] }, es: { examples: [pan, cuchillo, jardín] } }
+          - type: rule
+            level: A1
+            text:
+              uk: [{ letter: г }, " перед глухою приголосною звучить як ", { ipa: x }, ":"]
+              en: [{ letter: г }, " before a voiceless consonant sounds ", { ipa: x }, ":"]
+              es: [{ letter: г }, " ante consonante sorda suena ", { ipa: x }, ":"]
+            ex: { examples: [["ле́", { target: г }, "ко"], ["ні́", { target: г }, "ті"]] }
+            tr: { en: { examples: [easily, nails] }, es: { examples: [fácilmente, uñas] } }
+
+  - title: { uk: "Дж, дз і в", en: "Дж, дз and в", es: "Дж, дз y в" }
+    role: pronunciation
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ letter: дж }, " і ", { letter: дз }, " — дві літери, але один звук: ", { ipa: d͡ʒ }, ", ", { ipa: d͡z }, "."]
+              en: [{ letter: дж }, " and ", { letter: дз }, " are two letters each, but one sound: ", { ipa: d͡ʒ }, ", ", { ipa: d͡z }, "."]
+              es: [{ letter: дж }, " y ", { letter: дз }, " son dos letras, pero un solo sonido: ", { ipa: d͡ʒ }, ", ", { ipa: d͡z }, "."]
+            ex: { examples: [[{ target: дж }, "и́нси"], [{ target: дз }, "е́ркало"]] }
+            tr: { en: { examples: [jeans, mirror] }, es: { examples: [vaqueros, espejo] } }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Після голосної в кінці складу ", { letter: в }, " звучить як короткий ", { ipa: u̯ }, ":"]
+              en: ["After a vowel at the end of a syllable, ", { letter: в }, " sounds like a short ", { ipa: u̯ }, ":"]
+              es: ["Tras vocal a final de sílaba, ", { letter: в }, " suena como una ", { ipa: u̯ }, " breve:"]
+            ex: { examples: [["Льві", { target: в }], ["за́", { target: в }, "тра"]] }
+            tr: { en: { examples: [Lviv, tomorrow] }, es: { examples: [Lviv, mañana] } }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: сістра́, right: ["с", { target: е }, "стра́"], rule: { uk: ["без наголосу пишуть ту голосну, що в слові ", { term: се́стри }], en: ["unstressed, write the vowel of ", { term: се́стри }], es: ["en átona se escribe la vocal de ", { term: се́стри }] } }
+          - { level: A1, wrong: малако́, right: ["м", { target: о }, "л", { target: о }, "ко́"], rule: { uk: [{ letter: о }, " без наголосу вимовляють і пишуть як ", { letter: о }, "; ", { letter: а }, " тут — вплив російської"], en: ["unstressed ", { letter: о }, " is said and written as ", { letter: о }, "; ", { letter: а }, " here comes from Russian"], es: [{ letter: о }, " átona se pronuncia y escribe como ", { letter: о }, "; la ", { letter: а }, " viene del ruso"] } }
+          - { level: A0, speakers: [en, es], wrong: Мі студе́нти., right: ["М", { target: и }, " студе́нти."], rule: { en: [{ term: ми }, " (we) is written with ", { letter: и }, ", which is not ", { letter: і }], es: [{ term: ми }, " (nosotros) se escribe con ", { letter: и }, ", que no es ", { letter: і }] } }

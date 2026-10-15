@@ -1,0 +1,241 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.instrumental
+lang: uk
+kind: grammar
+tags: [cases, instrumental, nouns, pronouns, prepositions]
+concepts: [cases]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.declension-alternations, uk.pronouns.personal-pronouns, uk.prepositions.other-prepositions, uk.motion.go-ride]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "d92aba 8ba868 be640e 8b2104 461a10 44512f af5995", es: "d92aba 8ba868 be640e 8b2104 461a10 44512f af5995" }
+
+title: { uk: Орудний відмінок, en: Instrumental Case, es: El caso instrumental }
+summary:
+  lead:
+    uk: ["Орудний відмінок відповідає на питання ", { term: ким? }, " ", { term: чим? }, ": він називає знаряддя, професію й того, з ким щось роблять."]
+    en: ["The instrumental answers ", { term: ким? }, " (by whom?) and ", { term: чим? }, " (with what?): it names a tool, a job and the person you do something with."]
+    es: ["El instrumental responde a ", { term: ким? }, " y ", { term: чим? }, " (¿con quién?, ¿con qué?): nombra un instrumento, una profesión y la compañía."]
+  rule:
+    uk: ["Чоловічий і середній рід мають ", { term: -ом }, " (", { term: -ем }, "), жіночий — ", { term: -ою }, " (", { term: -ею }, "):"]
+    en: ["Masculine and neuter nouns take ", { term: -ом }, " (", { term: -ем }, "), feminine nouns ", { term: -ою }, " (", { term: -ею }, "):"]
+    es: ["Los masculinos y neutros toman ", { term: -ом }, " (", { term: -ем }, "); los femeninos, ", { term: -ою }, " (", { term: -ею }, "):"]
+  ex: { examples: [["Я пишу́ ", { target: ру́чкою }, "."], ["Він працю́є ", { target: лі́карем }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule:
+            uk: [{ term: -ом }, "; після м’якого чи шиплячого ", { term: -ем }]
+            en: [{ term: -ом }, "; after a soft consonant or ж, ч, ш, щ ", { term: -ем }]
+            es: [{ term: -ом }, "; tras consonante blanda o ж, ч, ш, щ, ", { term: -ем }]
+          ex: ["Він працю́є ", { target: лі́карем }, "."]
+          tr: { en: "He works as a doctor.", es: "Trabaja de médico." }
+        - level: A2
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: [{ mapping: [{ term: -а }, { term: -ою }] }, ", ", { mapping: [{ term: -я }, { term: -ею }] }]
+            en: [{ mapping: [{ term: -а }, { term: -ою }] }, ", ", { mapping: [{ term: -я }, { term: -ею }] }]
+            es: [{ mapping: [{ term: -а }, { term: -ою }] }, ", ", { mapping: [{ term: -я }, { term: -ею }] }]
+          ex: ["Я пишу́ ", { target: ру́чкою }, "."]
+          tr: { en: "I write with a pen.", es: "Escribo con bolígrafo." }
+        - level: A2
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule:
+            uk: [{ term: -ом }, ", ", { term: -ем }, ", ", { term: -ям }]
+            en: [{ term: -ом }, ", ", { term: -ем }, ", ", { term: -ям }]
+            es: [{ term: -ом }, ", ", { term: -ем }, ", ", { term: -ям }]
+          ex: ["Я ціка́влюся ", { target: мисте́цтвом }, "."]
+          tr: { en: "I'm interested in art.", es: "Me interesa el arte." }
+        - level: A2
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule:
+            uk: { alternatives: [{ term: -ами }, { term: -ями }] }
+            en: { alternatives: [{ term: -ами }, { term: -ями }] }
+            es: { alternatives: [{ term: -ами }, { term: -ями }] }
+          ex: ["Ді́ти малю́ють ", { target: олівця́ми }, "."]
+          tr: { en: "The children draw with pencils.", es: "Los niños dibujan con lápices." }
+        - level: A2
+          point: { uk: Займенники, en: Pronouns, es: Pronombres }
+          rule:
+            uk: { alternatives: [{ term: мно́ю }, { term: тобо́ю }, { term: ним }, { term: не́ю }, { term: на́ми }, { term: ва́ми }, { term: ни́ми }] }
+            en: { alternatives: [{ term: мно́ю }, { term: тобо́ю }, { term: ним }, { term: не́ю }, { term: на́ми }, { term: ва́ми }, { term: ни́ми }] }
+            es: { alternatives: [{ term: мно́ю }, { term: тобо́ю }, { term: ним }, { term: не́ю }, { term: на́ми }, { term: ва́ми }, { term: ни́ми }] }
+          ex: ["Ході́ ", { target: зі мно́ю }, "!"]
+          tr: { en: "Come with me!", es: "¡Ven conmigo!" }
+        - level: A2
+          point: { uk: Професія, en: Job, es: Profesión }
+          rule:
+            uk: [{ alternatives: [{ term: працюва́ти }, { term: ста́ти }] }, " ким?"]
+            en: [{ alternatives: [{ term: працюва́ти }, { term: ста́ти }] }, " as whom?"]
+            es: [{ alternatives: [{ term: працюва́ти }, { term: ста́ти }] }, " ¿de qué?"]
+          ex: ["Мико́ла хо́че ста́ти ", { target: викладаче́м }, "."]
+          tr: { en: "Mykola wants to become a lecturer.", es: "Mykola quiere ser profesor." }
+        - level: A2
+          point: { uk: З, en: З, es: З }
+          rule:
+            uk: [{ term: з }, " ким? з чим?"]
+            en: [{ term: з }, ": with whom? with what?"]
+            es: [{ term: з }, ": ¿con quién?, ¿con qué?"]
+          ex: ["Я п’ю чай ", { target: із лимо́ном }, "."]
+          tr: { en: "I drink tea with lemon.", es: "Tomo té con limón." }
+        - level: A2
+          point: { uk: Місце, en: Place, es: Lugar }
+          rule:
+            uk: { alternatives: [{ term: над }, { term: під }, { term: пе́ред }, { term: за }, { term: між }] }
+            en: { alternatives: [{ term: над }, { term: під }, { term: пе́ред }, { term: за }, { term: між }] }
+            es: { alternatives: [{ term: над }, { term: під }, { term: пе́ред }, { term: за }, { term: між }] }
+          ex: ["Ла́мпа ", { target: над столо́м }, "."]
+          tr: { en: "The lamp is above the table.", es: "La lámpara está encima de la mesa." }
+        - level: B1
+          point: { uk: Шлях і транспорт, en: Route and transport, es: Camino y transporte }
+          rule:
+            uk: "чим? — дорогою, транспортом"
+            en: "by what way or what transport?"
+            es: "¿por dónde?, ¿en qué transporte?"
+          ex: ["Ми ї́здимо ", { target: трамва́єм }, "."]
+          tr: { en: "We go by tram.", es: "Vamos en tranvía." }
+        - level: B1
+          point: { uk: Спосіб, en: Manner, es: Modo }
+          rule:
+            uk: [{ term: з }, ": як?"]
+            en: [{ term: з }, ": how?"]
+            es: [{ term: з }, ": ¿cómo?"]
+          ex: ["Він розмовля́є ", { target: з акце́нтом }, "."]
+          tr: { en: "He speaks with an accent.", es: "Habla con acento." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["мова: ", { term: украї́нською мо́вою }]
+            en: ["a language: ", { term: украї́нською мо́вою }]
+            es: ["un idioma: ", { term: украї́нською мо́вою }]
+          ex: ["Ми розмовля́ємо ", { target: украї́нською мо́вою }, "."]
+          tr: { en: "We speak Ukrainian.", es: "Hablamos ucraniano." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Орудний відповідає на питання ", { term: ким? }, " ", { term: чим? }, " і називає знаряддя, професію чи того, з ким щось роблять:"]
+              en: ["The instrumental answers ", { term: ким? }, " and ", { term: чим? }, " and names a tool, a job or the person you do something with:"]
+              es: ["El instrumental responde a ", { term: ким? }, " y ", { term: чим? }, " y nombra un instrumento, una profesión o con quién se hace algo:"]
+            ex: { examples: [["писа́ти ", { target: ру́чкою }], ["працюва́ти ", { target: лі́карем }], ["гуля́ти ", { target: з дру́гом }]] }
+            tr: { en: { examples: ["to write with a pen", "to work as a doctor", "to go for a walk with a friend"] }, es: { examples: ["escribir con bolígrafo", "trabajar de médico", "pasear con un amigo"] } }
+
+  - title: { uk: "Форма: іменники", en: "Form: nouns", es: "Forma: sustantivos" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: ins, label: { uk: Орудний, en: Instrumental, es: Instrumental }, features: { case: ins } }
+        rows:
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, тверда основа", en: "Masculine, hard stem", es: "Masculino, raíz dura" }, nom: { alternatives: [брат, студе́нт] }, ins: { alternatives: [["бра́т", { ending: ом }], ["студе́нт", { ending: ом }]] } }
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, м’яка основа", en: "Masculine, soft stem", es: "Masculino, raíz blanda" }, nom: { alternatives: [учи́тель, музе́й] }, ins: { alternatives: [["учи́тел", { ending: ем }], ["музе́", { ending: єм }]] } }
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід на ж, ч, ш, щ", en: "Masculine in ж, ч, ш, щ", es: "Masculino en ж, ч, ш, щ" }, nom: { alternatives: [виклада́ч, това́риш] }, ins: { alternatives: [["викладач", { ending: е́м }], ["това́риш", { ending: ем }]] } }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -а", en: "Feminine in -а", es: "Femenino en -а" }, nom: { alternatives: [ма́ма, ру́чка] }, ins: { alternatives: [["ма́м", { ending: ою }], ["ру́чк", { ending: ою }]] } }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -я, -ія", en: "Feminine in -я, -ія", es: "Femenino en -я, -ія" }, nom: { alternatives: [бабу́ся, Марі́я] }, ins: { alternatives: [["бабу́с", { ending: ею }], ["Марі́", { ending: єю }]] } }
+          - { level: A2, features: { gender: neut, number: sg }, group: { uk: "Середній рід", en: "Neuter", es: "Neutro" }, nom: { alternatives: [мі́сто, мо́ре, життя́] }, ins: { alternatives: [["мі́ст", { ending: ом }], ["мо́р", { ending: ем }], ["житт", { ending: я́м }]] } }
+          - { level: A2, features: { number: pl }, group: { uk: "Множина", en: "Plural", es: "Plural" }, nom: { alternatives: [дру́зі, книжки́] }, ins: { alternatives: [["дру́з", { ending: ями }], ["книжк", { ending: а́ми }]] } }
+          - { level: B1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід без закінчення", en: "Feminine with no ending", es: "Femenino sin terminación" }, nom: { alternatives: [о́сінь, ніч, ра́дість] }, ins: { alternatives: [["о́сін", { ending: ню }], ["ні́ч", { ending: чю }], ["ра́діст", { ending: ю }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Між голосним і ", { term: -ю }, " один приголосний подвоюється:"]
+              en: ["Between a vowel and ", { term: -ю }, ", a single consonant doubles:"]
+              es: ["Entre una vocal y ", { term: -ю }, ", una consonante sola se duplica:"]
+            ex: ["Ми милу́ємося ", { target: о́сінню }, "."]
+            tr: { en: "We admire the autumn.", es: "Admiramos el otoño." }
+
+  - title: { uk: "Форма: займенники", en: "Form: pronouns", es: "Forma: pronombres" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: ins, label: { uk: Орудний, en: Instrumental, es: Instrumental }, features: { case: ins } }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, nom: я, ins: мно́ю }
+          - { level: A2, features: { person: 2, number: sg }, nom: ти, ins: тобо́ю }
+          - { level: A2, features: { person: 3, number: sg, gender: [masc, neut] }, nom: { alternatives: [він, воно́] }, ins: ним }
+          - { level: A2, features: { person: 3, number: sg, gender: fem }, nom: вона́, ins: не́ю }
+          - { level: A2, features: { person: 1, number: pl }, nom: ми, ins: на́ми }
+          - { level: A2, features: { person: 2, number: pl }, nom: ви, ins: ва́ми }
+          - { level: A2, features: { person: 3, number: pl }, nom: вони́, ins: ни́ми }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: "професія, статус", en: "a job, a status", es: "una profesión, un estado" }
+            ex: ["Він працюва́в ", { target: ме́неджером }, "."]
+            tr: { en: "He worked as a manager.", es: "Trabajó de gerente." }
+          - level: A2
+            use: { uk: "знаряддя: чим?", en: "a tool: with what?", es: "un instrumento: ¿con qué?" }
+            ex: ["Студе́нт пи́ше ", { target: ново́ю ру́чкою }, "."]
+            tr: { en: "The student writes with a new pen.", es: "El estudiante escribe con un bolígrafo nuevo." }
+          - level: A2
+            use: { uk: ["після ", { alternatives: [{ term: керува́ти }, { term: ціка́витися }, { term: захо́плюватися }] }], en: ["after ", { alternatives: [{ term: керува́ти }, { term: ціка́витися }, { term: захо́плюватися }] }], es: ["después de ", { alternatives: [{ term: керува́ти }, { term: ціка́витися }, { term: захо́плюватися }] }] }
+            ex: ["Ми захо́плюємося ", { target: суча́сною му́зикою }, "."]
+            tr: { en: "We're keen on modern music.", es: "Nos apasiona la música actual." }
+          - level: A2
+            use: { uk: "мова: якою мовою?", en: "a language: in what language?", es: "un idioma: ¿en qué idioma?" }
+            ex: ["Ми вчимо́ся розмовля́ти ", { target: украї́нською мо́вою }, "."]
+            tr: { en: "We're learning to speak Ukrainian.", es: "Aprendemos a hablar ucraniano." }
+          - level: A2
+            use: { uk: [{ term: з }, ": з ким? з чим?"], en: [{ term: з }, ": with whom? with what?"], es: [{ term: з }, ": ¿con quién?, ¿con qué?"] }
+            ex: ["Дмитро́ розмовля́є ", { target: з Оле́ною }, "."]
+            tr: { en: "Dmytro is talking to Olena.", es: "Dmytro habla con Olena." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: над }, { term: під }, { term: пе́ред }, { term: за }, { term: між }] }, ": місце"], en: [{ alternatives: [{ term: над }, { term: під }, { term: пе́ред }, { term: за }, { term: між }] }, ": the place"], es: [{ alternatives: [{ term: над }, { term: під }, { term: пе́ред }, { term: за }, { term: між }] }, ": el lugar"] }
+            ex: [{ target: Між го́рами }, " тече́ рі́чка."]
+            tr: { en: "A river flows between the mountains.", es: "Entre las montañas corre un río." }
+          - level: A2
+            use: { uk: [{ term: пе́ред }, ": перед чим? (час)"], en: [{ term: пе́ред }, ": before (time)"], es: [{ term: пе́ред }, ": antes de (tiempo)"] }
+            ex: [{ target: Пе́ред обі́дом }, " тре́ба ми́ти ру́ки."]
+            tr: { en: "You should wash your hands before lunch.", es: "Hay que lavarse las manos antes de comer." }
+          - level: B1
+            use: { uk: "шлях: де? якою дорогою?", en: "the way: along where?", es: "el camino: ¿por dónde?" }
+            ex: ["Ми лю́бимо гуля́ти ", { target: ву́лицями Льво́ва }, "."]
+            tr: { en: "We like walking around the streets of Lviv.", es: "Nos gusta pasear por las calles de Lviv." }
+          - level: B1
+            use: { uk: "транспорт: чим?", en: "transport: by what?", es: "transporte: ¿en qué?" }
+            ex: ["Щодня́ ми ї́здимо ", { target: трамва́єм }, "."]
+            tr: { en: "We go by tram every day.", es: "Vamos en tranvía todos los días." }
+          - level: B1
+            use: { uk: [{ term: з }, ": як?"], en: [{ term: з }, ": how?"], es: [{ term: з }, ": ¿cómo?"] }
+            ex: ["Ді́ти їдя́ть ", { target: з апети́том }, "."]
+            tr: { en: "The children are eating with appetite.", es: "Los niños comen con apetito." }
+          - level: B1
+            use: { uk: [{ term: між }, ": стосунки"], en: [{ term: між }, ": relations between people"], es: [{ term: між }, ": relaciones entre personas"] }
+            ex: [{ target: Між дру́зями }, " нема́є таємни́ць."]
+            tr: { en: "There are no secrets between friends.", es: "Entre amigos no hay secretos." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Ми розмовля́ємо на украї́нській мо́ві., right: ["Ми розмовля́ємо ", { target: украї́нською мо́вою }, "."], rule: { uk: ["якою мовою? — орудний; ", { term: на украї́нській мо́ві }, " — з російської"], en: ["in what language? takes the instrumental; ", { term: на украї́нській мо́ві }, " comes from Russian"], es: ["«en qué idioma» lleva instrumental; ", { term: на украї́нській мо́ві }, " viene del ruso"] } }
+          - { level: A2, wrong: Я пишу́ ру́чка., right: ["Я пишу́ ", { target: ру́чкою }, "."], rule: { uk: [{ term: чим? }, " — орудний"], en: ["the tool, ", { term: чим? }, ", takes the instrumental"], es: ["el instrumento, ", { term: чим? }, ", va en instrumental"] } }
+          - { level: B1, wrong: Ми милу́ємося о́сінью., right: ["Ми милу́ємося ", { target: о́сінню }, "."], rule: { uk: ["між голосним і ", { term: -ю }, " приголосний подвоюється"], en: ["between a vowel and ", { term: -ю }, " the consonant doubles"], es: ["entre vocal y ", { term: -ю }, " la consonante se duplica"] } }
+          - { level: A2, speakers: [en, es], wrong: Я працю́ю як виклада́ч., right: ["Я працю́ю ", { target: викладаче́м }, "."], rule: { en: ["a job after ", { term: працюва́ти }, " is instrumental, without “as”"], es: ["la profesión tras ", { term: працюва́ти }, " va en instrumental, sin «como»"] } }
+          - { level: A2, speakers: [es], wrong: Я п’ю чай з лимо́н., right: ["Я п’ю чай ", { target: із лимо́ном }, "."], rule: { es: [{ term: з }, " con el sentido de «con» pide instrumental"] } }

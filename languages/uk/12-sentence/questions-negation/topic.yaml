@@ -1,0 +1,260 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.questions-negation
+lang: uk
+kind: grammar
+tags: [questions, negation, sentence, question-words]
+concepts: [questions-negatives]
+related: [uk.sentence.word-order, uk.pronouns.question-words, uk.pronouns.negative-pronouns, uk.sentence.u-mene-ye, uk.nouns-cases.genitive]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "2fab35 2a3f5c 9d0d40 cc0255 a6d41b 2ba2d5 b6e36f", es: "2fab35 2a3f5c 9d0d40 cc0255 a6d41b 2ba2d5 b6e36f" }
+
+title: { uk: Питання й заперечення, en: Questions and Negation, es: Preguntas y negación }
+summary:
+  lead:
+    uk: ["Питання будуємо інтонацією, словом ", { term: чи }, " або питальним словом на початку, а заперечення — часткою ", { term: не }, " перед дієсловом."]
+    en: ["A question needs only a rising voice, ", { term: чи }, " or a question word at the start; a negative puts ", { term: не }, " before the verb."]
+    es: ["Una pregunta se hace con la entonación, con ", { term: чи }, " o con una palabra interrogativa al principio; la negación pone ", { term: не }, " delante del verbo."]
+  rule:
+    uk: ["У питанні порядок слів не змінюється, а ", { term: не }, " стоїть перед дієсловом:"]
+    en: ["A question keeps the word order of a statement, and ", { term: не }, " goes before the verb:"]
+    es: ["La pregunta mantiene el orden de la afirmación, y ", { term: не }, " va delante del verbo:"]
+  ex: { examples: [["Ти ", { target: розмовля́єш }, " украї́нською?"], ["Ні, я ", { target: не розмовля́ю }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Інтонація, en: Intonation, es: Entonación }
+          rule:
+            uk: "той самий порядок, голос угору"
+            en: "the same order, the voice rises"
+            es: "el mismo orden, la voz sube"
+          ex: ["Це наш авто́бус?", { intonation: rise }]
+          tr: { en: "Is this our bus?", es: "¿Este es nuestro autobús?" }
+        - level: A1
+          point: { term: чи }
+          rule:
+            uk: [{ term: чи }, " на початку питання «так чи ні»"]
+            en: [{ term: чи }, " at the start of a yes-no question"]
+            es: [{ term: чи }, " al principio de una pregunta de sí o no"]
+          ex: [{ target: Чи }, " студе́нт відповіда́є?"]
+          tr: { en: "Is the student answering?", es: "¿El estudiante responde?" }
+        - level: A1
+          point: { uk: Питальне слово, en: Question word, es: Interrogativo }
+          rule:
+            uk: [{ alternatives: [{ term: хто }, { term: що }, { term: де }, { term: куди́ }, { term: зві́дки }] }, " на початку"]
+            en: [{ alternatives: [{ term: хто }, { term: що }, { term: де }, { term: куди́ }, { term: зві́дки }] }, " at the start"]
+            es: [{ alternatives: [{ term: хто }, { term: що }, { term: де }, { term: куди́ }, { term: зві́дки }] }, " al principio"]
+          ex: [{ target: Куди́ }, " ви ї́дете?"]
+          tr: { en: "Where are you going?", es: "¿Adónde van?" }
+        - level: A2
+          point: { uk: Питальне слово, en: Question word, es: Interrogativo }
+          rule:
+            uk: [{ alternatives: [{ term: кому́ }, { term: з ким }, { term: про кого́ }] }, ": прийменник перед словом"]
+            en: [{ alternatives: [{ term: кому́ }, { term: з ким }, { term: про кого́ }] }, ": the preposition comes first"]
+            es: [{ alternatives: [{ term: кому́ }, { term: з ким }, { term: про кого́ }] }, ": la preposición va delante"]
+          ex: [{ target: З ким }, " ти розмовля́єш?"]
+          tr: { en: "Who are you talking to?", es: "¿Con quién hablas?" }
+        - level: A2
+          point: { uk: Питальне слово, en: Question word, es: Interrogativo }
+          rule:
+            uk: [{ alternatives: [{ term: яки́й }, { term: яка́ }, { term: яке́ }, { term: які́ }] }, " за родом і числом"]
+            en: [{ alternatives: [{ term: яки́й }, { term: яка́ }, { term: яке́ }, { term: які́ }] }, " by gender and number"]
+            es: [{ alternatives: [{ term: яки́й }, { term: яка́ }, { term: яке́ }, { term: які́ }] }, " según el género y el número"]
+          ex: [{ target: Яка́ }, " сього́дні пого́да?"]
+          tr: { en: "What's the weather like today?", es: "¿Qué tiempo hace hoy?" }
+        - level: A1
+          point: { uk: Заперечення, en: Negation, es: Negación }
+          rule:
+            uk: [{ term: не }, " перед дієсловом"]
+            en: [{ term: не }, " before the verb"]
+            es: [{ term: не }, " delante del verbo"]
+          ex: ["Він ", { target: не чека́є }, "."]
+          tr: { en: "He isn't waiting.", es: "No espera." }
+        - level: A1
+          point: { uk: Відповідь, en: Answer, es: Respuesta }
+          rule:
+            uk: [{ alternatives: [{ term: так }, { term: ні }] }, " і дієслово"]
+            en: [{ alternatives: [{ term: так }, { term: ні }] }, " with the verb"]
+            es: [{ alternatives: [{ term: так }, { term: ні }] }, " con el verbo"]
+          ex: { exchange: ["Ти зна́єш?", [{ target: Так }, ", зна́ю."]] }
+          tr: { en: { exchange: ["Do you know?", "Yes, I do."] }, es: { exchange: ["¿Lo sabes?", "Sí, lo sé."] } }
+        - level: B1
+          point: { term: нема́є }
+          rule:
+            uk: [{ alternatives: [{ term: нема́є }, { term: не було́ }, { term: не бу́де }] }, " і родовий відмінок"]
+            en: [{ alternatives: [{ term: нема́є }, { term: не було́ }, { term: не бу́де }] }, " with the genitive"]
+            es: [{ alternatives: [{ term: нема́є }, { term: не було́ }, { term: не бу́де }] }, " con el genitivo"]
+          ex: ["За́втра ", { target: конце́рту не бу́де }, "."]
+          tr: { en: "There won't be a concert tomorrow.", es: "Mañana no habrá concierto." }
+        - level: B1
+          point: { uk: Подвійне заперечення, en: Double negation, es: Doble negación }
+          rule:
+            uk: [{ alternatives: [{ term: ніхто́ }, { term: нічо́го }, { term: ніко́ли }] }, " і ", { term: не }]
+            en: [{ alternatives: [{ term: ніхто́ }, { term: нічо́го }, { term: ніко́ли }] }, " with ", { term: не }]
+            es: [{ alternatives: [{ term: ніхто́ }, { term: нічо́го }, { term: ніко́ли }] }, " con ", { term: не }]
+          ex: ["Ми ще ", { target: нічо́го не приготува́ли }, "."]
+          tr: { en: "We haven't made anything yet.", es: "Todavía no hemos preparado nada." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["ствердна відповідь — ", { term: так }]
+            en: ["“yes” is ", { term: так }]
+            es: ["«sí» es ", { term: так }]
+          ex: [{ target: Так }, ", я тут."]
+          tr: { en: "Yes, I'm here.", es: "Sí, estoy aquí." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Питання має той самий порядок слів, що й ствердження. У розмові його показує інтонація: голос іде вгору."
+              en: "A question has the same word order as a statement. In speech the rising voice makes it a question."
+              es: "La pregunta tiene el mismo orden que la afirmación. Al hablar, la voz que sube la convierte en pregunta."
+            ex: ["Ви украї́нець?", { intonation: rise }]
+            tr: { en: "Are you Ukrainian?", es: "¿Es usted ucraniano?" }
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: Не }, " стоїть безпосередньо перед дієсловом, яке заперечує."]
+              en: [{ term: Не }, " goes right before the verb it negates."]
+              es: [{ term: Не }, " va justo delante del verbo que niega."]
+            ex: ["Сього́дні ми ", { target: не працю́ємо }, "."]
+            tr: { en: "We aren't working today.", es: "Hoy no trabajamos." }
+
+  - title: { uk: Питання, en: Questions, es: Preguntas }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            form: { uk: "інтонація", en: "intonation alone", es: "solo la entonación" }
+            ex: ["Ти розмовля́єш украї́нською?", { intonation: rise }]
+            tr: { en: "Do you speak Ukrainian?", es: "¿Hablas ucraniano?" }
+          - level: A1
+            form: { uk: [{ term: чи }, " на початку"], en: [{ term: чи }, " at the start"], es: [{ term: чи }, " al principio"] }
+            ex: [{ target: Чи }, " це наш авто́бус?"]
+            tr: { en: "Is this our bus?", es: "¿Este es nuestro autobús?" }
+          - level: A1
+            form: { uk: [{ term: хто }, ", ", { term: що }], en: [{ term: хто }, " (who), ", { term: що }, " (what)"], es: [{ term: хто }, " (quién), ", { term: що }, " (qué)"] }
+            ex: { examples: [[{ target: Хто }, " це?"], [{ target: Що }, " тобі́ купи́ти?"]] }
+            tr: { en: { examples: ["Who's this?", "What shall I buy you?"] }, es: { examples: ["¿Quién es?", "¿Qué te compro?"] } }
+          - level: A1
+            form: { uk: [{ term: де }, ", ", { term: куди́ }, ", ", { term: зві́дки }], en: [{ term: де }, " (where), ", { term: куди́ }, " (where to), ", { term: зві́дки }, " (where from)"], es: [{ term: де }, " (dónde), ", { term: куди́ }, " (adónde), ", { term: зві́дки }, " (de dónde)"] }
+            ex: { examples: [[{ target: Де }, " ви були́ вчо́ра?"], [{ target: Зві́дки }, " ти?"]] }
+            tr: { en: { examples: ["Where were you yesterday?", "Where are you from?"] }, es: { examples: ["¿Dónde estuvieron ayer?", "¿De dónde eres?"] } }
+          - level: A2
+            form: { uk: [{ term: кому́ }, ", ", { term: з ким }, ", ", { term: про кого́ }], en: [{ term: кому́ }, " (to whom), ", { term: з ким }, " (with whom), ", { term: про кого́ }, " (about whom)"], es: [{ term: кому́ }, " (a quién), ", { term: з ким }, " (con quién), ", { term: про кого́ }, " (de quién)"] }
+            ex: { examples: [[{ target: Кому́ }, " ви телефону́єте?"], [{ target: Про кого́ }, " ви гово́рите?"]] }
+            tr: { en: { examples: ["Who are you calling?", "Who are you talking about?"] }, es: { examples: ["¿A quién llama?", "¿De quién hablan?"] } }
+          - level: A2
+            form: { uk: [{ term: яки́й }, ", ", { term: яка́ }, ", ", { term: яке́ }, ", ", { term: які́ }], en: [{ term: яки́й }, ", ", { term: яка́ }, ", ", { term: яке́ }, ", ", { term: які́ }, " (which, what kind)"], es: [{ term: яки́й }, ", ", { term: яка́ }, ", ", { term: яке́ }, ", ", { term: які́ }, " (qué, cuál)"] }
+            ex: [{ target: Яки́й }, " авто́бус зупиня́ється тут?"]
+            tr: { en: "Which bus stops here?", es: "¿Qué autobús para aquí?" }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: Чи }, " звучить нейтрально й трохи офіційно; у розмові вистачає інтонації."]
+              en: [{ term: Чи }, " sounds neutral and a little formal; in conversation the rising voice is enough."]
+              es: [{ term: Чи }, " suena neutro y algo formal; en la conversación basta la entonación."]
+          - type: rule
+            level: A2
+            text:
+              uk: "Прийменник стоїть перед питальним словом:"
+              en: "A preposition goes before the question word:"
+              es: "La preposición va delante de la palabra interrogativa:"
+            ex: [{ target: З ким }, " ти розмовля́єш?"]
+            tr: { en: "Who are you talking to?", es: "¿Con quién hablas?" }
+          - type: note
+            level: A1
+            text:
+              uk: ["Усі питальні слова: ", { link: Питальні слова, to: uk.pronouns.question-words }, "."]
+              en: ["All the question words: ", { link: Question Words, to: uk.pronouns.question-words }, "."]
+              es: ["Todas las palabras interrogativas: ", { link: Interrogativos, to: uk.pronouns.question-words }, "."]
+
+  - title: { uk: Відповіді, en: Answers, es: Respuestas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Відповідь, en: Answer, es: Respuesta } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: [{ term: так }, " і дієслово"], en: [{ term: так }, " (yes) with the verb"], es: [{ term: так }, " (sí) con el verbo"] }
+            ex: { exchange: ["Ти розумі́єш?", [{ target: Так }, ", розумі́ю."]] }
+            tr: { en: { exchange: ["Do you understand?", "Yes, I do."] }, es: { exchange: ["¿Entiendes?", "Sí, entiendo."] } }
+          - level: A1
+            use: { uk: [{ term: ні }, " і заперечення"], en: [{ term: ні }, " (no) with the negative"], es: [{ term: ні }, " (no) con la negación"] }
+            ex: { exchange: ["Ви зна́єте Оле́га?", [{ target: Ні }, ", не зна́ю."]] }
+            tr: { en: { exchange: ["Do you know Oleh?", "No, I don't."] }, es: { exchange: ["¿Conoce a Oleh?", "No, no lo conozco."] } }
+          - level: A1
+            use: { uk: "лише дієслово", en: "the verb alone", es: "solo el verbo" }
+            ex: { exchange: ["Ти чека́єш на мене́?", [{ target: Чека́ю }, "."]] }
+            tr: { en: { exchange: ["Are you waiting for me?", "I am."] }, es: { exchange: ["¿Me esperas?", "Sí, te espero."] } }
+
+  - title: { uk: Заперечення, en: Negation, es: Negación }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            form: { uk: [{ term: не }, " перед дієсловом"], en: [{ term: не }, " before the verb"], es: [{ term: не }, " delante del verbo"] }
+            ex: ["Студе́нт ", { target: не відповіда́є }, "."]
+            tr: { en: "The student isn't answering.", es: "El estudiante no responde." }
+          - level: B1
+            form: { uk: [{ term: нема́є }, " і родовий"], en: [{ term: нема́є }, " (there is no) with the genitive"], es: [{ term: нема́є }, " (no hay) con el genitivo"] }
+            ex: ["Тут ", { target: нема́є зупи́нки }, "."]
+            tr: { en: "There's no stop here.", es: "Aquí no hay parada." }
+          - level: B1
+            form: { uk: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " і родовий"], en: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " (there was, will be no) with the genitive"], es: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " (no hubo, no habrá) con el genitivo"] }
+            ex: { examples: [["Учо́ра ", { target: уро́ку не було́ }, "."], ["За́втра ", { target: конце́рту не бу́де }, "."]] }
+            tr: { en: { examples: ["There was no class yesterday.", "There won't be a concert tomorrow."] }, es: { examples: ["Ayer no hubo clase.", "Mañana no habrá concierto."] } }
+          - level: B1
+            form: { uk: [{ alternatives: [{ term: ніхто́ }, { term: нічо́го }, { term: ніко́ли }, { term: ніде́ }] }, " і ", { term: не }], en: [{ alternatives: [{ term: ніхто́ }, { term: нічо́го }, { term: ніко́ли }, { term: ніде́ }] }, " with ", { term: не }], es: [{ alternatives: [{ term: ніхто́ }, { term: нічо́го }, { term: ніко́ли }, { term: ніде́ }] }, " con ", { term: не }] }
+            ex: { examples: [[{ target: Ніхто́ не відповіда́є }, "."], ["Він ", { target: ніко́ли не ку́рить }, "."]] }
+            tr: { en: { examples: ["Nobody's answering.", "He never smokes."] }, es: { examples: ["Nadie contesta.", "Él nunca fuma."] } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: [{ alternatives: [{ term: Ніхто́ }, { term: нічо́го }, { term: ніко́ли }] }, " не замінюють ", { term: не }, ": дієслово все одно має ", { term: не }, "."]
+              en: [{ alternatives: [{ term: Ніхто́ }, { term: нічо́го }, { term: ніко́ли }] }, " never replace ", { term: не }, ": the verb keeps its ", { term: не }, "."]
+              es: [{ alternatives: [{ term: Ніхто́ }, { term: нічо́го }, { term: ніко́ли }] }, " no sustituyen a ", { term: не }, ": el verbo mantiene su ", { term: не }, "."]
+            ex: ["Вона́ ", { target: нічо́го не зрозумі́ла }, "."]
+            tr: { en: "She didn't understand anything.", es: "Ella no entendió nada." }
+          - type: note
+            level: B1
+            text:
+              uk: ["Заперечні займенники: ", { link: "Ніхто, ніщо", to: uk.pronouns.negative-pronouns }, "."]
+              en: ["The negative pronouns: ", { link: "Nobody, Nothing", to: uk.pronouns.negative-pronouns }, "."]
+              es: ["Los pronombres negativos: ", { link: "Nadie, nada", to: uk.pronouns.negative-pronouns }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: "Да, я зна́ю.", right: [{ target: Так }, ", я зна́ю."], rule: { uk: [{ term: так }, " — українське слово, а ", { term: да }, " — російське"], en: [{ term: так }, " is the Ukrainian yes; ", { term: да }, " is Russian"], es: [{ term: так }, " es el «sí» ucraniano; ", { term: да }, " es una palabra rusa"] } }
+          - { level: A1, speakers: [es], wrong: Я ні розумі́ю., right: ["Я ", { target: не }, " розумі́ю."], rule: { es: ["el «no» delante del verbo es ", { term: не }, "; ", { term: ні }, " es el «no» de la respuesta"] } }
+          - { level: B1, speakers: [en], wrong: Я ба́чу нікого́., right: ["Я ", { target: нікого́ не ба́чу }, "."], rule: { en: ["with ", { term: нікого́ }, " the verb keeps ", { term: не }, ": two negatives make one"] } }
+          - { level: B1, wrong: За́втра конце́рт не бу́де., right: ["За́втра ", { target: конце́рту }, " не бу́де."], rule: { uk: [{ term: не бу́де }, " стоїть із родовим відмінком"], en: [{ term: не бу́де }, " takes the genitive"], es: [{ term: не бу́де }, " lleva el genitivo"] } }

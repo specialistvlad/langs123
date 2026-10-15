@@ -283,7 +283,11 @@
               "enum": [
                 "nom",
                 "acc",
-                "gen"
+                "gen",
+                "dat",
+                "ins",
+                "loc",
+                "voc"
               ]
             },
             {
@@ -292,7 +296,32 @@
                 "enum": [
                   "nom",
                   "acc",
-                  "gen"
+                  "gen",
+                  "dat",
+                  "ins",
+                  "loc",
+                  "voc"
+                ]
+              },
+              "minItems": 2,
+              "uniqueItems": true
+            }
+          ]
+        },
+        "animacy": {
+          "oneOf": [
+            {
+              "enum": [
+                "anim",
+                "inan"
+              ]
+            },
+            {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "anim",
+                  "inan"
                 ]
               },
               "minItems": 2,

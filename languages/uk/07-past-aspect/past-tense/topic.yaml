@@ -1,0 +1,243 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.past-aspect.past-tense
+lang: uk
+kind: grammar
+tags: [verbs, tenses, past]
+concepts: [past-tense]
+related: [uk.past-aspect.aspect, uk.verbs-present.present-conjugation, uk.verbs-present.reflexive-sia, uk.future-imperative-conditional.conditional]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "6fd2b8 e0bcce cc0e88 65cee3 1b1699 32fbaa 3eff55 b9c36a 146a4b", es: "6fd2b8 e0bcce cc0e88 65cee3 1b1699 32fbaa 3eff55 b9c36a 146a4b" }
+
+title: { uk: Минулий час, en: Past Tense, es: El pasado }
+summary:
+  lead:
+    uk: ["Минулий час змінюється не за особами, а за родом і числом: ", { term: чита́в }, ", ", { term: чита́ла }, ", ", { term: чита́ло }, ", ", { term: чита́ли }, "."]
+    en: ["The past tense changes by gender and number, not by person: ", { term: чита́в }, ", ", { term: чита́ла }, ", ", { term: чита́ло }, ", ", { term: чита́ли }, "."]
+    es: ["El pasado cambia según el género y el número, no según la persona: ", { term: чита́в }, ", ", { term: чита́ла }, ", ", { term: чита́ло }, ", ", { term: чита́ли }, "."]
+  rule:
+    uk: ["Дієслово узгоджується з родом того, хто діє, навіть після ", { term: я }, " і ", { term: ти }, ":"]
+    en: ["The verb agrees with the gender of the doer, even after ", { term: я }, " (I) and ", { term: ти }, " (you):"]
+    es: ["El verbo concuerda con el género de quien actúa, también después de ", { term: я }, " (yo) y ", { term: ти }, " (tú):"]
+  ex: { examples: [["Тара́с: «Я ", { target: чита́в }, "»."], ["Оле́на: «Я ", { target: чита́ла }, "»."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule: { uk: { mapping: [{ term: -ти }, { term: -в }] }, en: { mapping: [{ term: -ти }, { term: -в }] }, es: { mapping: [{ term: -ти }, { term: -в }] } }
+          ex: ["Учо́ра Тара́с ", { target: чита́в }, "."]
+          tr: { en: "Taras was reading yesterday.", es: "Ayer Taras estuvo leyendo." }
+        - level: A1
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule: { uk: { mapping: [{ term: -ти }, { term: -ла }] }, en: { mapping: [{ term: -ти }, { term: -ла }] }, es: { mapping: [{ term: -ти }, { term: -ла }] } }
+          ex: ["Оле́на ", { target: працюва́ла }, " вдо́ма."]
+          tr: { en: "Olena worked from home.", es: "Olena trabajaba en casa." }
+        - level: A1
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule: { uk: { mapping: [{ term: -ти }, { term: -ло }] }, en: { mapping: [{ term: -ти }, { term: -ло }] }, es: { mapping: [{ term: -ти }, { term: -ло }] } }
+          ex: ["Учо́ра ", { target: було́ }, " хо́лодно."]
+          tr: { en: "It was cold yesterday.", es: "Ayer hacía frío." }
+        - level: A1
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule: { uk: { mapping: [{ term: -ти }, { term: -ли }] }, en: { mapping: [{ term: -ти }, { term: -ли }] }, es: { mapping: [{ term: -ти }, { term: -ли }] } }
+          ex: ["Ми ", { target: гуля́ли }, " в па́рку."]
+          tr: { en: "We went for a walk in the park.", es: "Paseamos por el parque." }
+        - level: A1
+          point: { uk: "Ввічливе Ви", en: "Polite Ви", es: "Ви de cortesía" }
+          rule: { uk: "з ввічливим Ви дієслово стоїть у множині", en: "with polite Ви, the verb is plural", es: "con el Ви de cortesía, el verbo va en plural" }
+          ex: ["Ви ", { target: були́ }, " в Ки́єві?"]
+          tr: { en: "Have you been to Kyiv?", es: "¿Ha estado usted en Kiev?" }
+        - level: A1
+          point: { uk: "Дієслова на -ся", en: "Verbs in -ся", es: "Verbos en -ся" }
+          rule: { uk: { alternatives: [{ term: -вся }, { term: -лася }, { term: -лися }] }, en: { alternatives: [{ term: -вся }, { term: -лася }, { term: -лися }] }, es: { alternatives: [{ term: -вся }, { term: -лася }, { term: -лися }] } }
+          ex: ["Він ду́же ", { target: смія́вся }, "."]
+          tr: { en: "He laughed a lot.", es: "Se rio mucho." }
+        - level: A2
+          point: { uk: "Особливі форми", en: "Special forms", es: "Formas especiales" }
+          rule: { uk: [{ mapping: [{ term: іти́ }, { term: ішо́в }] }, ", ", { mapping: [{ term: могти́ }, { term: міг }] }], en: [{ mapping: [{ term: іти́ }, { term: ішо́в }] }, ", ", { mapping: [{ term: могти́ }, { term: міг }] }], es: [{ mapping: [{ term: іти́ }, { term: ішо́в }] }, ", ", { mapping: [{ term: могти́ }, { term: міг }] }] }
+          ex: ["Я не ", { target: міг }, " прийти́."]
+          tr: { en: "I couldn't come.", es: "No pude venir." }
+        - level: B1
+          point: { uk: Вид, en: Aspect, es: Aspecto }
+          rule: { uk: "обидва види мають минулий час", en: "both aspects have a past tense", es: "los dos aspectos tienen pasado" }
+          ex: { contrast: [["Я ", { target: чита́в }, " кни́жку"], ["Я ", { target: прочита́в }, " кни́жку"]] }
+          tr: { en: { contrast: ["I was reading the book", "I read the book to the end"] }, es: { contrast: ["Leía el libro", "Terminé de leer el libro"] } }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: ["жінка каже ", { term: я була́ }], en: ["a woman says ", { term: я була́ }], es: ["una mujer dice ", { term: я була́ }] }
+          ex: ["Оле́на: «Я ", { target: була́ }, " вдо́ма»."]
+          tr: { en: "Olena: “I was at home.”", es: "Olena: «Estaba en casa»." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Минулий час не має закінчень особи: форму вибирають за родом і числом того, хто діє."
+              en: "The past tense has no person endings: the form follows the gender and number of the doer."
+              es: "El pasado no tiene terminaciones de persona: la forma depende del género y el número de quien actúa."
+            ex: { examples: [["Він ", { target: чита́в }, "."], ["Вона́ ", { target: чита́ла }, "."], ["Вони́ ", { target: чита́ли }, "."]] }
+            tr: { en: { examples: ["He was reading.", "She was reading.", "They were reading."] }, es: { examples: ["Él leía.", "Ella leía.", "Ellos leían."] } }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Форму утворюють від інфінітива: замість ", { term: -ти }, " стає ", { term: -в }, ", ", { term: -ла }, ", ", { term: -ло }, " чи ", { term: -ли }, "."]
+              en: ["The form comes from the infinitive: ", { term: -ти }, " becomes ", { term: -в }, ", ", { term: -ла }, ", ", { term: -ло }, " or ", { term: -ли }, "."]
+              es: ["La forma sale del infinitivo: ", { term: -ти }, " pasa a ", { term: -в }, ", ", { term: -ла }, ", ", { term: -ло }, " o ", { term: -ли }, "."]
+            ex: { mapping: [чита́ти, { target: чита́в }] }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Після ", { term: я }, " і ", { term: ти }, " рід показує, хто говорить або до кого говорять:"]
+              en: ["After ", { term: я }, " (I) and ", { term: ти }, " (you), the gender shows who speaks or who is spoken to:"]
+              es: ["Después de ", { term: я }, " (yo) y ", { term: ти }, " (tú), el género muestra quién habla o a quién se habla:"]
+            ex: ["Окса́но, ти ", { target: обі́дала }, "?"]
+            tr: { en: "Oksana, have you had lunch?", es: "Oksana, ¿ya almorzaste?" }
+
+  - title: { uk: "Форма: рід і число", en: "Form: gender and number", es: "Forma: género y número" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто, en: Who, es: Quién } }
+          - { key: read, label: чита́ти }
+          - { key: work, label: працюва́ти }
+          - { key: be, label: бу́ти }
+        rows:
+          - { level: A1, features: { number: sg, gender: masc }, who: { alternatives: [я, ти, він] }, read: [чита́, { ending: в }], work: [працюва́, { ending: в }], be: був }
+          - { level: A1, features: { number: sg, gender: fem }, who: { alternatives: [я, ти, вона́] }, read: [чита́, { ending: ла }], work: [працюва́, { ending: ла }], be: [бу, { ending: ла́ }] }
+          - { level: A1, features: { number: sg, gender: neut }, who: воно́, read: [чита́, { ending: ло }], work: [працюва́, { ending: ло }], be: [бу, { ending: ло́ }] }
+          - { level: A1, features: { number: pl }, who: { alternatives: [ми, ви, Ви, вони́] }, read: [чита́, { ending: ли }], work: [працюва́, { ending: ли }], be: [бу, { ending: ли́ }] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Ввічливе ", { term: Ви }, " до однієї особи має форму множини:"]
+              en: ["Polite ", { term: Ви }, ", even to one person, takes the plural form:"]
+              es: ["El ", { term: Ви }, " de cortesía, aunque se dirija a una sola persona, lleva la forma del plural:"]
+            ex: ["Па́не Іва́не, Ви вже ", { target: сні́дали }, "?"]
+            tr: { en: "Mr Ivan, have you had breakfast yet?", es: "Señor Ivan, ¿ya desayunó usted?" }
+
+  - title: { uk: "Форма: дієслова на -ся", en: "Form: verbs in -ся", es: "Forma: verbos en -ся" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто, en: Who, es: Quién } }
+          - { key: laugh, label: смія́тися }
+          - { key: wash, label: умива́тися }
+        rows:
+          - { level: A1, features: { number: sg, gender: masc }, who: { alternatives: [я, ти, він] }, laugh: [смія́, { ending: вся }], wash: [умива́, { ending: вся }] }
+          - { level: A1, features: { number: sg, gender: fem }, who: { alternatives: [я, ти, вона́] }, laugh: [смія́, { ending: лася }], wash: [умива́, { ending: лася }] }
+          - { level: A1, features: { number: sg, gender: neut }, who: воно́, laugh: [смія́, { ending: лося }], wash: [умива́, { ending: лося }] }
+          - { level: A1, features: { number: pl }, who: { alternatives: [ми, ви, Ви, вони́] }, laugh: [смія́, { ending: лися }], wash: [умива́, { ending: лися }] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Постфікс ", { term: -ся }, " стоїть після закінчення: ", { term: -вся }, ", ", { term: -лася }, ", ", { term: -лося }, ", ", { term: -лися }, "."]
+              en: ["The postfix ", { term: -ся }, " comes after the ending: ", { term: -вся }, ", ", { term: -лася }, ", ", { term: -лося }, ", ", { term: -лися }, "."]
+              es: ["El posfijo ", { term: -ся }, " va después de la terminación: ", { term: -вся }, ", ", { term: -лася }, ", ", { term: -лося }, ", ", { term: -лися }, "."]
+            ex: ["Ді́ти ", { target: смія́лися }, "."]
+            tr: { en: "The children were laughing.", es: "Los niños se reían." }
+
+  - title: { uk: "Форма: особливі дієслова", en: "Form: special verbs", es: "Forma: verbos especiales" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: verb, label: { uk: Дієслово, en: Verb, es: Verbo } }
+          - { key: masc, label: { uk: "Чоловічий рід", en: Masculine, es: Masculino }, features: { number: sg, gender: masc } }
+          - { key: fem, label: { uk: "Жіночий рід", en: Feminine, es: Femenino }, features: { number: sg, gender: fem } }
+          - { key: pl, label: { uk: Множина, en: Plural, es: Plural }, features: { number: pl } }
+        rows:
+          - { level: A2, verb: { alternatives: [іти́, йти] }, masc: { alternatives: [ішо́в, йшов] }, fem: { alternatives: [ішла́, йшла] }, pl: { alternatives: [ішли́, йшли] } }
+          - { level: A2, verb: могти́, masc: міг, fem: могла́, pl: могли́ }
+          - { level: B1, verb: нести́, masc: ніс, fem: несла́, pl: несли́ }
+          - { level: B1, verb: допомогти́, masc: допомі́г, fem: допомогла́, pl: допомогли́ }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Форма з ", { term: й- }, " стоїть після голосного, з ", { term: і- }, " — після приголосного:"]
+              en: ["The form with ", { term: й- }, " follows a vowel, the form with ", { term: і- }, " a consonant:"]
+              es: ["La forma con ", { term: й- }, " va tras una vocal; la forma con ", { term: і- }, ", tras una consonante:"]
+            ex: { examples: [["Я ", { target: йшов }, " додо́му."], ["Він ", { target: ішо́в }, " додо́му."]] }
+            tr: { en: { examples: ["I was walking home.", "He was walking home."] }, es: { examples: ["Yo iba a casa.", "Él iba a casa."] } }
+          - type: note
+            level: B1
+            text:
+              uk: ["Дієслова з основою на приголосний не мають ", { term: -в }, " у чоловічому роді: ", { term: ніс }, ", ", { term: міг }, ", ", { term: допомі́г }, "."]
+              en: ["Verbs whose stem ends in a consonant drop the ", { term: -в }, " in the masculine: ", { term: ніс }, ", ", { term: міг }, ", ", { term: допомі́г }, "."]
+              es: ["Los verbos cuya raíz acaba en consonante no llevan ", { term: -в }, " en masculino: ", { term: ніс }, ", ", { term: міг }, ", ", { term: допомі́г }, "."]
+            ex: ["Друг ", { target: допомі́г }, " мені́."]
+            tr: { en: "My friend helped me.", es: "Mi amigo me ayudó." }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: "подія в минулому", en: "an event in the past", es: "un hecho del pasado" }
+            ex: ["Учо́ра ми ", { target: були́ }, " в теа́трі."]
+            tr: { en: "We were at the theatre yesterday.", es: "Ayer estuvimos en el teatro." }
+          - level: A1
+            use: { uk: "дія, що тривала", en: "an action that went on for some time", es: "una acción que duró un tiempo" }
+            ex: ["Уве́чері я ", { target: слу́хала }, " му́зику."]
+            tr: { en: "In the evening I listened to music.", es: "Por la noche escuché música." }
+          - level: A2
+            use: { uk: ["звичка в минулому, із ", { alternatives: [{ term: ча́сто }, { term: щодня́ }] }], en: ["a past habit, with ", { alternatives: [{ term: ча́сто }, { term: щодня́ }] }], es: ["una costumbre del pasado, con ", { alternatives: [{ term: ча́сто }, { term: щодня́ }] }] }
+            ex: ["У дити́нстві я ча́сто ", { target: ходи́в }, " до бабу́сі."]
+            tr: { en: "As a child I often went to my grandmother's.", es: "De niño iba a menudo a casa de mi abuela." }
+          - level: B1
+            use: { uk: ["одна завершена дія: доконаний вид, див. ", { link: "Вид дієслова: доконаний і недоконаний", to: uk.past-aspect.aspect }], en: ["one finished action: the perfective, see ", { link: "Aspect: Perfective and Imperfective", to: uk.past-aspect.aspect }], es: ["una acción terminada: el perfectivo, ver ", { link: "El aspecto: perfectivo e imperfectivo", to: uk.past-aspect.aspect }] }
+            ex: ["Учо́ра я ", { target: поба́чила }, " Андрі́я."]
+            tr: { en: "I saw Andrii yesterday.", es: "Ayer vi a Andrii." }
+
+  - title: { uk: "Слова-сигнали", en: "Signal words", es: "Palabras clave" }
+    role: signals
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { uk: Слово, en: Word, es: Palabra } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            word: { alternatives: [учо́ра, позавчо́ра] }
+            ex: [{ signal: Учо́ра }, " я ", { target: працюва́в }, "."]
+            tr: { en: "I worked yesterday.", es: "Ayer trabajé." }
+          - level: A2
+            word: { alternatives: [мину́лого ти́жня, мину́лого ро́ку, торі́к] }
+            ex: [{ signal: Мину́лого ро́ку }, " ми ", { target: жили́ }, " у Льво́ві."]
+            tr: { en: "Last year we lived in Lviv.", es: "El año pasado vivíamos en Leópolis." }
+          - level: A2
+            word: { pattern: [{ slot: { uk: "скільки часу", en: "how long", es: "cuánto tiempo" } }, тому́] }
+            ex: ["Я ", { target: ба́чив }, " його́ ", { signal: два дні тому́ }, "."]
+            tr: { en: "I saw him two days ago.", es: "Lo vi hace dos días." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, speakers: [en, es], wrong: "Оле́на: «Я був удо́ма».", right: ["Оле́на: «Я ", { target: була́ }, " вдо́ма»."], rule: { en: ["a woman speaking of herself uses the feminine: ", { term: я була́ }], es: ["una mujer que habla de sí misma usa el femenino: ", { term: я була́ }] } }
+          - { level: A1, wrong: "Па́не Іва́не, Ви був у Ки́єві?", right: ["Па́не Іва́не, Ви ", { target: були́ }, " в Ки́єві?"], rule: { uk: ["ввічливе ", { term: Ви }, " має форму множини"], en: ["polite ", { term: Ви }, " takes the plural form"], es: ["el ", { term: Ви }, " de cortesía va en plural"] } }
+          - { level: A1, wrong: Він смія́лся., right: ["Він ", { target: смія́вся }, "."], rule: { uk: ["чоловічий рід закінчується на ", { term: -вся }, "; форма ", { term: -лся }, " — з російської"], en: ["the masculine ends in ", { term: -вся }, "; ", { term: -лся }, " is a Russian form"], es: ["el masculino termina en ", { term: -вся }, "; ", { term: -лся }, " es una forma rusa"] } }
+          - { level: A2, wrong: Учо́ра Тара́с ходи́ла в кіно́., right: ["Учо́ра Тара́с ", { target: ходи́в }, " у кіно́."], rule: { uk: "дієслово узгоджується з родом підмета", en: "the verb agrees with the gender of the subject", es: "el verbo concuerda con el género del sujeto" } }

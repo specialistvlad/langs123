@@ -1,0 +1,265 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.conjunctions
+lang: uk
+kind: grammar
+tags: [conjunctions, linkers, sentence, punctuation]
+concepts: [linkers]
+related: [uk.sentence.shcho-shchob, uk.sentence.when-if, uk.foundations.euphony, uk.sentence.word-order]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "c96a23 10bbd3 4b6b67 43e283 8999a9 afd388 27cbf8 b848d3", es: "c96a23 10bbd3 4b6b67 43e283 8999a9 afd388 27cbf8 b848d3" }
+
+title: { uk: Сполучники, en: Conjunctions, es: Los conectores }
+summary:
+  lead:
+    uk: ["Сполучники ", { term: і }, ", ", { term: але́ }, ", ", { term: бо }, ", ", { term: тому́ що }, " поєднують слова й частини речення; перед ", { term: але́ }, ", ", { term: бо }, " і ", { term: тому́ що }, " ставимо кому."]
+    en: ["The conjunctions ", { term: і }, ", ", { term: але́ }, ", ", { term: бо }, " and ", { term: тому́ що }, " join words and clauses; a comma goes before ", { term: але́ }, ", ", { term: бо }, " and ", { term: тому́ що }, "."]
+    es: ["Los conectores ", { term: і }, ", ", { term: але́ }, ", ", { term: бо }, " y ", { term: тому́ що }, " unen palabras y oraciones; delante de ", { term: але́ }, ", ", { term: бо }, " y ", { term: тому́ що }, " va coma."]
+  rule:
+    uk: "Між двома частинами складного речення перед сполучником ставимо кому:"
+    en: "A comma goes before the conjunction that joins two clauses:"
+    es: "Delante del conector que une dos oraciones va una coma:"
+  ex: ["Ми не гуля́ємо", { target: ", бо" }, " хо́лодно."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Сполучник, en: Conjunction, es: Conector } }
+        - { key: rule, label: { uk: Значення, en: Meaning, es: Significado } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { alternatives: [і, й] }
+          rule:
+            uk: "поєднання"
+            en: "and"
+            es: "y"
+          ex: ["Полта́ва ", { target: й }, " Оде́са."]
+          tr: { en: "Poltava and Odesa.", es: "Poltava y Odesa." }
+        - level: A2
+          point: та
+          rule:
+            uk: [{ term: та }, " у значенні ", { term: і }]
+            en: ["the same as ", { term: і }]
+            es: ["lo mismo que ", { term: і }]
+          ex: ["Купи́ хліб ", { target: та }, " молоко́."]
+          tr: { en: "Buy bread and milk.", es: "Compra pan y leche." }
+        - level: A1
+          point: але́
+          rule:
+            uk: "протиставлення"
+            en: "but"
+            es: "pero"
+          ex: ["Я зателефонува́в, ", { target: але́ }, " ніхто́ не відпові́в."]
+          tr: { en: "I called, but nobody answered.", es: "Llamé, pero nadie contestó." }
+        - level: A1
+          point: { alternatives: [бо, тому́ що] }
+          rule:
+            uk: "причина"
+            en: "because"
+            es: "porque"
+          ex: ["Ві́ктор не при́йде, ", { target: бо }, " він хво́рий."]
+          tr: { en: "Viktor isn't coming because he's ill.", es: "Viktor no viene porque está enfermo." }
+        - level: B1
+          point: а
+          rule:
+            uk: "зіставлення двох різних осіб чи речей"
+            en: "whereas: two people or things set side by side"
+            es: "mientras que: dos personas o cosas comparadas"
+          ex: ["Я п’ю ка́ву, ", { target: а }, " сестра́ п’є чай."]
+          tr: { en: "I drink coffee, and my sister drinks tea.", es: "Yo tomo café, y mi hermana, té." }
+        - level: B1
+          point: { alternatives: [або́, ["або́ ", { gap: true }, " або́"]] }
+          rule:
+            uk: "вибір"
+            en: "or; either… or"
+            es: "o; o… o"
+          ex: [{ target: Або́ }, " ви завіта́єте до нас, ", { target: або́ }, " ми заї́демо до вас."]
+          tr: { en: "Either you'll come over to ours, or we'll drop in on you.", es: "O vienen ustedes a vernos, o pasamos nosotros a verlos." }
+        - level: B1
+          point: { alternatives: [хоч, незважа́ючи на те що] }
+          rule:
+            uk: "попри щось"
+            en: "although, despite"
+            es: "aunque, a pesar de que"
+          ex: [{ target: Хоч }, " було́ пі́зно, ми пішли́ в кіно́."]
+          tr: { en: "Although it was late, we went to the cinema.", es: "Aunque era tarde, fuimos al cine." }
+        - level: B1
+          point: { uk: Вставні слова, en: Introductory words, es: Palabras incidentales }
+          rule:
+            uk: [{ alternatives: [{ term: мабу́ть }, { term: можли́во }, { term: здає́ться }] }, ": виділяємо комами"]
+            en: [{ alternatives: [{ term: мабу́ть }, { term: можли́во }, { term: здає́ться }] }, " (probably, maybe, it seems): set off by commas"]
+            es: [{ alternatives: [{ term: мабу́ть }, { term: можли́во }, { term: здає́ться }] }, " (probablemente, quizás, parece): van entre comas"]
+          ex: ["Він", { target: ", мабу́ть," }, " запізни́ться."]
+          tr: { en: "He'll probably be late.", es: "Probablemente llegue tarde." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["протиставлення — ", { term: але́ }]
+            en: ["“but” is ", { term: але́ }]
+            es: ["«pero» es ", { term: але́ }]
+          ex: ["Я хоті́в прийти́, ", { target: але́ }, " не зміг."]
+          tr: { en: "I wanted to come, but I couldn't.", es: "Quería venir, pero no pude." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Сполучник поєднує однорідні слова або частини складного речення."
+              en: "A conjunction joins words of the same kind or the clauses of a sentence."
+              es: "Un conector une palabras del mismo tipo o las oraciones de una frase."
+            ex: ["Ми сі́ли в кафе́", { target: ", і" }, " офіціа́нт прині́с меню́."]
+            tr: { en: "We sat down in the café, and the waiter brought the menu.", es: "Nos sentamos en el café y el camarero trajo la carta." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Між частинами речення перед сполучником ставимо кому: ", { term: але́ }, ", ", { term: бо }, ", ", { term: тому́ що }, ", а також ", { term: і }, ", коли кожна частина має свій підмет."]
+              en: ["A comma goes before the conjunction between clauses: ", { term: але́ }, ", ", { term: бо }, ", ", { term: тому́ що }, ", and ", { term: і }, " when each clause has its own subject."]
+              es: ["Entre oraciones va una coma delante del conector: ", { term: але́ }, ", ", { term: бо }, ", ", { term: тому́ що }, ", y ", { term: і }, " cuando cada oración tiene su propio sujeto."]
+          - type: note
+            level: A1
+            text:
+              uk: [{ term: Й }, " стоїть між голосними, ", { term: і }, " — між приголосними. Див. ", { link: "Милозвучність", to: uk.foundations.euphony }, "."]
+              en: [{ term: Й }, " goes between vowels, ", { term: і }, " between consonants. See ", { link: "у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+              es: [{ term: Й }, " va entre vocales, ", { term: і }, " entre consonantes. Ver ", { link: "La eufonía", to: uk.foundations.euphony }, "."]
+
+  - title: { uk: "Поєднання й протиставлення", en: "Adding and contrasting", es: "Sumar y oponer" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Сполучник, en: Conjunction, es: Conector } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: і }, { term: й }] }, ": поєднання"], en: [{ alternatives: [{ term: і }, { term: й }] }, ": and"], es: [{ alternatives: [{ term: і }, { term: й }] }, ": y"] }
+            ex: ["Ма́ма ", { target: й }, " та́то працю́ють."]
+            tr: { en: "Mum and Dad work.", es: "Mamá y papá trabajan." }
+          - level: A2
+            use: { uk: [{ term: та }, ": те саме, що ", { term: і }], en: [{ term: та }, ": the same as ", { term: і }], es: [{ term: та }, ": lo mismo que ", { term: і }] }
+            ex: ["У сі́чні було́ хо́лодно ", { target: та }, " ча́сто дув ві́тер."]
+            tr: { en: "In January it was cold, and the wind often blew.", es: "En enero hacía frío y a menudo soplaba el viento." }
+          - level: A1
+            use: { uk: [{ term: але́ }, ": всупереч очікуваному"], en: [{ term: але́ }, ": but, against what you expect"], es: [{ term: але́ }, ": pero, contra lo esperado"] }
+            ex: ["Оле́на зателефонува́ла Ві́кторові, ", { target: але́ }, " він не відпові́в."]
+            tr: { en: "Olena called Viktor, but he didn't answer.", es: "Olena llamó a Viktor, pero él no contestó." }
+          - level: B1
+            use: { uk: [{ term: а }, ": зіставлення"], en: [{ term: а }, ": whereas, setting two things side by side"], es: [{ term: а }, ": mientras que, comparando dos cosas"] }
+            ex: ["Зазвича́й я ї́жджу на мо́ре, ", { target: а }, " моя́ по́друга ї́здить у го́ри."]
+            tr: { en: "I usually go to the seaside, whereas my friend goes to the mountains.", es: "Normalmente voy al mar, mientras que mi amiga va a la montaña." }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: [{ term: А }, " лише зіставляє два різні факти; ", { term: але́ }, " каже, що другий факт суперечить першому."]
+              en: [{ term: А }, " only sets two facts side by side; ", { term: але́ }, " says the second goes against the first."]
+              es: [{ term: А }, " solo pone dos hechos uno al lado del otro; ", { term: але́ }, " dice que el segundo contradice al primero."]
+
+  - title: { uk: "Причина: бо, тому що", en: "Cause: бо, тому що", es: "Causa: бо, тому що" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Сполучник, en: Conjunction, es: Conector } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { term: бо }
+            ex: ["Ми не гуля́ємо, ", { target: бо }, " хо́лодно."]
+            tr: { en: "We're not going for a walk because it's cold.", es: "No salimos a pasear porque hace frío." }
+          - level: A1
+            use: { term: тому́ що }
+            ex: ["Ві́ктор не мо́же говори́ти, ", { target: тому́ що }, " він хво́рий."]
+            tr: { en: "Viktor can't talk because he's ill.", es: "Viktor no puede hablar porque está enfermo." }
+          - level: B1
+            use: { term: че́рез те що }
+            ex: ["Ми запізни́лися, ", { target: че́рез те що }, " не було́ авто́буса."]
+            tr: { en: "We were late because there was no bus.", es: "Llegamos tarde porque no había autobús." }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: Бо }, " і ", { term: тому́ що }, " означають те саме; ", { term: бо }, " коротше й звучить розмовніше."]
+              en: [{ term: Бо }, " and ", { term: тому́ що }, " mean the same; ", { term: бо }, " is shorter and more conversational."]
+              es: [{ term: Бо }, " y ", { term: тому́ що }, " significan lo mismo; ", { term: бо }, " es más corto y más coloquial."]
+
+  - title: { uk: "Вибір і допустові сполучники", en: "Choice and concession", es: "Elección y concesión" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Сполучник, en: Conjunction, es: Conector } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: [{ term: або́ }, ": вибір"], en: [{ term: або́ }, ": or"], es: [{ term: або́ }, ": o"] }
+            ex: ["Ви хо́чете чай ", { target: або́ }, " ка́ву?"]
+            tr: { en: "Would you like tea or coffee?", es: "¿Quiere té o café?" }
+          - level: B1
+            use: { uk: [{ term: ["або́ ", { gap: true }, " або́"] }, ", ", { term: ["чи ", { gap: true }, " чи"] }, ": одне з двох"], en: [{ term: ["або́ ", { gap: true }, " або́"] }, ", ", { term: ["чи ", { gap: true }, " чи"] }, ": either… or"], es: [{ term: ["або́ ", { gap: true }, " або́"] }, ", ", { term: ["чи ", { gap: true }, " чи"] }, ": o… o"] }
+            ex: [{ target: Або́ }, " ви завіта́єте до нас у го́сті, ", { target: або́ }, " ми заї́демо до вас."]
+            tr: { en: "Either you'll visit us, or we'll drop in on you.", es: "O vienen ustedes a vernos, o pasamos nosotros a verlos." }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: хоч }, { term: хоча́ }] }, ": попри щось"], en: [{ alternatives: [{ term: хоч }, { term: хоча́ }] }, ": although"], es: [{ alternatives: [{ term: хоч }, { term: хоча́ }] }, ": aunque"] }
+            ex: [{ target: Хоч }, " було́ пі́зно, ми пішли́ в кіно́."]
+            tr: { en: "Although it was late, we went to the cinema.", es: "Aunque era tarde, fuimos al cine." }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: дарма́ що }, { term: незважа́ючи на те що }] }, ": попри щось"], en: [{ alternatives: [{ term: дарма́ що }, { term: незважа́ючи на те що }] }, ": even though, despite the fact that"], es: [{ alternatives: [{ term: дарма́ що }, { term: незважа́ючи на те що }] }, ": aunque, a pesar de que"] }
+            ex: [{ target: Незважа́ючи на те що }, " заня́ття закі́нчилися пі́зно, ми пішли́ прові́дати Ма́рту."]
+            tr: { en: "Even though classes finished late, we went to see Marta.", es: "A pesar de que las clases terminaron tarde, fuimos a ver a Marta." }
+
+  - title: { uk: "Однорідні члени й вставні слова", en: "Lists and introductory words", es: "Enumeraciones y palabras incidentales" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Правило, en: Rule, es: Regla } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: "однорідні члени без сполучника: кома між ними", en: "a list with no conjunction: commas between the items", es: "una enumeración sin conector: comas entre los elementos" }
+            ex: ["Я купи́в хліб", { target: "," }, " молоко́", { target: "," }, " сир."]
+            tr: { en: "I bought bread, milk and cheese.", es: "Compré pan, leche y queso." }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: і }, { term: й }, { term: та }] }, " один раз: перед ним коми немає"], en: [{ alternatives: [{ term: і }, { term: й }, { term: та }] }, " once, before the last item: no comma"], es: [{ alternatives: [{ term: і }, { term: й }, { term: та }] }, " una vez, ante el último elemento: sin coma"] }
+            ex: ["Я купи́в хліб, молоко́ ", { target: й }, " сир."]
+            tr: { en: "I bought bread, milk and cheese.", es: "Compré pan, leche y queso." }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: ["і ", { gap: true }, " і"] }, { term: ["ні ", { gap: true }, " ні"] }] }, ": кома перед другим сполучником"], en: [{ alternatives: [{ term: ["і ", { gap: true }, " і"] }, { term: ["ні ", { gap: true }, " ні"] }] }, " (both… and, neither… nor): a comma before the second"], es: [{ alternatives: [{ term: ["і ", { gap: true }, " і"] }, { term: ["ні ", { gap: true }, " ні"] }] }, " (tanto… como, ni… ni): coma delante del segundo"] }
+            ex: ["Він лю́бить ", { target: і }, " ка́ву", { target: ", і" }, " чай."]
+            tr: { en: "He likes both coffee and tea.", es: "Le gustan tanto el café como el té." }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: мабу́ть }, { term: можли́во }, { term: здає́ться }] }, ": вставні слова, виділяємо комами"], en: [{ alternatives: [{ term: мабу́ть }, { term: можли́во }, { term: здає́ться }] }, " (probably, maybe, it seems): introductory words, set off by commas"], es: [{ alternatives: [{ term: мабу́ть }, { term: можли́во }, { term: здає́ться }] }, " (probablemente, quizás, parece): palabras incidentales, entre comas"] }
+            ex: { examples: [["Він", { target: ", мабу́ть," }, " запізни́ться."], [{ target: "Можли́во," }, " за́втра бу́де дощ."]] }
+            tr: { en: { examples: ["He'll probably be late.", "Maybe it will rain tomorrow."] }, es: { examples: ["Probablemente llegue tarde.", "Quizás mañana llueva."] } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: "Однорідні члени відповідають на те саме питання й залежать від того самого слова."
+              en: "The items of a list answer the same question and depend on the same word."
+              es: "Los elementos de una enumeración responden a la misma pregunta y dependen de la misma palabra."
+          - type: rule
+            level: B1
+            text:
+              uk: "Вставне слово показує, наскільки мовець упевнений; без нього речення не втрачає змісту."
+              en: "An introductory word shows how sure the speaker is; the sentence keeps its meaning without it."
+              es: "La palabra incidental muestra cuán seguro está quien habla; la oración no pierde su sentido sin ella."
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: "Я хоті́в прийти́, но не зміг.", right: ["Я хоті́в прийти́, ", { target: але́ }, " не зміг."], rule: { uk: [{ term: но }, " — російське слово; українською ", { term: але́ }], en: [{ term: но }, " is Russian; Ukrainian says ", { term: але́ }], es: [{ term: но }, " es ruso; en ucraniano se dice ", { term: але́ }] } }
+          - { level: A1, wrong: "Він не прийшо́в, потому́ що захворі́в.", right: ["Він не прийшо́в, ", { target: тому́ що }, " захворі́в."], rule: { uk: [{ term: тому́ що }, "; ", { term: потому́ що }, " — суржик"], en: [{ term: тому́ що }, "; ", { term: потому́ що }, " is a Russian-Ukrainian mix"], es: [{ term: тому́ що }, "; ", { term: потому́ що }, " es una mezcla de ruso y ucraniano"] } }
+          - { level: A1, speakers: [en, es], wrong: Я вто́млений бо працюва́в., right: ["Я вто́млений", { target: ", бо" }, " працюва́в."], rule: { en: ["a comma goes before ", { term: бо }, " and ", { term: тому́ що }, " when they join two clauses"], es: ["delante de ", { term: бо }, " y ", { term: тому́ що }, " va coma cuando unen dos oraciones"] } }
+          - { level: B1, speakers: [en, es], wrong: Він мабу́ть запізни́ться., right: ["Він", { target: ", мабу́ть," }, " запізни́ться."], rule: { en: [{ term: мабу́ть }, " is an introductory word: commas set it off"], es: [{ term: мабу́ть }, " es una palabra incidental: va entre comas"] } }

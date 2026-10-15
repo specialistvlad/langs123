@@ -1,0 +1,270 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.locative
+lang: uk
+kind: grammar
+tags: [cases, locative, nouns, prepositions, place, time]
+concepts: [cases, prepositions-place]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.accusative, uk.nouns-cases.declension-alternations, uk.foundations.euphony, uk.prepositions.where-whereto-wherefrom, uk.foundations.telling-time]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "e118f3 0e554f 963c11 55d1cb 24417b 20cffc 73c3e8", es: "e118f3 0e554f 963c11 55d1cb 24417b 20cffc 73c3e8" }
+
+title: { uk: Місцевий відмінок, en: Locative Case, es: El caso locativo }
+summary:
+  lead:
+    uk: ["Місцевий відмінок відповідає на питання ", { term: де? }, " і називає місце чи час, завжди з прийменником ", { term: у }, ", ", { term: в }, ", ", { term: на }, ", ", { term: по }, " чи ", { term: о }, "."]
+    en: ["The locative answers ", { term: де? }, " (where?) and names a place or a time, always after a preposition: ", { term: у }, ", ", { term: в }, ", ", { term: на }, ", ", { term: по }, " or ", { term: о }, "."]
+    es: ["El locativo responde a ", { term: де? }, " (¿dónde?) y nombra un lugar o un momento, siempre con preposición: ", { term: у }, ", ", { term: в }, ", ", { term: на }, ", ", { term: по }, " u ", { term: о }, "."]
+  rule:
+    uk: ["Більшість іменників у місцевому має закінчення ", { term: -і }, ":"]
+    en: ["Most nouns end in ", { term: -і }, " in the locative:"]
+    es: ["La mayoría de los sustantivos terminan en ", { term: -і }, " en locativo:"]
+  ex: { examples: [["Гро́ші ", { target: на столі́ }, "."], ["Ми ", { target: в Украї́ні }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Форма, en: Form, es: Forma }
+          rule:
+            uk: ["більшість іменників: ", { term: -і }]
+            en: ["most nouns: ", { term: -і }]
+            es: ["la mayoría de los sustantivos: ", { term: -і }]
+          ex: ["Я живу́ ", { target: в мі́сті }, "."]
+          tr: { en: "I live in a city.", es: "Vivo en una ciudad." }
+        - level: A1
+          point: { uk: Форма, en: Form, es: Forma }
+          rule:
+            uk: ["окремі слова чоловічого роду: ", { term: -у }]
+            en: ["some masculine nouns: ", { term: -у }]
+            es: ["algunos masculinos: ", { term: -у }]
+          ex: ["Ми ", { target: в па́рку }, "."]
+          tr: { en: "We're in the park.", es: "Estamos en el parque." }
+        - level: A1
+          point: { uk: Форма, en: Form, es: Forma }
+          rule:
+            uk: { mapping: [{ term: -ія }, { term: -ії }] }
+            en: { mapping: [{ term: -ія }, { term: -ії }] }
+            es: { mapping: [{ term: -ія }, { term: -ії }] }
+          ex: ["Вони́ ", { target: в Іспа́нії }, "."]
+          tr: { en: "They're in Spain.", es: "Están en España." }
+        - level: A1
+          point: { uk: Місяць, en: Month, es: Mes }
+          rule:
+            uk: [{ term: у }, " і назва місяця: коли?"]
+            en: [{ term: у }, " with a month: when?"]
+            es: [{ term: у }, " con un mes: ¿cuándo?"]
+          ex: ["Мій день наро́дження ", { target: ["у ", { date: тра́вні, value: "--05" }] }, "."]
+          tr: { en: "My birthday is in May.", es: "Mi cumpleaños es en mayo." }
+        - level: A1
+          point: { uk: На, en: На, es: На }
+          rule:
+            uk: "відкрите місце, подія, окремі слова"
+            en: "an open place, an event, set words"
+            es: "un lugar abierto, un evento, palabras fijas"
+          ex: ["Та́то ", { target: на робо́ті }, "."]
+          tr: { en: "Dad is at work.", es: "Papá está en el trabajo." }
+        - level: A2
+          point: { uk: Чергування, en: Alternation, es: Alternancia }
+          rule:
+            uk: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }, { letter: х }] }, { alternatives: [{ letter: з }, { letter: ц }, { letter: с }] }] }, " перед ", { term: -і }]
+            en: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }, { letter: х }] }, { alternatives: [{ letter: з }, { letter: ц }, { letter: с }] }] }, " before ", { term: -і }]
+            es: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }, { letter: х }] }, { alternatives: [{ letter: з }, { letter: ц }, { letter: с }] }] }, " ante ", { term: -і }]
+          ex: ["Ру́чка ", { target: в руці́ }, "."]
+          tr: { en: "The pen is in my hand.", es: "El bolígrafo está en mi mano." }
+        - level: A2
+          point: { uk: По, en: По, es: По }
+          rule:
+            uk: "рух поверхнею"
+            en: "movement around a surface"
+            es: "movimiento por una superficie"
+          ex: ["Кі́шка бі́гає ", { target: по кімна́ті }, "."]
+          tr: { en: "The cat is running around the room.", es: "El gato corre por la habitación." }
+        - level: A2
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule:
+            uk: { alternatives: [{ term: -ах }, { term: -ях }] }
+            en: { alternatives: [{ term: -ах }, { term: -ях }] }
+            es: { alternatives: [{ term: -ах }, { term: -ях }] }
+          ex: [{ target: У міста́х }, " бага́то па́рків."]
+          tr: { en: "There are many parks in the cities.", es: "En las ciudades hay muchos parques." }
+        - level: B1
+          point: { uk: Година, en: Clock time, es: Hora }
+          rule:
+            uk: [{ alternatives: [{ term: о }, { term: об }] }, ": о котрій годині?"]
+            en: [{ alternatives: [{ term: о }, { term: об }] }, ": at what time?"]
+            es: [{ alternatives: [{ term: о }, { term: об }] }, ": ¿a qué hora?"]
+          ex: ["Уро́к ", { target: ["о ", { time: "дев’я́тій", value: "09:00" }] }, "."]
+          tr: { en: "The lesson is at nine.", es: "La clase es a las nueve." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["назва держави: ", { term: в Украї́ні }]
+            en: ["the name of a country: ", { term: в Украї́ні }]
+            es: ["el nombre de un país: ", { term: в Украї́ні }]
+          ex: ["Я живу́ ", { target: в Украї́ні }, "."]
+          tr: { en: "I live in Ukraine.", es: "Vivo en Ucrania." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Місцевий відмінок називає місце й час і завжди стоїть після прийменника:"
+              en: "The locative names a place or a time and always follows a preposition:"
+              es: "El locativo nombra un lugar o un momento y siempre va detrás de una preposición:"
+            ex: ["Студе́нт працю́є ", { target: в нові́й лаборато́рії }, "."]
+            tr: { en: "The student works in the new lab.", es: "El estudiante trabaja en el laboratorio nuevo." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Вибір між ", { term: у }, " і ", { term: в }, ": ", { link: "Милозвучність: у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+              en: ["Choosing between ", { term: у }, " and ", { term: в }, ": ", { link: "Euphony: у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+              es: ["Cómo elegir entre ", { term: у }, " y ", { term: в }, ": ", { link: "La eufonía: у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+          - type: note
+            level: A1
+            text:
+              uk: ["Куди? — це знахідний відмінок: ", { link: Знахідний відмінок, to: uk.nouns-cases.accusative }, "."]
+              en: ["Where to? takes the accusative: ", { link: Accusative Case, to: uk.nouns-cases.accusative }, "."]
+              es: ["¿Adónde? lleva el acusativo: ", { link: El caso acusativo, to: uk.nouns-cases.accusative }, "."]
+
+  - title: { uk: "Форма: однина й множина", en: "Form: singular and plural", es: "Forma: singular y plural" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: loc, label: { uk: Місцевий, en: Locative, es: Locativo }, features: { case: loc } }
+        rows:
+          - { level: A1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, тверда основа", en: "Masculine, hard stem", es: "Masculino, raíz dura" }, nom: { alternatives: [стіл, магази́н] }, loc: { alternatives: [["стол", { ending: і́ }], ["магази́н", { ending: і }]] } }
+          - { level: A1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід на -у", en: "Masculine in -у", es: "Masculino en -у" }, nom: { alternatives: [парк, сад] }, loc: { alternatives: [["па́рк", { ending: у }], ["сад", { ending: у́ }]] } }
+          - { level: A1, features: { gender: masc, animacy: anim, number: sg }, group: { uk: "Чоловічий рід, люди", en: "Masculine, people", es: "Masculino, personas" }, nom: { alternatives: [син, та́то] }, loc: { alternatives: [["си́н", { ending: ові }], ["та́т", { ending: ові }]] } }
+          - { level: A1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, м’яка основа", en: "Masculine, soft stem", es: "Masculino, raíz blanda" }, nom: { alternatives: [готе́ль, музе́й] }, loc: { alternatives: [["готе́л", { ending: і }], ["музе́", { ending: ї }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -а", en: "Feminine in -а", es: "Femenino en -а" }, nom: { alternatives: [ма́ма, Украї́на] }, loc: { alternatives: [["ма́м", { ending: і }], ["Украї́н", { ending: і }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -я", en: "Feminine in -я", es: "Femenino en -я" }, nom: { alternatives: [бабу́ся, Га́ля] }, loc: { alternatives: [["бабу́с", { ending: і }], ["Га́л", { ending: і }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -ія", en: "Feminine in -ія", es: "Femenino en -ія" }, nom: { alternatives: [лі́нія, Іспа́нія] }, loc: { alternatives: [["лі́ні", { ending: ї }], ["Іспа́ні", { ending: ї }]] } }
+          - { level: A1, features: { gender: neut, number: sg }, group: { uk: "Середній рід", en: "Neuter", es: "Neutro" }, nom: { alternatives: [мі́сто, мі́сце] }, loc: { alternatives: [["мі́ст", { ending: і }], ["мі́сц", { ending: і }]] } }
+          - { level: A2, features: { number: pl }, group: { uk: "Множина", en: "Plural", es: "Plural" }, nom: { alternatives: [міста́, ву́лиці] }, loc: { alternatives: [["міст", { ending: а́х }], ["ву́лиц", { ending: ях }]] } }
+      - type: list
+        items:
+          - type: note
+            level: A1
+            text:
+              uk: ["Деякі іменники чоловічого роду мають ", { term: -у }, ": їх запам’ятовують."]
+              en: ["Some masculine nouns take ", { term: -у }, ": learn them one by one."]
+              es: ["Algunos masculinos toman ", { term: -у }, ": se aprenden uno a uno."]
+            ex: ["Ми гуля́ли ", { target: в саду́ }, "."]
+            tr: { en: "We went for a walk in the garden.", es: "Paseamos por el jardín." }
+          - type: note
+            level: A1
+            text:
+              uk: ["У деяких словах ", { letter: і }, " в основі стає ", { letter: о }, ":"]
+              en: ["In some words the ", { letter: і }, " of the stem becomes ", { letter: о }, ":"]
+              es: ["En algunas palabras la ", { letter: і }, " de la raíz pasa a ", { letter: о }, ":"]
+            ex: ["Ми живемо́ ", { target: у Льво́ві }, "."]
+            tr: { en: "We live in Lviv.", es: "Vivimos en Lviv." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Іменники на ", { term: -тель }, " мають три правильні форми: ", { alternatives: [{ term: на учи́телеві }, { term: на учи́телю }, { term: на учи́телі }] }, "."]
+              en: ["Nouns in ", { term: -тель }, " have three correct forms: ", { alternatives: [{ term: на учи́телеві }, { term: на учи́телю }, { term: на учи́телі }] }, "."]
+              es: ["Los sustantivos en ", { term: -тель }, " tienen tres formas correctas: ", { alternatives: [{ term: на учи́телеві }, { term: на учи́телю }, { term: на учи́телі }] }, "."]
+
+  - title: { uk: "Чергування приголосних", en: "Consonant alternations", es: "Alternancia de consonantes" }
+    role: spelling
+    content:
+      - type: paradigm
+        columns:
+          - { key: change, label: { uk: Зміна, en: Change, es: Cambio } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: loc, label: { uk: Місцевий, en: Locative, es: Locativo }, features: { case: loc } }
+        rows:
+          - { level: A2, change: { uk: { mapping: [{ letter: к }, { letter: ц }] }, en: { mapping: [{ letter: к }, { letter: ц }] }, es: { mapping: [{ letter: к }, { letter: ц }] } }, nom: рука́, loc: ["ру", { letter: ц }, { ending: і́ }] }
+          - { level: A2, change: { uk: { mapping: [{ letter: г }, { letter: з }] }, en: { mapping: [{ letter: г }, { letter: з }] }, es: { mapping: [{ letter: г }, { letter: з }] } }, nom: нога́, loc: ["но", { letter: з }, { ending: і́ }] }
+          - { level: A2, change: { uk: { mapping: [{ letter: х }, { letter: с }] }, en: { mapping: [{ letter: х }, { letter: с }] }, es: { mapping: [{ letter: х }, { letter: с }] } }, nom: по́верх, loc: ["по́вер", { letter: с }, { ending: і }] }
+          - { level: B1, change: { uk: { mapping: [{ letter: к }, { letter: ц }] }, en: { mapping: [{ letter: к }, { letter: ц }] }, es: { mapping: [{ letter: к }, { letter: ц }] } }, nom: { alternatives: [кни́жка, о́ко] }, loc: { alternatives: [["кни́ж", { letter: ц }, { ending: і }], ["о́", { letter: ц }, { ending: і }]] } }
+          - { level: B1, change: { uk: { mapping: [{ letter: г }, { letter: з }] }, en: { mapping: [{ letter: г }, { letter: з }] }, es: { mapping: [{ letter: г }, { letter: з }] } }, nom: порі́г, loc: ["поро́", { letter: з }, { ending: і }] }
+          - { level: B1, change: { uk: { mapping: [{ letter: х }, { letter: с }] }, en: { mapping: [{ letter: х }, { letter: с }] }, es: { mapping: [{ letter: х }, { letter: с }] } }, nom: ву́хо, loc: ["ву́", { letter: с }, { ending: і }] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Перед ", { term: -і }, " приголосні ", { letter: г }, ", ", { letter: к }, ", ", { letter: х }, " стають ", { letter: з }, ", ", { letter: ц }, ", ", { letter: с }, ":"]
+              en: ["Before ", { term: -і }, ", the consonants ", { letter: г }, ", ", { letter: к }, " and ", { letter: х }, " become ", { letter: з }, ", ", { letter: ц }, " and ", { letter: с }, ":"]
+              es: ["Ante ", { term: -і }, ", las consonantes ", { letter: г }, ", ", { letter: к }, " y ", { letter: х }, " pasan a ", { letter: з }, ", ", { letter: ц }, " y ", { letter: с }, ":"]
+            ex: ["Ми живемо́ ", { target: на дру́гому по́версі }, "."]
+            tr: { en: "We live on the second floor.", es: "Vivimos en el segundo piso." }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, ": місце"], en: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, ": the place"], es: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, ": el lugar"] }
+            ex: ["Спорти́вний костю́м ", { target: у вели́кій су́мці }, "."]
+            tr: { en: "The tracksuit is in the big bag.", es: "La ropa deportiva está en la bolsa grande." }
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, " і місяць: коли?"], en: [{ alternatives: [{ term: у }, { term: в }] }, " with a month: when?"], es: [{ alternatives: [{ term: у }, { term: в }] }, " con un mes: ¿cuándo?"] }
+            ex: ["Марі́я народи́лася ", { target: ["у ", { date: тра́вні, value: "--05" }] }, "."]
+            tr: { en: "Maria was born in May.", es: "María nació en mayo." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, " і рік: коли?"], en: [{ alternatives: [{ term: у }, { term: в }] }, " with a year: when?"], es: [{ alternatives: [{ term: у }, { term: в }] }, " con un año: ¿cuándo?"] }
+            ex: ["Ми познайо́милися ", { target: ["у ", { date: "дві ти́сячі чотирна́дцятому ро́ці", value: "2014" }] }, "."]
+            tr: { en: "We met in 2014.", es: "Nos conocimos en 2014." }
+          - level: A2
+            use: { uk: [{ term: по }, ": рух поверхнею"], en: [{ term: по }, ": movement around a surface"], es: [{ term: по }, ": movimiento por una superficie"] }
+            ex: ["Кі́шка бі́гає ", { target: по кімна́ті }, "."]
+            tr: { en: "The cat is running around the room.", es: "El gato corre por la habitación." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, ": одяг, ознака"], en: [{ alternatives: [{ term: у }, { term: в }] }, ": clothes, a feature"], es: [{ alternatives: [{ term: у }, { term: в }] }, ": la ropa, un rasgo"] }
+            ex: ["Я ба́чу хло́пця ", { target: в черво́ному све́трі }, "."]
+            tr: { en: "I can see a boy in a red sweater.", es: "Veo a un chico con un suéter rojo." }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: о }, { term: об }] }, ": о котрій годині?"], en: [{ alternatives: [{ term: о }, { term: об }] }, ": at what time?"], es: [{ alternatives: [{ term: о }, { term: об }] }, ": ¿a qué hora?"] }
+            ex: ["Заня́ття почина́ються ", { target: ["о ", { time: "дев’я́тій годи́ні", value: "09:00" }] }, "."]
+            tr: { en: "Classes start at nine o'clock.", es: "Las clases empiezan a las nueve." }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: На }, " вживають із відкритими місцями, подіями й окремими словами; ", { term: у }, " (", { term: в }, ") — усередині:"]
+              en: [{ term: На }, " goes with open places, events and set words; ", { term: у }, " (", { term: в }, ") means inside:"]
+              es: [{ term: На }, " va con lugares abiertos, eventos y palabras fijas; ", { term: у }, " (", { term: в }, ") significa «dentro de»:"]
+            ex: { examples: [{ target: на вокза́лі }, { target: на конце́рті }, { target: на по́шті }, { target: у ба́нку }] }
+            tr: { en: { examples: ["at the station", "at the concert", "at the post office", "in the bank"] }, es: { examples: ["en la estación", "en el concierto", "en correos", "en el banco"] } }
+          - type: rule
+            level: A1
+            text:
+              uk: ["З назвою держави вживають ", { term: у }, " (", { term: в }, "):"]
+              en: ["The name of a country takes ", { term: у }, " (", { term: в }, "):"]
+              es: ["El nombre de un país lleva ", { term: у }, " (", { term: в }, "):"]
+            ex: ["Я живу́ ", { target: в Украї́ні }, "."]
+            tr: { en: "I live in Ukraine.", es: "Vivo en Ucrania." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Я живу́ на Украї́ні., right: ["Я живу́ ", { target: в Украї́ні }, "."], rule: { uk: ["з назвою держави — ", { term: в }, "; ", { term: на Украї́ні }, " — форма під впливом російської"], en: ["a country takes ", { term: в }, "; ", { term: на Украї́ні }, " is a Russian-influenced form"], es: ["un país lleva ", { term: в }, "; ", { term: на Украї́ні }, " es una forma influida por el ruso"] } }
+          - { level: A1, wrong: Гро́ші лежа́ть на стіл., right: ["Гро́ші лежа́ть ", { target: на столі́ }, "."], rule: { uk: [{ term: де? }, " — місцевий відмінок"], en: [{ term: де? }, " takes the locative"], es: [{ term: де? }, " lleva el locativo"] } }
+          - { level: A1, wrong: Та́то в робо́ті., right: ["Та́то ", { target: на робо́ті }, "."], rule: { uk: [{ term: робо́та }, " вживається з ", { term: на }], en: [{ term: робо́та }, " takes ", { term: на }], es: [{ term: робо́та }, " lleva ", { term: на }] } }
+          - { level: A2, wrong: Ру́чка в рукі́., right: ["Ру́чка ", { target: в руці́ }, "."], rule: { uk: [{ mapping: [{ letter: к }, { letter: ц }] }, " перед ", { term: -і }], en: [{ mapping: [{ letter: к }, { letter: ц }] }, " before ", { term: -і }], es: [{ mapping: [{ letter: к }, { letter: ц }] }, " ante ", { term: -і }] } }
+          - { level: B1, wrong: Уро́к о де́в’ять годи́н., right: ["Уро́к ", { target: о дев’я́тій годи́ні }, "."], rule: { uk: [{ term: о }, " і порядковий числівник у місцевому"], en: [{ term: о }, " takes the ordinal in the locative"], es: [{ term: о }, " lleva el ordinal en locativo"] } }
+          - { level: A1, speakers: [en], wrong: Я народи́вся в тра́вень., right: ["Я народи́вся ", { target: в тра́вні }, "."], rule: { en: ["a month after ", { term: у }, " is locative: ", { term: у тра́вні }] } }
+          - { level: A1, speakers: [es], wrong: Кни́жка в столі́., right: ["Кни́жка ", { target: на столі́ }, "."], rule: { es: ["sobre una superficie se dice ", { term: на }, "; ", { term: у }, " es «dentro de»"] } }

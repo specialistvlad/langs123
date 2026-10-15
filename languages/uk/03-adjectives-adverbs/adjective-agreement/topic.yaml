@@ -1,0 +1,174 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.adjectives-adverbs.adjective-agreement
+lang: uk
+kind: grammar
+tags: [adjectives, agreement, gender, number, cases]
+concepts: [adjectives]
+related: [uk.adjectives-adverbs.adjective-declension, uk.nouns-cases.gender, uk.nouns-cases.plural, uk.nouns-cases.accusative, uk.nouns-cases.locative]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "e5bc78 35d162 c0f07d ddc742 6d090f 7327b1", es: "e5bc78 35d162 c0f07d ddc742 6d090f 7327b1" }
+
+title: { uk: Узгодження прикметників, en: Adjective Agreement, es: La concordancia del adjetivo }
+summary:
+  lead:
+    uk: ["Прикметник має рід, число й відмінок свого іменника: ", { term: нови́й стіл }, ", ", { term: нова́ кни́жка }, ", ", { term: нове́ вікно́ }, ", ", { term: нові́ книжки́ }, "."]
+    en: ["An adjective takes the gender, number and case of its noun: ", { term: нови́й стіл }, ", ", { term: нова́ кни́жка }, ", ", { term: нове́ вікно́ }, ", ", { term: нові́ книжки́ }, "."]
+    es: ["El adjetivo toma el género, el número y el caso de su sustantivo: ", { term: нови́й стіл }, ", ", { term: нова́ кни́жка }, ", ", { term: нове́ вікно́ }, ", ", { term: нові́ книжки́ }, "."]
+  rule:
+    uk: ["Закінчення прикметника залежить від роду іменника, а в множині для всіх родів одне — ", { term: -і }, ":"]
+    en: ["The adjective's ending follows the noun's gender, and the plural has one ending for every gender, ", { term: -і }, ":"]
+    es: ["La terminación del adjetivo sigue el género del sustantivo, y el plural tiene una sola para todos los géneros, ", { term: -і }, ":"]
+  ex: { examples: [["Це ", { target: нова́ }, " кварти́ра."], ["Це ", { target: нові́ }, " кварти́ри."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule: { uk: { alternatives: [{ term: -ий }, { term: -ій }] }, en: { alternatives: [{ term: -ий }, { term: -ій }] }, es: { alternatives: [{ term: -ий }, { term: -ій }] } }
+          ex: ["Це ", { target: нови́й }, " стіл."]
+          tr: { en: "This is a new table.", es: "Es una mesa nueva." }
+        - level: A1
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule: { uk: { alternatives: [{ term: -а }, { term: -я }] }, en: { alternatives: [{ term: -а }, { term: -я }] }, es: { alternatives: [{ term: -а }, { term: -я }] } }
+          ex: ["Це ", { target: си́ня }, " су́мка."]
+          tr: { en: "This is a blue bag.", es: "Es una bolsa azul." }
+        - level: A1
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule: { uk: { alternatives: [{ term: -е }, { term: -є }] }, en: { alternatives: [{ term: -е }, { term: -є }] }, es: { alternatives: [{ term: -е }, { term: -є }] } }
+          ex: ["Це ", { target: вели́ке }, " вікно́."]
+          tr: { en: "This is a big window.", es: "Es una ventana grande." }
+        - level: A1
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule: { uk: [{ term: -і }, " для всіх родів"], en: [{ term: -і }, " for every gender"], es: [{ term: -і }, " para todos los géneros"] }
+          ex: ["Це ", { target: нові́ }, " столи́ й ", { target: нові́ }, " книжки́."]
+          tr: { en: "These are new tables and new books.", es: "Son mesas nuevas y libros nuevos." }
+        - level: A1
+          point: { uk: Знахідний, en: Accusative, es: Acusativo }
+          rule: { uk: ["жіночий рід: ", { alternatives: [{ term: -у }, { term: -ю }] }], en: ["feminine: ", { alternatives: [{ term: -у }, { term: -ю }] }], es: ["femenino: ", { alternatives: [{ term: -у }, { term: -ю }] }] }
+          ex: ["Я чита́ю ", { target: ціка́ву }, " кни́жку."]
+          tr: { en: "I'm reading an interesting book.", es: "Leo un libro interesante." }
+        - level: A1
+          point: { uk: Місцевий, en: Locative, es: Locativo }
+          rule: { uk: { alternatives: [{ term: -ому }, { term: -ій }] }, en: { alternatives: [{ term: -ому }, { term: -ій }] }, es: { alternatives: [{ term: -ому }, { term: -ій }] } }
+          ex: ["Ми живемо́ ", { target: у вели́кому }, " мі́сті."]
+          tr: { en: "We live in a big city.", es: "Vivimos en una ciudad grande." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: [{ term: це }, " не змінюється, прикметник — змінюється"], en: [{ term: це }, " stays the same; the adjective changes"], es: [{ term: це }, " no cambia; el adjetivo, sí"] }
+          ex: { examples: [["Це ", { target: нови́й }, " стіл."], ["Це ", { target: нові́ }, " столи́."]] }
+          tr: { en: { examples: ["This is a new table.", "These are new tables."] }, es: { examples: ["Es una mesa nueva.", "Son mesas nuevas."] } }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Прикметник стоїть перед іменником і має той самий рід, число й відмінок:"
+              en: "An adjective goes before its noun and takes the same gender, number and case:"
+              es: "El adjetivo va delante del sustantivo y toma su mismo género, número y caso:"
+            ex: ["У ме́не ", { target: черво́на }, " су́кня."]
+            tr: { en: "I have a red dress.", es: "Tengo un vestido rojo." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Рід бере прикметник від іменника, а не від слова ", { term: це }, ":"]
+              en: ["The adjective takes its gender from the noun, never from ", { term: це }, ":"]
+              es: ["El adjetivo toma el género del sustantivo, nunca de ", { term: це }, ":"]
+            ex: { examples: [["Це ", { target: дома́шня }, " ї́жа."], ["Це ", { target: дома́шній }, " суп."]] }
+            tr: { en: { examples: ["This is home cooking.", "This is a home-made soup."] }, es: { examples: ["Es comida casera.", "Es una sopa casera."] } }
+          - type: note
+            level: A1
+            text:
+              uk: ["Рід іменника: ", { link: Рід іменника, to: uk.nouns-cases.gender }, "."]
+              en: ["The gender of nouns: ", { link: Noun Gender, to: uk.nouns-cases.gender }, "."]
+              es: ["El género de los sustantivos: ", { link: El género del sustantivo, to: uk.nouns-cases.gender }, "."]
+
+  - title: { uk: "Форма: тверда і м’яка група", en: "Form: the hard and the soft group", es: "Forma: el grupo duro y el blando" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: hard, label: { uk: Тверда група, en: Hard group, es: Grupo duro } }
+          - { key: soft, label: { uk: М’яка група, en: Soft group, es: Grupo blando } }
+        rows:
+          - { level: A1, features: { gender: masc, number: sg }, form: { uk: Чоловічий рід, en: Masculine, es: Masculino }, hard: ["нов", { ending: и́й }], soft: ["си́н", { ending: ій }] }
+          - { level: A1, features: { gender: fem, number: sg }, form: { uk: Жіночий рід, en: Feminine, es: Femenino }, hard: ["нов", { ending: а́ }], soft: ["си́н", { ending: я }] }
+          - { level: A1, features: { gender: neut, number: sg }, form: { uk: Середній рід, en: Neuter, es: Neutro }, hard: ["нов", { ending: е́ }], soft: ["си́н", { ending: є }] }
+          - { level: A1, features: { number: pl }, form: { uk: Множина, en: Plural, es: Plural }, hard: ["нов", { ending: і́ }], soft: ["си́н", { ending: і }] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Більшість прикметників належить до твердої групи: ", { term: -ий }, ", ", { term: -а }, ", ", { term: -е }, ":"]
+              en: ["Most adjectives belong to the hard group: ", { term: -ий }, ", ", { term: -а }, ", ", { term: -е }, ":"]
+              es: ["La mayoría de los adjetivos pertenece al grupo duro: ", { term: -ий }, ", ", { term: -а }, ", ", { term: -е }, ":"]
+            ex: ["Сього́дні ", { target: те́плий }, " день і ", { target: те́пла }, " ніч."]
+            tr: { en: "Today is a warm day and it's a warm night.", es: "Hoy hace un día cálido y la noche es cálida." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["М’яка група мала: ", { term: си́ній }, ", ", { term: лі́тній }, ", ", { term: дома́шній }, ", ", { term: оста́нній }, ". Її закінчення — ", { term: -ій }, ", ", { term: -я }, ", ", { term: -є }, ":"]
+              en: ["The soft group is small: ", { term: си́ній }, ", ", { term: лі́тній }, ", ", { term: дома́шній }, ", ", { term: оста́нній }, ". Its endings are ", { term: -ій }, ", ", { term: -я }, ", ", { term: -є }, ":"]
+              es: ["El grupo blando es pequeño: ", { term: си́ній }, ", ", { term: лі́тній }, ", ", { term: дома́шній }, ", ", { term: оста́нній }, ". Sus terminaciones son ", { term: -ій }, ", ", { term: -я }, ", ", { term: -є }, ":"]
+            ex: ["Це ", { target: оста́ннє }, " запита́ння."]
+            tr: { en: "This is the last question.", es: "Es la última pregunta." }
+
+  - title: { uk: "Форма: знахідний і місцевий", en: "Form: the accusative and the locative", es: "Forma: el acusativo y el locativo" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок, en: Case, es: Caso } }
+          - { key: mn, label: { uk: "Чоловічий і середній рід", en: "Masculine and neuter", es: "Masculino y neutro" } }
+          - { key: fem, label: { uk: Жіночий рід, en: Feminine, es: Femenino } }
+        rows:
+          - { level: A1, features: { case: nom, number: sg }, case: { uk: Називний, en: Nominative, es: Nominativo }, mn: { alternatives: [нови́й, нове́] }, fem: нова́ }
+          - { level: A1, features: { case: acc, number: sg }, case: { uk: Знахідний, en: Accusative, es: Acusativo }, mn: { alternatives: [нови́й, нове́] }, fem: ["нов", { ending: у́ }] }
+          - { level: A1, features: { case: loc, number: sg }, case: { uk: Місцевий, en: Locative, es: Locativo }, mn: ["у нов", { ending: о́му }], fem: ["у нов", { ending: і́й }] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["У знахідному змінюється лише жіночий рід: ", { mapping: [{ term: -а }, { term: -у }] }, ", ", { mapping: [{ term: -я }, { term: -ю }] }, ":"]
+              en: ["In the accusative only the feminine changes: ", { mapping: [{ term: -а }, { term: -у }] }, ", ", { mapping: [{ term: -я }, { term: -ю }] }, ":"]
+              es: ["En el acusativo solo cambia el femenino: ", { mapping: [{ term: -а }, { term: -у }] }, ", ", { mapping: [{ term: -я }, { term: -ю }] }, ":"]
+            ex: { examples: [["Я ма́ю ", { target: нову́ }, " су́мку."], ["Я ма́ю ", { target: си́ню }, " су́мку."]] }
+            tr: { en: { examples: ["I have a new bag.", "I have a blue bag."] }, es: { examples: ["Tengo una bolsa nueva.", "Tengo una bolsa azul."] } }
+          - type: rule
+            level: A1
+            text:
+              uk: ["У місцевому чоловічий і середній рід мають ", { term: -ому }, " (", { term: си́ньому }, "), жіночий — ", { term: -ій }, ":"]
+              en: ["In the locative the masculine and neuter take ", { term: -ому }, " (", { term: си́ньому }, "), and the feminine ", { term: -ій }, ":"]
+              es: ["En el locativo el masculino y el neutro toman ", { term: -ому }, " (", { term: си́ньому }, "), y el femenino ", { term: -ій }, ":"]
+            ex: ["Він живе́ ", { target: в нові́й }, " кварти́рі."]
+            tr: { en: "He lives in a new flat.", es: "Vive en un apartamento nuevo." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Решта відмінків: ", { link: Відмінювання прикметників, to: uk.adjectives-adverbs.adjective-declension }, "."]
+              en: ["The other cases: ", { link: Adjectives in All Cases, to: uk.adjectives-adverbs.adjective-declension }, "."]
+              es: ["Los demás casos: ", { link: La declinación del adjetivo, to: uk.adjectives-adverbs.adjective-declension }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Це нова́ вікно́., right: ["Це ", { target: нове́ }, " вікно́."], rule: { uk: ["іменник середнього роду: ", { term: -е }], en: ["a neuter noun takes ", { term: -е }], es: ["un sustantivo neutro lleva ", { term: -е }] } }
+          - { level: A1, wrong: Це нови́ книжки́., right: ["Це ", { target: нові́ }, " книжки́."], rule: { uk: ["множина має ", { term: -і }, " для всіх родів"], en: ["the plural takes ", { term: -і }, " for every gender"], es: ["el plural lleva ", { term: -і }, " para todos los géneros"] } }
+          - { level: A1, wrong: Я живу́ у вели́кий мі́сто., right: ["Я живу́ ", { target: у вели́кому мі́сті }, "."], rule: { uk: ["де? — місцевий: ", { term: -ому }], en: ["where? takes the locative: ", { term: -ому }], es: ["¿dónde? lleva el locativo: ", { term: -ому }] } }
+          - { level: A1, speakers: [en], wrong: Це нови́й кни́жка., right: ["Це ", { target: нова́ }, " кни́жка."], rule: { en: ["the adjective changes with the noun's gender: ", { term: кни́жка }, " is feminine"] } }
+          - { level: A1, speakers: [es], wrong: Це си́ній мо́ре., right: ["Це ", { target: си́нє }, " мо́ре."], rule: { es: [{ term: мо́ре }, " es neutro, aunque «el mar» sea masculino: ", { term: -є }] } }

@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.reported-speech
+lang: uk
+kind: grammar
+tags: [reported-speech, direct-speech, punctuation, clauses]
+concepts: [reported-speech]
+related: [uk.sentence.shcho-shchob, uk.sentence.questions-negation, uk.pronouns.personal-pronouns, uk.sentence.conjunctions]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", es: "f0b3f7 811085 c1b9cd 1b75f5 540cbb" }
+
+title: { uk: Пряма й непряма мова, en: Direct and Reported Speech, es: Estilo directo e indirecto }
+summary:
+  lead:
+    uk: ["Непряма мова переказує чужі слова через ", { term: що }, ", ", { term: чи }, ", питальне слово або ", { term: щоб }, ", а час дієслова лишається таким, як у прямій мові."]
+    en: ["Reported speech passes on words with ", { term: що }, ", ", { term: чи }, ", a question word or ", { term: щоб }, ", and the verb keeps the tense of the original words."]
+    es: ["El estilo indirecto transmite lo dicho con ", { term: що }, ", ", { term: чи }, ", una palabra interrogativa o ", { term: щоб }, ", y el verbo mantiene el tiempo de las palabras originales."]
+  rule:
+    uk: "Час дієслова в непрямій мові не змінюється:"
+    en: "The verb keeps the tense the speaker used:"
+    es: "El verbo mantiene el tiempo que usó quien habló:"
+  ex: { contrast: [["Оле́г сказа́в: «Я ", { target: вто́млений }, "»."], ["Оле́г сказа́в, що він ", { target: уто́млений }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { uk: Пряма мова, en: Direct speech, es: Estilo directo }
+          rule:
+            uk: "двокрапка й лапки «»"
+            en: "a colon and the quotation marks «»"
+            es: "dos puntos y las comillas «»"
+          ex: "Ма́ма запита́ла: «Ти вдо́ма?»"
+          tr: { en: "Mum asked, “Are you at home?”", es: "Mamá preguntó: «¿Estás en casa?»." }
+        - level: B1
+          point: { uk: Ствердження, en: Statement, es: Afirmación }
+          rule:
+            uk: { term: що }
+            en: [{ term: що }, " (that)"]
+            es: [{ term: що }, " (que)"]
+          ex: ["Він сказа́в, ", { target: що }, " працю́є в ба́нку."]
+          tr: { en: "He said he worked in a bank.", es: "Dijo que trabajaba en un banco." }
+        - level: B1
+          point: { uk: Питання «так чи ні», en: Yes-no question, es: Pregunta de sí o no }
+          rule:
+            uk: { term: чи }
+            en: [{ term: чи }, " (whether, if)"]
+            es: [{ term: чи }, " (si)"]
+          ex: ["Ма́ма запита́ла І́горя, ", { target: чи }, " він задово́лений."]
+          tr: { en: "Mum asked Ihor if he was happy.", es: "Mamá le preguntó a Ihor si estaba contento." }
+        - level: B1
+          point: { uk: Питання з питальним словом, en: Question with a question word, es: Pregunta con interrogativo }
+          rule:
+            uk: "те саме питальне слово"
+            en: "the same question word"
+            es: "la misma palabra interrogativa"
+          ex: ["Він запита́в, ", { target: де }, " я живу́."]
+          tr: { en: "He asked where I lived.", es: "Me preguntó dónde vivía." }
+        - level: B1
+          point: { uk: Прохання, en: Request, es: Pedido }
+          rule:
+            uk: [{ term: щоб }, " з минулим часом"]
+            en: [{ term: щоб }, " with the past tense"]
+            es: [{ term: щоб }, " con el pasado"]
+          ex: ["Він попроси́в, ", { target: щоб я прийшо́в }, " за́втра."]
+          tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana." }
+        - level: B1
+          point: { uk: Особа, en: Person, es: Persona }
+          rule:
+            uk: "займенник і дієслово змінюють особу"
+            en: "the pronoun and the verb change person"
+            es: "el pronombre y el verbo cambian de persona"
+          ex: { contrast: [["Андрі́й: «", { target: Я люблю́ }, " ка́ву»."], ["Андрі́й сказа́в, що ", { target: він лю́бить }, " ка́ву."]] }
+          tr: { en: { contrast: ["Andrii: “I love coffee.”", "Andrii said he loved coffee."] }, es: { contrast: ["Andrii: «Me encanta el café».", "Andrii dijo que le encantaba el café."] } }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["непряме питання «так чи ні» — з ", { term: чи }]
+            en: ["a reported yes-no question takes ", { term: чи }]
+            es: ["la pregunta indirecta de sí o no lleva ", { term: чи }]
+          ex: ["Вона́ запита́ла, ", { target: чи }, " я прийду́."]
+          tr: { en: "She asked if I would come.", es: "Me preguntó si vendría." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: "Пряма мова передає слова дослівно, у лапках; непряма переказує їх у підрядній частині."
+              en: "Direct speech gives the exact words in quotation marks; reported speech passes them on in a clause."
+              es: "El estilo directo da las palabras exactas entre comillas; el indirecto las transmite en una oración subordinada."
+            ex: { contrast: ["Виклада́ч сказа́в: «Ви пови́нні ува́жно прочита́ти текст».", ["Виклада́ч сказа́в, ", { target: що ми пови́нні }, " ува́жно прочита́ти текст."]] }
+            tr: { en: { contrast: ["The teacher said, “You must read the text carefully.”", "The teacher said that we had to read the text carefully."] }, es: { contrast: ["El profesor dijo: «Deben leer el texto con atención».", "El profesor dijo que debíamos leer el texto con atención."] } }
+          - type: rule
+            level: B1
+            text:
+              uk: "Коли слова автора стоять перед прямою мовою, після них ставимо двокрапку. Коли після: за розповідною прямою мовою — кома й тире, за питанням чи окликом — лише тире."
+              en: "When the reporting words come first, a colon follows them. When they come after: a statement takes a comma and a dash after the quotation marks, a question or an exclamation only a dash."
+              es: "Cuando las palabras del narrador van delante, las siguen dos puntos. Cuando van detrás: tras una afirmación van una coma y una raya; tras una pregunta o una exclamación, solo la raya."
+            ex: { contrast: ["«Я вдо́ма», — сказа́ла ма́ма.", "«Ти вдо́ма?» — запита́ла ма́ма."] }
+            tr: { en: { contrast: ["“I'm home,” Mum said.", "“Are you home?” Mum asked."] }, es: { contrast: ["«Estoy en casa», dijo mamá.", "«¿Estás en casa?», preguntó mamá."] } }
+
+  - title: { uk: "Непряма мова", en: "Reported speech", es: "El estilo indirecto" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: [{ term: що }, ": ствердження"], en: [{ term: що }, ": a statement"], es: [{ term: що }, ": una afirmación"] }
+            ex: ["Він сказа́в, ", { target: що }, " працю́є в ба́нку."]
+            tr: { en: "He said he worked in a bank.", es: "Dijo que trabajaba en un banco." }
+          - level: B1
+            use: { uk: [{ term: чи }, ": питання «так чи ні»"], en: [{ term: чи }, ": a yes-no question"], es: [{ term: чи }, ": una pregunta de sí o no"] }
+            ex: ["Ма́ма запита́ла І́горя, ", { target: чи }, " він задово́лений результа́том."]
+            tr: { en: "Mum asked Ihor if he was happy with the result.", es: "Mamá le preguntó a Ihor si estaba contento con el resultado." }
+          - level: B1
+            use: { uk: "питальне слово лишається", en: "the question word stays", es: "la palabra interrogativa se mantiene" }
+            ex: ["Він запита́в, ", { target: де }, " я живу́."]
+            tr: { en: "He asked where I lived.", es: "Me preguntó dónde vivía." }
+          - level: B1
+            use: { uk: [{ term: щоб }, " з минулим часом: прохання, наказ"], en: [{ term: щоб }, " with the past tense: a request, an order"], es: [{ term: щоб }, " con el pasado: un pedido, una orden"] }
+            ex: ["Він попроси́в, ", { target: щоб я прийшо́в }, " за́втра."]
+            tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana." }
+          - level: B1
+            use: { uk: [{ term: попроси́ти }, " з інфінітивом: прохання"], en: [{ term: попроси́ти }, " with the infinitive: a request"], es: [{ term: попроси́ти }, " con infinitivo: un pedido"] }
+            ex: ["Він попроси́в мене́ ", { target: прийти́ }, " за́втра."]
+            tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana." }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: "Час дієслова лишається таким, яким був у прямій мові: теперішній час означає «тоді, коли говорили»."
+              en: "The verb keeps the tense of the direct speech: the present means “at the time they spoke”."
+              es: "El verbo mantiene el tiempo del estilo directo: el presente significa «en el momento en que habló»."
+            ex: { contrast: [["Він сказа́в: «Я ", { target: працю́ю }, " в ба́нку»."], ["Він сказа́в, що ", { target: працю́є }, " в ба́нку."]] }
+            tr: { en: { contrast: ["He said, “I work in a bank.”", "He said he worked in a bank."] }, es: { contrast: ["Dijo: «Trabajo en un banco».", "Dijo que trabajaba en un banco."] } }
+          - type: rule
+            level: B1
+            text:
+              uk: "Займенники й дієслова змінюють особу так, як у звичайному переказі."
+              en: "Pronouns and verbs change person, as when you pass anything on."
+              es: "Los pronombres y los verbos cambian de persona, como en cualquier relato."
+            ex: { contrast: [["Андрі́й: «", { target: Я люблю́ }, " ка́ву»."], ["Андрі́й сказа́в, що ", { target: він лю́бить }, " ка́ву."]] }
+            tr: { en: { contrast: ["Andrii: “I love coffee.”", "Andrii said he loved coffee."] }, es: { contrast: ["Andrii: «Me encanta el café».", "Andrii dijo que le encantaba el café."] } }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: "Він спроси́в, де я живу́.", right: ["Він ", { target: запита́в }, ", де я живу́."], rule: { uk: [{ term: запита́ти }, " або ", { term: спита́ти }, "; ", { term: спроси́ти }, " — російське слово"], en: [{ term: запита́ти }, " or ", { term: спита́ти }, "; ", { term: спроси́ти }, " is Russian"], es: [{ term: запита́ти }, " o ", { term: спита́ти }, "; ", { term: спроси́ти }, " es ruso"] } }
+          - { level: B1, speakers: [en, es], wrong: "Вона́ запита́ла, якщо́ я прийду́.", right: ["Вона́ запита́ла, ", { target: чи }, " я прийду́."], rule: { en: ["“if” in a reported question is ", { term: чи }, "; ", { term: якщо́ }, " is the “if” of conditions"], es: ["el «si» de una pregunta indirecta es ", { term: чи }, "; ", { term: якщо́ }, " es el «si» de las condiciones"] } }
+          - { level: B1, speakers: [en, es], wrong: "Оле́г сказа́в, що за́раз він був уто́млений.", right: ["Оле́г сказа́в, що за́раз він ", { target: уто́млений }, "."], rule: { en: ["Oleh's words were ", { term: "Я вто́млений" }, ", about the moment he spoke: the report keeps his present tense; ", { term: був уто́млений }, " means tired earlier"], es: ["Oleh dijo ", { term: "Я вто́млений" }, ", sobre el momento en que hablaba: se mantiene su presente; ", { term: був уто́млений }, " significa cansado antes"] } }

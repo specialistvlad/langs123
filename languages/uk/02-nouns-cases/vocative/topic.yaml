@@ -1,0 +1,213 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.vocative
+lang: uk
+kind: grammar
+tags: [cases, vocative, nouns, address, names]
+concepts: [cases, address]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.nominative, uk.pronouns.ty-vy, uk.nouns-cases.declension-alternations]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "5df357 e5b202 877ed7 72acd9 b3c917 998924", es: "5df357 e5b202 877ed7 72acd9 b3c917 998924" }
+
+title: { uk: Кличний відмінок, en: Vocative Case, es: El caso vocativo }
+summary:
+  lead:
+    uk: "Кличний відмінок — форма звертання: ним кличуть людину на ім’я, звертаються до рідних, друзів і незнайомих."
+    en: "The vocative is the form for addressing someone: it calls a person by name and speaks to family, friends and strangers."
+    es: "El vocativo es la forma para dirigirse a alguien: llama a una persona por su nombre y habla a familiares, amigos y desconocidos."
+  rule:
+    uk: ["Імена на ", { term: -а }, " мають ", { term: -о }, ", на приголосний — ", { term: -е }, " чи ", { term: -ю }, ":"]
+    en: ["Names in ", { term: -а }, " take ", { term: -о }, ", names ending in a consonant ", { term: -е }, " or ", { term: -ю }, ":"]
+    es: ["Los nombres en ", { term: -а }, " toman ", { term: -о }, "; los acabados en consonante, ", { term: -е }, " o ", { term: -ю }, ":"]
+  ex: { examples: [[{ target: Оле́но }, ", приві́т!"], [{ target: Оста́пе }, ", ході́ сюди́!"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule:
+            uk: ["тверда основа: ", { term: -е }]
+            en: ["a hard stem: ", { term: -е }]
+            es: ["raíz dura: ", { term: -е }]
+          ex: [{ target: Оста́пе }, ", ході́ сюди́!"]
+          tr: { en: "Ostap, come here!", es: "¡Ostap, ven aquí!" }
+        - level: A1
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule:
+            uk: ["м’яка основа, ", { term: -й }, ": ", { term: -ю }]
+            en: ["a soft stem or ", { term: -й }, ": ", { term: -ю }]
+            es: ["raíz blanda o ", { term: -й }, ": ", { term: -ю }]
+          ex: [{ target: Андрі́ю }, ", приві́т!"]
+          tr: { en: "Hi, Andrii!", es: "¡Hola, Andrí!" }
+        - level: A1
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: { mapping: [{ term: -а }, { term: -о }] }
+            en: { mapping: [{ term: -а }, { term: -о }] }
+            es: { mapping: [{ term: -а }, { term: -о }] }
+          ex: [{ target: Оле́но }, ", допоможи́, будь ла́ска."]
+          tr: { en: "Olena, help me, please.", es: "Olena, ayúdame, por favor." }
+        - level: A1
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: [{ mapping: [{ term: -я }, { term: -ю }] }, ", ", { mapping: [{ term: -ія }, { term: -іє }] }]
+            en: [{ mapping: [{ term: -я }, { term: -ю }] }, ", ", { mapping: [{ term: -ія }, { term: -іє }] }]
+            es: [{ mapping: [{ term: -я }, { term: -ю }] }, ", ", { mapping: [{ term: -ія }, { term: -іє }] }]
+          ex: [{ target: Наді́є }, ", до́брий день!"]
+          tr: { en: "Good afternoon, Nadiia!", es: "¡Buenas tardes, Nadia!" }
+        - level: A1
+          point: { uk: "Пане, пані", en: "Sir, madam", es: "Señor, señora" }
+          rule:
+            uk: [{ term: па́не }, "; ", { term: па́ні }, " не змінюється"]
+            en: [{ term: па́не }, "; ", { term: па́ні }, " never changes"]
+            es: [{ term: па́не }, "; ", { term: па́ні }, " no cambia"]
+          ex: [{ target: Па́не }, ", скажі́ть, будь ла́ска, котра́ годи́на?"]
+          tr: { en: "Excuse me, sir, what time is it?", es: "Perdone, señor, ¿qué hora es?" }
+        - level: A2
+          point: { uk: Титул та ім’я, en: Title and name, es: Título y nombre }
+          rule:
+            uk: "обидва слова в кличному"
+            en: "both words in the vocative"
+            es: "las dos palabras en vocativo"
+          ex: [{ target: Па́не Ю́рію }, ", повторі́ть, будь ла́ска."]
+          tr: { en: "Mr Yurii, could you repeat that, please?", es: "Señor Yuri, repítalo, por favor." }
+        - level: A2
+          point: { uk: Пестливі імена, en: Pet names, es: Diminutivos }
+          rule:
+            uk: { mapping: [{ term: -ка }, { term: -ко }] }
+            en: { mapping: [{ term: -ка }, { term: -ко }] }
+            es: { mapping: [{ term: -ка }, { term: -ко }] }
+          ex: [{ target: Оле́нко }, ", будь щасли́вою!"]
+          tr: { en: "Olenka, be happy!", es: "¡Olenka, sé feliz!" }
+        - level: B1
+          point: { uk: Чергування, en: Alternation, es: Alternancia }
+          rule:
+            uk: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, " перед ", { term: -е }]
+            en: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, " before ", { term: -е }]
+            es: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, " ante ", { term: -е }]
+          ex: [{ target: Дру́же }, ", дя́кую!"]
+          tr: { en: "Thanks, my friend!", es: "¡Gracias, amigo!" }
+        - level: B1
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule:
+            uk: "форма називного"
+            en: "the nominative form"
+            es: "la forma del nominativo"
+          ex: [{ target: Шано́вні пасажи́ри }, ", зберіга́йте спо́кій."]
+          tr: { en: "Dear passengers, please stay calm.", es: "Estimados pasajeros, mantengan la calma." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: "звертання виділяють комами"
+            en: "commas set off the person addressed"
+            es: "las comas separan a quien se habla"
+          ex: ["Дя́кую, ", { target: ма́мо }, "!"]
+          tr: { en: "Thanks, Mum!", es: "¡Gracias, mamá!" }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Кличний відмінок — форма, якою звертаються до людини:"
+              en: "The vocative is the form used to speak to someone:"
+              es: "El vocativo es la forma con la que se habla a alguien:"
+            ex: [{ target: Ма́мо }, ", ході́ сюди́!"]
+            tr: { en: "Mum, come here!", es: "¡Mamá, ven aquí!" }
+          - type: rule
+            level: A1
+            text:
+              uk: "Звертання виділяють комами:"
+              en: "Commas set off the person addressed:"
+              es: "Las comas separan a la persona a quien se habla:"
+            ex: ["Дя́кую, ", { target: Іва́не }, "!"]
+            tr: { en: "Thank you, Ivan!", es: "¡Gracias, Ivan!" }
+
+  - title: { uk: Форма, en: Form, es: Forma }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: voc, label: { uk: Кличний, en: Vocative, es: Vocativo }, features: { case: voc } }
+        rows:
+          - { level: A1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, тверда основа", en: "Masculine, hard stem", es: "Masculino, raíz dura" }, nom: { alternatives: [Оста́п, брат, пан] }, voc: { alternatives: [["Оста́п", { ending: е }], ["бра́т", { ending: е }], ["па́н", { ending: е }]] } }
+          - { level: A1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, м’яка основа", en: "Masculine, soft stem", es: "Masculino, raíz blanda" }, nom: { alternatives: [Ю́рій, Васи́ль, учи́тель] }, voc: { alternatives: [["Ю́рі", { ending: ю }], ["Васи́л", { ending: ю }], ["учи́тел", { ending: ю }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -а", en: "Feminine in -а", es: "Femenino en -а" }, nom: { alternatives: [Оле́на, ма́ма, ді́вчина] }, voc: { alternatives: [["Оле́н", { ending: о }], ["ма́м", { ending: о }], ["ді́вчин", { ending: о }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -я", en: "Feminine in -я", es: "Femenino en -я" }, nom: { alternatives: [Га́ля, бабу́ся] }, voc: { alternatives: [["Га́л", { ending: ю }], ["бабу́с", { ending: ю }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -ія", en: "Feminine in -ія", es: "Femenino en -ія" }, nom: { alternatives: [Наді́я, Марі́я] }, voc: { alternatives: [["Наді́", { ending: є }], ["Марі́", { ending: є }]] } }
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід на -у", en: "Masculine in -у", es: "Masculino en -у" }, nom: { alternatives: [син, ба́тько] }, voc: { alternatives: [["си́н", { ending: у }], ["ба́тьк", { ending: у }]] } }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Пестливі імена на -ка", en: "Pet names in -ка", es: "Diminutivos en -ка" }, nom: { alternatives: [Оле́нка, Ната́лка] }, voc: { alternatives: [["Оле́нк", { ending: о }], ["Ната́лк", { ending: о }]] } }
+          - { level: B1, features: { gender: masc, number: sg }, group: { uk: "Чергування г, к", en: "г, к alternate", es: "Alternancia de г, к" }, nom: { alternatives: [друг, коза́к] }, voc: { alternatives: [["дру́", { letter: ж }, { ending: е }], ["коза́", { letter: ч }, { ending: е }]] } }
+          - { level: B1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід на -ар", en: "Masculine in -ар", es: "Masculino en -ар" }, nom: { alternatives: [ку́хар, лі́кар] }, voc: { alternatives: [["ку́хар", { ending: ю }], ["лі́кар", { ending: ю }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["З титулом ", { term: пан }, " обидва слова стоять у кличному; ", { term: па́ні }, " не змінюється:"]
+              en: ["With the title ", { term: пан }, ", both words are vocative; ", { term: па́ні }, " never changes:"]
+              es: ["Con el título ", { term: пан }, ", las dos palabras van en vocativo; ", { term: па́ні }, " no cambia:"]
+            ex: { examples: [{ target: Па́не Іва́не }, ["па́ні ", { target: Оле́но }]] }
+            tr: { en: { examples: ["Mr Ivan", "Ms Olena"] }, es: { examples: ["señor Ivan", "señora Olena"] } }
+          - type: note
+            level: B1
+            text:
+              uk: "У множині звертаються формою називного:"
+              en: "In the plural, the nominative form addresses people:"
+              es: "En plural se usa la forma del nominativo:"
+            ex: [{ target: Дру́зі }, ", дя́кую вам!"]
+            tr: { en: "Thank you, friends!", es: "¡Gracias, amigos!" }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: "прохання до незнайомої людини", en: "asking a stranger", es: "pedir algo a un desconocido" }
+            ex: [{ target: Ді́вчино }, ", напиші́ть тут адре́су, будь ла́ска."]
+            tr: { en: "Miss, please write your address here.", es: "Señorita, escriba aquí su dirección, por favor." }
+          - level: A1
+            use: { uk: "ввічливе звертання", en: "a polite address", es: "un trato cortés" }
+            ex: [{ target: Па́ні }, ", скажі́ть, будь ла́ска, де вокза́л?"]
+            tr: { en: "Excuse me, madam, where's the station?", es: "Perdone, señora, ¿dónde está la estación?" }
+          - level: A2
+            use: { uk: "звертання до рідних", en: "speaking to family", es: "hablar con la familia" }
+            ex: [{ target: Бабу́сю }, ", сіда́йте, будь ла́ска."]
+            tr: { en: "Grandma, please sit down.", es: "Abuela, siéntese, por favor." }
+          - level: A2
+            use: { uk: "побажання", en: "a wish", es: "un deseo" }
+            ex: [{ target: Оле́нко }, ", будь щасли́вою!"]
+            tr: { en: "Olenka, be happy!", es: "¡Olenka, sé feliz!" }
+          - level: B1
+            use: { uk: "звертання до групи людей", en: "speaking to a group", es: "hablar a un grupo" }
+            ex: [{ target: Шано́вні пасажи́ри }, ", зберіга́йте спо́кій."]
+            tr: { en: "Dear passengers, please stay calm.", es: "Estimados pasajeros, mantengan la calma." }
+          - level: B1
+            use: { uk: "звертання за професією", en: "addressing someone by their job", es: "dirigirse a alguien por su profesión" }
+            ex: [{ target: Па́не ку́харю }, ", яки́й смачни́й пирі́г!"]
+            tr: { en: "Chef, what a tasty pie!", es: "¡Señor cocinero, qué pastel tan rico!" }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: "Оле́на, приві́т!", right: [{ target: Оле́но }, ", приві́т!"], rule: { uk: "звертання — кличний; називний у звертанні — вплив російської", en: "address takes the vocative; the nominative here is Russian influence", es: "para dirigirse a alguien se usa el vocativo; el nominativo aquí es influencia del ruso" } }
+          - { level: A1, wrong: "Пан Іва́н, скажі́ть, будь ла́ска.", right: [{ target: Па́не Іва́не }, ", скажі́ть, будь ла́ска."], rule: { uk: [{ term: пан }, " та ім’я — обидва в кличному"], en: [{ term: пан }, " and the name are both vocative"], es: [{ term: пан }, " y el nombre van los dos en vocativo"] } }
+          - { level: A1, wrong: "Па́ні Оле́на, дя́кую.", right: ["Па́ні ", { target: Оле́но }, ", дя́кую."], rule: { uk: [{ term: па́ні }, " не змінюється, ім’я — у кличному"], en: [{ term: па́ні }, " stays, the name is vocative"], es: [{ term: па́ні }, " no cambia; el nombre va en vocativo"] } }
+          - { level: B1, wrong: "Дру́ге, ході́ сюди́!", right: [{ target: Дру́же }, ", ході́ сюди́!"], rule: { uk: [{ mapping: [{ letter: г }, { letter: ж }] }, " перед ", { term: -е }], en: [{ mapping: [{ letter: г }, { letter: ж }] }, " before ", { term: -е }], es: [{ mapping: [{ letter: г }, { letter: ж }] }, " ante ", { term: -е }] } }

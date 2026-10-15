@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.future-imperative-conditional.future-synthetic
+lang: uk
+kind: grammar
+tags: [verbs, tenses, future]
+concepts: [future]
+related: [uk.future-imperative-conditional.future-compound, uk.past-aspect.aspect]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "b9ad58 f079d0 89d649 750995 26d285 cc1eeb", es: "b9ad58 f079d0 89d649 750995 26d285 cc1eeb" }
+
+title: { uk: "Майбутній час на -му: читатиму", en: "Future in -му: читатиму", es: "El futuro en -му: читатиму" }
+summary:
+  lead:
+    uk: ["Дієслова недоконаного виду мають просту форму майбутнього: інфінітив і закінчення ", { term: -му }, ", ", { term: -меш }, ", ", { term: -ме }, ": ", { term: чита́тиму }, "."]
+    en: ["Imperfective verbs have a one-word future: the infinitive with ", { term: -му }, ", ", { term: -меш }, ", ", { term: -ме }, ": ", { term: чита́тиму }, "."]
+    es: ["Los verbos imperfectivos tienen un futuro de una sola palabra: el infinitivo con ", { term: -му }, ", ", { term: -меш }, ", ", { term: -ме }, ": ", { term: чита́тиму }, "."]
+  rule:
+    uk: ["Форма ", { term: чита́тиму }, " означає те саме, що ", { term: бу́ду чита́ти }, ":"]
+    en: ["The form ", { term: чита́тиму }, " means the same as ", { term: бу́ду чита́ти }, ":"]
+    es: ["La forma ", { term: чита́тиму }, " significa lo mismo que ", { term: бу́ду чита́ти }, ":"]
+  ex: { equivalence: [["Я ", { target: чита́тиму }, "."], ["Я ", { target: бу́ду чита́ти }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { uk: Форма, en: Form, es: Forma }
+          rule: { uk: { pattern: [{ slot: infinitive }, { ending: му }] }, en: { pattern: [{ slot: infinitive }, { ending: му }] }, es: { pattern: [{ slot: infinitive }, { ending: му }] } }
+          ex: ["За́втра я ", { target: працюва́тиму }, "."]
+          tr: { en: "I'll be working tomorrow.", es: "Mañana trabajaré." }
+        - level: B1
+          point: { uk: Закінчення, en: Endings, es: Terminaciones }
+          rule: { uk: { alternatives: [{ term: -му }, { term: -меш }, { term: -ме }, { term: -мемо }, { term: -мете }, { term: -муть }] }, en: { alternatives: [{ term: -му }, { term: -меш }, { term: -ме }, { term: -мемо }, { term: -мете }, { term: -муть }] }, es: { alternatives: [{ term: -му }, { term: -меш }, { term: -ме }, { term: -мемо }, { term: -мете }, { term: -муть }] } }
+          ex: ["Що ти ", { target: роби́тимеш }, " уве́чері?"]
+          tr: { en: "What will you be doing this evening?", es: "¿Qué harás esta noche?" }
+        - level: B1
+          point: { uk: "Дієслова на -ся", en: "Verbs in -ся", es: "Verbos en -ся" }
+          rule: { uk: { mapping: [{ term: смія́тися }, { term: смія́тимуся }] }, en: { mapping: [{ term: смія́тися }, { term: смія́тимуся }] }, es: { mapping: [{ term: смія́тися }, { term: смія́тимуся }] } }
+          ex: ["Насту́пного ро́ку він ", { target: учи́тиметься }, " у Льво́ві."]
+          tr: { en: "Next year he'll be studying in Lviv.", es: "El año que viene estudiará en Leópolis." }
+        - level: B1
+          point: { uk: Значення, en: Meaning, es: Significado }
+          rule: { uk: { equivalence: [{ term: чита́тиму }, { term: бу́ду чита́ти }] }, en: { equivalence: [{ term: чита́тиму }, { term: бу́ду чита́ти }] }, es: { equivalence: [{ term: чита́тиму }, { term: бу́ду чита́ти }] } }
+          ex: ["Ми ", { target: чека́тимемо }, " на вас."]
+          tr: { en: "We'll be waiting for you.", es: "Los esperaremos." }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: "лише недоконаний вид", en: "imperfective verbs alone", es: "solo verbos imperfectivos" }
+          ex: ["Я ", { target: прочита́ю }, " лист."]
+          tr: { en: "I'll read the letter.", es: "Leeré la carta." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["До інфінітива недоконаного виду додають ", { term: -му }, ", ", { term: -меш }, ", ", { term: -ме }, ", ", { term: -мемо }, ", ", { term: -мете }, ", ", { term: -муть }, "."]
+              en: ["The imperfective infinitive takes ", { term: -му }, ", ", { term: -меш }, ", ", { term: -ме }, ", ", { term: -мемо }, ", ", { term: -мете }, ", ", { term: -муть }, "."]
+              es: ["El infinitivo imperfectivo toma ", { term: -му }, ", ", { term: -меш }, ", ", { term: -ме }, ", ", { term: -мемо }, ", ", { term: -мете }, ", ", { term: -муть }, "."]
+            ex: { mapping: [писа́ти, { target: писа́тиму }] }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Обидві форми майбутнього, ", { term: чита́тиму }, " і ", { term: бу́ду чита́ти }, ", мають однакове значення."]
+              en: ["The two future forms, ", { term: чита́тиму }, " and ", { term: бу́ду чита́ти }, ", mean the same."]
+              es: ["Las dos formas de futuro, ", { term: чита́тиму }, " y ", { term: бу́ду чита́ти }, ", significan lo mismo."]
+            ex: { equivalence: [["Він ", { target: працюва́тиме }, " вдо́ма."], ["Він ", { target: бу́де працюва́ти }, " вдо́ма."]] }
+            tr: { en: { equivalence: ["He'll be working from home.", "He'll be working from home."] }, es: { equivalence: ["Trabajará en casa.", "Trabajará en casa."] } }
+          - type: rule
+            level: B1
+            text:
+              uk: "Наголос залишається там, де він в інфінітиві."
+              en: "The stress stays where it is in the infinitive."
+              es: "El acento se queda donde está en el infinitivo."
+            ex: { mapping: [люби́ти, { target: люби́тимемо }] }
+
+  - title: { uk: Форма, en: Form, es: Forma }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто, en: Who, es: Quién } }
+          - { key: read, label: чита́ти, features: { tense: fut, aspect: ipfv } }
+          - { key: work, label: працюва́ти, features: { tense: fut, aspect: ipfv } }
+          - { key: laugh, label: смія́тися, features: { tense: fut, aspect: ipfv } }
+        rows:
+          - { level: B1, features: { person: 1, number: sg }, who: я, read: [чита́ти, { ending: му }], work: [працюва́ти, { ending: му }], laugh: [смія́ти, { ending: муся }] }
+          - { level: B1, features: { person: 2, number: sg }, who: ти, read: [чита́ти, { ending: меш }], work: [працюва́ти, { ending: меш }], laugh: [смія́ти, { ending: мешся }] }
+          - { level: B1, features: { person: 3, number: sg }, who: { alternatives: [він, вона́, воно́] }, read: [чита́ти, { ending: ме }], work: [працюва́ти, { ending: ме }], laugh: [смія́ти, { ending: меться }] }
+          - { level: B1, features: { person: 1, number: pl }, who: ми, read: [чита́ти, { ending: мемо }], work: [працюва́ти, { ending: мемо }], laugh: [смія́ти, { ending: мемося }] }
+          - { level: B1, features: { person: 2, number: pl }, who: { alternatives: [ви, Ви] }, read: [чита́ти, { ending: мете }], work: [працюва́ти, { ending: мете }], laugh: [смія́ти, { ending: метеся }] }
+          - { level: B1, features: { person: 3, number: pl }, who: вони́, read: [чита́ти, { ending: муть }], work: [працюва́ти, { ending: муть }], laugh: [смія́ти, { ending: муться }] }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["У дієсловах на ", { term: -ся }, " постфікс стоїть після закінчення: ", { term: смія́тимуся }, ", ", { term: смія́тиметься }, "."]
+              en: ["In verbs in ", { term: -ся }, ", the postfix follows the ending: ", { term: смія́тимуся }, ", ", { term: смія́тиметься }, "."]
+              es: ["En los verbos en ", { term: -ся }, ", el posfijo va después de la terminación: ", { term: смія́тимуся }, ", ", { term: смія́тиметься }, "."]
+            ex: ["Ді́ти ", { target: гра́тимуться }, " в па́рку."]
+            tr: { en: "The children will be playing in the park.", es: "Los niños jugarán en el parque." }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: "план чи процес у майбутньому", en: "a plan or a process in the future", es: "un plan o un proceso en el futuro" }
+            ex: ["Уве́сь ве́чір я ", { target: готува́тимуся }, " до і́спиту."]
+            tr: { en: "I'll be studying for the exam all evening.", es: "Toda la tarde me prepararé para el examen." }
+          - level: B1
+            use: { uk: "повторення в майбутньому", en: "a repeated action in the future", es: "una repetición en el futuro" }
+            ex: ["Я ", { target: дзвони́тиму }, " тобі́ щове́чора."]
+            tr: { en: "I'll call you every evening.", es: "Te llamaré todas las noches." }
+          - level: B1
+            use: { uk: "питання про плани", en: "a question about plans", es: "una pregunta sobre planes" }
+            ex: ["Де ви ", { target: жи́тимете }, " влі́тку?"]
+            tr: { en: "Where will you be living in the summer?", es: "¿Dónde vivirán en verano?" }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: Я прочита́тиму лист., right: ["Я ", { target: прочита́ю }, " лист."], rule: { uk: ["форму на ", { term: -му }, " мають лише дієслова недоконаного виду"], en: ["only imperfective verbs have the ", { term: -му }, " form"], es: ["solo los verbos imperfectivos tienen la forma en ", { term: -му }] } }
+          - { level: B1, wrong: Я бу́ду чита́тиму., right: ["Я ", { target: чита́тиму }, "."], rule: { uk: ["або ", { term: чита́тиму }, ", або ", { term: бу́ду чита́ти }, ", не обидві разом"], en: ["either ", { term: чита́тиму }, " or ", { term: бу́ду чита́ти }, ", never both together"], es: ["o ", { term: чита́тиму }, " o ", { term: бу́ду чита́ти }, ", nunca las dos juntas"] } }

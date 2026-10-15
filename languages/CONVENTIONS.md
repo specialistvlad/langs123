@@ -28,7 +28,8 @@ grows toward N languages, each explained in N languages.
 - The library holds English (`en`) in eleven tracks: explained in English, Ukrainian (`uk`), Spanish
   (`es`), Portuguese (`pt`, Brazilian), French (`fr`), German (`de`), Italian (`it`), Polish (`pl`),
   Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). It holds Spanish (`es`) in three: explained
-  in Spanish, English and Ukrainian.
+  in Spanish, English and Ukrainian. It holds Ukrainian (`uk`) in three: explained in Ukrainian,
+  English and Spanish.
 - An explanation language is data alone: its entry in `site.yaml` and its text in the files of
   `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.
@@ -37,6 +38,15 @@ grows toward N languages, each explained in N languages.
 - **Spanish** topics follow the Plan Curricular del Instituto Cervantes (PCIC): its grammar inventory
   sets the topics and the level of each rule, and its reference norm sets the forms. Spanish text opens
   questions and exclamations with ¿ and ¡ and writes every accent: *¿Estás bien?*
+- **Ukrainian** topics follow the state standard «Українська мова як іноземна. Рівні загального
+  володіння А1–С2» (2024): its grammar catalogue for each level sets the topics and the level of each
+  rule, and its examples set the forms. Ukrainian text writes the apostrophe as ’ (*п’ять*) and marks
+  the stress of every word of more than one syllable with an acute accent (U+0301) in examples, table
+  cells and the forms an explanation discusses: *Я чита́ю кни́жку.* Titles and explanation prose stand
+  without stress marks. A Latin transliteration, after the national system of 2010, appears beside the
+  IPA in the three A0 topics on the alphabet, the sounds and the soft sign alone. Forms carried over
+  from Russian (*хворі́ти гри́пом* for *хворі́ти на грип*) are typical errors for every reader. The dash
+  between a subject and its noun predicate is Ukrainian punctuation and stands in examples: *Ма́ма — лі́кар.*
 - **Varieties.** `varieties` on a language being learned lists the varieties a reader chooses
   between, the default first. Spanish has Latin America (`es-419`), the default, and Spain (`es-ES`).
   An element of one variety carries `variety`, and an element without it serves every variety: the
@@ -450,7 +460,8 @@ exactly the names below, and `npm run check` rejects the inline notation they re
 | `person` | `1`, `2`, `3` |
 | `number` | `sg`, `pl` |
 | `gender` | `masc`, `fem`, `neut` |
-| `case` | `nom`, `acc`, `gen` |
+| `case` | `nom`, `acc`, `gen`, `dat`, `ins`, `loc`, `voc` |
+| `animacy` | `anim`, `inan` |
 | `tense` | `prs`, `pst`, `fut` |
 | `aspect` | `prog`, `prf`, `hab`, `pfv`, `ipfv` |
 | `mood` | `ind`, `imp`, `sbjv`, `cond` |
@@ -466,13 +477,14 @@ exactly the names below, and `npm run check` rejects the inline notation they re
 | `countability` | `count`, `mass` |
 | `wordclass` | `det`, `pro` |
 
-`person`, `number`, `gender`, `case`, `tense`, `mood`, `polarity`, `interrogativity`, `politeness`,
-`definiteness` and `voice` take their names and values from UniMorph, and `aspect` adds `hab` to its
-UniMorph values. `degree` (UniMorph's comparison, with `pos` for the plain form), `deixis` (`dist` for
-UniMorph's remote), `verbform`, `contraction`, `countability` and `wordclass` (a determiner before a
-noun, `my`, or a pronoun on its own, `mine`) are the project's own. A question, a
-statement and a negative differ in interrogativity and polarity. *We* is person `1`, number `pl`;
-*you* is person `2` with either number; "I / you / we / they" lists four bundles.
+`person`, `number`, `gender`, `case`, `animacy`, `tense`, `mood`, `polarity`, `interrogativity`,
+`politeness`, `definiteness` and `voice` take their names and values from UniMorph, `aspect` adds
+`hab` to its UniMorph values, and `case` adds `loc` for the Slavic locative. `degree` (UniMorph's
+comparison, with `pos` for the plain form), `deixis` (`dist` for UniMorph's remote), `verbform`,
+`contraction`, `countability` and `wordclass` (a determiner before a noun, `my`, or a pronoun on its
+own, `mine`) are the project's own. A question, a statement and a negative differ in interrogativity
+and polarity. *We* is person `1`, number `pl`; *you* is person `2` with either number; "I / you / we
+/ they" lists four bundles.
 
 **Topic and sections**
 

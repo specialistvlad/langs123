@@ -1,0 +1,240 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.verbs-present.liking
+lang: uk
+kind: grammar
+tags: [verbs, liking, dative]
+concepts: [gustar]
+related: [uk.nouns-cases.dative, uk.nouns-cases.nominative, uk.verbs-present.reflexive-sia, uk.pronouns.personal-pronouns, uk.past-aspect.aspect]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "81ecf1 7832c3 e0f9fb f71e82 4ae8d6 c4a9fb 2ab550", es: "81ecf1 7832c3 e0f9fb f71e82 4ae8d6 c4a9fb 2ab550" }
+
+title: { uk: "Мені подобається", en: "Liking: мені подобається", es: "Gustar: мені подобається" }
+summary:
+  lead:
+    uk: ["Уподобання передаємо через ", { term: подо́батися }, ": той, кому подобається, стоїть у давальному, а те, що подобається, — у називному."]
+    en: ["Ukrainian says what you like with ", { term: подо́батися }, ": the person who likes takes the dative, and the thing liked is the subject."]
+    es: ["El ucraniano expresa los gustos con ", { term: подо́батися }, ": quien siente el gusto va en dativo, y lo que gusta es el sujeto."]
+  rule:
+    uk: "Дієслово узгоджується з тим, що подобається:"
+    en: "The verb agrees with the thing liked:"
+    es: "El verbo concuerda con lo que gusta:"
+  ex: { examples: [["Мені́ ", { target: подо́бається }, " ка́ва."], ["Мені́ ", { target: подо́баються }, " ці кві́ти."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Фраза, en: Set phrase, es: Frase hecha }
+          rule:
+            uk: "так кажемо, що щось до вподоби"
+            en: "saying you like something"
+            es: "decir que algo gusta"
+          ex: ["Мені́ ", { target: подо́бається }, "."]
+          tr: { en: "I like it.", es: "Me gusta." }
+        - level: A1
+          point: { uk: Заперечення, en: Negative, es: Negación }
+          rule:
+            uk: [{ term: не }, " перед дієсловом"]
+            en: [{ term: не }, " before the verb"]
+            es: [{ term: не }, " delante del verbo"]
+          ex: ["Мені́ ", { target: не подо́бається }, "."]
+          tr: { en: "I don't like it.", es: "No me gusta." }
+        - level: A2
+          point: { uk: Будова, en: Pattern, es: Estructura }
+          rule:
+            uk: { pattern: [{ slot: { uk: давальний, en: dative, es: dativo } }, { term: подо́бається }, { slot: { uk: називний, en: nominative, es: nominativo } }] }
+            en: { pattern: [{ slot: { uk: давальний, en: dative, es: dativo } }, { term: подо́бається }, { slot: { uk: називний, en: nominative, es: nominativo } }] }
+            es: { pattern: [{ slot: { uk: давальний, en: dative, es: dativo } }, { term: подо́бається }, { slot: { uk: називний, en: nominative, es: nominativo } }] }
+          ex: ["Йому́ ", { target: подо́бається }, " Ки́їв."]
+          tr: { en: "He likes Kyiv.", es: "Le gusta Kiev." }
+        - level: A2
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule:
+            uk: [{ term: подо́баються }, " з множиною"]
+            en: [{ term: подо́баються }, " with a plural"]
+            es: [{ term: подо́баються }, " con un plural"]
+          ex: ["Нам ", { target: подо́баються }, " ці пісні́."]
+          tr: { en: "We like these songs.", es: "Nos gustan estas canciones." }
+        - level: A2
+          point: { uk: Інфінітив, en: Infinitive, es: Infinitivo }
+          rule:
+            uk: [{ term: подо́бається }, " з інфінітивом"]
+            en: [{ term: подо́бається }, " with an infinitive"]
+            es: [{ term: подо́бається }, " con un infinitivo"]
+          ex: ["Їй ", { target: подо́бається }, " гуля́ти."]
+          tr: { en: "She likes going for walks.", es: "Le gusta pasear." }
+        - level: A2
+          point: { uk: Минулий час, en: Past, es: Pasado }
+          rule:
+            uk: { alternatives: [{ term: сподо́бався }, { term: сподо́балася }, { term: сподо́балося }, { term: сподо́балися }] }
+            en: { alternatives: [{ term: сподо́бався }, { term: сподо́балася }, { term: сподо́балося }, { term: сподо́балися }] }
+            es: { alternatives: [{ term: сподо́бався }, { term: сподо́балася }, { term: сподо́балося }, { term: сподо́балися }] }
+          ex: ["Студе́нтам ", { target: сподо́балася }, " екску́рсія."]
+          tr: { en: "The students liked the tour.", es: "A los estudiantes les gustó la excursión." }
+        - level: A1
+          point: { uk: Любити, en: Любити, es: Любити }
+          rule:
+            uk: "стала, сильна прихильність"
+            en: "a lasting, strong liking"
+            es: "un gusto firme y duradero"
+          ex: ["Я ", { target: люблю́ }, " кіно́."]
+          tr: { en: "I love cinema.", es: "Me encanta el cine." }
+        - level: B1
+          point: { uk: Перше враження, en: First impression, es: Primera impresión }
+          rule:
+            uk: [{ term: сподо́батися }, ": почало подобатися"]
+            en: [{ term: сподо́батися }, ": came to like"]
+            es: [{ term: сподо́батися }, ": empezó a gustar"]
+          ex: ["Вам ", { target: сподо́бався }, " фільм?"]
+          tr: { en: "Did you like the film?", es: "¿Le gustó la película?" }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["те, що подобається, — у називному: ", { term: му́зика }]
+            en: ["the thing liked is in the nominative: ", { term: му́зика }]
+            es: ["lo que gusta va en nominativo: ", { term: му́зика }]
+          ex: ["Тобі́ подо́бається ", { target: му́зика }, "?"]
+          tr: { en: "Do you like music?", es: "¿Te gusta la música?" }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Фраза ", { term: Мені́ подо́бається }, " означає, що щось нам до вподоби:"]
+              en: ["The phrase ", { term: Мені́ подо́бається }, " says you like something:"]
+              es: ["La frase ", { term: Мені́ подо́бається }, " dice que algo te gusta:"]
+            ex: { exchange: ["Тобі́ подо́бається Львів?", ["Так, мені́ ", { target: подо́бається }, "."]] }
+            tr: { en: { exchange: ["Do you like Lviv?", "Yes, I do."] }, es: { exchange: ["¿Te gusta Leópolis?", "Sí, me gusta."] } }
+          - type: rule
+            level: A2
+            text:
+              uk: "Той, кому подобається, стоїть у давальному; те, що подобається, — у називному, і дієслово узгоджується з ним:"
+              en: "The person who likes takes the dative; the thing liked takes the nominative, and the verb agrees with it:"
+              es: "Quien siente el gusto va en dativo; lo que gusta va en nominativo, y el verbo concuerda con ello:"
+            ex: ["Ма́мі ", { target: подо́бається }, " теа́тр."]
+            tr: { en: "Mum likes the theatre.", es: "A mamá le gusta el teatro." }
+          - type: note
+            level: A2
+            readers: [es]
+            text:
+              es: ["Funciona como gustar: «me gusta el café» = ", { term: мені́ подо́бається ка́ва }, "."]
+          - type: note
+            level: A2
+            text:
+              uk: ["Форми давального: ", { link: Давальний відмінок, to: uk.nouns-cases.dative }, "."]
+              en: ["The dative forms: ", { link: Dative Case, to: uk.nouns-cases.dative }, "."]
+              es: ["Las formas del dativo: ", { link: El caso dativo, to: uk.nouns-cases.dative }, "."]
+
+  - title: { uk: Хто відчуває, en: Who likes it, es: A quién le gusta }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            form: { uk: { alternatives: [{ term: мені́ }, { term: тобі́ }] }, en: { alternatives: [{ term: мені́ }, { term: тобі́ }] }, es: { alternatives: [{ term: мені́ }, { term: тобі́ }] } }
+            ex: ["Тобі́ ", { target: подо́бається }, " цей фільм?"]
+            tr: { en: "Do you like this film?", es: "¿Te gusta esta película?" }
+          - level: A2
+            form: { uk: { alternatives: [{ term: йому́ }, { term: їй }] }, en: { alternatives: [{ term: йому́ }, { term: їй }] }, es: { alternatives: [{ term: йому́ }, { term: їй }] } }
+            ex: ["Їй ", { target: подо́бається }, " Ки́їв."]
+            tr: { en: "She likes Kyiv.", es: "A ella le gusta Kiev." }
+          - level: A2
+            form: { uk: { alternatives: [{ term: нам }, { term: вам }, { term: їм }] }, en: { alternatives: [{ term: нам }, { term: вам }, { term: їм }] }, es: { alternatives: [{ term: нам }, { term: вам }, { term: їм }] } }
+            ex: ["Вам ", { target: подо́бається }, " украї́нська ку́хня?"]
+            tr: { en: "Do you like Ukrainian food?", es: "¿Le gusta la cocina ucraniana?" }
+          - level: A2
+            form: { uk: "іменник у давальному", en: "a noun in the dative", es: "un sustantivo en dativo" }
+            ex: ["Бра́тові ", { target: подо́бається }, " футбо́л."]
+            tr: { en: "My brother likes football.", es: "A mi hermano le gusta el fútbol." }
+
+  - title: { uk: Узгодження, en: Agreement, es: Concordancia }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            features: { number: sg }
+            form: { uk: [{ term: подо́бається }, ": однина"], en: [{ term: подо́бається }, ": singular"], es: [{ term: подо́бається }, ": singular"] }
+            ex: ["Мені́ ", { target: подо́бається }, " ця кни́жка."]
+            tr: { en: "I like this book.", es: "Me gusta este libro." }
+          - level: A2
+            features: { number: pl }
+            form: { uk: [{ term: подо́баються }, ": множина"], en: [{ term: подо́баються }, ": plural"], es: [{ term: подо́баються }, ": plural"] }
+            ex: ["Мені́ ", { target: подо́баються }, " ці кни́жки."]
+            tr: { en: "I like these books.", es: "Me gustan estos libros." }
+          - level: A2
+            form: { uk: [{ term: подо́бається }, " з інфінітивом"], en: [{ term: подо́бається }, " with an infinitive"], es: [{ term: подо́бається }, " con un infinitivo"] }
+            ex: ["Нам ", { target: подо́бається }, " подорожува́ти."]
+            tr: { en: "We like travelling.", es: "Nos gusta viajar." }
+          - level: A2
+            features: { gender: masc, number: sg }
+            form: { uk: "минулий, чоловічий рід", en: "past, masculine", es: "pasado, masculino" }
+            ex: ["Мені́ ", { target: сподо́бався }, " Львів."]
+            tr: { en: "I liked Lviv.", es: "Me gustó Leópolis." }
+          - level: A2
+            features: { gender: fem, number: sg }
+            form: { uk: "минулий, жіночий рід", en: "past, feminine", es: "pasado, femenino" }
+            ex: ["Мені́ ", { target: сподо́балася }, " ця ви́ставка."]
+            tr: { en: "I liked this exhibition.", es: "Me gustó esta exposición." }
+          - level: A2
+            features: { gender: neut, number: sg }
+            form: { uk: "минулий, середній рід", en: "past, neuter", es: "pasado, neutro" }
+            ex: ["Мені́ ", { target: сподо́балося }, " мі́сто."]
+            tr: { en: "I liked the city.", es: "Me gustó la ciudad." }
+          - level: A2
+            features: { number: pl }
+            form: { uk: "минулий, множина", en: "past, plural", es: "pasado, plural" }
+            ex: ["Мені́ ", { target: сподо́балися }, " лю́ди."]
+            tr: { en: "I liked the people.", es: "Me gustó la gente." }
+
+  - title: { uk: "Порівняння: подобатися і любити", en: "Compare: подобатися and любити", es: "Comparación: подобатися y любити" }
+    role: compare
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Значення, en: Meaning, es: Significado } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ term: подо́батися }, ": враження, смак"], en: [{ term: подо́батися }, ": an impression, a taste"], es: [{ term: подо́батися }, ": una impresión, un gusto"] }
+            ex: ["Мені́ ", { target: подо́бається }, " цей рестора́н."]
+            tr: { en: "I like this restaurant.", es: "Me gusta este restaurante." }
+          - level: A1
+            use: { uk: [{ term: люби́ти }, ": стала, сильна прихильність"], en: [{ term: люби́ти }, ": a lasting, strong liking"], es: [{ term: люби́ти }, ": un gusto firme y duradero"] }
+            ex: ["Я ", { target: люблю́ }, " украї́нську му́зику."]
+            tr: { en: "I love Ukrainian music.", es: "Me encanta la música ucraniana." }
+          - level: B1
+            use: { uk: [{ term: сподо́батися }, ": почало подобатися, перше враження"], en: [{ term: сподо́батися }, ": came to like it, a first impression"], es: [{ term: сподо́батися }, ": empezó a gustar, primera impresión"] }
+            ex: ["Мені́ одра́зу ", { target: сподо́бався }, " цей рома́н."]
+            tr: { en: "I liked this novel straight away.", es: "Esta novela me gustó enseguida." }
+          - level: B1
+            use: { uk: [{ term: подо́батися }, " у минулому: подобалося якийсь час"], en: [{ term: подо́батися }, " in the past: liked it for some time"], es: [{ term: подо́батися }, " en pasado: gustó durante un tiempo"] }
+            ex: ["У шко́лі мені́ ", { target: подо́балася }, " хі́мія."]
+            tr: { en: "At school I liked chemistry.", es: "En la escuela me gustaba la química." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, speakers: [en], wrong: Я подо́баю ка́ву., right: [{ target: Мені́ }, " подо́бається ", { target: ка́ва }, "."], rule: { en: ["the person who likes is in the dative and the thing liked is the subject: ", { term: мені́ }, ", ", { term: ка́ва }] } }
+          - { level: A2, wrong: Мене́ подо́бається ка́ва., right: [{ target: Мені́ }, " подо́бається ка́ва."], rule: { uk: ["той, кому подобається, — у давальному: ", { term: мені́ }], en: ["the person who likes is in the dative: ", { term: мені́ }], es: ["quien siente el gusto va en dativo: ", { term: мені́ }] } }
+          - { level: A2, wrong: Мені́ подо́бається ці кві́ти., right: ["Мені́ ", { target: подо́баються }, " ці кві́ти."], rule: { uk: ["з множиною — ", { term: подо́баються }], en: ["with a plural: ", { term: подо́баються }], es: ["con un plural: ", { term: подо́баються }] } }
+          - { level: A2, wrong: Мені́ подо́бається му́зику., right: ["Мені́ подо́бається ", { target: му́зика }, "."], rule: { uk: "те, що подобається, — у називному", en: "the thing liked is in the nominative", es: "lo que gusta va en nominativo" } }
+          - { level: A2, wrong: Мені́ сподо́бався ця кни́жка., right: ["Мені́ ", { target: сподо́балася }, " ця кни́жка."], rule: { uk: "у минулому дієслово має рід того, що подобається", en: "in the past, the verb takes the gender of the thing liked", es: "en pasado, el verbo toma el género de lo que gusta" } }

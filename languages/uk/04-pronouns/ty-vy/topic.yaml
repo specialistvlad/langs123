@@ -1,0 +1,180 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.pronouns.ty-vy
+lang: uk
+kind: grammar
+tags: [pronouns, address, politeness]
+concepts: [address, pronouns]
+related: [uk.pronouns.personal-pronouns, uk.nouns-cases.vocative, uk.future-imperative-conditional.imperative]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "f56ebd 4ad0fc 51b29f aebd23 81e615 2a4fec 21042d", es: "f56ebd 4ad0fc 51b29f aebd23 81e615 2a4fec 21042d" }
+
+title: { uk: Ти і Ви, en: Ти and Ви, es: Ти y Ви }
+summary:
+  lead:
+    uk: [{ term: Ти }, " — до близької людини, ", { term: Ви }, " — до незнайомої чи старшої; ", { term: Ви }, " має дієслово в множині: ", { term: Ви зна́єте }, "."]
+    en: [{ term: Ти }, " is for someone close, ", { term: Ви }, " for a stranger or an older person; ", { term: Ви }, " takes a plural verb: ", { term: Ви зна́єте }, "."]
+    es: [{ term: Ти }, " es para alguien cercano y ", { term: Ви }, " para un desconocido o una persona mayor; ", { term: Ви }, " lleva el verbo en plural: ", { term: Ви зна́єте }, "."]
+  rule:
+    uk: ["Навіть до однієї людини ", { term: Ви }, " має форму другої особи множини:"]
+    en: ["Even with one person, ", { term: Ви }, " takes the second-person plural form:"]
+    es: ["Incluso con una sola persona, ", { term: Ви }, " lleva la segunda persona del plural:"]
+  ex: { examples: [["Ти ", { target: зна́єш }, "?"], ["Ви ", { target: зна́єте }, "?"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { term: ти }
+          rule: { uk: "родина, друзі, діти", en: "family, friends, children", es: "familia, amigos, niños" }
+          ex: ["Як ", { target: ти }, "?"]
+          tr: { en: "How are you?", es: "¿Qué tal estás?" }
+        - level: A1
+          point: { term: Ви }
+          rule: { uk: "незнайомі, старші, на роботі", en: "strangers, older people, at work", es: "desconocidos, mayores, en el trabajo" }
+          ex: ["Як у ", { target: Вас }, " спра́ви?"]
+          tr: { en: "How are you?", es: "¿Cómo está?" }
+        - level: A1
+          point: { uk: Дієслово, en: Verb, es: Verbo }
+          rule: { uk: { mapping: [{ term: зна́єш }, { term: зна́єте }] }, en: { mapping: [{ term: зна́єш }, { term: зна́єте }] }, es: { mapping: [{ term: зна́єш }, { term: зна́єте }] } }
+          ex: [{ target: "Ви зна́єте" }, ", де вокза́л?"]
+          tr: { en: "Do you know where the station is?", es: "¿Sabe dónde está la estación?" }
+        - level: A1
+          point: { uk: Наказ, en: Request, es: Petición }
+          rule: { uk: { mapping: [{ term: сіда́й }, { term: сіда́йте }] }, en: { mapping: [{ term: сіда́й }, { term: сіда́йте }] }, es: { mapping: [{ term: сіда́й }, { term: сіда́йте }] } }
+          ex: [{ target: Сіда́йте }, ", будь ла́ска!"]
+          tr: { en: "Please take a seat!", es: "¡Siéntese, por favor!" }
+        - level: A1
+          point: { uk: Звертання, en: Addressing, es: Tratamiento }
+          rule: { uk: [{ alternatives: [{ term: па́не }, { term: па́ні }] }, " + ім’я в кличному"], en: [{ alternatives: [{ term: па́не }, { term: па́ні }] }, " + the name in the vocative"], es: [{ alternatives: [{ term: па́не }, { term: па́ні }] }, " + el nombre en vocativo"] }
+          ex: [{ target: "Па́ні Оле́но" }, ", скажі́ть, будь ла́ска, котра́ годи́на?"]
+          tr: { en: "Ms Olena, could you tell me the time, please?", es: "Señora Olena, ¿me dice qué hora es, por favor?" }
+        - level: A1
+          point: { uk: Лист, en: Letter, es: Carta }
+          rule: { uk: [{ term: Ви }, " з великої літери до однієї людини"], en: [{ term: Ви }, " with a capital to one person"], es: [{ term: Ви }, " con mayúscula a una sola persona"] }
+          ex: ["Дя́кую ", { target: Вам }, " за лист."]
+          tr: { en: "Thank you for your letter.", es: "Le agradezco su carta." }
+        - level: A2
+          point: { uk: "Ім’я і по батькові", en: "First name and patronymic", es: "Nombre y patronímico" }
+          rule: { uk: "ввічливо до старших і на роботі", en: "polite, to older people and at work", es: "cortés, con personas mayores y en el trabajo" }
+          ex: [{ target: "Іва́не Петро́вичу" }, ", до́брий день!"]
+          tr: { en: "Good afternoon, Ivan Petrovych!", es: "¡Buenas tardes, Ivan Petrovych!" }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: ти }, " кажемо родині, друзям і дітям:"]
+              en: [{ term: ти }, " is for family, friends and children:"]
+              es: [{ term: ти }, " se usa con la familia, los amigos y los niños:"]
+            ex: ["Ма́мо, ", { target: ти }, " вдо́ма?"]
+            tr: { en: "Mum, are you at home?", es: "Mamá, ¿estás en casa?" }
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: Ви }, " кажемо незнайомим, старшим, колегам і в магазині:"]
+              en: [{ term: Ви }, " is for strangers, older people, colleagues and shops:"]
+              es: [{ term: Ви }, " se usa con desconocidos, personas mayores, compañeros de trabajo y en las tiendas:"]
+            ex: ["Ви́бачте, ", { target: Ви }, " не зна́єте, котра́ годи́на?"]
+            tr: { en: "Excuse me, do you know what time it is?", es: "Perdone, ¿sabe qué hora es?" }
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: ви }, " — також звертання до кількох людей, близьких чи незнайомих:"]
+              en: [{ term: ви }, " also speaks to several people, close or not:"]
+              es: [{ term: ви }, " también se dirige a varias personas, cercanas o no:"]
+            ex: ["Ді́ти, ", { target: ви }, " гото́ві?"]
+            tr: { en: "Kids, are you ready?", es: "Niños, ¿están listos?" }
+
+  - title: { uk: "Форма: дієслово з ти і Ви", en: "Form: the verb with ти and Ви", es: "Forma: el verbo con ти y Ви" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ty, label: { term: ти }, features: { person: 2, number: sg, politeness: infm } }
+          - { key: vy, label: { term: Ви }, features: { person: 2, number: pl, politeness: form } }
+        rows:
+          - { level: A1, features: { tense: prs, mood: ind }, form: { uk: Теперішній час, en: Present, es: Presente }, ty: ["чита́", { ending: єш }], vy: ["чита́", { ending: єте }] }
+          - { level: A1, features: { tense: pst, mood: ind }, form: { uk: Минулий час, en: Past, es: Pasado }, ty: { alternatives: [чита́в, чита́ла] }, vy: ["чита́", { ending: ли }] }
+          - { level: A1, features: { mood: imp }, form: { uk: Наказовий спосіб, en: Imperative, es: Imperativo }, ty: чита́й, vy: ["чита́й", { ending: те }] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: Ви }, " має дієслово в множині навіть у минулому часі:"]
+              en: [{ term: Ви }, " takes a plural verb in the past tense too:"]
+              es: [{ term: Ви }, " lleva el verbo en plural también en pasado:"]
+            ex: [{ target: Ви були́ }, " в Оде́сі?"]
+            tr: { en: "Have you been to Odesa?", es: "¿Ha estado en Odesa?" }
+
+  - title: { uk: Звертання, en: Addressing people, es: El tratamiento }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Звертання, en: Address, es: Tratamiento } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: [{ term: па́не }, " + ім’я в кличному"], en: [{ term: па́не }, " + the name in the vocative"], es: [{ term: па́не }, " + el nombre en vocativo"] }
+            ex: [{ target: "Па́не Іва́не" }, ", Ви за́йняті?"]
+            tr: { en: "Mr Ivan, are you busy?", es: "Señor Ivan, ¿está ocupado?" }
+          - level: A1
+            use: { uk: [{ term: па́ні }, " + ім’я в кличному"], en: [{ term: па́ні }, " + the name in the vocative"], es: [{ term: па́ні }, " + el nombre en vocativo"] }
+            ex: ["Дя́кую, ", { target: "па́ні Ма́рто" }, "!"]
+            tr: { en: "Thank you, Ms Marta!", es: "¡Gracias, señora Marta!" }
+          - level: A2
+            use: { uk: "ім’я і по батькові", en: "first name and patronymic", es: "nombre y patronímico" }
+            ex: [{ target: "Іва́не Петро́вичу" }, ", до́брий день!"]
+            tr: { en: "Good afternoon, Ivan Petrovych!", es: "¡Buenas tardes, Ivan Petrovych!" }
+      - type: list
+        items:
+          - type: note
+            level: A1
+            text:
+              uk: [{ term: па́ні }, " не змінюється, а ім’я після ", { term: па́не }, " і ", { term: па́ні }, " має кличний відмінок: ", { link: Кличний відмінок, to: uk.nouns-cases.vocative }, "."]
+              en: [{ term: па́ні }, " never changes, and the name after ", { term: па́не }, " or ", { term: па́ні }, " takes the vocative: ", { link: Vocative Case, to: uk.nouns-cases.vocative }, "."]
+              es: [{ term: па́ні }, " no cambia, y el nombre tras ", { term: па́не }, " o ", { term: па́ні }, " va en vocativo: ", { link: El caso vocativo, to: uk.nouns-cases.vocative }, "."]
+
+  - title: { uk: "Ви в листі", en: "Ви in writing", es: "Ви por escrito" }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["У листі до однієї людини пишемо ", { term: Ви }, ", ", { term: Вас }, ", ", { term: Вам }, ", ", { term: Ваш }, " з великої літери:"]
+              en: ["In a letter to one person, ", { term: Ви }, ", ", { term: Вас }, ", ", { term: Вам }, " and ", { term: Ваш }, " take a capital letter:"]
+              es: ["En una carta a una sola persona, ", { term: Ви }, ", ", { term: Вас }, ", ", { term: Вам }, " y ", { term: Ваш }, " van con mayúscula:"]
+            ex: ["Чека́ю на ", { target: Ваш }, " лист."]
+            tr: { en: "I look forward to your letter.", es: "Quedo a la espera de su carta." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["До кількох людей пишемо ", { term: ви }, " з малої:"]
+              en: ["To several people, ", { term: ви }, " takes a small letter:"]
+              es: ["A varias personas, ", { term: ви }, " va con minúscula:"]
+            ex: ["Дру́зі, ", { target: ви }, " всі запро́шені!"]
+            tr: { en: "Friends, you're all invited!", es: "Amigos, ¡están todos invitados!" }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Ви зна́єш?, right: ["Ви ", { target: зна́єте }, "?"], rule: { uk: [{ term: Ви }, " — дієслово в другій особі множини"], en: [{ term: Ви }, " takes the second-person plural"], es: [{ term: Ви }, " lleva la segunda persona del plural"] } }
+          - { level: A1, wrong: Па́не Оле́г!, right: [{ target: "Па́не Оле́же" }, "!"], rule: { uk: ["після ", { term: па́не }, " ім’я в кличному"], en: ["after ", { term: па́не }, " the name takes the vocative"], es: ["tras ", { term: па́не }, " el nombre va en vocativo"] } }
+          - { level: A1, speakers: [es], wrong: "Ви зна́є, де вокза́л?", right: ["Ви ", { target: зна́єте }, ", де вокза́л?"], rule: { es: [{ term: Ви }, " va con la 2.ª persona del plural, no con la 3.ª como «usted»"] } }
+          - { level: A1, speakers: [en], wrong: "Ви́бачте, ти зна́єш, де вокза́л?", right: ["Ви́бачте, ", { target: Ви зна́єте }, ", де вокза́л?"], rule: { en: ["a stranger is addressed as ", { term: Ви }, ", not ", { term: ти }] } }

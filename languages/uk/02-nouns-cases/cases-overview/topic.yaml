@@ -1,0 +1,292 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.cases-overview
+lang: uk
+kind: grammar
+tags: [cases, nouns, prepositions]
+concepts: [cases]
+related: [uk.nouns-cases.nominative, uk.nouns-cases.accusative, uk.nouns-cases.locative, uk.nouns-cases.genitive, uk.nouns-cases.dative, uk.nouns-cases.instrumental, uk.nouns-cases.vocative, uk.prepositions.where-whereto-wherefrom]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "c75f4f 60ade7 259f5d 057463 a6d6b2 7f406d 1332b4", es: "c75f4f 60ade7 259f5d 057463 a6d6b2 7f406d 1332b4" }
+
+title: { uk: Сім відмінків, en: The Seven Cases, es: Los siete casos }
+summary:
+  lead:
+    uk: "Українська мова має сім відмінків: закінчення іменника показує його роль у реченні, а прийменник вимагає свого відмінка."
+    en: "Ukrainian has seven cases: a noun's ending shows its role in the sentence, and each preposition calls for its own case."
+    es: "El ucraniano tiene siete casos: la terminación del sustantivo muestra su función en la oración, y cada preposición pide su caso."
+  rule:
+    uk: ["Кожен відмінок відповідає на свої питання, як-от ", { term: де? }, " і ", { term: куди́? }, ":"]
+    en: ["Each case answers its own questions, such as ", { term: де? }, " (where?) and ", { term: куди́? }, " (where to?):"]
+    es: ["Cada caso responde a sus preguntas, como ", { term: де? }, " (¿dónde?) y ", { term: куди́? }, " (¿adónde?):"]
+  ex: { examples: [["Я ", { target: в Ки́єві }, "."], ["Я ї́ду ", { target: в Ки́їв }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Відмінок, en: Case, es: Caso } }
+        - { key: rule, label: { uk: Питання й роль, en: Questions and role, es: Preguntas y función } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          features: { case: nom }
+          point: { uk: Називний, en: Nominative, es: Nominativo }
+          rule:
+            uk: [{ alternatives: [{ term: хто? }, { term: що? }] }, ": підмет"]
+            en: [{ alternatives: [{ term: хто? }, { term: що? }] }, ": the subject"]
+            es: [{ alternatives: [{ term: хто? }, { term: що? }] }, ": el sujeto"]
+          ex: [{ target: Студе́нт }, " чита́є."]
+          tr: { en: "The student is reading.", es: "El estudiante lee." }
+        - level: A1
+          features: { case: acc }
+          point: { uk: Знахідний, en: Accusative, es: Acusativo }
+          rule:
+            uk: [{ alternatives: [{ term: кого́? }, { term: що? }] }, ": прямий додаток; ", { term: куди́? }]
+            en: [{ alternatives: [{ term: кого́? }, { term: що? }] }, ": the direct object; ", { term: куди́? }]
+            es: [{ alternatives: [{ term: кого́? }, { term: що? }] }, ": el objeto directo; ", { term: куди́? }]
+          ex: ["Я чита́ю ", { target: кни́жку }, "."]
+          tr: { en: "I'm reading a book.", es: "Leo un libro." }
+        - level: A1
+          features: { case: loc }
+          point: { uk: Місцевий, en: Locative, es: Locativo }
+          rule:
+            uk: [{ term: де? }, ": місце, завжди з прийменником"]
+            en: [{ term: де? }, ": the place, always with a preposition"]
+            es: [{ term: де? }, ": el lugar, siempre con preposición"]
+          ex: ["Ми живемо́ ", { target: в Ки́єві }, "."]
+          tr: { en: "We live in Kyiv.", es: "Vivimos en Kyiv." }
+        - level: A1
+          features: { case: voc }
+          point: { uk: Кличний, en: Vocative, es: Vocativo }
+          rule:
+            uk: "звертання до людини"
+            en: "addressing someone"
+            es: "para dirigirse a alguien"
+          ex: [{ target: Оле́но }, ", приві́т!"]
+          tr: { en: "Hi, Olena!", es: "¡Hola, Olena!" }
+        - level: A2
+          features: { case: gen }
+          point: { uk: Родовий, en: Genitive, es: Genitivo }
+          rule:
+            uk: [{ alternatives: [{ term: кого́? }, { term: чого́? }] }, ": кількість, ", { term: з }, ", ", { term: до }]
+            en: [{ alternatives: [{ term: кого́? }, { term: чого́? }] }, ": quantity, ", { term: з }, ", ", { term: до }]
+            es: [{ alternatives: [{ term: кого́? }, { term: чого́? }] }, ": cantidad, ", { term: з }, ", ", { term: до }]
+          ex: ["Тут бага́то ", { target: студе́нтів }, "."]
+          tr: { en: "There are a lot of students here.", es: "Aquí hay muchos estudiantes." }
+        - level: A2
+          features: { case: dat }
+          point: { uk: Давальний, en: Dative, es: Dativo }
+          rule:
+            uk: [{ alternatives: [{ term: кому́? }, { term: чому́? }] }, ": адресат"]
+            en: [{ alternatives: [{ term: кому́? }, { term: чому́? }] }, ": the recipient"]
+            es: [{ alternatives: [{ term: кому́? }, { term: чому́? }] }, ": el destinatario"]
+          ex: ["Я дару́ю ", { target: ма́мі }, " кві́ти."]
+          tr: { en: "I'm giving Mum flowers.", es: "Le regalo flores a mamá." }
+        - level: A2
+          features: { case: ins }
+          point: { uk: Орудний, en: Instrumental, es: Instrumental }
+          rule:
+            uk: [{ alternatives: [{ term: ким? }, { term: чим? }] }, ": знаряддя; ", { term: з }, " кимось"]
+            en: [{ alternatives: [{ term: ким? }, { term: чим? }] }, ": the tool; ", { term: з }, " someone"]
+            es: [{ alternatives: [{ term: ким? }, { term: чим? }] }, ": el instrumento; ", { term: з }, " alguien"]
+          ex: ["Я пишу́ ", { target: ру́чкою }, "."]
+          tr: { en: "I write with a pen.", es: "Escribo con bolígrafo." }
+        - level: B1
+          point: { uk: Прийменник, en: Preposition, es: Preposición }
+          rule:
+            uk: "один прийменник, різні відмінки, різні значення"
+            en: "one preposition, different cases, different meanings"
+            es: "una preposición, distintos casos, distintos significados"
+          ex: { contrast: [["за ", { target: годи́ну }], ["за ", { target: буди́нком }]] }
+          tr: { en: { contrast: ["in an hour", "behind the house"] }, es: { contrast: ["en una hora", "detrás de la casa"] } }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: [{ term: де? }, " — місцевий, ", { term: куди́? }, " — знахідний"]
+            en: [{ term: де? }, " takes the locative, ", { term: куди́? }, " the accusative"]
+            es: [{ term: де? }, " lleva el locativo; ", { term: куди́? }, ", el acusativo"]
+          ex: { contrast: [["Я ", { target: в кімна́ті }], ["Я йду ", { target: в кімна́ту }]] }
+          tr: { en: { contrast: ["I'm in the room", "I'm going into the room"] }, es: { contrast: ["Estoy en la habitación", "Voy a la habitación"] } }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: [{ term: з }, ": звідки? — родовий; з ким? — орудний"]
+            en: [{ term: з }, ": from where takes the genitive, with whom the instrumental"]
+            es: [{ term: з }, ": «de dónde» lleva genitivo; «con quién», instrumental"]
+          ex: { contrast: [["Я ", { target: з Ки́єва }], ["Я ", { target: з бра́том }]] }
+          tr: { en: { contrast: ["I'm from Kyiv", "I'm with my brother"] }, es: { contrast: ["Soy de Kyiv", "Estoy con mi hermano"] } }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Іменник змінює закінчення за відмінками: кожен відмінок — своя роль у реченні."
+              en: "A noun changes its ending by case: each case is a role in the sentence."
+              es: "El sustantivo cambia la terminación según el caso: cada caso es una función en la oración."
+            ex: { examples: [[{ target: Ма́ма }, " тут."], ["Я ба́чу ", { target: ма́му }, "."], [{ target: Ма́мо }, ", ході́ сюди́!"]] }
+            tr: { en: { examples: ["Mum is here.", "I can see Mum.", "Mum, come here!"] }, es: { examples: ["Mamá está aquí.", "Veo a mamá.", "¡Mamá, ven aquí!"] } }
+          - type: rule
+            level: A1
+            text:
+              uk: "Прийменник вимагає певного відмінка, а питання підказує, якого:"
+              en: "A preposition calls for a set case, and the question tells you which:"
+              es: "Una preposición pide un caso fijo, y la pregunta indica cuál:"
+            ex: { examples: [["Ми ", { target: в па́рку }, "."], ["Ми йдемо́ ", { target: в парк }, "."]] }
+            tr: { en: { examples: ["We're in the park.", "We're going to the park."] }, es: { examples: ["Estamos en el parque.", "Vamos al parque."] } }
+          - type: rule
+            level: A1
+            text:
+              uk: "Порядок слів вільніший, ніж в англійській чи іспанській: роль слова показує закінчення."
+              en: "Word order is freer than in English: the ending shows each word's role."
+              es: "El orden de las palabras es más libre que en español: la terminación muestra la función."
+            ex: { equivalence: [[{ target: Ма́ма }, " ба́чить ", { target: та́та }, "."], [{ target: Та́та }, " ба́чить ", { target: ма́ма }, "."]] }
+            tr: { en: { equivalence: ["Mum sees Dad.", "Mum sees Dad."] }, es: { equivalence: ["Mamá ve a papá.", "Mamá ve a papá."] } }
+
+  - title: { uk: "Відмінки та їхні питання", en: "The cases and their questions", es: "Los casos y sus preguntas" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: case, label: { uk: Відмінок, en: Case, es: Caso } }
+          - { key: questions, label: { uk: Питання, en: Questions, es: Preguntas } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            features: { case: nom }
+            case: { uk: Називний, en: Nominative, es: Nominativo }
+            questions: { alternatives: [хто?, що?] }
+            ex: [{ target: Брат }, " чита́є."]
+            tr: { en: "My brother is reading.", es: "Mi hermano lee." }
+          - level: A2
+            features: { case: gen }
+            case: { uk: Родовий, en: Genitive, es: Genitivo }
+            questions: { alternatives: [кого́?, чого́?] }
+            ex: ["Я ї́ду до ", { target: бра́та }, "."]
+            tr: { en: "I'm going to my brother's.", es: "Voy a casa de mi hermano." }
+          - level: A2
+            features: { case: dat }
+            case: { uk: Давальний, en: Dative, es: Dativo }
+            questions: { alternatives: [кому́?, чому́?] }
+            ex: ["Я дзвоню́ ", { target: бра́тові }, "."]
+            tr: { en: "I'm calling my brother.", es: "Llamo a mi hermano." }
+          - level: A1
+            features: { case: acc }
+            case: { uk: Знахідний, en: Accusative, es: Acusativo }
+            questions: { alternatives: [кого́?, що?] }
+            ex: ["Я ба́чу ", { target: бра́та }, "."]
+            tr: { en: "I can see my brother.", es: "Veo a mi hermano." }
+          - level: A2
+            features: { case: ins }
+            case: { uk: Орудний, en: Instrumental, es: Instrumental }
+            questions: { alternatives: [ким?, чим?] }
+            ex: ["Я гуля́ю ", { target: з бра́том }, "."]
+            tr: { en: "I'm out walking with my brother.", es: "Paseo con mi hermano." }
+          - level: A1
+            features: { case: loc }
+            case: { uk: Місцевий, en: Locative, es: Locativo }
+            questions: { alternatives: ["на ко́му?", "на чо́му?", де?] }
+            ex: ["Кни́жка ", { target: на столі́ }, "."]
+            tr: { en: "The book is on the table.", es: "El libro está en la mesa." }
+          - level: A1
+            features: { case: voc }
+            case: { uk: Кличний, en: Vocative, es: Vocativo }
+            questions: { uk: "звертання", en: "addressing someone", es: "para dirigirse a alguien" }
+            ex: [{ target: Бра́те }, ", допоможи́!"]
+            tr: { en: "Help me, brother!", es: "¡Ayúdame, hermano!" }
+
+  - title: { uk: "Одне слово в усіх відмінках", en: "One word in every case", es: "Una palabra en todos los casos" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок, en: Case, es: Caso } }
+          - { key: masc, label: { uk: брат, en: брат, es: брат }, features: { gender: masc, animacy: anim, number: sg } }
+          - { key: fem, label: { uk: ма́ма, en: ма́ма, es: ма́ма }, features: { gender: fem, number: sg } }
+          - { key: neut, label: { uk: мі́сто, en: мі́сто, es: мі́сто }, features: { gender: neut, number: sg } }
+        rows:
+          - { level: A1, features: { case: nom }, case: { uk: Називний, en: Nominative, es: Nominativo }, masc: брат, fem: ["ма́м", { ending: а }], neut: ["мі́ст", { ending: о }] }
+          - { level: A2, features: { case: gen }, case: { uk: Родовий, en: Genitive, es: Genitivo }, masc: ["бра́т", { ending: а }], fem: ["ма́м", { ending: и }], neut: ["мі́ст", { ending: а }] }
+          - { level: A2, features: { case: dat }, case: { uk: Давальний, en: Dative, es: Dativo }, masc: { alternatives: [["бра́т", { ending: ові }], ["бра́т", { ending: у }]] }, fem: ["ма́м", { ending: і }], neut: ["мі́ст", { ending: у }] }
+          - { level: A1, features: { case: acc }, case: { uk: Знахідний, en: Accusative, es: Acusativo }, masc: ["бра́т", { ending: а }], fem: ["ма́м", { ending: у }], neut: ["мі́ст", { ending: о }] }
+          - { level: A2, features: { case: ins }, case: { uk: Орудний, en: Instrumental, es: Instrumental }, masc: ["бра́т", { ending: ом }], fem: ["ма́м", { ending: ою }], neut: ["мі́ст", { ending: ом }] }
+          - { level: A1, features: { case: loc }, case: { uk: Місцевий, en: Locative, es: Locativo }, masc: [{ optional: на }, " бра́т", { ending: ові }], fem: [{ optional: на }, " ма́м", { ending: і }], neut: [{ optional: у }, " мі́ст", { ending: і }] }
+          - { level: A1, features: { case: voc }, case: { uk: Кличний, en: Vocative, es: Vocativo }, masc: ["бра́т", { ending: е }], fem: ["ма́м", { ending: о }], neut: ["мі́ст", { ending: о }] }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            text:
+              uk: ["Давальний іменників чоловічого роду має два закінчення: ", { term: -ові }, " і ", { term: -у }, "."]
+              en: ["The dative of masculine nouns has two endings: ", { term: -ові }, " and ", { term: -у }, "."]
+              es: ["El dativo de los masculinos tiene dos terminaciones: ", { term: -ові }, " y ", { term: -у }, "."]
+            ex: ["Я пишу́ ", { target: бра́тові }, "."]
+            tr: { en: "I'm writing to my brother.", es: "Le escribo a mi hermano." }
+
+  - title: { uk: "Прийменники й відмінки", en: "Prepositions and cases", es: "Preposiciones y casos" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: prep, label: { uk: Прийменник, en: Preposition, es: Preposición } }
+          - { key: case, label: { uk: Відмінок, en: Case, es: Caso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            prep: { alternatives: [у, в, на] }
+            case: { uk: "де? — місцевий", en: "where? the locative", es: "¿dónde?: locativo" }
+            ex: ["Ми ", { target: на вокза́лі }, "."]
+            tr: { en: "We're at the station.", es: "Estamos en la estación." }
+          - level: A1
+            prep: { alternatives: [у, в, на] }
+            case: { uk: "куди? — знахідний", en: "where to? the accusative", es: "¿adónde?: acusativo" }
+            ex: ["Ми ї́демо ", { target: на вокза́л }, "."]
+            tr: { en: "We're going to the station.", es: "Vamos a la estación." }
+          - level: A2
+            prep: { alternatives: [з, із, зі] }
+            case: { uk: "звідки? — родовий", en: "from where? the genitive", es: "¿de dónde?: genitivo" }
+            ex: ["Я ", { target: з Ки́єва }, "."]
+            tr: { en: "I'm from Kyiv.", es: "Soy de Kyiv." }
+          - level: A2
+            prep: { alternatives: [з, із, зі] }
+            case: { uk: "з ким? з чим? — орудний", en: "with whom? with what? the instrumental", es: "¿con quién?, ¿con qué?: instrumental" }
+            ex: ["Чай ", { target: із лимо́ном }, "."]
+            tr: { en: "Tea with lemon.", es: "Té con limón." }
+          - level: A2
+            prep: до
+            case: { uk: "куди? до кого? — родовий", en: "where to? to whom? the genitive", es: "¿adónde?, ¿a casa de quién?: genitivo" }
+            ex: ["Я йду до ", { target: бра́та }, "."]
+            tr: { en: "I'm going to my brother's.", es: "Voy a casa de mi hermano." }
+          - level: A2
+            prep: за
+            case: { uk: "де? — орудний", en: "where? the instrumental", es: "¿dónde?: instrumental" }
+            ex: ["Сад ", { target: за буди́нком }, "."]
+            tr: { en: "The garden is behind the house.", es: "El jardín está detrás de la casa." }
+          - level: B1
+            prep: за
+            case: { uk: "за який час? — знахідний", en: "in how long? the accusative", es: "¿en cuánto tiempo?: acusativo" }
+            ex: ["Я зроблю́ це ", { target: за годи́ну }, "."]
+            tr: { en: "I'll do it in an hour.", es: "Lo haré en una hora." }
+      - type: list
+        items:
+          - type: note
+            level: A1
+            text:
+              uk: ["Прийменники місця й руху: ", { link: "Де, куди, звідки", to: uk.prepositions.where-whereto-wherefrom }, "."]
+              en: ["Prepositions of place and movement: ", { link: "Where, Where To, Where From: де, куди, звідки", to: uk.prepositions.where-whereto-wherefrom }, "."]
+              es: ["Preposiciones de lugar y movimiento: ", { link: "Dónde, adónde, de dónde: де, куди, звідки", to: uk.prepositions.where-whereto-wherefrom }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Ми живемо́ в Ки́їв., right: ["Ми живемо́ ", { target: в Ки́єві }, "."], rule: { uk: [{ term: де? }, " — місцевий відмінок"], en: [{ term: де? }, " takes the locative"], es: [{ term: де? }, " lleva el locativo"] } }
+          - { level: A1, wrong: Я ба́чу ма́ма., right: ["Я ба́чу ", { target: ма́му }, "."], rule: { uk: "прямий додаток стоїть у знахідному", en: "the direct object takes the accusative", es: "el objeto directo va en acusativo" } }
+          - { level: A2, wrong: Я гуля́ю з брат., right: ["Я гуля́ю ", { target: з бра́том }, "."], rule: { uk: [{ term: з }, " кимось — орудний"], en: [{ term: з }, " meaning “with” takes the instrumental"], es: [{ term: з }, " con el sentido de «con» lleva instrumental"] } }
+          - { level: A2, speakers: [en], wrong: Я дзвоню́ бра́та., right: ["Я дзвоню́ ", { target: бра́тові }, "."], rule: { en: [{ term: дзвони́ти }, " takes the dative: you call ", { term: кому́? }] } }
+          - { level: A2, speakers: [es], wrong: Я з Ки́їв., right: ["Я ", { target: з Ки́єва }, "."], rule: { es: [{ term: з }, " con el sentido de «de, desde» lleva genitivo"] } }

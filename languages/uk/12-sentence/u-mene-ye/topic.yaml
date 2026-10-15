@@ -1,0 +1,264 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.u-mene-ye
+lang: uk
+kind: grammar
+tags: [have, possession, existence, genitive, negation]
+concepts: [have, existence]
+related: [uk.nouns-cases.genitive, uk.nouns-cases.accusative, uk.sentence.questions-negation, uk.pronouns.personal-pronouns, uk.numerals.age, uk.foundations.euphony]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "9ca56b b06394 7c34b2 21b862 e9d3f1 3638c4 379fb9 460a3a", es: "9ca56b b06394 7c34b2 21b862 e9d3f1 3638c4 379fb9 460a3a" }
+
+title: { uk: У мене є, en: "Having: у мене є", es: "Tener: у мене є" }
+summary:
+  lead:
+    uk: ["Володіння виражаємо зворотом ", { term: у мене́ є }, " з називним відмінком або дієсловом ", { term: ма́ти }, " зі знахідним: ", { term: У мене́ є брат }, "."]
+    en: ["To say what someone has, use ", { term: у мене́ є }, " with the nominative, or ", { term: ма́ти }, " with the accusative: ", { term: У мене́ є брат }, "."]
+    es: ["Para decir qué tiene alguien se usa ", { term: у мене́ є }, " con el nominativo, o ", { term: ма́ти }, " con el acusativo: ", { term: У мене́ є брат }, "."]
+  rule:
+    uk: ["Особа стоїть після ", { term: у }, " в родовому відмінку, а те, що є, — у називному:"]
+    en: ["The person follows ", { term: у }, " in the genitive, and the thing they have is in the nominative:"]
+    es: ["La persona va después de ", { term: у }, " en genitivo, y lo que tiene va en nominativo:"]
+  ex: { examples: [[{ target: У не́ї є }, " сестра́."], [{ target: У нас є }, " кіт."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Особа, en: Person, es: Persona }
+          rule:
+            uk: { alternatives: [{ term: у мене́ }, { term: у тебе́ }, { term: у ньо́го }, { term: у не́ї }, { term: у нас }, { term: у вас }, { term: у них }] }
+            en: { alternatives: [{ term: у мене́ }, { term: у тебе́ }, { term: у ньо́го }, { term: у не́ї }, { term: у нас }, { term: у вас }, { term: у них }] }
+            es: { alternatives: [{ term: у мене́ }, { term: у тебе́ }, { term: у ньо́го }, { term: у не́ї }, { term: у нас }, { term: у вас }, { term: у них }] }
+          ex: [{ target: У ньо́го є }, " маши́на."]
+          tr: { en: "He has a car.", es: "Él tiene auto." }
+        - level: A1
+          point: { uk: Питання, en: Question, es: Pregunta }
+          rule:
+            uk: ["відповідь: ", { term: "Так, є" }]
+            en: ["the answer: ", { term: "Так, є" }]
+            es: ["la respuesta: ", { term: "Так, є" }]
+          ex: { exchange: [[{ target: У вас є }, " ру́чка?"], "Так, є."] }
+          tr: { en: { exchange: ["Have you got a pen?", "Yes, I have."] }, es: { exchange: ["¿Tiene un bolígrafo?", "Sí, tengo."] } }
+        - level: A1
+          point: { term: ма́ти }
+          rule:
+            uk: [{ term: ма́ти }, " і знахідний: те саме значення"]
+            en: [{ term: ма́ти }, " with the accusative: the same meaning"]
+            es: [{ term: ма́ти }, " con el acusativo: el mismo significado"]
+          ex: ["Я ", { target: ма́ю }, " сестру́."]
+          tr: { en: "I have a sister.", es: "Tengo una hermana." }
+        - level: A2
+          point: { uk: Відповідь «ні», en: Answer “no”, es: Respuesta «no» }
+          rule:
+            uk: [{ term: "Ні, нема́є" }, ": готова коротка відповідь"]
+            en: [{ term: "Ні, нема́є" }, ": a set short answer"]
+            es: [{ term: "Ні, нема́є" }, ": una respuesta corta fija"]
+          ex: { exchange: ["У тебе́ є оліве́ць?", [{ target: "Ні, нема́є" }, "."]] }
+          tr: { en: { exchange: ["Have you got a pencil?", "No, I haven't."] }, es: { exchange: ["¿Tienes un lápiz?", "No, no tengo."] } }
+        - level: B1
+          point: { uk: Заперечення, en: Negative, es: Negación }
+          rule:
+            uk: [{ term: нема́є }, " і родовий відмінок"]
+            en: [{ term: нема́є }, " with the genitive"]
+            es: [{ term: нема́є }, " con el genitivo"]
+          ex: ["У нас ", { target: нема́є ча́су }, "."]
+          tr: { en: "We haven't got time.", es: "No tenemos tiempo." }
+        - level: B1
+          point: { uk: Минулий час, en: Past, es: Pasado }
+          rule:
+            uk: [{ alternatives: [{ term: був }, { term: була́ }, { term: було́ }, { term: були́ }] }, " за тим, що є"]
+            en: [{ alternatives: [{ term: був }, { term: була́ }, { term: було́ }, { term: були́ }] }, " agree with the thing"]
+            es: [{ alternatives: [{ term: був }, { term: була́ }, { term: було́ }, { term: були́ }] }, " concuerdan con lo que se tiene"]
+          ex: ["У нас ", { target: була́ кі́шка }, "."]
+          tr: { en: "We had a cat.", es: "Teníamos una gata." }
+        - level: B1
+          point: { uk: Майбутній час, en: Future, es: Futuro }
+          rule:
+            uk: { alternatives: [{ term: бу́де }, { term: бу́дуть }] }
+            en: [{ alternatives: [{ term: бу́де }, { term: бу́дуть }] }, " (will be)"]
+            es: [{ alternatives: [{ term: бу́де }, { term: бу́дуть }] }, " (habrá)"]
+          ex: ["У мене́ ", { target: бу́де ві́льний час }, "."]
+          tr: { en: "I'll have some free time.", es: "Tendré tiempo libre." }
+        - level: B1
+          point: { uk: Заперечення, en: Negative, es: Negación }
+          rule:
+            uk: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " і родовий"]
+            en: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " with the genitive"]
+            es: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " con el genitivo"]
+          ex: ["У мене́ ", { target: не було́ ча́су }, "."]
+          tr: { en: "I didn't have time.", es: "No tuve tiempo." }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["після ", { term: нема́є }, " — родовий відмінок"]
+            en: ["after ", { term: нема́є }, ", the genitive"]
+            es: ["después de ", { term: нема́є }, ", el genitivo"]
+          ex: ["У мене́ нема́є ", { target: бра́та }, "."]
+          tr: { en: "I haven't got a brother.", es: "No tengo hermano." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: У мене́ є }, " — готовий зворот зі значенням «я маю»; те, що є, стоїть у називному відмінку."]
+              en: [{ term: У мене́ є }, " is a set phrase meaning “I have”; what you have is in the nominative."]
+              es: [{ term: У мене́ є }, " es una expresión fija que significa «tengo»; lo que se tiene va en nominativo."]
+            ex: [{ target: У мене́ є }, " брат."]
+            tr: { en: "I have a brother.", es: "Tengo un hermano." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Дієслово ", { term: ма́ти }, " зі знахідним відмінком означає те саме; у побуті частіше кажуть ", { term: у мене́ є }, "."]
+              en: ["The verb ", { term: ма́ти }, " with the accusative means the same; everyday speech more often says ", { term: у мене́ є }, "."]
+              es: ["El verbo ", { term: ма́ти }, " con el acusativo significa lo mismo; en el habla cotidiana es más frecuente ", { term: у мене́ є }, "."]
+            ex: ["Я ", { target: ма́ю бра́та }, "."]
+            tr: { en: "I have a brother.", es: "Tengo un hermano." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Після голосного ", { term: у }, " часто стає ", { term: в }, ": ", { term: Чи в тебе́ є час? }, " Див. ", { link: "Милозвучність", to: uk.foundations.euphony }, "."]
+              en: ["After a vowel, ", { term: у }, " often becomes ", { term: в }, ": ", { term: Чи в тебе́ є час? }, " See ", { link: "у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+              es: ["Después de vocal, ", { term: у }, " suele pasar a ", { term: в }, ": ", { term: Чи в тебе́ є час? }, " Ver ", { link: "La eufonía", to: uk.foundations.euphony }, "."]
+          - type: rule
+            level: B1
+            text:
+              uk: ["Граматично особа після ", { term: у }, " стоїть у родовому відмінку: ", { term: мене́ }, " — родовий від ", { term: я }, ", ", { term: не́ї }, " — від ", { term: вона́ }, "."]
+              en: ["In grammar terms, the person after ", { term: у }, " is in the genitive: ", { term: мене́ }, " is the genitive of ", { term: я }, ", ", { term: не́ї }, " of ", { term: вона́ }, "."]
+              es: ["Gramaticalmente, la persona después de ", { term: у }, " va en genitivo: ", { term: мене́ }, " es el genitivo de ", { term: я }, ", y ", { term: не́ї }, ", el de ", { term: вона́ }, "."]
+
+  - title: { uk: "Форма: хто має", en: "Form: who has it", es: "Forma: quién lo tiene" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { uk: Особа, en: Person, es: Persona } }
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - { level: A1, features: { person: 1, number: sg }, person: я, form: { target: у мене́ }, ex: { ex: "У мене́ є соба́ка.", tr: { en: "I have a dog.", es: "Tengo un perro." } } }
+          - { level: A1, features: { person: 2, number: sg }, person: ти, form: { target: у тебе́ }, ex: { ex: "У тебе́ є час?", tr: { en: "Have you got time?", es: "¿Tienes tiempo?" } } }
+          - { level: A1, features: { person: 3, number: sg, gender: [masc, neut] }, person: "він, воно́", form: { target: у ньо́го }, ex: { ex: "У ньо́го є маши́на.", tr: { en: "He has a car.", es: "Él tiene auto." } } }
+          - { level: A1, features: { person: 3, number: sg, gender: fem }, person: вона́, form: { target: у не́ї }, ex: { ex: "У не́ї є сестра́.", tr: { en: "She has a sister.", es: "Ella tiene una hermana." } } }
+          - { level: A1, features: { person: 1, number: pl }, person: ми, form: { target: у нас }, ex: { ex: "У нас є кіт.", tr: { en: "We have a cat.", es: "Tenemos un gato." } } }
+          - { level: A1, features: { person: 2, number: pl }, person: ви, form: { target: у вас }, ex: { ex: "У вас є квито́к?", tr: { en: "Have you got a ticket?", es: "¿Tiene boleto?" } } }
+          - { level: A1, features: { person: 3, number: pl }, person: вони́, form: { target: у них }, ex: { ex: "У них є ді́ти.", tr: { en: "They have children.", es: "Tienen hijos." } } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: Є }, " не змінюється: ", { term: у мене́ є брат }, ", ", { term: у мене́ є бра́ти }, "."]
+              en: [{ term: Є }, " never changes: ", { term: у мене́ є брат }, ", ", { term: у мене́ є бра́ти }, "."]
+              es: [{ term: Є }, " no cambia nunca: ", { term: у мене́ є брат }, ", ", { term: у мене́ є бра́ти }, "."]
+
+  - title: { uk: Питання й відповіді, en: Questions and answers, es: Preguntas y respuestas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Відповідь, en: Answer, es: Respuesta } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: { term: "Так, є" }, en: [{ term: "Так, є" }, " (yes)"], es: [{ term: "Так, є" }, " (sí)"] }
+            ex: { exchange: ["У вас є ру́чка?", [{ target: "Так, є" }, "."]] }
+            tr: { en: { exchange: ["Have you got a pen?", "Yes, I have."] }, es: { exchange: ["¿Tiene un bolígrafo?", "Sí, tengo."] } }
+          - level: A2
+            use: { uk: { term: "Ні, нема́є" }, en: [{ term: "Ні, нема́є" }, " (no)"], es: [{ term: "Ні, нема́є" }, " (no)"] }
+            ex: { exchange: ["У тебе́ є оліве́ць?", [{ target: "Ні, нема́є" }, "."]] }
+            tr: { en: { exchange: ["Have you got a pencil?", "No, I haven't."] }, es: { exchange: ["¿Tienes un lápiz?", "No, no tengo."] } }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            text:
+              uk: [{ term: "Ні, нема́є" }, " — готова коротка відповідь; заперечення з ", { term: нема́є }, " і родовим відмінком — нижче, на рівні B1."]
+              en: [{ term: "Ні, нема́є" }, " is a set short answer; the negative with ", { term: нема́є }, " and the genitive comes below, at B1."]
+              es: [{ term: "Ні, нема́є" }, " es una respuesta corta fija; la negación con ", { term: нема́є }, " y el genitivo viene más abajo, en B1."]
+
+  - title: { uk: "Заперечення: немає", en: "Negative: немає", es: "Negación: немає" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            form: { uk: [{ term: нема́є }, " і родовий"], en: [{ term: нема́є }, " with the genitive"], es: [{ term: нема́є }, " con el genitivo"] }
+            ex: { examples: [["У мене́ нема́є ", { target: бра́та }, "."], ["У нас нема́є ", { target: ча́су }, "."]] }
+            tr: { en: { examples: ["I haven't got a brother.", "We haven't got time."] }, es: { examples: ["No tengo hermano.", "No tenemos tiempo."] } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: [{ term: Нема́є }, " стоїть замість ", { term: є }, ", а те, чого немає, переходить у родовий відмінок."]
+              en: [{ term: Нема́є }, " replaces ", { term: є }, ", and what someone does not have goes into the genitive."]
+              es: [{ term: Нема́є }, " sustituye a ", { term: є }, ", y lo que no se tiene pasa al genitivo."]
+          - type: note
+            level: B1
+            text:
+              uk: ["Форми родового відмінка: ", { link: Родовий відмінок, to: uk.nouns-cases.genitive }, "."]
+              en: ["The genitive forms: ", { link: Genitive Case, to: uk.nouns-cases.genitive }, "."]
+              es: ["Las formas del genitivo: ", { link: El caso genitivo, to: uk.nouns-cases.genitive }, "."]
+
+  - title: { uk: Минулий і майбутній час, en: Past and future, es: Pasado y futuro }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            form: { uk: [{ term: був }, ": чоловічий рід"], en: [{ term: був }, ": masculine"], es: [{ term: був }, ": masculino"] }
+            ex: ["У нас ", { target: був }, " кіт."]
+            tr: { en: "We had a cat.", es: "Teníamos un gato." }
+          - level: B1
+            form: { uk: [{ term: була́ }, ": жіночий рід"], en: [{ term: була́ }, ": feminine"], es: [{ term: була́ }, ": femenino"] }
+            ex: ["У ньо́го ", { target: була́ }, " маши́на."]
+            tr: { en: "He had a car.", es: "Él tenía auto." }
+          - level: B1
+            form: { uk: [{ term: було́ }, ": середній рід"], en: [{ term: було́ }, ": neuter"], es: [{ term: було́ }, ": neutro"] }
+            ex: ["У не́ї ", { target: було́ }, " пита́ння."]
+            tr: { en: "She had a question.", es: "Ella tenía una pregunta." }
+          - level: B1
+            form: { uk: [{ term: були́ }, ": множина"], en: [{ term: були́ }, ": plural"], es: [{ term: були́ }, ": plural"] }
+            ex: ["У нас ", { target: були́ }, " квитки́."]
+            tr: { en: "We had tickets.", es: "Teníamos entradas." }
+          - level: B1
+            form: { uk: { alternatives: [{ term: бу́де }, { term: бу́дуть }] }, en: [{ alternatives: [{ term: бу́де }, { term: бу́дуть }] }, ": the future"], es: [{ alternatives: [{ term: бу́де }, { term: бу́дуть }] }, ": el futuro"] }
+            ex: { examples: [["У мене́ ", { target: бу́де }, " ві́льний час."], ["У нас ", { target: бу́дуть }, " го́сті."]] }
+            tr: { en: { examples: ["I'll have some free time.", "We'll have guests."] }, es: { examples: ["Tendré tiempo libre.", "Tendremos invitados."] } }
+          - level: B1
+            form: { uk: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " і родовий"], en: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " with the genitive"], es: [{ alternatives: [{ term: не було́ }, { term: не бу́де }] }, " con el genitivo"] }
+            ex: { examples: [["У мене́ ", { target: не було́ ча́су }, "."], ["У нас ", { target: не бу́де уро́ку }, "."]] }
+            tr: { en: { examples: ["I didn't have time.", "We won't have a class."] }, es: { examples: ["No tuve tiempo.", "No tendremos clase."] } }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Дієслово в минулому часі узгоджується з тим, що є, а не з особою: ", { term: у мене́ була́ маши́на }, "."]
+              en: ["In the past the verb agrees with the thing, not the person: ", { term: у мене́ була́ маши́на }, "."]
+              es: ["En pasado, el verbo concuerda con lo que se tiene, no con la persona: ", { term: у мене́ була́ маши́на }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: У нас нема́є час., right: ["У нас нема́є ", { target: ча́су }, "."], rule: { uk: ["після ", { term: нема́є }, " — родовий відмінок"], en: ["after ", { term: нема́є }, ", the genitive"], es: ["después de ", { term: нема́є }, ", el genitivo"] } }
+          - { level: A2, speakers: [es], wrong: Я ма́ю два́дцять ро́ків., right: [{ target: Мені́ }, " два́дцять ро́ків."], rule: { es: ["la edad no se «tiene»: ", { term: мені́ }, " (a mí) y los años; ver ", { link: "La edad: мені двадцять років", to: uk.numerals.age }] } }
+          - { level: B1, wrong: У нас був кі́шка., right: ["У нас ", { target: була́ }, " кі́шка."], rule: { uk: ["дієслово узгоджується з тим, що є: ", { term: кі́шка }, " — жіночий рід"], en: ["the verb agrees with the thing: ", { term: кі́шка }, " is feminine"], es: ["el verbo concuerda con lo que se tiene: ", { term: кі́шка }, " es femenino"] } }

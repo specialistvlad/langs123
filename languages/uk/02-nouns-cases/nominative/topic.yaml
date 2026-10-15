@@ -1,0 +1,227 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.nominative
+lang: uk
+kind: grammar
+tags: [cases, nominative, nouns, subject]
+concepts: [cases]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.plural, uk.nouns-cases.accusative, uk.verbs-present.liking, uk.sentence.u-mene-ye]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "76e4fb 9a6427 00c26f 249b8c b506fa", es: "76e4fb 9a6427 00c26f 249b8c b506fa" }
+
+title: { uk: Називний відмінок, en: Nominative Case, es: El caso nominativo }
+summary:
+  lead:
+    uk: ["Називний відмінок — словникова форма іменника: він відповідає на питання ", { term: хто? }, " і ", { term: що? }, " та називає підмет."]
+    en: ["The nominative is the dictionary form of a noun: it names the subject and answers ", { term: хто? }, " (who?) and ", { term: що? }, " (what?)."]
+    es: ["El nominativo es la forma del diccionario: nombra el sujeto y responde a ", { term: хто? }, " (¿quién?) y ", { term: що? }, " (¿qué?)."]
+  rule:
+    uk: ["Після ", { term: це }, " і ", { term: мене́ зва́ти }, " іменник стоїть у називному:"]
+    en: ["After ", { term: це }, " (this is) and ", { term: мене́ зва́ти }, " (my name is), the noun is nominative:"]
+    es: ["Después de ", { term: це }, " (esto es) y ", { term: мене́ зва́ти }, " (me llamo), el sustantivo va en nominativo:"]
+  ex: { examples: [["Це ", { target: Іри́на }, "."], ["Мене́ зва́ти ", { target: Оста́п }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Форма, en: Form, es: Forma }
+          rule:
+            uk: "форма зі словника"
+            en: "the form in the dictionary"
+            es: "la forma del diccionario"
+          ex: { examples: [{ target: стіл }, { target: кни́жка }, { target: мі́сто }] }
+          tr: { en: { examples: [table, book, city] }, es: { examples: [mesa, libro, ciudad] } }
+        - level: A1
+          point: { uk: Підмет, en: Subject, es: Sujeto }
+          rule:
+            uk: [{ alternatives: [{ term: хто? }, { term: що? }] }, " робить дію"]
+            en: [{ alternatives: [{ term: хто? }, { term: що? }] }, " does the action"]
+            es: [{ alternatives: [{ term: хто? }, { term: що? }] }, " hace la acción"]
+          ex: [{ target: Студе́нт }, " чита́є текст."]
+          tr: { en: "The student is reading a text.", es: "El estudiante lee un texto." }
+        - level: A1
+          point: { uk: "Це …", en: "Це …", es: "Це …" }
+          rule:
+            uk: ["після ", { term: це }, " і ", { term: ось }]
+            en: ["after ", { term: це }, " (this is) and ", { term: ось }, " (here is)"]
+            es: ["después de ", { term: це }, " (esto es) y ", { term: ось }, " (aquí está)"]
+          ex: ["Це ", { target: нови́й телеві́зор }, "."]
+          tr: { en: "This is a new TV.", es: "Es un televisor nuevo." }
+        - level: A1
+          point: { uk: Ім’я, en: Name, es: Nombre }
+          rule:
+            uk: ["після ", { term: мене́ зва́ти }]
+            en: ["after ", { term: мене́ зва́ти }]
+            es: ["después de ", { term: мене́ зва́ти }]
+          ex: ["Мене́ зва́ти ", { target: Оста́п }, "."]
+          tr: { en: "My name is Ostap.", es: "Me llamo Ostap." }
+        - level: A2
+          point: { uk: Подобатися, en: Liking, es: Gustar }
+          rule:
+            uk: ["те, що ", { term: подо́бається }]
+            en: ["what ", { term: подо́бається }, " (is liked)"]
+            es: ["lo que ", { term: подо́бається }, " (gusta)"]
+          ex: ["Мені́ подо́бається ", { target: ка́ва }, "."]
+          tr: { en: "I like coffee.", es: "Me gusta el café." }
+        - level: B1
+          point: { uk: Присудок, en: Predicate, es: Predicado }
+          rule:
+            uk: "іменник-присудок; після займенника без тире"
+            en: "a noun as predicate; no dash after a pronoun"
+            es: "un sustantivo como predicado; sin raya tras un pronombre"
+          ex: ["Він ", { target: інжене́р }, "."]
+          tr: { en: "He's an engineer.", es: "Es ingeniero." }
+        - level: B1
+          point: { uk: Наявність, en: Having, es: Tener }
+          rule:
+            uk: ["після ", { term: у ме́не є }]
+            en: ["after ", { term: у ме́не є }, " (I have)"]
+            es: ["después de ", { term: у ме́не є }, " (tengo)"]
+          ex: ["У ме́не є ", { target: брат }, "."]
+          tr: { en: "I have a brother.", es: "Tengo un hermano." }
+        - level: B1
+          point: { uk: Час, en: Time, es: Tiempo }
+          rule:
+            uk: "день, свято, подія"
+            en: "a day, a holiday, an event"
+            es: "un día, una fiesta, un acontecimiento"
+          ex: ["Сього́дні ", { target: п’я́тниця }, "."]
+          tr: { en: "Today is Friday.", es: "Hoy es viernes." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["у теперішньому часі без ", { term: є }]
+            en: ["the present leaves out ", { term: є }, " (am, is, are)"]
+            es: ["el presente omite ", { term: є }, " (soy, es)"]
+          ex: ["Я ", { target: студе́нт }, "."]
+          tr: { en: "I'm a student.", es: "Soy estudiante." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Називний — форма, яку подає словник; він відповідає на питання ", { term: хто? }, " ", { term: що? }]
+              en: ["The nominative is the form a dictionary gives; it answers ", { term: хто? }, " (who?) and ", { term: що? }, " (what?)."]
+              es: ["El nominativo es la forma que da el diccionario; responde a ", { term: хто? }, " (¿quién?) y ", { term: що? }, " (¿qué?)."]
+            ex: { examples: [{ target: брат }, { target: ма́ма }, { target: вікно́ }] }
+            tr: { en: { examples: [brother, mum, window] }, es: { examples: [hermano, madre, ventana] } }
+          - type: rule
+            level: A1
+            text:
+              uk: "Підмет речення стоїть у називному:"
+              en: "The subject of a sentence is nominative:"
+              es: "El sujeto de la oración va en nominativo:"
+            ex: [{ target: Інозе́мний студе́нт }, " чита́є текст."]
+            tr: { en: "The foreign student is reading a text.", es: "El estudiante extranjero lee un texto." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Форми називного множини: ", { link: Множина, to: uk.nouns-cases.plural }, "."]
+              en: ["The nominative plural forms: ", { link: Plural, to: uk.nouns-cases.plural }, "."]
+              es: ["Las formas del nominativo plural: ", { link: El plural, to: uk.nouns-cases.plural }, "."]
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: "підмет", en: "the subject", es: "el sujeto" }
+            ex: [{ target: Сестра́ }, " працю́є вдо́ма."]
+            tr: { en: "My sister works from home.", es: "Mi hermana trabaja en casa." }
+          - level: A1
+            use: { uk: ["хто це, що це: після ", { term: це }], en: ["who or what it is: after ", { term: це }], es: ["quién o qué es: después de ", { term: це }] }
+            ex: ["Це ", { target: Іри́на }, "."]
+            tr: { en: "This is Iryna.", es: "Esta es Iryna." }
+          - level: A1
+            use: { uk: ["показ: після ", { term: ось }], en: ["pointing: after ", { term: ось }], es: ["para señalar: después de ", { term: ось }] }
+            ex: ["Ось ", { target: вхід }, "."]
+            tr: { en: "Here's the entrance.", es: "Aquí está la entrada." }
+          - level: A1
+            use: { uk: ["ім’я: після ", { term: мене́ зва́ти }], en: ["a name: after ", { term: мене́ зва́ти }], es: ["un nombre: después de ", { term: мене́ зва́ти }] }
+            ex: ["Мене́ зва́ти ", { target: Оста́п }, "."]
+            tr: { en: "My name is Ostap.", es: "Me llamo Ostap." }
+          - level: A2
+            use: { uk: ["назва: після ", { term: назива́ється }], en: ["what something is called: after ", { term: назива́ється }], es: ["cómo se llama algo: después de ", { term: назива́ється }] }
+            ex: ["Це мі́сто назива́ється ", { target: Львів }, "."]
+            tr: { en: "This city is called Lviv.", es: "Esta ciudad se llama Lviv." }
+          - level: A2
+            use: { uk: ["те, що подобається: після ", { term: подо́бається }], en: ["what is liked: after ", { term: подо́бається }], es: ["lo que gusta: después de ", { term: подо́бається }] }
+            ex: ["Мені́ подо́бається ", { target: Ки́їв }, "."]
+            tr: { en: "I like Kyiv.", es: "Me gusta Kyiv." }
+          - level: B1
+            use: { uk: "іменник-присудок", en: "a noun as predicate", es: "un sustantivo como predicado" }
+            ex: ["Він ", { target: інжене́р }, "."]
+            tr: { en: "He's an engineer.", es: "Es ingeniero." }
+          - level: B1
+            use: { uk: ["наявність: після ", { term: у ме́не є }], en: ["having: after ", { term: у ме́не є }], es: ["tener: después de ", { term: у ме́не є }] }
+            ex: ["У ме́не є ", { target: брат }, "."]
+            tr: { en: "I have a brother.", es: "Tengo un hermano." }
+          - level: B1
+            use: { uk: "день, свято, подія", en: "a day, a holiday, an event", es: "un día, una fiesta, un acontecimiento" }
+            ex: ["Незаба́ром ", { target: Різдво́ }, "."]
+            tr: { en: "Christmas is coming soon.", es: "Pronto es Navidad." }
+          - level: B1
+            use: { uk: ["порівняння: після ", { term: ніж }], en: ["comparison: after ", { term: ніж }, " (than)"], es: ["comparación: después de ", { term: ніж }, " (que)"] }
+            ex: ["Ки́їв старі́ший, ніж ", { target: Львів }, "."]
+            tr: { en: "Kyiv is older than Lviv.", es: "Kyiv es más antigua que Lviv." }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["У теперішньому часі дієслово ", { term: бу́ти }, " зазвичай не вживають:"]
+              en: ["In the present, Ukrainian usually leaves out the verb ", { term: бу́ти }, " (be):"]
+              es: ["En presente, el ucraniano suele omitir el verbo ", { term: бу́ти }, " (ser, estar):"]
+            ex: ["Я ", { target: студе́нт }, "."]
+            tr: { en: "I'm a student.", es: "Soy estudiante." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Вислови ", { term: у ме́не є }, " і ", { term: мені́ подо́бається }, " вживають як готові фрази ще до того, як вивчають їхню граматику: ", { link: У мене є, to: uk.sentence.u-mene-ye }, ", ", { link: Мені подобається, to: uk.verbs-present.liking }, "."]
+              en: ["The phrases ", { term: у ме́не є }, " (I have) and ", { term: мені́ подо́бається }, " (I like) are used as set phrases before their grammar is learned: ", { link: "Having: у мене є", to: uk.sentence.u-mene-ye }, ", ", { link: "Liking: мені подобається", to: uk.verbs-present.liking }, "."]
+              es: ["Las expresiones ", { term: у ме́не є }, " (tengo) y ", { term: мені́ подо́бається }, " (me gusta) se usan como frases hechas antes de aprender su gramática: ", { link: "Tener: у мене є", to: uk.sentence.u-mene-ye }, ", ", { link: "Gustar: мені подобається", to: uk.verbs-present.liking }, "."]
+          - type: note
+            level: A2
+            text:
+              uk: ["Більше про ", { term: подо́батися }, ": ", { link: Мені подобається, to: uk.verbs-present.liking }, "."]
+              en: ["More on ", { term: подо́батися }, ": ", { link: "Liking: мені подобається", to: uk.verbs-present.liking }, "."]
+              es: ["Más sobre ", { term: подо́батися }, ": ", { link: "Gustar: мені подобається", to: uk.verbs-present.liking }, "."]
+          - type: rule
+            level: B1
+            text:
+              uk: "Коли підмет і присудок — іменники в називному, між ними пишуть тире; після займенника тире не пишуть:"
+              en: "When the subject and the predicate are both nouns, Ukrainian writes a dash between them; after a pronoun it writes none:"
+              es: "Cuando sujeto y predicado son sustantivos, el ucraniano escribe una raya entre ellos; después de un pronombre, no:"
+            ex: { examples: [["Сестра́ — ", { target: студе́нтка }, "."], ["Вона́ ", { target: студе́нтка }, "."]] }
+            tr: { en: { examples: ["My sister is a student.", "She's a student."] }, es: { examples: ["Mi hermana es estudiante.", "Ella es estudiante."] } }
+          - type: note
+            level: B1
+            text:
+              uk: ["Наявність і відсутність: ", { link: У мене є, to: uk.sentence.u-mene-ye }, "."]
+              en: ["Having and not having: ", { link: "Having: у мене є", to: uk.sentence.u-mene-ye }, "."]
+              es: ["Tener y no tener: ", { link: "Tener: у мене є", to: uk.sentence.u-mene-ye }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Це Іри́ну., right: ["Це ", { target: Іри́на }, "."], rule: { uk: ["після ", { term: це }, " — називний"], en: ["after ", { term: це }, " the noun is nominative"], es: ["después de ", { term: це }, " el sustantivo va en nominativo"] } }
+          - { level: A1, wrong: Мене́ зва́ти Оста́па., right: ["Мене́ зва́ти ", { target: Оста́п }, "."], rule: { uk: ["ім’я після ", { term: мене́ зва́ти }, " стоїть у називному"], en: ["the name after ", { term: мене́ зва́ти }, " is nominative"], es: ["el nombre después de ", { term: мене́ зва́ти }, " va en nominativo"] } }
+          - { level: A1, speakers: [en, es], wrong: Я є студе́нт., right: ["Я ", { target: студе́нт }, "."], rule: { en: ["the present leaves out ", { term: є }, ": no word for “am”"], es: ["el presente omite ", { term: є }, ": no hay palabra para «soy»"] } }
+          - { level: A2, speakers: [en], wrong: Я подо́баюся ка́ва., right: ["Мені́ подо́бається ", { target: ка́ва }, "."], rule: { en: ["the thing you like is the subject, in the nominative: ", { term: Мені́ подо́бається }] } }
+          - { level: B1, speakers: [en, es], wrong: У ме́не є бра́та., right: ["У ме́не є ", { target: брат }, "."], rule: { en: ["after ", { term: у ме́не є }, " the noun is the subject: nominative, not an object"], es: ["después de ", { term: у ме́не є }, " el sustantivo es el sujeto: nominativo, no objeto"] } }

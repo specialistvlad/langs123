@@ -1,0 +1,262 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.plural
+lang: uk
+kind: grammar
+tags: [nouns, plural, number]
+concepts: [number]
+related: [uk.nouns-cases.gender, uk.nouns-cases.declension-alternations, uk.numerals.numbers-with-nouns, uk.adjectives-adverbs.adjective-agreement]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "637c45 7cc014 6e0b80 e2fa5f 4e3fc2 866888 e4f43e", es: "637c45 7cc014 6e0b80 e2fa5f 4e3fc2 866888 e4f43e" }
+
+title: { uk: Множина, en: Plural, es: El plural }
+summary:
+  lead:
+    uk: ["Іменники утворюють множину закінченнями ", { term: -и }, ", ", { term: -і }, " (", { term: -ї }, ") чи ", { term: -а }, " (", { term: -я }, ") залежно від роду й основи."]
+    en: ["Nouns form the plural with ", { term: -и }, ", ", { term: -і }, " (", { term: -ї }, ") or ", { term: -а }, " (", { term: -я }, "), by gender and stem."]
+    es: ["Los sustantivos forman el plural con ", { term: -и }, ", ", { term: -і }, " (", { term: -ї }, ") o ", { term: -а }, " (", { term: -я }, "), según el género y la raíz."]
+  rule:
+    uk: ["Тверда основа чоловічого й жіночого роду має ", { term: -и }, ":"]
+    en: ["Masculine and feminine nouns with a hard stem take ", { term: -и }, ":"]
+    es: ["Los masculinos y femeninos de raíz dura toman ", { term: -и }, ":"]
+  ex: { examples: [["Тут ", { target: студе́нти }, "."], ["Де ", { target: книжки́ }, "?"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Тверда основа, en: Hard stem, es: Raíz dura }
+          rule:
+            uk: ["чоловічий і жіночий рід: ", { term: -и }]
+            en: ["masculine and feminine: ", { term: -и }]
+            es: ["masculino y femenino: ", { term: -и }]
+          ex: { examples: [{ target: студе́нти }, { target: ма́ми }] }
+          tr: { en: { examples: [students, mums] }, es: { examples: [estudiantes, madres] } }
+        - level: A1
+          point: { uk: М’яка основа, en: Soft stem, es: Raíz blanda }
+          rule:
+            uk: [{ term: -і }, "; після голосного ", { term: -ї }]
+            en: [{ term: -і }, "; after a vowel ", { term: -ї }]
+            es: [{ term: -і }, "; después de vocal, ", { term: -ї }]
+          ex: { examples: [{ target: бабу́сі }, { target: музе́ї }] }
+          tr: { en: { examples: [grandmas, museums] }, es: { examples: [abuelas, museos] } }
+        - level: A1
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule:
+            uk: [{ mapping: [{ term: -о }, { term: -а }] }, ", ", { mapping: [{ term: -е }, { term: -я }] }]
+            en: [{ mapping: [{ term: -о }, { term: -а }] }, ", ", { mapping: [{ term: -е }, { term: -я }] }]
+            es: [{ mapping: [{ term: -о }, { term: -а }] }, ", ", { mapping: [{ term: -е }, { term: -я }] }]
+          ex: { examples: [{ target: міста́ }, { target: моря́ }] }
+          tr: { en: { examples: [cities, seas] }, es: { examples: [ciudades, mares] } }
+        - level: A1
+          point: { uk: Чергування, en: Alternation, es: Alternancia }
+          rule:
+            uk: ["голосний основи змінюється: ", { mapping: [{ term: рік }, { term: ро́ки }] }]
+            en: ["the stem vowel changes: ", { mapping: [{ term: рік }, { term: ро́ки }] }]
+            es: ["cambia la vocal de la raíz: ", { mapping: [{ term: рік }, { term: ро́ки }] }]
+          ex: ["Мину́ли ", { target: ро́ки }, "."]
+          tr: { en: "The years went by.", es: "Pasaron los años." }
+        - level: A1
+          point: { uk: Узгодження, en: Agreement, es: Concordancia }
+          rule:
+            uk: "у множині одна форма для всіх родів"
+            en: "one plural form for every gender"
+            es: "una sola forma de plural para todos los géneros"
+          ex: [{ target: Мої́ }, " брати́ і се́стри тут."]
+          tr: { en: "My brothers and sisters are here.", es: "Mis hermanos y hermanas están aquí." }
+        - level: A2
+          point: { uk: Особливі форми, en: Irregular plurals, es: Plurales irregulares }
+          rule:
+            uk: [{ mapping: [{ term: люди́на }, { term: лю́ди }] }, ", ", { mapping: [{ term: дити́на }, { term: ді́ти }] }]
+            en: [{ mapping: [{ term: люди́на }, { term: лю́ди }] }, ", ", { mapping: [{ term: дити́на }, { term: ді́ти }] }]
+            es: [{ mapping: [{ term: люди́на }, { term: лю́ди }] }, ", ", { mapping: [{ term: дити́на }, { term: ді́ти }] }]
+          ex: ["У па́рку гра́ються ", { target: ді́ти }, "."]
+          tr: { en: "Children are playing in the park.", es: "Unos niños juegan en el parque." }
+        - level: A2
+          point: { uk: Наголос, en: Stress, es: Acento }
+          rule:
+            uk: "наголос розрізняє форми"
+            en: "the stress tells forms apart"
+            es: "el acento distingue las formas"
+          ex: { contrast: [["мої́ ", { target: ру́ки }], ["моє́ї ", { target: руки́ }]] }
+          tr: { en: { contrast: ["my hands", "of my hand"] }, es: { contrast: ["mis manos", "de mi mano"] } }
+        - level: B1
+          point: { uk: Лише множина, en: Plural only, es: Solo plural }
+          rule:
+            uk: "деякі іменники мають тільки множину"
+            en: "some nouns exist only in the plural"
+            es: "algunos sustantivos solo tienen plural"
+          ex: ["Де мої́ ", { target: окуля́ри }, "?"]
+          tr: { en: "Where are my glasses?", es: "¿Dónde están mis gafas?" }
+        - level: B1
+          point: { uk: "Іменники на -ин", en: "Nouns in -ин", es: "Sustantivos en -ин" }
+          rule:
+            uk: [{ term: -ин }, " у множині зникає"]
+            en: [{ term: -ин }, " drops in the plural"]
+            es: [{ term: -ин }, " desaparece en plural"]
+          ex: ["Ми ", { target: громадя́ни }, " Украї́ни."]
+          tr: { en: "We are citizens of Ukraine.", es: "Somos ciudadanos de Ucrania." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["після ", { alternatives: [{ term: г }, { term: к }, { term: х }] }, " пишемо ", { term: -и }]
+            en: ["after ", { alternatives: [{ term: г }, { term: к }, { term: х }] }, " write ", { term: -и }]
+            es: ["después de ", { alternatives: [{ term: г }, { term: к }, { term: х }] }, " se escribe ", { term: -и }]
+          ex: ["Це мої́ ", { target: книжки́ }, "."]
+          tr: { en: "These are my books.", es: "Estos son mis libros." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["назви людей на ", { term: -ар }, " мають ", { term: -і }]
+            en: ["nouns in ", { term: -ар }, " naming people take ", { term: -і }]
+            es: ["los nombres de persona en ", { term: -ар }, " toman ", { term: -і }]
+          ex: ["Тут працю́ють ", { target: лікарі́ }, "."]
+          tr: { en: "Doctors work here.", es: "Aquí trabajan médicos." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Множину в називному відмінку утворюють закінчення ", { term: -и }, ", ", { term: -і }, " (", { term: -ї }, ") та ", { term: -а }, " (", { term: -я }, ")."]
+              en: ["The nominative plural ends in ", { term: -и }, ", ", { term: -і }, " (", { term: -ї }, ") or ", { term: -а }, " (", { term: -я }, ")."]
+              es: ["El nominativo plural termina en ", { term: -и }, ", ", { term: -і }, " (", { term: -ї }, ") o ", { term: -а }, " (", { term: -я }, ")."]
+            ex: { examples: [{ target: студе́нти }, { target: лікарі́ }, { target: міста́ }] }
+            tr: { en: { examples: [students, doctors, cities] }, es: { examples: [estudiantes, médicos, ciudades] } }
+          - type: rule
+            level: A1
+            text:
+              uk: "У множині рід не розрізняють: прикметник і займенник мають одну форму."
+              en: "The plural has no gender: an adjective or a pronoun has one plural form."
+              es: "El plural no distingue género: el adjetivo y el pronombre tienen una sola forma."
+            ex: { examples: [[{ target: нові́ }, " столи́"], [{ target: нові́ }, " книжки́"], [{ target: нові́ }, " міста́"]] }
+            tr: { en: { examples: ["new tables", "new books", "new cities"] }, es: { examples: ["mesas nuevas", "libros nuevos", "ciudades nuevas"] } }
+
+  - title: { uk: "Форма: закінчення множини", en: "Form: plural endings", es: "Forma: terminaciones del plural" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: sg, label: { uk: Однина, en: Singular, es: Singular }, features: { number: sg } }
+          - { key: pl, label: { uk: Множина, en: Plural, es: Plural }, features: { number: pl } }
+        rows:
+          - { level: A1, features: { gender: masc }, group: { uk: "Чоловічий рід, тверда основа", en: "Masculine, hard stem", es: "Masculino, raíz dura" }, sg: { alternatives: [студе́нт, інститу́т] }, pl: { alternatives: [["студе́нт", { ending: и }], ["інститу́т", { ending: и }]] } }
+          - { level: A1, features: { gender: masc }, group: { uk: "Чоловічий рід, м’яка основа", en: "Masculine, soft stem", es: "Masculino, raíz blanda" }, sg: { alternatives: [лі́кар, музе́й] }, pl: { alternatives: [["лікар", { ending: і́ }], ["музе́", { ending: ї }]] } }
+          - { level: A1, features: { gender: masc }, group: { uk: "Чоловічий рід на -ь", en: "Masculine in -ь", es: "Masculino en -ь" }, sg: { alternatives: [учи́тель, готе́ль] }, pl: { alternatives: [["учител", { ending: і́ }], ["готе́л", { ending: і }]] } }
+          - { level: A1, features: { gender: fem }, group: { uk: "Жіночий рід на -а", en: "Feminine in -а", es: "Femenino en -а" }, sg: { alternatives: [ма́ма, кни́жка] }, pl: { alternatives: [["ма́м", { ending: и }], ["книжк", { ending: и́ }]] } }
+          - { level: A1, features: { gender: fem }, group: { uk: "Жіночий рід на -я", en: "Feminine in -я", es: "Femenino en -я" }, sg: { alternatives: [бабу́ся, лі́нія] }, pl: { alternatives: [["бабу́с", { ending: і }], ["лі́ні", { ending: ї }]] } }
+          - { level: A1, features: { gender: neut }, group: { uk: "Середній рід на -о", en: "Neuter in -о", es: "Neutro en -о" }, sg: { alternatives: [мі́сто, вікно́] }, pl: { alternatives: [["міст", { ending: а́ }], ["ві́кн", { ending: а }]] } }
+          - { level: A1, features: { gender: neut }, group: { uk: "Середній рід на -е", en: "Neuter in -е", es: "Neutro en -е" }, sg: { alternatives: [мо́ре, по́ле] }, pl: { alternatives: [["мор", { ending: я́ }], ["пол", { ending: я́ }]] } }
+          - { level: A2, features: { gender: fem }, group: { uk: "Жіночий рід на приголосний", en: "Feminine in a consonant", es: "Femenino en consonante" }, sg: { alternatives: [ніч, ра́дість] }, pl: { alternatives: [["но́ч", { ending: і }], ["ра́дост", { ending: і }]] } }
+          - { level: A2, features: { gender: neut }, group: { uk: "Середній рід на -я", en: "Neuter in -я", es: "Neutro en -я" }, sg: { alternatives: [завда́ння, запита́ння] }, pl: { target: { alternatives: [завда́ння, запита́ння] } } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Основа на ", { term: г }, ", ", { term: к }, ", ", { term: х }, " тверда: закінчення ", { term: -и }, ":"]
+              en: ["A stem in ", { term: г }, ", ", { term: к }, " or ", { term: х }, " is hard: the ending is ", { term: -и }, ":"]
+              es: ["Una raíz en ", { term: г }, ", ", { term: к }, " o ", { term: х }, " es dura: la terminación es ", { term: -и }, ":"]
+            ex: ["На столі́ ", { target: книжки́ }, "."]
+            tr: { en: "There are books on the table.", es: "Hay libros en la mesa." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Назви людей на ", { term: -ар }, " (", { term: лі́кар }, ", ", { term: секрета́р }, ") мають м’яку основу:"]
+              en: ["Nouns in ", { term: -ар }, " naming people (", { term: лі́кар }, ", ", { term: секрета́р }, ") have a soft stem:"]
+              es: ["Los nombres de persona en ", { term: -ар }, " (", { term: лі́кар }, ", ", { term: секрета́р }, ") tienen raíz blanda:"]
+            ex: ["Тут працю́ють ", { target: лікарі́ }, "."]
+            tr: { en: "Doctors work here.", es: "Aquí trabajan médicos." }
+          - type: note
+            level: B1
+            text:
+              uk: ["Інші іменники на ", { term: -ар }, " мають тверду основу і ", { term: -и }, ":"]
+              en: ["Other nouns in ", { term: -ар }, " have a hard stem and ", { term: -и }, ":"]
+              es: ["Los demás sustantivos en ", { term: -ар }, " tienen raíz dura y ", { term: -и }, ":"]
+            ex: { examples: [{ target: база́ри }, { target: гекта́ри }] }
+            tr: { en: { examples: [markets, hectares] }, es: { examples: [mercados, hectáreas] } }
+          - type: note
+            level: A2
+            text:
+              uk: ["Іменники середнього роду на ", { term: -я }, " у множині не змінюються:"]
+              en: ["Neuter nouns in ", { term: -я }, " stay the same in the plural:"]
+              es: ["Los neutros en ", { term: -я }, " no cambian en plural:"]
+            ex: ["У ме́не три ", { target: запита́ння }, "."]
+            tr: { en: "I have three questions.", es: "Tengo tres preguntas." }
+
+  - title: { uk: "Чергування й наголос", en: "Alternations and stress", es: "Alternancias y acento" }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Зміна, en: Change, es: Cambio } }
+          - { key: sg, label: { uk: Однина, en: Singular, es: Singular }, features: { number: sg } }
+          - { key: pl, label: { uk: Множина, en: Plural, es: Plural }, features: { number: pl } }
+        rows:
+          - { level: A1, group: { uk: { mapping: [{ letter: і }, { alternatives: [{ letter: о }, { letter: е }] }] }, en: { mapping: [{ letter: і }, { alternatives: [{ letter: о }, { letter: е }] }] }, es: { mapping: [{ letter: і }, { alternatives: [{ letter: о }, { letter: е }] }] } }, sg: { alternatives: [рік, ніж, річ] }, pl: { alternatives: [ро́ки, ножі́, ре́чі] } }
+          - { level: A1, group: { uk: "о, е випадають", en: "о, е drop", es: "о, е desaparecen" }, sg: { alternatives: [па́лець, буди́нок, день] }, pl: { alternatives: [па́льці, буди́нки, дні] } }
+          - { level: A1, group: { uk: { mapping: [{ letter: г }, { letter: з }] }, en: { mapping: [{ letter: г }, { letter: з }] }, es: { mapping: [{ letter: г }, { letter: з }] } }, sg: друг, pl: дру́зі }
+          - { level: A2, group: { uk: "Особлива форма", en: "Irregular", es: "Irregular" }, sg: { alternatives: [люди́на, дити́на, о́ко] }, pl: { alternatives: [лю́ди, ді́ти, о́чі] } }
+          - { level: B1, group: { uk: "-ин зникає", en: "-ин drops", es: "-ин desaparece" }, sg: { alternatives: [громадя́нин, кия́нин] }, pl: { alternatives: [громадя́ни, кия́ни] } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "У множині наголос часто переходить на закінчення:"
+              en: "In the plural the stress often moves to the ending:"
+              es: "En plural el acento pasa a menudo a la terminación:"
+            ex: { examples: [{ target: столи́ }, { target: брати́ }, { target: сини́ }] }
+            tr: { en: { examples: [tables, brothers, sons] }, es: { examples: [mesas, hermanos, hijos] } }
+          - type: note
+            level: A2
+            text:
+              uk: "Наголос розрізняє називний множини й родовий однини:"
+              en: "The stress tells the nominative plural from the genitive singular:"
+              es: "El acento distingue el nominativo plural del genitivo singular:"
+            ex: { contrast: [["мої́ ", { target: ру́ки }], ["моє́ї ", { target: руки́ }]] }
+            tr: { en: { contrast: ["my hands", "of my hand"] }, es: { contrast: ["mis manos", "de mi mano"] } }
+
+  - title: { uk: "Тільки множина", en: "Plural only", es: "Solo plural" }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: "Деякі іменники мають тільки множину; слова при них теж стоять у множині:"
+              en: "Some nouns exist only in the plural, and the words with them are plural too:"
+              es: "Algunos sustantivos solo tienen plural, y las palabras que los acompañan también van en plural:"
+            ex: [{ target: Ці }, " две́рі ", { target: зачи́нені }, "."]
+            tr: { en: "This door is closed.", es: "Esta puerta está cerrada." }
+          - type: example
+            level: B1
+            text:
+              uk: "Інші іменники тільки з множиною:"
+              en: "Other plural-only nouns:"
+              es: "Otros sustantivos que solo tienen plural:"
+            ex: { examples: [{ target: окуля́ри }, { target: гро́ші }, { target: Карпа́ти }] }
+            tr: { en: { examples: [glasses, money, the Carpathians] }, es: { examples: [gafas, dinero, los Cárpatos] } }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Мої́ книжкі́ тут., right: ["Мої́ ", { target: книжки́ }, " тут."], rule: { uk: ["після ", { term: к }, " — ", { term: -и }], en: ["after ", { term: к }, " the ending is ", { term: -и }], es: ["después de ", { term: к }, " la terminación es ", { term: -и }] } }
+          - { level: A1, wrong: Тут працю́ють лікари́., right: ["Тут працю́ють ", { target: лікарі́ }, "."], rule: { uk: [{ term: лі́кар }, " має м’яку основу: ", { term: лікарі́ }], en: [{ term: лі́кар }, " has a soft stem: ", { term: лікарі́ }], es: [{ term: лі́кар }, " tiene raíz blanda: ", { term: лікарі́ }] } }
+          - { level: A1, wrong: Це нові́ мі́сти., right: ["Це нові́ ", { target: міста́ }, "."], rule: { uk: ["середній рід: ", { mapping: [{ term: -о }, { term: -а }] }], en: ["neuter: ", { mapping: [{ term: -о }, { term: -а }] }], es: ["neutro: ", { mapping: [{ term: -о }, { term: -а }] }] } }
+          - { level: A2, wrong: Тут хо́дять люди́ни., right: ["Тут хо́дять ", { target: лю́ди }, "."], rule: { uk: ["множина від ", { term: люди́на }, " — ", { term: лю́ди }], en: ["the plural of ", { term: люди́на }, " is ", { term: лю́ди }], es: ["el plural de ", { term: люди́на }, " es ", { term: лю́ди }] } }
+          - { level: B1, wrong: Ця две́рі відчи́нена., right: [{ target: Ці }, " две́рі ", { target: відчи́нені }, "."], rule: { uk: [{ term: две́рі }, " має тільки множину"], en: [{ term: две́рі }, " exists only in the plural"], es: [{ term: две́рі }, " solo tiene plural"] } }
+          - { level: B1, speakers: [en], wrong: Гро́ші лежи́ть на столі́., right: [{ target: Гро́ші лежа́ть }, " на столі́."], rule: { en: [{ term: гро́ші }, " is plural, unlike “money”: ", { term: лежа́ть }] } }
+          - { level: A2, speakers: [es], wrong: Лю́ди ду́же до́бра., right: ["Лю́ди ду́же ", { target: до́брі }, "."], rule: { es: [{ term: лю́ди }, " es plural, no como «la gente»: ", { term: до́брі }] } }

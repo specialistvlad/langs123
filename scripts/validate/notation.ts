@@ -30,6 +30,9 @@ export const LEARNED_NOTATION: [string, RegExp, string][] = [
   ["(", /\(/, "an optional, gloss or variant mark names the part in parentheses"],
   [" = ", / = /, "an equivalence names the forms that mean the same"],
 ];
+// Languages whose punctuation puts a dash inside a sentence, as Ukrainian does between a subject and its noun
+// predicate (Мама — лікар): their dash is punctuation, and an exchange still names its question and answer.
+const DASH_IS_PUNCTUATION = new Set(["uk"]);
 
 const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -55,7 +58,10 @@ export function checkMarks(topic: Topic, where: string, report: Report, explain:
       text,
       {
         string(s, learned) {
-          for (const [name, re, instead] of [...NOTATION, ...(learned ? LEARNED_NOTATION : [])]) {
+          const learnedNotation = DASH_IS_PUNCTUATION.has(topic.lang)
+            ? LEARNED_NOTATION.filter(([name]) => name !== " — ")
+            : LEARNED_NOTATION;
+          for (const [name, re, instead] of [...NOTATION, ...(learned ? learnedNotation : [])]) {
             if (re.test(s)) report(where, `${path} holds ${name} in "${s}": ${instead}`);
           }
         },

@@ -1,0 +1,153 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.future-imperative-conditional.conditional
+lang: uk
+kind: grammar
+tags: [verbs, conditional, mood]
+concepts: [conditional-mood]
+related: [uk.sentence.when-if, uk.past-aspect.past-tense, uk.modality.modal-words]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "d6553d 9c88a6 bae9c8 1d9603 526afb 213fe7", es: "d6553d 9c88a6 bae9c8 1d9603 526afb 213fe7" }
+
+title: { uk: "Умовний спосіб із би", en: "Conditional with би", es: "El condicional con би" }
+summary:
+  lead:
+    uk: ["Умовний спосіб — це форма минулого часу з ", { term: би }, " чи ", { term: б }, ": так висловлюють бажання, ввічливе прохання, пораду й нереальну умову."]
+    en: ["The conditional is the past form with ", { term: би }, " or ", { term: б }, ": it expresses wishes, polite requests, advice and unreal conditions."]
+    es: ["El condicional es la forma del pasado con ", { term: би }, " o ", { term: б }, ": expresa deseos, peticiones corteses, consejos y condiciones irreales."]
+  rule:
+    uk: ["Після приголосного стоїть ", { term: би }, ", після голосного — ", { term: б }, ":"]
+    en: ["The particle is ", { term: би }, " after a consonant and ", { term: б }, " after a vowel:"]
+    es: ["La partícula es ", { term: би }, " tras consonante y ", { term: б }, " tras vocal:"]
+  ex: { examples: [["Я ", { target: пої́хав би }, " на мо́ре."], ["Я ", { target: пої́хала б }, " на мо́ре."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { uk: Форма, en: Form, es: Forma }
+          rule: { uk: { pattern: [{ slot: past }, { alternatives: [би, б] }] }, en: { pattern: [{ slot: past }, { alternatives: [би, б] }] }, es: { pattern: [{ slot: past }, { alternatives: [би, б] }] } }
+          ex: ["Я ", { target: говори́в би }, " з ним."]
+          tr: { en: "I'd talk to him.", es: "Yo hablaría con él." }
+        - level: B1
+          point: { uk: "Рід і число", en: "Gender and number", es: "Género y número" }
+          rule: { uk: "як у минулому часі", en: "as in the past tense", es: "como en el pasado" }
+          ex: ["Вона́ ", { target: ви́пила б }, " ча́ю."]
+          tr: { en: "She'd have some tea.", es: "Ella tomaría un té." }
+        - level: B1
+          point: { uk: Бажання, en: Wish, es: Deseo }
+          rule: { uk: { pattern: [{ alternatives: [я б хоті́в, я б хоті́ла] }, { slot: { uk: "що", en: "what", es: "qué" } }] }, en: { pattern: [{ alternatives: [я б хоті́в, я б хоті́ла] }, { slot: { uk: "що", en: "what", es: "qué" } }] }, es: { pattern: [{ alternatives: [я б хоті́в, я б хоті́ла] }, { slot: { uk: "що", en: "what", es: "qué" } }] } }
+          ex: ["Я б ", { target: хоті́ла }, " ка́ви."]
+          tr: { en: "I'd like some coffee.", es: "Me gustaría un café." }
+        - level: B1
+          point: { uk: "Ввічливе прохання", en: "Polite request", es: "Petición cortés" }
+          rule: { uk: { pattern: [Ви не могли́ б, { slot: infinitive }] }, en: { pattern: [Ви не могли́ б, { slot: infinitive }] }, es: { pattern: [Ви не могли́ б, { slot: infinitive }] } }
+          ex: ["Ви не ", { target: могли́ б }, " допомогти́?"]
+          tr: { en: "Could you help, please?", es: "¿Podría ayudarme?" }
+        - level: B1
+          point: { uk: Порада, en: Advice, es: Consejo }
+          rule: { uk: { pattern: [на твоє́му мі́сці, я б] }, en: { pattern: [на твоє́му мі́сці, я б] }, es: { pattern: [на твоє́му мі́сці, я б] } }
+          ex: ["На твоє́му мі́сці я б ", { target: відпочи́в }, "."]
+          tr: { en: "If I were you, I'd get some rest.", es: "Yo que tú, descansaría." }
+        - level: B1
+          point: { uk: "Нереальна умова", en: "Unreal condition", es: "Condición irreal" }
+          rule: { uk: [{ term: якби́ }, " і минулий час, потім ", { term: би }], en: [{ term: якби́ }, " with the past, then ", { term: би }], es: [{ term: якби́ }, " con el pasado y luego ", { term: би }] }
+          ex: [{ target: Якби́ }, " я мав час, я б ", { target: прийшо́в }, "."]
+          tr: { en: "If I had time, I'd come.", es: "Si tuviera tiempo, vendría." }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: ["у реченні з ", { term: якби́ }, " друге ", { term: би }, " не потрібне"], en: ["the clause with ", { term: якби́ }, " takes no second ", { term: би }], es: ["la oración con ", { term: якби́ }, " no lleva un segundo ", { term: би }] }
+          ex: [{ target: Якби́ я знав }, ", я б сказа́в."]
+          tr: { en: "If I'd known, I'd have said.", es: "Si lo hubiera sabido, lo habría dicho." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Умовний спосіб утворюють від минулого часу: додають ", { term: би }, " чи ", { term: б }, "."]
+              en: ["The conditional is built on the past tense: add ", { term: би }, " or ", { term: б }, "."]
+              es: ["El condicional se forma sobre el pasado: se añade ", { term: би }, " o ", { term: б }, "."]
+            ex: { mapping: [прочита́ли, { target: прочита́ли б }] }
+          - type: rule
+            level: B1
+            text:
+              uk: "Умовний спосіб не має часу: одна форма говорить і про теперішнє, і про майбутнє, і про минуле."
+              en: "The conditional has no tense: one form covers the present, the future and the past."
+              es: "El condicional no tiene tiempo: una sola forma sirve para el presente, el futuro y el pasado."
+            ex: { examples: [["За́втра я ", { target: пої́хав би }, " з ва́ми."], ["Учо́ра я ", { target: пої́хав би }, " з ва́ми."]] }
+            tr: { en: { examples: ["I'd go with you tomorrow.", "I'd have gone with you yesterday."] }, es: { examples: ["Mañana iría con ustedes.", "Ayer habría ido con ustedes."] } }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Частка ", { term: би }, " стоїть після дієслова або після першого слова речення:"]
+              en: ["The particle ", { term: би }, " follows the verb or the first word of the sentence:"]
+              es: ["La partícula ", { term: би }, " va después del verbo o de la primera palabra de la oración:"]
+            ex: { equivalence: [["Я ", { target: прийшла́ б }, "."], ["Я ", { target: б прийшла́ }, "."]] }
+            tr: { en: { equivalence: ["I'd come.", "I'd come."] }, es: { equivalence: ["Yo vendría.", "Yo vendría."] } }
+
+  - title: { uk: Форма, en: Form, es: Forma }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто, en: Who, es: Quién } }
+          - { key: want, label: хоті́ти, features: { mood: cond } }
+          - { key: can, label: могти́, features: { mood: cond } }
+        rows:
+          - { level: B1, features: { number: sg, gender: masc }, who: { alternatives: [я, ти, він] }, want: "хоті́в би", can: "міг би" }
+          - { level: B1, features: { number: sg, gender: fem }, who: { alternatives: [я, ти, вона́] }, want: "хоті́ла б", can: "могла́ б" }
+          - { level: B1, features: { number: sg, gender: neut }, who: воно́, want: "хоті́ло б", can: "могло́ б" }
+          - { level: B1, features: { number: pl }, who: { alternatives: [ми, ви, Ви, вони́] }, want: "хоті́ли б", can: "могли́ б" }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Дієслово узгоджується з родом і числом, як у минулому часі. Див. ", { link: Минулий час, to: uk.past-aspect.past-tense }, "."]
+              en: ["The verb agrees in gender and number, as in the past tense. See ", { link: Past Tense, to: uk.past-aspect.past-tense }, "."]
+              es: ["El verbo concuerda en género y número, como en el pasado. Ver ", { link: El pasado, to: uk.past-aspect.past-tense }, "."]
+            ex: ["Ми б ", { target: залиши́лися }, " ще на день."]
+            tr: { en: "We'd stay one more day.", es: "Nos quedaríamos un día más." }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: "бажання, мрія", en: "a wish, a dream", es: "un deseo, un sueño" }
+            ex: ["Я б ", { target: жила́ }, " бі́ля мо́ря."]
+            tr: { en: "I'd live by the sea.", es: "Me gustaría vivir junto al mar." }
+          - level: B1
+            use: { uk: "ввічливе прохання", en: "a polite request", es: "una petición cortés" }
+            ex: ["Ви не ", { target: могли́ б }, " зачини́ти вікно́?"]
+            tr: { en: "Could you close the window, please?", es: "¿Podría cerrar la ventana, por favor?" }
+          - level: B1
+            use: { uk: "порада", en: "advice", es: "un consejo" }
+            ex: ["Я б на твоє́му мі́сці ", { target: подзвони́в }, " ма́мі."]
+            tr: { en: "If I were you, I'd call Mum.", es: "Yo que tú, llamaría a mamá." }
+          - level: B1
+            use: { uk: ["нереальна умова з ", { term: якби́ }, ", див. ", { link: "Коли, якщо, якби", to: uk.sentence.when-if }], en: ["an unreal condition with ", { term: якби́ }, ", see ", { link: "When and If: коли, якщо, якби", to: uk.sentence.when-if }], es: ["una condición irreal con ", { term: якби́ }, ", ver ", { link: "Cuándo y si: коли, якщо, якби", to: uk.sentence.when-if }] }
+            ex: [{ target: Якби́ }, " була́ до́бра пого́да, ми б ", { target: пішли́ }, " в го́ри."]
+            tr: { en: "If the weather were good, we'd go to the mountains.", es: "Si hiciera buen tiempo, iríamos a la montaña." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: "Якщо́ б я мав час, я б прийшо́в.", right: [{ target: Якби́ }, " я мав час, я б прийшо́в."], rule: { uk: ["нереальна умова — ", { term: якби́ }, ", не ", { term: якщо́ б }], en: ["an unreal condition takes ", { term: якби́ }, ", not ", { term: якщо́ б }], es: ["una condición irreal lleva ", { term: якби́ }, ", no ", { term: якщо́ б }] } }
+          - { level: B1, speakers: [en, es], wrong: "Якби́ я мав би час, я б прийшо́в.", right: [{ target: Якби́ я мав }, " час, я б прийшо́в."], rule: { en: [{ term: якби́ }, " already holds ", { term: би }, ": no second one in the same clause"], es: [{ term: якби́ }, " ya contiene ", { term: би }, ": no se repite en la misma oración"] } }
+          - { level: B1, speakers: [en, es], wrong: Я б пої́ду на мо́ре., right: ["Я б ", { target: пої́хав }, " на мо́ре."], rule: { en: [{ term: би }, " goes with the past form, never with the present or future"], es: [{ term: би }, " va con la forma del pasado, nunca con el presente ni el futuro"] } }

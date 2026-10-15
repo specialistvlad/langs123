@@ -1,0 +1,176 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.numerals.age
+lang: uk
+kind: grammar
+tags: [numerals, age, dative]
+concepts: [numbers]
+related: [uk.numerals.numbers-with-nouns, uk.nouns-cases.dative, uk.pronouns.personal-pronouns, uk.foundations.numbers]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "1efee4 ec0e9b ee3fe0 0bc7c0 3389c7 5ea231", es: "1efee4 ec0e9b ee3fe0 0bc7c0 3389c7 5ea231" }
+
+title: { uk: "Вік: мені двадцять років", en: "Age: мені двадцять років", es: "La edad: мені двадцять років" }
+summary:
+  lead:
+    uk: ["Вік називаємо без дієслова: той, кому стільки років, стоїть у давальному, далі число й ", { alternatives: [{ term: рік }, { term: ро́ки }, { term: ро́ків }] }, "."]
+    en: ["Age takes no verb: the person goes in the dative, then the number and ", { alternatives: [{ term: рік }, { term: ро́ки }, { term: ро́ків }] }, "."]
+    es: ["La edad se dice sin verbo: la persona va en dativo y luego el número y ", { alternatives: [{ term: рік }, { term: ро́ки }, { term: ро́ків }] }, "."]
+  rule:
+    uk: "Форму слова рік визначає останнє слово числа:"
+    en: "The last word of the number sets the form of рік:"
+    es: "La última palabra del número decide la forma de рік:"
+  ex: { examples: [["Мені́ ", { target: два́дцять оди́н рік }, "."], ["Сестрі́ ", { target: три ро́ки }, "."], ["Бра́тові ", { target: п’ять ро́ків }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Будова, en: Pattern, es: Estructura }
+          rule:
+            uk: { pattern: [{ slot: { uk: давальний, en: dative, es: dativo } }, { slot: number }, { alternatives: [{ term: рік }, { term: ро́ки }, { term: ро́ків }] }] }
+            en: { pattern: [{ slot: { uk: давальний, en: dative, es: dativo } }, { slot: number }, { alternatives: [{ term: рік }, { term: ро́ки }, { term: ро́ків }] }] }
+            es: { pattern: [{ slot: { uk: давальний, en: dative, es: dativo } }, { slot: number }, { alternatives: [{ term: рік }, { term: ро́ки }, { term: ро́ків }] }] }
+          ex: [{ target: Мені́ }, " два́дцять ро́ків."]
+          tr: { en: "I'm twenty.", es: "Tengo veinte años." }
+        - level: A2
+          point: { uk: Питання, en: Question, es: Pregunta }
+          rule:
+            uk: { pattern: [{ term: скі́льки }, { slot: { uk: давальний, en: dative, es: dativo } }, { term: ро́ків }] }
+            en: { pattern: [{ term: скі́льки }, { slot: { uk: давальний, en: dative, es: dativo } }, { term: ро́ків }] }
+            es: { pattern: [{ term: скі́льки }, { slot: { uk: давальний, en: dative, es: dativo } }, { term: ро́ків }] }
+          ex: ["Скі́льки ", { target: тобі́ ро́ків }, "?"]
+          tr: { en: "How old are you?", es: "¿Cuántos años tienes?" }
+        - level: A2
+          point: { uk: "1, 21, 31", en: "1, 21, 31", es: "1, 21, 31" }
+          rule:
+            uk: { term: рік }
+            en: { term: рік }
+            es: { term: рік }
+          ex: ["Си́нові ", { target: оди́н рік }, "."]
+          tr: { en: "My son is one.", es: "Mi hijo tiene un año." }
+        - level: A2
+          point: { uk: "2–4, 22–24", en: "2–4, 22–24", es: "2–4, 22–24" }
+          rule:
+            uk: { term: ро́ки }
+            en: { term: ро́ки }
+            es: { term: ро́ки }
+          ex: ["Дочці́ ", { target: три ро́ки }, "."]
+          tr: { en: "My daughter is three.", es: "Mi hija tiene tres años." }
+        - level: A2
+          point: { uk: "5–20, 25–30", en: "5–20, 25–30", es: "5–20, 25–30" }
+          rule:
+            uk: { term: ро́ків }
+            en: { term: ро́ків }
+            es: { term: ро́ків }
+          ex: ["Дідусе́ві ", { target: вісімдеся́т ро́ків }, "."]
+          tr: { en: "Grandad is eighty.", es: "El abuelo tiene ochenta años." }
+        - level: A2
+          point: { uk: "Місто, річ", en: "A city, a thing", es: "Una ciudad, una cosa" }
+          rule:
+            uk: "та сама будова"
+            en: "the same pattern"
+            es: "la misma estructura"
+          ex: [{ target: Ки́єву }, " по́над півтори́ ти́сячі ро́ків."]
+          tr: { en: "Kyiv is over fifteen hundred years old.", es: "Kiev tiene más de mil quinientos años." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: "давальний відмінок і жодного дієслова"
+            en: "the dative and no verb at all"
+            es: "dativo y ningún verbo"
+          ex: [{ target: Мені́ }, " вісімна́дцять ро́ків."]
+          tr: { en: "I'm eighteen.", es: "Tengo dieciocho años." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "Той, кому стільки років, стоїть у давальному; дієслова в реченні немає:"
+              en: "The person goes in the dative, and the sentence has no verb:"
+              es: "La persona va en dativo, y la oración no lleva verbo:"
+            ex: ["Мої́й ма́мі ", { target: п’ятдеся́т ро́ків }, "."]
+            tr: { en: "My mum is fifty.", es: "Mi madre tiene cincuenta años." }
+          - type: note
+            level: A2
+            readers: [en]
+            text:
+              en: ["English says “I am twenty”; Ukrainian has neither “am” nor “I” here: ", { term: мені́ два́дцять ро́ків }, "."]
+          - type: note
+            level: A2
+            readers: [es]
+            text:
+              es: ["El español dice «tengo veinte años»; el ucraniano no usa «tener» aquí: ", { term: мені́ два́дцять ро́ків }, "."]
+          - type: note
+            level: A2
+            text:
+              uk: ["Форми давального: ", { link: Давальний відмінок, to: uk.nouns-cases.dative }, "; число з іменником: ", { link: "Числівник та іменник", to: uk.numerals.numbers-with-nouns }, "."]
+              en: ["The dative forms: ", { link: Dative Case, to: uk.nouns-cases.dative }, "; numbers with nouns: ", { link: "Numbers with Nouns", to: uk.numerals.numbers-with-nouns }, "."]
+              es: ["Las formas del dativo: ", { link: El caso dativo, to: uk.nouns-cases.dative }, "; números con sustantivos: ", { link: "Los números con sustantivos", to: uk.numerals.numbers-with-nouns }, "."]
+
+  - title: { uk: "Рік, роки, років", en: "Рік, роки, років", es: "Рік, роки, років" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Число, en: Number, es: Número } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            form: { uk: [{ alternatives: ["1", "21", "31"] }, ": ", { term: рік }], en: [{ alternatives: ["1", "21", "31"] }, ": ", { term: рік }], es: [{ alternatives: ["1", "21", "31"] }, ": ", { term: рік }] }
+            ex: ["Мені́ ", { target: три́дцять оди́н рік }, "."]
+            tr: { en: "I'm thirty-one.", es: "Tengo treinta y un años." }
+          - level: A2
+            form: { uk: [{ alternatives: ["2–4", "22–24"] }, ": ", { term: ро́ки }], en: [{ alternatives: ["2–4", "22–24"] }, ": ", { term: ро́ки }], es: [{ alternatives: ["2–4", "22–24"] }, ": ", { term: ро́ки }] }
+            ex: ["Йому́ ", { target: два́дцять два ро́ки }, "."]
+            tr: { en: "He's twenty-two.", es: "Tiene veintidós años." }
+          - level: A2
+            form: { uk: [{ alternatives: ["5–20", "25–30"] }, ": ", { term: ро́ків }], en: [{ alternatives: ["5–20", "25–30"] }, ": ", { term: ро́ків }], es: [{ alternatives: ["5–20", "25–30"] }, ": ", { term: ро́ків }] }
+            ex: ["Їй ", { target: сімна́дцять ро́ків }, "."]
+            tr: { en: "She's seventeen.", es: "Tiene diecisiete años." }
+          - level: A2
+            form: { uk: [{ term: рік }, " без числа: один рік"], en: [{ term: рік }, " alone: one year old"], es: [{ term: рік }, " solo: un año"] }
+            ex: ["Цуценя́ті ", { target: рік }, "."]
+            tr: { en: "The puppy is one.", es: "El cachorro tiene un año." }
+
+  - title: { uk: "Питання, минуле, майбутнє", en: "Questions, past, future", es: "Preguntas, pasado, futuro" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: "питання", en: "the question", es: "la pregunta" }
+            ex: { exchange: ["Скі́льки ва́шій ма́мі ро́ків?", ["Їй ", { target: шістдеся́т ро́ків }, "."]] }
+            tr: { en: { exchange: ["How old is your mum?", "She's sixty."] }, es: { exchange: ["¿Cuántos años tiene su madre?", "Tiene sesenta años."] } }
+          - level: A2
+            features: { tense: pst }
+            use: { uk: [{ term: було́ }, ": минуле"], en: [{ term: було́ }, ": the past"], es: [{ term: було́ }, ": el pasado"] }
+            ex: ["Тоді́ мені́ ", { target: було́ де́сять ро́ків }, "."]
+            tr: { en: "I was ten then.", es: "Entonces tenía diez años." }
+          - level: A2
+            features: { tense: fut }
+            use: { uk: [{ term: бу́де }, ": майбутнє"], en: [{ term: бу́де }, ": the future"], es: [{ term: бу́де }, ": el futuro"] }
+            ex: ["За́втра мені́ ", { target: бу́де три́дцять ро́ків }, "."]
+            tr: { en: "I'll be thirty tomorrow.", es: "Mañana cumplo treinta años." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, speakers: [en], wrong: Я два́дцять ро́ків., right: [{ target: Мені́ }, " два́дцять ро́ків."], rule: { en: ["the person goes in the dative, with no verb: ", { term: мені́ }] } }
+          - { level: A2, speakers: [es], wrong: Я ма́ю два́дцять ро́ків., right: [{ target: Мені́ }, " два́дцять ро́ків."], rule: { es: ["la persona va en dativo y sin verbo; no hay equivalente de «tener» aquí: ", { term: мені́ }] } }
+          - { level: A2, wrong: Мені́ два́дцять два ро́ків., right: ["Мені́ два́дцять ", { target: два ро́ки }, "."], rule: { uk: ["після ", { term: два }, " — ", { term: ро́ки }], en: ["after ", { term: два }, ": ", { term: ро́ки }], es: ["después de ", { term: два }, ": ", { term: ро́ки }] } }
+          - { level: A2, wrong: Мені́ два́дцять оди́н ро́ків., right: ["Мені́ два́дцять ", { target: оди́н рік }, "."], rule: { uk: ["після ", { term: оди́н }, " — ", { term: рік }], en: ["after ", { term: оди́н }, ": ", { term: рік }], es: ["después de ", { term: оди́н }, ": ", { term: рік }] } }
+          - { level: A2, wrong: Мене́ два́дцять ро́ків., right: [{ target: Мені́ }, " два́дцять ро́ків."], rule: { uk: ["давальний: ", { term: мені́ }], en: ["the dative: ", { term: мені́ }], es: ["el dativo: ", { term: мені́ }] } }
