@@ -32,7 +32,7 @@ test(
   "the track's crumb opens into every language to learn, in the reader's language where it is explained in it, and Escape closes it",
   async () => {
     await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto(new URL("/uk/english/verbs/to-be/", server.url).href);
+    await page.goto(new URL("/pt/english/verbs/to-be/", server.url).href);
     const menu = page.locator(".crumbs details.crumb-menu");
     expect(await menu.evaluate((d) => d.hasAttribute("open"))).toBe(false);
     await page.click(".crumbs .crumb-menu summary");
@@ -44,10 +44,10 @@ test(
         note: a.querySelector("small")?.textContent ?? null,
       })),
     );
-    expect(links.map((l) => l.href)).toEqual(["/uk/english/", "/en/spanish/"]);
-    expect(links.map((l) => l.current)).toEqual(["page", null]);
-    expect(links[0]?.note).toBeNull();
-    expect(links[1]?.note).not.toBeNull();
+    // Portuguese readers have English in Portuguese; Spanish and Ukrainian open in their own language.
+    expect(links.map((l) => l.href)).toEqual(["/pt/english/", "/es/spanish/", "/uk/ukrainian/"]);
+    expect(links.map((l) => l.current)).toEqual(["page", null, null]);
+    expect(links.map((l) => l.note)).toEqual([null, "· Español", "· Українська"]);
     for (const l of links) expect((await fetch(new URL(l.href ?? "", server.url))).status).toBe(200);
     await page.keyboard.press("Escape");
     expect(await menu.evaluate((d) => d.hasAttribute("open"))).toBe(false);
