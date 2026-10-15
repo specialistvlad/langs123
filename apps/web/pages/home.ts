@@ -6,7 +6,7 @@ import { page } from "../layout.ts";
 import { ui } from "../ui.ts";
 import { escapeHtml } from "../html.ts";
 import { badge } from "../parts.ts";
-import { homeUrl, notFoundUrl, trackUrl } from "../urls.ts";
+import { homeUrl, notFoundUrl, searchUrl, trackUrl } from "../urls.ts";
 
 // Each home page leads to every track: a card per language to learn, named in the home page's language
 // with its flag and levels, and a link to each explanation language it is written for, under that
@@ -58,7 +58,8 @@ export function homePage(ctx: Context): void {
         path: homeUrl(home),
         alternates: [...alternates(homeUrl), { lang: "x-default", path: homeUrl(homeLanguage()) }],
         read: readChoices(home, homeUrl),
-        main: `<article class="doc home"><header class="home-head"><h1>${escapeHtml(title)}</h1><p class="lead">${escapeHtml(description)}</p></header><div class="lang-cards">${cards}</div></article>`,
+        search: ctx.languages.filter((l) => explainsOf(l).includes(home)).map((l) => searchUrl(home, l)),
+        main: `<article class="doc home"><h1>${escapeHtml(say("homeHeading", home))}</h1><div class="lang-cards">${cards}</div></article>`,
         dev: o.dev,
         siteUrl: o.siteUrl,
       }),

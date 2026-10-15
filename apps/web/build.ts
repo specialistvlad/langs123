@@ -1,4 +1,4 @@
-// Static site build: every page of every track rendered to HTML, plus sitemap and robots.txt.
+// Static site build: every page of every track rendered to HTML, each track's search data, plus sitemap and robots.txt.
 // Run: npm run build   (SITE_URL sets the public URL for canonical links and the sitemap; the site is served from the domain root)
 import { join } from "node:path";
 import { type CurriculumLanguage, filled, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
@@ -12,6 +12,7 @@ import { sheetPages } from "./pages/sheets.ts";
 import { topicPages } from "./pages/topic.ts";
 import type { LinkFn } from "./html.ts";
 import { trackIndex } from "./pages/track.ts";
+import { searchFile } from "./search-index.ts";
 import { topicUrl } from "./urls.ts";
 
 export type { BuildOptions } from "./context.ts";
@@ -55,6 +56,7 @@ export async function build(o: BuildOptions): Promise<number> {
       trackIndex(track);
       topicPages(track);
       sheetPages(track);
+      searchFile(track);
     }
   }
   notFoundPage(ctx);

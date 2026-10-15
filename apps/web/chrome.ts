@@ -2,7 +2,7 @@
 // panels the chips open and the bottom bar on phones.
 import { type Explain, filled, LEVELS, SITE, say, type Variety } from "../../scripts/lib.ts";
 import { varietyName } from "../../scripts/text.ts";
-import { GITHUB_ICON, INFO_ICON, PRINT_ICON } from "./icons.ts";
+import { GITHUB_ICON, INFO_ICON, PRINT_ICON, SEARCH_ICON } from "./icons.ts";
 import { escapeHtml } from "./html.ts";
 import type { PageOptions } from "./layout.ts";
 import { type Ui, ui } from "./ui.ts";
@@ -18,7 +18,7 @@ export interface Choice {
 // it on a tap elsewhere or Escape).
 export function languageMenu(label: string, choices: Choice[]): string {
   const current = choices.find((c) => c.on) ?? choices[0];
-  return `<details class="seg lang-menu"><summary aria-label="${escapeHtml(label)}"><span class="lang-icon" aria-hidden="true">文</span>${escapeHtml(current?.label ?? "")}</summary><div class="menu-list">${languageLinks(choices)}</div></details>`;
+  return `<details class="seg lang-menu has-chevron"><summary aria-label="${escapeHtml(label)}"><span class="lang-icon" aria-hidden="true">文</span>${escapeHtml(current?.label ?? "")}</summary><div class="menu-list">${languageLinks(choices)}</div></details>`;
 }
 const languageLinks = (choices: Choice[]): string =>
   choices.map((c) => `<a href="${c.href}"${c.on ? ' class="on" aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`).join("");
@@ -61,18 +61,53 @@ export function chips(o: ChipsOptions): string {
   if (o.varieties !== undefined) {
     const first = o.varieties[0];
     parts.push(
-      `<button type="button" class="chip" popovertarget="variety-panel" aria-label="${escapeHtml(t.variety)}"><span aria-hidden="true">🌎</span><span data-variety-label>${escapeHtml(first === undefined ? "" : varietyName(first, o.explain))}</span><span class="caret" aria-hidden="true">▾</span></button>`,
+      `<button type="button" class="chip" popovertarget="variety-panel" aria-label="${escapeHtml(t.variety)}"><span data-variety-label>${escapeHtml(first === undefined ? "" : varietyName(first, o.explain))}</span><span class="caret" aria-hidden="true">▾</span></button>`,
     );
   }
   return parts.length === 0 ? "" : `<div class="chips">${parts.join("")}</div>`;
 }
 
-// One step of the breadcrumb; the last is the page itself.
+// The search of the topics, after the breadcrumb: a field on wide screens, a button on phones that opens
+// it over the whole screen. Both stay hidden until client-search.ts runs; typing lists the matching
+// topics and sections under the field (combobox and listbox). data-search names the search data to fetch.
+export function searchBox(o: PageOptions, t: Ui): string {
+  if (o.search === undefined || o.search.length === 0) return "";
+  const data = [
+    ` data-search="${o.search.join(" ")}"`,
+    ` data-levels="${LEVELS.join(" ")}"`,
+    ` data-topics="${escapeHtml(t.topics)}"`,
+    ` data-in-topics="${escapeHtml(t.searchInTopics)}"`,
+    ` data-empty="${escapeHtml(t.searchEmpty)}"`,
+  ].join("");
+  const field = `<label class="search-field">${SEARCH_ICON}<span class="sr-only">${escapeHtml(t.search)}</span><input type="search" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" placeholder="${escapeHtml(t.search)}" autocomplete="off" spellcheck="false"><kbd aria-hidden="true">/</kbd></label>`;
+  const results = `<div class="search-results" id="search-results" role="listbox" aria-label="${escapeHtml(t.search)}" hidden></div>`;
+  return `<div class="top-search" hidden${data}>${field}${results}</div><button type="button" class="tool search-open" hidden title="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}">${SEARCH_ICON}</button>`;
+}
+
+// One step of the breadcrumb; the last is the page itself. A crumb with a menu opens into it.
 export interface Crumb {
   label: string;
   href?: string;
   icon?: string;
+  menu?: LearnChoice[];
 }
+
+// A language to learn in the track crumb's menu: its track in the reader's language, or, where the
+// language is not explained in it, in the first language it is explained in, which the note names.
+export interface LearnChoice {
+  flag: string;
+  label: string;
+  href: string;
+  on: boolean;
+  note?: string;
+}
+const learnLinks = (choices: LearnChoice[]): string =>
+  choices
+    .map(
+      (c) =>
+        `<a href="${c.href}"${c.on ? ' class="on" aria-current="page"' : ""}><span aria-hidden="true">${c.flag}</span><span>${escapeHtml(c.label)}</span>${c.note === undefined ? "" : `<small>· ${escapeHtml(c.note)}</small>`}</a>`,
+    )
+    .join("");
 
 // The link to the credits page, marked current on that page; in More it carries its name.
 export function credits(o: PageOptions, named: boolean): string {
@@ -94,6 +129,9 @@ export function breadcrumb(o: PageOptions, t: Ui): string {
     const label = `${icon}<span class="crumb-text">${escapeHtml(c.label)}</span>`;
     const cls = i === 0 ? "crumb brand" : "crumb";
     const current = last ? ' aria-current="page"' : "";
+    if (c.menu !== undefined) {
+      return `<li><details class="crumb-menu has-chevron"><summary class="${cls}"${current}>${label}</summary><div class="menu-list learn-list">${learnLinks(c.menu)}</div></details></li>`;
+    }
     return c.href !== undefined && (!last || i === 0)
       ? `<li><a class="${cls}" href="${c.href}"${current}>${label}</a></li>`
       : `<li><span class="${cls}"${current}>${label}</span></li>`;
@@ -131,13 +169,15 @@ export function panels(o: PageOptions, t: Ui, more: boolean): string {
   return out.join("\n  ");
 }
 
-// The bottom bar on phones: the menu, the level and variety panels, More and the next page.
-export function bottomBar(o: PageOptions, t: Ui): string {
+// The bottom bar on phones: the menu where the page has one, the level and variety panels, More and the next page.
+export function bottomBar(o: PageOptions, t: Ui, menu: boolean): string {
   const item = (icon: string, label: string, attrs: string): string =>
     `<button type="button" class="bar-item" ${attrs}><span class="bar-icon" aria-hidden="true">${icon}</span><span>${escapeHtml(label)}</span></button>`;
-  const parts = [
-    `<button class="bar-item menu" id="menu" type="button"><span class="bar-icon" aria-hidden="true">☰</span><span>${escapeHtml(t.index)}</span></button>`,
-  ];
+  const parts = menu
+    ? [
+        `<button class="bar-item menu" id="menu" type="button"><span class="bar-icon" aria-hidden="true">☰</span><span>${escapeHtml(t.index)}</span></button>`,
+      ]
+    : [];
   if (o.level === true) parts.push(item('<span class="level-dot"></span>', t.level, 'popovertarget="level-panel"'));
   if (o.varieties !== undefined) parts.push(item("🌎", t.variety, 'popovertarget="variety-panel"'));
   parts.push(item("⋯", t.more, 'popovertarget="more-panel"'));

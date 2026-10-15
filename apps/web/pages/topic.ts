@@ -5,13 +5,13 @@ import { alternates, readChoices, type Track } from "../context.ts";
 import { guideSections } from "../guide.ts";
 import { pageTools, viewTabs } from "../chrome.ts";
 import { page } from "../layout.ts";
-import { trackNav } from "../nav.ts";
+import { trackCrumb, trackNav } from "../nav.ts";
 import { readingMinutes } from "../reading-time.ts";
 import { barNext, pagers, upNext } from "../sequence.ts";
 import { plainText, reading, textIn } from "../../../scripts/text.ts";
 import { anchorIds, badge, editUrl, levelAttrs, listBadge } from "../parts.ts";
 import { escapeHtml, explained, inline } from "../html.ts";
-import { topicUrl, trackUrl } from "../urls.ts";
+import { searchUrl, topicUrl } from "../urls.ts";
 
 // What a view shows when the level filter sits below everything in it: a note and a button that
 // sets the level where the view starts. views.css shows it for its view below that level.
@@ -77,7 +77,8 @@ export function topicPages(track: Track): void {
         alternates: alternates((e) => topicUrl(e, lang, ref), track.explains),
         read: readChoices(explain, (e) => topicUrl(e, lang, ref), track.explains),
         level: true,
-        crumbs: [{ label: trackTitle, href: trackUrl(explain, lang), icon: lang.flag }, { label: section }, { label: title }],
+        crumbs: [trackCrumb(track, trackTitle), { label: section }, { label: title }],
+        search: [searchUrl(explain, lang)],
         varieties: lang.varieties,
         nav: trackNav(track, ref),
         rail,

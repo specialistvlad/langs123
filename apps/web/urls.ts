@@ -14,6 +14,8 @@ export const trackUrl = (explain: Explain, lang: LangSlug): string => `/${explai
 export const topicUrl = (explain: Explain, lang: LangSlug, ref: TopicRef): string =>
   `${trackUrl(explain, lang)}${sectionSlug(ref.section.dir)}/${ref.entry.slug}/`;
 export const sheetsUrl = (explain: Explain, lang: LangSlug): string => `${trackUrl(explain, lang)}cheatsheets/`;
+// A track's search data, which the top bar's search fetches.
+export const searchUrl = (explain: Explain, lang: LangSlug): string => `${trackUrl(explain, lang)}search.json`;
 export const sheetUrl = (explain: Explain, lang: LangSlug, sheet: string): string => `${sheetsUrl(explain, lang)}${sheet}/`;
 
 // Sheet identifiers inside a track.

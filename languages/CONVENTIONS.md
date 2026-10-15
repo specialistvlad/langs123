@@ -390,6 +390,7 @@ Every page has a clean, stable, named URL.
 /{explain}/{language}/{section}/{topic}/       topic: /en/spanish/ser-estar-hay-gustar/ser-estar/
 /{explain}/{language}/cheatsheets/             cheatsheet index
 /{explain}/{language}/cheatsheets/{sheet}/     cheatsheet
+/{explain}/{language}/search.json              the track's search data: its topics and their sections
 ```
 
 | Segment | Value | Example |
@@ -403,9 +404,11 @@ Every page has a clean, stable, named URL.
 - The home page holds a card per language being learned: its flag (`flag` in `curriculum.yaml`), its
   name and levels, and a link into each track, under the explanation language's own name, the page's
   own language first.
-- The top bar is a breadcrumb from the home page to the page, then the language the page is read in,
-  which opens into a list of every one, the credits and the theme. The menu opens on the track
-  switcher, which lists every track and leads to the home page, and a search that filters the index.
+- The top bar is a breadcrumb from the home page to the page, then a search of the topics, the
+  language the page is read in, which opens into a list of every one, the credits and the theme. The
+  search lists the topics and the sections inside them whose titles hold what was typed; on a home
+  page it covers every track read in the page's language. The menu opens on the track's index and
+  cheatsheets.
 - Every page names its counterparts in the other explanation languages of its track with `hreflang`;
   the home pages add the root as `x-default`.
 - URLs use lowercase ASCII letters, digits, hyphens and slashes, and end with `/`.

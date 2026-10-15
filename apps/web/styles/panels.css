@@ -119,3 +119,52 @@
 .bar-next[hidden] {
   display: none;
 }
+
+/* The top bar's menus (the language a page is read in, the language to learn): a short chevron, down while
+   the list is closed, up while it is open */
+.has-chevron summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: 2px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+}
+.has-chevron[open] summary::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+/* The language to learn: the breadcrumb's track crumb opens into every language to learn, one per row */
+.crumb-menu {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+.crumb-menu summary {
+  list-style: none;
+  cursor: pointer;
+}
+.crumb-menu summary::-webkit-details-marker {
+  display: none;
+}
+.crumb-menu summary:hover,
+.crumb-menu[open] summary {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.crumb-menu .menu-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 40;
+  grid-template-columns: max-content;
+}
+.learn-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.learn-list small {
+  color: var(--muted);
+}
