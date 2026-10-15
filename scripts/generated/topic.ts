@@ -493,7 +493,8 @@ export interface FeatureBundle {
   person?: (1 | 2 | 3) | (1 | 2 | 3)[];
   number?: ("sg" | "pl") | ("sg" | "pl")[];
   gender?: ("masc" | "fem" | "neut") | ("masc" | "fem" | "neut")[];
-  case?: ("nom" | "acc" | "gen") | ("nom" | "acc" | "gen")[];
+  case?: ("nom" | "acc" | "gen" | "dat" | "ins" | "loc" | "voc") | ("nom" | "acc" | "gen" | "dat" | "ins" | "loc" | "voc")[];
+  animacy?: ("anim" | "inan") | ("anim" | "inan")[];
   tense?: ("prs" | "pst" | "fut") | ("prs" | "pst" | "fut")[];
   aspect?: ("prog" | "prf" | "hab" | "pfv" | "ipfv") | ("prog" | "prf" | "hab" | "pfv" | "ipfv")[];
   mood?: ("ind" | "imp" | "sbjv" | "cond") | ("ind" | "imp" | "sbjv" | "cond")[];

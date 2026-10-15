@@ -1,0 +1,302 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.genitive
+lang: uk
+kind: grammar
+tags: [cases, genitive, nouns, prepositions, quantity, dates]
+concepts: [cases, possession]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.declension-alternations, uk.numerals.numbers-with-nouns, uk.foundations.days-months-dates, uk.sentence.u-mene-ye, uk.prepositions.other-prepositions]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "dfdea1 f49d46 ec1b1a 07d80a f2084e 06ace6 b20bec", es: "dfdea1 f49d46 ec1b1a 07d80a f2084e 06ace6 b20bec" }
+
+title: { uk: Родовий відмінок, en: Genitive Case, es: El caso genitivo }
+summary:
+  lead:
+    uk: ["Родовий відмінок відповідає на питання ", { term: кого́? }, " ", { term: чого́? }, ": він називає кількість, дату, відсутність і стоїть після ", { term: з }, ", ", { term: до }, ", ", { term: для }, "."]
+    en: ["The genitive answers ", { term: кого́? }, " (of whom?) and ", { term: чого́? }, " (of what?): it names quantity, dates and absence, and follows ", { term: з }, ", ", { term: до }, " and ", { term: для }, "."]
+    es: ["El genitivo responde a ", { term: кого́? }, " y ", { term: чого́? }, " (¿de quién?, ¿de qué?): nombra cantidad, fechas y ausencia, y sigue a ", { term: з }, ", ", { term: до }, " y ", { term: для }, "."]
+  rule:
+    uk: ["Після ", { term: до }, " і ", { term: з }, " зі значенням «звідки» іменник стоїть у родовому:"]
+    en: ["After ", { term: до }, " (to) and ", { term: з }, " meaning “from”, the noun is genitive:"]
+    es: ["Después de ", { term: до }, " (a) y de ", { term: з }, " con el sentido de «de, desde», el sustantivo va en genitivo:"]
+  ex: { examples: [["Я ї́ду ", { target: до ма́ми }, "."], ["Ми ", { target: з Ки́єва }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: [{ mapping: [{ term: -а }, { term: -и }] }, ", ", { mapping: [{ term: -я }, { term: -і }] }]
+            en: [{ mapping: [{ term: -а }, { term: -и }] }, ", ", { mapping: [{ term: -я }, { term: -і }] }]
+            es: [{ mapping: [{ term: -а }, { term: -и }] }, ", ", { mapping: [{ term: -я }, { term: -і }] }]
+          ex: ["Я ї́ду до ", { target: ма́ми }, "."]
+          tr: { en: "I'm going to my mum's.", es: "Voy a casa de mi madre." }
+        - level: A2
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule:
+            uk: ["люди, предмети, міста: ", { term: -а }, " (", { term: -я }, ")"]
+            en: ["people, objects, cities: ", { term: -а }, " (", { term: -я }, ")"]
+            es: ["personas, objetos, ciudades: ", { term: -а }, " (", { term: -я }, ")"]
+          ex: ["Ми ", { target: з Ки́єва }, "."]
+          tr: { en: "We're from Kyiv.", es: "Somos de Kyiv." }
+        - level: A2
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule:
+            uk: ["речовини, поняття, установи: ", { term: -у }, " (", { term: -ю }, ")"]
+            en: ["substances, ideas, institutions: ", { term: -у }, " (", { term: -ю }, ")"]
+            es: ["sustancias, conceptos, instituciones: ", { term: -у }, " (", { term: -ю }, ")"]
+          ex: ["Парк ", { target: бі́ля теа́тру }, "."]
+          tr: { en: "The park is by the theatre.", es: "El parque está junto al teatro." }
+        - level: A2
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule:
+            uk: [{ mapping: [{ term: -о }, { term: -а }] }, ", ", { mapping: [{ term: -е }, { term: -я }] }]
+            en: [{ mapping: [{ term: -о }, { term: -а }] }, ", ", { mapping: [{ term: -е }, { term: -я }] }]
+            es: [{ mapping: [{ term: -о }, { term: -а }] }, ", ", { mapping: [{ term: -е }, { term: -я }] }]
+          ex: ["Ми ви́їхали ", { target: з мі́ста }, "."]
+          tr: { en: "We left the city.", es: "Salimos de la ciudad." }
+        - level: A2
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule:
+            uk: [{ term: -ів }, ", ", { term: -ей }, " або без закінчення"]
+            en: [{ term: -ів }, ", ", { term: -ей }, " or no ending"]
+            es: [{ term: -ів }, ", ", { term: -ей }, " o sin terminación"]
+          ex: ["Тут бага́то ", { target: студе́нтів }, "."]
+          tr: { en: "There are a lot of students here.", es: "Aquí hay muchos estudiantes." }
+        - level: A2
+          point: { uk: Дата, en: Date, es: Fecha }
+          rule:
+            uk: "число й місяць у родовому"
+            en: "the day and the month in the genitive"
+            es: "el día y el mes en genitivo"
+          ex: ["Я народи́вся ", { target: { date: "деся́того бе́резня", value: "--03-10" } }, "."]
+          tr: { en: "I was born on the tenth of March.", es: "Nací el diez de marzo." }
+        - level: A2
+          point: { uk: Заперечення, en: Negation, es: Negación }
+          rule:
+            uk: ["додаток після ", { term: не }]
+            en: ["the object after ", { term: не }, " (not)"]
+            es: ["el objeto después de ", { term: не }, " (no)"]
+          ex: ["Я не ба́чив ", { target: дру́зів }, "."]
+          tr: { en: "I didn't see my friends.", es: "No vi a mis amigos." }
+        - level: A2
+          point: { uk: Прийменники, en: Prepositions, es: Preposiciones }
+          rule:
+            uk: { alternatives: [{ term: з }, { term: до }, { term: для }, { term: бі́ля }, { term: навпро́ти }] }
+            en: { alternatives: [{ term: з }, { term: до }, { term: для }, { term: бі́ля }, { term: навпро́ти }] }
+            es: { alternatives: [{ term: з }, { term: до }, { term: для }, { term: бі́ля }, { term: навпро́ти }] }
+          ex: ["Це подару́нок ", { target: для ма́ми }, "."]
+          tr: { en: "This is a present for Mum.", es: "Es un regalo para mamá." }
+        - level: B1
+          point: { uk: Належність, en: Belonging, es: Posesión }
+          rule:
+            uk: "чий? — іменник після назви речі"
+            en: "whose? the owner after the thing"
+            es: "¿de quién?: el dueño después de la cosa"
+          ex: ["Це кни́жка ", { target: бра́та }, "."]
+          tr: { en: "This is my brother's book.", es: "Es el libro de mi hermano." }
+        - level: B1
+          point: { uk: Відсутність, en: Absence, es: Ausencia }
+          rule:
+            uk: { alternatives: [{ term: нема́є }, { term: без }] }
+            en: [{ alternatives: [{ term: нема́є }, { term: без }] }, " (there is no, without)"]
+            es: [{ alternatives: [{ term: нема́є }, { term: без }] }, " (no hay, sin)"]
+          ex: ["У ме́не нема́є ", { target: ча́су }, "."]
+          tr: { en: "I have no time.", es: "No tengo tiempo." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["після ", { alternatives: [{ term: бага́то }, { term: ма́ло }] }, " — родовий множини"]
+            en: ["after ", { alternatives: [{ term: бага́то }, { term: ма́ло }] }, " use the genitive plural"]
+            es: ["después de ", { alternatives: [{ term: бага́то }, { term: ма́ло }] }, " va el genitivo plural"]
+          ex: ["Я ма́ю бага́то ", { target: дру́зів }, "."]
+          tr: { en: "I have a lot of friends.", es: "Tengo muchos amigos." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Родовий відповідає на питання ", { term: кого́? }, " ", { term: чого́? }, " і найчастіше стоїть після прийменника чи слова кількості:"]
+              en: ["The genitive answers ", { term: кого́? }, " and ", { term: чого́? }, " and most often follows a preposition or a word of quantity:"]
+              es: ["El genitivo responde a ", { term: кого́? }, " y ", { term: чого́? }, " y suele ir tras una preposición o una palabra de cantidad:"]
+            ex: { examples: [{ target: до ма́ми }, { target: бага́то книжо́к }] }
+            tr: { en: { examples: ["to Mum's", "a lot of books"] }, es: { examples: ["a casa de mamá", "muchos libros"] } }
+
+  - title: { uk: "Форма: однина", en: "Form: the singular", es: "Forma: el singular" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: gen, label: { uk: Родовий, en: Genitive, es: Genitivo }, features: { case: gen } }
+        rows:
+          - { level: A2, features: { gender: masc, animacy: anim, number: sg }, group: { uk: "Чоловічий рід, люди", en: "Masculine, people", es: "Masculino, personas" }, nom: { alternatives: [брат, учи́тель] }, gen: { alternatives: [["бра́т", { ending: а }], ["учи́тел", { ending: я }]] } }
+          - { level: A2, features: { gender: masc, animacy: inan, number: sg }, group: { uk: "Чоловічий рід, предмети й міста", en: "Masculine, objects and cities", es: "Masculino, objetos y ciudades" }, nom: { alternatives: [оліве́ць, Ки́їв] }, gen: { alternatives: [["олівц", { ending: я́ }], ["Ки́єв", { ending: а }]] } }
+          - { level: A2, features: { gender: masc, animacy: inan, number: sg }, group: { uk: "Чоловічий рід на -у", en: "Masculine in -у", es: "Masculino en -у" }, nom: { alternatives: [теа́тр, чай] }, gen: { alternatives: [["теа́тр", { ending: у }], ["ча́", { ending: ю }]] } }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -а", en: "Feminine in -а", es: "Femenino en -а" }, nom: { alternatives: [ма́ма, кни́жка] }, gen: { alternatives: [["ма́м", { ending: и }], ["кни́жк", { ending: и }]] } }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -я", en: "Feminine in -я", es: "Femenino en -я" }, nom: { alternatives: [бабу́ся, Марі́я] }, gen: { alternatives: [["бабу́с", { ending: і }], ["Марі́", { ending: ї }]] } }
+          - { level: A2, features: { gender: neut, number: sg }, group: { uk: "Середній рід на -о, -е", en: "Neuter in -о, -е", es: "Neutro en -о, -е" }, nom: { alternatives: [мі́сто, мо́ре] }, gen: { alternatives: [["мі́ст", { ending: а }], ["мо́р", { ending: я }]] } }
+          - { level: A2, features: { gender: neut, number: sg }, group: { uk: "Середній рід на -я", en: "Neuter in -я", es: "Neutro en -я" }, nom: { alternatives: [завда́ння, життя́] }, gen: { target: { alternatives: [завда́ння, життя́] } } }
+          - { level: B1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід без закінчення", en: "Feminine with no ending", es: "Femenino sin terminación" }, nom: { alternatives: [о́сінь, ніч] }, gen: { alternatives: [["о́сен", { ending: і }], ["но́ч", { ending: і }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Чоловічий рід має ", { term: -а }, " (", { term: -я }, ") для людей, предметів і міст, ", { term: -у }, " (", { term: -ю }, ") — для речовин, понять і установ:"]
+              en: ["Masculine nouns take ", { term: -а }, " (", { term: -я }, ") for people, objects and cities, and ", { term: -у }, " (", { term: -ю }, ") for substances, ideas and institutions:"]
+              es: ["Los masculinos toman ", { term: -а }, " (", { term: -я }, ") para personas, objetos y ciudades, y ", { term: -у }, " (", { term: -ю }, ") para sustancias, conceptos e instituciones:"]
+            ex: { examples: [["до ", { target: бра́та }], ["ча́шка ", { target: ча́ю }], ["бі́ля ", { target: теа́тру }]] }
+            tr: { en: { examples: ["to my brother's", "a cup of tea", "by the theatre"] }, es: { examples: ["a casa de mi hermano", "una taza de té", "junto al teatro"] } }
+          - type: note
+            level: A2
+            text:
+              uk: ["Словник подає родовий після слова: ", { term: "чай, -ю" }, ". Так видно, -а чи -у."]
+              en: ["A dictionary gives the genitive after the word, as in ", { term: "чай, -ю" }, ": that shows whether it takes -а or -у."]
+              es: ["El diccionario da el genitivo tras la palabra, como en ", { term: "чай, -ю" }, ": así se sabe si lleva -а o -у."]
+
+  - title: { uk: "Форма: множина", en: "Form: the plural", es: "Forma: el plural" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Закінчення, en: Ending, es: Terminación } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom, number: pl } }
+          - { key: gen, label: { uk: Родовий, en: Genitive, es: Genitivo }, features: { case: gen, number: pl } }
+        rows:
+          - { level: A2, features: { gender: masc }, group: { uk: "-ів (чоловічий рід)", en: "-ів (masculine)", es: "-ів (masculino)" }, nom: { alternatives: [студе́нти, дру́зі] }, gen: { alternatives: [["студе́нт", { ending: ів }], ["дру́з", { ending: ів }]] } }
+          - { level: A2, features: { gender: [fem, neut] }, group: { uk: "Без закінчення", en: "No ending", es: "Sin terminación" }, nom: { alternatives: [ма́ми, книжки́, міста́] }, gen: { target: { alternatives: [мам, книжо́к, міст] } } }
+          - { level: A2, group: { uk: "-ей", en: "-ей", es: "-ей" }, nom: { alternatives: [лю́ди, ді́ти] }, gen: { alternatives: [["люд", { ending: е́й }], ["діт", { ending: е́й }]] } }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            text:
+              uk: ["Без закінчення в основі часто з’являється ", { letter: о }, " чи ", { letter: е }, ": ", { term: книжо́к }, ", ", { term: сесте́р }, "."]
+              en: ["With no ending, an ", { letter: о }, " or ", { letter: е }, " often appears in the stem: ", { term: книжо́к }, ", ", { term: сесте́р }, "."]
+              es: ["Sin terminación, a menudo aparece una ", { letter: о }, " o una ", { letter: е }, " en la raíz: ", { term: книжо́к }, ", ", { term: сесте́р }, "."]
+            ex: ["У бабу́сі бага́то ", { target: книжо́к }, "."]
+            tr: { en: "Grandma has a lot of books.", es: "La abuela tiene muchos libros." }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: "дата", en: "a date", es: "una fecha" }
+            ex: ["Я народи́вся ", { target: { date: "деся́того бе́резня", value: "--03-10" } }, "."]
+            tr: { en: "I was born on the tenth of March.", es: "Nací el diez de marzo." }
+          - level: A2
+            use: { uk: "коли? без прийменника", en: "when? with no preposition", es: "¿cuándo?, sin preposición" }
+            ex: [{ target: Насту́пної неді́лі }, " бу́де екску́рсія."]
+            tr: { en: "There'll be a tour next Sunday.", es: "El próximo domingo habrá una excursión." }
+          - level: A2
+            use: { uk: ["додаток після ", { term: не }], en: ["the object after ", { term: не }], es: ["el objeto después de ", { term: не }] }
+            ex: ["Я не ба́чив ", { target: дру́зів }, "."]
+            tr: { en: "I didn't see my friends.", es: "No vi a mis amigos." }
+          - level: A2
+            use: { uk: "кількість і міра", en: "quantity and measure", es: "cantidad y medida" }
+            ex: ["Тре́ба ї́сти бага́то ", { target: фру́ктів }, "."]
+            tr: { en: "You should eat a lot of fruit.", es: "Hay que comer mucha fruta." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": звідки?"], en: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": from where?"], es: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": ¿de dónde?"] }
+            ex: ["Вони́ приї́хали ", { target: з Кана́ди }, "."]
+            tr: { en: "They came from Canada.", es: "Vinieron de Canadá." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": матеріал"], en: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": what it is made of"], es: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": de qué está hecho"] }
+            ex: ["Сік ", { target: зі сві́жих фру́ктів }, "."]
+            tr: { en: "Juice made from fresh fruit.", es: "Zumo de fruta fresca." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": початок"], en: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": the start"], es: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, ": el comienzo"] }
+            ex: ["Вона́ працю́є ", { target: з дев’я́тої годи́ни }, "."]
+            tr: { en: "She works from nine o'clock.", es: "Trabaja desde las nueve." }
+          - level: A2
+            use: { uk: [{ term: до }, ": куди?"], en: [{ term: до }, ": where to?"], es: [{ term: до }, ": ¿adónde?"] }
+            ex: ["Як діста́тися ", { target: до готе́лю }, "?"]
+            tr: { en: "How do I get to the hotel?", es: "¿Cómo llego al hotel?" }
+          - level: A2
+            use: { uk: [{ term: для }, ": мета"], en: [{ term: для }, ": what it is for"], es: [{ term: для }, ": para qué"] }
+            ex: ["Спорт кори́сний ", { target: для здоро́в’я }, "."]
+            tr: { en: "Sport is good for your health.", es: "El deporte es bueno para la salud." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: бі́ля }, { term: навпро́ти }] }, ": місце"], en: [{ alternatives: [{ term: бі́ля }, { term: навпро́ти }] }, ": the place"], es: [{ alternatives: [{ term: бі́ля }, { term: навпро́ти }] }, ": el lugar"] }
+            ex: ["Навпро́ти ", { target: університе́ту }, " є парк."]
+            tr: { en: "There's a park opposite the university.", es: "Enfrente de la universidad hay un parque." }
+          - level: B1
+            use: { uk: "належність: чий?", en: "belonging: whose?", es: "posesión: ¿de quién?" }
+            ex: ["Це батьки́ ", { target: Мико́ли }, "."]
+            tr: { en: "These are Mykola's parents.", es: "Son los padres de Mykola." }
+          - level: B1
+            use: { uk: [{ term: у }, ": у кого? — хто має"], en: [{ term: у }, ": who has something"], es: [{ term: у }, ": quién tiene algo"] }
+            ex: { examples: [[{ target: У бра́та }, " є маши́на."], [{ target: У ньо́го }, " є маши́на."]] }
+            tr: { en: { examples: ["My brother has a car.", "He has a car."] }, es: { examples: ["Mi hermano tiene auto.", "Él tiene auto."] } }
+          - level: B1
+            use: { uk: "частина цілого", en: "a part of a whole", es: "una parte de un todo" }
+            ex: ["Ви́пийте скля́нку ", { target: води́ }, "."]
+            tr: { en: "Drink a glass of water.", es: "Beba un vaso de agua." }
+          - level: B1
+            use: { uk: "побажання, прохання", en: "wishes and requests", es: "deseos y peticiones" }
+            ex: ["Бажа́ю ", { target: здоро́в’я }, "!"]
+            tr: { en: "I wish you good health!", es: "¡Le deseo salud!" }
+          - level: B1
+            use: { uk: [{ term: від }, ": від кого? звідки?"], en: [{ term: від }, ": from whom? from where?"], es: [{ term: від }, ": ¿de parte de quién?, ¿de dónde?"] }
+            ex: ["Я поверну́лася ", { target: від лі́каря }, "."]
+            tr: { en: "I've come back from the doctor's.", es: "He vuelto del médico." }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: з }, { term: із }] }, ": галузь знань"], en: [{ alternatives: [{ term: з }, { term: із }] }, ": a field of study"], es: [{ alternatives: [{ term: з }, { term: із }] }, ": una materia"] }
+            ex: ["Це підру́чник ", { target: із фі́зики }, "."]
+            tr: { en: "This is a physics textbook.", es: "Es un libro de texto de física." }
+          - level: B1
+            use: { uk: [{ term: без }, ": без чого?"], en: [{ term: без }, ": without"], es: [{ term: без }, ": sin"] }
+            ex: ["Я п’ю ка́ву ", { target: без цу́кру }, "."]
+            tr: { en: "I drink coffee without sugar.", es: "Tomo el café sin azúcar." }
+          - level: B1
+            use: { uk: [{ term: від }, " у порівнянні"], en: [{ term: від }, " in a comparison"], es: [{ term: від }, " en una comparación"] }
+            ex: ["Брат ви́щий ", { target: від ме́не }, "."]
+            tr: { en: "My brother is taller than me.", es: "Mi hermano es más alto que yo." }
+          - level: B1
+            use: { uk: [{ term: нема́є }, ": чого немає?"], en: [{ term: нема́є }, ": what there is not"], es: [{ term: нема́є }, ": lo que no hay"] }
+            ex: ["У ме́не нема́є ", { target: ча́су }, "."]
+            tr: { en: "I have no time.", es: "No tengo tiempo." }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            text:
+              uk: ["Числівники з іменниками: ", { link: Числівник та іменник, to: uk.numerals.numbers-with-nouns }, "."]
+              en: ["Numbers with nouns: ", { link: Numbers with Nouns, to: uk.numerals.numbers-with-nouns }, "."]
+              es: ["Los números con sustantivos: ", { link: Los números con sustantivos, to: uk.numerals.numbers-with-nouns }, "."]
+          - type: note
+            level: B1
+            text:
+              uk: ["Наявність і відсутність: ", { link: У мене є, to: uk.sentence.u-mene-ye }, "."]
+              en: ["Having and not having: ", { link: "Having: у мене є", to: uk.sentence.u-mene-ye }, "."]
+              es: ["Tener y no tener: ", { link: "Tener: у мене є", to: uk.sentence.u-mene-ye }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Я ї́ду до ма́ма., right: ["Я ї́ду до ", { target: ма́ми }, "."], rule: { uk: [{ term: до }, " — родовий відмінок"], en: [{ term: до }, " takes the genitive"], es: [{ term: до }, " lleva genitivo"] } }
+          - { level: A2, wrong: Тут бага́то студе́нти., right: ["Тут бага́то ", { target: студе́нтів }, "."], rule: { uk: ["після ", { term: бага́то }, " — родовий множини"], en: ["after ", { term: бага́то }, " use the genitive plural"], es: ["después de ", { term: бага́то }, " va el genitivo plural"] } }
+          - { level: A2, wrong: Я народи́вся деся́того бе́резень., right: ["Я народи́вся деся́того ", { target: бе́резня }, "."], rule: { uk: "у даті місяць стоїть у родовому", en: "in a date the month is genitive", es: "en una fecha el mes va en genitivo" } }
+          - { level: B1, wrong: У ме́не нема́є час., right: ["У ме́не нема́є ", { target: ча́су }, "."], rule: { uk: [{ term: нема́є }, " вимагає родового"], en: [{ term: нема́є }, " takes the genitive"], es: [{ term: нема́є }, " pide genitivo"] } }
+          - { level: A2, speakers: [en, es], wrong: Я не ма́ю брат., right: ["Я не ма́ю ", { target: бра́та }, "."], rule: { en: ["the object after ", { term: не }, " is genitive"], es: ["el objeto después de ", { term: не }, " va en genitivo"] } }
+          - { level: B1, speakers: [en], wrong: Це Мико́ла кни́жка., right: ["Це кни́жка ", { target: Мико́ли }, "."], rule: { en: "the owner follows the thing, in the genitive: no “’s”" } }
+          - { level: B1, speakers: [es], wrong: Ви́пийте скля́нку з води́., right: ["Ви́пийте скля́нку ", { target: води́ }, "."], rule: { es: ["«un vaso de agua» no lleva preposición: ", { term: скля́нка води́ }] } }

@@ -1,0 +1,199 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.word-order
+lang: uk
+kind: grammar
+tags: [word-order, sentence, adjectives, adverbs]
+concepts: [word-order]
+related: [uk.sentence.questions-negation, uk.adjectives-adverbs.adjective-agreement, uk.adjectives-adverbs.adverbs, uk.pronouns.personal-pronouns]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "b57c8e 2ee6b7 7c1cfc 112ff0 9defb7 871946", es: "b57c8e 2ee6b7 7c1cfc 112ff0 9defb7 871946" }
+
+title: { uk: Порядок слів, en: Word Order, es: El orden de las palabras }
+summary:
+  lead:
+    uk: "Звичайний порядок слів — підмет, присудок, додаток; прикметник стоїть перед іменником, а нове чи найважливіше — у кінці речення."
+    en: "The usual order is subject, verb, object; an adjective goes before its noun, and the new or most important information comes at the end."
+    es: "El orden habitual es sujeto, verbo, objeto; el adjetivo va delante del sustantivo, y la información nueva o más importante va al final."
+  rule:
+    uk: "Прикметник стоїть перед іменником, який він описує:"
+    en: "An adjective goes before the noun it describes:"
+    es: "El adjetivo va delante del sustantivo que describe:"
+  ex: { examples: [["Це ", { target: ціка́ва кни́жка }, "."], ["Ми живемо́ у ", { target: вели́кому мі́сті }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Речення, en: Sentence, es: Oración }
+          rule:
+            uk: { pattern: [{ slot: { uk: підмет, en: subject, es: sujeto } }, { slot: { uk: присудок, en: verb, es: verbo } }, { slot: { uk: додаток, en: object, es: objeto } }] }
+            en: { pattern: [{ slot: { uk: підмет, en: subject, es: sujeto } }, { slot: { uk: присудок, en: verb, es: verbo } }, { slot: { uk: додаток, en: object, es: objeto } }] }
+            es: { pattern: [{ slot: { uk: підмет, en: subject, es: sujeto } }, { slot: { uk: присудок, en: verb, es: verbo } }, { slot: { uk: додаток, en: object, es: objeto } }] }
+          ex: ["Студе́нт ", { target: пи́ше }, " лист."]
+          tr: { en: "The student is writing a letter.", es: "El estudiante escribe una carta." }
+        - level: A1
+          point: { uk: Прикметник, en: Adjective, es: Adjetivo }
+          rule:
+            uk: "перед іменником"
+            en: "before the noun"
+            es: "delante del sustantivo"
+          ex: ["Це ", { target: нови́й буди́нок }, "."]
+          tr: { en: "This is a new building.", es: "Este es un edificio nuevo." }
+        - level: A1
+          point: { uk: "Час, місце", en: "Time, place", es: "Tiempo, lugar" }
+          rule:
+            uk: "часто на початку речення"
+            en: "often at the start of the sentence"
+            es: "a menudo al principio de la oración"
+          ex: [{ target: Уве́чері }, " ми гуля́ємо в па́рку."]
+          tr: { en: "In the evening we walk in the park.", es: "Por la tarde paseamos por el parque." }
+        - level: A1
+          point: { uk: Заперечення, en: Negation, es: Negación }
+          rule:
+            uk: [{ term: не }, " перед дієсловом"]
+            en: [{ term: не }, " before the verb"]
+            es: [{ term: не }, " delante del verbo"]
+          ex: ["Я ", { target: не розумі́ю }, "."]
+          tr: { en: "I don't understand.", es: "No entiendo." }
+        - level: A2
+          point: { uk: Прислівник, en: Adverb, es: Adverbio }
+          rule:
+            uk: [{ alternatives: [{ term: до́бре }, { term: ду́же }, { term: шви́дко }] }, " перед дієсловом"]
+            en: [{ alternatives: [{ term: до́бре }, { term: ду́же }, { term: шви́дко }] }, " before the verb"]
+            es: [{ alternatives: [{ term: до́бре }, { term: ду́же }, { term: шви́дко }] }, " delante del verbo"]
+          ex: ["Він ", { target: до́бре гово́рить }, " украї́нською."]
+          tr: { en: "He speaks Ukrainian well.", es: "Habla bien ucraniano." }
+        - level: A2
+          point: { uk: Займенник, en: Pronoun, es: Pronombre }
+          rule:
+            uk: "займенник-додаток зазвичай перед дієсловом"
+            en: "an object pronoun usually goes before the verb"
+            es: "el pronombre objeto suele ir delante del verbo"
+          ex: ["Я ", { target: тебе́ ба́чу }, "."]
+          tr: { en: "I can see you.", es: "Te veo." }
+        - level: A2
+          point: { uk: Нове, en: New information, es: Información nueva }
+          rule:
+            uk: "у кінці речення"
+            en: "at the end of the sentence"
+            es: "al final de la oración"
+          ex: ["Цю кни́жку написа́ла ", { target: Лі́на Косте́нко }, "."]
+          tr: { en: "This book was written by Lina Kostenko.", es: "Este libro lo escribió Lina Kostenko." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: "прикметник — перед іменником; після нього — лише як стилістичний прийом"
+            en: "the adjective goes before the noun; after it only as a stylistic device"
+            es: "el adjetivo va delante del sustantivo; detrás, solo como recurso de estilo"
+          ex: ["Я ма́ю ", { target: черво́ну су́мку }, "."]
+          tr: { en: "I have a red bag.", es: "Tengo una bolsa roja." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Відмінкові закінчення показують, хто що робить, тому порядок слів в українській вільний. Звичайний порядок — підмет, присудок, додаток:"
+              en: "Case endings show who does what, so Ukrainian word order is free. The usual order is subject, verb, object:"
+              es: "Las terminaciones de caso muestran quién hace qué, así que el orden de las palabras es libre. El orden habitual es sujeto, verbo, objeto:"
+            ex: "Ма́ма чита́є газе́ту."
+            tr: { en: "Mum is reading the newspaper.", es: "Mamá lee el periódico." }
+          - type: rule
+            level: A2
+            text:
+              uk: "Інший порядок змінює не зміст, а те, що в реченні нове: нове чи найважливіше стоїть у кінці."
+              en: "Another order keeps the meaning and changes what is new: the new or most important information comes at the end."
+              es: "Otro orden mantiene el significado y cambia lo que es nuevo: la información nueva o más importante va al final."
+            ex: { contrast: [["Ма́ма чита́є ", { target: газе́ту }, "."], ["Газе́ту чита́є ", { target: ма́ма }, "."]] }
+            tr: { en: { contrast: ["Mum is reading the newspaper.", "It's Mum who is reading the newspaper."] }, es: { contrast: ["Mamá lee el periódico.", "El periódico lo lee mamá."] } }
+
+  - title: { uk: Звичайний порядок, en: The usual order, es: El orden habitual }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            rule: { uk: "підмет, присудок, додаток", en: "subject, verb, object", es: "sujeto, verbo, objeto" }
+            ex: ["Андрі́й ", { target: купу́є хліб }, "."]
+            tr: { en: "Andrii is buying bread.", es: "Andrii compra pan." }
+          - level: A1
+            rule: { uk: "прикметник перед іменником", en: "the adjective before the noun", es: "el adjetivo delante del sustantivo" }
+            ex: ["У нас ", { target: нова́ кварти́ра }, "."]
+            tr: { en: "We have a new flat.", es: "Tenemos un apartamento nuevo." }
+          - level: A1
+            rule: { uk: "час чи місце на початку", en: "time or place at the start", es: "el tiempo o el lugar al principio" }
+            ex: [{ target: У се́рпні }, " ми ї́демо до Льво́ва."]
+            tr: { en: "In August we're going to Lviv.", es: "En agosto vamos a Leópolis." }
+          - level: A1
+            rule: { uk: [{ term: не }, " безпосередньо перед дієсловом"], en: [{ term: не }, " right before the verb"], es: [{ term: не }, " justo delante del verbo"] }
+            ex: ["Сього́дні я ", { target: не працю́ю }, "."]
+            tr: { en: "I'm not working today.", es: "Hoy no trabajo." }
+          - level: A1
+            rule: { uk: "питання: той самий порядок, інша інтонація", en: "a question: the same order, a rising voice", es: "una pregunta: el mismo orden, otra entonación" }
+            ex: ["Ти розмовля́єш украї́нською?", { intonation: rise }]
+            tr: { en: "Do you speak Ukrainian?", es: "¿Hablas ucraniano?" }
+          - level: A2
+            rule: { uk: [{ alternatives: [{ term: до́бре }, { term: ду́же }, { term: шви́дко }] }, " перед дієсловом"], en: [{ alternatives: [{ term: до́бре }, { term: ду́же }, { term: шви́дко }] }, " before the verb"], es: [{ alternatives: [{ term: до́бре }, { term: ду́же }, { term: шви́дко }] }, " delante del verbo"] }
+            ex: ["Я ", { target: ду́же люблю́ }, " ка́ву."]
+            tr: { en: "I really like coffee.", es: "Me gusta mucho el café." }
+          - level: A2
+            rule: { uk: "займенник-додаток перед дієсловом", en: "an object pronoun before the verb", es: "el pronombre objeto delante del verbo" }
+            ex: ["Ми ", { target: тебе́ чека́ємо }, "."]
+            tr: { en: "We're waiting for you.", es: "Te esperamos." }
+      - type: list
+        items:
+          - type: note
+            level: A1
+            text:
+              uk: ["Питання й заперечення: ", { link: Питання й заперечення, to: uk.sentence.questions-negation }, "."]
+              en: ["Questions and negatives: ", { link: Questions and Negation, to: uk.sentence.questions-negation }, "."]
+              es: ["Las preguntas y la negación: ", { link: Preguntas y negación, to: uk.sentence.questions-negation }, "."]
+
+  - title: { uk: Нове в кінці речення, en: New information at the end, es: Lo nuevo al final }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Нове, en: What is new, es: Lo nuevo } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: "коли?", en: "when?", es: "¿cuándo?" }
+            ex: { exchange: ["Коли́ ви ї́дете до Льво́ва?", ["До Льво́ва ми ї́демо ", { target: за́втра }, "."]] }
+            tr: { en: { exchange: ["When are you going to Lviv?", "We're going to Lviv tomorrow."] }, es: { exchange: ["¿Cuándo van a Leópolis?", "A Leópolis vamos mañana."] } }
+          - level: A2
+            use: { uk: "куди?", en: "where to?", es: "¿adónde?" }
+            ex: { exchange: ["Куди́ ви ї́дете за́втра?", ["За́втра ми ї́демо ", { target: до Льво́ва }, "."]] }
+            tr: { en: { exchange: ["Where are you going tomorrow?", "Tomorrow we're going to Lviv."] }, es: { exchange: ["¿Adónde van mañana?", "Mañana vamos a Leópolis."] } }
+          - level: A2
+            use: { uk: "хто?", en: "who?", es: "¿quién?" }
+            ex: { exchange: ["Хто написа́в цей текст?", ["Цей текст написа́в ", { target: І́гор }, "."]] }
+            tr: { en: { exchange: ["Who wrote this text?", "Ihor wrote this text."] }, es: { exchange: ["¿Quién escribió este texto?", "Este texto lo escribió Ihor."] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "Слово, яке відповідає на питання, стоїть у кінці відповіді."
+              en: "The word that answers the question goes at the end of the answer."
+              es: "La palabra que responde a la pregunta va al final de la respuesta."
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, speakers: [es], wrong: Я живу́ в мі́сті вели́кому., right: ["Я живу́ у ", { target: вели́кому мі́сті }, "."], rule: { es: "el adjetivo va delante del sustantivo, no detrás como en español" } }
+          - { level: A2, speakers: [en], wrong: Я люблю́ ду́же ка́ву., right: ["Я ", { target: ду́же люблю́ }, " ка́ву."], rule: { en: [{ term: ду́же }, " goes before the verb it makes stronger"] } }

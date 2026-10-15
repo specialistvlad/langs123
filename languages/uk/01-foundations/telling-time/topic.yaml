@@ -1,0 +1,240 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.foundations.telling-time
+lang: uk
+kind: foundations
+tags: [time, hours, minutes]
+concepts: [telling-time]
+related: [uk.foundations.numbers, uk.foundations.days-months-dates, uk.prepositions.prepositions-time, uk.numerals.ordinals]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "8864b9 0624c1 2de32b 669492 020662 28bf34", es: "8864b9 0624c1 2de32b 669492 020662 28bf34" }
+
+title: { uk: Котра година, en: Telling the Time, es: La hora }
+summary:
+  lead:
+    uk: "Котра година: години називають порядковими числами жіночого роду, хвилини — кількісними числівниками, а з о кажуть, коли щось відбувається."
+    en: "Telling the time: hours are feminine ordinal numbers, minutes are cardinal numbers, and о says when something happens."
+    es: "La hora: las horas son ordinales femeninos, los minutos son números cardinales, y о indica cuándo pasa algo."
+  rule:
+    uk: "Годину називають порядковим числом жіночого роду:"
+    en: "The hour is a feminine ordinal number:"
+    es: "La hora se dice con un ordinal femenino:"
+  ex: { exchange: ["Котра́ годи́на?", { target: { time: Пе́рша, value: "01:00" } }] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A0
+          point: { uk: Котра година?, en: What time is it?, es: ¿Qué hora es? }
+          rule:
+            uk: "відповідь — порядкове число жіночого роду"
+            en: "the answer is a feminine ordinal number"
+            es: "la respuesta es un ordinal femenino"
+          ex: { exchange: ["Котра́ годи́на?", { target: { time: Дру́га, value: "02:00" } }] }
+          tr: { en: { exchange: [What time is it?, "Two o'clock."] }, es: { exchange: [¿Qué hora es?, Las dos.] } }
+        - level: A0
+          point: { uk: Години, en: Hours, es: Horas }
+          rule:
+            uk: ["слово ", { term: годи́на }, " можна не казати"]
+            en: [{ term: годи́на }, " (hour) can be left out"]
+            es: [{ term: годи́на }, " (hora) se puede omitir"]
+          ex: ["Зара́з ", { target: { time: сьо́ма, value: "07:00" } }, " ", { optional: годи́на }, "."]
+          tr: { en: "It's seven o'clock now.", es: Ahora son las siete. }
+        - level: A1
+          point: { uk: Хвилини, en: Minutes, es: Minutos }
+          rule:
+            uk: "година й хвилини, як на годиннику"
+            en: "the hour, then the minutes, as on a clock"
+            es: "la hora y luego los minutos, como en el reloj"
+          ex: ["Зара́з ", { target: { time: деся́та два́дцять, value: "10:20" } }, "."]
+          tr: { en: "It's ten twenty now.", es: Ahora son las diez y veinte. }
+        - level: A1
+          point: { uk: Розклад, en: Timetables, es: Horarios }
+          rule:
+            uk: "години від 13 до 24"
+            en: "hours from 13 to 24"
+            es: "horas de 13 a 24"
+          ex: ["Зара́з ", { target: { time: чотирна́дцята три́дцять, value: "14:30" } }, "."]
+          tr: { en: "It's fourteen thirty now.", es: Ahora son las catorce treinta. }
+        - level: A1
+          point: { uk: Частини доби, en: Parts of the day, es: Partes del día }
+          rule:
+            uk: [{ alternatives: [{ term: ра́нку }, { term: дня }, { term: ве́чора }, { term: но́чі }] }, " після години"]
+            en: [{ alternatives: [{ term: ра́нку }, { term: дня }, { term: ве́чора }, { term: но́чі }] }, " after the hour"]
+            es: [{ alternatives: [{ term: ра́нку }, { term: дня }, { term: ве́чора }, { term: но́чі }] }, " tras la hora"]
+          ex: ["Зара́з ", { target: { time: сьо́ма ве́чора, value: "19:00" } }, "."]
+          tr: { en: "It's seven in the evening.", es: Son las siete de la tarde. }
+        - level: A1
+          point: { uk: Ввічливо, en: Politely, es: Con cortesía }
+          rule:
+            uk: "запитання до незнайомої людини"
+            en: "asking someone you do not know"
+            es: "para preguntar a un desconocido"
+          ex: ["Скажі́ть, будь ла́ска, ", { target: котра́ годи́на }, "?"]
+          tr: { en: "Excuse me, what time is it?", es: "Disculpe, ¿qué hora es?" }
+        - level: A2
+          point: { uk: "З … до …", en: "From … to …", es: "De … a …" }
+          rule:
+            uk: [{ term: з }, " і ", { term: до }, " з родовим відмінком"]
+            en: [{ term: з }, " and ", { term: до }, " with the genitive"]
+            es: [{ term: з }, " y ", { term: до }, " con el genitivo"]
+          ex: ["Магази́н працю́є ", { target: ["з ", { time: дев’я́тої, value: "09:00" }, " до ", { time: шо́стої, value: "18:00" }] }, "."]
+          tr: { en: The shop is open from nine to six., es: La tienda abre de nueve a seis. }
+        - level: B1
+          point: { uk: О котрій?, en: At what time?, es: ¿A qué hora? }
+          rule:
+            uk: [{ term: о }, " і місцевий відмінок"]
+            en: [{ term: о }, " with the locative"]
+            es: [{ term: о }, " con el locativo"]
+          ex: ["Заня́ття почина́ються ", { target: ["о ", { time: дев’я́тій, value: "09:00" }] }, "."]
+          tr: { en: Classes start at nine., es: Las clases empiezan a las nueve. }
+        - level: B1
+          point: { uk: Об, en: Об, es: Об }
+          rule:
+            uk: [{ term: об }, " перед голосною"]
+            en: [{ term: об }, " before a vowel"]
+            es: [{ term: об }, " ante vocal"]
+          ex: ["Зу́стріч ", { target: ["об ", { time: одина́дцятій, value: "11:00" }] }, "."]
+          tr: { en: The meeting is at eleven., es: La reunión es a las once. }
+        - level: A0
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["про час питають ", { term: котра́ годи́на }]
+            en: ["to ask the time, say ", { term: котра́ годи́на }]
+            es: ["para preguntar la hora se dice ", { term: котра́ годи́на }]
+          ex: [{ target: Котра́ }, " за́раз годи́на?"]
+          tr: { en: What time is it now?, es: ¿Qué hora es ahora? }
+
+sections:
+  - title: { uk: Години, en: The hours, es: Las horas }
+    role: own
+    content:
+      - type: inventory
+        set: times
+        columns:
+          - { key: time, label: { uk: Час, en: Time, es: Hora } }
+          - { key: said, label: { uk: Усно, en: Said, es: Se dice } }
+        rows:
+          - { level: A0, value: "01:00", time: "1:00", said: [{ target: пе́рша }, " ", { optional: годи́на }], tr: { en: "one o'clock", es: la una } }
+          - { level: A0, value: "02:00", time: "2:00", said: [{ target: дру́га }, " ", { optional: годи́на }], tr: { en: "two o'clock", es: las dos } }
+          - { level: A0, value: "03:00", time: "3:00", said: [{ target: тре́тя }, " ", { optional: годи́на }], tr: { en: "three o'clock", es: las tres } }
+          - { level: A0, value: "04:00", time: "4:00", said: [{ target: четве́рта }, " ", { optional: годи́на }], tr: { en: "four o'clock", es: las cuatro } }
+          - { level: A0, value: "05:00", time: "5:00", said: [{ target: п’я́та }, " ", { optional: годи́на }], tr: { en: "five o'clock", es: las cinco } }
+          - { level: A0, value: "06:00", time: "6:00", said: [{ target: шо́ста }, " ", { optional: годи́на }], tr: { en: "six o'clock", es: las seis } }
+          - { level: A0, value: "07:00", time: "7:00", said: [{ target: сьо́ма }, " ", { optional: годи́на }], tr: { en: "seven o'clock", es: las siete } }
+          - { level: A0, value: "08:00", time: "8:00", said: [{ target: во́сьма }, " ", { optional: годи́на }], tr: { en: "eight o'clock", es: las ocho } }
+          - { level: A0, value: "09:00", time: "9:00", said: [{ target: дев’я́та }, " ", { optional: годи́на }], tr: { en: "nine o'clock", es: las nueve } }
+          - { level: A0, value: "10:00", time: "10:00", said: [{ target: деся́та }, " ", { optional: годи́на }], tr: { en: "ten o'clock", es: las diez } }
+          - { level: A0, value: "11:00", time: "11:00", said: [{ target: одина́дцята }, " ", { optional: годи́на }], tr: { en: "eleven o'clock", es: las once } }
+          - { level: A0, value: "12:00", time: "12:00", said: [{ target: двана́дцята }, " ", { optional: годи́на }], tr: { en: "twelve o'clock", es: las doce } }
+      - type: list
+        items:
+          - type: rule
+            level: A0
+            text:
+              uk: ["Годину називають порядковим числом жіночого роду, бо ", { term: годи́на }, " — жіночого роду:"]
+              en: ["The hour is a feminine ordinal number, because ", { term: годи́на }, " (hour) is feminine:"]
+              es: ["La hora es un ordinal femenino, porque ", { term: годи́на }, " (hora) es femenino:"]
+            ex: { exchange: ["Котра́ годи́на?", [{ target: { time: Тре́тя, value: "03:00" } }, "."]] }
+            tr: { en: { exchange: [What time is it?, "Three o'clock."] }, es: { exchange: [¿Qué hora es?, Las tres.] } }
+          - type: note
+            level: A0
+            text:
+              uk: ["Порядкові числа: ", { link: Порядкові числівники, to: uk.numerals.ordinals }, "."]
+              en: ["Ordinal numbers: ", { link: Ordinal Numbers, to: uk.numerals.ordinals }, "."]
+              es: ["Los números ordinales: ", { link: Los ordinales, to: uk.numerals.ordinals }, "."]
+
+  - title: { uk: Хвилини й частини доби, en: Minutes and parts of the day, es: Los minutos y las partes del día }
+    role: own
+    content:
+      - type: inventory
+        set: times
+        columns:
+          - { key: time, label: { uk: Час, en: Time, es: Hora } }
+          - { key: said, label: { uk: Усно, en: Said, es: Se dice } }
+        rows:
+          - { level: A1, value: "08:15", time: "8:15", said: [во́сьма, " ", { target: п’ятна́дцять }], tr: { en: eight fifteen, es: las ocho y cuarto } }
+          - { level: A1, value: "10:20", time: "10:20", said: [деся́та, " ", { target: два́дцять }], tr: { en: ten twenty, es: las diez y veinte } }
+          - { level: A1, value: "14:30", time: "14:30", said: [чотирна́дцята, " ", { target: три́дцять }], tr: { en: fourteen thirty, es: las catorce treinta } }
+          - { level: A1, value: "19:45", time: "19:45", said: [дев’ятна́дцята, " ", { target: со́рок п’ять }], tr: { en: nineteen forty-five, es: las diecinueve cuarenta y cinco } }
+          - { level: A1, value: "07:00", time: "7:00", said: [сьо́ма, " ", { target: ра́нку }], tr: { en: seven in the morning, es: las siete de la mañana } }
+          - { level: A1, value: "14:00", time: "14:00", said: [дру́га, " ", { target: дня }], tr: { en: two in the afternoon, es: las dos de la tarde } }
+          - { level: A1, value: "19:00", time: "19:00", said: [сьо́ма, " ", { target: ве́чора }], tr: { en: seven in the evening, es: las siete de la tarde } }
+          - { level: A1, value: "01:00", time: "1:00", said: [пе́рша, " ", { target: но́чі }], tr: { en: one in the morning, es: la una de la madrugada } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Час кажуть, як він показаний на годиннику: спершу годину, потім хвилини."
+              en: "Say the time as a clock shows it: the hour first, then the minutes."
+              es: "La hora se dice como la muestra el reloj: primero la hora, luego los minutos."
+            ex: ["Зара́з ", { target: { time: деся́та два́дцять, value: "10:20" } }, "."]
+            tr: { en: "It's ten twenty now.", es: Ahora son las diez y veinte. }
+          - type: rule
+            level: A1
+            text:
+              uk: "У розкладах і оголошеннях години лічать до 24."
+              en: "Timetables and announcements count the hours up to 24."
+              es: "Los horarios y los anuncios cuentan las horas hasta 24."
+            ex: ["Поча́ток конце́рту: ", { target: { time: дев’ятна́дцята три́дцять, value: "19:30" } }, "."]
+            tr: { en: "Concert start: nineteen thirty.", es: "Inicio del concierto: diecinueve treinta." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Частину доби називають після години: ", { term: ра́нку }, ", ", { term: дня }, ", ", { term: ве́чора }, ", ", { term: но́чі }, "."]
+              en: ["The part of the day follows the hour: ", { term: ра́нку }, " (morning), ", { term: дня }, " (afternoon), ", { term: ве́чора }, " (evening), ", { term: но́чі }, " (night)."]
+              es: ["La parte del día va tras la hora: ", { term: ра́нку }, " (mañana), ", { term: дня }, " (tarde), ", { term: ве́чора }, " (tarde-noche), ", { term: но́чі }, " (noche)."]
+          - type: example
+            level: A1
+            ex: { exchange: [["Скажі́ть, будь ла́ска, ", { target: котра́ годи́на }, "?"], [{ time: Деся́та два́дцять, value: "10:20" }, "."]] }
+            tr: { en: { exchange: ["Excuse me, what time is it?", "Ten twenty."] }, es: { exchange: ["Disculpe, ¿qué hora es?", "Las diez y veinte."] } }
+
+  - title: { uk: Коли? О котрій?, en: "When? At what time?", es: "¿Cuándo? ¿A qué hora?" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            rule: { uk: [{ term: з }, " і родовий: початок"], en: [{ term: з }, " with the genitive: the start"], es: [{ term: з }, " con el genitivo: el comienzo"] }
+            ex: ["Вона́ працю́є ", { target: ["з ", { time: дев’я́тої, value: "09:00" }] }, " годи́ни."]
+            tr: { en: She works from nine o'clock., es: Trabaja desde las nueve. }
+          - level: A2
+            rule: { uk: [{ term: до }, " і родовий: кінець"], en: [{ term: до }, " with the genitive: the end"], es: [{ term: до }, " con el genitivo: el final"] }
+            ex: ["Магази́н працю́є ", { target: ["до ", { time: шо́стої, value: "18:00" }] }, "."]
+            tr: { en: The shop is open until six., es: La tienda está abierta hasta las seis. }
+          - level: B1
+            rule: { uk: [{ term: о }, " і місцевий: о котрій?"], en: [{ term: о }, " with the locative: at what time?"], es: [{ term: о }, " con el locativo: ¿a qué hora?"] }
+            ex: ["Заня́ття почина́ються ", { target: ["о ", { time: дев’я́тій, value: "09:00" }] }, " годи́ні."]
+            tr: { en: Classes start at nine o'clock., es: Las clases empiezan a las nueve. }
+          - level: B1
+            rule: { uk: [{ term: об }, " перед голосною"], en: [{ term: об }, " before a vowel"], es: [{ term: об }, " ante vocal"] }
+            ex: ["Зустрі́немося ", { target: ["об ", { time: одина́дцятій, value: "11:00" }] }, "."]
+            tr: { en: "We'll meet at eleven.", es: Nos vemos a las once. }
+      - type: list
+        items:
+          - type: note
+            level: B1
+            text:
+              uk: ["У письмі пишуть скорочено: ", { term: "об 11 год" }, "."]
+              en: ["Writing shortens it: ", { term: "об 11 год" }, "."]
+              es: ["Por escrito se abrevia: ", { term: "об 11 год" }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A0, wrong: Котри́й час?, right: [{ target: Котра́ годи́на }, "?"], rule: { uk: ["про час питають ", { term: котра́ годи́на }, "; ", { term: котри́й час }, " — калька з російської"], en: ["ask ", { term: котра́ годи́на }, "; ", { term: котри́й час }, " is a calque from Russian"], es: ["se pregunta ", { term: котра́ годи́на }, "; ", { term: котри́й час }, " es un calco del ruso"] } }
+          - { level: A0, wrong: Скі́льки за́раз годи́н?, right: [{ target: Котра́ }, " за́раз годи́на?"], rule: { uk: [{ term: скі́льки годи́н }, " питає, як довго, а не котра година"], en: [{ term: скі́льки годи́н }, " asks how long, not what time"], es: [{ term: скі́льки годи́н }, " pregunta cuánto dura, no qué hora es"] } }
+          - { level: A0, wrong: Зара́з де́сять годи́н., right: ["Зара́з ", { target: деся́та }, " годи́на."], rule: { uk: "годину називають порядковим числом", en: "the hour is an ordinal number", es: "la hora se dice con un ordinal" } }
+          - { level: A0, speakers: [en, es], wrong: Це пе́рша., right: [{ target: Пе́рша }, "."], rule: { en: ["the hour alone answers ", { term: Котра́ годи́на? }, "; ", { term: Це пе́рша }, " means “this is the first one”"], es: ["a ", { term: Котра́ годи́на? }, " se responde solo con la hora; ", { term: Це пе́рша }, " significa «esta es la primera»"] } }
+          - { level: A2, wrong: з де́в’ять до шість, right: ["з ", { target: дев’я́тої }, " до ", { target: шо́стої }], rule: { uk: [{ term: з }, " і ", { term: до }, " вимагають родового відмінка"], en: [{ term: з }, " and ", { term: до }, " take the genitive"], es: [{ term: з }, " y ", { term: до }, " piden el genitivo"] } }
+          - { level: B1, wrong: в де́в’ять годи́н, right: [{ target: о дев’я́тій }, " годи́ні"], rule: { uk: ["коли? — ", { term: о }, " і місцевий відмінок; ", { term: в де́в’ять годи́н }, " — калька з російської"], en: ["when? takes ", { term: о }, " and the locative; ", { term: в де́в’ять годи́н }, " is a calque from Russian"], es: ["¿cuándo? lleva ", { term: о }, " y el locativo; ", { term: в де́в’ять годи́н }, " es un calco del ruso"] } }

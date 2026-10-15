@@ -1,0 +1,206 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.verbs-present.verb-infinitive
+lang: uk
+kind: grammar
+tags: [verbs, infinitive]
+concepts: [verb-patterns]
+related: [uk.modality.modal-words, uk.verbs-present.present-conjugation, uk.verbs-present.liking, uk.past-aspect.aspect]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "09db77 64e79d a2f831 11770e de9f75 6f1684", es: "09db77 64e79d a2f831 11770e de9f75 6f1684" }
+
+title: { uk: "Дієслово з інфінітивом", en: "Verb with Infinitive", es: "Verbo con infinitivo" }
+summary:
+  lead:
+    uk: ["Дієслова ", { alternatives: [{ term: хоті́ти }, { term: могти́ }, { term: люби́ти }, { term: вмі́ти }] }, " і ", { term: почина́ти }, " поєднуються з інфінітивом, що має закінчення ", { term: -ти }, "."]
+    en: ["The verbs ", { alternatives: [{ term: хоті́ти }, { term: могти́ }, { term: люби́ти }, { term: вмі́ти }] }, " and ", { term: почина́ти }, " take an infinitive, which ends in ", { term: -ти }, "."]
+    es: ["Los verbos ", { alternatives: [{ term: хоті́ти }, { term: могти́ }, { term: люби́ти }, { term: вмі́ти }] }, " y ", { term: почина́ти }, " llevan un infinitivo, que termina en ", { term: -ти }, "."]
+  rule:
+    uk: "Змінюється лише перше дієслово, а друге стоїть в інфінітиві:"
+    en: "Only the first verb changes; the second stays in the infinitive:"
+    es: "Solo cambia el primer verbo; el segundo queda en infinitivo:"
+  ex: { examples: [["Я хо́чу ", { target: ї́сти }, "."], ["Ти мо́жеш ", { target: допомогти́ }, "?"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Бажання, en: Wanting, es: Deseo }
+          rule:
+            uk: { pattern: [{ term: хоті́ти }, { slot: infinitive }] }
+            en: { pattern: [{ term: хоті́ти }, { slot: infinitive }] }
+            es: { pattern: [{ term: хоті́ти }, { slot: infinitive }] }
+          ex: ["Я хо́чу ", { target: ї́сти }, "."]
+          tr: { en: "I'm hungry.", es: "Tengo hambre." }
+        - level: A1
+          point: { uk: Можливість, en: Being able, es: Posibilidad }
+          rule:
+            uk: { pattern: [{ term: могти́ }, { slot: infinitive }] }
+            en: { pattern: [{ term: могти́ }, { slot: infinitive }] }
+            es: { pattern: [{ term: могти́ }, { slot: infinitive }] }
+          ex: ["Ти мо́жеш ", { target: допомогти́ }, "?"]
+          tr: { en: "Can you help?", es: "¿Puedes ayudar?" }
+        - level: A1
+          point: { uk: Інфінітив, en: Infinitive, es: Infinitivo }
+          rule:
+            uk: ["закінчення ", { alternatives: [{ term: -ти }, { term: -тися }] }]
+            en: ["the ending ", { alternatives: [{ term: -ти }, { term: -тися }] }]
+            es: ["la terminación ", { alternatives: [{ term: -ти }, { term: -тися }] }]
+          ex: ["Ми хо́чемо ", { target: навча́тися }, "."]
+          tr: { en: "We want to study.", es: "Queremos estudiar." }
+        - level: A1
+          point: { uk: Уподобання, en: Liking, es: Gusto }
+          rule:
+            uk: { pattern: [{ term: люби́ти }, { slot: infinitive }] }
+            en: { pattern: [{ term: люби́ти }, { slot: infinitive }] }
+            es: { pattern: [{ term: люби́ти }, { slot: infinitive }] }
+          ex: ["Я люблю́ ", { target: чита́ти }, "."]
+          tr: { en: "I love reading.", es: "Me encanta leer." }
+        - level: A2
+          point: { uk: Уміння, en: Know-how, es: Saber hacer }
+          rule:
+            uk: { pattern: [{ term: вмі́ти }, { slot: infinitive }] }
+            en: { pattern: [{ term: вмі́ти }, { slot: infinitive }] }
+            es: { pattern: [{ term: вмі́ти }, { slot: infinitive }] }
+          ex: ["Я вмі́ю ", { target: пла́вати }, "."]
+          tr: { en: "I can swim.", es: "Sé nadar." }
+        - level: A2
+          point: { uk: Початок і кінець, en: Start and finish, es: Inicio y fin }
+          rule:
+            uk: { pattern: [{ alternatives: [{ term: почина́ти }, { term: закі́нчувати }] }, { slot: { uk: інфінітив недоконаного виду, en: imperfective infinitive, es: infinitivo imperfectivo } }] }
+            en: { pattern: [{ alternatives: [{ term: почина́ти }, { term: закі́нчувати }] }, { slot: { uk: інфінітив недоконаного виду, en: imperfective infinitive, es: infinitivo imperfectivo } }] }
+            es: { pattern: [{ alternatives: [{ term: почина́ти }, { term: закі́нчувати }] }, { slot: { uk: інфінітив недоконаного виду, en: imperfective infinitive, es: infinitivo imperfectivo } }] }
+          ex: ["Ми почина́ємо ", { target: працюва́ти }, " о дев’я́тій."]
+          tr: { en: "We start work at nine.", es: "Empezamos a trabajar a las nueve." }
+        - level: A2
+          point: { uk: Плани, en: Plans, es: Planes }
+          rule:
+            uk: { pattern: [{ term: планува́ти }, { slot: infinitive }] }
+            en: { pattern: [{ term: планува́ти }, { slot: infinitive }] }
+            es: { pattern: [{ term: планува́ти }, { slot: infinitive }] }
+          ex: ["Я плану́ю ", { target: пої́хати }, " до Льво́ва."]
+          tr: { en: "I'm planning to go to Lviv.", es: "Pienso ir a Leópolis." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["друге дієслово — в інфінітиві: ", { term: спа́ти }]
+            en: ["the second verb is an infinitive: ", { term: спа́ти }]
+            es: ["el segundo verbo va en infinitivo: ", { term: спа́ти }]
+          ex: ["Я хо́чу ", { target: спа́ти }, "."]
+          tr: { en: "I want to sleep.", es: "Quiero dormir." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Перше дієслово змінюється за особами, а друге стоїть в інфінітиві:"
+              en: "The first verb changes for person; the second stays in the infinitive:"
+              es: "El primer verbo cambia según la persona; el segundo queda en infinitivo:"
+            ex: ["Вони́ хо́чуть ", { target: працюва́ти }, " тут."]
+            tr: { en: "They want to work here.", es: "Quieren trabajar aquí." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Інфінітив закінчується на ", { term: -ти }, ", а дієслова на ", { term: -ся }, " — на ", { term: -тися }, "."]
+              en: ["The infinitive ends in ", { term: -ти }, ", and verbs in ", { term: -ся }, " in ", { term: -тися }, "."]
+              es: ["El infinitivo termina en ", { term: -ти }, ", y los verbos en ", { term: -ся }, ", en ", { term: -тися }, "."]
+          - type: rule
+            level: A2
+            text:
+              uk: ["Заперечення ", { term: не }, " стоїть перед першим дієсловом:"]
+              en: ["The negative ", { term: не }, " goes before the first verb:"]
+              es: ["La negación ", { term: не }, " va delante del primer verbo:"]
+            ex: ["Я ", { target: не хо́чу }, " йти."]
+            tr: { en: "I don't want to go.", es: "No quiero ir." }
+          - type: note
+            level: A1
+            text:
+              uk: [{ term: тре́ба }, " і ", { term: мо́жна }, " теж стоять з інфінітивом. Див. ", { link: "Модальні слова: треба, можна, мусити", to: uk.modality.modal-words }, "."]
+              en: [{ term: тре́ба }, " and ", { term: мо́жна }, " also take an infinitive. See ", { link: "Need, May, Must: треба, можна, мусити", to: uk.modality.modal-words }, "."]
+              es: [{ term: тре́ба }, " y ", { term: мо́жна }, " también llevan infinitivo. Ver ", { link: "Necesidad y permiso: треба, можна, мусити", to: uk.modality.modal-words }, "."]
+
+  - title: { uk: "Форма: дієслова з інфінітивом", en: "Form: verbs that take an infinitive", es: "Forma: verbos con infinitivo" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Дієслово, en: Verb, es: Verbo } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            form: { uk: [{ term: хоті́ти }, ": бажання"], en: [{ term: хоті́ти }, ": wanting"], es: [{ term: хоті́ти }, ": deseo"] }
+            ex: ["Ти хо́чеш ", { target: пи́ти }, "?"]
+            tr: { en: "Are you thirsty?", es: "¿Tienes sed?" }
+          - level: A1
+            form: { uk: [{ term: могти́ }, ": можливість"], en: [{ term: могти́ }, ": being able"], es: [{ term: могти́ }, ": posibilidad"] }
+            ex: ["Я мо́жу ", { target: прийти́ }, " за́втра."]
+            tr: { en: "I can come tomorrow.", es: "Puedo venir mañana." }
+          - level: A1
+            form: { uk: [{ term: люби́ти }, ": уподобання"], en: [{ term: люби́ти }, ": liking"], es: [{ term: люби́ти }, ": gusto"] }
+            ex: ["Ми лю́бимо ", { target: гуля́ти }, " в па́рку."]
+            tr: { en: "We love walking in the park.", es: "Nos encanta pasear por el parque." }
+          - level: A2
+            form: { uk: [{ term: вмі́ти }, ": навичка"], en: [{ term: вмі́ти }, ": a skill"], es: [{ term: вмі́ти }, ": una habilidad"] }
+            ex: ["Вона́ вмі́є ", { target: гра́ти }, " на гіта́рі."]
+            tr: { en: "She can play the guitar.", es: "Sabe tocar la guitarra." }
+          - level: A2
+            form: { uk: [{ alternatives: [{ term: почина́ти }, { term: закі́нчувати }] }, ": початок і кінець"], en: [{ alternatives: [{ term: почина́ти }, { term: закі́нчувати }] }, ": starting and finishing"], es: [{ alternatives: [{ term: почина́ти }, { term: закі́нчувати }] }, ": empezar y terminar"] }
+            ex: ["Я закі́нчую ", { target: працюва́ти }, " о шо́стій."]
+            tr: { en: "I finish work at six.", es: "Termino de trabajar a las seis." }
+          - level: A2
+            form: { uk: [{ term: планува́ти }, ": план"], en: [{ term: планува́ти }, ": a plan"], es: [{ term: планува́ти }, ": un plan"] }
+            ex: ["Ми плану́ємо ", { target: відпочива́ти }, " на мо́рі."]
+            tr: { en: "We're planning a holiday by the sea.", es: "Pensamos pasar las vacaciones en el mar." }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Після ", { term: почина́ти }, " і ", { term: закі́нчувати }, " інфінітив буває лише недоконаного виду:"]
+              en: ["After ", { term: почина́ти }, " and ", { term: закі́нчувати }, ", the infinitive is always imperfective:"]
+              es: ["Después de ", { term: почина́ти }, " y ", { term: закі́нчувати }, ", el infinitivo siempre es imperfectivo:"]
+            ex: ["Він почина́є ", { target: писа́ти }, " лист."]
+            tr: { en: "He's starting to write a letter.", es: "Empieza a escribir una carta." }
+
+  - title: { uk: "Порівняння: вміти і могти", en: "Compare: вміти and могти", es: "Comparación: вміти y могти" }
+    role: compare
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Значення, en: Meaning, es: Significado } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ term: вмі́ти }, ": навичка, якої навчилися"], en: [{ term: вмі́ти }, ": a skill you have learned"], es: [{ term: вмі́ти }, ": una habilidad aprendida"] }
+            ex: ["Я ", { target: вмі́ю }, " пла́вати."]
+            tr: { en: "I can swim.", es: "Sé nadar." }
+          - level: A2
+            use: { uk: [{ term: могти́ }, ": змога: сили, час, обставини, а також уміння"], en: [{ term: могти́ }, ": being able to: strength, time, circumstances, and also a skill"], es: [{ term: могти́ }, ": poder: fuerzas, tiempo, circunstancias, y también una habilidad"] }
+            ex: ["Сього́дні я не ", { target: мо́жу }, " пла́вати: хо́лодно."]
+            tr: { en: "I can't swim today: it's cold.", es: "Hoy no puedo nadar: hace frío." }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            readers: [es]
+            text:
+              es: [{ term: вмі́ти }, " equivale a saber con infinitivo, y ", { term: могти́ }, ", a poder."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Я хо́чу їм., right: ["Я хо́чу ", { target: ї́сти }, "."], rule: { uk: ["після ", { term: хоті́ти }, " — інфінітив"], en: ["after ", { term: хоті́ти }, ", the infinitive"], es: ["después de ", { term: хоті́ти }, ", el infinitivo"] } }
+          - { level: A1, wrong: Я хо́чу ку́шати., right: ["Я хо́чу ", { target: ї́сти }, "."], rule: { uk: [{ term: ку́шати }, " — росіянізм; українською ", { term: ї́сти }], en: [{ term: ку́шати }, " comes from Russian; Ukrainian says ", { term: ї́сти }], es: [{ term: ку́шати }, " viene del ruso; en ucraniano se dice ", { term: ї́сти }] } }
+          - { level: A2, speakers: [es], wrong: Я почина́ю до працюва́ти., right: ["Я почина́ю ", { target: працюва́ти }, "."], rule: { es: [{ term: почина́ти }, " va sin preposición: no hay equivalente de la «a» de empezar a"] } }
+          - { level: A2, wrong: Він почина́є написа́ти лист., right: ["Він почина́є ", { target: писа́ти }, " лист."], rule: { uk: ["після ", { term: почина́ти }, " — недоконаний вид"], en: ["after ", { term: почина́ти }, ", the imperfective"], es: ["después de ", { term: почина́ти }, ", el imperfectivo"] } }

@@ -1,0 +1,252 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.modality.modal-words
+lang: uk
+kind: grammar
+tags: [modality, necessity, permission, obligation, dative, infinitive]
+concepts: [obligation, ability, possibility]
+related: [uk.verbs-present.verb-infinitive, uk.nouns-cases.dative, uk.verbs-present.irregular-verbs, uk.future-imperative-conditional.imperative]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "b0e1bd e1f13a 75c401 bbb769 7c2f12 c049f3 968aa1 7d00a8", es: "b0e1bd e1f13a 75c401 bbb769 7c2f12 c049f3 968aa1 7d00a8" }
+
+title: { uk: "Модальні слова: треба, можна, мусити", en: "Need, May, Must: треба, можна, мусити", es: "Necesidad y permiso: треба, можна, мусити" }
+summary:
+  lead:
+    uk: ["Слово ", { term: тре́ба }, " називає потребу, ", { term: мо́жна }, " — дозвіл, ", { term: му́сити }, " і ", { term: пови́нен }, " — обов’язок; після них стоїть інфінітив."]
+    en: ["The word ", { term: тре́ба }, " expresses need, ", { term: мо́жна }, " permission, and ", { term: му́сити }, " and ", { term: пови́нен }, " obligation; an infinitive follows them."]
+    es: ["La palabra ", { term: тре́ба }, " expresa necesidad; ", { term: мо́жна }, ", permiso; ", { term: му́сити }, " y ", { term: пови́нен }, ", obligación, y tras ellos va un infinitivo."]
+  rule:
+    uk: ["Слова ", { term: тре́ба }, " і ", { term: мо́жна }, " не змінюються, а той, кому треба, стоїть у давальному:"]
+    en: ["The words ", { term: тре́ба }, " and ", { term: мо́жна }, " never change, and the person who needs to takes the dative:"]
+    es: ["Las palabras ", { term: тре́ба }, " y ", { term: мо́жна }, " no cambian, y la persona que lo necesita va en dativo:"]
+  ex: { examples: [[{ target: Мені́ тре́ба }, " йти."], [{ target: Тобі́ мо́жна }, " відпочи́ти."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Потреба, en: Need, es: Necesidad }
+          rule:
+            uk: { pattern: [{ term: тре́ба }, { slot: infinitive }] }
+            en: { pattern: [{ term: тре́ба }, { slot: infinitive }] }
+            es: { pattern: [{ term: тре́ба }, { slot: infinitive }] }
+          ex: ["Тут ", { target: тре́ба }, " поверну́ти."]
+          tr: { en: "You need to turn here.", es: "Aquí hay que doblar." }
+        - level: A1
+          point: { uk: Кому, en: Who needs to, es: Quién lo necesita }
+          rule:
+            uk: ["давальний: ", { alternatives: [{ term: мені́ }, { term: тобі́ }, { term: нам }] }]
+            en: ["the dative: ", { alternatives: [{ term: мені́ }, { term: тобі́ }, { term: нам }] }]
+            es: ["el dativo: ", { alternatives: [{ term: мені́ }, { term: тобі́ }, { term: нам }] }]
+          ex: [{ target: Тобі́ }, " тре́ба відпочи́ти."]
+          tr: { en: "You need a rest.", es: "Necesitas descansar." }
+        - level: A1
+          point: { uk: Дозвіл, en: Permission, es: Permiso }
+          rule:
+            uk: { pattern: [{ term: мо́жна }, { slot: infinitive }] }
+            en: { pattern: [{ term: мо́жна }, { slot: infinitive }] }
+            es: { pattern: [{ term: мо́жна }, { slot: infinitive }] }
+          ex: ["Тут ", { target: мо́жна }, " фотографува́ти?"]
+          tr: { en: "Can I take photos here?", es: "¿Se pueden tomar fotos aquí?" }
+        - level: A2
+          point: { uk: Заборона, en: Prohibition, es: Prohibición }
+          rule:
+            uk: { pattern: [{ term: не мо́жна }, { slot: infinitive }] }
+            en: { pattern: [{ term: не мо́жна }, { slot: infinitive }] }
+            es: { pattern: [{ term: не мо́жна }, { slot: infinitive }] }
+          ex: ["Тут ", { target: не мо́жна }, " пали́ти."]
+          tr: { en: "You can't smoke here.", es: "Aquí no se puede fumar." }
+        - level: A2
+          point: { uk: Потреба, en: Need, es: Necesidad }
+          rule:
+            uk: [{ alternatives: [{ term: потрі́бно }, { term: необхі́дно }] }, ": як ", { term: тре́ба }]
+            en: [{ alternatives: [{ term: потрі́бно }, { term: необхі́дно }] }, ": like ", { term: тре́ба }]
+            es: [{ alternatives: [{ term: потрі́бно }, { term: необхі́дно }] }, ": como ", { term: тре́ба }]
+          ex: ["Мені́ ", { target: потрі́бно }, " вчи́тися."]
+          tr: { en: "I need to study.", es: "Necesito estudiar." }
+        - level: B1
+          point: { uk: Обов’язок, en: Obligation, es: Obligación }
+          rule:
+            uk: { alternatives: [{ term: му́шу }, { term: му́сиш }, { term: му́сять }] }
+            en: { alternatives: [{ term: му́шу }, { term: му́сиш }, { term: му́сять }] }
+            es: { alternatives: [{ term: му́шу }, { term: му́сиш }, { term: му́сять }] }
+          ex: ["Я ", { target: му́шу }, " йти."]
+          tr: { en: "I have to go.", es: "Tengo que irme." }
+        - level: B1
+          point: { uk: Обов’язок, en: Obligation, es: Obligación }
+          rule:
+            uk: { alternatives: [{ term: пови́нен }, { term: пови́нна }, { term: пови́нні }] }
+            en: { alternatives: [{ term: пови́нен }, { term: пови́нна }, { term: пови́нні }] }
+            es: { alternatives: [{ term: пови́нен }, { term: пови́нна }, { term: пови́нні }] }
+          ex: ["Ти ", { target: пови́нен }, " прийти́ вча́сно."]
+          tr: { en: "You must come on time.", es: "Debes llegar a tiempo." }
+        - level: B1
+          point: { uk: Минуле і майбутнє, en: Past and future, es: Pasado y futuro }
+          rule:
+            uk: { alternatives: [{ term: тре́ба було́ }, { term: тре́ба бу́де }] }
+            en: { alternatives: [{ term: тре́ба було́ }, { term: тре́ба бу́де }] }
+            es: { alternatives: [{ term: тре́ба було́ }, { term: тре́ба бу́де }] }
+          ex: ["Учо́ра ", { target: тре́ба було́ }, " працюва́ти."]
+          tr: { en: "I had to work yesterday.", es: "Ayer hubo que trabajar." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["з ", { term: тре́ба }, " особа завжди в давальному: ", { alternatives: [{ term: мені́ }, { term: нам }] }]
+            en: [{ term: тре́ба }, " always puts the person in the dative: ", { alternatives: [{ term: мені́ }, { term: нам }] }]
+            es: ["con ", { term: тре́ба }, ", la persona siempre va en dativo: ", { alternatives: [{ term: мені́ }, { term: нам }] }]
+          ex: [{ target: Нам }, " тре́ба поспіша́ти."]
+          tr: { en: "We need to hurry.", es: "Tenemos que apurarnos." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: [{ term: тре́ба }, " не змінюється; після нього стоїть інфінітив:"]
+              en: [{ term: тре́ба }, " never changes; an infinitive follows it:"]
+              es: [{ term: тре́ба }, " no cambia; tras él va un infinitivo:"]
+            ex: [{ target: Тре́ба }, " чита́ти бі́льше."]
+            tr: { en: "You need to read more.", es: "Hay que leer más." }
+          - type: rule
+            level: A1
+            text:
+              uk: "Той, кому треба, стоїть у давальному:"
+              en: "The person who needs to takes the dative:"
+              es: "La persona que lo necesita va en dativo:"
+            ex: [{ target: Мені́ }, " тре́ба йти."]
+            tr: { en: "I need to go.", es: "Tengo que irme." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Уміння й можливість: ", { link: "Дієслово з інфінітивом", to: uk.verbs-present.verb-infinitive }, "."]
+              en: ["Know-how and ability: ", { link: "Verb with Infinitive", to: uk.verbs-present.verb-infinitive }, "."]
+              es: ["Saber y poder: ", { link: "Verbo con infinitivo", to: uk.verbs-present.verb-infinitive }, "."]
+
+  - title: { uk: Потреба, en: Need, es: Necesidad }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            form: { uk: { pattern: [{ term: тре́ба }, { slot: infinitive }] }, en: { pattern: [{ term: тре́ба }, { slot: infinitive }] }, es: { pattern: [{ term: тре́ба }, { slot: infinitive }] } }
+            ex: [{ target: Тре́ба }, " іти́ пря́мо."]
+            tr: { en: "You need to go straight on.", es: "Hay que seguir derecho." }
+          - level: A2
+            form: { uk: [{ alternatives: [{ term: потрі́бно }, { term: необхі́дно }] }, ": те саме, офіційніше"], en: [{ alternatives: [{ term: потрі́бно }, { term: необхі́дно }] }, ": the same, more formal"], es: [{ alternatives: [{ term: потрі́бно }, { term: необхі́дно }] }, ": lo mismo, más formal"] }
+            ex: ["Вам ", { target: необхі́дно }, " запо́внити бланк."]
+            tr: { en: "You need to fill in the form.", es: "Tiene que llenar el formulario." }
+          - level: B1
+            form: { uk: [{ alternatives: [{ term: потрі́бен }, { term: потрі́бна }, { term: потрі́бне }, { term: потрі́бні }] }, " з іменником у називному"], en: [{ alternatives: [{ term: потрі́бен }, { term: потрі́бна }, { term: потрі́бне }, { term: потрі́бні }] }, " with a noun in the nominative"], es: [{ alternatives: [{ term: потрі́бен }, { term: потрі́бна }, { term: потрі́бне }, { term: потрі́бні }] }, " con un sustantivo en nominativo"] }
+            ex: ["Оле́ні ", { target: потрі́бна }, " допомо́га."]
+            tr: { en: "Olena needs help.", es: "Olena necesita ayuda." }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: [{ term: потрі́бен }, " узгоджується з іменником у роді й числі:"]
+              en: [{ term: потрі́бен }, " agrees with the noun in gender and number:"]
+              es: [{ term: потрі́бен }, " concuerda con el sustantivo en género y número:"]
+            ex: ["Нам ", { target: потрі́бні }, " квитки́."]
+            tr: { en: "We need tickets.", es: "Necesitamos boletos." }
+
+  - title: { uk: Дозвіл і заборона, en: Permission and prohibition, es: Permiso y prohibición }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            form: { uk: "напис-заборона: не з інфінітивом", en: "a notice: не with an infinitive", es: "un cartel: не con infinitivo" }
+            ex: [{ target: Не пали́ти }, "!"]
+            tr: { en: "No smoking!", es: "¡Prohibido fumar!" }
+          - level: A1
+            form: { uk: [{ term: мо́жна }, ": дозвіл"], en: [{ term: мо́жна }, ": permission"], es: [{ term: мо́жна }, ": permiso"] }
+            ex: [{ target: Мо́жна }, " ввійти́?"]
+            tr: { en: "May I come in?", es: "¿Se puede pasar?" }
+          - level: A2
+            form: { uk: [{ term: не мо́жна }, ": заборона"], en: [{ term: не мо́жна }, ": prohibition"], es: [{ term: не мо́жна }, ": prohibición"] }
+            ex: ["Тут ", { target: не мо́жна }, " пали́ти."]
+            tr: { en: "You can't smoke here.", es: "Aquí no se puede fumar." }
+          - level: A2
+            form: { uk: [{ term: мо́жна }, " з давальним: кому дозволено"], en: [{ term: мо́жна }, " with the dative: who may"], es: [{ term: мо́жна }, " con dativo: a quién se permite"] }
+            ex: [{ target: Ді́тям мо́жна }, " гра́тися тут."]
+            tr: { en: "Children may play here.", es: "Los niños pueden jugar aquí." }
+
+  - title: { uk: Обов’язок, en: Obligation, es: Obligación }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { uk: Особа, en: Person, es: Persona } }
+          - { key: musyty, label: му́сити }
+          - { key: povynen, label: пови́нен }
+        rows:
+          - { level: B1, features: { person: 1, number: sg }, person: я, musyty: му́шу, povynen: { alternatives: [пови́нен, пови́нна] } }
+          - { level: B1, features: { person: 2, number: sg, politeness: infm }, person: ти, musyty: му́сиш, povynen: { alternatives: [пови́нен, пови́нна] } }
+          - { level: B1, features: { person: 3, number: sg }, person: { alternatives: [він, вона́, воно́] }, musyty: му́сить, povynen: { alternatives: [пови́нен, пови́нна, пови́нне] } }
+          - { level: B1, features: { person: 1, number: pl }, person: ми, musyty: му́симо, povynen: пови́нні }
+          - { level: B1, features: [{ person: 2, number: pl }, { person: 2, number: sg, politeness: form }], person: ви, musyty: му́сите, povynen: пови́нні }
+          - { level: B1, features: { person: 3, number: pl }, person: вони́, musyty: му́сять, povynen: пови́нні }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: [{ term: му́сити }, " — змушує обставина; змінюється як дієслово з ", { letter: ш }, " у формі я:"]
+              en: [{ term: му́сити }, " is having to because of circumstances; it conjugates as a verb, with ", { letter: ш }, " in the я form:"]
+              es: [{ term: му́сити }, " es una obligación por las circunstancias; se conjuga, con ", { letter: ш }, " en la forma я:"]
+            ex: ["Вибача́й, я ", { target: му́шу }, " йти."]
+            tr: { en: "Sorry, I have to go.", es: "Perdona, tengo que irme." }
+          - type: rule
+            level: B1
+            text:
+              uk: [{ term: пови́нен }, " — обов’язок; змінюється за родом і числом, як прикметник:"]
+              en: [{ term: пови́нен }, " is a duty; it changes for gender and number, like an adjective:"]
+              es: [{ term: пови́нен }, " es un deber; cambia en género y número, como un adjetivo:"]
+            ex: ["Вона́ ", { target: пови́нна }, " зателефонува́ти ма́мі."]
+            tr: { en: "She should call her mum.", es: "Debe llamar a su madre." }
+
+  - title: { uk: Минуле і майбутнє, en: Past and future, es: Pasado y futuro }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            features: { tense: pst }
+            form: { uk: { alternatives: [{ term: тре́ба було́ }, { term: мо́жна було́ }] }, en: { alternatives: [{ term: тре́ба було́ }, { term: мо́жна було́ }] }, es: { alternatives: [{ term: тре́ба було́ }, { term: мо́жна було́ }] } }
+            ex: ["Мені́ ", { target: тре́ба було́ }, " рані́ше ви́йти."]
+            tr: { en: "I should have left earlier.", es: "Tenía que haber salido antes." }
+          - level: B1
+            features: { tense: fut }
+            form: { uk: { alternatives: [{ term: тре́ба бу́де }, { term: мо́жна бу́де }] }, en: { alternatives: [{ term: тре́ба бу́де }, { term: мо́жна бу́де }] }, es: { alternatives: [{ term: тре́ба бу́де }, { term: мо́жна бу́де }] } }
+            ex: ["За́втра ", { target: мо́жна бу́де }, " відпочи́ти."]
+            tr: { en: "We'll be able to rest tomorrow.", es: "Mañana se podrá descansar." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Я тре́ба йти., right: [{ target: Мені́ }, " тре́ба йти."], rule: { uk: ["той, кому треба, — у давальному: ", { term: мені́ }], en: ["the person who needs to is in the dative: ", { term: мені́ }], es: ["quien lo necesita va en dativo: ", { term: мені́ }] } }
+          - { level: A1, wrong: Мені́ тре́ба йду., right: ["Мені́ тре́ба ", { target: йти }, "."], rule: { uk: ["після ", { term: тре́ба }, " — інфінітив"], en: ["after ", { term: тре́ба }, ", the infinitive"], es: ["después de ", { term: тре́ба }, ", el infinitivo"] } }
+          - { level: A2, wrong: Тут не мо́жно пали́ти., right: ["Тут не ", { target: мо́жна }, " пали́ти."], rule: { uk: [{ term: мо́жна }, "; форма ", { term: мо́жно }, " узята з російської"], en: [{ term: мо́жна }, "; the form ", { term: мо́жно }, " comes from Russian"], es: [{ term: мо́жна }, "; la forma ", { term: мо́жно }, " viene del ruso"] } }
+          - { level: B1, wrong: Я до́лжен іти́., right: ["Я ", { target: пови́нен }, " іти́."], rule: { uk: [{ term: до́лжен }, " — російське слово; українською ", { term: пови́нен }], en: [{ term: до́лжен }, " is Russian; Ukrainian says ", { term: пови́нен }], es: [{ term: до́лжен }, " es ruso; en ucraniano se dice ", { term: пови́нен }] } }
+          - { level: B1, wrong: Вона́ пови́нен прийти́., right: ["Вона́ ", { target: пови́нна }, " прийти́."], rule: { uk: [{ term: пови́нен }, " змінюється за родом: ", { term: пови́нна }], en: [{ term: пови́нен }, " agrees in gender: ", { term: пови́нна }], es: [{ term: пови́нен }, " concuerda en género: ", { term: пови́нна }] } }
+          - { level: B1, speakers: [es], wrong: Вони́ пови́нен прийти́., right: ["Вони́ ", { target: пови́нні }, " прийти́."], rule: { es: [{ term: пови́нен }, " no es un verbo como deber: concuerda en número, ", { term: пови́нні }, " en plural"] } }

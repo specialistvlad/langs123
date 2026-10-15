@@ -1,0 +1,241 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.numerals.numbers-with-nouns
+lang: uk
+kind: grammar
+tags: [numerals, nouns, cases, quantity]
+concepts: [numerals-with-nouns, numbers]
+related: [uk.foundations.numbers, uk.numerals.age, uk.nouns-cases.genitive, uk.nouns-cases.plural, uk.numerals.ordinals]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "4947b3 bdb8cd 68a5c5 0d5760 064bd1 9eb2bf cb7088", es: "4947b3 bdb8cd 68a5c5 0d5760 064bd1 9eb2bf cb7088" }
+
+title: { uk: "Числівник та іменник", en: "Numbers with Nouns", es: "Los números con sustantivos" }
+summary:
+  lead:
+    uk: ["Після ", { term: оди́н }, " іменник стоїть в однині, після ", { alternatives: [{ term: два }, { term: три }, { term: чоти́ри }] }, " — у називному множини, після ", { term: п’ять }, " і більше — у родовому множини."]
+    en: ["After ", { term: оди́н }, " the noun is singular, after ", { alternatives: [{ term: два }, { term: три }, { term: чоти́ри }] }, " nominative plural, and after ", { term: п’ять }, " and up genitive plural."]
+    es: ["Tras ", { term: оди́н }, " el sustantivo va en singular; tras ", { alternatives: [{ term: два }, { term: три }, { term: чоти́ри }] }, ", en nominativo plural, y desde ", { term: п’ять }, ", en genitivo plural."]
+  rule:
+    uk: "Форму іменника визначає останнє слово числівника:"
+    en: "The last word of the number sets the form of the noun:"
+    es: "La última palabra del número decide la forma del sustantivo:"
+  ex: { examples: [["два́дцять ", { target: два студе́нти }], ["два́дцять ", { target: п’ять студе́нтів }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Один, en: One, es: Uno }
+          rule:
+            uk: [{ alternatives: [{ term: оди́н }, { term: одна́ }, { term: одне́ }] }, " — за родом, іменник в однині"]
+            en: [{ alternatives: [{ term: оди́н }, { term: одна́ }, { term: одне́ }] }, " by gender, the noun singular"]
+            es: [{ alternatives: [{ term: оди́н }, { term: одна́ }, { term: одне́ }] }, " según el género; el sustantivo, en singular"]
+          ex: ["У ме́не ", { target: одна́ сестра́ }, "."]
+          tr: { en: "I have one sister.", es: "Tengo una hermana." }
+        - level: A2
+          point: { uk: "Два, три, чотири", en: "Two, three, four", es: "Dos, tres, cuatro" }
+          rule:
+            uk: "називний множини"
+            en: "the nominative plural"
+            es: "el nominativo plural"
+          ex: [{ target: Два квитки́ }, ", будь ла́ска."]
+          tr: { en: "Two tickets, please.", es: "Dos boletos, por favor." }
+        - level: A2
+          point: { uk: Два і дві, en: Два and дві, es: Два y дві }
+          rule:
+            uk: [{ term: дві }, " з жіночим родом"]
+            en: [{ term: дві }, " with a feminine noun"]
+            es: [{ term: дві }, " con un femenino"]
+          ex: ["Ка́ва ко́штує ", { target: дві гри́вні }, "."]
+          tr: { en: "The coffee costs two hryvnias.", es: "El café cuesta dos grivnas." }
+        - level: A2
+          point: { uk: П’ять і більше, en: Five and up, es: Cinco o más }
+          rule:
+            uk: "родовий множини"
+            en: "the genitive plural"
+            es: "el genitivo plural"
+          ex: ["Квито́к ко́штує ", { target: п’ятдеся́т гри́вень }, "."]
+          tr: { en: "The ticket costs fifty hryvnias.", es: "El boleto cuesta cincuenta grivnas." }
+        - level: A2
+          point: { uk: Складені, en: Compound numbers, es: Números compuestos }
+          rule:
+            uk: "за останнім словом"
+            en: "the last word decides"
+            es: "decide la última palabra"
+          ex: ["У гру́пі ", { target: два́дцять два студе́нти }, "."]
+          tr: { en: "There are twenty-two students in the group.", es: "En el grupo hay veintidós estudiantes." }
+        - level: A2
+          point: { uk: Багато і кілька, en: Many and several, es: Mucho y varios }
+          rule:
+            uk: [{ alternatives: [{ term: бага́то }, { term: кі́лька }] }, " з родовим"]
+            en: [{ alternatives: [{ term: бага́то }, { term: кі́лька }] }, " with the genitive"]
+            es: [{ alternatives: [{ term: бага́то }, { term: кі́лька }] }, " con genitivo"]
+          ex: ["Тре́ба ї́сти ", { target: бага́то фру́ктів }, "."]
+          tr: { en: "You should eat plenty of fruit.", es: "Hay que comer mucha fruta." }
+        - level: B1
+          point: { uk: Відмінки, en: Cases, es: Casos }
+          rule:
+            uk: { alternatives: [{ term: двох }, { term: двом }, { term: двома́ }] }
+            en: { alternatives: [{ term: двох }, { term: двом }, { term: двома́ }] }
+            es: { alternatives: [{ term: двох }, { term: двом }, { term: двома́ }] }
+          ex: ["Ми ї́хали ", { target: з двома́ дру́зями }, "."]
+          tr: { en: "We travelled with two friends.", es: "Viajamos con dos amigos." }
+        - level: B1
+          point: { uk: Люди, en: People, es: Personas }
+          rule:
+            uk: ["знахідний = родовий: ", { term: двох }]
+            en: ["accusative = genitive: ", { term: двох }]
+            es: ["acusativo = genitivo: ", { term: двох }]
+          ex: ["Я ба́чу ", { target: двох студе́нтів }, "."]
+          tr: { en: "I can see two students.", es: "Veo a dos estudiantes." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["гроші після ", { term: п’ять }, " — теж родовий множини: ", { term: п’ять гри́вень }]
+            en: ["money after ", { term: п’ять }, " takes the genitive plural too: ", { term: п’ять гри́вень }]
+            es: ["el dinero tras ", { term: п’ять }, " también va en genitivo plural: ", { term: п’ять гри́вень }]
+          ex: ["Хліб ко́штує ", { target: п’ять гри́вень }, "."]
+          tr: { en: "Bread costs five hryvnias.", es: "El pan cuesta cinco grivnas." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: paradigm
+        columns:
+          - { key: number, label: { uk: Число, en: Number, es: Número } }
+          - { key: masc, label: { uk: Чоловічий рід, en: Masculine, es: Masculino }, features: { gender: masc } }
+          - { key: fem, label: { uk: Жіночий рід, en: Feminine, es: Femenino }, features: { gender: fem } }
+          - { key: neut, label: { uk: Середній рід, en: Neuter, es: Neutro }, features: { gender: neut } }
+        rows:
+          - { level: A2, features: { number: sg, case: nom }, number: "1", masc: оди́н студе́нт, fem: одна́ гри́вня, neut: одне́ я́блуко }
+          - { level: A2, features: { number: pl, case: nom }, number: "2–4", masc: ["два студе́нт", { ending: и }], fem: ["дві гри́вн", { ending: і }], neut: ["два я́блук", { ending: а }] }
+          - { level: A2, features: { number: pl, case: gen }, number: "5–20", masc: ["п’ять студе́нт", { ending: ів }], fem: п’ять гри́вень, neut: п’ять я́блук }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "Після 2, 3, 4 іменник стоїть у називному множини, після 5–20 — у родовому множини:"
+              en: "After 2, 3 and 4 the noun takes the nominative plural; after 5 to 20, the genitive plural:"
+              es: "Tras 2, 3 y 4 el sustantivo va en nominativo plural; de 5 a 20, en genitivo plural:"
+            ex: { examples: [["три ", { target: кни́жки }], ["ві́сім ", { target: книжо́к }]] }
+            tr: { en: { examples: ["three books", "eight books"] }, es: { examples: ["tres libros", "ocho libros"] } }
+          - type: note
+            level: A2
+            text:
+              uk: ["Форми родового множини: ", { link: Родовий відмінок, to: uk.nouns-cases.genitive }, "."]
+              en: ["The genitive plural forms: ", { link: Genitive Case, to: uk.nouns-cases.genitive }, "."]
+              es: ["Las formas del genitivo plural: ", { link: El caso genitivo, to: uk.nouns-cases.genitive }, "."]
+
+  - title: { uk: Форма, en: Form, es: Forma }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Числівник, en: Number, es: Número } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            form: { uk: [{ alternatives: [{ term: оди́н }, { term: одна́ }, { term: одне́ }] }, ": рід іменника"], en: [{ alternatives: [{ term: оди́н }, { term: одна́ }, { term: одне́ }] }, ": the noun's gender"], es: [{ alternatives: [{ term: оди́н }, { term: одна́ }, { term: одне́ }] }, ": el género del sustantivo"] }
+            ex: ["Мені́ ", { target: одну́ ка́ву }, ", будь ла́ска."]
+            tr: { en: "One coffee for me, please.", es: "Un café para mí, por favor." }
+          - level: A2
+            form: { uk: [{ term: оди́н }, " відмінюється: ", { alternatives: [{ term: одного́ }, { term: одно́му }, { term: одни́м }] }], en: [{ term: оди́н }, " changes for case: ", { alternatives: [{ term: одного́ }, { term: одно́му }, { term: одни́м }] }], es: [{ term: оди́н }, " se declina: ", { alternatives: [{ term: одного́ }, { term: одно́му }, { term: одни́м }] }] }
+            ex: ["Я ма́ю ", { target: одного́ бра́та }, "."]
+            tr: { en: "I have one brother.", es: "Tengo un hermano." }
+          - level: A2
+            form: { uk: [{ term: два }, " — чоловічий і середній рід, ", { term: дві }, " — жіночий"], en: [{ term: два }, " for masculine and neuter, ", { term: дві }, " for feminine"], es: [{ term: два }, " con masculino y neutro; ", { term: дві }, " con femenino"] }
+            ex: ["Я ма́ю ", { target: дві сестри́ }, "."]
+            tr: { en: "I have two sisters.", es: "Tengo dos hermanas." }
+          - level: A2
+            form: { uk: "складений числівник: за останнім словом", en: "a compound number: the last word decides", es: "un número compuesto: decide la última palabra" }
+            ex: ["Це ко́штує ", { target: два́дцять одну́ гри́вню }, "."]
+            tr: { en: "It costs twenty-one hryvnias.", es: "Cuesta veintiuna grivnas." }
+          - level: A2
+            form: { uk: [{ alternatives: [{ term: півтора́ }, { term: півтори́ }] }, " з родовим однини"], en: [{ alternatives: [{ term: півтора́ }, { term: півтори́ }] }, " (one and a half) with the genitive singular"], es: [{ alternatives: [{ term: півтора́ }, { term: півтори́ }] }, " (uno y medio) con genitivo singular"] }
+            ex: ["Ми чека́ли ", { target: півтори́ годи́ни }, "."]
+            tr: { en: "We waited an hour and a half.", es: "Esperamos una hora y media." }
+          - level: B1
+            form: { uk: [{ term: одні́ }, " — з іменниками, що мають лише множину"], en: [{ term: одні́ }, " with nouns that exist only in the plural"], es: [{ term: одні́ }, " con sustantivos que solo tienen plural"] }
+            ex: ["У кімна́ті ", { target: одні́ две́рі }, "."]
+            tr: { en: "The room has one door.", es: "La habitación tiene una sola puerta." }
+
+  - title: { uk: "Багато, мало, кілька", en: "Many, few, several", es: "Mucho, poco, varios" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            form: { uk: [{ alternatives: [{ term: бага́то }, { term: ма́ло }, { term: кі́лька }] }, " з родовим множини"], en: [{ alternatives: [{ term: бага́то }, { term: ма́ло }, { term: кі́лька }] }, " with the genitive plural"], es: [{ alternatives: [{ term: бага́то }, { term: ма́ло }, { term: кі́лька }] }, " con genitivo plural"] }
+            ex: ["У мі́сті ", { target: бага́то тури́стів }, "."]
+            tr: { en: "There are a lot of tourists in the city.", es: "En la ciudad hay muchos turistas." }
+          - level: A2
+            form: { uk: [{ alternatives: [{ term: бага́то }, { term: ма́ло }] }, " з родовим однини: незлічуване"], en: [{ alternatives: [{ term: бага́то }, { term: ма́ло }] }, " with the genitive singular: uncountable"], es: [{ alternatives: [{ term: бага́то }, { term: ма́ло }] }, " con genitivo singular: incontable"] }
+            ex: ["У ме́не ", { target: ма́ло ча́су }, "."]
+            tr: { en: "I don't have much time.", es: "Tengo poco tiempo." }
+          - level: B1
+            form: { uk: [{ term: кі́лька }, " відмінюється: ", { alternatives: [{ term: кілько́х }, { term: кілько́м }, { term: кількома́ }] }], en: [{ term: кі́лька }, " changes for case: ", { alternatives: [{ term: кілько́х }, { term: кілько́м }, { term: кількома́ }] }], es: [{ term: кі́лька }, " se declina: ", { alternatives: [{ term: кілько́х }, { term: кілько́м }, { term: кількома́ }] }] }
+            ex: ["Я говори́в ", { target: із кількома́ студе́нтами }, "."]
+            tr: { en: "I spoke with several students.", es: "Hablé con varios estudiantes." }
+          - level: B1
+            form: { uk: [{ term: бага́то }, " відмінюється: ", { alternatives: [{ term: багатьо́х }, { term: багатьо́м }, { term: багатьма́ }] }], en: [{ term: бага́то }, " changes for case: ", { alternatives: [{ term: багатьо́х }, { term: багатьо́м }, { term: багатьма́ }] }], es: [{ term: бага́то }, " se declina: ", { alternatives: [{ term: багатьо́х }, { term: багатьо́м }, { term: багатьма́ }] }] }
+            ex: ["Він знайо́мий ", { target: із багатьма́ акто́рами }, "."]
+            tr: { en: "He knows a lot of actors.", es: "Conoce a muchos actores." }
+          - level: B1
+            form: { uk: [{ term: де́кілька }, " — так само, як ", { term: кі́лька }, ": ", { alternatives: [{ term: де́кількох }, { term: де́кільком }, { term: де́кількома }] }], en: [{ term: де́кілька }, " (a few) works like ", { term: кі́лька }, ": ", { alternatives: [{ term: де́кількох }, { term: де́кільком }, { term: де́кількома }] }], es: [{ term: де́кілька }, " (unos cuantos) funciona como ", { term: кі́лька }, ": ", { alternatives: [{ term: де́кількох }, { term: де́кільком }, { term: де́кількома }] }] }
+            ex: ["Ми чека́ли ", { target: де́кілька хвили́н }, "."]
+            tr: { en: "We waited a few minutes.", es: "Esperamos unos minutos." }
+
+  - title: { uk: "Відмінювання: два, три, чотири", en: "Case forms: два, три, чотири", es: "Declinación: два, три, чотири" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок, en: Case, es: Caso } }
+          - { key: two, label: два }
+          - { key: three, label: три }
+          - { key: four, label: чоти́ри }
+        rows:
+          - { level: B1, features: { case: nom }, case: { uk: Називний, en: Nominative, es: Nominativo }, two: { alternatives: [два, дві] }, three: три, four: чоти́ри }
+          - { level: B1, features: { case: gen }, case: { uk: Родовий, en: Genitive, es: Genitivo }, two: двох, three: трьох, four: чотирьо́х }
+          - { level: B1, features: { case: dat }, case: { uk: Давальний, en: Dative, es: Dativo }, two: двом, three: трьом, four: чотирьо́м }
+          - { level: B1, features: { case: ins }, case: { uk: Орудний, en: Instrumental, es: Instrumental }, two: двома́, three: трьома́, four: чотирма́ }
+          - { level: B1, features: { case: loc }, case: { uk: Місцевий, en: Locative, es: Locativo }, two: на двох, three: на трьох, four: на чотирьо́х }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: "У непрямих відмінках числівник і іменник стоять в одному відмінку:"
+              en: "In the other cases, the number and the noun take the same case:"
+              es: "En los demás casos, el número y el sustantivo van en el mismo caso:"
+            ex: ["Подару́нки ", { target: трьом дру́зям }, "."]
+            tr: { en: "Presents for three friends.", es: "Regalos para tres amigos." }
+          - type: rule
+            level: B1
+            text:
+              uk: "У знахідному назви людей і тварин мають форму родового:"
+              en: "In the accusative, nouns for people and animals take the genitive form:"
+              es: "En acusativo, los nombres de personas y animales toman la forma del genitivo:"
+            ex: ["Я запроси́в ", { target: трьох коле́г }, "."]
+            tr: { en: "I invited three colleagues.", es: "Invité a tres colegas." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: п’ять гри́вні, right: { target: п’ять гри́вень }, rule: { uk: ["після ", { term: п’ять }, " — родовий множини"], en: ["after ", { term: п’ять }, ", the genitive plural"], es: ["después de ", { term: п’ять }, ", el genitivo plural"] } }
+          - { level: A2, wrong: два студе́нтів, right: { target: два студе́нти }, rule: { uk: ["після ", { term: два }, " — називний множини"], en: ["after ", { term: два }, ", the nominative plural"], es: ["después de ", { term: два }, ", el nominativo plural"] } }
+          - { level: A2, wrong: два гри́вні, right: { target: дві гри́вні }, rule: { uk: ["з жіночим родом — ", { term: дві }], en: ["with a feminine noun: ", { term: дві }], es: ["con un femenino: ", { term: дві }] } }
+          - { level: A2, speakers: [en, es], wrong: п’ять студе́нти, right: { target: п’ять студе́нтів }, rule: { en: ["from ", { term: п’ять }, " on, the noun takes the genitive plural, not the ordinary plural"], es: ["desde ", { term: п’ять }, ", el sustantivo va en genitivo plural, no en el plural corriente"] } }
+          - { level: A2, wrong: полтора́ годи́ни, right: [{ target: півтори́ }, " годи́ни"], rule: { uk: [{ term: полтора́ }, " — з російської; українською ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], en: [{ term: полтора́ }, " comes from Russian; Ukrainian says ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], es: [{ term: полтора́ }, " viene del ruso; en ucraniano se dice ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }] } }
+          - { level: B1, wrong: Ми ї́хали з два дру́зі., right: ["Ми ї́хали ", { target: з двома́ дру́зями }, "."], rule: { uk: "числівник відмінюється разом з іменником", en: "the number changes for case with the noun", es: "el número se declina junto con el sustantivo" } }

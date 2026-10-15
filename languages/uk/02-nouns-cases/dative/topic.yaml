@@ -1,0 +1,247 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.dative
+lang: uk
+kind: grammar
+tags: [cases, dative, nouns, pronouns]
+concepts: [cases]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.declension-alternations, uk.numerals.age, uk.verbs-present.liking, uk.pronouns.personal-pronouns]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "af2c10 cc46ae f6d01c 3883f5 6b9065 45de18 52a185", es: "af2c10 cc46ae f6d01c 3883f5 6b9065 45de18 52a185" }
+
+title: { uk: Давальний відмінок, en: Dative Case, es: El caso dativo }
+summary:
+  lead:
+    uk: ["Давальний відмінок відповідає на питання ", { term: кому́? }, " ", { term: чому́? }, ": він називає того, кому щось дають, кажуть чи роблять."]
+    en: ["The dative answers ", { term: кому́? }, " (to whom?) and ", { term: чому́? }, " (to what?): it names the person something is given, said or done to."]
+    es: ["El dativo responde a ", { term: кому́? }, " y ", { term: чому́? }, " (¿a quién?, ¿a qué?): nombra a quien se da, se dice o se hace algo."]
+  rule:
+    uk: ["Іменники чоловічого роду мають ", { term: -ові }, " або ", { term: -у }, ", жіночого — ", { term: -і }, ":"]
+    en: ["Masculine nouns take ", { term: -ові }, " or ", { term: -у }, ", feminine nouns ", { term: -і }, ":"]
+    es: ["Los masculinos toman ", { term: -ові }, " o ", { term: -у }, "; los femeninos, ", { term: -і }, ":"]
+  ex: { examples: [["Я дзвоню́ ", { target: бра́тові }, "."], ["Я допомага́ю ", { target: ма́мі }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule:
+            uk: [{ term: -ові }, " або ", { term: -у }]
+            en: [{ term: -ові }, " or ", { term: -у }]
+            es: [{ term: -ові }, " o ", { term: -у }]
+          ex: ["Я дзвоню́ ", { target: бра́тові }, "."]
+          tr: { en: "I'm calling my brother.", es: "Llamo a mi hermano." }
+        - level: A2
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: ["закінчення ", { term: -і }]
+            en: ["the ending ", { term: -і }]
+            es: ["la terminación ", { term: -і }]
+          ex: ["Я пишу́ ", { target: сестрі́ }, "."]
+          tr: { en: "I'm writing to my sister.", es: "Le escribo a mi hermana." }
+        - level: A2
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule:
+            uk: [{ term: -у }, " (", { term: -ю }, ")"]
+            en: [{ term: -у }, " (", { term: -ю }, ")"]
+            es: [{ term: -у }, " (", { term: -ю }, ")"]
+          ex: ["Цьому́ ", { target: мі́сту }, " п’ятсо́т ро́ків."]
+          tr: { en: "This city is five hundred years old.", es: "Esta ciudad tiene quinientos años." }
+        - level: A2
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule:
+            uk: { alternatives: [{ term: -ам }, { term: -ям }] }
+            en: { alternatives: [{ term: -ам }, { term: -ям }] }
+            es: { alternatives: [{ term: -ам }, { term: -ям }] }
+          ex: ["Я допомага́ю ", { target: дру́зям }, "."]
+          tr: { en: "I help my friends.", es: "Ayudo a mis amigos." }
+        - level: A1
+          point: { uk: Займенники, en: Pronouns, es: Pronombres }
+          rule:
+            uk: { alternatives: [{ term: мені́ }, { term: тобі́ }, { term: нам }, { term: вам }] }
+            en: { alternatives: [{ term: мені́ }, { term: тобі́ }, { term: нам }, { term: вам }] }
+            es: { alternatives: [{ term: мені́ }, { term: тобі́ }, { term: нам }, { term: вам }] }
+          ex: ["Да́йте ", { target: мені́ }, " ка́ву, будь ла́ска."]
+          tr: { en: "A coffee for me, please.", es: "Un café para mí, por favor." }
+        - level: A2
+          point: { uk: Займенники, en: Pronouns, es: Pronombres }
+          rule:
+            uk: { alternatives: [{ term: йому́ }, { term: їй }, { term: їм }] }
+            en: { alternatives: [{ term: йому́ }, { term: їй }, { term: їм }] }
+            es: { alternatives: [{ term: йому́ }, { term: їй }, { term: їм }] }
+          ex: ["Я допомага́ю ", { target: їй }, "."]
+          tr: { en: "I help her.", es: "La ayudo." }
+        - level: A2
+          point: { uk: Вік, en: Age, es: Edad }
+          rule:
+            uk: "кому? і кількість років"
+            en: "to whom? and the number of years"
+            es: "¿a quién? y el número de años"
+          ex: [{ target: Дідусе́ві }, " вісімдеся́т ро́ків."]
+          tr: { en: "Grandpa is eighty.", es: "El abuelo tiene ochenta años." }
+        - level: A2
+          point: { uk: Дієслова, en: Verbs, es: Verbos }
+          rule:
+            uk: [{ alternatives: [{ term: допомага́ти }, { term: дзвони́ти }, { term: дя́кувати }] }, " кому?"]
+            en: [{ alternatives: [{ term: допомага́ти }, { term: дзвони́ти }, { term: дя́кувати }] }, " to whom?"]
+            es: [{ alternatives: [{ term: допомага́ти }, { term: дзвони́ти }, { term: дя́кувати }] }, " ¿a quién?"]
+          ex: ["Я допомага́ю ", { target: бабу́сі }, "."]
+          tr: { en: "I help my grandma.", es: "Ayudo a mi abuela." }
+        - level: B1
+          point: { uk: Стан, en: State, es: Estado }
+          rule:
+            uk: "кому? як?"
+            en: "who feels how?"
+            es: "¿quién se siente cómo?"
+          ex: [{ target: Мені́ }, " хо́лодно."]
+          tr: { en: "I'm cold.", es: "Tengo frío." }
+        - level: B1
+          point: { uk: Потреба, en: Need, es: Necesidad }
+          rule:
+            uk: [{ alternatives: [{ term: тре́ба }, { term: потрі́бно }] }, " кому?"]
+            en: [{ alternatives: [{ term: тре́ба }, { term: потрі́бно }] }, ": who needs it?"]
+            es: [{ alternatives: [{ term: тре́ба }, { term: потрі́бно }] }, ": ¿quién lo necesita?"]
+          ex: [{ target: Тобі́ }, " тре́ба відпочи́ти."]
+          tr: { en: "You need to rest.", es: "Necesitas descansar." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: [{ term: дя́кувати }, " кому?: ", { term: дя́кую вам }]
+            en: [{ term: дя́кувати }, " to whom?: ", { term: дя́кую вам }]
+            es: [{ term: дя́кувати }, " ¿a quién?: ", { term: дя́кую вам }]
+          ex: ["Дя́кую ", { target: вам }, "!"]
+          tr: { en: "Thank you!", es: "¡Gracias!" }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Давальний відповідає на питання ", { term: кому́? }, " ", { term: чому́? }, " і називає того, кому щось дають чи кажуть:"]
+              en: ["The dative answers ", { term: кому́? }, " and ", { term: чому́? }, " and names the person something is given or said to:"]
+              es: ["El dativo responde a ", { term: кому́? }, " y ", { term: чому́? }, " y nombra a quien se da o se dice algo:"]
+            ex: ["Я дару́ю ", { target: ма́мі }, " кві́ти."]
+            tr: { en: "I'm giving Mum flowers.", es: "Le regalo flores a mamá." }
+
+  - title: { uk: "Форма: іменники", en: "Form: nouns", es: "Forma: sustantivos" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: dat, label: { uk: Давальний, en: Dative, es: Dativo }, features: { case: dat } }
+        rows:
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, тверда основа", en: "Masculine, hard stem", es: "Masculino, raíz dura" }, nom: брат, dat: { alternatives: [["бра́т", { ending: ові }], ["бра́т", { ending: у }]] } }
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, м’яка основа", en: "Masculine, soft stem", es: "Masculino, raíz blanda" }, nom: { alternatives: [учи́тель, Андрі́й] }, dat: { alternatives: [["учи́тел", { ending: еві }], ["учи́тел", { ending: ю }], ["Андрі́", { ending: єві }], ["Андрі́", { ending: ю }]] } }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -а", en: "Feminine in -а", es: "Femenino en -а" }, nom: { alternatives: [ма́ма, сестра́] }, dat: { alternatives: [["ма́м", { ending: і }], ["сестр", { ending: і́ }]] } }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -я, -ія", en: "Feminine in -я, -ія", es: "Femenino en -я, -ія" }, nom: { alternatives: [бабу́ся, Марі́я] }, dat: { alternatives: [["бабу́с", { ending: і }], ["Марі́", { ending: ї }]] } }
+          - { level: A2, features: { gender: neut, number: sg }, group: { uk: "Середній рід", en: "Neuter", es: "Neutro" }, nom: { alternatives: [мі́сто, мо́ре] }, dat: { alternatives: [["мі́ст", { ending: у }], ["мо́р", { ending: ю }]] } }
+          - { level: A2, features: { number: pl }, group: { uk: "Множина", en: "Plural", es: "Plural" }, nom: { alternatives: [батьки́, дру́зі] }, dat: { alternatives: [["батьк", { ending: а́м }], ["дру́з", { ending: ям }]] } }
+          - { level: B1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід без закінчення", en: "Feminine with no ending", es: "Femenino sin terminación" }, nom: { alternatives: [о́сінь, ніч] }, dat: { alternatives: [["о́сен", { ending: і }], ["но́ч", { ending: і }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Перед ", { term: -і }, " приголосні ", { letter: г }, ", ", { letter: к }, ", ", { letter: х }, " стають ", { letter: з }, ", ", { letter: ц }, ", ", { letter: с }, ":"]
+              en: ["Before ", { term: -і }, ", the consonants ", { letter: г }, ", ", { letter: к }, " and ", { letter: х }, " become ", { letter: з }, ", ", { letter: ц }, " and ", { letter: с }, ":"]
+              es: ["Ante ", { term: -і }, ", las consonantes ", { letter: г }, ", ", { letter: к }, " y ", { letter: х }, " pasan a ", { letter: з }, ", ", { letter: ц }, " y ", { letter: с }, ":"]
+            ex: ["Я дзвоню́ ", { target: жі́нці }, "."]
+            tr: { en: "I'm calling my wife.", es: "Llamo a mi mujer." }
+          - type: note
+            level: B1
+            text:
+              uk: "Так само змінюються імена й інші слова:"
+              en: "Names and other nouns change the same way:"
+              es: "Los nombres y otros sustantivos cambian igual:"
+            ex: ["Переда́й ", { target: О́льзі }, " приві́т."]
+            tr: { en: "Say hi to Olha.", es: "Saluda a Olha de mi parte." }
+
+  - title: { uk: "Форма: займенники", en: "Form: pronouns", es: "Forma: pronombres" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: dat, label: { uk: Давальний, en: Dative, es: Dativo }, features: { case: dat } }
+        rows:
+          - { level: A1, features: { person: 1, number: sg }, nom: я, dat: мені́ }
+          - { level: A1, features: { person: 2, number: sg }, nom: ти, dat: тобі́ }
+          - { level: A2, features: { person: 3, number: sg, gender: [masc, neut] }, nom: { alternatives: [він, воно́] }, dat: йому́ }
+          - { level: A2, features: { person: 3, number: sg, gender: fem }, nom: вона́, dat: їй }
+          - { level: A1, features: { person: 1, number: pl }, nom: ми, dat: нам }
+          - { level: A1, features: { person: 2, number: pl }, nom: ви, dat: вам }
+          - { level: A2, features: { person: 3, number: pl }, nom: вони́, dat: їм }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: "кому даємо, кажемо, пишемо", en: "who gets, hears or reads it", es: "a quién se da, se dice o se escribe" }
+            ex: ["Подару́й кни́жку ", { target: студе́нтові }, "."]
+            tr: { en: "Give the student a book as a present.", es: "Regálale un libro al estudiante." }
+          - level: A2
+            use: { uk: ["після ", { alternatives: [{ term: допомага́ти }, { term: дзвони́ти }, { term: дя́кувати }] }], en: ["after ", { alternatives: [{ term: допомага́ти }, { term: дзвони́ти }, { term: дя́кувати }] }], es: ["después de ", { alternatives: [{ term: допомага́ти }, { term: дзвони́ти }, { term: дя́кувати }] }] }
+            ex: ["Я допомага́ю ", { target: бабу́сі }, "."]
+            tr: { en: "I help my grandma.", es: "Ayudo a mi abuela." }
+          - level: A2
+            use: { uk: "вік", en: "age", es: "la edad" }
+            ex: [{ target: Дідусе́ві }, " вісімдеся́т ро́ків."]
+            tr: { en: "Grandpa is eighty.", es: "El abuelo tiene ochenta años." }
+          - level: A2
+            use: { uk: ["кому ", { term: подо́бається }], en: ["who likes something: after ", { term: подо́бається }], es: ["a quién le gusta algo: con ", { term: подо́бається }] }
+            ex: [{ target: Студе́нтам }, " сподо́балася екску́рсія."]
+            tr: { en: "The students liked the tour.", es: "A los estudiantes les gustó la excursión." }
+          - level: B1
+            use: { uk: "стан людини", en: "how someone feels", es: "cómo se siente alguien" }
+            ex: [{ target: Нам }, " ве́село."]
+            tr: { en: "We're having fun.", es: "Nos lo pasamos bien." }
+          - level: B1
+            use: { uk: "адресат", en: "the addressee", es: "el destinatario" }
+            ex: ["Я щоти́жня пишу́ ", { target: батька́м }, "."]
+            tr: { en: "I write to my parents every week.", es: "Escribo a mis padres cada semana." }
+          - level: B1
+            use: { uk: ["потреба: ", { alternatives: [{ term: тре́ба }, { term: потрі́бен }] }], en: ["need: ", { alternatives: [{ term: тре́ба }, { term: потрі́бен }] }], es: ["necesidad: ", { alternatives: [{ term: тре́ба }, { term: потрі́бен }] }] }
+            ex: [{ target: Оле́ні }, " потрі́бна допомо́га."]
+            tr: { en: "Olena needs help.", es: "Olena necesita ayuda." }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            text:
+              uk: ["Вік: ", { link: "Вік: мені двадцять років", to: uk.numerals.age }, "."]
+              en: ["Age: ", { link: "Age: мені двадцять років", to: uk.numerals.age }, "."]
+              es: ["La edad: ", { link: "La edad: мені двадцять років", to: uk.numerals.age }, "."]
+          - type: note
+            level: A2
+            text:
+              uk: ["Більше про ", { term: подо́батися }, ": ", { link: Мені подобається, to: uk.verbs-present.liking }, "."]
+              en: ["More on ", { term: подо́батися }, ": ", { link: "Liking: мені подобається", to: uk.verbs-present.liking }, "."]
+              es: ["Más sobre ", { term: подо́батися }, ": ", { link: "Gustar: мені подобається", to: uk.verbs-present.liking }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Дя́кую вас., right: ["Дя́кую ", { target: вам }, "."], rule: { uk: [{ term: дя́кувати }, " кому? — давальний; ", { term: дя́кую вас }, " — з російської"], en: [{ term: дя́кувати }, " takes the dative; ", { term: дя́кую вас }, " comes from Russian"], es: [{ term: дя́кувати }, " pide dativo; ", { term: дя́кую вас }, " viene del ruso"] } }
+          - { level: A2, wrong: Ви́бачте мене́., right: ["Ви́бачте ", { target: мені́ }, "."], rule: { uk: [{ term: вибача́ти }, " кому? — давальний; ", { term: ви́бачте мене́ }, " — з російської"], en: [{ term: вибача́ти }, " takes the dative; ", { term: ви́бачте мене́ }, " comes from Russian"], es: [{ term: вибача́ти }, " pide dativo; ", { term: ви́бачте мене́ }, " viene del ruso"] } }
+          - { level: A2, wrong: Я допомага́ю ма́му., right: ["Я допомага́ю ", { target: ма́мі }, "."], rule: { uk: [{ term: допомага́ти }, " кому? — давальний"], en: [{ term: допомага́ти }, " takes the dative"], es: [{ term: допомага́ти }, " pide dativo"] } }
+          - { level: A2, speakers: [en], wrong: Я дзвоню́ ма́му., right: ["Я дзвоню́ ", { target: ма́мі }, "."], rule: { en: [{ term: дзвони́ти }, " takes the dative: you call ", { term: кому́? }] } }
+          - { level: A2, speakers: [es], wrong: Я ма́ю два́дцять ро́ків., right: [{ target: Мені́ }, " два́дцять ро́ків."], rule: { es: ["la edad se dice con la persona en dativo, sin «tener»: ", { term: мені́ }] } }
+          - { level: B1, speakers: [en], wrong: Я холо́дний., right: [{ target: Мені́ хо́лодно }, "."], rule: { en: ["“I'm cold” names the person in the dative: ", { term: мені́ хо́лодно }] } }

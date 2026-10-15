@@ -1,0 +1,265 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.gender
+lang: uk
+kind: grammar
+tags: [nouns, gender, agreement]
+concepts: [gender]
+related: [uk.nouns-cases.plural, uk.nouns-cases.cases-overview, uk.adjectives-adverbs.adjective-agreement, uk.pronouns.possessives]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "b74720 08856e fb793a c0bfdf b7b80a 81a584", es: "b74720 08856e fb793a c0bfdf b7b80a 81a584" }
+
+title: { uk: Рід іменника, en: Noun Gender, es: El género del sustantivo }
+summary:
+  lead:
+    uk: "Іменник буває чоловічого, жіночого чи середнього роду, і від роду залежить форма слів, що з ним узгоджуються."
+    en: "A noun is masculine, feminine or neuter, and its gender sets the form of the words that agree with it."
+    es: "Un sustantivo es masculino, femenino o neutro, y su género decide la forma de las palabras que concuerdan con él."
+  rule:
+    uk: ["Рід зазвичай видно із закінчення: приголосний — чоловічий, ", { term: -а }, " чи ", { term: -я }, " — жіночий, ", { term: -о }, " чи ", { term: -е }, " — середній:"]
+    en: ["The ending usually shows the gender: a consonant for masculine, ", { term: -а }, " or ", { term: -я }, " for feminine, ", { term: -о }, " or ", { term: -е }, " for neuter:"]
+    es: ["La terminación suele mostrar el género: consonante en masculino, ", { term: -а }, " o ", { term: -я }, " en femenino, ", { term: -о }, " o ", { term: -е }, " en neutro:"]
+  ex: { examples: [["Це ", { target: мій }, " стіл."], ["Це ", { target: моя́ }, " кни́жка."], ["Це ", { target: моє́ }, " мі́сто."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          features: { gender: masc }
+          point: { uk: Чоловічий рід, en: Masculine, es: Masculino }
+          rule:
+            uk: ["приголосний у кінці, також ", { alternatives: [{ term: -й }, { term: -ь }] }]
+            en: ["a final consonant, also ", { alternatives: [{ term: -й }, { term: -ь }] }]
+            es: ["consonante final, también ", { alternatives: [{ term: -й }, { term: -ь }] }]
+          ex: ["Це ", { target: мій }, " брат."]
+          tr: { en: "This is my brother.", es: "Este es mi hermano." }
+        - level: A1
+          features: { gender: fem }
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: ["закінчення ", { alternatives: [{ term: -а }, { term: -я }] }]
+            en: ["the ending ", { alternatives: [{ term: -а }, { term: -я }] }]
+            es: ["la terminación ", { alternatives: [{ term: -а }, { term: -я }] }]
+          ex: ["Це ", { target: моя́ }, " ма́ма."]
+          tr: { en: "This is my mum.", es: "Esta es mi madre." }
+        - level: A1
+          features: { gender: neut }
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule:
+            uk: ["закінчення ", { alternatives: [{ term: -о }, { term: -е }, { term: -я }] }]
+            en: ["the ending ", { alternatives: [{ term: -о }, { term: -е }, { term: -я }] }]
+            es: ["la terminación ", { alternatives: [{ term: -о }, { term: -е }, { term: -я }] }]
+          ex: ["Це ", { target: моє́ }, " вікно́."]
+          tr: { en: "This is my window.", es: "Esta es mi ventana." }
+        - level: A2
+          features: { gender: neut }
+          point: { uk: "-ння, -ття, -ччя", en: "-ння, -ття, -ччя", es: "-ння, -ття, -ччя" }
+          rule:
+            uk: "середній рід"
+            en: "neuter"
+            es: "neutro"
+          ex: ["Це ", { target: моє́ }, " завда́ння."]
+          tr: { en: "This is my task.", es: "Esta es mi tarea." }
+        - level: A1
+          point: { uk: Перевірка, en: Test, es: Prueba }
+          rule:
+            uk: ["заміна на ", { alternatives: [{ term: він }, { term: вона́ }, { term: воно́ }] }]
+            en: ["replace it with ", { alternatives: [{ term: він }, { term: вона́ }, { term: воно́ }] }]
+            es: ["se sustituye por ", { alternatives: [{ term: він }, { term: вона́ }, { term: воно́ }] }]
+          ex: { exchange: ["Де кни́жка?", [{ target: Вона́ }, " тут."]] }
+          tr: { en: { exchange: ["Where's the book?", "It's here."] }, es: { exchange: ["¿Dónde está el libro?", "Está aquí."] } }
+        - level: A1
+          point: { uk: Люди, en: People, es: Personas }
+          rule:
+            uk: "рід за статтю людини"
+            en: "the gender follows the person's sex"
+            es: "el género sigue el sexo de la persona"
+          ex: ["Це ", { target: мій }, " та́то."]
+          tr: { en: "This is my dad.", es: "Este es mi papá." }
+        - level: A1
+          point: { uk: Професії, en: Jobs, es: Profesiones }
+          rule:
+            uk: ["жіноча назва із суфіксом ", { term: -к- }, " або ", { term: -иня }]
+            en: ["the feminine name takes the suffix ", { term: -к- }, " or ", { term: -иня }]
+            es: ["el nombre femenino lleva el sufijo ", { term: -к- }, " o ", { term: -иня }]
+          ex: { examples: [["Він ", { target: студе́нт }, "."], ["Вона́ ", { target: студе́нтка }, "."]] }
+          tr: { en: { examples: ["He's a student.", "She's a student."] }, es: { examples: ["Él es estudiante.", "Ella es estudiante."] } }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["на ", { term: -ь }, " і на приголосний бувають і жіночого роду; на ", { term: -ість }, " — завжди жіночого"]
+            en: ["nouns in ", { term: -ь }, " or a consonant can be feminine too; nouns in ", { term: -ість }, " always are"]
+            es: ["los sustantivos en ", { term: -ь }, " o en consonante también pueden ser femeninos; los en ", { term: -ість }, " siempre lo son"]
+          ex: { examples: [[{ target: мій }, " день"], [{ target: моя́ }, " сіль"], [{ target: моя́ }, " ніч"], [{ target: моя́ }, " ра́дість"]] }
+          tr: { en: { examples: ["my day", "my salt", "my night", "my joy"] }, es: { examples: ["mi día", "mi sal", "mi noche", "mi alegría"] } }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: [{ term: біль }, " — чоловічого роду; ", { term: соба́ка }, " — переважно чоловічого"]
+            en: [{ term: біль }, " (pain) is masculine; ", { term: соба́ка }, " (dog) is mostly masculine"]
+            es: [{ term: біль }, " (dolor) es masculino; ", { term: соба́ка }, " (perro) es masculino casi siempre"]
+          ex: ["Це ", { target: вели́кий }, " соба́ка."]
+          tr: { en: "This is a big dog.", es: "Es un perro grande." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Кожен іменник має рід: чоловічий, жіночий або середній."
+              en: "Every noun has a gender: masculine, feminine or neuter."
+              es: "Cada sustantivo tiene género: masculino, femenino o neutro."
+            ex: { examples: [стіл, кни́жка, мі́сто] }
+            tr: { en: { examples: [table, book, city] }, es: { examples: [mesa, libro, ciudad] } }
+          - type: rule
+            level: A1
+            text:
+              uk: "Рід слова не залежить від його перекладу: треба дивитися на українське закінчення."
+              en: "A noun's gender does not follow its translation: look at the Ukrainian ending."
+              es: "El género no sigue la traducción: hay que mirar la terminación ucraniana."
+            ex: ["Мі́сто ", { target: вели́ке }, "."]
+            tr: { en: "The city is big.", es: "La ciudad es grande." }
+          - type: rule
+            level: A1
+            text:
+              uk: "Від роду залежать прикметник, присвійний займенник і дієслово в минулому часі:"
+              en: "The adjective, the possessive and the past tense of the verb all follow the gender:"
+              es: "El adjetivo, el posesivo y el verbo en pasado siguen el género:"
+            ex: { examples: [[{ target: нови́й }, " стіл"], [{ target: нова́ }, " кни́жка"], [{ target: нове́ }, " мі́сто"]] }
+            tr: { en: { examples: ["a new table", "a new book", "a new city"] }, es: { examples: ["una mesa nueva", "un libro nuevo", "una ciudad nueva"] } }
+          - type: note
+            level: A1
+            text:
+              uk: ["Форми прикметників за родом: ", { link: Узгодження прикметників, to: uk.adjectives-adverbs.adjective-agreement }, "."]
+              en: ["The forms of adjectives by gender: ", { link: Adjective Agreement, to: uk.adjectives-adverbs.adjective-agreement }, "."]
+              es: ["Las formas del adjetivo según el género: ", { link: La concordancia del adjetivo, to: uk.adjectives-adverbs.adjective-agreement }, "."]
+
+  - title: { uk: "Закінчення й рід", en: "Endings and gender", es: "Terminaciones y género" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: gender, label: { uk: Рід, en: Gender, es: Género } }
+          - { key: ending, label: { uk: Закінчення, en: Ending, es: Terminación } }
+          - { key: ex, label: { uk: Приклади, en: Examples, es: Ejemplos } }
+        rows:
+          - level: A1
+            features: { gender: masc }
+            gender: { uk: Чоловічий, en: Masculine, es: Masculino }
+            ending: { uk: ["приголосний, ", { term: -й }, ", ", { term: -ь }], en: ["a consonant, ", { term: -й }, ", ", { term: -ь }], es: ["consonante, ", { term: -й }, ", ", { term: -ь }] }
+            ex: { examples: [стіл, музе́й, учи́тель] }
+            tr: { en: { examples: [table, museum, teacher] }, es: { examples: [mesa, museo, profesor] } }
+          - level: A1
+            features: { gender: fem }
+            gender: { uk: Жіночий, en: Feminine, es: Femenino }
+            ending: { uk: { alternatives: [{ term: -а }, { term: -я }] }, en: { alternatives: [{ term: -а }, { term: -я }] }, es: { alternatives: [{ term: -а }, { term: -я }] } }
+            ex: { examples: [ма́ма, кни́жка, земля́] }
+            tr: { en: { examples: [mum, book, land] }, es: { examples: [madre, libro, tierra] } }
+          - level: A1
+            features: { gender: neut }
+            gender: { uk: Середній, en: Neuter, es: Neutro }
+            ending: { uk: { alternatives: [{ term: -о }, { term: -е }, { term: -я }] }, en: { alternatives: [{ term: -о }, { term: -е }, { term: -я }] }, es: { alternatives: [{ term: -о }, { term: -е }, { term: -я }] } }
+            ex: { examples: [мі́сто, мо́ре, завда́ння] }
+            tr: { en: { examples: [city, sea, task] }, es: { examples: [ciudad, mar, tarea] } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Займенник ", { term: він }, ", ", { term: вона́ }, " чи ", { term: воно́ }, " замінює іменник свого роду, також назву речі:"]
+              en: [{ term: він }, ", ", { term: вона́ }, " or ", { term: воно́ }, " replaces a noun of its gender, a thing included:"]
+              es: [{ term: він }, ", ", { term: вона́ }, " o ", { term: воно́ }, " sustituye a un sustantivo de su género, también a una cosa:"]
+            ex: { exchange: ["Де стіл?", [{ target: Він }, " на ку́хні."]] }
+            tr: { en: { exchange: ["Where's the table?", "It's in the kitchen."] }, es: { exchange: ["¿Dónde está la mesa?", "Está en la cocina."] } }
+          - type: note
+            level: A1
+            text:
+              uk: ["Іменники на ", { term: -ь }, " бувають чоловічого й жіночого роду, а деякі іменники на приголосний — жіночого (", { term: ніч }, ", ", { term: річ }, ", ", { term: любо́в }, "): рід подає словник."]
+              en: ["Nouns in ", { term: -ь }, " are masculine or feminine, and a few nouns in a consonant are feminine (", { term: ніч }, ", ", { term: річ }, ", ", { term: любо́в }, "): the dictionary gives the gender."]
+              es: ["Los sustantivos en ", { term: -ь }, " son masculinos o femeninos, y algunos en consonante son femeninos (", { term: ніч }, ", ", { term: річ }, ", ", { term: любо́в }, "): el diccionario da el género."]
+            ex: { examples: [[{ target: мій }, " день"], [{ target: моя́ }, " ніч"], [{ target: моя́ }, " о́сінь"]] }
+            tr: { en: { examples: ["my day", "my night", "my autumn"] }, es: { examples: ["mi día", "mi noche", "mi otoño"] } }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Іменники на ", { term: -ість }, " завжди жіночого роду:"]
+              en: ["Nouns in ", { term: -ість }, " are always feminine:"]
+              es: ["Los sustantivos en ", { term: -ість }, " siempre son femeninos:"]
+            ex: [{ target: Моя́ }, " ра́дість."]
+            tr: { en: "My joy.", es: "Mi alegría." }
+          - type: note
+            level: A2
+            text:
+              uk: ["Іменники на ", { term: -ння }, ", ", { term: -ття }, ", ", { term: -ччя }, " — середнього роду, інші на ", { term: -я }, " — жіночого:"]
+              en: ["Nouns in ", { term: -ння }, ", ", { term: -ття }, " or ", { term: -ччя }, " are neuter; other nouns in ", { term: -я }, " are feminine:"]
+              es: ["Los sustantivos en ", { term: -ння }, ", ", { term: -ття }, " o ", { term: -ччя }, " son neutros; los demás en ", { term: -я }, " son femeninos:"]
+            ex: { examples: [[{ target: нове́ }, " завда́ння"], [{ target: моє́ }, " життя́"], [{ target: моя́ }, " земля́"]] }
+            tr: { en: { examples: ["a new task", "my life", "my land"] }, es: { examples: ["una tarea nueva", "mi vida", "mi tierra"] } }
+          - type: note
+            level: A1
+            text:
+              uk: ["Запозичені іменники на голосний (", { term: кафе́ }, ", ", { term: метро́ }, ", ", { term: таксі́ }, ", ", { term: меню́ }, ", ", { term: кіно́ }, ") — середнього роду й не змінюються:"]
+              en: ["Borrowed nouns ending in a vowel (", { term: кафе́ }, ", ", { term: метро́ }, ", ", { term: таксі́ }, ", ", { term: меню́ }, ", ", { term: кіно́ }, ") are neuter and never change:"]
+              es: ["Los sustantivos tomados de otras lenguas que terminan en vocal (", { term: кафе́ }, ", ", { term: метро́ }, ", ", { term: таксі́ }, ", ", { term: меню́ }, ", ", { term: кіно́ }, ") son neutros y no cambian:"]
+            ex: { examples: [["Тут ", { target: нове́ }, " кафе́."], ["Я ї́ду ", { target: на метро́ }, "."]] }
+            tr: { en: { examples: ["There's a new café here.", "I'm going by metro."] }, es: { examples: ["Aquí hay un café nuevo.", "Voy en metro."] } }
+          - type: note
+            level: A1
+            text:
+              uk: [{ term: Соба́ка }, " зазвичай чоловічого роду, рідше — жіночого:"]
+              en: [{ term: Соба́ка }, " (dog) is usually masculine, less often feminine:"]
+              es: [{ term: Соба́ка }, " (perro) suele ser masculino, y con menos frecuencia femenino:"]
+            ex: ["Це ", { target: вели́кий }, " соба́ка."]
+            tr: { en: "This is a big dog.", es: "Es un perro grande." }
+
+  - title: { uk: "Люди й професії", en: "People and jobs", es: "Personas y profesiones" }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Назва людини має рід за статтю: ", { term: та́то }, ", ", { term: діду́сь }, ", ", { term: Мико́ла }, " — чоловічого роду."]
+              en: ["A word for a person takes the person's sex: ", { term: та́то }, ", ", { term: діду́сь }, " and ", { term: Мико́ла }, " are masculine."]
+              es: ["Una palabra para una persona toma su sexo: ", { term: та́то }, ", ", { term: діду́сь }, " y ", { term: Мико́ла }, " son masculinos."]
+            ex: ["Мико́ла ", { target: прийшо́в }, "."]
+            tr: { en: "Mykola has come.", es: "Mykola ha llegado." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Назва професії для жінки має суфікс ", { term: -к- }, " або ", { term: -иня }, ":"]
+              en: ["The name of a job for a woman takes the suffix ", { term: -к- }, " or ", { term: -иня }, ":"]
+              es: ["El nombre de una profesión para una mujer lleva el sufijo ", { term: -к- }, " o ", { term: -иня }, ":"]
+            ex: ["Вона́ ", { target: лі́карка }, "."]
+            tr: { en: "She's a doctor.", es: "Ella es médica." }
+      - type: paradigm
+        columns:
+          - { key: masc, label: { uk: Чоловік, en: Man, es: Hombre }, features: { gender: masc } }
+          - { key: fem, label: { uk: Жінка, en: Woman, es: Mujer }, features: { gender: fem } }
+        rows:
+          - { level: A1, masc: студе́нт, fem: ["студе́нт", { ending: ка }] }
+          - { level: A1, masc: виклада́ч, fem: ["виклада́ч", { ending: ка }] }
+          - { level: A1, masc: лі́кар, fem: ["лі́кар", { ending: ка }] }
+          - { level: A1, masc: украї́нець, fem: ["украї́н", { ending: ка }] }
+          - { level: A1, masc: продаве́ць, fem: ["продавч", { ending: и́ня }] }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Мій ма́ма тут., right: [{ target: Моя́ }, " ма́ма тут."], rule: { uk: [{ term: ма́ма }, " — жіночого роду: ", { term: моя́ }], en: [{ term: ма́ма }, " is feminine: ", { term: моя́ }], es: [{ term: ма́ма }, " es femenino: ", { term: моя́ }] } }
+          - { level: A1, wrong: Це моя́ та́то., right: ["Це ", { target: мій }, " та́то."], rule: { uk: [{ term: та́то }, " — чоловічого роду, хоч і на ", { term: -о }], en: [{ term: та́то }, " is masculine, even with ", { term: -о }], es: [{ term: та́то }, " es masculino, aunque termine en ", { term: -о }] } }
+          - { level: A1, wrong: Ця день була́ до́вга., right: [{ target: Цей }, " день ", { target: був до́вгий }, "."], rule: { uk: [{ term: день }, " — чоловічого роду"], en: [{ term: день }, " is masculine"], es: [{ term: день }, " es masculino"] } }
+          - { level: A1, wrong: У ме́не си́льна біль., right: ["У ме́не ", { target: си́льний }, " біль."], rule: { uk: [{ term: біль }, " — чоловічого роду; жіночий рід — з російської"], en: [{ term: біль }, " is masculine; the feminine comes from Russian"], es: [{ term: біль }, " es masculino; el femenino viene del ruso"] } }
+          - { level: A1, speakers: [en], wrong: Кни́жка тут. Воно́ нова́., right: ["Кни́жка тут. ", { target: Вона́ }, " нова́."], rule: { en: ["a thing takes ", { term: він }, ", ", { term: вона́ }, " or ", { term: воно́ }, " by its gender, never ", { term: воно́ }, " for every “it”"] } }
+          - { level: A1, speakers: [es], wrong: Моя́ мі́сто вели́ке., right: [{ target: Моє́ }, " мі́сто вели́ке."], rule: { es: [{ term: мі́сто }, " es neutro aunque «ciudad» sea femenino: ", { term: моє́ }] } }

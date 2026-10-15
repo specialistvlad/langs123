@@ -1,0 +1,214 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.future-imperative-conditional.imperative
+lang: uk
+kind: grammar
+tags: [verbs, imperative, requests]
+concepts: [imperative]
+related: [uk.past-aspect.aspect, uk.pronouns.ty-vy, uk.verbs-present.present-conjugation]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "c232c2 a40d87 98f85d 588854 b4aa1d 00331e 0ed710", es: "c232c2 a40d87 98f85d 588854 b4aa1d 00331e 0ed710" }
+
+title: { uk: Наказовий спосіб, en: Imperative, es: El imperativo }
+summary:
+  lead:
+    uk: ["Наказовий спосіб виражає прохання, пораду чи наказ: ", { term: чита́й }, " до однієї особи на «ти», ", { term: чита́йте }, " до кількох осіб і ввічливо."]
+    en: ["The imperative makes requests, suggestions and orders: ", { term: чита́й }, " to one person you call ти, ", { term: чита́йте }, " to several people and politely."]
+    es: ["El imperativo expresa peticiones, consejos y órdenes: ", { term: чита́й }, " a una persona a la que se trata de ти; ", { term: чита́йте }, ", a varias personas y con cortesía."]
+  rule:
+    uk: ["Ввічлива форма й форма множини мають ", { term: -те }, " або ", { term: -іть }, ":"]
+    en: ["The polite and plural form ends in ", { term: -те }, " or ", { term: -іть }, ":"]
+    es: ["La forma de cortesía y de plural termina en ", { term: -те }, " o ", { term: -іть }, ":"]
+  ex: { examples: [[{ target: Сіда́йте }, ", будь ла́ска."], [{ target: Скажі́ть }, ", де вокза́л?"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: "Основа на голосний", en: "Stem in a vowel", es: "Raíz en vocal" }
+          rule: { uk: { alternatives: [{ term: -й }, { term: -йте }] }, en: { alternatives: [{ term: -й }, { term: -йте }] }, es: { alternatives: [{ term: -й }, { term: -йте }] } }
+          ex: [{ target: Чита́йте }, " текст."]
+          tr: { en: "Read the text.", es: "Lean el texto." }
+        - level: A1
+          point: { uk: "Наголос на закінченні у формі я", en: "Stressed ending in the я form", es: "Acento en la terminación de la forma я" }
+          rule: { uk: { alternatives: [{ term: -и }, { term: -іть }] }, en: { alternatives: [{ term: -и }, { term: -іть }] }, es: { alternatives: [{ term: -и }, { term: -іть }] } }
+          ex: [{ target: Напиші́ть }, " своє́ ім’я́."]
+          tr: { en: "Write your name.", es: "Escriba su nombre." }
+        - level: A1
+          point: { uk: Ввічливість, en: Politeness, es: Cortesía }
+          rule: { uk: ["форма на «Ви» з ", { term: будь ла́ска }], en: ["the Ви form with ", { term: будь ла́ска }, " (please)"], es: ["la forma de Ви con ", { term: будь ла́ска }, " (por favor)"] }
+          ex: [{ target: Да́йте }, ", будь ла́ска, ка́ву."]
+          tr: { en: "A coffee, please.", es: "Un café, por favor." }
+        - level: A2
+          point: { uk: "Третя особа", en: "Third person", es: "Tercera persona" }
+          rule: { uk: { pattern: [{ alternatives: [хай, неха́й] }, { slot: verb }] }, en: { pattern: [{ alternatives: [хай, неха́й] }, { slot: verb }] }, es: { pattern: [{ alternatives: [хай, неха́й] }, { slot: verb }] } }
+          ex: [{ target: Хай він подзво́нить }, " за́втра."]
+          tr: { en: "Let him call tomorrow.", es: "Que llame mañana." }
+        - level: A2
+          point: { uk: "Дієслова на -ся", en: "Verbs in -ся", es: "Verbos en -ся" }
+          rule: { uk: [{ term: -ся }, " після закінчення"], en: [{ term: -ся }, " after the ending"], es: [{ term: -ся }, " tras la terminación"] }
+          ex: [{ target: Посміхні́ться }, "!"]
+          tr: { en: "Smile!", es: "¡Sonrían!" }
+        - level: B1
+          point: { uk: "Ми", en: "We", es: "Nosotros" }
+          rule: { uk: { alternatives: [{ term: -мо }, { term: -імо }] }, en: { alternatives: [{ term: -мо }, { term: -імо }] }, es: { alternatives: [{ term: -мо }, { term: -імо }] } }
+          ex: [{ target: Ході́мо }, " в кіно́!"]
+          tr: { en: "Let's go to the cinema!", es: "¡Vamos al cine!" }
+        - level: B1
+          point: { uk: Вид, en: Aspect, es: Aspecto }
+          rule: { uk: "заборона — недоконаний вид; застереження — доконаний", en: "a prohibition takes the imperfective, a warning the perfective", es: "una prohibición lleva el imperfectivo; una advertencia, el perfectivo" }
+          ex: ["Не ", { target: відчиня́й }, " вікно́."]
+          tr: { en: "Don't open the window.", es: "No abras la ventana." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: ["форма на «Ви» після приголосного закінчується на ", { term: -іть }], en: ["after a consonant, the Ви form ends in ", { term: -іть }], es: ["tras consonante, la forma de Ви termina en ", { term: -іть }] }
+          ex: [{ target: Пиші́ть }, " сюди́."]
+          tr: { en: "Write here.", es: "Escriban aquí." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Форма на «ти» звертається до однієї близької особи, форма на ", { term: -те }, " — до кількох осіб або ввічливо до однієї."]
+              en: ["The ти form speaks to one person you know well; the form in ", { term: -те }, " speaks to several people or politely to one."]
+              es: ["La forma de ти se dirige a una persona de confianza; la forma en ", { term: -те }, ", a varias personas o, con cortesía, a una."]
+            ex: { examples: [["Окса́но, ", { target: сіда́й }, "."], ["Па́не профе́соре, ", { target: сіда́йте }, "."]] }
+            tr: { en: { examples: ["Oksana, sit down.", "Professor, please sit down."] }, es: { examples: ["Oksana, siéntate.", "Profesor, siéntese."] } }
+          - type: rule
+            level: A1
+            text:
+              uk: "Форму утворюють від основи теперішнього або простого майбутнього часу: вона та сама, що у формі «вони»."
+              en: "The form is built on the stem of the present or the simple future: the stem of the вони (they) form."
+              es: "La forma se construye sobre la raíz del presente o del futuro simple: la de la forma de вони (ellos)."
+            ex: { mapping: [чита́ють, { target: чита́й }] }
+
+  - title: { uk: "Форма: ти і ви", en: "Form: ти and ви", es: "Forma: ти y ви" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: verb, label: { uk: Дієслово, en: Verb, es: Verbo } }
+          - { key: sg, label: ти, features: { mood: imp, person: 2, number: sg } }
+          - { key: pl, label: { alternatives: [ви, Ви] }, features: { mood: imp, person: 2, number: pl } }
+        rows:
+          - { level: A1, verb: чита́ти, sg: [чита́, { ending: й }], pl: [чита́, { ending: йте }] }
+          - { level: A1, verb: сіда́ти, sg: [сіда́, { ending: й }], pl: [сіда́, { ending: йте }] }
+          - { level: A1, verb: да́ти, sg: дай, pl: [да́, { ending: йте }] }
+          - { level: A1, verb: сказа́ти, sg: [скаж, { ending: и́ }], pl: [скаж, { ending: і́ть }] }
+          - { level: A1, verb: писа́ти, sg: [пиш, { ending: и́ }], pl: [пиш, { ending: і́ть }] }
+          - { level: A1, verb: сиді́ти, sg: [сид, { ending: и́ }], pl: [сид, { ending: і́ть }] }
+          - { level: A2, verb: бу́ти, sg: будь, pl: [бу́д, { ending: ьте }] }
+          - { level: A2, verb: вста́ти, sg: встань, pl: [вста́н, { ending: ьте }] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Основа на голосний: ", { term: -й }, ", ", { term: -йте }, "."]
+              en: ["A stem ending in a vowel takes ", { term: -й }, " and ", { term: -йте }, "."]
+              es: ["Una raíz terminada en vocal toma ", { term: -й }, " y ", { term: -йте }, "."]
+            ex: { mapping: [гуля́ють, { target: гуля́йте }] }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Основа на приголосний, наголос у формі ", { term: я }, " на закінченні: ", { term: -и }, ", ", { term: -іть }, "."]
+              en: ["A stem ending in a consonant, with the я form stressed on the ending, takes ", { term: -и }, " and ", { term: -іть }, "."]
+              es: ["Una raíz terminada en consonante, con la forma я acentuada en la terminación, toma ", { term: -и }, " e ", { term: -іть }, "."]
+            ex: { mapping: [пишу́, { target: пиши́ }] }
+          - type: rule
+            level: A2
+            text:
+              uk: ["Якщо у формі ", { term: я }, " наголос на основі, закінчення немає, а після м’якого приголосного стоїть ", { term: ь }, ": ", { mapping: [{ term: ста́ну }, { term: стань }] }, "."]
+              en: ["When the я form is stressed on the stem, there is no ending, and ", { term: ь }, " follows a soft consonant: ", { mapping: [{ term: ста́ну }, { term: стань }] }, "."]
+              es: ["Si la forma я lleva el acento en la raíz, no hay terminación, y tras una consonante blanda se escribe ", { term: ь }, ": ", { mapping: [{ term: ста́ну }, { term: стань }] }, "."]
+            ex: [{ target: Встань }, ", уже́ сьо́ма годи́на!"]
+            tr: { en: "Get up, it's already seven o'clock!", es: "¡Levántate, que ya son las siete!" }
+
+  - title: { uk: "Форма: третя особа і ми", en: "Form: the third person and we", es: "Forma: la tercera persona y nosotros" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            form: { uk: { pattern: [{ alternatives: [хай, неха́й] }, { slot: { uk: "дієслово третьої особи", en: "third-person verb", es: "verbo en tercera persona" } }] }, en: { pattern: [{ alternatives: [хай, неха́й] }, { slot: { uk: "дієслово третьої особи", en: "third-person verb", es: "verbo en tercera persona" } }] }, es: { pattern: [{ alternatives: [хай, неха́й] }, { slot: { uk: "дієслово третьої особи", en: "third-person verb", es: "verbo en tercera persona" } }] } }
+            ex: [{ target: Неха́й ді́ти гра́ються }, "."]
+            tr: { en: "Let the children play.", es: "Que jueguen los niños." }
+          - level: A2
+            form: { uk: [{ term: -ся }, " після закінчення: ", { alternatives: [{ term: -йся }, { term: -йтеся }] }], en: [{ term: -ся }, " after the ending: ", { alternatives: [{ term: -йся }, { term: -йтеся }] }], es: [{ term: -ся }, " tras la terminación: ", { alternatives: [{ term: -йся }, { term: -йтеся }] }] }
+            ex: [{ target: Умива́йся }, " та йди сні́дати."]
+            tr: { en: "Wash your face and come to breakfast.", es: "Lávate la cara y ven a desayunar." }
+          - level: A2
+            form: { uk: [{ term: -ся }, " після ", { term: -и }, " та ", { term: -іть }, ": ", { alternatives: [{ term: бори́ся }, { term: борі́ться }] }], en: [{ term: -ся }, " after ", { term: -и }, " and ", { term: -іть }, ": ", { alternatives: [{ term: бори́ся }, { term: борі́ться }] }], es: [{ term: -ся }, " tras ", { term: -и }, " e ", { term: -іть }, ": ", { alternatives: [{ term: бори́ся }, { term: борі́ться }] }] }
+            ex: [{ target: Диві́ться }, ", яки́й краєви́д!"]
+            tr: { en: "Look, what a view!", es: "¡Miren qué paisaje!" }
+          - level: A2
+            form: { uk: ["у розмові ", { term: -ся }, " скорочується до ", { term: -сь }, ": ", { alternatives: [{ term: диви́сь }, { term: вчись }] }], en: ["in speech, ", { term: -ся }, " shortens to ", { term: -сь }, ": ", { alternatives: [{ term: диви́сь }, { term: вчись }] }], es: ["en el habla, ", { term: -ся }, " se acorta en ", { term: -сь }, ": ", { alternatives: [{ term: диви́сь }, { term: вчись }] }] }
+            ex: [{ target: Вчи́ся }, " до́бре!"]
+            tr: { en: "Study hard!", es: "¡Estudia mucho!" }
+          - level: B1
+            form: { uk: [{ term: -мо }, " після ", { term: -й }, ": ", { term: чита́ймо }], en: [{ term: -мо }, " after ", { term: -й }, ": ", { term: чита́ймо }], es: [{ term: -мо }, " tras ", { term: -й }, ": ", { term: чита́ймо }] }
+            ex: [{ target: Да́ймо }, " йому́ відпочи́ти."]
+            tr: { en: "Let's give him a rest.", es: "Dejémoslo descansar." }
+          - level: B1
+            form: { uk: [{ term: -імо }, " замість ", { term: -и }, ": ", { term: скажі́мо }], en: [{ term: -імо }, " in place of ", { term: -и }, ": ", { term: скажі́мо }], es: [{ term: -імо }, " en lugar de ", { term: -и }, ": ", { term: скажі́мо }] }
+            ex: [{ target: Ході́мо }, " додо́му."]
+            tr: { en: "Let's go home.", es: "Vámonos a casa." }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: "прохання з «будь ласка»", en: "a request with «будь ласка» (please)", es: "una petición con «будь ласка» (por favor)" }
+            ex: [{ target: Повторі́ть }, ", будь ла́ска."]
+            tr: { en: "Could you repeat that, please?", es: "Repita, por favor." }
+          - level: A1
+            use: { uk: "інструкція, завдання", en: "an instruction, a task", es: "una instrucción, una tarea" }
+            ex: [{ target: Прочита́йте }, " текст і ", { target: да́йте }, " ві́дповідь."]
+            tr: { en: "Read the text and give an answer.", es: "Lean el texto y den una respuesta." }
+          - level: A2
+            use: { uk: ["побажання з ", { term: хай }], en: ["a wish with ", { term: хай }], es: ["un deseo con ", { term: хай }] }
+            ex: [{ target: Хай щасти́ть }, "!"]
+            tr: { en: "Good luck!", es: "¡Que tengas suerte!" }
+          - level: B1
+            use: { uk: "запрошення: недоконаний вид", en: "an invitation: the imperfective", es: "una invitación: el imperfectivo" }
+            ex: [{ target: Захо́дьте }, ", роздяга́йтеся."]
+            tr: { en: "Come in, take your coat off.", es: "Pasen, quítense el abrigo." }
+          - level: B1
+            use: { uk: "одна конкретна дія: доконаний вид", en: "one specific action: the perfective", es: "una acción concreta: el perfectivo" }
+            ex: [{ target: Зачині́ть }, " две́рі, будь ла́ска."]
+            tr: { en: "Close the door, please.", es: "Cierre la puerta, por favor." }
+          - level: B1
+            use: { uk: "заборона: не і недоконаний вид", en: "telling someone not to: не with the imperfective", es: "prohibir: не con el imperfectivo" }
+            ex: ["Не ", { target: запі́знюйся }, "."]
+            tr: { en: "Don't be late.", es: "No llegues tarde." }
+          - level: B1
+            use: { uk: "застереження від того, що може статися: не і доконаний вид", en: "a warning against something that might happen: не with the perfective", es: "advertir de algo que puede pasar: не con el perfectivo" }
+            ex: ["Не ", { target: забу́дь }, " ключі́!"]
+            tr: { en: "Don't forget your keys!", es: "¡No olvides las llaves!" }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Пиши́те ра́зом., right: [{ target: Пиші́ть }, " ра́зом."], rule: { uk: ["форма на «Ви» закінчується на ", { term: -іть }, "; ", { term: -ите }, " — з російської"], en: ["the Ви form ends in ", { term: -іть }, "; ", { term: -ите }, " is a Russian form"], es: ["la forma de Ви termina en ", { term: -іть }, "; ", { term: -ите }, " es una forma rusa"] } }
+          - { level: A1, wrong: "Сади́сь, будь ла́ска.", right: [{ target: Сіда́й }, ", будь ла́ска."], rule: { uk: [{ term: сади́сь }, " — з російської; українською ", { term: сіда́й }], en: [{ term: сади́сь }, " is Russian; Ukrainian says ", { term: сіда́й }], es: [{ term: сади́сь }, " es ruso; en ucraniano se dice ", { term: сіда́й }] } }
+          - { level: A1, speakers: [en], wrong: "Па́не профе́соре, сіда́й.", right: ["Па́не профе́соре, ", { target: сіда́йте }, "."], rule: { en: ["a person you address formally takes the Ви form, ", { term: сіда́йте }] } }
+          - { level: B1, wrong: Не відчини́ вікно́., right: ["Не ", { target: відчиня́й }, " вікно́."], rule: { uk: "заборона — недоконаний вид; доконаний після не застерігає від того, що може статися", en: "telling someone not to do something takes the imperfective; не with the perfective warns against something that might happen", es: "para prohibir se usa el imperfectivo; не con el perfectivo advierte de algo que puede pasar" } }

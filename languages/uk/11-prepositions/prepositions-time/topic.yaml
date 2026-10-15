@@ -1,0 +1,248 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.prepositions.prepositions-time
+lang: uk
+kind: grammar
+tags: [prepositions, time, cases]
+concepts: [prepositions-time]
+related: [uk.foundations.days-months-dates, uk.foundations.telling-time, uk.nouns-cases.accusative, uk.nouns-cases.locative, uk.nouns-cases.genitive]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "0b8f9c 693a80 414599 61afad 4022d3 834954", es: "0b8f9c 693a80 414599 61afad 4022d3 834954" }
+
+title: { uk: Прийменники часу, en: Prepositions of Time, es: Preposiciones de tiempo }
+summary:
+  lead:
+    uk: "Коли, з якого часу, до якого і як довго: у, з, до, перед, через, за, на, о й тому з потрібними відмінками."
+    en: "When, from when, until when and for how long: у, з, до, перед, через, за, на, о and тому with their cases."
+    es: "Cuándo, desde cuándo, hasta cuándo y cuánto tiempo: у, з, до, перед, через, за, на, о y тому con sus casos."
+  rule:
+    uk: "День тижня стоїть у знахідному відмінку, місяць — у місцевому:"
+    en: "A day of the week takes the accusative, a month the locative:"
+    es: "El día de la semana va en acusativo; el mes, en locativo:"
+  ex: { examples: [["у ", { target: { weekday: п’я́тницю, value: 5 } }], ["у ", { target: { date: бе́резні, value: "--03" } }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: День, en: Day, es: Día }
+          rule:
+            uk: [{ alternatives: [{ term: у }, { term: в }] }, " і знахідний"]
+            en: [{ alternatives: [{ term: у }, { term: в }] }, " with the accusative"]
+            es: [{ alternatives: [{ term: у }, { term: в }] }, " con el acusativo"]
+          ex: ["До зу́стрічі ", { target: ["в ", { weekday: понеді́лок, value: 1 }] }, "!"]
+          tr: { en: See you on Monday!, es: ¡Hasta el lunes! }
+        - level: A1
+          point: { uk: Місяць, en: Month, es: Mes }
+          rule:
+            uk: [{ alternatives: [{ term: у }, { term: в }] }, " і місцевий"]
+            en: [{ alternatives: [{ term: у }, { term: в }] }, " with the locative"]
+            es: [{ alternatives: [{ term: у }, { term: в }] }, " con el locativo"]
+          ex: ["Ми ї́демо ", { target: ["в ", { date: се́рпні, value: "--08" }] }, "."]
+          tr: { en: "We're going in August.", es: Nos vamos en agosto. }
+        - level: A2
+          point: { uk: Рік, en: Year, es: Año }
+          rule:
+            uk: [{ alternatives: [{ term: у }, { term: в }] }, " і місцевий: ", { term: ["у ", { gap: true }, " ро́ці"] }]
+            en: [{ alternatives: [{ term: у }, { term: в }] }, " with the locative: ", { term: ["у ", { gap: true }, " ро́ці"] }]
+            es: [{ alternatives: [{ term: у }, { term: в }] }, " con el locativo: ", { term: ["у ", { gap: true }, " ро́ці"] }]
+          ex: ["Ми познайо́милися ", { target: ["у ", { date: дві ти́сячі чотирна́дцятому ро́ці, value: "2014" }] }, "."]
+          tr: { en: We met in 2014., es: Nos conocimos en 2014. }
+        - level: A2
+          point: { uk: "З … до …", en: "From … until …", es: "De … a …" }
+          rule:
+            uk: [{ term: з }, " і ", { term: до }, " з родовим"]
+            en: [{ term: з }, " and ", { term: до }, " with the genitive"]
+            es: [{ term: з }, " y ", { term: до }, " con el genitivo"]
+          ex: ["Я працю́ю ", { target: ["з ", { weekday: понеді́лка, value: 1 }, " до ", { weekday: п’я́тниці, value: 5 }] }, "."]
+          tr: { en: I work from Monday to Friday., es: Trabajo de lunes a viernes. }
+        - level: A2
+          point: { uk: "Перед, після", en: "Перед, після", es: "Перед, після" }
+          rule:
+            uk: [{ term: пе́ред }, " з орудним: раніше за подію; ", { term: пі́сля }, " з родовим: пізніше"]
+            en: [{ term: пе́ред }, " with the instrumental: before an event; ", { term: пі́сля }, " with the genitive: after it"]
+            es: [{ term: пе́ред }, " con el instrumental: antes de algo; ", { term: пі́сля }, " con el genitivo: después"]
+          ex: { examples: [[{ target: Пе́ред обі́дом }, " тре́ба ми́ти ру́ки."], [{ target: Пі́сля обі́ду }, " ми гуля́ємо в па́рку."]] }
+          tr: { en: { examples: [You should wash your hands before lunch., After lunch we walk in the park.] }, es: { examples: [Hay que lavarse las manos antes de comer., Después del almuerzo paseamos por el parque.] } }
+        - level: B1
+          point: { uk: Через, en: Через, es: Через }
+          rule:
+            uk: [{ term: че́рез }, " зі знахідним: через скільки часу?"]
+            en: [{ term: че́рез }, " with the accusative: in how long from now"]
+            es: [{ term: че́рез }, " con el acusativo: dentro de cuánto tiempo"]
+          ex: ["Оле́на поверне́ться ", { target: че́рез ти́ждень }, "."]
+          tr: { en: Olena will be back in a week., es: Olena volverá dentro de una semana. }
+        - level: B1
+          point: { uk: За, en: За, es: За }
+          rule:
+            uk: [{ term: за }, " зі знахідним: за скільки часу дію завершено?"]
+            en: [{ term: за }, " with the accusative: how long it takes to finish"]
+            es: [{ term: за }, " con el acusativo: cuánto se tarda en terminar"]
+          ex: ["Ви́вчити нові́ слова́ ", { target: за мі́сяць }, "."]
+          tr: { en: Learn the new words in a month., es: Aprender las palabras nuevas en un mes. }
+        - level: B1
+          point: { uk: На, en: На, es: На }
+          rule:
+            uk: [{ term: на }, " зі знахідним: на який час?"]
+            en: [{ term: на }, " with the accusative: for how long it is planned"]
+            es: [{ term: на }, " con el acusativo: para cuánto tiempo"]
+          ex: ["Оле́г підписа́в контра́кт ", { target: на рік }, "."]
+          tr: { en: Oleh signed a contract for a year., es: Oleh firmó un contrato por un año. }
+        - level: B1
+          point: { uk: Тому, en: Тому, es: Тому }
+          rule:
+            uk: [{ term: тому́ }, " після проміжку часу: скільки часу минуло?"]
+            en: [{ term: тому́ }, " after the length of time: how long ago"]
+            es: [{ term: тому́ }, " tras el tiempo transcurrido: hace cuánto"]
+          ex: ["Вона́ приї́хала ", { target: три дні тому́ }, "."]
+          tr: { en: She arrived three days ago., es: Llegó hace tres días. }
+        - level: B1
+          point: { uk: О, en: О, es: О }
+          rule:
+            uk: [{ term: о }, " з місцевим: о котрій годині?"]
+            en: [{ term: о }, " with the locative: at what time?"]
+            es: [{ term: о }, " con el locativo: ¿a qué hora?"]
+          ex: ["Заня́ття почина́ються ", { target: ["о ", { time: дев’я́тій, value: "09:00" }] }, " годи́ні."]
+          tr: { en: Classes start at nine o'clock., es: Las clases empiezan a las nueve. }
+
+sections:
+  - title: { uk: "Дні, місяці, роки", en: "Days, months, years", es: "Días, meses, años" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, " і знахідний: день тижня"], en: [{ alternatives: [{ term: у }, { term: в }] }, " with the accusative: a day of the week"], es: [{ alternatives: [{ term: у }, { term: в }] }, " con el acusativo: un día de la semana"] }
+            ex: [{ target: ["У ", { weekday: субо́ту, value: 6 }] }, " о́фіс не працю́є."]
+            tr: { en: The office is closed on Saturday., es: La oficina no abre el sábado. }
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, " і місцевий: місяць"], en: [{ alternatives: [{ term: у }, { term: в }] }, " with the locative: a month"], es: [{ alternatives: [{ term: у }, { term: в }] }, " con el locativo: un mes"] }
+            ex: ["Марі́я народи́лася ", { target: ["в ", { date: тра́вні, value: "--05" }] }, "."]
+            tr: { en: Maria was born in May., es: María nació en mayo. }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, " і знахідний: коли щось починається"], en: [{ alternatives: [{ term: у }, { term: в }] }, " with the accusative: when something starts"], es: [{ alternatives: [{ term: у }, { term: в }] }, " con el acusativo: cuándo empieza algo"] }
+            ex: [{ target: ["У ", { weekday: четве́р, value: 4 }] }, " почина́є робо́ту книжко́вий фо́рум."]
+            tr: { en: The book fair opens on Thursday., es: La feria del libro abre el jueves. }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, " і місцевий: рік"], en: [{ alternatives: [{ term: у }, { term: в }] }, " with the locative: a year"], es: [{ alternatives: [{ term: у }, { term: в }] }, " con el locativo: un año"] }
+            ex: ["Ми познайо́милися ", { target: ["у ", { date: дві ти́сячі чотирна́дцятому ро́ці, value: "2014" }] }, "."]
+            tr: { en: We met in 2014., es: Nos conocimos en 2014. }
+      - type: list
+        items:
+          - type: note
+            level: A1
+            text:
+              uk: ["Назви днів, місяців і дат: ", { link: "Дні, місяці, дати", to: uk.foundations.days-months-dates }, "."]
+              en: ["Days, months and dates: ", { link: "Days, Months and Dates", to: uk.foundations.days-months-dates }, "."]
+              es: ["Los días, los meses y las fechas: ", { link: "Días, meses y fechas", to: uk.foundations.days-months-dates }, "."]
+          - type: note
+            level: A1
+            text:
+              uk: [{ term: О котрі́й? }, " і ", { term: о дев’я́тій }, " з першого рівня — готові вирази з теми ", { link: Котра година, to: uk.foundations.telling-time }, "; прийменник ", { term: о }, " з місцевим як правило — нижче, на рівні B1."]
+              en: [{ term: О котрі́й? }, " and ", { term: о дев’я́тій }, " are set phrases from the start, in ", { link: Telling the Time, to: uk.foundations.telling-time }, "; the preposition ", { term: о }, " with the locative as a rule comes below, at B1."]
+              es: [{ term: О котрі́й? }, " y ", { term: о дев’я́тій }, " son frases hechas desde el principio, en ", { link: La hora, to: uk.foundations.telling-time }, "; la preposición ", { term: о }, " con el locativo como regla viene más abajo, en B1."]
+
+  - title: { uk: "Початок і кінець: з, до, перед, після", en: "Start and end: з, до, перед, після", es: "Comienzo y final: з, до, перед, після" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " і родовий: з якого часу?"], en: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " with the genitive: since when?"], es: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " con el genitivo: ¿desde cuándo?"] }
+            ex: ["Вона́ працю́є ", { target: ["з ", { time: дев’я́тої, value: "09:00" }, " годи́ни"] }, "."]
+            tr: { en: She works from nine o'clock., es: Trabaja desde las nueve. }
+          - level: A2
+            use: { uk: [{ term: до }, " і родовий: до якого часу?"], en: [{ term: до }, " with the genitive: until when?"], es: [{ term: до }, " con el genitivo: ¿hasta cuándo?"] }
+            ex: ["Магази́н працю́є ", { target: до ве́чора }, "."]
+            tr: { en: The shop is open until the evening., es: La tienda abre hasta la noche. }
+          - level: A2
+            use: { uk: [{ term: пе́ред }, " і орудний: перед подією"], en: [{ term: пе́ред }, " with the instrumental: before an event"], es: [{ term: пе́ред }, " con el instrumental: antes de algo"] }
+            ex: [{ target: Пе́ред обі́дом }, " тре́ба ми́ти ру́ки."]
+            tr: { en: You should wash your hands before lunch., es: Hay que lavarse las manos antes de comer. }
+          - level: A2
+            use: { uk: [{ term: пі́сля }, " і родовий: після події"], en: [{ term: пі́сля }, " with the genitive: after an event"], es: [{ term: пі́сля }, " con el genitivo: después de algo"] }
+            ex: [{ target: Пі́сля обі́ду }, " ми гуля́ємо в па́рку."]
+            tr: { en: After lunch we walk in the park., es: Después del almuerzo paseamos por el parque. }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: [{ term: з }, " і ", { term: до }, " разом називають проміжок часу:"]
+              en: [{ term: з }, " and ", { term: до }, " together name a stretch of time:"]
+              es: [{ term: з }, " y ", { term: до }, " juntos marcan un periodo:"]
+            ex: ["Я працю́ю ", { target: ["з ", { weekday: понеді́лка, value: 1 }, " до ", { weekday: п’я́тниці, value: 5 }] }, "."]
+            tr: { en: I work from Monday to Friday., es: Trabajo de lunes a viernes. }
+
+  - title: { uk: "Як довго й коли: через, за, на, тому, о", en: "How long and when: через, за, на, тому, о", es: "Cuánto tiempo y cuándo: через, за, на, тому, о" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: "знахідний без прийменника: скільки часу?", en: "the accusative with no preposition: for how long?", es: "el acusativo sin preposición: ¿cuánto tiempo?" }
+            ex: ["Ми ма́йже ", { target: мі́сяць }, " чека́ли на екску́рсію."]
+            tr: { en: We waited almost a month for the tour., es: Esperamos casi un mes la excursión. }
+          - level: B1
+            use: { uk: [{ term: че́рез }, " і знахідний: через скільки часу?"], en: [{ term: че́рез }, " with the accusative: in how long from now?"], es: [{ term: че́рез }, " con el acusativo: ¿dentro de cuánto?"] }
+            ex: ["Оле́на поверне́ться ", { target: че́рез ти́ждень }, "."]
+            tr: { en: Olena will be back in a week., es: Olena volverá dentro de una semana. }
+          - level: B1
+            use: { uk: [{ term: за }, " і знахідний: за який час дію завершено?"], en: [{ term: за }, " with the accusative: how long it takes to finish"], es: [{ term: за }, " con el acusativo: cuánto se tarda en terminar"] }
+            ex: ["Студе́нти написа́ли твір ", { target: за годи́ну }, "."]
+            tr: { en: The students wrote the essay in an hour., es: Los estudiantes escribieron la redacción en una hora. }
+          - level: B1
+            use: { uk: [{ term: на }, " і знахідний: на який час?"], en: [{ term: на }, " with the accusative: for how long it is planned"], es: [{ term: на }, " con el acusativo: para cuánto tiempo"] }
+            ex: ["Оле́г підписа́в контра́кт ", { target: на рік }, "."]
+            tr: { en: Oleh signed a contract for a year., es: Oleh firmó un contrato por un año. }
+          - level: B1
+            use: { uk: [{ term: тому́ }, " після проміжку часу: скільки минуло?"], en: [{ term: тому́ }, " after the length of time: how long ago?"], es: [{ term: тому́ }, " tras el tiempo transcurrido: ¿hace cuánto?"] }
+            ex: ["Вона́ приї́хала ", { target: три дні тому́ }, "."]
+            tr: { en: She arrived three days ago., es: Llegó hace tres días. }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: о }, { term: об }] }, " і місцевий: о котрій?"], en: [{ alternatives: [{ term: о }, { term: об }] }, " with the locative: at what time?"], es: [{ alternatives: [{ term: о }, { term: об }] }, " con el locativo: ¿a qué hora?"] }
+            ex: ["Заня́ття почина́ються ", { target: ["о ", { time: дев’я́тій, value: "09:00" }] }, " годи́ні."]
+            tr: { en: Classes start at nine o'clock., es: Las clases empiezan a las nueve. }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: [{ term: че́рез }, " показує, коли щось станеться, а ", { term: за }, " — скільки часу триває дія до кінця:"]
+              en: [{ term: че́рез }, " says when something will happen; ", { term: за }, " says how long the action takes to finish:"]
+              es: [{ term: че́рез }, " dice cuándo pasará algo; ", { term: за }, ", cuánto tarda la acción en terminar:"]
+            ex: { contrast: [["Я поверну́ся ", { target: че́рез годи́ну }, "."], ["Я зроблю́ це ", { target: за годи́ну }, "."]] }
+            tr: { en: { contrast: ["I'll be back in an hour.", "I'll do it in an hour."] }, es: { contrast: [Vuelvo dentro de una hora., Lo hago en una hora.] } }
+          - type: note
+            level: B1
+            text:
+              uk: ["Котра година й о котрій: ", { link: Котра година, to: uk.foundations.telling-time }, "."]
+              en: ["The time and at what time: ", { link: Telling the Time, to: uk.foundations.telling-time }, "."]
+              es: ["La hora y a qué hora: ", { link: La hora, to: uk.foundations.telling-time }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Ми ба́чимося в понеді́лку., right: ["Ми ба́чимося в ", { target: понеді́лок }, "."], rule: { uk: ["день тижня — знахідний відмінок: ", { term: у понеді́лок }], en: ["a day of the week takes the accusative: ", { term: у понеді́лок }], es: ["el día de la semana va en acusativo: ", { term: у понеді́лок }] } }
+          - { level: A1, speakers: [en], wrong: Ми ба́чимося на понеді́лок., right: ["Ми ба́чимося ", { target: в понеді́лок }, "."], rule: { en: ["“on Monday” is ", { term: у понеді́лок }, ", with у"] } }
+          - { level: A1, speakers: [es], wrong: Ми ба́чимося п’я́тниця., right: ["Ми ба́чимося ", { target: в п’я́тницю }, "."], rule: { es: ["«el viernes» es ", { term: у п’я́тницю }, ": con у y acusativo"] } }
+          - { level: A2, wrong: з понеді́лок до п’я́тниця, right: ["з ", { target: понеді́лка }, " до ", { target: п’я́тниці }], rule: { uk: [{ term: з }, " і ", { term: до }, " стоять із родовим відмінком"], en: [{ term: з }, " and ", { term: до }, " take the genitive"], es: [{ term: з }, " y ", { term: до }, " piden el genitivo"] } }
+          - { level: A2, wrong: пе́ред обі́д, right: ["пе́ред ", { target: обі́дом }], rule: { uk: [{ term: пе́ред }, " стоїть з орудним відмінком"], en: [{ term: пе́ред }, " takes the instrumental"], es: [{ term: пе́ред }, " pide el instrumental"] } }
+          - { level: A2, wrong: пі́сля обі́дом, right: ["пі́сля ", { target: обі́ду }], rule: { uk: [{ term: пі́сля }, " стоїть з родовим відмінком, хоч ", { term: пе́ред }, " — з орудним"], en: [{ term: пі́сля }, " takes the genitive, although ", { term: пе́ред }, " takes the instrumental"], es: [{ term: пі́сля }, " pide el genitivo, aunque ", { term: пе́ред }, " pide el instrumental"] } }
+          - { level: A2, wrong: у дві ти́сячі чотирна́дцятий рік, right: ["у дві ти́сячі ", { target: чотирна́дцятому ро́ці }], rule: { uk: ["рік після ", { term: у }, " стоїть у місцевому відмінку"], en: ["a year after ", { term: у }, " takes the locative"], es: ["el año tras ", { term: у }, " va en locativo"] } }
+          - { level: B1, wrong: Вона́ приї́хала три дні наза́д., right: ["Вона́ приї́хала три дні ", { target: тому́ }, "."], rule: { uk: [{ term: тому́ }, "; ", { term: наза́д }, " у цьому значенні — калька з російської"], en: [{ term: тому́ }, "; ", { term: наза́д }, " in this sense is a calque from Russian"], es: [{ term: тому́ }, "; ", { term: наза́д }, " con este sentido es un calco del ruso"] } }

@@ -1,0 +1,212 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.shcho-shchob
+lang: uk
+kind: grammar
+tags: [clauses, shcho, shchob, purpose, reported-speech]
+concepts: [linkers]
+related: [uk.sentence.conjunctions, uk.sentence.reported-speech, uk.sentence.relative-yakyi, uk.past-aspect.past-tense, uk.verbs-present.verb-infinitive]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "cfc7d5 716111 82bb64 7a8f2b 10820c fbad4d 81685a", es: "cfc7d5 716111 82bb64 7a8f2b 10820c fbad4d 81685a" }
+
+title: { uk: Речення з що і щоб, en: Clauses with що and щоб, es: Oraciones con що y щоб }
+summary:
+  lead:
+    uk: [{ term: Що }, " вводить те, що хтось знає чи каже; ", { term: щоб }, " — мету або бажання: з інфінітивом чи з дієсловом минулого часу."]
+    en: [{ term: Що }, " introduces what someone knows or says; ", { term: щоб }, " introduces a purpose or a wish, with the infinitive or a past-tense verb."]
+    es: [{ term: Що }, " introduce lo que alguien sabe o dice; ", { term: щоб }, ", una finalidad o un deseo, con infinitivo o con un verbo en pasado."]
+  rule:
+    uk: ["Перед ", { term: що }, " і ", { term: щоб }, ", які починають підрядну частину, звичайно ставимо кому:"]
+    en: ["A comma usually goes before ", { term: що }, " and ", { term: щоб }, " when they open a clause:"]
+    es: ["Delante de ", { term: що }, " y ", { term: щоб }, " que abren una oración suele ir coma:"]
+  ex: { examples: [["Я зна́ю", { target: ", що" }, " ти пра́вий."], ["Ми вчимо́ мо́ву", { target: ", щоб" }, " розмовля́ти з дру́зями."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: що
+          rule:
+            uk: "що хтось знає, думає чи каже"
+            en: "what someone knows, thinks or says"
+            es: "lo que alguien sabe, piensa o dice"
+          ex: ["Я зна́ю, ", { target: що }, " ми зроби́ли це пра́вильно."]
+          tr: { en: "I know that we did it right.", es: "Sé que lo hicimos bien." }
+        - level: A2
+          point: { alternatives: [де, куди́, зві́дки] }
+          rule:
+            uk: "непряме питання"
+            en: "an indirect question"
+            es: "una pregunta indirecta"
+          ex: ["Ви не зна́єте, ", { target: де }, " мій словни́к?"]
+          tr: { en: "Do you know where my dictionary is?", es: "¿Sabe dónde está mi diccionario?" }
+        - level: A2
+          point: щоб
+          rule:
+            uk: [{ term: щоб }, " з інфінітивом: мета, той самий виконавець"]
+            en: [{ term: щоб }, " with the infinitive: purpose, the same subject"]
+            es: [{ term: щоб }, " con infinitivo: finalidad, el mismo sujeto"]
+          ex: ["Я вчу мо́ву, ", { target: щоб працюва́ти }, " в Украї́ні."]
+          tr: { en: "I'm learning the language to work in Ukraine.", es: "Estudio el idioma para trabajar en Ucrania." }
+        - level: B1
+          point: щоб
+          rule:
+            uk: [{ term: щоб }, " з минулим часом: інший виконавець"]
+            en: [{ term: щоб }, " with the past tense: another subject"]
+            es: [{ term: щоб }, " con el pasado: otro sujeto"]
+          ex: ["Я хо́чу, ", { target: щоб ти прийшо́в }, "."]
+          tr: { en: "I want you to come.", es: "Quiero que vengas." }
+        - level: B1
+          point: { contrast: [що, щоб] }
+          rule:
+            uk: [{ term: що }, ": факт; ", { term: щоб }, ": прохання чи наказ"]
+            en: [{ term: що }, ": a fact; ", { term: щоб }, ": a request or an order"]
+            es: [{ term: що }, ": un hecho; ", { term: щоб }, ": un pedido o una orden"]
+          ex: { contrast: [["Він сказа́в, ", { target: що }, " я працю́ю."], ["Він сказа́в, ", { target: щоб }, " я працюва́в."]] }
+          tr: { en: { contrast: ["He said that I work.", "He told me to work."] }, es: { contrast: ["Dijo que trabajo.", "Dijo que trabajara."] } }
+        - level: B1
+          point: { alternatives: [чому́, скі́льки, наві́що] }
+          rule:
+            uk: "непряме питання"
+            en: "an indirect question"
+            es: "una pregunta indirecta"
+          ex: ["Скажи́, ", { target: скі́льки }, " ко́штує квито́к."]
+          tr: { en: "Tell me how much the ticket costs.", es: "Dime cuánto cuesta el boleto." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["кома перед ", { term: що }, " і ", { term: щоб }]
+            en: ["a comma before ", { term: що }, " and ", { term: щоб }]
+            es: ["coma delante de ", { term: що }, " y ", { term: щоб }]
+          ex: ["Я ду́маю", { target: ", що" }, " він уже́ вдо́ма."]
+          tr: { en: "I think he's already home.", es: "Creo que ya está en casa." }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["після ", { term: щоб }, " з іншим виконавцем — минулий час"]
+            en: ["after ", { term: щоб }, " with another subject, the past tense"]
+            es: ["después de ", { term: щоб }, " con otro sujeto, el pasado"]
+          ex: ["Ма́ма хо́че, ", { target: щоб ми подзвони́ли }, "."]
+          tr: { en: "Mum wants us to call.", es: "Mamá quiere que llamemos." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: [{ term: Що }, " приєднує частину, у якій сказано, що хтось знає, думає чи говорить."]
+              en: [{ term: Що }, " joins a clause that says what someone knows, thinks or says."]
+              es: [{ term: Що }, " une una oración que dice lo que alguien sabe, piensa o dice."]
+            ex: ["Виклада́ч сказа́в, ", { target: що }, " я ма́ю бага́то працюва́ти."]
+            tr: { en: "The teacher said that I have to work hard.", es: "El profesor dijo que tengo que trabajar mucho." }
+          - type: rule
+            level: A2
+            text:
+              uk: [{ term: Щоб }, " приєднує частину, яка називає мету: навіщо щось робиться."]
+              en: [{ term: Щоб }, " joins a clause that names a purpose: why something is done."]
+              es: [{ term: Щоб }, " une una oración que expresa una finalidad: para qué se hace algo."]
+            ex: ["Ми вчимо́ украї́нську мо́ву, ", { target: щоб }, " розмовля́ти з дру́зями."]
+            tr: { en: "We're learning Ukrainian to talk with our friends.", es: "Estudiamos ucraniano para hablar con nuestros amigos." }
+          - type: rule
+            level: A2
+            text:
+              uk: [{ term: Що }, " ніколи не пропускаємо, а перед ", { term: що }, " і ", { term: щоб }, " звичайно ставимо кому."]
+              en: [{ term: Що }, " never drops, and a comma usually goes before ", { term: що }, " and ", { term: щоб }, "."]
+              es: [{ term: Що }, " nunca se omite, y delante de ", { term: що }, " y ", { term: щоб }, " suele ir coma."]
+
+  - title: { uk: "Що: те, що знаємо чи кажемо", en: "Що: what we know or say", es: "Що: lo que sabemos o decimos" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: зна́ти }, { term: ду́мати }, { term: сказа́ти }] }, " і ", { term: що }], en: [{ alternatives: [{ term: зна́ти }, { term: ду́мати }, { term: сказа́ти }] }, " (know, think, say) with ", { term: що }], es: [{ alternatives: [{ term: зна́ти }, { term: ду́мати }, { term: сказа́ти }] }, " (saber, pensar, decir) con ", { term: що }] }
+            ex: ["Я зна́ю, ", { target: що }, " ми зроби́ли це пра́вильно."]
+            tr: { en: "I know that we did it right.", es: "Sé que lo hicimos bien." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: де }, { term: куди́ }, { term: зві́дки }] }, ": непряме питання"], en: [{ alternatives: [{ term: де }, { term: куди́ }, { term: зві́дки }] }, ": an indirect question"], es: [{ alternatives: [{ term: де }, { term: куди́ }, { term: зві́дки }] }, ": una pregunta indirecta"] }
+            ex: { examples: [["Ви не зна́єте, ", { target: де }, " мій словни́к?"], ["Батьки́ зна́ють, ", { target: куди́ }, " ми ї́демо."]] }
+            tr: { en: { examples: ["Do you know where my dictionary is?", "Our parents know where we're going."] }, es: { examples: ["¿Sabe dónde está mi diccionario?", "Nuestros padres saben adónde vamos."] } }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: хто }, { term: чому́ }, { term: скі́льки }, { term: наві́що }] }, ": непряме питання"], en: [{ alternatives: [{ term: хто }, { term: чому́ }, { term: скі́льки }, { term: наві́що }] }, ": an indirect question"], es: [{ alternatives: [{ term: хто }, { term: чому́ }, { term: скі́льки }, { term: наві́що }] }, ": una pregunta indirecta"] }
+            ex: { examples: [["Скажи́, ", { target: чому́ }, " ти запізни́вся."], ["Повідо́мте, ", { target: хто }, " змо́же допомогти́."]] }
+            tr: { en: { examples: ["Tell me why you were late.", "Let us know who can help."] }, es: { examples: ["Dime por qué llegaste tarde.", "Avisen quién puede ayudar."] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "У непрямому питанні порядок слів той самий, що й у прямому."
+              en: "An indirect question keeps the word order of the direct question."
+              es: "La pregunta indirecta mantiene el orden de la pregunta directa."
+            ex: { contrast: ["Куди́ ми ї́демо?", ["Я не зна́ю, ", { target: куди́ ми ї́демо }, "."]] }
+            tr: { en: { contrast: ["Where are we going?", "I don't know where we're going."] }, es: { contrast: ["¿Adónde vamos?", "No sé adónde vamos."] } }
+
+  - title: { uk: "Щоб: мета й бажання", en: "Щоб: purpose and wishes", es: "Щоб: finalidad y deseos" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ term: щоб }, " з інфінітивом: мета, той самий виконавець"], en: [{ term: щоб }, " with the infinitive: purpose, the same subject"], es: [{ term: щоб }, " con infinitivo: finalidad, el mismo sujeto"] }
+            ex: ["Ми хо́димо в музе́ї, ", { target: щоб кра́ще зна́ти }, " істо́рію мі́ста."]
+            tr: { en: "We go to museums to know the city's history better.", es: "Vamos a los museos para conocer mejor la historia de la ciudad." }
+          - level: B1
+            use: { uk: [{ term: щоб }, " з минулим часом: мета, інший виконавець"], en: [{ term: щоб }, " with the past tense: purpose, another subject"], es: [{ term: щоб }, " con el pasado: finalidad, otro sujeto"] }
+            ex: ["Я говорю́ пові́льно, ", { target: щоб ви зрозумі́ли }, "."]
+            tr: { en: "I'm speaking slowly so that you understand.", es: "Hablo despacio para que entiendan." }
+          - level: B1
+            use: { uk: [{ term: щоб }, " з минулим часом: бажання"], en: [{ term: щоб }, " with the past tense: a wish"], es: [{ term: щоб }, " con el pasado: un deseo"] }
+            ex: ["Я хо́чу, ", { target: щоб ти прийшо́в }, "."]
+            tr: { en: "I want you to come.", es: "Quiero que vengas." }
+          - level: B1
+            use: { uk: [{ term: щоб }, " з минулим часом: прохання чи наказ"], en: [{ term: щоб }, " with the past tense: a request or an order"], es: [{ term: щоб }, " con el pasado: un pedido o una orden"] }
+            ex: ["Виклада́ч сказа́в, ", { target: щоб я бага́то працюва́в }, "."]
+            tr: { en: "The teacher told me to work hard.", es: "El profesor me dijo que trabajara mucho." }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Коли друга частина має інший підмет, після ", { term: щоб }, " дієслово стоїть у минулому часі, навіть коли йдеться про майбутнє."]
+              en: ["When the second clause has another subject, the verb after ", { term: щоб }, " takes the past tense, even about the future."]
+              es: ["Cuando la segunda oración tiene otro sujeto, el verbo después de ", { term: щоб }, " va en pasado, aunque hable del futuro."]
+            ex: ["За́втра я подзвоню́, ", { target: щоб ви не забу́ли }, "."]
+            tr: { en: "I'll call tomorrow so that you don't forget.", es: "Mañana llamo para que no se olviden." }
+
+  - title: { uk: "Порівняння: що і щоб", en: "Compare: що and щоб", es: "Comparación: що y щоб" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: this, label: що }
+          - { key: that, label: щоб }
+        rows:
+          - { level: B1, this: { uk: "факт: що відбувається", en: "a fact: what happens", es: "un hecho: lo que pasa" }, that: { uk: "прохання, наказ, мета", en: "a request, an order, a purpose", es: "un pedido, una orden, una finalidad" } }
+          - level: B1
+            this: { ex: ["Він сказа́в, ", { target: що }, " я працю́ю."], tr: { en: "He said that I work.", es: "Dijo que trabajo." } }
+            that: { ex: ["Він сказа́в, ", { target: щоб }, " я працюва́в."], tr: { en: "He told me to work.", es: "Dijo que trabajara." } }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: "Я вчу мо́ву, чтоб працюва́ти.", right: ["Я вчу мо́ву, ", { target: щоб }, " працюва́ти."], rule: { uk: [{ term: щоб }, "; ", { term: чтоб }, " — російське слово"], en: [{ term: щоб }, "; ", { term: чтоб }, " is Russian"], es: [{ term: щоб }, "; ", { term: чтоб }, " es una palabra rusa"] } }
+          - { level: A2, speakers: [en], wrong: Я зна́ю ти пра́вий., right: ["Я зна́ю, ", { target: що }, " ти пра́вий."], rule: { en: [{ term: що }, " never drops the way “that” can, and a comma goes before it"] } }
+          - { level: B1, speakers: [en], wrong: Я хо́чу тебе́ прийти́., right: ["Я хо́чу, ", { target: щоб ти прийшо́в }, "."], rule: { en: ["“want someone to do” is ", { term: щоб }, " with the past tense"] } }
+          - { level: B1, speakers: [es], wrong: "Я хо́чу, щоб ти при́йдеш.", right: ["Я хо́чу, щоб ти ", { target: прийшо́в }, "."], rule: { es: ["donde el español usa el subjuntivo, ", { term: щоб }, " lleva el pasado"] } }

@@ -1,0 +1,159 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.adjectives-adverbs.adjective-declension
+lang: uk
+kind: grammar
+tags: [adjectives, cases, declension]
+concepts: [adjectives, declension]
+related: [uk.adjectives-adverbs.adjective-agreement, uk.nouns-cases.cases-overview, uk.nouns-cases.declension-alternations, uk.pronouns.possessives]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "8f23b6 254cff 84f451 d2e910 698438 8fc486 7ed7cd", es: "8f23b6 254cff 84f451 d2e910 698438 8fc486 7ed7cd" }
+
+title: { uk: Відмінювання прикметників, en: Adjectives in All Cases, es: La declinación del adjetivo }
+summary:
+  lead:
+    uk: ["Прикметник змінюється за відмінками разом з іменником: ", { term: ново́го дру́га }, ", ", { term: ново́му дру́гові }, ", ", { term: з нови́м дру́гом }, "."]
+    en: ["An adjective changes for case together with its noun: ", { term: ново́го дру́га }, ", ", { term: ново́му дру́гові }, ", ", { term: з нови́м дру́гом }, "."]
+    es: ["El adjetivo cambia de caso junto con su sustantivo: ", { term: ново́го дру́га }, ", ", { term: ново́му дру́гові }, ", ", { term: з нови́м дру́гом }, "."]
+  rule:
+    uk: ["Чоловічий і середній рід мають спільні закінчення від родового до місцевого — ", { term: -ого }, ", ", { term: -ому }, ", ", { term: -им }, ":"]
+    en: ["The masculine and the neuter share their endings from the genitive to the locative, ", { term: -ого }, ", ", { term: -ому }, ", ", { term: -им }, ":"]
+    es: ["El masculino y el neutro comparten las terminaciones del genitivo al locativo, ", { term: -ого }, ", ", { term: -ому }, ", ", { term: -им }, ":"]
+  ex: { examples: [["Я живу́ в ", { target: ново́му }, " буди́нку."], ["Я живу́ в ", { target: ново́му }, " мі́сті."]] }
+
+cheatsheet:
+  content:
+    - type: paradigm
+      columns:
+        - { key: case, label: { uk: Відмінок, en: Case, es: Caso } }
+        - { key: mn, label: { uk: "Чоловічий і середній рід", en: "Masculine and neuter", es: "Masculino y neutro" } }
+        - { key: fem, label: { uk: Жіночий рід, en: Feminine, es: Femenino } }
+        - { key: pl, label: { uk: Множина, en: Plural, es: Plural } }
+      rows:
+        - { level: A2, features: { case: nom }, case: { uk: Називний, en: Nominative, es: Nominativo }, mn: { alternatives: [нови́й, нове́] }, fem: нова́, pl: нові́ }
+        - { level: A2, features: { case: gen }, case: { uk: Родовий, en: Genitive, es: Genitivo }, mn: ["нов", { ending: о́го }], fem: ["нов", { ending: о́ї }], pl: ["нов", { ending: и́х }] }
+        - { level: A2, features: { case: dat }, case: { uk: Давальний, en: Dative, es: Dativo }, mn: ["нов", { ending: о́му }], fem: ["нов", { ending: і́й }], pl: ["нов", { ending: и́м }] }
+        - { level: A2, features: { case: acc }, case: { uk: Знахідний, en: Accusative, es: Acusativo }, mn: { alternatives: [нови́й, ново́го, нове́] }, fem: ["нов", { ending: у́ }], pl: { alternatives: [нові́, нови́х] } }
+        - { level: A2, features: { case: ins }, case: { uk: Орудний, en: Instrumental, es: Instrumental }, mn: ["нов", { ending: и́м }], fem: ["нов", { ending: о́ю }], pl: ["нов", { ending: и́ми }] }
+        - { level: A2, features: { case: loc }, case: { uk: Місцевий, en: Locative, es: Locativo }, mn: ["на нов", { ending: о́му }], fem: ["на нов", { ending: і́й }], pl: ["на нов", { ending: и́х }] }
+        - { level: B1, features: { case: nom }, case: { uk: Коротка форма, en: Short form, es: Forma breve }, mn: { alternatives: [потрі́бен, здоро́в] } }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "Прикметник стоїть у тому самому відмінку, що й іменник:"
+              en: "An adjective stands in the same case as its noun:"
+              es: "El adjetivo va en el mismo caso que su sustantivo:"
+            ex: ["Я пишу́ ", { target: си́ньою }, " ру́чкою."]
+            tr: { en: "I'm writing with a blue pen.", es: "Escribo con un bolígrafo azul." }
+          - type: rule
+            level: A2
+            text:
+              uk: "У множині закінчення спільні для всіх родів:"
+              en: "In the plural the endings are the same for every gender:"
+              es: "En plural las terminaciones son las mismas para todos los géneros:"
+            ex: ["Ми гово́римо з ", { target: нови́ми }, " коле́гами."]
+            tr: { en: "We're talking with our new colleagues.", es: "Hablamos con los nuevos compañeros." }
+          - type: note
+            level: A2
+            text:
+              uk: ["Коли відмінок потрібен, показує ", { link: Сім відмінків, to: uk.nouns-cases.cases-overview }, "."]
+              en: ["When each case is needed: ", { link: The Seven Cases, to: uk.nouns-cases.cases-overview }, "."]
+              es: ["Cuándo se usa cada caso: ", { link: Los siete casos, to: uk.nouns-cases.cases-overview }, "."]
+
+  - title: { uk: "Форма: м’яка група", en: "Form: the soft group", es: "Forma: el grupo blando" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок, en: Case, es: Caso } }
+          - { key: mn, label: { uk: "Чоловічий і середній рід", en: "Masculine and neuter", es: "Masculino y neutro" } }
+          - { key: fem, label: { uk: Жіночий рід, en: Feminine, es: Femenino } }
+          - { key: pl, label: { uk: Множина, en: Plural, es: Plural } }
+        rows:
+          - { level: A2, features: { case: nom }, case: { uk: Називний, en: Nominative, es: Nominativo }, mn: { alternatives: [си́ній, си́нє] }, fem: си́ня, pl: си́ні }
+          - { level: A2, features: { case: gen }, case: { uk: Родовий, en: Genitive, es: Genitivo }, mn: ["си́нь", { ending: ого }], fem: ["си́нь", { ending: ої }], pl: ["си́н", { ending: іх }] }
+          - { level: A2, features: { case: dat }, case: { uk: Давальний, en: Dative, es: Dativo }, mn: ["си́нь", { ending: ому }], fem: ["си́н", { ending: ій }], pl: ["си́н", { ending: ім }] }
+          - { level: A2, features: { case: acc }, case: { uk: Знахідний, en: Accusative, es: Acusativo }, mn: { alternatives: [си́ній, си́нього, си́нє] }, fem: ["си́н", { ending: ю }], pl: { alternatives: [си́ні, си́ніх] } }
+          - { level: A2, features: { case: ins }, case: { uk: Орудний, en: Instrumental, es: Instrumental }, mn: ["си́н", { ending: ім }], fem: ["си́нь", { ending: ою }], pl: ["си́н", { ending: іми }] }
+          - { level: A2, features: { case: loc }, case: { uk: Місцевий, en: Locative, es: Locativo }, mn: ["на си́нь", { ending: ому }], fem: ["на си́н", { ending: ій }], pl: ["на си́н", { ending: іх }] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["М’яка група має ", { term: -і- }, " чи ", { term: -ь- }, " там, де тверда має ", { term: -и- }, " чи ", { term: -о- }, ":"]
+              en: ["The soft group has ", { term: -і- }, " or ", { term: -ь- }, " where the hard group has ", { term: -и- }, " or ", { term: -о- }, ":"]
+              es: ["El grupo blando tiene ", { term: -і- }, " o ", { term: -ь- }, " donde el duro tiene ", { term: -и- }, " o ", { term: -о- }, ":"]
+            ex: ["Ми зустрі́лися ", { target: лі́тнього }, " ве́чора."]
+            tr: { en: "We met on a summer evening.", es: "Nos conocimos una tarde de verano." }
+          - type: note
+            level: B1
+            text:
+              uk: ["Так само відмінюються ", { term: сього́днішній }, ", ", { term: вечі́рній }, ", ", { term: всесві́тній }, ":"]
+              en: [{ term: сього́днішній }, " (today's), ", { term: вечі́рній }, " (evening) and ", { term: всесві́тній }, " (worldwide) decline the same way:"]
+              es: [{ term: сього́днішній }, " (de hoy), ", { term: вечі́рній }, " (de la tarde) y ", { term: всесві́тній }, " (mundial) se declinan igual:"]
+            ex: ["Ви чита́ли ", { target: сього́днішню }, " газе́ту?"]
+            tr: { en: "Have you read today's paper?", es: "¿Has leído el periódico de hoy?" }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Відмінок, en: Case, es: Caso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: Родовий, en: Genitive, es: Genitivo }
+            ex: ["У ме́не нема́є ", { target: ві́льного }, " ча́су."]
+            tr: { en: "I don't have any free time.", es: "No tengo tiempo libre." }
+          - level: A2
+            use: { uk: Давальний, en: Dative, es: Dativo }
+            ex: ["Я допомага́ю ", { target: ново́му }, " сусі́дові."]
+            tr: { en: "I'm helping my new neighbour.", es: "Ayudo a mi nuevo vecino." }
+          - level: A2
+            use: { uk: "Знахідний, живе", en: "Accusative, animate", es: "Acusativo, animado" }
+            ex: ["Я ба́чу ", { target: нови́х }, " студе́нтів."]
+            tr: { en: "I can see the new students.", es: "Veo a los estudiantes nuevos." }
+          - level: A2
+            use: { uk: Орудний, en: Instrumental, es: Instrumental }
+            ex: ["Я п’ю ка́ву з ", { target: холо́дним }, " молоко́м."]
+            tr: { en: "I drink coffee with cold milk.", es: "Tomo el café con leche fría." }
+          - level: A2
+            use: { uk: Місцевий, en: Locative, es: Locativo }
+            ex: ["Він у ", { target: черво́ному }, " све́трі."]
+            tr: { en: "He's wearing a red jumper.", es: "Lleva un suéter rojo." }
+          - level: A2
+            use: { uk: Кличний, en: Vocative, es: Vocativo }
+            ex: [{ target: Дороги́й }, " дру́же!"]
+            tr: { en: "Dear friend!", es: "¡Querido amigo!" }
+
+  - title: { uk: Короткі форми, en: Short forms, es: Formas breves }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Кілька прикметників чоловічого роду мають коротку форму: ", { mapping: [{ term: потрі́бний }, { term: потрі́бен }] }, ", ", { mapping: [{ term: здоро́вий }, { term: здоро́в }] }, ":"]
+              en: ["A few masculine adjectives have a short form: ", { mapping: [{ term: потрі́бний }, { term: потрі́бен }] }, ", ", { mapping: [{ term: здоро́вий }, { term: здоро́в }] }, ":"]
+              es: ["Algunos adjetivos masculinos tienen una forma breve: ", { mapping: [{ term: потрі́бний }, { term: потрі́бен }] }, ", ", { mapping: [{ term: здоро́вий }, { term: здоро́в }] }, ":"]
+            ex: { examples: [["Мені́ ", { target: потрі́бен }, " квито́к."], ["Будь ", { target: здоро́в }, "!"]] }
+            tr: { en: { examples: ["I need a ticket.", "Bless you! (or: Take care!)"] }, es: { examples: ["Necesito un boleto.", "¡Salud! (o: ¡Cuídate!)"] } }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Я ма́ю нови́й друг., right: ["Я ма́ю ", { target: ново́го дру́га }, "."], rule: { uk: ["живий іменник чоловічого роду: прикметник має ", { term: -ого }], en: ["an animate masculine noun: the adjective takes ", { term: -ого }], es: ["un masculino animado: el adjetivo toma ", { term: -ого }] } }
+          - { level: A2, wrong: Я говорю́ з нови́м по́другою., right: ["Я говорю́ з ", { target: ново́ю }, " по́другою."], rule: { uk: ["жіночий рід в орудному: ", { term: -ою }], en: ["the feminine instrumental takes ", { term: -ою }], es: ["el femenino en instrumental toma ", { term: -ою }] } }
+          - { level: A2, wrong: Ми живемо́ в нови́х буди́нку., right: ["Ми живемо́ в ", { target: ново́му }, " буди́нку."], rule: { uk: ["однина: ", { term: -ому }, "; ", { term: -их }, " — лише множина"], en: ["the singular takes ", { term: -ому }, "; ", { term: -их }, " is plural only"], es: ["el singular lleva ", { term: -ому }, "; ", { term: -их }, " es solo plural"] } }
+          - { level: A2, speakers: [en, es], wrong: Я пишу́ з си́ньою ру́чкою., right: ["Я пишу́ ", { target: си́ньою ру́чкою }, "."], rule: { en: "the tool takes the instrumental with no preposition: no word for “with”", es: "el instrumento va en instrumental sin preposición: no se traduce «con»" } }

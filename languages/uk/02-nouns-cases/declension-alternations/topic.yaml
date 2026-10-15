@@ -1,0 +1,231 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.declension-alternations
+lang: uk
+kind: grammar
+tags: [cases, declension, nouns, alternations, spelling]
+concepts: [declension, cases]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.genitive, uk.nouns-cases.dative, uk.nouns-cases.instrumental, uk.nouns-cases.locative, uk.nouns-cases.vocative]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "4b4bc3 a06afb d66e16 a681b0 4f7c1e 70f5c7 a57195", es: "4b4bc3 a06afb d66e16 a681b0 4f7c1e 70f5c7 a57195" }
+
+title: { uk: Групи відмінювання й чергування, en: Declension Groups and Alternations, es: Grupos de declinación y alternancias }
+summary:
+  lead:
+    uk: "Іменники відмінюються за трьома групами — твердою, м’якою й мішаною, — а в деяких формах змінюються голосні й приголосні основи."
+    en: "Nouns decline in three groups, hard, soft and mixed, and some forms change a vowel or a consonant of the stem."
+    es: "Los sustantivos se declinan en tres grupos, duro, blando y mixto, y algunas formas cambian una vocal o una consonante de la raíz."
+  rule:
+    uk: ["Після ", { letter: ж }, ", ", { letter: ч }, ", ", { letter: ш }, ", ", { letter: щ }, " в орудному пишемо ", { term: -ем }, ":"]
+    en: ["After ", { letter: ж }, ", ", { letter: ч }, ", ", { letter: ш }, " and ", { letter: щ }, ", the instrumental ends in ", { term: -ем }, ":"]
+    es: ["Tras ", { letter: ж }, ", ", { letter: ч }, ", ", { letter: ш }, " y ", { letter: щ }, ", el instrumental termina en ", { term: -ем }, ":"]
+  ex: { examples: [["з ", { target: това́ришем }], ["з ", { target: викладаче́м }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Тверда група, en: Hard group, es: Grupo duro }
+          rule:
+            uk: ["твердий приголосний: ", { term: -ом }, ", ", { term: -ою }]
+            en: ["a hard consonant: ", { term: -ом }, ", ", { term: -ою }]
+            es: ["consonante dura: ", { term: -ом }, ", ", { term: -ою }]
+          ex: ["Я гуля́ю з ", { target: бра́том }, "."]
+          tr: { en: "I'm out walking with my brother.", es: "Paseo con mi hermano." }
+        - level: A2
+          point: { uk: М’яка група, en: Soft group, es: Grupo blando }
+          rule:
+            uk: ["м’який приголосний чи ", { term: -й }, ": ", { term: -ем }, ", ", { term: -ею }]
+            en: ["a soft consonant or ", { term: -й }, ": ", { term: -ем }, ", ", { term: -ею }]
+            es: ["consonante blanda o ", { term: -й }, ": ", { term: -ем }, ", ", { term: -ею }]
+          ex: ["Я розмовля́ю з ", { target: учи́телем }, "."]
+          tr: { en: "I'm talking to the teacher.", es: "Hablo con el profesor." }
+        - level: A2
+          point: { uk: Мішана група, en: Mixed group, es: Grupo mixto }
+          rule:
+            uk: [{ alternatives: [{ letter: ж }, { letter: ч }, { letter: ш }, { letter: щ }] }, ": родовий як тверда, орудний як м’яка"]
+            en: [{ alternatives: [{ letter: ж }, { letter: ч }, { letter: ш }, { letter: щ }] }, ": genitive like hard, instrumental like soft"]
+            es: [{ alternatives: [{ letter: ж }, { letter: ч }, { letter: ш }, { letter: щ }] }, ": genitivo como el duro, instrumental como el blando"]
+          ex: ["Я чека́ю ", { target: това́риша }, "."]
+          tr: { en: "I'm waiting for my friend.", es: "Espero a mi compañero." }
+        - level: A2
+          point: { uk: Голосні, en: Vowels, es: Vocales }
+          rule:
+            uk: [{ mapping: [{ letter: і }, { alternatives: [{ letter: о }, { letter: е }] }] }, " у відкритому складі"]
+            en: [{ mapping: [{ letter: і }, { alternatives: [{ letter: о }, { letter: е }] }] }, " in an open syllable"]
+            es: [{ mapping: [{ letter: і }, { alternatives: [{ letter: о }, { letter: е }] }] }, " en sílaba abierta"]
+          ex: ["Де мої́ ", { target: ре́чі }, "?"]
+          tr: { en: "Where are my things?", es: "¿Dónde están mis cosas?" }
+        - level: A2
+          point: { uk: Приголосні, en: Consonants, es: Consonantes }
+          rule:
+            uk: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }, { letter: х }] }, { alternatives: [{ letter: з }, { letter: ц }, { letter: с }] }] }, " перед ", { term: -і }]
+            en: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }, { letter: х }] }, { alternatives: [{ letter: з }, { letter: ц }, { letter: с }] }] }, " before ", { term: -і }]
+            es: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }, { letter: х }] }, { alternatives: [{ letter: з }, { letter: ц }, { letter: с }] }] }, " ante ", { term: -і }]
+          ex: ["Подару́й ", { target: жі́нці }, " кві́ти."]
+          tr: { en: "Give your wife flowers.", es: "Regálale flores a tu mujer." }
+        - level: B1
+          point: { uk: Випадні голосні, en: Dropped vowels, es: Vocales que caen }
+          rule:
+            uk: [{ alternatives: [{ letter: о }, { letter: е }] }, " зникають в інших відмінках"]
+            en: [{ alternatives: [{ letter: о }, { letter: е }] }, " drop in the other cases"]
+            es: [{ alternatives: [{ letter: о }, { letter: е }] }, " desaparecen en los demás casos"]
+          ex: ["Я не ба́чу ", { target: олівця́ }, "."]
+          tr: { en: "I can't see the pencil.", es: "No veo el lápiz." }
+        - level: B1
+          point: { uk: Кличний, en: Vocative, es: Vocativo }
+          rule:
+            uk: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, " перед ", { term: -е }]
+            en: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, " before ", { term: -е }]
+            es: [{ mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, " ante ", { term: -е }]
+          ex: [{ target: Дру́же }, ", дя́кую!"]
+          tr: { en: "Thanks, my friend!", es: "¡Gracias, amigo!" }
+        - level: B1
+          point: { uk: Мішана група, en: Mixed group, es: Grupo mixto }
+          rule:
+            uk: "жіночий і середній рід теж мають мішану групу"
+            en: "feminine and neuter nouns have a mixed group too"
+            es: "los femeninos y neutros también tienen grupo mixto"
+          ex: ["Ми зустрі́немося ", { target: на пло́щі }, "."]
+          tr: { en: "We'll meet in the square.", es: "Nos vemos en la plaza." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: ["після шиплячого — ", { term: -ем }, ", не ", { term: -ом }]
+            en: ["after ж, ч, ш, щ: ", { term: -ем }, ", never ", { term: -ом }]
+            es: ["tras ж, ч, ш, щ: ", { term: -ем }, ", nunca ", { term: -ом }]
+          ex: ["Я говори́в з ", { target: викладаче́м }, "."]
+          tr: { en: "I spoke to the lecturer.", es: "Hablé con el profesor." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "За останнім приголосним основи іменники належать до твердої, м’якої чи мішаної групи:"
+              en: "The last consonant of the stem puts a noun in the hard, the soft or the mixed group:"
+              es: "La última consonante de la raíz pone el sustantivo en el grupo duro, blando o mixto:"
+            ex: { examples: [{ target: брат }, { target: учи́тель }, { target: това́риш }] }
+            tr: { en: { examples: [brother, teacher, friend] }, es: { examples: [hermano, profesor, compañero] } }
+
+  - title: { uk: "Групи відмінювання", en: "Declension groups", es: "Grupos de declinación" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: gen, label: { uk: Родовий, en: Genitive, es: Genitivo }, features: { case: gen } }
+          - { key: ins, label: { uk: Орудний, en: Instrumental, es: Instrumental }, features: { case: ins } }
+        rows:
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, тверда", en: "Masculine, hard", es: "Masculino, duro" }, nom: брат, gen: ["бра́т", { ending: а }], ins: ["бра́т", { ending: ом }] }
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, м’яка", en: "Masculine, soft", es: "Masculino, blando" }, nom: учи́тель, gen: ["учи́тел", { ending: я }], ins: ["учи́тел", { ending: ем }] }
+          - { level: A2, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід, мішана", en: "Masculine, mixed", es: "Masculino, mixto" }, nom: това́риш, gen: ["това́риш", { ending: а }], ins: ["това́риш", { ending: ем }] }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід, тверда", en: "Feminine, hard", es: "Femenino, duro" }, nom: ма́ма, gen: ["ма́м", { ending: и }], ins: ["ма́м", { ending: ою }] }
+          - { level: A2, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід, м’яка", en: "Feminine, soft", es: "Femenino, blando" }, nom: бабу́ся, gen: ["бабу́с", { ending: і }], ins: ["бабу́с", { ending: ею }] }
+          - { level: B1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід, мішана", en: "Feminine, mixed", es: "Femenino, mixto" }, nom: пло́ща, gen: ["пло́щ", { ending: і }], ins: ["пло́щ", { ending: ею }] }
+          - { level: A2, features: { gender: neut, number: sg }, group: { uk: "Середній рід, тверда", en: "Neuter, hard", es: "Neutro, duro" }, nom: мі́сто, gen: ["мі́ст", { ending: а }], ins: ["мі́ст", { ending: ом }] }
+          - { level: A2, features: { gender: neut, number: sg }, group: { uk: "Середній рід, м’яка", en: "Neuter, soft", es: "Neutro, blando" }, nom: мо́ре, gen: ["мо́р", { ending: я }], ins: ["мо́р", { ending: ем }] }
+          - { level: B1, features: { gender: neut, number: sg }, group: { uk: "Середній рід, мішана", en: "Neuter, mixed", es: "Neutro, mixto" }, nom: прі́звище, gen: ["прі́звищ", { ending: а }], ins: ["прі́звищ", { ending: ем }] }
+          - { level: B1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід на -о", en: "Masculine in -о", es: "Masculino en -о" }, nom: ба́тько, gen: ["ба́тьк", { ending: а }], ins: ["ба́тьк", { ending: ом }] }
+          - { level: B1, features: { gender: masc, number: sg }, group: { uk: "Чоловічий рід на -ин", en: "Masculine in -ин", es: "Masculino en -ин" }, nom: кия́нин, gen: ["кия́нин", { ending: а }], ins: ["кия́нин", { ending: ом }] }
+          - { level: B1, features: { gender: neut, number: sg }, group: { uk: "Середній рід із суфіксом -ен-", en: "Neuter with the suffix -ен-", es: "Neutro con el sufijo -ен-" }, nom: ім’я́, gen: ["і́мен", { ending: і }], ins: ["і́мен", { ending: ем }] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "Мішана група в одних формах схожа на тверду, в інших — на м’яку:"
+              en: "The mixed group follows the hard group in some forms and the soft group in others:"
+              es: "El grupo mixto sigue al duro en unas formas y al blando en otras:"
+            ex: { examples: [["чека́ю ", { target: това́риша }], ["гуля́ю з ", { target: това́ришем }]] }
+            tr: { en: { examples: ["I'm waiting for my friend", "I'm out walking with my friend"] }, es: { examples: ["espero a mi compañero", "paseo con mi compañero"] } }
+          - type: note
+            level: B1
+            text:
+              uk: "Шкільна граматика ділить іменники на чотири відміни. I — жіночий і чоловічий рід на -а, -я; II — чоловічий рід на приголосний чи -о і середній рід на -о, -е, -я; III — жіночий рід на приголосний і слово мати; IV — середній рід на -а, -я, що в непрямих відмінках додає суфікс -ат-, -ят- чи -ен-:"
+              en: "School grammar sorts nouns into four declensions. I: feminine and masculine nouns in -а, -я; II: masculine nouns in a consonant or -о, and neuter nouns in -о, -е, -я; III: feminine nouns in a consonant, and мати (mother); IV: neuter nouns in -а, -я that add the suffix -ат-, -ят- or -ен- in the other cases:"
+              es: "La gramática escolar reparte los sustantivos en cuatro declinaciones. I: femeninos y masculinos en -а, -я; II: masculinos en consonante o en -о, y neutros en -о, -е, -я; III: femeninos en consonante, y мати (madre); IV: neutros en -а, -я que añaden el sufijo -ат-, -ят- o -ен- en los demás casos:"
+            ex: { examples: [ма́ма, ба́тько, ніч, ім’я́] }
+            tr: { en: { examples: [mum, father, night, name] }, es: { examples: [mamá, padre, noche, nombre] } }
+
+  - title: { uk: "Чергування голосних", en: "Vowel alternations", es: "Alternancias vocálicas" }
+    role: spelling
+    content:
+      - type: paradigm
+        columns:
+          - { key: change, label: { uk: Зміна, en: Change, es: Cambio } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: other, label: { uk: Інша форма, en: Another form, es: Otra forma } }
+        rows:
+          - { level: A2, change: { uk: { mapping: [{ letter: і }, { letter: о }] }, en: { mapping: [{ letter: і }, { letter: о }] }, es: { mapping: [{ letter: і }, { letter: о }] } }, nom: ніс, other: ["н", { letter: о́ }, "са"] }
+          - { level: A2, change: { uk: { mapping: [{ letter: і }, { letter: е }] }, en: { mapping: [{ letter: і }, { letter: е }] }, es: { mapping: [{ letter: і }, { letter: е }] } }, nom: річ, other: ["р", { letter: е́ }, "чі"] }
+          - { level: B1, change: { uk: { mapping: [{ letter: і }, { letter: о }] }, en: { mapping: [{ letter: і }, { letter: о }] }, es: { mapping: [{ letter: і }, { letter: о }] } }, nom: { alternatives: [рік, кіт] }, other: { alternatives: [["р", { letter: о́ }, "ку"], ["к", { letter: о }, "та́"]] } }
+          - { level: B1, change: { uk: "о, е випадають", en: "о, е drop", es: "о, е desaparecen" }, nom: { alternatives: [у́чень, ти́ждень, оліве́ць] }, other: { alternatives: [у́чня, ти́жня, олівця́] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Голосний ", { letter: і }, " у закритому складі стає ", { letter: о }, " чи ", { letter: е }, ", коли склад відкривається:"]
+              en: ["An ", { letter: і }, " in a closed syllable becomes ", { letter: о }, " or ", { letter: е }, " when the syllable opens:"]
+              es: ["Una ", { letter: і }, " en sílaba cerrada pasa a ", { letter: о }, " o ", { letter: е }, " cuando la sílaba se abre:"]
+            ex: ["Ми живемо́ ", { target: у Льво́ві }, "."]
+            tr: { en: "We live in Lviv.", es: "Vivimos en Lviv." }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Голосні ", { letter: о }, ", ", { letter: е }, " в останньому складі часто випадають:"]
+              en: ["The vowels ", { letter: о }, " and ", { letter: е }, " in the last syllable often drop:"]
+              es: ["Las vocales ", { letter: о }, " y ", { letter: е }, " de la última sílaba suelen desaparecer:"]
+            ex: ["Я чека́ю ", { target: у́чня }, "."]
+            tr: { en: "I'm waiting for the pupil.", es: "Espero al alumno." }
+
+  - title: { uk: "Чергування приголосних", en: "Consonant alternations", es: "Alternancias consonánticas" }
+    role: spelling
+    content:
+      - type: paradigm
+        columns:
+          - { key: change, label: { uk: Зміна, en: Change, es: Cambio } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: other, label: { uk: Інша форма, en: Another form, es: Otra forma } }
+        rows:
+          - { level: A2, change: { uk: { mapping: [{ letter: г }, { letter: з }] }, en: { mapping: [{ letter: г }, { letter: з }] }, es: { mapping: [{ letter: г }, { letter: з }] } }, nom: нога́, other: ["на но", { letter: з }, { ending: і́ }] }
+          - { level: A2, change: { uk: { mapping: [{ letter: к }, { letter: ц }] }, en: { mapping: [{ letter: к }, { letter: ц }] }, es: { mapping: [{ letter: к }, { letter: ц }] } }, nom: { alternatives: [рука́, жі́нка] }, other: { alternatives: [["у ру", { letter: ц }, { ending: і́ }], ["жі́н", { letter: ц }, { ending: і }]] } }
+          - { level: A2, change: { uk: { mapping: [{ letter: х }, { letter: с }] }, en: { mapping: [{ letter: х }, { letter: с }] }, es: { mapping: [{ letter: х }, { letter: с }] } }, nom: по́верх, other: ["на по́вер", { letter: с }, { ending: і }] }
+          - { level: B1, change: { uk: { mapping: [{ letter: г }, { letter: з }] }, en: { mapping: [{ letter: г }, { letter: з }] }, es: { mapping: [{ letter: г }, { letter: з }] } }, nom: { alternatives: [О́льга, порі́г] }, other: { alternatives: [["О́ль", { letter: з }, { ending: і }], ["на поро́", { letter: з }, { ending: і }]] } }
+          - { level: B1, change: { uk: { mapping: [{ letter: к }, { letter: ц }] }, en: { mapping: [{ letter: к }, { letter: ц }] }, es: { mapping: [{ letter: к }, { letter: ц }] } }, nom: { alternatives: [кни́жка, о́ко] }, other: { alternatives: [["у кни́ж", { letter: ц }, { ending: і }], ["на о́", { letter: ц }, { ending: і }]] } }
+          - { level: B1, change: { uk: { mapping: [{ letter: х }, { letter: с }] }, en: { mapping: [{ letter: х }, { letter: с }] }, es: { mapping: [{ letter: х }, { letter: с }] } }, nom: ву́хо, other: ["у ву́", { letter: с }, { ending: і }] }
+          - { level: B1, change: { uk: { mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, en: { mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] }, es: { mapping: [{ alternatives: [{ letter: г }, { letter: к }] }, { alternatives: [{ letter: ж }, { letter: ч }] }] } }, nom: { alternatives: [друг, коза́к] }, other: { alternatives: [["дру́", { letter: ж }, { ending: е }], ["коза́", { letter: ч }, { ending: е }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["У давальному й місцевому перед ", { term: -і }, " приголосні ", { letter: г }, ", ", { letter: к }, ", ", { letter: х }, " стають ", { letter: з }, ", ", { letter: ц }, ", ", { letter: с }, "."]
+              en: ["In the dative and locative, before ", { term: -і }, ", the consonants ", { letter: г }, ", ", { letter: к }, " and ", { letter: х }, " become ", { letter: з }, ", ", { letter: ц }, " and ", { letter: с }, "."]
+              es: ["En dativo y locativo, ante ", { term: -і }, ", las consonantes ", { letter: г }, ", ", { letter: к }, " y ", { letter: х }, " pasan a ", { letter: з }, ", ", { letter: ц }, " y ", { letter: с }, "."]
+          - type: rule
+            level: B1
+            text:
+              uk: ["У кличному перед ", { term: -е }, " приголосні ", { letter: г }, ", ", { letter: к }, " стають ", { letter: ж }, ", ", { letter: ч }, "."]
+              en: ["In the vocative, before ", { term: -е }, ", the consonants ", { letter: г }, " and ", { letter: к }, " become ", { letter: ж }, " and ", { letter: ч }, "."]
+              es: ["En vocativo, ante ", { term: -е }, ", las consonantes ", { letter: г }, " y ", { letter: к }, " pasan a ", { letter: ж }, " y ", { letter: ч }, "."]
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: Я гуля́ю з това́ришом., right: ["Я гуля́ю з ", { target: това́ришем }, "."], rule: { uk: ["після ", { letter: ш }, " в орудному — ", { term: -ем }], en: ["after ", { letter: ш }, " the instrumental is ", { term: -ем }], es: ["tras ", { letter: ш }, " el instrumental es ", { term: -ем }] } }
+          - { level: A2, wrong: Подару́й жі́нкі кві́ти., right: ["Подару́й ", { target: жі́нці }, " кві́ти."], rule: { uk: [{ mapping: [{ letter: к }, { letter: ц }] }, " перед ", { term: -і }], en: [{ mapping: [{ letter: к }, { letter: ц }] }, " before ", { term: -і }], es: [{ mapping: [{ letter: к }, { letter: ц }] }, " ante ", { term: -і }] } }
+          - { level: B1, wrong: Я не ба́чу олі́веця., right: ["Я не ба́чу ", { target: олівця́ }, "."], rule: { uk: [{ letter: е }, " з ", { term: оліве́ць }, " випадає"], en: ["the ", { letter: е }, " of ", { term: оліве́ць }, " drops"], es: ["la ", { letter: е }, " de ", { term: оліве́ць }, " desaparece"] } }
+          - { level: B1, wrong: Мину́ло бага́то рі́ків., right: ["Мину́ло бага́то ", { target: ро́ків }, "."], rule: { uk: [{ mapping: [{ letter: і }, { letter: о }] }, " у відкритому складі"], en: [{ mapping: [{ letter: і }, { letter: о }] }, " in an open syllable"], es: [{ mapping: [{ letter: і }, { letter: о }] }, " en sílaba abierta"] } }

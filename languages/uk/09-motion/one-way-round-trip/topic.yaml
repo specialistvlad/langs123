@@ -1,0 +1,175 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.motion.one-way-round-trip
+lang: uk
+kind: grammar
+tags: [verbs, motion]
+concepts: [motion-verbs]
+related: [uk.motion.go-ride, uk.motion.prefixed-motion, uk.past-aspect.past-tense]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "f70abe e5ae15 69fb75 25a124 81052e 4acfde 1cbcd1", es: "f70abe e5ae15 69fb75 25a124 81052e 4acfde 1cbcd1" }
+
+title: { uk: "Іти чи ходити, їхати чи їздити", en: "One Way or Round Trip: іти/ходити, їхати/їздити", es: "Ida o ida y vuelta: іти/ходити, їхати/їздити" }
+summary:
+  lead:
+    uk: [{ term: Іти́ }, " і ", { term: ї́хати }, " називають рух в одному напрямку зараз, ", { term: ходи́ти }, " і ", { term: ї́здити }, " — регулярний рух або поїздку туди й назад."]
+    en: [{ term: Іти́ }, " and ", { term: ї́хати }, " name one trip in one direction, ", { term: ходи́ти }, " and ", { term: ї́здити }, " regular trips or a trip there and back."]
+    es: [{ term: Іти́ }, " y ", { term: ї́хати }, " nombran un trayecto en una dirección; ", { term: ходи́ти }, " y ", { term: ї́здити }, ", los trayectos habituales o una ida y vuelta."]
+  rule:
+    uk: ["Регулярний рух — це ", { term: ходи́ти }, " чи ", { term: ї́здити }, ":"]
+    en: ["Regular trips take ", { term: ходи́ти }, " or ", { term: ї́здити }, ":"]
+    es: ["Los trayectos habituales llevan ", { term: ходи́ти }, " o ", { term: ї́здити }, ":"]
+  ex: { examples: [["Щодня́ я ", { target: ходжу́ }, " на робо́ту."], ["Він ча́сто ", { target: ї́здить }, " у Львів."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Пари, en: Pairs, es: Parejas }
+          rule: { uk: [{ mapping: [{ term: іти́ }, { term: ходи́ти }] }, ", ", { mapping: [{ term: ї́хати }, { term: ї́здити }] }, ", ", { mapping: [{ term: леті́ти }, { term: літа́ти }] }], en: [{ mapping: [{ term: іти́ }, { term: ходи́ти }] }, ", ", { mapping: [{ term: ї́хати }, { term: ї́здити }] }, ", ", { mapping: [{ term: леті́ти }, { term: літа́ти }] }], es: [{ mapping: [{ term: іти́ }, { term: ходи́ти }] }, ", ", { mapping: [{ term: ї́хати }, { term: ї́здити }] }, ", ", { mapping: [{ term: леті́ти }, { term: літа́ти }] }] }
+          ex: { contrast: [["Я ", { target: йду }, " в банк"], ["Я ча́сто ", { target: ходжу́ }, " в банк"]] }
+          tr: { en: { contrast: ["I'm going to the bank", "I often go to the bank"] }, es: { contrast: ["Voy al banco", "Voy al banco a menudo"] } }
+        - level: A2
+          point: { uk: ходи́ти, en: ходи́ти, es: ходи́ти }
+          rule: { uk: { alternatives: [{ term: ходжу́ }, { term: хо́диш }, { term: хо́дить }, { term: хо́дять }] }, en: { alternatives: [{ term: ходжу́ }, { term: хо́диш }, { term: хо́дить }, { term: хо́дять }] }, es: { alternatives: [{ term: ходжу́ }, { term: хо́диш }, { term: хо́дить }, { term: хо́дять }] } }
+          ex: ["Ді́ти ", { target: хо́дять }, " у шко́лу пі́шки."]
+          tr: { en: "The children walk to school.", es: "Los niños van a pie a la escuela." }
+        - level: A2
+          point: { uk: ї́здити, en: ї́здити, es: ї́здити }
+          rule: { uk: { alternatives: [{ term: ї́жджу }, { term: ї́здиш }, { term: ї́здить }, { term: ї́здять }] }, en: { alternatives: [{ term: ї́жджу }, { term: ї́здиш }, { term: ї́здить }, { term: ї́здять }] }, es: { alternatives: [{ term: ї́жджу }, { term: ї́здиш }, { term: ї́здить }, { term: ї́здять }] } }
+          ex: ["Я ", { target: ї́жджу }, " на робо́ту метро́."]
+          tr: { en: "I go to work by metro.", es: "Voy al trabajo en metro." }
+        - level: A2
+          point: { uk: "Регулярно", en: "Regularly", es: "Habitualmente" }
+          rule: { uk: { alternatives: [{ term: ходи́ти }, { term: ї́здити }, { term: літа́ти }] }, en: { alternatives: [{ term: ходи́ти }, { term: ї́здити }, { term: літа́ти }] }, es: { alternatives: [{ term: ходи́ти }, { term: ї́здити }, { term: літа́ти }] } }
+          ex: ["Ми ", { target: ї́здимо }, " на мо́ре щолі́та."]
+          tr: { en: "We go to the seaside every summer.", es: "Vamos al mar todos los veranos." }
+        - level: A2
+          point: { uk: "Туди й назад", en: "There and back", es: "Ida y vuelta" }
+          rule: { uk: ["минулий час від ", { term: ходи́ти }, ", ", { term: ї́здити }], en: ["the past of ", { term: ходи́ти }, " and ", { term: ї́здити }], es: ["el pasado de ", { term: ходи́ти }, " y ", { term: ї́здити }] }
+          ex: ["Учо́ра ми ", { target: ходи́ли }, " в кіно́."]
+          tr: { en: "We went to the cinema yesterday.", es: "Ayer fuimos al cine." }
+        - level: A2
+          point: { uk: "Уміння, загальний факт", en: "Ability, a general fact", es: "Capacidad, un hecho general" }
+          rule: { uk: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, en: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, es: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] } }
+          ex: ["Син уже́ ", { target: хо́дить }, "."]
+          tr: { en: "My son can already walk.", es: "Mi hijo ya camina." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: ["щодня, часто — ", { term: ходи́ти }], en: ["every day, often: ", { term: ходи́ти }], es: ["todos los días, a menudo: ", { term: ходи́ти }] }
+          ex: ["Щора́нку я ", { target: ходжу́ }, " в парк."]
+          tr: { en: "I go to the park every morning.", es: "Voy al parque todas las mañanas." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Кожне дієслово руху має пару: ", { term: іти́ }, ", ", { term: ї́хати }, " і ", { term: леті́ти }, " називають рух в одному напрямку."]
+              en: ["Each verb of motion has a pair: ", { term: іти́ }, ", ", { term: ї́хати }, " and ", { term: леті́ти }, " move in one direction."]
+              es: ["Cada verbo de movimiento tiene su pareja: ", { term: іти́ }, ", ", { term: ї́хати }, " y ", { term: леті́ти }, " van en una dirección."]
+          - type: rule
+            level: A2
+            text:
+              uk: ["Дієслова ", { term: ходи́ти }, ", ", { term: ї́здити }, ", ", { term: літа́ти }, " називають регулярний рух, поїздку туди й назад або рух без напрямку."]
+              en: ["The verbs ", { term: ходи́ти }, ", ", { term: ї́здити }, " and ", { term: літа́ти }, " name regular trips, a trip there and back, or movement with no direction."]
+              es: ["Los verbos ", { term: ходи́ти }, ", ", { term: ї́здити }, " y ", { term: літа́ти }, " nombran trayectos habituales, una ida y vuelta o un movimiento sin dirección."]
+            ex: ["Ми до́вго ", { target: ходи́ли }, " по мі́сту."]
+            tr: { en: "We walked around the town for a long time.", es: "Paseamos mucho rato por la ciudad." }
+
+  - title: { uk: Форма, en: Form, es: Forma }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто, en: Who, es: Quién } }
+          - { key: walk, label: ходи́ти, features: { tense: prs } }
+          - { key: ride, label: ї́здити, features: { tense: prs } }
+          - { key: fly, label: літа́ти, features: { tense: prs } }
+        rows:
+          - { level: A2, features: { person: 1, number: sg }, who: я, walk: [ходж, { ending: у́ }], ride: ї́жджу, fly: [літа́, { ending: ю }] }
+          - { level: A2, features: { person: 2, number: sg }, who: ти, walk: [хо́д, { ending: иш }], ride: [ї́зд, { ending: иш }], fly: [літа́, { ending: єш }] }
+          - { level: A2, features: { person: 3, number: sg }, who: { alternatives: [він, вона́, воно́] }, walk: [хо́д, { ending: ить }], ride: [ї́зд, { ending: ить }], fly: [літа́, { ending: є }] }
+          - { level: A2, features: { person: 1, number: pl }, who: ми, walk: [хо́д, { ending: имо }], ride: [ї́зд, { ending: имо }], fly: [літа́, { ending: ємо }] }
+          - { level: A2, features: { person: 2, number: pl }, who: { alternatives: [ви, Ви] }, walk: [хо́д, { ending: ите }], ride: [ї́зд, { ending: ите }], fly: [літа́, { ending: єте }] }
+          - { level: A2, features: { person: 3, number: pl }, who: вони́, walk: [хо́д, { ending: ять }], ride: [ї́зд, { ending: ять }], fly: [літа́, { ending: ють }] }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["У формі «я» приголосні змінюються: ", { mapping: [{ term: д }, { term: дж }] }, ", ", { mapping: [{ term: зд }, { term: ждж }] }, "."]
+              en: ["The я (I) form changes its consonants: ", { mapping: [{ term: д }, { term: дж }] }, ", ", { mapping: [{ term: зд }, { term: ждж }] }, "."]
+              es: ["La forma de я (yo) cambia sus consonantes: ", { mapping: [{ term: д }, { term: дж }] }, ", ", { mapping: [{ term: зд }, { term: ждж }] }, "."]
+            ex: { examples: [["Я ", { target: ходжу́ }, " пі́шки."], ["Я ", { target: ї́жджу }, " авто́бусом."]] }
+            tr: { en: { examples: ["I walk.", "I go by bus."] }, es: { examples: ["Voy a pie.", "Voy en autobús."] } }
+          - type: rule
+            level: A2
+            text:
+              uk: ["Пара ", { term: леті́ти }, " — ", { term: літа́ти }, " діє так само для руху в повітрі:"]
+              en: ["The pair ", { term: леті́ти }, " — ", { term: літа́ти }, " works the same way for flying:"]
+              es: ["La pareja ", { term: леті́ти }, " — ", { term: літа́ти }, " funciona igual para volar:"]
+            ex: { contrast: [["Літа́к ", { target: лети́ть }, " у Ло́ндон"], ["Я ча́сто ", { target: літа́ю }, " в Ло́ндон"]] }
+            tr: { en: { contrast: ["The plane is flying to London", "I often fly to London"] }, es: { contrast: ["El avión vuela a Londres", "Vuelo a menudo a Londres"] } }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: іти́ }, { term: ї́хати }] }, ": один рух зараз"], en: [{ alternatives: [{ term: іти́ }, { term: ї́хати }] }, ": one trip, now"], es: [{ alternatives: [{ term: іти́ }, { term: ї́хати }] }, ": un trayecto, ahora"] }
+            ex: ["За́раз я ", { target: ї́ду }, " на робо́ту."]
+            tr: { en: "I'm on my way to work now.", es: "Ahora voy al trabajo." }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: ходи́ти }, { term: ї́здити }] }, ": регулярний рух"], en: [{ alternatives: [{ term: ходи́ти }, { term: ї́здити }] }, ": regular trips"], es: [{ alternatives: [{ term: ходи́ти }, { term: ї́здити }] }, ": trayectos habituales"] }
+            ex: ["Я ", { target: ї́жджу }, " на робо́ту щодня́."]
+            tr: { en: "I go to work every day.", es: "Voy al trabajo todos los días." }
+          - level: A2
+            use: { uk: [{ term: іти́ }, " у минулому: людина в дорозі"], en: [{ term: іти́ }, " in the past: on the way"], es: [{ term: іти́ }, " en el pasado: de camino"] }
+            ex: ["Я ", { target: йшов }, " додо́му й зустрі́в дру́га."]
+            tr: { en: "I was walking home and met a friend.", es: "Iba a casa y me encontré con un amigo." }
+          - level: A2
+            use: { uk: [{ term: ходи́ти }, " у минулому: туди й назад"], en: [{ term: ходи́ти }, " in the past: there and back"], es: [{ term: ходи́ти }, " en el pasado: ida y vuelta"] }
+            ex: ["Учо́ра я ", { target: ходи́в }, " до лі́каря."]
+            tr: { en: "Yesterday I went to the doctor's.", es: "Ayer fui al médico." }
+
+  - title: { uk: "Слова-сигнали", en: "Signal words", es: "Palabras clave" }
+    role: signals
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { uk: Слово, en: Word, es: Palabra } }
+          - { key: verb, label: { uk: Дієслово, en: Verb, es: Verbo } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            word: { alternatives: [за́раз, сього́дні, за́втра] }
+            verb: { alternatives: [іти́, ї́хати] }
+            ex: [{ signal: Сього́дні }, " я ", { target: ї́ду }, " до бабу́сі."]
+            tr: { en: "Today I'm going to my grandmother's.", es: "Hoy voy a casa de mi abuela." }
+          - level: A2
+            word: { alternatives: [щодня́, ча́сто, за́вжди, і́ноді] }
+            verb: { alternatives: [ходи́ти, ї́здити] }
+            ex: ["Ми ", { signal: і́ноді }, " ", { target: хо́димо }, " в теа́тр."]
+            tr: { en: "We sometimes go to the theatre.", es: "A veces vamos al teatro." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, speakers: [en, es], wrong: Щодня́ я йду на робо́ту., right: ["Щодня́ я ", { target: ходжу́ }, " на робо́ту."], rule: { en: ["a regular trip takes ", { term: ходи́ти }], es: ["un trayecto habitual lleva ", { term: ходи́ти }] } }
+          - { level: A2, speakers: [en, es], wrong: За́втра я ї́жджу в Ки́їв., right: ["За́втра я ", { target: ї́ду }, " в Ки́їв."], rule: { en: ["one planned trip takes ", { term: ї́хати }], es: ["un viaje concreto lleva ", { term: ї́хати }] } }
+          - { level: A2, wrong: Я хожу́ в спортза́л., right: ["Я ", { target: ходжу́ }, " в спортза́л."], rule: { uk: ["форма «я» — ", { term: ходжу́ }, "; ", { term: хожу́ }, " — з російської"], en: ["the я form is ", { term: ходжу́ }, "; ", { term: хожу́ }, " is Russian"], es: ["la forma de я es ", { term: ходжу́ }, "; ", { term: хожу́ }, " es ruso"] } }

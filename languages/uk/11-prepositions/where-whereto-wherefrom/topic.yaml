@@ -1,0 +1,337 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.prepositions.where-whereto-wherefrom
+lang: uk
+kind: grammar
+tags: [prepositions, place, direction, cases]
+concepts: [prepositions-place]
+related: [uk.nouns-cases.locative, uk.nouns-cases.accusative, uk.nouns-cases.genitive, uk.nouns-cases.instrumental, uk.motion.go-ride, uk.foundations.euphony]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "a23561 5a7943 c56d8c cfec93 0b667d 102409 fb9f68 02b133", es: "a23561 5a7943 c56d8c cfec93 0b667d 102409 fb9f68 02b133" }
+
+title: { uk: "Де, куди, звідки", en: "Where, Where To, Where From: де, куди, звідки", es: "Dónde, adónde, de dónde: де, куди, звідки" }
+summary:
+  lead:
+    uk: "Де? — у, на з місцевим відмінком; куди? — у, на зі знахідним; звідки? — з, від із родовим."
+    en: "Where? takes у or на with the locative, where to? the accusative, and where from? з or від with the genitive."
+    es: "Para el lugar, у o на van con locativo; para la dirección, con acusativo; para el origen, з o від van con genitivo."
+  rule:
+    uk: "Те саме у чи на дає два відмінки: місце — місцевий, напрямок — знахідний:"
+    en: "The same у or на takes two cases: the locative for a place, the accusative for a direction:"
+    es: "El mismo у o на lleva dos casos: el locativo para el lugar y el acusativo para la dirección:"
+  ex: { contrast: [["Я ", { target: в Ки́єві }, "."], ["Я ї́ду ", { target: в Ки́їв }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Де?, en: Where?, es: ¿Dónde? }
+          rule:
+            uk: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " і місцевий відмінок"]
+            en: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " with the locative"]
+            es: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " con el locativo"]
+          ex: ["Ма́ма ", { target: на робо́ті }, "."]
+          tr: { en: Mum is at work., es: Mamá está en el trabajo. }
+        - level: A1
+          point: { uk: Куди?, en: Where to?, es: ¿Adónde? }
+          rule:
+            uk: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " і знахідний відмінок"]
+            en: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " with the accusative"]
+            es: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " con el acusativo"]
+          ex: ["Ма́ма йде ", { target: на робо́ту }, "."]
+          tr: { en: "Mum is going to work.", es: Mamá va al trabajo. }
+        - level: A1
+          point: { uk: Звідки?, en: Where from?, es: ¿De dónde? }
+          rule:
+            uk: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " і родовий відмінок"]
+            en: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " with the genitive"]
+            es: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " con el genitivo"]
+          ex: { exchange: ["Зві́дки ви?", ["Я ", { target: з Украї́ни }, "."]] }
+          tr: { en: { exchange: [Where are you from?, "I'm from Ukraine."] }, es: { exchange: [¿De dónde es usted?, Soy de Ucrania.] } }
+        - level: A1
+          point: { uk: Дім, en: Home, es: Casa }
+          rule:
+            uk: { alternatives: [{ term: вдо́ма }, { term: додо́му }, { term: з до́му }] }
+            en: [{ alternatives: [{ term: вдо́ма }, { term: додо́му }, { term: з до́му }] }, ": at, to, from home"]
+            es: [{ alternatives: [{ term: вдо́ма }, { term: додо́му }, { term: з до́му }] }, ": en, a, de casa"]
+          ex: ["Ді́ти ", { target: вдо́ма }, ", а та́то йде ", { target: додо́му }, "."]
+          tr: { en: "The children are at home, and Dad is going home.", es: "Los niños están en casa y papá va a casa." }
+        - level: A1
+          point: { uk: У чи на, en: У or на, es: У o на }
+          rule:
+            uk: [{ term: на }, ": ", { term: робо́та }, ", ", { term: по́шта }, ", ", { term: вокза́л }, ", ", { term: ри́нок }, ", ", { term: конце́рт }, ", ", { term: уро́к }]
+            en: [{ term: на }, ": work, post office, station, market, concert, lesson"]
+            es: [{ term: на }, ": trabajo, correos, estación, mercado, concierto, clase"]
+          ex: ["Ми ", { target: на вокза́лі }, "."]
+          tr: { en: "We're at the station.", es: Estamos en la estación. }
+        - level: A2
+          point: { uk: До, en: До, es: До }
+          rule:
+            uk: [{ term: до }, " і родовий: до кого? до чого?"]
+            en: [{ term: до }, " with the genitive: to a person or up to a place"]
+            es: [{ term: до }, " con el genitivo: a casa de alguien o hasta un lugar"]
+          ex: ["Я йду ", { target: до бабу́сі }, "."]
+          tr: { en: "I'm going to Grandma's.", es: Voy a casa de la abuela. }
+        - level: A2
+          point: { uk: "Біля, навпроти", en: "Біля, навпроти", es: "Біля, навпроти" }
+          rule:
+            uk: "з родовим відмінком: де саме?"
+            en: "with the genitive: where exactly?"
+            es: "con el genitivo: ¿dónde exactamente?"
+          ex: ["Авто́бус зупиня́ється ", { target: бі́ля теа́тру }, "."]
+          tr: { en: The bus stops near the theatre., es: El autobús para cerca del teatro. }
+        - level: A2
+          point: { uk: "Над, під, перед, за, між", en: "Над, під, перед, за, між", es: "Над, під, перед, за, між" }
+          rule:
+            uk: "з орудним відмінком: де?"
+            en: "with the instrumental: where?"
+            es: "con el instrumental: ¿dónde?"
+          ex: [{ target: Над столо́м }, " виси́ть ла́мпа."]
+          tr: { en: A lamp hangs above the table., es: Sobre la mesa cuelga una lámpara. }
+        - level: B1
+          point: { uk: "Серед, посеред, недалеко від", en: "Серед, посеред, недалеко від", es: "Серед, посеред, недалеко від" }
+          rule:
+            uk: "з родовим відмінком: серед чого? де саме?"
+            en: "with the genitive: among, in the middle of, not far from"
+            es: "con el genitivo: entre, en medio de, no lejos de"
+          ex: ["Ми живемо́ ", { target: недале́ко від вокза́лу }, "."]
+          tr: { en: We live not far from the station., es: Vivimos cerca de la estación. }
+        - level: B1
+          point: { uk: Від, en: Від, es: Від }
+          rule:
+            uk: [{ term: від }, " і родовий: від кого? звідки?"]
+            en: [{ term: від }, " with the genitive: from a person, away from"]
+            es: [{ term: від }, " con el genitivo: de parte de alguien, lejos de"]
+          ex: ["Він поверну́вся ", { target: від лі́каря }, "."]
+          tr: { en: He came back from the doctor's., es: Volvió del médico. }
+        - level: B1
+          point: { uk: Шлях і транспорт, en: Route and transport, es: Camino y transporte }
+          rule:
+            uk: "орудний відмінок без прийменника"
+            en: "the instrumental, with no preposition"
+            es: "el instrumental, sin preposición"
+          ex: ["Щодня́ ми ї́здимо ", { target: трамва́єм }, "."]
+          tr: { en: We go by tram every day., es: Vamos en tranvía todos los días. }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: [{ term: в Украї́ні }, ", ", { term: в Украї́ну }]
+            en: [{ term: в Украї́ні }, ", ", { term: в Украї́ну }, ", with у/в"]
+            es: [{ term: в Украї́ні }, ", ", { term: в Украї́ну }, ", con у/в"]
+          ex: ["Я живу́ ", { target: в Украї́ні }, "."]
+          tr: { en: I live in Ukraine., es: Vivo en Ucrania. }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Де? — ", { alternatives: [{ term: у }, { term: в }, { term: на }] }, " і місцевий відмінок:"]
+              en: ["Where? takes ", { alternatives: [{ term: у }, { term: в }, { term: на }] }, " and the locative:"]
+              es: ["¿Dónde? lleva ", { alternatives: [{ term: у }, { term: в }, { term: на }] }, " y el locativo:"]
+            ex: ["Студе́нт працю́є ", { target: в нові́й лаборато́рії }, "."]
+            tr: { en: The student works in the new lab., es: El estudiante trabaja en el laboratorio nuevo. }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Куди? — ", { alternatives: [{ term: у }, { term: в }, { term: на }] }, " і знахідний відмінок:"]
+              en: ["Where to? takes ", { alternatives: [{ term: у }, { term: в }, { term: на }] }, " and the accusative:"]
+              es: ["¿Adónde? lleva ", { alternatives: [{ term: у }, { term: в }, { term: на }] }, " y el acusativo:"]
+            ex: ["Степа́н захо́дить ", { target: у кімна́ту }, "."]
+            tr: { en: Stepan comes into the room., es: Stepan entra en la habitación. }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Звідки? — ", { alternatives: [{ term: з }, { term: із }, { term: зі }] }, " і родовий відмінок:"]
+              en: ["Where from? takes ", { alternatives: [{ term: з }, { term: із }, { term: зі }] }, " and the genitive:"]
+              es: ["¿De dónde? lleva ", { alternatives: [{ term: з }, { term: із }, { term: зі }] }, " y el genitivo:"]
+            ex: ["Вона́ ", { target: з Іта́лії }, ", а він ", { target: із Си́рії }, "."]
+            tr: { en: "She's from Italy, and he's from Syria.", es: "Ella es de Italia, y él, de Siria." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Вибір між ", { term: у }, " і ", { term: в }, ", ", { term: з }, " і ", { term: зі }, ": ", { link: "Милозвучність: у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+              en: ["Choosing ", { term: у }, " or ", { term: в }, ", ", { term: з }, " or ", { term: зі }, ": ", { link: "Euphony: у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+              es: ["Cómo elegir entre ", { term: у }, " y ", { term: в }, ", ", { term: з }, " y ", { term: зі }, ": ", { link: "La eufonía: у/в, і/й, з/із/зі", to: uk.foundations.euphony }, "."]
+      - type: paradigm
+        columns:
+          - { key: place, label: { uk: Місце, en: Place, es: Lugar } }
+          - { key: where, label: { uk: Де?, en: Where?, es: ¿Dónde? }, features: { case: loc } }
+          - { key: whereto, label: { uk: Куди?, en: Where to?, es: ¿Adónde? }, features: { case: acc } }
+          - { key: wherefrom, label: { uk: Звідки?, en: Where from?, es: ¿De dónde? }, features: { case: gen } }
+        rows:
+          - { level: A1, place: шко́ла, where: ["у ", { target: шко́лі }], whereto: ["у ", { target: шко́лу }], wherefrom: ["зі ", { target: шко́ли }] }
+          - { level: A1, place: робо́та, where: ["на ", { target: робо́ті }], whereto: ["на ", { target: робо́ту }], wherefrom: ["з ", { target: робо́ти }] }
+          - { level: A1, place: Ки́їв, where: ["у ", { target: Ки́єві }], whereto: ["у ", { target: Ки́їв }], wherefrom: ["з ", { target: Ки́єва }] }
+          - { level: A1, place: Украї́на, where: ["в ", { target: Украї́ні }], whereto: ["в ", { target: Украї́ну }], wherefrom: ["з ", { target: Украї́ни }] }
+          - { level: A1, place: по́шта, where: ["на ", { target: по́шті }], whereto: ["на ", { target: по́шту }], wherefrom: ["з ", { target: по́шти }] }
+          - { level: A1, place: дім, where: { target: вдо́ма }, whereto: { target: додо́му }, wherefrom: ["з ", { target: до́му }] }
+
+  - title: { uk: У чи на, en: У or на, es: У o на }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, ": будівлі, кімнати, міста, країни"], en: [{ alternatives: [{ term: у }, { term: в }] }, ": buildings, rooms, cities, countries"], es: [{ alternatives: [{ term: у }, { term: в }] }, ": edificios, habitaciones, ciudades, países"] }
+            ex: { examples: [["у ", { target: ба́нку }], ["в ", { target: магази́ні }], ["в ", { target: Іта́лії }]] }
+            tr: { en: { examples: [at the bank, in the shop, in Italy] }, es: { examples: [en el banco, en la tienda, en Italia] } }
+          - level: A1
+            use: { uk: [{ term: на }, ": ", { term: робо́та }, ", ", { term: по́шта }, ", ", { term: вокза́л }, ", ", { term: ри́нок }, ", ", { term: ста́нція }, ", ", { term: пло́ща }], en: [{ term: на }, ": work, post office, station, market, stop, square"], es: [{ term: на }, ": trabajo, correos, estación, mercado, parada, plaza"] }
+            ex: { examples: [["на ", { target: по́шті }], ["на ", { target: ри́нку }], ["на ", { target: пло́щі }]] }
+            tr: { en: { examples: [at the post office, at the market, in the square] }, es: { examples: [en correos, en el mercado, en la plaza] } }
+          - level: A1
+            use: { uk: [{ term: на }, ": події й заняття"], en: [{ term: на }, ": events and classes"], es: [{ term: на }, ": eventos y clases"] }
+            ex: { examples: [["на ", { target: конце́рті }], ["на ", { target: уро́ці }]] }
+            tr: { en: { examples: [at a concert, in class] }, es: { examples: [en un concierto, en clase] } }
+          - level: A1
+            use: { uk: [{ term: на }, ": поверхня"], en: [{ term: на }, ": on a surface"], es: [{ term: на }, ": sobre una superficie"] }
+            ex: ["Гро́ші лежа́ть ", { target: на столі́ }, "."]
+            tr: { en: The money is lying on the table., es: El dinero está sobre la mesa. }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Кожне місце має свій прийменник: його вивчають разом зі словом."
+              en: "Each place has its own preposition: learn it with the word."
+              es: "Cada lugar tiene su preposición: se aprende con la palabra."
+            ex: { contrast: [["в ", { target: університе́ті }], ["на ", { target: ле́кції }]] }
+            tr: { en: { contrast: [at the university, at the lecture] }, es: { contrast: [en la universidad, en la clase] } }
+
+  - title: { uk: "Місце поруч: біля, навпроти, серед, над, під, перед, за, між", en: "Places nearby: біля, навпроти, серед, над, під, перед, за, між", es: "Lugares cercanos: біля, навпроти, серед, над, під, перед, за, між" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Прийменник, en: Preposition, es: Preposición } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ term: бі́ля }, " і родовий"], en: [{ term: бі́ля }, " (near) with the genitive"], es: [{ term: бі́ля }, " (cerca de) con el genitivo"] }
+            ex: ["Авто́бус зупиня́ється ", { target: бі́ля теа́тру }, "."]
+            tr: { en: The bus stops near the theatre., es: El autobús para cerca del teatro. }
+          - level: A2
+            use: { uk: [{ term: навпро́ти }, " і родовий"], en: [{ term: навпро́ти }, " (opposite) with the genitive"], es: [{ term: навпро́ти }, " (enfrente de) con el genitivo"] }
+            ex: [{ target: Навпро́ти університе́ту }, " є парк."]
+            tr: { en: "There's a park opposite the university.", es: Enfrente de la universidad hay un parque. }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: над }, { term: під }] }, " і орудний"], en: [{ alternatives: [{ term: над }, { term: під }] }, " (above, under) with the instrumental"], es: [{ alternatives: [{ term: над }, { term: під }] }, " (sobre, debajo de) con el instrumental"] }
+            ex: { examples: [[{ target: Над столо́м }, " виси́ть ла́мпа."], ["Кіт спить ", { target: під лі́жком }, "."]] }
+            tr: { en: { examples: [A lamp hangs above the table., The cat is sleeping under the bed.] }, es: { examples: [Sobre la mesa cuelga una lámpara., El gato duerme debajo de la cama.] } }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: пе́ред }, { term: за }] }, " і орудний"], en: [{ alternatives: [{ term: пе́ред }, { term: за }] }, " (in front of, behind) with the instrumental"], es: [{ alternatives: [{ term: пе́ред }, { term: за }] }, " (delante de, detrás de) con el instrumental"] }
+            ex: { examples: [["Тури́сти стоя́ть ", { target: пе́ред па́м’ятником }, "."], ["Парк ", { target: за буди́нком }, "."]] }
+            tr: { en: { examples: [The tourists are standing in front of the monument., The park is behind the building.] }, es: { examples: [Los turistas están delante del monumento., El parque está detrás del edificio.] } }
+          - level: A2
+            use: { uk: [{ term: між }, " і орудний"], en: [{ term: між }, " (between) with the instrumental"], es: [{ term: між }, " (entre) con el instrumental"] }
+            ex: [{ target: Між го́рами }, " тече́ рі́чка."]
+            tr: { en: A river flows between the mountains., es: Entre las montañas corre un río. }
+          - level: A2
+            use: { uk: [{ term: по }, " і місцевий: рух туди й сюди"], en: [{ term: по }, " with the locative: moving around a place"], es: [{ term: по }, " con el locativo: moverse por un lugar"] }
+            ex: ["Кі́шка бі́гає ", { target: по кімна́ті }, "."]
+            tr: { en: The cat is running around the room., es: La gata corre por la habitación. }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: спра́ва від }, { term: злі́ва від }] }, " і родовий"], en: [{ alternatives: [{ term: спра́ва від }, { term: злі́ва від }] }, " (to the right of, to the left of) with the genitive"], es: [{ alternatives: [{ term: спра́ва від }, { term: злі́ва від }] }, " (a la derecha de, a la izquierda de) con el genitivo"] }
+            ex: [{ target: Злі́ва від готе́лю }, " зупини́вся авто́бус."]
+            tr: { en: A bus stopped to the left of the hotel., es: Un autobús paró a la izquierda del hotel. }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: се́ред }, { term: посе́ред }] }, " і родовий"], en: [{ alternatives: [{ term: се́ред }, { term: посе́ред }] }, " (among, in the middle of) with the genitive"], es: [{ alternatives: [{ term: се́ред }, { term: посе́ред }] }, " (entre, en medio de) con el genitivo"] }
+            ex: { examples: [[{ target: Се́ред дере́в }, " стої́ть буди́нок."], [{ target: Посе́ред мі́ста }, " є га́рне о́зеро."]] }
+            tr: { en: { examples: [There is a house among the trees., There is a beautiful lake in the middle of the city.] }, es: { examples: [Entre los árboles hay una casa., En medio de la ciudad hay un lago precioso.] } }
+          - level: B1
+            use: { uk: [{ term: недале́ко від }, " і родовий"], en: [{ term: недале́ко від }, " (not far from) with the genitive"], es: [{ term: недале́ко від }, " (no lejos de) con el genitivo"] }
+            ex: ["Ми живемо́ ", { target: недале́ко від вокза́лу }, "."]
+            tr: { en: We live not far from the station., es: Vivimos cerca de la estación. }
+          - level: B1
+            use: { uk: [{ term: ко́ло }, " і родовий: у розмові те саме, що ", { term: бі́ля }], en: [{ term: ко́ло }, " with the genitive: in speech, the same as ", { term: бі́ля }], es: [{ term: ко́ло }, " con el genitivo: en la conversación, lo mismo que ", { term: бі́ля }] }
+            ex: ["Зустрі́ньмося ", { target: ко́ло по́шти }, "."]
+            tr: { en: "Let's meet by the post office.", es: Nos vemos junto al correo. }
+
+  - title: { uk: "Звідки й куди: до, з, від", en: "From and to: до, з, від", es: "De y a: до, з, від" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Прийменник, en: Preposition, es: Preposición } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: [{ term: до }, " і родовий: до місця"], en: [{ term: до }, " with the genitive: up to a place"], es: [{ term: до }, " con el genitivo: hasta un lugar"] }
+            ex: ["Тре́ба діста́тися ", { target: до готе́лю }, "."]
+            tr: { en: We need to get to the hotel., es: Hay que llegar al hotel. }
+          - level: A2
+            use: { uk: [{ term: до }, " і родовий: до людини"], en: [{ term: до }, " with the genitive: to a person"], es: [{ term: до }, " con el genitivo: a casa de alguien"] }
+            ex: ["У субо́ту ми ї́демо ", { target: до бабу́сі }, "."]
+            tr: { en: "On Saturday we're going to Grandma's.", es: El sábado vamos a casa de la abuela. }
+          - level: A2
+            use: { uk: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " і родовий: з місця"], en: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " with the genitive: out of a place"], es: [{ alternatives: [{ term: з }, { term: із }, { term: зі }] }, " con el genitivo: desde un lugar"] }
+            ex: ["Ми ви́йшли ", { target: із суперма́ркету }, "."]
+            tr: { en: We came out of the supermarket., es: Salimos del supermercado. }
+          - level: B1
+            use: { uk: [{ term: від }, " і родовий: від людини"], en: [{ term: від }, " with the genitive: from a person"], es: [{ term: від }, " con el genitivo: de parte de alguien"] }
+            ex: ["Він поверну́вся ", { target: від лі́каря }, "."]
+            tr: { en: He came back from the doctor's., es: Volvió del médico. }
+          - level: B1
+            use: { uk: [{ term: від }, " і родовий: рух геть"], en: [{ term: від }, " with the genitive: moving away"], es: [{ term: від }, " con el genitivo: alejarse"] }
+            ex: ["Авто́бус від’ї́хав ", { target: від буди́нку }, "."]
+            tr: { en: The bus drove away from the building., es: El autobús se alejó del edificio. }
+          - level: B1
+            use: { uk: [{ term: за }, " і знахідний: куди? за щось"], en: [{ term: за }, " with the accusative: to behind something"], es: [{ term: за }, " con el acusativo: hacia detrás de algo"] }
+            ex: ["Авто́бус поверну́в ", { target: за буди́нок }, "."]
+            tr: { en: The bus turned behind the building., es: El autobús giró detrás del edificio. }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["З місця — ", { term: з }, ", від людини — ", { term: від }, ":"]
+              en: ["From a place, use ", { term: з }, "; from a person, ", { term: від }, ":"]
+              es: ["Desde un lugar va ", { term: з }, "; de parte de una persona, ", { term: від }, ":"]
+            ex: { contrast: [["Я йду ", { target: з по́шти }, "."], ["Я йду ", { target: від дру́га }, "."]] }
+            tr: { en: { contrast: ["I'm coming from the post office.", "I'm coming from my friend's."] }, es: { contrast: [Vengo de correos., Vengo de casa de mi amigo.] } }
+
+  - title: { uk: Шлях і транспорт, en: Route and transport, es: Camino y transporte }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: "орудний: яким шляхом?", en: "the instrumental: which way?", es: "el instrumental: ¿por dónde?" }
+            ex: ["Ми лю́бимо гуля́ти ", { target: ву́лицями Льво́ва }, "."]
+            tr: { en: We like walking the streets of Lviv., es: Nos gusta pasear por las calles de Leópolis. }
+          - level: B1
+            use: { uk: "орудний: яким транспортом?", en: "the instrumental: by what transport?", es: "el instrumental: ¿en qué transporte?" }
+            ex: ["Щодня́ ми ї́здимо в університе́т ", { target: трамва́єм }, "."]
+            tr: { en: Every day we go to the university by tram., es: Todos los días vamos a la universidad en tranvía. }
+          - level: B1
+            use: { uk: [{ term: че́рез }, " і знахідний: крізь що?"], en: [{ term: че́рез }, " with the accusative: through what?"], es: [{ term: че́рез }, " con el acusativo: ¿a través de qué?"] }
+            ex: ["Ми ї́хали ", { target: че́рез ліс }, "."]
+            tr: { en: We drove through the forest., es: Fuimos por el bosque. }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Я йду в шко́лі., right: ["Я йду в ", { target: шко́лу }, "."], rule: { uk: "куди? — знахідний відмінок", en: "where to? takes the accusative", es: "¿adónde? lleva el acusativo" } }
+          - { level: A1, wrong: Я живу́ на Украї́ні., right: ["Я живу́ ", { target: в Украї́ні }, "."], rule: { uk: [{ term: в Украї́ні }, "; ", { term: на }, " тут — вплив російської"], en: [{ term: в Украї́ні }, "; ", { term: на }, " here comes from Russian"], es: [{ term: в Украї́ні }, "; ", { term: на }, " viene del ruso"] } }
+          - { level: A1, wrong: Я йду до до́му., right: ["Я йду ", { target: додо́му }, "."], rule: { uk: [{ term: додо́му }, " пишуть разом"], en: [{ term: додо́му }, " is one word"], es: [{ term: додо́му }, " se escribe junto"] } }
+          - { level: A1, speakers: [en, es], wrong: Я є в Ки́єві., right: ["Я ", { target: в Ки́єві }, "."], rule: { en: ["no verb “be” before a place: ", { term: Я в Ки́єві }], es: ["sin verbo «estar» ante el lugar: ", { term: Я в Ки́єві }] } }
+          - { level: A2, wrong: Я з Ки́їв., right: ["Я з ", { target: Ки́єва }, "."], rule: { uk: [{ term: з }, " стоїть з родовим відмінком"], en: [{ term: з }, " takes the genitive"], es: [{ term: з }, " pide el genitivo"] } }
+          - { level: B1, wrong: Я поверну́вся з лі́каря., right: ["Я поверну́вся ", { target: від лі́каря }, "."], rule: { uk: ["від людини — ", { term: від }, ", з місця — ", { term: з }], en: ["from a person, use ", { term: від }, "; from a place, ", { term: з }], es: ["de una persona va ", { term: від }, "; de un lugar, ", { term: з }] } }
+          - { level: B1, wrong: Я ї́ду на трамва́ї., right: ["Я ї́ду ", { target: трамва́єм }, "."], rule: { uk: ["транспорт — орудний відмінок; ", { term: на трамва́ї }, " — калька з російської"], en: ["transport takes the instrumental; ", { term: на трамва́ї }, " is a calque from Russian"], es: ["el transporte va en instrumental; ", { term: на трамва́ї }, " es un calco del ruso"] } }

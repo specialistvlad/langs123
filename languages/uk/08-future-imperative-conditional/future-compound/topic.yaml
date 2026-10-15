@@ -1,0 +1,207 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.future-imperative-conditional.future-compound
+lang: uk
+kind: grammar
+tags: [verbs, tenses, future]
+concepts: [future]
+related: [uk.future-imperative-conditional.future-synthetic, uk.past-aspect.aspect, uk.verbs-present.present-conjugation]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "cb436f 4266a8 ac1911 9bfa93 8d444f db4daf a3be27 878754", es: "cb436f 4266a8 ac1911 9bfa93 8d444f db4daf a3be27 878754" }
+
+title: { uk: "Майбутній час: буду читати, скажу", en: "Future: буду читати, скажу", es: "El futuro: буду читати, скажу" }
+summary:
+  lead:
+    uk: ["Недоконаний вид утворює майбутнє з ", { term: бу́ду }, " та інфінітивом (", { term: бу́ду чита́ти }, "), доконаний — з особовими закінченнями (", { term: скажу́ }, ")."]
+    en: ["The imperfective forms its future with ", { term: бу́ду }, " and the infinitive (", { term: бу́ду чита́ти }, "), the perfective with person endings (", { term: скажу́ }, ")."]
+    es: ["El imperfectivo forma el futuro con ", { term: бу́ду }, " y el infinitivo (", { term: бу́ду чита́ти }, "); el perfectivo, con terminaciones de persona (", { term: скажу́ }, ")."]
+  rule:
+    uk: ["Після ", { term: бу́ду }, " стоїть лише інфінітив недоконаного виду:"]
+    en: ["Only an imperfective infinitive follows ", { term: бу́ду }, ":"]
+    es: ["Después de ", { term: бу́ду }, " solo va un infinitivo imperfectivo:"]
+  ex: { examples: [["Уве́чері я ", { target: бу́ду чита́ти }, "."], ["Я ", { target: прочита́ю }, " цей текст."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: бу́ти, en: бу́ти, es: бу́ти }
+          rule: { uk: { alternatives: [{ term: бу́ду }, { term: бу́деш }, { term: бу́де }, { term: бу́демо }, { term: бу́дете }, { term: бу́дуть }] }, en: { alternatives: [{ term: бу́ду }, { term: бу́деш }, { term: бу́де }, { term: бу́демо }, { term: бу́дете }, { term: бу́дуть }] }, es: { alternatives: [{ term: бу́ду }, { term: бу́деш }, { term: бу́де }, { term: бу́демо }, { term: бу́дете }, { term: бу́дуть }] } }
+          ex: ["За́втра я ", { target: бу́ду }, " вдо́ма."]
+          tr: { en: "I'll be at home tomorrow.", es: "Mañana estaré en casa." }
+        - level: A1
+          point: { uk: "Недоконаний вид", en: Imperfective, es: Imperfectivo }
+          rule: { uk: { pattern: [бу́ду, { slot: infinitive }] }, en: { pattern: [бу́ду, { slot: infinitive }] }, es: { pattern: [бу́ду, { slot: infinitive }] } }
+          ex: ["Уве́чері ми ", { target: бу́демо диви́тися }, " фільм."]
+          tr: { en: "We'll be watching a film this evening.", es: "Esta noche veremos una película." }
+        - level: A1
+          point: { uk: "Доконаний вид", en: Perfective, es: Perfectivo }
+          rule: { uk: "особові закінчення означають майбутнє", en: "the person endings mean the future", es: "las terminaciones de persona expresan futuro" }
+          ex: ["Я ", { target: скажу́ }, " тобі́ за́втра."]
+          tr: { en: "I'll tell you tomorrow.", es: "Te lo diré mañana." }
+        - level: A1
+          point: { uk: змогти́, en: змогти́, es: змогти́ }
+          rule: { uk: [{ term: змо́жу }, " — майбутнє від ", { term: могти́ }], en: [{ term: змо́жу }, " is the future of ", { term: могти́ }, " (can)"], es: [{ term: змо́жу }, " es el futuro de ", { term: могти́ }, " (poder)"] }
+          ex: ["Я ", { target: змо́жу }, " прийти́ о шо́стій."]
+          tr: { en: "I'll be able to come at six.", es: "Podré venir a las seis." }
+        - level: A2
+          point: { uk: "Процес чи результат", en: "Process or result", es: "Proceso o resultado" }
+          rule: { uk: { contrast: [{ term: бу́ду писа́ти }, { term: напишу́ }] }, en: { contrast: [{ term: бу́ду писа́ти }, { term: напишу́ }] }, es: { contrast: [{ term: бу́ду писа́ти }, { term: напишу́ }] } }
+          ex: ["Я ", { target: напишу́ }, " вам уве́чері."]
+          tr: { en: "I'll write to you this evening.", es: "Le escribiré esta noche." }
+        - level: A2
+          point: { uk: Обіцянка, en: Promise, es: Promesa }
+          rule: { uk: "одна дія з результатом — доконаний вид", en: "one action with a result takes the perfective", es: "una acción con resultado lleva el perfectivo" }
+          ex: ["Я ", { target: подзвоню́ }, " тобі́ пі́сля робо́ти."]
+          tr: { en: "I'll call you after work.", es: "Te llamo después del trabajo." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: ["ніколи ", { term: бу́ду }, " з доконаним видом"], en: ["never ", { term: бу́ду }, " with a perfective verb"], es: ["nunca ", { term: бу́ду }, " con un verbo perfectivo"] }
+          ex: ["Я ", { target: прочита́ю }, " цей текст."]
+          tr: { en: "I'll read this text.", es: "Leeré este texto." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Дієслова недоконаного виду мають складене майбутнє: ", { term: бу́ду }, " та інфінітив."]
+              en: ["Imperfective verbs have a compound future: ", { term: бу́ду }, " and the infinitive."]
+              es: ["Los verbos imperfectivos tienen un futuro compuesto: ", { term: бу́ду }, " y el infinitivo."]
+            ex: ["За́втра я ", { target: бу́ду працюва́ти }, "."]
+            tr: { en: "I'll be working tomorrow.", es: "Mañana trabajaré." }
+          - type: rule
+            level: A1
+            text:
+              uk: "Дієслова доконаного виду мають просте майбутнє: ті самі закінчення, що в теперішньому часі."
+              en: "Perfective verbs have a simple future: the same endings as the present tense."
+              es: "Los verbos perfectivos tienen un futuro simple: las mismas terminaciones que el presente."
+            ex: ["Ми ", { target: прочита́ємо }, " текст."]
+            tr: { en: "We'll read the text.", es: "Leeremos el texto." }
+          - type: note
+            level: A2
+            text:
+              uk: ["Недоконаний вид має ще одну форму майбутнього: ", { term: чита́тиму }, ". Див. ", { link: "Майбутній час на -му: читатиму", to: uk.future-imperative-conditional.future-synthetic }, "."]
+              en: ["The imperfective has one more future form: ", { term: чита́тиму }, ". See ", { link: "Future in -му: читатиму", to: uk.future-imperative-conditional.future-synthetic }, "."]
+              es: ["El imperfectivo tiene otra forma de futuro: ", { term: чита́тиму }, ". Ver ", { link: "El futuro en -му: читатиму", to: uk.future-imperative-conditional.future-synthetic }, "."]
+
+  - title: { uk: "Форма: буду й інфінітив", en: "Form: буду with the infinitive", es: "Forma: буду con infinitivo" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто, en: Who, es: Quién } }
+          - { key: be, label: бу́ти, features: { tense: fut } }
+          - { key: read, label: чита́ти, features: { tense: fut, aspect: ipfv } }
+        rows:
+          - { level: A1, features: { person: 1, number: sg }, who: я, be: бу́ду, read: [{ aux: бу́ду }, " чита́ти"] }
+          - { level: A1, features: { person: 2, number: sg }, who: ти, be: бу́деш, read: [{ aux: бу́деш }, " чита́ти"] }
+          - { level: A1, features: { person: 3, number: sg }, who: { alternatives: [він, вона́, воно́] }, be: бу́де, read: [{ aux: бу́де }, " чита́ти"] }
+          - { level: A1, features: { person: 1, number: pl }, who: ми, be: бу́демо, read: [{ aux: бу́демо }, " чита́ти"] }
+          - { level: A1, features: { person: 2, number: pl }, who: { alternatives: [ви, Ви] }, be: бу́дете, read: [{ aux: бу́дете }, " чита́ти"] }
+          - { level: A1, features: { person: 3, number: pl }, who: вони́, be: бу́дуть, read: [{ aux: бу́дуть }, " чита́ти"] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Дієслово ", { term: бу́ти }, " має власне майбутнє без інфінітива:"]
+              en: ["The verb ", { term: бу́ти }, " (be) has its own future, with no infinitive:"]
+              es: ["El verbo ", { term: бу́ти }, " (ser, estar) tiene su propio futuro, sin infinitivo:"]
+            ex: ["Ми ", { target: бу́демо }, " в о́фісі о дев’я́тій."]
+            tr: { en: "We'll be at the office at nine.", es: "Estaremos en la oficina a las nueve." }
+          - type: rule
+            level: A2
+            text:
+              uk: ["Дієслова на ", { term: -ся }, " зберігають ", { term: -ся }, " в інфінітиві:"]
+              en: ["Verbs in ", { term: -ся }, " keep ", { term: -ся }, " in the infinitive:"]
+              es: ["Los verbos en ", { term: -ся }, " conservan ", { term: -ся }, " en el infinitivo:"]
+            ex: ["Ді́ти ", { target: бу́дуть смія́тися }, "."]
+            tr: { en: "The children will laugh.", es: "Los niños se reirán." }
+
+  - title: { uk: "Форма: просте майбутнє доконаного виду", en: "Form: the simple future of the perfective", es: "Forma: el futuro simple del perfectivo" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто, en: Who, es: Quién } }
+          - { key: read, label: прочита́ти, features: { tense: fut, aspect: pfv } }
+          - { key: say, label: сказа́ти, features: { tense: fut, aspect: pfv } }
+          - { key: can, label: змогти́, features: { tense: fut, aspect: pfv } }
+        rows:
+          - { level: A1, features: { person: 1, number: sg }, who: я, read: [прочита́, { ending: ю }], say: [скаж, { ending: у́ }], can: [змо́ж, { ending: у }] }
+          - { level: A1, features: { person: 2, number: sg }, who: ти, read: [прочита́, { ending: єш }], say: [ска́ж, { ending: еш }], can: [змо́ж, { ending: еш }] }
+          - { level: A1, features: { person: 3, number: sg }, who: { alternatives: [він, вона́, воно́] }, read: [прочита́, { ending: є }], say: [ска́ж, { ending: е }], can: [змо́ж, { ending: е }] }
+          - { level: A1, features: { person: 1, number: pl }, who: ми, read: [прочита́, { ending: ємо }], say: [ска́ж, { ending: емо }], can: [змо́ж, { ending: емо }] }
+          - { level: A1, features: { person: 2, number: pl }, who: { alternatives: [ви, Ви] }, read: [прочита́, { ending: єте }], say: [ска́ж, { ending: ете }], can: [змо́ж, { ending: ете }] }
+          - { level: A1, features: { person: 3, number: pl }, who: вони́, read: [прочита́, { ending: ють }], say: [ска́ж, { ending: уть }], can: [змо́ж, { ending: уть }] }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Доконані дієслова відмінюються, як дієслова в теперішньому часі, але означають майбутнє."
+              en: "Perfective verbs conjugate like verbs in the present but mean the future."
+              es: "Los verbos perfectivos se conjugan como en presente, pero expresan futuro."
+            ex: { contrast: [["Я ", { target: чита́ю }, " текст"], ["Я ", { target: прочита́ю }, " текст"]] }
+            tr: { en: { contrast: ["I'm reading the text", "I'll read the text"] }, es: { contrast: ["Leo el texto", "Leeré el texto"] } }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: "план: що людина робитиме", en: "a plan: what someone will be doing", es: "un plan: lo que alguien va a hacer" }
+            ex: ["У субо́ту ми ", { target: бу́демо гуля́ти }, " в па́рку."]
+            tr: { en: "On Saturday we'll go for a walk in the park.", es: "El sábado pasearemos por el parque." }
+          - level: A1
+            use: { uk: "одна дія з результатом", en: "one action with a result", es: "una acción con resultado" }
+            ex: ["Я ", { target: скажу́ }, " ма́мі пра́вду."]
+            tr: { en: "I'll tell Mum the truth.", es: "Le diré la verdad a mamá." }
+          - level: A2
+            use: { uk: "процес або повторення в майбутньому", en: "a process or a repeated action in the future", es: "un proceso o una repetición en el futuro" }
+            ex: ["Влі́тку я ", { target: бу́ду ходи́ти }, " в басе́йн щодня́."]
+            tr: { en: "In the summer I'll go to the pool every day.", es: "En verano iré a la piscina todos los días." }
+          - level: A2
+            use: { uk: "обіцянка, рішення", en: "a promise, a decision", es: "una promesa, una decisión" }
+            ex: ["До́бре, я ", { target: допоможу́ }, " тобі́."]
+            tr: { en: "All right, I'll help you.", es: "Está bien, te ayudo." }
+
+  - title: { uk: "Слова-сигнали", en: "Signal words", es: "Palabras clave" }
+    role: signals
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { uk: Слово, en: Word, es: Palabra } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            word: { alternatives: [за́втра, післяза́втра, уве́чері] }
+            ex: [{ signal: Післяза́втра }, " ми ", { target: бу́демо }, " у Льво́ві."]
+            tr: { en: "We'll be in Lviv the day after tomorrow.", es: "Pasado mañana estaremos en Leópolis." }
+          - level: A2
+            word: { alternatives: [насту́пного ти́жня, насту́пного ро́ку] }
+            ex: [{ signal: Насту́пного ро́ку }, " я ", { target: бу́ду вчи́тися }, " в Ки́єві."]
+            tr: { en: "Next year I'll be studying in Kyiv.", es: "El año que viene estudiaré en Kiev." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Я бу́ду чита́ю., right: ["Я бу́ду ", { target: чита́ти }, "."], rule: { uk: ["після ", { term: бу́ду }, " — інфінітив"], en: ["an infinitive follows ", { term: бу́ду }], es: ["después de ", { term: бу́ду }, " va el infinitivo"] } }
+          - { level: A1, wrong: Я бу́ду чита́ть., right: ["Я бу́ду ", { target: чита́ти }, "."], rule: { uk: ["інфінітив закінчується на ", { term: -ти }, "; форма ", { term: -ть }, " — з російської"], en: ["the infinitive ends in ", { term: -ти }, "; ", { term: -ть }, " is a Russian form"], es: ["el infinitivo termina en ", { term: -ти }, "; ", { term: -ть }, " es una forma rusa"] } }
+          - { level: A1, speakers: [en, es], wrong: За́втра я йду бу́ти вдо́ма., right: ["За́втра я ", { target: бу́ду }, " вдо́ма."], rule: { en: [{ term: іти́ }, " means to walk; the future of ", { term: бу́ти }, " is ", { term: бу́ду }, ", not a calque of “going to”"], es: [{ term: іти́ }, " significa ir a pie; el futuro de ", { term: бу́ти }, " es ", { term: бу́ду }, ", no un calco de «ir a»"] } }
+          - { level: A2, wrong: Я бу́ду прочита́ти кни́жку., right: ["Я ", { target: прочита́ю }, " кни́жку."], rule: { uk: ["доконаний вид не вживають із ", { term: бу́ду }, ": його майбутнє — ", { term: прочита́ю }], en: ["a perfective verb never takes ", { term: бу́ду }, ": its future is ", { term: прочита́ю }], es: ["un verbo perfectivo nunca lleva ", { term: бу́ду }, ": su futuro es ", { term: прочита́ю }] } }

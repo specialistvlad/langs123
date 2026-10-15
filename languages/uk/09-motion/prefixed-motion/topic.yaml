@@ -1,0 +1,200 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.motion.prefixed-motion
+lang: uk
+kind: grammar
+tags: [verbs, motion, prefixes, aspect]
+concepts: [motion-verbs]
+related: [uk.motion.go-ride, uk.motion.one-way-round-trip, uk.past-aspect.aspect, uk.prepositions.where-whereto-wherefrom]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "4cc61c 4806e3 3ab7e1 9f418a ab192d bebe20 0a6d9c", es: "4cc61c 4806e3 3ab7e1 9f418a ab192d bebe20 0a6d9c" }
+
+title: { uk: "Дієслова руху з префіксами: прийти, вийти, доїхати", en: "Prefixed Verbs of Motion: прийти, вийти, доїхати", es: "Verbos de movimiento con prefijo: прийти, вийти, доїхати" }
+summary:
+  lead:
+    uk: ["Префікс уточнює напрямок руху: ", { term: прийти́ }, " — прибути, ", { term: ви́йти }, " — вийти назовні, ", { term: перейти́ }, " — перетнути."]
+    en: ["A prefix gives the direction of the movement: ", { term: прийти́ }, " to arrive, ", { term: ви́йти }, " to go out, ", { term: перейти́ }, " to cross."]
+    es: ["El prefijo indica la dirección del movimiento: ", { term: прийти́ }, ", llegar; ", { term: ви́йти }, ", salir; ", { term: перейти́ }, ", cruzar."]
+  rule:
+    uk: ["Дієслова з префіксом від ", { term: іти́ }, " і ", { term: ї́хати }, " доконаного виду, а їхні пари недоконаного виду утворено від ", { term: ходи́ти }, " і ", { term: -їжджа́ти }, ":"]
+    en: ["Prefixed verbs from ", { term: іти́ }, " and ", { term: ї́хати }, " are perfective, and their imperfective partners come from ", { term: ходи́ти }, " and ", { term: -їжджа́ти }, ":"]
+    es: ["Los verbos con prefijo de ", { term: іти́ }, " y ", { term: ї́хати }, " son perfectivos, y sus parejas imperfectivas salen de ", { term: ходи́ти }, " y ", { term: -їжджа́ти }, ":"]
+  ex: { examples: [["Вона́ ", { target: прийшла́ }, " о шо́стій."], ["Вона́ за́вжди ", { target: прихо́дить }, " о шо́стій."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { uk: при-, en: при-, es: при- }
+          rule: { uk: "прибуття", en: "arriving", es: "llegar" }
+          ex: ["Друг ", { target: приї́хав }, " із Ха́ркова."]
+          tr: { en: "My friend has arrived from Kharkiv.", es: "Mi amigo llegó de Járkov." }
+        - level: B1
+          point: { uk: ви-, en: ви-, es: ви- }
+          rule: { uk: "рух назовні", en: "going out", es: "salir" }
+          ex: ["Я ", { target: ви́йшов }, " із до́му о сьо́мій."]
+          tr: { en: "I left the house at seven.", es: "Salí de casa a las siete." }
+        - level: B1
+          point: { uk: за-, en: за-, es: за- }
+          rule: { uk: "рух усередину, ненадовго", en: "going in, dropping by", es: "entrar, pasar un momento" }
+          ex: [{ target: Зайди́ }, " до ме́не вве́чері."]
+          tr: { en: "Drop by my place this evening.", es: "Pasa por mi casa esta noche." }
+        - level: B1
+          point: { uk: пере-, en: пере-, es: пере- }
+          rule: { uk: "рух через щось, переїзд", en: "crossing, moving house", es: "cruzar, mudarse" }
+          ex: ["Ми ", { target: перейшли́ }, " ву́лицю."]
+          tr: { en: "We crossed the street.", es: "Cruzamos la calle." }
+        - level: B1
+          point: { uk: до-, en: до-, es: до- }
+          rule: { uk: "рух до кінцевої точки", en: "getting as far as", es: "llegar hasta" }
+          ex: ["Як ", { target: дійти́ }, " до вокза́лу?"]
+          tr: { en: "How do I get to the station?", es: "¿Cómo llego a la estación?" }
+        - level: B1
+          point: { uk: від-, en: від-, es: від- }
+          rule: { uk: "рух геть, на невелику відстань", en: "moving away", es: "alejarse" }
+          ex: ["По́тяг ", { target: від’ї́хав }, " від платфо́рми."]
+          tr: { en: "The train pulled away from the platform.", es: "El tren se alejó del andén." }
+        - level: B1
+          point: { uk: по-, en: по-, es: по- }
+          rule: { uk: "початок руху", en: "setting off", es: "ponerse en marcha" }
+          ex: ["Він ", { target: пішо́в }, " додо́му."]
+          tr: { en: "He's gone home.", es: "Se fue a casa." }
+        - level: B1
+          point: { uk: Вид, en: Aspect, es: Aspecto }
+          rule: { uk: { contrast: [{ term: прийти́ }, { term: прихо́дити }] }, en: { contrast: [{ term: прийти́ }, { term: прихо́дити }] }, es: { contrast: [{ term: прийти́ }, { term: прихо́дити }] } }
+          ex: ["Я ", { target: прихо́джу }, " додо́му о шо́стій."]
+          tr: { en: "I get home at six.", es: "Llego a casa a las seis." }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: ["залишити місце — ", { term: піти́ }, ", ", { term: пішо́в }], en: ["to leave is ", { term: піти́ }, ", ", { term: пішо́в }], es: ["irse es ", { term: піти́ }, ", ", { term: пішо́в }] }
+          ex: ["Вона́ вже ", { target: пішла́ }, "."]
+          tr: { en: "She has already left.", es: "Ya se fue." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Префікс додає до дієслова руху напрямок: ", { term: іти́ }, " — просто рух, ", { term: прийти́ }, " — прибути."]
+              en: ["A prefix adds a direction to a verb of motion: ", { term: іти́ }, " is just walking, ", { term: прийти́ }, " is arriving."]
+              es: ["El prefijo añade una dirección al verbo de movimiento: ", { term: іти́ }, " es solo andar; ", { term: прийти́ }, ", llegar."]
+            ex: { contrast: [["Я ", { target: йду }, " додо́му"], ["Я ", { target: прийшо́в }, " додо́му"]] }
+            tr: { en: { contrast: ["I'm walking home", "I've got home"] }, es: { contrast: ["Voy a casa", "Llegué a casa"] } }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Від ", { term: іти́ }, " після префікса стає ", { term: -йти }, ": ", { mapping: [{ term: при- }, { term: прийти́ }] }, "."]
+              en: [{ term: іти́ }, " becomes ", { term: -йти }, " after a prefix: ", { mapping: [{ term: при- }, { term: прийти́ }] }, "."]
+              es: [{ term: іти́ }, " pasa a ", { term: -йти }, " después de un prefijo: ", { mapping: [{ term: при- }, { term: прийти́ }] }, "."]
+            ex: { examples: [{ target: прийти́ }, { target: зайти́ }, { target: піти́ }] }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Після префікса на приголосний перед ", { term: ї }, " пишуть апостроф: ", { term: від’ї́хати }, ", ", { term: об’ї́хати }, "."]
+              en: ["After a prefix ending in a consonant, an apostrophe comes before ", { term: ї }, ": ", { term: від’ї́хати }, ", ", { term: об’ї́хати }, "."]
+              es: ["Tras un prefijo acabado en consonante se escribe un apóstrofo antes de ", { term: ї }, ": ", { term: від’ї́хати }, ", ", { term: об’ї́хати }, "."]
+            ex: ["Авто́бус ", { target: об’ї́хав }, " пло́щу."]
+            tr: { en: "The bus went round the square.", es: "El autobús rodeó la plaza." }
+
+  - title: { uk: "Форма: префікси", en: "Form: the prefixes", es: "Forma: los prefijos" }
+    role: form
+    content:
+      - type: comparison
+        columns:
+          - { key: prefix, label: { uk: Префікс, en: Prefix, es: Prefijo } }
+          - { key: meaning, label: { uk: Значення, en: Meaning, es: Significado } }
+          - { key: foot, label: { uk: Пішки, en: On foot, es: A pie } }
+          - { key: transport, label: { uk: Транспортом, en: By transport, es: En vehículo } }
+        rows:
+          - { level: B1, prefix: { term: при- }, meaning: { uk: "прибуття", en: "arrive", es: "llegar" }, foot: прийти́, transport: приї́хати }
+          - { level: B1, prefix: { term: ви- }, meaning: { uk: "назовні", en: "go out", es: "salir" }, foot: ви́йти, transport: ви́їхати }
+          - { level: B1, prefix: { term: за- }, meaning: { uk: "усередину, ненадовго", en: "go in, drop by", es: "entrar, pasar" }, foot: зайти́, transport: заї́хати }
+          - { level: B1, prefix: { term: пере- }, meaning: { uk: "через", en: "cross, move house", es: "cruzar, mudarse" }, foot: перейти́, transport: переї́хати }
+          - { level: B1, prefix: { term: до- }, meaning: { uk: "до кінцевої точки", en: "get as far as", es: "llegar hasta" }, foot: дійти́, transport: дої́хати }
+          - { level: B1, prefix: { term: від- }, meaning: { uk: "геть", en: "move away", es: "alejarse" }, foot: відійти́, transport: від’ї́хати }
+          - { level: B1, prefix: { term: по- }, meaning: { uk: "початок руху", en: "set off", es: "ponerse en marcha" }, foot: піти́, transport: пої́хати }
+          - { level: B1, prefix: { term: об- }, meaning: { uk: "навколо", en: "go round", es: "rodear" }, foot: обійти́, transport: об’ї́хати }
+
+  - title: { uk: "Форма: майбутній і минулий час", en: "Form: future and past", es: "Forma: futuro y pasado" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: verb, label: { uk: Дієслово, en: Verb, es: Verbo } }
+          - { key: fut, label: { uk: "Майбутній: я", en: "Future: я", es: "Futuro: я" }, features: { tense: fut, aspect: pfv, person: 1, number: sg } }
+          - { key: masc, label: { uk: "Минулий: він", en: "Past: він", es: "Pasado: він" }, features: { tense: pst, aspect: pfv, number: sg, gender: masc } }
+          - { key: fem, label: { uk: "Минулий: вона", en: "Past: вона", es: "Pasado: вона" }, features: { tense: pst, aspect: pfv, number: sg, gender: fem } }
+        rows:
+          - { level: B1, verb: прийти́, fut: прийду́, masc: прийшо́в, fem: прийшла́ }
+          - { level: B1, verb: ви́йти, fut: ви́йду, masc: ви́йшов, fem: ви́йшла }
+          - { level: B1, verb: піти́, fut: піду́, masc: пішо́в, fem: пішла́ }
+          - { level: B1, verb: приї́хати, fut: приї́ду, masc: приї́хав, fem: приї́хала }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Префікс ", { term: ви- }, " у доконаному виді завжди наголошений: ", { term: ви́йти }, ", ", { term: ви́йду }, ", ", { term: ви́їхати }, "."]
+              en: ["The prefix ", { term: ви- }, " always takes the stress in the perfective: ", { term: ви́йти }, ", ", { term: ви́йду }, ", ", { term: ви́їхати }, "."]
+              es: ["El prefijo ", { term: ви- }, " siempre lleva el acento en el perfectivo: ", { term: ви́йти }, ", ", { term: ви́йду }, ", ", { term: ви́їхати }, "."]
+            ex: ["Ми ", { target: ви́їдемо }, " о дев’я́тій."]
+            tr: { en: "We'll set off at nine.", es: "Saldremos a las nueve." }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Пари недоконаного виду: ", { term: прихо́дити }, ", ", { term: вихо́дити }, ", ", { term: перехо́дити }, "; ", { term: приїжджа́ти }, ", ", { term: виїжджа́ти }, ", ", { term: переїжджа́ти }, "."]
+              en: ["The imperfective partners: ", { term: прихо́дити }, ", ", { term: вихо́дити }, ", ", { term: перехо́дити }, "; ", { term: приїжджа́ти }, ", ", { term: виїжджа́ти }, ", ", { term: переїжджа́ти }, "."]
+              es: ["Las parejas imperfectivas: ", { term: прихо́дити }, ", ", { term: вихо́дити }, ", ", { term: перехо́дити }, "; ", { term: приїжджа́ти }, ", ", { term: виїжджа́ти }, ", ", { term: переїжджа́ти }, "."]
+            ex: ["По́тяг ", { target: приїжджа́є }, " о во́сьмій."]
+            tr: { en: "The train arrives at eight.", es: "El tren llega a las ocho." }
+
+  - title: { uk: "Вживання: прийменники", en: "Use: prepositions", es: "Uso: preposiciones" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: [{ term: прийти́ }, " ", { alternatives: [{ term: до }, { term: в }, { term: на }] }], en: [{ term: прийти́ }, " ", { alternatives: [{ term: до }, { term: в }, { term: на }] }, ": arrive at"], es: [{ term: прийти́ }, " ", { alternatives: [{ term: до }, { term: в }, { term: на }] }, ": llegar a"] }
+            ex: ["Оле́на ", { target: прийшла́ до ме́не }, " в го́сті."]
+            tr: { en: "Olena came to visit me.", es: "Olena vino a visitarme." }
+          - level: B1
+            use: { uk: [{ term: ви́йти з }, " — родовий відмінок"], en: [{ term: ви́йти з }, " with the genitive: leave a place"], es: [{ term: ви́йти з }, " con el genitivo: salir de un lugar"] }
+            ex: ["Він ", { target: ви́йшов із кімна́ти }, "."]
+            tr: { en: "He left the room.", es: "Salió de la habitación." }
+          - level: B1
+            use: { uk: [{ term: дійти́ до }, " — родовий відмінок"], en: [{ term: дійти́ до }, " with the genitive: reach"], es: [{ term: дійти́ до }, " con el genitivo: llegar hasta"] }
+            ex: ["Ми ", { target: дійшли́ до па́рку }, " за п’ять хвили́н."]
+            tr: { en: "We got to the park in five minutes.", es: "Llegamos al parque en cinco minutos." }
+          - level: B1
+            use: { uk: [{ term: перейти́ }, " і знахідний відмінок"], en: [{ term: перейти́ }, " with the accusative: cross"], es: [{ term: перейти́ }, " con el acusativo: cruzar"] }
+            ex: [{ target: Перейді́ть }, " доро́гу на зеле́не сві́тло."]
+            tr: { en: "Cross the road when the light is green.", es: "Crucen la calle con el semáforo en verde." }
+          - level: B1
+            use: { uk: [{ term: переї́хати }, " — змінити місце проживання"], en: [{ term: переї́хати }, ": move house"], es: [{ term: переї́хати }, ": mudarse"] }
+            ex: ["Торі́к вони́ ", { target: переї́хали }, " в Ки́їв."]
+            tr: { en: "Last year they moved to Kyiv.", es: "El año pasado se mudaron a Kiev." }
+          - level: B1
+            use: { uk: "регулярний рух — недоконаний вид", en: "regular movement: the imperfective", es: "movimiento habitual: el imperfectivo" }
+            ex: ["Листи́ ", { target: прихо́дять }, " щодня́."]
+            tr: { en: "Letters arrive every day.", es: "Llegan cartas todos los días." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: Він ушо́в додо́му., right: ["Він ", { target: пішо́в }, " додо́му."], rule: { uk: ["українською — ", { term: піти́ }, ", ", { term: пішо́в }, "; ", { term: ушо́в }, " — з російської"], en: ["Ukrainian says ", { term: піти́ }, ", ", { term: пішо́в }, "; ", { term: ушо́в }, " is Russian"], es: ["en ucraniano se dice ", { term: піти́ }, ", ", { term: пішо́в }, "; ", { term: ушо́в }, " es ruso"] } }
+          - { level: B1, speakers: [en, es], wrong: Я ви́йшов дім о сьо́мій., right: ["Я ", { target: ви́йшов із до́му }, " о сьо́мій."], rule: { en: [{ term: ви́йти }, " takes ", { term: з }, " with the genitive"], es: [{ term: ви́йти }, " lleva ", { term: з }, " con el genitivo"] } }
+          - { level: B1, speakers: [en, es], wrong: Учо́ра я прийшо́в у Ки́їв по́їздом., right: ["Учо́ра я ", { target: приї́хав }, " у Ки́їв по́їздом."], rule: { en: ["arriving by train, bus or car takes ", { term: приї́хати }], es: ["llegar en tren, autobús o auto lleva ", { term: приї́хати }] } }
+          - { level: B1, wrong: Я щодня́ прийду́ додо́му о шо́стій., right: ["Я щодня́ ", { target: прихо́джу }, " додо́му о шо́стій."], rule: { uk: "регулярний рух — недоконаний вид", en: "a regular action takes the imperfective", es: "una acción habitual lleva el imperfectivo" } }

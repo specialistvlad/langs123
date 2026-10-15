@@ -1,0 +1,325 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.nouns-cases.accusative
+lang: uk
+kind: grammar
+tags: [cases, accusative, nouns, adjectives, pronouns, prepositions]
+concepts: [cases]
+related: [uk.nouns-cases.cases-overview, uk.nouns-cases.nominative, uk.nouns-cases.locative, uk.nouns-cases.genitive, uk.prepositions.where-whereto-wherefrom, uk.adjectives-adverbs.adjective-declension]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "adb454 ddcaa9 394659 55bddf 2d701b 4288ce fa5564 a49b67", es: "adb454 ddcaa9 394659 55bddf 2d701b 4288ce fa5564 a49b67" }
+
+title: { uk: Знахідний відмінок, en: Accusative Case, es: El caso acusativo }
+summary:
+  lead:
+    uk: ["Знахідний відмінок відповідає на питання ", { term: кого́? }, " і ", { term: що? }, ": це прямий додаток, а з ", { term: у }, " чи ", { term: на }, " — місце, куди спрямований рух."]
+    en: ["The accusative answers ", { term: кого́? }, " (whom?) and ", { term: що? }, " (what?): the direct object, and with ", { term: у }, " or ", { term: на }, ", the place something moves to."]
+    es: ["El acusativo responde a ", { term: кого́? }, " (¿a quién?) y ", { term: що? }, " (¿qué?): el objeto directo y, con ", { term: у }, " o ", { term: на }, ", el lugar hacia donde va algo."]
+  rule:
+    uk: ["Іменники жіночого роду на ", { term: -а }, ", ", { term: -я }, " мають закінчення ", { term: -у }, ", ", { term: -ю }, ":"]
+    en: ["Feminine nouns in ", { term: -а }, " and ", { term: -я }, " take ", { term: -у }, " and ", { term: -ю }, ":"]
+    es: ["Los sustantivos femeninos en ", { term: -а }, " y ", { term: -я }, " toman ", { term: -у }, " y ", { term: -ю }, ":"]
+  ex: { examples: [["Ві́ра чита́є ", { target: ціка́ву кни́жку }, "."], ["Я ба́чу ", { target: бабу́сю }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Аспект, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A1
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: { mapping: [{ term: -а }, { term: -у }] }
+            en: { mapping: [{ term: -а }, { term: -у }] }
+            es: { mapping: [{ term: -а }, { term: -у }] }
+          ex: ["Я чита́ю ", { target: кни́жку }, "."]
+          tr: { en: "I'm reading a book.", es: "Leo un libro." }
+        - level: A1
+          point: { uk: Жіночий рід, en: Feminine, es: Femenino }
+          rule:
+            uk: { mapping: [{ term: -я }, { term: -ю }] }
+            en: { mapping: [{ term: -я }, { term: -ю }] }
+            es: { mapping: [{ term: -я }, { term: -ю }] }
+          ex: ["Я ба́чу ", { target: бабу́сю }, "."]
+          tr: { en: "I can see Grandma.", es: "Veo a la abuela." }
+        - level: A1
+          point: { uk: "Чоловічий рід, неживе", en: "Masculine, inanimate", es: "Masculino, inanimado" }
+          rule:
+            uk: "форма та сама, що в називному"
+            en: "the same form as the nominative"
+            es: "la misma forma que el nominativo"
+          ex: ["Ми купу́ємо ", { target: стіл }, "."]
+          tr: { en: "We're buying a table.", es: "Compramos una mesa." }
+        - level: A1
+          point: { uk: "Чоловічий рід, живе", en: "Masculine, animate", es: "Masculino, animado" }
+          rule:
+            uk: [{ alternatives: [{ term: -а }, { term: -я }] }, ", як у родовому"]
+            en: [{ alternatives: [{ term: -а }, { term: -я }] }, ", like the genitive"]
+            es: [{ alternatives: [{ term: -а }, { term: -я }] }, ", como el genitivo"]
+          ex: ["Я ма́ю ", { target: бра́та }, "."]
+          tr: { en: "I have a brother.", es: "Tengo un hermano." }
+        - level: A1
+          point: { uk: Середній рід, en: Neuter, es: Neutro }
+          rule:
+            uk: "форма та сама, що в називному"
+            en: "the same form as the nominative"
+            es: "la misma forma que el nominativo"
+          ex: ["Ми лю́бимо ", { target: це мі́сто }, "."]
+          tr: { en: "We love this city.", es: "Nos encanta esta ciudad." }
+        - level: A1
+          point: { uk: Займенники, en: Pronouns, es: Pronombres }
+          rule:
+            uk: { alternatives: [{ term: мене́ }, { term: тебе́ }, { term: нас }, { term: вас }] }
+            en: { alternatives: [{ term: мене́ }, { term: тебе́ }, { term: нас }, { term: вас }] }
+            es: { alternatives: [{ term: мене́ }, { term: тебе́ }, { term: нас }, { term: вас }] }
+          ex: ["Ти ", { target: мене́ }, " чу́єш?"]
+          tr: { en: "Can you hear me?", es: "¿Me oyes?" }
+        - level: A2
+          point: { uk: Займенники, en: Pronouns, es: Pronombres }
+          rule:
+            uk: { alternatives: [{ term: його́ }, { term: її́ }, { term: їх }] }
+            en: { alternatives: [{ term: його́ }, { term: її́ }, { term: їх }] }
+            es: { alternatives: [{ term: його́ }, { term: її́ }, { term: їх }] }
+          ex: ["Я ", { target: її́ }, " ду́же люблю́."]
+          tr: { en: "I love her very much.", es: "La quiero mucho." }
+        - level: A1
+          point: { uk: Куди?, en: Where to?, es: ¿Adónde? }
+          rule:
+            uk: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " і знахідний"]
+            en: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " with the accusative"]
+            es: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, " con el acusativo"]
+          ex: ["Ми ї́демо ", { target: в Ки́їв }, "."]
+          tr: { en: "We're going to Kyiv.", es: "Vamos a Kyiv." }
+        - level: A2
+          point: { uk: Множина, en: Plural, es: Plural }
+          rule:
+            uk: "неживе — як у називному, живе — як у родовому"
+            en: "inanimate like the nominative, animate like the genitive"
+            es: "lo inanimado como el nominativo, lo animado como el genitivo"
+          ex: { examples: [["Я ба́чу ", { target: книжки́ }, "."], ["Я ба́чу ", { target: студе́нтів }, "."]] }
+          tr: { en: { examples: ["I can see the books.", "I can see the students."] }, es: { examples: ["Veo los libros.", "Veo a los estudiantes."] } }
+        - level: B1
+          point: { uk: Час, en: Time, es: Tiempo }
+          rule:
+            uk: [{ alternatives: [{ term: че́рез }, { term: за }, { term: на }] }, ": коли, за скільки, на скільки"]
+            en: [{ alternatives: [{ term: че́рез }, { term: за }, { term: на }] }, ": in, within, for how long"]
+            es: [{ alternatives: [{ term: че́рез }, { term: за }, { term: на }] }, ": dentro de, en, por cuánto tiempo"]
+          ex: ["Оле́на поверне́ться ", { target: че́рез ти́ждень }, "."]
+          tr: { en: "Olena will be back in a week.", es: "Olena volverá dentro de una semana." }
+        - level: A1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: "куди? — знахідний, де? — місцевий"
+            en: "where to? takes the accusative, where? the locative"
+            es: "¿adónde? lleva el acusativo; ¿dónde?, el locativo"
+          ex: { contrast: [["Я йду ", { target: в кімна́ту }], ["Я ", { target: в кімна́ті }]] }
+          tr: { en: { contrast: ["I'm going into the room", "I'm in the room"] }, es: { contrast: ["Voy a la habitación", "Estoy en la habitación"] } }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: ["Знахідний відмінок — форма прямого додатка: на кого чи на що спрямована дія. Питання: ", { term: кого́? }, " ", { term: що? }]
+              en: ["The accusative is the form of the direct object, the person or thing the action is aimed at. Its questions: ", { term: кого́? }, " ", { term: що? }]
+              es: ["El acusativo es la forma del objeto directo, la persona o la cosa a la que va la acción. Sus preguntas: ", { term: кого́? }, " ", { term: що? }]
+            ex: ["Ві́ра чита́є ", { target: ціка́ву кни́жку }, "."]
+            tr: { en: "Vira is reading an interesting book.", es: "Vira lee un libro interesante." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["З ", { term: у }, ", ", { term: в }, " чи ", { term: на }, " знахідний називає місце, куди спрямований рух:"]
+              en: ["With ", { term: у }, ", ", { term: в }, " or ", { term: на }, ", the accusative names the place something moves to:"]
+              es: ["Con ", { term: у }, ", ", { term: в }, " o ", { term: на }, ", el acusativo nombra el lugar hacia donde va algo:"]
+            ex: ["Я кладу́ кни́жку ", { target: на стіл }, "."]
+            tr: { en: "I'm putting the book on the table.", es: "Pongo el libro en la mesa." }
+          - type: note
+            level: A1
+            text:
+              uk: ["Де? — це місцевий відмінок: ", { term: у Ки́єві }, ". Див. ", { link: Місцевий відмінок, to: uk.nouns-cases.locative }, "."]
+              en: ["Where? takes the locative: ", { term: у Ки́єві }, ". See ", { link: Locative Case, to: uk.nouns-cases.locative }, "."]
+              es: ["¿Dónde? lleva el locativo: ", { term: у Ки́єві }, ". Ver ", { link: El caso locativo, to: uk.nouns-cases.locative }, "."]
+
+  - title: { uk: "Форма: іменники в однині", en: "Form: nouns in the singular", es: "Forma: sustantivos en singular" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: acc, label: { uk: Знахідний, en: Accusative, es: Acusativo }, features: { case: acc } }
+        rows:
+          - { level: A1, features: { gender: masc, animacy: inan, number: sg }, group: { uk: "Чоловічий рід, неживе", en: "Masculine, inanimate", es: "Masculino, inanimado" }, nom: { alternatives: [стіл, готе́ль] }, acc: { target: { alternatives: [стіл, готе́ль] } } }
+          - { level: A1, features: { gender: masc, animacy: anim, number: sg }, group: { uk: "Чоловічий рід, живе", en: "Masculine, animate", es: "Masculino, animado" }, nom: { alternatives: [брат, та́то] }, acc: { alternatives: [["бра́т", { ending: а }], ["та́т", { ending: а }]] } }
+          - { level: A1, features: { gender: masc, animacy: anim, number: sg }, group: { uk: "Чоловічий рід, живе, м’яка основа", en: "Masculine, animate, soft stem", es: "Masculino, animado, raíz blanda" }, nom: { alternatives: [учи́тель, Васи́ль] }, acc: { alternatives: [["учи́тел", { ending: я }], ["Васил", { ending: я́ }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -а", en: "Feminine in -а", es: "Femenino en -а" }, nom: { alternatives: [ма́ма, сестра́] }, acc: { alternatives: [["ма́м", { ending: у }], ["сестр", { ending: у́ }]] } }
+          - { level: A1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід на -я", en: "Feminine in -я", es: "Femenino en -я" }, nom: { alternatives: [бабу́ся, лі́нія] }, acc: { alternatives: [["бабу́с", { ending: ю }], ["лі́ні", { ending: ю }]] } }
+          - { level: A1, features: { gender: neut, number: sg }, group: { uk: "Середній рід", en: "Neuter", es: "Neutro" }, nom: { alternatives: [мі́сто, мі́сце] }, acc: { target: { alternatives: [мі́сто, мі́сце] } } }
+          - { level: B1, features: { gender: fem, number: sg }, group: { uk: "Жіночий рід без закінчення", en: "Feminine with no ending", es: "Femenino sin terminación" }, nom: { alternatives: [о́сінь, ра́дість] }, acc: { target: { alternatives: [о́сінь, ра́дість] } } }
+      - type: list
+        items:
+          - type: rule
+            level: A1
+            text:
+              uk: "Неживі іменники чоловічого роду та іменники середнього роду в знахідному мають ту саму форму, що й у називному:"
+              en: "Inanimate masculine nouns and neuter nouns keep their nominative form in the accusative:"
+              es: "Los sustantivos masculinos inanimados y los neutros conservan en acusativo la forma del nominativo:"
+            ex: ["Ми ма́ємо ", { target: нови́й стіл }, " і ", { target: вели́ке вікно́ }, "."]
+            tr: { en: "We have a new table and a big window.", es: "Tenemos una mesa nueva y una ventana grande." }
+          - type: rule
+            level: A1
+            text:
+              uk: ["Живі іменники чоловічого роду — люди й тварини — мають закінчення ", { term: -а }, " чи ", { term: -я }, ":"]
+              en: ["Animate masculine nouns, for people and animals, take ", { term: -а }, " or ", { term: -я }, ":"]
+              es: ["Los sustantivos masculinos animados, de personas y animales, toman ", { term: -а }, " o ", { term: -я }, ":"]
+            ex: ["Я чека́ю ", { target: си́на }, "."]
+            tr: { en: "I'm waiting for my son.", es: "Espero a mi hijo." }
+          - type: note
+            level: B1
+            text:
+              uk: ["Іменники жіночого роду без закінчення, як-от ", { term: о́сінь }, ", ", { term: по́дорож }, ", ", { term: ра́дість }, ", у знахідному не змінюються:"]
+              en: ["Feminine nouns with no ending, such as ", { term: о́сінь }, ", ", { term: по́дорож }, " and ", { term: ра́дість }, ", do not change in the accusative:"]
+              es: ["Los femeninos sin terminación, como ", { term: о́сінь }, ", ", { term: по́дорож }, " y ", { term: ра́дість }, ", no cambian en acusativo:"]
+            ex: ["Ми плану́ємо ", { target: по́дорож }, "."]
+            tr: { en: "We're planning a trip.", es: "Planeamos un viaje." }
+
+  - title: { uk: "Форма: множина", en: "Form: the plural", es: "Forma: el plural" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група, en: Group, es: Grupo } }
+          - { key: nom, label: { uk: Називний, en: Nominative, es: Nominativo }, features: { case: nom } }
+          - { key: acc, label: { uk: Знахідний, en: Accusative, es: Acusativo }, features: { case: acc } }
+        rows:
+          - { level: A2, features: { animacy: inan, number: pl }, group: { uk: "Неживе", en: "Inanimate", es: "Inanimado" }, nom: { alternatives: [книжки́, столи́] }, acc: { target: { alternatives: [книжки́, столи́] } } }
+          - { level: A2, features: { animacy: anim, number: pl }, group: { uk: "Живе", en: "Animate", es: "Animado" }, nom: { alternatives: [студе́нти, се́стри] }, acc: { alternatives: [["студе́нт", { ending: ів }], сесте́р] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "У множині неживі іменники мають форму називного, а живі — форму родового:"
+              en: "In the plural, inanimate nouns take the nominative form and animate nouns the genitive form:"
+              es: "En plural, los inanimados toman la forma del nominativo y los animados la del genitivo:"
+            ex: { examples: [["Ми купу́ємо ", { target: книжки́ }, "."], ["Ми запро́шуємо ", { target: дру́зів }, "."]] }
+            tr: { en: { examples: ["We're buying books.", "We're inviting friends."] }, es: { examples: ["Compramos libros.", "Invitamos a unos amigos."] } }
+          - type: note
+            level: A2
+            text:
+              uk: ["Форми родового в множині: ", { link: Родовий відмінок, to: uk.nouns-cases.genitive }, "."]
+              en: ["The genitive plural forms: ", { link: Genitive Case, to: uk.nouns-cases.genitive }, "."]
+              es: ["Las formas del genitivo plural: ", { link: El caso genitivo, to: uk.nouns-cases.genitive }, "."]
+
+  - title: { uk: "Прикметники й займенники", en: "Adjectives and pronouns", es: "Adjetivos y pronombres" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Форма, en: Form, es: Forma } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            form: { uk: ["жіночий рід: ", { alternatives: [{ term: -у }, { term: -ю }] }], en: ["feminine: ", { alternatives: [{ term: -у }, { term: -ю }] }], es: ["femenino: ", { alternatives: [{ term: -у }, { term: -ю }] }] }
+            ex: ["Я ма́ю ", { target: ціка́ву }, " кни́жку й ", { target: си́ню }, " су́мку."]
+            tr: { en: "I have an interesting book and a blue bag.", es: "Tengo un libro interesante y una bolsa azul." }
+          - level: A1
+            form: { uk: "чоловічий рід, неживе: як у називному", en: "masculine, inanimate: like the nominative", es: "masculino, inanimado: como el nominativo" }
+            ex: ["Ми купу́ємо ", { target: нови́й }, " стіл."]
+            tr: { en: "We're buying a new table.", es: "Compramos una mesa nueva." }
+          - level: A2
+            form: { uk: ["чоловічий рід, живе: ", { alternatives: [{ term: -ого }, { term: -ього }] }], en: ["masculine, animate: ", { alternatives: [{ term: -ого }, { term: -ього }] }], es: ["masculino, animado: ", { alternatives: [{ term: -ого }, { term: -ього }] }] }
+            ex: ["Я ма́ю ", { target: ново́го }, " дру́га."]
+            tr: { en: "I have a new friend.", es: "Tengo un amigo nuevo." }
+          - level: A1
+            form: { uk: { alternatives: [{ term: мене́ }, { term: тебе́ }, { term: нас }, { term: вас }] }, en: { alternatives: [{ term: мене́ }, { term: тебе́ }, { term: нас }, { term: вас }] }, es: { alternatives: [{ term: мене́ }, { term: тебе́ }, { term: нас }, { term: вас }] } }
+            ex: ["Ма́ма ", { target: нас }, " чека́є."]
+            tr: { en: "Mum is waiting for us.", es: "Mamá nos espera." }
+          - level: A2
+            form: { uk: { alternatives: [{ term: його́ }, { term: її́ }, { term: їх }] }, en: { alternatives: [{ term: його́ }, { term: її́ }, { term: їх }] }, es: { alternatives: [{ term: його́ }, { term: її́ }, { term: їх }] } }
+            ex: ["Я ", { target: його́ }, " зна́ю."]
+            tr: { en: "I know him.", es: "Lo conozco." }
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A1
+            use: { uk: "прямий додаток", en: "the direct object", es: "el objeto directo" }
+            ex: ["Студе́нт пи́ше ", { target: лист }, "."]
+            tr: { en: "The student is writing a letter.", es: "El estudiante escribe una carta." }
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, ": куди?"], en: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, ": where to?"], es: [{ alternatives: [{ term: у }, { term: в }, { term: на }] }, ": ¿adónde?"] }
+            ex: ["Степа́н захо́дить ", { target: у кімна́ту }, "."]
+            tr: { en: "Stepan comes into the room.", es: "Stepan entra en la habitación." }
+          - level: A1
+            use: { uk: [{ alternatives: [{ term: у }, { term: в }] }, " і день тижня: коли?"], en: [{ alternatives: [{ term: у }, { term: в }] }, " with a day of the week: when?"], es: [{ alternatives: [{ term: у }, { term: в }] }, " con un día de la semana: ¿cuándo?"] }
+            ex: ["До зу́стрічі ", { target: ["в ", { weekday: понеді́лок, value: 1 }] }, "!"]
+            tr: { en: "See you on Monday!", es: "¡Hasta el lunes!" }
+          - level: A1
+            use: { uk: [{ term: про }, " після ", { alternatives: [{ term: ду́мати }, { term: мрі́яти }] }], en: [{ term: про }, " after ", { alternatives: [{ term: ду́мати }, { term: мрі́яти }] }], es: [{ term: про }, " después de ", { alternatives: [{ term: ду́мати }, { term: мрі́яти }] }] }
+            ex: ["Я ду́маю ", { target: про відпочи́нок }, "."]
+            tr: { en: "I'm thinking about a holiday.", es: "Pienso en las vacaciones." }
+          - level: B1
+            use: { uk: "без прийменника: скільки часу?", en: "with no preposition: for how long?", es: "sin preposición: ¿cuánto tiempo?" }
+            ex: ["Ми чека́ли ", { target: ці́лий мі́сяць }, "."]
+            tr: { en: "We waited a whole month.", es: "Esperamos un mes entero." }
+          - level: B1
+            use: { uk: [{ term: че́рез }, ": через який час?"], en: [{ term: че́рез }, ": in how long from now?"], es: [{ term: че́рез }, ": ¿dentro de cuánto?"] }
+            ex: ["Оле́на поверне́ться ", { target: че́рез ти́ждень }, "."]
+            tr: { en: "Olena will be back in a week.", es: "Olena volverá dentro de una semana." }
+          - level: B1
+            use: { uk: [{ term: за }, ": за який час дію завершено?"], en: [{ term: за }, ": how long it takes to finish"], es: [{ term: за }, ": cuánto se tarda en terminar"] }
+            ex: ["Ми написа́ли текст ", { target: за годи́ну }, "."]
+            tr: { en: "We wrote the text in an hour.", es: "Escribimos el texto en una hora." }
+          - level: B1
+            use: { uk: [{ term: на }, ": на який час?"], en: [{ term: на }, ": for how long it is planned"], es: [{ term: на }, ": para cuánto tiempo"] }
+            ex: ["Він підписа́в контра́кт ", { target: на рік }, "."]
+            tr: { en: "He signed a contract for a year.", es: "Firmó un contrato por un año." }
+          - level: B1
+            use: { uk: [{ term: че́рез }, ": шлях руху"], en: [{ term: че́рез }, ": the way through"], es: [{ term: че́рез }, ": el camino a través de algo"] }
+            ex: ["Ми ї́хали ", { target: че́рез ліс }, "."]
+            tr: { en: "We drove through the forest.", es: "Fuimos por el bosque." }
+          - level: B1
+            use: { uk: [{ term: за }, " у порівнянні"], en: [{ term: за }, " in a comparison"], es: [{ term: за }, " en una comparación"] }
+            ex: ["Брат моло́дший ", { target: за сестру́ }, "."]
+            tr: { en: "My brother is younger than my sister.", es: "Mi hermano es menor que mi hermana." }
+          - level: B1
+            use: { uk: [{ term: на }, " після ", { term: схо́жий }], en: [{ term: на }, " after ", { term: схо́жий }, " (like)"], es: [{ term: на }, " después de ", { term: схо́жий }, " (parecido)"] }
+            ex: ["Син схо́жий ", { target: на ба́тька }, "."]
+            tr: { en: "The son looks like his father.", es: "El hijo se parece a su padre." }
+          - level: B1
+            use: { uk: [{ term: на }, " після ", { term: хворі́ти }], en: [{ term: на }, " after ", { term: хворі́ти }, " (be ill)"], es: [{ term: на }, " después de ", { term: хворі́ти }, " (estar enfermo)"] }
+            ex: ["Бабу́ся захворі́ла ", { target: на грип }, "."]
+            tr: { en: "Grandma has caught the flu.", es: "La abuela se enfermó de gripe." }
+          - level: B1
+            use: { uk: [{ term: по }, ": по кого? по що? — мета дії"], en: [{ term: по }, ": to fetch someone or something"], es: [{ term: по }, ": ir a buscar a alguien o algo"] }
+            ex: ["Ми посла́ли ", { target: по лі́каря }, "."]
+            tr: { en: "We sent for the doctor.", es: "Mandamos a buscar al médico." }
+          - level: B1
+            use: { uk: [{ term: за }, " після ", { alternatives: [{ term: боро́тися }, { term: моли́тися }] }, ": за що?"], en: [{ term: за }, " after ", { alternatives: [{ term: боро́тися }, { term: моли́тися }] }, " (fight, pray) for"], es: [{ term: за }, " después de ", { alternatives: [{ term: боро́тися }, { term: моли́тися }] }, " (luchar, rezar) por"] }
+            ex: ["Вони́ бо́рються ", { target: за свобо́ду }, "."]
+            tr: { en: "They are fighting for freedom.", es: "Luchan por la libertad." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A1, wrong: Я чита́ю кни́жка., right: ["Я чита́ю ", { target: кни́жку }, "."], rule: { uk: ["прямий додаток стоїть у знахідному: ", { mapping: [{ term: -а }, { term: -у }] }], en: ["the direct object takes the accusative: ", { mapping: [{ term: -а }, { term: -у }] }], es: ["el objeto directo va en acusativo: ", { mapping: [{ term: -а }, { term: -у }] }] } }
+          - { level: A1, wrong: Я ба́чу брат., right: ["Я ба́чу ", { target: бра́та }, "."], rule: { uk: ["живий іменник чоловічого роду має ", { term: -а }, " чи ", { term: -я }], en: ["an animate masculine noun takes ", { term: -а }, " or ", { term: -я }], es: ["un masculino animado toma ", { term: -а }, " o ", { term: -я }] } }
+          - { level: A1, wrong: Я йду в кімна́ті., right: ["Я йду ", { target: в кімна́ту }, "."], rule: { uk: "куди? — знахідний; де? — місцевий", en: "where to? takes the accusative; where? the locative", es: "¿adónde? lleva el acusativo; ¿dónde?, el locativo" } }
+          - { level: A1, speakers: [es], wrong: Я ба́чу до Марі́ї., right: ["Я ба́чу ", { target: Марі́ю }, "."], rule: { es: ["la persona va en acusativo sin preposición: no hay equivalente de la ", { l1: a personal }] } }
+          - { level: A1, speakers: [es], wrong: Я ду́маю в тебе́., right: ["Я ду́маю ", { target: про тебе́ }, "."], rule: { es: [{ term: ду́мати }, " lleva ", { term: про }, ", no ", { term: в }, " como «pensar en»"] } }
+          - { level: B1, speakers: [en], wrong: Я чека́ю для авто́буса., right: ["Я чека́ю ", { target: на авто́бус }, "."], rule: { en: ["“wait for” is ", { term: чека́ти на }, " with the accusative"] } }
+          - { level: B1, wrong: Бабу́ся хворі́є гри́пом., right: ["Бабу́ся хворі́є ", { target: на грип }, "."], rule: { uk: [{ term: хворі́ти на }, " що: ", { term: на грип }, "; форма з орудним — калька з російської"], en: [{ term: хворі́ти на }, " with the accusative: ", { term: на грип }, "; the instrumental is a calque from Russian"], es: [{ term: хворі́ти на }, " con acusativo: ", { term: на грип }, "; el instrumental es un calco del ruso"] } }

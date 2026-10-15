@@ -1,0 +1,243 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.past-aspect.aspect
+lang: uk
+kind: grammar
+tags: [verbs, aspect, perfective, imperfective]
+concepts: [aspect]
+related: [uk.past-aspect.past-tense, uk.future-imperative-conditional.future-compound, uk.future-imperative-conditional.future-synthetic, uk.future-imperative-conditional.imperative, uk.motion.prefixed-motion]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "4cb4dd d0f5d8 6ce3f1 74aa60 3623bb 5faf82 212f38 4b5f0c", es: "4cb4dd d0f5d8 6ce3f1 74aa60 3623bb 5faf82 212f38 4b5f0c" }
+
+title: { uk: "Вид дієслова: доконаний і недоконаний", en: "Aspect: Perfective and Imperfective", es: "El aspecto: perfectivo e imperfectivo" }
+summary:
+  lead:
+    uk: ["Більшість дієслів має пару: недоконаний вид називає процес чи повторення (", { term: писа́ти }, "), доконаний — один завершений результат (", { term: написа́ти }, ")."]
+    en: ["Most verbs come in pairs: the imperfective names a process or a repeated action (", { term: писа́ти }, "), the perfective a single finished result (", { term: написа́ти }, ")."]
+    es: ["Casi todos los verbos forman pareja: el imperfectivo nombra un proceso o una repetición (", { term: писа́ти }, "); el perfectivo, un resultado terminado (", { term: написа́ти }, ")."]
+  rule:
+    uk: "Доконаний вид не має теперішнього часу: його форми з особовими закінченнями означають майбутнє:"
+    en: "The perfective has no present tense: its forms with person endings mean the future:"
+    es: "El perfectivo no tiene presente: sus formas con terminación de persona expresan futuro:"
+  ex: { examples: [["Я ", { target: пишу́ }, " лист."], ["Я ", { target: напишу́ }, " лист."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: A2
+          point: { uk: Префікс, en: Prefix, es: Prefijo }
+          rule: { uk: { mapping: [{ term: роби́ти }, { term: зроби́ти }] }, en: { mapping: [{ term: роби́ти }, { term: зроби́ти }] }, es: { mapping: [{ term: роби́ти }, { term: зроби́ти }] } }
+          ex: ["Я вже ", { target: зроби́в }, " завда́ння."]
+          tr: { en: "I've already done the task.", es: "Ya hice la tarea." }
+        - level: A2
+          point: { uk: Суфікс, en: Suffix, es: Sufijo }
+          rule: { uk: { mapping: [{ term: забува́ти }, { term: забу́ти }] }, en: { mapping: [{ term: забува́ти }, { term: забу́ти }] }, es: { mapping: [{ term: забува́ти }, { term: забу́ти }] } }
+          ex: ["Я ", { target: забу́ла }, " ключі́."]
+          tr: { en: "I forgot my keys.", es: "Olvidé las llaves." }
+        - level: A2
+          point: { uk: "Недоконаний вид", en: Imperfective, es: Imperfectivo }
+          rule: { uk: "процес, повторення, загальний факт", en: "a process, a repeated action, a general fact", es: "un proceso, una repetición, un hecho general" }
+          ex: ["Я ча́сто ", { target: пишу́ }, " листи́."]
+          tr: { en: "I often write letters.", es: "Escribo cartas a menudo." }
+        - level: A2
+          point: { uk: "Доконаний вид", en: Perfective, es: Perfectivo }
+          rule: { uk: "один завершений результат", en: "one finished result", es: "un resultado terminado" }
+          ex: ["Я ", { target: написа́в }, " лист."]
+          tr: { en: "I've written the letter.", es: "Escribí la carta." }
+        - level: A2
+          point: { uk: "Майбутній час", en: Future, es: Futuro }
+          rule: { uk: ["недоконаний: ", { term: бу́ду писа́ти }, "; доконаний: ", { term: напишу́ }], en: ["imperfective: ", { term: бу́ду писа́ти }, "; perfective: ", { term: напишу́ }], es: ["imperfectivo: ", { term: бу́ду писа́ти }, "; perfectivo: ", { term: напишу́ }] }
+          ex: ["За́втра я ", { target: напишу́ }, " лист."]
+          tr: { en: "I'll write the letter tomorrow.", es: "Mañana escribiré la carta." }
+        - level: B1
+          point: { uk: "Інший корінь", en: "Another root", es: "Otra raíz" }
+          rule: { uk: [{ mapping: [{ term: бра́ти }, { term: взя́ти }] }, ", ", { mapping: [{ term: говори́ти }, { term: сказа́ти }] }], en: [{ mapping: [{ term: бра́ти }, { term: взя́ти }] }, ", ", { mapping: [{ term: говори́ти }, { term: сказа́ти }] }], es: [{ mapping: [{ term: бра́ти }, { term: взя́ти }] }, ", ", { mapping: [{ term: говори́ти }, { term: сказа́ти }] }] }
+          ex: ["Він ", { target: сказа́в }, " пра́вду."]
+          tr: { en: "He told the truth.", es: "Dijo la verdad." }
+        - level: A2
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule: { uk: "дія зараз — лише недоконаний вид", en: "an action going on now takes the imperfective", es: "una acción en curso solo admite el imperfectivo" }
+          ex: ["За́раз я ", { target: чита́ю }, " кни́жку."]
+          tr: { en: "I'm reading a book right now.", es: "Ahora estoy leyendo un libro." }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "Недоконаний вид називає дію як процес, як повторення або просто як факт."
+              en: "The imperfective presents an action as a process, as something repeated, or simply as a fact."
+              es: "El imperfectivo presenta la acción como un proceso, como algo que se repite o simplemente como un hecho."
+            ex: ["Уве́чері я ", { target: диви́вся }, " фільм."]
+            tr: { en: "In the evening I watched a film.", es: "Por la tarde vi una película." }
+          - type: rule
+            level: A2
+            text:
+              uk: "Доконаний вид називає одну дію, доведену до результату."
+              en: "The perfective presents one action carried through to its result."
+              es: "El perfectivo presenta una sola acción llevada hasta su resultado."
+            ex: ["Я ", { target: подиви́вся }, " фільм і пішо́в спа́ти."]
+            tr: { en: "I watched the film and went to bed.", es: "Vi la película y me fui a dormir." }
+          - type: rule
+            level: A2
+            text:
+              uk: "Недоконаний вид має три часи, доконаний — два: минулий і майбутній."
+              en: "The imperfective has three tenses; the perfective has two, the past and the future."
+              es: "El imperfectivo tiene tres tiempos; el perfectivo, dos: el pasado y el futuro."
+          - type: note
+            level: A2
+            text:
+              uk: ["Словник подає дієслова парами: ", { term: роби́ти }, " — ", { term: зроби́ти }, ". Вивчайте дієслово разом із його парою."]
+              en: ["Dictionaries list verbs in pairs: ", { term: роби́ти }, " — ", { term: зроби́ти }, ". Learn each verb with its pair."]
+              es: ["Los diccionarios dan los verbos en parejas: ", { term: роби́ти }, " — ", { term: зроби́ти }, ". Aprenda cada verbo con su pareja."]
+
+  - title: { uk: "Форма: видові пари", en: "Form: aspect pairs", es: "Forma: parejas de aspecto" }
+    role: form
+    content:
+      - type: comparison
+        columns:
+          - { key: how, label: { uk: Як утворено, en: How the pair forms, es: Cómo se forma } }
+          - { key: ipfv, label: { uk: Недоконаний, en: Imperfective, es: Imperfectivo }, features: { aspect: ipfv } }
+          - { key: pfv, label: { uk: Доконаний, en: Perfective, es: Perfectivo }, features: { aspect: pfv } }
+        rows:
+          - { level: A2, how: { uk: "префікс", en: "a prefix", es: "un prefijo" }, ipfv: { alternatives: [роби́ти, писа́ти, чита́ти] }, pfv: { alternatives: [зроби́ти, написа́ти, прочита́ти] } }
+          - { level: A2, how: { uk: "префікс", en: "a prefix", es: "un prefijo" }, ipfv: { alternatives: [діли́ти, ба́чити, диви́тися] }, pfv: { alternatives: [поділи́ти, поба́чити, подиви́тися] } }
+          - { level: A2, how: { uk: "суфікс", en: "a suffix", es: "un sufijo" }, ipfv: { alternatives: [забува́ти, вихо́дити, відпочива́ти] }, pfv: { alternatives: [забу́ти, ви́йти, відпочи́ти] } }
+          - { level: A2, how: { uk: "суфікс", en: "a suffix", es: "un sufijo" }, ipfv: { alternatives: [купува́ти, дава́ти, вивча́ти] }, pfv: { alternatives: [купи́ти, да́ти, ви́вчити] } }
+          - { level: B1, how: { uk: "префікс", en: "a prefix", es: "un prefijo" }, ipfv: кла́сти, pfv: покла́сти }
+          - { level: B1, how: { uk: "інший корінь", en: "another root", es: "otra raíz" }, ipfv: { alternatives: [бра́ти, говори́ти] }, pfv: { alternatives: [взя́ти, сказа́ти] } }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: "Префікс робить дієслово доконаним і зазвичай не змінює його значення."
+              en: "A prefix makes the verb perfective and usually keeps its meaning."
+              es: "Un prefijo vuelve perfectivo el verbo y, por lo general, conserva su significado."
+            ex: { mapping: [писа́ти, { target: написа́ти }] }
+          - type: rule
+            level: A2
+            text:
+              uk: ["У парах із суфіксом довшу форму має недоконаний вид: ", { term: відпочива́ти }, " — ", { term: відпочи́ти }, "."]
+              en: ["In pairs built with a suffix, the imperfective is the longer form: ", { term: відпочива́ти }, " — ", { term: відпочи́ти }, "."]
+              es: ["En las parejas con sufijo, el imperfectivo es la forma más larga: ", { term: відпочива́ти }, " — ", { term: відпочи́ти }, "."]
+            ex: ["Влі́тку ми ", { target: відпочива́ли }, " на мо́рі."]
+            tr: { en: "In the summer we had a holiday by the sea.", es: "En verano descansamos en el mar." }
+
+  - title: { uk: "Форма: часи обох видів", en: "Form: the tenses of each aspect", es: "Forma: los tiempos de cada aspecto" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: tense, label: { uk: Час, en: Tense, es: Tiempo } }
+          - { key: ipfv, label: писа́ти, features: { aspect: ipfv } }
+          - { key: pfv, label: написа́ти, features: { aspect: pfv } }
+        rows:
+          - { level: A2, features: { tense: pst, person: 1, number: sg, gender: masc }, tense: { uk: "Минулий", en: "Past", es: "Pasado" }, ipfv: "я писа́в", pfv: "я написа́в" }
+          - { level: A2, features: { tense: prs, person: 1, number: sg }, tense: { uk: "Теперішній", en: "Present", es: "Presente" }, ipfv: "я пишу́" }
+          - { level: A2, features: { tense: fut, person: 1, number: sg }, tense: { uk: "Майбутній", en: "Future", es: "Futuro" }, ipfv: "я бу́ду писа́ти", pfv: "я напишу́" }
+      - type: list
+        items:
+          - type: rule
+            level: A2
+            text:
+              uk: ["Доконані форми ", { term: напишу́ }, ", ", { term: прочита́ю }, ", ", { term: зроблю́ }, " означають майбутнє, хоч мають закінчення теперішнього часу."]
+              en: ["The perfective forms ", { term: напишу́ }, ", ", { term: прочита́ю }, " and ", { term: зроблю́ }, " mean the future, although they carry present endings."]
+              es: ["Las formas perfectivas ", { term: напишу́ }, ", ", { term: прочита́ю }, " y ", { term: зроблю́ }, " expresan futuro, aunque llevan terminaciones de presente."]
+            ex: ["Я ", { target: прочита́ю }, " цю кни́жку за́втра."]
+            tr: { en: "I'll read this book tomorrow.", es: "Leeré este libro mañana." }
+          - type: note
+            level: B1
+            text:
+              uk: ["Обидва види мають минулий час з усіма формами роду й числа: ", { term: хоті́в }, ", ", { term: хоті́ла }, "; ", { term: поба́чив }, ", ", { term: поба́чила }, ". Див. ", { link: Минулий час, to: uk.past-aspect.past-tense }, "."]
+              en: ["Both aspects have a past tense with every gender and number form: ", { term: хоті́в }, ", ", { term: хоті́ла }, "; ", { term: поба́чив }, ", ", { term: поба́чила }, ". See ", { link: Past Tense, to: uk.past-aspect.past-tense }, "."]
+              es: ["Los dos aspectos tienen pasado con todas las formas de género y número: ", { term: хоті́в }, ", ", { term: хоті́ла }, "; ", { term: поба́чив }, ", ", { term: поба́чила }, ". Ver ", { link: El pasado, to: uk.past-aspect.past-tense }, "."]
+
+  - title: { uk: Вживання, en: Use, es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання, en: Use, es: Uso } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            use: { uk: "недоконаний: процес, тривалість", en: "imperfective: a process, how long", es: "imperfectivo: un proceso, la duración" }
+            ex: ["Ми ", { target: прибира́ли }, " ці́лий день."]
+            tr: { en: "We spent the whole day cleaning.", es: "Estuvimos limpiando todo el día." }
+          - level: A2
+            use: { uk: "недоконаний: повторення", en: "imperfective: a repeated action", es: "imperfectivo: una repetición" }
+            ex: ["Він ", { target: дзвони́в }, " ма́мі щодня́."]
+            tr: { en: "He called his mum every day.", es: "Llamaba a su madre todos los días." }
+          - level: A2
+            use: { uk: "недоконаний: загальний факт, без результату", en: "imperfective: a general fact, with no result in view", es: "imperfectivo: un hecho general, sin mirar el resultado" }
+            ex: ["Ти ", { target: чита́в }, " «Кобза́р»?"]
+            tr: { en: "Have you read the Kobzar?", es: "¿Has leído el Kobzar?" }
+          - level: A2
+            use: { uk: "доконаний: результат", en: "perfective: a result", es: "perfectivo: un resultado" }
+            ex: ["Ми ", { target: прибра́ли }, " кварти́ру."]
+            tr: { en: "We've cleaned the flat.", es: "Limpiamos el departamento." }
+          - level: A2
+            use: { uk: "доконаний: дії одна за одною", en: "perfective: actions one after another", es: "perfectivo: acciones una tras otra" }
+            ex: ["Вона́ ", { target: посні́дала }, " й ", { target: ви́йшла }, "."]
+            tr: { en: "She had breakfast and went out.", es: "Desayunó y salió." }
+          - level: B1
+            use: { uk: "доконаний: за скільки часу", en: "perfective: how long it took to finish", es: "perfectivo: cuánto tardó en terminarse" }
+            ex: ["Я ", { target: ви́вчив }, " ці слова́ за годи́ну."]
+            tr: { en: "I learnt these words in an hour.", es: "Aprendí estas palabras en una hora." }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            text:
+              uk: ["Вид інфінітива після ", { term: почина́ти }, ": ", { link: "Дієслово з інфінітивом", to: uk.verbs-present.verb-infinitive }, "."]
+              en: ["The aspect of the infinitive after ", { term: почина́ти }, ": ", { link: "Verb with Infinitive", to: uk.verbs-present.verb-infinitive }, "."]
+              es: ["El aspecto del infinitivo tras ", { term: почина́ти }, ": ", { link: "Verbo con infinitivo", to: uk.verbs-present.verb-infinitive }, "."]
+
+  - title: { uk: "Слова-сигнали", en: "Signal words", es: "Palabras clave" }
+    role: signals
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { uk: Слово, en: Word, es: Palabra } }
+          - { key: aspect, label: { uk: Вид, en: Aspect, es: Aspecto } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: A2
+            word: { alternatives: [ча́сто, щодня́, за́вжди, до́вго] }
+            aspect: { uk: недоконаний, en: imperfective, es: imperfectivo }
+            ex: [{ signal: Щодня́ }, " я ", { target: готу́ю }, " сніда́нок."]
+            tr: { en: "I make breakfast every day.", es: "Preparo el desayuno todos los días." }
+          - level: A2
+            word: { alternatives: [наре́шті, одра́зу] }
+            aspect: { uk: доконаний, en: perfective, es: perfectivo }
+            ex: ["Я ", { signal: наре́шті }, " ", { target: знайшла́ }, " ключі́."]
+            tr: { en: "I've finally found my keys.", es: "Por fin encontré las llaves." }
+      - type: list
+        items:
+          - type: note
+            level: A2
+            text:
+              uk: [{ term: уже́ }, " буває з обома видами; у питанні, чи щось уже сталося, — часто з недоконаним:"]
+              en: [{ term: уже́ }, " goes with either aspect; asking whether something has happened yet, it often takes the imperfective:"]
+              es: [{ term: уже́ }, " va con los dos aspectos; al preguntar si algo ya ha pasado, suele llevar el imperfectivo:"]
+            ex: ["Ти ", { signal: уже́ }, " ", { target: обі́дав }, "?"]
+            tr: { en: "Have you had lunch yet?", es: "¿Ya almorzaste?" }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: A2, wrong: За́раз я прочита́ю кни́жку., right: ["За́раз я ", { target: чита́ю }, " кни́жку."], rule: { uk: "дія зараз — недоконаний вид: доконаний не має теперішнього часу", en: "an action going on now takes the imperfective: the perfective has no present", es: "una acción en curso lleva el imperfectivo: el perfectivo no tiene presente" } }
+          - { level: A2, wrong: Я бу́ду прочита́ти кни́жку., right: ["Я ", { target: прочита́ю }, " кни́жку."], rule: { uk: ["доконаний вид має просте майбутнє: ", { term: прочита́ю }], en: ["the perfective has a simple future: ", { term: прочита́ю }], es: ["el perfectivo tiene un futuro simple: ", { term: прочита́ю }] } }
+          - { level: A2, speakers: [es], wrong: Учо́ра я прочита́в дві годи́ни., right: ["Учо́ра я ", { target: чита́в }, " дві годи́ни."], rule: { es: "la duración lleva el imperfectivo, aunque en español se diga «leí dos horas»: el indefinido no equivale siempre al perfectivo" } }
+          - { level: A2, speakers: [en], wrong: Я ча́сто написа́в ма́мі., right: ["Я ча́сто ", { target: писа́в }, " ма́мі."], rule: { en: "a repeated action takes the imperfective, even where English uses the simple past" } }

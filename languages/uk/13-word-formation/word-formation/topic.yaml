@@ -1,0 +1,275 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.word-formation.word-formation
+lang: uk
+kind: grammar
+tags: [word-formation, suffixes, nouns, adjectives, adverbs, diminutives]
+concepts: [word-formation]
+related: [uk.nouns-cases.gender, uk.nouns-cases.declension-alternations, uk.adjectives-adverbs.adverbs, uk.motion.prefixed-motion, uk.sentence.participle-phrases]
+status: { uk: draft, en: draft, es: draft }
+translated: { en: "6fa6d1 131d05 a03b7e 6dc326 7f033d c19d19 f541d5", es: "6fa6d1 131d05 a03b7e 6dc326 7f033d c19d19 f541d5" }
+
+title: { uk: Словотвір, en: Word Formation, es: La formación de palabras }
+summary:
+  lead:
+    uk: ["Суфікс показує значення нового слова: ", { term: -ач }, " і ", { term: -ець }, " — хто, ", { term: -ння }, " — дія, ", { term: -льня }, " — місце, ", { term: -ість }, " — ознака, а ", { term: -н- }, " і ", { term: -ськ- }, " утворюють прикметники."]
+    en: ["A suffix shows what a new word means: ", { term: -ач }, " and ", { term: -ець }, " a person, ", { term: -ння }, " an action, ", { term: -льня }, " a place, ", { term: -ість }, " a quality, while ", { term: -н- }, " and ", { term: -ськ- }, " make adjectives."]
+    es: ["El sufijo muestra qué significa la palabra nueva: ", { term: -ач }, " y ", { term: -ець }, ", una persona; ", { term: -ння }, ", una acción; ", { term: -льня }, ", un lugar; ", { term: -ість }, ", una cualidad; ", { term: -н- }, " y ", { term: -ськ- }, " forman adjetivos."]
+  rule:
+    uk: ["Суфікс часто визначає й рід: іменники на ", { term: -ння }, " належать до середнього роду:"]
+    en: ["The suffix often sets the gender too: nouns in ", { term: -ння }, " are neuter:"]
+    es: ["El sufijo suele fijar también el género: los sustantivos en ", { term: -ння }, " son neutros:"]
+  ex: ["Це ", { target: ціка́ве чита́ння }, "."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Суфікс, en: Suffix, es: Sufijo } }
+        - { key: rule, label: { uk: Значення, en: Meaning, es: Significado } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+      rows:
+        - level: B1
+          point: { alternatives: [-ач, -ак] }
+          rule:
+            uk: "хто це робить"
+            en: "the person who does it"
+            es: "la persona que lo hace"
+          ex: { mapping: [виклада́ти, { target: виклада́ч }] }
+        - level: B1
+          point: -ець
+          rule:
+            uk: "хто звідки або хто це робить"
+            en: "where someone is from, or who does it"
+            es: "de dónde es alguien, o quién lo hace"
+          ex: { mapping: [Украї́на, { target: украї́нець }] }
+        - level: B1
+          point: -ка
+          rule:
+            uk: "жінка"
+            en: "a woman"
+            es: "una mujer"
+          ex: { examples: [{ mapping: [виклада́ч, { target: виклада́чка }] }, { mapping: [украї́нець, { target: украї́нка }] }] }
+        - level: B1
+          point: { alternatives: [-ння, -ення] }
+          rule:
+            uk: "дія; середній рід"
+            en: "the action; neuter"
+            es: "la acción; neutro"
+          ex: { mapping: [чита́ти, { target: чита́ння }] }
+        - level: B1
+          point: -льня
+          rule:
+            uk: "місце, де це роблять"
+            en: "the place where it is done"
+            es: "el lugar donde se hace"
+          ex: { mapping: [спа́ти, { target: спа́льня }] }
+        - level: B1
+          point: -ість
+          rule:
+            uk: "ознака як назва; жіночий рід"
+            en: "a quality as a noun; feminine"
+            es: "una cualidad como sustantivo; femenino"
+          ex: { mapping: [ра́дий, { target: ра́дість }] }
+        - level: B1
+          point: -н-
+          rule:
+            uk: "прикметник від назви часу, із закінченням -ій"
+            en: "an adjective from a time word, with the ending -ій"
+            es: "un adjetivo de una palabra de tiempo, con la terminación -ій"
+          ex: { mapping: [ве́чір, { target: вечі́рній }] }
+        - level: B1
+          point: -ськ-
+          rule:
+            uk: "прикметник від назви місця"
+            en: "an adjective from a place name"
+            es: "un adjetivo de un nombre de lugar"
+          ex: { mapping: [Львів, { target: льві́вський }] }
+        - level: B1
+          point: { alternatives: [-о, ["по-", { gap: true }, "-ськи"]] }
+          rule:
+            uk: "прислівник від прикметника"
+            en: "an adverb from an adjective"
+            es: "un adverbio de un adjetivo"
+          ex: { examples: [{ mapping: [швидки́й, { target: шви́дко }] }, { mapping: [украї́нський, { target: по-украї́нськи }] }] }
+        - level: B1
+          point: { alternatives: [-ик, -к-, -чк-] }
+          rule:
+            uk: "щось мале або миле"
+            en: "something small or dear"
+            es: "algo pequeño o querido"
+          ex: { examples: [{ mapping: [стіл, { target: сто́лик }] }, { mapping: [сестра́, { target: сестри́чка }] }] }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: [{ term: нн }, ", коли основа закінчується на ", { term: н }]
+            en: [{ term: нн }, " when the stem ends in ", { term: н }]
+            es: [{ term: нн }, " cuando la raíz termina en ", { term: н }]
+          ex: { mapping: [о́сінь, { target: осі́нній }] }
+        - level: B1
+          point: { uk: Пастка, en: Trap, es: Trampa }
+          rule:
+            uk: [{ term: с }, " основи й ", { term: с }, " суфікса дають одне ", { term: с }]
+            en: ["the ", { term: с }, " of the stem and the ", { term: с }, " of the suffix give one ", { term: с }]
+            es: ["la ", { term: с }, " de la raíz y la ", { term: с }, " del sufijo dan una sola ", { term: с }]
+          ex: { mapping: [Оде́са, { target: оде́ський }] }
+
+sections:
+  - title: { uk: Огляд, en: Overview, es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: "Нові слова утворюємо від дієслів, іменників і прикметників за допомогою суфіксів; суфікс показує, що означає слово, і часто його рід."
+              en: "New words come from verbs, nouns and adjectives through suffixes; the suffix shows what the word means, and often its gender."
+              es: "Las palabras nuevas se forman a partir de verbos, sustantivos y adjetivos con sufijos; el sufijo muestra qué significa la palabra y, a menudo, su género."
+            ex: { mapping: [чита́ти, { alternatives: [чита́ч, чита́ння, чита́льня] }] }
+          - type: note
+            level: B1
+            text:
+              uk: ["Префікси дієслів руху: ", { link: "Префіксальні дієслова руху", to: uk.motion.prefixed-motion }, "."]
+              en: ["The prefixes of motion verbs: ", { link: "Prefixed Verbs of Motion", to: uk.motion.prefixed-motion }, "."]
+              es: ["Los prefijos de los verbos de movimiento: ", { link: "Verbos de movimiento con prefijo", to: uk.motion.prefixed-motion }, "."]
+
+  - title: { uk: "Іменники: хто, дія, місце, ознака", en: "Nouns: a person, an action, a place, a quality", es: "Sustantivos: una persona, una acción, un lugar, una cualidad" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Суфікс, en: Suffix, es: Sufijo } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: -ач }, { term: -ак }] }, ": хто це робить"], en: [{ alternatives: [{ term: -ач }, { term: -ак }] }, ": the person who does it"], es: [{ alternatives: [{ term: -ач }, { term: -ак }] }, ": quien lo hace"] }
+            ex: { examples: [{ mapping: [виклада́ти, { target: виклада́ч }] }, { mapping: [чита́ти, { target: чита́ч }] }, { mapping: [співа́ти, { target: співа́к }] }] }
+          - level: B1
+            use: { uk: [{ term: -ець }, ": хто звідки, хто це робить"], en: [{ term: -ець }, ": where someone is from, who does it"], es: [{ term: -ець }, ": de dónde es alguien, quién lo hace"] }
+            ex: { examples: [{ mapping: [Украї́на, { target: украї́нець }] }, { mapping: [продава́ти, { target: продаве́ць }] }] }
+          - level: B1
+            use: { uk: [{ term: -ка }, ": жінка"], en: [{ term: -ка }, ": a woman"], es: [{ term: -ка }, ": una mujer"] }
+            ex: { examples: [{ mapping: [виклада́ч, { target: виклада́чка }] }, { mapping: [співа́к, { target: співа́чка }] }, { mapping: [украї́нець, { target: украї́нка }] }] }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: -ння }, { term: -ення }] }, ": дія"], en: [{ alternatives: [{ term: -ння }, { term: -ення }] }, ": the action"], es: [{ alternatives: [{ term: -ння }, { term: -ення }] }, ": la acción"] }
+            ex: { examples: [{ mapping: [чита́ти, { target: чита́ння }] }, { mapping: [говори́ти, { target: говорі́ння }] }, { mapping: [ба́чити, { target: ба́чення }] }] }
+          - level: B1
+            use: { uk: [{ term: -льня }, ": місце"], en: [{ term: -льня }, ": the place"], es: [{ term: -льня }, ": el lugar"] }
+            ex: { examples: [{ mapping: [спа́ти, { target: спа́льня }] }, { mapping: [прийма́ти, { target: прийма́льня }] }, { mapping: [віта́ти, { target: віта́льня }] }] }
+          - level: B1
+            use: { uk: [{ term: -ість }, ": ознака як назва"], en: [{ term: -ість }, ": a quality as a noun"], es: [{ term: -ість }, ": una cualidad como sustantivo"] }
+            ex: { examples: [{ mapping: [ра́дий, { target: ра́дість }] }, { mapping: [молоди́й, { target: мо́лодість }] }, { mapping: [акти́вний, { target: акти́вність }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Назви осіб на ", { term: -ач }, ", ", { term: -ак }, " і ", { term: -ець }, " мають чоловічий рід, а з ", { term: -ка }, " — жіночий."]
+              en: ["Person nouns in ", { term: -ач }, ", ", { term: -ак }, " and ", { term: -ець }, " are masculine; with ", { term: -ка }, " they are feminine."]
+              es: ["Los nombres de persona en ", { term: -ач }, ", ", { term: -ак }, " y ", { term: -ець }, " son masculinos; con ", { term: -ка }, ", femeninos."]
+            ex: ["Моя́ сестра́ працю́є ", { target: виклада́чкою }, "."]
+            tr: { en: "My sister works as a teacher.", es: "Mi hermana trabaja de profesora." }
+          - type: rule
+            level: B1
+            text:
+              uk: ["У слові на ", { term: -ець }, " голосний ", { term: е }, " в інших формах випадає:"]
+              en: ["In a word in ", { term: -ець }, ", the vowel ", { term: е }, " drops out of the other forms:"]
+              es: ["En una palabra en ", { term: -ець }, ", la vocal ", { term: е }, " desaparece en las demás formas:"]
+            ex: { mapping: [украї́нець, { alternatives: [{ target: украї́нця }, { target: украї́нці }] }] }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Іменники на ", { term: -ння }, " мають середній рід, а на ", { term: -льня }, " і ", { term: -ість }, " — жіночий."]
+              en: ["Nouns in ", { term: -ння }, " are neuter; nouns in ", { term: -льня }, " and ", { term: -ість }, " are feminine."]
+              es: ["Los sustantivos en ", { term: -ння }, " son neutros; los en ", { term: -льня }, " y ", { term: -ість }, ", femeninos."]
+            ex: { examples: [["Я люблю́ ", { target: чита́ння }, "."], ["У гурто́житку є ", { target: чита́льня }, "."], ["Це ", { target: вели́ка ра́дість }, "."]] }
+            tr: { en: { examples: ["I love reading.", "There's a reading room in the hall of residence.", "It's a great joy."] }, es: { examples: ["Me encanta la lectura.", "En la residencia hay una sala de lectura.", "Es una gran alegría."] } }
+
+  - title: { uk: "Прикметники й прислівники", en: "Adjectives and adverbs", es: "Adjetivos y adverbios" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Суфікс, en: Suffix, es: Sufijo } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: [{ term: -н- }, ": від назви часу"], en: [{ term: -н- }, ": from a time word"], es: [{ term: -н- }, ": de una palabra de tiempo"] }
+            ex: { examples: [{ mapping: [ве́чір, { target: вечі́рній }] }, { mapping: [о́сінь, { target: осі́нній }] }, { mapping: [лі́то, { target: лі́тній }] }] }
+          - level: B1
+            use: { uk: [{ term: -ськ- }, ": від назви місця"], en: [{ term: -ськ- }, ": from a place name"], es: [{ term: -ськ- }, ": de un nombre de lugar"] }
+            ex: { examples: [{ mapping: [Львів, { target: льві́вський }] }, { mapping: [Ки́їв, { target: ки́ївський }] }] }
+          - level: B1
+            use: { uk: [{ term: -ськ- }, " і зміна приголосного в основі"], en: [{ term: -ськ- }, " with a change of the stem's consonant"], es: [{ term: -ськ- }, " con un cambio de la consonante de la raíz"] }
+            ex: { examples: [{ mapping: [Пра́га, { target: пра́зький }] }, { mapping: [Оде́са, { target: оде́ський }] }] }
+          - level: B1
+            use: { uk: [{ term: -о }, ": прислівник"], en: [{ term: -о }, ": an adverb"], es: [{ term: -о }, ": un adverbio"] }
+            ex: { examples: [{ mapping: [швидки́й, { target: шви́дко }] }, { mapping: [га́рний, { target: га́рно }] }] }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: ["по-", { gap: true }, "-ськи"] }, { term: ["по-", { gap: true }, "-ському"] }] }, ": як, якою мовою"], en: [{ alternatives: [{ term: ["по-", { gap: true }, "-ськи"] }, { term: ["по-", { gap: true }, "-ському"] }] }, ": how, in which language"], es: [{ alternatives: [{ term: ["по-", { gap: true }, "-ськи"] }, { term: ["по-", { gap: true }, "-ському"] }] }, ": cómo, en qué idioma"] }
+            ex: { mapping: [украї́нський, { alternatives: [{ target: по-украї́нськи }, { target: по-украї́нському }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: ["Прикметники від назв часу мають суфікс ", { term: -н- }, " і закінчення ", { term: -ій }, ". Коли основа закінчується на ", { term: н }, ", пишемо ", { term: нн }, ":"]
+              en: ["Adjectives from time words have the suffix ", { term: -н- }, " and the ending ", { term: -ій }, ". When the stem ends in ", { term: н }, ", the word has ", { term: нн }, ":"]
+              es: ["Los adjetivos de palabras de tiempo llevan el sufijo ", { term: -н- }, " y la terminación ", { term: -ій }, ". Cuando la raíz termina en ", { term: н }, ", se escribe ", { term: нн }, ":"]
+            ex: ["Був те́плий ", { target: осі́нній }, " ве́чір."]
+            tr: { en: "It was a warm autumn evening.", es: "Era una cálida tarde de otoño." }
+          - type: rule
+            level: B1
+            text:
+              uk: ["Перед ", { term: -ськ- }, " приголосні ", { alternatives: [{ term: г }, { term: ж }, { term: з }] }, " дають ", { term: з }, ", а ", { term: с }, " основи й ", { term: с }, " суфікса — одне ", { term: с }, ":"]
+              en: ["Before ", { term: -ськ- }, ", the consonants ", { alternatives: [{ term: г }, { term: ж }, { term: з }] }, " become ", { term: з }, ", and the ", { term: с }, " of the stem and of the suffix give one ", { term: с }, ":"]
+              es: ["Delante de ", { term: -ськ- }, ", las consonantes ", { alternatives: [{ term: г }, { term: ж }, { term: з }] }, " pasan a ", { term: з }, ", y la ", { term: с }, " de la raíz y la del sufijo dan una sola ", { term: с }, ":"]
+            ex: ["Мені́ подо́бається ", { target: оде́ський }, " порт."]
+            tr: { en: "I like the port of Odesa.", es: "Me gusta el puerto de Odesa." }
+          - type: rule
+            level: B1
+            text:
+              uk: [{ term: По- }, " пишемо з прислівником через дефіс."]
+              en: [{ term: По- }, " joins the adverb with a hyphen."]
+              es: [{ term: По- }, " se une al adverbio con guion."]
+            ex: ["Ви гово́рите ", { target: по-украї́нськи }, "?"]
+            tr: { en: "Do you speak Ukrainian?", es: "¿Habla ucraniano?" }
+
+  - title: { uk: Зменшувальні слова, en: Diminutives, es: Diminutivos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Суфікс, en: Suffix, es: Sufijo } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        rows:
+          - level: B1
+            use: { uk: [{ term: -ик }, ": чоловічий рід"], en: [{ term: -ик }, ": masculine"], es: [{ term: -ик }, ": masculino"] }
+            ex: { examples: [{ mapping: [стіл, { target: сто́лик }] }, { mapping: [брат, { target: бра́тик }] }] }
+          - level: B1
+            use: { uk: [{ term: -к- }, ": жіночий рід"], en: [{ term: -к- }, ": feminine"], es: [{ term: -к- }, ": femenino"] }
+            ex: { mapping: [ха́та, { target: ха́тка }] }
+          - level: B1
+            use: { uk: [{ alternatives: [{ term: -ичк- }, { term: -очк- }] }, ": лагідно"], en: [{ alternatives: [{ term: -ичк- }, { term: -очк- }] }, ": affectionate"], es: [{ alternatives: [{ term: -ичк- }, { term: -очк- }] }, ": afectuoso"] }
+            ex: { examples: [{ mapping: [сестра́, { target: сестри́чка }] }, { mapping: [ма́ма, { target: ма́мочка }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: B1
+            text:
+              uk: "Зменшувальний суфікс називає щось мале або показує лагідне ставлення; рід слова не змінюється. На цьому рівні такі слова треба впізнавати."
+              en: "A diminutive suffix names something small or shows affection; the gender of the word stays the same. At this level you recognise these words."
+              es: "Un sufijo diminutivo nombra algo pequeño o muestra cariño; el género de la palabra no cambia. En este nivel se trata de reconocer estas palabras."
+            ex: ["Ді́вчинка ма́є ", { target: бра́тика }, "."]
+            tr: { en: "The little girl has a little brother.", es: "La niña tiene un hermanito." }
+
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B1, wrong: "Він заві́дуючий ка́федрою.", right: ["Він ", { target: заві́дувач ка́федри }, "."], rule: { uk: [{ term: заві́дувач }, " із родовим; форма на ", { term: -ючий }, " — калька з російської"], en: [{ term: заві́дувач }, " (head) with the genitive; the form in ", { term: -ючий }, " is a calque from Russian"], es: [{ term: заві́дувач }, " (jefe) con genitivo; la forma en ", { term: -ючий }, " es un calco del ruso"] } }
+          - { level: B1, wrong: "Був те́плий осі́ній ве́чір.", right: ["Був те́плий ", { target: осі́нній }, " ве́чір."], rule: { uk: [{ term: о́сінь }, " і суфікс ", { term: -н- }, ": ", { term: нн }], en: [{ term: о́сінь }, " with the suffix ", { term: -н- }, ": ", { term: нн }], es: [{ term: о́сінь }, " con el sufijo ", { term: -н- }, ": ", { term: нн }] } }
+          - { level: B1, wrong: "Мені́ подо́бається оде́сський порт.", right: ["Мені́ подо́бається ", { target: оде́ський }, " порт."], rule: { uk: [{ term: с }, " основи й ", { term: с }, " суфікса дають одне ", { term: с }], en: ["the ", { term: с }, " of the stem and of the suffix give one ", { term: с }], es: ["la ", { term: с }, " de la raíz y la del sufijo dan una sola ", { term: с }] } }
+          - { level: B1, speakers: [es], wrong: "Ця чита́ння ціка́ва.", right: [{ target: Це }, " чита́ння ", { target: ціка́ве }, "."], rule: { es: ["los sustantivos en ", { term: -ння }, " son neutros, aunque «lectura» sea femenino"] } }
+          - { level: B1, speakers: [en, es], wrong: "Ви гово́рите по украї́нськи?", right: ["Ви гово́рите ", { target: по-украї́нськи }, "?"], rule: { en: [{ term: по- }, " joins the adverb with a hyphen"], es: [{ term: по- }, " se une al adverbio con guion"] } }
