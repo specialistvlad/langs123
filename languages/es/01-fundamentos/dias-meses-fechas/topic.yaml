@@ -24,7 +24,7 @@ cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Пункт" } }
         - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
         - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
@@ -73,7 +73,7 @@ cheatsheet:
           rule:
             en: [{ pattern: [{ term: el }, { slot: number }, { term: de }, { slot: month }] }, "; the day is a plain number"]
             es: [{ pattern: [{ term: el }, { slot: number }, { term: de }, { slot: month }] }, "; el día es un número normal"]
-            uk: [{ pattern: [{ term: "el" }, { slot: "number" }, { term: "de" }, { slot: "month" }] }, "; день — звичайне число"]
+            uk: [{ pattern: [{ term: "el" }, { slot: "number" }, { term: "de" }, { slot: "month" }] }, "; день — кількісний числівник"]
           ex: { date: [{ target: el }, " 22 ", { target: de }, " marzo"], value: "--03-22" }
           tr: { en: 22 March, uk: "22 березня" }
         - level: A0
@@ -148,7 +148,7 @@ sections:
               es: [{ term: el }, " delante de un día indica ese día, y ", { term: los }, ", cada semana, sin preposición:"]
               uk: [{ term: "el" }, " перед днем означає «у цей день», а ", { term: "los" }, " — «щотижня», без прийменника:"]
             ex: { examples: [["Te veo ", { target: el }, " ", { weekday: viernes, value: 5 }, "."], [{ target: Los }, " ", { weekday: sábados, value: 6 }, " no trabajo."]] }
-            tr: { en: { examples: [See you on Friday., "On Saturdays I don't work."] }, uk: { examples: ["До п’ятниці.", "По суботах я не працюю."] } }
+            tr: { en: { examples: [See you on Friday., "On Saturdays I don't work."] }, uk: { examples: ["Побачимося в п’ятницю.", "По суботах я не працюю."] } }
           - type: rule
             level: A0
             text:
@@ -231,7 +231,7 @@ sections:
             text:
               en: ["A date is ", { term: el }, ", the plain number, ", { term: de }, " and the month, with no preposition before it:"]
               es: ["Una fecha lleva ", { term: el }, ", el número normal, ", { term: de }, " y el mes, sin preposición delante:"]
-              uk: ["Дата — це ", { term: "el" }, ", звичайне число, ", { term: "de" }, " і місяць, без прийменника перед нею:"]
+              uk: ["Дата — це ", { term: "el" }, ", кількісний числівник, ", { term: "de" }, " і місяць, без прийменника перед нею:"]
             ex: ["Llego ", { date: [{ target: el }, " 3 ", { target: de }, " junio"], value: "--06-03" }, "."]
             tr: { en: I arrive on 3 June., uk: "Я приїжджаю 3 червня." }
           - type: rule
@@ -306,6 +306,6 @@ sections:
           - { level: A0, wrong: Llego en el 3 de junio., right: ["Llego ", { target: el }, " 3 de junio."], rule: { en: ["a date takes ", { term: el }, ", never ", { term: en }], es: ["una fecha lleva ", { term: el }, ", nunca ", { term: en }], uk: ["дата вживається з ", { term: "el" }, ", ніколи з ", { term: "en" }] } }
           - { level: A0, wrong: el cinco mayo, right: ["el cinco ", { target: de }, " mayo"], rule: { en: [{ term: de }, " goes between the day and the month"], es: [{ term: de }, " va entre el día y el mes"], uk: [{ term: "de" }, " стоїть між днем і місяцем"] } }
           - { level: A0, speakers: [en], wrong: el mayo cinco, right: ["el cinco ", { target: de }, " mayo"], rule: { en: "the day comes before the month, unlike US English" } }
-          - { level: A0, speakers: [en], wrong: el quinto de mayo, right: ["el ", { target: cinco }, " de mayo"], rule: { en: "the day is a plain number, not an ordinal as in English" } }
+          - { level: A0, speakers: [en, uk], wrong: el quinto de mayo, right: ["el ", { target: cinco }, " de mayo"], rule: { en: "the day is a plain number, not an ordinal as in English", uk: ["день — кількісний числівник і ", { term: de }, ": українською кажемо порядковий у родовому відмінку («п’ятого травня»), іспанською — ", { term: el cinco de mayo }] } }
           - { level: A0, speakers: [en], wrong: diecinueve noventa y cinco, right: { target: mil novecientos noventa y cinco }, rule: { en: "a year is one whole number, not two pairs of digits" } }
-          - { level: A0, speakers: [uk], wrong: el 5 mayo, right: ["el 5 ", { target: de }, " mayo"], rule: { uk: ["між числом і місяцем стоїть ", { term: de }, ", хоча українською кажемо «5 травня»"] } }
+          - { level: A0, speakers: [uk], wrong: el 5 mayo, right: ["el 5 ", { target: de }, " mayo"], rule: { uk: ["між числом і місяцем стоїть ", { term: de }, ": «5 травня» — ", { term: el 5 de mayo }] } }
