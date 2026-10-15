@@ -77,6 +77,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Chrome's macOS system font places a stress mark (U+0301) beside Cyrillic е and о instead of over them,
+   so Ukrainian text skips it; Safari keeps the system font through -apple-system. */
+:lang(uk) {
+  --font: -apple-system, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+[lang="uk"] {
+  font-family: var(--font);
+}
+
 button {
   font: inherit;
   color: inherit;
