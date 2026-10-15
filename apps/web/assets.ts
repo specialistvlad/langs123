@@ -7,7 +7,21 @@ import { levelColoursCss } from "./level-colours.ts";
 const APP = import.meta.dir;
 
 // The stylesheet's parts in cascade order; each stays under 200 lines (npm run lint).
-const STYLES = ["base", "topbar", "head", "panels", "layout", "document", "tables", "media", "static-pages", "views", "rail", "index"];
+const STYLES = [
+  "base",
+  "topbar",
+  "search",
+  "head",
+  "panels",
+  "layout",
+  "document",
+  "tables",
+  "media",
+  "static-pages",
+  "views",
+  "rail",
+  "index",
+];
 
 // style.css: the parts of apps/web/styles/ joined in order.
 export async function styleCss(): Promise<string> {

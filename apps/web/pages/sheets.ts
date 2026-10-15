@@ -3,10 +3,10 @@ import type { Explain } from "../../../scripts/lib.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
 import { pageTools } from "../chrome.ts";
 import { page } from "../layout.ts";
-import { navHead } from "../nav.ts";
+import { navHead, trackCrumb } from "../nav.ts";
 import { badge, editUrl } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
-import { sheetsUrl, sheetUrl, trackUrl } from "../urls.ts";
+import { searchUrl, sheetsUrl, sheetUrl } from "../urls.ts";
 import { type Sheet, sheetsOf } from "./sheet-content.ts";
 
 export function sheetPages(track: Track): void {
@@ -16,7 +16,7 @@ export function sheetPages(track: Track): void {
   const groups = { levels: t.levels, progressive: t.progressive, sections: t.sections, topics: t.topics } as const;
   const groupKeys = Object.keys(groups) as (keyof typeof groups)[];
   const sheetNav = (current?: Sheet): string =>
-    navHead(track, current === undefined ? "sheets" : null) +
+    navHead(track, null) +
     `<div class="nav-list">${groupKeys
       .flatMap((g) => {
         const list = sheets.filter((s) => s.group === g);
@@ -36,10 +36,11 @@ export function sheetPages(track: Track): void {
     alternates: alternates(pathFor, track.explains),
     read: readChoices(explain, pathFor, track.explains),
     varieties: lang.varieties,
+    search: [searchUrl(explain, lang)],
     dev: o.dev,
     siteUrl: o.siteUrl,
   });
-  const trackCrumb = { label: trackTitle, href: trackUrl(explain, lang), icon: lang.flag };
+  const crumb = trackCrumb(track, trackTitle);
 
   const indexHtml = groupKeys
     .map((g) => {
@@ -58,7 +59,7 @@ export function sheetPages(track: Track): void {
       title: `${t.sheets} — ${trackTitle}`,
       description: `${t.sheets}: ${trackTitle}, ${t.explained}.`,
       path: sheetsUrl(explain, lang),
-      crumbs: [trackCrumb, { label: t.sheets }],
+      crumbs: [crumb, { label: t.sheets }],
       nav: sheetNav(),
       main: `<article class="doc"><header class="doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${escapeHtml(t.sheets)}</h1></div></header><blockquote><p>${escapeHtml(t.sheetsIntro)}</p></blockquote><div class="sheet-index lanes">${indexHtml}</div></article>`,
     }),
@@ -73,7 +74,7 @@ export function sheetPages(track: Track): void {
         title: `${s.title} — ${trackTitle}`,
         description: `${s.title}: ${trackTitle}, ${t.explained}.`,
         path: sheetUrl(explain, lang, s.id),
-        crumbs: [trackCrumb, { label: t.sheets, href: sheetsUrl(explain, lang) }, { label: s.label }],
+        crumbs: [crumb, { label: t.sheets, href: sheetsUrl(explain, lang) }, { label: s.label }],
         nav: sheetNav(s),
         main: `<article class="doc sheet">${s.html}${pageTools(t, s.path === undefined ? undefined : editUrl(s.path))}</article>`,
       }),

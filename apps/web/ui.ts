@@ -33,6 +33,8 @@ const TEXT_KEYS = [
   "print",
   "editPage",
   "search",
+  "searchInTopics",
+  "searchEmpty",
   "breadcrumb",
   "fullLesson",
   "allLevels",

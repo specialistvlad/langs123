@@ -1,11 +1,11 @@
-// Progressive enhancement for the static pages: level filter, variety, view, order, the chips and their panels, the sidebar search, closing menus, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, live reload.
+// Progressive enhancement for the static pages: level filter, variety, view, order, the chips and their panels, the top bar's search, closing menus, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, live reload.
 // The build bundles it with its modules into client.js for the browser.
 import { closingMenu, hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
 import { markChips } from "./client-chips.ts";
 import { closePanel, panels } from "./client-panel.ts";
 import { studyStep } from "./client-path.ts";
-import { searchIndex } from "./client-search.ts";
+import { topSearch } from "./client-search.ts";
 import { themeToggle } from "./client-theme.ts";
 import { closingMenus } from "./client-seg.ts";
 import { store } from "./client-store.ts";
@@ -33,7 +33,7 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   const step = studyStep(root);
   closingMenus();
   panels();
-  searchIndex();
+  topSearch();
   hidingBar();
   closingMenu();
 

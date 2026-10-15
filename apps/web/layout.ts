@@ -1,6 +1,6 @@
-// The page shell: head, top bar, layout, the panels and the bottom bar, and the scripts that run before first paint.
+// The page shell: head, top bar with its search, layout, the panels and the bottom bar, and the scripts that run before first paint.
 import { type Explain, filled, LEVELS, type Variety } from "../../scripts/lib.ts";
-import { bottomBar, breadcrumb, type Choice, chips, type Crumb, credits, languageMenu, panels, themeButton } from "./chrome.ts";
+import { bottomBar, breadcrumb, type Choice, chips, type Crumb, credits, languageMenu, panels, searchBox, themeButton } from "./chrome.ts";
 import { escapeHtml } from "./html.ts";
 import { ui } from "./ui.ts";
 
@@ -21,6 +21,8 @@ export interface PageOptions {
   level?: boolean;
   // Where the page sits, after the site itself.
   crumbs?: Crumb[];
+  // The search data the top bar's search looks through: the track's, or on a home page every track's.
+  search?: string[];
   nav?: string;
   rail?: string;
   main: string;
@@ -51,6 +53,8 @@ export function page(o: PageOptions): string {
   const url = (path: string): string => `${o.siteUrl}${path}`;
   const alternates = (o.alternates ?? []).map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${url(a.path)}">`).join("\n  ");
   const hasNav = filled(o.nav);
+  // A page with a menu or a level filter keeps the bottom bar on phones, where the top bar's chips hide.
+  const hasBar = hasNav || o.level === true;
   const read = (o.read ?? []).length > 1 ? languageMenu(t.read, o.read ?? []) : "";
   return `<!doctype html>
 <html lang="${o.lang}" data-page="${o.kind}" data-dev="${o.dev ? 1 : 0}"${varietyAttrs(o.varieties)}>
@@ -69,9 +73,10 @@ export function page(o: PageOptions): string {
   <link rel="stylesheet" href="/style.css">
   <script>${prefs(o.varieties !== undefined)}</script>
 </head>
-<body${hasNav ? ' class="has-bar"' : ""}>
+<body${hasBar ? ' class="has-bar"' : ""}>
   <header class="topbar">
     ${breadcrumb(o, t)}
+    ${searchBox(o, t)}
     <div class="tools">${chips({ explain: o.lang, level: o.level, varieties: o.varieties })}${read}${credits(o, false)}${themeButton(t, false)}</div>
   </header>
   <div class="layout${hasNav ? "" : " no-nav"}${filled(o.rail) ? " has-rail" : ""}">
@@ -79,8 +84,8 @@ export function page(o: PageOptions): string {
     <main class="content">${o.main}</main>
     ${filled(o.rail) ? `<aside class="rail">${o.rail}</aside>` : ""}
   </div>
-  ${hasNav ? bottomBar(o, t) : ""}
-  ${panels(o, t, hasNav)}
+  ${hasBar ? bottomBar(o, t, hasNav) : ""}
+  ${panels(o, t, hasBar)}
   <script src="/client.js" defer></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
-// The study path in a browser: the order switch shows one order and keeps it from page to page; on the
-// study path the level filter hides the levels above it, the menu marks the step being read, and Up
-// next leads to the step after it.
+// The study path in a browser: the order switch shows one order and keeps it from page to page, in the
+// menu of a topic page and in the track index; on the study path the level filter hides the levels
+// above it, the menu marks the step being read, and Up next leads to the step after it.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import { join } from "node:path";
@@ -32,6 +32,8 @@ afterAll(async () => {
 });
 
 const open = (address: string): Promise<unknown> => page.goto(new URL(address, server.url).href);
+// The menu sits on the topic pages; the track page holds the index alone.
+const TOPIC = "/en/english/foundations/alphabet-spelling/";
 const shown = (selector: string): Promise<boolean> => page.locator(selector).first().isVisible();
 // Chooses a level in the panel its chip opens.
 async function chooseLevel(code: string): Promise<void> {
@@ -49,13 +51,15 @@ const next = (): Promise<string | null> => page.locator('.up-next[data-order="pa
 test(
   "the switch shows one order and keeps it from page to page",
   async () => {
-    await open("/en/english/");
+    await open(TOPIC);
     expect(await shown('.nav-list[data-order="categories"]')).toBe(true);
     expect(await shown('.nav-list[data-order="path"]')).toBe(false);
     await page.click('.nav-order [data-set-order="path"]');
     expect(await shown('.nav-list[data-order="categories"]')).toBe(false);
+    await open("/en/english/");
     expect(await shown('.index-grid[data-order="path"]')).toBe(true);
     expect(await shown('.index-grid[data-order="categories"]')).toBe(false);
+    expect(await page.locator('.index-order [data-set-order="path"]').getAttribute("class")).toBe("on");
     await open("/en/english/verbs/to-be/");
     expect(await shown('.nav-list[data-order="path"]')).toBe(true);
     expect(await page.locator('.nav-order [data-set-order="path"]').getAttribute("class")).toBe("on");
@@ -66,7 +70,7 @@ test(
 test(
   "at A0 the menu lists the A0 steps alone",
   async () => {
-    await open("/en/english/?level=a0");
+    await open(`${TOPIC}?level=a0`);
     await page.click('.nav-order [data-set-order="path"]');
     expect(await menu()).toEqual(["#A0", ...(path["A0"] ?? []).map(() => "A0")]);
   },
@@ -90,7 +94,7 @@ test(
 test(
   "a step opened from the menu stays the step being read at any level above it",
   async () => {
-    await open("/en/english/?level=b2");
+    await open(`${TOPIC}?level=b2`);
     await page.click('.nav-order [data-set-order="path"]');
     // The first step of a topic, below its later steps.
     await page.click('.nav-list[data-order="path"] a[data-level="A0"][href^="/en/english/verbs/to-be/"]');
@@ -145,7 +149,7 @@ test(
         [".pagers.bottom .pager", ".up-next"].map((s) => els.filter((el) => el.matches(s) && el.checkVisibility()).length),
       );
     for (const order of ["categories", "path"]) {
-      await open("/en/english/");
+      await open(TOPIC);
       await page.click(`.nav-order [data-set-order="${order}"]`);
       for (const level of LEVELS) {
         await open(`/en/english/tenses/tense-map/?level=${level.toLowerCase()}`);

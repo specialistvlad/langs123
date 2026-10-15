@@ -3,12 +3,12 @@ import { topicTitle } from "../../../scripts/content.ts";
 import { localize, SITE } from "../../../scripts/lib.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
 import { page } from "../layout.ts";
-import { orderButtons, trackNav } from "../nav.ts";
+import { orderButtons, trackCrumb } from "../nav.ts";
 import { pathCards } from "../path.ts";
 import { refRange } from "../../../scripts/levels.ts";
 import { badge, levelAttrs, listBadge, refsRange } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
-import { topicUrl, trackUrl } from "../urls.ts";
+import { searchUrl, topicUrl, trackUrl } from "../urls.ts";
 
 export function trackIndex(track: Track): void {
   const { ctx, lang, explain, t, title: trackTitle, langRefs, written } = track;
@@ -46,9 +46,9 @@ export function trackIndex(track: Track): void {
       alternates: alternates((e) => trackUrl(e, lang), track.explains),
       read: readChoices(explain, (e) => trackUrl(e, lang), track.explains),
       level: true,
-      crumbs: [{ label: trackTitle, icon: lang.flag }],
+      crumbs: [trackCrumb(track, trackTitle)],
+      search: [searchUrl(explain, lang)],
       varieties: lang.varieties,
-      nav: trackNav(track),
       main: `<article class="doc index">${indexHead}<div class="index-grid lanes" data-order="categories">${sectionsHtml}</div><div class="index-grid lanes" data-order="path">${pathCards(track.path, explain)}</div></article>`,
       dev: o.dev,
       siteUrl: o.siteUrl,

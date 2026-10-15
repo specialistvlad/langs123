@@ -9,9 +9,11 @@ const pages = await testSite();
 const english = (await loadCurriculum()).languages[0];
 if (!english) throw new Error("curriculum.yaml has no language");
 const path = english.path;
+// The track page holds the index; every topic page of the track holds the menu.
 const index = await readPage("en/english/index.html");
+const topic = await readPage("en/english/foundations/alphabet-spelling/index.html");
 const menu = '.nav-list[data-order="path"]';
-const steps = [...index.querySelectorAll<HTMLAnchorElement>(`${menu} a`)];
+const steps = [...topic.querySelectorAll<HTMLAnchorElement>(`${menu} a`)];
 // The page a step link opens, and the section its anchor names.
 const pageOf = (href: string): string => `${href.split(/[?#]/)[0]?.replace(/^\//, "") ?? ""}index.html`;
 const levelOf = (el: Element): string => el.getAttribute("data-level") ?? "";
@@ -19,7 +21,7 @@ const levelOf = (el: Element): string => el.getAttribute("data-level") ?? "";
 describe("the menu and the index", () => {
   test("list the levels of the path, lowest first, each with its steps", () => {
     const levels = Object.keys(path);
-    expect([...index.querySelectorAll(`${menu} h4`)].map(levelOf)).toEqual(levels);
+    expect([...topic.querySelectorAll(`${menu} h4`)].map(levelOf)).toEqual(levels);
     expect([...index.querySelectorAll('.index-grid[data-order="path"] .index-card')].map(levelOf)).toEqual(levels);
     for (const level of levels) {
       expect(steps.filter((a) => levelOf(a) === level).length).toBe(path[level]?.length ?? 0);
@@ -29,7 +31,7 @@ describe("the menu and the index", () => {
   });
 
   test("give both orders a switch, the menu and the index each", () => {
-    expect(index.querySelectorAll('.nav-order [data-set-order="categories"], .nav-order [data-set-order="path"]').length).toBe(2);
+    expect(topic.querySelectorAll('.nav-order [data-set-order="categories"], .nav-order [data-set-order="path"]').length).toBe(2);
     expect(index.querySelectorAll('.index-order [data-set-order="categories"], .index-order [data-set-order="path"]').length).toBe(2);
   });
 });

@@ -1,6 +1,6 @@
-// The menus that open in place (the language in the top bar, the track switcher in the sidebar): each is
-// a details element, and a tap elsewhere or Escape closes it.
-const MENUS = "details.lang-menu[open], details.track-switch[open]";
+// The menus that open in place in the top bar (the language a page is read in, and the language to learn
+// in the breadcrumb): each is a details element, and a tap elsewhere or Escape closes it.
+const MENUS = "details.lang-menu[open], details.crumb-menu[open]";
 
 export function closingMenus(): void {
   document.addEventListener(

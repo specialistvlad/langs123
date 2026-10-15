@@ -1,7 +1,8 @@
 // The page's controls: the view as tabs; the level and the variety as chips that open their panels under
 // them on a wide screen; on a small screen a bottom bar opens the menu, the level and More as sheets, a
 // choice or Escape closes a sheet, and the top bar slides away on a scroll down and returns on a scroll
-// up; the menu shows the logo and closes on a tap beside it; the sidebar's search filters the index.
+// up; the menu shows the logo and closes on a tap beside it; the top bar's search lists the topics and
+// sections that match, moves through them with the arrow keys, opens one with Enter and closes on Escape.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import { join } from "node:path";
@@ -112,15 +113,45 @@ test(
 );
 
 test(
-  "the sidebar's search keeps the topics whose names hold what was typed",
+  "the top bar's search lists the matching topics first, and the arrow keys, Enter and Escape work it",
+  async () => {
+    await page.setViewportSize({ width: 1600, height: 800 });
+    await page.goto(new URL("/en/spanish/pronombres/tu-usted-vosotros-ustedes/?level=c2", server.url).href);
+    const input = page.locator(".top-search input");
+    await input.click();
+    await input.fill("usted");
+    await page.waitForSelector('#search-results:not([hidden]) [role="option"]');
+    expect(await input.getAttribute("aria-expanded")).toBe("true");
+    const groups = await page.$$eval("#search-results .hit-group", (els) => els.map((el) => el.textContent));
+    expect(groups[0]).toBe("Topics");
+    const first = page.locator('#search-results [role="option"]').first();
+    expect(await first.locator(".hit-title").textContent()).toContain("Forms of Address");
+    expect(await first.locator("mark").first().textContent()).toBe("usted");
+    // The first row is marked; Down marks the second, and Enter opens it.
+    const second = page.locator('#search-results [role="option"]').nth(1);
+    const href = await second.getAttribute("href");
+    await input.press("ArrowDown");
+    expect(await input.getAttribute("aria-activedescendant")).toBe(await second.getAttribute("id"));
+    await Promise.all([page.waitForURL((url) => url.pathname + url.hash === href), input.press("Enter")]);
+    // Escape closes the list.
+    await page.locator(".top-search input").fill("usted");
+    await page.waitForSelector('#search-results:not([hidden]) [role="option"]');
+    await page.locator(".top-search input").press("Escape");
+    expect(await page.locator("#search-results").isHidden()).toBe(true);
+    expect(await page.locator(".top-search input").getAttribute("aria-expanded")).toBe("false");
+  },
+  SLOW,
+);
+
+test(
+  "a query that matches nothing says so, and / moves to the search",
   async () => {
     await open(1600);
-    await page.fill(".nav-search input", "tense");
-    const shown = await page.$$eval('.nav-list[data-order="categories"] a', (els) =>
-      els.filter((el) => el.checkVisibility()).map((el) => el.textContent.toLowerCase()),
-    );
-    expect(shown.length).toBeGreaterThan(0);
-    for (const name of shown) expect(name).toContain("tense");
+    await page.keyboard.press("/");
+    expect(await page.evaluate(() => document.activeElement?.closest(".top-search") !== null)).toBe(true);
+    await page.keyboard.type("zzzz");
+    await page.waitForSelector("#search-results:not([hidden]) .hit-empty");
+    expect(await page.locator('#search-results [role="option"]').count()).toBe(0);
   },
   SLOW,
 );
