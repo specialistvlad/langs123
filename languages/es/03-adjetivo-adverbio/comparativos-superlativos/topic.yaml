@@ -24,7 +24,7 @@ cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Пункт" } }
         - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
         - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
@@ -40,9 +40,9 @@ cheatsheet:
           tr: { en: Fruit is less expensive than meat., uk: "Фрукти дешевші за м’ясо." }
         - level: A2
           point: { pattern: [tan, { slot: adjective }, como] }
-          rule: { en: "as … as", es: igualdad, uk: "такий самий … як" }
+          rule: { en: "as … as", es: igualdad, uk: "такий же … як" }
           ex: ["Mi casa es ", { target: tan grande como }, " la tuya."]
-          tr: { en: My house is as big as yours., uk: "Мій дім такий самий великий, як твій." }
+          tr: { en: My house is as big as yours., uk: "Мій дім такий же великий, як твій." }
         - level: A2
           point: { alternatives: [mejor, peor] }
           rule:
@@ -62,9 +62,9 @@ cheatsheet:
         - level: B1
           point: { en: Superlative, es: Superlativo, uk: "Найвищий ступінь" }
           rule:
-            en: { pattern: [{ alternatives: [el, la, los, las] }, más, { slot: adjective }, de, { slot: { en: group, es: grupo, uk: { pattern: [{ alternatives: ["el", "la", "los", "las"] }, "más", { slot: "adjective" }, "de", { slot: { en: "group", es: "grupo", uk: "група" } }] } } }] }
+            en: { pattern: [{ alternatives: [el, la, los, las] }, más, { slot: adjective }, de, { slot: { en: group, es: grupo, uk: "група" } }] }
             es: { pattern: [{ alternatives: [el, la, los, las] }, más, { slot: adjective }, de, { slot: { en: group, es: grupo, uk: "група" } }] }
-            uk: "група"
+            uk: { pattern: [{ alternatives: [el, la, los, las] }, más, { slot: adjective }, de, { slot: { en: group, es: grupo, uk: "група" } }] }
           ex: ["Es ", { target: la más alta de }, " la clase."]
           tr: { en: "She's the tallest in the class.", uk: "Вона найвища в класі." }
         - level: B1
@@ -82,7 +82,7 @@ cheatsheet:
             es: [{ term: más de }, " y ", { term: menos de }, " delante de un número"]
             uk: [{ term: "más de" }, " і ", { term: "menos de" }, " перед числом"]
           ex: ["Hay ", { target: más de }, " cien personas."]
-          tr: { en: There are more than a hundred people., uk: "Там понад сто людей." }
+          tr: { en: There are more than a hundred people., uk: "Є понад сто людей." }
         - level: A2
           point: { pattern: [{ alternatives: [tanto, tanta, tantos, tantas] }, { slot: noun }, como] }
           rule:
@@ -103,7 +103,7 @@ cheatsheet:
           point: { pattern: [igual de, { slot: adjective }, que] }
           rule: { en: just as, es: igualdad, uk: "так само, як" }
           ex: ["Es ", { target: igual de alto que }, " su padre."]
-          tr: { en: "He's just as tall as his father.", uk: "Він такий самий високий, як його батько." }
+          tr: { en: "He's just as tall as his father.", uk: "Він такий же високий, як його батько." }
         - level: A2
           point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
@@ -125,7 +125,7 @@ sections:
         rows:
           - { level: A2, comparison: { en: more, es: superioridad, uk: "більше" }, pattern: { pattern: [más, { slot: adjective }, que] }, ex: ["El avión es ", { target: más rápido que }, " el tren."], tr: { en: The plane is faster than the train., uk: "Літак швидший за потяг." } }
           - { level: A2, comparison: { en: less, es: inferioridad, uk: "менше" }, pattern: { pattern: [menos, { slot: adjective }, que] }, ex: ["La fruta es ", { target: menos cara que }, " la carne."], tr: { en: Fruit is less expensive than meat., uk: "Фрукти дешевші за м’ясо." } }
-          - { level: A2, comparison: { en: equal, es: igualdad, uk: "рівність" }, pattern: { pattern: [tan, { slot: adjective }, como] }, ex: ["Ana es ", { target: tan alta como }, " su madre."], tr: { en: Ana is as tall as her mother., uk: "Ана така сама висока, як її мама." } }
+          - { level: A2, comparison: { en: equal, es: igualdad, uk: "рівність" }, pattern: { pattern: [tan, { slot: adjective }, como] }, ex: ["Ana es ", { target: tan alta como }, " su madre."], tr: { en: Ana is as tall as her mother., uk: "Ана така ж висока, як її мама." } }
           - { level: A2, comparison: { en: not equal, es: desigualdad, uk: "нерівність" }, pattern: { pattern: ["no", { slot: verb }, tan, { slot: adjective }, como] }, ex: ["El tren ", { target: no es tan rápido como }, " el avión."], tr: { en: "The train isn't as fast as the plane.", uk: "Потяг не такий швидкий, як літак." } }
       - type: list
         items:
@@ -160,7 +160,7 @@ sections:
               es: ["Delante de un número, ", { term: más de }, " y ", { term: menos de }, " sustituyen a ", { term: más que }, ":"]
               uk: ["Перед числом замість ", { term: "más que" }, " вживають ", { term: "más de" }, " і ", { term: "menos de" }, ":"]
             ex: ["Hay ", { target: más de }, " cien personas."]
-            tr: { en: There are more than a hundred people., uk: "Там понад сто людей." }
+            tr: { en: There are more than a hundred people., uk: "Є понад сто людей." }
 
   - title: { en: "Form: irregular", es: "Forma: los irregulares", uk: "Форма: неправильні" }
     role: form
@@ -220,7 +220,7 @@ sections:
             text:
               en: [{ term: de }, " names the group, where English uses in or of:"]
               es: [{ term: de }, " introduce el grupo:"]
-              uk: [{ term: "de" }, " називає групу, як «з» або «серед» в українській:"]
+              uk: [{ term: "de" }, " позначає групу, як «у» в українській («найвища в класі»):"]
             ex: ["Es el río más largo ", { target: del }, " mundo."]
             tr: { en: "It's the longest river in the world.", uk: "Це найдовша річка у світі." }
           - type: rule
@@ -252,7 +252,7 @@ sections:
               es: [{ term: -ísimo }, " dice muy con más fuerza: se quita la última vocal y se añade ", { term: -ísimo }, "; concuerda como cualquier adjetivo:"]
               uk: [{ term: "-ísimo" }, " означає «дуже» з більшою силою: відкиньте останню голосну й додайте ", { term: "-ísimo" }, "; узгоджується, як будь-який прикметник:"]
             ex: { examples: [["un libro ", { target: carísimo }], ["una película ", { target: buenísima }]] }
-            tr: { en: { examples: [a really expensive book, a really good film] }, uk: { examples: ["дуже-дуже дорога книжка", "дуже-дуже добрий фільм"] } }
+            tr: { en: { examples: [a really expensive book, a really good film] }, uk: { examples: ["дуже-дуже дорога книжка", "дуже-дуже хороший фільм"] } }
           - type: rule
             level: B1
             text:
@@ -287,7 +287,7 @@ sections:
           - { level: A2, use: { en: "a noun, more or less", es: "un sustantivo, más o menos", uk: "іменник: більше чи менше" }, pattern: { pattern: [{ alternatives: [más, menos] }, { slot: noun }, que] }, ex: ["Tengo ", { target: más }, " trabajo ", { target: que }, " tú."], tr: { en: I have more work than you., uk: "У мене більше роботи, ніж у тебе." } }
           - { level: A2, use: { en: "a noun, as much or as many", es: "un sustantivo, igualdad", uk: "іменник: стільки ж" }, pattern: { pattern: [{ alternatives: [tanto, tanta, tantos, tantas] }, { slot: noun }, como] }, ex: ["No tengo ", { target: tantos }, " amigos ", { target: como }, " tú."], tr: { en: "I don't have as many friends as you.", uk: "У мене не так багато друзів, як у тебе." } }
           - { level: A2, use: { en: "a verb", es: "un verbo", uk: "дієслово" }, pattern: { pattern: [{ slot: verb }, { alternatives: [más que, menos que, tanto como] }] }, ex: ["Trabajas ", { target: tanto como }, " yo."], tr: { en: You work as much as I do., uk: "Ти працюєш стільки ж, скільки я." } }
-          - { level: B1, use: { en: "an adjective, just as", es: "un adjetivo, igualdad", uk: "прикметник: так само" }, pattern: { pattern: [igual de, { slot: adjective }, que] }, ex: ["Es ", { target: igual de alto que }, " su padre."], tr: { en: "He's just as tall as his father.", uk: "Він такий самий високий, як його батько." } }
+          - { level: B1, use: { en: "an adjective, just as", es: "un adjetivo, igualdad", uk: "прикметник: так само" }, pattern: { pattern: [igual de, { slot: adjective }, que] }, ex: ["Es ", { target: igual de alto que }, " su padre."], tr: { en: "He's just as tall as his father.", uk: "Він такий же високий, як його батько." } }
       - type: list
         items:
           - type: rule
@@ -308,6 +308,6 @@ sections:
           - { level: B1, wrong: Es el más alto en la clase., right: ["Es el más alto ", { target: de }, " la clase."], rule: { en: ["the group after a superlative takes ", { term: de }], es: ["el grupo detrás de un superlativo lleva ", { term: de }], uk: ["група після найвищого ступеня вживається з ", { term: "de" }] } }
           - { level: B1, wrong: Tengo más que veinte libros., right: ["Tengo ", { target: más de }, " veinte libros."], rule: { en: ["before a number, ", { term: más de }], es: ["delante de un número, ", { term: más de }], uk: ["перед числом — ", { term: "más de" }] } }
           - { level: B1, wrong: Es muy carísimo., right: ["Es ", { target: carísimo }, "."], rule: { en: [{ term: -ísimo }, " already means very"], es: [{ term: -ísimo }, " ya significa muy"], uk: [{ term: "-ísimo" }, " уже означає «дуже»"] } }
-          - { level: A2, speakers: [en], wrong: Es más alto que mí., right: ["Es más alto que ", { target: yo }, "."], rule: { en: ["after ", { term: que }, ", the subject pronoun, unlike me in English"] } }
+          - { level: A2, speakers: [en, uk], wrong: Es más alto que mí., right: ["Es más alto que ", { target: yo }, "."], rule: { en: ["after ", { term: que }, ", the subject pronoun, unlike me in English"], uk: ["після ", { term: que }, " — займенник у формі підмета, ", { term: yo }, ", хоча українською кажемо «вищий за мене»"] } }
           - { level: A2, wrong: Tengo tanto amigos como tú., right: ["Tengo ", { target: tantos }, " amigos como tú."], rule: { en: [{ term: tanto }, " agrees with the noun"], es: [{ term: tanto }, " concuerda con el sustantivo"], uk: [{ term: "tanto" }, " узгоджується з іменником"] } }
           - { level: A2, speakers: [uk], wrong: Es más alto como yo., right: ["Es más alto ", { target: que }, " yo."], rule: { uk: ["після ", { term: más }, " — ", { term: que }, ", хоча в розмовній українській буває «вищий, як я»"] } }

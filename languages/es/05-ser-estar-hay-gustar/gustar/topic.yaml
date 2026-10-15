@@ -24,7 +24,7 @@ cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Пункт" } }
         - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
         - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
@@ -115,7 +115,7 @@ cheatsheet:
           rule:
             en: ["the person is ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, ", never the subject"]
             es: ["la persona es ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, ", nunca el sujeto"]
-            uk: ["людина — це ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, ", а не підмет"]
+            uk: ["людину позначають ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, ", а не підмет"]
           ex: [{ target: Me gusta }, " el chocolate."]
           tr: { en: I like chocolate., uk: "Мені подобається шоколад." }
         - level: A1
@@ -260,7 +260,7 @@ sections:
             text:
               en: [{ term: doler }, " names the part of the body with ", { alternatives: [{ term: el }, { term: la }] }, ": the pronoun already says whose it is."]
               es: [{ term: doler }, " nombra la parte del cuerpo con ", { alternatives: [{ term: el }, { term: la }] }, ": el pronombre ya dice de quién es."]
-              uk: [{ term: doler }, " називає частину тіла з ", { alternatives: [{ term: el }, { term: la }] }, ": займенник уже каже, чия вона."]
+              uk: ["Із ", { term: doler }, " частину тіла вживають з ", { alternatives: [{ term: el }, { term: la }] }, ": займенник уже вказує, чия вона."]
             ex: ["Me duele ", { target: la }, " cabeza."]
             tr: { en: "I've got a headache.", uk: "У мене болить голова." }
           - type: note
@@ -278,7 +278,8 @@ sections:
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: Yo gusto el chocolate., right: [{ target: Me gusta }, " el chocolate."], rule: { en: ["the person is an indirect object: ", { term: me gusta }], es: ["la persona es el objeto indirecto: ", { term: me gusta }], uk: ["людина — непрямий додаток: ", { term: me gusta }] } }
+          - { level: A1, speakers: [en, es], wrong: Yo gusto el chocolate., right: [{ target: Me gusta }, " el chocolate."], rule: { en: ["the person is an indirect object: ", { term: me gusta }], es: ["la persona es el objeto indirecto: ", { term: me gusta }] } }
+          - { level: A1, speakers: [uk], wrong: Quiero el chocolate., right: [{ target: Me gusta }, " el chocolate."], rule: { uk: ["«люблю шоколад» про смак — ", { term: me gusta el chocolate }, "; ", { term: quiero el chocolate }, " означає «хочу шоколад»"] } }
           - { level: A1, wrong: Me gusta los perros., right: ["Me ", { target: gustan }, " los perros."], rule: { en: ["several things take ", { term: gustan }], es: ["varias cosas llevan ", { term: gustan }], uk: ["з кількома речами — ", { term: gustan }] } }
           - { level: A1, wrong: Me gustan bailar y cantar., right: ["Me ", { target: gusta }, " bailar y cantar."], rule: { en: ["infinitives take ", { term: gusta }], es: ["los infinitivos llevan ", { term: gusta }], uk: ["з інфінітивами — ", { term: gusta }] } }
           - { level: A2, wrong: A Juan gusta el fútbol., right: ["A Juan ", { target: le }, " gusta el fútbol."], rule: { en: [{ pattern: [{ term: a }, { slot: person }] }, " needs ", { term: le }, " too"], es: [{ pattern: [{ term: a }, { slot: person }] }, " también necesita ", { term: le }], uk: [{ pattern: [{ term: a }, { slot: person }] }, " теж потребує ", { term: le }] } }
