@@ -69,8 +69,10 @@ describe("a language being learned", () => {
     for (const language of curriculum.languages) checkLanguage(language, (_, message) => messages.push(message));
     expect(messages).toEqual([]);
   });
-  test("its explanation languages start with the source", () => {
-    expect(languageMessages((l) => (l.explain = ["es", "en"]))).toEqual(["es: explain starts with en, the source the translations follow"]);
+  test("its explanation languages start with itself, the source the others translate", () => {
+    expect(languageMessages((l) => (l.explain = ["en", "es", "uk"]))).toEqual([
+      "es: explain starts with es, the source the other explanation languages translate",
+    ]);
   });
   test("its varieties are its own", () => {
     expect(languageMessages((l) => (l.varieties = ["es-419", "en-GB"]))).toEqual(["es: variety en-GB belongs to another language"]);
@@ -80,11 +82,11 @@ describe("a language being learned", () => {
       const [section] = l.sections;
       const [topic] = section?.topics ?? [];
       if (section) delete section.title.es;
-      if (topic?.title) topic.title.uk = "Алфавіт";
+      if (topic?.title) topic.title.fr = "L’alphabet";
     });
     expect(messages).toEqual([
       'es section 01-fundamentos has no "es" title',
-      'es topic 01-fundamentos/alfabeto-ortografia has a "uk" title, which es is not written for',
+      'es topic 01-fundamentos/alfabeto-ortografia has a "fr" title, which es is not written for',
     ]);
   });
 });

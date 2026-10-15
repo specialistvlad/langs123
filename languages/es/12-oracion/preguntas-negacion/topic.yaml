@@ -5,114 +5,128 @@ kind: grammar
 tags: [questions, negation, sentence]
 concepts: [questions-negatives]
 related: [es.oracion.conectores, es.sustantivo-determinantes.indefinidos, es.presente.presente-regular, es.pronombres.pronombres-sujeto]
-status: { en: draft, es: draft }
-translated: { es: "50ae4e 5f4b27 8909b0 160134 5ab4c0 588685 b4b1e9 416256 143060" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "6ab0f0 d2d32a 540e2c 7f117b 40f823 6b8931 ae247c 6c30f8 8341e2", uk: "6ab0f0 d2d32a 540e2c 7f117b 40f823 6b8931 ae247c 6c30f8 8341e2" }
 
-title: { en: Questions and Negatives, es: Preguntas y negación }
+title: { en: Questions and Negatives, es: Preguntas y negación, uk: "Питання і заперечення" }
 summary:
   lead:
     en: ["A question opens with ", { letter: ¿ }, " and closes with ", { letter: "?" }, ", and ", { term: no }, " before the verb makes a sentence negative."]
     es: ["Una pregunta se abre con ", { letter: ¿ }, " y se cierra con ", { letter: "?" }, ", y ", { term: no }, " delante del verbo hace negativa la oración."]
+    uk: ["Питання починається знаком ", { letter: "¿" }, " і закінчується знаком ", { letter: "?" }, ", а ", { term: "no" }, " перед дієсловом робить речення заперечним."]
   rule:
     en: "A yes-no question keeps the word order of a statement; only the marks and the voice change:"
     es: "Una pregunta de sí o no mantiene el orden de una afirmación; solo cambian los signos y la entonación:"
+    uk: "Питання «так чи ні» зберігає порядок слів розповідного речення; змінюються лише знаки та інтонація:"
   ex: { examples: ["Tienes hermanos.", { target: ¿Tienes hermanos? }] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto } }
-        - { key: rule, label: { en: Rule, es: Regla } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
         - level: A1
-          point: { en: Question marks, es: Signos de interrogación }
+          point: { en: Question marks, es: Signos de interrogación, uk: "Знаки питання" }
           rule:
             en: [{ letter: ¿ }, " opens and ", { letter: "?" }, " closes every question"]
             es: [{ letter: ¿ }, " abre y ", { letter: "?" }, " cierra toda pregunta"]
+            uk: [{ letter: "¿" }, " відкриває, а ", { letter: "?" }, " закриває кожне питання"]
           ex: { target: ¿Hablas inglés? }
-          tr: { en: "Do you speak English?" }
+          tr: { en: "Do you speak English?", uk: "Ти говориш англійською?" }
         - level: A1
-          point: { en: Negative, es: Negación }
+          point: { en: Negative, es: Negación, uk: "Заперечення" }
           rule:
             en: [{ term: no }, " goes right before the verb"]
             es: [{ term: no }, " va justo delante del verbo"]
+            uk: [{ term: "no" }, " стоїть безпосередньо перед дієсловом"]
           ex: [{ target: No hablo }, " inglés."]
-          tr: { en: "I don't speak English." }
+          tr: { en: "I don't speak English.", uk: "Я не говорю англійською." }
         - level: A1
-          point: { en: Answers, es: Respuestas }
+          point: { en: Answers, es: Respuestas, uk: "Відповіді" }
           rule:
             en: ["the first ", { term: no }, " answers, the second makes the verb negative"]
             es: ["el primer ", { term: no }, " responde, el segundo niega el verbo"]
+            uk: ["перше ", { term: "no" }, " — це відповідь, друге заперечує дієслово"]
           ex: { exchange: ["¿Tienes hermanos?", ["No, ", { target: no tengo }, " hermanos."]] }
-          tr: { en: { exchange: ["Have you got any brothers or sisters?", "No, I haven't got any brothers or sisters."] } }
+          tr: { en: { exchange: ["Have you got any brothers or sisters?", "No, I haven't got any brothers or sisters."] }, uk: { exchange: ["У тебе є брати чи сестри?", "Ні, у мене немає ні братів, ні сестер."] } }
         - level: A1
-          point: { en: Question words, es: Interrogativos }
+          point: { en: Question words, es: Interrogativos, uk: "Питальні слова" }
           rule:
             en: [{ alternatives: [{ term: qué }, { term: quién }, { term: dónde }, { term: cómo }, { term: cuánto }, { term: por qué }] }, " open the question, with a written accent"]
             es: [{ alternatives: [{ term: qué }, { term: quién }, { term: dónde }, { term: cómo }, { term: cuánto }, { term: por qué }] }, " abren la pregunta, con tilde"]
+            uk: [{ alternatives: [{ term: "qué" }, { term: "quién" }, { term: "dónde" }, { term: "cómo" }, { term: "cuánto" }, { term: "por qué" }] }, " починають питання і пишуться зі знаком наголосу"]
           ex: ["¿", { target: Dónde }, " vives?"]
-          tr: { en: "Where do you live?" }
+          tr: { en: "Where do you live?", uk: "Де ти живеш?" }
         - level: A1
-          point: { en: Agreeing, es: Coincidir }
+          point: { en: Agreeing, es: Coincidir, uk: "Згода" }
           rule:
             en: [{ term: también }, " after a statement, ", { term: tampoco }, " after a negative"]
             es: [{ term: también }, " tras una afirmación, ", { term: tampoco }, " tras una negación"]
+            uk: [{ term: "también" }, " після ствердження, ", { term: "tampoco" }, " після заперечення"]
           ex: { exchange: ["No hablo francés.", ["Yo ", { target: tampoco }, "."]] }
-          tr: { en: { exchange: ["I don't speak French.", "Neither do I."] } }
+          tr: { en: { exchange: ["I don't speak French.", "Neither do I."] }, uk: { exchange: ["Я не говорю французькою.", "Я теж ні."] } }
         - level: A1
-          point: { en: Prepositions, es: Preposiciones }
+          point: { en: Prepositions, es: Preposiciones, uk: "Прийменники" }
           rule:
             en: "the preposition comes first, before the question word"
             es: "la preposición va primero, delante del interrogativo"
+            uk: "прийменник стоїть першим, перед питальним словом"
           ex: ["¿", { target: Con quién }, " trabajas?"]
-          tr: { en: "Who do you work with?" }
+          tr: { en: "Who do you work with?", uk: "З ким ти працюєш?" }
         - level: A2
-          point: { en: Time, es: Tiempo }
+          point: { en: Time, es: Tiempo, uk: "Час" }
           rule:
             en: [{ term: cuándo }, " asks about time"]
             es: [{ term: cuándo }, " pregunta por el tiempo"]
+            uk: [{ term: "cuándo" }, " питає про час"]
           ex: ["¿", { target: Cuándo }, " empiezas las vacaciones?"]
-          tr: { en: "When do your holidays start?" }
+          tr: { en: "When do your holidays start?", uk: "Коли в тебе починається відпустка?" }
         - level: A2
-          point: { en: Choice, es: Elección }
+          point: { en: Choice, es: Elección, uk: "Вибір" }
           rule:
             en: ["two options joined by ", { term: o }]
             es: ["dos opciones unidas por ", { term: o }]
+            uk: ["два варіанти, поєднані ", { term: "o" }]
           ex: ["¿Prefieres té ", { target: o }, " café?"]
-          tr: { en: "Do you prefer tea or coffee?" }
+          tr: { en: "Do you prefer tea or coffee?", uk: "Тобі більше подобається чай чи кава?" }
         - level: A2
-          point: { en: Double negative, es: Doble negación }
+          point: { en: Double negative, es: Doble negación, uk: "Подвійне заперечення" }
           rule:
             en: [{ term: no }, " before the verb, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " after it"]
             es: [{ term: no }, " delante del verbo, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " detrás"]
+            uk: [{ term: "no" }, " перед дієсловом, ", { alternatives: [{ term: "nunca" }, { term: "nada" }, { term: "nadie" }] }, " після нього"]
           ex: [{ target: No }, " he estado ", { target: nunca }, " en México."]
-          tr: { en: "I've never been to Mexico." }
+          tr: { en: "I've never been to Mexico.", uk: "Я ніколи не був у Мексиці." }
         - level: A2
-          point: { en: Exclamations, es: Exclamaciones }
+          point: { en: Exclamations, es: Exclamaciones, uk: "Окличні речення" }
           rule:
             en: [{ pattern: [{ term: qué }, { slot: { en: adjective or adverb, es: adjetivo o adverbio } }] }, ", between ", { letter: ¡ }, " and ", { letter: "!" }]
             es: [{ pattern: [{ term: qué }, { slot: { en: adjective or adverb, es: adjetivo o adverbio } }] }, ", entre ", { letter: ¡ }, " y ", { letter: "!" }]
+            uk: [{ pattern: [{ term: "qué" }, { slot: { en: "adjective or adverb", es: "adjetivo o adverbio", uk: "прикметник або прислівник" } }] }, ", між ", { letter: "¡" }, " і ", { letter: "!" }]
           ex: ["¡", { target: Qué bonito }, "!"]
-          tr: { en: "How beautiful!" }
+          tr: { en: "How beautiful!", uk: "Як гарно!" }
         - level: B1
-          point: { en: Which, es: Cuál }
+          point: { en: Which, es: Cuál, uk: "Який" }
           rule:
             en: [{ term: qué }, " before a noun, ", { term: cuál }, " alone"]
             es: [{ term: qué }, " delante de un sustantivo, ", { term: cuál }, " solo"]
+            uk: [{ term: "qué" }, " перед іменником, ", { term: "cuál" }, " окремо"]
           ex: { examples: [["¿", { target: Qué }, " libro quieres?"], ["¿", { target: Cuál }, " quieres?"]] }
-          tr: { en: { examples: ["Which book do you want?", "Which one do you want?"] } }
+          tr: { en: { examples: ["Which book do you want?", "Which one do you want?"] }, uk: { examples: ["Яку книжку ти хочеш?", "Яку ти хочеш?"] } }
         - level: A2
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: [{ term: nunca }, " before the verb takes no ", { term: no }]
             es: [{ term: nunca }, " delante del verbo no lleva ", { term: no }]
+            uk: [{ term: "nunca" }, " перед дієсловом не потребує ", { term: "no" }]
           ex: [{ target: Nunca }, " como carne."]
-          tr: { en: "I never eat meat." }
+          tr: { en: "I never eat meat.", uk: "Я ніколи не їм м’яса." }
 
 sections:
-  - title: { en: Overview, es: Visión general }
+  - title: { en: Overview, es: Visión general, uk: "Огляд" }
     role: overview
     content:
       - type: list
@@ -122,38 +136,40 @@ sections:
             text:
               en: ["A question is marked at both ends: ", { letter: ¿ }, " at the start, ", { letter: "?" }, " at the end."]
               es: ["Una pregunta se marca en los dos extremos: ", { letter: ¿ }, " al principio, ", { letter: "?" }, " al final."]
+              uk: ["Питання позначають з обох боків: ", { letter: "¿" }, " на початку, ", { letter: "?" }, " у кінці."]
           - type: rule
             level: A1
             text:
               en: "In a yes-no question, the voice rises at the end:"
               es: "En una pregunta de sí o no, la entonación sube al final:"
+              uk: "У питанні «так чи ні» інтонація в кінці підвищується:"
             ex: ["¿Tienes hermanos? ", { intonation: rise }]
-            tr: { en: "Have you got any brothers or sisters?" }
+            tr: { en: "Have you got any brothers or sisters?", uk: "У тебе є брати чи сестри?" }
           - type: note
             level: A1
             readers: [en]
             text:
               en: ["Spanish has no helper like English ", { l1: do }, ": the verb alone makes the question."]
 
-  - title: { en: "Form: yes-no questions", es: "Forma: preguntas de sí o no" }
+  - title: { en: "Form: yes-no questions", es: "Forma: preguntas de sí o no", uk: "Форма: питання «так чи ні»" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: question, label: { en: Question, es: Pregunta } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: question, label: { en: Question, es: Pregunta, uk: "Питання" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A1, question: { en: The order of a statement, es: El orden de una afirmación }, ex: { target: ¿Hablas español? }, tr: { en: "Do you speak Spanish?" } }
-          - { level: A1, question: { en: With the subject first, es: Con el sujeto delante }, ex: { target: ¿Ana vive aquí? }, tr: { en: "Does Ana live here?" } }
+          - { level: A1, question: { en: The order of a statement, es: El orden de una afirmación, uk: "Порядок слів розповідного речення" }, ex: { target: ¿Hablas español? }, tr: { en: "Do you speak Spanish?", uk: "Ти говориш іспанською?" } }
+          - { level: A1, question: { en: With the subject first, es: Con el sujeto delante, uk: "З підметом на початку" }, ex: { target: ¿Ana vive aquí? }, tr: { en: "Does Ana live here?", uk: "Ана живе тут?" } }
           - level: A1
-            question: { en: With the subject after the verb, es: Con el sujeto detrás del verbo }
+            question: { en: With the subject after the verb, es: Con el sujeto detrás del verbo, uk: "З підметом після дієслова" }
             ex: { examples: [{ target: ¿Vive Ana aquí? }, { target: ¿Habla usted inglés? }] }
-            tr: { en: { examples: ["Does Ana live here?", "Do you speak English?"] } }
+            tr: { en: { examples: ["Does Ana live here?", "Do you speak English?"] }, uk: { examples: ["Ана живе тут?", "Ви говорите англійською?"] } }
           - level: A2
-            question: { en: "Checking: ¿verdad?, ¿no?", es: "Para confirmar: ¿verdad?, ¿no?" }
+            question: { en: "Checking: ¿verdad?, ¿no?", es: "Para confirmar: ¿verdad?, ¿no?", uk: "Перепитування: ¿verdad?, ¿no?" }
             ex: { examples: [["Vives en Lima, ", { target: ¿verdad? }], ["Es tarde, ", { target: ¿no? }]] }
-            tr: { en: { examples: ["You live in Lima, don't you?", "It's late, isn't it?"] } }
-          - { level: A2, question: { en: A choice between two, es: Una elección entre dos }, ex: ["¿Prefieres té ", { target: o }, " café?"], tr: { en: "Do you prefer tea or coffee?" } }
+            tr: { en: { examples: ["You live in Lima, don't you?", "It's late, isn't it?"] }, uk: { examples: ["Ти живеш у Лімі, так?", "Уже пізно, правда?"] } }
+          - { level: A2, question: { en: A choice between two, es: Una elección entre dos, uk: "Вибір між двома" }, ex: ["¿Prefieres té ", { target: o }, " café?"], tr: { en: "Do you prefer tea or coffee?", uk: "Тобі більше подобається чай чи кава?" } }
       - type: list
         items:
           - type: rule
@@ -161,28 +177,29 @@ sections:
             text:
               en: "The subject can stay out, go first, or follow the verb; the question means the same."
               es: "El sujeto puede omitirse, ir delante o ir detrás del verbo; la pregunta significa lo mismo."
+              uk: "Підмет можна пропустити, поставити першим або після дієслова; значення питання від цього не змінюється."
 
-  - title: { en: "Form: question words", es: "Forma: los interrogativos" }
+  - title: { en: "Form: question words", es: "Forma: los interrogativos", uk: "Форма: питальні слова" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: word, label: { en: Word, es: Palabra } }
-          - { key: asks, label: { en: Asks about, es: Pregunta por } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: word, label: { en: Word, es: Palabra, uk: "Слово" } }
+          - { key: asks, label: { en: Asks about, es: Pregunta por, uk: "Про що питає" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A1, word: qué, asks: { en: things and actions, es: cosas y acciones }, ex: ["¿", { target: Qué }, " haces?"], tr: { en: "What are you doing?" } }
-          - { level: A1, word: { alternatives: [quién, quiénes] }, asks: { en: people, es: personas }, ex: ["¿", { target: Quién }, " es esa chica?"], tr: { en: "Who is that girl?" } }
+          - { level: A1, word: qué, asks: { en: things and actions, es: cosas y acciones, uk: "речі й дії" }, ex: ["¿", { target: Qué }, " haces?"], tr: { en: "What are you doing?", uk: "Що ти робиш?" } }
+          - { level: A1, word: { alternatives: [quién, quiénes] }, asks: { en: people, es: personas, uk: "люди" }, ex: ["¿", { target: Quién }, " es esa chica?"], tr: { en: "Who is that girl?", uk: "Хто ця дівчина?" } }
           - level: A1
             word: dónde
-            asks: { en: places, es: lugares }
+            asks: { en: places, es: lugares, uk: "місця" }
             ex: { examples: [["¿", { target: Dónde }, " vives?"], ["¿De ", { target: dónde }, " eres?"]] }
-            tr: { en: { examples: ["Where do you live?", "Where are you from?"] } }
-          - { level: A1, word: cómo, asks: { en: manner, es: el modo }, ex: ["¿", { target: Cómo }, " te llamas?"], tr: { en: "What's your name?" } }
-          - { level: A1, word: { alternatives: [cuánto, cuánta, cuántos, cuántas] }, asks: { en: amount, es: la cantidad }, ex: ["¿", { target: Cuántos }, " años tienes?"], tr: { en: "How old are you?" } }
-          - { level: A1, word: por qué, asks: { en: the reason, es: la causa }, ex: ["¿", { target: Por qué }, " estudias español?"], tr: { en: "Why are you studying Spanish?" } }
-          - { level: A2, word: cuándo, asks: { en: time, es: el tiempo }, ex: ["¿", { target: Cuándo }, " empiezas las vacaciones?"], tr: { en: "When do your holidays start?" } }
-          - { level: B1, word: { alternatives: [cuál, cuáles] }, asks: { en: one of a known set, es: uno de un grupo conocido }, ex: ["¿", { target: Cuál }, " prefieres?"], tr: { en: "Which one do you prefer?" } }
+            tr: { en: { examples: ["Where do you live?", "Where are you from?"] }, uk: { examples: ["Де ти живеш?", "Звідки ти?"] } }
+          - { level: A1, word: cómo, asks: { en: manner, es: el modo, uk: "спосіб" }, ex: ["¿", { target: Cómo }, " te llamas?"], tr: { en: "What's your name?", uk: "Як тебе звати?" } }
+          - { level: A1, word: { alternatives: [cuánto, cuánta, cuántos, cuántas] }, asks: { en: amount, es: la cantidad, uk: "кількість" }, ex: ["¿", { target: Cuántos }, " años tienes?"], tr: { en: "How old are you?", uk: "Скільки тобі років?" } }
+          - { level: A1, word: por qué, asks: { en: the reason, es: la causa, uk: "причина" }, ex: ["¿", { target: Por qué }, " estudias español?"], tr: { en: "Why are you studying Spanish?", uk: "Чому ти вивчаєш іспанську?" } }
+          - { level: A2, word: cuándo, asks: { en: time, es: el tiempo, uk: "час" }, ex: ["¿", { target: Cuándo }, " empiezas las vacaciones?"], tr: { en: "When do your holidays start?", uk: "Коли в тебе починається відпустка?" } }
+          - { level: B1, word: { alternatives: [cuál, cuáles] }, asks: { en: one of a known set, es: uno de un grupo conocido, uk: "один із відомого набору" }, ex: ["¿", { target: Cuál }, " prefieres?"], tr: { en: "Which one do you prefer?", uk: "Який тобі більше подобається?" } }
       - type: list
         items:
           - type: rule
@@ -190,37 +207,40 @@ sections:
             text:
               en: "Every question word carries a written accent and opens its question."
               es: "Todo interrogativo lleva tilde y abre su pregunta."
+              uk: "Кожне питальне слово пишеться зі знаком наголосу і стоїть на початку питання."
           - type: rule
             level: A1
             text:
               en: [{ term: cuánto }, " agrees with its noun: ", { alternatives: [{ term: cuántos años }, { term: cuántas hermanas }] }, "."]
               es: [{ term: cuánto }, " concuerda con su sustantivo: ", { alternatives: [{ term: cuántos años }, { term: cuántas hermanas }] }, "."]
+              uk: [{ term: "cuánto" }, " узгоджується зі своїм іменником: ", { alternatives: [{ term: "cuántos años" }, { term: "cuántas hermanas" }] }, "."]
           - type: rule
             level: A1
             text:
               en: "A preposition goes before the question word, at the start of the question:"
               es: "La preposición va delante del interrogativo, al principio de la pregunta:"
+              uk: "Прийменник стоїть перед питальним словом, на початку питання:"
             ex: { examples: [["¿", { target: Con quién }, " trabajas?"], ["¿", { target: A quién }, " llamas?"]] }
-            tr: { en: { examples: ["Who do you work with?", "Who are you calling?"] } }
+            tr: { en: { examples: ["Who do you work with?", "Who are you calling?"] }, uk: { examples: ["З ким ти працюєш?", "Кому ти телефонуєш?"] } }
 
-  - title: { en: "Form: negatives", es: "Forma: la negación" }
+  - title: { en: "Form: negatives", es: "Forma: la negación", uk: "Форма: заперечення" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: pattern, label: { en: Pattern, es: Estructura } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: pattern, label: { en: Pattern, es: Estructura, uk: "Схема" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A1, pattern: { pattern: [no, { slot: verb }] }, ex: [{ target: No hablo }, " inglés."], tr: { en: "I don't speak English." } }
+          - { level: A1, pattern: { pattern: [no, { slot: verb }] }, ex: [{ target: No hablo }, " inglés."], tr: { en: "I don't speak English.", uk: "Я не говорю англійською." } }
           - level: A1
-            pattern: { pattern: [no, { slot: { en: pronoun, es: pronombre } }, { slot: verb }] }
+            pattern: { pattern: [no, { slot: { en: pronoun, es: pronombre, uk: "займенник" } }, { slot: verb }] }
             ex: { examples: [{ target: No lo sé. }, { target: No me gusta. }] }
-            tr: { en: { examples: ["I don't know.", "I don't like it."] } }
+            tr: { en: { examples: ["I don't know.", "I don't like it."] }, uk: { examples: ["Я не знаю.", "Мені не подобається."] } }
           - level: A2
             pattern: { pattern: [no, { slot: verb }, { alternatives: [nunca, nada, nadie] }] }
             ex: { examples: [[{ target: No }, " quiero ", { target: nada }, "."], [{ target: No }, " veo a ", { target: nadie }, "."]] }
-            tr: { en: { examples: ["I don't want anything.", "I can't see anybody."] } }
-          - { level: A2, pattern: { pattern: [nunca, { slot: verb }] }, ex: [{ target: Nunca }, " como carne."], tr: { en: "I never eat meat." } }
+            tr: { en: { examples: ["I don't want anything.", "I can't see anybody."] }, uk: { examples: ["Я нічого не хочу.", "Я нікого не бачу."] } }
+          - { level: A2, pattern: { pattern: [nunca, { slot: verb }] }, ex: [{ target: Nunca }, " como carne."], tr: { en: "I never eat meat.", uk: "Я ніколи не їм м’яса." } }
       - type: list
         items:
           - type: rule
@@ -228,47 +248,57 @@ sections:
             text:
               en: "In an answer, the first no answers the question and the second makes the verb negative:"
               es: "En una respuesta, el primer no responde a la pregunta y el segundo niega el verbo:"
+              uk: "У відповіді перше no відповідає на питання, а друге заперечує дієслово:"
             ex: { exchange: ["¿Eres de aquí?", ["No, ", { target: no soy }, " de aquí."]] }
-            tr: { en: { exchange: ["Are you from here?", "No, I'm not from here."] } }
+            tr: { en: { exchange: ["Are you from here?", "No, I'm not from here."] }, uk: { exchange: ["Ти звідси?", "Ні, я не звідси."] } }
           - type: rule
             level: A1
             text:
               en: [{ term: no }, " goes before the pronouns in front of the verb."]
               es: [{ term: no }, " va delante de los pronombres que preceden al verbo."]
+              uk: [{ term: "no" }, " стоїть перед займенниками, що передують дієслову."]
           - type: rule
             level: A1
             text:
               en: [{ term: también }, " agrees with a statement, ", { term: tampoco }, " with a negative:"]
               es: [{ term: también }, " coincide con una afirmación, ", { term: tampoco }, ", con una negación:"]
+              uk: [{ term: "también" }, " виражає згоду зі ствердженням, ", { term: "tampoco" }, " — із запереченням:"]
             ex: { examples: [{ exchange: ["Soy de Chile.", ["Yo ", { target: también }, "."]] }, { exchange: ["No hablo francés.", ["Yo ", { target: tampoco }, "."]] }] }
-            tr: { en: { examples: [{ exchange: ["I'm from Chile.", "So am I."] }, { exchange: ["I don't speak French.", "Neither do I."] }] } }
+            tr: { en: { examples: [{ exchange: ["I'm from Chile.", "So am I."] }, { exchange: ["I don't speak French.", "Neither do I."] }] }, uk: { examples: [{ exchange: ["Я з Чилі.", "Я теж."] }, { exchange: ["Я не говорю французькою.", "Я теж ні."] }] } }
           - type: rule
             level: A2
             text:
               en: ["After the verb, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " need ", { term: no }, " before the verb; before the verb, they stand alone."]
               es: ["Detrás del verbo, ", { alternatives: [{ term: nunca }, { term: nada }, { term: nadie }] }, " necesitan ", { term: no }, " delante del verbo; delante del verbo, van solos."]
+              uk: ["Після дієслова ", { alternatives: [{ term: "nunca" }, { term: "nada" }, { term: "nadie" }] }, " потребують ", { term: "no" }, " перед дієсловом; перед дієсловом вони стоять самі."]
+          - type: note
+            level: A2
+            readers: [uk]
+            text:
+              uk: ["Українська теж має подвійне заперечення: ", { l1: "я нічого не хочу" }, " — ", { term: "no quiero nada" }, ". Але українське ", { l1: "не" }, " лишається й після ", { l1: "ніколи" }, " перед дієсловом, а іспанська тоді обходиться без ", { term: no }, ": ", { term: "Nunca como carne." }]
           - type: note
             level: A2
             text:
               en: ["More negative words: ", { link: "Indefinites: algo, nadie, ningún", to: es.sustantivo-determinantes.indefinidos }, "."]
               es: ["Más palabras negativas: ", { link: "Los indefinidos: algo, nadie, ningún", to: es.sustantivo-determinantes.indefinidos }, "."]
+              uk: ["Інші заперечні слова: ", { link: "Неозначені слова: algo, nadie, ningún", to: "es.sustantivo-determinantes.indefinidos" }, "."]
 
-  - title: { en: "Exclamations: ¡Qué bien!", es: "Exclamaciones: ¡Qué bien!" }
+  - title: { en: "Exclamations: ¡Qué bien!", es: "Exclamaciones: ¡Qué bien!", uk: "Окличні речення: ¡Qué bien!" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: pattern, label: { en: Pattern, es: Estructura } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: pattern, label: { en: Pattern, es: Estructura, uk: "Схема" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
           - level: A2
-            pattern: { pattern: [{ term: qué }, { slot: { en: adjective, es: adjetivo } }] }
+            pattern: { pattern: [{ term: qué }, { slot: { en: adjective, es: adjetivo, uk: "прикметник" } }] }
             ex: { examples: [["¡", { target: Qué bonito }, "!"], ["¡", { target: Qué caro }, "!"]] }
-            tr: { en: { examples: ["How beautiful!", "How expensive!"] } }
+            tr: { en: { examples: ["How beautiful!", "How expensive!"] }, uk: { examples: ["Як гарно!", "Як дорого!"] } }
           - level: A2
-            pattern: { pattern: [{ term: qué }, { slot: { en: adverb, es: adverbio } }] }
+            pattern: { pattern: [{ term: qué }, { slot: { en: adverb, es: adverbio, uk: "прислівник" } }] }
             ex: { examples: [["¡", { target: Qué bien }, "!"], ["¡", { target: Qué tarde }, "!"]] }
-            tr: { en: { examples: ["Great!", "How late!"] } }
+            tr: { en: { examples: ["Great!", "How late!"] }, uk: { examples: ["Чудово!", "Як пізно!"] } }
       - type: list
         items:
           - type: rule
@@ -276,10 +306,11 @@ sections:
             text:
               en: ["An exclamation opens with ", { letter: ¡ }, " and closes with ", { letter: "!" }, ", and ", { term: qué }, " carries a written accent, as in a question:"]
               es: ["Una exclamación se abre con ", { letter: ¡ }, " y se cierra con ", { letter: "!" }, ", y ", { term: qué }, " lleva tilde, como en una pregunta:"]
+              uk: ["Окличне речення починається знаком ", { letter: "¡" }, " і закінчується знаком ", { letter: "!" }, ", а ", { term: "qué" }, " пишеться зі знаком наголосу, як у питанні:"]
             ex: { exchange: ["Mañana no trabajo.", ["¡", { target: Qué bien }, "!"]] }
-            tr: { en: { exchange: ["I'm not working tomorrow.", "Great!"] } }
+            tr: { en: { exchange: ["I'm not working tomorrow.", "Great!"] }, uk: { exchange: ["Завтра я не працюю.", "Чудово!"] } }
 
-  - title: { en: "Compare: qué and cuál", es: "Comparación: qué y cuál" }
+  - title: { en: "Compare: qué and cuál", es: "Comparación: qué y cuál", uk: "Порівняння: qué і cuál" }
     role: compare
     content:
       - type: comparison
@@ -287,13 +318,13 @@ sections:
           - { key: que, label: qué }
           - { key: cual, label: cuál }
         rows:
-          - { level: B1, que: { en: "before a noun; with ser, a definition", es: "delante de un sustantivo; con ser, una definición" }, cual: { en: "alone, for one of a known set; with ser, a piece of data", es: "solo, para uno de un grupo conocido; con ser, un dato" } }
+          - { level: B1, que: { en: "before a noun; with ser, a definition", es: "delante de un sustantivo; con ser, una definición", uk: "перед іменником; із ser — визначення" }, cual: { en: "alone, for one of a known set; with ser, a piece of data", es: "solo, para uno de un grupo conocido; con ser, un dato", uk: "окремо, для одного з відомого набору; із ser — конкретні дані" } }
           - level: B1
-            que: { ex: ["¿", { target: Qué }, " libro quieres?"], tr: { en: "Which book do you want?" } }
-            cual: { ex: ["¿", { target: Cuál }, " quieres?"], tr: { en: "Which one do you want?" } }
+            que: { ex: ["¿", { target: Qué }, " libro quieres?"], tr: { en: "Which book do you want?", uk: "Яку книжку ти хочеш?" } }
+            cual: { ex: ["¿", { target: Cuál }, " quieres?"], tr: { en: "Which one do you want?", uk: "Яку ти хочеш?" } }
           - level: B1
-            que: { ex: ["¿", { target: Qué }, " es esto?"], tr: { en: "What is this?" } }
-            cual: { ex: ["¿", { target: Cuál }, " es tu número de teléfono?"], tr: { en: "What's your phone number?" } }
+            que: { ex: ["¿", { target: Qué }, " es esto?"], tr: { en: "What is this?", uk: "Що це?" } }
+            cual: { ex: ["¿", { target: Cuál }, " es tu número de teléfono?"], tr: { en: "What's your phone number?", uk: "Який у тебе номер телефону?" } }
       - type: list
         items:
           - type: note
@@ -302,18 +333,19 @@ sections:
             text:
               en: ["In informal Latin American speech you will hear ", { term: cuál }, " before a noun, as in ", { term: ¿Cuál libro quieres? }, "; the rule is ", { term: qué }, ":"]
               es: ["En el habla informal de Latinoamérica se oye ", { term: cuál }, " delante de un sustantivo, como en ", { term: ¿Cuál libro quieres? }, "; la norma es ", { term: qué }, ":"]
+              uk: ["У неформальному мовленні Латинської Америки можна почути ", { term: "cuál" }, " перед іменником, як у ", { term: "¿Cuál libro quieres?" }, "; за нормою — ", { term: "qué" }, ":"]
             ex: ["¿", { target: Qué }, " libro quieres?"]
-            tr: { en: "Which book do you want?" }
+            tr: { en: "Which book do you want?", uk: "Яку книжку ти хочеш?" }
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: "Hablas inglés?", right: { target: ¿Hablas inglés? }, rule: { en: ["a question opens with ", { letter: ¿ }], es: ["una pregunta se abre con ", { letter: ¿ }] } }
-          - { level: A1, wrong: "¿Donde vives?", right: ["¿", { target: Dónde }, " vives?"], rule: { en: "question words carry a written accent", es: "los interrogativos llevan tilde" } }
-          - { level: A1, wrong: "Yo también no.", right: ["Yo ", { target: tampoco }, "."], rule: { en: ["a negative takes ", { term: tampoco }], es: ["una negación lleva ", { term: tampoco }] } }
+          - { level: A1, wrong: "Hablas inglés?", right: { target: ¿Hablas inglés? }, rule: { en: ["a question opens with ", { letter: ¿ }], es: ["una pregunta se abre con ", { letter: ¿ }], uk: ["питання починається знаком ", { letter: "¿" }] } }
+          - { level: A1, wrong: "¿Donde vives?", right: ["¿", { target: Dónde }, " vives?"], rule: { en: "question words carry a written accent", es: "los interrogativos llevan tilde", uk: "питальні слова пишуться зі знаком наголосу" } }
+          - { level: A1, wrong: "Yo también no.", right: ["Yo ", { target: tampoco }, "."], rule: { en: ["a negative takes ", { term: tampoco }], es: ["una negación lleva ", { term: tampoco }], uk: ["після заперечення — ", { term: "tampoco" }] } }
           - { level: A1, speakers: [en], wrong: "¿Qué es tu nombre?", right: ["¿", { target: Cómo te llamas }, "?"], rule: { en: ["a name takes ", { term: ¿Cómo te llamas? }, " or ", { term: ¿Cuál es tu nombre? }] } }
-          - { level: A2, wrong: "Nunca no como carne.", right: [{ target: Nunca }, " como carne."], rule: { en: [{ term: nunca }, " before the verb stands alone"], es: [{ term: nunca }, " delante del verbo va solo"] } }
-          - { level: A2, wrong: "No tengo algo.", right: ["No tengo ", { target: nada }, "."], rule: { en: ["a negative sentence takes ", { term: nada }], es: ["una oración negativa lleva ", { term: nada }] } }
-          - { level: B1, wrong: "¿Cuál es esto?", right: ["¿", { target: Qué }, " es esto?"], rule: { en: ["a definition takes ", { term: qué }], es: ["una definición lleva ", { term: qué }] } }
+          - { level: A2, wrong: "Nunca no como carne.", right: [{ target: Nunca }, " como carne."], rule: { en: [{ term: nunca }, " before the verb stands alone"], es: [{ term: nunca }, " delante del verbo va solo"], uk: [{ term: "nunca" }, " перед дієсловом стоїть саме"] } }
+          - { level: A2, wrong: "No tengo algo.", right: ["No tengo ", { target: nada }, "."], rule: { en: ["a negative sentence takes ", { term: nada }], es: ["una oración negativa lleva ", { term: nada }], uk: ["заперечне речення потребує ", { term: "nada" }] } }
+          - { level: B1, wrong: "¿Cuál es esto?", right: ["¿", { target: Qué }, " es esto?"], rule: { en: ["a definition takes ", { term: qué }], es: ["una definición lleva ", { term: qué }], uk: ["визначення потребує ", { term: "qué" }] } }

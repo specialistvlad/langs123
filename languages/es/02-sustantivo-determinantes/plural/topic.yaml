@@ -5,112 +5,116 @@ kind: grammar
 tags: [nouns, plural, number, spelling, agreement]
 concepts: [number]
 related: [es.sustantivo-determinantes.genero, es.sustantivo-determinantes.articulos, es.adjetivo-adverbio.adjetivo-concordancia, es.fundamentos.pronunciacion-acentuacion]
-status: { en: draft, es: draft }
-translated: { es: "d23978 74aabd fc3525 5acd9d 59eaee 44b578" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "1c74c9 6df9f6 3be6a9 f3bb0b b73d91 717417", uk: "1c74c9 6df9f6 3be6a9 f3bb0b b73d91 717417" }
 
-title: { en: Plurals, es: El plural }
+title: { en: Plurals, es: El plural, uk: Множина }
 summary:
   lead:
     en: ["A noun in a vowel adds -s, ", { term: casas }, "; a noun in a consonant adds -es, ", { term: ciudades }, "; and -z becomes -ces, ", { term: lápices }, "."]
     es: ["El sustantivo en vocal añade -s, ", { term: casas }, "; en consonante añade -es, ", { term: ciudades }, "; y la -z pasa a -ces, ", { term: lápices }, "."]
+    uk: ["Іменник на голосний додає -s, ", { term: casas }, "; іменник на приголосний додає -es, ", { term: ciudades }, "; а -z змінюється на -ces, ", { term: lápices }, "."]
   rule:
     en: "The article and the adjective go plural with the noun:"
     es: "El artículo y el adjetivo van en plural con el sustantivo:"
+    uk: "Артикль і прикметник стають у множину разом з іменником:"
   ex: { examples: [[{ target: las }, " casas ", { target: blancas }], [{ target: los }, " lápices ", { target: rojos }]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto } }
-        - { key: rule, label: { en: Rule, es: Regla } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: point, label: { en: Point, es: Punto, uk: Аспект } }
+        - { key: rule, label: { en: Rule, es: Regla, uk: Правило } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: Приклад } }
       rows:
         - level: A1
-          point: { en: Vowel, es: Vocal }
+          point: { en: Vowel, es: Vocal, uk: Голосний }
           rule: { pattern: [{ ending: s }], follows: true }
           ex: { mapping: [casa, { target: casas }] }
-          tr: { en: houses }
+          tr: { en: houses, uk: будинки }
         - level: A1
-          point: { en: Consonant, es: Consonante }
+          point: { en: Consonant, es: Consonante, uk: Приголосний }
           rule: { pattern: [{ ending: es }], follows: true }
           ex: { mapping: [ciudad, { target: ciudades }] }
-          tr: { en: cities }
+          tr: { en: cities, uk: міста }
         - level: A2
           point: "-z"
           rule: { mapping: [z, ces] }
           ex: { mapping: [lápiz, { target: lápices }] }
-          tr: { en: pencils }
+          tr: { en: pencils, uk: олівці }
         - level: A1
-          point: { en: Agreement, es: Concordancia }
-          rule: { en: article and adjective go plural too, es: el artículo y el adjetivo también van en plural }
+          point: { en: Agreement, es: Concordancia, uk: Узгодження }
+          rule: { en: article and adjective go plural too, es: el artículo y el adjetivo también van en plural, uk: артикль і прикметник теж стають у множину }
           ex: [{ target: las }, " casas ", { target: blancas }]
-          tr: { en: the white houses }
+          tr: { en: the white houses, uk: білі будинки }
         - level: A2
-          point: { en: Unstressed -s, es: "-s en sílaba átona" }
-          rule: { en: no change, es: no cambia }
+          point: { en: Unstressed -s, es: "-s en sílaba átona", uk: "-s у ненаголошеному складі" }
+          rule: { en: no change, es: no cambia, uk: не змінюється }
           ex: { mapping: ["el lunes", { target: los lunes }] }
-          tr: { en: Mondays }
+          tr: { en: Mondays, uk: понеділки }
         - level: A2
-          point: { en: Written accent, es: Tilde }
-          rule: { en: "the stress stays: the accent comes or goes", es: "el acento no se mueve: la tilde aparece o desaparece" }
+          point: { en: Written accent, es: Tilde, uk: Знак наголосу }
+          rule: { en: "the stress stays: the accent comes or goes", es: "el acento no se mueve: la tilde aparece o desaparece", uk: "наголос не переміщується: знак наголосу з’являється або зникає" }
           ex: { examples: [{ mapping: [canción, { target: canciones }] }, { mapping: [joven, { target: jóvenes }] }] }
-          tr: { en: { examples: [songs, young people] } }
+          tr: { en: { examples: [songs, young people] }, uk: { examples: [пісні, молодь] } }
         - level: A2
-          point: { en: Plural only, es: Solo en plural }
-          rule: { en: one object with a plural name, es: un solo objeto con sustantivo en plural }
+          point: { en: Plural only, es: Solo en plural, uk: Лише множина }
+          rule: { en: one object with a plural name, es: un solo objeto con sustantivo en plural, uk: один предмет із назвою в множині }
           ex: ["Mis ", { target: pantalones }, " son nuevos."]
-          tr: { en: My trousers are new. }
+          tr: { en: My trousers are new., uk: Мої штани нові. }
         - level: A2
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: Пастка }
           rule:
             en: ["-z becomes -c: ", { term: lápices }, ", ", { term: veces }]
             es: ["la -z pasa a -c: ", { term: lápices }, ", ", { term: veces }]
+            uk: ["-z змінюється на -c: ", { term: lápices }, ", ", { term: veces }]
           ex: ["Tengo dos ", { target: lápices }, "."]
-          tr: { en: I have two pencils. }
+          tr: { en: I have two pencils., uk: У мене два олівці. }
         - level: A2
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: Пастка }
           rule:
             en: [{ term: gente }, " is singular"]
             es: [{ term: gente }, " es singular"]
+            uk: [{ term: gente }, " — однина"]
           ex: ["La gente ", { target: es }, " amable."]
-          tr: { en: People are friendly. }
+          tr: { en: People are friendly., uk: Люди привітні. }
 
 sections:
-  - title: { en: "Form: -s and -es", es: "Forma: -s y -es" }
+  - title: { en: "Form: -s and -es", es: "Forma: -s y -es", uk: "Форма: -s і -es" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: ending, label: { en: Noun ending, es: Terminación del sustantivo } }
-          - { key: rule, label: { en: Plural, es: Plural } }
-          - { key: ex, label: { en: Examples, es: Ejemplos } }
+          - { key: ending, label: { en: Noun ending, es: Terminación del sustantivo, uk: Закінчення іменника } }
+          - { key: rule, label: { en: Plural, es: Plural, uk: Множина } }
+          - { key: ex, label: { en: Examples, es: Ejemplos, uk: Приклади } }
         rows:
           - level: A1
-            ending: { en: unstressed vowel, es: vocal átona }
+            ending: { en: unstressed vowel, es: vocal átona, uk: ненаголошений голосний }
             rule: { pattern: [{ ending: s }], follows: true }
             ex: { examples: [{ mapping: [casa, { target: casas }] }, { mapping: [libro, { target: libros }] }, { mapping: [calle, { target: calles }] }] }
-            tr: { en: { examples: [houses, books, streets] } }
+            tr: { en: { examples: [houses, books, streets] }, uk: { examples: [будинки, книжки, вулиці] } }
           - level: A1
-            ending: { en: "stressed -á, -é, -ó", es: "-á, -é, -ó tónicas" }
+            ending: { en: "stressed -á, -é, -ó", es: "-á, -é, -ó tónicas", uk: "наголошені -á, -é, -ó" }
             rule: { pattern: [{ ending: s }], follows: true }
             ex: { examples: [{ mapping: [café, { target: cafés }] }, { mapping: [sofá, { target: sofás }] }] }
-            tr: { en: { examples: [coffees, sofas] } }
+            tr: { en: { examples: [coffees, sofas] }, uk: { examples: [кави, дивани] } }
           - level: A1
-            ending: { en: consonant, es: consonante }
+            ending: { en: consonant, es: consonante, uk: приголосний }
             rule: { pattern: [{ ending: es }], follows: true }
             ex: { examples: [{ mapping: [ciudad, { target: ciudades }] }, { mapping: [papel, { target: papeles }] }, { mapping: [mes, { target: meses }] }] }
-            tr: { en: { examples: [cities, papers, months] } }
+            tr: { en: { examples: [cities, papers, months] }, uk: { examples: [міста, папери, місяці] } }
           - level: A2
             ending: "-z"
             rule: { mapping: [z, ces] }
             ex: { examples: [{ mapping: [lápiz, { target: lápices }] }, { mapping: [vez, { target: veces }] }] }
-            tr: { en: { examples: [pencils, times] } }
+            tr: { en: { examples: [pencils, times] }, uk: { examples: [олівці, рази] } }
           - level: A2
-            ending: { en: "-s in an unstressed syllable", es: "-s en sílaba átona" }
-            rule: { en: no change, es: no cambia }
+            ending: { en: "-s in an unstressed syllable", es: "-s en sílaba átona", uk: "-s у ненаголошеному складі" }
+            rule: { en: no change, es: no cambia, uk: не змінюється }
             ex: { examples: [{ mapping: ["el lunes", { target: los lunes }] }, { mapping: ["la crisis", { target: las crisis }] }] }
-            tr: { en: { examples: [Mondays, crises] } }
+            tr: { en: { examples: [Mondays, crises] }, uk: { examples: [понеділки, кризи] } }
       - type: list
         items:
           - type: rule
@@ -118,37 +122,40 @@ sections:
             text:
               en: "The article and the adjective go plural with the noun:"
               es: "El artículo y el adjetivo van en plural con el sustantivo:"
+              uk: "Артикль і прикметник стають у множину разом з іменником:"
             ex: [{ target: Los }, " zapatos ", { target: nuevos }, " son caros."]
-            tr: { en: The new shoes are expensive. }
+            tr: { en: The new shoes are expensive., uk: Нові черевики дорогі. }
           - type: rule
             level: A2
             text:
               en: ["With an unchanged noun, the article shows the number: ", { mapping: [{ term: el lunes }, { term: los lunes }] }, "."]
               es: ["Cuando el sustantivo no cambia, el artículo indica el número: ", { mapping: [{ term: el lunes }, { term: los lunes }] }, "."]
+              uk: ["Коли іменник не змінюється, число показує артикль: ", { mapping: [{ term: el lunes }, { term: los lunes }] }, "."]
             ex: [{ target: Los }, " lunes tengo clase."]
-            tr: { en: I have class on Mondays. }
+            tr: { en: I have class on Mondays., uk: По понеділках у мене заняття. }
           - type: note
             level: A1
             text:
               en: ["A group of men and women takes the masculine plural: see ", { link: Gender, to: es.sustantivo-determinantes.genero }, "."]
               es: ["Un grupo de hombres y mujeres lleva el masculino plural: ver ", { link: El género, to: es.sustantivo-determinantes.genero }, "."]
+              uk: ["Група чоловіків і жінок називається формою чоловічого роду множини: див. ", { link: Рід, to: es.sustantivo-determinantes.genero }, "."]
 
-  - title: { en: "Spelling: the written accent", es: "Ortografía: la tilde" }
+  - title: { en: "Spelling: the written accent", es: "Ortografía: la tilde", uk: "Правопис: знак наголосу" }
     role: spelling
     content:
       - type: usage
         columns:
-          - { key: change, label: { en: Change, es: Cambio } }
-          - { key: ex, label: { en: Examples, es: Ejemplos } }
+          - { key: change, label: { en: Change, es: Cambio, uk: Зміна } }
+          - { key: ex, label: { en: Examples, es: Ejemplos, uk: Приклади } }
         rows:
           - level: A2
-            change: { en: "-ón, -és lose the accent", es: "-ón, -és pierden la tilde" }
+            change: { en: "-ón, -és lose the accent", es: "-ón, -és pierden la tilde", uk: "-ón, -és втрачають знак наголосу" }
             ex: { examples: [{ mapping: [canción, { target: canciones }] }, { mapping: [inglés, { target: ingleses }] }] }
-            tr: { en: { examples: [songs, English people] } }
+            tr: { en: { examples: [songs, English people] }, uk: { examples: [пісні, англійці] } }
           - level: A2
-            change: { en: "-en stressed on the next-to-last syllable gains an accent", es: "-en con el acento en la penúltima sílaba gana tilde" }
+            change: { en: "-en stressed on the next-to-last syllable gains an accent", es: "-en con el acento en la penúltima sílaba gana tilde", uk: "-en з наголосом на передостанньому складі отримує знак наголосу" }
             ex: { examples: [{ mapping: [joven, { target: jóvenes }] }, { mapping: [examen, { target: exámenes }] }] }
-            tr: { en: { examples: [young people, exams] } }
+            tr: { en: { examples: [young people, exams] }, uk: { examples: [молодь, іспити] } }
       - type: list
         items:
           - type: rule
@@ -156,56 +163,58 @@ sections:
             text:
               en: "The plural keeps the stress on the same syllable, and the written accent comes or goes to show it."
               es: "El plural mantiene el acento en la misma sílaba, y la tilde aparece o desaparece para marcarlo."
+              uk: "У множині наголос лишається на тому самому складі, а знак наголосу з’являється або зникає, щоб це показати."
           - type: note
             level: A2
             text:
               en: ["The rules of the written accent: see ", { link: Sounds and Stress, to: es.fundamentos.pronunciacion-acentuacion }, "."]
               es: ["Las reglas de la tilde: ver ", { link: Pronunciación y acentuación, to: es.fundamentos.pronunciacion-acentuacion }, "."]
+              uk: ["Правила знака наголосу: див. ", { link: Звуки й наголос, to: es.fundamentos.pronunciacion-acentuacion }, "."]
 
-  - title: { en: Nouns with one number, es: Sustantivos con un solo número }
+  - title: { en: Nouns with one number, es: Sustantivos con un solo número, uk: Іменники з одним числом }
     role: own
     content:
       - type: usage
         columns:
-          - { key: noun, label: { en: Noun, es: Sustantivo } }
-          - { key: use, label: { en: Use, es: Uso } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: noun, label: { en: Noun, es: Sustantivo, uk: Іменник } }
+          - { key: use, label: { en: Use, es: Uso, uk: Вживання } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: Приклад } }
         rows:
           - level: A2
             noun: las gafas
-            use: { en: plural for one object, es: plural para un solo objeto }
+            use: { en: plural for one object, es: plural para un solo objeto, uk: множина для одного предмета }
             ex: ["Mis ", { target: gafas }, " son nuevas."]
-            tr: { en: My glasses are new. }
+            tr: { en: My glasses are new., uk: Мої окуляри нові. }
           - level: A2
             variety: es-419
             noun: "los lentes, los anteojos"
-            use: { en: "the same object, in much of Latin America", es: "el mismo objeto, en buena parte de Latinoamérica" }
+            use: { en: "the same object, in much of Latin America", es: "el mismo objeto, en buena parte de Latinoamérica", uk: "той самий предмет у більшій частині Латинської Америки" }
             ex: ["Mis ", { target: lentes }, " son nuevos."]
-            tr: { en: My glasses are new. }
+            tr: { en: My glasses are new., uk: Мої окуляри нові. }
           - level: A2
             noun: los pantalones
-            use: { en: plural for one object, es: plural para un solo objeto }
+            use: { en: plural for one object, es: plural para un solo objeto, uk: множина для одного предмета }
             ex: ["Estos ", { target: pantalones }, " son caros."]
-            tr: { en: These trousers are expensive. }
+            tr: { en: These trousers are expensive., uk: Ці штани дорогі. }
           - level: A2
             noun: las vacaciones
-            use: { en: plural only, es: solo en plural }
+            use: { en: plural only, es: solo en plural, uk: лише множина }
             ex: ["Las ", { target: vacaciones }, " empiezan en julio."]
-            tr: { en: The holidays start in July. }
+            tr: { en: The holidays start in July., uk: Канікули починаються в липні. }
           - level: A2
             noun: la gente
-            use: { en: "singular, with a singular verb", es: "singular, con el verbo en singular" }
+            use: { en: "singular, with a singular verb", es: "singular, con el verbo en singular", uk: "однина, з дієсловом в однині" }
             ex: ["La ", { target: gente es }, " muy amable."]
-            tr: { en: People are very friendly. }
+            tr: { en: People are very friendly., uk: Люди дуже привітні. }
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: Типові помилки }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: dos lápizes, right: ["dos ", { target: lápices }], rule: { en: { mapping: [{ term: "-z" }, { term: "-ces" }] }, es: { mapping: [{ term: "-z" }, { term: "-ces" }] } } }
-          - { level: A1, wrong: las ciudads, right: ["las ", { target: ciudades }], rule: { en: "a consonant adds -es", es: "la consonante añade -es" } }
-          - { level: A1, wrong: las casa blancas, right: ["las ", { target: casas }, " blancas"], rule: { en: "the noun goes plural too", es: "el sustantivo también va en plural" } }
-          - { level: A2, wrong: las canciónes, right: ["las ", { target: canciones }], rule: { en: "the plural of -ón has no accent", es: "el plural de -ón no lleva tilde" } }
-          - { level: A2, wrong: los luneses, right: ["los ", { target: lunes }], rule: { en: "-s in an unstressed syllable stays the same", es: "la -s en sílaba átona no cambia" } }
-          - { level: A2, speakers: [en], wrong: La gente son amables., right: ["La gente ", { target: es }, " amable."], rule: { en: [{ term: gente }, " is singular, unlike English ", { l1: people }] } }
+          - { level: A2, wrong: dos lápizes, right: ["dos ", { target: lápices }], rule: { en: { mapping: [{ term: "-z" }, { term: "-ces" }] }, es: { mapping: [{ term: "-z" }, { term: "-ces" }] }, uk: { mapping: [{ term: "-z" }, { term: "-ces" }] } } }
+          - { level: A1, wrong: las ciudads, right: ["las ", { target: ciudades }], rule: { en: "a consonant adds -es", es: "la consonante añade -es", uk: "після приголосного додається -es" } }
+          - { level: A1, wrong: las casa blancas, right: ["las ", { target: casas }, " blancas"], rule: { en: "the noun goes plural too", es: "el sustantivo también va en plural", uk: "іменник теж стає в множину" } }
+          - { level: A2, wrong: las canciónes, right: ["las ", { target: canciones }], rule: { en: "the plural of -ón has no accent", es: "el plural de -ón no lleva tilde", uk: "множина від -ón пишеться без знака наголосу" } }
+          - { level: A2, wrong: los luneses, right: ["los ", { target: lunes }], rule: { en: "-s in an unstressed syllable stays the same", es: "la -s en sílaba átona no cambia", uk: "-s у ненаголошеному складі не змінюється" } }
+          - { level: A2, speakers: [en, uk], wrong: La gente son amables., right: ["La gente ", { target: es }, " amable."], rule: { en: [{ term: gente }, " is singular, unlike English ", { l1: people }], uk: [{ term: gente }, " — однина, хоча українське «люди» — множина"] } }

@@ -5,109 +5,122 @@ kind: grammar
 tags: [verbs, tenses, past, perfect, haber]
 concepts: [present-perfect]
 related: [es.pasados.perfecto-indefinido, es.pasados.preterito-indefinido, es.pasados.pluscuamperfecto, es.pasados.verbos-irregulares, es.pasados.mapa-tiempos]
-status: { en: draft, es: draft }
-translated: { es: "2f9b51 b6fe39 c41c5d 08974c b63740 fcae83 36ee9b" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "3b2274 b1d8ec ea2afa 14fa6a cf9eba 75875c be4557", uk: "3b2274 b1d8ec ea2afa 14fa6a cf9eba 75875c be4557" }
 
-title: { en: "Present Perfect: he comido", es: "El pretérito perfecto: he comido" }
+title: { en: "Present Perfect: he comido", es: "El pretérito perfecto: he comido", uk: "Перфект: he comido" }
 summary:
   lead:
     en: ["The present perfect joins ", { term: haber }, " and a participle to link a past action to now: ", { term: he comido }, ", ", { term: has visto }, "."]
     es: ["El pretérito perfecto combina ", { term: haber }, " y un participio para relacionar una acción pasada con el presente: ", { term: he comido }, ", ", { term: has visto }, "."]
+    uk: ["Перфект поєднує ", { term: haber }, " і дієприкметник, щоб пов’язати минулу дію з теперішнім: ", { term: he comido }, ", ", { term: has visto }, "."]
   rule:
     en: ["The participle never changes, and nothing goes between ", { term: haber }, " and the participle:"]
     es: ["El participio no cambia nunca, y nada se pone entre ", { term: haber }, " y el participio:"]
+    uk: ["Дієприкметник ніколи не змінюється, і між ", { term: haber }, " та дієприкметником нічого не ставлять:"]
   ex: { examples: [["Ana ", { target: ha llegado }, "."], ["Ya lo ", { target: hemos visto }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto } }
-        - { key: rule, label: { en: Rule, es: Regla } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
         - level: A2
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: { pattern: [{ alternatives: [{ term: he }, { term: has }, { term: ha }, { term: hemos }, { term: han }] }, { slot: past participle }] }
             es: { pattern: [{ alternatives: [{ term: he }, { term: has }, { term: ha }, { term: hemos }, { term: han }] }, { slot: past participle }] }
+            uk: { pattern: [{ alternatives: [{ term: he }, { term: has }, { term: ha }, { term: hemos }, { term: han }] }, { slot: { en: past participle, es: participio pasado, uk: дієприкметник } }] }
           ex: ["¿", { target: Has estado }, " en Perú?"]
-          tr: { en: Have you been to Peru? }
+          tr: { en: Have you been to Peru?, uk: "Ти бував у Перу?" }
         - level: A2
           variety: es-ES
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: [{ term: vosotros }, ": ", { pattern: [{ term: habéis }, { slot: past participle }] }]
             es: [{ term: vosotros }, ": ", { pattern: [{ term: habéis }, { slot: past participle }] }]
+            uk: [{ term: vosotros }, ": ", { pattern: [{ term: habéis }, { slot: { en: past participle, es: participio pasado, uk: дієприкметник } }] }]
           ex: ["¿", { target: Habéis terminado }, "?"]
-          tr: { en: Have you finished? }
+          tr: { en: Have you finished?, uk: "Ви вже закінчили?" }
         - level: A2
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: ["participle: ", { mapping: [{ term: hablar }, { term: hablado }] }, ", ", { mapping: [{ term: comer }, { term: comido }] }, ", ", { mapping: [{ term: vivir }, { term: vivido }] }]
             es: ["participio: ", { mapping: [{ term: hablar }, { term: hablado }] }, ", ", { mapping: [{ term: comer }, { term: comido }] }, ", ", { mapping: [{ term: vivir }, { term: vivido }] }]
+            uk: ["дієприкметник: ", { mapping: [{ term: hablar }, { term: hablado }] }, ", ", { mapping: [{ term: comer }, { term: comido }] }, ", ", { mapping: [{ term: vivir }, { term: vivido }] }]
           ex: ["Nunca ", { target: he vivido }, " sola."]
-          tr: { en: "I've never lived on my own." }
+          tr: { en: "I've never lived on my own.", uk: "Я ніколи не жила сама." }
         - level: A2
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: ["irregular participles: ", { mapping: [{ term: hacer }, { term: hecho }] }, ", ", { mapping: [{ term: escribir }, { term: escrito }] }, ", ", { mapping: [{ term: ver }, { term: visto }] }]
             es: ["participios irregulares: ", { mapping: [{ term: hacer }, { term: hecho }] }, ", ", { mapping: [{ term: escribir }, { term: escrito }] }, ", ", { mapping: [{ term: ver }, { term: visto }] }]
+            uk: ["неправильні дієприкметники: ", { mapping: [{ term: hacer }, { term: hecho }] }, ", ", { mapping: [{ term: escribir }, { term: escrito }] }, ", ", { mapping: [{ term: ver }, { term: visto }] }]
           ex: ["Ya ", { target: he hecho }, " la cena."]
-          tr: { en: "I've already made dinner." }
+          tr: { en: "I've already made dinner.", uk: "Я вже приготував вечерю." }
         - level: A2
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: ["more irregular participles: ", { mapping: [{ term: decir }, { term: dicho }] }, ", ", { mapping: [{ term: poner }, { term: puesto }] }, ", ", { mapping: [{ term: volver }, { term: vuelto }] }, ", ", { mapping: [{ term: abrir }, { term: abierto }] }]
             es: ["más participios irregulares: ", { mapping: [{ term: decir }, { term: dicho }] }, ", ", { mapping: [{ term: poner }, { term: puesto }] }, ", ", { mapping: [{ term: volver }, { term: vuelto }] }, ", ", { mapping: [{ term: abrir }, { term: abierto }] }]
+            uk: ["ще неправильні дієприкметники: ", { mapping: [{ term: decir }, { term: dicho }] }, ", ", { mapping: [{ term: poner }, { term: puesto }] }, ", ", { mapping: [{ term: volver }, { term: vuelto }] }, ", ", { mapping: [{ term: abrir }, { term: abierto }] }]
           ex: ["¿Quién ", { target: ha abierto }, " la ventana?"]
-          tr: { en: Who has opened the window? }
+          tr: { en: Who has opened the window?, uk: "Хто відчинив вікно?" }
         - level: A2
-          point: { en: Use, es: Uso }
+          point: { en: Use, es: Uso, uk: "Вживання" }
           rule:
             en: ["experience up to now, with ", { term: alguna vez }, " and ", { term: nunca }]
             es: ["la experiencia hasta ahora, con ", { term: alguna vez }, " y ", { term: nunca }]
+            uk: ["досвід аж до тепер, з ", { term: alguna vez }, " і ", { term: nunca }]
           ex: ["¿", { target: Has probado }, " el mole ", { signal: alguna vez }, "?"]
-          tr: { en: Have you ever tried mole? }
+          tr: { en: Have you ever tried mole?, uk: "Ти колись куштував моле?" }
         - level: A2
-          point: { en: Use, es: Uso }
+          point: { en: Use, es: Uso, uk: "Вживання" }
           rule:
             en: ["done or not yet done, with ", { term: ya }, " and ", { term: todavía no }]
             es: ["lo hecho o lo pendiente, con ", { term: ya }, " y ", { term: todavía no }]
+            uk: ["зроблене чи ще не зроблене, з ", { term: ya }, " і ", { term: todavía no }]
           ex: [{ signal: Todavía no }, " ", { target: he terminado }, "."]
-          tr: { en: "I haven't finished yet." }
+          tr: { en: "I haven't finished yet.", uk: "Я ще не закінчив." }
         - level: A2
           variety: es-ES
-          point: { en: Use, es: Uso }
+          point: { en: Use, es: Uso, uk: "Вживання" }
           rule:
             en: ["a time that includes now: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: este año }]
             es: ["un tiempo que incluye el presente: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: este año }]
+            uk: ["час, що охоплює теперішнє: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: este año }]
           ex: [{ signal: Esta mañana }, " ", { target: he ido }, " al médico."]
-          tr: { en: I went to the doctor this morning. }
+          tr: { en: I went to the doctor this morning., uk: "Сьогодні вранці я ходив до лікаря." }
         - level: A2
-          point: { en: Use, es: Uso }
+          point: { en: Use, es: Uso, uk: "Вживання" }
           rule:
             en: "a situation that goes on up to now"
             es: "una situación que llega hasta ahora"
+            uk: "ситуація, що триває аж до тепер"
           ex: [{ signal: Siempre }, " ", { target: he vivido }, " aquí."]
-          tr: { en: "I've always lived here." }
+          tr: { en: "I've always lived here.", uk: "Я завжди жив тут." }
         - level: A2
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: ["object pronouns and ", { term: no }, " go before ", { term: haber }]
             es: ["los pronombres de objeto y ", { term: no }, " van delante de ", { term: haber }]
+            uk: ["займенники-додатки та ", { term: no }, " стоять перед ", { term: haber }]
           ex: ["No ", { target: lo he visto }, "."]
-          tr: { en: "I haven't seen it." }
+          tr: { en: "I haven't seen it.", uk: "Я цього не бачив." }
         - level: A2
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: ["a finished time such as ", { term: ayer }, " takes the preterite"]
             es: ["un tiempo terminado como ", { term: ayer }, " lleva el indefinido"]
+            uk: ["завершений час, як-от ", { term: ayer }, ", вимагає простого минулого"]
           ex: [{ signal: Ayer }, " ", { target: fui }, " al cine."]
-          tr: { en: I went to the cinema yesterday. }
+          tr: { en: I went to the cinema yesterday., uk: "Учора я ходив у кіно." }
 
 sections:
-  - title: { en: Overview, es: Visión general }
+  - title: { en: Overview, es: Visión general, uk: "Огляд" }
     role: overview
     content:
       - type: list
@@ -117,38 +130,43 @@ sections:
             text:
               en: "The present perfect tells a past action in a time that reaches up to now."
               es: "El pretérito perfecto cuenta una acción pasada en un tiempo que llega hasta ahora."
+              uk: "Перфект передає минулу дію в часі, що триває аж до тепер."
             ex: ["¿", { target: Has visto }, " mis llaves?"]
-            tr: { en: Have you seen my keys? }
+            tr: { en: Have you seen my keys?, uk: "Ти не бачив моїх ключів?" }
           - type: note
             level: A2
             text:
               en: ["Spanish grammars call it ", { term: pretérito perfecto }, " or ", { term: pretérito perfecto compuesto }, "."]
               es: ["Las gramáticas lo llaman ", { term: pretérito perfecto }, " o ", { term: pretérito perfecto compuesto }, "."]
+              uk: ["Іспанські граматики називають його ", { term: pretérito perfecto }, " або ", { term: pretérito perfecto compuesto }, "."]
           - type: note
             level: A2
             variety: es-ES
             text:
               en: "In Spain, it also tells actions finished earlier today, this week or this year."
               es: "En España, también cuenta acciones terminadas hoy, esta semana o este año."
+              uk: "В Іспанії він передає також дії, завершені сьогодні, цього тижня чи цього року."
           - type: note
             level: A2
             variety: es-419
             text:
               en: ["In most of Latin America, it tells experiences and situations up to now, and a finished action, today's included, takes the ", { link: preterite, to: es.pasados.preterito-indefinido }, "; Andean Spanish (Peru, Bolivia, highland Ecuador) uses the perfect for today, as Spain does."]
               es: ["En la mayor parte de Latinoamérica, cuenta experiencias y situaciones hasta ahora, y una acción terminada, también la de hoy, lleva el ", { link: indefinido, to: es.pasados.preterito-indefinido }, "; el español andino (Perú, Bolivia, la sierra de Ecuador) usa el perfecto para hoy, como en España."]
+              uk: ["У більшій частині Латинської Америки він передає досвід і ситуації, що тривають аж до тепер, а завершена дія, і сьогоднішня теж, стоїть у ", { link: простому минулому, to: es.pasados.preterito-indefinido }, "; андська іспанська (Перу, Болівія, гірський Еквадор) уживає для сьогоднішнього перфект, як в Іспанії."]
           - type: note
             level: A2
             text:
               en: ["Both tenses side by side: ", { link: Present Perfect or Preterite, to: es.pasados.perfecto-indefinido }, "."]
               es: ["Los dos tiempos, uno al lado del otro: ", { link: Perfecto o indefinido, to: es.pasados.perfecto-indefinido }, "."]
+              uk: ["Обидва часи поруч: ", { link: Перфект чи простий минулий, to: es.pasados.perfecto-indefinido }, "."]
 
-  - title: { en: "Form: haber and the participle", es: "Forma: haber y el participio" }
+  - title: { en: "Form: haber and the participle", es: "Forma: haber y el participio", uk: "Форма: haber і дієприкметник" }
     role: form
     features: { tense: prs, aspect: prf }
     content:
       - type: paradigm
         columns:
-          - { key: person, label: { en: Person, es: Persona } }
+          - { key: person, label: { en: Person, es: Persona, uk: "Особа" } }
           - { key: haber, label: haber }
           - { key: ar, label: hablar }
           - { key: er, label: comer }
@@ -166,47 +184,51 @@ sections:
             text:
               en: ["The participle adds ", { ending: ado }, " to ", { term: -ar }, " verbs and ", { ending: ido }, " to ", { term: -er }, " and ", { term: -ir }, " verbs."]
               es: ["El participio añade ", { ending: ado }, " a los verbos en ", { term: -ar }, " e ", { ending: ido }, " a los verbos en ", { term: -er }, " y en ", { term: -ir }, "."]
+              uk: ["Дієприкметник додає ", { ending: ado }, " до дієслів на ", { term: -ar }, " і ", { ending: ido }, " до дієслів на ", { term: -er }, " та ", { term: -ir }, "."]
             ex: { examples: [["¿", { target: Has trabajado }, " en un hotel?"], ["Nunca ", { target: he vivido }, " sola."]] }
-            tr: { en: { examples: [Have you worked in a hotel?, "I've never lived on my own."] } }
+            tr: { en: { examples: [Have you worked in a hotel?, "I've never lived on my own."] }, uk: { examples: ["Ти працював у готелі?", "Я ніколи не жила сама."] } }
           - type: rule
             level: A2
             text:
               en: ["After ", { term: haber }, ", the participle never changes for person, gender or number:"]
               es: ["Después de ", { term: haber }, ", el participio no cambia nunca de persona, género ni número:"]
+              uk: ["Після ", { term: haber }, " дієприкметник ніколи не змінюється ні за особою, ні за родом, ні за числом:"]
             ex: { examples: [["Ella ", { target: ha llegado }, "."], ["Ellas ", { target: han llegado }, "."]] }
-            tr: { en: { examples: [She has arrived., They have arrived.] } }
+            tr: { en: { examples: [She has arrived., They have arrived.] }, uk: { examples: ["Вона приїхала.", "Вони приїхали."] } }
           - type: rule
             level: A2
             text:
               en: ["Nothing goes between ", { term: haber }, " and the participle; object pronouns and ", { term: no }, " go before ", { term: haber }, ":"]
               es: ["Nada se pone entre ", { term: haber }, " y el participio; los pronombres de objeto y ", { term: no }, " van delante de ", { term: haber }, ":"]
+              uk: ["Між ", { term: haber }, " і дієприкметником нічого не ставлять; займенники-додатки та ", { term: no }, " стоять перед ", { term: haber }, ":"]
             ex: { examples: [["No ", { target: lo he visto }, "."], ["Ya ", { target: te lo he dicho }, "."]] }
-            tr: { en: { examples: ["I haven't seen it.", "I've already told you."] } }
+            tr: { en: { examples: ["I haven't seen it.", "I've already told you."] }, uk: { examples: ["Я цього не бачив.", "Я ж тобі вже казав."] } }
           - type: rule
             level: A2
             text:
               en: ["After a vowel, the ending takes an accent: ", { term: leído }, ", ", { term: oído }, ", ", { term: traído }, "."]
               es: ["Después de una vocal, la terminación lleva tilde: ", { term: leído }, ", ", { term: oído }, ", ", { term: traído }, "."]
+              uk: ["Після голосної закінчення має графічний наголос: ", { term: leído }, ", ", { term: oído }, ", ", { term: traído }, "."]
             ex: ["¿", { target: Has leído }, " este libro?"]
-            tr: { en: Have you read this book? }
+            tr: { en: Have you read this book?, uk: "Ти читав цю книжку?" }
 
-  - title: { en: "Form: irregular participles", es: "Forma: participios irregulares" }
+  - title: { en: "Form: irregular participles", es: "Forma: participios irregulares", uk: "Форма: неправильні дієприкметники" }
     role: form
     features: { tense: prs, aspect: prf }
     content:
       - type: usage
         columns:
-          - { key: participle, label: { en: Verb and participle, es: Verbo y participio } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: participle, label: { en: Verb and participle, es: Verbo y participio, uk: "Дієслово й дієприкметник" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A2, participle: { mapping: [{ term: hacer }, { term: hecho }] }, ex: ["Ya ", { target: he hecho }, " la cena."], tr: { en: "I've already made dinner." } }
-          - { level: A2, participle: { mapping: [{ term: escribir }, { term: escrito }] }, ex: ["Nunca ", { target: he escrito }, " un poema."], tr: { en: "I've never written a poem." } }
-          - { level: A2, participle: { mapping: [{ term: ver }, { term: visto }] }, ex: ["¿", { target: Has visto }, " esta película?"], tr: { en: Have you seen this film? } }
-          - { level: A2, participle: { mapping: [{ term: decir }, { term: dicho }] }, ex: ["¿Qué te ", { target: ha dicho }, " el médico?"], tr: { en: What has the doctor told you? } }
-          - { level: A2, participle: { mapping: [{ term: poner }, { term: puesto }] }, ex: ["¿Dónde ", { target: has puesto }, " las llaves?"], tr: { en: Where have you put the keys? } }
-          - { level: A2, participle: { mapping: [{ term: volver }, { term: vuelto }] }, ex: ["Mi hermano todavía no ", { target: ha vuelto }, "."], tr: { en: "My brother hasn't come back yet." } }
-          - { level: A2, participle: { mapping: [{ term: abrir }, { term: abierto }] }, ex: ["¿Quién ", { target: ha abierto }, " la ventana?"], tr: { en: Who has opened the window? } }
-          - { level: A2, participle: { mapping: [{ term: romper }, { term: roto }] }, ex: ["Alguien ", { target: ha roto }, " el vaso."], tr: { en: Someone has broken the glass. } }
+          - { level: A2, participle: { mapping: [{ term: hacer }, { term: hecho }] }, ex: ["Ya ", { target: he hecho }, " la cena."], tr: { en: "I've already made dinner.", uk: "Я вже приготував вечерю." } }
+          - { level: A2, participle: { mapping: [{ term: escribir }, { term: escrito }] }, ex: ["Nunca ", { target: he escrito }, " un poema."], tr: { en: "I've never written a poem.", uk: "Я ніколи не писав віршів." } }
+          - { level: A2, participle: { mapping: [{ term: ver }, { term: visto }] }, ex: ["¿", { target: Has visto }, " esta película?"], tr: { en: Have you seen this film?, uk: "Ти дивився цей фільм?" } }
+          - { level: A2, participle: { mapping: [{ term: decir }, { term: dicho }] }, ex: ["¿Qué te ", { target: ha dicho }, " el médico?"], tr: { en: What has the doctor told you?, uk: "Що тобі сказав лікар?" } }
+          - { level: A2, participle: { mapping: [{ term: poner }, { term: puesto }] }, ex: ["¿Dónde ", { target: has puesto }, " las llaves?"], tr: { en: Where have you put the keys?, uk: "Куди ти поклав ключі?" } }
+          - { level: A2, participle: { mapping: [{ term: volver }, { term: vuelto }] }, ex: ["Mi hermano todavía no ", { target: ha vuelto }, "."], tr: { en: "My brother hasn't come back yet.", uk: "Мій брат ще не повернувся." } }
+          - { level: A2, participle: { mapping: [{ term: abrir }, { term: abierto }] }, ex: ["¿Quién ", { target: ha abierto }, " la ventana?"], tr: { en: Who has opened the window?, uk: "Хто відчинив вікно?" } }
+          - { level: A2, participle: { mapping: [{ term: romper }, { term: roto }] }, ex: ["Alguien ", { target: ha roto }, " el vaso."], tr: { en: Someone has broken the glass., uk: "Хтось розбив склянку." } }
       - type: list
         items:
           - type: note
@@ -214,29 +236,30 @@ sections:
             text:
               en: ["Every irregular participle in one table: ", { link: Irregular Verbs Table, to: es.pasados.verbos-irregulares }, "."]
               es: ["Todos los participios irregulares en una tabla: ", { link: Tabla de verbos irregulares, to: es.pasados.verbos-irregulares }, "."]
+              uk: ["Усі неправильні дієприкметники в одній таблиці: ", { link: Таблиця неправильних дієслів, to: es.pasados.verbos-irregulares }, "."]
 
-  - title: { en: Use, es: Uso }
+  - title: { en: Use, es: Uso, uk: "Вживання" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use, es: Uso } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: use, label: { en: Use, es: Uso, uk: "Вживання" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
           - level: A2
-            use: { en: ["Experience up to now: ", { term: alguna vez }, ", ", { term: nunca }], es: ["La experiencia hasta ahora: ", { term: alguna vez }, ", ", { term: nunca }] }
+            use: { en: ["Experience up to now: ", { term: alguna vez }, ", ", { term: nunca }], es: ["La experiencia hasta ahora: ", { term: alguna vez }, ", ", { term: nunca }], uk: ["Досвід аж до тепер: ", { term: alguna vez }, ", ", { term: nunca }] }
             ex: { examples: [["¿", { target: Has estado }, " en México ", { signal: alguna vez }, "?"], [{ signal: Nunca }, " ", { target: he visto }, " la nieve."]] }
-            tr: { en: { examples: [Have you ever been to Mexico?, "I've never seen snow."] } }
+            tr: { en: { examples: [Have you ever been to Mexico?, "I've never seen snow."] }, uk: { examples: ["Ти колись бував у Мексиці?", "Я ніколи не бачив снігу."] } }
           - level: A2
-            use: { en: ["Done or not yet done: ", { term: ya }, ", ", { term: todavía no }], es: ["Lo hecho o lo pendiente: ", { term: ya }, ", ", { term: todavía no }] }
+            use: { en: ["Done or not yet done: ", { term: ya }, ", ", { term: todavía no }], es: ["Lo hecho o lo pendiente: ", { term: ya }, ", ", { term: todavía no }], uk: ["Зроблене чи ще не зроблене: ", { term: ya }, ", ", { term: todavía no }] }
             ex: { examples: [[{ signal: Ya }, " ", { target: he comprado }, " el pan."], [{ signal: Todavía no }, " ", { target: he terminado }, "."]] }
-            tr: { en: { examples: ["I've already bought the bread.", "I haven't finished yet."] } }
+            tr: { en: { examples: ["I've already bought the bread.", "I haven't finished yet."] }, uk: { examples: ["Я вже купив хліб.", "Я ще не закінчив."] } }
           - level: A2
             variety: es-ES
-            use: { en: ["A time that includes now: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: esta semana }, ", ", { term: este año }], es: ["Un tiempo que incluye el presente: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: esta semana }, ", ", { term: este año }] }
+            use: { en: ["A time that includes now: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: esta semana }, ", ", { term: este año }], es: ["Un tiempo que incluye el presente: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: esta semana }, ", ", { term: este año }], uk: ["Час, що охоплює теперішнє: ", { term: hoy }, ", ", { term: esta mañana }, ", ", { term: esta semana }, ", ", { term: este año }] }
             ex: { examples: [[{ signal: Esta mañana }, " ", { target: he ido }, " al médico."], [{ signal: Esta semana }, " ", { target: hemos trabajado }, " mucho."]] }
-            tr: { en: { examples: [I went to the doctor this morning., "We've worked a lot this week."] } }
-          - { level: A2, use: { en: A situation that goes on up to now, es: Una situación que llega hasta ahora }, ex: [{ signal: Siempre }, " ", { target: he vivido }, " en esta ciudad."], tr: { en: "I've always lived in this city." } }
+            tr: { en: { examples: [I went to the doctor this morning., "We've worked a lot this week."] }, uk: { examples: ["Сьогодні вранці я ходив до лікаря.", "Цього тижня ми багато працювали."] } }
+          - { level: A2, use: { en: A situation that goes on up to now, es: Una situación que llega hasta ahora, uk: "Ситуація, що триває аж до тепер" }, ex: [{ signal: Siempre }, " ", { target: he vivido }, " en esta ciudad."], tr: { en: "I've always lived in this city.", uk: "Я завжди жив у цьому місті." } }
       - type: list
         items:
           - type: rule
@@ -244,25 +267,28 @@ sections:
             text:
               en: ["A finished time, such as ", { term: ayer }, " or ", { term: el año pasado }, ", takes the preterite in every variety:"]
               es: ["Un tiempo terminado, como ", { term: ayer }, " o ", { term: el año pasado }, ", lleva el indefinido en todas las variedades:"]
+              uk: ["Завершений час, як-от ", { term: ayer }, " чи ", { term: el año pasado }, ", у всіх варіантах мови вимагає простого минулого:"]
             ex: [{ signal: Ayer }, " fui al cine."]
-            tr: { en: I went to the cinema yesterday. }
+            tr: { en: I went to the cinema yesterday., uk: "Учора я ходив у кіно." }
           - type: note
             level: A2
             variety: es-419
             text:
               en: "In most of Latin America, an action finished earlier today takes the preterite; Andean Spanish (Peru, Bolivia, highland Ecuador) takes the perfect, as Spain does:"
               es: "En la mayor parte de Latinoamérica, una acción terminada hoy lleva el indefinido; el español andino (Perú, Bolivia, la sierra de Ecuador) lleva el perfecto, como en España:"
+              uk: "У більшій частині Латинської Америки дія, завершена сьогодні, стоїть у простому минулому; андська іспанська (Перу, Болівія, гірський Еквадор) уживає перфект, як в Іспанії:"
             ex: [{ signal: Esta mañana }, " fui al médico."]
-            tr: { en: I went to the doctor this morning. }
+            tr: { en: I went to the doctor this morning., uk: "Сьогодні вранці я ходив до лікаря." }
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: Ayer he visto a Juan., right: ["Ayer ", { target: vi }, " a Juan."], rule: { en: [{ term: ayer }, " is a finished time: preterite"], es: [{ term: ayer }, " es un tiempo terminado: indefinido"] } }
-          - { level: A2, wrong: He escribido una carta., right: [{ target: He escrito }, " una carta."], rule: { en: ["irregular participle: ", { mapping: [{ term: escribir }, { term: escrito }] }], es: ["participio irregular: ", { mapping: [{ term: escribir }, { term: escrito }] }] } }
-          - { level: A2, wrong: Ellas han llegadas., right: ["Ellas ", { target: han llegado }, "."], rule: { en: ["after ", { term: haber }, ", the participle never changes"], es: ["después de ", { term: haber }, ", el participio no cambia"] } }
-          - { level: A2, wrong: He lo visto., right: [{ target: Lo he visto }, "."], rule: { en: ["the pronoun goes before ", { term: haber }], es: ["el pronombre va delante de ", { term: haber }] } }
-          - { level: A2, wrong: Ha ya llegado., right: ["Ya ", { target: ha llegado }, "."], rule: { en: ["nothing goes between ", { term: haber }, " and the participle"], es: ["nada se pone entre ", { term: haber }, " y el participio"] } }
+          - { level: A2, wrong: Ayer he visto a Juan., right: ["Ayer ", { target: vi }, " a Juan."], rule: { en: [{ term: ayer }, " is a finished time: preterite"], es: [{ term: ayer }, " es un tiempo terminado: indefinido"], uk: [{ term: ayer }, " — це завершений час: простий минулий"] } }
+          - { level: A2, wrong: He escribido una carta., right: [{ target: He escrito }, " una carta."], rule: { en: ["irregular participle: ", { mapping: [{ term: escribir }, { term: escrito }] }], es: ["participio irregular: ", { mapping: [{ term: escribir }, { term: escrito }] }], uk: ["неправильний дієприкметник: ", { mapping: [{ term: escribir }, { term: escrito }] }] } }
+          - { level: A2, wrong: Ellas han llegadas., right: ["Ellas ", { target: han llegado }, "."], rule: { en: ["after ", { term: haber }, ", the participle never changes"], es: ["después de ", { term: haber }, ", el participio no cambia"], uk: ["після ", { term: haber }, " дієприкметник ніколи не змінюється"] } }
+          - { level: A2, wrong: He lo visto., right: [{ target: Lo he visto }, "."], rule: { en: ["the pronoun goes before ", { term: haber }], es: ["el pronombre va delante de ", { term: haber }], uk: ["займенник стоїть перед ", { term: haber }] } }
+          - { level: A2, wrong: Ha ya llegado., right: ["Ya ", { target: ha llegado }, "."], rule: { en: ["nothing goes between ", { term: haber }, " and the participle"], es: ["nada se pone entre ", { term: haber }, " y el participio"], uk: ["між ", { term: haber }, " і дієприкметником нічого не ставлять"] } }
           - { level: A2, speakers: [en], wrong: Tengo comido., right: [{ target: He comido }, "."], rule: { en: ["to say “I have eaten”, the helper is ", { term: haber }, ", not ", { term: tener }] } }
+          - { level: A2, speakers: [uk], wrong: "¿Leías este libro?", right: ["¿", { target: Has leído }, " este libro?"], rule: { uk: ["питання про досвід («Ти читав цю книжку?») — перфект, а не імперфект, хоча українською «читав» недоконаного виду; ", { term: ¿Leías este libro? }, " означає «Ти тоді читав цю книжку?»"] } }

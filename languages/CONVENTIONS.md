@@ -17,16 +17,18 @@ grows toward N languages, each explained in N languages.
 
 - `curriculum.yaml` lists the languages being learned and `site.yaml` the explanation languages.
 - `explain` on a language being learned lists the explanation languages it is written for, the
-  source first (§6); a language without it is written for every one. Its tracks, the links on its
-  home page card, its `hreflang` links and its sitemap entries follow that list (§10).
+  language itself first: its explanations are written in the language being learned, and each other
+  explanation language translates them (§6). A language without `explain` is written for every one,
+  in `site.yaml` order. Its tracks, the links on its home page card, its `hreflang` links and its
+  sitemap entries follow that list (§10).
 - Every topic exists in each explanation language of its language: one topic file holds its
   explanations in each (§4), its examples translated into each (§6) and the typical errors of each
   one's speakers.
 - Topics in different languages pair through shared `concepts` keys (§9).
 - The library holds English (`en`) in eleven tracks: explained in English, Ukrainian (`uk`), Spanish
   (`es`), Portuguese (`pt`, Brazilian), French (`fr`), German (`de`), Italian (`it`), Polish (`pl`),
-  Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). It holds Spanish (`es`) in two: explained
-  in English and in Spanish.
+  Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). It holds Spanish (`es`) in three: explained
+  in Spanish, English and Ukrainian.
 - An explanation language is data alone: its entry in `site.yaml` and its text in the files of
   `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.
@@ -184,7 +186,7 @@ named after its mark.
 |---|---|
 | `id`, `lang`, `kind`, `tags`, `concepts`, `related` | identity and links |
 | `status` | `draft` or `approved`, per explanation language |
-| `translated` | per explanation language but the source, the fingerprint of the source text its text follows (§6) |
+| `translated` | per explanation language but the source (the language being learned), the fingerprint of the source text its text follows (§6) |
 | `title` | localized |
 | `summary` | `lead` and `rule`, localized, and the rule's examples in `ex`; the rules below |
 | `cheatsheet` | `content`: the whole topic in one table, section 00 (§8) |
@@ -266,12 +268,14 @@ leaves out the key of a cell with nothing in it.
   an item, a paragraph or an example cell renders as *— translation* after the example.
 - When the two languages are the same, examples stand alone: a `tr` carries every explanation
   language but the language being learned.
-- Translations follow the source: English, the first explanation language of `site.yaml` and of every
-  language's `explain`. Every other explanation language of the topic's language carries in `translated`
-  the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section, over the English
-  explanations and the text in the language being learned. `npm run check` names every part whose
-  source changed since; once the translation catches up, `npm run translated -- {id} {lang}` stamps it
-  again. An error row for other speakers stays outside the fingerprint.
+- Translations follow the source: the explanations in the language being learned, the first language
+  of its `explain`. English is the source of the English track, and Spanish of the Spanish track. Every
+  other explanation language of the topic's language carries in `translated` the fingerprint of the
+  source text its text was written from: one hash per part, the title and summary, the cheatsheet, then
+  each section, over the source explanations and the text in the language being learned. `npm run check`
+  names every part whose source changed since; once the translation catches up,
+  `npm run translated -- {id} {lang}` stamps it again. An error row for other speakers stays outside the
+  fingerprint.
 - A page names the language of each piece for screen readers: text in the language being learned,
   and every mark of §12 that holds it inside an explanation, carries that language; a gloss or a
   named slot inside an example carries the reader's.
@@ -410,10 +414,11 @@ Every page has a clean, stable, named URL.
 
 Topics are written one at a time. The next topic starts only after the current one is approved.
 
-1. Copy `templates/topic.yaml` into the topic folder and write it in each explanation language of its
-   language, with its cheatsheet; set `status` to `draft` for each.
-2. Run `npm run translated -- {id}` once each explanation language is written, then `npm run check`
-   until it reports no problems.
+1. Copy `templates/topic.yaml` into the topic folder and write it in the language being learned first,
+   with its cheatsheet, then translate it into each other explanation language of its language; set
+   `status` to `draft` for each.
+2. Run `npm run translated -- {id}` once each translation is written, then `npm run check` until it
+   reports no problems.
 3. Hand the topic to the owner for review in the web app (`npm start`).
 4. Apply the requested changes; repeat until the owner approves.
 5. Set `status` to `approved` for each explanation language.

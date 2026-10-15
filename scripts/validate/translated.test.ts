@@ -2,34 +2,40 @@
 // and asks for a stamp a translation lacks; text in the other languages, inside an example too, and rows
 // for other speakers leave the fingerprint as it is.
 import { describe, expect, test } from "bun:test";
-import { changedParts, fingerprint, SOURCE, sourceParts } from "../fingerprint.ts";
+import { changedParts, fingerprint, sourceOf, sourceParts } from "../fingerprint.ts";
 import { EXPLAIN_CODES, type ErrorsBlock, type ListBlock, type Topic } from "../lib.ts";
 import { problemsAfter, SAMPLE, sampleBlocks } from "../sample-topic.ts";
 import { checkTranslated } from "./topic-translated.ts";
 
-// The explanation languages that translate the source, and the sample stamped as up to date in each, then changed.
+// The sample is an English topic: English is its source, and the other explanation languages translate it; the
+// sample stamped as up to date in each, then changed.
+const SOURCE = sourceOf(EXPLAIN_CODES);
 const others = EXPLAIN_CODES.filter((e) => e !== SOURCE);
 const stamped = (change: (t: Topic) => void): string[] =>
   problemsAfter((t) => {
-    t.translated = Object.fromEntries(others.map((e) => [e, fingerprint(SAMPLE)]));
+    t.translated = Object.fromEntries(others.map((e) => [e, fingerprint(SAMPLE, SOURCE)]));
     change(t);
   }, checkTranslated);
 
 describe("the fingerprint", () => {
   test("holds one hash per part: the title and summary, the cheatsheet, each section", () => {
-    expect(sourceParts(SAMPLE)).toHaveLength(2 + SAMPLE.sections.length);
-    expect(fingerprint(SAMPLE)).toMatch(/^[0-9a-f]{6}( [0-9a-f]{6})*$/);
-    expect(fingerprint(structuredClone(SAMPLE))).toBe(fingerprint(SAMPLE));
+    expect(sourceParts(SAMPLE, SOURCE)).toHaveLength(2 + SAMPLE.sections.length);
+    expect(fingerprint(SAMPLE, SOURCE)).toMatch(/^[0-9a-f]{6}( [0-9a-f]{6})*$/);
+    expect(fingerprint(structuredClone(SAMPLE), SOURCE)).toBe(fingerprint(SAMPLE, SOURCE));
   });
   test("names each changed part as the page numbers it", () => {
     const t = structuredClone(SAMPLE);
     t.summary.lead.en = "Another lead.";
     const [item] = (sampleBlocks(t)[1] as ListBlock).items;
     if (item) item.ex = "Another example.";
-    expect(changedParts(t, fingerprint(SAMPLE))).toEqual(["the title and summary", "01 One"]);
-    expect(changedParts(t, `${fingerprint(SAMPLE)} 000000`)).toEqual(["the title and summary", "01 One", "1 section(s) removed"]);
+    expect(changedParts(t, fingerprint(SAMPLE, SOURCE), SOURCE)).toEqual(["the title and summary", "01 One"]);
+    expect(changedParts(t, `${fingerprint(SAMPLE, SOURCE)} 000000`, SOURCE)).toEqual([
+      "the title and summary",
+      "01 One",
+      "1 section(s) removed",
+    ]);
     t.cheatsheet.content = [];
-    expect(changedParts(t, fingerprint(SAMPLE))).toContain("00 Cheatsheet");
+    expect(changedParts(t, fingerprint(SAMPLE, SOURCE), SOURCE)).toContain("00 Cheatsheet");
   });
 });
 
@@ -72,8 +78,8 @@ describe("the check", () => {
     const t = structuredClone(SAMPLE);
     const [item] = (sampleBlocks(t)[1] as ListBlock).items;
     if (item) item.ex = { pattern: ["take", { slot: { en: "noun", uk: "іменник" } }] };
-    const before = fingerprint(t);
+    const before = fingerprint(t, SOURCE);
     if (item) item.ex = { pattern: ["take", { slot: { en: "noun", uk: "іменник", es: "sustantivo" } }] };
-    expect(fingerprint(t)).toBe(before);
+    expect(fingerprint(t, SOURCE)).toBe(before);
   });
 });

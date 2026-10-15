@@ -5,121 +5,134 @@ kind: foundations
 tags: [days, months, dates, years]
 concepts: [dates]
 related: [es.fundamentos.numeros, es.fundamentos.la-hora, es.preposiciones.preposiciones-basicas]
-status: { en: draft, es: draft }
-translated: { es: "7e3d46 f38915 afb1f3 441ef4 1ce523 8e40fe 0b9d3f" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "1388a8 b5bfa6 f568a5 63a3c9 54543d f9642a 6b1c16", uk: "1388a8 b5bfa6 f568a5 63a3c9 54543d f9642a 6b1c16" }
 
-title: { en: "Days, Months and Dates", es: "Días, meses y fechas" }
+title: { en: "Days, Months and Dates", es: "Días, meses y fechas", uk: "Дні, місяці та дати" }
 summary:
   lead:
     en: ["The days of the week and the months, written with a small letter, and dates said as ", { term: el 5 de mayo }, "."]
     es: ["Los días de la semana y los meses, escritos con minúscula, y las fechas dichas como ", { term: el 5 de mayo }, "."]
+    uk: ["Дні тижня й місяці, які пишуть з малої літери, та дати, які вимовляють так: ", { term: "el 5 de mayo" }, "."]
   rule:
     en: ["A date is ", { term: el }, ", the number, ", { term: de }, " and the month:"]
     es: ["Una fecha lleva ", { term: el }, ", el número, ", { term: de }, " y el mes:"]
+    uk: ["Дата — це ", { term: "el" }, ", число, ", { term: "de" }, " і місяць:"]
   ex: ["Mi cumpleaños es ", { date: [{ target: el }, " 5 ", { target: de }, " mayo"], value: "--05-05" }, "."]
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto } }
-        - { key: rule, label: { en: Rule, es: Regla } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
         - level: A0
-          point: { en: Days, es: Días }
+          point: { en: Days, es: Días, uk: "Дні" }
           rule:
             en: ["the week starts on ", { term: lunes }, " and ends on ", { term: domingo }]
             es: ["la semana empieza el ", { term: lunes }, " y termina el ", { term: domingo }]
+            uk: ["тиждень починається в ", { term: "lunes" }, " і закінчується в ", { term: "domingo" }]
           ex: { examples: [{ target: { weekday: lunes, value: 1 } }, { target: { weekday: domingo, value: 7 } }] }
-          tr: { en: { examples: [Monday, Sunday] } }
+          tr: { en: { examples: [Monday, Sunday] }, uk: { examples: ["понеділок", "неділя"] } }
         - level: A0
-          point: { en: On a day, es: Un día concreto }
+          point: { en: On a day, es: Un día concreto, uk: "У певний день" }
           rule:
             en: [{ term: el }, " before a day, with no preposition; ", { term: los }, " for every week"]
             es: [{ term: el }, " delante del día, sin preposición; ", { term: los }, " para cada semana"]
+            uk: [{ term: "el" }, " перед днем, без прийменника; ", { term: "los" }, " — щотижня"]
           ex: { examples: [[{ target: el }, " ", { weekday: lunes, value: 1 }], [{ target: los }, " ", { weekday: lunes, value: 1 }]] }
-          tr: { en: { examples: [on Monday, on Mondays] } }
+          tr: { en: { examples: [on Monday, on Mondays] }, uk: { examples: ["у понеділок", "по понеділках"] } }
         - level: A0
-          point: { en: Months, es: Meses }
+          point: { en: Months, es: Meses, uk: "Місяці" }
           rule:
             en: ["twelve months, from ", { term: enero }, " to ", { term: diciembre }]
             es: ["doce meses, de ", { term: enero }, " a ", { term: diciembre }]
+            uk: ["дванадцять місяців, від ", { term: "enero" }, " до ", { term: "diciembre" }]
           ex: { examples: [{ target: { date: enero, value: "--01" } }, { target: { date: diciembre, value: "--12" } }] }
-          tr: { en: { examples: [January, December] } }
+          tr: { en: { examples: [January, December] }, uk: { examples: ["січень", "грудень"] } }
         - level: A0
-          point: { en: In a month, es: En un mes }
+          point: { en: In a month, es: En un mes, uk: "У певному місяці" }
           rule:
             en: [{ term: en }, " before a month, a season or a year"]
             es: [{ term: en }, " delante de un mes, una estación o un año"]
+            uk: [{ term: "en" }, " перед місяцем, порою року або роком"]
           ex: { examples: [[{ target: en }, " ", { date: mayo, value: "--05" }], [{ target: en }, " verano"]] }
-          tr: { en: { examples: [in May, in summer] } }
+          tr: { en: { examples: [in May, in summer] }, uk: { examples: ["у травні", "улітку"] } }
         - level: A0
-          point: { en: Small letters, es: Minúsculas }
+          point: { en: Small letters, es: Minúsculas, uk: "Мала літера" }
           rule:
             en: "days and months start with a small letter"
             es: "los días y los meses van con minúscula"
+            uk: "дні й місяці пишуть з малої літери"
           ex: ["Hoy es ", { target: { weekday: martes, value: 2 } }, "."]
-          tr: { en: Today is Tuesday. }
+          tr: { en: Today is Tuesday., uk: "Сьогодні вівторок." }
         - level: A0
-          point: { en: The date, es: La fecha }
+          point: { en: The date, es: La fecha, uk: "Дата" }
           rule:
             en: [{ pattern: [{ term: el }, { slot: number }, { term: de }, { slot: month }] }, "; the day is a plain number"]
             es: [{ pattern: [{ term: el }, { slot: number }, { term: de }, { slot: month }] }, "; el día es un número normal"]
+            uk: [{ pattern: [{ term: "el" }, { slot: "number" }, { term: "de" }, { slot: "month" }] }, "; день — звичайне число"]
           ex: { date: [{ target: el }, " 22 ", { target: de }, " marzo"], value: "--03-22" }
-          tr: { en: 22 March }
+          tr: { en: 22 March, uk: "22 березня" }
         - level: A0
-          point: { en: The first, es: El día 1 }
+          point: { en: The first, es: El día 1, uk: "Перше число" }
           rule:
             en: [{ alternatives: [{ term: el primero }, { term: el uno }] }, " for the first day of the month: both are correct"]
             es: [{ alternatives: [{ term: el primero }, { term: el uno }] }, " para el primer día del mes: los dos son correctos"]
+            uk: [{ alternatives: [{ term: "el primero" }, { term: "el uno" }] }, " для першого дня місяця: правильні обидва варіанти"]
           ex: { date: ["el ", { target: primero }, " de mayo"], value: "--05-01" }
-          tr: { en: 1 May }
+          tr: { en: 1 May, uk: "1 травня" }
         - level: A0
-          point: { en: Years, es: Años }
+          point: { en: Years, es: Años, uk: "Роки" }
           rule:
             en: ["a whole number, with ", { term: de }, " before it in a full date"]
             es: ["un número entero, con ", { term: de }, " delante en una fecha completa"]
+            uk: ["ціле число, перед яким у повній даті стоїть ", { term: "de" }]
           ex: { date: ["el 2 de mayo ", { target: de }, " 2026"], value: "2026-05-02" }
-          tr: { en: 2 May 2026 }
+          tr: { en: 2 May 2026, uk: "2 травня 2026 року" }
         - level: A0
-          point: { en: Asking, es: Preguntar }
+          point: { en: Asking, es: Preguntar, uk: "Як запитати" }
           rule:
             en: [{ term: ¿Qué día es hoy? }, " for the day, ", { term: ¿Qué fecha es hoy? }, " for the date"]
             es: [{ term: ¿Qué día es hoy? }, " para el día, ", { term: ¿Qué fecha es hoy? }, " para la fecha"]
+            uk: [{ term: "¿Qué día es hoy?" }, " — про день тижня, ", { term: "¿Qué fecha es hoy?" }, " — про дату"]
           ex: { exchange: ["¿Qué día es hoy?", ["Hoy es ", { target: { weekday: martes, value: 2 } }, "."]] }
-          tr: { en: { exchange: [What day is it today?, Today is Tuesday.] } }
+          tr: { en: { exchange: [What day is it today?, Today is Tuesday.] }, uk: { exchange: ["Який сьогодні день?", "Сьогодні вівторок."] } }
         - level: A0
-          point: { en: Written dates, es: Fechas escritas }
+          point: { en: Written dates, es: Fechas escritas, uk: "Дати на письмі" }
           rule:
             en: "day, month, year"
             es: "día, mes, año"
+            uk: "день, місяць, рік"
           ex: { mapping: ["04/07/2026", { date: "el 4 de julio de 2026", value: "2026-07-04" }] }
         - level: A0
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: ["a date takes ", { term: el }, ", never ", { term: en }]
             es: ["una fecha lleva ", { term: el }, ", nunca ", { term: en }]
+            uk: ["дата вживається з ", { term: "el" }, ", ніколи з ", { term: "en" }]
           ex: ["Llego ", { date: [{ target: el }, " 3 de junio"], value: "--06-03" }, "."]
-          tr: { en: I arrive on 3 June. }
+          tr: { en: I arrive on 3 June., uk: "Я приїжджаю 3 червня." }
 
 sections:
-  - title: { en: Days of the week, es: Los días de la semana }
+  - title: { en: Days of the week, es: Los días de la semana, uk: "Дні тижня" }
     role: own
     content:
       - type: inventory
         set: days
         columns:
-          - { key: day, label: { en: Day, es: Día } }
-          - { key: short, label: { en: Short form, es: Abreviatura } }
+          - { key: day, label: { en: Day, es: Día, uk: "День" } }
+          - { key: short, label: { en: Short form, es: Abreviatura, uk: "Скорочення" } }
         rows:
-          - { level: A0, value: 1, day: lunes, short: lun., tr: { en: Monday } }
-          - { level: A0, value: 2, day: martes, short: mart., tr: { en: Tuesday } }
-          - { level: A0, value: 3, day: miércoles, short: miérc., tr: { en: Wednesday } }
-          - { level: A0, value: 4, day: jueves, short: juev., tr: { en: Thursday } }
-          - { level: A0, value: 5, day: viernes, short: vier., tr: { en: Friday } }
-          - { level: A0, value: 6, day: sábado, short: sáb., tr: { en: Saturday } }
-          - { level: A0, value: 7, day: domingo, short: dom., tr: { en: Sunday } }
+          - { level: A0, value: 1, day: lunes, short: lun., tr: { en: Monday, uk: "понеділок" } }
+          - { level: A0, value: 2, day: martes, short: mart., tr: { en: Tuesday, uk: "вівторок" } }
+          - { level: A0, value: 3, day: miércoles, short: miérc., tr: { en: Wednesday, uk: "середа" } }
+          - { level: A0, value: 4, day: jueves, short: juev., tr: { en: Thursday, uk: "четвер" } }
+          - { level: A0, value: 5, day: viernes, short: vier., tr: { en: Friday, uk: "п’ятниця" } }
+          - { level: A0, value: 6, day: sábado, short: sáb., tr: { en: Saturday, uk: "субота" } }
+          - { level: A0, value: 7, day: domingo, short: dom., tr: { en: Sunday, uk: "неділя" } }
       - type: list
         items:
           - type: rule
@@ -127,53 +140,58 @@ sections:
             text:
               en: ["The week starts on ", { term: lunes }, ". Days are masculine and start with a small letter."]
               es: ["La semana empieza el ", { term: lunes }, ". Los días son masculinos y se escriben con minúscula."]
+              uk: ["Тиждень починається в ", { term: "lunes" }, ". Дні — чоловічого роду і пишуться з малої літери."]
           - type: rule
             level: A0
             text:
               en: [{ term: el }, " before a day means on that day, and ", { term: los }, " means every week, with no preposition:"]
               es: [{ term: el }, " delante de un día indica ese día, y ", { term: los }, ", cada semana, sin preposición:"]
+              uk: [{ term: "el" }, " перед днем означає «у цей день», а ", { term: "los" }, " — «щотижня», без прийменника:"]
             ex: { examples: [["Te veo ", { target: el }, " ", { weekday: viernes, value: 5 }, "."], [{ target: Los }, " ", { weekday: sábados, value: 6 }, " no trabajo."]] }
-            tr: { en: { examples: [See you on Friday., "On Saturdays I don't work."] } }
+            tr: { en: { examples: [See you on Friday., "On Saturdays I don't work."] }, uk: { examples: ["До п’ятниці.", "По суботах я не працюю."] } }
           - type: rule
             level: A0
             text:
               en: ["Days ending in -s keep their form in the plural: ", { term: los lunes }, "; ", { term: sábado }, " and ", { term: domingo }, " add -s."]
               es: ["Los días terminados en -s no cambian en plural: ", { term: los lunes }, "; ", { term: sábado }, " y ", { term: domingo }, " añaden -s."]
+              uk: ["Дні, що закінчуються на -s, у множині не змінюються: ", { term: "los lunes" }, "; ", { term: "sábado" }, " і ", { term: "domingo" }, " додають -s."]
           - type: rule
             level: A0
             text:
               en: [{ term: el fin de semana }, " is Saturday and Sunday:"]
               es: [{ term: el fin de semana }, " son el sábado y el domingo:"]
+              uk: [{ term: "el fin de semana" }, " — це субота й неділя:"]
             ex: [{ target: Los fines de semana }, " descanso."]
-            tr: { en: At weekends I rest. }
+            tr: { en: At weekends I rest., uk: "На вихідних я відпочиваю." }
           - type: rule
             level: A0
             text:
               en: ["Ask the day with ", { term: ¿Qué día es hoy? }, " and answer with ", { term: Hoy es }, " and the day:"]
               es: ["El día se pregunta con ", { term: ¿Qué día es hoy? }, " y se responde con ", { term: Hoy es }, " y el día:"]
+              uk: ["День тижня запитують так: ", { term: "¿Qué día es hoy?" }, ", а відповідають: ", { term: "Hoy es" }, " і день:"]
             ex: { exchange: ["¿Qué día es hoy?", ["Hoy es ", { target: { weekday: martes, value: 2 } }, "."]] }
-            tr: { en: { exchange: [What day is it today?, Today is Tuesday.] } }
+            tr: { en: { exchange: [What day is it today?, Today is Tuesday.] }, uk: { exchange: ["Який сьогодні день?", "Сьогодні вівторок."] } }
 
-  - title: { en: Months and seasons, es: Los meses y las estaciones }
+  - title: { en: Months and seasons, es: Los meses y las estaciones, uk: "Місяці та пори року" }
     role: own
     content:
       - type: inventory
         set: months
         columns:
-          - { key: month, label: { en: Month, es: Mes } }
+          - { key: month, label: { en: Month, es: Mes, uk: "Місяць" } }
         rows:
-          - { level: A0, value: "--01", month: enero, tr: { en: January } }
-          - { level: A0, value: "--02", month: febrero, tr: { en: February } }
-          - { level: A0, value: "--03", month: marzo, tr: { en: March } }
-          - { level: A0, value: "--04", month: abril, tr: { en: April } }
-          - { level: A0, value: "--05", month: mayo, tr: { en: May } }
-          - { level: A0, value: "--06", month: junio, tr: { en: June } }
-          - { level: A0, value: "--07", month: julio, tr: { en: July } }
-          - { level: A0, value: "--08", month: agosto, tr: { en: August } }
-          - { level: A0, value: "--09", month: septiembre, tr: { en: September } }
-          - { level: A0, value: "--10", month: octubre, tr: { en: October } }
-          - { level: A0, value: "--11", month: noviembre, tr: { en: November } }
-          - { level: A0, value: "--12", month: diciembre, tr: { en: December } }
+          - { level: A0, value: "--01", month: enero, tr: { en: January, uk: "січень" } }
+          - { level: A0, value: "--02", month: febrero, tr: { en: February, uk: "лютий" } }
+          - { level: A0, value: "--03", month: marzo, tr: { en: March, uk: "березень" } }
+          - { level: A0, value: "--04", month: abril, tr: { en: April, uk: "квітень" } }
+          - { level: A0, value: "--05", month: mayo, tr: { en: May, uk: "травень" } }
+          - { level: A0, value: "--06", month: junio, tr: { en: June, uk: "червень" } }
+          - { level: A0, value: "--07", month: julio, tr: { en: July, uk: "липень" } }
+          - { level: A0, value: "--08", month: agosto, tr: { en: August, uk: "серпень" } }
+          - { level: A0, value: "--09", month: septiembre, tr: { en: September, uk: "вересень" } }
+          - { level: A0, value: "--10", month: octubre, tr: { en: October, uk: "жовтень" } }
+          - { level: A0, value: "--11", month: noviembre, tr: { en: November, uk: "листопад" } }
+          - { level: A0, value: "--12", month: diciembre, tr: { en: December, uk: "грудень" } }
       - type: list
         items:
           - type: rule
@@ -181,29 +199,31 @@ sections:
             text:
               en: ["Months start with a small letter and take ", { term: en }, ":"]
               es: ["Los meses se escriben con minúscula y llevan ", { term: en }, ":"]
+              uk: ["Місяці пишуть з малої літери і вживають з ", { term: "en" }, ":"]
             ex: ["Mi cumpleaños es ", { target: en }, " ", { date: abril, value: "--04" }, "."]
-            tr: { en: My birthday is in April. }
+            tr: { en: My birthday is in April., uk: "Мій день народження у квітні." }
           - type: rule
             level: A0
             text:
               en: ["The seasons are ", { term: la primavera }, ", ", { term: el verano }, ", ", { term: el otoño }, " and ", { term: el invierno }, ", also with ", { term: en }, ":"]
               es: ["Las estaciones son ", { term: la primavera }, ", ", { term: el verano }, ", ", { term: el otoño }, " y ", { term: el invierno }, ", también con ", { term: en }, ":"]
+              uk: ["Пори року — ", { term: "la primavera" }, ", ", { term: "el verano" }, ", ", { term: "el otoño" }, " і ", { term: "el invierno" }, ", теж з ", { term: "en" }, ":"]
             ex: [{ target: En }, " verano hace calor."]
-            tr: { en: "In summer it's hot." }
+            tr: { en: "In summer it's hot.", uk: "Улітку спекотно." }
 
-  - title: { en: Dates, es: Las fechas }
+  - title: { en: Dates, es: Las fechas, uk: "Дати" }
     role: own
     content:
       - type: inventory
         set: dates
         columns:
-          - { key: written, label: { en: Written, es: Escrito } }
-          - { key: said, label: { en: Said, es: Se dice } }
+          - { key: written, label: { en: Written, es: Escrito, uk: "Письмово" } }
+          - { key: said, label: { en: Said, es: Se dice, uk: "Усно" } }
         rows:
-          - { level: A0, value: "--05-05", written: "5/5", said: [{ target: el }, " cinco ", { target: de }, " mayo"], tr: { en: 5 May } }
-          - { level: A0, value: "--03-22", written: "22/3", said: [{ target: el }, " veintidós ", { target: de }, " marzo"], tr: { en: 22 March } }
-          - { level: A0, value: "--12-31", written: "31/12", said: [{ target: el }, " treinta y uno ", { target: de }, " diciembre"], tr: { en: 31 December } }
-          - { level: A0, value: "--01-01", written: "1/1", said: { alternatives: [["el ", { target: primero }, " de enero"], ["el ", { target: uno }, " de enero"]] }, tr: { en: 1 January } }
+          - { level: A0, value: "--05-05", written: "5/5", said: [{ target: el }, " cinco ", { target: de }, " mayo"], tr: { en: 5 May, uk: "5 травня" } }
+          - { level: A0, value: "--03-22", written: "22/3", said: [{ target: el }, " veintidós ", { target: de }, " marzo"], tr: { en: 22 March, uk: "22 березня" } }
+          - { level: A0, value: "--12-31", written: "31/12", said: [{ target: el }, " treinta y uno ", { target: de }, " diciembre"], tr: { en: 31 December, uk: "31 грудня" } }
+          - { level: A0, value: "--01-01", written: "1/1", said: { alternatives: [["el ", { target: primero }, " de enero"], ["el ", { target: uno }, " de enero"]] }, tr: { en: 1 January, uk: "1 січня" } }
       - type: list
         items:
           - type: rule
@@ -211,37 +231,41 @@ sections:
             text:
               en: ["A date is ", { term: el }, ", the plain number, ", { term: de }, " and the month, with no preposition before it:"]
               es: ["Una fecha lleva ", { term: el }, ", el número normal, ", { term: de }, " y el mes, sin preposición delante:"]
+              uk: ["Дата — це ", { term: "el" }, ", звичайне число, ", { term: "de" }, " і місяць, без прийменника перед нею:"]
             ex: ["Llego ", { date: [{ target: el }, " 3 ", { target: de }, " junio"], value: "--06-03" }, "."]
-            tr: { en: I arrive on 3 June. }
+            tr: { en: I arrive on 3 June., uk: "Я приїжджаю 3 червня." }
           - type: rule
             level: A0
             text:
               en: ["The first day of the month is ", { term: el primero }, " or ", { term: el uno }, "; both are heard everywhere, ", { term: el primero }, " more in Latin America and ", { term: el uno }, " more in Spain:"]
               es: ["El primer día del mes es ", { term: el primero }, " o ", { term: el uno }, "; los dos se oyen en todas partes, ", { term: el primero }, " más en Latinoamérica y ", { term: el uno }, " más en España:"]
+              uk: ["Перший день місяця — ", { term: "el primero" }, " або ", { term: "el uno" }, "; обидва варіанти чути всюди, ", { term: "el primero" }, " — частіше в Латинській Америці, ", { term: "el uno" }, " — частіше в Іспанії:"]
             ex: { examples: [["Hoy es ", { date: ["el ", { target: primero }, " de octubre"], value: "--10-01" }, "."], ["Hoy es ", { date: ["el ", { target: uno }, " de octubre"], value: "--10-01" }, "."]] }
-            tr: { en: { examples: [Today is the first of October., Today is the first of October.] } }
+            tr: { en: { examples: [Today is the first of October., Today is the first of October.] }, uk: { examples: ["Сьогодні перше жовтня.", "Сьогодні перше жовтня."] } }
           - type: rule
             level: A0
             text:
               en: "Written dates put the day first, then the month and the year:"
               es: "En las fechas escritas va primero el día, luego el mes y el año:"
+              uk: "На письмі спершу пишуть день, потім місяць і рік:"
             ex: { mapping: ["04/07/2026", { date: "el 4 de julio de 2026", value: "2026-07-04" }] }
           - type: rule
             level: A0
             text:
               en: ["Ask the date with ", { term: ¿Qué fecha es hoy? }, ":"]
               es: ["La fecha se pregunta con ", { term: ¿Qué fecha es hoy? }, ":"]
+              uk: ["Дату запитують так: ", { term: "¿Qué fecha es hoy?" }, ":"]
             ex: { exchange: ["¿Qué fecha es hoy?", ["Hoy es ", { date: "el 10 de octubre", value: "--10-10" }, "."]] }
-            tr: { en: { exchange: ["What's the date today?", "Today is 10 October."] } }
+            tr: { en: { exchange: ["What's the date today?", "Today is 10 October."] }, uk: { exchange: ["Яке сьогодні число?", "Сьогодні 10 жовтня."] } }
 
-  - title: { en: Years, es: Los años }
+  - title: { en: Years, es: Los años, uk: "Роки" }
     role: own
     content:
       - type: inventory
         set: years
         columns:
-          - { key: year, label: { en: Year, es: Año } }
-          - { key: said, label: { en: Said, es: Se dice } }
+          - { key: year, label: { en: Year, es: Año, uk: "Рік" } }
+          - { key: said, label: { en: Said, es: Se dice, uk: "Усно" } }
         rows:
           - { level: A0, value: "1999", year: "1999", said: mil novecientos noventa y nueve }
           - { level: A0, value: "2000", year: "2000", said: dos mil }
@@ -254,30 +278,34 @@ sections:
             text:
               en: "A year is said as one whole number."
               es: "Un año se dice como un número entero."
+              uk: "Рік вимовляють як одне ціле число."
           - type: rule
             level: A0
             text:
               en: ["A full date takes ", { term: de }, " before the year:"]
               es: ["Una fecha completa lleva ", { term: de }, " delante del año:"]
+              uk: ["У повній даті перед роком стоїть ", { term: "de" }, ":"]
             ex: ["Hoy es ", { date: ["el 2 de mayo ", { target: de }, " 2026"], value: "2026-05-02" }, "."]
-            tr: { en: Today is 2 May 2026. }
+            tr: { en: Today is 2 May 2026., uk: "Сьогодні 2 травня 2026 року." }
           - type: rule
             level: A0
             text:
               en: ["A year on its own takes ", { term: en }, ":"]
               es: ["Un año solo lleva ", { term: en }, ":"]
+              uk: ["Рік без дня й місяця вживається з ", { term: "en" }, ":"]
             ex: ["Voy a México ", { target: en }, " ", { date: "2027", value: "2027" }, "."]
-            tr: { en: "I'm going to Mexico in 2027." }
+            tr: { en: "I'm going to Mexico in 2027.", uk: "У 2027 році я їду до Мексики." }
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A0, wrong: Te veo en lunes., right: ["Te veo ", { target: el }, " lunes."], rule: { en: ["a day takes ", { term: el }, ", with no preposition"], es: ["un día lleva ", { term: el }, ", sin preposición"] } }
-          - { level: A0, wrong: Hoy es Martes., right: ["Hoy es ", { target: martes }, "."], rule: { en: days take a small letter, es: los días van con minúscula } }
-          - { level: A0, wrong: Llego en el 3 de junio., right: ["Llego ", { target: el }, " 3 de junio."], rule: { en: ["a date takes ", { term: el }, ", never ", { term: en }], es: ["una fecha lleva ", { term: el }, ", nunca ", { term: en }] } }
-          - { level: A0, wrong: el cinco mayo, right: ["el cinco ", { target: de }, " mayo"], rule: { en: [{ term: de }, " goes between the day and the month"], es: [{ term: de }, " va entre el día y el mes"] } }
+          - { level: A0, wrong: Te veo en lunes., right: ["Te veo ", { target: el }, " lunes."], rule: { en: ["a day takes ", { term: el }, ", with no preposition"], es: ["un día lleva ", { term: el }, ", sin preposición"], uk: ["день вживається з ", { term: "el" }, ", без прийменника"] } }
+          - { level: A0, wrong: Hoy es Martes., right: ["Hoy es ", { target: martes }, "."], rule: { en: days take a small letter, es: los días van con minúscula, uk: "дні тижня пишуть з малої літери" } }
+          - { level: A0, wrong: Llego en el 3 de junio., right: ["Llego ", { target: el }, " 3 de junio."], rule: { en: ["a date takes ", { term: el }, ", never ", { term: en }], es: ["una fecha lleva ", { term: el }, ", nunca ", { term: en }], uk: ["дата вживається з ", { term: "el" }, ", ніколи з ", { term: "en" }] } }
+          - { level: A0, wrong: el cinco mayo, right: ["el cinco ", { target: de }, " mayo"], rule: { en: [{ term: de }, " goes between the day and the month"], es: [{ term: de }, " va entre el día y el mes"], uk: [{ term: "de" }, " стоїть між днем і місяцем"] } }
           - { level: A0, speakers: [en], wrong: el mayo cinco, right: ["el cinco ", { target: de }, " mayo"], rule: { en: "the day comes before the month, unlike US English" } }
           - { level: A0, speakers: [en], wrong: el quinto de mayo, right: ["el ", { target: cinco }, " de mayo"], rule: { en: "the day is a plain number, not an ordinal as in English" } }
           - { level: A0, speakers: [en], wrong: diecinueve noventa y cinco, right: { target: mil novecientos noventa y cinco }, rule: { en: "a year is one whole number, not two pairs of digits" } }
+          - { level: A0, speakers: [uk], wrong: el 5 mayo, right: ["el 5 ", { target: de }, " mayo"], rule: { uk: ["між числом і місяцем стоїть ", { term: de }, ", хоча українською кажемо «5 травня»"] } }

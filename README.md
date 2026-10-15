@@ -5,7 +5,8 @@ line marked with its CEFR level. Each language being learned is explained in the
 languages it lists, so the library grows toward N languages, each explained in N languages. It holds
 English from A0 to B1, explained in English, Ukrainian, Spanish, Portuguese, French, German, Italian,
 Polish, Turkish, Indonesian and Vietnamese, and Spanish from A0 to B1 after the Instituto Cervantes
-curriculum, explained in English and Spanish, Latin American by default with Spain a switch away.
+curriculum, written in Spanish and explained in English and Ukrainian too, Latin American by default with
+Spain a switch away.
 
 **Site:** https://langs123.com
 

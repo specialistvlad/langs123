@@ -5,116 +5,130 @@ kind: grammar
 tags: [verbs, gustar, likes, indirect object]
 concepts: [gustar]
 related: [es.pronombres.objeto-indirecto, es.pronombres.pronombres-preposicion, es.sustantivo-determinantes.articulos]
-status: { en: draft, es: draft }
-translated: { es: "718f9f ea19b9 c25005 d92f15 73efe1 399322 879f24 613ff4" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "6c17a8 a1db7c 54fc18 6eb202 d1d6e8 efe91d 6fba3d 00d775", uk: "6c17a8 a1db7c 54fc18 6eb202 d1d6e8 efe91d 6fba3d 00d775" }
 
-title: { en: Gustar and Similar Verbs, es: Gustar y verbos similares }
+title: { en: Gustar and Similar Verbs, es: Gustar y verbos similares, uk: "Gustar і подібні дієслова" }
 summary:
   lead:
     en: ["With ", { term: gustar }, ", the thing liked is the subject and the person an indirect object: ", { term: me gusta el café }, "."]
     es: ["Con ", { term: gustar }, ", lo que gusta es el sujeto y la persona es el objeto indirecto: ", { term: me gusta el café }, "."]
+    uk: ["З ", { term: gustar }, " те, що подобається, — підмет, а людина — непрямий додаток: ", { term: me gusta el café }, "."]
   rule:
     en: ["The verb agrees with the thing liked: ", { term: gusta }, " for one thing or an action, ", { term: gustan }, " for several:"]
     es: ["El verbo concuerda con lo que gusta: ", { term: gusta }, " para una cosa o una acción, ", { term: gustan }, " para varias:"]
+    uk: ["Дієслово узгоджується з тим, що подобається: ", { term: gusta }, " — для однієї речі чи дії, ", { term: gustan }, " — для кількох:"]
   ex: { examples: [["Me ", { target: gusta }, " el cine."], ["Me ", { target: gustan }, " las películas."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto } }
-        - { key: rule, label: { en: Rule, es: Regla } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
         - level: A1
-          point: { en: First forms, es: Primeras formas }
+          point: { en: First forms, es: Primeras formas, uk: "Перші форми" }
           rule:
             en: { alternatives: [{ term: me gusta }, { term: te gusta }, { term: le gusta }] }
             es: { alternatives: [{ term: me gusta }, { term: te gusta }, { term: le gusta }] }
+            uk: { alternatives: [{ term: me gusta }, { term: te gusta }, { term: le gusta }] }
           ex: { exchange: [["¿", { target: Te gusta }, " el café?"], ["Sí, ", { target: me gusta }, " mucho."]] }
-          tr: { en: { exchange: [Do you like coffee?, "Yes, I like it a lot."] } }
+          tr: { en: { exchange: [Do you like coffee?, "Yes, I like it a lot."] }, uk: { exchange: ["Тобі подобається кава?", "Так, дуже подобається."] } }
         - level: A2
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: { pattern: [{ alternatives: [{ term: me }, { term: te }, { term: le }, { term: nos }, { term: les }] }, { alternatives: [{ term: gusta }, { term: gustan }] }] }
             es: { pattern: [{ alternatives: [{ term: me }, { term: te }, { term: le }, { term: nos }, { term: les }] }, { alternatives: [{ term: gusta }, { term: gustan }] }] }
+            uk: { pattern: [{ alternatives: [{ term: me }, { term: te }, { term: le }, { term: nos }, { term: les }] }, { alternatives: [{ term: gusta }, { term: gustan }] }] }
           ex: ["Nos ", { target: gusta }, " la playa."]
-          tr: { en: We like the beach. }
+          tr: { en: We like the beach., uk: "Нам подобається пляж." }
         - level: A2
           variety: es-ES
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: [{ term: os gusta }, " for ", { term: vosotros }]
             es: [{ term: os gusta }, " para ", { term: vosotros }]
+            uk: [{ term: os gusta }, " для ", { term: vosotros }]
           ex: ["¿", { target: Os gusta }, " la comida?"]
-          tr: { en: Do you like the food? }
+          tr: { en: Do you like the food?, uk: "Вам подобається їжа?" }
         - level: A2
           variety: es-419
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: [{ term: les gusta }, " for any group of listeners"]
             es: [{ term: les gusta }, " para cualquier grupo que escucha"]
+            uk: [{ term: les gusta }, " для будь-якої групи співрозмовників"]
           ex: ["¿", { target: Les gusta }, " la comida?"]
-          tr: { en: Do you like the food? }
+          tr: { en: Do you like the food?, uk: "Вам подобається їжа?" }
         - level: A1
           point: gusta
           rule:
             en: "one thing, or one or more infinitives"
             es: "una cosa, o uno o varios infinitivos"
+            uk: "одна річ або один чи кілька інфінітивів"
           ex: ["Me ", { target: gusta }, " bailar."]
-          tr: { en: I like dancing. }
+          tr: { en: I like dancing., uk: "Мені подобається танцювати." }
         - level: A1
           point: gustan
           rule:
             en: "several things"
             es: "varias cosas"
+            uk: "кілька речей"
           ex: ["Me ", { target: gustan }, " los perros."]
-          tr: { en: I like dogs. }
+          tr: { en: I like dogs., uk: "Мені подобаються собаки." }
         - level: A2
-          point: { en: The person, es: La persona }
+          point: { en: The person, es: La persona, uk: "Особа" }
           rule:
             en: [{ pattern: [{ term: a }, { slot: person }] }, ", with the pronoun as well"]
             es: [{ pattern: [{ term: a }, { slot: person }] }, ", también con el pronombre"]
+            uk: [{ pattern: [{ term: a }, { slot: person }] }, " — разом із займенником"]
           ex: ["A mi madre ", { target: le gusta }, " el té."]
-          tr: { en: My mother likes tea. }
+          tr: { en: My mother likes tea., uk: "Моїй мамі подобається чай." }
         - level: A2
-          point: { en: Agreeing, es: Acuerdo }
+          point: { en: Agreeing, es: Acuerdo, uk: "Згода" }
           rule:
             en: { alternatives: [{ term: a mí también }, { term: a mí tampoco }, { term: a mí sí }, { term: a mí no }] }
             es: { alternatives: [{ term: a mí también }, { term: a mí tampoco }, { term: a mí sí }, { term: a mí no }] }
+            uk: { alternatives: [{ term: a mí también }, { term: a mí tampoco }, { term: a mí sí }, { term: a mí no }] }
           ex: { exchange: ["Me gusta el fútbol.", [{ target: A mí también }, "."]] }
-          tr: { en: { exchange: [I like football., So do I.] } }
+          tr: { en: { exchange: [I like football., So do I.] }, uk: { exchange: ["Мені подобається футбол.", "Мені теж."] } }
         - level: A2
           point: encantar
           rule:
             en: ["“love”: works like ", { term: gustar }]
             es: [{ term: gustar }, " mucho: funciona como ", { term: gustar }]
+            uk: ["«дуже подобатися»: працює, як ", { term: gustar }]
           ex: ["Me ", { target: encanta }, " esta canción."]
-          tr: { en: I love this song. }
+          tr: { en: I love this song., uk: "Мені дуже подобається ця пісня." }
         - level: A2
-          point: { en: Similar verbs, es: Verbos similares }
+          point: { en: Similar verbs, es: Verbos similares, uk: "Подібні дієслова" }
           rule:
             en: { alternatives: [{ term: doler }, { term: interesar }, { term: importar }, { term: parecer }, { term: quedar }] }
             es: { alternatives: [{ term: doler }, { term: interesar }, { term: importar }, { term: parecer }, { term: quedar }] }
+            uk: { alternatives: [{ term: doler }, { term: interesar }, { term: importar }, { term: parecer }, { term: quedar }] }
           ex: ["Me ", { target: duele }, " la cabeza."]
-          tr: { en: "I've got a headache." }
+          tr: { en: "I've got a headache.", uk: "У мене болить голова." }
         - level: A1
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: ["the person is ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, ", never the subject"]
             es: ["la persona es ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, ", nunca el sujeto"]
+            uk: ["людина — це ", { alternatives: [{ term: me }, { term: te }, { term: le }] }, ", а не підмет"]
           ex: [{ target: Me gusta }, " el chocolate."]
-          tr: { en: I like chocolate. }
+          tr: { en: I like chocolate., uk: "Мені подобається шоколад." }
         - level: A1
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: ["the thing liked takes its article: ", { term: la música }]
             es: ["lo que gusta lleva artículo: ", { term: la música }]
+            uk: ["те, що подобається, має артикль: ", { term: la música }]
           ex: ["Me gusta ", { target: la }, " música."]
-          tr: { en: I like music. }
+          tr: { en: I like music., uk: "Мені подобається музика." }
 
 sections:
-  - title: { en: Overview, es: Visión general }
+  - title: { en: Overview, es: Visión general, uk: "Огляд" }
     role: overview
     content:
       - type: list
@@ -124,27 +138,30 @@ sections:
             text:
               en: ["With ", { term: gustar }, ", the thing liked is the subject, and the person is an indirect object pronoun:"]
               es: ["Con ", { term: gustar }, ", lo que gusta es el sujeto, y la persona es un pronombre de objeto indirecto:"]
+              uk: ["З ", { term: gustar }, " те, що подобається, — підмет, а людина — займенник непрямого додатка:"]
             ex: { exchange: [["¿", { target: Te gusta }, " el café?"], ["Sí, ", { target: me gusta }, "."]] }
-            tr: { en: { exchange: [Do you like coffee?, "Yes, I do."] } }
+            tr: { en: { exchange: [Do you like coffee?, "Yes, I do."] }, uk: { exchange: ["Тобі подобається кава?", "Так, подобається."] } }
           - type: note
             level: A1
             text:
               en: ["Word for word, ", { term: me gusta el café }, " reads “coffee pleases me”."]
               es: ["Literalmente, ", { term: me gusta el café }, " equivale a “el café me agrada”."]
+              uk: ["Дослівно ", { term: me gusta el café }, " — це «мені подобається кава»: будова та сама, що й в українській."]
           - type: note
             level: A1
             text:
               en: ["The pronouns themselves: ", { link: "Indirect Object Pronouns", to: es.pronombres.objeto-indirecto }, "."]
               es: ["Los pronombres: ", { link: "El objeto indirecto", to: es.pronombres.objeto-indirecto }, "."]
+              uk: ["Самі займенники: ", { link: "Займенники непрямого додатка", to: es.pronombres.objeto-indirecto }, "."]
 
-  - title: { en: "Form: gusta and gustan", es: "Forma: gusta y gustan" }
+  - title: { en: "Form: gusta and gustan", es: "Forma: gusta y gustan", uk: "Форма: gusta і gustan" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: person, label: { en: Person, es: Persona } }
-          - { key: one, label: { en: One thing, es: Una cosa } }
-          - { key: several, label: { en: Several things, es: Varias cosas } }
+          - { key: person, label: { en: Person, es: Persona, uk: "Особа" } }
+          - { key: one, label: { en: One thing, es: Una cosa, uk: "Одна річ" } }
+          - { key: several, label: { en: Several things, es: Varias cosas, uk: "Кілька речей" } }
         rows:
           - { level: A1, features: { person: 1, number: sg }, person: [{ optional: a mí }, " me"], one: { target: me gusta }, several: { target: me gustan } }
           - { level: A1, features: { person: 2, number: sg, politeness: infm }, person: [{ optional: a ti }, " te"], one: { target: te gusta }, several: { target: te gustan } }
@@ -159,71 +176,75 @@ sections:
             text:
               en: [{ term: gusta }, " goes with one thing, or with one or more infinitives:"]
               es: [{ term: gusta }, " va con una cosa, o con uno o varios infinitivos:"]
+              uk: [{ term: gusta }, " уживають з однією річчю або з одним чи кількома інфінітивами:"]
             ex: { examples: [["Me ", { target: gusta }, " el chocolate."], ["Me ", { target: gusta }, " leer y escribir."]] }
-            tr: { en: { examples: [I like chocolate., I like reading and writing.] } }
+            tr: { en: { examples: [I like chocolate., I like reading and writing.] }, uk: { examples: ["Мені подобається шоколад.", "Мені подобається читати й писати."] } }
           - type: rule
             level: A1
             text:
               en: [{ term: gustan }, " goes with several things:"]
               es: [{ term: gustan }, " va con varias cosas:"]
+              uk: [{ term: gustan }, " уживають з кількома речами:"]
             ex: ["Me ", { target: gustan }, " los perros."]
-            tr: { en: I like dogs. }
+            tr: { en: I like dogs., uk: "Мені подобаються собаки." }
           - type: rule
             level: A1
             text:
               en: ["The thing liked takes its article, ", { alternatives: [{ term: el }, { term: la }, { term: los }, { term: las }] }, ", even for things in general:"]
               es: ["Lo que gusta lleva su artículo, ", { alternatives: [{ term: el }, { term: la }, { term: los }, { term: las }] }, ", también para cosas en general:"]
+              uk: ["Те, що подобається, має свій артикль, ", { alternatives: [{ term: el }, { term: la }, { term: los }, { term: las }] }, ", навіть коли йдеться про речі загалом:"]
             ex: ["Me gusta ", { target: la }, " música."]
-            tr: { en: I like music. }
+            tr: { en: I like music., uk: "Мені подобається музика." }
           - type: rule
             level: A1
             text:
               en: [{ term: "no" }, " goes before the pronoun:"]
               es: [{ term: "no" }, " va delante del pronombre:"]
+              uk: [{ term: "no" }, " стоїть перед займенником:"]
             ex: [{ target: "No" }, " me gusta el frío."]
-            tr: { en: "I don't like the cold." }
+            tr: { en: "I don't like the cold.", uk: "Мені не подобається холод." }
 
-  - title: { en: The person with a, es: La persona con a }
+  - title: { en: The person with a, es: La persona con a, uk: "Особа з a" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use, es: Uso } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: use, label: { en: Use, es: Uso, uk: "Вживання" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A2, use: { en: ["A proper name or a noun after ", { term: a }, ", with the pronoun as well"], es: ["Un nombre propio o un sustantivo después de ", { term: a }, ", también con el pronombre"] }, ex: ["A Juan ", { target: le gusta }, " el fútbol."], tr: { en: Juan likes football. } }
-          - { level: A2, use: { en: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a usted }] }, ": to make ", { term: le }, " clear"], es: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a usted }] }, ": para aclarar ", { term: le }] }, ex: [{ target: A ella }, " le gusta bailar."], tr: { en: She likes dancing. } }
-          - { level: A2, use: { en: [{ alternatives: [{ term: a mí }, { term: a ti }] }, ": for emphasis or contrast"], es: [{ alternatives: [{ term: a mí }, { term: a ti }] }, ": para dar énfasis o contrastar"] }, ex: [{ target: A mí }, " me gusta el té, y ", { target: a ti }, ", el café."], tr: { en: "I like tea, and you like coffee." } }
+          - { level: A2, use: { en: ["A proper name or a noun after ", { term: a }, ", with the pronoun as well"], es: ["Un nombre propio o un sustantivo después de ", { term: a }, ", también con el pronombre"], uk: ["Власна назва чи іменник після ", { term: a }, " — разом із займенником"] }, ex: ["A Juan ", { target: le gusta }, " el fútbol."], tr: { en: Juan likes football., uk: "Хуанові подобається футбол." } }
+          - { level: A2, use: { en: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a usted }] }, ": to make ", { term: le }, " clear"], es: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a usted }] }, ": para aclarar ", { term: le }], uk: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a usted }] }, ": щоб уточнити ", { term: le }] }, ex: [{ target: A ella }, " le gusta bailar."], tr: { en: She likes dancing., uk: "Їй подобається танцювати." } }
+          - { level: A2, use: { en: [{ alternatives: [{ term: a mí }, { term: a ti }] }, ": for emphasis or contrast"], es: [{ alternatives: [{ term: a mí }, { term: a ti }] }, ": para dar énfasis o contrastar"], uk: [{ alternatives: [{ term: a mí }, { term: a ti }] }, ": для наголосу чи протиставлення"] }, ex: [{ target: A mí }, " me gusta el té, y ", { target: a ti }, ", el café."], tr: { en: "I like tea, and you like coffee.", uk: "Мені подобається чай, а тобі — кава." } }
 
-  - title: { en: Agreeing and disagreeing, es: Mostrar acuerdo y desacuerdo }
+  - title: { en: Agreeing and disagreeing, es: Mostrar acuerdo y desacuerdo, uk: "Згода й незгода" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use, es: Uso } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: use, label: { en: Use, es: Uso, uk: "Вживання" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A2, use: { en: "The same, after a positive", es: "Lo mismo, tras una afirmación" }, ex: { exchange: ["Me gusta el fútbol.", [{ target: A mí también }, "."]] }, tr: { en: { exchange: [I like football., So do I.] } } }
-          - { level: A2, use: { en: "The same, after a negative", es: "Lo mismo, tras una negación" }, ex: { exchange: ["No me gusta el frío.", [{ target: A mí tampoco }, "."]] }, tr: { en: { exchange: ["I don't like the cold.", Neither do I.] } } }
-          - { level: A2, use: { en: "The opposite, after a negative", es: "Lo contrario, tras una negación" }, ex: { exchange: ["No me gusta el frío.", [{ target: A mí sí }, "."]] }, tr: { en: { exchange: ["I don't like the cold.", I do.] } } }
-          - { level: A2, use: { en: "The opposite, after a positive", es: "Lo contrario, tras una afirmación" }, ex: { exchange: ["Me gusta el fútbol.", [{ target: A mí no }, "."]] }, tr: { en: { exchange: [I like football., "I don't."] } } }
+          - { level: A2, use: { en: "The same, after a positive", es: "Lo mismo, tras una afirmación", uk: "Те саме після ствердження" }, ex: { exchange: ["Me gusta el fútbol.", [{ target: A mí también }, "."]] }, tr: { en: { exchange: [I like football., So do I.] }, uk: { exchange: ["Мені подобається футбол.", "Мені теж."] } } }
+          - { level: A2, use: { en: "The same, after a negative", es: "Lo mismo, tras una negación", uk: "Те саме після заперечення" }, ex: { exchange: ["No me gusta el frío.", [{ target: A mí tampoco }, "."]] }, tr: { en: { exchange: ["I don't like the cold.", Neither do I.] }, uk: { exchange: ["Мені не подобається холод.", "І мені не подобається."] } } }
+          - { level: A2, use: { en: "The opposite, after a negative", es: "Lo contrario, tras una negación", uk: "Протилежне після заперечення" }, ex: { exchange: ["No me gusta el frío.", [{ target: A mí sí }, "."]] }, tr: { en: { exchange: ["I don't like the cold.", I do.] }, uk: { exchange: ["Мені не подобається холод.", "А мені подобається."] } } }
+          - { level: A2, use: { en: "The opposite, after a positive", es: "Lo contrario, tras una afirmación", uk: "Протилежне після ствердження" }, ex: { exchange: ["Me gusta el fútbol.", [{ target: A mí no }, "."]] }, tr: { en: { exchange: [I like football., "I don't."] }, uk: { exchange: ["Мені подобається футбол.", "А мені ні."] } } }
 
-  - title: { en: Verbs like gustar, es: Verbos como gustar }
+  - title: { en: Verbs like gustar, es: Verbos como gustar, uk: "Дієслова на кшталт gustar" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: verb, label: { en: Verb, es: Verbo } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: verb, label: { en: Verb, es: Verbo, uk: "Дієслово" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A2, verb: encantar, ex: ["Me ", { target: encanta }, " esta canción."], tr: { en: I love this song. } }
-          - { level: A2, verb: interesar, ex: ["¿Te ", { target: interesa }, " la historia?"], tr: { en: Are you interested in history? } }
-          - { level: A2, verb: doler, ex: ["Me ", { target: duelen }, " los pies."], tr: { en: My feet hurt. } }
-          - { level: A2, verb: importar, ex: ["No me ", { target: importa }, "."], tr: { en: "I don't mind." } }
-          - { level: A2, verb: molestar, ex: ["¿Te ", { target: molesta }, " la música?"], tr: { en: Does the music bother you? } }
-          - { level: A2, verb: parecer, ex: ["Me ", { target: parece }, " bien."], tr: { en: That sounds fine to me. } }
-          - { level: A2, verb: quedar, ex: ["Esa camisa te ", { target: queda }, " bien."], tr: { en: That shirt suits you. } }
-          - { level: A2, variety: es-ES, verb: apetecer, ex: ["¿Te ", { target: apetece }, " un café?"], tr: { en: Do you fancy a coffee? } }
+          - { level: A2, verb: encantar, ex: ["Me ", { target: encanta }, " esta canción."], tr: { en: I love this song., uk: "Мені дуже подобається ця пісня." } }
+          - { level: A2, verb: interesar, ex: ["¿Te ", { target: interesa }, " la historia?"], tr: { en: Are you interested in history?, uk: "Тебе цікавить історія?" } }
+          - { level: A2, verb: doler, ex: ["Me ", { target: duelen }, " los pies."], tr: { en: My feet hurt., uk: "У мене болять ноги." } }
+          - { level: A2, verb: importar, ex: ["No me ", { target: importa }, "."], tr: { en: "I don't mind.", uk: "Я не проти." } }
+          - { level: A2, verb: molestar, ex: ["¿Te ", { target: molesta }, " la música?"], tr: { en: Does the music bother you?, uk: "Тобі заважає музика?" } }
+          - { level: A2, verb: parecer, ex: ["Me ", { target: parece }, " bien."], tr: { en: That sounds fine to me., uk: "Як на мене, це добре." } }
+          - { level: A2, verb: quedar, ex: ["Esa camisa te ", { target: queda }, " bien."], tr: { en: That shirt suits you., uk: "Ця сорочка тобі пасує." } }
+          - { level: A2, variety: es-ES, verb: apetecer, ex: ["¿Te ", { target: apetece }, " un café?"], tr: { en: Do you fancy a coffee?, uk: "Хочеш кави?" } }
       - type: list
         items:
           - type: rule
@@ -231,33 +252,36 @@ sections:
             text:
               en: [{ term: encantar }, " means “like a lot” and works like ", { term: gustar }, ":"]
               es: [{ term: encantar }, " significa “gustar mucho” y funciona como ", { term: gustar }, ":"]
+              uk: [{ term: encantar }, " означає «дуже подобатися» і працює, як ", { term: gustar }, ":"]
             ex: ["Me ", { target: encantan }, " los gatos."]
-            tr: { en: I love cats. }
+            tr: { en: I love cats., uk: "Я обожнюю котів." }
           - type: rule
             level: A2
             text:
               en: [{ term: doler }, " names the part of the body with ", { alternatives: [{ term: el }, { term: la }] }, ": the pronoun already says whose it is."]
               es: [{ term: doler }, " nombra la parte del cuerpo con ", { alternatives: [{ term: el }, { term: la }] }, ": el pronombre ya dice de quién es."]
+              uk: [{ term: doler }, " називає частину тіла з ", { alternatives: [{ term: el }, { term: la }] }, ": займенник уже каже, чия вона."]
             ex: ["Me duele ", { target: la }, " cabeza."]
-            tr: { en: "I've got a headache." }
+            tr: { en: "I've got a headache.", uk: "У мене болить голова." }
           - type: note
             level: A2
             variety: es-419
             text:
               en: ["In Colombia, Peru and Venezuela, ", { term: provocar }, " means “feel like”:"]
               es: ["En Colombia, Perú y Venezuela, ", { term: provocar }, " significa “tener ganas de”:"]
+              uk: ["У Колумбії, Перу та Венесуелі ", { term: provocar }, " означає «хотіти чогось»:"]
             ex: ["¿Te ", { target: provoca }, " un café?"]
-            tr: { en: Do you feel like a coffee? }
+            tr: { en: Do you feel like a coffee?, uk: "Хочеш кави?" }
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A1, wrong: Yo gusto el chocolate., right: [{ target: Me gusta }, " el chocolate."], rule: { en: ["the person is an indirect object: ", { term: me gusta }], es: ["la persona es el objeto indirecto: ", { term: me gusta }] } }
-          - { level: A1, wrong: Me gusta los perros., right: ["Me ", { target: gustan }, " los perros."], rule: { en: ["several things take ", { term: gustan }], es: ["varias cosas llevan ", { term: gustan }] } }
-          - { level: A1, wrong: Me gustan bailar y cantar., right: ["Me ", { target: gusta }, " bailar y cantar."], rule: { en: ["infinitives take ", { term: gusta }], es: ["los infinitivos llevan ", { term: gusta }] } }
-          - { level: A2, wrong: A Juan gusta el fútbol., right: ["A Juan ", { target: le }, " gusta el fútbol."], rule: { en: [{ pattern: [{ term: a }, { slot: person }] }, " needs ", { term: le }, " too"], es: [{ pattern: [{ term: a }, { slot: person }] }, " también necesita ", { term: le }] } }
-          - { level: A1, speakers: [en], wrong: Me gusta música., right: ["Me gusta ", { target: la }, " música."], rule: { en: ["the thing liked takes its article: ", { term: me gusta la música }] } }
+          - { level: A1, wrong: Yo gusto el chocolate., right: [{ target: Me gusta }, " el chocolate."], rule: { en: ["the person is an indirect object: ", { term: me gusta }], es: ["la persona es el objeto indirecto: ", { term: me gusta }], uk: ["людина — непрямий додаток: ", { term: me gusta }] } }
+          - { level: A1, wrong: Me gusta los perros., right: ["Me ", { target: gustan }, " los perros."], rule: { en: ["several things take ", { term: gustan }], es: ["varias cosas llevan ", { term: gustan }], uk: ["з кількома речами — ", { term: gustan }] } }
+          - { level: A1, wrong: Me gustan bailar y cantar., right: ["Me ", { target: gusta }, " bailar y cantar."], rule: { en: ["infinitives take ", { term: gusta }], es: ["los infinitivos llevan ", { term: gusta }], uk: ["з інфінітивами — ", { term: gusta }] } }
+          - { level: A2, wrong: A Juan gusta el fútbol., right: ["A Juan ", { target: le }, " gusta el fútbol."], rule: { en: [{ pattern: [{ term: a }, { slot: person }] }, " needs ", { term: le }, " too"], es: [{ pattern: [{ term: a }, { slot: person }] }, " también necesita ", { term: le }], uk: [{ pattern: [{ term: a }, { slot: person }] }, " теж потребує ", { term: le }] } }
+          - { level: A1, speakers: [en, uk], wrong: Me gusta música., right: ["Me gusta ", { target: la }, " música."], rule: { en: ["the thing liked takes its article: ", { term: me gusta la música }], uk: ["те, що подобається, має артикль: ", { term: me gusta la música }] } }
           - { level: A2, speakers: [en], wrong: { exchange: [Me gusta el té., Yo también.] }, right: { exchange: ["Me gusta el té.", [{ target: A mí también }, "."]] }, rule: { en: ["“so do I” after ", { term: gustar }, " is ", { term: a mí también }] } }
-          - { level: A2, wrong: Me duele mi cabeza., right: ["Me duele ", { target: la }, " cabeza."], rule: { en: ["a part of the body takes ", { alternatives: [{ term: el }, { term: la }] }], es: ["una parte del cuerpo lleva ", { alternatives: [{ term: el }, { term: la }] }] } }
+          - { level: A2, wrong: Me duele mi cabeza., right: ["Me duele ", { target: la }, " cabeza."], rule: { en: ["a part of the body takes ", { alternatives: [{ term: el }, { term: la }] }], es: ["una parte del cuerpo lleva ", { alternatives: [{ term: el }, { term: la }] }], uk: ["частина тіла — з ", { alternatives: [{ term: el }, { term: la }] }, ", без присвійного займенника"] } }

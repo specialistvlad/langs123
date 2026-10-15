@@ -5,79 +5,88 @@ kind: grammar
 tags: [conditionals, si, sentence]
 concepts: [conditionals]
 related: [es.oracion.conectores, es.futuro-condicional.futuro-simple, es.imperativo-perifrasis.imperativo-afirmativo, es.subjuntivo.subjuntivo-cuando-para-que]
-status: { en: draft, es: draft }
-translated: { es: "47c7b7 8dca8a 403b30 b97baf 101199 12c06d c76388 fd04cc" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "026f4b 75fd09 ae9a7d a6a386 c6d121 e33315 8d70b2 cefdb9", uk: "026f4b 75fd09 ae9a7d a6a386 c6d121 e33315 8d70b2 cefdb9" }
 
-title: { en: Conditional Sentences, es: Las oraciones condicionales }
+title: { en: Conditional Sentences, es: Las oraciones condicionales, uk: "Умовні речення" }
 summary:
   lead:
     en: ["A conditional sentence puts the condition after ", { term: si }, " in the present, and the result in the present, the future or the imperative."]
     es: ["Una oración condicional pone la condición detrás de ", { term: si }, " en presente, y el resultado en presente, en futuro o en imperativo."]
+    uk: ["Умовне речення ставить умову після ", { term: "si" }, " у теперішньому часі, а наслідок — у теперішньому часі, майбутньому або в наказовому способі."]
   rule:
     en: ["After ", { term: si }, ", the verb stays in the present, even about the future:"]
     es: ["Detrás de ", { term: si }, ", el verbo va en presente, también para hablar del futuro:"]
+    uk: ["Після ", { term: "si" }, " дієслово стоїть у теперішньому часі, навіть коли йдеться про майбутнє:"]
   ex: { examples: [[{ target: Si tengo }, " tiempo, voy."], [{ target: Si tengo }, " tiempo, iré."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto } }
-        - { key: rule, label: { en: Rule, es: Regla } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
         - level: A2
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: [{ pattern: [si, { slot: present }] }, ", then the present"]
             es: [{ pattern: [si, { slot: present }] }, ", y después el presente"]
+            uk: [{ pattern: ["si", { slot: "present" }] }, ", далі теперішній час"]
           ex: [{ target: Si quieres }, ", ", { target: puedes }, " venir."]
-          tr: { en: "If you want, you can come." }
+          tr: { en: "If you want, you can come.", uk: "Якщо хочеш, можеш прийти." }
         - level: A2
-          point: { en: Use, es: Uso }
+          point: { en: Use, es: Uso, uk: "Вживання" }
           rule:
             en: "what usually happens when the condition holds"
             es: "lo que suele pasar cuando se cumple la condición"
+            uk: "що зазвичай стається, коли умова виконується"
           ex: [{ target: Si como }, " mucho, me ", { target: duele }, " el estómago."]
-          tr: { en: "If I eat a lot, I get a stomach ache." }
+          tr: { en: "If I eat a lot, I get a stomach ache.", uk: "Якщо я багато їм, у мене болить живіт." }
         - level: A2
-          point: { en: Comma, es: Coma }
+          point: { en: Comma, es: Coma, uk: "Кома" }
           rule:
             en: ["a comma follows the ", { term: si }, " clause when it comes first"]
             es: ["una coma sigue a la oración con ", { term: si }, " cuando va primero"]
+            uk: ["кома стоїть після частини з ", { term: "si" }, ", коли вона йде першою"]
           ex: { examples: [[{ target: Si llueve }, ", no salgo."], ["No salgo ", { target: si llueve }, "."]] }
-          tr: { en: { examples: ["If it rains, I don't go out.", "I don't go out if it rains."] } }
+          tr: { en: { examples: ["If it rains, I don't go out.", "I don't go out if it rains."] }, uk: { examples: ["Якщо йде дощ, я не виходжу.", "Я не виходжу, якщо йде дощ."] } }
         - level: A2
-          point: { en: Spelling, es: Ortografía }
+          point: { en: Spelling, es: Ortografía, uk: "Правопис" }
           rule:
             en: [{ term: si }, " means if, ", { term: sí }, " with an accent means yes"]
             es: [{ term: si }, " es condicional, ", { term: sí }, " con tilde es afirmación"]
+            uk: [{ term: "si" }, " означає «якщо», ", { term: "sí" }, " зі знаком наголосу — «так»"]
           ex: { examples: [[{ target: Si }, " quieres, vamos."], [{ target: Sí }, ", claro."]] }
-          tr: { en: { examples: ["If you want, let's go.", "Yes, of course."] } }
+          tr: { en: { examples: ["If you want, let's go.", "Yes, of course."] }, uk: { examples: ["Якщо хочеш, ходімо.", "Так, звісно."] } }
         - level: B1
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: [{ pattern: [si, { slot: present }] }, ", then the future"]
             es: [{ pattern: [si, { slot: present }] }, ", y después el futuro"]
+            uk: [{ pattern: ["si", { slot: "present" }] }, ", далі майбутній час"]
           ex: [{ target: Si tengo }, " tiempo, ", { target: iré }, "."]
-          tr: { en: "If I have time, I'll go." }
+          tr: { en: "If I have time, I'll go.", uk: "Якщо матиму час, піду." }
         - level: B1
-          point: { en: Form, es: Forma }
+          point: { en: Form, es: Forma, uk: "Форма" }
           rule:
             en: [{ pattern: [si, { slot: present }] }, ", then the imperative"]
             es: [{ pattern: [si, { slot: present }] }, ", y después el imperativo"]
+            uk: [{ pattern: ["si", { slot: "present" }] }, ", далі наказовий спосіб"]
           ex: [{ target: Si puedes }, ", ", { target: ayúdame }, "."]
-          tr: { en: "If you can, help me." }
+          tr: { en: "If you can, help me.", uk: "Якщо можеш, допоможи мені." }
         - level: B1
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: ["never the future after ", { term: si }, " in a condition"]
             es: ["nunca futuro detrás de ", { term: si }, " condicional"]
+            uk: ["ніколи не майбутній час після ", { term: "si" }, " в умові"]
           ex: [{ target: Si viene }, " Carlota, iremos al cine."]
-          tr: { en: "If Carlota comes, we'll go to the cinema." }
+          tr: { en: "If Carlota comes, we'll go to the cinema.", uk: "Якщо прийде Карлота, ми підемо в кіно." }
 
 sections:
-  - title: { en: Overview, es: Visión general }
+  - title: { en: Overview, es: Visión general, uk: "Огляд" }
     role: overview
     content:
       - type: list
@@ -87,25 +96,27 @@ sections:
             text:
               en: ["A conditional sentence has two parts: the condition with ", { term: si }, ", and the result."]
               es: ["Una oración condicional tiene dos partes: la condición con ", { term: si }, ", y el resultado."]
+              uk: ["Умовне речення має дві частини: умову з ", { term: "si" }, " і наслідок."]
           - type: rule
             level: A2
             text:
               en: ["Either part can come first; a comma follows the ", { term: si }, " clause when it opens the sentence:"]
               es: ["Cualquiera de las dos partes puede ir primero; una coma sigue a la oración con ", { term: si }, " cuando abre la frase:"]
+              uk: ["Будь-яка частина може йти першою; кома стоїть після частини з ", { term: "si" }, ", коли вона починає речення:"]
             ex: { examples: [[{ target: Si llueve }, ", no salgo."], ["No salgo ", { target: si llueve }, "."]] }
-            tr: { en: { examples: ["If it rains, I don't go out.", "I don't go out if it rains."] } }
+            tr: { en: { examples: ["If it rains, I don't go out.", "I don't go out if it rains."] }, uk: { examples: ["Якщо йде дощ, я не виходжу.", "Я не виходжу, якщо йде дощ."] } }
 
-  - title: { en: Form, es: Forma }
+  - title: { en: Form, es: Forma, uk: "Форма" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: pattern, label: { en: Pattern, es: Estructura } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: pattern, label: { en: Pattern, es: Estructura, uk: "Схема" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A2, pattern: { pattern: [si, { slot: present }, { slot: present }] }, ex: [{ target: Si quieres }, " ir al cine, ", { target: puedes }, " comprar la entrada por internet."], tr: { en: "If you want to go to the cinema, you can buy the ticket online." } }
-          - { level: B1, pattern: { pattern: [si, { slot: present }, { slot: { en: future, es: futuro } }] }, ex: [{ target: Si tengo }, " tiempo, ", { target: iré }, "."], tr: { en: "If I have time, I'll go." } }
-          - { level: B1, pattern: { pattern: [si, { slot: present }, { slot: { en: imperative, es: imperativo } }] }, ex: [{ target: Si tienes }, " frío, ", { target: cierra }, " la ventana."], tr: { en: "If you're cold, close the window." } }
+          - { level: A2, pattern: { pattern: [si, { slot: present }, { slot: present }] }, ex: [{ target: Si quieres }, " ir al cine, ", { target: puedes }, " comprar la entrada por internet."], tr: { en: "If you want to go to the cinema, you can buy the ticket online.", uk: "Якщо хочеш піти в кіно, можеш купити квиток в інтернеті." } }
+          - { level: B1, pattern: { pattern: [si, { slot: present }, { slot: { en: future, es: futuro, uk: "майбутній час" } }] }, ex: [{ target: Si tengo }, " tiempo, ", { target: iré }, "."], tr: { en: "If I have time, I'll go.", uk: "Якщо матиму час, піду." } }
+          - { level: B1, pattern: { pattern: [si, { slot: present }, { slot: { en: imperative, es: imperativo, uk: "наказовий спосіб" } }] }, ex: [{ target: Si tienes }, " frío, ", { target: cierra }, " la ventana."], tr: { en: "If you're cold, close the window.", uk: "Якщо тобі холодно, зачини вікно." } }
       - type: list
         items:
           - type: rule
@@ -113,24 +124,25 @@ sections:
             text:
               en: ["After ", { term: si }, ", the verb stays in the present, even when the condition is in the future:"]
               es: ["Detrás de ", { term: si }, ", el verbo va en presente, también cuando la condición está en el futuro:"]
+              uk: ["Після ", { term: "si" }, " дієслово стоїть у теперішньому часі, навіть коли умова стосується майбутнього:"]
             ex: [{ target: Si viene }, " Carlota, iremos al cine."]
-            tr: { en: "If Carlota comes, we'll go to the cinema." }
+            tr: { en: "If Carlota comes, we'll go to the cinema.", uk: "Якщо прийде Карлота, ми підемо в кіно." }
 
-  - title: { en: Use, es: Uso }
+  - title: { en: Use, es: Uso, uk: "Вживання" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Use, es: Uso } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: use, label: { en: Use, es: Uso, uk: "Вживання" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A2, use: { en: What usually happens, es: Lo que suele pasar }, ex: [{ target: Si como }, " mucho, me ", { target: duele }, " el estómago."], tr: { en: "If I eat a lot, I get a stomach ache." } }
-          - { level: A2, use: { en: A condition now, es: Una condición ahora }, ex: [{ target: Si tienes }, " hambre, ", { target: hay }, " fruta en la cocina."], tr: { en: "If you're hungry, there's fruit in the kitchen." } }
-          - { level: A2, use: { en: Offers, es: Ofrecimientos }, ex: [{ target: Si quieres }, ", te ", { target: ayudo }, "."], tr: { en: "If you like, I'll help you." } }
-          - { level: B1, use: { en: A future condition, es: Una condición futura }, ex: [{ target: Si hace }, " sol mañana, ", { target: iremos }, " a la playa."], tr: { en: "If it's sunny tomorrow, we'll go to the beach." } }
-          - { level: B1, use: { en: Instructions, es: Instrucciones }, ex: [{ target: Si llegas }, " tarde, ", { target: llámame }, "."], tr: { en: "If you're late, call me." } }
+          - { level: A2, use: { en: What usually happens, es: Lo que suele pasar, uk: "Що зазвичай стається" }, ex: [{ target: Si como }, " mucho, me ", { target: duele }, " el estómago."], tr: { en: "If I eat a lot, I get a stomach ache.", uk: "Якщо я багато їм, у мене болить живіт." } }
+          - { level: A2, use: { en: A condition now, es: Una condición ahora, uk: "Умова зараз" }, ex: [{ target: Si tienes }, " hambre, ", { target: hay }, " fruta en la cocina."], tr: { en: "If you're hungry, there's fruit in the kitchen.", uk: "Якщо ти голодний, на кухні є фрукти." } }
+          - { level: A2, use: { en: Offers, es: Ofrecimientos, uk: "Пропозиції" }, ex: [{ target: Si quieres }, ", te ", { target: ayudo }, "."], tr: { en: "If you like, I'll help you.", uk: "Якщо хочеш, я тобі допоможу." } }
+          - { level: B1, use: { en: A future condition, es: Una condición futura, uk: "Умова в майбутньому" }, ex: [{ target: Si hace }, " sol mañana, ", { target: iremos }, " a la playa."], tr: { en: "If it's sunny tomorrow, we'll go to the beach.", uk: "Якщо завтра буде сонячно, ми підемо на пляж." } }
+          - { level: B1, use: { en: Instructions, es: Instrucciones, uk: "Інструкції" }, ex: [{ target: Si llegas }, " tarde, ", { target: llámame }, "."], tr: { en: "If you're late, call me.", uk: "Якщо запізнюєшся, подзвони мені." } }
 
-  - title: { en: "Spelling: si and sí", es: "Ortografía: si y sí" }
+  - title: { en: "Spelling: si and sí", es: "Ortografía: si y sí", uk: "Правопис: si і sí" }
     role: spelling
     content:
       - type: list
@@ -140,10 +152,11 @@ sections:
             text:
               en: [{ term: si }, " without an accent introduces a condition; ", { term: sí }, " with an accent means yes:"]
               es: [{ term: si }, " sin tilde introduce una condición; ", { term: sí }, " con tilde es una afirmación:"]
+              uk: [{ term: "si" }, " без знака наголосу вводить умову; ", { term: "sí" }, " зі знаком наголосу означає «так»:"]
             ex: { exchange: ["¿Vienes a la fiesta?", [{ target: Sí }, ", ", { target: si }, " tengo tiempo."]] }
-            tr: { en: { exchange: ["Are you coming to the party?", "Yes, if I have time."] } }
+            tr: { en: { exchange: ["Are you coming to the party?", "Yes, if I have time."] }, uk: { exchange: ["Прийдеш на вечірку?", "Так, якщо матиму час."] } }
 
-  - title: { en: "Compare: si and cuando", es: "Comparación: si y cuando" }
+  - title: { en: "Compare: si and cuando", es: "Comparación: si y cuando", uk: "Порівняння: si і cuando" }
     role: compare
     content:
       - type: comparison
@@ -151,10 +164,10 @@ sections:
           - { key: si, label: si }
           - { key: cuando, label: cuando }
         rows:
-          - { level: B1, si: { en: it may happen or not, es: puede pasar o no }, cuando: { en: it will happen; only the moment is open, es: "va a pasar; solo el momento está abierto" } }
+          - { level: B1, si: { en: it may happen or not, es: puede pasar o no, uk: "може статися, а може й ні" }, cuando: { en: it will happen; only the moment is open, es: "va a pasar; solo el momento está abierto", uk: "станеться напевно; відкритий лише момент" } }
           - level: B1
-            si: { ex: [{ target: Si viene }, " Ana, la saludo."], tr: { en: "If Ana comes, I'll say hello to her." } }
-            cuando: { ex: [{ target: Cuando llegue }, " a casa, te llamo."], tr: { en: "When I get home, I'll call you." } }
+            si: { ex: [{ target: Si viene }, " Ana, la saludo."], tr: { en: "If Ana comes, I'll say hello to her.", uk: "Якщо Ана прийде, я з нею привітаюся." } }
+            cuando: { ex: [{ target: Cuando llegue }, " a casa, te llamo."], tr: { en: "When I get home, I'll call you.", uk: "Коли прийду додому, я тобі подзвоню." } }
       - type: list
         items:
           - type: note
@@ -162,12 +175,14 @@ sections:
             text:
               en: [{ term: cuando }, " about the future takes the subjunctive: ", { link: "Subjunctive after cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
               es: [{ term: cuando }, " referido al futuro lleva subjuntivo: ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+              uk: [{ term: "cuando" }, " про майбутнє вимагає суб’юнктива: ", { link: "Суб’юнктив після cuando, para que, antes de que", to: "es.subjuntivo.subjuntivo-cuando-para-que" }, "."]
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: "Sí quieres, vamos.", right: [{ target: Si }, " quieres, vamos."], rule: { en: [{ term: si }, " for a condition has no accent"], es: [{ term: si }, " condicional no lleva tilde"] } }
-          - { level: B1, wrong: "Si lloverá, no saldremos.", right: [{ target: Si llueve }, ", no saldremos."], rule: { en: ["after ", { term: si }, " in a condition, the present, never the future"], es: ["detrás de ", { term: si }, " condicional, presente, nunca futuro"] } }
-          - { level: B1, wrong: "Si llegues tarde, llámame.", right: [{ target: Si llegas }, " tarde, llámame."], rule: { en: ["after ", { term: si }, ", the present indicative, not the subjunctive"], es: ["detrás de ", { term: si }, ", presente de indicativo, no subjuntivo"] } }
+          - { level: A2, wrong: "Sí quieres, vamos.", right: [{ target: Si }, " quieres, vamos."], rule: { en: [{ term: si }, " for a condition has no accent"], es: [{ term: si }, " condicional no lleva tilde"], uk: [{ term: "si" }, " в умові пишеться без знака наголосу"] } }
+          - { level: B1, wrong: "Si lloverá, no saldremos.", right: [{ target: Si llueve }, ", no saldremos."], rule: { en: ["after ", { term: si }, " in a condition, the present, never the future"], es: ["detrás de ", { term: si }, " condicional, presente, nunca futuro"], uk: ["після ", { term: "si" }, " в умові — теперішній час, ніколи не майбутній"] } }
+          - { level: B1, wrong: "Si llegues tarde, llámame.", right: [{ target: Si llegas }, " tarde, llámame."], rule: { en: ["after ", { term: si }, ", the present indicative, not the subjunctive"], es: ["detrás de ", { term: si }, ", presente de indicativo, no subjuntivo"], uk: ["після ", { term: "si" }, " — теперішній час дійсного способу, а не суб’юнктив"] } }
+          - { level: B1, speakers: [uk], wrong: "Si Carlota vendrá, iremos al cine.", right: [{ target: Si Carlota viene }, ", iremos al cine."], rule: { uk: ["українською кажемо «якщо Карлота прийде» в майбутньому часі, але після ", { term: si }, " в умові — теперішній: ", { term: viene }] } }
