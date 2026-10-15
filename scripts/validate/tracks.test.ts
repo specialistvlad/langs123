@@ -5,8 +5,9 @@ import { fingerprint } from "../fingerprint.ts";
 import type { Explain, Localized, Topic, TopicRef } from "../lib.ts";
 import { checkTopic } from "./topic.ts";
 
-const TRACK: Explain[] = ["en", "es"];
-// A small Spanish topic in English and Spanish alone: its examples translate into English.
+const TRACK: Explain[] = ["es", "en"];
+// A small Spanish topic in Spanish and English alone: Spanish is its source, and its examples translate into
+// English.
 function spanish(): Topic {
   const both = (en: string, es: string): Localized => ({ en, es });
   const topic: Topic = {
@@ -34,7 +35,7 @@ function spanish(): Topic {
       },
     ],
   };
-  topic.translated = { es: fingerprint(topic) };
+  topic.translated = { en: fingerprint(topic, "es") };
   return topic;
 }
 const ref = { id: "es.sample.topic", lang: "es", entry: { slug: "topic" }, explain: TRACK } as TopicRef;
@@ -46,8 +47,8 @@ function problemsOf(change: (t: Topic) => void): string[] {
   return out;
 }
 
-describe("a topic of a language written for English and Spanish", () => {
-  test("passes with English and Spanish alone", () => {
+describe("a topic of a language written for Spanish and English", () => {
+  test("passes with Spanish and English alone", () => {
     expect(problemsOf(() => undefined)).toEqual([]);
   });
   test("has a status in each of them, and in no other", () => {
@@ -57,11 +58,16 @@ describe("a topic of a language written for English and Spanish", () => {
     ]);
   });
   test("stamps its translations in them alone", () => {
-    expect(problemsOf((t) => (t.translated = { ...t.translated, uk: fingerprint(t) }))).toEqual([
+    expect(problemsOf((t) => (t.translated = { ...t.translated, uk: fingerprint(t, "es") }))).toEqual([
       'translated has "uk", which the topic\'s language is not written for',
     ]);
   });
+  test("stamps the translations, never the source", () => {
+    expect(problemsOf((t) => (t.translated = { ...t.translated, es: fingerprint(t, "es") }))).toEqual([
+      'translated has "es", the source the other languages follow',
+    ]);
+  });
   test("carries each of them in its text", () => {
-    expect(problemsOf((t) => delete t.title.es)).toEqual(['title has no "es" text']);
+    expect(problemsOf((t) => delete t.title.en)).toEqual(['title has no "en" text']);
   });
 });

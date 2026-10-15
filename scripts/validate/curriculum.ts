@@ -1,17 +1,19 @@
 // The study path of a language being learned: per level, lowest first, the topics to study at that
 // level. A step is a topic at a level, so a written topic has a step at every level its leaves hold
 // and at no other; a planned topic's steps sit inside its planned range.
-import { SOURCE } from "../fingerprint.ts";
 import { type CurriculumLanguage, type Explain, explainOf, type Level, lv, type TopicRef } from "../lib.ts";
 import { contains, refRange, topicLevels } from "../levels.ts";
 import type { Report } from "./report.ts";
 
-// A language being learned: its explanation languages start with the source, its varieties are its own,
-// and its section and topic titles carry exactly its explanation languages.
+// A language being learned: the explanation languages it names start with itself, the source its other
+// explanation languages translate; its varieties are its own, and its section and topic titles carry exactly
+// its explanation languages.
 export function checkLanguage(language: CurriculumLanguage, report: Report): void {
   const where = "curriculum.yaml";
   const explain = explainOf(language);
-  if (explain[0] !== SOURCE) report(where, `${language.code}: explain starts with ${SOURCE}, the source the translations follow`);
+  if (language.explain !== undefined && explain[0] !== language.code) {
+    report(where, `${language.code}: explain starts with ${language.code}, the source the other explanation languages translate`);
+  }
   for (const v of language.varieties ?? []) {
     if (!v.startsWith(`${language.code}-`)) report(where, `${language.code}: variety ${v} belongs to another language`);
   }

@@ -5,94 +5,105 @@ kind: grammar
 tags: [pronouns, object, se lo, pronoun order]
 concepts: [object-pronouns]
 related: [es.pronombres.objeto-directo, es.pronombres.objeto-indirecto, es.imperativo-perifrasis.imperativo-afirmativo, es.fundamentos.pronunciacion-acentuacion]
-status: { en: draft, es: draft }
-translated: { es: "a7a4d3 122949 9548b5 2c796f f655cc 8f081a" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "8c5cad 6c0110 55290c 56273f bf5028 5e0de8", uk: "8c5cad 6c0110 55290c 56273f bf5028 5e0de8" }
 
-title: { en: "Two Pronouns Together: se lo", es: "Combinación de pronombres: se lo" }
+title: { en: "Two Pronouns Together: se lo", es: "Combinación de pronombres: se lo", uk: "Два займенники разом: se lo" }
 summary:
   lead:
     en: ["With two object pronouns, the indirect one comes first: ", { term: me lo }, ", ", { term: te la }, ", ", { term: nos los }, "."]
     es: ["Con dos pronombres de objeto, el indirecto va primero: ", { term: me lo }, ", ", { term: te la }, ", ", { term: nos los }, "."]
+    uk: ["Коли займенників-додатків два, першим стоїть непрямий: ", { term: me lo }, ", ", { term: te la }, ", ", { term: nos los }, "."]
   rule:
     en: [{ term: Le }, " and ", { term: les }, " become ", { term: se }, " before ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
     es: [{ term: Le }, " y ", { term: les }, " se convierten en ", { term: se }, " delante de ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
+    uk: [{ term: Le }, " і ", { term: les }, " перед ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, " стають ", { term: se }, ":"]
   ex: { examples: [["¿El libro? ", { target: Se lo }, " doy a Ana."], ["¿Las llaves? ", { target: Se las }, " dejo a tus padres."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { en: Point, es: Punto } }
-        - { key: rule, label: { en: Rule, es: Regla } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: point, label: { en: Point, es: Punto, uk: "Аспект" } }
+        - { key: rule, label: { en: Rule, es: Regla, uk: "Правило" } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
         - level: B1
-          point: { en: Order, es: Orden }
+          point: { en: Order, es: Orden, uk: "Порядок" }
           rule:
-            en: { pattern: [{ slot: { en: indirect object, es: objeto indirecto } }, { slot: { en: direct object, es: objeto directo } }] }
-            es: { pattern: [{ slot: { en: indirect object, es: objeto indirecto } }, { slot: { en: direct object, es: objeto directo } }] }
+            en: { pattern: [{ slot: { en: indirect object, es: objeto indirecto, uk: "непрямий додаток" } }, { slot: { en: direct object, es: objeto directo, uk: "прямий додаток" } }] }
+            es: { pattern: [{ slot: { en: indirect object, es: objeto indirecto, uk: "непрямий додаток" } }, { slot: { en: direct object, es: objeto directo, uk: "прямий додаток" } }] }
+            uk: { pattern: [{ slot: { en: indirect object, es: objeto indirecto, uk: "непрямий додаток" } }, { slot: { en: direct object, es: objeto directo, uk: "прямий додаток" } }] }
           ex: ["¿El dinero? ", { target: Te lo }, " doy mañana."]
-          tr: { en: "The money? I'll give it to you tomorrow." }
+          tr: { en: "The money? I'll give it to you tomorrow.", uk: "Гроші? Я дам їх тобі завтра." }
         - level: A2
           point: se
           rule:
             en: [{ mapping: [{ alternatives: [{ term: le }, { term: les }] }, { term: se }] }, " before ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }]
             es: [{ mapping: [{ alternatives: [{ term: le }, { term: les }] }, { term: se }] }, " delante de ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }]
+            uk: [{ mapping: [{ alternatives: [{ term: le }, { term: les }] }, { term: se }] }, " перед ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }]
           ex: ["¿Las llaves? ", { target: Se las }, " doy a Pedro."]
-          tr: { en: "The keys? I'm giving them to Pedro." }
+          tr: { en: "The keys? I'm giving them to Pedro.", uk: "Ключі? Я віддаю їх Педро." }
         - level: B1
           variety: es-ES
           point: os
           rule:
             en: [{ term: os }, " comes first too: ", { term: os lo }, ", ", { term: os las }]
             es: [{ term: os }, " también va primero: ", { term: os lo }, ", ", { term: os las }]
+            uk: [{ term: os }, " теж стоїть першим: ", { term: os lo }, ", ", { term: os las }]
           ex: ["¿Las fotos? ", { target: Os las }, " mando hoy."]
-          tr: { en: "The photos? I'll send them to you today." }
+          tr: { en: "The photos? I'll send them to you today.", uk: "Фото? Надішлю їх вам сьогодні." }
         - level: A2
-          point: { en: Clarity, es: Claridad }
+          point: { en: Clarity, es: Claridad, uk: "Ясність" }
           rule:
             en: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a ellos }] }, " show who ", { term: se }, " is"]
             es: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a ellos }] }, " aclaran a quién se refiere ", { term: se }]
+            uk: [{ alternatives: [{ term: a él }, { term: a ella }, { term: a ellos }] }, " показують, кого означає ", { term: se }]
           ex: [{ target: Se lo }, " digo ", { target: a ella }, "."]
-          tr: { en: "I'll tell her." }
+          tr: { en: "I'll tell her.", uk: "Я скажу їй." }
         - level: B1
-          point: { en: Position, es: Posición }
+          point: { en: Position, es: Posición, uk: "Місце" }
           rule:
             en: "both before a conjugated verb, side by side"
             es: "los dos delante del verbo conjugado, juntos"
+            uk: "обидва перед дієсловом в особовій формі, поруч"
           ex: ["No ", { target: me lo }, " dice."]
-          tr: { en: "He doesn't tell me." }
+          tr: { en: "He doesn't tell me.", uk: "Він мені цього не каже." }
         - level: B1
-          point: { en: Position, es: Posición }
+          point: { en: Position, es: Posición, uk: "Місце" }
           rule:
             en: "both attached to an infinitive or a gerund, or both before the phrase"
             es: "los dos unidos al infinitivo o al gerundio, o los dos delante"
+            uk: "обидва приєднуються до інфінітива чи герундія або обидва стоять перед групою"
           ex: { equivalence: [["Voy a ", { target: dártelo }], [{ target: Te lo }, " voy a dar"]] }
-          tr: { en: "I'm going to give it to you." }
+          tr: { en: "I'm going to give it to you.", uk: "Я тобі це дам." }
         - level: B1
-          point: { en: Command, es: Imperativo }
+          point: { en: Command, es: Imperativo, uk: "Наказова форма" }
           rule:
             en: "both attached to an affirmative command"
             es: "los dos unidos al imperativo afirmativo"
+            uk: "обидва приєднуються до стверджувальної наказової форми"
           ex: [{ target: Dámelo }, "."]
-          tr: { en: Give it to me. }
+          tr: { en: Give it to me., uk: "Дай мені це." }
         - level: B1
-          point: { en: Accent, es: Tilde }
+          point: { en: Accent, es: Tilde, uk: "Графічний наголос" }
           rule:
             en: "the verb keeps its stress, so it takes a written accent"
             es: "el verbo mantiene su acento, así que lleva tilde"
+            uk: "дієслово зберігає свій наголос, тому отримує графічний наголос"
           ex: { examples: [{ target: dártelo }, { target: dándoselo }] }
-          tr: { en: { examples: [to give it to you, giving it to him] } }
+          tr: { en: { examples: [to give it to you, giving it to him] }, uk: { examples: ["дати тобі це", "даючи йому це"] } }
         - level: A2
-          point: { en: Trap, es: Trampa }
+          point: { en: Trap, es: Trampa, uk: "Пастка" }
           rule:
             en: [{ term: le }, " never stands before ", { term: lo }, ": it is always ", { term: se lo }]
             es: [{ term: le }, " nunca va delante de ", { term: lo }, ": siempre es ", { term: se lo }]
+            uk: [{ term: le }, " ніколи не стоїть перед ", { term: lo }, ": завжди ", { term: se lo }]
           ex: [{ target: Se lo }, " explico."]
-          tr: { en: "I'll explain it to him." }
+          tr: { en: "I'll explain it to him.", uk: "Я йому це поясню." }
 
 sections:
-  - title: { en: Overview, es: Visión general }
+  - title: { en: Overview, es: Visión general, uk: "Огляд" }
     role: overview
     content:
       - type: list
@@ -102,20 +113,22 @@ sections:
             text:
               en: "A sentence can carry two object pronouns: the indirect one, to whom, and the direct one, what."
               es: "Una frase puede llevar dos pronombres de objeto: el indirecto, a quién, y el directo, qué."
+              uk: "У реченні може бути два займенники-додатки: непрямий — кому, і прямий — що."
             ex: ["¿El libro? ", { target: Se lo }, " doy a Ana."]
-            tr: { en: "The book? I'm giving it to Ana." }
+            tr: { en: "The book? I'm giving it to Ana.", uk: "Книжку? Я даю її Ані." }
           - type: note
             level: A2
             text:
               en: ["Each pronoun alone: ", { link: "Direct Object Pronouns", to: es.pronombres.objeto-directo }, " and ", { link: "Indirect Object Pronouns", to: es.pronombres.objeto-indirecto }, "."]
               es: ["Cada pronombre por separado: ", { link: "El objeto directo", to: es.pronombres.objeto-directo }, " y ", { link: "El objeto indirecto", to: es.pronombres.objeto-indirecto }, "."]
+              uk: ["Кожен займенник окремо: ", { link: "Займенники прямого додатка", to: es.pronombres.objeto-directo }, " і ", { link: "Займенники непрямого додатка", to: es.pronombres.objeto-indirecto }, "."]
 
-  - title: { en: "Form: the pairs", es: "Forma: las combinaciones" }
+  - title: { en: "Form: the pairs", es: "Forma: las combinaciones", uk: "Форма: пари займенників" }
     role: form
     content:
       - type: paradigm
         columns:
-          - { key: indirect, label: { en: Indirect object, es: Objeto indirecto } }
+          - { key: indirect, label: { en: Indirect object, es: Objeto indirecto, uk: "Непрямий додаток" } }
           - { key: sg, label: { alternatives: [lo, la] } }
           - { key: pl, label: { alternatives: [los, las] } }
         rows:
@@ -132,42 +145,46 @@ sections:
             text:
               en: "The indirect pronoun always comes first:"
               es: "El pronombre indirecto siempre va primero:"
+              uk: "Непрямий займенник завжди стоїть першим:"
             ex: ["¿", { target: Me lo }, " prestas?"]
-            tr: { en: Will you lend it to me? }
+            tr: { en: Will you lend it to me?, uk: "Позичиш мені?" }
           - type: rule
             level: A2
             text:
               en: [{ term: le }, " and ", { term: les }, " become ", { term: se }, " before ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
               es: [{ term: le }, " y ", { term: les }, " se convierten en ", { term: se }, " delante de ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, ":"]
+              uk: [{ term: le }, " і ", { term: les }, " перед ", { alternatives: [{ term: lo }, { term: la }, { term: los }, { term: las }] }, " стають ", { term: se }, ":"]
             ex: ["¿El regalo? ", { target: Se lo }, " doy a mi madre."]
-            tr: { en: "The present? I'm giving it to my mother." }
+            tr: { en: "The present? I'm giving it to my mother.", uk: "Подарунок? Я дарую його мамі." }
           - type: rule
             level: A2
             text:
               en: [{ term: se }, " can stand for ", { term: le }, " or ", { term: les }, ", so ", { pattern: [{ term: a }, { slot: person }] }, " often follows to make it clear:"]
               es: [{ term: se }, " puede valer por ", { term: le }, " o por ", { term: les }, ", así que a menudo sigue ", { pattern: [{ term: a }, { slot: person }] }, " para aclararlo:"]
+              uk: [{ term: se }, " може означати і ", { term: le }, ", і ", { term: les }, ", тому для ясності часто додають ", { pattern: [{ term: a }, { slot: person }] }, ":"]
             ex: { examples: [[{ target: Se lo }, " digo ", { target: a ella }, "."], [{ target: Se lo }, " digo ", { target: a ellos }, "."]] }
-            tr: { en: { examples: ["I'll tell her.", "I'll tell them."] } }
+            tr: { en: { examples: ["I'll tell her.", "I'll tell them."] }, uk: { examples: ["Я скажу їй.", "Я скажу їм."] } }
           - type: note
             level: B1
             variety: es-419
             text:
               en: ["“I told them” is ", { term: se lo dije }, " in writing. Informal Latin American speech also marks the plural receiver on the second pronoun, and you will hear ", { term: se los dije }, "."]
               es: ["“Se lo dije a ellos” se escribe ", { term: se lo dije }, ". En el habla informal de Latinoamérica el plural del receptor también se marca en el segundo pronombre, y se oye ", { term: se los dije }, "."]
+              uk: ["«Я сказав їм це» на письмі — ", { term: se lo dije }, ". У неформальному мовленні Латинської Америки множину адресата позначають і на другому займеннику, тож можна почути ", { term: se los dije }, "."]
 
-  - title: { en: Where the pronouns go, es: Dónde van los pronombres }
+  - title: { en: Where the pronouns go, es: Dónde van los pronombres, uk: "Де стоять займенники" }
     role: own
     content:
       - type: usage
         columns:
-          - { key: use, label: { en: Position, es: Posición } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: use, label: { en: Position, es: Posición, uk: "Місце" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: B1, use: { en: "Both before a conjugated verb, side by side", es: "Los dos delante del verbo conjugado, juntos" }, ex: [{ target: Te lo }, " traigo mañana."], tr: { en: "I'll bring it to you tomorrow." } }
-          - { level: A2, use: { en: [{ term: "no" }, " before both"], es: [{ term: "no" }, " delante de los dos"] }, ex: ["No ", { target: se lo }, " digo."], tr: { en: "I'm not telling him." } }
-          - { level: B1, use: { en: "With an infinitive: both attached, or both before the phrase", es: "Con infinitivo: los dos unidos, o los dos delante" }, ex: { equivalence: [["Voy a ", { target: dártelo }], [{ target: Te lo }, " voy a dar"]] }, tr: { en: "I'm going to give it to you." } }
-          - { level: B1, use: { en: "With a gerund: both attached, or both before the phrase", es: "Con gerundio: los dos unidos, o los dos delante" }, ex: { equivalence: [["Estoy ", { target: explicándoselo }], [{ target: Se lo }, " estoy explicando"]] }, tr: { en: "I'm explaining it to him." } }
-          - { level: B1, use: { en: Both attached to an affirmative command, es: Los dos unidos al imperativo afirmativo }, ex: { examples: [[{ target: Dámelo }, "."], [{ target: Dígaselo }, " a su hija."]] }, tr: { en: { examples: [Give it to me., Tell your daughter.] } } }
+          - { level: B1, use: { en: "Both before a conjugated verb, side by side", es: "Los dos delante del verbo conjugado, juntos", uk: "Обидва перед дієсловом в особовій формі, поруч" }, ex: [{ target: Te lo }, " traigo mañana."], tr: { en: "I'll bring it to you tomorrow.", uk: "Принесу тобі це завтра." } }
+          - { level: A2, use: { en: [{ term: "no" }, " before both"], es: [{ term: "no" }, " delante de los dos"], uk: [{ term: "no" }, " перед обома"] }, ex: ["No ", { target: se lo }, " digo."], tr: { en: "I'm not telling him.", uk: "Я йому цього не скажу." } }
+          - { level: B1, use: { en: "With an infinitive: both attached, or both before the phrase", es: "Con infinitivo: los dos unidos, o los dos delante", uk: "З інфінітивом: обидва приєднуються або обидва стоять перед групою" }, ex: { equivalence: [["Voy a ", { target: dártelo }], [{ target: Te lo }, " voy a dar"]] }, tr: { en: "I'm going to give it to you.", uk: "Я тобі це дам." } }
+          - { level: B1, use: { en: "With a gerund: both attached, or both before the phrase", es: "Con gerundio: los dos unidos, o los dos delante", uk: "З герундієм: обидва приєднуються або обидва стоять перед групою" }, ex: { equivalence: [["Estoy ", { target: explicándoselo }], [{ target: Se lo }, " estoy explicando"]] }, tr: { en: "I'm explaining it to him.", uk: "Я йому це пояснюю." } }
+          - { level: B1, use: { en: Both attached to an affirmative command, es: Los dos unidos al imperativo afirmativo, uk: "Обидва приєднуються до стверджувальної наказової форми" }, ex: { examples: [[{ target: Dámelo }, "."], [{ target: Dígaselo }, " a su hija."]] }, tr: { en: { examples: [Give it to me., Tell your daughter.] }, uk: { examples: ["Дай мені це.", "Скажіть це своїй доньці."] } } }
       - type: list
         items:
           - type: rule
@@ -175,22 +192,24 @@ sections:
             text:
               en: "The two pronouns stay together: both before the verb, or both attached to it."
               es: "Los dos pronombres van juntos: los dos delante del verbo, o los dos unidos a él."
+              uk: "Два займенники не розлучаються: обидва перед дієсловом або обидва приєднані до нього."
           - type: rule
             level: B1
             text:
               en: "A verb with two pronouns attached keeps its stress, so it takes a written accent:"
               es: "El verbo con dos pronombres unidos mantiene su acento, así que lleva tilde:"
+              uk: "Дієслово з двома приєднаними займенниками зберігає свій наголос, тому отримує графічний наголос:"
             ex: { examples: [{ target: dártelo }, { target: dándoselo }, { target: dígamelo }] }
-            tr: { en: { examples: [to give it to you, giving it to him, tell it to me] } }
+            tr: { en: { examples: [to give it to you, giving it to him, tell it to me] }, uk: { examples: ["дати тобі це", "даючи йому це", "скажіть мені це"] } }
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: Le lo doy., right: [{ target: Se lo }, " doy."], rule: { en: [{ term: le }, " becomes ", { term: se }, " before ", { term: lo }], es: [{ term: le }, " se convierte en ", { term: se }, " delante de ", { term: lo }] } }
-          - { level: B1, wrong: Lo te doy., right: [{ target: Te lo }, " doy."], rule: { en: "the indirect pronoun comes first", es: "el pronombre indirecto va primero" } }
-          - { level: B1, wrong: Voy a te lo dar., right: ["Voy a ", { target: dártelo }, "."], rule: { en: "both pronouns join the infinitive, or both go before the phrase", es: "los dos pronombres se unen al infinitivo, o los dos van delante" } }
-          - { level: B1, wrong: Te voy a darlo., right: [{ target: Te lo }, " voy a dar."], rule: { en: "the two pronouns stay together", es: "los dos pronombres van juntos" } }
-          - { level: B1, wrong: Damelo., right: [{ target: Dámelo }, "."], rule: { en: "the command keeps its stress: written accent", es: "el imperativo mantiene su acento: lleva tilde" } }
-          - { level: B1, speakers: [en], wrong: Lo doy a él., right: [{ target: Se lo }, " doy a él."], rule: { en: ["“give it to him” takes both pronouns: ", { term: se lo }] } }
+          - { level: A2, wrong: Le lo doy., right: [{ target: Se lo }, " doy."], rule: { en: [{ term: le }, " becomes ", { term: se }, " before ", { term: lo }], es: [{ term: le }, " se convierte en ", { term: se }, " delante de ", { term: lo }], uk: [{ term: le }, " перед ", { term: lo }, " стає ", { term: se }] } }
+          - { level: B1, wrong: Lo te doy., right: [{ target: Te lo }, " doy."], rule: { en: "the indirect pronoun comes first", es: "el pronombre indirecto va primero", uk: "першим стоїть непрямий займенник" } }
+          - { level: B1, wrong: Voy a te lo dar., right: ["Voy a ", { target: dártelo }, "."], rule: { en: "both pronouns join the infinitive, or both go before the phrase", es: "los dos pronombres se unen al infinitivo, o los dos van delante", uk: "обидва займенники приєднуються до інфінітива або обидва стоять перед групою" } }
+          - { level: B1, wrong: Te voy a darlo., right: [{ target: Te lo }, " voy a dar."], rule: { en: "the two pronouns stay together", es: "los dos pronombres van juntos", uk: "два займенники стоять разом" } }
+          - { level: B1, wrong: Damelo., right: [{ target: Dámelo }, "."], rule: { en: "the command keeps its stress: written accent", es: "el imperativo mantiene su acento: lleva tilde", uk: "наказова форма зберігає наголос: потрібен графічний наголос" } }
+          - { level: B1, speakers: [en, uk], wrong: Lo doy a él., right: [{ target: Se lo }, " doy a él."], rule: { en: ["“give it to him” takes both pronouns: ", { term: se lo }], uk: ["«даю його йому» вимагає обох займенників: ", { term: se lo }] } }

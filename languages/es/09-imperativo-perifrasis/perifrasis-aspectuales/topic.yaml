@@ -5,80 +5,82 @@ kind: grammar
 tags: [verbs, periphrases, infinitive, gerund]
 concepts: [periphrases, past-habits]
 related: [es.imperativo-perifrasis.poder-deber-tener-que, es.presente.estar-gerundio, es.futuro-condicional.ir-a-infinitivo, es.pasados.preterito-imperfecto]
-status: { en: draft, es: draft }
-translated: { es: "1bc7a7 a257fe 7b8966 9d93eb 2a44d8 500296 2c14c6 cf6dd7" }
+status: { en: draft, es: draft, uk: draft }
+translated: { en: "ddac63 6a0802 a691d0 007d69 4c856e 8c148b 8fb399 181230", uk: "ddac63 6a0802 a691d0 007d69 4c856e 8c148b 8fb399 181230" }
 
-title: { en: "Verb Phrases: acabar de, volver a, soler", es: "Perífrasis: acabar de, volver a, soler" }
+title: { en: "Verb Phrases: acabar de, volver a, soler", es: "Perífrasis: acabar de, volver a, soler", uk: "Перифрази: acabar de, volver a, soler" }
 summary:
   lead:
     en: ["Verb phrases say how an action goes: ", { term: acabar de }, " for something just done, ", { term: empezar a }, ", ", { term: volver a }, ", ", { term: dejar de }, ", ", { term: seguir }, " and ", { term: soler }, "."]
     es: ["Las perífrasis dicen cómo transcurre una acción: ", { term: acabar de }, " para algo recién hecho, ", { term: empezar a }, ", ", { term: volver a }, ", ", { term: dejar de }, ", ", { term: seguir }, " y ", { term: soler }, "."]
+    uk: ["Перифрази показують, як перебігає дія: ", { term: "acabar de" }, " — щойно зроблене, а також ", { term: "empezar a" }, ", ", { term: "volver a" }, ", ", { term: "dejar de" }, ", ", { term: "seguir" }, " і ", { term: "soler" }, "."]
   rule:
     en: "The first verb changes and keeps its preposition; the second stays in the infinitive:"
     es: "El primer verbo cambia y mantiene su preposición; el segundo queda en infinitivo:"
+    uk: "Перше дієслово змінюється і зберігає свій прийменник; друге лишається в інфінітиві:"
   ex: { examples: [[{ target: Acabo de llegar }, "."], [{ target: Vuelve a llover }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: form, label: { en: Form, es: Forma } }
-        - { key: meaning, label: { en: Meaning, es: Significado } }
-        - { key: ex, label: { en: Example, es: Ejemplo } }
+        - { key: form, label: { en: Form, es: Forma, uk: "Форма" } }
+        - { key: meaning, label: { en: Meaning, es: Significado, uk: "Значення" } }
+        - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
       rows:
         - level: A2
           form: { pattern: [acabar de, { slot: infinitive }] }
-          meaning: { en: something that has just happened, es: algo que acaba de pasar }
+          meaning: { en: something that has just happened, es: algo que acaba de pasar, uk: "щось, що щойно сталося" }
           ex: [{ target: Acabo de llegar }, "."]
-          tr: { en: "I've just arrived." }
+          tr: { en: "I've just arrived.", uk: "Я щойно прийшов." }
         - level: A2
           form: { pattern: [empezar a, { slot: infinitive }] }
-          meaning: { en: the start of an action, es: el comienzo de una acción }
+          meaning: { en: the start of an action, es: el comienzo de una acción, uk: "початок дії" }
           ex: [{ target: Empiezo a trabajar }, " a las ocho."]
-          tr: { en: "I start work at eight." }
+          tr: { en: "I start work at eight.", uk: "Я починаю працювати о восьмій." }
         - level: A2
           form: { pattern: [volver a, { slot: infinitive }] }
-          meaning: { en: an action again, es: una acción otra vez }
+          meaning: { en: an action again, es: una acción otra vez, uk: "дія ще раз" }
           ex: [{ target: Vuelve a llover }, "."]
-          tr: { en: "It's raining again." }
+          tr: { en: "It's raining again.", uk: "Знову йде дощ." }
         - level: B1
           form: { pattern: [dejar de, { slot: infinitive }] }
-          meaning: { en: the end of a habit or an action, es: el final de un hábito o de una acción }
+          meaning: { en: the end of a habit or an action, es: el final de un hábito o de una acción, uk: "кінець звички або дії" }
           ex: [{ target: Dejé de fumar }, " el año pasado."]
-          tr: { en: "I stopped smoking last year." }
+          tr: { en: "I stopped smoking last year.", uk: "Торік я кинув курити." }
         - level: B1
           form: { pattern: [soler, { slot: infinitive }] }
-          meaning: { en: a habit, es: un hábito }
+          meaning: { en: a habit, es: un hábito, uk: "звичка" }
           ex: [{ target: Suelo levantarme }, " temprano."]
-          tr: { en: "I usually get up early." }
+          tr: { en: "I usually get up early.", uk: "Я зазвичай рано встаю." }
         - level: B1
-          form: { pattern: [seguir, { slot: { en: gerund, es: gerundio } }] }
-          meaning: { en: an action that goes on, es: una acción que continúa }
+          form: { pattern: [seguir, { slot: { en: gerund, es: gerundio, uk: "герундій" } }] }
+          meaning: { en: an action that goes on, es: una acción que continúa, uk: "дія, що триває" }
           ex: [{ target: Sigo viviendo }, " en Lima."]
-          tr: { en: "I still live in Lima." }
+          tr: { en: "I still live in Lima.", uk: "Я досі живу в Лімі." }
         - level: B1
           form: { pattern: [ponerse a, { slot: infinitive }] }
-          meaning: { en: a sudden start, es: un comienzo repentino }
+          meaning: { en: a sudden start, es: un comienzo repentino, uk: "раптовий початок" }
           ex: ["El niño ", { target: se puso a llorar }, "."]
-          tr: { en: "The child started crying." }
+          tr: { en: "The child started crying.", uk: "Дитина розплакалася." }
         - level: B1
           form: { pattern: [estar a punto de, { slot: infinitive }] }
-          meaning: { en: something about to happen, es: algo que va a pasar enseguida }
+          meaning: { en: something about to happen, es: algo que va a pasar enseguida, uk: "щось, що ось-ось станеться" }
           ex: ["El tren ", { target: está a punto de salir }, "."]
-          tr: { en: "The train is about to leave." }
+          tr: { en: "The train is about to leave.", uk: "Потяг ось-ось відправиться." }
         - level: A2
-          form: { en: Trap, es: Trampa }
-          meaning: { en: "the preposition stays: de, a", es: "la preposición se mantiene: de, a" }
+          form: { en: Trap, es: Trampa, uk: "Пастка" }
+          meaning: { en: "the preposition stays: de, a", es: "la preposición se mantiene: de, a", uk: "прийменник зберігається: de, a" }
           ex: [{ target: Empiezo a entender }, "."]
-          tr: { en: "I'm beginning to understand." }
+          tr: { en: "I'm beginning to understand.", uk: "Я починаю розуміти." }
         - level: B1
-          form: { en: Trap, es: Trampa }
-          meaning: { en: "seguir takes the gerund", es: "seguir lleva gerundio" }
+          form: { en: Trap, es: Trampa, uk: "Пастка" }
+          meaning: { en: "seguir takes the gerund", es: "seguir lleva gerundio", uk: "seguir вимагає герундія" }
           ex: [{ target: Sigo estudiando }, "."]
-          tr: { en: "I'm still studying." }
+          tr: { en: "I'm still studying.", uk: "Я досі вчуся." }
 
 sections:
-  - title: { en: Overview, es: Visión general }
+  - title: { en: Overview, es: Visión general, uk: "Огляд" }
     role: overview
     content:
       - type: list
@@ -88,44 +90,53 @@ sections:
             text:
               en: "A verb phrase is a conjugated verb, often a preposition, and an infinitive or a gerund."
               es: "Una perífrasis es un verbo conjugado, a menudo una preposición, y un infinitivo o un gerundio."
+              uk: "Перифраза — це відмінюване дієслово, часто прийменник, та інфінітив або герундій."
           - type: rule
             level: A2
             text:
               en: "The first verb carries the person and the tense; the infinitive never changes:"
               es: "El primer verbo lleva la persona y el tiempo; el infinitivo no cambia nunca:"
+              uk: "Перше дієслово передає особу й час; інфінітив не змінюється ніколи:"
             ex: { examples: [[{ target: Acabo de comer }, "."], [{ target: Acabamos de comer }, "."]] }
-            tr: { en: { examples: ["I've just eaten.", "We've just eaten."] } }
+            tr: { en: { examples: ["I've just eaten.", "We've just eaten."] }, uk: { examples: ["Я щойно поїв.", "Ми щойно поїли."] } }
+          - type: note
+            level: A2
+            readers: [uk]
+            text:
+              uk: ["Українська часто передає це видом або префіксом дієслова: ", { l1: "щойно прийшов" }, " — ", { term: "acabo de llegar" }, ", ", { l1: "знову пішов дощ" }, " — ", { term: "volvió a llover" }, "."]
           - type: rule
             level: A2
             text:
               en: "Pronouns go before the first verb or join the end of the infinitive:"
               es: "Los pronombres van delante del primer verbo o se unen al final del infinitivo:"
+              uk: "Займенники стоять перед першим дієсловом або приєднуються до кінця інфінітива:"
             ex: { examples: [[{ target: La acabo de ver }, "."], [{ target: Acabo de verla }, "."]] }
-            tr: { en: { examples: ["I've just seen her.", "I've just seen her."] } }
+            tr: { en: { examples: ["I've just seen her.", "I've just seen her."] }, uk: { examples: ["Я щойно її бачив.", "Я щойно її бачив."] } }
           - type: note
             level: A2
             text:
               en: ["Verbs for ability and obligation: ", { link: "Can, Must, Should: poder, saber, deber, tener que, hay que", to: es.imperativo-perifrasis.poder-deber-tener-que }, "."]
               es: ["Verbos de capacidad y obligación: ", { link: "Poder, saber, deber, tener que, hay que", to: es.imperativo-perifrasis.poder-deber-tener-que }, "."]
+              uk: ["Дієслова можливості й обов’язку: ", { link: "Модальні дієслова: poder, saber, deber, tener que, hay que", to: "es.imperativo-perifrasis.poder-deber-tener-que" }, "."]
 
-  - title: { en: "Use: beginning and end", es: "Uso: comienzo y final" }
+  - title: { en: "Use: beginning and end", es: "Uso: comienzo y final", uk: "Вживання: початок і кінець" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form, es: Forma } }
-          - { key: meaning, label: { en: Meaning, es: Significado } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: form, label: { en: Form, es: Forma, uk: "Форма" } }
+          - { key: meaning, label: { en: Meaning, es: Significado, uk: "Значення" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
-          - { level: A2, form: { pattern: [empezar a, { slot: infinitive }] }, meaning: { en: the start of an action, es: el comienzo de una acción }, ex: ["Mañana ", { target: empiezo a estudiar }, " inglés."], tr: { en: "Tomorrow I start studying English." } }
-          - { level: B1, form: { pattern: [ponerse a, { slot: infinitive }] }, meaning: { en: a sudden start, es: un comienzo repentino }, ex: ["De repente ", { target: se puso a llover }, "."], tr: { en: "Suddenly it started to rain." } }
-          - { level: B1, form: { pattern: [estar a punto de, { slot: infinitive }] }, meaning: { en: something about to happen, es: algo que va a pasar enseguida }, ex: [{ target: Estoy a punto de salir }, ": te llamo luego."], tr: { en: "I'm about to go out: I'll call you later." } }
+          - { level: A2, form: { pattern: [empezar a, { slot: infinitive }] }, meaning: { en: the start of an action, es: el comienzo de una acción, uk: "початок дії" }, ex: ["Mañana ", { target: empiezo a estudiar }, " inglés."], tr: { en: "Tomorrow I start studying English.", uk: "Завтра я починаю вивчати англійську." } }
+          - { level: B1, form: { pattern: [ponerse a, { slot: infinitive }] }, meaning: { en: a sudden start, es: un comienzo repentino, uk: "раптовий початок" }, ex: ["De repente ", { target: se puso a llover }, "."], tr: { en: "Suddenly it started to rain.", uk: "Раптом пішов дощ." } }
+          - { level: B1, form: { pattern: [estar a punto de, { slot: infinitive }] }, meaning: { en: something about to happen, es: algo que va a pasar enseguida, uk: "щось, що ось-ось станеться" }, ex: [{ target: Estoy a punto de salir }, ": te llamo luego."], tr: { en: "I'm about to go out: I'll call you later.", uk: "Я вже виходжу: передзвоню пізніше." } }
           - level: A2
             form: { pattern: [acabar de, { slot: infinitive }] }
-            meaning: { en: something that has just happened, es: algo que acaba de pasar }
+            meaning: { en: something that has just happened, es: algo que acaba de pasar, uk: "щось, що щойно сталося" }
             ex: { examples: [[{ target: Acabo de llegar }, "."], ["Ana ", { target: acaba de salir }, "."]] }
-            tr: { en: { examples: ["I've just arrived.", "Ana has just gone out."] } }
-          - { level: B1, form: { pattern: [dejar de, { slot: infinitive }] }, meaning: { en: the end of a habit or an action, es: el final de un hábito o de una acción }, ex: [{ target: Dejé de fumar }, " el año pasado."], tr: { en: "I stopped smoking last year." } }
+            tr: { en: { examples: ["I've just arrived.", "Ana has just gone out."] }, uk: { examples: ["Я щойно прийшов.", "Ана щойно вийшла."] } }
+          - { level: B1, form: { pattern: [dejar de, { slot: infinitive }] }, meaning: { en: the end of a habit or an action, es: el final de un hábito o de una acción, uk: "кінець звички або дії" }, ex: [{ target: Dejé de fumar }, " el año pasado."], tr: { en: "I stopped smoking last year.", uk: "Торік я кинув курити." } }
       - type: list
         items:
           - type: rule
@@ -133,41 +144,48 @@ sections:
             text:
               en: [{ term: acabar de }, " in the present says something has just happened:"]
               es: [{ term: acabar de }, " en presente dice que algo acaba de pasar:"]
+              uk: [{ term: "acabar de" }, " у теперішньому часі означає, що щось щойно сталося:"]
             ex: ["La película ", { target: acaba de empezar }, "."]
-            tr: { en: "The film has just started." }
+            tr: { en: "The film has just started.", uk: "Фільм щойно почався." }
+          - type: note
+            level: A2
+            readers: [uk]
+            text:
+              uk: ["Українське ", { l1: "починаю працювати" }, " не має прийменника, а іспанське має: ", { term: "empiezo a trabajar" }, "; так само ", { term: "acabo de" }, " і ", { term: "dejo de" }, "."]
           - type: note
             level: A2
             variety: es-419
             text:
               en: ["In much of Latin America, ", { term: recién }, " with the preterite says the same:"]
               es: ["En gran parte de Latinoamérica, ", { term: recién }, " con el pretérito indefinido dice lo mismo:"]
+              uk: ["У більшій частині Латинської Америки те саме передає ", { term: "recién" }, " з простим минулим:"]
             ex: [{ target: Recién llegué }, "."]
-            tr: { en: "I've just arrived." }
+            tr: { en: "I've just arrived.", uk: "Я щойно прийшов." }
 
-  - title: { en: "Use: repetition and habit", es: "Uso: repetición y hábito" }
+  - title: { en: "Use: repetition and habit", es: "Uso: repetición y hábito", uk: "Вживання: повторення і звичка" }
     role: use
     content:
       - type: usage
         columns:
-          - { key: form, label: { en: Form, es: Forma } }
-          - { key: meaning, label: { en: Meaning, es: Significado } }
-          - { key: ex, label: { en: Example, es: Ejemplo } }
+          - { key: form, label: { en: Form, es: Forma, uk: "Форма" } }
+          - { key: meaning, label: { en: Meaning, es: Significado, uk: "Значення" } }
+          - { key: ex, label: { en: Example, es: Ejemplo, uk: "Приклад" } }
         rows:
           - level: A2
             form: { pattern: [volver a, { slot: infinitive }] }
-            meaning: { en: an action again, es: una acción otra vez }
+            meaning: { en: an action again, es: una acción otra vez, uk: "дія ще раз" }
             ex: { examples: [[{ target: Vuelve a llover }, "."], ["Mañana ", { target: vuelvo a llamar }, "."]] }
-            tr: { en: { examples: ["It's raining again.", "I'll call again tomorrow."] } }
+            tr: { en: { examples: ["It's raining again.", "I'll call again tomorrow."] }, uk: { examples: ["Знову йде дощ.", "Завтра я ще раз подзвоню."] } }
           - level: B1
             form: { pattern: [soler, { slot: infinitive }] }
-            meaning: { en: a habit, es: un hábito }
+            meaning: { en: a habit, es: un hábito, uk: "звичка" }
             ex: { examples: [[{ target: Suelo levantarme }, " temprano."], ["Los domingos ", { target: solemos comer }, " en casa."]] }
-            tr: { en: { examples: ["I usually get up early.", "On Sundays we usually eat at home."] } }
+            tr: { en: { examples: ["I usually get up early.", "On Sundays we usually eat at home."] }, uk: { examples: ["Я зазвичай рано встаю.", "У неділю ми зазвичай обідаємо вдома."] } }
           - level: B1
-            form: { pattern: [seguir, { slot: { en: gerund, es: gerundio } }] }
-            meaning: { en: an action that goes on, es: una acción que continúa }
+            form: { pattern: [seguir, { slot: { en: gerund, es: gerundio, uk: "герундій" } }] }
+            meaning: { en: an action that goes on, es: una acción que continúa, uk: "дія, що триває" }
             ex: { examples: [[{ target: Sigo viviendo }, " en Lima."], ["¿", { target: Sigues trabajando }, " en el banco?"]] }
-            tr: { en: { examples: ["I still live in Lima.", "Are you still working at the bank?"] } }
+            tr: { en: { examples: ["I still live in Lima.", "Are you still working at the bank?"] }, uk: { examples: ["Я досі живу в Лімі.", "Ти досі працюєш у банку?"] } }
       - type: list
         items:
           - type: rule
@@ -175,15 +193,16 @@ sections:
             text:
               en: [{ term: seguir }, " takes a gerund, not an infinitive, and changes ", { letter: e }, " to ", { letter: i }, ": ", { alternatives: [{ term: sigo }, { term: sigues }, { term: sigue }] }, "."]
               es: [{ term: seguir }, " lleva gerundio, no infinitivo, y cambia ", { letter: e }, " por ", { letter: i }, ": ", { alternatives: [{ term: sigo }, { term: sigues }, { term: sigue }] }, "."]
+              uk: [{ term: "seguir" }, " вимагає герундія, а не інфінітива, і змінює ", { letter: "e" }, " на ", { letter: "i" }, ": ", { alternatives: [{ term: "sigo" }, { term: "sigues" }, { term: "sigue" }] }, "."]
 
-  - title: { en: "soler: present and imperfect", es: "soler: presente e imperfecto" }
+  - title: { en: "soler: present and imperfect", es: "soler: presente e imperfecto", uk: "soler: теперішній час та імперфект" }
     role: own
     content:
       - type: paradigm
         columns:
-          - { key: person, label: { en: Person, es: Persona } }
-          - { key: prs, label: { en: Present, es: Presente }, features: { tense: prs } }
-          - { key: impf, label: { en: Imperfect, es: Imperfecto }, features: { tense: pst, aspect: ipfv } }
+          - { key: person, label: { en: Person, es: Persona, uk: "Особа" } }
+          - { key: prs, label: { en: Present, es: Presente, uk: "Теперішній час" }, features: { tense: prs } }
+          - { key: impf, label: { en: Imperfect, es: Imperfecto, uk: "Імперфект" }, features: { tense: pst, aspect: ipfv } }
         rows:
           - { level: B1, features: { person: 1, number: sg }, person: yo, prs: { target: suelo }, impf: { target: solía } }
           - { level: B1, features: { person: 2, number: sg, politeness: infm }, person: tú, prs: { target: sueles }, impf: { target: solías } }
@@ -198,20 +217,23 @@ sections:
             text:
               en: [{ term: soler }, " lives in the present and the imperfect, and changes ", { letter: o }, " to ", { letter: ue }, " in the present."]
               es: [{ term: soler }, " se usa en presente y en imperfecto, y cambia ", { letter: o }, " por ", { letter: ue }, " en presente."]
+              uk: [{ term: "soler" }, " вживається в теперішньому часі та в імперфекті і змінює ", { letter: "o" }, " на ", { letter: "ue" }, " у теперішньому."]
           - type: rule
             level: B1
             text:
               en: [{ term: solía }, " with an infinitive is a past habit:"]
               es: [{ term: solía }, " con infinitivo es un hábito del pasado:"]
+              uk: [{ term: "solía" }, " з інфінітивом — звичка в минулому:"]
             ex: ["De niño ", { target: solía jugar }, " al fútbol."]
-            tr: { en: "As a child I used to play football." }
+            tr: { en: "As a child I used to play football.", uk: "У дитинстві я грав у футбол." }
           - type: note
             level: B1
             text:
               en: ["Past habits with the imperfect: ", { link: "Imperfect: comía", to: es.pasados.preterito-imperfecto }, "."]
               es: ["Los hábitos del pasado con el imperfecto: ", { link: "El pretérito imperfecto: comía", to: es.pasados.preterito-imperfecto }, "."]
+              uk: ["Звички в минулому з імперфектом: ", { link: "Імперфект: comía", to: "es.pasados.preterito-imperfecto" }, "."]
 
-  - title: { en: "Compare: empezar a and ponerse a", es: "Comparación: empezar a y ponerse a" }
+  - title: { en: "Compare: empezar a and ponerse a", es: "Comparación: empezar a y ponerse a", uk: "Порівняння: empezar a і ponerse a" }
     role: compare
     content:
       - type: comparison
@@ -219,19 +241,19 @@ sections:
           - { key: empezar, label: empezar a }
           - { key: ponerse, label: ponerse a }
         rows:
-          - { level: B1, empezar: { en: "the start of an action, planned or not", es: "el comienzo de una acción, prevista o no" }, ponerse: { en: "a sudden start, often unexpected", es: "un comienzo repentino, a menudo inesperado" } }
+          - { level: B1, empezar: { en: "the start of an action, planned or not", es: "el comienzo de una acción, prevista o no", uk: "початок дії, запланований чи ні" }, ponerse: { en: "a sudden start, often unexpected", es: "un comienzo repentino, a menudo inesperado", uk: "раптовий, часто несподіваний початок" } }
           - level: B1
-            empezar: { ex: [{ target: Empecé a estudiar }, " a las nueve."], tr: { en: "I started studying at nine." } }
-            ponerse: { ex: ["De repente ", { target: se puso a llorar }, "."], tr: { en: "Suddenly she started crying." } }
+            empezar: { ex: [{ target: Empecé a estudiar }, " a las nueve."], tr: { en: "I started studying at nine.", uk: "Я почав учитися о дев’ятій." } }
+            ponerse: { ex: ["De repente ", { target: se puso a llorar }, "."], tr: { en: "Suddenly she started crying.", uk: "Раптом вона розплакалася." } }
 
-  - title: { en: Typical errors, es: Errores frecuentes }
+  - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: A2, wrong: "Acabo llegar.", right: [{ target: Acabo de llegar }, "."], rule: { en: [{ term: acabar }, " takes ", { term: de }], es: [{ term: acabar }, " lleva ", { term: de }] } }
-          - { level: A2, wrong: "Empiezo trabajar a las ocho.", right: [{ target: Empiezo a trabajar }, " a las ocho."], rule: { en: [{ term: empezar }, " takes ", { term: a }], es: [{ term: empezar }, " lleva ", { term: a }] } }
-          - { level: B1, wrong: "Dejé fumar.", right: [{ target: Dejé de fumar }, "."], rule: { en: [{ term: dejar }, " for stopping takes ", { term: de }], es: [{ term: dejar }, " con el sentido de parar lleva ", { term: de }] } }
-          - { level: B1, wrong: "Sigo vivir en Lima.", right: [{ target: Sigo viviendo }, " en Lima."], rule: { en: [{ term: seguir }, " takes the gerund"], es: [{ term: seguir }, " lleva gerundio"] } }
-          - { level: B1, wrong: "Suelo de levantarme temprano.", right: [{ target: Suelo levantarme }, " temprano."], rule: { en: [{ term: soler }, " takes the infinitive with no preposition"], es: [{ term: soler }, " lleva infinitivo sin preposición"] } }
-          - { level: B1, wrong: "De niño solí jugar al fútbol.", right: ["De niño ", { target: solía jugar }, " al fútbol."], rule: { en: ["a past habit takes the imperfect: ", { term: solía }], es: ["un hábito pasado lleva imperfecto: ", { term: solía }] } }
+          - { level: A2, wrong: "Acabo llegar.", right: [{ target: Acabo de llegar }, "."], rule: { en: [{ term: acabar }, " takes ", { term: de }], es: [{ term: acabar }, " lleva ", { term: de }], uk: [{ term: "acabar" }, " вимагає ", { term: "de" }] } }
+          - { level: A2, wrong: "Empiezo trabajar a las ocho.", right: [{ target: Empiezo a trabajar }, " a las ocho."], rule: { en: [{ term: empezar }, " takes ", { term: a }], es: [{ term: empezar }, " lleva ", { term: a }], uk: [{ term: "empezar" }, " вимагає ", { term: "a" }] } }
+          - { level: B1, wrong: "Dejé fumar.", right: [{ target: Dejé de fumar }, "."], rule: { en: [{ term: dejar }, " for stopping takes ", { term: de }], es: [{ term: dejar }, " con el sentido de parar lleva ", { term: de }], uk: [{ term: "dejar" }, " у значенні «перестати» вимагає ", { term: "de" }] } }
+          - { level: B1, wrong: "Sigo vivir en Lima.", right: [{ target: Sigo viviendo }, " en Lima."], rule: { en: [{ term: seguir }, " takes the gerund"], es: [{ term: seguir }, " lleva gerundio"], uk: [{ term: "seguir" }, " вимагає герундія"] } }
+          - { level: B1, wrong: "Suelo de levantarme temprano.", right: [{ target: Suelo levantarme }, " temprano."], rule: { en: [{ term: soler }, " takes the infinitive with no preposition"], es: [{ term: soler }, " lleva infinitivo sin preposición"], uk: [{ term: "soler" }, " вимагає інфінітива без прийменника"] } }
+          - { level: B1, wrong: "De niño solí jugar al fútbol.", right: ["De niño ", { target: solía jugar }, " al fútbol."], rule: { en: ["a past habit takes the imperfect: ", { term: solía }], es: ["un hábito pasado lleva imperfecto: ", { term: solía }], uk: ["звичка в минулому — імперфект: ", { term: "solía" }] } }
