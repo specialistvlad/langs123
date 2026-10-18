@@ -25,11 +25,10 @@ grows toward N languages, each explained in N languages.
   explanations in each (§4), its examples translated into each (§6) and the typical errors of each
   one's speakers.
 - Topics in different languages pair through shared `concepts` keys (§9).
-- The library holds English (`en`) in eleven tracks: explained in English, Ukrainian (`uk`), Spanish
-  (`es`), Portuguese (`pt`, Brazilian), French (`fr`), German (`de`), Italian (`it`), Polish (`pl`),
-  Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). It holds Spanish (`es`) in three: explained
-  in Spanish, English and Ukrainian. It holds Ukrainian (`uk`) in three: explained in Ukrainian,
-  English and Spanish.
+- The library holds English (`en`), Spanish (`es`) and Ukrainian (`uk`) in eleven tracks each:
+  explained in English, Ukrainian, Spanish, Portuguese (`pt`, Brazilian), French (`fr`), German (`de`),
+  Italian (`it`), Polish (`pl`), Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). Each is written
+  in its own language first, and the other ten translate it.
 - An explanation language is data alone: its entry in `site.yaml` and its text in the files of
   `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.

@@ -5,88 +5,160 @@ kind: grammar
 tags: [reported-speech, direct-speech, punctuation, clauses]
 concepts: [reported-speech]
 related: [uk.sentence.shcho-shchob, uk.sentence.questions-negation, uk.pronouns.personal-pronouns, uk.sentence.conjunctions]
-status: { uk: draft, en: draft, es: draft }
-translated: { en: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", es: "f0b3f7 811085 c1b9cd 1b75f5 540cbb" }
+status: { uk: draft, en: draft, es: draft, pt: draft, fr: draft, de: draft, it: draft, pl: draft, tr: draft, id: draft, vi: draft }
+translated: { en: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", es: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", pt: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", fr: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", de: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", it: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", pl: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", tr: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", id: "f0b3f7 811085 c1b9cd 1b75f5 540cbb", vi: "f0b3f7 811085 c1b9cd 1b75f5 540cbb" }
 
-title: { uk: Пряма й непряма мова, en: Direct and Reported Speech, es: Estilo directo e indirecto }
+title: { uk: Пряма й непряма мова, en: Direct and Reported Speech, es: Estilo directo e indirecto, pt: "Discurso direto e indireto", fr: "Discours direct et indirect", de: "Direkte und indirekte Rede", it: "Discorso diretto e indiretto", pl: "Mowa niezależna i zależna", tr: "Doğrudan ve dolaylı anlatım", id: "Kalimat langsung dan tak langsung", vi: "Câu trực tiếp và câu gián tiếp" }
 summary:
   lead:
     uk: ["Непряма мова переказує чужі слова через ", { term: що }, ", ", { term: чи }, ", питальне слово або ", { term: щоб }, ", а час дієслова лишається таким, як у прямій мові."]
     en: ["Reported speech passes on words with ", { term: що }, ", ", { term: чи }, ", a question word or ", { term: щоб }, ", and the verb keeps the tense of the original words."]
     es: ["El estilo indirecto transmite lo dicho con ", { term: що }, ", ", { term: чи }, ", una palabra interrogativa o ", { term: щоб }, ", y el verbo mantiene el tiempo de las palabras originales."]
+    pt: ["O discurso indireto transmite as palavras de outra pessoa com ", { term: що }, ", ", { term: чи }, ", uma palavra interrogativa ou ", { term: щоб }, ", e o verbo mantém o tempo do discurso direto."]
+    fr: ["Le discours indirect rapporte les paroles d’autrui avec ", { term: що }, ", ", { term: чи }, ", un mot interrogatif ou ", { term: щоб }, ", et le verbe garde le temps du discours direct."]
+    de: ["Die indirekte Rede gibt fremde Worte mit ", { term: що }, ", ", { term: чи }, ", einem Fragewort oder ", { term: щоб }, " wieder, und das Verb behält die Zeitform der direkten Rede."]
+    it: ["Il discorso indiretto riferisce le parole altrui con ", { term: що }, ", ", { term: чи }, ", una parola interrogativa o ", { term: щоб }, ", e il verbo mantiene il tempo del discorso diretto."]
+    pl: ["Mowa zależna przekazuje cudze słowa za pomocą ", { term: що }, ", ", { term: чи }, ", zaimka pytajnego lub ", { term: щоб }, ", a czasownik zachowuje czas z mowy niezależnej."]
+    tr: ["Dolaylı anlatım, başkasının sözlerini ", { term: що }, ", ", { term: чи }, ", bir soru sözcüğü ya da ", { term: щоб }, " ile aktarır; fiilin zamanı doğrudan anlatımdaki gibi kalır."]
+    id: ["Kalimat tak langsung menyampaikan ucapan orang lain dengan ", { term: що }, ", ", { term: чи }, ", kata tanya atau ", { term: щоб }, ", dan kala kata kerja tetap seperti pada kalimat langsung."]
+    vi: ["Câu gián tiếp thuật lại lời người khác bằng ", { term: що }, ", ", { term: чи }, ", từ để hỏi hoặc ", { term: щоб }, ", và động từ giữ nguyên thì như trong câu trực tiếp."]
   rule:
     uk: "Час дієслова в непрямій мові не змінюється:"
     en: "The verb keeps the tense the speaker used:"
     es: "El verbo mantiene el tiempo que usó quien habló:"
+    pt: "O tempo do verbo no discurso indireto não muda:"
+    fr: "Le temps du verbe ne change pas dans le discours indirect :"
+    de: "Die Zeitform des Verbs ändert sich in der indirekten Rede nicht:"
+    it: "Il tempo del verbo nel discorso indiretto non cambia:"
+    pl: "Czas czasownika w mowie zależnej się nie zmienia:"
+    tr: "Dolaylı anlatımda fiilin zamanı değişmez:"
+    id: "Kala kata kerja dalam kalimat tak langsung tidak berubah:"
+    vi: "Thì của động từ trong câu gián tiếp không thay đổi:"
   ex: { contrast: [["Оле́г сказа́в: «Я ", { target: вто́млений }, "»."], ["Оле́г сказа́в, що він ", { target: уто́млений }, "."]] }
 
 cheatsheet:
   content:
     - type: usage
       columns:
-        - { key: point, label: { uk: Пункт, en: Point, es: Punto } }
-        - { key: rule, label: { uk: Правило, en: Rule, es: Regla } }
-        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+        - { key: point, label: { uk: Пункт, en: Point, es: Punto, pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: rule, label: { uk: Правило, en: Rule, es: Regla, pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo, pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
       rows:
         - level: B1
-          point: { uk: Пряма мова, en: Direct speech, es: Estilo directo }
+          point: { uk: Пряма мова, en: Direct speech, es: Estilo directo, pt: "Discurso direto", fr: "Discours direct", de: "Direkte Rede", it: "Discorso diretto", pl: "Mowa niezależna", tr: "Doğrudan anlatım", id: "Kalimat langsung", vi: "Câu trực tiếp" }
           rule:
             uk: "двокрапка й лапки «»"
             en: "a colon and the quotation marks «»"
             es: "dos puntos y las comillas «»"
+            pt: "dois-pontos e aspas «»"
+            fr: "deux-points et guillemets «»"
+            de: "Doppelpunkt und Anführungszeichen «»"
+            it: "due punti e virgolette «»"
+            pl: "dwukropek i cudzysłów «»"
+            tr: "iki nokta ve tırnak işareti «»"
+            id: "tanda titik dua dan tanda kutip «»"
+            vi: "dấu hai chấm và dấu ngoặc kép «»"
           ex: "Ма́ма запита́ла: «Ти вдо́ма?»"
-          tr: { en: "Mum asked, “Are you at home?”", es: "Mamá preguntó: «¿Estás en casa?»." }
+          tr: { en: "Mum asked, “Are you at home?”", es: "Mamá preguntó: «¿Estás en casa?».", pt: "A mãe perguntou: “Você está em casa?”", fr: "Maman a demandé : « Tu es à la maison ? »", de: "Mama fragte: „Bist du zu Hause?“", it: "La mamma ha chiesto: «Sei a casa?»", pl: "Mama zapytała: „Jesteś w domu?”", tr: "Anne sordu: “Evde misin?”", id: "Ibu bertanya, “Apakah kamu di rumah?”", vi: "Mẹ hỏi: “Con có ở nhà không?”" }
         - level: B1
-          point: { uk: Ствердження, en: Statement, es: Afirmación }
+          point: { uk: Ствердження, en: Statement, es: Afirmación, pt: "Afirmação", fr: "Affirmation", de: "Aussage", it: "Affermazione", pl: "Stwierdzenie", tr: "Bildirim", id: "Pernyataan", vi: "Câu trần thuật" }
           rule:
             uk: { term: що }
             en: [{ term: що }, " (that)"]
             es: [{ term: що }, " (que)"]
+            pt: [{ term: що }, " (que)"]
+            fr: [{ term: що }, " (que)"]
+            de: [{ term: що }, " (dass)"]
+            it: [{ term: що }, " (che)"]
+            pl: [{ term: що }, " (że)"]
+            tr: { term: що }
+            id: [{ term: що }, " (bahwa)"]
+            vi: [{ term: що }, " (rằng)"]
           ex: ["Він сказа́в, ", { target: що }, " працю́є в ба́нку."]
-          tr: { en: "He said he worked in a bank.", es: "Dijo que trabajaba en un banco." }
+          tr: { en: "He said he worked in a bank.", es: "Dijo que trabajaba en un banco.", pt: "Ele disse que trabalhava em um banco.", fr: "Il a dit qu’il travaillait dans une banque.", de: "Er sagte, dass er in einer Bank arbeitet.", it: "Ha detto che lavorava in una banca.", pl: "Powiedział, że pracuje w banku.", tr: "Bankada çalıştığını söyledi.", id: "Dia bilang bahwa dia bekerja di bank.", vi: "Anh ấy nói là anh ấy làm việc ở ngân hàng." }
         - level: B1
-          point: { uk: Питання «так чи ні», en: Yes-no question, es: Pregunta de sí o no }
+          point: { uk: Питання «так чи ні», en: Yes-no question, es: Pregunta de sí o no, pt: "Pergunta de sim ou não", fr: "Question oui/non", de: "Ja-Nein-Frage", it: "Domanda sì/no", pl: "Pytanie typu tak/nie", tr: "Evet-hayır sorusu", id: "Pertanyaan ya/tidak", vi: "Câu hỏi có/không" }
           rule:
             uk: { term: чи }
             en: [{ term: чи }, " (whether, if)"]
             es: [{ term: чи }, " (si)"]
+            pt: [{ term: чи }, " (se)"]
+            fr: [{ term: чи }, " (si)"]
+            de: [{ term: чи }, " (ob)"]
+            it: [{ term: чи }, " (se)"]
+            pl: [{ term: чи }, " (czy)"]
+            tr: { term: чи }
+            id: [{ term: чи }, " (apakah)"]
+            vi: [{ term: чи }, " (liệu)"]
           ex: ["Ма́ма запита́ла І́горя, ", { target: чи }, " він задово́лений."]
-          tr: { en: "Mum asked Ihor if he was happy.", es: "Mamá le preguntó a Ihor si estaba contento." }
+          tr: { en: "Mum asked Ihor if he was happy.", es: "Mamá le preguntó a Ihor si estaba contento.", pt: "A mãe perguntou a Ihor se ele estava contente.", fr: "Maman a demandé à Ihor s’il était content.", de: "Mama fragte Ihor, ob er zufrieden ist.", it: "La mamma ha chiesto a Ihor se era contento.", pl: "Mama zapytała Ihora, czy jest zadowolony.", tr: "Anne, Ihor’a memnun olup olmadığını sordu.", id: "Ibu bertanya kepada Ihor apakah dia senang.", vi: "Mẹ hỏi Ihor xem cậu ấy có hài lòng không." }
         - level: B1
-          point: { uk: Питання з питальним словом, en: Question with a question word, es: Pregunta con interrogativo }
+          point: { uk: Питання з питальним словом, en: Question with a question word, es: Pregunta con interrogativo, pt: "Pergunta com palavra interrogativa", fr: "Question avec mot interrogatif", de: "Frage mit Fragewort", it: "Domanda con parola interrogativa", pl: "Pytanie z zaimkiem pytajnym", tr: "Soru sözcüklü soru", id: "Pertanyaan dengan kata tanya", vi: "Câu hỏi có từ để hỏi" }
           rule:
             uk: "те саме питальне слово"
             en: "the same question word"
             es: "la misma palabra interrogativa"
+            pt: "a mesma palavra interrogativa"
+            fr: "le même mot interrogatif"
+            de: "dasselbe Fragewort"
+            it: "la stessa parola interrogativa"
+            pl: "ten sam zaimek pytajny"
+            tr: "aynı soru sözcüğü"
+            id: "kata tanya yang sama"
+            vi: "giữ nguyên từ để hỏi"
           ex: ["Він запита́в, ", { target: де }, " я живу́."]
-          tr: { en: "He asked where I lived.", es: "Me preguntó dónde vivía." }
+          tr: { en: "He asked where I lived.", es: "Me preguntó dónde vivía.", pt: "Ele perguntou onde eu morava.", fr: "Il a demandé où j’habitais.", de: "Er fragte, wo ich wohne.", it: "Ha chiesto dove abitavo.", pl: "Zapytał, gdzie mieszkam.", tr: "Nerede yaşadığımı sordu.", id: "Dia bertanya di mana saya tinggal.", vi: "Anh ấy hỏi tôi sống ở đâu." }
         - level: B1
-          point: { uk: Прохання, en: Request, es: Pedido }
+          point: { uk: Прохання, en: Request, es: Pedido, pt: "Pedido", fr: "Demande", de: "Bitte", it: "Richiesta", pl: "Prośba", tr: "Rica", id: "Permintaan", vi: "Yêu cầu" }
           rule:
             uk: [{ term: щоб }, " з минулим часом"]
             en: [{ term: щоб }, " with the past tense"]
             es: [{ term: щоб }, " con el pasado"]
+            pt: [{ term: щоб }, " com o passado"]
+            fr: [{ term: щоб }, " avec le passé"]
+            de: [{ term: щоб }, " mit der Vergangenheit"]
+            it: [{ term: щоб }, " con il passato"]
+            pl: [{ term: щоб }, " z czasem przeszłym"]
+            tr: [{ term: щоб }, " ile geçmiş zaman"]
+            id: [{ term: щоб }, " dengan bentuk lampau"]
+            vi: [{ term: щоб }, " với thì quá khứ"]
           ex: ["Він попроси́в, ", { target: щоб я прийшо́в }, " за́втра."]
-          tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana." }
+          tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana.", pt: "Ele pediu que eu viesse amanhã.", fr: "Il a demandé que je vienne demain.", de: "Er bat, dass ich morgen komme.", it: "Ha chiesto che io venissi domani.", pl: "Poprosił, żebym przyszedł jutro.", tr: "Yarın gelmemi istedi.", id: "Dia meminta agar saya datang besok.", vi: "Anh ấy nhờ tôi ngày mai đến." }
         - level: B1
-          point: { uk: Особа, en: Person, es: Persona }
+          point: { uk: Особа, en: Person, es: Persona, pt: "Pessoa", fr: "Personne", de: "Person", it: "Persona", pl: "Osoba", tr: "Kişi", id: "Orang", vi: "Ngôi" }
           rule:
             uk: "займенник і дієслово змінюють особу"
             en: "the pronoun and the verb change person"
             es: "el pronombre y el verbo cambian de persona"
+            pt: "o pronome e o verbo mudam de pessoa"
+            fr: "le pronom et le verbe changent de personne"
+            de: "Pronomen und Verb wechseln die Person"
+            it: "il pronome e il verbo cambiano persona"
+            pl: "zaimek i czasownik zmieniają osobę"
+            tr: "zamir ve fiil kişi değiştirir"
+            id: "pronomina dan kata kerja berganti orang"
+            vi: "đại từ và động từ đổi ngôi"
           ex: { contrast: [["Андрі́й: «", { target: Я люблю́ }, " ка́ву»."], ["Андрі́й сказа́в, що ", { target: він лю́бить }, " ка́ву."]] }
-          tr: { en: { contrast: ["Andrii: “I love coffee.”", "Andrii said he loved coffee."] }, es: { contrast: ["Andrii: «Me encanta el café».", "Andrii dijo que le encantaba el café."] } }
+          tr: { en: { contrast: ["Andrii: “I love coffee.”", "Andrii said he loved coffee."] }, es: { contrast: ["Andrii: «Me encanta el café».", "Andrii dijo que le encantaba el café."] }, pt: { contrast: ["Andrii: “Eu gosto de café.”", "Andrii disse que gostava de café."] }, fr: { contrast: ["Andrii : « J’aime le café. »", "Andrii a dit qu’il aimait le café."] }, de: { contrast: ["Andrii: „Ich mag Kaffee.“", "Andrii sagte, dass er Kaffee mag."] }, it: { contrast: ["Andrii: «Mi piace il caffè».", "Andrii ha detto che gli piaceva il caffè."] }, pl: { contrast: ["Andrii: „Lubię kawę.”", "Andrii powiedział, że lubi kawę."] }, tr: { contrast: ["Andrii: “Kahveyi severim.”", "Andrii kahveyi sevdiğini söyledi."] }, id: { contrast: ["Andrii: “Saya suka kopi.”", "Andrii bilang bahwa dia suka kopi."] }, vi: { contrast: ["Andrii: “Tôi thích cà phê.”", "Andrii nói là anh ấy thích cà phê."] } }
         - level: B1
-          point: { uk: Пастка, en: Trap, es: Trampa }
+          point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
             uk: ["непряме питання «так чи ні» — з ", { term: чи }]
             en: ["a reported yes-no question takes ", { term: чи }]
             es: ["la pregunta indirecta de sí o no lleva ", { term: чи }]
+            pt: ["a pergunta indireta de sim ou não leva ", { term: чи }]
+            fr: ["la question indirecte oui/non se construit avec ", { term: чи }]
+            de: ["eine indirekte Ja-Nein-Frage steht mit ", { term: чи }]
+            it: ["la domanda indiretta sì/no vuole ", { term: чи }]
+            pl: ["pytanie zależne typu tak/nie wprowadza się przez ", { term: чи }]
+            tr: ["dolaylı evet-hayır sorusu ", { term: чи }, " ile kurulur"]
+            id: ["pertanyaan ya/tidak tak langsung memakai ", { term: чи }]
+            vi: ["câu hỏi có/không gián tiếp dùng ", { term: чи }]
           ex: ["Вона́ запита́ла, ", { target: чи }, " я прийду́."]
-          tr: { en: "She asked if I would come.", es: "Me preguntó si vendría." }
+          tr: { en: "She asked if I would come.", es: "Me preguntó si vendría.", pt: "Ela perguntou se eu viria.", fr: "Elle a demandé si je viendrais.", de: "Sie fragte, ob ich komme.", it: "Mi ha chiesto se sarei venuto.", pl: "Zapytała, czy przyjdę.", tr: "Gelip gelmeyeceğimi sordu.", id: "Dia bertanya apakah saya akan datang.", vi: "Cô ấy hỏi liệu tôi có đến không." }
 
 sections:
-  - title: { uk: Огляд, en: Overview, es: Visión general }
+  - title: { uk: Огляд, en: Overview, es: Visión general, pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
     role: overview
     content:
       - type: list
@@ -97,45 +169,61 @@ sections:
               uk: "Пряма мова передає слова дослівно, у лапках; непряма переказує їх у підрядній частині."
               en: "Direct speech gives the exact words in quotation marks; reported speech passes them on in a clause."
               es: "El estilo directo da las palabras exactas entre comillas; el indirecto las transmite en una oración subordinada."
+              pt: "O discurso direto reproduz as palavras exatas, entre aspas; o indireto as transmite em uma oração subordinada."
+              fr: "Le discours direct reproduit les paroles exactes entre guillemets ; le discours indirect les rapporte dans une proposition subordonnée."
+              de: "Die direkte Rede gibt die Worte wörtlich in Anführungszeichen wieder; die indirekte Rede gibt sie in einem Nebensatz weiter."
+              it: "Il discorso diretto riporta le parole esatte tra virgolette; il discorso indiretto le riferisce in una proposizione subordinata."
+              pl: "Mowa niezależna podaje słowa dosłownie, w cudzysłowie; mowa zależna przekazuje je w zdaniu podrzędnym."
+              tr: "Doğrudan anlatım sözleri olduğu gibi, tırnak içinde verir; dolaylı anlatım onları yan cümlede aktarır."
+              id: "Kalimat langsung menyampaikan kata-kata persis, dalam tanda kutip; kalimat tak langsung menyampaikannya dalam anak kalimat."
+              vi: "Câu trực tiếp giữ nguyên lời, đặt trong dấu ngoặc kép; câu gián tiếp thuật lại lời ấy trong một mệnh đề phụ."
             ex: { contrast: ["Виклада́ч сказа́в: «Ви пови́нні ува́жно прочита́ти текст».", ["Виклада́ч сказа́в, ", { target: що ми пови́нні }, " ува́жно прочита́ти текст."]] }
-            tr: { en: { contrast: ["The teacher said, “You must read the text carefully.”", "The teacher said that we had to read the text carefully."] }, es: { contrast: ["El profesor dijo: «Deben leer el texto con atención».", "El profesor dijo que debíamos leer el texto con atención."] } }
+            tr: { en: { contrast: ["The teacher said, “You must read the text carefully.”", "The teacher said that we had to read the text carefully."] }, es: { contrast: ["El profesor dijo: «Deben leer el texto con atención».", "El profesor dijo que debíamos leer el texto con atención."] }, pt: { contrast: ["O professor disse: “Vocês devem ler o texto com atenção.”", "O professor disse que nós devíamos ler o texto com atenção."] }, fr: { contrast: ["Le professeur a dit : « Vous devez lire le texte attentivement. »", "Le professeur a dit que nous devions lire le texte attentivement."] }, de: { contrast: ["Der Lehrer sagte: „Ihr müsst den Text aufmerksam lesen.“", "Der Lehrer sagte, dass wir den Text aufmerksam lesen müssen."] }, it: { contrast: ["L’insegnante ha detto: «Dovete leggere il testo con attenzione».", "L’insegnante ha detto che dovevamo leggere il testo con attenzione."] }, pl: { contrast: ["Nauczyciel powiedział: „Musicie uważnie przeczytać tekst.”", "Nauczyciel powiedział, że musimy uważnie przeczytać tekst."] }, tr: { contrast: ["Öğretmen şöyle dedi: “Metni dikkatle okumalısınız.”", "Öğretmen metni dikkatle okumamız gerektiğini söyledi."] }, id: { contrast: ["Guru berkata, “Kalian harus membaca teks ini dengan saksama.”", "Guru berkata bahwa kami harus membaca teks itu dengan saksama."] }, vi: { contrast: ["Giáo viên nói: “Các bạn phải đọc kỹ văn bản.”", "Giáo viên nói là chúng tôi phải đọc kỹ văn bản."] } }
           - type: rule
             level: B1
             text:
               uk: "Коли слова автора стоять перед прямою мовою, після них ставимо двокрапку. Коли після: за розповідною прямою мовою — кома й тире, за питанням чи окликом — лише тире."
               en: "When the reporting words come first, a colon follows them. When they come after: a statement takes a comma and a dash after the quotation marks, a question or an exclamation only a dash."
               es: "Cuando las palabras del narrador van delante, las siguen dos puntos. Cuando van detrás: tras una afirmación van una coma y una raya; tras una pregunta o una exclamación, solo la raya."
+              pt: "Quando as palavras do narrador vêm antes da fala, depois delas vão dois-pontos. Quando vêm depois: após uma afirmação, vírgula e travessão; após uma pergunta ou exclamação, só o travessão."
+              fr: "Quand les mots du narrateur précèdent les paroles, ils sont suivis de deux-points. Quand ils les suivent : après une phrase déclarative, une virgule et un tiret ; après une question ou une exclamation, un tiret seulement."
+              de: "Stehen die Worte des Erzählers vor der direkten Rede, folgt ein Doppelpunkt. Stehen sie danach: Nach einer Aussage folgen Komma und Gedankenstrich, nach einer Frage oder einem Ausruf nur der Gedankenstrich."
+              it: "Quando le parole del narratore precedono il discorso diretto, seguono i due punti. Quando lo seguono: dopo un’affermazione si mettono virgola e trattino, dopo una domanda o un’esclamazione solo il trattino."
+              pl: "Gdy słowa narratora stoją przed mową niezależną, po nich stawiamy dwukropek. Gdy stoją po niej: po zdaniu oznajmującym — przecinek i myślnik, po pytaniu lub wykrzyknieniu — sam myślnik."
+              tr: "Anlatıcının sözleri doğrudan anlatımdan önce gelirse, ardından iki nokta konur. Sonra gelirse: bildirme cümlesinden sonra virgül ve tire, soru ya da ünlemden sonra yalnız tire konur."
+              id: "Jika kata-kata narator berada sebelum kalimat langsung, setelahnya dipasang tanda titik dua. Jika sesudahnya: setelah kalimat berita dipakai koma dan tanda pisah, setelah kalimat tanya atau seru hanya tanda pisah."
+              vi: "Khi lời dẫn của người kể đứng trước lời trực tiếp, sau đó đặt dấu hai chấm. Khi đứng sau: sau câu kể là dấu phẩy và dấu gạch ngang, sau câu hỏi hoặc câu cảm thán chỉ có dấu gạch ngang."
             ex: { contrast: ["«Я вдо́ма», — сказа́ла ма́ма.", "«Ти вдо́ма?» — запита́ла ма́ма."] }
-            tr: { en: { contrast: ["“I'm home,” Mum said.", "“Are you home?” Mum asked."] }, es: { contrast: ["«Estoy en casa», dijo mamá.", "«¿Estás en casa?», preguntó mamá."] } }
+            tr: { en: { contrast: ["“I'm home,” Mum said.", "“Are you home?” Mum asked."] }, es: { contrast: ["«Estoy en casa», dijo mamá.", "«¿Estás en casa?», preguntó mamá."] }, pt: { contrast: ["“Estou em casa”, disse a mãe.", "“Você está em casa?”, perguntou a mãe."] }, fr: { contrast: ["« Je suis à la maison », a dit maman.", "« Tu es à la maison ? » a demandé maman."] }, de: { contrast: ["„Ich bin zu Hause“, sagte Mama.", "„Bist du zu Hause?“, fragte Mama."] }, it: { contrast: ["«Sono a casa», ha detto la mamma.", "«Sei a casa?», ha chiesto la mamma."] }, pl: { contrast: ["„Jestem w domu”, powiedziała mama.", "„Jesteś w domu?” — zapytała mama."] }, tr: { contrast: ["“Evdeyim,” dedi annem.", "“Evde misin?” diye sordu annem."] }, id: { contrast: ["“Saya di rumah,” kata ibu.", "“Apakah kamu di rumah?” tanya ibu."] }, vi: { contrast: ["“Mẹ ở nhà,” mẹ nói.", "“Con có ở nhà không?” mẹ hỏi."] } }
 
-  - title: { uk: "Непряма мова", en: "Reported speech", es: "El estilo indirecto" }
+  - title: { uk: "Непряма мова", en: "Reported speech", es: "El estilo indirecto", pt: "Discurso indireto", fr: "Le discours indirect", de: "Indirekte Rede", it: "Discorso indiretto", pl: "Mowa zależna", tr: "Dolaylı anlatım", id: "Kalimat tak langsung", vi: "Câu gián tiếp" }
     role: form
     content:
       - type: usage
         columns:
-          - { key: use, label: { uk: Форма, en: Form, es: Forma } }
-          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo } }
+          - { key: use, label: { uk: Форма, en: Form, es: Forma, pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: ex, label: { uk: Приклад, en: Example, es: Ejemplo, pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
         rows:
           - level: B1
-            use: { uk: [{ term: що }, ": ствердження"], en: [{ term: що }, ": a statement"], es: [{ term: що }, ": una afirmación"] }
+            use: { uk: [{ term: що }, ": ствердження"], en: [{ term: що }, ": a statement"], es: [{ term: що }, ": una afirmación"], pt: [{ term: що }, ": uma afirmação"], fr: [{ term: що }, " : une affirmation"], de: [{ term: що }, ": eine Aussage"], it: [{ term: що }, ": un’affermazione"], pl: [{ term: що }, ": stwierdzenie"], tr: [{ term: що }, ": bildirim"], id: [{ term: що }, ": pernyataan"], vi: [{ term: що }, ": câu trần thuật"] }
             ex: ["Він сказа́в, ", { target: що }, " працю́є в ба́нку."]
-            tr: { en: "He said he worked in a bank.", es: "Dijo que trabajaba en un banco." }
+            tr: { en: "He said he worked in a bank.", es: "Dijo que trabajaba en un banco.", pt: "Ele disse que trabalhava em um banco.", fr: "Il a dit qu’il travaillait dans une banque.", de: "Er sagte, dass er in einer Bank arbeitet.", it: "Ha detto che lavorava in una banca.", pl: "Powiedział, że pracuje w banku.", tr: "Bankada çalıştığını söyledi.", id: "Dia bilang bahwa dia bekerja di bank.", vi: "Anh ấy nói là anh ấy làm việc ở ngân hàng." }
           - level: B1
-            use: { uk: [{ term: чи }, ": питання «так чи ні»"], en: [{ term: чи }, ": a yes-no question"], es: [{ term: чи }, ": una pregunta de sí o no"] }
+            use: { uk: [{ term: чи }, ": питання «так чи ні»"], en: [{ term: чи }, ": a yes-no question"], es: [{ term: чи }, ": una pregunta de sí o no"], pt: [{ term: чи }, ": uma pergunta de sim ou não"], fr: [{ term: чи }, " : une question oui/non"], de: [{ term: чи }, ": eine Ja-Nein-Frage"], it: [{ term: чи }, ": una domanda sì/no"], pl: [{ term: чи }, ": pytanie typu tak/nie"], tr: [{ term: чи }, ": evet-hayır sorusu"], id: [{ term: чи }, ": pertanyaan ya/tidak"], vi: [{ term: чи }, ": câu hỏi có/không"] }
             ex: ["Ма́ма запита́ла І́горя, ", { target: чи }, " він задово́лений результа́том."]
-            tr: { en: "Mum asked Ihor if he was happy with the result.", es: "Mamá le preguntó a Ihor si estaba contento con el resultado." }
+            tr: { en: "Mum asked Ihor if he was happy with the result.", es: "Mamá le preguntó a Ihor si estaba contento con el resultado.", pt: "A mãe perguntou a Ihor se ele estava satisfeito com o resultado.", fr: "Maman a demandé à Ihor s’il était satisfait du résultat.", de: "Mama fragte Ihor, ob er mit dem Ergebnis zufrieden ist.", it: "La mamma ha chiesto a Ihor se era soddisfatto del risultato.", pl: "Mama zapytała Ihora, czy jest zadowolony z wyniku.", tr: "Anne, Ihor’a sonuçtan memnun olup olmadığını sordu.", id: "Ibu bertanya kepada Ihor apakah dia puas dengan hasilnya.", vi: "Mẹ hỏi Ihor xem cậu ấy có hài lòng với kết quả không." }
           - level: B1
-            use: { uk: "питальне слово лишається", en: "the question word stays", es: "la palabra interrogativa se mantiene" }
+            use: { uk: "питальне слово лишається", en: "the question word stays", es: "la palabra interrogativa se mantiene", pt: "a palavra interrogativa se mantém", fr: "le mot interrogatif reste", de: "das Fragewort bleibt", it: "la parola interrogativa resta", pl: "zaimek pytajny zostaje", tr: "soru sözcüğü aynen kalır", id: "kata tanya tetap", vi: "từ để hỏi được giữ nguyên" }
             ex: ["Він запита́в, ", { target: де }, " я живу́."]
-            tr: { en: "He asked where I lived.", es: "Me preguntó dónde vivía." }
+            tr: { en: "He asked where I lived.", es: "Me preguntó dónde vivía.", pt: "Ele perguntou onde eu morava.", fr: "Il a demandé où j’habitais.", de: "Er fragte, wo ich wohne.", it: "Ha chiesto dove abitavo.", pl: "Zapytał, gdzie mieszkam.", tr: "Nerede yaşadığımı sordu.", id: "Dia bertanya di mana saya tinggal.", vi: "Anh ấy hỏi tôi sống ở đâu." }
           - level: B1
-            use: { uk: [{ term: щоб }, " з минулим часом: прохання, наказ"], en: [{ term: щоб }, " with the past tense: a request, an order"], es: [{ term: щоб }, " con el pasado: un pedido, una orden"] }
+            use: { uk: [{ term: щоб }, " з минулим часом: прохання, наказ"], en: [{ term: щоб }, " with the past tense: a request, an order"], es: [{ term: щоб }, " con el pasado: un pedido, una orden"], pt: [{ term: щоб }, " com o passado: pedido, ordem"], fr: [{ term: щоб }, " avec le passé : demande, ordre"], de: [{ term: щоб }, " mit der Vergangenheit: Bitte, Befehl"], it: [{ term: щоб }, " con il passato: richiesta, ordine"], pl: [{ term: щоб }, " z czasem przeszłym: prośba, polecenie"], tr: [{ term: щоб }, " ile geçmiş zaman: rica, emir"], id: [{ term: щоб }, " dengan bentuk lampau: permintaan, perintah"], vi: [{ term: щоб }, " với thì quá khứ: lời nhờ, mệnh lệnh"] }
             ex: ["Він попроси́в, ", { target: щоб я прийшо́в }, " за́втра."]
-            tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana." }
+            tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana.", pt: "Ele pediu que eu viesse amanhã.", fr: "Il a demandé que je vienne demain.", de: "Er bat, dass ich morgen komme.", it: "Ha chiesto che io venissi domani.", pl: "Poprosił, żebym przyszedł jutro.", tr: "Yarın gelmemi istedi.", id: "Dia meminta agar saya datang besok.", vi: "Anh ấy nhờ tôi ngày mai đến." }
           - level: B1
-            use: { uk: [{ term: попроси́ти }, " з інфінітивом: прохання"], en: [{ term: попроси́ти }, " with the infinitive: a request"], es: [{ term: попроси́ти }, " con infinitivo: un pedido"] }
+            use: { uk: [{ term: попроси́ти }, " з інфінітивом: прохання"], en: [{ term: попроси́ти }, " with the infinitive: a request"], es: [{ term: попроси́ти }, " con infinitivo: un pedido"], pt: [{ term: попроси́ти }, " com infinitivo: pedido"], fr: [{ term: попроси́ти }, " avec l’infinitif : demande"], de: [{ term: попроси́ти }, " mit Infinitiv: Bitte"], it: [{ term: попроси́ти }, " con l’infinito: richiesta"], pl: [{ term: попроси́ти }, " z bezokolicznikiem: prośba"], tr: [{ term: попроси́ти }, " ile mastar: rica"], id: [{ term: попроси́ти }, " dengan infinitif: permintaan"], vi: [{ term: попроси́ти }, " với động từ nguyên mẫu: lời nhờ"] }
             ex: ["Він попроси́в мене́ ", { target: прийти́ }, " за́втра."]
-            tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana." }
+            tr: { en: "He asked me to come tomorrow.", es: "Me pidió que viniera mañana.", pt: "Ele me pediu para vir amanhã.", fr: "Il m’a demandé de venir demain.", de: "Er bat mich, morgen zu kommen.", it: "Mi ha chiesto di venire domani.", pl: "Poprosił mnie, żebym przyszedł jutro.", tr: "Yarın gelmemi rica etti.", id: "Dia meminta saya datang besok.", vi: "Anh ấy nhờ tôi đến vào ngày mai." }
       - type: list
         items:
           - type: rule
@@ -144,22 +232,38 @@ sections:
               uk: "Час дієслова лишається таким, яким був у прямій мові: теперішній час означає «тоді, коли говорили»."
               en: "The verb keeps the tense of the direct speech: the present means “at the time they spoke”."
               es: "El verbo mantiene el tiempo del estilo directo: el presente significa «en el momento en que habló»."
+              pt: "O tempo do verbo continua o do discurso direto: o presente significa “no momento em que falaram”."
+              fr: "Le verbe garde le temps du discours direct : le présent signifie « au moment où la personne parlait »."
+              de: "Das Verb behält die Zeitform der direkten Rede: Das Präsens bedeutet „zum Zeitpunkt des Sprechens“."
+              it: "Il verbo mantiene il tempo del discorso diretto: il presente significa «nel momento in cui hanno parlato»."
+              pl: "Czasownik zachowuje czas z mowy niezależnej: czas teraźniejszy oznacza „w chwili, gdy ktoś mówił”."
+              tr: "Fiil, doğrudan anlatımdaki zamanını korur: şimdiki zaman “konuşulduğu anı” gösterir."
+              id: "Kata kerja tetap memakai kala dari kalimat langsung: kala kini berarti “pada saat orang itu berbicara”."
+              vi: "Động từ giữ nguyên thì của câu trực tiếp: thì hiện tại nghĩa là “vào lúc người ấy nói”."
             ex: { contrast: [["Він сказа́в: «Я ", { target: працю́ю }, " в ба́нку»."], ["Він сказа́в, що ", { target: працю́є }, " в ба́нку."]] }
-            tr: { en: { contrast: ["He said, “I work in a bank.”", "He said he worked in a bank."] }, es: { contrast: ["Dijo: «Trabajo en un banco».", "Dijo que trabajaba en un banco."] } }
+            tr: { en: { contrast: ["He said, “I work in a bank.”", "He said he worked in a bank."] }, es: { contrast: ["Dijo: «Trabajo en un banco».", "Dijo que trabajaba en un banco."] }, pt: { contrast: ["Ele disse: “Trabalho em um banco.”", "Ele disse que trabalhava em um banco."] }, fr: { contrast: ["Il a dit : « Je travaille dans une banque. »", "Il a dit qu’il travaillait dans une banque."] }, de: { contrast: ["Er sagte: „Ich arbeite in einer Bank.“", "Er sagte, dass er in einer Bank arbeitet."] }, it: { contrast: ["Ha detto: «Lavoro in una banca».", "Ha detto che lavorava in una banca."] }, pl: { contrast: ["Powiedział: „Pracuję w banku.”", "Powiedział, że pracuje w banku."] }, tr: { contrast: ["Dedi ki: “Bankada çalışıyorum.”", "Bankada çalıştığını söyledi."] }, id: { contrast: ["Dia berkata, “Saya bekerja di bank.”", "Dia berkata bahwa dia bekerja di bank."] }, vi: { contrast: ["Anh ấy nói: “Tôi làm việc ở ngân hàng.”", "Anh ấy nói là anh ấy làm việc ở ngân hàng."] } }
           - type: rule
             level: B1
             text:
               uk: "Займенники й дієслова змінюють особу так, як у звичайному переказі."
               en: "Pronouns and verbs change person, as when you pass anything on."
               es: "Los pronombres y los verbos cambian de persona, como en cualquier relato."
+              pt: "Os pronomes e os verbos mudam de pessoa, como em qualquer relato."
+              fr: "Les pronoms et les verbes changent de personne, comme dans tout récit rapporté."
+              de: "Pronomen und Verben wechseln die Person, wie in jeder Wiedergabe."
+              it: "I pronomi e i verbi cambiano persona, come in qualsiasi racconto riferito."
+              pl: "Zaimki i czasowniki zmieniają osobę, jak w każdym przekazie cudzych słów."
+              tr: "Zamirler ve fiiller, başkasının sözü aktarılırken olduğu gibi kişi değiştirir."
+              id: "Pronomina dan kata kerja berganti orang, seperti saat menceritakan ulang apa pun."
+              vi: "Đại từ và động từ đổi ngôi, như khi thuật lại bất kỳ lời nào."
             ex: { contrast: [["Андрі́й: «", { target: Я люблю́ }, " ка́ву»."], ["Андрі́й сказа́в, що ", { target: він лю́бить }, " ка́ву."]] }
-            tr: { en: { contrast: ["Andrii: “I love coffee.”", "Andrii said he loved coffee."] }, es: { contrast: ["Andrii: «Me encanta el café».", "Andrii dijo que le encantaba el café."] } }
+            tr: { en: { contrast: ["Andrii: “I love coffee.”", "Andrii said he loved coffee."] }, es: { contrast: ["Andrii: «Me encanta el café».", "Andrii dijo que le encantaba el café."] }, pt: { contrast: ["Andrii: “Eu gosto de café.”", "Andrii disse que gostava de café."] }, fr: { contrast: ["Andrii : « J’aime le café. »", "Andrii a dit qu’il aimait le café."] }, de: { contrast: ["Andrii: „Ich mag Kaffee.“", "Andrii sagte, dass er Kaffee mag."] }, it: { contrast: ["Andrii: «Mi piace il caffè».", "Andrii ha detto che gli piaceva il caffè."] }, pl: { contrast: ["Andrii: „Lubię kawę.”", "Andrii powiedział, że lubi kawę."] }, tr: { contrast: ["Andrii: “Kahveyi severim.”", "Andrii kahveyi sevdiğini söyledi."] }, id: { contrast: ["Andrii: “Saya suka kopi.”", "Andrii bilang bahwa dia suka kopi."] }, vi: { contrast: ["Andrii: “Tôi thích cà phê.”", "Andrii nói là anh ấy thích cà phê."] } }
 
-  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos }
+  - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
       - type: errors
         rows:
-          - { level: B1, wrong: "Він спроси́в, де я живу́.", right: ["Він ", { target: запита́в }, ", де я живу́."], rule: { uk: [{ term: запита́ти }, " або ", { term: спита́ти }, "; ", { term: спроси́ти }, " — російське слово"], en: [{ term: запита́ти }, " or ", { term: спита́ти }, "; ", { term: спроси́ти }, " is Russian"], es: [{ term: запита́ти }, " o ", { term: спита́ти }, "; ", { term: спроси́ти }, " es ruso"] } }
+          - { level: B1, wrong: "Він спроси́в, де я живу́.", right: ["Він ", { target: запита́в }, ", де я живу́."], rule: { uk: [{ term: запита́ти }, " або ", { term: спита́ти }, "; ", { term: спроси́ти }, " — російське слово"], en: [{ term: запита́ти }, " or ", { term: спита́ти }, "; ", { term: спроси́ти }, " is Russian"], es: [{ term: запита́ти }, " o ", { term: спита́ти }, "; ", { term: спроси́ти }, " es ruso"], pt: [{ term: запита́ти }, " ou ", { term: спита́ти }, "; ", { term: спроси́ти }, " é uma palavra russa"], fr: [{ term: запита́ти }, " ou ", { term: спита́ти }, " ; ", { term: спроси́ти }, " est un mot russe"], de: [{ term: запита́ти }, " oder ", { term: спита́ти }, "; ", { term: спроси́ти }, " ist ein russisches Wort"], it: [{ term: запита́ти }, " o ", { term: спита́ти }, "; ", { term: спроси́ти }, " è una parola russa"], pl: [{ term: запита́ти }, " lub ", { term: спита́ти }, "; ", { term: спроси́ти }, " to słowo rosyjskie"], tr: [{ term: запита́ти }, " veya ", { term: спита́ти }, "; ", { term: спроси́ти }, " Rusça bir sözcüktür"], id: [{ term: запита́ти }, " atau ", { term: спита́ти }, "; ", { term: спроси́ти }, " adalah kata bahasa Rusia"], vi: [{ term: запита́ти }, " hoặc ", { term: спита́ти }, "; ", { term: спроси́ти }, " là từ tiếng Nga"] } }
           - { level: B1, speakers: [en, es], wrong: "Вона́ запита́ла, якщо́ я прийду́.", right: ["Вона́ запита́ла, ", { target: чи }, " я прийду́."], rule: { en: ["“if” in a reported question is ", { term: чи }, "; ", { term: якщо́ }, " is the “if” of conditions"], es: ["el «si» de una pregunta indirecta es ", { term: чи }, "; ", { term: якщо́ }, " es el «si» de las condiciones"] } }
           - { level: B1, speakers: [en, es], wrong: "Оле́г сказа́в, що за́раз він був уто́млений.", right: ["Оле́г сказа́в, що за́раз він ", { target: уто́млений }, "."], rule: { en: ["Oleh's words were ", { term: "Я вто́млений" }, ", about the moment he spoke: the report keeps his present tense; ", { term: був уто́млений }, " means tired earlier"], es: ["Oleh dijo ", { term: "Я вто́млений" }, ", sobre el momento en que hablaba: se mantiene su presente; ", { term: був уто́млений }, " significa cansado antes"] } }

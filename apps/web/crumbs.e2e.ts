@@ -44,10 +44,10 @@ test(
         note: a.querySelector("small")?.textContent ?? null,
       })),
     );
-    // Portuguese readers have English in Portuguese; Spanish and Ukrainian open in their own language.
-    expect(links.map((l) => l.href)).toEqual(["/pt/english/", "/es/spanish/", "/uk/ukrainian/"]);
+    // Portuguese readers have every language to learn in Portuguese.
+    expect(links.map((l) => l.href)).toEqual(["/pt/english/", "/pt/spanish/", "/pt/ukrainian/"]);
     expect(links.map((l) => l.current)).toEqual(["page", null, null]);
-    expect(links.map((l) => l.note)).toEqual([null, "· Español", "· Українська"]);
+    expect(links.map((l) => l.note)).toEqual([null, null, null]);
     for (const l of links) expect((await fetch(new URL(l.href ?? "", server.url))).status).toBe(200);
     await page.keyboard.press("Escape");
     expect(await menu.evaluate((d) => d.hasAttribute("open"))).toBe(false);

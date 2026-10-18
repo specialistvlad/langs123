@@ -49,6 +49,7 @@ describe("links", () => {
 });
 
 describe("the topic template", () => {
+  // Checks the filled template against the whole library: seconds under coverage.
   test("is a valid topic once its placeholders are filled", async () => {
     const raw = await Bun.file(join(CONTENT, "templates", "topic.yaml")).text();
     const filled = raw
@@ -63,7 +64,7 @@ describe("the topic template", () => {
     const out: string[] = [];
     checkText(topic, "template", (_w, m) => out.push(m));
     expect(out).toEqual([]);
-  });
+  }, 30_000);
 });
 
 describe("every place a localized value sits carries each explanation language it serves", () => {

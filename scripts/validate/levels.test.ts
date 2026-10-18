@@ -34,9 +34,10 @@ function rows(topic: Record<string, unknown>): Record<string, unknown>[] {
 }
 
 describe("the data as it is", () => {
+  // The whole library, read and checked: seconds under coverage.
   test("validates with no problems", async () => {
     expect(await validate()).toEqual([]);
-  });
+  }, 30_000);
   test("an unchanged topic passes", async () => {
     expect(await problemsOf(() => undefined)).toEqual([]);
   });

@@ -2,7 +2,7 @@
 // lowest level first; a language being learned lists its explanation languages from the source, its own
 // varieties, and titles in exactly its explanation languages.
 import { describe, expect, test } from "bun:test";
-import { type CurriculumLanguage, loadCurriculum, loadTopics } from "../lib.ts";
+import { type CurriculumLanguage, type Explain, loadCurriculum, loadTopics } from "../lib.ts";
 import { checkLanguage, checkPath } from "./curriculum.ts";
 
 const curriculum = await loadCurriculum();
@@ -70,7 +70,7 @@ describe("a language being learned", () => {
     expect(messages).toEqual([]);
   });
   test("its explanation languages start with itself, the source the others translate", () => {
-    expect(languageMessages((l) => (l.explain = ["en", "es", "uk"]))).toEqual([
+    expect(languageMessages((l) => (l.explain = ["en", ...(l.explain ?? []).filter((e) => e !== "en")]))).toEqual([
       "es: explain starts with es, the source the other explanation languages translate",
     ]);
   });
@@ -78,11 +78,22 @@ describe("a language being learned", () => {
     expect(languageMessages((l) => (l.varieties = ["es-419", "en-GB"]))).toEqual(["es: variety en-GB belongs to another language"]);
   });
   test("its section and topic titles carry exactly its explanation languages", () => {
+    // Spanish written for three explanation languages, in one section of one topic.
     const messages = languageMessages((l) => {
+      const keep: Explain[] = ["es", "en", "uk"];
+      l.explain = keep;
       const [section] = l.sections;
       const [topic] = section?.topics ?? [];
-      if (section) delete section.title.es;
-      if (topic?.title) topic.title.fr = "L’alphabet";
+      if (!section || !topic?.title) return;
+      const only = (title: Partial<Record<Explain, string>>, langs: Explain[]): Partial<Record<Explain, string>> =>
+        Object.fromEntries(Object.entries(title).filter(([k]) => langs.includes(k as Explain)));
+      l.sections = [
+        {
+          ...section,
+          title: only(section.title, ["en", "uk"]),
+          topics: [{ ...topic, title: { ...only(topic.title, keep), fr: "L’alphabet" } }],
+        },
+      ];
     });
     expect(messages).toEqual([
       'es section 01-fundamentos has no "es" title',
