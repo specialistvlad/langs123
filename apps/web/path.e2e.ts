@@ -52,7 +52,7 @@ const opens = (a: Element): string => {
   if (step !== null) url.searchParams.set("step", step);
   return url.pathname + url.search + url.hash;
 };
-const current = (): Promise<string> => page.$eval('.nav-list[data-order="path"] [aria-current="step"]', opens);
+const current = (): Promise<string> => page.locator('.nav-list[data-order="path"] [aria-current="step"]').evaluate(opens);
 const next = (): Promise<string> => page.locator('.up-next[data-order="path"]:visible a.next').evaluate(opens);
 
 test(
