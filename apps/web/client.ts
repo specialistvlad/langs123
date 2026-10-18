@@ -1,10 +1,10 @@
-// Progressive enhancement for the static pages: level filter, variety, view, order, the chips and their panels, the top bar's search, closing menus, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, lanes, live reload.
+// Progressive enhancement for the static pages: level filter, variety, view, order, the chips and their panels, the top bar's search, closing menus, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, study-path links, lanes, live reload.
 // The build bundles it with its modules into client.js for the browser.
 import { closingMenu, hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
 import { markChips } from "./client-chips.ts";
 import { closePanel, panels } from "./client-panel.ts";
-import { studyStep } from "./client-path.ts";
+import { stepLinks, studyStep } from "./client-path.ts";
 import { topSearch } from "./client-search.ts";
 import { themeToggle } from "./client-theme.ts";
 import { closingMenus } from "./client-seg.ts";
@@ -31,6 +31,7 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   }
 
   const step = studyStep(root);
+  stepLinks();
   closingMenus();
   panels();
   topSearch();
@@ -175,6 +176,7 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
         heights[lane] = height + span;
       }
     }
+    delete root.dataset["lanes"];
   }
   const widths = new Map<Element, number>();
   const observer = new ResizeObserver((entries) => {

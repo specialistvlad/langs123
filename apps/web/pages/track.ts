@@ -8,7 +8,7 @@ import { pathCards } from "../path.ts";
 import { refRange } from "../../../scripts/levels.ts";
 import { badge, levelAttrs, listBadge, refsRange } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
-import { searchUrl, topicUrl, trackUrl } from "../urls.ts";
+import { searchUrl, sheetsUrl, topicUrl, trackUrl } from "../urls.ts";
 
 export function trackIndex(track: Track): void {
   const { ctx, lang, explain, t, title: trackTitle, langRefs, written } = track;
@@ -32,7 +32,7 @@ export function trackIndex(track: Track): void {
     .join("");
   const indexHead =
     `<header class="index-head doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${escapeHtml(trackTitle)}</h1></div>` +
-    `<p class="props">${badge(refsRange(langRefs, explain))}<span class="prop">${escapeHtml(t.explained)}</span></p>` +
+    `<p class="props">${badge(refsRange(langRefs, explain))}<span class="prop">${escapeHtml(t.explained)}</span><a class="prop" href="${sheetsUrl(explain, lang)}">${escapeHtml(t.sheets)}</a></p>` +
     `<p class="lead" data-order="categories">${escapeHtml(t.trackIntro)}</p><p class="lead" data-order="path">${escapeHtml(t.pathIntro)}</p>` +
     `<div class="lesson-bar"><div class="tabs index-order" role="group" aria-label="${escapeHtml(t.grouping)}">${orderButtons(explain)}</div></div></header>`;
   ctx.add(

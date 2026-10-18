@@ -1,5 +1,5 @@
 // A language being learned is built for the explanation languages it lists: its pages exist in those
-// alone, name only those as counterparts and offer only those in the language switch, and its card on
+// alone, name only those as counterparts (with the English one as x-default) and offer only those in the language switch, and its card on
 // the home page links those alone. A language with varieties opens on its default variety and offers
 // each in a Variety switch; levels.css hides the elements of the varieties not chosen.
 import { describe, expect, test } from "bun:test";
@@ -24,8 +24,12 @@ test("a language's pages exist in the explanation languages it lists, and in no 
 describe.each(spanishPages)("%s", (path) => {
   test("names its counterparts in its explanation languages alone, and offers those in the language switch", async () => {
     const doc = await readPage(path);
-    const alternates = [...doc.querySelectorAll('link[rel="alternate"]')].map((l) => l.getAttribute("hreflang"));
-    expect(alternates).toEqual(explains);
+    const links = [...doc.querySelectorAll('link[rel="alternate"]')];
+    const alternates = links.map((l) => l.getAttribute("hreflang"));
+    expect(alternates).toEqual([...explains, "x-default"]);
+    // x-default is the English counterpart.
+    const href = (lang: string): string | null | undefined => links.find((l) => l.getAttribute("hreflang") === lang)?.getAttribute("href");
+    expect(href("x-default")).toBe(href("en"));
     expect(doc.querySelectorAll(".lang-menu .menu-list a")).toHaveLength(explains.length);
   });
   test("opens on the default variety and offers each in the Variety switch", async () => {

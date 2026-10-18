@@ -109,9 +109,9 @@ most frequent forms first, and an overview after its parts.
 
 - A written topic has a step at every level its leaves hold, and at no other.
 - A step opens its topic where its level starts: at the top for the topic's lowest level, else at
-  the first section that holds the level. Its link names the step, `?step=a1`, and the menu marks
-  that step as the one being read; a page opened without it marks the highest step the level filter
-  shows.
+  the first section that holds the level. Its link is the topic's own address and names the step in
+  `data-path-step`; following it opens the topic at `?step=a1`, and the menu marks that step as the
+  one being read; a page opened without it marks the highest step the level filter shows.
 - The menu, the track index and Up next follow the grouping the reader picks: **By level**, the
   study path, or **Categories**. By level, the menu groups the steps under their levels, and the level
   filter hides the levels above the chosen one.
@@ -409,8 +409,10 @@ Every page has a clean, stable, named URL.
   search lists the topics and the sections inside them whose titles hold what was typed; on a home
   page it covers every track read in the page's language. The menu opens on the track's index and
   cheatsheets.
-- Every page names its counterparts in the other explanation languages of its track with `hreflang`;
-  the home pages add the root as `x-default`.
+- Every page names its counterparts in the other explanation languages of its track with `hreflang`,
+  and its English counterpart, or its first, as `x-default`; the home pages name the root.
+- A track home's property line links its cheatsheet index; a topic's section in its property line
+  links the section's cheatsheet.
 - URLs use lowercase ASCII letters, digits, hyphens and slashes, and end with `/`.
 - URLs come from slugs, never from titles. A published slug stays fixed.
 - A page carries the choice of each switch it has in query parameters, so a shared link opens the
@@ -419,7 +421,8 @@ Every page has a clean, stable, named URL.
   language with varieties. A page opened without them takes the reader's last choice, and the
   highest level, Extended and the default variety the first time. The theme, the grouping (By level
   or Categories) and the variety of each language live in the browser.
-- A study-path link carries its step, `?step=a0`…`?step=c2`, on topic pages (§2).
+- A study-path link opens its topic at its step, `?step=a0`…`?step=c2`: the reader's click adds the
+  step to the link's href, which stays the topic's address (§2).
 - Page state never travels in percent-encoded text or fragments.
 - Section slugs are unique within a language; topic slugs are unique within a section.
 

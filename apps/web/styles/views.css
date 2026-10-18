@@ -144,6 +144,17 @@ html[data-order="path"] [data-order="categories"] {
   .doc:has(.lanes) {
     max-width: none;
   }
+  /* An index waits unseen until client.ts has placed its blocks in lanes, so they appear in place;
+     after 1.5s it shows whatever happened. */
+  [data-lanes="wait"] :is(.index-grid, .sheet-index).lanes {
+    visibility: hidden;
+    animation: lanes-shown 0s 1.5s forwards;
+  }
+}
+@keyframes lanes-shown {
+  to {
+    visibility: visible;
+  }
 }
 .sections > .block {
   margin: 0 0 28px;

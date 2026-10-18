@@ -1,7 +1,8 @@
 // The study path of a track (curriculum.yaml `path`): per level, the steps to study, each a topic at a
-// level. A step links to its topic with its level, ?step=a1, so the page marks the step being read, and
-// to the place its level starts: the top at the topic's lowest level, else the first guide section
-// holding that level, under the anchor the topic page gives it.
+// level. A step links to the place its level starts on its topic page: the top at the topic's lowest
+// level, else the first guide section holding that level, under the anchor the topic page gives it.
+// The link names its level in data-path-step; client-path.ts adds it to the address as ?step=a1 when
+// the reader follows the link, so the page marks the step being read and every href stays canonical.
 import { topicTitle } from "../../scripts/content.ts";
 import { type CurriculumLanguage, type Explain, type Level, LEVELS, levelName, type TopicRef } from "../../scripts/lib.ts";
 import { leaves, topicLevels } from "../../scripts/levels.ts";
@@ -16,6 +17,9 @@ export interface Step {
   href: string;
 }
 
+// A link to a step: its address and its level, which the reader's click adds as ?step=a1.
+export const stepLink = (href: string, level: Level): string => `href="${href}" data-path-step="${level.toLowerCase()}"`;
+
 export interface Stage {
   level: Level;
   steps: Step[];
@@ -26,7 +30,7 @@ function stepHref(ref: TopicRef, level: Level, explain: Explain, lang: Curriculu
   if (!topic) return null;
   const held = topicLevels(topic, explain);
   if (!held.includes(level)) return null;
-  const url = `${topicUrl(explain, lang, ref)}?step=${level.toLowerCase()}`;
+  const url = topicUrl(explain, lang, ref);
   if (level === held[0]) return url;
   const parts = guideParts(topic, explain);
   const ids = anchorIds(parts.map((p) => p.title));
@@ -58,7 +62,7 @@ export function pathMenu(path: Stage[], explain: Explain, current?: TopicRef): s
       `<h4${levelAttrs(single(stage.level))}>${stageHead(stage, explain)}</h4>`,
       ...stage.steps.map(
         (s) =>
-          `<a href="${s.href}"${levelAttrs(single(s.level))}${s.ref === current ? ' class="on"' : ""}><span class="name">${escapeHtml(topicTitle(s.ref, explain))}</span></a>`,
+          `<a ${stepLink(s.href, s.level)}${levelAttrs(single(s.level))}${s.ref === current ? ' class="on"' : ""}><span class="name">${escapeHtml(topicTitle(s.ref, explain))}</span></a>`,
       ),
     ])
     .join("\n");
@@ -71,7 +75,7 @@ export function pathCards(path: Stage[], explain: Explain): string {
       const items = stage.steps
         .map(
           (s) =>
-            `<li${levelAttrs(single(s.level))}><a href="${s.href}"><span class="name">${escapeHtml(topicTitle(s.ref, explain))}</span></a></li>`,
+            `<li${levelAttrs(single(s.level))}><a ${stepLink(s.href, s.level)}><span class="name">${escapeHtml(topicTitle(s.ref, explain))}</span></a></li>`,
         )
         .join("");
       const head = `<header><span class="num">${stage.level}</span><h2>${escapeHtml(levelName(stage.level, explain))}</h2><span class="count">${String(stage.steps.length)}</span></header>`;

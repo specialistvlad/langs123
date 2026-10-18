@@ -11,7 +11,7 @@ import { barNext, pagers, upNext } from "../sequence.ts";
 import { plainText, reading, textIn } from "../../../scripts/text.ts";
 import { anchorIds, badge, editUrl, levelAttrs, listBadge } from "../parts.ts";
 import { escapeHtml, explained, inline } from "../html.ts";
-import { searchUrl, topicUrl } from "../urls.ts";
+import { searchUrl, sectionSheet, sheetUrl, topicUrl } from "../urls.ts";
 
 // What a view shows when the level filter sits below everything in it: a note and a button that
 // sets the level where the view starts. views.css shows it for its view below that level.
@@ -56,7 +56,7 @@ export function topicPages(track: Track): void {
     const minutes = readingMinutes(topic, explain, lang.varieties?.[0]);
     const props = [
       badge(range),
-      `<span class="prop">${escapeHtml(section)}</span>`,
+      `<a class="prop" href="${sheetUrl(explain, lang, sectionSheet(ref))}" title="${escapeHtml(t.sheets)}">${escapeHtml(section)}</a>`,
       `<span class="prop" title="${escapeHtml(t.readingTime)}"><span aria-hidden="true">◷</span> ${escapeHtml(t.minutes(minutes))}</span>`,
     ].join("");
     const head =

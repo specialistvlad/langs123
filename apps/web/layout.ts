@@ -10,7 +10,8 @@ export interface PageOptions {
   title: string;
   description: string;
   path: string;
-  // The same page in each explanation language; the home page adds x-default.
+  // The same page in each explanation language; x-default names the page for every other language: the
+  // one a page gives, else its English version, else its first.
   alternates?: { lang: string; path: string }[];
   // The varieties of the language being learned, the default first: the page shows the default's
   // elements until the reader chooses another.
@@ -32,8 +33,8 @@ export interface PageOptions {
   siteUrl: string;
 }
 
-// Applies saved viewer preferences before first paint.
-const PREFS = `var d=document.documentElement,p=new URLSearchParams(location.search),s=localStorage,l=(p.get("level")||"").toUpperCase(),v=p.get("view");if(${JSON.stringify(LEVELS)}.indexOf(l)>=0)s.setItem("ln-level",l);if(v==="cheatsheet"||v==="extended")s.setItem("ln-view",v);d.dataset.level=s.getItem("ln-level")||"${LEVELS.at(-1) ?? ""}";d.dataset.view=s.getItem("ln-view")==="cheatsheet"?"cheatsheet":"extended";d.dataset.order=s.getItem("ln-order")==="path"?"path":"categories";var t=s.getItem("ln-theme");if(t&&t!=="auto")d.dataset.theme=t`;
+// Applies saved viewer preferences before first paint, and holds back lanes client.ts places (data-lanes).
+const PREFS = `var d=document.documentElement,p=new URLSearchParams(location.search),s=localStorage,l=(p.get("level")||"").toUpperCase(),v=p.get("view");if(${JSON.stringify(LEVELS)}.indexOf(l)>=0)s.setItem("ln-level",l);if(v==="cheatsheet"||v==="extended")s.setItem("ln-view",v);d.dataset.level=s.getItem("ln-level")||"${LEVELS.at(-1) ?? ""}";d.dataset.view=s.getItem("ln-view")==="cheatsheet"?"cheatsheet":"extended";d.dataset.order=s.getItem("ln-order")==="path"?"path":"categories";var t=s.getItem("ln-theme");if(t&&t!=="auto")d.dataset.theme=t;if(!CSS.supports("display","grid-lanes"))d.dataset.lanes="wait"`;
 // A page with varieties keeps the reader's choice per language being learned, ln-variety-es; the address
 // (?variety=es-es) wins, and the page opens on the default it names.
 const VARIETY_PREFS = `;var vs=d.dataset.varieties.split(" "),f=function(x){return vs.filter(function(y){return y.toLowerCase()===x.toLowerCase()})[0]},k="ln-variety-"+vs[0].split("-")[0],a=f(p.get("variety")||"");if(a)s.setItem(k,a);a=f(s.getItem(k)||"");if(a)d.dataset.variety=a`;
@@ -51,7 +52,11 @@ const varietyAttrs = (varieties: Variety[] | undefined): string =>
 export function page(o: PageOptions): string {
   const t = ui(o.lang);
   const url = (path: string): string => `${o.siteUrl}${path}`;
-  const alternates = (o.alternates ?? []).map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${url(a.path)}">`).join("\n  ");
+  const given = o.alternates ?? [];
+  const fallback = given.find((a) => a.lang === "en") ?? given[0];
+  const withDefault =
+    given.some((a) => a.lang === "x-default") || fallback === undefined ? given : [...given, { lang: "x-default", path: fallback.path }];
+  const alternates = withDefault.map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${url(a.path)}">`).join("\n  ");
   const hasNav = filled(o.nav);
   // A page with a menu or a level filter keeps the bottom bar on phones, where the top bar's chips hide.
   const hasBar = hasNav || o.level === true;

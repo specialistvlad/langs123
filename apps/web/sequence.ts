@@ -10,12 +10,14 @@ import { type Level, LEVELS, lv, type TopicRef } from "../../scripts/lib.ts";
 import { refRange } from "../../scripts/levels.ts";
 import type { Track } from "./context.ts";
 import { listBadge, single } from "./parts.ts";
+import { stepLink } from "./path.ts";
 import { escapeHtml } from "./html.ts";
 import { topicUrl } from "./urls.ts";
 
 interface Entry {
   ref: TopicRef;
-  href: string;
+  // The link's attributes: its address, and on the study path the step it opens.
+  link: string;
   title: string;
   level: Level;
   badge: string;
@@ -40,7 +42,7 @@ function around(list: Entry[], i: number): Around[] {
     const first = list.find(shown);
     const restart = after === undefined && first !== undefined && first !== list[i];
     const next = after ?? (restart ? first : undefined);
-    const key = `${prev?.href ?? ""} ${next?.href ?? ""} ${String(restart)}`;
+    const key = `${prev?.link ?? ""} ${next?.link ?? ""} ${String(restart)}`;
     const known = out.get(key);
     if (known) known.at.push(level);
     else out.set(key, { at: [level], prev, next, restart });
@@ -63,7 +65,7 @@ function placed(track: Track, ref: TopicRef): Placed[] {
       ? [
           {
             ref: r,
-            href: topicUrl(explain, lang, r),
+            link: `href="${topicUrl(explain, lang, r)}"`,
             title: topicTitle(r, explain),
             level: range.from,
             badge: listBadge(range),
@@ -76,7 +78,7 @@ function placed(track: Track, ref: TopicRef): Placed[] {
     .flatMap((stage) => stage.steps)
     .map((s) => ({
       ref: s.ref,
-      href: s.href,
+      link: stepLink(s.href, s.level),
       title: topicTitle(s.ref, explain),
       level: s.level,
       badge: listBadge(single(s.level)),
@@ -101,7 +103,7 @@ export function pagers(track: Track, ref: TopicRef, where: "top" | "bottom"): st
     `<span class="${cls} off" aria-disabled="true"><span class="dir">${escapeHtml(label)}</span></span>`;
   const side = (cls: string, label: string, e: Entry | undefined): string =>
     e
-      ? `<a class="${cls}" href="${e.href}"><span class="dir">${escapeHtml(label)}</span><span class="title">${escapeHtml(e.title)}</span></a>`
+      ? `<a class="${cls}" ${e.link}><span class="dir">${escapeHtml(label)}</span><span class="title">${escapeHtml(e.title)}</span></a>`
       : off(cls, label);
   const rows = placed(track, ref).map(({ attrs, around: a }) => {
     const nextLabel = a.restart ? `${t.startOver} ↺` : `${t.next} →`;
@@ -119,7 +121,7 @@ export function barNext(track: Track, ref: TopicRef): string {
       if (!e) return [];
       const label = a.restart ? t.startOver : t.next;
       return [
-        `<a class="bar-item bar-next" href="${e.href}"${attrs} title="${escapeHtml(e.title)}"><span class="bar-icon" aria-hidden="true">${a.restart ? "↺" : "→"}</span><span>${escapeHtml(label)}</span></a>`,
+        `<a class="bar-item bar-next" ${e.link}${attrs} title="${escapeHtml(e.title)}"><span class="bar-icon" aria-hidden="true">${a.restart ? "↺" : "→"}</span><span>${escapeHtml(label)}</span></a>`,
       ];
     })
     .join("");
@@ -134,7 +136,7 @@ export function upNext(track: Track, ref: TopicRef): string {
       if (!e) return [];
       return [
         `<div class="up-next"${attrs}><h4>${escapeHtml(a.restart ? t.startOver : t.upNext)}</h4>` +
-          `<a class="next" href="${e.href}"><strong>${escapeHtml(e.title)}</strong><span class="summary">${escapeHtml(e.summary)}</span>${e.badge}</a></div>`,
+          `<a class="next" ${e.link}><strong>${escapeHtml(e.title)}</strong><span class="summary">${escapeHtml(e.summary)}</span>${e.badge}</a></div>`,
       ];
     })
     .join("");

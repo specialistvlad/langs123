@@ -18,7 +18,7 @@ export interface Choice {
 // it on a tap elsewhere or Escape).
 export function languageMenu(label: string, choices: Choice[]): string {
   const current = choices.find((c) => c.on) ?? choices[0];
-  return `<details class="seg lang-menu has-chevron"><summary aria-label="${escapeHtml(label)}"><span class="lang-icon" aria-hidden="true">文</span>${escapeHtml(current?.label ?? "")}</summary><div class="menu-list">${languageLinks(choices)}</div></details>`;
+  return `<details class="seg lang-menu has-chevron"><summary><span class="lang-icon" aria-hidden="true">文</span><span class="sr-only">${escapeHtml(label)}: </span>${escapeHtml(current?.label ?? "")}</summary><div class="menu-list">${languageLinks(choices)}</div></details>`;
 }
 const languageLinks = (choices: Choice[]): string =>
   choices.map((c) => `<a href="${c.href}"${c.on ? ' class="on" aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`).join("");
@@ -55,13 +55,13 @@ export function chips(o: ChipsOptions): string {
   if (o.level === true) {
     const upTo = `${t.upTo} {level}`;
     parts.push(
-      `<button type="button" class="chip" popovertarget="level-panel" aria-label="${escapeHtml(t.level)}"><span class="level-dot" aria-hidden="true"></span><span data-level-label data-all="${escapeHtml(t.allLevels)}" data-up-to="${escapeHtml(upTo)}">${escapeHtml(t.allLevels)}</span><span class="caret" aria-hidden="true">▾</span></button>`,
+      `<button type="button" class="chip" popovertarget="level-panel"><span class="level-dot" aria-hidden="true"></span><span class="sr-only">${escapeHtml(t.level)}: </span><span data-level-label data-all="${escapeHtml(t.allLevels)}" data-up-to="${escapeHtml(upTo)}">${escapeHtml(t.allLevels)}</span><span class="caret" aria-hidden="true">▾</span></button>`,
     );
   }
   if (o.varieties !== undefined) {
     const first = o.varieties[0];
     parts.push(
-      `<button type="button" class="chip" popovertarget="variety-panel" aria-label="${escapeHtml(t.variety)}"><span data-variety-label>${escapeHtml(first === undefined ? "" : varietyName(first, o.explain))}</span><span class="caret" aria-hidden="true">▾</span></button>`,
+      `<button type="button" class="chip" popovertarget="variety-panel"><span class="sr-only">${escapeHtml(t.variety)}: </span><span data-variety-label>${escapeHtml(first === undefined ? "" : varietyName(first, o.explain))}</span><span class="caret" aria-hidden="true">▾</span></button>`,
     );
   }
   return parts.length === 0 ? "" : `<div class="chips">${parts.join("")}</div>`;

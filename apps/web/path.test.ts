@@ -17,6 +17,14 @@ const steps = [...topic.querySelectorAll<HTMLAnchorElement>(`${menu} a`)];
 // The page a step link opens, and the section its anchor names.
 const pageOf = (href: string): string => `${href.split(/[?#]/)[0]?.replace(/^\//, "") ?? ""}index.html`;
 const levelOf = (el: Element): string => el.getAttribute("data-level") ?? "";
+// The address a link opens: its href, with the step its data-path-step names as the reader's click adds it.
+const opensOf = (el: Element | null | undefined): string | undefined => {
+  const href = el?.getAttribute("href") ?? null;
+  const step = el?.getAttribute("data-path-step") ?? null;
+  if (href === null || step === null) return href ?? undefined;
+  const [base = "", hash] = href.split("#");
+  return `${base}?step=${step}${hash === undefined ? "" : `#${hash}`}`;
+};
 
 describe("the menu and the index", () => {
   test("list the levels of the path, lowest first, each with its steps", () => {
@@ -39,7 +47,8 @@ describe("the menu and the index", () => {
 describe.each(steps.map((a) => [`${levelOf(a)} ${a.getAttribute("href") ?? ""}`, a] as const))("step %s", (_, a) => {
   test("opens its topic where its level starts and names its step", async () => {
     const href = a.getAttribute("href") ?? "";
-    expect(new URL(href, "http://x").searchParams.get("step")).toBe(levelOf(a).toLowerCase());
+    expect(href).not.toContain("?");
+    expect(a.getAttribute("data-path-step")).toBe(levelOf(a).toLowerCase());
     expect(pages).toContain(pageOf(href));
     const doc = await readPage(pageOf(href));
     const level = levelOf(a);
@@ -62,7 +71,7 @@ describe.each(steps.map((a) => [`${levelOf(a)} ${a.getAttribute("href") ?? ""}`,
 });
 
 describe("a topic page", () => {
-  const all = steps.map((a) => ({ level: levelOf(a), href: a.getAttribute("href") ?? "" }));
+  const all = steps.map((a) => ({ level: levelOf(a), href: opensOf(a) ?? "" }));
   const topicsOnPath = [...new Set(all.map((s) => pageOf(s.href)))];
   const written = [...index.querySelectorAll('.index-grid[data-order="categories"] li[data-level]')].flatMap((li) => {
     const href = li.querySelector("a")?.getAttribute("href");
@@ -94,13 +103,13 @@ describe("a topic page", () => {
       const next = doc.querySelector(`.pagers.${where} .pager${rows}${at} .pager-next`);
       expect(prev?.matches("a") ?? false).not.toBe(prev?.matches(".off") ?? false);
       // The bottom bar's Next leads where the row's next does.
-      const bar = doc.querySelector(`.bottom-bar .bar-next${rows}${at}`)?.getAttribute("href") ?? undefined;
-      expect(bar).toBe(next?.getAttribute("href") ?? undefined);
+      const bar = opensOf(doc.querySelector(`.bottom-bar .bar-next${rows}${at}`));
+      expect(bar).toBe(opensOf(next));
       return {
-        prev: prev?.getAttribute("href") ?? undefined,
-        next: next?.getAttribute("href") ?? undefined,
+        prev: opensOf(prev),
+        next: opensOf(next),
         restart: next?.textContent.includes("Start over") ?? false,
-        upNext: doc.querySelector(`.up-next${rows}${at} a.next`)?.getAttribute("href") ?? undefined,
+        upNext: opensOf(doc.querySelector(`.up-next${rows}${at} a.next`)),
       };
     });
     return out;
@@ -145,8 +154,8 @@ describe("a topic page", () => {
 
   test("To be at A0 leads to Word Order", async () => {
     const doc = await readPage("en/english/verbs/to-be/index.html");
-    expect(doc.querySelector('.up-next[data-step="A0"][data-at~="A0"] a.next')?.getAttribute("href")).toBe(
-      "/en/english/sentence-building/word-order/?step=a0",
-    );
+    const next = doc.querySelector('.up-next[data-step="A0"][data-at~="A0"] a.next');
+    expect(next?.getAttribute("href")).toBe("/en/english/sentence-building/word-order/");
+    expect(next?.getAttribute("data-path-step")).toBe("a0");
   });
 });

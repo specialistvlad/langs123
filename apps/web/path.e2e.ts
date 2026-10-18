@@ -45,8 +45,15 @@ const menu = (): Promise<string[]> =>
   page.$$eval('.nav-list[data-order="path"] :is(h4, a)', (els) =>
     els.filter((el) => el.checkVisibility()).map((el) => `${el.tagName === "H4" ? "#" : ""}${el.getAttribute("data-level") ?? ""}`),
   );
-const current = (): Promise<string | null> => page.getAttribute('.nav-list[data-order="path"] [aria-current="step"]', "href");
-const next = (): Promise<string | null> => page.locator('.up-next[data-order="path"]:visible a.next').getAttribute("href");
+// The address a link opens: its href, with ?step= from data-path-step as the reader's click adds it.
+const opens = (a: Element): string => {
+  const url = new URL(a.getAttribute("href") ?? "", location.href);
+  const step = a.getAttribute("data-path-step");
+  if (step !== null) url.searchParams.set("step", step);
+  return url.pathname + url.search + url.hash;
+};
+const current = (): Promise<string> => page.$eval('.nav-list[data-order="path"] [aria-current="step"]', opens);
+const next = (): Promise<string> => page.locator('.up-next[data-order="path"]:visible a.next').evaluate(opens);
 
 test(
   "the switch shows one order and keeps it from page to page",
@@ -120,7 +127,13 @@ test(
       page.$$eval(".pagers.bottom .pager-prev, .pagers.bottom .pager-next", (els) =>
         els
           .filter((el) => el.checkVisibility())
-          .map((el) => `${el.querySelector(".dir")?.textContent ?? ""} ${el.getAttribute("href") ?? "off"}`),
+          .map((el) => {
+            const href = el.getAttribute("href");
+            const url = new URL(href ?? "", location.href);
+            const step = el.getAttribute("data-path-step");
+            if (step !== null) url.searchParams.set("step", step);
+            return `${el.querySelector(".dir")?.textContent ?? ""} ${href === null ? "off" : url.pathname + url.search + url.hash}`;
+          }),
       );
     await open("/en/english/sentence-building/word-order/?level=a0");
     await page.click('.nav-order [data-set-order="categories"]');

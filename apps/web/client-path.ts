@@ -21,3 +21,17 @@ export function studyStep(root: HTMLElement): () => void {
     });
   };
 }
+
+// A study-path link opens its topic at its step: as the reader follows it (a click, a middle click, or the
+// context menu's open in a new tab), its address gains ?step=a1 from data-path-step. The href in the page
+// stays the topic's canonical address.
+export function stepLinks(): void {
+  const withStep = (e: Event): void => {
+    const a = e.target instanceof Element ? e.target.closest<HTMLAnchorElement>("a[data-path-step]") : null;
+    if (!a) return;
+    const url = new URL(a.href);
+    url.searchParams.set("step", a.dataset["pathStep"] ?? "");
+    a.href = url.href;
+  };
+  for (const type of ["click", "auxclick", "contextmenu"]) document.addEventListener(type, withStep, true);
+}

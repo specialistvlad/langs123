@@ -73,6 +73,9 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
     expect(home.querySelector('link[hreflang="x-default"]')?.getAttribute("href")).toBe(
       `http://127.0.0.1${homeUrl(ENABLED_EXPLAIN[0] ?? e)}`,
     );
+    // Every other page's x-default is its English version.
+    const credits = await readPage(file(creditsUrl(e)));
+    expect(credits.querySelector('link[hreflang="x-default"]')?.getAttribute("href")).toBe(`http://127.0.0.1${creditsUrl("en")}`);
     // A language's card lists the home page's own language first.
     expect(home.querySelector(".lang-card .explains a")?.getAttribute("hreflang")).toBe(e);
   });
