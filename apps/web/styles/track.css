@@ -1,0 +1,144 @@
+/* A track's index (pages/track.ts) in the frame: a title line, the order switch, then the topics in two
+   columns above 860px */
+html[data-frame] {
+  --ix-sep: rgba(60, 60, 67, 0.29);
+  --ix-num: rgba(60, 60, 67, 0.45);
+  --ix-chev: rgba(60, 60, 67, 0.3);
+  --ix-seg-on: #ffffff;
+  --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  --ix-menu-bg: rgba(250, 250, 252, 0.94);
+  --ix-menu-sub: rgba(60, 60, 67, 0.6);
+  --ix-band: rgba(118, 118, 128, 0.12);
+  --ix-fade: rgba(242, 242, 247, 0.85);
+}
+@media (prefers-color-scheme: dark) {
+  html[data-frame]:not([data-theme="light"]) {
+    --ix-sep: rgba(84, 84, 88, 0.65);
+    --ix-num: rgba(235, 235, 245, 0.45);
+    --ix-chev: rgba(235, 235, 245, 0.3);
+    --ix-seg-on: #636366;
+    --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    --ix-menu-bg: rgba(44, 44, 48, 0.94);
+    --ix-menu-sub: rgba(235, 235, 245, 0.6);
+    --ix-band: rgba(118, 118, 128, 0.24);
+    --ix-fade: rgba(0, 0, 0, 0.85);
+  }
+}
+html[data-frame][data-theme="dark"] {
+  --ix-sep: rgba(84, 84, 88, 0.65);
+  --ix-num: rgba(235, 235, 245, 0.45);
+  --ix-chev: rgba(235, 235, 245, 0.3);
+  --ix-seg-on: #636366;
+  --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  --ix-menu-bg: rgba(44, 44, 48, 0.94);
+  --ix-menu-sub: rgba(235, 235, 245, 0.6);
+  --ix-band: rgba(118, 118, 128, 0.24);
+  --ix-fade: rgba(0, 0, 0, 0.85);
+}
+html[data-page="track"] a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ix-main {
+  padding-top: 84px;
+}
+.ix-line {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.ix-name-h {
+  flex-grow: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.ix-flag {
+  margin-right: 8px;
+}
+.ix-count {
+  flex-shrink: 0;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--muted);
+}
+.ix-seg {
+  display: flex;
+  gap: 2px;
+  box-sizing: border-box;
+  width: 360px;
+  max-width: 100%;
+  margin: 14px 0 22px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--hm-fill);
+}
+.ix-seg button {
+  flex: 1;
+  height: 32px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+}
+html[data-order="path"] .ix-seg [data-set-order="path"],
+html:not([data-order="path"]) .ix-seg [data-set-order="categories"] {
+  background: var(--ix-seg-on);
+  box-shadow: var(--ix-seg-shadow);
+  font-weight: 600;
+}
+
+.ix-flow[data-order="path"],
+html[data-order="path"] .ix-flow[data-order="categories"] {
+  display: none;
+}
+html[data-order="path"] .ix-flow[data-order="path"] {
+  display: block;
+}
+.ix-flow {
+  column-count: 2;
+  column-gap: 16px;
+}
+.ix-sec {
+  break-inside: avoid;
+  margin-bottom: 28px;
+}
+.ix-h {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 8px 20px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: -0.45px;
+  break-after: avoid;
+}
+.ix-num {
+  font:
+    600 17px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: -0.02em;
+  color: var(--ix-num);
+}
+.ix-h:has(.badge) {
+  align-items: center;
+}
+.ix-h .badge {
+  margin: 0;
+  --badge-pad: 0 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}

@@ -61,6 +61,14 @@ export function say(key: string, explain: Explain, values: Record<string, string
   });
 }
 
+// A count in an explanation language: the form its plural rules pick for n (interface.yaml counts).
+export function count(key: string, explain: Explain, n: number): string {
+  const forms = INTERFACE.counts?.[key]?.[explain];
+  if (forms === undefined) throw new Error(`interface.yaml has no count "${key}" in "${explain}"`);
+  const rule = new Intl.PluralRules(explain).select(n);
+  return (forms[rule] ?? forms.other).replace("{n}", String(n));
+}
+
 // A slot code of a pattern in an explanation language; a code without a name renders as written.
 export const slotName = (code: string, explain: Explain): string => INTERFACE.slots?.[code]?.[explain] ?? code;
 

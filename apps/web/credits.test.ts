@@ -100,6 +100,8 @@ test("on phones the up link leads a topic to its track's index, named by its lan
     return link === null ? null : [link.getAttribute("href"), link.querySelector("span")?.textContent ?? null];
   };
   expect(await up("en/english/verbs/to-be/index.html")).toEqual(["/en/english/", "English"]);
-  expect(await up("uk/spanish/index.html")).toEqual(["/uk/", SITE.name]);
+  // The track's index draws its own up button, to Home.
+  const index = (await readPage("uk/spanish/index.html")).querySelector(".ix-up");
+  expect([index?.getAttribute("href"), index?.getAttribute("aria-label")]).toEqual(["/uk/", SITE.name]);
   expect(await up("index.html")).toBeNull();
 });

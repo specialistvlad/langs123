@@ -37,17 +37,17 @@ describe("the menu and the index", () => {
   test("list the levels of the path, lowest first, each with its steps", () => {
     const levels = Object.keys(path);
     expect([...topic.querySelectorAll(`${menu} h4`)].map(levelOf)).toEqual(levels);
-    expect([...index.querySelectorAll('.index-grid[data-order="path"] .index-card')].map(levelOf)).toEqual(levels);
+    expect([...index.querySelectorAll('.ix-flow[data-order="path"] .ix-sec')].map(levelOf)).toEqual(levels);
     for (const level of levels) {
       expect(steps.filter((a) => levelOf(a) === level).length).toBe(path[level]?.length ?? 0);
-      expect(index.querySelectorAll(`.index-grid[data-order="path"] li[data-level="${level}"]`).length).toBe(path[level]?.length ?? 0);
+      expect(index.querySelectorAll(`.ix-flow[data-order="path"] li[data-level="${level}"]`).length).toBe(path[level]?.length ?? 0);
     }
     expect(LEVELS.slice(0, levels.length)).toEqual(levels as never);
   });
 
   test("give both orders a switch, the menu and the index each", () => {
     expect(topic.querySelectorAll('.nav-order [data-set-order="categories"], .nav-order [data-set-order="path"]').length).toBe(2);
-    expect(index.querySelectorAll('.index-order [data-set-order="categories"], .index-order [data-set-order="path"]').length).toBe(2);
+    expect(index.querySelectorAll('.ix-seg [data-set-order="categories"], .ix-seg [data-set-order="path"]').length).toBe(2);
   });
 });
 
@@ -80,7 +80,7 @@ describe.each(steps.map((a) => [`${levelOf(a)} ${a.getAttribute("href") ?? ""}`,
 describe("a topic page", () => {
   const all = steps.map((a) => ({ level: levelOf(a), href: opensOf(a) ?? "" }));
   const topicsOnPath = [...new Set(all.map((s) => pageOf(s.href)))];
-  const written = [...index.querySelectorAll('.index-grid[data-order="categories"] li[data-level]')].flatMap((li) => {
+  const written = [...index.querySelectorAll('.ix-flow[data-order="categories"] li[data-level]')].flatMap((li) => {
     const href = li.querySelector("a")?.getAttribute("href");
     return href !== null && href !== undefined ? [{ level: levelOf(li), href }] : [];
   });

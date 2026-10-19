@@ -143,14 +143,15 @@ export function breadcrumb(o: PageOptions, t: Ui): string {
 
 // The panels the chips and the bottom bar open (popovers): under their chip on wide screens, a sheet
 // on phones (client-panel.ts, panels.css).
+// The level panel: a button per level, the chosen one marked, and what the filter does.
+export function levelPanel(t: Ui): string {
+  const buttons = LEVELS.map((l) => `<button type="button" class="lvl-${l}" data-set-level="${l}">${l}</button>`).join("");
+  return `<div class="panel" id="level-panel" popover><p class="panel-title">${escapeHtml(t.level)}</p><div class="seg">${buttons}</div><p class="panel-note">${escapeHtml(t.levelHidden)}</p></div>`;
+}
+
 export function panels(o: PageOptions, t: Ui, more: boolean): string {
   const out: string[] = [];
-  if (o.level === true) {
-    const buttons = LEVELS.map((l) => `<button type="button" class="lvl-${l}" data-set-level="${l}">${l}</button>`).join("");
-    out.push(
-      `<div class="panel" id="level-panel" popover><p class="panel-title">${escapeHtml(t.level)}</p><div class="seg">${buttons}</div><p class="panel-note">${escapeHtml(t.levelHidden)}</p></div>`,
-    );
-  }
+  if (o.level === true) out.push(levelPanel(t));
   if (o.varieties !== undefined) {
     const buttons = o.varieties
       .map((v) => `<button type="button" data-set-variety="${v}">${escapeHtml(varietyName(v, o.lang))}</button>`)

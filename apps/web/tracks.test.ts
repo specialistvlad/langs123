@@ -31,7 +31,7 @@ describe.each(spanishPages)("%s", (path) => {
     // x-default is the English counterpart.
     const href = (lang: string): string | null | undefined => links.find((l) => l.getAttribute("hreflang") === lang)?.getAttribute("href");
     expect(href("x-default")).toBe(href("en"));
-    expect(doc.querySelectorAll(".lang-menu .menu-list a")).toHaveLength(explains.length);
+    expect(doc.querySelectorAll(".lang-menu .menu-list a, .hm-read .hm-menu a")).toHaveLength(explains.length);
   });
   test("opens on the default variety and offers each in the Variety switch", async () => {
     const doc = await readPage(path);

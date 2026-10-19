@@ -23,6 +23,16 @@
       "additionalProperties": {
         "$ref": "#/definitions/localized"
       }
+    },
+    "counts": {
+      "description": "Counts by key: in every explanation language, one form per plural category its plural rules use (Intl.PluralRules), other always; {n} is the number.",
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z][A-Za-z]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/counted"
+      }
     }
   },
   "definitions": {
@@ -87,6 +97,389 @@
         "vi": {
           "type": "string",
           "minLength": 1
+        }
+      }
+    },
+    "counted": {
+      "description": "A count's forms in every explanation language.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "uk",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "pl",
+        "tr",
+        "id",
+        "vi"
+      ],
+      "properties": {
+        "en": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "uk": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "es": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "pt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "fr": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "de": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "it": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "pl": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "tr": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "id": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "vi": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
         }
       }
     }

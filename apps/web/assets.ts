@@ -28,6 +28,10 @@ const STYLES = [
   "home-results",
   "home-bar",
   "home-phone",
+  "track",
+  "track-rows",
+  "track-menu",
+  "track-phone",
 ];
 
 // style.css: the parts of apps/web/styles/ joined in order.

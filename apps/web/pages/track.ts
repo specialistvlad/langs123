@@ -1,51 +1,74 @@
-// A track's index in both orders: one card per section, or one card per level of the study path.
-import { topicTitle } from "../../../scripts/content.ts";
-import { localize, SITE } from "../../../scripts/lib.ts";
+// A track's index in the frame (frame.css, track.css): a glass up link to Home, the course's flag and name with
+// its topic count, the order switch as a segmented control, the topics in both orders (track-parts.ts), and
+// the Home's glass toolbar with the level menu, the variety menu on a course with varieties, and Read in. The
+// order switch, the level filter and the variety switch are the client's own (data-set-order, data-set-level,
+// data-set-variety); client-track.ts follows their state in the menus and the switch.
+import { count, localize, SITE } from "../../../scripts/lib.ts";
+import { varietyName } from "../../../scripts/text.ts";
+import { levelPanel } from "../chrome.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
-import { orderButtons, trackCrumb } from "../nav.ts";
-import { pathCards } from "../path.ts";
-import { refRange } from "../../../scripts/levels.ts";
-import { badge, levelAttrs, listBadge, ranged, refsRange } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
-import { searchUrl, sheetsUrl, topicUrl, trackUrl } from "../urls.ts";
+import { ranged, refsRange } from "../parts.ts";
+import { closeButton, readMenu, results, searchForm } from "../toolbar.ts";
+import { BACK, byCategory, byLevel, FILTER, GLOBE, levelMenu, varietyMenu } from "../track-parts.ts";
+import { homeUrl, trackUrl } from "../urls.ts";
 
 export function trackIndex(track: Track): void {
-  const { ctx, lang, explain, t, title: trackTitle, langRefs, written } = track;
-  const sectionsHtml = lang.sections
-    .map((section) => {
-      const sectionRefs = langRefs.filter((r) => r.section === section);
-      const items = sectionRefs
-        .map((ref) => {
-          const range = refRange(ref, explain);
-          const row = `<span class="name">${escapeHtml(topicTitle(ref, explain))}</span>${listBadge(range)}`;
-          return ref.topic
-            ? `<li${levelAttrs(range)}><a href="${topicUrl(explain, lang, ref)}">${row}</a></li>`
-            : `<li${levelAttrs(range)} class="todo"><span class="row">${row}</span></li>`;
-        })
-        .join("");
-      const count = String(sectionRefs.length);
-      const head = `<header><span class="num">${section.dir.slice(0, 2)}</span><h2>${escapeHtml(localize(section.title, explain))}</h2><span class="count">${count}</span></header>`;
-      return `<section class="index-card"${levelAttrs(refsRange(sectionRefs, explain))}>${head}<ol class="index-list">${items}</ol></section>`;
-    })
+  const { ctx, lang, explain, t, title, langRefs, written } = track;
+  const varieties = (lang.varieties ?? []).map((v) => ({ code: v, name: varietyName(v, explain) }));
+  const seg = [
+    ["categories", t.categories],
+    ["path", t.byLevel],
+  ]
+    .map(
+      ([order, label]) => `<button type="button" data-set-order="${order ?? ""}" aria-pressed="false">${escapeHtml(label ?? "")}</button>`,
+    )
     .join("");
-  const indexHead =
-    `<header class="index-head doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${escapeHtml(trackTitle)}</h1></div>` +
-    `<p class="props">${badge(refsRange(langRefs, explain))}<span class="prop">${escapeHtml(t.explained)}</span><a class="prop" href="${sheetsUrl(explain, lang)}">${escapeHtml(t.sheets)}</a></p>` +
-    `<p class="lead" data-order="categories">${escapeHtml(t.trackIntro)}</p><p class="lead" data-order="path">${escapeHtml(t.pathIntro)}</p>` +
-    `<div class="lesson-bar"><div class="tabs index-order" role="group" aria-label="${escapeHtml(t.grouping)}">${orderButtons(explain)}</div></div></header>`;
+  const all = escapeHtml(t.allLevels);
+  const variety =
+    varieties.length === 0
+      ? ""
+      : `<button type="button" class="ix-btn ix-variety" popovertarget="ix-varieties" aria-haspopup="menu">${GLOBE}<span class="ix-label"><span class="sr-only">${escapeHtml(t.variety)}: </span><span data-variety-label>${escapeHtml(varieties[0]?.name ?? "")}</span></span></button>`;
+  const body = `<a class="ix-up glass" href="${homeUrl(explain)}" aria-label="${escapeHtml(SITE.name)}">${BACK}</a>
+<main class="hm-main ix-main">
+<div id="hm-cards">
+<header class="ix-head">
+<div class="ix-line"><h1 class="ix-name-h"><span class="ix-flag" aria-hidden="true">${lang.flag}</span><span aria-hidden="true">${escapeHtml(localize(lang.name, explain))}</span><span class="sr-only">${escapeHtml(title)}</span></h1><span class="ix-count">${escapeHtml(count("topics", explain, written.length))}</span></div>
+<div class="ix-seg" role="group" aria-label="${escapeHtml(t.grouping)}">${seg}</div>
+</header>
+<div class="ix-flow" data-order="categories">${byCategory(track)}</div>
+<div class="ix-flow" data-order="path">${byLevel(track)}</div>
+</div>
+${results(t)}
+</main>
+<div class="ix-fade" aria-hidden="true"></div>
+<nav class="hm-bar ix-bar">
+${searchForm(t)}
+<div class="hm-group glass">
+<button type="button" class="ix-btn ix-level" popovertarget="ix-levels" aria-haspopup="menu">${FILTER}<span class="ix-label"><span class="sr-only">${escapeHtml(t.level)}: </span><span data-level-label data-all="${all}" data-up-to="${escapeHtml(`${t.upTo} {level}`)}">${all}</span></span></button>
+${variety}
+${readMenu(
+  t,
+  readChoices(explain, (e) => trackUrl(e, lang), track.explains),
+)}
+</div>
+${closeButton(t)}
+${levelMenu(explain, langRefs, { level: t.level, hint: t.levelHidden, all: t.allLevels })}
+${varieties.length === 0 ? "" : varietyMenu(t.variety, varieties)}
+</nav>
+${levelPanel(t)}`;
   ctx.add({
     kind: "track",
     lang: explain,
-    title: `${trackTitle} — ${SITE.name}`,
-    description: `${trackTitle}, ${t.explained}: ${t.written(written.length, langRefs.length)}.`,
+    title: `${title} — ${SITE.name}`,
+    description: `${title}, ${t.explained}: ${t.written(written.length, langRefs.length)}.`,
     path: trackUrl(explain, lang),
     alternates: alternates((e) => trackUrl(e, lang), track.explains),
     read: readChoices(explain, (e) => trackUrl(e, lang), track.explains),
     level: true,
-    crumbs: [trackCrumb(track, trackTitle)],
-    about: { name: trackTitle, lang: lang.code, ...ranged(refsRange(langRefs, explain)) },
-    search: [searchUrl(explain, lang)],
     varieties: lang.varieties,
-    main: `<article class="doc index">${indexHead}<div class="index-grid lanes" data-order="categories">${sectionsHtml}</div><div class="index-grid lanes" data-order="path">${pathCards(track.path, explain)}</div></article>`,
+    main: "",
+    body,
+    about: { name: title, lang: lang.code, ...ranged(refsRange(langRefs, explain)) },
   });
 }

@@ -6,7 +6,8 @@ import { type Explain, explainName, listOf, localize, say, SITE } from "../../..
 import { join, refRange } from "../../../scripts/levels.ts";
 import { LIBRARY_BRAND } from "../brand.ts";
 import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
-import { CLEAR, CLOSE, INFO, LANGUAGES, SEARCH } from "../glyphs.ts";
+import { INFO } from "../glyphs.ts";
+import { closeButton, readMenu, results, searchForm } from "../toolbar.ts";
 import { escapeHtml } from "../html.ts";
 import { badge } from "../parts.ts";
 import { ui } from "../ui.ts";
@@ -37,21 +38,17 @@ function cards(ctx: Context, home: Explain): string {
     .join("\n");
 }
 
-// The toolbar: the search field with its clear button, the Read in menu and the credits, and Close while searching.
+// The toolbar: the search, the Read in menu and the credits, and Close while searching.
 function toolbar(home: Explain): string {
   const t = ui(home);
-  const languages = readChoices(home, homeUrl)
-    .map((c) => `<a href="${c.href}"${c.on ? ' aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`)
-    .join("");
   const credits = escapeHtml(say("credits", home));
-  const current = escapeHtml(explainName(home));
   return `<nav class="hm-bar">
-<form class="hm-search glass" id="hm-form" role="search" action="#">${SEARCH}<input type="search" id="hm-q" placeholder="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search"><button type="button" class="hm-clear" id="hm-clear" aria-label="${escapeHtml(t.clear)}" hidden>${CLEAR}</button></form>
+${searchForm(t)}
 <div class="hm-group glass">
-<details class="hm-read"><summary aria-label="${escapeHtml(t.read)}: ${current}">${LANGUAGES}<span>${current}</span></summary><div class="hm-menu">${languages}</div></details>
+${readMenu(t, readChoices(home, homeUrl))}
 <a class="hm-credits" href="${creditsUrl(home)}" aria-label="${credits}" title="${credits}">${INFO}</a>
 </div>
-<button type="button" class="hm-close glass" id="hm-close" aria-label="${escapeHtml(t.close)}">${CLOSE}</button>
+${closeButton(t)}
 </nav>
 <noscript><style>.hm-search,.hm-close{display:none}</style></noscript>`;
 }
@@ -82,10 +79,7 @@ export function homePage(ctx: Context): void {
 <div class="hm-grid" id="hm-cards">
 ${cards(ctx, home)}
 </div>
-<div class="hm-results" id="hm-results" data-empty="${escapeHtml(t.searchEmpty)}" hidden>
-<h2 class="hm-heading">${escapeHtml(t.topics)}</h2>
-<div class="hm-list" id="hm-list" aria-live="polite"></div>
-</div>
+${results(t)}
 </main>
 ${toolbar(home)}`;
     ctx.add({

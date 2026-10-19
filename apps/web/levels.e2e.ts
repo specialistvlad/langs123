@@ -114,7 +114,7 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
         })
         .map(name);
       const note = [...document.querySelectorAll(".filter-empty")].some(visible);
-      const anything = [...document.querySelectorAll("section.part, .index-card")].some(visible);
+      const anything = [...document.querySelectorAll("section.part, .ix-sec")].some(visible);
       return { level: order[at] ?? "", wrongly, empty, rail, badges, note, anything };
     };
     const out: Record<string, Seen> = {};

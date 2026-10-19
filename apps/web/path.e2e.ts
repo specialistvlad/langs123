@@ -59,9 +59,9 @@ test(
     await page.click('.nav-order [data-set-order="path"]');
     expect(await shown('.nav-list[data-order="categories"]')).toBe(false);
     await open("/en/english/");
-    expect(await shown('.index-grid[data-order="path"]')).toBe(true);
-    expect(await shown('.index-grid[data-order="categories"]')).toBe(false);
-    expect(await page.locator('.index-order [data-set-order="path"]').getAttribute("class")).toBe("on");
+    expect(await shown('.ix-flow[data-order="path"]')).toBe(true);
+    expect(await shown('.ix-flow[data-order="categories"]')).toBe(false);
+    expect(await page.locator('.ix-seg [data-set-order="path"]').getAttribute("class")).toBe("on");
     await open("/en/english/verbs/to-be/");
     expect(await shown('.nav-list[data-order="path"]')).toBe(true);
     expect(await page.locator('.nav-order [data-set-order="path"]').getAttribute("class")).toBe("on");
