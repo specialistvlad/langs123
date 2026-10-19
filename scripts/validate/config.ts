@@ -14,7 +14,7 @@ interface SchemaFile {
   };
 }
 
-export const SCHEMA_NAMES = ["site", "levels", "interface", "curriculum", "concepts", "topic"] as const;
+export const SCHEMA_NAMES = ["site", "levels", "interface", "curriculum", "concepts", "topic", "library"] as const;
 
 export async function checkConfig(schema: (name: string) => Promise<ValidateFunction>, report: Report): Promise<void> {
   schemaErrors(await schema("site"), SITE, "site.yaml", report);

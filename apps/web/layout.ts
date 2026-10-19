@@ -1,11 +1,14 @@
 // The page shell: head, top bar with its search, layout, the panels and the bottom bar, and the scripts that run before first paint.
 import { type Explain, filled, LEVELS, type Variety } from "../../scripts/lib.ts";
+import type { HeadChange, PageFacts } from "./context.ts";
 import { bottomBar, breadcrumb, type Choice, chips, type Crumb, credits, languageMenu, panels, searchBox, themeButton } from "./chrome.ts";
 import { escapeHtml } from "./html.ts";
 import { ui } from "./ui.ts";
 
+export type PageKind = "home" | "track" | "topic" | "sheets" | "sheet" | "credits" | "404";
+
 export interface PageOptions {
-  kind: "home" | "track" | "topic" | "sheets" | "sheet" | "credits" | "404";
+  kind: PageKind;
   lang: Explain;
   title: string;
   description: string;
@@ -29,9 +32,35 @@ export interface PageOptions {
   main: string;
   // The next page, per grouping and level, for the bottom bar on phones (sequence.ts).
   next?: string;
+  // What the page is about, for its facts (context.ts PageFacts).
+  about?: Pick<PageFacts, "name" | "lang" | "topic" | "section" | "sheet" | "range" | "minutes">;
   dev: boolean;
   siteUrl: string;
 }
+
+// A page as its builder gives it; the build adds its own options.
+export type PageInput = Omit<PageOptions, "dev" | "siteUrl">;
+
+// The page's alternates as its head lists them: x-default names the page for every other language, the
+// one a page gives, else its English version, else its first.
+function alternatesOf(o: PageInput): { lang: string; path: string }[] {
+  const given = o.alternates ?? [];
+  const fallback = given.find((a) => a.lang === "en") ?? given[0];
+  return given.some((a) => a.lang === "x-default") || fallback === undefined
+    ? given
+    : [...given, { lang: "x-default", path: fallback.path }];
+}
+
+export const pageFacts = (o: PageInput, sitemap: boolean): PageFacts => ({
+  path: o.path,
+  kind: o.kind,
+  explain: o.lang,
+  title: o.title,
+  description: o.description,
+  alternates: alternatesOf(o),
+  sitemap,
+  ...o.about,
+});
 
 // Applies saved viewer preferences before first paint, and holds back lanes client.ts places (data-lanes).
 const PREFS = `var d=document.documentElement,p=new URLSearchParams(location.search),s=localStorage,l=(p.get("level")||"").toUpperCase(),v=p.get("view");if(${JSON.stringify(LEVELS)}.indexOf(l)>=0)s.setItem("ln-level",l);if(v==="cheatsheet"||v==="extended")s.setItem("ln-view",v);d.dataset.level=s.getItem("ln-level")||"${LEVELS.at(-1) ?? ""}";d.dataset.view=s.getItem("ln-view")==="cheatsheet"?"cheatsheet":"extended";d.dataset.order=s.getItem("ln-order")==="path"?"path":"categories";var t=s.getItem("ln-theme");if(t&&t!=="auto")d.dataset.theme=t;if(!CSS.supports("display","grid-lanes"))d.dataset.lanes="wait"`;
@@ -49,14 +78,16 @@ const NAV_SCROLL = `(function(){var n=document.getElementById("sidebar"),o=docum
 const varietyAttrs = (varieties: Variety[] | undefined): string =>
   varieties === undefined ? "" : ` data-variety="${varieties[0] ?? ""}" data-varieties="${varieties.join(" ")}"`;
 
-export function page(o: PageOptions): string {
+// change: the build's head option's change to this page (context.ts HeadChange).
+export function page(o: PageOptions, change: HeadChange = {}): string {
   const t = ui(o.lang);
   const url = (path: string): string => `${o.siteUrl}${path}`;
-  const given = o.alternates ?? [];
-  const fallback = given.find((a) => a.lang === "en") ?? given[0];
-  const withDefault =
-    given.some((a) => a.lang === "x-default") || fallback === undefined ? given : [...given, { lang: "x-default", path: fallback.path }];
-  const alternates = withDefault.map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${url(a.path)}">`).join("\n  ");
+  const title = change.title ?? o.title;
+  const description = change.description ?? o.description;
+  const canonical = url(change.canonical ?? o.path);
+  const alternates = (change.alternates === false ? [] : alternatesOf(o))
+    .map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${url(a.path)}">`)
+    .join("\n  ");
   const hasNav = filled(o.nav);
   // A page with a menu or a level filter keeps the bottom bar on phones, where the top bar's chips hide.
   const hasBar = hasNav || o.level === true;
@@ -66,17 +97,17 @@ export function page(o: PageOptions): string {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(o.title)}</title>
-  <meta name="description" content="${escapeHtml(o.description)}">
-  ${o.kind === "404" ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url(o.path)}">`}
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  ${o.kind === "404" ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">`}
   ${alternates}
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="${escapeHtml(o.title)}">
-  <meta property="og:description" content="${escapeHtml(o.description)}">
-  <meta property="og:url" content="${url(o.path)}">
+  <meta property="og:type" content="${escapeHtml(change.type ?? "website")}">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${canonical}">
   <link rel="stylesheet" href="/levels.css">
   <link rel="stylesheet" href="/style.css">
-  <script>${prefs(o.varieties !== undefined)}</script>
+  <script>${prefs(o.varieties !== undefined)}</script>${(change.tags ?? []).map((tag) => `\n  ${tag}`).join("")}
 </head>
 <body${hasBar ? ' class="has-bar"' : ""}>
   <header class="topbar">

@@ -1,0 +1,746 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The library as one file: npm run export writes build/data/library.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "site",
+    "levels",
+    "interface",
+    "languages",
+    "topics"
+  ],
+  "properties": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit"
+      ],
+      "properties": {
+        "commit": {
+          "description": "The repository's commit the file was exported from.",
+          "type": "string"
+        }
+      }
+    },
+    "site": {
+      "description": "languages/site.yaml: name, addresses, credit, licences and explanation languages.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "url",
+        "repository",
+        "credit",
+        "licences",
+        "explain"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "credit": {
+          "type": "string"
+        },
+        "licences": {
+          "description": "The content's and the code's licence, each with its name and address.",
+          "type": "object"
+        },
+        "explain": {
+          "description": "The explanation languages, each with its code, whether readers see it and its names.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "code",
+              "enabled",
+              "name"
+            ],
+            "properties": {
+              "code": {
+                "$ref": "#/definitions/explain"
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "name": {
+                "$ref": "#/definitions/names"
+              }
+            }
+          }
+        }
+      }
+    },
+    "levels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "name",
+          "description",
+          "colors"
+        ],
+        "properties": {
+          "code": {
+            "$ref": "#/definitions/level"
+          },
+          "name": {
+            "$ref": "#/definitions/names"
+          },
+          "description": {
+            "$ref": "#/definitions/names"
+          },
+          "colors": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "light",
+              "dark"
+            ],
+            "properties": {
+              "light": {
+                "$ref": "#/definitions/tones"
+              },
+              "dark": {
+                "$ref": "#/definitions/tones"
+              }
+            }
+          }
+        }
+      }
+    },
+    "interface": {
+      "description": "languages/interface.yaml: the interface's wording.",
+      "type": "object"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/language"
+      }
+    },
+    "topics": {
+      "description": "Every written topic, by id.",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/topic"
+      }
+    }
+  },
+  "definitions": {
+    "level": {
+      "description": "A level from languages/levels.yaml.",
+      "enum": [
+        "A0",
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ]
+    },
+    "explain": {
+      "enum": [
+        "en",
+        "uk",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "pl",
+        "tr",
+        "id",
+        "vi"
+      ]
+    },
+    "names": {
+      "description": "A name in each explanation language that has one.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "uk": {
+          "type": "string"
+        },
+        "es": {
+          "type": "string"
+        },
+        "pt": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        },
+        "it": {
+          "type": "string"
+        },
+        "pl": {
+          "type": "string"
+        },
+        "tr": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "vi": {
+          "type": "string"
+        }
+      }
+    },
+    "keyed": {
+      "description": "Text per reading: keyed by explanation language, uk, or, where a language's varieties read differently, by explanation language and variety, uk@es-ES. Text is inline Markdown: **bold**, *italics*, [text](id:topic) for a link to a topic and [text](m:tag,tag) for a mark with a look of its own (ipa, joiner, optional, gap, slot, intonation, variant, label, strong, emphasis).",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(en|uk|es|pt|fr|de|it|pl|tr|id|vi)(@[A-Za-z0-9-]+)?$": {
+          "type": "string"
+        }
+      }
+    },
+    "learned": {
+      "description": "Text in the language being learned: one string when it reads the same in every explanation language and variety, else keyed.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/keyed"
+        }
+      ]
+    },
+    "for": {
+      "description": "The explanation languages an element serves; absent when it serves all of its track's.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/explain"
+      }
+    },
+    "item": {
+      "description": "A paragraph or a list item: explanation, example and translation. A note about a variety names it in text; label is the name alone and body the explanation without it.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/keyed"
+        },
+        "body": {
+          "$ref": "#/definitions/keyed"
+        },
+        "label": {
+          "$ref": "#/definitions/keyed"
+        },
+        "ex": {
+          "$ref": "#/definitions/learned"
+        },
+        "tr": {
+          "$ref": "#/definitions/keyed"
+        },
+        "level": {
+          "$ref": "#/definitions/level"
+        },
+        "variety": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "rule",
+            "note",
+            "example"
+          ]
+        },
+        "for": {
+          "$ref": "#/definitions/for"
+        }
+      }
+    },
+    "column": {
+      "description": "A table column. A slot paradigm's columns carry their slot, the sentence they belong to as group, merge and center.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "label"
+      ],
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "slot": {
+          "type": "string"
+        },
+        "label": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/keyed"
+            }
+          ]
+        },
+        "group": {
+          "$ref": "#/definitions/keyed"
+        },
+        "merge": {
+          "type": "boolean"
+        },
+        "center": {
+          "type": "boolean"
+        },
+        "for": {
+          "$ref": "#/definitions/for"
+        }
+      }
+    },
+    "cell": {
+      "description": "A row's cell in column order: an example with its translation, text, or an empty object where the row leaves the column empty.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {},
+          "maxProperties": 0
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "ex": {
+              "$ref": "#/definitions/learned"
+            },
+            "tr": {
+              "$ref": "#/definitions/keyed"
+            }
+          },
+          "minProperties": 1
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "$ref": "#/definitions/learned"
+            }
+          }
+        }
+      ]
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "cells"
+      ],
+      "properties": {
+        "level": {
+          "$ref": "#/definitions/level"
+        },
+        "tr": {
+          "$ref": "#/definitions/keyed"
+        },
+        "variety": {
+          "type": "string"
+        },
+        "for": {
+          "$ref": "#/definitions/for"
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cell"
+          }
+        }
+      }
+    },
+    "errorRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level"
+      ],
+      "properties": {
+        "level": {
+          "$ref": "#/definitions/level"
+        },
+        "wrong": {
+          "$ref": "#/definitions/learned"
+        },
+        "right": {
+          "$ref": "#/definitions/learned"
+        },
+        "rule": {
+          "$ref": "#/definitions/keyed"
+        },
+        "for": {
+          "$ref": "#/definitions/for"
+        }
+      }
+    },
+    "block": {
+      "description": "A block of a topic, by its type in topic.schema.json.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "item"
+          ],
+          "properties": {
+            "type": {
+              "const": "prose"
+            },
+            "item": {
+              "$ref": "#/definitions/item"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "items"
+          ],
+          "properties": {
+            "type": {
+              "const": "list"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/item"
+              }
+            },
+            "for": {
+              "$ref": "#/definitions/for"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "columns",
+            "rows"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "paradigm",
+                "usage",
+                "comparison",
+                "inventory"
+              ]
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/column"
+              }
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/row"
+              }
+            },
+            "for": {
+              "$ref": "#/definitions/for"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "rows"
+          ],
+          "properties": {
+            "type": {
+              "const": "errors"
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/errorRow"
+              }
+            },
+            "for": {
+              "$ref": "#/definitions/for"
+            }
+          }
+        }
+      ]
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/block"
+      }
+    },
+    "tones": {
+      "description": "A level's colours as sRGB hex: ink writes its code, tint lies behind it, strong lies behind the chosen level.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ink",
+        "tint",
+        "strong"
+      ],
+      "properties": {
+        "ink": {
+          "type": "string",
+          "pattern": "^#[0-9a-f]{6}$"
+        },
+        "tint": {
+          "type": "string",
+          "pattern": "^#[0-9a-f]{6}$"
+        },
+        "strong": {
+          "type": "string",
+          "pattern": "^#[0-9a-f]{6}$"
+        }
+      }
+    },
+    "topic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "lang",
+        "kind",
+        "path",
+        "minutes",
+        "summary",
+        "cheatsheet",
+        "sections"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "path": {
+          "description": "The topic's file in the repository.",
+          "type": "string"
+        },
+        "minutes": {
+          "description": "The minutes the full lesson takes to read, per explanation language.",
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "title": {
+          "$ref": "#/definitions/keyed"
+        },
+        "summary": {
+          "description": "The lead, the rule and the rule's examples as one paragraph.",
+          "$ref": "#/definitions/keyed"
+        },
+        "lead": {
+          "$ref": "#/definitions/keyed"
+        },
+        "cheatsheet": {
+          "$ref": "#/definitions/blocks"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "blocks"
+            ],
+            "properties": {
+              "title": {
+                "$ref": "#/definitions/keyed"
+              },
+              "for": {
+                "$ref": "#/definitions/for"
+              },
+              "blocks": {
+                "$ref": "#/definitions/blocks"
+              }
+            }
+          }
+        }
+      }
+    },
+    "language": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "enabled",
+        "slug",
+        "name",
+        "explain",
+        "sections",
+        "path"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "name": {
+          "$ref": "#/definitions/names"
+        },
+        "explain": {
+          "description": "The explanation languages the course is written for, the source first.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/explain"
+          }
+        },
+        "varieties": {
+          "description": "The varieties a reader chooses between, the default first.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "code",
+              "name"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "$ref": "#/definitions/names"
+              }
+            }
+          }
+        },
+        "sections": {
+          "description": "Topics by category.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "slug",
+              "number",
+              "title",
+              "topics"
+            ],
+            "properties": {
+              "slug": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string",
+                "pattern": "^\\d\\d$"
+              },
+              "title": {
+                "$ref": "#/definitions/names"
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "slug",
+                    "title",
+                    "available"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "levels": {
+                      "description": "The planned range of a topic without data.",
+                      "type": "string"
+                    },
+                    "title": {
+                      "$ref": "#/definitions/names"
+                    },
+                    "lead": {
+                      "$ref": "#/definitions/keyed"
+                    },
+                    "available": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "path": {
+          "description": "The study path: per level, lowest first, the topics to study at it.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "level",
+              "topics"
+            ],
+            "properties": {
+              "level": {
+                "$ref": "#/definitions/level"
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

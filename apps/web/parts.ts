@@ -45,6 +45,8 @@ export const listBadge = (r: Range | null): string =>
   r === null ? "" : `<span class="badge lvl pair" data-from="${r.from}" data-to="${r.to}">${badgeHalves(r)}</span>`;
 
 // What the level filter reads: an element hides while the filter sits below its lowest level.
+// A range as an optional field: { range } when there is one.
+export const ranged = (r: Range | null): { range?: Range } => (r === null ? {} : { range: r });
 export const levelAttrs = (r: Range | null): string => (r === null ? "" : ` data-level="${r.from}" data-to="${r.to}"`);
 
 // What the variety switch reads: an element of one variety shows while the reader has chosen it.

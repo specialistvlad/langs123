@@ -45,7 +45,7 @@ function rebuild(reason: string): Promise<void> {
     const started = performance.now();
     try {
       const sample = FULL ? {} : { sample: { topics: [...shown], explain: SAMPLE.explain } };
-      const count = await build({ outDir: OUT, dev: true, siteUrl: DEV_URL, ...sample });
+      const count = (await build({ outDir: OUT, dev: true, siteUrl: DEV_URL, ...sample })).length;
       console.log(`built ${count} pages in ${Math.round(performance.now() - started)} ms (${reason})`);
       send("data: reload\n\n");
     } catch (error) {

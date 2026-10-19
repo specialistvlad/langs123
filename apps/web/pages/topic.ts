@@ -4,7 +4,6 @@ import { join } from "../../../scripts/levels.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
 import { guideSections } from "../guide.ts";
 import { pageTools, viewTabs } from "../chrome.ts";
-import { page } from "../layout.ts";
 import { trackCrumb, trackNav } from "../nav.ts";
 import { readingMinutes } from "../reading-time.ts";
 import { barNext, pagers, upNext } from "../sequence.ts";
@@ -23,7 +22,6 @@ function filterEmpty(view: "cheatsheet" | "extended", level: string, explain: Ex
 
 export function topicPages(track: Track): void {
   const { ctx, lang, explain, t, title: trackTitle, written } = track;
-  const { o } = ctx;
   for (const ref of written) {
     const topic = ref.topic;
     if (topic === null) continue;
@@ -66,27 +64,23 @@ export function topicPages(track: Track): void {
     const { summary } = topic;
     const example = summary.ex === undefined ? "" : ` ${inline(summary.ex, rctx, true, true)}`;
     const intro = `<blockquote><p>${explained(summary.lead, rctx)} ${explained(summary.rule, rctx)}${example}</p></blockquote>`;
-    ctx.add(
-      topicUrl(explain, lang, ref),
-      page({
-        kind: "topic",
-        lang: explain,
-        title: `${title} — ${trackTitle}`,
-        description: plainText(textIn(summary.lead, explain), reading(explain, false)),
-        path: topicUrl(explain, lang, ref),
-        alternates: alternates((e) => topicUrl(e, lang, ref), track.explains),
-        read: readChoices(explain, (e) => topicUrl(e, lang, ref), track.explains),
-        level: true,
-        crumbs: [trackCrumb(track, trackTitle), { label: section }, { label: title }],
-        search: [searchUrl(explain, lang)],
-        varieties: lang.varieties,
-        nav: trackNav(track, ref),
-        rail,
-        next: barNext(track, ref),
-        main: `<article class="doc${range.from === range.to ? " one-level" : ""}">${head}${intro}${empty}<div class="sections lanes">${sections}</div>${pagers(track, ref, "bottom")}${pageTools(t, editUrl(ref.path))}</article>`,
-        dev: o.dev,
-        siteUrl: o.siteUrl,
-      }),
-    );
+    ctx.add({
+      kind: "topic",
+      lang: explain,
+      title: `${title} — ${trackTitle}`,
+      description: plainText(textIn(summary.lead, explain), reading(explain, false)),
+      path: topicUrl(explain, lang, ref),
+      alternates: alternates((e) => topicUrl(e, lang, ref), track.explains),
+      read: readChoices(explain, (e) => topicUrl(e, lang, ref), track.explains),
+      level: true,
+      crumbs: [trackCrumb(track, trackTitle), { label: section }, { label: title }],
+      about: { name: title, lang: lang.code, topic: ref.id, section, range, minutes },
+      search: [searchUrl(explain, lang)],
+      varieties: lang.varieties,
+      nav: trackNav(track, ref),
+      rail,
+      next: barNext(track, ref),
+      main: `<article class="doc${range.from === range.to ? " one-level" : ""}">${head}${intro}${empty}<div class="sections lanes">${sections}</div>${pagers(track, ref, "bottom")}${pageTools(t, editUrl(ref.path))}</article>`,
+    });
   }
 }

@@ -2,17 +2,15 @@
 import { topicTitle } from "../../../scripts/content.ts";
 import { localize, SITE } from "../../../scripts/lib.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
-import { page } from "../layout.ts";
 import { orderButtons, trackCrumb } from "../nav.ts";
 import { pathCards } from "../path.ts";
 import { refRange } from "../../../scripts/levels.ts";
-import { badge, levelAttrs, listBadge, refsRange } from "../parts.ts";
+import { badge, levelAttrs, listBadge, ranged, refsRange } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
 import { searchUrl, sheetsUrl, topicUrl, trackUrl } from "../urls.ts";
 
 export function trackIndex(track: Track): void {
   const { ctx, lang, explain, t, title: trackTitle, langRefs, written } = track;
-  const { o } = ctx;
   const sectionsHtml = lang.sections
     .map((section) => {
       const sectionRefs = langRefs.filter((r) => r.section === section);
@@ -35,23 +33,19 @@ export function trackIndex(track: Track): void {
     `<p class="props">${badge(refsRange(langRefs, explain))}<span class="prop">${escapeHtml(t.explained)}</span><a class="prop" href="${sheetsUrl(explain, lang)}">${escapeHtml(t.sheets)}</a></p>` +
     `<p class="lead" data-order="categories">${escapeHtml(t.trackIntro)}</p><p class="lead" data-order="path">${escapeHtml(t.pathIntro)}</p>` +
     `<div class="lesson-bar"><div class="tabs index-order" role="group" aria-label="${escapeHtml(t.grouping)}">${orderButtons(explain)}</div></div></header>`;
-  ctx.add(
-    trackUrl(explain, lang),
-    page({
-      kind: "track",
-      lang: explain,
-      title: `${trackTitle} — ${SITE.name}`,
-      description: `${trackTitle}, ${t.explained}: ${t.written(written.length, langRefs.length)}.`,
-      path: trackUrl(explain, lang),
-      alternates: alternates((e) => trackUrl(e, lang), track.explains),
-      read: readChoices(explain, (e) => trackUrl(e, lang), track.explains),
-      level: true,
-      crumbs: [trackCrumb(track, trackTitle)],
-      search: [searchUrl(explain, lang)],
-      varieties: lang.varieties,
-      main: `<article class="doc index">${indexHead}<div class="index-grid lanes" data-order="categories">${sectionsHtml}</div><div class="index-grid lanes" data-order="path">${pathCards(track.path, explain)}</div></article>`,
-      dev: o.dev,
-      siteUrl: o.siteUrl,
-    }),
-  );
+  ctx.add({
+    kind: "track",
+    lang: explain,
+    title: `${trackTitle} — ${SITE.name}`,
+    description: `${trackTitle}, ${t.explained}: ${t.written(written.length, langRefs.length)}.`,
+    path: trackUrl(explain, lang),
+    alternates: alternates((e) => trackUrl(e, lang), track.explains),
+    read: readChoices(explain, (e) => trackUrl(e, lang), track.explains),
+    level: true,
+    crumbs: [trackCrumb(track, trackTitle)],
+    about: { name: trackTitle, lang: lang.code, ...ranged(refsRange(langRefs, explain)) },
+    search: [searchUrl(explain, lang)],
+    varieties: lang.varieties,
+    main: `<article class="doc index">${indexHead}<div class="index-grid lanes" data-order="categories">${sectionsHtml}</div><div class="index-grid lanes" data-order="path">${pathCards(track.path, explain)}</div></article>`,
+  });
 }

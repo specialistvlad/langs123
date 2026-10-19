@@ -2,7 +2,8 @@
 // Run: npm run build   (SITE_URL sets the public URL for canonical links and the sitemap; the site is served from the domain root)
 import { join } from "node:path";
 import { type CurriculumLanguage, filled, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
-import { type BuildOptions, type Context, explainsOf, type Page } from "./context.ts";
+import { type BuildOptions, type Context, explainsOf, type Page, type PageFacts } from "./context.ts";
+import { page, pageFacts } from "./layout.ts";
 import { studyPath } from "./path.ts";
 import { ui } from "./ui.ts";
 import { writeSite } from "./output.ts";
@@ -15,9 +16,10 @@ import { trackIndex } from "./pages/track.ts";
 import { searchFile } from "./search-index.ts";
 import { topicUrl } from "./urls.ts";
 
-export type { BuildOptions } from "./context.ts";
+export type { BuildOptions, HeadChange, PageFacts } from "./context.ts";
 
-export async function build(o: BuildOptions): Promise<number> {
+// Builds the site into o.outDir and returns the facts of every page it holds.
+export async function build(o: BuildOptions): Promise<PageFacts[]> {
   const curriculum = await loadCurriculum();
   const all = await loadTopics(curriculum);
   const refs = o.sample === undefined ? all : all.filter((r) => o.sample?.topics.includes(r.id) === true);
@@ -34,13 +36,19 @@ export async function build(o: BuildOptions): Promise<number> {
       ? topicUrl(explain, langOf(target), target)
       : null;
   const pages: Page[] = [];
+  const facts: PageFacts[] = [];
   const ctx: Context = {
     o,
     refs,
     link,
     languages: curriculum.languages.filter((l) => l.enabled && refs.some((r) => r.lang === l.code)),
-    add: (path, html, sitemap = true) => {
-      pages.push({ path, html, sitemap });
+    add: (input, sitemap = true) => {
+      const about = pageFacts(input, sitemap);
+      facts.push(about);
+      pages.push({ path: input.path, html: page({ ...input, dev: o.dev, siteUrl: o.siteUrl }, o.head?.(about)), sitemap });
+    },
+    file: (path, text) => {
+      pages.push({ path, html: text, sitemap: false });
     },
   };
 
@@ -67,7 +75,7 @@ export async function build(o: BuildOptions): Promise<number> {
     o,
     ctx.languages.flatMap((l) => (l.varieties === undefined ? [] : [l.varieties])),
   );
-  return pages.length;
+  return facts;
 }
 
 if (import.meta.main) {
@@ -76,6 +84,6 @@ if (import.meta.main) {
   const websiteId = process.env["UMAMI_WEBSITE_ID"];
   const src = process.env["UMAMI_SCRIPT_URL"];
   const umami = filled(websiteId) ? { websiteId, src: filled(src) ? src : "https://cloud.umami.is/script.js" } : undefined;
-  const count = await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl, ...(umami && { umami }) });
+  const count = (await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl, ...(umami && { umami }) })).length;
   console.log(`built ${count} pages into build/web/ for ${siteUrl}${umami ? `, with Umami website ${umami.websiteId}` : ""}`);
 }

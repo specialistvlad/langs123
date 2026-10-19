@@ -2,16 +2,14 @@
 import type { Explain } from "../../../scripts/lib.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
 import { pageTools } from "../chrome.ts";
-import { page } from "../layout.ts";
 import { navHead, trackCrumb } from "../nav.ts";
-import { badge, editUrl } from "../parts.ts";
+import { badge, editUrl, ranged } from "../parts.ts";
 import { escapeHtml } from "../html.ts";
 import { searchUrl, sheetsUrl, sheetUrl } from "../urls.ts";
 import { type Sheet, sheetsOf } from "./sheet-content.ts";
 
 export function sheetPages(track: Track): void {
   const { ctx, lang, explain, t, title: trackTitle } = track;
-  const { o } = ctx;
   const sheets = sheetsOf(track);
   const groups = { levels: t.levels, progressive: t.progressive, sections: t.sections, topics: t.topics } as const;
   const groupKeys = Object.keys(groups) as (keyof typeof groups)[];
@@ -37,8 +35,6 @@ export function sheetPages(track: Track): void {
     read: readChoices(explain, pathFor, track.explains),
     varieties: lang.varieties,
     search: [searchUrl(explain, lang)],
-    dev: o.dev,
-    siteUrl: o.siteUrl,
   });
   const crumb = trackCrumb(track, trackTitle);
 
@@ -51,33 +47,29 @@ export function sheetPages(track: Track): void {
         .join("")}</ul></section>`;
     })
     .join("");
-  ctx.add(
-    sheetsUrl(explain, lang),
-    page({
-      ...shared((e) => sheetsUrl(e, lang)),
-      kind: "sheets",
-      title: `${t.sheets} — ${trackTitle}`,
-      description: `${t.sheets}: ${trackTitle}, ${t.explained}.`,
-      path: sheetsUrl(explain, lang),
-      crumbs: [crumb, { label: t.sheets }],
-      nav: sheetNav(),
-      main: `<article class="doc"><header class="doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${escapeHtml(t.sheets)}</h1></div></header><blockquote><p>${escapeHtml(t.sheetsIntro)}</p></blockquote><div class="sheet-index lanes">${indexHtml}</div></article>`,
-    }),
-  );
+  ctx.add({
+    ...shared((e) => sheetsUrl(e, lang)),
+    kind: "sheets",
+    title: `${t.sheets} — ${trackTitle}`,
+    description: `${t.sheets}: ${trackTitle}, ${t.explained}.`,
+    path: sheetsUrl(explain, lang),
+    crumbs: [crumb, { label: t.sheets }],
+    about: { name: t.sheets, lang: lang.code },
+    nav: sheetNav(),
+    main: `<article class="doc"><header class="doc-head"><div class="title-row"><span class="page-icon" aria-hidden="true">${lang.flag}</span><h1>${escapeHtml(t.sheets)}</h1></div></header><blockquote><p>${escapeHtml(t.sheetsIntro)}</p></blockquote><div class="sheet-index lanes">${indexHtml}</div></article>`,
+  });
 
   for (const s of sheets) {
-    ctx.add(
-      sheetUrl(explain, lang, s.id),
-      page({
-        ...shared((e) => sheetUrl(e, lang, s.id)),
-        kind: "sheet",
-        title: `${s.title} — ${trackTitle}`,
-        description: `${s.title}: ${trackTitle}, ${t.explained}.`,
-        path: sheetUrl(explain, lang, s.id),
-        crumbs: [crumb, { label: t.sheets, href: sheetsUrl(explain, lang) }, { label: s.label }],
-        nav: sheetNav(s),
-        main: `<article class="doc sheet">${s.html}${pageTools(t, s.path === undefined ? undefined : editUrl(s.path))}</article>`,
-      }),
-    );
+    ctx.add({
+      ...shared((e) => sheetUrl(e, lang, s.id)),
+      kind: "sheet",
+      title: `${s.title} — ${trackTitle}`,
+      description: `${s.title}: ${trackTitle}, ${t.explained}.`,
+      path: sheetUrl(explain, lang, s.id),
+      crumbs: [crumb, { label: t.sheets, href: sheetsUrl(explain, lang) }, { label: s.label }],
+      about: { name: s.title, lang: lang.code, sheet: s.group, ...ranged(s.range), ...(s.topic === undefined ? {} : { topic: s.topic }) },
+      nav: sheetNav(s),
+      main: `<article class="doc sheet">${s.html}${pageTools(t, s.path === undefined ? undefined : editUrl(s.path))}</article>`,
+    });
   }
 }

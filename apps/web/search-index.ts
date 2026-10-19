@@ -39,5 +39,5 @@ export function searchData(track: Track): SearchData {
 }
 
 export function searchFile(track: Track): void {
-  track.ctx.add(searchUrl(track.explain, track.lang), JSON.stringify(searchData(track)), false);
+  track.ctx.file(searchUrl(track.explain, track.lang), JSON.stringify(searchData(track)));
 }
