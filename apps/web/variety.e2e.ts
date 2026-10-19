@@ -22,9 +22,9 @@ const url = (path: string): string => new URL(path, base).href;
 const shows = (page: Page, variety: string): Promise<boolean> =>
   page.$$eval(`main [data-variety="${variety}"]`, (els) => els.some((el) => el.checkVisibility({ visibilityProperty: true })));
 const chosen = (page: Page): Promise<string | undefined> => page.evaluate(() => document.documentElement.dataset["variety"]);
-// Chooses a variety in the panel its chip opens.
+// Chooses a variety in the panel its button in the top bar opens.
 async function choose(page: Page, variety: string): Promise<void> {
-  await page.click('.topbar [popovertarget="variety-panel"]');
+  await page.click('.tp-top [popovertarget="variety-panel"]');
   await page.click(`#variety-panel [data-set-variety="${variety}"]`);
 }
 
@@ -122,12 +122,16 @@ test(
     const page = await fresh();
     const v = 'tr[data-value="v"] td:nth-child(2)';
     const sheet = 'xpath=//section[contains(@class, "cheatsheet")]//tr[td[1][normalize-space(.)="v and w"]]/td[2]';
-    await page.goto(url("/en/spanish/fundamentos/alfabeto-ortografia/?view=extended"));
+    // The full lesson holds the table, the Cheatsheet view the cheatsheet.
+    const topic = "/en/spanish/fundamentos/alfabeto-ortografia/";
+    await page.goto(url(`${topic}?view=extended`));
     expect(await cellText(page, v)).toBe("ve");
+    await page.goto(url(`${topic}?view=cheatsheet`));
     expect(await cellText(page, sheet)).toBe("v is called ve, and w doble u");
     await choose(page, "es-ES");
-    expect(await cellText(page, v)).toBe("uve");
     expect(await cellText(page, sheet)).toBe("v is called uve, and w uve doble");
+    await page.goto(url(`${topic}?view=extended`));
+    expect(await cellText(page, v)).toBe("uve");
     await page.context().close();
   },
   SLOW,

@@ -1,0 +1,159 @@
+/* The end of the lesson: Up next, then edit and print */
+:where(html[data-page="topic"]) .up-next .tp-caps {
+  margin: 18px 0 8px 8px;
+}
+:where(html[data-page="topic"]) .tp-rail .tp-caps:first-child {
+  margin-top: 0;
+}
+:where(html[data-page="topic"]) .up-next a.next {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  column-gap: 10px;
+  padding: 14px 16px 14px 20px;
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--text);
+}
+:where(html[data-page="topic"]) .up-next a.next:hover {
+  box-shadow: none;
+  background: color-mix(in srgb, var(--surface) 94%, var(--text));
+}
+:where(html[data-page="topic"]) .up-next a.next strong {
+  display: block;
+  margin: 0;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: -0.43px;
+}
+:where(html[data-page="topic"]) .up-next a.next .summary {
+  grid-column: 1 / -1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .up-next a.next .badge {
+  grid-column: 2;
+  grid-row: 1;
+}
+:where(html[data-page="topic"]) .up-next a.next .tp-chev {
+  grid-column: 3;
+  grid-row: 1;
+}
+:where(html[data-page="topic"]) .tp-tools {
+  margin-top: 18px;
+}
+:where(html[data-page="topic"]) .tp-main .page-tools {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 22px;
+  background: var(--surface);
+  overflow: hidden;
+}
+:where(html[data-page="topic"]) .tp-main .doc .page-tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  padding: 0 16px 0 20px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 17px;
+  letter-spacing: -0.43px;
+  text-align: left;
+  cursor: pointer;
+}
+:where(html[data-page="topic"]) .tp-main .doc .page-tool + .page-tool {
+  border-top: 0.5px solid var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-main .doc .page-tool:hover {
+  color: var(--accent);
+  background: var(--hm-fill);
+}
+
+/* The contents column: numbers, titles, range pills, the current section marked */
+:where(html[data-page="topic"]) .tp-contents .toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+:where(html[data-page="topic"]) .tp-contents .toc li + li::before {
+  content: "";
+  display: block;
+  height: 0.5px;
+  margin-left: 20px;
+  background: var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-contents .toc a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  min-height: 36px;
+  padding: 0 16px 0 20px;
+  border-radius: 0;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+:where(html[data-page="topic"]) .tp-contents .toc a:hover {
+  background: var(--hm-fill);
+}
+:where(html[data-page="topic"]) .tp-contents .toc a.on {
+  background: var(--tp-current);
+  color: var(--accent);
+  font-weight: 600;
+}
+:where(html[data-page="topic"]) .tp-contents .toc .tp-n {
+  width: 22px;
+  font-size: 15px;
+}
+:where(html[data-page="topic"]) .tp-contents .toc a.on .tp-n {
+  color: var(--accent);
+}
+:where(html[data-page="topic"]) .tp-contents .toc .name {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 0;
+}
+:where(html[data-page="topic"]) .tp-contents .toc .badge {
+  margin: 0;
+}
+:where(html[data-page="topic"]) .tp-main .toc > li,
+:where(html[data-page="topic"]) .tp-contents .toc > li {
+  margin: 0;
+}
+:where(html[data-page="topic"]) .tp-wrap.one-level .tp-contents .toc .badge {
+  display: none;
+}
+:where(html[data-page="topic"]) .tp-gap {
+  height: 8px;
+  background: var(--hm-bg);
+}
+:where(html[data-page="topic"]) .tp-print {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px 0 20px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 17px;
+  text-align: left;
+  cursor: pointer;
+}

@@ -34,6 +34,18 @@ const STYLES = [
   "track-phone",
   "credits",
   "credits-cards",
+  "topic",
+  "topic-page",
+  "topic-lists",
+  "topic-marks",
+  "topic-slots",
+  "topic-rail",
+  "topic-pagers",
+  "topic-sheets",
+  "topic-wide",
+  "topic-phone",
+  "topic-phone-bar",
+  "topic-print",
 ];
 
 // style.css: the parts of apps/web/styles/ joined in order.

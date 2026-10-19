@@ -80,12 +80,17 @@ describe.each(topicPages)("%s", (path) => {
     for (const section of doc.querySelectorAll("section.part")) {
       expect(ownBadge(section, "h2")?.textContent).toBe(label(from(section), to(section)));
       for (const blk of section.querySelectorAll(":scope > .blk")) {
-        const own = ownBadge(blk, ".blk-level");
+        // A lesson's paragraph opens with its block's badge.
+        const own = ownBadge(blk, ".blk-level") ?? blk.querySelector(":scope > p > .lvl:first-child");
         expect(own === null ? "none" : own.textContent).toBe(lv(from(blk)) > lv(from(section)) ? label(from(blk), to(blk)) : "none");
         for (const leaf of blk.querySelectorAll("tr[data-level]:not(.gap-row), li[data-level]")) {
-          // A row whose first cell is merged into the one above shares that cell's badge.
-          if (leaf.tagName === "TR" && leaf.querySelector(":scope > td.key") === null) continue;
-          const mark = leaf.querySelector(":scope > td.key > .lvl, :scope > .lvl");
+          // A lesson's row shows its level in its last column; a slot paradigm's, once per tense.
+          if (leaf.tagName === "TR") {
+            const pill = leaf.querySelector(":scope > td.tp-lvl > .lvl");
+            if (pill !== null) expect(pill.textContent).toBe(from(leaf));
+            continue;
+          }
+          const mark = leaf.querySelector(":scope > .tp-li > .lvl:first-child");
           expect(mark === null ? "none" : mark.textContent).toBe(lv(from(leaf)) > lv(from(blk)) ? from(leaf) : "none");
         }
       }
@@ -100,24 +105,13 @@ describe.each(topicPages)("%s", (path) => {
       const target = doc.getElementById(li.querySelector("a")?.getAttribute("href")?.slice(1) ?? "");
       expect(target === null ? "missing" : label(from(li), to(li))).toBe(target === null ? "missing" : label(from(target), to(target)));
       expect(li.querySelector(".lvl")?.textContent).toBe(label(from(li), to(li)));
-      expect(li.querySelector(".lvl.pair")).not.toBeNull();
     }
-    const current = doc.querySelector('.nav-list[data-order="categories"] a.on');
+    const current = doc.querySelector('.nav-list[data-order="categories"] a.tp-row.on');
     expect(current === null ? "" : label(from(current), to(current))).toBe(rangeOf(sections));
-    // A menu section covers the topics listed under it.
-    let heading: Element | null = null;
-    let under: Element[] = [];
-    const close = (): void => {
-      if (heading) expect(label(from(heading), to(heading))).toBe(rangeOf(under));
-    };
-    const menu = '.nav-list[data-order="categories"]';
-    for (const el of doc.querySelectorAll(`${menu} h4, ${menu} a[data-level], ${menu} .todo`)) {
-      if (el.tagName === "H4") {
-        close();
-        [heading, under] = [el, []];
-      } else under.push(el);
+    // A section of the course's index covers the topics listed in it.
+    for (const card of doc.querySelectorAll('.nav-list[data-order="categories"] .tp-ix-sec')) {
+      expect(label(from(card), to(card))).toBe(rangeOf([...card.querySelectorAll("a.tp-row")]));
     }
-    close();
   });
 });
 

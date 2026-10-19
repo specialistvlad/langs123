@@ -55,16 +55,19 @@ export interface HeadCell {
   title: string;
   group: string | undefined;
   center: boolean;
+  // Classes of its own: a lesson's translation column (tp-trcol), an errors table's Wrong and Right.
+  names?: string[];
 }
 
 const th = (content: string, names: string[], cols: number, rows: number): string =>
   `<th${classAttr(names)}${cols > 1 ? ` colspan="${cols}"` : ""}${rows > 1 ? ` rowspan="${rows}"` : ""}>${content}</th>`;
-const own = (c: HeadCell): string[] => (c.center ? ["center"] : []);
+const own = (c: HeadCell): string[] => [...(c.names ?? []), ...(c.center ? ["center"] : [])];
 
-// One header row, or two when a column has a group: an ungrouped title spans both rows.
-export function headHtml(cells: HeadCell[]): string {
+// One header row, or two when a column has a group: an ungrouped title spans both rows. A lesson's table ends
+// its first row with the head of its level column.
+export function headHtml(cells: HeadCell[], lesson = false): string {
   if (cells.every((c) => c.group === undefined)) {
-    return `<thead><tr>${cells.map((c) => th(c.title, own(c), 1, 1)).join("")}</tr></thead>`;
+    return `<thead><tr>${cells.map((c) => th(c.title, own(c), 1, 1)).join("")}${lesson ? '<th class="tp-lvl"></th>' : ""}</tr></thead>`;
   }
   const top: string[] = [];
   const bottom: string[] = [];
@@ -86,5 +89,5 @@ export function headHtml(cells: HeadCell[]): string {
     if (cells[n]?.group !== undefined) top.push(th("", ["gap"], 1, 2));
     members.forEach((c, k) => bottom.push(th(c.title, [...own(c), ...(k === 0 ? ["group-start"] : [])], 1, 1)));
   }
-  return `<thead><tr>${top.join("")}</tr><tr>${bottom.join("")}</tr></thead>`;
+  return `<thead><tr>${top.join("")}${lesson ? '<th class="tp-lvl" rowspan="2"></th>' : ""}</tr><tr>${bottom.join("")}</tr></thead>`;
 }

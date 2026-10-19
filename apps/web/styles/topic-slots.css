@@ -1,0 +1,187 @@
+/* A slot paradigm, compact: grouped two-row header, centred cells, lines between columns, merged words, a pill per tense */
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th {
+  padding: 9px 5px 6px;
+  font-size: 11.5px;
+  line-height: 15px;
+  text-align: center;
+  white-space: nowrap;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th:first-child {
+  padding-left: 14px;
+  text-align: left;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th.group {
+  border-left: 0;
+  border-bottom: 0.5px solid var(--tp-hair);
+  color: var(--accent);
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact thead tr + tr th {
+  border-left: 0.5px solid var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact thead tr + tr th.group-start {
+  border-left: 0;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td {
+  padding: 5px 6px;
+  border: 0;
+  border-left: 0.5px solid var(--tp-hair);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 20px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.key {
+  padding-left: 14px;
+  text-align: left;
+  border-left: 0;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td:first-child:not(.key) {
+  padding-left: 6px;
+  border-left: 0;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.key + td,
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.gap + td {
+  border-left: 0;
+}
+:where(html[data-page="topic"])
+  .tp-main
+  .tp-slot-wide
+  table.compact
+  tr:not(.tp-first):not(.gap-row)
+  td:not([rowspan], :where(html[data-page="topic"]) .gap) {
+  border-top: 0.5px solid var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact :is(th, :where(html[data-page="topic"]) td).gap {
+  width: 8px;
+  min-width: 8px;
+  padding: 0;
+  border: 0;
+  background: var(--hm-bg);
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact tr.gap-row td {
+  height: 8px;
+  padding: 0;
+  border: 0;
+  background: var(--hm-bg);
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.tp-lvl {
+  padding: 5px 12px 5px 5px;
+  border: 0;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th.tp-lvl {
+  padding-right: 12px;
+  border: 0;
+}
+:where(html[data-page="topic"]) .tp-slot-cards {
+  display: none;
+}
+:where(html[data-page="topic"]) .tp-tense {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 8px 8px;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+}
+:where(html[data-page="topic"]) .tp-tense span:first-child {
+  flex-grow: 1;
+}
+:where(html[data-page="topic"]) .tp-slot .tp-caps {
+  margin: 4px 0 6px 8px;
+}
+:where(html[data-page="topic"]) .tp-slot .tp-card {
+  margin-bottom: 8px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td {
+  padding: 9px 10px;
+  font-size: 16px;
+  line-height: 22px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot .tp-card tbody tr:first-child td {
+  border-top: 0;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td[rowspan] {
+  border-top: 0;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td:first-child {
+  padding-left: 10px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td.c0 {
+  padding-left: 20px;
+}
+
+/* Errors: the wrong form struck through under a cross, the right one under a check, then the rule */
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(1) {
+  background: none;
+  color: var(--tp-sec);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--lvl-A0-ink) 60%, transparent);
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(2) {
+  background: none;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(3):not(.tp-lvl) {
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(1)::before,
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(2)::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+  vertical-align: -1px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(1)::before {
+  background: var(--lvl-A0-ink);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2 2l10 10M12 2L2 12' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2 2l10 10M12 2L2 12' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(2)::before {
+  background: var(--lvl-B1-ink);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' fill='none'%3E%3Cpath d='M1.5 7.5l4.5 4.5L14.5 1.5' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' fill='none'%3E%3Cpath d='M1.5 7.5l4.5 4.5L14.5 1.5' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td.tp-lvl::before {
+  display: none;
+}
+
+/* When the level filter leaves a view nothing: a dashed box and a button that shows the level */
+:where(html[data-page="topic"]) .tp-main .filter-empty {
+  margin: 0;
+  padding: 22px 20px 20px;
+  border: 1.5px dashed var(--tp-dash);
+  border-radius: 22px;
+  background: none;
+  text-align: center;
+  color: var(--tp-body);
+}
+:where(html[data-page="topic"]) .tp-main .filter-empty p {
+  margin: 0 0 16px;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.43px;
+}
+:where(html[data-page="topic"]) .tp-main .filter-empty button {
+  height: 44px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--hm-on-accent);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+}

@@ -20,7 +20,7 @@ const path = Object.fromEntries(
 const index = await readPage("en/english/index.html");
 const topic = await readPage("en/english/foundations/numbers/index.html");
 const menu = '.nav-list[data-order="path"]';
-const steps = [...topic.querySelectorAll<HTMLAnchorElement>(`${menu} a`)];
+const steps = [...topic.querySelectorAll<HTMLAnchorElement>(`${menu} a.tp-row`)];
 // The page a step link opens, and the section its anchor names.
 const pageOf = (href: string): string => `${href.split(/[?#]/)[0]?.replace(/^\//, "") ?? ""}index.html`;
 const levelOf = (el: Element): string => el.getAttribute("data-level") ?? "";
@@ -36,7 +36,7 @@ const opensOf = (el: Element | null | undefined): string | undefined => {
 describe("the menu and the index", () => {
   test("list the levels of the path, lowest first, each with its steps", () => {
     const levels = Object.keys(path);
-    expect([...topic.querySelectorAll(`${menu} h4`)].map(levelOf)).toEqual(levels);
+    expect([...topic.querySelectorAll(`${menu} .tp-ix-sec`)].map(levelOf)).toEqual(levels);
     expect([...index.querySelectorAll('.ix-flow[data-order="path"] .ix-sec')].map(levelOf)).toEqual(levels);
     for (const level of levels) {
       expect(steps.filter((a) => levelOf(a) === level).length).toBe(path[level]?.length ?? 0);
@@ -46,7 +46,7 @@ describe("the menu and the index", () => {
   });
 
   test("give both orders a switch, the menu and the index each", () => {
-    expect(topic.querySelectorAll('.nav-order [data-set-order="categories"], .nav-order [data-set-order="path"]').length).toBe(2);
+    expect(topic.querySelectorAll('.tp-seg [data-set-order="categories"], .tp-seg [data-set-order="path"]').length).toBe(2);
     expect(index.querySelectorAll('.ix-seg [data-set-order="categories"], .ix-seg [data-set-order="path"]').length).toBe(2);
   });
 });
@@ -100,18 +100,15 @@ describe("a topic page", () => {
     const restart = after === undefined && first !== undefined && first !== list[i];
     return { prev: prev?.href, next: after?.href ?? (restart ? first.href : undefined), restart };
   }
-  // The rows of a page for one grouping (and one step) at a level: below the guide, in the bottom bar and in the rail.
+  // The capsule of a page for one grouping (and one step) at a level in the bottom bar, and Up next in the rail.
   function seen(doc: Document, rows: string, level: string): (Lead & { upNext: string | undefined })[] {
     const at = `[data-at~="${level}"]`;
-    const out = ["bottom"].map((where) => {
-      const row = doc.querySelectorAll(`.pagers.${where} .pager${rows}${at}`);
+    const out = [".tp-bar"].map((bar) => {
+      const row = doc.querySelectorAll(`${bar} .tp-pager${rows}${at}`);
       expect(row.length).toBe(1);
-      const prev = doc.querySelector(`.pagers.${where} .pager${rows}${at} .pager-prev`);
-      const next = doc.querySelector(`.pagers.${where} .pager${rows}${at} .pager-next`);
-      expect(prev?.matches("a") ?? false).not.toBe(prev?.matches(".off") ?? false);
-      // The bottom bar's Next leads where the row's next does.
-      const bar = opensOf(doc.querySelector(`.bottom-bar .bar-next${rows}${at}`));
-      expect(bar).toBe(opensOf(next));
+      const prev = doc.querySelector(`${bar} .tp-pager${rows}${at} .tp-prev`);
+      const next = doc.querySelector(`${bar} .tp-pager${rows}${at} .tp-next`);
+      expect(prev?.matches("a") ?? false).not.toBe(prev?.matches(".tp-off") ?? false);
       return {
         prev: opensOf(prev),
         next: opensOf(next),

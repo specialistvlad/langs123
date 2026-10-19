@@ -1,0 +1,162 @@
+/* Previous and Next: one glass capsule, the titles beside the arrows on wide screens */
+:where(html[data-page="topic"]) .tp-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+:where(html[data-page="topic"]) .tp-bar > * {
+  pointer-events: auto;
+}
+:where(html[data-page="topic"]) .tp-pagers {
+  display: flex;
+}
+:where(html[data-page="topic"]) .tp-pager {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border-radius: 999px;
+  color: var(--text);
+}
+:where(html[data-page="topic"]) .tp-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+:where(html[data-page="topic"]) .tp-pt {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:where(html[data-page="topic"]) a.tp-side:hover {
+  background: var(--hm-fill);
+}
+:where(html[data-page="topic"]) .tp-off {
+  opacity: 0.3;
+}
+:where(html[data-page="topic"]) .tp-div {
+  width: 0.5px;
+  height: 24px;
+  background: var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-restart {
+  font-weight: 600;
+}
+
+/* Sheets and panels: along the bottom on phones, under the button on wider screens */
+:where(html[data-page="topic"]) .tp-sheet[popover],
+:where(html[data-page="topic"]) .tp-panel.panel[popover] {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  color: var(--text);
+  background: var(--hm-bg);
+  box-shadow: var(--tp-sheet-shadow);
+  overflow-y: auto;
+}
+:where(html[data-page="topic"]) .tp-sheet::backdrop,
+:where(html[data-page="topic"]) .tp-panel::backdrop {
+  background: var(--tp-back);
+}
+:where(html[data-page="topic"]) .tp-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px 12px 24px;
+}
+:where(html[data-page="topic"]) .tp-sheet-head h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+}
+:where(html[data-page="topic"]) .tp-x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+}
+:where(html[data-page="topic"]) .tp-sheet[popover]:popover-open {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+:where(html[data-page="topic"]) .tp-sheet-head {
+  flex: none;
+}
+:where(html[data-page="topic"]) .tp-sheet-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 12px 20px;
+  overscroll-behavior: contain;
+}
+:where(html[data-page="topic"]) .tp-sheet-body .tp-card {
+  margin-bottom: 0;
+}
+:where(html[data-page="topic"]) .tp-sheet-body .tp-contents .toc a {
+  min-height: 44px;
+}
+:where(html[data-page="topic"]) .tp-sheet-body .tp-contents .toc .name {
+  padding: 11px 0;
+}
+:where(html[data-page="topic"]) .tp-index[popover] {
+  inset: 74px 20px auto auto;
+  width: 460px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 100px);
+  border-radius: 30px;
+}
+:where(html[data-page="topic"]) .tp-panel.panel[popover] {
+  min-width: 0;
+  width: 360px;
+  max-width: calc(100vw - 16px);
+  padding: 0 16px 16px;
+  border-radius: 30px;
+}
+:where(html[data-page="topic"]) .tp-panel .tp-sheet-head {
+  padding: 16px 0 10px 8px;
+}
+:where(html[data-page="topic"]) .tp-panel .seg {
+  display: flex;
+  gap: 2px;
+  box-sizing: border-box;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--hm-fill);
+}
+:where(html[data-page="topic"]) .tp-panel .seg button {
+  flex: 1;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+}
+:where(html[data-page="topic"]) .tp-panel .seg button[data-set-level] {
+  color: var(--lvl);
+}
+:where(html[data-page="topic"]) .tp-panel .seg button[data-set-level].on {
+  background: var(--level-tint);
+  color: var(--lvl);
+  font-weight: 700;
+  box-shadow: inset 0 0 0 2px var(--lvl);
+}

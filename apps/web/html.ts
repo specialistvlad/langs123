@@ -17,6 +17,9 @@ export interface Ctx {
   varieties?: Variety[] | undefined;
   // A copy of a table cell in one variety.
   pick?: Variety | undefined;
+  // A topic page's lesson (lesson.ts): the joiners of a list and the slashes of a transcription muted, the name of
+  // a variety before its form in bold, and a hyphen that opens a word kept with it.
+  lesson?: boolean;
 }
 
 const ENTITIES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
@@ -40,9 +43,21 @@ function markLang(name: MarkName, m: Mark, c: FoldContext, ctx: Ctx): string {
   return name === "gloss" || name === "l1" || named ? ctx.explain : "";
 }
 
+// A hyphen that opens a word (-s, -ed) stays with it.
+const keepHyphen = (s: string): string => s.replace(/(?<![\p{L}\p{N}-])-(?=[\p{L}\p{N}])/gu, "\u2011");
+const LESSON: Pick<TextOutput<string>, "joiner" | "ipa" | "label"> = {
+  joiner: (sep) => {
+    const m = /^ ([/·→=≠+—]) $/.exec(sep);
+    return m === null ? escapeHtml(sep) : ` <i class="j">${escapeHtml(m[1] ?? "")}</i> `;
+  },
+  ipa: (t) => `<i class="sl">/</i>${escapeHtml(t)}<i class="sl">/</i>`,
+  label: (name) => `<b class="vl">${escapeHtml(name)}</b>`,
+};
+
 function htmlOutput(ctx: Ctx): TextOutput<string> {
   return {
-    text: escapeHtml,
+    ...(ctx.lesson === true ? LESSON : {}),
+    text: ctx.lesson === true ? (s) => keepHyphen(escapeHtml(s)) : escapeHtml,
     join: (parts) => parts.join(""),
     mark(name: MarkName, inner: string, m: Mark, c: FoldContext): string {
       const lang = markLang(name, m, c, ctx);
@@ -65,7 +80,9 @@ function htmlOutput(ctx: Ctx): TextOutput<string> {
         (variety === undefined ? "" : ` data-variety="${variety}"`);
       const shown =
         name === "variant" && c.swap === true && c.pick === undefined ? varietyLabel(m as { variety: Variety }, c, ctx, inner) : inner;
-      return `<span${attrs}${extra}>${shown}</span>`;
+      // A short mapping in a lesson keeps to one line.
+      const nowrap = ctx.lesson === true && name === "mapping" && !shown.includes("<") && shown.length <= 30 ? ' class="nw"' : "";
+      return `<span${attrs}${nowrap}${extra}>${shown}</span>`;
     },
     swap: (variants) => variants.join(""),
   };

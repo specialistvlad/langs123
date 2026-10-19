@@ -1,8 +1,9 @@
-// The page's controls: the view as tabs; the level and the variety as chips that open their panels under
-// them on a wide screen; on a small screen a bottom bar opens the menu, the level and More as sheets, a
-// choice or Escape closes a sheet, and the top bar slides away on a scroll down and returns on a scroll
-// up; the menu shows the logo and closes on a tap beside it; the top bar's search lists the topics and
-// sections that match, moves through them with the arrow keys, opens one with Enter and closes on Escape.
+// The page's controls. On a topic page: the view as tabs; the level and the variety as buttons in the top
+// glass group that open their panels under them on a wide screen and as sheets on a small one, a choice or
+// Escape closing them; on a small screen the bottom bar opens the contents and the course's index as sheets,
+// and the bars slide away on a scroll down and return on a scroll up. On a cheatsheet page: the top bar's
+// search lists the topics and sections that match, moves through them with the arrow keys, opens one with
+// Enter and closes on Escape; the menu opens from the bottom bar and closes on a tap beside it.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -20,10 +21,11 @@ afterAll(async () => {
   await page.close();
 });
 
-// One page for every test, as the other browser tests keep, at the width each test asks for.
-async function open(width: number): Promise<void> {
+// One page for every test, at the width each test asks for.
+const TOPIC = "/en/english/verbs/to-be/?level=a1&view=extended";
+async function open(width: number, address = TOPIC): Promise<void> {
   await page.setViewportSize({ width, height: 800 });
-  await page.goto(new URL("/en/english/verbs/to-be/?level=a1&view=extended", base).href);
+  await page.goto(new URL(address, base).href);
 }
 // Waits for the page to draw its last change and for every slide that change started to end.
 async function settled(): Promise<void> {
@@ -34,24 +36,25 @@ async function settled(): Promise<void> {
 }
 const levelOf = (): Promise<string | undefined> => page.evaluate(() => document.documentElement.dataset["level"]);
 const panelOpen = (id: string): Promise<boolean> => page.evaluate((p) => document.getElementById(p)?.matches(":popover-open") ?? false, id);
+const LEVEL = '.tp-top [popovertarget="level-panel"]';
 
 test(
-  "a small screen opens the level from the bottom bar as a sheet, and a choice or Escape closes it",
+  "a small screen opens the level as a sheet along the bottom, and a choice or Escape closes it",
   async () => {
     await open(390);
-    expect(await page.locator(".bottom-bar").isVisible()).toBe(true);
-    expect(await page.locator(".topbar .tools").isVisible()).toBe(false);
-    await page.click('.bottom-bar [popovertarget="level-panel"]');
+    expect(await page.locator(".tp-bar").isVisible()).toBe(true);
+    await page.click(LEVEL);
     expect(await panelOpen("level-panel")).toBe(true);
     const sheet = await page.locator("#level-panel").boundingBox();
-    expect(Math.round((sheet?.y ?? 0) + (sheet?.height ?? 0))).toBe(800);
+    // A sheet floats just above the bottom edge.
+    expect(800 - Math.round((sheet?.y ?? 0) + (sheet?.height ?? 0))).toBeLessThanOrEqual(8);
     expect(await page.$$eval("#level-panel [data-set-level]", (els) => els.filter((el) => el.checkVisibility()).length)).toBe(
       LEVELS.length,
     );
     await page.click('#level-panel [data-set-level="B1"]');
     expect(await levelOf()).toBe("B1");
     expect(await panelOpen("level-panel")).toBe(false);
-    await page.click('.bottom-bar [popovertarget="level-panel"]');
+    await page.click(LEVEL);
     await page.keyboard.press("Escape");
     expect(await panelOpen("level-panel")).toBe(false);
   },
@@ -59,32 +62,36 @@ test(
 );
 
 test(
-  "More on a small screen holds the languages a page is read in, the credits and the theme",
+  "on a small screen the bottom bar opens the contents and the index as sheets, and a link taken closes them",
   async () => {
     await open(390);
-    await page.click('.bottom-bar [popovertarget="more-panel"]');
-    expect(await panelOpen("more-panel")).toBe(true);
-    expect(await page.locator("#more-panel .menu-list a").count()).toBeGreaterThan(1);
-    expect(await page.locator("#more-panel [data-theme-toggle]").isVisible()).toBe(true);
-    expect(await page.locator('#more-panel a[href$="/credits/"]').isVisible()).toBe(true);
+    await page.click('.tp-bar [popovertarget="tp-contents"]');
+    expect(await panelOpen("tp-contents")).toBe(true);
+    const sheet = await page.locator("#tp-contents").boundingBox();
+    // A sheet floats just above the bottom edge.
+    expect(800 - Math.round((sheet?.y ?? 0) + (sheet?.height ?? 0))).toBeLessThanOrEqual(8);
+    await page.locator("#tp-contents .toc a").nth(1).click();
+    expect(await panelOpen("tp-contents")).toBe(false);
+    // The link scrolled down to its section, and the bars slid away with it: the page opens again.
+    await open(390);
+    await page.click('.tp-bar [popovertarget="tp-index"]');
+    expect(await panelOpen("tp-index")).toBe(true);
+    expect(await page.locator('#tp-index a[aria-current="page"]').isVisible()).toBe(true);
   },
   SLOW,
 );
 
 test(
-  "a wide screen names the level on its chip, opens the panel under the chip, and keeps the logo in the top bar",
+  "a wide screen names the level on its button and opens the panel under it",
   async () => {
     await open(1600);
-    expect(await page.locator(".bottom-bar").isVisible()).toBe(false);
-    expect((await page.locator(".topbar [data-level-label]").textContent())?.trim()).toBe("Up to A1");
-    await page.click('.topbar [popovertarget="level-panel"]');
-    const chip = await page.locator('.topbar [popovertarget="level-panel"]').boundingBox();
+    expect((await page.locator(".tp-top [data-level-label]").textContent())?.trim()).toBe("Up to A1");
+    await page.click(LEVEL);
+    const button = await page.locator(LEVEL).boundingBox();
     const panel = await page.locator("#level-panel").boundingBox();
-    expect(panel?.y ?? 0).toBeGreaterThanOrEqual((chip?.y ?? 0) + (chip?.height ?? 0));
+    expect(panel?.y ?? 0).toBeGreaterThanOrEqual((button?.y ?? 0) + (button?.height ?? 0));
     await page.click('#level-panel [data-set-level="C2"]');
-    expect((await page.locator(".topbar [data-level-label]").textContent())?.trim()).toBe("All levels");
-    expect(await page.locator(".topbar .brand").isVisible()).toBe(true);
-    expect(await page.locator(".sidebar .nav-brand").isVisible()).toBe(false);
+    expect((await page.locator(".tp-top [data-level-label]").textContent())?.trim()).toBe("All levels");
   },
   SLOW,
 );
@@ -101,10 +108,38 @@ test(
 );
 
 test(
-  "the top bar's search lists the matching topics first, and the arrow keys, Enter and Escape work it",
+  "on a small screen the bars slide away on a scroll down and return on a scroll up",
   async () => {
-    await page.setViewportSize({ width: 1600, height: 800 });
-    await page.goto(new URL("/en/spanish/pronombres/tu-usted-vosotros-ustedes/?level=c2", base).href);
+    await open(390);
+    // The bottom edge of the top group and the top edge of the bottom bar once their slides have finished.
+    const edges = async (): Promise<number[]> => {
+      await settled();
+      return page.evaluate(() => [
+        document.querySelector(".tp-top")?.getBoundingClientRect().bottom ?? -1,
+        document.querySelector(".tp-bar")?.getBoundingClientRect().top ?? -1,
+      ]);
+    };
+    const [top, bottom] = await edges();
+    expect(top).toBeGreaterThan(0);
+    expect(bottom).toBeLessThan(800);
+    await page.evaluate(() => {
+      scrollBy(0, 800);
+    });
+    const [topHidden, bottomHidden] = await edges();
+    expect(topHidden).toBeLessThanOrEqual(0);
+    expect(bottomHidden).toBeGreaterThanOrEqual(800);
+    await page.evaluate(() => {
+      scrollBy(0, -200);
+    });
+    expect((await edges())[0]).toBeGreaterThan(0);
+  },
+  SLOW,
+);
+
+test(
+  "a cheatsheet page's search lists the matching topics first, and the arrow keys, Enter and Escape work it",
+  async () => {
+    await open(1600, "/en/spanish/cheatsheets/?level=c2");
     const input = page.locator(".top-search input");
     await input.click();
     await input.fill("usted");
@@ -121,55 +156,29 @@ test(
     await input.press("ArrowDown");
     expect(await input.getAttribute("aria-activedescendant")).toBe(await second.getAttribute("id"));
     await Promise.all([page.waitForURL((url) => url.pathname + url.hash === href), input.press("Enter")]);
-    // Escape closes the list.
-    await page.locator(".top-search input").fill("usted");
-    await page.waitForSelector('#search-results:not([hidden]) [role="option"]');
-    await page.locator(".top-search input").press("Escape");
-    expect(await page.locator("#search-results").isHidden()).toBe(true);
-    expect(await page.locator(".top-search input").getAttribute("aria-expanded")).toBe("false");
   },
   SLOW,
 );
 
 test(
-  "a query that matches nothing says so, and / moves to the search",
+  "on a cheatsheet page a query that matches nothing says so, / moves to the search, and Escape closes it",
   async () => {
-    await open(1600);
+    await open(1600, "/en/english/cheatsheets/");
     await page.keyboard.press("/");
     expect(await page.evaluate(() => document.activeElement?.closest(".top-search") !== null)).toBe(true);
     await page.keyboard.type("zzzz");
     await page.waitForSelector("#search-results:not([hidden]) .hit-empty");
     expect(await page.locator('#search-results [role="option"]').count()).toBe(0);
+    await page.locator(".top-search input").press("Escape");
+    expect(await page.locator("#search-results").isHidden()).toBe(true);
   },
   SLOW,
 );
 
 test(
-  "on a small screen the top bar slides away on a scroll down and returns on a scroll up",
+  "on a small screen a cheatsheet page's menu opens from the bottom bar, shows the logo and closes on a tap beside it",
   async () => {
-    await open(390);
-    // The bottom edge of the bar once its slide has finished.
-    const edge = async (): Promise<number> => {
-      await settled();
-      return page.evaluate(() => document.querySelector(".topbar")?.getBoundingClientRect().bottom ?? -1);
-    };
-    expect(await edge()).toBeGreaterThan(0);
-    await page.evaluate(() => {
-      scrollBy(0, 800);
-    });
-    expect(await edge()).toBeLessThanOrEqual(0);
-    await page.evaluate(() => {
-      scrollBy(0, -200);
-    });
-    expect(await edge()).toBeGreaterThan(0);
-  },
-  SLOW,
-);
-
-test(
-  "on a small screen the menu opens from the bottom bar, shows the logo and closes on a tap beside it",
-  async () => {
-    await open(390);
+    await open(390, "/en/english/cheatsheets/");
     await page.click("#menu");
     await settled();
     expect(await page.locator(".sidebar .nav-brand").isVisible()).toBe(true);

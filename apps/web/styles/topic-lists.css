@@ -1,0 +1,136 @@
+/* Sections: a number, the title, the range pill */
+:where(html[data-page="topic"]) .tp-main .sections > .part {
+  scroll-margin-top: 90px;
+  min-width: 0;
+}
+:where(html[data-page="topic"]) .tp-main .doc h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 10px;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: -0.45px;
+}
+:where(html[data-page="topic"]) .tp-main .doc h2 .badge {
+  margin-left: auto;
+}
+:where(html[data-page="topic"]) .tp-main .sections > .part > h2::before {
+  content: attr(data-n);
+  flex: none;
+  margin: 0;
+  font:
+    600 17px ui-monospace,
+    "SF Mono",
+    Menlo,
+    monospace;
+  letter-spacing: -0.02em;
+  color: var(--tp-mute);
+}
+:where(html[data-page="topic"]) .doc.one-level .sections > section > h2 .lvl {
+  display: none;
+}
+:where(html[data-page="topic"]) .tp-main .doc .blk {
+  margin: 0;
+}
+:where(html[data-page="topic"]) .blk-level {
+  margin: 0 0 8px;
+}
+:where(html[data-page="topic"]) .tp-main .doc p {
+  margin: 0 0 14px;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.43px;
+}
+:where(html[data-page="topic"]) .tp-main .doc p:has(> .tp-ex) {
+  margin-bottom: 14px;
+}
+
+/* Lists: a rule, a note, an example */
+:where(html[data-page="topic"]) .tp-main .doc ul {
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+:where(html[data-page="topic"]) .tp-main .doc li {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 12px;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.43px;
+}
+:where(html[data-page="topic"]) .tp-li {
+  flex: 1;
+  min-width: 0;
+}
+:where(html[data-page="topic"]) .tp-main .doc li[data-type="rule"]::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin: 10px 0 0 4px;
+  border-radius: 999px;
+  background: var(--tp-mute);
+}
+:where(html[data-page="topic"]) .tp-main .doc li[data-type="note"] {
+  gap: 10px;
+  padding: 10px 14px 10px 12px;
+  border-radius: 14px;
+  background: var(--tp-note);
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.3px;
+  color: var(--tp-body);
+}
+:where(html[data-page="topic"]) .tp-main .doc li[data-type="note"]::before {
+  content: "";
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  background: var(--tp-sec);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Ccircle cx='10' cy='10' r='8.5' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M10 9v5' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='6' r='1.1' fill='black'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Ccircle cx='10' cy='10' r='8.5' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M10 9v5' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='6' r='1.1' fill='black'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+:where(html[data-page="topic"]) .tp-main .doc li[data-type="example"] {
+  margin-left: 4px;
+}
+:where(html[data-page="topic"]) .tp-ex {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+:where(html[data-page="topic"]) .tp-ex::before {
+  content: "";
+  flex: none;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+:where(html[data-page="topic"]) .tp-ex-body {
+  flex: 1;
+  min-width: 0;
+  color: var(--text);
+}
+:where(html[data-page="topic"]) .tp-main .doc li[data-type="note"] .tp-ex-body {
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.43px;
+}
+:where(html[data-page="topic"]) li[data-type="example"] .tp-li > .tp-ex:first-child {
+  margin-top: 0;
+}
+:where(html[data-page="topic"]) .tp-tr {
+  display: block;
+  margin-top: 1px;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.2px;
+}

@@ -32,7 +32,6 @@ export function viewTabs(explain: Explain): string {
 
 export interface ChipsOptions {
   explain: Explain;
-  level?: boolean | undefined;
   // The varieties of the language being learned the reader chooses between, the default first.
   varieties?: Variety[] | undefined;
 }
@@ -49,16 +48,10 @@ export const pageTools = (t: Ui, edit: string | undefined): string =>
       : `<a class="page-tool edit" href="${edit}" rel="noopener">${GITHUB_ICON}<span>${escapeHtml(t.editPage)}</span></a>`
   }${printButton(t, "page-tool")}</div>`;
 
-// The level and variety a page shows, as chips that open their panels (page()): the chip names the choice.
+// The variety a page shows, as a chip that opens its panel (page()): the chip names the choice.
 export function chips(o: ChipsOptions): string {
   const t = ui(o.explain);
   const parts: string[] = [];
-  if (o.level === true) {
-    const upTo = `${t.upTo} {level}`;
-    parts.push(
-      `<button type="button" class="chip" popovertarget="level-panel"><span class="level-dot" aria-hidden="true"></span><span class="sr-only">${escapeHtml(t.level)}: </span><span data-level-label data-all="${escapeHtml(t.allLevels)}" data-up-to="${escapeHtml(upTo)}">${escapeHtml(t.allLevels)}</span><span class="caret" aria-hidden="true">▾</span></button>`,
-    );
-  }
   if (o.varieties !== undefined) {
     const first = o.varieties[0];
     parts.push(

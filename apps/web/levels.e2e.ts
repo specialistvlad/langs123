@@ -82,7 +82,8 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
       `${el.tagName.toLowerCase()} ${el.getAttribute("data-level") ?? ""} "${el.textContent.slice(0, 40)}"`;
     const measure = (): Seen => {
       const levelled = [...document.querySelectorAll("[data-level]")].filter(
-        (el) => el !== document.documentElement && !el.matches("[data-set-level], .toc > li, .toc > li *"),
+        // What the layout hides at every level (a closed sheet, a slot table's other layout) is not the filter's.
+        (el) => el !== document.documentElement && !el.matches("[data-set-level], .toc > li, .toc > li *") && !laidOut.has(el),
       );
       const wrongly = levelled.filter((el) => visible(el) !== fits(el)).map((el) => `${visible(el) ? "shown" : "hidden"}: ${name(el)}`);
       const containers = [...document.querySelectorAll(".blk table, .blk ul")].filter(visible);
@@ -117,6 +118,11 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
       const anything = [...document.querySelectorAll("section.part, .ix-sec")].some(visible);
       return { level: order[at] ?? "", wrongly, empty, rail, badges, note, anything };
     };
+    // At the top level the filter hides nothing, so what is hidden then is the layout's.
+    const top = document.querySelector(`.seg [data-set-level="${order[order.length - 1] ?? ""}"]`);
+    if (top instanceof HTMLElement) top.click();
+    at = order.length - 1;
+    const laidOut = new Set([...document.querySelectorAll("[data-level]")].filter((el) => fits(el) && !visible(el)));
     const out: Record<string, Seen> = {};
     for (const level of order) {
       const button = document.querySelector(`.seg [data-set-level="${level}"]`);

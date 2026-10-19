@@ -1,0 +1,190 @@
+/* Marks: bold accent for the form a rule is about, muted italic for a sound or a meaning, IPA in mono */
+:where(html[data-page="topic"]) .doc em[data-mark] {
+  font-style: italic;
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .doc [data-mark="ipa"] {
+  white-space: nowrap;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.88em;
+  letter-spacing: -0.02em;
+  color: color-mix(in srgb, var(--text) 82%, transparent);
+}
+:where(html[data-page="topic"]) .doc strong [data-mark="ipa"] {
+  color: inherit;
+}
+:where(html[data-page="topic"]) .doc .sl {
+  font-style: normal;
+  color: color-mix(in srgb, var(--text) 35%, transparent);
+}
+:where(html[data-page="topic"]) .doc strong .sl {
+  color: inherit;
+  opacity: 0.5;
+}
+:where(html[data-page="topic"]) .doc .nw {
+  white-space: nowrap;
+}
+:where(html[data-page="topic"]) .doc [data-mark="variant"][data-variety] {
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .doc .vl {
+  font-weight: 600;
+}
+:where(html[data-page="topic"]) .tp-vtag {
+  display: block;
+  width: fit-content;
+  margin-top: 3px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--hm-fill);
+  color: var(--tp-sec);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+:where(html[data-page="topic"]) .blk-level .tp-vtag {
+  display: inline-block;
+  margin: 0 0 0 6px;
+}
+:where(html[data-page="topic"]) .doc .j {
+  font-style: normal;
+  color: var(--tp-mute);
+}
+:where(html[data-page="topic"]) .doc a[data-mark="link"] {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-underline-offset: 3px;
+}
+:where(html[data-page="topic"]) .doc [data-mark="slot"] {
+  padding: 1px 7px;
+  border-radius: 7px;
+  background: var(--hm-fill);
+  color: var(--tp-sec);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+:where(html[data-page="topic"]) .doc [data-mark="optional"] {
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .doc [data-mark="intonation"] {
+  color: var(--accent);
+  font-weight: 700;
+}
+:where(html[data-page="topic"]) .doc [data-mark="gap"] {
+  color: var(--tp-mute);
+  letter-spacing: 0.12em;
+}
+:where(html[data-page="topic"]) .doc [data-mark="variety"] {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--hm-fill);
+  color: var(--tp-sec);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+
+/* Tables: a card with a header row, hairlines between rows and the level pill in a last narrow column */
+:where(html[data-page="topic"]) .tp-card .table-wrap {
+  overflow-x: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 17px;
+  line-height: 23px;
+  letter-spacing: -0.3px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card th {
+  padding: 12px 10px 8px;
+  border: 0;
+  background: none;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--tp-caps);
+  text-align: left;
+  vertical-align: bottom;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card th:has([data-mark]) {
+  text-transform: none;
+  letter-spacing: -0.3px;
+  font-size: 15px;
+  color: var(--text);
+}
+:where(html[data-page="topic"]) .tp-main .tp-card td {
+  padding: 11px 10px;
+  border: 0;
+  border-top: 0.5px solid var(--tp-hair);
+  vertical-align: middle;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card tr:last-child td {
+  border-bottom: 0;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card :is(th, :where(html[data-page="topic"]) td):first-child {
+  padding-left: 20px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card td.key {
+  font-weight: 600;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card table.errors td.key {
+  font-weight: 400;
+}
+:where(html[data-page="topic"]) .tp-mono {
+  font:
+    600 17px ui-monospace,
+    "SF Mono",
+    Menlo,
+    monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+:where(html[data-page="topic"]) .tp-letter {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card .tp-lvl {
+  width: 1%;
+  padding-right: 16px;
+  text-align: right;
+  white-space: nowrap;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card td .badge {
+  vertical-align: middle;
+}
+:where(html[data-page="topic"])
+  .tp-main
+  .tp-card
+  table[data-type="comparison"]
+  :is(th, :where(html[data-page="topic"]) td):not(:first-child, :where(html[data-page="topic"]) .tp-lvl) {
+  border-left: 0.5px solid var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-main .tp-card td.tp-none {
+  color: var(--tp-mute);
+}
+:where(html[data-page="topic"]) .tp-main .tp-card .tp-trcol {
+  font-style: italic;
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .tp-main .tp-card td .tp-tr {
+  margin-top: 2px;
+  font-size: 15px;
+  line-height: 19px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-card td .cell-variety {
+  display: block;
+}

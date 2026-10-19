@@ -1,0 +1,169 @@
+/* A topic page (pages/topic.ts) in the frame: its colours, level pills and glass. Every rule holds on topic pages
+   alone, :where() keeping its own specificity */
+html[data-frame] {
+  --tp-sec: rgba(60, 60, 67, 0.6);
+  --tp-mute: rgba(60, 60, 67, 0.45);
+  --tp-hair: rgba(60, 60, 67, 0.29);
+  --tp-body: #3c3c43;
+  --tp-caps: #6e6e73;
+  --tp-note: rgba(118, 118, 128, 0.08);
+  --tp-dash: rgba(60, 60, 67, 0.33);
+  --tp-seg-on: #ffffff;
+  --tp-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  --tp-fade: rgba(242, 242, 247, 0.85);
+  --tp-edge: rgba(242, 242, 247, 0.96);
+  --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.18);
+  --tp-back: rgba(0, 0, 0, 0.18);
+  --tp-current: rgba(47, 91, 211, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  html[data-frame]:not([data-theme="light"]) {
+    --tp-sec: rgba(235, 235, 245, 0.6);
+    --tp-mute: rgba(235, 235, 245, 0.45);
+    --tp-hair: rgba(84, 84, 88, 0.65);
+    --tp-body: rgba(235, 235, 245, 0.85);
+    --tp-caps: rgba(235, 235, 245, 0.55);
+    --tp-note: rgba(118, 118, 128, 0.18);
+    --tp-dash: rgba(235, 235, 245, 0.3);
+    --tp-seg-on: #636366;
+    --tp-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    --tp-fade: rgba(0, 0, 0, 0.85);
+    --tp-edge: rgba(0, 0, 0, 0.96);
+    --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.6);
+    --tp-back: rgba(0, 0, 0, 0.5);
+    --tp-current: rgba(126, 162, 255, 0.14);
+  }
+}
+html[data-frame][data-theme="dark"] {
+  --tp-sec: rgba(235, 235, 245, 0.6);
+  --tp-mute: rgba(235, 235, 245, 0.45);
+  --tp-hair: rgba(84, 84, 88, 0.65);
+  --tp-body: rgba(235, 235, 245, 0.85);
+  --tp-caps: rgba(235, 235, 245, 0.55);
+  --tp-note: rgba(118, 118, 128, 0.18);
+  --tp-dash: rgba(235, 235, 245, 0.3);
+  --tp-seg-on: #636366;
+  --tp-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  --tp-fade: rgba(0, 0, 0, 0.85);
+  --tp-edge: rgba(0, 0, 0, 0.96);
+  --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.6);
+  --tp-back: rgba(0, 0, 0, 0.5);
+  --tp-current: rgba(126, 162, 255, 0.14);
+}
+
+html[data-page="topic"] a {
+  color: inherit;
+  text-decoration: none;
+}
+html[data-page="topic"] button {
+  font: inherit;
+}
+:where(html[data-page="topic"]) .tp-caps {
+  margin: 0 0 8px 8px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tp-caps);
+}
+:where(html[data-page="topic"]) .tp-n {
+  flex: none;
+  font:
+    600 17px ui-monospace,
+    "SF Mono",
+    Menlo,
+    monospace;
+  letter-spacing: -0.02em;
+  color: var(--tp-mute);
+}
+:where(html[data-page="topic"]) .tp-chev {
+  flex: none;
+  color: var(--tp-mute);
+}
+:where(html[data-page="topic"]) .tp-card {
+  position: relative;
+  margin: 0 0 18px;
+  border-radius: 22px;
+  background: var(--surface);
+  overflow: hidden;
+}
+:where(html[data-page="topic"]) a:focus-visible,
+:where(html[data-page="topic"]) button:focus-visible,
+:where(html[data-page="topic"]) summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Levels: one pill, or two joined halves */
+html[data-page="topic"] .badge {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0;
+  --badge-pad: 0 7px;
+  flex: none;
+}
+html[data-page="topic"] .lvl {
+  margin: 0;
+}
+html[data-page="topic"] .tp-li > .lvl,
+html[data-page="topic"] .doc p > .lvl {
+  margin: 0 8px 0 0;
+  vertical-align: 2px;
+}
+
+/* Glass: the up link, the toolbar and the bars */
+:where(html[data-page="topic"]) .tp-up {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--text);
+}
+:where(html[data-page="topic"]) .tp-top {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 31;
+  display: flex;
+  gap: 10px;
+}
+:where(html[data-page="topic"]) .tp-top .hm-group {
+  height: 44px;
+}
+:where(html[data-page="topic"]) .tp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: 17px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+:where(html[data-page="topic"]) .tp-level .level-dot {
+  width: 9px;
+  height: 9px;
+}
+:where(html[data-page="topic"]) .tp-level .level-dot:not(.one) {
+  display: none;
+}
+:where(html[data-page="topic"]) .tp-edge,
+:where(html[data-page="topic"]) .tp-fade {
+  display: none;
+}
+:where(html[data-page="topic"]) .tp-bar-left {
+  display: none;
+}

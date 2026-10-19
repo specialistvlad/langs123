@@ -1,28 +1,13 @@
 // Topic content (topic.yaml) → HTML: blocks with level badges, lists, and tables laid out from what their
 // columns hold (CONVENTIONS.md §12).
-import { serves, shows, type TableBlock, tableShape } from "../../scripts/content.ts";
-import { isLocalized, reading } from "../../scripts/text.ts";
+import { shows } from "../../scripts/content.ts";
+import { reading, varietyName } from "../../scripts/text.ts";
 import { type Ctx, escapeHtml, explained, learned, translation } from "./html.ts";
+import { lessonText } from "./lesson.ts";
 import { blockRange } from "../../scripts/levels.ts";
-import { badge, blockVariety, byVariety, levelAttrs, single, varietyAttr, varietyLevelAttrs } from "./parts.ts";
-import { blockStarts, classAttr, GAP_CELL, gapLevel, gapsAfter, headHtml, spans } from "./table.ts";
-import {
-  type Block,
-  type Cell,
-  type Column,
-  type ErrorsBlock,
-  type Example,
-  type Explain,
-  explainName,
-  type FeatureBundle,
-  filled,
-  type Item,
-  type Level,
-  type Localized,
-  lv,
-  say,
-  type Text,
-} from "../../scripts/lib.ts";
+import { badge, blockVariety, levelAttrs, single, varietyAttr, varietyLevelAttrs } from "./parts.ts";
+import { errorsHtml, tableHtml } from "./tables-html.ts";
+import { type Block, filled, type Item, type Level, type Localized, lv, type Text, type Variety } from "../../scripts/lib.ts";
 
 // A leaf carries its level for the filter; its badge shows when it sits above its block's lowest level.
 const leafAttr = (level: Level): string => levelAttrs(single(level));
@@ -41,133 +26,35 @@ interface Rendered {
 }
 
 // A list item: a rule, a note or an example; a note about another variety names it first.
-function item(it: Item, ctx: Ctx): Rendered | null {
+function item(it: Item, ctx: Ctx, from: Level): Rendered | null {
   if (!shows(it, ctx.explain)) return null;
   const base = textAndExample(it.text, it.ex, ctx);
   if (!filled(base)) return null;
   const variety =
     it.variety === undefined ? "" : `<span data-mark="variety">${escapeHtml(reading(ctx.explain, false).variety(it.variety))}:</span> `;
   const attrs = ` data-type="${it.type}"${it.variety === undefined ? "" : ` data-variety="${it.variety}"`}`;
-  return { html: variety + base + translation(it.tr, ctx), level: it.level, attrs };
+  const html =
+    ctx.lesson === true
+      ? `<div class="tp-li">${lessonText(mark(it.level, from) + variety, it.text, it.ex, it.tr, ctx, it.type === "example")}</div>`
+      : mark(it.level, from) + variety + base + translation(it.tr, ctx);
+  return { html, level: it.level, attrs };
 }
 
 function list(items: Item[], ctx: Ctx, from: Level): string | null {
-  const shown = items.map((i) => item(i, ctx)).filter((i): i is Rendered => i !== null);
+  const shown = items.map((i) => item(i, ctx, from)).filter((i): i is Rendered => i !== null);
   if (shown.length === 0) return null;
-  return `<ul>${shown.map((i) => `<li${leafAttr(i.level)}${i.attrs}>${mark(i.level, from)}${i.html}</li>`).join("")}</ul>`;
-}
-
-// ---------- Tables ----------
-
-const isExample = (value: Cell): value is Example => typeof value === "object" && !Array.isArray(value) && "ex" in value && "tr" in value;
-
-// A cell: explanation text, text in the language being learned, or an example with its translation.
-function cell(value: Cell | undefined, ctx: Ctx): string {
-  if (value === undefined) return "";
-  return byVariety(value, ctx, (c) => {
-    if (isExample(value)) return learned(value.ex, c) + translation(value.tr, c);
-    if (typeof value === "object" && !Array.isArray(value) && isLocalized(value)) return explained(value, c);
-    return learned(value, c);
-  });
-}
-
-const wrap = (inner: string): string => `<div class="table-wrap">${inner}</div>`;
-// A row's level shows as a badge at the start of its first cell. A span of 0 leaves the cell to
-// the merged cell above it; a span above 1 covers the rows below. A center column centres its
-// cells both ways; an end cell reaches the table's bottom edge.
-interface Layout {
-  span?: number[] | undefined;
-  center?: boolean[];
-  gaps?: boolean[];
-  end?: boolean[] | undefined;
-}
-const td = (n: number, span: number, names: string[], content: string): string =>
-  span === 0 ? "" : `<td${classAttr([...(n === 0 ? ["key"] : []), ...names])}${span > 1 ? ` rowspan="${span}"` : ""}>${content}</td>`;
-const row = (level: Level, from: Level, cells: string[], layout: Layout = {}, attrs = ""): string =>
-  `<tr${leafAttr(level)}${attrs}>${cells
-    .map((c, n) => {
-      const names = [...(layout.center?.[n] === true ? ["center"] : []), ...(layout.end?.[n] === true ? ["end"] : [])];
-      return td(n, layout.span?.[n] ?? 1, names, (n === 0 ? mark(level, from) : "") + c) + (layout.gaps?.[n] === true ? GAP_CELL : "");
-    })
-    .join("")}</tr>`;
-
-const SLOT_LABEL = { aux: "slotAux", subj: "slotSubj", verb: "slotVerb", rest: "slotRest" } as const;
-
-// The sentence a slot column belongs to, named by its features: Question, Statement, Negative.
-function sentenceName(c: Column, explain: Explain): string | undefined {
-  const f = c.features as FeatureBundle | undefined;
-  if (c.slot === undefined || f === undefined) return undefined;
-  if (f.interrogativity === "int") return say("groupQuestion", explain);
-  return say(f.polarity === "neg" ? "groupNegative" : "groupStatement", explain);
-}
-
-function columnTitle(c: Column, ctx: Ctx): string {
-  if (c.slot !== undefined) return escapeHtml(say(SLOT_LABEL[c.slot], ctx.explain));
-  return cell(c.label, ctx);
-}
-
-// A table: a slot paradigm lays sentences out word by word, its slot columns grouped by sentence,
-// merged down where neighbours read the same but for the subject, and centred; any other table shows
-// its columns as they are, and a dash where a row leaves a cell empty.
-function tableHtml(block: TableBlock, ctx: Ctx, from: Level): string {
-  const shape = tableShape(block, ctx.explain, ctx.ref.lang);
-  const titles = shape.columns.map((c) => columnTitle(c, ctx));
-  if (shape.translation) titles.push(escapeHtml(explainName(ctx.explain)));
-  const empty = shape.slots ? "" : "—";
-  const grid = shape.rows.map((r) => {
-    const cells = shape.columns.map((c) => (r[c.key] === undefined ? empty : cell(r[c.key] as Cell, ctx)));
-    if (shape.translation) cells.push(r.tr === undefined ? "" : cell(r.tr, ctx));
-    return cells;
-  });
-  const levels = shape.rows.map((r) => r.level);
-  const r = (n: number): Level => levels[n] ?? from;
-  // A row of one variety shows while the reader has chosen it, on a track with varieties.
-  const varieties = shape.rows.map((leaf) => (ctx.varieties === undefined ? undefined : leaf.variety));
-  const merged = shape.columns.map((c) => shape.slots && c.slot !== "subj");
-  const starts = blockStarts(grid, levels, merged[0] === true, varieties);
-  const span = spans(grid, levels, [...merged, false], starts, varieties);
-  const center = shape.columns.map(() => shape.slots);
-  const groups = shape.columns.map((c) => {
-    const name = sentenceName(c, ctx.explain);
-    return name === undefined ? undefined : escapeHtml(name);
-  });
-  const gaps = gapsAfter(groups);
-  const width = grid[0]?.length ?? 0;
-  // A gap row hides along with the row of one variety below it.
-  const spacer = (n: number): string =>
-    `<tr class="gap-row"${leafAttr(gapLevel(r(n - 1), r(n)))}${varietyAttr(varieties[n])}><td colspan="${width + gaps.filter(Boolean).length}"></td></tr>`;
-  const end = (n: number): boolean[] | undefined => span[n]?.map((s) => n + s === grid.length);
-  const value = (n: number): string => {
-    const v = shape.rows[n]?.value;
-    return v === undefined ? "" : ` data-value="${escapeHtml(String(v))}"`;
-  };
-  const rows = grid.map(
-    (cells, n) =>
-      (starts.has(n) ? spacer(n) : "") +
-      row(r(n), from, cells, { span: span[n], center, gaps, end: end(n) }, value(n) + varietyAttr(varieties[n])),
-  );
-  const header = headHtml(titles.map((title, n) => ({ title, group: groups[n], center: center[n] === true })));
-  const compact = shape.slots ? ' class="compact"' : "";
-  return wrap(`<table${compact} data-type="${block.type}">${header}<tbody>${rows.join("")}</tbody></table>`);
-}
-
-function errorsHtml(block: ErrorsBlock, ctx: Ctx, from: Level): string {
-  const rows = block.rows.filter((r) => serves(r, ctx.explain));
-  const withRule = rows.some((r) => r.rule !== undefined);
-  const titles = ["✗", "✓", ...(withRule ? [say("ruleColumn", ctx.explain)] : [])].map(escapeHtml);
-  const body = rows.map((r) => row(r.level, from, [cell(r.wrong, ctx), cell(r.right, ctx), ...(withRule ? [cell(r.rule, ctx)] : [])]));
-  return wrap(
-    `<table class="errors">${headHtml(titles.map((title) => ({ title, group: undefined, center: false })))}<tbody>${body.join("")}</tbody></table>`,
-  );
+  return `<ul>${shown.map((i) => `<li${leafAttr(i.level)}${i.attrs}>${i.html}</li>`).join("")}</ul>`;
 }
 
 // ---------- Blocks ----------
 
-function contentHtml(b: Block, ctx: Ctx, from: Level): string | null {
+// lead: what opens a lesson's paragraph, the badge of its block.
+function contentHtml(b: Block, ctx: Ctx, from: Level, lead = ""): string | null {
   switch (b.type) {
     case "prose": {
       const base = textAndExample(b.text, b.ex, ctx);
-      return filled(base) ? `<p>${base}${translation(b.tr, ctx)}</p>` : null;
+      if (!filled(base)) return null;
+      return ctx.lesson === true ? `<p>${lessonText(lead, b.text, b.ex, b.tr, ctx, false)}</p>` : `<p>${base}${translation(b.tr, ctx)}</p>`;
     }
     case "list":
       return list(b.items, ctx, from);
@@ -183,12 +70,22 @@ function contentHtml(b: Block, ctx: Ctx, from: Level): string | null {
 
 // A block in a wrapper that carries its range, so the filter hides it together with its last leaf.
 // Its badge shows when it starts above the section or cheatsheet around it.
+// In a lesson a paragraph opens with that badge, and a block of one variety names it beside it.
 function blockHtml(b: Block, ctx: Ctx, parent: Level): string | null {
   const range = blockRange(b, ctx.explain);
-  const html = range === null ? null : contentHtml(b, ctx, range.from);
-  if (range === null || html === null) return null;
-  const head = lv(range.from) > lv(parent) ? `<div class="blk-level">${badge(range)}</div>` : "";
-  return `<div class="blk"${levelAttrs(range)}${varietyLevelAttrs([b], ctx.explain, ctx.varieties, range.from)}${varietyAttr(blockVariety(b, ctx.varieties))}>${head}${html}</div>`;
+  if (range === null) return null;
+  const level = lv(range.from) > lv(parent) ? badge(range) : "";
+  const inside = ctx.lesson === true && b.type === "prose";
+  const html = contentHtml(b, ctx, range.from, inside ? level : "");
+  if (html === null) return null;
+  const variety = blockVariety(b, ctx.varieties);
+  const tag =
+    ctx.lesson === true && variety !== undefined
+      ? `<span class="tp-vtag tp-vblock">${escapeHtml(varietyName(variety as Variety, ctx.explain))}</span>`
+      : "";
+  const shown = tag + (inside ? "" : level);
+  const head = shown === "" ? "" : `<div class="blk-level">${shown}</div>`;
+  return `<div class="blk"${levelAttrs(range)}${varietyLevelAttrs([b], ctx.explain, ctx.varieties, range.from)}${varietyAttr(variety)}>${head}${html}</div>`;
 }
 
 // The blocks of a section or cheatsheet whose lowest level is parent.

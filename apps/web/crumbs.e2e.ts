@@ -20,7 +20,7 @@ test(
   "the track's crumb opens into every language to learn, in the reader's language where it is explained in it, and Escape closes it",
   async () => {
     await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto(new URL("/uk/english/verbs/to-be/", base).href);
+    await page.goto(new URL("/uk/english/cheatsheets/", base).href);
     const menu = page.locator(".crumbs details.crumb-menu");
     expect(await menu.evaluate((d) => d.hasAttribute("open"))).toBe(false);
     await page.click(".crumbs .crumb-menu summary");

@@ -1,0 +1,130 @@
+/* Phones, continued */
+@media screen and (max-width: 860px) {
+  :where(html[data-page="topic"]) .tp-fade {
+    transition: opacity 0.25s ease;
+  }
+  :where(html[data-page="topic"]) .tp-end {
+    display: block;
+  }
+  :where(html[data-page="topic"]) .tp-end .up-next .tp-caps {
+    margin-top: 26px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card td {
+    padding: 9px 8px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card :is(th, :where(html[data-page="topic"]) td):first-child {
+    padding-left: 20px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card th {
+    padding: 12px 8px 8px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card td .tp-tr {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card .table-wrap {
+    -webkit-overflow-scrolling: touch;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors,
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors tbody {
+    display: block;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors thead {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    padding: 11px 16px 11px 20px;
+    border-top: 0.5px solid var(--tp-hair);
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors tr:first-child {
+    border-top: 0;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors td {
+    display: block;
+    grid-column: 1;
+    padding: 0;
+    border: 0;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: -0.43px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(3):not(.tp-lvl) {
+    margin: 2px 0 0 22px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors td.tp-lvl {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    padding: 0 0 0 12px;
+  }
+  :where(html[data-page="topic"]) .tp-main .tp-card table.errors td.tp-lvl:nth-child(3) {
+    grid-row: 1 / span 2;
+  }
+  :where(html[data-page="topic"]) .tp-sheet[popover],
+  :where(html[data-page="topic"]) .tp-panel.panel[popover]:not([style*="top"]),
+  :where(html[data-page="topic"]) .tp-panel.panel[popover] {
+    inset: auto 8px 8px 8px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100dvh - 100px);
+    padding: 0;
+    border-radius: 40px;
+  }
+  :where(html[data-page="topic"]) .tp-sheet[popover]::before,
+  :where(html[data-page="topic"]) .tp-panel.panel[popover]::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    width: 36px;
+    height: 5px;
+    margin-left: -18px;
+    border-radius: 999px;
+    background: var(--tp-hair);
+  }
+  :where(html[data-page="topic"]) .tp-panel .tp-sheet-head {
+    padding: 20px 16px 12px 24px;
+  }
+  :where(html[data-page="topic"]) .tp-panel .seg,
+  :where(html[data-page="topic"]) .tp-panel .panel-note {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  :where(html[data-page="topic"]) .tp-panel .seg {
+    margin-bottom: 0;
+  }
+  :where(html[data-page="topic"]) .tp-panel .panel-note {
+    margin-bottom: 20px;
+  }
+  :where(html[data-page="topic"]) .tp-panel .seg {
+    max-width: none;
+    overflow: visible;
+  }
+  :where(html[data-page="topic"]) .tp-index[popover] {
+    inset: auto 8px 8px 8px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100dvh - 100px);
+  }
+  :where(html[data-page="topic"]) .tp-seg {
+    margin-bottom: 18px;
+  }
+}
+
+/* Phones with reduced motion: the bars appear and hide without sliding */
+@media screen and (max-width: 860px) and (prefers-reduced-motion: reduce) {
+  :where(html[data-page="topic"]) .tp-up,
+  :where(html[data-page="topic"]) .tp-top,
+  :where(html[data-page="topic"]) .tp-bar,
+  :where(html[data-page="topic"]) .tp-fade {
+    transition: none;
+  }
+}

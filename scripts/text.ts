@@ -1,6 +1,7 @@
 // Text and its marks (CONVENTIONS.md §12): what each mark is, how text folds into output with its
 // separators, and how to walk it.
 import { EXPLAIN, type Explain, type Localized, type Mark, say, slotName, type Text, type Variety } from "./lib.ts";
+import { JOINERS } from "./joiners.ts";
 
 // A localized value names explanation languages only; an empty one names none, and the check reports it.
 export const isLocalized = (value: object): value is Localized => Object.keys(value).every((k) => k in EXPLAIN);
@@ -34,20 +35,6 @@ export function markName(m: Mark): MarkName {
   return name as MarkName;
 }
 
-// What a list of pieces is joined with. Alternatives and examples whose pieces show a slash of their
-// own, IPA included, are joined with a middle dot, so no joining slash stands next to theirs; a list
-// that follows the form under discussion opens with its joiner.
-const JOINERS: Record<(typeof LIST_MARKS)[number], string> = {
-  alternatives: " / ",
-  examples: " / ",
-  mapping: " → ",
-  takes: " → ",
-  exchange: " — ",
-  pattern: " + ",
-  equivalence: " = ",
-  contrast: " ≠ ",
-};
-
 // ---------- Folding text ----------
 
 // How text becomes output: the HTML renderer and plain text share the separators and wrappers.
@@ -58,6 +45,11 @@ export interface TextOutput<T> {
   mark(name: MarkName, inner: T, m: Mark, c: FoldContext): T;
   // Neighbouring variants as one swap, where the context swaps them.
   swap?: (variants: T[]) => T;
+  // Drawn apart where an output has them, else text: a list's separator (" / "), a transcription in its
+  // slashes, a variety's name before its form in the language being learned ("US:").
+  joiner?: (sep: string) => T;
+  ipa?: (transcription: string) => T;
+  label?: (name: string) => T;
 }
 
 export interface FoldContext {
@@ -104,7 +96,7 @@ function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
   const inParens = (inner: T): T => out.join([out.text("("), inner, out.text(")")]);
   switch (name) {
     case "ipa":
-      return wrap(out.text(`/${(m as { ipa: string }).ipa}/`));
+      return wrap(out.ipa === undefined ? out.text(`/${(m as { ipa: string }).ipa}/`) : out.ipa((m as { ipa: string }).ipa));
     case "intonation":
       return wrap(out.text((m as { intonation: string }).intonation === "rise" ? "↗" : "↘"));
     case "gap":
@@ -124,7 +116,9 @@ function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
       const v = m as { variant: Text; variety: Variety };
       if (c.pick !== undefined && v.variety !== c.pick) return out.text("");
       if (c.swap === true) return wrap(fold(v.variant));
-      const inner = out.join([out.text(`${c.variety(v.variety)}: `), fold(v.variant)]);
+      const called = c.variety(v.variety);
+      const label = c.plain && out.label !== undefined ? out.join([out.label(`${called}:`), out.text(" ")]) : out.text(`${called}: `);
+      const inner = out.join([label, fold(v.variant)]);
       return wrap(c.plain ? inParens(inner) : inner);
     }
     case "alternatives":
@@ -140,11 +134,12 @@ function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
       const sep =
         (name === "alternatives" || name === "examples") && !sentences && items.some((i) => showsSlash(i, c)) ? " · " : JOINERS[name];
       const parts: T[] = [];
-      if ((m as { follows?: true }).follows === true) parts.push(out.text(sep.trimStart()));
+      const joiner = (s: string): T => (out.joiner === undefined ? out.text(s) : out.joiner(s));
+      if ((m as { follows?: true }).follows === true) parts.push(joiner(sep.trimStart()));
       items.forEach((item, n) => {
         if (n > 0) {
           const previous = items[n - 1];
-          parts.push(out.text(!sentences ? sep : previous !== undefined && /[.!?]$/.test(plainText(previous, c)) ? " " : ", "));
+          parts.push(!sentences ? joiner(sep) : out.text(previous !== undefined && /[.!?]$/.test(plainText(previous, c)) ? " " : ", "));
         }
         parts.push(fold(item, { sentences: false }));
       });

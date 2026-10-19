@@ -35,6 +35,8 @@ export interface PageOptions {
   // The page's own body in place of the top bar, the layout, the bottom bar and the panels: a page drawn
   // edge to edge in the frame of frame.css (data-frame).
   body?: string;
+  // Tags of the page's own at the end of its head.
+  headTags?: string[];
   // What the page is about, for its facts (context.ts PageFacts).
   about?: Pick<PageFacts, "name" | "lang" | "topic" | "section" | "sheet" | "range" | "minutes">;
   dev: boolean;
@@ -110,7 +112,7 @@ export function page(o: PageOptions, change: HeadChange = {}): string {
   <meta property="og:url" content="${canonical}">
   <link rel="stylesheet" href="/levels.css">
   <link rel="stylesheet" href="/style.css">
-  <script>${prefs(o.varieties !== undefined)}</script>${(change.tags ?? []).map((tag) => `\n  ${tag}`).join("")}
+  <script>${prefs(o.varieties !== undefined)}</script>${[...(o.headTags ?? []), ...(change.tags ?? [])].map((tag) => `\n  ${tag}`).join("")}
 </head>
 <body${hasBar ? ' class="has-bar"' : ""}>
   ${o.body ?? chrome(o, t, hasNav, hasBar, read)}
@@ -126,7 +128,7 @@ function chrome(o: PageOptions, t: Ui, hasNav: boolean, hasBar: boolean, read: s
   return `<header class="topbar">
     ${breadcrumb(o, t)}
     ${searchBox(o, t)}
-    <div class="tools">${chips({ explain: o.lang, level: o.level, varieties: o.varieties })}${read}${credits(o, false)}${themeButton(t, false)}</div>
+    <div class="tools">${chips({ explain: o.lang, varieties: o.varieties })}${read}${credits(o, false)}${themeButton(t, false)}</div>
   </header>
   <div class="layout${hasNav ? "" : " no-nav"}${filled(o.rail) ? " has-rail" : ""}">
     ${hasNav ? `<nav class="sidebar" id="sidebar">${o.nav}</nav><script>${NAV_SCROLL}</script>` : ""}

@@ -1,0 +1,106 @@
+/* Sheets and panels, continued */
+:where(html[data-page="topic"]) .tp-panel .seg button[data-set-variety] {
+  background: transparent;
+  color: var(--text);
+}
+:where(html[data-page="topic"]) .tp-panel .seg button[data-set-variety].on {
+  background: var(--tp-seg-on);
+  box-shadow: var(--tp-seg-shadow);
+}
+:where(html[data-page="topic"]) .tp-panel .panel-note {
+  margin: 10px 4px 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .tp-seg {
+  display: flex;
+  gap: 2px;
+  box-sizing: border-box;
+  margin: 0 0 18px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--hm-fill);
+}
+:where(html[data-page="topic"]) .tp-seg button {
+  flex: 1;
+  height: 32px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+}
+:where(html[data-page="topic"]) .tp-seg button.on {
+  background: var(--tp-seg-on);
+  box-shadow: var(--tp-seg-shadow);
+  font-weight: 600;
+}
+:where(html[data-page="topic"]) .tp-ix-h {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 8px 8px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: -0.45px;
+}
+:where(html[data-page="topic"]) .tp-ix-h:has(.badge) {
+  align-items: center;
+}
+:where(html[data-page="topic"]) .tp-ix-sec {
+  margin-bottom: 24px;
+}
+:where(html[data-page="topic"]) .tp-ix-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 22px;
+  background: var(--surface);
+  overflow: hidden;
+}
+:where(html[data-page="topic"]) .tp-ix-rows li + li::before {
+  content: "";
+  display: block;
+  height: 0.5px;
+  margin-left: 20px;
+  background: var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 16px 0 20px;
+}
+:where(html[data-page="topic"]) .tp-row:hover {
+  background: var(--hm-fill);
+}
+:where(html[data-page="topic"]) .tp-rn {
+  flex-grow: 1;
+  min-width: 0;
+  padding: 14px 0;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+:where(html[data-page="topic"]) .tp-row .tp-tick {
+  display: none;
+}
+:where(html[data-page="topic"]) .tp-row[aria-current] {
+  color: var(--accent);
+}
+:where(html[data-page="topic"]) .tp-row[aria-current] .tp-rn {
+  font-weight: 600;
+}
+:where(html[data-page="topic"]) .tp-row[aria-current] .tp-tick {
+  display: block;
+}
+:where(html[data-page="topic"]) .tp-row[aria-current] .tp-chev {
+  display: none;
+}

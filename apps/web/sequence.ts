@@ -11,10 +11,9 @@ import { refRange } from "../../scripts/levels.ts";
 import type { Track } from "./context.ts";
 import { listBadge, single } from "./parts.ts";
 import { stepLink } from "./path.ts";
-import { escapeHtml } from "./html.ts";
 import { topicUrl } from "./urls.ts";
 
-interface Entry {
+export interface Entry {
   ref: TopicRef;
   // The link's attributes: its address, and on the study path the step it opens.
   link: string;
@@ -25,7 +24,7 @@ interface Entry {
 }
 
 // Where a page leads at some levels of the filter.
-interface Around {
+export interface Around {
   at: Level[];
   prev: Entry | undefined;
   next: Entry | undefined;
@@ -51,12 +50,12 @@ function around(list: Entry[], i: number): Around[] {
 }
 
 // A grouping's rows for this page: by category one position, by level one per step of this topic.
-interface Placed {
+export interface Placed {
   attrs: string;
   around: Around;
 }
 
-function placed(track: Track, ref: TopicRef): Placed[] {
+export function placed(track: Track, ref: TopicRef): Placed[] {
   const { lang, explain } = track;
   const summary = (r: TopicRef): string => (r.topic ? plainText(textIn(r.topic.summary.lead, explain), reading(explain, false)) : "");
   const byCategory: Entry[] = track.written.flatMap((r) => {
@@ -94,50 +93,4 @@ function placed(track: Track, ref: TopicRef): Placed[] {
         : [],
     ),
   ];
-}
-
-// Previous and next, above the title and below the guide. A side with nowhere to go stays, inactive.
-export function pagers(track: Track, ref: TopicRef, where: "top" | "bottom"): string {
-  const { t } = track;
-  const off = (cls: string, label: string): string =>
-    `<span class="${cls} off" aria-disabled="true"><span class="dir">${escapeHtml(label)}</span></span>`;
-  const side = (cls: string, label: string, e: Entry | undefined): string =>
-    e
-      ? `<a class="${cls}" ${e.link}><span class="dir">${escapeHtml(label)}</span><span class="title">${escapeHtml(e.title)}</span></a>`
-      : off(cls, label);
-  const rows = placed(track, ref).map(({ attrs, around: a }) => {
-    const nextLabel = a.restart ? `${t.startOver} ↺` : `${t.next} →`;
-    return `<nav class="pager"${attrs} aria-label="${escapeHtml(t.topics)}">${side("pager-prev", `← ${t.previous}`, a.prev)}${side("pager-next", nextLabel, a.next)}</nav>`;
-  });
-  return `<div class="pagers ${where}">${rows.join("")}</div>`;
-}
-
-// Next in the bottom bar on phones: the same next page as the pagers, per grouping and level.
-export function barNext(track: Track, ref: TopicRef): string {
-  const { t } = track;
-  return placed(track, ref)
-    .flatMap(({ attrs, around: a }) => {
-      const e = a.next;
-      if (!e) return [];
-      const label = a.restart ? t.startOver : t.next;
-      return [
-        `<a class="bar-item bar-next" ${e.link}${attrs} title="${escapeHtml(e.title)}"><span class="bar-icon" aria-hidden="true">${a.restart ? "↺" : "→"}</span><span>${escapeHtml(label)}</span></a>`,
-      ];
-    })
-    .join("");
-}
-
-// Up next in the rail: the next page with its first sentence and range, or the first page to start over.
-export function upNext(track: Track, ref: TopicRef): string {
-  const { t } = track;
-  return placed(track, ref)
-    .flatMap(({ attrs, around: a }) => {
-      const e = a.next;
-      if (!e) return [];
-      return [
-        `<div class="up-next"${attrs}><h4>${escapeHtml(a.restart ? t.startOver : t.upNext)}</h4>` +
-          `<a class="next" ${e.link}><strong>${escapeHtml(e.title)}</strong><span class="summary">${escapeHtml(e.summary)}</span>${e.badge}</a></div>`,
-      ];
-    })
-    .join("");
 }

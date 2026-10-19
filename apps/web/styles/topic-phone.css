@@ -1,0 +1,123 @@
+/* Phones: the up link and a glass group at the top, a glass bar at the bottom holding Contents and Index on the
+   left and Previous and Next on the right; both hide while the reader scrolls down (html.bar-hidden) */
+@media screen and (max-width: 860px) {
+  :where(html[data-page="topic"]) .tp-wrap {
+    display: block;
+    padding: 76px 20px 140px;
+  }
+  :where(html[data-page="topic"]) .tp-rail {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-head .tabs {
+    width: 100%;
+  }
+  :where(html[data-page="topic"]) .tp-head h1 {
+    font-size: 28px;
+  }
+  :where(html[data-page="topic"]) .tp-up {
+    top: max(20px, calc(env(safe-area-inset-top) + 8px));
+  }
+  :where(html[data-page="topic"]) .tp-top {
+    top: max(20px, calc(env(safe-area-inset-top) + 8px));
+  }
+  :where(html[data-page="topic"]) .tp-ixgroup {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-top .tp-btn,
+  :where(html[data-page="topic"]) .tp-top .hm-read summary {
+    width: 50px;
+    padding: 0;
+  }
+  :where(html[data-page="topic"]) .tp-top .tp-variety {
+    width: auto;
+    padding: 0 12px;
+  }
+  :where(html[data-page="topic"]) .tp-top .tp-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  :where(html[data-page="topic"]) .tp-top .tp-variety .tp-label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
+  :where(html[data-page="topic"]) .tp-top .hm-menu {
+    top: calc(100% + 12px);
+    bottom: auto;
+    right: 0;
+  }
+  :where(html[data-page="topic"]) .tp-edge {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 25;
+    height: 56px;
+    background: linear-gradient(to bottom, var(--tp-edge) 40%, transparent);
+    pointer-events: none;
+  }
+  :where(html[data-page="topic"]) .tp-fade {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    height: 130px;
+    background: linear-gradient(to bottom, transparent, var(--tp-fade) 60%);
+    pointer-events: none;
+  }
+  :where(html[data-page="topic"]) .tp-bar {
+    left: 16px;
+    right: 16px;
+    bottom: max(30px, calc(env(safe-area-inset-bottom) + 8px));
+    justify-content: space-between;
+  }
+  :where(html[data-page="topic"]) .tp-bar-left {
+    display: flex;
+    height: 48px;
+  }
+  :where(html[data-page="topic"]) .tp-bar-left .tp-btn {
+    width: 52px;
+    padding: 0;
+  }
+  :where(html[data-page="topic"]) .tp-side {
+    width: 52px;
+    padding: 0;
+  }
+  :where(html[data-page="topic"]) .tp-pt:not(.tp-start) {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-div {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-restart {
+    width: auto;
+    padding: 0 16px;
+  }
+  :where(html[data-page="topic"]) .tp-restart .tp-pt {
+    display: inline;
+  }
+  :where(html[data-page="topic"]) .tp-up,
+  :where(html[data-page="topic"]) .tp-top,
+  :where(html[data-page="topic"]) .tp-bar {
+    transition: transform 0.25s ease;
+  }
+  html:where([data-page="topic"]).bar-hidden .tp-up,
+  html:where([data-page="topic"]).bar-hidden .tp-top {
+    transform: translateY(-120px);
+  }
+  html:where([data-page="topic"]).bar-hidden .tp-bar {
+    transform: translateY(calc(100% + 60px));
+  }
+  html:where([data-page="topic"]).bar-hidden .tp-fade {
+    opacity: 0;
+  }
+}

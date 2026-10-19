@@ -1,0 +1,168 @@
+/* A narrow lesson column (a phone, the right page of the unfolded Duo): a slot table becomes cards by tense and
+   sentence type, a table of five or more columns scrolls sideways with its first column fixed */
+@container (max-width: 640px) {
+  :where(html[data-page="topic"]) .tp-slot-wide {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-slot-cards {
+    display: block;
+  }
+  :where(html[data-page="topic"]) .tp-wide table {
+    min-width: 540px;
+  }
+  :where(html[data-page="topic"]) .tp-scroll :is(th, :where(html[data-page="topic"]) td):first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--surface);
+  }
+}
+:where(html[data-page="topic"]) .tp-scroll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 36px;
+  background: linear-gradient(to right, transparent, var(--surface));
+  pointer-events: none;
+  transition: opacity 0.15s;
+  display: none;
+}
+@container (max-width: 640px) {
+  :where(html[data-page="topic"]) .tp-scroll::after {
+    display: block;
+  }
+}
+:where(html[data-page="topic"]) .tp-scroll.tp-end-reached::after {
+  opacity: 0;
+}
+
+/* Wide screens: the lanes of a very wide page, the narrower layout of a tablet */
+@media (min-width: 861px) {
+  :where(html[data-page="topic"]) .tp-main .tp-card th:last-child,
+  :where(html[data-page="topic"]) .tp-main .tp-card td:last-child {
+    padding-right: 16px;
+  }
+}
+@media (min-width: 861px) and (max-width: 1099px) {
+  :where(html[data-page="topic"]) .tp-wrap {
+    grid-template-columns: 280px minmax(0, 1fr);
+    column-gap: 24px;
+    padding: 84px 32px 140px 20px;
+  }
+  :where(html[data-page="topic"]) .tp-bar {
+    left: 324px;
+    right: 32px;
+  }
+}
+@media (min-width: 1640px) {
+  :where(html[data-page="topic"]) .tp-wrap {
+    max-width: none;
+    padding-inline: 32px;
+  }
+}
+@container (min-width: 1200px) {
+  :where(html[data-page="topic"]) .tp-main .lanes {
+    max-width: none;
+  }
+}
+:where(html[data-page="topic"]) .tp-main .lanes {
+  --lane-col-gap: 32px;
+  max-width: 820px;
+}
+@container (min-width: 1200px) {
+  :where(html[data-page="topic"]) .tp-main .lanes {
+    max-width: none;
+  }
+}
+html:where([data-page="topic"])[data-view="cheatsheet"] .tp-main .sections.lanes {
+  display: block;
+  max-width: none;
+}
+
+/* Wide and short, an unfolded phone held horizontally: the contents on the left page, the lesson on the right,
+   the controls in a vertical bar along the trailing edge */
+@media (min-width: 900px) and (max-height: 800px) and (orientation: landscape) {
+  :where(html[data-page="topic"]) .tp-wrap {
+    grid-template-columns: 450px minmax(0, 1fr);
+    column-gap: 56px;
+    max-width: none;
+    padding: 30px 88px 120px;
+  }
+  :where(html[data-page="topic"]) .tp-head {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 14px;
+  }
+  :where(html[data-page="topic"]) .tp-head .tabs {
+    width: 100%;
+  }
+  :where(html[data-page="topic"]) .tp-rail {
+    grid-row: 2;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+  }
+  :where(html[data-page="topic"]) .tp-rail .up-next {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-main {
+    grid-row: 1 / span 2;
+    padding-top: 14px;
+  }
+  :where(html[data-page="topic"]) .tp-contents .toc a {
+    min-height: 40px;
+  }
+  :where(html[data-page="topic"]) .tp-top {
+    top: 20px;
+    right: 16px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  :where(html[data-page="topic"]) .tp-top .hm-group {
+    flex-direction: column;
+    height: auto;
+  }
+  :where(html[data-page="topic"]) .tp-top .tp-btn,
+  :where(html[data-page="topic"]) .tp-top .hm-read summary {
+    width: 52px;
+    height: 48px;
+    padding: 0;
+  }
+  :where(html[data-page="topic"]) .tp-top .tp-label,
+  :where(html[data-page="topic"]) .tp-top .hm-read summary span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  :where(html[data-page="topic"]) .tp-top .hm-menu {
+    top: 0;
+    right: calc(100% + 12px);
+  }
+  :where(html[data-page="topic"]) .tp-bar {
+    left: auto;
+    right: 16px;
+    bottom: 20px;
+  }
+  :where(html[data-page="topic"]) .tp-pager {
+    flex-direction: column;
+    height: auto;
+  }
+  :where(html[data-page="topic"]) .tp-side {
+    width: 52px;
+    height: 48px;
+    padding: 0;
+  }
+  :where(html[data-page="topic"]) .tp-pt:not(.tp-start) {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-div {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-ixgroup {
+    display: flex;
+  }
+}
