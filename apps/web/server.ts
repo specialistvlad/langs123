@@ -121,7 +121,7 @@ Bun.serve({
     } else if (info?.isFile() === true) {
       return fileResponse(path);
     }
-    // The nearest missing page up the path, as Cloudflare Pages serves it: /uk/… gets /uk/404.html.
+    // The nearest missing page up the path, as a static host serves it: /uk/… gets /uk/404.html.
     const folders = rel.split("/").slice(0, -1);
     for (let n = folders.length; n > 0; n--) {
       const near = join(OUT, ...folders.slice(0, n), "404.html");
