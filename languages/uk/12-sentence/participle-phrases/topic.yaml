@@ -108,6 +108,36 @@ cheatsheet:
             vi: ["cụm từ = mệnh đề với ", { alternatives: [{ term: яки́й }, { term: коли́ }] }]
           ex: { equivalence: [["лист, ", { target: напи́саний }, " олівце́м"], ["лист, ", { target: яки́й написа́ли }, " олівце́м"]] }
           tr: { en: { equivalence: ["the letter written in pencil", "the letter that was written in pencil"] }, es: { equivalence: ["la carta escrita a lápiz", "la carta que se escribió a lápiz"] }, pt: { equivalence: ["a carta escrita a lápis", "a carta que foi escrita a lápis"] }, fr: { equivalence: ["la lettre écrite au crayon", "la lettre qui a été écrite au crayon"] }, de: { equivalence: ["der mit Bleistift geschriebene Brief", "der Brief, der mit Bleistift geschrieben wurde"] }, it: { equivalence: ["la lettera scritta a matita", "la lettera che è stata scritta a matita"] }, pl: { equivalence: ["list napisany ołówkiem", "list, który został napisany ołówkiem"] }, tr: { equivalence: ["kurşun kalemle yazılmış mektup", "kurşun kalemle yazılan mektup"] }, id: { equivalence: ["surat tertulis dengan pensil", "surat yang ditulis dengan pensil"] }, vi: { equivalence: ["lá thư viết bằng bút chì", "lá thư mà người ta đã viết bằng bút chì"] } }
+        - level: B2
+          point: { alternatives: [-аний, -ений, -ований] }
+          rule:
+            uk: "дієприкметник від перехідних дієслів доконаного виду"
+          ex: { examples: [{ mapping: [зроби́ти, { target: зро́блений }] }, { mapping: [побудува́ти, { target: побудо́ваний }] }] }
+        - level: B2
+          point: { alternatives: [-ючись, -вшись] }
+          rule:
+            uk: "зворотні дієслова: частка -ся стає -сь"
+          ex: { examples: [{ mapping: [усміха́тися, { target: усміха́ючись }] }, { mapping: [усміхну́тися, { target: усміхну́вшись }] }] }
+        - level: B2
+          point: { uk: Виконавець }
+          rule:
+            uk: "виконавець дії стоїть в орудному відмінку"
+          ex: ["Буди́нок", { target: ", побудо́ваний на́шим дідо́м," }, " стої́ть бі́ля рі́чки."]
+        - level: C1
+          point: { uk: Місце }
+          rule:
+            uk: "дієприслівниковий зворот посередині й у кінці речення"
+          ex: ["Хло́пець", { target: ", підійшо́вши до вікна́," }, " відчини́в його́."]
+        - level: C1
+          point: { uk: Означення }
+          rule:
+            uk: "група означень після іменника: коми"
+          ex: ["Ми до́вго диви́лися на мо́ре", { target: ", спокі́йне, си́нє, безме́жне" }, "."]
+        - level: C2
+          point: { uk: "Час, спосіб, причина" }
+          rule:
+            uk: "значення звороту видно із змісту речення"
+          ex: [{ target: Збенте́жений слова́ми сестри́ }, ", Оле́г до́вго мовча́в."]
         - level: B1
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -244,6 +274,98 @@ sections:
               id: "Partisipel adverbial tidak berubah; aspek imperfektif menyatakan tindakan bersamaan, aspek perfektif menyatakan tindakan yang lebih dahulu."
               vi: "Phân từ trạng ngữ không biến đổi; thể chưa hoàn thành chỉ hành động đồng thời, thể hoàn thành chỉ hành động xảy ra trước."
 
+  - title: { uk: "Форма: пасивний дієприкметник" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Закінчення } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            form: { uk: [{ term: -аний }, ": від дієслів на ", { term: -ати }] }
+            ex: { examples: [{ mapping: [прочита́ти, { target: прочи́таний }] }, { mapping: [ви́брати, { target: ви́браний }] }] }
+          - level: B2
+            form: { uk: [{ term: -ений }, ": від дієслів на ", { term: -ити }, ", приголосний часто змінюється"] }
+            ex: { examples: [{ mapping: [зроби́ти, { target: зро́блений }] }, { mapping: [купи́ти, { target: ку́плений }] }] }
+          - level: B2
+            form: { uk: [{ term: -ований }, ": від дієслів на ", { term: -увати }] }
+            ex: { examples: [{ mapping: [побудува́ти, { target: побудо́ваний }] }, { mapping: [організува́ти, { target: організо́ваний }] }] }
+          - level: B2
+            form: { uk: [{ term: -тий }, ": від дієслів з односкладовим коренем"] }
+            ex: { examples: [{ mapping: [закри́ти, { target: закри́тий }] }, { mapping: [ви́мити, { target: ви́митий }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: "Пасивний дієприкметник утворюємо від перехідних дієслів доконаного виду."
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc, number: sg } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem, number: sg } }
+          - { key: pl, label: { uk: Множина }, features: { number: pl } }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: Називний }, masc: зро́блений, fem: зро́блена, pl: зро́блені }
+          - { level: B2, features: { case: gen }, case: { uk: Родовий }, masc: зро́бленого, fem: зро́бленої, pl: зро́блених }
+          - { level: B2, features: { case: dat }, case: { uk: Давальний }, masc: зро́бленому, fem: зро́бленій, pl: зро́бленим }
+          - { level: B2, features: { case: acc }, case: { uk: Знахідний }, masc: { alternatives: [зро́блений, зро́бленого] }, fem: зро́блену, pl: { alternatives: [зро́блені, зро́блених] } }
+          - { level: B2, features: { case: ins }, case: { uk: Орудний }, masc: зро́бленим, fem: зро́бленою, pl: зро́бленими }
+          - { level: B2, features: { case: loc }, case: { uk: Місцевий }, masc: зро́бленому, fem: зро́бленій, pl: зро́блених }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Середній рід має ", { term: зро́блене }, " у називному й знахідному, в інших відмінках — як чоловічий."]
+            ex: ["Завда́ння, ", { target: зро́блене }, " вчо́ра, лежи́ть на столі́."]
+
+  - title: { uk: "Форма: дієприслівник" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Утворення } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            form: { uk: ["недоконаний вид, перша дієвідміна: ", { alternatives: [{ term: -ючи }, { term: -учи }] }, " до основи третьої особи множини"] }
+            ex: { examples: [{ mapping: [чека́ти, чека́ють, { target: чека́ючи }] }, { mapping: [іти́, іду́ть, { target: ідучи́ }] }] }
+          - level: B2
+            form: { uk: ["недоконаний вид, друга дієвідміна: ", { alternatives: [{ term: -ячи }, { term: -ачи }] }, " до основи третьої особи множини"] }
+            ex: { examples: [{ mapping: [стоя́ти, стоя́ть, { target: стоячи́ }] }, { mapping: [сиді́ти, сидя́ть, { target: сидячи́ }] }] }
+          - level: B2
+            form: { uk: ["доконаний вид: ", { term: -ши }, " до чоловічої форми минулого часу"] }
+            ex: { examples: [{ mapping: [прочита́ти, прочита́в, { target: прочита́вши }] }, { mapping: [приї́хати, приї́хав, { target: приї́хавши }] }] }
+          - level: B2
+            form: { uk: ["зворотні дієслова: ", { alternatives: [{ term: -ючись }, { term: -вшись }] }, ", частка ", { term: -ся }, " стає ", { term: -сь }] }
+            ex: { examples: [{ mapping: [усміха́тися, { target: усміха́ючись }] }, { mapping: [усміхну́тися, { target: усміхну́вшись }] }] }
+
+  - title: { uk: Зворот у реченні }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Місце і склад звороту } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            use: { uk: "дієприкметниковий зворот: виконавець дії в орудному відмінку" }
+            ex: ["Буди́нок", { target: ", побудо́ваний на́шим дідо́м," }, " стої́ть бі́ля рі́чки."]
+          - level: B2
+            use: { uk: "дієприкметниковий зворот: залежні слова з часом, місцем, способом" }
+            ex: ["Лист", { target: ", отри́маний мину́лого ти́жня," }, " ще лежи́ть у су́мці."]
+          - level: C1
+            use: { uk: "дієприслівниковий зворот: посередині речення" }
+            ex: ["Хло́пець", { target: ", підійшо́вши до вікна́," }, " відчини́в його́."]
+          - level: C1
+            use: { uk: "дієприслівниковий зворот: у кінці речення" }
+            ex: ["Він сиді́в", { target: ", схили́вши го́лову на ру́ки" }, "."]
+          - level: C1
+            use: { uk: "група означень після іменника: відокремлена комами" }
+            ex: { examples: [["Ми до́вго диви́лися на мо́ре", { target: ", спокі́йне, си́нє, безме́жне" }, "."], ["Вона́ усміхну́лася ті́льки очи́ма", { target: ", стомле́ними, але́ щасли́вими" }, "."]] }
+
   - title: { uk: "Значення: зворот і підрядне речення", en: "Meaning: the phrase as a clause", es: "Significado: la construcción como oración", pt: "Significado: a construção como oração", fr: "Sens : le groupe comme proposition", de: "Bedeutung: die Konstruktion als Nebensatz", it: "Significato: il costrutto come proposizione", pl: "Znaczenie: wyrażenie jako zdanie podrzędne", tr: "Anlam: öbek ve yan cümle", id: "Arti: frasa sebagai klausa", vi: "Nghĩa: cụm từ như một mệnh đề" }
     role: use
     content:
@@ -280,6 +402,31 @@ sections:
               tr: ["Bir şey yapan kişi için Ukraynacada ", { term: яки́й }, " ile kurulan bir yan cümle kullanılır: ", { term: "студе́нт, яки́й чита́є" }, "."]
               id: ["Untuk orang yang sedang melakukan sesuatu, bahasa Ukraina memakai klausa dengan ", { term: яки́й }, ": ", { term: "студе́нт, яки́й чита́є" }, "."]
               vi: ["Khi nói về một người đang làm gì đó, tiếng Ukraina dùng mệnh đề với ", { term: яки́й }, ": ", { term: "студе́нт, яки́й чита́є" }, "."]
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Значення } }
+          - { key: ex, label: { uk: Зворот } }
+          - { key: clause, label: { uk: Підрядне речення } }
+        rows:
+          - level: C2
+            use: { uk: "час: коли?" }
+            ex: [{ target: Закі́нчивши робо́ту }, ", ми пішли́ додо́му."]
+            clause: [{ target: Коли́ ми закі́нчили робо́ту }, ", ми пішли́ додо́му."]
+          - level: C2
+            use: { uk: "спосіб: як?" }
+            ex: ["Вона́ йшла́ ву́лицею", { target: ", співа́ючи пі́сеньку" }, "."]
+            clause: ["Вона́ йшла́ ву́лицею", { target: " і співа́ла пі́сеньку" }, "."]
+          - level: C2
+            use: { uk: "причина: чому?" }
+            ex: [{ target: Збенте́жений слова́ми сестри́ }, ", Оле́г до́вго мовча́в."]
+            clause: ["Оле́г до́вго мовча́в, ", { target: бо слова́ сестри́ його́ збенте́жили }, "."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              uk: "Коли дію виконує не підмет, замість звороту ставимо підрядне речення, а сполучник вибираємо за значенням."
+            ex: { examples: [[{ target: Коли́ стемні́ло }, ", ми поверну́лися додо́му."], ["Ми залиши́лися вдо́ма, ", { target: бо йшо́в дощ }, "."]] }
 
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
@@ -289,3 +436,5 @@ sections:
           - { level: B1, wrong: "Я ба́чу студе́нта, чита́ючого кни́жку.", right: ["Я ба́чу студе́нта, ", { target: яки́й чита́є }, " кни́жку."], rule: { uk: ["дієприкметники на ", { term: -ючий }, " — калька з російської; уживаємо ", { term: яки́й }], en: ["participles in ", { term: -ючий }, " are a calque from Russian; use ", { term: яки́й }], es: ["los participios en ", { term: -ючий }, " son un calco del ruso; se usa ", { term: яки́й }], pt: ["os particípios em ", { term: -ючий }, " são um decalque do russo; usa-se ", { term: яки́й }], fr: ["les participes en ", { term: -ючий }, " sont un calque du russe ; on emploie ", { term: яки́й }], de: ["Partizipien auf ", { term: -ючий }, " sind eine Lehnübersetzung aus dem Russischen; man verwendet ", { term: яки́й }], it: ["i participi in ", { term: -ючий }, " sono un calco dal russo; si usa ", { term: яки́й }], pl: ["imiesłowy na ", { term: -ючий }, " to kalka z rosyjskiego; używamy ", { term: яки́й }], tr: [{ term: -ючий }, " ile biten sıfat-fiiller Rusçadan birebir çeviridir; ", { term: яки́й }, " kullanılır"], id: ["partisipel berakhiran ", { term: -ючий }, " adalah terjemahan harfiah dari bahasa Rusia; gunakan ", { term: яки́й }], vi: ["phân từ tận cùng ", { term: -ючий }, " là bản dịch sát từ tiếng Nga; hãy dùng ", { term: яки́й }] } }
           - { level: B1, wrong: "Поверну́вшись додо́му, поча́вся дощ.", right: [{ target: Коли́ ми поверну́лися }, " додо́му, поча́вся дощ."], rule: { uk: "дію дієприслівника виконує підмет; дощ не повертався додому", en: "the subject does the participle's action, and the rain did not come home", es: "el sujeto hace la acción del gerundio, y la lluvia no volvió a casa", pt: "o sujeito faz a ação do gerúndio, e a chuva não voltou para casa", fr: "le sujet fait l’action du gérondif, et la pluie n’est pas rentrée à la maison", de: "das Subjekt führt die Handlung des Adverbialpartizips aus, und der Regen ist nicht nach Hause zurückgekehrt", it: "il soggetto compie l'azione del gerundio, e la pioggia non è tornata a casa", pl: "czynność imiesłowu wykonuje podmiot, a deszcz nie wracał do domu", tr: "zarf-fiilin eylemini özne yapar; yağmur eve dönmedi", id: "subjek melakukan tindakan partisipel adverbial, dan hujan tidak pulang ke rumah", vi: "chủ ngữ thực hiện hành động của phân từ trạng ngữ, mà mưa thì không về nhà" } }
           - { level: B1, speakers: [en, es], wrong: "Поверну́вшись з екску́рсії ми пообі́дали.", right: [{ target: "Поверну́вшись з екску́рсії," }, " ми пообі́дали."], rule: { en: "a phrase at the start of the sentence ends with a comma", es: "la construcción al principio de la oración termina en coma" } }
+          - { level: B2, wrong: "Прочита́ючи лист, ма́ма всміхну́лася.", right: [{ target: Прочита́вши }, " лист, ма́ма всміхну́лася."], rule: { uk: ["від доконаного виду утворюємо дієприслівник на ", { term: -вши }, ", а не на ", { term: -ючи }] } }
+          - { level: C1, wrong: "Хло́пець підійшо́вши до вікна́ відчини́в його́.", right: ["Хло́пець", { target: ", підійшо́вши до вікна́," }, " відчини́в його́."], rule: { uk: "дієприслівниковий зворот посередині речення стоїть між двома комами" } }

@@ -203,6 +203,11 @@ cheatsheet:
             vi: "sinh cách, không có giới từ"
           ex: [{ target: Насту́пної середи́ }, " бу́де екску́рсія."]
           tr: { en: "There's a tour next Wednesday.", es: El próximo miércoles hay una excursión., pt: "Na próxima quarta-feira há uma excursão.", fr: "Mercredi prochain, il y a une excursion.", de: "Nächsten Mittwoch gibt es einen Ausflug.", it: "Mercoledì prossimo c'è un'escursione.", pl: "W przyszłą środę jest wycieczka.", tr: "Gelecek çarşamba bir gezi var.", id: "Rabu depan ada tur.", vi: "Thứ tư tuần tới có một chuyến tham quan." }
+        - level: B2
+          point: { uk: Дата після прийменника }
+          rule:
+            uk: ["порядкове число в родовому, після ", { term: пе́ред }, " в орудному"]
+          ex: ["Ви́ставка трива́є ", { target: ["до ", { date: два́дцять во́сьмого лю́того, value: "--02-28" }] }, "."]
         - level: A1
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -479,6 +484,58 @@ sections:
               id: ["Angka ordinal: ", { link: "Bilangan tingkat", to: uk.numerals.ordinals }, "."]
               vi: ["Số thứ tự: ", { link: "Số thứ tự", to: uk.numerals.ordinals }, "."]
 
+  - title: { uk: Дати й роки після прийменників }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { uk: Правило } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            rule: { uk: [{ alternatives: [{ term: з }, { term: від }] }, " і родовий: від якої дати?"] }
+            ex: { examples: [["Заня́ття почина́ються ", { target: ["з ", { date: пе́ршого сі́чня, value: "--01-01" }] }, "."], ["Зни́жка ді́є ", { target: ["від ", { date: пе́ршого ве́ресня, value: "--09-01" }] }, "."]] }
+          - level: B2
+            rule: { uk: [{ term: до }, " і родовий: до якої дати?"] }
+            ex: ["Ви́ставка трива́є ", { target: ["до ", { date: два́дцять во́сьмого лю́того, value: "--02-28" }] }, "."]
+          - level: B2
+            rule: { uk: [{ term: пі́сля }, " і родовий: після якої дати?"] }
+            ex: ["Ми поверне́мося ", { target: ["пі́сля ", { date: пе́ршого ве́ресня, value: "--09-01" }] }, "."]
+          - level: B2
+            rule: { uk: [{ term: пе́ред }, " і орудний порядкового числа: перед якою датою?"] }
+            ex: ["Ми приї́демо ", { target: ["пе́ред ", { date: пе́ршим сі́чня, value: "--01-01" }] }, "."]
+          - level: B2
+            rule: { uk: ["Рік: ", { alternatives: [{ term: з }, { term: до }, { term: пі́сля }] }, " і родовий — порядкове число й ", { term: ро́ку }] }
+            ex: { examples: [["Вона́ жила́ тут ", { target: ["до ", { date: дві ти́сячі двадця́того ро́ку, value: "2020" }] }, "."], [{ target: ["Пі́сля ", { date: двохти́сячного ро́ку, value: "2000" }] }, " мі́сто ду́же зміни́лося."], ["Вона́ працю́є тут ", { target: ["з ", { date: дві ти́сячі деся́того ро́ку, value: "2010" }] }, "."]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: "У складеному порядковому числі змінюється тільки останнє слово, а перші слова лишаються кількісними числівниками."
+
+  - title: { uk: "Яке число? Коли?" }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: date, label: { uk: Дата } }
+          - { key: nom, label: { uk: "Яке число?" }, features: { case: nom } }
+          - { key: gen, label: { uk: "Коли?" }, features: { case: gen } }
+        rows:
+          - level: B2
+            date: "1.09"
+            nom: ["Сього́дні ", { target: { date: пе́рше ве́ресня, value: "--09-01" } }, "."]
+            gen: ["Шко́ла почина́ється ", { target: { date: пе́ршого ве́ресня, value: "--09-01" } }, "."]
+          - level: B2
+            date: "28.02"
+            nom: ["Сього́дні ", { target: { date: два́дцять во́сьме лю́того, value: "--02-28" } }, "."]
+            gen: ["Ле́кція бу́де ", { target: { date: два́дцять во́сьмого лю́того, value: "--02-28" } }, "."]
+          - level: B2
+            date: "31.12"
+            nom: ["Сього́дні ", { target: { date: три́дцять пе́рше гру́дня, value: "--12-31" } }, "."]
+            gen: ["Вечі́рка бу́де ", { target: { date: три́дцять пе́ршого гру́дня, value: "--12-31" } }, "."]
+
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -490,3 +547,6 @@ sections:
           - { level: A2, wrong: Я народи́вся деся́те бе́резня., right: ["Я народи́вся ", { target: деся́того }, " бе́резня."], rule: { uk: ["коли? — дата в родовому відмінку: ", { term: деся́того }], en: ["when? puts the date in the genitive: ", { term: деся́того }], es: ["¿cuándo? pone la fecha en genitivo: ", { term: деся́того }], pt: ["quando? põe a data no genitivo: ", { term: деся́того }], fr: ["quand ? met la date au génitif : ", { term: деся́того }], de: ["wann? setzt das Datum in den Genitiv: ", { term: деся́того }], it: ["quando? mette la data al genitivo: ", { term: деся́того }], pl: ["kiedy? — data w dopełniaczu: ", { term: деся́того }], tr: ["ne zaman? sorusunda tarih tamlayan hâlinde olur: ", { term: деся́того }], id: ["kapan? menempatkan tanggal dalam kasus genitif: ", { term: деся́того }], vi: ["khi nào? đặt ngày tháng ở sở hữu cách: ", { term: деся́того }] } }
           - { level: A2, wrong: деся́того бе́резень, right: ["деся́того ", { target: бе́резня }], rule: { uk: "місяць у даті стоїть у родовому відмінку", en: "the month of a date takes the genitive", es: "el mes de una fecha va en genitivo", pt: "o mês de uma data leva o genitivo", fr: "le mois d’une date se met au génitif", de: "der Monat eines Datums steht im Genitiv", it: "il mese di una data va al genitivo", pl: "miesiąc w dacie stoi w dopełniaczu", tr: "tarihteki ay tamlayan hâlinde olur", id: "bulan dalam tanggal memakai kasus genitif", vi: "tháng trong ngày tháng ở sinh cách" } }
           - { level: A2, speakers: [en, es], wrong: Я народи́вся в деся́того бе́резня., right: ["Я народи́вся ", { target: деся́того бе́резня }, "."], rule: { en: "a date takes no preposition, unlike “on”", es: "una fecha no lleva preposición" } }
+          - { level: B2, wrong: до два́дцять во́сьме лю́того, right: ["до два́дцять ", { target: во́сьмого }, " лю́того"], rule: { uk: "після прийменника останнє слово порядкового числа стоїть у родовому відмінку" } }
+          - { level: B2, wrong: пе́ред пе́ршого сі́чня, right: [{ target: пе́ред пе́ршим }, " сі́чня"], rule: { uk: [{ term: пе́ред }, " вимагає орудного відмінка"] } }
+          - { level: B2, wrong: Сього́дні два́дцять во́сьмого лю́того., right: ["Сього́дні два́дцять ", { target: во́сьме }, " лю́того."], rule: { uk: "Яке число? — називний відмінок, середній рід" } }

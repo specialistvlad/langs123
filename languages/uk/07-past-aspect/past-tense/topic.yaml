@@ -84,6 +84,16 @@ cheatsheet:
           rule: { uk: "обидва види мають минулий час", en: "both aspects have a past tense", es: "los dos aspectos tienen pasado", pt: "os dois aspectos têm passado", fr: "les deux aspects ont un passé", de: "beide Aspekte haben eine Vergangenheit", it: "entrambi gli aspetti hanno il passato", pl: "oba aspekty mają czas przeszły", tr: "her iki görünüşün de geçmiş zamanı vardır", id: "kedua aspek punya kala lampau", vi: "cả hai thể đều có thì quá khứ" }
           ex: { contrast: [["Я ", { target: чита́в }, " кни́жку"], ["Я ", { target: прочита́в }, " кни́жку"]] }
           tr: { en: { contrast: ["I was reading the book", "I read the book to the end"] }, es: { contrast: ["Leía el libro", "Terminé de leer el libro"] }, pt: { contrast: ["Eu lia o livro", "Eu li o livro até o fim"] }, fr: { contrast: ["Je lisais le livre", "J’ai lu le livre jusqu’au bout"] }, de: { contrast: ["Ich habe in dem Buch gelesen", "Ich habe das Buch zu Ende gelesen"] }, it: { contrast: ["Leggevo il libro", "Ho letto il libro fino alla fine"] }, pl: { contrast: ["Czytałem książkę", "Przeczytałem książkę do końca"] }, tr: { contrast: ["Kitabı okuyordum", "Kitabı sonuna kadar okudum"] }, id: { contrast: ["Saya sedang membaca buku itu", "Saya membaca buku itu sampai habis"] }, vi: { contrast: ["Tôi đang đọc cuốn sách", "Tôi đã đọc hết cuốn sách"] } }
+        - level: B2
+          point: { uk: "Стан, результат: -нути" }
+          rule:
+            uk: { mapping: [{ term: зви́кнути }, { alternatives: [{ term: звик }, { term: зви́кла }] }] }
+          ex: ["Ми шви́дко ", { target: зви́кли }, " до шу́му."]
+        - level: B2
+          point: { uk: "Одноразова дія: -нути" }
+          rule:
+            uk: { mapping: [{ term: кри́кнути }, { alternatives: [{ term: кри́кнув }, { term: кри́кнула }] }] }
+          ex: ["Він гу́чно ", { target: кри́кнув }, "."]
         - level: A1
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule: { uk: ["жінка каже ", { term: я була́ }], en: ["a woman says ", { term: я була́ }], es: ["una mujer dice ", { term: я була́ }], pt: ["uma mulher diz ", { term: я була́ }], fr: ["une femme dit ", { term: я була́ }], de: ["eine Frau sagt ", { term: я була́ }], it: ["una donna dice ", { term: я була́ }], pl: ["kobieta mówi ", { term: я була́ }], tr: ["bir kadın ", { term: я була́ }, " der"], id: ["seorang perempuan berkata ", { term: я була́ }], vi: ["phụ nữ nói ", { term: я була́ }] }
@@ -257,6 +267,38 @@ sections:
               vi: ["Động từ có thân tận cùng bằng phụ âm không có ", { term: -в }, " ở giống đực: ", { term: ніс }, ", ", { term: міг }, ", ", { term: допомі́г }, "."]
             ex: ["Друг ", { target: допомі́г }, " мені́."]
             tr: { en: "My friend helped me.", es: "Mi amigo me ayudó.", pt: "Meu amigo me ajudou.", fr: "Mon ami m’a aidé.", de: "Mein Freund hat mir geholfen.", it: "Il mio amico mi ha aiutato.", pl: "Przyjaciel mi pomógł.", tr: "Arkadaşım bana yardım etti.", id: "Teman saya membantu saya.", vi: "Bạn tôi đã giúp tôi." }
+
+  - title: { uk: "Дієслова на -нути" }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: verb, label: { uk: Дієслово } }
+          - { key: masc, label: { uk: "Чоловічий рід" }, features: { number: sg, gender: masc } }
+          - { key: fem, label: { uk: "Жіночий рід" }, features: { number: sg, gender: fem } }
+          - { key: pl, label: { uk: Множина }, features: { number: pl } }
+        rows:
+          - { level: B2, verb: зви́кнути, masc: звик, fem: зви́кла, pl: зви́кли }
+          - { level: B2, verb: зни́кнути, masc: зник, fem: зни́кла, pl: зни́кли }
+          - { level: B2, verb: заме́рзнути, masc: заме́рз, fem: заме́рзла, pl: заме́рзли }
+          - { level: B2, verb: кри́кнути, masc: кри́кнув, fem: кри́кнула, pl: кри́кнули }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Дієслова стану чи результату втрачають ", { term: -ну- }, " у минулому часі: ", { mapping: [{ term: зви́кнути }, { term: звик }] }, ", ", { mapping: [{ term: зни́кнути }, { term: зник }] }, "."]
+            ex: ["Усе́ ", { target: зни́кло }, " за мить."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["У майбутньому часі ", { term: -ну- }, " залишається: ", { alternatives: [{ term: зви́кну }, { term: зви́кнеш }, { term: зви́кне }] }, "."]
+            ex: ["Ти шви́дко ", { target: зви́кнеш }, " до цьо́го клі́мату."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["Дієслова одноразової дії зберігають ", { term: -ну- }, " і в минулому часі: ", { mapping: [{ term: кри́кнути }, { alternatives: [{ term: кри́кнув }, { term: кри́кнула }] }] }, "."]
+            ex: ["Вона́ гу́чно ", { target: кри́кнула }, "."]
 
   - title: { uk: Вживання, en: Use, es: Uso, pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" }
     role: use

@@ -1,0 +1,240 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.pronouns.defining-pronouns
+lang: uk
+kind: grammar
+tags: [pronouns, весь, кожен, сам]
+concepts: [defining-pronouns]
+related: [uk.pronouns.demonstratives, uk.pronouns.possessives, uk.pronouns.negative-pronouns, uk.adjectives-adverbs.adjective-declension, uk.numerals.numbers-with-nouns]
+status: { uk: draft }
+
+title: { uk: "Означальні займенники: весь, кожен, сам", en: "Defining Pronouns: весь, кожен, сам" }
+summary:
+  lead:
+    uk: [{ term: Весь }, " називає ціле, ", { term: ко́жен }, " — кожну окрему особу чи річ, ", { term: сам }, " — виконавця без помічників, ", { term: і́нший }, " — не цього."]
+  rule:
+    uk: "Означальні займенники узгоджуються з іменником у роді, числі й відмінку:"
+  ex: { examples: [[{ target: Весь }, " день ішо́в дощ."], [{ target: Ко́жна }, " студе́нтка ма́є кни́жку."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт } }
+        - { key: rule, label: { uk: Правило } }
+        - { key: ex, label: { uk: Приклад } }
+      rows:
+        - level: C1
+          point: { uk: Весь }
+          rule: { uk: { alternatives: [{ term: весь }, { term: вся }, { term: все }, { term: всі }] } }
+          ex: ["Ми чека́ли ", { target: весь день }, "."]
+        - level: C1
+          point: { uk: Кожен }
+          rule: { uk: { alternatives: [{ term: ко́жен }, { term: ко́жний }] } }
+          ex: ["Ми зустріча́ємося ", { target: ко́жні }, " два ти́жні."]
+        - level: C1
+          point: { uk: Всякий }
+          rule: { uk: [{ term: вся́кий }, " відмінюється, як твердий прикметник"] }
+          ex: ["Він розповіда́є ", { target: вся́кі }, " істо́рії."]
+        - level: C1
+          point: { uk: Сам }
+          rule: { uk: { alternatives: [{ term: сам }, { term: сама́ }, { term: саме́ }, { term: самі́ }] } }
+          ex: ["Вона́ ", { target: сама́ }, " приготува́ла вече́рю."]
+        - level: C1
+          point: { uk: Самий }
+          rule: { uk: { alternatives: [{ term: той са́мий }, { term: са́мий центр }] } }
+          ex: ["Ми купи́ли ", { target: той са́мий }, " телефо́н."]
+        - level: C1
+          point: { uk: Інший }
+          rule: { uk: [{ term: і́нший }, " відмінюється, як твердий прикметник"] }
+          ex: ["Покажи́ мені́ ", { target: і́нший }, " ко́лір."]
+        - level: C1
+          point: { uk: Пастка }
+          rule: { uk: "рід іменника визначає форму" }
+          ex: [{ target: Ко́жна }, " жі́нка ма́є пра́во."]
+
+sections:
+  - title: { uk: Огляд }
+    role: overview
+    content:
+      - type: paradigm
+        columns:
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc, number: sg } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem, number: sg } }
+          - { key: neut, label: { uk: Середній рід }, features: { gender: neut, number: sg } }
+          - { key: pl, label: { uk: Множина }, features: { number: pl } }
+        rows:
+          - { level: C1, features: { case: nom }, masc: весь, fem: вся, neut: все, pl: всі }
+          - { level: C1, features: { case: nom }, masc: вся́кий, fem: вся́ка, neut: вся́ке, pl: вся́кі }
+          - { level: C1, features: { case: nom }, masc: { alternatives: [ко́жен, ко́жний] }, fem: ко́жна, neut: ко́жне, pl: ко́жні }
+          - { level: C1, features: { case: nom }, masc: сам, fem: сама́, neut: саме́, pl: самі́ }
+          - { level: C1, features: { case: nom }, masc: са́мий, fem: са́ма, neut: са́ме, pl: са́мі }
+          - { level: C1, features: { case: nom }, masc: і́нший, fem: і́нша, neut: і́нше, pl: і́нші }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: "Означальний займенник стоїть перед іменником і має його рід, число й відмінок:"
+            ex: ["Ми прочита́ли ", { target: всю }, " кни́жку."]
+
+  - title: { uk: "Форма: відмінки весь" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: mn, label: { uk: "Чоловічий і середній рід" } }
+          - { key: fem, label: { uk: Жіночий рід } }
+          - { key: pl, label: { uk: Множина } }
+        rows:
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, mn: всьо́го, fem: всіє́ї, pl: всіх }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, mn: всьо́му, fem: всій, pl: всім }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, mn: { alternatives: [весь, всьо́го, все] }, fem: всю, pl: { alternatives: [всі, всіх] } }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, mn: всім, fem: всіє́ю, pl: всіма́ }
+          - { level: C1, features: { case: loc }, case: { uk: Місцевий }, mn: { alternatives: [на всьо́му, на всім] }, fem: на всій, pl: на всіх }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: весь }, " у знахідному для неістот має форму називного:"]
+            ex: { examples: [["Я працюва́в ", { target: весь день }, "."], ["Вона́ чека́ла ", { target: весь рік }, "."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: все }, " означає «усе», а ", { term: всі }, " — «усі люди»:"]
+            ex: { examples: [["Я ", { target: все }, " зрозумі́в."], [{ target: Всі }, " вже прийшли́."]] }
+
+  - title: { uk: "Форма: відмінки кожен" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: mn, label: { uk: "Чоловічий і середній рід" } }
+          - { key: fem, label: { uk: Жіночий рід } }
+          - { key: pl, label: { uk: Множина } }
+        rows:
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, mn: ко́жного, fem: ко́жної, pl: ко́жних }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, mn: ко́жному, fem: ко́жній, pl: ко́жним }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, mn: { alternatives: [ко́жен, ко́жного, ко́жне] }, fem: ко́жну, pl: { alternatives: [ко́жні, ко́жних] } }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, mn: ко́жним, fem: ко́жною, pl: ко́жними }
+          - { level: C1, features: { case: loc }, case: { uk: Місцевий }, mn: { alternatives: [на ко́жному, на ко́жнім] }, fem: на ко́жній, pl: на ко́жних }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: ["Називний має дві форми, ", { term: ко́жен }, " і ", { term: ко́жний }, "; в інших відмінках форма одна:"]
+            ex: { examples: [[{ target: Ко́жен }, " студе́нт ма́є ключ."], [{ target: Ко́жний }, " студе́нт ма́є ключ."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: ко́жні }, " стоїть із числівником або з іменником, що має лише множину:"]
+            ex: { examples: [["Ми зустріча́ємося ", { target: ко́жні }, " два ти́жні."], [{ target: Ко́жні }, " вихідні́ ми ї́демо до бабу́сі."]] }
+
+  - title: { uk: "Форма: відмінки сам" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: mn, label: { uk: "Чоловічий і середній рід" } }
+          - { key: fem, label: { uk: Жіночий рід } }
+          - { key: pl, label: { uk: Множина } }
+        rows:
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, mn: само́го, fem: само́ї, pl: сами́х }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, mn: само́му, fem: самі́й, pl: сами́м }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, mn: { alternatives: [само́го, саме́] }, fem: саму́, pl: { alternatives: [самі́, сами́х] } }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, mn: сами́м, fem: само́ю, pl: сами́ми }
+          - { level: C1, features: { case: loc }, case: { uk: Місцевий }, mn: { alternatives: [на само́му, на самі́м] }, fem: на самі́й, pl: на сами́х }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: сам }, " підкреслює, що дію виконує ця особа, без чужої допомоги:"]
+            ex: ["Вона́ ", { target: сама́ }, " приготува́ла вече́рю."]
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: сам }, " відмінюється за іменником, який підсилює:"]
+            ex: ["Ми розмовля́ли з ", { target: сами́м }, " дире́ктором."]
+
+  - title: { uk: "Форма: всякий, самий, інший" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: any, label: { term: вся́кий } }
+          - { key: very, label: { term: са́мий } }
+          - { key: other, label: { term: і́нший } }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: Називний }, any: { alternatives: [вся́кий, вся́ке] }, very: { alternatives: [са́мий, са́ме] }, other: { alternatives: [і́нший, і́нше] } }
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, any: вся́кого, very: са́мого, other: і́ншого }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, any: вся́кому, very: са́мому, other: і́ншому }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, any: { alternatives: [вся́кий, вся́кого, вся́ке] }, very: { alternatives: [са́мий, са́мого, са́ме] }, other: { alternatives: [і́нший, і́ншого, і́нше] } }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, any: вся́ким, very: са́мим, other: і́ншим }
+          - { level: C1, features: { case: loc }, case: { uk: Місцевий }, any: { alternatives: [на вся́кому, на вся́кім] }, very: { alternatives: [на са́мому, на са́мім] }, other: { alternatives: [на і́ншому, на і́ншім] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: вся́кий }, " значить «будь-який, різний» і стоїть перед іменником:"]
+            ex: ["Він розповіда́є ", { target: вся́кі }, " істо́рії."]
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: са́мий }, " значить «саме той» і стоїть у сполуках ", { term: той са́мий }, " і ", { term: са́мий центр }, ":"]
+            ex: { examples: [["Ми купи́ли ", { target: той са́мий }, " телефо́н."], ["Він живе́ в ", { target: са́мому }, " це́нтрі."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: і́нший }, " значить «не цей»:"]
+            ex: ["Покажи́ мені́ ", { target: і́нший }, " ко́лір."]
+          - type: rule
+            level: C1
+            text:
+              uk: ["Жіночі й множинні форми змінюються, як у твердого прикметника: ", { link: Відмінювання прикметників, to: uk.adjectives-adverbs.adjective-declension }, "."]
+            ex: ["Це зо́всім ", { target: і́нша }, " істо́рія."]
+
+  - title: { uk: "Порівняння: весь, кожен, всякий, сам, інший" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: word, label: { uk: Займенник } }
+          - { key: meaning, label: { uk: Значення } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C1
+            word: { term: весь }
+            meaning: { uk: "усе, цілком" }
+            ex: [{ target: Весь }, " клас пішо́в на екску́рсію."]
+          - level: C1
+            word: { term: ко́жен }
+            meaning: { uk: "кожна окрема особа чи річ" }
+            ex: [{ target: Ко́жен }, " зна́є свою́ робо́ту."]
+          - level: C1
+            word: { term: вся́кий }
+            meaning: { uk: "будь-який, різний" }
+            ex: ["У парк прихо́дять ", { target: вся́кі }, " лю́ди."]
+          - level: C1
+            word: { term: сам }
+            meaning: { uk: "без чужої допомоги, особисто" }
+            ex: ["Він ", { target: сам }, " ремонту́є маши́ну."]
+          - level: C1
+            word: { term: і́нший }
+            meaning: { uk: "не цей, відмінний" }
+            ex: ["Дай мені́ ", { target: і́ншу }, " ча́шку."]
+
+  - title: { uk: Типові помилки }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: C1, wrong: "Я чека́в все день.", right: ["Я чека́в ", { target: весь день }, "."], rule: { uk: ["день — чоловічий рід: ", { term: весь }] } }
+          - { level: C1, wrong: "Ко́жен жі́нка ма́є пра́во.", right: [{ target: Ко́жна }, " жі́нка ма́є пра́во."], rule: { uk: ["жінка — жіночий рід: ", { term: ко́жна }] } }
+          - { level: C1, wrong: "Ка́жний день я бі́гаю.", right: [{ target: Ко́жен }, " день я бі́гаю."], rule: { uk: ["«кажний» — суржик; правильно ", { term: ко́жен }, " або ", { term: ко́жний }] } }

@@ -172,6 +172,21 @@ cheatsheet:
             vi: ["đối cách = sinh cách: ", { term: двох }]
           ex: ["Я ба́чу ", { target: двох студе́нтів }, "."]
           tr: { en: "I can see two students.", es: "Veo a dos estudiantes.", pt: "Vejo dois estudantes.", fr: "Je vois deux étudiants.", de: "Ich sehe zwei Studenten.", it: "Vedo due studenti.", pl: "Widzę dwóch studentów.", tr: "İki öğrenci görüyorum.", id: "Saya melihat dua mahasiswa.", vi: "Tôi thấy hai sinh viên." }
+        - level: B2
+          point: { uk: "П’ять і більше: відмінки" }
+          rule:
+            uk: ["речі — ", { term: "п’яти́" }, ", люди — ", { term: "п’ятьо́х" }, "; складені — кожне слово"]
+          ex: ["Ми поговори́ли з ", { target: "п’ятьма́ студе́нтами" }, "."]
+        - level: C1
+          point: { uk: Складені із сотнями }
+          rule:
+            uk: ["змінюється й сотня: ", { mapping: ["три́ста", "трьохсо́т"] }]
+          ex: ["Дя́куємо ", { target: "трьомста́м вісімдесяти́ п’яти́ уча́сникам" }, "."]
+        - level: C2
+          point: { uk: Усі відмінки }
+          rule:
+            uk: [{ term: "двохсо́т" }, ", ", { term: "двомаста́ми" }, ", ", { term: "багатьма́" }, ", ", { term: "кількадесятьма́" }]
+          ex: ["Він розмовля́в з ", { target: "кількадесятьма́ студе́нтами" }, "."]
         - level: A2
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -348,6 +363,181 @@ sections:
             ex: ["Я запроси́в ", { target: трьох коле́г }, "."]
             tr: { en: "I invited three colleagues.", es: "Invité a tres colegas.", pt: "Convidei três colegas.", fr: "J’ai invité trois collègues.", de: "Ich habe drei Kollegen eingeladen.", it: "Ho invitato tre colleghi.", pl: "Zaprosiłem trzech kolegów.", tr: "Üç iş arkadaşını davet ettim.", id: "Saya mengundang tiga rekan kerja.", vi: "Tôi đã mời ba đồng nghiệp." }
 
+  - title: { uk: Відмінювання кількісних числівників }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: five, label: п’ять }
+          - { key: fifty, label: п’ятдеся́т }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: "Називний" }, five: "п’ять", fifty: "п’ятдеся́т" }
+          - { level: B2, features: { case: gen }, case: { uk: "Родовий" }, five: { alternatives: ["п’яти́", "п’ятьо́х"] }, fifty: { alternatives: ["п’ятдесяти́", "п’ятдесятьо́х"] } }
+          - { level: B2, features: { case: dat }, case: { uk: "Давальний" }, five: { alternatives: ["п’яти́", "п’ятьо́м"] }, fifty: { alternatives: ["п’ятдесяти́", "п’ятдесятьо́м"] } }
+          - { level: B2, features: { case: acc }, case: { uk: "Знахідний" }, five: { alternatives: ["п’ять", "п’ятьо́х"] }, fifty: { alternatives: ["п’ятдеся́т", "п’ятдесятьо́х"] } }
+          - { level: B2, features: { case: ins }, case: { uk: "Орудний" }, five: { alternatives: ["п’ятьма́", "п’ятьома́"] }, fifty: { alternatives: ["п’ятдесятьма́", "п’ятдесятьома́"] } }
+          - { level: B2, features: { case: loc }, case: { uk: "Місцевий" }, five: { alternatives: ["на п’яти́", "на п’ятьо́х"] }, fifty: { alternatives: ["на п’ятдесяти́", "на п’ятдесятьо́х"] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Форми на ", { term: "-и́" }, " стоять з назвами речей і людей, форми на ", { term: "-ьо́х" }, ", ", { term: "-ьо́м" }, " — лише з назвами людей:"]
+            ex: { examples: [["для ", { target: "п’яти́ столі́в" }], ["для ", { target: "п’ятьо́х студе́нтів" }]] }
+          - type: rule
+            level: B2
+            text:
+              uk: ["Числівники 6–20, 30 і 60–80 змінюються за зразком ", { term: "п’ять" }, " і ", { term: "п’ятдеся́т" }, ":"]
+            ex: { examples: [["із ", { target: "шістьма́ лі́карями" }], ["у ", { target: "тридцяти́ краї́нах" }], ["без ", { target: "чотирнадцяти́" }, " хвили́н"]] }
+          - type: rule
+            level: B2
+            text:
+              uk: ["Числівники ", { term: "сім" }, " і ", { term: "ві́сім" }, " змінюють основу:"]
+            ex: { examples: [["до ", { target: "семи́" }, " годи́н"], ["до ", { target: "восьми́" }, " годи́н"]] }
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: forty, label: со́рок }
+          - { key: ninety, label: дев’яно́сто }
+          - { key: hundred, label: сто }
+        rows:
+          - { level: B2, features: { case: [nom, acc] }, case: { uk: "Називний, знахідний" }, forty: "со́рок", ninety: "дев’яно́сто", hundred: "сто" }
+          - { level: B2, features: { case: [gen, dat, ins, loc] }, case: { uk: "Родовий, давальний, орудний, місцевий" }, forty: "сорока́", ninety: "дев’яно́ста", hundred: "ста" }
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: a, label: два́дцять два }
+          - { key: b, label: со́рок п’ять }
+          - { key: c, label: сто три }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: "Називний" }, a: "два́дцять два", b: "со́рок п’ять", c: "сто три" }
+          - { level: B2, features: { case: gen }, case: { uk: "Родовий" }, a: "двадцяти́ двох", b: "сорока́ п’яти́", c: "ста трьох" }
+          - { level: B2, features: { case: dat }, case: { uk: "Давальний" }, a: "двадцяти́ двом", b: "сорока́ п’яти́", c: "ста трьом" }
+          - { level: B2, features: { case: acc }, case: { uk: "Знахідний" }, a: "два́дцять два", b: "со́рок п’ять", c: "сто три" }
+          - { level: B2, features: { case: ins }, case: { uk: "Орудний" }, a: "двадцятьма́ двома́", b: "сорока́ п’ятьма́", c: "ста трьома́" }
+          - { level: B2, features: { case: loc }, case: { uk: "Місцевий" }, a: "на двадцяти́ двох", b: "на сорока́ п’яти́", c: "на ста трьох" }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: "У складеному числівнику змінюється кожне слово:"
+            ex: { examples: [["до ", { target: "двадцяти́ восьми́" }, " ро́ків"], ["із ", { target: "шістдесятьма́ двома́" }, " студе́нтами"], ["без ", { target: "сорока́ одного́" }, " студе́нта"], ["до ", { target: "ста семи́" }, " гри́вень"]] }
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: how, label: скі́льки }
+          - { key: that, label: сті́льки }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: "Називний" }, how: "скі́льки", that: "сті́льки" }
+          - { level: B2, features: { case: gen }, case: { uk: "Родовий" }, how: "скілько́х", that: "стілько́х" }
+          - { level: B2, features: { case: dat }, case: { uk: "Давальний" }, how: "скілько́м", that: "стілько́м" }
+          - { level: B2, features: { case: acc }, case: { uk: "Знахідний" }, how: { alternatives: ["скі́льки", "скілько́х"] }, that: { alternatives: ["сті́льки", "стілько́х"] } }
+          - { level: B2, features: { case: ins }, case: { uk: "Орудний" }, how: "скількома́", that: "стількома́" }
+          - { level: B2, features: { case: loc }, case: { uk: "Місцевий" }, how: "на скілько́х", that: "на стілько́х" }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["У непрямих відмінках іменник після ", { term: "скі́льки" }, " і ", { term: "сті́льки" }, " стоїть у тому самому відмінку:"]
+            ex: { exchange: [["У ", { target: "скілько́х" }, " краї́нах ти був?"], "У шести́."] }
+
+  - title: { uk: Складені числівники із сотнями }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: h, label: три́ста }
+          - { key: c, label: три́ста вісімдеся́т п’ять }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: "Називний" }, h: "три́ста", c: "три́ста вісімдеся́т п’ять" }
+          - { level: C1, features: { case: gen }, case: { uk: "Родовий" }, h: "трьохсо́т", c: "трьохсо́т вісімдесяти́ п’яти́" }
+          - { level: C1, features: { case: dat }, case: { uk: "Давальний" }, h: "трьомста́м", c: "трьомста́м вісімдесяти́ п’яти́" }
+          - { level: C1, features: { case: acc }, case: { uk: "Знахідний" }, h: "три́ста", c: "три́ста вісімдеся́т п’ять" }
+          - { level: C1, features: { case: ins }, case: { uk: "Орудний" }, h: "трьомаста́ми", c: "трьомаста́ми вісімдесятьма́ п’ятьма́" }
+          - { level: C1, features: { case: loc }, case: { uk: "Місцевий" }, h: "на трьохста́х", c: "на трьохста́х вісімдесяти́ п’яти́" }
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Відмінок } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C1
+            features: { case: gen }
+            form: { uk: ["родовий: ", { term: "для" }] }
+            ex: ["У за́лі є мі́сце для ", { target: "трьохсо́т вісімдесяти́ п’яти́ відві́дувачів" }, "."]
+          - level: C1
+            features: { case: dat }
+            form: { uk: ["давальний: ", { term: "дя́кувати" }] }
+            ex: ["Дя́куємо ", { target: "трьомста́м вісімдесяти́ п’яти́ уча́сникам" }, "."]
+          - level: C1
+            features: { case: ins }
+            form: { uk: ["орудний: ", { term: "з" }] }
+            ex: ["Збудува́ли за́лу з ", { target: "трьомаста́ми вісімдесятьма́ п’ятьма́ мі́сцями" }, "."]
+          - level: C1
+            features: { case: loc }
+            form: { uk: ["місцевий: ", { term: "на" }] }
+            ex: ["Він описа́в усе́ ", { target: "на трьохста́х вісімдесяти́ п’яти́ сторі́нках" }, "."]
+
+  - title: { uk: Сотні від двохсот до дев’ятисот }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: two, label: дві́сті }
+          - { key: four, label: чоти́риста }
+          - { key: six, label: шістсо́т }
+        rows:
+          - { level: C2, features: { case: nom }, case: { uk: "Називний" }, two: "дві́сті", four: "чоти́риста", six: "шістсо́т" }
+          - { level: C2, features: { case: gen }, case: { uk: "Родовий" }, two: "двохсо́т", four: "чотирьохсо́т", six: "шестисо́т" }
+          - { level: C2, features: { case: dat }, case: { uk: "Давальний" }, two: "двомста́м", four: "чотирьомста́м", six: "шестиста́м" }
+          - { level: C2, features: { case: acc }, case: { uk: "Знахідний" }, two: "дві́сті", four: "чоти́риста", six: "шістсо́т" }
+          - { level: C2, features: { case: ins }, case: { uk: "Орудний" }, two: "двомаста́ми", four: { alternatives: ["чотирмаста́ми", "чотирьомаста́ми"] }, six: { alternatives: ["шістьмаста́ми", "шістьомаста́ми"] } }
+          - { level: C2, features: { case: loc }, case: { uk: "Місцевий" }, two: "на двохста́х", four: "на чотирьохста́х", six: "на шестиста́х" }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              uk: ["Сотні від ", { term: "п’ятсо́т" }, " до ", { term: "дев’ятсо́т" }, " змінюються за зразком ", { term: "шістсо́т" }, ", наприклад у родовому:"]
+            ex: { examples: [{ target: "п’ятисо́т" }, { target: "семисо́т" }, { target: "восьмисо́т" }, { target: "дев’ятисо́т" }] }
+
+  - title: { uk: Числівник з іменником у всіх відмінках }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: words, label: два слова́ }
+          - { key: students, label: чотирна́дцять студе́нтів }
+        rows:
+          - { level: C2, features: { case: nom }, case: { uk: "Називний" }, words: "два слова́", students: "чотирна́дцять студе́нтів" }
+          - { level: C2, features: { case: gen }, case: { uk: "Родовий" }, words: "двох слі́в", students: [{ alternatives: ["чотирнадцяти́", "чотирнадцятьо́х"] }, " студе́нтів"] }
+          - { level: C2, features: { case: dat }, case: { uk: "Давальний" }, words: "двом слова́м", students: [{ alternatives: ["чотирнадцяти́", "чотирнадцятьо́м"] }, " студе́нтам"] }
+          - { level: C2, features: { case: acc }, case: { uk: "Знахідний" }, words: "два слова́", students: [{ alternatives: ["чотирна́дцять", "чотирнадцятьо́х"] }, " студе́нтів"] }
+          - { level: C2, features: { case: ins }, case: { uk: "Орудний" }, words: "двома́ слова́ми", students: [{ alternatives: ["чотирнадцятьма́", "чотирнадцятьома́"] }, " студе́нтами"] }
+          - { level: C2, features: { case: loc }, case: { uk: "Місцевий" }, words: "у двох слова́х", students: ["на ", { alternatives: ["чотирнадцяти́", "чотирнадцятьо́х"] }, " студе́нтах"] }
+
+  - title: { uk: Неозначена кількість у всіх відмінках }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: many, label: бага́то спра́в }
+          - { key: few, label: кі́лька слі́в }
+          - { key: tens, label: кількадеся́т кілогра́мів }
+        rows:
+          - { level: C2, features: { case: nom }, case: { uk: "Називний" }, many: "бага́то спра́в", few: "кі́лька слі́в", tens: "кількадеся́т кілогра́мів" }
+          - { level: C2, features: { case: gen }, case: { uk: "Родовий" }, many: "багатьо́х спра́в", few: "кілько́х слі́в", tens: "кількадесяти́ кілогра́мів" }
+          - { level: C2, features: { case: dat }, case: { uk: "Давальний" }, many: "багатьо́м спра́вам", few: "кілько́м слова́м", tens: "кількадесяти́ кілогра́мам" }
+          - { level: C2, features: { case: acc }, case: { uk: "Знахідний" }, many: "бага́то спра́в", few: "кі́лька слі́в", tens: "кількадеся́т кілогра́мів" }
+          - { level: C2, features: { case: ins }, case: { uk: "Орудний" }, many: "багатьма́ спра́вами", few: "кількома́ слова́ми", tens: "кількадесятьма́ кілогра́мами" }
+          - { level: C2, features: { case: loc }, case: { uk: "Місцевий" }, many: "у багатьо́х спра́вах", few: "у кілько́х слова́х", tens: "у кількадесяти́ кілогра́мах" }
+
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -359,3 +549,8 @@ sections:
           - { level: A2, speakers: [en, es], wrong: п’ять студе́нти, right: { target: п’ять студе́нтів }, rule: { en: ["from ", { term: п’ять }, " on, the noun takes the genitive plural, not the ordinary plural"], es: ["desde ", { term: п’ять }, ", el sustantivo va en genitivo plural, no en el plural corriente"] } }
           - { level: A2, wrong: полтора́ годи́ни, right: [{ target: півтори́ }, " годи́ни"], rule: { uk: [{ term: полтора́ }, " — з російської; українською ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], en: [{ term: полтора́ }, " comes from Russian; Ukrainian says ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], es: [{ term: полтора́ }, " viene del ruso; en ucraniano se dice ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], pt: [{ term: полтора́ }, " vem do russo; em ucraniano se diz ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], fr: [{ term: полтора́ }, " vient du russe ; en ukrainien, on dit ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], de: [{ term: полтора́ }, " stammt aus dem Russischen; im Ukrainischen sagt man ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], it: [{ term: полтора́ }, " viene dal russo; in ucraino si dice ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], pl: [{ term: полтора́ }, " pochodzi z rosyjskiego; po ukraińsku mówi się ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], tr: [{ term: полтора́ }, " Rusçadan gelir; Ukraynacada ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }, " denir"], id: [{ term: полтора́ }, " berasal dari bahasa Rusia; dalam bahasa Ukraina dikatakan ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }], vi: [{ term: полтора́ }, " bắt nguồn từ tiếng Nga; tiếng Ukraina nói ", { alternatives: [{ term: півтора́ }, { term: півтори́ }] }] } }
           - { level: B1, wrong: Ми ї́хали з два дру́зі., right: ["Ми ї́хали ", { target: з двома́ дру́зями }, "."], rule: { uk: "числівник відмінюється разом з іменником", en: "the number changes for case with the noun", es: "el número se declina junto con el sustantivo", pt: "o número se declina junto com o substantivo", fr: "le nombre se décline avec le nom", de: "die Zahl wird zusammen mit dem Nomen dekliniert", it: "il numero si declina insieme al sostantivo", pl: "liczebnik odmienia się razem z rzeczownikiem", tr: "sayı, isimle birlikte hâle göre değişir", id: "angka berubah kasus bersama kata bendanya", vi: "số biến cách cùng với danh từ" } }
+          - { level: B2, wrong: "Ми розмовля́ли з п’ять студе́нтами.", right: ["Ми розмовля́ли ", { target: "з п’ятьма́ студе́нтами" }, "."], rule: { uk: ["числівник ", { term: "п’ять" }, " і більше змінюється разом з іменником"] } }
+          - { level: B2, wrong: "Тут нема́є двадцяти́ ві́сім студе́нтів.", right: ["Тут нема́є ", { target: "двадцяти́ восьми́ студе́нтів" }, "."], rule: { uk: "у складеному числівнику змінюється кожне слово" } }
+          - { level: B2, wrong: "У гру́пі до п’ятидесяти́ студе́нтів.", right: ["У гру́пі до ", { target: "п’ятдесяти́ студе́нтів" }, "."], rule: { uk: [{ term: "п’ятдеся́т" }, " має форму ", { term: "п’ятдесяти́" }, "; ", { term: "п’ятидесяти́" }, " — з російської"] } }
+          - { level: C1, wrong: "У за́лі є мі́сце для три́ста вісімдесяти́ п’яти́ відві́дувачів.", right: ["У за́лі є мі́сце для ", { target: "трьохсо́т вісімдесяти́ п’яти́ відві́дувачів" }, "."], rule: { uk: ["сотня теж змінюється: ", { mapping: ["три́ста", "трьохсо́т"] }] } }
+          - { level: C2, wrong: "Ми зустрі́лися з дві́сті студе́нтами.", right: ["Ми зустрі́лися ", { target: "з двомаста́ми студе́нтами" }, "."], rule: { uk: ["сотня змінюється за відмінком: ", { mapping: ["дві́сті", "двомаста́ми"] }] } }

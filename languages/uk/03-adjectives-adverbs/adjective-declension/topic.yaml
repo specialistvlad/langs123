@@ -52,6 +52,11 @@ cheatsheet:
         - { level: A2, features: { case: ins }, case: { uk: Орудний, en: Instrumental, es: Instrumental, pt: "Instrumental", fr: "Instrumental", de: "Instrumental", it: "Strumentale", pl: "Narzędnik", tr: "Araç hâli", id: "Instrumental", vi: "Công cụ cách" }, mn: ["нов", { ending: и́м }], fem: ["нов", { ending: о́ю }], pl: ["нов", { ending: и́ми }] }
         - { level: A2, features: { case: loc }, case: { uk: Місцевий, en: Locative, es: Locativo, pt: "Locativo", fr: "Locatif", de: "Lokativ", it: "Locativo", pl: "Miejscownik", tr: "Bulunma hâli", id: "Lokatif", vi: "Vị trí cách" }, mn: ["на нов", { ending: о́му }], fem: ["на нов", { ending: і́й }], pl: ["на нов", { ending: и́х }] }
         - { level: B1, features: { case: nom }, case: { uk: Коротка форма, en: Short form, es: Forma breve, pt: "Forma curta", fr: "Forme courte", de: "Kurzform", it: "Forma breve", pl: "Forma krótka", tr: "Kısa biçim", id: "Bentuk pendek", vi: "Dạng ngắn" }, mn: { alternatives: [потрі́бен, здоро́в] } }
+        - { level: B2, features: { case: nom }, case: { uk: Присвійний }, mn: { alternatives: [сестри́н, бра́тів] }, fem: { alternatives: [сестри́на, бра́това] }, pl: { alternatives: [сестри́ні, бра́тові] } }
+        - { level: B2, features: { case: loc }, case: { uk: "Місцевий, -ім" }, mn: { alternatives: [на ти́сячному, на ти́сячнім] } }
+        - { level: C1, features: { case: loc }, case: { uk: "Місцевий, -ім" }, mn: { alternatives: [на моє́му, на мої́м] } }
+        - { level: C1, features: { case: nom }, case: { uk: Прикметник на -їй }, mn: довгоши́їй, fem: довгоши́я }
+        - { level: C2, features: { case: gen }, case: { uk: Після шиплячого }, mn: ["кра́щ", { ending: ого }], fem: ["кра́щ", { ending: ої }], pl: ["кра́щ", { ending: их }] }
 
 sections:
   - title: { uk: Огляд, en: Overview, es: Visión general, pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -156,6 +161,80 @@ sections:
               vi: [{ term: сього́днішній }, " (của hôm nay), ", { term: вечі́рній }, " (buổi tối) và ", { term: всесві́тній }, " (toàn thế giới) biến cách giống như vậy:"]
             ex: ["Ви чита́ли ", { target: сього́днішню }, " газе́ту?"]
             tr: { en: "Have you read today's paper?", es: "¿Has leído el periódico de hoy?", pt: "Você já leu o jornal de hoje?", fr: "Avez-vous lu le journal d’aujourd’hui ?", de: "Haben Sie die heutige Zeitung gelesen?", it: "Ha letto il giornale di oggi?", pl: "Czy czytaliście dzisiejszą gazetę?", tr: "Bugünkü gazeteyi okudunuz mu?", id: "Apakah Anda sudah membaca koran hari ini?", vi: "Bạn đã đọc báo hôm nay chưa?" }
+          - type: rule
+            level: C1
+            text:
+              uk: ["Усі прикметники на ", { term: -ній }, " мають м’яку групу: ", { term: дру́жній }, ", ", { term: ту́тешній }, ", ", { term: могу́тній }, ":"]
+            ex: ["Ми зна́ємо ", { target: ту́тешнього }, " лі́каря."]
+      - type: usage
+        columns:
+          - { key: word, label: { uk: Прикметник } }
+          - { key: gen, label: { uk: "Родовий, чоловічий рід" } }
+          - { key: group, label: { uk: Група } }
+        rows:
+          - { level: C2, word: свяще́нний, gen: свяще́нного, group: { uk: тверда } }
+          - { level: C2, word: безробі́тний, gen: безробі́тного, group: { uk: тверда } }
+          - { level: C2, word: світови́й, gen: світово́го, group: { uk: "тверда, наголос на закінченні" } }
+          - { level: C2, word: ворони́й, gen: вороно́го, group: { uk: "тверда, наголос на закінченні" } }
+          - { level: C2, word: внутрі́шній, gen: внутрі́шнього, group: { uk: м’яка } }
+          - { level: C2, word: досві́тній, gen: досві́тнього, group: { uk: м’яка } }
+          - { level: C2, word: горі́шній, gen: горі́шнього, group: { uk: м’яка } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              uk: ["Прикметники на ", { term: -ний }, " мають тверду групу, на ", { term: -ній }, " — м’яку:"]
+            ex: { examples: [["Я допомага́ю ", { target: безробі́тному }, " сусі́дові."], ["Ми живемо́ у ", { target: внутрі́шньому }, " дворі́."]] }
+          - type: rule
+            level: C2
+            text:
+              uk: ["Наголос лишається на закінченні в усіх формах: ", { mapping: [{ term: світови́й }, { term: світово́го }] }, ":"]
+            ex: ["Вона́ чемпіо́нка ", { target: світово́го }, " ма́сштабу."]
+
+  - title: { uk: "Форма: після шиплячого" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: m, label: { uk: Чоловічий рід }, features: { gender: masc } }
+          - { key: f, label: { uk: Жіночий рід }, features: { gender: fem } }
+          - { key: n, label: { uk: Середній рід }, features: { gender: neut } }
+          - { key: gen, label: { uk: "Родовий, чоловічий і середній рід" }, features: { case: gen } }
+        rows:
+          - { level: C2, m: ["кра́щ", { ending: ий }], f: ["кра́щ", { ending: а }], n: ["кра́щ", { ending: е }], gen: ["кра́щ", { ending: ого }] }
+          - { level: C2, m: ["найтя́жч", { ending: ий }], f: ["найтя́жч", { ending: а }], n: ["найтя́жч", { ending: е }], gen: ["найтя́жч", { ending: ого }] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              uk: ["Вищий і найвищий ступінь на ", { term: -чий }, ", ", { term: -жчий }, ", ", { term: -щий }, ", ", { term: -ший }, " має закінчення твердої групи:"]
+            ex: { examples: [["Це ", { target: найтя́жче }, " завда́ння."], ["Я допомага́ю ", { target: кра́щому }, " дру́гові."]] }
+
+  - title: { uk: "Форма: прикметники на -їй" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: m, label: { uk: Чоловічий рід }, features: { gender: masc } }
+          - { key: f, label: { uk: Жіночий рід }, features: { gender: fem } }
+          - { key: n, label: { uk: Середній рід }, features: { gender: neut } }
+        rows:
+          - { level: C1, m: довгоши́їй, f: довгоши́я, n: довгоши́є }
+          - { level: C2, m: безкра́їй, f: безкра́я, n: безкра́є }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: ["Прикметники на ", { term: -їй }, " мають у жіночому роді ", { term: -я }, ", у середньому — ", { term: -є }, ":"]
+            ex: ["Жира́фа — ", { target: довгоши́я }, " твари́на."]
+          - type: rule
+            level: C2
+            text:
+              uk: ["Так змінюється й ", { term: безкра́їй }, ":"]
+            ex: ["Пе́ред на́ми ", { target: безкра́є }, " по́ле."]
 
   - title: { uk: Вживання, en: Use, es: Uso, pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" }
     role: use
@@ -211,6 +290,137 @@ sections:
               vi: ["Một vài tính từ giống đực có dạng ngắn: ", { mapping: [{ term: потрі́бний }, { term: потрі́бен }] }, ", ", { mapping: [{ term: здоро́вий }, { term: здоро́в }] }, ":"]
             ex: { examples: [["Мені́ ", { target: потрі́бен }, " квито́к."], ["Будь ", { target: здоро́в }, "!"]] }
             tr: { en: { examples: ["I need a ticket.", "Bless you! (or: Take care!)"] }, es: { examples: ["Necesito un boleto.", "¡Salud! (o: ¡Cuídate!)"] }, pt: { examples: ["Preciso de um bilhete.", "Saúde! (ou: Se cuida!)"] }, fr: { examples: ["J’ai besoin d’un billet.", "À tes souhaits ! (ou : Prends soin de toi !)"] }, de: { examples: ["Ich brauche eine Fahrkarte.", "Gesundheit! (oder: Bleib gesund!)"] }, it: { examples: ["Ho bisogno di un biglietto.", "Salute! (o: Stammi bene!)"] }, pl: { examples: ["Potrzebny mi bilet.", "Na zdrowie! (albo: Bądź zdrów!)"] }, tr: { examples: ["Bir bilete ihtiyacım var.", "Çok yaşa! (ya da: Sağlıcakla kal!)"] }, id: { examples: ["Saya butuh tiket.", "Semoga sehat! (atau: Jaga kesehatan ya!)"] }, vi: { examples: ["Tôi cần một tấm vé.", "Chúc sức khỏe! (hoặc: Giữ gìn sức khỏe nhé!)"] } }
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Коротка форма } }
+          - { key: gov, label: { uk: Керування } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - { level: C1, form: рад, gov: { pattern: [{ slot: infinitive }], follows: true }, ex: ["Я ", { target: рад }, " вас ба́чити."] }
+          - { level: C1, form: го́ден, gov: { pattern: [{ term: до }, { slot: { uk: родовий } }] }, ex: ["Він ", { target: го́ден }, " до слу́жби."] }
+          - { level: C1, form: пе́вен, gov: { pattern: [{ term: у }, { slot: { uk: місцевий } }] }, ex: ["Я ", { target: пе́вен }, " у собі́."] }
+          - { level: C1, form: пови́нен, gov: { pattern: [{ slot: infinitive }], follows: true }, ex: ["Ти ", { target: пови́нен }, " відпочи́ти."] }
+          - { level: C1, form: сму́тен, ex: ["Сього́дні він ", { target: сму́тен }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: ["Жіночий рід і множина мають повну форму: ", { term: ра́да }, ", ", { term: ра́ді }, ":"]
+            ex: ["Ми ", { target: ра́ді }, " вас ба́чити."]
+          - type: rule
+            level: C2
+            text:
+              uk: ["У високому стилі присудок має коротку форму: ", { term: благослове́н }, ", ", { term: рад }, ", ", { term: пе́вен }, ":"]
+            ex: [{ target: Благослове́н }, " той день, коли́ ми зустрі́лися."]
+      - type: comparison
+        columns:
+          - { key: short, label: { uk: Коротка форма } }
+          - { key: long, label: { uk: Повна форма } }
+        rows:
+          - { level: C2, short: { uk: [{ term: пе́вен }, " — упевнений у чомусь"] }, long: { uk: [{ term: пе́вний }, " — якийсь, не названий"] } }
+          - level: C2
+            short: ["Я ", { target: пе́вен }, ", що він прийде́."]
+            long: ["Ми зустрі́немося в ", { target: пе́вний }, " час."]
+          - { level: C2, short: { uk: [{ term: рад }, " — урочисто"] }, long: { uk: [{ term: ра́дий }, " — нейтрально"] } }
+          - level: C2
+            short: [{ target: Рад }, " вас ві́тати."]
+            long: ["Я ", { target: ра́дий }, " вас ба́чити."]
+
+  - title: { uk: Присвійні прикметники }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: noun, label: { uk: Іменник } }
+          - { key: m, label: { uk: Чоловічий рід }, features: { gender: masc } }
+          - { key: f, label: { uk: Жіночий рід }, features: { gender: fem } }
+          - { key: pl, label: { uk: Множина }, features: { number: pl } }
+        rows:
+          - { level: B2, noun: сестра́, m: ["сестр", { ending: и́н }], f: ["сестр", { ending: и́на }], pl: ["сестр", { ending: и́ні }] }
+          - { level: B2, noun: Марі́я, m: ["Марі́", { ending: їн }], f: ["Марі́", { ending: їна }], pl: ["Марі́", { ending: їні }] }
+          - { level: B2, noun: брат, m: ["бра́т", { ending: ів }], f: ["бра́т", { ending: ова }], pl: ["бра́т", { ending: ові }] }
+          - { level: B2, noun: Андрі́й, m: ["Андрі́", { ending: їв }], f: ["Андрі́", { ending: єва }], pl: ["Андрі́", { ending: єві }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Назви на ", { term: -а }, ", ", { term: -я }, " мають суфікс ", { term: -ин- }, ", після голосного — ", { term: -їн- }, ":"]
+            ex: ["Це ", { target: сестри́на }, " кни́жка."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["Назви на приголосний мають суфікс ", { term: -ів- }, ", назви на ", { term: -й }, " — ", { term: -їв- }, ":"]
+            ex: ["Це ", { target: бра́тів }, " друг."]
+          - type: rule
+            level: B2
+            text:
+              uk: "Чоловічий рід називного відмінка не має закінчення, решта форм — закінчення прикметника:"
+            ex: ["Я ба́чу ", { target: бра́тового }, " дру́га."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["Середній рід закінчується на ", { term: -е }, ":"]
+            ex: ["Це ", { target: сестри́не }, " пальто́."]
+          - type: rule
+            level: B2
+            text:
+              uk: "Присвійний прикметник називає власника-особу так само, як родовий відмінок:"
+            ex: { equivalence: [["Це ", { target: сестри́на }, " кімна́та."], ["Це кімна́та ", { target: сестри́ }, "."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: "Присвійні прикметники творяться й від імен та назв професій:"
+          - type: rule
+            level: C1
+            text:
+              uk: ["Перед ", { term: -ин- }, " приголосний ", { term: к }, " змінюється на ", { term: ч }, ": ", { mapping: [{ term: ті́тка }, { term: ті́тчин }] }]
+      - type: usage
+        columns:
+          - { key: noun, label: { uk: Іменник } }
+          - { key: adj, label: { uk: Присвійний прикметник } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - { level: C1, noun: ті́тка, adj: ті́тчин, ex: ["Це ", { target: ті́тчин }, " буди́нок."] }
+          - { level: C1, noun: Га́ля, adj: Га́лин, ex: ["Це ", { target: Га́лин }, " телефо́н."] }
+          - { level: C1, noun: Мико́ла, adj: Мико́лин, ex: ["Це ", { target: Мико́лин }, " рюкза́к."] }
+          - { level: C1, noun: І́гор, adj: І́горів, ex: ["Це ", { target: І́горів }, " годи́нник."] }
+          - { level: C1, noun: офіце́р, adj: офіце́рів, ex: ["Це ", { target: офіце́рів }, " мунди́р."] }
+          - { level: C2, noun: ба́ба, adj: ба́бин, ex: ["Це ", { target: ба́бин }, " реце́пт."] }
+          - { level: C2, noun: Миха́йло, adj: Миха́йлів, ex: ["Це ", { target: Миха́йлів }, " ключ."] }
+          - { level: C2, noun: ворота́р, adj: воротарі́в, ex: ["Це ", { target: воротарі́в }, " реко́рд."] }
+          - { level: C2, noun: ювіля́р, adj: ювілярі́в, ex: ["Це ", { target: ювілярі́в }, " торт."] }
+
+  - title: { uk: "Місцевий відмінок: форма на -ім" }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: word, label: { uk: Слово } }
+          - { key: full, label: { uk: "Закінчення -ому" } }
+          - { key: short, label: { uk: "Закінчення -ім" } }
+        rows:
+          - { level: B2, features: { case: loc }, word: дру́гий, full: на дру́гому, short: на дру́гім }
+          - { level: B2, features: { case: loc }, word: ти́сячний, full: на ти́сячному, short: на ти́сячнім }
+          - { level: C1, features: { case: loc }, word: мій, full: на моє́му, short: на мої́м }
+          - { level: C1, features: { case: loc }, word: той, full: на тому́, short: на тім }
+          - { level: C1, features: { case: loc }, word: хто, full: на ко́му, short: на кім }
+          - { level: C1, features: { case: loc }, word: що, full: на чо́му, short: на чім }
+          - { level: C1, features: { case: loc }, word: весь, full: на всьому́, short: на всі́м }
+          - { level: C1, features: { case: loc }, word: котри́й, full: на котрому́, short: на котрі́м }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Форма на ", { term: -ім }, " — рівноправний варіант закінчення ", { term: -ому }, ":"]
+            ex: { equivalence: [["Він живе́ на ", { target: дру́гому }, " по́версі."], ["Він живе́ на ", { target: дру́гім }, " по́версі."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: "Займенники мають таку саму паралельну форму місцевого відмінка:"
+            ex: { equivalence: [["Це лежи́ть на ", { target: моє́му }, " столі́."], ["Це лежи́ть на ", { target: мої́м }, " столі́."]] }
 
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
@@ -221,3 +431,4 @@ sections:
           - { level: A2, wrong: Я говорю́ з нови́м по́другою., right: ["Я говорю́ з ", { target: ново́ю }, " по́другою."], rule: { uk: ["жіночий рід в орудному: ", { term: -ою }], en: ["the feminine instrumental takes ", { term: -ою }], es: ["el femenino en instrumental toma ", { term: -ою }], pt: ["o feminino no instrumental leva ", { term: -ою }], fr: ["le féminin à l’instrumental prend ", { term: -ою }], de: ["Femininum im Instrumental: ", { term: -ою }], it: ["il femminile allo strumentale prende ", { term: -ою }], pl: ["rodzaj żeński w narzędniku ma ", { term: -ою }], tr: ["dişil, araç hâlinde ", { term: -ою }, " alır"], id: ["feminin pada instrumental memakai ", { term: -ою }], vi: ["giống cái ở công cụ cách có đuôi ", { term: -ою }] } }
           - { level: A2, wrong: Ми живемо́ в нови́х буди́нку., right: ["Ми живемо́ в ", { target: ново́му }, " буди́нку."], rule: { uk: ["однина: ", { term: -ому }, "; ", { term: -их }, " — лише множина"], en: ["the singular takes ", { term: -ому }, "; ", { term: -их }, " is plural only"], es: ["el singular lleva ", { term: -ому }, "; ", { term: -их }, " es solo plural"], pt: ["o singular leva ", { term: -ому }, "; ", { term: -их }, " é só do plural"], fr: ["le singulier prend ", { term: -ому }, " ; ", { term: -их }, " est réservé au pluriel"], de: ["der Singular hat ", { term: -ому }, "; ", { term: -их }, " gibt es nur im Plural"], it: ["il singolare prende ", { term: -ому }, "; ", { term: -их }, " è solo del plurale"], pl: ["liczba pojedyncza ma ", { term: -ому }, "; ", { term: -их }, " występuje tylko w liczbie mnogiej"], tr: ["tekilde ", { term: -ому }, " gelir; ", { term: -их }, " yalnızca çoğulda kullanılır"], id: ["bentuk tunggal memakai ", { term: -ому }, "; ", { term: -их }, " hanya untuk jamak"], vi: ["số ít có đuôi ", { term: -ому }, "; ", { term: -их }, " chỉ dùng cho số nhiều"] } }
           - { level: A2, speakers: [en, es], wrong: Я пишу́ з си́ньою ру́чкою., right: ["Я пишу́ ", { target: си́ньою ру́чкою }, "."], rule: { en: "the tool takes the instrumental with no preposition: no word for “with”", es: "el instrumento va en instrumental sin preposición: no se traduce «con»" } }
+          - { level: C1, wrong: Вона́ рад вас ба́чити., right: ["Вона́ ", { target: ра́да }, " вас ба́чити."], rule: { uk: ["жіночий рід має повну форму ", { term: ра́да }, "; коротка форма ", { term: рад }, " — чоловіча"] } }

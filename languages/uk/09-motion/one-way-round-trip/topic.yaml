@@ -74,6 +74,14 @@ cheatsheet:
           rule: { uk: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, en: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, es: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, pt: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, fr: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, de: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, it: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, pl: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, tr: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, id: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] }, vi: { alternatives: [{ term: ходи́ти }, { term: літа́ти }] } }
           ex: ["Син уже́ ", { target: хо́дить }, "."]
           tr: { en: "My son can already walk.", es: "Mi hijo ya camina.", pt: "Meu filho já anda.", fr: "Mon fils marche déjà.", de: "Mein Sohn kann schon laufen.", it: "Mio figlio cammina già.", pl: "Mój syn już chodzi.", tr: "Oğlum artık yürüyor.", id: "Anak laki-laki saya sudah bisa berjalan.", vi: "Con trai tôi đã biết đi." }
+        - level: B2
+          point: { uk: "З додатком" }
+          rule: { uk: [{ mapping: [{ term: везти́ }, { term: вози́ти }] }, ", ", { mapping: [{ term: нести́ }, { term: носи́ти }] }, ", ", { mapping: [{ term: вести́ }, { term: води́ти }] }] }
+          ex: { contrast: [["Я ", { target: везу́ }, " діте́й до шко́ли"], ["Щодня́ я ", { target: вожу́ }, " діте́й до шко́ли"]] }
+        - level: B2
+          point: { uk: "Минулий час" }
+          rule: { uk: ["чоловічий рід без ", { term: -л }, ": ", { alternatives: [{ term: віз }, { term: ніс }, { term: вів }] }] }
+          ex: ["Він ", { target: ніс }, " су́мку."]
         - level: A2
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule: { uk: ["щодня, часто — ", { term: ходи́ти }], en: ["every day, often: ", { term: ходи́ти }], es: ["todos los días, a menudo: ", { term: ходи́ти }], pt: ["todos os dias, com frequência: ", { term: ходи́ти }], fr: ["tous les jours, souvent : ", { term: ходи́ти }], de: ["jeden Tag, oft: ", { term: ходи́ти }], it: ["ogni giorno, spesso: ", { term: ходи́ти }], pl: ["codziennie, często: ", { term: ходи́ти }], tr: ["her gün, sık sık: ", { term: ходи́ти }], id: ["setiap hari, sering: ", { term: ходи́ти }], vi: ["mỗi ngày, thường xuyên: ", { term: ходи́ти }] }
@@ -213,6 +221,75 @@ sections:
             ex: ["Ми ", { signal: і́ноді }, " ", { target: хо́димо }, " в теа́тр."]
             tr: { en: "We sometimes go to the theatre.", es: "A veces vamos al teatro.", pt: "Às vezes vamos ao teatro.", fr: "Nous allons parfois au théâtre.", de: "Manchmal gehen wir ins Theater.", it: "A volte andiamo a teatro.", pl: "Czasami chodzimy do teatru.", tr: "Bazen tiyatroya gideriz.", id: "Kadang-kadang kami pergi ke teater.", vi: "Thỉnh thoảng chúng tôi đi nhà hát." }
 
+  - title: { uk: "Дієслова руху з додатком" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pair, label: { uk: Пара } }
+          - { key: use, label: { uk: Вживання } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            pair: { mapping: [{ term: везти́ }, { term: вози́ти }] }
+            use: { uk: "кого? що? — транспортом" }
+            ex: { contrast: [["Я ", { target: везу́ }, " діте́й до шко́ли"], ["Щодня́ я ", { target: вожу́ }, " діте́й до шко́ли"]] }
+          - level: B2
+            pair: { mapping: [{ term: нести́ }, { term: носи́ти }] }
+            use: { uk: "кого? що? — у руках або на собі" }
+            ex: { contrast: [["Я ", { target: несу́ }, " листа́ на по́шту"], ["Щодня́ я ", { target: ношу́ }, " листи́ на по́шту"]] }
+          - level: B2
+            pair: { mapping: [{ term: вести́ }, { term: води́ти }] }
+            use: { uk: "кого? — пішки, поруч, за руку" }
+            ex: { contrast: [["Я ", { target: веду́ }, " си́на до лі́каря"], ["Щомі́сяця я ", { target: воджу́ }, " си́на до лі́каря"]] }
+          - level: B2
+            pair: { alternatives: [{ term: вози́ти }, { term: носи́ти }, { term: води́ти }] }
+            use: { uk: "у минулому: туди й назад" }
+            ex: ["Учо́ра ма́ма ", { target: води́ла }, " си́на до лі́каря."]
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто } }
+          - { key: carry, label: везти́, features: { tense: prs } }
+          - { key: bring, label: нести́, features: { tense: prs } }
+          - { key: lead, label: вести́, features: { tense: prs } }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, who: я, carry: [вез, { ending: у́ }], bring: [нес, { ending: у́ }], lead: [вед, { ending: у́ }] }
+          - { level: B2, features: { person: 2, number: sg }, who: ти, carry: [вез, { ending: е́ш }], bring: [нес, { ending: е́ш }], lead: [вед, { ending: е́ш }] }
+          - { level: B2, features: { person: 3, number: sg }, who: { alternatives: [він, вона́, воно́] }, carry: [вез, { ending: е́ }], bring: [нес, { ending: е́ }], lead: [вед, { ending: е́ }] }
+          - { level: B2, features: { person: 1, number: pl }, who: ми, carry: [вез, { ending: емо́ }], bring: [нес, { ending: емо́ }], lead: [вед, { ending: емо́ }] }
+          - { level: B2, features: { person: 2, number: pl }, who: { alternatives: [ви, Ви] }, carry: [вез, { ending: ете́ }], bring: [нес, { ending: ете́ }], lead: [вед, { ending: ете́ }] }
+          - { level: B2, features: { person: 3, number: pl }, who: вони́, carry: [вез, { ending: у́ть }], bring: [нес, { ending: у́ть }], lead: [вед, { ending: у́ть }] }
+      - type: paradigm
+        columns:
+          - { key: who, label: { uk: Хто } }
+          - { key: carry, label: вози́ти, features: { tense: prs } }
+          - { key: bring, label: носи́ти, features: { tense: prs } }
+          - { key: lead, label: води́ти, features: { tense: prs } }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, who: я, carry: [вож, { ending: у́ }], bring: [нош, { ending: у́ }], lead: [водж, { ending: у́ }] }
+          - { level: B2, features: { person: 2, number: sg }, who: ти, carry: [во́з, { ending: иш }], bring: [но́с, { ending: иш }], lead: [во́д, { ending: иш }] }
+          - { level: B2, features: { person: 3, number: sg }, who: { alternatives: [він, вона́, воно́] }, carry: [во́з, { ending: ить }], bring: [но́с, { ending: ить }], lead: [во́д, { ending: ить }] }
+          - { level: B2, features: { person: 1, number: pl }, who: ми, carry: [во́з, { ending: имо }], bring: [но́с, { ending: имо }], lead: [во́д, { ending: имо }] }
+          - { level: B2, features: { person: 2, number: pl }, who: { alternatives: [ви, Ви] }, carry: [во́з, { ending: ите }], bring: [но́с, { ending: ите }], lead: [во́д, { ending: ите }] }
+          - { level: B2, features: { person: 3, number: pl }, who: вони́, carry: [во́з, { ending: ять }], bring: [но́с, { ending: ять }], lead: [во́д, { ending: ять }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: "Додаток стоїть у знахідному відмінку: кого? що?"
+            ex: ["Ма́ма веде́ ", { target: дити́ну }, " в садо́к."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["У формі «я» приголосні змінюються, як у ", { term: ходжу́ }, ": ", { mapping: [{ term: з }, { term: ж }] }, ", ", { mapping: [{ term: с }, { term: ш }] }, ", ", { mapping: [{ term: д }, { term: дж }] }, "."]
+            ex: { examples: [["Я ", { target: вожу́ }, " діте́й."], ["Я ", { target: ношу́ }, " су́мку."], ["Я ", { target: воджу́ }, " си́на."]] }
+          - type: rule
+            level: B2
+            text:
+              uk: ["У минулому часі чоловічий рід без ", { term: -л }, ": ", { term: віз }, ", ", { term: ніс }, ", ", { term: вів }, "."]
+            ex: { examples: [["Він ", { target: ніс }, " су́мку."], ["Вона́ ", { target: несла́ }, " су́мку."]] }
+
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -221,3 +298,7 @@ sections:
           - { level: A2, speakers: [en, es], wrong: Щодня́ я йду на робо́ту., right: ["Щодня́ я ", { target: ходжу́ }, " на робо́ту."], rule: { en: ["a regular trip takes ", { term: ходи́ти }], es: ["un trayecto habitual lleva ", { term: ходи́ти }] } }
           - { level: A2, speakers: [en, es], wrong: За́втра я ї́жджу в Ки́їв., right: ["За́втра я ", { target: ї́ду }, " в Ки́їв."], rule: { en: ["one planned trip takes ", { term: ї́хати }], es: ["un viaje concreto lleva ", { term: ї́хати }] } }
           - { level: A2, wrong: Я хожу́ в спортза́л., right: ["Я ", { target: ходжу́ }, " в спортза́л."], rule: { uk: ["форма «я» — ", { term: ходжу́ }, "; ", { term: хожу́ }, " — з російської"], en: ["the я form is ", { term: ходжу́ }, "; ", { term: хожу́ }, " is Russian"], es: ["la forma de я es ", { term: ходжу́ }, "; ", { term: хожу́ }, " es ruso"], pt: ["a forma de я é ", { term: ходжу́ }, "; ", { term: хожу́ }, " é russo"], fr: ["la forme de я est ", { term: ходжу́ }, " ; ", { term: хожу́ }, " est du russe"], de: ["die Form für я ist ", { term: ходжу́ }, "; ", { term: хожу́ }, " ist Russisch"], it: ["la forma di я è ", { term: ходжу́ }, "; ", { term: хожу́ }, " è russo"], pl: ["forma я to ", { term: ходжу́ }, "; ", { term: хожу́ }, " jest rosyjskie"], tr: ["я biçimi ", { term: ходжу́ }, " olur; ", { term: хожу́ }, " Rusça biçimdir"], id: ["bentuk я adalah ", { term: ходжу́ }, "; ", { term: хожу́ }, " adalah bentuk bahasa Rusia"], vi: ["dạng của я là ", { term: ходжу́ }, "; ", { term: хожу́ }, " là tiếng Nga"] } }
+          - { level: B2, wrong: Щодня́ я веду́ си́на в шко́лу., right: ["Щодня́ я ", { target: воджу́ }, " си́на в шко́лу."], rule: { uk: ["регулярний рух із людиною — ", { term: води́ти }] } }
+          - { level: B2, wrong: Сього́дні я вожу́ дру́га на вокза́л., right: ["Сього́дні я ", { target: везу́ }, " дру́га на вокза́л."], rule: { uk: ["один рух зараз — ", { term: везти́ }] } }
+          - { level: B2, wrong: Я ї́жджу діте́й до шко́ли., right: ["Я ", { target: вожу́ }, " діте́й до шко́ли."], rule: { uk: ["додаток у знахідному відмінку має ", { term: вози́ти }] } }
+          - { level: B2, wrong: Він нес су́мку., right: ["Він ", { target: ніс }, " су́мку."], rule: { uk: ["чоловічий рід — ", { term: ніс }, "; ", { term: нес }, " — з російської"] } }

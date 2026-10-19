@@ -156,6 +156,21 @@ cheatsheet:
             vi: ["sau chữ số, phần cuối của từ: ", { alternatives: [{ term: 1-й }, { term: 3-тя }, { term: 5-му }] }]
           ex: ["Він навча́ється в ", { target: 5-му }, " кла́сі."]
           tr: { en: "He's in year five.", es: "Está en quinto curso.", pt: "Ele está no quinto ano.", fr: "Il est en cinquième année.", de: "Er geht in die fünfte Klasse.", it: "Frequenta la quinta classe.", pl: "Chodzi do piątej klasy.", tr: "Beşinci sınıfa gidiyor.", id: "Dia duduk di kelas lima.", vi: "Cậu ấy học lớp năm." }
+        - level: B2
+          point: { uk: Круглі й складені }
+          rule:
+            uk: [{ term: "ти́сячний" }, ", ", { term: "мільйо́нний" }, " — як прикметники; у складених змінюється останнє слово"]
+          ex: ["Він наш ", { target: "ти́сячний" }, " відві́дувач."]
+        - level: C1
+          point: { uk: Довгі складені й роки }
+          rule:
+            uk: ["змінюється лише останнє слово: ", { term: "три́ста вісімдеся́т пе́ршого" }]
+          ex: ["Це ста́лося ", { target: "у дві ти́сячі два́дцять тре́тьому ро́ці" }, "."]
+        - level: C2
+          point: { uk: З іменником }
+          rule:
+            uk: ["відмінок іменника й прийменник: ", { term: "для тре́тьої гру́пи" }]
+          ex: ["Заня́ття ", { target: "для тре́тьої гру́пи" }, " почина́ється о дев’я́тій."]
 
 sections:
   - title: { uk: Огляд, en: Overview, es: Visión general, pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -328,6 +343,146 @@ sections:
             ex: { examples: [{ target: 1-й }, { target: 3-тя }, { target: 10-го }] }
             tr: { en: { examples: ["1st", "3rd", "of the 10th"] }, es: { examples: ["1.º", "3.ª", "del 10"] }, pt: { examples: ["1.º", "3.ª", "do 10.º"] }, fr: { examples: ["1er", "3e", "du 10e"] }, de: { examples: ["1.", "3.", "des 10."] }, it: { examples: ["1º", "3ª", "del 10º"] }, pl: { examples: ["1.", "3.", "10."] }, tr: { examples: ["1.", "3.", "10."] }, id: { examples: ["ke-1", "ke-3", "ke-10"] }, vi: { examples: ["thứ 1", "thứ 3", "thứ 10"] } }
 
+  - title: { uk: "Круглі числа: сотий, тисячний, мільйонний" }
+    role: own
+    content:
+      - type: inventory
+        set: ordinals
+        columns:
+          - { key: number, label: { uk: Число } }
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem } }
+          - { key: neut, label: { uk: Середній рід }, features: { gender: neut } }
+        rows:
+          - { level: B2, value: 1000, number: "1 000", masc: ["ти́сячн", { ending: "ий" }], fem: ["ти́сячн", { ending: "а" }], neut: ["ти́сячн", { ending: "е" }] }
+          - { level: B2, value: 2000, number: "2 000", masc: ["двохти́сячн", { ending: "ий" }], fem: ["двохти́сячн", { ending: "а" }], neut: ["двохти́сячн", { ending: "е" }] }
+          - { level: B2, value: 1000000, number: "1 000 000", masc: ["мільйо́нн", { ending: "ий" }], fem: ["мільйо́нн", { ending: "а" }], neut: ["мільйо́нн", { ending: "е" }] }
+          - { level: B2, value: 10000000, number: "10 000 000", masc: ["десятимільйо́нн", { ending: "ий" }], fem: ["десятимільйо́нн", { ending: "а" }], neut: ["десятимільйо́нн", { ending: "е" }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: "Порядкові від круглих чисел пишемо одним словом, перша частина — родовий:"
+            ex: { examples: [{ mapping: ["двох", "двохти́сячний"] }, { mapping: ["десяти́", "десятимільйо́нний"] }] }
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem } }
+          - { key: neut, label: { uk: Середній рід }, features: { gender: neut } }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: "Називний" }, masc: ["ти́сячн", { ending: "ий" }], fem: ["ти́сячн", { ending: "а" }], neut: ["ти́сячн", { ending: "е" }] }
+          - { level: B2, features: { case: gen }, case: { uk: "Родовий" }, masc: ["ти́сячн", { ending: "ого" }], fem: ["ти́сячн", { ending: "ої" }], neut: ["ти́сячн", { ending: "ого" }] }
+          - { level: B2, features: { case: dat }, case: { uk: "Давальний" }, masc: ["ти́сячн", { ending: "ому" }], fem: ["ти́сячн", { ending: "ій" }], neut: ["ти́сячн", { ending: "ому" }] }
+          - { level: B2, features: { case: acc }, case: { uk: "Знахідний" }, masc: { alternatives: ["ти́сячний", "ти́сячного"] }, fem: ["ти́сячн", { ending: "у" }], neut: ["ти́сячн", { ending: "е" }] }
+          - { level: B2, features: { case: ins }, case: { uk: "Орудний" }, masc: ["ти́сячн", { ending: "им" }], fem: ["ти́сячн", { ending: "ою" }], neut: ["ти́сячн", { ending: "им" }] }
+          - { level: B2, features: { case: loc }, case: { uk: "Місцевий" }, masc: { alternatives: [["на ти́сячн", { ending: "ому" }], ["на ти́сячн", { ending: "ім" }]] }, fem: ["на ти́сячн", { ending: "ій" }], neut: { alternatives: [["на ти́сячн", { ending: "ому" }], ["на ти́сячн", { ending: "ім" }]] } }
+
+  - title: { uk: Складені порядкові у всіх відмінках }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem } }
+          - { key: neut, label: { uk: Середній рід }, features: { gender: neut } }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: "Називний" }, masc: ["сто тре́т", { ending: "ій" }], fem: ["сто тре́т", { ending: "я" }], neut: ["сто тре́т", { ending: "є" }] }
+          - { level: B2, features: { case: gen }, case: { uk: "Родовий" }, masc: ["сто тре́ть", { ending: "ого" }], fem: ["сто тре́ть", { ending: "ої" }], neut: ["сто тре́ть", { ending: "ого" }] }
+          - { level: B2, features: { case: dat }, case: { uk: "Давальний" }, masc: ["сто тре́ть", { ending: "ому" }], fem: ["сто тре́т", { ending: "ій" }], neut: ["сто тре́ть", { ending: "ому" }] }
+          - { level: B2, features: { case: acc }, case: { uk: "Знахідний" }, masc: { alternatives: [["сто тре́т", { ending: "ій" }], ["сто тре́ть", { ending: "ого" }]] }, fem: ["сто тре́т", { ending: "ю" }], neut: ["сто тре́т", { ending: "є" }] }
+          - { level: B2, features: { case: ins }, case: { uk: "Орудний" }, masc: ["сто тре́т", { ending: "ім" }], fem: ["сто тре́ть", { ending: "ою" }], neut: ["сто тре́т", { ending: "ім" }] }
+          - { level: B2, features: { case: loc }, case: { uk: "Місцевий" }, masc: { alternatives: [["на сто тре́ть", { ending: "ому" }], ["на сто тре́т", { ending: "ім" }]] }, fem: ["на сто тре́т", { ending: "ій" }], neut: { alternatives: [["на сто тре́ть", { ending: "ому" }], ["на сто тре́т", { ending: "ім" }]] } }
+
+  - title: { uk: Довгі складені порядкові }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem } }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: "Називний" }, masc: ["три́ста вісімдеся́т пе́рш", { ending: "ий" }], fem: ["три́ста вісімдеся́т пе́рш", { ending: "а" }] }
+          - { level: C1, features: { case: gen }, case: { uk: "Родовий" }, masc: ["три́ста вісімдеся́т пе́рш", { ending: "ого" }], fem: ["три́ста вісімдеся́т пе́рш", { ending: "ої" }] }
+          - { level: C1, features: { case: dat }, case: { uk: "Давальний" }, masc: ["три́ста вісімдеся́т пе́рш", { ending: "ому" }], fem: ["три́ста вісімдеся́т пе́рш", { ending: "ій" }] }
+          - { level: C1, features: { case: acc }, case: { uk: "Знахідний" }, masc: { alternatives: [["три́ста вісімдеся́т пе́рш", { ending: "ий" }], ["три́ста вісімдеся́т пе́рш", { ending: "ого" }]] }, fem: ["три́ста вісімдеся́т пе́рш", { ending: "у" }] }
+          - { level: C1, features: { case: ins }, case: { uk: "Орудний" }, masc: ["три́ста вісімдеся́т пе́рш", { ending: "им" }], fem: ["три́ста вісімдеся́т пе́рш", { ending: "ою" }] }
+          - { level: C1, features: { case: loc }, case: { uk: "Місцевий" }, masc: { alternatives: [["на три́ста вісімдеся́т пе́рш", { ending: "ому" }], ["на три́ста вісімдеся́т пе́рш", { ending: "ім" }]] }, fem: ["на три́ста вісімдеся́т пе́рш", { ending: "ій" }] }
+
+  - title: { uk: Роки у всіх відмінках }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Відмінок } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C1
+            features: { case: loc }
+            form: { uk: ["місцевий: ", { term: ["у ", { gap: true }, " ро́ці"] }] }
+            ex: [{ target: "У дві ти́сячі два́дцять тре́тьому ро́ці" }, " ми переї́хали."]
+          - level: C1
+            features: { case: gen }
+            form: { uk: ["родовий: ", { term: ["до ", { gap: true }, " ро́ку"] }] }
+            ex: [{ target: "До дві ти́сячі два́дцять тре́тього ро́ку" }, " він жив у Льво́ві."]
+          - level: C1
+            features: { case: ins }
+            form: { uk: ["орудний: ", { term: ["пе́ред ", { gap: true }, " ро́ком"] }] }
+            ex: [{ target: "Пе́ред дві ти́сячі два́дцять тре́тім ро́ком" }, " ціни́ ви́росли."]
+          - level: C1
+            features: { case: acc }
+            form: { uk: ["знахідний: ", { term: ["на ", { gap: true }, " рік"] }] }
+            ex: ["Відпу́стку запланува́ли ", { target: "на дві ти́сячі два́дцять тре́тій рік" }, "."]
+
+  - title: { uk: Сороковий у всіх відмінках }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: mn, label: { uk: Чоловічий і середній рід }, features: { gender: [masc, neut] } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem } }
+          - { key: pl, label: { uk: Множина }, features: { number: pl } }
+        rows:
+          - { level: C2, features: { case: nom }, case: { uk: "Називний" }, mn: { alternatives: ["сороко́вий", "сороко́ве"] }, fem: ["сороко́в", { ending: "а" }], pl: ["сороко́в", { ending: "і" }] }
+          - { level: C2, features: { case: gen }, case: { uk: "Родовий" }, mn: ["сороко́в", { ending: "ого" }], fem: ["сороко́в", { ending: "ої" }], pl: ["сороко́в", { ending: "их" }] }
+          - { level: C2, features: { case: dat }, case: { uk: "Давальний" }, mn: ["сороко́в", { ending: "ому" }], fem: ["сороко́в", { ending: "ій" }], pl: ["сороко́в", { ending: "им" }] }
+          - { level: C2, features: { case: acc }, case: { uk: "Знахідний" }, mn: { alternatives: ["сороко́вий", "сороко́вого", "сороко́ве"] }, fem: ["сороко́в", { ending: "у" }], pl: { alternatives: ["сороко́ві", "сороко́вих"] } }
+          - { level: C2, features: { case: ins }, case: { uk: "Орудний" }, mn: ["сороко́в", { ending: "им" }], fem: ["сороко́в", { ending: "ою" }], pl: ["сороко́в", { ending: "ими" }] }
+          - { level: C2, features: { case: loc }, case: { uk: "Місцевий" }, mn: { alternatives: [["на сороко́в", { ending: "ому" }], ["на сороко́в", { ending: "ім" }]] }, fem: ["на сороко́в", { ending: "ій" }], pl: ["на сороко́в", { ending: "их" }] }
+
+  - title: { uk: Порядковий з іменником і прийменником }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Відмінок } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C2
+            features: { case: nom }
+            form: { uk: "називний" }
+            ex: [{ target: "Дві ти́сячі трина́дцятий рік" }, " був для нас важли́вим."]
+          - level: C2
+            features: { case: gen }
+            form: { uk: ["родовий: ", { term: "для" }] }
+            ex: ["Заня́ття ", { target: "для тре́тьої гру́пи" }, " почина́ється о дев’я́тій."]
+          - level: C2
+            features: { case: acc }
+            form: { uk: ["знахідний: ", { term: "на" }] }
+            ex: ["Ми купи́ли квитки́ ", { target: "на сто тре́тій по́їзд" }, "."]
+          - level: C2
+            features: { case: ins }
+            form: { uk: ["орудний: ", { term: "пе́ред" }] }
+            ex: [{ target: "Пе́ред вісімдеся́т шо́стим днем наро́дження" }, " він узя́в відпу́стку."]
+          - level: C2
+            features: { case: loc }
+            form: { uk: ["місцевий: ", { term: "у" }] }
+            ex: [{ target: "У сьо́мій авдито́рії" }, " відбува́ється і́спит."]
+
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -338,3 +493,7 @@ sections:
           - { level: A2, wrong: Я живу́ на тре́тій по́версі., right: ["Я живу́ ", { target: на тре́тьому }, " по́версі."], rule: { uk: ["з ", { term: по́верх }, " чоловічого роду — ", { term: на тре́тьому }], en: [{ term: по́верх }, " is masculine: ", { term: на тре́тьому }], es: [{ term: по́верх }, " es masculino: ", { term: на тре́тьому }], pt: [{ term: по́верх }, " é masculino: ", { term: на тре́тьому }], fr: [{ term: по́верх }, " est masculin : ", { term: на тре́тьому }], de: [{ term: по́верх }, " ist maskulin: ", { term: на тре́тьому }], it: [{ term: по́верх }, " è maschile: ", { term: на тре́тьому }], pl: [{ term: по́верх }, " jest rodzaju męskiego: ", { term: на тре́тьому }], tr: [{ term: по́верх }, " eril bir isimdir: ", { term: на тре́тьому }], id: [{ term: по́верх }, " bergender maskulin: ", { term: на тре́тьому }], vi: [{ term: по́верх }, " là danh từ giống đực: ", { term: на тре́тьому }] } }
           - { level: B1, wrong: 3-ій, right: { target: 3-й }, rule: { uk: "після цифри — лише останні літери", en: "after the figure, only the last letters", es: "tras la cifra, solo las últimas letras", pt: "depois do algarismo, só as últimas letras", fr: "après le chiffre, seulement les dernières lettres", de: "nach der Ziffer nur die letzten Buchstaben", it: "dopo la cifra, solo le ultime lettere", pl: "po cyfrze tylko ostatnie litery", tr: "rakamdan sonra yalnızca son harfler", id: "setelah angka, hanya huruf-huruf terakhir", vi: "sau chữ số, chỉ viết những chữ cái cuối" } }
           - { level: A2, speakers: [en], wrong: у дві ти́сячі деся́тий рік, right: ["у дві ти́сячі ", { target: деся́тому ро́ці }], rule: { en: ["a year after ", { term: у }, " takes the locative, and only the last word changes"] } }
+          - { level: B2, wrong: "Він наш двухти́сячний відві́дувач.", right: ["Він наш ", { target: "двохти́сячний" }, " відві́дувач."], rule: { uk: ["перша частина — ", { term: "двох" }, "; ", { term: "двухти́сячний" }, " — з російської"] } }
+          - { level: B2, wrong: "Я живу́ в сто тре́тя кварти́рі.", right: ["Я живу́ ", { target: "в сто тре́тій" }, " кварти́рі."], rule: { uk: "остання частина складеного порядкового узгоджується з іменником" } }
+          - { level: C1, wrong: "Це ста́лося у двох ти́сяч два́дцять тре́тьому ро́ці.", right: ["Це ста́лося ", { target: "у дві ти́сячі два́дцять тре́тьому ро́ці" }, "."], rule: { uk: "у назві року змінюється лише останнє слово" } }
+          - { level: C2, wrong: "Пе́ред вісімдеся́т шо́стому днем наро́дження він узя́в відпу́стку.", right: ["Пе́ред вісімдеся́т ", { target: "шо́стим днем" }, " наро́дження він узя́в відпу́стку."], rule: { uk: "порядковий стоїть у тому самому відмінку, що й іменник" } }

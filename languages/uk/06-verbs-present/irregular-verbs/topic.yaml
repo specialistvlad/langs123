@@ -188,6 +188,16 @@ cheatsheet:
             vi: { alternatives: [{ term: їм }, { term: їси́ }, { term: їдя́ть }] }
           ex: ["Що ти ", { target: їси́ }, "?"]
           tr: { en: "What are you eating?", es: "¿Qué comes?", pt: "O que você está comendo?", fr: "Que manges-tu ?", de: "Was isst du?", it: "Che cosa mangi?", pl: "Co jesz?", tr: "Ne yiyorsun?", id: "Kamu makan apa?", vi: "Bạn đang ăn gì?" }
+        - level: B2
+          point: { uk: "Дати й їсти з префіксом" }
+          rule:
+            uk: [{ mapping: [{ term: розда́ти }, { term: розда́м }] }, ", ", { mapping: [{ term: з’ї́сти }, { term: з’їм }] }]
+          ex: ["Вчи́телька ", { target: розда́сть }, " зо́шити."]
+        - level: B2
+          point: { uk: "Недоконана пара" }
+          rule:
+            uk: [{ mapping: [{ term: роздава́ти }, { term: роздаю́ }] }, ", ", { mapping: [{ term: з’їда́ти }, { term: з’їда́ю }] }]
+          ex: ["Щодня́ вчи́телька ", { target: роздає́ }, " зо́шити."]
         - level: A1
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -437,6 +447,30 @@ sections:
               vi: ["Các động từ tận cùng bằng ", { term: -ві́сти }, " chia theo cùng một kiểu: ", { mapping: [{ term: розпові́сти }, { term: розпові́м }] }, ", ", { mapping: [{ term: відпові́сти }, { term: відпові́м }] }, ":"]
             ex: ["Я тобі́ все ", { target: розпові́м }, "."]
             tr: { en: "I'll tell you everything.", es: "Te lo contaré todo.", pt: "Vou te contar tudo.", fr: "Je te raconterai tout.", de: "Ich erzähle dir alles.", it: "Ti racconterò tutto.", pl: "Opowiem ci wszystko.", tr: "Sana her şeyi anlatacağım.", id: "Saya akan menceritakan semuanya kepadamu.", vi: "Tôi sẽ kể hết cho bạn nghe." }
+      - type: paradigm
+        columns:
+          - { key: person, label: { uk: Особа } }
+          - { key: rozdaty, label: розда́ти, features: { tense: fut, aspect: pfv } }
+          - { key: zyisty, label: з’ї́сти, features: { tense: fut, aspect: pfv } }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: я, rozdaty: розда́м, zyisty: з’їм }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: ти, rozdaty: роздаси́, zyisty: з’їси́ }
+          - { level: B2, features: { person: 3, number: sg }, person: { alternatives: [він, вона́, воно́] }, rozdaty: розда́сть, zyisty: з’їсть }
+          - { level: B2, features: { person: 1, number: pl }, person: ми, rozdaty: роздамо́, zyisty: з’їмо́ }
+          - { level: B2, features: [{ person: 2, number: pl }, { person: 2, number: sg, politeness: form }], person: ви, rozdaty: роздасте́, zyisty: з’їсте́ }
+          - { level: B2, features: { person: 3, number: pl }, person: вони́, rozdaty: роздаду́ть, zyisty: з’їдя́ть }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Дієслова з префіксом, як-от ", { term: розда́ти }, " і ", { term: з’ї́сти }, ", змінюються так само, як ", { term: да́ти }, " і ", { term: ї́сти }, ", і означають майбутнє:"]
+            ex: { examples: [["Вчи́телька ", { target: розда́сть }, " зо́шити."], ["Ді́ти ", { target: з’їдя́ть }, " весь суп."]] }
+          - type: rule
+            level: B2
+            text:
+              uk: ["Недоконані пари мають звичайні закінчення I дієвідміни: ", { mapping: [{ term: роздава́ти }, { term: роздаю́ }] }, ", ", { mapping: [{ term: з’їда́ти }, { term: з’їда́ю }] }, "."]
+            ex: ["Щодня́ вчи́телька ", { target: роздає́ }, " зо́шити."]
 
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors

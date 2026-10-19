@@ -69,6 +69,22 @@ cheatsheet:
           rule: { uk: [{ term: ні з ким }, ": три слова окремо"], en: [{ term: ні з ким }, ": three separate words"], es: [{ term: ні з ким }, ": tres palabras separadas"], pt: [{ term: "ні з ким" }, ": três palavras separadas"], fr: [{ term: "ні з ким" }, " : trois mots séparés"], de: [{ term: "ні з ким" }, ": drei getrennte Wörter"], it: [{ term: "ні з ким" }, ": tre parole separate"], pl: [{ term: "ні з ким" }, ": trzy osobne wyrazy"], tr: [{ term: "ні з ким" }, ": üç ayrı sözcük"], id: [{ term: "ні з ким" }, ": tiga kata terpisah"], vi: [{ term: "ні з ким" }, ": ba từ viết rời"] }
           ex: ["Він ", { target: ні з ким }, " не гово́рить."]
           tr: { en: "He doesn't talk to anybody.", es: "No habla con nadie.", pt: "Ele não fala com ninguém.", fr: "Il ne parle à personne.", de: "Er spricht mit niemandem.", it: "Non parla con nessuno.", pl: "On z nikim nie rozmawia.", tr: "Kimseyle konuşmuyor.", id: "Dia tidak berbicara dengan siapa pun.", vi: "Anh ấy không nói chuyện với ai cả." }
+        - level: C1
+          point: { uk: "Ніякий, нічий" }
+          rule: { uk: [{ term: нія́кий }, " і ", { term: нічи́й }, " змінюються за родом і відмінками"] }
+          ex: ["Ця ха́та ", { target: нічия́ }, "."]
+        - level: C1
+          point: { uk: Ніскільки }
+          rule: { uk: ["«зовсім не»: ", { term: ніскі́льки }, " перед ", { term: не }] }
+          ex: ["Вона́ ", { target: ніскі́льки }, " не зміни́лася."]
+        - level: C1
+          point: { uk: Паралельні форми }
+          rule: { uk: { alternatives: [{ term: ніки́м }, { term: ні з ким }] } }
+          ex: ["Вона́ ", { target: ні з ким }, " не посвари́лася."]
+        - level: C2
+          point: { uk: Повні форми }
+          rule: { uk: { alternatives: [{ term: нічийо́го }, { term: нікотро́го }, { term: ніскілько́х }] } }
+          ex: [{ target: Нікотро́му }, " з них я не ві́рю."]
 
 sections:
   - title: { uk: Огляд, en: Overview, es: Visión general, pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -198,7 +214,63 @@ sections:
             word: { term: нічи́й }
             ex: ["Цей стіл ", { target: нічи́й }, "."]
             tr: { en: "This table is nobody's.", es: "Esta mesa no es de nadie.", pt: "Esta mesa não é de ninguém.", fr: "Cette table n’est à personne.", de: "Dieser Tisch gehört niemandem.", it: "Questo tavolo non è di nessuno.", pl: "Ten stół jest niczyj.", tr: "Bu masa kimsenin değil.", id: "Meja ini bukan milik siapa pun.", vi: "Cái bàn này không phải của ai cả." }
+          - level: C1
+            word: { term: ніскі́льки }
+            ex: ["Вона́ ", { target: ніскі́льки }, " не зміни́лася."]
+          - level: C1
+            word: { alternatives: [{ term: нічия́ }, { term: нічиє́ }] }
+            ex: { examples: [["Ця ха́та ", { target: нічия́ }, "."], ["Це мі́сце ", { target: нічиє́ }, "."]] }
 
+  - title: { uk: "Форма: ніякий" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: mn, label: { uk: "Чоловічий і середній рід" } }
+          - { key: fem, label: { uk: Жіночий рід } }
+          - { key: pl, label: { uk: Множина } }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: Називний }, mn: { alternatives: [нія́кий, нія́ке] }, fem: нія́ка, pl: нія́кі }
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, mn: нія́кого, fem: нія́кої, pl: нія́ких }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, mn: нія́кому, fem: нія́кій, pl: нія́ким }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, mn: { alternatives: [нія́кий, нія́кого, нія́ке] }, fem: нія́ку, pl: { alternatives: [нія́кі, нія́ких] } }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, mn: нія́ким, fem: нія́кою, pl: нія́кими }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: нія́кий }, " відмінюється, як твердий прикметник, і стоїть перед іменником:"]
+            ex: ["Він не дав мені́ ", { target: нія́кої }, " ві́дповіді."]
+
+  - title: { uk: "Форма: нічий, нікотрий, ніскільки" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: whose, label: { term: нічи́й } }
+          - { key: which, label: { term: нікотри́й } }
+          - { key: much, label: { term: ніскі́льки } }
+        rows:
+          - { level: C2, features: { case: nom }, case: { uk: Називний }, whose: нічи́й, which: нікотри́й, much: ніскі́льки }
+          - { level: C2, features: { case: gen }, case: { uk: Родовий }, whose: нічийо́го, which: нікотро́го, much: ніскілько́х }
+          - { level: C2, features: { case: dat }, case: { uk: Давальний }, whose: нічиє́му, which: нікотро́му, much: ніскілько́м }
+          - { level: C2, features: { case: acc }, case: { uk: Знахідний }, whose: { alternatives: [нічи́й, нічийо́го] }, which: { alternatives: [нікотри́й, нікотро́го] }, much: { alternatives: [ніскі́льки, ніскілько́х] } }
+          - { level: C2, features: { case: ins }, case: { uk: Орудний }, whose: нічиї́м, which: нікотри́м, much: ніскількома́ }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              uk: [{ term: нікотри́й }, " означає «жоден із кількох» і відмінюється, як ", { term: котри́й }, ":"]
+            ex: [{ target: Нікотро́му }, " з них я не ві́рю."]
+          - type: rule
+            level: C2
+            text:
+              uk: ["Жіночі й множинні форми ", { term: нічи́й }, " і ", { term: нікотри́й }, " такі самі, як у ", { term: чий }, " і ", { term: котри́й }, ":"]
+            ex: ["Він зроби́в це без ", { target: нічиє́ї }, " допомо́ги."]
   - title: { uk: З прийменником, en: With a preposition, es: Con una preposición, pt: "Com uma preposição", fr: "Avec une préposition", de: "Mit einer Präposition", it: "Con una preposizione", pl: "Z przyimkiem", tr: "Edatla", id: "Dengan preposisi", vi: "Với giới từ" }
     role: own
     content:
@@ -220,6 +292,33 @@ sections:
               vi: ["Giới từ đứng giữa ", { term: "ні" }, " và đại từ, và cả ba từ viết rời nhau:"]
             ex: { examples: [["Я ", { target: ні з ким }, " не говори́в."], ["Ми ", { target: ні про що }, " не ду́маємо."]] }
             tr: { en: { examples: ["I didn't talk to anybody.", "We're not thinking about anything."] }, es: { examples: ["No hablé con nadie.", "No pensamos en nada."] }, pt: { examples: ["Não falei com ninguém.", "Não estamos pensando em nada."] }, fr: { examples: ["Je n’ai parlé à personne.", "Nous ne pensons à rien."] }, de: { examples: ["Ich habe mit niemandem gesprochen.", "Wir denken an nichts."] }, it: { examples: ["Non ho parlato con nessuno.", "Non pensiamo a niente."] }, pl: { examples: ["Z nikim nie rozmawiałem.", "O niczym nie myślimy."] }, tr: { examples: ["Kimseyle konuşmadım.", "Hiçbir şey düşünmüyoruz."] }, id: { examples: ["Saya tidak berbicara dengan siapa pun.", "Kami tidak memikirkan apa pun."] }, vi: { examples: ["Tôi không nói chuyện với ai.", "Chúng tôi không nghĩ đến điều gì."] } }
+      - type: comparison
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: joined, label: { uk: Нерозділена форма } }
+          - { key: split, label: { uk: Розділена форма } }
+        rows:
+          - { level: C1, case: { uk: ["Орудний, ", { term: ніхто́ }] }, joined: ніки́м, split: ні з ким }
+          - { level: C1, case: { uk: ["Місцевий, ", { term: ніхто́ }] }, joined: { alternatives: [на ніко́му, на нікі́м] }, split: { alternatives: [ні на ко́му, ні на кім] } }
+          - { level: C1, case: { uk: ["Орудний, ", { term: ніщо́ }] }, joined: нічи́м, split: ні з чим }
+          - { level: C1, case: { uk: ["Місцевий, ", { term: ніщо́ }] }, joined: { alternatives: [на нічо́му, на нічи́м] }, split: { alternatives: [ні на чо́му, ні на чім] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: "Орудний має форму без прийменника й форму з прийменником між ні та займенником:"
+            ex: { examples: [["Вона́ ", { target: ніки́м }, " не захо́плюється."], ["Вона́ ", { target: ні з ким }, " не посвари́лася."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: "Місцевий має паралельні форми: прийменник стоїть перед займенником або всередині:"
+            ex: ["Він ", { target: ні на чо́му }, " не наполяга́є."]
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: нія́кий }, " з прийменником розпадається, як ", { term: ніхто́ }, ":"]
+            ex: [{ target: Ні в яко́му }, " ра́зі я не згоджу́ся."]
 
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
@@ -229,3 +328,4 @@ sections:
           - { level: B1, wrong: Я з ніки́м не говори́в., right: ["Я ", { target: ні з ким }, " не говори́в."], rule: { uk: ["прийменник — між ", { term: ні }, " і займенником"], en: ["the preposition goes between ", { term: ні }, " and the pronoun"], es: ["la preposición va entre ", { term: ні }, " y el pronombre"], pt: ["a preposição fica entre ", { term: "ні" }, " e o pronome"], fr: ["la préposition se place entre ", { term: "ні" }, " et le pronom"], de: ["die Präposition steht zwischen ", { term: "ні" }, " und dem Pronomen"], it: ["la preposizione sta tra ", { term: "ні" }, " e il pronome"], pl: ["przyimek stoi między ", { term: "ні" }, " a zaimkiem"], tr: ["edat, ", { term: "ні" }, " ile zamirin arasına girer"], id: ["preposisi berada di antara ", { term: "ні" }, " dan pronomina"], vi: ["giới từ đứng giữa ", { term: "ні" }, " và đại từ"] } }
           - { level: B1, speakers: [en, es], wrong: Ніхто́ прийшо́в., right: [{ target: Ніхто́ не }, " прийшо́в."], rule: { en: ["a ", { term: ні- }, " word still needs ", { term: не }, ": “nobody came” is ", { term: ніхто́ не прийшо́в }], es: ["aunque ", { term: ніхто́ }, " vaya delante, el verbo lleva ", { term: не }, ", no como «nadie vino»"] } }
           - { level: B1, speakers: [en], wrong: Я нічо́го зна́ю., right: ["Я ", { target: нічо́го не }, " зна́ю."], rule: { en: ["“I know nothing” keeps ", { term: не }, " before the verb"] } }
+          - { level: C1, wrong: Ця ха́та нічи́й., right: ["Ця ха́та ", { target: нічия́ }, "."], rule: { uk: ["жіночий рід: ", { term: нічия́ }] } }

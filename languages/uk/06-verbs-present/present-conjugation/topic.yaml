@@ -188,6 +188,16 @@ cheatsheet:
             vi: [{ term: бра́ти }, ": ", { alternatives: [{ term: беру́ }, { term: бере́ш }, { term: беру́ть }] }]
           ex: ["Я ", { target: беру́ }, " таксі́."]
           tr: { en: "I'm taking a taxi.", es: "Tomo un taxi.", pt: "Vou pegar um táxi.", fr: "Je prends un taxi.", de: "Ich nehme ein Taxi.", it: "Prendo un taxi.", pl: "Biorę taksówkę.", tr: "Taksiye biniyorum.", id: "Saya naik taksi.", vi: "Tôi đi taxi." }
+        - level: B2
+          point: { uk: "Дієслова на -вати" }
+          rule:
+            uk: { mapping: [{ term: встава́ти }, { term: встаю́ }] }
+          ex: ["Я ", { target: встаю́ }, " о сьо́мій."]
+        - level: B2
+          point: { uk: "Везти і возити" }
+          rule:
+            uk: [{ term: везти́ }, ": ", { alternatives: [{ term: везу́ }, { term: везе́ш }] }, "; ", { term: вози́ти }, ": ", { alternatives: [{ term: вожу́ }, { term: во́зиш }] }]
+          ex: { examples: [["Він ", { target: везе́ }, " нас на вокза́л."], ["Я ча́сто ", { target: вожу́ }, " ту́ристів по Льво́ву."]] }
         - level: A1
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -352,6 +362,26 @@ sections:
               vi: ["Sau phụ âm của gốc từ, đuôi được viết với ", { letter: у }, " và ", { letter: е }, ": ", { alternatives: [{ term: живу́ }, { term: живе́ш }, { term: живу́ть }] }, "."]
             ex: ["Де ти ", { target: живе́ш }, "?"]
             tr: { en: "Where do you live?", es: "¿Dónde vives?", pt: "Onde você mora?", fr: "Où habites-tu ?", de: "Wo wohnst du?", it: "Dove abiti?", pl: "Gdzie mieszkasz?", tr: "Nerede yaşıyorsun?", id: "Kamu tinggal di mana?", vi: "Bạn sống ở đâu?" }
+      - type: paradigm
+        columns:
+          - { key: person, label: { uk: Особа } }
+          - { key: nesty, label: нести́ }
+          - { key: vezty, label: везти́ }
+          - { key: vesty, label: вести́ }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: я, nesty: ["нес", { ending: у́ }], vezty: ["вез", { ending: у́ }], vesty: ["вед", { ending: у́ }] }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: ти, nesty: ["нес", { ending: е́ш }], vezty: ["вез", { ending: е́ш }], vesty: ["вед", { ending: е́ш }] }
+          - { level: B2, features: { person: 3, number: sg }, person: { alternatives: [він, вона́, воно́] }, nesty: ["нес", { ending: е́ }], vezty: ["вез", { ending: е́ }], vesty: ["вед", { ending: е́ }] }
+          - { level: B2, features: { person: 1, number: pl }, person: ми, nesty: ["нес", { ending: емо́ }], vezty: ["вез", { ending: емо́ }], vesty: ["вед", { ending: емо́ }] }
+          - { level: B2, features: [{ person: 2, number: pl }, { person: 2, number: sg, politeness: form }], person: ви, nesty: ["нес", { ending: ете́ }], vezty: ["вез", { ending: ете́ }], vesty: ["вед", { ending: ете́ }] }
+          - { level: B2, features: { person: 3, number: pl }, person: вони́, nesty: ["нес", { ending: у́ть }], vezty: ["вез", { ending: у́ть }], vesty: ["вед", { ending: у́ть }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Дієслова ", { term: нести́ }, ", ", { term: везти́ }, ", ", { term: вести́ }, " мають основу на ", { alternatives: [{ letter: с }, { letter: з }, { letter: д }] }, " і наголос на закінченні:"]
+            ex: ["Він ", { target: везе́ }, " нас на вокза́л."]
 
   - title: { uk: "Форма: II дієвідміна", en: "Form: conjugation II", es: "Forma: conjugación II", pt: "Forma: conjugação II", fr: "Forme : conjugaison II", de: "Form: Konjugation II", it: "Forma: coniugazione II", pl: "Forma: koniugacja II", tr: "Biçim: II. çekim", id: "Bentuk: konjugasi II", vi: "Dạng: kiểu chia II" }
     role: form
@@ -418,6 +448,19 @@ sections:
               vi: ["Sau ", { alternatives: [{ letter: ж }, { letter: ч }, { letter: ш }] }, ", dạng ", { term: вони́ }, " kết thúc bằng ", { term: -ать }, ": ", { alternatives: [{ term: кричу́ }, { term: кричи́ш }, { term: крича́ть }] }, "."]
             ex: ["Ді́ти ", { target: крича́ть }, " у дворі́."]
             tr: { en: "The children are shouting in the yard.", es: "Los niños gritan en el patio.", pt: "As crianças estão gritando no pátio.", fr: "Les enfants crient dans la cour.", de: "Die Kinder schreien im Hof.", it: "I bambini gridano in cortile.", pl: "Dzieci krzyczą na podwórku.", tr: "Çocuklar avluda bağırıyor.", id: "Anak-anak berteriak di halaman.", vi: "Bọn trẻ đang la hét ngoài sân." }
+      - type: paradigm
+        columns:
+          - { key: person, label: { uk: Особа } }
+          - { key: vozyty, label: вози́ти }
+          - { key: nosyty, label: носи́ти }
+          - { key: vodyty, label: води́ти }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: я, vozyty: ["вож", { ending: у́ }], nosyty: ["нош", { ending: у́ }], vodyty: ["водж", { ending: у́ }] }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: ти, vozyty: ["во́з", { ending: иш }], nosyty: ["но́с", { ending: иш }], vodyty: ["во́д", { ending: иш }] }
+          - { level: B2, features: { person: 3, number: sg }, person: { alternatives: [він, вона́, воно́] }, vozyty: ["во́з", { ending: ить }], nosyty: ["но́с", { ending: ить }], vodyty: ["во́д", { ending: ить }] }
+          - { level: B2, features: { person: 1, number: pl }, person: ми, vozyty: ["во́з", { ending: имо }], nosyty: ["но́с", { ending: имо }], vodyty: ["во́д", { ending: имо }] }
+          - { level: B2, features: [{ person: 2, number: pl }, { person: 2, number: sg, politeness: form }], person: ви, vozyty: ["во́з", { ending: ите }], nosyty: ["но́с", { ending: ите }], vodyty: ["во́д", { ending: ите }] }
+          - { level: B2, features: { person: 3, number: pl }, person: вони́, vozyty: ["во́з", { ending: ять }], nosyty: ["но́с", { ending: ять }], vodyty: ["во́д", { ending: ять }] }
 
   - title: { uk: Чергування в основі, en: Stem changes, es: Cambios en la raíz, pt: "Mudanças no radical", fr: "Changements de radical", de: "Stammwechsel", it: "Cambi nella radice", pl: "Zmiany w temacie", tr: "Gövde değişimleri", id: "Perubahan akar kata", vi: "Biến đổi gốc từ" }
     role: own
@@ -577,6 +620,18 @@ sections:
               vi: { mapping: [{ term: ми́ти }, { alternatives: [{ term: ми́ю }, { term: ми́єш }] }] }
             ex: ["Я ", { target: ми́ю }, " по́суд."]
             tr: { en: "I'm washing the dishes.", es: "Lavo los platos.", pt: "Estou lavando a louça.", fr: "Je fais la vaisselle.", de: "Ich spüle das Geschirr.", it: "Lavo i piatti.", pl: "Myję naczynia.", tr: "Bulaşık yıkıyorum.", id: "Saya mencuci piring.", vi: "Tôi rửa bát." }
+          - level: B2
+            form:
+              uk: [{ mapping: [{ term: встава́ти }, { alternatives: [{ term: встаю́ }, { term: встає́ш }] }] }, ", ", { mapping: [{ term: зостава́тися }, { alternatives: [{ term: зостаю́ся }, { term: зостає́шся }] }] }, ": ", { term: -ва- }, " випадає"]
+            ex: { examples: [["Я ", { target: встаю́ }, " о сьо́мій."], ["Ми ", { target: зостаємо́ся }, " вдо́ма."]] }
+          - level: B2
+            form:
+              uk: [{ mapping: [{ term: вози́ти }, { alternatives: [{ term: вожу́ }, { term: во́зиш }] }] }, ": ", { letter: ж }, " лише у формі я"]
+            ex: ["Я ча́сто ", { target: вожу́ }, " ту́ристів по Льво́ву."]
+          - level: B2
+            form:
+              uk: [{ mapping: [{ term: носи́ти }, { alternatives: [{ term: ношу́ }, { term: но́сиш }] }] }, ": ", { letter: ш }, " лише у формі я"]
+            ex: ["Щодня́ я ", { target: ношу́ }, " кни́жки до шко́ли."]
 
   - title: { uk: Наголос, en: Stress, es: El acento, pt: "O acento tônico", fr: "L’accent tonique", de: "Die Betonung", it: "L'accento", pl: "Akcent", tr: "Vurgu", id: "Tekanan", vi: "Trọng âm" }
     role: pronunciation

@@ -69,6 +69,22 @@ cheatsheet:
           rule: { uk: "родовий без прийменника", en: "the genitive with no preposition", es: "el genitivo sin preposición", pt: "genitivo sem preposição", fr: "le génitif sans préposition", de: "Genitiv ohne Präposition", it: "il genitivo senza preposizione", pl: "dopełniacz bez przyimka", tr: "edatsız tamlayan hâli", id: "genitif tanpa preposisi", vi: "sinh cách, không có giới từ" }
           ex: [{ target: Цього́ }, " ро́ку я ї́ду до Ки́єва."]
           tr: { en: "This year I'm going to Kyiv.", es: "Este año voy a Kiev.", pt: "Este ano vou para Kyiv.", fr: "Cette année, je vais à Kyiv.", de: "Dieses Jahr fahre ich nach Kyjiw.", it: "Quest'anno vado a Kyiv.", pl: "W tym roku jadę do Kijowa.", tr: "Bu yıl Kyiv’e gidiyorum.", id: "Tahun ini saya pergi ke Kyiv.", vi: "Năm nay tôi đi Kyiv." }
+        - level: C1
+          point: { uk: Такий }
+          rule: { uk: { alternatives: [{ term: таки́й }, { term: така́ }, { term: таке́ }, { term: такі́ }] } }
+          ex: ["У ", { target: тако́му }, " мі́сті хо́четься жи́ти."]
+        - level: C1
+          point: { uk: Стільки }
+          rule: { uk: ["родовий після ", { term: сті́льки }, "; далі — як у ", { term: скі́льки }] }
+          ex: ["На вечі́рку прийшло́ ", { target: сті́льки }, " госте́й!"]
+        - level: C1
+          point: { uk: Підсилення }
+          rule: { uk: { alternatives: [{ term: оце́й }, { term: ото́й }, { term: отаки́й }] } }
+          ex: ["Ви ба́чите ", { target: ото́го }, " чолові́ка?"]
+        - level: C1
+          point: { uk: Високий стиль }
+          rule: { uk: { alternatives: [{ term: сей }, { term: ся }, { term: се }, { term: сі }] } }
+          ex: ["Вони́ дру́жать ", { target: по сей день }, "."]
 
 sections:
   - title: { uk: Огляд, en: Overview, es: Visión general, pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -224,6 +240,89 @@ sections:
             ex: [{ target: Цього́ ро́ку }, " я ї́ду до Ки́єва."]
             tr: { en: "This year I'm going to Kyiv.", es: "Este año voy a Kiev.", pt: "Este ano vou para Kyiv.", fr: "Cette année, je vais à Kyiv.", de: "Dieses Jahr fahre ich nach Kyjiw.", it: "Quest'anno vado a Kyiv.", pl: "W tym roku jadę do Kijowa.", tr: "Bu yıl Kyiv’e gidiyorum.", id: "Tahun ini saya pergi ke Kyiv.", vi: "Năm nay tôi đi Kyiv." }
 
+  - title: { uk: "Форма: відмінки такий" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: mn, label: { uk: "Чоловічий і середній рід" } }
+          - { key: fem, label: { uk: Жіночий рід } }
+          - { key: pl, label: { uk: Множина } }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: Називний }, mn: { alternatives: [таки́й, таке́] }, fem: така́, pl: такі́ }
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, mn: тако́го, fem: тако́ї, pl: таки́х }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, mn: тако́му, fem: такі́й, pl: таки́м }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, mn: { alternatives: [таки́й, тако́го, таке́] }, fem: таку́, pl: { alternatives: [такі́, таки́х] } }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, mn: таки́м, fem: тако́ю, pl: таки́ми }
+          - { level: C1, features: { case: loc }, case: { uk: Місцевий }, mn: { alternatives: [на тако́му, на такі́м] }, fem: на такі́й, pl: на таки́х }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: таки́й }, " вказує на ознаку й відмінюється, як твердий прикметник:"]
+            ex: ["У ", { target: тако́му }, " мі́сті хо́четься жи́ти."]
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: таки́й }, " відкриває порівняння зі словом ", { term: як }, " і наслідок зі словом ", { term: що }, ":"]
+            ex: { examples: [["Я хо́чу ", { target: таки́й }, " телефо́н, ", { target: як }, " у тебе́."], ["Вона́ ", { target: така́ }, " голо́дна, ", { target: що }, " з’ї́ла б усе́."]] }
+
+  - title: { uk: Стільки }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: form, label: { term: сті́льки } }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: Називний }, form: сті́льки }
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, form: стілько́х }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, form: стілько́м }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, form: { alternatives: [сті́льки, стілько́х] } }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, form: стількома́ }
+          - { level: C1, features: { case: loc }, case: { uk: Місцевий }, form: на стілько́х }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: сті́льки }, " в називному й знахідному вимагає родового відмінка:"]
+            ex: ["На вечі́рку прийшло́ ", { target: сті́льки }, " госте́й!"]
+          - type: rule
+            level: C1
+            text:
+              uk: ["В інших відмінках ", { term: сті́льки }, " і іменник стоять в одному відмінку:"]
+            ex: ["Ми поздоро́валися зі ", { target: стількома́ }, " людьми́."]
+
+  - title: { uk: "Оцей, отой, отакий і сей" }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc, number: sg } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem, number: sg } }
+          - { key: neut, label: { uk: Середній рід }, features: { gender: neut, number: sg } }
+          - { key: pl, label: { uk: Множина }, features: { number: pl } }
+        rows:
+          - { level: C1, features: { deixis: prox }, masc: оце́й, fem: оця́, neut: оце́, pl: оці́ }
+          - { level: C1, features: { deixis: dist }, masc: ото́й, fem: ота́, neut: оте́, pl: оті́ }
+          - { level: C1, masc: отаки́й, fem: отака́, neut: отаке́, pl: отакі́ }
+          - { level: C1, features: { deixis: prox }, masc: сей, fem: ся, neut: се, pl: сі }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: оце́й }, ", ", { term: ото́й }, " і ", { term: отаки́й }, " підсилюють ", { term: цей }, ", ", { term: той }, " і ", { term: таки́й }, " у розмові й відмінюються так само:"]
+            ex: { examples: [[{ target: Оце́й }, " фільм мені́ подо́бається найбі́льше."], ["Ви ба́чите ", { target: ото́го }, " чолові́ка?"], [{ target: Отаку́ }, " пого́ду ми не очі́кували."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: сей }, ", ", { term: ся }, ", ", { term: се }, ", ", { term: сі }, " належать до високого стилю й живуть у сталих виразах:"]
+            ex: { examples: [["Вони́ дру́жать ", { target: по сей день }, "."], ["Його́ ві́дповідь — ", { target: "ні се, ні те" }, "."]] }
+
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -232,3 +331,4 @@ sections:
           - { level: A1, wrong: Цей кни́жка ціка́ва., right: [{ target: Ця }, " кни́жка ціка́ва."], rule: { uk: [{ term: кни́жка }, " — жіночий рід: ", { term: ця }], en: [{ term: кни́жка }, " is feminine: ", { term: ця }], es: [{ term: кни́жка }, " es femenino: ", { term: ця }], pt: [{ term: "кни́жка" }, " é feminino: ", { term: "ця" }], fr: [{ term: "кни́жка" }, " est féminin : ", { term: "ця" }], de: [{ term: "кни́жка" }, " ist feminin: ", { term: "ця" }], it: [{ term: "кни́жка" }, " è femminile: ", { term: "ця" }], pl: [{ term: "кни́жка" }, " jest rodzaju żeńskiego: ", { term: "ця" }], tr: [{ term: "кни́жка" }, " dişildir: ", { term: "ця" }], id: [{ term: "кни́жка" }, " feminin: ", { term: "ця" }], vi: [{ term: "кни́жка" }, " thuộc giống cái: ", { term: "ця" }] } }
           - { level: A1, speakers: [en, es], wrong: Цей мій брат., right: [{ target: Це }, " мій брат."], rule: { en: ["“this is” is ", { term: Це }, ", which never changes"], es: ["«este es» se dice ", { term: Це }, ", que no cambia"] } }
           - { level: B1, wrong: Я живу́ в цей мі́сто., right: ["Я живу́ в ", { target: цьому́ мі́сті }, "."], rule: { uk: ["де? — місцевий: ", { term: у цьому́ }], en: ["where? takes the locative: ", { term: у цьому́ }], es: ["¿dónde? lleva el locativo: ", { term: у цьому́ }], pt: ["onde? pede o locativo: ", { term: "у цьому́" }], fr: ["où ? appelle le locatif : ", { term: "у цьому́" }], de: ["wo? verlangt den Lokativ: ", { term: "у цьому́" }], it: ["dove? vuole il locativo: ", { term: "у цьому́" }], pl: ["gdzie? — miejscownik: ", { term: "у цьому́" }], tr: ["nerede? bulunma hâli ister: ", { term: "у цьому́" }], id: ["di mana? memakai lokatif: ", { term: "у цьому́" }], vi: ["ở đâu? dùng vị trí cách: ", { term: "у цьому́" }] } }
+          - { level: C1, wrong: Тут сті́льки лю́ди., right: ["Тут ", { target: сті́льки люде́й }, "."], rule: { uk: ["після ", { term: сті́льки }, " іменник стоїть у родовому: ", { term: сті́льки люде́й }] } }

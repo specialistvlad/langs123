@@ -1,0 +1,189 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.parenthetical-words
+lang: uk
+kind: grammar
+tags: [sentence, parenthetical-words, punctuation, commas, syntax]
+concepts: [parenthetical-words]
+related: [uk.sentence.conjunctions, uk.sentence.word-order, uk.modality.modal-words, uk.sentence.reported-speech]
+status: { uk: draft }
+
+title: { uk: Вставні слова й конструкції, en: Parenthetical Words and Phrases }
+summary:
+  lead:
+    uk: "Вставні слова й конструкції показують порядок думок, упевненість, джерело й ставлення мовця; їх виділяємо комами."
+  rule:
+    uk: "Вставне слово не є членом речення, тому його виділяємо комами:"
+  ex: ["Ми, ", { target: "на жаль" }, ", запізни́лися."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт } }
+        - { key: rule, label: { uk: Правило } }
+        - { key: ex, label: { uk: Приклад } }
+      rows:
+        - level: B2
+          point: { uk: Порядок думок }
+          rule: { uk: { alternatives: [{ term: "по-пе́рше" }, { term: "по-дру́ге" }, { term: "по-тре́тє" }, { term: "о́тже" }] } }
+          ex: [{ target: "По-пе́рше" }, ", ми ма́ємо ма́ло ча́су."]
+        - level: B2
+          point: { uk: Ймовірність }
+          rule: { uk: { equivalence: [{ term: "мо́же" }, { term: "можли́во" }] } }
+          ex: [{ target: "Мо́же" }, ", за́втра пої́демо до мо́ря?"]
+        - level: B2
+          point: { uk: Коми }
+          rule: { uk: "на початку — кома після слова; всередині — коми з обох боків" }
+          ex: ["Він", { target: ", о́тже," }, " не при́йде."]
+        - level: C1
+          point: { uk: Контакт }
+          rule: { uk: { alternatives: [{ term: "зна́єш" }, { term: "розумі́єш" }, { term: "ба́чиш" }, { term: "ба́чите" }] } }
+          ex: ["За́втра в ме́не", { target: ", зна́єш," }, " важли́ві спра́ви."]
+        - level: C1
+          point: { uk: Джерело й думка }
+          rule: { uk: { alternatives: [{ term: "на мою́ ду́мку" }, { term: "за його́ слова́ми" }] } }
+          ex: [{ target: "На мою́ ду́мку" }, ", це га́рне рі́шення."]
+        - level: C1
+          point: { uk: Ставлення }
+          rule: { uk: { alternatives: [{ term: "на жаль" }, { term: "на ща́стя" }] } }
+          ex: [{ target: "На ща́стя" }, ", ніхто́ не постражда́в."]
+        - level: C2
+          point: { uk: Приклад }
+          rule: { uk: { alternatives: [{ term: "напри́клад" }, { term: "зокрема́" }] } }
+          ex: ["Ні́жність", { target: ", напри́клад," }, " не мо́жна описа́ти математи́чно."]
+        - level: C2
+          point: { uk: Уточнення }
+          rule: { uk: { alternatives: [{ term: "то́бто" }, { term: "іна́кше ка́жучи" }] } }
+          ex: ["Ра́но вра́нці", { target: ", то́бто," }, " о п’я́тій, ми ви́їхали."]
+        - level: C2
+          point: { uk: Підсумок }
+          rule: { uk: { alternatives: [{ term: "таки́м чи́ном" }, { term: "сло́вом" }] } }
+          ex: [{ target: "Таки́м чи́ном" }, ", ми ма́ємо два варіа́нти."]
+        - level: C2
+          point: { uk: Кінець речення }
+          rule: { uk: "кома стоїть перед вставним словом" }
+          ex: ["Він не прийшо́в", { target: ", на жаль" }, "."]
+        - level: B2
+          point: { uk: Пастка }
+          rule: { uk: [{ term: "мо́же" }, " з інфінітивом — дієслово: коми немає"] }
+          ex: ["Він ", { target: "мо́же" }, " прийти́."]
+
+sections:
+  - title: { uk: Огляд }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { uk: "Вставне слово не є членом речення: воно показує порядок думок, упевненість чи ставлення мовця." }
+            ex: ["Ми, ", { target: "о́тже" }, ", ма́ємо чека́ти."]
+          - type: rule
+            level: B2
+            text: { uk: "Вставне слово можна прибрати, і речення лишається повним." }
+            ex: { mapping: [["Він, ", { target: "о́тже" }, ", не при́йде."], "Він не при́йде."] }
+          - type: rule
+            level: C1
+            text: { uk: ["Вставна конструкція — кілька слів, що діють як одне вставне слово: ", { term: "на мою́ ду́мку" }, "."] }
+          - type: note
+            level: B2
+            text: { uk: ["Вставні слова ", { term: "мабу́ть" }, ", ", { term: "можли́во" }, ", ", { term: "здає́ться" }, ": ", { link: Сполучники, to: uk.sentence.conjunctions }, "."] }
+          - type: note
+            level: C1
+            text: { uk: ["Чужі слова й джерело інформації: ", { link: "Пряма й непряма мова", to: uk.sentence.reported-speech }, "."] }
+
+  - title: { uk: Значення вставних слів }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Значення } }
+          - { key: words, label: { uk: Слова } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            use: { uk: "порядок думок: по черзі та підсумок" }
+            words: { uk: { alternatives: [{ term: "по-пе́рше" }, { term: "по-дру́ге" }, { term: "по-тре́тє" }, { term: "о́тже" }] } }
+            ex: { examples: [[{ target: "По-пе́рше" }, ", ми ма́ємо ма́ло ча́су."], [{ target: "О́тже" }, ", ми зустрі́немося за́втра."]] }
+          - level: B2
+            use: { uk: "ймовірність" }
+            words: { uk: { term: "мо́же" } }
+            ex: [{ target: "Мо́же" }, ", за́втра пої́демо до мо́ря?"]
+          - level: C1
+            use: { uk: "контакт зі слухачем" }
+            words: { uk: { alternatives: [{ term: "зна́єш" }, { term: "розумі́єш" }, { term: "ба́чиш" }, { term: "ба́чите" }] } }
+            ex: ["За́втра в ме́не, ", { target: "зна́єш" }, ", важли́ві спра́ви."]
+          - level: C1
+            use: { uk: "джерело й думка" }
+            words: { uk: { alternatives: [{ term: "на мою́ ду́мку" }, { term: "за його́ слова́ми" }] } }
+            ex: { examples: [[{ target: "На мою́ ду́мку" }, ", це га́рне рі́шення."], [{ target: "За його́ слова́ми" }, ", робо́та ско́ро закі́нчиться."]] }
+          - level: C1
+            use: { uk: "ставлення до події" }
+            words: { uk: { alternatives: [{ term: "на жаль" }, { term: "на ща́стя" }] } }
+            ex: { examples: [[{ target: "На жаль" }, ", ми запізни́лися."], [{ target: "На ща́стя" }, ", ніхто́ не постражда́в."]] }
+          - level: C2
+            use: { uk: "приклад" }
+            words: { uk: { alternatives: [{ term: "напри́клад" }, { term: "зокрема́" }] } }
+            ex: { examples: [["Ні́жність, ", { target: "напри́клад" }, ", не мо́жна описа́ти математи́чно."], ["Ця пробле́ма, ", { target: "зокрема́" }, ", стосу́ється студе́нтів."]] }
+          - level: C2
+            use: { uk: "уточнення" }
+            words: { uk: { alternatives: [{ term: "то́бто" }, { term: "іна́кше ка́жучи" }] } }
+            ex: { examples: [["Ра́но вра́нці, ", { target: "то́бто" }, " о п’я́тій, ми ви́їхали."], [{ target: "Іна́кше ка́жучи" }, ", ця зада́ча зо́всім проста́."]] }
+          - level: C2
+            use: { uk: "підсумок" }
+            words: { uk: { alternatives: [{ term: "таки́м чи́ном" }, { term: "сло́вом" }] } }
+            ex: { examples: [[{ target: "Таки́м чи́ном" }, ", ми ма́ємо два варіа́нти."], [{ target: "Сло́вом" }, ", пла́ни зміни́лися."]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { uk: ["Слово ", { term: "мо́же" }, " вставне, якщо його можна прибрати; дієслово ", { term: "мо́же" }, " потребує інфінітива."] }
+            ex: { contrast: [["Він, ", { target: "мо́же" }, ", при́йде."], ["Він ", { target: "мо́же" }, " прийти́."]] }
+
+  - title: { uk: Місце в реченні й коми }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: place, label: { uk: Місце } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            place: { uk: "на початку речення: кома після слова" }
+            ex: [{ target: "О́тже" }, ", ми почина́ємо."]
+          - level: B2
+            place: { uk: "всередині речення: коми з обох боків" }
+            ex: ["Ми", { target: ", о́тже," }, " почина́ємо."]
+          - level: C2
+            place: { uk: "у кінці речення: кома перед словом" }
+            ex: ["Він не прийшо́в", { target: ", на жаль" }, "."]
+
+  - title: { uk: Типові помилки }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "По-пе́рше я ма́ло зна́ю."
+            right: [{ target: "По-пе́рше," }, " я ма́ло зна́ю."]
+            rule: { uk: "на початку речення кома стоїть після вставного слова" }
+          - level: B2
+            wrong: "Він о́тже не при́йде."
+            right: ["Він", { target: ", о́тже," }, " не при́йде."]
+            rule: { uk: "всередині речення вставне слово стоїть між двома комами" }
+          - level: B2
+            wrong: "Він, мо́же, прийти́."
+            right: ["Він ", { target: "мо́же" }, " прийти́."]
+            rule: { uk: [{ term: "мо́же" }, " з інфінітивом — дієслово, воно не вставне"] }
+          - level: C1
+            wrong: "За́втра в ме́не зна́єш важли́ві спра́ви."
+            right: ["За́втра в ме́не", { target: ", зна́єш," }, " важли́ві спра́ви."]
+            rule: { uk: [{ term: "зна́єш" }, " і подібні слова контакту виділяємо комами з обох боків"] }
+          - level: C1
+            wrong: "Нажа́ль, ми запізни́лися."
+            right: [{ target: "На жаль" }, ", ми запізни́лися."]
+            rule: { uk: ["пишемо двома словами: ", { term: "на жаль" }] }
+          - level: C2
+            wrong: "Він не прийшо́в на жаль."
+            right: ["Він не прийшо́в", { target: ", на жаль" }, "."]
+            rule: { uk: "у кінці речення кома стоїть перед вставним словом" }

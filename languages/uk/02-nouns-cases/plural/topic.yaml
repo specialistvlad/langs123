@@ -188,6 +188,21 @@ cheatsheet:
             vi: [{ term: -ин }, " mất đi ở số nhiều"]
           ex: ["Ми ", { target: громадя́ни }, " Украї́ни."]
           tr: { en: "We are citizens of Ukraine.", es: "Somos ciudadanos de Ucrania.", pt: "Somos cidadãos da Ucrânia.", fr: "Nous sommes des citoyens de l’Ukraine.", de: "Wir sind Bürger der Ukraine.", it: "Siamo cittadini dell'Ucraina.", pl: "Jesteśmy obywatelami Ukrainy.", tr: "Biz Ukrayna vatandaşlarıyız.", id: "Kami adalah warga negara Ukraina.", vi: "Chúng tôi là công dân Ukraina." }
+        - level: B2
+          point: { uk: Розширена основа }
+          rule:
+            uk: ["середній рід: основа з ", { alternatives: [{ term: -ат- }, { term: -ят- }, { term: -ен- }] }]
+          ex: { examples: [{ target: курча́та }, { target: імена́ }] }
+        - level: C1
+          point: { uk: "Лише множина: родовий" }
+          rule:
+            uk: ["закінчення ", { alternatives: [{ term: -ів }, { term: -ок }] }, " або без закінчення"]
+          ex: { examples: [{ target: вершкі́в }, { target: ша́шок }, { target: огля́дин }] }
+        - level: C2
+          point: { uk: Родовий без закінчення }
+          rule:
+            uk: ["нульове закінчення замість ", { alternatives: [{ term: -а }, { term: -и }] }]
+          ex: { examples: [{ target: ворі́т }, { target: дров }, { target: Карпа́т }] }
         - level: A1
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -359,6 +374,8 @@ sections:
           - { level: A1, group: { uk: { mapping: [{ letter: г }, { letter: з }] }, en: { mapping: [{ letter: г }, { letter: з }] }, es: { mapping: [{ letter: г }, { letter: з }] }, pt: { mapping: [{ letter: г }, { letter: з }] }, fr: { mapping: [{ letter: г }, { letter: з }] }, de: { mapping: [{ letter: г }, { letter: з }] }, it: { mapping: [{ letter: г }, { letter: з }] }, pl: { mapping: [{ letter: г }, { letter: з }] }, tr: { mapping: [{ letter: г }, { letter: з }] }, id: { mapping: [{ letter: г }, { letter: з }] }, vi: { mapping: [{ letter: г }, { letter: з }] } }, sg: друг, pl: дру́зі }
           - { level: A2, group: { uk: "Особлива форма", en: "Irregular", es: "Irregular", pt: "Irregular", fr: "Irrégulier", de: "Unregelmäßig", it: "Irregolare", pl: "Nieregularna", tr: "Düzensiz", id: "Tidak beraturan", vi: "Bất quy tắc" }, sg: { alternatives: [люди́на, дити́на, о́ко] }, pl: { alternatives: [лю́ди, ді́ти, о́чі] } }
           - { level: B1, group: { uk: "-ин зникає", en: "-ин drops", es: "-ин desaparece", pt: "-ин desaparece", fr: "-ин tombe", de: "-ин fällt weg", it: "-ин cade", pl: "-ин znika", tr: "-ин düşer", id: "-ин hilang", vi: "-ин mất đi" }, sg: { alternatives: [громадя́нин, кия́нин] }, pl: { alternatives: [громадя́ни, кия́ни] } }
+          - { level: B2, group: { uk: ["додається ", { alternatives: [{ term: -ат- }, { term: -ят- }] }] }, sg: { alternatives: [курча́, немовля́] }, pl: { alternatives: [курча́та, немовля́та] } }
+          - { level: B2, group: { uk: ["додається ", { term: -ен- }] }, sg: { alternatives: [ім’я́, пле́м’я] }, pl: { alternatives: [імена́, племена́] } }
       - type: list
         items:
           - type: rule
@@ -431,6 +448,50 @@ sections:
               vi: "Các danh từ khác chỉ có số nhiều:"
             ex: { examples: [{ target: окуля́ри }, { target: гро́ші }, { target: Карпа́ти }] }
             tr: { en: { examples: [glasses, money, the Carpathians] }, es: { examples: [gafas, dinero, los Cárpatos] }, pt: { examples: ["óculos", "dinheiro", "os Cárpatos"] }, fr: { examples: ["lunettes", "argent", "les Carpates"] }, de: { examples: ["Brille", "Geld", "die Karpaten"] }, it: { examples: ["occhiali", "denaro", "i Carpazi"] }, pl: { examples: ["okulary", "pieniądze", "Karpaty"] }, tr: { examples: ["gözlük", "para", "Karpatlar"] }, id: { examples: ["kacamata", "uang", "Pegunungan Karpat"] }, vi: { examples: ["kính", "tiền", "dãy Carpat"] } }
+      - type: paradigm
+        columns:
+          - { key: group, label: { uk: Група } }
+          - { key: nom, label: { uk: Називний }, features: { case: nom, number: pl } }
+          - { key: gen, label: { uk: Родовий }, features: { case: gen, number: pl } }
+        rows:
+          - { level: B2, group: { uk: Парні й складені предмети }, nom: но́жиці, gen: но́жиць }
+          - { level: B2, group: { uk: Гроші }, nom: гро́ші, gen: гро́шей }
+          - { level: B2, group: { uk: Ігри }, nom: ша́хи, gen: ша́хів }
+          - { level: B2, group: { uk: Пора доби }, nom: су́тінки, gen: су́тінків }
+          - { level: B2, group: { uk: Назви міст }, nom: { alternatives: [Су́ми, Чернівці́] }, gen: { alternatives: [Сум, Чернівці́в] } }
+          - { level: C1, group: { uk: Їжа й речовини }, nom: вершки́, gen: вершкі́в }
+          - { level: C1, group: { uk: Абстрактні й обрядові слова }, nom: { alternatives: [огля́дини, пе́стощі, со́лодощі] }, gen: { alternatives: [огля́дин, пе́стощів, со́лодощів] } }
+          - { level: C1, group: { uk: Ігри }, nom: ша́шки, gen: ша́шок }
+          - { level: C1, group: { uk: Назви міст }, nom: Прилу́ки, gen: Прилу́к }
+          - { level: C2, group: { uk: "Середній рід, без закінчення" }, nom: { alternatives: [воро́та, дро́ва, на́дра] }, gen: { alternatives: [ворі́т, дров, надр] } }
+          - { level: C2, group: { uk: ["Родовий на ", { term: -ів }] }, nom: { alternatives: [перего́ни, шо́рти] }, gen: { alternatives: [перего́нів, шо́ртів] } }
+          - { level: C2, group: { uk: Назви гір і міст }, nom: { alternatives: [Карпа́ти, Пірене́ї, Черка́си] }, gen: { alternatives: [Карпа́т, Пірене́їв, Черка́с] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: "Прикметник і дієслово стоять у множині, навіть коли іменник називає один предмет:"
+            ex: [{ target: Мої́ }, " но́жиці ", { target: лежа́ть }, " на столі́."]
+          - type: rule
+            level: B2
+            text:
+              uk: "Знахідний множини речей збігається з називним:"
+            ex: ["Я купи́в ", { target: нові́ но́жиці }, "."]
+          - type: note
+            level: B2
+            text:
+              uk: ["Родовий множини загалом: ", { link: Родовий відмінок, to: uk.nouns-cases.genitive }, "."]
+          - type: rule
+            level: C1
+            text:
+              uk: ["Давальний множини має закінчення ", { alternatives: [{ term: -ам }, { term: -ям }] }, ", місцевий — ", { alternatives: [{ term: -ах }, { term: -ях }] }, ":"]
+            ex: { examples: [["Ді́ти ра́ді ", { target: со́лодощам }, "."], ["Вона́ живе́ в ", { target: Прилу́ках }, "."], ["Ми живемо́ в ", { target: Чернівця́х }, "."]] }
+          - type: rule
+            level: C2
+            text:
+              uk: "Назви гір і міст стоять у місцевому з прийменником у чи в:"
+            ex: { examples: [{ target: у Карпа́тах }, { target: у Пірене́ях }, { target: у Черка́сах }] }
 
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
@@ -442,5 +503,9 @@ sections:
           - { level: A1, wrong: Це нові́ мі́сти., right: ["Це нові́ ", { target: міста́ }, "."], rule: { uk: ["середній рід: ", { mapping: [{ term: -о }, { term: -а }] }], en: ["neuter: ", { mapping: [{ term: -о }, { term: -а }] }], es: ["neutro: ", { mapping: [{ term: -о }, { term: -а }] }], pt: ["neutro: ", { mapping: [{ term: -о }, { term: -а }] }], fr: ["neutre : ", { mapping: [{ term: -о }, { term: -а }] }], de: ["Neutrum: ", { mapping: [{ term: -о }, { term: -а }] }], it: ["neutro: ", { mapping: [{ term: -о }, { term: -а }] }], pl: ["rodzaj nijaki: ", { mapping: [{ term: -о }, { term: -а }] }], tr: ["nötr: ", { mapping: [{ term: -о }, { term: -а }] }], id: ["netral: ", { mapping: [{ term: -о }, { term: -а }] }], vi: ["giống trung: ", { mapping: [{ term: -о }, { term: -а }] }] } }
           - { level: A2, wrong: Тут хо́дять люди́ни., right: ["Тут хо́дять ", { target: лю́ди }, "."], rule: { uk: ["множина від ", { term: люди́на }, " — ", { term: лю́ди }], en: ["the plural of ", { term: люди́на }, " is ", { term: лю́ди }], es: ["el plural de ", { term: люди́на }, " es ", { term: лю́ди }], pt: ["o plural de ", { term: люди́на }, " é ", { term: лю́ди }], fr: ["le pluriel de ", { term: люди́на }, " est ", { term: лю́ди }], de: ["der Plural von ", { term: люди́на }, " ist ", { term: лю́ди }], it: ["il plurale di ", { term: люди́на }, " è ", { term: лю́ди }], pl: ["liczbą mnogą od ", { term: люди́на }, " jest ", { term: лю́ди }], tr: [{ term: люди́на }, " sözcüğünün çoğulu ", { term: лю́ди }, " olur"], id: ["bentuk jamak dari ", { term: люди́на }, " adalah ", { term: лю́ди }], vi: ["số nhiều của ", { term: люди́на }, " là ", { term: лю́ди }] } }
           - { level: B1, wrong: Ця две́рі відчи́нена., right: [{ target: Ці }, " две́рі ", { target: відчи́нені }, "."], rule: { uk: [{ term: две́рі }, " має тільки множину"], en: [{ term: две́рі }, " exists only in the plural"], es: [{ term: две́рі }, " solo tiene plural"], pt: [{ term: две́рі }, " só existe no plural"], fr: [{ term: две́рі }, " n’existe qu’au pluriel"], de: [{ term: две́рі }, " gibt es nur im Plural"], it: [{ term: две́рі }, " esiste solo al plurale"], pl: [{ term: две́рі }, " występuje tylko w liczbie mnogiej"], tr: [{ term: две́рі }, " yalnızca çoğul olarak bulunur"], id: [{ term: две́рі }, " hanya ada dalam bentuk jamak"], vi: [{ term: две́рі }, " chỉ có số nhiều"] } }
+          - { level: B2, wrong: Мої́ немовля́ сплять., right: ["Мої́ ", { target: немовля́та }, " сплять."], rule: { uk: ["малята мають ", { term: -ат- }, ": ", { mapping: [{ term: немовля́ }, { term: немовля́та }] }] } }
+          - { level: B2, wrong: У ме́не нема́є гро́шів., right: ["У ме́не нема́є ", { target: гро́шей }, "."], rule: { uk: ["родовий від ", { term: гро́ші }, " — ", { term: гро́шей }] } }
+          - { level: C1, wrong: У нас нема́є ша́шків., right: ["У нас нема́є ", { target: ша́шок }, "."], rule: { uk: ["родовий від ", { term: ша́шки }, " — ", { term: ша́шок }] } }
+          - { level: C2, wrong: Бі́ля воро́тів сто́їть маши́на., right: ["Бі́ля ", { target: ворі́т }, " сто́їть маши́на."], rule: { uk: ["родовий від ", { term: воро́та }, " — ", { term: ворі́т }] } }
           - { level: B1, speakers: [en], wrong: Гро́ші лежи́ть на столі́., right: [{ target: Гро́ші лежа́ть }, " на столі́."], rule: { en: [{ term: гро́ші }, " is plural, unlike “money”: ", { term: лежа́ть }] } }
           - { level: A2, speakers: [es], wrong: Лю́ди ду́же до́бра., right: ["Лю́ди ду́же ", { target: до́брі }, "."], rule: { es: [{ term: лю́ди }, " es plural, no como «la gente»: ", { term: до́брі }] } }

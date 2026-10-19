@@ -1,0 +1,276 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.sentence.one-part-sentences
+lang: uk
+kind: grammar
+tags: [sentence, one-part-sentences, impersonal, nominative, syntax]
+concepts: [one-part-sentences]
+related: [uk.sentence.word-order, uk.sentence.questions-negation, uk.nouns-cases.nominative, uk.nouns-cases.dative, uk.modality.modal-words, uk.verbs-present.liking]
+status: { uk: draft }
+
+title: { uk: Односкладні речення, en: One-Part Sentences }
+summary:
+  lead:
+    uk: "Односкладні речення — означено-особові, неозначено-особові, безособові й називні — мають один головний член і не потребують другого."
+  rule:
+    uk: "Підмета в односкладному реченні немає, і додавати його не треба:"
+  ex: { examples: [[{ target: "Іду́" }, " додо́му."], [{ target: "Світа́є" }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт } }
+        - { key: rule, label: { uk: Правило } }
+        - { key: ex, label: { uk: Приклад } }
+      rows:
+        - level: B2
+          point: { uk: Означено-особове }
+          rule: { uk: "присудок у 1-й чи 2-й особі; діяч відомий" }
+          ex: [{ target: "Чита́єш" }, " цю кни́жку?"]
+        - level: B2
+          point: { uk: Неозначено-особове }
+          rule: { uk: "3-тя особа множини чи минулий час множини; діяч не названий" }
+          ex: ["По ра́діо ", { target: "повідо́мили" }, " про погі́ршення пого́ди."]
+        - level: B2
+          point: { uk: Безособове }
+          rule: { uk: ["присудок без підмета: форма на ", { term: "-но" }, ", ", { term: "-то" }, " або прислівник + ", { term: "було́" }] }
+          ex: ["Там усе́ пра́вильно ", { target: "запи́сано" }, "."]
+        - level: B2
+          point: { uk: Називне }
+          rule: { uk: "лише іменник у називному; присудка немає" }
+          ex: [{ target: "Ве́чір" }, ". ", { target: "Прохоло́да" }, ". ", { target: "Спо́кій" }, "."]
+        - level: C1
+          point: { uk: Означено-особове }
+          rule: { uk: "1-ша особа множини й наказовий спосіб" }
+          ex: ["У субо́ту ", { target: "пої́демо" }, " за мі́сто."]
+        - level: C1
+          point: { uk: Неозначено-особове }
+          rule: { uk: "давальний: кого стосується дія; загальні твердження" }
+          ex: [{ target: "Нам" }, " подали́ ча́ю."]
+        - level: C1
+          point: { uk: Безособове }
+          rule: { uk: "інфінітив, дієслова погоди й стану" }
+          ex: ["Надво́рі вже ", { target: "світа́є" }, "."]
+        - level: C1
+          point: { uk: Називне }
+          rule: { uk: "іменник із означенням чи ряд іменників" }
+          ex: [{ target: "Ти́хий ве́чір" }, ". ", { target: "Лю́ди, вогні́, му́зика" }, "."]
+        - level: C2
+          point: { uk: Означено-особове }
+          rule: { uk: "узагальнення: діє кожен" }
+          ex: [{ target: "Лю́бимо" }, " люде́й щи́рих."]
+        - level: C2
+          point: { uk: Неозначено-особове }
+          rule: { uk: "увага на результаті: значення, близьке до пасивного" }
+          ex: ["Две́рі вже ", { target: "пофарбува́ли" }, "."]
+        - level: C2
+          point: { uk: Безособове }
+          rule: { uk: "хто відчуває — у давальному; зворотне дієслово" }
+          ex: [{ target: "Нам ста́ло стра́шно" }, " у те́мряві."]
+        - level: B2
+          point: { uk: Пастка }
+          rule: { uk: ["у минулому часі безособовий присудок — ", { term: "було́" }] }
+          ex: ["У за́лі ", { target: "було́" }, " ти́хо."]
+
+sections:
+  - title: { uk: Огляд }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { uk: "В односкладному реченні один головний член, і другий додавати не треба:" }
+            ex: [{ target: "Іду́" }, " додо́му."]
+          - type: note
+            level: B2
+            text: { uk: ["Безособові присудки ", { term: "тре́ба" }, " і ", { term: "мо́жна" }, ": ", { link: "Модальні слова: треба, можна, мусити", to: uk.modality.modal-words }, "."] }
+
+  - title: { uk: Означено-особові речення }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Присудок } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            features: { person: 1, number: sg }
+            form: { uk: "1-ша особа однини: діяч — я" }
+            ex: { examples: [[{ target: "Іду́" }, " по ву́лиці й ", { target: "слу́хаю" }, " му́зику."], [{ target: "Не люблю́" }, " втруча́тися в чуже́ життя́."]] }
+          - level: B2
+            features: { person: 2, number: sg }
+            form: { uk: "2-га особа однини: діяч — ти" }
+            ex: [{ target: "Чита́єш" }, " цю кни́жку?"]
+          - level: B2
+            features: { person: 2, number: pl }
+            form: { uk: "2-га особа множини: діяч — ви" }
+            ex: [{ target: "Вихо́дите" }, " на насту́пній зупи́нці?"]
+          - level: C1
+            features: { person: 1, number: pl }
+            form: { uk: "1-ша особа множини: діяч — ми" }
+            ex: ["У субо́ту ", { target: "пої́демо" }, " за мі́сто."]
+          - level: C1
+            features: { mood: imp }
+            form: { uk: "наказовий спосіб: діє співрозмовник" }
+            ex: { examples: [[{ target: "Подзвоні́ть" }, " мені́ за́втра."], [{ target: "Не забу́дьте" }, " взя́ти па́спорт."]] }
+          - level: C2
+            features: { person: 1, number: pl }
+            form: { uk: "узагальнення: діють усі, кого стосується думка" }
+            ex: [{ target: "Лю́бимо" }, " люде́й щи́рих, ", { target: "поважа́ємо" }, " люде́й наполе́гливих."]
+          - level: C2
+            features: { person: 2, number: sg }
+            form: { uk: "2-га особа однини: прислів’я й поради" }
+            ex: ["Тихі́ше ", { target: "ї́деш" }, " — да́лі ", { target: "бу́деш" }, "."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { uk: "Займенник-підмет додаємо лише для наголосу; тоді речення вже двоскладне:" }
+            ex: [{ target: "Я" }, " люблю́ мандрува́ти."]
+
+  - title: { uk: Неозначено-особові речення }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Присудок } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            features: { person: 3, number: pl }
+            form: { uk: "3-тя особа множини: діяч невідомий" }
+            ex: { examples: [[{ target: "Ка́жуть" }, ", що за́втра бу́де дощ."], ["У нас ", { target: "буду́ють" }, " нову́ шко́лу."]] }
+          - level: B2
+            features: { tense: pst, number: pl }
+            form: { uk: "минулий час множини: діяч невідомий чи неважливий" }
+            ex: { examples: [["По ра́діо ", { target: "повідо́мили" }, " про погі́ршення пого́ди."], ["У магази́ні ", { target: "зни́зили" }, " ціни́."]] }
+          - level: C1
+            features: { case: dat }
+            form: { uk: "давальний: кого стосується дія" }
+            ex: [{ target: "Нам" }, " подали́ ча́ю."]
+          - level: C1
+            form: { uk: "загальне твердження: що роблять зазвичай" }
+            ex: ["Пе́ред свя́том ", { target: "прикраша́ють" }, " буди́нки."]
+          - level: C2
+            form: { uk: "діяч неважливий, на першому плані результат: значення, близьке до пасивного" }
+            ex: { examples: [["Лист уже́ ", { target: "відпра́вили" }, "."], ["Две́рі вже ", { target: "пофарбува́ли" }, "."]] }
+
+  - title: { uk: Безособові речення }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Присудок } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            form: { uk: ["форма на ", { term: "-но" }, ", ", { term: "-то" }, " не змінюється; додаток — у знахідному"] }
+            ex: { examples: [["Там усе́ пра́вильно ", { target: "запи́сано" }, "."], ["Кни́жку ", { target: "прочи́тано" }, " за ти́ждень."]] }
+          - level: B2
+            form: { uk: ["прислівник + ", { term: "було́" }, " чи ", { term: "бу́де" }, "; у минулому часі — середній рід"] }
+            ex: { examples: [["У за́лі ", { target: "було́ ти́хо" }, "."], ["За́втра ", { target: "бу́де хо́лодно" }, "."]] }
+          - level: C1
+            form: { uk: "інфінітив: питання чи неминучість" }
+            ex: ["Куди́ нам ", { target: "ї́хати" }, "?"]
+          - level: C1
+            form: { uk: ["дієслово погоди чи часу доби: ", { alternatives: [{ term: "світа́є" }, { term: "смерка́є" }, { term: "моро́зить" }] }] }
+            ex: ["Надво́рі вже ", { target: "світа́є" }, "."]
+          - level: C1
+            features: { case: acc }
+            form: { uk: "дієслово стану; хто відчуває — у знахідному" }
+            ex: [{ target: "Мене́ трясе́" }, " від хо́лоду."]
+
+  - title: { uk: Безособові речення з давальним }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Присудок } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C2
+            features: { case: dat }
+            form: { uk: ["прислівник після ", { term: "ста́ти" }, "; хто відчуває — у давальному"] }
+            ex: [{ target: "Нам ста́ло стра́шно" }, " у те́мряві."]
+          - level: C2
+            features: { case: dat }
+            form: { uk: ["зворотне дієслово на ", { term: "-ться" }, " у 3-й особі однини; хто хоче — у давальному"] }
+            ex: { examples: [["Ду́же ", { target: "хо́четься" }, " відпочи́ти."], [{ target: "Мені́" }, " не ", { target: "спи́ться" }, "."]] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text: { uk: ["Давальний із почуттями й смаками: ", { link: "Мені подобається", to: uk.verbs-present.liking }, ". Відмінок: ", { link: "Давальний відмінок", to: uk.nouns-cases.dative }, "."] }
+
+  - title: { uk: Називні речення }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { uk: Будова } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            features: { case: nom }
+            form: { uk: "один іменник у називному: час, місце, явище" }
+            ex: { examples: [[{ target: "Зима́" }, "."], [{ target: "Ти́ша" }, "."]] }
+          - level: B2
+            features: { case: nom }
+            form: { uk: "кілька називних речень: картина, настрій" }
+            ex: [{ target: "Ве́чір" }, ". ", { target: "Прохоло́да" }, ". ", { target: "Спо́кій" }, "."]
+          - level: C1
+            features: { case: nom }
+            form: { uk: "іменник із означенням" }
+            ex: { examples: [[{ target: "Ти́хий ве́чір" }, "."], [{ target: "Дале́ка доро́га" }, "."]] }
+          - level: C1
+            features: { case: nom }
+            form: { uk: "ряд іменників через кому" }
+            ex: [{ target: "Лю́ди, вогні́, му́зика" }, "."]
+          - level: C2
+            features: { case: nom }
+            form: { uk: "ланцюг образів: речення змінюють одне одного, як кадри" }
+            ex: [{ target: "Му́зика" }, ". ", { target: "Сце́на" }, ". ", { target: "Соло́ні сльо́зи" }, ". ", { target: "Ти́ша" }, "."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { uk: ["Відмінок головного члена: ", { link: "Називний відмінок", to: uk.nouns-cases.nominative }, "."] }
+
+  - title: { uk: Типові помилки }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "Надво́рі була́ хо́лодно."
+            right: ["Надво́рі ", { target: "було́" }, " хо́лодно."]
+            rule: { uk: ["у минулому часі безособовий присудок — середнього роду: ", { term: "було́" }] }
+          - level: B2
+            wrong: "Кни́жка прочи́тано за ти́ждень."
+            right: [{ target: "Кни́жку" }, " прочи́тано за ти́ждень."]
+            rule: { uk: ["форма на ", { term: "-но" }, " вимагає знахідного, а не називного"] }
+          - level: B2
+            wrong: "По ра́діо повідо́мила про погі́ршення пого́ди."
+            right: ["По ра́діо ", { target: "повідо́мили" }, " про погі́ршення пого́ди."]
+            rule: { uk: "діяч не названий — присудок стоїть у множині" }
+          - level: C1
+            wrong: "Воно́ вже світа́є."
+            right: ["Вже ", { target: "світа́є" }, "."]
+            rule: { uk: ["у безособовому реченні підмета немає: ", { term: "воно́" }, " не додаємо"] }
+          - level: C1
+            wrong: "Нас подали́ ча́ю."
+            right: [{ target: "Нам" }, " подали́ ча́ю."]
+            rule: { uk: ["кому подали — у давальному: ", { term: "нам" }] }
+          - level: C1
+            wrong: "Мені́ трясе́ від хо́лоду."
+            right: [{ target: "Мене́" }, " трясе́ від хо́лоду."]
+            rule: { uk: ["з дієсловом стану — знахідний: ", { term: "мене́" }] }
+          - level: C2
+            wrong: "Ми ста́ло стра́шно у те́мряві."
+            right: [{ target: "Нам" }, " ста́ло стра́шно у те́мряві."]
+            rule: { uk: ["після ", { term: "ста́ти" }, " з прислівником — давальний: ", { term: "нам" }] }
+          - level: C2
+            wrong: "Я хо́четься відпочи́ти."
+            right: [{ target: "Мені́" }, " хо́четься відпочи́ти."]
+            rule: { uk: ["підмета немає: хто хоче — у давальному, ", { term: "мені́" }] }

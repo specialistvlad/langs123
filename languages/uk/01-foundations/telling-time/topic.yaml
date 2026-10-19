@@ -188,6 +188,16 @@ cheatsheet:
             vi: [{ term: об }, " trước nguyên âm"]
           ex: ["Зу́стріч ", { target: ["об ", { time: одина́дцятій, value: "11:00" }] }, "."]
           tr: { en: The meeting is at eleven., es: La reunión es a las once., pt: "A reunião é às onze.", fr: "La réunion est à onze heures.", de: "Das Treffen ist um elf Uhr.", it: "L'incontro è alle undici.", pl: "Spotkanie jest o jedenastej.", tr: "Toplantı saat on birde.", id: "Pertemuannya pukul sebelas.", vi: "Cuộc họp lúc mười một giờ." }
+        - level: B2
+          point: { uk: Пів години }
+          rule:
+            uk: [{ term: пів на }, " і знахідний наступної години"]
+          ex: ["Зустрі́немося ", { target: ["о ", { time: пів на сьо́му, value: "06:30" }] }, "."]
+        - level: B2
+          point: { uk: Хвилини до й після }
+          rule:
+            uk: [{ term: по }, " і місцевий, ", { term: без }, " і родовий"]
+          ex: { examples: [{ target: { time: два́дцять по шо́стій, value: "18:20" } }, { target: { time: без п’яти́ шо́ста, value: "05:55" } }] }
         - level: A0
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -354,6 +364,9 @@ sections:
             rule: { uk: [{ term: об }, " перед голосною"], en: [{ term: об }, " before a vowel"], es: [{ term: об }, " ante vocal"], pt: [{ term: об }, " antes de vogal"], fr: [{ term: об }, " devant une voyelle"], de: [{ term: об }, " vor einem Vokal"], it: [{ term: об }, " davanti a vocale"], pl: [{ term: об }, " przed samogłoską"], tr: [{ term: об }, " sözcüğü ünlüden önce kullanılır"], id: [{ term: об }, " sebelum vokal"], vi: [{ term: об }, " trước nguyên âm"] }
             ex: ["Зустрі́немося ", { target: ["об ", { time: одина́дцятій, value: "11:00" }] }, "."]
             tr: { en: "We'll meet at eleven.", es: Nos vemos a las once., pt: "Vamos nos encontrar às onze.", fr: "On se retrouve à onze heures.", de: "Wir treffen uns um elf Uhr.", it: "Ci vediamo alle undici.", pl: "Spotkamy się o jedenastej.", tr: "Saat on birde buluşalım.", id: "Kita bertemu pukul sebelas.", vi: "Chúng ta gặp nhau lúc mười một giờ." }
+          - level: B2
+            rule: { uk: [{ term: пі́сля }, " і родовий: після котрої години?"] }
+            ex: ["Ми зустрі́немося ", { target: ["пі́сля ", { time: шо́стої, value: "18:00" }] }, " годи́ни."]
       - type: list
         items:
           - type: note
@@ -371,6 +384,51 @@ sections:
               id: ["Dalam tulisan disingkat: ", { term: "об 11 год" }, "."]
               vi: ["Trong văn viết, người ta viết tắt: ", { term: "об 11 год" }, "."]
 
+  - title: { uk: Розмовний запис часу }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pos, label: { uk: Положення стрілки } }
+          - { key: ask, label: { uk: "Котра година?" } }
+          - { key: when, label: { uk: "О котрій?" } }
+        rows:
+          - level: B2
+            pos: { uk: Пів години }
+            ask: { examples: [{ target: { time: пів на пе́ршу, value: "12:30" } }, { target: { time: пів на сьо́му, value: "06:30" } }] }
+            when: { examples: [{ target: ["о ", { time: пів на пе́ршу, value: "12:30" }] }, { target: ["о ", { time: пів на сьо́му, value: "06:30" }] }] }
+          - level: B2
+            pos: { uk: Після години }
+            ask: { examples: [{ target: { time: два́дцять по шо́стій, value: "18:20" } }, { target: { time: п’ять по сьо́мій, value: "07:05" } }] }
+            when: { examples: [{ target: ["о ", { time: два́дцять по шо́стій, value: "18:20" }] }, { target: ["о ", { time: п’ять по сьо́мій, value: "07:05" }] }] }
+          - level: B2
+            pos: { uk: До години }
+            ask: { examples: [{ target: { time: без п’яти́ шо́ста, value: "05:55" } }, { target: { time: без десяти́ сьо́ма, value: "06:50" } }] }
+            when: { examples: [{ target: { time: без п’яти́ шо́ста, value: "05:55" } }, { target: { time: без десяти́ сьо́ма, value: "06:50" } }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Пів години: ", { term: пів на }, " і знахідний відмінок наступної години."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["Хвилини після години: число, ", { term: по }, " і місцевий відмінок години."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["Слово ", { term: хвили́н }, " можна не казати:"]
+            ex: ["Зара́з ", { target: ["два́дцять ", { optional: хвили́н }, " по шо́стій"] }, "."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["Хвилини до години: ", { term: без }, ", родовий відмінок хвилин і називний наступної години."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["У відповіді на ", { term: О котрі́й? }, " прийменник ", { term: о }, " стоїть перед ", { term: пів на }, " і числом хвилин, але не перед ", { term: без }, "."]
+
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -382,3 +440,6 @@ sections:
           - { level: A0, speakers: [en, es], wrong: Це пе́рша., right: [{ target: Пе́рша }, "."], rule: { en: ["the hour alone answers ", { term: Котра́ годи́на? }, "; ", { term: Це пе́рша }, " means “this is the first one”"], es: ["a ", { term: Котра́ годи́на? }, " se responde solo con la hora; ", { term: Це пе́рша }, " significa «esta es la primera»"] } }
           - { level: A2, wrong: з де́в’ять до шість, right: ["з ", { target: дев’я́тої }, " до ", { target: шо́стої }], rule: { uk: [{ term: з }, " і ", { term: до }, " вимагають родового відмінка"], en: [{ term: з }, " and ", { term: до }, " take the genitive"], es: [{ term: з }, " y ", { term: до }, " piden el genitivo"], pt: [{ term: з }, " e ", { term: до }, " pedem o genitivo"], fr: [{ term: з }, " et ", { term: до }, " demandent le génitif"], de: [{ term: з }, " und ", { term: до }, " verlangen den Genitiv"], it: [{ term: з }, " e ", { term: до }, " vogliono il genitivo"], pl: [{ term: з }, " i ", { term: до }, " łączą się z dopełniaczem"], tr: [{ term: з }, " ve ", { term: до }, " ilgi hâli ister"], id: [{ term: з }, " dan ", { term: до }, " memakai genitif"], vi: [{ term: з }, " và ", { term: до }, " đòi hỏi sinh cách"] } }
           - { level: B1, wrong: в де́в’ять годи́н, right: [{ target: о дев’я́тій }, " годи́ні"], rule: { uk: ["коли? — ", { term: о }, " і місцевий відмінок; ", { term: в де́в’ять годи́н }, " — калька з російської"], en: ["when? takes ", { term: о }, " and the locative; ", { term: в де́в’ять годи́н }, " is a calque from Russian"], es: ["¿cuándo? lleva ", { term: о }, " y el locativo; ", { term: в де́в’ять годи́н }, " es un calco del ruso"], pt: ["quando? pede ", { term: о }, " e o locativo; ", { term: в де́в’ять годи́н }, " é um decalque do russo"], fr: ["quand ? demande ", { term: о }, " et le locatif ; ", { term: в де́в’ять годи́н }, " est un calque du russe"], de: ["bei wann? stehen ", { term: о }, " und der Lokativ; ", { term: в де́в’ять годи́н }, " ist eine Lehnübersetzung aus dem Russischen"], it: ["quando? vuole ", { term: о }, " e il locativo; ", { term: в де́в’ять годи́н }, " è un calco dal russo"], pl: ["kiedy? — ", { term: о }, " i miejscownik; ", { term: в де́в’ять годи́н }, " to kalka z rosyjskiego"], tr: ["ne zaman? sorusu ", { term: о }, " ve bulunma hâli ister; ", { term: в де́в’ять годи́н }, " Rusçadan birebir çeviridir"], id: ["untuk kapan? pakai ", { term: о }, " dan lokatif; ", { term: в де́в’ять годи́н }, " adalah terjemahan harfiah dari bahasa Rusia"], vi: ["khi nào? dùng ", { term: о }, " và vị trí cách; ", { term: в де́в’ять годи́н }, " là bản dịch sát nghĩa từ tiếng Nga"] } }
+          - { level: B2, wrong: Зара́з пів на сьо́ма., right: ["Зара́з ", { target: пів на сьо́му }, "."], rule: { uk: [{ term: пів на }, " вимагає знахідного відмінка"] } }
+          - { level: B2, wrong: два́дцять по шо́ста, right: { target: два́дцять по шо́стій }, rule: { uk: [{ term: по }, " вимагає місцевого відмінка години"] } }
+          - { level: B2, wrong: без п’ять шо́ста, right: [{ target: без п’яти́ }, " шо́ста"], rule: { uk: [{ term: без }, " вимагає родового відмінка хвилин"] } }

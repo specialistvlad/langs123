@@ -1,0 +1,282 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.pronouns.indefinite-pronouns
+lang: uk
+kind: grammar
+tags: [pronouns, indefinite, хтось, хто-небудь, будь-хто]
+concepts: [indefinite-pronouns]
+related: [uk.pronouns.question-words, uk.pronouns.negative-pronouns, uk.pronouns.demonstratives, uk.sentence.questions-negation, uk.nouns-cases.cases-overview]
+status: { uk: draft }
+
+title: { uk: "Неозначені займенники: хтось, будь-хто", en: "Indefinite Pronouns: хтось, будь-хто" }
+summary:
+  lead:
+    uk: [{ term: Хтось }, " називає певну, але невідому особу, ", { term: хто-не́будь }, " — будь-кого з можливих, ", { term: будь-хто́ }, " — будь-кого взагалі."]
+  rule:
+    uk: ["Частка ", { term: "-сь" }, " стоїть у розповіді про факт, ", { term: "-не́будь" }, " — у питанні, проханні, умові й майбутньому:"]
+  ex: { examples: [[{ target: Хтось }, " подзвони́в."], ["Якщо́ ", { target: хто-не́будь }, " подзвони́ть, скажи́, що я ви́йшов."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт } }
+        - { key: rule, label: { uk: Правило } }
+        - { key: ex, label: { uk: Приклад } }
+      rows:
+        - level: B2
+          point: { uk: Особа }
+          rule: { uk: { contrast: [{ term: хтось }, { term: хто-не́будь }] } }
+          ex: { examples: [[{ target: Хтось }, " подзвони́в."], ["Чи є тут ", { target: хто-не́будь }, "?"]] }
+        - level: B2
+          point: { uk: Річ }
+          rule: { uk: { contrast: [{ term: щось }, { term: що-не́будь }] } }
+          ex: { examples: [["Я чу́ю ", { target: щось }, "."], ["Хо́чеш ", { target: що-не́будь }, " ви́пити?"]] }
+        - level: B2
+          point: { uk: Ознака }
+          rule: { uk: { contrast: [{ term: яки́йсь }, { term: яки́й-не́будь }] } }
+          ex: { examples: [[{ target: Яки́йсь }, " чолові́к чека́є на вас."], ["Візьми́ ", { target: яку́-не́будь }, " кни́жку."]] }
+        - level: B2
+          point: { uk: Належність }
+          rule: { uk: { contrast: [{ term: чийсь }, { term: чий-не́будь }] } }
+          ex: { examples: [["Тут лежи́ть ", { target: чиє́сь }, " пальто́."], ["Якщо́ поба́чиш ", { target: чиї́-не́будь }, " ключі́, скажи́ мені́."]] }
+        - level: B2
+          point: { uk: Відмінки }
+          rule: { uk: ["відмінюється перша частина: ", { alternatives: [{ term: кого́сь }, { term: кого́-не́будь }] }] }
+          ex: ["Ти розмовля́в з ", { target: ким-не́будь }, " про це?"]
+        - level: C1
+          point: { uk: Будь- }
+          rule: { uk: { alternatives: [{ term: будь-хто́ }, { term: будь-що́ }, { term: будь-яки́й }, { term: будь-чи́й }] } }
+          ex: ["Це мо́же зроби́ти ", { target: будь-хто́ }, "."]
+        - level: C1
+          point: { uk: "Казна-, хтозна-" }
+          rule: { uk: { alternatives: [{ term: ка́зна-що }, { term: хто́зна-чий }, { term: хто́зна-скі́льки }] } }
+          ex: ["Вона́ розповіла́ ", { target: ка́зна-що }, "."]
+        - level: C1
+          point: { uk: "Дехто, дещо" }
+          rule: { uk: { alternatives: [{ term: де́хто }, { term: де́що }] } }
+          ex: [{ target: Де́хто }, " спа́ти не ляга́є."]
+        - level: B2
+          point: { uk: Пастка }
+          rule: { uk: ["про факт, який уже був: ", { term: "-сь" }] }
+          ex: ["Вчо́ра ", { target: хтось }, " подзвони́в."]
+
+sections:
+  - title: { uk: Огляд }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Питальне слово з часткою ", { term: "-сь" }, " або ", { term: "-не́будь" }, " стає неозначеним займенником:"]
+            ex: { examples: [{ mapping: [хто, хтось] }, { mapping: [хто, хто-не́будь] }] }
+          - type: rule
+            level: B2
+            text:
+              uk: ["Прийменник стоїть перед усім займенником з ", { term: "-сь" }, " і ", { term: "-не́будь" }, ":"]
+            ex: { examples: [["Я ба́чив її́ з ", { target: ки́мось }, " на ву́лиці."], ["Спита́й у ", { target: кого́-не́будь }, " доро́гу."]] }
+
+  - title: { uk: "Форма: хтось, щось, якийсь, чийсь" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: who, label: { term: хтось } }
+          - { key: what, label: { term: щось } }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: Називний }, who: хтось, what: щось }
+          - { level: B2, features: { case: gen }, case: { uk: Родовий }, who: кого́сь, what: чого́сь }
+          - { level: B2, features: { case: dat }, case: { uk: Давальний }, who: кому́сь, what: чому́сь }
+          - { level: B2, features: { case: acc }, case: { uk: Знахідний }, who: кого́сь, what: щось }
+          - { level: B2, features: { case: ins }, case: { uk: Орудний }, who: ки́мось, what: чи́мось }
+          - { level: B2, features: { case: loc }, case: { uk: Місцевий }, who: на ко́мусь, what: на чо́мусь }
+      - type: paradigm
+        columns:
+          - { key: masc, label: { uk: Чоловічий рід }, features: { gender: masc, number: sg } }
+          - { key: fem, label: { uk: Жіночий рід }, features: { gender: fem, number: sg } }
+          - { key: neut, label: { uk: Середній рід }, features: { gender: neut, number: sg } }
+          - { key: pl, label: { uk: Множина }, features: { number: pl } }
+        rows:
+          - { level: B2, features: { case: nom }, masc: яки́йсь, fem: яка́сь, neut: яке́сь, pl: які́сь }
+          - { level: B2, features: { case: nom }, masc: чийсь, fem: чия́сь, neut: чиє́сь, pl: чиї́сь }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: [{ term: хтось }, ", ", { term: щось }, ", ", { term: яки́йсь }, " і ", { term: чийсь }, " називають певну, але невідому особу чи річ:"]
+            ex: { examples: [[{ target: Хтось }, " сту́кає в двері́."], ["Я купи́в ", { target: щось }, " ціка́ве."]] }
+          - type: rule
+            level: B2
+            text:
+              uk: [{ term: яки́йсь }, " і ", { term: чийсь }, " відмінюються, як ", { term: яки́й }, " і ", { term: чий }, ", а ", { term: "-сь" }, " стоїть у кінці:"]
+            ex: ["Вона́ розмовля́є з ", { target: яки́мсь }, " хло́пцем."]
+
+  - title: { uk: "Форма: хто-небудь, що-небудь" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: who, label: { term: хто-не́будь } }
+          - { key: what, label: { term: що-не́будь } }
+        rows:
+          - { level: B2, features: { case: nom }, case: { uk: Називний }, who: хто-не́будь, what: що-не́будь }
+          - { level: B2, features: { case: gen }, case: { uk: Родовий }, who: кого́-не́будь, what: чого́-не́будь }
+          - { level: B2, features: { case: dat }, case: { uk: Давальний }, who: кому́-не́будь, what: чому́-не́будь }
+          - { level: B2, features: { case: acc }, case: { uk: Знахідний }, who: кого́-не́будь, what: що-не́будь }
+          - { level: B2, features: { case: ins }, case: { uk: Орудний }, who: ким-не́будь, what: чим-не́будь }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: [{ term: хто-не́будь }, ", ", { term: що-не́будь }, ", ", { term: яки́й-не́будь }, " і ", { term: чий-не́будь }, " називають будь-яку особу чи річ з можливих:"]
+            ex: ["Подзвони́ ", { target: кому́-не́будь }, ", хай допоможу́ть."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["У ", { term: хто-не́будь }, " відмінюється перша частина, а дефіс лишається:"]
+            ex: ["Ви ба́чили ", { target: кого́-не́будь }, " з них?"]
+          - type: rule
+            level: B2
+            text:
+              uk: [{ term: яки́й-не́будь }, " і ", { term: чий-не́будь }, " відмінюються так само: перша частина — як ", { term: яки́й }, " і ", { term: чий }, ":"]
+            ex: ["Дай мені́ ", { target: яку́-не́будь }, " ру́чку."]
+
+  - title: { uk: "Вживання: -сь і -небудь" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Вживання } }
+          - { key: part, label: { uk: Частка } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            use: { uk: "Факт: щось сталося або є" }
+            part: { term: "-сь" }
+            ex: [{ target: Хтось }, " подзвони́в."]
+          - level: B2
+            use: { uk: Питання }
+            part: { term: "-не́будь" }
+            ex: ["Чи є ", { target: хто-не́будь }, " вдо́ма?"]
+          - level: B2
+            use: { uk: Прохання }
+            part: { term: "-не́будь" }
+            ex: ["Принеси́ мені́ ", { target: що-не́будь }, " попи́ти."]
+          - level: B2
+            use: { uk: Умова }
+            part: { term: "-не́будь" }
+            ex: ["Якщо́ ", { target: хто-не́будь }, " подзвони́ть, скажи́, що я ви́йшов."]
+          - level: B2
+            use: { uk: Майбутнє }
+            part: { term: "-не́будь" }
+            ex: ["Я зроблю́ на вече́рю ", { target: що-не́будь }, " смачне́."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              uk: ["У питанні ", { term: "-сь" }, " показує, що мовець чекає відповіді «так»:"]
+            ex: ["Тобі́ ", { target: хтось }, " дзвони́в?"]
+
+  - title: { uk: "Будь-хто, будь-що, будь-який" }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: who, label: { term: будь-хто́ } }
+          - { key: who2, label: { term: хто-бу́дь } }
+          - { key: what, label: { term: будь-що́ } }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: Називний }, who: будь-хто́, who2: хто-бу́дь, what: будь-що́ }
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, who: будь-кого́, who2: кого́-бу́дь, what: будь-чого́ }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, who: будь-кому́, who2: кому́-бу́дь, what: будь-чому́ }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, who: будь-кого́, who2: кого́-бу́дь, what: будь-що́ }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, who: будь-ки́м, who2: ким-бу́дь, what: будь-чи́м }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: будь-хто́ }, ", ", { term: будь-що́ }, ", ", { term: будь-яки́й }, " і ", { term: будь-чи́й }, " називають будь-кого чи будь-що без вибору:"]
+            ex: { examples: [["Це мо́же зроби́ти ", { target: будь-хто́ }, "."], ["Бери́ ", { target: будь-яку́ }, " кни́жку."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: ["У ", { term: будь-хто́ }, " і ", { term: будь-що́ }, " прийменник стоїть між частинами:"]
+            ex: { examples: [["Не пита́й про це ", { target: будь у кого́ }, "."], ["Він мо́же домо́витися ", { target: будь із ким }, "."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: хто-бу́дь }, " значить те саме, що ", { term: будь-хто́ }, ", але ", { term: будь }, " стоїть у кінці:"]
+            ex: [{ target: Хто-бу́дь }, " на твоє́му мі́сці обра́зився б."]
+
+  - title: { uk: "Казна-, хтозна-, будь-скільки" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { uk: Слово } }
+          - { key: meaning, label: { uk: Значення } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C1
+            word: { alternatives: [{ term: ка́зна-хто }, { term: ка́зна-що }] }
+            meaning: { uk: "невідомо хто чи що, з іронією або осудом" }
+            ex: ["Вона́ розповіла́ ", { target: ка́зна-що }, "."]
+          - level: C1
+            word: { alternatives: [{ term: хто́зна-що }, { term: хто́зна-чий }] }
+            meaning: { uk: "невідомо що чи чий" }
+            ex: ["Бі́ля бу́дки стої́ть ", { target: хто́зна-чия́ }, " маши́на."]
+          - level: C1
+            word: { alternatives: [{ term: хто́зна-скі́льки }, { term: ка́зна-скі́льки }] }
+            meaning: { uk: "дуже багато, невідомо скільки" }
+            ex: ["На столі́ лежа́ло ", { target: хто́зна-скі́льки }, " папе́рів."]
+          - level: C1
+            word: { alternatives: [{ term: будь-скі́льки }, { term: скі́льки-бу́дь }] }
+            meaning: { uk: "будь-яка кількість" }
+            ex: ["Бери́ ", { target: будь-скі́льки }, " цу́кру."]
+
+  - title: { uk: Дехто і дещо }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: who, label: { term: де́хто } }
+          - { key: what, label: { term: де́що } }
+        rows:
+          - { level: C1, features: { case: nom }, case: { uk: Називний }, who: де́хто, what: де́що }
+          - { level: C1, features: { case: gen }, case: { uk: Родовий }, who: де́кого, what: де́чого }
+          - { level: C1, features: { case: dat }, case: { uk: Давальний }, who: де́кому, what: де́чому }
+          - { level: C1, features: { case: acc }, case: { uk: Знахідний }, who: де́кого, what: де́що }
+          - { level: C1, features: { case: ins }, case: { uk: Орудний }, who: де́ким, what: де́чим }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              uk: ["У реченні з ", { term: де́хто }, " заперечення значить «деякі не», а не «ніхто»:"]
+            ex: [{ target: Де́хто }, " спа́ти не ляга́є."]
+          - type: rule
+            level: C1
+            text:
+              uk: ["З прийменником частка ", { term: де }, " стоїть окремо, а прийменник — перед займенником:"]
+            ex: ["Я вже ", { target: де з ким }, " поговори́в."]
+
+  - title: { uk: Типові помилки }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Чи є тут хто-ни́будь?", right: ["Чи є тут ", { target: хто-не́будь }, "?"], rule: { uk: [{ term: "-не́будь" }, "; ", { term: "-ни́будь" }, " — російська форма"] } }
+          - { level: B2, wrong: "Хто́-то сту́кає в двері́.", right: [{ target: Хтось }, " сту́кає в двері́."], rule: { uk: ["частка ", { term: "-то" }, " — російська; українською — ", { term: "-сь" }] } }
+          - { level: B2, wrong: "Вчо́ра хто-не́будь подзвони́в.", right: ["Вчо́ра ", { target: хтось }, " подзвони́в."], rule: { uk: ["про факт, який уже був, ставимо ", { term: "-сь" }] } }
+          - { level: B2, wrong: "Ти розмовля́в з хто-не́будь?", right: ["Ти розмовля́в з ", { target: ким-не́будь }, "?"], rule: { uk: ["відмінюється перша частина: ", { term: ким-не́будь }] } }
+          - { level: C1, wrong: "Кое-хто́ спа́ти не ляга́є.", right: [{ target: Де́хто }, " спа́ти не ляга́є."], rule: { uk: ["«кое-хто» — калька з російської; українською — ", { term: де́хто }] } }
+          - { level: C1, wrong: "Вона́ розповіла́ ка́зна що.", right: ["Вона́ розповіла́ ", { target: ка́зна-що }, "."], rule: { uk: ["частка ", { term: "ка́зна-" }, " пишеться з дефісом"] } }

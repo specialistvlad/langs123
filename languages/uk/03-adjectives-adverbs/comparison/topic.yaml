@@ -89,6 +89,18 @@ cheatsheet:
           rule: { uk: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, en: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, es: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, pt: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, fr: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, de: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, it: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, pl: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, tr: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, id: { mapping: [{ term: шви́дко }, { term: шви́дше }] }, vi: { mapping: [{ term: шви́дко }, { term: шви́дше }] } }
           ex: ["Говорі́ть ", { target: пові́льніше }, ", будь ла́ска."]
           tr: { en: "Please speak more slowly.", es: "Hable más despacio, por favor.", pt: "Fale mais devagar, por favor.", fr: "Parlez plus lentement, s’il vous plaît.", de: "Sprechen Sie bitte langsamer.", it: "Parli più lentamente, per favore.", pl: "Proszę mówić wolniej.", tr: "Lütfen daha yavaş konuşun.", id: "Tolong bicara lebih pelan.", vi: "Xin hãy nói chậm hơn." }
+        - level: B2
+          point: { uk: Кількість }
+          rule: { uk: { mapping: [{ term: бага́то }, { term: бі́льше }] } }
+          ex: ["У ме́не ", { target: бі́льше }, " ча́су."]
+        - level: C1
+          point: { uk: Прислівники }
+          rule: { uk: { mapping: [{ term: ти́хо }, { term: тихі́ше }] } }
+          ex: ["Він працю́є ", { target: активні́ше }, ", ніж я."]
+        - level: C1
+          point: { uk: Парні форми }
+          rule: { uk: { equivalence: [{ term: відомі́ший }, { term: більш відо́мий }] } }
+          ex: ["Це ", { target: відомі́ший }, " письме́нник."]
 
 sections:
   - title: { uk: Огляд, en: Overview, es: Visión general, pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -227,6 +239,8 @@ sections:
           - { level: A2, base: мали́й, cmpr: ме́нший, sprl: найме́нший }
           - { level: B1, base: { alternatives: [га́рний, до́брий] }, cmpr: кра́щий, sprl: найкра́щий }
           - { level: B1, base: пога́ний, cmpr: гі́рший, sprl: найгі́рший }
+          - { level: C1, base: відо́мий, cmpr: { equivalence: [відомі́ший, "більш відо́мий"] }, sprl: { equivalence: [найвідомі́ший, "найбі́льш відо́мий"] } }
+          - { level: C1, base: рухли́вий, cmpr: { equivalence: [рухливі́ший, "більш рухли́вий"] }, sprl: { equivalence: [найрухливі́ший, "найбі́льш рухли́вий"] } }
       - type: list
         items:
           - type: rule
@@ -277,6 +291,11 @@ sections:
               vi: [{ term: га́рний }, " và ", { term: до́брий }, " (tốt) có ", { term: кра́щий }, ", còn ", { term: пога́ний }, " (xấu) có ", { term: гі́рший }, ":"]
             ex: ["Сього́дні пого́да ", { target: гі́рша }, "."]
             tr: { en: "The weather is worse today.", es: "Hoy hace peor tiempo.", pt: "Hoje o tempo está pior.", fr: "Aujourd’hui, le temps est pire.", de: "Heute ist das Wetter schlechter.", it: "Oggi il tempo è peggiore.", pl: "Dziś pogoda jest gorsza.", tr: "Bugün hava daha kötü.", id: "Hari ini cuacanya lebih buruk.", vi: "Hôm nay thời tiết xấu hơn." }
+          - type: rule
+            level: C1
+            text:
+              uk: "Один прикметник може мати просту й складену форму з однаковим значенням:"
+            ex: { equivalence: [["Це ", { target: відомі́ший }, " письме́нник."], ["Це ", { target: більш відо́мий }, " письме́нник."]] }
 
   - title: { uk: Порівняння, en: Comparing, es: Comparar, pt: "Comparar", fr: "Comparer", de: "Vergleichen", it: "Confrontare", pl: "Porównywanie", tr: "Karşılaştırma yapmak", id: "Membandingkan", vi: "So sánh" }
     role: use
@@ -331,6 +350,11 @@ sections:
           - { level: B1, base: суча́сно, cmpr: "більш суча́сно", sprl: "найбі́льш суча́сно" }
           - { level: B1, base: { alternatives: [га́рно, до́бре] }, cmpr: кра́ще, sprl: найкра́ще }
           - { level: B1, base: пога́но, cmpr: гі́рше, sprl: найгі́рше }
+          - { level: B2, base: бага́то, cmpr: бі́льше, sprl: найбі́льше }
+          - { level: B2, base: ма́ло, cmpr: ме́нше, sprl: найме́нше }
+          - { level: C1, base: ду́же, cmpr: ду́жче, sprl: найду́жче }
+          - { level: C1, base: ти́хо, cmpr: тихі́ше, sprl: найтихі́ше }
+          - { level: C1, base: акти́вно, cmpr: активні́ше, sprl: найактивні́ше }
       - type: list
         items:
           - type: rule
@@ -349,6 +373,26 @@ sections:
               vi: ["Trạng từ có các dạng giống tính từ, nhưng kết thúc bằng ", { term: -е }, ":"]
             ex: ["Він гово́рить украї́нською ", { target: кра́ще }, ", ніж я."]
             tr: { en: "He speaks Ukrainian better than I do.", es: "Habla ucraniano mejor que yo.", pt: "Ele fala ucraniano melhor do que eu.", fr: "Il parle mieux ukrainien que moi.", de: "Er spricht besser Ukrainisch als ich.", it: "Parla ucraino meglio di me.", pl: "On mówi po ukraińsku lepiej niż ja.", tr: "Ukraynacayı benden daha iyi konuşuyor.", id: "Dia berbicara bahasa Ukraina lebih baik daripada saya.", vi: "Anh ấy nói tiếng Ukraina giỏi hơn tôi." }
+          - type: rule
+            level: B2
+            text:
+              uk: ["Прислівники ", { term: бага́то }, " і ", { term: ма́ло }, " мають ті самі основи, що й ", { term: бі́льший }, ", ", { term: ме́нший }, ":"]
+            ex: ["Вона́ чита́є ", { target: бі́льше }, ", ніж я."]
+          - type: rule
+            level: B2
+            text:
+              uk: ["Після ", { term: бі́льше }, " і ", { term: ме́нше }, " іменник стоїть у родовому відмінку:"]
+            ex: { examples: [["У ньо́го ", { target: бі́льше гро́шей }, "."], ["У нас ", { target: ме́нше ча́су }, "."]] }
+          - type: rule
+            level: C1
+            text:
+              uk: ["Багато прислівників на ", { term: -о }, " мають вищий ступінь на ", { term: -іше }, ":"]
+            ex: ["Він працю́є ", { target: активні́ше }, ", ніж я."]
+          - type: rule
+            level: C1
+            text:
+              uk: [{ term: ду́же }, " має вищий ступінь ", { term: ду́жче }, ":"]
+            ex: ["Сього́дні дощ іде́ ", { target: ду́жче }, ", ніж учо́ра."]
 
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors

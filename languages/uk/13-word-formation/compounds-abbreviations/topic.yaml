@@ -1,0 +1,282 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: uk.word-formation.compounds-abbreviations
+lang: uk
+kind: grammar
+tags: [word-formation, compounds, abbreviations, hyphen, spelling]
+concepts: [word-formation, compound-words]
+related: [uk.word-formation.word-formation, uk.adjectives-adverbs.adjective-declension, uk.nouns-cases.declension-alternations, uk.nouns-cases.gender, uk.numerals.numbers-with-nouns]
+status: { uk: draft }
+
+title: { uk: Складні слова й абревіатури, en: Compound Words and Abbreviations }
+summary:
+  lead:
+    uk: "Складне слово пишемо через дефіс, коли його частини рівноправні, і разом, коли перша частина визначає другу; абревіатури мають власні правила."
+  rule:
+    uk: ["Дефіс стоїть між рівноправними частинами, між якими можна вставити ", { term: і }, ":"]
+  ex: ["У ме́не є ", { target: украї́нсько-англі́йський }, " словни́к."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { uk: Пункт } }
+        - { key: rule, label: { uk: Правило } }
+        - { key: ex, label: { uk: Приклад } }
+      rows:
+        - level: B2
+          point: { uk: Дефіс }
+          rule: { uk: "частини рівноправні, між ними можна вставити «і»" }
+          ex: { target: науко́во-пізнава́льний }
+        - level: B2
+          point: { uk: Разом }
+          rule: { uk: "перша частина визначає другу; першим числівник" }
+          ex: { examples: [{ target: різномані́тний }, { target: двоя́русний }] }
+        - level: B2
+          point: { uk: Скорочення }
+          rule: { uk: "крапка після «р.», «вул.»; без крапки після «км»" }
+          ex: { examples: [{ target: "2024 р." }, ["5 ", { target: км }]] }
+        - level: B2
+          point: { uk: Складноскорочене слово }
+          rule: { uk: "частини слів, апостроф перед «ю», «я», «є», «ї»" }
+          ex: { target: Мін’ю́ст }
+        - level: C1
+          point: { uk: Складний іменник }
+          rule: { uk: "зі сполучним голосним — разом, без нього — дефіс" }
+          ex: { examples: [{ target: лісосте́п }, { target: хліб-сі́ль }] }
+        - level: C1
+          point: { uk: Відмінювання }
+          rule: { uk: "рівноправні частини змінюються обидві, після префікса — остання" }
+          ex: { examples: [{ mapping: [хліб-сі́ль, { target: хлі́ба-со́лі }] }, { mapping: [А́встро-Уго́рщина, { target: А́встро-Уго́рщини }] }] }
+        - level: C1
+          point: { uk: Абревіатура }
+          rule: { uk: "чоловічого роду на приголосний змінюється, на голосний — ні" }
+          ex: { examples: [["на ", { target: ЛА́Зі }], ["з ", { target: О́БСЄ }]] }
+        - level: C2
+          point: { uk: Рід складного слова }
+          rule: { uk: "рід визначає закінчення" }
+          ex: { examples: [{ target: велодорі́жка }, { target: водолікува́ння }] }
+        - level: C2
+          point: { uk: Складноскорочене слово }
+          rule: { uk: "змінюється в усіх відмінках" }
+          ex: { target: "у Кабмі́ні" }
+        - level: B2
+          point: { uk: Пастка }
+          rule: { uk: ["форма ", { term: дво- }, " у складному слові"] }
+          ex: { target: двоя́русний }
+        - level: B2
+          point: { uk: Пастка }
+          rule: { uk: "одиниці виміру без крапки" }
+          ex: { examples: [["9 ", { target: год }], ["20 ", { target: хв }]] }
+
+sections:
+  - title: { uk: Складні прикметники }
+    role: spelling
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Правило } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            use: { uk: "Через дефіс: частини рівноправні, між ними можна вставити «і»" }
+            ex: { examples: [[{ target: науко́во-пізнава́льний }, " фільм"], [{ target: украї́нсько-англі́йський }, " словни́к"]] }
+          - level: B2
+            use: { uk: "Разом: перша частина визначає другу" }
+            ex: { examples: [[{ target: різномані́тний }, " ви́бір"], [{ target: вічнозеле́на }, " росли́на"]] }
+          - level: B2
+            use: { uk: "Разом: першою частиною стоїть числівник" }
+            ex: { examples: [[{ target: двоя́русне }, " лі́жко"], [{ target: трику́тний }, " знак"], [{ target: двадцятип’ятирі́чний }, " інжене́р"]] }
+          - level: C1
+            use: { uk: "Через дефіс: два кольори або дві ознаки в одному слові" }
+            ex: { examples: [[{ target: си́ньо-жо́втий }, " пра́пор"], [{ target: гіркува́то-соло́ний }, " смак"]] }
+          - level: C1
+            use: { uk: "Разом: основа іменника й сполучний голосний «о» або «е»" }
+            ex: { examples: [[{ target: волелю́бний }, " наро́д"], [{ target: хвилеподі́бний }, " рух"]] }
+          - level: C2
+            use: { uk: "Через дефіс: першою частиною слово на «о»; частини рівноправні або це відтінок кольору" }
+            ex: { examples: [[{ target: суспі́льно-політи́чний }, " рух"], [{ target: парла́ментсько-президе́нтська }, " респу́бліка"], [{ target: яскра́во-зеле́ний }, " ко́лір"]] }
+          - level: C2
+            use: { uk: "Разом: прислівник першою частиною уточнює ознаку" }
+            ex: { examples: [[{ target: важкохво́рий }, " паціє́нт"], [{ target: високорозви́нена }, " краї́на"], [{ target: повнолі́тній }, " громадя́нин"], [{ target: політкоре́ктний }, " тон"]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Числівник першою частиною стоїть у формі ", { term: дво- }, ", ", { term: три- }, ", ", { term: чотири- }, ", ", { term: п’яти- }, ", ", { term: двадцяти- }, "."]
+            ex: ["Ми живемо́ в ", { target: п’ятиповерхо́вому }, " буди́нку."]
+          - type: note
+            level: B2
+            text:
+              uk: ["Складні прикметники змінюються за відмінками, як прості: ", { link: "Відмінювання прикметників", to: uk.adjectives-adverbs.adjective-declension }, "."]
+          - type: note
+            level: B2
+            text:
+              uk: ["Форми числівників: ", { link: "Числівник та іменник", to: uk.numerals.numbers-with-nouns }, "."]
+
+  - title: { uk: "Прикметники на -лиций" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: gender, label: { uk: Рід } }
+          - { key: a, label: білоли́ций }
+          - { key: b, label: круглоли́ций }
+        rows:
+          - { level: B2, features: { gender: masc }, gender: { uk: Чоловічий }, a: ["білоли́ц", { ending: ий }], b: ["круглоли́ц", { ending: ий }] }
+          - { level: B2, features: { gender: fem }, gender: { uk: Жіночий }, a: ["білоли́ц", { ending: я }], b: ["круглоли́ц", { ending: я }] }
+          - { level: B2, features: { gender: neut }, gender: { uk: Середній }, a: ["білоли́ц", { ending: е }], b: ["круглоли́ц", { ending: е }] }
+          - { level: B2, features: { number: pl }, gender: { uk: Множина }, a: ["білоли́ц", { ending: і }], b: ["круглоли́ц", { ending: і }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Прикметники на ", { term: -лиций }, " мають жіночу форму ", { term: -лиця }, " і середню ", { term: -лице }, "."]
+            ex: ["Це ", { target: білоли́ця }, " ді́вчина."]
+
+  - title: { uk: "Складні іменники: дефіс чи разом" }
+    role: spelling
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Правило } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C1
+            use: { uk: "Разом: між основами сполучний голосний «о» або «е»" }
+            ex: { examples: [{ target: лісосте́п }, { target: головнокома́ндувач }] }
+          - level: C1
+            use: { uk: "Через дефіс: частини рівноправні, голосного між ними немає" }
+            ex: { examples: [{ target: хліб-сі́ль }, { target: мі́сто-геро́й }] }
+          - level: C1
+            use: { uk: "Через дефіс: назви міст і країн із двох частин" }
+            ex: { examples: [{ target: Кам’яне́ць-Поді́льський }, { target: А́встро-Уго́рщина }, { target: Ра́ва-Ру́ська }] }
+
+  - title: { uk: "Складні іменники: відмінювання" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Правило } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C1
+            use: { uk: "Рівноправні частини змінюються обидві" }
+            ex: { examples: [{ mapping: [хліб-сі́ль, { target: хлі́ба-со́лі }] }, { mapping: [Кам’яне́ць-Поді́льський, { target: Кам’янця́-Поді́льського }] }, { mapping: [Ра́ва-Ру́ська, { target: Ра́ви-Ру́ської }] }] }
+          - level: C1
+            use: { uk: "Після першої частини, схожої на префікс, змінюється остання" }
+            ex: { examples: [{ mapping: [А́встро-Уго́рщина, { target: А́встро-Уго́рщини }] }, { mapping: [ві́це-президе́нт, { target: ві́це-президе́нта }] }] }
+          - level: C1
+            use: { uk: "Слово, написане разом, змінюється як одне слово" }
+            ex: { examples: [{ mapping: [лісосте́п, { target: лісосте́пу }] }, { mapping: [головнокома́ндувач, { target: головнокома́ндувача }] }] }
+      - type: list
+        items:
+          - type: note
+            level: C1
+            text:
+              uk: ["Чергування в основі, як у Кам’янця: ", { link: "Групи відмінювання й чергування", to: uk.nouns-cases.declension-alternations }, "."]
+
+  - title: { uk: Рід складних іменників }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Закінчення } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: C2
+            use: { uk: "Приголосний: чоловічий рід" }
+            ex: { examples: [{ target: бетоново́з }, { target: верболі́з }, { target: самохі́д }, { target: чорно́слив }, { target: чотирику́тник }, { target: прем’є́р-міні́стр }] }
+          - level: C2
+            use: { uk: ["Закінчення ", { alternatives: [{ term: -а }, { term: -ість }] }, ": жіночий рід"] }
+            ex: { examples: [{ target: велодорі́жка }, { target: двозна́чність }, { target: Лиси́чка-Сестри́чка }, { target: Чорноба́ївка }] }
+          - level: C2
+            use: { uk: ["Закінчення ", { alternatives: [{ term: -ння }, { term: -ччя }, { term: -’я }] }, ": середній рід"] }
+            ex: { examples: [{ target: водолікува́ння }, { target: двадцятирі́ччя }, { target: мовоми́слення }, { target: різнотра́в’я }] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text:
+              uk: ["Рід складного слова визначає його закінчення, як і в простих іменників: ", { link: "Рід іменника", to: uk.nouns-cases.gender }, "."]
+
+  - title: { uk: Скорочення }
+    role: spelling
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Правило } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            use: { uk: "Після скорочення слова стоїть крапка" }
+            ex: { examples: [{ mapping: [ву́лиця, { target: "вул." }] }, { mapping: [пло́ща, { target: "пл." }] }, { mapping: [рік, { target: "р." }] }, { mapping: [столі́ття, { target: "ст." }] }] }
+          - level: B2
+            use: { uk: "Позначення одиниць виміру пишемо без крапки" }
+            ex: { examples: [["5 ", { target: км }], ["3 ", { target: кг }], ["9 ", { target: год }]] }
+          - level: B2
+            use: { uk: "Між числом і скороченням стоїть пропуск" }
+            ex: { examples: [["Це було́ у ", { target: "2024 р." }], ["Ми ї́демо ", { target: "9 год" }]] }
+
+  - title: { uk: Абревіатури й складноскорочені слова }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { uk: Правило } }
+          - { key: ex, label: { uk: Приклад } }
+        rows:
+          - level: B2
+            use: { uk: "Початкові літери слів назви: усі великі, читаємо як одне слово" }
+            ex: { examples: [{ target: МОН }, { target: ЦУМ }, { target: ФОП }] }
+          - level: B2
+            use: { uk: "Частини слів назви: велика літера тільки на початку" }
+            ex: { examples: [{ target: Мін’ю́ст }, { target: Дніпроге́с }] }
+          - level: B2
+            use: { uk: "Рід за головним словом назви: міністерство — середній" }
+            ex: ["МОН ", { target: оголоси́ло }, " ко́нкурс."]
+          - level: B2
+            use: { uk: "Рід за головним словом назви: магазин — чоловічий" }
+            ex: ["ЦУМ ", { target: відчини́вся }, " о дев’я́тій."]
+          - level: C1
+            use: { uk: "Абревіатура чоловічого роду на приголосний змінюється як іменник" }
+            ex: { examples: [{ mapping: [ЛАЗ, { target: ЛА́Зу }] }, { mapping: [ЛАЗ, { target: "на ЛА́Зі" }] }] }
+          - level: C1
+            use: { uk: "Складноскорочене слово змінюється за своїм закінченням" }
+            ex: { examples: [{ mapping: [райспоживспі́лка, { alternatives: [{ target: райспоживспі́лки }, { target: райспоживспі́лці }] }] }, { mapping: [Мін’ю́ст, { alternatives: [{ target: Мін’ю́сту }, { target: "у Мін’ю́сті" }] }] }] }
+          - level: C1
+            use: { uk: "Абревіатура установи на голосний не змінюється" }
+            ex: { examples: [["з ", { target: О́БСЄ }], ["у ", { target: ЗВО }]] }
+          - level: C2
+            use: { uk: "Перша частина — скорочена основа слова: нац-, укр-, проф-, мед-" }
+            ex: { examples: [{ target: Нацба́нк }, { target: Укрга́з }, { target: Укрінфо́рм }, { target: профспі́лка }, { target: медпрацівни́к }] }
+      - type: paradigm
+        columns:
+          - { key: case, label: { uk: Відмінок } }
+          - { key: form, label: Кабмі́н }
+        rows:
+          - { level: C2, features: { case: nom }, case: { uk: Називний }, form: Кабмі́н }
+          - { level: C2, features: { case: gen }, case: { uk: Родовий }, form: ["Кабмі́н", { ending: у }] }
+          - { level: C2, features: { case: dat }, case: { uk: Давальний }, form: { alternatives: [["Кабмі́н", { ending: у }], ["Кабмі́н", { ending: ові }]] } }
+          - { level: C2, features: { case: acc }, case: { uk: Знахідний }, form: Кабмі́н }
+          - { level: C2, features: { case: ins }, case: { uk: Орудний }, form: ["Кабмі́н", { ending: ом }] }
+          - { level: C2, features: { case: loc }, case: { uk: Місцевий }, form: ["у Кабмі́н", { ending: і }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: ["Після приголосного першої частини перед ", { alternatives: [{ term: ю }, { term: я }, { term: є }, { term: ї }] }, " стоїть апостроф."]
+            ex: ["Це ", { target: Мін’ю́ст }, "."]
+
+  - title: { uk: Типові помилки }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Це украї́нсько англі́йський словни́к.", right: ["Це ", { target: украї́нсько-англі́йський }, " словни́к."], rule: { uk: "рівноправні частини — через дефіс" } }
+          - { level: B2, wrong: "Це двохя́русне лі́жко.", right: ["Це ", { target: двоя́русне }, " лі́жко."], rule: { uk: ["першою частиною стоїть форма ", { term: дво- }] } }
+          - { level: B2, wrong: "Доро́га займа́є 9 год. і 20 хв.", right: ["Доро́га займа́є ", { target: 9 год і 20 хв }, "."], rule: { uk: "одиниці виміру — без крапки" } }
+          - { level: C1, wrong: "Ми живемо́ в Ра́ва-Ру́ській.", right: ["Ми живемо́ в ", { target: Ра́ві-Ру́ській }, "."], rule: { uk: "рівноправні частини змінюються обидві" } }
+          - { level: C2, wrong: "Він працю́є у Кабмі́н.", right: ["Він працю́є ", { target: "у Кабмі́ні" }, "."], rule: { uk: "складноскорочене слово на приголосний змінюється" } }

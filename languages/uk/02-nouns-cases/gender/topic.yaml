@@ -160,6 +160,12 @@ cheatsheet:
             vi: ["tên gọi giống cái có hậu tố ", { term: -к- }, " hoặc ", { term: -иня }]
           ex: { examples: [["Він ", { target: студе́нт }, "."], ["Вона́ ", { target: студе́нтка }, "."]] }
           tr: { en: { examples: ["He's a student.", "She's a student."] }, es: { examples: ["Él es estudiante.", "Ella es estudiante."] }, pt: { examples: ["Ele é estudante.", "Ela é estudante."] }, fr: { examples: ["Il est étudiant.", "Elle est étudiante."] }, de: { examples: ["Er ist Student.", "Sie ist Studentin."] }, it: { examples: ["Lui è studente.", "Lei è studentessa."] }, pl: { examples: ["On jest studentem.", "Ona jest studentką."] }, tr: { examples: ["O bir erkek öğrenci.", "O bir kız öğrenci."] }, id: { examples: ["Dia mahasiswa.", "Dia mahasiswi."] }, vi: { examples: ["Anh ấy là sinh viên.", "Cô ấy là sinh viên."] } }
+        - level: B2
+          features: { gender: [masc, fem] }
+          point: { uk: Спільний рід }
+          rule:
+            uk: "рід за статтю людини, яку називає слово"
+          ex: { examples: [[{ target: Цей }, " сирота́ ", { target: ви́ріс }, "."], [{ target: Ця }, " сирота́ ", { target: ви́росла }, "."]] }
         - level: A1
           point: { uk: Пастка, en: Trap, es: Trampa, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -436,6 +442,50 @@ sections:
           - { level: A1, masc: украї́нець, fem: ["украї́н", { ending: ка }] }
           - { level: A1, masc: продаве́ць, fem: ["продавч", { ending: и́ня }] }
 
+  - title: { uk: Іменники спільного роду }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: ending, label: { uk: Закінчення } }
+          - { key: neutral, label: { uk: Нейтральні слова } }
+          - { key: expressive, label: { uk: Експресивні слова } }
+        rows:
+          - level: B2
+            features: { gender: [masc, fem] }
+            ending: { uk: { alternatives: [{ term: -а }, { term: -я }] } }
+            neutral: { examples: [сирота́, листоно́ша] }
+            expressive: { examples: [пла́кса, базі́ка, тихо́ня, приблу́да] }
+          - level: B2
+            features: { gender: [masc, fem] }
+            ending: { uk: { term: -о } }
+            expressive: леда́що
+      - type: paradigm
+        columns:
+          - { key: word, label: { uk: Слово } }
+          - { key: masc, label: { uk: Чоловік }, features: { gender: masc } }
+          - { key: fem, label: { uk: Жінка }, features: { gender: fem } }
+        rows:
+          - { level: B2, word: { uk: Вказівний займенник }, masc: [{ target: цей }, " листоно́ша"], fem: [{ target: ця }, " листоно́ша"] }
+          - { level: B2, word: { uk: Прикметник }, masc: [{ target: нови́й }, " листоно́ша"], fem: [{ target: нова́ }, " листоно́ша"] }
+          - { level: B2, word: { uk: Дієслово в минулому часі }, masc: ["листоно́ша ", { target: прийшо́в }], fem: ["листоно́ша ", { target: прийшла́ }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              uk: "Рід залежить від статі людини, яку називає іменник:"
+            ex: { examples: [[{ target: Цей }, " сирота́ ", { target: ви́ріс }, " у дитбуди́нку."], [{ target: Ця }, " сирота́ ", { target: ви́росла }, " у дитбуди́нку."]] }
+          - type: rule
+            level: B2
+            text:
+              uk: "У знахідному стать показують прикметник і займенник; іменник має одну форму:"
+            ex: { examples: [["Я ба́чу ", { target: цього́ }, " сироту́."], ["Я ба́чу ", { target: цю }, " сироту́."]] }
+          - type: note
+            level: B2
+            text:
+              uk: "Експресивні слова звучать розмовно й виражають оцінку людини."
+
   - title: { uk: Типові помилки, en: Typical errors, es: Errores típicos, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -445,5 +495,6 @@ sections:
           - { level: A1, wrong: Це моя́ та́то., right: ["Це ", { target: мій }, " та́то."], rule: { uk: [{ term: та́то }, " — чоловічого роду, хоч і на ", { term: -о }], en: [{ term: та́то }, " is masculine, even with ", { term: -о }], es: [{ term: та́то }, " es masculino, aunque termine en ", { term: -о }], pt: [{ term: та́то }, " é masculino, mesmo terminando em ", { term: -о }], fr: [{ term: та́то }, " est masculin, même avec ", { term: -о }], de: [{ term: та́то }, " ist maskulin, obwohl es auf ", { term: -о }, " endet"], it: [{ term: та́то }, " è maschile, anche se termina in ", { term: -о }], pl: [{ term: та́то }, " jest rodzaju męskiego, choć kończy się na ", { term: -о }], tr: [{ term: та́то }, " ", { term: -о }, " ile bitse de erildir"], id: [{ term: та́то }, " maskulin, meskipun berakhiran ", { term: -о }], vi: [{ term: та́то }, " là giống đực, dù có đuôi ", { term: -о }] } }
           - { level: A1, wrong: Ця день була́ до́вга., right: [{ target: Цей }, " день ", { target: був до́вгий }, "."], rule: { uk: [{ term: день }, " — чоловічого роду"], en: [{ term: день }, " is masculine"], es: [{ term: день }, " es masculino"], pt: [{ term: день }, " é masculino"], fr: [{ term: день }, " est masculin"], de: [{ term: день }, " ist maskulin"], it: [{ term: день }, " è maschile"], pl: [{ term: день }, " jest rodzaju męskiego"], tr: [{ term: день }, " erildir"], id: [{ term: день }, " maskulin"], vi: [{ term: день }, " là giống đực"] } }
           - { level: A1, wrong: У ме́не си́льна біль., right: ["У ме́не ", { target: си́льний }, " біль."], rule: { uk: [{ term: біль }, " — чоловічого роду; жіночий рід — з російської"], en: [{ term: біль }, " is masculine; the feminine comes from Russian"], es: [{ term: біль }, " es masculino; el femenino viene del ruso"], pt: [{ term: біль }, " é masculino; o feminino vem do russo"], fr: [{ term: біль }, " est masculin ; le féminin vient du russe"], de: [{ term: біль }, " ist maskulin; das Femininum stammt aus dem Russischen"], it: [{ term: біль }, " è maschile; il femminile viene dal russo"], pl: [{ term: біль }, " jest rodzaju męskiego; rodzaj żeński pochodzi z rosyjskiego"], tr: [{ term: біль }, " erildir; dişil kullanım Rusçadan gelir"], id: [{ term: біль }, " maskulin; bentuk feminin berasal dari bahasa Rusia"], vi: [{ term: біль }, " là giống đực; giống cái là do ảnh hưởng tiếng Nga"] } }
+          - { level: B2, wrong: Цей сирота́ ви́росла у дитбуди́нку., right: ["Цей сирота́ ", { target: ви́ріс }, " у дитбуди́нку."], rule: { uk: ["дієслово має рід людини: ", { term: ви́ріс }] } }
           - { level: A1, speakers: [en], wrong: Кни́жка тут. Воно́ нова́., right: ["Кни́жка тут. ", { target: Вона́ }, " нова́."], rule: { en: ["a thing takes ", { term: він }, ", ", { term: вона́ }, " or ", { term: воно́ }, " by its gender, never ", { term: воно́ }, " for every “it”"] } }
           - { level: A1, speakers: [es], wrong: Моя́ мі́сто вели́ке., right: [{ target: Моє́ }, " мі́сто вели́ке."], rule: { es: [{ term: мі́сто }, " es neutro aunque «ciudad» sea femenino: ", { term: моє́ }] } }
