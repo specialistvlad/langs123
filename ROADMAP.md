@@ -16,3 +16,4 @@ topic's status lives in its `topic.yaml`.
 | 7 | Drafts | A language keeps its published data and its drafts side by side; a draft is reviewed before it replaces the published version | 0 | todo |
 | 8 | Pronunciation | IPA for words and examples, British and US where they differ, with audio | 4 | todo |
 | 9 | Visual explanations | Diagrams rendered from the data, such as tense timelines and paradigm charts | 4 | todo |
+| 10 | Upper levels | B2, C1 and C2 for English, Spanish and Ukrainian, each after its standard: the new topics and rules in the language being learned, then in every explanation language, each new text a draft until a native speaker approves it | 6 | done |

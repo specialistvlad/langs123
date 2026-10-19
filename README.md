@@ -3,8 +3,9 @@
 The foundations of languages as open data: sounds, writing, numbers, dates, time and grammar, every
 line marked with its CEFR level. Each language being learned is explained in the explanation
 languages it lists, so the library grows toward N languages, each explained in N languages. It holds
-English, Spanish and Ukrainian from A0 to B1, each explained in English, Ukrainian, Spanish, Portuguese,
-French, German, Italian, Polish, Turkish, Indonesian and Vietnamese. Spanish follows the Instituto
+English, Spanish and Ukrainian from A0 to C2, each explained in English, Ukrainian, Spanish, Portuguese,
+French, German, Italian, Polish, Turkish, Indonesian and Vietnamese. English follows the CEFR, with the
+English Grammar Profile setting the level of each grammar point; Spanish follows the Instituto
 Cervantes curriculum, written in Spanish, Latin American by default with Spain a switch away; Ukrainian
 follows the 2024 state standard for Ukrainian as a foreign language, written in Ukrainian with every
 example stress-marked.

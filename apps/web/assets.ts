@@ -80,7 +80,7 @@ export function levelsCss(): string {
 // The variety switch, for each language being learned with varieties (curriculum.yaml): the page names
 // the chosen variety in data-variety on <html>, and every element tagged with another of its varieties
 // hides. A table row, or a table cell's copy, of another variety keeps its place in the column widths
-// with no height, so switching moves no column. An element whose leaves start later in the chosen variety (data-level-{variety}) follows the
+// with no height, its inline marks set to the top so their baselines open no line, so switching moves no column. An element whose leaves start later in the chosen variety (data-level-{variety}) follows the
 // level filter from there. levels.css carries these rules after the level filter.
 export function varietiesCss(varieties: readonly (readonly string[])[]): string {
   const codes = LEVEL_INFO.map((l) => l.code);
@@ -92,7 +92,7 @@ export function varietiesCss(varieties: readonly (readonly string[])[]): string 
       const hidden = [
         `${page} ${other}:not(tr, .cell-variety) { display: none !important; }`,
         `${page} :is(tr, .cell-variety)${other} { visibility: hidden; overflow: hidden; }`,
-        `${page} :is(tr${other} :is(td, td *), .cell-variety${other}, .cell-variety${other} *) { height: 0 !important; min-height: 0 !important; padding-block: 0 !important; margin-block: 0 !important; border-block-width: 0 !important; line-height: 0 !important; }`,
+        `${page} :is(tr${other} :is(td, td *), .cell-variety${other}, .cell-variety${other} *) { height: 0 !important; min-height: 0 !important; padding-block: 0 !important; margin-block: 0 !important; border-block-width: 0 !important; line-height: 0 !important; vertical-align: top !important; }`,
       ];
       const attr = `data-level-${chosen.toLowerCase()}`;
       const filter = codes.flatMap((code, i) => {

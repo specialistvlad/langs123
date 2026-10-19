@@ -47,7 +47,8 @@ describe("the study path", () => {
       delete p["A0"];
       p["A0"] = a0;
     });
-    expect(messages).toContain("path en: levels run lowest first (A1, A2, B1, A0)");
+    const order = [...Object.keys(source.path).filter((l) => l !== "A0"), "A0"];
+    expect(messages).toContain(`path en: levels run lowest first (${order.join(", ")})`);
   });
 });
 
