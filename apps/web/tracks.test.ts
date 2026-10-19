@@ -46,8 +46,8 @@ describe.each(ENABLED_EXPLAIN)("the home page in %s", (home) => {
   test("has a card per language that links each explanation language it is written for, the home page's own first", async () => {
     const doc = await readPage(homeFile(home));
     for (const lang of curriculum.languages.filter((l) => l.enabled)) {
-      const card = [...doc.querySelectorAll(".lang-card")].find((c) => c.querySelector(`a[href$="/${lang.slug}/"]`) !== null);
-      const linked = [...(card?.querySelectorAll(".explains a") ?? [])].map((a) => a.getAttribute("hreflang") ?? "");
+      const card = [...doc.querySelectorAll(".hm-card")].find((c) => c.querySelector(`a[href$="/${lang.slug}/"]`) !== null);
+      const linked = [...(card?.querySelectorAll(".hm-chip") ?? [])].map((a) => a.getAttribute("hreflang") ?? "");
       const own = explainOf(lang).filter((e) => ENABLED_EXPLAIN.includes(e));
       expect(new Set(linked)).toEqual(new Set(own));
       expect(linked[0]).toBe(own.includes(home) ? home : own[0]);

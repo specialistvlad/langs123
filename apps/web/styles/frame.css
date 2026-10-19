@@ -42,10 +42,11 @@ html[data-frame] body {
   color: var(--text);
   font: 17px/1.35 var(--font);
 }
-html[data-frame] :is(h1, h2, p) {
+/* Resets below every page's own rules, which set their margins and colours by class */
+:where(html[data-frame]) :where(h1, h2, p) {
   margin: 0;
 }
-html[data-frame] a {
+:where(html[data-frame]) a {
   color: var(--accent);
   text-decoration: none;
 }

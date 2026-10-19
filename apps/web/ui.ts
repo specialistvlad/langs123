@@ -35,6 +35,8 @@ const TEXT_KEYS = [
   "search",
   "searchInTopics",
   "searchEmpty",
+  "clear",
+  "close",
   "breadcrumb",
   "fullLesson",
   "allLevels",

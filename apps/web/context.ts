@@ -2,6 +2,7 @@
 import { type CurriculumLanguage, ENABLED_EXPLAIN, type Explain, explainName, explainOf, type TopicRef } from "../../scripts/lib.ts";
 import type { Range } from "../../scripts/levels.ts";
 import type { Choice } from "./chrome.ts";
+import type { Brand } from "./brand.ts";
 import type { Sample } from "./sample.ts";
 import type { PageInput, PageKind } from "./layout.ts";
 import type { Ui } from "./ui.ts";
@@ -17,6 +18,8 @@ export interface BuildOptions {
   // Builds only these topics and their tracks in these explanation languages (sample.ts); home, credits and
   // the missing page in every explanation language.
   sample?: Sample;
+  // The product's mark on the Home and the credits; the library's own (brand.ts) when none is given.
+  brand?: Brand;
   // Each page's head, changed from what the page is: build() calls it once per page with the page's facts.
   head?: (page: PageFacts) => HeadChange;
 }

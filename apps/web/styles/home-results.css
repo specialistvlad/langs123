@@ -1,0 +1,78 @@
+/* The Home's search results (pages/home.ts, client-home.ts) */
+/* Search results: one list under the Topics heading, most relevant first. Above 860px it splits into two
+   columns, the first half on the left; on phones the columns stack into one rounded list. */
+.hm-heading {
+  margin: 0 0 8px 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hm-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.hm-rows {
+  border-radius: 22px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.hm-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 16px;
+}
+.hm-row + .hm-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  height: 0.5px;
+  background: var(--hm-sep);
+}
+.hm-row:hover {
+  background: var(--hm-fill);
+}
+.hm-row-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hm-row-title {
+  flex-grow: 1;
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.hm-row-flag {
+  margin-right: 6px;
+}
+.hm-row-lang {
+  font-weight: 400;
+  color: var(--muted);
+}
+.hm-row-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--hm-body);
+}
+.hm-row-text b {
+  font-weight: 700;
+  color: var(--text);
+}
+.hm-empty {
+  margin: 32px 0;
+  text-align: center;
+  color: var(--muted);
+  grid-column: 1 / -1;
+}

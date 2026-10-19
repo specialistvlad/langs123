@@ -1,0 +1,85 @@
+/* The Home on phones, on an unfolded phone held horizontally, and with reduced motion */
+/* Phones: the toolbar floats at the bottom and rises with the keyboard (home.js sets --hm-kb) */
+@media (max-width: 860px) {
+  .hm-main {
+    padding: 16px 20px 120px;
+  }
+  .hm-bar {
+    top: auto;
+    left: 16px;
+    right: 16px;
+    bottom: max(30px, calc(env(safe-area-inset-bottom) + 8px));
+  }
+  .hm-search {
+    flex-grow: 1;
+    width: auto;
+    height: 48px;
+  }
+  .hm-group {
+    height: 48px;
+  }
+  .hm-read summary {
+    width: 52px;
+    padding: 0;
+  }
+  .hm-read summary span {
+    display: none;
+  }
+  .hm-credits {
+    width: 52px;
+  }
+  .hm-menu {
+    top: auto;
+    bottom: calc(100% + 14px);
+  }
+  .hm-searching .hm-search {
+    width: auto;
+    max-width: none;
+  }
+  .hm-searching .hm-bar {
+    bottom: max(30px, calc(var(--hm-kb, 0px) + 10px));
+  }
+  .hm-list {
+    display: block;
+  }
+  .hm-rows + .hm-rows .hm-row:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 0;
+    height: 0.5px;
+    background: var(--hm-sep);
+  }
+  .hm-rows:first-child:not(:last-child) {
+    border-radius: 22px 22px 0 0;
+  }
+  .hm-rows:last-child:not(:first-child) {
+    border-radius: 0 0 22px 22px;
+  }
+  .hm-searching .hm-main {
+    padding-bottom: calc(var(--hm-kb, 0px) + 110px);
+  }
+}
+
+/* Wide and short, an unfolded phone held horizontally (1133 × 744): two columns whose gap sits on the
+   fold in the middle, equal margins either side, the results in the same two columns */
+@media (min-width: 900px) and (max-height: 800px) and (orientation: landscape) {
+  .hm-main {
+    max-width: none;
+    padding-inline: 88px;
+  }
+  .hm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 56px;
+  }
+  .hm-list {
+    column-gap: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-search {
+    transition: none;
+  }
+}

@@ -81,7 +81,7 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
     const credits = await readPage(file(creditsUrl(e)));
     expect(credits.querySelector('link[hreflang="x-default"]')?.getAttribute("href")).toBe(`http://127.0.0.1${creditsUrl("en")}`);
     // A language's card lists the home page's own language first.
-    expect(home.querySelector(".lang-card .explains a")?.getAttribute("hreflang")).toBe(e);
+    expect(home.querySelector(".hm-card .hm-chip")?.getAttribute("hreflang")).toBe(e);
   });
   test("the missing page leads up and to every language's home page, its own first", async () => {
     const doc = await readPage(file(notFoundUrl(e)));

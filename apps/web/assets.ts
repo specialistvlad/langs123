@@ -24,6 +24,10 @@ const STYLES = [
   "phone",
   "frame",
   "notfound",
+  "home",
+  "home-results",
+  "home-bar",
+  "home-phone",
 ];
 
 // style.css: the parts of apps/web/styles/ joined in order.

@@ -1,22 +1,69 @@
-// The home pages, one per explanation language, where the language is chosen, and the missing pages.
-import { explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
+// The home pages, one per explanation language, in the frame (frame.css, home.css): the brand, the heading, a
+// card per language to learn with a chip per explanation language it is written for, the home page's own
+// first, and a glass toolbar at the top right, at the bottom on phones: search over every course, Read in and
+// the credits. The search reads search/<language>.json (home-search.ts) and shows the topics that match.
+import { type Explain, explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
 import { join, refRange } from "../../../scripts/levels.ts";
+import { LIBRARY_BRAND } from "../brand.ts";
 import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
-import { ui } from "../ui.ts";
+import { CLEAR, CLOSE, INFO, LANGUAGES, SEARCH } from "../glyphs.ts";
 import { escapeHtml } from "../html.ts";
 import { badge } from "../parts.ts";
-import { homeUrl, searchUrl, trackUrl } from "../urls.ts";
+import { ui } from "../ui.ts";
+import { creditsUrl, homeUrl, trackUrl } from "../urls.ts";
+import { homeSearch } from "./home-search.ts";
 
-// Each home page leads to every track: a card per language to learn, named in the home page's language
-// with its flag and levels, and a link to each explanation language it is written for, under that
-// language's own name, the home page's language first. The first explanation language's home, at the
-// root, is the default for other readers.
+// The course cards of a home page: each opens in the home page's language when the course is written for it,
+// else in its first explanation language.
+function cards(ctx: Context, home: Explain): string {
+  return ctx.languages
+    .map((lang) => {
+      const explains = explainsOf(lang);
+      const order = [...explains.filter((e) => e === home), ...explains.filter((e) => e !== home)];
+      const chips = order
+        .map((e) => {
+          const label = escapeHtml(`${ui(e).track(localize(lang.name, e))}, ${ui(e).explained}`);
+          const here = e === (order[0] ?? home) ? " here" : "";
+          return `<a class="hm-chip${here}" href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" title="${label}">${escapeHtml(explainName(e))}</a>`;
+        })
+        .join("");
+      const range = badge(join(ctx.refs.filter((r) => r.lang === lang.code).map((r) => refRange(r))));
+      return `<article class="hm-card">
+<a class="hm-course" href="${trackUrl(order[0] ?? home, lang)}"><span class="hm-flag" aria-hidden="true">${lang.flag}</span><h2 class="hm-name">${escapeHtml(localize(lang.name, home))}</h2>${range}</a>
+<p class="hm-label">${escapeHtml(say("matrixExplained", home))}</p>
+<div class="hm-chips">${chips}</div>
+</article>`;
+    })
+    .join("\n");
+}
+
+// The toolbar: the search field with its clear button, the Read in menu and the credits, and Close while searching.
+function toolbar(home: Explain): string {
+  const t = ui(home);
+  const languages = readChoices(home, homeUrl)
+    .map((c) => `<a href="${c.href}"${c.on ? ' aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`)
+    .join("");
+  const credits = escapeHtml(say("credits", home));
+  const current = escapeHtml(explainName(home));
+  return `<nav class="hm-bar">
+<form class="hm-search glass" id="hm-form" role="search" action="#">${SEARCH}<input type="search" id="hm-q" placeholder="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search"><button type="button" class="hm-clear" id="hm-clear" aria-label="${escapeHtml(t.clear)}" hidden>${CLEAR}</button></form>
+<div class="hm-group glass">
+<details class="hm-read"><summary aria-label="${escapeHtml(t.read)}: ${current}">${LANGUAGES}<span>${current}</span></summary><div class="hm-menu">${languages}</div></details>
+<a class="hm-credits" href="${creditsUrl(home)}" aria-label="${credits}" title="${credits}">${INFO}</a>
+</div>
+<button type="button" class="hm-close glass" id="hm-close" aria-label="${escapeHtml(t.close)}">${CLOSE}</button>
+</nav>
+<noscript><style>.hm-search,.hm-close{display:none}</style></noscript>`;
+}
+
 export function homePage(ctx: Context): void {
   const { refs } = ctx;
+  const brand = ctx.o.brand ?? LIBRARY_BRAND;
   // The levels the curriculum covers: written topics by their data, planned ones by their entry.
   const range = join(refs.filter((r) => ctx.languages.some((l) => l.code === r.lang)).map((r) => refRange(r)));
   for (const home of EXPLAINS) {
-    const homeValues = {
+    const t = ui(home);
+    const values = {
       site: SITE.name,
       languages: listOf(
         ctx.languages.map((l) => localize(l.name, home)),
@@ -29,34 +76,29 @@ export function homePage(ctx: Context): void {
         home,
       ),
     };
-    const title = say("homeTitle", home, homeValues);
-    const description = say("homeDescription", home, homeValues);
-    const cards = ctx.languages
-      .map((lang) => {
-        const own = refs.filter((r) => r.lang === lang.code);
-        const explains = explainsOf(lang);
-        const order = [...explains.filter((e) => e === home), ...explains.filter((e) => e !== home)];
-        const links = order
-          .map((e) => {
-            const name = escapeHtml(`${ui(e).track(localize(lang.name, e))}, ${ui(e).explained}`);
-            const here = e === home ? ' class="here"' : "";
-            return `<li><a href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" aria-label="${name}" title="${name}"${here}>${escapeHtml(explainName(e))}</a></li>`;
-          })
-          .join("");
-        const head = `<header><span class="page-icon" aria-hidden="true">${lang.flag}</span><h2>${escapeHtml(localize(lang.name, home))}</h2>${badge(join(own.map((r) => refRange(r))))}</header>`;
-        return `<section class="lang-card">${head}<p class="card-label">${escapeHtml(say("matrixExplained", home))}</p><ul class="explains">${links}</ul></section>`;
-      })
-      .join("");
+    const body = `<main class="hm-main">
+<a class="hm-brand" href="${homeUrl(home)}">${brand.mark(28)}<span>${escapeHtml(SITE.name)}</span></a>
+<h1 class="hm-title">${escapeHtml(say("homeHeading", home))}</h1>
+<div class="hm-grid" id="hm-cards">
+${cards(ctx, home)}
+</div>
+<div class="hm-results" id="hm-results" data-empty="${escapeHtml(t.searchEmpty)}" hidden>
+<h2 class="hm-heading">${escapeHtml(t.topics)}</h2>
+<div class="hm-list" id="hm-list" aria-live="polite"></div>
+</div>
+</main>
+${toolbar(home)}`;
     ctx.add({
       kind: "home",
       lang: home,
-      title,
-      description,
+      title: say("homeTitle", home, values),
+      description: say("homeDescription", home, values),
       path: homeUrl(home),
       alternates: [...alternates(homeUrl), { lang: "x-default", path: homeUrl(homeLanguage()) }],
       read: readChoices(home, homeUrl),
-      search: ctx.languages.filter((l) => explainsOf(l).includes(home)).map((l) => searchUrl(home, l)),
-      main: `<article class="doc home"><h1>${escapeHtml(say("homeHeading", home))}</h1><div class="lang-cards">${cards}</div></article>`,
+      main: "",
+      body,
     });
+    homeSearch(ctx, home);
   }
 }

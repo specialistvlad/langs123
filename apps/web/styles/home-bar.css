@@ -1,0 +1,134 @@
+/* The Home's toolbar (pages/home.ts, client-home.ts) */
+/* The toolbar: glass on its controls, the content solid */
+.hm-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hm-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  width: 260px;
+  height: 44px;
+  margin: 0;
+  padding: 0 16px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 17px;
+  transition: width 0.2s ease;
+}
+.hm-search input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--text);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.hm-search input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.hm-search input::-webkit-search-cancel-button,
+.hm-search input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.hm-clear {
+  display: flex;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.hm-group {
+  position: relative;
+  display: flex;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--text);
+}
+.hm-read summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 14px;
+  border-radius: 999px;
+  list-style: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.hm-read summary::-webkit-details-marker {
+  display: none;
+}
+.hm-credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  border-radius: 999px;
+}
+.hm-close {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+}
+.hm-menu {
+  position: absolute;
+  background: var(--surface);
+  border: 0.5px solid var(--glass-border);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  top: calc(100% + 12px);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  padding: 6px;
+  border-radius: 20px;
+}
+.hm-menu a {
+  padding: 10px 14px;
+  border-radius: 14px;
+  white-space: nowrap;
+}
+.hm-menu a:hover {
+  background: var(--hm-fill);
+}
+.hm-menu a[aria-current] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+.hm-searching .hm-search {
+  width: 420px;
+  max-width: calc(100vw - 100px);
+}
+.hm-searching .hm-group {
+  display: none;
+}
+.hm-searching .hm-close {
+  display: flex;
+}
