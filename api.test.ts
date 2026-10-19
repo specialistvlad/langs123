@@ -8,6 +8,7 @@ test("api.ts exports the build, the export and the library's readers", () => {
       "LEVELS",
       "LIBRARY_FILE",
       "ROOT",
+      "SAMPLE",
       "SITE",
       "build",
       "exportLibrary",

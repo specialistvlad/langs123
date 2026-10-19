@@ -28,7 +28,9 @@ function tones(theme: "light" | "dark", code: string): LevelTones {
 // The whole library: configuration every reader shares (site, credit and licences, explanation languages,
 // level scale, interface wording), the languages being learned with their sections and study path, and
 // every written topic by id.
-export async function exportLibrary(): Promise<Library> {
+// only: just these topics' content, as a build of the sample needs it; every language and section still
+// lists all of its topics.
+export async function exportLibrary(only?: readonly string[]): Promise<Library> {
   const curriculum = await loadCurriculum();
   const refs = await loadTopics(curriculum);
   const commit = Bun.spawnSync(["git", "-C", ROOT, "rev-parse", "--short", "HEAD"]).stdout.toString().trim();
@@ -83,6 +85,7 @@ export async function exportLibrary(): Promise<Library> {
     })),
     topics: Object.fromEntries(
       refs.flatMap((r) => {
+        if (only !== undefined && !only.includes(r.id)) return [];
         const lang = curriculum.languages.find((l) => l.code === r.lang);
         const written = r.topic;
         return written !== null && lang !== undefined ? [[r.id, inTrack(lang, () => topic(written, r.path))]] : [];

@@ -49,3 +49,9 @@ test("a note about a variety names it before its text, or stands as the name alo
   expect(items[1]?.body?.["en"]).toBe("Note.");
   expect(items[2]?.text?.["en"]).toBe(`${name}:`);
 });
+
+test("an export of some topics holds their content alone, and every topic in its section", async () => {
+  const some = await exportLibrary(["en.verbs.to-be"]);
+  expect(Object.keys(some.topics)).toEqual(["en.verbs.to-be"]);
+  expect(some.languages.flatMap((l) => l.sections.flatMap((s) => s.topics)).length).toBe(Object.keys(library.topics).length);
+});
