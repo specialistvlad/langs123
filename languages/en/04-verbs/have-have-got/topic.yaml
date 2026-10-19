@@ -53,6 +53,10 @@ cheatsheet:
         - { level: A1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta", pt: "Resposta curta", fr: "Réponse courte", de: "Kurzantwort", it: "Risposta breve", pl: "Krótka odpowiedź", tr: "Kısa cevap", id: "Jawaban singkat", vi: "Câu trả lời ngắn" }, have: { alternatives: [["Yes, I ", { target: do }, "."], ["No, I ", { target: don't }, "."]] }, got: { alternatives: [["Yes, I ", { target: have }, "."], ["No, I ", { target: haven't }, "."]] } }
         - { level: A1, features: { interrogativity: decl, polarity: pos }, form: { en: ["Actions: only ", { term: have }], uk: ["Дії: лише ", { term: have }], es: ["Acciones: solo ", { term: have }], pt: ["Ações: só ", { term: "have" }], fr: ["Actions : seulement ", { term: "have" }], de: ["Handlungen: nur ", { term: "have" }], it: ["Azioni: solo ", { term: "have" }], pl: ["Czynności: tylko ", { term: "have" }], tr: ["Eylemler: yalnızca ", { term: "have" }], id: ["Tindakan: hanya ", { term: "have" }], vi: ["Hành động: chỉ ", { term: "have" }] }, have: ["I ", { target: have }, " breakfast at 8."] }
         - { level: A1, features: { interrogativity: decl, polarity: pos }, form: { en: Style, uk: "Стиль", es: "Estilo", pt: "Estilo", fr: "Style", de: "Stil", it: "Stile", pl: "Styl", tr: "Üslup", id: "Gaya", vi: "Phong cách" }, have: { en: "neutral, also in writing", uk: "нейтральний, також на письмі", es: "neutro, también por escrito", pt: "neutro, também na escrita", fr: "neutre, aussi à l’écrit", de: "neutral, auch schriftlich", it: "neutro, anche scritto", pl: "neutralny, także w piśmie", tr: "nötr, yazıda da", id: "netral, juga dalam tulisan", vi: "trung tính, dùng cả trong văn viết" }, got: { en: "informal, mostly speech", uk: "неформальний, переважно в мовленні", es: "informal, sobre todo en el habla", pt: "informal, principalmente na fala", fr: "familier, surtout à l’oral", de: "umgangssprachlich, meist gesprochen", it: "informale, soprattutto parlato", pl: "nieformalny, głównie w mowie", tr: "resmî olmayan, çoğunlukla konuşmada", id: "informal, terutama dalam percakapan", vi: "thân mật, chủ yếu trong văn nói" } }
+        - { level: B2, features: { verbform: ptcp }, form: { en: ["Causative: ", { pattern: [{ alternatives: [have, get] }, { slot: noun }, { slot: past participle }] }] }, have: { examples: [["I ", { target: had }, " my hair ", { target: cut }, "."], ["I ", { target: got }, " the car ", { target: fixed }, "."]] } }
+        - { level: B2, features: { verbform: inf }, form: { en: "A person does it" }, have: { examples: [["I ", { target: had }, " him ", { target: check }, " it."], ["I ", { target: got }, " him ", { target: to help }, "."]] } }
+        - { level: C1, features: { verbform: ger }, form: { en: ["Object + ", { term: "-ing" }] }, have: ["The joke ", { target: had }, " us ", { target: laughing }, "."] }
+        - { level: C1, features: { interrogativity: decl, polarity: pos }, form: { en: Fixed uses }, have: [{ target: Rumour has it }, " that she is leaving."] }
 
 sections:
   - title: { en: Overview, uk: "Огляд", es: "Visión general", pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -282,6 +286,61 @@ sections:
             ex: { examples: [["What time ", { target: do }, " you ", { target: have }, " lunch?"], ["I ", { target: don't have }, " breakfast."]] }
             tr: { uk: { examples: ["О котрій ти обідаєш?", "Я не снідаю."] }, es: { examples: ["¿A qué hora almuerzas?", "No desayuno."] }, pt: { examples: ["A que horas você almoça?", "Não tomo café da manhã."] }, fr: { examples: ["À quelle heure déjeunes-tu ?", "Je ne prends pas de petit-déjeuner."] }, de: { examples: ["Um wie viel Uhr isst du zu Mittag?", "Ich frühstücke nicht."] }, it: { examples: ["A che ora pranzi?", "Non faccio colazione."] }, pl: { examples: ["O której jesz obiad?", "Nie jem śniadania."] }, tr: { examples: ["Öğle yemeğini saat kaçta yersin?", "Kahvaltı yapmam."] }, id: { examples: ["Pukul berapa kamu makan siang?", "Saya tidak sarapan."] }, vi: { examples: ["Bạn ăn trưa lúc mấy giờ?", "Tôi không ăn sáng."] } }
 
+  - title: { en: Causative have and get }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: have, label: { pattern: [have, { slot: noun }, { slot: past participle }] } }
+          - { key: get, label: { pattern: [get, { slot: noun }, { slot: past participle }] } }
+        rows:
+          - { level: B2, features: { tense: prs }, form: { en: Present simple }, have: ["I ", { target: have }, " my hair ", { target: cut }, " every month."], get: ["I ", { target: get }, " my hair ", { target: cut }, " every month."] }
+          - { level: B2, features: { tense: pst }, form: { en: Past simple }, have: ["I ", { target: had }, " the car ", { target: fixed }, " last week."], get: ["I ", { target: got }, " the car ", { target: fixed }, " last week."] }
+          - { level: B2, features: { tense: prs, aspect: prog }, form: { en: Present continuous }, have: ["We're ", { target: having }, " the kitchen ", { target: painted }, "."], get: ["We're ", { target: getting }, " the kitchen ", { target: painted }, "."] }
+          - { level: B2, features: { interrogativity: int }, form: { en: Question }, have: ["Where ", { aux: do }, " you ", { target: have }, " your hair ", { target: cut }, "?"], get: ["Where ", { aux: do }, " you ", { target: get }, " your hair ", { target: cut }, "?"] }
+          - { level: B2, features: { polarity: neg }, form: { en: Negative }, have: ["I ", { aux: don't }, " ", { target: have }, " my hair ", { target: cut }, " here."], get: ["I ", { aux: don't }, " ", { target: get }, " my hair ", { target: cut }, " here."] }
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: "a person does it for you" }, pattern: { pattern: [have, { slot: person }, { slot: V }] }, ex: ["I ", { target: had the mechanic check }, " it."] }
+          - { level: B2, use: { en: "you persuade a person to do it" }, pattern: { pattern: [get, { slot: person }, to, { slot: V }] }, ex: ["I ", { target: got him to help }, "."] }
+          - { level: B2, use: { en: "something bad happens to you" }, pattern: { pattern: [have, { slot: noun }, { slot: past participle }] }, ex: { examples: [["She ", { target: had her bag stolen }, "."], ["They ", { target: had their house burgled }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: have }, " is neutral. ", { term: get }, " is informal."] }
+            ex: { examples: [["I ", { target: had }, " my watch repaired."], ["I ", { target: got }, " my watch repaired."]] }
+
+  - title: { en: Have with an object and -ing }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: ["a cause starts an action: ", { pattern: [have, { slot: person }, { slot: "-ing" }] }] }, ex: ["The joke ", { target: had us laughing }, "."] }
+          - { level: C1, use: { en: ["refusing to allow it: ", { pattern: [won't have, { slot: person }, { slot: "-ing" }] }] }, ex: ["I ", { target: won't have you talking }, " like that."] }
+          - { level: C1, use: { en: ["refusing to accept it: ", { pattern: [won't have it, { slot: past participle }] }] }, ex: ["I ", { target: won't have it said }, " that we gave up."] }
+
+  - title: { en: Fixed uses of have }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: phrase, label: { en: Phrase } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, phrase: [{ term: rumour has it that }, " ", { variant: { term: rumor has it that }, variety: en-US }], meaning: { en: "people say that" }, ex: [{ target: Rumour has it }, " that she is leaving."] }
+          - { level: C1, phrase: as luck would have it, meaning: { en: "by chance" }, ex: [{ target: As luck would have it }, ", the shop was still open."] }
+          - { level: C1, phrase: I'll have you know, meaning: { en: "a sharp way to give a fact" }, ex: [{ target: I'll have you know }, " that I am a doctor."] }
+          - { level: C1, phrase: have it that, meaning: { en: "claim or say" }, ex: ["Some people ", { target: have it that }, " the house is haunted."] }
   - title: { en: "Compare: have and have got", uk: "Порівняння: have і have got", es: "Comparación: have y have got", pt: "Comparação: have e have got", fr: "Comparaison : have et have got", de: "Vergleich: have und have got", it: "Confronto: have e have got", pl: "Porównanie: have i have got", tr: "Karşılaştırma: have ve have got", id: "Perbandingan: have dan have got", vi: "So sánh: have và have got" }
     role: compare
     content:
@@ -309,3 +368,6 @@ sections:
           - { level: A1, speakers: [uk], wrong: You have a car?, right: [{ target: Do }, " you have a car?"], rule: { uk: ["питання з ", { term: have }, " починається з ", { alternatives: [{ term: do }, { term: does }] }, ": в українській порядок слів не змінюється"] } }
           - { level: A1, speakers: [es], wrong: I no have a car., right: ["I ", { target: don't }, " have a car."], rule: { es: ["la negación de ", { term: have }, " lleva ", { alternatives: [{ term: don't }, { term: doesn't }] }, ", no ", { term: "no" }, " delante del verbo"] } }
           - { level: A1, speakers: [es], wrong: Let's take a coffee., right: ["Let's ", { target: have }, " a coffee."], rule: { es: ["con comidas y bebidas se usa ", { term: have }, " y no ", { term: take }, ", aunque en español se dice «tomar»"] } }
+          - { level: B2, wrong: I cut my hair at the barber's., right: ["I ", { target: have my hair cut }, " at the barber's."], rule: { en: "someone else does the action, so the pattern needs the object and the participle" } }
+          - { level: B2, wrong: I had cut my hair., right: ["I ", { target: had my hair cut }, "."], rule: { en: [{ term: had }, " plus the object, then the participle: someone else cut it"] } }
+          - { level: B2, wrong: I had my car to repair., right: ["I ", { target: had my car repaired }, "."], rule: { en: ["the past participle follows the object, not ", { pattern: [{ term: to }, { slot: infinitive }] }] } }

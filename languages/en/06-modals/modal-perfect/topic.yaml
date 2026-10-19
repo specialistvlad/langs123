@@ -1,0 +1,434 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.modals.modal-perfect
+lang: en
+kind: grammar
+tags: [verbs, modals, deduction, criticism, regret]
+concepts: [modal-perfect]
+related: [en.modals.can-could, en.modals.must-have-to, en.modals.should, en.modals.may-might, en.modals.would, en.tenses.perfect-tenses, en.sentence-building.conditionals-0-1-2]
+status: { en: draft }
+
+title: { en: "Modal Verbs in the Past: must have, should have" }
+summary:
+  lead:
+    en: [{ term: "Must have" }, ", ", { term: "can't have" }, " and ", { term: "might have" }, " for deductions about the past; ", { term: "should have" }, " for regret and criticism; ", { term: "needn't have" }, " for an unnecessary action."]
+  rule:
+    en: ["The modal and ", { term: have }, " never change, and the main verb is a past participle:"]
+  ex:
+    examples:
+      - ["She ", { target: "must have left" }, "."]
+      - ["You ", { target: "should have called" }, "."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: "Point" } }
+        - { key: rule, label: { en: "Rule" } }
+        - { key: ex, label: { en: "Example" } }
+      rows:
+        - level: B2
+          point: { en: "Form" }
+          rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [{ term: must }, { term: should }, { term: could }] }, { term: have }, { slot: past participle }] }, "; ", { term: have }, " never changes"] }
+          ex: ["She ", { target: "should have called" }, "."]
+        - level: B2
+          point: { en: "Deduction: sure" }
+          rule: { en: [{ term: "must have" }, ": it happened; ", { term: "can't have" }, ": it did not"] }
+          ex: { examples: [["She ", { target: "must have left" }, "."], ["He ", { target: "can't have known" }, "."]] }
+        - level: B2
+          point: { en: "Deduction: possible" }
+          rule: { en: [{ term: "may have" }, ", ", { term: "might have" }, " or ", { term: "could have" }, ": perhaps it happened"] }
+          ex: ["They ", { target: "might have missed" }, " the bus."]
+        - level: B2
+          point: { en: "Regret and criticism" }
+          rule: { en: [{ term: "should have" }, ": not done; ", { term: "shouldn't have" }, ": done and wrong"] }
+          ex: { examples: [["I ", { target: "should have asked" }, "."], ["I ", { target: "shouldn't have shouted" }, "."]] }
+        - level: B2
+          point: { en: "Unused chance" }
+          rule: { en: [{ term: "could have" }, " or ", { term: "might have" }, ": a chance that nobody took"] }
+          ex: ["You ", { target: "could have told" }, " me."]
+        - level: B2
+          point: { en: "Unneeded action" }
+          rule: { en: [{ term: "needn't have" }, ": it was done and was not necessary"] }
+          ex: ["I ", { target: "needn't have hurried" }, "."]
+        - level: B2
+          point: { en: "Unreal past" }
+          rule: { en: [{ term: "would have" }, " for the result of an unreal past condition"] }
+          ex: ["If I had known, I ", { target: "would have called" }, "."]
+        - level: C1
+          point: { en: "Passive and continuous" }
+          rule: { en: ["after any modal: ", { pattern: [{ term: "have been" }, { alternatives: [{ slot: past participle }, { slot: V-ing }] }] }] }
+          ex: { examples: [["It ", { target: "must have been lost" }, "."], ["She ", { target: "can't have been sleeping" }, "."]] }
+        - level: C1
+          point: { en: "Adverb inside" }
+          rule: { en: [{ term: "may well have" }, ": quite likely; ", { term: "can't possibly have" }, ": impossible"] }
+          ex: { examples: [["She ", { target: "may well have forgotten" }, "."], ["You ", { target: "can't possibly have finished" }, "."]] }
+        - level: C1
+          point: { en: "Expectation and estimate" }
+          rule: { en: [{ term: "should have" }, ": expected by now; ", { term: "would have" }, ": an estimate"] }
+          ex: { examples: [["It ", { target: "should have arrived" }, " by now."], ["That ", { target: "would have been" }, " ten years ago."]] }
+        - level: C1
+          point: { en: "Plan that failed" }
+          rule: { en: [{ pattern: [{ term: "was to have" }, { slot: past participle }] }, ": planned, but it did not happen"] }
+          ex: ["The bridge ", { target: "was to have opened" }, " in May."]
+        - level: B2
+          point: { en: "Trap" }
+          rule: { en: ["write ", { term: have }, " or ", { term: "'ve" }, ", never ", { term: of }] }
+          ex: ["You ", { target: "should've" }, " called."]
+
+sections:
+  - title: { en: "Form: the modal perfect" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: "Form" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, features: { polarity: pos, interrogativity: decl }, form: { en: "Affirmative" }, pattern: { pattern: [{ slot: subject }, { alternatives: [must, should, could, might] }, have, { slot: past participle }] }, ex: ["She ", { target: "should have called" }, "."] }
+          - { level: B2, features: { polarity: neg, interrogativity: decl }, form: { en: "Negative" }, pattern: { pattern: [{ slot: subject }, { alternatives: ["can't", "couldn't", "shouldn't", "needn't"] }, have, { slot: past participle }] }, ex: ["You ", { target: "shouldn't have waited" }, "."] }
+          - { level: B2, features: { polarity: pos, interrogativity: int }, form: { en: "Question" }, pattern: { pattern: [{ alternatives: [Should, Could, Would] }, { slot: subject }, have, { slot: past participle }] }, ex: [{ target: "Should" }, " I ", { target: "have called" }, "?"] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["The modal and ", { term: have }, " keep one form for every subject:"] }
+            ex: { examples: [["I ", { target: "should have" }, " gone."], ["They ", { target: "should have" }, " gone."]] }
+          - type: rule
+            level: B2
+            text: { en: [{ term: may }, " and ", { term: might }, " take ", { term: not }, " as a separate word:"] }
+            ex: ["She ", { target: "might not have" }, " heard."]
+
+  - title: { en: "Form: short forms" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: full, label: { en: "Full form" }, features: { contraction: full } }
+          - { key: short, label: { en: "Short form" }, features: { contraction: short } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, full: "should have", short: "should've", ex: ["You ", { target: "should've" }, " left early."] }
+          - { level: B2, full: "must have", short: "must've", ex: ["She ", { target: "must've" }, " left early."] }
+          - { level: B2, full: "could have", short: "could've", ex: ["We ", { target: "could've" }, " stayed."] }
+          - { level: B2, full: "might have", short: "might've", ex: ["It ", { target: "might've" }, " rained."] }
+          - { level: B2, full: "would have", short: { alternatives: ["would've", "'d have"] }, ex: ["I", { target: "'d have" }, " gone."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "Short forms belong to speech and informal writing; formal writing keeps the full form." }
+
+  - title: { en: "Pronunciation: have after a modal" }
+    role: pronunciation
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: "Form" } }
+          - { key: sound, label: { en: "Sound" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, form: "should have", sound: { ipa: "ʃəd əv" }, ex: ["You ", { target: "should have" }, " called. ", { ipa: "juː ʃəd əv ˈkɔːld" }] }
+          - { level: B2, form: "must have", sound: { ipa: "məst əv" }, ex: ["She ", { target: "must have" }, " left. ", { ipa: "ʃi məst əv ˈleft" }] }
+          - { level: B2, form: "could have", sound: { ipa: "kəd əv" }, ex: ["We ", { target: "could have" }, " won. ", { ipa: "wi kəd əv ˈwʌn" }] }
+          - { level: B2, form: "can't have", sound: [{ ipa: "kɑːnt əv" }, " ", { variant: { ipa: "kænt əv" }, variety: en-US }], ex: ["He ", { target: "can't have" }, " known. ", { ipa: "hi ˈkɑːnt əv ˈnəʊn" }] }
+          - { level: B2, form: "needn't have", sound: { ipa: "ˈniːdnt əv" }, ex: ["I ", { target: "needn't have" }, " gone. ", { ipa: "aɪ ˈniːdnt əv ˈɡɒn" }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["After a modal, ", { term: have }, " is weak, ", { ipa: əv }, ": it sounds like ", { term: of }, " but is written ", { term: have }, " or ", { term: "'ve" }, "."] }
+          - type: rule
+            level: B2
+            text: { en: "In a statement the past participle takes the stress; the modal and have are weak." }
+
+  - title: { en: "Use: deduction about the past" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            use: { en: "Sure it happened" }
+            pattern: { pattern: [must, have, { slot: past participle }] }
+            ex: ["Their car has gone, so they ", { target: "must have left" }, "."]
+          - level: B2
+            use: { en: "Sure it did not happen" }
+            pattern: { pattern: [{ alternatives: ["can't", "couldn't"] }, have, { slot: past participle }] }
+            ex: ["He ", { target: "can't have known" }, ". Nobody told him."]
+          - level: B2
+            use: { en: "Possible that it happened" }
+            pattern: { pattern: [{ alternatives: [may, might, could] }, have, { slot: past participle }] }
+            ex: ["She ", { target: "might have missed" }, " the train."]
+          - level: B2
+            use: { en: "Possible that it did not happen" }
+            pattern: { pattern: [{ alternatives: ["may not", "might not"] }, have, { slot: past participle }] }
+            ex: ["They ", { target: "might not have heard" }, " the bell."]
+          - level: B2
+            use: { en: "An activity in progress" }
+            pattern: { pattern: [must, have been, { slot: V-ing }] }
+            ex: ["They ", { target: "must have been waiting" }, " for hours."]
+
+  - title: { en: "Use: criticism and regret" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            use: { en: "A good action that was not done" }
+            pattern: { pattern: [{ alternatives: ["should", "ought to"] }, have, { slot: past participle }] }
+            ex: { examples: [["You ", { target: "should have asked" }, " first."], ["I ", { target: "ought to have saved" }, " more."]] }
+          - level: B2
+            use: { en: "A bad action that was done" }
+            pattern: { pattern: ["shouldn't", have, { slot: past participle }] }
+            ex: ["I ", { target: "shouldn't have shouted" }, " at her."]
+          - level: B2
+            use: { en: "A chance that nobody took" }
+            pattern: { pattern: [{ alternatives: [could, might] }, have, { slot: past participle }] }
+            ex: { examples: [["You ", { target: "could have told" }, " me."], ["You ", { target: "might have told" }, " me!"]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: "might have" }, " blames more strongly than ", { term: "could have" }, "."] }
+
+  - title: { en: "Compare: needn't have and didn't need to" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: "Point" } }
+          - { key: neednt, label: "needn't have" }
+          - { key: didnt, label: "didn't need to" }
+        rows:
+          - level: B2
+            row: { en: "Meaning" }
+            neednt: { en: "it was done, and it was not necessary" }
+            didnt: { en: "it was not necessary; it may not have happened" }
+          - level: B2
+            row: { en: "Example" }
+            neednt: ["I ", { target: "needn't have brought" }, " a coat. It was warm."]
+            didnt: ["I ", { target: "didn't need to bring" }, " a coat, so I left it at home."]
+          - level: B2
+            row: { en: "Example" }
+            didnt: ["I ", { target: "didn't need to bring" }, " a coat, but I brought one."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["For the present forms of ", { term: need }, " see ", { link: "Need and Dare", to: en.modals.need-dare }, "."] }
+
+  - title: { en: "Compare: could, was able to and could have" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: "Point" } }
+          - { key: could, label: could }
+          - { key: able, label: "was able to" }
+          - { key: couldhave, label: "could have" }
+        rows:
+          - level: B2
+            row: { en: "Meaning" }
+            could: { en: "general ability in the past" }
+            able: { en: "success on one occasion" }
+            couldhave: { en: "an ability or chance that was not used" }
+          - level: B2
+            row: { en: "Example" }
+            could: ["I ", { target: could }, " swim when I was five."]
+            able: ["I ", { target: "was able to swim" }, " across the lake yesterday."]
+            couldhave: ["I ", { target: "could have swum" }, " across, but I was tired."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["See ", { link: "Can and Could", to: en.modals.can-could }, "."] }
+
+  - title: { en: "Use: hypothetical past" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            use: { en: "The result of an unreal past condition" }
+            pattern: { pattern: [would, have, { slot: past participle }] }
+            ex: ["If I had known, I ", { target: "would have called" }, "."]
+          - level: B2
+            use: { en: "A result with no if-clause" }
+            pattern: { pattern: [would, have, { slot: past participle }] }
+            ex: ["I ", { target: "would have helped" }, ", but nobody asked me."]
+          - level: B2
+            use: { en: "What would not have been possible" }
+            pattern: { pattern: [{ alternatives: ["wouldn't", "couldn't"] }, have, { slot: past participle }] }
+            ex: ["We ", { target: "couldn't have won" }, " without her."]
+          - level: B2
+            use: { en: "A comparison with what might have been" }
+            pattern: { pattern: [{ alternatives: [would, could] }, have been, { slot: adjective }] }
+            ex: { examples: [["It ", { target: "would have been" }, " better to wait."], ["It ", { target: "could have been" }, " worse."]] }
+          - level: C1
+            use: { en: "A possible result, less sure than would have" }
+            pattern: { pattern: [might, have, { slot: past participle }] }
+            ex: ["If he had tried harder, he ", { target: "might have won" }, "."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["The if-clause takes the past perfect: ", { pattern: [{ term: if }, { term: had }, { slot: past participle }] }, ". See ", { link: "Conditionals", to: en.sentence-building.conditionals-0-1-2 }, "."] }
+
+  - title: { en: "Form: passive and continuous" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            use: { en: "Passive: sure it happened" }
+            pattern: { pattern: [must, have been, { slot: past participle }] }
+            ex: ["The window ", { target: "must have been left" }, " open."]
+          - level: C1
+            use: { en: "Passive: something that was not done" }
+            pattern: { pattern: [should, have been, { slot: past participle }] }
+            ex: ["You ", { target: "should have been told" }, " earlier."]
+          - level: C1
+            use: { en: "Continuous: possible" }
+            pattern: { pattern: [might, have been, { slot: V-ing }] }
+            ex: ["He ", { target: "might have been working" }, " late."]
+          - level: C1
+            use: { en: "Continuous: sure it did not happen" }
+            pattern: { pattern: ["can't", have been, { slot: V-ing }] }
+            ex: ["She ", { target: "can't have been sleeping" }, ". The light was on."]
+
+  - title: { en: "Adverbs inside the modal perfect" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            use: { en: "Quite likely it happened" }
+            pattern: { pattern: [{ alternatives: ["may well", "might well"] }, have, { slot: past participle }] }
+            ex: ["She ", { target: "may well have forgotten" }, "."]
+          - level: C1
+            use: { en: "A slight chance it happened" }
+            pattern: { pattern: [{ alternatives: ["may just", "might just"] }, have, { slot: past participle }] }
+            ex: ["The shop ", { target: "might just have closed" }, "."]
+          - level: C1
+            use: { en: "Almost sure it did not happen" }
+            pattern: { pattern: [{ alternatives: ["can hardly", "can scarcely"] }, have, { slot: past participle }] }
+            ex: ["He ", { target: "can hardly have meant" }, " it."]
+          - level: C1
+            use: { en: "Sure it did not happen, with emphasis" }
+            pattern: { pattern: [{ alternatives: ["can't possibly", "couldn't possibly"] }, have, { slot: past participle }] }
+            ex: ["You ", { target: "can't possibly have finished" }, " already."]
+          - level: C1
+            use: { en: "Sure it happened, with emphasis" }
+            pattern: { pattern: ["must surely", have, { slot: past participle }] }
+            ex: ["They ", { target: "must surely have heard" }, " the noise."]
+
+  - title: { en: "Use: expectation and estimate" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            use: { en: "An expected result by now" }
+            pattern: { pattern: [should, have, { slot: past participle }] }
+            ex: ["The parcel ", { target: "should have arrived" }, " by now."]
+          - level: C1
+            use: { en: "An estimate about the past" }
+            pattern: { pattern: [would, have, { slot: past participle }] }
+            ex: { examples: [["That ", { target: "would have been" }, " about ten years ago."], ["She ", { target: "would have been" }, " twenty then."]] }
+          - level: C1
+            use: { en: "An assumption about a finished action" }
+            pattern: { pattern: [will, have, { slot: past participle }] }
+            ex: ["You", { target: "'ll have heard" }, " the news."]
+      - type: list
+        items:
+          - type: note
+            level: C1
+            text: { en: ["For ", { term: will }, " in assumptions see ", { link: "Will and Shall", to: en.modals.will-shall }, "."] }
+
+  - title: { en: "Use: duties, plans and reports" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            use: { en: "A duty that was not met" }
+            pattern: { pattern: ["was supposed to have", { slot: past participle }] }
+            ex: ["She ", { target: "was supposed to have called" }, " me by noon."]
+          - level: C1
+            use: { en: "A plan that did not happen" }
+            pattern: { pattern: ["was to have", { slot: past participle }] }
+            ex: ["The bridge ", { target: "was to have opened" }, " in May."]
+          - level: C1
+            use: { en: "A plan made before another past event" }
+            pattern: { pattern: ["had been due to", { slot: V }] }
+            ex: ["The train ", { target: "had been due to leave" }, " at six."]
+          - level: C1
+            use: { en: "Reported speech" }
+            pattern: { en: "the modal perfect does not change" }
+            ex: { mapping: [["You ", { target: "should have called" }, "."], ["He said I ", { target: "should have called" }, "."]] }
+
+  - title: { en: "Typical errors" }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "You should of called."
+            right: ["You ", { target: "should have" }, " called."]
+            rule: { en: ["write ", { term: have }, " or ", { term: "'ve" }, ", which sounds like ", { term: of }] }
+          - level: B2
+            wrong: "She must had left."
+            right: ["She must ", { target: "have" }, " left."]
+            rule: { en: [{ term: have }, " never changes after a modal"] }
+          - level: B2
+            wrong: "He should have went home."
+            right: ["He should have ", { target: gone }, " home."]
+            rule: { en: { pattern: [{ term: have }, { slot: past participle }] } }
+          - level: B2
+            wrong: "He mustn't have known."
+            right: ["He ", { target: "can't have" }, " known."]
+            rule: { en: ["sure it did not happen: ", { term: "can't have" }, " or ", { term: "couldn't have" }] }
+          - level: B2
+            wrong: "I needn't have gone, so I stayed at home."
+            right: ["I ", { target: "didn't need to go" }, ", so I stayed at home."]
+            rule: { en: [{ term: "needn't have" }, " means the action was done"] }
+          - level: B2
+            wrong: "If I would have known, I would have called."
+            right: ["If I ", { target: "had known" }, ", I would have called."]
+            rule: { en: ["the if-clause takes the past perfect, with no ", { term: would }] }
+          - level: C1
+            wrong: "The keys must have been losing."
+            right: ["The keys must have been ", { target: lost }, "."]
+            rule: { en: ["passive: ", { pattern: [{ term: been }, { slot: past participle }] }, "; continuous: ", { pattern: [{ term: been }, { slot: V-ing }] }] }
+          - level: C1
+            wrong: "He can't hardly have known."
+            right: ["He ", { target: "can hardly" }, " have known."]
+            rule: { en: [{ term: hardly }, " is already negative: no second negative"] }

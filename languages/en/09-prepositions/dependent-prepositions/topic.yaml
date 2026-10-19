@@ -1,0 +1,424 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.prepositions.dependent-prepositions
+lang: en
+kind: grammar
+tags: [prepositions, dependent-prepositions, verbs, adjectives, nouns]
+concepts: [governed-prepositions]
+related: [en.verbs.gerund-vs-infinitive, en.verbs.phrasal-verbs-core, en.adjectives-adverbs.adjective-order, en.prepositions.place-movement, en.prepositions.time-in-on-at]
+status: { en: draft }
+
+title: { en: "Dependent Prepositions" }
+summary:
+  lead:
+    en: ["Many verbs, adjectives and nouns take one fixed preposition, as in ", { term: "depend on" }, ", ", { term: "afraid of" }, " and ", { term: "reason for" }, "."]
+  rule:
+    en: ["A noun, an object pronoun or an ", { term: "-ing" }, " form follows the preposition:"]
+  ex: { examples: [["wait ", { target: "for me" }], ["insist ", { target: "on paying" }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns: [{ key: "point", label: { en: "Point" } }, { key: "rule", label: { en: "Rule" } }, { key: "ex", label: { en: "Example" } }]
+      rows:
+        - { level: "B2", point: { en: "Verb" }, rule: { en: [{ pattern: [{ slot: "verb" }, { slot: { en: "preposition" } }, { slot: "noun" }] }, "; the verb selects the preposition"] }, ex: ["I ", { target: "depend on" }, " my parents."] }
+        - { level: "B2", point: { en: "Adjective" }, rule: { en: [{ pattern: [{ slot: "adjective" }, { slot: { en: "preposition" } }, { slot: "noun" }] }, "; learn the pair"] }, ex: ["She is ", { target: "afraid of" }, " spiders."] }
+        - { level: "B2", point: { en: "Noun" }, rule: { en: [{ pattern: [{ slot: "noun" }, { slot: { en: "preposition" } }, { slot: "noun" }] }, "; learn the pair"] }, ex: ["What is the ", { target: "reason for" }, " the delay?"] }
+        - { level: "B2", point: { en: "After the preposition" }, rule: { en: ["a noun, an object pronoun or an ", { term: "-ing" }, " form"] }, ex: ["She insisted ", { target: "on paying" }, "."] }
+        - { level: "B2", point: { en: "Questions and passives" }, rule: { en: "the preposition stays with its verb" }, ex: ["What are you ", { target: "waiting for" }, "?"] }
+        - { level: "B2", point: { en: "Two prepositions" }, rule: { en: "the preposition changes the meaning" }, ex: { examples: [["I'm ", { target: "looking for" }, " a map."], ["She ", { target: "looks after" }, " her brother."]] } }
+        - { level: "C1", point: { en: "Participles" }, rule: { en: ["participles take fixed prepositions; ", { term: "-ing" }, " follows ", { term: "committed to" }] }, ex: { examples: [["The film is ", { target: "based on" }, " a true story."], ["We are ", { target: "committed to" }, " helping."]] } }
+        - { level: "C1", point: { en: "Finer contrasts" }, rule: { en: ["one word, two meanings: ", { term: "responsible for" }, " a task, ", { term: "responsible to" }, " a person"] }, ex: { examples: [["He is ", { target: "responsible to" }, " the manager."], ["I ", { target: "prefer" }, " tea ", { target: "to" }, " coffee."]] } }
+        - { level: "C1", point: { en: "Academic nouns" }, rule: { en: "abstract nouns keep one preposition each" }, ex: { examples: [["the ", { target: "impact on" }, " small shops"], ["a ", { target: "link between" }, " sleep and memory"]] } }
+        - { level: "C1", point: { en: "Formal verbs" }, rule: { en: "formal verbs take fixed prepositions" }, ex: { examples: [["Staff must ", { target: "comply with" }, " the rules."], ["Costs ", { target: "amount to" }, " ten thousand pounds."]] } }
+        - { level: "B2", point: { en: "Trap" }, rule: { en: [{ term: "discuss" }, ", ", { term: "mention" }, ", ", { term: "enter" }, " and ", { term: "attend" }, " take no preposition"] }, ex: ["We ", { target: "discussed" }, " the plan."] }
+        - { level: "C1", point: { en: "Trap" }, rule: { en: [{ term: "comprise" }, " and ", { term: "emphasise" }, " take no preposition"] }, ex: ["The course ", { target: "comprises" }, " six units."] }
+
+sections:
+  - title: { en: "Overview" }
+    role: overview
+    content:
+      - type: usage
+        columns: [{ key: "form", label: { en: "Pattern" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", form: { pattern: [{ slot: "verb" }, { slot: { en: "preposition" } }, { slot: "noun" }] }, ex: ["I ", { target: "depend on" }, " my parents."] }
+          - { level: "B2", form: { pattern: [{ slot: "adjective" }, { slot: { en: "preposition" } }, { slot: "noun" }] }, ex: ["She is ", { target: "afraid of" }, " spiders."] }
+          - { level: "B2", form: { pattern: [{ slot: "noun" }, { slot: { en: "preposition" } }, { slot: "noun" }] }, ex: ["What is the ", { target: "reason for" }, " the delay?"] }
+      - type: usage
+        columns: [{ key: "follows", label: { en: "After the preposition" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", follows: { en: "a noun" }, ex: ["She is interested ", { target: "in music" }, "."] }
+          - { level: "B2", follows: { en: "a pronoun in the object form" }, ex: ["Wait ", { target: "for me" }, ", please."] }
+          - { level: "B2", follows: { en: ["an ", { term: "-ing" }, " form"] }, ex: ["She insisted ", { target: "on paying" }, "."] }
+      - type: usage
+        columns: [{ key: "where", label: { en: "The preposition stays with its verb in" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", where: { en: "a question" }, ex: ["What are you ", { target: "waiting for" }, "?"] }
+          - { level: "B2", where: { en: "a relative clause" }, ex: ["This is the girl I ", { target: "spoke to" }, "."] }
+          - { level: "B2", where: { en: "a passive" }, ex: ["The problem was ", { target: "dealt with" }, " quickly."] }
+      - type: list
+        items:
+          - { type: "note", level: "B2", text: { en: ["A particle that changes the meaning, as in ", { term: "look up" }, ", makes a phrasal verb. See ", { link: "Phrasal Verbs: Core", to: "en.verbs.phrasal-verbs-core" }, "."] } }
+          - { type: "note", level: "B2", text: { en: ["Verbs that take ", { term: "-ing" }, " or a ", { term: "to" }, "-infinitive directly are in ", { link: "Gerund vs Infinitive", to: "en.verbs.gerund-vs-infinitive" }, "."] } }
+
+  - title: { en: "Verbs: about" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "worry about", ex: ["She ", { target: "worries about" }, " her exams."] }
+          - { level: "B2", verb: "complain about", ex: ["Guests ", { target: "complained about" }, " the noise."] }
+          - { level: "B2", verb: "care about", ex: ["He ", { target: "cares about" }, " his health."] }
+          - { level: "B2", verb: "hear about", ex: ["Did you ", { target: "hear about" }, " the party?"] }
+          - { level: "B2", verb: "argue about", ex: ["They ", { target: "argue about" }, " money."] }
+
+  - title: { en: "Verbs: at" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "look at", ex: [{ target: "Look at" }, " this photo."] }
+          - { level: "B2", verb: "laugh at", ex: ["Everyone ", { target: "laughed at" }, " his joke."] }
+          - { level: "B2", verb: "aim at", ex: ["The film ", { target: "aims at" }, " young viewers."] }
+          - { level: "B2", verb: "shout at", ex: ["Please don't ", { target: "shout at" }, " me."] }
+          - { level: "B2", verb: "stare at", ex: ["He ", { target: "stared at" }, " the screen."] }
+
+  - title: { en: "Verbs: for" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "wait for", ex: ["We ", { target: "waited for" }, " the bus."] }
+          - { level: "B2", verb: "ask for", ex: ["She ", { target: "asked for" }, " a glass of water."] }
+          - { level: "B2", verb: "look for", ex: ["I'm ", { target: "looking for" }, " my keys."] }
+          - { level: "B2", verb: "search for", ex: ["They ", { target: "searched for" }, " the boy all night."] }
+          - { level: "B2", verb: "apply for", ex: ["He ", { target: "applied for" }, " a job in a bank."] }
+          - { level: "B2", verb: "pay for", ex: ["I ", { target: "paid for" }, " the tickets."] }
+          - { level: "B2", verb: "blame someone for", ex: ["They ", { target: "blamed" }, " the driver ", { target: "for" }, " the delay."] }
+          - { level: "B2", verb: "apologise for", ex: ["She ", { target: "apologised for" }, " being late."] }
+          - { level: "B2", verb: "thank someone for", ex: ["I ", { target: "thanked" }, " them ", { target: "for" }, " their help."] }
+          - { level: "B2", verb: "hope for", ex: ["We ", { target: "hope for" }, " good weather."] }
+          - { level: "B2", verb: "prepare for", ex: ["He is ", { target: "preparing for" }, " an exam."] }
+
+  - title: { en: "Verbs: from" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "suffer from", ex: ["She ", { target: "suffers from" }, " headaches."] }
+          - { level: "B2", verb: "recover from", ex: ["He is ", { target: "recovering from" }, " the flu."] }
+          - { level: "B2", verb: "protect someone from", ex: ["A hat ", { target: "protects" }, " you ", { target: "from" }, " the sun."] }
+          - { level: "B2", verb: "prevent someone from", ex: ["Heavy rain ", { target: "prevented" }, " the match ", { target: "from" }, " starting."] }
+          - { level: "B2", verb: "escape from", ex: ["Two prisoners ", { target: "escaped from" }, " the jail."] }
+          - { level: "B2", verb: "differ from", ex: ["My view ", { target: "differs from" }, " yours."] }
+          - { level: "B2", verb: "benefit from", ex: ["Everyone ", { target: "benefits from" }, " exercise."] }
+
+  - title: { en: "Verbs: in" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "believe in", ex: ["I ", { target: "believe in" }, " hard work."] }
+          - { level: "B2", verb: "succeed in", ex: ["She ", { target: "succeeded in" }, " finding a job."] }
+          - { level: "B2", verb: "specialise in", ex: ["The shop ", { target: "specialises in" }, " old books."] }
+          - { level: "B2", verb: "result in", ex: ["The storm ", { target: "resulted in" }, " power cuts."] }
+          - { level: "B2", verb: "participate in", ex: ["All students ", { target: "participate in" }, " the project."] }
+
+  - title: { en: "Verbs: of" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "consist of", ex: ["The team ", { target: "consists of" }, " six people."] }
+          - { level: "B2", verb: "think of", ex: ["I often ", { target: "think of" }, " my old school."] }
+          - { level: "B2", verb: "dream of", ex: ["He ", { target: "dreams of" }, " becoming a pilot."] }
+          - { level: "B2", verb: "approve of", ex: ["My parents don't ", { target: "approve of" }, " my plan."] }
+          - { level: "B2", verb: "remind someone of", ex: ["You ", { target: "remind" }, " me ", { target: "of" }, " my sister."] }
+          - { level: "B2", verb: "accuse someone of", ex: ["They ", { target: "accused" }, " him ", { target: "of" }, " stealing."] }
+          - { level: "B2", verb: "die of", ex: ["He ", { target: "died of" }, " a heart attack."] }
+          - { level: "B2", verb: "smell of", ex: ["The kitchen ", { target: "smells of" }, " coffee."] }
+
+  - title: { en: "Verbs: on" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "depend on", ex: ["It ", { target: "depends on" }, " the weather."] }
+          - { level: "B2", verb: "rely on", ex: ["You can ", { target: "rely on" }, " me."] }
+          - { level: "B2", verb: "insist on", ex: ["She ", { target: "insisted on" }, " paying."] }
+          - { level: "B2", verb: "concentrate on", ex: ["Please ", { target: "concentrate on" }, " your work."] }
+          - { level: "B2", verb: "focus on", ex: ["Let's ", { target: "focus on" }, " the main problem."] }
+          - { level: "B2", verb: "congratulate someone on", ex: ["We ", { target: "congratulated" }, " her ", { target: "on" }, " her new job."] }
+          - { level: "B2", verb: "comment on", ex: ["Nobody ", { target: "commented on" }, " the news."] }
+          - { level: "B2", verb: "spend money on", ex: ["He ", { target: "spends" }, " too much ", { target: "on" }, " clothes."] }
+
+  - title: { en: "Verbs: to" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "belong to", ex: ["This bag ", { target: "belongs to" }, " Maria."] }
+          - { level: "B2", verb: "listen to", ex: ["I ", { target: "listen to" }, " the radio."] }
+          - { level: "B2", verb: "talk to", ex: ["Can I ", { target: "talk to" }, " you for a minute?"] }
+          - { level: "B2", verb: "refer to", ex: ["She often ", { target: "refers to" }, " her notes."] }
+          - { level: "B2", verb: "object to", ex: ["Many residents ", { target: "object to" }, " the new road."] }
+          - { level: "B2", verb: "respond to", ex: ["He didn't ", { target: "respond to" }, " my email."] }
+          - { level: "B2", verb: "lead to", ex: ["Bad sleep ", { target: "leads to" }, " stress."] }
+          - { level: "B2", verb: "reply to", ex: ["I must ", { target: "reply to" }, " her letter."] }
+          - { level: "B2", verb: "happen to", ex: ["What ", { target: "happened to" }, " your arm?"] }
+
+  - title: { en: "Verbs: with" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "agree with", ex: ["I ", { target: "agree with" }, " you."] }
+          - { level: "B2", verb: "deal with", ex: ["She ", { target: "deals with" }, " customer complaints."] }
+          - { level: "B2", verb: "cope with", ex: ["He ", { target: "copes with" }, " stress well."] }
+          - { level: "B2", verb: "argue with", ex: ["Don't ", { target: "argue with" }, " your sister."] }
+          - { level: "B2", verb: "provide someone with", ex: ["The hotel ", { target: "provides" }, " guests ", { target: "with" }, " towels."] }
+          - { level: "B2", verb: "compare something with", ex: [{ target: "Compare" }, " this price ", { target: "with" }, " that one."] }
+          - { level: "B2", verb: "interfere with", ex: ["Noise ", { target: "interferes with" }, " my sleep."] }
+
+  - title: { en: "Verbs with no preposition" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "discuss", ex: ["We ", { target: "discussed" }, " the plan."] }
+          - { level: "B2", verb: "mention", ex: ["She didn't ", { target: "mention" }, " the price."] }
+          - { level: "B2", verb: "attend", ex: ["Over two hundred people ", { target: "attended" }, " the meeting."] }
+          - { level: "B2", verb: "answer", ex: ["Please ", { target: "answer" }, " the question."] }
+          - { level: "B2", verb: "enter", ex: ["He ", { target: "entered" }, " the room quietly."] }
+          - { level: "B2", verb: "approach", ex: ["The cars ", { target: "approached" }, " the bridge slowly."] }
+          - { level: "B2", verb: "reach", ex: ["We ", { target: "reached" }, " the hotel at noon."] }
+          - { level: "B2", verb: "marry", ex: ["She ", { target: "married" }, " a teacher."] }
+          - { level: "B2", verb: "obey", ex: ["Children must ", { target: "obey" }, " the rules."] }
+          - { level: "B2", verb: "resemble", ex: ["He ", { target: "resembles" }, " his father."] }
+          - { level: "B2", verb: "contact", ex: [{ target: "Contact" }, " the office by Friday."] }
+          - { level: "C1", verb: "comprise", ex: ["The course ", { target: "comprises" }, " six units."] }
+          - { level: "C1", verb: "emphasise", ex: ["The teacher ", { target: "emphasised" }, " the need for practice."] }
+      - type: list
+        items:
+          - { type: "rule", level: "B2", text: { en: "These verbs take their object directly, with no preposition before it." } }
+
+  - title: { en: "Adjectives with a preposition" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "adj", label: { en: "Adjective" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", adj: "afraid of", ex: ["She is ", { target: "afraid of" }, " spiders."] }
+          - { level: "B2", adj: "aware of", ex: ["Are you ", { target: "aware of" }, " the problem?"] }
+          - { level: "B2", adj: "fond of", ex: ["He is ", { target: "fond of" }, " his old dog."] }
+          - { level: "B2", adj: "proud of", ex: ["We are ", { target: "proud of" }, " our team."] }
+          - { level: "B2", adj: "capable of", ex: ["She is ", { target: "capable of" }, " hard work."] }
+          - { level: "B2", adj: "tired of", ex: ["I'm ", { target: "tired of" }, " this weather."] }
+          - { level: "B2", adj: "good at", ex: ["He is ", { target: "good at" }, " maths."] }
+          - { level: "B2", adj: "surprised at", ex: ["I was ", { target: "surprised at" }, " the price."] }
+          - { level: "B2", adj: "interested in", ex: ["She is ", { target: "interested in" }, " art."] }
+          - { level: "B2", adj: "different from", ex: ["My phone is ", { target: "different from" }, " yours."] }
+          - { level: "B2", adj: "famous for", ex: ["Paris is ", { target: "famous for" }, " its food."] }
+          - { level: "B2", adj: "ready for", ex: ["Are you ", { target: "ready for" }, " the test?"] }
+          - { level: "B2", adj: "responsible for", ex: ["She is ", { target: "responsible for" }, " the budget."] }
+          - { level: "B2", adj: "keen on", ex: ["He is ", { target: "keen on" }, " football."] }
+          - { level: "B2", adj: "similar to", ex: ["Your bag is ", { target: "similar to" }, " mine."] }
+          - { level: "B2", adj: "married to", ex: ["She is ", { target: "married to" }, " a doctor."] }
+          - { level: "B2", adj: "kind to", ex: ["Be ", { target: "kind to" }, " animals."] }
+          - { level: "B2", adj: "angry with", ex: ["She is ", { target: "angry with" }, " her brother."] }
+          - { level: "B2", adj: "pleased with", ex: ["I'm ", { target: "pleased with" }, " my results."] }
+          - { level: "B2", adj: "disappointed with", ex: ["We were ", { target: "disappointed with" }, " the hotel."] }
+          - { level: "B2", adj: "angry about", ex: ["He is ", { target: "angry about" }, " the delay."] }
+          - { level: "B2", adj: "worried about", ex: ["I'm ", { target: "worried about" }, " my exams."] }
+          - { level: "B2", adj: "excited about", ex: ["The children are ", { target: "excited about" }, " the trip."] }
+
+  - title: { en: "Nouns with a preposition" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "noun", label: { en: "Noun" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", noun: "reason for", ex: ["What is the ", { target: "reason for" }, " the delay?"] }
+          - { level: "B2", noun: "need for", ex: ["There is a ", { target: "need for" }, " more nurses."] }
+          - { level: "B2", noun: "demand for", ex: ["The ", { target: "demand for" }, " tickets is high."] }
+          - { level: "B2", noun: "cause of", ex: ["Speed is a ", { target: "cause of" }, " many accidents."] }
+          - { level: "B2", noun: "example of", ex: ["This is a good ", { target: "example of" }, " teamwork."] }
+          - { level: "B2", noun: "lack of", ex: ["A ", { target: "lack of" }, " sleep makes me tired."] }
+          - { level: "B2", noun: "advantage of", ex: ["One ", { target: "advantage of" }, " the flat is its size."] }
+          - { level: "B2", noun: "knowledge of", ex: ["He has a good ", { target: "knowledge of" }, " history."] }
+          - { level: "B2", noun: "problem with", ex: ["I have a ", { target: "problem with" }, " my phone."] }
+          - { level: "B2", noun: "relationship with", ex: ["She has a good ", { target: "relationship with" }, " her sister."] }
+          - { level: "B2", noun: "difficulty in", ex: ["He had ", { target: "difficulty in" }, " finding the house."] }
+          - { level: "B2", noun: "difficulty with", ex: ["She has ", { target: "difficulty with" }, " spelling."] }
+          - { level: "B2", noun: "increase in", ex: ["There was an ", { target: "increase in" }, " prices."] }
+          - { level: "B2", noun: "difference in", ex: ["There is a big ", { target: "difference in" }, " price."] }
+          - { level: "B2", noun: "solution to", ex: ["I can't find a ", { target: "solution to" }, " this problem."] }
+          - { level: "B2", noun: "answer to", ex: ["What is the ", { target: "answer to" }, " question five?"] }
+          - { level: "B2", noun: "reaction to", ex: ["Her ", { target: "reaction to" }, " the news was calm."] }
+          - { level: "B2", noun: "attitude to", ex: ["His ", { target: "attitude to" }, " work is serious."] }
+          - { level: "B2", noun: "access to", ex: ["Students have ", { target: "access to" }, " the library."] }
+          - { level: "B2", noun: "relationship between", ex: ["The ", { target: "relationship between" }, " the two countries is good."] }
+          - { level: "B2", noun: "difference between", ex: ["What is the ", { target: "difference between" }, " these two words?"] }
+
+  - title: { en: "Compare: one verb, different prepositions" }
+    role: compare
+    content:
+      - type: usage
+        columns: [{ key: "verb", label: { en: "Verb" } }, { key: "meaning", label: { en: "Meaning" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", verb: "look at", meaning: { en: "direct your eyes towards" }, ex: [{ target: "Look at" }, " this map."] }
+          - { level: "B2", verb: "look for", meaning: { en: "search" }, ex: ["I'm ", { target: "looking for" }, " a map."] }
+          - { level: "B2", verb: "look after", meaning: { en: "take care of" }, ex: ["She ", { target: "looks after" }, " her brother."] }
+          - { level: "B2", verb: "look into", meaning: { en: "investigate" }, ex: ["The police are ", { target: "looking into" }, " the theft."] }
+          - { level: "B2", verb: "think of", meaning: { en: "have in mind; form an opinion" }, ex: ["What do you ", { target: "think of" }, " this song?"] }
+          - { level: "B2", verb: "think about", meaning: { en: "consider carefully" }, ex: ["I'm ", { target: "thinking about" }, " a new job."] }
+          - { level: "B2", verb: "care about", meaning: { en: "feel that something matters" }, ex: ["She ", { target: "cares about" }, " the planet."] }
+          - { level: "B2", verb: "care for", meaning: { en: "look after; like" }, ex: ["He ", { target: "cares for" }, " his mother."] }
+          - { level: "B2", verb: "agree with", meaning: { en: "share someone's opinion" }, ex: ["I ", { target: "agree with" }, " you."] }
+          - { level: "B2", verb: "agree to", meaning: { en: "accept a plan or a request" }, ex: ["She ", { target: "agreed to" }, " the plan."] }
+          - { level: "B2", verb: "agree on", meaning: { en: "reach one decision together" }, ex: ["We ", { target: "agreed on" }, " a date."] }
+          - { level: "B2", verb: "blame someone for", meaning: { en: "say that a person is at fault" }, ex: ["They ", { target: "blamed" }, " him ", { target: "for" }, " the delay."] }
+          - { level: "B2", verb: "blame something on", meaning: { en: "say that a person is the cause" }, ex: ["They ", { target: "blamed" }, " the delay ", { target: "on" }, " him."] }
+          - { level: "B2", verb: "pay for", meaning: { en: "give money for what you buy" }, ex: ["I ", { target: "paid for" }, " the tickets."] }
+          - { level: "B2", verb: "pay to", meaning: { en: "give money to a person or an office" }, ex: ["Please ", { target: "pay" }, " the fee ", { target: "to" }, " the receptionist."] }
+          - { level: "B2", verb: "speak to", meaning: { en: "say something to a person" }, ex: ["Can I ", { target: "speak to" }, " the manager?"] }
+          - { level: "B2", verb: "speak with", meaning: { en: "have a conversation with a person" }, ex: ["We ", { target: "spoke with" }, " the manager for an hour."] }
+          - { level: "B2", verb: "laugh at", meaning: { en: "find a person or a thing funny" }, ex: ["Don't ", { target: "laugh at" }, " me."] }
+          - { level: "B2", verb: "laugh about", meaning: { en: "find a past event funny" }, ex: ["We ", { target: "laughed about" }, " it later."] }
+          - { level: "B2", verb: "shout at", meaning: { en: "speak angrily to a person" }, ex: ["He ", { target: "shouted at" }, " the referee."] }
+          - { level: "B2", verb: "shout to", meaning: { en: "call so that a person hears" }, ex: ["She ", { target: "shouted to" }, " me across the street."] }
+
+  - title: { en: "Preposition and -ing" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "form", label: { en: "Pattern" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "B2", form: { pattern: [{ slot: "verb" }, { slot: { en: "preposition" } }, { slot: "V-ing" }] }, ex: ["She ", { target: "insisted on paying" }, "."] }
+          - { level: "B2", form: { pattern: [{ slot: "adjective" }, { slot: { en: "preposition" } }, { slot: "V-ing" }] }, ex: ["I'm ", { target: "afraid of flying" }, "."] }
+          - { level: "B2", form: { pattern: [{ slot: "noun" }, { slot: { en: "preposition" } }, { slot: "V-ing" }] }, ex: ["I like the ", { target: "idea of leaving" }, " early."] }
+          - { level: "B2", form: { pattern: ["prevent", { slot: "person" }, "from", { slot: "V-ing" }] }, ex: ["The noise ", { target: "prevented" }, " us ", { target: "from sleeping" }, "."] }
+          - { level: "B2", form: { pattern: ["blame", { slot: "person" }, "for", { slot: "V-ing" }] }, ex: ["He ", { target: "blamed" }, " her ", { target: "for losing" }, " the keys."] }
+          - { level: "B2", form: { pattern: ["congratulate", { slot: "person" }, "on", { slot: "V-ing" }] }, ex: ["We ", { target: "congratulated" }, " her ", { target: "on winning" }, "."] }
+          - { level: "B2", form: { pattern: ["thank", { slot: "person" }, "for", { slot: "V-ing" }] }, ex: ["I ", { target: "thanked" }, " them ", { target: "for helping" }, "."] }
+          - { level: "B2", form: { pattern: ["accuse", { slot: "person" }, "of", { slot: "V-ing" }] }, ex: ["She ", { target: "accused" }, " him ", { target: "of lying" }, "."] }
+          - { level: "B2", form: { pattern: ["discourage", { slot: "person" }, "from", { slot: "V-ing" }] }, ex: ["The cost ", { target: "discouraged" }, " her ", { target: "from going" }, "."] }
+
+  - title: { en: "Participles and passives with a preposition" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "form", label: { en: "Participle" } }, { key: "use", label: { en: "Use" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "C1", form: "known for", use: { en: "famous because of" }, ex: ["The town is ", { target: "known for" }, " its cheese."] }
+          - { level: "C1", form: "known as", use: { en: "called by a name or a role" }, ex: ["This area is ", { target: "known as" }, " the Old Town."] }
+          - { level: "C1", form: "made of", use: { en: "the material stays visible" }, ex: ["The table is ", { target: "made of" }, " wood."] }
+          - { level: "C1", form: "made from", use: { en: "the material changes" }, ex: ["Paper is ", { target: "made from" }, " wood."] }
+          - { level: "C1", form: "made by", use: { en: "the maker" }, ex: ["The cake was ", { target: "made by" }, " my aunt."] }
+          - { level: "C1", form: "involved in", use: { en: "taking part in" }, ex: ["She is ", { target: "involved in" }, " a local charity."] }
+          - { level: "C1", form: "associated with", use: { en: "connected with" }, ex: ["Stress is ", { target: "associated with" }, " poor sleep."] }
+          - { level: "C1", form: "exposed to", use: { en: "left without protection from" }, ex: ["Children are ", { target: "exposed to" }, " a lot of advertising."] }
+          - { level: "C1", form: "committed to", use: { en: "dedicated to" }, ex: ["They are ", { target: "committed to" }, " the project."] }
+          - { level: "C1", form: "based on", use: { en: "built on" }, ex: ["The film is ", { target: "based on" }, " a true story."] }
+          - { level: "C1", form: "concerned about", use: { en: "worried by" }, ex: ["I'm ", { target: "concerned about" }, " the noise."] }
+          - { level: "C1", form: "concerned with", use: { en: "about the subject of" }, ex: ["The book is ", { target: "concerned with" }, " trade."] }
+          - { level: "C1", form: "convinced of", use: { en: "sure of" }, ex: ["She is ", { target: "convinced of" }, " his honesty."] }
+          - { level: "C1", form: "equipped with", use: { en: "provided with" }, ex: ["The room is ", { target: "equipped with" }, " a projector."] }
+          - { level: "C1", form: "opposed to", use: { en: "against" }, ex: ["Many people are ", { target: "opposed to" }, " the plan."] }
+          - { level: "C1", form: "accustomed to", use: { en: "used to" }, ex: ["I'm ", { target: "accustomed to" }, " early starts."] }
+      - type: list
+        items:
+          - { type: "rule", level: "C1", text: { en: ["After ", { term: "committed to" }, ", ", { term: "opposed to" }, " and ", { term: "accustomed to" }, ", ", { term: "to" }, " is a preposition and ", { term: "-ing" }, " follows."] }, ex: { examples: [["We are committed to ", { target: "helping" }, " everyone."], ["I'm accustomed to ", { target: "getting up" }, " early."]] } }
+
+  - title: { en: "Compare: finer contrasts in one word" }
+    role: compare
+    content:
+      - type: usage
+        columns: [{ key: "form", label: { en: "Form" } }, { key: "meaning", label: { en: "Meaning" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "C1", form: "different to", meaning: { en: ["the British form beside ", { term: "different from" }] }, ex: ["My phone is ", { target: "different to" }, " yours. ", { variant: { target: "different than" }, variety: "en-US" }] }
+          - { level: "C1", form: "compared to", meaning: { en: "say that two things are alike" }, ex: ["He ", { target: "compared" }, " her voice ", { target: "to" }, " velvet."] }
+          - { level: "C1", form: "compared with", meaning: { en: "examine how two things differ" }, ex: [{ target: "Compared with" }, " Paris, London is bigger."] }
+          - { level: "C1", form: "prefer X to Y", meaning: { en: [{ term: "to" }, " joins the two things, also before ", { term: "-ing" }, " forms"] }, ex: { examples: [["I ", { target: "prefer" }, " tea ", { target: "to" }, " coffee."], ["She ", { target: "prefers" }, " walking ", { target: "to" }, " driving."]] } }
+          - { level: "C1", form: "protect against", meaning: { en: ["guard in advance against a risk; ", { term: "protect from" }, " names a danger already there"] }, ex: ["Vaccines ", { target: "protect" }, " children ", { target: "against" }, " disease."] }
+          - { level: "C1", form: "responsible to", meaning: { en: ["answering to the person above you; the task takes ", { term: "for" }] }, ex: ["He is ", { target: "responsible to" }, " the manager."] }
+          - { level: "C1", form: "angry at", meaning: { en: ["a person or a thing in the moment; ", { term: "with" }, " takes a person, ", { term: "about" }, " a situation"] }, ex: ["She was ", { target: "angry at" }, " the waiter."] }
+          - { level: "C1", form: "good for", meaning: { en: "helpful to a person or a thing" }, ex: ["Exercise is ", { target: "good for" }, " you."] }
+          - { level: "C1", form: "good to", meaning: { en: "kind to a person" }, ex: ["She was always ", { target: "good to" }, " her staff."] }
+          - { level: "C1", form: "sorry for", meaning: { en: "your own action, or pity for a person" }, ex: { examples: [["I'm ", { target: "sorry for" }, " the noise."], ["I feel ", { target: "sorry for" }, " him."]] } }
+          - { level: "C1", form: "sorry about", meaning: { en: "a situation or some news" }, ex: ["I'm ", { target: "sorry about" }, " your job."] }
+          - { level: "C1", form: "grateful to", meaning: { en: "the person who helped" }, ex: ["I'm ", { target: "grateful to" }, " my teacher."] }
+          - { level: "C1", form: "grateful for", meaning: { en: "the help or the gift" }, ex: ["I'm ", { target: "grateful for" }, " your help."] }
+          - { level: "C1", form: "typical of", meaning: { en: "characteristic of a person or a group" }, ex: ["Late arrival is ", { target: "typical of" }, " him."] }
+
+  - title: { en: "Abstract and academic nouns with a preposition" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "noun", label: { en: "Noun" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "C1", noun: "impact on", ex: ["The new law had a big ", { target: "impact on" }, " small shops."] }
+          - { level: "C1", noun: "influence on", ex: ["Friends have a strong ", { target: "influence on" }, " teenagers."] }
+          - { level: "C1", noun: "influence over", ex: ["She has great ", { target: "influence over" }, " the committee."] }
+          - { level: "C1", noun: "emphasis on", ex: ["The school puts great ", { target: "emphasis on" }, " reading."] }
+          - { level: "C1", noun: "effect on", ex: ["Noise has an ", { target: "effect on" }, " sleep."] }
+          - { level: "C1", noun: "contribution to", ex: ["Her ", { target: "contribution to" }, " the project was huge."] }
+          - { level: "C1", noun: "commitment to", ex: ["We admire her ", { target: "commitment to" }, " her patients."] }
+          - { level: "C1", noun: "attitude towards", ex: ["The company's ", { target: "attitude towards" }, " risk is careful."] }
+          - { level: "C1", noun: "tolerance of", ex: ["The town shows great ", { target: "tolerance of" }, " newcomers."] }
+          - { level: "C1", noun: "tolerance for", ex: ["He has a low ", { target: "tolerance for" }, " noise."] }
+          - { level: "C1", noun: "insight into", ex: ["The book gives ", { target: "insight into" }, " village life."] }
+          - { level: "C1", noun: "expertise in", ex: ["She has ", { target: "expertise in" }, " employment law."] }
+          - { level: "C1", noun: "preference for", ex: ["He has a ", { target: "preference for" }, " quiet places."] }
+          - { level: "C1", noun: "concern over", ex: ["There is growing ", { target: "concern over" }, " rising prices."] }
+          - { level: "C1", noun: "concern about", ex: ["Parents voiced ", { target: "concern about" }, " safety."] }
+          - { level: "C1", noun: "correlation between", ex: ["Researchers found a ", { target: "correlation between" }, " diet and health."] }
+          - { level: "C1", noun: "link between", ex: ["There is a ", { target: "link between" }, " sleep and memory."] }
+          - { level: "C1", noun: "shortage of", ex: ["There is a ", { target: "shortage of" }, " nurses."] }
+          - { level: "C1", noun: "excess of", ex: ["An ", { target: "excess of" }, " sugar harms health."] }
+
+  - title: { en: "Formal verbs with a preposition" }
+    role: own
+    content:
+      - type: usage
+        columns: [{ key: "form", label: { en: "Verb" } }, { key: "meaning", label: { en: "Meaning" } }, { key: "ex", label: { en: "Example" } }]
+        rows:
+          - { level: "C1", form: "adhere to", meaning: { en: "follow a rule or a belief closely" }, ex: ["All staff must ", { target: "adhere to" }, " the safety rules."] }
+          - { level: "C1", form: "comply with", meaning: { en: "do what a rule or a request asks" }, ex: ["The company ", { target: "complied with" }, " the law."] }
+          - { level: "C1", form: "conform to", meaning: { en: "match a standard" }, ex: ["The product ", { target: "conforms to" }, " European standards."] }
+          - { level: "C1", form: "abide by", meaning: { en: "accept and follow a rule or a decision" }, ex: ["You must ", { target: "abide by" }, " the referee's decision."] }
+          - { level: "C1", form: "account for", meaning: { en: "explain; make up a part" }, ex: ["Rain ", { target: "accounts for" }, " the delay."] }
+          - { level: "C1", form: "contribute to", meaning: { en: "help to cause or produce" }, ex: ["Stress ", { target: "contributes to" }, " illness."] }
+          - { level: "C1", form: "derive from", meaning: { en: "come from a source" }, ex: ["The word ", { target: "derives from" }, " Latin."] }
+          - { level: "C1", form: "attribute to", meaning: { en: "say that something is caused by or belongs to" }, ex: ["She ", { target: "attributes" }, " her success ", { target: "to" }, " hard work."] }
+          - { level: "C1", form: "allude to", meaning: { en: "mention indirectly" }, ex: ["He ", { target: "alluded to" }, " a problem without naming it."] }
+          - { level: "C1", form: "amount to", meaning: { en: "add up to" }, ex: ["The costs ", { target: "amount to" }, " ten thousand pounds."] }
+          - { level: "C1", form: "resort to", meaning: { en: "use as a last choice" }, ex: ["They ", { target: "resorted to" }, " force."] }
+
+  - title: { en: "Typical errors" }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: "B2", wrong: "We discussed about the plan.", right: ["We ", { target: "discussed" }, " the plan."], rule: { en: [{ term: "discuss" }, " takes its object directly"] } }
+          - { level: "B2", wrong: "It depends of the weather.", right: ["It ", { target: "depends on" }, " the weather."], rule: { en: [{ term: "depend" }, " takes ", { term: "on" }] } }
+          - { level: "B2", wrong: "She is married with a doctor.", right: ["She is ", { target: "married to" }, " a doctor."], rule: { en: [{ term: "married" }, " takes ", { term: "to" }] } }
+          - { level: "B2", wrong: "I'm interested on music.", right: ["I'm ", { target: "interested in" }, " music."], rule: { en: [{ term: "interested" }, " takes ", { term: "in" }] } }
+          - { level: "B2", wrong: "Can you explain me the rule?", right: ["Can you ", { target: "explain" }, " the rule ", { target: "to me" }, "?"], rule: { en: [{ term: "explain" }, " puts the person after ", { term: "to" }] } }
+          - { level: "B2", wrong: "He entered in the room.", right: ["He ", { target: "entered" }, " the room."], rule: { en: [{ term: "enter" }, " takes its object directly"] } }
+          - { level: "B2", wrong: "I'm afraid of to fly.", right: ["I'm afraid of ", { target: "flying" }, "."], rule: { en: ["the ", { term: "-ing" }, " form follows a preposition"] } }
+          - { level: "C1", wrong: "You must comply to the rules.", right: ["You must ", { target: "comply with" }, " the rules."], rule: { en: [{ term: "comply" }, " takes ", { term: "with" }] } }
+          - { level: "C1", wrong: "The course comprises of six units.", right: ["The course ", { target: "comprises" }, " six units."], rule: { en: [{ term: "comprise" }, " takes its object directly"] } }
+          - { level: "C1", wrong: "The report emphasises on safety.", right: ["The report ", { target: "emphasises" }, " safety."], rule: { en: [{ term: "emphasise" }, " takes its object directly; the noun ", { term: "emphasis" }, " takes ", { term: "on" }] } }
+          - { level: "C1", wrong: "I prefer tea than coffee.", right: ["I prefer tea ", { target: "to" }, " coffee."], rule: { en: [{ term: "prefer" }, " joins the two things with ", { term: "to" }] } }
+          - { level: "C1", wrong: "The law had an impact to small shops.", right: ["The law had an ", { target: "impact on" }, " small shops."], rule: { en: [{ term: "impact" }, " takes ", { term: "on" }] } }
+          - { level: "C1", wrong: "They are committed to help the project.", right: ["They are committed to ", { target: "helping" }, " the project."], rule: { en: [{ term: "to" }, " is a preposition here, so ", { term: "-ing" }, " follows"] } }

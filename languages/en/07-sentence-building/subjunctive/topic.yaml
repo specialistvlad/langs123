@@ -1,0 +1,322 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.subjunctive
+lang: en
+kind: grammar
+tags: [sentence-building, subjunctive, mood, formal-style]
+concepts: [subjunctive]
+related: [en.sentence-building.conditionals-0-1-2, en.modals.should, en.modals.may-might, en.sentence-building.reported-speech, en.sentence-building.passive-voice]
+status: { en: draft }
+
+title: { en: The Subjunctive }
+summary:
+  lead:
+    en: ["The base verb after demands and recommendations, ", { term: were }, " for unreal situations, and fixed formulas such as ", { term: so be it }, "."]
+  rule:
+    en: ["Demands take the base verb in the ", { term: that }, " clause, with no -s and no tense:"]
+  ex: { examples: [["I insist that she ", { target: go }, "."], ["It is vital that he ", { target: be }, " told."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: C1, point: { en: Form }, rule: { en: [{ pattern: [that, { slot: subject }, { slot: base verb }] }, "; one form for every person"] }, ex: ["The school insists that he ", { target: wear }, " a tie."] }
+        - { level: C1, point: { en: Negative and passive }, rule: { en: [{ term: not }, " goes before the verb; the passive is ", { pattern: [{ term: be }, { slot: past participle }] }] }, ex: { examples: [["I suggest that he ", { target: not go }, "."], ["It is vital that it ", { target: be checked }, "."]] } }
+        - { level: C1, point: { en: After verbs }, rule: { en: [{ term: suggest }, ", ", { term: recommend }, ", ", { term: insist }, ", ", { term: demand }, ", ", { term: require }, " and ", { term: request }, " call for it"] }, ex: ["The doctor recommends that she ", { target: rest }, " more."] }
+        - { level: C1, point: { en: After adjectives and nouns }, rule: { en: [{ term: essential }, ", ", { term: vital }, ", ", { term: important }, " and ", { term: necessary }, "; nouns such as ", { term: requirement }, " and ", { term: proposal }] }, ex: ["It is essential that everyone ", { target: be }, " on time."] }
+        - { level: C1, point: { en: British and American }, rule: { en: ["American English prefers the bare verb; British English often adds ", { term: should }] }, ex: ["We recommend that she ", { target: should apply }, ". ", { variant: { target: apply }, variety: en-US }] }
+        - { level: C1, point: { en: Were }, rule: { en: [{ term: were }, " follows every subject after ", { term: if }, ", ", { term: as if }, " and ", { term: wish }] }, ex: ["I wish it ", { target: were }, " Friday."] }
+        - { level: C1, point: { en: Lest }, rule: { en: [{ term: lest }, " is formal and takes the base verb or ", { term: should }] }, ex: ["She whispered lest the baby ", { target: wake }, "."] }
+        - { level: C2, point: { en: Fixed formulas }, rule: { en: "old formulas keep the bare verb and are quoted whole" }, ex: { examples: [["I'll be there, ", { target: come what may }, "."], [{ target: Suffice it to say }, " that we lost."]] } }
+        - { level: C2, point: { en: Be-clauses }, rule: { en: [{ term: be }, " opens a formal concession with two alternatives"] }, ex: [{ target: Be it large or small }, ", every gift helps."] }
+        - { level: C2, point: { en: Formal texts }, rule: { en: "orders, resolutions and motions keep the bare verb" }, ex: ["I move that the minutes ", { target: be approved }, "."] }
+        - { level: C2, point: { en: Proverbs }, rule: { en: "short sayings keep an older order and the bare verb" }, ex: [{ target: "Waste not, want not" }, "."] }
+        - { level: C1, point: { en: Trap }, rule: { en: [{ term: suggest }, " takes a ", { term: that }, " clause or ", { slot: -ing }] }, ex: { examples: [["I suggest that he ", { target: go }, "."], ["I suggest ", { target: going }, " early."]] } }
+
+sections:
+  - title: { en: Overview }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The subjunctive is the bare base verb, the same for every person and every time." }
+            ex: ["The board asks that every member ", { target: vote }, "."]
+          - type: rule
+            level: C1
+            text: { en: "It names what is wanted, needed, proposed or imagined." }
+          - type: rule
+            level: C1
+            text: { en: ["Formal writing and speech use it most; everyday speech often chooses ", { term: should }, " or an ordinary verb."] }
+          - type: rule
+            level: C2
+            text: { en: "It survives in fixed formulas, be-clauses, legal language and proverbs, which speakers quote whole." }
+
+  - title: { en: "Form: the base verb" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: Subject } }
+          - { key: sbjv, label: { en: Subjunctive } }
+          - { key: ind, label: { en: Ordinary verb } }
+        rows:
+          - { level: C1, features: { mood: sbjv, person: 1, number: sg }, form: I, sbjv: ["that I ", { target: be }], ind: "that I am" }
+          - { level: C1, features: { mood: sbjv, person: 3, number: sg }, form: "he, she, it", sbjv: ["that she ", { target: be }], ind: "that she is" }
+          - { level: C1, features: { mood: sbjv, number: pl }, form: "we, you, they", sbjv: ["that they ", { target: be }], ind: "that they are" }
+          - { level: C1, features: { mood: sbjv, person: 3, number: sg }, form: { en: [{ term: "he, she, it" }, " with other verbs"] }, sbjv: ["that she ", { target: stop }], ind: "that she stops" }
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, features: { mood: sbjv, polarity: pos }, form: { en: Statement }, pattern: { pattern: [that, { slot: subject }, { slot: base verb }] }, ex: ["I insist that she ", { target: go }, " home."] }
+          - { level: C1, features: { mood: sbjv, polarity: neg }, form: { en: Negative }, pattern: { pattern: [that, { slot: subject }, not, { slot: base verb }] }, ex: ["I suggest that he ", { target: not go }, "."] }
+          - { level: C1, features: { mood: sbjv, voice: pass }, form: { en: Passive }, pattern: { pattern: [that, { slot: subject }, be, { slot: past participle }] }, ex: ["It is vital that the form ", { target: be signed }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["The main verb may be in any tense; the verb in the ", { term: that }, " clause stays in the base form:"] }
+            ex: { examples: [["He insists that she ", { target: go }, "."], ["He insisted that she ", { target: go }, "."]] }
+          - type: note
+            level: C1
+            text: { en: ["Passive forms are in ", { link: Passive Voice, to: en.sentence-building.passive-voice }, "."] }
+
+  - title: { en: "Use: demands and recommendations" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: ["A demand or an order: ", { term: demand }, ", ", { term: insist }, ", ", { term: require }, ", ", { term: order }, ", ", { term: stipulate }] }, ex: { examples: [["The law requires that every driver ", { target: carry }, " a licence."], ["She insisted that he ", { target: apologise }, "."]] } }
+          - { level: C1, use: { en: ["A request or an appeal: ", { term: ask }, ", ", { term: request }, ", ", { term: urge }] }, ex: { examples: [["They asked that the meeting ", { target: be moved }, " to Friday."], ["I urge that you ", { target: reconsider }, "."]] } }
+          - { level: C1, use: { en: ["A suggestion or advice: ", { term: suggest }, ", ", { term: recommend }, ", ", { term: propose }, ", ", { term: advise }] }, ex: { examples: [["I recommend that she ", { target: see }, " a specialist."], ["He proposed that we ", { target: meet }, " earlier."]] } }
+          - { level: C1, use: { en: ["A need after ", { pattern: [it is, { slot: adjective }, that] }, ": ", { term: essential }, ", ", { term: vital }, ", ", { term: important }, ", ", { term: necessary }, ", ", { term: desirable }] }, ex: { examples: [["It is essential that everyone ", { target: be }, " on time."], ["It is desirable that the report ", { target: be }, " short."]] } }
+          - { level: C1, use: { en: ["A demand named by a noun: ", { term: requirement }, ", ", { term: recommendation }, ", ", { term: proposal }, ", ", { term: request }, ", ", { term: insistence }] }, ex: { examples: [["Her request that the date ", { target: be changed }, " was refused."], ["The proposal that he ", { target: step down }, " was rejected."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: that }, " is optional after the verbs:"] }
+            ex: ["I recommend ", { optional: that }, " you ", { target: wait }, "."]
+          - type: note
+            level: C1
+            text: { en: ["Reported demands and requests are in ", { link: Reported Speech, to: en.sentence-building.reported-speech }, "."] }
+
+  - title: { en: "Compare: British and American choices" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: bare, label: "that he go" }
+          - { key: should, label: "that he should go" }
+          - { key: plain, label: "that he goes" }
+        rows:
+          - { level: C1, row: { en: Style }, bare: { en: "formal British; the usual American choice" }, should: { en: "the usual British choice" }, plain: { en: "informal British" } }
+          - { level: C1, row: { en: Example }, bare: ["The school demands that he ", { target: wear }, " a tie."], should: ["The school demands that he ", { target: should wear }, " a tie."], plain: ["The school demands that he ", { target: wears }, " a tie."] }
+          - { level: C1, row: { en: Negative }, bare: ["I suggest that he ", { target: not go }, "."], should: ["I suggest that he ", { target: should not go }, "."], plain: ["I suggest that he ", { target: doesn't go }, "."] }
+      - type: list
+        items:
+          - type: note
+            level: C1
+            text: { en: ["British ", { term: should }, " also follows ", { term: odd }, " and ", { term: strange }, ", as a comment on a fact: see ", { link: Should, to: en.modals.should }, "."] }
+
+  - title: { en: "Compare: suggest with a clause and with -ing" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: clause, label: "suggest that he go" }
+          - { key: ing, label: "suggest going" }
+          - { key: poss, label: "suggest his going" }
+        rows:
+          - { level: C1, row: { en: Who acts }, clause: { en: "another person" }, ing: { en: "the speaker too, or anyone" }, poss: { en: "another person" } }
+          - { level: C1, row: { en: Style }, clause: { en: "neutral or formal" }, ing: { en: "neutral; the usual choice" }, poss: { en: "formal; rare in speech" } }
+          - { level: C1, row: { en: Example }, clause: ["I suggest ", { target: that he go }, " early."], ing: ["I suggest ", { target: going }, " early."], poss: ["I suggest ", { target: his going }, " early."] }
+
+  - title: { en: "Compare: a demand and a statement" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: demand, label: { en: Demand } }
+          - { key: statement, label: { en: Statement } }
+        rows:
+          - { level: C1, row: { en: Meaning }, demand: { en: "what the subject wants or advises" }, statement: { en: "what the speaker reports or shows" } }
+          - { level: C1, row: { en: Verb }, demand: { en: "the base verb" }, statement: { en: "an ordinary tense" } }
+          - { level: C1, row: { en: insist }, demand: ["He insisted that she ", { target: apologise }, "."], statement: ["He insisted that she ", { target: had apologised }, "."] }
+          - { level: C1, row: { en: suggest }, demand: ["I suggest that she ", { target: go }, "."], statement: ["Her smile suggests that she ", { target: is }, " happy."] }
+
+  - title: { en: "Use: were" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: ["An unreal present after ", { term: if }] }, ex: ["If she ", { target: were }, " here, she would help."] }
+          - { level: C1, use: { en: ["A comparison with ", { term: as if }, " and ", { term: as though }] }, ex: ["He talks as if he ", { target: were }, " the manager."] }
+          - { level: C1, use: { en: ["An unreal wish with ", { term: wish }, " and ", { term: if only }] }, ex: { examples: [["I wish it ", { target: were }, " Friday."], ["If only he ", { target: were }, " here!"]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Only ", { term: be }, " has a separate unreal form, ", { term: were }, "; other verbs use the past tense."] }
+            ex: { examples: [["I wish I ", { target: were }, " taller."], ["I wish I ", { target: knew }, " the answer."]] }
+          - type: rule
+            level: C1
+            text: { en: ["Speech often puts ", { term: was }, " for ", { term: were }, " after ", { term: I }, ", ", { term: he }, ", ", { term: she }, " and ", { term: it }, "; formal writing keeps ", { term: were }, "."] }
+            ex: { examples: [["If it ", { target: were }, " mine, I would sell it."], ["If it ", { target: was }, " mine, I'd sell it."]] }
+          - type: note
+            level: C1
+            text: { en: ["Wishes with the other unreal tenses are in ", { link: Wishes and Unreal Tenses, to: en.sentence-building.wishes-unreal-tenses }, "."] }
+          - type: note
+            level: C1
+            text: { en: ["More conditionals with ", { term: if }, " are in ", { link: "Conditionals: Zero, First and Second", to: en.sentence-building.conditionals-0-1-2 }, "."] }
+
+  - title: { en: "Use: lest, fear and caution" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: ["A danger to avoid: ", { pattern: [{ term: lest }, { slot: subject }, { slot: base verb }] }] }, ex: { examples: [["She spoke quietly lest she ", { target: wake }, " the baby."], ["Write it down lest you ", { target: forget }, "."]] } }
+          - { level: C1, use: { en: ["The British form with ", { term: should }, ": ", { pattern: [{ term: lest }, { slot: subject }, { term: should }, { slot: base verb }] }] }, ex: ["He wrote it down lest he ", { target: should forget }, "."] }
+          - { level: C1, use: { en: [{ term: for fear that }, " with ", { term: should }, ", ", { term: would }, " or ", { term: might }] }, ex: { examples: [["She hid the letter for fear that he ", { target: should read }, " it."], ["He whispered for fear that someone ", { target: might hear }, " him."]] } }
+          - { level: C1, use: { en: ["A precaution against a chance event: ", { term: in case }, " with ", { term: should }] }, ex: ["Take a coat in case it ", { target: should rain }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: lest }, " carries the negative itself, so its clause has no ", { term: not }, "."] }
+          - type: rule
+            level: C1
+            text: { en: ["Everyday speech says ", { term: in case it rains }, " and ", { term: so that you don't forget }, "."] }
+
+  - title: { en: "Fixed formulas: wishes and reactions" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Formula } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, form: God save the King, use: { en: "a wish for a ruler's long life" }, ex: ["“", { target: God save the King }, "!” shouted the crowd."] }
+          - { level: C2, form: { pattern: [{ term: Long live }, { slot: noun }] }, use: { en: "a cheer for a person, a group or an idea" }, ex: ["“", { target: Long live }, " the champions!” they cried."] }
+          - { level: C2, form: So be it, use: { en: "I accept it, though I may not like it" }, ex: ["If you won't change your mind, ", { target: so be it }, "."] }
+          - { level: C2, form: Heaven forbid, use: { en: "I hope it never happens" }, ex: ["If he fails, ", { target: heaven forbid }, ", we start again."] }
+          - { level: C2, form: Perish the thought, use: { en: "I reject the idea" }, ex: ["Me, late for my own wedding? ", { target: Perish the thought }, "!"] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["Each formula keeps the bare verb with any subject: ", { term: God save the King }, ", with no -s."] }
+
+  - title: { en: "Fixed formulas: framing a statement" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Formula } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, form: Be that as it may, use: { en: "even if that is true, I go on" }, ex: [{ target: Be that as it may }, ", we still have to decide."] }
+          - { level: C2, form: Come what may, use: { en: "whatever happens" }, ex: ["I'll support you, ", { target: come what may }, "."] }
+          - { level: C2, form: { term: ["Far be it from me to", { gap: true }] }, use: { en: "a polite opening before advice or criticism" }, ex: [{ target: Far be it from me to }, " interfere, but the sign says no parking."] }
+          - { level: C2, form: Suffice it to say, use: { en: "I will give only the main point" }, ex: [{ target: Suffice it to say }, " that we were not impressed."] }
+          - { level: C2, form: If need be, use: { en: "if it is necessary" }, ex: ["We'll work on Sunday ", { target: if need be }, "."] }
+          - { level: C2, form: as it were, use: { en: "so to speak, softening an unusual word" }, ex: ["She is, ", { target: as it were }, ", the heart of the team."] }
+
+  - title: { en: "Be-clauses and would that" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, use: { en: ["Two alternatives, and either one holds: ", { pattern: [{ term: Be }, { slot: subject }, { slot: adjective }, or, { slot: adjective }] }] }, ex: { examples: [[{ target: Be it large or small }, ", every gift helps."], [{ target: Be he rich or poor }, ", he pays the same fee."]] } }
+          - { level: C2, use: { en: ["The same in a ", { term: whether }, " clause"] }, ex: ["The match will go ahead, ", { target: whether it be }, " rain or snow."] }
+          - { level: C2, use: { en: ["A formal concession with ", { term: though }] }, ex: ["The gift, ", { target: though it be }, " small, was welcome."] }
+          - { level: C2, use: { en: ["A wish that cannot come true: ", { term: Would that }] }, ex: [{ target: Would that he were }, " here."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["In a be-clause the subject follows ", { term: be }, ": ", { term: be it }, ", ", { term: be he }, ", ", { term: be they }, "."] }
+          - type: rule
+            level: C2
+            text: { en: ["Speech and plain writing say ", { term: whether it is large or small }, "."] }
+
+  - title: { en: "Formal, legal and meeting language" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, use: { en: "A court order" }, ex: ["It is ordered that the defendant ", { target: appear }, " in person."] }
+          - { level: C2, use: { en: "A resolution in minutes" }, ex: ["Resolved that the meeting ", { target: be adjourned }, "."] }
+          - { level: C2, use: { en: "A motion in a meeting" }, ex: ["I move that the minutes ", { target: be approved }, "."] }
+          - { level: C2, use: { en: "A contract or a regulation" }, ex: ["The lease stipulates that the tenant ", { target: give }, " one month's notice."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "Formal documents keep the bare verb in British and American English alike." }
+          - type: rule
+            level: C2
+            text: { en: "The verb stays in the base form when the main verb is in the past:" }
+            ex: ["The court ordered that the defendant ", { target: appear }, " in person."]
+
+  - title: { en: Proverbs and inherited forms }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Saying } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, form: "Waste not, want not", use: { en: "save what you have and you will not go without" }, ex: ["Keep the leftovers: ", { target: "waste not, want not" }, "."] }
+          - { level: C2, form: "Least said, soonest mended", use: { en: "the less said about a quarrel, the sooner it is forgotten" }, ex: ["Don't mention it again: ", { target: "least said, soonest mended" }, "."] }
+          - { level: C2, form: "Be it ever so humble, there's no place like home", use: { en: "however modest, home is best" }, ex: [{ target: Be it ever so humble }, ", there's no place like home."] }
+          - { level: C2, form: { pattern: [{ term: Long may }, { slot: subject }, { slot: base verb }] }, use: { en: "a wish that something lasts" }, ex: ["Long ", { target: may }, " our friendship last."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "Speakers quote these sayings whole; new sentences take the ordinary word order." }
+          - type: note
+            level: C2
+            text: { en: ["More wishes with ", { term: may }, " are in ", { link: May and Might, to: en.modals.may-might }, "."] }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: C1, wrong: I suggest him to go., right: ["I suggest ", { target: that he go }, "."], rule: { en: [{ term: suggest }, " takes a ", { term: that }, " clause for another person's action"] } }
+          - { level: C1, wrong: He suggested to take a taxi., right: ["He suggested ", { target: taking }, " a taxi."], rule: { en: [{ term: suggest }, " takes ", { slot: -ing }, " when the speaker is among the doers"] } }
+          - { level: C1, wrong: They demand that he will pay., right: ["They demand that he ", { target: pay }, "."], rule: { en: "the clause after a demand takes the base verb alone" } }
+          - { level: C1, wrong: She spoke quietly lest she did not wake the baby., right: ["She spoke quietly lest she ", { target: wake }, " the baby."], rule: { en: [{ term: lest }, " carries the negative, so its clause has no ", { term: not }] } }
+          - { level: C2, wrong: Far be it for me to criticise., right: ["Far be it ", { target: from me }, " to criticise."], rule: { en: ["the formula is ", { term: far be it from me to }] } }
+          - { level: C2, wrong: God saves the King., right: [{ target: God save }, " the King."], rule: { en: "the formula keeps the bare verb" } }
+          - { level: C2, wrong: I move that the motion is carried., right: ["I move that the motion ", { target: be carried }, "."], rule: { en: "a motion takes the base verb be" } }

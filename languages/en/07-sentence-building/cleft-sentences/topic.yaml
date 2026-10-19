@@ -1,0 +1,352 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.cleft-sentences
+lang: en
+kind: grammar
+tags: [sentence-building, emphasis, cleft, focus]
+concepts: [emphasis]
+related: [en.sentence-building.relative-clauses, en.sentence-building.word-order, en.sentence-building.questions-negatives, en.sentence-building.passive-voice]
+status: { en: draft }
+
+title: { en: Emphasis and Cleft Sentences }
+summary:
+  lead:
+    en: ["Emphatic ", { term: do }, ", it-clefts and wh-clefts put one part of a sentence in focus."]
+  rule:
+    en: "A cleft puts the focus after be and the rest of the sentence in a clause:"
+  ex: { examples: [[{ target: "It was Tom who" }, " broke the window."], [{ target: "What I need is" }, " a holiday."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: Emphatic do }, rule: { en: [{ pattern: [{ alternatives: [do, does, did] }, { slot: base verb }] }, " carries the stress"] }, ex: ["She ", { target: did tell }, " me."] }
+        - { level: B2, point: { en: It-cleft }, rule: { pattern: [It, be, { slot: { en: focus } }, { alternatives: [who, that] }, { slot: clause }] }, ex: [{ target: "It was Tom who" }, " broke it."] }
+        - { level: B2, point: { en: Wh-cleft }, rule: { en: [{ pattern: [What, { slot: clause }, be, { slot: { en: focus } }] }, "; or reversed: ", { pattern: [{ slot: { en: focus } }, be, what, { slot: clause }] }] }, ex: [{ target: "What I need is" }, " a holiday."] }
+        - { level: B2, point: { en: Noun frames }, rule: { en: [{ term: all }, ", ", { term: the thing }, ", ", { term: the reason }, " and ", { term: the place }, " open the clause"] }, ex: [{ target: "All I want is" }, " peace and quiet."] }
+        - { level: C1, point: { en: Clause as focus }, rule: { en: ["the focus can be a clause: ", { term: only when }, ", ", { term: not until }, ", ", { term: because }] }, ex: [{ target: "It was only when she left that" }, " I realised."] }
+        - { level: C1, point: { en: Explanatory cleft }, rule: { en: "rejects one reason and gives the real one" }, ex: [{ target: "It isn't that" }, " I don't like her; ", { target: "it's that" }, " I'm busy."] }
+        - { level: C1, point: { en: Answers }, rule: { en: "a cleft answers a wh-question; the main stress falls on the focus" }, ex: { exchange: ["Who broke it?", ["It was ", { stress: Tom }, "."]] } }
+        - { level: C2, point: { en: Infinitive focus }, rule: { en: ["after a form of ", { term: do }, ", the focus is a bare or to-infinitive"] }, ex: [{ target: "All you have to do is" }, " ", { optional: to }, " press the button."] }
+        - { level: C2, point: { en: Stance frames }, rule: { en: [{ term: the fact is }, ", ", { term: the thing is }, " and similar frames open a statement"] }, ex: [{ target: "The trouble is that" }, " the shop closes at five."] }
+        - { level: C2, point: { en: Formal writing }, rule: { en: "formal clefts point back to a reason or a context" }, ex: [{ target: "It is for this reason that" }, " the committee refused."] }
+        - { level: C2, point: { en: Topic first }, rule: { en: "the topic comes first, then a clause with its own subject" }, ex: [{ target: "As for Tom" }, ", he has gone home."] }
+        - { level: B2, point: { en: Trap }, rule: { en: [{ term: who }, " or ", { term: that }, " replaces the focus: no second subject or object"] }, ex: ["It was Ana ", { target: "that I met" }, "."] }
+
+sections:
+  - title: { en: Overview }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A cleft sentence puts one part of a clause in focus, after a form of be." }
+            ex: [{ target: "It was the bus that" }, " I missed."]
+          - type: rule
+            level: B2
+            text: { en: "The focus carries the new, corrected or contrasting information; the rest of the clause is known." }
+          - type: rule
+            level: B2
+            text: { en: ["Emphatic ", { term: do }, " stresses the verb; an it-cleft focuses one element; a wh-cleft leads up to the focus."] }
+          - type: note
+            level: B2
+            text: { en: ["The plain order of the sentence is in ", { link: Word Order, to: en.sentence-building.word-order }, "."] }
+
+  - title: { en: "Form: emphatic do" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, features: { tense: prs }, form: { en: Present }, pattern: { pattern: [{ alternatives: [do, does] }, { slot: base verb }] }, ex: { examples: [["I ", { target: do like }, " it."], ["She ", { target: does know }, " the answer."]] } }
+          - { level: B2, features: { tense: pst }, form: { en: Past }, pattern: { pattern: [did, { slot: base verb }] }, ex: ["She ", { target: did tell }, " me."] }
+          - { level: B2, features: { mood: imp }, form: { en: Imperative }, pattern: { pattern: [do, { slot: base verb }] }, ex: { examples: [[{ target: Do sit }, " down."], [{ target: Do be }, " careful."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["In statements, ", { term: be }, ", auxiliary ", { term: have }, " and modals take the stress themselves, not ", { term: do }, "."] }
+            ex: { examples: [["She ", { stress: is }, " late."], ["I ", { stress: have }, " finished."], ["He ", { stress: can }, " swim."]] }
+          - type: rule
+            level: B2
+            text: { en: ["A negative or a question has ", { term: do }, " already; the stress on ", { term: do }, " gives the emphasis."] }
+            ex: ["I ", { stress: did }, "n't take it."]
+
+  - title: { en: "Use: emphatic do" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: "Contradicts a doubt or a denial" }, ex: { exchange: ["You never help me.", ["I ", { target: do help }, " you!"]] } }
+          - { level: B2, use: { en: "Insists that something is true or did happen" }, ex: ["I ", { target: did tell }, " you about the party."] }
+          - { level: B2, use: { en: "Agrees with a point, then adds a but" }, ex: ["She ", { target: did apologise }, ", but it was too late."] }
+          - { level: B2, use: { en: "Adds warmth to an invitation, a hope or a compliment" }, ex: { examples: [[{ target: Do have }, " some cake."], ["We ", { target: do hope }, " you can come."], ["I ", { target: do like }, " your garden."]] } }
+
+  - title: { en: "Form: it-cleft" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: focus, label: { en: Focus } }
+          - { key: joiner, label: { en: Joiner } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, focus: { en: "A person as subject" }, joiner: { en: [{ term: who }, " or ", { term: that }] }, ex: [{ target: "It was Ana who" }, " found the keys."] }
+          - { level: B2, focus: { en: "A thing as subject" }, joiner: { en: { term: that } }, ex: [{ target: "It was the wind that" }, " opened the door."] }
+          - { level: B2, focus: { en: "An object" }, joiner: { en: [{ term: that }, ", or no joiner"] }, ex: [{ target: "It was the blue bag that" }, " I bought."] }
+          - { level: B2, focus: { en: "A time word" }, joiner: { en: { term: that } }, ex: [{ target: "It was yesterday that" }, " I saw her."] }
+          - { level: B2, focus: { en: "A prepositional phrase" }, joiner: { en: { term: that } }, ex: [{ target: "It was in Paris that" }, " we met."] }
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: Sentence } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, features: { polarity: pos, interrogativity: decl }, form: { en: Statement }, pattern: { pattern: [It, be, { slot: { en: focus } }, that, { slot: clause }] }, ex: [{ target: "It was Tom that" }, " broke it."] }
+          - { level: B2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, pattern: { pattern: [It, { alternatives: ["isn't", "wasn't"] }, { slot: { en: focus } }, that, { slot: clause }] }, ex: [{ target: "It wasn't me that" }, " broke it."] }
+          - { level: B2, features: { polarity: pos, interrogativity: int }, form: { en: Question }, pattern: { pattern: [{ alternatives: [Is, Was] }, it, { slot: { en: focus } }, that, { slot: clause }] }, ex: [{ target: "Was it Tom that" }, " broke it?"] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["Be shows the time: ", { term: is }, " for now and general truths, ", { term: was }, " for the past, ", { term: will be }, " for the future."] }
+            ex: { examples: [["It ", { target: is }, " the manager who decides."], ["It ", { target: will be }, " Ana who tells him."]] }
+          - type: rule
+            level: B2
+            text: { en: "The joiner stands for the focus inside the clause, so the clause repeats neither subject nor object." }
+            ex: ["It was Tom ", { target: "who broke" }, " it."]
+          - type: rule
+            level: B2
+            text: { en: "A preposition stays with its noun in careful style, or goes to the end in speech." }
+            ex: { equivalence: [["It was ", { target: "to Ana that" }, " I gave the key."], ["It was ", { target: "Ana that" }, " I gave the key ", { target: to }, "."]] }
+          - type: note
+            level: B2
+            text: { en: ["The clause after ", { term: who }, " or ", { term: that }, " works as a relative clause: see ", { link: Relative Clauses, to: en.sentence-building.relative-clauses }, "."] }
+
+  - title: { en: "Form: wh-cleft" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Focus } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: { en: "A noun" }, pattern: { pattern: [What, { slot: clause }, be, { slot: noun }] }, ex: [{ target: "What I need is" }, " a holiday."] }
+          - { level: B2, form: { en: "An action" }, pattern: { pattern: [What, { slot: subject }, { alternatives: [do, does, did] }, be, { slot: infinitive }] }, ex: [{ target: "What he did was" }, " ", { optional: to }, " leave early."] }
+          - { level: B2, form: { en: "A that-clause" }, pattern: { pattern: [What, { slot: verb }, be, that, { slot: clause }] }, ex: [{ target: "What happened was that" }, " the bus broke down."] }
+          - { level: B2, form: { en: "Reversed order" }, pattern: { pattern: [{ slot: noun }, be, what, { slot: clause }] }, ex: [{ target: "A holiday is what" }, " I need."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "The wh-clause is the subject, so be is usually singular, even before a plural focus." }
+            ex: ["What I need ", { target: is }, " two weeks off."]
+          - type: rule
+            level: B2
+            text: { en: ["Without ", { term: do }, " in the clause, the infinitive keeps ", { term: to }, "."] }
+            ex: [{ target: "What I want is to" }, " sleep."]
+
+  - title: { en: "Frames: all, the thing, the reason" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: frame, label: { en: Frame } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, frame: { pattern: [All, { slot: clause }, be, { slot: { en: focus } }] }, ex: [{ target: "All I want is" }, " peace and quiet."] }
+          - { level: B2, frame: { pattern: [The thing, { optional: that }, { slot: clause }, be, { slot: { en: focus } }] }, ex: [{ target: "The thing that annoys me is" }, " the noise."] }
+          - { level: B2, frame: { pattern: [The reason, { optional: why }, { slot: clause }, be, { slot: { en: focus } }] }, ex: [{ target: "The reason I left was" }, " that the pay was low."] }
+          - { level: B2, frame: { pattern: [The place, { optional: where }, { slot: clause }, be, { slot: { en: focus } }] }, ex: [{ target: "The place where we met was" }, " a small café."] }
+          - { level: B2, frame: { pattern: [The first thing, { slot: clause }, be, { slot: { en: focus } }] }, ex: [{ target: "The first thing I do is" }, " make coffee."] }
+
+  - title: { en: "Use: focus, correction and summing up" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: "It-cleft: names the person or thing responsible" }, ex: [{ target: "It was the neighbours who" }, " complained."] }
+          - { level: B2, use: { en: "It-cleft: corrects a detail, often with a negative first" }, ex: [{ target: "It wasn't the red one" }, " I wanted; ", { target: "it was the blue one" }, "."] }
+          - { level: B2, use: { en: "Wh-cleft: says what you need, want or like, then names it" }, ex: [{ target: "What I like most is" }, " the quiet."] }
+          - { level: B2, use: { en: "Wh-cleft: builds up to the point of a story" }, ex: [{ target: "What happened next was that" }, " the lights went out."] }
+          - { level: B2, use: { en: "Reversed wh-cleft: sums up or agrees" }, ex: ["Yes, ", { target: "that's what" }, " I mean."] }
+
+  - title: { en: "Compare: it-cleft and wh-cleft" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: it, label: "It-cleft" }
+          - { key: wh, label: "Wh-cleft" }
+        rows:
+          - { level: B2, row: { en: Focus }, it: { en: "one element: a subject, an object or an adverbial" }, wh: { en: "a noun, an action or a whole clause" } }
+          - { level: B2, row: { en: Order }, it: { en: "the focus comes first, then the clause" }, wh: { en: "the clause comes first, then the focus" } }
+          - { level: B2, row: { en: Example }, it: [{ target: "It was the red scarf that" }, " I lost."], wh: [{ target: "What I lost was" }, " the red scarf."] }
+          - { level: B2, row: { en: "A person as focus" }, it: [{ target: "It was Tom who" }, " broke it."], wh: [{ target: "The person who broke it was" }, " Tom."] }
+
+  - title: { en: "Clefts with clauses as focus" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: focus, label: { en: Focus } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, focus: { en: [{ term: only when }, " and a clause"] }, ex: [{ target: "It was only when she left that" }, " I realised."] }
+          - { level: C1, focus: { en: [{ term: only after }, " and a time phrase"] }, ex: [{ target: "It was only after dinner that" }, " he called."] }
+          - { level: C1, focus: { en: [{ term: not until }, " and a time or a clause"] }, ex: [{ target: "It was not until midnight that" }, " the rain stopped."] }
+          - { level: C1, focus: { en: [{ term: because }, " and a clause"] }, ex: [{ target: "It was because he was ill that" }, " we cancelled."] }
+          - { level: C1, focus: { en: "A phrase of manner, with a passive clause after that" }, ex: [{ target: "It was by chance that" }, " the letter was found."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["After ", { term: not until }, ", the verb is positive; ", { term: not }, " already makes the sentence negative."] }
+            ex: ["It was not until May that the shop ", { target: opened }, "."]
+          - type: note
+            level: C1
+            text: { en: ["Passive clauses are in ", { link: Passive Voice, to: en.sentence-building.passive-voice }, "."] }
+
+  - title: { en: Explanatory clefts }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: { en: [{ term: ["It isn't that", { gap: true }] }, ", ", { term: ["it's that", { gap: true }] }] }, use: { en: "rejects one reason and gives the real one" }, ex: [{ target: "It isn't that" }, " I don't like her; ", { target: "it's that" }, " I'm busy."] }
+          - { level: C1, form: { en: { term: ["What", { gap: true }, "was", { gap: true }] } }, use: { en: "names a strong feeling or effect" }, ex: [{ target: "What annoyed me most was" }, " the delay."] }
+          - { level: C1, form: { en: [{ term: ["What", { gap: true }, "is", { gap: true }] }, " with a question as focus"] }, use: { en: "puts a question at the end" }, ex: [{ target: "What I'd like to know is" }, " why nobody told me."] }
+
+  - title: { en: "Clefts in questions and answers" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: "A cleft answers a question about the doer" }, ex: { exchange: ["Who broke the vase?", [{ target: "It was" }, " ", { stress: Tom }, "."]] } }
+          - { level: C1, use: { en: "A cleft answers a question about time or place" }, ex: { exchange: ["Where did you meet?", [{ target: "It was" }, " in ", { stress: Paris }, "."]] } }
+          - { level: C1, use: { en: "A wh-cleft answers a question about wants" }, ex: { exchange: ["What do you want for your birthday?", [{ target: "What I'd really like is" }, " a quiet ", { stress: evening }, "."]] } }
+          - { level: C1, use: { en: "A question can itself be a cleft" }, ex: { examples: [[{ target: "Who was it that" }, " called?"], [{ target: "What was it that" }, " you said?"]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The tonic syllable, the strongest stress, falls on the focus; the clause after it stays low." }
+            ex: ["It was ", { stress: Tom }, " who broke it. ", { intonation: fall }]
+
+  - title: { en: "Infinitive and perfect clefts" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: frame, label: { en: Frame } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, frame: { pattern: [All, { slot: clause }, be, { slot: infinitive }] }, ex: [{ target: "All you have to do is" }, " ", { optional: to }, " press the button."] }
+          - { level: C2, frame: { pattern: [The best thing to do, be, { slot: infinitive }] }, ex: [{ target: "The best thing to do is" }, " ", { optional: to }, " wait."] }
+          - { level: C2, frame: { pattern: [What, { slot: clause }, be, to have, { slot: past participle }] }, ex: [{ target: "What I'd hoped was to have" }, " finished by now."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["When the clause or the frame holds ", { term: do }, ", the focus infinitive is bare or has ", { term: to }, "."] }
+            ex: { examples: [["All I did was ", { target: ask }, "."], ["All I did was ", { target: to ask }, "."]] }
+          - type: rule
+            level: C2
+            text: { en: "A perfect infinitive in the focus looks back to a hope or plan that may not have been met." }
+
+  - title: { en: Stance frames }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: frame, label: { en: Frame } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, frame: { pattern: [The fact is, { optional: that }, { slot: clause }] }, use: { en: "states a plain truth against a belief or a hope" }, ex: [{ target: "The fact is that" }, " nobody came."] }
+          - { level: C2, frame: { pattern: [The trouble is, { optional: that }, { slot: clause }] }, use: { en: "names the difficulty" }, ex: [{ target: "The trouble is that" }, " the shop closes at five."] }
+          - { level: C2, frame: { pattern: [The point is, { optional: that }, { slot: clause }] }, use: { en: "returns to what matters" }, ex: [{ target: "The point is that" }, " we have no time."] }
+          - { level: C2, frame: { pattern: [The thing is, { optional: that }, { slot: clause }] }, use: { en: "opens an excuse or a doubt in speech" }, ex: [{ target: "The thing is" }, ", I have no money with me."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["In speech ", { term: that }, " drops out and a short pause follows the frame."] }
+            ex: [{ target: "The thing is" }, ", I'm late."]
+
+  - title: { en: Formal clefts in writing }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: frame, label: { en: Frame } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, frame: { en: { term: ["It is for this reason that", { gap: true }] } }, use: { en: "gives a reason already stated" }, ex: [{ target: "It is for this reason that" }, " the committee refused."] }
+          - { level: C2, frame: { en: { term: ["It is in this context that", { gap: true }] } }, use: { en: "places a point in the setting just described" }, ex: [{ target: "It is in this context that" }, " the new law should be read."] }
+          - { level: C2, frame: { en: { term: ["What is striking is", { gap: true }] } }, use: { en: "draws the reader to a notable fact" }, ex: [{ target: "What is striking is" }, " how little has changed."] }
+          - { level: C2, frame: { en: { term: ["What emerges is", { gap: true }] } }, use: { en: "announces a result or a finding" }, ex: [{ target: "What emerges is" }, " a clear pattern."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["A word such as ", { term: this }, " or ", { term: these }, " in the focus links the cleft to the sentence before."] }
+            ex: ["It is in ", { target: these cases }, " that care matters most."]
+
+  - title: { en: Topic first }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: frame, label: { en: Frame } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, frame: { en: { term: ["As for", { gap: true }] } }, use: { en: "turns to a new topic or sets one against another" }, ex: [{ target: "As for Tom" }, ", he has gone home."] }
+          - { level: C2, frame: { en: { term: ["Speaking of", { gap: true }] } }, use: { en: "links a new topic to something just said" }, ex: [{ target: "Speaking of money" }, ", we should check the budget."] }
+          - { level: C2, frame: { en: { term: ["The thing about", { gap: true }, "is", { gap: true }] } }, use: { en: "names the main feature of a person or thing" }, ex: [{ target: "The thing about him is" }, " that he never listens."] }
+          - { level: C2, frame: { en: "a noun phrase, then a pronoun" }, use: { en: "puts the topic first in speech and repeats it as a pronoun" }, ex: [{ target: "My sister" }, ", she lives in Leeds."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "The comment after the topic keeps its own subject." }
+            ex: ["As for Tom, ", { target: he }, " has gone home."]
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "It was Tom that he broke it.", right: ["It was Tom ", { target: "that broke" }, " it."], rule: { en: "the joiner stands for the subject, so no second subject follows" } }
+          - { level: B2, wrong: "It was the red one that I wanted it.", right: ["It was the red one ", { target: "that I wanted" }, "."], rule: { en: "the joiner stands for the object, so no second object follows" } }
+          - { level: B2, wrong: "It was in Paris where we met.", right: ["It was in Paris ", { target: that }, " we met."], rule: { en: [{ term: that }, " opens the clause after a time or place focus; ", { term: where }, " and ", { term: when }, " do not"] } }
+          - { level: B2, wrong: "What I need it is a holiday.", right: ["What I need ", { target: is }, " a holiday."], rule: { en: "the wh-clause is the subject, so no it follows" } }
+          - { level: B2, wrong: "She does likes it.", right: ["She does ", { target: like }, " it."], rule: { en: ["the verb after ", { term: do }, ", ", { term: does }, " or ", { term: did }, " stays in the base form"] } }
+          - { level: B2, wrong: "I do am tired.", right: ["I ", { stress: am }, " tired."], rule: { en: [{ term: be }, " takes the stress itself; it does not take ", { term: do }] } }
+          - { level: C1, wrong: "It was not until midnight that did she arrive.", right: ["It was not until midnight that ", { target: she arrived }, "."], rule: { en: "the clause after that keeps statement order" } }
+          - { level: C1, wrong: "Who it was that broke the vase?", right: [{ target: "Who was it" }, " that broke the vase?"], rule: { en: "a cleft question keeps question order: wh-word, be, it" } }
+          - { level: C2, wrong: "All you have to do is pressing the button.", right: ["All you have to do is ", { target: press }, " the button."], rule: { en: "the focus after this frame is an infinitive" } }
+          - { level: C2, wrong: "As for Tom, has gone home.", right: ["As for Tom, ", { target: he }, " has gone home."], rule: { en: [{ term: as for }, " opens a topic; the clause after it has a subject"] } }

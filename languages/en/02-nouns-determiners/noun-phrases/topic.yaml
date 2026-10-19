@@ -1,0 +1,520 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.nouns-determiners.noun-phrases
+lang: en
+kind: grammar
+tags: [noun phrase, nominalisation, determiners, modifiers, academic English]
+concepts: [noun-phrase]
+related: [en.nouns-determiners.articles-a-an-the, en.nouns-determiners.quantifiers-some-any-much-many, en.adjectives-adverbs.adjective-order, en.sentence-building.relative-clauses, en.nouns-determiners.possessive-s]
+status: { en: draft }
+
+title: { en: Noun Phrases and Nominalisation }
+summary:
+  lead:
+    en: Noun phrases are built round a head noun with determiners, modifiers and complements, and nominalisation turns verbs and clauses into nouns.
+  rule:
+    en: "Short modifiers go before the head noun and long ones after it:"
+  ex: ["a ", { target: small }, " house ", { target: with a view of the park }, "."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: Slots }, rule: { en: "predeterminer, determiner, number, adjective, noun modifier, head noun" }, ex: { target: all the other ten new bus drivers } }
+        - { level: B2, point: { en: Order }, rule: { en: "ordinal before cardinal; all, both and half before the determiner" }, ex: { examples: [["the ", { target: first three }, " days"], [{ target: all }, " my friends"]] } }
+        - { level: B2, point: { en: After the noun }, rule: { en: "prepositional phrase, to-infinitive, that-clause, of-phrase, apposition" }, ex: { examples: [["a chance ", { target: to win }], ["the house ", { target: on the hill }]] } }
+        - { level: B2, point: { en: Before the noun }, rule: { en: "singular noun modifier, -ing or -ed adjective; three at most" }, ex: { examples: [["a ", { target: bus }, " ticket"], ["a ", { target: broken }, " window"]] } }
+        - { level: B2, point: { en: As the head }, rule: { en: ["an adjective, ", { term: one }, " or ", { term: mine }, " can stand for the whole phrase"] }, ex: { examples: [[{ target: The injured }, " were treated quickly."], ["I'll take the red ", { target: one }, "."]] } }
+        - { level: C1, point: { en: Nominalisation }, rule: { en: "a noun names the action; its object follows with of" }, ex: { mapping: ["They destroyed the city.", ["the ", { target: destruction }, " of the city"]] } }
+        - { level: C1, point: { en: Light verb }, rule: { en: "a general verb carries the action of the noun" }, ex: { examples: [[{ target: make }, " a decision"], [{ target: carry out }, " an analysis"]] } }
+        - { level: C1, point: { en: Shell noun }, rule: { en: "a noun sums up an earlier clause" }, ex: ["The company cut prices. ", { target: This move }, " surprised its rivals."] }
+        - { level: C1, point: { en: Register }, rule: { en: "verbs in speech, nouns in formal and academic writing" }, ex: { contrast: [["We ", { target: analysed }, " ", { variant: analyzed, variety: en-US }, " the data."], ["An ", { target: analysis of the data }, " was performed."]] } }
+        - { level: C2, point: { en: Headline stack }, rule: { en: "the last noun is the head; the others modify" }, ex: ["Government job cuts plan ", { target: row }] }
+        - { level: C2, point: { en: Of and a noun }, rule: { en: "of and an abstract noun do the work of an adjective" }, ex: { examples: [["a man ", { target: of means }], ["a matter ", { target: of urgency }]] } }
+        - { level: B2, point: { en: Trap }, rule: { en: "the unit stays singular before a noun" }, ex: ["a ", { target: five-day }, " course"] }
+
+sections:
+  - title: { en: "Form: the slots of a noun phrase" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: slot, label: { en: Slot } }
+          - { key: words, label: { en: Words } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            slot: { en: predeterminer }
+            words: { alternatives: [all, both, half, double, such, what, quite] }
+            ex: { examples: [[{ target: both }, " my brothers"], [{ target: such }, " a big house"], [{ target: quite }, " a long walk"]] }
+          - level: B2
+            slot: { en: determiner }
+            words: { alternatives: [the, a, this, my, some, no, each, every] }
+            ex: { examples: [["both ", { target: my }, " brothers"], ["such ", { target: a }, " big house"]] }
+          - level: B2
+            slot: { en: ordinal and number }
+            words: { alternatives: [first, second, last, next, other, two, ten] }
+            ex: { examples: [["the ", { target: first }, " day"], ["my ", { target: two }, " sisters"]] }
+          - level: B2
+            slot: { en: other quantifier }
+            words: { alternatives: [many, few, several, much, little] }
+            ex: { examples: [["her ", { target: many }, " cousins"], ["the ", { target: few }, " tickets left"]] }
+          - level: B2
+            slot: { en: adjective }
+            words: { en: "any number, in the usual order" }
+            ex: ["a ", { target: lovely old }, " house"]
+          - level: B2
+            slot: { en: noun modifier }
+            words: { en: "a noun that classifies the head" }
+            ex: ["a ", { target: kitchen }, " table"]
+          - level: B2
+            slot: { en: head noun }
+            words: { en: the noun the verb agrees with }
+            ex: ["the ", { target: price }, " of the tickets"]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "Only the head noun is required; the other slots keep this order:" }
+            ex: { target: all the other ten new bus drivers }
+          - type: note
+            level: B2
+            text: { en: ["The order of several adjectives: ", { link: Adjectives and Adjective Order, to: en.adjectives-adverbs.adjective-order }, "."] }
+
+  - title: { en: Order of determiners and numbers }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            rule: { en: the ordinal comes before the cardinal }
+            ex: ["the ", { target: first three }, " days"]
+          - level: B2
+            rule: { en: [{ term: other }, ", ", { term: last }, " and ", { term: next }, " come before a number"] }
+            ex: { examples: [["the ", { target: last two }, " weeks"], ["the ", { target: next three }, " buses"]] }
+          - level: B2
+            rule: { en: [{ term: many }, " and ", { term: few }, " follow the determiner"] }
+            ex: { examples: [["his ", { target: many }, " friends"], ["the ", { target: few }, " people I know"]] }
+          - level: B2
+            rule: { en: [{ term: all }, ", ", { term: both }, " and ", { term: half }, " come before the determiner"] }
+            ex: { examples: [[{ target: all }, " my friends"], [{ target: both }, " the boys"], [{ target: half }, " the class"]] }
+
+  - title: { en: Modification after the noun }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: type, label: { en: Modifier } }
+          - { key: form, label: { en: Form } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            type: { en: prepositional phrase }
+            form: { pattern: [{ slot: noun }, { slot: { en: preposition and noun phrase } }] }
+            ex: ["the house ", { target: on the hill }]
+          - level: B2
+            type: { en: to-infinitive }
+            form: { pattern: [{ slot: noun }, to, { slot: base verb }] }
+            ex: ["a chance ", { target: to win }]
+          - level: B2
+            type: { en: that-clause }
+            form: { pattern: [{ slot: noun }, that, { slot: clause }] }
+            ex: ["the fact ", { target: that she left }]
+          - level: B2
+            type: { en: of-phrase }
+            form: { pattern: [{ slot: noun }, of, { slot: noun }] }
+            ex: { examples: [["a cup ", { target: of tea }], ["the end ", { target: of the story }]] }
+          - level: B2
+            type: { en: apposition }
+            form: { en: "a second noun phrase, after a comma" }
+            ex: { examples: [["my brother", { target: ", a doctor" }], ["Paris", { target: ", the capital of France" }]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "The verb agrees with the head noun, however long the modifier:" }
+            ex: ["The price of the tickets ", { target: has }, " risen."]
+          - type: note
+            level: B2
+            text: { en: ["A relative clause also follows the noun: ", { link: Relative clauses, to: en.sentence-building.relative-clauses }, "."] }
+
+  - title: { en: Modification before the noun }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: type, label: { en: Modifier } }
+          - { key: form, label: { en: Form } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            type: { en: noun modifier }
+            form: { pattern: [{ slot: singular noun }, { slot: noun }] }
+            ex: { examples: [["a ", { target: bus }, " ticket"], ["a ", { target: tennis }, " ball"]] }
+          - level: B2
+            type: { en: number and unit }
+            form: { pattern: [{ slot: number }, { slot: hyphen }, { slot: singular noun }, { slot: noun }] }
+            ex: { examples: [["a ", { target: ten-minute }, " walk"], ["a ", { target: two-hour }, " drive"]] }
+          - level: B2
+            type: { en: "-ing adjective" }
+            form: { pattern: [{ slot: V-ing }, { slot: noun }] }
+            ex: { examples: [["a ", { target: barking }, " dog"], ["a ", { target: sleeping }, " baby"]] }
+          - level: B2
+            type: { en: "-ed adjective" }
+            form: { pattern: [{ slot: V-ed }, { slot: noun }] }
+            ex: { examples: [["a ", { target: broken }, " window"], ["a ", { target: closed }, " door"]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A noun modifier is singular, even before a plural head noun:" }
+            ex: ["two ", { target: bus }, " tickets"]
+          - type: rule
+            level: B2
+            text: { en: "Three modifiers is the practical limit before the head noun; put further detail after it:" }
+            ex: ["a small old wooden table ", { target: with a drawer }]
+
+  - title: { en: Pronouns and adjectives as heads }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: head, label: { en: Head } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            head: { pattern: [the, { slot: adjective }] }
+            use: { en: "a group of people; the verb is plural" }
+            ex: [{ target: The injured }, " were treated quickly."]
+          - level: B2
+            head: { alternatives: [one, ones] }
+            use: { en: a countable noun already named }
+            ex: { examples: [["I like the blue ", { target: one }, "."], ["Which ", { target: ones }, " are yours?"]] }
+          - level: B2
+            head: those who
+            use: { en: people who }
+            ex: [{ target: Those who }, " arrive early get the best seats."]
+          - level: B2
+            head: { alternatives: [mine, yours, hers, ours] }
+            use: { en: the owner and the thing in one word }
+            ex: ["This seat is ", { target: mine }, "."]
+          - level: B2
+            head: { alternatives: [some, many, none] }
+            use: { en: a quantifier without its noun }
+            ex: [{ target: Many }, " were late."]
+          - level: B2
+            head: the same
+            use: { en: something already mentioned }
+            ex: ["I'll have ", { target: the same }, "."]
+
+  - title: { en: "Form: nominalisation" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: from, label: { en: From } }
+          - { key: change, label: { en: Change } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C1
+            from: { en: verb }
+            change: { mapping: [decide, decision] }
+            ex: ["Her ", { target: decision }, " surprised us."]
+          - level: C1
+            from: { en: verb }
+            change: { mapping: [develop, development] }
+            ex: ["The ", { target: development }, " of the area took years."]
+          - level: C1
+            from: { en: verb }
+            change: { mapping: [arrive, arrival] }
+            ex: ["Their ", { target: arrival }, " was a surprise."]
+          - level: C1
+            from: { en: verb }
+            change: { mapping: [fail, failure] }
+            ex: ["The ", { target: failure }, " of the plan was a shock."]
+          - level: C1
+            from: { en: verb }
+            change: { mapping: [grow, growth] }
+            ex: ["Population ", { target: growth }, " slowed."]
+          - level: C1
+            from: { en: adjective }
+            change: { mapping: [possible, possibility] }
+            ex: ["There is a ", { target: possibility }, " of rain."]
+          - level: C1
+            from: { en: adjective }
+            change: { mapping: [able, ability] }
+            ex: ["She has the ", { target: ability }, " to learn fast."]
+          - level: C1
+            from: { en: clause }
+            change: { mapping: ["They destroyed the city.", "the destruction of the city"] }
+            ex: ["The ", { target: destruction of the city }, " shocked the world."]
+
+  - title: { en: Subject and object of a nominalisation }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: role, label: { en: Role } }
+          - { key: form, label: { en: Form } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C1
+            role: { en: "the doer, with of" }
+            form: { pattern: [the, { slot: noun }, of, { slot: agent }] }
+            ex: ["the ", { target: arrival of the guests }]
+          - level: C1
+            role: { en: "the doer, as a possessive" }
+            form: { pattern: [{ slot: agent }, { ending: "'s" }, { slot: noun }] }
+            ex: { target: "the president's decision" }
+          - level: C1
+            role: { en: "the thing affected, with of" }
+            form: { pattern: [the, { slot: noun }, of, { slot: noun }] }
+            ex: ["the ", { target: destruction of the city }]
+          - level: C1
+            role: { en: "the doer after the thing affected, with by" }
+            form: { pattern: [the, { slot: noun }, of, { slot: noun }, by, { slot: agent }] }
+            ex: ["the destruction of the city ", { target: by the army }]
+      - type: usage
+        columns:
+          - { key: verb, label: { en: Light verb } }
+          - { key: noun, label: { en: Noun } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C1
+            verb: make
+            noun: { alternatives: [a decision, a suggestion, a mistake] }
+            ex: ["The board ", { target: made a decision }, " on Friday."]
+          - level: C1
+            verb: carry out
+            noun: { alternatives: [an analysis, a survey, a test] }
+            ex: ["Researchers ", { target: carried out an analysis }, " of the results."]
+          - level: C1
+            verb: give
+            noun: { alternatives: [consideration to, priority to, an explanation] }
+            ex: ["Please ", { target: give consideration to }, " my request."]
+          - level: C1
+            verb: reach
+            noun: { alternatives: [a conclusion, an agreement] }
+            ex: ["The two sides ", { target: reached an agreement }, "."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "A light verb and a noun say what the full verb says:" }
+            ex: { equivalence: [["They ", { target: analysed }, " ", { variant: analyzed, variety: en-US }, " the data."], ["They ", { target: carried out an analysis of }, " the data."]] }
+
+  - title: { en: "Compare: gerund and verbal noun" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: ger, label: { en: Gerund } }
+          - { key: noun, label: { en: Verbal noun } }
+        rows:
+          - level: C1
+            ger: { en: "acts like a verb: it takes an object and an adverb" }
+            noun: { en: ["acts like a noun: it takes ", { term: the }, " or ", { term: a }, ", ", { term: of }, " and an adjective"] }
+          - level: C1
+            ger: [{ target: Singing the anthem }, " is a tradition."]
+            noun: ["The ", { target: singing of the anthem }, " is a tradition."]
+          - level: C1
+            ger: [{ target: Painting portraits quickly }, " takes skill."]
+            noun: ["Her ", { target: quick painting of portraits }, " impressed us."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "A possessive before the -ing form is formal; speech uses the object form:" }
+            ex: { contrast: [["Do you mind ", { target: my opening }, " the window?"], ["Do you mind ", { target: me opening }, " the window?"]] }
+          - type: note
+            level: C1
+            text: { en: ["Verbs followed by -ing: ", { link: Gerund vs Infinitive, to: en.verbs.gerund-vs-infinitive }, "."] }
+
+  - title: { en: Complex noun phrases in academic prose }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: device, label: { en: Device } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C1
+            device: { en: heavy postmodification }
+            ex: ["the ", { target: impact }, " of rising prices on the spending of families in rural areas"]
+          - level: C1
+            device: { en: apposition for definition }
+            ex: ["Inflation", { target: ", the general rise in prices," }, " reduces what people can buy."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "Find the head noun first, then read each phrase as detail about it." }
+          - type: rule
+            level: C1
+            text: { en: "Break a chain of of-phrases with a noun modifier or a possessive:" }
+            ex: { contrast: ["the analysis of the results of the study of the market", ["the analysis of the ", { target: market study }, " results"]] }
+
+  - title: { en: Summary and shell nouns }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: type, label: { en: Type } }
+          - { key: form, label: { en: Form } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C1
+            type: { en: summary noun }
+            form: { pattern: [{ alternatives: [this, that, such a] }, { slot: noun }] }
+            ex: { examples: [["The council raised parking fees. ", { target: This decision }, " upset drivers."], ["She answers every email within an hour. ", { target: Such an approach }, " builds trust."]] }
+          - level: C1
+            type: { en: shell noun with a clause }
+            form: { pattern: [{ slot: noun }, that, { slot: clause }] }
+            ex: ["The ", { target: fact that prices rose }, " surprised no one."]
+          - level: C1
+            type: { en: shell noun with a preposition }
+            form: { pattern: [the problem, with, { slot: noun }] }
+            ex: ["The ", { target: problem with }, " this plan is the cost."]
+          - level: C1
+            type: { en: shell noun with a wh-word }
+            form: { pattern: [the reason, why, { slot: clause }] }
+            ex: ["The ", { target: reason why }, " prices rose is unclear."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Shell nouns such as ", { term: fact }, ", ", { term: idea }, ", ", { term: problem }, ", ", { term: reason }, " and ", { term: claim }, " get their content from the clause around them."] }
+
+  - title: { en: "Compare: verb style and noun style" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: verbal, label: { en: Verb style } }
+          - { key: nominal, label: { en: Noun style } }
+        rows:
+          - level: C1
+            verbal: { en: "speech and plain writing; people act" }
+            nominal: { en: "academic and official writing; processes are things" }
+          - level: C1
+            verbal: ["We ", { target: analysed }, " ", { variant: analyzed, variety: en-US }, " the data."]
+            nominal: ["An ", { target: analysis of the data }, " was performed."]
+          - level: C1
+            verbal: ["Many people ", { target: worry }, " about the cost."]
+            nominal: ["The cost is a source of ", { target: widespread concern }, "."]
+          - level: C1
+            verbal: ["She ", { target: applied for }, " the job in May."]
+            nominal: ["Her ", { target: application for }, " the job was received in May."]
+
+  - title: { en: Dense noun phrases in headlines and specialist prose }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: device, label: { en: Device } }
+          - { key: rule, label: { en: Reading } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C2
+            device: { en: noun stack }
+            rule: { en: "the last noun is the head; the others modify it" }
+            ex: ["Oil price rise ", { target: fears }]
+          - level: C2
+            device: { en: unpacking }
+            rule: { en: "turn each noun into a phrase, from the head backwards" }
+            ex: { equivalence: ["City council parking fee plan protest", "a protest over the city council's plan for parking fees"] }
+          - level: C2
+            device: { en: hyphen }
+            rule: { en: "joins words into one modifier" }
+            ex: { contrast: [["a ", { target: little-used }, " car"], ["a little ", { target: used }, " car"]] }
+          - level: C2
+            device: { en: comma }
+            rule: { en: "separates modifiers of equal weight" }
+            ex: ["a ", { target: "quiet, reliable" }, " engine"]
+
+  - title: { en: Grammatical metaphor }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: verbal, label: { en: Verb style } }
+          - { key: nominal, label: { en: Noun style } }
+        rows:
+          - level: C2
+            verbal: ["As demand ", { target: increased }, ", prices ", { target: rose }, "."]
+            nominal: ["The ", { target: increase in demand }, " led to a ", { target: rise in prices }, "."]
+          - level: C2
+            verbal: ["Because the team ", { target: trained harder }, ", it ", { target: improved }, "."]
+            nominal: ["The team's ", { target: harder training }, " led to its ", { target: improvement }, "."]
+          - level: C2
+            verbal: ["If people ", { target: save }, " more, banks can lend more."]
+            nominal: ["Higher ", { target: savings }, " allow banks to lend more."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["A noun phrase replaces the clause; a verb such as ", { term: lead to }, " replaces the conjunction."] }
+          - type: rule
+            level: C2
+            text: { en: "Revise noun style into verb style when the nouns hide who does what." }
+
+  - title: { en: Of and an abstract noun }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: phrase, label: { en: Phrase } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C2
+            phrase: a man of means
+            meaning: { en: wealthy }
+            ex: ["My grandfather was ", { target: a man of means }, "."]
+          - level: C2
+            phrase: a woman of few words
+            meaning: { en: quiet }
+            ex: ["The new manager is ", { target: a woman of few words }, "."]
+          - level: C2
+            phrase: a thing of beauty
+            meaning: { en: beautiful }
+            ex: ["The old clock tower is ", { target: a thing of beauty }, "."]
+          - level: C2
+            phrase: a matter of urgency
+            meaning: { en: urgent }
+            ex: ["Repairing the roof is ", { target: a matter of urgency }, "."]
+          - level: C2
+            phrase: the likes of
+            meaning: { en: people or things like }
+            ex: ["We cannot compete with ", { target: the likes of }, " big banks."]
+          - level: C2
+            phrase: the likelihood of
+            meaning: { en: the chance of }
+            ex: ["There is little ", { target: likelihood of }, " snow tonight."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "The abstract noun stands without an article:" }
+            ex: ["a matter of ", { target: urgency }]
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: the three first days, right: ["the ", { target: first three }, " days"], rule: { en: the ordinal comes before the cardinal } }
+          - { level: B2, wrong: a five-days course, right: ["a ", { target: five-day }, " course"], rule: { en: "the unit is singular in a modifier" } }
+          - { level: B2, wrong: the half price, right: [{ target: half the }, " price"], rule: { en: [{ term: half }, " comes before the determiner"] } }
+          - { level: B2, wrong: The injured was treated quickly., right: [{ target: The injured }, " were treated quickly."], rule: { en: [{ pattern: [the, { slot: adjective }] }, " takes a plural verb"] } }
+          - { level: C1, wrong: the destroy of the city, right: ["the ", { target: destruction }, " of the city"], rule: { en: ["after ", { term: the }, ", the noun ", { term: destruction }, " replaces the verb"] } }
+          - { level: C1, wrong: She did a decision., right: ["She ", { target: made a decision }, "."], rule: { en: [{ term: decision }, " takes ", { term: make }] } }
+          - { level: C1, wrong: the singing the anthem, right: ["the ", { target: singing of }, " the anthem"], rule: { en: ["after ", { term: the }, ", the object of the -ing noun takes ", { term: of }] } }
+          - { level: C2, wrong: There is little likelihood to rain., right: ["There is little ", { target: likelihood of }, " rain."], rule: { en: [{ term: likelihood }, " takes ", { term: of }] } }

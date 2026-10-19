@@ -1,0 +1,285 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.verbs.objects-complements
+lang: en
+kind: grammar
+tags: [objects, complements, verb-patterns]
+concepts: [clause-patterns]
+related: [en.verbs.to-be, en.verbs.gerund-vs-infinitive, en.sentence-building.passive-voice, en.verbs.phrasal-verbs-core, en.sentence-building.word-order]
+status: { en: draft }
+
+title: { en: Objects and Complements }
+summary:
+  lead:
+    en: ["The objects and complements a verb takes: ", { term: "give her a book" }, ", ", { term: "make me happy" }, ", ", { term: "put it on the table" }, "."]
+  rule:
+    en: "Two objects put the person first, or last after to or for:"
+  ex: { examples: [["He gave ", { target: "her a book" }, "."], ["He gave ", { target: "a book to her" }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: "Two objects" }, rule: { en: "person first, or last after to or for" }, ex: { examples: [["He gave ", { target: "her a book" }, "."], ["He gave ", { target: "a book to her" }, "."]] } }
+        - { level: B2, point: { en: "To or for" }, rule: { en: [{ term: "to" }, " after give, send, show; ", { term: "for" }, " after buy, make, cook"] }, ex: { examples: [["She sent ", { target: "a card to him" }, "."], ["He made ", { target: "a cake for her" }, "."]] } }
+        - { level: B2, point: { en: "Object and complement" }, rule: { en: ["the object takes an adjective, a noun or ", { term: "as" }, " and a noun"] }, ex: { examples: [["This ", { target: "makes me happy" }, "."], ["They ", { target: "elected him president" }, "."], ["They ", { target: "regard him as a hero" }, "."]] } }
+        - { level: B2, point: { en: "Both ways" }, rule: { en: "break, open, start, move: with an object or without" }, ex: { examples: [["The window ", { target: "broke" }, "."], ["He ", { target: "broke the window" }, "."]] } }
+        - { level: B2, point: { en: "Pairs" }, rule: { en: [{ term: "rise" }, ", ", { term: "lie" }, " and ", { term: "arrive" }, " take no object; ", { term: "raise" }, ", ", { term: "lay" }, " and ", { term: "reach" }, " need one"] }, ex: { examples: [["Prices ", { target: "rise" }, "."], ["They ", { target: "raise" }, " prices."]] } }
+        - { level: B2, point: { en: "Reciprocal" }, rule: { en: [{ term: "meet" }, ", ", { term: "marry" }, " and ", { term: "kiss" }, " take the other person directly"] }, ex: { examples: [["We ", { target: "met" }, "."], ["I ", { target: "met him" }, "."]] } }
+        - { level: C1, point: { en: "Object and -ing" }, rule: { en: [{ term: "catch" }, ", ", { term: "find" }, ", ", { term: "keep" }, " and ", { term: "leave" }, " take an object and an -ing form"] }, ex: { examples: [["I ", { target: "caught him stealing" }, "."], ["Don't ", { target: "keep me waiting" }, "."]] } }
+        - { level: C1, point: { en: "Result" }, rule: { en: "an adjective after the object says how the action leaves it" }, ex: { examples: [["She ", { target: "wiped the table clean" }, "."], ["He ", { target: "shouted himself hoarse" }, "."]] } }
+        - { level: C1, point: { en: "Adverbial" }, rule: { en: [{ term: "put" }, ", ", { term: "live" }, ", ", { term: "last" }, " and ", { term: "cost" }, " need a place, a time or an amount"] }, ex: { examples: [["Put it ", { target: "on the table" }, "."], ["It ", { target: "costs five pounds" }, "."]] } }
+        - { level: C1, point: { en: "Fake objects" }, rule: { en: ["a noun from the verb's own root, or ", { term: "it" }, " with no meaning"] }, ex: { examples: [["She ", { target: "lived a happy life" }, "."], ["They ", { target: "hit it off" }, "."]] } }
+        - { level: B2, point: { en: "Trap" }, rule: { en: [{ term: "explain" }, ", ", { term: "suggest" }, " and ", { term: "say" }, " take the person after ", { term: "to" }] }, ex: ["She ", { target: "explained the rule to me" }, "."] }
+        - { level: C1, point: { en: "Trap" }, rule: { en: [{ term: "last" }, " takes a length of time directly, with no ", { term: "for" }] }, ex: ["The film ", { target: "lasts two hours" }, "."] }
+
+sections:
+  - title: { en: Overview }
+    role: overview
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: kind, label: { en: Verb } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: { pattern: [{ slot: subject }, { slot: verb }] }, kind: { en: "intransitive verb" }, ex: { examples: [["He ", { target: "arrived" }, "."], ["The window ", { target: "broke" }, "."]] } }
+          - { level: B2, form: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: complement } }] }, kind: { en: "linking verb" }, ex: { examples: [["She ", { target: "became a doctor" }, "."], ["It ", { target: "looks tired" }, "."]] } }
+          - { level: B2, form: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: object } }] }, kind: { en: "transitive verb" }, ex: ["She ", { target: "bought a car" }, "."] }
+          - { level: B2, form: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: indirect object } }, { slot: { en: direct object } }] }, kind: { en: "verb with two objects" }, ex: ["He ", { target: "gave her a book" }, "."] }
+          - { level: B2, form: { pattern: [{ slot: subject }, { slot: verb }, { slot: { en: object } }, { slot: { en: complement } }] }, kind: { en: "verb with object and complement" }, ex: { examples: [["They ", { target: "elected him president" }, "."], ["This ", { target: "makes me happy" }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A complement describes or renames the subject or the object; an object is a different person or thing." }
+            ex: { examples: [["She became ", { target: "a doctor" }, "."], ["She called ", { target: "a doctor" }, "."]] }
+          - type: note
+            level: B2
+            text: { en: ["The most common linking verb is ", { term: "be" }, ": see ", { link: To be, to: en.verbs.to-be }, "."] }
+
+  - title: { en: "Form: two objects" }
+    role: form
+    content:
+      - type: comparison
+        columns:
+          - { key: prep, label: { en: With } }
+          - { key: verbs, label: { en: Verbs } }
+          - { key: first, label: { en: Person first } }
+          - { key: last, label: { en: Person last } }
+        rows:
+          - { level: B2, prep: { term: "to" }, verbs: "give, send, show, lend, offer, pay, tell, teach, bring, sell", first: ["She ", { target: "sent him a card" }, "."], last: ["She ", { target: "sent a card to him" }, "."] }
+          - { level: B2, prep: { term: "for" }, verbs: "buy, make, cook, find, get, save, order", first: ["He ", { target: "made her a cake" }, "."], last: ["He ", { target: "made a cake for her" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["When the thing is a pronoun, the person follows it with ", { term: "to" }, " or ", { term: "for" }, "."] }
+            ex: { examples: [["She gave ", { target: "it to him" }, "."], ["I bought ", { target: "them for her" }, "."]] }
+          - type: rule
+            level: B2
+            text: { en: "The longer or newer object comes last." }
+            ex: { examples: [["She gave ", { target: "him" }, " the letter."], ["She gave the letter ", { target: "to the tall man by the door" }, "."]] }
+
+  - title: { en: "Verbs that take only to" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: verbs, label: { en: Verbs } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, verbs: "explain, describe", ex: ["She ", { target: "explained the rule to me" }, "."] }
+          - { level: B2, verbs: "suggest, propose", ex: ["I ", { target: "suggested a hotel to them" }, "."] }
+          - { level: B2, verbs: "say, announce, mention, report", ex: ["They ", { target: "announced the news to everyone" }, "."] }
+          - { level: B2, verbs: "introduce", ex: ["Let me ", { target: "introduce my sister to you" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["These verbs put the person after the thing, with ", { term: "to" }, "."] }
+            ex: ["Can you ", { target: "explain it to me" }, "?"]
+
+  - title: { en: "Form: object and complement" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: verbs, label: { en: Verbs } }
+          - { key: form, label: { en: Complement } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, verbs: "make, keep, leave, drive, find, consider, think", form: { slot: adjective }, ex: { examples: [["This ", { target: "makes me happy" }, "."], ["Keep ", { target: "the door closed" }, "."], ["I ", { target: "find it difficult" }, "."]] } }
+          - { level: B2, verbs: "call, name, appoint, elect", form: { slot: noun }, ex: { examples: [["They ", { target: "elected him president" }, "."], ["We ", { target: "named the baby Leo" }, "."]] } }
+          - { level: B2, verbs: "regard, treat, see, describe", form: { pattern: ["as", { slot: { en: noun or adjective } }] }, ex: { examples: [["They ", { target: "regard him as a hero" }, "."], ["She ", { target: "described the plan as risky" }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: "make" }, " also takes a noun complement."] }
+            ex: ["They ", { target: "made him captain" }, "."]
+
+  - title: { en: "Compare: with and without an object" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { en: Verb } }
+          - { key: none, label: { en: No object } }
+          - { key: obj, label: { en: With an object } }
+        rows:
+          - { level: B2, verb: "break", none: ["The window ", { target: "broke" }, "."], obj: ["He ", { target: "broke the window" }, "."] }
+          - { level: B2, verb: "open", none: ["The door ", { target: "opened" }, "."], obj: ["She ", { target: "opened the door" }, "."] }
+          - { level: B2, verb: "close", none: ["The shop ", { target: "closed" }, " early."], obj: ["They ", { target: "closed the shop" }, " early."] }
+          - { level: B2, verb: "start", none: ["The film ", { target: "started" }, "."], obj: ["He ", { target: "started the car" }, "."] }
+          - { level: B2, verb: "move", none: ["The bus ", { target: "moved" }, "."], obj: ["She ", { target: "moved the chair" }, "."] }
+          - { level: B2, verb: "sink", none: ["The boat ", { target: "sank" }, "."], obj: ["The storm ", { target: "sank the boat" }, "."] }
+          - { level: B2, verb: { alternatives: ["rise", "raise"] }, none: ["The sun ", { target: "rises" }, " early."], obj: ["They ", { target: "raise prices" }, " every year."] }
+          - { level: B2, verb: { alternatives: ["lie", "lay"] }, none: ["The book ", { target: "lies" }, " on the table."], obj: [{ target: "Lay the book" }, " on the table."] }
+          - { level: B2, verb: { alternatives: ["arrive", "reach"] }, none: ["We ", { target: "arrived" }, " at the hotel."], obj: ["We ", { target: "reached the hotel" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["The past of ", { term: "lie" }, " is ", { term: "lay" }, "; the past of ", { term: "lay" }, " is ", { term: "laid" }, "."] }
+            ex: { examples: [["She ", { target: "lay" }, " on the sofa."], ["She ", { target: "laid" }, " the book down."]] }
+          - type: rule
+            level: B2
+            text: { en: ["A few verbs always need an object: ", { term: "bring" }, ", ", { term: "put" }, " and ", { term: "make" }, "."] }
+            ex: ["She ", { target: "brought a cake" }, "."]
+          - type: rule
+            level: B2
+            text: { en: ["Some verbs take their noun after a preposition: ", { term: "depend on" }, ", ", { term: "listen to" }, ", ", { term: "wait for" }, "."] }
+            ex: ["It ", { target: "depends on" }, " the weather."]
+
+  - title: { en: Reciprocal verbs }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { en: Verb } }
+          - { key: both, label: { en: Both as subject } }
+          - { key: one, label: { en: One as object } }
+        rows:
+          - { level: B2, verb: "meet", both: ["We ", { target: "met" }, " in Paris."], one: ["I ", { target: "met him" }, " in Paris."] }
+          - { level: B2, verb: "marry", both: ["They ", { target: "married" }, " in June."], one: ["She ", { target: "married a pilot" }, "."] }
+          - { level: B2, verb: "fight", both: ["They ", { target: "fought" }, " all night."], one: ["He ", { target: "fought his brother" }, "."] }
+          - { level: B2, verb: "kiss", both: ["They ", { target: "kissed" }, "."], one: ["She ", { target: "kissed him" }, "."] }
+          - { level: B2, verb: "hug", both: ["They ", { target: "hugged" }, "."], one: ["He ", { target: "hugged his mother" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "These verbs take the other person directly, with no preposition." }
+
+  - title: { en: "Form: object with to be or -ing" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: verbs, label: { en: Verbs } }
+          - { key: form, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, verbs: "consider, find", form: { pattern: [{ slot: verb }, { slot: { en: object } }, { optional: "to be" }, { slot: { en: complement } }] }, ex: { examples: [["I consider him ", { optional: "to be" }, " honest."], ["We found the room ", { optional: "to be" }, " too small."]] } }
+          - { level: C1, verbs: "believe, assume, know", form: { pattern: [{ slot: verb }, { slot: { en: object } }, "to be", { slot: { en: complement } }] }, ex: { examples: [["I ", { target: "believe him to be" }, " honest."], ["They ", { target: "assumed the figures to be" }, " correct."]] } }
+          - { level: C1, verbs: "catch, find", form: { pattern: [{ slot: verb }, { slot: { en: object } }, { slot: "-ing" }] }, ex: { examples: [["I ", { target: "caught him stealing" }, "."], ["We ", { target: "found the dog sleeping" }, " in my bed."]] } }
+          - { level: C1, verbs: "keep, leave", form: { pattern: [{ slot: verb }, { slot: { en: object } }, { slot: "-ing" }] }, ex: { examples: [["Don't ", { target: "keep me waiting" }, "."], ["She ", { target: "left the engine running" }, "."]] } }
+      - type: list
+        items:
+          - type: note
+            level: C1
+            text: { en: ["More on -ing forms and infinitives: see ", { link: Gerund vs Infinitive, to: en.verbs.gerund-vs-infinitive }, "."] }
+
+  - title: { en: Result complements }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Type } }
+          - { key: form, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, kind: { en: "changed object" }, form: { pattern: [{ slot: verb }, { slot: { en: object } }, { slot: adjective }] }, ex: { examples: [["She ", { target: "wiped the table clean" }, "."], ["He ", { target: "hammered the metal flat" }, "."]] } }
+          - { level: C1, kind: { en: "changed subject" }, form: { pattern: [{ slot: verb }, { slot: { en: reflexive pronoun } }, { slot: adjective }] }, ex: { examples: [["He ", { target: "shouted himself hoarse" }, "."], ["They ", { target: "laughed themselves silly" }, "."]] } }
+          - { level: C1, kind: { en: "object the verb does not normally take" }, form: { pattern: [{ slot: verb }, { slot: { en: unusual object } }, { slot: adjective }] }, ex: { examples: [["They ", { target: "drank the pub dry" }, "."], ["She ", { target: "cried her eyes red" }, "."]] } }
+          - { level: C1, kind: { en: "the way construction" }, form: { pattern: [{ slot: verb }, { slot: { en: possessive } }, "way", { slot: { en: place } }] }, ex: { examples: [["He ", { target: "fought his way" }, " through the crowd."], ["She ", { target: "worked her way" }, " up to manager."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "In the way construction, the possessive matches the subject." }
+            ex: ["She ", { target: "pushed her way" }, " to the front."]
+
+  - title: { en: Adverbial complements }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Complement } }
+          - { key: verbs, label: { en: Verbs } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, kind: { en: "place" }, verbs: "put, place, set, live, stay", ex: { examples: [["Put it ", { target: "on the table" }, "."], ["She lives ", { target: "in London" }, "."]] } }
+          - { level: C1, kind: { en: "manner" }, verbs: "behave, act", ex: { examples: [["The children behaved ", { target: "well" }, "."], ["He acted ", { target: "strangely" }, "."]] } }
+          - { level: C1, kind: { en: "length of time" }, verbs: "last, take", ex: { examples: [["The film lasts ", { target: "two hours" }, "."], ["The journey takes ", { target: "three days" }, "."]] } }
+          - { level: C1, kind: { en: "amount" }, verbs: "cost, weigh, measure", ex: { examples: [["The ticket costs ", { target: "five pounds" }, "."], ["The box weighs ", { target: "70 kilos" }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: "put" }, ", ", { term: "behave" }, ", ", { term: "last" }, ", ", { term: "cost" }, " and ", { term: "weigh" }, " need their complement to make a full sentence."] }
+          - type: rule
+            level: C1
+            text: { en: ["Verbs of amount and duration, such as ", { term: "cost" }, " and ", { term: "weigh" }, ", have no passive: see ", { link: Passive Voice, to: en.sentence-building.passive-voice }, "."] }
+
+  - title: { en: Cognate and fake objects }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Type } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, kind: { en: "cognate object" }, rule: { en: "a noun from the verb's own root, usually with an adjective" }, ex: { examples: [["She ", { target: "lived a happy life" }, "."], ["He ", { target: "dreamed a strange dream" }, "."], ["She ", { target: "died a peaceful death" }, "."]] } }
+      - type: usage
+        columns:
+          - { key: phrase, label: { en: Phrase } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, phrase: { term: "make it" }, meaning: { en: "succeed, or arrive in time" }, ex: ["We ", { target: "made it" }, " to the station."] }
+          - { level: C1, phrase: { term: "hit it off" }, meaning: { en: "get on well at once" }, ex: ["They ", { target: "hit it off" }, " at the party."] }
+          - { level: C1, phrase: { term: "call it a day" }, meaning: { en: "stop for now" }, ex: ["It's late, so let's ", { target: "call it a day" }, "."] }
+          - { level: C1, phrase: { term: "sleep the sleep of the just" }, meaning: { en: "sleep deeply and peacefully" }, ex: ["After the long walk, he ", { target: "slept the sleep of the just" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["In ", { term: "make it" }, ", ", { term: "hit it off" }, " and ", { term: "call it a day" }, ", ", { term: "it" }, " refers to nothing."] }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "She explained me the rule.", right: ["She ", { target: "explained the rule to me" }, "."], rule: { en: [{ term: "explain" }, " takes the person after ", { term: "to" }] } }
+          - { level: B2, wrong: "Give to me the book.", right: { alternatives: [["Give ", { target: "me the book" }, "."], ["Give ", { target: "the book to me" }, "."]] }, rule: { en: ["the person takes ", { term: "to" }, " only after the thing"] } }
+          - { level: B2, wrong: "She bought a present to him.", right: ["She bought a present ", { target: "for him" }, "."], rule: { en: [{ term: "buy" }, ", ", { term: "make" }, " and ", { term: "cook" }, " take ", { term: "for" }, " before the person"] } }
+          - { level: B2, wrong: "The news made me happily.", right: ["The news made me ", { target: "happy" }, "."], rule: { en: ["the complement of ", { term: "make" }, " is an adjective"] } }
+          - { level: B2, wrong: "They elected him as president.", right: ["They elected him ", { target: "president" }, "."], rule: { en: [{ term: "elect" }, ", ", { term: "appoint" }, ", ", { term: "call" }, " and ", { term: "name" }, " take no ", { term: "as" }] } }
+          - { level: B2, wrong: "They regard him a hero.", right: ["They regard him ", { target: "as a hero" }, "."], rule: { en: [{ term: "regard" }, ", ", { term: "treat" }, " and ", { term: "see" }, " take ", { term: "as" }, " before the complement"] } }
+          - { level: B2, wrong: "Prices raised last year.", right: ["Prices ", { target: "rose" }, " last year."], rule: { en: [{ term: "rise" }, " takes no object; ", { term: "raise" }, " needs one"] } }
+          - { level: B2, wrong: "I laid on the sofa.", right: ["I ", { target: "lay" }, " on the sofa."], rule: { en: [{ term: "lay" }, " is the past of ", { term: "lie" }, "; ", { term: "laid" }, " needs an object"] } }
+          - { level: B2, wrong: "We arrived the hotel.", right: { alternatives: [["We ", { target: "arrived at" }, " the hotel."], ["We ", { target: "reached" }, " the hotel."]] }, rule: { en: [{ term: "arrive" }, " takes no object; ", { term: "reach" }, " takes one"] } }
+          - { level: B2, wrong: "It depends the weather.", right: ["It ", { target: "depends on" }, " the weather."], rule: { en: [{ term: "depend" }, " takes ", { term: "on" }, " before its noun"] } }
+          - { level: B2, wrong: "She married with a doctor.", right: ["She ", { target: "married a doctor" }, "."], rule: { en: [{ term: "marry" }, " takes the other person directly"] } }
+          - { level: C1, wrong: "I caught him to steal.", right: ["I caught him ", { target: "stealing" }, "."], rule: { en: [{ term: "catch" }, " takes an object and an -ing form"] } }
+          - { level: C1, wrong: "She shouted herself hoarsely.", right: ["She shouted herself ", { target: "hoarse" }, "."], rule: { en: "the result is an adjective, not an adverb" } }
+          - { level: C1, wrong: "She pushed the way to the front.", right: ["She ", { target: "pushed her way" }, " to the front."], rule: { en: ["the way construction needs a possessive before ", { term: "way" }] } }
+          - { level: C1, wrong: "The film lasts during two hours.", right: ["The film ", { target: "lasts two hours" }, "."], rule: { en: [{ term: "last" }, " takes a length of time directly"] } }
+          - { level: C1, wrong: "They hit off it.", right: ["They ", { target: "hit it off" }, "."], rule: { en: [{ term: "it" }, " stays between ", { term: "hit" }, " and ", { term: "off" }] } }

@@ -1,0 +1,544 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.foundations.punctuation
+lang: en
+kind: foundations
+tags: [punctuation, capital-letters, commas, apostrophes, quotation-marks]
+concepts: [punctuation]
+related: [en.foundations.alphabet-spelling, en.sentence-building.relative-clauses, en.sentence-building.reported-speech, en.nouns-determiners.possessive-s]
+status: { en: draft }
+
+title: { en: "Punctuation and Capital Letters" }
+summary:
+  lead:
+    en: "Capital letters and marks such as full stops, commas, apostrophes, colons and quotation marks show where sentences end, how clauses join and who speaks."
+  rule:
+    en: "A comma alone never joins two main clauses:"
+  ex:
+    examples:
+      - ["It was late", { target: ", so" }, " we went home."]
+      - ["It was late", { target: ";" }, " we went home."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: "Point" } }
+        - { key: rule, label: { en: "Rule" } }
+        - { key: ex, label: { en: "Example" } }
+      rows:
+        - level: B2
+          point: { en: "Sentence end" }
+          rule: { en: "full stop after an indirect question, question mark after a direct one" }
+          ex: { examples: [["She asked where I was going", { target: "." }], ["Where are you going", { target: "?" }]] }
+        - level: B2
+          point: { en: "Comma: clauses" }
+          rule: { en: ["after an opening clause; before ", { term: "but" }, ", ", { term: "so" }, " or ", { term: "yet" }] }
+          ex: { examples: [["If it rains", { target: "," }, " we stay in."], ["I was tired", { target: "," }, " so I went home."]] }
+        - level: B2
+          point: { en: "Comma: asides" }
+          rule: { en: "a pair of commas round extra information" }
+          ex: ["Anna", { target: "," }, " who lives here", { target: "," }, " is a nurse."]
+        - level: B2
+          point: { en: "Apostrophe" }
+          rule: { en: "contractions and possession; none in plurals or in its" }
+          ex: { examples: [["I ", { target: "don’t" }, " know."], ["two ", { target: "CDs" }], ["the dog wagged ", { target: "its" }, " tail"]] }
+        - level: B2
+          point: { en: "Colon and semicolon" }
+          rule: { en: "colon introduces; semicolon joins related clauses" }
+          ex: { examples: [["Two options", { target: ":" }, " stay or go."], ["Tom likes tea", { target: ";" }, " Ana likes coffee."]] }
+        - level: B2
+          point: { en: "Hyphen and dash" }
+          rule: { en: "hyphen before the noun, none after; en dash for ranges" }
+          ex: { examples: [["a ", { target: "well-known" }, " author"], ["the years ", { target: "1990–2000" }]] }
+        - level: B2
+          point: { en: "Quotation marks" }
+          rule: { en: "single marks; the comma stands inside them before the speaker" }
+          ex: ["‘Come in", { target: ",’" }, " she said."]
+        - level: B2
+          point: { en: "Capital letters" }
+          rule: { en: "names, nationalities, languages, days, months; not seasons" }
+          ex: ["She teaches ", { target: "Spanish" }, " on ", { target: "Mondays" }, " in summer."]
+        - level: C1
+          point: { en: "Commas and meaning" }
+          rule: { en: "commas add information; without them the clause identifies" }
+          ex: { contrast: ["my brother who lives in Leeds", ["my brother", { target: "," }, " who lives in Leeds", { target: "," }]] }
+        - level: C1
+          point: { en: "Opening phrases" }
+          rule: { en: ["comma after an opening participle or absolute phrase; none before ", { term: "that" }] }
+          ex: { examples: [["Having finished", { target: "," }, " she left."], ["The work done", { target: "," }, " they went home."]] }
+        - level: C1
+          point: { en: "Dash, colon, semicolon" }
+          rule: { en: "colon explains, semicolon balances, dash adds emphasis" }
+          ex: ["I knew the answer ", { target: "–" }, " but I said nothing."]
+        - level: B2
+          point: { en: "Trap" }
+          rule: { en: [{ term: "its" }, " shows ownership; ", { term: "it’s" }, " = ", { term: "it is" }, " or ", { term: "it has" }] }
+          ex: { contrast: [["The dog wagged ", { target: "its" }, " tail."], [{ target: "It’s" }, " raining."]] }
+
+sections:
+  - title: { en: "Sentence ends and abbreviations" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: point, label: { en: "Point" } }
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            point: { en: ["full stop ", { letter: "." }] }
+            rule: { en: "ends a statement or an order" }
+            ex: ["We left at six", { target: "." }]
+          - level: B2
+            point: { en: ["full stop ", { letter: "." }] }
+            rule: { en: "ends an indirect question" }
+            ex: ["She asked where I was going", { target: "." }]
+          - level: B2
+            point: { en: ["question mark ", { letter: "?" }] }
+            rule: { en: "ends a direct question" }
+            ex: ["Where are you going", { target: "?" }]
+          - level: B2
+            point: { en: ["exclamation mark ", { letter: "!" }] }
+            rule: { en: "ends an exclamation or a strong order; one mark is enough" }
+            ex: { examples: [["What a view", { target: "!" }], ["Stop", { target: "!" }]] }
+          - level: B2
+            point: { en: "abbreviation that keeps the last letter of the word" }
+            rule: { en: ["written without a full stop: ", { term: "Mr" }, ", ", { term: "Mrs" }, ", ", { term: "Dr" }, ", ", { term: "St" }] }
+            ex: ["Please ask ", { target: "Dr" }, " Khan. ", { variant: ["Please ask ", { target: "Dr." }, " Khan."], variety: en-US }]
+          - level: B2
+            point: { en: "abbreviation that is cut short" }
+            rule: { en: ["a full stop: ", { term: "Prof." }, ", ", { term: "etc." }, "; at the end of a sentence it also ends the sentence"] }
+            ex: { examples: [["Ask ", { target: "Prof." }, " Lee."], ["We sell pens, paper, ", { target: "etc." }]] }
+          - level: B2
+            point: { en: "initials and acronyms" }
+            rule: { en: "written without full stops" }
+            ex: ["She works for the ", { target: "BBC" }, "."]
+
+  - title: { en: "Comma" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: "A comma" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            rule: { en: "separates the items of a list; the comma before the final and is optional" }
+            ex: ["We bought apples", { target: "," }, " pears and plums. ", { variant: ["We bought apples, pears", { target: "," }, " and plums."], variety: en-US }]
+          - level: B2
+            rule: { en: "follows an opening adverbial or clause" }
+            ex: { examples: [["If it rains", { target: "," }, " we stay in."], ["However", { target: "," }, " the room was cold."]] }
+          - level: B2
+            rule: { en: ["comes before ", { term: "but" }, ", ", { term: "so" }, " or ", { term: "yet" }, " when it joins two main clauses"] }
+            ex: ["The film was long", { target: "," }, " but we enjoyed it."]
+          - level: B2
+            rule: { en: "opens and closes a non-defining clause or an added phrase" }
+            ex: { examples: [["Our neighbour", { target: "," }, " who is a nurse", { target: "," }, " helps us."], ["Tom", { target: "," }, " our new manager", { target: "," }, " starts today."]] }
+          - level: B2
+            rule: { en: "sets off the name of the person addressed" }
+            ex: { examples: [["Thanks for your help", { target: "," }, " Tom."], ["Tom", { target: "," }, " come here."]] }
+          - level: B2
+            rule: { en: "comes before a question tag" }
+            ex: ["It’s cold today", { target: "," }, " isn’t it?"]
+          - level: B2
+            rule: { en: "never stands between a subject and its verb, however long the subject" }
+            ex: [{ subj: "The man in the grey coat" }, " ", { verb: "is" }, " my uncle."]
+          - level: B2
+            rule: { en: "never joins two main clauses alone: add a conjunction, or use a semicolon or a full stop" }
+            ex: { alternatives: [["It was late", { target: ", so" }, " we left."], ["It was late", { target: ";" }, " we left."], ["It was late", { target: "." }, " We left."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["Defining and non-defining clauses: see ", { link: "Relative clauses", to: en.sentence-building.relative-clauses }, "."] }
+
+  - title: { en: "Apostrophe" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            rule: { en: "the apostrophe stands for the missing letters of a contraction" }
+            ex: { examples: [["I ", { target: "don’t" }, " know."], [{ target: "It’s" }, " late."]] }
+          - level: B2
+            rule: { en: ["the apostrophe shows the owner; the forms are in ", { link: "Possessive 's", to: en.nouns-determiners.possessive-s }] }
+            ex: { examples: [[{ target: "Ana’s" }, " car"], ["my ", { target: "parents’" }, " house"]] }
+          - level: B2
+            rule: { en: ["plurals of abbreviations and decades take ", { ending: "s" }, " alone"] }
+            ex: { examples: [["two ", { target: "CDs" }], ["three ", { target: "MPs" }], ["in the ", { target: "1990s" }]] }
+          - level: B2
+            rule: { en: [{ term: "its" }, ", ", { term: "whose" }, ", ", { term: "hers" }, ", ", { term: "yours" }, ", ", { term: "ours" }, " and ", { term: "theirs" }, " show ownership by their form alone"] }
+            ex: { examples: [["The dog wagged ", { target: "its" }, " tail."], ["That coat is ", { target: "hers" }, "."]] }
+          - level: B2
+            rule: { en: "the apostrophe marks the plural of a single letter" }
+            ex: ["Mind your ", { target: "p’s" }, " and ", { target: "q’s" }, "."]
+
+  - title: { en: "Colon and semicolon" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: point, label: { en: "Point" } }
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            point: { en: ["colon ", { letter: ":" }] }
+            rule: { en: "introduces a list after a complete clause" }
+            ex: ["There are three options", { target: ":" }, " stay, leave or wait."]
+          - level: B2
+            point: { en: ["colon ", { letter: ":" }] }
+            rule: { en: "introduces an explanation" }
+            ex: ["I stayed at home", { target: ":" }, " it was raining."]
+          - level: B2
+            point: { en: ["colon ", { letter: ":" }] }
+            rule: { en: "introduces a quotation" }
+            ex: ["The sign said", { target: ":" }, " ‘Keep out.’"]
+          - level: B2
+            point: { en: ["semicolon ", { letter: ";" }] }
+            rule: { en: "joins two related main clauses" }
+            ex: ["Tom likes tea", { target: ";" }, " Ana prefers coffee."]
+          - level: B2
+            point: { en: ["semicolon ", { letter: ";" }] }
+            rule: { en: "separates list items that contain commas" }
+            ex: ["We visited Leeds, in England", { target: ";" }, " Cardiff, in Wales", { target: ";" }, " and Belfast, in Northern Ireland."]
+
+  - title: { en: "Hyphen and dash" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: point, label: { en: "Point" } }
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            point: { en: ["hyphen ", { letter: "-" }] }
+            rule: { en: "joins a compound modifier before a noun" }
+            ex: { examples: [["a ", { target: "well-known" }, " author"], ["a ", { target: "five-year-old" }, " child"]] }
+          - level: B2
+            point: { en: "compound after the noun" }
+            rule: { en: "separate words" }
+            ex: { examples: [["The author is ", { target: "well known" }, "."], ["The child is ", { target: "five years old" }, "."]] }
+          - level: B2
+            point: { en: ["en dash ", { letter: "–" }] }
+            rule: { en: "joins the two ends of a range, with no spaces" }
+            ex: { examples: [["the years ", { target: "1990–2000" }], [{ target: "3–5" }, " July"]] }
+          - level: B2
+            point: { en: ["dash ", { letter: "–" }] }
+            rule: { en: "a pair sets off an aside; British style spaces an en dash, American style closes up an em dash" }
+            ex: ["Her flat ", { target: "–" }, " a tiny studio ", { target: "–" }, " is near the station. ", { variant: ["Her flat", { target: "—" }, "a tiny studio", { target: "—" }, "is near the station."], variety: en-US }]
+
+  - title: { en: "Quotation marks and direct speech" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            rule: { en: "British English puts single marks round the words spoken; American English uses double marks" }
+            ex: ["Tom said, ", { target: "‘I’m tired.’" }, " ", { variant: ["Tom said, ", { target: "“I’m tired.”" }], variety: en-US }]
+          - level: B2
+            rule: { en: "a comma and a capital letter introduce speech that follows the speaker" }
+            ex: ["She said", { target: "," }, " ‘Come in.’"]
+          - level: B2
+            rule: { en: "a comma, not a full stop, ends speech before the speaker; it stands inside the marks, and ? and ! stay" }
+            ex: { examples: [["‘Come in", { target: ",’" }, " she said."], ["‘Where are you going", { target: "?’" }, " she asked."]] }
+          - level: B2
+            rule: { en: "each new speaker starts a new line" }
+            ex: { exchange: ["‘Are you ready?’ asked Tom.", "‘Almost,’ said Ana."] }
+          - level: B2
+            rule: { en: "marks go round a title when italics are not possible, as in handwriting" }
+            ex: ["We read ", { target: "‘Emma’" }, " in class."]
+          - level: B2
+            rule: { en: "marks go round a word used in a doubtful or special sense" }
+            ex: ["He is a ", { target: "‘friend’" }, " who never calls."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["Direct speech turned into reported speech: see ", { link: "Reported speech", to: en.sentence-building.reported-speech }, "."] }
+
+  - title: { en: "Capital letters" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            rule: { en: ["capital for the first word of a sentence and for the pronoun ", { letter: "I" }] }
+            ex: { examples: [[{ target: "The" }, " train was late."], ["Tom and ", { target: "I" }, " were late."]] }
+          - level: B2
+            rule: { en: "capital for names of people, places and organisations" }
+            ex: ["Ana lives in ", { target: "Madrid" }, "."]
+          - level: B2
+            rule: { en: "capital for nationalities and languages" }
+            ex: ["My teacher is ", { target: "Polish" }, " and speaks ", { target: "French" }, "."]
+          - level: B2
+            rule: { en: "capital for adjectives made from names" }
+            ex: ["a ", { target: "Victorian" }, " house"]
+          - level: B2
+            rule: { en: "capital for days, months and holidays" }
+            ex: ["We meet on ", { target: "Friday" }, " in ", { target: "March" }, ", and at ", { target: "Easter" }, "."]
+          - level: B2
+            rule: { en: "small letter for seasons" }
+            ex: ["We go skiing in ", { target: "winter" }, "."]
+          - level: B2
+            rule: { en: "capital for a title before a name; small letter for a title on its own" }
+            ex: ["I met ", { target: "Dr Khan" }, " and ", { target: "the prime minister" }, "."]
+          - level: B2
+            rule: { en: "capitals on the main words of a title; small letters on articles, prepositions and conjunctions inside it" }
+            ex: ["I loved ", { target: "The Lord of the Rings" }, "."]
+          - level: B2
+            rule: { en: "capital for every letter of an acronym" }
+            ex: ["Both ", { target: "NASA" }, " and the ", { target: "EU" }, " fund the project."]
+          - level: B2
+            rule: { en: "capital for a compass point only when it is part of a name" }
+            ex: { contrast: [["We drove ", { target: "south" }, "."], ["She was born in ", { target: "South" }, " Africa."]] }
+
+  - title: { en: "Layout: paragraphs, letters and emails" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            rule: { en: "a mark follows its word with no space before it and one space after it" }
+            ex: ["Wait", { target: "," }, " please."]
+          - level: B2
+            rule: { en: "a new paragraph starts a new topic or a new stage of an argument" }
+      - type: usage
+        columns:
+          - { key: reader, label: { en: "Writing to" } }
+          - { key: opening, label: { en: "Opening" } }
+          - { key: closing, label: { en: "Closing" } }
+        rows:
+          - level: B2
+            reader: { en: "someone you know by name" }
+            opening: "Dear Mr Smith,"
+            closing: ["Yours sincerely, ", { variant: "Sincerely,", variety: en-US }]
+          - level: B2
+            reader: { en: "someone you do not know by name" }
+            opening: "Dear Sir or Madam,"
+            closing: "Yours faithfully,"
+          - level: B2
+            reader: { en: "a friend or colleague" }
+            opening: "Hi Tom,"
+            closing: "Best wishes,"
+
+  - title: { en: "Comma: meaning and longer phrases" }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: plain, label: { en: "No commas" } }
+          - { key: commas, label: { en: "Commas" } }
+        rows:
+          - level: C1
+            plain: { en: "tells which brother: I have several" }
+            commas: { en: "adds a fact about my only brother" }
+          - level: C1
+            plain: "My brother who lives in Leeds is a vet."
+            commas: ["My brother", { target: "," }, " who lives in Leeds", { target: "," }, " is a vet."]
+          - level: C1
+            plain: { en: "tells which students: only some passed" }
+            commas: { en: "adds a fact about all the students" }
+          - level: C1
+            plain: "The students who passed got a prize."
+            commas: ["The students", { target: "," }, " who passed", { target: "," }, " got a prize."]
+          - level: C1
+            plain: { en: "tells which friend: I have several" }
+            commas: { en: "adds a fact about my only friend" }
+          - level: C1
+            plain: "My friend Anna lives here."
+            commas: ["My friend", { target: "," }, " Anna", { target: "," }, " lives here."]
+      - type: usage
+        columns:
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            rule: { en: ["a linker such as ", { term: "however" }, " or ", { term: "therefore" }, " inside a clause takes a comma on each side"] }
+            ex: ["The hotel", { target: "," }, " however", { target: "," }, " was clean."]
+          - level: C1
+            rule: { en: [{ term: "which" }, " after a comma refers to the whole clause before it"] }
+            ex: ["It rained all day", { target: ", which" }, " spoiled the picnic."]
+          - level: C1
+            rule: { en: [{ term: "such as" }, " and ", { term: "including" }, " take commas when the examples add information"] }
+            ex: { examples: [["She loves big cities", { target: "," }, " such as Paris and Rome."], ["Many cities", { target: "," }, " including Paris", { target: "," }, " are expensive."]] }
+          - level: C1
+            rule: { en: ["a comma follows an opening phrase with ", { ending: "-ing" }, " or ", { ending: "-ed" }] }
+            ex: { examples: [["Having finished", { target: "," }, " she left."], ["Surprised by the news", { target: "," }, " he sat down."]] }
+          - level: C1
+            rule: { en: "a comma follows an absolute phrase, which has a subject of its own" }
+            ex: ["The work done", { target: "," }, " they went home."]
+          - level: C1
+            rule: { en: ["a ", { term: "that" }, "-clause follows its verb or noun with no comma"] }
+            ex: { examples: [["She said ", { target: "that" }, " she was ill."], ["The idea ", { target: "that" }, " we should wait is wrong."]] }
+
+  - title: { en: "Parentheses, brackets, ellipsis and slash" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: point, label: { en: "Point" } }
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            point: { en: "parentheses" }
+            rule: { en: "hold an aside that can be removed; the full stop stays outside" }
+            ex: ["We left early ", { optional: "at six" }, "."]
+          - level: C1
+            point: { en: "parentheses" }
+            rule: { en: "keep the full stop inside when they hold a whole sentence" }
+            ex: ["We left early. ", { optional: "It was raining." }]
+          - level: C1
+            point: { en: "square brackets" }
+            rule: { en: ["add the writer’s words inside a quotation; ", { term: "[sic]" }, " marks a mistake in the original"] }
+            ex: ["‘He ", { target: "[the manager]" }, " said no.’"]
+          - level: C1
+            point: { en: ["ellipsis ", { letter: "..." }] }
+            rule: { en: "three full stops show words left out of a quotation, or a pause" }
+            ex: ["‘The report ", { target: "..." }, " was late.’"]
+          - level: C1
+            point: { en: "slash" }
+            rule: { en: ["joins alternatives, with no spaces round it: ", { term: "and/or" }] }
+            ex: ["Please bring a passport ", { target: "and/or" }, " a driving licence."]
+          - level: C1
+            point: { en: "bullet list" }
+            rule: { en: "a colon follows the lead-in, and every item ends the same way" }
+
+  - title: { en: "Quotations, titles and abbreviations" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            rule: { en: "a quotation inside a quotation takes the other kind of mark" }
+            ex: ["Tom said, ‘Ana called the plan ", { target: "“perfect”" }, " and left.’ ", { variant: ["Tom said, “Ana called the plan ", { target: "‘perfect’" }, " and left.”"], variety: en-US }]
+          - level: C1
+            rule: { en: "a long quotation stands as an indented block, without quotation marks" }
+          - level: C1
+            rule: { en: "titles of books, films, newspapers and albums are in italics" }
+            ex: ["She is reading ", { target: "Emma" }, "."]
+          - level: C1
+            rule: { en: "titles of articles, poems, songs and chapters take quotation marks" }
+            ex: ["I like the poem ", { target: "‘Ozymandias’" }, "."]
+          - level: C1
+            rule: { en: "title case begins every main word; sentence case begins only the first word and names" }
+            ex: { alternatives: [{ target: "How Children Learn to Read" }, { target: "How children learn to read" }] }
+          - level: C1
+            rule: { en: [{ term: "e.g." }, " introduces examples; a comma goes before it, and American English adds one after it"] }
+            ex: ["She likes hot drinks, ", { target: "e.g." }, " tea and cocoa. ", { variant: ["She likes hot drinks, ", { target: "e.g.," }, " tea and cocoa."], variety: en-US }]
+          - level: C1
+            rule: { en: [{ term: "i.e." }, " restates what came before, with the same commas as ", { term: "e.g." }] }
+            ex: ["She is vegetarian, ", { target: "i.e." }, " she eats no meat. ", { variant: ["She is vegetarian, ", { target: "i.e.," }, " she eats no meat."], variety: en-US }]
+
+  - title: { en: "Compare: dash, colon, semicolon and full stop" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: mark, label: { en: "Mark" } }
+          - { key: choice, label: { en: "Choose it to" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            mark: { en: ["colon ", { letter: ":" }] }
+            choice: { en: "explain or list what the first clause announces" }
+            ex: ["She had one fear", { target: ":" }, " heights."]
+          - level: C1
+            mark: { en: ["semicolon ", { letter: ";" }] }
+            choice: { en: "balance two related statements of equal weight" }
+            ex: ["Tom likes tea", { target: ";" }, " Ana likes coffee."]
+          - level: C1
+            mark: { en: ["dash ", { letter: "–" }] }
+            choice: { en: "add an emphatic or informal turn" }
+            ex: ["He promised to call ", { target: "–" }, " he never did."]
+          - level: C1
+            mark: { en: ["full stop ", { letter: "." }] }
+            choice: { en: "keep two statements fully separate" }
+            ex: ["It was late", { target: "." }, " We went home."]
+
+  - title: { en: "Typical errors" }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "She asked where I was going?"
+            right: ["She asked where I was going", { target: "." }]
+            rule: { en: "an indirect question ends with a full stop" }
+          - level: B2
+            wrong: "What a view!!!"
+            right: ["What a view", { target: "!" }]
+            rule: { en: "one exclamation mark is enough" }
+          - level: B2
+            wrong: "It was late, we went home."
+            right: ["It was late", { target: ", so" }, " we went home."]
+            rule: { en: "a comma alone cannot join two main clauses" }
+          - level: B2
+            wrong: "The man in the grey coat, is my uncle."
+            right: [{ subj: "The man in the grey coat" }, " ", { verb: "is" }, " my uncle."]
+            rule: { en: "no comma stands between a subject and its verb" }
+          - level: B2
+            wrong: "My sister, who lives in Leeds is a nurse."
+            right: ["My sister", { target: "," }, " who lives in Leeds", { target: "," }, " is a nurse."]
+            rule: { en: "a non-defining clause needs a comma at both ends" }
+          - level: B2
+            wrong: "The dog wagged it’s tail."
+            right: ["The dog wagged ", { target: "its" }, " tail."]
+            rule: { en: [{ term: "its" }, " shows ownership and takes no apostrophe"] }
+          - level: B2
+            wrong: "Its raining again."
+            right: [{ target: "It’s" }, " raining again."]
+            rule: { en: [{ term: "it’s" }, " = ", { term: "it is" }, " or ", { term: "it has" }] }
+          - level: B2
+            wrong: "two CD’s and three MP’s"
+            right: ["two ", { target: "CDs" }, " and three ", { target: "MPs" }]
+            rule: { en: "a plural takes no apostrophe" }
+          - level: B2
+            wrong: "I need: a pen and a form."
+            right: ["I need ", { target: "a pen" }, " and a form."]
+            rule: { en: "a colon follows a complete clause, never a verb" }
+          - level: B2
+            wrong: "a five-years-old child"
+            right: ["a ", { target: "five-year-old" }, " child"]
+            rule: { en: "a unit in a hyphenated modifier stays singular" }
+          - level: B2
+            wrong: "‘Come in.’ she said."
+            right: ["‘Come in", { target: ",’" }, " she said."]
+            rule: { en: "a comma, not a full stop, ends speech before the speaker" }
+          - level: B2
+            wrong: "My teacher is polish and speaks english."
+            right: ["My teacher is ", { target: "Polish" }, " and speaks ", { target: "English" }, "."]
+            rule: { en: "nationalities and languages take a capital letter" }
+          - level: C1
+            wrong: "She said, that she was ill."
+            right: ["She said ", { target: "that" }, " she was ill."]
+            rule: { en: ["no comma stands before a ", { term: "that" }, "-clause"] }
+          - level: C1
+            wrong: "The hotel however was clean."
+            right: ["The hotel", { target: "," }, " however", { target: "," }, " was clean."]
+            rule: { en: [{ term: "however" }, " inside a clause takes a comma on each side"] }
+          - level: C1
+            wrong: "Having finished she left."
+            right: ["Having finished", { target: "," }, " she left."]
+            rule: { en: "a comma follows an opening participle phrase" }
+          - level: C1
+            wrong: "It rained all day which spoiled the picnic."
+            right: ["It rained all day", { target: ", which" }, " spoiled the picnic."]
+            rule: { en: [{ term: "which" }, " referring to a whole clause follows a comma"] }

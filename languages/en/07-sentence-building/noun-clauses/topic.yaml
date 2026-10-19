@@ -1,0 +1,425 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.noun-clauses
+lang: en
+kind: grammar
+tags: [clauses, noun-clauses, that-clause, wh-clause, whether]
+concepts: [noun-clauses]
+related: [en.sentence-building.reported-speech, en.sentence-building.questions-negatives, en.sentence-building.relative-clauses, en.verbs.gerund-vs-infinitive, en.pronouns.personal-pronouns]
+status: { en: draft }
+
+title: { en: "Noun Clauses" }
+summary:
+  lead:
+    en: ["Noun clauses work as a subject, object or complement and open with ", { term: that }, ", a wh-word, ", { term: if }, " or ", { term: whether }, "."]
+  rule:
+    en: "Inside a noun clause the subject comes before the verb, as in a statement:"
+  ex:
+    examples:
+      - ["I know ", { target: "where she lives" }, "."]
+      - ["Tell me ", { target: "what you want" }, "."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: "Point" } }
+        - { key: rule, label: { en: "Rule" } }
+        - { key: ex, label: { en: "Example" } }
+      rows:
+        - level: B2
+          point: { en: "That-clause" }
+          rule: { en: [{ pattern: [{ term: that }, { slot: subject }, { slot: verb }] }, "; ", { term: that }, " drops after common verbs"] }
+          ex: ["I know ", { target: [{ optional: that }, " he left"] }, "."]
+        - level: B2
+          point: { en: "Wh-clause" }
+          rule: { en: [{ pattern: [{ slot: wh-word }, { slot: subject }, { slot: verb }] }, "; no ", { term: do }, ", ", { term: does }, " or ", { term: did }] }
+          ex: ["Tell me ", { target: "where he lives" }, "."]
+        - level: B2
+          point: { en: "If and whether" }
+          rule: { en: [{ term: if }, " or ", { term: whether }, " after ask and wonder; ", { term: whether }, " after a preposition or ", { term: to }] }
+          ex: ["I wonder ", { target: "whether she knows" }, "."]
+        - level: B2
+          point: { en: "Wh-word and to" }
+          rule: { en: { pattern: [{ slot: wh-word }, to, { slot: V }] } }
+          ex: ["I don't know ", { target: "what to do" }, "."]
+        - level: B2
+          point: { en: "Embedded question" }
+          rule: { en: ["a polite question starts ", { term: "Could you tell me" }, " and keeps statement order"] }
+          ex: [{ target: "Could you tell me" }, " where the station is?"]
+        - level: B2
+          point: { en: "-ever words" }
+          rule: { en: ["words in ", { term: "-ever" }, " mean any person, thing, time, place or way that"] }
+          ex: ["Take ", { target: "whatever you like" }, "."]
+        - level: B2
+          point: { en: "Exclamation" }
+          rule: { en: [{ term: what }, " or ", { term: how }, " opens it; the subject comes before the verb"] }
+          ex: ["I can't believe ", { target: "how beautiful it is" }, "."]
+        - level: C1
+          point: { en: "Noun and clause" }
+          rule: { en: ["the noun names what the clause says: ", { term: "the fact that" }, ", ", { term: "the question whether" }] }
+          ex: [{ target: "Despite the fact that" }, " it was late, we stayed."]
+        - level: C1
+          point: { en: "After be" }
+          rule: { en: [{ term: "The problem is" }, ", ", { term: "This is why" }, ", ", { term: "That's what" }, " + clause"] }
+          ex: ["The problem is ", { target: "where to park" }, "."]
+        - level: C1
+          point: { en: "After a preposition" }
+          rule: { en: ["a wh-word or ", { term: whether }, " follows; before ", { term: that }, " the preposition drops"] }
+          ex: ["It depends on ", { target: "whether we can park" }, "."]
+        - level: C1
+          point: { en: "Verbs of demand" }
+          rule: { en: [{ pattern: [{ alternatives: [insist, demand, recommend] }, that, { slot: subject }, { slot: base verb }] }, "; British English often adds ", { term: should }] }
+          ex: ["She recommends ", { target: "that he rest" }, "."]
+        - level: B2
+          point: { en: "Trap" }
+          rule: { en: ["a noun clause keeps statement order, with no ", { term: do }] }
+          ex: ["I don't know ", { target: "where the station is" }, "."]
+
+sections:
+  - title: { en: "Overview" }
+    role: overview
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Function" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, use: { en: "Subject" }, ex: [{ target: "What she said" }, " surprised me."] }
+          - { level: B2, use: { en: "Object" }, ex: ["I know ", { target: "that he left" }, "."] }
+          - { level: B2, use: { en: "Complement" }, ex: ["The problem is ", { target: "that we have no money" }, "."] }
+          - { level: B2, use: { en: "After a preposition" }, ex: ["I'm interested in ", { target: "what you think" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A noun clause has its own subject and verb and does the work of a noun phrase." }
+            ex: { examples: [["I know ", { target: "the answer" }, "."], ["I know ", { target: "what she said" }, "."]] }
+          - type: note
+            level: B2
+            text: { en: ["Reported statements and questions are noun clauses. See ", { link: "Reported Speech", to: en.sentence-building.reported-speech }, "."] }
+
+  - title: { en: "Form: that-clauses" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: after, label: { en: "Follows" } }
+          - { key: words, label: { en: "Common words" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, after: { en: "A verb" }, words: { alternatives: [believe, say, know, hope, decide, realise, discover] }, ex: ["I realised ", { target: "that I had lost my keys" }, "."] }
+          - { level: B2, after: { en: "An adjective" }, words: { alternatives: [afraid, certain, glad, sure, aware, surprised] }, ex: ["I'm glad ", { target: "that you came" }, "."] }
+          - { level: B2, after: { en: "A noun" }, words: { alternatives: [idea, fact, news, hope, belief, claim] }, ex: ["We heard the news ", { target: "that she had won" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: That }, " is optional after common verbs and adjectives, and speech usually drops it."] }
+            ex: ["I hope ", { optional: that }, " you feel better."]
+          - type: rule
+            level: B2
+            text: { en: ["Formal verbs and nouns keep ", { term: that }, "."] }
+            ex: { examples: [["The report states ", { target: that }, " prices fell."], ["He has the idea ", { target: that }, " it is easy."]] }
+
+  - title: { en: "That-clauses as subject" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, form: { pattern: [That, { slot: clause }, { slot: verb }] }, ex: [{ target: "That he left" }, " surprised me."] }
+          - { level: B2, form: { pattern: [It, { slot: verb }, { slot: person }, that, { slot: clause }] }, ex: [{ target: "It surprised me that he left" }, "."] }
+          - { level: B2, form: { pattern: [It, is, { slot: adjective }, that, { slot: clause }] }, ex: [{ target: "It is clear that she is tired" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["A ", { term: that }, "-clause subject sounds formal; speech prefers ", { term: it }, " first."] }
+
+  - title: { en: "Form: wh-clauses" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: "Pattern" } }
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, form: { pattern: [{ slot: wh-word }, { slot: subject }, { slot: verb }] }, rule: { en: ["statement order, with no ", { term: do }, ", ", { term: does }, " or ", { term: did }] }, ex: ["Tell me ", { target: "where he lives" }, "."] }
+          - { level: B2, form: { pattern: [{ slot: wh-word }, { slot: verb }] }, rule: { en: "the wh-word is the subject, so the verb follows it" }, ex: ["I wonder ", { target: "who called" }, "."] }
+          - { level: B2, form: { pattern: [{ slot: { en: wh-clause } }, { slot: { en: singular verb } }] }, rule: { en: "a wh-clause as subject takes a singular verb" }, ex: { examples: [[{ target: "What he does" }, " is his business."], [{ target: "What they need" }, " is more time."]] } }
+
+  - title: { en: "Embedded questions" }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: point, label: { en: "Change" } }
+          - { key: direct, label: { en: "Direct question" } }
+          - { key: embedded, label: { en: "Embedded question" } }
+        rows:
+          - level: B2
+            point: { en: "The subject goes before the verb" }
+            direct: "Where is the station?"
+            embedded: ["Could you tell me ", { target: "where the station is" }, "?"]
+          - level: B2
+            point: { en: [{ term: do }, ", ", { term: does }, " and ", { term: did }, " drop"] }
+            direct: "What time does it start?"
+            embedded: ["Do you know ", { target: "what time it starts" }, "?"]
+          - level: B2
+            point: { en: [{ term: if }, " or ", { term: whether }, " replaces the inversion"] }
+            direct: "Is she at home?"
+            embedded: ["I wonder ", { target: "whether she is at home" }, "."]
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, use: { en: "A polite request for information" }, ex: [{ target: "Could you tell me" }, " how much this costs?"] }
+          - { level: B2, use: { en: "A question to someone who may know" }, ex: [{ target: "Do you know" }, " who is coming?"] }
+          - { level: B2, use: { en: "A doubt, or a question to yourself" }, ex: [{ target: "I wonder" }, " why she left."] }
+          - { level: B2, use: { en: "Not knowing" }, ex: [{ target: "I have no idea" }, " when the shop opens."] }
+
+  - title: { en: "Wh-words with to" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            form: { pattern: [{ slot: wh-word }, to, { slot: V }] }
+            ex: { equivalence: [["I don't know ", { target: "what to do" }, "."], ["I don't know ", { target: "what I should do" }, "."]] }
+          - level: B2
+            form: { pattern: [whether, to, { slot: V }] }
+            ex: { equivalence: [["We can't decide ", { target: "whether to go" }, "."], ["We can't decide ", { target: "whether we should go" }, "."]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "The to-clause has no subject; the doer is the subject or the object of the main verb." }
+            ex: { examples: [["She doesn't know ", { target: "where to park" }, "."], ["He told me ", { target: "where to park" }, "."]] }
+          - type: note
+            level: B2
+            text: { en: ["The verbs that take these phrases are listed in ", { link: "Gerund vs Infinitive", to: en.verbs.gerund-vs-infinitive }, "."] }
+
+  - title: { en: "Compare: if and whether" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: point, label: { en: "Point" } }
+          - { key: if, label: "if" }
+          - { key: whether, label: "whether" }
+        rows:
+          - level: B2
+            point: { en: "After ask, wonder, know, find out" }
+            if: ["I wonder ", { target: if }, " she knows."]
+            whether: ["I wonder ", { target: whether }, " she knows."]
+          - level: B2
+            point: { en: "After a preposition" }
+            whether: ["It depends on ", { target: whether }, " it rains."]
+          - level: B2
+            point: { en: "Before a to-infinitive" }
+            whether: ["I can't decide ", { target: whether }, " to go."]
+          - level: B2
+            point: { en: "At the start of a sentence" }
+            whether: [{ target: Whether }, " she agrees doesn't matter."]
+          - level: B2
+            point: { en: ["Right before ", { term: "or not" }] }
+            whether: ["I'll ask ", { target: "whether or not" }, " she agrees."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: If }, " is more usual in speech; ", { term: whether }, " is more usual in formal writing."] }
+          - type: rule
+            level: B2
+            text: { en: ["A noun-clause ", { term: if }, " reports a question; a conditional ", { term: if }, " sets a condition."] }
+            ex: { contrast: [["I wonder ", { target: "if it will rain" }, "."], ["I stay in ", { target: "if it rains" }, "."]] }
+          - type: note
+            level: B2
+            text: { en: ["Conditional clauses are in ", { link: "Conditionals: Zero, First and Second", to: en.sentence-building.conditionals-0-1-2 }, "."] }
+
+  - title: { en: "Words in -ever" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { en: "Word" } }
+          - { key: use, label: { en: "Meaning" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, word: whoever, use: { en: "any person who" }, ex: ["I'll talk to ", { target: "whoever is in charge" }, "."] }
+          - { level: B2, word: whatever, use: { en: "anything that" }, ex: ["Take ", { target: "whatever you like" }, "."] }
+          - { level: B2, word: whichever, use: { en: "any one that" }, ex: ["Choose ", { target: "whichever is cheaper" }, "."] }
+          - { level: B2, word: whenever, use: { en: "at any time that" }, ex: ["Call me ", { target: "whenever you want" }, "."] }
+          - { level: B2, word: wherever, use: { en: "in any place that" }, ex: ["Sit ", { target: "wherever you like" }, "."] }
+          - { level: B2, word: however, use: { en: "in any way that" }, ex: ["Do it ", { target: "however you want" }, "."] }
+
+  - title: { en: "Exclamative clauses" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, form: { pattern: [what, a, { slot: noun }, { slot: subject }, { slot: verb }] }, ex: { examples: [[{ target: "What a mess it was" }, "!"], ["I can't believe ", { target: "what a mess it is" }, "."]] } }
+          - { level: B2, form: { pattern: [how, { slot: adjective }, { slot: subject }, { slot: verb }] }, ex: { examples: [[{ target: "How cold it is" }, "!"], ["I can't believe ", { target: "how beautiful it is" }, "."]] } }
+          - { level: B2, form: { pattern: [how, { slot: adverb }, { slot: subject }, { slot: verb }] }, ex: { examples: [[{ target: "How fast he runs" }, "!"], ["Did you see ", { target: "how fast he runs" }, "?"]] } }
+
+  - title: { en: "Appositive clauses" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: phrase, label: { en: "Phrase" } }
+          - { key: use, label: { en: "Use" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, phrase: { pattern: [the, { alternatives: [fact, idea, claim, belief] }, that, { slot: clause }] }, use: { en: "the noun names what the clause says" }, ex: ["The claim ", { target: "that prices will fall" }, " is false."] }
+          - { level: C1, phrase: { pattern: [the question, whether, { slot: clause }] }, use: { en: [{ term: question }, " takes ", { term: whether }] }, ex: ["The question ", { target: "whether we can afford it" }, " remains."] }
+          - { level: C1, phrase: despite the fact that, use: { en: "although" }, ex: [{ target: "Despite the fact that" }, " it was late, we stayed."] }
+          - { level: C1, phrase: in view of the fact that, use: { en: "because of; formal" }, ex: [{ target: "In view of the fact that" }, " prices rose, we waited."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["An appositive clause names the noun's content; a relative ", { term: that }, " clause has a gap and can become ", { term: which }, "."] }
+            ex: { contrast: [["the news ", { target: "that she won" }], ["the news ", { target: "that she told us" }]] }
+
+  - title: { en: "Wh-clauses after be" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, use: { en: ["A problem or question: ", { term: "The problem is" }, ", ", { term: "The question is" }] }, ex: { examples: [["The problem is ", { target: "where to park" }, "."], ["The question is ", { target: "whether we can afford it" }, "."]] } }
+          - { level: C1, use: { en: ["A reason: ", { term: "This is why" }] }, ex: ["This is ", { target: "why I called" }, "."] }
+          - { level: C1, use: { en: ["A way: ", { term: "That's how" }] }, ex: ["That's ", { target: "how it works" }, "."] }
+          - { level: C1, use: { en: ["A place: ", { term: "This is where" }] }, ex: ["This is ", { target: "where we met" }, "."] }
+          - { level: C1, use: { en: ["A thing meant: ", { term: "That's what" }] }, ex: ["That's ", { target: "what I mean" }, "."] }
+
+  - title: { en: "Clauses after prepositions and adjectives" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: phrase, label: { en: "Phrase" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, phrase: { pattern: [{ alternatives: [aware, sure] }, of, { slot: wh-word }] }, ex: { examples: [["She is ", { target: "aware of how much it costs" }, "."], ["I'm not ", { target: "sure of what he meant" }, "."]] } }
+          - { level: C1, phrase: { pattern: [depends on, whether, { slot: clause }] }, ex: ["It ", { target: "depends on whether we can park" }, "."] }
+          - { level: C1, phrase: { pattern: [the extent, to which, { slot: clause }] }, ex: ["The report shows ", { target: "the extent to which prices have risen" }, "."] }
+          - { level: C1, phrase: { pattern: [in what way, { slot: clause }] }, ex: ["She asked ", { target: "in what way the plan had failed" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Before a ", { term: that }, "-clause the preposition drops, or ", { term: "the fact" }, " carries it."] }
+            ex: { equivalence: [["She is aware ", { target: that }, " it closed."], ["She is aware ", { target: "of the fact that" }, " it closed."]] }
+
+  - title: { en: "Compare: free relative and interrogative clauses" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: point, label: { en: "Point" } }
+          - { key: relative, label: { en: "Free relative" } }
+          - { key: interrogative, label: { en: "Interrogative" } }
+        rows:
+          - level: C1
+            point: { en: "Meaning" }
+            relative: { en: [{ term: what }, " = the thing that"] }
+            interrogative: { en: [{ term: what }, " = which thing"] }
+          - level: C1
+            point: { en: "Example" }
+            relative: ["I eat ", { target: "what she cooks" }, "."]
+            interrogative: ["I wonder ", { target: "what she cooks" }, "."]
+          - level: C1
+            point: { en: "Test" }
+            relative: { en: ["replace ", { term: what }, " with ", { term: "the thing that" }] }
+            interrogative: { en: "turn the clause into a direct question" }
+          - level: C1
+            point: { en: "Result" }
+            relative: ["I eat ", { target: "the food that she cooks" }, "."]
+            interrogative: { target: "What does she cook?" }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Verbs such as ", { term: know }, ", ", { term: remember }, " and ", { term: see }, " take both kinds; the test shows which a sentence means."] }
+            ex: ["I remember ", { target: "what she said" }, "."]
+
+  - title: { en: "That-clauses after verbs of demand" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: "Pattern" } }
+          - { key: rule, label: { en: "Rule" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, form: { pattern: [{ slot: verb }, that, { slot: subject }, { slot: base verb }] }, rule: { en: "the subjunctive: the base verb for every subject" }, ex: ["The manager demanded ", { target: "that he apologise" }, "."] }
+          - { level: C1, form: { pattern: [{ slot: verb }, that, { slot: subject }, should, { slot: base verb }] }, rule: { en: "the usual British form" }, ex: ["The manager demanded ", { target: "that he should apologise" }, "."] }
+          - { level: C1, form: { pattern: [{ slot: verb }, that, { slot: subject }, { alternatives: [should not, not] }, { slot: base verb }] }, rule: { en: ["negative: ", { term: not }, " before the verb, with no ", { term: do }] }, ex: { examples: [["We suggest ", { target: "that he should not wait" }, "."], ["We suggest ", { target: "that he not wait" }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Verbs of demand and advice take it: ", { term: insist }, ", ", { term: demand }, ", ", { term: require }, ", ", { term: request }, ", ", { term: suggest }, ", ", { term: recommend }, ", ", { term: propose }, "."] }
+          - type: note
+            level: C1
+            text: { en: ["Adjectives such as ", { term: essential }, " take the same clause. See ", { link: "The Subjunctive", to: en.sentence-building.subjunctive }, "."] }
+
+  - title: { en: "Typical errors" }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "I don't know where is the station."
+            right: ["I don't know where ", { target: "the station is" }, "."]
+            rule: { en: "the subject goes before the verb in a noun clause" }
+          - level: B2
+            wrong: "Tell me what do you want."
+            right: ["Tell me what ", { target: "you want" }, "."]
+            rule: { en: ["a noun clause takes no ", { term: do }] }
+          - level: B2
+            wrong: "She asked me if or not I was ready."
+            right: ["She asked me ", { target: "whether or not" }, " I was ready."]
+            rule: { en: [{ term: "or not" }, " right after the word takes ", { term: whether }] }
+          - level: B2
+            wrong: "I can't decide if to go."
+            right: ["I can't decide ", { target: whether }, " to go."]
+            rule: { en: [{ term: whether }, " goes before a ", { term: to }, "-infinitive"] }
+          - level: B2
+            wrong: "What he does are his business."
+            right: ["What he does ", { target: is }, " his business."]
+            rule: { en: "a wh-clause as subject takes a singular verb" }
+          - level: C1
+            wrong: "Despite he was tired, he came."
+            right: [{ target: "Despite the fact that" }, " he was tired, he came."]
+            rule: { en: [{ term: despite }, " takes a noun phrase or ", { term: "the fact that" }] }
+          - level: C1
+            wrong: "The problem is where do we park."
+            right: ["The problem is where ", { target: "we park" }, "."]
+            rule: { en: "a wh-clause after be keeps statement order" }
+          - level: C1
+            wrong: "He is afraid of that he will fail."
+            right: ["He is afraid ", { target: that }, " he will fail."]
+            rule: { en: ["the preposition drops before ", { term: that }] }
+          - level: C1
+            wrong: "The question that we can afford it remains."
+            right: ["The question ", { target: whether }, " we can afford it remains."]
+            rule: { en: [{ term: question }, " takes ", { term: whether }] }
+          - level: C1
+            wrong: "I am aware about how much it costs."
+            right: ["I am aware ", { target: of }, " how much it costs."]
+            rule: { en: [{ term: aware }, " takes ", { term: of }, " before a wh-clause"] }

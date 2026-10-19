@@ -1,0 +1,518 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.word-formation.compounds-conversion
+lang: en
+kind: grammar
+tags: [word formation, compounds, conversion, hyphens, acronyms, blends]
+concepts: [compound-words]
+related: [en.nouns-determiners.plurals, en.adjectives-adverbs.adjective-order, en.verbs.phrasal-verbs-core, en.nouns-determiners.possessive-s]
+status: { en: draft }
+
+title: { en: Compounds and Conversion }
+summary:
+  lead:
+    en: Compounds join two words into one meaning, and conversion gives a word a new class with no change of form.
+  rule:
+    en: "A number in a compound adjective keeps its noun singular:"
+  ex: { examples: [["a ", { target: ten-minute }, " walk"], ["a ", { target: five-year-old }, " boy."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: Compound noun }, rule: { en: "the last word is the head; the first word narrows it" }, ex: { examples: [["a ", { target: bus stop }], ["a ", { target: swimming pool }]] } }
+        - { level: B2, point: { en: Compound adjective }, rule: { en: "a singular noun after a number; a participle after a noun or adverb" }, ex: { examples: [["a ", { target: ten-minute }, " walk"], [{ target: home-made }, " jam"], ["a ", { target: well-known }, " author"]] } }
+        - { level: B2, point: { en: Conversion }, rule: { en: "a word changes class with no change of form; endings are regular" }, ex: { examples: [["I'll ", { target: email }, " you."], ["Let's go for a ", { target: run }, "."]] } }
+        - { level: B2, point: { en: Short forms }, rule: { en: ["clippings and blends are words; initialisms take ", { term: a }, " or ", { term: an }, " by sound"] }, ex: { examples: [["I go to the ", { target: gym }, "."], ["an ", { target: MP }]] } }
+        - { level: C1, point: { en: Meaning relation }, rule: { en: "the first noun gives the material, purpose, place, agent or time" }, ex: { examples: [["a ", { target: gold ring }], ["a ", { target: bus driver }]] } }
+        - { level: C1, point: { en: Plural modifier }, rule: { en: "a few modifiers keep a plural form" }, ex: { examples: [["a ", { target: sports }, " car"], ["a ", { target: women's }, " magazine"]] } }
+        - { level: C1, point: { en: Reduplication }, rule: { en: "the vowel changes in the repeat; i comes before a or o" }, ex: { examples: [{ target: zigzag }, { target: ping-pong }] } }
+        - { level: C1, point: { en: Productive element }, rule: { en: ["an element such as ", { term: "-free" }, ", ", { term: "-proof" }, " or ", { term: "-led" }, " makes new adjectives"] }, ex: ["a ", { target: sugar-free }, " drink"] }
+        - { level: C2, point: { en: Binomial }, rule: { en: "the order is fixed by length, sound or custom" }, ex: { examples: [{ target: fish and chips }, { target: null and void }] } }
+        - { level: C2, point: { en: Compound or phrase }, rule: { en: "a compound takes first-word stress and can mean more than its parts" }, ex: { contrast: [["a ", { stress: ˈblack }, "bird"], ["a black ", { stress: ˈbird }]] } }
+        - { level: C2, point: { en: Creative conversion }, rule: { en: "nouns become verbs and phrases become modifiers for one occasion" }, ex: { examples: [["They ", { target: gifted }, " us a painting."], ["an ", { target: I-told-you-so }, " look"]] } }
+        - { level: B2, point: { en: Trap }, rule: { en: "the noun after a number stays singular" }, ex: ["a ", { target: five-year-old }, " boy"] }
+
+sections:
+  - title: { en: "Form: compound nouns" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: words, label: { en: Compounds } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            pattern: { pattern: [{ slot: noun }, { slot: noun }] }
+            words: { examples: [toothbrush, bus stop, football] }
+            ex: ["We wait at the ", { target: bus stop }, "."]
+          - level: B2
+            pattern: { pattern: [{ slot: adjective }, { slot: noun }] }
+            words: { examples: [blackboard, software, shortcut] }
+            ex: ["The teacher wrote on the ", { target: blackboard }, "."]
+          - level: B2
+            pattern: { pattern: [{ slot: V-ing }, { slot: noun }] }
+            words: { examples: [swimming pool, washing machine, waiting room] }
+            ex: ["The ", { target: washing machine }, " is broken."]
+          - level: B2
+            pattern: { pattern: [{ slot: noun }, { slot: V-ing }] }
+            words: { examples: [sunbathing, babysitting, house-hunting] }
+            ex: ["She earns extra money from ", { target: babysitting }, "."]
+          - level: B2
+            pattern: { pattern: [{ slot: verb }, { slot: { en: particle } }] }
+            words: { examples: [check-in, breakdown, [takeaway, " ", { variant: takeout, variety: en-US }]] }
+            ex: ["A ", { target: breakdown }, " delayed us by an hour."]
+          - level: B2
+            pattern: { pattern: [{ slot: noun }, { slot: { en: preposition } }, { slot: noun }] }
+            words: { examples: [mother-in-law, editor-in-chief, passer-by] }
+            ex: ["My ", { target: mother-in-law }, " lives in Leeds."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "The last word is the head; the first word tells which kind." }
+            ex: ["A ", { target: toothbrush }, " is a kind of brush."]
+          - type: rule
+            level: B2
+            text: { en: "Closed, hyphenated and open spellings all occur; the dictionary sets which one a compound takes." }
+            ex: { examples: [{ target: bedroom }, { target: mother-in-law }, { target: post office }] }
+          - type: rule
+            level: B2
+            text: { en: "A phrasal verb is two words; the noun made from it is one word or hyphenated." }
+            ex: { contrast: [["We ", { target: check in }, " at six."], ["The ", { target: check-in }, " desk opens at six."]] }
+          - type: note
+            level: B2
+            text: { en: ["Plural of a compound: ", { link: Plurals, to: en.nouns-determiners.plurals }, ". Stress of a compound: ", { link: Sounds and IPA, to: en.foundations.pronunciation-ipa }, ". Phrasal verbs: ", { link: "Phrasal Verbs: Core", to: en.verbs.phrasal-verbs-core }, "."] }
+
+  - title: { en: "Form: compound adjectives" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: words, label: { en: Compounds } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            pattern: { pattern: [{ slot: number }, { slot: hyphen }, { slot: singular noun }] }
+            words: { examples: [five-year-old, three-course, two-bedroom] }
+            ex: { examples: [["We took a ", { target: ten-minute }, " walk."], ["They rented a ", { target: two-bedroom }, " flat ", { variant: apartment, variety: en-US }, "."]] }
+          - level: B2
+            pattern: { pattern: [{ slot: noun }, { slot: { en: participle } }] }
+            words: { examples: [home-made, hand-knitted, man-made] }
+            ex: ["She sells ", { target: home-made }, " jam."]
+          - level: B2
+            pattern: { pattern: [{ slot: adverb }, { slot: { en: participle } }] }
+            words: { examples: [well-known, hard-working, fast-moving] }
+            ex: ["She is a ", { target: well-known }, " author."]
+          - level: B2
+            pattern: { pattern: [{ slot: adjective }, { slot: { en: participle } }] }
+            words: { examples: [long-lasting, good-looking, old-fashioned] }
+            ex: ["This paint is ", { target: long-lasting }, "."]
+          - level: B2
+            pattern: { pattern: [{ slot: noun }, { slot: adjective }] }
+            words: { examples: [world-famous, lifelong, snow-white] }
+            ex: ["It is a ", { target: world-famous }, " museum."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "The noun after a number stays singular in a compound adjective." }
+            ex: { examples: [["a ", { target: five-year-old }, " boy"], ["a ", { target: three-course }, " meal"]] }
+          - type: rule
+            level: B2
+            text: { en: "The first word carries the comparison." }
+            ex: { examples: [{ mapping: [well-known, { target: better-known }] }, { mapping: [well-known, { target: best-known }] }, { mapping: [good-looking, { target: better-looking }] }] }
+          - type: note
+            level: B2
+            text: { en: ["Hyphens in compound adjectives: ", { link: Punctuation and Capital Letters, to: en.foundations.punctuation }, ". Their place before or after a noun: ", { link: Adjectives and Adjective Order, to: en.adjectives-adverbs.adjective-order }, "."] }
+
+  - title: { en: Compound verbs }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: source, label: { en: Source } }
+          - { key: words, label: { en: Verbs } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            source: { en: "back-formation: a noun compound loses its ending" }
+            words: { examples: [{ mapping: [babysitter, { target: babysit }] }, { mapping: [sightseeing, { target: sightsee }] }, { mapping: [proofreader, { target: proofread }] }] }
+            ex: ["I ", { target: babysit }, " for my neighbours on Fridays."]
+          - level: B2
+            source: { en: "conversion: a noun compound used as a verb" }
+            words: { examples: [brainstorm, carpool, kick-start] }
+            ex: ["Let's ", { target: brainstorm }, " some ideas."]
+          - level: B2
+            source: { en: two words joined as a verb }
+            words: { examples: [spoon-feed, hand-pick, double-check] }
+            ex: ["Please ", { target: double-check }, " the address."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A compound verb inflects like its last word." }
+            ex: { examples: [{ mapping: [babysit, { target: babysat }] }, { mapping: [spoon-feed, { target: spoon-fed }] }, { mapping: [kick-start, { target: kick-started }] }] }
+
+  - title: { en: Conversion }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: direction, label: { en: Direction } }
+          - { key: words, label: { en: Words } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            direction: { mapping: [{ slot: noun }, { slot: verb }] }
+            words: { examples: [email, text, google, bottle] }
+            ex: ["I'll ", { target: email }, " you the photos."]
+          - level: B2
+            direction: { mapping: [{ slot: verb }, { slot: noun }] }
+            words: { examples: [run, walk, drink, look] }
+            ex: ["Let's go for a ", { target: run }, "."]
+          - level: B2
+            direction: { mapping: [{ slot: adjective }, { slot: verb }] }
+            words: { examples: [calm, clean, empty] }
+            ex: ["Please ", { target: empty }, " your pockets."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A noun made from a verb often follows have, take or go for." }
+            ex: { examples: [["have a ", { target: look }], ["take a ", { target: walk }], ["go for a ", { target: swim }]] }
+          - type: rule
+            level: B2
+            text: { en: "A converted verb takes the regular endings." }
+            ex: { examples: [{ mapping: [google, { target: googled }] }, { mapping: [email, { target: emailed }] }, { mapping: [text, { target: texted }] }] }
+          - type: rule
+            level: B2
+            text: { en: "Some noun and verb pairs differ in stress." }
+            ex: { contrast: [["an ", { stress: ˈin }, "crease"], ["to in", { stress: ˈcrease }]] }
+          - type: note
+            level: B2
+            text: { en: ["More pairs: ", { link: Sounds and IPA, to: en.foundations.pronunciation-ipa }, "."] }
+
+  - title: { en: Shortened words and blends }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Kind } }
+          - { key: words, label: { en: Words } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            kind: { en: clipping }
+            words: { examples: [{ mapping: [influenza, { target: flu }] }, { mapping: [examination, { target: exam }] }, { mapping: [gymnasium, { target: gym }] }, { mapping: [refrigerator, { target: fridge }] }] }
+            ex: ["She is good at ", { target: maths }, " ", { variant: math, variety: en-US }, "."]
+          - level: B2
+            kind: { en: blend }
+            words: { examples: [{ mapping: [{ pattern: [breakfast, lunch] }, { target: brunch }] }, { mapping: [{ pattern: [smoke, fog] }, { target: smog }] }, { mapping: [{ pattern: [motor, hotel] }, { target: motel }] }, { mapping: [{ pattern: [Britain, exit] }, { target: Brexit }] }] }
+            ex: ["We had ", { target: brunch }, " at eleven."]
+          - level: B2
+            kind: { en: "acronym, said as a word" }
+            words: { examples: [[NATO, " ", { ipa: ˈneɪtəʊ }], laser, radar] }
+            ex: ["The ", { target: laser }, " cut through the metal."]
+          - level: B2
+            kind: { en: "initialism, said letter by letter" }
+            words: { examples: [BBC, UK, FAQ, DVD] }
+            ex: ["The answer is on the ", { target: FAQ }, " page."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["Choose ", { term: a }, " or ", { term: an }, " by the first sound of an initialism."] }
+            ex: { examples: [["an ", { target: MP }], ["an ", { target: FAQ }], ["a ", { target: UK }, " visa"]] }
+          - type: rule
+            level: B2
+            text: { en: "An initialism adds -s with no apostrophe." }
+            ex: { examples: [{ mapping: [CD, { target: CDs }] }, { mapping: [MP, { target: MPs }] }] }
+          - type: rule
+            level: B2
+            text: { en: "British style writes an initialism without full stops." }
+            ex: { examples: [{ target: BBC }, { target: UK }, { target: NATO }] }
+
+  - title: { en: Meaning relations in noun compounds }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: relation, label: { en: Relation } }
+          - { key: compound, label: { en: Compound } }
+          - { key: paraphrase, label: { en: Paraphrase } }
+        rows:
+          - level: C1
+            relation: { en: material }
+            compound: ["a ", { target: gold ring }]
+            paraphrase: ["a ring ", { target: made of }, " gold"]
+          - level: C1
+            relation: { en: purpose }
+            compound: ["a ", { target: tea cup }]
+            paraphrase: ["a cup ", { target: for }, " tea"]
+          - level: C1
+            relation: { en: place }
+            compound: ["the ", { target: city centre }, " ", { variant: city center, variety: en-US }]
+            paraphrase: ["the centre ", { target: of }, " the city"]
+          - level: C1
+            relation: { en: agent }
+            compound: ["a ", { target: bus driver }]
+            paraphrase: ["a person ", { target: who drives }, " buses"]
+          - level: C1
+            relation: { en: time }
+            compound: { target: morning coffee }
+            paraphrase: ["coffee ", { target: in the morning }]
+          - level: C1
+            relation: { en: topic }
+            compound: ["a ", { target: history book }]
+            paraphrase: ["a book ", { target: about }, " history"]
+      - type: comparison
+        columns:
+          - { key: compound, label: { en: Compound } }
+          - { key: one, label: { en: One reading } }
+          - { key: two, label: { en: Another reading } }
+        rows:
+          - { level: C1, compound: ["a ", { target: French teacher }], one: "a teacher of French", two: "a teacher from France" }
+          - { level: C1, compound: ["a ", { target: Chinese restaurant owner }], one: "the owner of a Chinese restaurant", two: "an owner who is Chinese" }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "Context, and in speech stress, shows which reading is meant." }
+          - type: rule
+            level: C1
+            text: { en: "Break a long chain with a preposition, so that each noun has one job." }
+            ex: { contrast: [["a ", { target: student exam preparation }, " course"], ["a course ", { target: to prepare students for exams }]] }
+          - type: rule
+            level: C1
+            text: { en: ["A compound names a kind; ", { term: "'s" }, " or ", { term: of }, " names an owner or a whole."] }
+            ex: { examples: [["a ", { target: bus }, " ticket"], ["the ", { target: manager's }, " office"], ["the roof ", { target: of }, " the house"]] }
+          - type: note
+            level: C1
+            text: { en: ["Owner or whole: ", { link: "Possessive 's", to: en.nouns-determiners.possessive-s }, "."] }
+
+  - title: { en: Noun modifiers that keep a plural }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Kind } }
+          - { key: words, label: { en: Compounds } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C1
+            kind: { en: a plural that names a class }
+            words: { examples: [sports car, clothes shop, goods train] }
+            ex: ["He drives a ", { target: sports car }, "."]
+          - level: C1
+            kind: { en: a plural with its own meaning }
+            words: { examples: [savings account, arms race, customs officer] }
+            ex: ["She opened a ", { target: savings account }, " last year."]
+          - level: C1
+            kind: { en: an irregular plural with 's }
+            words: { examples: [women's magazine, men's shoes, children's book] }
+            ex: ["She reads a ", { target: women's }, " magazine on the train."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The plural names a whole class or set, and the head noun can still be plural." }
+            ex: { examples: [["a ", { target: sports car }], ["two ", { target: sports cars }]] }
+          - type: note
+            level: C1
+            text: { en: ["The 's of a classifying modifier: ", { link: "Possessive 's", to: en.nouns-determiners.possessive-s }, "."] }
+
+  - title: { en: Reduplication }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Kind } }
+          - { key: words, label: { en: Words } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C1
+            kind: { en: the same word twice }
+            words: { examples: [hush-hush, so-so, no-no] }
+            ex: { examples: [["The deal is ", { target: hush-hush }, "."], ["The food was ", { target: so-so }, "."]] }
+          - level: C1
+            kind: { en: a change of vowel }
+            words: { examples: [flip-flop, tick-tock, zigzag, ping-pong] }
+            ex: { examples: [["The clock went ", { target: tick-tock }, "."], ["We played ", { target: ping-pong }, " after lunch."]] }
+          - level: C1
+            kind: { en: a rhyme }
+            words: { examples: [hocus-pocus, razzle-dazzle, willy-nilly] }
+            ex: { examples: [["The magician said ", { target: hocus-pocus }, "."], ["Don't spend money ", { target: willy-nilly }, "."]] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "With a change of vowel, i comes first and a or o follows." }
+            ex: { examples: [{ target: zigzag }, { target: ping-pong }, { target: tick-tock }] }
+          - type: rule
+            level: C1
+            text: { en: "Reduplications are informal and often imitate a sound or a movement." }
+            ex: ["The tap went ", { target: drip-drop }, " all night."]
+
+  - title: { en: Productive second elements }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: element, label: { en: Element } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, element: { term: "-free" }, meaning: { en: without }, ex: ["a ", { target: sugar-free }, " drink"] }
+          - { level: C1, element: { term: "-proof" }, meaning: { en: protected against }, ex: ["a ", { target: waterproof }, " coat"] }
+          - { level: C1, element: { term: "-friendly" }, meaning: { en: good or safe for }, ex: ["a ", { target: child-friendly }, " café"] }
+          - { level: C1, element: { term: "-led" }, meaning: { en: directed by }, ex: ["a ", { target: teacher-led }, " class"] }
+          - { level: C1, element: { term: "-based" }, meaning: { en: centred on }, ex: ["a ", { target: home-based }, " job"] }
+          - { level: C1, element: { term: "-related" }, meaning: { en: connected with }, ex: ["a ", { target: stress-related }, " illness"] }
+          - { level: C1, element: { term: "-wise" }, meaning: { en: "as regards, informal" }, ex: [{ target: Money-wise }, ", we are fine."] }
+          - { level: C1, element: { term: "-minded" }, meaning: { en: with that attitude }, ex: ["an ", { target: open-minded }, " manager"] }
+          - { level: C1, element: { term: "-like" }, meaning: { en: similar to }, ex: ["She moved with ", { target: catlike }, " grace."] }
+          - { level: C1, element: { term: "-worthy" }, meaning: { en: deserving of }, ex: ["It is a ", { target: newsworthy }, " story."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "A hyphen binds each compound in a chain of modifiers before a noun." }
+            ex: ["a ", { target: low-cost }, ", ", { target: family-run }, " hotel"]
+          - type: rule
+            level: C1
+            text: { en: "Two compounds that share their last part leave the first with a hanging hyphen." }
+            ex: ["a ", { target: two- or three-bedroom }, " flat ", { variant: apartment, variety: en-US }]
+
+  - title: { en: Frozen binomials }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: order, label: { en: Order set by } }
+          - { key: words, label: { en: Binomials } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C2
+            order: { en: the shorter word first }
+            words: { examples: [salt and pepper, bed and breakfast, time and money] }
+            ex: ["Pass the ", { target: salt and pepper }, ", please."]
+          - level: C2
+            order: { en: the higher vowel first }
+            words: { examples: [this and that, in and out, give and take] }
+            ex: ["There was a lot of ", { target: give and take }, " in the talks."]
+          - level: C2
+            order: { en: custom }
+            words: { examples: [fish and chips, black and white, ladies and gentlemen] }
+            ex: { examples: [["We had ", { target: fish and chips }, " by the sea."], ["Good evening, ", { target: ladies and gentlemen }, "."]] }
+          - level: C2
+            order: { en: a legal pair of near-synonyms }
+            words: { examples: [aid and abet, cease and desist, "null and void"] }
+            ex: ["The contract is now ", { target: null and void }, "."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "A frozen binomial keeps its order in every sentence." }
+            ex: ["It was a matter of ", { target: life and death }, "."]
+
+  - title: { en: Headless compounds }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: words, label: { en: Compounds } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C2
+            pattern: { pattern: [{ slot: adjective }, { slot: noun }] }
+            words: { examples: [redhead, paperback, greenhorn] }
+            ex: ["She is a ", { target: redhead }, "."]
+          - level: C2
+            pattern: { pattern: [{ slot: verb }, { slot: noun }] }
+            words: { examples: [pickpocket, scarecrow, killjoy, turncoat] }
+            ex: ["The ", { target: pickpocket }, " ran off with my wallet."]
+          - level: C2
+            pattern: { pattern: [{ slot: adjective }, { slot: plural noun }] }
+            words: { examples: [lazybones, smarty-pants] }
+            ex: ["Get up, you ", { target: lazybones }, "!"]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "The head lies outside the compound: a redhead names the person who has red hair." }
+            ex: ["A ", { target: redhead }, " sat beside me."]
+
+  - title: { en: "Compare: compound and phrase" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: point, label: { en: Point } }
+          - { key: compound, label: { en: Compound } }
+          - { key: phrase, label: { en: Phrase } }
+        rows:
+          - { level: C2, point: { en: Meaning }, compound: ["a ", { target: blackbird }, " ", { gloss: { en: "= a kind of bird" } }], phrase: ["a ", { target: black bird }, " ", { gloss: { en: "= any bird that is black" } }] }
+          - { level: C2, point: { en: Stress }, compound: ["a ", { stress: ˈblack }, "bird"], phrase: ["a black ", { stress: ˈbird }] }
+          - { level: C2, point: { en: Degree word }, compound: { en: "the first part takes none" }, phrase: ["a ", { target: very black }, " bird"] }
+          - { level: C2, point: { en: Idiom }, compound: ["a ", { target: hot dog }, " ", { gloss: { en: "= a sausage in a bun" } }], phrase: ["a ", { target: hot }, " dog ", { gloss: { en: "= a dog that is hot" } }] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "The meaning of a compound can lie beyond its parts: butterfly names an insect." }
+            ex: ["A ", { target: butterfly }, " landed on the flower."]
+          - type: note
+            level: C2
+            text: { en: ["Stress in compounds: ", { link: Sounds and IPA, to: en.foundations.pronunciation-ipa }, "."] }
+
+  - title: { en: Creative conversion }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Kind } }
+          - { key: where, label: { en: Where } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: C2
+            kind: { en: a noun used as a verb }
+            where: { en: "social media, business and sport" }
+            ex: { examples: [["Do you ", { target: friend }, " people you have never met?"], ["They ", { target: gifted }, " the museum a painting."], ["She ", { target: medalled }, " ", { variant: medaled, variety: en-US }, " in the 200 metres."]] }
+          - level: C2
+            kind: { en: a phrase used as a modifier }
+            where: { en: journalism }
+            ex: ["His ", { target: I-told-you-so }, " smile annoyed her."]
+          - level: C2
+            kind: { en: a phrase used as a modifier }
+            where: { en: advertising }
+            ex: ["Taste the ", { target: fresh-from-the-oven }, " difference."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "A nonce compound serves one occasion, and hyphens bind its words into one modifier." }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: a ten-minutes walk, right: ["a ", { target: ten-minute }, " walk"], rule: { en: "the noun after a number stays singular" } }
+          - { level: B2, wrong: She sells home-make jam., right: ["She sells ", { target: home-made }, " jam."], rule: { en: "the second part is a participle" } }
+          - { level: B2, wrong: He babysitted the children., right: ["He ", { target: babysat }, " the children."], rule: { en: "a compound verb inflects like its last word" } }
+          - { level: B2, wrong: a MP, right: ["an ", { target: MP }], rule: { en: ["the first sound of ", { term: MP }, " is a vowel, so it takes ", { term: an }] } }
+          - { level: B2, wrong: two CD's, right: ["two ", { target: CDs }], rule: { en: "an initialism takes -s with no apostrophe" } }
+          - { level: C1, wrong: a saving account, right: ["a ", { target: savings }, " account"], rule: { en: "this modifier keeps its plural form" } }
+          - { level: C1, wrong: a woman magazine, right: ["a ", { target: women's }, " magazine"], rule: { en: "an irregular plural takes 's as a modifier" } }
+          - { level: C1, wrong: a two or three bedroom flat, right: ["a ", { target: two- or three-bedroom }, " flat"], rule: { en: "a hanging hyphen shows the shared last part" } }
+          - { level: C1, wrong: a teacher-lead class, right: ["a ", { target: teacher-led }, " class"], rule: { en: [{ term: "-led" }, " is the participle of ", { term: lead }] } }
+          - { level: C2, wrong: chips and fish, right: { target: fish and chips }, rule: { en: "a frozen binomial keeps its order" } }
+          - { level: C2, wrong: gentlemen and ladies, right: { target: ladies and gentlemen }, rule: { en: "the greeting keeps its order" } }
+          - { level: C2, wrong: a very blackbird, right: ["a ", { target: very black }, " bird"], rule: { en: "only the phrase takes a degree word" } }

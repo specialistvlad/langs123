@@ -51,6 +51,10 @@ cheatsheet:
         - { level: A1, features: { polarity: pos, interrogativity: int }, form: { en: Question, uk: "Питання", es: "Pregunta", pt: "Pergunta", fr: "Question", de: "Frage", it: "Domanda", pl: "Pytanie", tr: "Soru", id: "Pertanyaan", vi: "Câu hỏi" }, singular: [{ target: Is there }, " a park?"], plural: [{ target: Are there }, " any parks?"], uncountable: [{ target: Is there }, " any milk?"] }
         - { level: A1, features: { polarity: pos, interrogativity: int }, form: "How many, how much", plural: ["How many parks ", { target: are there }, "?"], uncountable: ["How much milk ", { target: is there }, "?"] }
         - { level: A1, features: { interrogativity: decl, polarity: [pos, neg] }, form: { en: Short answer, uk: "Коротка відповідь", es: "Respuesta corta", pt: "Resposta curta", fr: "Réponse courte", de: "Kurzantwort", it: "Risposta breve", pl: "Krótka odpowiedź", tr: "Kısa cevap", id: "Jawaban singkat", vi: "Câu trả lời ngắn" }, singular: { alternatives: [["Yes, there ", { target: is }, "."], ["No, there ", { target: isn't }, "."]] }, plural: { alternatives: [["Yes, there ", { target: are }, "."], ["No, there ", { target: aren't }, "."]] }, uncountable: { alternatives: [["Yes, there ", { target: is }, "."], ["No, there ", { target: isn't }, "."]] } }
+        - { level: B2, form: { en: Other verbs and tenses }, singular: ["There ", { target: seems to be }, " a problem."], plural: ["There ", { target: have been }, " two accidents."], uncountable: ["There ", { target: will be }, " some rain."] }
+        - { level: B2, form: { en: Complement }, singular: ["There's someone ", { target: waiting }, "."], plural: ["There are two windows ", { target: broken }, "."], uncountable: ["There's nothing ", { target: to do }, "."] }
+        - { level: C1, form: { en: Participle clause }, singular: [{ target: There being }, " no objection, we went ahead."] }
+        - { level: C1, form: { en: Formal verbs }, singular: [{ target: There followed }, " a long silence."], plural: [{ target: There are said to be }, " ghosts here."] }
 
 sections:
   - title: { en: Overview, uk: "Огляд", es: "Visión general", pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -223,6 +227,51 @@ sections:
             ex: ["Yes, there ", { target: is }, "."]
             tr: { uk: "Так, є.", es: "Sí, hay.", pt: "Sim, há.", fr: "Oui, il y en a.", de: "Ja, gibt es.", it: "Sì, c'è.", pl: "Tak, jest.", tr: "Evet, var.", id: "Ya, ada.", vi: "Có." }
 
+  - title: { en: There with other verbs and tenses }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: { pattern: [there, { alternatives: [seems, appears] }, to be] }, use: { en: gives an impression }, ex: ["There ", { target: seems to be }, " a problem with the heating."] }
+          - { level: B2, form: there happens to be, use: { en: says that something is there by chance }, ex: ["There ", { target: happens to be }, " a bank next door."] }
+          - { level: B2, form: { pattern: [there, { alternatives: [exists, remains] }] }, use: { en: "formal: states that something is, or is still left" }, ex: ["There ", { target: remains }, " one question."] }
+          - { level: B2, form: { pattern: [there, { alternatives: [lies, stands] }] }, use: { en: "formal: gives a position" }, ex: ["There ", { target: stands }, " an old church on the hill."] }
+          - { level: B2, form: there will be, use: { en: future }, ex: ["There ", { target: will be }, " a meeting on Friday."] }
+          - { level: B2, form: there has been, use: { en: links the past with now }, ex: ["There ", { target: has been }, " an accident."] }
+          - { level: B2, form: there used to be, use: { en: a past state that has ended }, ex: ["There ", { target: used to be }, " a cinema here."] }
+          - { level: B2, form: { pattern: [there, { alternatives: [must, might, should] }, be] }, use: { en: "deduction, possibility, expectation" }, ex: ["There ", { target: might be }, " a delay."] }
+
+  - title: { en: ["Form: ", { pattern: [there, { slot: noun }, complement] }] }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: { pattern: [there is, { slot: noun }, { slot: "-ing" }] }, use: { en: the noun is doing something }, ex: ["There's someone ", { target: waiting }, " at the door."] }
+          - { level: B2, form: { pattern: [there is, { slot: noun }, to, { slot: infinitive }] }, use: { en: what can be done }, ex: { examples: [["There's nothing ", { target: to do }, "."], ["There's no one ", { target: to ask }, "."]] } }
+          - { level: B2, form: { pattern: [there is, { slot: noun }, { slot: past participle }] }, use: { en: something has happened to the noun }, ex: ["There was a window ", { target: broken }, "."] }
+
+  - title: { en: There being }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: there being, use: { en: opens a clause that gives a reason }, ex: [{ target: There being }, " no objection, we went ahead."] }
+          - { level: C1, form: despite there being, use: { en: follows a preposition }, ex: ["Despite ", { target: there being }, " no evidence, he was charged."] }
+          - { level: C1, form: the likelihood of there being, use: { en: follows a noun and of }, ex: ["What is the likelihood of ", { target: there being }, " a delay?"] }
+          - { level: C1, form: with there being, use: { en: adds a circumstance }, ex: ["With ", { target: there being }, " so many guests, we needed a bigger room."] }
+
   - title: { en: Use, uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" }
     role: use
     content:
@@ -298,6 +347,64 @@ sections:
               id: ["Lihat ", { link: "Quantifier: some, any, much, many", to: "en.nouns-determiners.quantifiers-some-any-much-many" }, " dan ", { link: "Kata benda terhitung dan tak terhitung", to: "en.nouns-determiners.countable-uncountable" }, "."]
               vi: ["Xem ", { link: "Lượng từ: some, any, much, many", to: "en.nouns-determiners.quantifiers-some-any-much-many" }, " và ", { link: "Danh từ đếm được và không đếm được", to: "en.nouns-determiners.countable-uncountable" }, "."]
 
+  - title: { en: "Agreement: speech and writing" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: register, label: { en: Register } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, register: { en: Speech }, rule: { en: [{ term: "there's" }, " can stand before a plural noun"] }, ex: [{ target: "There's" }, " two buses an hour."] }
+          - { level: B2, register: { en: Writing }, rule: { en: [{ term: there are }, " stands before a plural noun"] }, ex: [{ target: There are }, " two buses an hour."] }
+
+  - title: { en: "No use, no point, no need" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: { pattern: [there is no use, { slot: "-ing" }] }, use: { en: it does no good }, ex: ["There's no use ", { target: waiting }, "."] }
+          - { level: B2, form: { pattern: [there is no point, { optional: in }, { slot: "-ing" }] }, use: { en: it has no purpose }, ex: ["There's no point ", { optional: in }, " ", { target: arguing }, "."] }
+          - { level: B2, form: { pattern: [there is no need, to, { slot: infinitive }] }, use: { en: it is not necessary }, ex: ["There's no need ", { target: to hurry }, "."] }
+
+  - title: { en: Formal patterns with there }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: there are said to be, use: { en: reports what people say }, ex: [{ target: There are said to be }, " ghosts in the castle."] }
+          - { level: C1, form: there is believed to have been, use: { en: reports a belief about the past }, ex: [{ target: There is believed to have been }, " a fire here in the 1800s."] }
+          - { level: C1, form: { pattern: [there is no, { alternatives: [knowing, telling] }] }, use: { en: it is impossible to know }, ex: [{ target: There is no knowing }, " how long it will last."] }
+          - { level: C1, form: there is no denying that, use: { en: it is certain that }, ex: [{ target: There is no denying that }, " prices have risen."] }
+
+  - title: { en: There in formal narrative }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: there lived, use: { en: introduces a character in a story }, ex: ["Once upon a time ", { target: there lived }, " a king."] }
+          - { level: C1, form: there followed, use: { en: introduces what came next }, ex: [{ target: There followed }, " a long silence."] }
+          - { level: C1, form: there arose, use: { en: a problem or question appears }, ex: [{ target: There arose }, " a problem with the contract."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The verb agrees with the noun that follows it." }
+            ex: ["There ", { target: arose }, " several questions."]
+
   - title: { en: "Compare: there is and it is", uk: "Порівняння: there is і it is", es: "Comparación: there is y it is", pt: "Comparação: there is e it is", fr: "Comparaison : there is et it is", de: "Vergleich: there is und it is", it: "Confronto: there is e it is", pl: "Porównanie: there is i it is", tr: "Karşılaştırma: there is ve it is", id: "Perbandingan: there is dan it is", vi: "So sánh: there is và it is" }
     role: compare
     content:
@@ -310,6 +417,8 @@ sections:
           - { level: A1, point: { en: Job, uk: "Функція", es: "Función", pt: "Função", fr: "Fonction", de: "Funktion", it: "Funzione", pl: "Funkcja", tr: "İşlev", id: "Fungsi", vi: "Nghề nghiệp" }, there: { en: introduces something new, uk: "вводить щось нове", es: "introduce algo nuevo", pt: "introduz algo novo", fr: "introduit quelque chose de nouveau", de: "führt etwas Neues ein", it: "introduce qualcosa di nuovo", pl: "wprowadza coś nowego", tr: "yeni bir şeyi tanıtır", id: "memperkenalkan sesuatu yang baru", vi: "giới thiệu một điều mới" }, it: { en: talks about something known, uk: "говорить про щось відоме", es: "habla de algo conocido", pt: "fala de algo conhecido", fr: "parle de quelque chose de connu", de: "spricht über etwas Bekanntes", it: "parla di qualcosa di noto", pl: "mówi o czymś znanym", tr: "bilinen bir şeyden söz eder", id: "membicarakan sesuatu yang sudah diketahui", vi: "nói về một điều đã biết" } }
           - { level: A1, point: { en: Example, uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" }, there: { ex: [{ target: There is }, " a dog in the garden."], tr: { uk: "У саду є собака.", es: "Hay un perro en el jardín.", pt: "Há um cachorro no jardim.", fr: "Il y a un chien dans le jardin.", de: "Im Garten gibt es einen Hund.", it: "C'è un cane in giardino.", pl: "W ogrodzie jest pies.", tr: "Bahçede bir köpek var.", id: "Ada anjing di kebun.", vi: "Có một con chó trong vườn." } }, it: { ex: [{ target: It is }, " a big dog."], tr: { uk: "Це великий собака.", es: "Es un perro grande.", pt: "É um cachorro grande.", fr: "C’est un grand chien.", de: "Es ist ein großer Hund.", it: "È un cane grande.", pl: "To duży pies.", tr: "Bu büyük bir köpek.", id: "Itu anjing besar.", vi: "Đó là một con chó lớn." } } }
           - { level: A1, point: { en: Question, uk: "Питання", es: "Pregunta", pt: "Pergunta", fr: "Question", de: "Frage", it: "Domanda", pl: "Pytanie", tr: "Soru", id: "Pertanyaan", vi: "Câu hỏi" }, there: { ex: [{ target: Is there }, " a shop near here?"], tr: { uk: "Чи є тут поблизу магазин?", es: "¿Hay una tienda cerca de aquí?", pt: "Há uma loja perto daqui?", fr: "Y a-t-il un magasin près d’ici ?", de: "Gibt es hier in der Nähe ein Geschäft?", it: "C'è un negozio qui vicino?", pl: "Czy jest tu w pobliżu sklep?", tr: "Buralarda bir dükkân var mı?", id: "Apakah ada toko di dekat sini?", vi: "Gần đây có cửa hàng nào không?" } }, it: { ex: [{ target: Is it }, " open?"], tr: { uk: "Чи відчинено?", es: "¿Está abierto?", pt: "Está aberto?", fr: "Est-ce que c’est ouvert ?", de: "Ist es geöffnet?", it: "È aperto?", pl: "Czy jest otwarte?", tr: "Açık mı?", id: "Apakah sudah buka?", vi: "Nó có đang mở cửa không?" } } }
+          - { level: B2, point: { en: Traffic }, there: [{ target: "There's" }, " a lot of traffic today."], it: ["The traffic is awful today. ", { target: "It's" }, " heavy."] }
+          - { level: B2, point: { en: Problem }, there: [{ target: "There's" }, " a problem with parking here."], it: ["Parking is difficult here. ", { target: "It's" }, " a problem."] }
       - type: list
         items:
           - type: note
@@ -335,6 +444,12 @@ sections:
           - { level: A1, wrong: There is two cats., right: ["There ", { target: are }, " two cats."], rule: { en: { takes: [plural noun, { term: there are }] }, uk: { takes: ["іменник у множині", { term: there are }] }, es: { takes: ["sustantivo plural", { term: there are }] }, pt: { takes: ["substantivo no plural", { term: "there are" }] }, fr: { takes: ["nom pluriel", { term: "there are" }] }, de: { takes: ["Nomen im Plural", { term: "there are" }] }, it: { takes: ["sostantivo plurale", { term: "there are" }] }, pl: { takes: ["rzeczownik w liczbie mnogiej", { term: "there are" }] }, tr: { takes: ["çoğul isim", { term: "there are" }] }, id: { takes: ["kata benda jamak", { term: "there are" }] }, vi: { takes: ["danh từ số nhiều", { term: "there are" }] } } }
           - { level: A1, wrong: There are a cat., right: ["There ", { target: is }, " a cat."], rule: { en: { takes: [singular noun, { term: there is }] }, uk: { takes: ["іменник в однині", { term: there is }] }, es: { takes: ["sustantivo singular", { term: there is }] }, pt: { takes: ["substantivo no singular", { term: "there is" }] }, fr: { takes: ["nom singulier", { term: "there is" }] }, de: { takes: ["Nomen im Singular", { term: "there is" }] }, it: { takes: ["sostantivo singolare", { term: "there is" }] }, pl: { takes: ["rzeczownik w liczbie pojedynczej", { term: "there is" }] }, tr: { takes: ["tekil isim", { term: "there is" }] }, id: { takes: ["kata benda tunggal", { term: "there is" }] }, vi: { takes: ["danh từ số ít", { term: "there is" }] } } }
           - { level: A1, wrong: There isn't some milk., right: ["There isn't ", { target: any }, " milk."], rule: { en: ["negatives take ", { term: any }], uk: ["заперечення вимагає ", { term: any }], es: ["la negación lleva ", { term: any }], pt: ["a negação leva ", { term: "any" }], fr: ["la négation prend ", { term: "any" }], de: ["bei Verneinung steht ", { term: "any" }], it: ["la negazione richiede ", { term: "any" }], pl: ["przeczenie wymaga ", { term: "any" }], tr: ["olumsuz cümlede ", { term: "any" }, " kullanılır"], id: ["kalimat negatif memakai ", { term: "any" }], vi: ["câu phủ định dùng ", { term: "any" }] } }
+          - { level: B2, wrong: "It's a lot of traffic today.", right: [{ target: "There's" }, " a lot of traffic today."], rule: { en: ["a new thing needs ", { term: there }] } }
+          - { level: B2, wrong: "There is no use to complain.", right: ["There is no use ", { target: complaining }, "."], rule: { en: [{ term: no use }, " takes the -ing form"] } }
+          - { level: B2, wrong: "There is no point to argue.", right: ["There is no point ", { target: in arguing }, "."], rule: { en: [{ term: no point }, " takes the -ing form, with or without ", { term: in }] } }
+          - { level: B2, wrong: "There is no need worry.", right: ["There is no need ", { target: to worry }, "."], rule: { en: [{ term: no need }, " takes ", { term: to }, " and the base verb"] } }
+          - { level: C1, wrong: "Being no objection, we went ahead.", right: [{ target: There being }, " no objection, we went ahead."], rule: { en: ["the participle clause keeps ", { term: there }, " as its subject"] } }
+          - { level: C1, wrong: "Despite there to be no evidence, he was charged.", right: ["Despite ", { target: there being }, " no evidence, he was charged."], rule: { en: ["after a preposition, use ", { term: there being }] } }
           - { level: A1, speakers: [uk], wrong: In my town is a cinema., right: ["In my town ", { target: there is }, " a cinema."], rule: { uk: ["українське «є» стоїть без підмета, а в англійській перед ", { term: is }, " і ", { term: are }, " потрібне ", { term: there }] } }
           - { level: A1, speakers: [es], wrong: Is a bank near here?, right: [{ target: Is there }, " a bank near here?"], rule: { es: ["«¿hay…?» se dice ", { term: Is there }, ", no ", { term: Is }, " solo"] } }
           - { level: A1, speakers: [es], wrong: Have two beds in the room., right: [{ target: There are }, " two beds in the room."], rule: { es: ["«hay» es ", { term: there is }, " o ", { term: there are }, "; ", { term: have }, " significa «tener»"] } }

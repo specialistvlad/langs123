@@ -1,0 +1,249 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.wishes-unreal-tenses
+lang: en
+kind: grammar
+tags: [wishes, regret, unreal, past-tenses]
+concepts: [wishes]
+related: [en.sentence-building.conditionals-0-1-2, en.modals.would, en.tenses.perfect-tenses, en.tenses.simple-tenses]
+status: { en: draft }
+
+title: { en: "Wishes and Unreal Tenses" }
+summary:
+  lead:
+    en: ["Wishes and unreal comparisons with ", { term: wish }, ", ", { term: "if only" }, ", ", { term: "as if" }, ", ", { term: "it's time" }, " and ", { term: "would rather" }, ", which take a past tense."]
+  rule:
+    en: "A wish about the present takes the past simple, about the past the past perfect:"
+  ex: { examples: [["I wish I ", { target: had }, " more time."], ["I wish I ", { target: "had studied" }, " harder."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: "Wish: unreal past" }, rule: { en: [{ term: wish }, " + past simple: now or later; past perfect: earlier"] }, ex: { examples: [["I wish I ", { target: knew }, " her name."], ["I wish I ", { target: "had called" }, " her."]] } }
+        - { level: B2, point: { en: "Wish for a change" }, rule: { en: "a change wanted in someone or something" }, ex: ["I wish it ", { target: "would stop" }, " raining."] }
+        - { level: B2, point: { en: "If only" }, rule: { en: ["the patterns of ", { term: wish }, " with stronger feeling"] }, ex: ["If only I ", { target: "had listened" }, "."] }
+        - { level: B2, point: { en: "It's time" }, rule: { en: [{ pattern: [{ term: "It's time" }, { slot: subject }, { slot: past simple }] }, " means now"] }, ex: ["It's time we ", { target: left }, "."] }
+        - { level: B2, point: { en: "As if" }, rule: { en: "past simple: not true now; past perfect: not true before; present: possibly true" }, ex: ["He talks as if he ", { target: knew }, " everything."] }
+        - { level: B2, point: { en: "Would rather" }, rule: { en: "another subject takes the past simple" }, ex: ["I'd rather you ", { target: stayed }, "."] }
+        - { level: B2, point: { en: "Suppose, what if" }, rule: { en: [{ term: suppose }, " + past simple: unlikely; ", { term: "what if" }, " + present: possible"] }, ex: { examples: [["Suppose you ", { target: won }, " the lottery?"], ["What if he ", { target: says }, " no?"]] } }
+        - { level: C1, point: { en: "Wish about the past" }, rule: { en: [{ term: "could have" }, " for a missed chance; ", { term: "had been" }, " + V-ing for an activity"] }, ex: { examples: [["I wish I ", { target: "could have come" }, "."], ["I wish I ", { target: "hadn't been working" }, " so hard."]] } }
+        - { level: C1, point: { en: "In reports" }, rule: { en: [{ term: wish }, " becomes ", { term: wished }, "; the unreal tense stays"] }, ex: ["He said he ", { target: "wished he had" }, " more time."] }
+        - { level: C1, point: { en: "Formal wish" }, rule: { en: [{ term: "wish for" }, " + noun; ", { term: wish }, " (that) + clause with ", { term: were }] }, ex: ["I wish that he ", { target: were }, " here."] }
+        - { level: B2, point: { en: Trap }, rule: { en: ["a state takes the past simple, not ", { term: would }] }, ex: ["I wish I ", { target: had }, " more time."] }
+        - { level: B2, point: { en: Trap }, rule: { en: [{ term: "it's time" }, " + subject takes the past simple"] }, ex: ["It's time we ", { target: went }, "."] }
+
+sections:
+  - title: { en: Overview }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: wish }, ", ", { term: "if only" }, ", ", { term: "as if" }, ", ", { term: "it's time" }, ", ", { term: "would rather" }, " and ", { term: suppose }, " share one set of unreal tenses."] }
+          - type: rule
+            level: B2
+            text: { en: "A past tense after these words marks the situation as not real, and the time stays present or future." }
+            ex: ["I wish I ", { target: lived }, " nearer the sea."]
+          - type: note
+            level: B2
+            text: { en: ["Conditionals with ", { term: if }, " take the same tenses: see ", { link: "Conditionals: Zero, First and Second", to: en.sentence-building.conditionals-0-1-2 }, "."] }
+
+  - title: { en: "Form: wish" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: time, label: { en: Situation } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, features: { tense: pst }, time: { en: "A present state" }, pattern: { pattern: [wish, { slot: subject }, { slot: past simple }] }, ex: ["I wish I ", { target: knew }, " his name."] }
+          - { level: B2, features: { tense: pst }, time: { en: "A present state with be" }, pattern: { pattern: [wish, { slot: subject }, { alternatives: [were, was] }] }, ex: ["I wish I ", { target: were }, " taller."] }
+          - { level: B2, features: { tense: pst }, time: { en: "A present ability" }, pattern: { pattern: [wish, { slot: subject }, could, { slot: base verb }] }, ex: ["I wish I ", { target: "could swim" }, "."] }
+          - { level: B2, features: { tense: pst, aspect: prf }, time: { en: "The past" }, pattern: { pattern: [wish, { slot: subject }, had, { slot: past participle }] }, ex: ["I wish I ", { target: "had known" }, " earlier."] }
+          - { level: B2, features: { mood: cond }, time: { en: "A change wanted" }, pattern: { pattern: [wish, { slot: subject }, would, { slot: base verb }] }, ex: ["I wish she ", { target: "would call" }, " me."] }
+          - { level: C1, features: { tense: pst, aspect: [prf, prog] }, time: { en: "A past activity" }, pattern: { pattern: [wish, { slot: subject }, had been, { slot: V-ing }] }, ex: ["I wish I ", { target: "hadn't been working" }, " so hard."] }
+          - { level: C1, features: { tense: pst, aspect: prf }, time: { en: "A past chance" }, pattern: { pattern: [wish, { slot: subject }, could have, { slot: past participle }] }, ex: ["I wish I ", { target: "could have helped" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: were }, " serves every person in formal style, and ", { term: was }, " is common in speech."] }
+            ex: ["I wish she ", { alternatives: [{ target: were }, { target: was }] }, " here."]
+          - type: rule
+            level: B2
+            text: { en: "The negative takes didn't, hadn't, couldn't or wouldn't." }
+            ex: ["I wish I ", { target: "hadn't said" }, " that."]
+
+  - title: { en: "Use: wish" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: "A present situation you want to be different (past simple)" }, ex: { examples: [["I wish I ", { target: had }, " a bigger flat."], ["I wish I ", { target: knew }, " what to say."]] } }
+          - { level: B2, use: { en: ["An ability or chance you lack (", { term: could }, ")"] }, ex: { examples: [["I wish I ", { target: "could play" }, " the piano."], ["I wish we ", { target: "could stay" }, " longer."]] } }
+          - { level: B2, use: { en: "A regret about the past (past perfect)" }, ex: { examples: [["I wish I ", { target: "had studied" }, " harder."], ["I wish we ", { target: "hadn't argued" }, "."]] } }
+          - { level: B2, use: { en: ["A change you want in a person's behaviour (", { term: would }, ")"] }, ex: { examples: [["I wish you ", { target: "would listen" }, "."], ["I wish he ", { target: "would hurry" }, " up."]] } }
+          - { level: B2, use: { en: ["A change you want in a thing or the weather (", { term: would }, ")"] }, ex: { examples: [["I wish it ", { target: "would stop" }, " raining."], ["I wish the bus ", { target: "would come" }, "."]] } }
+          - { level: B2, use: { en: ["Annoyance at what someone keeps doing (", { term: "wouldn't" }, ")"] }, ex: { examples: [["I wish you ", { target: "wouldn't leave" }, " the door open."], ["I wish they ", { target: "wouldn't shout" }, "."]] } }
+
+  - title: { en: "Wish with other patterns" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, pattern: { pattern: [wish to, { slot: base verb }] }, use: { en: "A formal statement of what you want to do" }, ex: ["I ", { target: "wish to speak" }, " to the manager."] }
+          - { level: B2, pattern: { pattern: [wish, { slot: person }, { slot: noun }] }, use: { en: "A good wish for someone" }, ex: { examples: [["I ", { target: "wish you luck" }, "."], ["We ", { target: "wish you a happy birthday" }, "."]] } }
+          - { level: C1, pattern: { pattern: [wish to, { slot: base verb }] }, use: { en: "A formal announcement of an apology, thanks or complaint" }, ex: { examples: [["I ", { target: "wish to apologise" }, " for the delay."], ["We ", { target: "wish to thank" }, " everyone who helped."]] } }
+          - { level: C1, pattern: { pattern: [wish for, { slot: noun }] }, use: { en: "A hope for something that may not come" }, ex: { examples: [["They ", { target: "wish for" }, " peace."], ["She ", { target: "wished for" }, " a quiet life."]] } }
+          - { level: C1, pattern: { pattern: [wish, { optional: that }, { slot: clause }] }, use: { en: "A formal wish; that is kept in writing" }, ex: { examples: [["I wish ", { target: "that he were" }, " here."], ["I wish ", { target: "that I had" }, " never said it."]] } }
+
+  - title: { en: "If only" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, pattern: { pattern: ["If only", { slot: subject }, { slot: past simple }] }, use: { en: "A present situation, with strong feeling" }, ex: ["If only it ", { target: were }, " Friday."] }
+          - { level: B2, pattern: { pattern: ["If only", { slot: subject }, could, { slot: base verb }] }, use: { en: "An ability you lack" }, ex: ["If only I ", { target: "could sleep" }, "."] }
+          - { level: B2, pattern: { pattern: ["If only", { slot: subject }, had, { slot: past participle }] }, use: { en: "A regret about the past" }, ex: ["If only I ", { target: "had listened" }, "."] }
+          - { level: B2, pattern: { pattern: ["If only", { slot: subject }, would, { slot: base verb }] }, use: { en: "A change you want" }, ex: ["If only you ", { target: "would help" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: "If only" }, " is stronger than ", { term: "I wish" }, " and can stand alone as a reply."] }
+            ex: { exchange: ["Did you get the job?", [{ target: "If only" }, "!"]] }
+
+  - title: { en: "It's time" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, pattern: { pattern: ["It's time", { slot: subject }, { slot: past simple }] }, use: { en: "The moment to act has come; the past simple means now" }, ex: ["It's time we ", { target: left }, "."] }
+          - { level: B2, pattern: { pattern: [{ alternatives: ["It's high time", "It's about time"] }, { slot: subject }, { slot: past simple }] }, use: { en: "The action is overdue, and the speaker is impatient" }, ex: { examples: [["It's high time you ", { target: "went" }, " to bed."], ["It's about time you ", { target: called }, " her."]] } }
+          - { level: B2, pattern: { pattern: ["It's time to", { slot: base verb }] }, use: { en: "The moment has come; the doer is clear from the context" }, ex: ["It's time ", { target: "to leave" }, "."] }
+          - { level: B2, pattern: { pattern: ["It's time for", { slot: person }, "to", { slot: base verb }] }, use: { en: "The moment has come for a named person, with no push" }, ex: ["It's time ", { target: "for us to go" }, "."] }
+          - { level: C1, pattern: { pattern: ["It's high time", { slot: subject }, had, { slot: past participle }] }, use: { en: "Rare: the action should already be done" }, ex: ["It's high time you ", { target: "had finished" }, " that report."] }
+
+  - title: { en: "As if and as though" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, pattern: { pattern: [{ alternatives: ["as if", "as though"] }, { slot: subject }, { slot: past simple }] }, use: { en: "An unreal present: the speaker does not think it is true" }, ex: ["He talks as if he ", { target: knew }, " everything."] }
+          - { level: B2, pattern: { pattern: [{ alternatives: ["as if", "as though"] }, { slot: subject }, had, { slot: past participle }] }, use: { en: "An unreal past" }, ex: ["She looked as though she ", { target: "had seen" }, " a ghost."] }
+          - { level: B2, pattern: { pattern: [{ alternatives: ["as if", "as though"] }, { slot: subject }, { slot: present }] }, use: { en: "A real possibility: the speaker thinks it may be true" }, ex: { examples: [["It looks as if it ", { target: "is going to rain" }, "."], ["She sounds as though she ", { target: "has" }, " a cold."]] } }
+          - { level: C1, pattern: { pattern: [{ alternatives: ["as if", "as though"] }, { slot: subject }, were] }, use: { en: "An unreal present in formal style, for every person" }, ex: ["He behaves as if he ", { target: were }, " the owner."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: "as though" }, " means the same as ", { term: "as if" }, " and is a little more formal."] }
+
+  - title: { en: "Would rather with another subject" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, pattern: { pattern: [{ slot: subject }, would rather, { slot: person }, { slot: past simple }] }, use: { en: "A preference about what someone does now or later" }, ex: ["I'd rather you ", { target: stayed }, "."] }
+          - { level: B2, pattern: { pattern: [{ slot: subject }, would rather, { slot: person }, didn't, { slot: base verb }] }, use: { en: "A preference against" }, ex: ["I'd rather you ", { target: "didn't smoke" }, "."] }
+          - { level: B2, pattern: { pattern: [{ slot: subject }, would rather, { slot: person }, had, { slot: past participle }] }, use: { en: "A preference about the past" }, ex: ["I'd rather you ", { target: "had told" }, " me."] }
+          - { level: C1, pattern: { pattern: [{ slot: subject }, would sooner, { slot: person }, { slot: past simple }] }, use: { en: "The same as would rather, a little more formal" }, ex: ["I'd sooner you ", { target: waited }, " outside."] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["With one subject, ", { term: "would rather" }, " takes the base verb: see ", { link: Would, to: en.modals.would }, "."] }
+
+  - title: { en: "Suppose, imagine and what if" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, pattern: { pattern: [{ alternatives: [suppose, supposing] }, { slot: subject }, { slot: past simple }] }, use: { en: "An imagined, unlikely situation" }, ex: ["Suppose you ", { target: won }, " a million pounds. What would you do?"] }
+          - { level: B2, pattern: { pattern: [{ alternatives: [suppose, supposing] }, { slot: subject }, had, { slot: past participle }] }, use: { en: "An imagined past situation" }, ex: ["Supposing you ", { target: "had missed" }, " your train?"] }
+          - { level: B2, pattern: { pattern: [imagine, { slot: subject }, { slot: past simple }] }, use: { en: "An invitation to picture a situation" }, ex: ["Imagine you ", { target: lived }, " on the moon."] }
+          - { level: B2, pattern: { pattern: ["what if", { slot: subject }, { slot: past simple }] }, use: { en: "An unlikely problem" }, ex: ["What if nobody ", { target: came }, "?"] }
+          - { level: B2, pattern: { pattern: ["what if", { slot: subject }, { slot: present }] }, use: { en: "A real possibility that worries the speaker" }, ex: ["What if he ", { target: says }, " no?"] }
+          - { level: C1, pattern: { pattern: [say, { slot: subject }, { slot: past simple }] }, use: { en: "Informal: the same as suppose" }, ex: ["Say you ", { target: "had" }, " a million pounds. What would you do?"] }
+
+  - title: { en: "Wishes in reports" }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: direct, label: { en: Direct } }
+          - { key: reported, label: { en: Reported } }
+        rows:
+          - { level: C1, direct: ["“I wish I ", { target: had }, " more time.”"], reported: ["He said he ", { target: "wished he had" }, " more time."] }
+          - { level: C1, direct: ["“I wish I ", { target: "had listened" }, ".”"], reported: ["She said she ", { target: "wished she had listened" }, "."] }
+          - { level: C1, direct: ["“I wish you ", { target: "would help" }, " me.”"], reported: ["She said she ", { target: "wished I would help" }, " her."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: wish }, " becomes ", { term: wished }, " after a past reporting verb, and the unreal tense after it stays."] }
+          - type: note
+            level: C1
+            text: { en: ["Other tenses in reports shift back: see ", { link: Reported Speech, to: en.sentence-building.reported-speech }, "."] }
+
+  - title: { en: "Compare: wish and hope" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: wish, label: wish }
+          - { key: hope, label: hope }
+        rows:
+          - { level: B2, row: { en: Meaning }, wish: { en: "the situation is unreal or unlikely" }, hope: { en: "the situation is possible" } }
+          - { level: B2, row: { en: "Verb after it" }, wish: { en: "a past tense" }, hope: { en: "the present simple or will" } }
+          - { level: B2, row: { en: Example }, wish: ["I ", { target: "wish it were" }, " warmer."], hope: ["I ", { target: "hope it will be" }, " warm tomorrow."] }
+          - { level: B2, row: { en: Example }, wish: ["I ", { target: "wish you could" }, " come."], hope: ["I ", { target: "hope you come" }, "."] }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "I wish I would have more time.", right: ["I wish I ", { target: had }, " more time."], rule: { en: [{ term: would }, " asks another person or thing to change; a state takes the past simple"] } }
+          - { level: B2, wrong: "I wish I have more money.", right: ["I wish I ", { target: had }, " more money."], rule: { en: "a wish about the present takes the past simple" } }
+          - { level: B2, wrong: "I wish I would have studied harder.", right: ["I wish I ", { target: "had studied" }, " harder."], rule: { en: "a wish about the past takes the past perfect" } }
+          - { level: B2, wrong: "I wish it stops raining.", right: ["I wish it ", { target: "would stop" }, " raining."], rule: { en: [{ term: wish }, " for a change takes ", { pattern: [{ term: would }, { slot: base verb }] }] } }
+          - { level: B2, wrong: "I wish you will pass the exam.", right: ["I ", { target: hope }, " you pass the exam."], rule: { en: [{ term: hope }, " takes the present or ", { term: will }, " for what is possible"] } }
+          - { level: B2, wrong: "It's time we go.", right: ["It's time we ", { target: went }, "."], rule: { en: [{ term: "it's time" }, " + subject takes the past simple"] } }
+          - { level: B2, wrong: "She looked as though she has seen a ghost.", right: ["She looked as though she ", { target: "had seen" }, " a ghost."], rule: { en: "an unreal past takes the past perfect" } }
+          - { level: B2, wrong: "I'd rather you to stay.", right: ["I'd rather you ", { target: stayed }, "."], rule: { en: [{ term: "would rather" }, " + another subject takes the past simple, not ", { term: to }] } }
+          - { level: C1, wrong: "I wish I could come to your party last week.", right: ["I wish I ", { target: "could have come" }, " to your party last week."], rule: { en: ["a missed chance in the past takes ", { pattern: [{ term: "could have" }, { slot: past participle }] }] } }

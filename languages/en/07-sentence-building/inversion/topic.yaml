@@ -1,0 +1,320 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.inversion
+lang: en
+kind: grammar
+tags: [sentence-building, inversion, fronting, emphasis, formal-style]
+concepts: [inversion]
+related: [en.sentence-building.questions-negatives, en.sentence-building.conditionals-0-1-2, en.adjectives-adverbs.comparatives-superlatives, en.adjectives-adverbs.too-enough-so-such, en.sentence-building.word-order]
+status: { en: draft }
+
+title: { en: Inversion and Fronting }
+summary:
+  lead:
+    en: ["The auxiliary before the subject after ", { term: never }, ", ", { term: rarely }, ", ", { term: not only }, " and ", { term: no sooner }, "; place words, complements and objects fronted for emphasis."]
+  rule:
+    en: "After a fronted negative adverbial the auxiliary comes before the subject, as in a question:"
+  ex: { examples: [[{ target: Never have I }, " seen such a crowd."], [{ target: Rarely does she }, " complain."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: C1, point: { en: Order }, rule: { en: [{ pattern: [{ slot: { en: negative adverbial } }, { slot: { en: auxiliary } }, { slot: subject }, { slot: verb }] }, "; ", { term: do }, ", ", { term: does }, " or ", { term: did }, " if there is none"] }, ex: { examples: [[{ target: Never have I }, " seen such a crowd."], [{ target: Rarely does she }, " complain."]] } }
+        - { level: C1, point: { en: Negative adverbials }, rule: { en: [{ term: never }, ", ", { term: rarely }, ", ", { term: little }, ", ", { term: nowhere }, ", ", { term: not once }, ", ", { term: on no account }] }, ex: [{ target: Little did he }, " know what was coming."] }
+        - { level: C1, point: { en: Hardly and no sooner }, rule: { en: [{ term: hardly }, " and ", { term: scarcely }, " take ", { term: when }, ", ", { term: no sooner }, " takes ", { term: than }, "; past perfect first"] }, ex: [{ target: No sooner had he }, " arrived than it began to rain."] }
+        - { level: C1, point: { en: "Not only, not until, only" }, rule: { en: "the main clause inverts; the other clause keeps its order" }, ex: [{ target: Not until he left did I }, " understand."] }
+        - { level: C1, point: { en: So and such }, rule: { en: [{ term: so }, " + adjective or adverb, or ", { term: such }, " + ", { term: be }, ", then ", { term: that }] }, ex: [{ target: So tired was she }, " that she fell asleep."] }
+        - { level: C1, point: { en: Nor and neither }, rule: { en: "the auxiliary of the first clause, then the subject" }, ex: ["She didn't call, ", { target: nor did she }, " write."] }
+        - { level: C2, point: { en: Place and direction }, rule: { en: "the verb stands before a noun subject; a pronoun subject stays first" }, ex: { examples: [[{ target: Here comes }, " the bus."], ["Here ", { target: he comes }, "."]] } }
+        - { level: C2, point: { en: Complements and objects }, rule: { en: ["a fronted complement puts ", { term: be }, " before the subject; an object does not"] }, ex: { examples: [[{ target: Gone are }, " the days of long letters."], [{ target: This much I }, " know."]] } }
+        - { level: C2, point: { en: "Than, as and quotations" }, rule: { en: "a noun subject can follow the verb or auxiliary" }, ex: { examples: [["Tom is tall, ", { target: as is his brother }, "."], ["“Come in,” ", { target: said Tom }, "."]] } }
+        - { level: C2, point: { en: Conditionals }, rule: { en: [{ term: had }, ", ", { term: were }, " and ", { term: should }, " replace ", { term: if }, " in formal conditions"] }, ex: [{ target: Should you need }, " help, please ask."] }
+        - { level: C1, point: { en: Trap }, rule: { en: "the subject follows the auxiliary, not the adverbial" }, ex: [{ target: Not only did she }, " win, but she also set a record."] }
+        - { level: C1, point: { en: Trap }, rule: { en: [{ term: do }, ", ", { term: does }, " and ", { term: did }, " take the base verb"] }, ex: ["Rarely ", { target: does he come }, " late."] }
+
+sections:
+  - title: { en: Overview }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "Inversion puts the auxiliary before the subject, the order of a question." }
+            ex: [{ target: Never have I }, " seen such a crowd."]
+          - type: rule
+            level: C1
+            text: { en: "A negative or restrictive adverbial at the start of the clause calls for it." }
+            ex: { examples: [[{ target: Seldom is she }, " late."], [{ target: Only then did I }, " understand."]] }
+          - type: rule
+            level: C1
+            text: { en: "The clause remains a statement; the order adds emphasis." }
+          - type: rule
+            level: C2
+            text: { en: "Fronting puts a place word, a complement or an object first for emphasis or style." }
+            ex: [{ target: Up went }, " the balloon."]
+
+  - title: { en: "Form: the order" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: with, label: { en: Verb } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, with: { en: { term: be } }, pattern: { pattern: [{ slot: { en: negative adverbial } }, be, { slot: subject }] }, ex: [{ target: Seldom is she }, " late."] }
+          - { level: C1, with: { en: [{ term: have }, ", ", { term: will }, " and other auxiliaries"] }, pattern: { pattern: [{ slot: { en: negative adverbial } }, { slot: { en: auxiliary } }, { slot: subject }, { slot: verb }] }, ex: { examples: [[{ target: Never before had I }, " seen snow."], [{ target: Never will I }, " forget it."]] } }
+          - { level: C1, with: { en: "modal verbs" }, pattern: { pattern: [{ slot: { en: negative adverbial } }, { slot: { en: modal } }, { slot: subject }, { slot: "base verb" }] }, ex: [{ target: Seldom can you }, " find a quieter café."] }
+          - { level: C1, with: { en: "other verbs" }, pattern: { pattern: [{ slot: { en: negative adverbial } }, "do, does, did", { slot: subject }, { slot: "base verb" }] }, ex: { examples: [[{ target: Rarely does she }, " complain."], [{ target: Seldom did we }, " meet."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "With two or more auxiliaries the first one moves." }
+            ex: [{ target: Never has she }, " been so surprised."]
+          - type: rule
+            level: C1
+            text: { en: ["The main verb takes the base form after ", { term: do }, ", ", { term: does }, " or ", { term: did }, "."] }
+            ex: [{ target: Not once did she }, " raise her voice."]
+          - type: note
+            level: C1
+            text: { en: ["Question order is in ", { link: Questions and negatives, to: en.sentence-building.questions-negatives }, "."] }
+
+  - title: { en: "Use: negative adverbials" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Adverbials } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: ["Frequency: ", { term: never }, ", ", { term: rarely }, ", ", { term: seldom }, ", ", { term: hardly ever }, ", ", { term: scarcely ever }] }, ex: { examples: [[{ target: Seldom do we }, " eat out."], [{ target: Hardly ever does he }, " phone."], [{ target: Never before had I }, " felt so tired."]] } }
+          - { level: C1, use: { en: ["Degree and manner: ", { term: little }, ", ", { term: in no way }] }, ex: { examples: [[{ target: Little did she }, " suspect the truth."], [{ target: In no way is this }, " your fault."]] } }
+          - { level: C1, use: { en: ["Place: ", { term: nowhere }] }, ex: { examples: [[{ target: Nowhere is the air }, " cleaner than here."], [{ target: Nowhere else could we }, " find fresh bread."]] } }
+          - { level: C1, use: { en: ["Prohibition and absence: ", { term: on no account }, ", ", { term: under no circumstances }, ", ", { term: at no time }] }, ex: { examples: [[{ target: On no account must the door }, " be opened."], [{ target: Under no circumstances should you }, " share the password."], [{ target: At no time was anyone }, " in danger."]] } }
+          - { level: C1, use: { en: ["Time and number: ", { term: not once }, ", ", { term: not since }] }, ex: { examples: [[{ target: Not once did he }, " say thank you."], [{ target: Not since 2010 have we }, " had snow like this."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "In its usual place the same adverbial leaves the order unchanged." }
+            ex: ["I have ", { target: never }, " seen such a crowd."]
+          - type: rule
+            level: C1
+            text: { en: [{ term: little }, " means not at all and goes with ", { term: know }, ", ", { term: realise }, ", ", { term: suspect }, " and ", { term: imagine }, "."] }
+          - type: note
+            level: C1
+            text: { en: ["Negative words with a positive verb are in ", { link: Questions and negatives, to: en.sentence-building.questions-negatives }, "."] }
+
+  - title: { en: "Hardly … when and no sooner … than" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: { pattern: [hardly had, { slot: subject }, { slot: past participle }, when, { slot: clause }] }, ex: [{ target: Hardly had we }, " sat down when the lights went out."] }
+          - { level: C1, form: { pattern: [scarcely had, { slot: subject }, { slot: past participle }, when, { slot: clause }] }, ex: [{ target: Scarcely had she }, " spoken when the phone rang."] }
+          - { level: C1, form: { pattern: [no sooner had, { slot: subject }, { slot: past participle }, than, { slot: clause }] }, ex: [{ target: No sooner had he }, " arrived than it began to rain."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Only the first clause inverts, with ", { term: had }, "; the second clause, in the past simple, keeps normal order."] }
+          - type: rule
+            level: C1
+            text: { en: "The pattern reports two past events in quick succession: the first is complete when the second begins." }
+
+  - title: { en: "Not only, not until and only" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Opening } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: ["Not only ", { gap: true }, " but also"], ex: [{ target: Not only did she }, " win, but she also set a record."] }
+          - { level: C1, form: ["Not until ", { gap: true }], ex: [{ target: Not until he left did I }, " understand."] }
+          - { level: C1, form: { term: Only then }, ex: [{ target: Only then did I }, " see the problem."] }
+          - { level: C1, form: { alternatives: [{ term: Only when }, { term: only after }] }, ex: { examples: [[{ target: Only after dinner did he }, " tell us the news."], [{ target: Only when the rain stopped did we }, " leave."]] } }
+          - { level: C1, form: { alternatives: [{ term: Only if }, { term: only by }] }, ex: { examples: [[{ target: Only if you ask will she }, " help."], [{ target: Only by working together can we }, " finish."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The opening clause keeps normal order; the main clause that follows it inverts." }
+          - type: rule
+            level: C1
+            text: { en: ["In ", { term: not only }, " … ", { term: but also }, " only the first clause inverts."] }
+          - type: note
+            level: C1
+            text: { en: [{ term: only }, " and ", { term: even }, " in other places are in ", { link: Word Order, to: en.sentence-building.word-order }, "."] }
+
+  - title: { en: "So and such" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: { pattern: [so, { slot: adjective }, be, { slot: subject }, that, { slot: clause }] }, ex: [{ target: So tired was she }, " that she fell asleep at once."] }
+          - { level: C1, form: { pattern: [so, { slot: adverb }, { slot: { en: auxiliary } }, { slot: subject }, { slot: verb }, that, { slot: clause }] }, ex: [{ target: So quickly did he run }, " that nobody caught him."] }
+          - { level: C1, form: { pattern: [such, be, { slot: subject }, that, { slot: clause }] }, ex: [{ target: Such was his anger }, " that he left the room."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["The ", { term: that }, " clause gives the result and keeps normal order."] }
+          - type: note
+            level: C1
+            text: { en: [{ term: so }, " and ", { term: such }, " in normal order are in ", { link: "Too, Enough, So and Such", to: en.adjectives-adverbs.too-enough-so-such }, "."] }
+
+  - title: { en: "Nor and neither" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: "Agreeing with a negative statement" }, ex: { exchange: ["I don't like it.", [{ target: Neither do I }, "."]] } }
+          - { level: C1, use: { en: "Adding a second negative to a negative clause" }, ex: ["He didn't call, ", { target: nor did he }, " write."] }
+          - { level: C1, use: { en: "Continuing a negative point in a new sentence" }, ex: ["The plan was risky. ", { target: Nor was it }, " cheap."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["The auxiliary matches the first clause: ", { term: be }, ", ", { term: have }, " or a modal as there; ", { term: do }, ", ", { term: does }, " or ", { term: did }, " otherwise."] }
+          - type: rule
+            level: C1
+            text: { en: [{ term: neither }, " and ", { term: nor }, " both start a reply; ", { term: nor }, " also joins a second clause to a negative first."] }
+
+  - title: { en: "Compare: inversion and normal order" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: inv, label: { en: Inversion } }
+          - { key: normal, label: { en: Normal order } }
+        rows:
+          - { level: C1, row: { en: Effect }, inv: { en: "formal, emphatic or dramatic" }, normal: { en: neutral } }
+          - { level: C1, row: { en: Where }, inv: { en: "writing, speeches, news and fiction" }, normal: { en: "speech and plain writing" } }
+          - { level: C1, row: { en: Frequency }, inv: [{ target: Never have I }, " seen such a crowd."], normal: ["I have ", { target: never }, " seen such a crowd."] }
+          - { level: C1, row: { en: Place }, inv: [{ target: Nowhere else could we }, " find fresh bread."], normal: ["We couldn't find fresh bread ", { target: anywhere else }, "."] }
+          - { level: C1, row: { en: Addition }, inv: [{ target: Not only did she }, " win, but she also set a record."], normal: ["She ", { target: not only }, " won, but also set a record."] }
+
+  - title: { en: "Fronting: place and direction" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, use: { en: [{ term: here }, ", ", { term: there }, " and ", { term: now }, " with ", { term: come }, ", ", { term: go }, " and ", { term: be }] }, ex: { examples: [[{ target: Here comes }, " the bus."], [{ target: There goes }, " my chance."]] } }
+          - { level: C2, use: { en: "A place phrase with a verb of position" }, ex: { examples: [["At the end of the road ", { target: stood }, " an old mill."], ["Beside the window ", { target: sat }, " a sleeping cat."]] } }
+          - { level: C2, use: { en: "A direction word with a verb of motion" }, ex: { examples: [[{ target: Up went }, " the balloon."], [{ target: In came }, " the waiter with the soup."]] } }
+          - { level: C2, use: { en: "A pronoun subject" }, ex: { examples: [["Here ", { target: she comes }, "."], ["Off ", { target: they went }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["The full verb moves before a noun subject, with no ", { term: do }, "."] }
+          - type: rule
+            level: C2
+            text: { en: "Verbs of position and motion fit best: stand, sit, lie, come, go, run and fall." }
+          - type: rule
+            level: C2
+            text: { en: "Stories, descriptions and stage directions use this order to set a scene." }
+
+  - title: { en: "Fronting: complements and objects" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, use: { en: ["An adjective or participle complement before ", { term: be }, " and a noun subject"] }, ex: { examples: [[{ target: Gone are }, " the days of long letters."], [{ target: Great was }, " her relief."]] } }
+          - { level: C2, use: { en: ["A noun phrase with ", { term: such }, " before ", { term: be }] }, ex: [{ target: Such a kind teacher was }, " she."] }
+          - { level: C2, use: { en: "A complement with a pronoun subject" }, ex: [{ target: Cold it was }, ", and wet."] }
+          - { level: C2, use: { en: "An object first, then subject and verb" }, ex: { examples: [[{ target: This much I }, " know."], [{ target: Money he }, " had, but friends he lacked."]] } }
+          - { level: C2, use: { en: ["A verb phrase first, with ", { term: do }, " after the subject"] }, ex: [{ target: Win the match we did }, ", but only just."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "After a fronted object or verb phrase, the subject and verb keep their normal order." }
+          - type: rule
+            level: C2
+            text: { en: "These patterns belong to literary, rhetorical and formal style." }
+
+  - title: { en: "Than, as and quotation tags" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, use: { en: ["After ", { term: than }, " in a formal comparison"] }, ex: ["Prices rose faster ", { target: than did wages }, "."] }
+          - { level: C2, use: { en: ["After ", { term: as }, ", adding a parallel fact"] }, ex: { examples: [["Tom is tall, ", { target: as is his brother }, "."], ["The company grew, ", { target: as did its profits }, "."]] } }
+          - { level: C2, use: { en: "A tag after a quotation, with a noun subject" }, ex: { examples: [["“Come in,” ", { target: said Tom }, "."], ["“We will wait,” ", { target: replied the old man }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["The auxiliary after ", { term: than }, " or ", { term: as }, " stands for the verb already mentioned."] }
+          - type: rule
+            level: C2
+            text: { en: "A pronoun subject comes first in a tag:" }
+            ex: ["“Come in,” ", { target: he said }, "."]
+          - type: rule
+            level: C2
+            text: { en: ["Speech and plain writing keep the subject first: ", { term: than his brother did }, ", ", { term: as his brother is }, "."] }
+          - type: note
+            level: C2
+            text: { en: ["Comparisons in general are in ", { link: Comparatives and Superlatives, to: en.adjectives-adverbs.comparatives-superlatives }, "."] }
+
+  - title: { en: "Inverted conditionals in context" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Where it appears } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, form: { pattern: [had, { slot: subject }, { slot: past participle }] }, use: { en: "a report on a past mistake" }, ex: [{ target: Had the manager been told }, ", the delay would have been avoided."] }
+          - { level: C2, form: { pattern: [were it not for, { slot: noun }] }, use: { en: "a formal reason that decided the outcome" }, ex: [{ target: Were it not for her advice }, ", I would have signed."] }
+          - { level: C2, form: { pattern: [should, { slot: subject }, { slot: "base verb" }] }, use: { en: "a polite notice or email" }, ex: [{ target: Should you need }, " help, please ask at the desk."] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text: { en: ["The full set of conditionals is in ", { link: "Conditionals: Zero, First and Second", to: en.sentence-building.conditionals-0-1-2 }, "."] }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: C1, wrong: Never I have seen such a crowd., right: [{ target: Never have I }, " seen such a crowd."], rule: { en: "after a fronted negative the auxiliary comes before the subject" } }
+          - { level: C1, wrong: Rarely does he comes late., right: ["Rarely ", { target: does he come }, " late."], rule: { en: [{ term: does }, " takes the base verb"] } }
+          - { level: C1, wrong: "Not only she won, but she also set a record.", right: [{ target: Not only did she }, " win, but she also set a record."], rule: { en: [{ term: not only }, " at the start puts the auxiliary before the subject"] } }
+          - { level: C1, wrong: "Not only did she win, but also did she set a record.", right: ["Not only did she win, but she ", { target: also set }, " a record."], rule: { en: "only the first clause inverts" } }
+          - { level: C1, wrong: No sooner had he arrived when it began to rain., right: ["No sooner had he arrived ", { target: than }, " it began to rain."], rule: { en: [{ term: no sooner }, " takes ", { term: than }, "; ", { term: hardly }, " takes ", { term: when }] } }
+          - { level: C1, wrong: "Not until he left, I understood.", right: [{ target: Not until he left did I }, " understand."], rule: { en: [{ term: not until }, " and its clause call for the inverted main clause"] } }
+          - { level: C1, wrong: So tired she was that she fell asleep., right: [{ target: So tired was she }, " that she fell asleep."], rule: { en: [{ term: be }, " comes before the subject after a fronted ", { term: so }, " phrase"] } }
+          - { level: C1, wrong: Nor I do., right: [{ target: Nor do I }, "."], rule: { en: [{ term: nor }, " and ", { term: neither }, " take the auxiliary before the subject"] } }
+          - { level: C2, wrong: On the hill did stand a castle., right: ["On the hill ", { target: stood }, " a castle."], rule: { en: "fronting a place moves the full verb, with no do" } }
+          - { level: C2, wrong: Here comes he., right: ["Here ", { target: he comes }, "."], rule: { en: "a pronoun subject stays before the verb" } }
+          - { level: C2, wrong: Gone the days are., right: [{ target: Gone are }, " the days."], rule: { en: [{ term: be }, " comes before a noun subject after a fronted complement"] } }

@@ -1,0 +1,355 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.participle-clauses
+lang: en
+kind: grammar
+tags: [sentence-building, participles, clauses, formal-style]
+concepts: [participles]
+related: [en.sentence-building.relative-clauses, en.sentence-building.passive-voice, en.verbs.gerund-vs-infinitive, en.sentence-building.conjunctions-linkers, en.tenses.perfect-tenses]
+status: { en: draft }
+
+title: { en: Participle Clauses }
+summary:
+  lead:
+    en: ["Participle clauses use ", { term: "-ing" }, ", ", { term: having }, " with a past participle, or a past participle alone, to give time, reason, result, condition and description."]
+  rule:
+    en: "Without a subject of its own, a participle clause takes the subject of the main clause:"
+  ex: { examples: [[{ target: "Opening the box" }, ", Maria found a note."], [{ target: "Having finished lunch" }, ", we left."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: Forms }, rule: { en: [{ slot: -ing }, " is active, ", { pattern: [having, { slot: past participle }] }, " is earlier, a past participle is passive"] }, ex: { examples: [[{ target: Walking }, " home, I met Tom."], [{ target: "Having finished" }, " lunch, we left."], [{ target: Written }, " in 1990, the book is old."]] } }
+        - { level: B2, point: { en: Meanings }, rule: { en: "time, reason, result or an accompanying action" }, ex: { examples: [[{ target: "Feeling tired" }, ", she went to bed."], ["He dropped the plate, ", { target: breaking }, " it."]] } }
+        - { level: B2, point: { en: After a conjunction }, rule: { en: [{ term: while }, ", ", { term: when }, ", ", { term: before }, ", ", { term: after }, ", ", { term: since }, ", ", { term: on }, " and ", { term: by }, " take ", { slot: -ing }] }, ex: [{ target: "Before signing" }, ", read the contract."] }
+        - { level: C1, point: { en: With a noun }, rule: { en: [{ term: with }, " and ", { term: without }, " give the noun a participle or complement of its own"] }, ex: { examples: [["She sat ", { target: "with her arms crossed" }, "."], [{ target: "With the lights off" }, ", the room felt cold."]] } }
+        - { level: C1, point: { en: Own subject }, rule: { en: [{ term: being }, " joins a subject of its own to the clause"] }, ex: [{ target: "It being Sunday" }, ", the shops were closed."] }
+        - { level: C1, point: { en: Condition and concession }, rule: { en: ["a past participle, ", { term: provided }, ", ", { term: supposing }, " or ", { term: though }, " opens it"] }, ex: { examples: [[{ target: "Used properly" }, ", the product is safe."], [{ target: "Though warned" }, ", he went anyway."]] } }
+        - { level: C1, point: { en: Result }, rule: { en: [{ pattern: [thereby, { slot: V-ing }] }, " names the result of the whole main clause"] }, ex: ["Prices rose, ", { target: "thereby forcing" }, " shops to close."] }
+        - { level: C2, point: { en: Absolute phrases }, rule: { en: "a noun and a participle or adjective, with no verb, set the scene" }, ex: { examples: [[{ target: "Weather permitting" }, ", we will eat outside."], [{ target: "Her work finished" }, ", she left."]] } }
+        - { level: C2, point: { en: Comment clauses }, rule: { en: "fixed phrases comment on the sentence and keep their wording" }, ex: [{ target: "Strictly speaking" }, ", a tomato is a fruit."] }
+        - { level: C2, point: { en: After a noun }, rule: { en: "a participle after a noun, or a chain of them, adds detail" }, ex: ["The problem ", { target: "posed by rising costs" }, ", ", { target: "compounded by falling demand" }, ", forced the firm to close."] }
+        - { level: B2, point: { en: Subject }, rule: { en: "the clause shares the subject of the main clause" }, ex: [{ target: "Opening the box" }, ", ", { subj: Maria }, " found a note."] }
+        - { level: B2, point: { en: Trap }, rule: { en: "a different doer needs a full clause or a new main subject" }, ex: ["Walking down the road, ", { target: "he was hit by a car" }, "."] }
+
+sections:
+  - title: { en: Overview }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A participle clause replaces a full clause with a participle form and usually leaves out its subject." }
+            ex: { equivalence: ["Because she felt tired, she went to bed.", [{ target: "Feeling tired" }, ", she went to bed."]] }
+          - type: rule
+            level: B2
+            text: { en: "Participle clauses are most common in writing; speech often uses a full clause instead." }
+          - type: note
+            level: B2
+            text: { en: ["Participles that follow a noun are also in ", { link: Relative Clauses, to: en.sentence-building.relative-clauses }, "."] }
+
+  - title: { en: "Form: participles" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, features: { verbform: ptcp, tense: prs, voice: act }, form: { en: Present active }, pattern: { slot: V-ing }, meaning: { en: "at the same time as the main action, or just before it" }, ex: [{ target: Waiting }, " at the gate, she checked her phone."] }
+          - { level: B2, features: { verbform: ptcp, tense: prs, voice: pass }, form: { en: Present passive }, pattern: { pattern: [being, { slot: past participle }] }, meaning: { en: "at the same time, with a passive meaning" }, ex: [{ target: "Being told" }, " to wait, she sat down."] }
+          - { level: B2, features: { verbform: ptcp, aspect: prf, voice: act }, form: { en: Perfect active }, pattern: { pattern: [having, { slot: past participle }] }, meaning: { en: "finished before the main action" }, ex: ["Having ", { target: got }, " ", { variant: { target: gotten }, variety: en-US }, " home, she cooked dinner."] }
+          - { level: B2, features: { verbform: ptcp, aspect: prf, voice: pass }, form: { en: Perfect passive }, pattern: { pattern: [having been, { slot: past participle }] }, meaning: { en: "finished before the main action, with a passive meaning" }, ex: [{ target: "Having been warned" }, ", he took a coat."] }
+          - { level: B2, features: { verbform: ptcp, voice: pass }, form: { en: Past participle }, pattern: { slot: past participle }, meaning: { en: "a passive meaning, with being left out" }, ex: [{ target: Seen }, " from above, the town looks small."] }
+          - { level: B2, features: { verbform: ptcp, polarity: neg }, form: { en: Negative }, pattern: { pattern: [not, { slot: V-ing }] }, meaning: { en: "not comes before the participle" }, ex: [{ target: "Not knowing" }, " the way, she asked a driver."] }
+          - { level: B2, features: { verbform: ptcp, aspect: prf, polarity: neg }, form: { en: Negative perfect }, pattern: { pattern: [not, having, { slot: past participle }] }, meaning: { en: "not comes before having" }, ex: [{ target: "Not having eaten" }, " all day, he felt weak."] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["The passive is in ", { link: Passive Voice, to: en.sentence-building.passive-voice }, ", the perfect in ", { link: Perfect Tenses, to: en.tenses.perfect-tenses }, " and irregular participles in the ", { link: irregular verbs table, to: en.verbs.irregular-verbs-table }, "."] }
+
+  - title: { en: "Use: -ing clauses" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: "Time: two actions at once" }, ex: [{ target: "Walking down the street" }, ", I met Tom."] }
+          - { level: B2, use: { en: "Time: one action straight after another" }, ex: [{ target: "Taking out her key" }, ", she opened the door."] }
+          - { level: B2, use: { en: Reason }, ex: [{ target: "Feeling tired" }, ", she went to bed."] }
+          - { level: B2, use: { en: "An accompanying action after the main verb" }, ex: { examples: [["He sat there, ", { target: "staring at the wall" }, "."], ["She came in ", { target: "carrying a tray" }, "."]] } }
+          - { level: B2, use: { en: "Result: the consequence of the main action" }, ex: ["He dropped the plate, ", { target: breaking }, " it."] }
+
+  - title: { en: "Use: after a conjunction" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { en: Word } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, word: { term: while }, use: { en: "two actions at the same time" }, ex: [{ target: "While waiting" }, " for the bus, I read the news."] }
+          - { level: B2, word: { term: when }, use: { en: "at the time of an action" }, ex: [{ target: "When leaving" }, " the house, check the windows."] }
+          - { level: B2, word: { term: before }, use: { en: "an action that comes next" }, ex: [{ target: "Before signing" }, ", read the contract."] }
+          - { level: B2, word: { term: after }, use: { en: "an action that is over" }, ex: [{ target: "After leaving" }, " school, she worked abroad."] }
+          - { level: B2, word: { term: since }, use: { en: "from a past event until now" }, ex: [{ target: "Since moving" }, " here, I have made many friends."] }
+          - { level: B2, word: { term: on }, use: { en: "immediately after an event" }, ex: [{ target: "On arriving" }, ", we phoned our parents."] }
+          - { level: B2, word: { term: by }, use: { en: "the means of doing something" }, ex: [{ target: "By working" }, " hard, she passed the exam."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: before }, " and ", { term: after }, " already show the order, so the plain ", { slot: -ing }, " form is normal."] }
+            ex: ["After ", { target: eating }, ", we washed up."]
+          - type: note
+            level: B2
+            text: { en: ["More linkers followed by ", { slot: -ing }, " are in ", { link: Conjunctions and Linkers, to: en.sentence-building.conjunctions-linkers }, "."] }
+
+  - title: { en: "Use: past participle clauses" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: "A passive meaning: something was done to the subject" }, ex: [{ target: "Written in 1990" }, ", the book is still popular."] }
+          - { level: B2, use: { en: "A feeling or reaction of the subject" }, ex: [{ target: "Surprised by the news" }, ", she sat down."] }
+          - { level: B2, use: { en: "A state, often with an adjective and its complement" }, ex: [{ target: "Tired of waiting" }, ", he left."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["The ", { slot: V-ed }, " participle names who feels; the ", { slot: V-ing }, " participle names what causes the feeling."] }
+
+  - title: { en: The subject of the clause }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, rule: { en: "The doer is the subject of the main clause" }, ex: [{ target: "Opening the box" }, ", ", { subj: Maria }, " found a note."] }
+          - { level: B2, rule: { en: "A passive participle describes that subject as the receiver" }, ex: [{ target: "Found in a drawer" }, ", ", { subj: "the key" }, " looked old."] }
+          - { level: B2, rule: { en: "Another doer needs a full clause" }, ex: "When we left the house, it began to rain." }
+          - { level: B2, rule: { en: "Or the doer becomes the main subject" }, ex: ["Walking down the road, ", { subj: he }, " was hit by a car."] }
+
+  - title: { en: Position and punctuation }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: position, label: { en: Position } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, position: { en: "Before the main clause" }, rule: { en: "a comma follows the clause" }, ex: [{ target: "Feeling hungry" }, ", we stopped for lunch."] }
+          - { level: B2, position: { en: "Inside the main clause" }, rule: { en: "a comma stands on each side" }, ex: ["Maria, ", { target: "feeling hungry" }, ", ordered soup."] }
+          - { level: B2, position: { en: "After the main clause, as a separate action or result" }, rule: { en: "a comma comes before the clause" }, ex: ["He dropped the plate, ", { target: breaking }, " it."] }
+          - { level: B2, position: { en: "After the main clause, closely linked to its verb" }, rule: { en: "no comma" }, ex: ["She spent the evening ", { target: "watching films" }, "."] }
+
+  - title: { en: Clauses with their own subject }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: [{ term: being }, " after a noun phrase: reason or time"] }, ex: [{ target: "The weather being fine" }, ", we went out."] }
+          - { level: C1, use: { en: [{ term: "there being" }, ": reason"] }, ex: [{ target: "There being no time left" }, ", we stopped."] }
+          - { level: C1, use: { en: [{ term: "it being" }, " with a day, a time or a condition"] }, ex: [{ target: "It being Sunday" }, ", the shops were closed."] }
+          - { level: C1, use: { en: [{ term: having }, " and a past participle after a noun phrase: an earlier action"] }, ex: [{ target: "The guests having left" }, ", she tidied up."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The clause has a subject of its own, so the main clause may have a different one." }
+          - type: rule
+            level: C1
+            text: { en: ["These clauses are formal; speech and plain writing use ", { term: because }, " or ", { term: as }, " instead."] }
+            ex: "As the weather was fine, we went out."
+
+  - title: { en: With and without a noun }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, pattern: { pattern: [with, { slot: noun }, { slot: V-ing }] }, use: { en: "an action in progress, a cause or a time" }, ex: [{ target: "With the weather improving" }, ", we decided to walk."] }
+          - { level: C1, pattern: { pattern: [with, { slot: noun }, { slot: past participle }] }, use: { en: "a position or state of the noun" }, ex: ["She sat ", { target: "with her arms crossed" }, "."] }
+          - { level: C1, pattern: { pattern: [with, { slot: noun }, { alternatives: [{ slot: adjective }, { slot: adverb }] }] }, use: { en: "a state, a place or a detail in place" }, ex: { examples: [[{ target: "With the lights off" }, ", the room felt cold."], ["She slept ", { target: "with the window open" }, "."]] } }
+          - { level: C1, pattern: { pattern: [without, { slot: noun }, { slot: V-ing }] }, use: { en: "something that does not happen" }, ex: ["He left ", { target: "without anyone noticing" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The noun takes -ing when it acts and a past participle when it receives the action." }
+            ex: { examples: [[{ target: "With the sun shining" }, ", we ate outside."], [{ target: "With the work finished" }, ", she went home."]] }
+
+  - title: { en: "Use: condition and concession" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: "Condition: a past participle alone" }, ex: [{ target: "Used properly" }, ", the product is safe."] }
+          - { level: C1, use: { en: ["Condition: ", { term: provided }, ", ", { term: providing }, ", ", { term: supposing }, " and ", { term: assuming }, " as conjunctions"] }, ex: { examples: [[{ target: Provided }, " ", { optional: that }, " you arrive early, you will get a seat."], [{ target: Assuming }, " the train is on time, we will arrive at six."]] } }
+          - { level: C1, use: { en: ["Concession: ", { term: although }, " or ", { term: though }, " and a participle"] }, ex: [{ target: "Though warned twice" }, ", he went anyway."] }
+          - { level: C1, use: { en: ["A basis for a statement: ", { term: given }, ", ", { term: considering }, ", ", { term: judging by }] }, ex: { examples: [[{ target: "Given the circumstances" }, ", the result is fair."], [{ target: "Judging by the sky" }, ", it will rain."], [{ target: "Taking everything into account" }, ", we did well."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: given }, ", ", { term: considering }, " and ", { term: judging by }, " name the speaker's basis, so no matching subject is needed."] }
+
+  - title: { en: "Use: result with thereby and thus" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, pattern: { pattern: [thereby, { slot: V-ing }] }, use: { en: "a result, in a formal tone" }, ex: ["Prices rose sharply, ", { target: "thereby forcing" }, " many shops to close."] }
+          - { level: C1, pattern: { pattern: [thus, { slot: V-ing }] }, use: { en: "a result that follows in the argument" }, ex: ["She paid early, ", { target: "thus avoiding" }, " the fee."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The clause follows a comma and names the effect of the whole main clause." }
+          - type: note
+            level: C1
+            text: { en: ["More result linkers are in ", { link: Conjunctions and Linkers, to: en.sentence-building.conjunctions-linkers }, "."] }
+
+  - title: { en: "Compare: full clause and participle clause" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: full, label: { en: Full clause } }
+          - { key: part, label: { en: Participle clause } }
+        rows:
+          - { level: C1, row: { en: Time }, full: "As she walked to work, she listened to music.", part: [{ target: "Walking to work" }, ", she listened to music."] }
+          - { level: C1, row: { en: Reason }, full: "Because he was ill, he stayed at home.", part: [{ target: "Being ill" }, ", he stayed at home."] }
+          - { level: C1, row: { en: Active relative clause }, full: "The woman who is standing by the door is my aunt.", part: ["The woman ", { target: "standing by the door" }, " is my aunt."] }
+          - { level: C1, row: { en: Passive relative clause }, full: "The report that was written last year is online.", part: ["The report ", { target: "written last year" }, " is online."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "A participle clause names no conjunction, so context decides between time, reason and condition." }
+
+  - title: { en: "Compare: -ing and having" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: ing, label: "Opening the door" }
+          - { key: perf, label: "Having opened the door" }
+        rows:
+          - { level: C1, row: { en: Sequence }, ing: { en: "the actions overlap or follow at once" }, perf: { en: "the first action is finished before the second" } }
+          - { level: C1, row: { en: Example }, ing: [{ target: "Opening the door" }, ", he saw a light."], perf: [{ target: "Having opened the door" }, ", he stepped inside."] }
+
+  - title: { en: Absolute constructions }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, use: { en: "A noun and -ing: a condition or circumstance" }, ex: { examples: [[{ target: "Weather permitting" }, ", we will eat outside."], [{ target: "Time allowing" }, ", we will visit the castle."]] } }
+          - { level: C2, use: { en: "A noun and a past participle: a completed event" }, ex: [{ target: "Her work finished" }, ", she left."] }
+          - { level: C2, use: { en: ["A pronoun and a past participle: ", { term: that done }, ", ", { term: this said }] }, ex: [{ target: "That done" }, ", we went home."] }
+          - { level: C2, use: { en: "A fixed summing up" }, ex: [{ target: "All things considered" }, ", it was a good year."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "An absolute construction usually opens the sentence and sets the scene for the main clause." }
+          - type: rule
+            level: C2
+            text: { en: [{ term: being }, " drops out, so a noun can stand directly before an adjective or adverb."] }
+            ex: ["Dinner ", { optional: being }, " over, they went out."]
+
+  - title: { en: Fixed comment clauses }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Phrase } }
+          - { key: use, label: { en: Meaning } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, form: Strictly speaking, use: { en: "to be exact" }, ex: [{ target: "Strictly speaking" }, ", a tomato is a fruit."] }
+          - { level: C2, form: Frankly speaking, use: { en: "to be honest" }, ex: [{ target: "Frankly speaking" }, ", I did not enjoy the film."] }
+          - { level: C2, form: Generally speaking, use: { en: "in most cases" }, ex: [{ target: "Generally speaking" }, ", trains here run on time."] }
+          - { level: C2, form: Putting it mildly, use: { en: "the truth is stronger" }, ex: [{ target: "Putting it mildly" }, ", the service was slow."] }
+          - { level: C2, form: Needless to say, use: { en: "it is obvious" }, ex: [{ target: "Needless to say" }, ", we were delighted."] }
+          - { level: C2, form: Having said that, use: { en: "despite what I have just said" }, ex: ["The hotel is old. ", { target: "Having said that" }, ", it is spotless."] }
+          - { level: C2, form: Stated simply, use: { en: "in simple terms" }, ex: [{ target: "Stated simply" }, ", the plan failed."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "A comment clause is set off by commas and can open or interrupt the sentence." }
+            ex: ["Trains here are, ", { target: "generally speaking" }, ", on time."]
+
+  - title: { en: Participles after nouns and in chains }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C2, use: { en: "A past participle after a noun: a shortened passive relative clause" }, ex: ["The report ", { target: "written by two experts" }, " is online."] }
+          - { level: C2, use: { en: "An -ing form after a noun: a shortened active relative clause" }, ex: ["Residents ", { target: "living near the airport" }, " complain of noise."] }
+          - { level: C2, use: { en: "A chain: each participle adds detail to the one before" }, ex: ["The problem ", { target: "posed by rising costs" }, ", ", { target: "compounded by falling demand" }, ", forced the firm to close."] }
+          - { level: C2, use: { en: ["Several clauses joined by ", { term: and }, " before the main clause"] }, ex: [{ target: "Built in 1850 and restored in 1990" }, ", the house is now a museum."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "Each participle in a chain describes the noun or clause just before it." }
+          - type: rule
+            level: C2
+            text: { en: "News and academic writing pack information this way; speech uses separate sentences." }
+          - type: note
+            level: C2
+            text: { en: ["Relative clauses shortened to a participle are also in ", { link: Relative Clauses, to: en.sentence-building.relative-clauses }, "."] }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Walking down the road, a car hit him.", right: ["Walking down the road, ", { target: "he was hit by a car" }, "."], rule: { en: "the doer of the participle is the subject of the main clause" } }
+          - { level: B2, wrong: "Written the letter, she posted it.", right: [{ target: "Having written" }, " the letter, she posted it."], rule: { en: ["an earlier active action takes ", { pattern: [having, { slot: past participle }] }] } }
+          - { level: B2, wrong: "Surprising by the news, she sat down.", right: [{ target: Surprised }, " by the news, she sat down."], rule: { en: ["the person who feels takes ", { slot: V-ed }, ", not ", { slot: V-ing }] } }
+          - { level: B2, wrong: "After to leave the house, she locked the door.", right: ["After ", { target: leaving }, " the house, she locked the door."], rule: { en: ["a conjunction or preposition takes ", { slot: V-ing }, ", never ", { term: to }, " and the base verb"] } }
+          - { level: C1, wrong: "The weather was fine, we went out.", right: ["The weather ", { target: being }, " fine, we went out."], rule: { en: "a comma cannot join two full clauses; the first takes being" } }
+          - { level: C1, wrong: "She sat with her arms crossing.", right: ["She sat with her arms ", { target: crossed }, "."], rule: { en: "a noun that receives the action takes the past participle" } }
+          - { level: C2, wrong: "Weather permitted, we will eat outside.", right: [{ target: "Weather permitting" }, ", we will eat outside."], rule: { en: "the fixed phrase keeps the -ing form" } }
+          - { level: C2, wrong: "Strictly spoken, a tomato is a fruit.", right: [{ target: "Strictly speaking" }, ", a tomato is a fruit."], rule: { en: "a comment clause keeps its fixed form" } }

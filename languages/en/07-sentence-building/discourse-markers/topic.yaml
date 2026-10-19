@@ -1,0 +1,406 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.discourse-markers
+lang: en
+kind: grammar
+tags: [discourse-markers, hedging, vague-language, politeness, register, formal-writing]
+concepts: [discourse-markers]
+related: [en.sentence-building.conjunctions-linkers, en.modals.may-might, en.modals.would, en.sentence-building.question-tags, en.sentence-building.reported-speech]
+status: { en: draft }
+
+title: { en: "Discourse Markers and Hedging" }
+summary:
+  lead:
+    en: ["Discourse markers such as ", { term: well }, " and ", { term: anyway }, " organise talk, hedges such as ", { term: "sort of" }, " soften a claim, and formal markers shape an argument."]
+  rule:
+    en: "A marker stands outside the clause, set off by a comma or a pause:"
+  ex: [{ target: "To be honest" }, ", I'm a bit tired."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: "Point" } }
+        - { key: rule, label: { en: "Rule" } }
+        - { key: ex, label: { en: "Example" } }
+      rows:
+        - { level: B2, point: { en: "Spoken markers" }, rule: { en: "each marks a job: start, shift, return, check, correct, conclude" }, ex: [{ target: "By the way" }, ", did you call Anna?"] }
+        - { level: B2, point: { en: "Hedges" }, rule: { en: ["soften a word or a claim: ", { term: "sort of" }, ", ", { term: "a bit" }, ", ", { term: "I'd say" }] }, ex: [{ target: "I'd say" }, " it's ", { target: "a bit" }, " late."] }
+        - { level: B2, point: { en: "Vague language" }, rule: { en: [{ term: "or so" }, ", ", { term: "and so on" }, " and ", { term: "or something" }, " leave the detail open"] }, ex: ["Let's have a coffee ", { target: "or something" }, "."] }
+        - { level: B2, point: { en: "Turn-taking" }, rule: { en: "set phrases hold the floor, interrupt, agree and show you listen" }, ex: [{ target: "Sorry to interrupt" }, ", but the shop closes at five."] }
+        - { level: C1, point: { en: "Stance" }, rule: { en: [{ term: frankly }, ", ", { term: "to be fair" }, " and ", { term: "in fact" }, " show how the speaker sees a point"] }, ex: [{ target: "To be fair" }, ", he did say sorry."] }
+        - { level: C1, point: { en: "Academic hedging" }, rule: { en: [{ term: "tend to" }, ", ", { term: may }, " and ", { term: suggest }, " fit a claim to its evidence; boosters raise it"] }, ex: ["Prices ", { target: "tend to" }, " rise in summer."] }
+        - { level: C1, point: { en: "Indirectness" }, rule: { en: ["soften a request or a disagreement: ", { term: "I was wondering if" }, ", ", { term: "with all due respect" }] }, ex: [{ target: "I was wondering if" }, " you could help me."] }
+        - { level: C1, point: { en: "Distancing" }, rule: { en: [{ term: allegedly }, ", ", { term: reportedly }, " and ", { term: "so-called" }, " credit a claim to others"] }, ex: ["The man ", { target: allegedly }, " took the car."] }
+        - { level: C2, point: { en: "Understatement and irony" }, rule: { en: [{ term: "not bad" }, " and ", { term: "not exactly" }, " say less than they mean; the tune shows it"] }, ex: { exchange: ["How was the film?", [{ target: "Not bad" }, "."]] } }
+        - { level: C2, point: { en: "Formal markers" }, rule: { en: [{ term: "that said" }, ", ", { term: "to that end" }, " and ", { term: "by the same token" }, " link the steps of a formal argument"] }, ex: ["The cost is high. ", { target: "That said" }, ", the benefits are clear."] }
+        - { level: C2, point: { en: "Metadiscourse" }, rule: { en: "preview, review and reformulate in a long talk" }, ex: [{ target: "I'd like to begin by" }, " thanking you all."] }
+        - { level: C1, point: { en: "Trap" }, rule: { en: [{ term: "according to" }, " names a source; give your own view with ", { term: "in my opinion" }] }, ex: [{ target: "In my opinion" }, ", the plan is weak."] }
+
+sections:
+  - title: { en: "Overview" }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A discourse marker organises talk or shows the speaker's attitude; the clause keeps its meaning without it." }
+            ex: [{ target: Well }, ", I'm not sure."]
+          - type: rule
+            level: B2
+            text: { en: "The same marker can do several jobs, and the situation shows which." }
+            ex: { examples: [[{ target: Anyway }, ", as I was saying, we leave at nine."], [{ target: Anyway }, ", that's it for today."]] }
+          - type: note
+            level: B2
+            text: { en: ["Linkers such as ", { term: however }, " and ", { term: therefore }, " join clauses. See ", { link: "Conjunctions and Linkers", to: en.sentence-building.conjunctions-linkers }, "."] }
+
+  - title: { en: "Spoken markers by function" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: job, label: { en: "Job" } }
+          - { key: words, label: { en: "Markers" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, job: { en: "Starting or shifting" }, words: { alternatives: [well, right, "OK", so, now, anyway] }, ex: [{ target: Right }, ", let's begin."] }
+          - { level: B2, job: { en: "Continuing" }, words: { alternatives: [and, then, so, "I mean", "you see", "you know"] }, ex: ["I can't come. ", { target: "You see" }, ", I have to work."] }
+          - { level: B2, job: { en: "Changing topic" }, words: { alternatives: ["by the way", "speaking of", "that reminds me"] }, ex: [{ target: "By the way" }, ", did you call Anna?"] }
+          - { level: B2, job: { en: "Returning" }, words: { alternatives: [anyway, "as I was saying", "to get back to"] }, ex: [{ target: "To get back to" }, " the budget, we have two weeks."] }
+          - { level: B2, job: { en: "Checking" }, words: { alternatives: ["you know?", "right?"] }, ex: ["It's a long way, ", { target: "you know" }, "? ", { intonation: rise }] }
+          - { level: B2, job: { en: "Correcting" }, words: { alternatives: ["I mean", "or rather", "that is"] }, ex: { examples: [["We met on Monday, ", { target: "I mean" }, " Tuesday."], ["She lives in Leeds, ", { target: "or rather" }, " near Leeds."]] } }
+          - { level: B2, job: { en: "Concluding" }, words: { alternatives: [anyway, so, "that's it"] }, ex: ["That's the plan. ", { target: So }, ", see you at nine."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A marker usually opens its clause; a comma sets it off in writing and a pause in speech." }
+            ex: [{ target: Well }, ", I think we should wait."]
+          - type: rule
+            level: B2
+            text: { en: "Checking markers come at the end of the clause and take a rising tune." }
+            ex: ["You're coming, ", { target: right }, "? ", { intonation: rise }]
+          - type: rule
+            level: B2
+            text: { en: [{ term: Well }, ", ", { term: "you know" }, " and ", { term: "I mean" }, " are informal; ", { term: "by the way" }, " and ", { term: "as I was saying" }, " suit any situation."] }
+          - type: note
+            level: B2
+            text: { en: ["A question tag also checks a statement. See ", { link: "Question Tags", to: en.sentence-building.question-tags }, "."] }
+
+  - title: { en: "Hedges and softeners" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: softens, label: { en: "Softens" } }
+          - { key: words, label: { en: "Markers" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, softens: { en: "A word" }, words: { alternatives: ["sort of", "kind of", "a bit", rather, somewhat, quite, fairly] }, ex: { examples: [["He is ", { target: "sort of" }, " shy."], ["The soup is ", { target: "a bit" }, " cold."]] } }
+          - { level: B2, softens: { en: "An opinion" }, words: { alternatives: ["I'd say", "I suppose", "I guess", "if you ask me"] }, ex: [{ target: "I'd say" }, " it's too expensive."] }
+          - { level: B2, softens: { en: "Bad news or a refusal" }, words: { alternatives: ["I'm afraid", actually, "to be honest"] }, ex: [{ target: "I'm afraid" }, " I can't come."] }
+          - { level: B2, softens: { en: "Certainty or source" }, words: { alternatives: ["as far as I know", "it seems", apparently] }, ex: [{ target: "As far as I know" }, ", the shop opens at ten."] }
+          - { level: B2, softens: { en: "Exactness" }, words: "more or less", ex: ["The work is ", { target: "more or less" }, " finished."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: "Sort of" }, " and ", { term: "kind of" }, " go before an adjective or a verb and sound informal."] }
+            ex: { examples: [["The film was ", { target: "kind of" }, " sad."], ["I ", { target: "sort of" }, " agree."]] }
+          - type: rule
+            level: B2
+            text: { en: [{ term: "A bit" }, " takes an adjective, or ", { term: "of a" }, " and a noun."] }
+            ex: { examples: [["It is ", { target: "a bit" }, " late."], ["It is ", { target: "a bit of a" }, " problem."]] }
+          - type: rule
+            level: B2
+            text: { en: [{ term: Fairly }, ", ", { term: quite }, " and ", { term: rather }, " rise in strength; ", { term: rather }, " often carries mild surprise."] }
+            ex: { examples: [["The food was ", { target: fairly }, " good."], ["The food was ", { target: quite }, " good."], ["The food was ", { target: rather }, " good."]] }
+
+  - title: { en: "Vague language" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: "Kind" } }
+          - { key: words, label: { en: "Markers" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, kind: { en: "An amount or a time" }, words: "or so", ex: ["We waited ten minutes ", { target: "or so" }, "."] }
+          - { level: B2, kind: { en: "The end of a list" }, words: { alternatives: ["and so on", "and so forth"] }, ex: ["We sell hats, scarves, gloves ", { target: "and so on" }, "."] }
+          - { level: B2, kind: { en: "An extender with and" }, words: { alternatives: ["and everything", "and that"] }, ex: ["He has a car ", { target: "and everything" }, "."] }
+          - { level: B2, kind: { en: "An extender with or" }, words: { alternatives: ["or something", "or anything", "or whatever"] }, ex: ["We could go for a walk ", { target: "or whatever" }, "."] }
+          - { level: B2, kind: { en: "An approximate description" }, words: "something like that", ex: ["She is a nurse, ", { target: "something like that" }, "."] }
+          - { level: B2, kind: { en: "A vague noun" }, words: { alternatives: [stuff, thing] }, ex: ["I need to buy some ", { target: stuff }, " for the trip."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: "Or anything" }, " follows a negative statement; ", { term: "or something" }, " follows a positive statement or an offer."] }
+            ex: { examples: [["I haven't got a pen ", { target: "or anything" }, "."], ["Do you want a drink ", { target: "or something" }, "?"]] }
+          - type: rule
+            level: B2
+            text: { en: "Vague language suits friendly speech; formal writing gives the exact name or number." }
+
+  - title: { en: "Turn-taking" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: move, label: { en: "Move" } }
+          - { key: words, label: { en: "Words" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, move: { en: "Filling a pause" }, words: { alternatives: [er, um] }, ex: ["It was, ", { target: um }, ", about ten years ago."] }
+          - { level: B2, move: { en: "Holding the floor" }, words: { alternatives: ["let me think", "how shall I put it"] }, ex: [{ target: "How shall I put it" }, "? It was a surprise."] }
+          - { level: B2, move: { en: "Interrupting politely" }, words: { alternatives: [["Sorry to interrupt, but ", { gap: true }], ["Can I just say ", { gap: true }]] }, ex: [{ target: "Sorry to interrupt" }, ", but the shop closes at five."] }
+          - { level: B2, move: { en: "Agreeing in part" }, words: ["I see what you mean, but ", { gap: true }], ex: [{ target: "I see what you mean" }, ", but it costs too much."] }
+          - { level: B2, move: { en: "Disagreeing gently" }, words: "I'm not so sure", ex: { exchange: ["It's the best plan.", [{ target: "I'm not so sure" }, "."]] } }
+          - { level: B2, move: { en: "Showing you listen" }, words: { alternatives: ["uh-huh", "I see", really] }, ex: { exchange: ["I got the job!", [{ target: Really }, "? ", { intonation: rise }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A backchannel word is short, and the speaker keeps the turn." }
+            ex: { exchange: ["First I went to Leeds.", [{ target: "Uh-huh" }, "."]] }
+
+  - title: { en: "Stance markers" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: stance, label: { en: "Stance" } }
+          - { key: words, label: { en: "Markers" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, stance: { en: "Frankness" }, words: { alternatives: [frankly, honestly, "to tell the truth"] }, ex: [{ target: Frankly }, ", I found the book dull."] }
+          - { level: C1, stance: { en: "Fairness to the other side" }, words: { alternatives: ["to be fair", "mind you", "then again"] }, ex: { examples: [[{ target: "To be fair" }, ", he did say sorry."], ["The hotel was noisy. ", { target: "Mind you" }, ", it was cheap."]] } }
+          - { level: C1, stance: { en: "A reason to accept" }, words: "after all", ex: ["Let her go. ", { target: "After all" }, ", she is an adult."] }
+          - { level: C1, stance: { en: "A fact that corrects or surprises" }, words: { alternatives: ["as a matter of fact", "in fact", actually] }, ex: ["I thought he was rich. ", { target: Actually }, ", he has no money."] }
+          - { level: C1, stance: { en: "Whatever happens" }, words: "in any case", ex: [{ target: "In any case" }, ", we have until Friday."] }
+          - { level: C1, stance: { en: "A bright side or a minimum" }, words: "at least", ex: { examples: [[{ target: "At least" }, " it didn't rain."], ["Call me ", { target: "at least" }, " once a week."]] } }
+          - { level: C1, stance: { en: "Restating" }, words: "in other words", ex: ["He was let go. ", { target: "In other words" }, ", he was fired."] }
+          - { level: C1, stance: { en: "A loose fit" }, words: { alternatives: ["so to speak", "as it were", "in a sense"] }, ex: ["He is, ", { target: "so to speak" }, ", the boss's right hand."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: "Mind you" }, " and ", { term: "then again" }, " follow a statement and add a point that weakens it."] }
+            ex: ["The film was long. ", { target: "Then again" }, ", it was good."]
+
+  - title: { en: "Hedging and boosting in academic writing" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: device, label: { en: "Device" } }
+          - { key: words, label: { en: "Words" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, device: { en: "A hedging verb" }, words: { alternatives: ["tend to", "appear to", "seem to"] }, ex: ["Prices ", { target: "tend to" }, " rise in summer."] }
+          - { level: C1, device: { en: "A modal verb" }, words: { alternatives: [may, might, could] }, ex: ["The change ", { target: may }, " reduce costs."] }
+          - { level: C1, device: { en: "A reporting verb" }, words: { alternatives: [suggest, indicate] }, ex: ["The survey ", { target: suggests }, " that most people agree."] }
+          - { level: C1, device: { en: "A probability phrase" }, words: { alternatives: ["it is likely that", "it is possible that"] }, ex: [{ target: "It is likely that" }, " demand will grow."] }
+          - { level: C1, device: { en: "A limiting adverb" }, words: { alternatives: ["to some extent", largely, generally, "on the whole"] }, ex: ["The project was ", { target: largely }, " a success."] }
+          - { level: C1, device: { en: "An attitude adverb" }, words: { alternatives: [arguably, presumably] }, ex: ["This is ", { target: arguably }, " the best result so far."] }
+          - { level: C1, device: { en: "A booster" }, words: { alternatives: [clearly, undoubtedly, "it is evident that"] }, ex: ["The figures ", { target: clearly }, " show a rise."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "A hedge fits the strength of a claim to its evidence; a booster raises it." }
+          - type: rule
+            level: C1
+            text: { en: "A claim can take a booster and a hedge together." }
+            ex: ["The data ", { target: clearly }, " show a link, but it ", { target: may }, " not hold for adults."]
+          - type: rule
+            level: C1
+            text: { en: ["Academic writing uses ", { term: "tend to" }, ", ", { term: may }, " and ", { term: suggest }, "; ", { term: "sort of" }, " and ", { term: "I guess" }, " belong to speech."] }
+          - type: note
+            level: C1
+            text: { en: ["The modals of possibility are in ", { link: "May and Might", to: en.modals.may-might }, "."] }
+
+  - title: { en: "Indirectness and politeness" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: move, label: { en: "Move" } }
+          - { key: words, label: { en: "Phrase" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, move: { en: "Asking for help" }, words: { alternatives: [["I was wondering if ", { gap: true }], ["I don't suppose you could ", { gap: true }]] }, ex: { examples: [[{ target: "I was wondering if" }, " you could help me."], [{ target: "I don't suppose you could" }, " lend me a pen?"]] } }
+          - { level: C1, move: { en: "Disagreeing" }, words: { alternatives: [["With all due respect, ", { gap: true }], ["I take your point, but ", { gap: true }]] }, ex: { examples: [[{ target: "With all due respect" }, ", I think the figures are wrong."], [{ target: "I take your point" }, ", but we have no time."]] } }
+          - { level: C1, move: { en: "Refusing or giving bad news" }, words: { alternatives: [["Unfortunately, ", { gap: true }], ["I'm afraid ", { gap: true }]] }, ex: { examples: [[{ target: Unfortunately }, ", the post has been filled."], [{ target: "I'm afraid" }, " we are fully booked."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["After ", { term: "I was wondering if" }, ", the clause keeps statement order and usually takes ", { term: could }, " or ", { term: would }, "."] }
+            ex: ["I was wondering if you ", { target: could }, " send it today."]
+          - type: rule
+            level: C1
+            text: { en: [{ term: Unfortunately }, " opens formal bad news; ", { term: "I'm afraid" }, " does the same in speech."] }
+          - type: note
+            level: C1
+            text: { en: [{ term: Would }, " and ", { term: could }, " soften a request. See ", { link: Would, to: en.modals.would }, "."] }
+
+  - title: { en: "Distancing and attribution" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: marker, label: { en: "Marker" } }
+          - { key: shows, label: { en: "Shows" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C1, marker: allegedly, shows: { en: "a claim made but not proved" }, ex: ["The man ", { target: allegedly }, " took the car."] }
+          - { level: C1, marker: reportedly, shows: { en: "a report the writer has not checked" }, ex: ["The film ", { target: reportedly }, " cost ten million."] }
+          - { level: C1, marker: supposedly, shows: { en: "a belief the writer doubts" }, ex: ["This is ", { target: supposedly }, " the best café in town."] }
+          - { level: C1, marker: "so-called", shows: { en: "a name that may not fit" }, ex: ["His ", { target: "so-called" }, " friends never helped."] }
+          - { level: C1, marker: "according to", shows: { en: "another person or document as the source" }, ex: [{ target: "According to" }, " the report, sales fell."] }
+          - { level: C1, marker: { pattern: [it is, said, that, { slot: clause }] }, shows: { en: "a general report with no named source" }, ex: [{ target: "It is said that" }, " the mayor will resign."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: Allegedly }, " and ", { term: reportedly }, " stand before the main verb or at the start of the clause."] }
+            ex: { examples: [["The company has ", { target: reportedly }, " closed."], [{ target: Reportedly }, ", the company has closed."]] }
+          - type: rule
+            level: C1
+            text: { en: ["A passive reporting verb with ", { term: to }, " puts a claim at a distance:"] }
+            ex: ["She ", { target: "is said to speak" }, " six languages."]
+          - type: note
+            level: C1
+            text: { en: ["Reporting verbs are in ", { link: "Reported Speech", to: en.sentence-building.reported-speech }, "."] }
+
+  - title: { en: "Understatement, irony and implication" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: device, label: { en: "Device" } }
+          - { key: meaning, label: { en: "Meaning" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C2, device: { en: "A bit of a" }, meaning: { en: "a big problem, said lightly" }, ex: ["The holiday was ", { target: "a bit of a disaster" }, ": we missed the flight."] }
+          - { level: C2, device: { en: "Not bad" }, meaning: { en: "good, often very good" }, ex: { exchange: ["How was the film?", [{ target: "Not bad" }, "."]] } }
+          - { level: C2, device: { en: "Not exactly" }, meaning: { en: "no, or only in part" }, ex: { exchange: ["Are you ready?", [{ target: "Not exactly" }, ". I haven't started."]] } }
+          - { level: C2, device: { en: Rather }, meaning: { en: "more than expected" }, ex: ["That was ", { target: rather }, " a surprise."] }
+          - { level: C2, device: { en: "Quite as a reply" }, meaning: { en: "full agreement, in British English" }, ex: { exchange: ["It's a shame they lost.", [{ target: Quite }, "."]] } }
+          - { level: C2, device: { en: "Hardly the best" }, meaning: { en: "a poor one" }, ex: ["That is ", { target: "hardly the best way" }, " to start."] }
+          - { level: C2, device: { en: Irony }, meaning: { en: "the opposite of the words, shown by the tune and the situation" }, ex: { exchange: ["Look, it's pouring.", [{ target: "Lovely weather" }, "! ", { intonation: rise }, { intonation: fall }]] } }
+          - { level: C2, device: { en: Implication }, meaning: { en: "a remark that asks for action" }, ex: { exchange: [[{ target: "It's a bit cold in here" }, "."], "I'll close the window."] } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "Understatement says less than it means, and the situation completes the meaning." }
+          - type: rule
+            level: C2
+            text: { en: "The tune of the voice carries the meaning: the same words can praise or criticise." }
+          - type: note
+            level: C2
+            text: { en: ["The tunes are in ", { link: "Connected Speech and Intonation", to: en.foundations.connected-speech-intonation }, "."] }
+
+  - title: { en: "Markers of formal speech and writing" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: job, label: { en: "Job" } }
+          - { key: words, label: { en: "Markers" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C2, job: { en: "Conceding, then turning" }, words: { alternatives: ["be that as it may", "having said that", "that said"] }, ex: ["The cost is high. ", { target: "That said" }, ", the benefits are clear."] }
+          - { level: C2, job: { en: "Drawing a consequence" }, words: "in light of this", ex: [{ target: "In light of this" }, ", we ask for more time."] }
+          - { level: C2, job: { en: "Giving the purpose" }, words: "to that end", ex: ["The aim is to cut costs. ", { target: "To that end" }, ", we shall close two offices."] }
+          - { level: C2, job: { en: "Adding a parallel point" }, words: { alternatives: ["by the same token", "in the same vein"] }, ex: { examples: [["He expects loyalty; ", { target: "by the same token" }, ", he gives it."], [{ target: "In the same vein" }, ", she thanked the staff."]] } }
+          - { level: C2, job: { en: "Speaking bluntly" }, words: "to put it bluntly", ex: [{ target: "To put it bluntly" }, ", the plan has failed."] }
+          - { level: C2, job: { en: "Stating the obvious" }, words: { alternatives: ["needless to say", "it goes without saying"] }, ex: [{ target: "Needless to say" }, ", we shall pay on time."] }
+          - { level: C2, job: { en: "Summing up" }, words: { alternatives: ["by and large", "all in all"] }, ex: [{ target: "By and large" }, ", the trip was a success."] }
+          - { level: C2, job: { en: "Setting the precision" }, words: { alternatives: ["strictly speaking", "broadly speaking"] }, ex: { examples: [[{ target: "Strictly speaking" }, ", a tomato is a fruit."], [{ target: "Broadly speaking" }, ", prices are falling."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "A formal marker opens its sentence and takes a comma." }
+          - type: rule
+            level: C2
+            text: { en: ["Formal markers suit lectures, reports and essays; chat prefers ", { term: well }, " and ", { term: anyway }, "."] }
+
+  - title: { en: "Metadiscourse in extended speech" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: move, label: { en: "Move" } }
+          - { key: words, label: { en: "Phrase" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: C2, move: { en: "Previewing the plan" }, words: { pattern: ["I'd like to begin by", { slot: -ing }] }, ex: [{ target: "I'd like to begin by" }, " thanking you all."] }
+          - { level: C2, move: { en: "Stating the main claim" }, words: { pattern: ["What I want to argue is", that, { slot: clause }] }, ex: [{ target: "What I want to argue is" }, " that cities need more trees."] }
+          - { level: C2, move: { en: "Referring back" }, words: "as I mentioned earlier", ex: [{ target: "As I mentioned earlier" }, ", the budget is fixed."] }
+          - { level: C2, move: { en: "Promising to return" }, words: "I'll come back to this", ex: [{ target: "I'll come back to this" }, " after the break."] }
+          - { level: C2, move: { en: "Restating" }, words: { alternatives: ["that is", "put differently"] }, ex: { examples: [["The test is cheap; ", { target: "that is" }, ", it costs under a pound."], ["Prices rose; ", { target: "put differently" }, ", we pay more."]] } }
+          - { level: C2, move: { en: "Listing the members" }, words: namely, ex: ["There are two options, ", { target: namely }, " rent or buy."] }
+          - { level: C2, move: { en: "Sharpening" }, words: "to be more precise", ex: ["It took a year, or, ", { target: "to be more precise" }, ", thirteen months."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: [{ term: Namely }, " lists every member of a group; ", { term: "for example" }, " gives only some."] }
+            ex: { contrast: [["Two groups pay, ", { target: namely }, " students and parents."], ["Some groups pay, ", { target: "for example" }, " students."]] }
+
+  - title: { en: "Typical errors" }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "As far I know, the shop opens at ten."
+            right: [{ target: "As far as" }, " I know, the shop opens at ten."]
+            rule: { en: [{ term: "as far as I know" }, " has two ", { term: as }] }
+          - level: B2
+            wrong: "It's a bit problem."
+            right: ["It's ", { target: "a bit of a" }, " problem."]
+            rule: { en: [{ term: "a bit" }, " takes an adjective, or ", { term: "of a" }, " and a noun"] }
+          - level: B2
+            wrong: "He is a sort of shy."
+            right: ["He is ", { target: "sort of" }, " shy."]
+            rule: { en: [{ term: "sort of" }, " before an adjective takes no ", { term: a }] }
+          - level: B2
+            wrong: "Actually, the shop is closed for repairs."
+            right: [{ target: "At the moment" }, ", the shop is closed for repairs."]
+            rule: { en: [{ term: actually }, " adds a fact that differs from what the listener expects; ", { term: "at the moment" }, " means now"] }
+          - level: C1
+            wrong: "According to me, the plan is weak."
+            right: [{ target: "In my opinion" }, ", the plan is weak."]
+            rule: { en: [{ term: "according to" }, " names another source; your own view takes ", { term: "in my opinion" }] }
+          - level: C1
+            wrong: "These results prove that sleep helps memory."
+            right: ["These results ", { target: suggest }, " that sleep helps memory."]
+            rule: { en: [{ term: suggest }, " and ", { term: indicate }, " fit most academic claims; ", { term: prove }, " needs complete evidence"] }
+          - level: C1
+            wrong: "The results are sort of surprising."
+            right: ["The results are ", { target: somewhat }, " surprising."]
+            rule: { en: ["writing uses ", { term: somewhat }, " or ", { term: rather }, " where speech uses ", { term: "sort of" }] }
+          - level: C1
+            wrong: "The result may possibly suggest a link."
+            right: ["The result ", { target: "may suggest" }, " a link."]
+            rule: { en: "a claim takes one hedge; a second hedge empties it" }
+          - level: C2
+            wrong: "Needless to say, the meeting has moved to Friday."
+            right: [{ target: "Please note that" }, " the meeting has moved to Friday."]
+            rule: { en: [{ term: "needless to say" }, " introduces what the listener already knows"] }
+          - level: C2
+            wrong: "Some groups pay, namely students."
+            right: ["Some groups pay, ", { target: "for example" }, " students."]
+            rule: { en: [{ term: namely }, " lists every member; ", { term: "for example" }, " gives some"] }
+          - level: C2
+            wrong: "I'd like to begin by to thank you all."
+            right: ["I'd like to begin by ", { target: thanking }, " you all."]
+            rule: { en: [{ term: by }, " is a preposition, so the ", { term: "-ing" }, " form follows"] }
+          - level: C2
+            wrong: "He works hard; by the same token, his brother is lazy."
+            right: ["He works hard; ", { target: "on the other hand" }, ", his brother is lazy."]
+            rule: { en: [{ term: "by the same token" }, " adds a point from the same reason; contrast takes ", { term: "on the other hand" }] }

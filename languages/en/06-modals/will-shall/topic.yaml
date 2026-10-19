@@ -1,0 +1,224 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.modals.will-shall
+lang: en
+kind: grammar
+tags: [modals, will, shall, assumption, formality]
+concepts: [will-shall]
+related: [en.tenses.future-forms, en.modals.would, en.modals.must-have-to, en.tenses.simple-tenses]
+status: { en: draft }
+
+title: { en: Will and Shall }
+summary:
+  lead:
+    en: [{ term: Will }, " for assumption, habit, willingness and refusal; ", { term: shall }, " for offers and suggestions with I and we, and for formal duty."]
+  rule:
+    en: [{ term: Will }, " guesses what is true now, and ", { term: shall }, " asks what to do:"]
+  ex: { examples: [["That", { target: "'ll" }, " be Tom at the door."], [{ target: Shall }, " we wait?"]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: Assumption }, rule: { en: [{ term: will }, " guesses what is true now, from what the speaker knows"] }, ex: { examples: [["That", { target: "'ll be" }, " Tom at the door."], ["She ", { target: "won't be" }, " home yet."]] } }
+        - { level: B2, point: { en: Habit }, rule: { en: "what is always or typically true" }, ex: { examples: [["Oil ", { target: will }, " float on water."], ["He ", { target: will }, " sit there for hours."]] } }
+        - { level: B2, point: { en: Willingness }, rule: { en: [{ term: will }, " is willing, ", { term: "won't" }, " refuses, for people and things"] }, ex: { examples: [["The shop ", { target: will }, " change it."], ["The car ", { target: "won't" }, " start."]] } }
+        - { level: B2, point: { en: Request }, rule: { en: [{ term: ["Will you", { gap: true }, "?"] }, " asks directly, ", { term: ["Would you", { gap: true }, "?"] }, " is softer"] }, ex: [{ target: Will }, " you open the window?"] }
+        - { level: B2, point: { en: "Shall question" }, rule: { en: [{ pattern: [{ term: Shall }, { alternatives: [{ term: I }, { term: we }] }, { slot: V }] }, " offers, suggests or asks what to do"] }, ex: { examples: [[{ target: Shall }, " I open the window?"], ["Let's go, ", { target: "shall we" }, "?"]] } }
+        - { level: C1, point: { en: "Guess in progress" }, rule: { en: [{ pattern: [{ term: will be }, { slot: V-ing }] }, " guesses what is happening now"] }, ex: ["Don't call yet. They", { target: "'ll be having" }, " dinner."] }
+        - { level: C1, point: { en: "Guess about the past" }, rule: { en: [{ pattern: [{ term: will have }, { slot: past participle }] }, " guesses about something finished"] }, ex: ["You", { target: "'ll have heard" }, " the news."] }
+        - { level: C1, point: { en: "Persistent habit" }, rule: { en: ["stressed ", { term: will }, " shows an annoying habit"] }, ex: ["He ", { target: { stress: will } }, " keep interrupting."] }
+        - { level: C1, point: { en: "Formal shall" }, rule: { en: [{ term: shall }, " after ", { term: I }, " or ", { term: we }, ", and in rules and promises"] }, ex: { examples: [["I ", { target: shall }, " be there."], ["Passengers ", { target: "shall not" }, " smoke."]] } }
+        - { level: C2, point: { en: "Legal shall" }, rule: { en: [{ term: shall }, " states a duty on any subject in laws and contracts"] }, ex: { examples: [["The tenant ", { target: shall }, " pay the rent monthly."], ["Thou ", { target: shalt }, " not steal."]] } }
+        - { level: C2, point: { en: Command }, rule: { en: [{ term: will }, " gives an order as a fact; ", { term: "will do" }, " accepts it"] }, ex: ["You ", { target: will }, " report at nine."] }
+        - { level: B2, point: { en: Trap }, rule: { en: ["an offer with ", { term: I }, " takes ", { term: shall }] }, ex: [{ target: Shall }, " I carry your bag?"] }
+
+sections:
+  - title: { en: "Form: will and shall" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: pattern, label: { en: Pattern } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, features: { polarity: pos, interrogativity: decl }, form: { en: Statement }, pattern: { pattern: [{ slot: subject }, { alternatives: [will, "'ll"] }, { slot: V }] }, ex: ["That", { target: "'ll be" }, " the postman."] }
+          - { level: B2, features: { polarity: neg, interrogativity: decl }, form: { en: Negative }, pattern: { pattern: [{ slot: subject }, { alternatives: ["won't", will not] }, { slot: V }] }, ex: ["He ", { target: "won't be" }, " at work today."] }
+          - { level: B2, features: { polarity: pos, interrogativity: int, person: 1 }, form: { en: "Question with shall" }, pattern: { pattern: [Shall, { alternatives: [I, we] }, { slot: V }] }, ex: [{ target: Shall }, " I carry your bag? ", { variant: { target: "Should I carry your bag?" }, variety: en-US }] }
+          - { level: C1, features: { aspect: prog }, form: { en: Continuous }, pattern: { pattern: [{ slot: subject }, will be, { slot: V-ing }] }, ex: ["He", { target: "'ll be working" }, " late again."] }
+          - { level: C1, features: { aspect: prf }, form: { en: Perfect }, pattern: { pattern: [{ slot: subject }, will have, { slot: past participle }] }, ex: ["He", { target: "'ll have missed" }, " the bus."] }
+          - { level: C1, features: { polarity: pos, interrogativity: decl, person: 1 }, form: { en: "Statement with shall" }, pattern: { pattern: [{ alternatives: [I, we] }, shall, { slot: V }] }, ex: ["I ", { target: shall }, " call you tomorrow."] }
+          - { level: C1, features: { polarity: neg, interrogativity: decl, person: 1 }, form: { en: "Negative with shall" }, pattern: { pattern: [{ alternatives: [I, we] }, { alternatives: [shall not, "shan't"] }, { slot: V }] }, ex: ["We ", { target: "shan't" }, " be long. ", { variant: { target: "won't" }, variety: en-US }] }
+          - { level: C2, features: { polarity: pos, interrogativity: decl, person: 3 }, form: { en: "Shall with any subject" }, pattern: { pattern: [{ slot: subject }, shall, { slot: V }] }, ex: ["The seller ", { target: shall }, " deliver the goods in May."] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["Plans, decisions, offers and predictions with ", { term: will }, " are in ", { link: Future Forms, to: en.tenses.future-forms }, "."] }
+          - type: rule
+            level: C1
+            text: { en: [{ term: "'ll" }, " is the short form of both ", { term: will }, " and ", { term: shall }, ":"] }
+            ex: ["We", { target: "'ll" }, " tell you on Monday."]
+
+  - title: { en: "Pronunciation: will, shall and shan't" }
+    role: pronunciation
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: sound, label: { en: Sound } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: { en: [{ term: shall }, " (weak, in questions)"] }, sound: { ipa: ʃəl }, ex: [{ target: Shall }, " I help? ", { ipa: ʃəl aɪ ˈhelp }] }
+          - { level: C1, form: { en: [{ term: will }, " (stressed)"] }, sound: { ipa: wɪl }, ex: ["He ", { target: { stress: will } }, " keep interrupting. ", { ipa: hi ˈwɪl kiːp ˌɪntəˈrʌptɪŋ }] }
+          - { level: C1, form: "shan't", sound: [{ ipa: ʃɑːnt }, " ", { variant: { ipa: ʃænt }, variety: en-US }], ex: ["We ", { target: "shan't" }, " be long. ", { ipa: wi ˈʃɑːnt bi ˈlɒŋ }] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Stressed ", { term: will }, " keeps its full vowel; writing shows the stress with italics or capitals."] }
+
+  - title: { en: "Use: assumptions" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: ["A guess about the present from what the speaker knows (", { term: will }, ")"] }, ex: { examples: [["That", { target: "'ll be" }, " Tom at the door."], ["You", { target: "'ll be" }, " tired after the flight."]] } }
+          - { level: B2, use: { en: ["A guess that something is not yet true (", { term: "won't" }, ")"] }, ex: ["She ", { target: "won't be" }, " home yet."] }
+          - { level: C1, use: { en: ["A guess about what is happening now (", { pattern: [{ term: will be }, { slot: V-ing }] }, ")"] }, ex: { examples: [["Don't call yet. They", { target: "'ll be having" }, " dinner."], ["She", { target: "'ll be waiting" }, " at the station by now."]] } }
+          - { level: C1, use: { en: ["A guess about something finished (", { pattern: [{ term: will have }, { slot: past participle }] }, ")"] }, ex: { examples: [["You", { target: "'ll have heard" }, " the news."], ["They", { target: "'ll have arrived" }, " by now."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["Words such as ", { term: yet }, " and ", { term: "by now" }, " often mark a guess about the present:"] }
+            ex: ["They'll be home ", { signal: "by now" }, "."]
+          - type: rule
+            level: C1
+            text: { en: [{ pattern: [{ term: "won't have" }, { slot: past participle }] }, " guesses that something has not happened yet:"] }
+            ex: ["She", { target: "won't have seen" }, " my message yet."]
+
+  - title: { en: "Use: habits" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: ["General truths: what always happens (", { term: will }, ")"] }, ex: { examples: [["Oil ", { target: will }, " float on water."], ["Accidents ", { target: will }, " happen."]] } }
+          - { level: B2, use: { en: ["Typical behaviour of a person or thing (", { term: will }, ")"] }, ex: { examples: [["He ", { target: will }, " sit there for hours."], ["The dog ", { target: will }, " bark at every visitor."]] } }
+          - { level: C1, use: { en: ["A persistent habit the speaker finds annoying (stressed ", { term: will }, ")"] }, ex: { examples: [["He ", { target: { stress: will } }, " keep interrupting."], ["She ", { target: { stress: will } }, " leave her cup on the stairs."]] } }
+          - { level: C1, use: { en: ["A saying about human nature (", { term: will }, ")"] }, ex: { examples: [["Boys ", { target: will }, " be boys."], ["People ", { target: will }, " talk."]] } }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["A habit in the past takes ", { term: would }, ": see ", { link: Would, to: en.modals.would }, "."] }
+          - type: note
+            level: B2
+            text: { en: ["Habit ", { term: will }, " describes typical behaviour; routines take the present simple: see ", { link: Simple Tenses, to: en.tenses.simple-tenses }, "."] }
+
+  - title: { en: "Use: willingness, refusal and command" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: ["Willingness: the subject is ready to act (", { term: will }, ")"] }, ex: { examples: [["I ", { target: will }, " help you move."], ["The shop ", { target: will }, " change it for you."]] } }
+          - { level: B2, use: { en: ["A request (", { term: ["Will you", { gap: true }, "?"] }, ")"] }, ex: { examples: [[{ target: Will }, " you give me a hand?"], [{ target: Will }, " you tell her I called?"]] } }
+          - { level: B2, use: { en: ["Refusal by a person (", { term: "won't" }, ")"] }, ex: ["She ", { target: "won't" }, " listen to anyone."] }
+          - { level: B2, use: { en: ["A thing that fails to work (", { term: "won't" }, ")"] }, ex: { examples: [["The car ", { target: "won't" }, " start."], ["The door ", { target: "won't" }, " open."]] } }
+          - { level: C1, use: { en: ["Firm determination (", { term: will }, ", often stressed)"] }, ex: { examples: [["I ", { target: "will not" }, " tolerate it."], ["We ", { target: will }, " finish this today."]] } }
+          - { level: C1, use: { en: ["An impatient command (", { term: ["Will you please", { gap: true }, "?"] }, ")"] }, ex: { examples: [[{ target: Will }, " you please be quiet? ", { intonation: fall }], [{ target: Will }, " you stop that noise?"]] } }
+          - { level: C2, use: { en: ["An order given as a statement of fact (", { term: "you will" }, ")"] }, ex: { examples: [["You ", { target: will }, " report at nine."], ["Cadets ", { target: will }, " wear uniform at all times."]] } }
+          - { level: C2, use: { en: ["Short replies that accept an order or a request (", { term: "will do" }, ", ", { term: "shall do" }, ")"] }, ex: { examples: [{ exchange: ["Text me when you land.", [{ target: "Will do" }, "."]] }, { exchange: ["Please lock the door.", [{ target: "Shall do" }, "."]] }] } }
+          - { level: C2, use: { en: ["A short reply that refuses (", { term: "won't do" }, ")"] }, ex: { exchange: ["Wear the tie, please.", [{ target: "Won't do" }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["An order with ", { term: "you will" }, " comes from someone with authority and expects no refusal."] }
+
+  - title: { en: "Use: shall" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: ["An offer to do something (", { pattern: [{ term: Shall }, { term: I }, { slot: V }] }, ")"] }, ex: { examples: [[{ target: Shall }, " I carry that for you?"], [{ target: Shall }, " I open the door? ", { variant: { target: "Should I open the door?" }, variety: en-US }]] } }
+          - { level: B2, use: { en: ["A suggestion (", { pattern: [{ term: Shall }, { term: we }, { slot: V }] }, ")"] }, ex: [{ target: Shall }, " we eat out tonight?"] }
+          - { level: B2, use: { en: ["A question about what to do (", { term: "what shall" }, ", ", { term: "where shall" }, ")"] }, ex: { examples: [["What ", { target: shall }, " we cook tonight?"], ["Where ", { target: shall }, " I put my coat?"]] } }
+          - { level: B2, use: { en: ["A tag after ", { term: "let's" }] }, ex: ["Let's start, ", { target: "shall we" }, "?"] }
+          - { level: C1, use: { en: ["A formal statement of intention with ", { term: I }, " or ", { term: we }] }, ex: { examples: [["I ", { target: shall }, " be there at nine."], ["We ", { target: shall }, " write to you on Monday."]] } }
+          - { level: C1, use: { en: ["Rules and notices (", { term: shall }, ", ", { term: "shall not" }, ")"] }, ex: { examples: [["Passengers ", { target: "shall not" }, " leave bags unattended."], ["Members ", { target: shall }, " pay their fees by March."]] } }
+          - { level: C1, use: { en: ["A promise to someone (", { term: "you shall" }, ")"] }, ex: { examples: [["You ", { target: shall }, " have your money on Friday."], ["She ", { target: shall }, " have the best seat in the house."]] } }
+          - { level: C2, use: { en: ["Laws, contracts and court orders: a duty on any subject (", { term: shall }, ")"] }, ex: { examples: [["The accused ", { target: shall }, " be informed of the charge."], ["The tenant ", { target: shall }, " pay the rent monthly."]] } }
+          - { level: C2, use: { en: ["Biblical and literary commands (", { term: shalt }, ")"] }, ex: { examples: [["Thou ", { target: shalt }, " not steal."], ["Thou ", { target: shalt }, " love thy neighbour."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: "I shall" }, " is formal and mostly British; speech and American English use ", { term: "I will" }, " or ", { term: "I'll" }, "."] }
+
+  - title: { en: "Compare: will and would for requests" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: will, label: "Will you" }
+          - { key: would, label: "Would you" }
+        rows:
+          - { level: B2, row: { en: Meaning }, will: { en: "a direct request" }, would: { en: "a polite, tentative request" } }
+          - { level: B2, row: { en: "Spoken to" }, will: { en: "friends, family and colleagues" }, would: { en: "strangers, customers and senior people" } }
+          - { level: B2, row: { en: Example }, will: [{ target: Will }, " you pass the salt?"], would: [{ target: Would }, " you pass the salt, please?"] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["More polite requests, offers and imagined situations are in ", { link: Would, to: en.modals.would }, "."] }
+
+  - title: { en: "Compare: shall and must in rules" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: Point } }
+          - { key: shall, label: shall }
+          - { key: must, label: must }
+        rows:
+          - { level: C2, row: { en: Style }, shall: { en: "traditional legal drafting" }, must: { en: "plain-English drafting" } }
+          - { level: C2, row: { en: Duty }, shall: ["The contractor ", { target: shall }, " finish the work by June."], must: ["The contractor ", { target: must }, " finish the work by June."] }
+          - { level: C2, row: { en: Ban }, shall: ["Visitors ", { target: "shall not" }, " feed the animals."], must: ["Visitors ", { target: "must not" }, " feed the animals."] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: ["Plain-English drafting replaces ", { term: shall }, " with ", { term: must }, " for duties, since ", { term: shall }, " is often unclear."] }
+          - type: note
+            level: C2
+            text: { en: ["Everyday obligation with ", { term: must }, " is in ", { link: Must and Have To, to: en.modals.must-have-to }, "."] }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Will I carry your bag?", right: [{ target: Shall }, " I carry your bag?"], rule: { en: ["an offer with ", { term: I }, " takes ", { term: shall }] } }
+          - { level: B2, wrong: "Let's start, will we?", right: ["Let's start, ", { target: "shall we" }, "?"], rule: { en: ["the tag after ", { term: "let's" }, " is ", { term: "shall we" }] } }
+          - { level: B2, wrong: "Shall you open the window?", right: [{ target: Will }, " you open the window?"], rule: { en: [{ term: shall }, " in a question takes ", { term: I }, " or ", { term: we }] } }
+          - { level: C1, wrong: "They will arrive by now.", right: ["They", { target: "'ll have arrived" }, " by now."], rule: { en: ["a guess about something finished takes ", { pattern: [{ term: will have }, { slot: past participle }] }] } }
+          - { level: C1, wrong: "Don't call her now. She will sleep.", right: ["Don't call her now. She", { target: "'ll be sleeping" }, "."], rule: { en: ["a guess about an action in progress takes ", { pattern: [{ term: will be }, { slot: V-ing }] }] } }
+          - { level: C2, wrong: "She shall be here tomorrow.", right: ["She ", { target: will }, " be here tomorrow."], rule: { en: [{ term: shall }, " after ", { term: she }, " sounds like a promise or an order; a plain future takes ", { term: will }] } }

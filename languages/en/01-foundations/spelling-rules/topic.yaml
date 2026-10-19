@@ -1,0 +1,317 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.foundations.spelling-rules
+lang: en
+kind: foundations
+tags: [spelling, letters, suffixes]
+concepts: [spelling]
+related: [en.foundations.alphabet-spelling, en.nouns-determiners.plurals, en.tenses.simple-tenses, en.adjectives-adverbs.comparatives-superlatives]
+status: { en: draft }
+
+title: { en: Spelling Rules }
+summary:
+  lead:
+    en: ["Endings change the last letters of a word by rule (", { term: "running" }, ", ", { term: "hoping" }, ", ", { term: "studies" }, "), and British and American spelling differ in set patterns."]
+  rule:
+    en: "A final consonant doubles after one stressed vowel:"
+  ex: { examples: [{ mapping: ["begin", { target: "beginning" }] }, { mapping: ["visit", { target: "visiting" }] }] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: "Doubling" }, rule: { en: "double the final consonant after one stressed vowel" }, ex: { examples: [{ mapping: ["begin", { target: "beginning" }] }, { mapping: ["visit", { target: "visited" }] }] } }
+        - { level: B2, point: { en: "Silent e" }, rule: { en: "drop it before a vowel, keep it before a consonant" }, ex: { examples: [{ mapping: ["hope", { target: "hoping" }] }, { mapping: ["hope", { target: "hopeful" }] }] } }
+        - { level: B2, point: { pattern: [{ slot: "consonant" }, "y"] }, rule: { en: ["y becomes i, but stays before ", { term: "-ing" }] }, ex: { examples: [{ mapping: ["study", { target: "studied" }] }, { mapping: ["study", { target: "studying" }] }] } }
+        - { level: B2, point: { en: [{ term: "ie" }, " and ", { term: "ei" }] }, rule: { en: [{ term: "ie" }, " for ", { ipa: "iː" }, ", but ", { term: "ei" }, " after c"] }, ex: { examples: [{ target: "believe" }, { target: "receive" }] } }
+        - { level: B2, point: { alternatives: ["-able", "-ible"] }, rule: { en: "-able after a whole word, -ible after a stem that is not one" }, ex: { examples: [{ target: "comfortable" }, { target: "possible" }] } }
+        - { level: B2, point: { en: "Prefixes" }, rule: { en: "both parts keep all their letters; in- becomes il-, im-, ir-" }, ex: { examples: [{ mapping: [{ pattern: ["mis", "spell"] }, { target: "misspell" }] }, { mapping: [{ pattern: ["in", "possible"] }, { target: "impossible" }] }] } }
+        - { level: B2, point: { en: "Silent letters" }, rule: { en: "some spellings keep a letter that is not pronounced" }, ex: { examples: [[{ letter: "k" }, "nee"], ["lam", { letter: "b" }], ["ni", { letter: "gh" }, "t"]] } }
+        - { level: B2, point: { en: "British and US" }, rule: { en: ["British ", { term: "-our" }, ", ", { term: "-re" }, ", ", { term: "-ise" }, "; US ", { term: "-or" }, ", ", { term: "-er" }, ", ", { term: "-ize" }] }, ex: { examples: [[{ target: "colour" }, " ", { variant: { target: "color" }, variety: en-US }], [{ target: "centre" }, " ", { variant: { target: "center" }, variety: en-US }]] } }
+        - { level: B2, point: { en: "Trap" }, rule: { en: [{ term: "-ful" }, " has one l, so ", { term: "-fully" }, " has two"] }, ex: ["She works ", { target: "carefully" }, "."] }
+        - { level: C1, point: { en: ["Sound ", { ipa: "ʃn" }] }, rule: { en: [{ term: "-tion" }, "; ", { term: "-sion" }, " after l, n, r; ", { term: "-ssion" }, " after a short vowel"] }, ex: { examples: [{ target: "action" }, { target: "tension" }, { target: "mission" }] } }
+        - { level: C1, point: { en: "Same sound" }, rule: { en: "the grammar of the sentence picks the spelling" }, ex: { examples: [["The dog wagged ", { target: "its" }, " tail."], [{ target: "It's" }, " late."]] } }
+        - { level: C1, point: { en: "Trap" }, rule: { en: ["two doubled pairs: ", { letter: "cc" }, " and ", { letter: "rr" }, ", ", { letter: "cc" }, " and ", { letter: "mm" }] }, ex: { examples: [{ target: "occurrence" }, { target: "accommodate" }] } }
+
+sections:
+  - title: { en: Doubling the final consonant }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { en: Word } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, word: { en: "one syllable, one short vowel, one final consonant" }, rule: { en: "double the consonant" }, ex: { examples: [{ mapping: ["run", { target: "running" }] }, { mapping: ["big", { target: "bigger" }] }, { mapping: ["stop", { target: "stopped" }] }] } }
+          - { level: B2, word: { en: "more than one syllable, stress on the last syllable" }, rule: { en: "double the consonant" }, ex: { examples: [{ mapping: ["begin", { target: "beginning" }] }, { mapping: ["prefer", { target: "preferred" }] }, { mapping: ["admit", { target: "admitted" }] }] } }
+          - { level: B2, word: { en: "more than one syllable, stress earlier" }, rule: { en: "write the word unchanged" }, ex: { examples: [{ mapping: ["visit", { target: "visited" }] }, { mapping: ["offer", { target: "offered" }] }, { mapping: ["open", { target: "opening" }] }] } }
+          - { level: B2, word: { en: ["ending in one vowel and ", { letter: "l" }, ", whatever the stress"] }, rule: { en: "British English doubles the l" }, ex: { examples: [[{ mapping: ["travel", { target: "travelled" }] }, " ", { variant: { target: "traveled" }, variety: en-US }], [{ mapping: ["cancel", { target: "cancelled" }] }, " ", { variant: { target: "canceled" }, variety: en-US }]] } }
+          - { level: B2, word: { en: ["ending in ", { letter: "w" }, ", ", { letter: "x" }, " or ", { letter: "y" }] }, rule: { en: "write the word unchanged" }, ex: { examples: [{ mapping: ["snow", { target: "snowing" }] }, { mapping: ["fix", { target: "fixed" }] }, { mapping: ["play", { target: "played" }] }] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["Doubling happens before a vowel suffix such as ", { term: "-ing" }, " or ", { term: "-ed" }, "; a consonant suffix joins the unchanged word."] }
+            ex: { examples: [{ mapping: ["sun", { target: "sunny" }] }, { mapping: ["sad", { target: "sadly" }] }] }
+
+  - title: { en: Silent e before a suffix }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: suffix, label: { en: Suffix } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, suffix: { en: ["starts with a vowel: ", { term: "-ing" }, ", ", { term: "-er" }, ", ", { term: "-y" }] }, rule: { en: "drop the e" }, ex: { examples: [{ mapping: ["hope", { target: "hoping" }] }, { mapping: ["nice", { target: "nicer" }] }, { mapping: ["noise", { target: "noisy" }] }] } }
+          - { level: B2, suffix: { en: ["starts with a consonant: ", { term: "-ful" }, ", ", { term: "-ly" }, ", ", { term: "-ment" }] }, rule: { en: "keep the e" }, ex: { examples: [{ mapping: ["hope", { target: "hopeful" }] }, { mapping: ["love", { target: "lovely" }] }, { mapping: ["manage", { target: "management" }] }] } }
+          - { level: B2, suffix: { en: [{ term: "-able" }, " or ", { term: "-ous" }, " after ", { letter: "ce" }, " or ", { letter: "ge" }] }, rule: { en: ["keep the e, so that ", { letter: "c" }, " and ", { letter: "g" }, " stay soft"] }, ex: { examples: [{ mapping: ["notice", { target: "noticeable" }] }, { mapping: ["manage", { target: "manageable" }] }, { mapping: ["courage", { target: "courageous" }] }] } }
+          - { level: B2, suffix: { en: "starts with a consonant, in a few words" }, rule: { en: "drop the e" }, ex: { examples: [{ mapping: ["argue", { target: "argument" }] }, { mapping: ["true", { target: "truly" }] }, { mapping: ["whole", { target: "wholly" }] }] } }
+
+  - title: { en: Changing y to i }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: ending, label: { en: Word ending } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, ending: { en: [{ pattern: [{ slot: "consonant" }, "y"] }, " before any suffix but ", { term: "-ing" }] }, rule: { mapping: ["y", "i"] }, ex: { examples: [{ mapping: ["study", { target: "studied" }] }, { mapping: ["happy", { target: "happier" }] }, { mapping: ["happy", { target: "happily" }] }, { mapping: ["beauty", { target: "beautiful" }] }] } }
+          - { level: B2, ending: { en: [{ pattern: [{ slot: "consonant" }, "y"] }, " before ", { term: "-ing" }] }, rule: { en: "keep the y" }, ex: { examples: [{ mapping: ["study", { target: "studying" }] }, { mapping: ["carry", { target: "carrying" }] }, { mapping: ["cry", { target: "crying" }] }] } }
+          - { level: B2, ending: { pattern: [{ slot: "vowel" }, "y"] }, rule: { en: "keep the y" }, ex: { examples: [{ mapping: ["play", { target: "played" }] }, { mapping: ["enjoy", { target: "enjoyed" }] }, { mapping: ["buy", { target: "buyer" }] }] } }
+          - { level: B2, ending: { en: [{ pattern: [{ slot: "vowel" }, "y"] }, " in a few words"] }, rule: { mapping: ["y", "i"] }, ex: { examples: [{ mapping: ["say", { target: "said" }] }, { mapping: ["pay", { target: "paid" }] }, { mapping: ["lay", { target: "laid" }] }, { mapping: ["day", { target: "daily" }] }] } }
+
+  - title: { en: ie and ei }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: spelling, label: { en: Spelling } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, spelling: { letter: "ie" }, rule: { en: ["the usual spelling of the sound ", { ipa: "iː" }] }, ex: { examples: [{ target: "believe" }, { target: "piece" }, { target: "field" }, { target: "niece" }] } }
+          - { level: B2, spelling: { en: [{ letter: "ei" }, " after ", { letter: "c" }] }, rule: { en: ["the sound ", { ipa: "iː" }, " after c"] }, ex: { examples: [{ target: "receive" }, { target: "ceiling" }, { target: "deceive" }, { target: "receipt" }] } }
+          - { level: B2, spelling: { en: [{ letter: "ei" }, " for other sounds"] }, rule: { en: ["the sounds ", { ipa: "eɪ" }, " and ", { ipa: "aɪ" }] }, ex: { examples: [{ target: "neighbour" }, { target: "weigh" }, { target: "eight" }, { target: "height" }] } }
+          - { level: B2, spelling: { en: [{ letter: "ei" }, " in a few words"] }, rule: { en: ["the sound ", { ipa: "iː" }, " after a letter other than c: learn each word"] }, ex: { examples: [{ target: "seize" }, { target: "weird" }, { target: "either" }, { target: "neither" }] } }
+
+  - title: { en: Endings that sound alike }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: ending, label: { en: Ending } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, ending: { letter: "-able" }, rule: { en: "after a stem that is a whole word" }, ex: { examples: [{ target: "comfortable" }, { target: "readable" }, { target: "enjoyable" }] } }
+          - { level: B2, ending: { letter: "-ible" }, rule: { en: "after a stem that is not a word" }, ex: { examples: [{ target: "possible" }, { target: "visible" }, { target: "incredible" }, { target: "flexible" }] } }
+          - { level: B2, ending: { alternatives: ["-ance", "-ant"] }, rule: { en: ["after a hard ", { letter: "c" }, " or ", { letter: "g" }] }, ex: { examples: [{ target: "elegance" }, { target: "elegant" }, { target: "significance" }, { target: "significant" }] } }
+          - { level: B2, ending: { alternatives: ["-ence", "-ent"] }, rule: { en: ["after a soft ", { letter: "c" }, " or ", { letter: "g" }] }, ex: { examples: [{ target: "innocence" }, { target: "innocent" }, { target: "intelligence" }, { target: "agent" }] } }
+          - { level: B2, ending: { en: "other stems" }, rule: { en: "learn each word" }, ex: { examples: [{ target: "importance" }, { target: "difference" }, { target: "independent" }, { target: "assistant" }] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["A noun in ", { term: "-ance" }, " goes with an adjective in ", { term: "-ant" }, ", and ", { term: "-ence" }, " with ", { term: "-ent" }, "."] }
+            ex: { examples: [[{ target: "importance" }, " and ", { target: "important" }], [{ target: "difference" }, " and ", { target: "different" }]] }
+
+  - title: { en: Prefixes and suffixes }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: join, label: { en: Join } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, join: { en: "prefix and word" }, rule: { en: "both parts keep all their letters" }, ex: { examples: [{ mapping: [{ pattern: ["dis", "appear"] }, { target: "disappear" }] }, { mapping: [{ pattern: ["un", "necessary"] }, { target: "unnecessary" }] }, { mapping: [{ pattern: ["mis", "spell"] }, { target: "misspell" }] }] } }
+          - { level: B2, join: { en: ["negative ", { term: "in-" }, " before ", { letter: "l" }] }, rule: { mapping: ["in-", "il-"] }, ex: { examples: [{ mapping: ["legal", { target: "illegal" }] }, { mapping: ["logical", { target: "illogical" }] }] } }
+          - { level: B2, join: { en: ["negative ", { term: "in-" }, " before ", { letter: "m" }, " or ", { letter: "p" }] }, rule: { mapping: ["in-", "im-"] }, ex: { examples: [{ mapping: ["possible", { target: "impossible" }] }, { mapping: ["mature", { target: "immature" }] }, { mapping: ["polite", { target: "impolite" }] }] } }
+          - { level: B2, join: { en: ["negative ", { term: "in-" }, " before ", { letter: "r" }] }, rule: { mapping: ["in-", "ir-"] }, ex: { examples: [{ mapping: ["regular", { target: "irregular" }] }, { mapping: ["responsible", { target: "irresponsible" }] }] } }
+          - { level: B2, join: { en: ["suffix ", { term: "-ful" }] }, rule: { en: "one l at the end" }, ex: { examples: [{ mapping: ["care", { target: "careful" }] }, { mapping: ["help", { target: "helpful" }] }, { mapping: ["wonder", { target: "wonderful" }] }] } }
+          - { level: B2, join: { en: [{ term: "-ly" }, " after ", { letter: "l" }, ", also in ", { term: "-ful" }] }, rule: { en: "keep the l and add ly" }, ex: { examples: [{ mapping: ["real", { target: "really" }] }, { mapping: ["final", { target: "finally" }] }, { mapping: ["beautiful", { target: "beautifully" }] }] } }
+          - { level: B2, join: { en: [{ term: "-ly" }, " after ", { term: "-ic" }] }, rule: { en: ["add ", { term: "-ally" }] }, ex: { examples: [{ mapping: ["basic", { target: "basically" }] }, { mapping: ["automatic", { target: "automatically" }] }, { mapping: ["dramatic", { target: "dramatically" }] }] } }
+          - { level: B2, join: { en: ["one exception: ", { term: "public" }] }, rule: { en: ["add ", { term: "-ly" }] }, ex: { mapping: ["public", { target: "publicly" }] } }
+
+  - title: { en: Silent letters }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: spelling, label: { en: Spelling } }
+          - { key: silent, label: { en: Silent letter } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, spelling: { letter: "kn-" }, silent: { letter: "k" }, ex: { examples: [[{ letter: "k" }, "nee ", { ipa: "niː" }], [{ letter: "k" }, "now ", { ipa: "nəʊ" }], [{ letter: "k" }, "nife ", { ipa: "naɪf" }]] } }
+          - { level: B2, spelling: { letter: "wr-" }, silent: { letter: "w" }, ex: { examples: [[{ letter: "w" }, "rite ", { ipa: "raɪt" }], [{ letter: "w" }, "rong ", { ipa: "rɒŋ" }], [{ letter: "w" }, "rist ", { ipa: "rɪst" }]] } }
+          - { level: B2, spelling: { alternatives: [{ letter: "gn-" }, { letter: "-gn" }] }, silent: { letter: "g" }, ex: { examples: [[{ letter: "g" }, "naw ", { ipa: "nɔː" }], ["si", { letter: "g" }, "n ", { ipa: "saɪn" }], ["forei", { letter: "g" }, "n ", { ipa: "ˈfɒrən" }]] } }
+          - { level: B2, spelling: { letter: "-mb" }, silent: { letter: "b" }, ex: { examples: [["lam", { letter: "b" }, " ", { ipa: "læm" }], ["clim", { letter: "b" }, " ", { ipa: "klaɪm" }], ["thum", { letter: "b" }, " ", { ipa: "θʌm" }]] } }
+          - { level: B2, spelling: { letter: "-mn" }, silent: { letter: "n" }, ex: { examples: [["autum", { letter: "n" }, " ", { ipa: "ˈɔːtəm" }], ["colum", { letter: "n" }, " ", { ipa: "ˈkɒləm" }]] } }
+          - { level: B2, spelling: { letter: "ps-" }, silent: { letter: "p" }, ex: { examples: [[{ letter: "p" }, "sychology ", { ipa: "saɪˈkɒlədʒi" }], [{ letter: "p" }, "sychic ", { ipa: "ˈsaɪkɪk" }]] } }
+          - { level: B2, spelling: { en: [{ letter: "h" }, " at the start of some words"] }, silent: { letter: "h" }, ex: { examples: [[{ letter: "h" }, "our ", { ipa: "ˈaʊə" }], [{ letter: "h" }, "onest ", { ipa: "ˈɒnɪst" }], [{ letter: "h" }, "eir ", { ipa: "eə" }]] } }
+          - { level: B2, spelling: { en: [{ letter: "gh" }, " after a vowel"] }, silent: { letter: "gh" }, ex: { examples: [["ni", { letter: "gh" }, "t ", { ipa: "naɪt" }], ["dau", { letter: "gh" }, "ter ", { ipa: "ˈdɔːtə" }], ["thou", { letter: "gh" }, " ", { ipa: "ðəʊ" }]] } }
+          - { level: B2, spelling: { alternatives: [{ letter: "-stle" }, { letter: "-sten" }] }, silent: { letter: "t" }, ex: { examples: [["cas", { letter: "t" }, "le ", { ipa: "ˈkɑːsl" }, " ", { variant: { ipa: "ˈkæsl" }, variety: en-US }], ["lis", { letter: "t" }, "en ", { ipa: "ˈlɪsn" }], ["whis", { letter: "t" }, "le ", { ipa: "ˈwɪsl" }]] } }
+
+  - title: { en: "Compare: British and American spelling" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: british, label: { en: British } }
+          - { key: us, label: { en: US } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, pattern: { en: "o or ou before r" }, british: { letter: "-our" }, us: { letter: "-or" }, ex: { examples: [[{ target: "colour" }, " ", { variant: { target: "color" }, variety: en-US }], [{ target: "honour" }, " ", { variant: { target: "honor" }, variety: en-US }], [{ target: "neighbour" }, " ", { variant: { target: "neighbor" }, variety: en-US }]] } }
+          - { level: B2, pattern: { en: "re or er at the end" }, british: { letter: "-re" }, us: { letter: "-er" }, ex: { examples: [[{ target: "centre" }, " ", { variant: { target: "center" }, variety: en-US }], [{ target: "theatre" }, " ", { variant: { target: "theater" }, variety: en-US }]] } }
+          - { level: B2, pattern: { en: "s or z in verb endings" }, british: { letter: "-ise" }, us: { letter: "-ize" }, ex: { examples: [[{ target: "organise" }, " ", { variant: { target: "organize" }, variety: en-US }], [{ target: "realise" }, " ", { variant: { target: "realize" }, variety: en-US }]] } }
+          - { level: B2, pattern: { en: "s or z after y in verb endings" }, british: { letter: "-yse" }, us: { letter: "-yze" }, ex: { examples: [[{ target: "analyse" }, " ", { variant: { target: "analyze" }, variety: en-US }], [{ target: "paralyse" }, " ", { variant: { target: "paralyze" }, variety: en-US }]] } }
+          - { level: B2, pattern: { en: "c or s in noun endings" }, british: { letter: "-ce" }, us: { letter: "-se" }, ex: { examples: [[{ target: "defence" }, " ", { variant: { target: "defense" }, variety: en-US }], [{ target: "offence" }, " ", { variant: { target: "offense" }, variety: en-US }]] } }
+          - { level: B2, pattern: { en: "final ue" }, british: { letter: "-ogue" }, us: { letter: "-og" }, ex: { examples: [[{ target: "catalogue" }, " ", { variant: { target: "catalog" }, variety: en-US }], [{ target: "analogue" }, " ", { variant: { target: "analog" }, variety: en-US }]] } }
+          - { level: B2, pattern: { en: "ae and oe in Greek and Latin words" }, british: { alternatives: [{ letter: "ae" }, { letter: "oe" }] }, us: { letter: "e" }, ex: { examples: [[{ target: "anaemia" }, " ", { variant: { target: "anemia" }, variety: en-US }], [{ target: "manoeuvre" }, " ", { variant: { target: "maneuver" }, variety: en-US }]] } }
+          - { level: B2, pattern: { en: "silent e before -ing and -ment" }, british: { alternatives: [{ letter: "-eing" }, { letter: "-ement" }] }, us: { alternatives: [{ letter: "-ing" }, { letter: "-ment" }] }, ex: { examples: [[{ target: "ageing" }, " ", { variant: { target: "aging" }, variety: en-US }], [{ target: "judgement" }, " ", { variant: { target: "judgment" }, variety: en-US }]] } }
+      - type: comparison
+        columns:
+          - { key: meaning, label: { en: Meaning } }
+          - { key: british, label: { en: British } }
+          - { key: us, label: { en: US } }
+        rows:
+          - { level: B2, meaning: { en: "the colour of ash" }, british: { target: "grey" }, us: { target: "gray" } }
+          - { level: B2, meaning: { en: "the rubber round a wheel" }, british: { target: "tyre" }, us: { target: "tire" } }
+          - { level: B2, meaning: { en: "the stone edge of a road" }, british: { target: "kerb" }, us: { target: "curb" } }
+          - { level: B2, meaning: { en: "a written order to pay from a bank account" }, british: { target: "cheque" }, us: { target: "check" } }
+          - { level: B2, meaning: { en: "a plan of events or a television show" }, british: { target: "programme" }, us: { target: "program" } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["Oxford spelling writes ", { term: "-ize" }, " in British English and keeps ", { term: "-yse" }, "."] }
+            ex: { examples: [{ target: "organize" }, { target: "analyse" }] }
+          - type: rule
+            level: B2
+            text: { en: ["Some verbs end in ", { term: "-ise" }, " in every variety of English."] }
+            ex: { examples: [{ target: "advise" }, { target: "exercise" }, { target: "revise" }, { target: "surprise" }] }
+          - type: rule
+            level: B2
+            text: { en: ["British English writes a computer ", { term: "program" }, " with one m."] }
+            ex: ["a computer ", { target: "program" }]
+          - type: rule
+            level: B2
+            text: { en: "One text keeps one variety of spelling." }
+            ex: ["The ", { target: "colour" }, " of the ", { target: "centre" }, " is ", { target: "grey" }, "."]
+
+  - title: { en: "Sound patterns: -tion, -cede, -ary" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: spelling, label: { en: Spelling } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, spelling: { letter: "-tion" }, rule: { en: [{ ipa: "ʃn" }, " after consonants and most vowels"] }, ex: { examples: [{ target: "action" }, { target: "option" }, { target: "station" }, { target: "solution" }] } }
+          - { level: C1, spelling: { letter: "-sion" }, rule: { en: [{ ipa: "ʃn" }, " after ", { letter: "l" }, ", ", { letter: "n" }, " and ", { letter: "r" }] }, ex: { examples: [{ target: "compulsion" }, { target: "tension" }, { target: "version" }] } }
+          - { level: C1, spelling: { letter: "-ssion" }, rule: { en: [{ ipa: "ʃn" }, " after a short vowel"] }, ex: { examples: [{ target: "mission" }, { target: "passion" }, { target: "discussion" }, { target: "permission" }] } }
+          - { level: C1, spelling: { letter: "-sion" }, rule: { en: [{ ipa: "ʒn" }, " after a vowel"] }, ex: { examples: [{ target: "decision" }, { target: "television" }, { target: "occasion" }] } }
+          - { level: C1, spelling: { letter: "-cian" }, rule: { en: "a person with a skill" }, ex: { examples: [{ target: "musician" }, { target: "electrician" }, { target: "magician" }, { target: "politician" }] } }
+          - { level: C1, spelling: { letter: "-cess" }, rule: { en: "the usual ending" }, ex: { examples: [{ target: "success" }, { target: "access" }, { target: "process" }] } }
+          - { level: C1, spelling: { letter: "-ceed" }, rule: { en: "three verbs only" }, ex: { examples: [{ target: "exceed" }, { target: "proceed" }, { target: "succeed" }] } }
+          - { level: C1, spelling: { letter: "-cede" }, rule: { en: "every other verb" }, ex: { examples: [{ target: "precede" }, { target: "recede" }, { target: "concede" }] } }
+          - { level: C1, spelling: { letter: "-sede" }, rule: { en: "one verb only" }, ex: { target: "supersede" } }
+          - { level: C1, spelling: { alternatives: ["-ary", "-ery", "-ory"] }, rule: { en: "one sound, three spellings: learn each word" }, ex: { examples: [{ target: "necessary" }, { target: "cemetery" }, { target: "category" }] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["The noun ", { term: "procedure" }, " has one ", { letter: "e" }, " after c, while ", { term: "proceed" }, " has two."] }
+            ex: ["a safe ", { target: "procedure" }]
+
+  - title: { en: Words that differ only in spelling }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: words, label: { en: Words } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, words: { alternatives: ["their", "there", "they're"] }, rule: { en: [{ term: "their" }, " shows who owns something, ", { term: "there" }, " shows a place or begins ", { term: "there is" }, ", ", { term: "they're" }, " is ", { term: "they are" }] }, ex: { examples: [["They lost ", { target: "their" }, " keys."], ["The keys are ", { target: "there" }, "."], [{ target: "They're" }, " late."]] } }
+          - { level: C1, words: { alternatives: ["your", "you're"] }, rule: { en: [{ term: "your" }, " belongs to you, ", { term: "you're" }, " is ", { term: "you are" }] }, ex: { examples: [["Is this ", { target: "your" }, " bag?"], [{ target: "You're" }, " right."]] } }
+          - { level: C1, words: { alternatives: ["its", "it's"] }, rule: { en: [{ term: "its" }, " belongs to it, ", { term: "it's" }, " is ", { term: "it is" }, " or ", { term: "it has" }] }, ex: { examples: [["The cat licked ", { target: "its" }, " paw."], [{ target: "It's" }, " cold."]] } }
+          - { level: C1, words: { alternatives: ["whose", "who's"] }, rule: { en: [{ term: "whose" }, " asks about an owner, ", { term: "who's" }, " is ", { term: "who is" }, " or ", { term: "who has" }] }, ex: { examples: [[{ target: "Whose" }, " bag is this?"], [{ target: "Who's" }, " coming?"]] } }
+          - { level: C1, words: { alternatives: ["to", "too", "two"] }, rule: { en: [{ term: "to" }, " goes before a verb or a place, ", { term: "too" }, " means also or more than enough, ", { term: "two" }, " is the number 2"] }, ex: { examples: [["I want ", { target: "to" }, " go."], ["It's ", { target: "too" }, " hot."], ["I have ", { target: "two" }, " sisters."]] } }
+      - type: usage
+        columns:
+          - { key: words, label: { en: Words } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, words: { alternatives: ["affect", "effect"] }, rule: { en: [{ term: "affect" }, " is a verb, ", { term: "effect" }, " is a noun"] }, ex: { examples: [["Noise can ", { target: "affect" }, " sleep."], ["The ", { target: "effect" }, " was big."]] } }
+          - { level: C1, words: { alternatives: ["advice", "advise"] }, rule: { en: [{ term: "advice" }, " is a noun, ", { term: "advise" }, " is a verb"] }, ex: { examples: [["Take my ", { target: "advice" }, "."], ["I ", { target: "advise" }, " you to wait."]] } }
+          - { level: C1, words: { alternatives: ["breath", "breathe"] }, rule: { en: [{ term: "breath" }, " is a noun, ", { term: "breathe" }, " is a verb"] }, ex: { examples: [["Take a deep ", { target: "breath" }, "."], [{ target: "Breathe" }, " slowly."]] } }
+          - { level: C1, words: { alternatives: ["practice", "practise"] }, rule: { en: [{ term: "practice" }, " is the noun, ", { term: "practise" }, " is the verb in British English"] }, ex: { examples: [["Football ", { target: "practice" }, " is at six."], ["I ", { target: "practise" }, " every day."]] } }
+          - { level: C1, words: { alternatives: ["licence", "license"] }, rule: { en: [{ term: "licence" }, " is the noun, ", { term: "license" }, " is the verb in British English"] }, ex: { examples: [["I have a driving ", { target: "licence" }, "."], ["The council will ", { target: "license" }, " the shop."]] } }
+          - { level: C1, words: { alternatives: ["lose", "loose"] }, rule: { en: [{ term: "lose" }, " is a verb, ", { term: "loose" }, " is an adjective"] }, ex: { examples: [["Don't ", { target: "lose" }, " your keys."], ["These trousers are ", { target: "loose" }, "."]] } }
+          - { level: C1, words: { alternatives: ["past", "passed"] }, rule: { en: [{ term: "passed" }, " is a verb form, ", { term: "past" }, " is a noun, adjective, preposition or adverb"] }, ex: { examples: [["She ", { target: "passed" }, " the exam."], ["It's ", { target: "past" }, " nine o'clock."]] } }
+          - { level: C1, words: { alternatives: ["stationary", "stationery"] }, rule: { en: [{ term: "stationary" }, " is an adjective, ", { term: "stationery" }, " is a noun"] }, ex: { examples: [["The car was ", { target: "stationary" }, "."], ["I need some ", { target: "stationery" }, "."]] } }
+          - { level: C1, words: { alternatives: ["principal", "principle"] }, rule: { en: [{ term: "principal" }, " is an adjective, ", { term: "principle" }, " is a noun for a rule"] }, ex: { examples: [["Her ", { target: "principal" }, " aim is to win."], ["It is a matter of ", { target: "principle" }, "."]] } }
+          - { level: C1, words: { alternatives: ["quiet", "quite"] }, rule: { en: [{ term: "quiet" }, " is an adjective, ", { term: "quite" }, " is an adverb"] }, ex: { examples: [["The room is ", { target: "quiet" }, "."], ["It's ", { target: "quite" }, " late."]] } }
+      - type: list
+        items:
+          - type: note
+            level: C1
+            variety: en-US
+            text: { en: ["American English writes ", { term: "practice" }, " and ", { term: "license" }, " for both noun and verb."] }
+
+  - title: { en: Borrowed words }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { en: Kind } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, kind: { en: "accent in an everyday word" }, rule: { en: "the accent is optional" }, ex: [{ alternatives: [{ target: "café" }, { target: "cafe" }] }, ", ", { alternatives: [{ target: "naïve" }, { target: "naive" }] }] }
+          - { level: C1, kind: { en: "accent that separates two words" }, rule: { en: "keep the accent" }, ex: { examples: [{ contrast: [{ target: "résumé" }, "resume"] }, { contrast: [{ target: "exposé" }, "expose"] }] } }
+          - { level: C1, kind: { en: "gender of the person" }, rule: { en: [{ term: "-é" }, " for a man, ", { term: "-ée" }, " for a woman"] }, ex: { examples: [{ contrast: [{ target: "fiancé" }, { target: "fiancée" }] }, { contrast: [{ target: "protégé" }, { target: "protégée" }] }] } }
+          - { level: C1, kind: { en: "plural of a borrowed noun" }, rule: { en: ["some keep the plural of the source language: see ", { link: "Plurals", to: "en.nouns-determiners.plurals" }] }, ex: { examples: [{ mapping: ["analysis", { target: "analyses" }] }, { mapping: ["criterion", { target: "criteria" }] }] } }
+
+  - title: { en: Word division at the end of a line }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: case, label: { en: Case } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, case: { en: "between syllables" }, rule: { en: "the line breaks after a syllable" }, ex: { examples: [{ target: "com-puter" }, { target: "win-dow" }, { target: "hos-pi-tal" }] } }
+          - { level: C1, case: { en: "prefix or suffix" }, rule: { en: "the line breaks at the join" }, ex: { examples: [{ target: "un-able" }, { target: "walk-ing" }, { target: "care-ful" }] } }
+          - { level: C1, case: { en: "one-letter first syllable" }, rule: { en: "break after a later syllable, or keep the word whole" }, ex: { examples: [{ target: "elec-tric" }, { target: "about" }, { target: "enough" }] } }
+          - { level: C1, case: { en: "hyphenated compound" }, rule: { en: "the line breaks at the hyphen" }, ex: { examples: [{ target: "well-known" }, { target: "mother-in-law" }] } }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "begining", right: { target: "beginning" }, rule: { en: [{ term: "begin" }, " has the stress on its last syllable"] } }
+          - { level: B2, wrong: "hopeing", right: { target: "hoping" }, rule: { en: "drop the silent e before a vowel suffix" } }
+          - { level: B2, wrong: "studyed", right: { target: "studied" }, rule: { en: [{ letter: "y" }, " becomes ", { letter: "i" }, " after a consonant"] } }
+          - { level: B2, wrong: "freind", right: { target: "friend" }, rule: { en: [{ term: "friend" }, " has ", { letter: "ie" }, " for the sound ", { ipa: "e" }] } }
+          - { level: B2, wrong: "carefull", right: { target: "careful" }, rule: { en: [{ term: "-ful" }, " has one ", { letter: "l" }] } }
+          - { level: B2, wrong: "realy", right: { target: "really" }, rule: { en: [{ term: "real" }, " ends in ", { letter: "l" }, ", so ", { term: "-ly" }, " gives two"] } }
+          - { level: C1, wrong: "occurence", right: { target: "occurrence" }, rule: { en: ["double ", { letter: "c" }, " and double ", { letter: "r" }] } }
+          - { level: C1, wrong: "accomodate", right: { target: "accommodate" }, rule: { en: ["double ", { letter: "c" }, " and double ", { letter: "m" }] } }
+          - { level: C1, wrong: "seperate", right: { target: "separate" }, rule: { en: [{ term: "separate" }, " has ", { letter: "par" }] } }
+          - { level: C1, wrong: "definately", right: { target: "definitely" }, rule: { en: [{ term: "definite" }, " keeps its e before ", { term: "-ly" }] } }
+          - { level: C1, wrong: "recieve", right: { target: "receive" }, rule: { en: [{ letter: "ei" }, " after ", { letter: "c" }] } }
+          - { level: C1, wrong: "untill", right: { target: "until" }, rule: { en: [{ term: "until" }, " ends in one ", { letter: "l" }] } }
+          - { level: C1, wrong: "wich", right: { target: "which" }, rule: { en: [{ term: "which" }, " starts with ", { letter: "wh" }] } }

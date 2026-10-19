@@ -1,0 +1,474 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.sentence-building.ellipsis-substitution
+lang: en
+kind: grammar
+tags: [ellipsis, substitution, replies, so, one, do-so]
+concepts: [ellipsis]
+related: [en.sentence-building.question-tags, en.nouns-determiners.quantifiers-some-any-much-many, en.nouns-determiners.demonstratives-this-that, en.sentence-building.conjunctions-linkers, en.verbs.gerund-vs-infinitive]
+status: { en: draft }
+
+title: { en: "Ellipsis and Substitution" }
+summary:
+  lead:
+    en: ["Ellipsis drops words the listener can supply, and ", { term: so }, ", ", { term: one }, " and ", { term: "do so" }, " replace longer phrases."]
+  rule:
+    en: "An agreeing reply puts the auxiliary before the new subject:"
+  ex: { examples: [[{ target: "So do I" }, "."], [{ target: "Neither can she" }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - level: B2
+          point: { en: Agreeing }
+          rule: { en: [{ pattern: [{ alternatives: [So, Neither] }, { slot: helper }, { slot: subject }] }, "; informally ", { alternatives: ["Me too", "Me neither"] }] }
+          ex: { exchange: ["I like tea.", [{ target: "So do I" }, "."]] }
+        - level: B2
+          point: { en: So and not }
+          rule: { en: [{ term: so }, " or ", { term: not }, " replaces a clause after ", { term: think }, ", ", { term: hope }, " and ", { term: suppose }] }
+          ex: { exchange: ["Is it open?", [{ target: "I think so" }, "."]] }
+        - level: B2
+          point: { en: One }
+          rule: { en: [{ term: one }, " or ", { term: ones }, " replaces a countable noun"] }
+          ex: ["I like the red ", { target: one }, "."]
+        - level: B2
+          point: { en: Do so }
+          rule: { en: [{ term: "do so" }, " is formal; ", { term: "do it" }, " and ", { term: "do that" }, " are informal"] }
+          ex: ["I asked him to leave, and he ", { target: "did so" }, "."]
+        - level: B2
+          point: { en: Coordination }
+          rule: { en: "the second clause drops a repeated verb or auxiliary" }
+          ex: ["Tom likes tea and ", { target: "Ann coffee" }, "."]
+        - level: B2
+          point: { en: To }
+          rule: { en: [{ term: to }, " stays when its verb goes"] }
+          ex: ["Come if you want ", { target: to }, "."]
+        - level: B2
+          point: { en: Reduced clause }
+          rule: { en: ["the subject and ", { term: be }, " go after ", { term: if }, ", ", { term: when }, " and ", { term: although }] }
+          ex: [{ target: "If necessary" }, ", call me."]
+        - level: C1
+          point: { en: Nouns }
+          rule: { en: [{ term: those }, ", ", { term: "that of" }, " and ", { term: "the latter" }, " point back to a noun"] }
+          ex: ["Prices here are higher than ", { target: those }, " in town."]
+        - level: C1
+          point: { en: Speech }
+          rule: { en: "the start of a clause goes: the subject and the first auxiliary" }
+          ex: [{ target: "Got a minute" }, "?"]
+        - level: C1
+          point: { en: A whole clause }
+          rule: { en: [{ term: it }, ", ", { term: this }, ", ", { term: that }, " and ", { term: which }, " refer to a whole clause"] }
+          ex: ["He passed, ", { target: which }, " surprised us."]
+        - level: C1
+          point: { en: Short replies }
+          rule: { en: "a wh-question gets the missing phrase alone; a stripped clause adds one phrase" }
+          ex: ["Tom left, and ", { target: "Ann too" }, "."]
+        - level: B2
+          point: { en: Trap }
+          rule: { en: [{ term: neither }, " and ", { term: nor }, " are negative, so the auxiliary stays positive"] }
+          ex: { exchange: ["I can't swim.", [{ target: "Neither can I" }, "."]] }
+
+sections:
+  - title: { en: "Overview" }
+    role: overview
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Device } }
+          - { key: rule, label: { en: What it does } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: Ellipsis }, rule: { en: "leaves out words that the context supplies" }, ex: { exchange: ["Which film did you like?", ["The ", { target: first }, "."]] } }
+          - { level: B2, use: { en: Substitution }, rule: { en: "puts a short word in the place of a longer phrase" }, ex: ["Pass me the blue pen, not the black ", { target: one }, "."] }
+          - { level: C1, use: { en: Speech and notes }, rule: { en: "drops the start of a clause" }, ex: [{ target: Coming }, "?"] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "The listener or reader must be able to supply every word that is left out." }
+          - type: note
+            level: B2
+            text: { en: ["A question tag repeats the auxiliary in the same way. See ", { link: Question Tags, to: en.sentence-building.question-tags }, "."] }
+
+  - title: { en: "Form: agreeing with so and too" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: aux, label: { en: Reply uses } }
+          - { key: statement, label: { en: Statement } }
+          - { key: so, label: { pattern: [So, { slot: helper }, { slot: subject }] } }
+          - { key: too, label: { pattern: [{ slot: subject }, { slot: helper }, too] } }
+        rows:
+          - { level: B2, features: { polarity: pos, tense: prs }, aux: { alternatives: [am, is, are] }, statement: ["She", { aux: "'s" }, " late."], so: [{ target: "So am I" }, "."], too: ["I ", { target: "am too" }, "."] }
+          - { level: B2, features: { polarity: pos, tense: pst }, aux: { alternatives: [was, were] }, statement: ["He ", { aux: was }, " ill."], so: [{ target: "So was she" }, "."], too: ["She ", { target: "was too" }, "."] }
+          - { level: B2, features: { polarity: pos, tense: prs }, aux: do, statement: "We like tea.", so: [{ target: "So do I" }, "."], too: ["I ", { target: "do too" }, "."] }
+          - { level: B2, features: { polarity: pos, tense: prs }, aux: does, statement: "I like tea.", so: [{ target: "So does she" }, "."], too: ["She ", { target: "does too" }, "."] }
+          - { level: B2, features: { polarity: pos, tense: pst }, aux: did, statement: "I missed the bus.", so: [{ target: "So did he" }, "."], too: ["He ", { target: "did too" }, "."] }
+          - { level: B2, features: { polarity: pos, aspect: prf }, aux: { alternatives: [have, has] }, statement: ["We", { aux: "'ve" }, " finished."], so: [{ target: "So have they" }, "."], too: ["They ", { target: "have too" }, "."] }
+          - { level: B2, features: { polarity: pos }, aux: { alternatives: [can, will, would] }, statement: ["She ", { aux: can }, " swim."], so: [{ target: "So can I" }, "."], too: ["I ", { target: "can too" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["The reply repeats the auxiliary of the statement; a verb with no auxiliary takes ", { term: do }, ", ", { term: does }, " or ", { term: did }, "."] }
+          - type: rule
+            level: B2
+            text: { en: ["Be answers ", { term: be }, ", and the reply agrees with its own subject."] }
+            ex: { exchange: ["She's late.", [{ target: "So am I" }, "."]] }
+          - type: rule
+            level: B2
+            text: { en: [{ term: "Me too" }, " is informal and takes no auxiliary."] }
+            ex: { exchange: ["I love this song.", [{ target: "Me too" }, "."]] }
+
+  - title: { en: "Form: agreeing with neither, nor and either" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: aux, label: { en: Reply uses } }
+          - { key: statement, label: { en: Statement } }
+          - { key: neither, label: { pattern: [{ alternatives: [Neither, Nor] }, { slot: helper }, { slot: subject }] } }
+          - { key: either, label: { pattern: [{ slot: subject }, { slot: { en: negative helper } }, either] } }
+        rows:
+          - { level: B2, features: { polarity: neg, tense: prs }, aux: { alternatives: [am, is, are] }, statement: ["She ", { aux: "isn't" }, " ready."], neither: [{ target: "Neither am I" }, "."], either: ["I", { target: "'m not either" }, "."] }
+          - { level: B2, features: { polarity: neg, tense: pst }, aux: { alternatives: [was, were] }, statement: ["He ", { aux: "wasn't" }, " there."], neither: [{ target: "Neither was she" }, "."], either: ["She ", { target: "wasn't either" }, "."] }
+          - { level: B2, features: { polarity: neg, tense: prs }, aux: do, statement: ["We ", { aux: "don't" }, " like tea."], neither: [{ target: "Neither do I" }, "."], either: ["I ", { target: "don't either" }, "."] }
+          - { level: B2, features: { polarity: neg, tense: prs }, aux: does, statement: ["I ", { aux: "don't" }, " like tea."], neither: [{ target: "Neither does she" }, "."], either: ["She ", { target: "doesn't either" }, "."] }
+          - { level: B2, features: { polarity: neg, tense: pst }, aux: did, statement: ["She ", { aux: "didn't" }, " call."], neither: [{ target: "Nor did I" }, "."], either: ["I ", { target: "didn't either" }, "."] }
+          - { level: B2, features: { polarity: neg, aspect: prf }, aux: { alternatives: [have, has] }, statement: ["We ", { aux: "haven't" }, " finished."], neither: [{ target: "Neither have they" }, "."], either: ["They ", { target: "haven't either" }, "."] }
+          - { level: B2, features: { polarity: neg }, aux: { alternatives: [can, will, would] }, statement: ["He ", { aux: "can't" }, " swim."], neither: [{ target: "Neither can I" }, "."], either: ["I ", { target: "can't either" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: Neither }, " and ", { term: nor }, " are already negative, so the auxiliary after them stays positive."] }
+            ex: { exchange: ["I can't sleep.", [{ target: "Neither can I" }, "."]] }
+          - type: rule
+            level: B2
+            text: { en: [{ term: "Me neither" }, " is informal and takes no auxiliary."] }
+            ex: { exchange: ["I can't sleep.", [{ target: "Me neither" }, "."]] }
+
+  - title: { en: "Use: so and not for a clause" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            use: { en: ["A positive answer after ", { term: think }, ", ", { term: hope }, ", ", { term: suppose }, ", ", { term: expect }, " and ", { term: believe }, ": ", { pattern: [I, { slot: verb }, so] }] }
+            ex: { examples: [{ exchange: ["Is the shop open?", [{ target: "I think so" }, "."]] }, { exchange: ["Will she come?", [{ target: "I hope so" }, "."]] }] }
+          - level: B2
+            use: { en: ["A yes that brings bad news: ", { term: "I'm afraid so" }] }
+            ex: { exchange: ["Is the flight delayed?", [{ target: "I'm afraid so" }, "."]] }
+          - level: B2
+            use: { en: ["A negative answer after ", { term: hope }, " and ", { term: "be afraid" }, ": ", { pattern: [{ alternatives: ["I hope", "I'm afraid"] }, not] }] }
+            ex: { examples: [{ exchange: ["Will it rain?", [{ target: "I hope not" }, "."]] }, { exchange: ["Is there any cake left?", [{ target: "I'm afraid not" }, "."]] }] }
+          - level: B2
+            use: { en: ["A negative answer after ", { term: think }, ", ", { term: believe }, ", ", { term: expect }, " and ", { term: suppose }, ": ", { pattern: [I, "don't", { slot: verb }, so] }] }
+            ex: { exchange: ["Is she in?", [{ target: "I don't think so" }, "."]] }
+          - level: B2
+            use: { en: ["A formal negative answer: ", { term: "I think not" }] }
+            ex: { exchange: ["Is it too late?", [{ target: "I think not" }, "."]] }
+          - level: B2
+            use: { en: ["A condition: ", { term: "if so" }, " and ", { term: "if not" }] }
+            ex: { examples: [["Are you free tonight? ", { target: "If so" }, ", join us."], ["Bring a coat. ", { target: "If not" }, ", you will be cold."]] }
+          - level: B2
+            use: { en: ["A reply that asks the reason, or accepts an offer: ", { term: "Why not?" }] }
+            ex: { examples: [{ exchange: ["I can't come.", { target: "Why not?" }] }, { exchange: ["Shall we eat out?", { target: "Why not?" }] }] }
+          - level: B2
+            use: { en: ["After ", { term: say }, " and ", { term: tell }, ": ", { term: "say so" }, ", ", { term: "tell sb so" }] }
+            ex: { examples: [["It's true: the doctor ", { target: "said so" }, "."], ["I ", { target: "told you so" }, "."]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: so }, " stands for a whole positive clause and ", { term: not }, " for a negative one."] }
+            ex: { equivalence: [["I ", { target: "think so" }, "."], ["I think ", { target: "that it is open" }, "."]] }
+
+  - title: { en: "One and ones" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Pattern } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: { pattern: [{ slot: adjective }, { alternatives: [one, ones] }] }, use: { en: "an adjective names the difference" }, ex: { examples: [["Do you have a bigger ", { target: one }, "?"], ["I prefer the cheaper ", { target: ones }, "."]] } }
+          - { level: B2, form: { pattern: [{ alternatives: [this, that, which, another, "the other"] }, one] }, use: { en: "a choice between things" }, ex: { examples: [["Which ", { target: one }, " is yours?"], ["I'll take ", { target: "that one" }, "."], ["Have ", { target: "another one" }, "."]] } }
+          - { level: B2, form: { pattern: [{ alternatives: [which, "the other"] }, ones] }, use: { en: "the plural of a choice" }, ex: { examples: [["Which ", { target: ones }, " do you want?"], ["I'll take ", { target: "the other ones" }, "."]] } }
+          - { level: B2, form: { pattern: [{ alternatives: ["the one", "the ones"] }, { alternatives: [with, in, "on", that] }] }, use: { en: "a phrase or clause says which one" }, ex: { examples: [["The ", { target: one }, " with the blue door is mine."], ["I like the ", { target: ones }, " that you bought."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: one }, " stands for a countable noun; an uncountable noun is left out."] }
+            ex: ["She likes black coffee, and I like ", { target: white }, "."]
+          - type: rule
+            level: B2
+            text: { en: ["A number or quantifier stands alone, or takes an adjective and ", { term: ones }, "."] }
+            ex: { examples: [["I bought ", { target: two }, "."], ["I bought ", { target: "two red ones" }, "."]] }
+          - type: rule
+            level: B2
+            text: { en: ["A possessive pronoun stands alone: ", { term: mine }, ", ", { term: yours }, ", ", { term: hers }, "."] }
+            ex: ["Take my bag; ", { target: yours }, " is heavy."]
+          - type: note
+            level: B2
+            text: { en: [{ term: "this one" }, " and ", { term: "that one" }, " are in ", { link: "This, That, These, Those", to: en.nouns-determiners.demonstratives-this-that }, "."] }
+          - type: note
+            level: B2
+            text: { en: ["Quantifiers without a noun are in ", { link: "Quantifiers: some, any, much, many", to: en.nouns-determiners.quantifiers-some-any-much-many }, "."] }
+
+  - title: { en: "Do so, do it, do that" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, form: "do so", use: { en: "formal; replaces a verb and its object" }, ex: { examples: [["I asked him to leave, and he ", { target: "did so" }, " at once."], ["Anyone may apply, and may ", { target: "do so" }, " online."]] } }
+          - { level: B2, form: "do it", use: { en: "informal; the action just named or about to happen" }, ex: { exchange: ["Can you lock up?", ["Yes, I'll ", { target: "do it" }, " now."]] } }
+          - { level: B2, form: "do that", use: { en: "informal; an action that can be seen or was just named" }, ex: ["Please don't ", { target: "do that" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: do }, " takes the tense and the person: ", { term: "do so" }, ", ", { term: "does so" }, ", ", { term: "did so" }, ", ", { term: "doing so" }, "."] }
+            ex: ["By ", { target: "doing so" }, ", you save time."]
+
+  - title: { en: "Ellipsis in coordination" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: "A repeated verb: the second clause keeps only what is new" }, ex: { examples: [["Tom likes tea and ", { target: "Ann coffee" }, "."], ["He bought a car and ", { target: "she a bike" }, "."]] } }
+          - { level: B2, use: { en: "A shared auxiliary: one helper for two verbs" }, ex: ["He ", { aux: has }, " ", { target: "read it and enjoyed it" }, "."] }
+          - { level: B2, use: { en: "A shared object: one object for two verbs" }, ex: ["She ", { target: washed }, " and I ", { target: dried }, " the plates."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["A shared auxiliary needs the same verb form each time: ", { term: "has washed and dried" }, "."] }
+          - type: note
+            level: B2
+            text: { en: ["Linking words are in ", { link: Conjunctions and Linkers, to: en.sentence-building.conjunctions-linkers }, "."] }
+
+  - title: { en: "To without its verb" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - level: B2
+            use: { en: ["After a verb or adjective that takes ", { term: to }, ": ", { term: want }, ", ", { term: like }, ", ", { term: love }, ", ", { term: try }, ", ", { term: hope }, ", ", { term: glad }] }
+            ex: { examples: [{ exchange: ["Are you coming?", ["I'd love ", { target: to }, "."]] }, ["You can stay if you want ", { target: to }, "."]] }
+          - level: B2
+            use: { en: ["A reminder: ", { term: "Don't forget to" }] }
+            ex: ["Post the letter, and don't forget ", { target: to }, "."]
+          - level: B2
+            use: { en: ["After ", { term: "have to" }, ", ", { term: "ought to" }, ", ", { term: "used to" }, " and ", { term: "be going to" }, ": the whole phrase stays"] }
+            ex: { examples: [["I didn't want to go, but I ", { target: "had to" }, "."], ["I don't smoke now, but I ", { target: "used to" }, "."]] }
+          - level: B2
+            use: { en: ["The verb ", { term: be }, " stays after ", { term: to }] }
+            ex: ["He isn't shy now, but he used to ", { target: be }, "."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: to }, " stays and its verb goes; the earlier clause supplies the verb."] }
+            ex: ["I haven't called her, but I'd like ", { target: to }, "."]
+          - type: rule
+            level: B2
+            text: { en: ["A modal stands alone, with no ", { term: to }, "."] }
+            ex: { exchange: ["Will you help?", ["I ", { target: will }, "."]] }
+          - type: note
+            level: B2
+            text: { en: ["Verbs that take ", { term: to }, " are in ", { link: Gerund vs Infinitive, to: en.verbs.gerund-vs-infinitive }, "."] }
+
+  - title: { en: "Reduced adverbial clauses" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: B2, use: { en: ["A condition: ", { pattern: [if, { slot: adjective }] }] }, ex: { examples: [[{ target: "If necessary" }, ", call me."], ["Come early ", { target: "if possible" }, "."]] } }
+          - { level: B2, use: { en: ["Time: ", { term: when }, ", ", { term: while }, " and ", { term: once }, " with an adjective, a participle or a place"] }, ex: { examples: [[{ target: "When young" }, ", she lived in Rome."], [{ target: "While waiting" }, ", I read the news."], [{ target: "Once inside" }, ", take your coat off."]] } }
+          - { level: B2, use: { en: ["Contrast: ", { term: although }, " and ", { term: though }] }, ex: [{ target: "Although tired" }, ", he kept working."] }
+          - { level: B2, use: { en: ["Circumstance: ", { term: "where possible" }, ", ", { term: "where necessary" }] }, ex: ["Use cash ", { target: "where possible" }, "."] }
+          - { level: B2, use: { en: ["Two alternatives: ", { term: "or not" }, " after ", { term: whether }] }, ex: ["I'll go ", { target: "whether you come or not" }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["A reduced clause leaves out its subject and ", { term: be }, "; the main clause supplies the subject."] }
+            ex: { equivalence: [["Although ", { target: tired }, ", he kept working."], ["Although ", { target: "he was tired" }, ", he kept working."]] }
+
+  - title: { en: "Nominal substitution" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: "the same", use: { en: "something just named" }, ex: { exchange: ["I'll have tea.", ["I'll have ", { target: "the same" }, "."]] } }
+          - { level: C1, form: "such", use: { en: "a general state of affairs, in fixed phrases" }, ex: { examples: [[{ target: "Such is life" }, "."], ["He is the manager and, ", { target: "as such" }, ", signs the cheques."]] } }
+          - { level: C1, form: "those", use: { en: ["the plural noun already named, before ", { term: of }, ", ", { term: in }, " or a phrase"] }, ex: { examples: [["Prices here are higher than ", { target: those }, " in town."], ["This year's results beat ", { target: those }, " of last year."]] } }
+          - { level: C1, form: "that of", use: { en: "the singular noun already named" }, ex: ["The climate here is milder than ", { target: "that of Spain" }, "."] }
+          - { level: C1, form: "the former, the latter", use: { en: "the first and the second of two things named" }, ex: ["Ann and Tom came; ", { target: "the former" }, " brought cake and ", { target: "the latter" }, " brought wine."] }
+          - { level: C1, form: "do", use: { en: ["a verb phrase after ", { term: than }, " and ", { term: as }] }, ex: { examples: [["She runs faster than he ", { target: does }, "."], ["He earns as much as she ", { target: does }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: [{ term: those }, " and ", { term: "that of" }, " suit writing; speech says ", { term: "the ones in town" }, "."] }
+
+  - title: { en: "Situational ellipsis in speech and notes" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: What goes } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: "The subject and the helper of a question" }, ex: { equivalence: [[{ target: "Seen him" }, "?"], "Have you seen him?"] } }
+          - { level: C1, use: { en: ["The subject and the helper before ", { term: got }] }, ex: { equivalence: [[{ target: "Got a minute" }, "?"], "Have you got a minute?"] } }
+          - { level: C1, use: { en: ["The subject and ", { term: do }, " before the verb"] }, ex: { equivalence: [[{ target: "Want some" }, "?"], "Do you want some?"] } }
+          - { level: C1, use: { en: "The subject of a statement" }, ex: { examples: [{ equivalence: [[{ target: "Sounds good" }, "."], "That sounds good."] }, { equivalence: [[{ target: "No idea" }, "."], "I have no idea."] }] } }
+          - { level: C1, use: { en: ["A diary or note: the subject, mostly ", { term: I }] }, ex: { target: "Missed the bus. Walked to work." } }
+          - { level: C1, use: { en: ["A headline: the articles and ", { term: be }] }, ex: { examples: [{ target: "Storm hits coast" }, { target: "Minister to resign" }] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["Speakers drop only what the situation supplies, from the start of a clause: ", { term: I }, ", ", { term: you }, ", ", { term: it }, ", the first auxiliary."] }
+          - type: rule
+            level: C1
+            text: { en: "The main verb and the words after it stay." }
+
+  - title: { en: "Reference to a clause" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Word } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, form: "it", use: { en: "a fact or idea already named" }, ex: ["She said she would resign, and I didn't expect ", { target: it }, "."] }
+          - { level: C1, form: "this", use: { en: "what the speaker has just said or is about to explain" }, ex: ["Prices rose sharply. ", { target: This }, " led to protests."] }
+          - { level: C1, form: "that", use: { en: "what someone else said or did" }, ex: { exchange: ["She quit her job.", [{ target: That }, " surprised everyone."]] } }
+          - { level: C1, form: "which", use: { en: "a comment on a whole clause, after a comma" }, ex: ["He passed the test, ", { target: which }, " surprised us."] }
+          - { level: C1, form: "a chain", use: { en: "each sentence picks up the one before" }, ex: ["The council closed the road. ", { target: This }, " caused delays, ", { target: which }, " led to protests. ", { target: That }, " in turn forced a review."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["When ", { term: it }, ", ", { term: this }, " or ", { term: that }, " could point at a noun, add a noun: ", { term: "this decision" }, ", ", { term: "that remark" }, "."] }
+          - type: note
+            level: C1
+            text: { en: [{ term: which }, " clauses are in ", { link: Relative Clauses, to: en.sentence-building.relative-clauses }, "."] }
+
+  - title: { en: "Short replies and stripping" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: "A wh-question answered by the missing phrase alone" }, ex: { examples: [{ exchange: ["Who wants coffee?", [{ target: Me }, "."]] }, { exchange: ["When shall we meet?", [{ target: Tomorrow }, "."]] }] } }
+          - { level: C1, use: { en: "A wh-word alone asks for the missing part" }, ex: { examples: [{ exchange: ["I met someone yesterday.", [{ target: Who }, "?"]] }, { exchange: ["I'm leaving soon.", [{ target: When }, "?"]] }] } }
+          - { level: C1, use: { en: "A wh-word and its preposition, with the preposition last" }, ex: { examples: [{ exchange: ["I'm going out tonight.", [{ target: "Who with" }, "?"]] }, { exchange: ["I need some money.", [{ target: "What for" }, "?"]] }] } }
+          - { level: C1, use: { en: ["Stripping: one phrase after ", { term: and }, " or ", { term: but }] }, ex: { examples: [["Tom left, and ", { target: "Ann too" }, "."], ["Tom left, but ", { target: "not Ann" }, "."]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: ["A bare answer takes the object pronoun: ", { term: me }, ", ", { term: him }, ", ", { term: her }, ", ", { term: us }, ", ", { term: them }, "."] }
+            ex: { exchange: ["Who broke it?", [{ target: Him }, "."]] }
+
+  - title: { en: "Identity condition" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: Rule } }
+          - { key: ex, label: { en: Example } }
+        rows:
+          - { level: C1, use: { en: "The left-out words repeat what was said; the auxiliary left behind stands for the whole verb group" }, ex: ["He isn't going, but I ", { target: am }, "."] }
+          - { level: C1, use: { en: "The auxiliary may change its polarity or tense, if it still fits the left-out verb" }, ex: { examples: [["She didn't phone, but she ", { target: "should have" }, "."], ["He doesn't swim now, but he ", { target: did }, " once."]] } }
+          - { level: C1, use: { en: ["A different form of ", { term: be }, " or ", { term: have }, " returns in full"] }, ex: ["He was here at nine, and she ", { target: "has been" }, " here since eight."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "A different verb is never left out: it appears in the clause." }
+            ex: ["Tom plays the guitar, and Ann ", { target: sings }, "."]
+
+  - title: { en: "Typical errors" }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "So I do."
+            right: [{ target: "So do I" }, "."]
+            rule: { en: ["after ", { term: so }, ", the auxiliary comes before the new subject"] }
+          - level: B2
+            wrong: "Neither don't I."
+            right: [{ target: "Neither do I" }, "."]
+            rule: { en: [{ term: neither }, " is negative, so the auxiliary stays positive"] }
+          - level: B2
+            wrong: "She is late, and so does he."
+            right: ["She is late, and ", { target: "so is he" }, "."]
+            rule: { en: [{ term: be }, " is answered by ", { term: be }] }
+          - level: B2
+            wrong: "I hope it not."
+            right: ["I ", { target: "hope not" }, "."]
+            rule: { en: [{ term: not }, " replaces the whole clause after ", { term: hope }] }
+          - level: B2
+            wrong: "He asked me to wait, and I did it so."
+            right: ["He asked me to wait, and I ", { target: "did so" }, "."]
+            rule: { en: [{ term: so }, " follows ", { term: do }, " directly; ", { term: "do it" }, " takes no ", { term: so }] }
+          - level: B2
+            wrong: "I bought two ones."
+            right: ["I bought ", { target: two }, "."]
+            rule: { en: ["a number stands alone, or takes an adjective before ", { term: ones }] }
+          - level: B2
+            wrong: "I didn't want to go, but I had."
+            right: ["I didn't want to go, but I ", { target: "had to" }, "."]
+            rule: { en: [{ term: to }, " stays when its verb goes"] }
+          - level: C1
+            wrong: "The prices here are higher than that in town."
+            right: ["The prices here are higher than ", { target: those }, " in town."]
+            rule: { en: [{ term: that }, " stands for a singular noun and ", { term: those }, " for a plural one"] }
+          - level: C1
+            wrong: "Ann, Tom and Sue came, and the latter stayed late."
+            right: ["Ann, Tom and Sue came, and ", { target: Sue }, " stayed late."]
+            rule: { en: [{ term: "the former" }, " and ", { term: "the latter" }, " name one of two things"] }
+          - level: C1
+            wrong: "He passed the test, what surprised us."
+            right: ["He passed the test, ", { target: which }, " surprised us."]
+            rule: { en: ["a comment on a whole clause takes ", { term: which }] }
+          - level: C1
+            wrong: "Who wants tea? I."
+            right: ["Who wants tea? ", { target: Me }, "."]
+            rule: { en: "a bare answer takes the object pronoun" }

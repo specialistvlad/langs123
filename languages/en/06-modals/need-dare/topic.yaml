@@ -1,0 +1,323 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.modals.need-dare
+lang: en
+kind: grammar
+tags: [verbs, modals, necessity, courage]
+concepts: [semi-modals]
+related: [en.modals.must-have-to, en.modals.should, en.modals.can-could, en.sentence-building.questions-negatives]
+status: { en: draft }
+
+title: { en: "Need and Dare" }
+summary:
+  lead:
+    en: [{ term: Need }, " for what is necessary and ", { term: dare }, " for what takes courage, each as a main verb with ", { term: to }, " or as a modal without it."]
+  rule:
+    en: ["The modal forms take the base verb; the main-verb forms take ", { term: to }, ":"]
+  ex:
+    examples:
+      - ["You ", { target: "needn't wait" }, "."]
+      - ["You ", { target: "don't need to wait" }, "."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: "Point" } }
+        - { key: rule, label: { en: "Rule" } }
+        - { key: ex, label: { en: "Example" } }
+      rows:
+        - level: B2
+          point: { en: "Need: main verb" }
+          rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [{ term: need }, { term: needs }] }, { term: to }, { slot: V }] }, "; ", { term: do }, " in questions and negatives"] }
+          ex: ["She ", { target: "needs to rest" }, "."]
+        - level: B2
+          point: { en: "Need: modal" }
+          rule: { en: [{ pattern: [{ slot: subject }, { term: "needn't" }, { slot: V }] }, "; no ", { term: "-s" }, ", no ", { term: to }] }
+          ex: ["You ", { target: "needn't come" }, "."]
+        - level: B2
+          point: { en: "Not necessary" }
+          rule: { en: { equivalence: [{ term: "needn't" }, { term: "don't need to" }, { term: "don't have to" }] } }
+          ex: ["You ", { target: "don't need to pay" }, "."]
+        - level: B2
+          point: { en: "Need and a job to do" }
+          rule: { en: [{ term: "needs washing" }, " = ", { term: "needs to be washed" }] }
+          ex: ["The car ", { target: "needs washing" }, "."]
+        - level: B2
+          point: { en: "Needn't have" }
+          rule: { en: "it was done and was not necessary" }
+          ex: ["I ", { target: "needn't have waited" }, "."]
+        - level: B2
+          point: { en: "Dare: main verb" }
+          rule: { en: [{ pattern: [{ slot: subject }, { alternatives: [{ term: dare }, { term: dares }] }, { term: to }, { slot: V }] }, "; ", { term: do }, " in questions and negatives"] }
+          ex: ["He ", { target: "didn't dare to ask" }, "."]
+        - level: B2
+          point: { en: "Dare: modal" }
+          rule: { en: [{ term: "daren't" }, " or ", { term: "dare not" }, " + base verb; ", { term: ["Dare I", { gap: true }, "?"] }] }
+          ex: { examples: [["I ", { target: "daren't ask" }, "."], [{ target: "Dare" }, " I ask?"]] }
+        - level: B2
+          point: { en: "Fixed phrases" }
+          rule: { en: [{ term: "I dare say" }, ": probably; ", { term: "How dare you" }, ": anger"] }
+          ex: { examples: [[{ target: "I dare say" }, " you are right."], [{ target: "How dare you" }, " speak to me like that!"]] }
+        - level: C1
+          point: { en: "Formal need" }
+          rule: { en: [{ term: "need hardly say" }, ", ", { term: "need not" }, ", ", { term: "if need be" }, ", ", { term: "needs must" }] }
+          ex: ["We can stay longer, ", { target: "if need be" }, "."]
+        - level: C1
+          point: { en: "Dare: challenge" }
+          rule: { en: [{ pattern: [{ term: dare }, { slot: person }, { term: to }, { slot: V }] }, " challenges someone"] }
+          ex: ["She ", { target: "dared him to jump" }, "."]
+        - level: B2
+          point: { en: "Trap" }
+          rule: { en: ["main-verb ", { term: need }, " takes ", { term: to }, " and a base verb"] }
+          ex: ["He ", { target: "needs to go" }, "."]
+
+sections:
+  - title: { en: "Form: need as a main verb" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: "Form" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, features: { polarity: pos, interrogativity: decl }, form: { en: "Affirmative" }, pattern: { pattern: [{ slot: subject }, { alternatives: [need, needs] }, to, { slot: V }] }, ex: ["She ", { target: "needs to rest" }, "."] }
+          - { level: B2, features: { polarity: neg, interrogativity: decl }, form: { en: "Negative" }, pattern: { pattern: [{ slot: subject }, { alternatives: ["don't", "doesn't", "didn't"] }, need to, { slot: V }] }, ex: ["You ", { target: "don't need to" }, " pay."] }
+          - { level: B2, features: { polarity: pos, interrogativity: int }, form: { en: "Question" }, pattern: { pattern: [{ alternatives: [Do, Does, Did] }, { slot: subject }, need to, { slot: V }] }, ex: [{ target: Do }, " you ", { target: "need to" }, " leave?"] }
+          - { level: B2, features: { tense: pst }, form: { en: "Past" }, pattern: { pattern: [{ slot: subject }, needed to, { slot: V }] }, ex: ["We ", { target: "needed to" }, " leave early."] }
+
+  - title: { en: "Patterns after need" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            use: { en: "A thing that is needed" }
+            pattern: { pattern: [need, { slot: noun }] }
+            ex: ["I ", { target: "need a new phone" }, "."]
+          - level: B2
+            use: { en: "Someone else must act" }
+            pattern: { pattern: [need, { slot: person }, to, { slot: V }] }
+            ex: ["I ", { target: "need you to help" }, " me."]
+          - level: B2
+            use: { en: "A thing that needs a job done" }
+            pattern: { pattern: [needs, { slot: V-ing }] }
+            ex: ["The car ", { target: "needs washing" }, "."]
+          - level: B2
+            use: { en: "The same meaning, in the passive" }
+            pattern: { pattern: [needs to be, { slot: past participle }] }
+            ex: ["The car ", { target: "needs to be washed" }, "."]
+
+  - title: { en: "Form: need as a modal" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: "Form" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, features: { polarity: neg, interrogativity: decl }, form: { en: "Negative" }, pattern: { pattern: [{ slot: subject }, "needn't", { slot: V }] }, ex: ["You ", { target: "needn't come" }, "."] }
+          - { level: B2, features: { polarity: pos, interrogativity: int }, form: { en: "Question" }, pattern: { pattern: [Need, { slot: subject }, { slot: V }] }, ex: [{ target: Need }, " I bring anything?"] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["Modal ", { term: need }, " has one form for every subject and takes the base verb:"] }
+            ex: ["She ", { target: "needn't wait" }, "."]
+          - type: rule
+            level: B2
+            text: { en: [{ term: ["Need I", { gap: true }, "?"] }, " is formal; speech prefers ", { term: ["Do I need to", { gap: true }, "?"] }] }
+
+  - title: { en: "Use: no necessity" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            use: { en: "Not necessary: three ways to say it" }
+            ex: { equivalence: [["You ", { target: "needn't wait" }, "."], ["You ", { target: "don't need to wait" }, "."], ["You ", { target: "don't have to wait" }, "."]] }
+          - level: B2
+            use: { en: "Only one thing is needed" }
+            ex: ["You ", { target: "need only ask" }, "."]
+          - level: B2
+            use: { en: "All that is needed" }
+            ex: ["All you ", { target: "need do" }, " is sign here."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: [{ term: "Needn't" }, " is mainly British; American English prefers ", { term: "don't need to" }, "."] }
+          - type: note
+            level: B2
+            text: { en: [{ term: "Must" }, " and ", { term: "have to" }, " say what is necessary. See ", { link: "Must and Have To", to: en.modals.must-have-to }, "."] }
+
+  - title: { en: "Compare: needn't have and didn't need to" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: row, label: { en: "Point" } }
+          - { key: neednt, label: "needn't have" }
+          - { key: didnt, label: "didn't need to" }
+        rows:
+          - level: B2
+            row: { en: "Meaning" }
+            neednt: { en: "it was done, and it was not necessary" }
+            didnt: { en: "it was not necessary; it may not have happened" }
+          - level: B2
+            row: { en: "Example" }
+            neednt: ["We ", { target: "needn't have booked" }, " a table. The café was empty."]
+            didnt: ["We ", { target: "didn't need to book" }, " a table, so we walked in."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["Other modals look back in the same way. See ", { link: "Modal Verbs in the Past", to: en.modals.modal-perfect }, "."] }
+
+  - title: { en: "Form: dare as a main verb" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: "Form" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, features: { polarity: pos, interrogativity: decl }, form: { en: "Affirmative" }, pattern: { pattern: [{ slot: subject }, { alternatives: [dare, dares] }, to, { slot: V }] }, ex: ["She ", { target: "dares to speak" }, " up."] }
+          - { level: B2, features: { polarity: neg, interrogativity: decl }, form: { en: "Negative" }, pattern: { pattern: [{ slot: subject }, { alternatives: ["don't", "doesn't", "didn't"] }, dare to, { slot: V }] }, ex: ["He ", { target: "didn't dare to" }, " ask."] }
+          - { level: B2, features: { polarity: pos, interrogativity: int }, form: { en: "Question" }, pattern: { pattern: [{ alternatives: [Do, Does, Did] }, { slot: subject }, dare to, { slot: V }] }, ex: [{ target: Did }, " he ", { target: "dare to" }, " ask?"] }
+
+  - title: { en: "Form: dare as a modal" }
+    role: form
+    content:
+      - type: paradigm
+        columns:
+          - { key: form, label: { en: "Form" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - { level: B2, features: { polarity: neg, interrogativity: decl }, form: { en: "Negative" }, pattern: { pattern: [{ slot: subject }, { alternatives: ["daren't", "dare not"] }, { slot: V }] }, ex: ["I ", { target: "daren't ask" }, "."] }
+          - { level: B2, features: { polarity: pos, interrogativity: int }, form: { en: "Question" }, pattern: { pattern: [Dare, { slot: subject }, { slot: V }] }, ex: [{ target: Dare }, " I ask?"] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: ["Modal ", { term: dare }, " has one form for every subject and takes the base verb:"] }
+            ex: ["He ", { target: "daren't speak" }, "."]
+          - type: rule
+            level: B2
+            text: { en: ["Modal ", { term: dare }, " is mainly British; main-verb ", { term: dare }, " is more usual in speech."] }
+
+  - title: { en: "Fixed phrases with dare" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: B2
+            use: { en: ["probably: ", { term: "I dare say" }] }
+            ex: [{ target: "I dare say" }, " you are right."]
+          - level: B2
+            use: { en: ["anger at rude behaviour: ", { term: "How dare you" }, ", ", { term: "how dare he" }] }
+            ex: [{ target: "How dare you" }, " speak to me like that!"]
+          - level: B2
+            use: { en: ["a warning: ", { term: ["Don't you dare", { gap: true }, "!"] }] }
+            ex: [{ target: "Don't you dare" }, " touch that!"]
+
+  - title: { en: "Formal and fixed uses of need" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            use: { en: ["it is obvious: ", { term: "need hardly say" }] }
+            ex: ["I ", { target: "need hardly say" }, " how important this is."]
+          - level: C1
+            use: { en: ["formal negative: ", { term: "need not" }, " in two words"] }
+            ex: ["The answer ", { target: "need not be" }, " long."]
+          - level: C1
+            use: { en: ["after a negative word: ", { term: "no one need" }] }
+            ex: [{ target: "No one need" }, " know about this."]
+          - level: C1
+            use: { en: ["if it becomes necessary: ", { term: "if need be" }] }
+            ex: ["We can stay longer, ", { target: "if need be" }, "."]
+          - level: C1
+            use: { en: ["what must be done: ", { term: "needs must" }] }
+            ex: ["I dislike night shifts, but ", { target: "needs must" }, "."]
+
+  - title: { en: "Formal and fixed uses of dare" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { en: "Use" } }
+          - { key: pattern, label: { en: "Pattern" } }
+          - { key: ex, label: { en: "Example" } }
+        rows:
+          - level: C1
+            use: { en: "A challenge to someone" }
+            pattern: { pattern: [dare, { slot: person }, to, { slot: V }] }
+            ex: ["She ", { target: "dared him to jump" }, "."]
+          - level: C1
+            use: { en: "A refusal to take a risk" }
+            pattern: { pattern: ["wouldn't dare", { slot: V }] }
+            ex: ["I ", { target: "wouldn't dare tell" }, " her."]
+          - level: C1
+            use: { en: "Main-verb dare without to" }
+            pattern: { pattern: [{ alternatives: ["doesn't", "didn't"] }, dare, { slot: V }] }
+            ex: ["He ", { target: "didn't dare tell" }, " her the truth."]
+          - level: C1
+            use: { en: "A rhetorical question, literary" }
+            pattern: { pattern: [Who, dare, { slot: V }] }
+            ex: [{ target: "Who dare" }, " call this a failure?"]
+
+  - title: { en: "Typical errors" }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "He needs go."
+            right: ["He needs ", { target: "to go" }, "."]
+            rule: { en: ["main-verb ", { term: need }, " takes ", { term: to }] }
+          - level: B2
+            wrong: "He don't need to going."
+            right: ["He ", { target: "doesn't need to go" }, "."]
+            rule: { en: { pattern: [{ term: "doesn't" }, { term: "need to" }, { slot: base verb }] } }
+          - level: B2
+            wrong: "You needn't to come."
+            right: ["You needn't ", { target: come }, "."]
+            rule: { en: { pattern: [{ term: "needn't" }, { slot: base verb }] } }
+          - level: B2
+            wrong: "She daren't to ask."
+            right: ["She daren't ", { target: ask }, "."]
+            rule: { en: { pattern: [{ term: "daren't" }, { slot: base verb }] } }
+          - level: B2
+            wrong: "Did he dared to ask?"
+            right: ["Did he ", { target: dare }, " to ask?"]
+            rule: { en: ["the verb after ", { term: did }, " is a base verb"] }
+          - level: B2
+            wrong: "The car needs to wash."
+            right: { alternatives: [["The car ", { target: "needs washing" }, "."], ["The car ", { target: "needs to be washed" }, "."]] }
+            rule: { en: "the car receives the action: -ing or the passive" }
+          - level: B2
+            wrong: "I need that you help me."
+            right: ["I need ", { target: "you to help" }, " me."]
+            rule: { en: { pattern: [{ term: need }, { slot: person }, { term: to }, { slot: V }] } }
+          - level: C1
+            wrong: "She dared to him to jump."
+            right: ["She ", { target: "dared him to" }, " jump."]
+            rule: { en: { pattern: [{ term: dare }, { slot: person }, { term: to }, { slot: V }] } }
