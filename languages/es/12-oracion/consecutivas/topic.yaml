@@ -1,0 +1,372 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.consecutivas
+lang: es
+kind: grammar
+tags: [linkers, consequence, sentence]
+concepts: [linkers, consequence]
+related: [es.oracion.conectores, es.adjetivo-adverbio.comparativos-superlativos, es.subjuntivo.subjuntivo-deseos-dudas]
+status: { es: draft }
+
+title: { es: "Las oraciones consecutivas: tan… que, de modo que, de ahí que" }
+summary:
+  lead:
+    es: ["Las consecutivas dicen el resultado de lo anterior con un conector, como ", { term: "de modo que" }, ", o con ", { term: ["tan ", { gap: true }, " que"] }, "."]
+  rule:
+    es: ["El adjetivo y el adverbio llevan ", { term: tan }, "; el sustantivo y el verbo, ", { term: tanto }, "; ", { term: que }, " abre la consecuencia:"]
+  ex: { examples: [["Es ", { target: "tan alto que" }, " no cabe."], ["Estudia ", { target: "tanto que" }, " no duerme."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Entre oraciones }
+          rule: { es: ["un conector introduce la consecuencia: ", { term: "de modo que" }, ", ", { term: "por lo tanto" }] }
+          ex: ["Perdí el tren, ", { target: "de modo que" }, " llegué tarde."]
+        - level: B2
+          point: { es: Con adjetivo o adverbio }
+          rule: { es: [{ term: tan }, " delante de adjetivo o adverbio, y luego ", { term: que }] }
+          ex: ["Es ", { target: "tan alto que" }, " no cabe en la cama."]
+        - level: B2
+          point: { es: Con sustantivo }
+          rule: { es: [{ term: tanto }, " concuerda con el sustantivo"] }
+          ex: ["Tenía ", { target: "tantas dudas que" }, " no pudo decidir."]
+        - level: B2
+          point: { es: Con verbo }
+          rule: { es: [{ term: tanto }, " va detrás del verbo y no cambia"] }
+          ex: ["Estudia ", { target: "tanto que" }, " no tiene tiempo para nada."]
+        - level: B2
+          point: { es: Modo }
+          rule: { es: "indicativo para la consecuencia, subjuntivo para la finalidad" }
+          ex: { examples: [["Perdí el tren, de modo que ", { target: llegué }, " tarde."], ["Habla de modo que te ", { target: entiendan }, "."]] }
+        - level: C1
+          point: { es: Registro culto }
+          rule: { es: [{ term: luego }, ", ", { term: "así pues" }, " y ", { term: consecuentemente }, " unen dos oraciones"] }
+          ex: ["No hay billetes; ", { target: "así pues" }, ", iremos en tren."]
+        - level: C1
+          point: { es: Subjuntivo }
+          rule: { es: [{ term: "de ahí que" }, " lleva subjuntivo"] }
+          ex: ["El puente está cerrado; ", { target: "de ahí que" }, " haya tanto tráfico."]
+        - level: C1
+          point: { es: Intensidad culta }
+          rule: { es: [{ term: tal }, " va delante del sustantivo, sin artículo"] }
+          ex: ["Tenía ", { target: "tal prisa que" }, " olvidó las llaves."]
+        - level: C1
+          point: { es: Suficiente para }
+          rule: { es: [{ term: "como para" }, " lleva infinitivo tras lo bastante o tanto"] }
+          ex: ["Eres lo bastante mayor ", { target: "como para" }, " decidir solo."]
+        - level: C2
+          point: { es: Registro literario }
+          rule: { es: [{ term: "de suerte que" }, " admite indicativo y subjuntivo"] }
+          ex: ["Habló ", { target: "de tal suerte que" }, " nadie dudó de él."]
+        - level: C2
+          point: { es: Coloquial }
+          rule: { es: [{ term: ["una de ", { gap: true }, " que"] }, " intensifica un sustantivo plural"] }
+          ex: ["Había ", { target: "una de coches que" }, " no se podía cruzar."]
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: [{ term: tan }, " anuncia la consecuencia; ", { term: muy }, " solo intensifica"] }
+          ex: ["Está ", { target: tan }, " cansado que se duerme de pie."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "Una oración consecutiva dice el resultado de lo que se acaba de decir."
+            ex: ["Hacía frío, ", { target: "de modo que" }, " cerramos las ventanas."]
+          - type: rule
+            level: B2
+            text:
+              es: ["Un conector enlaza dos oraciones, o ", { term: tan }, " y ", { term: tanto }, " anuncian una oración con ", { term: que }, "."]
+            ex: ["Llovía ", { target: "tanto que" }, " nos quedamos en casa."]
+          - type: note
+            level: B2
+            text:
+              es: ["Los conectores de consecuencia básicos, ", { term: "por eso" }, " y ", { term: "así que" }, ": ", { link: Los conectores, to: es.oracion.conectores }, "."]
+
+  - title: { es: Consecuencia entre dos oraciones }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { es: Conector } }
+          - { key: register, label: { es: Registro } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            linker: { alternatives: [de manera que, de modo que, de forma que] }
+            register: { es: neutro }
+            ex: ["Perdí el tren, ", { target: "de modo que" }, " llegué tarde."]
+          - level: B2
+            linker: { alternatives: [con lo que, por lo que] }
+            register: { es: neutro }
+            ex: ["Había demasiada gente, ", { target: "por lo que" }, " decidimos no entrar."]
+          - level: B2
+            linker: ["por ", { optional: lo }, " tanto"]
+            register: { es: neutro }
+            ex: ["Los vuelos están llenos. ", { target: "Por lo tanto" }, ", iremos en tren."]
+          - level: B2
+            linker: { alternatives: [en consecuencia, por consiguiente] }
+            register: { es: formal }
+            ex: ["No hubo acuerdo. ", { target: "Por consiguiente" }, ", se aplazó la votación."]
+          - level: B2
+            linker: { alternatives: [[{ optional: y }, " así"], de este modo] }
+            register: { es: neutro }
+            ex: { examples: [["Ahorramos cada mes y ", { target: así }, " podremos viajar."], ["Practica a diario; ", { target: "de este modo" }, " aprenderás más rápido."]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: "por lo tanto" }, ", ", { term: "en consecuencia" }, " y ", { term: "por consiguiente" }, " abren oración tras punto o punto y coma, con coma detrás."]
+          - type: rule
+            level: B2
+            text:
+              es: ["Con indicativo, ", { term: "de modo que" }, " expresa consecuencia; con subjuntivo, finalidad."]
+            ex: { examples: [["Perdí el tren, de modo que ", { target: llegué }, " tarde."], ["Habla de modo que te ", { target: entiendan }, "."]] }
+          - type: note
+            level: B2
+            text:
+              es: ["La finalidad: ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+
+  - title: { es: "Intensidad: tan… que, tanto… que" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: register, label: { es: Registro } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [{ term: tan }, { slot: { es: adjetivo o adverbio } }, { term: que }] }
+            register: { es: neutro }
+            ex: { examples: [["Es ", { target: "tan alto que" }, " no cabe en la cama."], ["Corre ", { target: "tan rápido que" }, " nadie lo alcanza."]] }
+          - level: B2
+            pattern: { pattern: [{ alternatives: [tanto, tanta, tantos, tantas] }, { slot: noun }, { term: que }] }
+            register: { es: neutro }
+            ex: ["Tenía ", { target: "tantas dudas que" }, " no pudo decidir."]
+          - level: B2
+            pattern: { pattern: [{ slot: verb }, { term: "tanto que" }] }
+            register: { es: neutro }
+            ex: ["Estudia ", { target: "tanto que" }, " no tiene tiempo para nada."]
+          - level: B2
+            pattern: { alternatives: [de tal modo que, de tal manera que, de tal forma que] }
+            register: { es: neutro }
+            ex: ["Habla ", { target: "de tal manera que" }, " nadie lo entiende."]
+          - level: B2
+            pattern: { es: "oración suspendida: la consecuencia queda sin decir" }
+            register: { es: coloquial }
+            ex: ["Es que grita ", { target: "de una manera" }, { gap: true }]
+          - level: C1
+            pattern: { pattern: [{ term: tal }, { slot: noun }, { term: que }] }
+            register: { es: formal }
+            ex: ["Tenía ", { target: "tal prisa que" }, " olvidó las llaves."]
+          - level: C1
+            pattern: { pattern: [{ term: "es tal" }, { slot: { es: posesivo y sustantivo } }, { term: que }] }
+            register: { es: formal }
+            ex: [{ target: "Es tal su timidez que" }, " no habla en público."]
+          - level: C1
+            pattern: { pattern: [{ term: cada }, { slot: noun }, { term: que }] }
+            register: { es: coloquial }
+            ex: ["Dice ", { target: "cada tontería que" }, " da vergüenza ajena."]
+          - level: C1
+            pattern: { pattern: [{ term: "de un" }, { slot: adjective }, { term: que }] }
+            register: { es: coloquial }
+            ex: ["Es ", { target: "de un tacaño que" }, " no invita ni a un café."]
+          - level: C1
+            pattern: { pattern: [{ term: si }, { slot: verb }, { slot: adjective }, { term: que }] }
+            register: { es: coloquial }
+            ex: ["¡", { target: "Si será despistado que" }, " se olvidó de su propia boda!"]
+          - level: C2
+            pattern: { pattern: [{ alternatives: [de un, de una] }, { slot: noun }, { term: tal }, { term: que }] }
+            register: { es: literario }
+            ex: ["Era ", { target: "de una amabilidad tal que" }, " todos la querían."]
+          - level: C2
+            pattern: { pattern: [{ term: así }, { slot: verb }, { slot: noun }, { term: que }] }
+            register: { es: literario }
+            ex: [{ target: "Así fue su enfado que" }, " nadie se atrevió a hablar."]
+          - level: C2
+            pattern: { pattern: [{ term: "una de" }, { slot: plural noun }, { term: que }] }
+            register: { es: coloquial }
+            ex: ["Había ", { target: "una de coches que" }, " no se podía cruzar."]
+          - level: C2
+            pattern: { pattern: [{ slot: clause }, { term: "como que" }, { slot: clause }] }
+            register: { es: coloquial }
+            ex: ["Hace un calor ", { target: "como que" }, " no se puede ni respirar."]
+          - level: C2
+            pattern: { pattern: [{ term: de }, { alternatives: [el, la, los, las] }, { slot: noun }, { term: que }, { slot: verb }] }
+            register: { es: coloquial }
+            ex: ["No podía hablar ", { target: "de la risa que" }, " tenía."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Tras una afirmación, ", { term: ["tan ", { gap: true }, " que"] }, " y ", { term: ["tanto ", { gap: true }, " que"] }, " llevan indicativo."]
+            ex: ["Corre tan rápido que nadie lo ", { target: alcanza }, "."]
+
+  - title: { es: "Consecuencia entre oraciones: registro culto" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { es: Conector } }
+          - { key: mood, label: { es: Modo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            linker: luego
+            mood: { es: indicativo }
+            ex: ["Las luces están apagadas; ", { target: luego }, " no hay nadie."]
+          - level: C1
+            linker: { alternatives: [pues, así pues] }
+            mood: { es: indicativo }
+            ex: { examples: [["Dices que no te interesa; ", { target: pues }, " no insistiré."], ["No hay billetes; ", { target: "así pues" }, ", iremos en tren."]] }
+          - level: C1
+            linker: de ahí que
+            mood: { es: subjuntivo }
+            ex: ["El puente está cerrado; ", { target: "de ahí que" }, " haya tanto tráfico."]
+          - level: C1
+            linker: { pattern: [{ term: "de ahí" }, { slot: noun }] }
+            ex: ["Tiene mucho miedo; ", { target: "de ahí" }, " su silencio."]
+          - level: C1
+            linker: { alternatives: [consecuentemente, consiguientemente] }
+            mood: { es: indicativo }
+            ex: ["Pagó tarde; ", { target: consecuentemente }, ", le cobraron un recargo."]
+          - level: C2
+            linker: { alternatives: [de suerte que, de tal suerte que] }
+            mood: { es: indicativo o subjuntivo }
+            ex: { examples: [["Habló ", { target: "de tal suerte que" }, " nadie dudó de él."], ["Organizó la fiesta ", { target: "de suerte que" }, " todos se divirtieran."]] }
+          - level: C2
+            linker: conque
+            mood: { es: indicativo o imperativo }
+            ex: { examples: [["Ya no tengo dinero, ", { target: conque }, " no podré ir."], ["Ya hemos hablado bastante, ", { target: conque }, " vete a dormir."]] }
+          - level: C2
+            linker: { alternatives: [hasta tal punto que, a tal extremo que] }
+            mood: { es: indicativo }
+            ex: ["Se enfadó ", { target: "hasta tal punto que" }, " no nos habló en una semana."]
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text:
+              es: [{ term: conque }, " es coloquial y tajante."]
+          - type: note
+            level: C1
+            text:
+              es: ["Más sobre el subjuntivo: ", { link: "El subjuntivo: deseos, dudas y opiniones", to: es.subjuntivo.subjuntivo-deseos-dudas }, "."]
+
+  - title: { es: "Suficiente para: como para" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            pattern: { pattern: [{ alternatives: [lo bastante, suficientemente] }, { slot: adjective }, { term: "como para" }, { slot: infinitive }] }
+            ex: ["Eres lo bastante mayor ", { target: "como para" }, " decidir solo."]
+          - level: C1
+            pattern: { pattern: [{ term: tanto }, { term: "como para" }, { slot: infinitive }] }
+            ex: ["Ahorró ", { target: "tanto como para" }, " comprarse una moto."]
+          - level: C1
+            pattern: { pattern: [{ term: "no" }, { term: tan }, { slot: adjective }, { term: "como para" }, { slot: infinitive }] }
+            ex: ["No soy ", { target: "tan ingenuo como para" }, " creerlo."]
+          - level: C1
+            pattern: { pattern: [{ term: demasiado }, { slot: adjective }, { alternatives: [como para, para] }, { slot: infinitive }] }
+            ex: { examples: [["Estaba ", { target: "demasiado cansado como para" }, " seguir."], ["Estaba ", { target: "demasiado cansado para" }, " seguir."]] }
+          - level: C1
+            pattern: { pattern: [{ term: "como para que" }, { slot: { es: subjuntivo } }] }
+            ex: ["La mesa es lo bastante grande ", { target: "como para que" }, " cenemos todos."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: ["Con el mismo sujeto va el infinitivo; con otro sujeto, ", { term: "como para que" }, " y el subjuntivo."]
+
+  - title: { es: Consecutivas exclamativas y suspendidas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            pattern: { pattern: [{ term: cómo }, { slot: verb }, { term: que }, { slot: clause }] }
+            ex: ["¡", { target: "Cómo llovía que" }, " no se veía nada!"]
+          - level: C1
+            pattern: { pattern: [{ term: cuánto }, { slot: { es: futuro de probabilidad } }, { term: que }, { slot: clause }] }
+            ex: ["¡", { target: "Cuánto habrá estudiado que" }, " sacó la nota más alta!"]
+          - level: C1
+            pattern: { es: "tan o tanto, sin la oración con que" }
+            ex: { examples: [["¡Llovía ", { target: tanto }, { gap: true }, "!"], ["Es ", { target: "tan cuidadoso" }, { gap: true }]] }
+          - level: C1
+            pattern: { es: "tras una orden negativa, la consecuencia va en subjuntivo o en indicativo" }
+            ex: { examples: [["No lo escondas tanto que luego no lo ", { target: encuentres }, "."], ["No lo escondas tanto que luego no lo ", { target: encuentras }, "."]] }
+          - level: C2
+            pattern: { pattern: [{ alternatives: [el, la, los, las] }, { slot: noun }, { term: que }, { slot: verb }] }
+            ex: ["¡", { target: "La cara que" }, " puso!"]
+          - level: C2
+            pattern: { pattern: [{ term: lo }, { slot: adjective }, { term: que }, { slot: { es: condicional de probabilidad } }, { term: que }, { slot: clause }] }
+            ex: ["¡", { target: "Lo cansado que estaría que" }, " se quedó dormido en el autobús!"]
+          - level: C2
+            pattern: { pattern: [{ term: "lo que" }, { slot: { es: condicional de probabilidad } }, { term: que }, { slot: clause }] }
+            ex: ["¡", { target: "Lo que gritaría que" }, " se quedó afónica!"]
+          - level: C2
+            pattern: { es: "la oración con que sigue a un punto" }
+            ex: ["Lo admiraba. ", { target: "Tanto, que" }, " copiaba hasta su forma de hablar."]
+          - level: C2
+            pattern: { pattern: [{ alternatives: [a tal punto, a tal extremo] }, { slot: verb }, { slot: noun }, { term: que }] }
+            ex: [{ target: "A tal punto" }, " llegó su enfado ", { target: que }, " rompió el plato."]
+
+  - title: { es: "Comparación: tan… que y tan… como" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: consequence, label: { es: Consecuencia } }
+          - { key: equality, label: { es: Igualdad } }
+        rows:
+          - level: B2
+            consequence: { es: ["la intensidad lleva a un resultado: ", { term: que }] }
+            equality: { es: ["la intensidad iguala a otra: ", { term: como }] }
+          - level: B2
+            consequence: ["Estaba ", { target: "tan nervioso que" }, " no podía hablar."]
+            equality: ["Estaba ", { target: "tan nervioso como" }, " su hermano."]
+          - level: B2
+            consequence: ["Come ", { target: "tanto que" }, " se pone enfermo."]
+            equality: ["Come ", { target: "tanto como" }, " su hermano."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["La comparación de igualdad: ", { link: Comparativos y superlativos, to: es.adjetivo-adverbio.comparativos-superlativos }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Estoy muy cansado que me duermo.", right: ["Estoy ", { target: tan }, " cansado que me duermo."], rule: { es: [{ term: tan }, " anuncia la oración con ", { term: que }, "; ", { term: muy }, " solo intensifica"] } }
+          - { level: B2, wrong: "Tiene tan dudas que no decide.", right: ["Tiene ", { target: "tantas dudas" }, " que no decide."], rule: { es: [{ term: tanto }, " concuerda con el sustantivo"] } }
+          - { level: B2, wrong: "Es tanto alto que no cabe.", right: ["Es ", { target: "tan alto" }, " que no cabe."], rule: { es: [{ term: tan }, " va delante de adjetivo y adverbio"] } }
+          - { level: B2, wrong: "Perdí el tren, de modo que llegara tarde.", right: ["Perdí el tren, de modo que ", { target: llegué }, " tarde."], rule: { es: "la consecuencia real lleva indicativo; el subjuntivo da finalidad" } }
+          - { level: B2, wrong: "Corre tan rápido que nadie lo alcance.", right: ["Corre tan rápido que nadie lo ", { target: alcanza }, "."], rule: { es: ["tras una afirmación, ", { term: ["tan ", { gap: true }, " que"] }, " lleva indicativo"] } }
+          - { level: C1, wrong: "El puente está cerrado; de ahí que hay mucho tráfico.", right: ["El puente está cerrado; de ahí que ", { target: haya }, " mucho tráfico."], rule: { es: [{ term: "de ahí que" }, " lleva subjuntivo"] } }
+          - { level: C1, wrong: "Es suficiente listo como para entenderlo.", right: ["Es ", { target: "lo bastante" }, " listo como para entenderlo."], rule: { es: [{ term: suficiente }, " acompaña a un sustantivo; ante un adjetivo va ", { term: suficientemente }, " o ", { term: "lo bastante" }] } }
+          - { level: C1, wrong: "Hay tal ruido de que no puedo dormir.", right: ["Hay tal ruido ", { target: que }, " no puedo dormir."], rule: { es: [{ term: tal }, " pide ", { term: que }, " sin ", { term: de }] } }
+          - { level: C2, wrong: "Ya es tarde, con que vete a dormir.", right: ["Ya es tarde, ", { target: conque }, " vete a dormir."], rule: { es: [{ term: conque }, " consecutivo se escribe en una sola palabra"] } }

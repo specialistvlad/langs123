@@ -1,0 +1,273 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.pronombres.leismo-laismo-loismo
+lang: es
+kind: grammar
+tags: [pronouns, leismo, laismo, loismo, le, la, lo]
+concepts: [object-pronouns]
+related: [es.pronombres.objeto-directo, es.pronombres.objeto-indirecto, es.pronombres.combinacion-pronombres]
+status: { es: draft }
+
+title: { es: "Leísmo, laísmo y loísmo: le, la, lo", en: "Leísmo, Laísmo and Loísmo: le, la, lo" }
+summary:
+  lead:
+    es: [{ term: Lo }, ", ", { term: la }, " y ", { term: le }, " siguen la función del complemento; el leísmo de persona masculina se admite, el laísmo y el loísmo no."]
+  rule:
+    es: [{ term: Lo }, " y ", { term: la }, " sustituyen al complemento directo; ", { term: le }, ", al indirecto, de hombre o de mujer:"]
+  ex: { examples: [["A Luisa ", { target: la }, " vimos."], ["A Luisa ", { target: le }, " dimos las gracias."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Norma }
+          rule: { es: [{ term: lo }, " y ", { term: la }, ": complemento directo; ", { term: le }, ": complemento indirecto"] }
+          ex: ["A Luisa ", { target: la }, " vimos y ", { target: le }, " dimos las gracias."]
+        - level: B2
+          point: { es: Leísmo de persona }
+          rule: { es: [{ term: le }, " por ", { term: lo }, " con un hombre está admitido"] }
+          ex: ["A Luis ", { target: le }, " vimos ayer."]
+        - level: B2
+          variety: es-ES
+          point: { es: España }
+          rule: { es: "el leísmo de persona masculina es frecuente" }
+          ex: ["A mi tío ", { target: le }, " veo los domingos."]
+        - level: B2
+          variety: es-419
+          point: { es: América }
+          rule: { es: [{ term: lo }, " es la forma habitual con un hombre"] }
+          ex: ["A mi tío ", { target: lo }, " veo los domingos."]
+        - level: B2
+          point: { es: Verbos con le }
+          rule: { es: [{ term: telefonear }, " y ", { term: corresponder }, " solo llevan ", { term: le }] }
+          ex: [{ target: Le }, " telefoneé a mi madre."]
+        - level: C1
+          point: { es: Mismo verbo }
+          rule: { es: "con un golpe como complemento directo, la persona lleva le" }
+          ex: ["Su padre ", { target: le }, " pegó una bofetada."]
+        - level: C2
+          point: { es: Le por les }
+          rule: { es: [{ term: les }, " con un complemento indirecto plural"] }
+          ex: ["No ", { target: les }, " tiene miedo a los fantasmas."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: "laísmo y loísmo: el complemento indirecto es le" }
+          ex: ["A María ", { target: le }, " dije que viniera."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: [{ term: lo }, " o ", { term: la }, " para una cosa, no ", { term: le }] }
+          ex: ["El libro que me dejaste ", { target: lo }, " leí."]
+
+sections:
+  - title: { es: El leísmo de persona }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: pron, label: { es: Pronombre } }
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pron: { term: lo }
+            use: { es: "Complemento directo masculino, de persona o de cosa." }
+            ex: ["A Luis ", { target: lo }, " vimos ayer."]
+          - level: B2
+            pron: { term: la }
+            use: { es: "Complemento directo femenino, de persona o de cosa." }
+            ex: ["A Luisa ", { target: la }, " vimos ayer."]
+          - level: B2
+            pron: { term: le }
+            use: { es: "Complemento indirecto, de hombre o de mujer." }
+            ex: ["A Luisa ", { target: le }, " dimos las gracias."]
+          - level: B2
+            pron: { term: le }
+            use: { es: "Complemento directo de un hombre: leísmo de persona, admitido." }
+            ex: ["A Luis ", { target: le }, " vimos ayer."]
+          - level: C1
+            pron: { alternatives: [{ term: lo }, { term: la }] }
+            use: { es: "Complemento directo de cosa: siempre lo, la, los o las." }
+            ex: ["El libro que me dejaste ", { target: lo }, " leí."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            variety: es-ES
+            text: { es: "En España, el leísmo de persona masculina es frecuente y está admitido:" }
+            ex: ["A mi tío ", { target: le }, " veo los domingos."]
+          - type: note
+            level: B2
+            variety: es-419
+            text: { es: ["En América, ", { term: lo }, " es la forma habitual para un hombre como complemento directo:"] }
+            ex: ["A mi tío ", { target: lo }, " veo los domingos."]
+          - type: note
+            level: B2
+            variety: es-419
+            text: { es: ["El leísmo con ", { term: se }, " aparece en el Caribe, el sur de Colombia, la costa del Ecuador y Bolivia:"] }
+            ex: ["A los niños ", { target: se les }, " educa en casa."]
+
+  - title: { es: Verbos que piden le }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: pron, label: { es: Pronombre } }
+          - { key: note, label: { es: Leísmo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verb: { term: telefonear }
+            pron: { term: le }
+            note: { es: "Solo complemento indirecto." }
+            ex: [{ target: Le }, " telefoneé a mi madre."]
+          - level: B2
+            verb: { term: corresponder }
+            pron: { term: le }
+            note: { es: "Solo complemento indirecto." }
+            ex: ["A la directora ", { target: le }, " corresponde decidir."]
+          - level: B2
+            verb: { alternatives: [{ term: ayudar }, { term: entender }] }
+            pron: { alternatives: [{ term: lo }, { term: le }] }
+            note: { es: "Frecuente." }
+            ex: { alternatives: [["A mi vecino ", { target: lo }, " ayudo."], ["A mi vecino ", { target: le }, " ayudo."]] }
+          - level: B2
+            verb: { alternatives: [{ term: llamar }, { term: hacer }, { term: comprender }, { term: rodear }, { term: estorbar }] }
+            pron: { alternatives: [{ term: lo }, { term: le }] }
+            note: { es: "Menos frecuente." }
+            ex: { alternatives: [["A Pedro ", { target: lo }, " llamo cada noche."], ["A Pedro ", { target: le }, " llamo cada noche."]] }
+          - level: B2
+            verb: { alternatives: [{ term: saludar }, { term: seguir }, { term: compadecer }] }
+            pron: { alternatives: [{ term: lo }, { term: le }] }
+            note: { es: "Poco frecuente." }
+            ex: ["A Pedro ", { target: lo }, " saludo cada mañana."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "Un verbo intransitivo pone a la persona en el complemento indirecto: le o les, de hombre o de mujer." }
+            ex: ["A mis padres ", { target: les }, " telefoneo los domingos."]
+
+  - title: { es: Laísmo y loísmo }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: phen, label: { es: Fenómeno } }
+          - { key: norm, label: { es: Forma de la norma } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            phen: { es: [{ term: Laísmo }, ": ", { term: la }, " o ", { term: las }, " como complemento indirecto"] }
+            norm: { alternatives: [{ term: le }, { term: les }] }
+            ex: ["A María ", { target: le }, " dije que viniera."]
+          - level: C1
+            phen: { es: [{ term: Loísmo }, ": ", { term: lo }, " o ", { term: los }, " como complemento indirecto"] }
+            norm: { alternatives: [{ term: le }, { term: les }] }
+            ex: ["A Pedro ", { target: le }, " dije que viniera."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "El pronombre sigue a la función, no al género: el complemento indirecto es siempre le o les." }
+            ex: ["A mis primas ", { target: les }, " presté mis libros."]
+          - type: note
+            level: C1
+            variety: es-ES
+            text: { es: "El laísmo y el loísmo se dan en el centro y el norte de España." }
+          - type: note
+            level: C1
+            text: { es: "La lengua culta los considera incorrectos." }
+
+  - title: { es: Le o lo con el mismo verbo }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: cons, label: { es: Construcción } }
+          - { key: pron, label: { es: Pronombre } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            cons: { es: [{ term: llamar }, " a alguien, por teléfono"] }
+            pron: { alternatives: [{ term: lo }, { term: la }] }
+            ex: ["A Luisa ", { target: la }, " llamé por teléfono."]
+          - level: C1
+            cons: { es: [{ term: llamar la atención }, " a alguien"] }
+            pron: { term: le }
+            ex: ["A Luisa ", { target: le }, " llamé la atención."]
+          - level: C1
+            cons: { es: [{ term: pegar }, " un golpe a alguien"] }
+            pron: { term: le }
+            ex: ["Su padre ", { target: le }, " pegó una bofetada."]
+          - level: C1
+            cons: { es: [{ term: hacer }, " con infinitivo intransitivo"] }
+            pron: { alternatives: [{ term: lo }, { term: la }] }
+            ex: ["A Pedro ", { target: lo }, " hice callar."]
+          - level: C1
+            cons: { es: [{ term: hacer }, " con infinitivo transitivo"] }
+            pron: { term: le }
+            ex: ["A Pedro ", { target: le }, " hice firmar el contrato."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "Un verbo con dos construcciones cambia de pronombre según tenga o no un complemento directo de cosa." }
+
+  - title: { es: Le por les }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Patrón } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            pattern: { pattern: [{ term: les }, { slot: verb }, { term: a }, { slot: plural noun }] }
+            ex: [{ target: Les }, " di las gracias a los vecinos."]
+          - level: C2
+            pattern: { es: [{ term: tener miedo }, " a varias personas o cosas"] }
+            ex: ["No ", { target: les }, " tiene miedo a los fantasmas."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { es: "En el habla popular, le queda fijo ante un complemento indirecto plural; la lengua culta concuerda en número." }
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "A Luisa le vimos ayer."
+            right: ["A Luisa ", { target: la }, " vimos ayer."]
+            rule: { es: ["un complemento directo femenino lleva ", { term: la }] }
+          - level: B2
+            wrong: "Lo telefoneé a mi padre."
+            right: [{ target: Le }, " telefoneé a mi padre."]
+            rule: { es: [{ term: telefonear }, " solo lleva complemento indirecto: ", { term: le }] }
+          - level: C1
+            wrong: "El libro que me dejaste le leí."
+            right: ["El libro que me dejaste ", { target: lo }, " leí."]
+            rule: { es: ["una cosa como complemento directo lleva ", { term: lo }, ", ", { term: la }, ", ", { term: los }, " o ", { term: las }] }
+          - level: C1
+            wrong: "A María la dije que viniera."
+            right: ["A María ", { target: le }, " dije que viniera."]
+            rule: { es: ["el complemento indirecto es ", { term: le }, ", aunque sea una mujer"] }
+          - level: C1
+            wrong: "A Pedro lo dije que viniera."
+            right: ["A Pedro ", { target: le }, " dije que viniera."]
+            rule: { es: ["el complemento indirecto es ", { term: le }, ", aunque sea un hombre"] }
+          - level: C1
+            wrong: "Su padre la pegó una bofetada."
+            right: ["Su padre ", { target: le }, " pegó una bofetada."]
+            rule: { es: "con un golpe como complemento directo, la persona lleva le" }
+          - level: C2
+            wrong: "No le tiene miedo a los fantasmas."
+            right: ["No ", { target: les }, " tiene miedo a los fantasmas."]
+            rule: { es: ["ante un complemento indirecto plural, ", { term: les }, " concuerda en número"] }

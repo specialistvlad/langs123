@@ -1,0 +1,420 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.pronombres.valores-de-se
+lang: es
+kind: grammar
+tags: [pronouns, se, middle voice, involuntary, pronominal verbs, aspectual se, dative]
+concepts: [reflexive, middle-voice]
+related: [es.presente.verbos-reflexivos, es.pronombres.combinacion-pronombres, es.pronombres.objeto-indirecto, es.oracion.estilo-indirecto-pasiva]
+status: { es: draft }
+
+title: { es: "Los valores de se: se me cayó, se comió, se abrió", en: "Uses of se: Involuntary, Aspectual and Middle" }
+summary:
+  lead:
+    es: ["Con el pronombre ", { term: se }, ", el verbo expresa un hecho sin agente, no querido o completo: ", { term: se abrió }, ", ", { term: se me cayó }, ", ", { term: se comió }, "."]
+  rule:
+    es: "El verbo concuerda con la cosa que cambia, no con la persona afectada:"
+  ex: { examples: [[{ target: Se rompieron }, " los vasos."], [{ target: Se me cayeron }, " los platos."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Voz media }
+          rule:
+            es: [{ pattern: [{ term: se }, { slot: verb }] }, ": el hecho le ocurre al sujeto, sin agente"]
+          ex: [{ target: Se abrió }, " la ventana."]
+        - level: B2
+          point: { es: Hecho no querido }
+          rule:
+            es: ["la persona afectada va en dativo: ", { alternatives: [{ term: me }, { term: te }, { term: le }, { term: nos }, { term: les }] }]
+          ex: [{ target: Se nos acabó }, " el tiempo."]
+        - level: B2
+          point: { es: Concordancia }
+          rule:
+            es: "el verbo concuerda con la cosa, no con la persona"
+          ex: [{ target: Se me perdieron }, " las llaves."]
+        - level: B2
+          point: { alternatives: [ir, irse] }
+          rule:
+            es: [{ term: irse }, " marca la salida del lugar; ", { term: ir }, ", el destino"]
+          ex: { examples: [[{ target: Me voy }, " de aquí."], [{ target: Voy }, " a casa de Ana."]] }
+        - level: C1
+          point: { es: Pronominales }
+          rule:
+            es: ["el verbo lleva ", { term: se }, " y una preposición fija"]
+          ex: [{ target: Me acuerdo de }, " tu casa."]
+        - level: C1
+          point: { es: Se aspectual }
+          rule:
+            es: "el objeto, delimitado, se consume entero"
+          ex: ["Felipe ", { target: se comió }, " un pollo él solo."]
+        - level: C1
+          point: { es: Posesión }
+          rule:
+            es: "el dativo nombra al dueño; la parte del cuerpo lleva artículo"
+          ex: [{ target: Se le cerraban }, " los ojos."]
+        - level: C2
+          point: { es: Dativo posesivo }
+          rule:
+            es: "artículo o, para enfatizar, posesivo; con partes del cuerpo, solo artículo"
+          ex: { contrast: [["Se hace ", { target: la }, " cama."], ["Se hace ", { target: su }, " cama."]] }
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: [{ term: se }, " va primero entre los pronombres átonos"]
+          ex: [{ target: Se me }, " perdió el pasaporte."]
+        - level: C1
+          point: { es: Trampa }
+          rule:
+            es: ["la preposición se mantiene ante ", { term: que }]
+          ex: ["Me di cuenta ", { target: de que }, " llegaba tarde."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: se }, " va delante de los demás pronombres átonos:"]
+            ex: { examples: [[{ target: Se te }, " cayó la cartera."], [{ target: Se les }, " perdió el gato."]] }
+          - type: note
+            level: B2
+            text:
+              es: ["El valor reflexivo y el recíproco de ", { term: se }, ": ver ", { link: Los verbos reflexivos, to: es.presente.verbos-reflexivos }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["La pasiva refleja y el ", { term: se }, " impersonal: ver ", { link: Estilo indirecto y pasiva con se, to: es.oracion.estilo-indirecto-pasiva }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["El dativo y los pares como ", { term: se lo }, ": ver ", { link: El objeto indirecto, to: es.pronombres.objeto-indirecto }, " y ", { link: "Combinación de pronombres: se lo", to: es.pronombres.combinacion-pronombres }, "."]
+
+  - title: { es: Se de voz media }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: verbs, label: { es: Verbos } }
+          - { key: meaning, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verbs: { alternatives: [{ term: abrirse }, { term: cerrarse }, { term: apagarse }] }
+            meaning: { es: "un objeto cambia de estado, sin que nadie lo haga" }
+            ex: { examples: [[{ target: Se abrió }, " la ventana."], [{ target: Se apagó }, " la luz."]] }
+          - level: B2
+            verbs: { alternatives: [{ term: romperse }, { term: rajarse }, { term: estropearse }] }
+            meaning: { es: "un objeto se daña" }
+            ex: { examples: [[{ target: Se rompió }, " el vaso."], [{ target: Se estropeó }, " la lavadora."]] }
+          - level: B2
+            verbs: { alternatives: [{ term: fundirse }, { term: derretirse }, { term: congelarse }] }
+            meaning: { es: "la materia cambia con el calor o el frío" }
+            ex: { examples: [[{ target: Se fundió }, " el hielo."], [{ target: Se congeló }, " el lago."]] }
+          - level: B2
+            verbs: { alternatives: [{ term: abrir }, { term: romper }, { term: fundir }] }
+            meaning: { es: ["sin ", { term: se }, ", el verbo es transitivo y alguien provoca el hecho"] }
+            ex: ["Marta ", { target: abrió }, " la ventana."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "El sujeto va delante o detrás del verbo y el verbo concuerda con él:"
+            ex: { examples: [["La ventana ", { target: se abrió }, "."], [{ target: Se abrieron }, " las ventanas."]] }
+          - type: rule
+            level: B2
+            text:
+              es: ["El adjetivo ", { term: solo }, " refuerza que nadie interviene:"]
+            ex: ["La puerta ", { target: se cerró }, " sola."]
+          - type: rule
+            level: B2
+            text:
+              es: ["Un agente expreso exige la pasiva con ", { term: ser }, ", no la voz media:"]
+            ex: ["La ventana ", { target: fue abierta }, " por Marta."]
+
+  - title: { es: "Se me cayó: la responsabilidad atenuada" }
+    role: use
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: form, label: { es: Forma } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: yo, form: { pattern: [{ target: se me }, { slot: verb }] }, ex: [{ target: Se me }, " perdió el pasaporte."] }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: tú, form: { pattern: [{ target: se te }, { slot: verb }] }, ex: [{ target: Se te }, " olvidó la contraseña."] }
+          - { level: B2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, form: { pattern: [{ target: se le }, { slot: verb }] }, ex: [{ target: Se le }, " descargó la batería."] }
+          - { level: B2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, form: { pattern: [{ target: se nos }, { slot: verb }] }, ex: [{ target: Se nos }, " acabó el tiempo."] }
+          - { level: B2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, form: { pattern: [{ target: se os }, { slot: verb }] }, ex: [{ target: Se os }, " quemó la cena."] }
+          - { level: B2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, form: { pattern: [{ target: se les }, { slot: verb }] }, ex: [{ target: Se les }, " rompió el televisor."] }
+      - type: usage
+        columns:
+          - { key: verbs, label: { es: Verbos } }
+          - { key: meaning, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verbs: { alternatives: [{ term: perderse }, { term: olvidarse }, { term: quedarse }] }
+            meaning: { es: "algo se pierde o se deja sin querer" }
+            ex: [{ target: Se me quedó }, " el paraguas en casa."]
+          - level: B2
+            verbs: { alternatives: [{ term: caerse }, { term: quemarse }, { term: mojarse }] }
+            meaning: { es: "un accidente daña algo de la persona" }
+            ex: { examples: [[{ target: Se me cayeron }, " los platos."], [{ target: Se me quemó }, " el arroz."]] }
+          - level: B2
+            verbs: { alternatives: [{ term: acabarse }, { term: terminarse }, { term: agotarse }] }
+            meaning: { es: "algo se termina antes de lo previsto" }
+            ex: [{ target: Se nos acabó }, " la leche."]
+          - level: B2
+            verbs: { term: ocurrirse }
+            meaning: { es: "una idea llega sin buscarla" }
+            ex: [{ target: Se me ocurrió }, " una solución."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "La persona deja de ser el agente: el hecho se presenta como no querido:"
+            ex: { contrast: ["Rompí el vaso.", [{ target: Se me rompió }, " el vaso."]] }
+          - type: rule
+            level: B2
+            text:
+              es: "El verbo concuerda con la cosa, no con la persona:"
+            ex: { examples: [[{ target: Se me perdió }, " la llave."], [{ target: Se me perdieron }, " las llaves."]] }
+          - type: rule
+            level: B2
+            text:
+              es: [{ pattern: [{ term: a }, { slot: person }] }, " nombra o resalta a quien le ocurre:"]
+            ex: { examples: [["A mí ", { target: se me }, " olvidó la cita."], ["A Luis ", { target: se le }, " olvidó la cita."]] }
+
+  - title: { es: Ir e irse }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: phase, label: { es: Fase del movimiento } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verb: { term: ir }
+            phase: { es: ["el trayecto y el destino, con ", { alternatives: [{ term: a }, { term: hacia }] }] }
+            ex: [{ target: Voy }, " a casa de Ana."]
+          - level: B2
+            verb: { term: irse }
+            phase: { es: ["la salida del lugar de origen, con ", { alternatives: [{ term: de }, { term: desde }] }] }
+            ex: { examples: [[{ target: Me voy }, " de aquí."], [{ target: Se fue }, " de la fiesta temprano."]] }
+          - level: B2
+            verb: { term: venir }
+            phase: { es: "la llegada al lugar de quien habla o escucha" }
+            ex: [{ target: ¿Vienes }, " a mi fiesta?"]
+          - level: B2
+            verb: { term: venirse }
+            phase: { es: "el traslado hacia el lugar de quien habla, dejando el de origen" }
+            ex: { examples: [["Mi hermana ", { target: se vino }, " a vivir conmigo."], [{ target: Vente }, " conmigo al cine."]] }
+          - level: B2
+            verb: { term: marcharse }
+            phase: { es: ["la salida del lugar, como ", { term: irse }, ", en un registro algo más formal"] }
+            ex: [{ target: Se marchó }, " sin despedirse."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Con un destino, ", { term: ir }, " es neutro e ", { term: irse }, " destaca la salida:"]
+            ex: { contrast: [[{ target: Voy }, " a casa."], [{ target: Me voy }, " a casa."]] }
+
+  - title: { es: Verbos pronominales }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: prep, label: { es: Preposición } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            verb: { term: acordarse }
+            prep: { term: de }
+            ex: { examples: [[{ target: Me acuerdo de }, " tu casa."], [{ target: Acuérdate de }, " llamar a tu madre."]] }
+          - level: C1
+            verb: { term: alegrarse }
+            prep: { term: de }
+            ex: { examples: [[{ target: Me alegro de }, " verte."], [{ target: Nos alegramos de }, " la noticia."]] }
+          - level: C1
+            verb: { term: arrepentirse }
+            prep: { term: de }
+            ex: { examples: [[{ target: Se arrepintió de }, " su decisión."], [{ target: Me arrepiento de }, " mentir."]] }
+          - level: C1
+            verb: { term: quejarse }
+            prep: { term: de }
+            ex: ["Los vecinos ", { target: se quejan de }, " la música."]
+          - level: C1
+            verb: { term: atreverse }
+            prep: { term: a }
+            ex: ["Nadie ", { target: se atreve a }, " hablar."]
+          - level: C1
+            verb: { term: negarse }
+            prep: { term: a }
+            ex: [{ target: Se negó a }, " pagar."]
+          - level: C1
+            verb: { term: darse cuenta }
+            prep: { term: de }
+            ex: [{ target: Me di cuenta de }, " mi error."]
+          - level: C1
+            verb: { term: enterarse }
+            prep: { term: de }
+            ex: [{ target: Me enteré de }, " la noticia por la radio."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: ["Ante una subordinada, la preposición se mantiene delante de ", { term: que }, ":"]
+            ex: { examples: [["Me alegro ", { target: de que }, " vengas."], ["Se dio cuenta ", { target: de que }, " llegaba tarde."]] }
+          - type: rule
+            level: C1
+            text:
+              es: "Algunos pronominales tienen un verbo transitivo equivalente, sin pronombre ni preposición:"
+            ex: { equivalence: [[{ target: Me acuerdo de }, " tu voz."], [{ target: Recuerdo }, " tu voz."]] }
+
+  - title: { es: "Se aspectual: el dativo de interés" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: plain, label: { es: Sin se } }
+          - { key: refl, label: { es: Con se } }
+        rows:
+          - level: C1
+            verb: { alternatives: [{ term: comer }, { term: comerse }] }
+            plain: ["Felipe ", { target: comió }, " pollo."]
+            refl: ["Felipe ", { target: se comió }, " un pollo."]
+          - level: C1
+            verb: { alternatives: [{ term: beber }, { term: beberse }] }
+            plain: ["Ana ", { target: bebió }, " agua."]
+            refl: ["Ana ", { target: se bebió }, " toda el agua."]
+          - level: C1
+            verb: { alternatives: [{ term: tomar }, { term: tomarse }] }
+            plain: ["Luis ", { target: tomó }, " café."]
+            refl: ["Luis ", { target: se tomó }, " un café."]
+          - level: C1
+            verb: { alternatives: [{ term: fumar }, { term: fumarse }] }
+            plain: ["Mi tío ", { target: fumó }, " cigarrillos."]
+            refl: ["Mi tío ", { target: se fumó }, " un cigarrillo."]
+          - level: C1
+            verb: { alternatives: [{ term: leer }, { term: leerse }] }
+            plain: ["Marta ", { target: leyó }, " novelas."]
+            refl: ["Marta ", { target: se leyó }, " la novela en un día."]
+          - level: C1
+            verb: { alternatives: [{ term: aprender }, { term: aprenderse }] }
+            plain: ["Sara ", { target: aprendió }, " inglés."]
+            refl: ["Sara ", { target: se aprendió }, " el poema de memoria."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: "El pronombre concuerda con el sujeto y subraya que el objeto se consume entero:"
+            ex: { examples: [["Felipe ", { target: se comió }, " un pollo él solo."], [{ target: Me bebí }, " toda la botella."]] }
+          - type: rule
+            level: C1
+            text:
+              es: "El objeto va delimitado: artículo, posesivo, demostrativo o numeral:"
+            ex: { examples: [["Se bebió ", { target: el }, " agua."], ["Se bebió ", { target: tu }, " agua."], ["Se bebió ", { target: tres }, " vasos."]] }
+          - type: rule
+            level: C1
+            text:
+              es: "Sin el pronombre, la oración es correcta y no subraya el consumo completo:"
+            ex: { contrast: [["Felipe ", { target: comió }, " un pollo."], ["Felipe ", { target: se comió }, " un pollo."]] }
+
+  - title: { es: Voz media con posesión }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: subject, label: { es: Sujeto } }
+          - { key: meaning, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            subject: { es: "una parte del cuerpo" }
+            meaning: { es: "el cuerpo actúa sin que la persona quiera" }
+            ex: { examples: [[{ target: Se me abre }, " la boca."], [{ target: Se le cerraban }, " los ojos."]] }
+          - level: C1
+            subject: { es: "una parte del cuerpo y una emoción" }
+            meaning: { es: "la emoción se nota en el cuerpo" }
+            ex: { examples: [[{ target: Se le llenaron }, " los ojos de lágrimas."], [{ target: Se me erizó }, " la piel."]] }
+          - level: C1
+            subject: { es: "un familiar" }
+            meaning: { es: "un cambio en la familia afecta a la persona" }
+            ex: { examples: [[{ target: Se le murió }, " el abuelo."], [{ target: Se me casó }, " la hermana."]] }
+          - level: C1
+            subject: { es: "una pertenencia" }
+            meaning: { es: "una cosa de la persona cambia de estado" }
+            ex: [{ target: Se me apagó }, " el teléfono en plena llamada."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: "El dativo nombra al poseedor; la parte del cuerpo lleva artículo, no posesivo:"
+            ex: [{ target: Se me hinchó }, " el tobillo."]
+
+  - title: { es: Dativo posesivo con se }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: kind, label: { es: Complemento } }
+          - { key: neutral, label: { es: Con artículo } }
+          - { key: emphatic, label: { es: Con posesivo } }
+        rows:
+          - level: C2
+            kind: { es: "una tarea propia" }
+            neutral: ["Se hace ", { target: la }, " cama."]
+            emphatic: ["Se hace ", { target: su }, " cama."]
+          - level: C2
+            kind: { es: "una bebida propia" }
+            neutral: ["Se tomó ", { target: el }, " café sin prisa."]
+            emphatic: ["Se tomó ", { target: su }, " café sin prisa."]
+          - level: C2
+            kind: { es: "una comida propia, con refuerzo" }
+            neutral: ["Cada uno se prepara ", { target: la }, " cena."]
+            emphatic: ["Cada uno se prepara ", { target: su propia }, " cena."]
+          - level: C2
+            kind: { es: "una parte del cuerpo o una prenda: sin posesivo" }
+            neutral: ["Se lavó ", { target: las }, " manos."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              es: "Con un dueño distinto del sujeto, el posesivo es necesario:"
+            ex: ["Se bebió ", { target: mi }, " café."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Me se cayó el vaso.", right: [{ target: Se me }, " cayó el vaso."], rule: { es: [{ term: se }, " va antes de ", { term: me }] } }
+          - { level: B2, wrong: "Se me cayó los platos.", right: ["Se me ", { target: cayeron }, " los platos."], rule: { es: "el verbo concuerda con la cosa, no con la persona" } }
+          - { level: B2, wrong: "Se perdí la bufanda.", right: [{ target: Se me perdió }, " la bufanda."], rule: { es: "la persona afectada va en dativo, no en el verbo" } }
+          - { level: B2, wrong: "Se abrió la ventana por Marta.", right: ["La ventana ", { target: fue abierta }, " por Marta."], rule: { es: ["un agente expreso exige la pasiva con ", { term: ser }] } }
+          - { level: B2, wrong: "Voy de aquí.", right: [{ target: Me voy }, " de aquí."], rule: { es: [{ term: irse }, " marca la salida del lugar de origen"] } }
+          - { level: C1, wrong: "Me di cuenta que llegaba tarde.", right: ["Me di cuenta ", { target: de que }, " llegaba tarde."], rule: { es: [{ term: darse cuenta }, " mantiene ", { term: de }, " ante ", { term: que }] } }
+          - { level: C1, wrong: "Nadie se atreve hablar.", right: ["Nadie se atreve ", { target: a }, " hablar."], rule: { es: [{ term: atreverse }, " lleva ", { term: a }, " ante el infinitivo"] } }
+          - { level: C1, wrong: "Felipe se comió pollo él solo.", right: ["Felipe se comió ", { target: un }, " pollo él solo."], rule: { es: ["el objeto de un ", { term: se }, " aspectual va delimitado"] } }
+          - { level: C1, wrong: "Se me abre mi boca.", right: ["Se me abre ", { target: la }, " boca."], rule: { es: "la parte del cuerpo lleva artículo; el dativo nombra al dueño" } }
+          - { level: C2, wrong: "Se cortó sus uñas.", right: ["Se cortó ", { target: las }, " uñas."], rule: { es: "con partes del cuerpo y prendas, el dativo y el artículo bastan" } }

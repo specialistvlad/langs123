@@ -203,6 +203,16 @@ cheatsheet:
             id: "tanggal, bulan, tahun"
             vi: "ngày, tháng, năm"
           ex: { mapping: ["04/07/2026", { date: "el 4 de julio de 2026", value: "2026-07-04" }] }
+        - level: B2
+          point: { es: Partes de un periodo }
+          rule:
+            es: [{ term: a principios de }, ", ", { term: a mediados de }, " y ", { term: a finales de }, " con el periodo"]
+          ex: { examples: [[{ target: a principios de }, " abril"], [{ target: a finales de }, " invierno"]] }
+        - level: B2
+          point: { es: Eras }
+          rule:
+            es: "la sigla va detrás del año"
+          ex: ["en el 44 ", { target: a. C. }]
         - level: A0
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -512,6 +522,54 @@ sections:
             ex: ["Voy a México ", { target: en }, " ", { date: "2027", value: "2027" }, "."]
             tr: { en: "I'm going to Mexico in 2027.", uk: "У 2027 році я їду до Мексики.", pt: "Vou ao México em 2027.", fr: "Je vais au Mexique en 2027.", de: "Ich fahre 2027 nach Mexiko.", it: "Vado in Messico nel 2027.", pl: "W 2027 roku jadę do Meksyku.", tr: "2027'de Meksika'ya gidiyorum.", id: "Saya akan pergi ke Meksiko pada tahun 2027.", vi: "Năm 2027 tôi sẽ đi Mexico." }
 
+  - title: { es: Partes de un periodo }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: expr, label: { es: Expresión } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, expr: a principios de, meaning: { es: en la primera parte de un periodo }, ex: ["Viajo ", { target: a principios de }, " ", { date: abril, value: "--04" }, "."] }
+          - { level: B2, expr: a mediados de, meaning: { es: en la parte central de un periodo }, ex: ["Te llamo ", { target: a mediados de }, " semana."] }
+          - { level: B2, expr: a finales de, meaning: { es: en la última parte de un periodo }, ex: ["Hace frío ", { target: a finales de }, " invierno."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "Detrás va un periodo de tiempo: un mes, una semana, una estación o un año."
+            ex: ["Terminamos ", { target: a finales de }, " ", { date: "2026", value: "2026" }, "."]
+          - type: rule
+            level: B2
+            variety: es-419
+            text:
+              es: ["En América también se dice ", { term: a fines de }, ":"]
+            ex: ["Nos vemos ", { target: a fines de }, " ", { date: mayo, value: "--05" }, "."]
+
+  - title: { es: "Las eras: a. C. y d. C." }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: sigla, label: { es: Sigla } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, sigla: a. C., meaning: antes de Cristo, ex: ["Julio César murió en el 44 ", { target: a. C. }, "."] }
+          - { level: B2, sigla: d. C., meaning: después de Cristo, ex: ["El Imperio romano de Occidente cayó en el 476 ", { target: d. C. }, "."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "La sigla se escribe detrás del año, con un punto y un espacio tras cada letra."
+          - type: rule
+            level: B2
+            text:
+              es: ["Sin sigla, un año es de nuestra era; ", { term: d. C. }, " se añade solo para evitar dudas."]
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -525,3 +583,6 @@ sections:
           - { level: A0, speakers: [en, uk], wrong: el quinto de mayo, right: ["el ", { target: cinco }, " de mayo"], rule: { en: "the day is a plain number, not an ordinal as in English", uk: ["день — кількісний числівник і ", { term: de }, ": українською кажемо порядковий у родовому відмінку («п’ятого травня»), іспанською — ", { term: el cinco de mayo }] } }
           - { level: A0, speakers: [en], wrong: diecinueve noventa y cinco, right: { target: mil novecientos noventa y cinco }, rule: { en: "a year is one whole number, not two pairs of digits" } }
           - { level: A0, speakers: [uk], wrong: el 5 mayo, right: ["el 5 ", { target: de }, " mayo"], rule: { uk: ["між числом і місяцем стоїть ", { term: de }, ": «5 травня» — ", { term: el 5 de mayo }] } }
+          - { level: B2, wrong: a medios de abril, right: ["a ", { target: mediados }, " de abril"], rule: { es: ["la expresión es ", { term: a mediados de }] } }
+          - { level: B2, wrong: en el a. C. 44, right: ["en el 44 ", { target: a. C. }], rule: { es: "la sigla va detrás del año" } }
+          - { level: B2, wrong: en el 44 a.C., right: ["en el 44 ", { target: a. C. }], rule: { es: "la sigla lleva un espacio tras cada punto" } }

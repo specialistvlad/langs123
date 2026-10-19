@@ -187,6 +187,21 @@ cheatsheet:
             vi: [{ term: "grande" }, " thành ", { term: "gran" }, " trước mọi danh từ số ít và có nghĩa là quan trọng"]
           ex: { examples: [["una ", { target: gran }, " idea"], ["un ", { target: gran }, " país"]] }
           tr: { en: { examples: [a great idea, a great country] }, uk: { examples: ["чудова ідея", "велика країна"] }, pt: { examples: ["uma grande ideia", "um grande país"] }, fr: { examples: ["une grande idée", "un grand pays"] }, de: { examples: ["eine großartige Idee", "ein großes Land"] }, it: { examples: ["una grande idea", "un grande paese"] }, pl: { examples: ["wspaniały pomysł", "wielki kraj"] }, tr: { examples: ["harika bir fikir", "büyük bir ülke"] }, id: { examples: ["ide yang hebat", "negara yang besar"] }, vi: { examples: ["một ý tưởng tuyệt vời", "một đất nước vĩ đại"] } }
+        - level: B2
+          point: { es: Adjetivo relacional }
+          rule:
+            es: "sin grado, siempre detrás del sustantivo"
+          ex: ["unos cuidados ", { target: maternos }]
+        - level: C1
+          point: { es: Color con sustantivo }
+          rule:
+            es: "invariable en género y número"
+          ex: ["dos trajes ", { target: azul marino }]
+        - level: C2
+          point: { es: Adjetivo en -í }
+          rule:
+            es: ["el plural es ", { term: -íes }]
+          ex: { mapping: [carmesí, { target: carmesíes }] }
         - level: A1
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -273,6 +288,38 @@ sections:
           - { level: A2, features: [{ gender: masc }, { gender: fem }], type: { en: "-z, both genders", es: "-z, los dos géneros", uk: "-z, обидва роди", pt: "-z, os dois gêneros", fr: "-z, les deux genres", de: "-z, beide Genera", it: "-z, i due generi", pl: "-z, oba rodzaje", tr: "-z, her iki cinsiyet", id: "-z, kedua gender", vi: "-z, cả hai giống" }, sg: { target: feliz }, pl: { target: felices } }
           - { level: A1, features: { gender: masc }, type: { en: "nationality, masculine", es: "nacionalidad, masculino", uk: "національність, чоловічий рід", pt: "nacionalidade, masculino", fr: "nationalité, masculin", de: "Nationalität, maskulin", it: "nazionalità, maschile", pl: "narodowość, rodzaj męski", tr: "uyruk, eril", id: "kewarganegaraan, maskulin", vi: "quốc tịch, giống đực" }, sg: { target: español }, pl: { target: españoles } }
           - { level: A1, features: { gender: fem }, type: { en: "nationality, feminine", es: "nacionalidad, femenino", uk: "національність, жіночий рід", pt: "nacionalidade, feminino", fr: "nationalité, féminin", de: "Nationalität, feminin", it: "nazionalità, femminile", pl: "narodowość, rodzaj żeński", tr: "uyruk, dişil", id: "kewarganegaraan, feminin", vi: "quốc tịch, giống cái" }, sg: { target: española }, pl: { target: españolas } }
+          - { level: B2, features: [{ gender: masc }, { gender: fem }], type: { es: "-a, los dos géneros" }, sg: { alternatives: [{ target: hipócrita }, { target: homicida }, { target: cosmopolita }] }, pl: { alternatives: [{ target: hipócritas }, { target: homicidas }, { target: cosmopolitas }] } }
+          - { level: C1, features: [{ gender: masc }, { gender: fem }], type: { es: "color con sustantivo, invariable" }, sg: { alternatives: [{ target: verde botella }, { target: gris perla }, { target: azul turquesa }] }, pl: { alternatives: [{ target: verde botella }, { target: gris perla }, { target: azul turquesa }] } }
+          - { level: C2, features: [{ gender: masc }, { gender: fem }], type: { es: "-ú, los dos géneros" }, sg: { target: bantú }, pl: { alternatives: [{ target: bantúes }, { target: bantús }] } }
+          - { level: C2, features: [{ gender: masc }, { gender: fem }], type: { es: "-es, invariable" }, sg: { alternatives: [{ target: isósceles }, { target: rubiales }] }, pl: { alternatives: [{ target: isósceles }, { target: rubiales }] } }
+          - { level: C2, features: [{ gender: masc }, { gender: fem }], type: { es: "-í, los dos géneros" }, sg: { alternatives: [{ target: carmesí }, { target: muladí }] }, pl: { alternatives: [{ target: carmesíes }, { target: muladíes }] } }
+          - { level: C2, variety: es-419, features: { gender: masc }, type: { es: "-ista, masculino coloquial en -o" }, sg: { alternatives: [{ target: bromisto }, { target: cuentisto }] }, pl: { alternatives: [{ target: bromistos }, { target: cuentistos }] } }
+      - type: usage
+        columns:
+          - { key: point, label: { es: Punto } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            point: { es: ["Color aproximado: ", { term: -izo }, ", ", { term: -ento }, ", ", { term: -áceo }] }
+            rule: { es: concuerda como un adjetivo en -o }
+            ex: { examples: [["una pared ", { target: rojiza }], ["unos guantes ", { target: grisáceos }], ["hojas ", { target: amarillentas }]] }
+          - level: B2
+            point: { es: Predicativo del sujeto }
+            rule: { es: concuerda con el sujeto }
+            ex: ["Ana llegó ", { target: sudorosa }, "."]
+          - level: B2
+            point: { es: Predicativo del objeto }
+            rule: { es: concuerda con el objeto directo }
+            ex: ["Dejó ", { target: limpia }, " la cocina."]
+          - level: C2
+            point: { es: Color compuesto }
+            rule: { es: se escribe en una palabra y concuerda como un adjetivo en -o }
+            ex: { examples: [["una camiseta ", { target: rojiblanca }], ["unas banderas ", { target: blanquinegras }]] }
+          - level: C2
+            point: { es: Gentilicio poco frecuente en -o }
+            rule: { es: tiene las cuatro formas del adjetivo en -o }
+            ex: { examples: [["la ciudad ", { target: pucelana }], ["los vecinos ", { target: tinerfeños }]] }
       - type: list
         items:
           - type: rule
@@ -398,6 +445,48 @@ sections:
               vi: "Giống của danh từ quyết định dạng của tính từ, dù danh từ tận cùng bằng -a:"
             ex: { examples: [["el mapa ", { target: nuevo }], ["el día ", { target: bonito }]] }
             tr: { en: { examples: [the new map, the lovely day] }, uk: { examples: ["нова мапа", "чудовий день"] }, pt: { examples: ["o mapa novo", "o dia bonito"] }, fr: { examples: ["la nouvelle carte", "la belle journée"] }, de: { examples: ["die neue Karte", "der schöne Tag"] }, it: { examples: ["la nuova mappa", "la bella giornata"] }, pl: { examples: ["nowa mapa", "piękny dzień"] }, tr: { examples: ["yeni harita", "güzel gün"] }, id: { examples: ["peta yang baru", "hari yang indah"] }, vi: { examples: ["bản đồ mới", "ngày đẹp trời"] } }
+          - type: note
+            level: C1
+            text:
+              es: ["El predicativo del objeto con verbos de nombrar o de juicio: ver ", { link: El objeto directo y la a personal, to: es.pronombres.objeto-directo }, "."]
+
+  - title: { es: Adjetivos relacionales }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: type, label: { es: Tipo } }
+          - { key: sense, label: { es: Sentido } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            type: { es: ["De pertenencia: ", { term: materno }, ", ", { term: municipal }] }
+            sense: { es: "«de la madre», «del municipio»" }
+            ex: ["unos cuidados ", { target: maternos }]
+          - level: B2
+            type: { es: ["De materia: ", { term: lácteo }, ", ", { term: solar }] }
+            sense: { es: "«de leche», «del sol»" }
+            ex: ["un producto ", { target: lácteo }]
+          - level: B2
+            type: { es: ["De ámbito: ", { term: bancario }, ", ", { term: ferroviario }] }
+            sense: { es: "«del banco», «del ferrocarril»" }
+            ex: ["una red ", { target: ferroviaria }]
+          - level: C1
+            type: { es: ["Relacional y calificativo: ", { term: familiar }] }
+            sense: { es: "relacional «de la familia»; calificativo «conocido»" }
+            ex: { examples: [["una empresa ", { target: familiar }], ["una cara ", { target: familiar }]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["El adjetivo relacional se usa siempre sin grado, sin ", { term: muy }, ", ", { term: más }, " ni ", { term: -ísimo }, ":"]
+            ex: ["Trabaja en el sector ", { target: bancario }, "."]
+          - type: rule
+            level: C1
+            text:
+              es: "Con sentido calificativo, el adjetivo admite grado:"
+            ex: ["una cara muy ", { target: familiar }]
 
   - title: { en: Position, es: La posición, uk: "Місце", pt: "Posição", fr: "Position", de: "Stellung", it: "Posizione", pl: "Pozycja", tr: "Konum", id: "Posisi", vi: "Vị trí" }
     role: use
@@ -410,6 +499,54 @@ sections:
         rows:
           - { level: A1, position: { en: after the noun, es: detrás del sustantivo, uk: "після іменника", pt: "depois do substantivo", fr: "après le nom", de: "nach dem Nomen", it: "dopo il sostantivo", pl: "po rzeczowniku", tr: "isimden sonra", id: "sesudah kata benda", vi: "sau danh từ" }, use: { en: "the usual place: it tells this thing from others", es: "la posición habitual: distingue esta cosa de otras", uk: "звичайне місце: вирізняє цю річ з-поміж інших", pt: "a posição habitual: distingue esta coisa das outras", fr: "la place habituelle : il distingue cette chose des autres", de: "die übliche Stellung: Das Adjektiv unterscheidet diese Sache von anderen", it: "la posizione abituale: distingue questa cosa dalle altre", pl: "zwykłe miejsce: odróżnia tę rzecz od innych", tr: "olağan konum: bu şeyi diğerlerinden ayırır", id: "posisi yang biasa: membedakan benda ini dari benda lain", vi: "vị trí thông thường: phân biệt vật này với các vật khác" }, ex: ["un vestido ", { target: rojo }], tr: { en: a red dress, uk: "червона сукня", pt: "um vestido vermelho", fr: "une robe rouge", de: "ein rotes Kleid", it: "un vestito rosso", pl: "czerwona sukienka", tr: "kırmızı bir elbise", id: "gaun merah", vi: "một chiếc váy đỏ" } }
           - { level: B1, position: { en: before the noun, es: delante del sustantivo, uk: "перед іменником", pt: "antes do substantivo", fr: "avant le nom", de: "vor dem Nomen", it: "prima del sostantivo", pl: "przed rzeczownikiem", tr: "isimden önce", id: "sebelum kata benda", vi: "trước danh từ" }, use: { en: [{ term: buen }, ", ", { term: mal }, ", ", { term: gran }], es: [{ term: buen }, ", ", { term: mal }, ", ", { term: gran }], uk: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], pt: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], fr: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], de: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], it: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], pl: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], tr: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], id: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }], vi: [{ term: "buen" }, ", ", { term: "mal" }, ", ", { term: "gran" }] }, ex: ["Es un ", { target: buen }, " amigo."], tr: { en: "He's a good friend.", uk: "Він хороший друг.", pt: "Ele é um bom amigo.", fr: "C’est un bon ami.", de: "Er ist ein guter Freund.", it: "È un buon amico.", pl: "To dobry przyjaciel.", tr: "O iyi bir arkadaş.", id: "Dia teman yang baik.", vi: "Anh ấy là một người bạn tốt." } }
+          - level: B2
+            position: { es: "delante del sustantivo, con énfasis" }
+            use: { es: "el adjetivo destaca la cualidad con valor subjetivo" }
+            ex: ["Tenemos un ", { target: grave }, " problema."]
+          - level: B2
+            position: { es: "delante o detrás, con otro sentido" }
+            use: { es: ["con ", { term: viejo }, ": delante, «de hace tiempo»; detrás, «de edad avanzada»"] }
+            ex: { examples: [["un ", { target: viejo }, " amigo"], ["un amigo ", { target: viejo }]] }
+          - level: B2
+            position: { es: "delante o detrás, con otro sentido" }
+            use: { es: ["con ", { term: único }, ": delante, «solo uno»; detrás, «extraordinario»"] }
+            ex: { examples: [["un ", { target: único }, " profesor"], ["un profesor ", { target: único }]] }
+          - level: B2
+            position: { es: "detrás del sustantivo, siempre" }
+            use: { es: "lo piden los adjetivos relacionales" }
+            ex: ["un producto ", { target: lácteo }]
+          - level: C1
+            position: { es: "delante del sustantivo, como cuantificador" }
+            use: { es: ["con ", { term: raro }, " y ", { term: escaso }, ": «pocos»"] }
+            ex: { examples: [["En ", { target: raros }, " casos hay retrasos."], ["Hay ", { target: escasas }, " plazas."]] }
+          - level: C1
+            position: { es: "delante del sustantivo, tras qué" }
+            use: { es: "la exclamación pone el adjetivo junto a qué" }
+            ex: ["¡Qué ", { target: bonito }, " paisaje!"]
+          - level: C1
+            position: { es: "al principio de la oración, aislado" }
+            use: { es: "el predicativo aislado destaca el estado del sujeto" }
+            ex: { examples: [[{ target: Satisfecha }, ", la directora cerró la reunión."], ["La directora cerró la reunión ", { target: satisfecha }, "."]] }
+          - level: C2
+            position: { es: "delante del sustantivo, en la lengua literaria" }
+            use: { es: "el adjetivo evoca una cualidad conocida" }
+            ex: ["la ", { target: oscura }, " noche"]
+          - level: C2
+            position: { es: "delante de un nombre de cantidad" }
+            use: { es: ["con ", { term: buen }, " y ", { term: mal }, ": intensifican"] }
+            ex: { examples: [["Se comió un ", { target: buen }, " plato de arroz."], ["No me queda ni un ", { target: mal }, " euro."]] }
+          - level: C2
+            position: { es: "delante del sustantivo, con ironía" }
+            use: { es: "la valoración dice lo contrario de lo que piensa quien habla" }
+            ex: { examples: [[{ target: Valiente }, " amigo eres."], [{ target: Bonita }, " forma de saludar."]] }
+          - level: C2
+            position: { es: "delante del sustantivo, en expresiones casi fijas" }
+            use: { es: [{ term: pleno apogeo }, ", ", { term: altas instancias }, ", ", { term: buen gusto }, ", ", { term: mal gusto }] }
+            ex: ["El festival está en ", { target: pleno }, " apogeo."]
+          - level: C2
+            position: { es: "al principio de la oración, varios adjetivos" }
+            use: { es: "los adjetivos aislados destacan el estado de quien llega" }
+            ex: [{ target: Impecables }, " y ", { target: serenos }, ", llegaron los músicos al concierto."]
       - type: list
         items:
           - type: rule
@@ -445,6 +582,41 @@ sections:
             ex: { examples: [["una ", { target: gran }, " idea"], ["un ", { target: gran }, " país"]] }
             tr: { en: { examples: [a great idea, a great country] }, uk: { examples: ["чудова ідея", "велика країна"] }, pt: { examples: ["uma grande ideia", "um grande país"] }, fr: { examples: ["une grande idée", "un grand pays"] }, de: { examples: ["eine großartige Idee", "ein großes Land"] }, it: { examples: ["una grande idea", "un grande paese"] }, pl: { examples: ["wspaniały pomysł", "wielki kraj"] }, tr: { examples: ["harika bir fikir", "büyük bir ülke"] }, id: { examples: ["ide yang hebat", "negara yang besar"] }, vi: { examples: ["một ý tưởng tuyệt vời", "một đất nước vĩ đại"] } }
 
+  - title: { es: El adjetivo como adverbio }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: adjective, label: { es: Adjetivo } }
+          - { key: use, label: { es: Uso adverbial } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            adjective: rápido
+            use: { es: ["modifica al verbo, como ", { term: rápidamente }] }
+            ex: ["Conduce ", { target: rápido }, "."]
+          - level: C1
+            adjective: claro
+            use: { es: ["modifica al verbo, como ", { term: claramente }] }
+            ex: ["Habla ", { target: claro }, "."]
+          - level: C1
+            variety: es-419
+            adjective: { alternatives: [lindo, bonito] }
+            use: { es: "sustituye a un adverbio de modo, con más frecuencia" }
+            ex: { examples: [["Viste ", { target: lindo }, "."], ["Escribe muy ", { target: bonito }, "."]] }
+          - level: C1
+            variety: es-419
+            adjective: { alternatives: [ligero, fácil] }
+            use: { es: "sustituye a un adverbio de modo, con más frecuencia" }
+            ex: { examples: [["Anda ", { target: ligero }, "."], ["Crece ", { target: fácil }, "."]] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: "El adjetivo adverbial queda en masculino singular, aunque el sujeto sea femenino o plural:"
+            ex: ["Ellas hablan ", { target: claro }, "."]
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -458,5 +630,11 @@ sections:
           - { level: A1, speakers: [en], wrong: un rojo vestido, right: ["un vestido ", { target: rojo }], rule: { en: "colours and most adjectives go after the noun" } }
           - { level: B1, wrong: un bueno libro, right: ["un ", { target: buen }, " libro"], rule: { en: [{ term: bueno }, " drops -o before a masculine singular noun"], es: [{ term: bueno }, " pierde la -o delante de un sustantivo masculino singular"], uk: [{ term: "bueno" }, " втрачає -o перед іменником чоловічого роду в однині"], pt: [{ term: "bueno" }, " perde o -o antes de um substantivo masculino singular"], fr: [{ term: "bueno" }, " perd le -o devant un nom masculin singulier"], de: [{ term: "bueno" }, " verliert das -o vor einem maskulinen Nomen im Singular"], it: [{ term: "bueno" }, " perde la -o davanti a un sostantivo maschile singolare"], pl: [{ term: "bueno" }, " traci -o przed rzeczownikiem rodzaju męskiego w liczbie pojedynczej"], tr: [{ term: "bueno" }, ", eril tekil bir isimden önce sondaki -o harfini kaybeder"], id: [{ term: "bueno" }, " kehilangan -o di depan kata benda maskulin tunggal"], vi: [{ term: "bueno" }, " bỏ -o trước danh từ giống đực số ít"] } }
           - { level: B1, wrong: una grande idea, right: ["una ", { target: gran }, " idea"], rule: { en: [{ term: grande }, " becomes ", { term: gran }, " before a singular noun"], es: [{ term: grande }, " pasa a ", { term: gran }, " delante de un sustantivo singular"], uk: [{ term: "grande" }, " стає ", { term: "gran" }, " перед іменником в однині"], pt: [{ term: "grande" }, " vira ", { term: "gran" }, " antes de um substantivo singular"], fr: [{ term: "grande" }, " devient ", { term: "gran" }, " devant un nom singulier"], de: [{ term: "grande" }, " wird vor einem Nomen im Singular zu ", { term: "gran" }], it: [{ term: "grande" }, " diventa ", { term: "gran" }, " davanti a un sostantivo singolare"], pl: [{ term: "grande" }, " zmienia się w ", { term: "gran" }, " przed rzeczownikiem w liczbie pojedynczej"], tr: [{ term: "grande" }, ", tekil bir isimden önce ", { term: "gran" }, " olur"], id: [{ term: "grande" }, " menjadi ", { term: "gran" }, " di depan kata benda tunggal"], vi: [{ term: "grande" }, " thành ", { term: "gran" }, " trước danh từ số ít"] } }
+          - { level: B2, wrong: unos cuidados muy maternos, right: ["unos cuidados ", { target: maternos }], rule: { es: "el adjetivo relacional se usa sin grado" } }
+          - { level: B2, wrong: un lácteo producto, right: ["un producto ", { target: lácteo }], rule: { es: "el adjetivo relacional va detrás del sustantivo" } }
+          - { level: B2, wrong: Dejó limpio la cocina., right: ["Dejó ", { target: limpia }, " la cocina."], rule: { es: "el predicativo del objeto concuerda con el objeto" } }
+          - { level: C1, wrong: dos trajes azules marinos, right: ["dos trajes ", { target: azul marino }], rule: { es: "el color con sustantivo queda invariable" } }
+          - { level: C1, wrong: Ellas hablan claras., right: ["Ellas hablan ", { target: claro }, "."], rule: { es: "el adjetivo adverbial queda en masculino singular" } }
+          - { level: C2, wrong: unos triángulos isóscelos, right: ["unos triángulos ", { target: isósceles }], rule: { es: [{ term: isósceles }, " es invariable"] } }
           - { level: A1, speakers: [uk], wrong: una blanca casa, right: ["una casa ", { target: blanca }], rule: { uk: "прикметник зазвичай стоїть після іменника, хоча українською кажемо «білий будинок»" } }
           - { level: A2, speakers: [uk], wrong: un problema seria, right: ["un problema ", { target: serio }], rule: { uk: [{ term: problema }, " — чоловічого роду, тож і прикметник має форму чоловічого роду, хоча українською «серйозна проблема»"] } }

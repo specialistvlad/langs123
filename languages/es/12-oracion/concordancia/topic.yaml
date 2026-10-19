@@ -1,0 +1,267 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.concordancia
+lang: es
+kind: grammar
+tags: [agreement, subject, verb, noun-phrase, sentence]
+concepts: [agreement]
+related: [es.sustantivo-determinantes.cuantificadores, es.pronombres.pronombres-sujeto, es.pronombres.tu-usted-vosotros-ustedes, es.adjetivo-adverbio.adjetivo-concordancia]
+status: { es: draft }
+
+title: { es: "La concordancia: la mayoría piensa o piensan" }
+summary:
+  lead:
+    es: "El verbo concuerda con su sujeto en número y persona, y los sujetos colectivos, partitivos y coordinados admiten singular o plural."
+  rule:
+    es: "Con un colectivo o un partitivo, el verbo va en singular o en plural:"
+  ex: { examples: [["La mayoría de los compañeros ", { target: piensa }, " igual."], ["La mayoría de los compañeros ", { target: piensan }, " igual."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Colectivo }
+          rule: { es: "un colectivo con de y un plural: singular o plural" }
+          ex: { examples: [[{ target: Llegó }, " un grupo de turistas."], [{ target: Llegaron }, " un grupo de turistas."]] }
+        - level: B2
+          point: { es: Enumeración }
+          rule: { es: "el verbo va en singular, con el primer elemento" }
+          ex: ["Me ", { target: preocupa }, " el ruido, el tráfico y la contaminación."]
+        - level: B2
+          point: { es: "O y ni" }
+          rule: { es: [{ term: o }, " y ", { term: ni }, " admiten singular o plural"] }
+          ex: { examples: [[{ target: Vendrá }, " Ana o Luis."], [{ target: Vendrán }, " Ana o Luis."]] }
+        - level: B2
+          point: { es: Persona }
+          rule: { es: "un grupo que incluye al hablante lleva la primera persona" }
+          ex: ["Los vecinos ", { target: pensamos }, " que el parque necesita luz."]
+        - level: B2
+          point: { es: Predicativo }
+          rule: { es: "concuerda con el sujeto" }
+          ex: ["María bailó la cumbia ", { target: descalza }, "."]
+        - level: B2
+          point: { es: Partitivo }
+          rule: { es: "partitivo y plural: el verbo concuerda con uno de los dos" }
+          ex: { examples: [["La mayoría de los compañeros ", { target: piensa }, " igual."], ["La mayoría de los compañeros ", { target: piensan }, " igual."]] }
+        - level: C1
+          point: { es: "Plural enfático" }
+          rule: { es: "el plural destaca a cada individuo" }
+          ex: ["La mitad de los invitados ", { target: se fueron }, " temprano."]
+        - level: C1
+          point: { es: "Grupo nominal" }
+          rule: { es: "plural si son dos cosas; singular si forman un bloque" }
+          ex: { examples: [["una conducta y unas palabras ", { target: inaceptables }], ["lengua y literatura ", { target: alemana }]] }
+        - level: C2
+          point: { es: "Adjetivo y dos nombres" }
+          rule: { es: "delante, concuerda con el primero; detrás, va en plural" }
+          ex: { examples: [["su ", { target: asombroso }, " talento y dedicación"], ["su talento y dedicación ", { target: asombrosos }]] }
+        - level: C2
+          point: { es: "Plural de modestia" }
+          rule: { es: "un solo hablante usa la primera persona del plural" }
+          ex: ["En este trabajo ", { target: analizamos }, " tres casos."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: [{ term: gente }, " y ", { term: familia }, " llevan el verbo en singular"] }
+          ex: ["La gente ", { target: piensa }, " que el precio es alto."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: ["tras ", { term: el grupo de }, ", el verbo va en singular"] }
+          ex: ["El grupo de políticos ", { target: votó }, " a favor."]
+
+sections:
+  - title: { es: "Sujeto colectivo y enumeraciones" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: subject, label: { es: Sujeto } }
+          - { key: verb, label: { es: Verbo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            subject: { pattern: [{ slot: { es: sustantivo colectivo } }, { term: de }, { slot: plural noun }] }
+            verb: { es: "singular o plural" }
+            ex: { examples: [[{ target: Llegó }, " un grupo de turistas."], [{ target: Llegaron }, " un grupo de turistas."]] }
+          - level: B2
+            subject: { es: "una enumeración detrás del verbo" }
+            verb: { es: "singular, con el primer elemento" }
+            ex: ["Me ", { target: preocupa }, " el ruido, el tráfico y la contaminación."]
+          - level: B2
+            subject: { pattern: [{ slot: subject }, { term: o }, { slot: subject }] }
+            verb: { es: "singular o plural" }
+            ex: { examples: [[{ target: Vendrá }, " Ana o Luis."], [{ target: Vendrán }, " Ana o Luis."]] }
+          - level: B2
+            subject: { pattern: [{ term: ni }, { slot: subject }, { term: ni }, { slot: subject }] }
+            verb: { es: "singular o plural" }
+            ex: { examples: [["No ", { target: vendrá }, " ni Ana ni Luis."], ["No ", { target: vendrán }, " ni Ana ni Luis."]] }
+          - level: B2
+            subject: { es: "dos sustantivos con un solo sentido y un solo artículo" }
+            verb: { es: singular }
+            ex: ["La entrada y salida de coches ", { target: se controla }, " aquí."]
+
+  - title: { es: "Primera y segunda persona" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: subject, label: { es: Sujeto } }
+          - { key: verb, label: { es: Verbo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            subject: { es: "un grupo que incluye al hablante" }
+            verb: { es: "primera persona del plural" }
+            ex: ["Los vecinos ", { target: pensamos }, " que el parque necesita luz."]
+          - level: B2
+            variety: es-ES
+            subject: { es: "un grupo que incluye al oyente" }
+            verb: { es: "segunda persona del plural" }
+            ex: ["Los chicos ", { target: queréis }, " salir temprano."]
+          - level: B2
+            variety: es-419
+            subject: { es: "un grupo que incluye al oyente" }
+            verb: { es: "tercera persona del plural, con ustedes" }
+            ex: [{ target: Ustedes }, ", los chicos, ", { target: quieren }, " salir temprano."]
+          - level: B2
+            variety: es-419
+            subject: { es: ["el hablante y, con ", { term: con }, ", otra persona; en Centroamérica, Colombia, Perú y Chile"] }
+            verb: { es: "primera persona del plural: el hablante y su compañero" }
+            ex: { examples: [{ equivalence: [[{ target: Cantamos }, " con él"], ["Yo ", { target: canté }, " con él"]] }, { equivalence: [[{ target: Fuimos }, " con vos"], ["Yo ", { target: fui }, " con vos"]] }] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            variety: es-419
+            text:
+              es: ["El trato de ", { term: ustedes }, " y de ", { term: vos }, ": ver ", { link: "Tú, usted, vosotros y ustedes", to: es.pronombres.tu-usted-vosotros-ustedes }, "."]
+
+  - title: { es: "Complemento predicativo" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Patrón } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { es: [{ pattern: [{ slot: subject }, { slot: verb }, { slot: adjective }] }, ": el adjetivo concuerda con el sujeto en género y número"] }
+            ex: { examples: [["Los niños volvieron ", { target: cansados }, " del parque."], ["María bailó la cumbia ", { target: descalza }, "."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["El predicativo del sujeto y del objeto: ver ", { link: "El adjetivo: concordancia y posición", to: es.adjetivo-adverbio.adjetivo-concordancia }, "."]
+
+  - title: { es: "Concordancia con partitivos" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: subject, label: { es: Sujeto } }
+          - { key: verb, label: { es: Verbo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            subject: { pattern: [{ alternatives: [{ term: la mayoría }, { term: la mayor parte }, { term: el resto }] }, { term: de }, { slot: plural noun }] }
+            verb: { es: "singular, con el partitivo, o plural, con el complemento" }
+            ex: { examples: [["La mayoría de los compañeros ", { target: piensa }, " igual."], ["La mayoría de los compañeros ", { target: piensan }, " igual."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["Los cuantificadores y su complemento: ver ", { link: "Los cuantificadores", to: es.sustantivo-determinantes.cuantificadores }, "."]
+
+  - title: { es: "Concordancia ad sensum" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: subject, label: { es: Sujeto } }
+          - { key: verb, label: { es: Verbo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            subject: { pattern: [{ alternatives: [{ term: la mayoría }, { term: la mitad }, { term: el diez por ciento }] }, { term: de }, { slot: plural noun }] }
+            verb: { es: "plural, para destacar a cada individuo" }
+            ex: { examples: [["La mayoría de los vecinos ", { target: creen }, " que el barrio ha mejorado."], ["La mitad de los invitados ", { target: se fueron }, " temprano."], ["El diez por ciento de los votantes ", { target: se abstuvieron }, "."]] }
+          - level: C1
+            subject: { pattern: [{ alternatives: [{ term: un montón }, { term: una docena }] }, { term: de }, { slot: plural noun }] }
+            verb: { es: plural }
+            ex: { examples: [["Un montón de libros ", { target: se cayeron }, " del estante."], ["Una docena de turistas ", { target: bajaron }, " del autobús."]] }
+          - level: C1
+            subject: { pattern: [{ term: un grupo de }, { slot: plural noun }] }
+            verb: { es: "singular o plural" }
+            ex: { examples: [["Un grupo de vecinos ", { target: pidió }, " una reunión."], ["Un grupo de vecinos ", { target: pidieron }, " una reunión."]] }
+          - level: C1
+            subject: { pattern: [{ term: el grupo de }, { slot: plural noun }] }
+            verb: { es: singular }
+            ex: ["El grupo de políticos ", { target: votó }, " a favor."]
+          - level: C1
+            subject: { es: [{ term: gente }, " y ", { term: familia }, ", sin complemento en plural"] }
+            verb: { es: singular }
+            ex: { examples: [["La gente ", { target: piensa }, " que el precio es alto."], ["La familia ", { target: se compró }, " una casa."]] }
+
+  - title: { es: "Concordancia dentro del grupo nominal" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Patrón } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            pattern: { es: [{ pattern: [{ slot: noun }, { term: y }, { slot: noun }, { slot: adjective }] }, ": el adjetivo va en plural y concuerda con los dos sustantivos"] }
+            ex: ["una conducta y unas palabras ", { target: inaceptables }]
+          - level: C1
+            pattern: { es: [{ pattern: [{ slot: singular noun }, { term: y }, { slot: singular noun }, { slot: adjective }] }, ": el adjetivo va en singular cuando los dos sustantivos forman un bloque"] }
+            ex: ["Mi hermana estudia lengua y literatura ", { target: alemana }, "."]
+          - level: C2
+            pattern: { es: [{ pattern: [{ slot: adjective }, { slot: singular noun }, { term: y }, { slot: singular noun }] }, ": el adjetivo concuerda con el primer sustantivo; detrás de los dos va en plural"] }
+            ex: { examples: [["su ", { target: asombroso }, " talento y dedicación"], ["su talento y dedicación ", { target: asombrosos }]] }
+
+  - title: { es: "Discordancias voluntarias" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: figure, label: { es: Figura } }
+          - { key: form, label: { es: Forma } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            figure: { es: "plural de modestia" }
+            form: { es: "un autor o un orador habla de sí mismo en primera persona del plural" }
+            ex: { examples: [["En este trabajo ", { target: analizamos }, " tres casos."], ["Como ", { target: hemos explicado }, " ya, el método falla."]] }
+          - level: C2
+            figure: { es: "plural de majestad" }
+            form: { es: "un soberano habla de sí mismo en primera persona del plural" }
+            ex: [{ target: Hemos decidido }, " perdonar a los rebeldes."]
+          - level: C2
+            figure: { es: "plural afectivo" }
+            form: { es: "el hablante se dirige a una sola persona en primera persona del plural" }
+            ex: ["¿Cómo nos ", { target: sentimos }, " hoy, don Luis?"]
+          - level: C2
+            figure: { es: "verbo y atributo" }
+            form: { es: "el verbo concuerda con el atributo, no con el sujeto" }
+            ex: ["El problema ", { target: somos }, " nosotros."]
+          - level: C2
+            figure: { es: "tratamiento" }
+            form: { es: "el título es femenino y lleva el verbo en tercera persona; el adjetivo sigue el sexo de la persona" }
+            ex: ["Su Excelencia el embajador está ", { target: cansado }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Los españoles piensan que nuestro café es mejor.", right: ["Los españoles ", { target: pensamos }, " que nuestro café es mejor."], rule: { es: "un grupo que incluye al hablante lleva la primera persona del plural" } }
+          - { level: C1, wrong: "La gente piensan que el precio es alto.", right: ["La gente ", { target: piensa }, " que el precio es alto."], rule: { es: [{ term: gente }, " lleva el verbo en singular"] } }
+          - { level: C1, wrong: "La familia se compraron una casa.", right: ["La familia ", { target: se compró }, " una casa."], rule: { es: [{ term: familia }, " sin complemento en plural lleva el verbo en singular"] } }
+          - { level: C1, wrong: "El grupo de políticos votaron a favor.", right: ["El grupo de políticos ", { target: votó }, " a favor."], rule: { es: ["tras ", { term: el grupo de }, ", el verbo va en singular"] } }
+          - { level: C2, wrong: "su asombrosos talento y dedicación", right: ["su ", { target: asombroso }, " talento y dedicación"], rule: { es: "delante de dos sustantivos, el adjetivo concuerda con el primero" } }

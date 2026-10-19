@@ -84,6 +84,14 @@ cheatsheet:
           rule: { pattern: [{ alternatives: [{ term: alguno de }, { term: ninguno de }] }, { slot: plural noun }] }
           ex: [{ target: Ninguno de }, " mis amigos habla ruso."]
           tr: { en: None of my friends speaks Russian., uk: Ніхто з моїх друзів не розмовляє російською., pt: "Nenhum dos meus amigos fala russo.", fr: "Aucun de mes amis ne parle russe.", de: "Keiner meiner Freunde spricht Russisch.", it: "Nessuno dei miei amici parla russo.", pl: "Żaden z moich przyjaciół nie mówi po rosyjsku.", tr: "Arkadaşlarımın hiçbiri Rusça konuşmuyor.", id: "Tidak ada satu pun temanku yang berbicara bahasa Rusia.", vi: "Không người bạn nào của tôi nói tiếng Nga." }
+        - level: B2
+          point: { es: Cualquier y cualquiera }
+          rule: { es: [{ term: cualquier }, " delante del sustantivo; ", { term: cualquiera }, " solo o con ", { term: de }] }
+          ex: { examples: [[{ target: Cualquier }, " alumno puede venir."], [{ target: Cualquiera }, " de ellos puede ayudarte."]] }
+        - level: C1
+          point: { es: Negación enfática }
+          rule: { es: [{ alternatives: [{ term: jamás }, { term: en mi vida }, { term: en la vida }] }, " siguen la regla de ", { term: nunca }] }
+          ex: ["No he visto nada igual ", { target: en mi vida }, "."]
         - level: A2
           point: { en: Trap, es: Trampa, uk: Пастка, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule: { en: [{ term: nada }, " after the verb keeps ", { term: no }, " before it"], es: [{ term: nada }, " detrás del verbo mantiene ", { term: no }, " delante"], uk: ["коли ", { term: nada }, " стоїть після дієслова, перед дієсловом лишається ", { term: no }], pt: [{ term: "nada" }, " depois do verbo mantém ", { term: "no" }, " antes dele"], fr: [{ term: "nada" }, " après le verbe garde ", { term: "no" }, " devant le verbe"], de: [{ term: "nada" }, " hinter dem Verb: ", { term: "no" }, " bleibt davor"], it: [{ term: "nada" }, " dopo il verbo mantiene ", { term: "no" }, " davanti"], pl: [{ term: "nada" }, " po czasowniku: ", { term: "no" }, " zostaje przed czasownikiem"], tr: [{ term: "nada" }, " fiilin arkasında olsa da ", { term: "no" }, " fiilin önünde kalır"], id: [{ term: "nada" }, " setelah kata kerja: ", { term: "no" }, " tetap ada sebelum kata kerja"], vi: [{ term: "nada" }, " đứng sau động từ thì vẫn giữ ", { term: "no" }, " trước động từ"] }
@@ -158,6 +166,11 @@ sections:
               vi: [{ term: "ninguno" }, " luôn ở số ít:"]
             ex: ["No tengo ", { target: ningún }, " hermano."]
             tr: { en: "I don't have any brothers.", uk: У мене немає братів., pt: "Não tenho nenhum irmão.", fr: "Je n’ai aucun frère.", de: "Ich habe keinen Bruder.", it: "Non ho nessun fratello.", pl: "Nie mam żadnego brata.", tr: "Hiç erkek kardeşim yok.", id: "Saya tidak punya saudara laki-laki.", vi: "Tôi không có anh em trai nào." }
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: un }, " presenta un referente; ", { term: algún }, " lo deja sin identificar."]
+            ex: { examples: [["Ha venido ", { target: un }, " amigo."], ["¿Ha venido ", { target: algún }, " amigo?"]] }
 
   - title: { en: "Use: questions and negatives", es: "Uso: preguntas y negación", uk: "Вживання: питання і заперечення", pt: "Uso: perguntas e negação", fr: "Emploi : questions et négation", de: "Gebrauch: Fragen und Verneinung", it: "Uso: domande e negazione", pl: "Użycie: pytania i przeczenie", tr: "Kullanım: sorular ve olumsuzluk", id: "Penggunaan: pertanyaan dan kalimat negatif", vi: "Cách dùng: câu hỏi và phủ định" }
     role: use
@@ -290,6 +303,38 @@ sections:
             ex: [{ target: Ninguno }, " de ellos ", { target: vino }, "."]
             tr: { en: None of them came., uk: Ніхто з них не прийшов., pt: "Nenhum deles veio.", fr: "Aucun d’eux n’est venu.", de: "Keiner von ihnen ist gekommen.", it: "Nessuno di loro è venuto.", pl: "Żaden z nich nie przyszedł.", tr: "Hiçbiri gelmedi.", id: "Tidak ada satu pun dari mereka yang datang.", vi: "Không ai trong số họ đến." }
 
+  - title: { es: Cualquier y cualquiera }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: where, label: { es: Posición } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, form: cualquier, where: { es: "delante del sustantivo, igual en masculino y femenino: indiferencia o libre elección" }, ex: { examples: [[{ target: Cualquier }, " persona tiene ese derecho."], [{ target: Cualquier }, " alumno puede venir."]] } }
+          - { level: B2, form: cualquiera, where: { es: ["solo o con ", { term: de }, ", nunca delante de un sustantivo"] }, ex: [{ target: Cualquiera }, " de ellos puede ayudarte."] }
+          - { level: B2, form: { alternatives: [{ term: cualquier otro }, { term: otro cualquiera }] }, where: { es: ["con ", { term: otro }, ": ", { term: cualquier }, " delante, ", { term: cualquiera }, " detrás"] }, ex: { examples: [["Pide ayuda a ", { target: cualquier otro }, "."], ["Pide ayuda a ", { target: otro cualquiera }, "."]] } }
+          - { level: C1, form: cualquiera, where: { es: ["detrás de un sustantivo con ", { term: un }, ": uno cualquiera, sin importar cuál"] }, ex: ["Dame ", { target: un libro cualquiera }, "."] }
+          - { level: C1, form: uno cualquiera, where: { es: "uno entre varios, sin importar cuál" }, ex: ["Elige ", { target: uno cualquiera }, " de esos libros."] }
+
+  - title: { es: Negación enfática }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { es: Palabra } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: C1, word: jamás, ex: { examples: [[{ target: Jamás }, " he visto nada igual."], ["No volveré ", { target: jamás }, "."]] } }
+          - { level: C1, word: en mi vida, ex: ["No he visto nada igual ", { target: en mi vida }, "."] }
+          - { level: C1, word: en la vida, ex: [{ target: En la vida }, " lo haría."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: ["Siguen la regla de ", { term: nunca }, ": llevan ", { term: no }, " detrás del verbo y van solos delante."]
   - title: { en: Typical errors, es: Errores frecuentes, uk: Типові помилки, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -300,5 +345,9 @@ sections:
           - { level: B1, wrong: No tengo ningunos hermanos., right: ["No tengo ", { target: ningún }, " hermano."], rule: { en: [{ term: ninguno }, " is singular"], es: [{ term: ninguno }, " va en singular"], uk: [{ term: ninguno }, " вживається в однині"], pt: [{ term: "ninguno" }, " fica no singular"], fr: [{ term: "ninguno" }, " reste au singulier"], de: [{ term: "ninguno" }, " steht im Singular"], it: [{ term: "ninguno" }, " resta al singolare"], pl: [{ term: "ninguno" }, " występuje w liczbie pojedynczej"], tr: [{ term: "ninguno" }, " tekil kalır"], id: [{ term: "ninguno" }, " selalu tunggal"], vi: [{ term: "ninguno" }, " luôn ở số ít"] } }
           - { level: B1, wrong: alguno día, right: [{ target: algún }, " día"], rule: { en: "-o drops before a masculine singular noun", es: "la -o cae delante de un masculino singular", uk: "-o випадає перед іменником чоловічого роду однини", pt: "o -o cai antes de um substantivo masculino singular", fr: "le -o tombe devant un nom masculin singulier", de: "das -o fällt vor einem Nomen im Maskulinum Singular weg", it: "la -o cade davanti a un sostantivo maschile singolare", pl: "końcówka -o odpada przed rzeczownikiem rodzaju męskiego w liczbie pojedynczej", tr: "eril tekil bir isimden önce -o düşer", id: "-o hilang sebelum kata benda maskulin tunggal", vi: "-o bị bỏ trước danh từ giống đực số ít" } }
           - { level: B1, wrong: No conozco nadie., right: ["No conozco ", { target: a }, " nadie."], rule: { en: ["a person as an object takes ", { term: a }], es: ["la persona como objeto lleva ", { term: a }], uk: ["людина в ролі додатка вживається з ", { term: a }], pt: ["a pessoa como objeto leva ", { term: "a" }], fr: ["la personne en complément d’objet direct prend ", { term: "a" }], de: ["eine Person als Objekt steht mit ", { term: "a" }], it: ["la persona come oggetto prende ", { term: "a" }], pl: ["osoba w roli dopełnienia występuje z ", { term: "a" }], tr: ["nesne olan kişi ", { term: "a" }, " alır"], id: ["orang sebagai objek memakai ", { term: "a" }], vi: ["người làm tân ngữ đi với ", { term: "a" }] } }
+          - { level: B2, wrong: Cualquiera persona puede venir., right: [{ target: Cualquier }, " persona puede venir."], rule: { es: [{ term: cualquier }, " va delante del sustantivo, sin -a"] } }
+          - { level: B2, wrong: Cualquier de ellos puede ayudarte., right: [{ target: Cualquiera }, " de ellos puede ayudarte."], rule: { es: [{ term: cualquiera }, " va solo o con ", { term: de }] } }
+          - { level: C1, wrong: Dame el libro cualquiera., right: ["Dame ", { target: un libro cualquiera }, "."], rule: { es: [{ term: cualquiera }, " detrás del sustantivo pide ", { term: un }] } }
+          - { level: C1, wrong: Jamás no he mentido., right: [{ target: Jamás }, " he mentido."], rule: { es: ["delante del verbo, ", { term: jamás }, " va sin ", { term: no }] } }
           - { level: A2, speakers: [en], wrong: No tengo algo., right: ["No tengo ", { target: nada }, "."], rule: { en: ["in a negative, “anything” is ", { term: nada }] } }
           - { level: B1, speakers: [uk], wrong: Nadie no me llama., right: [{ target: Nadie }, " me llama."], rule: { uk: ["українською «ніхто не дзвонить», але іспанською заперечне слово перед дієсловом іде без ", { term: no }] } }

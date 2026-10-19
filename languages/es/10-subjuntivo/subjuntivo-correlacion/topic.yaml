@@ -1,0 +1,245 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.subjuntivo.subjuntivo-correlacion
+lang: es
+kind: grammar
+tags: [verbs, subjunctive, mood, sequence-of-tenses]
+concepts: [subjunctive, sequence-of-tenses]
+related: [es.subjuntivo.subjuntivo-formas, es.subjuntivo.subjuntivo-deseos-dudas, es.subjuntivo.subjuntivo-cuando-para-que, es.oracion.estilo-indirecto-pasiva, es.pasados.mapa-tiempos]
+status: { es: draft }
+
+title: { es: "La correlación de tiempos con el subjuntivo" }
+summary:
+  lead:
+    es: "El verbo principal elige el tiempo del subjuntivo: presente o perfecto tras un presente, imperfecto o pluscuamperfecto tras un pasado."
+  rule:
+    es: "El subjuntivo sigue el tiempo del verbo principal, presente tras un presente e imperfecto tras un pasado:"
+  ex: { examples: [["Quiero que ", { target: vengas }, "."], ["Quería que ", { target: vinieras }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: "Principal en presente" }
+          rule: { es: "presente de subjuntivo: lo simultáneo o posterior" }
+          ex: ["Quiero que ", { target: vengas }, " mañana."]
+        - level: B2
+          point: { es: "Principal en presente" }
+          rule: { es: "perfecto de subjuntivo: lo anterior" }
+          ex: ["Espero que ", { target: "hayas llegado" }, " bien."]
+        - level: B2
+          point: { es: "Principal en pasado" }
+          rule: { es: "imperfecto de subjuntivo: lo simultáneo o posterior" }
+          ex: ["Pidió que ", { target: esperáramos }, "."]
+        - level: B2
+          point: { es: "Principal en pasado" }
+          rule: { es: "pluscuamperfecto de subjuntivo: lo anterior" }
+          ex: ["Esperaba que ", { target: "hubieras llegado" }, "."]
+        - level: B2
+          point: { es: "Estilo indirecto" }
+          rule: { es: ["tras ", { term: dice }, " el presente; tras ", { term: dijo }, " el imperfecto"] }
+          ex: { examples: [["Dice que me ", { target: siente }, "."], ["Dijo que me ", { target: sentara }, "."]] }
+        - level: B2
+          point: { es: "Subordinadas adverbiales" }
+          rule: { es: "tras un pasado, imperfecto de subjuntivo" }
+          ex: ["Se fue antes de que ", { target: llegaras }, "."]
+        - level: C1
+          point: { es: "Condicional compuesto" }
+          rule: { es: "pluscuamperfecto de subjuntivo" }
+          ex: ["Me habría gustado que ", { target: "hubieras venido" }, "."]
+        - level: C1
+          point: { es: "Presente y hecho pasado" }
+          rule: { es: "perfecto o imperfecto de subjuntivo" }
+          ex: { examples: [["No creo que ", { target: "haya llegado" }, "."], ["No creo que ", { target: llegara }, " ayer."]] }
+        - level: C2
+          point: { es: Alternancias }
+          rule: { es: "tras una negación, dos formas valen para el mismo hecho pasado" }
+          ex: { examples: [["No creo que Ana lo ", { target: "haya dicho" }, "."], ["No creo que Ana lo ", { target: dijera }, "."]] }
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: "tras un pasado, imperfecto de subjuntivo" }
+          ex: ["Quería que ", { target: vinieras }, "."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: ["tras ", { term: "habría gustado" }, " va ", { term: hubieras }] }
+          ex: ["Habría preferido que ", { target: "hubieras avisado" }, "."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "El subjuntivo toma su tiempo del verbo principal de su propia frase."
+            ex: ["Ayer me pidió que ", { target: llamara }, "; hoy me pide que ", { target: llame }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["Las formas: ", { link: "El presente de subjuntivo: formas", to: es.subjuntivo.subjuntivo-formas }, ", ", { link: El imperfecto de subjuntivo, to: es.subjuntivo.subjuntivo-imperfecto }, " y ", { link: El perfecto y el pluscuamperfecto de subjuntivo, to: es.subjuntivo.subjuntivo-compuesto }, "."]
+          - type: note
+            level: C2
+            text:
+              es: ["El futuro de subjuntivo, de la lengua jurídica y literaria: ", { link: "El futuro de subjuntivo: hablare, hubiere", to: es.subjuntivo.subjuntivo-futuro }, "."]
+
+  - title: { es: Qué tiempo del subjuntivo }
+    role: use
+    content:
+      - type: comparison
+        columns:
+          - { key: main, label: { es: Verbo principal } }
+          - { key: time, label: { es: Acción subordinada } }
+          - { key: tense, label: { es: Subjuntivo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            main: { es: "presente, futuro, perfecto o imperativo" }
+            time: { es: "simultánea o posterior" }
+            tense: { es: presente }
+            ex: { examples: [["Quiero que ", { target: vengas }, " mañana."], ["Dile que ", { target: venga }, "."]] }
+          - level: B2
+            main: { es: "presente, futuro, perfecto o imperativo" }
+            time: { es: anterior }
+            tense: { es: perfecto }
+            ex: ["Espero que ", { target: "hayas llegado" }, " bien."]
+          - level: B2
+            main: { es: "indefinido, imperfecto, pluscuamperfecto o condicional" }
+            time: { es: "simultánea o posterior" }
+            tense: { es: imperfecto }
+            ex: { examples: [["Pidió que ", { target: esperáramos }, "."], ["Querría que ", { target: vinieras }, "."]] }
+          - level: B2
+            main: { es: "indefinido, imperfecto, pluscuamperfecto o condicional" }
+            time: { es: anterior }
+            tense: { es: pluscuamperfecto }
+            ex: ["Esperaba que ", { target: "hubieras llegado" }, "."]
+          - level: C1
+            main: { es: "condicional compuesto" }
+            time: { es: "anterior: un hecho que no ocurrió" }
+            tense: { es: pluscuamperfecto }
+            ex: ["Me habría gustado que ", { target: "hubieras venido" }, "."]
+
+  - title: { es: Estilo indirecto }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: direct, label: { es: Estilo directo } }
+          - { key: indirect, label: { es: Estilo indirecto } }
+          - { key: rule, label: { es: Regla } }
+        rows:
+          - level: B2
+            direct: "Siéntate."
+            indirect: ["Dice que me ", { target: siente }, "."]
+            rule: { es: "con un verbo de lengua en presente, el presente de subjuntivo" }
+          - level: B2
+            direct: "Siéntate."
+            indirect: ["Dijo que me ", { target: sentara }, "."]
+            rule: { es: "con un verbo de lengua en pasado, el imperfecto de subjuntivo" }
+          - level: B2
+            direct: ["Ve ", { alternatives: [{ signal: mañana }, { signal: enseguida }, { signal: inmediatamente }] }, "."]
+            indirect: ["Dijo que ", { target: fuera }, " ", { alternatives: [{ signal: mañana }, { signal: enseguida }, { signal: inmediatamente }] }, "."]
+            rule: { es: "la palabra de tiempo sigue el momento en que se cuenta" }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["Los demás cambios del estilo indirecto: ", { link: Estilo indirecto y pasiva con se, to: es.oracion.estilo-indirecto-pasiva }, "."]
+
+  - title: { es: En las subordinadas adverbiales }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [{ slot: { es: verbo en pasado } }, { term: cuando }, { slot: { es: imperfecto de subjuntivo } }] }
+            ex: ["Dijo que lo llamaras cuando ", { target: llegaras }, "."]
+          - level: B2
+            pattern: { pattern: [{ slot: { es: verbo en pasado } }, { term: antes de que }, { slot: { es: imperfecto de subjuntivo } }] }
+            ex: ["Se fue antes de que ", { target: llegaras }, "."]
+          - level: B2
+            pattern: { pattern: [{ slot: { es: verbo en pasado } }, { term: hasta que }, { slot: { es: imperfecto de subjuntivo } }] }
+            ex: ["Quiso esperar hasta que ", { target: llegaras }, "."]
+          - level: B2
+            pattern: { pattern: [{ slot: { es: verbo en pasado } }, { term: para que }, { slot: { es: imperfecto de subjuntivo } }] }
+            ex: ["Hablé despacio para que me ", { target: entendieran }, "."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["El uso de cada conector: ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+
+  - title: { es: El presente con referencia al pasado }
+    role: use
+    content:
+      - type: comparison
+        columns:
+          - { key: main, label: { es: Verbo principal } }
+          - { key: dep, label: { es: Verbo subordinado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            main: { es: "presente, un hecho pasado" }
+            dep: { es: "perfecto de subjuntivo" }
+            ex: ["No creo que ", { target: "haya llegado" }, "."]
+          - level: C1
+            main: { es: "presente, un hecho pasado" }
+            dep: { es: "imperfecto de subjuntivo" }
+            ex: ["No creo que ", { target: llegara }, " ayer."]
+          - level: C1
+            main: { es: "presente, un presente o un futuro hipotético" }
+            dep: { es: "imperfecto de subjuntivo" }
+            ex: { examples: [["Dudo que lo ", { target: hiciera }, " él si pudiera."], ["No creo que nadie lo ", { target: comprara }, " a ese precio."]] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: "El perfecto mira el hecho desde el presente; el imperfecto lo sitúa en un momento pasado."
+
+  - title: { es: Alternancias }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            pattern: { es: ["tras ", { term: "no creer que" }, ", el perfecto o el imperfecto para el mismo hecho pasado"] }
+            ex: { examples: [["No creo que Ana lo ", { target: "haya dicho" }, "."], ["No creo que Ana lo ", { target: dijera }, "."]] }
+          - level: C2
+            pattern: { es: ["tras ", { term: "no decir que" }, " y un hecho pasado, el indicativo o el subjuntivo"] }
+            ex: { examples: [["No dije que ", { target: estaba }, " enfermo."], ["No dije que ", { target: estuviera }, " enfermo."]] }
+          - level: C2
+            pattern: { es: [{ term: "desde que" }, " y ", { term: "hasta que" }, " con imperfecto de subjuntivo, en el estilo literario"] }
+            ex: { examples: [["Desde que lo ", { target: conociera }, ", no pensaba en otra cosa."], ["No quiso hablar hasta que ", { target: llegara }, " su abogado."]] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text:
+              es: ["El perfecto y el imperfecto: ", { link: El perfecto y el pluscuamperfecto de subjuntivo, to: es.subjuntivo.subjuntivo-compuesto }, "; el modo tras un verbo de lengua negado: ", { link: "El subjuntivo: deseos, dudas y opiniones", to: es.subjuntivo.subjuntivo-deseos-dudas }, "; ", { term: "desde que" }, " y ", { term: "hasta que" }, ": ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Quería que vengas.", right: ["Quería que ", { target: vinieras }, "."], rule: { es: "tras un verbo principal en pasado, imperfecto de subjuntivo" } }
+          - { level: B2, wrong: "Espero que llegaste bien.", right: ["Espero que ", { target: "hayas llegado" }, " bien."], rule: { es: "una acción anterior tras un presente lleva perfecto de subjuntivo" } }
+          - { level: B2, wrong: "Esperaba que habías llegado.", right: ["Esperaba que ", { target: "hubieras llegado" }, "."], rule: { es: "tras un pasado, la anterioridad lleva pluscuamperfecto de subjuntivo" } }
+          - { level: B2, wrong: "Dijo que me siente.", right: ["Dijo que me ", { target: sentara }, "."], rule: { es: ["la orden transmitida tras ", { term: dijo }, " lleva imperfecto de subjuntivo"] } }
+          - { level: B2, wrong: "Se fue antes de que llegas.", right: ["Se fue antes de que ", { target: llegaras }, "."], rule: { es: ["tras un pasado, ", { term: "antes de que" }, " lleva imperfecto de subjuntivo"] } }
+          - { level: C1, wrong: "Me habría gustado que habrías venido.", right: ["Me habría gustado que ", { target: "hubieras venido" }, "."], rule: { es: "tras el condicional compuesto va el pluscuamperfecto de subjuntivo" } }
+          - { level: C1, wrong: "No creo que llegó ayer.", right: ["No creo que ", { target: llegara }, " ayer."], rule: { es: ["un hecho pasado tras ", { term: "no creo que" }, " lleva subjuntivo"] } }

@@ -236,6 +236,22 @@ cheatsheet:
             vi: [{ term: "así que" }, " nối kết quả với nguyên nhân"]
           ex: ["No había entradas, ", { target: así que }, " no la vimos."]
           tr: { en: "There were no tickets left, so we didn't see it.", uk: "Квитків не було, тож ми його не подивилися.", pt: "Não havia ingressos, então não assistimos.", fr: "Il n’y avait plus de billets, alors nous ne l’avons pas vu.", de: "Es gab keine Karten mehr, also haben wir es nicht gesehen.", it: "Non c'erano più biglietti, quindi non l'abbiamo visto.", pl: "Nie było biletów, więc tego nie obejrzeliśmy.", tr: "Bilet kalmamıştı, bu yüzden izleyemedik.", id: "Tiketnya sudah habis, jadi kami tidak menontonnya.", vi: "Hết vé rồi, nên chúng tôi không xem được." }
+        - level: B2
+          point: { es: Corrección }
+          rule: { es: [{ term: sino }, " corrige lo que una negación ha negado"] }
+          ex: ["No quiero té, ", { target: sino }, " café."]
+        - level: B2
+          point: { es: Dos negaciones }
+          rule: { es: [{ term: ["ni ", { gap: true }, " ni"] }, " delante del verbo va sin ", { term: no }] }
+          ex: [{ target: Ni }, " me escribió ", { target: ni }, " me llamó."]
+        - level: C1
+          point: { es: Matiz }
+          rule: { es: [{ term: ahora bien }, " matiza lo que se acaba de afirmar"] }
+          ex: ["Es un buen plan. ", { target: Ahora bien }, ", no es barato."]
+        - level: C2
+          point: { es: Registro literario }
+          rule: { es: [{ term: mas }, " equivale a ", { term: pero }, " y no lleva tilde"] }
+          ex: ["Quise ayudar, ", { target: mas }, " no pude."]
 
 sections:
   - title: { en: Overview, es: Visión general, uk: "Огляд", pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -462,6 +478,98 @@ sections:
               id: [{ term: "cuando" }, " untuk masa depan memakai subjungtif: ", { link: "Subjungtif dengan cuando, para que, antes de que", to: "es.subjuntivo.subjuntivo-cuando-para-que" }, "."]
               vi: [{ term: "cuando" }, " nói về tương lai đi với thức giả định: ", { link: "Thức giả định với cuando, para que, antes de que", to: "es.subjuntivo.subjuntivo-cuando-para-que" }, "."]
 
+  - title: { es: "Coordinación: sino, ni… ni, no obstante" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { es: Conector } }
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            linker: sino
+            use: { es: "tras una negación, corrige con una palabra o un grupo" }
+            ex: { examples: [["No quiero té, ", { target: sino }, " café."], ["No es antipático, ", { target: sino }, " tímido."]] }
+          - level: B2
+            linker: sino que
+            use: { es: "tras una negación, corrige con una oración de verbo conjugado" }
+            ex: ["No me llamó, ", { target: sino que }, " me escribió."]
+          - level: B2
+            linker: no obstante
+            use: { es: ["contrasta como ", { term: sin embargo }, ", en un registro formal"] }
+            ex: ["Es un buen plan; ", { target: no obstante }, ", es caro."]
+          - level: B2
+            linker: ["ni ", { gap: true }, " ni"]
+            use: { es: ["niega dos hechos; delante del verbo va sin ", { term: no }] }
+            ex: [{ target: Ni }, " me escribió ", { target: ni }, " me llamó."]
+          - level: C1
+            linker: asíndeton
+            use: { es: "sin conector: el ritmo une las oraciones" }
+            ex: { target: "Entré, saludé, me senté." }
+          - level: C1
+            linker: polisíndeton
+            use: { es: "con el mismo conector repetido: insistencia o lentitud" }
+            ex: ["Cantó ", { target: y }, " bailó ", { target: y }, " lloró toda la noche."]
+          - level: C2
+            linker: mas
+            use: { es: ["adversativo literario, como ", { term: pero }, "; sin tilde"] }
+            ex: ["Quise ayudar, ", { target: mas }, " no pude."]
+          - level: C2
+            linker: ["ahora ", { gap: true }, " ahora"]
+            use: { es: "distributivo: alterna dos estados" }
+            ex: [{ target: Ahora }, " ríe, ", { target: ahora }, " llora."]
+          - level: C2
+            linker: ["ya ", { gap: true }, " ya"]
+            use: { es: "distributivo: alterna dos acciones" }
+            ex: [{ target: Ya }, " canta, ", { target: ya }, " baila."]
+
+  - title: { es: Adverbios que enlazan }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: adverb, label: { es: Adverbio } }
+          - { key: sense, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            adverb: así
+            sense: { es: "añade una consecuencia: de este modo" }
+            ex: ["Llámame antes, ", { target: así }, " llegamos juntos."]
+          - level: B2
+            adverb: { alternatives: [precisamente, justamente] }
+            sense: { es: "confirman lo dicho y siguen con ello" }
+            ex: { examples: [[{ target: Precisamente }, " iba a llamarte."], [{ target: Justamente }, " hablábamos de ti."]] }
+          - level: B2
+            adverb: a propósito
+            sense: { es: "abre un paréntesis: un tema nuevo que viene a cuento" }
+            ex: [{ target: A propósito }, ", ¿vienes mañana?"]
+          - level: C1
+            adverb: { alternatives: [solo que, únicamente que] }
+            sense: { es: "añaden una pega que restringe lo dicho" }
+            ex: { examples: [["Me gusta la casa, ", { target: solo que }, " es muy cara."], ["Es simpático, ", { target: únicamente que }, " habla demasiado."]] }
+          - level: C1
+            adverb: { pattern: [contrariamente a lo que, { slot: clause }] }
+            sense: { es: "opone un hecho a lo que se creía" }
+            ex: [{ target: Contrariamente a lo que dicen }, ", aquí llueve poco."]
+          - level: C1
+            adverb: { alternatives: [también, tampoco] }
+            sense: { es: "en una comparación, el segundo término iguala al primero" }
+            ex: { examples: [["Si tu padre habla tres idiomas, tu madre ", { target: también }, "."], ["Si Ana canta bien, Rosa ", { target: tampoco }, " se queda atrás."]] }
+          - level: C1
+            adverb: ahora
+            sense: { es: "abre un tema nuevo" }
+            ex: [{ target: Ahora }, ", hablemos del precio."]
+          - level: C1
+            adverb: ahora bien
+            sense: { es: "matiza lo que se acaba de afirmar" }
+            ex: ["Es un buen plan. ", { target: Ahora bien }, ", no es barato."]
+          - level: C2
+            adverb: { alternatives: [puramente, meramente, exclusivamente] }
+            sense: { es: "limitan el hecho a una sola razón" }
+            ex: { examples: [["Lo hice ", { target: puramente }, " por curiosidad."], ["Lo dijo ", { target: meramente }, " por cortesía."]] }
+
   - title: { en: "Compare: porque and como", es: "Comparación: porque y como", uk: "Порівняння: porque і como", pt: "Comparação: porque e como", fr: "Comparaison : porque et como", de: "Vergleich: porque und como", it: "Confronto: porque e como", pl: "Porównanie: porque i como", tr: "Karşılaştırma: porque ve como", id: "Perbandingan: porque dan como", vi: "So sánh: porque và como" }
     role: compare
     content:
@@ -487,3 +595,5 @@ sections:
           - { level: A2, wrong: "Antes de me acuesto, leo un poco.", right: [{ target: Antes de acostarme }, ", leo un poco."], rule: { en: [{ term: antes de }, " takes the infinitive"], es: [{ term: antes de }, " lleva infinitivo"], uk: [{ term: "antes de" }, " вживається з інфінітивом"], pt: [{ term: "antes de" }, " leva infinitivo"], fr: [{ term: "antes de" }, " prend l’infinitif"], de: [{ term: "antes de" }, " steht mit dem Infinitiv"], it: [{ term: "antes de" }, " vuole l'infinito"], pl: [{ term: "antes de" }, " łączy się z bezokolicznikiem"], tr: [{ term: "antes de" }, " mastarla kullanılır"], id: [{ term: "antes de" }, " memakai infinitif"], vi: [{ term: "antes de" }, " đi với động từ nguyên thể"] } }
           - { level: A2, speakers: [en], wrong: "Estudio español porque mi trabajo.", right: ["Estudio español ", { target: por }, " mi trabajo."], rule: { en: ["a noun as the reason takes ", { term: por }, "; ", { term: porque }, " takes a clause"] } }
           - { level: B1, wrong: "Aunque estoy cansado, pero voy al trabajo.", right: [{ target: Aunque }, " estoy cansado, voy al trabajo."], rule: { en: [{ term: aunque }, " already marks the contrast, so ", { term: pero }, " stays out"], es: [{ term: aunque }, " ya marca el contraste, así que ", { term: pero }, " sobra"], uk: [{ term: "aunque" }, " уже позначає протиставлення, тож ", { term: "pero" }, " зайве"], pt: [{ term: "aunque" }, " já marca o contraste, então ", { term: "pero" }, " sobra"], fr: [{ term: "aunque" }, " marque déjà l’opposition, donc ", { term: "pero" }, " est de trop"], de: [{ term: "aunque" }, " drückt den Gegensatz schon aus, deshalb entfällt ", { term: "pero" }], it: [{ term: "aunque" }, " segna già il contrasto, quindi ", { term: "pero" }, " è di troppo"], pl: [{ term: "aunque" }, " już wyraża przeciwstawienie, więc ", { term: "pero" }, " jest zbędne"], tr: [{ term: "aunque" }, " karşıtlığı zaten bildirir, bu yüzden ", { term: "pero" }, " gerekmez"], id: [{ term: "aunque" }, " sudah menandai pertentangan, jadi ", { term: "pero" }, " tidak perlu"], vi: [{ term: "aunque" }, " đã đánh dấu sự đối lập, nên ", { term: "pero" }, " thừa"] } }
+          - { level: B2, wrong: "No vino Ana, pero su hermana.", right: ["No vino Ana, ", { target: sino }, " su hermana."], rule: { es: ["tras una negación, lo que corrige lleva ", { term: sino }] } }
+          - { level: C2, wrong: "Quise ayudar, más no pude.", right: ["Quise ayudar, ", { target: mas }, " no pude."], rule: { es: [{ term: mas }, " adversativo no lleva tilde"] } }

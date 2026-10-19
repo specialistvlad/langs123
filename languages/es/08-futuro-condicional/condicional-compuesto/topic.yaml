@@ -1,0 +1,229 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.futuro-condicional.condicional-compuesto
+lang: es
+kind: grammar
+tags: [verbs, conditional, mood, perfect, haber]
+concepts: [conditional-mood, conditionals]
+related: [es.futuro-condicional.condicional-simple, es.oracion.condicionales, es.pasados.pluscuamperfecto, es.oracion.estilo-indirecto-pasiva]
+status: { es: draft }
+
+title: { es: "El condicional compuesto: habría comido" }
+summary:
+  lead:
+    es: ["El condicional compuesto, ", { term: habría }, " con un participio, expresa lo que no llegó a ocurrir, supone un hecho pasado y marca una anterioridad: ", { term: habría salido }, "."]
+  rule:
+    es: ["La condición irreal del pasado lleva ", { term: "hubiera" }, " con participio, y su resultado lleva ", { term: habría }, " con participio:"]
+  ex: ["Si hubiera salido antes, ", { target: habría llegado }, " a tiempo."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Forma }
+          rule:
+            pattern: [{ alternatives: [{ term: habría }, { term: habrías }, { term: habríamos }, { term: habrían }] }, { slot: past participle }]
+          ex: ["Yo ", { target: habría hecho }, " lo mismo."]
+        - level: B2
+          point: { es: Condición irreal }
+          rule:
+            es: [{ term: "si hubiera" }, " + participio, ", { term: habría }, " + participio"]
+          ex: ["Si hubiera podido, ", { target: habría ido }, "."]
+        - level: B2
+          point: { es: Deseo o consejo }
+          rule:
+            es: "sin la condición, dice lo que se habría hecho"
+          ex: ["Yo ", { target: habría llamado }, " al médico."]
+        - level: B2
+          point: { es: Conjetura }
+          rule:
+            es: "supone un hecho anterior a otro hecho pasado"
+          ex: ["La luz estaba apagada: ", { target: habrían salido }, "."]
+        - level: B2
+          point: { es: Estilo indirecto }
+          rule:
+            es: "el futuro perfecto del estilo directo, contado desde el pasado"
+          ex: ["Dijo que para el viernes ", { target: habría terminado }, "."]
+        - level: B2
+          point: { es: Reproche }
+          rule:
+            es: [{ term: habrías podido }, " o ", { term: deberías }, " con infinitivo compuesto"]
+          ex: [{ target: Habrías podido }, " avisarme."]
+        - level: C1
+          point: { es: "Objeción, contraste" }
+          rule:
+            es: "admite lo supuesto y lo contradice, o contrasta dos personas"
+          ex: { examples: [[{ target: Habría estudiado }, " mucho, pero no se notó."], ["A ti te ", { target: habría dado }, " igual, pero a mí no."]] }
+        - level: C2
+          point: { es: "Temor, advertencia" }
+          rule:
+            es: "avisa de lo que pudo ocurrir"
+          ex: ["¡Qué susto! ", { target: Te habrías roto }, " una pierna."]
+        - level: C2
+          point: { es: Prensa }
+          rule:
+            es: "presenta como no confirmado un hecho anterior"
+          ex: ["El incendio ", { target: se habría iniciado }, " de madrugada."]
+        - level: C2
+          point: { es: Secuencia }
+          rule:
+            alternatives:
+              - { mapping: [habrá terminado, habría terminado] }
+              - { mapping: [ha terminado, había terminado] }
+          ex: { examples: [["Dice que ", { target: ha terminado }, "."], ["Dijo que ", { target: había terminado }, "."]] }
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: [{ term: si }, " lleva ", { term: hubiera }, ", no ", { term: habría }]
+          ex: ["Si ", { target: hubiera sabido }, ", habría venido."]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: "el pronombre va delante de habría"
+          ex: ["Yo ", { target: lo habría comprado }, "."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Se forma con ", { term: habría }, " y el participio; sitúa un hecho pasado como irreal, supuesto o anterior."]
+            ex: ["Con más tiempo, ", { target: habríamos visto }, " el museo."]
+          - type: note
+            level: B2
+            text:
+              es: ["Las gramáticas lo llaman también ", { term: condicional perfecto }, " o ", { term: antepospretérito }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["El auxiliar y el participio funcionan como en ", { link: El pluscuamperfecto, to: es.pasados.pluscuamperfecto }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["Las oraciones con ", { term: si }, " se explican en ", { link: Las oraciones condicionales, to: es.oracion.condicionales }, "; el estilo indirecto, en ", { link: Estilo indirecto y pasiva con se, to: es.oracion.estilo-indirecto-pasiva }, "."]
+
+  - title: { es: "Forma: habría y el participio" }
+    role: form
+    features: { mood: cond, aspect: prf }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: haber, label: haber }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: yo, haber: { aux: habría }, ar: [{ aux: habría }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: habría }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: tú, haber: { aux: habrías }, ar: [{ aux: habrías }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: habrías }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, haber: { aux: habría }, ar: [{ aux: habría }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: habría }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, haber: { aux: habríamos }, ar: [{ aux: habríamos }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: habríamos }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, haber: { aux: habríais }, ar: [{ aux: habríais }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: habríais }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, haber: { aux: habrían }, ar: [{ aux: habrían }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: habrían }, " ", { target: [com, { ending: ido }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: habría }, " es el condicional de ", { term: haber }, ", con la raíz irregular ", { term: "habr-" }, "."]
+          - type: rule
+            level: B2
+            text:
+              es: ["Los participios irregulares se mantienen: ", { term: hecho }, ", ", { term: dicho }, ", ", { term: visto }, ", ", { term: puesto }, "."]
+            ex: { examples: [["Yo ", { target: habría hecho }, " lo mismo."], ["Ella lo ", { target: habría dicho }, " antes."]] }
+          - type: rule
+            level: B2
+            text:
+              es: ["Los pronombres y ", { term: no }, " van delante de ", { term: habría }, ", y nada se pone entre ", { term: habría }, " y el participio:"]
+            ex: { examples: [["Yo no ", { target: se lo habría dicho }, "."], ["¿", { target: Te habría gustado }, " venir?"]] }
+
+  - title: { es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "El resultado de una condición irreal del pasado" }
+            ex: { examples: [["Si hubiera podido, ", { target: habría ido }, "."], ["Si no hubiera llovido, ", { target: habríamos salido }, " al campo."]] }
+          - level: B2
+            use: { es: "Un deseo o una sugerencia sobre el pasado, sin la condición" }
+            ex: { examples: [["Con ese calor, me ", { target: habría tomado }, " un helado."], ["Yo ", { target: habría llamado }, " al médico antes."]] }
+          - level: B2
+            use: { es: "Un reproche por lo que no se hizo" }
+            ex: { examples: [[{ target: Habrías podido }, " avisarme."], [{ target: Deberías haberme llamado }, "."]] }
+          - level: B2
+            use: { es: "Una conjetura sobre un hecho anterior a otro hecho pasado" }
+            ex: { examples: [["Nadie contestó: ", { target: habrían salido }, " de casa."], ["Ayer no vino a clase: ", { target: habría tenido }, " algún problema."]] }
+          - level: B2
+            use: { es: "El futuro perfecto del estilo directo, contado desde el pasado" }
+            ex: { examples: [["Dijo que para el viernes ", { target: habría terminado }, " el informe."], ["Creíamos que a esa hora ya ", { target: habríamos llegado }, "."]] }
+          - level: C1
+            use: { es: ["Una objeción: se admite lo supuesto y ", { term: pero }, " lo contradice"] }
+            ex: { examples: [[{ target: Habría estudiado }, " mucho, pero no se notó en el examen."], [{ target: Habrían trabajado }, " mucho, pero el resultado no lo muestra."]] }
+          - level: C1
+            use: { es: "Un contraste entre dos personas ante el mismo hecho pasado" }
+            ex: { examples: [["A ti te ", { target: habría dado }, " igual, pero a mí no."], ["Otros ", { target: habrían protestado }, ", pero yo me callé."]] }
+          - level: C2
+            use: { es: "Un temor o una advertencia sobre lo que pudo ocurrir" }
+            ex: { examples: [["¡Qué susto! ", { target: Te habrías roto }, " una pierna."], ["Callé: ¿no ", { target: habrías pensado }, " que fui yo?"]] }
+          - level: C2
+            use: { es: "El condicional periodístico: presenta como no confirmado un hecho anterior" }
+            ex: { examples: [["El incendio ", { target: se habría iniciado }, " a las tres de la madrugada."], ["Según la policía, los ladrones ", { target: habrían entrado }, " por el patio."]] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text:
+              es: ["El condicional periodístico es propio de la prensa; en la conversación se usa ", { term: según }, " con el indicativo."]
+            ex: ["Según la policía, los ladrones ", { target: entraron }, " por el patio."]
+
+  - title: { es: "Comparación: la secuencia de tiempos" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: relation, label: { es: Relación } }
+          - { key: present, label: { es: Desde el presente } }
+          - { key: past, label: { es: Desde el pasado } }
+        rows:
+          - level: C2
+            relation: { es: "posterioridad" }
+            present: ["Dice que ", { target: terminará }, " el viernes."]
+            past: ["Dijo que ", { target: terminaría }, " el viernes."]
+          - level: C2
+            relation: { es: "anterioridad a un momento posterior" }
+            present: ["Dice que para el viernes ", { target: habrá terminado }, "."]
+            past: ["Dijo que para el viernes ", { target: habría terminado }, "."]
+          - level: C2
+            relation: { es: "anterioridad al momento de referencia" }
+            present: ["Dice que ", { target: ha terminado }, "."]
+            past: ["Dijo que ", { target: había terminado }, "."]
+          - level: C2
+            relation: { es: "conjetura simultánea" }
+            present: ["Ahora ", { target: serán }, " las diez."]
+            past: ["Entonces ", { target: serían }, " las diez."]
+          - level: C2
+            relation: { es: "conjetura anterior" }
+            present: ["Ya ", { target: habrán salido }, "."]
+            past: ["Ya ", { target: habrían salido }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Si habría podido, habría ido.", right: ["Si ", { target: hubiera podido }, ", habría ido."], rule: { es: ["la condición con ", { term: si }, " lleva ", { term: hubiera }, " con participio, no ", { term: habría }] } }
+          - { level: B2, wrong: "Dijo que habrá terminado para el viernes.", right: ["Dijo que ", { target: habría terminado }, " para el viernes."], rule: { es: "después de un verbo en pasado, el futuro perfecto pasa a condicional compuesto" } }
+          - { level: B2, wrong: "Yo habría lo comprado.", right: ["Yo ", { target: lo habría comprado }, "."], rule: { es: ["el pronombre va delante de ", { term: habría }] } }
+          - { level: B2, wrong: "Yo habría ponido la mesa.", right: ["Yo ", { target: habría puesto }, " la mesa."], rule: { es: ["participio irregular: ", { mapping: [{ term: poner }, { term: puesto }] }] } }
+          - { level: B2, wrong: "Deberías llamarme ayer.", right: ["Deberías ", { target: haberme llamado }, " ayer."], rule: { es: "el reproche por un hecho pasado lleva el infinitivo compuesto" } }

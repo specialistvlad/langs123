@@ -1,0 +1,276 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.orden-palabras
+lang: es
+kind: grammar
+tags: [word-order, subject, topic, focus, clitics, sentence]
+concepts: [word-order]
+related: [es.pronombres.objeto-directo, es.oracion.preguntas-negacion, es.oracion.relativas, es.sustantivo-determinantes.articulos]
+status: { es: draft }
+
+title: { es: "El orden de las palabras", en: "Word Order" }
+summary:
+  lead:
+    es: "El tema abre la oración y el dato nuevo va al final: el sujeto sin determinante sigue al verbo y el foco rompe el orden habitual."
+  rule:
+    es: "Un objeto directo conocido que abre la oración se recoge con el pronombre átono:"
+  ex: ["Los libros ", { target: los }, " tiene Juan."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Sujeto sin determinante }
+          rule: { es: "va detrás del verbo" }
+          ex: { examples: [[{ target: "Han llegado trenes" }, " a la estación."], ["Se ", { target: "venden casas" }, "."]] }
+        - level: B2
+          point: { es: Objeto antepuesto }
+          rule: { es: "el pronombre átono recoge el tema conocido" }
+          ex: ["Los libros ", { target: los }, " tiene Juan."]
+        - level: B2
+          point: { es: Palabra negativa }
+          rule: { es: "el pronombre átono sigue siendo obligatorio" }
+          ex: ["El alcohol ni ", { target: lo }, " prueba."]
+        - level: C1
+          point: { es: Sujeto nuevo }
+          rule: { es: "va al final de la oración" }
+          ex: [{ target: "Llega mañana Pedro" }, "."]
+        - level: C1
+          point: { es: Tema sin determinante }
+          rule: { es: "un indefinido lo recoge detrás del verbo" }
+          ex: ["Abrigo, ", { target: "tengo uno" }, " viejo."]
+        - level: C1
+          point: { es: Contraste o indefinido }
+          rule: { es: "el objeto antepuesto no lleva pronombre" }
+          ex: { examples: [[{ target: "Este vestido" }, " he elegido, no aquel."], [{ target: Discos }, " tienen a montones."]] }
+        - level: C1
+          point: { es: Tema y pregunta }
+          rule: { es: "el tema abre la pregunta y el pronombre lo recoge" }
+          ex: ["A María, ¿", { target: la }, " has visto últimamente?"]
+        - level: C2
+          point: { es: Foco }
+          rule: { es: "el objeto con acento va delante, sin pronombre" }
+          ex: [{ target: "UNOS LIBROS" }, " quiere Juan."]
+        - level: C2
+          point: { es: Orden enfático }
+          rule: { es: [{ term: bonito }, ", ", { term: vaya }, " y ", { term: menudo }, " abren la frase"] }
+          ex: [{ target: "Menudo reloj" }, " se compró tu primo."]
+        - level: C2
+          point: { es: Relativo enfático }
+          rule: { es: [{ term: ser }, " une el relativo y el atributo"] }
+          ex: ["Lo que tú eres ", { target: es }, " un egoísta."]
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: "con el objeto interrogativo delante, no hay pronombre" }
+          ex: ["¿", { target: "Qué regalo has comprado" }, "?"]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: "en un inciso de cita, el verbo va delante del sujeto" }
+          ex: ["María, ", { target: "dijo Luis" }, ", no sabe nada."]
+
+sections:
+  - title: { es: El sujeto detrás del verbo }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: context, label: { es: Contexto } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            context: { es: "Sujeto sin determinante ni cuantificador" }
+            rule: { es: "Va detrás del verbo." }
+            ex: { examples: [[{ target: "Han llegado trenes" }, " a la estación."], [{ target: "Faltan médicos" }, " en el hospital."]] }
+          - level: B2
+            context: { es: "Pasiva refleja con se" }
+            rule: { es: "El sujeto sin determinante sigue al verbo, y el verbo concuerda con él." }
+            ex: { examples: [["Se ", { target: "venden casas" }, " en este barrio."], ["Se ", { target: "buscan cocineros" }, "."]] }
+          - level: B2
+            context: { es: "Sujeto con determinante o cuantificador" }
+            rule: { es: "Va delante o detrás del verbo." }
+            ex: { examples: [[{ target: "Todos los trenes han llegado" }, "."], [{ target: "Han llegado todos los trenes" }, "."]] }
+          - level: C1
+            context: { es: "Sujeto que da el dato nuevo" }
+            rule: { es: "Va al final de la oración, detrás de los demás complementos." }
+            ex: { exchange: ["¿Quién llega mañana?", [{ target: "Llega mañana Pedro" }, "."]] }
+          - level: C1
+            context: { es: "Inciso de cita" }
+            rule: { es: "El verbo de habla va siempre delante del sujeto." }
+            ex: { examples: [["María, ", { target: "dijo Luis" }, ", no sabe nada."], ["Esa casa, ", { target: "comentó mi tía" }, ", es muy cara."]] }
+          - level: C1
+            variety: es-419
+            context: { es: "Pregunta, en las Antillas, Panamá y Venezuela" }
+            rule: { es: "El pronombre sujeto puede ir delante del verbo." }
+            ex: { examples: [["¿", { target: "Qué tú dices" }, "?"], ["¿", { target: "Cómo tú te llamas" }, "?"]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { es: ["Los determinantes y los cuantificadores del sujeto: ver ", { link: El artículo, to: es.sustantivo-determinantes.articulos }, "."] }
+
+  - title: { es: Tema y pronombre átono }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: order, label: { es: Orden } }
+          - { key: does, label: { es: Qué hace } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            order: { pattern: [{ slot: { es: objeto directo } }, { slot: { es: pronombre átono } }, { slot: verb }, { slot: subject }] }
+            does: { es: "El objeto conocido abre la oración como tema, y el pronombre átono lo recoge." }
+            ex: { examples: [["Los libros ", { target: los }, " tiene Juan."], ["La llave ", { target: la }, " tengo yo."]] }
+          - level: B2
+            order: { es: "Tema dicho aparte" }
+            does: { es: "El tema va solo, y la oración siguiente lo recoge con el pronombre átono." }
+            ex: ["Mis ejercicios. No ", { target: los }, " veo."]
+          - level: B2
+            order: { es: ["Tema y ", { term: ni }, " o ", { term: nunca }] }
+            does: { es: "Con una palabra negativa de foco, el pronombre átono sigue siendo obligatorio." }
+            ex: { examples: [["El alcohol ni ", { target: lo }, " prueba."], ["Esa canción nunca ", { target: la }, " he cantado."]] }
+          - level: B2
+            order: { es: "Pregunta o exclamación con el objeto delante" }
+            does: { es: "El interrogativo o el exclamativo es el objeto, y no hay pronombre átono." }
+            ex: { examples: [["¿", { target: "Qué regalo has comprado" }, "?"], ["¡", { target: "Qué regalo has comprado" }, "!"]] }
+          - level: C1
+            order: { pattern: [{ slot: { es: nombre sin determinante } }, { slot: verb }, { slot: { es: indefinido } }] }
+            does: { es: "Un nombre sin determinante abre la oración como tema, y un indefinido lo recoge." }
+            ex: { examples: [["Abrigo, ", { target: "tengo uno" }, " viejo."], ["Libros, ", { target: "ya tengo bastantes" }, "."]] }
+          - level: C1
+            order: { es: "Contraste o corrección" }
+            does: { es: "El objeto antepuesto, sin pronombre, se opone a otro." }
+            ex: { examples: [[{ target: "Este vestido" }, " he elegido, no aquel."], [{ target: "Esas botas" }, " quiero, no estas."]] }
+          - level: C1
+            order: { es: "Tema indefinido" }
+            does: { es: "Un objeto indefinido antepuesto no lleva pronombre ni pausa." }
+            ex: { examples: [[{ target: Discos }, " tienen a montones."], [{ target: Trabajo }, " tiene de sobra."]] }
+          - level: C1
+            order: { es: "Tema y pregunta" }
+            does: { es: "El tema abre la pregunta, y el pronombre átono lo recoge dentro de ella." }
+            ex: { examples: [["A María, ¿", { target: la }, " has visto últimamente?"], ["A María, ¿quién ", { target: le }, " dijo eso?"]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { es: ["Las formas del pronombre átono: ver ", { link: El objeto directo y la a personal, to: es.pronombres.objeto-directo }, "."] }
+          - type: note
+            level: B2
+            text: { es: ["El lugar del sujeto en las preguntas: ver ", { link: Preguntas y negación, to: es.oracion.preguntas-negacion }, "."] }
+
+  - title: { es: Foco }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Patrón } }
+          - { key: meaning, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            pattern: { es: "Objeto con acento de intensidad" }
+            meaning: { es: "El objeto es el dato nuevo o el contraste, y no lleva pronombre átono." }
+            ex: { examples: [[{ target: "UNOS LIBROS" }, " quiere Juan."], [{ target: "UNA CASA" }, " busca mi hermana."]] }
+          - level: C2
+            pattern: { es: "Objeto con un verbo de deseo" }
+            meaning: { es: "El objeto antepuesto expresa el deseo de algo que otro tiene." }
+            ex: { examples: [[{ target: "Ese sueldo" }, " quisiera yo."], [{ target: "Esa suerte" }, " quisiera yo."]] }
+          - level: C2
+            pattern: { es: "Cuantificador antepuesto" }
+            meaning: { es: "Valora la cantidad, a menudo con reproche, y el sujeto va detrás." }
+            ex: { examples: [[{ target: "Mucho pides" }, " tú."], [{ target: "Mucho hablas" }, " tú."]] }
+          - level: C2
+            pattern: { pattern: [{ slot: adverb }, { slot: { es: pregunta } }] }
+            meaning: { es: "Un adverbio de lugar o de tiempo abre la pregunta y fija el marco." }
+            ex: { examples: [[{ target: Aquí }, ", ¿vas a trabajar?"], [{ target: Mañana }, ", ¿te quedas en casa?"]] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text: { es: "Las mayúsculas marcan el acento de intensidad del foco." }
+
+  - title: { es: Orden enfático }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Patrón } }
+          - { key: meaning, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            pattern: { pattern: [{ term: bonito }, { slot: noun }] }
+            meaning: { es: "Ironía: la frase valora lo contrario de lo que dice." }
+            ex: ["En ", { target: "bonito lío" }, " me has metido."]
+          - level: C2
+            pattern: { pattern: [{ term: vaya }, { slot: noun }, { optional: que }, { slot: clause }] }
+            meaning: { es: "Admiración o crítica ante lo que nombra el sustantivo." }
+            ex: [{ target: "Vaya casa" }, " ", { optional: que }, " tiene tu tío."]
+          - level: C2
+            pattern: { pattern: [{ term: menudo }, { slot: noun }, { slot: verb }] }
+            meaning: { es: "Ponderación, para bien o para mal, de lo que nombra el sustantivo." }
+            ex: [{ target: "Menudo reloj" }, " se compró tu primo."]
+          - level: C2
+            pattern: { pattern: [{ term: lo que }, { slot: clause }, { term: ser }, { slot: noun }] }
+            meaning: { es: "El atributo, lo más importante, va al final tras el verbo ser." }
+            ex: ["Lo que tú eres ", { target: es }, " un egoísta."]
+          - level: C2
+            pattern: { pattern: [{ term: quien }, { slot: clause }, { term: ser }, { slot: person }] }
+            meaning: { es: "El verbo ser concuerda con el pronombre que va al final." }
+            ex: ["Quien es un egoísta ", { target: eres }, " tú."]
+          - level: C2
+            pattern: { pattern: [{ term: ser }, { slot: { es: foco } }, { alternatives: [{ term: donde }, { term: cuando }, { term: como }] }, { slot: clause }] }
+            meaning: { es: "El foco, con acento, va entre el verbo ser y el relativo." }
+            ex: { examples: [["Es ", { target: ALLÍ }, " donde te dije."], ["Fue ", { target: AYER }, " cuando llamó Luis."]] }
+          - level: C2
+            pattern: { pattern: [{ term: el que }, { slot: { es: cuantificador } }, { slot: noun }, { slot: verb }] }
+            meaning: { es: "En un superlativo con relativo, el elemento cuantificado puede ir delante del verbo." }
+            ex: { equivalence: [["el cantante que ", { target: "más aplausos" }, " obtuvo"], ["el cantante que obtuvo ", { target: "más aplausos" }]] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            text: { es: ["Las oraciones de relativo y el modo de la subordinada: ver ", { link: Las oraciones de relativo, to: es.oracion.relativas }, "."] }
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "Los libros tiene Juan."
+            right: [{ target: "Los libros los tiene" }, " Juan."]
+            rule: { es: "un objeto conocido antepuesto se recoge con el pronombre átono" }
+          - level: B2
+            wrong: "¿Qué regalo lo has comprado?"
+            right: ["¿", { target: "Qué regalo has comprado" }, "?"]
+            rule: { es: "con el objeto interrogativo delante, no hay pronombre átono" }
+          - level: B2
+            wrong: "Trenes han llegado a la estación."
+            right: [{ target: "Han llegado trenes" }, " a la estación."]
+            rule: { es: "el sujeto sin determinante va detrás del verbo" }
+          - level: B2
+            wrong: "Se vende casas en este barrio."
+            right: ["Se ", { target: venden }, " casas en este barrio."]
+            rule: { es: "el verbo concuerda con el sujeto, también cuando va detrás" }
+          - level: C1
+            wrong: "María, Luis dijo, no sabe nada."
+            right: ["María, ", { target: "dijo Luis" }, ", no sabe nada."]
+            rule: { es: "en un inciso de cita, el verbo va delante del sujeto" }
+          - level: C1
+            wrong: "A María, ¿has visto últimamente?"
+            right: ["A María, ¿", { target: la }, " has visto últimamente?"]
+            rule: { es: "el tema que abre la pregunta se recoge con el pronombre átono" }
+          - level: C2
+            wrong: "Lo que tú eres un egoísta."
+            right: ["Lo que tú eres ", { target: es }, " un egoísta."]
+            rule: { es: [{ term: ser }, " une el relativo y el atributo"] }
+          - level: C2
+            wrong: "Quien es un egoísta es tú."
+            right: ["Quien es un egoísta ", { target: eres }, " tú."]
+            rule: { es: [{ term: ser }, " concuerda con el pronombre del final"] }

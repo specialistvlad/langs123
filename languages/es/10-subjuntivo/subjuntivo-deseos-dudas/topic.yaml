@@ -156,6 +156,36 @@ cheatsheet:
             vi: [{ term: creo que }, " và ", { term: pienso que }, " đi với thức chỉ định"]
           ex: ["Creo que ", { target: viene }, "."]
           tr: { en: "I think she's coming.", uk: "Думаю, вона прийде.", pt: "Acho que ela vem.", fr: "Je crois qu’elle vient.", de: "Ich glaube, dass sie kommt.", it: "Secondo me viene.", pl: "Myślę, że przyjdzie.", tr: "Bence geliyor.", id: "Saya kira dia akan datang.", vi: "Tôi nghĩ cô ấy sẽ đến." }
+        - level: B2
+          point: { es: Oración simple }
+          rule:
+            es: [{ term: que }, " con subjuntivo repite una orden"]
+          ex: { exchange: ["¿Qué has dicho?", [{ target: Que }, " te ", { target: vayas }, "."]] }
+        - level: B2
+          point: { es: Pasado }
+          rule:
+            es: "con un verbo principal en pasado, la influencia mantiene el subjuntivo"
+          ex: ["Aconsejó que ", { target: descansara }, "."]
+        - level: B2
+          point: { es: Cláusula de sujeto }
+          rule:
+            es: [{ term: resultar }, " pide indicativo; ", { term: faltar }, " y ", { term: bastar }, ", subjuntivo"]
+          ex: { examples: [["Resulta que ", { target: encontramos }, " el dinero."], ["Falta que ", { target: terminemos }, " esto."]] }
+        - level: C1
+          point: { es: Negación }
+          rule:
+            es: "un verbo negado cambia de sentido con el modo"
+          ex: { examples: [["No niega que ", { target: es }, " él."], ["No niega que ", { target: sea }, " él."]] }
+        - level: C1
+          point: { es: Infinitivo }
+          rule:
+            es: [{ term: creer }, ", ", { term: decir }, " y ", { term: pedir }, " admiten infinitivo o verbo conjugado"]
+          ex: { alternatives: [["Dijo ", { target: vivir }, " en Zaragoza"], ["Dijo ", { target: que vivía }, " en Zaragoza"]] }
+        - level: C2
+          point: { es: Cambio de sentido }
+          rule:
+            es: [{ term: entender }, ", ", { term: ver }, " y ", { term: decidir }, " cambian de significado con el modo"]
+          ex: { examples: [["Decidió que Luis ", { target: tenía }, " razón."], ["Decidió que Luis ", { target: se quedara }, "."]] }
         - level: B1
           point: { en: Trap, es: Trampa, uk: Пастка, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -336,6 +366,9 @@ sections:
           - level: B1
             ind: { ex: ["Estoy seguro de que ", { target: viene }, "."], tr: { en: "I'm sure he's coming.", uk: "Я впевнений, що він прийде.", pt: "Tenho certeza de que ele vem.", fr: "Je suis sûr qu’il vient.", de: "Ich bin sicher, dass er kommt.", it: "Sono sicuro che viene.", pl: "Jestem pewien, że przyjdzie.", tr: "Geleceğinden eminim.", id: "Saya yakin dia akan datang.", vi: "Tôi chắc là anh ấy sẽ đến." } }
             sbjv: { ex: ["Dudo que ", { target: venga }, "."], tr: { en: I doubt he's coming., uk: "Сумніваюся, що він прийде.", pt: "Duvido que ele venha.", fr: "Je doute qu’il vienne.", de: "Ich bezweifle, dass er kommt.", it: "Dubito che venga.", pl: "Wątpię, żeby przyszedł.", tr: "Geleceğinden şüpheliyim.", id: "Saya ragu dia akan datang.", vi: "Tôi nghi ngờ là anh ấy sẽ đến." } }
+          - level: B2
+            ind: ["Es cierto que lo ", { target: sabe }, "."]
+            sbjv: ["No es cierto que lo ", { target: sepa }, "."]
       - type: list
         items:
           - type: rule
@@ -384,6 +417,10 @@ sections:
               vi: [{ term: a lo mejor }, " diễn đạt phỏng đoán với thức chỉ định:"]
             ex: ["A lo mejor ", { target: viene }, " mañana."]
             tr: { en: "Maybe he'll come tomorrow.", uk: "Може, він прийде завтра.", pt: "Talvez ele venha amanhã.", fr: "Il viendra peut-être demain.", de: "Vielleicht kommt er morgen.", it: "Forse viene domani.", pl: "Może przyjdzie jutro.", tr: "Belki yarın gelir.", id: "Mungkin dia datang besok.", vi: "Có thể ngày mai anh ấy sẽ đến." }
+          - type: rule
+            level: B2
+            text:
+              es: ["Una certeza negada, como ", { term: no es cierto que }, " o ", { term: no es evidente que }, ", lleva subjuntivo."]
 
   - title: { en: "Use: judgements", es: "Uso: valoraciones", uk: "Ужиток: оцінки", pt: "Uso: avaliações", fr: "Emploi : appréciations", de: "Gebrauch: Bewertungen", it: "Uso: valutazioni", pl: "Użycie: oceny", tr: "Kullanım: değerlendirmeler", id: "Penggunaan: penilaian", vi: "Cách dùng: đánh giá" }
     role: use
@@ -470,6 +507,201 @@ sections:
               vi: "Đánh giá về con người nói chung thì dùng động từ nguyên mẫu:"
             ex: ["Es importante ", { target: dormir }, " bien."]
             tr: { en: "It's important to sleep well.", uk: "Важливо добре спати.", pt: "É importante dormir bem.", fr: "Il est important de bien dormir.", de: "Es ist wichtig, gut zu schlafen.", it: "È importante dormire bene.", pl: "Ważne jest, żeby dobrze spać.", tr: "İyi uyumak önemlidir.", id: "Penting untuk tidur dengan baik.", vi: "Ngủ ngon là điều quan trọng." }
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo principal } }
+          - { key: mood, label: { es: Modo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verb: [{ term: pensar }, ", ", { term: imaginar }, ", ", { term: ver }]
+            mood: { es: "Indicativo, también con un hecho pasado" }
+            ex: { examples: [["Imagino que ya ", { target: habrá vuelto }, "."], ["Pensaba que ya ", { target: había llegado }, "."], ["Vi que ya ", { target: se había ido }, "."]] }
+          - level: B2
+            verb: no decir que
+            mood: { es: Indicativo o subjuntivo }
+            ex: { alternatives: [["No me dijo que Luis ", { target: había venido }, "."], ["No me dijo que Luis ", { target: hubiera venido }, "."]] }
+          - level: B2
+            verb: hacer que, causar que
+            mood: { es: Subjuntivo }
+            ex: ["El frío hace que la gente se ", { target: quede }, " en casa."]
+
+  - title: { es: El subjuntivo en la oración simple }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: meaning, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            form: { pattern: [{ term: que }, { slot: { es: presente de subjuntivo } }] }
+            meaning: { es: Repetir una orden }
+            ex: { exchange: ["¿Qué has dicho?", [{ target: Que }, " te ", { target: vayas }, "."]] }
+          - level: B2
+            variety: es-419
+            form: { pattern: [{ term: capaz que }, { slot: { es: presente de subjuntivo } }] }
+            meaning: { es: "Una posibilidad, en México, las Antillas y Sudamérica" }
+            ex: [{ target: Capaz que }, " ", { target: llueva }, " esta noche."]
+          - level: C1
+            form: { pattern: [{ term: que }, { slot: { es: presente de subjuntivo } }] }
+            meaning: { es: "Dar una orden con impaciencia, sin orden previa" }
+            ex: ["¡", { target: Que }, " te ", { target: calles }, " de una vez, hombre!"]
+          - level: C1
+            form: { pattern: [{ term: así }, { slot: { es: presente de subjuntivo } }] }
+            meaning: { es: "Un deseo hostil, con desprecio" }
+            ex: [{ target: Así }, " te ", { target: lleves }, " un buen susto."]
+
+  - title: { es: El subjuntivo en el pasado }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo principal } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, verb: aconsejar que, ex: ["Aconsejó que ", { target: descansara }, "."] }
+          - { level: B2, verb: sugerir que, ex: ["Sugirió que lo ", { target: dejáramos }, " para otro día."] }
+          - { level: B2, verb: querer que, ex: ["Quería que me ", { target: quedara }, " a cenar."] }
+          - { level: B2, verb: provocar que, ex: ["La lluvia provocó que se ", { target: cancelara }, " el partido."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "Con un verbo principal en pasado, la influencia, el deseo y la causa mantienen el subjuntivo."
+          - type: note
+            level: B2
+            text:
+              es: ["La elección del tiempo: ", { link: "La correlación de tiempos con el subjuntivo", to: es.subjuntivo.subjuntivo-correlacion }, "."]
+
+  - title: { es: Cláusulas de sujeto }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo o estructura } }
+          - { key: mood, label: { es: Modo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verb: resultar que
+            mood: { es: Indicativo }
+            ex: ["Resulta que ", { target: encontramos }, " el dinero."]
+          - level: B2
+            verb: quedar claro que
+            mood: { es: Indicativo }
+            ex: ["Queda claro que ", { target: no piensas }, " hablar con él."]
+          - level: B2
+            verb: { pattern: [{ term: resultar }, { slot: adjective }, { term: que }] }
+            mood: { es: "Subjuntivo, si el adjetivo añade una valoración" }
+            ex: ["Resulta problemático que ", { target: vayas }, "."]
+          - level: B2
+            verb: faltar que, bastar que
+            mood: { es: "Subjuntivo, o infinitivo sin sujeto" }
+            ex: { examples: [{ equivalence: [["Falta que ", { target: terminemos }, " esto"], ["Falta ", { target: terminar }, " esto"]] }, ["Basta que lo ", { target: pidas }, "."]] }
+          - level: B2
+            verb: constar que
+            mood: { es: Indicativo }
+            ex: ["Consta que el contrato ", { target: se firmó }, " en mayo."]
+          - level: C1
+            verb: { es: [{ term: que }, " + subjuntivo al inicio de la oración"] }
+            mood: { es: Subjuntivo }
+            ex: { examples: [["Que ", { target: dijeras }, " eso acabó con su resistencia."], ["Que te ", { target: desentiendas }, " ahora atenta contra nuestros intereses."]] }
+          - level: C1
+            verb: { es: [{ term: dar pena }, ", ", { term: hacer falta }, ": verbos con un nombre incorporado"] }
+            mood: { es: Subjuntivo }
+            ex: { examples: [["Da pena que se ", { target: pierda }, " esa costumbre."], ["Hace falta que alguien lo ", { target: diga }, "."]] }
+          - level: C1
+            verb: [{ term: implicar }, ", ", { term: significar }, ", ", { term: demostrar }, ", ", { term: probar }]
+            mood: { es: Indicativo }
+            ex: { examples: [["Que no hayas aprobado esa asignatura implica que no ", { target: podrás }, " pasar de curso."], ["Estos datos demuestran que el plan ", { target: funciona }, "."]] }
+
+  - title: { es: Negación y cambio de modo }
+    role: use
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: ind, label: { es: Indicativo }, features: { mood: ind } }
+          - { key: sbjv, label: { es: Subjuntivo }, features: { mood: sbjv } }
+        rows:
+          - level: C1
+            verb: [{ term: ver }, ", percepción"]
+            ind: ["No ve que ", { target: hay }, " un letrero. ", { gloss: { es: "El letrero existe y no lo percibe." } }]
+            sbjv: ["No ve que ", { target: haya }, " un letrero. ", { gloss: { es: "No se afirma que exista." } }]
+          - level: C1
+            verb: [{ term: ver }, ", opinión"]
+            sbjv: ["No veo que ", { target: tengas }, " motivos. ", { gloss: { es: "Opino que no los tienes." } }]
+          - level: C1
+            verb: [{ term: negar }, " en una oración negativa"]
+            ind: ["No niega que ", { target: es }, " él. ", { gloss: { es: "Lo afirma." } }]
+            sbjv: ["No niega que ", { target: sea }, " él. ", { gloss: { es: "Lo admite con duda o con distancia." } }]
+          - level: C2
+            verb: { term: entender }
+            ind: ["Él entiende que esta ", { target: es }, " la mejor manera de solucionar el problema. ", { gloss: { es: "Lo cree." } }]
+            sbjv: ["Él entiende que ", { target: reacciones }, " así. ", { gloss: { es: "Lo comprende y lo acepta." } }]
+          - level: C2
+            verb: [{ term: ver }, ", darse cuenta"]
+            ind: ["No vio que ", { target: había }, " una farola y se estrelló. ", { gloss: { es: "No la percibió." } }]
+            sbjv: ["No vio que ", { target: estuvieras }, " tan agobiada. ", { gloss: { es: "No se dio cuenta." } }]
+          - level: C2
+            verb: { term: decidir }
+            ind: ["Decidió que Luis ", { target: tenía }, " razón. ", { gloss: { es: "Llegó a esa conclusión." } }]
+            sbjv: ["Decidió que Luis ", { target: se quedara }, ". ", { gloss: { es: "Lo dispuso así." } }]
+          - level: C2
+            verb: { term: acordar }
+            ind: ["Acordaron que el contrato ", { target: era }, " injusto. ", { gloss: { es: "Coincidieron en esa opinión." } }]
+            sbjv: ["Acordaron que el contrato se ", { target: revisara }, ". ", { gloss: { es: "Se pusieron de acuerdo para hacerlo." } }]
+          - level: C2
+            verb: { term: temerse }
+            ind: ["Me temo que ", { target: llegamos }, " tarde. ", { gloss: { es: "Lo supone, con pesar." } }]
+            sbjv: ["Me temo que ", { target: lleguemos }, " tarde. ", { gloss: { es: "Teme que pueda ocurrir." } }]
+          - level: C2
+            verb: [{ term: decir }, ", ", { term: confesar }, " en una oración negativa"]
+            ind: ["Yo no te dije que ", { target: tenía }, " novia. ", { gloss: { es: "Tenía novia, pero no te lo dije." } }]
+            sbjv: ["Yo no te dije que ", { target: tuviera }, " novia. ", { gloss: { es: "No afirmo que la tuviera." } }]
+
+  - title: { es: Infinitivo o verbo conjugado }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: inf, label: { es: Infinitivo }, features: { verbform: inf } }
+          - { key: conj, label: { es: Verbo conjugado } }
+        rows:
+          - level: C1
+            verb: creer
+            inf: ["Creí ", { target: morirme }, "."]
+            conj: ["Creí ", { target: que me moría }, "."]
+          - level: C1
+            verb: decir
+            inf: ["Dijo ", { target: vivir }, " en Zaragoza."]
+            conj: ["Dijo ", { target: que vivía }, " en Zaragoza."]
+          - level: C1
+            verb: pedir
+            inf: ["Pidió ", { target: salir }, ". ", { gloss: { es: "Él quería salir." } }]
+            conj: ["Pidió ", { target: que saliera }, ". ", { gloss: { es: "Otra persona debía salir." } }]
+          - level: C1
+            verb: rogar, suplicar
+            inf: ["Rogó al público ", { target: guardar }, " calma."]
+            conj: ["Rogó al público ", { target: que guardara }, " calma."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: ["Con ", { term: creer }, " y ", { term: decir }, ", el infinitivo es propio de la lengua escrita; la lengua oral prefiere el verbo conjugado."]
+          - type: rule
+            level: C1
+            text:
+              es: ["Con un complemento de persona, ", { term: rogar }, " y ", { term: suplicar }, " admiten infinitivo o verbo conjugado con el mismo significado."]
+          - type: note
+            level: C1
+            text:
+              es: ["El infinitivo o la oración conjugada como complemento de un nombre: ", { link: "Verbos, adjetivos y nombres con preposición", to: es.preposiciones.regimen-preposicional }, "."]
 
   - title: { en: Typical errors, es: Errores frecuentes, uk: Типові помилки, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
@@ -483,3 +715,5 @@ sections:
           - { level: B1, wrong: Quiero que yo vaya., right: ["Quiero ", { target: ir }, "."], rule: { en: "for “I want to go”, one subject takes the infinitive", es: "para decir que uno mismo quiere ir, un solo sujeto lleva infinitivo", uk: "щоб сказати «я хочу піти», з одним підметом уживають інфінітив", pt: "para dizer que você mesmo quer ir, um só sujeito leva infinitivo", fr: "pour dire que l’on veut y aller soi-même, un seul sujet prend l’infinitif", de: "um zu sagen, dass man selbst gehen will, steht bei einem Subjekt der Infinitiv", it: "per dire che si vuole andare di persona, un solo soggetto vuole l'infinito", pl: "żeby powiedzieć, że samemu chce się iść, przy jednym podmiocie używa się bezokolicznika", tr: "kişi kendisinin gitmek istediğini söylüyorsa tek özne mastar alır", id: "untuk mengatakan bahwa diri sendiri ingin pergi, satu subjek memakai infinitif", vi: "muốn nói chính mình muốn đi thì một chủ ngữ dùng động từ nguyên mẫu" } }
           - { level: B1, speakers: [en], wrong: Quiero tú vienes., right: ["Quiero que ", { target: vengas }, "."], rule: { en: ["“I want you to” is ", { term: quiero que }, " with the subjunctive"] } }
           - { level: B1, speakers: [uk], wrong: Quiero que viniste., right: ["Quiero que ", { target: vengas }, "."], rule: { uk: ["після ", { term: quiero que }, " іде теперішній час суб’юнктива, хоча українською після «щоб» кажемо минулий час: «хочу, щоб ти прийшов»"] } }
+          - { level: B2, wrong: Aconsejó que descansa., right: ["Aconsejó que ", { target: descansara }, "."], rule: { es: "tras un verbo principal en pasado, la influencia lleva subjuntivo en pasado" } }
+          - { level: B2, wrong: No es cierto que lo sabe., right: ["No es cierto que lo ", { target: sepa }, "."], rule: { es: [{ term: no es cierto que }, " lleva subjuntivo"] } }

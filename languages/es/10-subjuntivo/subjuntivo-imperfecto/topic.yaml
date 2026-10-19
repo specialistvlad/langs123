@@ -1,0 +1,278 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.subjuntivo.subjuntivo-imperfecto
+lang: es
+kind: grammar
+tags: [verbs, subjunctive, mood, past, imperfect]
+concepts: [subjunctive, past-tense]
+related: [es.subjuntivo.subjuntivo-formas, es.pasados.verbos-irregulares, es.subjuntivo.subjuntivo-deseos-dudas, es.oracion.condicionales, es.futuro-condicional.condicional-simple]
+status: { es: draft }
+
+title: { es: "El imperfecto de subjuntivo: hablara, hablase" }
+summary:
+  lead:
+    es: ["El imperfecto de subjuntivo, ", { term: hablara }, " o ", { term: hablase }, ", expresa deseos irreales, posibilidades remotas y lo que depende de un verbo en pasado."]
+  rule:
+    es: ["La raíz es el indefinido de ", { term: ellos }, " sin ", { term: "-ron" }, ", más ", { term: "-ra" }, " o ", { term: "-se" }, ":"]
+  ex: { examples: [["Si ", { target: tuviera }, " tiempo, iría."], ["Quería que ", { target: vinieras }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Forma }
+          rule:
+            pattern: [{ slot: { es: "indefinido de ellos sin -ron" } }, { alternatives: [{ ending: ra }, { ending: se }] }]
+          ex: { equivalence: [["Quería que ", { target: hablara }, "."], ["Quería que ", { target: hablase }, "."]] }
+        - level: B2
+          point: { es: Irregulares }
+          rule:
+            es: ["la raíz irregular del indefinido se mantiene: ", { mapping: [{ term: vinieron }, { term: viniera }] }]
+          ex: ["Esperaba que ", { target: vinieras }, " pronto."]
+        - level: B2
+          point: { es: Deseo irreal }
+          rule:
+            es: [{ term: ojalá }, " expresa un deseo improbable o imposible"]
+          ex: ["Ojalá ", { target: tuviera }, " más tiempo."]
+        - level: B2
+          point: { es: Posibilidad remota }
+          rule:
+            es: [{ alternatives: [{ term: quizá }, { term: "tal vez" }] }, " presentan la posibilidad como poco probable"]
+          ex: ["Tal vez ", { target: fuera }, " ella."]
+        - level: B2
+          point: { es: Cortesía }
+          rule:
+            es: "atenúa un deseo o una petición"
+          ex: [{ target: Quisiera }, " pedirle un favor."]
+        - level: B2
+          point: { es: Verbo principal en pasado }
+          rule:
+            es: "un deseo, una influencia, un sentimiento o una duda pasados piden imperfecto"
+          ex: ["Me pidió que ", { target: llamara }, " antes."]
+        - level: B2
+          point: { es: Condición }
+          rule:
+            es: [{ term: si }, " lleva imperfecto de subjuntivo y el resultado, condicional"]
+          ex: ["Si ", { target: tuviera }, " tiempo, iría."]
+        - level: C1
+          point: { es: Comparación irreal }
+          rule:
+            es: [{ alternatives: [{ term: "como si" }, { term: "igual que si" }] }, " comparan con algo irreal"]
+          ex: ["Habla como si lo ", { target: supiera }, " todo."]
+        - level: C1
+          point: { es: Otras subordinadas }
+          rule:
+            es: "las relativas, temporales, finales y concesivas con referencia pasada"
+          ex: ["Esperó hasta que ", { target: llegaras }, "."]
+        - level: C2
+          point: { es: Rechazo irónico }
+          rule:
+            es: [{ term: "qué más quisiera" }, " rechaza lo que parece un deseo"]
+          ex: ["¡Qué más ", { target: quisiera }, " yo!"]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: [{ term: "a lo mejor" }, " lleva indicativo"]
+          ex: ["A lo mejor ", { target: voy }, " mañana."]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: "la forma de nosotros lleva tilde"
+          ex: ["Si ", { target: tuviéramos }, " tiempo, iríamos."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Las formas en ", { term: "-ra" }, " y en ", { term: "-se" }, " tienen la misma raíz y el mismo valor."]
+            ex: { equivalence: [["Quería que ", { target: hablara }, "."], ["Quería que ", { target: hablase }, "."]] }
+          - type: note
+            level: B2
+            text:
+              es: ["Las gramáticas lo llaman también ", { term: "pretérito imperfecto de subjuntivo" }, " o ", { term: pretérito }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["El presente de subjuntivo está en ", { link: "El presente de subjuntivo: formas", to: es.subjuntivo.subjuntivo-formas }, "."]
+
+  - title: { es: "Forma: verbos regulares" }
+    role: form
+    features: { tense: pst, mood: sbjv }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+          - { key: ir, label: vivir }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: yo, ar: { alternatives: [["habla", { ending: ra }], ["habla", { ending: se }]] }, er: { alternatives: [["comie", { ending: ra }], ["comie", { ending: se }]] }, ir: { alternatives: [["vivie", { ending: ra }], ["vivie", { ending: se }]] } }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: tú, ar: { alternatives: [["habla", { ending: ras }], ["habla", { ending: ses }]] }, er: { alternatives: [["comie", { ending: ras }], ["comie", { ending: ses }]] }, ir: { alternatives: [["vivie", { ending: ras }], ["vivie", { ending: ses }]] } }
+          - { level: B2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, ar: { alternatives: [["habla", { ending: ra }], ["habla", { ending: se }]] }, er: { alternatives: [["comie", { ending: ra }], ["comie", { ending: se }]] }, ir: { alternatives: [["vivie", { ending: ra }], ["vivie", { ending: se }]] } }
+          - { level: B2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, ar: { alternatives: [["habl", { letter: á }, { ending: ramos }], ["habl", { letter: á }, { ending: semos }]] }, er: { alternatives: [["comi", { letter: é }, { ending: ramos }], ["comi", { letter: é }, { ending: semos }]] }, ir: { alternatives: [["vivi", { letter: é }, { ending: ramos }], ["vivi", { letter: é }, { ending: semos }]] } }
+          - { level: B2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, ar: { alternatives: [["habla", { ending: rais }], ["habla", { ending: seis }]] }, er: { alternatives: [["comie", { ending: rais }], ["comie", { ending: seis }]] }, ir: { alternatives: [["vivie", { ending: rais }], ["vivie", { ending: seis }]] } }
+          - { level: B2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, ar: { alternatives: [["habla", { ending: ran }], ["habla", { ending: sen }]] }, er: { alternatives: [["comie", { ending: ran }], ["comie", { ending: sen }]] }, ir: { alternatives: [["vivie", { ending: ran }], ["vivie", { ending: sen }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["La raíz es el indefinido de ", { term: ellos }, " sin ", { term: "-ron" }, ": ", { mapping: [{ term: hablaron }, { term: habla }] }, "."]
+          - type: rule
+            level: B2
+            text:
+              es: ["La forma de ", { term: nosotros }, " lleva tilde en la vocal que precede a ", { term: "-ramos" }, " y ", { term: "-semos" }, "."]
+            ex: { examples: [["Ojalá ", { target: habláramos }, " más."], ["Si ", { target: comiéramos }, " menos, estaríamos mejor."]] }
+
+  - title: { es: "Forma: verbos irregulares" }
+    role: form
+    features: { tense: pst, mood: sbjv }
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: pret, label: { es: Indefinido de ellos } }
+          - { key: sbjv, label: { es: Imperfecto de subjuntivo } }
+        rows:
+          - { level: B2, verb: { alternatives: [ser, ir] }, pret: fueron, sbjv: { target: fuera } }
+          - { level: B2, verb: tener, pret: tuvieron, sbjv: { target: tuviera } }
+          - { level: B2, verb: hacer, pret: hicieron, sbjv: { target: hiciera } }
+          - { level: B2, verb: decir, pret: dijeron, sbjv: { target: dijera } }
+          - { level: B2, verb: estar, pret: estuvieron, sbjv: { target: estuviera } }
+          - { level: B2, verb: poder, pret: pudieron, sbjv: { target: pudiera } }
+          - { level: B2, verb: venir, pret: vinieron, sbjv: { target: viniera } }
+          - { level: B2, verb: saber, pret: supieron, sbjv: { target: supiera } }
+          - { level: B2, verb: pedir, pret: pidieron, sbjv: { target: pidiera } }
+          - { level: B2, verb: dormir, pret: durmieron, sbjv: { target: durmiera } }
+          - { level: B2, verb: leer, pret: leyeron, sbjv: { target: leyera } }
+          - { level: B2, verb: traer, pret: trajeron, sbjv: { target: trajera } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "Cada verbo conserva en todas las personas la raíz irregular de su indefinido."
+            ex: ["Quería que ", { target: vinieras }, " conmigo."]
+          - type: rule
+            level: B2
+            text:
+              es: ["Después de ", { letter: j }, ", la terminación pierde la ", { letter: i }, ": ", { alternatives: [{ mapping: [{ term: dijeron }, { term: dijera }] }, { mapping: [{ term: trajeron }, { term: trajera }] }] }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["La tabla completa está en ", { link: "Tabla de verbos irregulares", to: es.pasados.verbos-irregulares }, "."]
+          - type: note
+            level: B2
+            variety: es-419
+            text:
+              es: ["En América, la forma en ", { term: "-ra" }, " es la habitual y la forma en ", { term: "-se" }, " es propia de la lengua formal y escrita."]
+
+  - title: { es: "Uso: en la oración simple" }
+    role: use
+    features: { tense: pst, mood: sbjv }
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: ["Un deseo improbable o irreal con ", { term: ojalá }, ", sobre el presente, el futuro o el pasado"] }
+            ex: { examples: [["Ojalá ", { target: tuviera }, " más tiempo."], ["Ojalá me ", { target: dieran }, " el trabajo el mes que viene."], ["Ojalá Ana ", { target: tuviera }, " suerte ayer en la entrevista."]] }
+          - level: B2
+            use: { es: ["Una posibilidad remota con ", { alternatives: [{ term: quizá }, { term: "tal vez" }] }] }
+            ex: { examples: [["Tal vez ", { target: fuera }, " ella."], ["Quizá ", { target: tuviera }, " razón."]] }
+          - level: B2
+            use: { es: [{ term: "a lo mejor" }, " no admite el subjuntivo y lleva indicativo"] }
+            ex: { examples: [["A lo mejor ", { target: voy }, " mañana."], ["A lo mejor ", { target: era }, " ella."]] }
+          - level: B2
+            use: { es: "La cortesía: un deseo o una petición atenuados" }
+            ex: { examples: [[{ target: Quisiera }, " ver ese abrigo."], [{ target: Quisiera }, " pedirle un favor."]] }
+          - level: C1
+            use: { es: ["Un deseo desdeñoso o desafiante con ", { term: así }, ", con el valor de ", { term: aunque }] }
+            ex: { examples: [[{ target: Así }, " tuviera que volver a empezar, no me rendiría."], [{ target: Así }, " me lo pidiera de rodillas, no se lo daría."]] }
+          - level: C1
+            use: { es: ["Un deseo inalcanzable con ", { term: quién }] }
+            ex: { examples: [["¡", { target: Quién }, " tuviera tus años!"], ["¡", { target: Quién }, " pudiera viajar contigo!"]] }
+          - level: C2
+            use: { es: ["El rechazo irónico de lo que parece un deseo, con ", { term: "qué más quisiera" }] }
+            ex: { exchange: ["¿Te vas de vacaciones a Cancún?", ["¡Qué más ", { target: quisiera }, " yo!"]] }
+          - level: C2
+            use: { es: ["La forma en ", { term: "-ra" }, " en lugar del condicional de ", { term: deber }] }
+            ex: { equivalence: [[{ target: Debieras }, " disculparte."], [{ target: Deberías }, " disculparte."]] }
+          - level: C2
+            use: { es: ["La alternancia de ", { term: "-ra" }, " y ", { term: "-se" }, " en el estilo literario, para no repetir la terminación"] }
+            ex: ["Pidió que se ", { target: sentaran }, " y ", { target: hablasen }, " con calma."]
+
+  - title: { es: "Uso: en la subordinada" }
+    role: use
+    features: { tense: pst, mood: sbjv }
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo o nexo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verb: { alternatives: [{ term: pedir que }, { term: exigir que }] }
+            ex: { examples: [["Me pidió que ", { target: llamara }, " antes."], ["Exigió que le ", { target: devolvieran }, " el dinero."]] }
+          - level: B2
+            verb: { alternatives: [{ term: alegrar que }, { term: molestar que }] }
+            ex: { examples: [["Me alegró que ", { target: llamaras }, "."], ["Me molestó que ", { target: llegaran }, " tarde."]] }
+          - level: B2
+            verb: { alternatives: [{ term: dudar que }, { term: no creer que }] }
+            ex: { examples: [["Dudaba que ", { target: fuera }, " verdad."], ["No creía que ", { target: pudiéramos }, " terminar."]] }
+          - level: B2
+            verb: { term: si }
+            ex: { examples: [["Si ", { target: tuviera }, " tiempo, iría."], ["Si ", { target: fuera }, " rico, viajaría más."]] }
+          - level: B2
+            verb: { term: "por si" }
+            ex: { examples: [["Cogí un paraguas por si ", { target: lloviera }, "."], ["Llevó dinero por si ", { target: hiciera }, " falta."]] }
+          - level: C1
+            verb: { alternatives: [{ term: "como si" }, { term: "igual que si" }] }
+            ex: { examples: [["Habla como si lo ", { target: supiera }, " todo."], ["Me mira igual que si no me ", { target: conociera }, "."]] }
+          - level: C1
+            verb: { es: "Una relativa de antecedente no específico" }
+            ex: { examples: [["Busqué a alguien que ", { target: supiera }, " ruso."], ["Quería una casa que ", { target: tuviera }, " jardín."]] }
+          - level: C1
+            verb: { alternatives: [{ term: hasta que }, { term: antes de que }] }
+            ex: { examples: [["Esperó hasta que ", { target: llegaras }, "."], ["Se fue antes de que ", { target: amaneciera }, "."]] }
+          - level: C1
+            verb: { alternatives: [{ term: para que }, { term: a fin de que }] }
+            ex: { examples: [["Lo explicó despacio para que todos ", { target: aprendieran }, "."], ["Habló bajo a fin de que nadie lo ", { target: oyera }, "."]] }
+          - level: C1
+            verb: { term: aunque }
+            ex: { examples: [["Aunque lo ", { target: supiera }, ", no te lo diría."], ["Aunque ", { target: lloviera }, ", saldríamos."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["Las condiciones: ", { link: "Las oraciones condicionales", to: es.oracion.condicionales }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["La elección del tiempo: ", { link: "La correlación de tiempos con el subjuntivo", to: es.subjuntivo.subjuntivo-correlacion }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "A lo mejor vaya.", right: ["A lo mejor ", { target: voy }, "."], rule: { es: [{ term: "a lo mejor" }, " lleva indicativo"] } }
+          - { level: B2, wrong: "Si tendría tiempo, iría.", right: ["Si ", { target: tuviera }, " tiempo, iría."], rule: { es: [{ term: si }, " lleva imperfecto de subjuntivo, no condicional"] } }
+          - { level: B2, wrong: "Si tuvieramos tiempo, iríamos.", right: ["Si ", { target: tuviéramos }, " tiempo, iríamos."], rule: { es: "la forma de nosotros lleva tilde" } }
+          - { level: B2, wrong: "Me pidió que llamaba antes.", right: ["Me pidió que ", { target: llamara }, " antes."], rule: { es: "tras un verbo de influencia en pasado va imperfecto de subjuntivo" } }
+          - { level: B2, wrong: "Dudaba que era verdad.", right: ["Dudaba que ", { target: fuera }, " verdad."], rule: { es: [{ term: dudar que }, " en pasado lleva imperfecto de subjuntivo"] } }
+          - { level: B2, wrong: "Quería que sabiera la verdad.", right: ["Quería que ", { target: supiera }, " la verdad."], rule: { es: ["la raíz sale del indefinido de ", { term: ellos }, ": ", { mapping: [{ term: supieron }, { term: supiera }] }] } }
+          - { level: C1, wrong: "Habla como si lo sabe todo.", right: ["Habla como si lo ", { target: supiera }, " todo."], rule: { es: [{ term: "como si" }, " lleva imperfecto de subjuntivo en una comparación irreal"] } }
+          - { level: C2, wrong: "¡Qué más quiero yo!", right: ["¡Qué más ", { target: quisiera }, " yo!"], rule: { es: ["el rechazo irónico lleva ", { term: quisiera }] } }

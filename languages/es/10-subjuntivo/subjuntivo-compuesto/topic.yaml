@@ -1,0 +1,243 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.subjuntivo.subjuntivo-compuesto
+lang: es
+kind: grammar
+tags: [verbs, subjunctive, mood, perfect, haber]
+concepts: [subjunctive, present-perfect, past-perfect]
+related: [es.subjuntivo.subjuntivo-formas, es.pasados.preterito-perfecto, es.pasados.pluscuamperfecto, es.pasados.verbos-irregulares, es.oracion.condicionales]
+status: { es: draft }
+
+title: { es: "El perfecto y el pluscuamperfecto de subjuntivo: haya hablado, hubiera hablado" }
+summary:
+  lead:
+    es: ["El subjuntivo compuesto une ", { term: haya }, " o ", { term: hubiera }, " con un participio: ", { term: haya llegado }, " nombra lo acabado y ", { term: hubiera llegado }, " lo anterior a un momento pasado."]
+  rule:
+    es: ["Un verbo principal en presente pide ", { term: haya }, ", y uno en pasado, ", { term: hubiera }, ":"]
+  ex: { examples: [["Espero que ", { target: hayas llegado }, "."], ["Esperaba que ", { target: hubieras llegado }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Forma }
+          rule:
+            es: { pattern: [{ alternatives: [{ term: haya }, { term: hayas }, { term: hayamos }, { term: hayan }] }, { slot: past participle }] }
+          ex: ["Me alegro de que ", { target: hayas venido }, "."]
+        - level: B2
+          point: { es: Forma }
+          rule:
+            es: { pattern: [{ alternatives: [{ term: hubiera }, { term: hubieras }, { term: hubiéramos }, { term: hubieran }] }, { slot: past participle }] }
+          ex: ["Ojalá ", { target: hubiera venido }, "."]
+        - level: B2
+          point: { es: Uso }
+          rule:
+            es: [{ term: haya }, ": una acción acabada en un tiempo que llega al presente"]
+          ex: ["Espero que ", { target: hayas dormido }, " bien."]
+        - level: B2
+          point: { es: Uso }
+          rule:
+            es: [{ term: hubiera }, ": una acción anterior a otra pasada, o que no ocurrió"]
+          ex: ["No creía que ", { target: hubiera llegado }, "."]
+        - level: B2
+          point: { es: Tiempo }
+          rule:
+            es: ["tras ", { term: cuando }, ", una acción futura anterior a otra"]
+          ex: ["Cuando el jefe ", { target: se haya ido }, ", hablamos."]
+        - level: B2
+          point: { es: Condición }
+          rule:
+            es: { pattern: [{ term: si }, { term: hubiera }, { slot: past participle }] }
+          ex: ["Si ", { target: hubieras llegado }, " antes, habrías visto el inicio."]
+        - level: C1
+          point: { es: Forma }
+          rule:
+            es: "un verbo formado sobre uno irregular mantiene su participio"
+          ex: { examples: [["Dudo que lo ", { target: haya descrito }, "."], ["Ojalá lo ", { target: hubiera devuelto }, "."]] }
+        - level: C1
+          point: { es: Uso }
+          rule:
+            es: ["tras una creencia negada, ", { term: haya }, " sustituye al futuro perfecto"]
+          ex: ["No pienso que se ", { target: haya quedado }, " dormido."]
+        - level: C2
+          point: { es: Uso }
+          rule:
+            es: ["con una referencia pasada, el imperfecto puede sustituir a ", { term: haya }]
+          ex: { alternatives: [["No creo que ", { target: haya salido }, " anoche."], ["No creo que ", { target: saliera }, " anoche."]] }
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: ["tras un verbo en pasado, ", { term: hubiera }, " y no ", { term: había }]
+          ex: ["Dudaba que lo ", { target: hubiera hecho }, "."]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: ["tras ", { term: cuando }, ", ", { term: haya }, " y no ", { term: habrá }]
+          ex: ["Cuando ", { target: haya terminado }, ", te llamo."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["El subjuntivo tiene dos tiempos compuestos: el ", { term: pretérito perfecto }, ", con ", { term: haya }, ", y el ", { term: pretérito pluscuamperfecto }, ", con ", { term: hubiera }, "."]
+            ex: { examples: [["Dudo que ", { target: haya llegado }, "."], ["Dudaba que ", { target: hubiera llegado }, "."]] }
+          - type: rule
+            level: B2
+            text:
+              es: ["Los pronombres y ", { term: no }, " van delante del auxiliar, y nada se pone entre el auxiliar y el participio."]
+            ex: { examples: [["Dudo que se lo ", { target: haya dicho }, "."], ["Dudaba que me ", { target: hubieras visto }, "."]] }
+          - type: note
+            level: B2
+            text:
+              es: ["Equivalen al ", { link: El pretérito perfecto, to: es.pasados.preterito-perfecto }, " y al ", { link: El pluscuamperfecto, to: es.pasados.pluscuamperfecto }, " del indicativo."]
+          - type: note
+            level: B2
+            text:
+              es: ["El auxiliar es ", { term: haber }, " en subjuntivo: ", { link: "El presente de subjuntivo: formas", to: es.subjuntivo.subjuntivo-formas }, " y ", { link: "El imperfecto de subjuntivo", to: es.subjuntivo.subjuntivo-imperfecto }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["Cuándo se usa el subjuntivo: ", { link: "El subjuntivo: deseos, dudas y opiniones", to: es.subjuntivo.subjuntivo-deseos-dudas }, "; la elección del tiempo: ", { link: La correlación de tiempos con el subjuntivo, to: es.subjuntivo.subjuntivo-correlacion }, "."]
+
+  - title: { es: "Forma: pretérito perfecto" }
+    role: form
+    features: { tense: prs, aspect: prf, mood: sbjv }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: haber, label: haber }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: yo, haber: { aux: haya }, ar: [{ aux: haya }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: haya }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: tú, haber: { aux: hayas }, ar: [{ aux: hayas }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hayas }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, haber: { aux: haya }, ar: [{ aux: haya }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: haya }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, haber: { aux: hayamos }, ar: [{ aux: hayamos }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hayamos }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, haber: { aux: hayáis }, ar: [{ aux: hayáis }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hayáis }, " ", { target: [com, { ending: ido }] }] }
+          - { level: B2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, haber: { aux: hayan }, ar: [{ aux: hayan }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hayan }, " ", { target: [com, { ending: ido }] }] }
+
+  - title: { es: "Forma: pretérito pluscuamperfecto" }
+    role: form
+    features: { tense: pst, aspect: prf, mood: sbjv }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: haber, label: haber }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+        rows:
+          - { level: B2, features: { person: 1, number: sg }, person: yo, haber: { alternatives: [{ aux: hubiera }, { aux: hubiese }] }, ar: { alternatives: [[{ aux: hubiera }, " ", { target: [habl, { ending: ado }] }], [{ aux: hubiese }, " ", { target: [habl, { ending: ado }] }]] }, er: { alternatives: [[{ aux: hubiera }, " ", { target: [com, { ending: ido }] }], [{ aux: hubiese }, " ", { target: [com, { ending: ido }] }]] } }
+          - { level: B2, features: { person: 2, number: sg, politeness: infm }, person: tú, haber: { alternatives: [{ aux: hubieras }, { aux: hubieses }] }, ar: { alternatives: [[{ aux: hubieras }, " ", { target: [habl, { ending: ado }] }], [{ aux: hubieses }, " ", { target: [habl, { ending: ado }] }]] }, er: { alternatives: [[{ aux: hubieras }, " ", { target: [com, { ending: ido }] }], [{ aux: hubieses }, " ", { target: [com, { ending: ido }] }]] } }
+          - { level: B2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, haber: { alternatives: [{ aux: hubiera }, { aux: hubiese }] }, ar: { alternatives: [[{ aux: hubiera }, " ", { target: [habl, { ending: ado }] }], [{ aux: hubiese }, " ", { target: [habl, { ending: ado }] }]] }, er: { alternatives: [[{ aux: hubiera }, " ", { target: [com, { ending: ido }] }], [{ aux: hubiese }, " ", { target: [com, { ending: ido }] }]] } }
+          - { level: B2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, haber: { alternatives: [{ aux: hubiéramos }, { aux: hubiésemos }] }, ar: { alternatives: [[{ aux: hubiéramos }, " ", { target: [habl, { ending: ado }] }], [{ aux: hubiésemos }, " ", { target: [habl, { ending: ado }] }]] }, er: { alternatives: [[{ aux: hubiéramos }, " ", { target: [com, { ending: ido }] }], [{ aux: hubiésemos }, " ", { target: [com, { ending: ido }] }]] } }
+          - { level: B2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, haber: { alternatives: [{ aux: hubierais }, { aux: hubieseis }] }, ar: { alternatives: [[{ aux: hubierais }, " ", { target: [habl, { ending: ado }] }], [{ aux: hubieseis }, " ", { target: [habl, { ending: ado }] }]] }, er: { alternatives: [[{ aux: hubierais }, " ", { target: [com, { ending: ido }] }], [{ aux: hubieseis }, " ", { target: [com, { ending: ido }] }]] } }
+          - { level: B2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, haber: { alternatives: [{ aux: hubieran }, { aux: hubiesen }] }, ar: { alternatives: [[{ aux: hubieran }, " ", { target: [habl, { ending: ado }] }], [{ aux: hubiesen }, " ", { target: [habl, { ending: ado }] }]] }, er: { alternatives: [[{ aux: hubieran }, " ", { target: [com, { ending: ido }] }], [{ aux: hubiesen }, " ", { target: [com, { ending: ido }] }]] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: hubiera }, " y ", { term: hubiese }, " valen igual; ", { term: hubiese }, " es más frecuente en España y en la lengua escrita."]
+            ex: { equivalence: [["Ojalá ", { target: hubiera venido }, "."], ["Ojalá ", { target: hubiese venido }, "."]] }
+
+  - title: { es: "Forma: participios irregulares" }
+    role: form
+    features: { aspect: prf, mood: sbjv }
+    content:
+      - type: usage
+        columns:
+          - { key: participle, label: { es: Verbo y participio } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, participle: { mapping: [{ term: hacer }, { term: hecho }] }, ex: ["Es raro que ya lo ", { target: hayan hecho }, "."] }
+          - { level: B2, participle: { mapping: [{ term: escribir }, { term: escrito }] }, ex: ["No creo que Marta ", { target: haya escrito }, " esa carta."] }
+          - { level: B2, participle: { mapping: [{ term: ver }, { term: visto }] }, ex: ["Ojalá lo ", { target: hubieras visto }, "."] }
+          - { level: C1, participle: { mapping: [{ term: describir }, { term: descrito }] }, ex: ["Dudo que lo ", { target: haya descrito }, " bien."] }
+          - { level: C1, participle: { mapping: [{ term: devolver }, { term: devuelto }] }, ex: ["Ojalá lo ", { target: hubiera devuelto }, " a tiempo."] }
+          - { level: C1, participle: { mapping: [{ term: componer }, { term: compuesto }] }, ex: ["No creía que ", { target: hubiera compuesto }, " esa canción."] }
+          - { level: C1, participle: { mapping: [{ term: deshacer }, { term: deshecho }] }, ex: ["Es raro que ya ", { target: hayan deshecho }, " la maleta."] }
+          - { level: C1, participle: { mapping: [{ term: contradecir }, { term: contradicho }] }, ex: ["Me sorprendió que te ", { target: hubieras contradicho }, "."] }
+          - { level: C1, participle: { mapping: [{ term: prever }, { term: previsto }] }, ex: ["No creo que nadie lo ", { target: haya previsto }, "."] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["Todos los participios irregulares en una tabla: ", { link: Tabla de verbos irregulares, to: es.pasados.verbos-irregulares }, "."]
+          - type: rule
+            level: C1
+            text:
+              es: "Un verbo formado sobre uno irregular mantiene su participio en los dos tiempos."
+
+  - title: { es: "Uso: pretérito perfecto" }
+    role: use
+    features: { tense: prs, aspect: prf, mood: sbjv }
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "El subjuntivo del pretérito perfecto: una acción acabada en un tiempo que llega al presente" }
+            ex: { examples: [["No es cierto que Marta ", { target: haya escrito }, " esa carta."], ["Espero que ", { target: hayas dormido }, " bien."], ["Me alegro de que ", { target: hayas venido }, "."]] }
+          - level: B2
+            use: { es: ["Tras ", { term: cuando }, ", una acción futura anterior a otra: ", { term: haya }, " o el presente"] }
+            ex: { alternatives: [["Cuando el jefe ", { target: se haya ido }, ", hablamos."], ["Cuando el jefe ", { target: se vaya }, ", hablamos."]] }
+          - level: C1
+            use: { es: ["Tras una creencia negada, ", { term: haya }, " sustituye al futuro perfecto de la afirmación"] }
+            ex: { examples: [{ contrast: ["Pienso que se habrá quedado dormido.", ["No pienso que se ", { target: haya quedado }, " dormido."]] }, { contrast: ["Creo que ya habrán llegado.", ["No creo que ya ", { target: hayan llegado }, "."]] }] }
+          - level: C2
+            use: { es: "Con una referencia pasada, el imperfecto de subjuntivo puede sustituir al perfecto" }
+            ex: { alternatives: [["No creo que mi vecino ", { target: haya salido }, " anoche sin avisar."], ["No creo que mi vecino ", { target: saliera }, " anoche sin avisar."]] }
+
+  - title: { es: "Uso: pretérito pluscuamperfecto" }
+    role: use
+    features: { tense: pst, aspect: prf, mood: sbjv }
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "Una acción anterior a otra acción pasada, tras un verbo principal en pasado" }
+            ex: { examples: [["No creía que Rosa ya ", { target: hubiera llegado }, "."], ["Me alegró que ", { target: hubieras venido }, "."]] }
+          - level: B2
+            use: { es: ["Un deseo sobre un hecho pasado que no ocurrió, con ", { term: ojalá }] }
+            ex: { examples: [["Ojalá ", { target: hubieras llamado }, " antes."], ["Ojalá no ", { target: hubiéramos salido }, " tan tarde."]] }
+          - level: B2
+            use: { es: ["La condición irreal del pasado: ", { term: si }, " con ", { term: hubiera }, " o ", { term: hubiese }] }
+            ex: { examples: [["Si ", { target: hubieras llegado }, " antes, habrías visto el inicio."], ["Si ", { target: hubiese salido }, " temprano, no habría perdido el tren."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["La oración condicional completa: ", { link: Las oraciones condicionales, to: es.oracion.condicionales }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Dudo que ha llegado.", right: ["Dudo que ", { target: haya llegado }, "."], rule: { es: "un verbo de duda pide haya y el participio, no el pretérito perfecto de indicativo" } }
+          - { level: B2, wrong: "No creía que había llegado.", right: ["No creía que ", { target: hubiera llegado }, "."], rule: { es: ["tras un verbo en pasado, la anterioridad lleva ", { term: hubiera }, ", no ", { term: había }] } }
+          - { level: B2, wrong: "Cuando se habrá marchado, avisamos.", right: ["Cuando ", { target: se haya marchado }, ", avisamos."], rule: { es: ["tras ", { term: cuando }, ", la acción futura anterior lleva ", { term: haya }, ", no ", { term: habrá }] } }
+          - { level: B2, wrong: "Si habría llegado antes, habría visto el inicio.", right: ["Si ", { target: hubiera llegado }, " antes, habría visto el inicio."], rule: { es: ["la condición con ", { term: si }, " lleva ", { term: hubiera }, ", no ", { term: habría }] } }
+          - { level: B2, wrong: "Ojalá habría venido.", right: ["Ojalá ", { target: hubiera venido }, "."], rule: { es: [{ term: ojalá }, " lleva subjuntivo, no condicional"] } }
+          - { level: B2, wrong: "No creo que haya escribido esa carta.", right: ["No creo que ", { target: haya escrito }, " esa carta."], rule: { es: ["participio irregular: ", { mapping: [{ term: escribir }, { term: escrito }] }] } }
+          - { level: B2, wrong: "No creo que haya lo visto.", right: ["No creo que ", { target: lo haya visto }, "."], rule: { es: ["el pronombre va delante de ", { term: haya }] } }
+          - { level: C1, wrong: "No pienso que se habrá quedado dormido.", right: ["No pienso que se ", { target: haya quedado }, " dormido."], rule: { es: ["tras una creencia negada, ", { term: haya }, " sustituye al futuro perfecto"] } }
+          - { level: C1, wrong: "Dudo que haya describido el paisaje.", right: ["Dudo que ", { target: haya descrito }, " el paisaje."], rule: { es: ["un verbo formado sobre ", { term: escribir }, " mantiene su participio: ", { mapping: [{ term: describir }, { term: descrito }] }] } }

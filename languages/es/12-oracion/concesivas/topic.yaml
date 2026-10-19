@@ -1,0 +1,266 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.concesivas
+lang: es
+kind: grammar
+tags: [concessive, subjunctive, linkers, sentence]
+concepts: [linkers, concession]
+related: [es.oracion.conectores, es.oracion.condicionales, es.subjuntivo.subjuntivo-deseos-dudas, es.subjuntivo.subjuntivo-formas]
+status: { es: draft }
+
+title: { es: "Las oraciones concesivas: aunque, a pesar de que, por más que" }
+summary:
+  lead:
+    es: ["Las concesivas admiten un obstáculo sin cambiar el resultado: ", { term: aunque }, ", ", { term: a pesar de que }, " y ", { term: por más que }, "."]
+  rule:
+    es: ["Con indicativo, ", { term: aunque }, " da un dato nuevo; con subjuntivo, un dato conocido o una posibilidad:"]
+  ex: { examples: [["Aunque ", { target: "está lloviendo" }, ", voy a correr."], ["Aunque ", { target: "esté lloviendo" }, ", voy a correr."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Aunque con indicativo }
+          rule: { es: "un hecho real o una información nueva" }
+          ex: ["Aunque ", { target: "me duele" }, " la cabeza, voy a trabajar."]
+        - level: B2
+          point: { es: Aunque con presente de subjuntivo }
+          rule: { es: "un hecho conocido sin importancia, o una posibilidad" }
+          ex: { examples: [["Aunque ", { target: esté }, " lloviendo, voy a correr."], ["Aunque me lo ", { target: pidas }, " mil veces, no lo haré."]] }
+        - level: B2
+          point: { es: Aunque con imperfecto de subjuntivo }
+          rule: { es: "una hipótesis, con el condicional en la principal" }
+          ex: ["Aunque me lo ", { target: pidieras }, " mil veces, no lo haría."]
+        - level: B2
+          point: { es: Otros nexos }
+          rule: { es: [{ term: a pesar de que }, " y ", { term: por más que }, " admiten indicativo y subjuntivo"] }
+          ex: { examples: [["Por más que ", { target: "lo intenté" }, ", no pude abrirla."], ["Por más que ", { target: "lo intente" }, ", no podrá abrirla."]] }
+        - level: B2
+          point: { es: Con si }
+          rule: { es: [{ term: incluso si }, " y ", { term: ["tanto si ", { gap: true }, " como si"] }, " llevan indicativo"] }
+          ex: [{ target: "Tanto si llueve como si no" }, ", saldremos."]
+        - level: C1
+          point: { es: Reduplicadas }
+          rule: { es: "el verbo se repite en subjuntivo con un relativo" }
+          ex: [{ target: "Pase lo que pase" }, ", te ayudaré."]
+        - level: C1
+          point: { es: Nexos formales }
+          rule: { es: [{ term: si bien }, " y ", { term: aun cuando }, " abren un obstáculo en lengua formal"] }
+          ex: [{ target: "Si bien" }, " lo sabía, no dijo nada."]
+        - level: C1
+          point: { es: Ponderativas }
+          rule: { es: [{ term: con lo que }, " con indicativo pondera la cantidad"] }
+          ex: [{ target: "Con lo que" }, " llueve, ¿vas a salir?"]
+        - level: C2
+          point: { es: Así con subjuntivo }
+          rule: { es: [{ term: así }, " con subjuntivo equivale a ", { term: aunque }, " en el habla informal"] }
+          ex: ["No lo vendo, ", { target: "así me ofrezcan" }, " un millón."]
+        - level: C2
+          point: { es: Correlativas }
+          rule: { es: "dos opciones con subjuntivo: da igual cuál se elija" }
+          ex: [{ target: "Que lo diga o que lo calle" }, ", me da igual."]
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: [{ term: aunque }, " ya contrasta: no lleva ", { term: pero }] }
+          ex: [{ target: "Aunque llueve" }, ", salgo."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "Una oración concesiva expresa un obstáculo que no impide la acción de la oración principal."
+            ex: ["Aunque ", { target: "estoy cansada" }, ", salgo con mis amigos."]
+          - type: rule
+            level: B2
+            text:
+              es: "Cualquiera de las dos partes puede ir primero; una coma sigue a la concesiva cuando abre la frase."
+            ex: { examples: [[{ target: "Aunque llueve" }, ", salgo."], ["Salgo ", { target: "aunque llueve" }, "."]] }
+          - type: note
+            level: B2
+            text:
+              es: [{ term: aunque }, " como conector de contraste: ", { link: Los conectores, to: es.oracion.conectores }, "; la condición con ", { term: si }, ": ", { link: Las oraciones condicionales, to: es.oracion.condicionales }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["Las formas del subjuntivo: ", { link: "El presente de subjuntivo: formas", to: es.subjuntivo.subjuntivo-formas }, " y ", { link: El imperfecto de subjuntivo, to: es.subjuntivo.subjuntivo-imperfecto }, "."]
+
+  - title: { es: Aunque con indicativo y con subjuntivo }
+    role: use
+    content:
+      - type: comparison
+        columns:
+          - { key: mood, label: { es: Modo } }
+          - { key: meaning, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            features: { mood: ind }
+            mood: { es: indicativo }
+            meaning: { es: "un hecho real; información nueva para quien escucha" }
+            ex: { examples: [["Aunque ", { target: "me duele" }, " la cabeza, voy a trabajar."], ["Aunque ", { target: "está lloviendo" }, ", voy a correr."]] }
+          - level: B2
+            features: { mood: sbjv }
+            mood: { es: presente de subjuntivo }
+            meaning: { es: "un hecho conocido que no importa" }
+            ex: ["Aunque ", { target: "esté lloviendo" }, ", voy a correr."]
+          - level: B2
+            features: { mood: sbjv }
+            mood: { es: perfecto de subjuntivo }
+            meaning: { es: "un hecho pasado ya conocido" }
+            ex: ["Aunque te lo ", { target: "haya dicho" }, " Ana, no vayas."]
+          - level: B2
+            features: { mood: sbjv }
+            mood: { es: presente de subjuntivo }
+            meaning: { es: "una posibilidad en el futuro" }
+            ex: ["Aunque me lo ", { target: pidas }, " mil veces, no lo haré."]
+          - level: B2
+            features: { mood: sbjv }
+            mood: { es: imperfecto de subjuntivo }
+            meaning: { es: "una hipótesis poco probable" }
+            ex: ["Aunque me lo ", { target: pidieras }, " mil veces, no lo haría."]
+          - level: B2
+            features: { mood: cond }
+            mood: { es: condicional }
+            meaning: { es: "una hipótesis dada como información nueva" }
+            ex: ["Aunque ", { target: viviría }, " mejor allí, prefiero quedarme aquí."]
+
+  - title: { es: Otros nexos }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { es: Nexo } }
+          - { key: mood, label: { es: Modo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            linker: a pesar de que
+            mood: { es: "indicativo para un hecho real; subjuntivo para una posibilidad" }
+            ex: { examples: [["A pesar de que ", { target: "me duele" }, " la cabeza, voy a trabajar."], ["A pesar de que ", { target: "no sea" }, " fácil, voy a intentarlo."]] }
+          - level: B2
+            linker: a pesar de
+            mood: { es: "sin verbo conjugado: sustantivo o infinitivo" }
+            ex: { examples: [[{ target: "A pesar del" }, " frío, salimos."], [{ target: "A pesar de" }, " estar enfermo, fue a trabajar."]] }
+          - level: B2
+            linker: { alternatives: [por más que, por mucho que, por poco que] }
+            mood: { es: "indicativo para un hecho pasado y real; subjuntivo para el presente y el futuro" }
+            ex: { examples: [["Por más que ", { target: "lo intenté" }, ", no pude abrirla."], ["Por más que ", { target: "lo intente" }, ", no podrá abrirla."]] }
+          - level: B2
+            linker: { pattern: [por, { alternatives: [muchos, pocos] }, { slot: noun }, que] }
+            mood: { es: "subjuntivo para el presente y el futuro" }
+            ex: ["Por muchos libros que ", { target: leas }, ", no lo sabrás todo."]
+          - level: B2
+            linker: { pattern: [por, muy, { slot: adjective }, que] }
+            mood: { es: "subjuntivo para el presente y el futuro" }
+            ex: ["Por muy cansado que ", { target: esté }, ", vendrá."]
+          - level: B2
+            linker: y eso que
+            mood: { es: "indicativo; lengua informal" }
+            ex: ["Fue a trabajar, ", { target: "y eso que" }, " le dolía la cabeza."]
+          - level: C1
+            linker: { alternatives: [aun si, aun cuando, incluso cuando] }
+            mood: { es: "indicativo o subjuntivo" }
+            ex: { examples: [["Salió a correr ", { target: "aun cuando" }, " llovía mucho."], [{ target: "Aun cuando" }, " llueva, saldremos."]] }
+          - level: C1
+            linker: si bien
+            mood: { es: "indicativo; lengua formal" }
+            ex: [{ target: "Si bien" }, " lo sabía, no dijo nada."]
+          - level: C1
+            linker: { alternatives: [incluso si, ni siquiera si] }
+            mood: { es: "imperfecto de subjuntivo para una hipótesis" }
+            ex: { examples: [[{ target: "Incluso si" }, " me lo pidiera, no iría."], [{ target: "Ni siquiera si" }, " me lo pidiera, se lo diría."]] }
+          - level: C2
+            linker: así
+            mood: { es: "subjuntivo; lengua informal" }
+            ex: ["No lo vendo, ", { target: "así me ofrezcan" }, " un millón."]
+          - level: C2
+            linker: porque
+            mood: { es: "subjuntivo, para una causa que no basta" }
+            ex: [{ target: "Porque hables" }, " más fuerte, no tienes más razón."]
+          - level: C2
+            linker: por más que
+            mood: { es: "subjuntivo, con una negativa firme en la principal" }
+            ex: ["Por más que ", { target: insistas }, ", no pienso ir."]
+          - level: C2
+            linker: a riesgo de que
+            mood: { es: subjuntivo }
+            ex: [{ target: "A riesgo de que" }, " se enfade, voy a decírselo."]
+          - level: C2
+            linker: { pattern: [tan, { slot: adjective }, como] }
+            mood: { es: "indicativo; con tono de reproche" }
+            ex: [{ target: "Tan cerca como" }, " vive y nunca nos visita."]
+
+  - title: { es: Concesivas y condicionales }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [{ term: incluso si }, { slot: { es: verbo en indicativo } }] }
+            ex: [{ target: "Incluso si llueve" }, ", saldremos."]
+          - level: B2
+            pattern: { pattern: [{ term: tanto si }, { slot: clause }, { term: como si }, { slot: clause }] }
+            ex: { examples: [[{ target: "Tanto si llueve como si no" }, ", saldremos."], [{ target: "Tanto si lo dices como si lo callas" }, ", ya lo sabe."]] }
+
+  - title: { es: Concesivas reduplicadas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            pattern: { pattern: [{ slot: { es: subjuntivo } }, { term: lo que }, { slot: { es: subjuntivo } }] }
+            ex: { examples: [[{ target: "Digan lo que digan" }, ", me voy."], [{ target: "Pase lo que pase" }, ", te ayudaré."]] }
+          - level: C1
+            pattern: { pattern: [{ slot: { es: subjuntivo } }, { alternatives: [quien, donde, cuando, como] }, { slot: { es: subjuntivo } }] }
+            ex: { examples: [[{ target: "Venga quien venga" }, ", no abras."], [{ target: "Vayas donde vayas" }, ", te encontraré."], [{ target: "Sea como sea" }, ", lo termino hoy."]] }
+          - level: C2
+            pattern: { pattern: [{ term: ya }, { slot: { es: subjuntivo } }, { term: ya }, { slot: { es: subjuntivo } }] }
+            ex: [{ target: "Ya llore, ya grite" }, ", no cambiaré de opinión."]
+          - level: C2
+            pattern: { pattern: [{ term: que }, { slot: { es: subjuntivo } }, { term: o que }, { slot: { es: subjuntivo } }] }
+            ex: [{ target: "Que lo diga o que lo calle" }, ", me da igual."]
+
+  - title: { es: Concesivas ponderativas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            pattern: { pattern: [{ term: con lo que }, { slot: { es: verbo en indicativo } }] }
+            ex: { examples: [[{ target: "Con lo que" }, " llueve, ¿vas a salir?"], [{ target: "Con lo que" }, " estudió y suspendió el examen."]] }
+          - level: C1
+            pattern: { pattern: [con, { alternatives: [el, la, lo] }, { slot: noun }, que, { slot: clause }] }
+            ex: [{ target: "Con el frío que" }, " hace, sales sin abrigo."]
+          - level: C1
+            pattern: { pattern: [con, la de, { slot: plural noun }, que, { slot: clause }] }
+            ex: [{ target: "Con la de zapatos que" }, " tienes, te pones los rotos."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Aunque llueve, pero salgo.", right: [{ target: "Aunque llueve" }, ", salgo."], rule: { es: [{ term: aunque }, " ya contrasta: no lleva ", { term: pero }] } }
+          - { level: B2, wrong: "A pesar que me duele la cabeza, voy a trabajar.", right: ["A pesar ", { target: "de que" }, " me duele la cabeza, voy a trabajar."], rule: { es: [{ term: a pesar de que }, " lleva ", { term: de }] } }
+          - { level: B2, wrong: "Por mucho cansado que esté, vendrá.", right: ["Por ", { target: muy }, " cansado que esté, vendrá."], rule: { es: [{ term: muy }, " va delante de un adjetivo"] } }
+          - { level: C1, wrong: "Pase lo que pasa, iré.", right: [{ target: "Pase lo que pase" }, ", iré."], rule: { es: "el verbo repetido va en subjuntivo las dos veces" } }
+          - { level: C1, wrong: "Con lo que llueva, ¿vas a salir?", right: [{ target: "Con lo que llueve" }, ", ¿vas a salir?"], rule: { es: [{ term: con lo que }, " pondera un hecho real: indicativo"] } }
+          - { level: C2, wrong: "No lo vendo, así me ofrecen un millón.", right: ["No lo vendo, así me ", { target: ofrezcan }, " un millón."], rule: { es: [{ term: así }, " con valor concesivo lleva subjuntivo"] } }

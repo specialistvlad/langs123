@@ -84,6 +84,26 @@ cheatsheet:
           meaning: { en: something about to happen, es: algo que va a pasar enseguida, uk: "щось, що ось-ось станеться", pt: "algo prestes a acontecer", fr: "quelque chose sur le point d’arriver", de: "etwas, das gleich geschieht", it: "qualcosa che sta per succedere", pl: "coś, co zaraz się stanie", tr: "az sonra olacak bir şey", id: "sesuatu yang akan segera terjadi", vi: "việc sắp xảy ra" }
           ex: ["El tren ", { target: está a punto de salir }, "."]
           tr: { en: "The train is about to leave.", uk: "Потяг ось-ось відправиться.", pt: "O trem está prestes a sair.", fr: "Le train est sur le point de partir.", de: "Der Zug fährt gleich ab.", it: "Il treno sta per partire.", pl: "Pociąg zaraz odjedzie.", tr: "Tren birazdan kalkacak.", id: "Kereta akan segera berangkat.", vi: "Tàu sắp chạy." }
+        - level: B2
+          form: { pattern: [llevar, { slot: { es: tiempo } }, { slot: { es: gerundio } }] }
+          meaning: { es: el tiempo que dura una acción hasta ahora }
+          ex: [{ target: Llevo dos años viviendo }, " en Quito."]
+        - level: C1
+          form: { pattern: [acabar por, { slot: infinitive }] }
+          meaning: { es: un final tras dudas o resistencia }
+          ex: ["Después de dudar, ", { target: acabó por aceptar }, "."]
+        - level: C1
+          form: { pattern: [ir, { slot: { es: gerundio } }] }
+          meaning: { es: una acción que avanza poco a poco }
+          ex: ["El enfermo ", { target: va mejorando }, "."]
+        - level: C1
+          form: { pattern: [tener, { slot: past participle }] }
+          meaning: { es: un resultado ya logrado }
+          ex: [{ target: Tengo preparadas }, " las maletas."]
+        - level: C2
+          form: { pattern: [echar a, { slot: infinitive }] }
+          meaning: { es: "perífrasis si el infinitivo cambia; locución si es fijo" }
+          ex: { examples: [["El niño ", { target: echó a correr }, "."], ["La lluvia ", { target: echó a perder }, " la fiesta."]] }
         - level: A2
           form: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           meaning: { en: "the preposition stays: de, a", es: "la preposición se mantiene: de, a", uk: "прийменник зберігається: de, a", pt: "a preposição se mantém: de, a", fr: "la préposition reste : de, a", de: "die Präposition bleibt: de, a", it: "la preposizione resta: de, a", pl: "przyimek zostaje: de, a", tr: "edat kalır: de, a", id: "kata depan tetap ada: de, a", vi: "giới từ được giữ lại: de, a" }
@@ -267,6 +287,60 @@ sections:
               id: [{ term: seguir }, " memakai gerundio, bukan infinitif, dan mengubah ", { letter: e }, " menjadi ", { letter: i }, ": ", { alternatives: [{ term: sigo }, { term: sigues }, { term: sigue }] }, "."]
               vi: [{ term: seguir }, " đi với gerundio, không đi với động từ nguyên mẫu, và đổi ", { letter: e }, " thành ", { letter: i }, ": ", { alternatives: [{ term: sigo }, { term: sigues }, { term: sigue }] }, "."]
 
+  - title: { es: Duración y continuación }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, form: { pattern: [llevar, { slot: { es: tiempo } }, { slot: { es: gerundio } }] }, meaning: { es: el tiempo que dura una acción hasta ahora }, ex: [{ target: Llevo dos años viviendo }, " en Quito."] }
+          - { level: B2, form: { pattern: [llevar, { slot: { es: tiempo } }, sin, { slot: infinitive }] }, meaning: { es: el tiempo que pasa sin que algo ocurra }, ex: [{ target: Llevo una semana sin salir }, " de casa."] }
+          - { level: B2, form: { pattern: [seguir sin, { slot: infinitive }] }, meaning: { es: una situación que no ha cambiado }, ex: [{ target: Seguimos sin tener }, " noticias de ella."] }
+          - { level: B2, form: { alternatives: [{ pattern: [no dejar de, { slot: infinitive }] }, { pattern: [no parar de, { slot: infinitive }] }] }, meaning: { es: una acción que continúa sin pausa }, ex: { examples: [["El bebé ", { target: no deja de llorar }, "."], ["El teléfono ", { target: no ha parado de sonar }, " esta mañana."]] } }
+
+  - title: { es: "Perífrasis de infinitivo: fin e inicio" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: C1, form: { pattern: [llegar a, { slot: infinitive }] }, meaning: { es: un resultado que se alcanza tras un proceso }, ex: ["Con los años ", { target: llegó a dirigir }, " la empresa."] }
+          - { level: C1, form: { pattern: [acabar por, { slot: infinitive }] }, meaning: { es: un final tras dudas o resistencia }, ex: ["Después de dudar, ", { target: acabó por aceptar }, " el trabajo."] }
+          - { level: C1, form: { pattern: [no alcanzar a, { slot: infinitive }] }, meaning: { es: no lograr hacer algo }, ex: [{ target: No alcancé a oír }, " lo que dijo."] }
+          - { level: C1, form: { pattern: [echar a, { slot: infinitive }] }, meaning: { es: el comienzo de un movimiento }, ex: ["El niño ", { target: echó a correr }, " hacia la puerta."] }
+          - { level: C1, form: { pattern: [echarse a, { slot: infinitive }] }, meaning: { es: el comienzo repentino de una reacción }, ex: ["Al verla, ", { target: se echó a reír }, "."] }
+          - { level: C1, form: { pattern: [romper a, { slot: infinitive }] }, meaning: { es: "el comienzo brusco de un llanto, una risa o un aplauso" }, ex: ["Al oír la noticia, ", { target: rompió a llorar }, "."] }
+
+  - title: { es: Perífrasis de gerundio y de participio }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: C1, form: { pattern: [ir, { slot: { es: gerundio } }] }, meaning: { es: una acción que avanza poco a poco }, ex: ["El enfermo ", { target: va mejorando }, " día a día."] }
+          - { level: C1, form: { pattern: [venir, { slot: { es: gerundio } }] }, meaning: { es: una acción que empezó antes y llega hasta ahora }, ex: [{ target: Viene repitiendo }, " lo mismo desde enero."] }
+          - { level: C1, form: { pattern: [andar, { slot: { es: gerundio } }] }, meaning: { es: una acción repetida o sin rumbo fijo }, ex: [{ target: Anda buscando }, " trabajo desde hace semanas."] }
+          - { level: C1, form: { pattern: [terminar, { slot: { es: gerundio } }] }, meaning: { es: el final de un proceso }, ex: ["Tras mucha presión, ", { target: terminó cediendo }, "."] }
+          - { level: C1, form: { pattern: [tener, { slot: past participle }] }, meaning: { es: un resultado ya logrado }, ex: [{ target: Tengo preparadas }, " las maletas."] }
+          - { level: C1, form: { pattern: [llevar, { slot: past participle }] }, meaning: { es: una cantidad acumulada }, ex: [{ target: Llevo leídas }, " treinta páginas."] }
+          - { level: C1, form: { pattern: [dejar, { slot: past participle }] }, meaning: { es: un resultado que se deja hecho }, ex: ["Mi madre ", { target: dejó preparada }, " la cena."] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: "El participio concuerda en género y número con el complemento directo:"
+            ex: { examples: [[{ target: Tengo escritas }, " tres cartas."], [{ target: Dejó anotado }, " el número."]] }
+
   - title: { en: "soler: present and imperfect", es: "soler: presente e imperfecto", uk: "soler: теперішній час та імперфект", pt: "soler: presente e imperfeito", fr: "soler : présent et imparfait", de: "soler: Präsens und Imperfecto", it: "soler: presente e imperfetto", pl: "soler: czas teraźniejszy i imperfecto", tr: "soler: şimdiki zaman ve imperfecto", id: "soler: presente dan imperfecto", vi: "soler: hiện tại và quá khứ chưa hoàn thành" }
     role: own
     content:
@@ -341,6 +415,32 @@ sections:
           - level: B1
             empezar: { ex: [{ target: Empecé a estudiar }, " a las nueve."], tr: { en: "I started studying at nine.", uk: "Я почав учитися о дев’ятій.", pt: "Comecei a estudar às nove.", fr: "J’ai commencé à étudier à neuf heures.", de: "Ich habe um neun Uhr angefangen zu lernen.", it: "Ho cominciato a studiare alle nove.", pl: "Zacząłem się uczyć o dziewiątej.", tr: "Saat dokuzda çalışmaya başladım.", id: "Aku mulai belajar pukul sembilan.", vi: "Tôi bắt đầu học lúc chín giờ." } }
             ponerse: { ex: ["De repente ", { target: se puso a llorar }, "."], tr: { en: "Suddenly she started crying.", uk: "Раптом вона розплакалася.", pt: "De repente ela começou a chorar.", fr: "Soudain, elle s’est mise à pleurer.", de: "Plötzlich fing sie an zu weinen.", it: "All'improvviso si è messa a piangere.", pl: "Nagle zaczęła płakać.", tr: "Birden ağlamaya başladı.", id: "Tiba-tiba dia mulai menangis.", vi: "Bỗng nhiên cô ấy bật khóc." } }
+
+  - title: { es: Perífrasis y locuciones }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: periphrasis, label: { es: Perífrasis } }
+          - { key: idiom, label: { es: Locución o dos verbos } }
+          - { key: difference, label: { es: Diferencia } }
+        rows:
+          - level: C2
+            periphrasis: { examples: [["El niño ", { target: echó a correr }, "."], ["El niño ", { target: echó a andar }, "."]] }
+            idiom: ["La lluvia ", { target: echó a perder }, " la fiesta."]
+            difference: { es: "El infinitivo de la perífrasis cambia por otros verbos de movimiento; los elementos de la locución son fijos." }
+          - level: C2
+            periphrasis: ["¿Quién ", { target: echó a correr }, "? El niño."]
+            idiom: ["¿Qué ", { target: echó a perder }, "? La fiesta: ", { target: la echó a perder }, "."]
+            difference: { es: ["La locución tiene complemento directo, que se pregunta con ", { term: qué }, " y se sustituye por ", { term: la }, "; la perífrasis se pregunta con ", { term: quién }, "."] }
+          - level: C2
+            periphrasis: [{ target: Viene pensando }, " lo mismo desde enero."]
+            idiom: [{ target: Viene pensando }, " en sus cosas por la calle."]
+            difference: { es: "Con una duración es perífrasis; si venir conserva el movimiento, son dos verbos." }
+          - level: C2
+            periphrasis: [{ target: Anda buscando }, " trabajo desde hace meses."]
+            idiom: ["Los turistas ", { target: andan mirando }, " los escaparates."]
+            difference: { es: "Con una duración es perífrasis; si andar conserva el movimiento, son dos verbos." }
 
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors

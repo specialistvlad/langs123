@@ -220,6 +220,22 @@ cheatsheet:
             vi: [{ term: qué }, " trước danh từ, ", { term: cuál }, " đứng một mình"]
           ex: { examples: [["¿", { target: Qué }, " libro quieres?"], ["¿", { target: Cuál }, " quieres?"]] }
           tr: { en: { examples: ["Which book do you want?", "Which one do you want?"] }, uk: { examples: ["Яку книжку ти хочеш?", "Яку ти хочеш?"] }, pt: { examples: ["Que livro você quer?", "Qual você quer?"] }, fr: { examples: ["Quel livre veux-tu ?", "Lequel veux-tu ?"] }, de: { examples: ["Welches Buch willst du?", "Welches willst du?"] }, it: { examples: ["Che libro vuoi?", "Quale vuoi?"] }, pl: { examples: ["Którą książkę chcesz?", "Którą chcesz?"] }, tr: { examples: ["Hangi kitabı istiyorsun?", "Hangisini istiyorsun?"] }, id: { examples: ["Kamu mau buku yang mana?", "Kamu mau yang mana?"] }, vi: { examples: ["Bạn muốn cuốn sách nào?", "Bạn muốn cuốn nào?"] } }
+        - level: B2
+          point: { es: Pregunta eco }
+          rule: { es: "el interrogativo queda en el lugar del dato que se repite" }
+          ex: ["¿Marta llegó ", { target: cuándo }, "?"]
+        - level: B2
+          point: { es: Exclamación con oración }
+          rule: { es: [{ pattern: [{ term: qué }, { alternatives: [{ slot: adjective }, { slot: adverb }] }, { term: que }, { slot: clause }] }, " valora un hecho"] }
+          ex: ["¡", { target: Qué bien que }, " ya estés en casa!"]
+        - level: C1
+          point: { es: Dos interrogativos }
+          rule: { es: "de función distinta, el segundo va al final" }
+          ex: ["¿Quién te regaló eso ", { target: y por qué }, "?"]
+        - level: C2
+          point: { es: Sorpresa o reproche }
+          rule: { es: [{ term: ["¿Cómo que ", { gap: true }, "?"] }, " repite lo que dijo el otro"] }
+          ex: ["¿", { target: Cómo que }, " no tienes tiempo?"]
         - level: A2
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -336,6 +352,50 @@ sections:
           - { level: A1, word: por qué, asks: { en: the reason, es: la causa, uk: "причина", pt: "a causa", fr: "la cause", de: "die Ursache", it: "la causa", pl: "przyczyna", tr: "neden", id: "sebab", vi: "nguyên nhân" }, ex: ["¿", { target: Por qué }, " estudias español?"], tr: { en: "Why are you studying Spanish?", uk: "Чому ти вивчаєш іспанську?", pt: "Por que você estuda espanhol?", fr: "Pourquoi étudies-tu l’espagnol ?", de: "Warum lernst du Spanisch?", it: "Perché studi spagnolo?", pl: "Dlaczego uczysz się hiszpańskiego?", tr: "Neden İspanyolca öğreniyorsun?", id: "Mengapa kamu belajar bahasa Spanyol?", vi: "Tại sao bạn học tiếng Tây Ban Nha?" } }
           - { level: A2, word: cuándo, asks: { en: time, es: el tiempo, uk: "час", pt: "o tempo", fr: "le moment", de: "die Zeit", it: "il tempo", pl: "czas", tr: "zaman", id: "waktu", vi: "thời gian" }, ex: ["¿", { target: Cuándo }, " empiezas las vacaciones?"], tr: { en: "When do your holidays start?", uk: "Коли в тебе починається відпустка?", pt: "Quando começam suas férias?", fr: "Quand commencent tes vacances ?", de: "Wann beginnen deine Ferien?", it: "Quando iniziano le tue vacanze?", pl: "Kiedy zaczynasz urlop?", tr: "Tatilin ne zaman başlıyor?", id: "Kapan liburanmu dimulai?", vi: "Khi nào kỳ nghỉ của bạn bắt đầu?" } }
           - { level: B1, word: { alternatives: [cuál, cuáles] }, asks: { en: one of a known set, es: uno de un grupo conocido, uk: "один із відомого набору", pt: "um de um grupo conhecido", fr: "un parmi un groupe connu", de: "eines aus einer bekannten Gruppe", it: "uno di un gruppo conosciuto", pl: "jeden z znanego zbioru", tr: "bilinen bir gruptan biri", id: "salah satu dari kelompok yang sudah dikenal", vi: "một trong nhóm đã biết" }, ex: ["¿", { target: Cuál }, " prefieres?"], tr: { en: "Which one do you prefer?", uk: "Який тобі більше подобається?", pt: "Qual você prefere?", fr: "Lequel préfères-tu ?", de: "Welches magst du lieber?", it: "Quale preferisci?", pl: "Który wolisz?", tr: "Hangisini tercih edersin?", id: "Kamu lebih suka yang mana?", vi: "Bạn thích cái nào hơn?" } }
+      - type: usage
+        columns:
+          - { key: structure, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            structure: { es: "pregunta eco: el interrogativo queda en el lugar del dato que se repite" }
+            ex: { examples: [["¿Marta llegó ", { target: cuándo }, "?"], ["¿Tu hermano compró ", { target: qué }, "?"]] }
+          - level: B2
+            structure: { es: [{ pattern: [{ alternatives: [{ term: quién }, { term: cuántos }] }, { term: de }, { slot: plural noun }] }, ": se elige dentro de un grupo"] }
+            ex: { examples: [["¿", { target: Quién de }, " tus primos vive en Quito?"], ["¿", { target: Cuántos de }, " tus vecinos tienen perro?"]] }
+          - level: B2
+            structure: { es: [{ term: quién }, " como sujeto admite entre él y el verbo la negación o un adverbio"] }
+            ex: { examples: [["¿", { target: Quién no }, " sabe la respuesta?"], ["¿", { target: Quién a veces }, " cocina en tu casa?"]] }
+          - level: B2
+            structure: { es: "con los demás interrogativos, el sujeto va detrás del verbo" }
+            ex: { examples: [["¿", { target: Dónde compra }, " el pan tu vecina?"], ["¿", { target: Cuándo llega }, " el tren?"]] }
+          - level: B2
+            structure: { es: [{ term: por qué }, " admite el sujeto delante del verbo"] }
+            ex: ["¿", { target: Por qué tu hermana }, " no vino?"]
+          - level: B2
+            structure: { es: ["dos interrogativos de la misma función se coordinan con ", { term: y }] }
+            ex: ["¿", { target: Dónde y cuándo }, " se conocieron tus padres?"]
+          - level: C1
+            structure: { es: "el grupo del que se elige puede ir lejos del interrogativo" }
+            ex: { examples: [["¿Quién es médico ", { target: de entre los presentes }, "?"], ["¿Cuál prefieres ", { target: de todas estas camisas }, "?"]] }
+          - level: C1
+            structure: { es: "dos interrogativos de función distinta: el segundo va al final" }
+            ex: { examples: [["¿Quién te regaló eso ", { target: y por qué }, "?"], ["¿Quién llamó ", { target: y para qué }, "?"]] }
+          - level: C1
+            structure: { es: "un tema abre la pregunta y un pronombre átono lo recoge" }
+            ex: [{ target: Al jefe }, ", ¿", { target: le }, " avisaste de la reunión?"]
+          - level: C2
+            structure: { es: "varios interrogativos en una pregunta: la respuesta da un dato para cada uno" }
+            ex: { examples: [["¿", { target: Quién trajo qué }, " a la fiesta?"], ["¿", { target: Quién pidió qué }, "?"]] }
+          - level: C2
+            structure: { es: "el interrogativo sale de una subordinada lejana y deja un hueco" }
+            ex: { examples: [["¿", { target: Qué libro }, " dices que compró Ana?"], ["¿", { target: Qué plato }, " no sabes cómo preparar?"]] }
+          - level: C2
+            structure: { es: [{ term: ["¿Cómo que ", { gap: true }, "?"] }, " repite con sorpresa o reproche lo que dijo el otro"] }
+            ex: { examples: [["¿", { target: Cómo que }, " no tienes tiempo?"], ["¿", { target: Cómo que }, " ya te vas?"]] }
+          - level: C2
+            structure: { es: "pregunta retórica: el sentido es negativo y no espera respuesta" }
+            ex: { examples: [{ target: ¿Quién va a creer esa historia? }, { target: ¿Pero es que alguien puede vivir con tan poco? }] }
       - type: list
         items:
           - type: rule
@@ -518,6 +578,60 @@ sections:
             ex: { exchange: ["Mañana no trabajo.", ["¡", { target: Qué bien }, "!"]] }
             tr: { en: { exchange: ["I'm not working tomorrow.", "Great!"] }, uk: { exchange: ["Завтра я не працюю.", "Чудово!"] }, pt: { exchange: ["Amanhã não trabalho.", "Que bom!"] }, fr: { exchange: ["Demain, je ne travaille pas.", "Super !"] }, de: { exchange: ["Morgen arbeite ich nicht.", "Super!"] }, it: { exchange: ["Domani non lavoro.", "Che bello!"] }, pl: { exchange: ["Jutro nie pracuję.", "Świetnie!"] }, tr: { exchange: ["Yarın çalışmıyorum.", "Harika!"] }, id: { exchange: ["Besok saya tidak bekerja.", "Bagus sekali!"] }, vi: { exchange: ["Ngày mai tôi không làm việc.", "Tuyệt quá!"] } }
 
+  - title: { es: Exclamaciones con oración }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { es: [{ pattern: [{ term: qué }, { alternatives: [{ slot: adjective }, { slot: adverb }] }, { term: que }, { slot: clause }] }, ": valora un hecho; el verbo suele ir en subjuntivo"] }
+            ex: { examples: [["¡", { target: Qué raro que }, " Ana no conteste!"], ["¡", { target: Qué bien que }, " ya estés en casa!"]] }
+          - level: B2
+            pattern: { es: [{ pattern: [{ term: cómo }, { slot: verb }] }, ": la intensidad de una acción"] }
+            ex: { examples: [["¡", { target: Cómo llueve }, "!"], ["¡", { target: Cómo corre }, " tu perro!"]] }
+          - level: B2
+            pattern: { es: [{ pattern: [{ term: cuánto }, { slot: verb }] }, ": con un verbo no cambia"] }
+            ex: { examples: [["¡", { target: Cuánto duerme }, " el bebé!"], ["¡", { target: Cuánto sabes }, "!"]] }
+          - level: B2
+            pattern: { es: [{ pattern: [{ alternatives: [{ term: cuánto }, { term: cuánta }, { term: cuántos }, { term: cuántas }] }, { slot: noun }] }, ": concuerda con el sustantivo"] }
+            ex: { examples: [["¡", { target: Cuántos amigos }, " tienes!"], ["¡", { target: Cuánta gente }, " hay!"]] }
+          - level: B2
+            pattern: { es: [{ pattern: [{ term: quién }, { slot: verb }] }, " en imperfecto: nadie lo esperaba"] }
+            ex: { examples: [["¡", { target: Quién podía }, " saberlo!"], ["¡", { target: Quién lo iba a decir }, "!"]] }
+          - level: C1
+            pattern: { es: [{ pattern: [{ term: cuántos }, { slot: adjective }] }, ": el adjetivo concuerda con cuánto"] }
+            ex: { examples: [["¡", { target: Cuántos curiosos }, " se juntaron en la calle!"], ["¡", { target: Cuántos ingenuos }, " habrán creído esa historia!"]] }
+          - level: C1
+            pattern: { es: [{ pattern: [{ alternatives: [{ term: dónde }, { term: por dónde }] }, { slot: verb }] }, ": sorpresa ante un lugar o una situación"] }
+            ex: { examples: [["¡", { target: Dónde }, " me he metido!"], ["¡", { target: Por dónde }, " nos llevó el guía!"]] }
+          - level: C1
+            pattern: { es: [{ pattern: [{ term: qué }, { slot: noun }, { slot: verb }, { slot: subject }] }, ": el sujeto va detrás del verbo"] }
+            ex: { examples: [["¡", { target: Qué susto }, " nos dio el perro!"], ["¡", { target: Qué golpe }, " se dio tu hermano!"]] }
+          - level: C2
+            pattern: { es: [{ pattern: [{ term: qué }, { slot: adjective }, { term: que }, { slot: clause }] }, ": énfasis coloquial, con el verbo en indicativo"] }
+            ex: { examples: [["¡", { target: Qué simpática que }, " es tu prima!"], ["¡", { target: Qué grande que }, " está tu hijo!"]] }
+          - level: C2
+            pattern: { es: [{ pattern: [{ term: cómo }, { slot: verb }, { alternatives: [{ term: de bien }, { term: de mal }] }] }, ": énfasis en la manera"] }
+            ex: { examples: [["¡", { target: Cómo baila de bien }, " tu abuela!"], ["¡", { target: Cómo conduce de mal }, " ese hombre!"]] }
+          - level: C2
+            pattern: { es: [{ pattern: [{ term: cómo }, { term: es }, { term: de }, { slot: adjective }] }, ": énfasis en la cualidad"] }
+            ex: { examples: [["¡", { target: Cómo es de alto }, " su amigo!"], ["¡", { target: Cómo es de caro }, " este reloj!"]] }
+          - level: C2
+            pattern: { es: [{ pattern: [{ term: cuánto }, { slot: singular noun }] }, ": valora a las personas con un sustantivo en singular"] }
+            ex: { examples: [["¡", { target: Cuánto listo }, " hay por ahí!"], ["¡", { target: Cuánto cobarde }, " hay en este mundo!"]] }
+          - level: C2
+            pattern: { es: [{ pattern: [{ term: dónde }, { term: no }, { slot: verb }] }, ": en todas partes"] }
+            ex: { examples: [["¡", { target: Dónde no }, " habremos buscado las llaves!"], ["¡", { target: Dónde no }, " habrá viajado tu abuelo!"]] }
+          - level: C2
+            pattern: { es: [{ pattern: [{ term: cuán }, { alternatives: [{ slot: adjective }, { slot: adverb }] }] }, ": registro literario"] }
+            ex: { examples: [["¡", { target: Cuán breve }, " es la vida!"], ["¡", { target: Cuán lejos }, " queda aquel verano!"]] }
+          - level: C2
+            pattern: { es: "el exclamativo se refiere a una subordinada lejana" }
+            ex: { examples: [["¡", { target: Qué buenas notas }, " dice el profesor que sacaste!"], ["¡", { target: Qué lindo vestido }, " dice Ana que se compró!"]] }
+
   - title: { en: "Compare: qué and cuál", es: "Comparación: qué y cuál", uk: "Порівняння: qué і cuál", pt: "Comparação: qué e cuál", fr: "Comparaison : qué et cuál", de: "Vergleich: qué und cuál", it: "Confronto: qué e cuál", pl: "Porównanie: qué i cuál", tr: "Karşılaştırma: qué ve cuál", id: "Perbandingan: qué dan cuál", vi: "So sánh: qué và cuál" }
     role: compare
     content:
@@ -565,3 +679,6 @@ sections:
           - { level: A2, wrong: "Nunca no como carne.", right: [{ target: Nunca }, " como carne."], rule: { en: [{ term: nunca }, " before the verb stands alone"], es: [{ term: nunca }, " delante del verbo va solo"], uk: [{ term: "nunca" }, " перед дієсловом стоїть саме"], pt: [{ term: nunca }, " antes do verbo vai sozinho"], fr: [{ term: nunca }, " devant le verbe s’emploie seul"], de: [{ term: nunca }, " vor dem Verb steht allein"], it: [{ term: nunca }, " davanti al verbo sta da solo"], pl: [{ term: nunca }, " przed czasownikiem stoi samodzielnie"], tr: [{ term: nunca }, " fiilden önce tek başına kullanılır"], id: [{ term: nunca }, " di depan kata kerja berdiri sendiri"], vi: [{ term: nunca }, " đứng trước động từ thì đứng một mình"] } }
           - { level: A2, wrong: "No tengo algo.", right: ["No tengo ", { target: nada }, "."], rule: { en: ["a negative sentence takes ", { term: nada }], es: ["una oración negativa lleva ", { term: nada }], uk: ["заперечне речення потребує ", { term: "nada" }], pt: ["uma frase negativa leva ", { term: nada }], fr: ["une phrase négative prend ", { term: nada }], de: ["ein verneinter Satz braucht ", { term: nada }], it: ["una frase negativa vuole ", { term: nada }], pl: ["zdanie przeczące wymaga ", { term: nada }], tr: ["olumsuz cümlede ", { term: nada }, " kullanılır"], id: ["kalimat negatif memakai ", { term: nada }], vi: ["câu phủ định dùng ", { term: nada }] } }
           - { level: B1, wrong: "¿Cuál es esto?", right: ["¿", { target: Qué }, " es esto?"], rule: { en: ["a definition takes ", { term: qué }], es: ["una definición lleva ", { term: qué }], uk: ["визначення потребує ", { term: "qué" }], pt: ["uma definição leva ", { term: qué }], fr: ["une définition prend ", { term: qué }], de: ["eine Definition braucht ", { term: qué }], it: ["una definizione vuole ", { term: qué }], pl: ["definicja wymaga ", { term: qué }], tr: ["tanım ", { term: qué }, " ile kurulur"], id: ["definisi memakai ", { term: qué }], vi: ["định nghĩa dùng ", { term: qué }] } }
+          - { level: B2, wrong: "¡Cuánto amigos tienes!", right: ["¡", { target: Cuántos amigos }, " tienes!"], rule: { es: [{ term: cuánto }, " concuerda con el sustantivo que acompaña"] } }
+          - { level: C1, wrong: "¿Quién y dónde ha guardado mis fotos?", right: ["¿Quién ha guardado mis fotos ", { target: y dónde }, "?"], rule: { es: "dos interrogativos de función distinta no se coordinan junto al verbo" } }
+          - { level: C2, wrong: "¿Qué plato no sabes cómo lo preparan?", right: ["¿", { target: Qué plato }, " no sabes cómo preparar?"], rule: { es: "el interrogativo lejano no se repite con un pronombre" } }

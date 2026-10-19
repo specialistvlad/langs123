@@ -140,6 +140,31 @@ cheatsheet:
             vi: [{ pattern: ["si", { slot: "present" }] }, ", sau đó là thức mệnh lệnh"]
           ex: [{ target: Si puedes }, ", ", { target: ayúdame }, "."]
           tr: { en: "If you can, help me.", uk: "Якщо можеш, допоможи мені.", pt: "Se puder, me ajude.", fr: "Si tu peux, aide-moi.", de: "Wenn du kannst, hilf mir.", it: "Se puoi, aiutami.", pl: "Jeśli możesz, pomóż mi.", tr: "Mümkünse bana yardım et.", id: "Kalau bisa, tolong bantu saya.", vi: "Nếu bạn có thể, hãy giúp tôi." }
+        - level: B2
+          point: { es: Presente irreal }
+          rule:
+            pattern: [si, { slot: { es: imperfecto de subjuntivo } }, { slot: { es: condicional } }]
+          ex: [{ target: Si estuviera }, " libre, ", { target: iría }, " contigo."]
+        - level: B2
+          point: { es: Pasado irreal }
+          rule:
+            pattern: [si, { slot: { es: pluscuamperfecto de subjuntivo } }, { slot: { es: condicional compuesto } }]
+          ex: [{ target: Si hubiera salido }, " antes, ", { target: habría llegado }, "."]
+        - level: B2
+          point: { es: Nexos }
+          rule:
+            es: [{ term: siempre que }, " y ", { term: a no ser que }, " piden subjuntivo"]
+          ex: ["Te presto el coche ", { target: siempre que }, " lo ", { target: cuides }, "."]
+        - level: C1
+          point: { es: Sin si }
+          rule:
+            es: "el gerundio y el imperativo con y expresan una condición"
+          ex: [{ target: Caminando }, " cada día, te sentirás mejor."]
+        - level: C2
+          point: { es: Con de }
+          rule:
+            es: [{ pattern: [de, { slot: { es: infinitivo simple o compuesto } }] }, " expresa una condición"]
+          ex: [{ target: De haberlo sabido }, ", te habría avisado."]
         - level: B1
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -238,6 +263,183 @@ sections:
           - { level: B1, use: { en: A future condition, es: Una condición futura, uk: "Умова в майбутньому", pt: "Uma condição futura", fr: "Une condition future", de: "Eine Bedingung in der Zukunft", it: "Una condizione futura", pl: "Warunek w przyszłości", tr: "Gelecekle ilgili koşul", id: "Syarat di masa depan", vi: "Điều kiện ở tương lai" }, ex: [{ target: Si hace }, " sol mañana, ", { target: iremos }, " a la playa."], tr: { en: "If it's sunny tomorrow, we'll go to the beach.", uk: "Якщо завтра буде сонячно, ми підемо на пляж.", pt: "Se fizer sol amanhã, vamos à praia.", fr: "S’il fait beau demain, nous irons à la plage.", de: "Wenn morgen die Sonne scheint, gehen wir an den Strand.", it: "Se domani fa bel tempo, andremo in spiaggia.", pl: "Jeśli jutro będzie słonecznie, pojedziemy na plażę.", tr: "Yarın hava güneşliyse plaja gideriz.", id: "Kalau besok cerah, kita akan pergi ke pantai.", vi: "Nếu ngày mai trời nắng, chúng ta sẽ đi biển." } }
           - { level: B1, use: { en: Instructions, es: Instrucciones, uk: "Інструкції", pt: "Instruções", fr: "Instructions", de: "Anweisungen", it: "Istruzioni", pl: "Polecenia", tr: "Talimatlar", id: "Instruksi", vi: "Hướng dẫn" }, ex: [{ target: Si llegas }, " tarde, ", { target: llámame }, "."], tr: { en: "If you're late, call me.", uk: "Якщо запізнюєшся, подзвони мені.", pt: "Se você chegar tarde, me ligue.", fr: "Si tu arrives en retard, appelle-moi.", de: "Wenn du zu spät kommst, ruf mich an.", it: "Se arrivi tardi, chiamami.", pl: "Jeśli się spóźnisz, zadzwoń do mnie.", tr: "Geç kalırsan beni ara.", id: "Kalau kamu terlambat, telepon saya.", vi: "Nếu bạn đến muộn, hãy gọi cho tôi." } }
 
+  - title: { es: ["Condiciones irreales: ", { pattern: [si, { slot: { es: imperfecto de subjuntivo } }] }] }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: use, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [si, { slot: { es: imperfecto de subjuntivo } }, { slot: { es: condicional } }] }
+            use: { es: "Un presente irreal: lo que ahora no ocurre" }
+            ex: ["Si Carlos ", { target: estuviera }, " aquí, todo se ", { target: arreglaría }, "."]
+          - level: B2
+            pattern: { pattern: [si, { slot: { es: imperfecto de subjuntivo } }, { slot: { es: condicional } }] }
+            use: { es: "Un futuro improbable: lo que se considera poco probable" }
+            ex: { examples: [["Si me ", { target: tocara }, " la lotería, ", { target: compraría }, " una casa."], [{ target: Iría }, " contigo, si me ", { target: prometieras }, " no discutir."]] }
+          - level: C1
+            pattern: { pattern: [si, { slot: { es: presente de indicativo } }, { slot: { es: presente } }] }
+            use: { es: "Una condición remota que se plantea como posible: el presente sustituye al imperfecto de subjuntivo" }
+            ex: ["Si por casualidad mañana ", { alternatives: [{ target: tuviera }, { target: tengo }] }, " un rato libre, te ", { target: llamo }, "."]
+          - level: C1
+            pattern: { pattern: [si, { slot: { es: imperfecto de subjuntivo } }] }
+            use: { es: "Un deseo en suspenso: la oración se queda sin resultado" }
+            ex: ["¡Ay, si ", { target: pudiera }, " volver a ese verano", { gap: true }, "!"]
+          - level: C2
+            pattern: { pattern: [si, { slot: { es: imperfecto de subjuntivo } }, { slot: { es: imperfecto de indicativo } }] }
+            use: { es: "En la lengua coloquial, el imperfecto de indicativo sustituye al condicional en el resultado" }
+            ex: ["Si me lo ", { target: pidieras }, ", lo ", { target: hacía }, " ahora mismo."]
+          - level: C2
+            pattern: { pattern: [si, { slot: { es: imperfecto de subjuntivo } }, { slot: { es: imperfecto de subjuntivo } }] }
+            use: { es: "En la lengua literaria, el imperfecto de subjuntivo ocupa también el resultado, en -ra o en -se" }
+            ex: ["Si ella me ", { target: hablase }, ", se ", { alternatives: [{ target: detuviera }, { target: detuviese }] }, " el tiempo."]
+          - level: C2
+            pattern: { pattern: [si, { slot: { es: futuro de subjuntivo } }, { slot: { es: futuro de indicativo } }] }
+            use: { es: ["En el estilo jurídico, la condición lleva futuro de subjuntivo: ", { link: "El futuro de subjuntivo", to: es.subjuntivo.subjuntivo-futuro }] }
+            ex: ["Si el inquilino no ", { target: pagare }, " la renta, el contrato ", { target: quedará }, " anulado."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["Las formas están en ", { link: "El imperfecto de subjuntivo: hablara, hablase", to: es.subjuntivo.subjuntivo-imperfecto }, " y en ", { link: "El condicional simple: comería", to: es.futuro-condicional.condicional-simple }, "."]
+
+  - title: { es: ["Condiciones irreales del pasado: ", { pattern: [si, { slot: { es: pluscuamperfecto } }] }] }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: use, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [si, { slot: { es: pluscuamperfecto de subjuntivo } }, { slot: { es: condicional compuesto } }] }
+            use: { es: "Un pasado irreal: lo que no ocurrió" }
+            ex: ["Si ", { target: hubiera salido }, " antes, ", { target: habría llegado }, " a tiempo."]
+          - level: B2
+            pattern: { pattern: [si, { slot: { es: pluscuamperfecto de subjuntivo } }, { slot: { es: condicional simple } }] }
+            use: { es: "Una condición pasada con un resultado en el presente" }
+            ex: ["Si ", { target: hubiera estudiado }, " medicina, ahora ", { target: sería }, " médico."]
+          - level: B2
+            pattern: { pattern: [si, { slot: { es: pluscuamperfecto de subjuntivo } }, { slot: { es: condicional simple } }] }
+            use: { es: "Una condición pasada con un resultado en el futuro" }
+            ex: ["Si ", { target: hubiera aprobado }, " el examen, el año próximo ", { target: empezaría }, " la universidad."]
+          - level: C1
+            pattern: { pattern: [si, { slot: { es: presente de indicativo } }, { slot: { es: condicional compuesto } }] }
+            use: { es: "En la lengua coloquial, el presente sustituye al pluscuamperfecto de subjuntivo" }
+            ex: ["Si ", { alternatives: [{ target: hubieras llegado }, { target: llegas }] }, " un minuto antes, ", { target: habrías visto }, " la escena entera."]
+          - level: C2
+            pattern: { pattern: [si, { slot: { es: pluscuamperfecto de subjuntivo } }, { slot: { es: pluscuamperfecto de subjuntivo } }] }
+            use: { es: "El pluscuamperfecto de subjuntivo ocupa también el resultado, en lugar del condicional compuesto" }
+            ex: ["Si me ", { target: hubiesen invitado }, ", ", { target: hubiera ido }, "."]
+          - level: C2
+            variety: es-419
+            pattern: { pattern: [si, { slot: { es: pluscuamperfecto de subjuntivo } }, { slot: { es: presente o imperfecto de indicativo } }] }
+            use: { es: "En América, la lengua coloquial sustituye el condicional compuesto por tiempos del indicativo" }
+            ex: { examples: [["Si ", { target: hubieras venido }, ", no ", { target: tenía }, " que hacerlo yo solo."], ["Si no ", { target: llamamos }, ", ", { target: íbamos a quedar }, " mal."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["Las formas están en ", { link: "El perfecto y el pluscuamperfecto de subjuntivo: haya hablado, hubiera hablado", to: es.subjuntivo.subjuntivo-compuesto }, " y en ", { link: "El condicional compuesto: habría comido", to: es.futuro-condicional.condicional-compuesto }, "."]
+
+  - title: { es: "Condiciones reales con otros tiempos" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: use, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [si, { slot: { es: pretérito perfecto } }, { slot: { es: futuro perfecto } }] }
+            use: { es: "Una condición sobre un hecho pasado reciente, con una conjetura como resultado" }
+            ex: ["Si ", { target: ha llamado }, ", ", { target: habrá dejado }, " un mensaje."]
+          - level: B2
+            pattern: { pattern: [si, { slot: { es: pretérito indefinido } }, { slot: { es: condicional } }, { slot: { es: infinitivo compuesto } }] }
+            use: { es: "Una condición sobre un hecho pasado, con un reproche o una obligación como resultado" }
+            ex: ["Si de verdad ", { target: llegó }, " ayer, ", { target: tendría que haberme avisado }, "."]
+          - level: C2
+            pattern: { pattern: [si, { slot: { es: pretérito indefinido } }, { slot: { es: imperfecto } }] }
+            use: { es: "Una deducción sobre un momento pasado: el imperfecto describe cómo era la situación" }
+            ex: ["Si ", { target: terminó }, " a las ocho, no ", { target: tenía }, " mucho trabajo."]
+
+  - title: { es: "Nexos de condición" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: nexo, label: { es: Nexo } }
+          - { key: use, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            nexo: { pattern: [{ alternatives: [{ term: siempre que }, { term: siempre y cuando }, { term: con tal de que }, { term: a condición de que }] }, { slot: { es: subjuntivo } }] }
+            use: { es: "Una condición necesaria: solo así se cumple el resultado" }
+            ex: { examples: [["Te presto el coche ", { target: siempre y cuando }, " lo ", { target: cuides }, "."], ["Voy a la fiesta ", { target: con tal de que }, " tú ", { target: vayas }, " también."]] }
+          - level: B2
+            nexo: { pattern: [{ alternatives: [{ term: salvo si }, { term: excepto si }] }, { slot: { es: indicativo } }] }
+            use: { es: "Una excepción a lo dicho, presentada como un hecho posible" }
+            ex: { examples: [["Salimos a las ocho, ", { target: salvo si }, " ", { target: hay }, " mucho tráfico."], ["Hacemos la excursión, ", { target: excepto si }, " ", { target: llueve }, "."]] }
+          - level: B2
+            nexo: { pattern: [{ alternatives: [{ term: a no ser que }, { term: salvo que }] }, { slot: { es: subjuntivo } }] }
+            use: { es: "Una excepción a lo dicho, presentada como una hipótesis" }
+            ex: { examples: [["Iremos a pie, ", { target: a no ser que }, " ", { target: llueva }, "."], ["Mañana madrugamos, ", { target: salvo que }, " ", { target: tengas }, " otro plan."]] }
+          - level: B2
+            nexo: { pattern: [[{ term: por si }, " ", { optional: acaso }], { slot: { es: indicativo o imperfecto de subjuntivo } }] }
+            use: { es: "Una precaución ante algo que quizá ocurra; el imperfecto de subjuntivo lo presenta como más remoto" }
+            ex: { examples: [["Llevo el paraguas ", { target: por si }, " ", { alternatives: [{ target: llueve }, { target: lloviera }] }, "."], ["Guarda el recibo ", { target: por si acaso }, " ", { target: tienes }, " que devolverlo."]] }
+          - level: C1
+            nexo: { pattern: [{ term: menos si }, { slot: { es: indicativo } }] }
+            use: { es: "Otro nexo de excepción, con indicativo" }
+            ex: ["Puedes pedir lo que quieras, ", { target: menos si }, " ", { target: cuesta }, " demasiado."]
+          - level: C1
+            nexo: { pattern: [{ alternatives: [{ term: a menos que }, { term: excepto que }] }, { slot: { es: subjuntivo } }] }
+            use: { es: "Otro nexo de excepción, con subjuntivo" }
+            ex: { examples: [["Terminamos hoy, ", { target: a menos que }, " ", { target: surja }, " un problema."], ["Mañana vamos al campo, ", { target: excepto que }, " ", { target: llueva }, "."]] }
+          - level: C1
+            nexo: { pattern: [[{ optional: en }, " caso de"], { slot: { es: infinitivo o sustantivo } }] }
+            use: { es: "Una condición remota que se prevé: algo poco probable" }
+            ex: { examples: [[{ target: En caso de duda }, ", pregunta."], [{ target: En caso de perder }, " el billete, llama a este número."]] }
+          - level: C1
+            nexo: { pattern: [[{ optional: en }, " caso de que"], { slot: { es: subjuntivo } }] }
+            use: { es: "Una condición remota con un verbo conjugado" }
+            ex: { examples: [[{ target: En caso de que }, " ", { target: llueva }, ", la fiesta será dentro."], ["Llámame ", { target: en caso de que }, " ", { target: necesites }, " algo."]] }
+          - level: C1
+            nexo: { pattern: [{ slot: { es: gerundio } }, { slot: { es: futuro } }] }
+            use: { es: "Una condición sin nexo, con el gerundio" }
+            ex: { examples: [[{ target: Caminando }, " un rato cada día, te sentirás mejor."], [{ target: Hablando }, " con calma, nos entenderemos."]] }
+          - level: C1
+            nexo: { pattern: [{ slot: { es: imperativo } }, y, { slot: { es: futuro } }] }
+            use: { es: "Una condición sin nexo, con el imperativo y la conjunción y" }
+            ex: { examples: [[{ target: Prueba }, " este plato y ", { target: verás }, " qué rico está."], [{ target: Sal }, " ahora y ", { target: llegarás }, " a tiempo."]] }
+          - level: C1
+            nexo: { pattern: [como, { slot: { es: presente de subjuntivo } }] }
+            use: { es: "Una condición que se teme, con amenaza o sin ella" }
+            ex: { examples: [["Como ", { target: llegues }, " tarde otra vez, no te espero."], ["Como ", { target: llueva }, " mañana, se arruina la excursión."]] }
+          - level: C2
+            nexo: { pattern: [de, { slot: { es: infinitivo simple o compuesto } }] }
+            use: { es: "Una condición con infinitivo: el simple mira al presente o al futuro, el compuesto, al pasado" }
+            ex: { examples: [[{ target: De saberlo }, " antes, te avisaría."], [{ target: De haberlo sabido }, ", te habría avisado."]] }
+          - level: C2
+            nexo: { pattern: [que, { slot: { es: presente } }, que, { slot: { es: presente } }] }
+            use: { es: "Dos condiciones alternativas, cada una con su resultado" }
+            ex: [{ target: Que }, " hace calor, nos bañamos; ", { target: que }, " hace frío, nos quedamos en casa."]
+          - level: C2
+            nexo: { pattern: [{ slot: { es: imperativo } }, y, { slot: { es: presente o futuro } }] }
+            use: { es: "El imperativo con y: una amenaza o una promesa" }
+            ex: { examples: [["Tú ", { target: vuelve }, " a llegar tarde y te ", { target: quedas }, " sin postre."], [{ target: Termina }, " el informe y te ", { target: invito }, " a cenar."]] }
+          - level: C2
+            nexo: { pattern: [{ slot: { es: imperativo } }, que, { slot: { es: presente } }] }
+            use: { es: "El imperativo con que: una advertencia sobre lo que ocurrirá si no se cumple" }
+            ex: [{ target: Deja }, " de molestar, que ", { target: me voy }, "."]
+
   - title: { en: "Spelling: si and sí", es: "Ortografía: si y sí", uk: "Правопис: si і sí", pt: "Ortografia: si e sí", fr: "Orthographe : si et sí", de: "Rechtschreibung: si und sí", it: "Ortografia: si e sí", pl: "Pisownia: si i sí", tr: "Yazım: si ve sí", id: "Ejaan: si dan sí", vi: "Chính tả: si và sí" }
     role: spelling
     content:
@@ -297,4 +499,7 @@ sections:
           - { level: A2, wrong: "Sí quieres, vamos.", right: [{ target: Si }, " quieres, vamos."], rule: { en: [{ term: si }, " for a condition has no accent"], es: [{ term: si }, " condicional no lleva tilde"], uk: [{ term: "si" }, " в умові пишеться без знака наголосу"], pt: [{ term: "si" }, " condicional não leva acento"], fr: [{ term: "si" }, " conditionnel ne prend pas d’accent"], de: [{ term: "si" }, " in einer Bedingung hat keinen Akzent"], it: [{ term: "si" }, " condizionale non vuole l'accento"], pl: [{ term: "si" }, " warunkowe pisze się bez akcentu"], tr: [{ term: "si" }, " koşul bildirirken vurgu işareti almaz"], id: [{ term: "si" }, " untuk syarat tidak memakai aksen"], vi: [{ term: "si" }, " chỉ điều kiện không có dấu"] } }
           - { level: B1, wrong: "Si lloverá, no saldremos.", right: [{ target: Si llueve }, ", no saldremos."], rule: { en: ["after ", { term: si }, " in a condition, the present, never the future"], es: ["detrás de ", { term: si }, " condicional, presente, nunca futuro"], uk: ["після ", { term: "si" }, " в умові — теперішній час, ніколи не майбутній"], pt: ["depois de ", { term: "si" }, " condicional, presente, nunca futuro"], fr: ["après ", { term: "si" }, " conditionnel, le présent, jamais le futur"], de: ["nach ", { term: "si" }, " in einer Bedingung Präsens, nie Futur"], it: ["dopo ", { term: "si" }, " condizionale, il presente, mai il futuro"], pl: ["po ", { term: "si" }, " warunkowym czas teraźniejszy, nigdy przyszły"], tr: ["koşul bildiren ", { term: "si" }, " sonrasında şimdiki zaman gelir, asla gelecek zaman gelmez"], id: ["setelah ", { term: "si" }, " untuk syarat, present, tidak pernah future"], vi: ["sau ", { term: "si" }, " chỉ điều kiện dùng thì hiện tại, không bao giờ dùng thì tương lai"] } }
           - { level: B1, wrong: "Si llegues tarde, llámame.", right: [{ target: Si llegas }, " tarde, llámame."], rule: { en: ["after ", { term: si }, ", the present indicative, not the subjunctive"], es: ["detrás de ", { term: si }, ", presente de indicativo, no subjuntivo"], uk: ["після ", { term: "si" }, " — теперішній час дійсного способу, а не суб’юнктив"], pt: ["depois de ", { term: "si" }, ", presente do indicativo, não subjuntivo"], fr: ["après ", { term: "si" }, ", le présent de l’indicatif, pas le subjonctif"], de: ["nach ", { term: "si" }, " Präsens Indikativ, nicht Konjunktiv"], it: ["dopo ", { term: "si" }, " il presente indicativo, non il congiuntivo"], pl: ["po ", { term: "si" }, " czas teraźniejszy trybu oznajmującego, nie łączącego"], tr: [{ term: "si" }, " sonrasında bildirme kipinin şimdiki zamanı gelir, dilek kipi gelmez"], id: ["setelah ", { term: "si" }, ", present indikatif, bukan subjungtif"], vi: ["sau ", { term: "si" }, " dùng thì hiện tại thức chỉ định, không dùng thức giả định"] } }
+          - { level: B2, wrong: "Si esté aquí, no pasaría esto.", right: ["Si ", { target: estuviera }, " aquí, no pasaría esto."], rule: { es: ["con ", { term: si }, " irreal, el verbo va en imperfecto de subjuntivo, no en presente"] } }
+          - { level: B2, wrong: "Si habría sabido la hora, habría venido.", right: ["Si ", { target: hubiera sabido }, " la hora, habría venido."], rule: { es: ["el pasado irreal lleva ", { term: hubiera }, " detrás de ", { term: si }, ", no ", { term: habría }] } }
+          - { level: B2, wrong: "Iremos a pie, a no ser que llueve.", right: ["Iremos a pie, a no ser que ", { target: llueva }, "."], rule: { es: [{ term: a no ser que }, " lleva subjuntivo"] } }
           - { level: B1, speakers: [uk], wrong: "Si Carlota vendrá, iremos al cine.", right: [{ target: Si Carlota viene }, ", iremos al cine."], rule: { uk: ["українською кажемо «якщо Карлота прийде» в майбутньому часі, але після ", { term: si }, " в умові — теперішній: ", { term: viene }] } }

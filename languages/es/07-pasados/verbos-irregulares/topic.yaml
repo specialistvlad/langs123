@@ -57,6 +57,9 @@ cheatsheet:
         - { level: B1, verb: querer, present: { target: quiero }, preterite: { target: quise }, participle: querido }
         - { level: B1, verb: pedir, present: { target: pido }, preterite: { alternatives: [pedí, { target: pidió }] }, participle: pedido }
         - { level: B1, verb: conducir, present: { target: conduzco }, preterite: { target: conduje }, participle: conducido }
+        - { level: B2, verb: { mapping: [{ term: tuvieron }, { target: tuviera }] } }
+        - { level: C2, verb: imprimir, present: imprimo, preterite: imprimí, participle: { alternatives: [imprimido, { target: impreso }] } }
+        - { level: C2, verb: { mapping: [{ term: fueron }, { target: fuere }] } }
 
 sections:
   - title: { en: Overview, es: Visión general, uk: "Огляд", pt: "Visão geral", fr: "Vue d’ensemble", de: "Überblick", it: "Panoramica", pl: "Przegląd", tr: "Genel bakış", id: "Gambaran umum", vi: "Tổng quan" }
@@ -382,6 +385,50 @@ sections:
             ex: ["Ayer ", { target: manejé }, " cinco horas."]
             tr: { en: I drove for five hours yesterday., uk: "Учора я п’ять годин був за кермом.", pt: "Ontem dirigi por cinco horas.", fr: "Hier, j’ai conduit pendant cinq heures.", de: "Gestern bin ich fünf Stunden gefahren.", it: "Ieri ho guidato per cinque ore.", pl: "Wczoraj prowadziłem samochód przez pięć godzin.", tr: "Dün beş saat araba kullandım.", id: "Kemarin saya mengemudi selama lima jam.", vi: "Hôm qua tôi đã lái xe năm tiếng." }
 
+  - title: { es: "Imperfecto de subjuntivo de los irregulares" }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: verb, label: { es: Infinitivo }, features: { verbform: inf } }
+          - { key: preterite, label: { es: "Indefinido, ellos" }, features: { tense: pst, aspect: pfv, person: 3, number: pl } }
+          - { key: ra, label: { es: "-ra" }, features: { mood: sbjv, tense: pst } }
+          - { key: se, label: { es: "-se" }, features: { mood: sbjv, tense: pst } }
+        rows:
+          - { level: B2, verb: { alternatives: [ser, ir] }, preterite: [fue, { ending: ron }], ra: { target: [fue, { ending: ra }] }, se: { target: [fue, { ending: se }] } }
+          - { level: B2, verb: tener, preterite: [tuvie, { ending: ron }], ra: { target: [tuvie, { ending: ra }] }, se: { target: [tuvie, { ending: se }] } }
+          - { level: B2, verb: hacer, preterite: [hicie, { ending: ron }], ra: { target: [hicie, { ending: ra }] }, se: { target: [hicie, { ending: se }] } }
+          - { level: B2, verb: decir, preterite: [dije, { ending: ron }], ra: { target: [dije, { ending: ra }] }, se: { target: [dije, { ending: se }] } }
+          - { level: B2, verb: traer, preterite: [traje, { ending: ron }], ra: { target: [traje, { ending: ra }] }, se: { target: [traje, { ending: se }] } }
+          - { level: B2, verb: conducir, preterite: [conduje, { ending: ron }], ra: { target: [conduje, { ending: ra }] }, se: { target: [conduje, { ending: se }] } }
+          - { level: B2, verb: poder, preterite: [pudie, { ending: ron }], ra: { target: [pudie, { ending: ra }] }, se: { target: [pudie, { ending: se }] } }
+          - { level: B2, verb: querer, preterite: [quisie, { ending: ron }], ra: { target: [quisie, { ending: ra }] }, se: { target: [quisie, { ending: se }] } }
+          - { level: B2, verb: saber, preterite: [supie, { ending: ron }], ra: { target: [supie, { ending: ra }] }, se: { target: [supie, { ending: se }] } }
+          - { level: B2, verb: venir, preterite: [vinie, { ending: ron }], ra: { target: [vinie, { ending: ra }] }, se: { target: [vinie, { ending: se }] } }
+          - { level: B2, verb: poner, preterite: [pusie, { ending: ron }], ra: { target: [pusie, { ending: ra }] }, se: { target: [pusie, { ending: se }] } }
+          - { level: B2, verb: andar, preterite: [anduvie, { ending: ron }], ra: { target: [anduvie, { ending: ra }] }, se: { target: [anduvie, { ending: se }] } }
+          - { level: B2, verb: estar, preterite: [estuvie, { ending: ron }], ra: { target: [estuvie, { ending: ra }] }, se: { target: [estuvie, { ending: se }] } }
+          - { level: B2, verb: vestir, preterite: [vistie, { ending: ron }], ra: { target: [vistie, { ending: ra }] }, se: { target: [vistie, { ending: se }] } }
+          - { level: B2, verb: dormir, preterite: [durmie, { ending: ron }], ra: { target: [durmie, { ending: ra }] }, se: { target: [durmie, { ending: se }] } }
+          - { level: B2, verb: leer, preterite: [leye, { ending: ron }], ra: { target: [leye, { ending: ra }] }, se: { target: [leye, { ending: se }] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: ["La raíz es el indefinido de ", { term: ellos }, " sin ", { ending: ron }, "; después va ", { ending: ra }, " o ", { ending: se }, "."] }
+            ex: ["Quería que ", { target: tuvieras }, " paciencia."]
+          - type: rule
+            level: B2
+            text: { es: ["Una raíz en ", { letter: j }, " lleva ", { ending: ra }, " sin ", { letter: i }, ": ", { term: dijera }, ", ", { term: trajera }, ", ", { term: condujera }, "."] }
+            ex: { examples: [["Me pidió que le ", { target: dijera }, " la verdad."], ["Ojalá ", { target: trajeran }, " pan."]] }
+          - type: rule
+            level: B2
+            text: { es: [{ ending: ra }, " y ", { ending: se }, " tienen el mismo valor."] }
+            ex: { examples: [["Si ", { target: tuviera }, " tiempo, viajaría más."], ["Si ", { target: tuviese }, " tiempo, viajaría más."]] }
+          - type: note
+            level: B2
+            text: { es: ["Todas las personas y los usos: ", { link: El imperfecto de subjuntivo, to: es.subjuntivo.subjuntivo-imperfecto }, "."] }
+
   - title: { en: More irregular participles, es: Más participios irregulares, uk: "Ще неправильні дієприкметники", pt: "Mais particípios irregulares", fr: "D’autres participes irréguliers", de: "Weitere unregelmäßige Partizipien", it: "Altri participi irregolari", pl: "Więcej imiesłowów nieregularnych", tr: "Başka düzensiz participio biçimleri", id: "Partisip tidak beraturan lainnya", vi: "Thêm các quá khứ phân từ bất quy tắc" }
     role: own
     content:
@@ -431,6 +478,63 @@ sections:
             ex: ["Las ventanas están ", { target: abiertas }, "."]
             tr: { en: The windows are open., uk: "Вікна відчинені.", pt: "As janelas estão abertas.", fr: "Les fenêtres sont ouvertes.", de: "Die Fenster sind geöffnet.", it: "Le finestre sono aperte.", pl: "Okna są otwarte.", tr: "Pencereler açık.", id: "Jendela-jendelanya terbuka.", vi: "Các cửa sổ đang mở." }
 
+  - title: { es: "Participios dobles" }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { es: Infinitivo } }
+          - { key: weak, label: { es: "Participio regular" } }
+          - { key: strong, label: { es: "Participio irregular" } }
+          - { key: use, label: { es: Uso } }
+        rows:
+          - { level: C2, verb: abstraer, weak: { target: abstraído }, strong: { target: abstracto }, use: ["Se ha ", { target: abstraído }, " del ruido. Es una idea ", { target: abstracta }, "."] }
+          - { level: C2, verb: concluir, weak: { target: concluido }, strong: { target: concluso }, use: ["Ha ", { target: concluido }, " el juicio. El caso quedó ", { target: concluso }, "."] }
+          - { level: C2, verb: elegir, weak: { target: elegido }, strong: { target: electo }, use: ["Han ", { target: elegido }, " a la alcaldesa. Es la alcaldesa ", { target: electa }, "."] }
+          - { level: C2, verb: imprimir, weak: { target: imprimido }, strong: { target: impreso }, use: ["Ha ", { target: imprimido }, " el informe. El informe ", { target: impreso }, " está en la mesa."] }
+          - { level: C2, verb: freír, weak: { target: freído }, strong: { target: frito }, use: ["Ha ", { target: freído }, " los huevos. Prefiero los huevos ", { target: fritos }, "."] }
+          - { level: C2, verb: proveer, weak: { target: proveído }, strong: { target: provisto }, use: ["Ha ", { target: proveído }, " de agua al pueblo. El pueblo está ", { target: provisto }, " de agua."] }
+          - { level: C2, verb: bendecir, weak: { target: bendecido }, strong: { target: bendito }, use: ["El cura ha ", { target: bendecido }, " la casa. Rezó con agua ", { target: bendita }, "."] }
+          - { level: C2, verb: maldecir, weak: { target: maldecido }, strong: { target: maldito }, use: ["Ha ", { target: maldecido }, " su suerte. ¡", { target: Maldito }, " teléfono!"] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { es: ["Los tiempos compuestos llevan el participio regular; ", { term: imprimir }, ", ", { term: freír }, " y ", { term: proveer }, " admiten también el irregular."] }
+            ex: { examples: [["Ya he ", { target: imprimido }, " el informe."], ["Ya he ", { target: impreso }, " el informe."]] }
+          - type: rule
+            level: C2
+            text: { es: ["Como adjetivo y con ", { term: estar }, " va el participio irregular."] }
+            ex: ["El informe ya ", { target: está impreso }, "."]
+          - type: note
+            level: C2
+            text: { es: ["La pasiva con ", { term: ser }, " y con ", { term: estar }, ": ", { link: Estilo indirecto y pasiva con se, to: es.oracion.estilo-indirecto-pasiva }, "."] }
+
+  - title: { es: "Futuro de subjuntivo de los irregulares" }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: verb, label: { es: Infinitivo }, features: { verbform: inf } }
+          - { key: preterite, label: { es: "Indefinido, ellos" }, features: { tense: pst, aspect: pfv, person: 3, number: pl } }
+          - { key: re, label: { es: "-re" }, features: { mood: sbjv, tense: fut } }
+        rows:
+          - { level: C2, verb: { alternatives: [ser, ir] }, preterite: [fue, { ending: ron }], re: { target: [fue, { ending: re }] } }
+          - { level: C2, verb: tener, preterite: [tuvie, { ending: ron }], re: { target: [tuvie, { ending: re }] } }
+          - { level: C2, verb: haber, preterite: [hubie, { ending: ron }], re: { target: [hubie, { ending: re }] } }
+          - { level: C2, verb: decir, preterite: [dije, { ending: ron }], re: { target: [dije, { ending: re }] } }
+          - { level: C2, verb: traer, preterite: [traje, { ending: ron }], re: { target: [traje, { ending: re }] } }
+          - { level: C2, verb: aducir, preterite: [aduje, { ending: ron }], re: { target: [aduje, { ending: re }] } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { es: ["La raíz es la del imperfecto de subjuntivo; la terminación es ", { ending: re }, "."] }
+            ex: ["Donde ", { target: fueres }, ", haz lo que ", { target: vieres }, "."]
+          - type: note
+            level: C2
+            text: { es: ["Los usos: ", { link: El futuro de subjuntivo, to: es.subjuntivo.subjuntivo-futuro }, "."] }
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -443,3 +547,5 @@ sections:
           - { level: B1, wrong: Él dormió mucho., right: ["Él ", { target: durmió }, " mucho."], rule: { en: ["the stem changes in él: ", { mapping: [{ term: dormir }, { term: durmió }] }], es: ["la raíz cambia en él: ", { mapping: [{ term: dormir }, { term: durmió }] }], uk: ["основа змінюється в él: ", { mapping: [{ term: dormir }, { term: durmió }] }], pt: ["o radical muda em él: ", { mapping: [{ term: dormir }, { term: durmió }] }], fr: ["le radical change à él : ", { mapping: [{ term: dormir }, { term: durmió }] }], de: ["der Stamm ändert sich bei él: ", { mapping: [{ term: dormir }, { term: durmió }] }], it: ["la radice cambia in él: ", { mapping: [{ term: dormir }, { term: durmió }] }], pl: ["temat zmienia się w formie él: ", { mapping: [{ term: dormir }, { term: durmió }] }], tr: ["él biçiminde kök değişir: ", { mapping: [{ term: dormir }, { term: durmió }] }], id: ["akar kata berubah pada él: ", { mapping: [{ term: dormir }, { term: durmió }] }], vi: ["gốc từ đổi ở él: ", { mapping: [{ term: dormir }, { term: durmió }] }] } }
           - { level: A2, wrong: He abrido la puerta., right: [{ target: He abierto }, " la puerta."], rule: { en: ["irregular participle: ", { mapping: [{ term: abrir }, { term: abierto }] }], es: ["participio irregular: ", { mapping: [{ term: abrir }, { term: abierto }] }], uk: ["неправильний дієприкметник: ", { mapping: [{ term: abrir }, { term: abierto }] }], pt: ["particípio irregular: ", { mapping: [{ term: abrir }, { term: abierto }] }], fr: ["participe irrégulier : ", { mapping: [{ term: abrir }, { term: abierto }] }], de: ["unregelmäßiges Partizip: ", { mapping: [{ term: abrir }, { term: abierto }] }], it: ["participio irregolare: ", { mapping: [{ term: abrir }, { term: abierto }] }], pl: ["imiesłów nieregularny: ", { mapping: [{ term: abrir }, { term: abierto }] }], tr: ["düzensiz participio: ", { mapping: [{ term: abrir }, { term: abierto }] }], id: ["partisip tidak beraturan: ", { mapping: [{ term: abrir }, { term: abierto }] }], vi: ["quá khứ phân từ bất quy tắc: ", { mapping: [{ term: abrir }, { term: abierto }] }] } }
           - { level: B1, wrong: Ayer conducí cinco horas., right: ["Ayer ", { target: conduje }, " cinco horas."], rule: { en: { mapping: [{ term: conducir }, { term: conduje }] }, es: { mapping: [{ term: conducir }, { term: conduje }] }, uk: { mapping: [{ term: conducir }, { term: conduje }] }, pt: { mapping: [{ term: conducir }, { term: conduje }] }, fr: { mapping: [{ term: conducir }, { term: conduje }] }, de: { mapping: [{ term: conducir }, { term: conduje }] }, it: { mapping: [{ term: conducir }, { term: conduje }] }, pl: { mapping: [{ term: conducir }, { term: conduje }] }, tr: { mapping: [{ term: conducir }, { term: conduje }] }, id: { mapping: [{ term: conducir }, { term: conduje }] }, vi: { mapping: [{ term: conducir }, { term: conduje }] } } }
+          - { level: B2, wrong: Quería que me dijieras la verdad., right: ["Quería que me ", { target: dijeras }, " la verdad."], rule: { es: ["después de ", { letter: j }, ", la terminación es ", { ending: ra }, ", sin ", { letter: i }] } }
+          - { level: C2, wrong: Dios te ha bendito., right: ["Dios te ha ", { target: bendecido }, "."], rule: { es: ["tiempo compuesto: ", { mapping: [{ term: bendecir }, { term: bendecido }] }] } }

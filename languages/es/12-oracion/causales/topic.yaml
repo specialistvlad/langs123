@@ -1,0 +1,200 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.causales
+lang: es
+kind: grammar
+tags: [linkers, cause, conjunctions, sentence]
+concepts: [linkers, cause]
+related: [es.oracion.conectores, es.subjuntivo.subjuntivo-deseos-dudas]
+status: { es: draft }
+
+title: { es: "Las oraciones causales: porque, ya que, puesto que" }
+summary:
+  lead:
+    es: ["Las oraciones causales dan la razón de un hecho o de lo que se dice con ", { term: porque }, ", ", { term: ya que }, ", ", { term: puesto que }, " y ", { term: debido a que }, "."]
+  rule:
+    es: ["La causa afirmada lleva indicativo, y ", { term: ya que }, " y ", { term: puesto que }, " la colocan delante o detrás:"]
+  ex: [{ target: Ya que }, " vas al centro, compra pan."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: "Detrás de la principal" }
+          rule: { es: [{ term: porque }, " y ", { term: debido a que }, " van detrás de la oración principal"] }
+          ex: ["Salgo temprano ", { target: porque }, " mañana tengo examen."]
+        - level: B2
+          point: { es: "Delante o detrás" }
+          rule: { es: [{ term: ya que }, " y ", { term: puesto que }, " presentan un hecho conocido"] }
+          ex: [{ target: Puesto que }, " nadie protestó, se aprobó el plan."]
+        - level: B2
+          point: { es: "Dos causas" }
+          rule: { es: "sin coma, la causa del hecho; con coma, la de lo que se dice" }
+          ex: { examples: [["Cierro la ventana ", { target: porque }, " hace frío."], ["Cierra la ventana, ", { target: porque }, " hace frío."]] }
+        - level: C1
+          point: { es: "Más nexos" }
+          rule: { es: [{ term: gracias a que }, " da una causa favorable; ", { term: por culpa de que }, ", una desfavorable"] }
+          ex: { examples: [[{ target: Gracias a que }, " me avisaste, llegué a tiempo."], ["Perdimos el tren ", { target: por culpa de que }, " el taxi llegó tarde."]] }
+        - level: C1
+          point: { es: "Causa enfática" }
+          rule: { es: [{ term: porque }, " delante de la principal destaca la causa"] }
+          ex: [{ target: Porque }, " habla cuatro idiomas, lo contrataron."]
+        - level: C1
+          point: { es: "Negación" }
+          rule: { es: ["tras ", { term: no }, ", el indicativo niega el verbo y el subjuntivo, la causa"] }
+          ex: { contrast: [["No se va porque ", { target: llueve }, "."], ["No se va porque ", { target: llueva }, ", sino porque es tarde."]] }
+        - level: C2
+          point: { es: "Lengua hablada" }
+          rule: { es: [{ term: que }, " da la causa detrás de una coma, en registro coloquial"] }
+          ex: ["Apúrate, ", { target: que }, " perdemos el tren."]
+        - level: C2
+          point: { es: "Causa excesiva" }
+          rule: { es: [{ term: ["de tanto ", { gap: true }, " como"] }, " presenta la causa como excesiva"] }
+          ex: ["No se veía el suelo ", { target: de tantas hojas como había }, "."]
+        - level: C2
+          point: { es: Pregunta }
+          rule: { es: "la causa por la que se pregunta lleva subjuntivo" }
+          ex: ["¿Es que te callas ", { target: porque esté }, " tu jefe delante?"]
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: "la causa afirmada lleva indicativo" }
+          ex: ["Ya que ", { target: sabes }, " tanto, explícalo tú."]
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: [{ term: debido a que }, " lleva la preposición ", { term: a }] }
+          ex: ["Se retrasó ", { target: debido a que }, " había niebla."]
+
+sections:
+  - title: { es: "Causa del enunciado y de la enunciación" }
+    role: overview
+    content:
+      - type: comparison
+        columns:
+          - { key: kind, label: { es: Tipo } }
+          - { key: explains, label: { es: Explica } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            kind: { es: "Causa del enunciado" }
+            explains: { es: "por qué ocurre lo que dice la oración principal" }
+            ex: { examples: [["Cierro la ventana ", { target: porque }, " hace frío."], ["El vuelo se retrasó ", { target: debido a que }, " había niebla."]] }
+          - level: B2
+            kind: { es: "Causa de la enunciación" }
+            explains: { es: "por qué se dice la oración principal: una orden, un consejo o una deducción" }
+            ex: { examples: [["Cierra la ventana, ", { target: porque }, " hace frío."], ["Ya llegaron, ", { target: porque }, " veo la luz encendida."]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "La causa afirmada es un hecho real, así que el verbo va en indicativo."
+            ex: { examples: [["Se negó debido a que no le ", { target: habían avisado }, "."], ["Ya que ", { target: sabes }, " tanto, explícalo tú."]] }
+          - type: rule
+            level: B2
+            text:
+              es: "Una coma separa la causa de la enunciación; la causa del enunciado no la lleva."
+          - type: rule
+            level: B2
+            text:
+              es: "La causa antepuesta se separa de la oración principal con una coma."
+            ex: { examples: [[{ target: Puesto que }, " nadie protestó, se aprobó el plan."], [{ target: Ya que }, " vives cerca, pasa por mi casa."]] }
+
+  - title: { es: Nexos }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: linker, label: { es: Nexo } }
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            linker: porque
+            use: { es: "detrás de la principal; en todos los registros" }
+            ex: ["Salgo temprano ", { target: porque }, " mañana tengo examen."]
+          - level: B2
+            linker: debido a que
+            use: { es: "detrás de la principal; formal" }
+            ex: ["El partido se suspendió ", { target: debido a que }, " llovía mucho."]
+          - level: B2
+            linker: ya que
+            use: { es: "delante o detrás; un hecho conocido; neutro" }
+            ex: { examples: [[{ target: Ya que }, " vives cerca, pasa por mi casa."], ["Pasa por mi casa, ", { target: ya que }, " vives cerca."]] }
+          - level: B2
+            linker: puesto que
+            use: { es: "delante o detrás; un hecho conocido; más formal y escrito" }
+            ex: { examples: [[{ target: Puesto que }, " nadie protestó, se aprobó el plan."], ["Se aprobó el plan, ", { target: puesto que }, " nadie protestó."]] }
+          - level: C1
+            linker: a causa de que
+            use: { es: "delante o detrás; formal, en la lengua escrita" }
+            ex: { examples: [[{ target: A causa de que }, " nevó, cerraron la carretera."], ["Cerraron la carretera ", { target: a causa de que }, " nevó."]] }
+          - level: C1
+            linker: gracias a que
+            use: { es: "delante o detrás; una causa favorable" }
+            ex: { examples: [[{ target: Gracias a que }, " me avisaste, llegué a tiempo."], ["Llegué a tiempo ", { target: gracias a que }, " me avisaste."]] }
+          - level: C1
+            linker: por culpa de que
+            use: { es: "delante o detrás; una causa desfavorable" }
+            ex: { examples: [[{ target: Por culpa de que }, " el taxi llegó tarde, perdimos el tren."], ["Perdimos el tren ", { target: por culpa de que }, " el taxi llegó tarde."]] }
+          - level: C2
+            linker: que
+            use: { es: "detrás de la principal y de una coma; coloquial" }
+            ex: ["Apúrate, ", { target: que }, " perdemos el tren."]
+          - level: C2
+            linker: ["de tanto ", { gap: true }, " como"]
+            use: { es: "detrás de la principal; la causa es excesiva y la principal dice su efecto" }
+            ex: ["No se veía el suelo ", { target: de tantas hojas como había }, "."]
+
+  - title: { es: "Causa enfática y negación" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Patrón } }
+          - { key: sense, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            pattern: { pattern: [{ term: porque }, { slot: { es: causa } }, { slot: { es: oración principal } }] }
+            sense: { es: "la causa va primero y se destaca" }
+            ex: [{ target: Porque }, " habla cuatro idiomas, lo contrataron."]
+          - level: C1
+            pattern: { pattern: [{ term: solo porque }, { slot: { es: causa } }] }
+            sense: { es: "la causa es la única razón" }
+            ex: ["Te ayudo ", { target: solo porque }, " eres mi amigo."]
+          - level: C1
+            pattern: { pattern: [{ term: no }, { slot: verb }, { term: porque }, { slot: { es: verbo en indicativo } }] }
+            sense: { es: "se niega el verbo principal: el hecho no ocurre, y la causa explica por qué" }
+            ex: ["No se va porque ", { target: llueve }, "."]
+          - level: C1
+            pattern: { pattern: [{ term: no }, { slot: verb }, { term: porque }, { slot: { es: verbo en subjuntivo } }] }
+            sense: { es: "se niega la causa: el hecho ocurre por otra razón" }
+            ex: ["No se va porque ", { target: llueva }, ", sino porque es tarde."]
+          - level: C2
+            pattern: { pattern: [{ term: porque }, { slot: { es: verbo en subjuntivo } }] }
+            sense: { es: "en una pregunta sobre la causa, el subjuntivo no la afirma" }
+            ex: ["¿Es que te callas ", { target: porque esté }, " tu jefe delante?"]
+          - level: C2
+            pattern: { pattern: [{ term: acaso no }, { slot: verb }, { term: porque }, { slot: { es: verbo en subjuntivo } }] }
+            sense: { es: "la pregunta negada presupone que sí es la causa" }
+            ex: ["¿Acaso no te callas ", { target: porque esté }, " tu jefe delante?"]
+      - type: list
+        items:
+          - type: note
+            level: C1
+            text:
+              es: ["El subjuntivo y la negación: ver ", { link: "El subjuntivo: deseos, dudas y opiniones", to: es.subjuntivo.subjuntivo-deseos-dudas }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Se retrasó debido que había niebla.", right: ["Se retrasó ", { target: debido a que }, " había niebla."], rule: { es: [{ term: debido a que }, " lleva la preposición ", { term: a }] } }
+          - { level: B2, wrong: "Ya que sepas tanto, explícalo tú.", right: ["Ya que ", { target: sabes }, " tanto, explícalo tú."], rule: { es: "la causa afirmada lleva indicativo" } }
+          - { level: C1, wrong: "Perdimos el tren por culpa que el taxi llegó tarde.", right: ["Perdimos el tren ", { target: por culpa de que }, " el taxi llegó tarde."], rule: { es: [{ term: por culpa de que }, " lleva la preposición ", { term: de }] } }
+          - { level: C2, wrong: "No se veía el suelo de tantas hojas que había.", right: ["No se veía el suelo ", { target: de tantas hojas como había }, "."], rule: { es: ["la causa excesiva con ", { term: de }, " lleva ", { term: como }, ", no ", { term: que }] } }

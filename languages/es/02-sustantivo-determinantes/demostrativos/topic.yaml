@@ -84,6 +84,18 @@ cheatsheet:
           rule: { en: ["the present period: ", { term: este año }], es: ["el periodo actual: ", { term: este año }], uk: ["теперішній період: ", { term: este año }], pt: ["o período atual: ", { term: este año }], fr: ["la période actuelle : ", { term: este año }], de: ["der gegenwärtige Zeitraum: ", { term: este año }], it: ["il periodo attuale: ", { term: este año }], pl: ["obecny okres: ", { term: este año }], tr: ["içinde bulunulan dönem: ", { term: este año }], id: ["periode saat ini: ", { term: este año }], vi: ["khoảng thời gian hiện tại: ", { term: este año }] }
           ex: [{ target: Esta }, " semana tengo exámenes."]
           tr: { en: I have exams this week., uk: Цього тижня в мене іспити., pt: "Esta semana tenho provas.", fr: "Cette semaine, j’ai des examens.", de: "Diese Woche habe ich Prüfungen.", it: "Questa settimana ho gli esami.", pl: "W tym tygodniu mam egzaminy.", tr: "Bu hafta sınavlarım var.", id: "Minggu ini saya ada ujian.", vi: "Tuần này tôi có các bài thi." }
+        - level: B2
+          point: { es: En el discurso }
+          rule: { es: [{ term: este }, " y ", { term: ese }, " retoman un nombre ya dicho; ", { term: esto }, " anuncia lo que sigue"] }
+          ex: ["Escucha ", { target: esto }, ": mañana no hay clase."]
+        - level: C1
+          point: { es: Pospuestos }
+          rule: { es: ["tras ", { term: qué }, " y el nombre: admiración o nostalgia"] }
+          ex: ["¡Qué ", { target: tiempos aquellos }, "!"]
+        - level: C2
+          point: { es: "Este y un nombre" }
+          rule: { es: [{ term: este }, " y un nombre de pila señalan a alguien que los dos conocen"] }
+          ex: [{ target: Este Pablo }, " del que hablas, ¿es el hermano de Sara?"]
         - level: A1
           point: { en: Trap, es: Trampa, uk: Пастка, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule: { en: ["before a noun, ", { term: este }, ", never ", { term: esto }], es: ["delante de un sustantivo, ", { term: este }, " y nunca ", { term: esto }], uk: ["перед іменником — ", { term: este }, ", ніколи не ", { term: esto }], pt: ["antes de um substantivo, ", { term: este }, " e nunca ", { term: esto }], fr: ["devant un nom, ", { term: este }, " et jamais ", { term: esto }], de: ["vor einem Nomen ", { term: este }, " und nie ", { term: esto }], it: ["davanti a un sostantivo, ", { term: este }, " e mai ", { term: esto }], pl: ["przed rzeczownikiem ", { term: este }, ", nigdy ", { term: esto }], tr: ["isimden önce ", { term: este }, " gelir, ", { term: esto }, " asla gelmez"], id: ["sebelum kata benda, ", { term: este }, " dan tidak pernah ", { term: esto }], vi: ["trước danh từ dùng ", { term: este }, ", không bao giờ dùng ", { term: esto }] }
@@ -274,6 +286,68 @@ sections:
             ex: ["Ven ", { target: acá }, "."]
             tr: { en: Come here., uk: Іди сюди., pt: "Venha cá.", fr: "Viens ici.", de: "Komm her.", it: "Vieni qui.", pl: "Chodź tutaj.", tr: "Buraya gel.", id: "Ke sini.", vi: "Đến đây." }
 
+  - title: { es: "Los demostrativos en el discurso" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "enlace entre oraciones: el demostrativo retoma un nombre ya dicho" }
+            ex: ["Ayer me llamó un vecino. ", { target: Ese vecino }, " quiere vender su casa."]
+          - level: B2
+            use: { es: "la forma neutra apunta hacia lo que se va a decir" }
+            ex: ["Escucha ", { target: esto }, ": mañana no hay clase."]
+          - level: C1
+            use: { es: ["la cercanía elige el referente: ", { term: este }, " es el último nombrado y ", { term: aquel }, " el primero"] }
+            ex: ["Hablé con Ana y con su hermano. ", { target: Este }, " me pareció amable y ", { target: aquella }, ", muy seria."]
+          - level: C1
+            use: { es: [{ term: eso }, " y una oración de relativo: retoma una idea o un hecho"] }
+            ex: [{ target: Eso }, " que propones es muy caro."]
+          - level: C1
+            use: { es: "una persona sin nombre, con tono despectivo o admirado" }
+            ex: [{ target: Esa }, " siempre se cree la más lista."]
+          - level: C1
+            use: { es: "al final de la frase, el demostrativo con el nombre da un tono condescendiente" }
+            ex: ["Siempre llega tarde, ", { target: este chico }, { gap: true }]
+          - level: C2
+            use: { es: [{ term: este }, " y un nombre de pila: señala a alguien que los dos conocen"] }
+            ex: [{ target: Este Pablo }, " del que hablas, ¿es el hermano de Sara?"]
+          - level: C2
+            use: { es: "sorpresa o humor ante una persona" }
+            ex: ["¡Mira ", { target: esa }, " qué elegante viene!"]
+          - level: C2
+            use: { es: [{ term: este }, " por “yo”: el hablante se señala a sí mismo, en tono informal"] }
+            ex: [{ target: Esta }, " no se mueve de aquí."]
+
+  - title: { es: "Los demostrativos pospuestos" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [{ term: el }, { slot: noun }, { slot: { es: demostrativo } }] }
+            meaning: { es: "referencia lejana en el tiempo o en el recuerdo" }
+            ex: { examples: [[{ target: Los tiempos aquellos }, " fueron difíciles."], ["Recuerdo ", { target: la casa aquella }, " junto al río."]] }
+          - level: C1
+            pattern: { pattern: [{ term: qué }, { slot: noun }, { slot: { es: demostrativo } }] }
+            meaning: { es: "exclamación de admiración, queja o nostalgia" }
+            ex: { examples: [["¡Qué ", { target: día este }, "!"], ["¡Qué ", { target: veranos aquellos }, "!"]] }
+          - level: C2
+            pattern: { pattern: [{ term: el }, { slot: noun }, { slot: { es: demostrativo } }] }
+            meaning: { es: "desprecio o fastidio ante una persona o una cosa, en el habla coloquial" }
+            ex: { examples: [[{ target: El niño este }, " no hace caso."], [{ target: Los vecinos estos }, " hacen ruido de noche."]] }
+          - level: C2
+            pattern: { pattern: [{ term: vaya }, { slot: noun }, { slot: { es: demostrativo } }, { term: que }, { slot: clause }] }
+            meaning: { es: "ponderación de algo que el otro tiene o ha hecho" }
+            ex: ["¡", { target: Vaya terraza esta }, " que tienes!"]
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: Типові помилки, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -286,3 +360,4 @@ sections:
           - { level: A2, wrong: esta problema, right: [{ target: este }, " problema"], rule: { en: [{ term: problema }, " is masculine"], es: [{ term: problema }, " es masculino"], uk: [{ term: problema }, " — чоловічого роду"], pt: [{ term: problema }, " é masculino"], fr: [{ term: problema }, " est masculin"], de: [{ term: problema }, " ist männlich"], it: [{ term: problema }, " è maschile"], pl: [{ term: problema }, " jest rodzaju męskiego"], tr: [{ term: problema }, " eril bir sözcüktür"], id: [{ term: problema }, " maskulin"], vi: [{ term: problema }, " là danh từ giống đực"] } }
           - { level: A1, wrong: aquello casa, right: [{ target: aquella }, " casa"], rule: { en: ["before a feminine noun, ", { term: aquella }], es: ["delante de un femenino, ", { term: aquella }], uk: ["перед іменником жіночого роду — ", { term: aquella }], pt: ["antes de um substantivo feminino, ", { term: aquella }], fr: ["devant un nom féminin, ", { term: aquella }], de: ["vor einem weiblichen Nomen ", { term: aquella }], it: ["davanti a un sostantivo femminile, ", { term: aquella }], pl: ["przed rzeczownikiem rodzaju żeńskiego ", { term: aquella }], tr: ["dişil isimden önce ", { term: aquella }], id: ["sebelum kata benda feminin, ", { term: aquella }], vi: ["trước danh từ giống cái dùng ", { term: aquella }] } }
           - { level: A1, speakers: [uk], wrong: Esto es mi madre., right: [{ target: Esta }, " es mi madre."], rule: { uk: ["українське «це» не змінюється, а іспанське змінюється за родом людини: ", { term: esta }, " про жінку"] } }
+          - { level: C1, wrong: ¡Qué este hombre!, right: ["¡Qué ", { target: hombre este }, "!"], rule: { es: ["tras ", { term: qué }, " el nombre va primero y el demostrativo, detrás"] } }

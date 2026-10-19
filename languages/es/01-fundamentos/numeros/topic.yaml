@@ -182,6 +182,46 @@ cheatsheet:
             vi: [{ term: "primero" }, " và ", { term: "tercero" }, " mất -o trước danh từ giống đực số ít"]
           ex: { examples: [["el ", { target: primer }, " día"], ["el ", { target: tercer }, " piso"]] }
           tr: { en: { examples: [the first day, the third floor] }, uk: { examples: ["перший день", "третій поверх"] }, pt: { examples: ["o primeiro dia", "o terceiro andar"] }, fr: { examples: ["le premier jour", "le troisième étage"] }, de: { examples: ["der erste Tag", "der dritte Stock"] }, it: { examples: ["il primo giorno", "il terzo piano"] }, pl: { examples: ["pierwszy dzień", "trzecie piętro"] }, tr: { examples: ["ilk gün", "üçüncü kat"] }, id: { examples: ["hari pertama", "lantai ketiga"] }, vi: { examples: ["ngày đầu tiên", "tầng ba"] } }
+        - level: B2
+          point: "11.º–20.º"
+          rule:
+            es: ["desde el 13.º, una sola palabra: ", { term: "decimo-" }, " y el ordinal"]
+          ex: { examples: [{ target: undécimo }, [{ target: decimo }, quinto]] }
+        - level: B2
+          point: { es: Fracciones }
+          rule:
+            es: ["un partitivo y ", { term: de }, " con el todo que se divide"]
+          ex: { examples: [[{ target: un tercio }, " de la tarta"], [{ target: la mitad }, " de los adultos"]] }
+        - level: B2
+          point: { es: Múltiplos }
+          rule:
+            es: [{ term: el doble }, ", ", { term: el triple }, ", ", { term: el cuádruple }, "; o ", { term: veces }, " con ", { term: más }, " o ", { term: menos }]
+          ex: { examples: [["el ", { target: doble }, " de dinero"], { target: diez veces más }] }
+        - level: B2
+          point: { es: Porcentajes }
+          rule:
+            es: ["el número, ", { term: por ciento }, " y ", { term: de }, " con el grupo"]
+          ex: { examples: [["el 20 ", { target: por ciento }, " de los ciudadanos"], [{ target: tres de cada cinco }, " mujeres"]] }
+        - level: C1
+          point: { es: Partitivos desde 1/11 }
+          rule:
+            es: ["el cardinal con ", { term: "-avo" }, "; con ", { term: parte }, " vale también el ordinal"]
+          ex: { examples: [["la ", { target: veinteava }, " parte"], ["la ", { target: vigésima }, " parte"]] }
+        - level: C2
+          point: { es: Ordinales mayores }
+          rule:
+            es: ["decenas hasta ", { term: centésimo }, "; del 21.º al 29.º, una palabra o dos"]
+          ex: { examples: [{ target: vigesimoprimero }, { target: vigésimo primero }] }
+        - level: C2
+          point: { es: Numeración romana }
+          rule:
+            es: "siete letras que suman; una menor delante de una mayor resta"
+          ex: { examples: [{ target: IX }, { target: MCMLXVI }] }
+        - level: C2
+          point: { es: Leer romanos }
+          rule:
+            es: "reyes: ordinal hasta X, cardinal desde XI; siglos: cardinal"
+          ex: { examples: [{ mapping: ["Alfonso X", ["Alfonso ", { target: { ordinal: décimo, value: 10 } }]] }, { mapping: ["Alfonso XIII", ["Alfonso ", { target: { numeral: trece, value: 13 } }]] }] }
         - level: A0
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -601,6 +641,244 @@ sections:
               vi: "Sau số thứ mười, trong đời thường người ta dùng số đếm đặt sau danh từ:"
             ex: ["Vivo en el piso ", { target: quince }, "."]
             tr: { en: I live on the fifteenth floor., uk: "Я живу на п’ятнадцятому поверсі.", pt: "Moro no décimo quinto andar.", fr: "J’habite au quinzième étage.", de: "Ich wohne im fünfzehnten Stock.", it: "Abito al quindicesimo piano.", pl: "Mieszkam na piętnastym piętrze.", tr: "On beşinci katta oturuyorum.", id: "Saya tinggal di lantai lima belas.", vi: "Tôi sống ở tầng mười lăm." }
+      - type: inventory
+        set: ordinals
+        columns:
+          - { key: number, label: { es: Número } }
+          - { key: masc, label: { es: Masculino } }
+          - { key: fem, label: { es: Femenino } }
+        rows:
+          - { level: C2, value: 30, number: "30.º, 30.ª", masc: trigésimo, fem: trigésima }
+          - { level: C2, value: 40, number: "40.º, 40.ª", masc: cuadragésimo, fem: cuadragésima }
+          - { level: C2, value: 50, number: "50.º, 50.ª", masc: quincuagésimo, fem: quincuagésima }
+          - { level: C2, value: 60, number: "60.º, 60.ª", masc: sexagésimo, fem: sexagésima }
+          - { level: C2, value: 70, number: "70.º, 70.ª", masc: septuagésimo, fem: septuagésima }
+          - { level: C2, value: 80, number: "80.º, 80.ª", masc: octogésimo, fem: octogésima }
+          - { level: C2, value: 90, number: "90.º, 90.ª", masc: nonagésimo, fem: nonagésima }
+          - { level: C2, value: 100, number: "100.º, 100.ª", masc: centésimo, fem: centésima }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              es: "Del 21.º al 29.º, el ordinal se escribe en una palabra o en dos:"
+            ex: { alternatives: [{ target: vigesimoprimero }, { target: vigésimo primero }] }
+          - type: rule
+            level: C2
+            text:
+              es: "Desde el 30.º, la decena y la unidad se escriben en dos palabras:"
+            ex: ["el ", { target: trigésimo primero }, " aniversario"]
+          - type: rule
+            level: C2
+            text:
+              es: "Los ordinales mayores concuerdan en género y número, también en dos palabras:"
+            ex: { examples: [["la ", { target: vigésima }, " edición"], ["la ", { target: vigésima primera }, " edición"]] }
+          - type: rule
+            level: C2
+            text:
+              es: [{ term: primero }, " pierde la -o detrás de la decena, ante un masculino singular:"]
+            ex: ["el vigésimo ", { target: primer }, " piso"]
+
+  - title: { es: Ordinales del 11.º al 20.º }
+    role: own
+    content:
+      - type: inventory
+        set: ordinals
+        columns:
+          - { key: number, label: { es: Número } }
+          - { key: masc, label: { es: Masculino } }
+          - { key: fem, label: { es: Femenino } }
+        rows:
+          - { level: B2, value: 11, number: "11.º, 11.ª", masc: undécimo, fem: undécima }
+          - { level: B2, value: 12, number: "12.º, 12.ª", masc: duodécimo, fem: duodécima }
+          - { level: B2, value: 13, number: "13.º, 13.ª", masc: [{ target: decimo }, tercero], fem: [{ target: decimo }, tercera] }
+          - { level: B2, value: 14, number: "14.º, 14.ª", masc: [{ target: decimo }, cuarto], fem: [{ target: decimo }, cuarta] }
+          - { level: B2, value: 15, number: "15.º, 15.ª", masc: [{ target: decimo }, quinto], fem: [{ target: decimo }, quinta] }
+          - { level: B2, value: 16, number: "16.º, 16.ª", masc: [{ target: decimo }, sexto], fem: [{ target: decimo }, sexta] }
+          - { level: B2, value: 17, number: "17.º, 17.ª", masc: [{ target: decimo }, séptimo], fem: [{ target: decimo }, séptima] }
+          - { level: B2, value: 18, number: "18.º, 18.ª", masc: [{ target: decimo }, octavo], fem: [{ target: decimo }, octava] }
+          - { level: B2, value: 19, number: "19.º, 19.ª", masc: [{ target: decimo }, noveno], fem: [{ target: decimo }, novena] }
+          - { level: B2, value: 20, number: "20.º, 20.ª", masc: vigésimo, fem: vigésima }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Desde el 13.º, el ordinal es una sola palabra: ", { term: "decimo-" }, " y el ordinal de la unidad."]
+          - type: rule
+            level: B2
+            text:
+              es: ["La tilde sigue la regla general: ", { term: decimoséptimo }, " la lleva y ", { term: decimosexto }, " no."]
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: decimotercero }, " pierde la -o como ", { term: tercero }, " ante un masculino singular:"]
+            ex: ["el ", { target: decimotercer }, " piso"]
+
+  - title: { es: Fracciones y partitivos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: frac, label: { es: Fracción } }
+          - { key: name, label: { es: Nombre } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, frac: "1/2", name: la mitad, ex: [{ target: la mitad }, " de los adultos"] }
+          - { level: B2, frac: "1/3", name: un tercio, ex: [{ target: un tercio }, " de la tarta"] }
+          - { level: B2, frac: "1/4", name: un cuarto, ex: [{ target: un cuarto }, " del presupuesto"] }
+          - { level: B2, frac: "1/5", name: un quinto, ex: [{ target: un quinto }, " de los alumnos"] }
+          - { level: B2, frac: "1/12", name: un doceavo, ex: [{ target: un doceavo }, " del sueldo"] }
+          - { level: B2, frac: "2/3", name: dos tercios, ex: [{ target: dos tercios }, " de la población"] }
+          - { level: B2, frac: "3/4", name: tres cuartos, ex: [{ target: tres cuartos }, " de los votantes"] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Detrás del partitivo, ", { term: de }, " introduce el todo que se divide."]
+          - type: rule
+            level: B2
+            text:
+              es: "Desde el cuarto, el partitivo es el ordinal masculino; el tercio y la mitad tienen forma propia."
+          - type: rule
+            level: B2
+            text:
+              es: "Con dos o más partes, el partitivo va en plural."
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: parte }, " lleva el ordinal femenino y sirve para cualquier fracción:"]
+            ex: { examples: [["una ", { target: quinta parte }, " de la ciudad"], ["la ", { target: sexta parte }, " de los habitantes"]] }
+      - type: usage
+        columns:
+          - { key: frac, label: { es: Fracción } }
+          - { key: name, label: { es: Nombre } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: C1, frac: "1/n", name: la enésima parte, ex: ["Cada socio paga ", { target: la enésima parte }, " del gasto."] }
+          - { level: C1, frac: "1/4", name: la mitad de la mitad, ex: ["Un cuarto es ", { target: la mitad de la mitad }, "."] }
+          - { level: C1, frac: "1/100", name: la centésima parte, ex: ["Un céntimo es ", { target: la centésima parte }, " de un euro."] }
+          - { level: C1, frac: "1/11", name: un onceavo, ex: ["un ", { target: onceavo }, " de la herencia"] }
+          - { level: C1, frac: "1/13", name: un treceavo, ex: ["un ", { target: treceavo }, " del terreno"] }
+          - { level: C1, frac: "1/20", name: la veinteava parte, ex: ["la ", { target: veinteava parte }, " del terreno"] }
+          - { level: C1, frac: "1/20", name: la vigésima parte, ex: ["la ", { target: vigésima parte }, " del terreno"] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: ["Desde el 11, el partitivo suma ", { term: "-avo" }, " al cardinal; con ", { term: parte }, " vale también el ordinal."]
+          - type: rule
+            level: C1
+            text:
+              es: [{ term: "-avo" }, " expresa una fracción; el lugar en una serie lleva el ordinal."]
+
+  - title: { es: Múltiplos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: mult, label: { es: Multiplicador } }
+          - { key: form, label: { es: Forma } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, mult: "×2", form: el doble, ex: ["En agosto hay ", { target: el doble }, " de turistas."] }
+          - { level: B2, mult: "×3", form: el triple, ex: ["El billete cuesta ", { target: el triple }, " en temporada alta."] }
+          - { level: B2, mult: "×4", form: el cuádruple, ex: ["Pagó ", { target: el cuádruple }, " del precio normal."] }
+          - { level: B2, mult: "×10", form: diez veces más, ex: ["Esta ciudad tiene ", { target: diez veces más }, " habitantes."] }
+          - { level: B2, mult: "÷3", form: tres veces menos, ex: ["Aquí hay ", { target: tres veces menos }, " tráfico."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Con ", { term: el doble }, ", ", { term: de }, " nombra lo que se mide y ", { term: que }, " a quien se compara:"]
+            ex: { examples: [["el doble ", { target: de }, " dinero"], ["el doble ", { target: que }, " tú"]] }
+
+  - title: { es: Porcentajes y proporciones }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Un porcentaje se dice con ", { term: por ciento }, ", y ", { term: de }, " introduce el grupo:"]
+            ex: { examples: [["el 20 ", { target: por ciento }, " de los ciudadanos"], ["un 1,6 ", { target: por ciento }]] }
+          - type: rule
+            level: B2
+            text:
+              es: ["El símbolo ", { term: "%" }, " se escribe tras un espacio y se lee ", { term: por ciento }, ":"]
+            ex: { examples: [{ mapping: ["20 %", { numeral: veinte por ciento, value: 20 }] }, { mapping: ["1,6 %", { numeral: ["uno ", { target: coma }, " seis por ciento"], value: 1.6 }] }] }
+          - type: rule
+            level: B2
+            text:
+              es: ["Una proporción se dice con ", { term: de cada }, ":"]
+            ex: { examples: [[{ target: tres de cada cinco }, " mujeres"], { target: uno de cada diez }] }
+
+  - title: { es: Numeración romana }
+    role: own
+    content:
+      - type: inventory
+        set: numbers
+        columns:
+          - { key: number, label: { es: Número } }
+          - { key: roman, label: { es: Romano } }
+        rows:
+          - { level: C2, value: 1, number: "1", roman: "I" }
+          - { level: C2, value: 5, number: "5", roman: "V" }
+          - { level: C2, value: 10, number: "10", roman: "X" }
+          - { level: C2, value: 50, number: "50", roman: "L" }
+          - { level: C2, value: 100, number: "100", roman: "C" }
+          - { level: C2, value: 500, number: "500", roman: "D" }
+          - { level: C2, value: 1000, number: "1000", roman: "M" }
+      - type: inventory
+        set: numbers
+        columns:
+          - { key: number, label: { es: Número } }
+          - { key: roman, label: { es: Romano } }
+          - { key: how, label: { es: Se forma } }
+        rows:
+          - { level: C2, value: 4, number: "4", roman: "IV", how: { es: V menos I } }
+          - { level: C2, value: 9, number: "9", roman: "IX", how: { es: X menos I } }
+          - { level: C2, value: 40, number: "40", roman: "XL", how: { es: L menos X } }
+          - { level: C2, value: 90, number: "90", roman: "XC", how: { es: C menos X } }
+          - { level: C2, value: 400, number: "400", roman: "CD", how: { es: D menos C } }
+          - { level: C2, value: 900, number: "900", roman: "CM", how: { es: M menos C } }
+          - { level: C2, value: 1966, number: "1966", roman: "MCMLXVI", how: { es: "M, CM, L, X y VI" } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              es: "Las letras se suman de mayor a menor, y una menor delante de una mayor resta."
+          - type: rule
+            level: C2
+            text:
+              es: [{ letter: I }, " resta ante ", { letter: V }, " y ", { letter: X }, "; ", { letter: X }, " ante ", { letter: L }, " y ", { letter: C }, "; ", { letter: C }, " ante ", { letter: D }, " y ", { letter: M }, "."]
+          - type: rule
+            level: C2
+            text:
+              es: "Una letra se repite hasta tres veces seguidas:"
+            ex: { examples: [{ target: XXX }, { target: CCC }] }
+          - type: rule
+            level: C2
+            text:
+              es: "Los números romanos se escriben con mayúsculas; las páginas de un prólogo admiten minúsculas:"
+            ex: { alternatives: [{ target: página XVI }, { target: página xvi }] }
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+          - { key: read, label: { es: Lectura } }
+        rows:
+          - { level: C2, use: { es: Siglos }, ex: { examples: [siglo XV, siglo XXI] }, read: { examples: [["siglo ", { numeral: quince, value: 15 }], ["siglo ", { numeral: veintiuno, value: 21 }]] } }
+          - { level: C2, use: { es: Siglos hasta el X }, ex: siglo V, read: { examples: [["siglo ", { numeral: cinco, value: 5 }], ["siglo ", { ordinal: quinto, value: 5 }]] } }
+          - { level: C2, use: { es: Reyes y papas hasta el X }, ex: { examples: [Alfonso X, Juan Pablo II] }, read: { examples: [["Alfonso ", { ordinal: décimo, value: 10 }], ["Juan Pablo ", { ordinal: segundo, value: 2 }]] } }
+          - { level: C2, use: { es: Reyes y papas desde el XI }, ex: Alfonso XIII, read: ["Alfonso ", { numeral: trece, value: 13 }] }
+          - { level: C2, use: { es: Capítulos y tomos }, ex: { examples: [capítulo IV, tomo II] }, read: { examples: [["capítulo ", { numeral: cuatro, value: 4 }], ["tomo ", { numeral: dos, value: 2 }]] } }
+          - { level: C2, use: { es: Páginas de un prólogo }, ex: página XVI, read: ["página ", { numeral: dieciséis, value: 16 }] }
 
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
@@ -616,3 +894,10 @@ sections:
           - { level: A1, wrong: un millón personas, right: ["un ", { target: millón de }, " personas"], rule: { en: [{ term: millón }, " takes ", { term: de }, " before a noun"], es: [{ term: millón }, " lleva ", { term: de }, " delante de un sustantivo"], uk: [{ term: "millón" }, " вживається з ", { term: "de" }, " перед іменником"], pt: [{ term: "millón" }, " leva ", { term: "de" }, " antes de um substantivo"], fr: [{ term: "millón" }, " prend ", { term: "de" }, " devant un nom"], de: [{ term: "millón" }, " verlangt ", { term: "de" }, " vor einem Substantiv"], it: [{ term: "millón" }, " vuole ", { term: "de" }, " davanti a un sostantivo"], pl: [{ term: "millón" }, " wymaga ", { term: "de" }, " przed rzeczownikiem"], tr: [{ term: "millón" }, " bir isimden önce ", { term: "de" }, " alır"], id: [{ term: "millón" }, " memakai ", { term: "de" }, " sebelum nomina"], vi: [{ term: "millón" }, " đi với ", { term: "de" }, " trước danh từ"] } }
           - { level: A2, wrong: el primero día, right: ["el ", { target: primer }, " día"], rule: { en: [{ term: primero }, " drops -o before a masculine singular noun"], es: [{ term: primero }, " pierde la -o delante de un sustantivo masculino singular"], uk: [{ term: "primero" }, " втрачає -o перед іменником чоловічого роду в однині"], pt: [{ term: "primero" }, " perde o -o antes de um substantivo masculino singular"], fr: [{ term: "primero" }, " perd le -o devant un nom masculin singulier"], de: [{ term: "primero" }, " verliert das -o vor einem maskulinen Substantiv im Singular"], it: [{ term: "primero" }, " perde la -o davanti a un sostantivo maschile singolare"], pl: [{ term: "primero" }, " traci -o przed rzeczownikiem rodzaju męskiego w liczbie pojedynczej"], tr: [{ term: "primero" }, " eril tekil bir isimden önce -o harfini kaybeder"], id: [{ term: "primero" }, " kehilangan -o sebelum nomina maskulin tunggal"], vi: [{ term: "primero" }, " mất -o trước danh từ giống đực số ít"] } }
           - { level: A1, speakers: [uk], wrong: veintiún libro, right: ["veintiún ", { target: libros }], rule: { uk: ["після ", { term: veintiún }, " іменник стоїть у множині, хоча українською кажемо «двадцять одна книжка»"] } }
+          - { level: B2, wrong: el mitad de los adultos, right: [{ target: la mitad }, " de los adultos"], rule: { es: [{ term: mitad }, " es un sustantivo femenino"] } }
+          - { level: B2, wrong: décimoséptimo, right: { target: decimoséptimo }, rule: { es: [{ term: décimo }, " pierde la tilde al unirse a otro ordinal"] } }
+          - { level: B2, wrong: dos tercio de la tarta, right: [{ target: dos tercios }, " de la tarta"], rule: { es: "con dos o más partes, el partitivo va en plural" } }
+          - { level: B2, wrong: Gana el doble de ti., right: ["Gana el doble ", { target: que tú }, "."], rule: { es: [{ term: que }, " introduce a la persona con quien se compara"] } }
+          - { level: C1, wrong: el onceavo piso, right: ["el ", { target: undécimo }, " piso"], rule: { es: [{ term: "-avo" }, " expresa una fracción, no un lugar en la serie"] } }
+          - { level: C2, wrong: la vigésimo edición, right: ["la ", { target: vigésima }, " edición"], rule: { es: "el ordinal concuerda con el sustantivo" } }
+          - { level: C2, wrong: VIIII, right: { target: IX }, rule: { es: ["el nueve resta: ", { letter: I }, " delante de ", { letter: X }] } }

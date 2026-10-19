@@ -1,0 +1,266 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.futuro-condicional.futuro-perfecto
+lang: es
+kind: grammar
+tags: [verbs, future, tenses, perfect, haber]
+concepts: [future, future-perfect, present-perfect]
+related: [es.futuro-condicional.futuro-simple, es.pasados.preterito-perfecto, es.pasados.pluscuamperfecto, es.pasados.mapa-tiempos]
+status: { es: draft }
+
+title: { es: "El futuro perfecto: habré comido" }
+summary:
+  lead:
+    es: ["El futuro perfecto, ", { term: habré }, " con un participio, presenta una acción terminada antes de un momento futuro y suposiciones sobre el pasado."]
+  rule:
+    es: "La acción termina antes de otro momento futuro, y el participio no cambia:"
+  ex: ["Para el viernes ya ", { target: habré terminado }, "."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Forma }
+          rule:
+            es: { pattern: [{ alternatives: [{ term: habré }, { term: habrás }, { term: habrá }, { term: habremos }, { term: habrán }] }, { slot: past participle }] }
+          ex: ["Para las diez ya ", { target: habremos cenado }, "."]
+        - level: B2
+          variety: es-ES
+          point: { es: Forma }
+          rule:
+            es: [{ term: vosotros }, ": ", { pattern: [{ term: habréis }, { slot: past participle }] }]
+          ex: ["¿", { target: Habréis llegado }, " para las ocho?"]
+        - level: B2
+          point: { es: Forma }
+          rule:
+            es: ["los participios irregulares no cambian: ", { term: hecho }, ", ", { term: dicho }, ", ", { term: visto }]
+          ex: ["Esta noche ya ", { target: habré hecho }, " la maleta."]
+        - level: B2
+          point: { es: Uso }
+          rule:
+            es: "una acción terminada antes de un momento futuro"
+          ex: ["Antes de las ocho ya ", { target: habremos salido }, "."]
+        - level: B2
+          point: { es: Uso }
+          rule:
+            es: "una suposición sobre un hecho pasado"
+          ex: [{ target: Habrá tenido }, " problemas."]
+        - level: C1
+          point: { es: Uso }
+          rule:
+            es: ["una objeción sobre el pasado, con ", { term: pero }]
+          ex: ["Mi vecino ", { target: habrá viajado }, " mucho, pero no habla inglés."]
+        - level: C1
+          point: { es: Uso }
+          rule:
+            es: ["una duda inquieta, con ", { term: no }]
+          ex: ["¿No ", { target: nos habremos equivocado }, " de calle?"]
+        - level: C2
+          point: { es: Uso }
+          rule:
+            es: "sorpresa, reproche o temor, en preguntas"
+          ex: ["¿No ", { target: habrás dicho }, " eso delante de todos?"]
+        - level: C2
+          point: { es: Uso }
+          rule:
+            es: "una afirmación enfática, en exclamaciones"
+          ex: ["¡Cuántas veces te lo ", { target: habré dicho }, "!"]
+        - level: B2
+          point: { es: Con cuando }
+          rule:
+            es: ["presente o perfecto de subjuntivo detrás de ", { term: cuando }]
+          ex: ["Cuando ", { term: hayamos llegado }, ", ya se ", { target: habrá ido }, "."]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: "el participio no cambia de género ni de número"
+          ex: ["Ellas ", { target: habrán llegado }, " ya."]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: [{ term: cuando }, " no lleva futuro"]
+          ex: ["Cuando ", { target: llegues }, ", ya habré salido."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "Tiene dos valores: una acción terminada antes de un momento futuro y una suposición sobre el pasado."
+            ex: { examples: [["Para el viernes ya ", { target: habré terminado }, "."], [{ target: Habrán llegado }, " ya."]] }
+          - type: note
+            level: B2
+            text:
+              es: ["Las gramáticas lo llaman también ", { term: futuro compuesto }, " o ", { term: antefuturo }, "."]
+          - type: note
+            level: B2
+            text:
+              es: [{ term: habré }, " tiene la raíz ", { term: habr- }, " del futuro de ", { term: haber }, ": ver ", { link: El futuro simple, to: es.futuro-condicional.futuro-simple }, "."]
+
+  - title: { es: "Forma: habré y el participio" }
+    role: form
+    features: { tense: fut, aspect: prf }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: haber, label: { es: haber } }
+          - { key: ar, label: { es: hablar } }
+          - { key: er, label: { es: comer } }
+        rows:
+          - level: B2
+            features: { person: 1, number: sg }
+            person: yo
+            haber: { aux: habré }
+            ar: [{ aux: habré }, " ", { target: ["habl", { ending: ado }] }]
+            er: [{ aux: habré }, " ", { target: ["com", { ending: ido }] }]
+          - level: B2
+            features: { person: 2, number: sg, politeness: infm }
+            person: tú
+            haber: { aux: habrás }
+            ar: [{ aux: habrás }, " ", { target: ["habl", { ending: ado }] }]
+            er: [{ aux: habrás }, " ", { target: ["com", { ending: ido }] }]
+          - level: B2
+            features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }]
+            person: { alternatives: [él, ella, usted] }
+            haber: { aux: habrá }
+            ar: [{ aux: habrá }, " ", { target: ["habl", { ending: ado }] }]
+            er: [{ aux: habrá }, " ", { target: ["com", { ending: ido }] }]
+          - level: B2
+            features: { person: 1, number: pl }
+            person: { alternatives: [nosotros, nosotras] }
+            haber: { aux: habremos }
+            ar: [{ aux: habremos }, " ", { target: ["habl", { ending: ado }] }]
+            er: [{ aux: habremos }, " ", { target: ["com", { ending: ido }] }]
+          - level: B2
+            variety: es-ES
+            features: { person: 2, number: pl, politeness: infm }
+            person: { alternatives: [vosotros, vosotras] }
+            haber: { aux: habréis }
+            ar: [{ aux: habréis }, " ", { target: ["habl", { ending: ado }] }]
+            er: [{ aux: habréis }, " ", { target: ["com", { ending: ido }] }]
+          - level: B2
+            features: [{ person: 3, number: pl }, { person: 2, number: pl }]
+            person: { alternatives: [ellos, ellas, ustedes] }
+            haber: { aux: habrán }
+            ar: [{ aux: habrán }, " ", { target: ["habl", { ending: ado }] }]
+            er: [{ aux: habrán }, " ", { target: ["com", { ending: ido }] }]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: habré }, " es el futuro de ", { term: haber }, "; el participio es el del ", { link: pretérito perfecto, to: es.pasados.preterito-perfecto }, " y no cambia."]
+            ex: { examples: [["Ana ", { target: habrá llegado }, "."], ["Ellas ", { target: habrán llegado }, "."]] }
+          - type: rule
+            level: B2
+            text:
+              es: ["Los participios irregulares siguen siendo irregulares: ", { term: hecho }, ", ", { term: dicho }, ", ", { term: visto }, ", ", { term: puesto }, "."]
+            ex: { examples: [["Esta noche ya ", { target: habré hecho }, " la maleta."], ["Para las ocho ya ", { target: habré puesto }, " la mesa."]] }
+          - type: rule
+            level: B2
+            text:
+              es: ["Los pronombres y ", { term: no }, " van delante de ", { term: habré }, "; nada se pone entre ", { term: habré }, " y el participio:"]
+            ex: { examples: [["Ya ", { target: lo habré visto }, "."], ["No ", { target: se lo habré dicho }, "."]] }
+
+  - title: { es: "Uso: anterior a un momento futuro" }
+    role: use
+    features: { tense: fut, aspect: prf }
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "Una acción terminada antes de un momento futuro" }
+            ex: { examples: [[{ signal: Para el viernes }, " ", { target: habré terminado }, " el informe."], [{ signal: Antes de las ocho }, " ya ", { target: habremos salido }, "."]] }
+          - level: B2
+            use: { es: ["Detrás de ", { term: cuando }, ": el presente o el perfecto de subjuntivo"] }
+            ex: { examples: [["Cuando ", { term: llegue }, " Ana, ya ", { target: habré terminado }, "."], ["Cuando ", { term: hayamos llegado }, ", ya se ", { target: habrá ido }, "."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text:
+              es: ["El subjuntivo con ", { term: cuando }, ": ver ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."]
+          - type: note
+            level: B2
+            variety: es-419
+            text:
+              es: ["El futuro perfecto se sustituye con frecuencia por el indefinido, por ", { pattern: [{ term: tener }, { slot: past participle }] }, " o por ", { term: ir a }, ":"]
+            ex: { equivalence: [["Para cuando vuelvas, ya lo ", { target: habré arreglado }, "."], ["Para cuando vuelvas, ya lo ", { target: arreglé }, "."], ["Para cuando vuelvas, ya lo ", { target: tendré arreglado }, "."], ["Para cuando vuelvas, ya lo ", { target: voy a tener arreglado }, "."]] }
+
+  - title: { es: "Uso: probabilidad en el pasado" }
+    role: use
+    features: { tense: fut, aspect: prf }
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "Una suposición sobre un hecho pasado o recién terminado" }
+            ex: { examples: [["Luis llega tarde: ", { target: habrá tenido }, " problemas."], [{ signal: Ya }, " ", { target: habrán llegado }, "."]] }
+
+  - title: { es: "Uso: valores expresivos" }
+    role: use
+    features: { tense: fut, aspect: prf }
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            use: { es: ["Una objeción o un contraste sobre el pasado: se admite algo y sigue ", { term: pero }] }
+            ex: { examples: [["Mi vecino ", { target: habrá viajado }, " mucho, pero no habla inglés."], ["A ti no te ", { target: habrá molestado }, ", pero a mí sí."]] }
+          - level: C1
+            use: { es: ["Una duda inquieta sobre el pasado, en preguntas con ", { term: no }] }
+            ex: { examples: [["¿No ", { target: nos habremos equivocado }, " de calle?"], ["¿No ", { target: me habré dejado }, " las llaves?"]] }
+          - level: C2
+            use: { es: "Sorpresa, extrañeza o reproche, en preguntas" }
+            ex: { examples: [["¿No ", { target: habrás dicho }, " eso delante de todos?"], ["¿Cómo ", { target: habrá podido }, " hacernos esto?"]] }
+          - level: C2
+            use: { es: "Una advertencia o un temor sobre un hecho pasado" }
+            ex: ["¿No ", { target: habrás creído }, " que me fui sin despedirme?"]
+          - level: C2
+            use: { es: "Una afirmación enfática, en exclamaciones: algo ocurrió muchas veces" }
+            ex: { examples: [["¡Cuántas veces te lo ", { target: habré dicho }, "!"], ["¡No te lo ", { target: habré dicho }, " yo veces!"]] }
+
+  - title: { es: "Comparación: futuro simple y futuro perfecto" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: simple, label: { es: Futuro simple }, features: { tense: fut } }
+          - { key: perfect, label: { es: Futuro perfecto }, features: { tense: fut, aspect: prf } }
+        rows:
+          - level: B2
+            simple: { es: "una acción futura; una suposición sobre el presente" }
+            perfect: { es: "una acción terminada antes de un momento futuro; una suposición sobre el pasado" }
+          - level: B2
+            simple: ["Mañana lo ", { target: terminaré }, "."]
+            perfect: ["Para mañana lo ", { target: habré terminado }, "."]
+          - level: B2
+            simple: ["Ana no contesta: ", { target: estará }, " durmiendo."]
+            perfect: ["Ana no contesta: ", { target: se habrá dormido }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Cuando habremos llegado, ya se habrá ido.", right: ["Cuando ", { target: hayamos llegado }, ", ya se habrá ido."], rule: { es: ["detrás de ", { term: cuando }, ", un hecho futuro lleva subjuntivo"] } }
+          - { level: B2, wrong: "Ellas habrán llegadas.", right: ["Ellas ", { target: habrán llegado }, "."], rule: { es: "el participio de un tiempo compuesto no cambia" } }
+          - { level: B2, wrong: "Habré lo visto.", right: ["Ya ", { target: lo habré visto }, "."], rule: { es: ["el pronombre va delante de ", { term: habré }] } }
+          - { level: B2, wrong: "Ya habré hacido la tarea.", right: ["Ya ", { target: habré hecho }, " la tarea."], rule: { es: ["participio irregular: ", { mapping: [{ term: hacer }, { term: hecho }] }] } }

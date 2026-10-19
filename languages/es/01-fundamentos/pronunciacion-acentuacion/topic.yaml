@@ -254,6 +254,34 @@ cheatsheet:
             vi: "từ để hỏi luôn có dấu sắc"
           ex: ["¿", { target: Dónde }, " vives?"]
           tr: { en: Where do you live?, uk: "Де ти живеш?", pt: "Onde você mora?", fr: "Où habites-tu ?", de: "Wo wohnst du?", it: "Dove abiti?", pl: "Gdzie mieszkasz?", tr: "Nerede yaşıyorsun?", id: "Kamu tinggal di mana?", vi: "Bạn sống ở đâu?" }
+        - level: B2
+          point: { es: La sílaba }
+          rule: { es: una consonante entre vocales va con la vocal siguiente }
+          ex: { examples: [{ target: me-sa }, { target: pro-bar }, { target: an-dar }] }
+        - level: B2
+          point: { es: Sinalefa }
+          rule: { es: la vocal final y la inicial de la palabra siguiente forman una sílaba }
+          ex: { mapping: [todo eso, to-doe-so] }
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: los interrogativos llevan tilde también en el estilo indirecto }
+          ex: ["No sé ", { target: cuál }, " me gusta más."]
+        - level: C1
+          point: { es: Aún y aun }
+          rule: { es: "aún es todavía; aun, sin tilde, es incluso" }
+          ex: [{ target: Aún }, " no ha llegado."]
+        - level: C1
+          point: { es: Palabras átonas }
+          rule: { es: "don, san, señor, buen y el relativo donde pierden el acento" }
+          ex: ["Saludé a ", { target: don }, " Emilio."]
+        - level: C2
+          point: { es: Más y mas }
+          rule: { es: "mas, sin tilde, es pero; más marca cantidad" }
+          ex: ["Le dije que sí, ", { target: mas }, " no estaba seguro."]
+        - level: C2
+          point: { es: Variantes }
+          rule: { es: la pronunciación cambia con la región y el registro }
+          ex: { mapping: [pan, { ipa: paŋ }] }
 
 sections:
   - title: { en: Vowels, es: Las vocales, uk: "Голосні", pt: "As vogais", fr: "Les voyelles", de: "Die Vokale", it: "Le vocali", pl: "Samogłoski", tr: "Ünlüler", id: "Vokal", vi: "Nguyên âm" }
@@ -417,6 +445,101 @@ sections:
               id: ["Di Argentina dan Uruguay, ", { letter: "ll" }, " dan ", { letter: "y" }, " dibaca ", { ipa: "ʃ" }, ": ", { term: "calle" }, ", ", { term: "yo" }, "."]
               vi: ["Ở Argentina và Uruguay, ", { letter: "ll" }, " và ", { letter: "y" }, " đọc là ", { ipa: "ʃ" }, ": ", { term: "calle" }, ", ", { term: "yo" }, "."]
 
+  - title: { es: La sílaba }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: structure, label: { es: Estructura } }
+          - { key: division, label: { es: División } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            structure: { es: una consonante entre dos vocales }
+            division: { es: ["va con la vocal siguiente; ", { letter: "ch, ll, rr" }, " cuentan como una sola consonante"] }
+            ex: { examples: [{ target: me-sa }, { target: ca-lle }] }
+          - level: B2
+            structure: { es: ["los grupos ", { letter: "pr, br, pl, bl, fr, fl, gr, gl, cr, cl, dr, tr" }] }
+            division: { es: van juntos con la vocal siguiente }
+            ex: { examples: [{ target: pro-bar }, { target: cla-ro }, { target: dra-ma }] }
+          - level: B2
+            structure: { es: otro par de consonantes }
+            division: { es: la primera cierra una sílaba y la segunda abre otra }
+            ex: { examples: [{ target: an-dar }, { target: ac-ción }] }
+          - level: B2
+            structure: { es: tres o cuatro consonantes que terminan en uno de esos grupos }
+            division: { es: "el grupo va con la vocal siguiente y las demás quedan atrás" }
+            ex: { examples: [{ target: in-fla-mar }, { target: cons-truir }] }
+          - level: B2
+            structure: { es: tres consonantes que no terminan en grupo }
+            division: { es: solo la última va con la vocal siguiente }
+            ex: { target: ins-tan-te }
+
+  - title: { es: "Diptongos, triptongos e hiatos" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: contact, label: { es: Encuentro de vocales } }
+          - { key: syllables, label: { es: Sílabas } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            contact: { es: ["una vocal cerrada átona, ", { letter: i }, " o ", { letter: u }, ", junto a otra vocal"] }
+            syllables: { es: "una sílaba: diptongo" }
+            ex: { examples: [{ target: bue-no }, { target: rei-na }, { target: cui-da-do }] }
+          - level: B2
+            contact: { es: una vocal abierta entre dos cerradas átonas }
+            syllables: { es: "una sílaba: triptongo" }
+            ex: { examples: [{ target: es-tu-diáis }, { target: a-ca-ri-ciéis }, { target: a-ve-ri-guáis }] }
+          - level: B2
+            contact: { es: dos vocales abiertas }
+            syllables: { es: "dos sílabas: hiato" }
+            ex: { examples: [{ target: le-ón }, { target: a-é-re-o }, { target: ca-er }] }
+          - level: B2
+            contact: { es: una vocal cerrada tónica junto a otra vocal }
+            syllables: { es: "dos sílabas: hiato" }
+            ex: { examples: [{ target: pa-ís }, { target: re-ír }, { target: mí-o }, { target: bú-ho }] }
+          - level: B2
+            contact: { es: ["una ", { letter: i }, " o una ", { letter: u }, " átona tras la vocal"] }
+            syllables: { es: "semivocal: cierra la sílaba" }
+            ex: { examples: [{ target: hoy }, { target: cau-sa }] }
+          - level: B2
+            contact: { es: ["una ", { letter: i }, " o una ", { letter: u }, " átona ante la vocal"] }
+            syllables: { es: "semiconsonante: abre la sílaba" }
+            ex: { examples: [{ target: hue-vo }, { target: a-gua }] }
+          - level: B2
+            contact: { es: un hiato de dos vocales abiertas en el habla rápida }
+            syllables: { es: "una sílaba: sinéresis" }
+            ex: { examples: [{ mapping: [te-a-tro, tea-tro] }, { mapping: [po-e-ta, poe-ta] }] }
+          - level: C1
+            contact: { es: un hiato con h entre vocales o con una cerrada tónica }
+            syllables: { es: una sílaba en el habla rápida }
+            ex: { examples: [{ mapping: [a-ho-ra, ao-ra] }, { mapping: [a-hí, ai] }, { mapping: [a-ún, aun] }] }
+      - type: comparison
+        columns:
+          - { key: word, label: { es: Palabra } }
+          - { key: diphthong, label: { es: Con diptongo } }
+          - { key: hiatus, label: { es: Con hiato } }
+        rows:
+          - { level: C1, word: { term: ruido }, diphthong: rui-do, hiatus: ru-i-do }
+          - { level: C1, word: { term: ruina }, diphthong: rui-na, hiatus: ru-i-na }
+          - { level: C1, word: { term: triunfo }, diphthong: triun-fo, hiatus: tri-un-fo }
+          - { level: C1, word: { term: crueldad }, diphthong: cruel-dad, hiatus: cru-el-dad }
+          - { level: C1, word: { term: roedor }, diphthong: roe-dor, hiatus: ro-e-dor }
+          - { level: C1, word: { term: Raúl }, diphthong: raul, hiatus: ra-úl }
+          - { level: C1, word: { term: jesuita }, diphthong: je-sui-ta, hiatus: je-su-i-ta }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            variety: es-419
+            text: { es: ["En América Latina, una vocal cerrada y una abierta suelen formar diptongo: ", { term: guion }, " se dice en una sílaba."] }
+          - type: note
+            level: B2
+            variety: es-ES
+            text: { es: ["En gran parte de España, una vocal cerrada y una abierta suelen dar dos sílabas: ", { term: guion }, " suena ", { sound: gi-on }, "."] }
+
   - title: { en: Stress, es: El acento, uk: "Наголос", pt: "O acento tônico", fr: "L’accent tonique", de: "Die Betonung", it: "L'accento tonico", pl: "Akcent", tr: "Vurgu", id: "Tekanan", vi: "Trọng âm" }
     role: own
     content:
@@ -486,6 +609,45 @@ sections:
               vi: [{ letter: "i" }, " và ", { letter: "u" }, " tạo thành một âm tiết với nguyên âm bên cạnh:"]
             ex: { examples: [[{ stress: bue }, "no"], ["ciu", { stress: dad }]] }
             tr: { en: { examples: [good, city] }, uk: { examples: ["хороший", "місто"] }, pt: { examples: ["bom", "cidade"] }, fr: { examples: ["bon", "ville"] }, de: { examples: ["gut", "Stadt"] }, it: { examples: ["buono", "città"] }, pl: { examples: ["dobry", "miasto"] }, tr: { examples: ["iyi", "şehir"] }, id: { examples: ["baik", "kota"] }, vi: { examples: ["tốt", "thành phố"] } }
+      - type: usage
+        columns:
+          - { key: word, label: { es: Palabra } }
+          - { key: syllables, label: { es: Sílabas } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            word: { alternatives: [{ term: cardíaco }, { term: cardiaco }] }
+            syllables: { alternatives: [car-dí-a-co, car-dia-co] }
+            ex: ["Le hicieron un examen ", { target: cardíaco }, "."]
+          - level: C1
+            word: { alternatives: [{ term: austriaco }, { term: austríaco }] }
+            syllables: { alternatives: [aus-tria-co, aus-trí-a-co] }
+            ex: ["Mi médico es ", { target: austriaco }, "."]
+          - level: C1
+            word: { alternatives: [{ term: período }, { term: periodo }] }
+            syllables: { alternatives: [pe-rí-o-do, pe-rio-do] }
+            ex: ["Este ", { target: periodo }, " del año es tranquilo."]
+          - level: C1
+            word: { alternatives: [{ term: maníaco }, { term: maniaco }] }
+            syllables: { alternatives: [ma-ní-a-co, ma-nia-co] }
+            ex: ["Mi primo es un ", { target: maníaco }, " del orden."]
+          - level: C1
+            word: { alternatives: [{ term: fútbol }, { term: futbol }] }
+            syllables: { alternatives: [fút-bol, fut-bol] }
+            ex: ["Mis primos juegan al ", { target: fútbol }, "."]
+          - level: C1
+            word: { alternatives: [{ term: adecuo }, { term: adecúo }] }
+            syllables: { alternatives: [a-de-cuo, a-de-cú-o] }
+            ex: ["Siempre ", { target: adecuo }, " el horario a mi trabajo."]
+          - level: C1
+            word: { alternatives: [{ term: licuo }, { term: licúo }] }
+            syllables: { alternatives: [li-cuo, li-cú-o] }
+            ex: [{ target: Licuo }, " la fruta con leche."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "Las dos formas de cada par son correctas: cambia la sílaba tónica o la división en sílabas." }
 
   - title: { en: The written accent, es: La tilde, uk: "Знак наголосу", pt: "O acento gráfico", fr: "L’accent écrit", de: "Das Akzentzeichen", it: "L'accento scritto", pl: "Akcent graficzny", tr: "Vurgu işareti", id: "Tanda aksen", vi: "Dấu sắc" }
     role: own
@@ -579,6 +741,256 @@ sections:
           - { level: A2, word: { target: si }, meaning: { en: if, es: condición, uk: "якщо", pt: "se", fr: "si", de: "wenn, falls", it: "se", pl: "jeśli", tr: "eğer", id: "jika", vi: "nếu" }, ex: [{ target: Si }, " quieres, vamos."], tr: { en: "If you want, let's go.", uk: "Якщо хочеш, ходімо.", pt: "Se você quiser, vamos.", fr: "Si tu veux, on y va.", de: "Wenn du willst, gehen wir.", it: "Se vuoi, andiamo.", pl: "Jeśli chcesz, chodźmy.", tr: "İstersen gidelim.", id: "Kalau kamu mau, ayo pergi.", vi: "Nếu bạn muốn, chúng ta đi thôi." } }
           - { level: A2, word: { target: mí }, meaning: { en: me, es: pronombre con preposición, uk: "мене (після прийменника)", pt: "mim (depois de preposição)", fr: "moi (après une préposition)", de: "mir, mich (nach Präposition)", it: "me (dopo una preposizione)", pl: "mnie (po przyimku)", tr: "bana (edatla birlikte)", id: "saya (setelah preposisi)", vi: "tôi (sau giới từ)" }, ex: ["Es para ", { target: mí }, "."], tr: { en: "It's for me.", uk: "Це для мене.", pt: "É para mim.", fr: "C’est pour moi.", de: "Es ist für mich.", it: "È per me.", pl: "To dla mnie.", tr: "Bu benim için.", id: "Ini untuk saya.", vi: "Cái này là cho tôi." } }
           - { level: A2, word: { target: mi }, meaning: { en: my, es: posesivo, uk: "мій", pt: "meu", fr: "mon, ma", de: "mein", it: "mio", pl: "mój", tr: "benim", id: "milikku", vi: "của tôi" }, ex: ["Es ", { target: mi }, " casa."], tr: { en: "It's my house.", uk: "Це мій дім.", pt: "É a minha casa.", fr: "C’est ma maison.", de: "Es ist mein Haus.", it: "È casa mia.", pl: "To mój dom.", tr: "Bu benim evim.", id: "Ini rumahku.", vi: "Đây là nhà của tôi." } }
+          - { level: B2, word: { target: quién }, meaning: { es: interrogativo o exclamativo de persona }, ex: ["¿", { target: Quién }, " podría ayudarme?"] }
+          - { level: B2, word: { target: quien }, meaning: { es: relativo de persona }, ex: ["Busco a alguien a ", { target: quien }, " le guste la estadística."] }
+          - { level: C1, word: { target: aún }, meaning: { es: todavía }, ex: [{ target: Aún }, " no ha llegado."] }
+          - { level: C1, word: { target: aun }, meaning: { es: incluso }, ex: [{ target: Aun }, " así, no se rindió."] }
+          - { level: C1, word: { target: cuánto }, meaning: { es: interrogativo o exclamativo de cantidad }, ex: ["¡", { target: Cuánta }, " gente!"] }
+          - { level: C1, word: { target: cuanto }, meaning: { es: "relativo: todo lo que" }, ex: ["Come ", { target: cuanto }, " quieras."] }
+          - { level: C1, word: { target: cuál }, meaning: { es: interrogativo de elección }, ex: ["¿", { target: Cuál }, " te gusta?"] }
+          - { level: C1, word: { target: cual }, meaning: { es: "relativo, con lo, el o la" }, ex: ["Llegó tarde, lo ", { target: cual }, " no me sorprendió."] }
+          - { level: C2, word: { target: más }, meaning: { es: cantidad o comparación }, ex: ["Tenía que darme mucho ", { target: más }, "."] }
+          - { level: C2, word: { target: mas }, meaning: { es: "conjunción: pero" }, ex: ["Le dije que sí, ", { target: mas }, " no estaba seguro."] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "Un compuesto se acentúa como una sola palabra: el primer elemento pierde su tilde." }
+            ex: ["Vivo en el ", { target: decimoséptimo }, " piso."]
+          - type: rule
+            level: B2
+            text: { es: "Los interrogativos y exclamativos llevan tilde también en el estilo indirecto:" }
+            ex: { examples: [["No sé ", { target: cuál }, " me gusta más."], ["Pregúntale ", { target: cuándo }, " llega."]] }
+
+  - title: { es: Sinalefa y enlace }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: contact, label: { es: Encuentro } }
+          - { key: event, label: { es: Qué ocurre } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            contact: { es: vocal final y vocal inicial }
+            event: { es: "se unen en una sílaba: sinalefa" }
+            ex: { examples: [{ mapping: [la instancia, lains-tan-cia] }, { mapping: [todo eso, to-doe-so] }] }
+          - level: B2
+            contact: { es: tres vocales seguidas entre palabras }
+            event: { es: las tres forman una sílaba }
+            ex: { mapping: [vengo a empezar, ven-goaem-pe-zar] }
+          - level: B2
+            contact: { es: consonante final y vocal inicial }
+            event: { es: "la consonante abre la sílaba siguiente, sin respetar el límite de palabra" }
+            ex: { mapping: [vas a salir, va-sa-sa-lir] }
+          - level: B2
+            contact: { es: dos vocales iguales }
+            event: { es: se funden en una }
+            ex: { examples: [{ mapping: [alcoholismo, al-co-lis-mo] }, { mapping: [la alta, lal-ta] }] }
+          - level: B2
+            contact: { es: dos consonantes iguales }
+            event: { es: se funden en una }
+            ex: { examples: [{ mapping: [los sábados, lo-sá-ba-dos] }, { mapping: [con nata, co-na-ta] }, { mapping: [el libro, e-li-bro] }] }
+          - level: C1
+            contact: { es: habla lenta o enfática }
+            event: { es: las vocales que se funden en el habla rápida se dicen por separado }
+            ex: { examples: [{ mapping: [la alta, la-al-ta] }, { mapping: [baúl, ba-úl] }] }
+          - level: C1
+            contact: { es: habla enfática }
+            event: { es: la sílaba respeta el límite de palabra }
+            ex: { mapping: [es el amigo, es-el-a-mi-go] }
+          - level: C1
+            contact: { es: dos frases con los mismos sonidos }
+            event: { es: ["se dividen igual, ", { sound: co-mo-la-sa-bes }, ", y el contexto decide"] }
+            ex: { examples: [como las aves, como la sabes] }
+          - level: C1
+            contact: { es: una palabra con un prefijo que se reconoce }
+            event: { es: la sílaba termina donde termina el prefijo }
+            ex: { target: sub-lu-nar }
+          - level: C1
+            contact: { es: una palabra con un prefijo que no se reconoce }
+            event: { es: las consonantes siguen la regla general }
+            ex: { target: su-bor-di-na-do }
+
+  - title: { es: Grupos fónicos y palabras tónicas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: word, label: { es: Palabra } }
+          - { key: stress, label: { es: Acento } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            word: { es: "verbo, sustantivo, adjetivo y pronombre tónico" }
+            stress: { es: "tónica: lleva el acento de la frase" }
+            ex: ["Es como un ", { target: hermano }, " para ", { target: mí }, "."]
+          - level: B2
+            word: { es: "artículo, preposición y conjunción" }
+            stress: { es: "átona: se apoya en la palabra tónica vecina" }
+            ex: ["Vamos ", { target: a }, " la playa ", { target: y }, " comemos ", { target: en }, " el parque."]
+          - level: C1
+            word: { alternatives: [{ term: don }, { term: san }, { term: señor }, { term: buen }] }
+            stress: { es: átonos ante el nombre }
+            ex: { examples: [["Saludé a ", { target: don }, " Emilio."], ["Es un ", { target: buen }, " hombre."]] }
+          - level: C1
+            word: { term: según }
+            stress: { es: tónico }
+            ex: [{ target: Según }, " tus necesidades, elige el plan."]
+          - level: C1
+            word: { es: ["el relativo ", { term: donde }] }
+            stress: { es: átono }
+            ex: ["Este es el lugar ", { target: donde }, " te vi."]
+          - level: C1
+            word: { es: el artículo y el posesivo con énfasis }
+            stress: { es: tónicos }
+            ex: { examples: [["Es ", { target: el }, " profesor."], ["Es ", { target: mi }, " casa, no ", { target: tu }, " casa."]] }
+      - type: usage
+        columns:
+          - { key: unit, label: { es: Unidad sin pausa } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            unit: { es: artículo y sustantivo }
+            ex: ["Me gusta ", { target: el mar }, "."]
+          - level: B2
+            unit: { es: verbo y pronombre átono }
+            ex: ["Ana ", { target: me lo dio }, " ayer."]
+          - level: B2
+            unit: { es: auxiliar y participio }
+            ex: ["Mi hermano ", { target: ha llegado }, " tarde."]
+          - level: B2
+            unit: { es: perífrasis verbal }
+            ex: ["Ellos ", { target: van a salir }, " temprano."]
+          - level: B2
+            unit: { es: preposición y término }
+            ex: ["Vivo ", { target: con mis padres }, "."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "Una pausa ante y tras la relativa la vuelve explicativa; sin pausas, la relativa identifica." }
+            ex: { contrast: ["Mis primos, que viven en Lima, llegan hoy.", "Mis primos que viven en Lima llegan hoy."] }
+
+  - title: { es: Variantes de los sonidos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: sound, label: { es: Sonido } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            sound: { letter: "b, d, g" }
+            rule: { es: oclusivas tras pausa o tras consonante nasal }
+            ex: { examples: [["un ", { target: { letter: b } }, "eso"], ["con", { target: { letter: d } }, "e"], ["ten", { target: { letter: g } }, "o"]] }
+          - level: B2
+            sound: { letter: "b, d, g" }
+            rule: { es: ["aproximantes ", { ipa: "β, ð, ɣ" }, " entre vocales"] }
+            ex: { examples: [["a", { target: { letter: b } }, "o", { target: { letter: g } }, "a", { target: { letter: d } }, "o"], ["do", { target: { letter: b } }, "le", { target: { letter: g } }, "a", { target: { letter: d } }, "o"]] }
+          - level: B2
+            sound: { es: ["la ", { letter: d }, " final de palabra"] }
+            rule: { es: se relaja }
+            ex: ["liberta", { target: { letter: d } }]
+          - level: B2
+            variety: es-ES
+            sound: { ipa: s }
+            rule: { es: "apical: la punta de la lengua se acerca a los alvéolos" }
+            ex: ["ca", { target: { letter: s } }, "a"]
+          - level: B2
+            variety: es-419
+            sound: { ipa: s }
+            rule: { es: "predorsal: la parte plana de la lengua se acerca a los alvéolos" }
+            ex: ["ca", { target: { letter: s } }, "a"]
+          - level: B2
+            variety: es-419
+            sound: { ipa: s }
+            rule: { es: "se aspira o se pierde al final de sílaba: Caribe, Centroamérica, Chile, Río de la Plata y costas" }
+            ex: { examples: [{ mapping: [los chicos, { sound: loh chicoh }] }, { mapping: [las manos, { sound: lah manoh }] }] }
+          - level: C1
+            sound: { es: vocales átonas }
+            rule: { es: se centralizan o se pierden en el habla espontánea }
+            ex: { examples: [{ mapping: [hasta luego, { sound: ta logo }] }, { mapping: [lunes, { ipa: ˈlunəs }] }] }
+          - level: C1
+            sound: { es: vocales junto a una nasal }
+            rule: { es: se nasalizan }
+            ex: { mapping: [mano, { ipa: ˈmãno }] }
+          - level: C1
+            sound: { es: grupos de consonantes }
+            rule: { es: se relajan o se simplifican en el habla informal }
+            ex: { examples: [{ mapping: [séptimo, sétimo] }, { mapping: [obtener, optener] }] }
+          - level: C1
+            sound: { es: ["la ", { letter: j }, " y la ", { letter: d }, " finales"] }
+            rule: { es: se pierden en el habla informal }
+            ex: { examples: [{ mapping: [reloj, reló] }, { mapping: [libertad, libertá] }] }
+          - level: C1
+            sound: { es: ["la ", { letter: n }, " ante consonante labial"] }
+            rule: { es: ["se asimila y suena ", { ipa: m }] }
+            ex: { examples: [{ mapping: [inmóvil, { ipa: imˈmoβil }] }, { mapping: [con Paco, { ipa: komˈpako }] }] }
+          - level: C1
+            variety: es-419
+            sound: { ipa: x }
+            rule: { es: ["se aspira ", { ipa: h }, " en el Caribe, Centroamérica y las costas de México, Colombia y Venezuela; es velar en el altiplano mexicano, Perú y Argentina"] }
+            ex: { examples: [["ca", { target: { letter: j } }, "a"], [{ target: { letter: ge } }, "nte"]] }
+          - level: C1
+            variety: es-ES
+            sound: { ipa: x }
+            rule: { es: ["velar, posterior y fuerte; en Andalucía y Canarias se relaja a ", { ipa: h }] }
+            ex: { examples: [["ca", { target: { letter: j } }, "a"], [{ target: { letter: ge } }, "nte"]] }
+          - level: C2
+            sound: { ending: -ado }
+            rule: { es: "pasa a -ao, y a -au en el habla vulgar o rústica" }
+            ex: { mapping: [terminado, terminao, terminau] }
+          - level: C2
+            sound: { ending: -ad }
+            rule: { es: "el imperativo plural pasa a -ar en el habla relajada" }
+            ex: { mapping: [terminad, terminar] }
+          - level: C2
+            sound: { es: ["la ", { letter: d }, " final de palabra"] }
+            rule: { es: ["suena ", { ipa: θ }, " o ", { ipa: t }, " en el habla relajada"] }
+            ex: { examples: [{ mapping: [libertad, { ipa: liβeɾˈtaθ }] }, { mapping: [libertad, { ipa: liβeɾˈtat }] }] }
+      - type: comparison
+        columns:
+          - { key: feature, label: { es: Rasgo } }
+          - { key: where, label: { es: Dónde } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            variety: es-ES
+            feature: { es: ["seseo: ", { letter: z }, " y ", { letter: c }, " ante ", { letter: "e, i" }, " suenan ", { ipa: s }] }
+            where: { es: Andalucía occidental y Canarias }
+            ex: { mapping: [caza, { ipa: ˈkasa }] }
+          - level: C2
+            variety: es-ES
+            feature: { es: ["ceceo: la ", { letter: s }, " suena ", { ipa: θ }] }
+            where: { es: sur de Andalucía }
+            ex: { mapping: [casa, { ipa: ˈkaθa }] }
+          - level: C2
+            variety: es-419
+            feature: { es: ["rehilamiento: ", { letter: ll }, " e ", { letter: "y" }, " suenan ", { ipa: ʒ }, " o ", { ipa: ʃ }] }
+            where: { es: [{ ipa: ʒ }, " en Argentina y Uruguay; ", { ipa: ʒ }, " o ", { ipa: ʃ }, " en zonas de México y Perú"] }
+            ex: { mapping: [calle, { ipa: ˈkaʒe }] }
+          - level: C2
+            variety: es-419
+            feature: { es: [{ letter: l }, " y ", { letter: r }, " se confunden al final de sílaba"] }
+            where: { es: Caribe y costas }
+            ex: { examples: [{ mapping: [arte, { sound: alte }] }, { mapping: [piel, { sound: pier }] }] }
+          - level: C2
+            variety: es-419
+            feature: { es: ["la ", { letter: n }, " final suena ", { ipa: ŋ }] }
+            where: { es: "Caribe, Centroamérica y países andinos" }
+            ex: { examples: [{ mapping: [pan, { ipa: paŋ }] }, { mapping: [balcón, { ipa: balˈkoŋ }] }] }
+          - level: C2
+            variety: es-419
+            feature: { es: ["asibilación: ", { letter: r }, " y ", { letter: rr }, " suenan ", { sound: ř }] }
+            where: { es: "altiplano mexicano, Centroamérica, Andes, Río de la Plata y Chile" }
+            ex: { examples: [{ mapping: [ropa, { sound: řopa }] }, { mapping: [tres, { sound: třes }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { es: ["El registro decide: el habla cuidada, ", { term: hiperarticulada }, ", pronuncia cada sonido, y la relajada, ", { term: hipoarticulada }, ", reduce y pierde sonidos."] }
 
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
@@ -590,3 +1002,8 @@ sections:
           - { level: A1, wrong: Me gusta la musica., right: ["Me gusta la ", { target: música }, "."], rule: { en: "stress before the next-to-last syllable always takes an accent", es: "una palabra con el acento antes de la penúltima sílaba siempre lleva tilde", uk: "наголос перед передостаннім складом завжди позначають знаком", pt: "uma palavra com o acento antes da penúltima sílaba sempre leva acento gráfico", fr: "un mot accentué avant l’avant-dernière syllabe prend toujours un accent écrit", de: "ein Wort mit Betonung vor der vorletzten Silbe trägt immer ein Akzentzeichen", it: "una parola con l'accento prima della penultima sillaba porta sempre l'accento scritto", pl: "wyraz z akcentem przed przedostatnią sylabą zawsze ma akcent graficzny", tr: "vurgusu sondan bir önceki heceden önce gelen sözcük her zaman vurgu işareti alır", id: "kata yang tekanannya sebelum suku kata kedua dari belakang selalu memakai tanda aksen", vi: "từ có trọng âm trước âm tiết áp chót luôn có dấu sắc" } }
           - { level: A1, wrong: ¿Donde vives?, right: ["¿", { target: Dónde }, " vives?"], rule: { en: question words take an accent, es: las palabras interrogativas llevan tilde, uk: "питальні слова пишуть зі знаком наголосу", pt: "as palavras interrogativas levam acento gráfico", fr: "les mots interrogatifs prennent un accent écrit", de: "Fragewörter tragen ein Akzentzeichen", it: "le parole interrogative portano l'accento scritto", pl: "wyrazy pytające mają akcent graficzny", tr: "soru sözcükleri vurgu işareti alır", id: "kata tanya memakai tanda aksen", vi: "từ để hỏi có dấu sắc" } }
           - { level: A1, wrong: Tu eres mi amigo., right: [{ target: Tú }, " eres mi amigo."], rule: { en: ["the pronoun ", { term: tú }, " takes an accent; ", { term: tu }, " means your"], es: ["el pronombre ", { term: tú }, " lleva tilde; ", { term: tu }, " es posesivo"], uk: ["займенник ", { term: "tú" }, " пишуть зі знаком наголосу; ", { term: "tu" }, " означає «твій»"], pt: ["o pronome ", { term: "tú" }, " leva acento gráfico; ", { term: "tu" }, " é possessivo"], fr: ["le pronom ", { term: "tú" }, " prend un accent écrit ; ", { term: "tu" }, " est un possessif"], de: ["das Pronomen ", { term: "tú" }, " trägt ein Akzentzeichen; ", { term: "tu" }, " ist ein Possessivpronomen"], it: ["il pronome ", { term: "tú" }, " porta l'accento scritto; ", { term: "tu" }, " è un possessivo"], pl: ["zaimek ", { term: "tú" }, " ma akcent graficzny; ", { term: "tu" }, " to zaimek dzierżawczy"], tr: ["zamir ", { term: "tú" }, " vurgu işareti alır; ", { term: "tu" }, " ise “senin” demektir"], id: ["kata ganti ", { term: "tú" }, " memakai tanda aksen; ", { term: "tu" }, " berarti “milikmu”"], vi: ["đại từ ", { term: "tú" }, " có dấu sắc; ", { term: "tu" }, " nghĩa là “của bạn”"] } }
+          - { level: B2, wrong: No sé cual me gusta más., right: ["No sé ", { target: cuál }, " me gusta más."], rule: { es: ["el interrogativo ", { term: cuál }, " lleva tilde también en el estilo indirecto"] } }
+          - { level: B2, wrong: Busco a alguien a quién le guste la estadística., right: ["Busco a alguien a ", { target: quien }, " le guste la estadística."], rule: { es: ["el relativo ", { term: quien }, " se escribe sin tilde"] } }
+          - { level: C1, wrong: Aun no ha llegado., right: [{ target: Aún }, " no ha llegado."], rule: { es: ["con el sentido de todavía, ", { term: aún }, " lleva tilde"] } }
+          - { level: C1, wrong: Come cuánto quieras., right: ["Come ", { target: cuanto }, " quieras."], rule: { es: ["el relativo ", { term: cuanto }, " se escribe sin tilde"] } }
+          - { level: C2, wrong: "Le dije que sí, más no estaba seguro.", right: ["Le dije que sí, ", { target: mas }, " no estaba seguro."], rule: { es: ["con el sentido de pero, ", { term: mas }, " se escribe sin tilde"] } }

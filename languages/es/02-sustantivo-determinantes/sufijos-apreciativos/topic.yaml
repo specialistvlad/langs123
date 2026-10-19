@@ -1,0 +1,304 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.sufijos-apreciativos
+lang: es
+kind: grammar
+tags: [word-formation, suffixes, diminutives, augmentatives]
+concepts: [word-formation, appreciative-suffixes]
+related: [es.sustantivo-determinantes.genero, es.adjetivo-adverbio.adjetivo-concordancia, es.adjetivo-adverbio.comparativos-superlativos, es.sustantivo-determinantes.plural]
+status: { es: draft }
+
+title: { es: "Diminutivos y aumentativos: -ito, -illo, -ón" }
+summary:
+  lead:
+    es: ["Los diminutivos -ito e -illo y los aumentativos -ón, -ote y -azo dan a la palabra tamaño, afecto o desprecio: ", { term: casita }, ", ", { term: grandón }, "."]
+  rule:
+    es: ["El diminutivo sustituye la vocal final por ", { term: "-ito" }, ", y detrás de -e, -n o -r añade ", { term: "-cito" }, ":"]
+  ex: { examples: [{ mapping: [casa, { target: casita }] }, { mapping: [joven, { target: jovencito }] }] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Diminutivo }
+          rule:
+            es: ["sustituye la vocal final por ", { term: "-ito" }, " o ", { term: "-illo" }]
+          ex: { examples: [{ mapping: [casa, { target: casita }] }, { mapping: [pájaro, { target: pajarillo }] }] }
+        - level: B2
+          point: "-cito, -ecito"
+          rule:
+            es: [{ term: "-cito" }, " detrás de -e, -n, -r; ", { term: "-ecito" }, " detrás de un monosílabo"]
+          ex: { examples: [{ mapping: [joven, { target: jovencito }] }, { mapping: [pan, { target: panecito }] }] }
+        - level: B2
+          point: { es: Ortografía }
+          rule:
+            alternatives:
+              - { mapping: [{ letter: c }, { letter: qu }] }
+              - { mapping: [{ letter: g }, { letter: gu }] }
+              - { mapping: [{ letter: z }, { letter: c }] }
+          ex: { examples: [{ mapping: [poco, { target: poquito }] }, { mapping: [amigo, { target: amiguito }] }, { mapping: [lápiz, { target: lapicito }] }] }
+        - level: B2
+          point: { es: Aumentativo }
+          rule:
+            es: [{ term: "-ón" }, ", ", { term: "-ote" }, " y ", { term: "-azo" }, " sustituyen la vocal final"]
+          ex: { examples: [{ mapping: [grande, { target: grandote }] }, { mapping: [golpe, { target: golpazo }] }] }
+        - level: B2
+          point: { es: Concordancia }
+          rule:
+            es: "el adjetivo con sufijo concuerda; los adjetivos en -a no cambian"
+          ex: { examples: [["una chica ", { target: grandona }], ["una mujer ", { target: hipócrita }]] }
+        - level: B2
+          point: { es: Valores }
+          rule:
+            es: "tamaño, afecto, atenuación y desprecio"
+          ex: { examples: [["Espera un ", { target: momentito }, "."], ["Mi ", { target: abuelito }, " cocina muy bien."]] }
+        - level: C1
+          point: { es: Intensificación }
+          rule:
+            es: "el diminutivo refuerza el adjetivo y el adverbio"
+          ex: ["No te imaginas lo ", { target: contentita }, " que se puso."]
+        - level: C1
+          point: { es: Adverbios y gerundios }
+          rule:
+            es: [{ term: "-ito" }, " pasa también a adverbios, gerundios y nombres propios"]
+          ex: { examples: [{ mapping: [ahora, { target: ahorita }] }, { mapping: [callando, { target: callandito }] }] }
+        - level: C1
+          point: { es: Despectivos }
+          rule:
+            es: [{ term: "-ucho" }, ", ", { term: "-ajo" }, " y ", { term: "-ote" }, " dan valor despectivo"]
+          ex: { examples: [["una ", { target: casucha }], ["un ", { target: latinajo }]] }
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: [{ term: sillón }, " es masculino aunque viene de ", { term: silla }]
+          ex: ["Me siento en el ", { target: sillón }, " de la sala."]
+        - level: C1
+          point: { es: Trampa }
+          rule:
+            es: [{ letter: c }, " pasa a ", { letter: qu }, " también en los adverbios"]
+          ex: ["Vivo ", { target: cerquita }, " de aquí."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "El sufijo apreciativo se añade a la raíz y da a la palabra tamaño, afecto o desprecio:"
+            ex: { examples: [["un ", { target: perrito }], ["un ", { target: perrazo }]] }
+          - type: note
+            level: B2
+            text:
+              es: ["La palabra con sufijo forma el plural como las demás: ver ", { link: El plural, to: es.sustantivo-determinantes.plural }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["El sufijo ", { term: "-ísimo" }, ", que da el superlativo, se explica en ", { link: Comparativos y superlativos, to: es.adjetivo-adverbio.comparativos-superlativos }, "."]
+
+  - title: { es: "Forma: diminutivos y aumentativos" }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: suffix, label: { es: Sufijo } }
+          - { key: rule, label: { es: Formación } }
+          - { key: ex, label: { es: Ejemplos } }
+        rows:
+          - level: B2
+            suffix: { alternatives: [{ term: "-ito" }, { term: "-ita" }] }
+            rule:
+              es: "sustituyen la vocal final; detrás de otra consonante se añaden a la palabra"
+            ex: { examples: [{ mapping: [casa, { target: casita }] }, { mapping: [libro, { target: librito }] }, { mapping: [papel, { target: papelito }] }] }
+          - level: B2
+            suffix: { alternatives: [{ term: "-illo" }, { term: "-illa" }] }
+            rule:
+              es: ["se forman como ", { term: "-ito" }, " e ", { term: "-ita" }]
+            ex: { examples: [{ mapping: [pájaro, { target: pajarillo }] }, { mapping: [mesa, { target: mesilla }] }] }
+          - level: B2
+            suffix: { alternatives: [{ term: "-cito" }, { term: "-cita" }] }
+            rule:
+              es: "detrás de -e, -n o -r se añaden a la palabra entera"
+            ex: { examples: [{ mapping: [joven, { target: jovencito }] }, { mapping: [mujer, { target: mujercita }] }, { mapping: [coche, { target: cochecito }] }, { mapping: [madre, { target: madrecita }] }] }
+          - level: B2
+            suffix: { alternatives: [{ term: "-cillo" }, { term: "-cilla" }] }
+            rule:
+              es: ["siguen la misma regla que ", { term: "-cito" }]
+            ex: { examples: [{ mapping: [pobre, { target: pobrecillo }] }, { mapping: [joven, { target: jovencillo }] }] }
+          - level: B2
+            suffix: { alternatives: [{ term: "-ecito" }, { term: "-ecita" }] }
+            rule:
+              es: "detrás de un monosílabo se añaden a la palabra entera"
+            ex: { examples: [{ mapping: [pan, { target: panecito }] }, { mapping: [flor, { target: florecita }] }] }
+          - level: B2
+            suffix: { alternatives: [{ term: "-ón" }, { term: "-ona" }] }
+            rule:
+              es: "aumentan; sustituyen la vocal final"
+            ex: { examples: [{ mapping: [grande, { target: grandón }] }, { mapping: [casa, { target: casona }] }] }
+          - level: B2
+            suffix: { alternatives: [{ term: "-ote" }, { term: "-ota" }] }
+            rule:
+              es: "aumentan; sustituyen la vocal final"
+            ex: { examples: [{ mapping: [grande, { target: grandote }] }, { mapping: [libro, { target: librote }] }] }
+          - level: B2
+            suffix: { alternatives: [{ term: "-azo" }, { term: "-aza" }] }
+            rule:
+              es: "aumentan; sustituyen la vocal final"
+            ex: { examples: [{ mapping: [golpe, { target: golpazo }] }, { mapping: [mano, { target: manaza }] }] }
+          - level: C1
+            suffix: [{ term: "-ito" }, " en adverbios"]
+            rule:
+              es: "sustituyen la vocal final del adverbio"
+            ex: { examples: [{ mapping: [ahora, { target: ahorita }] }, { mapping: [cerca, { target: cerquita }] }] }
+          - level: C1
+            suffix: [{ term: "-ito" }, " en gerundios"]
+            rule:
+              es: "sustituye la -o final del gerundio"
+            ex: { examples: [{ mapping: [callando, { target: callandito }] }, { mapping: [corriendo, { target: corriendito }] }] }
+          - level: C1
+            suffix: [{ term: "-ito" }, " en nombres propios"]
+            rule:
+              es: "forman un apodo cariñoso"
+            ex: { examples: [{ mapping: [Ana, { target: Anita }] }, { mapping: [Manolo, { target: Manolito }] }] }
+
+  - title: { es: "Ortografía: c, g y z ante -ito" }
+    role: spelling
+    content:
+      - type: usage
+        columns:
+          - { key: change, label: { es: Cambio } }
+          - { key: ex, label: { es: Ejemplos } }
+        rows:
+          - level: B2
+            change: { mapping: [{ letter: c }, { letter: qu }] }
+            ex: { examples: [{ mapping: [poco, { target: poquito }] }, { mapping: [chico, { target: chiquillo }] }] }
+          - level: B2
+            change: { mapping: [{ letter: g }, { letter: gu }] }
+            ex: { examples: [{ mapping: [amigo, { target: amiguito }] }, { mapping: [largo, { target: larguito }] }] }
+          - level: B2
+            change: { mapping: [{ letter: z }, { letter: c }] }
+            ex: { examples: [{ mapping: [lápiz, { target: lapicito }] }, { mapping: [taza, { target: tacita }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "La consonante final de la raíz cambia ante e o i para conservar su sonido."
+
+  - title: { es: Género y concordancia }
+    role: own
+    content:
+      - type: paradigm
+        columns:
+          - { key: suffix, label: { es: Adjetivo } }
+          - { key: masc, label: { es: Masculino }, features: { gender: masc } }
+          - { key: fem, label: { es: Femenino }, features: { gender: fem } }
+        rows:
+          - level: B2
+            suffix: { alternatives: [{ term: "-ón" }, { term: "-ona" }] }
+            masc: ["un chico ", { target: grandón }]
+            fem: ["una chica ", { target: grandona }]
+          - level: B2
+            suffix: { alternatives: [{ term: "-ajo" }, { term: "-aja" }] }
+            masc: ["un chico ", { target: pequeñajo }]
+            fem: ["una chica ", { target: pequeñaja }]
+          - level: B2
+            suffix: { es: "adjetivo en -a" }
+            masc: { examples: [["un hombre ", { target: hipócrita }], ["un acto ", { target: homicida }]] }
+            fem: { examples: [["una mujer ", { target: hipócrita }], ["una acción ", { target: homicida }]] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: "El sufijo conserva el género del sustantivo base:"
+            ex: { examples: [{ mapping: ["la casa", { target: la casita }] }, { mapping: ["el libro", { target: el librito }] }] }
+          - type: rule
+            level: B2
+            text:
+              es: ["Con ", { term: "-ón" }, ", algunos sustantivos femeninos pasan al masculino:"]
+            ex: { examples: [{ mapping: ["la silla", { target: el sillón }] }, { mapping: ["la caja", { target: el cajón }] }] }
+          - type: note
+            level: B2
+            text:
+              es: ["El género de los sustantivos: ver ", { link: El género, to: es.sustantivo-determinantes.genero }, "; la concordancia del adjetivo: ver ", { link: "El adjetivo: concordancia y posición", to: es.adjetivo-adverbio.adjetivo-concordancia }, "."]
+
+  - title: { es: Valores }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "tamaño pequeño" }
+            ex: ["Compraron una ", { target: casita }, " en la playa."]
+          - level: B2
+            use: { es: "afecto" }
+            ex: ["Mi ", { target: abuelito }, " cocina muy bien."]
+          - level: B2
+            use: { es: "atenuación de una petición o de una mala noticia" }
+            ex: { examples: [["¿Puedes esperar un ", { target: momentito }, "?"], ["Hay un ", { target: problemita }, " con el pedido."]] }
+          - level: B2
+            use: { es: "desprecio o burla" }
+            ex: ["Ese ", { target: pequeñajo }, " se cree el jefe."]
+          - level: B2
+            use: { es: "palabra que ya no significa «pequeño»" }
+            ex: { examples: [{ mapping: [cama, { target: camilla }] }, { mapping: [ventana, { target: ventanilla }] }, { mapping: [bolsa, { target: bolsillo }] }] }
+          - level: C1
+            use: { es: "intensificación del adjetivo, del adverbio o de la cantidad" }
+            ex: { examples: [["No te imaginas lo ", { target: contentita }, " que se puso."], ["Prefiero el té bien ", { target: calentito }, "."], ["Ese reloj vale un ", { target: dinerillo }, "."]] }
+          - level: C1
+            use: { es: ["golpe dado con el objeto o ejemplar sobresaliente, con ", { term: "-azo" }] }
+            ex: { examples: [["El ", { target: pelotazo }, " del delantero rompió el cristal."], ["¡Qué ", { target: golazo }, " metió!"]] }
+          - level: C1
+            use: { es: "ironía: la forma dice lo contrario de lo que parece" }
+            ex: { examples: [["¡Vaya ", { target: nochecita }, " pasamos!"], ["¡Qué ", { target: cochecito }, " se compró!"]] }
+          - level: C1
+            use: { es: ["sufijos despectivos: ", { term: "-ucho" }, ", ", { term: "-ajo" }, " y ", { term: "-ote" }] }
+            ex: { examples: [["Viven en una ", { target: casucha }, "."], ["Soltó un ", { target: latinajo }, " que nadie entendió."], ["Dijo una ", { target: palabrota }, "."]] }
+
+  - title: { es: Variedades del español }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: note
+            level: B2
+            variety: es-419
+            text:
+              es: ["En México, Centroamérica y Colombia, ", { term: "-ito" }, " es muy frecuente en la conversación:"]
+            ex: ["¿Quieres un ", { target: cafecito }, "?"]
+          - type: note
+            level: B2
+            variety: es-419
+            text:
+              es: ["En el Caribe, Costa Rica y Colombia aparece también ", { term: "-ico" }, ", sobre todo en palabras con t:"]
+            ex: { examples: [["Espera un ", { target: momentico }, "."], ["Es un niño ", { target: chiquitico }, "."]] }
+          - type: note
+            level: B2
+            variety: es-ES
+            text:
+              es: ["En España, ", { term: "-ito" }, " es el sufijo general; ", { term: "-illo" }, " se oye en Andalucía y ", { term: "-ín" }, " en Asturias:"]
+            ex: { examples: [["Siéntate un ", { target: ratillo }, "."], ["Qué niño tan ", { target: pequeñín }, "."]] }
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "mi amigito", right: ["mi ", { target: amiguito }], rule: { es: [{ mapping: [{ letter: g }, { letter: gu }] }, " ante la i del sufijo"] } }
+          - { level: B2, wrong: "un chicito", right: ["un ", { target: chiquito }], rule: { es: [{ mapping: [{ letter: c }, { letter: qu }] }, " ante la i del sufijo"] } }
+          - { level: B2, wrong: "un lapizito", right: ["un ", { target: lapicito }], rule: { es: [{ mapping: [{ letter: z }, { letter: c }] }, " ante la i del sufijo"] } }
+          - { level: B2, wrong: "un jovenito", right: ["un ", { target: jovencito }], rule: { es: ["detrás de -n se añade ", { term: "-cito" }] } }
+          - { level: B2, wrong: "un golpaso", right: ["un ", { target: golpazo }], rule: { es: [{ term: "-azo" }, " se escribe con z"] } }
+          - { level: B2, wrong: "la sillón", right: ["el ", { target: sillón }], rule: { es: ["con ", { term: "-ón" }, ", ", { term: silla }, " pasa al masculino"] } }
+          - { level: B2, wrong: "una mujer grandón", right: ["una mujer ", { target: grandona }], rule: { es: "el adjetivo con sufijo concuerda en género" } }
+          - { level: C1, wrong: "Vivo cercita de aquí.", right: ["Vivo ", { target: cerquita }, " de aquí."], rule: { es: [{ mapping: [{ letter: c }, { letter: qu }] }, " ante la i del sufijo, también en los adverbios"] } }

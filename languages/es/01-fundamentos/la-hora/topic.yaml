@@ -193,6 +193,26 @@ cheatsheet:
             id: "dalam percakapan dipakai 12 jam; jadwal memakai 24 jam"
             vi: "khi nói dùng 12 giờ; lịch trình dùng 24 giờ"
           ex: { mapping: [{ time: "18:30", value: "18:30" }, { target: { time: las dieciocho treinta, value: "18:30" } }] }
+        - level: B2
+          point: { es: Hora aproximada }
+          rule:
+            es: [{ term: hacia las }, " y la hora; ", { term: hace unos }, " con una duración"]
+          ex: ["Llego ", { time: [{ target: hacia las }, " nueve"], value: "09:00" }, "."]
+        - level: B2
+          point: { es: Límites del día }
+          rule:
+            es: [{ term: a primera hora }, " y ", { term: a última hora }, " nombran el principio y el final de la jornada"]
+          ex: { examples: [{ target: a primera hora }, { target: a última hora }] }
+        - level: B2
+          point: { es: Horarios }
+          rule:
+            es: ["24 horas con ", { term: h }, "; se leen con ", { term: las }, " y los minutos"]
+          ex: ["Salida: ", { target: 09.45 h }]
+        - level: C1
+          point: { es: Hora imprecisa }
+          rule:
+            es: [{ term: a eso de las }, " y la hora, como ", { term: hacia }, " y ", { term: sobre }]
+          ex: ["Nos vemos ", { time: [{ target: a eso de las }, " cinco de la tarde"], value: "17:00" }, "."]
         - level: A0
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -473,6 +493,52 @@ sections:
               vi: "Khi nói, dùng đồng hồ 12 giờ; lịch trình dùng đồng hồ 24 giờ:"
             ex: { mapping: [{ time: "18:30", value: "18:30" }, { target: { time: las dieciocho treinta, value: "18:30" } }] }
 
+  - title: { es: La hora aproximada y los límites }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: expr, label: { es: Expresión } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, expr: hacia las nueve, meaning: { es: alrededor de esa hora }, ex: ["Llegamos ", { time: [{ target: hacia las }, " nueve"], value: "09:00" }, "."] }
+          - { level: B2, variety: es-ES, expr: sobre las nueve, meaning: { es: alrededor de esa hora }, ex: ["Quedamos ", { time: [{ target: sobre las }, " nueve"], value: "09:00" }, "."] }
+          - { level: B2, expr: las siete y media pasadas, meaning: { es: un poco después de esa hora }, ex: ["Llegó a ", { time: ["las siete y media ", { target: pasadas }], value: "07:30" }, "."] }
+          - { level: B2, expr: a primera hora, meaning: { es: al empezar la jornada }, ex: ["Te llamo ", { target: a primera hora }, "."] }
+          - { level: B2, expr: a última hora, meaning: { es: al terminar la jornada }, ex: ["Cierran ", { target: a última hora }, " de la tarde."] }
+          - { level: B2, expr: en el último minuto, meaning: { es: en el último momento de un plazo }, ex: ["Cambiaron el horario ", { target: en el último minuto }, "."] }
+          - { level: B2, expr: de madrugada, meaning: { es: entre la medianoche y el amanecer }, ex: ["Salimos ", { target: de madrugada }, "."] }
+          - { level: B2, expr: a medianoche, meaning: { es: en el límite entre un día y el siguiente }, ex: ["El tren sale ", { target: a medianoche }, "."] }
+          - { level: B2, expr: hace unos tres cuartos de hora, meaning: { es: una duración pasada y aproximada }, ex: ["Llegó ", { target: hace unos tres cuartos de hora }, "."] }
+          - { level: C1, expr: a eso de las cinco, meaning: { es: "alrededor de esa hora, sin precisar el minuto" }, ex: ["Nos vemos ", { time: [{ target: a eso de las }, " cinco de la tarde"], value: "17:00" }, "."] }
+          - { level: C1, variety: es-419, expr: como a las cinco, meaning: { es: alrededor de esa hora }, ex: ["Llegó ", { time: [{ target: como a las }, " cinco de la tarde"], value: "17:00" }, "."] }
+
+  - title: { es: La hora en horarios y tablas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: notation, label: { es: Notación } }
+          - { key: reading, label: { es: Lectura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, notation: { es: "horas, punto, minutos y h" }, reading: { target: { time: las nueve cuarenta y cinco, value: "09:45" } }, ex: ["Salida: ", { target: 09.45 h }] }
+          - { level: B2, notation: { es: "horas, dos puntos, minutos y h" }, reading: { target: { time: las trece treinta, value: "13:30" } }, ex: ["Cierre: ", { target: 13:30 h }] }
+          - { level: B2, notation: { es: hora en punto }, reading: { target: { time: las veinte horas, value: "20:00" } }, ex: ["Apertura: ", { target: 20.00 h }] }
+          - { level: B2, notation: { es: "la una, en singular" }, reading: { target: { time: la una, value: "01:00" } }, ex: ["Llegada: ", { target: 01.00 h }] }
+          - { level: B2, notation: { es: "las cero horas, tras la medianoche" }, reading: { target: { time: las cero quince, value: "00:15" } }, ex: ["Salida: ", { target: 00.15 h }] }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["Una hora escrita se lee con ", { term: las }, ", la hora y los minutos como cardinales."]
+          - type: rule
+            level: B2
+            text:
+              es: ["El símbolo ", { term: h }, " se escribe tras un espacio y sin punto."]
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -485,3 +551,6 @@ sections:
           - { level: A0, speakers: [en], wrong: ¿Qué tiempo es?, right: ["¿Qué ", { target: hora }, " es?"], rule: { en: [{ term: tiempo }, " is the weather or time in general; clock time is ", { term: hora }] } }
           - { level: A1, wrong: La clase es en las nueve., right: ["La clase es ", { target: a las }, " nueve."], rule: { en: ["a clock time takes ", { term: a las }], es: ["la hora del reloj lleva ", { term: a las }], uk: ["точний час вживається з ", { term: "a las" }], pt: ["a hora do relógio leva ", { term: a las }], fr: ["l’heure de l’horloge prend ", { term: a las }], de: ["eine Uhrzeit steht mit ", { term: a las }], it: ["l'ora dell'orologio vuole ", { term: a las }], pl: ["godzina zegarowa wymaga ", { term: a las }], tr: ["saat bilgisi ", { term: a las }, " ile kullanılır"], id: ["waktu pada jam memakai ", { term: a las }], vi: ["giờ trên đồng hồ dùng ", { term: a las }] } }
           - { level: A0, speakers: [uk], wrong: Son las cuatro y media., right: ["Son las ", { target: tres }, " y media."], rule: { uk: ["для 3:30, «пів на четверту», кажуть ", { term: las tres y media }, ": ", { term: y media }, " додають до години, що вже настала"] } }
+          - { level: B2, wrong: Llegamos hacia a las nueve., right: ["Llegamos ", { target: hacia las }, " nueve."], rule: { es: [{ term: hacia }, " va directamente delante de la hora"] } }
+          - { level: B2, wrong: las siete y media pasado, right: ["las siete y media ", { target: pasadas }], rule: { es: [{ term: pasadas }, " concuerda con la hora, que es femenina"] } }
+          - { level: B2, wrong: "Salida: 09.45 hs.", right: ["Salida: ", { target: 09.45 h }], rule: { es: ["el símbolo es ", { term: h }, ", sin ", { term: s }, " ni punto"] } }

@@ -1,0 +1,472 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.preposiciones.regimen-preposicional
+lang: es
+kind: grammar
+tags: [prepositions, verb-government, adjectives, nouns, que, queismo, dequeismo]
+concepts: [verb-patterns, governed-prepositions]
+related: [es.preposiciones.preposiciones-basicas, es.preposiciones.por-para, es.pronombres.objeto-directo, es.subjuntivo.subjuntivo-deseos-dudas]
+status: { es: draft }
+
+title: { es: "Verbos, adjetivos y nombres con preposición: contar con, capaz de", en: "Verbs, Adjectives and Nouns with Fixed Prepositions" }
+summary:
+  lead:
+    es: ["Verbos, adjetivos y nombres piden una preposición fija ante su complemento: ", { term: contar con }, ", ", { term: capaz de }, ", ", { term: la idea de }, "."]
+  rule:
+    es: ["La preposición del verbo se mantiene ante ", { term: que }, ", y no se añade si el verbo no la pide:"]
+  ex: { examples: [["Me alegro ", { target: "de que" }, " vengas."], ["Creo ", { target: que }, " vienes."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { pattern: [{ slot: verb }, { term: a }, { slot: infinitive }] }
+          rule: { es: "el verbo pide la preposición ante el infinitivo" }
+          ex: ["Se negó ", { target: a }, " responder."]
+        - level: B2
+          point: { pattern: [{ slot: verb }, { slot: { es: preposición } }, { term: que }, { slot: clause }] }
+          rule: { es: "la preposición se mantiene; el sentido marca el modo" }
+          ex: ["Cuento ", { target: "con que" }, " vengas."]
+        - level: B2
+          point: { es: Con y sin preposición }
+          rule: { es: "la preposición cambia el significado del verbo" }
+          ex: { examples: ["Cuento un chiste.", ["Cuento ", { target: con }, " mi hermano."]] }
+        - level: B2
+          point: { es: Construcción fija }
+          rule: { es: "la preposición forma parte del verbo" }
+          ex: ["Me di cuenta ", { target: de }, " mi error."]
+        - level: B2
+          point: { pattern: [{ term: difícil }, { term: de }, { slot: infinitive }] }
+          rule: { es: "el sujeto recibe la acción del infinitivo" }
+          ex: ["Este texto es ", { target: "difícil de leer" }, "."]
+        - level: C1
+          point: { es: Dos construcciones }
+          rule: { es: "algunos verbos admiten el complemento directo o el regido" }
+          ex: { alternatives: [["Cuida ", { target: a }, " Ana."], ["Cuida ", { target: de }, " Ana."]] }
+        - level: C1
+          point: { pattern: [{ slot: noun }, { slot: { es: preposición } }, { slot: infinitive }] }
+          rule: { es: ["el nombre pide ", { term: de }, " o ", { term: a }, " ante el infinitivo"] }
+          ex: ["Siento el deseo ", { target: "de volver" }, "."]
+        - level: C1
+          point: { pattern: [{ slot: adjective }, { slot: { es: preposición } }, { slot: infinitive }] }
+          rule: { es: "ante un infinitivo o una pregunta indirecta" }
+          ex: ["Estoy ", { target: "deseoso de verte" }, "."]
+        - level: C2
+          point: { pattern: [{ slot: adjective }, { term: de }, { slot: noun }] }
+          rule: { es: ["el adjetivo concuerda con el sujeto o, tras ", { term: de }, ", con el nombre"] }
+          ex: { alternatives: [["Luisa es ", { target: "corta de entendimiento" }, "."], ["Luisa es ", { target: "de entendimiento corto" }, "."]] }
+        - level: C2
+          point: { es: Complemento de cosa }
+          rule: { es: [{ term: contestar a }, " admite ", { term: la }, "; ", { term: referirse a }, ", no"] }
+          ex: { examples: [[{ target: La }, " contestó."], ["Se refirió ", { target: "a ella" }, "."]] }
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: ["ante ", { term: que }, ", el verbo conserva su preposición"] }
+          ex: ["Me alegro ", { target: "de que" }, " hayas ido."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: ["si el verbo no pide preposición, no se añade ante ", { term: que }] }
+          ex: ["Pienso ", { target: que }, " tienes razón."]
+
+sections:
+  - title: { es: Verbos con preposición ante infinitivo o que }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: prep, label: { es: Preposición } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verb: { term: decidirse }
+            prep: { pattern: [{ term: a }, { slot: infinitive }] }
+            ex: ["Al final me decidí ", { target: a }, " ir."]
+          - level: B2
+            verb: { term: negarse }
+            prep: { pattern: [{ term: a }, { slot: infinitive }] }
+            ex: ["Se negó ", { target: a }, " responder."]
+          - level: B2
+            verb: { term: atreverse }
+            prep: { pattern: [{ term: a }, { slot: infinitive }] }
+            ex: ["No me atrevo ", { target: a }, " decir la verdad."]
+          - level: B2
+            verb: { term: animar }
+            prep: { pattern: [{ term: a }, { slot: infinitive }] }
+            ex: ["Mis amigos me animaron ", { target: a }, " viajar."]
+          - level: B2
+            verb: { term: ayudar }
+            prep: { pattern: [{ term: a }, { slot: infinitive }] }
+            ex: ["Mi tío me ayudó ", { target: a }, " mudarme."]
+          - level: B2
+            verb: { term: aprender }
+            prep: { pattern: [{ term: a }, { slot: infinitive }] }
+            ex: ["Aprendí ", { target: a }, " nadar de niño."]
+          - level: B2
+            verb: { term: empezar }
+            prep: { pattern: [{ term: a }, { slot: infinitive }] }
+            ex: ["De repente empezó ", { target: a }, " llover."]
+          - level: B2
+            verb: { term: contar }
+            prep: { pattern: [{ term: con que }, { slot: clause }] }
+            ex: ["Cuento ", { target: "con que" }, " vengas."]
+          - level: B2
+            verb: { term: depender }
+            prep: { pattern: [{ term: de que }, { slot: clause }] }
+            ex: ["La excursión depende ", { target: "de que" }, " no llueva."]
+          - level: B2
+            verb: { term: insistir }
+            prep: { pattern: [{ term: en que }, { slot: clause }] }
+            ex: ["Insiste ", { target: "en que" }, " nos quedemos."]
+          - level: B2
+            verb: { term: confiar }
+            prep: { pattern: [{ term: en que }, { slot: clause }] }
+            ex: ["Confío ", { target: "en que" }, " todo salga bien."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: [{ term: Depender de que }, " lleva subjuntivo: la cláusula expresa una condición."] }
+            ex: ["Todo depende de que ", { target: haya }, " plazas."]
+          - type: rule
+            level: B2
+            text: { es: [{ term: Insistir en que }, " lleva subjuntivo si pide algo, e indicativo si afirma algo."] }
+            ex: { examples: [["Insiste en que ", { target: vengamos }, "."], ["Insiste en que ", { target: tiene }, " razón."]] }
+          - type: rule
+            level: B2
+            text: { es: [{ term: Contar con que }, " y ", { term: confiar en que }, " llevan indicativo si prevén un hecho, y subjuntivo si expresan un deseo."] }
+            ex: { examples: [["Cuento con que ", { target: vendrás }, "."], ["Cuento con que ", { target: vengas }, "."]] }
+          - type: note
+            level: B2
+            text: { es: ["Sobre el modo de las cláusulas, ver ", { link: "El subjuntivo: deseos, dudas y opiniones", to: es.subjuntivo.subjuntivo-deseos-dudas }, "."] }
+
+  - title: { es: El mismo verbo con y sin preposición }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: without, label: { es: Sin preposición } }
+          - { key: with, label: { es: Con preposición } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            without: { es: [{ term: contar }, ": relatar"] }
+            with: { es: [{ term: contar con }, ": confiar en alguien o tenerlo en cuenta"] }
+            ex: { examples: ["Cuento un chiste.", ["Cuento ", { target: con }, " mi hermano."]] }
+          - level: B2
+            without: { es: [{ term: pensar }, ": opinar o tener la intención"] }
+            with: { es: [{ term: pensar en }, ": tener algo presente en la mente"] }
+            ex: { examples: ["Pienso comprar un coche.", ["Pienso ", { target: en }, " mi familia."]] }
+          - level: B2
+            without: { es: [{ term: hablar }, ": usar una lengua"] }
+            with: { es: [{ term: hablar de }, ": tratar un tema"] }
+            ex: { examples: ["Hablo inglés.", ["Hablamos ", { target: de }, " política."]] }
+          - level: B2
+            without: { es: [{ term: tratar }, ": dar un trato a alguien"] }
+            with: { es: [{ term: tratar de }, ": intentar; ", { term: tratar con }, ": relacionarse con alguien"] }
+            ex: { examples: ["Trata bien a todos.", ["Trato ", { target: de }, " llegar temprano."], ["Trato ", { target: con }, " muchos clientes."]] }
+          - level: B2
+            without: { es: [{ term: dejar }, ": poner algo en un lugar"] }
+            with: { es: [{ term: dejar de }, ": no seguir haciendo algo"] }
+            ex: { examples: ["Dejé las llaves en la mesa.", ["Dejé ", { target: de }, " fumar."]] }
+          - level: B2
+            without: { es: [{ term: quedar }, ": permanecer o restar"] }
+            with: { es: [{ term: quedar en }, ": acordar algo"] }
+            ex: { examples: ["Quedan dos días.", ["Quedamos ", { target: en }, " vernos a las ocho."]] }
+          - level: B2
+            without: { es: [{ term: acabar }, ": terminar algo"] }
+            with: { es: [{ term: acabar con }, ": poner fin a algo o agotarlo"] }
+            ex: { examples: ["Acabó el informe a las seis.", ["Acabaron ", { target: con }, " las galletas."]] }
+          - level: B2
+            without: { es: [{ term: salir }, ": ir hacia fuera"] }
+            with: { es: [{ term: salir con }, ": tener una relación con alguien"] }
+            ex: { examples: ["Salgo a las ocho.", ["Salgo ", { target: con }, " Marta desde hace dos años."]] }
+
+  - title: { es: Construcciones fijas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: prep, label: { es: Preposición } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            verb: { term: darse cuenta }
+            prep: { term: de }
+            ex: ["Me di cuenta ", { target: de }, " mi error."]
+          - level: B2
+            verb: { term: reparar }
+            prep: { term: en }
+            ex: ["No reparé ", { target: en }, " su presencia."]
+          - level: B2
+            verb: { term: fijarse }
+            prep: { term: en }
+            ex: ["Fíjate ", { target: en }, " la fecha."]
+          - level: B2
+            verb: { term: consistir }
+            prep: { term: en }
+            ex: ["El trabajo consiste ", { target: en }, " revisar textos."]
+          - level: B2
+            verb: { term: depender }
+            prep: { term: de }
+            ex: ["El precio depende ", { target: del }, " tamaño."]
+          - level: B2
+            verb: { term: enamorarse }
+            prep: { term: de }
+            ex: ["Se enamoró ", { target: de }, " una vecina."]
+          - level: B2
+            verb: { term: soñar }
+            prep: { term: con }
+            ex: ["Anoche soñé ", { target: con }, " el mar."]
+          - level: B2
+            verb: { term: tropezar }
+            prep: { term: con }
+            ex: ["Tropecé ", { target: con }, " un escalón."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "Ante un pronombre, la preposición se mantiene y el pronombre toma su forma tónica:" }
+            ex: { examples: [["Me enamoré ", { target: "de ti" }, "."], ["Soñé ", { target: "con ella" }, "."]] }
+          - type: note
+            level: B2
+            text: { es: ["Las preposiciones de lugar y de tiempo: ver ", { link: Preposiciones de lugar y tiempo, to: es.preposiciones.preposiciones-basicas }, "; ", { term: por }, " y ", { term: para }, ": ", { link: Por y para, to: es.preposiciones.por-para }, "."] }
+
+  - title: { es: Adjetivos con preposición }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            form: { pattern: [{ term: difícil }, { term: de }, { slot: infinitive }] }
+            rule: { es: ["Con ", { term: fácil }, ", ", { term: difícil }, " e ", { term: imposible }, ", el sujeto recibe la acción del infinitivo."] }
+            ex: ["Este texto es ", { target: "difícil de leer" }, "."]
+          - level: B2
+            form: { pattern: [{ term: ser }, { slot: adjective }, { slot: infinitive }] }
+            rule: { es: "La frase impersonal dice lo mismo, sin preposición." }
+            ex: ["Es ", { target: "difícil leer" }, " este texto."]
+          - level: B2
+            form: { pattern: [{ slot: adjective }, { term: de }, { slot: noun }] }
+            rule: { es: ["Adjetivos como ", { term: partidario }, ", ", { term: consciente }, " y ", { term: responsable }, " piden ", { term: de }, " ante el nombre."] }
+            ex: ["Somos ", { target: "partidarios de" }, " un cambio."]
+          - level: B2
+            form: { pattern: [{ term: capaz }, { term: de }, { slot: infinitive }] }
+            rule: { es: ["Los adjetivos de capacidad piden ", { term: de }, " ante el infinitivo."] }
+            ex: ["Es ", { target: "capaz de" }, " aprender solo."]
+          - level: B2
+            form: { pattern: [{ term: interesado }, { term: en }, { slot: infinitive }] }
+            rule: { es: "El sujeto del adjetivo y el del infinitivo son el mismo." }
+            ex: ["Estoy interesado ", { target: en }, " asistir."]
+          - level: B2
+            form: { pattern: [{ term: interesado }, { term: en que }, { slot: clause }] }
+            rule: { es: "Con otro sujeto, la cláusula lleva subjuntivo." }
+            ex: ["Estamos interesados ", { target: "en que" }, " vengas."]
+
+  - title: { es: Complemento directo o complemento regido }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: direct, label: { es: Complemento directo } }
+          - { key: prep, label: { es: Complemento regido } }
+          - { key: pron, label: { es: Pronombre } }
+        rows:
+          - level: C1
+            direct: ["Cuida ", { target: "a Ana" }, "."]
+            prep: ["Cuida ", { target: "de Ana" }, "."]
+            pron: { examples: [[{ target: La }, " cuida."], ["Cuida ", { target: "de ella" }, "."]] }
+          - level: C1
+            direct: ["Olvidé ", { target: "la cita" }, "."]
+            prep: ["Me olvidé ", { target: "de la cita" }, "."]
+            pron: { examples: [[{ target: La }, " olvidé."], ["Me olvidé ", { target: "de ella" }, "."]] }
+          - level: C1
+            direct: ["Recuerdo ", { target: "la fecha" }, "."]
+            prep: ["Me acuerdo ", { target: "de la fecha" }, "."]
+            pron: { examples: [[{ target: La }, " recuerdo."], ["Me acuerdo ", { target: "de ella" }, "."]] }
+          - level: C2
+            direct: ["Contestó ", { target: "a nuestras preguntas" }, "."]
+            prep: ["Se refirió ", { target: "a nuestras preguntas" }, "."]
+            pron: { examples: [[{ target: Las }, " contestó."], ["Se refirió ", { target: "a ellas" }, "."]] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: [{ term: Atreverse a }, " y ", { term: osar }, " significan lo mismo; el verbo pronominal lleva ", { term: a }, "."] }
+            ex: { alternatives: [["No me atrevo ", { target: "a decirlo" }, "."], ["No oso ", { target: decirlo }, "."]] }
+          - type: rule
+            level: C2
+            text: { es: ["Con ", { term: contestar }, ", la cosa se sustituye por ", { term: lo }, " o ", { term: la }, ", y la persona, por ", { term: le }, "."] }
+            ex: { examples: [["La pregunta, ", { target: la }, " contestó con calma."], ["A Ana, ", { target: le }, " contestó con calma."]] }
+          - type: note
+            level: C1
+            text: { es: ["Sobre ", { term: lo }, ", ", { term: la }, ", ", { term: le }, " y la ", { term: a }, " personal: ver ", { link: "El objeto directo y la a personal", to: es.pronombres.objeto-directo }, "."] }
+
+  - title: { es: Nombres y adjetivos con una cláusula }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            form: { pattern: [{ slot: noun }, { term: de }, { slot: infinitive }] }
+            rule: { es: "El nombre pide de ante un infinitivo del mismo sujeto." }
+            ex: ["Siento el deseo ", { target: "de volver" }, "."]
+          - level: C1
+            form: { pattern: [{ slot: noun }, { term: de }, { term: haber }, { slot: past participle }] }
+            rule: { es: "El infinitivo compuesto presenta el hecho como cumplido." }
+            ex: ["Me alegra la idea ", { target: "de habernos reunido" }, " otra vez."]
+          - level: C1
+            form: { pattern: [{ slot: noun }, { term: a }, { slot: infinitive }] }
+            rule: { es: ["Los nombres de miedo, como ", { term: temor }, ", admiten ", { term: a }, " ante el infinitivo."] }
+            ex: ["Me paraliza el temor ", { target: "a perderte" }, "."]
+          - level: C1
+            form: { pattern: [{ slot: noun }, { term: de que }, { slot: clause }] }
+            rule: { es: "Con otro sujeto, la cláusula lleva de que y subjuntivo." }
+            ex: ["Tengo el temor ", { target: "de que" }, " no llegue a tiempo."]
+          - level: C1
+            form: { pattern: [{ slot: adjective }, { term: de }, { slot: infinitive }] }
+            rule: { es: ["Los adjetivos de deseo, como ", { term: deseoso }, ", piden ", { term: de }, " ante el infinitivo."] }
+            ex: ["Estoy ", { target: "deseoso de" }, " verte."]
+          - level: C1
+            form: { pattern: [{ slot: adjective }, { term: a }, { slot: infinitive }] }
+            rule: { es: [{ term: Decidido }, ", ", { term: dispuesto }, " y ", { term: acostumbrado }, " piden ", { term: a }, " ante el infinitivo."] }
+            ex: ["Está ", { target: "decidida a" }, " contarlo."]
+          - level: C1
+            form: { pattern: [{ slot: adjective }, { term: en }, { slot: { es: pregunta indirecta } }] }
+            rule: { es: "Ante una pregunta indirecta, el adjetivo conserva su preposición." }
+            ex: ["Estoy interesado ", { target: "en cómo" }, " es tu trabajo."]
+
+  - title: { es: La preposición delante de que }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: with, label: { es: Con preposición } }
+          - { key: without, label: { es: Sin preposición } }
+        rows:
+          - level: C1
+            with: ["Me alegro ", { target: "de que" }, " hayas ido."]
+            without: ["Celebro ", { target: que }, " hayas ido."]
+          - level: C1
+            with: ["Me acuerdo ", { target: "de que" }, " cerraban a las diez."]
+            without: ["Recuerdo ", { target: que }, " cerraban a las diez."]
+          - level: C1
+            with: ["Me di cuenta ", { target: "de que" }, " faltaba un libro."]
+            without: ["Noté ", { target: que }, " faltaba un libro."]
+          - level: C1
+            with: ["Insisto ", { target: "en que" }, " lo revises."]
+            without: ["Exijo ", { target: que }, " lo revises."]
+          - level: C1
+            with: ["Estoy seguro ", { target: "de que" }, " vendrá."]
+            without: ["Pienso ", { target: que }, " vendrá."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "Si la pregunta lleva la preposición, ante que también:" }
+            ex: ["¿", { target: "En qué" }, " te fijaste? Me fijé ", { target: "en que" }, " la puerta estaba abierta."]
+          - type: note
+            level: C1
+            text: { es: ["Los nombres con ", { term: de que }, ": ver ", { link: "Los complementos del nombre", to: es.sustantivo-determinantes.complementos-del-nombre }, "."] }
+
+  - title: { es: Adjetivos con complemento de nombre }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: rule, label: { es: Concordancia } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            form: { pattern: [{ slot: adjective }, { term: de }, { slot: noun }] }
+            rule: { es: "El adjetivo concuerda con el sujeto." }
+            ex: ["Luisa es ", { target: "corta de entendimiento" }, "."]
+          - level: C2
+            form: { pattern: [{ term: de }, { slot: noun }, { slot: adjective }] }
+            rule: { es: "El adjetivo concuerda con el nombre." }
+            ex: ["Luisa es ", { target: "de entendimiento corto" }, "."]
+          - level: C2
+            form: { es: Las dos construcciones }
+            rule: { es: "Dicen lo mismo; solo cambia la concordancia." }
+            ex: { equivalence: [["Mis hermanos son ", { target: "largos de piernas" }, "."], ["Mis hermanos son ", { target: "de piernas largas" }, "."]] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { es: "El nombre suele ser una parte del cuerpo o un rasgo de carácter:" }
+            ex: ["Es ", { target: "baja de estatura" }, " y ", { target: "fácil de carácter" }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "Se negó de responder."
+            right: ["Se negó ", { target: a }, " responder."]
+            rule: { es: [{ term: negarse }, " pide ", { term: a }, " ante el infinitivo"] }
+          - level: B2
+            wrong: "Pienso de mi familia."
+            right: ["Pienso ", { target: en }, " mi familia."]
+            rule: { es: [{ term: pensar }, " pide ", { term: en }, " para tener algo en la mente"] }
+          - level: B2
+            wrong: "Soñé de mi abuela."
+            right: ["Soñé ", { target: con }, " mi abuela."]
+            rule: { es: [{ term: soñar }, " pide ", { term: con }] }
+          - level: B2
+            wrong: "Este texto es difícil leer."
+            right: ["Este texto es ", { target: "difícil de leer" }, "."]
+            rule: { es: ["si el sujeto es lo que se lee, el adjetivo lleva ", { term: de }] }
+          - level: B2
+            wrong: "Dejé fumar."
+            right: ["Dejé ", { target: de }, " fumar."]
+            rule: { es: [{ term: dejar de }, " significa no seguir haciendo algo"] }
+          - level: B2
+            wrong: "Quedamos a vernos a las ocho."
+            right: ["Quedamos ", { target: en }, " vernos a las ocho."]
+            rule: { es: [{ term: quedar en }, " significa acordar algo"] }
+          - level: C1
+            wrong: "Me alegro que hayas ido."
+            right: ["Me alegro ", { target: "de que" }, " hayas ido."]
+            rule: { es: ["ante ", { term: que }, ", el verbo conserva su preposición"] }
+          - level: C1
+            wrong: "Estoy seguro que vendrá."
+            right: ["Estoy seguro ", { target: "de que" }, " vendrá."]
+            rule: { es: ["ante ", { term: que }, ", el adjetivo conserva su preposición"] }
+          - level: C1
+            wrong: "Pienso de que tienes razón."
+            right: ["Pienso ", { target: que }, " tienes razón."]
+            rule: { es: [{ term: pensar }, " no lleva preposición ante ", { term: que }] }
+          - level: C1
+            wrong: "Me acuerdo la fecha."
+            right: ["Me acuerdo ", { target: "de la fecha" }, "."]
+            rule: { es: [{ term: acordarse }, " pide ", { term: de }, "; ", { term: recordar }, " no pide preposición"] }
+          - level: C1
+            wrong: "Está decidida de contarlo."
+            right: ["Está decidida ", { target: a }, " contarlo."]
+            rule: { es: [{ term: decidido }, " pide ", { term: a }, " ante el infinitivo"] }
+          - level: C2
+            wrong: "Luisa es de entendimiento corta."
+            right: ["Luisa es de entendimiento ", { target: corto }, "."]
+            rule: { es: ["tras ", { term: de }, " y el nombre, el adjetivo concuerda con el nombre"] }
+          - level: C2
+            wrong: "Mis hermanos son largas de piernas."
+            right: ["Mis hermanos son ", { target: largos }, " de piernas."]
+            rule: { es: ["ante ", { term: de }, " y el nombre, el adjetivo concuerda con el sujeto"] }
+          - level: C2
+            wrong: "La pregunta, le contestó con calma."
+            right: ["La pregunta, ", { target: la }, " contestó con calma."]
+            rule: { es: ["con un complemento de cosa, ", { term: contestar }, " lleva ", { term: la }, ", no ", { term: le }] }

@@ -1,0 +1,260 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.ser-estar-hay-gustar.verbos-de-cambio
+lang: es
+kind: grammar
+tags: [verbs, change-of-state, copulative-verbs]
+concepts: [ser-estar, change-of-state]
+related: [es.ser-estar-hay-gustar.ser-estar, es.ser-estar-hay-gustar.ser-estar-adjetivos, es.imperativo-perifrasis.perifrasis-aspectuales]
+status: { es: draft }
+
+title: { es: "Verbos de cambio: ponerse, quedarse, hacerse, volverse" }
+summary:
+  lead:
+    es: [{ term: Ponerse }, ", ", { term: quedarse }, ", ", { term: hacerse }, " y ", { term: volverse }, " dicen que el sujeto pasa a ser algo, y cada uno marca otra clase de cambio."]
+  rule:
+    es: ["El cambio pasajero lleva ", { term: ponerse }, " y el que dura, ", { term: quedarse }, ":"]
+  ex: { examples: [["Ana ", { target: se puso }, " nerviosa."], ["Ana ", { target: se quedó }, " sola."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: ponerse
+          rule:
+            es: "un cambio pasajero de estado o de ánimo"
+          ex: ["Ana ", { target: se puso }, " nerviosa."]
+        - level: B2
+          point: quedarse
+          rule:
+            es: "el resultado de un cambio, que dura"
+          ex: ["Mi abuelo ", { target: se quedó }, " sordo."]
+        - level: B2
+          point: hacerse
+          rule:
+            es: "un cambio que el sujeto provoca o que lo sitúa en un grupo"
+          ex: ["Elena ", { target: se hizo }, " budista."]
+        - level: B2
+          point: volverse
+          rule:
+            es: "un cambio profundo del carácter"
+          ex: ["La gente ", { target: se volvió }, " desconfiada."]
+        - level: B2
+          point: convertirse en
+          rule:
+            es: "una transformación completa"
+          ex: ["La rana ", { target: se convirtió en }, " príncipe."]
+        - level: B2
+          point: llegar a ser
+          rule:
+            es: "el final de un proceso largo"
+          ex: ["Con esfuerzo, ", { target: llegó a ser }, " directora."]
+        - level: C1
+          point: { es: Seudocopulativos }
+          rule:
+            es: [{ alternatives: [{ term: mantenerse }, { term: mostrarse }, { term: resultar }, { term: quedar }, { term: verse }] }, " unen sujeto y atributo"]
+          ex: { examples: [["El ciclista ", { target: resultó }, " herido."], ["Acabó ", { target: siendo }, " profesora."]] }
+        - level: C1
+          point: { es: Con un nombre }
+          rule:
+            es: [{ term: hacerse }, " y ", { term: volverse }, " admiten un sustantivo"]
+          ex: ["Se ", { target: hizo }, " médico."]
+        - level: C2
+          point: { es: Expresiones fijas }
+          rule:
+            es: [{ term: hacerse tarde }, ", ", { term: quedarse frío }, ", ", { term: ponerse como una sopa }]
+          ex: ["Se me ", { target: ha hecho }, " tarde."]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: [{ term: lo }, " no sustituye el atributo: se usa ", { term: así }]
+          ex: ["Yo me volví ", { target: así }, " también."]
+        - level: B2
+          point: { es: Trampa }
+          rule:
+            es: [{ term: convertirse }, " lleva ", { term: en }, " ante un sustantivo"]
+          ex: ["Se convirtió ", { target: en }, " médico."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: [{ term: ponerse }, ", ", { term: quedarse }, ", ", { term: hacerse }, ", ", { term: volverse }, " y ", { term: convertirse }, " llevan el pronombre de su persona:"]
+            ex: { examples: [["Yo ", { target: me puse }, " rojo."], ["Nosotras ", { target: nos quedamos }, " calladas."]] }
+          - type: note
+            level: B2
+            text:
+              es: ["El estado sin cambio se dice con ", { term: ser }, " y ", { term: estar }, ": ver ", { link: Ser o estar con adjetivos, to: es.ser-estar-hay-gustar.ser-estar-adjetivos }, "."]
+          - type: note
+            level: B2
+            text:
+              es: [{ term: ponerse a }, " con infinitivo empieza una acción: ver ", { link: "Perífrasis: acabar de, volver a, soler", to: es.imperativo-perifrasis.perifrasis-aspectuales }, "."]
+
+  - title: { es: Cuatro verbos con adjetivo }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: change, label: { es: Cambio } }
+          - { key: ex, label: { es: Ejemplos } }
+        rows:
+          - level: B2
+            verb: { pattern: [{ term: ponerse }, { slot: adjective }] }
+            change: { es: "un cambio pasajero de estado o de sentimiento" }
+            ex: { examples: [["Ana ", { target: se puso }, " nerviosa antes del examen."], ["Julián ", { target: se puso }, " colorado."], ["Para la fiesta, Lola ", { target: se puso }, " guapa."]] }
+          - level: B2
+            verb: { pattern: [{ term: quedarse }, { slot: adjective }] }
+            change: { es: "el resultado de un cambio, que dura" }
+            ex: { examples: [["Mi abuelo ", { target: se quedó }, " sordo."], ["Los niños ", { target: se quedaron }, " quietos."], [{ target: Me quedé }, " preocupada."]] }
+          - level: B2
+            verb: { pattern: [{ term: hacerse }, { slot: adjective }] }
+            change: { es: "un cambio que el sujeto provoca, o que lo sitúa en un grupo social" }
+            ex: { examples: [["Tomás ", { target: se hizo }, " rico con su negocio."], ["Mi hija ", { target: se hizo }, " mayor."], ["Elena ", { target: se hizo }, " budista."]] }
+          - level: B2
+            verb: { pattern: [{ term: volverse }, { slot: adjective }] }
+            change: { es: "un cambio profundo y, a menudo, inesperado del carácter" }
+            ex: { examples: [["Con los años, ", { target: se volvió }, " egoísta."], ["El vecino ", { target: se volvió }, " insoportable."], ["La gente ", { target: se volvió }, " desconfiada."]] }
+          - level: C1
+            verb: { pattern: [{ term: hacerse }, { slot: noun }] }
+            change: { es: "una profesión o una condición que se alcanza" }
+            ex: ["Se ", { target: hizo }, " médico a los treinta años."]
+          - level: C1
+            verb: { pattern: [{ term: volverse }, { slot: noun }] }
+            change: { es: "un cambio de carácter descrito con un nombre" }
+            ex: ["Se ", { target: volvió }, " una persona amargada."]
+
+  - title: { es: Convertirse en y llegar a ser }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplos } }
+        rows:
+          - level: B2
+            form: { pattern: [{ term: convertirse }, { term: en }, { slot: noun }] }
+            meaning: { es: "una transformación completa" }
+            ex: { examples: [["La rana ", { target: se convirtió en }, " príncipe."], ["Con los años, el pueblo ", { target: se convirtió en }, " una ciudad."]] }
+          - level: B2
+            form: { pattern: [{ term: convertirse }, { term: a }, { slot: noun }] }
+            meaning: { es: "un cambio de religión o de ideas" }
+            ex: ["Mi vecino ", { target: se convirtió al }, " islam."]
+          - level: B2
+            form: { pattern: [{ term: llegar a ser }, { slot: noun }] }
+            meaning: { es: "el final de un proceso largo" }
+            ex: ["Con mucho esfuerzo, ", { target: llegó a ser }, " directora."]
+          - level: B2
+            form: { pattern: [{ term: llegar a ser }, { slot: adjective }] }
+            meaning: { es: "un resultado que se alcanza con el tiempo" }
+            ex: ["Su canción ", { target: llegó a ser }, " famosa en todo el país."]
+
+  - title: { es: Cómo se sustituye el atributo }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text:
+              es: ["El pronombre ", { term: lo }, " no sustituye el atributo de estos verbos; se usa ", { term: así }, ":"]
+            ex: ["Ana se puso nerviosa y yo me puse ", { target: así }, " también."]
+          - type: rule
+            level: B2
+            text:
+              es: "El adjetivo concuerda con el sujeto:"
+            ex: { examples: [["Los niños se quedaron ", { target: quietos }, "."], ["Las niñas se quedaron ", { target: quietas }, "."]] }
+
+  - title: { es: Verbos seudocopulativos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: verb, label: { es: Verbo } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplos } }
+        rows:
+          - level: C1
+            verb: { term: mantenerse }
+            meaning: { es: "seguir en un estado, sin cambio" }
+            ex: ["Se ", { target: mantuvo }, " tranquilo durante la discusión."]
+          - level: C1
+            verb: { term: mostrarse }
+            meaning: { es: "dejar ver un estado o una actitud" }
+            ex: ["El director ", { target: se mostró }, " amable con todos."]
+          - level: C1
+            verb: { term: resultar }
+            meaning: { es: "ser, al final, de una manera a menudo inesperada" }
+            ex: { examples: [["El ciclista ", { target: resultó }, " herido en la caída."], ["La visita ", { target: resultó }, " muy útil."]] }
+          - level: C1
+            verb: { term: quedar }
+            meaning: { es: "ser el resultado de una acción" }
+            ex: { examples: [["Todo ", { target: quedó }, " claro."], ["La mesa ", { target: quedó }, " limpia."]] }
+          - level: C1
+            verb: { term: verse }
+            meaning: { es: "encontrarse en una situación, a menudo sin quererlo" }
+            ex: ["Se ", { target: vio }, " obligado a salir."]
+          - level: C1
+            verb: { alternatives: [{ pattern: [{ term: acabar }, { slot: { es: gerundio } }] }, { pattern: [{ term: terminar }, { slot: { es: gerundio } }] }] }
+            meaning: { es: "llegar a un estado final tras un proceso" }
+            ex: { examples: [["Acabó ", { target: siendo }, " profesora."], ["Terminó ", { target: viviendo }, " en Quito."]] }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text:
+              es: "Estos verbos unen el sujeto con un atributo, como lo hacen ser y estar."
+
+  - title: { es: Expresiones fijas de cambio }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: expression, label: { es: Expresión } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplos } }
+        rows:
+          - level: C2
+            expression: { pattern: [{ term: ponerse de un }, { slot: adjective }] }
+            meaning: { es: "un grado extremo del cambio, con una oración que lo mide" }
+            ex: ["Se ", { target: puso de un }, " pesado que tuve que irme."]
+          - level: C2
+            expression: { term: hacerse tarde }
+            meaning: { es: "pasar el tiempo hasta que ya es tarde" }
+            ex: { examples: [["Se ", { target: hizo }, " tarde y perdimos el último tren."], ["Se me ", { target: ha hecho }, " tarde."]] }
+          - level: C2
+            expression: { term: quedarse tieso }
+            meaning: { es: "quedarse rígido por el frío o por el miedo" }
+            ex: ["Esperando el autobús, ", { target: me quedé tieso }, " de frío."]
+          - level: C2
+            expression: { term: quedarse frío }
+            meaning: { es: "quedarse sin reacción ante una sorpresa" }
+            ex: ["Al oír la noticia, ", { target: me quedé frío }, "."]
+          - level: C2
+            expression: { term: ponerse como una sopa }
+            meaning: { es: "mojarse por completo" }
+            ex: ["Sin paraguas, ", { target: nos pusimos como una sopa }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Se hizo nervioso.", right: ["Se ", { target: puso }, " nervioso."], rule: { es: ["un estado pasajero lleva ", { term: ponerse }] } }
+          - { level: B2, wrong: "Mi abuelo se puso sordo.", right: ["Mi abuelo ", { target: se quedó }, " sordo."], rule: { es: ["un resultado que dura lleva ", { term: quedarse }] } }
+          - { level: B2, wrong: "La rana se convirtió príncipe.", right: ["La rana se convirtió ", { target: en }, " príncipe."], rule: { es: [{ term: convertirse }, " lleva ", { term: en }, " ante un sustantivo"] } }
+          - { level: B2, wrong: "Mi hermano se volvió vegetariano y yo me lo volví también.", right: ["Mi hermano se volvió vegetariano y yo me volví ", { target: así }, " también."], rule: { es: [{ term: lo }, " no sustituye el atributo: se usa ", { term: así }] } }
+          - { level: B2, wrong: "Las niñas se quedaron quieto.", right: ["Las niñas se quedaron ", { target: quietas }], rule: { es: "el atributo concuerda con el sujeto" } }
+          - { level: C1, wrong: "Se puso médico.", right: ["Se ", { target: hizo }, " médico."], rule: { es: ["una profesión se alcanza con ", { term: hacerse }] } }
+          - { level: C1, wrong: "Acabó ser profesora.", right: ["Acabó ", { target: siendo }, " profesora."], rule: { es: [{ term: acabar }, " lleva gerundio para un estado final"] } }
+          - { level: C2, wrong: "Hizo tarde y nos fuimos.", right: [{ target: Se hizo }, " tarde y nos fuimos."], rule: { es: [{ term: hacerse tarde }, " es pronominal"] } }

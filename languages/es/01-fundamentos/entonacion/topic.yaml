@@ -1,0 +1,514 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.fundamentos.entonacion
+lang: es
+kind: foundations
+tags: [pronunciation, intonation, prosody, pauses, questions, emphasis]
+concepts: [pronunciation, intonation]
+related: [es.fundamentos.pronunciacion-acentuacion, es.fundamentos.alfabeto-ortografia, es.oracion.preguntas-negacion, es.imperativo-perifrasis.imperativo-afirmativo]
+status: { es: draft }
+
+title: { es: La entonación, en: Intonation }
+summary:
+  lead:
+    es: "La entonación marca con la subida y la bajada de la voz el final de la frase, la pregunta y el énfasis."
+  rule:
+    es: "La voz baja al final de una afirmación cerrada y sube al final de una pregunta de sí o no:"
+  ex: { examples: [["Vienes ", { target: mañana }, ". ", { intonation: fall }], ["¿Vienes ", { target: mañana }, "? ", { intonation: rise }]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Cadencia }
+          rule: { es: "la voz baja al final: el enunciado queda cerrado" }
+          ex: ["Me voy a ", { target: casa }, ". ", { intonation: fall }]
+        - level: B2
+          point: { es: Anticadencia }
+          rule: { es: "la voz sube al final: pregunta de sí o no" }
+          ex: ["¿Vienes ", { target: mañana }, "? ", { intonation: rise }]
+        - level: B2
+          point: { es: Pausa }
+          rule: { es: "separa la subordinada de la oración principal" }
+          ex: ["Si llueve ", { target: "//" }, " nos quedamos en casa."]
+        - level: B2
+          point: { es: Pregunta alternativa }
+          rule: { es: "la voz sube en el primer miembro y baja en el último" }
+          ex: ["¿Vamos en ", { target: tren }, " ", { intonation: rise }, " o en ", { target: autobús }, "? ", { intonation: fall }]
+        - level: B2
+          point: { es: Enumeración completa }
+          rule: { es: "la voz sube un poco en cada elemento y baja en el último" }
+          ex: ["Compré ", { target: pan }, ", ", { intonation: rise }, " ", { target: leche }, " ", { intonation: rise }, " y ", { target: queso }, ". ", { intonation: fall }]
+        - level: B2
+          point: { es: Palabra interrogativa }
+          rule: { es: "el tono es alto en esa palabra y la voz baja al final" }
+          ex: ["¿", { target: Dónde }, " vives? ", { intonation: fall }]
+        - level: C1
+          point: { es: Ambigüedad }
+          rule: { es: "la pausa cambia el sentido de la frase" }
+          ex: { examples: ["Los alumnos que estudian aprobarán.", ["Los alumnos ", { target: "//" }, " que estudian ", { target: "//" }, " aprobarán."]] }
+        - level: C1
+          point: { es: Pregunta repetidora }
+          rule: { es: "repite lo dicho y la voz sube al final" }
+          ex: ["¿", { target: Que }, " si tengo hambre? ", { intonation: rise }]
+        - level: C1
+          point: { es: Énfasis }
+          rule: { es: "el acento más fuerte cae en la palabra que se destaca" }
+          ex: ["Fui ", { target: { stress: yo } }, " quien lo rompió."]
+        - level: C2
+          point: { es: Emoción fuerte }
+          rule: { es: "inflexiones circunflejas: la voz sube y baja en un mismo grupo" }
+          ex: ["Con decirte ", { target: "//" }, " que llevo una hora esperando el autobús."]
+        - level: C2
+          point: { es: Ironía }
+          rule: { es: "el contorno es plano y quita fuerza a la subida de intensidad" }
+          ex: ["¡", { target: Qué bien }, " has dejado la cocina!"]
+        - level: C2
+          point: { es: Ritmo }
+          rule: { es: "en refranes y poemas, los acentos caen a intervalos regulares" }
+          ex: ["A ", { stress: mal }, " ", { stress: tiem }, "po, ", { stress: bue }, "na ", { stress: ca }, "ra."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "Las pausas dividen el habla en unidades melódicas, y un tonema cierra cada una:" }
+            ex: ["Si quieres ", { intonation: rise }, " // puedes venir. ", { intonation: fall }]
+          - type: note
+            level: B2
+            text: { es: ["En los ejemplos, // marca una pausa, ", { intonation: rise }, " una subida de la voz y ", { intonation: fall }, " una bajada."] }
+          - type: note
+            level: B2
+            variety: es-ES
+            text: { es: "En España la voz fluctúa poco y las inflexiones son más equilibradas." }
+          - type: note
+            level: B2
+            variety: es-419
+            text: { es: "En América la entonación tiene muchas variantes, con más subidas y bajadas." }
+
+  - title: { es: Unidades melódicas y pausas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: unit, label: { es: Unidad } }
+          - { key: pause, label: { es: Pausa } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            unit: { es: Signo de puntuación }
+            pause: { es: "cae donde está el signo: dos puntos, punto y coma, puntos suspensivos o paréntesis" }
+            ex: "Tengo dos hermanos: // Luis y Marta."
+          - level: B2
+            unit: { es: Complemento adelantado }
+            pause: { es: "puede formar una unidad propia, con pausa o sin ella" }
+            ex: { examples: ["En el parque // se oían pájaros.", "En el parque se oían pájaros."] }
+          - level: B2
+            unit: { es: Verbo antes del sujeto }
+            pause: { es: "forma una sola unidad, sin pausa" }
+            ex: "Llegó Marta."
+          - level: B2
+            unit: { es: Subordinada }
+            pause: { es: "se separa de la oración principal" }
+            ex: "Si llueve // nos quedamos en casa."
+          - level: B2
+            unit: { es: Oración reducida o inciso }
+            pause: { es: "se separa del resto con pausas" }
+            ex: "El niño // cansado de esperar // se durmió en el sofá."
+          - level: C1
+            unit: { es: Relativa restrictiva }
+            pause: { es: "va sin pausas: solo aprueban los que estudian" }
+            ex: "Los alumnos que estudian aprobarán."
+          - level: C1
+            unit: { es: Relativa explicativa }
+            pause: { es: "va entre pausas: todos estudian y todos aprueban" }
+            ex: "Los alumnos // que estudian // aprobarán."
+          - level: C1
+            unit: { es: Complemento ambiguo }
+            pause: { es: "con pausa se une al verbo; sin pausa, al sustantivo" }
+            ex: { examples: ["Vi a la niña // con los prismáticos.", "Vi a la niña con los prismáticos."] }
+          - level: C1
+            unit: { es: Tematización }
+            pause: { es: "el tema adelantado forma una unidad con una pausa breve" }
+            ex: "A Lucía // la saludé en la calle."
+          - level: C1
+            unit: { es: Focalización }
+            pause: { es: "el elemento adelantado se une al resto y lleva el acento más fuerte" }
+            ex: [{ stress: Muy amable }, " fue el camarero."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "Al leer en voz alta, las unidades siguen el estilo y el registro del texto." }
+          - type: rule
+            level: C1
+            text: { es: "La voz transmite la intención del autor, también la que el texto deja implícita." }
+          - type: rule
+            level: C1
+            text: { es: "La lectura tiene pausas más regulares y un ritmo más uniforme que el habla espontánea." }
+          - type: rule
+            level: C1
+            text: { es: "Sin signos de puntuación, el lector divide el texto en unidades según el sentido:" }
+            ex: "Cuando llegué // los invitados // ya se habían ido."
+      - type: usage
+        columns:
+          - { key: unit, label: { es: Unidad } }
+          - { key: pause, label: { es: Pausa y tempo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            unit: { es: Emoción fuerte }
+            pause: { es: "la voz hace inflexiones circunflejas: sube y baja en un mismo grupo" }
+            ex: "Con decirte // que llevo una hora esperando el autobús."
+          - level: C2
+            unit: { es: Pausa expresiva }
+            pause: { es: "la pausa carga el relato de suspense o de emoción" }
+            ex: "Abre la puerta // da un paso // se apaga la luz // y // empieza el miedo."
+          - level: C2
+            unit: { es: Comienzo de una charla }
+            pause: { es: "el tempo es lento" }
+            ex: "Buenos días a todos // y gracias por venir."
+          - level: C2
+            unit: { es: Inciso }
+            pause: { es: "el tempo es rápido" }
+            ex: "Tu hermana —que es muy puntual— llegó la primera."
+
+  - title: { es: "El final de la frase: los tonemas" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: tonema, label: { es: Tonema } }
+          - { key: movement, label: { es: Movimiento y uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            tonema: { es: Cadencia }
+            movement: { es: "baja unos 8 semitonos: el enunciado queda cerrado" }
+            ex: ["Me voy a ", { target: casa }, ". ", { intonation: fall }]
+          - level: B2
+            tonema: { es: Semicadencia }
+            movement: { es: "baja 3 o 4 semitonos: el enunciado continúa" }
+            ex: ["Llegué a las ", { target: ocho }, ", ", { intonation: fall }, " me senté y empecé a trabajar. ", { intonation: fall }]
+          - level: B2
+            tonema: { es: Anticadencia }
+            movement: { es: "sube 4 o 5 semitonos: pregunta" }
+            ex: ["¿Vienes ", { target: mañana }, "? ", { intonation: rise }]
+          - level: B2
+            tonema: { es: Semianticadencia }
+            movement: { es: "sube 2 o 3 semitonos: el enunciado queda sin terminar" }
+            ex: ["Si ", { target: quieres }, ", ", { intonation: rise }, " puedes venir. ", { intonation: fall }]
+          - level: B2
+            tonema: { es: Suspensión }
+            movement: { es: "se mantiene a la misma altura: la lista queda abierta" }
+            ex: "En la bolsa había pan, queso, fruta, leche, etcétera."
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "Las mismas palabras cambian de sentido según el tonema final:" }
+            ex: { examples: [["Es todo. ", { intonation: fall }], ["¿Es todo? ", { intonation: rise }]] }
+
+  - title: { es: "Enunciados: aseveración y enumeración" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { es: Aseveración } }
+          - { key: contour, label: { es: Entonación } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            kind: { es: Ordinaria }
+            contour: { es: "la voz baja al final con una cadencia normal" }
+            ex: ["Me levanto a las ", { target: siete }, ". ", { intonation: fall }]
+          - level: B2
+            kind: { es: Categórica }
+            contour: { es: "una pausa destaca el tema y la voz baja del todo al final" }
+            ex: ["Este problema // tiene una sola ", { target: solución }, ". ", { intonation: fall }]
+          - level: B2
+            kind: { es: Insinuante }
+            contour: { es: "la voz queda alta al final y sugiere más de lo que dice" }
+            ex: ["Es una idea muy ", { target: lógica }, ". ", { intonation: rise }]
+          - level: B2
+            kind: { es: Dubitativa }
+            contour: { es: "la voz sube un poco al final: el hablante duda" }
+            ex: ["Quizá venga ", { target: mañana }, ". ", { intonation: rise }]
+          - level: C1
+            kind: { es: Inicio enfático }
+            contour: { es: "la voz empieza alta, ya en la primera palabra" }
+            ex: { examples: [["¡", { stress: Pero }, " si ya es de noche!"], ["¡", { stress: Por }, " Dios, qué susto!"]] }
+      - type: usage
+        columns:
+          - { key: kind, label: { es: Enumeración } }
+          - { key: contour, label: { es: Entonación } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            kind: { es: Completa }
+            contour: { es: "la voz sube un poco en cada elemento y baja en el último" }
+            ex: ["En la nevera hay leche, ", { intonation: rise }, " huevos, ", { intonation: rise }, " queso ", { intonation: rise }, " y jamón. ", { intonation: fall }]
+          - level: B2
+            kind: { es: Incompleta }
+            contour: { es: "la voz se mantiene a la misma altura, también en el último elemento" }
+            ex: "Había sillas, mesas, bancos, etcétera."
+          - level: B2
+            kind: { es: Descriptiva }
+            contour: { es: "cada acción forma una unidad corta y la última baja" }
+            ex: ["Me levanto, me visto, desayuno y salgo a ", { target: trabajar }, ". ", { intonation: fall }]
+          - level: B2
+            kind: { es: Distributiva }
+            contour: { es: "una pausa separa cada grupo y el tono se repite en cada uno" }
+            ex: "Unos estudian, // otros trabajan, // otros descansan."
+          - level: C1
+            kind: { es: Interior }
+            contour: { es: "la lista queda dentro de la frase: la voz no cierra y la cadencia llega al final de la oración" }
+            ex: "En una mudanza, las cajas, el polvo, las prisas cansan a cualquiera."
+          - level: C1
+            kind: { es: Acumulativa }
+            contour: { es: ["los elementos van unidos por ", { term: y }, " y la voz repite el mismo movimiento en cada uno"] }
+            ex: "Gritó y lloró y pataleó hasta quedarse dormido."
+          - level: C1
+            kind: { es: Intensificadora }
+            contour: { es: "cada elemento sube más que el anterior" }
+            ex: "No me dio ni un consejo, ni una ayuda, ni un saludo."
+          - level: C1
+            kind: { es: Matizadora }
+            contour: { es: "cada elemento precisa al anterior y la voz baja un poco en cada uno" }
+            ex: "Es amable, atento, algo tímido."
+          - level: C1
+            kind: { es: Valorativa }
+            contour: { es: "el último elemento valora todo lo anterior y la voz baja del todo" }
+            ex: "Llegamos tarde, mojados y sin maletas: un desastre."
+          - level: C1
+            kind: { es: Enfática }
+            contour: { es: "la voz sube con fuerza en cada elemento y baja en el último" }
+            ex: "Y me entran unas ganas de llorar y una rabia y un cansancio enormes."
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "A mayor intensidad, más amplio es el movimiento de la voz:" }
+            ex: { examples: ["Hace frío.", "¡Hace un frío horrible!"] }
+
+  - title: { es: Preguntas }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { es: Pregunta } }
+          - { key: contour, label: { es: Entonación } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            kind: { es: Con forma de aseveración }
+            contour: { es: "el orden es el de una afirmación y la subida final marca la pregunta" }
+            ex: ["¿A que esta sopa está ", { target: buena }, "? ", { intonation: rise }]
+          - level: B2
+            kind: { es: Cortés }
+            contour: { es: "la subida final es suave y el verbo va en condicional" }
+            ex: ["¿Podrías ayudarme con la ", { target: maleta }, "? ", { intonation: rise }]
+          - level: B2
+            kind: { es: Alternativa }
+            contour: { es: "la voz sube en el primer miembro y baja en el último" }
+            ex: ["¿Fue sin ", { target: querer }, " ", { intonation: rise }, " o fue ", { target: adrede }, "? ", { intonation: fall }]
+          - level: B2
+            kind: { es: Con palabra interrogativa }
+            contour: { es: "el tono es alto en esa palabra y la voz baja al final" }
+            ex: ["¿", { target: Dónde }, " vives? ", { intonation: fall }]
+          - level: C1
+            kind: { es: Restrictiva }
+            contour: { es: "pide confirmar un dato concreto y la voz sube al final" }
+            ex: ["¿Eres tú el que dejó la puerta ", { target: abierta }, "? ", { intonation: rise }]
+          - level: C1
+            kind: { es: Repetidora }
+            contour: { es: "repite lo dicho para confirmarlo y la voz sube al final" }
+            ex: { examples: [["¿", { target: Que }, " si tengo hambre? ", { intonation: rise }], ["¿", { target: Cuántos }, " años he dicho que tengo? ", { intonation: rise }]] }
+          - level: C1
+            kind: { es: Exclamativa }
+            contour: { es: "expresa sorpresa o protesta, con el contorno de una exclamación" }
+            ex: "¿Eso lo llamas tú cocinar?"
+          - level: C1
+            kind: { es: Hipotética }
+            contour: { es: "supone algo y pide confirmación con una subida final" }
+            ex: ["¿Imagino que ya has hablado con ", { target: ella }, "? ", { intonation: rise }]
+          - level: C1
+            kind: { es: Larga }
+            contour: { es: "se divide en varios grupos y la subida mayor llega al final" }
+            ex: "¿Si te llamo mañana por la tarde, cuando salgas del trabajo, podrás hablar un rato?"
+          - level: C1
+            kind: { es: Con inciso interrogativo }
+            contour: { es: "la pregunta se intercala en una aseveración, que continúa después" }
+            ex: "Dijiste —¿te acuerdas?— que vendrías pronto."
+          - level: C1
+            kind: { es: Con vocativo }
+            contour: { es: "el vocativo forma una unidad propia dentro de la pregunta" }
+            ex: ["¿No te parece, ", { target: Marta }, ", que es muy tarde? ", { intonation: rise }]
+
+  - title: { es: "Mandato, ruego y cortesía" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: act, label: { es: Acto } }
+          - { key: contour, label: { es: Entonación } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            act: { es: Mandato }
+            contour: { es: "la voz baja al final" }
+            ex: ["Siéntate ", { target: aquí }, ". ", { intonation: fall }]
+          - level: B2
+            act: { es: Exclamación urgente }
+            contour: { es: "el acento es fuerte y la voz baja deprisa" }
+            ex: { examples: ["¡Entra!", "¡Date prisa!"] }
+          - level: B2
+            act: { es: Orden suavizada }
+            contour: { es: "la voz baja menos y suena más suave" }
+            ex: "No te preocupes tanto."
+          - level: B2
+            act: { es: Orden irónica }
+            contour: { es: "el pronombre lleva un tono alto y la orden suena a advertencia" }
+            ex: ["¡", { stress: Tú }, " sigue gastando y ya verás!"]
+          - level: B2
+            act: { es: Mandato con que }
+            contour: { es: ["el ", { term: que }, " inicial lleva un tono alto y la voz baja con fuerza"] }
+            ex: ["¡", { stress: Que }, " te vayas ya, por favor!"]
+          - level: B2
+            act: { es: Saludo y fórmula de cortesía }
+            contour: { es: "la voz baja con suavidad al final" }
+            ex: { examples: [["¿Cómo está ", { target: usted }, "? ", { intonation: fall }], ["¿Qué tal te ", { target: fue }, "? ", { intonation: fall }]] }
+
+  - title: { es: Actos de habla expresivos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: act, label: { es: Acto } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            act: { es: Deseo }
+            ex: "¡Lo que daría yo por tener un día libre!"
+          - level: C1
+            act: { es: Decepción }
+            ex: "¡Yo que pensaba que ibas a venir!"
+          - level: C1
+            act: { es: Protesta }
+            ex: "¡Si yo siempre llego puntual!"
+          - level: C1
+            act: { es: Resignación }
+            ex: "¡Qué remedio!"
+          - level: C1
+            act: { es: Reproche }
+            ex: "¡Vaya manera de hablarme!"
+          - level: C1
+            act: { es: Sorpresa }
+            ex: "¡Que no me hayan avisado!"
+          - level: C1
+            act: { es: Ánimo persuasivo }
+            ex: "Ya verás como todo sale bien."
+          - level: C1
+            act: { es: Exhortación }
+            ex: "¡Hay que ayudarse entre todos!"
+          - level: C1
+            act: { es: Ruego en fórmulas }
+            ex: { examples: ["Quisiera hablar con la directora.", "Le agradecería una respuesta pronto."] }
+          - level: C2
+            act: { es: "Ironía: se dice lo contrario de lo que se piensa, con un contorno plano que quita fuerza a la subida de intensidad" }
+            ex: "¡Qué bien has dejado la cocina!"
+          - level: C2
+            act: { es: Exclamación ondulada de sentimiento fuerte }
+            ex: "¡Mira que lo sé, Ana, que lo sé!"
+          - level: C2
+            act: { es: Lamento }
+            ex: { examples: ["¡Si pudiera volver atrás!", "¡Vaya semana me espera!"] }
+          - level: C2
+            act: { es: Saludo y deseo refinados }
+            ex: { examples: ["Que tengas un buen viaje.", "Que todo salga muy bien."] }
+
+  - title: { es: Énfasis }
+    role: own
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "El acento más fuerte y el tono más alto caen en la palabra que se destaca." }
+      - type: usage
+        columns:
+          - { key: kind, label: { es: Énfasis } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            kind: { es: De intensidad }
+            ex: ["Hace un calor ", { stress: insoportable }, "."]
+          - level: C1
+            kind: { es: Contrastivo }
+            ex: ["Fui ", { stress: yo }, " quien lo rompió, no mi hermano."]
+          - level: C1
+            kind: { es: Interrogativo }
+            ex: ["¿", { stress: Que Pedro }, " se ha ido sin avisar?"]
+          - level: C1
+            kind: { es: De gravedad }
+            ex: ["Esto —", { stress: créeme }, "— es muy serio."]
+
+  - title: { es: "Ritmo en refranes, canciones y poemas" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: text, label: { es: Texto } }
+          - { key: rhythm, label: { es: Ritmo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            text: { es: Refrán }
+            rhythm: { es: "los acentos caen a intervalos regulares y ayudan a recordarlo" }
+            ex: ["A ", { stress: mal }, " ", { stress: tiem }, "po, ", { stress: bue }, "na ", { stress: ca }, "ra."]
+          - level: C2
+            text: { es: Poema }
+            rhythm: { es: "el verso tiene un número fijo de sílabas y sus acentos caen en lugares fijos" }
+            ex: { examples: [["Cami", { stress: nan }, "te, no ", { stress: hay }, " ca", { stress: mi }, "no,"], ["se ", { stress: ha }, "ce ca", { stress: mi }, "no al an", { stress: dar }, "."]] }
+          - level: C2
+            text: { es: Canción }
+            rhythm: { es: "el compás de la música puede mover el acento de una palabra" }
+            ex: ["mira", { stress: la }, ", mira", { stress: la }]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: ["Me levanto a las ocho. ", { intonation: rise }]
+            right: ["Me levanto a las ocho. ", { target: { intonation: fall } }]
+            rule: { es: "una afirmación cerrada termina en cadencia: la voz baja" }
+          - level: B2
+            wrong: ["¿Vienes mañana? ", { intonation: fall }]
+            right: ["¿Vienes mañana? ", { target: { intonation: rise } }]
+            rule: { es: "una pregunta de sí o no termina en anticadencia: la voz sube" }
+          - level: B2
+            wrong: "Si // quieres puedes venir."
+            right: ["Si quieres ", { target: "//" }, " puedes venir."]
+            rule: { es: "la pausa cae entre la subordinada y la oración principal" }
+          - level: B2
+            wrong: ["¿Fue sin querer ", { intonation: rise }, " o fue adrede? ", { intonation: rise }]
+            right: ["¿Fue sin querer ", { intonation: rise }, " o fue adrede? ", { target: { intonation: fall } }]
+            rule: { es: "en la pregunta alternativa la voz baja en el último miembro" }
+          - level: C1
+            wrong: ["¿Que si tengo hambre? ", { intonation: fall }]
+            right: ["¿Que si tengo hambre? ", { target: { intonation: rise } }]
+            rule: { es: "la pregunta que repite lo dicho sube al final" }
+          - level: C1
+            wrong: ["Ya te he ", { stress: dicho }, " que eres tú quien debe disculparse."]
+            right: ["Ya te he dicho que eres ", { target: { stress: tú } }, " quien debe disculparse."]
+            rule: { es: "el énfasis contrastivo pone el acento más fuerte en el elemento que se contrapone" }

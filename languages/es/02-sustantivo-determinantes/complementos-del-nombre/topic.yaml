@@ -1,0 +1,259 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.sustantivo-determinantes.complementos-del-nombre
+lang: es
+kind: grammar
+tags: [noun-complements, ellipsis, relational-adjectives, participle, de]
+concepts: [possession]
+related: [es.sustantivo-determinantes.posesivos, es.sustantivo-determinantes.articulos, es.adjetivo-adverbio.adjetivo-concordancia, es.oracion.relativas]
+status: { es: draft }
+
+title: { es: "Los complementos del nombre: la chica de los ojos azules", en: "Noun Complements: of-Phrases, Apposition and Ellipsis" }
+summary:
+  lead:
+    es: ["Un complemento con ", { term: de }, ", un adjetivo o un participio precisa el nombre; el artículo o el demostrativo lo sustituyen si falta."]
+  rule:
+    es: "Sin comas, el complemento identifica; entre comas, añade un dato:"
+  ex: { examples: [["La chica ", { target: "de los ojos azules" }, " es mi prima."], ["Mi prima, ", { target: "de ojos azules" }, ", vive en Lima."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Nombre sin núcleo }
+          rule: { es: [{ pattern: [{ slot: { es: artículo } }, { term: de }, { slot: { es: complemento } }] }, ": sustituye a un nombre conocido"] }
+          ex: ["Mi bolso es viejo, pero ", { target: "el de Marta" }, " es nuevo."]
+        - level: B2
+          point: { es: Posesivo }
+          rule: { es: ["tres lecturas; con ", { term: de }, " y un pronombre, solo el tema"] }
+          ex: ["Encontré ", { target: "fotos de ti" }, " en el sobre."]
+        - level: B2
+          point: { es: Varios complementos }
+          rule: { es: "el de materia va antes que el de destino" }
+          ex: ["Mi hermana vende ", { target: "mesas de madera para niños" }, "."]
+        - level: B2
+          point: { es: Entre comas }
+          rule: { es: "el complemento añade un dato y no identifica" }
+          ex: ["Mi abuelo, ", { target: "de pelo blanco" }, ", vive en Cuenca."]
+        - level: B2
+          point: { es: Participio }
+          rule: { es: "lectura pasiva, como una oración de relativo" }
+          ex: ["Los candidatos ", { target: elegidos }, " reciben un diploma."]
+        - level: B2
+          point: { es: Adjetivo de relación }
+          rule: { es: "va pegado al nombre y no admite grado" }
+          ex: ["Trabajo en una ", { target: "fábrica textil" }, "."]
+        - level: C1
+          point: { es: Nombre sin núcleo }
+          rule: { es: ["el atributo de ", { term: ser }, " nombra el nombre que falta"] }
+          ex: [{ target: "El de camarero" }, " es un trabajo duro."]
+        - level: C1
+          point: { es: Nombre de acción }
+          rule: { es: "dos lecturas: el complemento hace la acción o la recibe" }
+          ex: [{ target: "La crítica de Luis" }, " sorprendió a todos."]
+        - level: C1
+          point: { es: { pattern: [{ term: un }, { slot: noun }, { term: de }, { slot: noun }] } }
+          rule: { es: "el primer nombre da la cualidad del segundo" }
+          ex: ["Mi vecina es ", { target: "un encanto de persona" }, "."]
+        - level: C2
+          point: { es: { pattern: [{ term: un }, { slot: noun }, { term: de }, { slot: noun }] } }
+          rule: { es: "con valoración fuerte, equivale a un adjetivo del segundo" }
+          ex: ["Me regalaron ", { target: "un horror de lámpara" }, "."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: ["el nombre conserva su preposición ante ", { term: que }] }
+          ex: [{ target: "El temor de que te vayas" }, " me quita el sueño."]
+        - level: C1
+          point: { es: Trampa }
+          rule: { es: "el adjetivo que clasifica va antes que el de origen" }
+          ex: ["Trabaja en la ", { target: "industria textil española" }, "."]
+
+sections:
+  - title: { es: El nombre sin núcleo }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            form: { pattern: [{ slot: { es: demostrativo } }, { term: de }, { slot: { es: complemento } }] }
+            meaning: { es: "El demostrativo señala uno entre varios, y el contexto da el nombre." }
+            ex: ["En la foto, ", { target: "ese de la camisa roja" }, " es mi tío."]
+          - level: B2
+            form: { pattern: [{ slot: { es: artículo } }, { term: de }, { slot: { es: complemento } }] }
+            meaning: { es: "El artículo retoma un nombre que ya se dijo." }
+            ex: ["Mi bolso es viejo, pero ", { target: "el de Marta" }, " es nuevo."]
+          - level: C1
+            form: { pattern: [{ slot: { es: artículo } }, { term: de }, { slot: { es: complemento } }, { term: ser }, { slot: { es: atributo } }] }
+            meaning: { es: "El nombre no se dijo antes: lo da el atributo que sigue." }
+            ex: [{ target: "El de camarero" }, " es un trabajo duro."]
+          - level: C1
+            form: { pattern: [{ term: el }, { slot: infinitive }, { term: de }, { slot: { es: complemento } }] }
+            meaning: { es: "El infinitivo hace de sustantivo y admite un complemento con de." }
+            ex: [{ target: "El cantar de los pájaros" }, " me despierta cada mañana."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "El artículo o el demostrativo concuerda en género y número con el nombre que falta:" }
+            ex: ["Mis botas son nuevas; ", { target: "las de Ana" }, " son viejas."]
+
+  - title: { es: Complementos con de }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: kind, label: { es: Complemento } }
+          - { key: reading, label: { es: Lectura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            kind: { pattern: [{ slot: { es: posesivo } }, { slot: noun }] }
+            reading: { es: "Subjetiva, objetiva o posesiva: las hiciste tú, te muestran a ti o son tuyas." }
+            ex: ["Encontré ", { target: "tus fotos" }, " en el sobre."]
+          - level: B2
+            kind: { pattern: [{ slot: noun }, { term: de }, { slot: { es: pronombre } }] }
+            reading: { es: "Solo objetiva: las fotos te muestran a ti." }
+            ex: ["Encontré ", { target: "fotos de ti" }, " en el sobre."]
+          - level: B2
+            kind: { es: Varios complementos }
+            reading: { es: "El de materia va primero, y el de destino, después." }
+            ex: ["Mi hermana vende ", { target: "mesas de madera para niños" }, "."]
+          - level: C1
+            kind: { pattern: [{ slot: { es: nombre de acción } }, { term: de }, { slot: noun }] }
+            reading: { es: "Dos lecturas: el complemento hace la acción o la recibe." }
+            ex: [{ target: "La crítica de Luis" }, " sorprendió a todos."]
+          - level: C1
+            kind: { pattern: [{ slot: noun }, { slot: { es: preposición } }, { slot: infinitive }] }
+            reading: { es: "Con infinitivo, quien siente y quien actúa son la misma persona." }
+            ex: [{ target: "Su deseo de viajar" }, " creció con los años."]
+          - level: C1
+            kind: { es: Nombre de deseo o temor }
+            reading: { es: ["Con otro sujeto: ", { term: de que }, " y subjuntivo."] }
+            ex: [{ target: "El temor de que te vayas" }, " me quita el sueño."]
+          - level: C1
+            kind: { es: Nombre de noticia o creencia }
+            reading: { es: ["Lleva ", { term: de que }, " e indicativo."] }
+            ex: ["Nos alegró ", { target: "la noticia de que habían ganado" }, "."]
+          - level: C1
+            kind: { es: Dos adjetivos de relación }
+            reading: { es: "El que clasifica va junto al nombre, y el de origen, después." }
+            ex: ["Trabaja en la ", { target: "industria textil española" }, "."]
+          - level: C1
+            kind: { es: Participio o adjetivo }
+            reading: { es: "Dos lecturas: pasiva, alguien la redujo, o cualidad, es corta." }
+            ex: ["Compré una ", { target: "edición reducida" }, " del diccionario."]
+
+  - title: { es: Complementos que no restringen }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: kind, label: { es: Complemento } }
+          - { key: punctuation, label: { es: Puntuación } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            kind: { es: "Con de, identifica al nombre" }
+            punctuation: { es: Sin comas }
+            ex: ["Saludé a la ", { target: "chica de los ojos azules" }, "."]
+          - level: B2
+            kind: { es: "Con de, solo añade un dato" }
+            punctuation: { es: Entre comas }
+            ex: ["Mi abuelo, ", { target: "de pelo blanco" }, ", vive en Cuenca."]
+          - level: B2
+            kind: { es: Participio pasivo }
+            punctuation: { es: "Sin comas si identifica; entre comas si solo añade" }
+            ex: { equivalence: [["los candidatos ", { target: elegidos }], ["los candidatos ", { target: "que han sido elegidos" }]] }
+          - level: B2
+            kind: { es: Adjetivo de relación }
+            punctuation: { es: Sin comas }
+            ex: ["Hay una ", { target: "reunión presidencial" }, " el lunes."]
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { es: "El adjetivo de relación va pegado al nombre, y el calificativo, después:" }
+            ex: ["una crisis ", { target: económica }, " profunda"]
+          - type: rule
+            level: B2
+            text: { es: ["El adjetivo de relación no admite grado: no lleva ", { term: muy }, " ni ", { term: -ísimo }, "."] }
+            ex: ["una ", { target: "fábrica textil" }]
+          - type: note
+            level: B2
+            text: { es: ["Los complementos con una oración de relativo y su modo: ver ", { link: Las oraciones de relativo, to: es.oracion.relativas }, "."] }
+
+  - title: { es: Un N de N }
+    role: form
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            form: { pattern: [{ term: un }, { slot: { es: nombre de cualidad } }, { term: de }, { slot: noun }] }
+            ex: ["Mi vecina es ", { target: "un encanto de persona" }, "."]
+          - level: C1
+            form: { pattern: [{ term: una }, { slot: { es: nombre de cualidad } }, { term: de }, { slot: noun }] }
+            ex: ["Mi sobrino es ", { target: "una monada de bebé" }, "."]
+          - level: C2
+            form: { pattern: [{ term: un }, { slot: { es: nombre de valoración fuerte } }, { term: de }, { slot: noun }] }
+            ex: ["Me regalaron ", { target: "un horror de lámpara" }, "."]
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: "El primer nombre da la cualidad, y el segundo nombra a quien la tiene." }
+          - type: rule
+            level: C1
+            text: { es: "El artículo concuerda con el primer nombre, no con el segundo." }
+          - type: rule
+            level: C2
+            text: { es: "Con una valoración fuerte, el primer nombre equivale a un adjetivo del segundo:" }
+            ex: { equivalence: [{ target: "un horror de lámpara" }, ["una lámpara ", { target: horrorosa }]] }
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - level: B2
+            wrong: "una mesa para niños de madera"
+            right: ["una mesa ", { target: "de madera para niños" }]
+            rule: { es: "el complemento de materia va antes que el de destino" }
+          - level: B2
+            wrong: "una fábrica muy textil"
+            right: ["una fábrica ", { target: textil }]
+            rule: { es: "el adjetivo de relación no admite grado" }
+          - level: B2
+            wrong: "un problema grave económico"
+            right: ["un problema ", { target: "económico grave" }]
+            rule: { es: "el adjetivo de relación va pegado al nombre" }
+          - level: B2
+            wrong: "Mi bolso es viejo, pero el Marta es nuevo."
+            right: ["Mi bolso es viejo, pero ", { target: "el de Marta" }, " es nuevo."]
+            rule: { es: ["sin nombre, el artículo lleva ", { term: de }, " y el complemento"] }
+          - level: C1
+            wrong: "El de Pablo tiene mucha amistad con la hermana de Luisa."
+            right: ["El ", { target: hermano }, " de Pablo tiene mucha amistad con la hermana de Luisa."]
+            rule: { es: "sin antecedente ni atributo que lo nombre, el artículo no basta" }
+          - level: C1
+            wrong: "el temor que te vayas"
+            right: ["el temor ", { target: "de que" }, " te vayas"]
+            rule: { es: ["ante ", { term: que }, ", el nombre conserva su preposición"] }
+          - level: C1
+            wrong: "la industria española textil"
+            right: ["la industria ", { target: "textil española" }]
+            rule: { es: "el adjetivo que clasifica va antes que el de origen" }
+          - level: C1
+            wrong: "una encanto de persona"
+            right: [{ target: "un encanto" }, " de persona"]
+            rule: { es: "el artículo concuerda con el primer nombre" }

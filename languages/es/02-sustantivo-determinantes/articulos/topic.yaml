@@ -89,6 +89,26 @@ cheatsheet:
           rule: { en: the article instead of a possessive, es: el artículo en lugar del posesivo, uk: артикль замість присвійного займенника, pt: "o artigo no lugar do possessivo", fr: "l’article à la place du possessif", de: "der Artikel statt des Possessivpronomens", it: "l’articolo al posto del possessivo", pl: "przedimek zamiast zaimka dzierżawczego", tr: "iyelik sıfatı yerine artikel", id: "artikel sebagai pengganti kata ganti kepemilikan", vi: "mạo từ thay cho tính từ sở hữu" }
           ex: ["Me duele ", { target: la }, " cabeza."]
           tr: { en: My head hurts., uk: У мене болить голова., pt: "Minha cabeça dói.", fr: "J’ai mal à la tête.", de: "Mir tut der Kopf weh.", it: "Mi fa male la testa.", pl: "Boli mnie głowa.", tr: "Başım ağrıyor.", id: "Kepala saya sakit.", vi: "Tôi bị đau đầu." }
+        - level: B2
+          point: { es: Nombres propios }
+          rule: { es: "artículo y mayúscula con una realidad única" }
+          ex: [{ target: La Tierra }, " gira alrededor ", { target: del Sol }, "."]
+        - level: B2
+          point: { es: Neutro lo }
+          rule: { es: [{ pattern: [{ term: lo }, { slot: adjective }] }, ": la cualidad; ", { pattern: [{ term: lo de }, { slot: noun }] }, ": el asunto"] }
+          ex: { examples: [[{ target: Lo mejor }, " es el parque."], ["Siento ", { target: lo de ayer }, "."]] }
+        - level: C1
+          point: { es: Artículo enfático }
+          rule: { es: [{ pattern: [{ term: lo }, { slot: adverb }, { term: que }] }, ": el grado; ", { pattern: [{ term: la }, { slot: noun }, { term: que }] }, ": la ponderación"] }
+          ex: { examples: [["¡", { target: Lo mal que }, " cantó!"], ["¡", { target: La cara que }, " puso!"]] }
+        - level: C1
+          point: { es: Sin determinante }
+          rule: { es: ["sin artículo tras ", { term: nombrar }, " y ", { term: declarar }, ", y en el instrumento"] }
+          ex: { examples: [["La nombraron ", { target: directora }, "."], ["Escribió la carta ", { target: a mano }, "."]] }
+        - level: C2
+          point: { es: "Nombres propios, uso social" }
+          rule: { es: "artículo ante el nombre de pila o el apellido: confianza, fastidio o cariño" }
+          ex: ["¡Ya está ", { target: la Ana }, " hablando de su jefe!"]
         - level: A1
           point: { en: Trap, es: Trampa, uk: Пастка, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule: { en: ["no ", { term: un }, " or ", { term: una }, " before a job"], es: ["sin ", { term: un }, " ni ", { term: una }, " ante la profesión"], uk: ["без ", { term: un }, " і ", { term: una }, " перед професією"], pt: ["sem ", { term: un }, " nem ", { term: una }, " antes da profissão"], fr: ["pas de ", { term: un }, " ni de ", { term: una }, " devant le métier"], de: ["kein ", { term: un }, " und kein ", { term: una }, " vor dem Beruf"], it: ["senza ", { term: un }, " né ", { term: una }, " davanti alla professione"], pl: ["bez ", { term: un }, " ani ", { term: una }, " przed zawodem"], tr: ["meslekten önce ", { term: un }, " veya ", { term: una }, " kullanılmaz"], id: ["tanpa ", { term: un }, " atau ", { term: una }, " sebelum pekerjaan"], vi: ["không có ", { term: un }, " hay ", { term: una }, " trước nghề nghiệp"] }
@@ -262,6 +282,289 @@ sections:
               id: [{ term: hay }, " dipakai dengan ", { term: un }, ", ", { term: una }, " atau tanpa artikel, dan ", { term: está }, " dipakai dengan ", { term: el }, " atau ", { term: la }, ": lihat ", { link: Hay dan está, to: es.ser-estar-hay-gustar.hay-esta }, "."]
               vi: [{ term: hay }, " đi với ", { term: un }, ", ", { term: una }, " hoặc không có mạo từ, còn ", { term: está }, " đi với ", { term: el }, " hoặc ", { term: la }, ": xem ", { link: Hay và está, to: es.ser-estar-hay-gustar.hay-esta }, "."]
 
+  - title: { es: "Nombres propios con artículo" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: name, label: { es: Nombre } }
+          - { key: article, label: { es: Artículo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            name: [{ term: la Tierra }, ", ", { term: el Sol }, ", ", { term: la Luna }]
+            article: { es: "obligatorio, con mayúscula inicial" }
+            ex: [{ target: La Luna }, " gira alrededor de ", { target: la Tierra }, "."]
+          - level: B2
+            name: [{ term: la tierra }, ", ", { term: el sol }]
+            article: { es: "nombre común, con minúscula: el artículo sigue las reglas generales" }
+            ex: ["Los campesinos trabajan ", { target: la tierra }, " desde el amanecer."]
+          - level: B2
+            name: { term: hace sol }
+            article: { es: ["nombre común después de ", { term: hacer }, ": sin artículo y con minúscula"] }
+            ex: ["En verano ", { target: hace sol }, " todos los días."]
+          - level: B2
+            name: { term: el Papa }
+            article: { es: "obligatorio; mayúscula si el cargo va solo y nombra a una persona única" }
+            ex: ["Los fieles esperaban ", { target: al Papa }, " en la plaza."]
+          - level: B2
+            name: { term: el papa Juan Pablo II }
+            article: { es: "obligatorio; minúscula si el cargo va delante del nombre" }
+            ex: [{ target: El papa }, " Juan Pablo II nació en Polonia."]
+
+  - title: { es: "Nombres propios con artículo (uso social y estilístico)" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: name, label: { es: Nombre } }
+          - { key: effect, label: { es: Efecto } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            name: { term: la Ana }
+            effect: { es: "con una oración de relativo, identifica a una persona entre varias del mismo nombre" }
+            ex: ["Invité a ", { target: la Ana }, " con la que trabajo, no a la otra."]
+          - level: C2
+            name: [{ term: la Ana }, " ", { optional: esta }]
+            effect: { es: "tono despectivo o de fastidio" }
+            ex: ["¡Ya está ", { target: la Ana }, " ", { optional: esta }, " hablando de su jefe!"]
+          - level: C2
+            name: { term: esta Ana }
+            effect: { es: "tono indulgente o cariñoso, sin el artículo" }
+            ex: [{ target: Esta Ana }, " nunca cambia: siempre llega con un regalo."]
+          - level: C2
+            name: [{ term: la Callas }, ", ", { term: el Banderas }]
+            effect: { es: "el apellido con artículo da trato familiar a una persona famosa" }
+            ex: { examples: [[{ target: La Callas }, " cantaba como nadie."], ["Mi madre ve todas las películas ", { target: del Banderas }, "."]] }
+          - level: C2
+            name: [{ term: el Mochuelo }, ", ", { term: el Roto }]
+            effect: { es: "el apodo lleva siempre artículo" }
+            ex: ["Todos llaman a Luis ", { target: el Flaco }, "."]
+          - level: C2
+            name: [{ term: el Madrid de los Austrias }, ", ", { term: la España franquista }]
+            effect: { es: "el topónimo con un complemento o un adjetivo evoca una época o un aspecto del lugar" }
+            ex: { examples: [["Paseamos por ", { target: el Madrid de los Austrias }, "."], [{ target: La España de los años cincuenta }, " era muy distinta."]] }
+          - level: C2
+            variety: es-ES
+            name: { term: los madriles }
+            effect: { es: "nombre festivo y plural de la ciudad, en el habla coloquial de Madrid" }
+            ex: ["Hacía años que no pisaba ", { target: los madriles }, "."]
+          - level: C2
+            name: [{ term: Su Majestad }, ", ", { term: Su Excelencia }]
+            effect: { es: ["el tratamiento de dignidad lleva ", { term: su }, " y no el artículo"] }
+            ex: [{ target: Su Excelencia }, " el embajador llegó ayer."]
+
+  - title: { es: "Valor genérico" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: def, label: { es: Determinado } }
+          - { key: indf, label: { es: Indeterminado } }
+          - { key: when, label: { es: Cuándo se usa } }
+        rows:
+          - level: B2
+            def: [{ target: El bolígrafo }, " se usa para escribir."]
+            indf: [{ target: Un bolígrafo }, " se usa para escribir."]
+            when: { es: "los dos hablan de cualquier bolígrafo; el determinado nombra la clase entera y el indeterminado toma un ejemplar" }
+          - level: B2
+            def: [{ target: El bolígrafo }, " no existía hace doscientos años."]
+            when: { es: "un marco temporal pide la clase entera: solo vale el determinado" }
+
+  - title: { es: "El neutro lo y otras sustantivaciones" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            pattern: { pattern: [{ term: lo }, { slot: adjective }] }
+            meaning: { es: ["la cualidad misma, también con ", { term: lo mejor }, " y ", { term: lo peor }] }
+            ex: { examples: [[{ target: Lo mejor }, " de la ciudad es el parque."], [{ target: Lo interesante }, " viene al final."]] }
+          - level: B2
+            pattern: { pattern: [{ term: lo de }, { alternatives: [{ slot: noun }, { slot: infinitive }] }] }
+            meaning: { es: "el asunto que los dos conocen: lo ocurrido o lo propuesto" }
+            ex: { examples: [["Siento mucho ", { target: lo de ayer }, "."], ["¿Qué piensas de ", { target: lo de cambiar de casa }, "?"]] }
+          - level: B2
+            pattern: { pattern: [{ term: el }, { slot: { es: otra palabra } }] }
+            meaning: { es: "una palabra de otra clase convertida en nombre" }
+            ex: { examples: [["No entiendo ", { target: el porqué }, " de tu decisión."], ["Quiero saber ", { target: el cuándo }, " y ", { target: el dónde }, "."]] }
+          - level: C1
+            pattern: { pattern: [{ term: el }, { slot: infinitive }] }
+            meaning: { es: "una acción: el artículo es opcional" }
+            ex: ["Todos saben que ", { target: [{ optional: el }, " fumar"] }, " perjudica la salud."]
+          - level: C1
+            pattern: { pattern: [{ term: el }, { slot: infinitive }, { term: de }, { slot: noun }] }
+            meaning: { es: "un sustantivo con su complemento: el artículo es obligatorio" }
+            ex: [{ target: El florecer de las plantas }, " anuncia la primavera."]
+          - level: C1
+            pattern: { pattern: [{ term: el que }, { slot: clause }] }
+            meaning: { es: "una oración convertida en nombre" }
+            ex: { examples: [["Me alegra ", { target: el que hayas venido }, "."], [{ target: El que tenga paciencia }, " lo conseguirá."]] }
+
+  - title: { es: "El artículo indefinido: valores" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "ante una oración de relativo: un ejemplar cualquiera que cumple la descripción" }
+            ex: { examples: [["Busco ", { target: un compañero }, " que sea de otro país."], ["Busco ", { target: unos zapatos }, " que no me aprieten."]] }
+          - level: B2
+            use: { es: "retoma a una persona ya mencionada como miembro de una clase, sin identificarla" }
+            ex: ["Pedro suspendió. Era de esperar en ", { target: un chico }, " que no estudia nada."]
+          - level: B2
+            use: { es: "nombre no contable con un modificador: designa una clase o una variedad" }
+            ex: ["Bebimos ", { target: un agua muy clara }, " de la montaña."]
+          - level: B2
+            use: { es: "una realidad única con un modificador" }
+            ex: { examples: [["Hacía ", { target: un calor horrible }, "."], ["Brillaba ", { target: un sol espléndido }, "."]] }
+          - level: B2
+            use: { es: "énfasis sin modificador: la entonación exclamativa lo sustituye" }
+            ex: ["¡Hacía ", { target: un calor }, "!"]
+          - level: B2
+            use: { es: "predicado con una relación única: lleva el determinado y no el indeterminado" }
+            ex: ["Madrid es ", { target: la capital }, " de España."]
+          - level: B2
+            use: { es: "atributo metafórico: la persona se compara con un prototipo" }
+            ex: { examples: [["Mi vecino es ", { target: un lince }, " para los negocios."], ["Tu primo es ", { target: un Adonis }, "."]] }
+          - level: C1
+            use: { es: "énfasis con una consecuencia que mide la cualidad" }
+            ex: { examples: [["Tiene ", { target: una voz }, " que enamora."], ["Hacía ", { target: un frío }, " que pelaba."]] }
+          - level: C1
+            use: { es: "con un nombre propio: una obra de ese autor o algo en su estilo" }
+            ex: { examples: [["En esa casa hay ", { target: un Picasso }, " auténtico."], ["Esta película parece ", { target: un Buñuel }, "."]] }
+          - level: C1
+            use: { es: ["con ", { term: tal }, ": alguien a quien el hablante no conoce"] }
+            ex: ["Te ha llamado ", { target: un tal José Durán }, "."]
+          - level: C1
+            use: { es: "tema desplazado a la izquierda: se nombra la clase y después se precisa" }
+            ex: [{ target: Un abrigo }, ", mejor que sea de lana."]
+          - level: C2
+            use: { es: ["refuerzo del atributo: ", { term: todo un }, ", ", { term: un señor }, " y la repetición del nombre"] }
+            ex: { examples: [["Con veinte años ya eres ", { target: todo un hombre }, "."], ["Es ", { target: un señor arquitecto }, "."], ["Es ", { target: "un arquitecto, arquitecto" }, "."]] }
+          - level: C2
+            use: { es: [{ term: una de }, " y un plural: gran cantidad, en una exclamación"] }
+            ex: ["¡Había ", { target: una de gente }, " en la plaza!"]
+          - level: C2
+            use: { es: "un infinitivo o una oración convertidos en nombre" }
+            ex: { examples: [["Tuvo ", { target: un despertar sin sosiego }, "."], ["En la estación había ", { target: un ir y venir }, " constante de gente."], ["Detrás de cada decisión hay ", { target: un porqué }, "."]] }
+
+  - title: { es: "Nombres sin determinante" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: context, label: { es: Contexto } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            context: { es: "sujeto antes del verbo" }
+            rule: { es: "un plural o un nombre de masa va sin determinante solo con un adjetivo delante o en coordinación" }
+            ex: { examples: [[{ target: Fuertes lluvias }, " inundaron el pueblo."], [{ target: Libros y revistas }, " llenaban la mesa."]] }
+          - level: B2
+            context: { es: [{ term: alguno }, " y ", { term: ninguno }, " detrás del nombre"] }
+            rule: { es: "sustituyen al determinante en una frase negativa" }
+            ex: { examples: [["No tengo ", { target: duda alguna }, "."], ["No hay ", { target: problema alguno }, "."]] }
+          - level: B2
+            context: { es: "verbos de apoyo" }
+            rule: { es: ["el nombre sin artículo forma una expresión con ", { term: tener }, ", ", { term: dar } , " o ", { term: poner }] }
+            ex: { examples: [["El concierto ", { target: tendrá lugar }, " en el parque."], ["Mi hermana ", { target: da clase }, " de inglés."], ["Mi sobrina ", { target: da besos }, " a todos."], ["Pon ", { target: fecha }, " en el formulario."]] }
+          - level: B2
+            context: { es: "profesión en un anuncio" }
+            rule: { es: "se omite el determinante" }
+            ex: ["Se busca ", { target: cocinero }, " con experiencia."]
+          - level: C1
+            context: { es: [{ term: nombrar }, " y ", { term: declarar }] }
+            rule: { es: "el nombre predicativo va sin artículo" }
+            ex: { examples: [["La nombraron ", { target: directora }, "."], ["Declararon el valle ", { target: zona catastrófica }, "."]] }
+          - level: C1
+            context: { es: [{ term: en }, " y un medio de transporte"] }
+            rule: { es: "sin artículo si el nombre da el medio; con artículo si señala uno concreto" }
+            ex: { examples: [["Viajamos ", { target: en tren }, "."], ["Subimos ", { target: en el tren }, " de las ocho."]] }
+          - level: C1
+            context: { es: [{ term: en }, " y ", { term: campo contrario }] }
+            rule: { es: "sin artículo en la expresión fija; con artículo si es un lugar concreto" }
+            ex: { examples: [["El equipo juega ", { target: en campo contrario }, " y gana."], ["La pelota cayó ", { target: en el campo contrario }, "."]] }
+          - level: C1
+            context: { es: [{ term: a }, " y ", { term: con }, " de instrumento"] }
+            rule: { es: "el instrumento va sin artículo" }
+            ex: { examples: [["Escribió la carta ", { target: a mano }, "."], ["Firmé ", { target: con bolígrafo }, "."]] }
+          - level: C1
+            context: { es: "aposición descriptiva" }
+            rule: { es: "sin artículo si describe; con artículo si identifica" }
+            ex: { examples: [["Cartagena, ", { target: ciudad de murallas }, ", atrae a muchos turistas."], ["Bogotá, ", { target: la capital de Colombia }, ", está en las montañas."]] }
+          - level: C2
+            context: { es: "titulares de prensa" }
+            rule: { es: "se omite el determinante y el verbo va en presente" }
+            ex: { examples: [[{ target: Presidente }, " inaugura una autopista."], [{ target: Alcalde }, " denuncia amenazas."]] }
+          - level: C2
+            context: { es: "refranes" }
+            rule: { es: "el sujeto va sin determinante y tiene valor general" }
+            ex: { examples: [[{ target: Perro ladrador }, ", poco mordedor."], [{ target: Camarón }, " que se duerme se lo lleva la corriente."]] }
+          - level: C2
+            context: { es: "sujeto antes del verbo, con contraste" }
+            rule: { es: ["el nombre va solo cuando el énfasis lo opone a otro, con ", { term: ser }] }
+            ex: [{ target: Paciencia }, " es lo que necesitas."]
+          - level: C2
+            context: { es: [{ term: en }, " y un estado"] }
+            rule: { es: "sin artículo si es la situación; con artículo si es el edificio" }
+            ex: { examples: [["El acusado está ", { target: en prisión }, "."], ["Mañana visitaremos a mi tío ", { target: en la prisión }, " de la ciudad."]] }
+          - level: C2
+            context: { es: [{ term: en }, " y una parte o un servicio"] }
+            rule: { es: "el artículo es opcional" }
+            ex: ["Pregunta ", { target: ["en ", { optional: la }, " recepción"] }, "."]
+
+  - title: { es: "El artículo enfático" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { es: Estructura } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            pattern: { pattern: [{ alternatives: [{ term: el }, { term: la }] }, { slot: noun }, { term: que }, { slot: clause }] }
+            meaning: { es: "pondera el nombre por lo que sigue: cantidad, intensidad o cualidad" }
+            ex: { examples: [["¡", { target: La paciencia que }, " tiene!"], ["¡", { target: Los nervios que }, " pasé!"]] }
+          - level: C1
+            pattern: { pattern: [{ term: lo }, { alternatives: [{ slot: adverb }, { slot: adjective }] }, { term: que }, { slot: clause }] }
+            meaning: { es: "el grado de una cualidad o de una manera" }
+            ex: { examples: [["¡", { target: Lo mal que }, " cantó!"], ["No sabes ", { target: lo cansado que }, " estoy."], ["Llámame ", { target: lo antes que }, " puedas."]] }
+          - level: C1
+            pattern: { pattern: [{ term: los }, { alternatives: [{ term: pocos }, { term: muchos }] }, { slot: noun }, { term: que }, { slot: clause }] }
+            meaning: { es: "todos los que hay, pocos o muchos; pide una oración de relativo" }
+            ex: { examples: [[{ target: Los pocos amigos que }, " tiene lo quieren mucho."], [{ target: Los muchos años que }, " vivió allí le dieron un acento propio."]] }
+          - level: C1
+            pattern: { pattern: [{ term: hay }, { slot: { es: algo conocido } }] }
+            meaning: { es: [{ term: hay }, " con un nombre determinado: lo de siempre, ya conocido"] }
+            ex: ["En esta oficina hay ", { target: el ruido de siempre }, "."]
+          - level: C2
+            pattern: { pattern: [{ term: ser }, { term: el }, { slot: noun }] }
+            meaning: { es: "grado máximo: el artículo se pronuncia con fuerza y se escribe en mayúsculas" }
+            ex: ["No es un restaurante, es ", { target: EL }, " restaurante."]
+          - level: C2
+            pattern: { pattern: [{ term: la de }, { slot: plural noun }] }
+            meaning: { es: "gran cantidad, en una exclamación" }
+            ex: ["¡", { target: La de cosas }, " que hemos vivido!"]
+          - level: C2
+            pattern: { pattern: [{ alternatives: [{ term: el }, { term: la }] }, { slot: adjective }, { term: de }, { slot: noun }] }
+            meaning: { es: "valoración de una persona, con tono afectuoso o despectivo" }
+            ex: { examples: [[{ target: El pobre de Luis }, " perdió el tren."], ["Dile a ", { target: la tonta de mi prima }, " que no cuente nada."]] }
+          - level: C2
+            pattern: { pattern: [{ term: el }, { slot: noun }, { slot: { es: demostrativo } }] }
+            meaning: { es: ["el demostrativo detrás del nombre añade fastidio o distancia: ver ", { link: Los demostrativos, to: es.sustantivo-determinantes.demostrativos }] }
+            ex: [{ target: Los chicos estos }, " no paran de hablar."]
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: Типові помилки, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -276,3 +579,9 @@ sections:
           - { level: A1, speakers: [uk], wrong: ¿Dónde está baño?, right: ["¿Dónde está ", { target: el }, " baño?"], rule: { uk: ["іменник, відомий обом, має артикль ", { term: el }, " або ", { term: la }, ", хоча українською кажемо просто «де туалет»"] } }
           - { level: A1, speakers: [uk], wrong: Tengo hermano., right: ["Tengo ", { target: un }, " hermano."], rule: { uk: ["злічуваний іменник в однині має артикль ", { term: un }, " або ", { term: una }] } }
           - { level: A1, speakers: [uk], wrong: Te llamo en lunes., right: ["Te llamo ", { target: el }, " lunes."], rule: { uk: ["день тижня — з ", { term: el }, " і без прийменника, хоча українською кажемо «у понеділок»"] } }
+          - { level: B2, wrong: La tierra gira alrededor del sol., right: [{ target: La Tierra }, " gira alrededor ", { target: del Sol }, "."], rule: { es: ["el astro como nombre propio lleva mayúscula: ", { term: la Tierra }, ", ", { term: el Sol }] } }
+          - { level: B2, wrong: Un bolígrafo existe desde hace casi un siglo., right: [{ target: El bolígrafo }, " existe desde hace casi un siglo."], rule: { es: "con un marco temporal, la clase entera lleva el determinado" } }
+          - { level: B2, wrong: Brillaba un sol., right: ["Brillaba ", { target: un sol espléndido }, "."], rule: { es: "una realidad única con el indeterminado pide un modificador" } }
+          - { level: B2, wrong: Madrid es una capital de España., right: ["Madrid es ", { target: la capital }, " de España."], rule: { es: "una relación única en el predicado lleva el determinado" } }
+          - { level: C1, wrong: Florecer de las plantas anuncia la primavera., right: [{ target: El florecer }, " de las plantas anuncia la primavera."], rule: { es: "un infinitivo con complemento de nombre es un sustantivo y lleva artículo" } }
+          - { level: C1, wrong: La nombraron la directora., right: ["La nombraron ", { target: directora }, "."], rule: { es: [{ term: nombrar }, " y ", { term: declarar }, " piden el nombre sin artículo"] } }

@@ -1,0 +1,217 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.subjuntivo.subjuntivo-futuro
+lang: es
+kind: grammar
+tags: [verbs, subjunctive, mood, future, formal]
+concepts: [subjunctive]
+related: [es.subjuntivo.subjuntivo-formas, es.oracion.condicionales, es.pasados.verbos-irregulares]
+status: { es: draft }
+
+title: { es: "El futuro de subjuntivo: hablare, hubiere" }
+summary:
+  lead:
+    es: ["El futuro de subjuntivo, ", { term: hablare }, " o ", { term: hubiere }, ", presenta una acción como eventual en las leyes, en la literatura y en las expresiones fijas."]
+  rule:
+    es: ["La raíz es el indefinido de ", { term: ellos }, " sin ", { term: "-ron" }, ", más ", { term: "-re" }, ":"]
+  ex: { examples: [["Quien ", { target: incumpliere }, " la norma será sancionado."], ["Sea como ", { target: fuere }, "."]] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: C2
+          point: { es: Forma }
+          rule:
+            pattern: [{ slot: { es: "indefinido de ellos sin -ron" } }, { ending: re }]
+          ex: ["Si ", { target: procediere }, ", se devolverá el importe."]
+        - level: C2
+          point: { es: Terminaciones }
+          rule:
+            alternatives: [{ ending: re }, { ending: res }, { ending: remos }, { ending: ren }]
+          ex: ["Donde ", { target: fueres }, ", haz lo que ", { target: vieres }, "."]
+        - level: C2
+          point: { es: Forma compuesta }
+          rule:
+            pattern: [{ term: hubiere }, { slot: past participle }]
+          ex: ["Si el plazo ", { target: "hubiere vencido" }, ", se rechazará la solicitud."]
+        - level: C2
+          point: { es: Lenguaje jurídico }
+          rule: { es: "una condición o un supuesto eventual en la ley" }
+          ex: ["Si ", { target: hubiere }, " una disposición contraria, esta no se aplicará."]
+        - level: C2
+          point: { es: Lenguaje literario }
+          rule: { es: "lo eventual en el verso y en la prosa" }
+          ex: ["Cuando la noche ", { target: cayere }, ", volveremos a la orilla."]
+        - level: C2
+          point: { es: Expresiones fijas }
+          rule: { es: "fórmulas y refranes heredados" }
+          ex: { examples: [[{ target: Venga }, " lo que ", { target: viniere }, ", estaré contigo."], ["Sea como ", { target: fuere }, ", saldremos mañana."]] }
+        - level: C2
+          point: { es: Lengua actual }
+          rule: { es: "el presente de subjuntivo o de indicativo ocupa su lugar" }
+          ex: ["Quien ", { target: incumpla }, " la norma será sancionado."]
+        - level: C2
+          point: { es: Trampa }
+          rule: { es: ["la raíz sale del indefinido: ", { mapping: [{ term: vieron }, { term: viere }] }] }
+          ex: ["Haz lo que ", { target: vieres }, "."]
+        - level: C2
+          point: { es: Trampa }
+          rule: { es: ["la forma de ", { term: nosotros }, " lleva tilde"] }
+          ex: ["Si lo ", { target: hiciéremos }, " juntos, saldrá bien."]
+
+sections:
+  - title: { es: Visión general }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              es: "Presenta una acción como eventual y posterior al momento de la frase."
+            ex: ["Si ", { target: hubiere }, " una disposición contraria, prevalecerá la ley."]
+          - type: rule
+            level: C2
+            text:
+              es: "Se encuentra en los textos jurídicos y literarios y en las expresiones fijas."
+          - type: note
+            level: C2
+            text:
+              es: ["Comparte la raíz con ", { link: El imperfecto de subjuntivo, to: es.subjuntivo.subjuntivo-imperfecto }, "; las condiciones con ", { term: si }, ": ", { link: Las oraciones condicionales, to: es.oracion.condicionales }, "."]
+
+  - title: { es: "Forma: simple y compuesta" }
+    role: form
+    features: { tense: fut, mood: sbjv }
+    content:
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+          - { key: tener, label: tener }
+        rows:
+          - { level: C2, features: { person: 1, number: sg }, person: yo, ar: ["habla", { ending: re }], er: ["comie", { ending: re }], tener: ["tuvie", { ending: re }] }
+          - { level: C2, features: { person: 2, number: sg, politeness: infm }, person: tú, ar: ["habla", { ending: res }], er: ["comie", { ending: res }], tener: ["tuvie", { ending: res }] }
+          - { level: C2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, ar: ["habla", { ending: re }], er: ["comie", { ending: re }], tener: ["tuvie", { ending: re }] }
+          - { level: C2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, ar: ["habl", { letter: á }, { ending: remos }], er: ["comi", { letter: é }, { ending: remos }], tener: ["tuvi", { letter: é }, { ending: remos }] }
+          - { level: C2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, ar: ["habla", { ending: reis }], er: ["comie", { ending: reis }], tener: ["tuvie", { ending: reis }] }
+          - { level: C2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, ar: ["habla", { ending: ren }], er: ["comie", { ending: ren }], tener: ["tuvie", { ending: ren }] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              es: ["La raíz es el indefinido de ", { term: ellos }, " sin ", { term: "-ron" }, ": ", { mapping: [{ term: tuvieron }, { term: tuvie }] }, "."]
+          - type: rule
+            level: C2
+            text:
+              es: ["Los verbos irregulares mantienen la raíz de su indefinido: ", { mapping: [{ term: fueron }, { term: fuere }] }, ", ", { mapping: [{ term: vieron }, { term: viere }] }, "."]
+          - type: rule
+            level: C2
+            text:
+              es: ["La forma de ", { term: nosotros }, " lleva tilde en la vocal anterior a ", { term: "-remos" }, "."]
+            ex: { examples: [["Si ", { target: habláremos }, " con él, lo sabremos."], ["Si ", { target: comiéremos }, " juntos, pagaremos a medias."]] }
+          - type: note
+            level: C2
+            text:
+              es: ["Las raíces irregulares: ", { link: Tabla de verbos irregulares, to: es.pasados.verbos-irregulares }, "."]
+      - type: paradigm
+        columns:
+          - { key: person, label: { es: Persona } }
+          - { key: haber, label: haber }
+          - { key: ar, label: hablar }
+          - { key: er, label: comer }
+        rows:
+          - { level: C2, features: { person: 1, number: sg }, person: yo, haber: { aux: hubiere }, ar: [{ aux: hubiere }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hubiere }, " ", { target: [com, { ending: ido }] }] }
+          - { level: C2, features: { person: 2, number: sg, politeness: infm }, person: tú, haber: { aux: hubieres }, ar: [{ aux: hubieres }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hubieres }, " ", { target: [com, { ending: ido }] }] }
+          - { level: C2, features: [{ person: 3, number: sg }, { person: 2, number: sg, politeness: form }], person: { alternatives: [él, ella, usted] }, haber: { aux: hubiere }, ar: [{ aux: hubiere }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hubiere }, " ", { target: [com, { ending: ido }] }] }
+          - { level: C2, features: { person: 1, number: pl }, person: { alternatives: [nosotros, nosotras] }, haber: { aux: hubiéremos }, ar: [{ aux: hubiéremos }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hubiéremos }, " ", { target: [com, { ending: ido }] }] }
+          - { level: C2, variety: es-ES, features: { person: 2, number: pl, politeness: infm }, person: { alternatives: [vosotros, vosotras] }, haber: { aux: hubiereis }, ar: [{ aux: hubiereis }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hubiereis }, " ", { target: [com, { ending: ido }] }] }
+          - { level: C2, features: [{ person: 3, number: pl }, { person: 2, number: pl }], person: { alternatives: [ellos, ellas, ustedes] }, haber: { aux: hubieren }, ar: [{ aux: hubieren }, " ", { target: [habl, { ending: ado }] }], er: [{ aux: hubieren }, " ", { target: [com, { ending: ido }] }] }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              es: ["La forma compuesta, ", { term: hubiere }, " con un participio, señala una acción anterior a un momento futuro."]
+            ex: ["Si el plazo ", { target: "hubiere vencido" }, ", se rechazará la solicitud."]
+          - type: rule
+            level: C2
+            text:
+              es: [{ term: haber }, " forma su compuesta como cualquier verbo:"]
+            ex: ["Si ", { target: "hubiere habido" }, " una réplica, constará en el acta."]
+
+  - title: { es: Uso }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: register, label: { es: Registro } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C2
+            register: { es: "El lenguaje administrativo y jurídico: una condición o un supuesto" }
+            ex: { examples: [["Quien ", { target: incumpliere }, " la norma será sancionado."], ["Si ", { target: procediere }, ", se devolverá el importe."], ["Si ", { target: hubiere }, " una disposición contraria, esta no se aplicará."]] }
+          - level: C2
+            register: { es: "El lenguaje jurídico: una condición cumplida antes de un momento futuro" }
+            ex: { examples: [["Si el plazo ", { target: "hubiere vencido" }, ", se rechazará la solicitud."], ["Si ", { target: "hubiere habido" }, " una réplica, constará en el acta."]] }
+          - level: C2
+            register: { es: "El lenguaje poético y literario: lo eventual" }
+            ex: { examples: [["Cuando la noche ", { target: cayere }, ", volveremos a la orilla."], ["Si algún día me ", { target: olvidares }, ", recuerda esta tarde."]] }
+          - level: C2
+            register: { es: "Las expresiones fijas y los refranes" }
+            ex: { examples: [["Sea como ", { target: fuere }, ", saldremos mañana."], ["Venga lo que ", { target: viniere }, ", estaré contigo."], ["Donde ", { target: fueres }, ", haz lo que ", { target: vieres }, "."]] }
+      - type: list
+        items:
+          - type: note
+            level: C2
+            variety: es-419
+            text:
+              es: "En América, el presente o el imperfecto de subjuntivo se prefieren a estas formas incluso en textos formales."
+
+  - title: { es: "Comparación: el futuro de subjuntivo y la lengua actual" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: future, label: { es: Futuro de subjuntivo } }
+          - { key: today, label: { es: Lengua actual } }
+        rows:
+          - level: C2
+            future: ["Quien ", { target: incumpliere }, " la norma será sancionado."]
+            today: ["Quien ", { target: incumpla }, " la norma será sancionado."]
+          - level: C2
+            future: ["Si ", { target: hubiere }, " una disposición contraria, esta no se aplicará."]
+            today: ["Si ", { target: hay }, " una disposición contraria, esta no se aplicará."]
+          - level: C2
+            future: ["Cuando la noche ", { target: cayere }, ", volveremos a la orilla."]
+            today: ["Cuando ", { target: caiga }, " la noche, volveremos a la orilla."]
+          - level: C2
+            future: ["Si el plazo ", { target: "hubiere vencido" }, ", se rechazará la solicitud."]
+            today: ["Si el plazo ", { target: "ha vencido" }, ", se rechazará la solicitud."]
+          - level: C2
+            future: ["Venga lo que ", { target: viniere }, ", estaré contigo."]
+            today: ["Venga lo que ", { target: venga }, ", estaré contigo."]
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text:
+              es: ["El presente de subjuntivo reemplaza al futuro tras relativos y conectores, y el presente de indicativo tras ", { term: si }, "."]
+          - type: note
+            level: C2
+            text:
+              es: ["Las formas del presente: ", { link: "El presente de subjuntivo: formas", to: es.subjuntivo.subjuntivo-formas }, "."]
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: C2, wrong: "Donde fueres, haz lo que veres.", right: ["Donde fueres, haz lo que ", { target: vieres }, "."], rule: { es: ["la raíz sale del indefinido de ", { term: ellos }, ": ", { mapping: [{ term: vieron }, { term: vieres }] }] } }
+          - { level: C2, wrong: "Si no tenere tiempo, avisaré.", right: ["Si no ", { target: tuviere }, " tiempo, avisaré."], rule: { es: ["la raíz sale del indefinido de ", { term: ellos }, ": ", { mapping: [{ term: tuvieron }, { term: tuviere }] }] } }
+          - { level: C2, wrong: "Si lo hicieremos juntos, saldrá bien.", right: ["Si lo ", { target: hiciéremos }, " juntos, saldrá bien."], rule: { es: ["la forma de ", { term: nosotros }, " lleva tilde en la vocal anterior a ", { term: "-remos" }] } }

@@ -188,6 +188,21 @@ cheatsheet:
             vi: [{ pattern: [{ term: "deberías" }, { slot: infinitive }] }, ": một lời khuyên"]
           ex: [{ target: Deberías descansar }, "."]
           tr: { en: "You should rest.", uk: "Тобі варто відпочити.", pt: "Você deveria descansar.", fr: "Tu devrais te reposer.", de: "Du solltest dich ausruhen.", it: "Dovresti riposarti.", pl: "Powinieneś odpocząć.", tr: "Dinlenmelisin.", id: "Kamu sebaiknya beristirahat.", vi: "Bạn nên nghỉ ngơi." }
+        - level: B2
+          point: { es: Probabilidad }
+          rule:
+            es: [{ term: deber de }, " + ", { slot: infinitive }, ": una suposición, no una obligación"]
+          ex: [{ target: Debe de estar }, " en casa."]
+        - level: C1
+          point: { es: Aproximación }
+          rule:
+            es: [{ term: venir a }, " + ", { slot: infinitive }, ": una cantidad o un sentido aproximados"]
+          ex: [{ target: Viene a costar }, " unos veinte dólares."]
+        - level: C2
+          point: { es: Obligación formal }
+          rule:
+            es: [{ term: haber de }, " + ", { slot: infinitive }, ": obligación o intención firme, en registro formal"]
+          ex: [{ target: Hemos de decidir }, " hoy."]
         - level: A2
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -435,6 +450,41 @@ sections:
               tr: [{ term: "deberías" }, ", ", { term: "deber" }, " fiilinin koşul kipidir: ", { link: "Basit koşul kipi", to: "es.futuro-condicional.condicional-simple" }, "."]
               id: [{ term: "deberías" }, " adalah bentuk kondisional dari ", { term: "deber" }, ": ", { link: "Kondisional sederhana", to: "es.futuro-condicional.condicional-simple" }, "."]
               vi: [{ term: "deberías" }, " là thức điều kiện của ", { term: "deber" }, ": ", { link: "Thức điều kiện đơn", to: "es.futuro-condicional.condicional-simple" }, "."]
+
+  - title: { es: Probabilidad con deber de }
+    role: own
+    content:
+      - type: comparison
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: B2, form: { pattern: [deber, { slot: infinitive }] }, meaning: { es: una obligación }, ex: [{ target: Debes llamar }, " a tu madre."] }
+          - { level: B2, form: { pattern: [deber de, { slot: infinitive }] }, meaning: { es: "una suposición: algo probable" }, ex: [{ target: Debe de estar }, " cansada."] }
+      - type: usage
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: C1, form: { pattern: [venir a, { slot: infinitive }] }, meaning: { es: una cantidad aproximada }, ex: ["El vestido ", { target: viene a costar }, " unos cuarenta dólares."] }
+          - { level: C1, form: { pattern: [venir a, { slot: infinitive }] }, meaning: { es: "una equivalencia: lo mismo, más o menos" }, ex: ["Su respuesta ", { target: viene a decir }, " que no."] }
+
+  - title: { es: "Obligación formal: haber de" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: meaning, label: { es: Significado } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - { level: C2, form: { pattern: [haber de, { slot: infinitive }] }, meaning: { es: "obligación o intención firme, en registro formal" }, ex: { examples: [[{ target: He de irme }, " ya."], [{ target: Has de saber }, " que no estoy de acuerdo."], [{ target: Hemos de decidirlo }, " hoy."]] } }
+          - { level: C2, form: { pattern: [acertar a, { slot: infinitive }] }, meaning: { es: algo que ocurre por casualidad }, ex: ["Un taxi ", { target: acertó a pasar }, " por allí."] }
+          - { level: C2, form: { pattern: [no acertar a, { slot: infinitive }] }, meaning: { es: no lograr hacer algo }, ex: [{ target: No acerté a responder }, "."] }
+          - { level: C2, form: { pattern: [tardar en, { slot: infinitive }] }, meaning: { es: "un retraso: algo que no ocurre enseguida" }, ex: [{ target: Tardó en reaccionar }, "."] }
+          - { level: C2, form: { pattern: [no tardar en, { slot: infinitive }] }, meaning: { es: algo que ocurre pronto }, ex: ["El médico ", { target: no tardó en llegar }, "."] }
 
   - title: { en: Pronouns with these verbs, es: Pronombres con estos verbos, uk: "Займенники з цими дієсловами", pt: "Pronomes com estes verbos", fr: "Les pronoms avec ces verbes", de: "Pronomen bei diesen Verben", it: "I pronomi con questi verbi", pl: "Zaimki z tymi czasownikami", tr: "Bu fiillerle zamirler", id: "Kata ganti dengan kata kerja ini", vi: "Đại từ với những động từ này" }
     role: own

@@ -1,0 +1,337 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: es.oracion.formas-no-personales
+lang: es
+kind: grammar
+tags: [verbs, non-finite, infinitive, gerund, participle, sentence]
+concepts: [participles, verb-patterns]
+related: [es.presente.estar-gerundio, es.imperativo-perifrasis.perifrasis-aspectuales, es.pasados.preterito-perfecto, es.subjuntivo.subjuntivo-cuando-para-que, es.oracion.estilo-indirecto-pasiva]
+status: { es: draft }
+
+title: { es: "Infinitivo, gerundio y participio", en: "Infinitive, Gerund and Participle" }
+summary:
+  lead:
+    es: ["El infinitivo, el gerundio y el participio expresan una acción sin persona propia y la sitúan respecto del verbo principal: ", { term: llegar }, ", ", { term: llegando }, ", ", { term: llegado }, "."]
+  rule:
+    es: ["Una acción posterior al verbo principal se expresa con ", { term: y }, " y un verbo conjugado:"]
+  ex: ["Abrí la puerta ", { target: "y me encontré" }, " con él."]
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { es: Punto } }
+        - { key: rule, label: { es: Regla } }
+        - { key: ex, label: { es: Ejemplo } }
+      rows:
+        - level: B2
+          point: { es: Infinitivo }
+          rule: { es: "el sujeto sobrentendido es el complemento del verbo principal" }
+          ex: ["El profesor recomendó al estudiante ", { target: "trabajar más" }, "."]
+        - level: B2
+          point: { pattern: [{ term: haber }, { slot: past participle }] }
+          rule: { es: "acción anterior a la del verbo principal" }
+          ex: ["El profesor le regañó por no ", { target: "haber estudiado" }, "."]
+        - level: B2
+          point: { es: Gerundio }
+          rule: { es: "acción simultánea o anterior al verbo principal" }
+          ex: ["Me lo confesó ", { target: "yendo por la calle" }, "."]
+        - level: B2
+          point: { es: Participio }
+          rule: { es: "predicativo: concuerda con el nombre al que describe" }
+          ex: ["Encontré a Sara ", { target: cansada }, " por el esfuerzo."]
+        - level: B2
+          point: { es: Sucesión en el tiempo }
+          rule: { es: [{ term: nada más }, " lleva infinitivo y ", { term: una vez }, ", participio"] }
+          ex: { examples: [[{ target: "Nada más llegar" }, ", nos pusimos a comer."], [{ target: "Una vez estudiado el problema" }, ", decidiremos."]] }
+        - level: C1
+          point: { es: Infinitivo independiente }
+          rule: { es: "deseo o rechazo en una exclamación o una pregunta" }
+          ex: ["¡", { target: Descansar }, " tres meses!"]
+        - level: C1
+          point: { es: Gerundio }
+          rule: { es: "modo, tiempo o condición; también independiente" }
+          ex: ["Me pidieron perdón ", { target: cantando }, "."]
+        - level: C1
+          point: { es: Participio absoluto }
+          rule: { es: "el participio concuerda con su sujeto" }
+          ex: [{ target: "Terminada la investigación" }, ", se cerró el caso."]
+        - level: C1
+          point: { es: Verbo de percepción }
+          rule: { es: "el infinitivo muestra la acción completa y el gerundio, en curso" }
+          ex: { examples: [["La vi ", { target: bajar }, " del autobús."], ["La vi ", { target: bajando }, " del autobús."]] }
+        - level: C2
+          point: { es: Gerundio }
+          rule: { es: "causa y concesión" }
+          ex: [{ target: "Lloviendo y todo" }, " salió sin paraguas."]
+        - level: C2
+          point: { es: Participio con nexo }
+          rule: { es: [{ term: hasta }, " y ", { term: apenas }, " preceden al participio absoluto"] }
+          ex: [{ target: "Hasta concluidas las tres horas" }, " no nos pudimos mover."]
+        - level: B2
+          point: { es: Trampa }
+          rule: { es: "la acción posterior lleva un verbo conjugado" }
+          ex: ["Abrí la puerta ", { target: "y me encontré" }, " con él."]
+
+sections:
+  - title: { es: "Infinitivo: sujeto, valor verbal y valor nominal" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            form: { pattern: [{ slot: verb }, { slot: { es: complemento } }, { slot: infinitive }] }
+            rule: { es: "El sujeto sobrentendido del infinitivo es el complemento del verbo principal." }
+            ex: { examples: [["El profesor recomendó al estudiante ", { target: "trabajar más" }, "."], ["Mi madre me prohibió ", { target: "salir de noche" }, "."]] }
+          - level: B2
+            form: { pattern: [{ term: haber }, { slot: past participle }] }
+            rule: { es: "El infinitivo compuesto expresa una acción anterior a la del verbo principal." }
+            ex: { examples: [["El profesor le regañó por no ", { target: "haber estudiado" }, "."], ["Me alegro de ", { target: "haberte conocido" }, "."]] }
+          - level: B2
+            form: { es: Respuesta breve }
+            rule: { es: "La preposición que pide el verbo precede al infinitivo." }
+            ex: { exchange: ["¿Te ayudo?", ["Sí, ", { target: "a hacer" }, " este ejercicio."]] }
+          - level: B2
+            form: { pattern: [{ slot: verb }, { slot: { es: preposición } }, { slot: infinitive }] }
+            rule: { es: "El infinitivo completa un verbo que pide preposición." }
+            ex: { examples: [["El director me invitó ", { target: "a salir" }, " de la sala."], ["Me niego ", { target: "a responder" }, "."]] }
+          - level: B2
+            form: { pattern: [{ term: ser }, { slot: infinitive }] }
+            rule: { es: "Con ser, el infinitivo hace de atributo." }
+            ex: { examples: [["Eso es ", { target: bailar }, "."], ["Lo importante es ", { target: participar }, "."]] }
+          - level: B2
+            variety: es-419
+            form: { pattern: [{ slot: { es: preposición } }, { slot: subject }, { slot: infinitive }] }
+            rule: { es: "En el Caribe, el sujeto precede al infinitivo tras una preposición." }
+            ex: { examples: [["Al ", { target: "yo llegar" }, ", ya habían cenado."], ["Con ", { target: "ella volver" }, ", todo cambió."], ["Sin ", { target: "tú querer" }, ", rompiste el plato."]] }
+          - level: C1
+            form: { es: Infinitivo independiente }
+            rule: { es: "Una exclamación con infinitivo simple o compuesto expresa un deseo." }
+            ex: { examples: [["¡", { target: Descansar }, " tres meses!"], ["¡", { target: "Haber descansado" }, " tres meses!"]] }
+          - level: C1
+            form: { es: Infinitivo independiente en pregunta }
+            rule: { es: "Una pregunta con infinitivo y sujeto expreso rechaza una idea." }
+            ex: ["¿", { target: "Decirle yo lo que pienso" }, "? Ni loco."]
+          - level: C1
+            form: { pattern: [{ slot: { es: "nombre o adjetivo" } }, { slot: { es: preposición } }, { slot: infinitive }] }
+            rule: { es: "El infinitivo completa a un nombre o a un adjetivo mediante una preposición." }
+            ex: { examples: [["Tiene ganas ", { target: "de viajar" }, "."], ["Estoy cansado ", { target: "de esperar" }, "."]] }
+          - level: C1
+            form: { pattern: [{ slot: { es: "antecedente indefinido" } }, { term: que }, { slot: infinitive }] }
+            rule: { es: "En una oración de relativo, el infinitivo sigue a un antecedente indefinido." }
+            ex: { examples: [["Tengo un problema ", { target: "que resolver" }, "."], ["No tengo nada ", { target: "que decir" }, "."]] }
+          - level: C1
+            form: { pattern: [{ term: el }, { slot: infinitive }] }
+            rule: { es: "Con artículo, el infinitivo hace de nombre y admite un complemento con de o un adverbio." }
+            ex: { examples: [["El ", { target: cantar }, " de los pájaros me despierta."], ["El ", { target: "cantar bien" }, " es una ventaja."]] }
+          - level: C1
+            form: { es: Infinitivo lexicalizado }
+            rule: { es: "Algunos infinitivos son nombres con plural y adjetivos." }
+            ex: { examples: [["los ", { target: deberes }, " conyugales"], ["los ", { target: quehaceres }, " domésticos"]] }
+          - level: C2
+            form: { es: Sujeto igual al complemento indirecto }
+            rule: { es: "El complemento indirecto es el sujeto del infinitivo; el sujeto expreso es opcional." }
+            ex: ["Me es difícil ", { optional: yo }, " ", { target: recomendarle }, " un libro bueno."]
+          - level: C2
+            form: { es: Infinitivo compuesto independiente }
+            rule: { es: "Con sujeto expreso, lamenta algo que no se hizo." }
+            ex: ["¡", { target: "Haberte presentado" }, " tú antes!"]
+          - level: C2
+            form: { pattern: [{ term: el }, { slot: infinitive }, { slot: adverb }] }
+            rule: { es: "El artículo con los complementos del verbo presenta la acción como un hecho." }
+            ex: [{ target: "El esperar angustiosamente" }, " durante horas la agotó."]
+          - level: C2
+            form: { es: Infinitivo por imperativo plural }
+            rule: { es: "En la lengua informal, el infinitivo ocupa el lugar del imperativo plural." }
+            ex: [{ target: Seguir }, " todo ", { variant: recto, variety: es-ES }, " ", { variant: derecho, variety: es-419 }, " hasta la plaza."]
+          - level: C2
+            variety: es-ES
+            form: { es: Infinitivo por imperativo de vosotros }
+            rule: { es: "En España, el infinitivo sustituye a la forma de vosotros y el pronombre lo sigue." }
+            ex: { examples: [[{ target: Perdonarme }, ", por favor."], [{ target: Sentaros }, " ya, que empieza la película."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { es: ["Las preposiciones que piden los verbos, los nombres y los adjetivos: ", { link: "Verbos, adjetivos y nombres con preposición", to: es.preposiciones.regimen-preposicional }, "."] }
+
+  - title: { es: "Gerundio: tiempo y predicado" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "Simultaneidad: el gerundio ocurre a la vez que el verbo principal." }
+            ex: { equivalence: [["Me lo confesó ", { target: "yendo por la calle" }, "."], ["Me lo confesó ", { target: "mientras íbamos por la calle" }, "."]] }
+          - level: B2
+            use: { es: "Anterioridad: el gerundio expresa un paso previo al verbo principal." }
+            ex: [{ target: "Estudiando siempre como hoy" }, ", aprobarás."]
+          - level: B2
+            use: { es: ["Posterioridad: la acción posterior lleva ", { term: y }, " y un verbo conjugado."] }
+            ex: ["Abrí la puerta ", { target: "y me encontré" }, " con él."]
+          - level: B2
+            use: { es: "Predicativo del sujeto: el gerundio dice cómo actúa el sujeto." }
+            ex: ["Ella habló ", { target: tartamudeando }, "."]
+          - level: B2
+            use: { es: "Predicativo del complemento directo: el gerundio describe al complemento durante la acción." }
+            ex: { equivalence: [["Tengo todo el cuerpo ", { target: temblando }, "."], ["Tengo todo el cuerpo ", { target: "que me tiembla" }, "."], ["Tengo todo el cuerpo ", { target: tembloroso }, "."]] }
+          - level: C1
+            use: { es: "Gerundio independiente: en una exclamación o una pregunta expresa reproche, rechazo u orden." }
+            ex: { examples: [["¡Siempre ", { target: protestando }, " por todo!"], ["¿Yo ", { target: "pidiéndole perdón" }, "? Ni loco."], ["¡", { target: Andando }, " que es gerundio!"]] }
+          - level: C1
+            use: { es: "Predicativo de un grupo nominal: el gerundio describe una acción en curso del nombre." }
+            ex: ["Sus ojos ", { target: "mirándome con esa pena" }, " me conmovieron."]
+          - level: C1
+            use: { es: "Complemento de modo: el gerundio dice cómo ocurre la acción." }
+            ex: ["Me pidieron perdón ", { target: cantando }, "."]
+          - level: C1
+            use: { es: "Complemento de tiempo con sujeto propio: el sujeto va detrás del gerundio." }
+            ex: [{ target: "Llegando yo" }, ", apareció él."]
+          - level: C1
+            use: { es: ["Condición: el gerundio equivale a una oración con ", { term: si }, "."] }
+            ex: { equivalence: [[{ target: "Estudiando más" }, " lograrás aprobar."], [{ target: "Si estudias más" }, ", lograrás aprobar."]] }
+          - level: C2
+            use: { es: ["Gerundio compuesto: ", { pattern: [{ term: habiendo }, { slot: past participle }] }, " expresa una acción anterior."] }
+            ex: [{ target: "Habiendo terminado el informe" }, ", salió de la oficina."]
+          - level: C2
+            variety: es-419
+            use: { es: "Diminutivo con valor adverbial: el gerundio en -ito expresa un modo suave o afectuoso." }
+            ex: { examples: [["Salió ", { target: callandito }, " de la casa."], ["Llegó ", { target: corriendito }, " a contarme todo."], ["Va ", { target: andandito }, " hasta la escuela."]] }
+          - level: C2
+            use: { es: "Gerundio independiente en una pregunta o en un pie de foto: comenta una escena." }
+            ex: { examples: [["Vaya, ¿", { target: "paseando por aquí" }, ", eh?"], ["El presidente, ", { target: "saludando a los embajadores" }, "."]] }
+          - level: C2
+            use: { es: "Causa: el gerundio, a menudo negativo, explica el motivo de la acción principal." }
+            ex: [{ target: "No teniendo qué comer" }, ", se puso a pedir por las calles."]
+          - level: C2
+            use: { es: ["Concesión: el gerundio, con ", { term: y todo }, " o en forma compuesta, expresa un obstáculo que la acción supera."] }
+            ex: { examples: [[{ target: "Lloviendo y todo" }, " salió sin paraguas."], [{ target: "Habiendo volado tanto" }, ", todavía le tiene miedo al avión."]] }
+          - level: C2
+            use: { es: "Condición con sujeto propio: el sujeto va detrás de estando." }
+            ex: [{ target: "Estando yo" }, ", no se comportarán mal."]
+          - level: C2
+            use: { es: ["Gerundio lexicalizado: en la lengua coloquial admite ", { term: tan }, " como un adverbio."] }
+            ex: ["Salió ", { target: "tan corriendo" }, " que dejó la puerta abierta."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { es: ["La formación del gerundio: ", { link: "Estar con gerundio", to: es.presente.estar-gerundio }, "; las perífrasis con gerundio: ", { link: Perífrasis, to: es.imperativo-perifrasis.perifrasis-aspectuales }, "."] }
+          - type: note
+            level: C2
+            variety: es-419
+            text: { es: ["Los diminutivos: ", { link: "Diminutivos y aumentativos", to: es.sustantivo-determinantes.sufijos-apreciativos }, "."] }
+
+  - title: { es: "Participio: predicativo y construcción absoluta" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            use: { es: "Predicativo del sujeto: el participio concuerda con el sujeto y admite complementos." }
+            ex: ["Me miró ", { target: "sorprendido de mi respuesta" }, "."]
+          - level: B2
+            use: { es: "Predicativo del complemento directo: el participio concuerda con el complemento y admite complementos." }
+            ex: ["Encontré a Sara ", { target: "cansada por el esfuerzo" }, "."]
+          - level: C1
+            use: { es: "Participio independiente: en una exclamación o una pregunta expresa un estado." }
+            ex: { examples: [["¡", { target: "Encerrada en estas cuatro paredes" }, "!"], ["¿", { target: Confundido }, "? No, estoy segurísimo."]] }
+          - level: C1
+            use: { es: "Construcción absoluta: el participio concuerda con su sujeto y expresa tiempo o causa." }
+            ex: [{ target: "Terminada la investigación" }, ", se cerró el caso."]
+          - level: C2
+            use: { es: ["Construcción absoluta con nexo: ", { term: hasta }, " y ", { term: apenas }, " precisan el momento."] }
+            ex: { examples: [[{ target: "Hasta concluidas las tres horas" }, " no nos pudimos mover."], [{ target: "Apenas terminada la reunión" }, ", salimos corriendo."]] }
+          - level: C2
+            use: { es: ["En la lengua coloquial, ", { mapping: [{ term: -ado }, { term: -ao }] }, " pierde la ", { letter: d }, "."] }
+            ex: ["Ya he ", { target: comprao }, " el pan."]
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { es: ["Los participios irregulares: ", { link: "El pretérito perfecto", to: es.pasados.preterito-perfecto }, "."] }
+          - type: note
+            level: C2
+            text: { es: ["La pérdida de la ", { letter: d }, " entre vocales: ", { link: "Pronunciación y acentuación", to: es.fundamentos.pronunciacion-acentuacion }, "."] }
+
+  - title: { es: "Tiempo con formas no personales" }
+    role: use
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Estructura } }
+          - { key: rule, label: { es: Regla } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            form: { pattern: [{ term: nada más }, { slot: infinitive }] }
+            rule: { es: "Expresa una sucesión inmediata: la segunda acción sigue a la primera." }
+            ex: [{ target: "Nada más llegar" }, ", nos pusimos a comer."]
+          - level: B2
+            form: { pattern: [{ term: una vez }, { slot: past participle }] }
+            rule: { es: "Expresa una acción ya terminada; el participio concuerda con el nombre." }
+            ex: [{ target: "Una vez estudiado el problema" }, ", decidiremos."]
+          - level: B2
+            form: { pattern: [{ term: al }, { slot: infinitive }] }
+            rule: { es: "El sujeto sobrentendido es el del verbo principal." }
+            ex: [{ target: "Al saber la noticia" }, ", María me llamó."]
+          - level: B2
+            form: { pattern: [{ term: al }, { slot: infinitive }, { slot: subject }] }
+            rule: { es: "Un sujeto distinto del principal va detrás del infinitivo." }
+            ex: { equivalence: [[{ target: "Al saber la jefa la noticia" }, ", María me llamó."], ["María me llamó ", { target: "cuando la jefa supo la noticia" }, "."]] }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { es: ["Las oraciones con ", { term: cuando }, " y subjuntivo: ", { link: "El subjuntivo con cuando, para que, antes de que", to: es.subjuntivo.subjuntivo-cuando-para-que }, "."] }
+
+  - title: { es: "Predicativo con verbo de percepción" }
+    role: use
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { es: ["Los verbos de percepción son ", { term: ver }, ", ", { term: mirar }, ", ", { term: oír }, ", ", { term: escuchar }, ", ", { term: sentir }, " y ", { term: notar }, "."] }
+      - type: usage
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: rule, label: { es: Valor } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            features: { verbform: inf }
+            form: { pattern: [{ slot: verb }, { slot: { es: complemento directo } }, { slot: infinitive }] }
+            rule: { es: "El infinitivo presenta la acción completa." }
+            ex: ["La vi ", { target: bajar }, " del autobús."]
+          - level: C1
+            features: { verbform: ger }
+            form: { pattern: [{ slot: verb }, { slot: { es: complemento directo } }, { slot: { es: gerundio } }] }
+            rule: { es: "El gerundio presenta la acción en curso." }
+            ex: ["La vi ", { target: bajando }, " del autobús."]
+          - level: C1
+            features: { verbform: ptcp }
+            form: { pattern: [{ slot: verb }, { slot: { es: complemento directo } }, { slot: past participle }] }
+            rule: { es: "El participio presenta un estado y admite un complemento agente." }
+            ex: { examples: [["Vi a la corredora ", { target: "aclamada por el público" }, "."], ["El corredor llegó a la meta ", { target: "aclamado por el público" }, "."]] }
+
+  - title: { es: Errores frecuentes }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "Abrí la puerta encontrándome con él.", right: ["Abrí la puerta ", { target: "y me encontré" }, " con él."], rule: { es: ["una acción posterior lleva ", { term: y }, " y un verbo conjugado"] } }
+          - { level: B2, wrong: "Encontré a Sara cansado por el esfuerzo.", right: ["Encontré a Sara ", { target: cansada }, " por el esfuerzo."], rule: { es: "el participio concuerda con el nombre al que describe" } }
+          - { level: B2, wrong: "Nada más de llegar, nos pusimos a comer.", right: [{ target: "Nada más llegar" }, ", nos pusimos a comer."], rule: { es: [{ term: nada más }, " lleva el infinitivo sin preposición"] } }
+          - { level: B2, wrong: "Una vez estudiar el problema, decidiremos.", right: [{ target: "Una vez estudiado" }, " el problema, decidiremos."], rule: { es: [{ term: una vez }, " lleva un participio"] } }
+          - { level: C1, wrong: "Tengo el problema que resolver.", right: ["Tengo ", { target: "un problema" }, " que resolver."], rule: { es: [{ term: que }, " con infinitivo sigue a un antecedente indefinido"] } }
+          - { level: C1, wrong: "Hay una caja conteniendo libros.", right: ["Hay una caja ", { target: "que contiene" }, " libros."], rule: { es: "una cualidad del nombre lleva una oración de relativo" } }

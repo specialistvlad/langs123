@@ -254,6 +254,36 @@ cheatsheet:
             vi: [{ pattern: [{ term: "ser" }, { term: "de" }] }, ": của ai"]
           ex: ["El libro ", { target: es de }, " Luis."]
           tr: { en: "The book is Luis's.", uk: "Це книжка Луїса.", pt: "O livro é do Luis.", fr: "Le livre est à Luis.", de: "Das Buch gehört Luis.", it: "Il libro è di Luis.", pl: "Książka należy do Luisa.", tr: "Kitap Luis’in.", id: "Buku itu milik Luis.", vi: "Quyển sách là của Luis." }
+        - level: B2
+          point: { es: Acontecimiento }
+          rule:
+            es: [{ term: ser }, " con el lugar de una cita o un concierto"]
+          ex: ["La cita ", { target: es }, " en el cine Callao."]
+        - level: C1
+          point: { es: Definición }
+          rule:
+            es: [{ term: ser }, " une dos infinitivos, sin adjetivo"]
+          ex: ["Querer ", { target: es }, " poder."]
+        - level: C1
+          point: { es: Estar para y por }
+          rule:
+            es: [{ pattern: [{ term: estar }, { term: para }, { slot: infinitive }] }, " es inminente; ", { pattern: [{ term: estar }, { term: por }, { slot: infinitive }] }, " falta por hacer"]
+          ex: { examples: [["El tren ", { target: está para salir }, "."], ["La cena ", { target: está por preparar }, "."]] }
+        - level: C1
+          point: { es: Estar por y que }
+          rule:
+            es: [{ pattern: [{ term: estar }, { term: por }, { slot: noun }] }, " es estar a favor; ", { pattern: [{ term: estar }, { term: que }, { slot: clause }] }, " intensifica"]
+          ex: { examples: [[{ target: Estoy por }, " tu propuesta."], ["El café ", { target: está que }, " arde."]] }
+        - level: C2
+          point: { es: Existir y locuciones }
+          rule:
+            es: [{ term: ser }, " dice existir y forma locuciones fijas"]
+          ex: ["Pienso, luego ", { target: soy }, "."]
+        - level: C2
+          point: { es: Valoración extrema }
+          rule:
+            es: [{ pattern: [{ term: estar }, { term: para }, { slot: infinitive }] }, " valora algo en extremo"]
+          ex: ["Ese pastel ", { target: está para }, " chuparse los dedos."]
         - level: A1
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -489,6 +519,24 @@ sections:
             tr: { en: { examples: ["It's three o'clock.", "Today is Tuesday."] }, uk: { examples: ["Третя година.", "Сьогодні вівторок."] }, pt: { examples: ["São três horas.", "Hoje é terça-feira."] }, fr: { examples: ["Il est trois heures.", "Aujourd’hui, on est mardi."] }, de: { examples: ["Es ist drei Uhr.", "Heute ist Dienstag."] }, it: { examples: ["Sono le tre.", "Oggi è martedì."] }, pl: { examples: ["Jest trzecia.", "Dziś jest wtorek."] }, tr: { examples: ["Saat üç.", "Bugün salı."] }, id: { examples: ["Sekarang jam tiga.", "Hari ini hari Selasa."] }, vi: { examples: ["Ba giờ rồi.", "Hôm nay là thứ Ba."] } }
           - { level: A1, use: { en: Material, es: Material, uk: "Матеріал", pt: "Material", fr: "Matière", de: "Material", it: "Materiale", pl: "Materiał", tr: "Malzeme", id: "Bahan", vi: "Chất liệu" }, ex: ["La mesa ", { target: es de }, " madera."], tr: { en: The table is made of wood., uk: "Стіл дерев’яний.", pt: "A mesa é de madeira.", fr: "La table est en bois.", de: "Der Tisch ist aus Holz.", it: "Il tavolo è di legno.", pl: "Stół jest z drewna.", tr: "Masa ahşaptan.", id: "Meja itu terbuat dari kayu.", vi: "Cái bàn làm bằng gỗ." } }
           - { level: A2, use: { en: Owner, es: Dueño, uk: "Власник", pt: "Dono", fr: "Propriétaire", de: "Besitzer", it: "Proprietario", pl: "Właściciel", tr: "Sahip", id: "Pemilik", vi: "Chủ sở hữu" }, ex: ["El libro ", { target: es de }, " Luis."], tr: { en: "The book is Luis's.", uk: "Це книжка Луїса.", pt: "O livro é do Luis.", fr: "Le livre est à Luis.", de: "Das Buch gehört Luis.", it: "Il libro è di Luis.", pl: "Książka należy do Luisa.", tr: "Kitap Luis’in.", id: "Buku itu milik Luis.", vi: "Quyển sách là của Luis." } }
+          - level: B2
+            use: { es: Un acontecimiento y su lugar }
+            ex: { examples: [["La cita ", { target: es }, " en el cine Callao."], ["El concierto ", { target: es }, " en el auditorio."]] }
+          - level: C1
+            use: { es: Una definición con infinitivos }
+            ex: { examples: [["Querer ", { target: es }, " poder."], ["Viajar ", { target: es }, " conocer el mundo."]] }
+          - level: C2
+            use: { es: Existir }
+            ex: { examples: [["Pienso, luego ", { target: soy }, "."], [{ target: Érase }, " una vez un molinero."]] }
+          - level: C2
+            use: { es: "Locución: muy astuto" }
+            ex: ["Mi vecino ", { target: es listo como el hambre }, "."]
+          - level: C2
+            use: { es: "Locución: muy fácil" }
+            ex: ["Ese examen ", { target: es pan comido }, "."]
+          - level: C2
+            use: { es: "Locución: más rígido que el interesado" }
+            ex: ["Tu tío ", { target: es más papista que el Papa }, "."]
       - type: list
         items:
           - type: rule
@@ -507,6 +555,11 @@ sections:
               vi: ["Giờ dùng ", { term: "es" }, " cho một giờ và ", { term: "son" }, " từ hai giờ trở đi:"]
             ex: { examples: [[{ target: Es }, " la una."], [{ target: Son }, " las dos."]] }
             tr: { en: { examples: ["It's one o'clock.", "It's two o'clock."] }, uk: { examples: ["Перша година.", "Друга година."] }, pt: { examples: ["É uma hora.", "São duas horas."] }, fr: { examples: ["Il est une heure.", "Il est deux heures."] }, de: { examples: ["Es ist ein Uhr.", "Es ist zwei Uhr."] }, it: { examples: ["È l'una.", "Sono le due."] }, pl: { examples: ["Jest pierwsza.", "Jest druga."] }, tr: { examples: ["Saat bir.", "Saat iki."] }, id: { examples: ["Sekarang jam satu.", "Sekarang jam dua."] }, vi: { examples: ["Một giờ rồi.", "Hai giờ rồi."] } }
+          - type: rule
+            level: B2
+            text:
+              es: ["El edificio que acoge el acontecimiento sigue con ", { term: estar }, ":"]
+            ex: ["El cine ", { target: está }, " en la plaza de Callao."]
 
   - title: { en: "Use: estar", es: "Uso: estar", uk: "Вживання: estar", pt: "Uso: estar", fr: "Emploi : estar", de: "Gebrauch: estar", it: "Uso: estar", pl: "Użycie: estar", tr: "Kullanım: estar", id: "Penggunaan: estar", vi: "Cách dùng: estar" }
     role: use
@@ -528,6 +581,24 @@ sections:
             tr: { en: { exchange: [How are you?, "I'm fine, thanks."] }, uk: { exchange: ["Як справи?", "Добре, дякую."] }, pt: { exchange: ["Como você está?", "Estou bem, obrigado."] }, fr: { exchange: ["Comment vas-tu ?", "Je vais bien, merci."] }, de: { exchange: ["Wie geht es dir?", "Mir geht es gut, danke."] }, it: { exchange: ["Come stai?", "Sto bene, grazie."] }, pl: { exchange: ["Jak się masz?", "Dobrze, dziękuję."] }, tr: { exchange: ["Nasılsın?", "İyiyim, teşekkürler."] }, id: { exchange: ["Apa kabar?", "Baik, terima kasih."] }, vi: { exchange: ["Bạn khỏe không?", "Tôi khỏe, cảm ơn."] } }
           - { level: A2, use: { en: The result of a change, es: El resultado de un cambio, uk: "Результат зміни", pt: "O resultado de uma mudança", fr: "Le résultat d’un changement", de: "Das Ergebnis einer Veränderung", it: "Il risultato di un cambiamento", pl: "Wynik zmiany", tr: "Bir değişimin sonucu", id: "Hasil sebuah perubahan", vi: "Kết quả của một thay đổi" }, ex: ["La tienda ", { target: está cerrada }, "."], tr: { en: The shop is closed., uk: "Крамниця зачинена.", pt: "A loja está fechada.", fr: "Le magasin est fermé.", de: "Das Geschäft ist geschlossen.", it: "Il negozio è chiuso.", pl: "Sklep jest zamknięty.", tr: "Dükkân kapalı.", id: "Tokonya tutup.", vi: "Cửa hàng đã đóng cửa." } }
           - { level: A2, use: { en: An activity for a while, es: Una actividad por un tiempo, uk: "Тимчасова діяльність", pt: "Uma atividade por um tempo", fr: "Une activité pour un temps", de: "Eine Tätigkeit für eine Weile", it: "Un'attività per un periodo", pl: "Czynność przez jakiś czas", tr: "Bir süreliğine bir etkinlik", id: "Kegiatan untuk sementara waktu", vi: "Một hoạt động trong một thời gian" }, ex: [{ target: Estamos de }, " vacaciones."], tr: { en: "We're on holiday.", uk: "Ми у відпустці.", pt: "Estamos de férias.", fr: "Nous sommes en vacances.", de: "Wir sind im Urlaub.", it: "Siamo in vacanza.", pl: "Jesteśmy na wakacjach.", tr: "Tatildeyiz.", id: "Kami sedang berlibur.", vi: "Chúng tôi đang đi nghỉ." } }
+          - level: C1
+            use: { es: [{ pattern: [{ term: estar }, { term: para }, { slot: infinitive }] }, ": una acción inminente"] }
+            ex: { examples: [["El tren ", { target: está para salir }, "."], ["La clase ", { target: está para empezar }, "."]] }
+          - level: C1
+            use: { es: [{ pattern: [{ term: estar }, { term: por }, { slot: infinitive }] }, ": una acción que falta por hacer"] }
+            ex: { examples: [["La cena ", { target: está por preparar }, "."], ["Las camas ", { target: están por hacer }, "."]] }
+          - level: C1
+            use: { es: [{ pattern: [{ term: estar }, { term: por }, { slot: infinitive }] }, ": una intención"] }
+            ex: { examples: [[{ target: Estoy por }, " cambiar de trabajo."], ["Mi hermana ", { target: está por }, " mudarse."]] }
+          - level: C1
+            use: { es: [{ pattern: [{ term: estar }, { term: por }, { slot: noun }] }, ": estar a favor de algo"] }
+            ex: { examples: [[{ target: Estoy por }, " tu propuesta."], ["Mis padres ", { target: están por }, " el cambio."]] }
+          - level: C1
+            use: { es: [{ pattern: [{ term: estar }, { term: que }, { slot: clause }] }, ": intensificar un estado"] }
+            ex: { examples: [["El café ", { target: está que }, " arde."], [{ target: Estoy que }, " me caigo de sueño."]] }
+          - level: C2
+            use: { es: [{ pattern: [{ term: estar }, { term: para }, { slot: infinitive }] }, ": una valoración extrema"] }
+            ex: { examples: [["Ese pastel ", { target: está para }, " chuparse los dedos."], ["Ese sofá ", { target: está para }, " tirarlo."]] }
       - type: list
         items:
           - type: rule

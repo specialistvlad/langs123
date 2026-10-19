@@ -79,6 +79,18 @@ cheatsheet:
           rule: { en: one object with a plural name, es: un solo objeto con sustantivo en plural, uk: один предмет із назвою в множині, pt: "um só objeto com substantivo no plural", fr: "un seul objet avec un nom au pluriel", de: "ein einzelner Gegenstand mit Nomen im Plural", it: "un solo oggetto con sostantivo al plurale", pl: "jeden przedmiot z rzeczownikiem w liczbie mnogiej", tr: "tek bir nesne, ismi çoğul", id: "satu benda dengan kata benda jamak", vi: "một đồ vật nhưng danh từ ở số nhiều" }
           ex: ["Mis ", { target: pantalones }, " son nuevos."]
           tr: { en: My trousers are new., uk: Мої штани нові., pt: "Minhas calças são novas.", fr: "Mon pantalon est neuf.", de: "Meine Hose ist neu.", it: "I miei pantaloni sono nuovi.", pl: "Moje spodnie są nowe.", tr: "Pantolonum yeni.", id: "Celanaku baru.", vi: "Quần của tôi mới." }
+        - level: B2
+          point: "-í, -ú"
+          rule: { es: ["se añade ", { term: -s }, " o ", { term: -es }, ", según la palabra"] }
+          ex: { examples: [{ mapping: [menú, { target: menús }] }, { mapping: [rubí, { target: rubíes }] }] }
+        - level: C1
+          point: { es: Extranjerismos }
+          rule: { es: la forma adaptada sigue la regla del español }
+          ex: { examples: [{ mapping: [club, { target: clubes }] }, { mapping: [estándar, { target: estándares }] }] }
+        - level: C2
+          point: { es: Latinismos }
+          rule: { es: "plural regular, salvo unas pocas formas anómalas" }
+          ex: { examples: [{ mapping: [déficit, { target: déficits }] }, { mapping: [álbum, { target: álbumes }] }] }
         - level: A2
           point: { en: Trap, es: Trampa, uk: Пастка, pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -147,6 +159,38 @@ sections:
             rule: { en: no change, es: no cambia, uk: не змінюється, pt: "não muda", fr: "ne change pas", de: "keine Änderung", it: "non cambia", pl: "bez zmian", tr: "değişmez", id: "tidak berubah", vi: "không thay đổi" }
             ex: { examples: [{ mapping: ["el lunes", { target: los lunes }] }, { mapping: ["la crisis", { target: las crisis }] }] }
             tr: { en: { examples: [Mondays, crises] }, uk: { examples: [понеділки, кризи] }, pt: { examples: ["segundas-feiras", "crises"] }, fr: { examples: ["lundis", "crises"] }, de: { examples: ["Montage", "Krisen"] }, it: { examples: ["lunedì", "crisi"] }, pl: { examples: ["poniedziałki", "kryzysy"] }, tr: { examples: ["pazartesi günleri", "krizler"] }, id: { examples: ["hari Senin", "krisis"] }, vi: { examples: ["các ngày thứ Hai", "các cuộc khủng hoảng"] } }
+          - level: B2
+            ending: { es: "-us, -sis, -tis en palabras de varias sílabas" }
+            rule: { es: no cambia }
+            ex: { examples: [{ mapping: ["el virus", { target: los virus }] }, { mapping: ["la tesis", { target: las tesis }] }, { mapping: ["la faringitis", { target: las faringitis }] }] }
+          - level: B2
+            ending: "-í, -ú tónicas"
+            rule: { pattern: [{ ending: s }], follows: true }
+            ex: { examples: [{ mapping: [esquí, { target: esquís }] }, { mapping: [champú, { target: champús }] }, { mapping: [menú, { target: menús }] }] }
+          - level: B2
+            ending: "-í, -ú tónicas"
+            rule: { pattern: [{ ending: es }], follows: true }
+            ex: { examples: [{ mapping: [maniquí, { target: maniquíes }] }, { mapping: [rubí, { target: rubíes }] }, { mapping: [tabú, { target: tabúes }] }] }
+          - level: B2
+            ending: { es: nombres de vocales }
+            rule: { pattern: [{ ending: es }], follows: true }
+            ex: { examples: [{ mapping: ["la a", { target: las aes }] }, { mapping: ["la i", { target: las íes }] }, { mapping: ["la o", { target: las oes }] }, { mapping: ["la u", { target: las úes }] }] }
+          - level: B2
+            ending: { es: nombres de consonantes }
+            rule: { pattern: [{ ending: s }], follows: true }
+            ex: { examples: [{ mapping: ["la be", { target: las bes }] }, { mapping: ["la ce", { target: las ces }] }, { mapping: ["la ka", { target: las kas }] }] }
+          - level: C2
+            ending: { es: latinismos y helenismos con plural regular }
+            rule: { es: se aplican las reglas generales }
+            ex: { examples: [{ mapping: [déficit, { target: déficits }] }, { mapping: [álbum, { target: álbumes }] }, { mapping: [currículo, { target: currículos }] }] }
+          - level: C2
+            ending: { es: helenismos con plural anómalo }
+            rule: { es: ["pierde la ", { term: -n }, " y añade ", { term: -s }] }
+            ex: { mapping: [hipérbaton, { target: hipérbatos }] }
+          - level: C2
+            ending: { es: notas musicales }
+            rule: { pattern: [{ ending: s }], follows: true }
+            ex: { examples: [{ mapping: ["el do", { target: los dos }] }, { mapping: ["el re", { target: los res }] }, { mapping: ["el mi", { target: los mis }] }] }
       - type: list
         items:
           - type: rule
@@ -195,6 +239,10 @@ sections:
               tr: ["Erkeklerden ve kadınlardan oluşan bir grup eril çoğul alır: bkz. ", { link: "Cinsiyet", to: "es.sustantivo-determinantes.genero" }, "."]
               id: ["Kelompok pria dan wanita memakai maskulin jamak: lihat ", { link: "Gender", to: "es.sustantivo-determinantes.genero" }, "."]
               vi: ["Một nhóm gồm nam và nữ dùng giống đực số nhiều: xem ", { link: "Giống", to: "es.sustantivo-determinantes.genero" }, "."]
+          - type: note
+            level: B2
+            text:
+              es: ["Varias palabras en ", { term: -í }, " y ", { term: -ú }, " admiten las dos formas: ", { equivalence: [{ term: esquís }, { term: esquíes }] }, "."]
 
   - title: { en: "Spelling: the written accent", es: "Ortografía: la tilde", uk: "Правопис: знак наголосу", pt: "Ortografia: o acento gráfico", fr: "Orthographe : l’accent écrit", de: "Schreibung: das Akzentzeichen", it: "Ortografia: l'accento scritto", pl: "Pisownia: znak akcentu", tr: "Yazım: vurgu işareti", id: "Ejaan: tanda aksen", vi: "Chính tả: dấu nhấn" }
     role: spelling
@@ -212,6 +260,9 @@ sections:
             change: { en: "-en stressed on the next-to-last syllable gains an accent", es: "-en con el acento en la penúltima sílaba gana tilde", uk: "-en з наголосом на передостанньому складі отримує знак наголосу", pt: "-en com a sílaba tônica na penúltima sílaba ganha acento gráfico", fr: "-en accentué sur l’avant-dernière syllabe reçoit un accent écrit", de: "-en mit Betonung auf der vorletzten Silbe erhält ein Akzentzeichen", it: "-en con l'accento sulla penultima sillaba prende l'accento scritto", pl: "-en z akcentem na przedostatniej sylabie dostaje znak akcentu", tr: "sondan bir önceki hecesi vurgulu -en, vurgu işareti alır", id: "-en dengan tekanan pada suku kata kedua dari belakang mendapat tanda aksen", vi: "-en nhấn ở âm tiết áp chót thì thêm dấu nhấn" }
             ex: { examples: [{ mapping: [joven, { target: jóvenes }] }, { mapping: [examen, { target: exámenes }] }] }
             tr: { en: { examples: [young people, exams] }, uk: { examples: [молодь, іспити] }, pt: { examples: ["jovens", "exames"] }, fr: { examples: ["jeunes", "examens"] }, de: { examples: ["Jugendliche", "Prüfungen"] }, it: { examples: ["giovani", "esami"] }, pl: { examples: ["młodzi ludzie", "egzaminy"] }, tr: { examples: ["gençler", "sınavlar"] }, id: { examples: ["anak muda", "ujian"] }, vi: { examples: ["những người trẻ", "những kỳ thi"] } }
+          - level: C1
+            change: { es: "excepción: el acento pasa a la sílaba siguiente" }
+            ex: { examples: [{ mapping: [carácter, { target: caracteres }] }, { mapping: [régimen, { target: regímenes }] }, { mapping: [espécimen, { target: especímenes }] }] }
       - type: list
         items:
           - type: rule
@@ -279,6 +330,96 @@ sections:
             ex: ["La ", { target: gente es }, " muy amable."]
             tr: { en: People are very friendly., uk: Люди дуже привітні., pt: "As pessoas são muito simpáticas.", fr: "Les gens sont très aimables.", de: "Die Leute sind sehr freundlich.", it: "La gente è molto cordiale.", pl: "Ludzie są bardzo mili.", tr: "İnsanlar çok nazik.", id: "Orang-orang sangat ramah.", vi: "Mọi người rất thân thiện." }
 
+  - title: { es: El significado del plural }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: noun, label: { es: Sustantivo } }
+          - { key: meaning, label: { es: Qué nombra el plural } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            noun: las murallas
+            meaning: { es: el conjunto de la defensa de una ciudad }
+            ex: ["Visitamos ", { target: las murallas }, " de Ávila."]
+          - level: B2
+            noun: las escaleras
+            meaning: { es: una escalera con todos sus peldaños }
+            ex: ["Subió ", { target: las escaleras }, " corriendo."]
+          - level: B2
+            noun: los intestinos
+            meaning: { es: un solo órgano formado por varias partes }
+            ex: ["La comida pasa por ", { target: los intestinos }, "."]
+
+  - title: { es: Plural de los extranjerismos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: singular, label: { es: Singular } }
+          - { key: plural, label: { es: Plural } }
+          - { key: note, label: { es: Nota } }
+        rows:
+          - level: C1
+            singular: club
+            plural: { target: clubes }
+            note: { es: ["tras consonante se añade ", { term: -es }] }
+          - level: C1
+            singular: { mapping: [carnet, carné] }
+            plural: { target: carnés }
+            note: { es: ["la forma adaptada termina en vocal tónica: ", { term: -s }] }
+          - level: C1
+            singular: { mapping: [meeting, mitin] }
+            plural: { target: mítines }
+            note: { es: ["la forma adaptada añade ", { term: -es }, ", y la esdrújula lleva tilde"] }
+          - level: C1
+            singular: { mapping: [standard, estándar] }
+            plural: { target: estándares }
+            note: { es: ["la forma adaptada añade ", { term: -es }, " y conserva la tilde"] }
+
+  - title: { es: Un solo número y otro significado }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: noun, label: { es: Sustantivo } }
+          - { key: meaning, label: { es: Qué significa } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: C1
+            noun: "las tenazas, los alicates"
+            meaning: { es: plural para una sola herramienta de dos brazos }
+            ex: ["Corta el alambre con ", { target: los alicates }, "."]
+          - level: C1
+            noun: los tirantes
+            meaning: { es: plural para una sola prenda con dos tiras }
+            ex: ["Mi abuelo usa ", { target: tirantes }, " con el pantalón."]
+          - level: C1
+            noun: el celo
+            meaning: { es: el cuidado que se pone en el trabajo }
+            ex: ["Trabaja con mucho ", { target: celo }, "."]
+          - level: C1
+            noun: los celos
+            meaning: { es: el miedo a perder el cariño de alguien }
+            ex: ["Siente ", { target: celos }, " de su hermano."]
+          - level: C1
+            noun: el resto
+            meaning: { es: lo que queda de un todo }
+            ex: ["Guarda ", { target: el resto }, " de la comida."]
+          - level: C1
+            noun: los restos
+            meaning: { es: lo que queda de algo destruido o de una persona muerta }
+            ex: ["Encontraron ", { target: los restos }, " de un barco antiguo."]
+          - level: C1
+            noun: "los Borbones, los Escipiones"
+            meaning: { es: "el apellido de una dinastía o de una familia antigua lleva plural" }
+            ex: ["Los ", { target: Borbones }, " llegaron al trono español en 1700."]
+          - level: C1
+            noun: los García
+            meaning: { es: el apellido de una familia actual no cambia }
+            ex: ["Los ", { target: García }, " viven en Quito."]
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: Типові помилки, pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -289,4 +430,8 @@ sections:
           - { level: A1, wrong: las casa blancas, right: ["las ", { target: casas }, " blancas"], rule: { en: "the noun goes plural too", es: "el sustantivo también va en plural", uk: "іменник теж стає в множину", pt: "o substantivo também vai para o plural", fr: "le nom se met aussi au pluriel", de: "auch das Nomen steht im Plural", it: "anche il sostantivo va al plurale", pl: "rzeczownik też przyjmuje liczbę mnogą", tr: "isim de çoğul olur", id: "kata benda juga menjadi jamak", vi: "danh từ cũng chuyển sang số nhiều" } }
           - { level: A2, wrong: las canciónes, right: ["las ", { target: canciones }], rule: { en: "the plural of -ón has no accent", es: "el plural de -ón no lleva tilde", uk: "множина від -ón пишеться без знака наголосу", pt: "o plural de -ón não leva acento gráfico", fr: "le pluriel de -ón ne prend pas d’accent écrit", de: "der Plural von -ón hat kein Akzentzeichen", it: "il plurale di -ón non ha l'accento scritto", pl: "liczba mnoga od -ón nie ma znaku akcentu", tr: "-ón sonlu sözcüklerin çoğulunda vurgu işareti olmaz", id: "bentuk jamak dari -ón tidak memakai tanda aksen", vi: "số nhiều của -ón không có dấu nhấn" } }
           - { level: A2, wrong: los luneses, right: ["los ", { target: lunes }], rule: { en: "-s in an unstressed syllable stays the same", es: "la -s en sílaba átona no cambia", uk: "-s у ненаголошеному складі не змінюється", pt: "o -s em sílaba átona não muda", fr: "le -s dans une syllabe atone ne change pas", de: "-s in unbetonter Silbe ändert sich nicht", it: "la -s in sillaba atona non cambia", pl: "-s w sylabie nieakcentowanej nie zmienia się", tr: "vurgusuz hecedeki -s değişmez", id: "-s pada suku kata tanpa tekanan tidak berubah", vi: "-s ở âm tiết không nhấn không đổi" } }
+          - { level: B2, wrong: los viruses, right: ["los ", { target: virus }], rule: { es: ["los sustantivos en ", { term: -us }, ", ", { term: -sis }, " y ", { term: -tis }, " no cambian"] } }
+          - { level: C1, wrong: los carácteres, right: ["los ", { target: caracteres }], rule: { es: [{ term: carácter }, " pierde la tilde: el acento pasa a la sílaba siguiente"] } }
+          - { level: C1, wrong: los regimenes, right: ["los ", { target: regímenes }], rule: { es: [{ term: régimen }, " gana la tilde en el plural"] } }
+          - { level: C2, wrong: los álbums, right: ["los ", { target: álbumes }], rule: { es: [{ term: álbum }, " forma el plural con ", { term: -es }] } }
           - { level: A2, speakers: [en, uk], wrong: La gente son amables., right: ["La gente ", { target: es }, " amable."], rule: { en: [{ term: gente }, " is singular, unlike English ", { l1: people }], uk: [{ term: gente }, " — однина, хоча українське «люди» — множина"] } }

@@ -176,6 +176,21 @@ cheatsheet:
           rule: { en: just as, es: igualdad, uk: "так само, як", pt: "exatamente como", fr: "tout aussi … que", de: "genauso … wie", it: "altrettanto … quanto", pl: "tak samo … jak", tr: "tam olarak … kadar", id: "sama … seperti", vi: "y như" }
           ex: ["Es ", { target: igual de alto que }, " su padre."]
           tr: { en: "He's just as tall as his father.", uk: "Він такий же високий, як його батько.", pt: "Ele é tão alto quanto o pai dele.", fr: "Il est aussi grand que son père.", de: "Er ist genauso groß wie sein Vater.", it: "È alto quanto suo padre.", pl: "Jest tak samo wysoki jak jego ojciec.", tr: "Babası kadar uzun.", id: "Dia setinggi ayahnya.", vi: "Anh ấy cao bằng bố mình." }
+        - level: B2
+          point: { alternatives: [superior a, inferior a] }
+          rule:
+            es: "comparativos latinos: el segundo término lleva a"
+          ex: ["Este modelo es ", { target: superior a }, " ese."]
+        - level: C1
+          point: { pattern: [{ alternatives: [más, menos] }, de lo que] }
+          rule:
+            es: "cantidad no precisada: el segundo término lleva verbo"
+          ex: ["Cuesta ", { target: más de lo que }, " esperaba."]
+        - level: C2
+          point: -érrimo
+          rule:
+            es: "superlativo culto de algunos adjetivos"
+          ex: ["Es un autor ", { target: celebérrimo }, "."]
         - level: A2
           point: { en: Trap, es: Trampa, uk: "Пастка", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
           rule:
@@ -411,6 +426,38 @@ sections:
   - title: { en: "-ísimo: very, with more force", es: "-ísimo: muy, con más fuerza", uk: "-ísimo: «дуже», з більшою силою", pt: "-ísimo: “muito”, com mais força", fr: "-ísimo : « très », avec plus de force", de: "-ísimo: „sehr“ mit mehr Nachdruck", it: "-ísimo: «molto», con più forza", pl: "-ísimo: „bardzo” z większą siłą", tr: "-ísimo: “çok” anlamını güçlendirir", id: "-ísimo: “sangat” yang lebih kuat", vi: "-ísimo: “rất” với sức mạnh lớn hơn" }
     role: own
     content:
+      - type: usage
+        columns:
+          - { key: mechanism, label: { es: Mecanismo } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            mechanism: { es: ["prefijo ", { term: super- }, ", ", { term: extra- }, ", ", { term: ultra- }, ", ", { term: archi- }] }
+            ex: { examples: [{ target: superguapo }, { target: extrafino }, { target: ultrasecreto }, { target: archiconocido }] }
+          - level: B2
+            mechanism: { es: ["prefijo ", { term: re- }] }
+            ex: { examples: [{ target: recontento }, { target: rebueno }] }
+          - level: B2
+            mechanism: { es: "repetición del adjetivo, con o sin -ísimo" }
+            ex: { examples: [["La sopa está ", { target: rica }, ", ", { target: rica }, "."], ["Es ", { target: guapo guapísimo }, "."]] }
+          - level: C1
+            mechanism: { es: ["adjetivo en ", { term: -ble }, ": ", { term: -bilísimo }] }
+            ex: { examples: [{ mapping: [amable, { target: amabilísimo }] }, { mapping: [notable, { target: notabilísimo }] }] }
+          - level: C1
+            mechanism: { es: "formas cultas de bueno, malo, pequeño y grande" }
+            ex: { examples: [{ mapping: [bueno, { target: óptimo }] }, { mapping: [malo, { target: pésimo }] }, { mapping: [pequeño, { target: mínimo }] }, { mapping: [grande, { target: máximo }] }] }
+          - level: C2
+            mechanism: { es: ["sufijo culto ", { term: -érrimo }] }
+            ex: { examples: [{ mapping: [célebre, { target: celebérrimo }] }, { mapping: [libre, { target: libérrimo }] }] }
+          - level: C2
+            mechanism: { es: "forma regular o forma culta" }
+            ex: { examples: [{ mapping: [nuevo, { alternatives: [{ target: nuevísimo }, { target: novísimo }] }] }, { mapping: [pobre, { alternatives: [{ target: pobrísimo }, { target: paupérrimo }] }] }, { mapping: [diestro, { alternatives: [{ target: diestrísimo }, { target: destrísimo }] }] }] }
+          - level: C2
+            mechanism: { es: "base latina" }
+            ex: { mapping: [antiguo, { target: antiquísimo }] }
+          - level: C2
+            mechanism: { es: ["prefijo coloquial ", { term: requete- }] }
+            ex: { examples: [{ target: requetebién }, { target: requetebonito }] }
       - type: list
         items:
           - type: rule
@@ -505,6 +552,162 @@ sections:
               id: [{ term: "tanto" }, " di depan kata benda menyesuaikan diri dengannya; sesudah kata kerja tidak berubah."]
               vi: [{ term: "tanto" }, " trước danh từ thì hòa hợp với danh từ; sau động từ thì không thay đổi."]
 
+  - title: { es: Comparativos cultos }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { es: Forma } }
+          - { key: construction, label: { es: Construcción } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            form: { alternatives: [superior, inferior] }
+            construction: { es: ["segundo término con ", { term: a }] }
+            ex: ["Este modelo es ", { target: superior a }, " ese."]
+          - level: B2
+            form: { alternatives: [anterior, posterior] }
+            construction: { es: ["segundo término con ", { term: a }] }
+            ex: ["Su llegada fue ", { target: anterior a }, " la nuestra."]
+          - level: B2
+            form: { alternatives: [interior, exterior] }
+            construction: { es: ["segundo término con ", { term: a }] }
+            ex: ["La terraza es ", { target: exterior a }, " la casa."]
+          - level: B2
+            form: { pattern: [{ alternatives: [más, menos] }, { slot: adjective }, de lo que, { slot: clause }] }
+            construction: { es: "el segundo término es una oración" }
+            ex: ["La película es ", { target: más larga de lo que }, " pensaba."]
+          - level: C2
+            form: ulterior
+            construction: { es: ["segundo término con ", { term: a }] }
+            ex: ["Los cambios fueron ", { target: ulteriores a }, " la reforma."]
+
+  - title: { es: "Comparar con una oración: igual, tan, tanto" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: structure, label: { es: Estructura } }
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            structure: { pattern: [tan, { slot: adjective }, como] }
+            use: { es: "cualidad o manera; el segundo término puede ser un grupo o un tiempo" }
+            ex: { examples: [["Soy ", { target: tan capaz como }, " todos."], ["Bailan ", { target: tan bien como }, " antes."]] }
+          - level: B2
+            structure: { pattern: [{ alternatives: [tanto, tanta, tantos, tantas] }, { slot: noun }, como] }
+            use: { es: "cantidad de cosas" }
+            ex: ["Hay ", { target: tantas sillas como }, " invitados."]
+          - level: B2
+            structure: { pattern: [{ slot: verb }, tanto como] }
+            use: { es: "intensidad de una acción" }
+            ex: ["Corre ", { target: tanto como }, " otros."]
+          - level: B2
+            structure: lo mismo que
+            use: { es: "igualdad de hechos o de cosas" }
+            ex: ["Hoy ha pasado ", { target: lo mismo que }, " ayer."]
+          - level: B2
+            structure: igual que
+            use: { es: "igualdad de manera" }
+            ex: ["Corre ", { target: igual que }, " yo."]
+          - level: C1
+            structure: { pattern: [{ alternatives: [más, menos, tan] }, { slot: adjective }, { alternatives: [que, como] }, { slot: adjective }] }
+            use: { es: "dos cualidades del mismo sujeto" }
+            ex: { examples: [["Es ", { target: tan simpático como }, " tímido."], ["Es ", { target: más astuto que }, " inteligente."]] }
+          - level: C1
+            structure: { pattern: [{ alternatives: [más, menos] }, { slot: noun }, que, { slot: noun }] }
+            use: { es: "dos objetos del mismo sujeto" }
+            ex: ["Tiene ", { target: más libros que }, " discos."]
+          - level: C1
+            structure: { pattern: [{ slot: verb }, { alternatives: [más que, tanto como] }, { slot: verb }] }
+            use: { es: "dos acciones del mismo sujeto" }
+            ex: { examples: [["Come ", { target: más que }, " duerme."], ["Come ", { target: tanto como }, " duerme."]] }
+          - level: C1
+            structure: { pattern: [{ alternatives: [más, tan] }, { slot: adjective }, { alternatives: [que, como] }, { alternatives: [el que, los que] }] }
+            use: { es: "el segundo término es una oración de relativo" }
+            ex: { examples: [["Es ", { target: más listo que los que }, " vinieron ayer."], ["Es ", { target: tan alto como el que más }, "."]] }
+          - level: C1
+            structure: { pattern: [tanto, como, { slot: clause }] }
+            use: { es: "el segundo término es una oración con verbo conjugado" }
+            ex: ["He comprado ", { target: tantos libros como }, " he podido."]
+          - level: C1
+            structure: { pattern: [{ alternatives: [más, menos] }, de lo que, { slot: clause }] }
+            use: { es: "cantidad no precisada" }
+            ex: { examples: [["Cuesta ", { target: más de lo que }, " esperaba."], ["No cuesta ", { target: más de lo que }, " me esperaba."]] }
+          - level: C1
+            structure: { pattern: [a lo, { slot: noun }] }
+            use: { es: "manera: al estilo de una persona" }
+            ex: ["Se viste ", { target: a lo }, " Charlie Chaplin."]
+          - level: C1
+            structure: { pattern: [igual que si, { slot: clause }] }
+            use: { es: "manera: comparación irreal, con imperfecto de subjuntivo" }
+            ex: ["Habla ", { target: igual que si }, " fuera el jefe."]
+          - level: C2
+            structure: { pattern: [{ slot: subject }, { alternatives: [tan, más, menos] }, { slot: adjective }, { alternatives: [como, que] }, { slot: subject }, { slot: adjective }] }
+            use: { es: "el segundo término tiene su propio sujeto" }
+            ex: { examples: [["Ella es ", { target: tan rápida como }, " yo lento."], ["Tiene ", { target: más libros que }, " yo discos."], ["Come ", { target: más que }, " yo duermo."]] }
+          - level: C2
+            structure: { pattern: [{ alternatives: [tan, tanto] }, { slot: noun }, cuanto] }
+            use: { es: ["registro culto: ", { term: cuanto }, " sustituye a ", { term: como }] }
+            ex: { examples: [["Es ", { target: tan sincero cuanto }, " listo."], ["Tiene ", { target: tantos libros cuantos }, " puedas imaginar."]] }
+          - level: C2
+            structure: { pattern: [como, { slot: clause }, así, { slot: clause }] }
+            use: { es: "pares correlativos de la prosa literaria" }
+            ex: { examples: [[{ target: Como }, " el río busca el mar, ", { target: así }, " busco yo tu casa."], [{ target: Así como }, " la lluvia da vida, ", { target: así }, " también la quita."]] }
+          - level: C2
+            structure: { pattern: [cual, { slot: noun }] }
+            use: { es: ["comparación literaria con el valor de ", { term: como }] }
+            ex: [{ target: Cual }, " una sombra, entró en la sala."]
+          - level: C2
+            structure: { pattern: [{ alternatives: [más, menos] }, { slot: clause }, cuanto, { alternatives: [más, menos] }, { slot: clause }] }
+            use: { es: "progresión: una magnitud cambia con la otra" }
+            ex: { examples: [["Hará menos ", { target: cuanto más }, " le pidas."], ["Aprende más ", { target: cuanto menos }, " lo presionan."]] }
+      - type: list
+        items:
+          - type: note
+            level: C1
+            text:
+              es: ["Con ", { term: como si }, " el verbo va en imperfecto de subjuntivo: ver ", { link: El imperfecto de subjuntivo, to: es.subjuntivo.subjuntivo-imperfecto }, "."]
+
+  - title: { es: "Más y menos: términos de comparación" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: structure, label: { es: Estructura } }
+          - { key: use, label: { es: Uso } }
+          - { key: ex, label: { es: Ejemplo } }
+        rows:
+          - level: B2
+            structure: { pattern: [{ alternatives: [más, menos] }, que, { alternatives: [ninguno, cualquiera, otros] }] }
+            use: { es: "el segundo término es un indefinido" }
+            ex: { examples: [["Corre ", { target: más que ninguno }, "."], ["Corre ", { target: menos que cualquiera }, "."]] }
+          - level: B2
+            structure: { pattern: [el que, { alternatives: [más, menos] }, { slot: verb }] }
+            use: { es: "superlativo de una acción" }
+            ex: ["Es ", { target: el que más corre }, " de todos."]
+          - level: B2
+            structure: { pattern: [{ alternatives: [el, la] }, { alternatives: [último, primero] }, de, { slot: noun }] }
+            use: { es: "el adjetivo ya es superlativo: lleva solo el artículo" }
+            ex: { examples: [["Es ", { target: el último de todos }, "."], ["Es ", { target: la primera de la fila }, "."]] }
+          - level: B2
+            structure: { pattern: [{ alternatives: [el doble, el triple] }, de, { slot: noun }, que] }
+            use: { es: "múltiplo" }
+            ex: ["Tiene ", { target: el doble de }, " años que yo."]
+          - level: B2
+            structure: { pattern: [la mitad, de, { slot: noun }, que] }
+            use: { es: "parte" }
+            ex: ["Tengo ", { target: la mitad de }, " tiempo que tú."]
+          - level: B2
+            structure: { pattern: [{ slot: number }, veces, { alternatives: [más, menos] }] }
+            use: { es: "veces" }
+            ex: { examples: [["Mi casa es ", { target: tres veces más }, " grande que la tuya."], ["Este coche gasta ", { target: tres veces menos }, " que el otro."]] }
+          - level: B2
+            structure: { alternatives: [no más que, nada más que] }
+            use: { es: "cantidad exacta" }
+            ex: { examples: [["No cuesta ", { target: más que }, " veinte euros."], ["Cuesta ", { target: nada más que }, " veinte euros."]] }
+
   - title: { en: Typical errors, es: Errores frecuentes, uk: "Типові помилки", pt: "Erros comuns", fr: "Erreurs fréquentes", de: "Typische Fehler", it: "Errori frequenti", pl: "Typowe błędy", tr: "Sık yapılan hatalar", id: "Kesalahan umum", vi: "Lỗi thường gặp" }
     role: errors
     content:
@@ -516,6 +719,11 @@ sections:
           - { level: B1, wrong: Es el más alto en la clase., right: ["Es el más alto ", { target: de }, " la clase."], rule: { en: ["the group after a superlative takes ", { term: de }], es: ["el grupo detrás de un superlativo lleva ", { term: de }], uk: ["група після найвищого ступеня вживається з ", { term: "de" }], pt: ["o grupo depois de um superlativo leva ", { term: "de" }], fr: ["le groupe après un superlatif prend ", { term: "de" }], de: ["die Gruppe nach einem Superlativ wird mit ", { term: "de" }, " angeschlossen"], it: ["il gruppo dopo un superlativo vuole ", { term: "de" }], pl: ["grupa po stopniu najwyższym wymaga ", { term: "de" }], tr: ["üstünlük derecesinden sonra grup ", { term: "de" }, " ile bildirilir"], id: ["kelompok sesudah superlatif memakai ", { term: "de" }], vi: ["nhóm sau so sánh nhất đi với ", { term: "de" }] } }
           - { level: B1, wrong: Tengo más que veinte libros., right: ["Tengo ", { target: más de }, " veinte libros."], rule: { en: ["before a number, ", { term: más de }], es: ["delante de un número, ", { term: más de }], uk: ["перед числом — ", { term: "más de" }], pt: ["antes de um número, ", { term: "más de" }], fr: ["devant un nombre, ", { term: "más de" }], de: ["vor einer Zahl: ", { term: "más de" }], it: ["davanti a un numero, ", { term: "más de" }], pl: ["przed liczbą — ", { term: "más de" }], tr: ["sayıdan önce ", { term: "más de" }], id: ["di depan angka, ", { term: "más de" }], vi: ["trước một con số, ", { term: "más de" }] } }
           - { level: B1, wrong: Es muy carísimo., right: ["Es ", { target: carísimo }, "."], rule: { en: [{ term: -ísimo }, " already means very"], es: [{ term: -ísimo }, " ya significa muy"], uk: [{ term: "-ísimo" }, " уже означає «дуже»"], pt: [{ term: "-ísimo" }, " já significa “muito”"], fr: [{ term: "-ísimo" }, " signifie déjà « très »"], de: [{ term: "-ísimo" }, " bedeutet schon „sehr“"], it: [{ term: "-ísimo" }, " significa già «molto»"], pl: [{ term: "-ísimo" }, " znaczy już „bardzo”"], tr: [{ term: "-ísimo" }, " zaten “çok” anlamına gelir"], id: [{ term: "-ísimo" }, " sudah berarti “sangat”"], vi: [{ term: "-ísimo" }, " đã có nghĩa là “rất”"] } }
+          - { level: B2, wrong: Este modelo es superior que ese., right: ["Este modelo es ", { target: superior a }, " ese."], rule: { es: [{ term: superior }, " lleva ", { term: a }] } }
+          - { level: B2, wrong: Es más guapo que me dijiste., right: ["Es más guapo ", { target: de lo que }, " me dijiste."], rule: { es: ["delante de una oración, ", { term: de lo que }] } }
+          - { level: C1, wrong: Cuesta más que esperaba., right: ["Cuesta más ", { target: de lo que }, " esperaba."], rule: { es: ["con cantidad no precisada, ", { term: más de lo que }] } }
+          - { level: C1, wrong: Habla igual que si es el jefe., right: ["Habla igual que si ", { target: fuera }, " el jefe."], rule: { es: [{ term: igual que si }, " lleva imperfecto de subjuntivo"] } }
+          - { level: C2, wrong: Es un autor muy celebérrimo., right: ["Es un autor ", { target: celebérrimo }, "."], rule: { es: [{ term: -érrimo }, " ya significa muy"] } }
           - { level: A2, speakers: [en, uk], wrong: Es más alto que mí., right: ["Es más alto que ", { target: yo }, "."], rule: { en: ["after ", { term: que }, ", the subject pronoun, unlike me in English"], uk: ["після ", { term: que }, " — займенник у формі підмета, ", { term: yo }, ", хоча українською кажемо «вищий за мене»"] } }
           - { level: A2, wrong: Tengo tanto amigos como tú., right: ["Tengo ", { target: tantos }, " amigos como tú."], rule: { en: [{ term: tanto }, " agrees with the noun"], es: [{ term: tanto }, " concuerda con el sustantivo"], uk: [{ term: "tanto" }, " узгоджується з іменником"], pt: [{ term: "tanto" }, " concorda com o substantivo"], fr: [{ term: "tanto" }, " s’accorde avec le nom"], de: [{ term: "tanto" }, " gleicht sich dem Nomen an"], it: [{ term: "tanto" }, " concorda con il sostantivo"], pl: [{ term: "tanto" }, " zgadza się z rzeczownikiem"], tr: [{ term: "tanto" }, " isimle uyum sağlar"], id: [{ term: "tanto" }, " menyesuaikan diri dengan kata benda"], vi: [{ term: "tanto" }, " hòa hợp với danh từ"] } }
           - { level: A2, speakers: [uk], wrong: Es más alto como yo., right: ["Es más alto ", { target: que }, " yo."], rule: { uk: ["після ", { term: más }, " — ", { term: que }, ", хоча в розмовній українській буває «вищий, як я»"] } }
