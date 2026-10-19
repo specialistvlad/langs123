@@ -7,6 +7,7 @@ import { escapeHtml } from "./html.ts";
 import type { PageOptions } from "./layout.ts";
 import { type Ui, ui } from "./ui.ts";
 import { creditsUrl, homeUrl } from "./urls.ts";
+import { upLink } from "./up-link.ts";
 
 export interface Choice {
   label: string;
@@ -136,7 +137,8 @@ export function breadcrumb(o: PageOptions, t: Ui): string {
       ? `<li><a class="${cls}" href="${c.href}"${current}>${label}</a></li>`
       : `<li><span class="${cls}"${current}>${label}</span></li>`;
   });
-  return `<nav class="crumbs" aria-label="${escapeHtml(t.breadcrumb)}"><ol>${items.join("")}</ol></nav>`;
+  const up = upLink(o.kind, o.crumbs ?? [], homeUrl(o.lang));
+  return `<nav class="crumbs" aria-label="${escapeHtml(t.breadcrumb)}">${up}<ol>${items.join("")}</ol></nav>`;
 }
 
 // The panels the chips and the bottom bar open (popovers): under their chip on wide screens, a sheet

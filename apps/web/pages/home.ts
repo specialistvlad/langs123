@@ -1,11 +1,11 @@
 // The home pages, one per explanation language, where the language is chosen, and the missing pages.
-import { type Explain, explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
+import { explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
 import { join, refRange } from "../../../scripts/levels.ts";
 import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
 import { ui } from "../ui.ts";
 import { escapeHtml } from "../html.ts";
 import { badge } from "../parts.ts";
-import { homeUrl, notFoundUrl, searchUrl, trackUrl } from "../urls.ts";
+import { homeUrl, searchUrl, trackUrl } from "../urls.ts";
 
 // Each home page leads to every track: a card per language to learn, named in the home page's language
 // with its flag and levels, and a link to each explanation language it is written for, under that
@@ -59,26 +59,4 @@ export function homePage(ctx: Context): void {
       main: `<article class="doc home"><h1>${escapeHtml(say("homeHeading", home))}</h1><div class="lang-cards">${cards}</div></article>`,
     });
   }
-}
-
-// The root's missing page speaks every explanation language; every other language's folder has its own.
-export function notFoundPage(ctx: Context): void {
-  const home = homeLanguage();
-  const add = (lang: Explain, languages: Explain[]): void => {
-    const links = languages.map((e) => `<a href="${homeUrl(e)}" lang="${e}">${escapeHtml(ui(e).backHome)}</a>`);
-    ctx.add(
-      {
-        kind: "404",
-        lang,
-        title: `${ui(lang).notFound} — ${SITE.name}`,
-        description: ui(lang).notFound,
-        path: notFoundUrl(lang),
-        crumbs: [{ label: ui(lang).notFound }],
-        main: `<article class="doc"><h1>${languages.map((e) => `<span lang="${e}">${escapeHtml(ui(e).notFound)}</span>`).join(" · ")}</h1><p>${links.join(" · ")}</p></article>`,
-      },
-      false,
-    );
-  };
-  add(home, EXPLAINS);
-  for (const e of EXPLAINS.filter((x) => x !== home)) add(e, [e]);
 }

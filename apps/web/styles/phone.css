@@ -1,0 +1,38 @@
+/* Phones: one up link in place of the breadcrumb (up-link.ts); both bars hide on scrolling down (the client
+   sets html.bar-hidden while the reader scrolls down) */
+.up-link {
+  display: none;
+}
+@media (max-width: 860px) {
+  .crumbs:has(.up-link) ol {
+    display: none;
+  }
+  .up-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    min-height: 44px;
+    margin-left: -6px;
+    padding-right: 8px;
+    color: var(--accent);
+    font-size: 17px;
+    text-decoration: none;
+  }
+  .up-link span {
+    max-width: 60vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .bottom-bar {
+    transition: transform 0.25s ease;
+  }
+  html.bar-hidden .bottom-bar {
+    transform: translateY(100%);
+  }
+}
+@media (max-width: 860px) and (prefers-reduced-motion: reduce) {
+  .bottom-bar {
+    transition: none;
+  }
+}

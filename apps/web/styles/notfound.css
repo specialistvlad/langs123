@@ -1,0 +1,161 @@
+/* The missing page (pages/home.ts notFoundPage): a 404 whose 0 is the languages glyph, the heading, the
+   title in the other languages as a soft line, and a chip per language leading to its home page */
+html[data-page="404"] {
+  --nf-d: 210px;
+}
+.nf-main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 88px 32px 56px;
+  text-align: center;
+}
+.nf-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  line-height: 1;
+  transform: rotate(-3deg);
+}
+.nf-four {
+  display: block;
+  font-size: var(--nf-d);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.nf-zero {
+  position: relative;
+  top: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--nf-d) * 0.72);
+  height: calc(var(--nf-d) * 0.72);
+  margin: 0 calc(var(--nf-d) * 0.03);
+  border: calc(var(--nf-d) * 0.1224) solid var(--accent);
+  border-radius: 999px;
+}
+.nf-zero svg {
+  display: block;
+  width: calc(var(--nf-d) * 0.36);
+  height: calc(var(--nf-d) * 0.36);
+}
+.nf-heading {
+  margin-top: 26px !important;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.nf-others {
+  max-width: 640px;
+  margin-top: 14px !important;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.nf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 900px;
+  margin-top: 28px;
+}
+.nf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text) !important;
+  font-size: 15px;
+}
+.nf-chip:hover {
+  filter: brightness(0.96);
+}
+.nf-chip b {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.nf-chip.here {
+  background: var(--accent);
+  color: var(--pg-on-accent) !important;
+}
+.nf-chip.here b {
+  background: var(--pg-on-accent-fill);
+  color: var(--pg-on-accent);
+}
+.nf-chip.here:hover {
+  filter: brightness(1.08);
+}
+.nf-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  html[data-page="404"] {
+    --nf-d: 128px;
+  }
+  .nf-main {
+    padding: 96px 20px 32px;
+  }
+  .nf-others {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .nf-chips {
+    gap: 7px;
+  }
+  .nf-chip {
+    font-size: 14px;
+  }
+}
+
+/* The narrowest phones (375px and below): the 404 and the chips shrink so the page keeps to one screen */
+@media (max-width: 400px) {
+  html[data-page="404"] {
+    --nf-d: 104px;
+  }
+  .nf-main {
+    padding: 84px 16px 24px;
+  }
+  .nf-heading {
+    margin-top: 20px !important;
+    font-size: 26px;
+  }
+  .nf-others {
+    margin-top: 10px !important;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .nf-chips {
+    gap: 6px;
+    margin-top: 20px;
+  }
+  .nf-chip {
+    gap: 6px;
+    padding: 5px 12px 5px 6px;
+    font-size: 13px;
+  }
+  .nf-chip b {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}

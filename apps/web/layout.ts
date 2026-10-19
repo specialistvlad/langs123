@@ -3,7 +3,7 @@ import { type Explain, filled, LEVELS, type Variety } from "../../scripts/lib.ts
 import type { HeadChange, PageFacts } from "./context.ts";
 import { bottomBar, breadcrumb, type Choice, chips, type Crumb, credits, languageMenu, panels, searchBox, themeButton } from "./chrome.ts";
 import { escapeHtml } from "./html.ts";
-import { ui } from "./ui.ts";
+import { type Ui, ui } from "./ui.ts";
 
 export type PageKind = "home" | "track" | "topic" | "sheets" | "sheet" | "credits" | "404";
 
@@ -32,6 +32,9 @@ export interface PageOptions {
   main: string;
   // The next page, per grouping and level, for the bottom bar on phones (sequence.ts).
   next?: string;
+  // The page's own body in place of the top bar, the layout, the bottom bar and the panels: a page drawn
+  // edge to edge in the frame of frame.css (data-frame).
+  body?: string;
   // What the page is about, for its facts (context.ts PageFacts).
   about?: Pick<PageFacts, "name" | "lang" | "topic" | "section" | "sheet" | "range" | "minutes">;
   dev: boolean;
@@ -93,10 +96,10 @@ export function page(o: PageOptions, change: HeadChange = {}): string {
   const hasBar = hasNav || o.level === true;
   const read = (o.read ?? []).length > 1 ? languageMenu(t.read, o.read ?? []) : "";
   return `<!doctype html>
-<html lang="${o.lang}" data-page="${o.kind}" data-dev="${o.dev ? 1 : 0}"${varietyAttrs(o.varieties)}>
+<html lang="${o.lang}" data-page="${o.kind}" data-dev="${o.dev ? 1 : 0}"${o.body === undefined ? "" : " data-frame"}${varietyAttrs(o.varieties)}>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1${o.body === undefined ? "" : ", viewport-fit=cover"}">
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   ${o.kind === "404" ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">`}
@@ -110,7 +113,17 @@ export function page(o: PageOptions, change: HeadChange = {}): string {
   <script>${prefs(o.varieties !== undefined)}</script>${(change.tags ?? []).map((tag) => `\n  ${tag}`).join("")}
 </head>
 <body${hasBar ? ' class="has-bar"' : ""}>
-  <header class="topbar">
+  ${o.body ?? chrome(o, t, hasNav, hasBar, read)}
+  <script src="/client.js" defer></script>
+</body>
+</html>
+`;
+}
+
+// The standard page around the main content: the top bar, the layout with its menu and rail, the bottom bar
+// and the panels.
+function chrome(o: PageOptions, t: Ui, hasNav: boolean, hasBar: boolean, read: string): string {
+  return `<header class="topbar">
     ${breadcrumb(o, t)}
     ${searchBox(o, t)}
     <div class="tools">${chips({ explain: o.lang, level: o.level, varieties: o.varieties })}${read}${credits(o, false)}${themeButton(t, false)}</div>
@@ -121,9 +134,5 @@ export function page(o: PageOptions, change: HeadChange = {}): string {
     ${filled(o.rail) ? `<aside class="rail">${o.rail}</aside>` : ""}
   </div>
   ${hasBar ? bottomBar(o, t, hasNav) : ""}
-  ${panels(o, t, hasBar)}
-  <script src="/client.js" defer></script>
-</body>
-</html>
-`;
+  ${panels(o, t, hasBar)}`;
 }

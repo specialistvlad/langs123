@@ -21,6 +21,9 @@ const STYLES = [
   "views",
   "rail",
   "index",
+  "phone",
+  "frame",
+  "notfound",
 ];
 
 // style.css: the parts of apps/web/styles/ joined in order.

@@ -11,17 +11,21 @@ const pages = await testSite();
 
 // A page's language, its top bar alone, parsed, and whether it has a footer: every page is checked, so
 // the test reads only what it checks.
-async function topBar(path: string): Promise<{ lang: Explain; doc: Document; footer: boolean }> {
+async function topBar(path: string): Promise<{ lang: Explain; doc: Document; footer: boolean; frame: boolean }> {
   const html = await Bun.file(join(SITE_DIR, path)).text();
   const start = html.indexOf('<header class="topbar"');
   const bar = start < 0 ? "" : html.slice(start, html.indexOf("</header>", start) + "</header>".length);
   const lang = (/<html lang="([a-z]+)"/.exec(html)?.[1] ?? "") as Explain;
-  return { lang, doc: parseHTML(`<html><body>${bar}</body></html>`).document, footer: /<footer[\s>]/.test(html) };
+  const frame = /<html[^>]* data-frame/.test(html);
+  return { lang, doc: parseHTML(`<html><body>${bar}</body></html>`).document, footer: /<footer[\s>]/.test(html), frame };
 }
 
 describe.each(pages)("%s", (path) => {
   test("the top bar holds the chips and the language a page is read in, then the credits beside the theme switch, and the page has no footer", async () => {
-    const { lang, doc, footer } = await topBar(path);
+    const { lang, doc, footer, frame } = await topBar(path);
+    expect(footer).toBe(false);
+    // A page in the frame draws its own body, without the top bar.
+    if (frame) return;
     const credits = creditsUrl(lang);
     const tools = [...doc.querySelectorAll(".topbar .tools > *")].map((el) =>
       el.matches(".chips")
@@ -79,9 +83,23 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
     // A language's card lists the home page's own language first.
     expect(home.querySelector(".lang-card .explains a")?.getAttribute("hreflang")).toBe(e);
   });
-  test("the missing page leads back to the home page in the language", async () => {
+  test("the missing page leads up and to every language's home page, its own first", async () => {
     const doc = await readPage(file(notFoundUrl(e)));
     expect(doc.documentElement.getAttribute("lang")).toBe(e);
-    expect([...doc.querySelectorAll("main a")].map((a) => a.getAttribute("href"))).toContain(homeUrl(e));
+    expect(doc.documentElement.hasAttribute("data-frame")).toBe(true);
+    expect(doc.querySelector(".pg-up")?.getAttribute("href")).toBe(homeUrl(e));
+    const chips = [...doc.querySelectorAll(".nf-chip")].map((a) => a.getAttribute("hreflang"));
+    expect(chips).toEqual([e, ...ENABLED_EXPLAIN.filter((x) => x !== e)]);
+    expect(doc.querySelector(".nf-chip.here")?.getAttribute("href")).toBe(homeUrl(e));
   });
+});
+
+test("on phones the up link leads a topic to its track's index, named by its language, the index to Home, and Home nowhere", async () => {
+  const up = async (path: string): Promise<[string | null, string | null] | null> => {
+    const link = (await readPage(path)).querySelector(".crumbs .up-link");
+    return link === null ? null : [link.getAttribute("href"), link.querySelector("span")?.textContent ?? null];
+  };
+  expect(await up("en/english/verbs/to-be/index.html")).toEqual(["/en/english/", "English"]);
+  expect(await up("uk/spanish/index.html")).toEqual(["/uk/", SITE.name]);
+  expect(await up("index.html")).toBeNull();
 });
