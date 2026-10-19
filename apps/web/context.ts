@@ -13,8 +13,6 @@ export interface BuildOptions {
   outDir: string;
   dev: boolean;
   siteUrl: string;
-  // Umami analytics: the website to report to and the script that reports.
-  umami?: { websiteId: string; src: string };
   // Builds only these topics and their tracks in these explanation languages (sample.ts); home, credits and
   // the missing page in every explanation language.
   sample?: Sample;
