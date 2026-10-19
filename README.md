@@ -62,16 +62,16 @@ langs123/
 
 | Command | What it does |
 |---|---|
-| `npm start` | serves the site from `build/dev/` on port 47380 on every interface (open the printed network address on a phone), rebuilds and reloads on every change, and lists the problems `npm run check` finds |
-| `npm run build` | builds the static site into `build/web/`; `SITE_URL=https://…` sets the public URL, `UMAMI_WEBSITE_ID` adds Umami analytics |
+| `npm start` | serves the sample site (`apps/web/sample.ts`) from `build/dev/` on port 47380 on every interface (open the printed network address on a phone), rebuilds it in about a second and reloads on every change, and lists the problems `npm run check` finds; a topic whose file changes joins the sample, `npm start -- <topic id>` adds one, and `npm start -- --full` serves the whole library |
+| `npm run build` | builds the whole static site into `build/web/` and stops on any page that shows unrendered text (`**`, a topic link, `undefined`); `SITE_URL=https://…` sets the public URL, `UMAMI_WEBSITE_ID` adds Umami analytics |
 | `npm run check` | validates all data against the schemas and conventions, and names the parts of a topic whose English changed since its translations |
 | `npm run translated -- <id> [uk es]` | stamps a topic's translations as up to date with its English; `--all` stamps every topic |
-| `npm test` | unit tests, and checks on every built page, side by side; fails below full line and function coverage of the modules `bunfig.toml` holds to it; `bun test <file>` runs one file |
-| `npm run e2e` | drives every topic and track page in Chromium at every level and view, each test file side by side; `bunx playwright install chromium` installs the browser |
+| `npm test` | unit tests, and checks on the pages of the sample site, side by side; the sample uses every feature the library uses (`apps/web/sample.test.ts` names a topic to add when it does not); fails below full line and function coverage of the modules `bunfig.toml` holds to it; `bun test <file>` runs one file |
+| `npm run e2e` | drives the sample's topic and track pages in one Chromium: the level filter at every level and view, the bars, sheets and panels, the variety switch and the study path; `bunx playwright install chromium` installs the browser |
 | `npm run typecheck` | strict TypeScript |
 | `npm run lint` | typescript-eslint's strict and stylistic type-checked rules |
 | `npm run format` | Prettier; `npm run format:check` only reports |
-| `npm run verify` | all of the checks above, side by side, each in a process of its own (`scripts/verify.ts`); CI runs it on every push and pull request |
+| `npm run verify` | all of the checks above, side by side, each in a process of its own (`scripts/verify.ts`), in about 15 s; it fails when it takes longer than 60 s outside CI; CI runs it on every push and pull request |
 
 ## Contributing
 

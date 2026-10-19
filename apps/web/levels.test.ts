@@ -4,10 +4,11 @@
 import { describe, expect, test } from "bun:test";
 import { join } from "node:path";
 import { LEVEL_INFO, LEVELS, lv } from "../../scripts/lib.ts";
+import { SAMPLE } from "./sample.ts";
 import { readPage, SITE_DIR, testSite } from "./test-site.ts";
 
 const pages = await testSite();
-const topicPages = pages.filter((p) => /^en\/\w+\/[\w-]+\/[\w-]+\/index\.html$/.test(p) && !p.includes("/cheatsheets/"));
+const topicPages = pages.filter((p) => /^[a-z]{2}\/\w+\/[\w-]+\/[\w-]+\/index\.html$/.test(p) && !p.includes("/cheatsheets/"));
 const levelled = (el: Element): Element[] => [...el.querySelectorAll("[data-level]")];
 const from = (el: Element): string => el.getAttribute("data-level") ?? "";
 const to = (el: Element): string => el.getAttribute("data-to") ?? "";
@@ -21,8 +22,8 @@ function rangeOf(els: Element[]): string {
 // The badge an element shows itself, outside any element inside it that carries a level.
 const ownBadge = (el: Element, selector: string): Element | null => el.querySelector(`:scope > ${selector} .lvl, :scope > ${selector}.lvl`);
 
-test("the site builds with topic pages", () => {
-  expect(topicPages.length).toBeGreaterThan(40);
+test("every topic of the sample has its page in English", () => {
+  expect(topicPages.filter((p) => p.startsWith("en/")).length).toBe(SAMPLE.topics.length);
 });
 
 describe.each(topicPages)("%s", (path) => {

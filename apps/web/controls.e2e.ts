@@ -5,37 +5,25 @@
 // sections that match, moves through them with the arrow keys, opens one with Enter and closes on Escape.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
-import { join } from "node:path";
-import { type Browser, chromium, type Page } from "playwright";
+import type { Page } from "playwright";
 import { LEVELS } from "../../scripts/lib.ts";
-import { SITE_DIR, testSite } from "./test-site.ts";
+import { shared } from "./browser.ts";
 
-await testSite();
+const { base, browser } = await shared();
 // Each test opens a page; a cold browser can take seconds to start.
 const SLOW = 30_000;
-const server = Bun.serve({
-  hostname: "127.0.0.1",
-  port: 0,
-  fetch: (req) => {
-    const file = decodeURIComponent(new URL(req.url).pathname);
-    return new Response(Bun.file(join(SITE_DIR, file.endsWith("/") ? `${file}index.html` : file)));
-  },
-});
-let browser: Browser;
 let page: Page;
 beforeAll(async () => {
-  browser = await chromium.launch();
   page = await browser.newPage();
 }, SLOW);
 afterAll(async () => {
-  await browser.close();
-  await server.stop();
+  await page.close();
 });
 
 // One page for every test, as the other browser tests keep, at the width each test asks for.
 async function open(width: number): Promise<void> {
   await page.setViewportSize({ width, height: 800 });
-  await page.goto(new URL("/en/english/verbs/to-be/?level=a1&view=extended", server.url).href);
+  await page.goto(new URL("/en/english/verbs/to-be/?level=a1&view=extended", base).href);
 }
 // Waits for the page to draw its last change and for every slide that change started to end.
 async function settled(): Promise<void> {
@@ -116,7 +104,7 @@ test(
   "the top bar's search lists the matching topics first, and the arrow keys, Enter and Escape work it",
   async () => {
     await page.setViewportSize({ width: 1600, height: 800 });
-    await page.goto(new URL("/en/spanish/pronombres/tu-usted-vosotros-ustedes/?level=c2", server.url).href);
+    await page.goto(new URL("/en/spanish/pronombres/tu-usted-vosotros-ustedes/?level=c2", base).href);
     const input = page.locator(".top-search input");
     await input.click();
     await input.fill("usted");

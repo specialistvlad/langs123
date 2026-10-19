@@ -4,40 +4,30 @@
 // nothing is left. A page with varieties shows the default variety's elements and those of every variety.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
-import { join } from "node:path";
-import { type Browser, chromium, type Page } from "playwright";
+import type { Page } from "playwright";
 import { LEVELS } from "../../scripts/lib.ts";
-import { SITE_DIR, testSite } from "./test-site.ts";
+import { shared } from "./browser.ts";
+import { testSite } from "./test-site.ts";
 
+const { base, browser } = await shared();
 const pages = (await testSite()).filter(
   (p) => /^en\/\w+\/(index\.html|[\w-]+\/[\w-]+\/index\.html)$/.test(p) && !p.includes("cheatsheets"),
 );
-const server = Bun.serve({
-  hostname: "127.0.0.1",
-  port: 0,
-  fetch: (req) => {
-    const path = decodeURIComponent(new URL(req.url).pathname);
-    return new Response(Bun.file(join(SITE_DIR, path.endsWith("/") ? `${path}index.html` : path)));
-  },
-});
 // Pages and views open side by side, each on a page of its own from a pool of E2E_PAGES (4): Chromium
 // renders every page in a process of its own.
 const POOL = Number(process.env["E2E_PAGES"] ?? 4);
 // A cold browser can take seconds to start, and a check waits for the pages queued before its own.
 const SLOW = 30_000;
-let browser: Browser;
 const idle: Page[] = [];
 const waiting: ((page: Page) => void)[] = [];
 beforeAll(async () => {
-  browser = await chromium.launch();
   for (let n = 0; n < POOL; n++) idle.push(await browser.newPage({ viewport: { width: 1600, height: 1000 } }));
   // Every page and view starts at once, the pool letting as many run as it has pages; a look that
   // fails fails the checks of its page and view.
   for (const [path, view] of cases) seen(path, view).catch(() => undefined);
 }, SLOW);
 afterAll(async () => {
-  await browser.close();
-  await server.stop();
+  for (const page of idle) await page.close();
 });
 
 async function withPage<T>(use: (page: Page) => Promise<T>): Promise<T> {
@@ -150,7 +140,7 @@ function seen(path: string, view: string): Promise<Record<string, Seen>> {
   let known = seenAt.get(key);
   if (known === undefined) {
     known = withPage(async (page) => {
-      await page.goto(`${server.url.href}${path.replace(/index\.html$/, "")}?view=${view}`);
+      await page.goto(`${base.href}${path.replace(/index\.html$/, "")}?view=${view}`);
       return look(page, LEVELS);
     });
     seenAt.set(key, known);

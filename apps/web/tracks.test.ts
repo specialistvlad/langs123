@@ -5,6 +5,7 @@
 import { describe, expect, test } from "bun:test";
 import { join } from "node:path";
 import { ENABLED_EXPLAIN, type Explain, explainOf, loadCurriculum } from "../../scripts/lib.ts";
+import { SAMPLE } from "./sample.ts";
 import { readPage, SITE_DIR, testSite } from "./test-site.ts";
 import { homeUrl } from "./urls.ts";
 
@@ -17,7 +18,7 @@ const spanishPages = pages.filter((p) => p.split("/")[1] === spanish.slug);
 const homeFile = (e: Explain): string => `${homeUrl(e).slice(1)}index.html`;
 
 test("a language's pages exist in the explanation languages it lists, and in no other", () => {
-  expect(new Set(spanishPages.map((p) => p.split("/")[0]))).toEqual(new Set(explains));
+  expect(new Set(spanishPages.map((p) => p.split("/")[0]))).toEqual(new Set(explains.filter((e) => SAMPLE.explain.includes(e))));
   expect(spanishPages.length).toBeGreaterThan(0);
 });
 

@@ -14,7 +14,19 @@ export function withAnalytics(html: string, o: BuildOptions): string {
   return html.replace("</head>", `  ${script}\n</head>`);
 }
 
-// varieties: the varieties of each language being learned that has them.
+// What a page must never show: Markdown, a topic link or an object the renderer left unrendered.
+const LEFTOVERS = ["**", "](id:", "undefined", "[object Object]"];
+
+// The leftovers a page or data file holds, each with the text around it.
+export function leftovers(text: string): string[] {
+  return LEFTOVERS.flatMap((s) => {
+    const at = text.indexOf(s);
+    return at < 0 ? [] : [`${s} in "…${text.slice(Math.max(0, at - 40), at + s.length + 20)}…"`];
+  });
+}
+
+// varieties: the varieties of each language being learned that has them. A page that holds a leftover stops
+// the build, naming it.
 export async function writeSite(pages: Page[], o: BuildOptions, varieties: readonly (readonly string[])[] = []): Promise<void> {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -25,6 +37,9 @@ ${pages
 </urlset>
 `;
   const robots = `User-agent: *\nAllow: /\nSitemap: ${o.siteUrl}/sitemap.xml\n`;
+
+  const left = pages.flatMap((p) => leftovers(p.html).map((l) => `${p.path}: ${l}`));
+  if (left.length > 0) throw new Error(`${String(left.length)} leftovers in the built pages:\n${left.slice(0, 10).join("\n")}`);
 
   // Write into a fresh folder, then swap it in place.
   const tmp = `${o.outDir}.tmp`;

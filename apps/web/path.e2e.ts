@@ -3,35 +3,30 @@
 // above it, the menu marks the step being read, and Up next leads to the step after it.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
-import { join } from "node:path";
-import { type Browser, chromium, type Page } from "playwright";
+import type { Page } from "playwright";
 import { LEVELS, loadCurriculum } from "../../scripts/lib.ts";
-import { SITE_DIR, testSite } from "./test-site.ts";
+import { shared } from "./browser.ts";
+import { SAMPLE } from "./sample.ts";
 
-await testSite();
+const { base, browser } = await shared();
 // Each test opens several pages; a cold browser can take seconds to start.
 const SLOW = 30_000;
-const path = (await loadCurriculum()).languages[0]?.path ?? {};
-const server = Bun.serve({
-  hostname: "127.0.0.1",
-  port: 0,
-  fetch: (req) => {
-    const file = decodeURIComponent(new URL(req.url).pathname);
-    return new Response(Bun.file(join(SITE_DIR, file.endsWith("/") ? `${file}index.html` : file)));
-  },
-});
-let browser: Browser;
+// The English path as the sample site holds it: the sample's steps at each level.
+const path = Object.fromEntries(
+  Object.entries((await loadCurriculum()).languages[0]?.path ?? {}).map(([level, ids]) => [
+    level,
+    ids.filter((id) => SAMPLE.topics.includes(id)),
+  ]),
+);
 let page: Page;
 beforeAll(async () => {
-  browser = await chromium.launch();
   page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
 }, SLOW);
 afterAll(async () => {
-  await browser.close();
-  await server.stop();
+  await page.close();
 });
 
-const open = (address: string): Promise<unknown> => page.goto(new URL(address, server.url).href);
+const open = (address: string): Promise<unknown> => page.goto(new URL(address, base).href);
 // The menu sits on the topic pages; the track page holds the index alone.
 const TOPIC = "/en/english/foundations/alphabet-spelling/";
 const shown = (selector: string): Promise<boolean> => page.locator(selector).first().isVisible();

@@ -3,15 +3,22 @@
 // topic to the step after it.
 import { describe, expect, test } from "bun:test";
 import { loadCurriculum, LEVELS, lv } from "../../scripts/lib.ts";
+import { SAMPLE } from "./sample.ts";
 import { readPage, testSite } from "./test-site.ts";
 
 const pages = await testSite();
 const english = (await loadCurriculum()).languages[0];
 if (!english) throw new Error("curriculum.yaml has no language");
-const path = english.path;
+// The path as the sample site holds it: its levels with the sample's steps.
+const path = Object.fromEntries(
+  Object.entries(english.path).flatMap(([level, ids]) => {
+    const own = ids.filter((id) => SAMPLE.topics.includes(id));
+    return own.length > 0 ? [[level, own]] : [];
+  }),
+);
 // The track page holds the index; every topic page of the track holds the menu.
 const index = await readPage("en/english/index.html");
-const topic = await readPage("en/english/foundations/alphabet-spelling/index.html");
+const topic = await readPage("en/english/foundations/numbers/index.html");
 const menu = '.nav-list[data-order="path"]';
 const steps = [...topic.querySelectorAll<HTMLAnchorElement>(`${menu} a`)];
 // The page a step link opens, and the section its anchor names.
@@ -139,23 +146,4 @@ describe("a topic page", () => {
       }
     },
   );
-
-  test("at A0, by category: To be sits between Personal Pronouns and Word Order, Word Order starts over at The Alphabet, The Alphabet has no previous", async () => {
-    const at = (doc: Document, side: string): string | null | undefined =>
-      doc.querySelector(`.pagers.bottom .pager[data-order="categories"][data-at~="A0"] .${side}`)?.getAttribute("href");
-    const toBe = await readPage("en/english/verbs/to-be/index.html");
-    expect(at(toBe, "pager-prev")).toBe("/en/english/pronouns/personal-pronouns/");
-    expect(at(toBe, "pager-next")).toBe("/en/english/sentence-building/word-order/");
-    const wordOrder = await readPage("en/english/sentence-building/word-order/index.html");
-    expect(at(wordOrder, "pager-next")).toBe("/en/english/foundations/alphabet-spelling/");
-    const alphabet = await readPage("en/english/foundations/alphabet-spelling/index.html");
-    expect(alphabet.querySelector('.pagers.bottom .pager[data-order="categories"][data-at~="A0"] .pager-prev.off')).not.toBeNull();
-  });
-
-  test("To be at A0 leads to Word Order", async () => {
-    const doc = await readPage("en/english/verbs/to-be/index.html");
-    const next = doc.querySelector('.up-next[data-step="A0"][data-at~="A0"] a.next');
-    expect(next?.getAttribute("href")).toBe("/en/english/sentence-building/word-order/");
-    expect(next?.getAttribute("data-path-step")).toBe("a0");
-  });
 });

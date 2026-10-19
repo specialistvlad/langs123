@@ -4,37 +4,20 @@
 // choice; a page without scripts shows the default; switching moves no column of a table, the rows of
 // the other variety lie flat, and a cell with variants reads as the chosen variety's plain text.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
-import { afterAll, beforeAll, expect, test } from "bun:test";
-import { join } from "node:path";
-import { type Browser, chromium, type Page } from "playwright";
-import { SITE_DIR, testSite } from "./test-site.ts";
+import { expect, test } from "bun:test";
+import type { Page } from "playwright";
+import { shared } from "./browser.ts";
 
-await testSite();
+const { base, browser } = await shared();
 const SLOW = 30_000;
-const server = Bun.serve({
-  hostname: "127.0.0.1",
-  port: 0,
-  fetch: (req) => {
-    const file = decodeURIComponent(new URL(req.url).pathname);
-    return new Response(Bun.file(join(SITE_DIR, file.endsWith("/") ? `${file}index.html` : file)));
-  },
-});
 const TOPIC = "/en/spanish/ser-estar-hay-gustar/ser-estar/";
-let browser: Browser;
-beforeAll(async () => {
-  browser = await chromium.launch();
-}, SLOW);
-afterAll(async () => {
-  await browser.close();
-  await server.stop();
-});
 
 // A fresh page with storage of its own, so each test starts from the first visit.
 async function fresh(scripts = true): Promise<Page> {
   const context = await browser.newContext({ javaScriptEnabled: scripts });
   return context.newPage();
 }
-const url = (path: string): string => new URL(path, server.url).href;
+const url = (path: string): string => new URL(path, base).href;
 // Whether the page shows any element of a variety, and the variety <html> names.
 const shows = (page: Page, variety: string): Promise<boolean> =>
   page.$$eval(`main [data-variety="${variety}"]`, (els) => els.some((el) => el.checkVisibility({ visibilityProperty: true })));

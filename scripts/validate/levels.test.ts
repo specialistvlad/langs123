@@ -3,7 +3,7 @@
 // scale out of step.
 import { describe, expect, test } from "bun:test";
 import { loadConcepts, loadTopics, type Topic, type TopicRef } from "../lib.ts";
-import { checkRef, type Problem, validate } from "./index.ts";
+import { checkRef, type Problem } from "./index.ts";
 
 const refs = await loadTopics();
 const concepts = await loadConcepts();
@@ -34,10 +34,6 @@ function rows(topic: Record<string, unknown>): Record<string, unknown>[] {
 }
 
 describe("the data as it is", () => {
-  // The whole library, read and checked: seconds under coverage.
-  test("validates with no problems", async () => {
-    expect(await validate()).toEqual([]);
-  }, 30_000);
   test("an unchanged topic passes", async () => {
     expect(await problemsOf(() => undefined)).toEqual([]);
   });

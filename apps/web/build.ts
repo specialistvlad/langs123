@@ -19,7 +19,8 @@ export type { BuildOptions } from "./context.ts";
 
 export async function build(o: BuildOptions): Promise<number> {
   const curriculum = await loadCurriculum();
-  const refs = await loadTopics(curriculum);
+  const all = await loadTopics(curriculum);
+  const refs = o.sample === undefined ? all : all.filter((r) => o.sample?.topics.includes(r.id) === true);
   const langs = new Map<string, CurriculumLanguage>(curriculum.languages.map((l) => [l.code, l]));
   const langOf = (ref: TopicRef): CurriculumLanguage => {
     const lang = langs.get(ref.lang);
@@ -37,7 +38,7 @@ export async function build(o: BuildOptions): Promise<number> {
     o,
     refs,
     link,
-    languages: curriculum.languages.filter((l) => l.enabled),
+    languages: curriculum.languages.filter((l) => l.enabled && refs.some((r) => r.lang === l.code)),
     add: (path, html, sitemap = true) => {
       pages.push({ path, html, sitemap });
     },
@@ -49,7 +50,7 @@ export async function build(o: BuildOptions): Promise<number> {
     const langRefs = refs.filter((r) => r.lang === lang.code);
     const written = langRefs.filter((r) => r.topic);
     const explains = explainsOf(lang);
-    for (const explain of explains) {
+    for (const explain of explains.filter((e) => o.sample === undefined || o.sample.explain.includes(e))) {
       const t = ui(explain);
       const path = studyPath(lang, explain, langRefs);
       const track = { ctx, lang, explain, explains, t, title: t.track(localize(lang.name, explain)), langRefs, written, path };

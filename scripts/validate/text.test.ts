@@ -2,8 +2,8 @@
 // replace, a mark left incomplete, and a localized value without a language.
 import { describe, expect, test } from "bun:test";
 import { EXPLAIN_CODES, type ErrorsBlock, type ListBlock, type Localized, type ProseBlock, type Text, type Topic } from "../lib.ts";
-import { problemsAfter, sampleBlocks } from "../sample-topic.ts";
-import { LEARNED_NOTATION, NOTATION } from "./notation.ts";
+import { problemsAfter, SAMPLE, sampleBlocks } from "../sample-topic.ts";
+import { LEARNED_NOTATION, links, NOTATION } from "./notation.ts";
 import { checkText } from "./topic-text.ts";
 
 const problems = (change: (t: Topic) => void): string[] => problemsAfter(change, checkText);
@@ -135,4 +135,20 @@ describe("every localized value carries each explanation language", () => {
       }),
     ).toEqual([]);
   });
+});
+
+test("links lists every topic a topic's text links to, once", () => {
+  const topic = structuredClone(SAMPLE);
+  const to = { link: { en: "To be" }, to: "en.verbs.to-be" } as unknown as Text;
+  prose(topic).text = Object.fromEntries(EXPLAIN_CODES.map((l) => [l, [to, " and ", to]]));
+  expect(links(topic)).toEqual(["en.verbs.to-be"]);
+});
+
+test("in Ukrainian a dash inside a sentence is punctuation, and elsewhere it names an exchange", () => {
+  const dash = (lang: string) => (t: Topic) => {
+    t.lang = lang as Topic["lang"];
+    prose(t).ex = "Мама — лікар.";
+  };
+  expect(problems(dash("uk")).filter((p) => p.includes(" — "))).toEqual([]);
+  expect(problems(dash("en")).some((p) => p.includes(" — "))).toBe(true);
 });

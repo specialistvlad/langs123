@@ -1,9 +1,9 @@
 // Analytics comes from the build options alone: a build that names an Umami website reports to it from
-// its own host; any other build carries no analytics script.
+// its own host; any other build carries no analytics script. A page with unrendered text stops the build.
 import { expect, test } from "bun:test";
 import { parseHTML } from "linkedom";
 import type { BuildOptions } from "./context.ts";
-import { withAnalytics } from "./output.ts";
+import { leftovers, withAnalytics } from "./output.ts";
 
 const html = "<!doctype html><html><head><title>t</title></head><body></body></html>";
 const base: BuildOptions = { outDir: "", dev: false, siteUrl: "https://langs123.com" };
@@ -21,4 +21,14 @@ test("a build with an Umami website puts one script in the head, limited to the 
 
 test("a build without an Umami website leaves the page as it is", () => {
   expect(withAnalytics(html, base)).toBe(html);
+});
+
+test("leftovers name each piece of unrendered text a page holds, and none in a clean page", () => {
+  expect(leftovers("<p>a **bold** [b](id:x) undefined [object Object]</p>").map((l) => l.split(" in ")[0])).toEqual([
+    "**",
+    "](id:",
+    "undefined",
+    "[object Object]",
+  ]);
+  expect(leftovers(html)).toEqual([]);
 });

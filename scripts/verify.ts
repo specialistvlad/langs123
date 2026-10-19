@@ -1,17 +1,17 @@
-// Runs the checks of npm test, npm run e2e or npm run verify side by side, each in a process of its
-// own, and prints each check as it ends with its time; a check that fails prints its output, and the
-// run exits 1. Every test process builds the site into a folder of its own, build/test/<check>/; a
-// build holds about 4 GB, so as many test processes run at once as the machine's memory holds builds.
+// Runs the checks of npm test, npm run e2e or npm run verify side by side, each in a process of its own, and
+// prints each check as it ends with its time; a check that fails prints its output, and the run exits 1.
+// Every test process builds the sample site (apps/web/sample.ts) into a folder of its own, build/test/<check>/,
+// in under a second. A verify run that takes longer than its budget fails, outside CI, so the checks stay fast.
 // Run: npm test | npm run e2e | npm run verify
-import { totalmem } from "node:os";
 import { join } from "node:path";
 import { ROOT } from "./lib.ts";
 
 type Check = [name: string, command: string[]];
-const test = (file: string): Check => [file, ["bun", "test", `./${file}`]];
+const BUDGET_SECONDS = 60;
 
-// The unit test files that check every built page run in a process of their own, which parses each
-// page once; the rest run in another, with coverage.
+// The unit test files that check the built sample pages run in a process of their own, which parses each page
+// once; the rest run in another, with coverage; every browser test file runs in one more, sharing one server
+// and one Chromium (apps/web/browser.ts).
 const PAGE_CHECKS = [
   "apps/web/path.test.ts",
   "apps/web/levels.test.ts",
@@ -21,9 +21,10 @@ const PAGE_CHECKS = [
 ];
 const UNIT: Check[] = [
   ["unit tests, with coverage", ["bun", "test", "--coverage", ...PAGE_CHECKS.map((file) => `--path-ignore-patterns=${file}`)]],
-  ["checks on every built page", ["bun", "test", ...PAGE_CHECKS.map((file) => `./${file}`)]],
+  ["checks on the sample pages", ["bun", "test", ...PAGE_CHECKS.map((file) => `./${file}`)]],
 ];
-const E2E: Check[] = (await Array.fromAsync(new Bun.Glob("apps/web/*.e2e.ts").scan({ cwd: ROOT }))).sort().map(test);
+const E2E_FILES = (await Array.fromAsync(new Bun.Glob("apps/web/*.e2e.ts").scan({ cwd: ROOT }))).sort();
+const E2E: Check[] = [["browser tests", ["bun", "test", ...E2E_FILES.map((file) => `./${file}`)]]];
 const GROUPS: Record<string, Check[]> = {
   test: UNIT,
   e2e: E2E,
@@ -42,25 +43,10 @@ if (checks === undefined) {
   process.exit(2);
 }
 
-// The test processes that may build at once, and the ones waiting for a turn.
-let builds = Math.max(1, Math.floor(totalmem() / 4.5e9));
-const waiting: (() => void)[] = [];
-const turn = async (): Promise<void> => {
-  if (builds > 0) builds--;
-  else await new Promise<void>((resolve) => waiting.push(resolve));
-};
-const done = (): void => {
-  const next = waiting.shift();
-  if (next === undefined) builds++;
-  else next();
-};
-
 const start = performance.now();
 const seconds = (since: number): string => `${((performance.now() - since) / 1000).toFixed(1)}s`;
 const results = await Promise.all(
   checks.map(async ([name, command]) => {
-    const building = command[1] === "test";
-    if (building) await turn();
     const began = performance.now();
     const env: Record<string, string | undefined> = {
       ...process.env,
@@ -74,10 +60,11 @@ const results = await Promise.all(
     const passed = /(\d+) pass\b/.exec(output.replace(/\x1b\[[0-9;]*m/g, ""))?.[1];
     console.log(`  ${code === 0 ? "✓" : "✗"} ${name}${passed === undefined ? "" : `, ${passed} tests`}  ${seconds(began)}`);
     if (code !== 0) console.log(output);
-    if (building) done();
     return code === 0;
   }),
 );
 const failed = results.filter((ok) => !ok).length;
 console.log(`${checks.length - failed} of ${checks.length} checks passed in ${seconds(start)}`);
-process.exit(failed > 0 ? 1 : 0);
+const slow = group === "verify" && process.env["CI"] === undefined && performance.now() - start > BUDGET_SECONDS * 1000;
+if (slow) console.log(`✗ verify took longer than its budget of ${String(BUDGET_SECONDS)} s: make the slowest check faster`);
+process.exit(failed > 0 || slow ? 1 : 0);

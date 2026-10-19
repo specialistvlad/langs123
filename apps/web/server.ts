@@ -1,12 +1,15 @@
 // Development server: builds the static site, serves it, rebuilds on every change and
 // reloads open pages over server-sent events. Run: npm start → listens on every interface, port 47380.
+// It builds the sample (sample.ts) in about a second, with every topic named after it and every topic whose
+// file changes while it runs: npm start -- en.verbs.would. npm start -- --full builds the whole library.
 import { watch } from "node:fs";
 import { stat } from "node:fs/promises";
 import { networkInterfaces } from "node:os";
 import { join, normalize } from "node:path";
-import { ROOT, SITE } from "../../scripts/lib.ts";
+import { ROOT, SITE, topicId } from "../../scripts/lib.ts";
 import { validate } from "../../scripts/validate/index.ts";
 import { build } from "./build.ts";
+import { SAMPLE } from "./sample.ts";
 
 const HOST = process.env["HOST"] ?? "0.0.0.0";
 const PORT = Number(process.env["PORT"] ?? 47380);
@@ -19,6 +22,10 @@ const DEV_URL = `http://${HOST === "0.0.0.0" ? (LAN[0] ?? "127.0.0.1") : HOST}:$
 // Its own output folder: `npm run build` writes build/web/ without the live-reload hook.
 const OUT = join(ROOT, "build/dev");
 const NO_STORE = { "Cache-Control": "no-store" };
+const args = process.argv.slice(2);
+const FULL = args.includes("--full");
+// The topics the preview builds beyond the sample: those named on the command line, then those edited.
+const shown = new Set([...SAMPLE.topics, ...args.filter((a) => !a.startsWith("--"))]);
 const encoder = new TextEncoder();
 const clients = new Set<ReadableStreamDefaultController<Uint8Array>>();
 
@@ -37,7 +44,8 @@ function rebuild(reason: string): Promise<void> {
   queue = queue.then(async () => {
     const started = performance.now();
     try {
-      const count = await build({ outDir: OUT, dev: true, siteUrl: DEV_URL });
+      const sample = FULL ? {} : { sample: { topics: [...shown], explain: SAMPLE.explain } };
+      const count = await build({ outDir: OUT, dev: true, siteUrl: DEV_URL, ...sample });
       console.log(`built ${count} pages in ${Math.round(performance.now() - started)} ms (${reason})`);
       send("data: reload\n\n");
     } catch (error) {
@@ -62,6 +70,8 @@ watch(ROOT, { recursive: true }, (_event, filename) => {
   const relevant =
     (file.startsWith("languages/") && /\.(ya?ml|json)$/.test(file)) || /^apps\/web\/(styles\/[\w-]+\.css|client(-[\w-]+)?\.ts)$/.test(file);
   if (!relevant) return;
+  const topic = /^languages\/(\w+)\/([\w-]+)\/([\w-]+)\/topic\.yaml$/.exec(file);
+  if (topic) shown.add(topicId(topic[1] ?? "", topic[2] ?? "", topic[3] ?? ""));
   changed.add(file);
   clearTimeout(timer);
   timer = setTimeout(() => {

@@ -1,6 +1,7 @@
 // What every page builder shares: build options, curriculum data, links and the page list.
 import { type CurriculumLanguage, ENABLED_EXPLAIN, type Explain, explainName, explainOf, type TopicRef } from "../../scripts/lib.ts";
 import type { Choice } from "./chrome.ts";
+import type { Sample } from "./sample.ts";
 import type { Ui } from "./ui.ts";
 import type { Stage } from "./path.ts";
 import type { LinkFn } from "./html.ts";
@@ -11,6 +12,9 @@ export interface BuildOptions {
   siteUrl: string;
   // Umami analytics: the website to report to and the script that reports.
   umami?: { websiteId: string; src: string };
+  // Builds only these topics and their tracks in these explanation languages (sample.ts); home, credits and
+  // the missing page in every explanation language.
+  sample?: Sample;
 }
 
 export interface Page {
