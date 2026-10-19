@@ -1,5 +1,5 @@
 // The exported library matches its schema, holds every written topic, and keeps each block's type.
-import { expect, test } from "bun:test";
+import { expect, setDefaultTimeout, test } from "bun:test";
 import Ajv from "ajv";
 import { join } from "node:path";
 import { exportLibrary, type LibraryItem } from "./export.ts";
@@ -7,6 +7,10 @@ import { topic } from "./export/blocks.ts";
 import { inTrack } from "./export/text.ts";
 import { CONTENT, EXPLAIN_CODES, type ListBlock, loadCurriculum, loadTopics, readYaml } from "./lib.ts";
 import { SAMPLE as SAMPLE_TOPIC } from "./sample-topic.ts";
+
+// Each export reads every topic file: about a second here, and up to 15 s on a CI runner shared with the
+// rest of verify.
+setDefaultTimeout(30_000);
 
 const library = await exportLibrary();
 
