@@ -4,6 +4,7 @@ import { closingMenu, hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
 import { homeSearch } from "./client-home.ts";
 import { trackMenus } from "./client-track.ts";
+import { creditsCopy } from "./client-credits.ts";
 import { markChips } from "./client-chips.ts";
 import { closePanel, panels } from "./client-panel.ts";
 import { stepLinks, studyStep } from "./client-path.ts";
@@ -39,6 +40,7 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   topSearch();
   homeSearch();
   trackMenus();
+  creditsCopy();
   hidingBar();
   closingMenu();
 

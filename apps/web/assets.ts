@@ -32,6 +32,8 @@ const STYLES = [
   "track-rows",
   "track-menu",
   "track-phone",
+  "credits",
+  "credits-cards",
 ];
 
 // style.css: the parts of apps/web/styles/ joined in order.

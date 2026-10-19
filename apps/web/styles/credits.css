@@ -1,0 +1,163 @@
+/* The credits page (pages/credits.ts) in the frame: the product's card, its links and the grouped cards in two
+   columns above 860px */
+.cr-main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 84px 20px 56px;
+}
+.cr-heading {
+  margin-bottom: 16px !important;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.cr-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.cr-card {
+  background: var(--surface);
+  border-radius: 22px;
+  overflow: hidden;
+}
+.cr-h2 {
+  margin: 28px 0 8px 4px !important;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.cr-col + .cr-col > .cr-h2:first-child {
+  margin-top: 0 !important;
+}
+
+.cr-app {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 16px;
+}
+.cr-mark {
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.cr-mark svg {
+  display: block;
+}
+.cr-name {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.cr-tag {
+  margin-top: 3px !important;
+  font-size: 15px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+.cr-version {
+  margin: 8px 16px 0 !important;
+  font-size: 13px;
+  color: var(--muted);
+}
+.cr-links {
+  margin-top: 16px;
+}
+
+/* Rows: a tile, a title with its description, a value and the trailing mark; the separator starts at the title */
+.cr-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 8px 16px;
+  color: var(--text) !important;
+}
+.cr-row:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 58px;
+  right: 0;
+  bottom: 0;
+  height: 0.5px;
+  background: var(--pg-sep);
+}
+.cr-row:hover {
+  background: var(--pg-fill);
+}
+.cr-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  color: #ffffff;
+}
+.cr-tile svg {
+  display: block;
+}
+.cr-blue {
+  background: #2f5bd3;
+}
+.cr-green {
+  background: #34c759;
+}
+.cr-orange {
+  background: #ff9f0a;
+}
+.cr-grey {
+  background: #8e8e93;
+}
+.cr-ink {
+  background: #1d1d1f;
+}
+.cr-red {
+  background: #ff453a;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .cr-ink {
+    background: #3a3a3c;
+  }
+}
+html[data-theme="dark"] .cr-ink {
+  background: #3a3a3c;
+}
+.cr-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+}
+.cr-sub {
+  font-size: 15px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+.cr-row:has(.cr-value) .cr-text {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.cr-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  color: var(--muted);
+}
+.cr-trail {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--pg-chev);
+}
+.cr-trail svg {
+  display: block;
+}

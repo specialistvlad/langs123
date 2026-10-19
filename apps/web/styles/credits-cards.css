@@ -1,0 +1,115 @@
+/* The credits page's cards: the authors, how to credit with the copy button, the note and the closing line */
+.cr-people {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.cr-people p {
+  line-height: 1.35;
+}
+.cr-how {
+  padding: 14px 16px;
+}
+.cr-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 11px 12px 11px 14px;
+  border-radius: 12px;
+  background: var(--pg-fill);
+}
+.credit-line {
+  flex-grow: 1;
+  min-width: 0;
+  font:
+    500 14px/1.4 ui-monospace,
+    "SF Mono",
+    Menlo,
+    monospace;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+.cr-copy {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  padding: 8px;
+  margin: -8px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+.cr-copy svg {
+  display: block;
+}
+.cr-copy .cr-copy-done {
+  display: none;
+}
+.cr-copy.done .cr-copy-on {
+  display: none;
+}
+.cr-copy.done .cr-copy-done {
+  display: block;
+}
+.cr-changes {
+  margin-top: 12px !important;
+  line-height: 1.35;
+}
+.cr-note {
+  margin: 8px 16px 0 !important;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.cr-made {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 32px !important;
+  font-size: 14px;
+  color: var(--muted);
+}
+.cr-heart {
+  flex-shrink: 0;
+}
+.cr-main a:focus-visible,
+.cr-copy:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.cr-row:focus-visible {
+  outline-offset: -2px;
+  border-radius: 22px;
+}
+
+@media (max-width: 420px) {
+  .cr-value {
+    font-size: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .cr-value {
+    font-size: 14px;
+  }
+  .cr-row {
+    gap: 10px;
+  }
+  .cr-row:has(.cr-value) .cr-trail {
+    display: none;
+  }
+}
+@media (max-width: 860px) {
+  .cr-main {
+    padding: 76px 20px 56px;
+  }
+  .cr-cols {
+    display: block;
+  }
+  .cr-col + .cr-col > .cr-h2:first-child {
+    margin-top: 28px !important;
+  }
+}
