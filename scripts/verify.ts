@@ -1,7 +1,9 @@
 // Runs the checks of npm test, npm run e2e or npm run verify side by side, each in a process of its
 // own, and prints each check as it ends with its time; a check that fails prints its output, and the
-// run exits 1. Every test process builds the site into a folder of its own, build/test/<check>/.
+// run exits 1. Every test process builds the site into a folder of its own, build/test/<check>/; a
+// build holds about 4 GB, so as many test processes run at once as the machine's memory holds builds.
 // Run: npm test | npm run e2e | npm run verify
+import { totalmem } from "node:os";
 import { join } from "node:path";
 import { ROOT } from "./lib.ts";
 
@@ -40,10 +42,25 @@ if (checks === undefined) {
   process.exit(2);
 }
 
+// The test processes that may build at once, and the ones waiting for a turn.
+let builds = Math.max(1, Math.floor(totalmem() / 4.5e9));
+const waiting: (() => void)[] = [];
+const turn = async (): Promise<void> => {
+  if (builds > 0) builds--;
+  else await new Promise<void>((resolve) => waiting.push(resolve));
+};
+const done = (): void => {
+  const next = waiting.shift();
+  if (next === undefined) builds++;
+  else next();
+};
+
 const start = performance.now();
 const seconds = (since: number): string => `${((performance.now() - since) / 1000).toFixed(1)}s`;
 const results = await Promise.all(
   checks.map(async ([name, command]) => {
+    const building = command[1] === "test";
+    if (building) await turn();
     const began = performance.now();
     const env: Record<string, string | undefined> = {
       ...process.env,
@@ -57,6 +74,7 @@ const results = await Promise.all(
     const passed = /(\d+) pass\b/.exec(output.replace(/\x1b\[[0-9;]*m/g, ""))?.[1];
     console.log(`  ${code === 0 ? "✓" : "✗"} ${name}${passed === undefined ? "" : `, ${passed} tests`}  ${seconds(began)}`);
     if (code !== 0) console.log(output);
+    if (building) done();
     return code === 0;
   }),
 );
