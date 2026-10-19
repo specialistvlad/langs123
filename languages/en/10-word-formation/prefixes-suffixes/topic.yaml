@@ -1,0 +1,420 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: en.word-formation.prefixes-suffixes
+lang: en
+kind: grammar
+tags: [word-formation, prefixes, suffixes, derivation]
+concepts: [word-formation]
+related: [en.foundations.pronunciation-ipa, en.adjectives-adverbs.adverbs-frequency-manner, en.verbs.phrasal-verbs-core]
+status: { en: draft }
+
+title: { en: Prefixes and Suffixes }
+summary:
+  lead:
+    en: "Prefixes and suffixes build new words from a base: a suffix sets the word class, a prefix adds meaning, and a suffix can move the stress."
+  rule:
+    en: "The suffix, not the base, gives the word class:"
+  ex: { examples: [{ mapping: ["enjoy", { target: "enjoyment" }] }, { mapping: ["enjoy", { target: "enjoyable" }] }] }
+
+cheatsheet:
+  content:
+    - type: usage
+      columns:
+        - { key: point, label: { en: Point } }
+        - { key: rule, label: { en: Rule } }
+        - { key: ex, label: { en: Example } }
+      rows:
+        - { level: B2, point: { en: "Suffixes" }, rule: { en: [{ alternatives: [{ term: "-tion" }, { term: "-ment" }, { term: "-ness" }] }, " make nouns; ", { alternatives: [{ term: "-able" }, { term: "-ful" }, { term: "-ous" }] }, " make adjectives"] }, ex: { examples: [{ mapping: ["educate", { target: "education" }] }, { mapping: ["kind", { target: "kindness" }] }, { mapping: ["enjoy", { target: "enjoyable" }] }] } }
+        - { level: B2, point: { en: "Verb formation" }, rule: { en: [{ alternatives: [{ term: "-ise" }, { term: "-ify" }, { term: "-en" }, { term: "en-" }] }, " make verbs"] }, ex: { examples: [{ mapping: ["simple", { target: "simplify" }] }, { mapping: ["short", { target: "shorten" }] }, { mapping: ["rich", { target: "enrich" }] }] } }
+        - { level: B2, point: { en: "Negative prefixes" }, rule: { en: [{ alternatives: [{ term: "un-" }, { term: "in-" }, { term: "dis-" }, { term: "non-" }, { term: "mis-" }] }, " negate; ", { term: "in-" }, " becomes ", { term: "im-" }, ", ", { term: "il-" }, ", ", { term: "ir-" }] }, ex: { examples: [{ mapping: ["happy", { target: "unhappy" }] }, { mapping: ["agree", { target: "disagree" }] }] } }
+        - { level: B2, point: { en: "Other prefixes" }, rule: { en: [{ term: "re-" }, " again, ", { term: "over-" }, " too much, ", { term: "under-" }, " too little, ", { term: "ex-" }, " former"] }, ex: { examples: [{ mapping: ["write", { target: "rewrite" }] }, { mapping: ["cook", { target: "overcook" }] }, { mapping: ["wife", { target: "ex-wife" }] }] } }
+        - { level: B2, point: { en: "Sound" }, rule: { en: "some suffixes move the stress and shorten the vowel" }, ex: { examples: [{ mapping: [[{ stress: "ˈpho" }, "tograph"], { target: ["photo", { stress: "ˈgraph" }, "ic"] }] }, { mapping: ["divide", { target: "division" }] }] } }
+        - { level: B2, point: { en: "Trap" }, rule: { en: [{ term: "possible" }, " takes ", { term: "in-" }, ", which becomes ", { term: "im-" }, " before p"] }, ex: ["It is ", { target: "impossible" }, " to finish today."] }
+        - { level: C1, point: { en: "Productive suffixes" }, rule: { en: [{ alternatives: [{ term: "-ish" }, { term: "-y" }, { term: "-able" }, { term: "-ify" }, { term: "-ism" }] }, " attach freely to new bases"] }, ex: { examples: [{ mapping: ["download", { target: "downloadable" }] }, { mapping: ["solid", { target: "solidify" }] }] } }
+        - { level: C1, point: { alternatives: [{ term: "-ity" }, { term: "-ness" }] }, rule: { en: [{ term: "-ity" }, " usually follows a Latinate adjective, ", { term: "-ness" }, " a native one"] }, ex: { examples: [{ mapping: ["possible", { target: "possibility" }] }, { mapping: ["kind", { target: "kindness" }] }] } }
+        - { level: C1, point: { en: "Combining forms" }, rule: { en: "Greek and Latin forms build technical words" }, ex: { examples: [{ target: "biology" }, { target: "geography" }, { target: "telephone" }] } }
+        - { level: C1, point: { en: "Register" }, rule: { en: "Latinate words sound more formal than their native partners" }, ex: { examples: [{ equivalence: ["begin", { target: "commence" }] }, { equivalence: ["enough", { target: "sufficient" }] }] } }
+        - { level: C2, point: { en: "Look-alikes" }, rule: { en: "a pair of suffixes can split the meaning" }, ex: { examples: [["an ", { target: "economic" }, " crisis"], ["an ", { target: "economical" }, " car"]] } }
+        - { level: C2, point: { en: "Rare and new affixes" }, rule: { en: [{ term: "hyper-" }, " and ", { term: "pseudo-" }, " are learned; ", { term: "-holic" }, " and ", { term: "-gate" }, " are coinages"] }, ex: { examples: [{ target: "hypersensitive" }, { target: "pseudonym" }, { target: "workaholic" }] } }
+
+sections:
+  - title: { en: Overview }
+    role: overview
+    content:
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "A suffix ends a word and usually sets its class; a prefix starts it and usually keeps the class." }
+            ex: { examples: [{ mapping: ["happy", { target: "happiness" }] }, { mapping: ["happy", { target: "unhappy" }] }] }
+          - type: rule
+            level: B2
+            text: { en: "Read a new word in order: the suffix gives the class, the prefix adds meaning, the base the core." }
+            ex: { mapping: [{ pattern: ["dis", "agree", "ment"] }, { target: "disagreement" }] }
+          - type: rule
+            level: B2
+            text: { en: ["Letters that look like an affix are not always one: ", { term: "singer" }, " has ", { term: "-er" }, ", ", { term: "finger" }, " does not."] }
+
+  - title: { en: Noun suffixes }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: suffix, label: { en: Suffix } }
+          - { key: makes, label: { en: Makes } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, suffix: { alternatives: [{ term: "-tion" }, { term: "-sion" }, { term: "-ation" }] }, makes: { en: [{ mapping: [{ slot: verb }, { slot: noun }] }, ": the action or its result"] }, ex: { examples: [{ mapping: ["educate", { target: "education" }] }, { mapping: ["decide", { target: "decision" }] }, { mapping: ["inform", { target: "information" }] }] } }
+          - { level: B2, suffix: { term: "-ment" }, makes: { en: [{ mapping: [{ slot: verb }, { slot: noun }] }, ": the action or its result"] }, ex: { examples: [{ mapping: ["improve", { target: "improvement" }] }, { mapping: ["develop", { target: "development" }] }, { mapping: ["agree", { target: "agreement" }] }] } }
+          - { level: B2, suffix: { term: "-ness" }, makes: { en: [{ mapping: [{ slot: adjective }, { slot: noun }] }, ": a quality or state"] }, ex: { examples: [{ mapping: ["kind", { target: "kindness" }] }, { mapping: ["dark", { target: "darkness" }] }, { mapping: ["happy", { target: "happiness" }] }] } }
+          - { level: B2, suffix: { term: "-ity" }, makes: { en: [{ mapping: [{ slot: adjective }, { slot: noun }] }, ": a quality or state"] }, ex: { examples: [{ mapping: ["able", { target: "ability" }] }, { mapping: ["active", { target: "activity" }] }, { mapping: ["popular", { target: "popularity" }] }] } }
+          - { level: B2, suffix: { alternatives: [{ term: "-ence" }, { term: "-ance" }] }, makes: { en: [{ mapping: [{ alternatives: [{ slot: verb }, { slot: adjective }] }, { slot: noun }] }, ": an action, quality or state"] }, ex: { examples: [{ mapping: ["perform", { target: "performance" }] }, { mapping: ["differ", { target: "difference" }] }, { mapping: ["important", { target: "importance" }] }] } }
+          - { level: B2, suffix: { term: "-ship" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: noun }] }, ": a state, a relationship or a skill"] }, ex: { examples: [{ mapping: ["friend", { target: "friendship" }] }, { mapping: ["member", { target: "membership" }] }, { mapping: ["leader", { target: "leadership" }] }] } }
+          - { level: B2, suffix: { term: "-hood" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: noun }] }, ": a stage or state of life"] }, ex: { examples: [{ mapping: ["child", { target: "childhood" }] }, { mapping: ["adult", { target: "adulthood" }] }, { mapping: ["parent", { target: "parenthood" }] }] } }
+          - { level: B2, suffix: { term: "-dom" }, makes: { en: [{ mapping: [{ alternatives: [{ slot: noun }, { slot: adjective }] }, { slot: noun }] }, ": a state or a realm"] }, ex: { examples: [{ mapping: ["free", { target: "freedom" }] }, { mapping: ["king", { target: "kingdom" }] }, { mapping: ["bore", { target: "boredom" }] }] } }
+          - { level: B2, suffix: { alternatives: [{ term: "-er" }, { term: "-or" }, { term: "-ist" }, { term: "-ian" }] }, makes: { en: [{ mapping: [{ alternatives: [{ slot: verb }, { slot: noun }] }, { slot: person }] }, ": the person who does it"] }, ex: { examples: [{ mapping: ["teach", { target: "teacher" }] }, { mapping: ["art", { target: "artist" }] }, { mapping: ["music", { target: "musician" }] }] } }
+          - { level: B2, suffix: { term: "-ism" }, makes: { en: [{ mapping: [{ alternatives: [{ slot: noun }, { slot: adjective }] }, { slot: noun }] }, ": a belief, a system or a practice"] }, ex: { examples: [{ mapping: ["tour", { target: "tourism" }] }, { mapping: ["journal", { target: "journalism" }] }, { mapping: ["real", { target: "realism" }] }] } }
+          - { level: B2, suffix: { term: "-th" }, makes: { en: [{ mapping: [{ slot: adjective }, { slot: noun }] }, ": a measure, with a changed vowel"] }, ex: { examples: [{ mapping: ["long", { target: "length" }] }, { mapping: ["deep", { target: "depth" }] }, { mapping: ["wide", { target: "width" }] }, { mapping: ["strong", { target: "strength" }] }] } }
+
+  - title: { en: Adjective suffixes }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: suffix, label: { en: Suffix } }
+          - { key: makes, label: { en: Makes } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, suffix: { alternatives: [{ term: "-able" }, { term: "-ible" }] }, makes: { en: [{ mapping: [{ slot: verb }, { slot: adjective }] }, ": that can be done"] }, ex: { examples: [{ mapping: ["enjoy", { target: "enjoyable" }] }, { mapping: ["accept", { target: "acceptable" }] }, { mapping: ["reverse", { target: "reversible" }] }] } }
+          - { level: B2, suffix: { term: "-ful" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": full of"] }, ex: { examples: [{ mapping: ["care", { target: "careful" }] }, { mapping: ["success", { target: "successful" }] }, { mapping: ["use", { target: "useful" }] }] } }
+          - { level: B2, suffix: { term: "-less" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": without"] }, ex: { examples: [{ mapping: ["home", { target: "homeless" }] }, { mapping: ["hope", { target: "hopeless" }] }, { mapping: ["end", { target: "endless" }] }] } }
+          - { level: B2, suffix: { term: "-ive" }, makes: { en: [{ mapping: [{ slot: verb }, { slot: adjective }] }, ": tending to"] }, ex: { examples: [{ mapping: ["act", { target: "active" }] }, { mapping: ["create", { target: "creative" }] }, { mapping: ["attract", { target: "attractive" }] }] } }
+          - { level: B2, suffix: { term: "-ous" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": having the quality"] }, ex: { examples: [{ mapping: ["danger", { target: "dangerous" }] }, { mapping: ["fame", { target: "famous" }] }, { mapping: ["adventure", { target: "adventurous" }] }] } }
+          - { level: B2, suffix: { term: "-al" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": relating to"] }, ex: { examples: [{ mapping: ["nation", { target: "national" }] }, { mapping: ["culture", { target: "cultural" }] }, { mapping: ["tradition", { target: "traditional" }] }] } }
+          - { level: B2, suffix: { alternatives: [{ term: "-ic" }, { term: "-ical" }] }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": relating to"] }, ex: { examples: [{ mapping: ["artist", { target: "artistic" }] }, { mapping: ["biology", { target: "biological" }] }, { mapping: ["geography", { target: "geographical" }] }] } }
+          - { level: B2, suffix: { term: "-y" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": full of, or like"] }, ex: { examples: [{ mapping: ["rain", { target: "rainy" }] }, { mapping: ["salt", { target: "salty" }] }, { mapping: ["health", { target: "healthy" }] }] } }
+          - { level: B2, suffix: { term: "-ish" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": like, or typical of"] }, ex: { examples: [{ mapping: ["child", { target: "childish" }] }, { mapping: ["fool", { target: "foolish" }] }, { mapping: ["style", { target: "stylish" }] }] } }
+          - { level: B2, suffix: { term: "-ly" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": like, or every"] }, ex: { examples: [{ mapping: ["friend", { target: "friendly" }] }, { mapping: ["love", { target: "lovely" }] }, { mapping: ["week", { target: "weekly" }] }] } }
+          - { level: B2, suffix: { alternatives: [{ term: "-ent" }, { term: "-ant" }] }, makes: { en: [{ mapping: [{ slot: verb }, { slot: adjective }] }, ": doing or being"] }, ex: { examples: [{ mapping: ["depend", { target: "dependent" }] }, { mapping: ["please", { target: "pleasant" }] }, { mapping: ["resist", { target: "resistant" }] }] } }
+
+  - title: { en: Verb formation }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: affix, label: { en: Affix } }
+          - { key: makes, label: { en: Makes } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, affix: [{ term: "-ise" }, " ", { variant: { term: "-ize" }, variety: en-US }], makes: { en: [{ mapping: [{ alternatives: [{ slot: adjective }, { slot: noun }] }, { slot: verb }] }, ": make or become"] }, ex: { examples: [[{ mapping: ["modern", { target: "modernise" }] }, " ", { variant: { target: "modernize" }, variety: en-US }], [{ mapping: ["real", { target: "realise" }] }, " ", { variant: { target: "realize" }, variety: en-US }], [{ mapping: ["memory", { target: "memorise" }] }, " ", { variant: { target: "memorize" }, variety: en-US }]] } }
+          - { level: B2, affix: { term: "-ify" }, makes: { en: [{ mapping: [{ alternatives: [{ slot: adjective }, { slot: noun }] }, { slot: verb }] }, ": make"] }, ex: { examples: [{ mapping: ["simple", { target: "simplify" }] }, { mapping: ["class", { target: "classify" }] }, { mapping: ["pure", { target: "purify" }] }] } }
+          - { level: B2, affix: { term: "-en" }, makes: { en: [{ mapping: [{ alternatives: [{ slot: adjective }, { slot: noun }] }, { slot: verb }] }, ": make or become"] }, ex: { examples: [{ mapping: ["short", { target: "shorten" }] }, { mapping: ["wide", { target: "widen" }] }, { mapping: ["strength", { target: "strengthen" }] }] } }
+          - { level: B2, affix: { alternatives: [{ term: "en-" }, { term: "em-" }] }, makes: { en: [{ mapping: [{ alternatives: [{ slot: adjective }, { slot: noun }] }, { slot: verb }] }, ": put into a state; ", { term: "em-" }, " stands before b, m and p"] }, ex: { examples: [{ mapping: ["able", { target: "enable" }] }, { mapping: ["rich", { target: "enrich" }] }, { mapping: ["power", { target: "empower" }] }] } }
+          - { level: B2, affix: { term: "be-" }, makes: { en: [{ mapping: [{ alternatives: [{ slot: noun }, { slot: adjective }] }, { slot: verb }] }, ": treat as, or make"] }, ex: { examples: [{ mapping: ["friend", { target: "befriend" }] }, { mapping: ["little", { target: "belittle" }] }] } }
+
+  - title: { en: Negative and reversing prefixes }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: prefix, label: { en: Prefix } }
+          - { key: use, label: { en: Use } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, prefix: { en: [{ term: "un-" }, " with an adjective or participle"] }, use: { en: "not" }, ex: { examples: [{ mapping: ["happy", { target: "unhappy" }] }, { mapping: ["fair", { target: "unfair" }] }, { mapping: ["finished", { target: "unfinished" }] }] } }
+          - { level: B2, prefix: { en: [{ term: "un-" }, " with a verb"] }, use: { en: "reverses the action" }, ex: { examples: [{ mapping: ["do", { target: "undo" }] }, { mapping: ["lock", { target: "unlock" }] }, { mapping: ["pack", { target: "unpack" }] }] } }
+          - { level: B2, prefix: { alternatives: [{ term: "in-" }, { term: "im-" }, { term: "il-" }, { term: "ir-" }] }, use: { en: ["not, with an adjective; ", { term: "im-" }, " stands before b, m and p, ", { term: "il-" }, " before l, ", { term: "ir-" }, " before r"] }, ex: { examples: [{ mapping: ["correct", { target: "incorrect" }] }, { mapping: ["possible", { target: "impossible" }] }, { mapping: ["legal", { target: "illegal" }] }, { mapping: ["regular", { target: "irregular" }] }] } }
+          - { level: B2, prefix: { term: "dis-" }, use: { en: "the opposite, or the lack of it" }, ex: { examples: [{ mapping: ["agree", { target: "disagree" }] }, { mapping: ["like", { target: "dislike" }] }, { mapping: ["honest", { target: "dishonest" }] }, { mapping: ["connect", { target: "disconnect" }] }] } }
+          - { level: B2, prefix: { term: "non-" }, use: { en: "not, or without" }, ex: { examples: [{ mapping: ["stop", { target: "non-stop" }] }, { mapping: ["fiction", { target: "non-fiction" }] }, { mapping: ["smoker", { target: "non-smoker" }] }] } }
+          - { level: B2, prefix: { term: "mis-" }, use: { en: "wrongly or badly" }, ex: { examples: [{ mapping: ["understand", { target: "misunderstand" }] }, { mapping: ["spell", { target: "misspell" }] }, { mapping: ["lead", { target: "mislead" }] }] } }
+          - { level: B2, prefix: { term: "de-" }, use: { en: "removes or reverses" }, ex: { examples: [{ mapping: ["code", { target: "decode" }] }, { mapping: ["frost", { target: "defrost" }] }, { mapping: ["activate", { target: "deactivate" }] }] } }
+          - { level: B2, prefix: { term: "anti-" }, use: { en: "against" }, ex: { examples: [{ mapping: ["social", { target: "antisocial" }] }, [{ mapping: ["clockwise", { target: "anticlockwise" }] }, " ", { variant: { target: "counterclockwise" }, variety: en-US }], { mapping: ["smoking", { target: "anti-smoking" }] }] } }
+      - type: list
+        items:
+          - type: rule
+            level: B2
+            text: { en: "Most bases take only one negative prefix: learn the pair with the word." }
+            ex: { examples: [{ target: "unhappy" }, { target: "impossible" }, { target: "dishonest" }] }
+
+  - title: { en: Other prefixes }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: prefix, label: { en: Prefix } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, prefix: { term: "re-" }, meaning: { en: "again" }, ex: { examples: [{ mapping: ["write", { target: "rewrite" }] }, { mapping: ["build", { target: "rebuild" }] }, { mapping: ["start", { target: "restart" }] }] } }
+          - { level: B2, prefix: { term: "pre-" }, meaning: { en: "before" }, ex: { examples: [{ mapping: ["heat", { target: "preheat" }] }, { mapping: ["view", { target: "preview" }] }, { mapping: ["historic", { target: "prehistoric" }] }] } }
+          - { level: B2, prefix: { term: "post-" }, meaning: { en: "after" }, ex: { examples: [{ mapping: ["graduate", { target: "postgraduate" }] }, { mapping: ["script", { target: "postscript" }] }] } }
+          - { level: B2, prefix: { term: "over-" }, meaning: { en: "too much" }, ex: { examples: [{ mapping: ["work", { target: "overwork" }] }, { mapping: ["cook", { target: "overcook" }] }, { mapping: ["crowded", { target: "overcrowded" }] }] } }
+          - { level: B2, prefix: { term: "under-" }, meaning: { en: "too little, or below" }, ex: { examples: [{ mapping: ["pay", { target: "underpay" }] }, { mapping: ["estimate", { target: "underestimate" }] }, { mapping: ["ground", { target: "underground" }] }] } }
+          - { level: B2, prefix: { term: "out-" }, meaning: { en: "more or better than" }, ex: { examples: [{ mapping: ["run", { target: "outrun" }] }, { mapping: ["live", { target: "outlive" }] }, { mapping: ["number", { target: "outnumber" }] }] } }
+          - { level: B2, prefix: { term: "sub-" }, meaning: { en: "under, below" }, ex: { examples: [{ mapping: ["way", { target: "subway" }] }, { mapping: ["title", { target: "subtitle" }] }, { mapping: ["standard", { target: "substandard" }] }] } }
+          - { level: B2, prefix: { term: "super-" }, meaning: { en: "above, more than" }, ex: { examples: [{ mapping: ["market", { target: "supermarket" }] }, { mapping: ["human", { target: "superhuman" }] }, { mapping: ["natural", { target: "supernatural" }] }] } }
+          - { level: B2, prefix: { term: "inter-" }, meaning: { en: "between" }, ex: { examples: [{ mapping: ["national", { target: "international" }] }, { mapping: ["act", { target: "interact" }] }, { mapping: ["net", { target: "internet" }] }] } }
+          - { level: B2, prefix: { term: "trans-" }, meaning: { en: "across, or into another state" }, ex: { examples: [{ mapping: ["Atlantic", { target: "transatlantic" }] }, { mapping: ["form", { target: "transform" }] }, { mapping: ["plant", { target: "transplant" }] }] } }
+          - { level: B2, prefix: { term: "multi-" }, meaning: { en: "many" }, ex: { examples: [{ mapping: ["national", { target: "multinational" }] }, { mapping: ["cultural", { target: "multicultural" }] }, { mapping: ["purpose", { target: "multipurpose" }] }] } }
+          - { level: B2, prefix: { term: "semi-" }, meaning: { en: "half, partly" }, ex: { examples: [{ mapping: ["circle", { target: "semicircle" }] }, { mapping: ["final", { target: "semi-final" }] }, { mapping: ["detached", { target: "semi-detached" }] }] } }
+          - { level: B2, prefix: { term: "mid-" }, meaning: { en: "the middle of" }, ex: { examples: [{ mapping: ["night", { target: "midnight" }] }, { mapping: ["summer", { target: "midsummer" }] }, { mapping: ["week", { target: "midweek" }] }] } }
+          - { level: B2, prefix: { term: "co-" }, meaning: { en: "together" }, ex: { examples: [{ mapping: ["author", { target: "co-author" }] }, { mapping: ["exist", { target: "coexist" }] }, { mapping: ["worker", { target: "co-worker" }] }] } }
+          - { level: B2, prefix: { term: "ex-" }, meaning: { en: "former" }, ex: { examples: [{ mapping: ["wife", { target: "ex-wife" }] }, { mapping: ["president", { target: "ex-president" }] }, { mapping: ["boss", { target: "ex-boss" }] }] } }
+          - { level: B2, prefix: { term: "self-" }, meaning: { en: "of, to or by oneself" }, ex: { examples: [{ mapping: ["employed", { target: "self-employed" }] }, { mapping: ["confident", { target: "self-confident" }] }, { mapping: ["service", { target: "self-service" }] }] } }
+          - { level: B2, prefix: { alternatives: [{ term: "bi-" }, { term: "tri-" }] }, meaning: { en: "two, three" }, ex: { examples: [{ mapping: ["lingual", { target: "bilingual" }] }, { mapping: ["cycle", { target: "bicycle" }] }, { mapping: ["angle", { target: "triangle" }] }] } }
+
+  - title: { en: "Spelling: joining an affix" }
+    role: spelling
+    content:
+      - type: usage
+        columns:
+          - { key: join, label: { en: Join } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, join: { en: [{ term: "-tion" }, " and ", { term: "-sion" }, " after some verbs"] }, rule: { en: "the base changes its letters" }, ex: { examples: [{ mapping: ["explain", { target: "explanation" }] }, { mapping: ["pronounce", { target: "pronunciation" }] }, { mapping: ["repeat", { target: "repetition" }] }, { mapping: ["decide", { target: "decision" }] }] } }
+          - { level: B2, join: { alternatives: [{ term: "ex-" }, { term: "self-" }, { term: "non-" }] }, rule: { en: "a hyphen follows the prefix" }, ex: { examples: [{ target: "ex-wife" }, { target: "self-employed" }, { target: "non-stop" }] } }
+          - { level: B2, join: { en: "a prefix before a capital letter or a number" }, rule: { en: "a hyphen follows the prefix" }, ex: { examples: [{ target: "anti-American" }, { target: "pre-1990" }, { target: "mid-July" }] } }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["Doubling, silent e and y to i apply to affixes as to any ending: see ", { link: "Spelling Rules", to: en.foundations.spelling-rules }, "."] }
+
+  - title: { en: "Pronunciation: stress and sound changes" }
+    role: pronunciation
+    content:
+      - type: usage
+        columns:
+          - { key: change, label: { en: Change } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: B2, change: { en: "stress moves" }, rule: { en: [{ alternatives: [{ term: "-ic" }, { term: "-ical" }, { term: "-ity" }, { term: "-ion" }] }, " put the stress on the syllable before the suffix"] }, ex: { examples: [{ mapping: [[{ stress: "ˈpho" }, "tograph"], { target: ["photo", { stress: "ˈgraph" }, "ic"] }] }, { mapping: [["e", { stress: "ˈlec" }, "tric"], { target: ["elec", { stress: "ˈtri" }, "city"] }] }] } }
+          - { level: B2, change: { en: "stress stays" }, rule: { en: [{ alternatives: [{ term: "-ness" }, { term: "-ment" }, { term: "-ful" }, { term: "-ly" }, { term: "un-" }, { term: "dis-" }, { term: "mis-" }] }, " leave the stress on the base"] }, ex: { examples: [{ mapping: [[{ stress: "ˈhap" }, "py"], { target: [{ stress: "ˈhap" }, "piness"] }] }, { mapping: [["a", { stress: "ˈgree" }], { target: ["dis", "a", { stress: "ˈgree" }] }] }] } }
+          - { level: B2, change: { en: "the vowel shortens" }, rule: { en: "a long vowel or diphthong often becomes short in the longer word" }, ex: { examples: [{ mapping: [["serene ", { ipa: "səˈriːn" }], [{ target: "serenity" }, " ", { ipa: "səˈrenəti" }]] }, { mapping: [["sane ", { ipa: "seɪn" }], [{ target: "sanity" }, " ", { ipa: "ˈsænəti" }]] }, { mapping: [["divide ", { ipa: "dɪˈvaɪd" }], [{ target: "division" }, " ", { ipa: "dɪˈvɪʒn" }]] }] } }
+          - { level: B2, change: { en: "the consonant changes" }, rule: { en: [{ alternatives: [{ term: "-ity" }, { term: "-ian" }] }, " change the sound of a final ", { letter: "c" }] }, ex: { examples: [{ mapping: [["electric ", { ipa: "ɪˈlektrɪk" }], [{ target: "electricity" }, " ", { ipa: "ɪˌlekˈtrɪsəti" }]] }, { mapping: [["music ", { ipa: "ˈmjuːzɪk" }], [{ target: "musician" }, " ", { ipa: "mjuˈzɪʃn" }]] }] } }
+      - type: list
+        items:
+          - type: note
+            level: B2
+            text: { en: ["The stress patterns of suffixes are set out in ", { link: "Sounds and IPA", to: en.foundations.pronunciation-ipa }, "."] }
+
+  - title: { en: Productive suffixes and their limits }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: suffix, label: { en: Suffix } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, suffix: { term: "-ish" }, rule: { en: "added to an adjective, a number or a time in speech: roughly" }, ex: { examples: [{ mapping: ["tall", { target: "tallish" }] }, { mapping: ["cold", { target: "coldish" }] }, { mapping: ["eight", { target: "eightish" }] }] } }
+          - { level: C1, suffix: { term: "-y" }, rule: { en: "added to a noun or verb for an informal adjective of quality" }, ex: { examples: [{ mapping: ["stretch", { target: "stretchy" }] }, { mapping: ["bend", { target: "bendy" }] }, { mapping: ["fizz", { target: "fizzy" }] }] } }
+          - { level: C1, suffix: { term: "-able" }, rule: { en: "added to a verb that takes an object, new verbs included" }, ex: { examples: [{ mapping: ["download", { target: "downloadable" }] }, { mapping: ["recycle", { target: "recyclable" }] }, { mapping: ["wash", { target: "washable" }] }] } }
+          - { level: C1, suffix: { alternatives: [{ term: "-ise" }, { term: "-ify" }] }, rule: { en: [{ term: "-ise" }, " forms new verbs freely, especially in business; ", { term: "-ify" }, " joins short bases"] }, ex: { examples: [[{ mapping: ["private", { target: "privatise" }] }, " ", { variant: { target: "privatize" }, variety: en-US }], [{ mapping: ["priority", { target: "prioritise" }] }, " ", { variant: { target: "prioritize" }, variety: en-US }], { mapping: ["game", { target: "gamify" }] }] } }
+          - { level: C1, suffix: { term: "-ation" }, rule: { en: [{ term: "-ise" }, " gives ", { term: "-isation" }, ", ", { term: "-ify" }, " gives ", { term: "-ification" }] }, ex: { examples: [[{ mapping: ["organise", { target: "organisation" }] }, " ", { variant: { mapping: ["organize", { target: "organization" }] }, variety: en-US }], { mapping: ["simplify", { target: "simplification" }] }] } }
+          - { level: C1, suffix: { term: "-ism" }, rule: { en: ["names a movement from a person or a noun; its follower takes ", { term: "-ist" }] }, ex: { examples: [{ mapping: ["minimal", { target: "minimalism" }] }, { mapping: ["Darwin", { target: "Darwinism" }] }, { mapping: ["individual", { target: "individualism" }] }] } }
+      - type: usage
+        columns:
+          - { key: suffix, label: { en: Suffix } }
+          - { key: makes, label: { en: Makes } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, suffix: { term: "-proof" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": protected against"] }, ex: { examples: [{ mapping: ["water", { target: "waterproof" }] }, { mapping: ["child", { target: "childproof" }] }, { mapping: ["fire", { target: "fireproof" }] }] } }
+          - { level: C1, suffix: { term: "-friendly" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": suited to, or kind to"] }, ex: { examples: [{ mapping: ["user", { target: "user-friendly" }] }, { mapping: ["child", { target: "child-friendly" }] }, { mapping: ["eco", { target: "eco-friendly" }] }] } }
+          - { level: C1, suffix: { term: "-free" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": without"] }, ex: { examples: [{ mapping: ["sugar", { target: "sugar-free" }] }, { mapping: ["hassle", { target: "hassle-free" }] }, { mapping: ["tax", { target: "tax-free" }] }] } }
+          - { level: C1, suffix: { term: "-led" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adjective }] }, ": directed by"] }, ex: { examples: [{ mapping: ["teacher", { target: "teacher-led" }] }, { mapping: ["student", { target: "student-led" }] }, { mapping: ["export", { target: "export-led" }] }] } }
+          - { level: C1, suffix: { term: "-wise" }, makes: { en: [{ mapping: [{ slot: noun }, { slot: adverb }] }, ": as far as the noun is concerned, in informal speech"] }, ex: { examples: [{ mapping: ["money", { target: "moneywise" }] }, { mapping: ["weather", { target: "weatherwise" }] }, { mapping: ["time", { target: "timewise" }] }] } }
+      - type: usage
+        columns:
+          - { key: point, label: { en: Point } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, point: { term: "-ity" }, rule: { en: "usually follows a Latinate adjective" }, ex: { examples: [{ mapping: ["possible", { target: "possibility" }] }, { mapping: ["generous", { target: "generosity" }] }, { mapping: ["electric", { target: "electricity" }] }] } }
+          - { level: C1, point: { term: "-ness" }, rule: { en: "usually follows a native adjective, and joins almost any new one" }, ex: { examples: [{ mapping: ["kind", { target: "kindness" }] }, { mapping: ["dark", { target: "darkness" }] }, { mapping: ["awkward", { target: "awkwardness" }] }] } }
+          - { level: C1, point: { en: "order of suffixes" }, rule: { en: "each suffix joins the word class that the one before it made" }, ex: [{ mapping: ["nation", "national", "nationalise", { target: "nationalisation" }] }, " ", { variant: { mapping: ["nation", "national", "nationalize", { target: "nationalization" }] }, variety: en-US }] }
+          - { level: C1, point: { en: "prefix in a chain" }, rule: { en: "a prefix joins the word it fits, and a suffix can follow" }, ex: { mapping: ["break", "breakable", "unbreakable", { target: "unbreakability" }] } }
+
+  - title: { en: Greek and Latin combining forms }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, form: { term: "bio-" }, meaning: { en: "life" }, ex: { examples: [{ target: "biology" }, { target: "biography" }, { target: "biodiversity" }] } }
+          - { level: C1, form: { term: "geo-" }, meaning: { en: "earth" }, ex: { examples: [{ target: "geography" }, { target: "geology" }, { target: "geothermal" }] } }
+          - { level: C1, form: { term: "hydro-" }, meaning: { en: "water" }, ex: { examples: [{ target: "hydroelectric" }, { target: "hydrogen" }, { target: "hydrofoil" }] } }
+          - { level: C1, form: { term: "photo-" }, meaning: { en: "light" }, ex: { examples: [{ target: "photograph" }, { target: "photocopy" }, { target: "photosynthesis" }] } }
+          - { level: C1, form: { term: "tele-" }, meaning: { en: "far, at a distance" }, ex: { examples: [{ target: "telephone" }, { target: "television" }, { target: "telescope" }] } }
+          - { level: C1, form: { term: "micro-" }, meaning: { en: "very small" }, ex: { examples: [{ target: "microscope" }, { target: "microwave" }, { target: "microphone" }] } }
+          - { level: C1, form: { term: "macro-" }, meaning: { en: "large, on a large scale" }, ex: { examples: [{ target: "macroeconomics" }, { target: "macronutrient" }, { target: "macroscopic" }] } }
+          - { level: C1, form: { term: "mono-" }, meaning: { en: "one, single" }, ex: { examples: [{ target: "monologue" }, { target: "monotone" }, { target: "monolingual" }] } }
+          - { level: C1, form: { term: "poly-" }, meaning: { en: "many" }, ex: { examples: [{ target: "polygon" }, { target: "polyglot" }, { target: "polytechnic" }] } }
+          - { level: C1, form: { term: "auto-" }, meaning: { en: "self" }, ex: { examples: [{ target: "autobiography" }, { target: "automatic" }, { target: "autopilot" }] } }
+      - type: usage
+        columns:
+          - { key: form, label: { en: Form } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, form: { term: "-logy" }, meaning: { en: "the study of" }, ex: { examples: [{ target: "biology" }, { target: "psychology" }, { target: "technology" }] } }
+          - { level: C1, form: { term: "-graphy" }, meaning: { en: "writing, drawing or recording" }, ex: { examples: [{ target: "geography" }, { target: "photography" }, { target: "biography" }] } }
+          - { level: C1, form: { term: "-phobia" }, meaning: { en: "fear of" }, ex: { examples: [{ target: "claustrophobia" }, { target: "arachnophobia" }, { target: "xenophobia" }] } }
+          - { level: C1, form: { term: "-cracy" }, meaning: { en: "rule by" }, ex: { examples: [{ target: "democracy" }, { target: "bureaucracy" }, { target: "aristocracy" }] } }
+          - { level: C1, form: { term: "-ectomy" }, meaning: { en: "surgical removal of" }, ex: { examples: [[{ target: "appendicectomy" }, " ", { variant: { target: "appendectomy" }, variety: en-US }], { target: "tonsillectomy" }, { target: "vasectomy" }] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "A linking o joins a form that ends in a consonant to the next form." }
+            ex: { mapping: [{ pattern: ["psych", "o", "logy"] }, { target: "psychology" }] }
+          - type: rule
+            level: C1
+            text: { en: [{ alternatives: [{ term: "-ology" }, { term: "-graphy" }] }, " put the stress on the syllable before the ending."] }
+            ex: { examples: [["bi", { stress: "ˈol" }, "ogy"], ["ge", { stress: "ˈog" }, "raphy"], ["psy", { stress: "ˈchol" }, "ogy"]] }
+
+  - title: { en: "Adjectives in -ed" }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: pattern, label: { en: Pattern } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, pattern: { pattern: [{ slot: noun }, { ending: ed }] }, rule: { en: "having the noun; many have no verb behind them" }, ex: { examples: [{ mapping: ["talent", { target: "talented" }] }, { mapping: ["beard", { target: "bearded" }] }, { mapping: ["wood", { target: "wooded" }] }] } }
+          - { level: C1, pattern: { pattern: [{ slot: adjective }, { slot: noun }, { ending: ed }] }, rule: { en: "having that feature; a hyphen joins the parts before a noun" }, ex: { examples: [["a ", { target: "blue-eyed" }, " girl"], ["a ", { target: "kind-hearted" }, " man"], ["a ", { target: "left-handed" }, " player"]] } }
+      - type: list
+        items:
+          - type: rule
+            level: C1
+            text: { en: "The noun in the compound stays singular." }
+            ex: { examples: [["a ", { target: "long-legged" }, " bird"], ["a ", { target: "two-faced" }, " friend"]] }
+
+  - title: { en: "Compare: everyday and formal words" }
+    role: compare
+    content:
+      - type: comparison
+        columns:
+          - { key: everyday, label: { en: Everyday } }
+          - { key: formal, label: { en: Formal } }
+        rows:
+          - { level: C1, everyday: ["The meeting will ", { target: "begin" }, " at nine."], formal: ["The meeting will ", { target: "commence" }, " at nine."] }
+          - { level: C1, everyday: ["We ", { target: "bought" }, " the tickets online."], formal: ["We ", { target: "purchased" }, " the tickets online."] }
+          - { level: C1, everyday: ["I ", { target: "asked" }, " about the price."], formal: ["I ", { target: "enquired" }, " ", { variant: { target: "inquired" }, variety: en-US }, " about the price."] }
+          - { level: C1, everyday: ["The test ", { target: "shows" }, " that the plan works."], formal: ["The test ", { target: "demonstrates" }, " that the plan works."] }
+          - { level: C1, everyday: ["We have ", { target: "enough" }, " time."], formal: ["We have ", { target: "sufficient" }, " time."] }
+          - { level: C1, everyday: ["You can ", { target: "get" }, " a form at the desk."], formal: ["You can ", { target: "obtain" }, " a form at the desk."] }
+          - { level: C1, everyday: ["Visitors ", { target: "need" }, " a pass."], formal: ["Visitors ", { target: "require" }, " a pass."] }
+      - type: usage
+        columns:
+          - { key: point, label: { en: Point } }
+          - { key: register, label: { en: Register } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C1, point: { alternatives: [{ term: "-ate" }, { term: "-ify" }, { term: "-ant" }, { term: "-ion" }] }, register: { en: "Latinate endings build formal and technical words" }, ex: { examples: [{ equivalence: ["speed up", { target: "accelerate" }] }, { equivalence: ["make clear", { target: "clarify" }] }, { equivalence: ["helper", { target: "assistant" }] }, { equivalence: ["choice", { target: "selection" }] }] } }
+          - { level: C1, point: { en: "Latinate verbs" }, register:{ en: ["a Latinate verb replaces a phrasal verb in formal writing: see ", { link: "Phrasal Verbs: Core", to: en.verbs.phrasal-verbs-core }] }, ex: { examples: [{ equivalence: ["put off", { target: "postpone" }] }, { equivalence: ["find out", { target: "discover" }] }, { equivalence: ["put up with", { target: "tolerate" }] }] } }
+
+  - title: { en: "Compare: look-alike derivations" }
+    role: compare
+    content:
+      - type: usage
+        columns:
+          - { key: pair, label: { en: Pair } }
+          - { key: difference, label: { en: Difference } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C2, pair: { alternatives: [{ term: "economic" }, { term: "economical" }] }, difference: { en: [{ term: "economic" }, " relates to the economy; ", { term: "economical" }, " means not wasteful"] }, ex: { examples: [["an ", { target: "economic" }, " crisis"], ["an ", { target: "economical" }, " car"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "historic" }, { term: "historical" }] }, difference: { en: [{ term: "historic" }, " means important in history; ", { term: "historical" }, " means about the past"] }, ex: { examples: [["a ", { target: "historic" }, " victory"], ["a ", { target: "historical" }, " novel"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "classic" }, { term: "classical" }] }, difference: { en: [{ term: "classic" }, " means typical or of lasting quality; ", { term: "classical" }, " means of ancient Greece and Rome or of a formal tradition"] }, ex: { examples: [["a ", { target: "classic" }, " mistake"], ["a ", { target: "classical" }, " concert"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "electric" }, { term: "electrical" }] }, difference: { en: [{ term: "electric" }, " means powered by electricity; ", { term: "electrical" }, " means about electricity in general"] }, ex: { examples: [["an ", { target: "electric" }, " kettle"], ["an ", { target: "electrical" }, " engineer"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "sensible" }, { term: "sensitive" }] }, difference: { en: [{ term: "sensible" }, " means practical and reasonable; ", { term: "sensitive" }, " means quick to feel or easily hurt"] }, ex: { examples: [["a ", { target: "sensible" }, " choice"], [{ target: "sensitive" }, " skin"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "continual" }, { term: "continuous" }] }, difference: { en: [{ term: "continual" }, " means repeated with breaks; ", { term: "continuous" }, " means without a break"] }, ex: { examples: [[{ target: "continual" }, " interruptions"], ["a ", { target: "continuous" }, " line"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "imaginary" }, { term: "imaginative" }] }, difference: { en: [{ term: "imaginary" }, " means existing only in the mind; ", { term: "imaginative" }, " means full of new ideas"] }, ex: { examples: [["an ", { target: "imaginary" }, " friend"], ["an ", { target: "imaginative" }, " writer"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "childish" }, { term: "childlike" }] }, difference: { en: [{ term: "childish" }, " means silly and not mature; ", { term: "childlike" }, " means innocent and simple"] }, ex: { examples: [[{ target: "childish" }, " jokes"], [{ target: "childlike" }, " wonder"]] } }
+          - { level: C2, pair: { alternatives: [{ term: "respectable" }, { term: "respectful" }, { term: "respective" }] }, difference: { en: [{ term: "respectable" }, " means of good standing; ", { term: "respectful" }, " means showing respect; ", { term: "respective" }, " means belonging to each one separately"] }, ex: { examples: [["a ", { target: "respectable" }, " family"], ["a ", { target: "respectful" }, " pupil"], ["their ", { target: "respective" }, " rooms"]] } }
+
+  - title: { en: Agent and gender suffixes }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: suffix, label: { en: Suffix } }
+          - { key: rule, label: { en: Rule } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C2, suffix: { alternatives: [{ term: "-er" }, { term: "-ee" }] }, rule: { en: [{ term: "-er" }, " names the one who acts, ", { term: "-ee" }, " the one who receives the action"] }, ex: { examples: [{ contrast: [{ target: "employer" }, { target: "employee" }] }, { contrast: [{ target: "interviewer" }, { target: "interviewee" }] }, { contrast: [{ target: "trainer" }, { target: "trainee" }] }] } }
+          - { level: C2, suffix: { term: "-ee" }, rule: { en: ["also names a person in a state or role, with no matching ", { term: "-er" }, " word"] }, ex: { examples: [{ target: "absentee" }, { target: "escapee" }, { target: "refugee" }] } }
+          - { level: C2, suffix: { term: "-ess" }, rule: { en: "marks a woman and stays in titles" }, ex: { examples: [{ target: "princess" }, { target: "duchess" }, { target: "countess" }] } }
+          - { level: C2, suffix: { term: "-person" }, rule: { en: [{ term: "-man" }, " in a job title gives way to ", { term: "-person" }] }, ex: { examples: [{ mapping: ["chairman", { target: "chairperson" }] }, { mapping: ["spokesman", { target: "spokesperson" }] }, { mapping: ["salesman", { target: "salesperson" }] }] } }
+          - { level: C2, suffix: { en: "a neutral word" }, rule: { en: "one word serves any person" }, ex: { examples: [{ mapping: ["actress", { target: "actor" }] }, { mapping: ["policeman", { target: "police officer" }] }, { mapping: ["stewardess", { target: "flight attendant" }] }] } }
+
+  - title: { en: Learned and rare affixes }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: affix, label: { en: Affix } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C2, affix: { alternatives: [{ term: "hyper-" }, { term: "hypo-" }] }, meaning: { en: [{ term: "hyper-" }, " means over, above normal; ", { term: "hypo-" }, " means under, below normal"] }, ex: { examples: [{ target: "hyperactive" }, { target: "hypersensitive" }, { target: "hypothermia" }, { target: "hypoallergenic" }] } }
+          - { level: C2, affix: { term: "para-" }, meaning: { en: "beside, beyond, or helping" }, ex: { examples: [{ target: "paramedic" }, { target: "paranormal" }, { target: "paraphrase" }] } }
+          - { level: C2, affix: { term: "pseudo-" }, meaning: { en: "false" }, ex: { examples: [{ target: "pseudonym" }, { target: "pseudoscience" }] } }
+          - { level: C2, affix: { term: "quasi-" }, meaning: { en: "seeming, partly" }, ex: { examples: [{ target: "quasi-official" }, { target: "quasi-legal" }] } }
+          - { level: C2, affix: { term: "neo-" }, meaning: { en: "new, revived" }, ex: { examples: [{ target: "neoclassical" }, { target: "neolithic" }, { target: "neologism" }] } }
+          - { level: C2, affix: { term: "mal-" }, meaning: { en: "bad, badly" }, ex: { examples: [{ target: "malfunction" }, { target: "malnutrition" }, { target: "malpractice" }] } }
+          - { level: C2, affix: { term: "ante-" }, meaning: { en: ["before; ", { term: "anti-" }, " means against"] }, ex: { examples: [{ target: "antenatal" }, { target: "antechamber" }] } }
+          - { level: C2, affix: { term: "intra-" }, meaning: { en: "within" }, ex: { examples: [{ target: "intranet" }, { target: "intravenous" }, { target: "intrapersonal" }] } }
+          - { level: C2, affix: { term: "extra-" }, meaning: { en: "outside, beyond" }, ex: { examples: [{ target: "extraordinary" }, { target: "extracurricular" }, { target: "extraterrestrial" }] } }
+          - { level: C2, affix: { term: "circum-" }, meaning: { en: "around" }, ex: { examples: [{ target: "circumference" }, { target: "circumnavigate" }, { target: "circumvent" }] } }
+          - { level: C2, affix: { term: "contra-" }, meaning: { en: "against" }, ex: { examples: [{ target: "contradict" }, { target: "contraflow" }, { target: "contraception" }] } }
+          - { level: C2, affix: { term: "-itis" }, meaning: { en: "inflammation of" }, ex: { examples: [{ target: "arthritis" }, { target: "bronchitis" }, { target: "tonsillitis" }] } }
+          - { level: C2, affix: { term: "-ate" }, meaning: { en: ["Latin endings of verbs, adjectives and nouns: ", { ipa: "eɪt" }, " in a verb, ", { ipa: "ət" }, " in the others"] }, ex: { examples: [{ contrast: [["to ", { target: "estimate" }, " ", { ipa: "ˈestɪmeɪt" }], ["an ", { target: "estimate" }, " ", { ipa: "ˈestɪmət" }]] }, { contrast: [["to ", { target: "separate" }, " ", { ipa: "ˈsepəreɪt" }], ["a ", { target: "separate" }, " room ", { ipa: "ˈseprət" }]] }] } }
+          - { level: C2, affix: { term: "a-" }, meaning: { en: "in a state or position; most such adjectives stand after the verb" }, ex: { examples: [["The baby is ", { target: "asleep" }, "."], ["The house was ", { target: "aflame" }, "."], ["The boat is ", { target: "afloat" }, "."]] } }
+          - { level: C2, affix: { term: "be-" }, meaning: { en: "all over, thoroughly; literary" }, ex: { examples: [{ mapping: ["deck", { target: "bedeck" }] }, { mapping: ["witch", { target: "bewitch" }] }, { mapping: ["dazzle", { target: "bedazzle" }] }] } }
+
+  - title: { en: Coinage }
+    role: own
+    content:
+      - type: usage
+        columns:
+          - { key: affix, label: { en: Affix } }
+          - { key: meaning, label: { en: Meaning } }
+          - { key: ex, label: { en: Examples } }
+        rows:
+          - { level: C2, affix: { term: "-gate" }, meaning: { en: ["a scandal, after ", { term: "Watergate" }] }, ex: { examples: [{ target: "Partygate" }, { target: "Dieselgate" }] } }
+          - { level: C2, affix: { alternatives: [{ term: "-holic" }, { term: "-aholic" }] }, meaning: { en: "addicted to, or unable to stop, after alcoholic" }, ex: { examples: [{ target: "workaholic" }, { target: "shopaholic" }, { target: "chocoholic" }] } }
+          - { level: C2, affix: { term: "-athon" }, meaning: { en: "a long event, after marathon" }, ex: { examples: [{ target: "hackathon" }, { target: "telethon" }, { target: "walkathon" }] } }
+          - { level: C2, affix: { term: "-ista" }, meaning: { en: "a follower or enthusiast, after Spanish" }, ex: { target: "fashionista" } }
+          - { level: C2, affix: { term: "-ism" }, meaning: { en: "prejudice against a group" }, ex: { examples: [{ target: "ageism" }, { target: "sexism" }, { target: "ableism" }] } }
+          - { level: C2, affix: { alternatives: [{ term: "e-" }, { term: "cyber-" }, { term: "eco-" }, { term: "mega-" }] }, meaning: { en: [{ term: "e-" }, " and ", { term: "cyber-" }, " mean online; ", { term: "eco-" }, " means environmental; ", { term: "mega-" }, " means very large"] }, ex: { examples: [{ target: "e-commerce" }, { target: "cyberattack" }, { target: "eco-tourism" }, { target: "megastore" }] } }
+      - type: list
+        items:
+          - type: rule
+            level: C2
+            text: { en: "A coinage may be informal or short-lived: check a dictionary before using one in formal writing." }
+
+  - title: { en: Typical errors }
+    role: errors
+    content:
+      - type: errors
+        rows:
+          - { level: B2, wrong: "unpossible", right: { target: "impossible" }, rule: { en: [{ term: "possible" }, " takes ", { term: "in-" }, ", which becomes ", { term: "im-" }, " before p"] } }
+          - { level: B2, wrong: "unhonest", right: { target: "dishonest" }, rule: { en: [{ term: "honest" }, " takes ", { term: "dis-" }] } }
+          - { level: B2, wrong: "enjoyful", right: { target: "enjoyable" }, rule: { en: [{ term: "enjoy" }, " takes ", { term: "-able" }, ", not ", { term: "-ful" }] } }
+          - { level: B2, wrong: "strongen", right: { target: "strengthen" }, rule: { en: [{ term: "-en" }, " joins the noun ", { term: "strength" }] } }
+          - { level: B2, wrong: "She answered friendlily.", right: ["She answered ", { target: "in a friendly way" }, "."], rule: { en: ["an adjective in ", { term: "-ly" }, " has no adverb: use a phrase"] } }
+          - { level: C1, wrong: "possibleness", right: { target: "possibility" }, rule: { en: ["a Latinate adjective takes ", { term: "-ity" }] } }
+          - { level: C1, wrong: "simplifation", right: { target: "simplification" }, rule: { en: ["a verb in ", { term: "-ify" }, " takes ", { term: "-ification" }] } }
+          - { level: C1, wrong: "a blue eyes girl", right: ["a ", { target: "blue-eyed" }, " girl"], rule: { en: ["the compound adjective takes ", { term: "-ed" }, " and a singular noun"] } }
+          - { level: C2, wrong: "an economic car", right: ["an ", { target: "economical" }, " car"], rule: { en: [{ term: "economical" }, " means not wasteful"] } }
+          - { level: C2, wrong: "sensible skin", right: [{ target: "sensitive" }, " skin"], rule: { en: [{ term: "sensitive" }, " means quick to feel; ", { term: "sensible" }, " means reasonable"] } }
+          - { level: C2, wrong: "a historic novel", right: ["a ", { target: "historical" }, " novel"], rule: { en: [{ term: "historical" }, " means about the past"] } }
+          - { level: C2, wrong: "continuous interruptions", right: [{ target: "continual" }, " interruptions"], rule: { en: [{ term: "continual" }, " means repeated with breaks"] } }
+          - { level: C2, wrong: "an asleep baby", right: ["a ", { target: "sleeping" }, " baby"], rule: { en: ["most adjectives in ", { term: "a-" }, " stand after the verb"] } }
+          - { level: C2, wrong: "their respectful rooms", right: ["their ", { target: "respective" }, " rooms"], rule: { en: [{ term: "respective" }, " means belonging to each one separately"] } }
