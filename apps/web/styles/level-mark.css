@@ -71,6 +71,7 @@
   margin: 0;
   padding: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
   border: 0.5px solid var(--glass-border);
   border-radius: 26px;
   background: var(--ix-menu-bg, var(--glass-bg));
@@ -79,7 +80,11 @@
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
   color: var(--text);
 }
+/* On a phone the page holds still while a popover, a menu or a sheet is open: a drag scrolls what is open, or nothing */
 @media (max-width: 860px) {
+  html:has([popover]:popover-open) {
+    overflow: hidden;
+  }
   .lv-pop {
     left: 8px;
     right: 8px;

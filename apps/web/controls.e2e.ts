@@ -1,6 +1,6 @@
 // The page's controls. On a topic page: the level and the variety as buttons in the top glass group that open their
 // menus under it, a choice or Escape closing them, the level button naming the chosen level; a level mark opens the
-// level popover, which says what each level covers in the topic and sets the level; on a small screen the bottom
+// level popover (level-popover.e2e.ts); on a small screen the bottom
 // bar opens the contents and the course's index as sheets, and the bars slide away on a scroll down and return on a
 // scroll up. On Home: the theme menu keeps its choice for the next page, and a first visit opens in the browser's
 // language until the reader chooses one in Read in.
@@ -73,26 +73,6 @@ test(
     await page.click("#tp-levels [data-all]");
     expect((await page.locator(".tp-top [data-level-label]").textContent())?.trim()).toBe("All levels");
     expect(await page.locator(".tp-top .lvm-one").isHidden()).toBe(true);
-  },
-  SLOW,
-);
-
-test(
-  "a level mark opens the popover: the element's name, what each level covers, and a choice that sets the level",
-  async () => {
-    await open(1600, "/en/english/verbs/to-be/?level=c2");
-    await page.click(".doc-head .lvm-b");
-    expect(await panelOpen("lv-pop")).toBe(true);
-    expect(await page.locator("#lv-pop .lv-pop-t").textContent()).toBe("To be");
-    // Each level the topic holds says what it covers; a level it lacks dims.
-    const rows = await page.$$eval("#lv-pop [data-row]", (els) =>
-      els.map((el) => [el.getAttribute("data-row"), el.classList.contains("lv-off"), el.querySelector(".lv-here")?.textContent ?? ""]),
-    );
-    expect(rows.map(([level]) => level)).toEqual([...LEVELS]);
-    expect(rows.filter(([, off]) => off === false).every(([, , here]) => /\d/.test(String(here)))).toBe(true);
-    await page.click('#lv-pop [data-row="A2"]');
-    expect(await levelOf()).toBe("A2");
-    expect(await panelOpen("lv-pop")).toBe(false);
   },
   SLOW,
 );
