@@ -1,22 +1,25 @@
 // The home pages, one per explanation language, in the frame (frame.css, home.css): the brand, the heading, a
-// card per language to learn with a chip per explanation language it is written for, the home page's own
-// first, and a glass toolbar at the top right, at the bottom on phones: search over every course, Read in and
-// the credits. The search reads search/<language>.json (home-search.ts) and shows the topics that match.
+// card per language to learn with its levels and a chip per explanation language it is written for, the home
+// page's own first, and a glass toolbar at the top right, at the bottom on phones: search over every course, Read
+// in, the theme and the credits. The search reads search/<language>.json (home-search.ts) and shows the topics
+// that match. A course's levels open the level popover: what each level covers in the course.
 import { type Explain, explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
-import { join, refRange } from "../../../scripts/levels.ts";
+import { join, refRange, topicLevels } from "../../../scripts/levels.ts";
 import { LIBRARY_BRAND } from "../brand.ts";
 import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
 import { INFO } from "../glyphs.ts";
-import { closeButton, readMenu, results, searchForm } from "../toolbar.ts";
+import { closeButton, readMenu, results, searchForm, themeButton, themeMenu } from "../toolbar.ts";
 import { escapeHtml } from "../html.ts";
-import { badge } from "../parts.ts";
+import { courseEntry, type LevelEntry, levelData, levelPopover } from "../level-popover.ts";
+import { levelsLabel, levelsOf, markButton } from "../level-mark.ts";
+import type { Level } from "../../../scripts/lib.ts";
 import { ui } from "../ui.ts";
 import { creditsUrl, homeUrl, trackUrl } from "../urls.ts";
 import { homeSearch } from "./home-search.ts";
 
 // The course cards of a home page: each opens in the home page's language when the course is written for it,
 // else in its first explanation language.
-function cards(ctx: Context, home: Explain): string {
+function cards(ctx: Context, home: Explain, entries: Record<string, LevelEntry>): string {
   return ctx.languages
     .map((lang) => {
       const explains = explainsOf(lang);
@@ -28,9 +31,13 @@ function cards(ctx: Context, home: Explain): string {
           return `<a class="hm-chip${here}" href="${trackUrl(e, lang)}" hreflang="${e}" lang="${e}" title="${label}">${escapeHtml(explainName(e))}</a>`;
         })
         .join("");
-      const range = badge(join(ctx.refs.filter((r) => r.lang === lang.code).map((r) => refRange(r))));
+      const refs = ctx.refs.filter((r) => r.lang === lang.code);
+      const name = localize(lang.name, home);
+      const levels = courseLevels(refs);
+      entries[lang.code] = courseEntry(name, refs, home);
+      const mark = markButton(levels, lang.code, levelsLabel(levels, home), { text: true });
       return `<article class="hm-card">
-<a class="hm-course" href="${trackUrl(order[0] ?? home, lang)}"><span class="hm-flag" aria-hidden="true">${lang.flag}</span><h2 class="hm-name">${escapeHtml(localize(lang.name, home))}</h2>${range}</a>
+<div class="hm-course"><a class="hm-course-a" href="${trackUrl(order[0] ?? home, lang)}"><span class="hm-flag" aria-hidden="true">${lang.flag}</span><h2 class="hm-name">${escapeHtml(name)}</h2></a>${mark}</div>
 <p class="hm-label">${escapeHtml(say("matrixExplained", home))}</p>
 <div class="hm-chips">${chips}</div>
 </article>`;
@@ -38,7 +45,17 @@ function cards(ctx: Context, home: Explain): string {
     .join("\n");
 }
 
-// The toolbar: the search, the Read in menu and the credits, and Close while searching.
+// The levels of a course: its written topics' by their data, its planned ones' by their entry.
+function courseLevels(refs: Parameters<typeof refRange>[0][]): Level[] {
+  const held = new Set<Level>();
+  for (const ref of refs) {
+    const range = refRange(ref);
+    for (const l of ref.topic === null ? (range === null ? [] : levelsOf(range)) : topicLevels(ref.topic)) held.add(l);
+  }
+  return [...held];
+}
+
+// The toolbar: the search, the Read in menu, the theme and the credits, and Close while searching.
 function toolbar(home: Explain): string {
   const t = ui(home);
   const credits = escapeHtml(say("credits", home));
@@ -46,11 +63,20 @@ function toolbar(home: Explain): string {
 ${searchForm(t)}
 <div class="hm-group glass">
 ${readMenu(t, readChoices(home, homeUrl))}
+${themeButton(t)}
 <a class="hm-credits" href="${creditsUrl(home)}" aria-label="${credits}" title="${credits}">${INFO}</a>
 </div>
 ${closeButton(t)}
+${themeMenu(t)}
 </nav>
 <noscript><style>.hm-search,.hm-close{display:none}</style></noscript>`;
+}
+
+// On a first visit to the first Home, the reader's own language: the first of the browser's languages the site is
+// explained in leads to that Home, until the reader chooses a language in Read in (ln-read).
+function firstVisit(home: Explain): string {
+  const homes = Object.fromEntries(EXPLAINS.map((e) => [e, homeUrl(e)]));
+  return `<script>try{if(!localStorage.getItem("ln-read")){var h=${JSON.stringify(homes)},w=navigator.languages||[navigator.language];for(var i=0;i<w.length;i++){var c=String(w[i]).slice(0,2).toLowerCase();if(h[c]){if(c!==${JSON.stringify(home)})location.replace(h[c]);break}}}}catch(e){}</script>`;
 }
 
 export function homePage(ctx: Context): void {
@@ -73,15 +99,19 @@ export function homePage(ctx: Context): void {
         home,
       ),
     };
+    const entries: Record<string, LevelEntry> = {};
+    const grid = cards(ctx, home, entries);
     const body = `<main class="hm-main">
 <a class="hm-brand" href="${homeUrl(home)}">${brand.mark(28)}<span>${escapeHtml(SITE.name)}</span></a>
 <h1 class="hm-title">${escapeHtml(say("homeHeading", home))}</h1>
 <div class="hm-grid" id="hm-cards">
-${cards(ctx, home)}
+${grid}
 </div>
 ${results(t)}
 </main>
-${toolbar(home)}`;
+${toolbar(home)}
+${levelPopover(home)}
+${levelData(entries)}`;
     ctx.add({
       kind: "home",
       lang: home,
@@ -90,8 +120,8 @@ ${toolbar(home)}`;
       path: homeUrl(home),
       alternates: [...alternates(homeUrl), { lang: "x-default", path: homeUrl(homeLanguage()) }],
       read: readChoices(home, homeUrl),
-      main: "",
       body,
+      ...(home === homeLanguage() ? { headTags: [firstVisit(home)] } : {}),
     });
     homeSearch(ctx, home);
   }

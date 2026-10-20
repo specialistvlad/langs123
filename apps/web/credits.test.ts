@@ -94,18 +94,13 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
   });
 });
 
-test("the up link leads a topic and a cheatsheet to the track's index, named by its language, the index to Home, and Home nowhere", async () => {
-  const up = async (path: string): Promise<[string | null, string | null] | null> => {
-    const link = (await readPage(path)).querySelector(".crumbs .up-link");
-    return link === null ? null : [link.getAttribute("href"), link.querySelector("span")?.textContent ?? null];
-  };
+test("the up link leads a topic to the track's index, named by its language, the index to Home, and Home nowhere", async () => {
   // A topic draws its own up button, to its track's index named by its language.
   const topic = (await readPage("en/english/verbs/to-be/index.html")).querySelector(".tp-up");
   expect([topic?.getAttribute("href"), topic?.getAttribute("aria-label")]).toEqual(["/en/english/", "English"]);
   // The track's index draws its own up button, to Home.
   const index = (await readPage("uk/spanish/index.html")).querySelector(".ix-up");
   expect([index?.getAttribute("href"), index?.getAttribute("aria-label")]).toEqual(["/uk/", SITE.name]);
-  // A cheatsheet page keeps the top bar, its up link leading to the track's index.
-  expect(await up("en/english/cheatsheets/index.html")).toEqual(["/en/english/", "English"]);
-  expect(await up("index.html")).toBeNull();
+  // Home has no up link.
+  expect((await readPage("index.html")).querySelector(".tp-up, .ix-up, .pg-up")).toBeNull();
 });

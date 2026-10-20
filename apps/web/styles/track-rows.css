@@ -15,6 +15,7 @@
   background: var(--ix-sep);
 }
 .ix-row {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -22,10 +23,26 @@
   box-sizing: border-box;
   padding: 0 16px 0 20px;
 }
-a.ix-row:hover {
+/* The topic's link covers the row; its level mark sits above the link */
+.ix-cover {
+  display: flex;
+  flex-grow: 1;
+  min-width: 0;
+  color: inherit;
+}
+.ix-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.ix-row .lvm-b {
+  position: relative;
+  z-index: 1;
+}
+.ix-row:has(.ix-cover:hover) {
   background: var(--hm-fill);
 }
-a.ix-row:focus-visible,
+.ix-cover:focus-visible,
 .ix-up:focus-visible,
 .ix-btn:focus-visible,
 .ix-seg button:focus-visible,
@@ -41,21 +58,7 @@ a.ix-row:focus-visible,
   line-height: 22px;
   letter-spacing: -0.43px;
 }
-.ix-row .badge {
-  --badge-pad: 0 7px;
-  flex-shrink: 0;
-  margin: 0;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.6;
-}
 .ix-chev {
   flex-shrink: 0;
   color: var(--ix-chev);
-}
-.ix-todo .ix-row {
-  color: var(--muted);
-}
-.ix-todo .badge {
-  opacity: 0.5;
 }

@@ -1,13 +1,20 @@
 // What every page builder shares: build options, curriculum data, links and the page list.
 import { type CurriculumLanguage, ENABLED_EXPLAIN, type Explain, explainName, explainOf, type TopicRef } from "../../scripts/lib.ts";
 import type { Range } from "../../scripts/levels.ts";
-import type { Choice } from "./chrome.ts";
 import type { Brand } from "./brand.ts";
 import type { Sample } from "./sample.ts";
 import type { PageInput, PageKind } from "./layout.ts";
 import type { Ui } from "./ui.ts";
 import type { Stage } from "./path.ts";
 import type { LinkFn } from "./html.ts";
+
+// One language a page is read in: its name, the page in it, and whether it is this page.
+export interface Choice {
+  label: string;
+  href: string;
+  on: boolean;
+  lang: Explain;
+}
 
 export interface BuildOptions {
   outDir: string;
@@ -34,15 +41,13 @@ export interface PageFacts {
   alternates: { lang: string; path: string }[];
   // The page belongs in the sitemap.
   sitemap: boolean;
-  // The page's own name: a topic's, a track's or a cheatsheet's title, without the site or the track.
+  // The page's own name: a topic's or a track's title, without the site or the track.
   name?: string;
   // On a track's pages: the code of the language being learned.
   lang?: string;
-  // On a topic page and a topic's cheatsheet: the topic's id, and the title of its section.
+  // On a topic page: the topic's id, and the title of its section.
   topic?: string;
   section?: string;
-  // On a cheatsheet: the group it belongs to.
-  sheet?: "levels" | "progressive" | "sections" | "topics";
   // The levels the page spans.
   range?: Range;
   // On a topic page: the minutes the full lesson takes to read.
@@ -109,7 +114,7 @@ export function homeLanguage(): Explain {
 // The choice whose link leads to this page is on; a track's pages offer the languages it is explained in.
 export function readChoices(explain: Explain, pathFor: (e: Explain) => string, langs: readonly Explain[] = EXPLAINS): Choice[] {
   const here = pathFor(explain);
-  return langs.map((e) => ({ label: explainName(e), href: pathFor(e), on: pathFor(e) === here }));
+  return langs.map((e) => ({ label: explainName(e), href: pathFor(e), on: pathFor(e) === here, lang: e }));
 }
 export const alternates = (pathFor: (e: Explain) => string, langs: readonly Explain[] = EXPLAINS): { lang: Explain; path: string }[] =>
   langs.map((e) => ({ lang: e, path: pathFor(e) }));

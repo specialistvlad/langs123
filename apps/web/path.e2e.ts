@@ -40,10 +40,10 @@ async function chooseOrder(order: string): Promise<void> {
   await openIndex();
   await page.click(`${SHEET} .tp-seg [data-set-order="${order}"]`);
 }
-// Chooses a level in the panel its button opens.
+// Chooses a level in the menu its button opens.
 async function chooseLevel(code: string): Promise<void> {
-  await page.click('.tp-top [popovertarget="level-panel"]');
-  await page.click(`#level-panel [data-set-level="${code}"]`);
+  await page.click('.tp-top [popovertarget="tp-levels"]');
+  await page.click(`#tp-levels [data-set-level="${code}"]:not([data-all])`);
 }
 // The index's visible study-path entries: each level's card, and each step's level.
 const menu = (): Promise<string[]> =>

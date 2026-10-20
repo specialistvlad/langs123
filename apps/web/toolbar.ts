@@ -1,17 +1,24 @@
 // The glass toolbar of the pages in the frame, the Home's and a track index's: the search field with its clear
-// button (client-home.ts), the Read in menu, and Close while searching.
-import type { Choice } from "./chrome.ts";
-import { CLEAR, CLOSE, LANGUAGES, SEARCH } from "./glyphs.ts";
+// button (client-home.ts), the Read in menu, the theme menu, and Close while searching.
+import type { Choice } from "./context.ts";
+import { CLEAR, CLOSE, LANGUAGES, MOON, SEARCH, SUN, THEME } from "./glyphs.ts";
 import { escapeHtml } from "./html.ts";
+import { item } from "./track-parts.ts";
 import type { Ui } from "./ui.ts";
 
 export const searchForm = (t: Ui): string =>
   `<form class="hm-search glass" id="hm-form" role="search" action="#">${SEARCH}<input type="search" id="hm-q" placeholder="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search"><button type="button" class="hm-clear" id="hm-clear" aria-label="${escapeHtml(t.clear)}" hidden>${CLEAR}</button></form>`;
 
-// Read in: the page in each language it is read in, the current one named on the button.
+// Read in: the page in each language it is read in, the current one named on the button. A choice is kept
+// (client-read.ts), so the first Home stays in it.
 export function readMenu(t: Ui, choices: Choice[]): string {
   const current = escapeHtml(choices.find((c) => c.on)?.label ?? "");
-  const links = choices.map((c) => `<a href="${c.href}"${c.on ? ' aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`).join("");
+  const links = choices
+    .map(
+      (c) =>
+        `<a href="${c.href}" hreflang="${c.lang}" data-read="${c.lang}"${c.on ? ' aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`,
+    )
+    .join("");
   return `<details class="hm-read"><summary aria-label="${escapeHtml(t.read)}: ${current}">${LANGUAGES}<span>${current}</span></summary><div class="hm-menu">${links}</div></details>`;
 }
 
@@ -24,3 +31,13 @@ export const results = (t: Ui): string =>
 <h2 class="hm-heading">${escapeHtml(t.topics)}</h2>
 <div class="hm-list" id="hm-list" aria-live="polite"></div>
 </div>`;
+
+// The theme: a button that opens its menu, Auto (the system's), Light or Dark (client-theme.ts keeps the choice).
+export const themeButton = (t: Ui): string =>
+  `<button type="button" class="ix-btn hm-theme" popovertarget="hm-themes" aria-haspopup="menu" aria-label="${escapeHtml(t.theme)}" title="${escapeHtml(t.theme)}">${THEME}</button>`;
+export const themeMenu = (t: Ui): string =>
+  `<div class="ix-menu ix-menu-theme" id="hm-themes" popover role="menu" aria-label="${escapeHtml(t.theme)}">${[
+    item('data-set-theme="auto"', t.themeAuto, true, t.themeSystem, `<span class="ix-end">${THEME}</span>`),
+    item('data-set-theme="light"', t.themeLight, false, "", `<span class="ix-end">${SUN}</span>`),
+    item('data-set-theme="dark"', t.themeDark, false, "", `<span class="ix-end">${MOON}</span>`),
+  ].join("")}</div>`;

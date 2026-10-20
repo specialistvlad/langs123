@@ -1,22 +1,5 @@
-// The top bar and the menu on small screens (media.css). The top bar: it slides away while the reader scrolls down and comes back
-// on a scroll up, near the top of the page, and while the menu or a switch is open.
-// The open menu closes on a tap outside it; that tap only closes the menu. Capture runs before
-// client.ts and the page act on the tap.
-export function closingMenu(): void {
-  document.addEventListener(
-    "click",
-    (event) => {
-      const target = event.target;
-      if (!document.body.classList.contains("nav-open") || !(target instanceof Element)) return;
-      if (target.closest("#sidebar, #menu")) return;
-      document.body.classList.remove("nav-open");
-      event.preventDefault();
-      event.stopPropagation();
-    },
-    true,
-  );
-}
-
+// The bars on phones (topic-phone.css, track-phone.css) slide away while the reader scrolls down and come back on a
+// scroll up, near the top of the page, and while a switch is open.
 export function hidingBar(): void {
   const root = document.documentElement;
   let last = scrollY;
@@ -24,7 +7,7 @@ export function hidingBar(): void {
   const update = (): void => {
     frame = 0;
     const y = scrollY;
-    const open = document.body.classList.contains("nav-open") || document.querySelector(".seg.open") !== null;
+    const open = document.querySelector(".seg.open") !== null;
     if (open || y < 60) root.classList.remove("bar-hidden");
     else if (y > last + 4) root.classList.add("bar-hidden");
     else if (y < last - 4) root.classList.remove("bar-hidden");

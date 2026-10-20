@@ -1,73 +1,3 @@
-/* Layout */
-
-.layout {
-  display: grid;
-  grid-template-columns: 290px minmax(0, 1fr);
-  min-height: calc(100vh - 53px);
-}
-
-.sidebar {
-  position: sticky;
-  top: 53px;
-  height: calc(100vh - 53px);
-  overflow-y: auto;
-  padding: 16px 12px 40px;
-  border-right: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.sidebar h4 {
-  margin: 18px 8px 6px;
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.sidebar h4:first-child {
-  margin-top: 0;
-}
-
-.sidebar a,
-.sidebar .todo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 8px;
-  border-radius: 6px;
-  font-size: 13.5px;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.sidebar a:hover {
-  background: var(--surface-2);
-}
-.sidebar a.on {
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 550;
-}
-.sidebar .todo {
-  color: var(--muted);
-  opacity: 0.6;
-}
-.sidebar .name {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.content {
-  padding: 32px 40px 80px;
-  max-width: 2376px;
-  width: 100%;
-  container-type: inline-size;
-}
-
 /* Badges */
 
 .badge {
@@ -106,17 +36,6 @@
 }
 .lvl > .half:only-child {
   border-radius: 999px;
-}
-/* A list badge's halves share one width and a single level keeps the second column free, so the
-   badges of a list line up: lowest levels in one column, highest in the next */
-.lvl.pair > .half {
-  box-sizing: border-box;
-  width: 2.6em;
-  padding-inline: 0;
-  text-align: center;
-}
-.lvl.pair:has(> .half:only-child) {
-  margin-right: 2.6em;
 }
 .blk-level {
   margin: 0 0 6px;

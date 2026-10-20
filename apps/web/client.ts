@@ -1,14 +1,13 @@
-// Progressive enhancement for the static pages: level filter, variety, view, order, the chips and their panels, the top bar's search, closing menus, hiding top bar, study-path step, theme, menu, sidebar scroll, on-this-page highlight, study-path links, lanes, live reload.
+// Progressive enhancement for the static pages: level filter, variety, order, the level and variety labels, the frame pages' parts, hiding bars, study-path step, theme, on-this-page highlight, study-path links, lanes, live reload.
 // The build bundles it with its modules into client.js for the browser.
-import { closingMenu, hidingBar } from "./client-bar.ts";
+import { hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
 import { framePages } from "./client-frame.ts";
 import { markChips } from "./client-chips.ts";
+import { levelPopover } from "./client-levels.ts";
 import { closePanel, panels } from "./client-panel.ts";
 import { stepLinks, studyStep } from "./client-path.ts";
-import { topSearch } from "./client-search.ts";
-import { themeToggle } from "./client-theme.ts";
-import { closingMenus } from "./client-seg.ts";
+import { themeMenu } from "./client-theme.ts";
 import { store } from "./client-store.ts";
 import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
 
@@ -16,13 +15,10 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   "use strict";
   const root = document.documentElement;
 
-  // Start-up fills in the level and view, so the buttons only follow them.
+  // Start-up fills in the level, so the buttons only follow it.
   function mark(): void {
     document.querySelectorAll<HTMLElement>("[data-set-level]").forEach((b) => {
       b.classList.toggle("on", b.dataset["setLevel"] === root.dataset["level"]);
-    });
-    document.querySelectorAll<HTMLElement>("[data-set-view]").forEach((b) => {
-      b.classList.toggle("on", b.dataset["setView"] === root.dataset["view"]);
     });
     document.querySelectorAll<HTMLElement>("[data-set-order]").forEach((b) => {
       b.classList.toggle("on", b.dataset["setOrder"] === root.dataset["order"]);
@@ -33,14 +29,12 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
 
   const step = studyStep(root);
   stepLinks();
-  closingMenus();
   panels();
-  topSearch();
   framePages();
+  levelPopover(root);
   hidingBar();
-  closingMenu();
 
-  themeToggle(root);
+  themeMenu(root);
 
   document.addEventListener("click", (event) => {
     const target = event.target;
@@ -50,8 +44,6 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
       choose("level", level);
       closePanel(target);
     }
-    const view = target.closest<HTMLElement>("[data-set-view]")?.dataset["setView"];
-    if (view !== undefined) choose("view", view);
     const order = target.closest<HTMLElement>("[data-set-order]")?.dataset["setOrder"];
     if (order !== undefined) choose("order", order);
     const variety = target.closest<HTMLElement>("[data-set-variety]")?.dataset["setVariety"];
@@ -61,25 +53,24 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
       refresh();
       closePanel(target);
     }
-    if (target.closest("[data-print]")) window.print();
-    if (target.closest("#menu")) document.body.classList.toggle("nav-open");
   });
 
-  // A page carries the choice of each switch it has in its address, ?level=a1, ?variety=es-es and
-  // ?view=cheatsheet, so a shared link opens the same state.
+  // A page carries the choice of each switch it has in its address, ?level=a1 and ?variety=es-es, so a
+  // shared link opens the same state.
   function showState(): void {
     const url = new URL(location.href);
     const level = root.dataset["level"];
-    if (filled(level) && document.querySelector("[data-set-level]")) url.searchParams.set("level", level.toLowerCase());
+    const filtered = root.dataset["page"] === "topic" || root.dataset["page"] === "track";
+    if (filled(level) && filtered) url.searchParams.set("level", level.toLowerCase());
     const variety = root.dataset["variety"];
     if (filled(variety) && document.querySelector("[data-set-variety]")) url.searchParams.set("variety", variety.toLowerCase());
-    if (document.querySelector("[data-set-view]")) url.searchParams.set("view", root.dataset["view"] ?? "extended");
+    url.searchParams.delete("view");
     if (url.href !== location.href) history.replaceState(history.state, "", url);
   }
   const filled = (value: string | undefined): value is string => value !== undefined && value !== "";
 
   // A switch's choice: the page shows it, the browser keeps it for the next page, the address carries it.
-  function choose(name: "level" | "view" | "order", value: string): void {
+  function choose(name: "level" | "order", value: string): void {
     root.dataset[name] = value;
     store.set(`ln-${name}`, value);
     showState();
@@ -98,11 +89,8 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   const askedLevel = (params.get("level") ?? "").toUpperCase();
   if (document.querySelector(`[data-set-level="${askedLevel}"]`)) root.dataset["level"] = askedLevel;
   askedVariety(root);
-  const askedView = params.get("view");
-  if (askedView === "cheatsheet" || askedView === "extended") root.dataset["view"] = askedView;
-  if (!filled(root.dataset["view"])) root.dataset["view"] = "extended";
   if (!filled(root.dataset["level"])) {
-    root.dataset["level"] = document.querySelector<HTMLElement>("#level-panel [data-set-level]:last-child")?.dataset["setLevel"] ?? "";
+    root.dataset["level"] = document.querySelector<HTMLElement>("[data-set-level][data-all]")?.dataset["setLevel"] ?? "";
   }
   if (root.dataset["order"] !== "path") root.dataset["order"] = "categories";
   showState();
@@ -139,18 +127,6 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
     addEventListener("scroll", scheduleSpy, { passive: true });
     addEventListener("resize", scheduleSpy);
     spy();
-  }
-
-  // Sidebar scroll position for the next page; the page shell restores it.
-  const sidebar = document.getElementById("sidebar");
-  if (sidebar) {
-    addEventListener("pagehide", () => {
-      try {
-        sessionStorage.setItem("ln-nav", JSON.stringify({ k: sidebar.dataset["key"], t: sidebar.scrollTop }));
-      } catch {
-        // Storage is off: the next page opens its menu at the top.
-      }
-    });
   }
 
   // Lanes without grid-lanes: CSS sets the column count, this places each visible block, in order,

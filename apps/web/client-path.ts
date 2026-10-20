@@ -3,7 +3,9 @@
 // the current step, and Up next and the previous and next rows show the steps around it. Returns the update for client.ts to call on
 // every change.
 export function studyStep(root: HTMLElement): () => void {
-  const levels = [...document.querySelectorAll<HTMLElement>("#level-panel [data-set-level]")].map((b) => b.dataset["setLevel"] ?? "");
+  const levels = [...document.querySelectorAll<HTMLElement>(".ix-menu [data-set-level]:not([data-all])")].map(
+    (b) => b.dataset["setLevel"] ?? "",
+  );
   const steps = [...document.querySelectorAll<HTMLAnchorElement>('.nav-list[data-order="path"] a.on')];
   const rank = (a: HTMLElement): number => levels.indexOf(a.dataset["level"] ?? "");
   return () => {

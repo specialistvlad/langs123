@@ -1,17 +1,18 @@
-// Topic content (topic.yaml) → HTML: blocks with level badges, lists, and tables laid out from what their
+// Topic content (topic.yaml) → HTML: blocks with level marks, lists, and tables laid out from what their
 // columns hold (CONVENTIONS.md §12).
 import { shows } from "../../scripts/content.ts";
 import { reading, varietyName } from "../../scripts/text.ts";
 import { type Ctx, escapeHtml, explained, learned, translation } from "./html.ts";
 import { lessonText } from "./lesson.ts";
-import { blockRange } from "../../scripts/levels.ts";
-import { badge, blockVariety, levelAttrs, single, varietyAttr, varietyLevelAttrs } from "./parts.ts";
+import { blockRange, contentLevels } from "../../scripts/levels.ts";
+import { bars } from "./level-mark.ts";
+import { blockVariety, levelAttrs, single, varietyAttr, varietyLevelAttrs } from "./parts.ts";
 import { errorsHtml, tableHtml } from "./tables-html.ts";
-import { type Block, filled, type Item, type Level, type Localized, lv, type Text, type Variety } from "../../scripts/lib.ts";
+import { type Block, type Explain, filled, type Item, type Level, type Localized, lv, type Text, type Variety } from "../../scripts/lib.ts";
 
-// A leaf carries its level for the filter; its badge shows when it sits above its block's lowest level.
+// A leaf carries its level for the filter; its mark shows when it sits above its block's lowest level.
 const leafAttr = (level: Level): string => levelAttrs(single(level));
-const mark = (level: Level, from: Level): string => (lv(level) > lv(from) ? badge(single(level)) : "");
+const mark = (level: Level, from: Level, explain: Explain): string => (lv(level) > lv(from) ? bars([level], explain, { small: true }) : "");
 
 // Explanation text, then its example in the language being learned.
 const textAndExample = (text: Localized | undefined, ex: Text | undefined, ctx: Ctx): string =>
@@ -35,8 +36,8 @@ function item(it: Item, ctx: Ctx, from: Level): Rendered | null {
   const attrs = ` data-type="${it.type}"${it.variety === undefined ? "" : ` data-variety="${it.variety}"`}`;
   const html =
     ctx.lesson === true
-      ? `<div class="tp-li">${lessonText(mark(it.level, from) + variety, it.text, it.ex, it.tr, ctx, it.type === "example")}</div>`
-      : mark(it.level, from) + variety + base + translation(it.tr, ctx);
+      ? `<div class="tp-li">${lessonText(mark(it.level, from, ctx.explain) + variety, it.text, it.ex, it.tr, ctx, it.type === "example")}</div>`
+      : mark(it.level, from, ctx.explain) + variety + base + translation(it.tr, ctx);
   return { html, level: it.level, attrs };
 }
 
@@ -48,7 +49,7 @@ function list(items: Item[], ctx: Ctx, from: Level): string | null {
 
 // ---------- Blocks ----------
 
-// lead: what opens a lesson's paragraph, the badge of its block.
+// lead: what opens a lesson's paragraph, the mark of its block.
 function contentHtml(b: Block, ctx: Ctx, from: Level, lead = ""): string | null {
   switch (b.type) {
     case "prose": {
@@ -69,12 +70,12 @@ function contentHtml(b: Block, ctx: Ctx, from: Level, lead = ""): string | null 
 }
 
 // A block in a wrapper that carries its range, so the filter hides it together with its last leaf.
-// Its badge shows when it starts above the section or cheatsheet around it.
-// In a lesson a paragraph opens with that badge, and a block of one variety names it beside it.
+// Its mark shows when it starts above the section or summary around it.
+// In a lesson a paragraph opens with that mark, and a block of one variety names it beside it.
 function blockHtml(b: Block, ctx: Ctx, parent: Level): string | null {
   const range = blockRange(b, ctx.explain);
   if (range === null) return null;
-  const level = lv(range.from) > lv(parent) ? badge(range) : "";
+  const level = lv(range.from) > lv(parent) ? bars(contentLevels([b], ctx.explain), ctx.explain, { small: true }) : "";
   const inside = ctx.lesson === true && b.type === "prose";
   const html = contentHtml(b, ctx, range.from, inside ? level : "");
   if (html === null) return null;
@@ -88,7 +89,7 @@ function blockHtml(b: Block, ctx: Ctx, parent: Level): string | null {
   return `<div class="blk"${levelAttrs(range)}${varietyLevelAttrs([b], ctx.explain, ctx.varieties, range.from)}${varietyAttr(variety)}>${head}${html}</div>`;
 }
 
-// The blocks of a section or cheatsheet whose lowest level is parent.
+// The blocks of a section or the summary whose lowest level is parent.
 export const blocksHtml = (blocks: Block[], ctx: Ctx, parent: Level): string =>
   blocks
     .map((b) => blockHtml(b, ctx, parent))

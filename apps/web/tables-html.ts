@@ -1,16 +1,15 @@
 // Tables of topic content → HTML: a slot paradigm lays sentences out word by word, its slot columns grouped by
 // sentence, merged down where neighbours read the same but for the subject, and centred; any other table shows
 // its columns as they are, and a dash where a row leaves a cell empty; an errors table pairs the wrong and the
-// right. In a lesson (html.ts Ctx lesson) a table is a card: each row's level is a pill in a last column, a
-// translation column and the empty cells are marked, a key that is a figure or a letter pair takes its own
-// face, a row of one variety names it, an errors table names its columns, and a slot paradigm also comes as one
-// card per sentence type for phones (slot-cards.ts).
+// right. In a lesson (html.ts Ctx lesson) a table is a card: each row's level mark sits in a Level column, a
+// translation column and the empty cells are marked, a key that is a figure or a letter pair takes its own face, a
+// row of one variety names it, an errors table names its columns, and a slot paradigm also comes as one card per
+// sentence type for phones (slot-cards.ts).
 import { serves, type TableBlock, tableShape } from "../../scripts/content.ts";
 import {
   type Cell,
   type Column,
   type ErrorsBlock,
-  type Example,
   type Explain,
   explainName,
   type FeatureBundle,
@@ -21,14 +20,13 @@ import {
 import { isLocalized, varietyName } from "../../scripts/text.ts";
 import { type Ctx, escapeHtml, explained, learned, translation } from "./html.ts";
 import { translationOf } from "./lesson.ts";
-import { badge, byVariety, levelAttrs, single, varietyAttr } from "./parts.ts";
+import { bars } from "./level-mark.ts";
+import { byVariety, isExample, levelAttrs, single, varietyAttr } from "./parts.ts";
 import { slotCards } from "./slot-cards.ts";
 import { blockStarts, classAttr, GAP_CELL, gapLevel, gapsAfter, type HeadCell, headHtml, spans } from "./table.ts";
-import { pill } from "./track-parts.ts";
 
 const leafAttr = (level: Level): string => levelAttrs(single(level));
-const mark = (level: Level, from: Level): string => (lv(level) > lv(from) ? badge(single(level)) : "");
-const isExample = (value: Cell): value is Example => typeof value === "object" && !Array.isArray(value) && "ex" in value && "tr" in value;
+const mark = (level: Level, from: Level, explain: Explain): string => (lv(level) > lv(from) ? bars([level], explain, { small: true }) : "");
 
 // A cell: explanation text, text in the language being learned, or an example with its translation.
 function cell(value: Cell | undefined, ctx: Ctx): string {
@@ -44,7 +42,7 @@ function cell(value: Cell | undefined, ctx: Ctx): string {
   });
 }
 
-// A row's level shows as a badge at the start of its first cell, or in a lesson as a pill in its last. A span of
+// A row's level shows as a mark at the start of its first cell, or in a lesson in its Level column. A span of
 // 0 leaves the cell to the merged cell above it; a span above 1 covers the rows below. A center column centres
 // its cells both ways; an end cell reaches the table's bottom edge.
 interface Layout {
@@ -64,7 +62,7 @@ function keyFace(content: string): string {
   if (/^\d[\d:.,]*(?:st|nd|rd|th)?$/.test(content)) return `<span class="tp-mono">${content}</span>`;
   return /^\p{L} \p{L}$/u.test(content) ? `<span class="tp-letter">${content}</span>` : content;
 }
-function row(level: Level, from: Level, cells: string[], layout: Layout, attrs: string, lesson: boolean): string {
+function row(level: Level, from: Level, cells: string[], layout: Layout, attrs: string, lesson: boolean, explain: Explain): string {
   let tagged = false;
   const tds = cells.map((c, n) => {
     const span = layout.span?.[n] ?? 1;
@@ -77,7 +75,7 @@ function row(level: Level, from: Level, cells: string[], layout: Layout, attrs: 
       ...(lesson && c === "—" ? ["tp-none"] : []),
       ...(lesson && layout.trcol === true && n === cells.length - 1 ? ["tp-trcol"] : []),
     ];
-    let content = lesson ? (n === 0 ? keyFace(c) : c) : (n === 0 ? mark(level, from) : "") + c;
+    let content = lesson ? (n === 0 ? keyFace(c) : c) : (n === 0 ? mark(level, from, explain) : "") + c;
     if (lesson && layout.tag !== undefined && !tagged) {
       content += `<span class="tp-vtag">${escapeHtml(layout.tag)}</span>`;
       tagged = true;
@@ -85,7 +83,7 @@ function row(level: Level, from: Level, cells: string[], layout: Layout, attrs: 
     return `<td${classAttr(names)}${span > 1 ? ` rowspan="${String(span)}"` : ""}>${content}</td>${gap}`;
   });
   const pillCell = (rows: number): string =>
-    `<td class="tp-lvl"${rows > 1 ? ` rowspan="${String(rows)}"` : ""}>${pill(single(level))}</td>`;
+    `<td class="tp-lvl"${rows > 1 ? ` rowspan="${String(rows)}"` : ""}>${bars([level], explain, { small: true })}</td>`;
   if (!lesson) return `<tr${leafAttr(level)}${attrs}>${tds.join("")}</tr>`;
   if (layout.slots !== true) return `<tr${leafAttr(level)}${attrs}>${tds.join("")}${pillCell(1)}</tr>`;
   // A slot paradigm: the pill spans the rows of its tense, and the row that opens a tense is marked.
@@ -165,6 +163,7 @@ export function tableHtml(block: TableBlock, ctx: Ctx, from: Level): string {
         { span: span[n], center, gaps, end: end(n), tag: tag(n), trcol: shape.translation, slots: shape.slots },
         value(n) + varietyAttr(varieties[n]),
         lesson,
+        ctx.explain,
       ),
   );
   const heads: HeadCell[] = titles.map((title, n) => ({
@@ -174,9 +173,9 @@ export function tableHtml(block: TableBlock, ctx: Ctx, from: Level): string {
     ...(lesson && shape.translation && n === titles.length - 1 ? { names: ["tp-trcol"] } : {}),
   }));
   const compact = shape.slots ? ' class="compact"' : "";
-  const table = `<table${compact} data-type="${block.type}">${headHtml(heads, lesson)}<tbody>${rows.join("")}</tbody></table>`;
+  const table = `<table${compact} data-type="${block.type}">${headHtml(heads, lesson ? say("level", ctx.explain) : undefined)}<tbody>${rows.join("")}</tbody></table>`;
   const card = wrap(table, ctx, { slot: shape.slots, columns: titles.length });
-  return lesson && shape.slots ? card + slotCards({ titles, groups, grid, levels, span }) : card;
+  return lesson && shape.slots ? card + slotCards({ titles, groups, grid, levels, span, explain: ctx.explain }) : card;
 }
 
 export function errorsHtml(block: ErrorsBlock, ctx: Ctx, from: Level): string {
@@ -191,7 +190,10 @@ export function errorsHtml(block: ErrorsBlock, ctx: Ctx, from: Level): string {
     : ["✗", "✓"].map((title) => ({ title, group: undefined, center: false }));
   if (withRule) heads.push({ title: escapeHtml(say("ruleColumn", ctx.explain)), group: undefined, center: false });
   const body = rows.map((r) =>
-    row(r.level, from, [cell(r.wrong, ctx), cell(r.right, ctx), ...(withRule ? [cell(r.rule, ctx)] : [])], {}, "", lesson),
+    row(r.level, from, [cell(r.wrong, ctx), cell(r.right, ctx), ...(withRule ? [cell(r.rule, ctx)] : [])], {}, "", lesson, ctx.explain),
   );
-  return wrap(`<table class="errors">${headHtml(heads, lesson)}<tbody>${body.join("")}</tbody></table>`, ctx);
+  return wrap(
+    `<table class="errors">${headHtml(heads, lesson ? say("level", ctx.explain) : undefined)}<tbody>${body.join("")}</tbody></table>`,
+    ctx,
+  );
 }

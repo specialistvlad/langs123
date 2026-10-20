@@ -133,3 +133,20 @@
 .ix-fade {
   display: none;
 }
+
+/* A level the course or topic lacks */
+.ix-item[data-absent] .ix-title {
+  color: var(--muted);
+}
+.ix-item[data-absent] .badge {
+  opacity: 0.55;
+}
+
+/* Wide and short, an unfolded phone held horizontally: menus open beside the vertical bar */
+@media (min-width: 900px) and (max-height: 800px) and (orientation: landscape) {
+  .ix-menu {
+    top: 20px;
+    right: 84px;
+    max-height: calc(100vh - 40px);
+  }
+}

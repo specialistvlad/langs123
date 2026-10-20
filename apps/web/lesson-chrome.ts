@@ -1,16 +1,17 @@
-// The parts of a topic page in the frame (pages/topic.ts): the contents, numbered from the cheatsheet's 00, Up
-// next, the previous and next capsules, the course's index as a sheet, and the tools at the lesson's end.
+// The parts of a topic page in the frame (pages/topic.ts): the contents, numbered from the summary's 00, Up next,
+// the previous and next capsules, and the course's index as a sheet.
 import { topicTitle } from "../../scripts/content.ts";
-import { levelName, localize, type TopicRef } from "../../scripts/lib.ts";
-import { type Range, refRange } from "../../scripts/levels.ts";
+import { type Explain, type Level, levelName, localize, type TopicRef } from "../../scripts/lib.ts";
+
 import type { Track } from "./context.ts";
 import { glyph } from "./glyphs.ts";
 import type { GuideSection } from "./guide.ts";
 import { escapeHtml } from "./html.ts";
-import { levelAttrs, refsRange, single } from "./parts.ts";
+import { bars } from "./level-mark.ts";
+import { refRange } from "../../scripts/levels.ts";
+import { levelAttrs, refLevels, refsRange, single } from "./parts.ts";
 import { stepLink } from "./path.ts";
 import { placed } from "./sequence.ts";
-import { pill } from "./track-parts.ts";
 import { topicUrl } from "./urls.ts";
 
 const sym = (body: string, size = 22, width = 1.9): string => glyph(body, size, width);
@@ -21,11 +22,6 @@ export const STACK = sym('<rect x="4" y="8" width="16" height="12" rx="2.5"/><pa
 const PREV = sym('<path d="M15 4.5L7.5 12l7.5 7.5"/>');
 const NEXT = sym('<path d="M9 4.5l7.5 7.5L9 19.5"/>');
 const RESTART = sym('<path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v5h5"/>', 20);
-export const PRINT = sym(
-  '<path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><rect x="7" y="14" width="10" height="7"/>',
-  20,
-);
-const PENCIL = sym('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>', 20);
 export const CHEVRON =
   '<svg class="tp-chev" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L6.5 7l-5 5.5"/></svg>';
 const TICK =
@@ -35,14 +31,13 @@ export const CLOCK =
 
 export const num = (n: number): string => String(n).padStart(2, "0");
 
-// The contents: the cheatsheet as 00, opening the Cheatsheet view, then each section numbered, with its range.
-export function contents(sections: GuideSection[], ids: string[]): string {
+// The contents: the summary as 00, then each section numbered, with its level mark.
+export function contents(sections: GuideSection[], ids: string[], explain: Explain): string {
   let n = 0;
   return sections
     .map((s, i) => {
-      const cheat = s.kind === "cheatsheet";
-      const label = cheat ? 0 : ++n;
-      return `<li${cheat ? "" : ' class="guide"'}${levelAttrs(s.range)}${s.varietyLevels}><a href="#${ids[i] ?? ""}"${cheat ? ' data-set-view="cheatsheet"' : ""}><span class="tp-n">${num(label)}</span><span class="name">${s.heading}</span>${pill(s.range)}</a></li>`;
+      const label = s.kind === "summary" ? 0 : ++n;
+      return `<li class="guide"${levelAttrs(s.range)}${s.varietyLevels}><a href="#${ids[i] ?? ""}"><span class="tp-n">${num(label)}</span><span class="name">${s.heading}</span>${bars(s.levels, explain)}</a></li>`;
     })
     .join("");
 }
@@ -53,9 +48,9 @@ export const upNext = (track: Track, ref: TopicRef): string =>
     .flatMap(({ attrs, around: a }) => {
       const e = a.next;
       if (e === undefined) return [];
-      const range = refRange(e.ref, track.explain) ?? single(e.level);
+      const levels = e.link.includes("data-path-step") ? [e.level] : refLevels(e.ref, track.explain);
       return [
-        `<div class="up-next"${attrs}><p class="tp-caps">${escapeHtml(a.restart ? track.t.startOver : track.t.upNext)}</p><a class="next" ${e.link}><strong>${escapeHtml(e.title)}</strong>${pill(e.link.includes("data-path-step") ? single(e.level) : range)}${CHEVRON}<span class="summary">${escapeHtml(e.summary)}</span></a></div>`,
+        `<div class="up-next"${attrs}><p class="tp-caps">${escapeHtml(a.restart ? track.t.startOver : track.t.upNext)}</p><a class="next" ${e.link}><strong>${escapeHtml(e.title)}</strong>${bars(levels.length > 0 ? levels : [e.level], track.explain)}${CHEVRON}<span class="summary">${escapeHtml(e.summary)}</span></a></div>`,
       ];
     })
     .join("");
@@ -84,14 +79,14 @@ interface IndexRow {
   href: string;
   attrs: string;
   name: string;
-  range?: Range;
+  levels: Level[];
   on: boolean;
   mark: string;
 }
-const indexRow = (r: IndexRow): string =>
-  `<li${r.attrs}><a class="tp-row${r.on ? " on" : ""}" ${r.href}${r.attrs}${r.mark}><span class="tp-rn">${escapeHtml(r.name)}</span>${r.range === undefined ? "" : pill(r.range)}${TICK}${CHEVRON}</a></li>`;
-const indexSection = (attrs: string, head: string, rows: IndexRow[]): string =>
-  `<section class="tp-ix-sec"${attrs}><h2 class="tp-ix-h">${head}</h2><ol class="tp-ix-rows">${rows.map(indexRow).join("")}</ol></section>`;
+const indexRow = (r: IndexRow, explain: Explain): string =>
+  `<li${r.attrs}><a class="tp-row${r.on ? " on" : ""}" ${r.href}${r.attrs}${r.mark}><span class="tp-rn">${escapeHtml(r.name)}</span>${bars(r.levels, explain)}${TICK}${CHEVRON}</a></li>`;
+const indexSection = (attrs: string, head: string, rows: IndexRow[], explain: Explain): string =>
+  `<section class="tp-ix-sec"${attrs}><h2 class="tp-ix-h">${head}</h2><ol class="tp-ix-rows">${rows.map((r) => indexRow(r, explain)).join("")}</ol></section>`;
 
 // The course's index as the sheet holds it: the order switch, a card per category and per level of the path.
 export function indexSheet(track: Track, ref: TopicRef): string {
@@ -109,7 +104,7 @@ export function indexSheet(track: Track, ref: TopicRef): string {
           href: `href="${topicUrl(explain, lang, r)}"`,
           attrs: levelAttrs(own),
           name: topicTitle(r, explain),
-          ...(own === null ? {} : { range: own }),
+          levels: refLevels(r, explain),
           on,
           mark: on ? ' aria-current="page"' : "",
         },
@@ -120,6 +115,7 @@ export function indexSheet(track: Track, ref: TopicRef): string {
         levelAttrs(range),
         `<span class="tp-n">${section.dir.slice(0, 2)}</span><span>${escapeHtml(localize(section.title, explain))}</span>`,
         rows,
+        explain,
       ),
     ];
   });
@@ -129,15 +125,17 @@ export function indexSheet(track: Track, ref: TopicRef): string {
       href: stepLink(s.href, s.level),
       attrs: levelAttrs(level),
       name: topicTitle(s.ref, explain),
+      levels: refLevels(s.ref, explain),
       on: s.ref === ref,
       mark: "",
     }));
-    return indexSection(levelAttrs(level), `${pill(level)}<span>${escapeHtml(levelName(stage.level, explain))}</span>`, rows);
+    return indexSection(
+      levelAttrs(level),
+      `${bars([stage.level], explain)}<span>${stage.level} ${escapeHtml(levelName(stage.level, explain))}</span>`,
+      rows,
+      explain,
+    );
   });
   const seg = `<button type="button" data-set-order="categories">${escapeHtml(t.categories)}</button><button type="button" data-set-order="path">${escapeHtml(t.byLevel)}</button>`;
   return `<div class="tp-seg" role="group" aria-label="${escapeHtml(t.grouping)}">${seg}</div><div class="nav-list" data-order="categories">${categories.join("")}</div><div class="nav-list" data-order="path">${path.join("")}</div>`;
 }
-
-// The lesson's end: edit its file on GitHub, and print it.
-export const tools = (edit: string | undefined, words: { edit: string; print: string }): string =>
-  `<div class="page-tools">${edit === undefined ? "" : `<a class="page-tool edit" href="${edit}" rel="noopener">${PENCIL}<span>${escapeHtml(words.edit)}</span></a>`}<button class="page-tool" type="button" data-print>${PRINT}<span>${escapeHtml(words.print)}</span></button></div>`;

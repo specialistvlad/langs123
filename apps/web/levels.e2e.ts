@@ -1,7 +1,8 @@
-// The level filter in a browser: on every topic and track page, each level button shows exactly what
-// starts at or below it, leaves no table or list empty, greys out the rail entries above it, keeps
-// every badge's range and fades the badge halves above it, and shows the empty-view note only when
-// nothing is left. A page with varieties shows the default variety's elements and those of every variety.
+// The level filter in a browser: on every topic and track page, each level in the level menu shows exactly what
+// starts at or below it, leaves no table or list empty, greys out the rail entries above it, keeps every level
+// mark's bars and dims the bars above it, each lit bar in its own level's colour, and shows a section's note
+// exactly when the filter hides all of the section. A page with varieties shows the default variety's elements
+// and those of every variety.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -10,10 +11,8 @@ import { shared } from "./browser.ts";
 import { testSite } from "./test-site.ts";
 
 const { base, browser } = await shared();
-const pages = (await testSite()).filter(
-  (p) => /^en\/\w+\/(index\.html|[\w-]+\/[\w-]+\/index\.html)$/.test(p) && !p.includes("cheatsheets"),
-);
-// Pages and views open side by side, each on a page of its own from a pool of E2E_PAGES (4): Chromium
+const pages = (await testSite()).filter((p) => /^en\/\w+\/(index\.html|[\w-]+\/[\w-]+\/index\.html)$/.test(p));
+// Pages open side by side, each on a page of its own from a pool of E2E_PAGES (4): Chromium
 // renders every page in a process of its own.
 const POOL = Number(process.env["E2E_PAGES"] ?? 4);
 // A cold browser can take seconds to start, and a check waits for the pages queued before its own.
@@ -22,9 +21,9 @@ const idle: Page[] = [];
 const waiting: ((page: Page) => void)[] = [];
 beforeAll(async () => {
   for (let n = 0; n < POOL; n++) idle.push(await browser.newPage({ viewport: { width: 1600, height: 1000 } }));
-  // Every page and view starts at once, the pool letting as many run as it has pages; a look that
-  // fails fails the checks of its page and view.
-  for (const [path, view] of cases) seen(path, view).catch(() => undefined);
+  // Every page starts at once, the pool letting as many run as it has pages; a look that fails fails the checks
+  // of its page.
+  for (const path of pages) seen(path).catch(() => undefined);
 }, SLOW);
 afterAll(async () => {
   for (const page of idle) await page.close();
@@ -47,9 +46,8 @@ interface Seen {
   wrongly: string[];
   empty: string[];
   rail: string[];
-  badges: string[];
-  note: boolean;
-  anything: boolean;
+  marks: string[];
+  notes: string[];
 }
 // Clicks each level's button in turn, in the page, and measures what it shows after each click: the
 // click runs the handler a reader's click does, and the handler lays the page out at once.
@@ -62,9 +60,6 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
       const own = variety === undefined ? null : el.getAttribute(`data-level-${variety.toLowerCase()}`);
       return order.indexOf(own ?? el.getAttribute("data-level") ?? "");
     };
-    // The Cheatsheet view shows section 00 alone.
-    const viewed = (el: Element): boolean =>
-      document.documentElement.dataset["view"] !== "cheatsheet" || el.closest("section.part:not(.cheatsheet)") === null;
     // The order switch shows the lists of one order: by category or along the study path.
     const ordered = (el: Element): boolean =>
       (el.closest("body [data-order]")?.getAttribute("data-order") ?? "categories") ===
@@ -73,7 +68,7 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
     const chosen = document.documentElement.dataset["variety"];
     const other = (e: Element): boolean => chosen !== undefined && (e.getAttribute("data-variety") ?? chosen) !== chosen;
     const fits = (el: Element): boolean => {
-      if (!viewed(el) || !ordered(el)) return false;
+      if (!ordered(el)) return false;
       for (let e: Element | null = el; e && e !== document.documentElement; e = e.parentElement) if (rank(e) > at || other(e)) return false;
       return true;
     };
@@ -89,43 +84,37 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
       const containers = [...document.querySelectorAll(".blk table, .blk ul")].filter(visible);
       const empty = containers.filter((c) => ![...c.querySelectorAll("tbody tr:not(.gap-row), li")].some(visible)).map(name);
       const rail = [...document.querySelectorAll(".toc > li")]
-        .filter(
-          (li) =>
-            (getComputedStyle(li).opacity === "1") ===
-            (rank(li) > at || (li.matches(".guide") && document.documentElement.dataset["view"] === "cheatsheet")),
-        )
+        .filter((li) => (getComputedStyle(li).opacity === "1") === rank(li) > at)
         .map(name);
-      const badges = [...document.querySelectorAll<HTMLElement>(".lvl[data-from][data-to]")]
-        .filter((b) => {
-          const from = b.dataset["from"] ?? "";
-          const to = b.dataset["to"] ?? "";
-          const want = from === to ? [from] : [from, to];
-          const halves = [...b.querySelectorAll<HTMLElement>(":scope > .half")];
-          // A half above the filter fades: it loses its tint and keeps its code.
-          const faded = (h: HTMLElement): boolean => getComputedStyle(h).backgroundColor === "rgba(0, 0, 0, 0)";
-          const above = (h: HTMLElement): boolean => order.indexOf(h.textContent) > at;
-          const tints = halves.filter((h) => !faded(h)).map((h) => getComputedStyle(h).backgroundColor);
-          return (
-            b.textContent !== want.join("–") ||
-            halves.map((h) => `${h.className}:${h.textContent}`).join() !== want.map((l) => `half lvl-${l}:${l}`).join() ||
-            halves.some((h) => faded(h) !== above(h)) ||
-            // Each tinted half shows its own level's colour.
-            new Set(tints).size !== tints.length
-          );
+      // A lit bar above the filter dims; every lit bar of a mark shows its own level's colour.
+      const marks = [...document.querySelectorAll(".lvm:not(.lvm-one)")]
+        .filter(visible)
+        .filter((m) => {
+          const on = [...m.querySelectorAll<HTMLElement>(":scope > i.on")];
+          const level = (i: HTMLElement): string => i.className.split(" ")[0]?.slice(3) ?? "";
+          const dim = (i: HTMLElement): boolean => getComputedStyle(i).opacity !== "1";
+          const colours = on.map((i) => getComputedStyle(i).backgroundColor);
+          return on.some((i) => dim(i) !== order.indexOf(level(i)) > at) || new Set(colours).size !== colours.length;
         })
         .map(name);
-      const note = [...document.querySelectorAll(".filter-empty")].some(visible);
-      const anything = [...document.querySelectorAll("section.part, .ix-sec")].some(visible);
-      return { level: order[at] ?? "", wrongly, empty, rail, badges, note, anything };
+      // A section shows its note exactly when the filter hides every block in it.
+      const notes = [...document.querySelectorAll("section.part")]
+        .filter((part) => {
+          const note = part.querySelector(":scope > .filter-empty");
+          const shown = [...part.querySelectorAll(":scope > .blk")].some(visible);
+          return note === null || visible(note) === shown;
+        })
+        .map(name);
+      return { level: order[at] ?? "", wrongly, empty, rail, marks, notes };
     };
     // At the top level the filter hides nothing, so what is hidden then is the layout's.
-    const top = document.querySelector(`.seg [data-set-level="${order[order.length - 1] ?? ""}"]`);
+    const top = document.querySelector(".ix-menu [data-set-level][data-all]");
     if (top instanceof HTMLElement) top.click();
     at = order.length - 1;
     const laidOut = new Set([...document.querySelectorAll("[data-level]")].filter((el) => fits(el) && !visible(el)));
     const out: Record<string, Seen> = {};
     for (const level of order) {
-      const button = document.querySelector(`.seg [data-set-level="${level}"]`);
+      const button = document.querySelector(`.ix-menu [data-set-level="${level}"]:not([data-all])`);
       if (!(button instanceof HTMLElement)) throw new Error(`no button for ${level}`);
       button.click();
       at = order.indexOf(document.documentElement.dataset["level"] ?? "");
@@ -135,37 +124,32 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
   }, levels);
 }
 
-const cases = pages.flatMap((path) =>
-  (path.split("/").length > 4 ? ["extended", "cheatsheet"] : ["extended"]).map((view) => [path, view] as const),
-);
-
-// Each page and view opens once, and one look measures it at every level.
+// Each page opens once, and one look measures it at every level.
 const seenAt = new Map<string, Promise<Record<string, Seen>>>();
-function seen(path: string, view: string): Promise<Record<string, Seen>> {
-  const key = `${path} ${view}`;
-  let known = seenAt.get(key);
+function seen(path: string): Promise<Record<string, Seen>> {
+  let known = seenAt.get(path);
   if (known === undefined) {
     known = withPage(async (page) => {
-      await page.goto(`${base.href}${path.replace(/index\.html$/, "")}?view=${view}`);
+      await page.goto(`${base.href}${path.replace(/index\.html$/, "")}`);
       return look(page, LEVELS);
     });
-    seenAt.set(key, known);
+    seenAt.set(path, known);
   }
   return known;
 }
 
-describe.concurrent.each(cases)("%s, %s view", (path, view) => {
+describe.concurrent.each(pages)("%s", (path) => {
   test.concurrent.each([...LEVELS])(
     "at %s",
     async (level) => {
-      const at = (await seen(path, view))[level];
-      if (at === undefined) throw new Error(`${path} ${view}: no look at ${level}`);
+      const at = (await seen(path))[level];
+      if (at === undefined) throw new Error(`${path}: no look at ${level}`);
       expect(at.level).toBe(level);
       expect(at.wrongly).toEqual([]);
       expect(at.empty).toEqual([]);
       expect(at.rail).toEqual([]);
-      expect(at.badges).toEqual([]);
-      if (path.split("/").length > 4) expect(at.note).toBe(!at.anything);
+      expect(at.marks).toEqual([]);
+      expect(at.notes).toEqual([]);
     },
     SLOW,
   );

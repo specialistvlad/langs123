@@ -44,7 +44,7 @@ function split(value: Localized | undefined, ctx: Ctx): { head: string; ex: stri
   return filled(ex.replace(/<[^>]*>/g, "").trim()) ? { head: inline(cut[0], ctx, false), ex } : null;
 }
 
-// A paragraph's or a list item's content: what leads it (its badge, its variety's name), its explanation, and
+// A paragraph's or a list item's content: what leads it (its mark, its variety's name), its explanation, and
 // its example with the translation; an example item without an explanation is its example alone.
 export function lessonText(
   lead: string,

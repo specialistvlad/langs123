@@ -13,8 +13,8 @@ the page's address, quote what is wrong and, when you know it, the correct versi
 Each topic lives in one file, `languages/{lang}/{NN-section}/{topic}/topic.yaml`, which holds it in
 each explanation language of its language.
 
-**In the browser.** *Edit on GitHub* at the top of a topic page opens its file in GitHub's editor.
-Saving proposes the change as a pull request, and CI checks it.
+**In the browser.** A topic's file lives under `languages/` (`languages/en/02-tenses/simple-tenses/topic.yaml`);
+GitHub's pencil on that file opens its editor. Saving proposes the change as a pull request, and CI checks it.
 
 **On your computer.** [Bun](https://bun.sh) runs every script:
 

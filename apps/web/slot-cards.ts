@@ -1,8 +1,7 @@
 // A slot paradigm on a phone (tables-html.ts): one card per sentence type for each tense, its persons as rows,
 // under the tense's name and its level.
-import type { Level } from "../../scripts/lib.ts";
-import { single } from "./parts.ts";
-import { pill } from "./track-parts.ts";
+import type { Explain, Level } from "../../scripts/lib.ts";
+import { bars } from "./level-mark.ts";
 
 export interface SlotTable {
   titles: string[];
@@ -10,6 +9,7 @@ export interface SlotTable {
   grid: string[][];
   levels: Level[];
   span: number[][];
+  explain: Explain;
 }
 
 export function slotCards(t: SlotTable): string {
@@ -41,7 +41,7 @@ export function slotCards(t: SlotTable): string {
       return `<p class="tp-caps">${g.name}</p><div class="tp-card"><div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div></div>`;
     });
     tenses.push(
-      `<section class="tp-slot" data-level="${level}" data-to="${level}"><h3 class="tp-tense"><span>${t.grid[r]?.[0] ?? ""}</span>${pill(single(level))}</h3>${cards.join("")}</section>`,
+      `<section class="tp-slot" data-level="${level}" data-to="${level}"><h3 class="tp-tense"><span>${t.grid[r]?.[0] ?? ""}</span>${bars([level], t.explain)}</h3>${cards.join("")}</section>`,
     );
     r += rows;
   }

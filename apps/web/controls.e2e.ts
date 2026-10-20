@@ -1,9 +1,9 @@
-// The page's controls. On a topic page: the view as tabs; the level and the variety as buttons in the top
-// glass group that open their panels under them on a wide screen and as sheets on a small one, a choice or
-// Escape closing them; on a small screen the bottom bar opens the contents and the course's index as sheets,
-// and the bars slide away on a scroll down and return on a scroll up. On a cheatsheet page: the top bar's
-// search lists the topics and sections that match, moves through them with the arrow keys, opens one with
-// Enter and closes on Escape; the menu opens from the bottom bar and closes on a tap beside it.
+// The page's controls. On a topic page: the level and the variety as buttons in the top glass group that open their
+// menus under it, a choice or Escape closing them, the level button naming the chosen level; a level mark opens the
+// level popover, which says what each level covers in the topic and sets the level; on a small screen the bottom
+// bar opens the contents and the course's index as sheets, and the bars slide away on a scroll down and return on a
+// scroll up. On Home: the theme menu keeps its choice for the next page, and a first visit opens in the browser's
+// language until the reader chooses one in Read in.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -22,7 +22,7 @@ afterAll(async () => {
 });
 
 // One page for every test, at the width each test asks for.
-const TOPIC = "/en/english/verbs/to-be/?level=a1&view=extended";
+const TOPIC = "/en/english/verbs/to-be/?level=a1";
 async function open(width: number, address = TOPIC): Promise<void> {
   await page.setViewportSize({ width, height: 800 });
   await page.goto(new URL(address, base).href);
@@ -36,27 +36,63 @@ async function settled(): Promise<void> {
 }
 const levelOf = (): Promise<string | undefined> => page.evaluate(() => document.documentElement.dataset["level"]);
 const panelOpen = (id: string): Promise<boolean> => page.evaluate((p) => document.getElementById(p)?.matches(":popover-open") ?? false, id);
-const LEVEL = '.tp-top [popovertarget="level-panel"]';
+const LEVEL = '.tp-top [popovertarget="tp-levels"]';
 
 test(
-  "a small screen opens the level as a sheet along the bottom, and a choice or Escape closes it",
+  "the level menu opens under the top group, lists every level, and a choice or Escape closes it",
   async () => {
-    await open(390);
-    expect(await page.locator(".tp-bar").isVisible()).toBe(true);
+    for (const width of [390, 1600]) {
+      await open(width);
+      await page.click(LEVEL);
+      expect(await panelOpen("tp-levels")).toBe(true);
+      // The menu opens clear of its button: under it, or beside the vertical bar of an unfolded phone.
+      const button = await page.locator(LEVEL).boundingBox();
+      const menu = await page.locator("#tp-levels").boundingBox();
+      const under = (menu?.y ?? 0) >= (button?.y ?? 0) + (button?.height ?? 0);
+      const beside = (menu?.x ?? 0) + (menu?.width ?? 0) <= (button?.x ?? 0);
+      expect(under || beside).toBe(true);
+      expect(await page.$$eval("#tp-levels [data-set-level]:not([data-all])", (els) => els.length)).toBe(LEVELS.length);
+      await page.click('#tp-levels [data-set-level="B1"]');
+      expect(await levelOf()).toBe("B1");
+      expect(await panelOpen("tp-levels")).toBe(false);
+      await page.click(LEVEL);
+      await page.keyboard.press("Escape");
+      expect(await panelOpen("tp-levels")).toBe(false);
+    }
+  },
+  SLOW,
+);
+
+test(
+  "the level button names the chosen level with its bar, and All levels at the top one",
+  async () => {
+    await open(1600);
+    expect((await page.locator(".tp-top [data-level-label]").textContent())?.trim()).toBe("A1 Beginner");
+    expect(await page.locator(".tp-top .lvm-one > i.on").getAttribute("class")).toBe("lv-A1 on");
     await page.click(LEVEL);
-    expect(await panelOpen("level-panel")).toBe(true);
-    const sheet = await page.locator("#level-panel").boundingBox();
-    // A sheet floats just above the bottom edge.
-    expect(800 - Math.round((sheet?.y ?? 0) + (sheet?.height ?? 0))).toBeLessThanOrEqual(8);
-    expect(await page.$$eval("#level-panel [data-set-level]", (els) => els.filter((el) => el.checkVisibility()).length)).toBe(
-      LEVELS.length,
+    await page.click("#tp-levels [data-all]");
+    expect((await page.locator(".tp-top [data-level-label]").textContent())?.trim()).toBe("All levels");
+    expect(await page.locator(".tp-top .lvm-one").isHidden()).toBe(true);
+  },
+  SLOW,
+);
+
+test(
+  "a level mark opens the popover: the element's name, what each level covers, and a choice that sets the level",
+  async () => {
+    await open(1600, "/en/english/verbs/to-be/?level=c2");
+    await page.click(".doc-head .lvm-b");
+    expect(await panelOpen("lv-pop")).toBe(true);
+    expect(await page.locator("#lv-pop .lv-pop-t").textContent()).toBe("To be");
+    // Each level the topic holds says what it covers; a level it lacks dims.
+    const rows = await page.$$eval("#lv-pop [data-row]", (els) =>
+      els.map((el) => [el.getAttribute("data-row"), el.classList.contains("lv-off"), el.querySelector(".lv-here")?.textContent ?? ""]),
     );
-    await page.click('#level-panel [data-set-level="B1"]');
-    expect(await levelOf()).toBe("B1");
-    expect(await panelOpen("level-panel")).toBe(false);
-    await page.click(LEVEL);
-    await page.keyboard.press("Escape");
-    expect(await panelOpen("level-panel")).toBe(false);
+    expect(rows.map(([level]) => level)).toEqual([...LEVELS]);
+    expect(rows.filter(([, off]) => off === false).every(([, , here]) => /\d/.test(String(here)))).toBe(true);
+    await page.click('#lv-pop [data-row="A2"]');
+    expect(await levelOf()).toBe("A2");
+    expect(await panelOpen("lv-pop")).toBe(false);
   },
   SLOW,
 );
@@ -77,32 +113,6 @@ test(
     await page.click('.tp-bar [popovertarget="tp-index"]');
     expect(await panelOpen("tp-index")).toBe(true);
     expect(await page.locator('#tp-index a[aria-current="page"]').isVisible()).toBe(true);
-  },
-  SLOW,
-);
-
-test(
-  "a wide screen names the level on its button and opens the panel under it",
-  async () => {
-    await open(1600);
-    expect((await page.locator(".tp-top [data-level-label]").textContent())?.trim()).toBe("Up to A1");
-    await page.click(LEVEL);
-    const button = await page.locator(LEVEL).boundingBox();
-    const panel = await page.locator("#level-panel").boundingBox();
-    expect(panel?.y ?? 0).toBeGreaterThanOrEqual((button?.y ?? 0) + (button?.height ?? 0));
-    await page.click('#level-panel [data-set-level="C2"]');
-    expect((await page.locator(".tp-top [data-level-label]").textContent())?.trim()).toBe("All levels");
-  },
-  SLOW,
-);
-
-test(
-  "the view is a pair of tabs, the chosen one marked",
-  async () => {
-    await open(1600);
-    await page.click('.tabs [data-set-view="cheatsheet"]');
-    expect(await page.evaluate(() => document.documentElement.dataset["view"])).toBe("cheatsheet");
-    expect((await page.locator(".tabs .on").textContent())?.trim()).toBe("Cheatsheet");
   },
   SLOW,
 );
@@ -137,56 +147,37 @@ test(
 );
 
 test(
-  "a cheatsheet page's search lists the matching topics first, and the arrow keys, Enter and Escape work it",
+  "the theme menu sets the theme, ticks it, and the next page keeps it",
   async () => {
-    await open(1600, "/en/spanish/cheatsheets/?level=c2");
-    const input = page.locator(".top-search input");
-    await input.click();
-    await input.fill("usted");
-    await page.waitForSelector('#search-results:not([hidden]) [role="option"]');
-    expect(await input.getAttribute("aria-expanded")).toBe("true");
-    const groups = await page.$$eval("#search-results .hit-group", (els) => els.map((el) => el.textContent));
-    expect(groups[0]).toBe("Topics");
-    const first = page.locator('#search-results [role="option"]').first();
-    expect(await first.locator(".hit-title").textContent()).toContain("Forms of Address");
-    expect(await first.locator("mark").first().textContent()).toBe("usted");
-    // The first row is marked; Down marks the second, and Enter opens it.
-    const second = page.locator('#search-results [role="option"]').nth(1);
-    const href = await second.getAttribute("href");
-    await input.press("ArrowDown");
-    expect(await input.getAttribute("aria-activedescendant")).toBe(await second.getAttribute("id"));
-    await Promise.all([page.waitForURL((url) => url.pathname + url.hash === href), input.press("Enter")]);
+    await open(1600, "/");
+    await page.click(".hm-theme");
+    await page.click('#hm-themes [data-set-theme="dark"]');
+    expect(await page.evaluate(() => document.documentElement.dataset["theme"])).toBe("dark");
+    expect(await page.locator('#hm-themes [data-set-theme="dark"]').getAttribute("aria-checked")).toBe("true");
+    await page.goto(new URL("/en/english/", base).href);
+    expect(await page.evaluate(() => document.documentElement.dataset["theme"])).toBe("dark");
+    await page.goto(new URL("/", base).href);
+    await page.click(".hm-theme");
+    await page.click('#hm-themes [data-set-theme="auto"]');
+    expect(await page.evaluate(() => document.documentElement.dataset["theme"])).toBeUndefined();
   },
   SLOW,
 );
 
 test(
-  "on a cheatsheet page a query that matches nothing says so, / moves to the search, and Escape closes it",
+  "a first visit opens Home in the browser's language, until the reader chooses one in Read in",
   async () => {
-    await open(1600, "/en/english/cheatsheets/");
-    await page.keyboard.press("/");
-    expect(await page.evaluate(() => document.activeElement?.closest(".top-search") !== null)).toBe(true);
-    await page.keyboard.type("zzzz");
-    await page.waitForSelector("#search-results:not([hidden]) .hit-empty");
-    expect(await page.locator('#search-results [role="option"]').count()).toBe(0);
-    await page.locator(".top-search input").press("Escape");
-    expect(await page.locator("#search-results").isHidden()).toBe(true);
-  },
-  SLOW,
-);
-
-test(
-  "on a small screen a cheatsheet page's menu opens from the bottom bar, shows the logo and closes on a tap beside it",
-  async () => {
-    await open(390, "/en/english/cheatsheets/");
-    await page.click("#menu");
-    await settled();
-    expect(await page.locator(".sidebar .nav-brand").isVisible()).toBe(true);
-    const before = page.url();
-    // The page beside the menu, over a link of the document.
-    await page.mouse.click(360, 400);
-    expect(await page.evaluate(() => document.body.classList.contains("nav-open"))).toBe(false);
-    expect(page.url()).toBe(before);
+    const context = await browser.newContext({ locale: "uk-UA" });
+    const visit = await context.newPage();
+    await visit.goto(new URL("/", base).href);
+    await visit.waitForURL((url) => url.pathname === "/uk/");
+    expect(await visit.evaluate(() => document.documentElement.lang)).toBe("uk");
+    await visit.click(".hm-read summary");
+    await visit.click('.hm-read [data-read="en"]');
+    await visit.waitForURL((url) => url.pathname === "/");
+    await visit.goto(new URL("/", base).href);
+    expect(new URL(visit.url()).pathname).toBe("/");
+    await context.close();
   },
   SLOW,
 );

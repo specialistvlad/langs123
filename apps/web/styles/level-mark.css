@@ -1,0 +1,187 @@
+/* The level mark (level-mark.ts): seven bars in a grey capsule; levels.css lights each level's bar in its colour and
+   dims the bars above the level filter. The level popover it opens (level-popover.ts, client-levels.ts). */
+.lvm {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2px;
+  box-sizing: border-box;
+  padding: 4px 7px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--pg-fill, rgba(118, 118, 128, 0.12));
+  color: inherit;
+  font: inherit;
+  line-height: 0;
+  vertical-align: middle;
+}
+.lvm > i {
+  display: block;
+  width: 5px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--lvm-off, rgba(118, 118, 128, 0.2));
+}
+.lvm-sm {
+  gap: 1.5px;
+  padding: 3px 5px;
+}
+.lvm-sm > i {
+  width: 4px;
+  height: 9px;
+  border-radius: 1.5px;
+}
+.lvm-t {
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: -0.1px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.lvm-b {
+  cursor: pointer;
+}
+.lvm-b:hover {
+  background: var(--lvm-hover, rgba(118, 118, 128, 0.2));
+}
+.lvm-b[aria-expanded="true"] {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --lvm-off: rgba(118, 118, 128, 0.32);
+    --lvm-hover: rgba(118, 118, 128, 0.36);
+  }
+}
+:root[data-theme="dark"] {
+  --lvm-off: rgba(118, 118, 128, 0.32);
+  --lvm-hover: rgba(118, 118, 128, 0.36);
+}
+
+/* The popover: a glass panel under its mark on a wide screen, from the bottom on a phone */
+.lv-pop {
+  position: fixed;
+  inset: auto;
+  box-sizing: border-box;
+  width: 380px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  border: 0.5px solid var(--glass-border);
+  border-radius: 26px;
+  background: var(--ix-menu-bg, var(--glass-bg));
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  backdrop-filter: blur(40px) saturate(1.8);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  color: var(--text);
+}
+@media (max-width: 860px) {
+  .lv-pop {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    max-height: calc(100vh - 80px);
+  }
+}
+.lv-pop-h {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 16px 4px;
+}
+.lv-pop-t {
+  flex-grow: 1;
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.lv-pop-m .lvm {
+  pointer-events: none;
+}
+.lv-pop-note {
+  margin: 0;
+  padding: 2px 16px 10px;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--ix-menu-sub, var(--muted));
+}
+.lv-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 16px 11px 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.lv-row:hover {
+  background: var(--hm-fill, var(--pg-fill));
+}
+.lv-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 16px;
+  height: 0.5px;
+  background: var(--ix-sep, var(--pg-sep));
+}
+.lv-tick {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 18px;
+  color: var(--accent);
+  visibility: hidden;
+}
+.lv-row[aria-checked="true"] .lv-tick {
+  visibility: visible;
+}
+.lv-text {
+  flex-grow: 1;
+  min-width: 0;
+}
+.lv-name {
+  display: block;
+  font-size: 17px;
+  line-height: 22px;
+}
+.lv-sub,
+.lv-here {
+  display: block;
+  margin-top: 1px;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--ix-menu-sub, var(--muted));
+}
+.lv-here {
+  color: var(--accent);
+}
+.lv-row .badge {
+  --badge-pad: 0 7px;
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+.lv-off .lv-name {
+  color: var(--muted);
+}
+.lv-off .lv-here {
+  color: var(--muted);
+}
+.lv-off .badge {
+  opacity: 0.55;
+}

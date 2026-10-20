@@ -8,9 +8,6 @@
   :where(html[data-page="topic"]) .tp-rail {
     display: none;
   }
-  :where(html[data-page="topic"]) .tp-head .tabs {
-    width: 100%;
-  }
   :where(html[data-page="topic"]) .tp-head h1 {
     font-size: 28px;
   }
@@ -77,7 +74,7 @@
   :where(html[data-page="topic"]) .tp-bar {
     left: 16px;
     right: 16px;
-    bottom: max(30px, calc(env(safe-area-inset-bottom) + 8px));
+    bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
     justify-content: space-between;
   }
   :where(html[data-page="topic"]) .tp-bar-left {
@@ -119,5 +116,13 @@
   }
   html:where([data-page="topic"]).bar-hidden .tp-fade {
     opacity: 0;
+  }
+}
+
+/* Phones: the level and variety menus open under the top group they belong to */
+@media (max-width: 860px) {
+  :where(html[data-page="topic"]) .ix-menu {
+    top: 74px;
+    bottom: auto;
   }
 }

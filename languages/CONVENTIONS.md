@@ -6,8 +6,7 @@ check` enforces them.
 
 **The data names meaning; the renderer decides how it looks.** Every field, block, mark and
 attribute says what a piece of content is: a paradigm cell, a helper verb, an ending, a typical
-error. The renderer lays it out for every view: wide and narrow screens, Cheatsheet and Extended,
-every level. §12 holds the vocabulary.
+error. The renderer lays it out for every view: wide and narrow screens, every level. §12 holds the vocabulary.
 
 ## 1. Languages and variants
 
@@ -150,19 +149,23 @@ section in the menu.
   a deep code on a pale tint and the dark theme a bright code on a deep tint, so a level keeps its
   colour in both. Every level colour lies inside sRGB (`npm test` checks it), and a level's code
   reads on its tint at a contrast of at least 4.5:1 in both themes (`npm run e2e` measures it).
-- A badge for one level is one pill, (A1). A badge for a range joins two halves, (A1][B1): the
-  lowest level on the left, the highest on the right, each in its own level's colour.
-- In a list (the menu, the rail, the track index, Up next) the halves share one width and the badges
-  line up in two columns: lowest levels in the first, highest in the second. A single level sits in
-  the first column and leaves the second empty.
-- The level switcher writes each code in its level's colour and tints the levels from the lowest up
-  to the chosen one: the levels the page shows.
-- The topic title, section headings, the rail and the menu show their range. A block shows its
-  range when it starts above its section; a leaf shows its level when it sits above its block's
-  lowest level. A topic at a single level shows its level once, in the header.
+- A level mark is seven bars, A0 to C2, in a grey capsule, each level the element holds lit in its
+  level's colour and the others grey, so a gap reads as a gap. Table rows, list items and errors take
+  a smaller mark. A course's card on the home page adds its range in words: A0–C2, or A1–A2, B2–C1
+  across a gap.
+- The topic title, section headings, the rail, the course's index, Up next and search results show
+  their mark. A block shows its mark when it starts above its section; a leaf shows its level when it
+  sits above its block's lowest level; a table row shows its level in a Level column.
+- A course's, a topic's or a section's mark opens the level popover: every level with what a
+  learner does there and what it covers in that course, topic or section, the levels it lacks dimmed.
+  A choice there sets the level filter.
+- A level pill, the code on its level's tint, names a level in the level popover and the level menu.
+- The level menu states what the filter does, then All levels and every level with its name and
+  description; the levels the course or topic lacks are dimmed. Its button names the chosen level.
 - The level filter hides every element that starts above the chosen level, so a block hides with
-  its last leaf and a menu entry with its topic. A badge keeps its range at every level; the half above
-  the chosen level fades to an outline: at A2, (A1][B1) keeps its B1 half faded. The rail keeps every entry and greys out the ones the filter hides.
+  its last leaf and a menu entry with its topic. A section keeps its heading and says where it starts
+  when everything in it sits above the chosen level. A mark keeps its bars at every level and dims
+  the ones above the chosen level. The rail keeps every entry and greys out the ones the filter hides.
 - Previous, Next and Up next lead to the pages the filter shows, in the chosen grouping. The first
   shown page has an inactive Previous; the last one's Next becomes Start over, back to the first.
 
@@ -359,17 +362,8 @@ level of the facts it sums up, and the cheatsheet holds a row at every level its
   set of forms a `paradigm` of them, and every other topic a `usage` table of three columns: the
   key, **Form** when every row is a form, **Use** when every row is a use, **Point** when they mix;
   **Rule**, or **Meaning** for what a form means; and **Example**, its form marked `target`.
-- On a topic page it is section **00 Cheatsheet**. The View switch shows it alone (**Cheatsheet**)
-  or followed by sections 01 onwards (**Extended**).
-
-**Generated sets** — for each track:
-
-| Set | Content |
-|---|---|
-| Per level: A0, A1, … | the cheatsheets of the topics at that level, rows up to that level |
-| Progressive: A0–A1, A0–A2, … | the cheatsheets of every topic up to the top level, rows up to that level |
-| Per topic | one topic's cheatsheet |
-| Per section | one section's cheatsheets, in topic order |
+- On a topic page it is section **00 Summary**, always open, after the topic's lead and before
+  sections 01 onwards.
 
 ## 9. Concepts
 
@@ -387,9 +381,7 @@ Every page has a clean, stable, named URL.
 /404.html, /{explain}/404.html                 missing page; the host serves the nearest one up the path
 /{explain}/{language}/                         track home
 /{explain}/{language}/{section}/{topic}/       topic: /en/spanish/ser-estar-hay-gustar/ser-estar/
-/{explain}/{language}/cheatsheets/             cheatsheet index
-/{explain}/{language}/cheatsheets/{sheet}/     cheatsheet
-/{explain}/{language}/search.json              the track's search data: its topics and their sections
+/search/{explain}.json                         the home page's search data: every topic it reads in that language
 ```
 
 | Segment | Value | Example |
@@ -398,27 +390,26 @@ Every page has a clean, stable, named URL.
 | `{language}` | `slug` of the learned language in `curriculum.yaml` | `english`, `spanish` |
 | `{section}` | section slug, without its number | `tenses`, `foundations` |
 | `{topic}` | topic slug | `simple-tenses` |
-| `{sheet}` | `a0`…`c2` (level), `a0-a1`…`a0-c2` (progressive), up to the highest level the topics reach; `{section}`, `{section}/{topic}` | `a0-b1` |
 
 - The home page holds a card per language being learned: its flag (`flag` in `curriculum.yaml`), its
   name and levels, and a link into each track, under the explanation language's own name, the page's
   own language first.
-- The top bar is a breadcrumb from the home page to the page, then a search of the topics, the
-  language the page is read in, which opens into a list of every one, the credits and the theme. The
-  search lists the topics and the sections inside them whose titles hold what was typed; on a home
-  page it covers every track read in the page's language. The menu opens on the track's index and
-  cheatsheets.
+- A page's glass toolbar sits at the top on wide screens and at the bottom on phones: on the home page
+  a search of every topic read in its language, Read in, the theme (Auto, Light or Dark) and the
+  credits; on a track's index the search, the level, the variety and Read in; on a topic page the
+  course's index, the level, the variety and Read in, with the contents, the index and previous and
+  next along the bottom. An up link in the top corner leads to the parent page: a topic to its
+  track's index, every other page to the home page.
+- A first visit to the root home page opens the home page in the first of the browser's languages
+  the site is explained in, until the reader chooses a language in Read in.
 - Every page names its counterparts in the other explanation languages of its track with `hreflang`,
   and its English counterpart, or its first, as `x-default`; the home pages name the root.
-- A track home's property line links its cheatsheet index; a topic's section in its property line
-  links the section's cheatsheet.
 - URLs use lowercase ASCII letters, digits, hyphens and slashes, and end with `/`.
 - URLs come from slugs, never from titles. A published slug stays fixed.
 - A page carries the choice of each switch it has in query parameters, so a shared link opens the
-  same state: `?level=a0`…`?level=c2` on topic and track pages, `?view=cheatsheet` or
-  `?view=extended` on topic pages, and `?variety=es-419` or `?variety=es-es` on the pages of a
-  language with varieties. A page opened without them takes the reader's last choice, and the
-  highest level, Extended and the default variety the first time. The theme, the grouping (By level
+  same state: `?level=a0`…`?level=c2` on topic and track pages, and `?variety=es-419` or
+  `?variety=es-es` on the pages of a language with varieties. A page opened without them takes the
+  reader's last choice, and the highest level and the default variety the first time. The theme, the grouping (By level
   or Categories) and the variety of each language live in the browser.
 - A study-path link opens its topic at its step, `?step=a0`…`?step=c2`: the reader's click adds the
   step to the link's href, which stays the topic's address (§2).
@@ -447,12 +438,12 @@ exactly the names below, and `npm run check` rejects the inline notation they re
 **Rules**
 
 1. Fields name content. The renderer picks the layout and the views that show it: merged cells,
-   column groups, centring, joiners, the Cheatsheet and Extended views, wide and narrow screens.
+   column groups, centring, joiners, wide and narrow screens.
 2. One name, one meaning. Every field, block, mark and attribute comes from this section.
 3. A string holds one piece of text. Lists, alternatives, patterns, exchanges and mappings are
    structures of their own.
 4. Each fact lives in one place, and the build derives what follows from it: the translation
-   column, the slot and sentence titles, the cheatsheet sets.
+   column, the slot and sentence titles, the level marks.
 5. Text in the language being learned keeps its written form: it is the lesson. A mark adds what
    the text means, such as the date "the third of July" names.
 6. Grammar carries features from one list, after the UniMorph schema. A feature takes one value or

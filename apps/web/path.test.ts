@@ -62,15 +62,15 @@ describe.each(steps.map((a) => [`${levelOf(a)} ${a.getAttribute("href") ?? ""}`,
     const anchor = href.split("#")[1];
     if (anchor === undefined) {
       // The topic's lowest level: the page opens at the top.
-      expect(doc.querySelector(".doc-head .props .lvl")?.getAttribute("data-from")).toBe(level);
+      expect(doc.querySelector(".doc-head .props .lvm > i.on")?.className).toBe(`lv-${level} on`);
       return;
     }
     const section = doc.querySelector(`[id="${anchor}"]`);
     if (section === null) throw new Error(`${href}: no section #${anchor}`);
-    expect(section.matches("section.part:not(.cheatsheet)")).toBe(true);
+    expect(section.matches("section.part:not(.summary)")).toBe(true);
     expect(section.querySelector(`[data-level="${level}"]`) !== null || levelOf(section) === level).toBe(true);
     // No earlier section holds the level.
-    const earlier = [...doc.querySelectorAll("section.part:not(.cheatsheet)")];
+    const earlier = [...doc.querySelectorAll("section.part:not(.summary)")];
     for (const part of earlier.slice(0, earlier.indexOf(section))) {
       expect(part.querySelector(`[data-level="${level}"]`) === null && levelOf(part) !== level).toBe(true);
     }

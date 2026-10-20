@@ -72,6 +72,12 @@ export function topicLevels(topic: Topic, explain?: Explain): Level[] {
   return LEVELS.filter((l) => held.has(l));
 }
 
+// The levels some blocks hold, lowest first.
+export function contentLevels(content: Block[], explain?: Explain): Level[] {
+  const held = new Set(content.flatMap((b) => leaves(b, explain).map((l) => l.level)));
+  return LEVELS.filter((l) => held.has(l));
+}
+
 // A curriculum topic: its data when written, its planned range otherwise.
 export const refRange = (ref: TopicRef, explain?: Explain): Range | null =>
   ref.topic ? topicRange(ref.topic, explain) : parseRange(ref.entry.levels);

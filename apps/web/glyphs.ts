@@ -18,3 +18,14 @@ export const INFO = glyph(
 export const CLOSE = glyph('<path d="M6 6l12 12M18 6L6 18"/>', 18, 2.4);
 export const CLEAR =
   '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#8e8e93"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/></svg>';
+
+// The theme: half of a circle filled (Auto), a sun (Light), a moon (Dark).
+export const THEME = glyph('<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/>', 20, 2);
+export const SUN = glyph(
+  '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/>',
+  20,
+  2,
+);
+export const MOON = glyph('<path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/>', 20, 2);
+// The house of the up link to Home.
+export const HOME = glyph('<path d="M3.5 10.5L12 3.5l8.5 7"/><path d="M5.5 9v10.5h13V9"/><path d="M10 19.5v-5h4v5"/>', 20, 2);

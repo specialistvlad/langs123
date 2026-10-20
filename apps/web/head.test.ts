@@ -16,7 +16,7 @@ const input: PageInput = {
     { lang: "uk", path: "/uk/english/foundations/numbers/" },
   ],
   about: { name: "Числа", lang: "en", topic: "en.foundations.numbers", minutes: 4 },
-  main: "<article></article>",
+  body: "<article></article>",
 };
 const built = (change = {}): Document => parseHTML(page({ ...input, dev: false, siteUrl: "https://example.org" }, change)).document;
 const attr = (doc: Document, selector: string, name: string): string | null | undefined => doc.querySelector(selector)?.getAttribute(name);

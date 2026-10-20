@@ -1,81 +1,4 @@
-/* Below 860 px */
-
-.sidebar .nav-brand {
-  display: none;
-}
-
 @media (max-width: 860px) {
-  /* The menu carries the logo; a tap on the dimmed page beside it closes it (client-bar.ts) */
-  .sidebar .nav-brand {
-    display: block;
-    padding: 2px 8px 14px;
-    font-size: 18px;
-    font-weight: 650;
-    letter-spacing: -0.01em;
-  }
-  .sidebar .nav-brand:hover {
-    background: none;
-  }
-  body.nav-open::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 25;
-    background: rgba(0, 0, 0, 0.25);
-  }
-  .topbar {
-    padding: 0 10px;
-    gap: 6px;
-  }
-  /* The breadcrumb keeps the site, the track's flag and the page */
-  .crumbs li:not(:first-child, :last-child) .crumb-text,
-  .crumbs li:not(:first-child, :last-child):not(:has(.crumb-icon)) {
-    display: none;
-  }
-  .layout {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 30;
-    width: 290px;
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.2s ease;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-  }
-  body.nav-open .sidebar {
-    transform: none;
-  }
-  .content {
-    padding: 20px 16px 60px;
-  }
-  /* A page with the menu: the bottom bar holds the menu, the level, the variety, More and Next, and
-     the top bar keeps the breadcrumb alone */
-  body.has-bar .content {
-    padding-bottom: 96px;
-  }
-  body.has-bar .topbar .tools,
-  .lesson-bar .chips {
-    display: none;
-  }
-  .bottom-bar {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 22;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(0, 1fr);
-    height: calc(60px + env(safe-area-inset-bottom));
-    padding: 4px 6px env(safe-area-inset-bottom);
-    background: color-mix(in srgb, var(--surface) 94%, transparent);
-    backdrop-filter: saturate(1.4) blur(12px);
-    border-top: 1px solid var(--border);
-  }
   /* Panels open as sheets along the bottom */
   .panel[popover],
   .panel[popover]:not([style*="top"]) {
@@ -101,19 +24,6 @@
   .doc .doc-head h1 {
     font-size: 28px;
   }
-  /* The top bar slides away while the reader scrolls down and returns on a scroll up (client-bar.ts) */
-  .topbar {
-    transition: transform 0.25s ease;
-  }
-  html.bar-hidden .topbar {
-    transform: translateY(-100%);
-  }
-}
-
-@media (max-width: 860px) and (prefers-reduced-motion: reduce) {
-  .topbar {
-    transition: none;
-  }
 }
 
 /* Print */
@@ -123,21 +33,9 @@
     size: A4;
     margin: 16mm;
   }
-  .topbar,
-  .sidebar,
-  .rail,
-  .page-tools,
-  .lesson-bar,
-  .bottom-bar,
-  .pagers {
+
+  .rail {
     display: none;
-  }
-  .layout {
-    display: block;
-  }
-  .content {
-    padding: 0;
-    max-width: none;
   }
   body {
     background: #fff;

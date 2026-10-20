@@ -4,8 +4,8 @@
 import { el, find, marked, tokens, type Topic, topicsOf } from "./client-home-find.ts";
 
 // One result row: the course's flag and the topic's title, the language it opens in when it is not the page's,
-// its level range, and its lead with the terms in bold.
-function row(topic: Topic, terms: string[]): HTMLElement {
+// its level mark, and its lead with the terms in bold.
+function row(topic: Topic, terms: string[], scale: string[]): HTMLElement {
   const a = el("a", "hm-row") as HTMLAnchorElement;
   a.href = topic.url;
   if (topic.other !== "") a.hreflang = topic.otherLang;
@@ -20,10 +20,12 @@ function row(topic: Topic, terms: string[]): HTMLElement {
     lang.lang = topic.otherLang;
     title.append(lang);
   }
-  const badge = el("span", "badge lvl");
-  badge.setAttribute("aria-label", topic.from === topic.to ? topic.from : `${topic.from}–${topic.to}`);
-  for (const level of topic.from === topic.to ? [topic.from] : [topic.from, topic.to]) badge.append(el("span", `half lvl-${level}`, level));
-  head.append(title, badge);
+  // The topic's level mark: seven bars, the levels it holds lit (level-mark.ts).
+  const mark = el("span", "lvm");
+  mark.setAttribute("role", "img");
+  mark.setAttribute("aria-label", topic.levels.join(", "));
+  for (const level of scale) mark.append(el("i", topic.levels.includes(level) ? `lv-${level} on` : `lv-${level}`));
+  head.append(title, mark);
   const text = el("span", "hm-row-text");
   text.append(marked(topic.summary, terms));
   a.append(head, text);
@@ -37,6 +39,7 @@ export function homeSearch(): void {
   const [form, clear, close, cards, results, list] = ["hm-form", "hm-clear", "hm-close", "hm-cards", "hm-results", "hm-list"].map($);
   if (!input || !form || !clear || !close || !cards || !results || !list) return;
   let topics: Topic[] | null = null;
+  let scale: string[] = [];
   let loading: Promise<void> | null = null;
   let version = 0;
   const load = (): Promise<void> =>
@@ -44,6 +47,7 @@ export function homeSearch(): void {
       .then((r) => r.json() as Promise<Parameters<typeof topicsOf>[0]>)
       .then((data) => {
         topics = topicsOf(data);
+        scale = data.levels;
       })
       .catch(() => {
         loading = null;
@@ -70,7 +74,7 @@ export function homeSearch(): void {
     const half = Math.ceil(found.length / 2);
     for (const part of found.length > 1 ? [found.slice(0, half), found.slice(half)] : [found]) {
       const rows = el("div", "hm-rows");
-      rows.append(...part.map((topic) => row(topic, terms)));
+      rows.append(...part.map((topic) => row(topic, terms, scale)));
       list.append(rows);
     }
   }

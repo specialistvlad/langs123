@@ -1,12 +1,16 @@
-// A track's index (pages/track.ts): the level filter, the variety and the order are the client's own, set by a
-// click on [data-set-level], [data-set-variety] or [data-set-order]; this follows their state in the menus'
-// checkmarks and the order switch, and closes a menu once a choice is made.
+// The menus of a track's index (pages/track.ts) and a topic page (pages/topic.ts), and the Home's theme menu: the
+// level filter, the variety and the order are the client's own, set by a click on [data-set-level],
+// [data-set-variety] or [data-set-order]; this follows their state in the menus' checkmarks (All levels at the top
+// level, a level below it) and the order switch, and closes a menu once a choice is made.
 export function trackMenus(): void {
   const root = document.documentElement;
-  if (root.dataset["page"] !== "track") return;
+  if (document.querySelector(".ix-menu") === null) return;
+  const top = document.querySelector<HTMLElement>(".ix-item[data-all]")?.dataset["setLevel"];
   const sync = (): void => {
+    const level = root.dataset["level"];
     document.querySelectorAll<HTMLElement>(".ix-item[data-set-level]").forEach((b) => {
-      b.setAttribute("aria-checked", String(b.dataset["setLevel"] === root.dataset["level"]));
+      const on = b.hasAttribute("data-all") ? level === top : b.dataset["setLevel"] === level && level !== top;
+      b.setAttribute("aria-checked", String(on));
     });
     document.querySelectorAll<HTMLElement>(".ix-item[data-set-variety]").forEach((b) => {
       b.setAttribute("aria-checked", String(b.dataset["setVariety"] === root.dataset["variety"]));

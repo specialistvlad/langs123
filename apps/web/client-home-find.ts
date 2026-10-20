@@ -4,8 +4,8 @@
 export interface Topic {
   title: string;
   url: string;
-  from: string;
-  to: string;
+  // The levels the topic holds, lowest first.
+  levels: string[];
   summary: string;
   flag: string;
   course: string;
@@ -16,7 +16,7 @@ export interface Topic {
   s: string;
   d: string;
 }
-type Row = [string, string, string, string, string, string, string, string, string, string];
+type Row = [string, string, string, string, string, string, string, string, string];
 
 // Words compare without case, accents and marks: "Preterito" finds "Pretérito".
 export const fold = (s: string): string => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
@@ -25,12 +25,11 @@ export const tokens = (s: string): string[] =>
     .split(/[^\p{L}\p{N}]+/u)
     .filter(Boolean);
 
-export const topicsOf = (data: { topics: Row[] }): Topic[] =>
-  data.topics.map(([title, url, from, to, summary, section, flag, course, other, otherLang], order) => ({
+export const topicsOf = (data: { levels: string[]; topics: Row[] }): Topic[] =>
+  data.topics.map(([title, url, levels, summary, section, flag, course, other, otherLang], order) => ({
     title,
     url,
-    from,
-    to,
+    levels: levels.split(" "),
     summary,
     flag,
     course,

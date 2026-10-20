@@ -2,6 +2,7 @@
 // carry a group: neighbouring columns of one group share a title above their own. A gap column
 // separates two groups; a gap row separates the blocks of a merged first column.
 import { type Level, lv } from "../../scripts/lib.ts";
+import { escapeHtml } from "./html.ts";
 
 export const classAttr = (names: string[]): string => (names.length > 0 ? ` class="${names.join(" ")}"` : "");
 
@@ -65,9 +66,10 @@ const own = (c: HeadCell): string[] => [...(c.names ?? []), ...(c.center ? ["cen
 
 // One header row, or two when a column has a group: an ungrouped title spans both rows. A lesson's table ends
 // its first row with the head of its level column.
-export function headHtml(cells: HeadCell[], lesson = false): string {
+// level: in a lesson, the title of the column of the rows' level marks.
+export function headHtml(cells: HeadCell[], level?: string): string {
   if (cells.every((c) => c.group === undefined)) {
-    return `<thead><tr>${cells.map((c) => th(c.title, own(c), 1, 1)).join("")}${lesson ? '<th class="tp-lvl"></th>' : ""}</tr></thead>`;
+    return `<thead><tr>${cells.map((c) => th(c.title, own(c), 1, 1)).join("")}${level === undefined ? "" : `<th class="tp-lvl" scope="col">${escapeHtml(level)}</th>`}</tr></thead>`;
   }
   const top: string[] = [];
   const bottom: string[] = [];
@@ -89,5 +91,5 @@ export function headHtml(cells: HeadCell[], lesson = false): string {
     if (cells[n]?.group !== undefined) top.push(th("", ["gap"], 1, 2));
     members.forEach((c, k) => bottom.push(th(c.title, [...own(c), ...(k === 0 ? ["group-start"] : [])], 1, 1)));
   }
-  return `<thead><tr>${top.join("")}${lesson ? '<th class="tp-lvl" rowspan="2"></th>' : ""}</tr><tr>${bottom.join("")}</tr></thead>`;
+  return `<thead><tr>${top.join("")}${level === undefined ? "" : `<th class="tp-lvl" rowspan="2" scope="col">${escapeHtml(level)}</th>`}</tr><tr>${bottom.join("")}</tr></thead>`;
 }

@@ -17,8 +17,8 @@ example stress-marked.
 - **Tracks.** A track is one language being learned, explained in one explanation language. One
   topic file holds a topic for each explanation language of its language, and concept keys pair the same subject
   across languages ([languages/CONVENTIONS.md](languages/CONVENTIONS.md) §1, §9).
-- **Topics.** Each topic explains one part of the language system: a summary, a cheatsheet of the
-  whole topic, then rules, examples and typical errors (§5, §8).
+- **Topics.** Each topic explains one part of the language system: a lead, a summary of the whole
+  topic, then rules, examples and typical errors (§5, §8).
 - **Levels on every line.** Each row, list item and paragraph carries its level from A0 to C2, and
   everything above it takes its range from them (§3).
 - **Semantic data.** Each field names what a piece of content is, such as a paradigm, a helper verb or
@@ -78,8 +78,8 @@ langs123/
 ## Contributing
 
 Teachers, learners and native speakers keep the library correct and growing: report a mistake from
-the [credits page](https://langs123.com/credits/), or change a topic with *Edit on GitHub* at the top
-of its page. [CONTRIBUTING.md](CONTRIBUTING.md) holds the rules;
+the [credits page](https://langs123.com/credits/), or change a topic in its file under `languages/` on
+GitHub. [CONTRIBUTING.md](CONTRIBUTING.md) holds the rules;
 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) holds the rules for the community.
 
 ## Licence

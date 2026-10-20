@@ -4,6 +4,7 @@
 // own filled. notfound.css lays it out in the frame (frame.css).
 import { type Explain, SITE } from "../../../scripts/lib.ts";
 import { type Context, EXPLAINS } from "../context.ts";
+import { HOME } from "../glyphs.ts";
 import { escapeHtml } from "../html.ts";
 import { ui } from "../ui.ts";
 import { homeUrl, notFoundUrl } from "../urls.ts";
@@ -11,12 +12,9 @@ import { homeUrl, notFoundUrl } from "../urls.ts";
 // The languages glyph of the Read in button, cropped to its drawing so it sits in the middle of the 0.
 const GLYPH =
   '<svg viewBox="2 1 22 22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h9"/><path d="M8.5 3v2"/><path d="M11 5c-1 4-3.5 7-7 9"/><path d="M6 9c1 2.5 3 4.5 5.5 5.5"/><path d="M13 21l4.5-10 4.5 10"/><path d="M14.5 17.5h6"/></svg>';
-const BACK =
-  '<svg width="13" height="22" viewBox="0 0 13 22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 2L2.5 11l8 9"/></svg>';
-
-// The frame's up button to a page, named for screen readers.
+// The frame's up button to Home: a house, named for screen readers.
 export const upButton = (href: string, label: string): string =>
-  `<a class="pg-up glass" href="${href}" aria-label="${escapeHtml(label)}">${BACK}</a>`;
+  `<a class="pg-up glass" href="${href}" aria-label="${escapeHtml(label)}">${HOME}</a>`;
 
 export function notFoundPage(ctx: Context): void {
   for (const lang of EXPLAINS) {
@@ -36,9 +34,6 @@ export function notFoundPage(ctx: Context): void {
 <p class="nf-others">${others.join(" · ")}</p>
 <div class="nf-chips">${chips}</div>
 </main>`;
-    ctx.add(
-      { kind: "404", lang, title: `${t.notFound} — ${SITE.name}`, description: t.notFound, path: notFoundUrl(lang), main: "", body },
-      false,
-    );
+    ctx.add({ kind: "404", lang, title: `${t.notFound} — ${SITE.name}`, description: t.notFound, path: notFoundUrl(lang), body }, false);
   }
 }

@@ -9,7 +9,6 @@ import { plainText, reading, textIn } from "../../scripts/text.ts";
 import { type Level, LEVELS, lv, type TopicRef } from "../../scripts/lib.ts";
 import { refRange } from "../../scripts/levels.ts";
 import type { Track } from "./context.ts";
-import { listBadge, single } from "./parts.ts";
 import { stepLink } from "./path.ts";
 import { topicUrl } from "./urls.ts";
 
@@ -19,7 +18,6 @@ export interface Entry {
   link: string;
   title: string;
   level: Level;
-  badge: string;
   summary: string;
 }
 
@@ -67,7 +65,6 @@ export function placed(track: Track, ref: TopicRef): Placed[] {
             link: `href="${topicUrl(explain, lang, r)}"`,
             title: topicTitle(r, explain),
             level: range.from,
-            badge: listBadge(range),
             summary: summary(r),
           },
         ]
@@ -80,7 +77,6 @@ export function placed(track: Track, ref: TopicRef): Placed[] {
       link: stepLink(s.href, s.level),
       title: topicTitle(s.ref, explain),
       level: s.level,
-      badge: listBadge(single(s.level)),
       summary: summary(s.ref),
     }));
   const at = (a: Around): string => ` data-at="${a.at.join(" ")}"`;

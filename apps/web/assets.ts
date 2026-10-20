@@ -10,7 +10,6 @@ const APP = import.meta.dir;
 const STYLES = [
   "base",
   "topbar",
-  "search",
   "head",
   "panels",
   "layout",
@@ -20,8 +19,6 @@ const STYLES = [
   "static-pages",
   "views",
   "rail",
-  "index",
-  "phone",
   "frame",
   "notfound",
   "home",
@@ -34,6 +31,7 @@ const STYLES = [
   "track-phone",
   "credits",
   "credits-cards",
+  "level-mark",
   "topic",
   "topic-page",
   "topic-lists",
@@ -63,19 +61,16 @@ export async function clientJs(): Promise<string> {
 }
 
 // Everything about levels that depends on the scale in languages/levels.yaml: each level's colours,
-// its hue from levels.yaml in each theme's tones (level-colours.ts), the level switcher tinted from
-// the lowest level up to the chosen one, and the level filter. An element's data-level is its lowest level; it
-// hides while the filter (data-level on <html>) sits below it. The rail keeps its entries and greys
-// them out; a view whose content all sits above the filter shows its note instead. A badge keeps its
-// range and fades the half above the filter (layout.css draws the faded half).
+// its hue from levels.yaml in each theme's tones (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its
+// lowest level; it hides while the filter (data-level on <html>) sits below it. The rail keeps its entries and greys
+// them out; a section whose content all sits above the filter shows its note instead. A pill keeps its range and
+// fades the half above the filter (layout.css draws the faded half); a mark dims the bars above it.
 export function levelsCss(): string {
   const codes = LEVEL_INFO.map((l) => l.code);
-  const switcher = codes.map(
-    (code, i) =>
-      `html[data-level="${code}"] .seg :is(${codes
-        .slice(0, i + 1)
-        .map((c) => `[data-set-level="${c}"]`)
-        .join(", ")}) { background: var(--level-tint); }`,
+  // A mark's bar of a level it holds: the level's strong colour, edged in its ink.
+  const bars = codes.map(
+    (code) =>
+      `.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--lvl-${code}-ink) 35%, transparent); }`,
   );
   const filter = codes.flatMap((code, i) => {
     const above = codes.slice(i + 1).map((c) => `[data-level="${c}"]`);
@@ -94,12 +89,16 @@ export function levelsCss(): string {
       `${at}:is([data-page="topic"], [data-page="track"]) ${list}:not(.toc > li) { display: none !important; }`,
       `${at}:is([data-page="topic"], [data-page="track"]) .lvl > .half${halves} { background: var(--beyond-bg); box-shadow: var(--beyond-edge); color: var(--beyond-ink); }`,
       `${at}[data-page="topic"] .toc > li${list} { opacity: 0.4; pointer-events: none; }`,
+      `${at} .lvm > i:is(${codes
+        .slice(i + 1)
+        .map((c) => `.lv-${c}`)
+        .join(", ")}).on { opacity: 0.35; }`,
       `${at} .filter-empty${needs} { display: block; }`,
     ];
   });
   // Previous, next and Up next of the other levels (sequence.ts), at every level the top one included.
   const around = codes.map((code) => `html[data-level="${code}"] [data-at]:not([data-at~="${code}"]) { display: none !important; }`);
-  return [levelColoursCss(), ...switcher, ...filter, ...around].join("\n") + "\n";
+  return [levelColoursCss(), ...bars, ...filter, ...around].join("\n") + "\n";
 }
 
 // The variety switch, for each language being learned with varieties (curriculum.yaml): the page names

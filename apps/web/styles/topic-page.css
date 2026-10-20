@@ -1,7 +1,7 @@
 /* The page: a head, the contents column and the lesson */
 :where(html[data-page="topic"]) .tp-wrap {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 300px;
   grid-template-rows: auto 1fr;
   column-gap: 32px;
   max-width: 1040px;
@@ -10,12 +10,12 @@
   align-items: start;
 }
 :where(html[data-page="topic"]) .tp-head {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
   min-width: 0;
 }
 :where(html[data-page="topic"]) .tp-rail {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1 / span 2;
   position: sticky;
   top: 84px;
@@ -24,7 +24,7 @@
   scrollbar-width: none;
 }
 :where(html[data-page="topic"]) .tp-main {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
   min-width: 0;
   container-type: inline-size;
@@ -83,37 +83,6 @@
 :where(html[data-page="topic"]) .tp-head .props .prop svg {
   flex: none;
 }
-:where(html[data-page="topic"]) .tp-head .tabs {
-  display: flex;
-  gap: 2px;
-  box-sizing: border-box;
-  width: 300px;
-  max-width: 100%;
-  margin: 0 0 12px;
-  padding: 2px;
-  border-radius: 999px;
-  background: var(--hm-fill);
-}
-:where(html[data-page="topic"]) .tp-head .tabs button {
-  flex: 1;
-  height: 32px;
-  margin: 0;
-  padding: 0 10px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: -0.2px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-:where(html[data-page="topic"]) .tp-head .tabs button.on {
-  background: var(--tp-seg-on);
-  box-shadow: var(--tp-seg-shadow);
-  font-weight: 600;
-}
 :where(html[data-page="topic"]) .tp-main .doc > blockquote:first-of-type {
   margin: 0 0 4px;
   font-size: 17px;
@@ -123,35 +92,4 @@
 }
 :where(html[data-page="topic"]) .tp-main .doc > blockquote p {
   margin: 0;
-}
-
-/* The Cheatsheet: a row opens it from the full lesson; its table is the Cheatsheet view */
-:where(html[data-page="topic"]) .tp-cheat {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  min-height: 46px;
-  margin: 14px 0 0;
-  padding: 0 16px 0 20px;
-  border: 0;
-  border-radius: 22px;
-  background: var(--surface);
-  color: var(--text);
-  text-align: left;
-  cursor: pointer;
-}
-:where(html[data-page="topic"]) .tp-cheat .tp-n {
-  margin-right: 0;
-}
-:where(html[data-page="topic"]) .tp-ct {
-  flex-grow: 1;
-  font-size: 20px;
-  line-height: 25px;
-  font-weight: 700;
-  letter-spacing: -0.45px;
-}
-html:where([data-page="topic"])[data-view="cheatsheet"] .tp-cheat,
-html:where([data-page="topic"]):not([data-view="cheatsheet"]) .sections > .part.cheatsheet {
-  display: none;
 }

@@ -47,13 +47,13 @@
 }
 @media (min-width: 861px) and (max-width: 1099px) {
   :where(html[data-page="topic"]) .tp-wrap {
-    grid-template-columns: 280px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 280px;
     column-gap: 24px;
-    padding: 84px 32px 140px 20px;
+    padding: 84px 20px 140px 32px;
   }
   :where(html[data-page="topic"]) .tp-bar {
-    left: 324px;
-    right: 32px;
+    left: 32px;
+    right: 324px;
   }
 }
 @media (min-width: 1640px) {
@@ -76,16 +76,12 @@
     max-width: none;
   }
 }
-html:where([data-page="topic"])[data-view="cheatsheet"] .tp-main .sections.lanes {
-  display: block;
-  max-width: none;
-}
 
-/* Wide and short, an unfolded phone held horizontally: the contents on the left page, the lesson on the right,
+/* Wide and short, an unfolded phone held horizontally: the lesson on the left page, the contents on the right,
    the controls in a vertical bar along the trailing edge */
 @media (min-width: 900px) and (max-height: 800px) and (orientation: landscape) {
   :where(html[data-page="topic"]) .tp-wrap {
-    grid-template-columns: 450px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 450px;
     column-gap: 56px;
     max-width: none;
     padding: 30px 88px 120px;
@@ -95,11 +91,8 @@ html:where([data-page="topic"])[data-view="cheatsheet"] .tp-main .sections.lanes
     grid-row: 1;
     padding-top: 14px;
   }
-  :where(html[data-page="topic"]) .tp-head .tabs {
-    width: 100%;
-  }
   :where(html[data-page="topic"]) .tp-rail {
-    grid-row: 2;
+    grid-row: 1 / span 2;
     top: 20px;
     max-height: calc(100vh - 40px);
   }
@@ -107,8 +100,7 @@ html:where([data-page="topic"])[data-view="cheatsheet"] .tp-main .sections.lanes
     display: none;
   }
   :where(html[data-page="topic"]) .tp-main {
-    grid-row: 1 / span 2;
-    padding-top: 14px;
+    grid-row: 2;
   }
   :where(html[data-page="topic"]) .tp-contents .toc a {
     min-height: 40px;
@@ -128,6 +120,9 @@ html:where([data-page="topic"])[data-view="cheatsheet"] .tp-main .sections.lanes
     width: 52px;
     height: 48px;
     padding: 0;
+  }
+  :where(html[data-page="topic"]) .tp-top .lvm-one {
+    display: none;
   }
   :where(html[data-page="topic"]) .tp-top .tp-label,
   :where(html[data-page="topic"]) .tp-top .hm-read summary span {

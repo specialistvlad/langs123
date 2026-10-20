@@ -79,7 +79,6 @@ ${own?.footer === undefined ? "" : `<p class="cr-made">${own.footer(e)}</p>`}
     description: say("creditsDescription", e, { site }),
     path: creditsUrl(e),
     alternates: alternates(creditsUrl),
-    main: "",
     body,
     about: { name: say("credits", e) },
   });

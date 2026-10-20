@@ -1,6 +1,7 @@
-// The built pages carry levels the filter can trust: every element's range covers exactly the leaves
-// inside it, so a block hides with its last leaf and no table or list is left empty at any level;
-// every badge reads the range of what it labels, and shows only where the level changes.
+// The built pages carry levels the filter can trust: every block's range covers exactly the leaves inside it, so a
+// block hides with its last leaf and no table or list is left empty at any level; a section stays, and shows its
+// note where the filter hides all of it; every level mark lights the levels of what it labels, and a block's or a
+// leaf's shows only where the level changes.
 import { describe, expect, test } from "bun:test";
 import { join } from "node:path";
 import { LEVEL_INFO, LEVELS, lv } from "../../scripts/lib.ts";
@@ -8,7 +9,7 @@ import { SAMPLE } from "./sample.ts";
 import { readPage, SITE_DIR, testSite } from "./test-site.ts";
 
 const pages = await testSite();
-const topicPages = pages.filter((p) => /^[a-z]{2}\/\w+\/[\w-]+\/[\w-]+\/index\.html$/.test(p) && !p.includes("/cheatsheets/"));
+const topicPages = pages.filter((p) => /^[a-z]{2}\/\w+\/[\w-]+\/[\w-]+\/index\.html$/.test(p));
 const levelled = (el: Element): Element[] => [...el.querySelectorAll("[data-level]")];
 const from = (el: Element): string => el.getAttribute("data-level") ?? "";
 const to = (el: Element): string => el.getAttribute("data-to") ?? "";
@@ -19,8 +20,17 @@ function rangeOf(els: Element[]): string {
   const highs = els.map(to).sort((a, b) => lv(b) - lv(a));
   return label(lows[0] ?? "", highs[0] ?? "");
 }
-// The badge an element shows itself, outside any element inside it that carries a level.
-const ownBadge = (el: Element, selector: string): Element | null => el.querySelector(`:scope > ${selector} .lvl, :scope > ${selector}.lvl`);
+// The levels a mark lights, lowest first.
+const lit = (mark: Element | null | undefined): string =>
+  mark ? [...mark.querySelectorAll(":scope > i.on")].map((i) => i.className.split(" ")[0]?.slice(3)).join(" ") : "none";
+// The leaves of an element: table rows and list items with their level, and a paragraph's block.
+const blockLeaves = (blk: Element): Element[] => {
+  const inner = [...blk.querySelectorAll("tr[data-level]:not(.gap-row), li[data-level]")];
+  return inner.length > 0 ? inner : [blk];
+};
+const leavesOf = (el: Element): Element[] => [...el.querySelectorAll(".blk")].flatMap(blockLeaves);
+// The levels some leaves hold, lowest first, as a mark lights them.
+const held = (leaves: Element[]): string => LEVELS.filter((l) => leaves.some((e) => from(e) === l || to(e) === l)).join(" ");
 
 test("every topic of the sample has its page in English", () => {
   expect(topicPages.filter((p) => p.startsWith("en/")).length).toBe(SAMPLE.topics.length);
@@ -42,10 +52,12 @@ describe.each(topicPages)("%s", (path) => {
       const leaves = [...blk.querySelectorAll("tr[data-level]:not(.gap-row), li[data-level]")];
       if (leaves.length > 0) expect(`${label(from(blk), to(blk))} ${rangeOf(leaves)}`).toBe(`${rangeOf(leaves)} ${rangeOf(leaves)}`);
     }
+    // A section keeps no level of its own, so its heading stays; its note names where its blocks start.
     for (const section of doc.querySelectorAll("section.part")) {
       const blocks = [...section.querySelectorAll(":scope > .blk")];
       expect(blocks.length).toBeGreaterThan(0);
-      expect(label(from(section), to(section))).toBe(rangeOf(blocks));
+      expect(section.hasAttribute("data-level")).toBe(false);
+      expect(section.querySelector(":scope > .filter-empty")?.getAttribute("data-needs")).toBe(rangeOf(blocks).split("–")[0]);
     }
   });
 
@@ -62,36 +74,37 @@ describe.each(topicPages)("%s", (path) => {
         const leaves = [...blk.querySelectorAll("tbody tr:not(.gap-row), li")];
         if (leaves.length > 0) expect(leaves.some((l) => shows(l, level))).toBe(true);
       }
+      // A section whose blocks all hide at a level shows its note there.
       for (const section of doc.querySelectorAll("section.part")) {
-        if (shows(section, level)) expect([...section.querySelectorAll(".blk")].some((b) => shows(b, level))).toBe(true);
+        const visible = [...section.querySelectorAll(".blk")].some((b) => shows(b, level));
+        const needs = section.querySelector(":scope > .filter-empty")?.getAttribute("data-needs") ?? "";
+        expect(visible).toBe(lv(needs) <= lv(level));
       }
     }
   });
 
-  test("badges read the range they label and show where the level changes", async () => {
+  test("marks light the levels they label and show where the level changes", async () => {
     const doc = await readPage(path);
-    for (const badge of doc.querySelectorAll(".lvl")) {
-      expect(badge.textContent).toBe(label(badge.getAttribute("data-from") ?? "", badge.getAttribute("data-to") ?? ""));
-      // One level is one half in its colour; a range is two halves, lowest left, highest right.
-      const [a, b] = [badge.getAttribute("data-from") ?? "", badge.getAttribute("data-to") ?? ""];
-      const halves = [...badge.querySelectorAll(":scope > .half")].map((h) => `${h.className}:${h.textContent}`);
-      expect(halves).toEqual(a === b ? [`half lvl-${a}:${a}`] : [`half lvl-${a}:${a}`, `half lvl-${b}:${b}`]);
+    for (const mark of doc.querySelectorAll(".lvm")) {
+      // Seven bars, A0 to C2, in order.
+      expect([...mark.querySelectorAll(":scope > i")].map((i) => i.className.split(" ")[0])).toEqual(LEVELS.map((l) => `lv-${l}`));
     }
     for (const section of doc.querySelectorAll("section.part")) {
-      expect(ownBadge(section, "h2")?.textContent).toBe(label(from(section), to(section)));
+      expect(lit(section.querySelector(":scope > h2 > .lvm"))).toBe(held(leavesOf(section)));
+      const lowest = rangeOf([...section.querySelectorAll(":scope > .blk")]).split("–")[0] ?? "";
       for (const blk of section.querySelectorAll(":scope > .blk")) {
-        // A lesson's paragraph opens with its block's badge.
-        const own = ownBadge(blk, ".blk-level") ?? blk.querySelector(":scope > p > .lvl:first-child");
-        expect(own === null ? "none" : own.textContent).toBe(lv(from(blk)) > lv(from(section)) ? label(from(blk), to(blk)) : "none");
+        // A block that starts above its section opens with its mark; a lesson's paragraph carries it inside.
+        const own = blk.querySelector(":scope > .blk-level > .lvm") ?? blk.querySelector(":scope > p > .lvm:first-child");
+        expect(lit(own)).toBe(lv(from(blk)) > lv(lowest) ? held(blockLeaves(blk)) : "none");
         for (const leaf of blk.querySelectorAll("tr[data-level]:not(.gap-row), li[data-level]")) {
-          // A lesson's row shows its level in its last column; a slot paradigm's, once per tense.
+          // A lesson's row shows its level in the Level column; a slot paradigm's, once per tense.
           if (leaf.tagName === "TR") {
-            const pill = leaf.querySelector(":scope > td.tp-lvl > .lvl");
-            if (pill !== null) expect(pill.textContent).toBe(from(leaf));
+            const mark = leaf.querySelector(":scope > td.tp-lvl > .lvm");
+            if (mark !== null) expect(lit(mark)).toBe(from(leaf));
             continue;
           }
-          const mark = leaf.querySelector(":scope > .tp-li > .lvl:first-child");
-          expect(mark === null ? "none" : mark.textContent).toBe(lv(from(leaf)) > lv(from(blk)) ? from(leaf) : "none");
+          const mark = leaf.querySelector(":scope > .tp-li > .lvm:first-child");
+          expect(lit(mark)).toBe(lv(from(leaf)) > lv(from(blk)) ? from(leaf) : "none");
         }
       }
     }
@@ -100,14 +113,14 @@ describe.each(topicPages)("%s", (path) => {
   test("the header, the rail and the menu agree with the sections", async () => {
     const doc = await readPage(path);
     const sections = [...doc.querySelectorAll("section.part")];
-    expect(doc.querySelector(".doc-head .props .lvl")?.textContent).toBe(rangeOf(sections));
-    for (const li of doc.querySelectorAll(".toc > li")) {
+    expect(lit(doc.querySelector(".doc-head .props .lvm"))).toBe(held(sections.flatMap(leavesOf)));
+    for (const li of doc.querySelectorAll(".tp-rail .toc > li")) {
       const target = doc.getElementById(li.querySelector("a")?.getAttribute("href")?.slice(1) ?? "");
-      expect(target === null ? "missing" : label(from(li), to(li))).toBe(target === null ? "missing" : label(from(target), to(target)));
-      expect(li.querySelector(".lvl")?.textContent).toBe(label(from(li), to(li)));
+      expect(target === null ? "missing" : label(from(li), to(li))).toBe(target === null ? "missing" : rangeOf(leavesOf(target)));
+      expect(lit(li.querySelector(".lvm"))).toBe(target === null ? "none" : held(leavesOf(target)));
     }
     const current = doc.querySelector('.nav-list[data-order="categories"] a.tp-row.on');
-    expect(current === null ? "" : label(from(current), to(current))).toBe(rangeOf(sections));
+    expect(current === null ? "" : label(from(current), to(current))).toBe(rangeOf(sections.flatMap(leavesOf)));
     // A section of the course's index covers the topics listed in it.
     for (const card of doc.querySelectorAll('.nav-list[data-order="categories"] .tp-ix-sec')) {
       expect(label(from(card), to(card))).toBe(rangeOf([...card.querySelectorAll("a.tp-row")]));
@@ -115,20 +128,17 @@ describe.each(topicPages)("%s", (path) => {
   });
 });
 
-test("levels.css hides each level above the filter, fades the badge halves above it, gives every level its colours, and tints the switcher up to the chosen level", async () => {
+test("levels.css hides each level above the filter, fades the badge halves and dims the bars above it, and gives every level its colours and bar", async () => {
   await testSite();
   const css = await Bun.file(join(SITE_DIR, "levels.css")).text();
   for (const [i, { code }] of LEVEL_INFO.entries()) {
     expect(css).toContain(
       `.lvl-${code} { --lvl: var(--lvl-${code}-ink); --level-tint: var(--lvl-${code}-tint); --level-strong: var(--lvl-${code}-strong); }`,
     );
-    expect(css).toContain(
-      `html[data-level="${code}"] .seg :is(${LEVELS.slice(0, i + 1)
-        .map((c) => `[data-set-level="${c}"]`)
-        .join(", ")}) { background: var(--level-tint); }`,
-    );
+    expect(css).toContain(`.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong);`);
     const above = LEVELS.slice(i + 1);
     if (above.length === 0) continue;
+    expect(css).toContain(`html[data-level="${code}"] .lvm > i:is(${above.map((c) => `.lv-${c}`).join(", ")}).on { opacity: 0.35; }`);
     expect(css).toContain(
       `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"]) :is(${above.map((c) => `[data-level="${c}"]`).join(", ")})`,
     );
