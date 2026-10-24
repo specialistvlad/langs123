@@ -8,17 +8,12 @@ import { escapeHtml } from "./html.ts";
 // The levels of a range, lowest first.
 export const levelsOf = (r: Range): Level[] => LEVELS.filter((l) => lv(l) >= lv(r.from) && lv(l) <= lv(r.to));
 
-// The range in words, run by run: A0–C2, or A1–A2, B2–C1 across a gap, or A0.
+// The range in words: the lowest level and the highest, A1–C1, or one level, A0; the bars show any gap.
 export function rangeText(levels: readonly Level[]): string {
-  const runs: Level[][] = [];
-  for (const l of LEVELS) {
-    if (!levels.includes(l)) continue;
-    const run = runs.at(-1);
-    const last = run?.at(-1);
-    if (run !== undefined && last !== undefined && lv(l) === lv(last) + 1) run.push(l);
-    else runs.push([l]);
-  }
-  return runs.map((r) => (r.length === 1 ? (r[0] ?? "") : `${r[0] ?? ""}–${r.at(-1) ?? ""}`)).join(", ");
+  const held = LEVELS.filter((l) => levels.includes(l));
+  const [low] = held;
+  const high = held.at(-1);
+  return low === undefined || high === undefined ? "" : low === high ? low : `${low}–${high}`;
 }
 
 // What a mark reads to a screen reader: "Level A1", "Levels A1, A2 and B1".

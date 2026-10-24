@@ -151,8 +151,8 @@ section in the menu.
   reads on its tint at a contrast of at least 4.5:1 in both themes (`npm run e2e` measures it).
 - A level mark is seven bars, A0 to C2, in a grey capsule, each level the element holds lit in its
   level's colour and the others grey, so a gap reads as a gap. Table rows, list items and errors take
-  a smaller mark. A course's card on the home page adds its range in words: A0–C2, or A1–A2, B2–C1
-  across a gap.
+  a smaller mark. A course's card on the home page adds its range in words, its lowest level and
+  its highest: A0–C2, or A1–C1 when it skips a level between them.
 - The topic title, section headings, the rail, the course's index, Up next and search results show
   their mark. A block shows its mark when it starts above its section; a leaf shows its level when it
   sits above its block's lowest level; a table row shows its level in a Level column.

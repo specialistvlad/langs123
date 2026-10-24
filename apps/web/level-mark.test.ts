@@ -1,4 +1,4 @@
-// The level mark: seven bars with the levels a part holds lit, the range in words run by run, and the button that
+// The level mark: seven bars with the levels a part holds lit, the range in words from lowest to highest, and the button that
 // opens the level popover.
 import { expect, test } from "bun:test";
 import { parseHTML } from "linkedom";
@@ -11,10 +11,11 @@ test("a range's levels run from its lowest to its highest", () => {
   expect(levelsOf({ from: "A2", to: "B2" })).toEqual(["A2", "B1", "B2"]);
 });
 
-test("the range in words joins each run and lists the runs across a gap", () => {
+test("the range in words names the lowest level and the highest, across a gap too", () => {
   expect(rangeText(["A0", "A1", "A2", "B1", "B2", "C1", "C2"])).toBe("A0–C2");
-  expect(rangeText(["A1", "A2", "B2", "C1"])).toBe("A1–A2, B2–C1");
+  expect(rangeText(["A1", "A2", "B2", "C1"])).toBe("A1–C1");
   expect(rangeText(["A0"])).toBe("A0");
+  expect(rangeText([])).toBe("");
 });
 
 test("a mark draws all seven bars, lights the levels it is given, and reads them out", () => {
