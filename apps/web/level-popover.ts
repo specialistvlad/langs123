@@ -10,18 +10,15 @@ import {
   LEVEL_INFO,
   LEVELS,
   levelName,
-  listOf,
   localize,
   say,
   type TopicRef,
 } from "../../scripts/lib.ts";
 import { leaves, topicLevels } from "../../scripts/levels.ts";
 import { topicTitle } from "../../scripts/content.ts";
-import { isLocalized, plainText, reading, textIn } from "../../scripts/text.ts";
-import type { Cell, Text } from "../../scripts/lib.ts";
 import { guideParts } from "./guide.ts";
 import { escapeHtml } from "./html.ts";
-import { isExample, single } from "./parts.ts";
+import { single } from "./parts.ts";
 import { pill } from "./track-parts.ts";
 
 export type LevelKind = "topic" | "section" | "course";
@@ -35,17 +32,13 @@ export interface LevelEntry {
 
 const TICK =
   '<svg width="15" height="13" viewBox="0 0 16 14" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 7.5l4.5 4.5L14.5 1.5"/></svg>';
-const MAX = 44;
-const cut = (text: string): string => (text.length > MAX ? `${text.slice(0, MAX - 1).trimEnd()}…` : text);
 
-// A topic: per level, its parts holding that level, named: "10 sections: Summary, Overview and 8 more".
+// A topic: per level, how many of its parts hold that level: "10 sections".
 export function topicEntry(title: string, parts: { title: string; levels: readonly Level[] }[], explain: Explain): LevelEntry {
   const l: LevelEntry["l"] = {};
   for (const level of LEVELS) {
-    const names = parts.filter((p) => p.levels.includes(level)).map((p) => p.title);
-    if (names.length === 0) continue;
-    const shown = names.length > 3 ? [...names.slice(0, 2), count("andMore", explain, names.length - 2)] : names;
-    l[level] = `${count("sections", explain, names.length)}: ${listOf(shown, explain)}`;
+    const n = parts.filter((p) => p.levels.includes(level)).length;
+    if (n > 0) l[level] = count("sections", explain, n);
   }
   return { t: title, k: "topic", l };
 }
@@ -56,50 +49,18 @@ export function topicEntryOf(ref: TopicRef, explain: Explain): LevelEntry {
   return topicEntry(topicTitle(ref, explain), parts, explain);
 }
 
-const plain = (value: Text, explain: Explain): string => plainText(value, reading(explain, true)).replace(/\s+/g, " ").trim();
-function cellLine(value: Cell | undefined, explain: Explain): string {
-  if (value === undefined) return "";
-  if (isExample(value)) return plain(value.ex, explain);
-  if (typeof value === "object" && !Array.isArray(value) && isLocalized(value)) return plain(textIn(value, explain), explain);
-  return plain(value, explain);
-}
-
-// A leaf's words as the popover quotes them: its example where it has one, else its text, else its first cell.
-function leafLine(block: Block, leaf: object, explain: Explain): string {
-  switch (block.type) {
-    case "prose":
-    case "list": {
-      const it = leaf as { ex?: Text; text?: Parameters<typeof textIn>[0] };
-      if (it.ex !== undefined) return plain(it.ex, explain);
-      return it.text === undefined ? "" : plain(textIn(it.text, explain), explain);
-    }
-    case "errors":
-      return plain((leaf as { right: Text }).right, explain);
-    case "paradigm":
-    case "usage":
-    case "comparison":
-    case "inventory": {
-      const row = leaf as Record<string, Cell | undefined>;
-      return block.columns.map((column) => cellLine(row[column.key], explain)).find((line) => line !== "") ?? "";
-    }
-  }
-}
-
-// A section: per level, its lines at that level and the first of them: "3 lines, such as “I work.”".
+// A section: per level, how many of its lines sit at that level: "3 lines".
 export function sectionEntry(title: string, content: Block[], explain: Explain): LevelEntry {
   const l: LevelEntry["l"] = {};
-  const lines = content.flatMap((b) => leaves(b, explain).map((leaf) => ({ level: leaf.level, line: leafLine(b, leaf, explain) })));
+  const levels = content.flatMap((b) => leaves(b, explain).map((leaf) => leaf.level));
   for (const level of LEVELS) {
-    const here = lines.filter((x) => x.level === level);
-    if (here.length === 0) continue;
-    const example = here.find((x) => x.line !== "")?.line;
-    const n = count("lines", explain, here.length);
-    l[level] = example === undefined ? n : `${n}, ${say("suchAs", explain, { example: cut(example) })}`;
+    const n = levels.filter((x) => x === level).length;
+    if (n > 0) l[level] = count("lines", explain, n);
   }
   return { t: title, k: "section", l };
 }
 
-// A course: per level, the topics covering it and those starting there: "12 topics cover A1; 5 start here, such as A and B".
+// A course: per level, the topics covering it and those starting there: "12 topics cover A1; 5 start here".
 export function courseEntry(title: string, refs: TopicRef[], explain: Explain): LevelEntry {
   const l: LevelEntry["l"] = {};
   const held = refs
@@ -108,13 +69,9 @@ export function courseEntry(title: string, refs: TopicRef[], explain: Explain): 
   for (const level of LEVELS) {
     const covering = held.filter((x) => x.levels.includes(level));
     if (covering.length === 0) continue;
-    const starting = covering.filter((x) => x.levels[0] === level);
+    const starting = covering.filter((x) => x.levels[0] === level).length;
     const cover = count("topicsCover", explain, covering.length).replace("{level}", level);
-    const named = starting.slice(0, 2).map((x) => topicTitle(x.ref, explain));
-    l[level] =
-      starting.length === 0
-        ? cover
-        : `${cover}; ${say("startHereSuchAs", explain, { started: count("startHere", explain, starting.length), topics: listOf(named, explain) })}`;
+    l[level] = starting === 0 ? cover : `${cover}; ${count("startHere", explain, starting)}`;
   }
   return { t: title, k: "course", l };
 }
