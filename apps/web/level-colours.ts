@@ -9,8 +9,7 @@ interface Tone {
   s: number;
   cap: number;
 }
-// ink writes a level's code and edges its bar in a level mark; tint lies behind the code in a pill; strong fills the
-// level's bar in a level mark.
+// ink writes a level's code; tint lies behind the code in a pill; strong fills the level's bar in a level mark.
 type Tones = Record<"ink" | "tint" | "strong", Tone>;
 export type Oklch = [l: number, c: number, h: number];
 
