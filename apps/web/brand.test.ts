@@ -19,7 +19,7 @@ await build({
     credits: {
       tagline: (e) => `Tagline ${e}`,
       version: () => "Version 1.2.3",
-      rows: () => [{ glyph: "mail", tone: "blue", title: "Support", value: "help@example.org", href: "mailto:help@example.org" }],
+      rows: () => [{ glyph: "mail", title: "Support", value: "help@example.org", href: "mailto:help@example.org" }],
       footer: (e) => `Made in ${e}`,
     },
   },

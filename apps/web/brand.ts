@@ -3,10 +3,9 @@
 // rounded tile in the accent colour with 123 on it, and credits with the library's lines alone.
 import type { Explain } from "../../scripts/lib.ts";
 
-// A row of the credits' links: a white glyph on a coloured tile, a title, a value and the address it opens.
+// A row of the credits' links: a glyph in the accent on a grey tile, a title, a value and the address it opens.
 export interface CreditsRow {
   glyph: "globe" | "mail" | "people" | "doc" | "code" | "branch" | "flag" | "book";
-  tone: "blue" | "green" | "orange" | "grey" | "ink" | "red";
   title: string;
   value?: string;
   href: string;

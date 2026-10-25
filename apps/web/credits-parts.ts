@@ -1,4 +1,4 @@
-// The rows of the credits page (pages/credits.ts): a white glyph on a coloured tile, as iOS Settings draws them,
+// The rows of the credits page (pages/credits.ts): a glyph in the accent on a grey tile, as iOS Settings draws them,
 // a title with what it is, a value, and an arrow out; and the credit line's copy button.
 import type { CreditsRow } from "./brand.ts";
 import { glyph } from "./glyphs.ts";
@@ -41,4 +41,4 @@ export const GLYPHS: Record<CreditsRow["glyph"], string> = {
 
 // A row; sub is what the title names, rel the link's relation (license).
 export const row = (r: CreditsRow & { sub?: string; rel?: string }): string =>
-  `<a class="cr-row" href="${escapeHtml(r.href)}"${r.rel === undefined ? "" : ` rel="${r.rel}"`}><span class="cr-tile cr-${r.tone}">${GLYPHS[r.glyph]}</span><span class="cr-text"><span class="cr-title-line">${escapeHtml(r.title)}</span>${r.sub === undefined ? "" : `<span class="cr-sub">${escapeHtml(r.sub)}</span>`}</span>${r.value === undefined ? "" : `<span class="cr-value">${escapeHtml(r.value)}</span>`}<span class="cr-trail">${EXTERNAL}</span></a>`;
+  `<a class="cr-row" href="${escapeHtml(r.href)}"${r.rel === undefined ? "" : ` rel="${r.rel}"`}><span class="cr-tile">${GLYPHS[r.glyph]}</span><span class="cr-text"><span class="cr-title-line">${escapeHtml(r.title)}</span>${r.sub === undefined ? "" : `<span class="cr-sub">${escapeHtml(r.sub)}</span>`}</span>${r.value === undefined ? "" : `<span class="cr-value">${escapeHtml(r.value)}</span>`}<span class="cr-trail">${EXTERNAL}</span></a>`;

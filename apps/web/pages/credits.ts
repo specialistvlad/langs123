@@ -26,23 +26,23 @@ function creditsIn(ctx: Context, e: Explain, brand: Brand): void {
   const words = (key: string): string => escapeHtml(say(key, e, { site }));
   const authors = words("creditsAuthors").replace("{credit}", link(`${SITE.repository}/graphs/contributors`, SITE.credit));
   const licences = [
-    row({ glyph: "doc", tone: "orange", title: content.name, sub: say("contentLicence", e, { site }), href: content.url, rel: "license" }),
-    row({ glyph: "code", tone: "grey", title: code.name, sub: say("codeLicence", e, { site }), href: code.url }),
+    row({ glyph: "doc", title: content.name, sub: say("contentLicence", e, { site }), href: content.url, rel: "license" }),
+    row({ glyph: "code", title: code.name, sub: say("codeLicence", e, { site }), href: code.url }),
   ];
   const contribute = [
-    row({ glyph: "branch", tone: "ink", title: say("sourceLink", e), href: SITE.repository }),
+    row({ glyph: "branch", title: say("sourceLink", e), href: SITE.repository }),
     row({
       glyph: "flag",
-      tone: "red",
+
       title: say("reportMistake", e),
       href: `${SITE.repository}/issues/new?template=report-a-mistake.yml`,
     }),
-    row({ glyph: "book", tone: "blue", title: say("contributing", e), href: `${SITE.repository}/blob/main/CONTRIBUTING.md` }),
+    row({ glyph: "book", title: say("contributing", e), href: `${SITE.repository}/blob/main/CONTRIBUTING.md` }),
   ];
   const own = brand.credits;
   const version = own?.version?.(e) ?? "";
   const links = [
-    row({ glyph: "globe", tone: "blue", title: t.website, value: new URL(SITE.url).host, href: SITE.url }),
+    row({ glyph: "globe", title: t.website, value: new URL(SITE.url).host, href: SITE.url }),
     ...(own?.rows?.(e) ?? []).map(row),
   ];
   const heading = words("credits");
@@ -55,7 +55,7 @@ function creditsIn(ctx: Context, e: Explain, brand: Brand): void {
 ${version === "" ? "" : `<p class="cr-version">${escapeHtml(version)}</p>`}
 <div class="cr-card cr-links">${links.join("")}</div>
 <h2 class="cr-h2">${heading}</h2>
-<div class="cr-card cr-people"><span class="cr-tile cr-green">${GLYPHS.people}</span><p>${authors}</p></div>
+<div class="cr-card cr-people"><span class="cr-tile">${GLYPHS.people}</span><p>${authors}</p></div>
 <h2 class="cr-h2">${words("licences")}</h2>
 <div class="cr-card">${licences.join("")}</div>
 </div>
