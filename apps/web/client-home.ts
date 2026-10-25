@@ -2,7 +2,17 @@
 // two of at least 320px fit; the filters under the field narrow them (client-search-filters.ts); Close, Escape and the
 // clear button end or empty it; the Read in menu closes on a tap outside it; on phones the toolbar rises above the
 // on-screen keyboard (--hm-kb, home-phone.css).
-import { el, type Result, results as searchResults, type SearchData, tokens, type Topic, topicsOf } from "./client-home-find.ts";
+import {
+  el,
+  type Result,
+  resultOf,
+  results as searchResults,
+  type SearchData,
+  suggest,
+  tokens,
+  type Topic,
+  topicsOf,
+} from "./client-home-find.ts";
 import { addLevelEntries } from "./client-levels.ts";
 import { searchFilters } from "./client-search-filters.ts";
 import { type Index, partOf } from "./search-index.ts";
@@ -38,11 +48,23 @@ function row({ topic, caption, lead }: Result, scale: string[]): HTMLElement {
   return item;
 }
 
+// Rows in the card or two cards of a list: the first half fills the left card, so the order reads down the left, then
+// down the right.
+function fill(list: HTMLElement, shown: Result[], scale: string[]): void {
+  const half = Math.ceil(shown.length / 2);
+  list.replaceChildren();
+  for (const part of shown.length > 1 ? [shown.slice(0, half), shown.slice(half)] : shown.length > 0 ? [shown] : []) {
+    const rows = el("div", "hm-rows");
+    rows.append(...part.map((result) => row(result, scale)));
+    list.append(rows);
+  }
+}
+
 export function homeSearch(): void {
   const root = document.documentElement;
   const $ = (id: string): HTMLElement | null => document.getElementById(id);
   const input = $("hm-q") as HTMLInputElement | null;
-  const [form, clear, close, cards, results, list, none] = [
+  const [form, clear, close, cards, results, list, none, sugg, suggList] = [
     "hm-form",
     "hm-clear",
     "hm-close",
@@ -50,6 +72,8 @@ export function homeSearch(): void {
     "hm-results",
     "hm-list",
     "hm-none",
+    "hm-sugg",
+    "hm-sugg-list",
   ].map($);
   if (!input || !form || !clear || !close || !cards || !results || !list) return;
   const heading = results.querySelector<HTMLElement>(".hm-heading");
@@ -111,7 +135,6 @@ export function homeSearch(): void {
     await loadParts(terms);
     if (mine !== version || topics === null) return;
     const found = searchResults(topics, index, words, input.value, filters(), scale, results.dataset["explained"] ?? "");
-    list.replaceChildren();
     if (heading) heading.textContent = (heading.dataset["count"] ?? "").replace("{n}", String(found.length));
     if (heading) heading.hidden = found.length === 0;
     if (none) {
@@ -119,12 +142,13 @@ export function homeSearch(): void {
       const title = none.querySelector<HTMLElement>(".hm-none-t");
       if (title) title.textContent = (title.dataset["query"] ?? "").replace("{query}", input.value.trim());
     }
-    // The first half fills the left card, so the order reads down the left, then down the right.
-    const half = Math.ceil(found.length / 2);
-    for (const part of found.length > 1 ? [found.slice(0, half), found.slice(half)] : found.length > 0 ? [found] : []) {
-      const rows = el("div", "hm-rows");
-      rows.append(...part.map((result) => row(result, scale)));
-      list.append(rows);
+    fill(list, found, scale);
+    // A query that finds nothing offers four topics the filters allow, drawn anew for each query.
+    if (sugg && suggList) {
+      const explained = results.dataset["explained"] ?? "";
+      const offered = found.length > 0 ? [] : suggest(topics, filters(), scale, Math.random).map((t) => resultOf(t, [], explained));
+      sugg.hidden = offered.length === 0;
+      fill(suggList, offered, scale);
     }
   }
   const filters = searchFilters(() => void update());

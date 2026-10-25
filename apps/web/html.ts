@@ -1,6 +1,6 @@
 // Text as HTML: escaping, and the marks of the data as elements that name what each piece is
 // (CONVENTIONS.md §12): bold for a form or a word a rule is about, italics for a sound or a meaning.
-import { type Explain, type Localized, type Mark, slotName, type Text, type TopicRef, type Variety } from "../../scripts/lib.ts";
+import { type Explain, type Localized, type Mark, say, slotName, type Text, type TopicRef, type Variety } from "../../scripts/lib.ts";
 import { type FoldContext, foldText, type MarkName, reading, textIn, type TextOutput } from "../../scripts/text.ts";
 import { LEARNED } from "../../scripts/text-walk.ts";
 
@@ -92,7 +92,7 @@ function htmlOutput(ctx: Ctx): TextOutput<string> {
 // A variant shows its form; its variety's name stays for screen readers and copied text.
 function varietyLabel(m: { variety: Variety }, c: FoldContext, ctx: Ctx, form: string): string {
   const lang = ctx.explain === ctx.ref.lang ? "" : ` lang="${ctx.explain}"`;
-  const label = `<span class="sr-only"${lang}>${c.plain ? "(" : ""}${escapeHtml(c.variety(m.variety))}: </span>`;
+  const label = `<span class="sr-only"${lang}>${c.plain ? "(" : ""}${escapeHtml(say("labelled", ctx.explain, { label: c.variety(m.variety), value: "" }))}</span>`;
   return label + form + (c.plain ? `<span class="sr-only">)</span>` : "");
 }
 

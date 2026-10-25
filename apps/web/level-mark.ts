@@ -1,6 +1,6 @@
-// The level mark: seven bars, A0 to C2, in a grey capsule, each level a part holds lit in its colour (levels.css);
-// small in table rows, list items and errors. As a button it opens the level popover (level-popover.ts), which says
-// what each level covers in the topic, section or course it belongs to.
+// The level mark: seven bars, A0 to C2, in a grey capsule, each level a part holds lit in its colour (levels.css),
+// then the range in words, "A1–C1" or "A0"; small in table rows, list items and errors. As a button it opens the
+// level popover (level-popover.ts), which names the levels the topic, section or course holds.
 import { type Explain, type Level, LEVELS, listOf, lv, say } from "../../scripts/lib.ts";
 import type { Range } from "../../scripts/levels.ts";
 import { escapeHtml } from "./html.ts";
@@ -23,22 +23,20 @@ export const levelsLabel = (levels: readonly Level[], explain: Explain): string 
 export interface MarkOptions {
   // Table rows, list items, errors and the study path take the small bars.
   small?: boolean;
-  // The range in words after the bars (a course's card on Home).
-  text?: boolean;
 }
 
 // The bars alone, for a screen reader one image.
 export function bars(levels: readonly Level[], explain: Explain, o: MarkOptions = {}): string {
   if (levels.length === 0) return "";
-  return `<span class="lvm${o.small === true ? " lvm-sm" : ""}" role="img" aria-label="${escapeHtml(levelsLabel(levels, explain))}">${cells(levels, o)}</span>`;
+  return `<span class="lvm${o.small === true ? " lvm-sm" : ""}" role="img" aria-label="${escapeHtml(levelsLabel(levels, explain))}">${cells(levels)}</span>`;
 }
 
-const cells = (levels: readonly Level[], o: MarkOptions): string =>
+const cells = (levels: readonly Level[]): string =>
   LEVELS.map((l) => `<i class="lv-${l}${levels.includes(l) ? " on" : ""}"></i>`).join("") +
-  (o.text === true ? `<span class="lvm-t">${rangeText(levels)}</span>` : "");
+  `<span class="lvm-t">${rangeText(levels)}</span>`;
 
 // The bars as a button: a tap opens the level popover on the entry `key` of the page's level data.
 export function markButton(levels: readonly Level[], key: string, label: string, o: MarkOptions = {}): string {
   if (levels.length === 0) return "";
-  return `<button type="button" class="lvm lvm-b${o.small === true ? " lvm-sm" : ""}" data-lv="${escapeHtml(key)}" aria-haspopup="dialog" popovertarget="lv-pop" aria-label="${escapeHtml(label)}">${cells(levels, o)}</button>`;
+  return `<button type="button" class="lvm lvm-b${o.small === true ? " lvm-sm" : ""}" data-lv="${escapeHtml(key)}" aria-haspopup="dialog" popovertarget="lv-pop" aria-label="${escapeHtml(label)}">${cells(levels)}</button>`;
 }

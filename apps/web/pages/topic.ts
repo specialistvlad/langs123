@@ -75,7 +75,7 @@ export function topicPages(track: Track): void {
     const variety =
       first === undefined
         ? ""
-        : `<button type="button" class="tp-btn tp-variety" popovertarget="ix-varieties" aria-haspopup="menu">${GLOBE}<span class="tp-label"><span class="sr-only">${escapeHtml(t.variety)}: </span><span data-variety-label>${escapeHtml(first.name)}</span></span></button>`;
+        : `<button type="button" class="tp-btn tp-variety" popovertarget="ix-varieties" aria-haspopup="menu">${GLOBE}<span class="tp-label"><span class="sr-only">${escapeHtml(say("labelled", explain, { label: t.variety, value: "" }))}</span><span data-variety-label>${escapeHtml(first.name)}</span></span></button>`;
     const body = `<a class="tp-up glass" href="${trackUrl(explain, lang)}" aria-label="${escapeHtml(course)}">${BACK}</a>
 <div class="tp-edge" aria-hidden="true"></div>
 <div class="tp-top">

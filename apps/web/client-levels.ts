@@ -1,10 +1,10 @@
 // The level popover (level-popover.ts): a tap on a level mark fills the page's one popover from the mark's entry in
-// the page's level data, before the popover opens; the rows tick the chosen level. Choosing a row sets the filter
-// (client.ts) and closes the popover. On a wide screen the popover opens under its mark, on a phone from the bottom.
+// the page's level data (its name) and from the levels the mark lights, before the popover opens. The head shows the
+// name, the bars and the range as a pill; a level the mark lacks dims and cannot be chosen, the top one (All levels)
+// dimming and staying a choice; the rows tick the chosen level, the top one while none is chosen. Choosing a row sets the filter (client.ts) and closes the
+// popover. On a wide screen the popover opens under its mark, on a phone it rises from the bottom as a sheet.
 export interface Entry {
   t: string;
-  k: "topic" | "section" | "course";
-  l: Record<string, string>;
 }
 
 // Entries a page adds after it loads, as the Home's search does for the topics it lists.
@@ -13,56 +13,82 @@ export const addLevelEntries = (entries: Record<string, Entry>): void => {
   Object.assign(added, entries);
 };
 
+// The range as a level pill: one level, or two joined halves with a hidden dash between.
+function rangePill(from: string, to: string): HTMLElement {
+  const badge = document.createElement("span");
+  badge.className = "badge lvl";
+  badge.dataset["from"] = from;
+  badge.dataset["to"] = to;
+  const half = (level: string): HTMLElement => {
+    const part = document.createElement("span");
+    part.className = `half lvl-${level}`;
+    part.textContent = level;
+    return part;
+  };
+  if (from === to) {
+    badge.append(half(from));
+  } else {
+    const dash = document.createElement("span");
+    dash.className = "sr-only";
+    dash.textContent = "–";
+    badge.append(half(from), dash, half(to));
+  }
+  return badge;
+}
+
 export function levelPopover(root: HTMLElement): void {
   const found = document.getElementById("lv-pop");
   const raw = document.getElementById("lv-data")?.textContent ?? undefined;
   if (found === null || raw === undefined) return;
   const pop: HTMLElement = found;
   const data = JSON.parse(raw) as Record<string, Entry>;
-  const notes = JSON.parse(pop.dataset["notes"] ?? "{}") as Record<string, string>;
-  const off = JSON.parse(pop.dataset["off"] ?? "{}") as Record<string, string>;
   const title = pop.querySelector(".lv-pop-t");
-  const mark = pop.querySelector(".lv-pop-m");
-  const what = pop.querySelector(".lv-pop-what");
+  const range = pop.querySelector(".lv-pop-r");
+  const rows = [...pop.querySelectorAll<HTMLElement>(".lv-row")];
+  const scale = rows.map((row) => row.dataset["row"] ?? "");
+  const all = scale.at(-1);
   let opener: HTMLElement | null = null;
 
+  // With no level chosen the top row is ticked.
   const tick = (): void => {
-    const top = pop.querySelector<HTMLElement>("[data-all]")?.dataset["setLevel"];
-    pop.querySelectorAll<HTMLElement>(".lv-row").forEach((row) => {
-      const all = row.hasAttribute("data-all");
-      const on = all ? root.dataset["level"] === top : row.dataset["setLevel"] === root.dataset["level"] && root.dataset["level"] !== top;
-      row.setAttribute("aria-checked", String(on));
+    const level = root.dataset["level"] ?? "";
+    const chosen = level === "" ? all : level;
+    rows.forEach((row) => {
+      row.setAttribute("aria-checked", String(row.dataset["row"] === chosen));
     });
   };
 
   function fill(button: HTMLElement): void {
-    const key = button.dataset["lv"] ?? "";
-    const entry = data[key] ?? added[key];
+    const entry = data[button.dataset["lv"] ?? ""] ?? added[button.dataset["lv"] ?? ""];
     if (entry === undefined) return;
+    const lit = [...button.querySelectorAll("i.on")].flatMap((bar) =>
+      [...bar.classList].filter((c) => c.startsWith("lv-")).map((c) => c.slice(3)),
+    );
+    const held = scale.filter((level) => lit.includes(level));
     if (title) title.textContent = entry.t;
-    if (what) what.textContent = notes[entry.k] ?? "";
-    if (mark) {
-      const copy = button.cloneNode(true) as HTMLElement;
-      copy.removeAttribute("popovertarget");
-      copy.removeAttribute("data-lv");
-      copy.setAttribute("role", "img");
-      copy.setAttribute("tabindex", "-1");
-      mark.replaceChildren(copy);
-    }
-    pop.querySelectorAll<HTMLElement>("[data-row]").forEach((row) => {
-      const line = entry.l[row.dataset["row"] ?? ""];
-      row.classList.toggle("lv-off", line === undefined);
-      const here = row.querySelector(".lv-here");
-      if (here) here.textContent = line ?? off[entry.k] ?? "";
+    pop.querySelectorAll<HTMLElement>(".lv-pop-m i").forEach((bar, at) => {
+      bar.classList.toggle("on", held.includes(scale[at] ?? ""));
+    });
+    const [from, to] = [held[0], held.at(-1)];
+    range?.replaceChildren(...(from === undefined || to === undefined ? [] : [rangePill(from, to)]));
+    rows.forEach((row) => {
+      const level = row.dataset["row"] ?? "";
+      const has = held.includes(level);
+      row.classList.toggle("lv-off", !has);
+      // The top row stands for every level too, so it stays a choice when dimmed.
+      const choosable = has || level === all;
+      row.setAttribute("aria-disabled", String(!choosable));
+      if (choosable) row.setAttribute("data-set-level", level);
+      else row.removeAttribute("data-set-level");
     });
     tick();
     opener = button;
   }
 
   // On a wide screen, under the mark, its right edge on the mark's, or its left edge where the window leaves no room
-  // for that, inside the window and as tall as the window leaves
-  // it, 20px from the bottom; above the mark when less than a third of the window is left below and the popover does
-  // not fit there. A phone's popover sits at the bottom (level-popover.css).
+  // for that, inside the window and as tall as the window leaves it, 20px from the bottom; above the mark when less
+  // than a third of the window is left below and the popover does not fit there. A phone's popover is a sheet at the
+  // bottom (level-mark.css).
   function place(): void {
     if (opener === null || !matchMedia("(min-width: 861px)").matches) {
       for (const p of ["top", "left", "max-height"]) pop.style.removeProperty(p);

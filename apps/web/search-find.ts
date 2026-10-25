@@ -124,6 +124,13 @@ export const captionOf = (explained: string, topic: Topic): string =>
     ? ""
     : explained.replace(/\{name(:lower)?\}/, (_all, lower?: string) => (lower === undefined ? topic.other : topic.other.toLowerCase()));
 
+// A topic as a result shows it, the terms in bold in its lead (none: no bold).
+export const resultOf = (topic: Topic, terms: readonly string[], explained: string): Result => ({
+  topic,
+  caption: captionOf(explained, topic),
+  lead: boldRuns(topic.summary, terms),
+});
+
 // What a query shows, in order: its terms found, the filters applied, each topic with its caption and its lead.
 export function results(
   topics: Topic[],
@@ -135,9 +142,17 @@ export function results(
   explained: string,
 ): Result[] {
   const terms = tokens(query);
-  return filtered(find(topics, index, words, terms), filters, scale).map((topic) => ({
-    topic,
-    caption: captionOf(explained, topic),
-    lead: boldRuns(topic.summary, terms),
-  }));
+  return filtered(find(topics, index, words, terms), filters, scale).map((topic) => resultOf(topic, terms, explained));
+}
+
+// What a query that finds nothing offers: up to four distinct topics the filters allow, drawn with the random source
+// (a number from 0 up to, not including, 1; Math.random on the page); fewer when fewer are allowed.
+export function suggest(topics: Topic[], filters: Filters, scale: string[], random: () => number, count = 4): Topic[] {
+  const pool = filtered(topics, filters, scale);
+  const drawn: Topic[] = [];
+  while (drawn.length < count && pool.length > 0) {
+    const [topic] = pool.splice(Math.floor(random() * pool.length), 1);
+    if (topic) drawn.push(topic);
+  }
+  return drawn;
 }

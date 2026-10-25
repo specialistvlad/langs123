@@ -53,7 +53,7 @@ test(
   async () => {
     await page.goto(new URL("/", base).href);
     await page.locator(".hm-read summary").click();
-    const ticked = page.locator('.hm-ticks [aria-checked="true"]');
+    const ticked = page.locator('.hm-read .hm-ticks [aria-checked="true"]');
     expect([await ticked.count(), await ticked.getAttribute("hreflang"), await ticked.locator(".ix-tick").isVisible()]).toEqual([
       1,
       "en",

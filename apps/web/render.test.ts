@@ -38,7 +38,7 @@ describe("every block renders its leaves with their levels", () => {
     ]);
     const items = [...d.querySelectorAll("li")];
     expect(items.map((li) => li.getAttribute("data-type"))).toEqual(["rule", "note", "example"]);
-    expect(items[1]?.textContent).toBe("US: the past simple is common.");
+    expect(items[1]?.textContent).toBe("A2US: the past simple is common.");
     expect(items[1]?.querySelector(".lvm-sm > i.on")?.className).toBe("lv-A2 on");
     expect(items[1]?.getAttribute("data-variety")).toBe("en-US");
     expect(items.map((li) => li.getAttribute("data-level"))).toEqual(["A1", "A2", "A1"]);

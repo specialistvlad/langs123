@@ -1,7 +1,7 @@
-// The level popover: opened from a level mark (level-mark.ts), it names the element, says what each level covers
-// in it, and sets the level filter like the level menu. A page holds one popover and the data of its marks as
-// JSON (#lv-data); client-levels.ts fills the popover from the entry the tapped mark names. A level an element
-// lacks reads "Not in this topic" and dims.
+// The level popover: opened from a level mark (level-mark.ts), it names the element with its bars and range, lists
+// the seven levels and sets the level filter like the level menu. A page holds one popover and the names of its
+// marks as JSON (#lv-data); client-levels.ts fills the popover from the entry the tapped mark names and the levels
+// the mark lights. A level the element lacks dims and cannot be chosen.
 import {
   type Block,
   count,
@@ -32,6 +32,9 @@ export interface LevelEntry {
 
 const TICK =
   '<svg width="15" height="13" viewBox="0 0 16 14" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 7.5l4.5 4.5L14.5 1.5"/></svg>';
+
+const CROSS =
+  '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
 // A topic: per level, how many of its parts hold that level: "10 sections".
 export function topicEntry(title: string, parts: { title: string; levels: readonly Level[] }[], explain: Explain): LevelEntry {
@@ -81,16 +84,17 @@ export function courseEntry(title: string, refs: TopicRef[], explain: Explain): 
 export const levelData = (entries: Record<string, LevelEntry>): string =>
   `<script type="application/json" id="lv-data">${JSON.stringify(entries).replace(/</g, "\\u003c")}</script>`;
 
-// The popover a page's marks open: its head, what the levels cover and what the filter does, All levels, then
-// each level with its name, what a learner does there, what it covers in the element and its pill.
+// The popover a page's marks open: its head (the element's name, its bars and range as a pill, and on a phone a close
+// button), the line on hiding, then the seven levels, each with its name, what a learner does there and its pill.
+// The top level reads "Proficiency (All levels)": the filter's default, which shows everything.
 export function levelPopover(explain: Explain): string {
-  const notes = { topic: say("levelsTopic", explain), section: say("levelsSection", explain), course: say("levelsCourse", explain) };
-  const off = { topic: say("notInTopic", explain), section: say("notInSection", explain), course: say("notInCourse", explain) };
-  const row = (level: string, name: string, sub: string, end: string, attrs: string): string =>
-    `<button type="button" role="menuitemradio" class="lv-row" data-set-level="${level}" aria-checked="false"${attrs}><span class="lv-tick">${TICK}</span><span class="lv-text"><span class="lv-name">${escapeHtml(name)}</span>${sub === "" ? "" : `<span class="lv-sub">${escapeHtml(sub)}</span><span class="lv-here"></span>`}</span>${end}</button>`;
   const top = LEVELS.at(-1) ?? "C2";
-  const levels = LEVEL_INFO.map((info) =>
-    row(info.code, levelName(info.code, explain), localize(info.description, explain), pill(single(info.code)), ` data-row="${info.code}"`),
-  ).join("");
-  return `<div class="lv-pop" id="lv-pop" popover role="dialog" aria-labelledby="lv-pop-t" data-notes="${escapeHtml(JSON.stringify(notes))}" data-off="${escapeHtml(JSON.stringify(off))}"><header class="lv-pop-h"><span class="lv-pop-t" id="lv-pop-t"></span><span class="lv-pop-m"></span></header><p class="lv-pop-note"><span class="lv-pop-what"></span> ${escapeHtml(say("levelHidden", explain))}</p><div class="lv-rows" role="menu">${row(top, say("allLevels", explain), "", "", " data-all")}${levels}</div></div>`;
+  const levels = LEVEL_INFO.map((info) => {
+    const name =
+      info.code === top ? say("levelAllLevels", explain, { level: levelName(info.code, explain) }) : levelName(info.code, explain);
+    return `<button type="button" role="menuitemradio" class="lv-row" data-row="${info.code}" data-set-level="${info.code}" aria-checked="false"><span class="lv-tick">${TICK}</span><span class="lv-text"><span class="lv-name">${escapeHtml(name)}</span><span class="lv-sub">${escapeHtml(localize(info.description, explain))}</span></span>${pill(single(info.code))}</button>`;
+  }).join("");
+  const cells = LEVELS.map((l) => `<i class="lv-${l}"></i>`).join("");
+  const close = escapeHtml(say("close", explain));
+  return `<div class="lv-pop" id="lv-pop" popover role="dialog" aria-labelledby="lv-pop-t"><header class="lv-pop-h"><span class="lv-pop-t" id="lv-pop-t"></span><span class="lvm lv-pop-m" aria-hidden="true">${cells}</span><span class="lv-pop-r"></span><button type="button" class="lv-pop-x" popovertarget="lv-pop" popovertargetaction="hide" aria-label="${close}">${CROSS}</button></header><p class="lv-pop-note">${escapeHtml(say("levelHidden", explain))}</p><div class="lv-rows" role="menu">${levels}</div></div>`;
 }

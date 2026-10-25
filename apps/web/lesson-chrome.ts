@@ -1,7 +1,7 @@
 // The parts of a topic page in the frame (pages/topic.ts): the contents, numbered from the summary's 00, Up next,
 // the previous and next capsules, and the course's index as a sheet.
 import { topicTitle } from "../../scripts/content.ts";
-import { type Explain, type Level, levelName, localize, type TopicRef } from "../../scripts/lib.ts";
+import { type Explain, type Level, levelName, localize, say, type TopicRef } from "../../scripts/lib.ts";
 
 import type { Track } from "./context.ts";
 import { glyph } from "./glyphs.ts";
@@ -62,14 +62,14 @@ export function capsules(track: Track, ref: TopicRef): string {
     .map(({ attrs, around: a }) => {
       const prev =
         a.prev === undefined
-          ? `<span class="tp-side tp-prev tp-off" aria-disabled="true" aria-label="${escapeHtml(`${t.previous}:`)}">${PREV}<span class="tp-pt"></span></span>`
-          : `<a class="tp-side tp-prev" ${a.prev.link} aria-label="${escapeHtml(`${t.previous}: ${a.prev.title}`)}">${PREV}<span class="tp-pt">${escapeHtml(a.prev.title)}</span></a>`;
+          ? `<span class="tp-side tp-prev tp-off" aria-disabled="true" aria-label="${escapeHtml(say("labelled", track.explain, { label: t.previous, value: "" }).trimEnd())}">${PREV}<span class="tp-pt"></span></span>`
+          : `<a class="tp-side tp-prev" ${a.prev.link} aria-label="${escapeHtml(say("labelled", track.explain, { label: t.previous, value: a.prev.title }))}">${PREV}<span class="tp-pt">${escapeHtml(a.prev.title)}</span></a>`;
       const next =
         a.next === undefined
           ? ""
           : a.restart
             ? `<a class="tp-side tp-next tp-restart" ${a.next.link} aria-label="${escapeHtml(t.startOver)}"><span class="tp-pt tp-start">${escapeHtml(t.startOver)}</span>${RESTART}</a>`
-            : `<a class="tp-side tp-next" ${a.next.link} aria-label="${escapeHtml(`${t.next}: ${a.next.title}`)}"><span class="tp-pt">${escapeHtml(a.next.title)}</span>${NEXT}</a>`;
+            : `<a class="tp-side tp-next" ${a.next.link} aria-label="${escapeHtml(say("labelled", track.explain, { label: t.next, value: a.next.title }))}"><span class="tp-pt">${escapeHtml(a.next.title)}</span>${NEXT}</a>`;
       return `<nav class="tp-pager glass"${attrs}>${prev}<span class="tp-div" aria-hidden="true"></span>${next}</nav>`;
     })
     .join("");

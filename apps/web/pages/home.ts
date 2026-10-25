@@ -36,7 +36,7 @@ function cards(ctx: Context, home: Explain, entries: Record<string, LevelEntry>)
       const name = localize(lang.name, home);
       const levels = courseLevels(refs);
       entries[lang.code] = courseEntry(name, refs, home);
-      const mark = markButton(levels, lang.code, levelsLabel(levels, home), { text: true });
+      const mark = markButton(levels, lang.code, levelsLabel(levels, home));
       return `<article class="hm-card">
 <div class="hm-course"><a class="hm-course-a" href="${trackUrl(order[0] ?? home, lang)}"><span class="hm-flag" aria-hidden="true">${lang.flag}</span><h2 class="hm-name">${escapeHtml(name)}</h2></a>${mark}</div>
 <p class="hm-label">${escapeHtml(say("matrixExplained", home))}</p>
@@ -65,7 +65,7 @@ function toolbar(home: Explain): string {
   return `<nav class="hm-bar">
 ${searchForm(t)}
 <div class="hm-group hm-folds glass">
-${readMenu(t, readChoices(home, homeUrl), true)}
+${readMenu(t, readChoices(home, homeUrl))}
 ${themeButton(t)}
 <a class="hm-credits" href="${creditsUrl(home)}" aria-label="${credits}" title="${credits}">${INFO}</a>
 ${moreButton(t)}

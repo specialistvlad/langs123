@@ -35,6 +35,7 @@ const STYLES = [
   "credits",
   "credits-cards",
   "level-mark",
+  "level-popover",
   "topic",
   "topic-page",
   "topic-lists",

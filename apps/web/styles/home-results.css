@@ -1,10 +1,10 @@
 /* The Home's search results (pages/home.ts, client-home.ts): "Topics · N" under the filters, then the results in two
    cards where two of at least 320px fit (a content width of 656px), the first half in the left one, else one card;
-   the view for no results. */
+   the view for no results, with four topics to try in the same cards. */
 .hm-heading {
   margin: 0 0 4px;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 18px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -54,6 +54,9 @@
   font-weight: 600;
   color: inherit;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .hm-row-a::after {
   content: "";
@@ -87,10 +90,15 @@
   font-weight: 700;
   color: var(--text);
 }
-/* No results: centred under the filters, the query named */
+/* No results: centred under the filters, the query named, then "Try one of these" over four topics */
 .hm-none {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   max-width: 420px;
   margin: 56px auto 0;
+  padding: 0 20px;
   text-align: center;
 }
 .hm-none[hidden] {
@@ -98,11 +106,11 @@
 }
 .hm-none-i {
   display: block;
-  margin: 0 auto 12px;
+  margin-bottom: 6px;
   color: var(--muted);
 }
 .hm-none-t {
-  margin: 0 0 6px;
+  margin: 0;
   font-size: 22px;
   line-height: 28px;
   font-weight: 700;
@@ -112,6 +120,12 @@
   font-size: 15px;
   line-height: 20px;
   color: var(--muted);
+}
+.hm-sugg {
+  margin-top: 40px;
+}
+.hm-sugg .hm-heading {
+  margin-bottom: 12px;
 }
 /* One card where two of 320px do not fit: the two halves read as one list */
 @media (max-width: 695px) {
@@ -134,14 +148,19 @@
     border-radius: 0 0 22px 22px;
   }
 }
+
+/* A query hides the page's heading and, on a phone, its logo: the results take their place (client-home.ts) */
+.hm-query .hm-title {
+  display: none;
+}
 @media (max-width: 860px) {
-  .hm-row .lvm-t {
+  .hm-query .hm-brand {
     display: none;
   }
 }
-
-/* A query hides the page's header: the results take its place (client-home.ts) */
-.hm-query .hm-brand,
-.hm-query .hm-title {
-  display: none;
+/* On a wide screen the logo fills the band under the field, the filters 20px below it (the band: home-filters.css) */
+@media (min-width: 861px) {
+  html.hm-query .hm-results {
+    padding-top: 8px;
+  }
 }

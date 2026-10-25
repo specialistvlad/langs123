@@ -1,6 +1,7 @@
 // The Home's search in a browser: a query lists the topics of every course that match with the query in bold under
-// "Topics · N", a word met only inside a lesson finds it, a query that matches nothing names it, Escape empties the
-// search and brings the cards back; the filters narrow the topics to a course and the levels up to one, and a tap
+// "Topics · N", a word met only inside a lesson finds it, a query that matches nothing names it and offers four topics
+// to try, a query keeps the logo in place on wide screens and hides the heading, Escape empties the search and
+// brings the cards back; the filters narrow the topics to a course and the levels up to one, and a tap
 // on a chosen filter clears it; a result's level mark opens the level popover on its topic.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
@@ -25,11 +26,18 @@ test(
     await page.locator("#hm-q").fill("present");
     await page.locator(".hm-row").first().waitFor();
     expect(await page.locator("#hm-cards").isVisible()).toBe(false);
+    expect([await page.locator(".hm-brand").isVisible(), await page.locator(".hm-title").isVisible()]).toEqual([true, false]);
     expect((await page.locator(".hm-row b").first().textContent())?.toLowerCase()).toBe("present");
-    expect(await page.locator(".hm-heading").textContent()).toBe(`Topics · ${String(await page.locator(".hm-row").count())}`);
+    expect(await page.locator("#hm-results > .hm-heading").textContent()).toBe(`Topics · ${String(await page.locator(".hm-row").count())}`);
     await page.locator("#hm-q").fill("qxqxqz");
     await page.locator("#hm-none:not([hidden])").waitFor();
     expect(await page.locator(".hm-none-t").textContent()).toBe("No results for “qxqxqz”");
+    // Four topics to try, each title on one line, with its level mark and range beside it.
+    await page.locator("#hm-sugg-list .hm-row").first().waitFor();
+    expect(await page.locator("#hm-sugg-list .hm-row").count()).toBe(4);
+    const row = page.locator("#hm-sugg-list .hm-row").first();
+    expect(await row.locator(".hm-row-a").evaluate((a) => a.getBoundingClientRect().height)).toBeLessThanOrEqual(20);
+    expect(await row.locator(".lvm-t").isVisible()).toBe(true);
     await page.locator("#hm-q").press("Escape");
     expect(await page.locator("#hm-cards").isVisible()).toBe(true);
     expect(await page.locator("#hm-results").isVisible()).toBe(false);

@@ -4,7 +4,7 @@
 // menu on a course with varieties, and Read in. The
 // order switch, the level filter and the variety switch are the client's own (data-set-order, data-set-level,
 // data-set-variety); client-track.ts follows their state in the menus and the switch.
-import { count, localize, SITE } from "../../../scripts/lib.ts";
+import { count, localize, say, SITE } from "../../../scripts/lib.ts";
 import { varietyName } from "../../../scripts/text.ts";
 import { alternates, readChoices, type Track } from "../context.ts";
 import { escapeHtml } from "../html.ts";
@@ -32,7 +32,7 @@ export function trackIndex(track: Track): void {
   const variety =
     varieties.length === 0
       ? ""
-      : `<button type="button" class="ix-btn ix-variety" popovertarget="ix-varieties" aria-haspopup="menu">${GLOBE}<span class="ix-label"><span class="sr-only">${escapeHtml(t.variety)}: </span><span data-variety-label>${escapeHtml(varieties[0]?.name ?? "")}</span></span></button>`;
+      : `<button type="button" class="ix-btn ix-variety" popovertarget="ix-varieties" aria-haspopup="menu">${GLOBE}<span class="ix-label"><span class="sr-only">${escapeHtml(say("labelled", explain, { label: t.variety, value: "" }))}</span><span data-variety-label>${escapeHtml(varieties[0]?.name ?? "")}</span></span></button>`;
   const body = `<a class="ix-up glass" href="${homeUrl(explain)}" aria-label="${escapeHtml(SITE.name)}">${HOME}</a>
 <main class="hm-main ix-main">
 <div id="hm-cards">

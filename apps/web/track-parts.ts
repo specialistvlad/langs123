@@ -2,7 +2,7 @@
 // headers, a card per category or per level of the study path, each topic with its level mark, and the toolbar's
 // level and variety menus.
 import { topicTitle } from "../../scripts/content.ts";
-import { count, type Explain, type Level, LEVEL_INFO, levelName, localize, type TopicRef } from "../../scripts/lib.ts";
+import { count, type Explain, type Level, LEVEL_INFO, levelName, localize, say, type TopicRef } from "../../scripts/lib.ts";
 import type { Range } from "../../scripts/levels.ts";
 import { refRange } from "../../scripts/levels.ts";
 import type { Track } from "./context.ts";
@@ -152,5 +152,5 @@ export function levelButton(
   const names = Object.fromEntries(LEVEL_INFO.map((l) => [l.code, `${l.code} ${levelName(l.code, explain)}`]));
   const cells = LEVEL_INFO.map((l) => `<i class="lv-${l.code}"></i>`).join("");
   const all = escapeHtml(words.all);
-  return `<button type="button" class="${cls}" popovertarget="${target}" aria-haspopup="menu">${FILTER}<span class="lvm lvm-one" aria-hidden="true" hidden>${cells}</span><span class="${label}"><span class="sr-only">${escapeHtml(words.level)}: </span><span data-level-label data-all="${all}" data-names="${escapeHtml(JSON.stringify(names))}">${all}</span></span></button>`;
+  return `<button type="button" class="${cls}" popovertarget="${target}" aria-haspopup="menu">${FILTER}<span class="lvm lvm-one" aria-hidden="true" hidden>${cells}</span><span class="${label}"><span class="sr-only">${escapeHtml(say("labelled", explain, { label: words.level, value: "" }))}</span><span data-level-label data-all="${all}" data-names="${escapeHtml(JSON.stringify(names))}">${all}</span></span></button>`;
 }

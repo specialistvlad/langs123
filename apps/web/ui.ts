@@ -4,6 +4,7 @@ import { EXPLAIN_CODES, type Explain, explainName, say } from "../../scripts/lib
 // Interface wording keys this app shows, all from languages/interface.yaml.
 const TEXT_KEYS = [
   "read",
+  "readNote",
   "level",
   "variety",
   "upTo",
@@ -29,6 +30,7 @@ const TEXT_KEYS = [
   "searchExplainedIn",
   "searchNoResults",
   "searchNoResultsHint",
+  "searchTryThese",
   "clear",
   "close",
   "website",
@@ -38,6 +40,7 @@ const TEXT_KEYS = [
   "wrong",
   "right",
   "allLevels",
+  "levelAllLevels",
   "levelHidden",
   "readingTime",
   "theme",

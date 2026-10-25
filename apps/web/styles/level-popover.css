@@ -1,0 +1,166 @@
+/* The level popover (level-popover.ts, client-levels.ts): a glass panel under its mark on a wide screen, 380px wide;
+   on a phone a sheet from the bottom, 8px from the edges, over a dimmed page, with a close button in its head */
+.lv-pop {
+  position: fixed;
+  inset: auto;
+  box-sizing: border-box;
+  width: 380px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  margin: 0;
+  padding: 4px 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 0.5px solid var(--glass-border);
+  border-radius: 22px;
+  background: var(--ix-menu-bg, var(--glass-bg));
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  backdrop-filter: blur(40px) saturate(1.8);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  color: var(--text);
+}
+.lv-pop-x {
+  display: none;
+}
+/* On a phone the page holds still while a popover, a menu or a sheet is open: a drag scrolls what is open, or nothing */
+@media (max-width: 860px) {
+  html:has([popover]:popover-open) {
+    overflow: hidden;
+  }
+  .lv-pop {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - 80px);
+  }
+  .lv-pop::backdrop {
+    background: var(--tp-back, rgba(0, 0, 0, 0.18));
+  }
+  .lv-pop-x {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    min-width: 36px;
+    height: 36px;
+    margin: -4px -6px -4px 2px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--lvm-fill);
+    color: inherit;
+    cursor: pointer;
+  }
+}
+.lv-pop-h {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px 4px;
+}
+.lv-pop-t {
+  flex-grow: 1;
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+/* The head shows every level its element holds, whatever level the filter stops at */
+.lv-pop .lvm > i.on,
+.lv-pop .lvl > .half {
+  opacity: 1 !important;
+}
+.lv-pop-r:empty {
+  display: none;
+}
+.lv-pop .badge {
+  --badge-pad: 0 7px;
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.lv-pop-note {
+  margin: 0;
+  padding: 12px 16px 8px;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--ix-menu-sub, var(--muted));
+}
+.lv-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: 8px 16px 8px 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.lv-row:hover {
+  background: var(--hm-fill, var(--pg-fill));
+}
+.lv-pop-note + .lv-rows > .lv-row:first-child::before,
+.lv-row + .lv-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 42px;
+  right: 16px;
+  height: 0.5px;
+  background: var(--ix-sep, var(--pg-sep));
+}
+.lv-tick {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 18px;
+  color: var(--accent);
+  visibility: hidden;
+}
+.lv-row[aria-checked="true"] .lv-tick {
+  visibility: visible;
+}
+.lv-text {
+  flex-grow: 1;
+  min-width: 0;
+}
+.lv-name {
+  display: block;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+.lv-sub {
+  display: block;
+  margin-top: 1px;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--ix-menu-sub, var(--muted));
+}
+/* A level the element lacks */
+.lv-off,
+.lv-off:hover {
+  background: transparent;
+  cursor: default;
+}
+.lv-off .lv-name {
+  color: var(--muted);
+}
+.lv-off .lv-sub {
+  opacity: 0.6;
+}
+.lv-off .badge {
+  opacity: 0.55;
+}

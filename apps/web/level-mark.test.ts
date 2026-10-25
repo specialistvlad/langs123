@@ -1,5 +1,5 @@
-// The level mark: seven bars with the levels a part holds lit, the range in words from lowest to highest, and the button that
-// opens the level popover.
+// The level mark: seven bars with the levels a part holds lit, the range in words from lowest to highest beside them
+// on every mark, and the button that opens the level popover.
 import { expect, test } from "bun:test";
 import { parseHTML } from "linkedom";
 import { bars, levelsLabel, levelsOf, markButton, rangeText } from "./level-mark.ts";
@@ -23,8 +23,14 @@ test("a mark draws all seven bars, lights the levels it is given, and reads them
   expect(lit(html)).toEqual(["lv-A1", "lv-B2"]);
   expect(html).toContain('class="lvm lvm-sm"');
   expect(html).toContain(`aria-label="${levelsLabel(["A1", "B2"], "en")}"`);
-  expect(bars(["A0", "A1"], "en", { text: true })).toContain('<span class="lvm-t">A0–A1</span>');
   expect(bars([], "en")).toBe("");
+});
+
+test("every mark, small or regular, a plain image or a button, carries its range in words", () => {
+  expect(bars(["A0", "A1"], "en")).toContain('<span class="lvm-t">A0–A1</span>');
+  expect(bars(["B2"], "en", { small: true })).toContain('<span class="lvm-t">B2</span>');
+  expect(markButton(["A1", "B2", "C1"], "s3", "")).toContain('<span class="lvm-t">A1–C1</span>');
+  expect(markButton(["B1"], "s3", "", { small: true })).toContain('<span class="lvm-t">B1</span>');
 });
 
 test("a mark as a button opens the level popover on its entry", () => {

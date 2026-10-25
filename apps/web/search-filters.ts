@@ -7,7 +7,8 @@ import { varietyName } from "../../scripts/text.ts";
 import type { Choice } from "./context.ts";
 import { glyph, LANGUAGES } from "./glyphs.ts";
 import { escapeHtml } from "./html.ts";
-import { item, TICK } from "./track-parts.ts";
+import { readItems } from "./read-menu.ts";
+import { item } from "./track-parts.ts";
 import type { Ui } from "./ui.ts";
 
 export const CHEVRON_DOWN = glyph('<path d="M6 9l6 6 6-6"/>', 14, 2.4, ' class="hm-fchip-open"');
@@ -15,8 +16,8 @@ export const REMOVE = glyph('<path d="M7 7l10 10M17 7L7 17"/>', 14, 2.4, ' class
 
 const chip = (target: string, label: string, attrs = ""): string =>
   `<button type="button" class="hm-fchip" popovertarget="${target}" data-target="${target}" aria-haspopup="menu"${attrs}><span class="hm-fchip-l">${label}</span>${CHEVRON_DOWN}${REMOVE}</button>`;
-const menu = (id: string, label: string, items: string): string =>
-  `<div class="ix-menu hm-fmenu" id="${id}" popover role="menu" aria-label="${escapeHtml(label)}">${items}</div>`;
+const menu = (id: string, label: string, items: string, more = ""): string =>
+  `<div class="ix-menu hm-fmenu${more}" id="${id}" popover role="menu" aria-label="${escapeHtml(label)}">${items}</div>`;
 
 export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguage[], read: Choice[]): string {
   const all = say("searchAllCourses", home);
@@ -57,16 +58,7 @@ export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguag
         ...LEVEL_INFO.map((l) => item(`data-set-level="${l.code}"`, upTo.replace("{level}", l.code), false, levelName(l.code, home))),
       ].join(""),
     ),
-    menu(
-      "hm-f-read",
-      t.read,
-      read
-        .map(
-          (c) =>
-            `<a href="${c.href}" hreflang="${c.lang}" data-read="${c.lang}" role="menuitemradio" class="ix-item" aria-checked="${String(c.on)}"><span class="ix-tick" aria-hidden="true">${TICK}</span><span class="ix-text"><span class="ix-title">${escapeHtml(c.label)}</span></span></a>`,
-        )
-        .join(""),
-    ),
+    menu("hm-f-read", t.read, readItems(t, read), " hm-ticks"),
     ...courses
       .filter((c) => c.varieties.length > 0)
       .map((c) =>
