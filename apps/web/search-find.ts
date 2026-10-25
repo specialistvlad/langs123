@@ -78,3 +78,36 @@ export function find(topics: Topic[], index: Index, words: readonly string[], te
   });
   return found.sort((a, b) => b.title - a.title || b.score - a.score || a.topic.order - b.topic.order).map((f) => f.topic);
 }
+
+// The text in runs, each place a term appears in bold: [run, bold]. Matching runs on the folded text; each folded
+// letter remembers where it came from, so a bold run is cut from the original, its marks included ("Pretérito").
+export function boldRuns(text: string, terms: readonly string[]): [string, boolean][] {
+  let plain = "";
+  const origin: number[] = [];
+  for (let i = 0; i < text.length; i++) {
+    for (const c of fold(text[i] ?? "")) {
+      plain += c;
+      origin.push(i);
+    }
+  }
+  const spans: [number, number][] = [];
+  for (const term of terms) {
+    for (let at = plain.indexOf(term); at >= 0; at = plain.indexOf(term, at + term.length)) {
+      let to = (origin[at + term.length - 1] ?? 0) + 1;
+      while (to < text.length && /\p{M}/u.test(text[to] ?? "")) to++;
+      spans.push([origin[at] ?? 0, to]);
+    }
+  }
+  spans.sort((a, b) => a[0] - b[0]);
+  const runs: [string, boolean][] = [];
+  let end = 0;
+  for (const [from, to] of spans) {
+    if (to <= end) continue;
+    const start = Math.max(from, end);
+    if (start > end) runs.push([text.slice(end, start), false]);
+    runs.push([text.slice(start, to), true]);
+    end = to;
+  }
+  if (end < text.length) runs.push([text.slice(end), false]);
+  return runs;
+}

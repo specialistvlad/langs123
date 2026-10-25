@@ -4,7 +4,7 @@
 // letter away; a query ranks the topics its words weigh most in, titles first; the filters narrow them to a course
 // and the levels up to one. Then what the website alone does: each word keeps its best topics, in parts by first letter.
 import { expect, test } from "bun:test";
-import { filtered, find, type Topic } from "./search-find.ts";
+import { boldRuns, filtered, find, type Topic } from "./search-find.ts";
 import { BEST, fold, type Index, indexOf, oneEdit, partOf, partsOf, readings, scores, tokens, type TopicWords } from "./search-index.ts";
 import { SEARCH_CASES, searchData } from "./pages/home-search.ts";
 
@@ -27,6 +27,7 @@ interface Cases {
   scores: { terms: string[]; order: number[] }[];
   find: { query: string; titles: string[] }[];
   filters: { query: string; course: string; upTo: string; titles: string[] }[];
+  marked: { text: string; terms: string[]; bold: string[] }[];
 }
 const cases = (await Bun.file(SEARCH_CASES).json()) as Cases;
 const index = indexOf(
@@ -82,6 +83,14 @@ test("the filters narrow the topics to a course and to the levels up to one", ()
       (t) => t.title,
     );
     expect([f.query, found]).toEqual([f.query, f.titles]);
+  }
+});
+
+test("a text shows each place a term appears in bold, cut from the original with its marks", () => {
+  for (const m of cases.marked) {
+    const runs = boldRuns(m.text, m.terms);
+    expect(runs.map(([run]) => run).join("")).toBe(m.text);
+    expect([m.text, runs.filter(([, bold]) => bold).map(([run]) => run)]).toEqual([m.text, m.bold]);
   }
 });
 
