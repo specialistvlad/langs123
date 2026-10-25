@@ -60,7 +60,8 @@ export function sectionEntry(title: string, content: Block[], explain: Explain):
   return { t: title, k: "section", l };
 }
 
-// A course: per level, the topics covering it and those starting there: "12 topics cover A1; 5 start here".
+// A course: per level, the topics covering it and those starting there, joined as each language joins them
+// (coverAndStart): "12 topics cover A1; 5 start here", "12トピックがA1を扱う（うち5トピックはここから始まる）".
 export function courseEntry(title: string, refs: TopicRef[], explain: Explain): LevelEntry {
   const l: LevelEntry["l"] = {};
   const held = refs
@@ -71,7 +72,7 @@ export function courseEntry(title: string, refs: TopicRef[], explain: Explain): 
     if (covering.length === 0) continue;
     const starting = covering.filter((x) => x.levels[0] === level).length;
     const cover = count("topicsCover", explain, covering.length).replace("{level}", level);
-    l[level] = starting === 0 ? cover : `${cover}; ${count("startHere", explain, starting)}`;
+    l[level] = starting === 0 ? cover : say("coverAndStart", explain, { cover, start: count("startHere", explain, starting) });
   }
   return { t: title, k: "course", l };
 }
