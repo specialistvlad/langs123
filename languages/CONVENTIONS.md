@@ -31,10 +31,10 @@ grows toward N languages, each explained in N languages.
   Italian (`it`), Polish (`pl`), Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). Each is written
   in its own language first, and the other ten translate it. French (`fr`) and Japanese (`ja`) join from
   A0 to A2 in eleven tracks each: French is written in French first, and Japanese in English first.
-- Japanese (`ja`) is also an explanation language that `site.yaml` keeps from readers (`enabled: false`):
-  the names of the explanation languages and of the languages being learned, the level scale, the concepts
-  and the shared wording of `interface.yaml` carry its text, and its tracks join as their topics are
-  written in it.
+- Japanese (`ja`) is also an explanation language of the interface: the names of the explanation
+  languages and of the languages being learned, the level scale, the concepts and the shared wording of
+  `interface.yaml` carry its text, so the Home, the credits and the missing page read in Japanese, and a
+  course opens in its own first explanation language. Its tracks join as their topics are written in it.
 - An explanation language is data alone: its entry in `site.yaml` and its text in the files of
   `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.
