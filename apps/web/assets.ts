@@ -3,6 +3,7 @@
 import { join } from "node:path";
 import { LEVEL_INFO } from "../../scripts/lib.ts";
 import { levelColoursCss } from "./level-colours.ts";
+import { tokensCss } from "./tokens.ts";
 
 const APP = import.meta.dir;
 
@@ -47,10 +48,10 @@ const STYLES = [
   "topic-print",
 ];
 
-// style.css: the parts of apps/web/styles/ joined in order.
+// style.css: the colours and shadows of tokens.json (tokens.ts), then the parts of apps/web/styles/ joined in order.
 export async function styleCss(): Promise<string> {
   const parts = await Promise.all(STYLES.map((name) => Bun.file(join(APP, "styles", `${name}.css`)).text()));
-  return parts.join("\n");
+  return [tokensCss(), ...parts].join("\n");
 }
 
 // The browser script: client.ts and its modules bundled, types stripped.
@@ -61,8 +62,8 @@ export async function clientJs(): Promise<string> {
   return file.text();
 }
 
-// Everything about levels that depends on the scale in languages/levels.yaml: each level's colours,
-// its hue from levels.yaml in each theme's tones (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its
+// Everything about levels that depends on the scale in languages/levels.yaml: the rule handing each level's colours
+// to its elements (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its
 // lowest level; it hides while the filter (data-level on <html>) sits below it. The rail keeps its entries and greys
 // them out; a section whose content all sits above the filter shows its note instead. A pill keeps its range and
 // fades the half above the filter (layout.css draws the faded half); a mark dims the bars above it.

@@ -172,5 +172,3 @@ export const topic = (t: Topic, path: string): LibraryTopic => ({
   cheatsheet: t.cheatsheet.content.map(block),
   sections: t.sections.map((s) => ({ title: plainTitle(s.title), for: readersOf(s), blocks: s.content.map(block) })),
 });
-
-// A level's colours as sRGB hex, in the tones the website gives each theme (level-colours.ts): ink writes

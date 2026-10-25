@@ -1,5 +1,5 @@
 // The library as library.json holds it (scripts/export.ts writes it): configuration, languages and topics.
-import { levelColours, linearRgb, type Oklch } from "../../apps/web/level-colours.ts";
+import { levelColours } from "../../apps/web/level-colours.ts";
 import { topicTitle } from "../content.ts";
 import { explainOf, INTERFACE, LEVEL_INFO, LEVELS, loadCurriculum, loadTopics, ROOT, sectionSlug, SITE } from "../lib.ts";
 import { varietyName } from "../text.ts";
@@ -7,22 +7,12 @@ import { topic } from "./blocks.ts";
 import { inTrack, localized } from "./text.ts";
 import type { LevelTones, Library } from "./types.ts";
 
-// the level's code, tint lies behind it, strong lies behind the chosen level in the switcher.
-const hex = (colour: Oklch): string =>
-  "#" +
-  linearRgb(colour)
-    .map((v) => {
-      const c = Math.min(1, Math.max(0, v));
-      const encoded = c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055;
-      return Math.round(encoded * 255)
-        .toString(16)
-        .padStart(2, "0");
-    })
-    .join("");
+// A level's colours in a theme, as the website shows them (level-colours.ts, from tokens.json): ink writes the
+// level's code, tint lies behind it, strong lies behind the chosen level in the switcher.
 function tones(theme: "light" | "dark", code: string): LevelTones {
   const t = levelColours(theme)[code];
   if (t === undefined) throw new Error(`No ${theme} colours for level ${code}`);
-  return { ink: hex(t.ink), tint: hex(t.tint), strong: hex(t.strong) };
+  return { ink: t.ink, tint: t.tint, strong: t.strong };
 }
 
 // The whole library: configuration every reader shares (site, credit and licences, explanation languages,
