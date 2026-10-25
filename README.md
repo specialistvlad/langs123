@@ -8,7 +8,10 @@ French, German, Italian, Polish, Turkish, Indonesian and Vietnamese. English fol
 English Grammar Profile setting the level of each grammar point; Spanish follows the Instituto
 Cervantes curriculum, written in Spanish, Latin American by default with Spain a switch away; Ukrainian
 follows the 2024 state standard for Ukrainian as a foreign language, written in Ukrainian with every
-example stress-marked.
+example stress-marked. It holds French and Japanese from A0 to A2, explained in the same eleven
+languages. French follows the Council of Europe reference level descriptions for French, written in
+French, France by default with Québec a switch away; Japanese follows the JF Standard and the Reference
+Framework for Japanese Language Education, written in English with Japanese examples in kana and kanji.
 
 **Site:** https://langs123.com
 
