@@ -75,6 +75,17 @@ describe("a language being learned", () => {
       "es: explain starts with es, the source the other explanation languages translate",
     ]);
   });
+  test("a language never explained in names its explanation languages, any of them first as the source", () => {
+    const learned = (explain: Explain[] | undefined) =>
+      languageMessages((l) => {
+        l.code = "ja";
+        delete l.varieties;
+        if (explain === undefined) delete l.explain;
+        else l.explain = explain;
+      });
+    expect(learned(["en", "uk", "es", "pt", "fr", "de", "it", "pl", "tr", "id", "vi"])).toEqual([]);
+    expect(learned(undefined)).toEqual(["ja: explain names the explanation languages, the source first, as ja is not one of them"]);
+  });
   test("its varieties are its own", () => {
     expect(languageMessages((l) => (l.varieties = ["es-419", "en-GB"]))).toEqual(["es: variety en-GB belongs to another language"]);
   });

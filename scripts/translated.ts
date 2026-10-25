@@ -1,6 +1,6 @@
 // Stamps the fingerprint of the source text on a topic's translations, once they are up to date with it: each
 // explanation language the topic's language is written for, but the source, its track's first explanation
-// language (the language being learned).
+// language.
 // Run: npm run translated -- <topic id or file>… <language>…   (no language: every one but the source)
 //      npm run translated -- --all
 import { relative } from "node:path";

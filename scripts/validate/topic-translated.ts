@@ -1,4 +1,4 @@
-// Translations follow the source text, written in the track's source language (the language being learned):
+// Translations follow the source text, written in the track's source language, its first explanation language:
 // each other explanation language of the topic carries, in `translated`, the fingerprint of the source text it
 // was written from, and a part whose source text changed since is named until the translation catches up and is
 // stamped again.

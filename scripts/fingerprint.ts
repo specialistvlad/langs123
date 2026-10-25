@@ -1,5 +1,6 @@
-// The text a topic's translations follow: its explanations in its track's source language, the language being
-// learned (the first of the track's explanation languages), and its text in the language being learned. A
+// The text a topic's translations follow: its explanations in its track's source language, the first of the
+// track's explanation languages (the language being learned, or English for one never explained in), and its
+// text in the language being learned. A
 // fingerprint holds one short hash per part — the title and summary, the cheatsheet, then each section — so a
 // change names the parts it touched.
 import { createHash } from "node:crypto";

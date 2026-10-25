@@ -1,7 +1,10 @@
 // Generated from languages/schema/topic.schema.json by npm run types. Edit the schema, then regenerate.
 
 export type TopicId = string;
-export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi";
+/**
+ * ISO 639-1 code of a language being learned: an explanation language, or one learned and never explained in, such as ja.
+ */
+export type Learned = string;
 export type Status = "draft" | "approved";
 /**
  * Text: a string, one mark, or a list of parts.
@@ -50,6 +53,7 @@ export type Block = ProseBlock | ListBlock | ParadigmBlock | UsageBlock | Compar
  * A level from languages/levels.yaml. Every leaf carries one; sections, cheatsheets and topics take their range from their leaves.
  */
 export type Level = "A0" | "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
+export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi";
 /**
  * Explanation languages an element serves; all when absent.
  *
@@ -107,7 +111,7 @@ export type Content = Block[];
  */
 export interface Langs123Topic {
   id: TopicId;
-  lang: Explain;
+  lang: Learned;
   kind: "grammar" | "foundations" | "reference";
   tags: string[];
   concepts: string[];

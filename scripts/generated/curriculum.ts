@@ -32,7 +32,7 @@ export interface Langs123Curriculum {
     flag: string;
     name: Localized;
     /**
-     * The explanation languages the language is written for, the language itself first as the source of its explanations; every explanation language, in site.yaml order, when absent.
+     * The explanation languages the language is written for, the source of its explanations first: the language itself when it is an explanation language, else the one its explanations are written in first (English for ja); every explanation language, in site.yaml order, when absent.
      *
      * @minItems 1
      */

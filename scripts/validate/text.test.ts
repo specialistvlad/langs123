@@ -146,7 +146,7 @@ test("links lists every topic a topic's text links to, once", () => {
 
 test("in Ukrainian a dash inside a sentence is punctuation, and elsewhere it names an exchange", () => {
   const dash = (lang: string) => (t: Topic) => {
-    t.lang = lang as Topic["lang"];
+    t.lang = lang;
     prose(t).ex = "Мама — лікар.";
   };
   expect(problems(dash("uk")).filter((p) => p.includes(" — "))).toEqual([]);
