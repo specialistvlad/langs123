@@ -36,6 +36,8 @@ test(
       expect(await page.locator(".ix-level [data-level-label]").textContent()).toBe("All levels");
       await page.click(".ix-level");
       expect(await panelOpen("lv-pop")).toBe(true);
+      // The popover takes its place as it opens (client-levels.ts, on its toggle).
+      await page.waitForFunction(() => document.getElementById("lv-pop")?.style.top !== "");
       expect(await page.locator("#lv-pop .lv-pop-t").textContent()).toBe("English");
       expect(await page.locator("#lv-pop .lv-pop-note").textContent()).toBe("Content above the chosen level is hidden.");
       const pop = await box("#lv-pop");

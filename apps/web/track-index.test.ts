@@ -7,6 +7,7 @@ import { homeUrl } from "./urls.ts";
 
 const english = await readPage("en/english/index.html");
 const spanish = await readPage("en/spanish/index.html");
+const ukrainian = await readPage("en/ukrainian/index.html");
 
 test("a Home button leads the page and the header names the course with its topic count", () => {
   const up = english.querySelector("a.ix-up");
@@ -42,9 +43,11 @@ test("the Level button names the chosen level alone and opens the level popover 
 });
 
 test("a course with varieties has a Variety button with the globe, naming the variety, in the group", () => {
-  const button = spanish.querySelector(".hm-group .ix-variety");
-  expect(button?.getAttribute("popovertarget")).toBe("ix-varieties");
-  expect(button?.querySelector("svg circle")).not.toBeNull();
-  expect(button?.querySelector("[data-variety-label]")?.textContent).not.toBe("");
-  expect(english.querySelector(".ix-variety")).toBeNull();
+  for (const doc of [english, spanish]) {
+    const button = doc.querySelector(".hm-group .ix-variety");
+    expect(button?.getAttribute("popovertarget")).toBe("ix-varieties");
+    expect(button?.querySelector("svg circle")).not.toBeNull();
+    expect(button?.querySelector("[data-variety-label]")?.textContent).not.toBe("");
+  }
+  expect(ukrainian.querySelector(".ix-variety")).toBeNull();
 });

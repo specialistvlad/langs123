@@ -38,8 +38,8 @@ grows toward N languages, each explained in N languages.
 - An explanation language is data alone: its entry in `site.yaml` and its text in the files of
   `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.
-- **English** topics use British spelling and British IPA. US differences appear inline, prefixed
-  `US:`, for example *at the weekend (US: on the weekend)*.
+- **English** topics use British spelling and British IPA. Each US form stands beside its British form as
+  a swap, for example *at the weekend* and *on the weekend*.
 - **Spanish** topics follow the Plan Curricular del Instituto Cervantes (PCIC): its grammar inventory
   sets the topics and the level of each rule, and its reference norm sets the forms. Spanish text opens
   questions and exclamations with ¿ and ¡ and writes every accent: *¿Estás bien?*
@@ -69,7 +69,9 @@ grows toward N languages, each explained in N languages.
   level (日, 月, 人, 本, 何, 時, 食べる, 行く…) and every other word in kana.
 - **Varieties.** `varieties` on a language being learned lists the varieties a reader chooses
   between, the default first, and `varieties` in `interface.yaml` names each variety in every
-  explanation language. Spanish has Latin America (`es-419`), the default, and Spain (`es-ES`).
+  explanation language. English has the UK (`en-GB`), the default, and the US (`en-US`): the British
+  form and its US form stand as a swap, and a US-only note or row carries `en-US`. Spanish has Latin
+  America (`es-419`), the default, and Spain (`es-ES`).
   An element of one variety carries `variety`, and an element without it serves every variety: the
   `vosotros` forms and the rules about them carry `es-ES`, a rule that holds in Latin America alone,
   such as `ustedes` as the one plural of `tú`, carries `es-419`. Voseo appears in an `es-419` note.

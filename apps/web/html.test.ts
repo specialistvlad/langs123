@@ -134,3 +134,10 @@ describe("on a page in another language, every piece names its language", () => 
     );
   });
 });
+
+test("in a lesson of a course without varieties, a variant names its variety in bold before its form", () => {
+  const lesson: Ctx = { ...ctx, ref: { id: "uk.sample.topic", lang: "uk" } as TopicRef, lesson: true };
+  expect(inline({ variant: "gotten", variety: "en-US" }, lesson, true)).toBe(
+    '<span lang="uk"><span data-mark="variant" data-variety="en-US">(<b class="vl">US:</b> gotten)</span></span>',
+  );
+});

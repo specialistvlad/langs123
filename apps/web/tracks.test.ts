@@ -58,7 +58,7 @@ describe.each(ENABLED_EXPLAIN)("the home page in %s", (home) => {
 });
 
 test("a page of a language without varieties has no Variety switch", async () => {
-  const doc = await readPage("en/english/verbs/to-be/index.html");
+  const doc = await readPage("en/ukrainian/foundations/alphabet-handwriting/index.html");
   expect(doc.documentElement.hasAttribute("data-variety")).toBe(false);
   expect(doc.querySelector("[data-set-variety]")).toBeNull();
 });

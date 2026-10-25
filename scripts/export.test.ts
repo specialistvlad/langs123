@@ -70,3 +70,7 @@ test("kanji is followed by its reading, each a mark of its own, and plain text k
   const link: Text = { link: ["と", { kanji: "思", reading: "おも" }, "います: Opinions"], to: "ja.linking.to-omou" };
   expect(explained(link, "en")).toBe("[と思います: Opinions](id:ja.linking.to-omou)");
 });
+
+test("a variant read in no variety names its variety as a label apart from its form", () => {
+  expect(explained({ variant: "gotten", variety: "en-US" }, "en")).toBe("[US:](m:label,variant) [gotten](m:variant)");
+});
