@@ -48,6 +48,12 @@ describe("varieties", () => {
     const mixed: Block = { type: "list", items: [ustedes, { type: "note", level: "A1", text: { en: "all" } }] };
     const d = spanish([only, mixed], ["es-419", "es-ES"]);
     expect([...d.querySelectorAll(".blk")].map((b) => b.getAttribute("data-variety"))).toEqual(["es-419", null]);
+    // In a lesson the block of one variety also shows its variety's name beside it.
+    const lesson = parseHTML(`<main>${blocksHtml([only, mixed], { ...ctx(["es-419", "es-ES"]), lesson: true }, "A1")}</main>`).document;
+    expect([...lesson.querySelectorAll(".blk")].map((b) => b.querySelector(".tp-vblock")?.textContent ?? null)).toEqual([
+      "Latin America",
+      null,
+    ]);
   });
   test("a block whose leaves start later in one variety names that variety's level", () => {
     const spain: Item = { type: "note", level: "A1", variety: "es-ES", text: { en: "tú with strangers" } };
