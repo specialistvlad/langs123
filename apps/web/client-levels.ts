@@ -52,20 +52,25 @@ export function levelPopover(root: HTMLElement): void {
     opener = button;
   }
 
-  // On a wide screen, under the mark and inside the window; a phone's popover sits at the bottom (level-popover.css).
+  // On a wide screen, under the mark, its right edge on the mark's, inside the window and as tall as the window leaves
+  // it, 20px from the bottom; above the mark when less than a third of the window is left below and the popover does
+  // not fit there. A phone's popover sits at the bottom (level-popover.css).
   function place(): void {
     if (opener === null || !matchMedia("(min-width: 861px)").matches) {
-      pop.style.removeProperty("top");
-      pop.style.removeProperty("left");
+      for (const p of ["top", "left", "max-height"]) pop.style.removeProperty(p);
       return;
     }
     const at = opener.getBoundingClientRect();
     const width = pop.offsetWidth;
-    const left = Math.min(Math.max(12, at.left + at.width / 2 - width / 2), innerWidth - width - 12);
+    const left = Math.min(Math.max(12, at.right - width), innerWidth - width - 12);
     const below = at.bottom + 8;
-    const top = below + pop.offsetHeight > innerHeight - 12 ? Math.max(12, at.top - 8 - pop.offsetHeight) : below;
+    const room = innerHeight - below - 20;
+    const under = room >= Math.min(pop.scrollHeight, innerHeight / 3);
+    const height = under ? room : at.top - 8 - 20;
+    const top = under ? below : at.top - 8 - Math.min(pop.scrollHeight, height);
     pop.style.left = `${String(Math.round(left))}px`;
     pop.style.top = `${String(Math.round(top))}px`;
+    pop.style.maxHeight = `${String(Math.round(height))}px`;
   }
 
   document.addEventListener(
