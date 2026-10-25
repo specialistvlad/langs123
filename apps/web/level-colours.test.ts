@@ -1,6 +1,6 @@
-// Level colours: every level has its ink, tint and strong colour in each theme from tokens.json, its code reads
-// clearly (WCAG contrast at least 4.5:1) on its tint in a badge, and levels.css hands each level's colours to its
-// elements.
+// Level colours: every level has its ink, tint, strong, pill and pill ink colour in each theme from tokens.json, its
+// code reads clearly in ink on its tint (WCAG contrast at least 4.5:1) and in pill ink on its pill (at least 4:1, the
+// dark B1 and B2 pills writing white at 4.35:1 and 4.1:1), and levels.css hands each level's colours to its elements.
 import { expect, test } from "bun:test";
 import { LEVEL_INFO } from "../../scripts/lib.ts";
 import { levelColours, levelColoursCss } from "./level-colours.ts";
@@ -18,20 +18,24 @@ const contrast = (a: string, b: string): number => {
   return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
 };
 
-test.each([...THEMES])("every level has its three colours in the %s theme, as hex", (theme) => {
+test.each([...THEMES])("every level has its five colours in the %s theme, as hex", (theme) => {
   const colours = levelColours(theme);
   expect(Object.keys(colours)).toEqual(LEVEL_INFO.map((l) => l.code));
   for (const tones of Object.values(colours)) for (const colour of Object.values(tones)) expect(colour).toMatch(/^#[0-9a-f]{6}$/);
 });
 
-test.each([...THEMES])("in the %s theme every level's code reads clearly on its tint", (theme) => {
+test.each([...THEMES])("in the %s theme every level's code reads clearly on its tint and on its pill", (theme) => {
   for (const [code, tones] of Object.entries(levelColours(theme))) {
-    expect({ code, badge: contrast(tones.ink, tones.tint) >= 4.5 }).toEqual({ code, badge: true });
+    expect({ code, tint: contrast(tones.ink, tones.tint) >= 4.5, pill: contrast(tones["pill-ink"], tones.pill) >= 4 }).toEqual({
+      code,
+      tint: true,
+      pill: true,
+    });
   }
 });
 
 test("levels.css hands each level's colours to its elements", () => {
   expect(levelColoursCss()).toContain(
-    ".lvl-A1 { --lvl: var(--lvl-A1-ink); --level-tint: var(--lvl-A1-tint); --level-strong: var(--lvl-A1-strong); }",
+    ".lvl-A1 { --lvl: var(--lvl-A1-ink); --level-tint: var(--lvl-A1-tint); --level-strong: var(--lvl-A1-strong); --level-pill: var(--lvl-A1-pill); --level-pill-ink: var(--lvl-A1-pill-ink); }",
   );
 });

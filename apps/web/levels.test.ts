@@ -128,23 +128,23 @@ describe.each(topicPages)("%s", (path) => {
   });
 });
 
-test("levels.css hides each level above the filter, fades the badge halves and dims the bars above it, and gives every level its colours and bar", async () => {
+test("levels.css hides each level above the filter, dims the badge halves and the bars the bars above it, and gives every level its colours and bar", async () => {
   await testSite();
   const css = await Bun.file(join(SITE_DIR, "levels.css")).text();
   for (const [i, { code }] of LEVEL_INFO.entries()) {
     expect(css).toContain(
-      `.lvl-${code} { --lvl: var(--lvl-${code}-ink); --level-tint: var(--lvl-${code}-tint); --level-strong: var(--lvl-${code}-strong); }`,
+      `.lvl-${code} { --lvl: var(--lvl-${code}-ink); --level-tint: var(--lvl-${code}-tint); --level-strong: var(--lvl-${code}-strong); --level-pill: var(--lvl-${code}-pill); --level-pill-ink: var(--lvl-${code}-pill-ink); }`,
     );
-    expect(css).toContain(`.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong);`);
+    expect(css).toContain(`.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); }`);
     const above = LEVELS.slice(i + 1);
     if (above.length === 0) continue;
     expect(css).toContain(`html[data-level="${code}"] .lvm > i:is(${above.map((c) => `.lv-${c}`).join(", ")}).on { opacity: 0.35; }`);
     expect(css).toContain(
       `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"]) :is(${above.map((c) => `[data-level="${c}"]`).join(", ")})`,
     );
-    // Badge halves above the filter fade.
+    // Badge halves above the filter dim.
     expect(css).toContain(
-      `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"]) .lvl > .half:is(${above.map((c) => `.lvl-${c}`).join(", ")}) {`,
+      `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"]) .lvl > .half:is(${above.map((c) => `.lvl-${c}`).join(", ")}) { opacity: 0.55; }`,
     );
   }
 });

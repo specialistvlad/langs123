@@ -37,7 +37,7 @@ const SITE_COLOURS = new Set([
 
 // A token's variable, or undefined for one the stylesheets do not read (the design system's own).
 export function variable(name: string): string | undefined {
-  const level = /^level-([a-z]\d)-(ink|tint|strong)$/.exec(name);
+  const level = /^level-([a-z]\d)-(ink|tint|strong|pill|pill-ink)$/.exec(name);
   if (level) return `--lvl-${(level[1] ?? "").toUpperCase()}-${level[2] ?? ""}`;
   const mark = /^level-mark-(fill|off|text)$/.exec(name);
   if (mark) return `--lvm-${mark[1] ?? ""}`;

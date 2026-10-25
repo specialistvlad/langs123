@@ -67,14 +67,11 @@ export async function clientJs(): Promise<string> {
 // to its elements (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its
 // lowest level; it hides while the filter (data-level on <html>) sits below it. The rail keeps its entries and greys
 // them out; a section whose content all sits above the filter shows its note instead. A pill keeps its range and
-// fades the half above the filter (layout.css draws the faded half); a mark dims the bars above it.
+// dims the half above the filter; a mark dims the bars above it.
 export function levelsCss(): string {
   const codes = LEVEL_INFO.map((l) => l.code);
-  // A mark's bar of a level it holds: the level's strong colour, ringed in its ink where the theme draws the ring.
-  const bars = codes.map(
-    (code) =>
-      `.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); box-shadow: inset 0 0 0 var(--lvm-ring) var(--lvl-${code}-ink); }`,
-  );
+  // A mark's bar of a level it holds: the level's strong colour.
+  const bars = codes.map((code) => `.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); }`);
   const filter = codes.flatMap((code, i) => {
     const above = codes.slice(i + 1).map((c) => `[data-level="${c}"]`);
     if (above.length === 0) return [];
@@ -90,7 +87,7 @@ export function levelsCss(): string {
       .join(", ")})`;
     return [
       `${at}:is([data-page="topic"], [data-page="track"]) ${list}:not(.toc > li) { display: none !important; }`,
-      `${at}:is([data-page="topic"], [data-page="track"]) .lvl > .half${halves} { background: var(--beyond-bg); box-shadow: var(--beyond-edge); color: var(--beyond-ink); }`,
+      `${at}:is([data-page="topic"], [data-page="track"]) .lvl > .half${halves} { opacity: 0.55; }`,
       `${at}[data-page="topic"] .toc > li${list} { opacity: 0.4; pointer-events: none; }`,
       `${at} .lvm > i:is(${codes
         .slice(i + 1)

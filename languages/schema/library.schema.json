@@ -515,13 +515,15 @@
       }
     },
     "tones": {
-      "description": "A level's colours as sRGB hex: ink writes its code, tint lies behind it, strong lies behind the chosen level.",
+      "description": "A level's colours as sRGB hex: ink writes its code on tint, strong fills its bar in a level mark, and a level pill writes its code in pillInk on pill.",
       "type": "object",
       "additionalProperties": false,
       "required": [
         "ink",
         "tint",
-        "strong"
+        "strong",
+        "pill",
+        "pillInk"
       ],
       "properties": {
         "ink": {
@@ -533,6 +535,14 @@
           "pattern": "^#[0-9a-f]{6}$"
         },
         "strong": {
+          "type": "string",
+          "pattern": "^#[0-9a-f]{6}$"
+        },
+        "pill": {
+          "type": "string",
+          "pattern": "^#[0-9a-f]{6}$"
+        },
+        "pillInk": {
           "type": "string",
           "pattern": "^#[0-9a-f]{6}$"
         }

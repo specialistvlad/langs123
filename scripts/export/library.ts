@@ -8,11 +8,11 @@ import { inTrack, localized } from "./text.ts";
 import type { LevelTones, Library } from "./types.ts";
 
 // A level's colours in a theme, as the website shows them (level-colours.ts, from tokens.json): ink writes the
-// level's code, tint lies behind it, strong lies behind the chosen level in the switcher.
+// level's code on its tint, strong fills its bar in a level mark, and a level pill writes the code in pill ink on pill.
 function tones(theme: "light" | "dark", code: string): LevelTones {
   const t = levelColours(theme)[code];
   if (t === undefined) throw new Error(`No ${theme} colours for level ${code}`);
-  return { ink: t.ink, tint: t.tint, strong: t.strong };
+  return { ink: t.ink, tint: t.tint, strong: t.strong, pill: t.pill, pillInk: t["pill-ink"] };
 }
 
 // The whole library: configuration every reader shares (site, credit and licences, explanation languages,

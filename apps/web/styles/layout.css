@@ -13,20 +13,15 @@
 }
 
 /* A level badge is one pill, (A1), or two joined halves, (A1][B1): the rounded badge clips its
-   halves, and each half writes its level's code in the level's ink (--lvl) on its tint
-   (--level-tint), both set per level and theme in levels.css. --badge-pad sizes the halves. */
+   halves, and each half writes its level's code in its pill ink (--level-pill-ink) on its pill colour
+   (--level-pill), both set per level and theme in levels.css. --badge-pad sizes the halves. */
 .lvl {
   margin-left: 8px;
 }
 .lvl > .half {
   padding: var(--badge-pad, 1px 7px);
-  background: var(--level-tint);
-  color: var(--lvl);
-  /* A half above the level filter keeps its code and fades: an outline of its colour, no tint
-     (levels.css picks the halves) */
-  --beyond-bg: transparent;
-  --beyond-edge: inset 0 0 0 1px color-mix(in oklch, var(--lvl) 40%, transparent);
-  --beyond-ink: color-mix(in oklch, var(--lvl) 55%, var(--surface));
+  background: var(--level-pill);
+  color: var(--level-pill-ink);
 }
 .lvl > .half:first-child {
   border-radius: 999px 0 0 999px;

@@ -64,6 +64,8 @@ export interface LevelTones {
   ink: string;
   tint: string;
   strong: string;
+  pill: string;
+  pillInk: string;
 }
 export interface Library {
   source: { commit: string };
