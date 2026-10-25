@@ -33,6 +33,8 @@ export const SAMPLE: Sample = {
     "es.fundamentos.pronunciacion-acentuacion", // the es-ES variety, readers
     "es.sustantivo-determinantes.plural", // a spelling section, the l1 mark
     "uk.foundations.alphabet-handwriting", // Ukrainian, an inventory of letters
+    "fr.bases.heure", // French, its varieties fr-FR and fr-CA
+    "ja.sentence-basics.desu", // Japanese, a language learned and never explained in, the kanji mark
     // The pages the browser tests open, with their neighbours on the study path and by category: the first
     // topic of each order, the steps they follow, and the Spanish tables whose varieties they switch.
     "en.foundations.alphabet-spelling",

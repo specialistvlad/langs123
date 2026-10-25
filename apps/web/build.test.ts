@@ -24,7 +24,8 @@ test("each track of the sample has its index and topics, in the sample's explana
   for (const t of tracks) {
     expect(pages.filter((p) => p.startsWith(`${t}/`) && p.split("/").length === 5).length).toBeGreaterThan(0);
   }
-  expect(tracks.size).toBe(9);
+  // One track per course of the sample in each of its explanation languages.
+  expect(tracks.size).toBe(new Set(SAMPLE.topics.map((id) => id.split(".")[0])).size * SAMPLE.explain.length);
 });
 
 test("each home page has its search data: every topic of the sample with its course, the courses not written for its language opening in their first", async () => {
