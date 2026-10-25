@@ -52,7 +52,8 @@ export function levelPopover(root: HTMLElement): void {
     opener = button;
   }
 
-  // On a wide screen, under the mark, its right edge on the mark's, inside the window and as tall as the window leaves
+  // On a wide screen, under the mark, its right edge on the mark's, or its left edge where the window leaves no room
+  // for that, inside the window and as tall as the window leaves
   // it, 20px from the bottom; above the mark when less than a third of the window is left below and the popover does
   // not fit there. A phone's popover sits at the bottom (level-popover.css).
   function place(): void {
@@ -62,7 +63,7 @@ export function levelPopover(root: HTMLElement): void {
     }
     const at = opener.getBoundingClientRect();
     const width = pop.offsetWidth;
-    const left = Math.min(Math.max(12, at.right - width), innerWidth - width - 12);
+    const left = Math.min(at.right - width >= 12 ? at.right - width : at.left, innerWidth - width - 12);
     const below = at.bottom + 8;
     const room = innerHeight - below - 20;
     const under = room >= Math.min(pop.scrollHeight, innerHeight / 3);
