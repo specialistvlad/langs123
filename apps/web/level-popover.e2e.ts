@@ -47,14 +47,14 @@ test(
     expect(await litBy("#lv-pop .lv-pop-m")).toEqual(held);
     const range = await page.$$eval("#lv-pop .lv-pop-r .half", (els) => els.map((el) => el.textContent));
     expect(range).toEqual([...new Set([held[0] ?? "", held.at(-1) ?? ""])]);
-    // Seven rows; the levels the topic lacks dim and have no choice behind them, the top one (All levels) keeping its
-    // choice; no per-level lines.
+    // Seven rows; the levels the topic lacks below the top one dim and have no choice behind them, the top one (All
+    // levels) staying active; no per-level lines.
     const rows = await page.$$eval("#lv-pop .lv-row", (els) =>
       els.map((el) => [el.getAttribute("data-row"), el.classList.contains("lv-off"), el.getAttribute("data-set-level")]),
     );
     expect(rows.map(([level]) => level)).toEqual([...LEVELS]);
-    expect(rows.map(([level, off]) => [level, off])).toEqual(LEVELS.map((level) => [level, !held.includes(level)]));
-    expect(rows.every(([level, off, set]) => (off === true && level !== "C2" ? set === null : set === level))).toBe(true);
+    expect(rows.map(([level, off]) => [level, off])).toEqual(LEVELS.map((level) => [level, !held.includes(level) && level !== "C2"]));
+    expect(rows.every(([level, off, set]) => (off === true ? set === null : set === level))).toBe(true);
     expect(await page.locator("#lv-pop .lv-here").count()).toBe(0);
     expect(await page.locator("#lv-pop .lv-pop-x").isHidden()).toBe(true);
     // With no level chosen the top row is ticked; choosing a level the topic holds sets it and closes the popover.

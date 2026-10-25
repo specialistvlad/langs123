@@ -1,7 +1,7 @@
 // The level popover (level-popover.ts): a tap on a level mark fills the page's one popover from the mark's entry in
 // the page's level data (its name) and from the levels the mark lights, before the popover opens. The head shows the
-// name, the bars and the range as a pill; a level the mark lacks dims and cannot be chosen, the top one (All levels)
-// dimming and staying a choice; the rows tick the chosen level, the top one while none is chosen. Choosing a row sets the filter (client.ts) and closes the
+// name, the bars and the range as a pill; a level the mark lacks below the top one dims and cannot be chosen, the top
+// one (All levels) staying active; the rows tick the chosen level, the top one while none is chosen. Choosing a row sets the filter (client.ts) and closes the
 // popover. On a wide screen the popover opens under its mark, on a phone it rises from the bottom as a sheet.
 export interface Entry {
   t: string;
@@ -73,12 +73,11 @@ export function levelPopover(root: HTMLElement): void {
     range?.replaceChildren(...(from === undefined || to === undefined ? [] : [rangePill(from, to)]));
     rows.forEach((row) => {
       const level = row.dataset["row"] ?? "";
-      const has = held.includes(level);
+      // The top row stands for every level, so it stays active on an element that stops below it.
+      const has = held.includes(level) || level === all;
       row.classList.toggle("lv-off", !has);
-      // The top row stands for every level too, so it stays a choice when dimmed.
-      const choosable = has || level === all;
-      row.setAttribute("aria-disabled", String(!choosable));
-      if (choosable) row.setAttribute("data-set-level", level);
+      row.setAttribute("aria-disabled", String(!has));
+      if (has) row.setAttribute("data-set-level", level);
       else row.removeAttribute("data-set-level");
     });
     tick();
