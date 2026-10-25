@@ -3,6 +3,7 @@
 // that imports only this module keeps working as the modules behind it change.
 export { build, type BuildOptions, type HeadChange, type PageFacts } from "./apps/web/build.ts";
 export { SAMPLE, type Sample } from "./apps/web/sample.ts";
+export { type Served, served } from "./apps/web/serve.ts";
 export { SEARCH_CASES, searchData, type SearchFile as SearchData } from "./apps/web/pages/home-search.ts";
 export { topicUrl, trackUrl } from "./apps/web/urls.ts";
 export {

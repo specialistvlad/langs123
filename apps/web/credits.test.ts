@@ -87,6 +87,7 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
   test("the missing page leads up and to every language's home page, its own first", async () => {
     const doc = await readPage(file(notFoundUrl(e)));
     expect(doc.documentElement.getAttribute("lang")).toBe(e);
+    expect(doc.querySelector(".nf-heading")?.textContent).toBe(say("notFound", e));
     expect(doc.documentElement.hasAttribute("data-frame")).toBe(true);
     expect(doc.querySelector(".pg-up")?.getAttribute("href")).toBe(homeUrl(e));
     const chips = [...doc.querySelectorAll(".nf-chip")].map((a) => a.getAttribute("hreflang"));

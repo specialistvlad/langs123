@@ -20,6 +20,7 @@ test("api.ts exports the build, the export, the search and the library's readers
       "reading",
       "refRange",
       "searchData",
+      "served",
       "say",
       "textIn",
       "topicTitle",

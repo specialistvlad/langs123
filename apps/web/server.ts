@@ -3,12 +3,12 @@
 // It builds the sample (sample.ts) in about a second, with every topic named after it and every topic whose
 // file changes while it runs: npm start -- en.verbs.would. npm start -- --full builds the whole library.
 import { watch } from "node:fs";
-import { stat } from "node:fs/promises";
 import { networkInterfaces } from "node:os";
-import { join, normalize } from "node:path";
+import { join } from "node:path";
 import { ROOT, SITE, topicId } from "../../scripts/lib.ts";
 import { validate } from "../../scripts/validate/index.ts";
 import { build } from "./build.ts";
+import { served } from "./serve.ts";
 import { SAMPLE } from "./sample.ts";
 
 const HOST = process.env["HOST"] ?? "0.0.0.0";
@@ -110,24 +110,10 @@ Bun.serve({
       return new Response(stream, { headers: { "Content-Type": "text/event-stream", Connection: "keep-alive", ...NO_STORE } });
     }
 
-    const rel = normalize(pathname).replace(/^\/+/, "");
-    if (rel.startsWith("..")) return fileResponse(join(OUT, "404.html"), 404);
-    const path = join(OUT, rel);
-    const info = await stat(path).catch(() => null);
-    if (info?.isDirectory() === true) {
-      if (!pathname.endsWith("/")) return new Response(null, { status: 301, headers: { Location: `${pathname}/` } });
-      const index = join(path, "index.html");
-      if (await Bun.file(index).exists()) return fileResponse(index);
-    } else if (info?.isFile() === true) {
-      return fileResponse(path);
-    }
-    // The nearest missing page up the path, as a static host serves it: /uk/… gets /uk/404.html.
-    const folders = rel.split("/").slice(0, -1);
-    for (let n = folders.length; n > 0; n--) {
-      const near = join(OUT, ...folders.slice(0, n), "404.html");
-      if (await Bun.file(near).exists()) return fileResponse(near, 404);
-    }
-    return fileResponse(join(OUT, "404.html"), 404);
+    // As a static host serves it, the nearest missing page up the path included (serve.ts).
+    const answer = await served(OUT, pathname);
+    if (answer.status === 301) return new Response(null, { status: 301, headers: { Location: answer.location } });
+    return fileResponse(answer.file, answer.status);
   },
 });
 
