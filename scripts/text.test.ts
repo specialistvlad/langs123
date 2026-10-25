@@ -21,6 +21,8 @@ describe("localized text", () => {
   test("a variety has its name", () => {
     expect(varietyName("en-US", "en")).toBe("US");
     expect(varietyName("en-GB", "en")).toBe("British");
+    expect(varietyName("fr-FR", "de")).toBe("Frankreich");
+    expect(varietyName("fr-CA", "uk")).toBe("Канада");
   });
 });
 

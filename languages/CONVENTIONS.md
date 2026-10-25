@@ -597,7 +597,7 @@ can show it in the reader's language beside the lesson's written form.
 | `level` | the item's level (§3) |
 | `readers` | the explanation languages an element serves |
 | `speakers` | the first languages of the speakers an error row is typical for |
-| `variety` | the variety of the language being learned an element or a variant belongs to, as a BCP 47 tag: `en-GB`, `en-US`, `es-419`, `es-ES`; an English element without it is British, and an element of a language with varieties serves every variety (§1) |
+| `variety` | the variety of the language being learned an element or a variant belongs to, as a BCP 47 tag: `en-GB`, `en-US`, `es-419`, `es-ES`, `fr-FR`, `fr-CA`; an English element without it is British, and an element of a language with varieties serves every variety (§1) |
 | `features` | the grammar features of a row, a column or a section |
 | `value` | the value of an inventory member or of a value mark |
 | `follows` | a `mapping`, `takes` or `pattern` that continues the form under discussion: `true` |

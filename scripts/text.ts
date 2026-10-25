@@ -182,6 +182,8 @@ const VARIETY_KEYS: Record<Variety, string> = {
   "en-US": "varietyUs",
   "es-419": "varietyLatam",
   "es-ES": "varietySpain",
+  "fr-FR": "varietyFrance",
+  "fr-CA": "varietyCanada",
 };
 
 // A variety's name in an explanation language: "US", "Spain".

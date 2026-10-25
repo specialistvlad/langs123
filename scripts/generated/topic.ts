@@ -43,7 +43,7 @@ export type Mark =
 /**
  * A variety of the language being learned, as a BCP 47 tag. English: en-GB when absent. A language with varieties in curriculum.yaml: an element without one serves every variety.
  */
-export type Variety = "en-GB" | "en-US" | "es-419" | "es-ES";
+export type Variety = "en-GB" | "en-US" | "es-419" | "es-ES" | "fr-FR" | "fr-CA";
 export type Part = string | Mark;
 export type Block = ProseBlock | ListBlock | ParadigmBlock | UsageBlock | ComparisonBlock | InventoryBlock | ErrorsBlock;
 /**

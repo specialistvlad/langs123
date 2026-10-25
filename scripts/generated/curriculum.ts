@@ -4,7 +4,7 @@ export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "t
 /**
  * A variety of a language being learned, as a BCP 47 tag.
  */
-export type Variety = "en-GB" | "en-US" | "es-419" | "es-ES";
+export type Variety = "en-GB" | "en-US" | "es-419" | "es-ES" | "fr-FR" | "fr-CA";
 
 /**
  * Every planned topic of every language being learned: sections by category, and the study path by level.
