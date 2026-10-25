@@ -1,0 +1,58 @@
+/* The filters of the Home's search (search-filters.ts, client-search-filters.ts): chips 34px high on the fill,
+   wrapping onto a second line when needed; a chosen one fills with the accent and shows ✕ in place of its chevron;
+   a chip's menu opens under it. */
+.hm-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+.hm-fchip {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  height: 34px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--hm-fill);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.hm-fchip[hidden] {
+  display: none;
+}
+.hm-fchip-l {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.hm-fchip[aria-pressed="true"] {
+  background: var(--accent);
+  color: #ffffff;
+}
+.hm-fchip-clear,
+.hm-fchip[aria-pressed="true"] .hm-fchip-open {
+  display: none;
+}
+.hm-fchip[aria-pressed="true"] .hm-fchip-clear {
+  display: block;
+}
+.hm-fmenu {
+  right: auto;
+  width: 280px;
+}
+.hm-fmenu a.ix-item {
+  color: inherit;
+  text-decoration: none;
+}
+/* On a wide screen the field sits at the top right, over a band the filters start under */
+@media (min-width: 861px) {
+  .hm-query .hm-results {
+    padding-top: 64px;
+  }
+}

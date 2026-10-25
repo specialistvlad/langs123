@@ -14,6 +14,7 @@ import { courseEntry, type LevelEntry, levelData, levelPopover } from "../level-
 import { levelsLabel, levelsOf, markButton } from "../level-mark.ts";
 import type { Level } from "../../../scripts/lib.ts";
 import { ui } from "../ui.ts";
+import { searchFilters } from "../search-filters.ts";
 import { creditsUrl, homeUrl, trackUrl } from "../urls.ts";
 import { homeSearch } from "./home-search.ts";
 
@@ -111,7 +112,7 @@ export function homePage(ctx: Context): void {
 <div class="hm-grid" id="hm-cards">
 ${grid}
 </div>
-${results(t)}
+${results(t, searchFilters(t, home, ctx.languages, readChoices(home, homeUrl)))}
 </main>
 ${toolbar(home)}
 ${levelPopover(home)}

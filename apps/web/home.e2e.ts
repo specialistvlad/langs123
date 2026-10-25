@@ -1,6 +1,7 @@
-// The Home's search in a browser: a query lists the topics of every course that match with the query in bold,
-// a word met only inside a lesson finds it, a query that matches nothing says so, and Escape empties the search
-// and brings the cards back.
+// The Home's search in a browser: a query lists the topics of every course that match with the query in bold under
+// "Topics · N", a word met only inside a lesson finds it, a query that matches nothing names it, Escape empties the
+// search and brings the cards back; the filters narrow the topics to a course and the levels up to one, and a tap
+// on a chosen filter clears it; a result's level mark opens the level popover on its topic.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -25,8 +26,10 @@ test(
     await page.locator(".hm-row").first().waitFor();
     expect(await page.locator("#hm-cards").isVisible()).toBe(false);
     expect((await page.locator(".hm-row b").first().textContent())?.toLowerCase()).toBe("present");
-    await page.locator("#hm-q").fill("zzzz");
-    await page.locator(".hm-empty").waitFor();
+    expect(await page.locator(".hm-heading").textContent()).toBe(`Topics · ${String(await page.locator(".hm-row").count())}`);
+    await page.locator("#hm-q").fill("qxqxqz");
+    await page.locator("#hm-none:not([hidden])").waitFor();
+    expect(await page.locator(".hm-none-t").textContent()).toBe("No results for “qxqxqz”");
     await page.locator("#hm-q").press("Escape");
     expect(await page.locator("#hm-cards").isVisible()).toBe(true);
     expect(await page.locator("#hm-results").isVisible()).toBe(false);
@@ -40,7 +43,46 @@ test(
     await page.goto(new URL("/", base).href);
     await page.locator("#hm-q").fill("went");
     await page.locator(".hm-row").first().waitFor();
-    expect(await page.locator(".hm-row .hm-row-title").first().textContent()).toContain("Irregular Verbs");
+    expect(await page.locator(".hm-row .hm-row-a").first().textContent()).toContain("Irregular Verbs");
+  },
+  SLOW,
+);
+
+test(
+  "the filters narrow the topics to a course and the levels up to one, and a tap on a chosen one clears it",
+  async () => {
+    await page.goto(new URL("/", base).href);
+    await page.locator("#hm-q").fill("present");
+    await page.locator(".hm-row").first().waitFor();
+    const all = await page.locator(".hm-row").count();
+    await page.locator('[data-filter="course"]').click();
+    await page.locator('#hm-f-course [data-course="es"]').click();
+    await page.waitForFunction(() => document.querySelector('[data-filter="course"]')?.getAttribute("aria-pressed") === "true");
+    const flags = await page.locator(".hm-row-flag").allTextContents();
+    expect([flags.length < all, flags.every((f) => f === "🇪🇸")]).toEqual([true, true]);
+    expect(await page.locator('[data-variety-course="es"]').isVisible()).toBe(true);
+    await page.locator('[data-filter="level"]').click();
+    await page.locator('#hm-f-level [data-set-level="A1"]').click();
+    await page.waitForFunction(() => document.querySelector('[data-filter="level"]')?.textContent === "Up to A1");
+    await page.locator('[data-filter="course"]').click();
+    await page.locator('[data-filter="level"]').click();
+    await page.waitForFunction(() => document.querySelector('[data-filter="level"]')?.getAttribute("aria-pressed") === "false");
+    expect(await page.locator(".hm-row").count()).toBe(all);
+    // Clearing a choice leaves its menu closed.
+    expect(await page.locator(".hm-fmenu:popover-open").count()).toBe(0);
+  },
+  SLOW,
+);
+
+test(
+  "a result's level mark opens the level popover on its topic",
+  async () => {
+    await page.goto(new URL("/", base).href);
+    await page.locator("#hm-q").fill("went");
+    await page.locator(".hm-row").first().waitFor();
+    await page.locator(".hm-row .lvm-b").first().click();
+    await page.locator("#lv-pop:popover-open").waitFor();
+    expect(await page.locator(".lv-pop-t").textContent()).toContain("Irregular Verbs");
   },
   SLOW,
 );

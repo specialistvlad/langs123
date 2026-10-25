@@ -15,10 +15,14 @@ export interface Topic {
   course: string;
   other: string;
   otherLang: string;
+  // The course's code, per level what the topic holds there (the level popover's entry), and the topic's id.
+  code: string;
+  entry: Record<string, string>;
+  id: string;
   order: number;
   t: string;
 }
-type Row = [string, string, string, string, string, string, string, string, string];
+type Row = [string, string, string, string, string, string, string, string, string, string, Record<string, string>, string];
 export interface SearchData {
   levels: string[];
   topics: Row[];
@@ -27,7 +31,7 @@ export interface SearchData {
 }
 
 export const topicsOf = (data: SearchData): Topic[] =>
-  data.topics.map(([title, url, levels, summary, , flag, course, other, otherLang], order) => ({
+  data.topics.map(([title, url, levels, summary, , flag, course, other, otherLang, code, entry, id], order) => ({
     title,
     url,
     levels: levels.split(" "),
@@ -36,9 +40,25 @@ export const topicsOf = (data: SearchData): Topic[] =>
     course,
     other,
     otherLang,
+    code,
+    entry,
+    id,
     order,
     t: fold(title),
   }));
+
+// The filters of the Home's search (search-filters.ts): one course, or all ("" for all); and the levels up to one,
+// a topic counting when its lowest level sits at or below it ("" for every level).
+export interface Filters {
+  course: string;
+  upTo: string;
+}
+export const filtered = (topics: Topic[], filters: Filters, scale: string[]): Topic[] =>
+  topics.filter(
+    (t) =>
+      (filters.course === "" || t.code === filters.course) &&
+      (filters.upTo === "" || scale.indexOf(t.levels[0] ?? "") <= scale.indexOf(filters.upTo)),
+  );
 
 // A term's worth in a title: one that starts with it, a word of it, any part of it; 0 when the title lacks it.
 function worth(term: string, t: Topic): number {

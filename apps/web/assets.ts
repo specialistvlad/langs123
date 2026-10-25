@@ -24,6 +24,7 @@ const STYLES = [
   "notfound",
   "home",
   "home-results",
+  "home-filters",
   "home-bar",
   "home-phone",
   "track",

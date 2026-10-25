@@ -1,7 +1,7 @@
 // The glass toolbar of the pages in the frame, the Home's and a track index's: the search field with its clear
 // button (client-home.ts), the Read in menu, the theme menu, More on a phone's Home, and Close while searching.
 import type { Choice } from "./context.ts";
-import { CLEAR, CLOSE, INFO, LANGUAGES, MENU_BACK, MOON, MORE, SEARCH, SUN, THEME } from "./glyphs.ts";
+import { CLEAR, CLOSE, glyph, INFO, LANGUAGES, MENU_BACK, MOON, MORE, SEARCH, SUN, THEME } from "./glyphs.ts";
 import { escapeHtml } from "./html.ts";
 import { item, TICK } from "./track-parts.ts";
 import type { Ui } from "./ui.ts";
@@ -28,12 +28,17 @@ export function readMenu(t: Ui, choices: Choice[], ticked = false): string {
 export const closeButton = (t: Ui): string =>
   `<button type="button" class="hm-close glass" id="hm-close" aria-label="${escapeHtml(t.close)}">${CLOSE}</button>`;
 
-// Where the search's results go, in place of the page's content while the reader searches.
-export const results = (t: Ui): string =>
-  `<div class="hm-results" id="hm-results" data-empty="${escapeHtml(t.searchEmpty)}" hidden>
-<h2 class="hm-heading">${escapeHtml(t.topics)}</h2>
+// Where the search's results go, in place of the page's content while the reader searches: the filters the page
+// gives (the Home's, search-filters.ts), "Topics · N", the results, and the view for no results, which names the
+// query.
+export const results = (t: Ui, filters = ""): string =>
+  `<div class="hm-results" id="hm-results" data-explained="${escapeHtml(t.searchExplainedIn)}" hidden>
+${filters}
+<h2 class="hm-heading" data-count="${escapeHtml(t.searchTopicsCount)}">${escapeHtml(t.topics)}</h2>
 <div class="hm-list" id="hm-list" aria-live="polite"></div>
+<div class="hm-none" id="hm-none" role="status" hidden>${NONE}<p class="hm-none-t" data-query="${escapeHtml(t.searchNoResults)}"></p><p class="hm-none-s">${escapeHtml(t.searchNoResultsHint)}</p></div>
 </div>`;
+const NONE = glyph('<circle cx="11" cy="11" r="7.5"/><line x1="20.5" y1="20.5" x2="16.4" y2="16.4"/>', 44, 1.8, ' class="hm-none-i"');
 
 // The theme: a button that opens its menu, Auto (the system's), Light or Dark (client-theme.ts keeps the choice).
 export const themeButton = (t: Ui): string =>

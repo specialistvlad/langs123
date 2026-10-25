@@ -1,11 +1,17 @@
 // The level popover (level-popover.ts): a tap on a level mark fills the page's one popover from the mark's entry in
 // the page's level data, before the popover opens; the rows tick the chosen level. Choosing a row sets the filter
 // (client.ts) and closes the popover. On a wide screen the popover opens under its mark, on a phone from the bottom.
-interface Entry {
+export interface Entry {
   t: string;
   k: "topic" | "section" | "course";
   l: Record<string, string>;
 }
+
+// Entries a page adds after it loads, as the Home's search does for the topics it lists.
+const added: Record<string, Entry> = {};
+export const addLevelEntries = (entries: Record<string, Entry>): void => {
+  Object.assign(added, entries);
+};
 
 export function levelPopover(root: HTMLElement): void {
   const found = document.getElementById("lv-pop");
@@ -30,7 +36,8 @@ export function levelPopover(root: HTMLElement): void {
   };
 
   function fill(button: HTMLElement): void {
-    const entry = data[button.dataset["lv"] ?? ""];
+    const key = button.dataset["lv"] ?? "";
+    const entry = data[key] ?? added[key];
     if (entry === undefined) return;
     if (title) title.textContent = entry.t;
     if (what) what.textContent = notes[entry.k] ?? "";
