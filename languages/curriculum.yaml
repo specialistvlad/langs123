@@ -1090,3 +1090,317 @@ languages:
         - uk.word-formation.compounds-abbreviations
         - uk.stylistics.syntactic-devices
         - uk.stylistics.styles
+  - code: fr
+    enabled: true
+    slug: french
+    flag: 🇫🇷
+    name: { en: French, uk: Французька, es: Francés, pt: "Francês", fr: "Français", de: "Französisch", it: "Francese", pl: "Francuski", tr: "Fransızca", id: "Bahasa Prancis", vi: "Tiếng Pháp" }
+    # Written in French, its source, and translated for every other explanation language. The topics and the
+    # level of each rule follow the Council of Europe reference level descriptions for French (Niveau A1.1,
+    # A1 and A2 pour le français). French of France is the default variety; a reader switches to Canada,
+    # the French of Québec, and an element tagged fr-FR or fr-CA shows only in its variety.
+    explain: [fr, en, uk, es, pt, de, it, pl, tr, id, vi]
+    varieties: [fr-FR, fr-CA]
+    sections:
+      - dir: 01-bases
+        title: { fr: "Bases", en: "Foundations", uk: "Основи", es: "Fundamentos", pt: "Fundamentos", de: "Grundlagen", it: "Fondamenti", pl: "Podstawy", tr: "Temeller", id: "Dasar-dasar", vi: "Nền tảng" }
+        topics:
+          - { slug: alphabet-orthographe }
+          - { slug: prononciation }
+          - { slug: liaison-elision }
+          - { slug: nombres }
+          - { slug: jours-mois-dates }
+          - { slug: heure }
+      - dir: 02-nom-determinants
+        title: { fr: "Le nom et les déterminants", en: "Nouns and determiners", uk: "Іменник і детермінативи", es: "El sustantivo y los determinantes", pt: "Substantivos e determinantes", de: "Nomen und Begleiter", it: "Sostantivi e determinanti", pl: "Rzeczowniki i określniki", tr: "İsimler ve belirleyiciler", id: "Kata benda dan determiner", vi: "Danh từ và từ hạn định" }
+        topics:
+          - { slug: genre }
+          - { slug: pluriel }
+          - { slug: articles }
+          - { slug: partitifs-quantites }
+          - { slug: demonstratifs }
+          - { slug: possessifs }
+      - dir: 03-adjectif-adverbe
+        title: { fr: "L’adjectif et l’adverbe", en: "Adjectives and adverbs", uk: "Прикметник і прислівник", es: "El adjetivo y el adverbio", pt: "Adjetivos e advérbios", de: "Adjektive und Adverbien", it: "Aggettivi e avverbi", pl: "Przymiotniki i przysłówki", tr: "Sıfatlar ve zarflar", id: "Kata sifat dan kata keterangan", vi: "Tính từ và trạng từ" }
+        topics:
+          - { slug: adjectifs }
+          - { slug: comparatifs-superlatifs }
+          - { slug: adverbes }
+      - dir: 04-pronoms
+        title: { fr: "Les pronoms", en: "Pronouns", uk: "Займенники", es: "Los pronombres", pt: "Pronomes", de: "Pronomen", it: "Pronomi", pl: "Zaimki", tr: "Zamirler", id: "Kata ganti", vi: "Đại từ" }
+        topics:
+          - { slug: pronoms-sujets }
+          - { slug: tu-vous }
+          - { slug: pronoms-toniques }
+          - { slug: pronoms-complements }
+          - { slug: y-en }
+      - dir: 05-etre-avoir
+        title: { fr: "Être, avoir, il y a", en: "Être, avoir, il y a", uk: "Être, avoir, il y a", es: "Être, avoir, il y a", pt: "Être, avoir, il y a", de: "Être, avoir, il y a", it: "Être, avoir, il y a", pl: "Être, avoir, il y a", tr: "Être, avoir, il y a", id: "Être, avoir, il y a", vi: "Être, avoir, il y a" }
+        topics:
+          - { slug: etre-avoir }
+          - { slug: il-y-a }
+          - { slug: c-est-il-est }
+      - dir: 06-present
+        title: { fr: "Le présent", en: "The present", uk: "Теперішній час", es: "El presente", pt: "O presente", de: "Das Präsens", it: "Il presente", pl: "Czas teraźniejszy", tr: "Şimdiki zaman", id: "Kala kini", vi: "Thì hiện tại" }
+        topics:
+          - { slug: present-verbes-er }
+          - { slug: present-irreguliers }
+          - { slug: verbes-pronominaux }
+      - dir: 07-passe
+        title: { fr: "Les temps du passé", en: "The past", uk: "Минулі часи", es: "Los pasados", pt: "Os tempos do passado", de: "Die Vergangenheitszeiten", it: "I tempi del passato", pl: "Czasy przeszłe", tr: "Geçmiş zamanlar", id: "Kala lampau", vi: "Các thì quá khứ" }
+        topics:
+          - { slug: passe-compose }
+          - { slug: imparfait }
+          - { slug: passe-compose-imparfait }
+      - dir: 08-futur-imperatif
+        title: { fr: "Le futur et l’impératif", en: "Future and imperative", uk: "Майбутній час і наказовий спосіб", es: "El futuro y el imperativo", pt: "Futuro e imperativo", de: "Futur und Imperativ", it: "Futuro e imperativo", pl: "Czas przyszły i tryb rozkazujący", tr: "Gelecek zaman ve emir kipi", id: "Kala mendatang dan imperatif", vi: "Thì tương lai và mệnh lệnh" }
+        topics:
+          - { slug: futur-proche }
+          - { slug: futur-simple }
+          - { slug: imperatif }
+      - dir: 09-verbes-modaux
+        title: { fr: "Les verbes modaux", en: "Modal verbs", uk: "Модальні дієслова", es: "Los verbos modales", pt: "Verbos modais", de: "Modalverben", it: "Verbi modali", pl: "Czasowniki modalne", tr: "Modal fiiller", id: "Kata kerja modal", vi: "Động từ khuyết thiếu" }
+        topics:
+          - { slug: pouvoir-vouloir-devoir }
+      - dir: 10-prepositions
+        title: { fr: "Les prépositions", en: "Prepositions", uk: "Прийменники", es: "Las preposiciones", pt: "Preposições", de: "Präpositionen", it: "Preposizioni", pl: "Przyimki", tr: "Edatlar", id: "Kata depan", vi: "Giới từ" }
+        topics:
+          - { slug: prepositions-lieu }
+          - { slug: villes-pays }
+          - { slug: prepositions-temps }
+      - dir: 11-phrase
+        title: { fr: "La phrase", en: "Sentence building", uk: "Побудова речення", es: "La oración", pt: "Construção de frases", de: "Satzbau", it: "Costruzione della frase", pl: "Budowa zdania", tr: "Cümle kurma", id: "Menyusun kalimat", vi: "Cấu tạo câu" }
+        topics:
+          - { slug: questions }
+          - { slug: negation }
+          - { slug: connecteurs }
+          - { slug: relatives }
+    # The study path follows the levels of the Council of Europe reference level descriptions for French.
+    path:
+      A0:
+        - fr.bases.alphabet-orthographe
+        - fr.bases.prononciation
+        - fr.pronoms.pronoms-sujets
+        - fr.etre-avoir.etre-avoir
+        - fr.bases.nombres
+        - fr.phrase.questions
+        - fr.bases.jours-mois-dates
+        - fr.bases.heure
+        - fr.phrase.negation
+        - fr.pronoms.tu-vous
+        - fr.futur-imperatif.imperatif
+      A1:
+        - fr.bases.alphabet-orthographe
+        - fr.bases.prononciation
+        - fr.pronoms.pronoms-sujets
+        - fr.etre-avoir.etre-avoir
+        - fr.nom-determinants.genre
+        - fr.nom-determinants.articles
+        - fr.nom-determinants.pluriel
+        - fr.present.present-verbes-er
+        - fr.phrase.negation
+        - fr.phrase.questions
+        - fr.pronoms.tu-vous
+        - fr.etre-avoir.il-y-a
+        - fr.etre-avoir.c-est-il-est
+        - fr.adjectif-adverbe.adjectifs
+        - fr.nom-determinants.demonstratifs
+        - fr.nom-determinants.possessifs
+        - fr.bases.liaison-elision
+        - fr.present.present-irreguliers
+        - fr.nom-determinants.partitifs-quantites
+        - fr.pronoms.pronoms-toniques
+        - fr.present.verbes-pronominaux
+        - fr.bases.nombres
+        - fr.bases.jours-mois-dates
+        - fr.bases.heure
+        - fr.prepositions.prepositions-lieu
+        - fr.prepositions.villes-pays
+        - fr.prepositions.prepositions-temps
+        - fr.futur-imperatif.futur-proche
+        - fr.verbes-modaux.pouvoir-vouloir-devoir
+        - fr.futur-imperatif.imperatif
+        - fr.adjectif-adverbe.adverbes
+        - fr.passe.passe-compose
+        - fr.phrase.connecteurs
+        - fr.adjectif-adverbe.comparatifs-superlatifs
+        - fr.pronoms.pronoms-complements
+        - fr.pronoms.y-en
+        - fr.passe.imparfait
+      A2:
+        - fr.bases.alphabet-orthographe
+        - fr.bases.prononciation
+        - fr.pronoms.pronoms-sujets
+        - fr.bases.liaison-elision
+        - fr.etre-avoir.etre-avoir
+        - fr.nom-determinants.genre
+        - fr.nom-determinants.pluriel
+        - fr.nom-determinants.articles
+        - fr.nom-determinants.partitifs-quantites
+        - fr.nom-determinants.demonstratifs
+        - fr.nom-determinants.possessifs
+        - fr.adjectif-adverbe.adjectifs
+        - fr.etre-avoir.c-est-il-est
+        - fr.pronoms.tu-vous
+        - fr.pronoms.pronoms-toniques
+        - fr.present.present-verbes-er
+        - fr.present.present-irreguliers
+        - fr.present.verbes-pronominaux
+        - fr.phrase.questions
+        - fr.phrase.negation
+        - fr.bases.nombres
+        - fr.bases.jours-mois-dates
+        - fr.bases.heure
+        - fr.etre-avoir.il-y-a
+        - fr.adjectif-adverbe.comparatifs-superlatifs
+        - fr.adjectif-adverbe.adverbes
+        - fr.pronoms.pronoms-complements
+        - fr.pronoms.y-en
+        - fr.prepositions.prepositions-lieu
+        - fr.prepositions.villes-pays
+        - fr.prepositions.prepositions-temps
+        - fr.futur-imperatif.futur-proche
+        - fr.futur-imperatif.imperatif
+        - fr.verbes-modaux.pouvoir-vouloir-devoir
+        - fr.passe.passe-compose
+        - fr.passe.imparfait
+        - fr.passe.passe-compose-imparfait
+        - fr.futur-imperatif.futur-simple
+        - fr.phrase.connecteurs
+        - fr.phrase.relatives
+  - code: ja
+    enabled: true
+    slug: japanese
+    flag: 🇯🇵
+    name: { en: Japanese, uk: Японська, es: Japonés, pt: "Japonês", fr: "Japonais", de: "Japanisch", it: "Giapponese", pl: "Japoński", tr: "Japonca", id: "Bahasa Jepang", vi: "Tiếng Nhật" }
+    # Japanese is learned, not explained in: written in English, its source, and translated for every other
+    # explanation language. The topics and the level of each rule follow the Japan Foundation's JF Standard
+    # for Japanese-Language Education and its coursebooks Marugoto and Irodori (A1, A2), and the Agency for
+    # Cultural Affairs' Reference Framework for Japanese Language Education (日本語教育の参照枠, 2021).
+    explain: [en, uk, es, pt, fr, de, it, pl, tr, id, vi]
+    sections:
+      - dir: 01-foundations
+        title: { en: "Foundations", uk: "Основи", es: "Fundamentos", pt: "Fundamentos", fr: "Bases", de: "Grundlagen", it: "Fondamenti", pl: "Podstawy", tr: "Temeller", id: "Dasar-dasar", vi: "Nền tảng" }
+        topics:
+          - { slug: hiragana }
+          - { slug: katakana }
+          - { slug: kana-sounds }
+          - { slug: pronunciation }
+          - { slug: kanji }
+          - { slug: numbers }
+          - { slug: counters }
+          - { slug: days-months-dates }
+          - { slug: telling-time }
+      - dir: 02-sentence-basics
+        title: { en: "Sentence basics", uk: "Основи речення", es: "Bases de la oración", pt: "Bases da frase", fr: "Les bases de la phrase", de: "Satzgrundlagen", it: "Basi della frase", pl: "Podstawy zdania", tr: "Cümlenin temelleri", id: "Dasar kalimat", vi: "Câu cơ bản" }
+        topics:
+          - { slug: desu }
+          - { slug: wa-ga }
+          - { slug: particles-o-ni-de-e }
+          - { slug: particles-to-mo-no }
+          - { slug: questions }
+          - { slug: ko-so-a-do }
+          - { slug: word-order }
+      - dir: 03-adjectives
+        title: { en: "Adjectives", uk: "Прикметники", es: "Los adjetivos", pt: "Adjetivos", fr: "Les adjectifs", de: "Adjektive", it: "Aggettivi", pl: "Przymiotniki", tr: "Sıfatlar", id: "Kata sifat", vi: "Tính từ" }
+        topics:
+          - { slug: i-adjectives }
+          - { slug: na-adjectives }
+          - { slug: comparison }
+          - { slug: likes-wants }
+      - dir: 04-verbs
+        title: { en: "Verbs", uk: "Дієслова", es: "Los verbos", pt: "Verbos", fr: "Les verbes", de: "Verben", it: "Verbi", pl: "Czasowniki", tr: "Fiiller", id: "Kata kerja", vi: "Động từ" }
+        topics:
+          - { slug: aru-iru }
+          - { slug: masu-form }
+          - { slug: verb-groups }
+          - { slug: invitations }
+          - { slug: tai }
+          - { slug: te-form }
+          - { slug: te-kudasai }
+          - { slug: te-iru }
+          - { slug: plain-form }
+          - { slug: permission-obligation }
+          - { slug: experience }
+          - { slug: giving-receiving }
+          - { slug: dekiru }
+      - dir: 05-linking
+        title: { en: "Linking sentences", uk: "Поєднання речень", es: "Unir oraciones", pt: "Ligar frases", fr: "Relier les phrases", de: "Sätze verbinden", it: "Collegare le frasi", pl: "Łączenie zdań", tr: "Cümleleri bağlama", id: "Menghubungkan kalimat", vi: "Nối câu" }
+        topics:
+          - { slug: connectives }
+          - { slug: to-omou }
+          - { slug: noun-modification }
+          - { slug: toki-tara }
+    # The study path follows the levels of the JF Standard and the Reference Framework for Japanese Language Education.
+    path:
+      A0:
+        - ja.foundations.hiragana
+        - ja.foundations.katakana
+        - ja.foundations.kana-sounds
+        - ja.foundations.pronunciation
+        - ja.sentence-basics.desu
+        - ja.sentence-basics.ko-so-a-do
+        - ja.sentence-basics.questions
+        - ja.foundations.numbers
+        - ja.foundations.days-months-dates
+        - ja.foundations.telling-time
+      A1:
+        - ja.foundations.pronunciation
+        - ja.sentence-basics.desu
+        - ja.sentence-basics.wa-ga
+        - ja.sentence-basics.ko-so-a-do
+        - ja.sentence-basics.questions
+        - ja.sentence-basics.particles-to-mo-no
+        - ja.foundations.numbers
+        - ja.foundations.kanji
+        - ja.verbs.aru-iru
+        - ja.verbs.masu-form
+        - ja.sentence-basics.particles-o-ni-de-e
+        - ja.sentence-basics.word-order
+        - ja.adjectives.i-adjectives
+        - ja.adjectives.na-adjectives
+        - ja.adjectives.likes-wants
+        - ja.adjectives.comparison
+        - ja.foundations.counters
+        - ja.verbs.invitations
+        - ja.verbs.tai
+        - ja.verbs.verb-groups
+        - ja.verbs.te-form
+        - ja.verbs.te-kudasai
+        - ja.verbs.te-iru
+        - ja.foundations.days-months-dates
+        - ja.foundations.telling-time
+        - ja.linking.connectives
+      A2:
+        - ja.foundations.pronunciation
+        - ja.foundations.kanji
+        - ja.sentence-basics.desu
+        - ja.sentence-basics.wa-ga
+        - ja.sentence-basics.particles-o-ni-de-e
+        - ja.sentence-basics.particles-to-mo-no
+        - ja.sentence-basics.questions
+        - ja.sentence-basics.word-order
+        - ja.adjectives.i-adjectives
+        - ja.adjectives.na-adjectives
+        - ja.adjectives.likes-wants
+        - ja.adjectives.comparison
+        - ja.foundations.numbers
+        - ja.foundations.counters
+        - ja.foundations.days-months-dates
+        - ja.foundations.telling-time
+        - ja.verbs.aru-iru
+        - ja.verbs.masu-form
+        - ja.verbs.verb-groups
+        - ja.verbs.tai
+        - ja.verbs.te-form
+        - ja.verbs.te-kudasai
+        - ja.verbs.te-iru
+        - ja.verbs.plain-form
+        - ja.verbs.permission-obligation
+        - ja.verbs.experience
+        - ja.verbs.giving-receiving
+        - ja.verbs.dekiru
+        - ja.linking.connectives
+        - ja.linking.to-omou
+        - ja.linking.noun-modification
+        - ja.linking.toki-tara

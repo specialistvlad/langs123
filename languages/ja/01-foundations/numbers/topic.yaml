@@ -1,0 +1,937 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "ja.foundations.numbers"
+lang: "ja"
+kind: "foundations"
+tags: ["numbers", "counting", "kanji-numerals", "prices", "yen"]
+concepts: ["numbers"]
+related: ["ja.foundations.counters", "ja.foundations.days-months-dates", "ja.foundations.telling-time", "ja.foundations.kanji"]
+status: { en: "draft", uk: "draft", es: "draft", pt: "draft", fr: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { uk: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", es: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", pt: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", fr: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", de: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", it: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", pl: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", tr: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", id: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815", vi: "2cd0ad 024766 e80161 e611b5 f621e1 a40399 b991e2 215be4 67477c fda815" }
+title: { en: "Numbers", uk: "Числа", es: "Los números", pt: "Números", fr: "Nombres", de: "Zahlen", it: "Numeri", pl: "Liczebniki", tr: "Sayılar", id: "Angka", vi: "Số" }
+summary:
+  lead:
+    en: ["Numbers up to a million, the readings of 4, 7 and 9, the sound changes of 300 and 8000, ", { term: { kanji: "万", reading: "まん" } }, " and prices in ", { term: { kanji: "円", reading: "えん" } }, "."]
+    uk: ["Числа до мільйона, читання 4, 7 і 9, зміни звуків у 300 і 8000, ", { term: { kanji: "万", reading: "まん" } }, " та ціни в ", { term: { kanji: "円", reading: "えん" } }, "."]
+    es: ["Los números hasta el millón, las lecturas del 4, 7 y 9, los cambios de sonido en 300 y 8000, ", { term: { kanji: "万", reading: "まん" } }, " y los precios en ", { term: { kanji: "円", reading: "えん" } }, "."]
+    pt: ["Os números até um milhão, as leituras do 4, 7 e 9, as mudanças de som em 300 e 8000, ", { term: { kanji: "万", reading: "まん" } }, " e os preços em ", { term: { kanji: "円", reading: "えん" } }, "."]
+    fr: ["Les nombres jusqu’à un million, les lectures de 4, 7 et 9, les changements de son de 300 et 8000, ", { term: { kanji: "万", reading: "まん" } }, " et les prix en ", { term: { kanji: "円", reading: "えん" } }, "."]
+    de: ["Zahlen bis zu einer Million, die Lesungen von 4, 7 und 9, Lautwechsel bei 300 und 8000, ", { term: { kanji: "万", reading: "まん" } }, " und Preise in ", { term: { kanji: "円", reading: "えん" } }, "."]
+    it: ["I numeri fino a un milione, le letture di 4, 7 e 9, i cambi di suono in 300 e 8000, ", { term: { kanji: "万", reading: "まん" } }, " e i prezzi in ", { term: { kanji: "円", reading: "えん" } }, "."]
+    pl: ["Liczby do miliona, odczyty 4, 7 i 9, zmiany brzmienia w 300 i 8000, ", { term: { kanji: "万", reading: "まん" } }, " oraz ceny w ", { term: { kanji: "円", reading: "えん" } }, "."]
+    tr: ["Bir milyona kadar sayılar, 4, 7 ve 9’un okunuşları, 300 ve 8000’deki ses değişimleri, ", { term: { kanji: "万", reading: "まん" } }, " ile ", { term: { kanji: "円", reading: "えん" } }, " cinsinden fiyatlar."]
+    id: ["Angka sampai satu juta, cara baca 4, 7, dan 9, perubahan bunyi pada 300 dan 8000, ", { term: { kanji: "万", reading: "まん" } }, " serta harga dalam ", { term: { kanji: "円", reading: "えん" } }, "."]
+    vi: ["Các số đến một triệu, cách đọc của 4, 7 và 9, biến đổi âm ở 300 và 8000, ", { term: { kanji: "万", reading: "まん" } }, " và giá bằng ", { term: { kanji: "円", reading: "えん" } }, "."]
+  rule:
+    en: ["From 20, tens, ", { term: "じゅう" }, " and units make one word:"]
+    uk: ["Від 20 десятки, ", { term: "じゅう" }, " й одиниці складають одне слово:"]
+    es: ["Desde el 20, decenas, ", { term: "じゅう" }, " y unidades forman una palabra:"]
+    pt: ["A partir do 20, dezenas, ", { term: "じゅう" }, " e unidades formam uma palavra:"]
+    fr: ["À partir de 20, dizaines, ", { term: "じゅう" }, " et unités forment un mot :"]
+    de: ["Ab 20 bilden Zehner, ", { term: "じゅう" }, " und Einer ein Wort:"]
+    it: ["Dal 20, decine, ", { term: "じゅう" }, " e unità formano una parola:"]
+    pl: ["Od 20 dziesiątki, ", { term: "じゅう" }, " i jedności tworzą jedno słowo:"]
+    tr: ["Yirmiden sonra onlar, ", { term: "じゅう" }, " ve birler tek sözcük olur:"]
+    id: ["Mulai dari 20, puluhan, ", { term: "じゅう" }, ", dan satuan membentuk satu kata:"]
+    vi: ["Từ 20, hàng chục, ", { term: "じゅう" }, " và hàng đơn vị tạo thành một từ:"]
+  ex: { examples: [{ numeral: ["に", { target: "じゅう" }, "さん"], value: 23 }, { numeral: ["ご", { target: "じゅう" }, "ろく"], value: 56 }] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A0"
+          point: "0–10"
+          rule:
+            en: ["one word each; 4, 7, 9 are ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            uk: ["по слову на кожне; 4, 7, 9 — ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            es: ["una palabra cada uno; 4, 7, 9 son ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            pt: ["uma palavra cada; 4, 7, 9 são ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            fr: ["un mot chacun ; 4, 7, 9 se disent ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            de: ["je ein Wort; 4, 7, 9 sind ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            it: ["una parola ciascuno; 4, 7, 9 sono ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            pl: ["po jednym wyrazie; 4, 7, 9 to ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            tr: ["her birinin kendi sözcüğü var; 4, 7, 9: ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            id: ["masing-masing satu kata; 4, 7, 9 adalah ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+            vi: ["mỗi số một từ; 4, 7, 9 là ", { term: "よん" }, ", ", { term: "なな" }, ", ", { term: "きゅう" }]
+          tr: { en: { examples: ["4", "7", "9"] }, uk: { examples: ["4", "7", "9"] }, es: { examples: ["4", "7", "9"] }, pt: { examples: ["4", "7", "9"] }, fr: { examples: ["4", "7", "9"] }, de: { examples: ["4", "7", "9"] }, it: { examples: ["4", "7", "9"] }, pl: { examples: ["4", "7", "9"] }, tr: { examples: ["4", "7", "9"] }, id: { examples: ["4", "7", "9"] }, vi: { examples: ["4", "7", "9"] } }
+          ex: { examples: [{ numeral: { target: "よん" }, value: 4 }, { numeral: { target: "なな" }, value: 7 }, { numeral: { target: "きゅう" }, value: 9 }] }
+        - level: "A0"
+          point: "11–99"
+          rule:
+            en: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            uk: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            es: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            pt: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            fr: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            de: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            it: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            pl: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            tr: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            id: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            vi: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+          tr: { en: { examples: ["15", "23"] }, uk: { examples: ["15", "23"] }, es: { examples: ["15", "23"] }, pt: { examples: ["15", "23"] }, fr: { examples: ["15", "23"] }, de: { examples: ["15", "23"] }, it: { examples: ["15", "23"] }, pl: { examples: ["15", "23"] }, tr: { examples: ["15", "23"] }, id: { examples: ["15", "23"] }, vi: { examples: ["15", "23"] } }
+          ex: { examples: [{ numeral: [{ target: "じゅう" }, "ご"], value: 15 }, { numeral: ["に", { target: "じゅう" }, "さん"], value: 23 }] }
+        - level: "A0"
+          point:
+            en: "Phone numbers"
+            uk: "Номери телефонів"
+            es: "Números de teléfono"
+            pt: "Números de telefone"
+            fr: "Numéros de téléphone"
+            de: "Telefonnummern"
+            it: "Numeri di telefono"
+            pl: "Numery telefonów"
+            tr: "Telefon numaraları"
+            id: "Nomor telepon"
+            vi: "Số điện thoại"
+          rule:
+            en: ["digit by digit; ", { term: "の" }, " for the hyphen"]
+            uk: ["по цифрах; дефіс читають ", { term: "の" }]
+            es: ["cifra por cifra; el guion se dice ", { term: "の" }]
+            pt: ["algarismo por algarismo; o hífen diz-se ", { term: "の" }]
+            fr: ["chiffre par chiffre ; le tiret se dit ", { term: "の" }]
+            de: ["Ziffer für Ziffer; der Bindestrich heißt ", { term: "の" }]
+            it: ["cifra per cifra; il trattino si dice ", { term: "の" }]
+            pl: ["cyfra po cyfrze; myślnik to ", { term: "の" }]
+            tr: ["rakam rakam; tire ", { term: "の" }, " diye okunur"]
+            id: ["angka demi angka; tanda hubung dibaca ", { term: "の" }]
+            vi: ["từng chữ số; gạch nối đọc là ", { term: "の" }]
+          tr: { en: "1234-5678", uk: "1234-5678", es: "1234-5678", pt: "1234-5678", fr: "1234-5678", de: "1234-5678", it: "1234-5678", pl: "1234-5678", tr: "1234-5678", id: "1234-5678", vi: "1234-5678" }
+          ex: ["いちにさんよん", { target: "の" }, "ごろくななはち"]
+        - level: "A1"
+          point: "100–900"
+          rule:
+            en: [{ term: "ひゃく" }, "; ", { term: "びゃく" }, " after 3; ", { term: "ぴゃく" }, " after 6 and 8"]
+            uk: [{ term: "ひゃく" }, "; після 3 — ", { term: "びゃく" }, "; після 6 і 8 — ", { term: "ぴゃく" }]
+            es: [{ term: "ひゃく" }, "; tras 3, ", { term: "びゃく" }, "; tras 6 y 8, ", { term: "ぴゃく" }]
+            pt: [{ term: "ひゃく" }, "; depois de 3, ", { term: "びゃく" }, "; depois de 6 e 8, ", { term: "ぴゃく" }]
+            fr: [{ term: "ひゃく" }, " ; après 3, ", { term: "びゃく" }, " ; après 6 et 8, ", { term: "ぴゃく" }]
+            de: [{ term: "ひゃく" }, "; nach 3 ", { term: "びゃく" }, "; nach 6 und 8 ", { term: "ぴゃく" }]
+            it: [{ term: "ひゃく" }, "; dopo 3, ", { term: "びゃく" }, "; dopo 6 e 8, ", { term: "ぴゃく" }]
+            pl: [{ term: "ひゃく" }, "; po 3 ", { term: "びゃく" }, "; po 6 i 8 ", { term: "ぴゃく" }]
+            tr: [{ term: "ひゃく" }, "; 3’ten sonra ", { term: "びゃく" }, "; 6 ve 8’den sonra ", { term: "ぴゃく" }]
+            id: [{ term: "ひゃく" }, "; setelah 3 ", { term: "びゃく" }, "; setelah 6 dan 8 ", { term: "ぴゃく" }]
+            vi: [{ term: "ひゃく" }, "; sau 3 ", { term: "びゃく" }, "; sau 6 và 8 ", { term: "ぴゃく" }]
+          tr: { en: { examples: ["300", "600", "800"] }, uk: { examples: ["300", "600", "800"] }, es: { examples: ["300", "600", "800"] }, pt: { examples: ["300", "600", "800"] }, fr: { examples: ["300", "600", "800"] }, de: { examples: ["300", "600", "800"] }, it: { examples: ["300", "600", "800"] }, pl: { examples: ["300", "600", "800"] }, tr: { examples: ["300", "600", "800"] }, id: { examples: ["300", "600", "800"] }, vi: { examples: ["300", "600", "800"] } }
+          ex: { examples: [{ numeral: ["さん", { target: "びゃく" }], value: 300 }, { numeral: ["ろっ", { target: "ぴゃく" }], value: 600 }, { numeral: ["はっ", { target: "ぴゃく" }], value: 800 }] }
+        - level: "A1"
+          point: "1000–9000"
+          rule:
+            en: [{ term: "せん" }, "; ", { term: "ぜん" }, " after 3; 8000 is ", { term: "はっせん" }]
+            uk: [{ term: "せん" }, "; після 3 — ", { term: "ぜん" }, "; 8000 — ", { term: "はっせん" }]
+            es: [{ term: "せん" }, "; tras 3, ", { term: "ぜん" }, "; 8000 es ", { term: "はっせん" }]
+            pt: [{ term: "せん" }, "; depois de 3, ", { term: "ぜん" }, "; 8000 é ", { term: "はっせん" }]
+            fr: [{ term: "せん" }, " ; après 3, ", { term: "ぜん" }, " ; 8000 se dit ", { term: "はっせん" }]
+            de: [{ term: "せん" }, "; nach 3 ", { term: "ぜん" }, "; 8000 ist ", { term: "はっせん" }]
+            it: [{ term: "せん" }, "; dopo 3, ", { term: "ぜん" }, "; 8000 è ", { term: "はっせん" }]
+            pl: [{ term: "せん" }, "; po 3 ", { term: "ぜん" }, "; 8000 to ", { term: "はっせん" }]
+            tr: [{ term: "せん" }, "; 3’ten sonra ", { term: "ぜん" }, "; 8000, ", { term: "はっせん" }]
+            id: [{ term: "せん" }, "; setelah 3 ", { term: "ぜん" }, "; 8000 adalah ", { term: "はっせん" }]
+            vi: [{ term: "せん" }, "; sau 3 ", { term: "ぜん" }, "; 8000 là ", { term: "はっせん" }]
+          tr: { en: { examples: ["1000", "3000", "8000"] }, uk: { examples: ["1000", "3000", "8000"] }, es: { examples: ["1000", "3000", "8000"] }, pt: { examples: ["1000", "3000", "8000"] }, fr: { examples: ["1000", "3000", "8000"] }, de: { examples: ["1000", "3000", "8000"] }, it: { examples: ["1000", "3000", "8000"] }, pl: { examples: ["1000", "3000", "8000"] }, tr: { examples: ["1000", "3000", "8000"] }, id: { examples: ["1000", "3000", "8000"] }, vi: { examples: ["1000", "3000", "8000"] } }
+          ex: { examples: [{ numeral: { target: "せん" }, value: 1000 }, { numeral: ["さん", { target: "ぜん" }], value: 3000 }, { numeral: ["はっ", { target: "せん" }], value: 8000 }] }
+        - level: "A1"
+          point: { en: "Kanji", uk: "Kanji", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" }
+          rule:
+            en: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            uk: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            es: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            pt: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            fr: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            de: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            it: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            pl: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            tr: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            id: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+            vi: [{ term: { kanji: "一", reading: "いち" } }, " ", { term: { kanji: "二", reading: "に" } }, " ", { term: { kanji: "三", reading: "さん" } }, " … ", { term: { kanji: "十", reading: "じゅう" } }, " ", { term: { kanji: "百", reading: "ひゃく" } }, " ", { term: { kanji: "千", reading: "せん" } }]
+          tr: { en: { examples: ["23", "300"] }, uk: { examples: ["23", "300"] }, es: { examples: ["23", "300"] }, pt: { examples: ["23", "300"] }, fr: { examples: ["23", "300"] }, de: { examples: ["23", "300"] }, it: { examples: ["23", "300"] }, pl: { examples: ["23", "300"] }, tr: { examples: ["23", "300"] }, id: { examples: ["23", "300"] }, vi: { examples: ["23", "300"] } }
+          ex: { examples: [{ numeral: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }], value: 23 }, { numeral: [{ kanji: "三", reading: "さん" }, { kanji: "百", reading: "びゃく" }], value: 300 }] }
+        - level: "A1"
+          point: { en: "Yen", uk: "Єни", es: "Yenes", pt: "Ienes", fr: "Yens", de: "Yen", it: "Yen", pl: "Jeny", tr: "Yen", id: "Yen", vi: "Yên" }
+          rule:
+            en: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            uk: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            es: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            pt: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            fr: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            de: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            it: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            pl: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            tr: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            id: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+            vi: { pattern: [{ slot: "number" }, { term: { kanji: "円", reading: "えん" } }] }
+          tr: { en: "It is 300 yen.", uk: "Це коштує 300 єн.", es: "Cuesta 300 yenes.", pt: "Custa 300 ienes.", fr: "Ça coûte 300 yens.", de: "Das kostet 300 Yen.", it: "Costa 300 yen.", pl: "To kosztuje 300 jenów.", tr: "Fiyatı 300 yen.", id: "Harganya 300 yen.", vi: "Giá 300 yên." }
+          ex: [{ numeral: [{ kanji: "三", reading: "さん" }, { kanji: "百", reading: "びゃく" }], value: 300 }, { target: { kanji: "円", reading: "えん" } }, "です。"]
+        - level: "A2"
+          point: "10 000+"
+          rule:
+            en: [{ term: { kanji: "万", reading: "まん" } }, " is 10 000, and ", { term: { kanji: "一", reading: "いち" } }, " stays before it"]
+            uk: [{ term: { kanji: "万", reading: "まん" } }, " — це 10 000, і ", { term: { kanji: "一", reading: "いち" } }, " перед ним лишається"]
+            es: [{ term: { kanji: "万", reading: "まん" } }, " es 10 000 y ", { term: { kanji: "一", reading: "いち" } }, " se mantiene delante"]
+            pt: [{ term: { kanji: "万", reading: "まん" } }, " é 10 000 e ", { term: { kanji: "一", reading: "いち" } }, " permanece antes"]
+            fr: [{ term: { kanji: "万", reading: "まん" } }, " vaut 10 000 et ", { term: { kanji: "一", reading: "いち" } }, " reste devant"]
+            de: [{ term: { kanji: "万", reading: "まん" } }, " ist 10 000, und ", { term: { kanji: "一", reading: "いち" } }, " bleibt davor"]
+            it: [{ term: { kanji: "万", reading: "まん" } }, " è 10 000 e ", { term: { kanji: "一", reading: "いち" } }, " resta davanti"]
+            pl: [{ term: { kanji: "万", reading: "まん" } }, " to 10 000, a ", { term: { kanji: "一", reading: "いち" } }, " zostaje przed nim"]
+            tr: [{ term: { kanji: "万", reading: "まん" } }, " 10 000’dir ve önünde ", { term: { kanji: "一", reading: "いち" } }, " kalır"]
+            id: [{ term: { kanji: "万", reading: "まん" } }, " adalah 10 000, dan ", { term: { kanji: "一", reading: "いち" } }, " tetap di depannya"]
+            vi: [{ term: { kanji: "万", reading: "まん" } }, " là 10 000, và ", { term: { kanji: "一", reading: "いち" } }, " vẫn đứng trước nó"]
+          tr: { en: { examples: ["10 000", "100 000", "1 000 000"] }, uk: { examples: ["10 000", "100 000", "1 000 000"] }, es: { examples: ["10 000", "100 000", "1 000 000"] }, pt: { examples: ["10 000", "100 000", "1 000 000"] }, fr: { examples: ["10 000", "100 000", "1 000 000"] }, de: { examples: ["10 000", "100 000", "1 000 000"] }, it: { examples: ["10 000", "100 000", "1 000 000"] }, pl: { examples: ["10 000", "100 000", "1 000 000"] }, tr: { examples: ["10 000", "100 000", "1 000 000"] }, id: { examples: ["10 000", "100 000", "1 000 000"] }, vi: { examples: ["10 000", "100 000", "1 000 000"] } }
+          ex: { examples: [{ numeral: [{ kanji: "一", reading: "いち" }, { target: { kanji: "万", reading: "まん" } }], value: 10000 }, { numeral: [{ kanji: "十", reading: "じゅう" }, { target: { kanji: "万", reading: "まん" } }], value: 100000 }, { numeral: [{ kanji: "百", reading: "ひゃく" }, { target: { kanji: "万", reading: "まん" } }], value: 1000000 }] }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["100 takes no ", { term: "いち" }, " before it"]
+            uk: ["перед 100 немає ", { term: "いち" }]
+            es: ["100 no lleva ", { term: "いち" }, " delante"]
+            pt: ["100 não leva ", { term: "いち" }, " antes"]
+            fr: ["100 n’a pas de ", { term: "いち" }, " devant"]
+            de: ["vor 100 steht kein ", { term: "いち" }]
+            it: ["100 non vuole ", { term: "いち" }, " davanti"]
+            pl: ["przed 100 nie ma ", { term: "いち" }]
+            tr: ["100’ün önüne ", { term: "いち" }, " gelmez"]
+            id: ["100 tidak memakai ", { term: "いち" }, " di depannya"]
+            vi: ["100 không có ", { term: "いち" }, " đứng trước"]
+          tr: { en: "100", uk: "100", es: "100", pt: "100", fr: "100", de: "100", it: "100", pl: "100", tr: "100", id: "100", vi: "100" }
+          ex: { numeral: { target: "ひゃく" }, value: 100 }
+        - level: "A2"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["10 000 is one ", { term: { kanji: "万", reading: "まん" } }, ", never ten ", { term: { kanji: "千", reading: "せん" } }]
+            uk: ["10 000 — це один ", { term: { kanji: "万", reading: "まん" } }, ", а не десять ", { term: { kanji: "千", reading: "せん" } }]
+            es: ["10 000 es un ", { term: { kanji: "万", reading: "まん" } }, ", nunca diez ", { term: { kanji: "千", reading: "せん" } }]
+            pt: ["10 000 é um ", { term: { kanji: "万", reading: "まん" } }, ", nunca dez ", { term: { kanji: "千", reading: "せん" } }]
+            fr: ["10 000 est un ", { term: { kanji: "万", reading: "まん" } }, ", jamais dix ", { term: { kanji: "千", reading: "せん" } }]
+            de: ["10 000 ist ein ", { term: { kanji: "万", reading: "まん" } }, ", nie zehn ", { term: { kanji: "千", reading: "せん" } }]
+            it: ["10 000 è un ", { term: { kanji: "万", reading: "まん" } }, ", mai dieci ", { term: { kanji: "千", reading: "せん" } }]
+            pl: ["10 000 to jeden ", { term: { kanji: "万", reading: "まん" } }, ", nigdy dziesięć ", { term: { kanji: "千", reading: "せん" } }]
+            tr: ["10 000 bir ", { term: { kanji: "万", reading: "まん" } }, "’dır, on ", { term: { kanji: "千", reading: "せん" } }, " değil"]
+            id: ["10 000 adalah satu ", { term: { kanji: "万", reading: "まん" } }, ", bukan sepuluh ", { term: { kanji: "千", reading: "せん" } }]
+            vi: ["10 000 là một ", { term: { kanji: "万", reading: "まん" } }, ", không phải mười ", { term: { kanji: "千", reading: "せん" } }]
+          tr: { en: "10 000", uk: "10 000", es: "10 000", pt: "10 000", fr: "10 000", de: "10 000", it: "10 000", pl: "10 000", tr: "10 000", id: "10 000", vi: "10 000" }
+          ex: { numeral: { target: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, value: 10000 }
+sections:
+  - title:
+      en: "0 to 10"
+      uk: "Від 0 до 10"
+      es: "Del 0 al 10"
+      pt: "De 0 a 10"
+      fr: "De 0 à 10"
+      de: "0 bis 10"
+      it: "Da 0 a 10"
+      pl: "Od 0 do 10"
+      tr: "0’dan 10’a kadar"
+      id: "0 sampai 10"
+      vi: "Từ 0 đến 10"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { en: "Number", uk: "Число", es: "Número", pt: "Número", fr: "Nombre", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", fr: "Mot", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - { level: "A0", value: 0, number: "0", word: { alternatives: ["ゼロ", "れい"] } }
+          - { level: "A0", value: 1, number: "1", word: "いち" }
+          - { level: "A0", value: 2, number: "2", word: "に" }
+          - { level: "A0", value: 3, number: "3", word: "さん" }
+          - { level: "A0", value: 4, number: "4", word: { alternatives: ["よん", "し"] } }
+          - { level: "A0", value: 5, number: "5", word: "ご" }
+          - { level: "A0", value: 6, number: "6", word: "ろく" }
+          - { level: "A0", value: 7, number: "7", word: { alternatives: ["なな", "しち"] } }
+          - { level: "A0", value: 8, number: "8", word: "はち" }
+          - { level: "A0", value: 9, number: "9", word: { alternatives: ["きゅう", "く"] } }
+          - { level: "A0", value: 10, number: "10", word: "じゅう" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              en: ["Four, seven and nine have two readings each; when counting, say ", { term: "よん" }, ", ", { term: "なな" }, " and ", { term: "きゅう" }, "."]
+              uk: ["Чотири, сім і дев’ять мають по два читання; у лічбі кажуть ", { term: "よん" }, ", ", { term: "なな" }, " і ", { term: "きゅう" }, "."]
+              es: ["El cuatro, el siete y el nueve tienen dos lecturas; al contar se dice ", { term: "よん" }, ", ", { term: "なな" }, " y ", { term: "きゅう" }, "."]
+              pt: ["O quatro, o sete e o nove têm duas leituras; ao contar, diz-se ", { term: "よん" }, ", ", { term: "なな" }, " e ", { term: "きゅう" }, "."]
+              fr: ["Quatre, sept et neuf ont deux lectures ; pour compter, on dit ", { term: "よん" }, ", ", { term: "なな" }, " et ", { term: "きゅう" }, "."]
+              de: ["Vier, sieben und neun haben zwei Lesungen; beim Zählen sagt man ", { term: "よん" }, ", ", { term: "なな" }, " und ", { term: "きゅう" }, "."]
+              it: ["Quattro, sette e nove hanno due letture; per contare si dice ", { term: "よん" }, ", ", { term: "なな" }, " e ", { term: "きゅう" }, "."]
+              pl: ["Cztery, siedem i dziewięć mają po dwa odczyty; przy liczeniu mówi się ", { term: "よん" }, ", ", { term: "なな" }, " i ", { term: "きゅう" }, "."]
+              tr: ["Dört, yedi ve dokuzun ikişer okunuşu vardır; sayarken ", { term: "よん" }, ", ", { term: "なな" }, " ve ", { term: "きゅう" }, " denir."]
+              id: ["Empat, tujuh, dan sembilan masing-masing punya dua cara baca; saat menghitung, ucapkan ", { term: "よん" }, ", ", { term: "なな" }, ", dan ", { term: "きゅう" }, "."]
+              vi: ["Bốn, bảy và chín đều có hai cách đọc; khi đếm, hãy nói ", { term: "よん" }, ", ", { term: "なな" }, " và ", { term: "きゅう" }, "."]
+            ex: { examples: [{ numeral: { target: "よん" }, value: 4 }, { numeral: { target: "なな" }, value: 7 }, { numeral: { target: "きゅう" }, value: 9 }] }
+            tr: { en: { examples: ["4", "7", "9"] }, uk: { examples: ["4", "7", "9"] }, es: { examples: ["4", "7", "9"] }, pt: { examples: ["4", "7", "9"] }, fr: { examples: ["4", "7", "9"] }, de: { examples: ["4", "7", "9"] }, it: { examples: ["4", "7", "9"] }, pl: { examples: ["4", "7", "9"] }, tr: { examples: ["4", "7", "9"] }, id: { examples: ["4", "7", "9"] }, vi: { examples: ["4", "7", "9"] } }
+          - type: "note"
+            level: "A0"
+            text:
+              en: [{ term: "し" }, ", ", { term: "しち" }, " and ", { term: "く" }, " live on in fixed words: see ", { link: "Days, Months and Dates", to: ja.foundations.days-months-dates }, " and ", { link: "Telling the Time", to: ja.foundations.telling-time }, "."]
+              uk: [{ term: "し" }, ", ", { term: "しち" }, " і ", { term: "く" }, " збереглися в сталих словах: див. ", { link: "Дні, місяці й дати", to: "ja.foundations.days-months-dates" }, " та ", { link: "Котра година", to: ja.foundations.telling-time }, "."]
+              es: [{ term: "し" }, ", ", { term: "しち" }, " y ", { term: "く" }, " sobreviven en palabras fijas: véase ", { link: "Días, meses y fechas", to: "ja.foundations.days-months-dates" }, " y ", { link: "La hora", to: "ja.foundations.telling-time" }, "."]
+              pt: [{ term: "し" }, ", ", { term: "しち" }, " e ", { term: "く" }, " sobrevivem em palavras fixas: veja ", { link: "Dias, meses e datas", to: "ja.foundations.days-months-dates" }, " e ", { link: "As horas", to: "ja.foundations.telling-time" }, "."]
+              fr: [{ term: "し" }, ", ", { term: "しち" }, " et ", { term: "く" }, " subsistent dans des mots figés : voir ", { link: "Jours, mois et dates", to: "ja.foundations.days-months-dates" }, " et ", { link: "L’heure", to: "ja.foundations.telling-time" }, "."]
+              de: [{ term: "し" }, ", ", { term: "しち" }, " und ", { term: "く" }, " leben in festen Wörtern weiter: siehe ", { link: "Tage, Monate und Datumsangaben", to: ja.foundations.days-months-dates }, " und ", { link: "Die Uhrzeit", to: "ja.foundations.telling-time" }, "."]
+              it: [{ term: "し" }, ", ", { term: "しち" }, " e ", { term: "く" }, " restano in parole fisse: vedi ", { link: "Giorni, mesi e date", to: "ja.foundations.days-months-dates" }, " e ", { link: "Dire l'ora", to: ja.foundations.telling-time }, "."]
+              pl: [{ term: "し" }, ", ", { term: "しち" }, " i ", { term: "く" }, " przetrwały w stałych wyrazach: zob. ", { link: "Dni, miesiące i daty", to: "ja.foundations.days-months-dates" }, " i ", { link: "Podawanie godziny", to: ja.foundations.telling-time }, "."]
+              tr: [{ term: "し" }, ", ", { term: "しち" }, " ve ", { term: "く" }, " kalıplaşmış sözcüklerde yaşar: bkz. ", { link: "Günler, aylar ve tarihler", to: "ja.foundations.days-months-dates" }, " ve ", { link: "Saati söyleme", to: ja.foundations.telling-time }, "."]
+              id: [{ term: "し" }, ", ", { term: "しち" }, ", dan ", { term: "く" }, " bertahan dalam kata-kata tetap: lihat ", { link: "Hari, bulan, dan tanggal", to: "ja.foundations.days-months-dates" }, " dan ", { link: "Menyebutkan jam", to: ja.foundations.telling-time }, "."]
+              vi: [{ term: "し" }, ", ", { term: "しち" }, " và ", { term: "く" }, " còn lại trong các từ cố định: xem ", { link: "Thứ, tháng và ngày", to: ja.foundations.days-months-dates }, " và ", { link: "Nói giờ", to: ja.foundations.telling-time }, "."]
+          - type: "rule"
+            level: "A0"
+            text:
+              en: ["0 has two words: ", { term: "ゼロ" }, " in daily speech and ", { term: "れい" }, " in maths and temperatures."]
+              uk: ["Нуль має два слова: ", { term: "ゼロ" }, " у щоденному мовленні та ", { term: "れい" }, " у математиці й температурі."]
+              es: ["El 0 tiene dos palabras: ", { term: "ゼロ" }, " en el habla diaria y ", { term: "れい" }, " en matemáticas y temperaturas."]
+              pt: ["O 0 tem duas palavras: ", { term: "ゼロ" }, " na fala diária e ", { term: "れい" }, " na matemática e nas temperaturas."]
+              fr: ["Le 0 a deux mots : ", { term: "ゼロ" }, " dans la langue courante et ", { term: "れい" }, " en mathématiques et pour les températures."]
+              de: ["Die 0 hat zwei Wörter: ", { term: "ゼロ" }, " im Alltag und ", { term: "れい" }, " in der Mathematik und bei Temperaturen."]
+              it: ["Lo 0 ha due parole: ", { term: "ゼロ" }, " nel parlato quotidiano e ", { term: "れい" }, " in matematica e per le temperature."]
+              pl: ["Zero ma dwa wyrazy: ", { term: "ゼロ" }, " w mowie codziennej i ", { term: "れい" }, " w matematyce oraz przy temperaturach."]
+              tr: ["0’ın iki sözcüğü vardır: günlük konuşmada ", { term: "ゼロ" }, ", matematikte ve sıcaklıklarda ", { term: "れい" }, "."]
+              id: ["Angka 0 punya dua kata: ", { term: "ゼロ" }, " dalam percakapan sehari-hari dan ", { term: "れい" }, " dalam matematika dan suhu."]
+              vi: ["Số 0 có hai từ: ", { term: "ゼロ" }, " trong lời nói hằng ngày và ", { term: "れい" }, " trong toán học và nhiệt độ."]
+          - type: "note"
+            level: "A0"
+            text:
+              en: "Everyday writing uses digits (1, 2, 3); kanji numerals appear later in this topic."
+              uk: "У повсякденному письмі вживають цифри (1, 2, 3); числа кандзі з’являються далі в цій темі."
+              es: "La escritura diaria usa cifras (1, 2, 3); los numerales en kanji aparecen más adelante en este tema."
+              pt: "A escrita diária usa algarismos (1, 2, 3); os numerais em kanji aparecem mais adiante neste tópico."
+              fr: "L’écriture courante emploie les chiffres (1, 2, 3) ; les chiffres en kanji apparaissent plus loin dans ce sujet."
+              de: "Im Alltag schreibt man Ziffern (1, 2, 3); Zahlen in Kanji folgen weiter unten in diesem Thema."
+              it: "La scrittura quotidiana usa le cifre (1, 2, 3); i numeri in kanji compaiono più avanti in questo argomento."
+              pl: "W codziennym piśmie używa się cyfr (1, 2, 3); liczby w kanji pojawiają się dalej w tym temacie."
+              tr: "Günlük yazıda rakamlar (1, 2, 3) kullanılır; kanji ile yazılan sayılar bu konunun ilerisinde yer alır."
+              id: "Tulisan sehari-hari memakai angka (1, 2, 3); angka kanji muncul nanti dalam topik ini."
+              vi: "Văn viết hằng ngày dùng chữ số (1, 2, 3); số viết bằng kanji xuất hiện ở phần sau của chủ đề này."
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["Counting things and people takes a counter after the number: see ", { link: "Counters", to: "ja.foundations.counters" }, "."]
+              uk: ["Щоб лічити речі й людей, після числа ставлять лічильне слово: див. ", { link: "Лічильні слова", to: "ja.foundations.counters" }, "."]
+              es: ["Para contar cosas y personas se pone un contador tras el número: véase ", { link: "Los contadores", to: "ja.foundations.counters" }, "."]
+              pt: ["Para contar coisas e pessoas, põe-se um contador depois do número: veja ", { link: "Contadores", to: ja.foundations.counters }, "."]
+              fr: ["Pour compter des objets et des personnes, on place un compteur après le nombre : voir ", { link: "Les compteurs", to: "ja.foundations.counters" }, "."]
+              de: ["Dinge und Personen zählt man mit einem Zählwort nach der Zahl: siehe ", { link: "Zählwörter", to: "ja.foundations.counters" }, "."]
+              it: ["Per contare cose e persone si mette un contatore dopo il numero: vedi ", { link: "I contatori", to: "ja.foundations.counters" }, "."]
+              pl: ["Rzeczy i osoby liczy się z licznikiem po liczbie: zob. ", { link: "Liczniki", to: "ja.foundations.counters" }, "."]
+              tr: ["Nesneleri ve kişileri saymak için sayıdan sonra bir sayaç gelir: bkz. ", { link: "Sayaçlar", to: "ja.foundations.counters" }, "."]
+              id: ["Untuk menghitung benda dan orang, kata bantu bilangan dipasang setelah angka: lihat ", { link: "Kata bantu bilangan", to: "ja.foundations.counters" }, "."]
+              vi: ["Muốn đếm đồ vật và người, đặt lượng từ sau số: xem ", { link: "Lượng từ", to: "ja.foundations.counters" }, "."]
+  - title:
+      en: "11 to 99"
+      uk: "Від 11 до 99"
+      es: "Del 11 al 99"
+      pt: "De 11 a 99"
+      fr: "De 11 à 99"
+      de: "11 bis 99"
+      it: "Da 11 a 99"
+      pl: "Od 11 do 99"
+      tr: "11’den 99’a kadar"
+      id: "11 sampai 99"
+      vi: "Từ 11 đến 99"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { en: "Number", uk: "Число", es: "Número", pt: "Número", fr: "Nombre", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", fr: "Mot", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - { level: "A0", value: 20, number: "20", word: "にじゅう" }
+          - { level: "A0", value: 30, number: "30", word: "さんじゅう" }
+          - { level: "A0", value: 40, number: "40", word: "よんじゅう" }
+          - { level: "A0", value: 50, number: "50", word: "ごじゅう" }
+          - { level: "A0", value: 60, number: "60", word: "ろくじゅう" }
+          - { level: "A0", value: 70, number: "70", word: "ななじゅう" }
+          - { level: "A0", value: 80, number: "80", word: "はちじゅう" }
+          - { level: "A0", value: 90, number: "90", word: "きゅうじゅう" }
+      - type: "usage"
+        columns:
+          - { key: "range", label: { en: "Numbers", uk: "Числа", es: "Números", pt: "Números", fr: "Nombres", de: "Zahlen", it: "Numeri", pl: "Liczby", tr: "Sayılar", id: "Angka", vi: "Các số" } }
+          - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A0"
+            range: "11–19"
+            rule:
+              en: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              uk: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              es: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              pt: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              fr: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              de: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              it: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              pl: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              tr: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              id: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+              vi: { pattern: [{ term: "じゅう" }, { slot: "number" }] }
+            tr: { en: { examples: ["11", "15", "19"] }, uk: { examples: ["11", "15", "19"] }, es: { examples: ["11", "15", "19"] }, pt: { examples: ["11", "15", "19"] }, fr: { examples: ["11", "15", "19"] }, de: { examples: ["11", "15", "19"] }, it: { examples: ["11", "15", "19"] }, pl: { examples: ["11", "15", "19"] }, tr: { examples: ["11", "15", "19"] }, id: { examples: ["11", "15", "19"] }, vi: { examples: ["11", "15", "19"] } }
+            ex: { examples: [{ numeral: [{ target: "じゅう" }, "いち"], value: 11 }, { numeral: [{ target: "じゅう" }, "ご"], value: 15 }, { numeral: [{ target: "じゅう" }, "きゅう"], value: 19 }] }
+          - level: "A0"
+            range: "21–99"
+            rule:
+              en: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              uk: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              es: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              pt: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              fr: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              de: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              it: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              pl: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              tr: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              id: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+              vi: { pattern: [{ slot: "number" }, { term: "じゅう" }, { slot: "number" }] }
+            tr: { en: { examples: ["21", "56", "99"] }, uk: { examples: ["21", "56", "99"] }, es: { examples: ["21", "56", "99"] }, pt: { examples: ["21", "56", "99"] }, fr: { examples: ["21", "56", "99"] }, de: { examples: ["21", "56", "99"] }, it: { examples: ["21", "56", "99"] }, pl: { examples: ["21", "56", "99"] }, tr: { examples: ["21", "56", "99"] }, id: { examples: ["21", "56", "99"] }, vi: { examples: ["21", "56", "99"] } }
+            ex: { examples: [{ numeral: ["に", { target: "じゅう" }, "いち"], value: 21 }, { numeral: ["ご", { target: "じゅう" }, "ろく"], value: 56 }, { numeral: ["きゅう", { target: "じゅう" }, "きゅう"], value: 99 }] }
+          - level: "A0"
+            range: "4, 7, 9"
+            rule:
+              en: [{ term: "よん" }, ", ", { term: "なな" }, " and ", { term: "きゅう" }, " stay the same inside bigger numbers"]
+              uk: [{ term: "よん" }, ", ", { term: "なな" }, " і ", { term: "きゅう" }, " не змінюються у складі більших чисел"]
+              es: [{ term: "よん" }, ", ", { term: "なな" }, " y ", { term: "きゅう" }, " no cambian dentro de números mayores"]
+              pt: [{ term: "よん" }, ", ", { term: "なな" }, " e ", { term: "きゅう" }, " não mudam dentro de números maiores"]
+              fr: [{ term: "よん" }, ", ", { term: "なな" }, " et ", { term: "きゅう" }, " ne changent pas dans les grands nombres"]
+              de: [{ term: "よん" }, ", ", { term: "なな" }, " und ", { term: "きゅう" }, " bleiben in größeren Zahlen gleich"]
+              it: [{ term: "よん" }, ", ", { term: "なな" }, " e ", { term: "きゅう" }, " non cambiano nei numeri più grandi"]
+              pl: [{ term: "よん" }, ", ", { term: "なな" }, " i ", { term: "きゅう" }, " nie zmieniają się w większych liczbach"]
+              tr: [{ term: "よん" }, ", ", { term: "なな" }, " ve ", { term: "きゅう" }, " büyük sayıların içinde de aynı kalır"]
+              id: [{ term: "よん" }, ", ", { term: "なな" }, ", dan ", { term: "きゅう" }, " tidak berubah di dalam angka yang lebih besar"]
+              vi: [{ term: "よん" }, ", ", { term: "なな" }, " và ", { term: "きゅう" }, " giữ nguyên trong các số lớn hơn"]
+            tr: { en: { examples: ["14", "70", "90"] }, uk: { examples: ["14", "70", "90"] }, es: { examples: ["14", "70", "90"] }, pt: { examples: ["14", "70", "90"] }, fr: { examples: ["14", "70", "90"] }, de: { examples: ["14", "70", "90"] }, it: { examples: ["14", "70", "90"] }, pl: { examples: ["14", "70", "90"] }, tr: { examples: ["14", "70", "90"] }, id: { examples: ["14", "70", "90"] }, vi: { examples: ["14", "70", "90"] } }
+            ex: { examples: [{ numeral: ["じゅう", { target: "よん" }], value: 14 }, { numeral: [{ target: "なな" }, "じゅう"], value: 70 }, { numeral: [{ target: "きゅう" }, "じゅう"], value: 90 }] }
+  - title:
+      en: "Phone numbers"
+      uk: "Номери телефонів"
+      es: "Números de teléfono"
+      pt: "Números de telefone"
+      fr: "Numéros de téléphone"
+      de: "Telefonnummern"
+      it: "Numeri di telefono"
+      pl: "Numery telefonów"
+      tr: "Telefon numaraları"
+      id: "Nomor telepon"
+      vi: "Số điện thoại"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A0"
+            use:
+              en: "Each digit is read on its own, one after the other"
+              uk: "Кожну цифру читають окремо, одну за одною"
+              es: "Cada cifra se lee por separado, una tras otra"
+              pt: "Cada algarismo é lido separadamente, um após o outro"
+              fr: "Chaque chiffre se lit à part, l’un après l’autre"
+              de: "Jede Ziffer wird einzeln gelesen, eine nach der anderen"
+              it: "Ogni cifra si legge da sola, una dopo l'altra"
+              pl: "Każdą cyfrę czyta się osobno, jedną po drugiej"
+              tr: "Her rakam tek tek, arka arkaya okunur"
+              id: "Setiap angka dibaca sendiri-sendiri, satu per satu"
+              vi: "Mỗi chữ số được đọc riêng, lần lượt từng số"
+            tr: { en: "1234567", uk: "1234567", es: "1234567", pt: "1234567", fr: "1234567", de: "1234567", it: "1234567", pl: "1234567", tr: "1234567", id: "1234567", vi: "1234567" }
+            ex: { target: "いちにさんよんごろくなな" }
+          - level: "A0"
+            use:
+              en: ["The hyphen between groups is said ", { term: "の" }]
+              uk: ["Дефіс між групами цифр читають як ", { term: "の" }]
+              es: ["El guion entre grupos se dice ", { term: "の" }]
+              pt: ["O hífen entre os grupos diz-se ", { term: "の" }]
+              fr: ["Le tiret entre les groupes se dit ", { term: "の" }]
+              de: ["Der Bindestrich zwischen den Gruppen wird ", { term: "の" }, " gesprochen"]
+              it: ["Il trattino tra i gruppi si dice ", { term: "の" }]
+              pl: ["Myślnik między grupami czyta się jako ", { term: "の" }]
+              tr: ["Gruplar arasındaki tire ", { term: "の" }, " diye okunur"]
+              id: ["Tanda hubung antar kelompok diucapkan ", { term: "の" }]
+              vi: ["Dấu gạch nối giữa các nhóm được đọc là ", { term: "の" }]
+            tr: { en: "090-1234-5678", uk: "090-1234-5678", es: "090-1234-5678", pt: "090-1234-5678", fr: "090-1234-5678", de: "090-1234-5678", it: "090-1234-5678", pl: "090-1234-5678", tr: "090-1234-5678", id: "090-1234-5678", vi: "090-1234-5678" }
+            ex: ["ゼロきゅうゼロ", { target: "の" }, "いちにさんよん", { target: "の" }, "ごろくななはち"]
+          - level: "A0"
+            use:
+              en: [{ term: "に" }, " and ", { term: "ご" }, " are often lengthened to ", { term: "にー" }, " and ", { term: "ごー" }]
+              uk: [{ term: "に" }, " і ", { term: "ご" }, " часто подовжують: ", { term: "にー" }, " і ", { term: "ごー" }]
+              es: [{ term: "に" }, " y ", { term: "ご" }, " suelen alargarse: ", { term: "にー" }, " y ", { term: "ごー" }]
+              pt: [{ term: "に" }, " e ", { term: "ご" }, " costumam ser alongados: ", { term: "にー" }, " e ", { term: "ごー" }]
+              fr: [{ term: "に" }, " et ", { term: "ご" }, " s’allongent souvent : ", { term: "にー" }, " et ", { term: "ごー" }]
+              de: [{ term: "に" }, " und ", { term: "ご" }, " werden oft gedehnt: ", { term: "にー" }, " und ", { term: "ごー" }]
+              it: [{ term: "に" }, " e ", { term: "ご" }, " si allungano spesso: ", { term: "にー" }, " e ", { term: "ごー" }]
+              pl: [{ term: "に" }, " i ", { term: "ご" }, " często się przedłuża: ", { term: "にー" }, " i ", { term: "ごー" }]
+              tr: [{ term: "に" }, " ve ", { term: "ご" }, " çoğu zaman uzatılır: ", { term: "にー" }, " ve ", { term: "ごー" }]
+              id: [{ term: "に" }, " dan ", { term: "ご" }, " sering dipanjangkan: ", { term: "にー" }, " dan ", { term: "ごー" }]
+              vi: [{ term: "に" }, " và ", { term: "ご" }, " thường được kéo dài: ", { term: "にー" }, " và ", { term: "ごー" }]
+            tr: { en: "1235", uk: "1235", es: "1235", pt: "1235", fr: "1235", de: "1235", it: "1235", pl: "1235", tr: "1235", id: "1235", vi: "1235" }
+            ex: ["いち", { target: "にー" }, "さん", { target: "ごー" }]
+          - level: "A0"
+            use:
+              en: "Asking for a phone number"
+              uk: "Запитати номер телефону"
+              es: "Preguntar el número de teléfono"
+              pt: "Perguntar o número de telefone"
+              fr: "Demander un numéro de téléphone"
+              de: "Nach der Telefonnummer fragen"
+              it: "Chiedere il numero di telefono"
+              pl: "Pytanie o numer telefonu"
+              tr: "Telefon numarasını sorma"
+              id: "Menanyakan nomor telepon"
+              vi: "Hỏi số điện thoại"
+            tr: { en: { exchange: ["What is your phone number?", "It is 090-1234-5678."] }, uk: { exchange: ["Який у вас номер телефону?", "090-1234-5678."] }, es: { exchange: ["¿Cuál es tu número de teléfono?", "Es el 090-1234-5678."] }, pt: { exchange: ["Qual é o seu número de telefone?", "É 090-1234-5678."] }, fr: { exchange: ["Quel est votre numéro de téléphone ?", "C’est le 090-1234-5678."] }, de: { exchange: ["Wie ist Ihre Telefonnummer?", "Sie lautet 090-1234-5678."] }, it: { exchange: ["Qual è il suo numero di telefono?", "È 090-1234-5678."] }, pl: { exchange: ["Jaki jest Pana/Pani numer telefonu?", "To 090-1234-5678."] }, tr: { exchange: ["Telefon numaranız nedir?", "090-1234-5678."] }, id: { exchange: ["Berapa nomor telepon Anda?", "090-1234-5678."] }, vi: { exchange: ["Số điện thoại của bạn là gì?", "Số của tôi là 090-1234-5678."] } }
+            ex: { exchange: ["でんわばんごうはなんばんですか。", "ゼロきゅうゼロのいちにさんよんのごーろくななはちです。"] }
+  - title:
+      en: "Hundreds and thousands"
+      uk: "Сотні й тисячі"
+      es: "Centenas y miles"
+      pt: "Centenas e milhares"
+      fr: "Centaines et milliers"
+      de: "Hunderter und Tausender"
+      it: "Centinaia e migliaia"
+      pl: "Setki i tysiące"
+      tr: "Yüzlükler ve binlikler"
+      id: "Ratusan dan ribuan"
+      vi: "Hàng trăm và hàng nghìn"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { en: "Number", uk: "Число", es: "Número", pt: "Número", fr: "Nombre", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", fr: "Mot", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - { level: "A1", value: 100, number: "100", word: "ひゃく" }
+          - { level: "A1", value: 200, number: "200", word: "にひゃく" }
+          - { level: "A1", value: 300, number: "300", word: ["さん", { target: "びゃく" }] }
+          - { level: "A1", value: 400, number: "400", word: "よんひゃく" }
+          - { level: "A1", value: 500, number: "500", word: "ごひゃく" }
+          - { level: "A1", value: 600, number: "600", word: ["ろっ", { target: "ぴゃく" }] }
+          - { level: "A1", value: 700, number: "700", word: "ななひゃく" }
+          - { level: "A1", value: 800, number: "800", word: ["はっ", { target: "ぴゃく" }] }
+          - { level: "A1", value: 900, number: "900", word: "きゅうひゃく" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["100 is ", { term: "ひゃく" }, " on its own, with no ", { term: "いち" }, " before it."]
+              uk: ["100 — це просто ", { term: "ひゃく" }, ", без ", { term: "いち" }, " перед ним."]
+              es: ["100 es ", { term: "ひゃく" }, " a secas, sin ", { term: "いち" }, " delante."]
+              pt: ["100 é ", { term: "ひゃく" }, " sozinho, sem ", { term: "いち" }, " antes."]
+              fr: ["100 se dit ", { term: "ひゃく" }, " tout seul, sans ", { term: "いち" }, " devant."]
+              de: ["100 heißt einfach ", { term: "ひゃく" }, ", ohne ", { term: "いち" }, " davor."]
+              it: ["100 è ", { term: "ひゃく" }, " da solo, senza ", { term: "いち" }, " davanti."]
+              pl: ["100 to samo ", { term: "ひゃく" }, ", bez ", { term: "いち" }, " z przodu."]
+              tr: ["100, önünde ", { term: "いち" }, " olmadan tek başına ", { term: "ひゃく" }, " olur."]
+              id: ["100 cukup ", { term: "ひゃく" }, ", tanpa ", { term: "いち" }, " di depannya."]
+              vi: ["100 chỉ là ", { term: "ひゃく" }, ", không có ", { term: "いち" }, " đứng trước."]
+            ex: { examples: [{ numeral: { target: "ひゃく" }, value: 100 }, { numeral: [{ target: "ひゃく" }, "ごじゅう"], value: 150 }] }
+            tr: { en: { examples: ["100", "150"] }, uk: { examples: ["100", "150"] }, es: { examples: ["100", "150"] }, pt: { examples: ["100", "150"] }, fr: { examples: ["100", "150"] }, de: { examples: ["100", "150"] }, it: { examples: ["100", "150"] }, pl: { examples: ["100", "150"] }, tr: { examples: ["100", "150"] }, id: { examples: ["100", "150"] }, vi: { examples: ["100", "150"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["After 3, ", { term: "ひゃく" }, " is ", { term: "びゃく" }, "; after 6 and 8 it is ", { term: "ぴゃく" }, ", with a small ", { term: "っ" }, " before it."]
+              uk: ["Після 3 ", { term: "ひゃく" }, " стає ", { term: "びゃく" }, "; після 6 і 8 — ", { term: "ぴゃく" }, ", а перед ним малий ", { term: "っ" }, "."]
+              es: ["Tras 3, ", { term: "ひゃく" }, " pasa a ", { term: "びゃく" }, "; tras 6 y 8 pasa a ", { term: "ぴゃく" }, ", con una ", { term: "っ" }, " pequeña delante."]
+              pt: ["Depois de 3, ", { term: "ひゃく" }, " vira ", { term: "びゃく" }, "; depois de 6 e 8 vira ", { term: "ぴゃく" }, ", com um ", { term: "っ" }, " pequeno antes."]
+              fr: ["Après 3, ", { term: "ひゃく" }, " devient ", { term: "びゃく" }, " ; après 6 et 8, il devient ", { term: "ぴゃく" }, ", avec un petit ", { term: "っ" }, " devant."]
+              de: ["Nach 3 wird ", { term: "ひゃく" }, " zu ", { term: "びゃく" }, "; nach 6 und 8 zu ", { term: "ぴゃく" }, ", mit einem kleinen ", { term: "っ" }, " davor."]
+              it: ["Dopo 3, ", { term: "ひゃく" }, " diventa ", { term: "びゃく" }, "; dopo 6 e 8 diventa ", { term: "ぴゃく" }, ", con una ", { term: "っ" }, " piccola davanti."]
+              pl: ["Po 3 ", { term: "ひゃく" }, " zmienia się w ", { term: "びゃく" }, "; po 6 i 8 w ", { term: "ぴゃく" }, ", z małym ", { term: "っ" }, " przed nim."]
+              tr: ["3’ten sonra ", { term: "ひゃく" }, ", ", { term: "びゃく" }, " olur; 6 ve 8’den sonra ", { term: "ぴゃく" }, " olur ve önüne küçük bir ", { term: "っ" }, " gelir."]
+              id: ["Setelah 3, ", { term: "ひゃく" }, " menjadi ", { term: "びゃく" }, "; setelah 6 dan 8 menjadi ", { term: "ぴゃく" }, ", dengan ", { term: "っ" }, " kecil di depannya."]
+              vi: ["Sau 3, ", { term: "ひゃく" }, " thành ", { term: "びゃく" }, "; sau 6 và 8 thành ", { term: "ぴゃく" }, ", với ", { term: "っ" }, " nhỏ đứng trước."]
+            ex: { examples: [{ numeral: ["さん", { target: "びゃく" }], value: 300 }, { numeral: ["ろっ", { target: "ぴゃく" }], value: 600 }, { numeral: ["はっ", { target: "ぴゃく" }], value: 800 }] }
+            tr: { en: { examples: ["300", "600", "800"] }, uk: { examples: ["300", "600", "800"] }, es: { examples: ["300", "600", "800"] }, pt: { examples: ["300", "600", "800"] }, fr: { examples: ["300", "600", "800"] }, de: { examples: ["300", "600", "800"] }, it: { examples: ["300", "600", "800"] }, pl: { examples: ["300", "600", "800"] }, tr: { examples: ["300", "600", "800"] }, id: { examples: ["300", "600", "800"] }, vi: { examples: ["300", "600", "800"] } }
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { en: "Number", uk: "Число", es: "Número", pt: "Número", fr: "Nombre", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", fr: "Mot", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - { level: "A1", value: 1000, number: "1000", word: "せん" }
+          - { level: "A1", value: 2000, number: "2000", word: "にせん" }
+          - { level: "A1", value: 3000, number: "3000", word: ["さん", { target: "ぜん" }] }
+          - { level: "A1", value: 4000, number: "4000", word: "よんせん" }
+          - { level: "A1", value: 5000, number: "5000", word: "ごせん" }
+          - { level: "A1", value: 6000, number: "6000", word: "ろくせん" }
+          - { level: "A1", value: 7000, number: "7000", word: "ななせん" }
+          - { level: "A1", value: 8000, number: "8000", word: ["はっ", { target: "せん" }] }
+          - { level: "A1", value: 9000, number: "9000", word: "きゅうせん" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["After 3, ", { term: "せん" }, " is ", { term: "ぜん" }, "; after 8 the number ends in a small ", { term: "っ" }, ": ", { term: "はっせん" }, "."]
+              uk: ["Після 3 ", { term: "せん" }, " стає ", { term: "ぜん" }, "; після 8 число закінчується малим ", { term: "っ" }, ": ", { term: "はっせん" }, "."]
+              es: ["Tras 3, ", { term: "せん" }, " pasa a ", { term: "ぜん" }, "; tras 8 el número termina en una ", { term: "っ" }, " pequeña: ", { term: "はっせん" }, "."]
+              pt: ["Depois de 3, ", { term: "せん" }, " vira ", { term: "ぜん" }, "; depois de 8 o número termina em um ", { term: "っ" }, " pequeno: ", { term: "はっせん" }, "."]
+              fr: ["Après 3, ", { term: "せん" }, " devient ", { term: "ぜん" }, " ; après 8, le nombre finit par un petit ", { term: "っ" }, " : ", { term: "はっせん" }, "."]
+              de: ["Nach 3 wird ", { term: "せん" }, " zu ", { term: "ぜん" }, "; nach 8 endet die Zahl auf ein kleines ", { term: "っ" }, ": ", { term: "はっせん" }, "."]
+              it: ["Dopo 3, ", { term: "せん" }, " diventa ", { term: "ぜん" }, "; dopo 8 il numero finisce con una ", { term: "っ" }, " piccola: ", { term: "はっせん" }, "."]
+              pl: ["Po 3 ", { term: "せん" }, " zmienia się w ", { term: "ぜん" }, "; po 8 liczba kończy się małym ", { term: "っ" }, ": ", { term: "はっせん" }, "."]
+              tr: ["3’ten sonra ", { term: "せん" }, ", ", { term: "ぜん" }, " olur; 8’den sonra sayı küçük bir ", { term: "っ" }, " ile biter: ", { term: "はっせん" }, "."]
+              id: ["Setelah 3, ", { term: "せん" }, " menjadi ", { term: "ぜん" }, "; setelah 8 angka berakhir dengan ", { term: "っ" }, " kecil: ", { term: "はっせん" }, "."]
+              vi: ["Sau 3, ", { term: "せん" }, " thành ", { term: "ぜん" }, "; sau 8, số kết thúc bằng ", { term: "っ" }, " nhỏ: ", { term: "はっせん" }, "."]
+            ex: { examples: [{ numeral: ["さん", { target: "ぜん" }], value: 3000 }, { numeral: ["はっ", { target: "せん" }], value: 8000 }] }
+            tr: { en: { examples: ["3000", "8000"] }, uk: { examples: ["3000", "8000"] }, es: { examples: ["3000", "8000"] }, pt: { examples: ["3000", "8000"] }, fr: { examples: ["3000", "8000"] }, de: { examples: ["3000", "8000"] }, it: { examples: ["3000", "8000"] }, pl: { examples: ["3000", "8000"] }, tr: { examples: ["3000", "8000"] }, id: { examples: ["3000", "8000"] }, vi: { examples: ["3000", "8000"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: "A longer number joins its parts in one word, the largest first."
+              uk: "Довше число з’єднує свої частини в одне слово, починаючи з найбільшої."
+              es: "Un número largo une sus partes en una palabra, de la mayor a la menor."
+              pt: "Um número longo junta suas partes numa só palavra, da maior para a menor."
+              fr: "Un grand nombre réunit ses parties en un mot, de la plus grande à la plus petite."
+              de: "Eine längere Zahl fügt ihre Teile zu einem Wort zusammen, das größte zuerst."
+              it: "Un numero lungo unisce le sue parti in una parola, dalla più grande alla più piccola."
+              pl: "Dłuższa liczba łączy swoje części w jedno słowo, od największej."
+              tr: "Uzun bir sayı, parçalarını en büyükten başlayarak tek sözcükte birleştirir."
+              id: "Angka yang panjang menggabungkan bagian-bagiannya dalam satu kata, dari yang terbesar."
+              vi: "Số dài nối các phần của nó thành một từ, bắt đầu từ phần lớn nhất."
+            ex: { examples: [{ numeral: "ごひゃくろくじゅう", value: 560 }, { numeral: "せんにひゃくさんじゅうよん", value: 1234 }] }
+            tr: { en: { examples: ["560", "1234"] }, uk: { examples: ["560", "1234"] }, es: { examples: ["560", "1234"] }, pt: { examples: ["560", "1234"] }, fr: { examples: ["560", "1234"] }, de: { examples: ["560", "1234"] }, it: { examples: ["560", "1234"] }, pl: { examples: ["560", "1234"] }, tr: { examples: ["560", "1234"] }, id: { examples: ["560", "1234"] }, vi: { examples: ["560", "1234"] } }
+  - title:
+      en: "Numbers in kanji"
+      uk: "Числа в кандзі"
+      es: "Los números en kanji"
+      pt: "Os números em kanji"
+      fr: "Les nombres en kanji"
+      de: "Zahlen in Kanji"
+      it: "I numeri in kanji"
+      pl: "Liczby w kanji"
+      tr: "Kanji ile sayılar"
+      id: "Angka dalam kanji"
+      vi: "Số viết bằng kanji"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { en: "Number", uk: "Число", es: "Número", pt: "Número", fr: "Nombre", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "kanji", label: { en: "Kanji", uk: "Kanji", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+        rows:
+          - { level: "A1", value: 1, number: "1", kanji: { kanji: "一", reading: "いち" } }
+          - { level: "A1", value: 2, number: "2", kanji: { kanji: "二", reading: "に" } }
+          - { level: "A1", value: 3, number: "3", kanji: { kanji: "三", reading: "さん" } }
+          - { level: "A1", value: 4, number: "4", kanji: { kanji: "四", reading: "よん" } }
+          - { level: "A1", value: 5, number: "5", kanji: { kanji: "五", reading: "ご" } }
+          - { level: "A1", value: 6, number: "6", kanji: { kanji: "六", reading: "ろく" } }
+          - { level: "A1", value: 7, number: "7", kanji: { kanji: "七", reading: "なな" } }
+          - { level: "A1", value: 8, number: "8", kanji: { kanji: "八", reading: "はち" } }
+          - { level: "A1", value: 9, number: "9", kanji: { kanji: "九", reading: "きゅう" } }
+          - { level: "A1", value: 10, number: "10", kanji: { kanji: "十", reading: "じゅう" } }
+          - { level: "A1", value: 100, number: "100", kanji: { kanji: "百", reading: "ひゃく" } }
+          - { level: "A1", value: 1000, number: "1000", kanji: { kanji: "千", reading: "せん" } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["Kanji numbers write the same words in the same order: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " is 23."]
+              uk: ["Числа кандзі записують ті самі слова в тому самому порядку: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " — це 23."]
+              es: ["Los números en kanji escriben las mismas palabras en el mismo orden: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " es 23."]
+              pt: ["Os números em kanji escrevem as mesmas palavras na mesma ordem: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " é 23."]
+              fr: ["Les nombres en kanji écrivent les mêmes mots dans le même ordre : ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " est 23."]
+              de: ["Kanji-Zahlen schreiben dieselben Wörter in derselben Reihenfolge: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " ist 23."]
+              it: ["I numeri in kanji scrivono le stesse parole nello stesso ordine: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " è 23."]
+              pl: ["Liczby w kanji zapisują te same słowa w tej samej kolejności: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " to 23."]
+              tr: ["Kanji sayılar aynı sözcükleri aynı sırayla yazar: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, ", 23 demektir."]
+              id: ["Angka kanji menulis kata yang sama dalam urutan yang sama: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " adalah 23."]
+              vi: ["Số viết bằng kanji ghi các từ giống nhau theo cùng thứ tự: ", { term: [{ kanji: "二", reading: "に" }, { kanji: "十", reading: "じゅう" }, { kanji: "三", reading: "さん" }] }, " là 23."]
+            ex: { examples: [{ numeral: [{ kanji: "三", reading: "さん" }, { kanji: "百", reading: "びゃく" }], value: 300 }, { numeral: [{ kanji: "八", reading: "はっ" }, { kanji: "千", reading: "せん" }], value: 8000 }] }
+            tr: { en: { examples: ["300", "8000"] }, uk: { examples: ["300", "8000"] }, es: { examples: ["300", "8000"] }, pt: { examples: ["300", "8000"] }, fr: { examples: ["300", "8000"] }, de: { examples: ["300", "8000"] }, it: { examples: ["300", "8000"] }, pl: { examples: ["300", "8000"] }, tr: { examples: ["300", "8000"] }, id: { examples: ["300", "8000"] }, vi: { examples: ["300", "8000"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: [{ term: { kanji: "百", reading: "ひゃく" } }, " and ", { term: { kanji: "千", reading: "せん" } }, " open a number alone, with no ", { term: { kanji: "一", reading: "いち" } }, " before them."]
+              uk: [{ term: { kanji: "百", reading: "ひゃく" } }, " і ", { term: { kanji: "千", reading: "せん" } }, " відкривають число самі, без ", { term: { kanji: "一", reading: "いち" } }, " перед ними."]
+              es: [{ term: { kanji: "百", reading: "ひゃく" } }, " y ", { term: { kanji: "千", reading: "せん" } }, " abren un número solos, sin ", { term: { kanji: "一", reading: "いち" } }, " delante."]
+              pt: [{ term: { kanji: "百", reading: "ひゃく" } }, " e ", { term: { kanji: "千", reading: "せん" } }, " abrem um número sozinhos, sem ", { term: { kanji: "一", reading: "いち" } }, " antes."]
+              fr: [{ term: { kanji: "百", reading: "ひゃく" } }, " et ", { term: { kanji: "千", reading: "せん" } }, " ouvrent un nombre seuls, sans ", { term: { kanji: "一", reading: "いち" } }, " devant."]
+              de: [{ term: { kanji: "百", reading: "ひゃく" } }, " und ", { term: { kanji: "千", reading: "せん" } }, " stehen am Zahlanfang allein, ohne ", { term: { kanji: "一", reading: "いち" } }, " davor."]
+              it: [{ term: { kanji: "百", reading: "ひゃく" } }, " e ", { term: { kanji: "千", reading: "せん" } }, " aprono un numero da soli, senza ", { term: { kanji: "一", reading: "いち" } }, " davanti."]
+              pl: [{ term: { kanji: "百", reading: "ひゃく" } }, " i ", { term: { kanji: "千", reading: "せん" } }, " otwierają liczbę same, bez ", { term: { kanji: "一", reading: "いち" } }, " z przodu."]
+              tr: [{ term: { kanji: "百", reading: "ひゃく" } }, " ve ", { term: { kanji: "千", reading: "せん" } }, " bir sayıyı tek başlarına açar, önlerinde ", { term: { kanji: "一", reading: "いち" } }, " olmaz."]
+              id: [{ term: { kanji: "百", reading: "ひゃく" } }, " dan ", { term: { kanji: "千", reading: "せん" } }, " membuka angka sendirian, tanpa ", { term: { kanji: "一", reading: "いち" } }, " di depannya."]
+              vi: [{ term: { kanji: "百", reading: "ひゃく" } }, " và ", { term: { kanji: "千", reading: "せん" } }, " đứng một mình ở đầu số, không có ", { term: { kanji: "一", reading: "いち" } }, " phía trước."]
+            ex: { examples: [{ numeral: [{ kanji: "百", reading: "ひゃく" }, { kanji: "五", reading: "ご" }, { kanji: "十", reading: "じゅう" }], value: 150 }, { numeral: { kanji: "千", reading: "せん" }, value: 1000 }] }
+            tr: { en: { examples: ["150", "1000"] }, uk: { examples: ["150", "1000"] }, es: { examples: ["150", "1000"] }, pt: { examples: ["150", "1000"] }, fr: { examples: ["150", "1000"] }, de: { examples: ["150", "1000"] }, it: { examples: ["150", "1000"] }, pl: { examples: ["150", "1000"] }, tr: { examples: ["150", "1000"] }, id: { examples: ["150", "1000"] }, vi: { examples: ["150", "1000"] } }
+  - title:
+      en: "Yen and prices"
+      uk: "Єни й ціни"
+      es: "Yenes y precios"
+      pt: "Ienes e preços"
+      fr: "Yens et prix"
+      de: "Yen und Preise"
+      it: "Yen e prezzi"
+      pl: "Jeny i ceny"
+      tr: "Yen ve fiyatlar"
+      id: "Yen dan harga"
+      vi: "Yên và giá cả"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: "Asking the price"
+              uk: "Запитати про ціну"
+              es: "Preguntar el precio"
+              pt: "Perguntar o preço"
+              fr: "Demander le prix"
+              de: "Nach dem Preis fragen"
+              it: "Chiedere il prezzo"
+              pl: "Pytanie o cenę"
+              tr: "Fiyat sorma"
+              id: "Menanyakan harga"
+              vi: "Hỏi giá"
+            tr: { en: { exchange: ["How much is this?", "It is 300 yen."] }, uk: { exchange: ["Скільки це коштує?", "300 єн."] }, es: { exchange: ["¿Cuánto cuesta esto?", "Son 300 yenes."] }, pt: { exchange: ["Quanto custa isto?", "São 300 ienes."] }, fr: { exchange: ["Combien ça coûte ?", "Ça fait 300 yens."] }, de: { exchange: ["Wie viel kostet das?", "300 Yen."] }, it: { exchange: ["Quanto costa questo?", "Sono 300 yen."] }, pl: { exchange: ["Ile to kosztuje?", "300 jenów."] }, tr: { exchange: ["Bu ne kadar?", "300 yen."] }, id: { exchange: ["Berapa harga ini?", "300 yen."] }, vi: { exchange: ["Cái này giá bao nhiêu?", "300 yên."] } }
+            ex: { exchange: [["これは", { target: "いくら" }, "ですか。"], [{ numeral: [{ kanji: "三", reading: "さん" }, { kanji: "百", reading: "びゃく" }], value: 300 }, { target: { kanji: "円", reading: "えん" } }, "です。"]] }
+          - level: "A1"
+            use:
+              en: ["Giving a price: the number, then ", { term: { kanji: "円", reading: "えん" } }]
+              uk: ["Назвати ціну: число, потім ", { term: { kanji: "円", reading: "えん" } }]
+              es: ["Decir un precio: el número y luego ", { term: { kanji: "円", reading: "えん" } }]
+              pt: ["Dizer um preço: o número e depois ", { term: { kanji: "円", reading: "えん" } }]
+              fr: ["Dire un prix : le nombre, puis ", { term: { kanji: "円", reading: "えん" } }]
+              de: ["Einen Preis nennen: die Zahl, dann ", { term: { kanji: "円", reading: "えん" } }]
+              it: ["Dire un prezzo: il numero, poi ", { term: { kanji: "円", reading: "えん" } }]
+              pl: ["Podanie ceny: liczba, potem ", { term: { kanji: "円", reading: "えん" } }]
+              tr: ["Fiyat söyleme: önce sayı, sonra ", { term: { kanji: "円", reading: "えん" } }]
+              id: ["Menyebut harga: angka, lalu ", { term: { kanji: "円", reading: "えん" } }]
+              vi: ["Nói giá: số, rồi ", { term: { kanji: "円", reading: "えん" } }]
+            tr: { en: { examples: ["It is 1000 yen.", "It is 500 yen."] }, uk: { examples: ["Це коштує 1000 єн.", "Це коштує 500 єн."] }, es: { examples: ["Cuesta 1000 yenes.", "Cuesta 500 yenes."] }, pt: { examples: ["Custa 1000 ienes.", "Custa 500 ienes."] }, fr: { examples: ["Ça coûte 1000 yens.", "Ça coûte 500 yens."] }, de: { examples: ["Das kostet 1000 Yen.", "Das kostet 500 Yen."] }, it: { examples: ["Costa 1000 yen.", "Costa 500 yen."] }, pl: { examples: ["To kosztuje 1000 jenów.", "To kosztuje 500 jenów."] }, tr: { examples: ["Fiyatı 1000 yen.", "Fiyatı 500 yen."] }, id: { examples: ["Harganya 1000 yen.", "Harganya 500 yen."] }, vi: { examples: ["Giá 1000 yên.", "Giá 500 yên."] } }
+            ex: { examples: [[{ numeral: { kanji: "千", reading: "せん" }, value: 1000 }, { target: { kanji: "円", reading: "えん" } }, "です。"], [{ numeral: [{ kanji: "五", reading: "ご" }, { kanji: "百", reading: "ひゃく" }], value: 500 }, { target: { kanji: "円", reading: "えん" } }, "です。"]] }
+          - level: "A2"
+            use:
+              en: "Prices from 10 000 yen"
+              uk: "Ціни від 10 000 єн"
+              es: "Precios desde 10 000 yenes"
+              pt: "Preços a partir de 10 000 ienes"
+              fr: "Prix à partir de 10 000 yens"
+              de: "Preise ab 10 000 Yen"
+              it: "Prezzi da 10 000 yen in su"
+              pl: "Ceny od 10 000 jenów"
+              tr: "10 000 yen ve üzeri fiyatlar"
+              id: "Harga mulai 10 000 yen"
+              vi: "Giá từ 10 000 yên trở lên"
+            tr: { en: "It is 15 000 yen.", uk: "Це коштує 15 000 єн.", es: "Cuesta 15 000 yenes.", pt: "Custa 15 000 ienes.", fr: "Ça coûte 15 000 yens.", de: "Das kostet 15 000 Yen.", it: "Costa 15 000 yen.", pl: "To kosztuje 15 000 jenów.", tr: "Fiyatı 15 000 yen.", id: "Harganya 15 000 yen.", vi: "Giá 15 000 yên." }
+            ex: [{ numeral: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }], value: 15000 }, { target: { kanji: "円", reading: "えん" } }, "です。"]
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              en: ["Before ", { term: { kanji: "円", reading: "えん" } }, ", 4 is read ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " is 4 yen."]
+              uk: ["Перед ", { term: { kanji: "円", reading: "えん" } }, " 4 читається ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " — це 4 єни."]
+              es: ["Ante ", { term: { kanji: "円", reading: "えん" } }, ", el 4 se lee ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " son 4 yenes."]
+              pt: ["Antes de ", { term: { kanji: "円", reading: "えん" } }, ", o 4 lê-se ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " são 4 ienes."]
+              fr: ["Devant ", { term: { kanji: "円", reading: "えん" } }, ", 4 se lit ", { term: "よ" }, " : ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " fait 4 yens."]
+              de: ["Vor ", { term: { kanji: "円", reading: "えん" } }, " wird die 4 ", { term: "よ" }, " gelesen: ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " sind 4 Yen."]
+              it: ["Davanti a ", { term: { kanji: "円", reading: "えん" } }, ", il 4 si legge ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " sono 4 yen."]
+              pl: ["Przed ", { term: { kanji: "円", reading: "えん" } }, " cyfrę 4 czyta się ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " to 4 jeny."]
+              tr: [{ term: { kanji: "円", reading: "えん" } }, " öncesinde 4, ", { term: "よ" }, " diye okunur: ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " 4 yen demektir."]
+              id: ["Sebelum ", { term: { kanji: "円", reading: "えん" } }, ", 4 dibaca ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " berarti 4 yen."]
+              vi: ["Trước ", { term: { kanji: "円", reading: "えん" } }, ", số 4 đọc là ", { term: "よ" }, ": ", { term: [{ kanji: "四", reading: "よ" }, { kanji: "円", reading: "えん" }] }, " là 4 yên."]
+            ex: [{ target: { kanji: "四", reading: "よ" } }, { kanji: "円", reading: "えん" }]
+            tr: { en: "4", uk: "4", es: "4", pt: "4", fr: "4", de: "4", it: "4", pl: "4", tr: "4", id: "4", vi: "4" }
+  - title:
+      en: "Ten thousand and above"
+      uk: "Від десяти тисяч"
+      es: "Desde diez mil"
+      pt: "A partir de dez mil"
+      fr: "À partir de dix mille"
+      de: "Ab zehntausend"
+      it: "Da diecimila in su"
+      pl: "Od dziesięciu tysięcy"
+      tr: "On binden itibaren"
+      id: "Sepuluh ribu ke atas"
+      vi: "Từ mười nghìn trở lên"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { en: "Number", uk: "Число", es: "Número", pt: "Número", fr: "Nombre", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "kanji", label: { en: "Kanji", uk: "Kanji", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+        rows:
+          - { level: "A2", value: 10000, number: "10 000", kanji: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }
+          - { level: "A2", value: 20000, number: "20 000", kanji: [{ kanji: "二", reading: "に" }, { kanji: "万", reading: "まん" }] }
+          - { level: "A2", value: 100000, number: "100 000", kanji: [{ kanji: "十", reading: "じゅう" }, { kanji: "万", reading: "まん" }] }
+          - { level: "A2", value: 1000000, number: "1 000 000", kanji: [{ kanji: "百", reading: "ひゃく" }, { kanji: "万", reading: "まん" }] }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              en: [{ term: { kanji: "万", reading: "まん" } }, " is 10 000: larger numbers count in groups of four digits, not three."]
+              uk: [{ term: { kanji: "万", reading: "まん" } }, " — це 10 000: більші числа лічать групами по чотири цифри, а не по три."]
+              es: [{ term: { kanji: "万", reading: "まん" } }, " es 10 000: los números mayores se cuentan en grupos de cuatro cifras, no de tres."]
+              pt: [{ term: { kanji: "万", reading: "まん" } }, " é 10 000: os números maiores contam-se em grupos de quatro algarismos, não de três."]
+              fr: [{ term: { kanji: "万", reading: "まん" } }, " vaut 10 000 : les grands nombres se comptent par groupes de quatre chiffres, non de trois."]
+              de: [{ term: { kanji: "万", reading: "まん" } }, " ist 10 000: größere Zahlen zählt man in Vierergruppen, nicht in Dreiergruppen."]
+              it: [{ term: { kanji: "万", reading: "まん" } }, " è 10 000: i numeri più grandi si contano a gruppi di quattro cifre, non di tre."]
+              pl: [{ term: { kanji: "万", reading: "まん" } }, " to 10 000: większe liczby liczy się w grupach po cztery cyfry, nie po trzy."]
+              tr: [{ term: { kanji: "万", reading: "まん" } }, " 10 000’dir: büyük sayılar üçlü değil, dörtlü basamak gruplarıyla sayılır."]
+              id: [{ term: { kanji: "万", reading: "まん" } }, " adalah 10 000: angka yang lebih besar dihitung dalam kelompok empat digit, bukan tiga."]
+              vi: [{ term: { kanji: "万", reading: "まん" } }, " là 10 000: các số lớn hơn đếm theo nhóm bốn chữ số, không phải ba."]
+            ex: { examples: [{ numeral: [{ kanji: "十", reading: "じゅう" }, { kanji: "万", reading: "まん" }], value: 100000 }, { numeral: [{ kanji: "百", reading: "ひゃく" }, { kanji: "万", reading: "まん" }], value: 1000000 }] }
+            tr: { en: { examples: ["100 000", "1 000 000"] }, uk: { examples: ["100 000", "1 000 000"] }, es: { examples: ["100 000", "1 000 000"] }, pt: { examples: ["100 000", "1 000 000"] }, fr: { examples: ["100 000", "1 000 000"] }, de: { examples: ["100 000", "1 000 000"] }, it: { examples: ["100 000", "1 000 000"] }, pl: { examples: ["100 000", "1 000 000"] }, tr: { examples: ["100 000", "1 000 000"] }, id: { examples: ["100 000", "1 000 000"] }, vi: { examples: ["100 000", "1 000 000"] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              en: [{ term: { kanji: "万", reading: "まん" } }, " always takes a digit before it, even one: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              uk: ["Перед ", { term: { kanji: "万", reading: "まん" } }, " завжди стоїть цифра, навіть одиниця: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              es: [{ term: { kanji: "万", reading: "まん" } }, " siempre lleva una cifra delante, incluso uno: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              pt: [{ term: { kanji: "万", reading: "まん" } }, " leva sempre um algarismo antes, até o um: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              fr: [{ term: { kanji: "万", reading: "まん" } }, " est toujours précédé d’un chiffre, même un : ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              de: ["Vor ", { term: { kanji: "万", reading: "まん" } }, " steht immer eine Ziffer, auch die Eins: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              it: [{ term: { kanji: "万", reading: "まん" } }, " vuole sempre una cifra davanti, anche uno: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              pl: ["Przed ", { term: { kanji: "万", reading: "まん" } }, " zawsze stoi cyfra, także jedynka: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              tr: [{ term: { kanji: "万", reading: "まん" } }, " öncesinde her zaman bir rakam bulunur, bir bile olsa: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              id: ["Sebelum ", { term: { kanji: "万", reading: "まん" } }, " selalu ada angka, bahkan satu: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+              vi: ["Trước ", { term: { kanji: "万", reading: "まん" } }, " luôn có một chữ số, kể cả số một: ", { term: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, "."]
+            ex: { examples: [{ numeral: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }], value: 10000 }, { numeral: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }], value: 30000 }] }
+            tr: { en: { examples: ["10 000", "30 000"] }, uk: { examples: ["10 000", "30 000"] }, es: { examples: ["10 000", "30 000"] }, pt: { examples: ["10 000", "30 000"] }, fr: { examples: ["10 000", "30 000"] }, de: { examples: ["10 000", "30 000"] }, it: { examples: ["10 000", "30 000"] }, pl: { examples: ["10 000", "30 000"] }, tr: { examples: ["10 000", "30 000"] }, id: { examples: ["10 000", "30 000"] }, vi: { examples: ["10 000", "30 000"] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              en: ["Read the part before ", { term: { kanji: "万", reading: "まん" } }, " first, then the rest: 35 000 is ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              uk: ["Спершу читають частину перед ", { term: { kanji: "万", reading: "まん" } }, ", потім решту: 35 000 — це ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              es: ["Se lee primero lo que va ante ", { term: { kanji: "万", reading: "まん" } }, " y luego el resto: 35 000 es ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              pt: ["Lê-se primeiro o que vem antes de ", { term: { kanji: "万", reading: "まん" } }, " e depois o resto: 35 000 é ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              fr: ["On lit d’abord ce qui précède ", { term: { kanji: "万", reading: "まん" } }, ", puis le reste : 35 000 se dit ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              de: ["Erst liest man den Teil vor ", { term: { kanji: "万", reading: "まん" } }, ", dann den Rest: 35 000 ist ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              it: ["Si legge prima la parte prima di ", { term: { kanji: "万", reading: "まん" } }, ", poi il resto: 35 000 è ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              pl: ["Najpierw czyta się część przed ", { term: { kanji: "万", reading: "まん" } }, ", potem resztę: 35 000 to ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              tr: ["Önce ", { term: { kanji: "万", reading: "まん" } }, " öncesindeki kısım, sonra kalanı okunur: 35 000, ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, " olur."]
+              id: ["Bagian sebelum ", { term: { kanji: "万", reading: "まん" } }, " dibaca lebih dulu, lalu sisanya: 35 000 adalah ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+              vi: ["Đọc phần trước ", { term: { kanji: "万", reading: "まん" } }, " trước, rồi đến phần còn lại: 35 000 là ", { term: [{ kanji: "三", reading: "さん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }] }, "."]
+            ex: { examples: [{ numeral: [{ kanji: "十", reading: "じゅう" }, { kanji: "二", reading: "に" }, { kanji: "万", reading: "まん" }], value: 120000 }, { numeral: [{ kanji: "四", reading: "よん" }, { kanji: "万", reading: "まん" }, { kanji: "五", reading: "ご" }, { kanji: "千", reading: "せん" }], value: 45000 }] }
+            tr: { en: { examples: ["120 000", "45 000"] }, uk: { examples: ["120 000", "45 000"] }, es: { examples: ["120 000", "45 000"] }, pt: { examples: ["120 000", "45 000"] }, fr: { examples: ["120 000", "45 000"] }, de: { examples: ["120 000", "45 000"] }, it: { examples: ["120 000", "45 000"] }, pl: { examples: ["120 000", "45 000"] }, tr: { examples: ["120 000", "45 000"] }, id: { examples: ["120 000", "45 000"] }, vi: { examples: ["120 000", "45 000"] } }
+  - title:
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      fr: "Erreurs fréquentes"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A0"
+            wrong: "せんにひゃくさんじゅうよん"
+            right: { target: "いちにさんよん" }
+            rule:
+              en: "a phone number is read digit by digit, not as one number"
+              uk: "номер телефону читають по цифрах, а не як одне число"
+              es: "el número de teléfono se lee cifra por cifra, no como un solo número"
+              pt: "o número de telefone lê-se algarismo por algarismo, não como um só número"
+              fr: "un numéro de téléphone se lit chiffre par chiffre, pas comme un seul nombre"
+              de: "eine Telefonnummer liest man Ziffer für Ziffer, nicht als eine Zahl"
+              it: "il numero di telefono si legge cifra per cifra, non come un unico numero"
+              pl: "numer telefonu czyta się cyfra po cyfrze, a nie jako jedną liczbę"
+              tr: "telefon numarası tek bir sayı olarak değil, rakam rakam okunur"
+              id: "nomor telepon dibaca angka demi angka, bukan sebagai satu bilangan"
+              vi: "số điện thoại được đọc từng chữ số, không đọc như một số"
+          - level: "A1"
+            wrong: "いちひゃくえん"
+            right: [{ target: "ひゃく" }, "えん"]
+            rule:
+              en: ["100 takes no ", { term: "いち" }, " before it"]
+              uk: ["перед 100 немає ", { term: "いち" }]
+              es: ["100 no lleva ", { term: "いち" }, " delante"]
+              pt: ["100 não leva ", { term: "いち" }, " antes"]
+              fr: ["100 n’a pas de ", { term: "いち" }, " devant"]
+              de: ["vor 100 steht kein ", { term: "いち" }]
+              it: ["100 non vuole ", { term: "いち" }, " davanti"]
+              pl: ["przed 100 nie ma ", { term: "いち" }]
+              tr: ["100’ün önüne ", { term: "いち" }, " gelmez"]
+              id: ["100 tidak memakai ", { term: "いち" }, " di depannya"]
+              vi: ["100 không có ", { term: "いち" }, " đứng trước"]
+          - level: "A1"
+            wrong: "さんひゃくえん"
+            right: ["さん", { target: "びゃく" }, "えん"]
+            rule:
+              en: ["after 3, ", { term: "ひゃく" }, " becomes ", { term: "びゃく" }]
+              uk: ["після 3 ", { term: "ひゃく" }, " стає ", { term: "びゃく" }]
+              es: ["tras 3, ", { term: "ひゃく" }, " pasa a ", { term: "びゃく" }]
+              pt: ["depois de 3, ", { term: "ひゃく" }, " vira ", { term: "びゃく" }]
+              fr: ["après 3, ", { term: "ひゃく" }, " devient ", { term: "びゃく" }]
+              de: ["nach 3 wird ", { term: "ひゃく" }, " zu ", { term: "びゃく" }]
+              it: ["dopo 3, ", { term: "ひゃく" }, " diventa ", { term: "びゃく" }]
+              pl: ["po 3 ", { term: "ひゃく" }, " zmienia się w ", { term: "びゃく" }]
+              tr: ["3’ten sonra ", { term: "ひゃく" }, ", ", { term: "びゃく" }, " olur"]
+              id: ["setelah 3, ", { term: "ひゃく" }, " menjadi ", { term: "びゃく" }]
+              vi: ["sau 3, ", { term: "ひゃく" }, " thành ", { term: "びゃく" }]
+          - level: "A1"
+            wrong: "ろくひゃくえん"
+            right: ["ろっ", { target: "ぴゃく" }, "えん"]
+            rule:
+              en: ["after 6 and 8, ", { term: "ひゃく" }, " becomes ", { term: "ぴゃく" }, ", with a small ", { term: "っ" }, " before it"]
+              uk: ["після 6 і 8 ", { term: "ひゃく" }, " стає ", { term: "ぴゃく" }, ", а перед ним стоїть малий ", { term: "っ" }]
+              es: ["tras 6 y 8, ", { term: "ひゃく" }, " pasa a ", { term: "ぴゃく" }, ", con una ", { term: "っ" }, " pequeña delante"]
+              pt: ["depois de 6 e 8, ", { term: "ひゃく" }, " vira ", { term: "ぴゃく" }, ", com um ", { term: "っ" }, " pequeno antes"]
+              fr: ["après 6 et 8, ", { term: "ひゃく" }, " devient ", { term: "ぴゃく" }, ", avec un petit ", { term: "っ" }, " devant"]
+              de: ["nach 6 und 8 wird ", { term: "ひゃく" }, " zu ", { term: "ぴゃく" }, ", mit einem kleinen ", { term: "っ" }, " davor"]
+              it: ["dopo 6 e 8, ", { term: "ひゃく" }, " diventa ", { term: "ぴゃく" }, ", con una ", { term: "っ" }, " piccola davanti"]
+              pl: ["po 6 i 8 ", { term: "ひゃく" }, " zmienia się w ", { term: "ぴゃく" }, ", z małym ", { term: "っ" }, " przed nim"]
+              tr: ["6 ve 8’den sonra ", { term: "ひゃく" }, ", ", { term: "ぴゃく" }, " olur ve önüne küçük bir ", { term: "っ" }, " gelir"]
+              id: ["setelah 6 dan 8, ", { term: "ひゃく" }, " menjadi ", { term: "ぴゃく" }, ", dengan ", { term: "っ" }, " kecil di depannya"]
+              vi: ["sau 6 và 8, ", { term: "ひゃく" }, " thành ", { term: "ぴゃく" }, ", với ", { term: "っ" }, " nhỏ đứng trước"]
+          - level: "A1"
+            wrong: "さんせんえん"
+            right: ["さん", { target: "ぜん" }, "えん"]
+            rule:
+              en: ["after 3, ", { term: "せん" }, " becomes ", { term: "ぜん" }]
+              uk: ["після 3 ", { term: "せん" }, " стає ", { term: "ぜん" }]
+              es: ["tras 3, ", { term: "せん" }, " pasa a ", { term: "ぜん" }]
+              pt: ["depois de 3, ", { term: "せん" }, " vira ", { term: "ぜん" }]
+              fr: ["après 3, ", { term: "せん" }, " devient ", { term: "ぜん" }]
+              de: ["nach 3 wird ", { term: "せん" }, " zu ", { term: "ぜん" }]
+              it: ["dopo 3, ", { term: "せん" }, " diventa ", { term: "ぜん" }]
+              pl: ["po 3 ", { term: "せん" }, " zmienia się w ", { term: "ぜん" }]
+              tr: ["3’ten sonra ", { term: "せん" }, ", ", { term: "ぜん" }, " olur"]
+              id: ["setelah 3, ", { term: "せん" }, " menjadi ", { term: "ぜん" }]
+              vi: ["sau 3, ", { term: "せん" }, " thành ", { term: "ぜん" }]
+          - level: "A2"
+            wrong: [{ kanji: "万", reading: "まん" }, { kanji: "円", reading: "えん" }]
+            right: [{ target: { kanji: "一", reading: "いち" } }, { kanji: "万", reading: "まん" }, { kanji: "円", reading: "えん" }]
+            rule:
+              en: [{ term: { kanji: "万", reading: "まん" } }, " always takes a digit before it, even one"]
+              uk: ["перед ", { term: { kanji: "万", reading: "まん" } }, " завжди стоїть цифра, навіть одиниця"]
+              es: [{ term: { kanji: "万", reading: "まん" } }, " siempre lleva una cifra delante, incluso uno"]
+              pt: [{ term: { kanji: "万", reading: "まん" } }, " leva sempre um algarismo antes, até o um"]
+              fr: [{ term: { kanji: "万", reading: "まん" } }, " est toujours précédé d’un chiffre, même un"]
+              de: ["vor ", { term: { kanji: "万", reading: "まん" } }, " steht immer eine Ziffer, auch die Eins"]
+              it: [{ term: { kanji: "万", reading: "まん" } }, " vuole sempre una cifra davanti, anche uno"]
+              pl: ["przed ", { term: { kanji: "万", reading: "まん" } }, " zawsze stoi cyfra, także jedynka"]
+              tr: [{ term: { kanji: "万", reading: "まん" } }, " öncesinde her zaman bir rakam bulunur, bir bile olsa"]
+              id: ["sebelum ", { term: { kanji: "万", reading: "まん" } }, " selalu ada angka, bahkan satu"]
+              vi: ["trước ", { term: { kanji: "万", reading: "まん" } }, " luôn có một chữ số, kể cả số một"]
+          - level: "A2"
+            wrong: [{ kanji: "十", reading: "じゅう" }, { kanji: "千", reading: "せん" }, { kanji: "円", reading: "えん" }]
+            right: [{ target: [{ kanji: "一", reading: "いち" }, { kanji: "万", reading: "まん" }] }, { kanji: "円", reading: "えん" }]
+            rule:
+              en: ["10 000 is one ", { term: { kanji: "万", reading: "まん" } }, ", never ten ", { term: { kanji: "千", reading: "せん" } }]
+              uk: ["10 000 — це один ", { term: { kanji: "万", reading: "まん" } }, ", а не десять ", { term: { kanji: "千", reading: "せん" } }]
+              es: ["10 000 es un ", { term: { kanji: "万", reading: "まん" } }, ", nunca diez ", { term: { kanji: "千", reading: "せん" } }]
+              pt: ["10 000 é um ", { term: { kanji: "万", reading: "まん" } }, ", nunca dez ", { term: { kanji: "千", reading: "せん" } }]
+              fr: ["10 000 est un ", { term: { kanji: "万", reading: "まん" } }, ", jamais dix ", { term: { kanji: "千", reading: "せん" } }]
+              de: ["10 000 ist ein ", { term: { kanji: "万", reading: "まん" } }, ", nie zehn ", { term: { kanji: "千", reading: "せん" } }]
+              it: ["10 000 è un ", { term: { kanji: "万", reading: "まん" } }, ", mai dieci ", { term: { kanji: "千", reading: "せん" } }]
+              pl: ["10 000 to jeden ", { term: { kanji: "万", reading: "まん" } }, ", nigdy dziesięć ", { term: { kanji: "千", reading: "せん" } }]
+              tr: ["10 000 bir ", { term: { kanji: "万", reading: "まん" } }, "’dır, on ", { term: { kanji: "千", reading: "せん" } }, " değil"]
+              id: ["10 000 adalah satu ", { term: { kanji: "万", reading: "まん" } }, ", bukan sepuluh ", { term: { kanji: "千", reading: "せん" } }]
+              vi: ["10 000 là một ", { term: { kanji: "万", reading: "まん" } }, ", không phải mười ", { term: { kanji: "千", reading: "せん" } }]

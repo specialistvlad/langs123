@@ -1,0 +1,1031 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.pronoms.pronoms-complements"
+lang: "fr"
+kind: "grammar"
+tags: ["pronouns", "object", "direct", "indirect", "word order"]
+concepts: ["object-pronouns"]
+related: ["fr.pronoms.y-en", "fr.pronoms.pronoms-toniques", "fr.pronoms.pronoms-sujets", "fr.futur-imperatif.imperatif", "fr.passe.passe-compose"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", uk: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", es: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", pt: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", de: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", it: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", pl: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", tr: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", id: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d", vi: "dd80db bc43ab d043b3 77aa4a adfdd5 826d37 4cf6a8 27d39b f2023d" }
+title:
+  fr: "Les pronoms compléments"
+  en: "Object Pronouns"
+  uk: "Займенники-додатки"
+  es: "Los pronombres complemento"
+  pt: "Os pronomes complemento"
+  de: "Die Objektpronomen"
+  it: "I pronomi complemento"
+  pl: "Zaimki dopełnieniowe"
+  tr: "Nesne zamirleri"
+  id: "Pronomina objek"
+  vi: "Đại từ bổ ngữ"
+summary:
+  lead:
+    fr: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " et ", { term: "leur" }, " remplacent un complément et se placent devant le verbe."]
+    en: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " and ", { term: "leur" }, " replace an object and stand before the verb."]
+    uk: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " і ", { term: "leur" }, " замінюють додаток і стоять перед дієсловом."]
+    es: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " y ", { term: "leur" }, " sustituyen un complemento y van delante del verbo."]
+    pt: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " e ", { term: "leur" }, " substituem um complemento e ficam antes do verbo."]
+    de: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " und ", { term: "leur" }, " ersetzen ein Objekt und stehen vor dem Verb."]
+    it: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " e ", { term: "leur" }, " sostituiscono un complemento e stanno prima del verbo."]
+    pl: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " i ", { term: "leur" }, " zastępują dopełnienie i stoją przed czasownikiem."]
+    tr: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " ve ", { term: "leur" }, " bir nesnenin yerini tutar ve fiilin önünde yer alır."]
+    id: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, ", dan ", { term: "leur" }, " menggantikan objek dan diletakkan sebelum kata kerja."]
+    vi: [{ term: "Me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "les" }, ", ", { term: "lui" }, " và ", { term: "leur" }, " thay cho bổ ngữ và đứng trước động từ."]
+  rule:
+    fr: "Le pronom se place juste avant le verbe, sauf à l’impératif affirmatif :"
+    en: "The pronoun stands right before the verb, except in the affirmative imperative:"
+    uk: "Займенник стоїть просто перед дієсловом, крім стверджувального наказового способу:"
+    es: "El pronombre va justo delante del verbo, salvo en el imperativo afirmativo:"
+    pt: "O pronome fica logo antes do verbo, exceto no imperativo afirmativo:"
+    de: "Das Pronomen steht direkt vor dem Verb, außer im bejahten Imperativ:"
+    it: "Il pronome sta subito prima del verbo, tranne nell’imperativo affermativo:"
+    pl: "Zaimek stoi tuż przed czasownikiem, z wyjątkiem trybu rozkazującego twierdzącego:"
+    tr: "Zamir doğrudan fiilin önünde yer alır; olumlu emir kipi bunun dışındadır:"
+    id: "Pronomina diletakkan tepat sebelum kata kerja, kecuali pada imperatif afirmatif:"
+    vi: "Đại từ đứng ngay trước động từ, trừ mệnh lệnh khẳng định:"
+  ex: { examples: [["Je ", { target: "le" }, " vois."], ["Je ", { target: "lui" }, " parle."], ["Regarde-", { target: "le" }, "."]] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point:
+            fr: "me, te, nous, vous"
+            en: "me, te, nous, vous"
+            uk: "me, te, nous, vous"
+            es: "me, te, nous, vous"
+            pt: "me, te, nous, vous"
+            de: "me, te, nous, vous"
+            it: "me, te, nous, vous"
+            pl: "me, te, nous, vous"
+            tr: "me, te, nous, vous"
+            id: "me, te, nous, vous"
+            vi: "me, te, nous, vous"
+          rule:
+            fr: ["même forme au complément direct et indirect ; ", { term: "m’" }, ", ", { term: "t’" }, " devant une voyelle"]
+            en: ["same form as direct and indirect object; ", { term: "m’" }, ", ", { term: "t’" }, " before a vowel"]
+            uk: ["та сама форма для прямого й непрямого додатка; ", { term: "m’" }, ", ", { term: "t’" }, " перед голосною"]
+            es: ["misma forma como complemento directo e indirecto; ", { term: "m’" }, ", ", { term: "t’" }, " ante vocal"]
+            pt: ["mesma forma como objeto direto e indireto; ", { term: "m’" }, ", ", { term: "t’" }, " antes de vogal"]
+            de: ["gleiche Form als direktes und indirektes Objekt; ", { term: "m’" }, ", ", { term: "t’" }, " vor Vokal"]
+            it: ["stessa forma come complemento diretto e indiretto; ", { term: "m’" }, ", ", { term: "t’" }, " davanti a vocale"]
+            pl: ["ta sama forma jako dopełnienie bliższe i dalsze; ", { term: "m’" }, ", ", { term: "t’" }, " przed samogłoską"]
+            tr: ["doğrudan ve dolaylı nesnede aynı biçim; ünlüden önce ", { term: "m’" }, ", ", { term: "t’" }]
+            id: ["bentuk sama untuk objek langsung dan tak langsung; ", { term: "m’" }, ", ", { term: "t’" }, " sebelum vokal"]
+            vi: ["cùng một dạng cho bổ ngữ trực tiếp và gián tiếp; ", { term: "m’" }, ", ", { term: "t’" }, " trước nguyên âm"]
+          ex: { examples: [["Il ", { target: "m’" }, "aime."], ["Elle ", { target: "nous" }, " parle."]] }
+          tr: { en: { examples: ["He loves me.", "She talks to us."] }, uk: { examples: ["Він мене любить.", "Вона розмовляє з нами."] }, es: { examples: ["Él me quiere.", "Ella nos habla."] }, pt: { examples: ["Ele me ama.", "Ela fala conosco."] }, de: { examples: ["Er liebt mich.", "Sie spricht mit uns."] }, it: { examples: ["Lui mi ama.", "Lei ci parla."] }, pl: { examples: ["On mnie kocha.", "Ona z nami rozmawia."] }, tr: { examples: ["O beni seviyor.", "O bizimle konuşuyor."] }, id: { examples: ["Dia mencintaiku.", "Dia berbicara dengan kami."] }, vi: { examples: ["Anh ấy yêu tôi.", "Cô ấy nói chuyện với chúng tôi."] } }
+        - level: "A1"
+          point:
+            fr: "le, la, les"
+            en: "le, la, les"
+            uk: "le, la, les"
+            es: "le, la, les"
+            pt: "le, la, les"
+            de: "le, la, les"
+            it: "le, la, les"
+            pl: "le, la, les"
+            tr: "le, la, les"
+            id: "le, la, les"
+            vi: "le, la, les"
+          rule:
+            fr: ["complément direct, sans préposition ; ", { term: "l’" }, " devant une voyelle"]
+            en: ["direct object, no preposition; ", { term: "l’" }, " before a vowel"]
+            uk: ["прямий додаток, без прийменника; ", { term: "l’" }, " перед голосною"]
+            es: ["complemento directo, sin preposición; ", { term: "l’" }, " ante vocal"]
+            pt: ["objeto direto, sem preposição; ", { term: "l’" }, " antes de vogal"]
+            de: ["direktes Objekt, ohne Präposition; ", { term: "l’" }, " vor Vokal"]
+            it: ["complemento diretto, senza preposizione; ", { term: "l’" }, " davanti a vocale"]
+            pl: ["dopełnienie bliższe, bez przyimka; ", { term: "l’" }, " przed samogłoską"]
+            tr: ["doğrudan nesne, edatsız; ünlüden önce ", { term: "l’" }]
+            id: ["objek langsung, tanpa preposisi; ", { term: "l’" }, " sebelum vokal"]
+            vi: ["bổ ngữ trực tiếp, không có giới từ; ", { term: "l’" }, " trước nguyên âm"]
+          ex: { examples: [["Je ", { target: "la" }, " vois."], ["Je ", { target: "les" }, " connais."]] }
+          tr: { en: { examples: ["I see her.", "I know them."] }, uk: { examples: ["Я бачу її.", "Я знаю їх."] }, es: { examples: ["La veo.", "Los conozco."] }, pt: { examples: ["Eu a vejo.", "Eu os conheço."] }, de: { examples: ["Ich sehe sie.", "Ich kenne sie."] }, it: { examples: ["La vedo.", "Li conosco."] }, pl: { examples: ["Widzę ją.", "Znam ich."] }, tr: { examples: ["Onu görüyorum.", "Onları tanıyorum."] }, id: { examples: ["Aku melihatnya.", "Aku mengenal mereka."] }, vi: { examples: ["Tôi thấy cô ấy.", "Tôi quen họ."] } }
+        - level: "A1"
+          point: { fr: "lui, leur", en: "lui, leur", uk: "lui, leur", es: "lui, leur", pt: "lui, leur", de: "lui, leur", it: "lui, leur", pl: "lui, leur", tr: "lui, leur", id: "lui, leur", vi: "lui, leur" }
+          rule:
+            fr: [{ term: "à" }, " + personne : ", { term: "lui" }, " (un seul), ", { term: "leur" }, " (plusieurs)"]
+            en: [{ term: "à" }, " + person: ", { term: "lui" }, " (one), ", { term: "leur" }, " (several)"]
+            uk: [{ term: "à" }, " + особа: ", { term: "lui" }, " (одна), ", { term: "leur" }, " (кілька)"]
+            es: [{ term: "à" }, " + persona: ", { term: "lui" }, " (una), ", { term: "leur" }, " (varias)"]
+            pt: [{ term: "à" }, " + pessoa: ", { term: "lui" }, " (uma), ", { term: "leur" }, " (várias)"]
+            de: [{ term: "à" }, " + Person: ", { term: "lui" }, " (eine), ", { term: "leur" }, " (mehrere)"]
+            it: [{ term: "à" }, " + persona: ", { term: "lui" }, " (una), ", { term: "leur" }, " (più)"]
+            pl: [{ term: "à" }, " + osoba: ", { term: "lui" }, " (jedna), ", { term: "leur" }, " (kilka)"]
+            tr: [{ term: "à" }, " + kişi: ", { term: "lui" }, " (tek), ", { term: "leur" }, " (birkaç)"]
+            id: [{ term: "à" }, " + orang: ", { term: "lui" }, " (satu), ", { term: "leur" }, " (beberapa)"]
+            vi: [{ term: "à" }, " + người: ", { term: "lui" }, " (một), ", { term: "leur" }, " (nhiều)"]
+          ex: { examples: [["Je ", { target: "lui" }, " parle."], ["Je ", { target: "leur" }, " écris."]] }
+          tr: { en: { examples: ["I talk to him.", "I write to them."] }, uk: { examples: ["Я розмовляю з ним.", "Я пишу їм."] }, es: { examples: ["Le hablo.", "Les escribo."] }, pt: { examples: ["Eu falo com ele.", "Eu escrevo para eles."] }, de: { examples: ["Ich spreche mit ihm.", "Ich schreibe ihnen."] }, it: { examples: ["Gli parlo.", "Scrivo loro."] }, pl: { examples: ["Rozmawiam z nim.", "Piszę do nich."] }, tr: { examples: ["Onunla konuşuyorum.", "Onlara yazıyorum."] }, id: { examples: ["Aku berbicara dengannya.", "Aku menulis kepada mereka."] }, vi: { examples: ["Tôi nói chuyện với anh ấy.", "Tôi viết cho họ."] } }
+        - level: "A1"
+          point: { fr: "Place", en: "Place", uk: "Місце", es: "Lugar", pt: "Posição", de: "Stellung", it: "Posizione", pl: "Miejsce", tr: "Yer", id: "Posisi", vi: "Vị trí" }
+          rule:
+            fr: "devant le verbe conjugué"
+            en: "before the conjugated verb"
+            uk: "перед дієсловом у особовій формі"
+            es: "delante del verbo conjugado"
+            pt: "antes do verbo conjugado"
+            de: "vor dem konjugierten Verb"
+            it: "prima del verbo coniugato"
+            pl: "przed czasownikiem w formie osobowej"
+            tr: "çekimli fiilin önünde"
+            id: "sebelum kata kerja yang dikonjugasikan"
+            vi: "trước động từ đã chia"
+          ex: ["Il ", { target: "nous" }, " écoute."]
+          tr: { en: "He listens to us.", uk: "Він слухає нас.", es: "Él nos escucha.", pt: "Ele nos escuta.", de: "Er hört uns zu.", it: "Lui ci ascolta.", pl: "On nas słucha.", tr: "O bizi dinliyor.", id: "Dia mendengarkan kami.", vi: "Anh ấy lắng nghe chúng tôi." }
+        - level: "A1"
+          point:
+            fr: "Avec un infinitif"
+            en: "With an infinitive"
+            uk: "З інфінітивом"
+            es: "Con infinitivo"
+            pt: "Com infinitivo"
+            de: "Mit Infinitiv"
+            it: "Con l’infinito"
+            pl: "Z bezokolicznikiem"
+            tr: "Mastarla"
+            id: "Dengan infinitif"
+            vi: "Với động từ nguyên mẫu"
+          rule:
+            fr: "devant l’infinitif"
+            en: "before the infinitive"
+            uk: "перед інфінітивом"
+            es: "delante del infinitivo"
+            pt: "antes do infinitivo"
+            de: "vor dem Infinitiv"
+            it: "prima dell’infinito"
+            pl: "przed bezokolicznikiem"
+            tr: "mastarın önünde"
+            id: "sebelum infinitif"
+            vi: "trước động từ nguyên mẫu"
+          ex: ["Je veux ", { target: "le" }, " voir."]
+          tr: { en: "I want to see him.", uk: "Я хочу його побачити.", es: "Quiero verlo.", pt: "Eu quero vê-lo.", de: "Ich will ihn sehen.", it: "Voglio vederlo.", pl: "Chcę go zobaczyć.", tr: "Onu görmek istiyorum.", id: "Aku ingin melihatnya.", vi: "Tôi muốn gặp anh ấy." }
+        - level: "A1"
+          point: { fr: "Négation", en: "Negation", uk: "Заперечення", es: "Negación", pt: "Negação", de: "Verneinung", it: "Negazione", pl: "Przeczenie", tr: "Olumsuzluk", id: "Negasi", vi: "Phủ định" }
+          rule:
+            fr: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            en: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            uk: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            es: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            pt: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            de: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            it: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            pl: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            tr: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            id: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+            vi: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }
+          ex: ["Je ne ", { target: "le" }, " vois pas."]
+          tr: { en: "I don't see him.", uk: "Я не бачу його.", es: "No lo veo.", pt: "Eu não o vejo.", de: "Ich sehe ihn nicht.", it: "Non lo vedo.", pl: "Nie widzę go.", tr: "Onu görmüyorum.", id: "Aku tidak melihatnya.", vi: "Tôi không thấy anh ấy." }
+        - level: "A1"
+          point:
+            fr: "Passé composé"
+            en: "Passé composé"
+            uk: "Passé composé"
+            es: "Passé composé"
+            pt: "Passé composé"
+            de: "Passé composé"
+            it: "Passé composé"
+            pl: "Passé composé"
+            tr: "Passé composé"
+            id: "Passé composé"
+            vi: "Passé composé"
+          rule:
+            fr: "devant l’auxiliaire"
+            en: "before the helper verb"
+            uk: "перед допоміжним дієсловом"
+            es: "delante del auxiliar"
+            pt: "antes do auxiliar"
+            de: "vor dem Hilfsverb"
+            it: "prima dell’ausiliare"
+            pl: "przed czasownikiem posiłkowym"
+            tr: "yardımcı fiilin önünde"
+            id: "sebelum kata kerja bantu"
+            vi: "trước trợ động từ"
+          ex: ["Je ", { target: "l’" }, "ai vu hier."]
+          tr: { en: "I saw him yesterday.", uk: "Я бачив його вчора.", es: "Lo vi ayer.", pt: "Eu o vi ontem.", de: "Ich habe ihn gestern gesehen.", it: "L’ho visto ieri.", pl: "Widziałem go wczoraj.", tr: "Onu dün gördüm.", id: "Aku melihatnya kemarin.", vi: "Hôm qua tôi đã thấy anh ấy." }
+        - level: "A1"
+          point:
+            fr: "Impératif"
+            en: "Imperative"
+            uk: "Наказовий спосіб"
+            es: "Imperativo"
+            pt: "Imperativo"
+            de: "Imperativ"
+            it: "Imperativo"
+            pl: "Tryb rozkazujący"
+            tr: "Emir kipi"
+            id: "Imperatif"
+            vi: "Mệnh lệnh"
+          rule:
+            fr: ["après le verbe, avec un trait d’union ; ", { term: "me" }, " devient ", { term: "moi" }]
+            en: ["after the verb, with a hyphen; ", { term: "me" }, " becomes ", { term: "moi" }]
+            uk: ["після дієслова, через дефіс; ", { term: "me" }, " стає ", { term: "moi" }]
+            es: ["tras el verbo, con guion; ", { term: "me" }, " pasa a ", { term: "moi" }]
+            pt: ["depois do verbo, com hífen; ", { term: "me" }, " vira ", { term: "moi" }]
+            de: ["nach dem Verb, mit Bindestrich; ", { term: "me" }, " wird zu ", { term: "moi" }]
+            it: ["dopo il verbo, con il trattino; ", { term: "me" }, " diventa ", { term: "moi" }]
+            pl: ["po czasowniku, z łącznikiem; ", { term: "me" }, " zmienia się w ", { term: "moi" }]
+            tr: ["fiilden sonra, tire ile; ", { term: "me" }, ", ", { term: "moi" }, " olur"]
+            id: ["sesudah kata kerja, dengan tanda hubung; ", { term: "me" }, " menjadi ", { term: "moi" }]
+            vi: ["sau động từ, có dấu gạch nối; ", { term: "me" }, " thành ", { term: "moi" }]
+          ex: { examples: [["Regarde-", { target: "le" }, "."], ["Donne-", { target: "moi" }, " le sel."]] }
+          tr: { en: { examples: ["Look at him.", "Give me the salt."] }, uk: { examples: ["Подивися на нього.", "Дай мені сіль."] }, es: { examples: ["Míralo.", "Dame la sal."] }, pt: { examples: ["Olhe para ele.", "Me passe o sal."] }, de: { examples: ["Sieh ihn an.", "Gib mir das Salz."] }, it: { examples: ["Guardalo.", "Dammi il sale."] }, pl: { examples: ["Spójrz na niego.", "Daj mi sól."] }, tr: { examples: ["Ona bak.", "Bana tuzu ver."] }, id: { examples: ["Lihat dia.", "Berikan garam itu kepadaku."] }, vi: { examples: ["Hãy nhìn anh ấy.", "Đưa muối cho tôi."] } }
+        - level: "A2"
+          point:
+            fr: "Impératif négatif"
+            en: "Negative imperative"
+            uk: "Заперечний наказовий спосіб"
+            es: "Imperativo negativo"
+            pt: "Imperativo negativo"
+            de: "Verneinter Imperativ"
+            it: "Imperativo negativo"
+            pl: "Tryb rozkazujący przeczący"
+            tr: "Olumsuz emir"
+            id: "Imperatif negatif"
+            vi: "Mệnh lệnh phủ định"
+          rule:
+            fr: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, " : le pronom revient devant le verbe"]
+            en: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": the pronoun is back before the verb"]
+            uk: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": займенник знову стоїть перед дієсловом"]
+            es: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": el pronombre vuelve delante del verbo"]
+            pt: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": o pronome volta para antes do verbo"]
+            de: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": das Pronomen steht wieder vor dem Verb"]
+            it: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": il pronome torna prima del verbo"]
+            pl: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": zaimek wraca przed czasownik"]
+            tr: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": zamir yine fiilin önüne geçer"]
+            id: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": pronomina kembali ke depan kata kerja"]
+            vi: [{ pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "le" }, { term: "lui" }] }, { slot: "verb" }, { term: "pas" }] }, ": đại từ trở lại trước động từ"]
+          ex: ["Ne ", { target: "le" }, " regarde pas !"]
+          tr: { en: "Don't look at him!", uk: "Не дивися на нього!", es: "¡No lo mires!", pt: "Não olhe para ele!", de: "Sieh ihn nicht an!", it: "Non guardarlo!", pl: "Nie patrz na niego!", tr: "Ona bakma!", id: "Jangan lihat dia!", vi: "Đừng nhìn anh ấy!" }
+        - level: "A2"
+          point: { fr: "Accord", en: "Agreement", uk: "Узгодження", es: "Concordancia", pt: "Concordância", de: "Angleichung", it: "Concordanza", pl: "Zgoda", tr: "Uyum", id: "Penyesuaian", vi: "Hòa hợp" }
+          rule:
+            fr: ["au passé composé, le participe s’accorde avec ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " placé devant"]
+            en: ["in the passé composé, the participle agrees with a preceding ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }]
+            uk: ["у passé composé дієприкметник узгоджується з ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " перед ним"]
+            es: ["en el passé composé, el participio concuerda con ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " antepuesto"]
+            pt: ["no passé composé, o particípio concorda com ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " colocado antes"]
+            de: ["im passé composé richtet sich das Partizip nach vorangestelltem ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }]
+            it: ["nel passé composé, il participio concorda con ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " che lo precede"]
+            pl: ["w passé composé imiesłów zgadza się z poprzedzającym ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }]
+            tr: ["passé composé’de ortaç, önündeki ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " ile uyum gösterir"]
+            id: ["pada passé composé, participe menyesuaikan dengan ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " di depannya"]
+            vi: ["trong passé composé, phân từ hòa hợp với ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " đứng trước"]
+          ex: ["Marie ? Je l’ai ", { target: "vue" }, "."]
+          tr: { en: "Marie? I saw her.", uk: "Марі? Я бачив її.", es: "¿Marie? La vi.", pt: "A Marie? Eu a vi.", de: "Marie? Ich habe sie gesehen.", it: "Marie? L’ho vista.", pl: "Marie? Widziałem ją.", tr: "Marie mi? Onu gördüm.", id: "Marie? Aku melihatnya.", vi: "Marie ư? Tôi đã thấy cô ấy." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: ["jamais après le verbe, sauf à l’impératif affirmatif : ", { term: "je le vois" }]
+            en: ["never after the verb, except in the affirmative imperative: ", { term: "je le vois" }]
+            uk: ["ніколи після дієслова, крім стверджувального наказового способу: ", { term: "je le vois" }]
+            es: ["nunca detrás del verbo, salvo en el imperativo afirmativo: ", { term: "je le vois" }]
+            pt: ["nunca depois do verbo, exceto no imperativo afirmativo: ", { term: "je le vois" }]
+            de: ["nie nach dem Verb, außer im bejahten Imperativ: ", { term: "je le vois" }]
+            it: ["mai dopo il verbo, tranne nell’imperativo affermativo: ", { term: "je le vois" }]
+            pl: ["nigdy po czasowniku, poza trybem rozkazującym twierdzącym: ", { term: "je le vois" }]
+            tr: ["olumlu emir dışında asla fiilden sonra gelmez: ", { term: "je le vois" }]
+            id: ["tidak pernah sesudah kata kerja, kecuali imperatif afirmatif: ", { term: "je le vois" }]
+            vi: ["không bao giờ đứng sau động từ, trừ mệnh lệnh khẳng định: ", { term: "je le vois" }]
+          ex: ["Je ", { target: "le" }, " vois."]
+          tr: { en: "I see him.", uk: "Я бачу його.", es: "Lo veo.", pt: "Eu o vejo.", de: "Ich sehe ihn.", it: "Lo vedo.", pl: "Widzę go.", tr: "Onu görüyorum.", id: "Aku melihatnya.", vi: "Tôi thấy anh ấy." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "leur" }, " ne prend jamais de -s"]
+            en: [{ term: "leur" }, " never takes an -s"]
+            uk: [{ term: "leur" }, " ніколи не має -s"]
+            es: [{ term: "leur" }, " nunca lleva -s"]
+            pt: [{ term: "leur" }, " nunca leva -s"]
+            de: [{ term: "leur" }, " bekommt nie ein -s"]
+            it: [{ term: "leur" }, " non prende mai -s"]
+            pl: [{ term: "leur" }, " nigdy nie ma -s"]
+            tr: [{ term: "leur" }, " asla -s almaz"]
+            id: [{ term: "leur" }, " tidak pernah diberi -s"]
+            vi: [{ term: "leur" }, " không bao giờ thêm -s"]
+          ex: ["Je ", { target: "leur" }, " parle."]
+          tr: { en: "I talk to them.", uk: "Я розмовляю з ними.", es: "Les hablo.", pt: "Eu falo com eles.", de: "Ich spreche mit ihnen.", it: "Parlo loro.", pl: "Rozmawiam z nimi.", tr: "Onlarla konuşuyorum.", id: "Aku berbicara dengan mereka.", vi: "Tôi nói chuyện với họ." }
+sections:
+  - title:
+      fr: "Vue d’ensemble"
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Un pronom complément remplace un nom déjà connu et évite de le répéter."
+              en: "An object pronoun replaces a noun already known and avoids repeating it."
+              uk: "Займенник-додаток замінює вже відомий іменник і дозволяє не повторювати його."
+              es: "El pronombre complemento sustituye a un nombre ya conocido y evita repetirlo."
+              pt: "O pronome complemento substitui um substantivo já conhecido e evita repeti-lo."
+              de: "Das Objektpronomen ersetzt ein bereits bekanntes Nomen und vermeidet seine Wiederholung."
+              it: "Il pronome complemento sostituisce un nome già noto ed evita di ripeterlo."
+              pl: "Zaimek dopełnieniowy zastępuje znany już rzeczownik i pozwala go nie powtarzać."
+              tr: "Nesne zamiri, daha önce bilinen bir ismin yerini tutar ve onu tekrarlamaktan kaçınmayı sağlar."
+              id: "Pronomina objek menggantikan kata benda yang sudah diketahui dan menghindari pengulangannya."
+              vi: "Đại từ bổ ngữ thay cho một danh từ đã biết và tránh phải lặp lại nó."
+            ex: { exchange: ["Tu connais Paul ?", ["Oui, je ", { target: "le" }, " connais."]] }
+            tr: { en: { exchange: ["Do you know Paul?", "Yes, I know him."] }, uk: { exchange: ["Ти знаєш Поля?", "Так, я його знаю."] }, es: { exchange: ["¿Conoces a Paul?", "Sí, lo conozco."] }, pt: { exchange: ["Você conhece o Paul?", "Sim, eu o conheço."] }, de: { exchange: ["Kennst du Paul?", "Ja, ich kenne ihn."] }, it: { exchange: ["Conosci Paul?", "Sì, lo conosco."] }, pl: { exchange: ["Znasz Paula?", "Tak, znam go."] }, tr: { exchange: ["Paul’ü tanıyor musun?", "Evet, onu tanıyorum."] }, id: { exchange: ["Kamu kenal Paul?", "Ya, aku mengenalnya."] }, vi: { exchange: ["Bạn có quen Paul không?", "Có, tôi quen anh ấy."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["À la 3e personne, ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " remplacent un complément direct ; ", { term: "lui" }, " et ", { term: "leur" }, " remplacent une personne introduite par ", { term: "à" }, "."]
+              en: ["In the 3rd person, ", { term: "le" }, ", ", { term: "la" }, " and ", { term: "les" }, " replace a direct object; ", { term: "lui" }, " and ", { term: "leur" }, " replace a person introduced by ", { term: "à" }, "."]
+              uk: ["У 3-й особі ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " замінюють прямий додаток, а ", { term: "lui" }, " і ", { term: "leur" }, " замінюють особу, введену прийменником ", { term: "à" }, "."]
+              es: ["En la 3.ª persona, ", { term: "le" }, ", ", { term: "la" }, " y ", { term: "les" }, " sustituyen al complemento directo; ", { term: "lui" }, " y ", { term: "leur" }, " sustituyen a una persona introducida por ", { term: "à" }, "."]
+              pt: ["Na 3ª pessoa, ", { term: "le" }, ", ", { term: "la" }, " e ", { term: "les" }, " substituem o objeto direto; ", { term: "lui" }, " e ", { term: "leur" }, " substituem uma pessoa introduzida por ", { term: "à" }, "."]
+              de: ["In der 3. Person ersetzen ", { term: "le" }, ", ", { term: "la" }, " und ", { term: "les" }, " ein direktes Objekt; ", { term: "lui" }, " und ", { term: "leur" }, " ersetzen eine Person, die mit ", { term: "à" }, " angeschlossen wird."]
+              it: ["Alla 3ª persona, ", { term: "le" }, ", ", { term: "la" }, " e ", { term: "les" }, " sostituiscono il complemento diretto; ", { term: "lui" }, " e ", { term: "leur" }, " sostituiscono una persona introdotta da ", { term: "à" }, "."]
+              pl: ["W 3. osobie ", { term: "le" }, ", ", { term: "la" }, " i ", { term: "les" }, " zastępują dopełnienie bliższe, a ", { term: "lui" }, " i ", { term: "leur" }, " zastępują osobę wprowadzoną przez ", { term: "à" }, "."]
+              tr: ["3. kişide ", { term: "le" }, ", ", { term: "la" }, " ve ", { term: "les" }, " doğrudan nesnenin yerini tutar; ", { term: "lui" }, " ve ", { term: "leur" }, " ise ", { term: "à" }, " ile bağlanan kişinin yerini tutar."]
+              id: ["Pada orang ketiga, ", { term: "le" }, ", ", { term: "la" }, ", dan ", { term: "les" }, " menggantikan objek langsung; ", { term: "lui" }, " dan ", { term: "leur" }, " menggantikan orang yang diawali ", { term: "à" }, "."]
+              vi: ["Ở ngôi thứ ba, ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " thay cho bổ ngữ trực tiếp; ", { term: "lui" }, " và ", { term: "leur" }, " thay cho người đi sau ", { term: "à" }, "."]
+            ex: { examples: [["Je ", { target: "la" }, " vois."], ["Je ", { target: "lui" }, " parle."]] }
+            tr: { en: { examples: ["I see her.", "I speak to her."] }, uk: { examples: ["Я бачу її.", "Я розмовляю з нею."] }, es: { examples: ["La veo.", "Le hablo."] }, pt: { examples: ["Eu a vejo.", "Eu falo com ela."] }, de: { examples: ["Ich sehe sie.", "Ich spreche mit ihr."] }, it: { examples: ["La vedo.", "Le parlo."] }, pl: { examples: ["Widzę ją.", "Rozmawiam z nią."] }, tr: { examples: ["Onu görüyorum.", "Onunla konuşuyorum."] }, id: { examples: ["Aku melihatnya.", "Aku berbicara dengannya."] }, vi: { examples: ["Tôi thấy cô ấy.", "Tôi nói chuyện với cô ấy."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Le pronom se place devant le verbe ; l’impératif affirmatif est la seule exception : il le place après."
+              en: "The pronoun goes before the verb; the affirmative imperative is the one exception: it puts the pronoun after."
+              uk: "Займенник стоїть перед дієсловом; єдиний виняток — стверджувальний наказовий спосіб, де він іде після дієслова."
+              es: "El pronombre va delante del verbo; la única excepción es el imperativo afirmativo, que lo coloca detrás."
+              pt: "O pronome vai antes do verbo; a única exceção é o imperativo afirmativo, que o coloca depois."
+              de: "Das Pronomen steht vor dem Verb; die einzige Ausnahme ist der bejahte Imperativ, der es nachstellt."
+              it: "Il pronome sta prima del verbo; l’unica eccezione è l’imperativo affermativo, che lo mette dopo."
+              pl: "Zaimek stoi przed czasownikiem; jedyny wyjątek to tryb rozkazujący twierdzący, w którym stoi po czasowniku."
+              tr: "Zamir fiilin önünde yer alır; tek istisna olumlu emir kipidir, orada zamir fiilden sonra gelir."
+              id: "Pronomina diletakkan sebelum kata kerja; satu-satunya pengecualian adalah imperatif afirmatif, yang menaruhnya sesudah kata kerja."
+              vi: "Đại từ đứng trước động từ; ngoại lệ duy nhất là mệnh lệnh khẳng định, nơi đại từ đứng sau động từ."
+            ex: { examples: [["Je ", { target: "te" }, " comprends."], ["Écoute-", { target: "moi" }, "."]] }
+            tr: { en: { examples: ["I understand you.", "Listen to me."] }, uk: { examples: ["Я розумію тебе.", "Послухай мене."] }, es: { examples: ["Te entiendo.", "Escúchame."] }, pt: { examples: ["Eu te entendo.", "Me escute."] }, de: { examples: ["Ich verstehe dich.", "Hör mir zu."] }, it: { examples: ["Ti capisco.", "Ascoltami."] }, pl: { examples: ["Rozumiem cię.", "Posłuchaj mnie."] }, tr: { examples: ["Seni anlıyorum.", "Beni dinle."] }, id: { examples: ["Aku mengerti kamu.", "Dengarkan aku."] }, vi: { examples: ["Tôi hiểu bạn.", "Hãy nghe tôi."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour ", { term: "moi" }, " et ", { term: "toi" }, " après une préposition, voir ", { link: "Les pronoms toniques", to: "fr.pronoms.pronoms-toniques" }, "."]
+              en: ["For ", { term: "moi" }, " and ", { term: "toi" }, " after a preposition, see ", { link: "Stressed Pronouns", to: fr.pronoms.pronoms-toniques }, "."]
+              uk: ["Про ", { term: "moi" }, ", ", { term: "toi" }, " після прийменника — див. ", { link: "Наголошені займенники", to: "fr.pronoms.pronoms-toniques" }, "."]
+              es: ["Para ", { term: "moi" }, " y ", { term: "toi" }, " tras una preposición, ver ", { link: "Los pronombres tónicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pt: ["Para ", { term: "moi" }, " e ", { term: "toi" }, " depois de preposição, veja ", { link: "Os pronomes tônicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              de: ["Zu ", { term: "moi" }, " und ", { term: "toi" }, " nach einer Präposition siehe ", { link: "Die betonten Pronomen", to: "fr.pronoms.pronoms-toniques" }, "."]
+              it: ["Per ", { term: "moi" }, " e ", { term: "toi" }, " dopo una preposizione, vedi ", { link: "I pronomi tonici", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pl: ["O ", { term: "moi" }, " i ", { term: "toi" }, " po przyimku — zob. ", { link: "Zaimki akcentowane", to: "fr.pronoms.pronoms-toniques" }, "."]
+              tr: ["Edattan sonra ", { term: "moi" }, " ve ", { term: "toi" }, " için bkz. ", { link: "Vurgulu zamirler", to: "fr.pronoms.pronoms-toniques" }, "."]
+              id: ["Untuk ", { term: "moi" }, " dan ", { term: "toi" }, " setelah preposisi, lihat ", { link: "Pronomina tonik", to: "fr.pronoms.pronoms-toniques" }, "."]
+              vi: ["Về ", { term: "moi" }, " và ", { term: "toi" }, " sau giới từ, xem ", { link: "Đại từ nhấn mạnh", to: "fr.pronoms.pronoms-toniques" }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Pour remplacer un lieu ou un complément avec ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), voir ", { link: "Y et en", to: "fr.pronoms.y-en" }, "."]
+              en: ["To replace a place or a phrase with ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), see ", { link: "The Pronouns y and en", to: fr.pronoms.y-en }, "."]
+              uk: ["Як замінити місце чи словосполучення з ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), — див. ", { link: "Y та en", to: "fr.pronoms.y-en" }, "."]
+              es: ["Para sustituir un lugar o un complemento con ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), ver ", { link: "Y y en", to: "fr.pronoms.y-en" }, "."]
+              pt: ["Para substituir um lugar ou um complemento com ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), veja ", { link: "Y e en", to: "fr.pronoms.y-en" }, "."]
+              de: ["Wie man einen Ort oder eine Ergänzung mit ", { term: "de" }, " ersetzt (", { term: "y" }, ", ", { term: "en" }, "), steht in ", { link: "Y und en", to: "fr.pronoms.y-en" }, "."]
+              it: ["Per sostituire un luogo o un complemento con ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), vedi ", { link: "Y e en", to: "fr.pronoms.y-en" }, "."]
+              pl: ["O zastępowaniu miejsca lub dopełnienia z ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, ") — zob. ", { link: "Y i en", to: "fr.pronoms.y-en" }, "."]
+              tr: ["Bir yeri ya da ", { term: "de" }, " ile kurulan tamlayıcıyı değiştirmek için (", { term: "y" }, ", ", { term: "en" }, ") bkz. ", { link: "Y ve en", to: "fr.pronoms.y-en" }, "."]
+              id: ["Untuk menggantikan tempat atau pelengkap dengan ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), lihat ", { link: "Y dan en", to: "fr.pronoms.y-en" }, "."]
+              vi: ["Về cách thay thế nơi chốn hoặc bổ ngữ với ", { term: "de" }, " (", { term: "y" }, ", ", { term: "en" }, "), xem ", { link: "Y và en", to: "fr.pronoms.y-en" }, "."]
+  - title:
+      fr: "Forme : les pronoms"
+      en: "Form: the pronouns"
+      uk: "Форма: займенники"
+      es: "Forma: los pronombres"
+      pt: "Forma: os pronomes"
+      de: "Form: die Pronomen"
+      it: "Forma: i pronomi"
+      pl: "Forma: zaimki"
+      tr: "Biçim: zamirler"
+      id: "Bentuk: pronomina"
+      vi: "Dạng: các đại từ"
+    role: "form"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "person", label: { fr: "Personne", en: "Person", uk: "Особа", es: "Persona", pt: "Pessoa", de: "Person", it: "Persona", pl: "Osoba", tr: "Kişi", id: "Orang", vi: "Ngôi" } }
+          - key: "direct"
+            label:
+              fr: "Complément direct"
+              en: "Direct object"
+              uk: "Прямий додаток"
+              es: "Complemento directo"
+              pt: "Objeto direto"
+              de: "Direktes Objekt"
+              it: "Complemento diretto"
+              pl: "Dopełnienie bliższe"
+              tr: "Doğrudan nesne"
+              id: "Objek langsung"
+              vi: "Bổ ngữ trực tiếp"
+            features: { case: "acc" }
+          - key: "indirect"
+            label:
+              fr: "Complément indirect (avec à)"
+              en: "Indirect object (with à)"
+              uk: "Непрямий додаток (з à)"
+              es: "Complemento indirecto (con à)"
+              pt: "Objeto indireto (com à)"
+              de: "Indirektes Objekt (mit à)"
+              it: "Complemento indiretto (con à)"
+              pl: "Dopełnienie dalsze (z à)"
+              tr: "Dolaylı nesne (à ile)"
+              id: "Objek tak langsung (dengan à)"
+              vi: "Bổ ngữ gián tiếp (với à)"
+            features: { case: "dat" }
+        rows:
+          - { level: "A1", features: { person: 1, number: "sg" }, person: "je", direct: { alternatives: [{ target: "me" }, { target: "m’" }] }, indirect: { alternatives: [{ target: "me" }, { target: "m’" }] } }
+          - { level: "A1", features: { person: 2, number: "sg" }, person: "tu", direct: { alternatives: [{ target: "te" }, { target: "t’" }] }, indirect: { alternatives: [{ target: "te" }, { target: "t’" }] } }
+          - { level: "A1", features: { person: 3, number: "sg", gender: "masc" }, person: "il", direct: { alternatives: [{ target: "le" }, { target: "l’" }] }, indirect: { target: "lui" } }
+          - { level: "A1", features: { person: 3, number: "sg", gender: "fem" }, person: "elle", direct: { alternatives: [{ target: "la" }, { target: "l’" }] }, indirect: { target: "lui" } }
+          - { level: "A1", features: { person: 1, number: "pl" }, person: "nous", direct: { target: "nous" }, indirect: { target: "nous" } }
+          - { level: "A1", features: { person: 2 }, person: "vous", direct: { target: "vous" }, indirect: { target: "vous" } }
+          - { level: "A1", features: { person: 3, number: "pl" }, person: { alternatives: ["ils", "elles"] }, direct: { target: "les" }, indirect: { target: "leur" } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Devant une voyelle, ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " et ", { term: "la" }, " deviennent ", { term: "m’" }, ", ", { term: "t’" }, " et ", { term: "l’" }, "."]
+              en: ["Before a vowel, ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " and ", { term: "la" }, " become ", { term: "m’" }, ", ", { term: "t’" }, " and ", { term: "l’" }, "."]
+              uk: ["Перед голосною ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " і ", { term: "la" }, " стають ", { term: "m’" }, ", ", { term: "t’" }, " і ", { term: "l’" }, "."]
+              es: ["Ante vocal, ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " y ", { term: "la" }, " pasan a ", { term: "m’" }, ", ", { term: "t’" }, " y ", { term: "l’" }, "."]
+              pt: ["Antes de vogal, ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " e ", { term: "la" }, " viram ", { term: "m’" }, ", ", { term: "t’" }, " e ", { term: "l’" }, "."]
+              de: ["Vor einem Vokal werden ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " und ", { term: "la" }, " zu ", { term: "m’" }, ", ", { term: "t’" }, " und ", { term: "l’" }, "."]
+              it: ["Davanti a vocale, ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " e ", { term: "la" }, " diventano ", { term: "m’" }, ", ", { term: "t’" }, " e ", { term: "l’" }, "."]
+              pl: ["Przed samogłoską ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " i ", { term: "la" }, " zmieniają się w ", { term: "m’" }, ", ", { term: "t’" }, " i ", { term: "l’" }, "."]
+              tr: ["Ünlüden önce ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " ve ", { term: "la" }, ", ", { term: "m’" }, ", ", { term: "t’" }, " ve ", { term: "l’" }, " olur."]
+              id: ["Sebelum vokal, ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, ", dan ", { term: "la" }, " menjadi ", { term: "m’" }, ", ", { term: "t’" }, ", dan ", { term: "l’" }, "."]
+              vi: ["Trước nguyên âm, ", { term: "me" }, ", ", { term: "te" }, ", ", { term: "le" }, " và ", { term: "la" }, " thành ", { term: "m’" }, ", ", { term: "t’" }, " và ", { term: "l’" }, "."]
+            ex: { examples: [["Il ", { target: "m’" }, "aime."], ["Je ", { target: "l’" }, "écoute."]] }
+            tr: { en: { examples: ["He loves me.", "I listen to him."] }, uk: { examples: ["Він мене любить.", "Я слухаю його."] }, es: { examples: ["Él me quiere.", "Lo escucho."] }, pt: { examples: ["Ele me ama.", "Eu o escuto."] }, de: { examples: ["Er liebt mich.", "Ich höre ihm zu."] }, it: { examples: ["Lui mi ama.", "Lo ascolto."] }, pl: { examples: ["On mnie kocha.", "Słucham go."] }, tr: { examples: ["O beni seviyor.", "Onu dinliyorum."] }, id: { examples: ["Dia mencintaiku.", "Aku mendengarkannya."] }, vi: { examples: ["Anh ấy yêu tôi.", "Tôi lắng nghe anh ấy."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Lui" }, " sert pour un homme et pour une femme."]
+              en: [{ term: "Lui" }, " serves for a man and for a woman."]
+              uk: [{ term: "Lui" }, " вживають і для чоловіка, і для жінки."]
+              es: [{ term: "Lui" }, " sirve para un hombre y para una mujer."]
+              pt: [{ term: "Lui" }, " serve para um homem e para uma mulher."]
+              de: [{ term: "Lui" }, " steht für einen Mann und für eine Frau."]
+              it: [{ term: "Lui" }, " vale per un uomo e per una donna."]
+              pl: [{ term: "Lui" }, " odnosi się do mężczyzny i do kobiety."]
+              tr: [{ term: "Lui" }, " hem erkek hem kadın için kullanılır."]
+              id: [{ term: "Lui" }, " dipakai untuk laki-laki maupun perempuan."]
+              vi: [{ term: "Lui" }, " dùng cho cả nam lẫn nữ."]
+            ex: { examples: [["Paul ? Je ", { target: "lui" }, " parle."], ["Léa ? Je ", { target: "lui" }, " parle aussi."]] }
+            tr: { en: { examples: ["Paul? I talk to him.", "Léa? I talk to her too."] }, uk: { examples: ["Поль? Я розмовляю з ним.", "Леа? Я розмовляю й з нею."] }, es: { examples: ["¿Paul? Le hablo.", "¿Léa? También le hablo."] }, pt: { examples: ["O Paul? Eu falo com ele.", "A Léa? Também falo com ela."] }, de: { examples: ["Paul? Ich spreche mit ihm.", "Léa? Mit ihr spreche ich auch."] }, it: { examples: ["Paul? Gli parlo.", "Léa? Le parlo anche."] }, pl: { examples: ["Paul? Rozmawiam z nim.", "Léa? Z nią też rozmawiam."] }, tr: { examples: ["Paul mü? Onunla konuşuyorum.", "Léa mı? Onunla da konuşuyorum."] }, id: { examples: ["Paul? Aku berbicara dengannya.", "Léa? Aku juga berbicara dengannya."] }, vi: { examples: ["Paul ư? Tôi nói chuyện với anh ấy.", "Léa ư? Tôi cũng nói chuyện với cô ấy."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Leur" }, " reste invariable : il ne prend pas de ", { term: "-s" }, "."]
+              en: [{ term: "Leur" }, " never changes: it takes no ", { term: "-s" }, "."]
+              uk: [{ term: "Leur" }, " не змінюється: ", { term: "-s" }, " не додають."]
+              es: [{ term: "Leur" }, " es invariable: no lleva ", { term: "-s" }, "."]
+              pt: [{ term: "Leur" }, " é invariável: não leva ", { term: "-s" }, "."]
+              de: [{ term: "Leur" }, " bleibt unverändert: Es bekommt kein ", { term: "-s" }, "."]
+              it: [{ term: "Leur" }, " è invariabile: non prende ", { term: "-s" }, "."]
+              pl: [{ term: "Leur" }, " się nie zmienia: nie dodaje się ", { term: "-s" }, "."]
+              tr: [{ term: "Leur" }, " değişmez: ", { term: "-s" }, " almaz."]
+              id: [{ term: "Leur" }, " tidak berubah: tidak diberi ", { term: "-s" }, "."]
+              vi: [{ term: "Leur" }, " không đổi: không thêm ", { term: "-s" }, "."]
+            ex: { examples: [["Je ", { target: "leur" }, " parle."], ["Elle ", { target: "leur" }, " écrit."]] }
+            tr: { en: { examples: ["I talk to them.", "She writes to them."] }, uk: { examples: ["Я розмовляю з ними.", "Вона пише їм."] }, es: { examples: ["Les hablo.", "Ella les escribe."] }, pt: { examples: ["Eu falo com eles.", "Ela escreve para eles."] }, de: { examples: ["Ich spreche mit ihnen.", "Sie schreibt ihnen."] }, it: { examples: ["Parlo loro.", "Lei scrive loro."] }, pl: { examples: ["Rozmawiam z nimi.", "Ona pisze do nich."] }, tr: { examples: ["Onlarla konuşuyorum.", "O onlara yazıyor."] }, id: { examples: ["Aku berbicara dengan mereka.", "Dia menulis kepada mereka."] }, vi: { examples: ["Tôi nói chuyện với họ.", "Cô ấy viết cho họ."] } }
+  - title:
+      fr: "Forme : la place du pronom"
+      en: "Form: the place of the pronoun"
+      uk: "Форма: місце займенника"
+      es: "Forma: el lugar del pronombre"
+      pt: "Forma: a posição do pronome"
+      de: "Form: die Stellung des Pronomens"
+      it: "Forma: la posizione del pronome"
+      pl: "Forma: miejsce zaimka"
+      tr: "Biçim: zamirin yeri"
+      id: "Bentuk: posisi pronomina"
+      vi: "Dạng: vị trí của đại từ"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { alternatives: [{ term: "me" }, { term: "te" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }] }, { slot: "verb" }] }
+            ex: { examples: [["Je ", { target: "le" }, " vois."], ["Elle ", { target: "nous" }, " écoute."]] }
+            tr: { en: { examples: ["I see him.", "She listens to us."] }, uk: { examples: ["Я бачу його.", "Вона слухає нас."] }, es: { examples: ["Lo veo.", "Ella nos escucha."] }, pt: { examples: ["Eu o vejo.", "Ela nos escuta."] }, de: { examples: ["Ich sehe ihn.", "Sie hört uns zu."] }, it: { examples: ["Lo vedo.", "Lei ci ascolta."] }, pl: { examples: ["Widzę go.", "Ona nas słucha."] }, tr: { examples: ["Onu görüyorum.", "O bizi dinliyor."] }, id: { examples: ["Aku melihatnya.", "Dia mendengarkan kami."] }, vi: { examples: ["Tôi thấy anh ấy.", "Cô ấy lắng nghe chúng tôi."] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { term: "ne" }, { alternatives: [{ term: "me" }, { term: "te" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }] }, { slot: "verb" }, { term: "pas" }] }
+            ex: { examples: [["Je ne ", { target: "le" }, " vois pas."], ["Il ne ", { target: "lui" }, " parle pas."]] }
+            tr: { en: { examples: ["I don't see him.", "He doesn't talk to her."] }, uk: { examples: ["Я не бачу його.", "Він не розмовляє з нею."] }, es: { examples: ["No lo veo.", "Él no le habla."] }, pt: { examples: ["Eu não o vejo.", "Ele não fala com ela."] }, de: { examples: ["Ich sehe ihn nicht.", "Er spricht nicht mit ihr."] }, it: { examples: ["Non lo vedo.", "Lui non le parla."] }, pl: { examples: ["Nie widzę go.", "On z nią nie rozmawia."] }, tr: { examples: ["Onu görmüyorum.", "O onunla konuşmuyor."] }, id: { examples: ["Aku tidak melihatnya.", "Dia tidak berbicara dengannya."] }, vi: { examples: ["Tôi không thấy anh ấy.", "Anh ấy không nói chuyện với cô ấy."] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { slot: "verb" }, { alternatives: [{ term: "me" }, { term: "te" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }] }, { slot: "infinitive" }] }
+            ex: { examples: [["Je veux ", { target: "le" }, " voir."], ["Il va ", { target: "lui" }, " téléphoner."]] }
+            tr: { en: { examples: ["I want to see him.", "He is going to phone her."] }, uk: { examples: ["Я хочу його побачити.", "Він збирається зателефонувати їй."] }, es: { examples: ["Quiero verlo.", "Va a llamarla."] }, pt: { examples: ["Eu quero vê-lo.", "Ele vai telefonar para ela."] }, de: { examples: ["Ich will ihn sehen.", "Er wird sie anrufen."] }, it: { examples: ["Voglio vederlo.", "Le telefonerà."] }, pl: { examples: ["Chcę go zobaczyć.", "On zadzwoni do niej."] }, tr: { examples: ["Onu görmek istiyorum.", "O ona telefon edecek."] }, id: { examples: ["Aku ingin melihatnya.", "Dia akan meneleponnya."] }, vi: { examples: ["Tôi muốn gặp anh ấy.", "Anh ấy sẽ gọi điện cho cô ấy."] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { alternatives: [{ term: "me" }, { term: "te" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }] }, { slot: "verb" }, { intonation: "rise" }] }
+            ex: { examples: [["Tu ", { target: "me" }, " comprends ?"], ["Vous ", { target: "le" }, " connaissez ?"]] }
+            tr: { en: { examples: ["Do you understand me?", "Do you know him?"] }, uk: { examples: ["Ти мене розумієш?", "Ви його знаєте?"] }, es: { examples: ["¿Me entiendes?", "¿Lo conoce?"] }, pt: { examples: ["Você me entende?", "Você o conhece?"] }, de: { examples: ["Verstehst du mich?", "Kennen Sie ihn?"] }, it: { examples: ["Mi capisci?", "Lo conosce?"] }, pl: { examples: ["Rozumiesz mnie?", "Zna go pan?"] }, tr: { examples: ["Beni anlıyor musun?", "Onu tanıyor musunuz?"] }, id: { examples: ["Apakah kamu mengerti aku?", "Apakah Anda mengenalnya?"] }, vi: { examples: ["Bạn có hiểu tôi không?", "Bạn có quen anh ấy không?"] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { alternatives: [{ term: "me" }, { term: "te" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }] }, { slot: "helper" }, { slot: "past participle" }] }
+            ex: { examples: [["Je ", { target: "l’" }, "ai vu hier."], ["Elle ", { target: "lui" }, " a parlé."]] }
+            tr: { en: { examples: ["I saw him yesterday.", "She talked to him."] }, uk: { examples: ["Я бачив його вчора.", "Вона розмовляла з ним."] }, es: { examples: ["Lo vi ayer.", "Ella le habló."] }, pt: { examples: ["Eu o vi ontem.", "Ela falou com ele."] }, de: { examples: ["Ich habe ihn gestern gesehen.", "Sie hat mit ihm gesprochen."] }, it: { examples: ["L’ho visto ieri.", "Lei gli ha parlato."] }, pl: { examples: ["Widziałem go wczoraj.", "Rozmawiała z nim."] }, tr: { examples: ["Onu dün gördüm.", "O onunla konuştu."] }, id: { examples: ["Aku melihatnya kemarin.", "Dia berbicara dengannya."] }, vi: { examples: ["Hôm qua tôi đã thấy anh ấy.", "Cô ấy đã nói chuyện với anh ấy."] } }
+          - level: "A2"
+            form: { pattern: [{ slot: "subject" }, { term: "ne" }, { alternatives: [{ term: "me" }, { term: "te" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }] }, { slot: "helper" }, { term: "pas" }, { slot: "past participle" }] }
+            ex: { examples: [["Je ne ", { target: "l’" }, "ai pas vu."], ["Il ne ", { target: "nous" }, " a pas répondu."]] }
+            tr: { en: { examples: ["I didn't see him.", "He didn't answer us."] }, uk: { examples: ["Я не бачив його.", "Він не відповів нам."] }, es: { examples: ["No lo vi.", "No nos respondió."] }, pt: { examples: ["Eu não o vi.", "Ele não nos respondeu."] }, de: { examples: ["Ich habe ihn nicht gesehen.", "Er hat uns nicht geantwortet."] }, it: { examples: ["Non l’ho visto.", "Non ci ha risposto."] }, pl: { examples: ["Nie widziałem go.", "Nie odpowiedział nam."] }, tr: { examples: ["Onu görmedim.", "Bize cevap vermedi."] }, id: { examples: ["Aku tidak melihatnya.", "Dia tidak menjawab kami."] }, vi: { examples: ["Tôi đã không thấy anh ấy.", "Anh ấy đã không trả lời chúng tôi."] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "verb" }, { slot: "hyphen" }, { alternatives: [{ term: "moi" }, { term: "toi" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }, { term: "nous" }, { term: "vous" }] }] }
+            ex: { examples: [["Regarde-", { target: "le" }, "."], ["Écoutez-", { target: "moi" }, "."], ["Donne-", { target: "lui" }, " le livre."]] }
+            tr: { en: { examples: ["Look at him.", "Listen to me.", "Give him the book."] }, uk: { examples: ["Подивися на нього.", "Послухайте мене.", "Дай йому книжку."] }, es: { examples: ["Míralo.", "Escúcheme.", "Dale el libro."] }, pt: { examples: ["Olhe para ele.", "Escute-me.", "Dê o livro para ele."] }, de: { examples: ["Sieh ihn an.", "Hören Sie mir zu.", "Gib ihm das Buch."] }, it: { examples: ["Guardalo.", "Ascoltatemi.", "Dagli il libro."] }, pl: { examples: ["Spójrz na niego.", "Posłuchajcie mnie.", "Daj mu książkę."] }, tr: { examples: ["Ona bak.", "Beni dinleyin.", "Kitabı ona ver."] }, id: { examples: ["Lihat dia.", "Dengarkan aku.", "Berikan buku itu kepadanya."] }, vi: { examples: ["Hãy nhìn anh ấy.", "Hãy nghe tôi.", "Đưa cho anh ấy quyển sách."] } }
+          - level: "A2"
+            form: { pattern: [{ term: "ne" }, { alternatives: [{ term: "me" }, { term: "te" }, { term: "le" }, { term: "la" }, { term: "les" }, { term: "lui" }, { term: "leur" }] }, { slot: "verb" }, { term: "pas" }] }
+            ex: { examples: [["Ne ", { target: "le" }, " regarde pas !"], ["Ne ", { target: "me" }, " dis pas ça !"]] }
+            tr: { en: { examples: ["Don't look at him!", "Don't tell me that!"] }, uk: { examples: ["Не дивися на нього!", "Не кажи мені цього!"] }, es: { examples: ["¡No lo mires!", "¡No me digas eso!"] }, pt: { examples: ["Não olhe para ele!", "Não me diga isso!"] }, de: { examples: ["Sieh ihn nicht an!", "Sag mir das nicht!"] }, it: { examples: ["Non guardarlo!", "Non dirmi questo!"] }, pl: { examples: ["Nie patrz na niego!", "Nie mów mi tego!"] }, tr: { examples: ["Ona bakma!", "Bana bunu söyleme!"] }, id: { examples: ["Jangan lihat dia!", "Jangan katakan itu kepadaku!"] }, vi: { examples: ["Đừng nhìn anh ấy!", "Đừng nói điều đó với tôi!"] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Après le verbe, à l’impératif affirmatif, ", { term: "me" }, " devient ", { term: "moi" }, " et ", { term: "te" }, " devient ", { term: "toi" }, "."]
+              en: ["After the verb, in the affirmative imperative, ", { term: "me" }, " becomes ", { term: "moi" }, " and ", { term: "te" }, " becomes ", { term: "toi" }, "."]
+              uk: ["Після дієслова у стверджувальному наказовому способі ", { term: "me" }, " стає ", { term: "moi" }, ", а ", { term: "te" }, " — ", { term: "toi" }, "."]
+              es: ["Tras el verbo, en el imperativo afirmativo, ", { term: "me" }, " pasa a ", { term: "moi" }, " y ", { term: "te" }, " a ", { term: "toi" }, "."]
+              pt: ["Depois do verbo, no imperativo afirmativo, ", { term: "me" }, " vira ", { term: "moi" }, " e ", { term: "te" }, " vira ", { term: "toi" }, "."]
+              de: ["Nach dem Verb wird im bejahten Imperativ ", { term: "me" }, " zu ", { term: "moi" }, " und ", { term: "te" }, " zu ", { term: "toi" }, "."]
+              it: ["Dopo il verbo, nell’imperativo affermativo, ", { term: "me" }, " diventa ", { term: "moi" }, " e ", { term: "te" }, " diventa ", { term: "toi" }, "."]
+              pl: ["Po czasowniku w trybie rozkazującym twierdzącym ", { term: "me" }, " zmienia się w ", { term: "moi" }, ", a ", { term: "te" }, " w ", { term: "toi" }, "."]
+              tr: ["Olumlu emirde fiilden sonra ", { term: "me" }, ", ", { term: "moi" }, "; ", { term: "te" }, " ise ", { term: "toi" }, " olur."]
+              id: ["Sesudah kata kerja pada imperatif afirmatif, ", { term: "me" }, " menjadi ", { term: "moi" }, " dan ", { term: "te" }, " menjadi ", { term: "toi" }, "."]
+              vi: ["Sau động từ, trong mệnh lệnh khẳng định, ", { term: "me" }, " thành ", { term: "moi" }, " và ", { term: "te" }, " thành ", { term: "toi" }, "."]
+            ex: { examples: [["Dis-", { target: "moi" }, " la vérité."], ["Réponds-", { target: "moi" }, "."]] }
+            tr: { en: { examples: ["Tell me the truth.", "Answer me."] }, uk: { examples: ["Скажи мені правду.", "Відповідай мені."] }, es: { examples: ["Dime la verdad.", "Respóndeme."] }, pt: { examples: ["Me diga a verdade.", "Me responda."] }, de: { examples: ["Sag mir die Wahrheit.", "Antworte mir."] }, it: { examples: ["Dimmi la verità.", "Rispondimi."] }, pl: { examples: ["Powiedz mi prawdę.", "Odpowiedz mi."] }, tr: { examples: ["Bana gerçeği söyle.", "Bana cevap ver."] }, id: { examples: ["Katakan yang sebenarnya kepadaku.", "Jawab aku."] }, vi: { examples: ["Hãy nói sự thật cho tôi.", "Hãy trả lời tôi."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: ["Au passé composé, le participe s’accorde avec ", { term: "le" }, ", ", { term: "la" }, " ou ", { term: "les" }, " placé devant lui : ", { term: "je l’ai vue" }, "."]
+              en: ["In the passé composé, the participle agrees with a preceding ", { term: "le" }, ", ", { term: "la" }, " or ", { term: "les" }, ": ", { term: "je l’ai vue" }, "."]
+              uk: ["У passé composé дієприкметник узгоджується з ", { term: "le" }, ", ", { term: "la" }, " або ", { term: "les" }, ", що стоять перед ним: ", { term: "je l’ai vue" }, "."]
+              es: ["En el passé composé, el participio concuerda con ", { term: "le" }, ", ", { term: "la" }, " o ", { term: "les" }, " colocados delante: ", { term: "je l’ai vue" }, "."]
+              pt: ["No passé composé, o particípio concorda com ", { term: "le" }, ", ", { term: "la" }, " ou ", { term: "les" }, " colocados antes dele: ", { term: "je l’ai vue" }, "."]
+              de: ["Im passé composé richtet sich das Partizip nach vorangestelltem ", { term: "le" }, ", ", { term: "la" }, " oder ", { term: "les" }, ": ", { term: "je l’ai vue" }, "."]
+              it: ["Nel passé composé, il participio concorda con ", { term: "le" }, ", ", { term: "la" }, " o ", { term: "les" }, " posti prima: ", { term: "je l’ai vue" }, "."]
+              pl: ["W passé composé imiesłów zgadza się z poprzedzającym go ", { term: "le" }, ", ", { term: "la" }, " lub ", { term: "les" }, ": ", { term: "je l’ai vue" }, "."]
+              tr: ["passé composé’de ortaç, önünde yer alan ", { term: "le" }, ", ", { term: "la" }, " ya da ", { term: "les" }, " ile uyum gösterir: ", { term: "je l’ai vue" }, "."]
+              id: ["Pada passé composé, participe menyesuaikan dengan ", { term: "le" }, ", ", { term: "la" }, ", atau ", { term: "les" }, " yang berada di depannya: ", { term: "je l’ai vue" }, "."]
+              vi: ["Trong passé composé, phân từ hòa hợp với ", { term: "le" }, ", ", { term: "la" }, " hoặc ", { term: "les" }, " đứng trước nó: ", { term: "je l’ai vue" }, "."]
+            ex: { examples: [["Marie ? Je l’ai ", { target: "vue" }, "."], ["Les clés ? Je les ai ", { target: "prises" }, "."]] }
+            tr: { en: { examples: ["Marie? I saw her.", "The keys? I took them."] }, uk: { examples: ["Марі? Я бачив її.", "Ключі? Я взяв їх."] }, es: { examples: ["¿Marie? La vi.", "¿Las llaves? Las cogí."] }, pt: { examples: ["A Marie? Eu a vi.", "As chaves? Eu as peguei."] }, de: { examples: ["Marie? Ich habe sie gesehen.", "Die Schlüssel? Ich habe sie genommen."] }, it: { examples: ["Marie? L’ho vista.", "Le chiavi? Le ho prese."] }, pl: { examples: ["Marie? Widziałem ją.", "Klucze? Wziąłem je."] }, tr: { examples: ["Marie mi? Onu gördüm.", "Anahtarlar mı? Onları aldım."] }, id: { examples: ["Marie? Aku melihatnya.", "Kunci-kunci itu? Aku mengambilnya."] }, vi: { examples: ["Marie ư? Tôi đã thấy cô ấy.", "Chìa khóa ư? Tôi đã lấy chúng."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour le passé composé, voir ", { link: "Le passé composé : j’ai mangé", to: fr.passe.passe-compose }, "."]
+              en: ["For the passé composé, see ", { link: "Passé Composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              uk: ["Про passé composé — див. ", { link: "Passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              es: ["Para el passé composé, ver ", { link: "El passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              pt: ["Para o passé composé, veja ", { link: "O passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              de: ["Zum passé composé siehe ", { link: "Das Passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              it: ["Per il passé composé, vedi ", { link: "Il passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              pl: ["O passé composé — zob. ", { link: "Passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              tr: ["passé composé için bkz. ", { link: "Passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              id: ["Untuk passé composé, lihat ", { link: "Passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+              vi: ["Về passé composé, xem ", { link: "Passé composé: j’ai mangé", to: fr.passe.passe-compose }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour l’impératif, voir ", { link: "L’impératif : parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              en: ["For the imperative, see ", { link: "Imperative: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              uk: ["Про наказовий спосіб — див. ", { link: "Наказовий спосіб: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              es: ["Para el imperativo, ver ", { link: "El imperativo: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              pt: ["Para o imperativo, veja ", { link: "O imperativo: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              de: ["Zum Imperativ siehe ", { link: "Der Imperativ: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              it: ["Per l’imperativo, vedi ", { link: "L’imperativo: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              pl: ["O trybie rozkazującym — zob. ", { link: "Tryb rozkazujący: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              tr: ["Emir kipi için bkz. ", { link: "Emir kipi: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              id: ["Untuk imperatif, lihat ", { link: "Imperatif: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+              vi: ["Về thức mệnh lệnh, xem ", { link: "Thể mệnh lệnh: parle, parlons, parlez", to: fr.futur-imperatif.imperatif }, "."]
+  - title:
+      fr: "Prononciation : les pronoms compléments"
+      en: "Pronunciation: the object pronouns"
+      uk: "Вимова: займенники-додатки"
+      es: "Pronunciación: los pronombres complemento"
+      pt: "Pronúncia: os pronomes complemento"
+      de: "Aussprache: die Objektpronomen"
+      it: "Pronuncia: i pronomi complemento"
+      pl: "Wymowa: zaimki dopełnieniowe"
+      tr: "Telaffuz: nesne zamirleri"
+      id: "Pelafalan: pronomina objek"
+      vi: "Phát âm: đại từ bổ ngữ"
+    role: "pronunciation"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Devant une voyelle, ", { term: "nous" }, ", ", { term: "vous" }, " et ", { term: "les" }, " se lient avec ", { ipa: "z" }, " : ", { term: "il vous aime" }, " se dit ", { ipa: "il vu zɛm" }, "."]
+              en: ["Before a vowel, ", { term: "nous" }, ", ", { term: "vous" }, " and ", { term: "les" }, " link with ", { ipa: "z" }, ": ", { term: "il vous aime" }, " is said ", { ipa: "il vu zɛm" }, "."]
+              uk: ["Перед голосною ", { term: "nous" }, ", ", { term: "vous" }, " і ", { term: "les" }, " зв’язуються з ", { ipa: "z" }, ": ", { term: "il vous aime" }, " звучить ", { ipa: "il vu zɛm" }, "."]
+              es: ["Ante vocal, ", { term: "nous" }, ", ", { term: "vous" }, " y ", { term: "les" }, " se enlazan con ", { ipa: "z" }, ": ", { term: "il vous aime" }, " se dice ", { ipa: "il vu zɛm" }, "."]
+              pt: ["Antes de vogal, ", { term: "nous" }, ", ", { term: "vous" }, " e ", { term: "les" }, " se ligam com ", { ipa: "z" }, ": ", { term: "il vous aime" }, " se diz ", { ipa: "il vu zɛm" }, "."]
+              de: ["Vor einem Vokal werden ", { term: "nous" }, ", ", { term: "vous" }, " und ", { term: "les" }, " mit ", { ipa: "z" }, " gebunden: ", { term: "il vous aime" }, " spricht man ", { ipa: "il vu zɛm" }, "."]
+              it: ["Davanti a vocale, ", { term: "nous" }, ", ", { term: "vous" }, " e ", { term: "les" }, " si legano con ", { ipa: "z" }, ": ", { term: "il vous aime" }, " si dice ", { ipa: "il vu zɛm" }, "."]
+              pl: ["Przed samogłoską ", { term: "nous" }, ", ", { term: "vous" }, " i ", { term: "les" }, " łączą się z ", { ipa: "z" }, ": ", { term: "il vous aime" }, " wymawia się ", { ipa: "il vu zɛm" }, "."]
+              tr: ["Ünlüden önce ", { term: "nous" }, ", ", { term: "vous" }, " ve ", { term: "les" }, " ", { ipa: "z" }, " ile bağlanır: ", { term: "il vous aime" }, " ", { ipa: "il vu zɛm" }, " diye okunur."]
+              id: ["Sebelum vokal, ", { term: "nous" }, ", ", { term: "vous" }, ", dan ", { term: "les" }, " dihubungkan dengan ", { ipa: "z" }, ": ", { term: "il vous aime" }, " dilafalkan ", { ipa: "il vu zɛm" }, "."]
+              vi: ["Trước nguyên âm, ", { term: "nous" }, ", ", { term: "vous" }, " và ", { term: "les" }, " nối với ", { ipa: "z" }, ": ", { term: "il vous aime" }, " đọc là ", { ipa: "il vu zɛm" }, "."]
+            ex: { examples: [["Il ", { target: "vous" }, " aime."], ["Je ", { target: "les" }, " écoute."]] }
+            tr: { en: { examples: ["He loves you.", "I listen to them."] }, uk: { examples: ["Він любить вас.", "Я слухаю їх."] }, es: { examples: ["Él los quiere.", "Los escucho."] }, pt: { examples: ["Ele ama vocês.", "Eu os escuto."] }, de: { examples: ["Er liebt euch.", "Ich höre ihnen zu."] }, it: { examples: ["Lui vi ama.", "Li ascolto."] }, pl: { examples: ["On was kocha.", "Słucham ich."] }, tr: { examples: ["O sizi seviyor.", "Onları dinliyorum."] }, id: { examples: ["Dia mencintai kalian.", "Aku mendengarkan mereka."] }, vi: { examples: ["Anh ấy yêu các bạn.", "Tôi lắng nghe họ."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Lui" }, " se dit ", { ipa: "lɥi" }, " et ", { term: "leur" }, " se dit ", { ipa: "lœʁ" }, "."]
+              en: [{ term: "Lui" }, " is said ", { ipa: "lɥi" }, " and ", { term: "leur" }, " is said ", { ipa: "lœʁ" }, "."]
+              uk: [{ term: "Lui" }, " вимовляють ", { ipa: "lɥi" }, ", а ", { term: "leur" }, " — ", { ipa: "lœʁ" }, "."]
+              es: [{ term: "Lui" }, " se pronuncia ", { ipa: "lɥi" }, " y ", { term: "leur" }, " se pronuncia ", { ipa: "lœʁ" }, "."]
+              pt: [{ term: "Lui" }, " se pronuncia ", { ipa: "lɥi" }, " e ", { term: "leur" }, " se pronuncia ", { ipa: "lœʁ" }, "."]
+              de: [{ term: "Lui" }, " spricht man ", { ipa: "lɥi" }, ", ", { term: "leur" }, " spricht man ", { ipa: "lœʁ" }, "."]
+              it: [{ term: "Lui" }, " si pronuncia ", { ipa: "lɥi" }, " e ", { term: "leur" }, " si pronuncia ", { ipa: "lœʁ" }, "."]
+              pl: [{ term: "Lui" }, " wymawia się ", { ipa: "lɥi" }, ", a ", { term: "leur" }, " — ", { ipa: "lœʁ" }, "."]
+              tr: [{ term: "Lui" }, " ", { ipa: "lɥi" }, ", ", { term: "leur" }, " ise ", { ipa: "lœʁ" }, " diye okunur."]
+              id: [{ term: "Lui" }, " dilafalkan ", { ipa: "lɥi" }, " dan ", { term: "leur" }, " dilafalkan ", { ipa: "lœʁ" }, "."]
+              vi: [{ term: "Lui" }, " đọc là ", { ipa: "lɥi" }, " và ", { term: "leur" }, " đọc là ", { ipa: "lœʁ" }, "."]
+            ex: { examples: [["Je ", { target: "lui" }, " parle."], ["Je ", { target: "leur" }, " parle."]] }
+            tr: { en: { examples: ["I talk to him.", "I talk to them."] }, uk: { examples: ["Я розмовляю з ним.", "Я розмовляю з ними."] }, es: { examples: ["Le hablo.", "Les hablo."] }, pt: { examples: ["Eu falo com ele.", "Eu falo com eles."] }, de: { examples: ["Ich spreche mit ihm.", "Ich spreche mit ihnen."] }, it: { examples: ["Gli parlo.", "Parlo loro."] }, pl: { examples: ["Rozmawiam z nim.", "Rozmawiam z nimi."] }, tr: { examples: ["Onunla konuşuyorum.", "Onlarla konuşuyorum."] }, id: { examples: ["Aku berbicara dengannya.", "Aku berbicara dengan mereka."] }, vi: { examples: ["Tôi nói chuyện với anh ấy.", "Tôi nói chuyện với họ."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour toutes les liaisons et les élisions, voir ", { link: "La liaison et l’élision", to: fr.bases.liaison-elision }, "."]
+              en: ["For all liaisons and elisions, see ", { link: "Liaison and Elision", to: fr.bases.liaison-elision }, "."]
+              uk: ["Про всі зв’язування й елізії — див. ", { link: "Ліазон та елізія", to: fr.bases.liaison-elision }, "."]
+              es: ["Para todos los enlaces y elisiones, ver ", { link: "La liaison y la elisión", to: fr.bases.liaison-elision }, "."]
+              pt: ["Para todas as ligações e elisões, veja ", { link: "A liaison e a elisão", to: fr.bases.liaison-elision }, "."]
+              de: ["Zu allen Liaisons und Elisionen siehe ", { link: "Liaison und Elision", to: "fr.bases.liaison-elision" }, "."]
+              it: ["Per tutti i legamenti e le elisioni, vedi ", { link: "La liaison e l'elisione", to: fr.bases.liaison-elision }, "."]
+              pl: ["O wszystkich liaison i elizjach — zob. ", { link: "Liaison i elizja", to: "fr.bases.liaison-elision" }, "."]
+              tr: ["Tüm bağlama ve ünlü düşmeleri için bkz. ", { link: "Liaison ve ünlü düşmesi", to: fr.bases.liaison-elision }, "."]
+              id: ["Untuk semua liaison dan elisi, lihat ", { link: "Liaison dan elisi", to: "fr.bases.liaison-elision" }, "."]
+              vi: ["Về mọi trường hợp nối âm và lược âm, xem ", { link: "Nối âm và lược âm", to: "fr.bases.liaison-elision" }, "."]
+  - title:
+      fr: "Emploi : complément direct ou indirect"
+      en: "Use: direct or indirect object"
+      uk: "Вживання: прямий чи непрямий додаток"
+      es: "Uso: complemento directo o indirecto"
+      pt: "Uso: objeto direto ou indireto"
+      de: "Gebrauch: direktes oder indirektes Objekt"
+      it: "Uso: complemento diretto o indiretto"
+      pl: "Użycie: dopełnienie bliższe lub dalsze"
+      tr: "Kullanım: doğrudan ya da dolaylı nesne"
+      id: "Penggunaan: objek langsung atau tak langsung"
+      vi: "Cách dùng: bổ ngữ trực tiếp hay gián tiếp"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              fr: "Une personne, sans préposition"
+              en: "A person, with no preposition"
+              uk: "Особа, без прийменника"
+              es: "Una persona, sin preposición"
+              pt: "Uma pessoa, sem preposição"
+              de: "Eine Person, ohne Präposition"
+              it: "Una persona, senza preposizione"
+              pl: "Osoba, bez przyimka"
+              tr: "Bir kişi, edatsız"
+              id: "Seseorang, tanpa preposisi"
+              vi: "Một người, không có giới từ"
+            ex: { exchange: ["Tu vois Marie ?", ["Oui, je ", { target: "la" }, " vois."]] }
+            tr: { en: { exchange: ["Do you see Marie?", "Yes, I see her."] }, uk: { exchange: ["Ти бачиш Марі?", "Так, я бачу її."] }, es: { exchange: ["¿Ves a Marie?", "Sí, la veo."] }, pt: { exchange: ["Você vê a Marie?", "Sim, eu a vejo."] }, de: { exchange: ["Siehst du Marie?", "Ja, ich sehe sie."] }, it: { exchange: ["Vedi Marie?", "Sì, la vedo."] }, pl: { exchange: ["Widzisz Marie?", "Tak, widzę ją."] }, tr: { exchange: ["Marie’yi görüyor musun?", "Evet, onu görüyorum."] }, id: { exchange: ["Apakah kamu melihat Marie?", "Ya, aku melihatnya."] }, vi: { exchange: ["Bạn có thấy Marie không?", "Có, tôi thấy cô ấy."] } }
+          - level: "A1"
+            use:
+              fr: "Une chose, sans préposition"
+              en: "A thing, with no preposition"
+              uk: "Річ, без прийменника"
+              es: "Una cosa, sin preposición"
+              pt: "Uma coisa, sem preposição"
+              de: "Eine Sache, ohne Präposition"
+              it: "Una cosa, senza preposizione"
+              pl: "Rzecz, bez przyimka"
+              tr: "Bir şey, edatsız"
+              id: "Benda, tanpa preposisi"
+              vi: "Một vật, không có giới từ"
+            ex: { exchange: ["Tu prends les clés ?", ["Oui, je ", { target: "les" }, " prends."]] }
+            tr: { en: { exchange: ["Are you taking the keys?", "Yes, I'm taking them."] }, uk: { exchange: ["Ти береш ключі?", "Так, я беру їх."] }, es: { exchange: ["¿Coges las llaves?", "Sí, las cojo."] }, pt: { exchange: ["Você vai levar as chaves?", "Sim, eu as levo."] }, de: { exchange: ["Nimmst du die Schlüssel?", "Ja, ich nehme sie."] }, it: { exchange: ["Prendi le chiavi?", "Sì, le prendo."] }, pl: { exchange: ["Bierzesz klucze?", "Tak, biorę je."] }, tr: { exchange: ["Anahtarları alıyor musun?", "Evet, onları alıyorum."] }, id: { exchange: ["Apakah kamu membawa kunci-kunci itu?", "Ya, aku membawanya."] }, vi: { exchange: ["Bạn có mang chìa khóa không?", "Có, tôi mang chúng."] } }
+          - level: "A1"
+            use:
+              fr: ["Une personne avec ", { term: "à" }]
+              en: ["A person with ", { term: "à" }]
+              uk: ["Особа з ", { term: "à" }]
+              es: ["Una persona con ", { term: "à" }]
+              pt: ["Uma pessoa com ", { term: "à" }]
+              de: ["Eine Person mit ", { term: "à" }]
+              it: ["Una persona con ", { term: "à" }]
+              pl: ["Osoba z ", { term: "à" }]
+              tr: [{ term: "à" }, " ile gelen bir kişi"]
+              id: ["Seseorang dengan ", { term: "à" }]
+              vi: ["Một người đi với ", { term: "à" }]
+            ex: { exchange: ["Tu parles à Paul ?", ["Oui, je ", { target: "lui" }, " parle."]] }
+            tr: { en: { exchange: ["Do you talk to Paul?", "Yes, I talk to him."] }, uk: { exchange: ["Ти розмовляєш з Полем?", "Так, я розмовляю з ним."] }, es: { exchange: ["¿Hablas con Paul?", "Sí, le hablo."] }, pt: { exchange: ["Você fala com o Paul?", "Sim, eu falo com ele."] }, de: { exchange: ["Sprichst du mit Paul?", "Ja, ich spreche mit ihm."] }, it: { exchange: ["Parli con Paul?", "Sì, gli parlo."] }, pl: { exchange: ["Rozmawiasz z Paulem?", "Tak, rozmawiam z nim."] }, tr: { exchange: ["Paul’le konuşuyor musun?", "Evet, onunla konuşuyorum."] }, id: { exchange: ["Apakah kamu berbicara dengan Paul?", "Ya, aku berbicara dengannya."] }, vi: { exchange: ["Bạn có nói chuyện với Paul không?", "Có, tôi nói chuyện với anh ấy."] } }
+          - level: "A1"
+            use:
+              fr: ["Plusieurs personnes avec ", { term: "à" }]
+              en: ["Several people with ", { term: "à" }]
+              uk: ["Кілька осіб з ", { term: "à" }]
+              es: ["Varias personas con ", { term: "à" }]
+              pt: ["Várias pessoas com ", { term: "à" }]
+              de: ["Mehrere Personen mit ", { term: "à" }]
+              it: ["Più persone con ", { term: "à" }]
+              pl: ["Kilka osób z ", { term: "à" }]
+              tr: [{ term: "à" }, " ile gelen birkaç kişi"]
+              id: ["Beberapa orang dengan ", { term: "à" }]
+              vi: ["Nhiều người đi với ", { term: "à" }]
+            ex: { exchange: ["Tu téléphones à tes parents ?", ["Oui, je ", { target: "leur" }, " téléphone."]] }
+            tr: { en: { exchange: ["Do you phone your parents?", "Yes, I phone them."] }, uk: { exchange: ["Ти телефонуєш батькам?", "Так, я телефоную їм."] }, es: { exchange: ["¿Llamas a tus padres?", "Sí, les llamo."] }, pt: { exchange: ["Você telefona para seus pais?", "Sim, eu telefono para eles."] }, de: { exchange: ["Rufst du deine Eltern an?", "Ja, ich rufe sie an."] }, it: { exchange: ["Telefoni ai tuoi genitori?", "Sì, telefono loro."] }, pl: { exchange: ["Dzwonisz do rodziców?", "Tak, dzwonię do nich."] }, tr: { exchange: ["Ailene telefon ediyor musun?", "Evet, onlara telefon ediyorum."] }, id: { exchange: ["Apakah kamu menelepon orang tuamu?", "Ya, aku menelepon mereka."] }, vi: { exchange: ["Bạn có gọi điện cho bố mẹ không?", "Có, tôi gọi điện cho họ."] } }
+          - level: "A1"
+            use:
+              fr: ["Verbes qui prennent ", { term: "à" }, " devant une personne : ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              en: ["Verbs that take ", { term: "à" }, " before a person: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              uk: ["Дієслова, що вимагають ", { term: "à" }, " перед особою: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              es: ["Verbos que llevan ", { term: "à" }, " ante una persona: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              pt: ["Verbos que levam ", { term: "à" }, " antes de uma pessoa: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              de: ["Verben mit ", { term: "à" }, " vor einer Person: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              it: ["Verbi che vogliono ", { term: "à" }, " davanti a una persona: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              pl: ["Czasowniki z ", { term: "à" }, " przed osobą: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              tr: ["Kişiden önce ", { term: "à" }, " alan fiiller: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              id: ["Kata kerja yang memakai ", { term: "à" }, " di depan orang: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+              vi: ["Động từ dùng ", { term: "à" }, " trước người: ", { alternatives: [{ term: "parler" }, { term: "téléphoner" }, { term: "donner" }, { term: "dire" }, { term: "écrire" }, { term: "répondre" }] }]
+            ex: { examples: [["Je ", { target: "lui" }, " donne un cadeau."], ["Ils ", { target: "nous" }, " répondent."]] }
+            tr: { en: { examples: ["I give him a present.", "They answer us."] }, uk: { examples: ["Я даю йому подарунок.", "Вони відповідають нам."] }, es: { examples: ["Le doy un regalo.", "Ellos nos responden."] }, pt: { examples: ["Eu dou um presente a ele.", "Eles nos respondem."] }, de: { examples: ["Ich gebe ihm ein Geschenk.", "Sie antworten uns."] }, it: { examples: ["Gli do un regalo.", "Ci rispondono."] }, pl: { examples: ["Daję mu prezent.", "Oni nam odpowiadają."] }, tr: { examples: ["Ona bir hediye veriyorum.", "Bize cevap veriyorlar."] }, id: { examples: ["Aku memberinya hadiah.", "Mereka menjawab kami."] }, vi: { examples: ["Tôi tặng anh ấy một món quà.", "Họ trả lời chúng tôi."] } }
+          - level: "A2"
+            use:
+              fr: ["Verbes sans préposition : ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              en: ["Verbs with no preposition: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              uk: ["Дієслова без прийменника: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              es: ["Verbos sin preposición: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              pt: ["Verbos sem preposição: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              de: ["Verben ohne Präposition: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              it: ["Verbi senza preposizione: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              pl: ["Czasowniki bez przyimka: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              tr: ["Edatsız fiiller: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              id: ["Kata kerja tanpa preposisi: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+              vi: ["Động từ không có giới từ: ", { alternatives: [{ term: "écouter" }, { term: "regarder" }, { term: "attendre" }, { term: "chercher" }] }]
+            ex: { examples: [["Je ", { target: "l’" }, "écoute."], ["Nous ", { target: "la" }, " cherchons."]] }
+            tr: { en: { examples: ["I'm listening to him.", "We are looking for her."] }, uk: { examples: ["Я слухаю його.", "Ми шукаємо її."] }, es: { examples: ["Lo escucho.", "La buscamos."] }, pt: { examples: ["Eu o escuto.", "Nós a procuramos."] }, de: { examples: ["Ich höre ihm zu.", "Wir suchen sie."] }, it: { examples: ["Lo ascolto.", "La cerchiamo."] }, pl: { examples: ["Słucham go.", "Szukamy jej."] }, tr: { examples: ["Onu dinliyorum.", "Onu arıyoruz."] }, id: { examples: ["Aku mendengarkannya.", "Kami mencarinya."] }, vi: { examples: ["Tôi lắng nghe anh ấy.", "Chúng tôi tìm cô ấy."] } }
+  - title:
+      fr: "Comparaison : complément direct et indirect"
+      en: "Compare: direct and indirect object"
+      uk: "Порівняння: прямий і непрямий додаток"
+      es: "Comparación: complemento directo e indirecto"
+      pt: "Comparação: objeto direto e indireto"
+      de: "Vergleich: direktes und indirektes Objekt"
+      it: "Confronto: complemento diretto e indiretto"
+      pl: "Porównanie: dopełnienie bliższe i dalsze"
+      tr: "Karşılaştırma: doğrudan ve dolaylı nesne"
+      id: "Perbandingan: objek langsung dan tak langsung"
+      vi: "So sánh: bổ ngữ trực tiếp và gián tiếp"
+    role: "compare"
+    content:
+      - type: "comparison"
+        columns: [{ key: "this", label: "le, la, les" }, { key: "that", label: "lui, leur" }]
+        rows:
+          - level: "A1"
+            this:
+              fr: "un complément direct, sans préposition"
+              en: "a direct object, with no preposition"
+              uk: "прямий додаток, без прийменника"
+              es: "un complemento directo, sin preposición"
+              pt: "um objeto direto, sem preposição"
+              de: "ein direktes Objekt, ohne Präposition"
+              it: "un complemento diretto, senza preposizione"
+              pl: "dopełnienie bliższe, bez przyimka"
+              tr: "doğrudan nesne, edatsız"
+              id: "objek langsung, tanpa preposisi"
+              vi: "bổ ngữ trực tiếp, không có giới từ"
+            that:
+              fr: ["un complément indirect : ", { term: "à" }, " + personne"]
+              en: ["an indirect object: ", { term: "à" }, " + person"]
+              uk: ["непрямий додаток: ", { term: "à" }, " + особа"]
+              es: ["un complemento indirecto: ", { term: "à" }, " + persona"]
+              pt: ["um objeto indireto: ", { term: "à" }, " + pessoa"]
+              de: ["ein indirektes Objekt: ", { term: "à" }, " + Person"]
+              it: ["un complemento indiretto: ", { term: "à" }, " + persona"]
+              pl: ["dopełnienie dalsze: ", { term: "à" }, " + osoba"]
+              tr: ["dolaylı nesne: ", { term: "à" }, " + kişi"]
+              id: ["objek tak langsung: ", { term: "à" }, " + orang"]
+              vi: ["bổ ngữ gián tiếp: ", { term: "à" }, " + người"]
+          - level: "A1"
+            this:
+              ex: ["Léa ? Je ", { target: "la" }, " regarde."]
+              tr: { en: "Léa? I'm looking at her.", uk: "Леа? Я дивлюся на неї.", es: "¿Léa? La miro.", pt: "A Léa? Eu a olho.", de: "Léa? Ich sehe sie an.", it: "Léa? La guardo.", pl: "Léa? Patrzę na nią.", tr: "Léa mı? Ona bakıyorum.", id: "Léa? Aku memandangnya.", vi: "Léa ư? Tôi nhìn cô ấy." }
+            that:
+              ex: ["Léa ? Je ", { target: "lui" }, " parle."]
+              tr: { en: "Léa? I'm talking to her.", uk: "Леа? Я розмовляю з нею.", es: "¿Léa? Le hablo.", pt: "A Léa? Eu falo com ela.", de: "Léa? Ich spreche mit ihr.", it: "Léa? Le parlo.", pl: "Léa? Rozmawiam z nią.", tr: "Léa mı? Onunla konuşuyorum.", id: "Léa? Aku berbicara dengannya.", vi: "Léa ư? Tôi nói chuyện với cô ấy." }
+          - level: "A1"
+            this:
+              fr: "une personne ou une chose"
+              en: "a person or a thing"
+              uk: "особа або річ"
+              es: "una persona o una cosa"
+              pt: "uma pessoa ou uma coisa"
+              de: "eine Person oder eine Sache"
+              it: "una persona o una cosa"
+              pl: "osoba lub rzecz"
+              tr: "bir kişi ya da bir şey"
+              id: "orang atau benda"
+              vi: "một người hoặc một vật"
+            that:
+              fr: "une personne seulement"
+              en: "a person only"
+              uk: "лише особа"
+              es: "solo una persona"
+              pt: "somente uma pessoa"
+              de: "nur eine Person"
+              it: "solo una persona"
+              pl: "tylko osoba"
+              tr: "yalnızca bir kişi"
+              id: "hanya orang"
+              vi: "chỉ một người"
+          - level: "A1"
+            this:
+              ex: ["Le livre ? Je ", { target: "le" }, " prends."]
+              tr: { en: "The book? I'm taking it.", uk: "Книжка? Я беру її.", es: "¿El libro? Lo cojo.", pt: "O livro? Eu o levo.", de: "Das Buch? Ich nehme es.", it: "Il libro? Lo prendo.", pl: "Książka? Biorę ją.", tr: "Kitap mı? Onu alıyorum.", id: "Bukunya? Aku mengambilnya.", vi: "Quyển sách ư? Tôi lấy nó." }
+            that:
+              ex: ["Paul ? Je ", { target: "lui" }, " écris."]
+              tr: { en: "Paul? I'm writing to him.", uk: "Поль? Я пишу йому.", es: "¿Paul? Le escribo.", pt: "O Paul? Eu escrevo para ele.", de: "Paul? Ich schreibe ihm.", it: "Paul? Gli scrivo.", pl: "Paul? Piszę do niego.", tr: "Paul mü? Ona yazıyorum.", id: "Paul? Aku menulis kepadanya.", vi: "Paul ư? Tôi viết cho anh ấy." }
+          - level: "A2"
+            this:
+              fr: ["le participe s’accorde : ", { term: "je l’ai vue" }]
+              en: ["the participle agrees: ", { term: "je l’ai vue" }]
+              uk: ["дієприкметник узгоджується: ", { term: "je l’ai vue" }]
+              es: ["el participio concuerda: ", { term: "je l’ai vue" }]
+              pt: ["o particípio concorda: ", { term: "je l’ai vue" }]
+              de: ["das Partizip wird angeglichen: ", { term: "je l’ai vue" }]
+              it: ["il participio concorda: ", { term: "je l’ai vue" }]
+              pl: ["imiesłów się zgadza: ", { term: "je l’ai vue" }]
+              tr: ["ortaç uyum gösterir: ", { term: "je l’ai vue" }]
+              id: ["participe disesuaikan: ", { term: "je l’ai vue" }]
+              vi: ["phân từ hòa hợp: ", { term: "je l’ai vue" }]
+            that:
+              fr: ["le participe ne change pas : ", { term: "je lui ai parlé" }]
+              en: ["the participle does not change: ", { term: "je lui ai parlé" }]
+              uk: ["дієприкметник не змінюється: ", { term: "je lui ai parlé" }]
+              es: ["el participio no cambia: ", { term: "je lui ai parlé" }]
+              pt: ["o particípio não muda: ", { term: "je lui ai parlé" }]
+              de: ["das Partizip bleibt unverändert: ", { term: "je lui ai parlé" }]
+              it: ["il participio non cambia: ", { term: "je lui ai parlé" }]
+              pl: ["imiesłów się nie zmienia: ", { term: "je lui ai parlé" }]
+              tr: ["ortaç değişmez: ", { term: "je lui ai parlé" }]
+              id: ["participe tidak berubah: ", { term: "je lui ai parlé" }]
+              vi: ["phân từ không đổi: ", { term: "je lui ai parlé" }]
+          - level: "A2"
+            this:
+              ex: ["Léa ? Je l’ai ", { target: "vue" }, "."]
+              tr: { en: "Léa? I saw her.", uk: "Леа? Я бачив її.", es: "¿Léa? La vi.", pt: "A Léa? Eu a vi.", de: "Léa? Ich habe sie gesehen.", it: "Léa? L’ho vista.", pl: "Léa? Widziałem ją.", tr: "Léa mı? Onu gördüm.", id: "Léa? Aku melihatnya.", vi: "Léa ư? Tôi đã thấy cô ấy." }
+            that:
+              ex: ["Léa ? Je lui ai ", { target: "parlé" }, "."]
+              tr: { en: "Léa? I talked to her.", uk: "Леа? Я розмовляв з нею.", es: "¿Léa? Le hablé.", pt: "A Léa? Eu falei com ela.", de: "Léa? Ich habe mit ihr gesprochen.", it: "Léa? Le ho parlato.", pl: "Léa? Rozmawiałem z nią.", tr: "Léa mı? Onunla konuştum.", id: "Léa? Aku berbicara dengannya.", vi: "Léa ư? Tôi đã nói chuyện với cô ấy." }
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            speakers: ["en", "uk", "de", "pl", "pt", "id", "vi"]
+            wrong: "Je vois le."
+            right: ["Je ", { target: "le" }, " vois."]
+            rule:
+              en: ["the pronoun goes before the verb: ", { term: "je le vois" }, ", not “I see him”"]
+              uk: ["займенник стоїть перед дієсловом: ", { term: "je le vois" }, ", а не «я бачу його»"]
+              pt: ["o pronome vai antes do verbo: ", { term: "je le vois" }, ", não como em «eu vejo ele»"]
+              de: ["das Pronomen steht vor dem Verb: ", { term: "je le vois" }, ", nicht wie in „ich sehe ihn“"]
+              pl: ["zaimek stoi przed czasownikiem: ", { term: "je le vois" }, ", a nie jak w „widzę go”"]
+              id: ["pronomina diletakkan sebelum kata kerja: ", { term: "je le vois" }, ", bukan seperti “aku melihat dia”"]
+              vi: ["đại từ đứng trước động từ: ", { term: "je le vois" }, ", không như “tôi thấy anh ấy”"]
+          - level: "A1"
+            speakers: ["en", "uk", "de", "pl", "id", "vi"]
+            wrong: "J’ai vu le."
+            right: ["Je ", { target: "l’" }, "ai vu."]
+            rule:
+              en: ["at the passé composé, the pronoun goes before the helper: ", { term: "je l’ai vu" }]
+              uk: ["у passé composé займенник стоїть перед допоміжним дієсловом: ", { term: "je l’ai vu" }]
+              de: ["im passé composé steht das Pronomen vor dem Hilfsverb: ", { term: "je l’ai vu" }]
+              pl: ["w passé composé zaimek stoi przed czasownikiem posiłkowym: ", { term: "je l’ai vu" }]
+              id: ["pada passé composé pronomina berada sebelum kata kerja bantu: ", { term: "je l’ai vu" }]
+              vi: ["trong passé composé đại từ đứng trước trợ động từ: ", { term: "je l’ai vu" }]
+          - level: "A1"
+            speakers: ["en", "uk", "de", "pl", "id", "vi"]
+            wrong: "Je parle à lui."
+            right: ["Je ", { target: "lui" }, " parle."]
+            rule:
+              en: ["“to him” becomes ", { term: "lui" }, " before the verb: ", { term: "je lui parle" }]
+              uk: ["«з ним» передає ", { term: "lui" }, " перед дієсловом: ", { term: "je lui parle" }]
+              de: ["„mit ihm“ wird zu ", { term: "lui" }, " vor dem Verb: ", { term: "je lui parle" }]
+              pl: ["„z nim” to ", { term: "lui" }, " przed czasownikiem: ", { term: "je lui parle" }]
+              id: ["“dengannya” menjadi ", { term: "lui" }, " sebelum kata kerja: ", { term: "je lui parle" }]
+              vi: ["“với anh ấy” thành ", { term: "lui" }, " trước động từ: ", { term: "je lui parle" }]
+          - level: "A1"
+            speakers: ["es", "it"]
+            wrong: "Je le parle."
+            right: ["Je ", { target: "lui" }, " parle."]
+            rule:
+              es: [{ term: "parler à" }, " una persona pide ", { term: "lui" }, ", no ", { term: "le" }, ": ", { term: "je lui parle" }]
+              it: [{ term: "parler à" }, " una persona vuole ", { term: "lui" }, ", non ", { term: "le" }, ": ", { term: "je lui parle" }]
+          - level: "A1"
+            wrong: "Je leurs parle."
+            right: ["Je ", { target: "leur" }, " parle."]
+            rule:
+              fr: ["le pronom ", { term: "leur" }, " ne prend pas de ", { term: "-s" }, " (le possessif ", { term: "leurs" }, " en prend)"]
+              en: ["the pronoun ", { term: "leur" }, " takes no ", { term: "-s" }, " (the possessive ", { term: "leurs" }, " does)"]
+              uk: ["займенник ", { term: "leur" }, " не має ", { term: "-s" }, " (присвійне ", { term: "leurs" }, " має)"]
+              es: ["el pronombre ", { term: "leur" }, " no lleva ", { term: "-s" }, " (el posesivo ", { term: "leurs" }, " sí)"]
+              pt: ["o pronome ", { term: "leur" }, " não leva ", { term: "-s" }, " (o possessivo ", { term: "leurs" }, " leva)"]
+              de: ["das Pronomen ", { term: "leur" }, " bekommt kein ", { term: "-s" }, " (das Possessivum ", { term: "leurs" }, " schon)"]
+              it: ["il pronome ", { term: "leur" }, " non prende ", { term: "-s" }, " (il possessivo ", { term: "leurs" }, " sì)"]
+              pl: ["zaimek ", { term: "leur" }, " nie ma ", { term: "-s" }, " (zaimek dzierżawczy ", { term: "leurs" }, " ma)"]
+              tr: [{ term: "leur" }, " zamiri ", { term: "-s" }, " almaz (iyelik sözcüğü ", { term: "leurs" }, " alır)"]
+              id: ["pronomina ", { term: "leur" }, " tidak diberi ", { term: "-s" }, " (kata kepemilikan ", { term: "leurs" }, " diberi)"]
+              vi: ["đại từ ", { term: "leur" }, " không thêm ", { term: "-s" }, " (từ sở hữu ", { term: "leurs" }, " thì có)"]
+          - level: "A1"
+            speakers: ["es", "pt", "it"]
+            wrong: "Je le veux voir."
+            right: ["Je veux ", { target: "le" }, " voir."]
+            rule:
+              es: ["el pronombre va delante del infinitivo: ", { term: "je veux le voir" }, ", no delante del verbo conjugado"]
+              pt: ["o pronome vai antes do infinitivo: ", { term: "je veux le voir" }, ", não antes do verbo conjugado"]
+              it: ["il pronome sta prima dell’infinito: ", { term: "je veux le voir" }, ", non prima del verbo coniugato"]
+          - level: "A1"
+            wrong: "Donne-me le sel."
+            right: ["Donne-", { target: "moi" }, " le sel."]
+            rule:
+              fr: ["après le verbe, ", { term: "me" }, " devient ", { term: "moi" }]
+              en: ["after the verb, ", { term: "me" }, " becomes ", { term: "moi" }]
+              uk: ["після дієслова ", { term: "me" }, " стає ", { term: "moi" }]
+              es: ["tras el verbo, ", { term: "me" }, " pasa a ", { term: "moi" }]
+              pt: ["depois do verbo, ", { term: "me" }, " vira ", { term: "moi" }]
+              de: ["nach dem Verb wird ", { term: "me" }, " zu ", { term: "moi" }]
+              it: ["dopo il verbo, ", { term: "me" }, " diventa ", { term: "moi" }]
+              pl: ["po czasowniku ", { term: "me" }, " zmienia się w ", { term: "moi" }]
+              tr: ["fiilden sonra ", { term: "me" }, ", ", { term: "moi" }, " olur"]
+              id: ["sesudah kata kerja, ", { term: "me" }, " menjadi ", { term: "moi" }]
+              vi: ["sau động từ, ", { term: "me" }, " thành ", { term: "moi" }]
+          - level: "A2"
+            wrong: "Ne regarde-le pas !"
+            right: ["Ne ", { target: "le" }, " regarde pas !"]
+            rule:
+              fr: "à l’impératif négatif, le pronom revient devant le verbe, sans trait d’union"
+              en: "in the negative imperative, the pronoun is back before the verb, with no hyphen"
+              uk: "у заперечному наказовому способі займенник знову стоїть перед дієсловом, без дефіса"
+              es: "en el imperativo negativo, el pronombre vuelve delante del verbo, sin guion"
+              pt: "no imperativo negativo, o pronome volta para antes do verbo, sem hífen"
+              de: "im verneinten Imperativ steht das Pronomen wieder vor dem Verb, ohne Bindestrich"
+              it: "nell’imperativo negativo, il pronome torna prima del verbo, senza trattino"
+              pl: "w trybie rozkazującym przeczącym zaimek wraca przed czasownik, bez łącznika"
+              tr: "olumsuz emirde zamir yine fiilin önüne geçer, tire olmadan"
+              id: "pada imperatif negatif, pronomina kembali ke depan kata kerja, tanpa tanda hubung"
+              vi: "trong mệnh lệnh phủ định, đại từ trở lại trước động từ, không có dấu gạch nối"
+          - level: "A2"
+            wrong: "Marie ? Je l’ai vu."
+            right: ["Marie ? Je l’ai ", { target: "vue" }, "."]
+            rule:
+              fr: ["le participe s’accorde avec ", { term: "l’" }, " (= Marie) placé devant le verbe"]
+              en: ["the participle agrees with ", { term: "l’" }, " (= Marie) placed before the verb"]
+              uk: ["дієприкметник узгоджується з ", { term: "l’" }, " (= Марі), що стоїть перед дієсловом"]
+              es: ["el participio concuerda con ", { term: "l’" }, " (= Marie) colocado delante del verbo"]
+              pt: ["o particípio concorda com ", { term: "l’" }, " (= Marie) colocado antes do verbo"]
+              de: ["das Partizip richtet sich nach ", { term: "l’" }, " (= Marie) vor dem Verb"]
+              it: ["il participio concorda con ", { term: "l’" }, " (= Marie) posto prima del verbo"]
+              pl: ["imiesłów zgadza się z ", { term: "l’" }, " (= Marie) stojącym przed czasownikiem"]
+              tr: ["ortaç, fiilin önündeki ", { term: "l’" }, " (= Marie) ile uyum gösterir"]
+              id: ["participe menyesuaikan dengan ", { term: "l’" }, " (= Marie) di depan kata kerja"]
+              vi: ["phân từ hòa hợp với ", { term: "l’" }, " (= Marie) đứng trước động từ"]

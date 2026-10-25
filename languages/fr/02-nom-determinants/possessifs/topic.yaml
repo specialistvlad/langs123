@@ -1,0 +1,798 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.nom-determinants.possessifs"
+lang: "fr"
+kind: "grammar"
+tags: ["possessives", "determiners", "nouns"]
+concepts: ["possession"]
+related: ["fr.nom-determinants.articles", "fr.nom-determinants.genre", "fr.pronoms.tu-vous", "fr.pronoms.pronoms-toniques"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", uk: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", es: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", pt: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", de: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", it: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", pl: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", tr: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", id: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2", vi: "044829 ac1a5d 5392be 30c1ee ead591 790439 3cf9d2" }
+title:
+  fr: "Les possessifs"
+  en: "Possessives"
+  uk: "Присвійні займенники"
+  es: "Los posesivos"
+  pt: "Os possessivos"
+  de: "Die Possessivbegleiter"
+  it: "I possessivi"
+  pl: "Zaimki dzierżawcze"
+  tr: "İyelik sıfatları"
+  id: "Kata ganti kepemilikan"
+  vi: "Tính từ sở hữu"
+summary:
+  lead:
+    fr: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " et ", { term: "leur" }, " disent à qui est une chose et s’accordent avec elle."]
+    en: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " and ", { term: "leur" }, " say whose a thing is and agree with the thing."]
+    uk: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " і ", { term: "leur" }, " кажуть, чия це річ, і узгоджуються з нею."]
+    es: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " y ", { term: "leur" }, " dicen de quién es una cosa y concuerdan con ella."]
+    pt: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " e ", { term: "leur" }, " dizem de quem é uma coisa e concordam com ela."]
+    de: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " und ", { term: "leur" }, " sagen, wem etwas gehört, und richten sich nach dem Besitz."]
+    it: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " e ", { term: "leur" }, " dicono di chi è una cosa e concordano con essa."]
+    pl: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " i ", { term: "leur" }, " mówią, czyja jest rzecz, i zgadzają się z nią."]
+    tr: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " ve ", { term: "leur" }, " bir şeyin kime ait olduğunu söyler ve o şeye uyar."]
+    id: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, ", dan ", { term: "leur" }, " menyatakan milik siapa sesuatu dan mengikuti bendanya."]
+    vi: [{ term: "Mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", ", { term: "notre" }, ", ", { term: "votre" }, " và ", { term: "leur" }, " cho biết vật của ai và hòa hợp với vật đó."]
+  rule:
+    fr: "Le possessif s’accorde avec le nom possédé, pas avec le possesseur :"
+    en: "The possessive agrees with the thing owned, not with the owner:"
+    uk: "Присвійне слово узгоджується з назвою речі, а не з власником:"
+    es: "El posesivo concuerda con lo poseído, no con el poseedor:"
+    pt: "O possessivo concorda com o que é possuído, não com o possuidor:"
+    de: "Der Possessivbegleiter richtet sich nach dem Besitz, nicht nach dem Besitzer:"
+    it: "Il possessivo concorda con la cosa posseduta, non con il possessore:"
+    pl: "Zaimek dzierżawczy zgadza się z rzeczą posiadaną, nie z właścicielem:"
+    tr: "İyelik sözcüğü sahibe değil, sahip olunan şeye uyar:"
+    id: "Kata ganti kepemilikan menyesuaikan diri dengan benda yang dimiliki, bukan dengan pemiliknya:"
+    vi: "Tính từ sở hữu hòa hợp với vật được sở hữu, không phải với người sở hữu:"
+  ex: { examples: [["Paul aime ", { target: "sa" }, " mère."], ["Léa aime ", { target: "sa" }, " mère."]] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" }
+          rule:
+            fr: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            en: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            uk: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            es: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            pt: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            de: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            it: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            pl: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            tr: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            id: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+            vi: [{ alternatives: [{ term: "mon" }, { term: "ma" }, { term: "mes" }] }, ", ", { alternatives: [{ term: "ton" }, { term: "ta" }, { term: "tes" }] }, ", ", { alternatives: [{ term: "votre" }, { term: "vos" }] }]
+          ex: ["Voici ", { target: "ma" }, " sœur."]
+          tr: { en: "This is my sister.", uk: "Ось моя сестра.", es: "Esta es mi hermana.", pt: "Esta é minha irmã.", de: "Das ist meine Schwester.", it: "Questa è mia sorella.", pl: "To jest moja siostra.", tr: "Bu benim kız kardeşim.", id: "Ini adik perempuanku.", vi: "Đây là chị gái tôi." }
+        - level: "A1"
+          point: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" }
+          rule:
+            fr: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            en: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            uk: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            es: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            pt: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            de: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            it: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            pl: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            tr: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            id: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+            vi: [{ alternatives: [{ term: "son" }, { term: "sa" }, { term: "ses" }] }, ", ", { alternatives: [{ term: "notre" }, { term: "nos" }] }, ", ", { alternatives: [{ term: "leur" }, { term: "leurs" }] }]
+          ex: ["Léa aime ", { target: "sa" }, " sœur."]
+          tr: { en: "Léa likes her sister.", uk: "Леа любить свою сестру.", es: "A Léa le gusta su hermana.", pt: "A Léa gosta da irmã dela.", de: "Léa mag ihre Schwester.", it: "A Léa piace sua sorella.", pl: "Léa lubi swoją siostrę.", tr: "Léa kız kardeşini seviyor.", id: "Léa menyayangi adik perempuannya.", vi: "Léa quý chị gái của cô ấy." }
+        - level: "A1"
+          point: { fr: "Accord", en: "Agreement", uk: "Узгодження", es: "Concordancia", pt: "Concordância", de: "Angleichung", it: "Concordanza", pl: "Zgodność", tr: "Uyum", id: "Kesesuaian", vi: "Hòa hợp" }
+          rule:
+            fr: ["le possessif s’accorde avec le nom possédé : ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            en: ["the possessive agrees with the thing owned: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            uk: ["присвійне слово узгоджується з назвою речі: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            es: ["el posesivo concuerda con lo poseído: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            pt: ["o possessivo concorda com o que é possuído: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            de: ["der Possessivbegleiter richtet sich nach dem Besitz: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            it: ["il possessivo concorda con la cosa posseduta: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            pl: ["zaimek dzierżawczy zgadza się z rzeczą posiadaną: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            tr: ["iyelik sözcüğü sahip olunan şeye uyar: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            id: ["kata ganti kepemilikan mengikuti benda yang dimiliki: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+            vi: ["tính từ sở hữu hòa hợp với vật được sở hữu: ", { term: "mon" }, " frère, ", { term: "ma" }, " sœur, ", { term: "mes" }, " parents"]
+          ex: ["Voici ", { target: "mes" }, " parents."]
+          tr: { en: "These are my parents.", uk: "Ось мої батьки.", es: "Estos son mis padres.", pt: "Estes são meus pais.", de: "Das sind meine Eltern.", it: "Questi sono i miei genitori.", pl: "To są moi rodzice.", tr: "Bunlar benim anne babam.", id: "Ini orang tuaku.", vi: "Đây là bố mẹ tôi." }
+        - level: "A1"
+          point: { fr: "Politesse", en: "Politeness", uk: "Ввічливість", es: "Cortesía", pt: "Cortesia", de: "Höflichkeit", it: "Cortesia", pl: "Grzeczność", tr: "Nezaket", id: "Kesantunan", vi: "Lịch sự" }
+          rule:
+            fr: [{ term: "vous" }, " : ", { term: "votre" }, ", ", { term: "vos" }]
+            en: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            uk: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            es: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            pt: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            de: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            it: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            pl: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            tr: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            id: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+            vi: [{ term: "vous" }, ": ", { term: "votre" }, ", ", { term: "vos" }]
+          ex: ["Quel est ", { target: "votre" }, " nom ?"]
+          tr: { en: "What is your name?", uk: "Як ваше прізвище?", es: "¿Cuál es su nombre?", pt: "Qual é o seu nome?", de: "Wie ist Ihr Name?", it: "Qual è il suo nome?", pl: "Jak się Pan/Pani nazywa?", tr: "Adınız nedir?", id: "Siapa nama Anda?", vi: "Tên của bạn là gì?" }
+        - level: "A1"
+          point:
+            fr: "Le possesseur nommé"
+            en: "The named owner"
+            uk: "Названий власник"
+            es: "El poseedor nombrado"
+            pt: "O possuidor nomeado"
+            de: "Der genannte Besitzer"
+            it: "Il possessore nominato"
+            pl: "Wymieniony właściciel"
+            tr: "Adı verilen sahip"
+            id: "Pemilik yang disebut"
+            vi: "Chủ được nêu tên"
+          rule:
+            fr: ["nom + ", { term: "de" }, " + nom, sans ", { term: "’s" }]
+            en: ["noun + ", { term: "de" }, " + noun, with no ", { term: "’s" }]
+            uk: ["іменник + ", { term: "de" }, " + іменник, без ", { term: "’s" }]
+            es: ["nombre + ", { term: "de" }, " + nombre, sin ", { term: "’s" }]
+            pt: ["substantivo + ", { term: "de" }, " + substantivo, sem ", { term: "’s" }]
+            de: ["Nomen + ", { term: "de" }, " + Nomen, ohne ", { term: "’s" }]
+            it: ["nome + ", { term: "de" }, " + nome, senza ", { term: "’s" }]
+            pl: ["rzeczownik + ", { term: "de" }, " + rzeczownik, bez ", { term: "’s" }]
+            tr: ["isim + ", { term: "de" }, " + isim, ", { term: "’s" }, " yok"]
+            id: ["kata benda + ", { term: "de" }, " + kata benda, tanpa ", { term: "’s" }]
+            vi: ["danh từ + ", { term: "de" }, " + danh từ, không có ", { term: "’s" }]
+          ex: ["C’est le chat ", { target: "de" }, " Léa."]
+          tr: { en: "It's Léa's cat.", uk: "Це кіт Леа.", es: "Es el gato de Léa.", pt: "É o gato da Léa.", de: "Das ist Léas Katze.", it: "È il gatto di Léa.", pl: "To kot Léi.", tr: "Bu Léa’nın kedisi.", id: "Itu kucing Léa.", vi: "Đây là con mèo của Léa." }
+        - level: "A2"
+          point: { fr: "Le corps", en: "The body", uk: "Тіло", es: "El cuerpo", pt: "O corpo", de: "Der Körper", it: "Il corpo", pl: "Ciało", tr: "Vücut", id: "Tubuh", vi: "Cơ thể" }
+          rule:
+            fr: "une partie du corps : l’article défini, pas le possessif"
+            en: "a part of the body: the definite article, not the possessive"
+            uk: "частина тіла: означений артикль, а не присвійне слово"
+            es: "una parte del cuerpo: artículo definido, no posesivo"
+            pt: "uma parte do corpo: artigo definido, não possessivo"
+            de: "ein Körperteil: bestimmter Artikel, nicht Possessivbegleiter"
+            it: "una parte del corpo: articolo determinativo, non possessivo"
+            pl: "część ciała: przedimek określony, nie zaimek dzierżawczy"
+            tr: "bir vücut parçası: belirli artikel, iyelik sözcüğü değil"
+            id: "bagian tubuh: artikel tentu, bukan kata ganti kepemilikan"
+            vi: "bộ phận cơ thể: mạo từ xác định, không dùng tính từ sở hữu"
+          ex: ["Il lève ", { target: "la" }, " main."]
+          tr: { en: "He raises his hand.", uk: "Він піднімає руку.", es: "Levanta la mano.", pt: "Ele levanta a mão.", de: "Er hebt die Hand.", it: "Alza la mano.", pl: "On podnosi rękę.", tr: "O elini kaldırıyor.", id: "Dia mengangkat tangannya.", vi: "Anh ấy giơ tay lên." }
+        - level: "A2"
+          point:
+            fr: "Un de mes amis"
+            en: "A friend of mine"
+            uk: "Один із моїх друзів"
+            es: "Un amigo mío"
+            pt: "Um amigo meu"
+            de: "Ein Freund von mir"
+            it: "Un mio amico"
+            pl: "Jeden z moich przyjaciół"
+            tr: "Arkadaşlarımdan biri"
+            id: "Salah satu temanku"
+            vi: "Một người bạn của tôi"
+          rule:
+            fr: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            en: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            uk: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            es: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            pt: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            de: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            it: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            pl: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            tr: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            id: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+            vi: { pattern: [{ alternatives: [{ term: "un" }, { term: "une" }] }, { term: "de" }, { alternatives: [{ term: "mes" }, { term: "tes" }, { term: "ses" }, { term: "nos" }, { term: "vos" }, { term: "leurs" }] }, { slot: "plural noun" }] }
+          ex: ["Marc est ", { target: "un de mes" }, " amis."]
+          tr: { en: "Marc is a friend of mine.", uk: "Марк — один із моїх друзів.", es: "Marc es un amigo mío.", pt: "Marc é um amigo meu.", de: "Marc ist ein Freund von mir.", it: "Marc è un mio amico.", pl: "Marc jest jednym z moich przyjaciół.", tr: "Marc arkadaşlarımdan biri.", id: "Marc salah satu temanku.", vi: "Marc là một người bạn của tôi." }
+        - level: "A1"
+          point: { fr: "Voyelle", en: "Vowel", uk: "Голосна", es: "Vocal", pt: "Vogal", de: "Vokal", it: "Vocale", pl: "Samogłoska", tr: "Ünlü", id: "Vokal", vi: "Nguyên âm" }
+          rule:
+            fr: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " devant une voyelle, même au féminin : ", { term: "mon amie" }]
+            en: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " before a vowel, even for feminine nouns: ", { term: "mon amie" }]
+            uk: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " перед голосною, навіть у жіночому роді: ", { term: "mon amie" }]
+            es: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " ante vocal, incluso en femenino: ", { term: "mon amie" }]
+            pt: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " antes de vogal, mesmo no feminino: ", { term: "mon amie" }]
+            de: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " vor Vokal, auch beim Femininum: ", { term: "mon amie" }]
+            it: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " davanti a vocale, anche al femminile: ", { term: "mon amie" }]
+            pl: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " przed samogłoską, także w rodzaju żeńskim: ", { term: "mon amie" }]
+            tr: ["ünlüden önce ", { term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, ", dişilde de: ", { term: "mon amie" }]
+            id: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " sebelum vokal, juga untuk feminin: ", { term: "mon amie" }]
+            vi: [{ term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " trước nguyên âm, cả với giống cái: ", { term: "mon amie" }]
+          ex: [{ target: "Mon" }, " amie s’appelle Léa."]
+          tr: { en: "My friend is called Léa.", uk: "Мою подругу звати Леа.", es: "Mi amiga se llama Léa.", pt: "Minha amiga se chama Léa.", de: "Meine Freundin heißt Léa.", it: "La mia amica si chiama Léa.", pl: "Moja przyjaciółka ma na imię Léa.", tr: "Arkadaşımın adı Léa.", id: "Temanku bernama Léa.", vi: "Bạn tôi tên là Léa." }
+        - level: "A1"
+          point:
+            fr: "Un possesseur ou plusieurs"
+            en: "One owner or several"
+            uk: "Один власник чи кілька"
+            es: "Un poseedor o varios"
+            pt: "Um possuidor ou vários"
+            de: "Ein Besitzer oder mehrere"
+            it: "Un possessore o più"
+            pl: "Jeden właściciel czy kilku"
+            tr: "Bir sahip ya da birkaç sahip"
+            id: "Satu pemilik atau beberapa"
+            vi: "Một chủ hay nhiều chủ"
+          rule:
+            fr: ["un possesseur : ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, " ; plusieurs : ", { term: "leur" }, ", ", { term: "leurs" }]
+            en: ["one owner: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; several: ", { term: "leur" }, ", ", { term: "leurs" }]
+            uk: ["один власник: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; кілька: ", { term: "leur" }, ", ", { term: "leurs" }]
+            es: ["un poseedor: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; varios: ", { term: "leur" }, ", ", { term: "leurs" }]
+            pt: ["um possuidor: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; vários: ", { term: "leur" }, ", ", { term: "leurs" }]
+            de: ["ein Besitzer: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; mehrere: ", { term: "leur" }, ", ", { term: "leurs" }]
+            it: ["un possessore: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; più possessori: ", { term: "leur" }, ", ", { term: "leurs" }]
+            pl: ["jeden właściciel: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; kilku: ", { term: "leur" }, ", ", { term: "leurs" }]
+            tr: ["tek sahip: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; birkaç sahip: ", { term: "leur" }, ", ", { term: "leurs" }]
+            id: ["satu pemilik: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; beberapa: ", { term: "leur" }, ", ", { term: "leurs" }]
+            vi: ["một chủ: ", { term: "son" }, ", ", { term: "sa" }, ", ", { term: "ses" }, "; nhiều chủ: ", { term: "leur" }, ", ", { term: "leurs" }]
+          ex: ["Paul et Léa aiment ", { target: "leurs" }, " parents."]
+          tr: { en: "Paul and Léa love their parents.", uk: "Поль і Леа люблять своїх батьків.", es: "Paul y Léa quieren a sus padres.", pt: "Paul e Léa amam os pais deles.", de: "Paul und Léa lieben ihre Eltern.", it: "Paul e Léa vogliono bene ai loro genitori.", pl: "Paul i Léa kochają swoich rodziców.", tr: "Paul ile Léa anne babalarını seviyor.", id: "Paul dan Léa menyayangi orang tua mereka.", vi: "Paul và Léa yêu bố mẹ của họ." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: ["le possessif remplace l’article : ", { term: "mon" }, " sac, pas ", { term: "le mon sac" }]
+            en: ["the possessive replaces the article: ", { term: "mon" }, " sac, not ", { term: "le mon sac" }]
+            uk: ["присвійне слово замінює артикль: ", { term: "mon" }, " sac, а не ", { term: "le mon sac" }]
+            es: ["el posesivo sustituye al artículo: ", { term: "mon" }, " sac, no ", { term: "le mon sac" }]
+            pt: ["o possessivo substitui o artigo: ", { term: "mon" }, " sac, não ", { term: "le mon sac" }]
+            de: ["der Possessivbegleiter ersetzt den Artikel: ", { term: "mon" }, " sac, nicht ", { term: "le mon sac" }]
+            it: ["il possessivo sostituisce l'articolo: ", { term: "mon" }, " sac, non ", { term: "le mon sac" }]
+            pl: ["zaimek dzierżawczy zastępuje przedimek: ", { term: "mon" }, " sac, nie ", { term: "le mon sac" }]
+            tr: ["iyelik sözcüğü artikelin yerini alır: ", { term: "mon" }, " sac, ", { term: "le mon sac" }, " değil"]
+            id: ["kata ganti kepemilikan menggantikan artikel: ", { term: "mon" }, " sac, bukan ", { term: "le mon sac" }]
+            vi: ["tính từ sở hữu thay mạo từ: ", { term: "mon" }, " sac, không phải ", { term: "le mon sac" }]
+          ex: ["J’ai perdu ", { target: "mon" }, " sac."]
+          tr: { en: "I've lost my bag.", uk: "Я загубив свою сумку.", es: "He perdido mi bolso.", pt: "Eu perdi minha bolsa.", de: "Ich habe meine Tasche verloren.", it: "Ho perso la mia borsa.", pl: "Zgubiłem swoją torbę.", tr: "Çantamı kaybettim.", id: "Aku kehilangan tasku.", vi: "Tôi làm mất túi của tôi." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "son" }, " suit le nom, pas le possesseur : Léa aime ", { term: "son" }, " père"]
+            en: [{ term: "son" }, " follows the noun, not the owner: Léa aime ", { term: "son" }, " père"]
+            uk: [{ term: "son" }, " іде за іменником, а не за власником: Léa aime ", { term: "son" }, " père"]
+            es: [{ term: "son" }, " sigue al nombre, no al poseedor: Léa aime ", { term: "son" }, " père"]
+            pt: [{ term: "son" }, " segue o substantivo, não o possuidor: Léa aime ", { term: "son" }, " père"]
+            de: [{ term: "son" }, " folgt dem Nomen, nicht dem Besitzer: Léa aime ", { term: "son" }, " père"]
+            it: [{ term: "son" }, " segue il nome, non il possessore: Léa aime ", { term: "son" }, " père"]
+            pl: [{ term: "son" }, " idzie za rzeczownikiem, nie za właścicielem: Léa aime ", { term: "son" }, " père"]
+            tr: [{ term: "son" }, " sahibe değil, isme uyar: Léa aime ", { term: "son" }, " père"]
+            id: [{ term: "son" }, " mengikuti kata benda, bukan pemilik: Léa aime ", { term: "son" }, " père"]
+            vi: [{ term: "son" }, " theo danh từ, không theo người sở hữu: Léa aime ", { term: "son" }, " père"]
+          ex: ["Léa aime ", { target: "son" }, " père."]
+          tr: { en: "Léa loves her father.", uk: "Леа любить свого батька.", es: "Léa quiere a su padre.", pt: "Léa ama o pai dela.", de: "Léa liebt ihren Vater.", it: "Léa vuole bene a suo padre.", pl: "Léa kocha swojego ojca.", tr: "Léa babasını seviyor.", id: "Léa menyayangi ayahnya.", vi: "Léa yêu bố của cô ấy." }
+sections:
+  - title:
+      fr: "Vue d’ensemble"
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Le possessif s’accorde en genre et en nombre avec le nom possédé, jamais avec le possesseur."
+              en: "The possessive agrees in gender and number with the thing owned, never with the owner."
+              uk: "Присвійне слово узгоджується в роді й числі з назвою речі, ніколи з власником."
+              es: "El posesivo concuerda en género y número con lo poseído, nunca con el poseedor."
+              pt: "O possessivo concorda em gênero e número com o que é possuído, nunca com o possuidor."
+              de: "Der Possessivbegleiter richtet sich in Genus und Numerus nach dem Besitz, nie nach dem Besitzer."
+              it: "Il possessivo concorda in genere e numero con la cosa posseduta, mai con il possessore."
+              pl: "Zaimek dzierżawczy zgadza się w rodzaju i liczbie z rzeczą posiadaną, nigdy z właścicielem."
+              tr: "İyelik sözcüğü cinsiyet ve sayıda sahibe değil, sahip olunan şeye uyar."
+              id: "Kata ganti kepemilikan menyesuaikan gender dan jumlah dengan benda yang dimiliki, tidak pernah dengan pemiliknya."
+              vi: "Tính từ sở hữu hòa hợp về giống và số với vật được sở hữu, không bao giờ với người sở hữu."
+            ex: { examples: [[{ target: "Mon" }, " frère."], [{ target: "Ma" }, " sœur."], [{ target: "Mes" }, " parents."]] }
+            tr: { en: { examples: ["My brother.", "My sister.", "My parents."] }, uk: { examples: ["Мій брат.", "Моя сестра.", "Мої батьки."] }, es: { examples: ["Mi hermano.", "Mi hermana.", "Mis padres."] }, pt: { examples: ["Meu irmão.", "Minha irmã.", "Meus pais."] }, de: { examples: ["Mein Bruder.", "Meine Schwester.", "Meine Eltern."] }, it: { examples: ["Mio fratello.", "Mia sorella.", "I miei genitori."] }, pl: { examples: ["Mój brat.", "Moja siostra.", "Moi rodzice."] }, tr: { examples: ["Kardeşim (erkek).", "Kız kardeşim.", "Anne babam."] }, id: { examples: ["Kakak laki-lakiku.", "Adik perempuanku.", "Orang tuaku."] }, vi: { examples: ["Anh trai tôi.", "Chị gái tôi.", "Bố mẹ tôi."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Le possessif remplace l’article : un seul mot devant le nom."
+              en: "The possessive replaces the article: one word before the noun."
+              uk: "Присвійне слово замінює артикль: перед іменником стоїть лише одне слово."
+              es: "El posesivo sustituye al artículo: una sola palabra ante el nombre."
+              pt: "O possessivo substitui o artigo: uma só palavra antes do substantivo."
+              de: "Der Possessivbegleiter ersetzt den Artikel: nur ein Wort vor dem Nomen."
+              it: "Il possessivo sostituisce l'articolo: una sola parola davanti al nome."
+              pl: "Zaimek dzierżawczy zastępuje przedimek: przed rzeczownikiem stoi tylko jedno słowo."
+              tr: "İyelik sözcüğü artikelin yerini alır: ismin önünde tek bir sözcük durur."
+              id: "Kata ganti kepemilikan menggantikan artikel: hanya satu kata di depan kata benda."
+              vi: "Tính từ sở hữu thay mạo từ: chỉ có một từ đứng trước danh từ."
+            ex: { examples: [["J’ai perdu ", { target: "mon" }, " sac."], ["Elle aime ", { target: "sa" }, " ville."]] }
+            tr: { en: { examples: ["I've lost my bag.", "She loves her city."] }, uk: { examples: ["Я загубив свою сумку.", "Вона любить своє місто."] }, es: { examples: ["He perdido mi bolso.", "Ella ama su ciudad."] }, pt: { examples: ["Eu perdi minha bolsa.", "Ela ama a cidade dela."] }, de: { examples: ["Ich habe meine Tasche verloren.", "Sie liebt ihre Stadt."] }, it: { examples: ["Ho perso la mia borsa.", "Lei ama la sua città."] }, pl: { examples: ["Zgubiłem swoją torbę.", "Ona kocha swoje miasto."] }, tr: { examples: ["Çantamı kaybettim.", "O şehrini seviyor."] }, id: { examples: ["Aku kehilangan tasku.", "Dia mencintai kotanya."] }, vi: { examples: ["Tôi làm mất túi của tôi.", "Cô ấy yêu thành phố của cô ấy."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour les articles que le possessif remplace, voir ", { link: "Les articles", to: "fr.nom-determinants.articles" }, "."]
+              en: ["For the articles the possessive replaces, see ", { link: "Articles", to: "fr.nom-determinants.articles" }, "."]
+              uk: ["Про артиклі, які замінює присвійне слово, — див. ", { link: "Артиклі", to: "fr.nom-determinants.articles" }, "."]
+              es: ["Para los artículos que sustituye el posesivo, ver ", { link: "Los artículos", to: "fr.nom-determinants.articles" }, "."]
+              pt: ["Para os artigos que o possessivo substitui, veja ", { link: "Os artigos", to: "fr.nom-determinants.articles" }, "."]
+              de: ["Zu den Artikeln, die der Possessivbegleiter ersetzt, siehe ", { link: "Die Artikel", to: "fr.nom-determinants.articles" }, "."]
+              it: ["Per gli articoli che il possessivo sostituisce, vedi ", { link: "Gli articoli", to: "fr.nom-determinants.articles" }, "."]
+              pl: ["O przedimkach, które zastępuje zaimek dzierżawczy — zob. ", { link: "Przedimki", to: "fr.nom-determinants.articles" }, "."]
+              tr: ["İyelik sözcüğünün yerini aldığı artikeller için bkz. ", { link: "Artikeller", to: "fr.nom-determinants.articles" }, "."]
+              id: ["Untuk artikel yang digantikan kata ganti kepemilikan, lihat ", { link: "Artikel", to: "fr.nom-determinants.articles" }, "."]
+              vi: ["Về các mạo từ mà tính từ sở hữu thay thế: xem ", { link: "Mạo từ", to: "fr.nom-determinants.articles" }, "."]
+  - title:
+      fr: "Forme : les possessifs"
+      en: "Form: the possessives"
+      uk: "Форма: присвійні слова"
+      es: "Forma: los posesivos"
+      pt: "Forma: os possessivos"
+      de: "Form: die Possessivbegleiter"
+      it: "Forma: i possessivi"
+      pl: "Forma: zaimki dzierżawcze"
+      tr: "Biçim: iyelik sözcükleri"
+      id: "Bentuk: kata ganti kepemilikan"
+      vi: "Dạng: tính từ sở hữu"
+    role: "form"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "person", label: { fr: "Personne", en: "Person", uk: "Особа", es: "Persona", pt: "Pessoa", de: "Person", it: "Persona", pl: "Osoba", tr: "Kişi", id: "Orang", vi: "Ngôi" } }
+          - key: "masc"
+            label: { fr: "masculin", en: "masculine", uk: "чоловічий рід", es: "masculino", pt: "masculino", de: "maskulin", it: "maschile", pl: "rodzaj męski", tr: "eril", id: "maskulin", vi: "giống đực" }
+            features: { gender: "masc", number: "sg" }
+          - key: "fem"
+            label: { fr: "féminin", en: "feminine", uk: "жіночий рід", es: "femenino", pt: "feminino", de: "feminin", it: "femminile", pl: "rodzaj żeński", tr: "dişil", id: "feminin", vi: "giống cái" }
+            features: { gender: "fem", number: "sg" }
+          - key: "pl"
+            label: { fr: "pluriel", en: "plural", uk: "множина", es: "plural", pt: "plural", de: "Plural", it: "plurale", pl: "liczba mnoga", tr: "çoğul", id: "jamak", vi: "số nhiều" }
+            features: { number: "pl" }
+        rows:
+          - { level: "A1", features: { person: 1, number: "sg" }, person: "je", masc: { target: "mon" }, fem: { target: "ma" }, pl: { target: "mes" } }
+          - { level: "A1", features: { person: 2, number: "sg", politeness: "infm" }, person: "tu", masc: { target: "ton" }, fem: { target: "ta" }, pl: { target: "tes" } }
+          - { level: "A1", features: { person: 3, number: "sg" }, person: { alternatives: ["il", "elle", "on"] }, masc: { target: "son" }, fem: { target: "sa" }, pl: { target: "ses" } }
+          - { level: "A1", features: { person: 1, number: "pl" }, person: "nous", masc: { target: "notre" }, fem: { target: "notre" }, pl: { target: "nos" } }
+          - { level: "A1", features: [{ person: 2, number: "pl" }, { person: 2, number: "sg", politeness: "form" }], person: "vous", masc: { target: "votre" }, fem: { target: "votre" }, pl: { target: "vos" } }
+          - { level: "A1", features: { person: 3, number: "pl" }, person: { alternatives: ["ils", "elles"] }, masc: { target: "leur" }, fem: { target: "leur" }, pl: { target: "leurs" } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Devant une voyelle ou un h muet, ", { term: "mon" }, ", ", { term: "ton" }, " et ", { term: "son" }, " remplacent ", { term: "ma" }, ", ", { term: "ta" }, " et ", { term: "sa" }, "."]
+              en: ["Before a vowel or a mute h, ", { term: "mon" }, ", ", { term: "ton" }, " and ", { term: "son" }, " replace ", { term: "ma" }, ", ", { term: "ta" }, " and ", { term: "sa" }, "."]
+              uk: ["Перед голосною або німим h замість ", { term: "ma" }, ", ", { term: "ta" }, ", ", { term: "sa" }, " стоять ", { term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, "."]
+              es: ["Ante vocal o h muda, ", { term: "mon" }, ", ", { term: "ton" }, " y ", { term: "son" }, " sustituyen a ", { term: "ma" }, ", ", { term: "ta" }, " y ", { term: "sa" }, "."]
+              pt: ["Antes de vogal ou h mudo, ", { term: "mon" }, ", ", { term: "ton" }, " e ", { term: "son" }, " substituem ", { term: "ma" }, ", ", { term: "ta" }, " e ", { term: "sa" }, "."]
+              de: ["Vor Vokal oder stummem h treten ", { term: "mon" }, ", ", { term: "ton" }, " und ", { term: "son" }, " an die Stelle von ", { term: "ma" }, ", ", { term: "ta" }, " und ", { term: "sa" }, "."]
+              it: ["Davanti a vocale o h muta, ", { term: "mon" }, ", ", { term: "ton" }, " e ", { term: "son" }, " sostituiscono ", { term: "ma" }, ", ", { term: "ta" }, " e ", { term: "sa" }, "."]
+              pl: ["Przed samogłoską lub niemym h zamiast ", { term: "ma" }, ", ", { term: "ta" }, ", ", { term: "sa" }, " stoją ", { term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, "."]
+              tr: ["Ünlüden ya da sessiz h’den önce ", { term: "ma" }, ", ", { term: "ta" }, ", ", { term: "sa" }, " yerine ", { term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " kullanılır."]
+              id: ["Sebelum vokal atau h bisu, ", { term: "mon" }, ", ", { term: "ton" }, ", dan ", { term: "son" }, " menggantikan ", { term: "ma" }, ", ", { term: "ta" }, ", dan ", { term: "sa" }, "."]
+              vi: ["Trước nguyên âm hoặc h câm, ", { term: "mon" }, ", ", { term: "ton" }, ", ", { term: "son" }, " thay cho ", { term: "ma" }, ", ", { term: "ta" }, ", ", { term: "sa" }, "."]
+            ex: { examples: [[{ target: "Mon" }, " amie"], [{ target: "ton" }, " école"], [{ target: "son" }, " histoire"]] }
+            tr: { en: { examples: ["my friend", "your school", "his story"] }, uk: { examples: ["моя подруга", "твоя школа", "його історія"] }, es: { examples: ["mi amiga", "tu escuela", "su historia"] }, pt: { examples: ["minha amiga", "sua escola", "a história dele"] }, de: { examples: ["meine Freundin", "deine Schule", "seine Geschichte"] }, it: { examples: ["la mia amica", "la tua scuola", "la sua storia"] }, pl: { examples: ["moja przyjaciółka", "twoja szkoła", "jego historia"] }, tr: { examples: ["arkadaşım", "okulun", "onun hikâyesi"] }, id: { examples: ["temanku", "sekolahmu", "ceritanya"] }, vi: { examples: ["bạn gái tôi", "trường của bạn", "câu chuyện của anh ấy"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Leur" }, " prend un ", { term: "s" }, " devant un nom pluriel seulement."]
+              en: [{ term: "Leur" }, " takes an ", { term: "s" }, " only before a plural noun."]
+              uk: [{ term: "Leur" }, " має ", { term: "s" }, " лише перед іменником у множині."]
+              es: [{ term: "Leur" }, " lleva ", { term: "s" }, " solo ante un nombre plural."]
+              pt: [{ term: "Leur" }, " leva ", { term: "s" }, " só antes de um substantivo plural."]
+              de: [{ term: "Leur" }, " bekommt nur vor einem Plural-Nomen ein ", { term: "s" }, "."]
+              it: [{ term: "Leur" }, " prende la ", { term: "s" }, " solo davanti a un nome plurale."]
+              pl: [{ term: "Leur" }, " przyjmuje ", { term: "s" }, " tylko przed rzeczownikiem w liczbie mnogiej."]
+              tr: [{ term: "Leur" }, " yalnızca çoğul bir isimden önce ", { term: "s" }, " alır."]
+              id: [{ term: "Leur" }, " mendapat ", { term: "s" }, " hanya sebelum kata benda jamak."]
+              vi: [{ term: "Leur" }, " chỉ có ", { term: "s" }, " trước danh từ số nhiều."]
+            ex: { examples: [[{ target: "leur" }, " maison"], [{ target: "leurs" }, " maisons"]] }
+            tr: { en: { examples: ["their house", "their houses"] }, uk: { examples: ["їхній дім", "їхні доми"] }, es: { examples: ["su casa (de ellos)", "sus casas (de ellos)"] }, pt: { examples: ["a casa deles", "as casas deles"] }, de: { examples: ["ihr Haus", "ihre Häuser"] }, it: { examples: ["la loro casa", "le loro case"] }, pl: { examples: ["ich dom", "ich domy"] }, tr: { examples: ["onların evi", "onların evleri"] }, id: { examples: ["rumah mereka", "rumah-rumah mereka"] }, vi: { examples: ["nhà của họ", "những ngôi nhà của họ"] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour savoir quand dire ", { term: "tu" }, " et quand dire ", { term: "vous" }, ", voir ", { link: "Tu et vous", to: "fr.pronoms.tu-vous" }, "."]
+              en: ["To know when to say ", { term: "tu" }, " and when ", { term: "vous" }, ", see ", { link: "Forms of Address: tu and vous", to: fr.pronoms.tu-vous }, "."]
+              uk: ["Коли казати ", { term: "tu" }, ", а коли ", { term: "vous" }, " — див. ", { link: "Tu та vous", to: fr.pronoms.tu-vous }, "."]
+              es: ["Para saber cuándo decir ", { term: "tu" }, " y cuándo ", { term: "vous" }, ", ver ", { link: "Tu y vous", to: "fr.pronoms.tu-vous" }, "."]
+              pt: ["Para saber quando dizer ", { term: "tu" }, " e quando ", { term: "vous" }, ", veja ", { link: "Tu e vous", to: "fr.pronoms.tu-vous" }, "."]
+              de: ["Wann man ", { term: "tu" }, " und wann ", { term: "vous" }, " sagt, steht in ", { link: "Tu und vous", to: "fr.pronoms.tu-vous" }, "."]
+              it: ["Per sapere quando dire ", { term: "tu" }, " e quando ", { term: "vous" }, ", vedi ", { link: "Tu e vous", to: "fr.pronoms.tu-vous" }, "."]
+              pl: ["O tym, kiedy mówić ", { term: "tu" }, ", a kiedy ", { term: "vous" }, " — zob. ", { link: "Tu i vous", to: "fr.pronoms.tu-vous" }, "."]
+              tr: [{ term: "tu" }, " ile ", { term: "vous" }, "’un ne zaman kullanılacağı için bkz. ", { link: "Tu ve vous", to: "fr.pronoms.tu-vous" }, "."]
+              id: ["Untuk tahu kapan memakai ", { term: "tu" }, " dan kapan ", { term: "vous" }, ", lihat ", { link: "Tu dan vous", to: "fr.pronoms.tu-vous" }, "."]
+              vi: ["Khi nào dùng ", { term: "tu" }, " và khi nào dùng ", { term: "vous" }, ": xem ", { link: "Tu và vous", to: "fr.pronoms.tu-vous" }, "."]
+  - title:
+      fr: "Prononciation : les possessifs"
+      en: "Pronunciation: the possessives"
+      uk: "Вимова: присвійні слова"
+      es: "Pronunciación: los posesivos"
+      pt: "Pronúncia: os possessivos"
+      de: "Aussprache: die Possessivbegleiter"
+      it: "Pronuncia: i possessivi"
+      pl: "Wymowa: zaimki dzierżawcze"
+      tr: "Telaffuz: iyelik sözcükleri"
+      id: "Pelafalan: kata ganti kepemilikan"
+      vi: "Phát âm: tính từ sở hữu"
+    role: "pronunciation"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "person", label: { fr: "Personne", en: "Person", uk: "Особа", es: "Persona", pt: "Pessoa", de: "Person", it: "Persona", pl: "Osoba", tr: "Kişi", id: "Orang", vi: "Ngôi" } }
+          - key: "masc"
+            label: { fr: "masculin", en: "masculine", uk: "чоловічий рід", es: "masculino", pt: "masculino", de: "maskulin", it: "maschile", pl: "rodzaj męski", tr: "eril", id: "maskulin", vi: "giống đực" }
+            features: { gender: "masc", number: "sg" }
+          - key: "fem"
+            label: { fr: "féminin", en: "feminine", uk: "жіночий рід", es: "femenino", pt: "feminino", de: "feminin", it: "femminile", pl: "rodzaj żeński", tr: "dişil", id: "feminin", vi: "giống cái" }
+            features: { gender: "fem", number: "sg" }
+          - key: "pl"
+            label: { fr: "pluriel", en: "plural", uk: "множина", es: "plural", pt: "plural", de: "Plural", it: "plurale", pl: "liczba mnoga", tr: "çoğul", id: "jamak", vi: "số nhiều" }
+            features: { number: "pl" }
+        rows:
+          - { level: "A1", features: { person: 1, number: "sg" }, person: "je", masc: { ipa: "mɔ̃" }, fem: { ipa: "ma" }, pl: { ipa: "me" } }
+          - { level: "A1", features: { person: 2, number: "sg", politeness: "infm" }, person: "tu", masc: { ipa: "tɔ̃" }, fem: { ipa: "ta" }, pl: { ipa: "te" } }
+          - { level: "A1", features: { person: 3, number: "sg" }, person: { alternatives: ["il", "elle", "on"] }, masc: { ipa: "sɔ̃" }, fem: { ipa: "sa" }, pl: { ipa: "se" } }
+          - { level: "A1", features: { person: 1, number: "pl" }, person: "nous", masc: { ipa: "nɔtʁ" }, fem: { ipa: "nɔtʁ" }, pl: { ipa: "no" } }
+          - { level: "A1", features: [{ person: 2, number: "pl" }, { person: 2, number: "sg", politeness: "form" }], person: "vous", masc: { ipa: "vɔtʁ" }, fem: { ipa: "vɔtʁ" }, pl: { ipa: "vo" } }
+          - { level: "A1", features: { person: 3, number: "pl" }, person: { alternatives: ["ils", "elles"] }, masc: { ipa: "lœʁ" }, fem: { ipa: "lœʁ" }, pl: { ipa: "lœʁ" } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Notre" }, " et ", { term: "votre" }, " ont un o ouvert, ", { term: "nos" }, " et ", { term: "vos" }, " un o fermé."]
+              en: [{ term: "Notre" }, " and ", { term: "votre" }, " have an open o, ", { term: "nos" }, " and ", { term: "vos" }, " a closed o."]
+              uk: [{ term: "Notre" }, " і ", { term: "votre" }, " мають відкрите o, ", { term: "nos" }, " і ", { term: "vos" }, " — закрите."]
+              es: [{ term: "Notre" }, " y ", { term: "votre" }, " llevan una o abierta; ", { term: "nos" }, " y ", { term: "vos" }, ", una o cerrada."]
+              pt: [{ term: "Notre" }, " e ", { term: "votre" }, " têm um o aberto; ", { term: "nos" }, " e ", { term: "vos" }, ", um o fechado."]
+              de: [{ term: "Notre" }, " und ", { term: "votre" }, " haben ein offenes o, ", { term: "nos" }, " und ", { term: "vos" }, " ein geschlossenes o."]
+              it: [{ term: "Notre" }, " e ", { term: "votre" }, " hanno una o aperta, ", { term: "nos" }, " e ", { term: "vos" }, " una o chiusa."]
+              pl: [{ term: "Notre" }, " i ", { term: "votre" }, " mają o otwarte, ", { term: "nos" }, " i ", { term: "vos" }, " — o zamknięte."]
+              tr: [{ term: "Notre" }, " ve ", { term: "votre" }, "’da açık o, ", { term: "nos" }, " ve ", { term: "vos" }, "’da kapalı o vardır."]
+              id: [{ term: "Notre" }, " dan ", { term: "votre" }, " memakai o terbuka, ", { term: "nos" }, " dan ", { term: "vos" }, " o tertutup."]
+              vi: [{ term: "Notre" }, " và ", { term: "votre" }, " có o mở, ", { term: "nos" }, " và ", { term: "vos" }, " có o đóng."]
+            ex: { examples: [[{ target: "notre" }, " ", { ipa: "nɔtʁ" }, " maison"], [{ target: "nos" }, " ", { ipa: "no" }, " maisons"]] }
+            tr: { en: { examples: ["our house", "our houses"] }, uk: { examples: ["наш дім", "наші доми"] }, es: { examples: ["nuestra casa", "nuestras casas"] }, pt: { examples: ["nossa casa", "nossas casas"] }, de: { examples: ["unser Haus", "unsere Häuser"] }, it: { examples: ["la nostra casa", "le nostre case"] }, pl: { examples: ["nasz dom", "nasze domy"] }, tr: { examples: ["bizim evimiz", "bizim evlerimiz"] }, id: { examples: ["rumah kami", "rumah-rumah kami"] }, vi: { examples: ["nhà của chúng tôi", "những ngôi nhà của chúng tôi"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Devant une voyelle, ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " et ", { term: "leurs" }, " se lient avec un ", { ipa: "z" }, "."]
+              en: ["Before a vowel, ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " and ", { term: "leurs" }, " link with a ", { ipa: "z" }, "."]
+              uk: ["Перед голосною ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " і ", { term: "leurs" }, " зв’язуються через ", { ipa: "z" }, "."]
+              es: ["Ante vocal, ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " y ", { term: "leurs" }, " se enlazan con una ", { ipa: "z" }, "."]
+              pt: ["Antes de vogal, ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " e ", { term: "leurs" }, " ligam-se com um ", { ipa: "z" }, "."]
+              de: ["Vor Vokal werden ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " und ", { term: "leurs" }, " mit einem ", { ipa: "z" }, " gebunden."]
+              it: ["Davanti a vocale, ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " e ", { term: "leurs" }, " si legano con una ", { ipa: "z" }, "."]
+              pl: ["Przed samogłoską ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " i ", { term: "leurs" }, " łączą się przez ", { ipa: "z" }, "."]
+              tr: ["Ünlüden önce ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " ve ", { term: "leurs" }, " bir ", { ipa: "z" }, " ile bağlanır."]
+              id: ["Sebelum vokal, ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, ", dan ", { term: "leurs" }, " dihubungkan dengan ", { ipa: "z" }, "."]
+              vi: ["Trước nguyên âm, ", { term: "mes" }, ", ", { term: "tes" }, ", ", { term: "ses" }, ", ", { term: "nos" }, ", ", { term: "vos" }, " và ", { term: "leurs" }, " nối với âm ", { ipa: "z" }, "."]
+            ex: { examples: [[{ target: "mes" }, " amis ", { ipa: "me zami" }], [{ target: "leurs" }, " enfants ", { ipa: "lœʁ zɑ̃fɑ̃" }]] }
+            tr: { en: { examples: ["my friends", "their children"] }, uk: { examples: ["мої друзі", "їхні діти"] }, es: { examples: ["mis amigos", "sus hijos"] }, pt: { examples: ["meus amigos", "os filhos deles"] }, de: { examples: ["meine Freunde", "ihre Kinder"] }, it: { examples: ["i miei amici", "i loro figli"] }, pl: { examples: ["moi przyjaciele", "ich dzieci"] }, tr: { examples: ["arkadaşlarım", "onların çocukları"] }, id: { examples: ["teman-temanku", "anak-anak mereka"] }, vi: { examples: ["những người bạn của tôi", "con của họ"] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour toutes les liaisons, voir ", { link: "La liaison et l’élision", to: fr.bases.liaison-elision }, "."]
+              en: ["For all liaisons, see ", { link: "Liaison and Elision", to: fr.bases.liaison-elision }, "."]
+              uk: ["Про всі зв’язування — див. ", { link: "Ліазон та елізія", to: fr.bases.liaison-elision }, "."]
+              es: ["Para todos los enlaces, ver ", { link: "La liaison y la elisión", to: fr.bases.liaison-elision }, "."]
+              pt: ["Para todas as ligações, veja ", { link: "A liaison e a elisão", to: fr.bases.liaison-elision }, "."]
+              de: ["Zu allen Liaisons siehe ", { link: "Liaison und Elision", to: "fr.bases.liaison-elision" }, "."]
+              it: ["Per tutti i legamenti, vedi ", { link: "La liaison e l'elisione", to: fr.bases.liaison-elision }, "."]
+              pl: ["O wszystkich liaison — zob. ", { link: "Liaison i elizja", to: "fr.bases.liaison-elision" }, "."]
+              tr: ["Tüm bağlamalar için bkz. ", { link: "Liaison ve ünlü düşmesi", to: fr.bases.liaison-elision }, "."]
+              id: ["Untuk semua liaison, lihat ", { link: "Liaison dan elisi", to: "fr.bases.liaison-elision" }, "."]
+              vi: ["Về mọi trường hợp nối âm: xem ", { link: "Nối âm và lược âm", to: "fr.bases.liaison-elision" }, "."]
+  - title:
+      fr: "Emploi : les possessifs"
+      en: "Use: the possessives"
+      uk: "Вживання: присвійні слова"
+      es: "Uso: los posesivos"
+      pt: "Uso: os possessivos"
+      de: "Gebrauch: die Possessivbegleiter"
+      it: "Uso: i possessivi"
+      pl: "Użycie: zaimki dzierżawcze"
+      tr: "Kullanım: iyelik sözcükleri"
+      id: "Penggunaan: kata ganti kepemilikan"
+      vi: "Cách dùng: tính từ sở hữu"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              fr: "Présenter sa famille"
+              en: "Introducing your family"
+              uk: "Представити свою родину"
+              es: "Presentar a la familia"
+              pt: "Apresentar a família"
+              de: "Die Familie vorstellen"
+              it: "Presentare la famiglia"
+              pl: "Przedstawić rodzinę"
+              tr: "Ailesini tanıtmak"
+              id: "Memperkenalkan keluarga"
+              vi: "Giới thiệu gia đình"
+            ex: { examples: [["Voici ", { target: "ma" }, " sœur."], [{ target: "Mon" }, " père s’appelle Marc."]] }
+            tr: { en: { examples: ["This is my sister.", "My father is called Marc."] }, uk: { examples: ["Ось моя сестра.", "Мого батька звати Марк."] }, es: { examples: ["Esta es mi hermana.", "Mi padre se llama Marc."] }, pt: { examples: ["Esta é minha irmã.", "Meu pai se chama Marc."] }, de: { examples: ["Das ist meine Schwester.", "Mein Vater heißt Marc."] }, it: { examples: ["Questa è mia sorella.", "Mio padre si chiama Marc."] }, pl: { examples: ["To jest moja siostra.", "Mój ojciec ma na imię Marc."] }, tr: { examples: ["Bu benim kız kardeşim.", "Babamın adı Marc."] }, id: { examples: ["Ini adik perempuanku.", "Ayahku bernama Marc."] }, vi: { examples: ["Đây là chị gái tôi.", "Bố tôi tên là Marc."] } }
+          - level: "A1"
+            use:
+              fr: "Poser une question"
+              en: "Asking a question"
+              uk: "Поставити питання"
+              es: "Hacer una pregunta"
+              pt: "Fazer uma pergunta"
+              de: "Eine Frage stellen"
+              it: "Fare una domanda"
+              pl: "Zadać pytanie"
+              tr: "Soru sormak"
+              id: "Mengajukan pertanyaan"
+              vi: "Đặt câu hỏi"
+            ex: { examples: [["Quel est ", { target: "votre" }, " nom ?"], ["Comment s’appelle ", { target: "ton" }, " chien ?"]] }
+            tr: { en: { examples: ["What is your name?", "What is your dog called?"] }, uk: { examples: ["Як ваше ім’я?", "Як звати твого пса?"] }, es: { examples: ["¿Cuál es su nombre?", "¿Cómo se llama tu perro?"] }, pt: { examples: ["Qual é o seu nome?", "Como se chama o seu cachorro?"] }, de: { examples: ["Wie ist Ihr Name?", "Wie heißt dein Hund?"] }, it: { examples: ["Qual è il suo nome?", "Come si chiama il tuo cane?"] }, pl: { examples: ["Jak się Pan nazywa?", "Jak ma na imię twój pies?"] }, tr: { examples: ["Adınız nedir?", "Köpeğinin adı ne?"] }, id: { examples: ["Siapa nama Anda?", "Siapa nama anjingmu?"] }, vi: { examples: ["Tên của bạn là gì?", "Con chó của bạn tên là gì?"] } }
+          - level: "A1"
+            use:
+              fr: "Ce qu’on a, ce qu’on aime"
+              en: "What you have, what you like"
+              uk: "Що маєш, що любиш"
+              es: "Lo que se tiene, lo que gusta"
+              pt: "O que se tem, o que se ama"
+              de: "Was man hat und mag"
+              it: "Ciò che si ha, ciò che piace"
+              pl: "Co się ma, co się lubi"
+              tr: "Sahip olunan ve sevilen şeyler"
+              id: "Apa yang dimiliki, apa yang disukai"
+              vi: "Thứ mình có, thứ mình thích"
+            ex: { examples: [["J’ai perdu ", { target: "mon" }, " sac."], ["Nous aimons ", { target: "notre" }, " maison."]] }
+            tr: { en: { examples: ["I've lost my bag.", "We love our house."] }, uk: { examples: ["Я загубив свою сумку.", "Ми любимо наш дім."] }, es: { examples: ["He perdido mi bolso.", "Nos encanta nuestra casa."] }, pt: { examples: ["Eu perdi minha bolsa.", "Nós amamos nossa casa."] }, de: { examples: ["Ich habe meine Tasche verloren.", "Wir lieben unser Haus."] }, it: { examples: ["Ho perso la mia borsa.", "Amiamo la nostra casa."] }, pl: { examples: ["Zgubiłem swoją torbę.", "Kochamy nasz dom."] }, tr: { examples: ["Çantamı kaybettim.", "Evimizi seviyoruz."] }, id: { examples: ["Aku kehilangan tasku.", "Kami suka rumah kami."] }, vi: { examples: ["Tôi làm mất túi của tôi.", "Chúng tôi yêu ngôi nhà của chúng tôi."] } }
+          - level: "A1"
+            use:
+              fr: "Un seul possesseur : il ou elle"
+              en: "One owner: he or she"
+              uk: "Один власник: він або вона"
+              es: "Un solo poseedor: él o ella"
+              pt: "Um só possuidor: ele ou ela"
+              de: "Ein Besitzer: er oder sie"
+              it: "Un solo possessore: lui o lei"
+              pl: "Jeden właściciel: on lub ona"
+              tr: "Tek sahip: o (erkek ya da kadın)"
+              id: "Satu pemilik: dia (laki-laki atau perempuan)"
+              vi: "Một chủ: anh ấy hoặc cô ấy"
+            ex: { examples: [["Paul aime ", { target: "sa" }, " mère."], ["Léa aime ", { target: "sa" }, " mère."], ["Léa cherche ", { target: "son" }, " sac."]] }
+            tr: { en: { examples: ["Paul loves his mother.", "Léa loves her mother.", "Léa is looking for her bag."] }, uk: { examples: ["Поль любить свою маму.", "Леа любить свою маму.", "Леа шукає свою сумку."] }, es: { examples: ["Paul quiere a su madre.", "Léa quiere a su madre.", "Léa busca su bolso."] }, pt: { examples: ["Paul ama a mãe dele.", "Léa ama a mãe dela.", "Léa procura a bolsa dela."] }, de: { examples: ["Paul liebt seine Mutter.", "Léa liebt ihre Mutter.", "Léa sucht ihre Tasche."] }, it: { examples: ["Paul vuole bene a sua madre.", "Léa vuole bene a sua madre.", "Léa cerca la sua borsa."] }, pl: { examples: ["Paul kocha swoją matkę.", "Léa kocha swoją matkę.", "Léa szuka swojej torby."] }, tr: { examples: ["Paul annesini seviyor.", "Léa annesini seviyor.", "Léa çantasını arıyor."] }, id: { examples: ["Paul menyayangi ibunya.", "Léa menyayangi ibunya.", "Léa mencari tasnya."] }, vi: { examples: ["Paul yêu mẹ của anh ấy.", "Léa yêu mẹ của cô ấy.", "Léa tìm túi của cô ấy."] } }
+          - level: "A1"
+            use:
+              fr: "Plusieurs possesseurs"
+              en: "Several owners"
+              uk: "Кілька власників"
+              es: "Varios poseedores"
+              pt: "Vários possuidores"
+              de: "Mehrere Besitzer"
+              it: "Più possessori"
+              pl: "Kilku właścicieli"
+              tr: "Birkaç sahip"
+              id: "Beberapa pemilik"
+              vi: "Nhiều chủ"
+            ex: { examples: [["Paul et Léa aiment ", { target: "leurs" }, " parents."], ["Ils ont ", { target: "leur" }, " voiture."]] }
+            tr: { en: { examples: ["Paul and Léa love their parents.", "They have their car."] }, uk: { examples: ["Поль і Леа люблять своїх батьків.", "У них є їхня машина."] }, es: { examples: ["Paul y Léa quieren a sus padres.", "Tienen su coche."] }, pt: { examples: ["Paul e Léa amam os pais deles.", "Eles têm o carro deles."] }, de: { examples: ["Paul und Léa lieben ihre Eltern.", "Sie haben ihr Auto."] }, it: { examples: ["Paul e Léa vogliono bene ai loro genitori.", "Hanno la loro macchina."] }, pl: { examples: ["Paul i Léa kochają swoich rodziców.", "Mają swój samochód."] }, tr: { examples: ["Paul ile Léa anne babalarını seviyor.", "Arabaları var."] }, id: { examples: ["Paul dan Léa menyayangi orang tua mereka.", "Mereka punya mobil mereka."] }, vi: { examples: ["Paul và Léa yêu bố mẹ của họ.", "Họ có xe hơi của họ."] } }
+          - level: "A1"
+            use:
+              fr: "Le possesseur nommé : le mot de"
+              en: "A named owner: the word de"
+              uk: "Названий власник: слово de"
+              es: "Un poseedor nombrado: la palabra de"
+              pt: "Um possuidor nomeado: a palavra de"
+              de: "Ein genannter Besitzer: das Wort de"
+              it: "Un possessore nominato: la parola de"
+              pl: "Wymieniony właściciel: słowo de"
+              tr: "Adı verilen sahip: de sözcüğü"
+              id: "Pemilik yang disebut: kata de"
+              vi: "Chủ được nêu tên: từ de"
+            ex: { examples: [["C’est le chat ", { target: "de" }, " Léa."], ["La mère ", { target: "de" }, " Paul est ici."]] }
+            tr: { en: { examples: ["It's Léa's cat.", "Paul's mother is here."] }, uk: { examples: ["Це кіт Леа.", "Мати Поля тут."] }, es: { examples: ["Es el gato de Léa.", "La madre de Paul está aquí."] }, pt: { examples: ["É o gato da Léa.", "A mãe do Paul está aqui."] }, de: { examples: ["Das ist Léas Katze.", "Pauls Mutter ist hier."] }, it: { examples: ["È il gatto di Léa.", "La madre di Paul è qui."] }, pl: { examples: ["To kot Léi.", "Matka Paula jest tutaj."] }, tr: { examples: ["Bu Léa’nın kedisi.", "Paul’ün annesi burada."] }, id: { examples: ["Itu kucing Léa.", "Ibu Paul ada di sini."] }, vi: { examples: ["Đây là con mèo của Léa.", "Mẹ của Paul ở đây."] } }
+          - level: "A2"
+            use:
+              fr: "Le possesseur nommé avec le, les"
+              en: "A named owner with le, les"
+              uk: "Названий власник з le, les"
+              es: "Un poseedor nombrado con le, les"
+              pt: "Um possuidor nomeado com le, les"
+              de: "Ein genannter Besitzer mit le, les"
+              it: "Un possessore nominato con le, les"
+              pl: "Wymieniony właściciel z le, les"
+              tr: "le, les ile adı verilen sahip"
+              id: "Pemilik yang disebut dengan le, les"
+              vi: "Chủ được nêu tên với le, les"
+            ex: { examples: [["Le sac ", { target: "du" }, " professeur."], ["La voiture ", { target: "des" }, " voisins."]] }
+            tr: { en: { examples: ["The teacher's bag.", "The neighbours' car."] }, uk: { examples: ["Сумка вчителя.", "Машина сусідів."] }, es: { examples: ["El bolso del profesor.", "El coche de los vecinos."] }, pt: { examples: ["A bolsa do professor.", "O carro dos vizinhos."] }, de: { examples: ["Die Tasche des Lehrers.", "Das Auto der Nachbarn."] }, it: { examples: ["La borsa del professore.", "La macchina dei vicini."] }, pl: { examples: ["Torba nauczyciela.", "Samochód sąsiadów."] }, tr: { examples: ["Öğretmenin çantası.", "Komşuların arabası."] }, id: { examples: ["Tas guru itu.", "Mobil para tetangga."] }, vi: { examples: ["Cái túi của thầy giáo.", "Xe hơi của hàng xóm."] } }
+          - level: "A2"
+            use:
+              fr: "Une partie du corps"
+              en: "A part of the body"
+              uk: "Частина тіла"
+              es: "Una parte del cuerpo"
+              pt: "Uma parte do corpo"
+              de: "Ein Körperteil"
+              it: "Una parte del corpo"
+              pl: "Część ciała"
+              tr: "Bir vücut parçası"
+              id: "Bagian tubuh"
+              vi: "Một bộ phận cơ thể"
+            ex: { examples: [["Il ferme ", { target: "les" }, " yeux."], ["J’ai mal ", { target: "à la" }, " tête."]] }
+            tr: { en: { examples: ["He closes his eyes.", "My head hurts."] }, uk: { examples: ["Він заплющує очі.", "У мене болить голова."] }, es: { examples: ["Cierra los ojos.", "Me duele la cabeza."] }, pt: { examples: ["Ele fecha os olhos.", "Estou com dor de cabeça."] }, de: { examples: ["Er schließt die Augen.", "Ich habe Kopfschmerzen."] }, it: { examples: ["Chiude gli occhi.", "Ho mal di testa."] }, pl: { examples: ["On zamyka oczy.", "Boli mnie głowa."] }, tr: { examples: ["O gözlerini kapatıyor.", "Başım ağrıyor."] }, id: { examples: ["Dia menutup matanya.", "Kepalaku sakit."] }, vi: { examples: ["Anh ấy nhắm mắt lại.", "Tôi bị đau đầu."] } }
+          - level: "A2"
+            use:
+              fr: "Un parmi plusieurs"
+              en: "One among several"
+              uk: "Один із кількох"
+              es: "Uno entre varios"
+              pt: "Um entre vários"
+              de: "Einer unter mehreren"
+              it: "Uno fra tanti"
+              pl: "Jeden spośród kilku"
+              tr: "Birkaçından biri"
+              id: "Salah satu dari beberapa"
+              vi: "Một trong nhiều"
+            ex: { examples: [["Marc est ", { target: "un de mes" }, " amis."], ["Elle est ", { target: "une de mes" }, " voisines."]] }
+            tr: { en: { examples: ["Marc is a friend of mine.", "She is one of my neighbours."] }, uk: { examples: ["Марк — один із моїх друзів.", "Вона — одна з моїх сусідок."] }, es: { examples: ["Marc es un amigo mío.", "Ella es una de mis vecinas."] }, pt: { examples: ["Marc é um amigo meu.", "Ela é uma das minhas vizinhas."] }, de: { examples: ["Marc ist ein Freund von mir.", "Sie ist eine meiner Nachbarinnen."] }, it: { examples: ["Marc è un mio amico.", "Lei è una delle mie vicine."] }, pl: { examples: ["Marc jest jednym z moich przyjaciół.", "Ona jest jedną z moich sąsiadek."] }, tr: { examples: ["Marc arkadaşlarımdan biri.", "O komşularımdan biri."] }, id: { examples: ["Marc salah satu temanku.", "Dia salah satu tetanggaku."] }, vi: { examples: ["Marc là một người bạn của tôi.", "Cô ấy là một trong những người hàng xóm của tôi."] } }
+          - level: "A2"
+            use:
+              fr: "On pour nous"
+              en: "On for nous"
+              uk: "On замість nous"
+              es: "On por nous"
+              pt: "On por nous"
+              de: "On für nous"
+              it: "On per nous"
+              pl: "On zamiast nous"
+              tr: "nous yerine on"
+              id: "On untuk nous"
+              vi: "On thay cho nous"
+            ex: { examples: [["On prend ", { target: "notre" }, " voiture."], ["On a oublié ", { target: "nos" }, " clés."]] }
+            tr: { en: { examples: ["We are taking our car.", "We've forgotten our keys."] }, uk: { examples: ["Ми беремо нашу машину.", "Ми забули наші ключі."] }, es: { examples: ["Cogemos nuestro coche.", "Hemos olvidado nuestras llaves."] }, pt: { examples: ["Pegamos nosso carro.", "Esquecemos nossas chaves."] }, de: { examples: ["Wir nehmen unser Auto.", "Wir haben unsere Schlüssel vergessen."] }, it: { examples: ["Prendiamo la nostra macchina.", "Abbiamo dimenticato le nostre chiavi."] }, pl: { examples: ["Bierzemy nasz samochód.", "Zapomnieliśmy naszych kluczy."] }, tr: { examples: ["Arabamızı alıyoruz.", "Anahtarlarımızı unuttuk."] }, id: { examples: ["Kami naik mobil kami.", "Kami lupa kunci kami."] }, vi: { examples: ["Chúng tôi đi xe của chúng tôi.", "Chúng tôi quên chìa khóa của chúng tôi."] } }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Pour ", { term: "du" }, " et ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, "), voir ", { link: "Les articles", to: "fr.nom-determinants.articles" }, "."]
+              en: ["For ", { term: "du" }, " and ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, "), see ", { link: "Articles", to: "fr.nom-determinants.articles" }, "."]
+              uk: ["Про ", { term: "du" }, " і ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, ") — див. ", { link: "Артиклі", to: "fr.nom-determinants.articles" }, "."]
+              es: ["Para ", { term: "du" }, " y ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, "), ver ", { link: "Los artículos", to: "fr.nom-determinants.articles" }, "."]
+              pt: ["Para ", { term: "du" }, " e ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, "), veja ", { link: "Os artigos", to: "fr.nom-determinants.articles" }, "."]
+              de: ["Zu ", { term: "du" }, " und ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, ") siehe ", { link: "Die Artikel", to: "fr.nom-determinants.articles" }, "."]
+              it: ["Per ", { term: "du" }, " e ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, "), vedi ", { link: "Gli articoli", to: "fr.nom-determinants.articles" }, "."]
+              pl: ["O ", { term: "du" }, " i ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, ") — zob. ", { link: "Przedimki", to: "fr.nom-determinants.articles" }, "."]
+              tr: [{ term: "du" }, " ve ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, ") için bkz. ", { link: "Artikeller", to: "fr.nom-determinants.articles" }, "."]
+              id: ["Untuk ", { term: "du" }, " dan ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, "), lihat ", { link: "Artikel", to: "fr.nom-determinants.articles" }, "."]
+              vi: ["Về ", { term: "du" }, " và ", { term: "des" }, " (de + ", { term: "le" }, ", ", { term: "les" }, "): xem ", { link: "Mạo từ", to: "fr.nom-determinants.articles" }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Pour dire à qui est une chose avec ", { term: "à moi" }, ", ", { term: "à toi" }, ", voir ", { link: "Les pronoms toniques", to: "fr.pronoms.pronoms-toniques" }, "."]
+              en: ["To say whose something is with ", { term: "à moi" }, ", ", { term: "à toi" }, ", see ", { link: "Stressed Pronouns", to: fr.pronoms.pronoms-toniques }, "."]
+              uk: ["Як сказати, чия це річ, за допомогою ", { term: "à moi" }, ", ", { term: "à toi" }, " — див. ", { link: "Наголошені займенники", to: "fr.pronoms.pronoms-toniques" }, "."]
+              es: ["Para decir de quién es algo con ", { term: "à moi" }, ", ", { term: "à toi" }, ", ver ", { link: "Los pronombres tónicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pt: ["Para dizer de quem é algo com ", { term: "à moi" }, ", ", { term: "à toi" }, ", veja ", { link: "Os pronomes tônicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              de: ["Wie man mit ", { term: "à moi" }, ", ", { term: "à toi" }, " sagt, wem etwas gehört, steht in ", { link: "Die betonten Pronomen", to: "fr.pronoms.pronoms-toniques" }, "."]
+              it: ["Per dire di chi è una cosa con ", { term: "à moi" }, ", ", { term: "à toi" }, ", vedi ", { link: "I pronomi tonici", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pl: ["O tym, jak powiedzieć, czyje coś jest, z ", { term: "à moi" }, ", ", { term: "à toi" }, " — zob. ", { link: "Zaimki akcentowane", to: "fr.pronoms.pronoms-toniques" }, "."]
+              tr: [{ term: "à moi" }, ", ", { term: "à toi" }, " ile bir şeyin kime ait olduğunu söylemek için bkz. ", { link: "Vurgulu zamirler", to: "fr.pronoms.pronoms-toniques" }, "."]
+              id: ["Untuk menyatakan milik siapa sesuatu dengan ", { term: "à moi" }, ", ", { term: "à toi" }, ", lihat ", { link: "Pronomina tonik", to: "fr.pronoms.pronoms-toniques" }, "."]
+              vi: ["Cách nói vật của ai bằng ", { term: "à moi" }, ", ", { term: "à toi" }, ": xem ", { link: "Đại từ nhấn mạnh", to: "fr.pronoms.pronoms-toniques" }, "."]
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: "Mon sœur s’appelle Léa."
+            right: [{ target: "Ma" }, " sœur s’appelle Léa."]
+            rule:
+              fr: [{ term: "sœur" }, " est féminin : ", { term: "ma sœur" }]
+              en: [{ term: "sœur" }, " is feminine: ", { term: "ma sœur" }]
+              uk: [{ term: "sœur" }, " жіночого роду: ", { term: "ma sœur" }]
+              es: [{ term: "sœur" }, " es femenino: ", { term: "ma sœur" }]
+              pt: [{ term: "sœur" }, " é feminino: ", { term: "ma sœur" }]
+              de: [{ term: "sœur" }, " ist feminin: ", { term: "ma sœur" }]
+              it: [{ term: "sœur" }, " è femminile: ", { term: "ma sœur" }]
+              pl: [{ term: "sœur" }, " jest rodzaju żeńskiego: ", { term: "ma sœur" }]
+              tr: [{ term: "sœur" }, " dişildir: ", { term: "ma sœur" }]
+              id: [{ term: "sœur" }, " feminin: ", { term: "ma sœur" }]
+              vi: [{ term: "sœur" }, " là giống cái: ", { term: "ma sœur" }]
+          - level: "A1"
+            wrong: "Ma amie est ici."
+            right: [{ target: "Mon" }, " amie est ici."]
+            rule:
+              fr: ["devant une voyelle, ", { term: "mon" }, " même au féminin : ", { term: "mon amie" }]
+              en: ["before a vowel, ", { term: "mon" }, " even for feminine nouns: ", { term: "mon amie" }]
+              uk: ["перед голосною — ", { term: "mon" }, ", навіть у жіночому роді: ", { term: "mon amie" }]
+              es: ["ante vocal, ", { term: "mon" }, " incluso en femenino: ", { term: "mon amie" }]
+              pt: ["antes de vogal, ", { term: "mon" }, " mesmo no feminino: ", { term: "mon amie" }]
+              de: ["vor Vokal ", { term: "mon" }, ", auch beim Femininum: ", { term: "mon amie" }]
+              it: ["davanti a vocale, ", { term: "mon" }, " anche al femminile: ", { term: "mon amie" }]
+              pl: ["przed samogłoską ", { term: "mon" }, ", także w rodzaju żeńskim: ", { term: "mon amie" }]
+              tr: ["ünlüden önce dişilde de ", { term: "mon" }, ": ", { term: "mon amie" }]
+              id: ["sebelum vokal, ", { term: "mon" }, " juga untuk feminin: ", { term: "mon amie" }]
+              vi: ["trước nguyên âm dùng ", { term: "mon" }, ", cả với giống cái: ", { term: "mon amie" }]
+          - level: "A1"
+            speakers: ["en", "uk", "de", "pl"]
+            wrong: "Marie aime sa père."
+            right: ["Marie aime ", { target: "son" }, " père."]
+            rule:
+              en: ["the possessive follows the noun, not the owner: ", { term: "père" }, " is masculine, so ", { term: "son père" }, " even for Marie"]
+              uk: ["присвійне слово йде за іменником, а не за власником: ", { term: "père" }, " чоловічого роду, тож ", { term: "son père" }, " навіть для Marie"]
+              de: ["der Possessivbegleiter richtet sich nach dem Nomen, nicht nach dem Besitzer: ", { term: "père" }, " ist maskulin, also ", { term: "son père" }, ", auch bei Marie"]
+              pl: ["zaimek dzierżawczy idzie za rzeczownikiem, nie za właścicielem: ", { term: "père" }, " jest rodzaju męskiego, więc ", { term: "son père" }, " także dla Marie"]
+          - level: "A1"
+            wrong: "Ils aiment leur parents."
+            right: ["Ils aiment ", { target: "leurs" }, " parents."]
+            rule:
+              fr: [{ term: "leurs" }, " devant un nom pluriel"]
+              en: [{ term: "leurs" }, " before a plural noun"]
+              uk: [{ term: "leurs" }, " перед іменником у множині"]
+              es: [{ term: "leurs" }, " ante un nombre plural"]
+              pt: [{ term: "leurs" }, " antes de um substantivo plural"]
+              de: [{ term: "leurs" }, " vor einem Plural-Nomen"]
+              it: [{ term: "leurs" }, " davanti a un nome plurale"]
+              pl: [{ term: "leurs" }, " przed rzeczownikiem w liczbie mnogiej"]
+              tr: ["çoğul isimden önce ", { term: "leurs" }]
+              id: [{ term: "leurs" }, " sebelum kata benda jamak"]
+              vi: [{ term: "leurs" }, " trước danh từ số nhiều"]
+          - level: "A1"
+            wrong: "Nous avons notre enfants."
+            right: ["Nous avons ", { target: "nos" }, " enfants."]
+            rule:
+              fr: [{ term: "nos" }, " devant un nom pluriel"]
+              en: [{ term: "nos" }, " before a plural noun"]
+              uk: [{ term: "nos" }, " перед іменником у множині"]
+              es: [{ term: "nos" }, " ante un nombre plural"]
+              pt: [{ term: "nos" }, " antes de um substantivo plural"]
+              de: [{ term: "nos" }, " vor einem Plural-Nomen"]
+              it: [{ term: "nos" }, " davanti a un nome plurale"]
+              pl: [{ term: "nos" }, " przed rzeczownikiem w liczbie mnogiej"]
+              tr: ["çoğul isimden önce ", { term: "nos" }]
+              id: [{ term: "nos" }, " sebelum kata benda jamak"]
+              vi: [{ term: "nos" }, " trước danh từ số nhiều"]
+          - level: "A1"
+            speakers: ["pt", "it"]
+            wrong: "J’ai perdu le mon sac."
+            right: ["J’ai perdu ", { target: "mon" }, " sac."]
+            rule:
+              pt: ["o possessivo substitui o artigo: ", { term: "mon sac" }, ", e não ", { term: "le mon sac" }, " como em «o meu saco»"]
+              it: ["il possessivo sostituisce l'articolo: ", { term: "mon sac" }, ", non ", { term: "le mon sac" }, " come in «il mio zaino»"]
+          - level: "A1"
+            speakers: ["id"]
+            wrong: "C’est le chat Léa."
+            right: ["C’est le chat ", { target: "de" }, " Léa."]
+            rule: { id: ["pemilik disebut dengan ", { term: "de" }, ": ", { term: "le chat de Léa" }, ", tidak seperti «kucing Léa»"] }
+          - level: "A2"
+            speakers: ["en", "tr", "id"]
+            wrong: "J’ai mal à ma tête."
+            right: ["J’ai mal ", { target: "à la" }, " tête."]
+            rule:
+              en: ["a part of the body takes the definite article: ", { term: "la tête" }, ", not “my head”"]
+              tr: ["vücut parçası belirli artikel alır: ", { term: "la tête" }, ", «başım» gibi iyelikli değil"]
+              id: ["bagian tubuh memakai artikel tentu: ", { term: "la tête" }, ", bukan «kepalaku»"]
+          - level: "A2"
+            speakers: ["en", "de"]
+            wrong: "Marc est un ami de moi."
+            right: ["Marc est ", { target: "un de mes" }, " amis."]
+            rule: { en: ["“a friend of mine” is ", { term: "un de mes amis" }], de: ["«ein Freund von mir» heißt ", { term: "un de mes amis" }] }

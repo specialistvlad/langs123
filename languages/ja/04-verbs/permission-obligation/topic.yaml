@@ -1,0 +1,575 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "ja.verbs.permission-obligation"
+lang: "ja"
+kind: "grammar"
+tags: ["てもいい", "てはいけない", "なければならない", "なくてもいい", "permission", "obligation"]
+concepts: ["ability", "obligation"]
+related: ["ja.verbs.te-form", "ja.verbs.plain-form", "ja.verbs.te-kudasai"]
+status: { en: "draft", uk: "draft", es: "draft", pt: "draft", fr: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { uk: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", es: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", pt: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", fr: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", de: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", it: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", pl: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", tr: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", id: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41", vi: "097297 09d33a 534cdd 0bf5c0 b7fb8d d77f41" }
+title:
+  en: "Permission and Obligation: May, Must"
+  uk: "Дозвіл і обов’язок: можна, треба"
+  es: "Permiso y obligación: poder, deber"
+  pt: "Permissão e obrigação: poder, dever"
+  fr: "Permission et obligation : pouvoir, devoir"
+  de: "Erlaubnis und Verpflichtung: dürfen, müssen"
+  it: "Permesso e obbligo: potere, dovere"
+  pl: "Pozwolenie i obowiązek: wolno, trzeba"
+  tr: "İzin ve zorunluluk: -ebilir, -meli"
+  id: "Izin dan kewajiban: boleh, harus"
+  vi: "Cho phép và bắt buộc: được phép, phải"
+summary:
+  lead:
+    en: ["Permission (", { term: "てもいい" }, "), ban (", { term: "てはいけない" }, "), duty (", { term: "なければならない" }, ") and no need (", { term: "なくてもいい" }, ")."]
+    uk: ["Дозвіл (", { term: "てもいい" }, "), заборона (", { term: "てはいけない" }, "), обов’язок (", { term: "なければならない" }, ") і непотрібність (", { term: "なくてもいい" }, ")."]
+    es: ["Permiso (", { term: "てもいい" }, "), prohibición (", { term: "てはいけない" }, "), obligación (", { term: "なければならない" }, ") y lo innecesario (", { term: "なくてもいい" }, ")."]
+    pt: ["Permissão (", { term: "てもいい" }, "), proibição (", { term: "てはいけない" }, "), obrigação (", { term: "なければならない" }, ") e o desnecessário (", { term: "なくてもいい" }, ")."]
+    fr: ["Permission (", { term: "てもいい" }, "), interdiction (", { term: "てはいけない" }, "), obligation (", { term: "なければならない" }, ") et inutilité (", { term: "なくてもいい" }, ")."]
+    de: ["Erlaubnis (", { term: "てもいい" }, "), Verbot (", { term: "てはいけない" }, "), Pflicht (", { term: "なければならない" }, ") und Unnötiges (", { term: "なくてもいい" }, ")."]
+    it: ["Permesso (", { term: "てもいい" }, "), divieto (", { term: "てはいけない" }, "), obbligo (", { term: "なければならない" }, ") e superfluo (", { term: "なくてもいい" }, ")."]
+    pl: ["Pozwolenie (", { term: "てもいい" }, "), zakaz (", { term: "てはいけない" }, "), obowiązek (", { term: "なければならない" }, ") i brak potrzeby (", { term: "なくてもいい" }, ")."]
+    tr: ["İzin (", { term: "てもいい" }, "), yasak (", { term: "てはいけない" }, "), zorunluluk (", { term: "なければならない" }, ") ve gereksizlik (", { term: "なくてもいい" }, ") kalıpları."]
+    id: ["Izin (", { term: "てもいい" }, "), larangan (", { term: "てはいけない" }, "), kewajiban (", { term: "なければならない" }, "), dan ketidakperluan (", { term: "なくてもいい" }, ")."]
+    vi: ["Cho phép (", { term: "てもいい" }, "), cấm (", { term: "てはいけない" }, "), bắt buộc (", { term: "なければならない" }, ") và không cần (", { term: "なくてもいい" }, ")."]
+  rule:
+    en: ["Permission and ban take the ", { term: "て" }, "-form; duty and no need take the ", { term: "ない" }, "-form:"]
+    uk: ["Дозвіл і заборона стоять із ", { term: "て" }, "-формою; обов’язок і непотрібність — із ", { term: "ない" }, "-формою:"]
+    es: ["El permiso y la prohibición llevan la forma ", { term: "て" }, "; la obligación y lo innecesario, la forma ", { term: "ない" }, ":"]
+    pt: ["A permissão e a proibição levam a forma ", { term: "て" }, "; a obrigação e o desnecessário, a forma ", { term: "ない" }, ":"]
+    fr: ["La permission et l’interdiction prennent la forme en ", { term: "て" }, " ; l’obligation et l’inutile, la forme en ", { term: "ない" }, " :"]
+    de: ["Erlaubnis und Verbot stehen mit der ", { term: "て" }, "-Form; Pflicht und Unnötiges mit der ", { term: "ない" }, "-Form:"]
+    it: ["Il permesso e il divieto prendono la forma in ", { term: "て" }, "; l’obbligo e il superfluo, la forma in ", { term: "ない" }, ":"]
+    pl: ["Pozwolenie i zakaz łączą się z formą ", { term: "て" }, "; obowiązek i brak potrzeby — z formą ", { term: "ない" }, ":"]
+    tr: ["İzin ve yasak ", { term: "て" }, " biçimi ile; zorunluluk ve gereksizlik ", { term: "ない" }, " biçimi ile kurulur:"]
+    id: ["Izin dan larangan memakai bentuk ", { term: "て" }, "; kewajiban dan ketidakperluan memakai bentuk ", { term: "ない" }, ":"]
+    vi: ["Cho phép và cấm đi với thể ", { term: "て" }, "; bắt buộc và không cần đi với thể ", { term: "ない" }, ":"]
+  ex: [{ kanji: "食", reading: "た" }, "べ", { target: "てもいいです" }, "。"]
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A2"
+          point: { en: "Permission", uk: "Дозвіл", es: "Permiso", pt: "Permissão", fr: "Permission", de: "Erlaubnis", it: "Permesso", pl: "Pozwolenie", tr: "İzin", id: "Izin", vi: "Cho phép" }
+          rule:
+            en: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            uk: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            es: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            pt: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            fr: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            de: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            it: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            pl: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            tr: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            id: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            vi: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+          ex: [{ kanji: "本", reading: "ほん" }, "を", { kanji: "見", reading: "み" }, { target: "てもいいです" }, "。"]
+          tr: { en: "You may look at the book.", uk: "Можна дивитися в книжку.", es: "Puedes mirar el libro.", pt: "Pode olhar o livro.", fr: "Vous pouvez regarder le livre.", de: "Du darfst in das Buch schauen.", it: "Puoi guardare il libro.", pl: "Możesz zajrzeć do książki.", tr: "Kitaba bakabilirsin.", id: "Boleh melihat buku.", vi: "Bạn được xem sách." }
+        - level: "A2"
+          point: { en: "Ban", uk: "Заборона", es: "Prohibición", pt: "Proibição", fr: "Interdiction", de: "Verbot", it: "Divieto", pl: "Zakaz", tr: "Yasak", id: "Larangan", vi: "Cấm" }
+          rule:
+            en: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            uk: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            es: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            pt: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            fr: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            de: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            it: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            pl: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            tr: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            id: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            vi: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+          ex: [{ kanji: "教室", reading: "きょうしつ" }, "で", { kanji: "食", reading: "た" }, "べ", { target: "てはいけません" }, "。"]
+          tr: { en: "You must not eat in the classroom.", uk: "У класі їсти не можна.", es: "No se puede comer en el aula.", pt: "Não se pode comer na sala de aula.", fr: "On ne doit pas manger en classe.", de: "Im Klassenraum darf man nicht essen.", it: "In aula non si può mangiare.", pl: "W klasie nie wolno jeść.", tr: "Sınıfta yemek yemek yasak.", id: "Dilarang makan di dalam kelas.", vi: "Không được ăn trong lớp học." }
+        - level: "A2"
+          point: { en: "Duty", uk: "Обов’язок", es: "Obligación", pt: "Obrigação", fr: "Obligation", de: "Pflicht", it: "Obbligo", pl: "Obowiązek", tr: "Zorunluluk", id: "Kewajiban", vi: "Bắt buộc" }
+          rule:
+            en: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            uk: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            es: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            pt: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            fr: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            de: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            it: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            pl: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            tr: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            id: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            vi: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+          ex: [{ kanji: "毎日", reading: "まいにち" }, { kanji: "勉強", reading: "べんきょう" }, "し", { target: "なければなりません" }, "。"]
+          tr: { en: "I have to study every day.", uk: "Я маю вчитися щодня.", es: "Tengo que estudiar todos los días.", pt: "Tenho que estudar todos os dias.", fr: "Je dois étudier tous les jours.", de: "Ich muss jeden Tag lernen.", it: "Devo studiare ogni giorno.", pl: "Muszę uczyć się codziennie.", tr: "Her gün çalışmam gerekiyor.", id: "Saya harus belajar setiap hari.", vi: "Tôi phải học mỗi ngày." }
+        - level: "A2"
+          point:
+            en: "No need"
+            uk: "Непотрібність"
+            es: "Lo innecesario"
+            pt: "O desnecessário"
+            fr: "L’inutile"
+            de: "Nicht nötig"
+            it: "Il superfluo"
+            pl: "Brak potrzeby"
+            tr: "Gereksizlik"
+            id: "Tidak perlu"
+            vi: "Không cần"
+          rule:
+            en: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            uk: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            es: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            pt: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            fr: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            de: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            it: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            pl: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            tr: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            id: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            vi: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+          ex: [{ kanji: "明日", reading: "あした" }, "は", { kanji: "来", reading: "こ" }, { target: "なくてもいいです" }, "。"]
+          tr: { en: "You don't have to come tomorrow.", uk: "Завтра можна не приходити.", es: "Mañana no hace falta venir.", pt: "Amanhã não precisa vir.", fr: "Demain, vous n’avez pas besoin de venir.", de: "Morgen müssen Sie nicht kommen.", it: "Domani non c’è bisogno di venire.", pl: "Jutro nie musisz przychodzić.", tr: "Yarın gelmene gerek yok.", id: "Besok tidak perlu datang.", vi: "Ngày mai không cần đến." }
+        - level: "A2"
+          point: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" }
+          rule:
+            en: ["Ask with ", { term: "てもいいですか" }, "; agree with ", { term: "いいですよ" }, ", decline with ", { term: "ちょっと" }, "."]
+            uk: ["Питайте з ", { term: "てもいいですか" }, "; погоджуйтеся з ", { term: "いいですよ" }, ", відмовляйте з ", { term: "ちょっと" }, "."]
+            es: ["Pregunta con ", { term: "てもいいですか" }, "; acepta con ", { term: "いいですよ" }, ", rechaza con ", { term: "ちょっと" }, "."]
+            pt: ["Pergunte com ", { term: "てもいいですか" }, "; aceite com ", { term: "いいですよ" }, ", recuse com ", { term: "ちょっと" }, "."]
+            fr: ["Demandez avec ", { term: "てもいいですか" }, " ; acceptez avec ", { term: "いいですよ" }, ", refusez avec ", { term: "ちょっと" }, "."]
+            de: ["Frage mit ", { term: "てもいいですか" }, "; stimme mit ", { term: "いいですよ" }, " zu, lehne mit ", { term: "ちょっと" }, " ab."]
+            it: ["Chiedi con ", { term: "てもいいですか" }, "; accetta con ", { term: "いいですよ" }, ", rifiuta con ", { term: "ちょっと" }, "."]
+            pl: ["Pytaj z ", { term: "てもいいですか" }, "; zgadzaj się z ", { term: "いいですよ" }, ", odmawiaj z ", { term: "ちょっと" }, "."]
+            tr: [{ term: "てもいいですか" }, " ile sor; ", { term: "いいですよ" }, " ile kabul et, ", { term: "ちょっと" }, " ile reddet."]
+            id: ["Minta izin dengan ", { term: "てもいいですか" }, "; setuju dengan ", { term: "いいですよ" }, ", tolak dengan ", { term: "ちょっと" }, "."]
+            vi: ["Hỏi bằng ", { term: "てもいいですか" }, "; đồng ý bằng ", { term: "いいですよ" }, ", từ chối bằng ", { term: "ちょっと" }, "."]
+          ex: { exchange: [["ここで", { kanji: "電話", reading: "でんわ" }, "をし", { target: "てもいいですか" }, "。"], ["すみません、", { target: "ちょっと" }, "むずかしいです。"]] }
+          tr: { en: { exchange: ["May I make a call here?", "Sorry, that's a bit difficult."] }, uk: { exchange: ["Тут можна подзвонити?", "Вибачте, це трохи складно."] }, es: { exchange: ["¿Puedo llamar por teléfono aquí?", "Lo siento, es un poco difícil."] }, pt: { exchange: ["Posso telefonar aqui?", "Desculpe, é um pouco difícil."] }, fr: { exchange: ["Je peux téléphoner ici ?", "Désolé, c’est un peu difficile."] }, de: { exchange: ["Darf ich hier telefonieren?", "Tut mir leid, das ist ein bisschen schwierig."] }, it: { exchange: ["Posso telefonare qui?", "Mi dispiace, è un po’ difficile."] }, pl: { exchange: ["Czy mogę tu zadzwonić?", "Przepraszam, to trochę trudne."] }, tr: { exchange: ["Burada telefon edebilir miyim?", "Üzgünüm, biraz zor."] }, id: { exchange: ["Boleh menelepon di sini?", "Maaf, agak sulit."] }, vi: { exchange: ["Tôi gọi điện ở đây được không?", "Xin lỗi, hơi khó ạ."] } }
+        - level: "A2"
+          point: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" }
+          rule:
+            en: ["The ", { term: "ない" }, "-form drops ", { term: "い" }, ": ", { term: "ない" }, " becomes ", { term: "なければ" }, " or ", { term: "なくて" }, "."]
+            uk: ["У ", { term: "ない" }, "-форми відпадає ", { term: "い" }, ": ", { term: "ない" }, " стає ", { term: "なければ" }, " або ", { term: "なくて" }, "."]
+            es: ["La forma ", { term: "ない" }, " pierde la ", { term: "い" }, ": ", { term: "ない" }, " pasa a ", { term: "なければ" }, " o ", { term: "なくて" }, "."]
+            pt: ["A forma ", { term: "ない" }, " perde o ", { term: "い" }, ": ", { term: "ない" }, " vira ", { term: "なければ" }, " ou ", { term: "なくて" }, "."]
+            fr: ["La forme en ", { term: "ない" }, " perd son ", { term: "い" }, " : ", { term: "ない" }, " devient ", { term: "なければ" }, " ou ", { term: "なくて" }, "."]
+            de: ["Bei der ", { term: "ない" }, "-Form fällt ", { term: "い" }, " weg: ", { term: "ない" }, " wird zu ", { term: "なければ" }, " oder ", { term: "なくて" }, "."]
+            it: ["La forma in ", { term: "ない" }, " perde la ", { term: "い" }, ": ", { term: "ない" }, " diventa ", { term: "なければ" }, " o ", { term: "なくて" }, "."]
+            pl: ["W formie ", { term: "ない" }, " znika ", { term: "い" }, ": ", { term: "ない" }, " zmienia się w ", { term: "なければ" }, " lub ", { term: "なくて" }, "."]
+            tr: [{ term: "ない" }, " biçimi ", { term: "い" }, " harfini kaybeder: ", { term: "ない" }, ", ", { term: "なければ" }, " ya da ", { term: "なくて" }, " olur."]
+            id: ["bentuk ", { term: "ない" }, " kehilangan ", { term: "い" }, ": ", { term: "ない" }, " menjadi ", { term: "なければ" }, " atau ", { term: "なくて" }, "."]
+            vi: ["thể ", { term: "ない" }, " bỏ ", { term: "い" }, ": ", { term: "ない" }, " thành ", { term: "なければ" }, " hoặc ", { term: "なくて" }, "."]
+          ex: [{ kanji: "学校", reading: "がっこう" }, "へ", { kanji: "行", reading: "い" }, "か", { target: "なければ" }, "なりません。"]
+          tr: { en: "I have to go to school.", uk: "Я маю йти до школи.", es: "Tengo que ir a la escuela.", pt: "Tenho que ir à escola.", fr: "Je dois aller à l’école.", de: "Ich muss zur Schule gehen.", it: "Devo andare a scuola.", pl: "Muszę iść do szkoły.", tr: "Okula gitmem gerekiyor.", id: "Saya harus pergi ke sekolah.", vi: "Tôi phải đến trường." }
+        - level: "A2"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["A ban is ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " only means “not needed”."]
+            uk: ["Заборона — ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " лише «не потрібно»."]
+            es: ["La prohibición es ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " solo significa «no hace falta»."]
+            pt: ["A proibição é ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " só quer dizer «não precisa»."]
+            fr: ["L’interdiction, c’est ", { term: "てはいけません" }, " ; ", { term: "なくてもいいです" }, " veut dire seulement « pas besoin »."]
+            de: ["Ein Verbot ist ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " heißt nur „nicht nötig“."]
+            it: ["Il divieto è ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " significa solo «non serve»."]
+            pl: ["Zakaz to ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " znaczy tylko „nie trzeba”."]
+            tr: ["Yasak ", { term: "てはいけません" }, " ile söylenir; ", { term: "なくてもいいです" }, " yalnızca “gerek yok” demektir."]
+            id: ["Larangan memakai ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " hanya berarti “tidak perlu”."]
+            vi: ["Cấm là ", { term: "てはいけません" }, "; ", { term: "なくてもいいです" }, " chỉ có nghĩa “không cần”."]
+          ex: ["ここに", { kanji: "座", reading: "すわ" }, "っ", { target: "てはいけません" }, "。"]
+          tr: { en: "You must not sit here.", uk: "Тут сидіти не можна.", es: "No se puede sentar aquí.", pt: "Não se pode sentar aqui.", fr: "On ne doit pas s’asseoir ici.", de: "Hier darf man nicht sitzen.", it: "Qui non ci si può sedere.", pl: "Tu nie wolno siadać.", tr: "Buraya oturmak yasak.", id: "Dilarang duduk di sini.", vi: "Không được ngồi ở đây." }
+        - level: "A2"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["Before ", { term: "もいいです" }, " stands the ", { term: "て" }, "-form, never the dictionary form."]
+            uk: ["Перед ", { term: "もいいです" }, " стоїть ", { term: "て" }, "-форма, а не словникова форма."]
+            es: ["Ante ", { term: "もいいです" }, " va la forma ", { term: "て" }, ", nunca la forma del diccionario."]
+            pt: ["Antes de ", { term: "もいいです" }, " vem a forma ", { term: "て" }, ", nunca a forma do dicionário."]
+            fr: ["Devant ", { term: "もいいです" }, " se place la forme en ", { term: "て" }, ", jamais la forme du dictionnaire."]
+            de: ["Vor ", { term: "もいいです" }, " steht die ", { term: "て" }, "-Form, nie die Wörterbuchform."]
+            it: ["Davanti a ", { term: "もいいです" }, " sta la forma in ", { term: "て" }, ", mai la forma del dizionario."]
+            pl: ["Przed ", { term: "もいいです" }, " stoi forma ", { term: "て" }, ", nigdy forma słownikowa."]
+            tr: [{ term: "もいいです" }, " öncesinde ", { term: "て" }, " biçimi gelir, sözlük biçimi asla."]
+            id: ["Sebelum ", { term: "もいいです" }, " berdiri bentuk ", { term: "て" }, ", bukan bentuk kamus."]
+            vi: ["Trước ", { term: "もいいです" }, " là thể ", { term: "て" }, ", không bao giờ là thể từ điển."]
+          ex: [{ kanji: "見", reading: "み" }, { target: "てもいいです" }, "か。"]
+          tr: { en: "May I look?", uk: "Можна подивитися?", es: "¿Puedo mirar?", pt: "Posso olhar?", fr: "Je peux regarder ?", de: "Darf ich schauen?", it: "Posso guardare?", pl: "Czy mogę popatrzeć?", tr: "Bakabilir miyim?", id: "Boleh saya lihat?", vi: "Tôi xem được không?" }
+sections:
+  - title:
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      fr: "Vue d’ensemble"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              en: ["Permission and ban take the ", { term: "て" }, "-form; duty and no need take the ", { term: "ない" }, "-form."]
+              uk: ["Дозвіл і заборона вживаються з ", { term: "て" }, "-формою; обов’язок і непотрібність — з ", { term: "ない" }, "-формою."]
+              es: ["El permiso y la prohibición llevan la forma ", { term: "て" }, "; la obligación y lo innecesario, la forma ", { term: "ない" }, "."]
+              pt: ["A permissão e a proibição levam a forma ", { term: "て" }, "; a obrigação e o desnecessário, a forma ", { term: "ない" }, "."]
+              fr: ["La permission et l’interdiction prennent la forme en ", { term: "て" }, " ; l’obligation et l’inutile, la forme en ", { term: "ない" }, "."]
+              de: ["Erlaubnis und Verbot stehen mit der ", { term: "て" }, "-Form; Pflicht und Unnötiges mit der ", { term: "ない" }, "-Form."]
+              it: ["Il permesso e il divieto prendono la forma in ", { term: "て" }, "; l’obbligo e il superfluo, la forma in ", { term: "ない" }, "."]
+              pl: ["Pozwolenie i zakaz łączą się z formą ", { term: "て" }, "; obowiązek i brak potrzeby — z formą ", { term: "ない" }, "."]
+              tr: ["İzin ve yasak ", { term: "て" }, " biçimi ile; zorunluluk ve gereksizlik ", { term: "ない" }, " biçimi ile kurulur."]
+              id: ["Izin dan larangan memakai bentuk ", { term: "て" }, "; kewajiban dan ketidakperluan memakai bentuk ", { term: "ない" }, "."]
+              vi: ["Cho phép và cấm đi với thể ", { term: "て" }, "; bắt buộc và không cần đi với thể ", { term: "ない" }, "."]
+            ex: { examples: [[{ kanji: "見", reading: "み" }, { target: "て" }, "もいいです。"], [{ kanji: "見", reading: "み" }, { target: "なくて" }, "もいいです。"]] }
+            tr: { en: { examples: ["You may look.", "You don't have to look."] }, uk: { examples: ["Можна дивитися.", "Дивитися не обов’язково."] }, es: { examples: ["Puedes mirar.", "No hace falta mirar."] }, pt: { examples: ["Pode olhar.", "Não precisa olhar."] }, fr: { examples: ["Vous pouvez regarder.", "Vous n’avez pas besoin de regarder."] }, de: { examples: ["Sie dürfen schauen.", "Sie müssen nicht schauen."] }, it: { examples: ["Puoi guardare.", "Non c’è bisogno di guardare."] }, pl: { examples: ["Możesz patrzeć.", "Nie musisz patrzeć."] }, tr: { examples: ["Bakabilirsin.", "Bakmana gerek yok."] }, id: { examples: ["Boleh melihat.", "Tidak perlu melihat."] }, vi: { examples: ["Được xem.", "Không cần xem."] } }
+          - type: "note"
+            level: "A2"
+            text:
+              en: ["For the forms themselves, see ", { link: "The て-Form", to: ja.verbs.te-form }, " and ", { link: "The Plain Form", to: ja.verbs.plain-form }, "."]
+              uk: ["Самі форми — див. ", { link: "て-форма", to: ja.verbs.te-form }, " та ", { link: "Проста форма", to: "ja.verbs.plain-form" }, "."]
+              es: ["Para las formas en sí, véase ", { link: "La forma て", to: "ja.verbs.te-form" }, " y ", { link: "La forma simple", to: "ja.verbs.plain-form" }, "."]
+              pt: ["Para as formas em si, veja ", { link: "A forma て", to: "ja.verbs.te-form" }, " e ", { link: "A forma simples", to: "ja.verbs.plain-form" }, "."]
+              fr: ["Pour les formes elles-mêmes, voir ", { link: "La forme en て", to: "ja.verbs.te-form" }, " et ", { link: "La forme simple", to: "ja.verbs.plain-form" }, "."]
+              de: ["Zu den Formen selbst siehe ", { link: "Die て-Form", to: "ja.verbs.te-form" }, " und ", { link: "Die einfache Form", to: "ja.verbs.plain-form" }, "."]
+              it: ["Per le forme in sé, vedi ", { link: "La forma in て", to: "ja.verbs.te-form" }, " e ", { link: "La forma semplice", to: "ja.verbs.plain-form" }, "."]
+              pl: ["Same formy — zob. ", { link: "Forma て", to: "ja.verbs.te-form" }, " i ", { link: "Forma prosta", to: "ja.verbs.plain-form" }, "."]
+              tr: ["Biçimlerin kendisi için bkz. ", { link: "て biçimi", to: "ja.verbs.te-form" }, " ve ", { link: "Yalın biçim", to: "ja.verbs.plain-form" }, "."]
+              id: ["Untuk bentuk-bentuknya sendiri, lihat ", { link: "Bentuk て", to: "ja.verbs.te-form" }, " dan ", { link: "Bentuk biasa", to: "ja.verbs.plain-form" }, "."]
+              vi: ["Về bản thân các dạng, xem ", { link: "Thể て", to: "ja.verbs.te-form" }, " và ", { link: "Thể thường", to: "ja.verbs.plain-form" }, "."]
+  - title:
+      en: "Form: permission and ban"
+      uk: "Форма: дозвіл і заборона"
+      es: "Forma: permiso y prohibición"
+      pt: "Forma: permissão e proibição"
+      fr: "Forme : permission et interdiction"
+      de: "Form: Erlaubnis und Verbot"
+      it: "Forma: permesso e divieto"
+      pl: "Forma: pozwolenie i zakaz"
+      tr: "Biçim: izin ve yasak"
+      id: "Bentuk: izin dan larangan"
+      vi: "Dạng: cho phép và cấm"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { en: "Form", uk: "Форма", es: "Forma", pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "use", label: { en: "Meaning", uk: "Значення", es: "Significado", pt: "Significado", fr: "Sens", de: "Bedeutung", it: "Significato", pl: "Znaczenie", tr: "Anlam", id: "Arti", vi: "Nghĩa" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            form:
+              en: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              uk: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              es: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              pt: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              fr: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              de: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              it: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              pl: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              tr: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              id: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+              vi: { pattern: [{ slot: "verb" }, { term: "てもいいです" }] }
+            use:
+              en: "allowed: “you may”"
+              uk: "дозволено: «можна»"
+              es: "permitido: «puedes»"
+              pt: "permitido: «pode»"
+              fr: "permis : « vous pouvez »"
+              de: "erlaubt: „du darfst“"
+              it: "permesso: «puoi»"
+              pl: "dozwolone: „wolno”"
+              tr: "izinli: “-ebilirsin”"
+              id: "boleh: “boleh”"
+              vi: "được phép: “được”"
+            ex: [{ kanji: "本", reading: "ほん" }, "を", { kanji: "見", reading: "み" }, { target: "てもいいです" }, "。"]
+            tr: { en: "You may look at the book.", uk: "Можна дивитися в книжку.", es: "Puedes mirar el libro.", pt: "Pode olhar o livro.", fr: "Vous pouvez regarder le livre.", de: "Du darfst in das Buch schauen.", it: "Puoi guardare il libro.", pl: "Możesz zajrzeć do książki.", tr: "Kitaba bakabilirsin.", id: "Boleh melihat buku.", vi: "Bạn được xem sách." }
+          - level: "A2"
+            form:
+              en: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              uk: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              es: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              pt: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              fr: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              de: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              it: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              pl: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              tr: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              id: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+              vi: { pattern: [{ slot: "verb" }, { term: "てもいいですか" }] }
+            use:
+              en: "asking permission: “may I?”"
+              uk: "прохання про дозвіл: «можна?»"
+              es: "pide permiso: «¿puedo?»"
+              pt: "pede permissão: «posso?»"
+              fr: "demande la permission : « je peux ? »"
+              de: "fragt um Erlaubnis: „darf ich?“"
+              it: "chiede il permesso: «posso?»"
+              pl: "prośba o pozwolenie: „czy mogę?”"
+              tr: "izin ister: “-ebilir miyim?”"
+              id: "meminta izin: “boleh?”"
+              vi: "xin phép: “được không?”"
+            ex: ["トイレに", { kanji: "行", reading: "い" }, "っ", { target: "てもいいですか" }, "。"]
+            tr: { en: "May I go to the toilet?", uk: "Можна вийти до туалету?", es: "¿Puedo ir al baño?", pt: "Posso ir ao banheiro?", fr: "Puis-je aller aux toilettes ?", de: "Darf ich auf die Toilette gehen?", it: "Posso andare in bagno?", pl: "Czy mogę iść do toalety?", tr: "Tuvalete gidebilir miyim?", id: "Boleh saya pergi ke toilet?", vi: "Tôi đi vệ sinh được không?" }
+          - level: "A2"
+            form:
+              en: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              uk: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              es: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              pt: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              fr: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              de: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              it: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              pl: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              tr: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              id: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+              vi: { pattern: [{ slot: "verb" }, { term: "てはいけません" }] }
+            use:
+              en: "forbidden: “you must not”"
+              uk: "заборонено: «не можна»"
+              es: "prohibido: «no se puede»"
+              pt: "proibido: «não pode»"
+              fr: "interdit : « il ne faut pas »"
+              de: "verboten: „man darf nicht“"
+              it: "vietato: «non si può»"
+              pl: "zakazane: „nie wolno”"
+              tr: "yasak: “yapılmaz”"
+              id: "dilarang: “tidak boleh”"
+              vi: "cấm: “không được”"
+            ex: ["ここで", { kanji: "電話", reading: "でんわ" }, "をし", { target: "てはいけません" }, "。"]
+            tr: { en: "You must not make phone calls here.", uk: "Тут не можна розмовляти телефоном.", es: "No se puede hablar por teléfono aquí.", pt: "Não se pode telefonar aqui.", fr: "On ne doit pas téléphoner ici.", de: "Hier darf man nicht telefonieren.", it: "Qui non si può telefonare.", pl: "Tu nie wolno rozmawiać przez telefon.", tr: "Burada telefonla konuşmak yasak.", id: "Dilarang menelepon di sini.", vi: "Không được gọi điện thoại ở đây." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              en: ["Agree with ", { term: "はい、いいですよ" }, "; decline gently with ", { term: "すみません、ちょっと" }, "."]
+              uk: ["Погодьтеся з ", { term: "はい、いいですよ" }, "; м’яко відмовте з ", { term: "すみません、ちょっと" }, "."]
+              es: ["Acepta con ", { term: "はい、いいですよ" }, "; rechaza con suavidad con ", { term: "すみません、ちょっと" }, "."]
+              pt: ["Aceite com ", { term: "はい、いいですよ" }, "; recuse com delicadeza com ", { term: "すみません、ちょっと" }, "."]
+              fr: ["Acceptez avec ", { term: "はい、いいですよ" }, " ; refusez avec douceur avec ", { term: "すみません、ちょっと" }, "."]
+              de: ["Stimme mit ", { term: "はい、いいですよ" }, " zu; lehne sanft mit ", { term: "すみません、ちょっと" }, " ab."]
+              it: ["Accetta con ", { term: "はい、いいですよ" }, "; rifiuta con garbo con ", { term: "すみません、ちょっと" }, "."]
+              pl: ["Zgódź się słowami ", { term: "はい、いいですよ" }, "; odmów łagodnie słowami ", { term: "すみません、ちょっと" }, "."]
+              tr: [{ term: "はい、いいですよ" }, " ile kabul et; ", { term: "すみません、ちょっと" }, " ile nazikçe reddet."]
+              id: ["Setujui dengan ", { term: "はい、いいですよ" }, "; tolak dengan halus memakai ", { term: "すみません、ちょっと" }, "."]
+              vi: ["Đồng ý bằng ", { term: "はい、いいですよ" }, "; từ chối nhẹ nhàng bằng ", { term: "すみません、ちょっと" }, "."]
+            ex: { exchange: [["ここで", { kanji: "電話", reading: "でんわ" }, "をしてもいいですか。"], ["すみません、", { target: "ちょっと" }, "むずかしいです。"]] }
+            tr: { en: { exchange: ["May I make a call here?", "Sorry, that's a bit difficult."] }, uk: { exchange: ["Тут можна подзвонити?", "Вибачте, це трохи складно."] }, es: { exchange: ["¿Puedo llamar por teléfono aquí?", "Lo siento, es un poco difícil."] }, pt: { exchange: ["Posso telefonar aqui?", "Desculpe, é um pouco difícil."] }, fr: { exchange: ["Je peux téléphoner ici ?", "Désolé, c’est un peu difficile."] }, de: { exchange: ["Darf ich hier telefonieren?", "Tut mir leid, das ist ein bisschen schwierig."] }, it: { exchange: ["Posso telefonare qui?", "Mi dispiace, è un po’ difficile."] }, pl: { exchange: ["Czy mogę tu zadzwonić?", "Przepraszam, to trochę trudne."] }, tr: { exchange: ["Burada telefon edebilir miyim?", "Üzgünüm, biraz zor."] }, id: { exchange: ["Boleh menelepon di sini?", "Maaf, agak sulit."] }, vi: { exchange: ["Tôi gọi điện ở đây được không?", "Xin lỗi, hơi khó ạ."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              en: [{ term: "てはいけません" }, " states a rule of a sign, a school or a doctor; to ask a person, use ", { link: "Requests: てください", to: ja.verbs.te-kudasai }, "."]
+              uk: [{ term: "てはいけません" }, " називає правило знака, школи чи лікаря; щоб попросити людину, див. ", { link: "Прохання: てください", to: ja.verbs.te-kudasai }, "."]
+              es: [{ term: "てはいけません" }, " enuncia una norma de un cartel, una escuela o un médico; para pedírselo a alguien, véase ", { link: "Peticiones: てください", to: ja.verbs.te-kudasai }, "."]
+              pt: [{ term: "てはいけません" }, " enuncia uma regra de uma placa, de uma escola ou de um médico; para pedir a uma pessoa, veja ", { link: "Pedidos: てください", to: ja.verbs.te-kudasai }, "."]
+              fr: [{ term: "てはいけません" }, " énonce la règle d’un panneau, d’une école ou d’un médecin ; pour demander à quelqu’un, voir ", { link: "Demandes : てください", to: ja.verbs.te-kudasai }, "."]
+              de: [{ term: "てはいけません" }, " nennt die Regel eines Schilds, einer Schule oder eines Arztes; für eine Bitte an eine Person siehe ", { link: "Bitten: てください", to: ja.verbs.te-kudasai }, "."]
+              it: [{ term: "てはいけません" }, " enuncia la regola di un cartello, di una scuola o di un medico; per chiedere a una persona, vedi ", { link: "Richieste: てください", to: ja.verbs.te-kudasai }, "."]
+              pl: [{ term: "てはいけません" }, " podaje regułę znaku, szkoły lub lekarza; by poprosić osobę, zob. ", { link: "Prośby: てください", to: ja.verbs.te-kudasai }, "."]
+              tr: [{ term: "てはいけません" }, " bir tabelanın, okulun ya da doktorun kuralını bildirir; bir kişiden ricada bulunmak için bkz. ", { link: "Rica: てください", to: ja.verbs.te-kudasai }, "."]
+              id: [{ term: "てはいけません" }, " menyatakan aturan dari papan, sekolah, atau dokter; untuk meminta seseorang, lihat ", { link: "Permintaan: てください", to: ja.verbs.te-kudasai }, "."]
+              vi: [{ term: "てはいけません" }, " nêu quy tắc của biển báo, trường học hay bác sĩ; để nhờ một người, xem ", { link: "Lời nhờ: てください", to: ja.verbs.te-kudasai }, "."]
+            ex: [{ kanji: "教室", reading: "きょうしつ" }, "で", { kanji: "食", reading: "た" }, "べ", { target: "てはいけません" }, "。"]
+            tr: { en: "You must not eat in the classroom.", uk: "У класі їсти не можна.", es: "No se puede comer en el aula.", pt: "Não se pode comer na sala de aula.", fr: "On ne doit pas manger en classe.", de: "Im Klassenraum darf man nicht essen.", it: "In aula non si può mangiare.", pl: "W klasie nie wolno jeść.", tr: "Sınıfta yemek yemek yasak.", id: "Dilarang makan di dalam kelas.", vi: "Không được ăn trong lớp học." }
+  - title:
+      en: "Form: duty and no need"
+      uk: "Форма: обов’язок і непотрібність"
+      es: "Forma: obligación y lo innecesario"
+      pt: "Forma: obrigação e o desnecessário"
+      fr: "Forme : obligation et inutilité"
+      de: "Form: Pflicht und Unnötiges"
+      it: "Forma: obbligo e superfluo"
+      pl: "Forma: obowiązek i brak potrzeby"
+      tr: "Biçim: zorunluluk ve gereksizlik"
+      id: "Bentuk: kewajiban dan ketidakperluan"
+      vi: "Dạng: bắt buộc và không cần"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { en: "Form", uk: "Форма", es: "Forma", pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "use", label: { en: "Meaning", uk: "Значення", es: "Significado", pt: "Significado", fr: "Sens", de: "Bedeutung", it: "Significato", pl: "Znaczenie", tr: "Anlam", id: "Arti", vi: "Nghĩa" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            form:
+              en: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              uk: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              es: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              pt: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              fr: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              de: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              it: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              pl: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              tr: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              id: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+              vi: { pattern: [{ slot: "verb" }, { term: "なければなりません" }] }
+            use:
+              en: "required: “must, have to”"
+              uk: "обов’язково: «треба, мусити»"
+              es: "obligatorio: «tener que»"
+              pt: "obrigatório: «ter que»"
+              fr: "obligatoire : « devoir »"
+              de: "nötig: „müssen“"
+              it: "obbligatorio: «dovere»"
+              pl: "konieczne: „musieć”"
+              tr: "zorunlu: “-mek zorunda”"
+              id: "wajib: “harus”"
+              vi: "bắt buộc: “phải”"
+            ex: [{ kanji: "薬", reading: "くすり" }, "を", { kanji: "飲", reading: "の" }, "ま", { target: "なければなりません" }, "。"]
+            tr: { en: "I have to take my medicine.", uk: "Я маю прийняти ліки.", es: "Tengo que tomar la medicina.", pt: "Tenho que tomar o remédio.", fr: "Je dois prendre mon médicament.", de: "Ich muss meine Medizin nehmen.", it: "Devo prendere la medicina.", pl: "Muszę wziąć lekarstwo.", tr: "İlacımı içmem gerekiyor.", id: "Saya harus minum obat.", vi: "Tôi phải uống thuốc." }
+          - level: "A2"
+            form:
+              en: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              uk: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              es: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              pt: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              fr: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              de: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              it: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              pl: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              tr: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              id: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+              vi: { pattern: [{ slot: "verb" }, { term: "なくてもいいです" }] }
+            use:
+              en: "not needed: “need not”"
+              uk: "не потрібно: «необов’язково»"
+              es: "no necesario: «no hace falta»"
+              pt: "não necessário: «não precisa»"
+              fr: "pas nécessaire : « pas besoin de »"
+              de: "nicht nötig: „nicht müssen“"
+              it: "non necessario: «non serve»"
+              pl: "niepotrzebne: „nie trzeba”"
+              tr: "gereksiz: “gerek yok”"
+              id: "tidak perlu: “tidak perlu”"
+              vi: "không cần: “không cần”"
+            ex: [{ kanji: "明日", reading: "あした" }, "は", { kanji: "来", reading: "こ" }, { target: "なくてもいいです" }, "。"]
+            tr: { en: "You don't have to come tomorrow.", uk: "Завтра можна не приходити.", es: "Mañana no hace falta venir.", pt: "Amanhã não precisa vir.", fr: "Demain, vous n’avez pas besoin de venir.", de: "Morgen müssen Sie nicht kommen.", it: "Domani non c’è bisogno di venire.", pl: "Jutro nie musisz przychodzić.", tr: "Yarın gelmene gerek yok.", id: "Besok tidak perlu datang.", vi: "Ngày mai không cần đến." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              en: ["The ", { term: "ない" }, "-form drops ", { term: "い" }, ": ", { term: "なければ" }, " before ", { term: "なりません" }, ", ", { term: "なくて" }, " before ", { term: "もいいです" }, "."]
+              uk: ["У ", { term: "ない" }, "-форми відпадає ", { term: "い" }, ": ", { term: "なければ" }, " перед ", { term: "なりません" }, ", ", { term: "なくて" }, " перед ", { term: "もいいです" }, "."]
+              es: ["La forma ", { term: "ない" }, " pierde la ", { term: "い" }, ": ", { term: "なければ" }, " ante ", { term: "なりません" }, ", ", { term: "なくて" }, " ante ", { term: "もいいです" }, "."]
+              pt: ["A forma ", { term: "ない" }, " perde o ", { term: "い" }, ": ", { term: "なければ" }, " antes de ", { term: "なりません" }, ", ", { term: "なくて" }, " antes de ", { term: "もいいです" }, "."]
+              fr: ["La forme en ", { term: "ない" }, " perd son ", { term: "い" }, " : ", { term: "なければ" }, " devant ", { term: "なりません" }, ", ", { term: "なくて" }, " devant ", { term: "もいいです" }, "."]
+              de: ["Bei der ", { term: "ない" }, "-Form fällt ", { term: "い" }, " weg: ", { term: "なければ" }, " vor ", { term: "なりません" }, ", ", { term: "なくて" }, " vor ", { term: "もいいです" }, "."]
+              it: ["La forma in ", { term: "ない" }, " perde la ", { term: "い" }, ": ", { term: "なければ" }, " davanti a ", { term: "なりません" }, ", ", { term: "なくて" }, " davanti a ", { term: "もいいです" }, "."]
+              pl: ["W formie ", { term: "ない" }, " znika ", { term: "い" }, ": ", { term: "なければ" }, " przed ", { term: "なりません" }, ", ", { term: "なくて" }, " przed ", { term: "もいいです" }, "."]
+              tr: [{ term: "ない" }, " biçimi ", { term: "い" }, " harfini kaybeder: ", { term: "なりません" }, " öncesinde ", { term: "なければ" }, ", ", { term: "もいいです" }, " öncesinde ", { term: "なくて" }, " gelir."]
+              id: ["bentuk ", { term: "ない" }, " kehilangan ", { term: "い" }, ": ", { term: "なければ" }, " sebelum ", { term: "なりません" }, ", ", { term: "なくて" }, " sebelum ", { term: "もいいです" }, "."]
+              vi: ["thể ", { term: "ない" }, " bỏ ", { term: "い" }, ": ", { term: "なければ" }, " trước ", { term: "なりません" }, ", ", { term: "なくて" }, " trước ", { term: "もいいです" }, "."]
+            ex: { examples: [[{ kanji: "学校", reading: "がっこう" }, "へ", { kanji: "行", reading: "い" }, "か", { target: "なければ" }, "なりません。"], [{ kanji: "学校", reading: "がっこう" }, "へ", { kanji: "行", reading: "い" }, "か", { target: "なくて" }, "もいいです。"]] }
+            tr: { en: { examples: ["I have to go to school.", "I don't have to go to school."] }, uk: { examples: ["Я маю йти до школи.", "Мені не обов’язково йти до школи."] }, es: { examples: ["Tengo que ir a la escuela.", "No hace falta que vaya a la escuela."] }, pt: { examples: ["Tenho que ir à escola.", "Não preciso ir à escola."] }, fr: { examples: ["Je dois aller à l’école.", "Je n’ai pas besoin d’aller à l’école."] }, de: { examples: ["Ich muss zur Schule gehen.", "Ich muss nicht zur Schule gehen."] }, it: { examples: ["Devo andare a scuola.", "Non c’è bisogno che io vada a scuola."] }, pl: { examples: ["Muszę iść do szkoły.", "Nie muszę iść do szkoły."] }, tr: { examples: ["Okula gitmem gerekiyor.", "Okula gitmem gerekmiyor."] }, id: { examples: ["Saya harus pergi ke sekolah.", "Saya tidak perlu pergi ke sekolah."] }, vi: { examples: ["Tôi phải đến trường.", "Tôi không cần đến trường."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              en: [{ term: "なければいけません" }, " and ", { term: "なくてはいけません" }, " mean the same as ", { term: "なければなりません" }, "."]
+              uk: [{ term: "なければいけません" }, " і ", { term: "なくてはいけません" }, " означають те саме, що й ", { term: "なければなりません" }, "."]
+              es: [{ term: "なければいけません" }, " y ", { term: "なくてはいけません" }, " significan lo mismo que ", { term: "なければなりません" }, "."]
+              pt: [{ term: "なければいけません" }, " e ", { term: "なくてはいけません" }, " significam o mesmo que ", { term: "なければなりません" }, "."]
+              fr: [{ term: "なければいけません" }, " et ", { term: "なくてはいけません" }, " ont le même sens que ", { term: "なければなりません" }, "."]
+              de: [{ term: "なければいけません" }, " und ", { term: "なくてはいけません" }, " bedeuten dasselbe wie ", { term: "なければなりません" }, "."]
+              it: [{ term: "なければいけません" }, " e ", { term: "なくてはいけません" }, " significano come ", { term: "なければなりません" }, "."]
+              pl: [{ term: "なければいけません" }, " i ", { term: "なくてはいけません" }, " znaczą to samo co ", { term: "なければなりません" }, "."]
+              tr: [{ term: "なければいけません" }, " ve ", { term: "なくてはいけません" }, ", ", { term: "なければなりません" }, " ile aynı anlama gelir."]
+              id: [{ term: "なければいけません" }, " dan ", { term: "なくてはいけません" }, " berarti sama dengan ", { term: "なければなりません" }, "."]
+              vi: [{ term: "なければいけません" }, " và ", { term: "なくてはいけません" }, " có nghĩa giống ", { term: "なければなりません" }, "."]
+            ex: { examples: [[{ kanji: "勉強", reading: "べんきょう" }, "し", { target: "なければいけません" }, "。"], [{ kanji: "勉強", reading: "べんきょう" }, "し", { target: "なくてはいけません" }, "。"]] }
+            tr: { en: { examples: ["I have to study.", "I have to study."] }, uk: { examples: ["Я маю вчитися.", "Я маю вчитися."] }, es: { examples: ["Tengo que estudiar.", "Tengo que estudiar."] }, pt: { examples: ["Tenho que estudar.", "Tenho que estudar."] }, fr: { examples: ["Je dois étudier.", "Je dois étudier."] }, de: { examples: ["Ich muss lernen.", "Ich muss lernen."] }, it: { examples: ["Devo studiare.", "Devo studiare."] }, pl: { examples: ["Muszę się uczyć.", "Muszę się uczyć."] }, tr: { examples: ["Çalışmam gerekiyor.", "Çalışmam gerekiyor."] }, id: { examples: ["Saya harus belajar.", "Saya harus belajar."] }, vi: { examples: ["Tôi phải học.", "Tôi phải học."] } }
+  - title:
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      fr: "Erreurs fréquentes"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A2"
+            wrong: ["トイレに", { kanji: "行", reading: "い" }, "くもいいですか。"]
+            right: ["トイレに", { kanji: "行", reading: "い" }, "っ", { target: "てもいいですか" }, "。"]
+            rule:
+              en: [{ term: "もいいです" }, " follows the ", { term: "て" }, "-form, not the dictionary form"]
+              uk: [{ term: "もいいです" }, " стоїть після ", { term: "て" }, "-форми, а не словникової форми"]
+              es: [{ term: "もいいです" }, " va tras la forma ", { term: "て" }, ", no tras la forma del diccionario"]
+              pt: [{ term: "もいいです" }, " vem depois da forma ", { term: "て" }, ", não da forma do dicionário"]
+              fr: [{ term: "もいいです" }, " suit la forme en ", { term: "て" }, ", non la forme du dictionnaire"]
+              de: [{ term: "もいいです" }, " folgt der ", { term: "て" }, "-Form, nicht der Wörterbuchform"]
+              it: [{ term: "もいいです" }, " segue la forma in ", { term: "て" }, ", non la forma del dizionario"]
+              pl: [{ term: "もいいです" }, " idzie za formą ", { term: "て" }, ", nie za formą słownikową"]
+              tr: [{ term: "もいいです" }, " ", { term: "て" }, " biçimi ardından gelir, sözlük biçiminden sonra değil"]
+              id: [{ term: "もいいです" }, " mengikuti bentuk ", { term: "て" }, ", bukan bentuk kamus"]
+              vi: [{ term: "もいいです" }, " đi sau thể ", { term: "て" }, ", không đi sau thể từ điển"]
+          - level: "A2"
+            wrong: ["ここで", { kanji: "食", reading: "た" }, "べてはいけませんか。"]
+            right: ["ここで", { kanji: "食", reading: "た" }, "べ", { target: "てもいいですか" }, "。"]
+            rule:
+              en: ["to ask permission, use ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " names a ban"]
+              uk: ["щоб попросити дозволу, вживайте ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " означає заборону"]
+              es: ["para pedir permiso se usa ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " nombra una prohibición"]
+              pt: ["para pedir permissão usa-se ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " indica uma proibição"]
+              fr: ["pour demander la permission, on emploie ", { term: "てもいいですか" }, " ; ", { term: "てはいけません" }, " énonce une interdiction"]
+              de: ["um Erlaubnis zu bitten, nimmt man ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " nennt ein Verbot"]
+              it: ["per chiedere il permesso si usa ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " indica un divieto"]
+              pl: ["by poprosić o pozwolenie, używa się ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " oznacza zakaz"]
+              tr: ["izin istemek için ", { term: "てもいいですか" }, " kullanılır; ", { term: "てはいけません" }, " bir yasağı bildirir"]
+              id: ["untuk meminta izin, pakai ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " menyatakan larangan"]
+              vi: ["để xin phép dùng ", { term: "てもいいですか" }, "; ", { term: "てはいけません" }, " nêu một điều cấm"]
+          - level: "A2"
+            wrong: [{ kanji: "薬", reading: "くすり" }, "を", { kanji: "飲", reading: "の" }, "まないなければなりません。"]
+            right: [{ kanji: "薬", reading: "くすり" }, "を", { kanji: "飲", reading: "の" }, "ま", { target: "なければなりません" }, "。"]
+            rule:
+              en: [{ term: "なければ" }, " replaces ", { term: "ない" }, "; the two do not stand together"]
+              uk: [{ term: "なければ" }, " замінює ", { term: "ない" }, "; разом вони не стоять"]
+              es: [{ term: "なければ" }, " sustituye a ", { term: "ない" }, "; no van juntos"]
+              pt: [{ term: "なければ" }, " substitui ", { term: "ない" }, "; os dois não aparecem juntos"]
+              fr: [{ term: "なければ" }, " remplace ", { term: "ない" }, " ; les deux ne vont pas ensemble"]
+              de: [{ term: "なければ" }, " ersetzt ", { term: "ない" }, "; beide stehen nicht zusammen"]
+              it: [{ term: "なければ" }, " sostituisce ", { term: "ない" }, "; i due non stanno insieme"]
+              pl: [{ term: "なければ" }, " zastępuje ", { term: "ない" }, "; razem nie występują"]
+              tr: [{ term: "なければ" }, ", ", { term: "ない" }, " yerine geçer; ikisi birlikte kullanılmaz"]
+              id: [{ term: "なければ" }, " menggantikan ", { term: "ない" }, "; keduanya tidak dipakai bersama"]
+              vi: [{ term: "なければ" }, " thay cho ", { term: "ない" }, "; hai từ không đứng cùng nhau"]
+          - level: "A2"
+            wrong: ["ここで", { kanji: "電話", reading: "でんわ" }, "をしなくてもいいです。"]
+            right: ["ここで", { kanji: "電話", reading: "でんわ" }, "をし", { target: "てはいけません" }, "。"]
+            rule:
+              en: [{ term: "なくてもいいです" }, " means “need not”; “must not” is ", { term: "てはいけません" }]
+              uk: [{ term: "なくてもいいです" }, " означає «не потрібно»; «не можна» — це ", { term: "てはいけません" }]
+              es: [{ term: "なくてもいいです" }, " significa «no hace falta»; «no se puede» es ", { term: "てはいけません" }]
+              pt: [{ term: "なくてもいいです" }, " quer dizer «não precisa»; «não pode» é ", { term: "てはいけません" }]
+              fr: [{ term: "なくてもいいです" }, " veut dire « pas besoin » ; « il ne faut pas » se dit ", { term: "てはいけません" }]
+              de: [{ term: "なくてもいいです" }, " heißt „nicht nötig“; „nicht dürfen“ ist ", { term: "てはいけません" }]
+              it: [{ term: "なくてもいいです" }, " significa «non serve»; «non si può» è ", { term: "てはいけません" }]
+              pl: [{ term: "なくてもいいです" }, " znaczy „nie trzeba”; „nie wolno” to ", { term: "てはいけません" }]
+              tr: [{ term: "なくてもいいです" }, " “gerek yok” demektir; “yapılmaz” ", { term: "てはいけません" }, " ile söylenir"]
+              id: [{ term: "なくてもいいです" }, " berarti “tidak perlu”; “tidak boleh” adalah ", { term: "てはいけません" }]
+              vi: [{ term: "なくてもいいです" }, " nghĩa là “không cần”; “không được” là ", { term: "てはいけません" }]
+          - level: "A2"
+            wrong: "ここにすわってはいけません。"
+            right: ["ここにすわら", { target: "ないでください" }, "。"]
+            rule:
+              en: ["to ask a person, use ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " sounds like a rule"]
+              uk: ["щоб попросити людину, вживайте ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " звучить як правило"]
+              es: ["para pedírselo a alguien se usa ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " suena a norma"]
+              pt: ["para pedir a uma pessoa usa-se ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " soa como regra"]
+              fr: ["pour demander à quelqu’un, on emploie ", { term: "ないでください" }, " ; ", { term: "てはいけません" }, " sonne comme une règle"]
+              de: ["für eine Bitte an eine Person nimmt man ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " klingt nach einer Regel"]
+              it: ["per chiedere a una persona si usa ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " suona come una regola"]
+              pl: ["by poprosić osobę, używa się ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " brzmi jak reguła"]
+              tr: ["bir kişiden rica için ", { term: "ないでください" }, " kullanılır; ", { term: "てはいけません" }, " kural gibi duyulur"]
+              id: ["untuk meminta seseorang, pakai ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " terdengar seperti aturan"]
+              vi: ["để nhờ một người dùng ", { term: "ないでください" }, "; ", { term: "てはいけません" }, " nghe như một quy tắc"]

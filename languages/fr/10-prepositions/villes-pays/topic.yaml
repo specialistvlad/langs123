@@ -1,0 +1,904 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.prepositions.villes-pays"
+lang: "fr"
+kind: "grammar"
+tags: ["prepositions", "place", "cities", "countries"]
+concepts: ["prepositions-place"]
+related: ["fr.prepositions.prepositions-lieu", "fr.nom-determinants.articles", "fr.nom-determinants.genre", "fr.present.present-irreguliers", "fr.etre-avoir.etre-avoir", "fr.phrase.questions"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", uk: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", es: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", pt: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", de: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", it: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", pl: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", tr: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", id: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f", vi: "aeca7f 5d9bd8 8ccaa5 69e56c d9aca0 61611e 682aa7 92a88f" }
+title:
+  fr: "Villes et pays"
+  en: "Cities and Countries"
+  uk: "Міста й країни"
+  es: "Ciudades y países"
+  pt: "Cidades e países"
+  de: "Städte und Länder"
+  it: "Città e paesi"
+  pl: "Miasta i kraje"
+  tr: "Şehirler ve ülkeler"
+  id: "Kota dan negara"
+  vi: "Thành phố và quốc gia"
+summary:
+  lead:
+    fr: ["Une ville prend ", { term: "à" }, ", un pays prend ", { term: "en" }, ", ", { term: "au" }, " ou ", { term: "aux" }, " selon son genre, et l’origine se dit avec ", { term: "de" }, ", ", { term: "du" }, " ou ", { term: "des" }, "."]
+    en: ["A city takes ", { term: "à" }, ", a country takes ", { term: "en" }, ", ", { term: "au" }, " or ", { term: "aux" }, " by its gender, and origin is said with ", { term: "de" }, ", ", { term: "du" }, " or ", { term: "des" }, "."]
+    uk: ["Місто вимагає ", { term: "à" }, ", країна — ", { term: "en" }, ", ", { term: "au" }, " або ", { term: "aux" }, " залежно від роду, а походження передають через ", { term: "de" }, ", ", { term: "du" }, " або ", { term: "des" }, "."]
+    es: ["Una ciudad lleva ", { term: "à" }, ", un país lleva ", { term: "en" }, ", ", { term: "au" }, " o ", { term: "aux" }, " según su género, y el origen se dice con ", { term: "de" }, ", ", { term: "du" }, " o ", { term: "des" }, "."]
+    pt: ["Uma cidade leva ", { term: "à" }, ", um país leva ", { term: "en" }, ", ", { term: "au" }, " ou ", { term: "aux" }, " conforme o gênero, e a origem se diz com ", { term: "de" }, ", ", { term: "du" }, " ou ", { term: "des" }, "."]
+    de: ["Eine Stadt steht mit ", { term: "à" }, ", ein Land je nach Genus mit ", { term: "en" }, ", ", { term: "au" }, " oder ", { term: "aux" }, ", und die Herkunft mit ", { term: "de" }, ", ", { term: "du" }, " oder ", { term: "des" }, "."]
+    it: ["Una città vuole ", { term: "à" }, ", un paese vuole ", { term: "en" }, ", ", { term: "au" }, " o ", { term: "aux" }, " secondo il genere, e la provenienza si dice con ", { term: "de" }, ", ", { term: "du" }, " o ", { term: "des" }, "."]
+    pl: ["Miasto łączy się z ", { term: "à" }, ", kraj z ", { term: "en" }, ", ", { term: "au" }, " lub ", { term: "aux" }, " zależnie od rodzaju, a pochodzenie wyraża się przez ", { term: "de" }, ", ", { term: "du" }, " lub ", { term: "des" }, "."]
+    tr: ["Şehir ", { term: "à" }, ", ülke ise cinsiyetine göre ", { term: "en" }, ", ", { term: "au" }, " ya da ", { term: "aux" }, " alır; köken ", { term: "de" }, ", ", { term: "du" }, " ya da ", { term: "des" }, " ile söylenir."]
+    id: ["Kota memakai ", { term: "à" }, ", negara memakai ", { term: "en" }, ", ", { term: "au" }, ", atau ", { term: "aux" }, " menurut gendernya, dan asal dinyatakan dengan ", { term: "de" }, ", ", { term: "du" }, ", atau ", { term: "des" }, "."]
+    vi: ["Thành phố đi với ", { term: "à" }, ", quốc gia đi với ", { term: "en" }, ", ", { term: "au" }, " hoặc ", { term: "aux" }, " tùy giống, còn xuất xứ dùng ", { term: "de" }, ", ", { term: "du" }, " hoặc ", { term: "des" }, "."]
+  rule:
+    fr: ["Une ville prend ", { term: "à" }, ", un pays féminin ", { term: "en" }, ", un pays masculin ", { term: "au" }, " :"]
+    en: ["A city takes ", { term: "à" }, ", a feminine country ", { term: "en" }, ", a masculine country ", { term: "au" }, ":"]
+    uk: ["Місто вимагає ", { term: "à" }, ", країна жіночого роду — ", { term: "en" }, ", чоловічого — ", { term: "au" }, ":"]
+    es: ["Una ciudad lleva ", { term: "à" }, ", un país femenino ", { term: "en" }, ", un país masculino ", { term: "au" }, ":"]
+    pt: ["Uma cidade leva ", { term: "à" }, ", um país feminino ", { term: "en" }, ", um país masculino ", { term: "au" }, ":"]
+    de: ["Eine Stadt steht mit ", { term: "à" }, ", ein feminines Land mit ", { term: "en" }, ", ein maskulines Land mit ", { term: "au" }, ":"]
+    it: ["Una città vuole ", { term: "à" }, ", un paese femminile ", { term: "en" }, ", un paese maschile ", { term: "au" }, ":"]
+    pl: ["Miasto łączy się z ", { term: "à" }, ", kraj rodzaju żeńskiego z ", { term: "en" }, ", męskiego z ", { term: "au" }, ":"]
+    tr: ["Şehir ", { term: "à" }, ", dişil ülke ", { term: "en" }, ", eril ülke ", { term: "au" }, " alır:"]
+    id: ["Kota memakai ", { term: "à" }, ", negara feminin ", { term: "en" }, ", negara maskulin ", { term: "au" }, ":"]
+    vi: ["Thành phố đi với ", { term: "à" }, ", nước giống cái đi với ", { term: "en" }, ", nước giống đực đi với ", { term: "au" }, ":"]
+  ex: { examples: [["J’habite ", { target: "à" }, " Lyon."], ["J’habite ", { target: "en" }, " France."], ["J’habite ", { target: "au" }, " Canada."]] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point: { fr: "Ville", en: "City", uk: "Місто", es: "Ciudad", pt: "Cidade", de: "Stadt", it: "Città", pl: "Miasto", tr: "Şehir", id: "Kota", vi: "Thành phố" }
+          rule:
+            fr: [{ term: "à" }, " + ville : où ; ", { term: "de" }, " ou ", { term: "d’" }, " : d’où"]
+            en: [{ term: "à" }, " + city: where; ", { term: "de" }, " or ", { term: "d’" }, ": from where"]
+            uk: [{ term: "à" }, " + місто: де; ", { term: "de" }, " або ", { term: "d’" }, ": звідки"]
+            es: [{ term: "à" }, " + ciudad: dónde; ", { term: "de" }, " o ", { term: "d’" }, ": de dónde"]
+            pt: [{ term: "à" }, " + cidade: onde; ", { term: "de" }, " ou ", { term: "d’" }, ": de onde"]
+            de: [{ term: "à" }, " + Stadt: wo; ", { term: "de" }, " oder ", { term: "d’" }, ": woher"]
+            it: [{ term: "à" }, " + città: dove; ", { term: "de" }, " o ", { term: "d’" }, ": da dove"]
+            pl: [{ term: "à" }, " + miasto: gdzie; ", { term: "de" }, " lub ", { term: "d’" }, ": skąd"]
+            tr: [{ term: "à" }, " + şehir: nerede; ", { term: "de" }, " ya da ", { term: "d’" }, ": nereden"]
+            id: [{ term: "à" }, " + kota: di mana; ", { term: "de" }, " atau ", { term: "d’" }, ": dari mana"]
+            vi: [{ term: "à" }, " + thành phố: ở đâu; ", { term: "de" }, " hoặc ", { term: "d’" }, ": từ đâu"]
+          ex: { examples: [["J’habite ", { target: "à" }, " Rome."], ["Je viens ", { target: "de" }, " Paris."]] }
+          tr: { en: { examples: ["I live in Rome.", "I come from Paris."] }, uk: { examples: ["Я живу в Римі.", "Я з Парижа."] }, es: { examples: ["Vivo en Roma.", "Vengo de París."] }, pt: { examples: ["Eu moro em Roma.", "Eu venho de Paris."] }, de: { examples: ["Ich wohne in Rom.", "Ich komme aus Paris."] }, it: { examples: ["Abito a Roma.", "Vengo da Parigi."] }, pl: { examples: ["Mieszkam w Rzymie.", "Pochodzę z Paryża."] }, tr: { examples: ["Roma’da oturuyorum.", "Paris’ten geliyorum."] }, id: { examples: ["Aku tinggal di Roma.", "Aku berasal dari Paris."] }, vi: { examples: ["Tôi sống ở Rome.", "Tôi đến từ Paris."] } }
+        - level: "A1"
+          point:
+            fr: "Pays féminin"
+            en: "Feminine country"
+            uk: "Країна жіночого роду"
+            es: "País femenino"
+            pt: "País feminino"
+            de: "Feminines Land"
+            it: "Paese femminile"
+            pl: "Kraj rodzaju żeńskiego"
+            tr: "Dişil ülke"
+            id: "Negara feminin"
+            vi: "Nước giống cái"
+          rule:
+            fr: [{ term: "en" }, " + pays féminin : en France, en Italie"]
+            en: [{ term: "en" }, " + feminine country: en France, en Italie"]
+            uk: [{ term: "en" }, " + країна жіночого роду: en France, en Italie"]
+            es: [{ term: "en" }, " + país femenino: en France, en Italie"]
+            pt: [{ term: "en" }, " + país feminino: en France, en Italie"]
+            de: [{ term: "en" }, " + feminines Land: en France, en Italie"]
+            it: [{ term: "en" }, " + paese femminile: en France, en Italie"]
+            pl: [{ term: "en" }, " + kraj rodzaju żeńskiego: en France, en Italie"]
+            tr: [{ term: "en" }, " + dişil ülke: en France, en Italie"]
+            id: [{ term: "en" }, " + negara feminin: en France, en Italie"]
+            vi: [{ term: "en" }, " + nước giống cái: en France, en Italie"]
+          ex: ["Elle va ", { target: "en" }, " Espagne."]
+          tr: { en: "She’s going to Spain.", uk: "Вона їде до Іспанії.", es: "Ella va a España.", pt: "Ela vai para a Espanha.", de: "Sie fährt nach Spanien.", it: "Va in Spagna.", pl: "Ona jedzie do Hiszpanii.", tr: "İspanya’ya gidiyor.", id: "Dia pergi ke Spanyol.", vi: "Cô ấy đi Tây Ban Nha." }
+        - level: "A1"
+          point:
+            fr: "Pays masculin"
+            en: "Masculine country"
+            uk: "Країна чоловічого роду"
+            es: "País masculino"
+            pt: "País masculino"
+            de: "Maskulines Land"
+            it: "Paese maschile"
+            pl: "Kraj rodzaju męskiego"
+            tr: "Eril ülke"
+            id: "Negara maskulin"
+            vi: "Nước giống đực"
+          rule:
+            fr: [{ term: "au" }, " + pays masculin : au Canada, au Japon"]
+            en: [{ term: "au" }, " + masculine country: au Canada, au Japon"]
+            uk: [{ term: "au" }, " + країна чоловічого роду: au Canada, au Japon"]
+            es: [{ term: "au" }, " + país masculino: au Canada, au Japon"]
+            pt: [{ term: "au" }, " + país masculino: au Canada, au Japon"]
+            de: [{ term: "au" }, " + maskulines Land: au Canada, au Japon"]
+            it: [{ term: "au" }, " + paese maschile: au Canada, au Japon"]
+            pl: [{ term: "au" }, " + kraj rodzaju męskiego: au Canada, au Japon"]
+            tr: [{ term: "au" }, " + eril ülke: au Canada, au Japon"]
+            id: [{ term: "au" }, " + negara maskulin: au Canada, au Japon"]
+            vi: [{ term: "au" }, " + nước giống đực: au Canada, au Japon"]
+          ex: ["Nous allons ", { target: "au" }, " Japon."]
+          tr: { en: "We’re going to Japan.", uk: "Ми їдемо до Японії.", es: "Vamos a Japón.", pt: "Nós vamos para o Japão.", de: "Wir fahren nach Japan.", it: "Andiamo in Giappone.", pl: "Jedziemy do Japonii.", tr: "Japonya’ya gidiyoruz.", id: "Kami pergi ke Jepang.", vi: "Chúng tôi đi Nhật Bản." }
+        - level: "A1"
+          point:
+            fr: "Pays pluriel"
+            en: "Plural country"
+            uk: "Країна в множині"
+            es: "País plural"
+            pt: "País plural"
+            de: "Pluralland"
+            it: "Paese plurale"
+            pl: "Kraj w liczbie mnogiej"
+            tr: "Çoğul ülke"
+            id: "Negara jamak"
+            vi: "Nước số nhiều"
+          rule:
+            fr: [{ term: "aux" }, " + pays pluriel : aux États-Unis"]
+            en: [{ term: "aux" }, " + plural country: aux États-Unis"]
+            uk: [{ term: "aux" }, " + країна в множині: aux États-Unis"]
+            es: [{ term: "aux" }, " + país plural: aux États-Unis"]
+            pt: [{ term: "aux" }, " + país plural: aux États-Unis"]
+            de: [{ term: "aux" }, " + Pluralland: aux États-Unis"]
+            it: [{ term: "aux" }, " + paese plurale: aux États-Unis"]
+            pl: [{ term: "aux" }, " + kraj w liczbie mnogiej: aux États-Unis"]
+            tr: [{ term: "aux" }, " + çoğul ülke: aux États-Unis"]
+            id: [{ term: "aux" }, " + negara jamak: aux États-Unis"]
+            vi: [{ term: "aux" }, " + nước số nhiều: aux États-Unis"]
+          ex: ["Il habite ", { target: "aux" }, " États-Unis."]
+          tr: { en: "He lives in the United States.", uk: "Він живе в США.", es: "Vive en Estados Unidos.", pt: "Ele mora nos Estados Unidos.", de: "Er wohnt in den USA.", it: "Abita negli Stati Uniti.", pl: "Mieszka w Stanach Zjednoczonych.", tr: "Amerika Birleşik Devletleri’nde yaşıyor.", id: "Dia tinggal di Amerika Serikat.", vi: "Anh ấy sống ở Hoa Kỳ." }
+        - level: "A1"
+          point: { fr: "D’où ?", en: "From where?", uk: "Звідки?", es: "¿De dónde?", pt: "De onde?", de: "Woher?", it: "Da dove?", pl: "Skąd?", tr: "Nereden?", id: "Dari mana?", vi: "Từ đâu?" }
+          rule:
+            fr: [{ term: "de" }, " ou ", { term: "d’" }, " (pays féminin), ", { term: "du" }, " (masculin), ", { term: "des" }, " (pluriel)"]
+            en: [{ term: "de" }, " or ", { term: "d’" }, " (feminine country), ", { term: "du" }, " (masculine), ", { term: "des" }, " (plural)"]
+            uk: [{ term: "de" }, " або ", { term: "d’" }, " (жіночий рід), ", { term: "du" }, " (чоловічий), ", { term: "des" }, " (множина)"]
+            es: [{ term: "de" }, " o ", { term: "d’" }, " (femenino), ", { term: "du" }, " (masculino), ", { term: "des" }, " (plural)"]
+            pt: [{ term: "de" }, " ou ", { term: "d’" }, " (feminino), ", { term: "du" }, " (masculino), ", { term: "des" }, " (plural)"]
+            de: [{ term: "de" }, " oder ", { term: "d’" }, " (feminin), ", { term: "du" }, " (maskulin), ", { term: "des" }, " (Plural)"]
+            it: [{ term: "de" }, " o ", { term: "d’" }, " (femminile), ", { term: "du" }, " (maschile), ", { term: "des" }, " (plurale)"]
+            pl: [{ term: "de" }, " lub ", { term: "d’" }, " (żeński), ", { term: "du" }, " (męski), ", { term: "des" }, " (mnoga)"]
+            tr: [{ term: "de" }, " ya da ", { term: "d’" }, " (dişil), ", { term: "du" }, " (eril), ", { term: "des" }, " (çoğul)"]
+            id: [{ term: "de" }, " atau ", { term: "d’" }, " (feminin), ", { term: "du" }, " (maskulin), ", { term: "des" }, " (jamak)"]
+            vi: [{ term: "de" }, " hoặc ", { term: "d’" }, " (giống cái), ", { term: "du" }, " (giống đực), ", { term: "des" }, " (số nhiều)"]
+          ex: ["Il vient ", { target: "du" }, " Maroc."]
+          tr: { en: "He comes from Morocco.", uk: "Він родом з Марокко.", es: "Viene de Marruecos.", pt: "Ele vem do Marrocos.", de: "Er kommt aus Marokko.", it: "Viene dal Marocco.", pl: "Pochodzi z Maroka.", tr: "Fas’tan geliyor.", id: "Dia berasal dari Maroko.", vi: "Anh ấy đến từ Ma-rốc." }
+        - level: "A2"
+          point: { fr: "Continent", en: "Continent", uk: "Континент", es: "Continente", pt: "Continente", de: "Kontinent", it: "Continente", pl: "Kontynent", tr: "Kıta", id: "Benua", vi: "Châu lục" }
+          rule:
+            fr: [{ term: "en" }, " + continent : en Europe, en Asie ; ", { term: "d’" }, " : d’Europe"]
+            en: [{ term: "en" }, " + continent: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            uk: [{ term: "en" }, " + континент: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            es: [{ term: "en" }, " + continente: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            pt: [{ term: "en" }, " + continente: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            de: [{ term: "en" }, " + Kontinent: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            it: [{ term: "en" }, " + continente: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            pl: [{ term: "en" }, " + kontynent: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            tr: [{ term: "en" }, " + kıta: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            id: [{ term: "en" }, " + benua: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+            vi: [{ term: "en" }, " + châu lục: en Europe, en Asie; ", { term: "d’" }, ": d’Europe"]
+          ex: ["Ils voyagent ", { target: "en" }, " Asie."]
+          tr: { en: "They are travelling in Asia.", uk: "Вони подорожують Азією.", es: "Viajan por Asia.", pt: "Eles viajam pela Ásia.", de: "Sie reisen durch Asien.", it: "Viaggiano in Asia.", pl: "Podróżują po Azji.", tr: "Asya’da seyahat ediyorlar.", id: "Mereka bepergian di Asia.", vi: "Họ đi du lịch ở châu Á." }
+        - level: "A2"
+          point: { fr: "Québec", en: "Québec", uk: "Квебек", es: "Quebec", pt: "Quebec", de: "Québec", it: "Québec", pl: "Quebec", tr: "Québec", id: "Québec", vi: "Québec" }
+          rule:
+            fr: [{ term: "au Québec" }, " (la province), ", { term: "à Québec" }, " (la ville)"]
+            en: [{ term: "au Québec" }, " (the province), ", { term: "à Québec" }, " (the city)"]
+            uk: [{ term: "au Québec" }, " (провінція), ", { term: "à Québec" }, " (місто)"]
+            es: [{ term: "au Québec" }, " (la provincia), ", { term: "à Québec" }, " (la ciudad)"]
+            pt: [{ term: "au Québec" }, " (a província), ", { term: "à Québec" }, " (a cidade)"]
+            de: [{ term: "au Québec" }, " (die Provinz), ", { term: "à Québec" }, " (die Stadt)"]
+            it: [{ term: "au Québec" }, " (la provincia), ", { term: "à Québec" }, " (la città)"]
+            pl: [{ term: "au Québec" }, " (prowincja), ", { term: "à Québec" }, " (miasto)"]
+            tr: [{ term: "au Québec" }, " (eyalet), ", { term: "à Québec" }, " (şehir)"]
+            id: [{ term: "au Québec" }, " (provinsi), ", { term: "à Québec" }, " (kota)"]
+            vi: [{ term: "au Québec" }, " (tỉnh bang), ", { term: "à Québec" }, " (thành phố)"]
+          ex: ["Nous habitons ", { target: "au" }, " Québec."]
+          tr: { en: "We live in Québec province.", uk: "Ми живемо в Квебеку.", es: "Vivimos en Quebec.", pt: "Nós moramos no Quebec.", de: "Wir wohnen in Québec.", it: "Abitiamo in Québec.", pl: "Mieszkamy w Quebecu.", tr: "Québec’te yaşıyoruz.", id: "Kami tinggal di Quebec.", vi: "Chúng tôi sống ở Quebec." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: ["pays féminin : ", { term: "en" }, ", pas ", { term: "à" }]
+            en: ["feminine country: ", { term: "en" }, ", not ", { term: "à" }]
+            uk: ["країна жіночого роду: ", { term: "en" }, ", а не ", { term: "à" }]
+            es: ["país femenino: ", { term: "en" }, ", no ", { term: "à" }]
+            pt: ["país feminino: ", { term: "en" }, ", não ", { term: "à" }]
+            de: ["feminines Land: ", { term: "en" }, ", nicht ", { term: "à" }]
+            it: ["paese femminile: ", { term: "en" }, ", non ", { term: "à" }]
+            pl: ["kraj rodzaju żeńskiego: ", { term: "en" }, ", nie ", { term: "à" }]
+            tr: ["dişil ülke: ", { term: "en" }, ", ", { term: "à" }, " değil"]
+            id: ["negara feminin: ", { term: "en" }, ", bukan ", { term: "à" }]
+            vi: ["nước giống cái: ", { term: "en" }, ", không phải ", { term: "à" }]
+          ex: ["J’habite ", { target: "en" }, " France."]
+          tr: { en: "I live in France.", uk: "Я живу у Франції.", es: "Vivo en Francia.", pt: "Eu moro na França.", de: "Ich wohne in Frankreich.", it: "Abito in Francia.", pl: "Mieszkam we Francji.", tr: "Fransa’da yaşıyorum.", id: "Aku tinggal di Prancis.", vi: "Tôi sống ở Pháp." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "de" }, " sans article devant un pays féminin"]
+            en: [{ term: "de" }, " with no article before a feminine country"]
+            uk: [{ term: "de" }, " без артикля перед країною жіночого роду"]
+            es: [{ term: "de" }, " sin artículo ante un país femenino"]
+            pt: [{ term: "de" }, " sem artigo diante de um país feminino"]
+            de: [{ term: "de" }, " ohne Artikel vor einem femininen Land"]
+            it: [{ term: "de" }, " senza articolo davanti a un paese femminile"]
+            pl: [{ term: "de" }, " bez przedimka przed krajem rodzaju żeńskiego"]
+            tr: ["dişil ülkeden önce artikelsiz ", { term: "de" }]
+            id: [{ term: "de" }, " tanpa artikel di depan negara feminin"]
+            vi: [{ term: "de" }, " không có mạo từ trước nước giống cái"]
+          ex: ["Elle vient ", { target: "de" }, " France."]
+          tr: { en: "She comes from France.", uk: "Вона родом із Франції.", es: "Ella viene de Francia.", pt: "Ela vem da França.", de: "Sie kommt aus Frankreich.", it: "Viene dalla Francia.", pl: "Pochodzi z Francji.", tr: "Fransa’dan geliyor.", id: "Dia berasal dari Prancis.", vi: "Cô ấy đến từ Pháp." }
+sections:
+  - title:
+      fr: "Vue d’ensemble"
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Le nom du lieu décide de la préposition : une ville, un pays féminin, un pays masculin ou un pays pluriel."
+              en: "The kind of place sets the preposition: a city, a feminine country, a masculine country or a plural country."
+              uk: "Вид місця визначає прийменник: місто, країна жіночого роду, чоловічого роду чи країна в множині."
+              es: "El tipo de lugar fija la preposición: una ciudad, un país femenino, un país masculino o un país plural."
+              pt: "O tipo de lugar define a preposição: uma cidade, um país feminino, um país masculino ou um país plural."
+              de: "Die Art des Ortes bestimmt die Präposition: eine Stadt, ein feminines Land, ein maskulines Land oder ein Pluralland."
+              it: "Il tipo di luogo fissa la preposizione: una città, un paese femminile, un paese maschile o un paese plurale."
+              pl: "Rodzaj miejsca określa przyimek: miasto, kraj rodzaju żeńskiego, męskiego albo kraj w liczbie mnogiej."
+              tr: "Yerin türü edatı belirler: şehir, dişil ülke, eril ülke ya da çoğul ülke."
+              id: "Jenis tempat menentukan kata depan: kota, negara feminin, negara maskulin, atau negara jamak."
+              vi: "Loại địa danh quyết định giới từ: thành phố, nước giống cái, nước giống đực hoặc nước số nhiều."
+            ex: { examples: [["J’habite ", { target: "à" }, " Paris."], ["J’habite ", { target: "en" }, " Italie."], ["J’habite ", { target: "au" }, " Brésil."], ["J’habite ", { target: "aux" }, " Pays-Bas."]] }
+            tr: { en: { examples: ["I live in Paris.", "I live in Italy.", "I live in Brazil.", "I live in the Netherlands."] }, uk: { examples: ["Я живу в Парижі.", "Я живу в Італії.", "Я живу в Бразилії.", "Я живу в Нідерландах."] }, es: { examples: ["Vivo en París.", "Vivo en Italia.", "Vivo en Brasil.", "Vivo en los Países Bajos."] }, pt: { examples: ["Eu moro em Paris.", "Eu moro na Itália.", "Eu moro no Brasil.", "Eu moro nos Países Baixos."] }, de: { examples: ["Ich wohne in Paris.", "Ich wohne in Italien.", "Ich wohne in Brasilien.", "Ich wohne in den Niederlanden."] }, it: { examples: ["Abito a Parigi.", "Abito in Italia.", "Abito in Brasile.", "Abito nei Paesi Bassi."] }, pl: { examples: ["Mieszkam w Paryżu.", "Mieszkam we Włoszech.", "Mieszkam w Brazylii.", "Mieszkam w Holandii."] }, tr: { examples: ["Paris’te yaşıyorum.", "İtalya’da yaşıyorum.", "Brezilya’da yaşıyorum.", "Hollanda’da yaşıyorum."] }, id: { examples: ["Aku tinggal di Paris.", "Aku tinggal di Italia.", "Aku tinggal di Brasil.", "Aku tinggal di Belanda."] }, vi: { examples: ["Tôi sống ở Paris.", "Tôi sống ở Ý.", "Tôi sống ở Brazil.", "Tôi sống ở Hà Lan."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["La même préposition suit ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " et ", { term: "voyager" }, "."]
+              en: ["The same preposition follows ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " and ", { term: "voyager" }, "."]
+              uk: ["Той самий прийменник стоїть після ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " і ", { term: "voyager" }, "."]
+              es: ["La misma preposición sigue a ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " y ", { term: "voyager" }, "."]
+              pt: ["A mesma preposição acompanha ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " e ", { term: "voyager" }, "."]
+              de: ["Dieselbe Präposition steht nach ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " und ", { term: "voyager" }, "."]
+              it: ["La stessa preposizione segue ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " e ", { term: "voyager" }, "."]
+              pl: ["Ten sam przyimek występuje po ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " i ", { term: "voyager" }, "."]
+              tr: ["Aynı edat ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " ve ", { term: "voyager" }, " ile kullanılır."]
+              id: ["Kata depan yang sama mengikuti ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, ", dan ", { term: "voyager" }, "."]
+              vi: ["Cùng một giới từ đứng sau ", { term: "habiter" }, ", ", { term: "vivre" }, ", ", { term: "être" }, ", ", { term: "aller" }, " và ", { term: "voyager" }, "."]
+            ex: { examples: [["Je suis ", { target: "en" }, " Chine."], ["Je vais ", { target: "en" }, " Chine."]] }
+            tr: { en: { examples: ["I’m in China.", "I’m going to China."] }, uk: { examples: ["Я в Китаї.", "Я їду до Китаю."] }, es: { examples: ["Estoy en China.", "Voy a China."] }, pt: { examples: ["Eu estou na China.", "Eu vou para a China."] }, de: { examples: ["Ich bin in China.", "Ich fahre nach China."] }, it: { examples: ["Sono in Cina.", "Vado in Cina."] }, pl: { examples: ["Jestem w Chinach.", "Jadę do Chin."] }, tr: { examples: ["Çin’deyim.", "Çin’e gidiyorum."] }, id: { examples: ["Aku di Tiongkok.", "Aku pergi ke Tiongkok."] }, vi: { examples: ["Tôi ở Trung Quốc.", "Tôi đi Trung Quốc."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Pour dire d’où l’on vient, on emploie ", { term: "de" }, " après ", { term: "venir" }, ", ", { term: "être" }, " et ", { term: "partir" }, "."]
+              en: ["To say where you come from, use ", { term: "de" }, " after ", { term: "venir" }, ", ", { term: "être" }, " and ", { term: "partir" }, "."]
+              uk: ["Щоб сказати, звідки ти, вживають ", { term: "de" }, " після ", { term: "venir" }, ", ", { term: "être" }, " і ", { term: "partir" }, "."]
+              es: ["Para decir de dónde vienes, se usa ", { term: "de" }, " tras ", { term: "venir" }, ", ", { term: "être" }, " y ", { term: "partir" }, "."]
+              pt: ["Para dizer de onde se vem, usa-se ", { term: "de" }, " depois de ", { term: "venir" }, ", ", { term: "être" }, " e ", { term: "partir" }, "."]
+              de: ["Um zu sagen, woher man kommt, steht ", { term: "de" }, " nach ", { term: "venir" }, ", ", { term: "être" }, " und ", { term: "partir" }, "."]
+              it: ["Per dire da dove si viene, si usa ", { term: "de" }, " dopo ", { term: "venir" }, ", ", { term: "être" }, " e ", { term: "partir" }, "."]
+              pl: ["Aby powiedzieć, skąd ktoś pochodzi, używa się ", { term: "de" }, " po ", { term: "venir" }, ", ", { term: "être" }, " i ", { term: "partir" }, "."]
+              tr: ["Nereden geldiğini söylemek için ", { term: "venir" }, ", ", { term: "être" }, " ve ", { term: "partir" }, " fiillerinden sonra ", { term: "de" }, " kullanılır."]
+              id: ["Untuk menyatakan asal, dipakai ", { term: "de" }, " setelah ", { term: "venir" }, ", ", { term: "être" }, ", dan ", { term: "partir" }, "."]
+              vi: ["Để nói mình đến từ đâu, dùng ", { term: "de" }, " sau ", { term: "venir" }, ", ", { term: "être" }, " và ", { term: "partir" }, "."]
+            ex: { examples: [["Je viens ", { target: "de" }, " Lyon."], ["Elle est ", { target: "de" }, " Nice."], ["Il part ", { target: "de" }, " Paris."]] }
+            tr: { en: { examples: ["I come from Lyon.", "She’s from Nice.", "He’s leaving from Paris."] }, uk: { examples: ["Я родом із Ліона.", "Вона з Ніцци.", "Він вирушає з Парижа."] }, es: { examples: ["Vengo de Lyon.", "Ella es de Niza.", "Él sale de París."] }, pt: { examples: ["Eu venho de Lyon.", "Ela é de Nice.", "Ele parte de Paris."] }, de: { examples: ["Ich komme aus Lyon.", "Sie ist aus Nizza.", "Er fährt von Paris ab."] }, it: { examples: ["Vengo da Lione.", "Lei è di Nizza.", "Lui parte da Parigi."] }, pl: { examples: ["Pochodzę z Lyonu.", "Ona jest z Nicei.", "On wyjeżdża z Paryża."] }, tr: { examples: ["Lyon’danım.", "O, Nice’li.", "O, Paris’ten ayrılıyor."] }, id: { examples: ["Aku berasal dari Lyon.", "Dia dari Nice.", "Dia berangkat dari Paris."] }, vi: { examples: ["Tôi đến từ Lyon.", "Cô ấy là người Nice.", "Anh ấy khởi hành từ Paris."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: [{ term: "à" }, " et ", { term: "de" }, " se contractent avec ", { term: "le" }, " et ", { term: "les" }, " : ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Voir ", { link: "Les articles", to: "fr.nom-determinants.articles" }, "."]
+              en: [{ term: "à" }, " and ", { term: "de" }, " contract with ", { term: "le" }, " and ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". See ", { link: "Articles", to: "fr.nom-determinants.articles" }, "."]
+              uk: [{ term: "à" }, " і ", { term: "de" }, " зливаються з ", { term: "le" }, " і ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Див. ", { link: "Артиклі", to: "fr.nom-determinants.articles" }, "."]
+              es: [{ term: "à" }, " y ", { term: "de" }, " se contraen con ", { term: "le" }, " y ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Véase ", { link: "Los artículos", to: "fr.nom-determinants.articles" }, "."]
+              pt: [{ term: "à" }, " e ", { term: "de" }, " se contraem com ", { term: "le" }, " e ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Veja ", { link: "Os artigos", to: "fr.nom-determinants.articles" }, "."]
+              de: [{ term: "à" }, " und ", { term: "de" }, " verschmelzen mit ", { term: "le" }, " und ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Siehe ", { link: "Die Artikel", to: "fr.nom-determinants.articles" }, "."]
+              it: [{ term: "à" }, " e ", { term: "de" }, " si fondono con ", { term: "le" }, " e ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Vedi ", { link: "Gli articoli", to: "fr.nom-determinants.articles" }, "."]
+              pl: [{ term: "à" }, " i ", { term: "de" }, " zlewają się z ", { term: "le" }, " i ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Zob. ", { link: "Przedimki", to: "fr.nom-determinants.articles" }, "."]
+              tr: [{ term: "à" }, " ve ", { term: "de" }, ", ", { term: "le" }, " ve ", { term: "les" }, " ile kaynaşır: ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Bkz. ", { link: "Artikeller", to: "fr.nom-determinants.articles" }, "."]
+              id: [{ term: "à" }, " dan ", { term: "de" }, " menyatu dengan ", { term: "le" }, " dan ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Lihat ", { link: "Artikel", to: "fr.nom-determinants.articles" }, "."]
+              vi: [{ term: "à" }, " và ", { term: "de" }, " kết hợp với ", { term: "le" }, " và ", { term: "les" }, ": ", { term: "au" }, ", ", { term: "aux" }, ", ", { term: "du" }, ", ", { term: "des" }, ". Xem ", { link: "Mạo từ", to: "fr.nom-determinants.articles" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour les autres lieux (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, "), voir ", { link: "Les prépositions de lieu", to: "fr.prepositions.prepositions-lieu" }, "."]
+              en: ["For other places (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, "), see ", { link: "Prepositions of Place", to: fr.prepositions.prepositions-lieu }, "."]
+              uk: ["Про інші місця (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, ") див. ", { link: "Прийменники місця", to: "fr.prepositions.prepositions-lieu" }, "."]
+              es: ["Para otros lugares (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, "), véase ", { link: "Las preposiciones de lugar", to: "fr.prepositions.prepositions-lieu" }, "."]
+              pt: ["Para outros lugares (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, "), veja ", { link: "As preposições de lugar", to: "fr.prepositions.prepositions-lieu" }, "."]
+              de: ["Zu anderen Orten (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, ") siehe ", { link: "Die Ortspräpositionen", to: "fr.prepositions.prepositions-lieu" }, "."]
+              it: ["Per altri luoghi (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, "), vedi ", { link: "Le preposizioni di luogo", to: "fr.prepositions.prepositions-lieu" }, "."]
+              pl: ["O innych miejscach (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, ") zob. ", { link: "Przyimki miejsca", to: "fr.prepositions.prepositions-lieu" }, "."]
+              tr: ["Diğer yerler (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, ") için bkz. ", { link: "Yer edatları", to: "fr.prepositions.prepositions-lieu" }, "."]
+              id: ["Untuk tempat lain (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, "), lihat ", { link: "Kata depan tempat", to: "fr.prepositions.prepositions-lieu" }, "."]
+              vi: ["Về các nơi khác (", { term: "à la maison" }, ", ", { term: "chez" }, ", ", { term: "dans" }, "), xem ", { link: "Giới từ chỉ nơi chốn", to: "fr.prepositions.prepositions-lieu" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour les formes de ", { term: "aller" }, " et de ", { term: "venir" }, ", voir ", { link: "Le présent : les verbes irréguliers", to: fr.present.present-irreguliers }, "."]
+              en: ["For the forms of ", { term: "aller" }, " and ", { term: "venir" }, ", see ", { link: "Present Tense: Irregular Verbs", to: fr.present.present-irreguliers }, "."]
+              uk: ["Про форми ", { term: "aller" }, " і ", { term: "venir" }, " див. ", { link: "Теперішній час: неправильні дієслова", to: fr.present.present-irreguliers }, "."]
+              es: ["Para las formas de ", { term: "aller" }, " y ", { term: "venir" }, ", véase ", { link: "El presente: los verbos irregulares", to: fr.present.present-irreguliers }, "."]
+              pt: ["Para as formas de ", { term: "aller" }, " e ", { term: "venir" }, ", veja ", { link: "O presente: os verbos irregulares", to: fr.present.present-irreguliers }, "."]
+              de: ["Zu den Formen von ", { term: "aller" }, " und ", { term: "venir" }, " siehe ", { link: "Das Präsens: unregelmäßige Verben", to: fr.present.present-irreguliers }, "."]
+              it: ["Per le forme di ", { term: "aller" }, " e ", { term: "venir" }, ", vedi ", { link: "Il presente: i verbi irregolari", to: fr.present.present-irreguliers }, "."]
+              pl: ["O formach ", { term: "aller" }, " i ", { term: "venir" }, " zob. ", { link: "Czas teraźniejszy: czasowniki nieregularne", to: fr.present.present-irreguliers }, "."]
+              tr: [{ term: "aller" }, " ve ", { term: "venir" }, " fiillerinin biçimleri için bkz. ", { link: "Şimdiki zaman: düzensiz fiiller", to: fr.present.present-irreguliers }, "."]
+              id: ["Untuk bentuk ", { term: "aller" }, " dan ", { term: "venir" }, ", lihat ", { link: "Presens: kata kerja tidak beraturan", to: fr.present.present-irreguliers }, "."]
+              vi: ["Về các dạng của ", { term: "aller" }, " và ", { term: "venir" }, ", xem ", { link: "Thì hiện tại: động từ bất quy tắc", to: fr.present.present-irreguliers }, "."]
+  - title: { fr: "Les villes", en: "Cities", uk: "Міста", es: "Las ciudades", pt: "As cidades", de: "Die Städte", it: "Le città", pl: "Miasta", tr: "Şehirler", id: "Kota", vi: "Thành phố" }
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "key", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            key:
+              fr: ["Une ville : ", { term: "à" }, " (où) et ", { term: "de" }, " (d’où)"]
+              en: ["A city: ", { term: "à" }, " (where) and ", { term: "de" }, " (from where)"]
+              uk: ["Місто: ", { term: "à" }, " (де) і ", { term: "de" }, " (звідки)"]
+              es: ["Una ciudad: ", { term: "à" }, " (dónde) y ", { term: "de" }, " (de dónde)"]
+              pt: ["Uma cidade: ", { term: "à" }, " (onde) e ", { term: "de" }, " (de onde)"]
+              de: ["Eine Stadt: ", { term: "à" }, " (wo) und ", { term: "de" }, " (woher)"]
+              it: ["Una città: ", { term: "à" }, " (dove) e ", { term: "de" }, " (da dove)"]
+              pl: ["Miasto: ", { term: "à" }, " (gdzie) i ", { term: "de" }, " (skąd)"]
+              tr: ["Şehir: ", { term: "à" }, " (nerede) ve ", { term: "de" }, " (nereden)"]
+              id: ["Kota: ", { term: "à" }, " (di mana) dan ", { term: "de" }, " (dari mana)"]
+              vi: ["Thành phố: ", { term: "à" }, " (ở đâu) và ", { term: "de" }, " (từ đâu)"]
+            ex: { examples: [["Nous habitons ", { target: "à" }, " Madrid."], ["Elle vient ", { target: "de" }, " Londres."]] }
+            tr: { en: { examples: ["We live in Madrid.", "She comes from London."] }, uk: { examples: ["Ми живемо в Мадриді.", "Вона родом із Лондона."] }, es: { examples: ["Vivimos en Madrid.", "Ella viene de Londres."] }, pt: { examples: ["Nós moramos em Madri.", "Ela vem de Londres."] }, de: { examples: ["Wir wohnen in Madrid.", "Sie kommt aus London."] }, it: { examples: ["Abitiamo a Madrid.", "Lei viene da Londra."] }, pl: { examples: ["Mieszkamy w Madrycie.", "Ona pochodzi z Londynu."] }, tr: { examples: ["Madrid’de yaşıyoruz.", "O, Londra’dan geliyor."] }, id: { examples: ["Kami tinggal di Madrid.", "Dia berasal dari London."] }, vi: { examples: ["Chúng tôi sống ở Madrid.", "Cô ấy đến từ London."] } }
+          - level: "A1"
+            key:
+              fr: ["Une ville qui commence par une voyelle : ", { term: "d’" }]
+              en: ["A city that starts with a vowel: ", { term: "d’" }]
+              uk: ["Місто, що починається з голосної: ", { term: "d’" }]
+              es: ["Una ciudad que empieza por vocal: ", { term: "d’" }]
+              pt: ["Uma cidade que começa por vogal: ", { term: "d’" }]
+              de: ["Eine Stadt, die mit einem Vokal beginnt: ", { term: "d’" }]
+              it: ["Una città che inizia con una vocale: ", { term: "d’" }]
+              pl: ["Miasto zaczynające się od samogłoski: ", { term: "d’" }]
+              tr: ["Ünlüyle başlayan şehir: ", { term: "d’" }]
+              id: ["Kota yang diawali vokal: ", { term: "d’" }]
+              vi: ["Thành phố bắt đầu bằng nguyên âm: ", { term: "d’" }]
+            ex: { examples: [["Il vient ", { target: "d’" }, "Alger."], ["Elle vient ", { target: "d’" }, "Amsterdam."]] }
+            tr: { en: { examples: ["He comes from Algiers.", "She comes from Amsterdam."] }, uk: { examples: ["Він родом з Алжира.", "Вона родом з Амстердама."] }, es: { examples: ["Él viene de Argel.", "Ella viene de Ámsterdam."] }, pt: { examples: ["Ele vem de Argel.", "Ela vem de Amsterdã."] }, de: { examples: ["Er kommt aus Algier.", "Sie kommt aus Amsterdam."] }, it: { examples: ["Lui viene da Algeri.", "Lei viene da Amsterdam."] }, pl: { examples: ["On pochodzi z Algieru.", "Ona pochodzi z Amsterdamu."] }, tr: { examples: ["O, Cezayir’den geliyor.", "O, Amsterdam’dan geliyor."] }, id: { examples: ["Dia berasal dari Aljir.", "Dia berasal dari Amsterdam."] }, vi: { examples: ["Anh ấy đến từ Algiers.", "Cô ấy đến từ Amsterdam."] } }
+          - level: "A2"
+            key:
+              fr: ["Une ville avec un article : ", { term: "au" }, " et ", { term: "du" }]
+              en: ["A city with an article: ", { term: "au" }, " and ", { term: "du" }]
+              uk: ["Місто з артиклем: ", { term: "au" }, " і ", { term: "du" }]
+              es: ["Una ciudad con artículo: ", { term: "au" }, " y ", { term: "du" }]
+              pt: ["Uma cidade com artigo: ", { term: "au" }, " e ", { term: "du" }]
+              de: ["Eine Stadt mit Artikel: ", { term: "au" }, " und ", { term: "du" }]
+              it: ["Una città con articolo: ", { term: "au" }, " e ", { term: "du" }]
+              pl: ["Miasto z przedimkiem: ", { term: "au" }, " i ", { term: "du" }]
+              tr: ["Artikelli şehir: ", { term: "au" }, " ve ", { term: "du" }]
+              id: ["Kota dengan artikel: ", { term: "au" }, " dan ", { term: "du" }]
+              vi: ["Thành phố có mạo từ: ", { term: "au" }, " và ", { term: "du" }]
+            ex: { examples: [["Nous allons ", { target: "au" }, " Caire."], ["Ils viennent ", { target: "du" }, " Havre."]] }
+            tr: { en: { examples: ["We’re going to Cairo.", "They come from Le Havre."] }, uk: { examples: ["Ми їдемо до Каїра.", "Вони родом із Гавра."] }, es: { examples: ["Vamos a El Cairo.", "Vienen de Le Havre."] }, pt: { examples: ["Nós vamos ao Cairo.", "Eles vêm de Le Havre."] }, de: { examples: ["Wir fahren nach Kairo.", "Sie kommen aus Le Havre."] }, it: { examples: ["Andiamo al Cairo.", "Vengono da Le Havre."] }, pl: { examples: ["Jedziemy do Kairu.", "Oni pochodzą z Hawru."] }, tr: { examples: ["Kahire’ye gidiyoruz.", "Onlar Le Havre’lı."] }, id: { examples: ["Kami pergi ke Kairo.", "Mereka berasal dari Le Havre."] }, vi: { examples: ["Chúng tôi đi Cairo.", "Họ đến từ Le Havre."] } }
+          - level: "A2"
+            key:
+              fr: ["Une ville avec ", { term: "La" }, " : ", { term: "à" }, " et ", { term: "de" }, " gardent ", { term: "La" }]
+              en: ["A city with ", { term: "La" }, ": ", { term: "à" }, " and ", { term: "de" }, " keep ", { term: "La" }]
+              uk: ["Місто з ", { term: "La" }, ": ", { term: "à" }, " і ", { term: "de" }, " зберігають ", { term: "La" }]
+              es: ["Una ciudad con ", { term: "La" }, ": ", { term: "à" }, " y ", { term: "de" }, " conservan ", { term: "La" }]
+              pt: ["Uma cidade com ", { term: "La" }, ": ", { term: "à" }, " e ", { term: "de" }, " mantêm ", { term: "La" }]
+              de: ["Eine Stadt mit ", { term: "La" }, ": ", { term: "à" }, " und ", { term: "de" }, " behalten ", { term: "La" }]
+              it: ["Una città con ", { term: "La" }, ": ", { term: "à" }, " e ", { term: "de" }, " mantengono ", { term: "La" }]
+              pl: ["Miasto z ", { term: "La" }, ": ", { term: "à" }, " i ", { term: "de" }, " zachowują ", { term: "La" }]
+              tr: [{ term: "La" }, " ile başlayan şehir: ", { term: "à" }, " ve ", { term: "de" }, " ", { term: "La" }, "’yı korur"]
+              id: ["Kota dengan ", { term: "La" }, ": ", { term: "à" }, " dan ", { term: "de" }, " mempertahankan ", { term: "La" }]
+              vi: ["Thành phố có ", { term: "La" }, ": ", { term: "à" }, " và ", { term: "de" }, " giữ nguyên ", { term: "La" }]
+            ex: { examples: [["Elle habite ", { target: "à" }, " La Rochelle."], ["Je viens ", { target: "de" }, " La Rochelle."]] }
+            tr: { en: { examples: ["She lives in La Rochelle.", "I come from La Rochelle."] }, uk: { examples: ["Вона живе в Ла-Рошелі.", "Я родом із Ла-Рошелі."] }, es: { examples: ["Ella vive en La Rochelle.", "Vengo de La Rochelle."] }, pt: { examples: ["Ela mora em La Rochelle.", "Eu venho de La Rochelle."] }, de: { examples: ["Sie wohnt in La Rochelle.", "Ich komme aus La Rochelle."] }, it: { examples: ["Lei abita a La Rochelle.", "Vengo da La Rochelle."] }, pl: { examples: ["Ona mieszka w La Rochelle.", "Pochodzę z La Rochelle."] }, tr: { examples: ["O, La Rochelle’de yaşıyor.", "La Rochelle’denim."] }, id: { examples: ["Dia tinggal di La Rochelle.", "Aku berasal dari La Rochelle."] }, vi: { examples: ["Cô ấy sống ở La Rochelle.", "Tôi đến từ La Rochelle."] } }
+  - title:
+      fr: "Les pays et les continents"
+      en: "Countries and continents"
+      uk: "Країни та континенти"
+      es: "Los países y los continentes"
+      pt: "Os países e os continentes"
+      de: "Länder und Kontinente"
+      it: "I paesi e i continenti"
+      pl: "Kraje i kontynenty"
+      tr: "Ülkeler ve kıtalar"
+      id: "Negara dan benua"
+      vi: "Quốc gia và châu lục"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "key", label: { fr: "Type", en: "Type", uk: "Тип", es: "Tipo", pt: "Tipo", de: "Typ", it: "Tipo", pl: "Rodzaj", tr: "Tür", id: "Jenis", vi: "Loại" } }
+          - key: "use"
+            label:
+              fr: "Où ? et d’où ?"
+              en: "Where? and from where?"
+              uk: "Де? і звідки?"
+              es: "¿Dónde? y ¿de dónde?"
+              pt: "Onde? e de onde?"
+              de: "Wo? und woher?"
+              it: "Dove? e da dove?"
+              pl: "Gdzie? i skąd?"
+              tr: "Nerede? ve nereden?"
+              id: "Di mana? dan dari mana?"
+              vi: "Ở đâu? và từ đâu?"
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            key:
+              fr: ["Pays féminin : ", { term: "la France" }]
+              en: ["Feminine country: ", { term: "la France" }]
+              uk: ["Країна жіночого роду: ", { term: "la France" }]
+              es: ["País femenino: ", { term: "la France" }]
+              pt: ["País feminino: ", { term: "la France" }]
+              de: ["Feminines Land: ", { term: "la France" }]
+              it: ["Paese femminile: ", { term: "la France" }]
+              pl: ["Kraj rodzaju żeńskiego: ", { term: "la France" }]
+              tr: ["Dişil ülke: ", { term: "la France" }]
+              id: ["Negara feminin: ", { term: "la France" }]
+              vi: ["Nước giống cái: ", { term: "la France" }]
+            use:
+              fr: { alternatives: [{ target: "en" }, { target: "de" }] }
+              en: { alternatives: [{ target: "en" }, { target: "de" }] }
+              uk: { alternatives: [{ target: "en" }, { target: "de" }] }
+              es: { alternatives: [{ target: "en" }, { target: "de" }] }
+              pt: { alternatives: [{ target: "en" }, { target: "de" }] }
+              de: { alternatives: [{ target: "en" }, { target: "de" }] }
+              it: { alternatives: [{ target: "en" }, { target: "de" }] }
+              pl: { alternatives: [{ target: "en" }, { target: "de" }] }
+              tr: { alternatives: [{ target: "en" }, { target: "de" }] }
+              id: { alternatives: [{ target: "en" }, { target: "de" }] }
+              vi: { alternatives: [{ target: "en" }, { target: "de" }] }
+            ex: { examples: [["Je suis ", { target: "en" }, " France."], ["Je viens ", { target: "de" }, " France."]] }
+            tr: { en: { examples: ["I’m in France.", "I come from France."] }, uk: { examples: ["Я у Франції.", "Я родом із Франції."] }, es: { examples: ["Estoy en Francia.", "Vengo de Francia."] }, pt: { examples: ["Eu estou na França.", "Eu venho da França."] }, de: { examples: ["Ich bin in Frankreich.", "Ich komme aus Frankreich."] }, it: { examples: ["Sono in Francia.", "Vengo dalla Francia."] }, pl: { examples: ["Jestem we Francji.", "Pochodzę z Francji."] }, tr: { examples: ["Fransa’dayım.", "Fransa’dan geliyorum."] }, id: { examples: ["Aku di Prancis.", "Aku berasal dari Prancis."] }, vi: { examples: ["Tôi ở Pháp.", "Tôi đến từ Pháp."] } }
+          - level: "A1"
+            key:
+              fr: ["Pays féminin avec voyelle : ", { term: "l’Italie" }]
+              en: ["Feminine country with a vowel: ", { term: "l’Italie" }]
+              uk: ["Країна жіночого роду з голосною: ", { term: "l’Italie" }]
+              es: ["País femenino con vocal: ", { term: "l’Italie" }]
+              pt: ["País feminino com vogal: ", { term: "l’Italie" }]
+              de: ["Feminines Land mit Vokal: ", { term: "l’Italie" }]
+              it: ["Paese femminile con vocale: ", { term: "l’Italie" }]
+              pl: ["Kraj rodzaju żeńskiego z samogłoską: ", { term: "l’Italie" }]
+              tr: ["Ünlülü dişil ülke: ", { term: "l’Italie" }]
+              id: ["Negara feminin berawalan vokal: ", { term: "l’Italie" }]
+              vi: ["Nước giống cái bắt đầu bằng nguyên âm: ", { term: "l’Italie" }]
+            use:
+              fr: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              en: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              uk: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              es: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              pt: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              de: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              it: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              pl: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              tr: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              id: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              vi: { alternatives: [{ target: "en" }, { target: "d’" }] }
+            ex: { examples: [["Elle habite ", { target: "en" }, " Italie."], ["Elle vient ", { target: "d’" }, "Italie."]] }
+            tr: { en: { examples: ["She lives in Italy.", "She comes from Italy."] }, uk: { examples: ["Вона живе в Італії.", "Вона родом з Італії."] }, es: { examples: ["Vive en Italia.", "Viene de Italia."] }, pt: { examples: ["Ela mora na Itália.", "Ela vem da Itália."] }, de: { examples: ["Sie wohnt in Italien.", "Sie kommt aus Italien."] }, it: { examples: ["Abita in Italia.", "Viene dall’Italia."] }, pl: { examples: ["Mieszka we Włoszech.", "Pochodzi z Włoch."] }, tr: { examples: ["İtalya’da yaşıyor.", "İtalya’dan geliyor."] }, id: { examples: ["Dia tinggal di Italia.", "Dia berasal dari Italia."] }, vi: { examples: ["Cô ấy sống ở Ý.", "Cô ấy đến từ Ý."] } }
+          - level: "A1"
+            key:
+              fr: ["Pays masculin : ", { term: "le Canada" }]
+              en: ["Masculine country: ", { term: "le Canada" }]
+              uk: ["Країна чоловічого роду: ", { term: "le Canada" }]
+              es: ["País masculino: ", { term: "le Canada" }]
+              pt: ["País masculino: ", { term: "le Canada" }]
+              de: ["Maskulines Land: ", { term: "le Canada" }]
+              it: ["Paese maschile: ", { term: "le Canada" }]
+              pl: ["Kraj rodzaju męskiego: ", { term: "le Canada" }]
+              tr: ["Eril ülke: ", { term: "le Canada" }]
+              id: ["Negara maskulin: ", { term: "le Canada" }]
+              vi: ["Nước giống đực: ", { term: "le Canada" }]
+            use:
+              fr: { alternatives: [{ target: "au" }, { target: "du" }] }
+              en: { alternatives: [{ target: "au" }, { target: "du" }] }
+              uk: { alternatives: [{ target: "au" }, { target: "du" }] }
+              es: { alternatives: [{ target: "au" }, { target: "du" }] }
+              pt: { alternatives: [{ target: "au" }, { target: "du" }] }
+              de: { alternatives: [{ target: "au" }, { target: "du" }] }
+              it: { alternatives: [{ target: "au" }, { target: "du" }] }
+              pl: { alternatives: [{ target: "au" }, { target: "du" }] }
+              tr: { alternatives: [{ target: "au" }, { target: "du" }] }
+              id: { alternatives: [{ target: "au" }, { target: "du" }] }
+              vi: { alternatives: [{ target: "au" }, { target: "du" }] }
+            ex: { examples: [["Il habite ", { target: "au" }, " Canada."], ["Il vient ", { target: "du" }, " Canada."]] }
+            tr: { en: { examples: ["He lives in Canada.", "He comes from Canada."] }, uk: { examples: ["Він живе в Канаді.", "Він родом із Канади."] }, es: { examples: ["Vive en Canadá.", "Viene de Canadá."] }, pt: { examples: ["Ele mora no Canadá.", "Ele vem do Canadá."] }, de: { examples: ["Er wohnt in Kanada.", "Er kommt aus Kanada."] }, it: { examples: ["Abita in Canada.", "Viene dal Canada."] }, pl: { examples: ["Mieszka w Kanadzie.", "Pochodzi z Kanady."] }, tr: { examples: ["Kanada’da yaşıyor.", "Kanada’dan geliyor."] }, id: { examples: ["Dia tinggal di Kanada.", "Dia berasal dari Kanada."] }, vi: { examples: ["Anh ấy sống ở Canada.", "Anh ấy đến từ Canada."] } }
+          - level: "A1"
+            key:
+              fr: ["Pays pluriel : ", { term: "les États-Unis" }]
+              en: ["Plural country: ", { term: "les États-Unis" }]
+              uk: ["Країна в множині: ", { term: "les États-Unis" }]
+              es: ["País plural: ", { term: "les États-Unis" }]
+              pt: ["País plural: ", { term: "les États-Unis" }]
+              de: ["Pluralland: ", { term: "les États-Unis" }]
+              it: ["Paese plurale: ", { term: "les États-Unis" }]
+              pl: ["Kraj w liczbie mnogiej: ", { term: "les États-Unis" }]
+              tr: ["Çoğul ülke: ", { term: "les États-Unis" }]
+              id: ["Negara jamak: ", { term: "les États-Unis" }]
+              vi: ["Nước số nhiều: ", { term: "les États-Unis" }]
+            use:
+              fr: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              en: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              uk: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              es: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              pt: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              de: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              it: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              pl: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              tr: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              id: { alternatives: [{ target: "aux" }, { target: "des" }] }
+              vi: { alternatives: [{ target: "aux" }, { target: "des" }] }
+            ex: { examples: [["Nous habitons ", { target: "aux" }, " États-Unis."], ["Nous venons ", { target: "des" }, " États-Unis."]] }
+            tr: { en: { examples: ["We live in the United States.", "We come from the United States."] }, uk: { examples: ["Ми живемо в США.", "Ми родом зі США."] }, es: { examples: ["Vivimos en Estados Unidos.", "Venimos de Estados Unidos."] }, pt: { examples: ["Nós moramos nos Estados Unidos.", "Nós viemos dos Estados Unidos."] }, de: { examples: ["Wir wohnen in den USA.", "Wir kommen aus den USA."] }, it: { examples: ["Abitiamo negli Stati Uniti.", "Veniamo dagli Stati Uniti."] }, pl: { examples: ["Mieszkamy w Stanach Zjednoczonych.", "Pochodzimy ze Stanów Zjednoczonych."] }, tr: { examples: ["Amerika Birleşik Devletleri’nde yaşıyoruz.", "Amerika Birleşik Devletleri’nden geliyoruz."] }, id: { examples: ["Kami tinggal di Amerika Serikat.", "Kami berasal dari Amerika Serikat."] }, vi: { examples: ["Chúng tôi sống ở Hoa Kỳ.", "Chúng tôi đến từ Hoa Kỳ."] } }
+          - level: "A2"
+            key:
+              fr: ["Pays masculin avec voyelle : ", { term: "l’Iran" }]
+              en: ["Masculine country with a vowel: ", { term: "l’Iran" }]
+              uk: ["Країна чоловічого роду з голосною: ", { term: "l’Iran" }]
+              es: ["País masculino con vocal: ", { term: "l’Iran" }]
+              pt: ["País masculino com vogal: ", { term: "l’Iran" }]
+              de: ["Maskulines Land mit Vokal: ", { term: "l’Iran" }]
+              it: ["Paese maschile con vocale: ", { term: "l’Iran" }]
+              pl: ["Kraj rodzaju męskiego z samogłoską: ", { term: "l’Iran" }]
+              tr: ["Ünlülü eril ülke: ", { term: "l’Iran" }]
+              id: ["Negara maskulin berawalan vokal: ", { term: "l’Iran" }]
+              vi: ["Nước giống đực bắt đầu bằng nguyên âm: ", { term: "l’Iran" }]
+            use:
+              fr: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              en: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              uk: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              es: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              pt: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              de: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              it: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              pl: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              tr: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              id: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              vi: { alternatives: [{ target: "en" }, { target: "d’" }] }
+            ex: { examples: [["Il habite ", { target: "en" }, " Iran."], ["Elle vient ", { target: "d’" }, "Israël."]] }
+            tr: { en: { examples: ["He lives in Iran.", "She comes from Israel."] }, uk: { examples: ["Він живе в Ірані.", "Вона родом з Ізраїлю."] }, es: { examples: ["Vive en Irán.", "Ella viene de Israel."] }, pt: { examples: ["Ele mora no Irã.", "Ela vem de Israel."] }, de: { examples: ["Er wohnt im Iran.", "Sie kommt aus Israel."] }, it: { examples: ["Abita in Iran.", "Lei viene da Israele."] }, pl: { examples: ["Mieszka w Iranie.", "Ona pochodzi z Izraela."] }, tr: { examples: ["İran’da yaşıyor.", "O, İsrail’den geliyor."] }, id: { examples: ["Dia tinggal di Iran.", "Dia berasal dari Israel."] }, vi: { examples: ["Anh ấy sống ở Iran.", "Cô ấy đến từ Israel."] } }
+          - level: "A2"
+            key:
+              fr: ["Continent : ", { term: "l’Europe" }]
+              en: ["Continent: ", { term: "l’Europe" }]
+              uk: ["Континент: ", { term: "l’Europe" }]
+              es: ["Continente: ", { term: "l’Europe" }]
+              pt: ["Continente: ", { term: "l’Europe" }]
+              de: ["Kontinent: ", { term: "l’Europe" }]
+              it: ["Continente: ", { term: "l’Europe" }]
+              pl: ["Kontynent: ", { term: "l’Europe" }]
+              tr: ["Kıta: ", { term: "l’Europe" }]
+              id: ["Benua: ", { term: "l’Europe" }]
+              vi: ["Châu lục: ", { term: "l’Europe" }]
+            use:
+              fr: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              en: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              uk: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              es: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              pt: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              de: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              it: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              pl: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              tr: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              id: { alternatives: [{ target: "en" }, { target: "d’" }] }
+              vi: { alternatives: [{ target: "en" }, { target: "d’" }] }
+            ex: { examples: [["Ils habitent ", { target: "en" }, " Europe."], ["Elle vient ", { target: "d’" }, "Asie."]] }
+            tr: { en: { examples: ["They live in Europe.", "She comes from Asia."] }, uk: { examples: ["Вони живуть у Європі.", "Вона родом з Азії."] }, es: { examples: ["Viven en Europa.", "Ella viene de Asia."] }, pt: { examples: ["Eles moram na Europa.", "Ela vem da Ásia."] }, de: { examples: ["Sie wohnen in Europa.", "Sie kommt aus Asien."] }, it: { examples: ["Abitano in Europa.", "Lei viene dall’Asia."] }, pl: { examples: ["Mieszkają w Europie.", "Ona pochodzi z Azji."] }, tr: { examples: ["Avrupa’da yaşıyorlar.", "O, Asya’dan geliyor."] }, id: { examples: ["Mereka tinggal di Eropa.", "Dia berasal dari Asia."] }, vi: { examples: ["Họ sống ở châu Âu.", "Cô ấy đến từ châu Á."] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Un pays dont le nom se termine par ", { term: "-e" }, " est féminin : ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              en: ["A country whose name ends in ", { term: "-e" }, " is feminine: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              uk: ["Країна, назва якої закінчується на ", { term: "-e" }, ", жіночого роду: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              es: ["Un país cuyo nombre termina en ", { term: "-e" }, " es femenino: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              pt: ["Um país cujo nome termina em ", { term: "-e" }, " é feminino: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              de: ["Ein Land, dessen Name auf ", { term: "-e" }, " endet, ist feminin: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              it: ["Un paese il cui nome finisce in ", { term: "-e" }, " è femminile: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              pl: ["Kraj, którego nazwa kończy się na ", { term: "-e" }, ", jest rodzaju żeńskiego: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              tr: ["Adı ", { term: "-e" }, " ile biten ülke dişildir: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              id: ["Negara yang namanya berakhiran ", { term: "-e" }, " adalah feminin: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+              vi: ["Nước có tên kết thúc bằng ", { term: "-e" }, " là giống cái: ", { term: "la France" }, ", ", { term: "l’Espagne" }, ", ", { term: "la Chine" }, "."]
+            ex: { examples: [["Ma tante habite ", { target: "en" }, " Espagne."], ["Je voyage ", { target: "en" }, " Chine."]] }
+            tr: { en: { examples: ["My aunt lives in Spain.", "I’m travelling in China."] }, uk: { examples: ["Моя тітка живе в Іспанії.", "Я подорожую Китаєм."] }, es: { examples: ["Mi tía vive en España.", "Viajo por China."] }, pt: { examples: ["Minha tia mora na Espanha.", "Eu viajo pela China."] }, de: { examples: ["Meine Tante wohnt in Spanien.", "Ich reise durch China."] }, it: { examples: ["Mia zia abita in Spagna.", "Viaggio in Cina."] }, pl: { examples: ["Moja ciocia mieszka w Hiszpanii.", "Podróżuję po Chinach."] }, tr: { examples: ["Teyzem İspanya’da yaşıyor.", "Çin’de seyahat ediyorum."] }, id: { examples: ["Bibiku tinggal di Spanyol.", "Aku bepergian di Tiongkok."] }, vi: { examples: ["Dì của tôi sống ở Tây Ban Nha.", "Tôi đi du lịch ở Trung Quốc."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour le genre des noms en général, voir ", { link: "Le genre des noms", to: fr.nom-determinants.genre }, "."]
+              en: ["For the gender of nouns in general, see ", { link: "Noun Gender", to: fr.nom-determinants.genre }, "."]
+              uk: ["Про рід іменників загалом див. ", { link: "Рід іменників", to: fr.nom-determinants.genre }, "."]
+              es: ["Para el género de los nombres en general, véase ", { link: "El género de los sustantivos", to: fr.nom-determinants.genre }, "."]
+              pt: ["Para o gênero dos substantivos em geral, veja ", { link: "O gênero dos substantivos", to: fr.nom-determinants.genre }, "."]
+              de: ["Zum Genus der Nomen allgemein siehe ", { link: "Das Genus der Nomen", to: fr.nom-determinants.genre }, "."]
+              it: ["Per il genere dei nomi in generale, vedi ", { link: "Il genere dei nomi", to: fr.nom-determinants.genre }, "."]
+              pl: ["O rodzaju rzeczowników w ogóle zob. ", { link: "Rodzaj rzeczowników", to: fr.nom-determinants.genre }, "."]
+              tr: ["İsimlerin cinsiyeti için genel olarak bkz. ", { link: "İsimlerin cinsiyeti", to: fr.nom-determinants.genre }, "."]
+              id: ["Untuk gender kata benda secara umum, lihat ", { link: "Gender kata benda", to: fr.nom-determinants.genre }, "."]
+              vi: ["Về giống của danh từ nói chung, xem ", { link: "Giống của danh từ", to: fr.nom-determinants.genre }, "."]
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Les autres pays sont masculins : ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              en: ["Other countries are masculine: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              uk: ["Решта країн чоловічого роду: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              es: ["Los demás países son masculinos: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              pt: ["Os demais países são masculinos: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              de: ["Die übrigen Länder sind maskulin: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              it: ["Gli altri paesi sono maschili: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              pl: ["Pozostałe kraje są rodzaju męskiego: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              tr: ["Diğer ülkeler erildir: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              id: ["Negara lainnya maskulin: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+              vi: ["Các nước còn lại là giống đực: ", { term: "le Canada" }, ", ", { term: "le Japon" }, ", ", { term: "le Brésil" }, "."]
+            ex: { examples: [["Mon frère travaille ", { target: "au" }, " Brésil."], ["Nous allons ", { target: "au" }, " Portugal."]] }
+            tr: { en: { examples: ["My brother works in Brazil.", "We’re going to Portugal."] }, uk: { examples: ["Мій брат працює в Бразилії.", "Ми їдемо до Португалії."] }, es: { examples: ["Mi hermano trabaja en Brasil.", "Vamos a Portugal."] }, pt: { examples: ["Meu irmão trabalha no Brasil.", "Nós vamos para Portugal."] }, de: { examples: ["Mein Bruder arbeitet in Brasilien.", "Wir fahren nach Portugal."] }, it: { examples: ["Mio fratello lavora in Brasile.", "Andiamo in Portogallo."] }, pl: { examples: ["Mój brat pracuje w Brazylii.", "Jedziemy do Portugalii."] }, tr: { examples: ["Erkek kardeşim Brezilya’da çalışıyor.", "Portekiz’e gidiyoruz."] }, id: { examples: ["Kakakku bekerja di Brasil.", "Kami pergi ke Portugal."] }, vi: { examples: ["Anh trai tôi làm việc ở Brazil.", "Chúng tôi đi Bồ Đào Nha."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: ["Quelques pays en ", { term: "-e" }, " sont masculins : ", { term: "le Mexique" }, " et ", { term: "le Cambodge" }, "."]
+              en: ["A few countries in ", { term: "-e" }, " are masculine: ", { term: "le Mexique" }, " and ", { term: "le Cambodge" }, "."]
+              uk: ["Кілька країн на ", { term: "-e" }, " чоловічого роду: ", { term: "le Mexique" }, " і ", { term: "le Cambodge" }, "."]
+              es: ["Unos pocos países en ", { term: "-e" }, " son masculinos: ", { term: "le Mexique" }, " y ", { term: "le Cambodge" }, "."]
+              pt: ["Alguns países em ", { term: "-e" }, " são masculinos: ", { term: "le Mexique" }, " e ", { term: "le Cambodge" }, "."]
+              de: ["Einige Länder auf ", { term: "-e" }, " sind maskulin: ", { term: "le Mexique" }, " und ", { term: "le Cambodge" }, "."]
+              it: ["Alcuni paesi in ", { term: "-e" }, " sono maschili: ", { term: "le Mexique" }, " e ", { term: "le Cambodge" }, "."]
+              pl: ["Kilka krajów na ", { term: "-e" }, " jest rodzaju męskiego: ", { term: "le Mexique" }, " i ", { term: "le Cambodge" }, "."]
+              tr: [{ term: "-e" }, " ile biten bazı ülkeler erildir: ", { term: "le Mexique" }, " ve ", { term: "le Cambodge" }, "."]
+              id: ["Beberapa negara berakhiran ", { term: "-e" }, " adalah maskulin: ", { term: "le Mexique" }, " dan ", { term: "le Cambodge" }, "."]
+              vi: ["Một vài nước tận cùng bằng ", { term: "-e" }, " là giống đực: ", { term: "le Mexique" }, " và ", { term: "le Cambodge" }, "."]
+            ex: { examples: [["Il habite ", { target: "au" }, " Mexique."], ["Elle vient ", { target: "du" }, " Cambodge."]] }
+            tr: { en: { examples: ["He lives in Mexico.", "She comes from Cambodia."] }, uk: { examples: ["Він живе в Мексиці.", "Вона родом із Камбоджі."] }, es: { examples: ["Vive en México.", "Ella viene de Camboya."] }, pt: { examples: ["Ele mora no México.", "Ela vem do Camboja."] }, de: { examples: ["Er wohnt in Mexiko.", "Sie kommt aus Kambodscha."] }, it: { examples: ["Abita in Messico.", "Lei viene dalla Cambogia."] }, pl: { examples: ["Mieszka w Meksyku.", "Ona pochodzi z Kambodży."] }, tr: { examples: ["Meksika’da yaşıyor.", "O, Kamboçya’dan geliyor."] }, id: { examples: ["Dia tinggal di Meksiko.", "Dia berasal dari Kamboja."] }, vi: { examples: ["Anh ấy sống ở Mexico.", "Cô ấy đến từ Campuchia."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: ["Les États américains suivent le même schéma : ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              en: ["US states follow the same pattern: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              uk: ["Штати США підпорядковуються тій самій схемі: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              es: ["Los estados de EE. UU. siguen el mismo esquema: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              pt: ["Os estados dos EUA seguem o mesmo esquema: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              de: ["Die US-Bundesstaaten folgen demselben Muster: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              it: ["Gli stati americani seguono lo stesso schema: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              pl: ["Stany USA podlegają temu samemu schematowi: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              tr: ["ABD eyaletleri de aynı düzeni izler: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              id: ["Negara bagian AS mengikuti pola yang sama: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+              vi: ["Các bang của Hoa Kỳ theo cùng một quy tắc: ", { term: "en Californie" }, ", ", { term: "en Floride" }, ", ", { term: "au Texas" }, "."]
+            ex: { examples: [["Mes cousins habitent ", { target: "en" }, " Floride."], ["Elle travaille ", { target: "au" }, " Texas."]] }
+            tr: { en: { examples: ["My cousins live in Florida.", "She works in Texas."] }, uk: { examples: ["Мої двоюрідні брати живуть у Флориді.", "Вона працює в Техасі."] }, es: { examples: ["Mis primos viven en Florida.", "Ella trabaja en Texas."] }, pt: { examples: ["Meus primos moram na Flórida.", "Ela trabalha no Texas."] }, de: { examples: ["Meine Cousins wohnen in Florida.", "Sie arbeitet in Texas."] }, it: { examples: ["I miei cugini abitano in Florida.", "Lei lavora in Texas."] }, pl: { examples: ["Moi kuzyni mieszkają na Florydzie.", "Ona pracuje w Teksasie."] }, tr: { examples: ["Kuzenlerim Florida’da yaşıyor.", "O, Teksas’ta çalışıyor."] }, id: { examples: ["Sepupu-sepupuku tinggal di Florida.", "Dia bekerja di Texas."] }, vi: { examples: ["Các anh em họ của tôi sống ở Florida.", "Cô ấy làm việc ở Texas."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: ["Les îles prennent le plus souvent ", { term: "à" }, " sans article : ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, " ; quelques-unes prennent ", { term: "en" }, " : ", { term: "en Corse" }, "."]
+              en: ["Islands mostly take ", { term: "à" }, " with no article: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; a few take ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              uk: ["Острови здебільшого вимагають ", { term: "à" }, " без артикля: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; деякі — ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              es: ["Las islas llevan casi siempre ", { term: "à" }, " sin artículo: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; algunas llevan ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              pt: ["As ilhas levam quase sempre ", { term: "à" }, " sem artigo: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; algumas levam ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              de: ["Inseln stehen meist mit ", { term: "à" }, " ohne Artikel: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; einige mit ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              it: ["Le isole vogliono quasi sempre ", { term: "à" }, " senza articolo: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; alcune vogliono ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              pl: ["Wyspy najczęściej łączą się z ", { term: "à" }, " bez przedimka: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; niektóre z ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              tr: ["Adalar çoğunlukla artikelsiz ", { term: "à" }, " alır: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; bazıları ", { term: "en" }, " alır: ", { term: "en Corse" }, "."]
+              id: ["Pulau paling sering memakai ", { term: "à" }, " tanpa artikel: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; beberapa memakai ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+              vi: ["Đảo thường đi với ", { term: "à" }, " và không có mạo từ: ", { term: "à Cuba" }, ", ", { term: "à Malte" }, ", ", { term: "à Madagascar" }, "; một vài đảo đi với ", { term: "en" }, ": ", { term: "en Corse" }, "."]
+            ex: { examples: [["Ils passent leurs vacances ", { target: "à" }, " Malte."], ["Nous allons ", { target: "en" }, " Corse."]] }
+            tr: { en: { examples: ["They spend their holidays in Malta.", "We’re going to Corsica."] }, uk: { examples: ["Вони проводять відпустку на Мальті.", "Ми їдемо на Корсику."] }, es: { examples: ["Pasan las vacaciones en Malta.", "Vamos a Córcega."] }, pt: { examples: ["Eles passam as férias em Malta.", "Nós vamos para a Córsega."] }, de: { examples: ["Sie verbringen ihren Urlaub auf Malta.", "Wir fahren nach Korsika."] }, it: { examples: ["Passano le vacanze a Malta.", "Andiamo in Corsica."] }, pl: { examples: ["Spędzają wakacje na Malcie.", "Jedziemy na Korsykę."] }, tr: { examples: ["Tatillerini Malta’da geçiriyorlar.", "Korsika’ya gidiyoruz."] }, id: { examples: ["Mereka berlibur di Malta.", "Kami pergi ke Korsika."] }, vi: { examples: ["Họ nghỉ lễ ở Malta.", "Chúng tôi đi Corse."] } }
+  - title:
+      fr: "Le Canada et le Québec"
+      en: "Canada and Québec"
+      uk: "Канада й Квебек"
+      es: "Canadá y Quebec"
+      pt: "Canadá e Quebec"
+      de: "Kanada und Québec"
+      it: "Canada e Québec"
+      pl: "Kanada i Quebec"
+      tr: "Kanada ve Québec"
+      id: "Kanada dan Quebec"
+      vi: "Canada và Québec"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "key", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            key:
+              fr: [{ term: "au Québec" }, " : la province ; ", { term: "à Québec" }, " : la ville"]
+              en: [{ term: "au Québec" }, ": the province; ", { term: "à Québec" }, ": the city"]
+              uk: [{ term: "au Québec" }, ": провінція; ", { term: "à Québec" }, ": місто"]
+              es: [{ term: "au Québec" }, ": la provincia; ", { term: "à Québec" }, ": la ciudad"]
+              pt: [{ term: "au Québec" }, ": a província; ", { term: "à Québec" }, ": a cidade"]
+              de: [{ term: "au Québec" }, ": die Provinz; ", { term: "à Québec" }, ": die Stadt"]
+              it: [{ term: "au Québec" }, ": la provincia; ", { term: "à Québec" }, ": la città"]
+              pl: [{ term: "au Québec" }, ": prowincja; ", { term: "à Québec" }, ": miasto"]
+              tr: [{ term: "au Québec" }, ": eyalet; ", { term: "à Québec" }, ": şehir"]
+              id: [{ term: "au Québec" }, ": provinsi; ", { term: "à Québec" }, ": kota"]
+              vi: [{ term: "au Québec" }, ": tỉnh bang; ", { term: "à Québec" }, ": thành phố"]
+            ex: { examples: [["Nous vivons ", { target: "au" }, " Québec."], ["Ils habitent ", { target: "à" }, " Québec."]] }
+            tr: { en: { examples: ["We live in Québec (the province).", "They live in Québec City."] }, uk: { examples: ["Ми живемо в Квебеку (провінція).", "Вони живуть у місті Квебек."] }, es: { examples: ["Vivimos en Quebec (la provincia).", "Ellos viven en la ciudad de Quebec."] }, pt: { examples: ["Nós moramos no Quebec (a província).", "Eles moram na cidade de Quebec."] }, de: { examples: ["Wir wohnen in Québec (der Provinz).", "Sie wohnen in Québec (der Stadt)."] }, it: { examples: ["Abitiamo in Québec (la provincia).", "Loro abitano a Québec (la città)."] }, pl: { examples: ["Mieszkamy w Quebecu (prowincji).", "Oni mieszkają w mieście Quebec."] }, tr: { examples: ["Québec’te (eyalette) yaşıyoruz.", "Onlar Québec şehrinde yaşıyor."] }, id: { examples: ["Kami tinggal di Quebec (provinsi).", "Mereka tinggal di kota Quebec."] }, vi: { examples: ["Chúng tôi sống ở Québec (tỉnh bang).", "Họ sống ở thành phố Québec."] } }
+          - level: "A1"
+            key:
+              fr: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, " : une ville"]
+              en: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": a city"]
+              uk: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": місто"]
+              es: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": una ciudad"]
+              pt: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": uma cidade"]
+              de: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": eine Stadt"]
+              it: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": una città"]
+              pl: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": miasto"]
+              tr: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": bir şehir"]
+              id: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": sebuah kota"]
+              vi: [{ term: "à Montréal" }, ", ", { term: "de Montréal" }, ": một thành phố"]
+            ex: { examples: [["Léa travaille ", { target: "à" }, " Montréal."], ["Son mari vient ", { target: "de" }, " Montréal."]] }
+            tr: { en: { examples: ["Léa works in Montreal.", "Her husband comes from Montreal."] }, uk: { examples: ["Леа працює в Монреалі.", "Її чоловік родом із Монреаля."] }, es: { examples: ["Léa trabaja en Montreal.", "Su marido es de Montreal."] }, pt: { examples: ["A Léa trabalha em Montreal.", "O marido dela vem de Montreal."] }, de: { examples: ["Léa arbeitet in Montreal.", "Ihr Mann kommt aus Montreal."] }, it: { examples: ["Léa lavora a Montréal.", "Suo marito viene da Montréal."] }, pl: { examples: ["Léa pracuje w Montrealu.", "Jej mąż pochodzi z Montrealu."] }, tr: { examples: ["Léa Montréal’de çalışıyor.", "Kocası Montréal’li."] }, id: { examples: ["Léa bekerja di Montreal.", "Suaminya berasal dari Montreal."] }, vi: { examples: ["Léa làm việc ở Montréal.", "Chồng cô ấy đến từ Montréal."] } }
+          - level: "A2"
+            key:
+              fr: ["Une province : ", { term: "en" }, " (féminine ou voyelle), ", { term: "au" }, " (masculine)"]
+              en: ["A province: ", { term: "en" }, " (feminine or vowel), ", { term: "au" }, " (masculine)"]
+              uk: ["Провінція: ", { term: "en" }, " (жіночого роду або голосна), ", { term: "au" }, " (чоловічого)"]
+              es: ["Una provincia: ", { term: "en" }, " (femenina o vocal), ", { term: "au" }, " (masculina)"]
+              pt: ["Uma província: ", { term: "en" }, " (feminina ou vogal), ", { term: "au" }, " (masculina)"]
+              de: ["Eine Provinz: ", { term: "en" }, " (feminin oder Vokal), ", { term: "au" }, " (maskulin)"]
+              it: ["Una provincia: ", { term: "en" }, " (femminile o vocale), ", { term: "au" }, " (maschile)"]
+              pl: ["Prowincja: ", { term: "en" }, " (żeńska lub samogłoska), ", { term: "au" }, " (męska)"]
+              tr: ["Bir eyalet: ", { term: "en" }, " (dişil ya da ünlü), ", { term: "au" }, " (eril)"]
+              id: ["Sebuah provinsi: ", { term: "en" }, " (feminin atau vokal), ", { term: "au" }, " (maskulin)"]
+              vi: ["Một tỉnh bang: ", { term: "en" }, " (giống cái hoặc nguyên âm), ", { term: "au" }, " (giống đực)"]
+            ex: { examples: [["Ma cousine habite ", { target: "en" }, " Ontario."], ["Mon oncle vit ", { target: "au" }, " Manitoba."]] }
+            tr: { en: { examples: ["My cousin lives in Ontario.", "My uncle lives in Manitoba."] }, uk: { examples: ["Моя двоюрідна сестра живе в Онтаріо.", "Мій дядько живе в Манітобі."] }, es: { examples: ["Mi prima vive en Ontario.", "Mi tío vive en Manitoba."] }, pt: { examples: ["Minha prima mora em Ontário.", "Meu tio mora em Manitoba."] }, de: { examples: ["Meine Cousine wohnt in Ontario.", "Mein Onkel lebt in Manitoba."] }, it: { examples: ["Mia cugina abita in Ontario.", "Mio zio vive in Manitoba."] }, pl: { examples: ["Moja kuzynka mieszka w Ontario.", "Mój wujek mieszka w Manitobie."] }, tr: { examples: ["Kuzenim Ontario’da yaşıyor.", "Amcam Manitoba’da yaşıyor."] }, id: { examples: ["Sepupu perempuanku tinggal di Ontario.", "Pamanku tinggal di Manitoba."] }, vi: { examples: ["Chị họ tôi sống ở Ontario.", "Chú tôi sống ở Manitoba."] } }
+  - title:
+      fr: "Où ? et d’où ?"
+      en: "Where? and from where?"
+      uk: "Де? і звідки?"
+      es: "¿Dónde? y ¿de dónde?"
+      pt: "Onde? e de onde?"
+      de: "Wo? und woher?"
+      it: "Dove? e da dove?"
+      pl: "Gdzie? i skąd?"
+      tr: "Nerede? ve nereden?"
+      id: "Di mana? dan dari mana?"
+      vi: "Ở đâu? và từ đâu?"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "key", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            key: { term: "Tu habites où ?" }
+            ex: { exchange: ["Tu habites où ?", ["J’habite ", { target: "à" }, " Lyon."]] }
+            tr: { en: "Where do you live? — I live in Lyon.", uk: "Де ти живеш? — Я живу в Ліоні.", es: "¿Dónde vives? — Vivo en Lyon.", pt: "Onde você mora? — Eu moro em Lyon.", de: "Wo wohnst du? — Ich wohne in Lyon.", it: "Dove abiti? — Abito a Lione.", pl: "Gdzie mieszkasz? — Mieszkam w Lyonie.", tr: "Nerede yaşıyorsun? — Lyon’da yaşıyorum.", id: "Kamu tinggal di mana? — Aku tinggal di Lyon.", vi: "Bạn sống ở đâu? — Tôi sống ở Lyon." }
+          - level: "A1"
+            key: { term: "Tu vas où ?" }
+            ex: { exchange: ["Tu vas où ?", ["Je vais ", { target: "en" }, " Espagne."]] }
+            tr: { en: "Where are you going? — I’m going to Spain.", uk: "Куди ти їдеш? — Я їду до Іспанії.", es: "¿Adónde vas? — Voy a España.", pt: "Para onde você vai? — Eu vou para a Espanha.", de: "Wohin fährst du? — Ich fahre nach Spanien.", it: "Dove vai? — Vado in Spagna.", pl: "Dokąd jedziesz? — Jadę do Hiszpanii.", tr: "Nereye gidiyorsun? — İspanya’ya gidiyorum.", id: "Kamu mau pergi ke mana? — Aku pergi ke Spanyol.", vi: "Bạn đi đâu? — Tôi đi Tây Ban Nha." }
+          - level: "A1"
+            key: { term: "Tu viens d’où ?" }
+            ex: { exchange: ["Tu viens d’où ?", ["Je viens ", { target: "du" }, " Maroc."]] }
+            tr: { en: "Where do you come from? — I come from Morocco.", uk: "Звідки ти? — Я з Марокко.", es: "¿De dónde eres? — Soy de Marruecos.", pt: "De onde você é? — Eu sou do Marrocos.", de: "Woher kommst du? — Ich komme aus Marokko.", it: "Di dove sei? — Sono del Marocco.", pl: "Skąd jesteś? — Jestem z Maroka.", tr: "Nerelisin? — Faslıyım.", id: "Kamu berasal dari mana? — Aku berasal dari Maroko.", vi: "Bạn đến từ đâu? — Tôi đến từ Ma-rốc." }
+          - level: "A1"
+            key: { term: "Tu es de quelle ville ?" }
+            ex: { exchange: ["Tu es de quelle ville ?", ["Je suis ", { target: "de" }, " Nice."]] }
+            tr: { en: "Which city are you from? — I’m from Nice.", uk: "З якого ти міста? — Я з Ніцци.", es: "¿De qué ciudad eres? — Soy de Niza.", pt: "De que cidade você é? — Eu sou de Nice.", de: "Aus welcher Stadt kommst du? — Ich bin aus Nizza.", it: "Di che città sei? — Sono di Nizza.", pl: "Z jakiego miasta jesteś? — Jestem z Nicei.", tr: "Hangi şehirdensin? — Nice’liyim.", id: "Kamu dari kota mana? — Aku dari Nice.", vi: "Bạn đến từ thành phố nào? — Tôi đến từ Nice." }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour les autres questions, voir ", { link: "Les questions", to: "fr.phrase.questions" }, "."]
+              en: ["For other questions, see ", { link: "Questions", to: "fr.phrase.questions" }, "."]
+              uk: ["Про інші питання див. ", { link: "Питання", to: "fr.phrase.questions" }, "."]
+              es: ["Para otras preguntas, véase ", { link: "Las preguntas", to: "fr.phrase.questions" }, "."]
+              pt: ["Para outras perguntas, veja ", { link: "As perguntas", to: "fr.phrase.questions" }, "."]
+              de: ["Zu anderen Fragen siehe ", { link: "Fragen", to: "fr.phrase.questions" }, "."]
+              it: ["Per le altre domande, vedi ", { link: "Le domande", to: "fr.phrase.questions" }, "."]
+              pl: ["O innych pytaniach zob. ", { link: "Pytania", to: "fr.phrase.questions" }, "."]
+              tr: ["Diğer sorular için bkz. ", { link: "Soru cümleleri", to: "fr.phrase.questions" }, "."]
+              id: ["Untuk pertanyaan lain, lihat ", { link: "Kalimat tanya", to: "fr.phrase.questions" }, "."]
+              vi: ["Về các câu hỏi khác, xem ", { link: "Câu hỏi", to: "fr.phrase.questions" }, "."]
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: "J’habite à France."
+            right: ["J’habite ", { target: "en" }, " France."]
+            rule:
+              fr: ["un pays féminin prend ", { term: "en" }, ", une ville prend ", { term: "à" }]
+              en: ["a feminine country takes ", { term: "en" }, ", a city takes ", { term: "à" }]
+              uk: ["країна жіночого роду вимагає ", { term: "en" }, ", місто — ", { term: "à" }]
+              es: ["un país femenino lleva ", { term: "en" }, ", una ciudad lleva ", { term: "à" }]
+              pt: ["um país feminino leva ", { term: "en" }, ", uma cidade leva ", { term: "à" }]
+              de: ["ein feminines Land steht mit ", { term: "en" }, ", eine Stadt mit ", { term: "à" }]
+              it: ["un paese femminile vuole ", { term: "en" }, ", una città vuole ", { term: "à" }]
+              pl: ["kraj rodzaju żeńskiego łączy się z ", { term: "en" }, ", miasto z ", { term: "à" }]
+              tr: ["dişil ülke ", { term: "en" }, ", şehir ", { term: "à" }, " alır"]
+              id: ["negara feminin memakai ", { term: "en" }, ", kota memakai ", { term: "à" }]
+              vi: ["nước giống cái đi với ", { term: "en" }, ", thành phố đi với ", { term: "à" }]
+          - level: "A1"
+            speakers: ["en", "es", "pt", "de"]
+            wrong: "J’habite en Paris."
+            right: ["J’habite ", { target: "à" }, " Paris."]
+            rule:
+              en: ["a city takes ", { term: "à" }, ", though English says “in Paris”"]
+              es: ["una ciudad lleva ", { term: "à" }, ", aunque en español se dice «en París»"]
+              pt: ["uma cidade leva ", { term: "à" }, ", embora em português se diga «em Paris»"]
+              de: ["eine Stadt steht mit ", { term: "à" }, ", auch wenn man im Deutschen „in Paris“ sagt"]
+          - level: "A1"
+            wrong: "J’habite en États-Unis."
+            right: ["J’habite ", { target: "aux" }, " États-Unis."]
+            rule:
+              fr: ["un pays pluriel prend ", { term: "aux" }]
+              en: ["a plural country takes ", { term: "aux" }]
+              uk: ["країна в множині вимагає ", { term: "aux" }]
+              es: ["un país plural lleva ", { term: "aux" }]
+              pt: ["um país plural leva ", { term: "aux" }]
+              de: ["ein Pluralland steht mit ", { term: "aux" }]
+              it: ["un paese plurale vuole ", { term: "aux" }]
+              pl: ["kraj w liczbie mnogiej łączy się z ", { term: "aux" }]
+              tr: ["çoğul ülke ", { term: "aux" }, " alır"]
+              id: ["negara jamak memakai ", { term: "aux" }]
+              vi: ["nước số nhiều đi với ", { term: "aux" }]
+          - level: "A1"
+            wrong: "Il vient de le Canada."
+            right: ["Il vient ", { target: "du" }, " Canada."]
+            rule:
+              fr: [{ term: "de" }, " + ", { term: "le" }, " devient ", { term: "du" }]
+              en: [{ term: "de" }, " + ", { term: "le" }, " becomes ", { term: "du" }]
+              uk: [{ term: "de" }, " + ", { term: "le" }, " стає ", { term: "du" }]
+              es: [{ term: "de" }, " + ", { term: "le" }, " pasa a ", { term: "du" }]
+              pt: [{ term: "de" }, " + ", { term: "le" }, " vira ", { term: "du" }]
+              de: [{ term: "de" }, " + ", { term: "le" }, " wird zu ", { term: "du" }]
+              it: [{ term: "de" }, " + ", { term: "le" }, " diventa ", { term: "du" }]
+              pl: [{ term: "de" }, " + ", { term: "le" }, " zmienia się w ", { term: "du" }]
+              tr: [{ term: "de" }, " + ", { term: "le" }, ", ", { term: "du" }, " olur"]
+              id: [{ term: "de" }, " + ", { term: "le" }, " menjadi ", { term: "du" }]
+              vi: [{ term: "de" }, " + ", { term: "le" }, " thành ", { term: "du" }]
+          - level: "A1"
+            speakers: ["pt", "it"]
+            wrong: "Elle vient de la France."
+            right: ["Elle vient ", { target: "de" }, " France."]
+            rule:
+              pt: [{ term: "de" }, " sem artigo diante de um país feminino, embora em português se diga «da França»"]
+              it: [{ term: "de" }, " senza articolo davanti a un paese femminile, anche se in italiano si dice «dalla Francia»"]
+          - level: "A2"
+            wrong: "Il habite au Iran."
+            right: ["Il habite ", { target: "en" }, " Iran."]
+            rule:
+              fr: ["un pays masculin à voyelle prend ", { term: "en" }, ", pas ", { term: "au" }]
+              en: ["a masculine country starting with a vowel takes ", { term: "en" }, ", not ", { term: "au" }]
+              uk: ["країна чоловічого роду з голосною вимагає ", { term: "en" }, ", а не ", { term: "au" }]
+              es: ["un país masculino con vocal lleva ", { term: "en" }, ", no ", { term: "au" }]
+              pt: ["um país masculino com vogal leva ", { term: "en" }, ", não ", { term: "au" }]
+              de: ["ein maskulines Land mit Vokal steht mit ", { term: "en" }, ", nicht ", { term: "au" }]
+              it: ["un paese maschile con vocale vuole ", { term: "en" }, ", non ", { term: "au" }]
+              pl: ["kraj rodzaju męskiego z samogłoską łączy się z ", { term: "en" }, ", nie ", { term: "au" }]
+              tr: ["ünlüyle başlayan eril ülke ", { term: "en" }, " alır, ", { term: "au" }, " değil"]
+              id: ["negara maskulin berawalan vokal memakai ", { term: "en" }, ", bukan ", { term: "au" }]
+              vi: ["nước giống đực bắt đầu bằng nguyên âm đi với ", { term: "en" }, ", không phải ", { term: "au" }]

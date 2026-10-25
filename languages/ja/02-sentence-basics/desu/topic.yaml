@@ -1,0 +1,952 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "ja.sentence-basics.desu"
+lang: "ja"
+kind: "grammar"
+tags: ["です", "copula", "introductions", "negation", "past"]
+concepts: ["be"]
+related: ["ja.sentence-basics.wa-ga", "ja.sentence-basics.questions", "ja.verbs.plain-form"]
+status: { en: "draft", uk: "draft", es: "draft", pt: "draft", fr: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { uk: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", es: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", pt: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", fr: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", de: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", it: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", pl: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", tr: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", id: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2", vi: "af360e c0942f aff622 e280e4 4f4e6b 2e08d9 203b02 1f54c4 057eb2" }
+title: { en: "です: Am, Is, Are", uk: "です: бути", es: "です: ser", pt: "です: ser", fr: "です : être", de: "です: sein", it: "です: essere", pl: "です: być", tr: "です: olmak", id: "です: adalah", vi: "です: là" }
+summary:
+  lead:
+    en: [{ term: "です" }, " says who or what something is; ", { term: "じゃありません" }, " is its negative, ", { term: "でした" }, " its past and ", { term: "じゃありませんでした" }, " its past negative."]
+    uk: [{ term: "です" }, " каже, хто або що є чим; ", { term: "じゃありません" }, " — його заперечення, ", { term: "でした" }, " — минулий час, ", { term: "じゃありませんでした" }, " — заперечення в минулому."]
+    es: [{ term: "です" }, " dice quién o qué es algo; ", { term: "じゃありません" }, " es su negativa, ", { term: "でした" }, " su pasado y ", { term: "じゃありませんでした" }, " su negativa en pasado."]
+    pt: [{ term: "です" }, " diz quem ou o que algo é; ", { term: "じゃありません" }, " é sua negativa, ", { term: "でした" }, " seu passado e ", { term: "じゃありませんでした" }, " sua negativa no passado."]
+    fr: [{ term: "です" }, " dit qui ou ce qu’est quelqu’un ou quelque chose ; ", { term: "じゃありません" }, " est sa négation, ", { term: "でした" }, " son passé et ", { term: "じゃありませんでした" }, " sa négation au passé."]
+    de: [{ term: "です" }, " sagt, wer oder was etwas ist; ", { term: "じゃありません" }, " ist die Verneinung, ", { term: "でした" }, " die Vergangenheit und ", { term: "じゃありませんでした" }, " die verneinte Vergangenheit."]
+    it: [{ term: "です" }, " dice chi o che cosa è qualcuno o qualcosa; ", { term: "じゃありません" }, " è la negazione, ", { term: "でした" }, " il passato e ", { term: "じゃありませんでした" }, " la negazione al passato."]
+    pl: [{ term: "です" }, " mówi, kim lub czym ktoś albo coś jest; ", { term: "じゃありません" }, " to przeczenie, ", { term: "でした" }, " to czas przeszły, a ", { term: "じゃありませんでした" }, " to przeczenie w czasie przeszłym."]
+    tr: [{ term: "です" }, " bir şeyin kim ya da ne olduğunu söyler; ", { term: "じゃありません" }, " olumsuzu, ", { term: "でした" }, " geçmişi, ", { term: "じゃありませんでした" }, " geçmişin olumsuzudur."]
+    id: [{ term: "です" }, " menyatakan siapa atau apa sesuatu itu; ", { term: "じゃありません" }, " bentuk negatifnya, ", { term: "でした" }, " bentuk lampaunya, dan ", { term: "じゃありませんでした" }, " negatif lampaunya."]
+    vi: [{ term: "です" }, " cho biết ai hoặc cái gì là gì; ", { term: "じゃありません" }, " là dạng phủ định, ", { term: "でした" }, " là quá khứ và ", { term: "じゃありませんでした" }, " là phủ định quá khứ."]
+  rule:
+    en: ["A noun takes ", { term: "です" }, ", and its topic takes ", { term: "は" }, ":"]
+    uk: ["Після іменника стоїть ", { term: "です" }, ", а після теми — ", { term: "は" }, ":"]
+    es: ["El sustantivo lleva ", { term: "です" }, " y su tema lleva ", { term: "は" }, ":"]
+    pt: ["O substantivo leva ", { term: "です" }, " e o seu tópico leva ", { term: "は" }, ":"]
+    fr: ["Le nom prend ", { term: "です" }, " et son thème prend ", { term: "は" }, " :"]
+    de: ["Das Nomen steht mit ", { term: "です" }, ", und sein Thema steht mit ", { term: "は" }, ":"]
+    it: ["Il nome prende ", { term: "です" }, " e il suo tema prende ", { term: "は" }, ":"]
+    pl: ["Po rzeczowniku stoi ", { term: "です" }, ", a po temacie — ", { term: "は" }, ":"]
+    tr: ["İsmin ardından ", { term: "です" }, ", konunun ardından ", { term: "は" }, " gelir:"]
+    id: ["Kata benda diikuti ", { term: "です" }, ", dan topiknya diikuti ", { term: "は" }, ":"]
+    vi: ["Danh từ đi với ", { term: "です" }, ", còn chủ đề đi với ", { term: "は" }, ":"]
+  ex: ["わたし", { target: "は" }, "アンナ", { target: "です" }, "。"]
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A0"
+          point: { en: "Pattern", uk: "Модель", es: "Estructura", pt: "Estrutura", fr: "Structure", de: "Muster", it: "Struttura", pl: "Wzór", tr: "Kalıp", id: "Pola", vi: "Mẫu câu" }
+          rule:
+            en: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            uk: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            es: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            pt: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            fr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            de: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            it: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            pl: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            tr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            id: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            vi: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+          ex: ["わたしはアンナ", { target: "です" }, "。"]
+          tr: { en: "I'm Anna.", uk: "Я Анна.", es: "Soy Anna.", pt: "Eu sou Anna.", fr: "Je suis Anna.", de: "Ich bin Anna.", it: "Sono Anna.", pl: "Jestem Anna.", tr: "Adım Anna.", id: "Saya Anna.", vi: "Tôi là Anna." }
+        - level: "A1"
+          point: { en: "Negative", uk: "Заперечення", es: "Negación", pt: "Negação", fr: "Négation", de: "Verneinung", it: "Negazione", pl: "Przeczenie", tr: "Olumsuzluk", id: "Negasi", vi: "Phủ định" }
+          rule:
+            en: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            uk: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            es: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            pt: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            fr: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            de: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            it: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            pl: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            tr: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            id: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+            vi: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+          ex: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, { target: "じゃありません" }, "。"]
+          tr: { en: "I am not a student.", uk: "Я не студент.", es: "No soy estudiante.", pt: "Não sou estudante.", fr: "Je ne suis pas étudiant.", de: "Ich bin kein Student.", it: "Non sono studente.", pl: "Nie jestem studentem.", tr: "Ben öğrenci değilim.", id: "Saya bukan mahasiswa.", vi: "Tôi không phải là sinh viên." }
+        - level: "A1"
+          point: { en: "Past", uk: "Минулий час", es: "Pasado", pt: "Passado", fr: "Passé", de: "Vergangenheit", it: "Passato", pl: "Czas przeszły", tr: "Geçmiş zaman", id: "Lampau", vi: "Quá khứ" }
+          rule:
+            en: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            uk: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            es: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            pt: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            fr: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            de: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            it: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            pl: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            tr: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            id: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            vi: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+          ex: ["きのうはやすみ", { target: "でした" }, "。"]
+          tr: { en: "Yesterday was a day off.", uk: "Учора був вихідний.", es: "Ayer fue día libre.", pt: "Ontem foi dia de folga.", fr: "Hier était un jour de congé.", de: "Gestern war frei.", it: "Ieri era giorno libero.", pl: "Wczoraj był dzień wolny.", tr: "Dün tatildi.", id: "Kemarin hari libur.", vi: "Hôm qua là ngày nghỉ." }
+        - level: "A1"
+          point:
+            en: "Past negative"
+            uk: "Заперечення в минулому"
+            es: "Negación en pasado"
+            pt: "Negação no passado"
+            fr: "Négation au passé"
+            de: "Verneinte Vergangenheit"
+            it: "Negazione al passato"
+            pl: "Przeczenie w czasie przeszłym"
+            tr: "Geçmişin olumsuzu"
+            id: "Negasi lampau"
+            vi: "Phủ định quá khứ"
+          rule:
+            en: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            uk: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            es: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            pt: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            fr: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            de: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            it: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            pl: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            tr: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            id: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+            vi: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+          ex: ["きのうはやすみ", { target: "じゃありませんでした" }, "。"]
+          tr: { en: "Yesterday was not a day off.", uk: "Учора не було вихідного.", es: "Ayer no fue día libre.", pt: "Ontem não foi dia de folga.", fr: "Hier n’était pas un jour de congé.", de: "Gestern war nicht frei.", it: "Ieri non era giorno libero.", pl: "Wczoraj nie był dniem wolnym.", tr: "Dün tatil değildi.", id: "Kemarin bukan hari libur.", vi: "Hôm qua không phải là ngày nghỉ." }
+        - level: "A1"
+          point: { en: "Question", uk: "Питання", es: "Pregunta", pt: "Pergunta", fr: "Question", de: "Frage", it: "Domanda", pl: "Pytanie", tr: "Soru", id: "Pertanyaan", vi: "Câu hỏi" }
+          rule:
+            en: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            uk: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            es: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            pt: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            fr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            de: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            it: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            pl: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            tr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            id: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            vi: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+          ex: ["アンナさんは", { kanji: "学生", reading: "がくせい" }, { target: "ですか" }, "。"]
+          tr: { en: "Is Anna a student?", uk: "Анна студентка?", es: "¿Anna es estudiante?", pt: "A Anna é estudante?", fr: "Anna est-elle étudiante ?", de: "Ist Anna Studentin?", it: "Anna è studentessa?", pl: "Czy Anna jest studentką?", tr: "Anna öğrenci mi?", id: "Apakah Anna mahasiswa?", vi: "Anna có phải là sinh viên không?" }
+        - level: "A0"
+          point:
+            en: "Introduction"
+            uk: "Знайомство"
+            es: "Presentación"
+            pt: "Apresentação"
+            fr: "Présentation"
+            de: "Vorstellung"
+            it: "Presentazione"
+            pl: "Przedstawianie się"
+            tr: "Tanışma"
+            id: "Perkenalan"
+            vi: "Giới thiệu"
+          rule:
+            en: ["Open with ", { term: "はじめまして" }, ", close with ", { term: "よろしくおねがいします" }, "."]
+            uk: ["Почніть з ", { term: "はじめまして" }, ", закінчіть ", { term: "よろしくおねがいします" }, "."]
+            es: ["Empieza con ", { term: "はじめまして" }, " y cierra con ", { term: "よろしくおねがいします" }, "."]
+            pt: ["Comece com ", { term: "はじめまして" }, " e termine com ", { term: "よろしくおねがいします" }, "."]
+            fr: ["Commencez par ", { term: "はじめまして" }, ", terminez par ", { term: "よろしくおねがいします" }, "."]
+            de: ["Beginne mit ", { term: "はじめまして" }, ", schließe mit ", { term: "よろしくおねがいします" }, "."]
+            it: ["Apri con ", { term: "はじめまして" }, ", chiudi con ", { term: "よろしくおねがいします" }, "."]
+            pl: ["Zacznij od ", { term: "はじめまして" }, ", zakończ ", { term: "よろしくおねがいします" }, "."]
+            tr: [{ term: "はじめまして" }, " ile başla, ", { term: "よろしくおねがいします" }, " ile bitir."]
+            id: ["Mulai dengan ", { term: "はじめまして" }, ", tutup dengan ", { term: "よろしくおねがいします" }, "."]
+            vi: ["Mở đầu bằng ", { term: "はじめまして" }, ", kết thúc bằng ", { term: "よろしくおねがいします" }, "."]
+          ex: [{ target: "はじめまして" }, "。ジョンです。", { target: "よろしくおねがいします" }, "。"]
+          tr: { en: "Nice to meet you. I'm John. I look forward to getting along with you.", uk: "Дуже приємно познайомитися. Я Джон. Сподіваюся на добрі стосунки.", es: "Mucho gusto. Soy John. Espero que nos llevemos bien.", pt: "Muito prazer. Eu sou John. Espero que nos demos bem.", fr: "Enchanté(e). Je suis John. J’espère que nous nous entendrons bien.", de: "Freut mich. Ich bin John. Ich freue mich auf ein gutes Miteinander.", it: "Piacere. Sono John. Spero che andremo d'accordo.", pl: "Miło mi cię poznać. Jestem John. Mam nadzieję na dobrą znajomość.", tr: "Tanıştığımıza memnun oldum. Adım John. Umarım iyi anlaşırız.", id: "Senang berkenalan dengan Anda. Saya John. Semoga kita bisa akrab.", vi: "Rất vui được gặp bạn. Tôi là John. Rất mong được bạn giúp đỡ." }
+        - level: "A1"
+          point: { en: "Also", uk: "Теж", es: "También", pt: "Também", fr: "Aussi", de: "Auch", it: "Anche", pl: "Też", tr: "De/da", id: "Juga", vi: "Cũng" }
+          rule:
+            en: [{ term: "も" }, " takes the place of ", { term: "は" }, ": “too”."]
+            uk: [{ term: "も" }, " замінює ", { term: "は" }, ": «теж»."]
+            es: [{ term: "も" }, " ocupa el lugar de ", { term: "は" }, ": «también»."]
+            pt: [{ term: "も" }, " toma o lugar de ", { term: "は" }, ": «também»."]
+            fr: [{ term: "も" }, " remplace ", { term: "は" }, " : « aussi »."]
+            de: [{ term: "も" }, " ersetzt ", { term: "は" }, ": „auch“."]
+            it: [{ term: "も" }, " prende il posto di ", { term: "は" }, ": «anche»."]
+            pl: [{ term: "も" }, " zastępuje ", { term: "は" }, ": „też”."]
+            tr: [{ term: "も" }, ", ", { term: "は" }, " yerine geçer: “de/da”."]
+            id: [{ term: "も" }, " menggantikan ", { term: "は" }, ": “juga”."]
+            vi: [{ term: "も" }, " thay cho ", { term: "は" }, ": “cũng”."]
+          ex: [{ kanji: "私", reading: "わたし" }, { target: "も" }, { kanji: "学生", reading: "がくせい" }, "です。"]
+          tr: { en: "I'm a student too.", uk: "Я теж студент.", es: "Yo también soy estudiante.", pt: "Eu também sou estudante.", fr: "Moi aussi, je suis étudiant.", de: "Ich bin auch Student.", it: "Anch'io sono studente.", pl: "Ja też jestem studentem.", tr: "Ben de öğrenciyim.", id: "Saya juga mahasiswa.", vi: "Tôi cũng là sinh viên." }
+        - level: "A2"
+          point:
+            en: "Formal negative"
+            uk: "Офіційне заперечення"
+            es: "Negación formal"
+            pt: "Negação formal"
+            fr: "Négation formelle"
+            de: "Formelle Verneinung"
+            it: "Negazione formale"
+            pl: "Przeczenie formalne"
+            tr: "Resmî olumsuz"
+            id: "Negasi formal"
+            vi: "Phủ định trang trọng"
+          rule:
+            en: [{ term: "ではありません" }, " in writing and formal speech, ", { term: "じゃありません" }, " in conversation."]
+            uk: [{ term: "ではありません" }, " — на письмі й в офіційному мовленні, ", { term: "じゃありません" }, " — у розмові."]
+            es: [{ term: "ではありません" }, " en la escritura y el habla formal, ", { term: "じゃありません" }, " en la conversación."]
+            pt: [{ term: "ではありません" }, " na escrita e na fala formal, ", { term: "じゃありません" }, " na conversa."]
+            fr: [{ term: "ではありません" }, " à l’écrit et à l’oral formel, ", { term: "じゃありません" }, " en conversation."]
+            de: [{ term: "ではありません" }, " schriftlich und in formeller Rede, ", { term: "じゃありません" }, " im Gespräch."]
+            it: [{ term: "ではありません" }, " nello scritto e nel parlato formale, ", { term: "じゃありません" }, " in conversazione."]
+            pl: [{ term: "ではありません" }, " w piśmie i w mowie oficjalnej, ", { term: "じゃありません" }, " w rozmowie."]
+            tr: [{ term: "ではありません" }, " yazıda ve resmî konuşmada, ", { term: "じゃありません" }, " sohbette."]
+            id: [{ term: "ではありません" }, " dalam tulisan dan ucapan formal, ", { term: "じゃありません" }, " dalam percakapan."]
+            vi: [{ term: "ではありません" }, " trong văn viết và lời nói trang trọng, ", { term: "じゃありません" }, " trong hội thoại."]
+          ex: ["これは", { kanji: "私", reading: "わたし" }, "の", { kanji: "本", reading: "ほん" }, { target: "ではありません" }, "。"]
+          tr: { en: "This is not my book.", uk: "Це не моя книга.", es: "Este no es mi libro.", pt: "Este não é o meu livro.", fr: "Ce n’est pas mon livre.", de: "Das ist nicht mein Buch.", it: "Questo non è il mio libro.", pl: "To nie jest moja książka.", tr: "Bu benim kitabım değil.", id: "Ini bukan buku saya.", vi: "Đây không phải là sách của tôi." }
+        - level: "A2"
+          point: { en: "Answers", uk: "Відповіді", es: "Respuestas", pt: "Respostas", fr: "Réponses", de: "Antworten", it: "Risposte", pl: "Odpowiedzi", tr: "Cevaplar", id: "Jawaban", vi: "Câu trả lời" }
+          rule:
+            en: [{ term: "はい、そうです" }, " confirms; ", { term: "いいえ、ちがいます" }, " denies."]
+            uk: [{ term: "はい、そうです" }, " підтверджує; ", { term: "いいえ、ちがいます" }, " заперечує."]
+            es: [{ term: "はい、そうです" }, " confirma; ", { term: "いいえ、ちがいます" }, " niega."]
+            pt: [{ term: "はい、そうです" }, " confirma; ", { term: "いいえ、ちがいます" }, " nega."]
+            fr: [{ term: "はい、そうです" }, " confirme ; ", { term: "いいえ、ちがいます" }, " nie."]
+            de: [{ term: "はい、そうです" }, " bestätigt; ", { term: "いいえ、ちがいます" }, " verneint."]
+            it: [{ term: "はい、そうです" }, " conferma; ", { term: "いいえ、ちがいます" }, " nega."]
+            pl: [{ term: "はい、そうです" }, " potwierdza; ", { term: "いいえ、ちがいます" }, " zaprzecza."]
+            tr: [{ term: "はい、そうです" }, " onaylar; ", { term: "いいえ、ちがいます" }, " reddeder."]
+            id: [{ term: "はい、そうです" }, " membenarkan; ", { term: "いいえ、ちがいます" }, " menyangkal."]
+            vi: [{ term: "はい、そうです" }, " xác nhận; ", { term: "いいえ、ちがいます" }, " phủ nhận."]
+          ex: { exchange: [["たなかさんは", { kanji: "先生", reading: "せんせい" }, "ですか。"], ["はい、", { target: "そうです" }, "。"]] }
+          tr: { en: { exchange: ["Is Tanaka-san a teacher?", "Yes, that's right."] }, uk: { exchange: ["Танака-сан вчитель?", "Так, саме так."] }, es: { exchange: ["¿Tanaka-san es profesor?", "Sí, así es."] }, pt: { exchange: ["O Tanaka-san é professor?", "Sim, é isso mesmo."] }, fr: { exchange: ["Tanaka-san est-il professeur ?", "Oui, c’est ça."] }, de: { exchange: ["Ist Tanaka-san Lehrer?", "Ja, genau."] }, it: { exchange: ["Tanaka-san è insegnante?", "Sì, è così."] }, pl: { exchange: ["Czy Tanaka-san jest nauczycielem?", "Tak, zgadza się."] }, tr: { exchange: ["Tanaka-san öğretmen mi?", "Evet, öyle."] }, id: { exchange: ["Apakah Tanaka-san guru?", "Ya, benar."] }, vi: { exchange: ["Tanaka-san có phải là giáo viên không?", "Vâng, đúng vậy."] } }
+        - level: "A0"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: [{ term: "さん" }, " never follows your own name."]
+            uk: [{ term: "さん" }, " не додають до власного імені."]
+            es: [{ term: "さん" }, " no se añade al propio nombre."]
+            pt: [{ term: "さん" }, " não se junta ao próprio nome."]
+            fr: [{ term: "さん" }, " ne s’ajoute jamais à son propre nom."]
+            de: [{ term: "さん" }, " steht nie hinter dem eigenen Namen."]
+            it: [{ term: "さん" }, " non si aggiunge al proprio nome."]
+            pl: [{ term: "さん" }, " nie idzie za własnym imieniem."]
+            tr: [{ term: "さん" }, " kişinin kendi adına eklenmez."]
+            id: [{ term: "さん" }, " tidak dipakai pada nama sendiri."]
+            vi: [{ term: "さん" }, " không đi sau tên của chính mình."]
+          ex: ["わたしは", { target: "アンナ" }, "です。"]
+          tr: { en: "I'm Anna.", uk: "Я Анна.", es: "Soy Anna.", pt: "Eu sou Anna.", fr: "Je suis Anna.", de: "Ich bin Anna.", it: "Sono Anna.", pl: "Jestem Anna.", tr: "Adım Anna.", id: "Saya Anna.", vi: "Tôi là Anna." }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: [{ term: "じゃありません" }, " already ends the sentence; add no ", { term: "です" }, "."]
+            uk: [{ term: "じゃありません" }, " уже завершує речення; ", { term: "です" }, " не додають."]
+            es: [{ term: "じゃありません" }, " ya cierra la oración; no se añade ", { term: "です" }, "."]
+            pt: [{ term: "じゃありません" }, " já encerra a frase; não se acrescenta ", { term: "です" }, "."]
+            fr: [{ term: "じゃありません" }, " termine déjà la phrase ; n’ajoutez pas ", { term: "です" }, "."]
+            de: [{ term: "じゃありません" }, " beendet den Satz schon; kein ", { term: "です" }, " dahinter."]
+            it: [{ term: "じゃありません" }, " chiude già la frase; non si aggiunge ", { term: "です" }, "."]
+            pl: [{ term: "じゃありません" }, " już kończy zdanie; nie dodaje się ", { term: "です" }, "."]
+            tr: [{ term: "じゃありません" }, " cümleyi zaten bitirir; ", { term: "です" }, " eklenmez."]
+            id: [{ term: "じゃありません" }, " sudah mengakhiri kalimat; jangan tambah ", { term: "です" }, "."]
+            vi: [{ term: "じゃありません" }, " đã kết thúc câu; không thêm ", { term: "です" }, "."]
+          ex: ["たなかさんは", { kanji: "先生", reading: "せんせい" }, { target: "じゃありません" }, "。"]
+          tr: { en: "Tanaka-san is not a teacher.", uk: "Танака-сан не вчитель.", es: "Tanaka-san no es profesor.", pt: "Tanaka-san não é professor.", fr: "Tanaka-san n’est pas professeur.", de: "Tanaka-san ist kein Lehrer.", it: "Tanaka-san non è insegnante.", pl: "Tanaka-san nie jest nauczycielem.", tr: "Tanaka-san öğretmen değil.", id: "Tanaka-san bukan guru.", vi: "Tanaka-san không phải là giáo viên." }
+sections:
+  - title:
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      fr: "Vue d’ensemble"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              en: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " means “A is B”."]
+              uk: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " означає «A — це B»."]
+              es: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " significa «A es B»."]
+              pt: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " significa «A é B»."]
+              fr: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " signifie « A est B »."]
+              de: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " bedeutet „A ist B“."]
+              it: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " significa «A è B»."]
+              pl: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " znaczy „A to B”."]
+              tr: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " “A, B'dir” anlamına gelir."]
+              id: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " berarti “A adalah B”."]
+              vi: [{ pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }, " nghĩa là “A là B”."]
+            ex: ["わたしはアンナ", { target: "です" }, "。"]
+            tr: { en: "I'm Anna.", uk: "Я Анна.", es: "Soy Anna.", pt: "Eu sou Anna.", fr: "Je suis Anna.", de: "Ich bin Anna.", it: "Sono Anna.", pl: "Jestem Anna.", tr: "Adım Anna.", id: "Saya Anna.", vi: "Tôi là Anna." }
+          - type: "rule"
+            level: "A0"
+            text:
+              en: [{ term: "です" }, " stays the same for every person and number."]
+              uk: [{ term: "です" }, " не змінюється за особами й числами."]
+              es: [{ term: "です" }, " no cambia con la persona ni con el número."]
+              pt: [{ term: "です" }, " não muda com a pessoa nem com o número."]
+              fr: [{ term: "です" }, " ne change ni selon la personne ni selon le nombre."]
+              de: [{ term: "です" }, " bleibt bei jeder Person und in jeder Zahl gleich."]
+              it: [{ term: "です" }, " non cambia con la persona né con il numero."]
+              pl: [{ term: "です" }, " nie zmienia się według osoby ani liczby."]
+              tr: [{ term: "です" }, " kişiye ve sayıya göre değişmez."]
+              id: [{ term: "です" }, " tidak berubah menurut orang maupun jumlah."]
+              vi: [{ term: "です" }, " không đổi theo ngôi hay số."]
+            ex: { examples: [["わたしはがくせい", { target: "です" }, "。"], ["わたしたちはがくせい", { target: "です" }, "。"]] }
+            tr: { en: { examples: ["I am a student.", "We are students."] }, uk: { examples: ["Я студент.", "Ми студенти."] }, es: { examples: ["Soy estudiante.", "Somos estudiantes."] }, pt: { examples: ["Eu sou estudante.", "Nós somos estudantes."] }, fr: { examples: ["Je suis étudiant.", "Nous sommes étudiants."] }, de: { examples: ["Ich bin Student.", "Wir sind Studenten."] }, it: { examples: ["Sono studente.", "Siamo studenti."] }, pl: { examples: ["Jestem studentem.", "Jesteśmy studentami."] }, tr: { examples: ["Ben öğrenciyim.", "Biz öğrenciyiz."] }, id: { examples: ["Saya mahasiswa.", "Kami mahasiswa."] }, vi: { examples: ["Tôi là sinh viên.", "Chúng tôi là sinh viên."] } }
+          - type: "rule"
+            level: "A0"
+            text:
+              en: [{ term: "です" }, " belongs to the polite form: use it with strangers, at school and at work."]
+              uk: [{ term: "です" }, " належить до ввічливої форми: її вживають із незнайомими людьми, у школі й на роботі."]
+              es: [{ term: "です" }, " pertenece a la forma cortés: se usa con desconocidos, en la escuela y en el trabajo."]
+              pt: [{ term: "です" }, " pertence à forma polida: usa-se com desconhecidos, na escola e no trabalho."]
+              fr: [{ term: "です" }, " appartient à la forme polie : on l’emploie avec des inconnus, à l’école et au travail."]
+              de: [{ term: "です" }, " gehört zur Höflichkeitsform: Man verwendet sie bei Fremden, in der Schule und bei der Arbeit."]
+              it: [{ term: "です" }, " appartiene alla forma cortese: si usa con gli sconosciuti, a scuola e al lavoro."]
+              pl: [{ term: "です" }, " należy do formy grzecznościowej: używa się jej wobec obcych, w szkole i w pracy."]
+              tr: [{ term: "です" }, " nazik biçime aittir: yabancılarla, okulda ve işte kullanılır."]
+              id: [{ term: "です" }, " termasuk bentuk sopan: dipakai kepada orang asing, di sekolah, dan di tempat kerja."]
+              vi: [{ term: "です" }, " thuộc thể lịch sự: dùng với người lạ, ở trường và ở nơi làm việc."]
+          - type: "note"
+            level: "A0"
+            text:
+              en: [{ term: "は" }, " is a particle that marks the topic; it is read ", { term: "わ" }, ". See ", { link: "は and が", to: "ja.sentence-basics.wa-ga" }, "."]
+              uk: [{ term: "は" }, " — частка, що позначає тему речення; читається як ", { term: "わ" }, ". Див. ", { link: "は і が", to: "ja.sentence-basics.wa-ga" }, "."]
+              es: [{ term: "は" }, " es una partícula que marca el tema; se lee ", { term: "わ" }, ". Véase ", { link: "は y が", to: "ja.sentence-basics.wa-ga" }, "."]
+              pt: [{ term: "は" }, " é uma partícula que marca o tópico; lê-se ", { term: "わ" }, ". Veja ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, "."]
+              fr: [{ term: "は" }, " est une particule qui marque le thème ; elle se lit ", { term: "わ" }, ". Voir ", { link: "は et が", to: "ja.sentence-basics.wa-ga" }, "."]
+              de: [{ term: "は" }, " ist eine Partikel, die das Thema markiert; sie wird ", { term: "わ" }, " gelesen. Siehe ", { link: "は und が", to: "ja.sentence-basics.wa-ga" }, "."]
+              it: [{ term: "は" }, " è una particella che segna il tema; si legge ", { term: "わ" }, ". Vedi ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, "."]
+              pl: [{ term: "は" }, " to partykuła oznaczająca temat; czyta się ją jako ", { term: "わ" }, ". Zob. ", { link: "は i が", to: "ja.sentence-basics.wa-ga" }, "."]
+              tr: [{ term: "は" }, " konuyu belirten bir edattır; ", { term: "わ" }, " diye okunur. Bkz. ", { link: "は ve が", to: "ja.sentence-basics.wa-ga" }, "."]
+              id: [{ term: "は" }, " adalah partikel penanda topik; dibaca ", { term: "わ" }, ". Lihat ", { link: "は dan が", to: "ja.sentence-basics.wa-ga" }, "."]
+              vi: [{ term: "は" }, " là trợ từ đánh dấu chủ đề; đọc là ", { term: "わ" }, ". Xem ", { link: "は và が", to: "ja.sentence-basics.wa-ga" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              en: [{ term: "あります" }, " and ", { term: "います" }, " say that something exists or where it is. See ", { link: "あります and います", to: "ja.verbs.aru-iru" }, "."]
+              uk: [{ term: "あります" }, " і ", { term: "います" }, " кажуть, що щось існує або де воно є. Див. ", { link: "あります і います", to: "ja.verbs.aru-iru" }, "."]
+              es: [{ term: "あります" }, " y ", { term: "います" }, " dicen que algo existe o dónde está. Véase ", { link: "あります y います", to: "ja.verbs.aru-iru" }, "."]
+              pt: [{ term: "あります" }, " e ", { term: "います" }, " dizem que algo existe ou onde está. Veja ", { link: "あります e います", to: "ja.verbs.aru-iru" }, "."]
+              fr: [{ term: "あります" }, " et ", { term: "います" }, " disent que quelque chose existe ou où il se trouve. Voir ", { link: "あります et います", to: "ja.verbs.aru-iru" }, "."]
+              de: [{ term: "あります" }, " und ", { term: "います" }, " sagen, dass etwas existiert oder wo es ist. Siehe ", { link: "あります und います", to: "ja.verbs.aru-iru" }, "."]
+              it: [{ term: "あります" }, " e ", { term: "います" }, " dicono che qualcosa esiste o dove si trova. Vedi ", { link: "あります e います", to: "ja.verbs.aru-iru" }, "."]
+              pl: [{ term: "あります" }, " i ", { term: "います" }, " mówią, że coś istnieje albo gdzie się znajduje. Zob. ", { link: "あります i います", to: "ja.verbs.aru-iru" }, "."]
+              tr: [{ term: "あります" }, " ve ", { term: "います" }, " bir şeyin var olduğunu ya da nerede olduğunu söyler. Bkz. ", { link: "あります ve います", to: "ja.verbs.aru-iru" }, "."]
+              id: [{ term: "あります" }, " dan ", { term: "います" }, " menyatakan bahwa sesuatu ada atau di mana letaknya. Lihat ", { link: "あります dan います", to: "ja.verbs.aru-iru" }, "."]
+              vi: [{ term: "あります" }, " và ", { term: "います" }, " cho biết vật gì tồn tại hoặc ở đâu. Xem ", { link: "あります và います", to: "ja.verbs.aru-iru" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              en: [{ term: "です" }, " also ends a sentence with an adjective. See ", { link: "い-Adjectives", to: ja.adjectives.i-adjectives }, " and ", { link: "な-Adjectives", to: ja.adjectives.na-adjectives }, "."]
+              uk: [{ term: "です" }, " також завершує речення з прикметником. Див. ", { link: "い-прикметники", to: "ja.adjectives.i-adjectives" }, " та ", { link: "な-прикметники", to: "ja.adjectives.na-adjectives" }, "."]
+              es: [{ term: "です" }, " también cierra una oración con adjetivo. Véase ", { link: "Los adjetivos い", to: "ja.adjectives.i-adjectives" }, " y ", { link: "Los adjetivos な", to: "ja.adjectives.na-adjectives" }, "."]
+              pt: [{ term: "です" }, " também fecha uma frase com adjetivo. Veja ", { link: "Os adjetivos い", to: "ja.adjectives.i-adjectives" }, " e ", { link: "Os adjetivos な", to: "ja.adjectives.na-adjectives" }, "."]
+              fr: [{ term: "です" }, " termine aussi une phrase avec adjectif. Voir ", { link: "Les adjectifs en い", to: "ja.adjectives.i-adjectives" }, " et ", { link: "Les adjectifs en な", to: "ja.adjectives.na-adjectives" }, "."]
+              de: [{ term: "です" }, " beendet auch einen Satz mit Adjektiv. Siehe ", { link: "Die い-Adjektive", to: "ja.adjectives.i-adjectives" }, " und ", { link: "Die な-Adjektive", to: "ja.adjectives.na-adjectives" }, "."]
+              it: [{ term: "です" }, " chiude anche una frase con aggettivo. Vedi ", { link: "Gli aggettivi in い", to: "ja.adjectives.i-adjectives" }, " e ", { link: "Gli aggettivi in な", to: "ja.adjectives.na-adjectives" }, "."]
+              pl: [{ term: "です" }, " kończy też zdanie z przymiotnikiem. Zob. ", { link: "Przymiotniki い", to: "ja.adjectives.i-adjectives" }, " i ", { link: "Przymiotniki な", to: "ja.adjectives.na-adjectives" }, "."]
+              tr: [{ term: "です" }, " sıfatlı cümleyi de bitirir. Bkz. ", { link: "い sıfatları", to: "ja.adjectives.i-adjectives" }, " ve ", { link: "な sıfatları", to: "ja.adjectives.na-adjectives" }, "."]
+              id: [{ term: "です" }, " juga mengakhiri kalimat dengan kata sifat. Lihat ", { link: "Kata sifat い", to: "ja.adjectives.i-adjectives" }, " dan ", { link: "Kata sifat な", to: "ja.adjectives.na-adjectives" }, "."]
+              vi: [{ term: "です" }, " cũng kết thúc câu có tính từ. Xem ", { link: "Tính từ い", to: "ja.adjectives.i-adjectives" }, " và ", { link: "Tính từ な", to: "ja.adjectives.na-adjectives" }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              en: ["Casual speech uses the plain form ", { term: "だ" }, " in place of ", { term: "です" }, ". See ", { link: "The Plain Form", to: ja.verbs.plain-form }, "."]
+              uk: ["У невимушеній мові замість ", { term: "です" }, " вживають просту форму ", { term: "だ" }, ". Див. ", { link: "Проста форма", to: "ja.verbs.plain-form" }, "."]
+              es: ["El habla informal usa la forma simple ", { term: "だ" }, " en lugar de ", { term: "です" }, ". Véase ", { link: "La forma simple", to: "ja.verbs.plain-form" }, "."]
+              pt: ["A fala informal usa a forma simples ", { term: "だ" }, " no lugar de ", { term: "です" }, ". Veja ", { link: "A forma simples", to: "ja.verbs.plain-form" }, "."]
+              fr: ["La langue familière emploie la forme simple ", { term: "だ" }, " à la place de ", { term: "です" }, ". Voir ", { link: "La forme simple", to: "ja.verbs.plain-form" }, "."]
+              de: ["In der Umgangssprache steht die einfache Form ", { term: "だ" }, " statt ", { term: "です" }, ". Siehe ", { link: "Die einfache Form", to: "ja.verbs.plain-form" }, "."]
+              it: ["Il parlato informale usa la forma semplice ", { term: "だ" }, " al posto di ", { term: "です" }, ". Vedi ", { link: "La forma semplice", to: "ja.verbs.plain-form" }, "."]
+              pl: ["W mowie potocznej zamiast ", { term: "です" }, " stosuje się formę prostą ", { term: "だ" }, ". Zob. ", { link: "Forma prosta", to: "ja.verbs.plain-form" }, "."]
+              tr: ["Gündelik konuşmada ", { term: "です" }, " yerine yalın biçim ", { term: "だ" }, " kullanılır. Bkz. ", { link: "Yalın biçim", to: "ja.verbs.plain-form" }, "."]
+              id: ["Ragam santai memakai bentuk biasa ", { term: "だ" }, " sebagai pengganti ", { term: "です" }, ". Lihat ", { link: "Bentuk biasa", to: "ja.verbs.plain-form" }, "."]
+              vi: ["Văn nói thân mật dùng thể thường ", { term: "だ" }, " thay cho ", { term: "です" }, ". Xem ", { link: "Thể thường", to: "ja.verbs.plain-form" }, "."]
+  - title:
+      en: "Introducing yourself"
+      uk: "Знайомство"
+      es: "Presentarse"
+      pt: "Apresentar-se"
+      fr: "Se présenter"
+      de: "Sich vorstellen"
+      it: "Presentarsi"
+      pl: "Przedstawianie się"
+      tr: "Kendini tanıtma"
+      id: "Memperkenalkan diri"
+      vi: "Tự giới thiệu"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A0"
+            use:
+              en: "Meeting someone for the first time"
+              uk: "Перша зустріч"
+              es: "Primer encuentro"
+              pt: "Primeiro encontro"
+              fr: "Première rencontre"
+              de: "Erstes Kennenlernen"
+              it: "Primo incontro"
+              pl: "Pierwsze spotkanie"
+              tr: "İlk tanışma"
+              id: "Pertemuan pertama"
+              vi: "Lần đầu gặp"
+            ex: [{ target: "はじめまして" }, "。"]
+            tr: { en: "Nice to meet you.", uk: "Дуже приємно познайомитися.", es: "Mucho gusto.", pt: "Muito prazer.", fr: "Enchanté(e).", de: "Freut mich.", it: "Piacere.", pl: "Miło mi cię poznać.", tr: "Tanıştığımıza memnun oldum.", id: "Senang berkenalan dengan Anda.", vi: "Rất vui được gặp bạn." }
+          - level: "A0"
+            use:
+              en: "Giving your name"
+              uk: "Назвати своє ім’я"
+              es: "Decir tu nombre"
+              pt: "Dizer o seu nome"
+              fr: "Dire son nom"
+              de: "Den eigenen Namen nennen"
+              it: "Dire il proprio nome"
+              pl: "Podanie imienia"
+              tr: "Adını söyleme"
+              id: "Menyebut nama"
+              vi: "Nói tên mình"
+            ex: ["わたしはジョン", { target: "です" }, "。"]
+            tr: { en: "I'm John.", uk: "Я Джон.", es: "Soy John.", pt: "Eu sou John.", fr: "Je suis John.", de: "Ich bin John.", it: "Sono John.", pl: "Jestem John.", tr: "Adım John.", id: "Saya John.", vi: "Tôi là John." }
+          - level: "A0"
+            use:
+              en: "Giving only your name"
+              uk: "Лише ім’я"
+              es: "Solo el nombre"
+              pt: "Só o nome"
+              fr: "Seulement le nom"
+              de: "Nur den Namen"
+              it: "Solo il nome"
+              pl: "Samo imię"
+              tr: "Yalnızca ad"
+              id: "Hanya nama"
+              vi: "Chỉ nói tên"
+            ex: ["ジョン", { target: "です" }, "。"]
+            tr: { en: "I'm John.", uk: "Я Джон.", es: "Soy John.", pt: "Eu sou John.", fr: "Je suis John.", de: "Ich bin John.", it: "Sono John.", pl: "Jestem John.", tr: "Adım John.", id: "Saya John.", vi: "Tôi là John." }
+          - level: "A0"
+            use:
+              en: "Closing an introduction"
+              uk: "Завершення знайомства"
+              es: "Cerrar la presentación"
+              pt: "Encerrar a apresentação"
+              fr: "Conclure la présentation"
+              de: "Die Vorstellung abschließen"
+              it: "Chiudere la presentazione"
+              pl: "Zakończenie przedstawienia"
+              tr: "Tanıtmayı bitirme"
+              id: "Menutup perkenalan"
+              vi: "Kết thúc phần giới thiệu"
+            ex: [{ target: "よろしくおねがいします" }, "。"]
+            tr: { en: "I look forward to getting along with you.", uk: "Сподіваюся на добрі стосунки.", es: "Espero que nos llevemos bien.", pt: "Espero que nos demos bem.", fr: "J’espère que nous nous entendrons bien.", de: "Ich freue mich auf ein gutes Miteinander.", it: "Spero che andremo d'accordo.", pl: "Mam nadzieję na dobrą znajomość.", tr: "Umarım iyi anlaşırız.", id: "Semoga kita bisa akrab.", vi: "Rất mong được bạn giúp đỡ." }
+          - level: "A0"
+            use:
+              en: "A whole introduction"
+              uk: "Усе знайомство"
+              es: "Una presentación completa"
+              pt: "Uma apresentação completa"
+              fr: "Une présentation complète"
+              de: "Eine ganze Vorstellung"
+              it: "Una presentazione completa"
+              pl: "Całe przedstawienie się"
+              tr: "Tam bir tanışma"
+              id: "Perkenalan lengkap"
+              vi: "Một lần giới thiệu trọn vẹn"
+            ex: { exchange: [["はじめまして。わたしはアンナ", { target: "です" }, "。よろしくおねがいします。"], ["はじめまして。たなか", { target: "です" }, "。よろしくおねがいします。"]] }
+            tr: { en: { exchange: ["Nice to meet you. I'm Anna. I look forward to getting along with you.", "Nice to meet you. I'm Tanaka. I look forward to getting along with you."] }, uk: { exchange: ["Дуже приємно познайомитися. Я Анна. Сподіваюся на добрі стосунки.", "Дуже приємно познайомитися. Я Танака. Сподіваюся на добрі стосунки."] }, es: { exchange: ["Mucho gusto. Soy Anna. Espero que nos llevemos bien.", "Mucho gusto. Soy Tanaka. Espero que nos llevemos bien."] }, pt: { exchange: ["Muito prazer. Eu sou Anna. Espero que nos demos bem.", "Muito prazer. Eu sou Tanaka. Espero que nos demos bem."] }, fr: { exchange: ["Enchanté(e). Je suis Anna. J’espère que nous nous entendrons bien.", "Enchanté(e). Je suis Tanaka. J’espère que nous nous entendrons bien."] }, de: { exchange: ["Freut mich. Ich bin Anna. Ich freue mich auf ein gutes Miteinander.", "Freut mich. Ich bin Tanaka. Ich freue mich auf ein gutes Miteinander."] }, it: { exchange: ["Piacere. Sono Anna. Spero che andremo d'accordo.", "Piacere. Sono Tanaka. Spero che andremo d'accordo."] }, pl: { exchange: ["Miło mi cię poznać. Jestem Anna. Mam nadzieję na dobrą znajomość.", "Miło mi cię poznać. Jestem Tanaka. Mam nadzieję na dobrą znajomość."] }, tr: { exchange: ["Tanıştığımıza memnun oldum. Adım Anna. Umarım iyi anlaşırız.", "Tanıştığımıza memnun oldum. Adım Tanaka. Umarım iyi anlaşırız."] }, id: { exchange: ["Senang berkenalan dengan Anda. Saya Anna. Semoga kita bisa akrab.", "Senang berkenalan dengan Anda. Saya Tanaka. Semoga kita bisa akrab."] }, vi: { exchange: ["Rất vui được gặp bạn. Tôi là Anna. Rất mong được bạn giúp đỡ.", "Rất vui được gặp bạn. Tôi là Tanaka. Rất mong được bạn giúp đỡ."] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              en: [{ term: "さん" }, " follows another person's name; your own name takes none."]
+              uk: [{ term: "さん" }, " додають до імені іншої людини, а до власного — ні."]
+              es: [{ term: "さん" }, " va tras el nombre de otra persona; el propio nombre no lo lleva."]
+              pt: [{ term: "さん" }, " vem depois do nome de outra pessoa; o próprio nome não o leva."]
+              fr: [{ term: "さん" }, " suit le nom d’une autre personne ; son propre nom n’en prend pas."]
+              de: [{ term: "さん" }, " steht hinter dem Namen anderer Personen; der eigene Name bekommt keins."]
+              it: [{ term: "さん" }, " segue il nome di un'altra persona; il proprio nome non lo prende."]
+              pl: [{ term: "さん" }, " idzie za imieniem innej osoby; własne imię go nie ma."]
+              tr: [{ term: "さん" }, " başkasının adından sonra gelir; kişinin kendi adı onu almaz."]
+              id: [{ term: "さん" }, " dipakai setelah nama orang lain; nama sendiri tidak memakainya."]
+              vi: [{ term: "さん" }, " đi sau tên người khác; tên của chính mình không có nó."]
+            ex: { examples: [["わたしはアンナ", { target: "です" }, "。"], ["たなか", { target: "さん" }, "はせんせいです。"]] }
+            tr: { en: { examples: ["I'm Anna.", "Tanaka-san is a teacher."] }, uk: { examples: ["Я Анна.", "Танака-сан — вчитель."] }, es: { examples: ["Soy Anna.", "Tanaka-san es profesor."] }, pt: { examples: ["Eu sou Anna.", "Tanaka-san é professor."] }, fr: { examples: ["Je suis Anna.", "Tanaka-san est professeur."] }, de: { examples: ["Ich bin Anna.", "Tanaka-san ist Lehrer."] }, it: { examples: ["Sono Anna.", "Tanaka-san è insegnante."] }, pl: { examples: ["Jestem Anna.", "Tanaka-san jest nauczycielem."] }, tr: { examples: ["Adım Anna.", "Tanaka-san öğretmen."] }, id: { examples: ["Saya Anna.", "Tanaka-san adalah guru."] }, vi: { examples: ["Tôi là Anna.", "Tanaka-san là giáo viên."] } }
+  - title:
+      en: "Form: polite present and past"
+      uk: "Форма: ввічливий теперішній і минулий час"
+      es: "Forma: presente y pasado corteses"
+      pt: "Forma: presente e passado polidos"
+      fr: "Forme : présent et passé polis"
+      de: "Form: Höflichkeitsform in Gegenwart und Vergangenheit"
+      it: "Forma: presente e passato cortesi"
+      pl: "Forma: czas teraźniejszy i przeszły w formie grzecznościowej"
+      tr: "Biçim: nazik şimdiki ve geçmiş zaman"
+      id: "Bentuk: sekarang dan lampau yang sopan"
+      vi: "Dạng: hiện tại và quá khứ lịch sự"
+    role: "form"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "tense", label: { en: "Tense", uk: "Час", es: "Tiempo", pt: "Tempo", fr: "Temps", de: "Zeit", it: "Tempo", pl: "Czas", tr: "Zaman", id: "Waktu", vi: "Thì" } }
+          - key: "pos"
+            label: { en: "Affirmative", uk: "Ствердження", es: "Afirmativa", pt: "Afirmativa", fr: "Affirmatif", de: "Bejahung", it: "Affermativa", pl: "Twierdzenie", tr: "Olumlu", id: "Positif", vi: "Khẳng định" }
+            features: { polarity: "pos", politeness: "form" }
+          - key: "neg"
+            label: { en: "Negative", uk: "Заперечення", es: "Negativa", pt: "Negativa", fr: "Négatif", de: "Verneinung", it: "Negativa", pl: "Przeczenie", tr: "Olumsuz", id: "Negatif", vi: "Phủ định" }
+            features: { polarity: "neg", politeness: "form" }
+        rows:
+          - level: "A1"
+            features: { tense: "prs" }
+            tense: { en: "Present", uk: "Теперішній час", es: "Presente", pt: "Presente", fr: "Présent", de: "Präsens", it: "Presente", pl: "Teraźniejszość", tr: "Şimdiki zaman", id: "Sekarang", vi: "Hiện tại" }
+            pos: { pattern: [{ slot: "noun" }, { term: "です" }] }
+            neg: { pattern: [{ slot: "noun" }, { term: "じゃありません" }] }
+          - level: "A1"
+            features: { tense: "pst" }
+            tense: { en: "Past", uk: "Минулий час", es: "Pasado", pt: "Passado", fr: "Passé", de: "Vergangenheit", it: "Passato", pl: "Przeszłość", tr: "Geçmiş zaman", id: "Lampau", vi: "Quá khứ" }
+            pos: { pattern: [{ slot: "noun" }, { term: "でした" }] }
+            neg: { pattern: [{ slot: "noun" }, { term: "じゃありませんでした" }] }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["The negative takes ", { term: "じゃありません" }, " in place of ", { term: "です" }, "."]
+              uk: ["У запереченні замість ", { term: "です" }, " стоїть ", { term: "じゃありません" }, "."]
+              es: ["La negativa lleva ", { term: "じゃありません" }, " en lugar de ", { term: "です" }, "."]
+              pt: ["A negativa leva ", { term: "じゃありません" }, " no lugar de ", { term: "です" }, "."]
+              fr: ["La négation met ", { term: "じゃありません" }, " à la place de ", { term: "です" }, "."]
+              de: ["Die Verneinung steht mit ", { term: "じゃありません" }, " statt ", { term: "です" }, "."]
+              it: ["La negazione prende ", { term: "じゃありません" }, " al posto di ", { term: "です" }, "."]
+              pl: ["W przeczeniu zamiast ", { term: "です" }, " stoi ", { term: "じゃありません" }, "."]
+              tr: ["Olumsuzda ", { term: "です" }, " yerine ", { term: "じゃありません" }, " gelir."]
+              id: ["Bentuk negatif memakai ", { term: "じゃありません" }, " sebagai ganti ", { term: "です" }, "."]
+              vi: ["Dạng phủ định dùng ", { term: "じゃありません" }, " thay cho ", { term: "です" }, "."]
+            ex: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, { target: "じゃありません" }, "。"]
+            tr: { en: "I am not a student.", uk: "Я не студент.", es: "No soy estudiante.", pt: "Não sou estudante.", fr: "Je ne suis pas étudiant.", de: "Ich bin kein Student.", it: "Non sono studente.", pl: "Nie jestem studentem.", tr: "Ben öğrenci değilim.", id: "Saya bukan mahasiswa.", vi: "Tôi không phải là sinh viên." }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["The past is ", { term: "でした" }, "; the negative past is ", { term: "じゃありませんでした" }, "."]
+              uk: ["Минулий час — ", { term: "でした" }, "; заперечення в минулому — ", { term: "じゃありませんでした" }, "."]
+              es: ["El pasado es ", { term: "でした" }, "; la negativa en pasado es ", { term: "じゃありませんでした" }, "."]
+              pt: ["O passado é ", { term: "でした" }, "; a negativa no passado é ", { term: "じゃありませんでした" }, "."]
+              fr: ["Le passé est ", { term: "でした" }, " ; la négation au passé est ", { term: "じゃありませんでした" }, "."]
+              de: ["Die Vergangenheit ist ", { term: "でした" }, "; die verneinte Vergangenheit ist ", { term: "じゃありませんでした" }, "."]
+              it: ["Il passato è ", { term: "でした" }, "; la negazione al passato è ", { term: "じゃありませんでした" }, "."]
+              pl: ["Czas przeszły to ", { term: "でした" }, "; przeczenie w czasie przeszłym to ", { term: "じゃありませんでした" }, "."]
+              tr: ["Geçmiş ", { term: "でした" }, ", geçmişin olumsuzu ", { term: "じゃありませんでした" }, " biçimidir."]
+              id: ["Bentuk lampau adalah ", { term: "でした" }, "; negatif lampaunya ", { term: "じゃありませんでした" }, "."]
+              vi: ["Quá khứ là ", { term: "でした" }, "; phủ định quá khứ là ", { term: "じゃありませんでした" }, "."]
+            ex: { examples: [["きのうはやすみ", { target: "でした" }, "。"], ["きのうはやすみ", { target: "じゃありませんでした" }, "。"]] }
+            tr: { en: { examples: ["Yesterday was a day off.", "Yesterday was not a day off."] }, uk: { examples: ["Учора був вихідний.", "Учора не було вихідного."] }, es: { examples: ["Ayer fue día libre.", "Ayer no fue día libre."] }, pt: { examples: ["Ontem foi dia de folga.", "Ontem não foi dia de folga."] }, fr: { examples: ["Hier était un jour de congé.", "Hier n’était pas un jour de congé."] }, de: { examples: ["Gestern war frei.", "Gestern war nicht frei."] }, it: { examples: ["Ieri era giorno libero.", "Ieri non era giorno libero."] }, pl: { examples: ["Wczoraj był dzień wolny.", "Wczoraj nie był dniem wolnym."] }, tr: { examples: ["Dün tatildi.", "Dün tatil değildi."] }, id: { examples: ["Kemarin hari libur.", "Kemarin bukan hari libur."] }, vi: { examples: ["Hôm qua là ngày nghỉ.", "Hôm qua không phải là ngày nghỉ."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["A past form goes with a time word such as ", { term: "きのう" }, " (“yesterday”) or ", { term: "むかし" }, " (“long ago”)."]
+              uk: ["Минулу форму вживають зі словом часу: ", { term: "きのう" }, " («вчора»), ", { term: "むかし" }, " («колись»)."]
+              es: ["La forma de pasado va con una palabra de tiempo como ", { term: "きのう" }, " («ayer») o ", { term: "むかし" }, " («antiguamente»)."]
+              pt: ["A forma de passado vai com uma palavra de tempo como ", { term: "きのう" }, " («ontem») ou ", { term: "むかし" }, " («antigamente»)."]
+              fr: ["La forme du passé va avec un mot de temps comme ", { term: "きのう" }, " (« hier ») ou ", { term: "むかし" }, " (« autrefois »)."]
+              de: ["Die Vergangenheitsform steht mit einem Zeitwort wie ", { term: "きのう" }, " („gestern“) oder ", { term: "むかし" }, " („früher“)."]
+              it: ["La forma del passato va con una parola di tempo come ", { term: "きのう" }, " («ieri») o ", { term: "むかし" }, " («una volta»)."]
+              pl: ["Formę przeszłą łączy się z określeniem czasu, np. ", { term: "きのう" }, " („wczoraj”) lub ", { term: "むかし" }, " („dawniej”)."]
+              tr: ["Geçmiş biçim, ", { term: "きのう" }, " (“dün”) ya da ", { term: "むかし" }, " (“eskiden”) gibi bir zaman sözcüğüyle kullanılır."]
+              id: ["Bentuk lampau dipakai bersama kata waktu seperti ", { term: "きのう" }, " (“kemarin”) atau ", { term: "むかし" }, " (“dahulu”)."]
+              vi: ["Dạng quá khứ đi với từ chỉ thời gian như ", { term: "きのう" }, " (“hôm qua”) hoặc ", { term: "むかし" }, " (“ngày xưa”)."]
+            ex: ["むかし、", { kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, { target: "でした" }, "。"]
+            tr: { en: "I was a student once.", uk: "Колись я був студентом.", es: "Antes yo era estudiante.", pt: "Antigamente eu era estudante.", fr: "Autrefois, j’étais étudiant.", de: "Früher war ich Student.", it: "Una volta ero studente.", pl: "Kiedyś byłem studentem.", tr: "Eskiden öğrenciydim.", id: "Dulu saya mahasiswa.", vi: "Ngày xưa tôi là sinh viên." }
+  - title:
+      en: "Form: questions and answers"
+      uk: "Форма: питання та відповіді"
+      es: "Forma: preguntas y respuestas"
+      pt: "Forma: perguntas e respostas"
+      fr: "Forme : questions et réponses"
+      de: "Form: Fragen und Antworten"
+      it: "Forma: domande e risposte"
+      pl: "Forma: pytania i odpowiedzi"
+      tr: "Biçim: sorular ve cevaplar"
+      id: "Bentuk: pertanyaan dan jawaban"
+      vi: "Dạng: câu hỏi và câu trả lời"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { en: "Form", uk: "Форма", es: "Forma", pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            form:
+              en: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              uk: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              es: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              pt: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              fr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              de: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              it: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              pl: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              tr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              id: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+              vi: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "ですか" }] }
+            ex: ["アンナさんは", { kanji: "学生", reading: "がくせい" }, { target: "ですか" }, "。"]
+            tr: { en: "Is Anna a student?", uk: "Анна студентка?", es: "¿Anna es estudiante?", pt: "A Anna é estudante?", fr: "Anna est-elle étudiante ?", de: "Ist Anna Studentin?", it: "Anna è studentessa?", pl: "Czy Anna jest studentką?", tr: "Anna öğrenci mi?", id: "Apakah Anna mahasiswa?", vi: "Anna có phải là sinh viên không?" }
+          - level: "A1"
+            form:
+              en: "Answer: yes"
+              uk: "Відповідь: так"
+              es: "Respuesta: sí"
+              pt: "Resposta: sim"
+              fr: "Réponse : oui"
+              de: "Antwort: ja"
+              it: "Risposta: sì"
+              pl: "Odpowiedź: tak"
+              tr: "Cevap: evet"
+              id: "Jawaban: ya"
+              vi: "Trả lời: vâng"
+            ex: { exchange: [["アンナさんは", { kanji: "学生", reading: "がくせい" }, "ですか。"], ["はい、", { kanji: "学生", reading: "がくせい" }, { target: "です" }, "。"]] }
+            tr: { en: { exchange: ["Is Anna a student?", "Yes, she is a student."] }, uk: { exchange: ["Анна студентка?", "Так, студентка."] }, es: { exchange: ["¿Anna es estudiante?", "Sí, es estudiante."] }, pt: { exchange: ["A Anna é estudante?", "Sim, é estudante."] }, fr: { exchange: ["Anna est-elle étudiante ?", "Oui, elle est étudiante."] }, de: { exchange: ["Ist Anna Studentin?", "Ja, sie ist Studentin."] }, it: { exchange: ["Anna è studentessa?", "Sì, è studentessa."] }, pl: { exchange: ["Czy Anna jest studentką?", "Tak, jest studentką."] }, tr: { exchange: ["Anna öğrenci mi?", "Evet, öğrenci."] }, id: { exchange: ["Apakah Anna mahasiswa?", "Ya, dia mahasiswa."] }, vi: { exchange: ["Anna có phải là sinh viên không?", "Vâng, cô ấy là sinh viên."] } }
+          - level: "A1"
+            form:
+              en: "Answer: no"
+              uk: "Відповідь: ні"
+              es: "Respuesta: no"
+              pt: "Resposta: não"
+              fr: "Réponse : non"
+              de: "Antwort: nein"
+              it: "Risposta: no"
+              pl: "Odpowiedź: nie"
+              tr: "Cevap: hayır"
+              id: "Jawaban: bukan"
+              vi: "Trả lời: không"
+            ex: { exchange: [["たなかさんは", { kanji: "先生", reading: "せんせい" }, "ですか。"], ["いいえ、", { kanji: "先生", reading: "せんせい" }, { target: "じゃありません" }, "。"]] }
+            tr: { en: { exchange: ["Is Tanaka-san a teacher?", "No, he is not a teacher."] }, uk: { exchange: ["Танака-сан вчитель?", "Ні, він не вчитель."] }, es: { exchange: ["¿Tanaka-san es profesor?", "No, no es profesor."] }, pt: { exchange: ["O Tanaka-san é professor?", "Não, não é professor."] }, fr: { exchange: ["Tanaka-san est-il professeur ?", "Non, il n’est pas professeur."] }, de: { exchange: ["Ist Tanaka-san Lehrer?", "Nein, er ist kein Lehrer."] }, it: { exchange: ["Tanaka-san è insegnante?", "No, non è insegnante."] }, pl: { exchange: ["Czy Tanaka-san jest nauczycielem?", "Nie, nie jest nauczycielem."] }, tr: { exchange: ["Tanaka-san öğretmen mi?", "Hayır, öğretmen değil."] }, id: { exchange: ["Apakah Tanaka-san guru?", "Bukan, dia bukan guru."] }, vi: { exchange: ["Tanaka-san có phải là giáo viên không?", "Không, anh ấy không phải là giáo viên."] } }
+          - level: "A1"
+            form: { en: "Past", uk: "Минулий час", es: "Pasado", pt: "Passado", fr: "Passé", de: "Vergangenheit", it: "Passato", pl: "Czas przeszły", tr: "Geçmiş zaman", id: "Lampau", vi: "Quá khứ" }
+            ex: { exchange: [["きのうはやすみ", { target: "でしたか" }, "。"], ["はい、やすみ", { target: "でした" }, "。"]] }
+            tr: { en: { exchange: ["Was yesterday a day off?", "Yes, it was."] }, uk: { exchange: ["Учора був вихідний?", "Так, був."] }, es: { exchange: ["¿Ayer fue día libre?", "Sí, fue día libre."] }, pt: { exchange: ["Ontem foi dia de folga?", "Sim, foi."] }, fr: { exchange: ["Hier, c’était un jour de congé ?", "Oui, c’était un jour de congé."] }, de: { exchange: ["War gestern frei?", "Ja, gestern war frei."] }, it: { exchange: ["Ieri era giorno libero?", "Sì, era giorno libero."] }, pl: { exchange: ["Czy wczoraj był dzień wolny?", "Tak, był."] }, tr: { exchange: ["Dün tatil miydi?", "Evet, tatildi."] }, id: { exchange: ["Apakah kemarin hari libur?", "Ya, kemarin hari libur."] }, vi: { exchange: ["Hôm qua có phải là ngày nghỉ không?", "Vâng, hôm qua là ngày nghỉ."] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: [{ term: "か" }, " at the end of the sentence makes a question; the word order does not change."]
+              uk: [{ term: "か" }, " в кінці речення робить його питанням; порядок слів не змінюється."]
+              es: [{ term: "か" }, " al final de la oración forma la pregunta; el orden de las palabras no cambia."]
+              pt: [{ term: "か" }, " no fim da frase forma a pergunta; a ordem das palavras não muda."]
+              fr: [{ term: "か" }, " en fin de phrase forme la question ; l’ordre des mots ne change pas."]
+              de: [{ term: "か" }, " am Satzende bildet die Frage; die Wortstellung bleibt gleich."]
+              it: [{ term: "か" }, " a fine frase forma la domanda; l'ordine delle parole non cambia."]
+              pl: [{ term: "か" }, " na końcu zdania tworzy pytanie; szyk wyrazów się nie zmienia."]
+              tr: ["Cümle sonundaki ", { term: "か" }, " soru yapar; sözcük sırası değişmez."]
+              id: [{ term: "か" }, " di akhir kalimat membentuk pertanyaan; urutan kata tidak berubah."]
+              vi: [{ term: "か" }, " ở cuối câu tạo thành câu hỏi; trật tự từ không đổi."]
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["Question words and question intonation: see ", { link: "Questions", to: "ja.sentence-basics.questions" }, "."]
+              uk: ["Питальні слова й інтонація питання: див. ", { link: "Питання", to: "ja.sentence-basics.questions" }, "."]
+              es: ["Las palabras interrogativas y la entonación de la pregunta: véase ", { link: "Las preguntas", to: "ja.sentence-basics.questions" }, "."]
+              pt: ["As palavras interrogativas e a entonação da pergunta: veja ", { link: "As perguntas", to: "ja.sentence-basics.questions" }, "."]
+              fr: ["Les mots interrogatifs et l’intonation de la question : voir ", { link: "Les questions", to: "ja.sentence-basics.questions" }, "."]
+              de: ["Fragewörter und Frageintonation: siehe ", { link: "Fragen", to: "ja.sentence-basics.questions" }, "."]
+              it: ["Le parole interrogative e l'intonazione della domanda: vedi ", { link: "Le domande", to: "ja.sentence-basics.questions" }, "."]
+              pl: ["Zaimki pytające i intonacja pytania: zob. ", { link: "Pytania", to: "ja.sentence-basics.questions" }, "."]
+              tr: ["Soru sözcükleri ve soru tonlaması: bkz. ", { link: "Soru cümleleri", to: "ja.sentence-basics.questions" }, "."]
+              id: ["Kata tanya dan intonasi pertanyaan: lihat ", { link: "Kalimat tanya", to: "ja.sentence-basics.questions" }, "."]
+              vi: ["Từ để hỏi và ngữ điệu câu hỏi: xem ", { link: "Câu hỏi", to: "ja.sentence-basics.questions" }, "."]
+  - title: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" }
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A0"
+            use:
+              en: "What a thing is"
+              uk: "Що це за річ"
+              es: "Qué es una cosa"
+              pt: "O que uma coisa é"
+              fr: "Ce qu’est une chose"
+              de: "Was etwas ist"
+              it: "Che cosa è una cosa"
+              pl: "Czym jest rzecz"
+              tr: "Bir şeyin ne olduğu"
+              id: "Apa sesuatu itu"
+              vi: "Một vật là gì"
+            ex: ["これはほん", { target: "です" }, "。"]
+            tr: { en: "This is a book.", uk: "Це книга.", es: "Esto es un libro.", pt: "Isto é um livro.", fr: "C’est un livre.", de: "Das ist ein Buch.", it: "Questo è un libro.", pl: "To jest książka.", tr: "Bu bir kitap.", id: "Ini buku.", vi: "Đây là quyển sách." }
+          - level: "A0"
+            use:
+              en: "Someone's name"
+              uk: "Ім’я людини"
+              es: "El nombre de alguien"
+              pt: "O nome de alguém"
+              fr: "Le nom de quelqu’un"
+              de: "Der Name einer Person"
+              it: "Il nome di qualcuno"
+              pl: "Imię osoby"
+              tr: "Birinin adı"
+              id: "Nama seseorang"
+              vi: "Tên của ai đó"
+            ex: ["わたしのなまえはアンナ", { target: "です" }, "。"]
+            tr: { en: "My name is Anna.", uk: "Мене звати Анна.", es: "Me llamo Anna.", pt: "Meu nome é Anna.", fr: "Je m’appelle Anna.", de: "Ich heiße Anna.", it: "Mi chiamo Anna.", pl: "Mam na imię Anna.", tr: "Benim adım Anna.", id: "Nama saya Anna.", vi: "Tên tôi là Anna." }
+          - level: "A1"
+            use:
+              en: "Who someone is to you"
+              uk: "Ким хтось є для вас"
+              es: "Quién es alguien para ti"
+              pt: "Quem alguém é para você"
+              fr: "Qui est quelqu’un pour vous"
+              de: "Wer jemand für dich ist"
+              it: "Chi è qualcuno per te"
+              pl: "Kim ktoś jest dla ciebie"
+              tr: "Birinin sizin için kim olduğu"
+              id: "Siapa seseorang bagimu"
+              vi: "Ai đó là gì đối với bạn"
+            ex: ["アンナさんは", { kanji: "私", reading: "わたし" }, "のともだち", { target: "です" }, "。"]
+            tr: { en: "Anna is my friend.", uk: "Анна — моя подруга.", es: "Anna es mi amiga.", pt: "A Anna é minha amiga.", fr: "Anna est mon amie.", de: "Anna ist meine Freundin.", it: "Anna è la mia amica.", pl: "Anna jest moją przyjaciółką.", tr: "Anna benim arkadaşım.", id: "Anna teman saya.", vi: "Anna là bạn của tôi." }
+          - level: "A1"
+            use:
+              en: "Job or status"
+              uk: "Професія або статус"
+              es: "Profesión u ocupación"
+              pt: "Profissão ou ocupação"
+              fr: "Métier ou statut"
+              de: "Beruf oder Status"
+              it: "Professione o condizione"
+              pl: "Zawód lub status"
+              tr: "Meslek ya da konum"
+              id: "Pekerjaan atau status"
+              vi: "Nghề nghiệp hoặc vị thế"
+            ex: { examples: [["たなかさんは", { kanji: "先生", reading: "せんせい" }, { target: "です" }, "。"], ["アンナさんは", { kanji: "学生", reading: "がくせい" }, { target: "です" }, "。"]] }
+            tr: { en: { examples: ["Tanaka-san is a teacher.", "Anna is a student."] }, uk: { examples: ["Танака-сан — вчитель.", "Анна — студентка."] }, es: { examples: ["Tanaka-san es profesor.", "Anna es estudiante."] }, pt: { examples: ["Tanaka-san é professor.", "Anna é estudante."] }, fr: { examples: ["Tanaka-san est professeur.", "Anna est étudiante."] }, de: { examples: ["Tanaka-san ist Lehrer.", "Anna ist Studentin."] }, it: { examples: ["Tanaka-san è insegnante.", "Anna è studentessa."] }, pl: { examples: ["Tanaka-san jest nauczycielem.", "Anna jest studentką."] }, tr: { examples: ["Tanaka-san öğretmen.", "Anna öğrenci."] }, id: { examples: ["Tanaka-san adalah guru.", "Anna adalah mahasiswa."] }, vi: { examples: ["Tanaka-san là giáo viên.", "Anna là sinh viên."] } }
+          - level: "A1"
+            use:
+              en: "Nationality"
+              uk: "Національність"
+              es: "Nacionalidad"
+              pt: "Nacionalidade"
+              fr: "Nationalité"
+              de: "Staatsangehörigkeit"
+              it: "Nazionalità"
+              pl: "Narodowość"
+              tr: "Uyruk"
+              id: "Kewarganegaraan"
+              vi: "Quốc tịch"
+            ex: { examples: [["アンナさんはアメリカ", { kanji: "人", reading: "じん" }, { target: "です" }, "。"], ["たなかさんは", { kanji: "日本人", reading: "にほんじん" }, { target: "です" }, "。"]] }
+            tr: { en: { examples: ["Anna is American.", "Tanaka-san is Japanese."] }, uk: { examples: ["Анна — американка.", "Танака-сан — японець."] }, es: { examples: ["Anna es estadounidense.", "Tanaka-san es japonés."] }, pt: { examples: ["Anna é americana.", "Tanaka-san é japonês."] }, fr: { examples: ["Anna est américaine.", "Tanaka-san est japonais."] }, de: { examples: ["Anna ist Amerikanerin.", "Tanaka-san ist Japaner."] }, it: { examples: ["Anna è americana.", "Tanaka-san è giapponese."] }, pl: { examples: ["Anna jest Amerykanką.", "Tanaka-san jest Japończykiem."] }, tr: { examples: ["Anna Amerikalı.", "Tanaka-san Japon."] }, id: { examples: ["Anna orang Amerika.", "Tanaka-san orang Jepang."] }, vi: { examples: ["Anna là người Mỹ.", "Tanaka-san là người Nhật."] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: [{ term: "も" }, " replaces ", { term: "は" }, " for “too”: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". See ", { link: "Particles と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              uk: [{ term: "も" }, " замінює ", { term: "は" }, " у значенні «теж»: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Див. ", { link: "Частки と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              es: [{ term: "も" }, " sustituye a ", { term: "は" }, " para decir «también»: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Véase ", { link: "Las partículas と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              pt: [{ term: "も" }, " substitui ", { term: "は" }, " para dizer «também»: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Veja ", { link: "As partículas と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              fr: [{ term: "も" }, " remplace ", { term: "は" }, " pour dire « aussi » : ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Voir ", { link: "Les particules と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              de: [{ term: "も" }, " ersetzt ", { term: "は" }, " für „auch“: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Siehe ", { link: "Die Partikeln と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              it: [{ term: "も" }, " sostituisce ", { term: "は" }, " per dire «anche»: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Vedi ", { link: "Le particelle と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              pl: [{ term: "も" }, " zastępuje ", { term: "は" }, ", gdy chodzi o „też”: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Zob. ", { link: "Partykuły と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              tr: [{ term: "も" }, ", “de/da” anlamında ", { term: "は" }, " yerine geçer: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Bkz. ", { link: "と, も, の edatları", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              id: [{ term: "も" }, " menggantikan ", { term: "は" }, " untuk arti “juga”: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Lihat ", { link: "Partikel と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              vi: [{ term: "も" }, " thay cho ", { term: "は" }, " khi muốn nói “cũng”: ", { pattern: [{ slot: "noun" }, { term: "も" }, { slot: "noun" }, { term: "です" }] }, ". Xem ", { link: "Trợ từ と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+            ex: [{ kanji: "私", reading: "わたし" }, { target: "も" }, { kanji: "学生", reading: "がくせい" }, "です。"]
+            tr: { en: "I'm a student too.", uk: "Я теж студент.", es: "Yo también soy estudiante.", pt: "Eu também sou estudante.", fr: "Moi aussi, je suis étudiant.", de: "Ich bin auch Student.", it: "Anch'io sono studente.", pl: "Ja też jestem studentem.", tr: "Ben de öğrenciyim.", id: "Saya juga mahasiswa.", vi: "Tôi cũng là sinh viên." }
+  - title:
+      en: "Finer points"
+      uk: "Тонкощі"
+      es: "Matices"
+      pt: "Nuances"
+      fr: "Nuances"
+      de: "Feinheiten"
+      it: "Sfumature"
+      pl: "Niuanse"
+      tr: "İncelikler"
+      id: "Hal-hal yang lebih halus"
+      vi: "Những điểm tinh tế"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            point:
+              en: [{ term: "じゃありません" }, ": conversation and everyday writing"]
+              uk: [{ term: "じゃありません" }, ": розмова й повсякденні записи"]
+              es: [{ term: "じゃありません" }, ": conversación y escritos cotidianos"]
+              pt: [{ term: "じゃありません" }, ": conversa e escrita do dia a dia"]
+              fr: [{ term: "じゃありません" }, " : conversation et écrits courants"]
+              de: [{ term: "じゃありません" }, ": Gespräch und Alltagsschrift"]
+              it: [{ term: "じゃありません" }, ": conversazione e scrittura quotidiana"]
+              pl: [{ term: "じゃありません" }, ": rozmowa i codzienne pisanie"]
+              tr: [{ term: "じゃありません" }, ": konuşma ve gündelik yazı"]
+              id: [{ term: "じゃありません" }, ": percakapan dan tulisan sehari-hari"]
+              vi: [{ term: "じゃありません" }, ": hội thoại và văn viết đời thường"]
+            ex: ["これは", { kanji: "私", reading: "わたし" }, "の", { kanji: "本", reading: "ほん" }, { target: "じゃありません" }, "。"]
+            tr: { en: "This is not my book.", uk: "Це не моя книга.", es: "Este no es mi libro.", pt: "Este não é o meu livro.", fr: "Ce n’est pas mon livre.", de: "Das ist nicht mein Buch.", it: "Questo non è il mio libro.", pl: "To nie jest moja książka.", tr: "Bu benim kitabım değil.", id: "Ini bukan buku saya.", vi: "Đây không phải là sách của tôi." }
+          - level: "A2"
+            point:
+              en: [{ term: "ではありません" }, ": writing, speeches and announcements"]
+              uk: [{ term: "ではありません" }, ": письмо, промови й оголошення"]
+              es: [{ term: "ではありません" }, ": escritos, discursos y avisos"]
+              pt: [{ term: "ではありません" }, ": textos escritos, discursos e avisos"]
+              fr: [{ term: "ではありません" }, " : écrits, discours et annonces"]
+              de: [{ term: "ではありません" }, ": Schrift, Reden und Durchsagen"]
+              it: [{ term: "ではありません" }, ": scritti, discorsi e annunci"]
+              pl: [{ term: "ではありません" }, ": pismo, przemówienia i ogłoszenia"]
+              tr: [{ term: "ではありません" }, ": yazı, konuşmalar ve duyurular"]
+              id: [{ term: "ではありません" }, ": tulisan, pidato, dan pengumuman"]
+              vi: [{ term: "ではありません" }, ": văn viết, bài phát biểu và thông báo"]
+            ex: { examples: [["これは", { kanji: "私", reading: "わたし" }, "の", { kanji: "本", reading: "ほん" }, { target: "ではありません" }, "。"], ["きのうはやすみ", { target: "ではありませんでした" }, "。"]] }
+            tr: { en: { examples: ["This is not my book.", "Yesterday was not a day off."] }, uk: { examples: ["Це не моя книга.", "Учора не було вихідного."] }, es: { examples: ["Este no es mi libro.", "Ayer no fue día libre."] }, pt: { examples: ["Este não é o meu livro.", "Ontem não foi dia de folga."] }, fr: { examples: ["Ce n’est pas mon livre.", "Hier n’était pas un jour de congé."] }, de: { examples: ["Das ist nicht mein Buch.", "Gestern war nicht frei."] }, it: { examples: ["Questo non è il mio libro.", "Ieri non era giorno libero."] }, pl: { examples: ["To nie jest moja książka.", "Wczoraj nie był dniem wolnym."] }, tr: { examples: ["Bu benim kitabım değil.", "Dün tatil değildi."] }, id: { examples: ["Ini bukan buku saya.", "Kemarin bukan hari libur."] }, vi: { examples: ["Đây không phải là sách của tôi.", "Hôm qua không phải là ngày nghỉ."] } }
+          - level: "A2"
+            point:
+              en: ["A topic that is clear from the situation is left out; ", { term: "です" }, " stays"]
+              uk: ["Тему, зрозумілу з ситуації, пропускають; ", { term: "です" }, " лишається"]
+              es: ["El tema que se entiende por la situación se omite; ", { term: "です" }, " se queda"]
+              pt: ["O tópico claro pela situação é omitido; ", { term: "です" }, " permanece"]
+              fr: ["Le thème clair d’après la situation s’omet ; ", { term: "です" }, " reste"]
+              de: ["Ein aus der Situation klares Thema entfällt; ", { term: "です" }, " bleibt"]
+              it: ["Il tema chiaro dalla situazione si omette; ", { term: "です" }, " resta"]
+              pl: ["Temat jasny z sytuacji się pomija; ", { term: "です" }, " zostaje"]
+              tr: ["Durumdan anlaşılan konu söylenmez; ", { term: "です" }, " kalır"]
+              id: ["Topik yang jelas dari situasi dihilangkan; ", { term: "です" }, " tetap"]
+              vi: ["Chủ đề đã rõ theo tình huống thì lược bỏ; ", { term: "です" }, " vẫn giữ"]
+            ex: ["アンナ", { target: "です" }, "。", { kanji: "学生", reading: "がくせい" }, { target: "です" }, "。"]
+            tr: { en: "I'm Anna. I'm a student.", uk: "Я Анна. Я студентка.", es: "Soy Anna. Soy estudiante.", pt: "Eu sou a Anna. Sou estudante.", fr: "Je suis Anna. Je suis étudiante.", de: "Ich bin Anna. Ich bin Studentin.", it: "Sono Anna. Sono studentessa.", pl: "Jestem Anna. Jestem studentką.", tr: "Adım Anna. Öğrenciyim.", id: "Saya Anna. Saya mahasiswa.", vi: "Tôi là Anna. Tôi là sinh viên." }
+          - level: "A2"
+            point:
+              en: [{ term: "そうです" }, " confirms the question"]
+              uk: [{ term: "そうです" }, " підтверджує сказане в питанні"]
+              es: [{ term: "そうです" }, " confirma lo que dice la pregunta"]
+              pt: [{ term: "そうです" }, " confirma o que a pergunta diz"]
+              fr: [{ term: "そうです" }, " confirme ce que dit la question"]
+              de: [{ term: "そうです" }, " bestätigt, was die Frage sagt"]
+              it: [{ term: "そうです" }, " conferma ciò che dice la domanda"]
+              pl: [{ term: "そうです" }, " potwierdza to, co mówi pytanie"]
+              tr: [{ term: "そうです" }, " sorudaki ifadeyi onaylar"]
+              id: [{ term: "そうです" }, " membenarkan isi pertanyaan"]
+              vi: [{ term: "そうです" }, " xác nhận nội dung câu hỏi"]
+            ex: { exchange: [["たなかさんは", { kanji: "先生", reading: "せんせい" }, "ですか。"], ["はい、", { target: "そうです" }, "。"]] }
+            tr: { en: { exchange: ["Is Tanaka-san a teacher?", "Yes, that's right."] }, uk: { exchange: ["Танака-сан вчитель?", "Так, саме так."] }, es: { exchange: ["¿Tanaka-san es profesor?", "Sí, así es."] }, pt: { exchange: ["O Tanaka-san é professor?", "Sim, é isso mesmo."] }, fr: { exchange: ["Tanaka-san est-il professeur ?", "Oui, c’est ça."] }, de: { exchange: ["Ist Tanaka-san Lehrer?", "Ja, genau."] }, it: { exchange: ["Tanaka-san è insegnante?", "Sì, è così."] }, pl: { exchange: ["Czy Tanaka-san jest nauczycielem?", "Tak, zgadza się."] }, tr: { exchange: ["Tanaka-san öğretmen mi?", "Evet, öyle."] }, id: { exchange: ["Apakah Tanaka-san guru?", "Ya, benar."] }, vi: { exchange: ["Tanaka-san có phải là giáo viên không?", "Vâng, đúng vậy."] } }
+          - level: "A2"
+            point:
+              en: [{ term: "ちがいます" }, " or ", { term: "そうじゃありません" }, " denies it"]
+              uk: [{ term: "ちがいます" }, " або ", { term: "そうじゃありません" }, " заперечує це"]
+              es: [{ term: "ちがいます" }, " o ", { term: "そうじゃありません" }, " lo niega"]
+              pt: [{ term: "ちがいます" }, " ou ", { term: "そうじゃありません" }, " nega isso"]
+              fr: [{ term: "ちがいます" }, " ou ", { term: "そうじゃありません" }, " le nie"]
+              de: [{ term: "ちがいます" }, " oder ", { term: "そうじゃありません" }, " verneint es"]
+              it: [{ term: "ちがいます" }, " o ", { term: "そうじゃありません" }, " lo nega"]
+              pl: [{ term: "ちがいます" }, " lub ", { term: "そうじゃありません" }, " temu zaprzecza"]
+              tr: [{ term: "ちがいます" }, " ya da ", { term: "そうじゃありません" }, " bunu reddeder"]
+              id: [{ term: "ちがいます" }, " atau ", { term: "そうじゃありません" }, " menyangkalnya"]
+              vi: [{ term: "ちがいます" }, " hoặc ", { term: "そうじゃありません" }, " phủ nhận điều đó"]
+            ex: { exchange: [["たなかさんは", { kanji: "先生", reading: "せんせい" }, "ですか。"], ["いいえ、", { target: "ちがいます" }, "。"]] }
+            tr: { en: { exchange: ["Is Tanaka-san a teacher?", "No, that's not right."] }, uk: { exchange: ["Танака-сан вчитель?", "Ні, це не так."] }, es: { exchange: ["¿Tanaka-san es profesor?", "No, no es así."] }, pt: { exchange: ["O Tanaka-san é professor?", "Não, não é isso."] }, fr: { exchange: ["Tanaka-san est-il professeur ?", "Non, ce n’est pas ça."] }, de: { exchange: ["Ist Tanaka-san Lehrer?", "Nein, das stimmt nicht."] }, it: { exchange: ["Tanaka-san è insegnante?", "No, non è così."] }, pl: { exchange: ["Czy Tanaka-san jest nauczycielem?", "Nie, to nieprawda."] }, tr: { exchange: ["Tanaka-san öğretmen mi?", "Hayır, öyle değil."] }, id: { exchange: ["Apakah Tanaka-san guru?", "Bukan, tidak benar."] }, vi: { exchange: ["Tanaka-san có phải là giáo viên không?", "Không, không phải vậy."] } }
+          - level: "A2"
+            point:
+              en: ["After ", { term: "いいえ" }, ", the correct noun with ", { term: "です" }, " gives the answer"]
+              uk: ["Після ", { term: "いいえ" }, " правильний іменник з ", { term: "です" }, " дає відповідь"]
+              es: ["Tras ", { term: "いいえ" }, ", el sustantivo correcto con ", { term: "です" }, " da la respuesta"]
+              pt: ["Depois de ", { term: "いいえ" }, ", o substantivo certo com ", { term: "です" }, " dá a resposta"]
+              fr: ["Après ", { term: "いいえ" }, ", le bon nom avec ", { term: "です" }, " donne la réponse"]
+              de: ["Nach ", { term: "いいえ" }, " gibt das richtige Nomen mit ", { term: "です" }, " die Antwort"]
+              it: ["Dopo ", { term: "いいえ" }, ", il nome giusto con ", { term: "です" }, " dà la risposta"]
+              pl: ["Po ", { term: "いいえ" }, " właściwy rzeczownik z ", { term: "です" }, " daje odpowiedź"]
+              tr: [{ term: "いいえ" }, " sonrasında doğru isim ve ", { term: "です" }, " cevabı verir"]
+              id: ["Setelah ", { term: "いいえ" }, ", kata benda yang benar dengan ", { term: "です" }, " menjadi jawabannya"]
+              vi: ["Sau ", { term: "いいえ" }, ", danh từ đúng cùng ", { term: "です" }, " là câu trả lời"]
+            ex: { exchange: [["アンナさんは", { kanji: "先生", reading: "せんせい" }, "ですか。"], ["いいえ、", { kanji: "学生", reading: "がくせい" }, { target: "です" }, "。"]] }
+            tr: { en: { exchange: ["Is Anna a teacher?", "No, she is a student."] }, uk: { exchange: ["Анна вчителька?", "Ні, вона студентка."] }, es: { exchange: ["¿Anna es profesora?", "No, es estudiante."] }, pt: { exchange: ["A Anna é professora?", "Não, é estudante."] }, fr: { exchange: ["Anna est-elle professeure ?", "Non, elle est étudiante."] }, de: { exchange: ["Ist Anna Lehrerin?", "Nein, sie ist Studentin."] }, it: { exchange: ["Anna è insegnante?", "No, è studentessa."] }, pl: { exchange: ["Czy Anna jest nauczycielką?", "Nie, jest studentką."] }, tr: { exchange: ["Anna öğretmen mi?", "Hayır, öğrenci."] }, id: { exchange: ["Apakah Anna guru?", "Bukan, dia mahasiswa."] }, vi: { exchange: ["Anna có phải là giáo viên không?", "Không, cô ấy là sinh viên."] } }
+  - title:
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      fr: "Erreurs fréquentes"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A0"
+            wrong: "わたしはアンナさんです。"
+            right: ["わたしは", { target: "アンナ" }, "です。"]
+            rule:
+              en: [{ term: "さん" }, " follows the name of another person, never your own"]
+              uk: [{ term: "さん" }, " додають до імені іншої людини, ніколи до власного"]
+              es: [{ term: "さん" }, " va tras el nombre de otra persona, nunca tras el propio"]
+              pt: [{ term: "さん" }, " vem depois do nome de outra pessoa, nunca do próprio"]
+              fr: [{ term: "さん" }, " suit le nom d’une autre personne, jamais le sien"]
+              de: [{ term: "さん" }, " steht hinter dem Namen anderer, nie hinter dem eigenen"]
+              it: [{ term: "さん" }, " segue il nome di un'altra persona, mai il proprio"]
+              pl: [{ term: "さん" }, " idzie za imieniem innej osoby, nigdy za własnym"]
+              tr: [{ term: "さん" }, " başkasının adından sonra gelir, kendi adından asla"]
+              id: [{ term: "さん" }, " mengikuti nama orang lain, tidak pernah nama sendiri"]
+              vi: [{ term: "さん" }, " đi sau tên người khác, không bao giờ sau tên mình"]
+          - level: "A1"
+            wrong: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, "じゃありませんです。"]
+            right: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, { target: "じゃありません" }, "。"]
+            rule:
+              en: [{ term: "じゃありません" }, " already closes the sentence; ", { term: "です" }, " does not follow"]
+              uk: [{ term: "じゃありません" }, " уже закриває речення; ", { term: "です" }, " після нього не ставлять"]
+              es: [{ term: "じゃありません" }, " ya cierra la oración; no sigue ", { term: "です" }]
+              pt: [{ term: "じゃありません" }, " já fecha a frase; não vem ", { term: "です" }, " depois"]
+              fr: [{ term: "じゃありません" }, " ferme déjà la phrase ; ", { term: "です" }, " ne suit pas"]
+              de: [{ term: "じゃありません" }, " schließt den Satz schon; ", { term: "です" }, " folgt nicht"]
+              it: [{ term: "じゃありません" }, " chiude già la frase; ", { term: "です" }, " non segue"]
+              pl: [{ term: "じゃありません" }, " już zamyka zdanie; ", { term: "です" }, " nie następuje"]
+              tr: [{ term: "じゃありません" }, " cümleyi zaten kapatır; ardından ", { term: "です" }, " gelmez"]
+              id: [{ term: "じゃありません" }, " sudah menutup kalimat; ", { term: "です" }, " tidak mengikutinya"]
+              vi: [{ term: "じゃありません" }, " đã khép câu; không thêm ", { term: "です" }, " sau nó"]
+          - level: "A1"
+            wrong: "きのうはやすみじゃありません。"
+            right: ["きのうはやすみ", { target: "じゃありませんでした" }, "。"]
+            rule:
+              en: ["a past time word needs a past form: ", { term: "じゃありませんでした" }]
+              uk: ["слово минулого часу вимагає минулої форми: ", { term: "じゃありませんでした" }]
+              es: ["una palabra de tiempo pasado pide una forma de pasado: ", { term: "じゃありませんでした" }]
+              pt: ["uma palavra de tempo passado pede uma forma de passado: ", { term: "じゃありませんでした" }]
+              fr: ["un mot de temps passé demande une forme du passé : ", { term: "じゃありませんでした" }]
+              de: ["ein Zeitwort der Vergangenheit verlangt eine Vergangenheitsform: ", { term: "じゃありませんでした" }]
+              it: ["una parola di tempo passato richiede una forma del passato: ", { term: "じゃありませんでした" }]
+              pl: ["określenie czasu przeszłego wymaga formy przeszłej: ", { term: "じゃありませんでした" }]
+              tr: ["geçmiş zaman sözcüğü geçmiş biçim ister: ", { term: "じゃありませんでした" }]
+              id: ["kata waktu lampau memerlukan bentuk lampau: ", { term: "じゃありませんでした" }]
+              vi: ["từ chỉ thời gian quá khứ cần dạng quá khứ: ", { term: "じゃありませんでした" }]
+          - level: "A1"
+            wrong: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, "。"]
+            right: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, { target: "です" }, "。"]
+            rule:
+              uk: ["у ввічливому японському реченні з іменником потрібне ", { term: "です" }, ", хоча українською зв’язки немає: «Я студент»"]
+              id: ["kalimat nomina yang sopan dalam bahasa Jepang memerlukan ", { term: "です" }, ", padahal bahasa Indonesia berkata “Saya mahasiswa”"]
+            speakers: ["uk", "id"]
+          - level: "A2"
+            wrong: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, "です。", { kanji: "私", reading: "わたし" }, "はアメリカ", { kanji: "人", reading: "じん" }, "です。"]
+            right: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, "です。", { target: ["アメリカ", { kanji: "人", reading: "じん" }, "です"] }, "。"]
+            rule:
+              en: ["once the topic is clear, ", { term: [{ kanji: "私", reading: "わたし" }, "は"] }, " is left out; English needs “I” in every sentence, Japanese does not"]
+              fr: ["une fois le thème clair, ", { term: [{ kanji: "私", reading: "わたし" }, "は"] }, " s’omet ; le français veut « je » à chaque phrase, le japonais non"]
+              de: ["ist das Thema klar, entfällt ", { term: [{ kanji: "私", reading: "わたし" }, "は"] }, "; das Deutsche braucht „ich“ in jedem Satz, das Japanische nicht"]
+            speakers: ["en", "fr", "de"]

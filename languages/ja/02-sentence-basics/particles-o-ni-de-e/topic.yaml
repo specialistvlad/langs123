@@ -1,0 +1,856 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "ja.sentence-basics.particles-o-ni-de-e"
+lang: "ja"
+kind: "grammar"
+tags: ["を", "に", "で", "へ", "object", "place", "time", "direction"]
+concepts: ["particles", "prepositions-place"]
+related: ["ja.sentence-basics.wa-ga", "ja.sentence-basics.particles-to-mo-no", "ja.sentence-basics.word-order", "ja.verbs.aru-iru", "ja.verbs.giving-receiving"]
+status: { en: "draft", uk: "draft", es: "draft", pt: "draft", fr: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { uk: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", es: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", pt: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", fr: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", de: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", it: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", pl: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", tr: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", id: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646", vi: "58e1ab 8c896b 14fad4 0e677d a46fb8 ee9641 9b1f66 a9d307 de1646" }
+title:
+  en: "Particles を, に, で, へ"
+  uk: "Частки を, に, で, へ"
+  es: "Las partículas を, に, で, へ"
+  pt: "As partículas を, に, で, へ"
+  fr: "Les particules を, に, で, へ"
+  de: "Die Partikeln を, に, で, へ"
+  it: "Le particelle を, に, で, へ"
+  pl: "Partykuły を, に, で, へ"
+  tr: "を, に, で, へ edatları"
+  id: "Partikel を, に, で, へ"
+  vi: "Trợ từ を, に, で, へ"
+summary:
+  lead:
+    en: [{ term: "を" }, " marks the object; ", { term: "に" }, " the time, goal and place of being; ", { term: "で" }, " the place of action and the means; ", { term: "へ" }, " the direction."]
+    uk: [{ term: "を" }, " позначає додаток; ", { term: "に" }, " — час, мету руху й місце перебування; ", { term: "で" }, " — місце дії та засіб; ", { term: "へ" }, " — напрямок."]
+    es: [{ term: "を" }, " marca el complemento directo; ", { term: "に" }, ", el momento, el destino y el lugar donde algo está; ", { term: "で" }, ", el lugar de la acción y el medio; ", { term: "へ" }, ", la dirección."]
+    pt: [{ term: "を" }, " marca o objeto direto; ", { term: "に" }, ", o momento, o destino e o lugar onde algo está; ", { term: "で" }, ", o lugar da ação e o meio; ", { term: "へ" }, ", a direção."]
+    fr: [{ term: "を" }, " marque le complément d’objet ; ", { term: "に" }, ", le moment, la destination et le lieu où l’on est ; ", { term: "で" }, ", le lieu de l’action et le moyen ; ", { term: "へ" }, ", la direction."]
+    de: [{ term: "を" }, " markiert das Objekt; ", { term: "に" }, " die Zeit, das Ziel und den Ort des Seins; ", { term: "で" }, " den Ort der Handlung und das Mittel; ", { term: "へ" }, " die Richtung."]
+    it: [{ term: "を" }, " segna il complemento oggetto; ", { term: "に" }, " il tempo, la meta e il luogo in cui si è; ", { term: "で" }, " il luogo dell’azione e il mezzo; ", { term: "へ" }, " la direzione."]
+    pl: [{ term: "を" }, " oznacza dopełnienie; ", { term: "に" }, " — czas, cel i miejsce pobytu; ", { term: "で" }, " — miejsce czynności i środek; ", { term: "へ" }, " — kierunek."]
+    tr: [{ term: "を" }, " nesneyi; ", { term: "に" }, " zamanı, varış yerini ve bulunulan yeri; ", { term: "で" }, " eylemin yerini ve aracı; ", { term: "へ" }, " yönü işaretler."]
+    id: [{ term: "を" }, " menandai objek; ", { term: "に" }, " waktu, tujuan, dan tempat berada; ", { term: "で" }, " tempat kegiatan dan alat; ", { term: "へ" }, " arah."]
+    vi: [{ term: "を" }, " đánh dấu tân ngữ; ", { term: "に" }, " thời gian, nơi đến và nơi có mặt; ", { term: "で" }, " nơi diễn ra hành động và phương tiện; ", { term: "へ" }, " hướng đi."]
+  rule:
+    en: "Each particle follows its noun and gives it a role:"
+    uk: "Кожна частка стоїть після свого іменника й надає йому роль:"
+    es: "Cada partícula va tras su sustantivo y le da un papel:"
+    pt: "Cada partícula vem depois do seu substantivo e lhe dá uma função:"
+    fr: "Chaque particule suit son nom et lui donne un rôle :"
+    de: "Jede Partikel steht hinter ihrem Nomen und gibt ihm eine Rolle:"
+    it: "Ogni particella segue il suo nome e gli dà un ruolo:"
+    pl: "Każda partykuła stoi po swoim rzeczowniku i nadaje mu rolę:"
+    tr: "Her edat adının ardından gelir ve ona bir görev verir:"
+    id: "Setiap partikel mengikuti kata bendanya dan memberinya peran:"
+    vi: "Trợ từ đứng sau danh từ và cho nó một vai trò:"
+  ex: ["7", { kanji: "時", reading: "じ" }, { target: "に" }, "うち", { target: "で" }, "ごはん", { target: "を" }, { kanji: "食", reading: "た" }, "べます。"]
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point:
+            en: "Object"
+            uk: "Додаток"
+            es: "Complemento directo"
+            pt: "Objeto direto"
+            fr: "Complément d’objet"
+            de: "Objekt"
+            it: "Complemento oggetto"
+            pl: "Dopełnienie"
+            tr: "Nesne"
+            id: "Objek"
+            vi: "Tân ngữ"
+          rule:
+            en: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            uk: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            es: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            pt: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            fr: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            de: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            it: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            pl: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            tr: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            id: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            vi: { pattern: [{ slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+          ex: [{ kanji: "水", reading: "みず" }, { target: "を" }, { kanji: "飲", reading: "の" }, "みます。"]
+          tr: { en: "I drink water.", uk: "Я п’ю воду.", es: "Bebo agua.", pt: "Eu bebo água.", fr: "Je bois de l’eau.", de: "Ich trinke Wasser.", it: "Bevo acqua.", pl: "Piję wodę.", tr: "Su içerim.", id: "Saya minum air.", vi: "Tôi uống nước." }
+        - level: "A1"
+          point: { en: "Time", uk: "Час", es: "Momento", pt: "Momento", fr: "Moment", de: "Zeit", it: "Tempo", pl: "Czas", tr: "Zaman", id: "Waktu", vi: "Thời gian" }
+          rule:
+            en: ["A clock time, a day or a date takes ", { term: "に" }, "."]
+            uk: ["Година, день або дата стоїть із ", { term: "に" }, "."]
+            es: ["Una hora, un día o una fecha lleva ", { term: "に" }, "."]
+            pt: ["Uma hora, um dia ou uma data leva ", { term: "に" }, "."]
+            fr: ["Une heure, un jour ou une date prend ", { term: "に" }, "."]
+            de: ["Eine Uhrzeit, ein Tag oder ein Datum steht mit ", { term: "に" }, "."]
+            it: ["Un’ora, un giorno o una data prende ", { term: "に" }, "."]
+            pl: ["Godzina, dzień lub data bierze ", { term: "に" }, "."]
+            tr: ["Saat, gün ya da tarih ", { term: "に" }, " alır."]
+            id: ["Jam, hari, atau tanggal memakai ", { term: "に" }, "."]
+            vi: ["Giờ, ngày hoặc ngày tháng đi với ", { term: "に" }, "."]
+          ex: ["7", { kanji: "時", reading: "じ" }, { target: "に" }, "ごはんを", { kanji: "食", reading: "た" }, "べます。"]
+          tr: { en: "I eat at seven.", uk: "Я їм о сьомій.", es: "Como a las siete.", pt: "Eu como às sete.", fr: "Je mange à sept heures.", de: "Ich esse um sieben Uhr.", it: "Mangio alle sette.", pl: "Jem o siódmej.", tr: "Saat yedide yemek yerim.", id: "Saya makan jam tujuh.", vi: "Tôi ăn lúc bảy giờ." }
+        - level: "A1"
+          point: { en: "Goal", uk: "Мета руху", es: "Destino", pt: "Destino", fr: "Destination", de: "Ziel", it: "Meta", pl: "Cel", tr: "Varış yeri", id: "Tujuan", vi: "Nơi đến" }
+          rule:
+            en: ["The goal of ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " and ", { term: "かえる" }, " takes ", { term: "に" }, " or ", { term: "へ" }, "."]
+            uk: ["Мета руху для ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " і ", { term: "かえる" }, " стоїть із ", { term: "に" }, " або ", { term: "へ" }, "."]
+            es: ["El destino de ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " y ", { term: "かえる" }, " lleva ", { term: "に" }, " o ", { term: "へ" }, "."]
+            pt: ["O destino de ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " e ", { term: "かえる" }, " leva ", { term: "に" }, " ou ", { term: "へ" }, "."]
+            fr: ["La destination de ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " et ", { term: "かえる" }, " prend ", { term: "に" }, " ou ", { term: "へ" }, "."]
+            de: ["Das Ziel von ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " und ", { term: "かえる" }, " steht mit ", { term: "に" }, " oder ", { term: "へ" }, "."]
+            it: ["La meta di ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " e ", { term: "かえる" }, " prende ", { term: "に" }, " o ", { term: "へ" }, "."]
+            pl: ["Cel czasowników ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " i ", { term: "かえる" }, " bierze ", { term: "に" }, " lub ", { term: "へ" }, "."]
+            tr: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " ve ", { term: "かえる" }, " fiillerinin varış yeri ", { term: "に" }, " ya da ", { term: "へ" }, " alır."]
+            id: ["Tujuan ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, ", dan ", { term: "かえる" }, " memakai ", { term: "に" }, " atau ", { term: "へ" }, "."]
+            vi: ["Nơi đến của ", { term: [{ kanji: "行", reading: "い" }, "く"] }, ", ", { term: [{ kanji: "来", reading: "く" }, "る"] }, " và ", { term: "かえる" }, " đi với ", { term: "に" }, " hoặc ", { term: "へ" }, "."]
+          ex: [{ kanji: "日本", reading: "にほん" }, { target: "に" }, { kanji: "行", reading: "い" }, "きます。"]
+          tr: { en: "I'm going to Japan.", uk: "Я їду до Японії.", es: "Voy a Japón.", pt: "Eu vou para o Japão.", fr: "Je vais au Japon.", de: "Ich fahre nach Japan.", it: "Vado in Giappone.", pl: "Jadę do Japonii.", tr: "Japonya’ya gidiyorum.", id: "Saya pergi ke Jepang.", vi: "Tôi đi Nhật Bản." }
+        - level: "A1"
+          point:
+            en: "Place of being"
+            uk: "Місце перебування"
+            es: "Lugar donde algo está"
+            pt: "Lugar onde algo está"
+            fr: "Lieu où l’on est"
+            de: "Ort des Seins"
+            it: "Luogo in cui si è"
+            pl: "Miejsce pobytu"
+            tr: "Bulunulan yer"
+            id: "Tempat berada"
+            vi: "Nơi có mặt"
+          rule:
+            en: [{ term: "あります" }, " and ", { term: "います" }, " take ", { term: "に" }, " for the place."]
+            uk: [{ term: "あります" }, " і ", { term: "います" }, " беруть ", { term: "に" }, " для місця."]
+            es: [{ term: "あります" }, " y ", { term: "います" }, " llevan ", { term: "に" }, " para el lugar."]
+            pt: [{ term: "あります" }, " e ", { term: "います" }, " levam ", { term: "に" }, " para o lugar."]
+            fr: [{ term: "あります" }, " et ", { term: "います" }, " prennent ", { term: "に" }, " pour le lieu."]
+            de: [{ term: "あります" }, " und ", { term: "います" }, " stehen mit ", { term: "に" }, " beim Ort."]
+            it: [{ term: "あります" }, " e ", { term: "います" }, " prendono ", { term: "に" }, " per il luogo."]
+            pl: [{ term: "あります" }, " i ", { term: "います" }, " biorą ", { term: "に" }, " dla miejsca."]
+            tr: [{ term: "あります" }, " ve ", { term: "います" }, " yer için ", { term: "に" }, " alır."]
+            id: [{ term: "あります" }, " dan ", { term: "います" }, " memakai ", { term: "に" }, " untuk tempat."]
+            vi: [{ term: "あります" }, " và ", { term: "います" }, " dùng ", { term: "に" }, " cho nơi chốn."]
+          ex: ["へや", { target: "に" }, "テレビがあります。"]
+          tr: { en: "There is a TV in the room.", uk: "У кімнаті є телевізор.", es: "En la habitación hay un televisor.", pt: "No quarto tem uma televisão.", fr: "Il y a une télé dans la pièce.", de: "Im Zimmer steht ein Fernseher.", it: "Nella stanza c’è una TV.", pl: "W pokoju jest telewizor.", tr: "Odada bir televizyon var.", id: "Di kamar ada TV.", vi: "Trong phòng có một cái ti vi." }
+        - level: "A1"
+          point:
+            en: "Place of action"
+            uk: "Місце дії"
+            es: "Lugar de la acción"
+            pt: "Lugar da ação"
+            fr: "Lieu de l’action"
+            de: "Ort der Handlung"
+            it: "Luogo dell’azione"
+            pl: "Miejsce czynności"
+            tr: "Eylemin yeri"
+            id: "Tempat kegiatan"
+            vi: "Nơi diễn ra hành động"
+          rule:
+            en: ["The place where an action happens takes ", { term: "で" }, "."]
+            uk: ["Місце, де відбувається дія, стоїть із ", { term: "で" }, "."]
+            es: ["El lugar donde ocurre una acción lleva ", { term: "で" }, "."]
+            pt: ["O lugar onde uma ação acontece leva ", { term: "で" }, "."]
+            fr: ["Le lieu où se passe une action prend ", { term: "で" }, "."]
+            de: ["Der Ort, an dem eine Handlung geschieht, steht mit ", { term: "で" }, "."]
+            it: ["Il luogo in cui avviene un’azione prende ", { term: "で" }, "."]
+            pl: ["Miejsce, w którym dzieje się czynność, bierze ", { term: "で" }, "."]
+            tr: ["Eylemin gerçekleştiği yer ", { term: "で" }, " alır."]
+            id: ["Tempat terjadinya kegiatan memakai ", { term: "で" }, "."]
+            vi: ["Nơi diễn ra hành động đi với ", { term: "で" }, "."]
+          ex: ["レストラン", { target: "で" }, "ごはんを", { kanji: "食", reading: "た" }, "べます。"]
+          tr: { en: "I eat at a restaurant.", uk: "Я їм у ресторані.", es: "Como en un restaurante.", pt: "Eu como em um restaurante.", fr: "Je mange au restaurant.", de: "Ich esse im Restaurant.", it: "Mangio al ristorante.", pl: "Jem w restauracji.", tr: "Restoranda yemek yerim.", id: "Saya makan di restoran.", vi: "Tôi ăn ở nhà hàng." }
+        - level: "A1"
+          point: { en: "Means", uk: "Засіб", es: "Medio", pt: "Meio", fr: "Moyen", de: "Mittel", it: "Mezzo", pl: "Środek", tr: "Araç", id: "Alat", vi: "Phương tiện" }
+          rule:
+            en: ["Vehicle, tool and language take ", { term: "で" }, "."]
+            uk: ["Транспорт, знаряддя й мова стоять із ", { term: "で" }, "."]
+            es: ["El transporte, la herramienta y el idioma llevan ", { term: "で" }, "."]
+            pt: ["O transporte, a ferramenta e o idioma levam ", { term: "で" }, "."]
+            fr: ["Le transport, l’outil et la langue prennent ", { term: "で" }, "."]
+            de: ["Verkehrsmittel, Werkzeug und Sprache stehen mit ", { term: "で" }, "."]
+            it: ["Il mezzo di trasporto, lo strumento e la lingua prendono ", { term: "で" }, "."]
+            pl: ["Środek transportu, narzędzie i język biorą ", { term: "で" }, "."]
+            tr: ["Taşıt, alet ve dil ", { term: "で" }, " alır."]
+            id: ["Kendaraan, alat, dan bahasa memakai ", { term: "で" }, "."]
+            vi: ["Phương tiện đi lại, dụng cụ và ngôn ngữ đi với ", { term: "で" }, "."]
+          ex: ["でんしゃ", { target: "で" }, { kanji: "行", reading: "い" }, "きます。"]
+          tr: { en: "I go by train.", uk: "Я їду електричкою.", es: "Voy en tren.", pt: "Eu vou de trem.", fr: "J’y vais en train.", de: "Ich fahre mit dem Zug.", it: "Ci vado in treno.", pl: "Jadę pociągiem.", tr: "Trenle giderim.", id: "Saya pergi naik kereta.", vi: "Tôi đi bằng tàu điện." }
+        - level: "A1"
+          point: { en: "Direction", uk: "Напрямок", es: "Dirección", pt: "Direção", fr: "Direction", de: "Richtung", it: "Direzione", pl: "Kierunek", tr: "Yön", id: "Arah", vi: "Hướng đi" }
+          rule:
+            en: [{ term: "へ" }, " is read ", { term: "え" }, " and stresses the direction."]
+            uk: [{ term: "へ" }, " читається як ", { term: "え" }, " і підкреслює напрямок."]
+            es: [{ term: "へ" }, " se lee ", { term: "え" }, " y destaca la dirección."]
+            pt: [{ term: "へ" }, " lê-se ", { term: "え" }, " e destaca a direção."]
+            fr: [{ term: "へ" }, " se lit ", { term: "え" }, " et souligne la direction."]
+            de: [{ term: "へ" }, " wird ", { term: "え" }, " gelesen und betont die Richtung."]
+            it: [{ term: "へ" }, " si legge ", { term: "え" }, " e sottolinea la direzione."]
+            pl: [{ term: "へ" }, " czyta się jako ", { term: "え" }, "; podkreśla kierunek."]
+            tr: [{ term: "へ" }, " ", { term: "え" }, " diye okunur ve yönü vurgular."]
+            id: [{ term: "へ" }, " dibaca ", { term: "え" }, " dan menekankan arah."]
+            vi: [{ term: "へ" }, " đọc là ", { term: "え" }, " và nhấn mạnh hướng đi."]
+          ex: ["ともだちのうち", { target: "へ" }, { kanji: "行", reading: "い" }, "きます。"]
+          tr: { en: "I'm going to a friend's house.", uk: "Я йду до друга додому.", es: "Voy a casa de un amigo.", pt: "Eu vou à casa de um amigo.", fr: "Je vais chez un ami.", de: "Ich gehe zu einem Freund.", it: "Vado a casa di un amico.", pl: "Idę do domu przyjaciela.", tr: "Bir arkadaşımın evine gidiyorum.", id: "Saya pergi ke rumah teman.", vi: "Tôi đến nhà một người bạn." }
+        - level: "A2"
+          point: { en: "Receiver", uk: "Адресат", es: "Destinatario", pt: "Destinatário", fr: "Destinataire", de: "Empfänger", it: "Destinatario", pl: "Adresat", tr: "Alıcı", id: "Penerima", vi: "Người nhận" }
+          rule:
+            en: ["The person who receives takes ", { term: "に" }, "."]
+            uk: ["Особа, яка отримує, стоїть із ", { term: "に" }, "."]
+            es: ["La persona que recibe lleva ", { term: "に" }, "."]
+            pt: ["A pessoa que recebe leva ", { term: "に" }, "."]
+            fr: ["La personne qui reçoit prend ", { term: "に" }, "."]
+            de: ["Die Person, die etwas erhält, steht mit ", { term: "に" }, "."]
+            it: ["La persona che riceve prende ", { term: "に" }, "."]
+            pl: ["Osoba, która otrzymuje, bierze ", { term: "に" }, "."]
+            tr: ["Alan kişi ", { term: "に" }, " alır."]
+            id: ["Orang yang menerima memakai ", { term: "に" }, "."]
+            vi: ["Người nhận đi với ", { term: "に" }, "."]
+          ex: ["ともだち", { target: "に" }, "メールをおくります。"]
+          tr: { en: "I send an e-mail to a friend.", uk: "Я надсилаю другові електронного листа.", es: "Envío un correo a un amigo.", pt: "Eu mando um e-mail para um amigo.", fr: "J’envoie un e-mail à un ami.", de: "Ich schicke einem Freund eine E-Mail.", it: "Mando un’e-mail a un amico.", pl: "Wysyłam przyjacielowi e-mail.", tr: "Bir arkadaşıma e-posta gönderirim.", id: "Saya mengirim surel kepada teman.", vi: "Tôi gửi email cho một người bạn." }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["An action takes place at ", { term: "で" }, ", not ", { term: "に" }, "."]
+            uk: ["Дія відбувається в місці з ", { term: "で" }, ", а не з ", { term: "に" }, "."]
+            es: ["Una acción ocurre en un lugar con ", { term: "で" }, ", no con ", { term: "に" }, "."]
+            pt: ["Uma ação acontece num lugar com ", { term: "で" }, ", não com ", { term: "に" }, "."]
+            fr: ["Une action a lieu avec ", { term: "で" }, ", pas avec ", { term: "に" }, "."]
+            de: ["Eine Handlung geschieht an einem Ort mit ", { term: "で" }, ", nicht mit ", { term: "に" }, "."]
+            it: ["Un’azione avviene in un luogo con ", { term: "で" }, ", non con ", { term: "に" }, "."]
+            pl: ["Czynność dzieje się w miejscu z ", { term: "で" }, ", nie z ", { term: "に" }, "."]
+            tr: ["Eylem ", { term: "で" }, " ile yapılır, ", { term: "に" }, " ile değil."]
+            id: ["Kegiatan berlangsung di tempat dengan ", { term: "で" }, ", bukan ", { term: "に" }, "."]
+            vi: ["Hành động diễn ra ở nơi chốn với ", { term: "で" }, ", không phải ", { term: "に" }, "."]
+          ex: ["うち", { target: "で" }, "ごはんを", { kanji: "食", reading: "た" }, "べます。"]
+          tr: { en: "I eat at home.", uk: "Я їм удома.", es: "Como en casa.", pt: "Eu como em casa.", fr: "Je mange à la maison.", de: "Ich esse zu Hause.", it: "Mangio a casa.", pl: "Jem w domu.", tr: "Evde yemek yerim.", id: "Saya makan di rumah.", vi: "Tôi ăn ở nhà." }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: [{ term: "あした" }, " and ", { term: "きょう" }, " take no ", { term: "に" }, "."]
+            uk: [{ term: "あした" }, " і ", { term: "きょう" }, " не беруть ", { term: "に" }, "."]
+            es: [{ term: "あした" }, " y ", { term: "きょう" }, " no llevan ", { term: "に" }, "."]
+            pt: [{ term: "あした" }, " e ", { term: "きょう" }, " não levam ", { term: "に" }, "."]
+            fr: [{ term: "あした" }, " et ", { term: "きょう" }, " ne prennent pas ", { term: "に" }, "."]
+            de: [{ term: "あした" }, " und ", { term: "きょう" }, " stehen ohne ", { term: "に" }, "."]
+            it: [{ term: "あした" }, " e ", { term: "きょう" }, " non prendono ", { term: "に" }, "."]
+            pl: [{ term: "あした" }, " i ", { term: "きょう" }, " nie biorą ", { term: "に" }, "."]
+            tr: [{ term: "あした" }, " ve ", { term: "きょう" }, " ", { term: "に" }, " almaz."]
+            id: [{ term: "あした" }, " dan ", { term: "きょう" }, " tidak memakai ", { term: "に" }, "."]
+            vi: [{ term: "あした" }, " và ", { term: "きょう" }, " không đi với ", { term: "に" }, "."]
+          ex: [{ target: "あした" }, "、", { kanji: "日本", reading: "にほん" }, "へ", { kanji: "行", reading: "い" }, "きます。"]
+          tr: { en: "Tomorrow I go to Japan.", uk: "Завтра я їду до Японії.", es: "Mañana voy a Japón.", pt: "Amanhã eu vou para o Japão.", fr: "Demain, je vais au Japon.", de: "Morgen fahre ich nach Japan.", it: "Domani vado in Giappone.", pl: "Jutro jadę do Japonii.", tr: "Yarın Japonya’ya gidiyorum.", id: "Besok saya pergi ke Jepang.", vi: "Ngày mai tôi đi Nhật Bản." }
+sections:
+  - title:
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      fr: "Vue d’ensemble"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["A particle follows its noun and gives it a role: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              uk: ["Частка стоїть після іменника й надає йому роль: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              es: ["La partícula va tras el sustantivo y le da un papel: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              pt: ["A partícula vem depois do substantivo e lhe dá uma função: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              fr: ["La particule suit le nom et lui donne un rôle : ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              de: ["Die Partikel steht hinter dem Nomen und gibt ihm eine Rolle: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              it: ["La particella segue il nome e gli dà un ruolo: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              pl: ["Partykuła stoi po rzeczowniku i nadaje mu rolę: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              tr: ["Edat adın ardından gelir ve ona bir görev verir: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              id: ["Partikel mengikuti kata benda dan memberinya peran: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+              vi: ["Trợ từ đứng sau danh từ và cho danh từ đó một vai trò: ", { pattern: [{ slot: "noun" }, { alternatives: [{ term: "を" }, { term: "に" }, { term: "で" }, { term: "へ" }] }, { slot: "verb" }] }, "."]
+            ex: ["パン", { target: "を" }, { kanji: "食", reading: "た" }, "べます。"]
+            tr: { en: "I eat bread.", uk: "Я їм хліб.", es: "Como pan.", pt: "Eu como pão.", fr: "Je mange du pain.", de: "Ich esse Brot.", it: "Mangio il pane.", pl: "Jem chleb.", tr: "Ekmek yerim.", id: "Saya makan roti.", vi: "Tôi ăn bánh mì." }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["One verb can take several phrases: the time with ", { term: "に" }, ", the place with ", { term: "で" }, ", the object with ", { term: "を" }, "."]
+              uk: ["Одне дієслово може мати кілька груп: час із ", { term: "に" }, ", місце з ", { term: "で" }, ", додаток із ", { term: "を" }, "."]
+              es: ["Un verbo puede llevar varias frases: el momento con ", { term: "に" }, ", el lugar con ", { term: "で" }, ", el complemento directo con ", { term: "を" }, "."]
+              pt: ["Um verbo pode levar várias expressões: o momento com ", { term: "に" }, ", o lugar com ", { term: "で" }, ", o objeto direto com ", { term: "を" }, "."]
+              fr: ["Un verbe peut avoir plusieurs groupes : le moment avec ", { term: "に" }, ", le lieu avec ", { term: "で" }, ", l’objet avec ", { term: "を" }, "."]
+              de: ["Ein Verb kann mehrere Satzglieder haben: die Zeit mit ", { term: "に" }, ", den Ort mit ", { term: "で" }, ", das Objekt mit ", { term: "を" }, "."]
+              it: ["Un verbo può avere più sintagmi: il tempo con ", { term: "に" }, ", il luogo con ", { term: "で" }, ", l’oggetto con ", { term: "を" }, "."]
+              pl: ["Jeden czasownik może mieć kilka fraz: czas z ", { term: "に" }, ", miejsce z ", { term: "で" }, ", dopełnienie z ", { term: "を" }, "."]
+              tr: ["Bir fiilin birkaç öbeği olabilir: zaman ", { term: "に" }, ", yer ", { term: "で" }, ", nesne ", { term: "を" }, " ile."]
+              id: ["Satu verba dapat memiliki beberapa frasa: waktu dengan ", { term: "に" }, ", tempat dengan ", { term: "で" }, ", objek dengan ", { term: "を" }, "."]
+              vi: ["Một động từ có thể đi với nhiều cụm: thời gian với ", { term: "に" }, ", nơi chốn với ", { term: "で" }, ", tân ngữ với ", { term: "を" }, "."]
+            ex: ["7", { kanji: "時", reading: "じ" }, { target: "に" }, "うち", { target: "で" }, "ごはん", { target: "を" }, { kanji: "食", reading: "た" }, "べます。"]
+            tr: { en: "I eat at home at seven.", uk: "О сьомій я їм удома.", es: "A las siete como en casa.", pt: "Às sete eu como em casa.", fr: "À sept heures, je mange à la maison.", de: "Um sieben esse ich zu Hause.", it: "Alle sette mangio a casa.", pl: "O siódmej jem w domu.", tr: "Saat yedide evde yemek yerim.", id: "Jam tujuh saya makan di rumah.", vi: "Bảy giờ tôi ăn cơm ở nhà." }
+          - type: "note"
+            level: "A1"
+            text:
+              en: [{ term: "を" }, " is read ", { term: "お" }, " and ", { term: "へ" }, " is read ", { term: "え" }, ". See ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              uk: [{ term: "を" }, " читається як ", { term: "お" }, ", а ", { term: "へ" }, " — як ", { term: "え" }, ". Див. ", { link: "Хірагана", to: "ja.foundations.hiragana" }, "."]
+              es: [{ term: "を" }, " se lee ", { term: "お" }, " y ", { term: "へ" }, " se lee ", { term: "え" }, ". Véase ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              pt: [{ term: "を" }, " lê-se ", { term: "お" }, " e ", { term: "へ" }, " lê-se ", { term: "え" }, ". Veja ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              fr: [{ term: "を" }, " se lit ", { term: "お" }, " et ", { term: "へ" }, " se lit ", { term: "え" }, ". Voir ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              de: [{ term: "を" }, " wird ", { term: "お" }, " gelesen und ", { term: "へ" }, " wird ", { term: "え" }, " gelesen. Siehe ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              it: [{ term: "を" }, " si legge ", { term: "お" }, " e ", { term: "へ" }, " si legge ", { term: "え" }, ". Vedi ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              pl: [{ term: "を" }, " czyta się jako ", { term: "お" }, ", a ", { term: "へ" }, " jako ", { term: "え" }, ". Zob. ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              tr: [{ term: "を" }, " ", { term: "お" }, ", ", { term: "へ" }, " ", { term: "え" }, " diye okunur. Bkz. ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              id: [{ term: "を" }, " dibaca ", { term: "お" }, " dan ", { term: "へ" }, " dibaca ", { term: "え" }, ". Lihat ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+              vi: [{ term: "を" }, " đọc là ", { term: "お" }, " và ", { term: "へ" }, " đọc là ", { term: "え" }, ". Xem ", { link: "Hiragana", to: "ja.foundations.hiragana" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["The order of the phrases before the verb: see ", { link: "Word Order", to: ja.sentence-basics.word-order }, "."]
+              uk: ["Порядок груп перед дієсловом: див. ", { link: "Порядок слів", to: "ja.sentence-basics.word-order" }, "."]
+              es: ["El orden de las frases antes del verbo: véase ", { link: "Orden de las palabras", to: ja.sentence-basics.word-order }, "."]
+              pt: ["A ordem das expressões antes do verbo: veja ", { link: "Ordem das palavras", to: ja.sentence-basics.word-order }, "."]
+              fr: ["L’ordre des groupes devant le verbe : voir ", { link: "Ordre des mots", to: ja.sentence-basics.word-order }, "."]
+              de: ["Die Reihenfolge der Satzglieder vor dem Verb: siehe ", { link: "Wortstellung", to: ja.sentence-basics.word-order }, "."]
+              it: ["L’ordine dei sintagmi prima del verbo: vedi ", { link: "Ordine delle parole", to: ja.sentence-basics.word-order }, "."]
+              pl: ["Kolejność fraz przed czasownikiem: zob. ", { link: "Szyk zdania", to: ja.sentence-basics.word-order }, "."]
+              tr: ["Fiilden önceki öbeklerin sırası: bkz. ", { link: "Sözcük sırası", to: "ja.sentence-basics.word-order" }, "."]
+              id: ["Urutan frasa sebelum verba: lihat ", { link: "Urutan kata", to: "ja.sentence-basics.word-order" }, "."]
+              vi: ["Thứ tự các cụm trước động từ: xem ", { link: "Trật tự từ", to: "ja.sentence-basics.word-order" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              en: [{ term: "は" }, " and ", { term: "が" }, ": see ", { link: "は and が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " and ", { term: "の" }, ": see ", { link: "Particles と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              uk: [{ term: "は" }, " і ", { term: "が" }, ": див. ", { link: "は і が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " та ", { term: "の" }, ": див. ", { link: "Частки と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              es: [{ term: "は" }, " y ", { term: "が" }, ": véase ", { link: "は y が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " y ", { term: "の" }, ": véase ", { link: "Las partículas と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              pt: [{ term: "は" }, " e ", { term: "が" }, ": veja ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " e ", { term: "の" }, ": veja ", { link: "As partículas と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              fr: [{ term: "は" }, " et ", { term: "が" }, " : voir ", { link: "は et が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " et ", { term: "の" }, " : voir ", { link: "Les particules と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              de: [{ term: "は" }, " und ", { term: "が" }, ": siehe ", { link: "は und が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " und ", { term: "の" }, ": siehe ", { link: "Die Partikeln と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              it: [{ term: "は" }, " e ", { term: "が" }, ": vedi ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " e ", { term: "の" }, ": vedi ", { link: "Le particelle と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              pl: [{ term: "は" }, " i ", { term: "が" }, ": zob. ", { link: "は i が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " i ", { term: "の" }, ": zob. ", { link: "Partykuły と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              tr: [{ term: "は" }, " ve ", { term: "が" }, ": bkz. ", { link: "は ve が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " ve ", { term: "の" }, ": bkz. ", { link: "と, も, の edatları", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              id: [{ term: "は" }, " dan ", { term: "が" }, ": lihat ", { link: "は dan が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, ", dan ", { term: "の" }, ": lihat ", { link: "Partikel と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              vi: [{ term: "は" }, " và ", { term: "が" }, ": xem ", { link: "は và が", to: "ja.sentence-basics.wa-ga" }, ". ", { term: "と" }, ", ", { term: "も" }, " và ", { term: "の" }, ": xem ", { link: "Trợ từ と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+  - title:
+      en: "を: the object"
+      uk: "を: додаток"
+      es: "を: el complemento directo"
+      pt: "を: o objeto direto"
+      fr: "を : le complément d’objet"
+      de: "を: das Objekt"
+      it: "を: il complemento oggetto"
+      pl: "を: dopełnienie"
+      tr: "を: nesne"
+      id: "を: objek"
+      vi: "を: tân ngữ"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: "What the verb acts on"
+              uk: "На що спрямована дія дієслова"
+              es: "Aquello sobre lo que actúa el verbo"
+              pt: "Aquilo sobre o que o verbo age"
+              fr: "Ce sur quoi porte le verbe"
+              de: "Worauf sich das Verb richtet"
+              it: "Ciò su cui agisce il verbo"
+              pl: "To, na co działa czasownik"
+              tr: "Fiilin etkilediği şey"
+              id: "Hal yang dikenai verba"
+              vi: "Thứ mà động từ tác động tới"
+            ex: [{ kanji: "水", reading: "みず" }, { target: "を" }, { kanji: "飲", reading: "の" }, "みます。"]
+            tr: { en: "I drink water.", uk: "Я п’ю воду.", es: "Bebo agua.", pt: "Eu bebo água.", fr: "Je bois de l’eau.", de: "Ich trinke Wasser.", it: "Bevo acqua.", pl: "Piję wodę.", tr: "Su içerim.", id: "Saya minum air.", vi: "Tôi uống nước." }
+          - level: "A1"
+            use:
+              en: "A question word as the object"
+              uk: "Питальне слово в ролі додатка"
+              es: "Una palabra interrogativa como complemento"
+              pt: "Uma palavra interrogativa como objeto"
+              fr: "Un mot interrogatif comme objet"
+              de: "Ein Fragewort als Objekt"
+              it: "Una parola interrogativa come oggetto"
+              pl: "Zaimek pytający jako dopełnienie"
+              tr: "Nesne olarak soru sözcüğü"
+              id: "Kata tanya sebagai objek"
+              vi: "Từ để hỏi làm tân ngữ"
+            ex: { exchange: [[{ kanji: "何", reading: "なに" }, { target: "を" }, { kanji: "食", reading: "た" }, "べますか。"], ["すし", { target: "を" }, { kanji: "食", reading: "た" }, "べます。"]] }
+            tr: { en: { exchange: ["What do you eat?", "I eat sushi."] }, uk: { exchange: ["Що ви їсте?", "Я їм суші."] }, es: { exchange: ["¿Qué comes?", "Como sushi."] }, pt: { exchange: ["O que você come?", "Eu como sushi."] }, fr: { exchange: ["Que mangez-vous ?", "Je mange des sushis."] }, de: { exchange: ["Was isst du?", "Ich esse Sushi."] }, it: { exchange: ["Che cosa mangi?", "Mangio sushi."] }, pl: { exchange: ["Co jesz?", "Jem sushi."] }, tr: { exchange: ["Ne yersin?", "Suşi yerim."] }, id: { exchange: ["Anda makan apa?", "Saya makan sushi."] }, vi: { exchange: ["Bạn ăn gì?", "Tôi ăn sushi."] } }
+          - level: "A1"
+            use:
+              en: ["A noun with ", { term: "します" }, ": do homework, do sport"]
+              uk: ["Іменник із ", { term: "します" }, ": робити домашнє завдання, займатися спортом"]
+              es: ["Un sustantivo con ", { term: "します" }, ": hacer la tarea, hacer deporte"]
+              pt: ["Um substantivo com ", { term: "します" }, ": fazer a lição, praticar esporte"]
+              fr: ["Un nom avec ", { term: "します" }, " : faire ses devoirs, faire du sport"]
+              de: ["Ein Nomen mit ", { term: "します" }, ": Hausaufgaben machen, Sport treiben"]
+              it: ["Un nome con ", { term: "します" }, ": fare i compiti, fare sport"]
+              pl: ["Rzeczownik z ", { term: "します" }, ": odrabiać lekcje, uprawiać sport"]
+              tr: [{ term: "します" }, " ile bir ad: ödev yapmak, spor yapmak"]
+              id: ["Kata benda dengan ", { term: "します" }, ": mengerjakan PR, berolahraga"]
+              vi: ["Danh từ với ", { term: "します" }, ": làm bài tập, chơi thể thao"]
+            ex: ["しゅくだい", { target: "を" }, "します。"]
+            tr: { en: "I do my homework.", uk: "Я роблю домашнє завдання.", es: "Hago la tarea.", pt: "Eu faço a lição de casa.", fr: "Je fais mes devoirs.", de: "Ich mache meine Hausaufgaben.", it: "Faccio i compiti.", pl: "Odrabiam lekcje.", tr: "Ödevimi yaparım.", id: "Saya mengerjakan PR.", vi: "Tôi làm bài tập về nhà." }
+          - level: "A2"
+            use:
+              en: "The place you walk through or along"
+              uk: "Місце, яким ідуть або гуляють"
+              es: "El lugar por el que se camina"
+              pt: "O lugar por onde se caminha"
+              fr: "Le lieu que l’on parcourt"
+              de: "Der Ort, durch den man geht"
+              it: "Il luogo che si percorre"
+              pl: "Miejsce, po którym się chodzi"
+              tr: "İçinden ya da boyunca yürünen yer"
+              id: "Tempat yang dilalui"
+              vi: "Nơi mà ta đi qua hoặc đi dạo"
+            ex: ["こうえん", { target: "を" }, "さんぽします。"]
+            tr: { en: "I take a walk in the park.", uk: "Я гуляю парком.", es: "Paseo por el parque.", pt: "Passeio pelo parque.", fr: "Je me promène dans le parc.", de: "Ich gehe im Park spazieren.", it: "Passeggio nel parco.", pl: "Spaceruję po parku.", tr: "Parkta yürüyüş yaparım.", id: "Saya berjalan-jalan di taman.", vi: "Tôi đi dạo trong công viên." }
+  - title:
+      en: "に: time, goal and place of being"
+      uk: "に: час, мета руху й місце перебування"
+      es: "に: momento, destino y lugar donde algo está"
+      pt: "に: momento, destino e lugar onde algo está"
+      fr: "に : moment, destination et lieu où l’on est"
+      de: "に: Zeit, Ziel und Ort des Seins"
+      it: "に: tempo, meta e luogo in cui si è"
+      pl: "に: czas, cel i miejsce pobytu"
+      tr: "に: zaman, varış yeri ve bulunulan yer"
+      id: "に: waktu, tujuan, dan tempat berada"
+      vi: "に: thời gian, nơi đến và nơi có mặt"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use: { en: "A clock time", uk: "Година", es: "Una hora del reloj", pt: "Uma hora do relógio", fr: "Une heure", de: "Eine Uhrzeit", it: "Un’ora", pl: "Godzina", tr: "Bir saat", id: "Jam", vi: "Giờ" }
+            ex: ["7", { kanji: "時", reading: "じ" }, { target: "に" }, "ごはんを", { kanji: "食", reading: "た" }, "べます。"]
+            tr: { en: "I eat at seven.", uk: "Я їм о сьомій.", es: "Como a las siete.", pt: "Eu como às sete.", fr: "Je mange à sept heures.", de: "Ich esse um sieben Uhr.", it: "Mangio alle sette.", pl: "Jem o siódmej.", tr: "Saat yedide yemek yerim.", id: "Saya makan jam tujuh.", vi: "Tôi ăn lúc bảy giờ." }
+          - level: "A1"
+            use:
+              en: "A day of the week or a date"
+              uk: "День тижня або дата"
+              es: "Un día de la semana o una fecha"
+              pt: "Um dia da semana ou uma data"
+              fr: "Un jour de la semaine ou une date"
+              de: "Ein Wochentag oder ein Datum"
+              it: "Un giorno della settimana o una data"
+              pl: "Dzień tygodnia lub data"
+              tr: "Haftanın bir günü ya da bir tarih"
+              id: "Hari dalam seminggu atau tanggal"
+              vi: "Thứ trong tuần hoặc ngày tháng"
+            ex: [{ kanji: "土曜日", reading: "どようび" }, { target: "に" }, "えいがを", { kanji: "見", reading: "み" }, "ます。"]
+            tr: { en: "I watch a film on Saturday.", uk: "У суботу я дивлюся фільм.", es: "El sábado veo una película.", pt: "No sábado eu assisto a um filme.", fr: "Le samedi, je regarde un film.", de: "Am Samstag sehe ich einen Film.", it: "Sabato guardo un film.", pl: "W sobotę oglądam film.", tr: "Cumartesi film izlerim.", id: "Hari Sabtu saya menonton film.", vi: "Thứ Bảy tôi xem phim." }
+          - level: "A1"
+            use:
+              en: "The goal of going, coming and returning"
+              uk: "Мета руху: піти, прийти, повернутися"
+              es: "El destino de ir, venir y volver"
+              pt: "O destino de ir, vir e voltar"
+              fr: "La destination d’aller, de venir et de rentrer"
+              de: "Das Ziel von Gehen, Kommen und Zurückkehren"
+              it: "La meta di andare, venire e tornare"
+              pl: "Cel pójścia, przyjścia i powrotu"
+              tr: "Gitmenin, gelmenin ve dönmenin varış yeri"
+              id: "Tujuan pergi, datang, dan pulang"
+              vi: "Nơi đến của đi, đến và về"
+            ex: { examples: [[{ kanji: "日本", reading: "にほん" }, { target: "に" }, { kanji: "行", reading: "い" }, "きます。"], ["うち", { target: "に" }, "かえります。"]] }
+            tr: { en: { examples: ["I'm going to Japan.", "I go home."] }, uk: { examples: ["Я їду до Японії.", "Я повертаюся додому."] }, es: { examples: ["Voy a Japón.", "Vuelvo a casa."] }, pt: { examples: ["Eu vou para o Japão.", "Eu volto para casa."] }, fr: { examples: ["Je vais au Japon.", "Je rentre à la maison."] }, de: { examples: ["Ich fahre nach Japan.", "Ich gehe nach Hause."] }, it: { examples: ["Vado in Giappone.", "Torno a casa."] }, pl: { examples: ["Jadę do Japonii.", "Wracam do domu."] }, tr: { examples: ["Japonya’ya gidiyorum.", "Eve dönerim."] }, id: { examples: ["Saya pergi ke Jepang.", "Saya pulang ke rumah."] }, vi: { examples: ["Tôi đi Nhật Bản.", "Tôi về nhà."] } }
+          - level: "A1"
+            use:
+              en: ["The place where something or someone is; see ", { link: "あります and います", to: "ja.verbs.aru-iru" }]
+              uk: ["Місце, де є річ або людина; див. ", { link: "あります і います", to: "ja.verbs.aru-iru" }]
+              es: ["El lugar donde está algo o alguien; véase ", { link: "あります y います", to: "ja.verbs.aru-iru" }]
+              pt: ["O lugar onde algo ou alguém está; veja ", { link: "あります e います", to: "ja.verbs.aru-iru" }]
+              fr: ["Le lieu où se trouve quelque chose ou quelqu’un ; voir ", { link: "あります et います", to: "ja.verbs.aru-iru" }]
+              de: ["Der Ort, an dem etwas oder jemand ist; siehe ", { link: "あります und います", to: "ja.verbs.aru-iru" }]
+              it: ["Il luogo in cui si trova qualcosa o qualcuno; vedi ", { link: "あります e います", to: "ja.verbs.aru-iru" }]
+              pl: ["Miejsce, w którym coś lub ktoś jest; zob. ", { link: "あります i います", to: "ja.verbs.aru-iru" }]
+              tr: ["Bir şeyin ya da kişinin bulunduğu yer; bkz. ", { link: "あります ve います", to: "ja.verbs.aru-iru" }]
+              id: ["Tempat benda atau orang berada; lihat ", { link: "あります dan います", to: "ja.verbs.aru-iru" }]
+              vi: ["Nơi có đồ vật hoặc người; xem ", { link: "あります và います", to: "ja.verbs.aru-iru" }]
+            ex: { examples: [["へや", { target: "に" }, "テレビがあります。"], ["アンナさんはうち", { target: "に" }, "います。"]] }
+            tr: { en: { examples: ["There is a TV in the room.", "Anna is at home."] }, uk: { examples: ["У кімнаті є телевізор.", "Анна вдома."] }, es: { examples: ["En la habitación hay un televisor.", "Anna está en casa."] }, pt: { examples: ["No quarto tem uma televisão.", "A Anna está em casa."] }, fr: { examples: ["Il y a une télé dans la pièce.", "Anna est à la maison."] }, de: { examples: ["Im Zimmer steht ein Fernseher.", "Anna ist zu Hause."] }, it: { examples: ["Nella stanza c’è una TV.", "Anna è a casa."] }, pl: { examples: ["W pokoju jest telewizor.", "Anna jest w domu."] }, tr: { examples: ["Odada bir televizyon var.", "Anna evde."] }, id: { examples: ["Di kamar ada TV.", "Anna ada di rumah."] }, vi: { examples: ["Trong phòng có một cái ti vi.", "Anna ở nhà."] } }
+          - level: "A2"
+            use:
+              en: ["The person who receives; see ", { link: "あげる, もらう, くれる: Giving and Receiving", to: ja.verbs.giving-receiving }]
+              uk: ["Особа, яка отримує; див. ", { link: "あげる, もらう, くれる: давати й отримувати", to: ja.verbs.giving-receiving }]
+              es: ["La persona que recibe; véase ", { link: "あげる, もらう, くれる: dar y recibir", to: ja.verbs.giving-receiving }]
+              pt: ["A pessoa que recebe; veja ", { link: "あげる, もらう, くれる: dar e receber", to: ja.verbs.giving-receiving }]
+              fr: ["La personne qui reçoit ; voir ", { link: "あげる, もらう, くれる : donner et recevoir", to: ja.verbs.giving-receiving }]
+              de: ["Die Person, die etwas erhält; siehe ", { link: "あげる, もらう, くれる: geben und bekommen", to: ja.verbs.giving-receiving }]
+              it: ["La persona che riceve; vedi ", { link: "あげる, もらう, くれる: dare e ricevere", to: ja.verbs.giving-receiving }]
+              pl: ["Osoba, która otrzymuje; zob. ", { link: "あげる, もらう, くれる: dawać i dostawać", to: ja.verbs.giving-receiving }]
+              tr: ["Alan kişi; bkz. ", { link: "あげる, もらう, くれる: vermek ve almak", to: ja.verbs.giving-receiving }]
+              id: ["Orang yang menerima; lihat ", { link: "あげる, もらう, くれる: memberi dan menerima", to: ja.verbs.giving-receiving }]
+              vi: ["Người nhận; xem ", { link: "あげる, もらう, くれる: cho và nhận", to: ja.verbs.giving-receiving }]
+            ex: ["ともだち", { target: "に" }, "メールをおくります。"]
+            tr: { en: "I send an e-mail to a friend.", uk: "Я надсилаю другові електронного листа.", es: "Envío un correo a un amigo.", pt: "Eu mando um e-mail para um amigo.", fr: "J’envoie un e-mail à un ami.", de: "Ich schicke einem Freund eine E-Mail.", it: "Mando un’e-mail a un amico.", pl: "Wysyłam przyjacielowi e-mail.", tr: "Bir arkadaşıma e-posta gönderirim.", id: "Saya mengirim surel kepada teman.", vi: "Tôi gửi email cho một người bạn." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: [{ term: "に" }, " marks a clock time, a day or a date; relative words such as ", { term: "あした" }, " and ", { term: "きょう" }, " take none."]
+              uk: [{ term: "に" }, " позначає годину, день або дату; відносні слова на кшталт ", { term: "あした" }, " і ", { term: "きょう" }, " його не мають."]
+              es: [{ term: "に" }, " marca una hora, un día o una fecha; palabras relativas como ", { term: "あした" }, " y ", { term: "きょう" }, " no lo llevan."]
+              pt: [{ term: "に" }, " marca uma hora, um dia ou uma data; palavras relativas como ", { term: "あした" }, " e ", { term: "きょう" }, " não o levam."]
+              fr: [{ term: "に" }, " marque une heure, un jour ou une date ; les mots relatifs comme ", { term: "あした" }, " et ", { term: "きょう" }, " n’en prennent pas."]
+              de: [{ term: "に" }, " markiert eine Uhrzeit, einen Tag oder ein Datum; relative Wörter wie ", { term: "あした" }, " und ", { term: "きょう" }, " haben keins."]
+              it: [{ term: "に" }, " segna un’ora, un giorno o una data; le parole relative come ", { term: "あした" }, " e ", { term: "きょう" }, " non lo prendono."]
+              pl: [{ term: "に" }, " oznacza godzinę, dzień lub datę; słowa względne, jak ", { term: "あした" }, " i ", { term: "きょう" }, ", go nie biorą."]
+              tr: [{ term: "に" }, " saat, gün ya da tarihi işaretler; ", { term: "あした" }, " ve ", { term: "きょう" }, " gibi göreli sözcükler onu almaz."]
+              id: [{ term: "に" }, " menandai jam, hari, atau tanggal; kata relatif seperti ", { term: "あした" }, " dan ", { term: "きょう" }, " tidak memakainya."]
+              vi: [{ term: "に" }, " đánh dấu giờ, ngày hoặc ngày tháng; các từ tương đối như ", { term: "あした" }, " và ", { term: "きょう" }, " không dùng nó."]
+            ex: [{ target: "あした" }, "、", { kanji: "日本", reading: "にほん" }, "に", { kanji: "行", reading: "い" }, "きます。"]
+            tr: { en: "Tomorrow I go to Japan.", uk: "Завтра я їду до Японії.", es: "Mañana voy a Japón.", pt: "Amanhã eu vou para o Japão.", fr: "Demain, je vais au Japon.", de: "Morgen fahre ich nach Japan.", it: "Domani vado in Giappone.", pl: "Jutro jadę do Japonii.", tr: "Yarın Japonya’ya gidiyorum.", id: "Besok saya pergi ke Jepang.", vi: "Ngày mai tôi đi Nhật Bản." }
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["Clock times and dates: see ", { link: "Telling the Time", to: ja.foundations.telling-time }, " and ", { link: "Days, Months and Dates", to: ja.foundations.days-months-dates }, "."]
+              uk: ["Години й дати: див. ", { link: "Котра година", to: ja.foundations.telling-time }, " та ", { link: "Дні, місяці й дати", to: "ja.foundations.days-months-dates" }, "."]
+              es: ["Las horas y las fechas: véase ", { link: "La hora", to: ja.foundations.telling-time }, " y ", { link: "Días, meses y fechas", to: "ja.foundations.days-months-dates" }, "."]
+              pt: ["As horas e as datas: veja ", { link: "As horas", to: ja.foundations.telling-time }, " e ", { link: "Dias, meses e datas", to: "ja.foundations.days-months-dates" }, "."]
+              fr: ["Les heures et les dates : voir ", { link: "L’heure", to: ja.foundations.telling-time }, " et ", { link: "Jours, mois et dates", to: "ja.foundations.days-months-dates" }, "."]
+              de: ["Uhrzeiten und Daten: siehe ", { link: "Die Uhrzeit", to: "ja.foundations.telling-time" }, " und ", { link: "Tage, Monate und Datumsangaben", to: ja.foundations.days-months-dates }, "."]
+              it: ["Le ore e le date: vedi ", { link: "Dire l'ora", to: ja.foundations.telling-time }, " e ", { link: "Giorni, mesi e date", to: "ja.foundations.days-months-dates" }, "."]
+              pl: ["Godziny i daty: zob. ", { link: "Podawanie godziny", to: ja.foundations.telling-time }, " i ", { link: "Dni, miesiące i daty", to: "ja.foundations.days-months-dates" }, "."]
+              tr: ["Saatler ve tarihler: bkz. ", { link: "Saati söyleme", to: ja.foundations.telling-time }, " ve ", { link: "Günler, aylar ve tarihler", to: "ja.foundations.days-months-dates" }, "."]
+              id: ["Jam dan tanggal: lihat ", { link: "Menyebutkan jam", to: ja.foundations.telling-time }, " dan ", { link: "Hari, bulan, dan tanggal", to: "ja.foundations.days-months-dates" }, "."]
+              vi: ["Giờ và ngày tháng: xem ", { link: "Nói giờ", to: "ja.foundations.telling-time" }, " và ", { link: "Thứ, tháng và ngày", to: "ja.foundations.days-months-dates" }, "."]
+  - title:
+      en: "で: place of action and means"
+      uk: "で: місце дії та засіб"
+      es: "で: lugar de la acción y medio"
+      pt: "で: lugar da ação e meio"
+      fr: "で : lieu de l’action et moyen"
+      de: "で: Ort der Handlung und Mittel"
+      it: "で: luogo dell’azione e mezzo"
+      pl: "で: miejsce czynności i środek"
+      tr: "で: eylemin yeri ve araç"
+      id: "で: tempat kegiatan dan alat"
+      vi: "で: nơi diễn ra hành động và phương tiện"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: "The place where an action happens"
+              uk: "Місце, де відбувається дія"
+              es: "El lugar donde ocurre una acción"
+              pt: "O lugar onde uma ação acontece"
+              fr: "Le lieu où se passe une action"
+              de: "Der Ort, an dem eine Handlung geschieht"
+              it: "Il luogo in cui avviene un’azione"
+              pl: "Miejsce, w którym dzieje się czynność"
+              tr: "Eylemin gerçekleştiği yer"
+              id: "Tempat terjadinya kegiatan"
+              vi: "Nơi diễn ra hành động"
+            ex: { examples: [["レストラン", { target: "で" }, "ごはんを", { kanji: "食", reading: "た" }, "べます。"], ["うち", { target: "で" }, "テレビを", { kanji: "見", reading: "み" }, "ます。"]] }
+            tr: { en: { examples: ["I eat at a restaurant.", "I watch TV at home."] }, uk: { examples: ["Я їм у ресторані.", "Я дивлюся телевізор удома."] }, es: { examples: ["Como en un restaurante.", "Veo la tele en casa."] }, pt: { examples: ["Eu como em um restaurante.", "Eu assisto TV em casa."] }, fr: { examples: ["Je mange au restaurant.", "Je regarde la télé à la maison."] }, de: { examples: ["Ich esse im Restaurant.", "Ich sehe zu Hause fern."] }, it: { examples: ["Mangio al ristorante.", "Guardo la TV a casa."] }, pl: { examples: ["Jem w restauracji.", "Oglądam telewizję w domu."] }, tr: { examples: ["Restoranda yemek yerim.", "Evde televizyon izlerim."] }, id: { examples: ["Saya makan di restoran.", "Saya menonton TV di rumah."] }, vi: { examples: ["Tôi ăn ở nhà hàng.", "Tôi xem ti vi ở nhà."] } }
+          - level: "A1"
+            use:
+              en: "A vehicle"
+              uk: "Транспорт"
+              es: "Un medio de transporte"
+              pt: "Um meio de transporte"
+              fr: "Un moyen de transport"
+              de: "Ein Verkehrsmittel"
+              it: "Un mezzo di trasporto"
+              pl: "Środek transportu"
+              tr: "Bir taşıt"
+              id: "Kendaraan"
+              vi: "Phương tiện đi lại"
+            ex: ["でんしゃ", { target: "で" }, { kanji: "行", reading: "い" }, "きます。"]
+            tr: { en: "I go by train.", uk: "Я їду електричкою.", es: "Voy en tren.", pt: "Eu vou de trem.", fr: "J’y vais en train.", de: "Ich fahre mit dem Zug.", it: "Ci vado in treno.", pl: "Jadę pociągiem.", tr: "Trenle giderim.", id: "Saya pergi naik kereta.", vi: "Tôi đi bằng tàu điện." }
+          - level: "A1"
+            use: { en: "A tool", uk: "Знаряддя", es: "Una herramienta", pt: "Uma ferramenta", fr: "Un outil", de: "Ein Werkzeug", it: "Uno strumento", pl: "Narzędzie", tr: "Bir alet", id: "Alat", vi: "Dụng cụ" }
+            ex: ["はし", { target: "で" }, { kanji: "食", reading: "た" }, "べます。"]
+            tr: { en: "I eat with chopsticks.", uk: "Я їм паличками.", es: "Como con palillos.", pt: "Eu como com hashi.", fr: "Je mange avec des baguettes.", de: "Ich esse mit Stäbchen.", it: "Mangio con le bacchette.", pl: "Jem pałeczkami.", tr: "Çubuklarla yerim.", id: "Saya makan dengan sumpit.", vi: "Tôi ăn bằng đũa." }
+          - level: "A1"
+            use: { en: "A language", uk: "Мова", es: "Un idioma", pt: "Um idioma", fr: "Une langue", de: "Eine Sprache", it: "Una lingua", pl: "Język", tr: "Bir dil", id: "Bahasa", vi: "Ngôn ngữ" }
+            ex: [{ kanji: "日本語", reading: "にほんご" }, { target: "で" }, "はなします。"]
+            tr: { en: "I speak in Japanese.", uk: "Я розмовляю японською.", es: "Hablo en japonés.", pt: "Eu falo em japonês.", fr: "Je parle en japonais.", de: "Ich spreche Japanisch.", it: "Parlo in giapponese.", pl: "Mówię po japońsku.", tr: "Japonca konuşurum.", id: "Saya berbicara dalam bahasa Jepang.", vi: "Tôi nói bằng tiếng Nhật." }
+          - level: "A2"
+            use:
+              en: "A total amount"
+              uk: "Загальна сума"
+              es: "Una cantidad total"
+              pt: "Uma quantia total"
+              fr: "Un montant total"
+              de: "Ein Gesamtbetrag"
+              it: "Un importo totale"
+              pl: "Łączna kwota"
+              tr: "Toplam tutar"
+              id: "Jumlah keseluruhan"
+              vi: "Tổng số tiền"
+            ex: ["ぜんぶ", { target: "で" }, "500", { kanji: "円", reading: "えん" }, "です。"]
+            tr: { en: "It is 500 yen in total.", uk: "Разом 500 єн.", es: "En total son 500 yenes.", pt: "No total são 500 ienes.", fr: "Cela fait 500 yens en tout.", de: "Zusammen sind es 500 Yen.", it: "In tutto sono 500 yen.", pl: "W sumie to 500 jenów.", tr: "Toplam 500 yen.", id: "Totalnya 500 yen.", vi: "Tổng cộng là 500 yên." }
+  - title:
+      en: "へ: direction"
+      uk: "へ: напрямок"
+      es: "へ: la dirección"
+      pt: "へ: a direção"
+      fr: "へ : la direction"
+      de: "へ: die Richtung"
+      it: "へ: la direzione"
+      pl: "へ: kierunek"
+      tr: "へ: yön"
+      id: "へ: arah"
+      vi: "へ: hướng đi"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: "The direction of a movement"
+              uk: "Напрямок руху"
+              es: "La dirección de un movimiento"
+              pt: "A direção de um movimento"
+              fr: "La direction d’un déplacement"
+              de: "Die Richtung einer Bewegung"
+              it: "La direzione di un movimento"
+              pl: "Kierunek ruchu"
+              tr: "Bir hareketin yönü"
+              id: "Arah suatu perjalanan"
+              vi: "Hướng của một chuyển động"
+            ex: [{ kanji: "日本", reading: "にほん" }, { target: "へ" }, { kanji: "行", reading: "い" }, "きます。"]
+            tr: { en: "I'm going to Japan.", uk: "Я їду до Японії.", es: "Voy a Japón.", pt: "Eu vou para o Japão.", fr: "Je vais au Japon.", de: "Ich fahre nach Japan.", it: "Vado in Giappone.", pl: "Jadę do Japonii.", tr: "Japonya’ya gidiyorum.", id: "Saya pergi ke Jepang.", vi: "Tôi đi Nhật Bản." }
+          - level: "A1"
+            use:
+              en: "A person's home as the goal"
+              uk: "Домівка людини як мета"
+              es: "La casa de una persona como destino"
+              pt: "A casa de uma pessoa como destino"
+              fr: "Le domicile d’une personne comme destination"
+              de: "Das Zuhause einer Person als Ziel"
+              it: "La casa di una persona come meta"
+              pl: "Dom osoby jako cel"
+              tr: "Varış yeri olarak bir kişinin evi"
+              id: "Rumah seseorang sebagai tujuan"
+              vi: "Nhà của một người làm nơi đến"
+            ex: ["ともだちのうち", { target: "へ" }, { kanji: "行", reading: "い" }, "きます。"]
+            tr: { en: "I'm going to a friend's house.", uk: "Я йду до друга додому.", es: "Voy a casa de un amigo.", pt: "Eu vou à casa de um amigo.", fr: "Je vais chez un ami.", de: "Ich gehe zu einem Freund.", it: "Vado a casa di un amico.", pl: "Idę do domu przyjaciela.", tr: "Bir arkadaşımın evine gidiyorum.", id: "Saya pergi ke rumah teman.", vi: "Tôi đến nhà một người bạn." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: [{ term: "へ" }, " goes with verbs of movement only; it marks no place of being or action."]
+              uk: [{ term: "へ" }, " вживається лише з дієсловами руху; місця перебування чи дії воно не позначає."]
+              es: [{ term: "へ" }, " va solo con verbos de movimiento; no marca el lugar donde se está ni donde se actúa."]
+              pt: [{ term: "へ" }, " vai só com verbos de movimento; não marca o lugar onde se está nem onde se age."]
+              fr: [{ term: "へ" }, " ne s’emploie qu’avec des verbes de mouvement ; il ne marque ni le lieu où l’on est ni celui de l’action."]
+              de: [{ term: "へ" }, " steht nur bei Bewegungsverben; es markiert weder den Ort des Seins noch den der Handlung."]
+              it: [{ term: "へ" }, " va solo con i verbi di movimento; non segna né il luogo in cui si è né quello dell’azione."]
+              pl: [{ term: "へ" }, " łączy się tylko z czasownikami ruchu; nie oznacza miejsca pobytu ani czynności."]
+              tr: [{ term: "へ" }, " yalnızca hareket fiilleriyle kullanılır; bulunulan yeri ya da eylemin yerini işaretlemez."]
+              id: [{ term: "へ" }, " hanya dipakai dengan verba gerak; tidak menandai tempat berada atau tempat kegiatan."]
+              vi: [{ term: "へ" }, " chỉ đi với động từ chuyển động; nó không đánh dấu nơi có mặt hay nơi diễn ra hành động."]
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["For a goal, ", { term: "へ" }, " and ", { term: "に" }, " are both right; ", { term: "へ" }, " looks at the way, ", { term: "に" }, " at the arrival."]
+              uk: ["Для мети руху правильні і ", { term: "へ" }, ", і ", { term: "に" }, "; ", { term: "へ" }, " дивиться на шлях, ", { term: "に" }, " — на прибуття."]
+              es: ["Para el destino, ", { term: "へ" }, " y ", { term: "に" }, " son correctos; ", { term: "へ" }, " mira el camino, ", { term: "に" }, " la llegada."]
+              pt: ["Para o destino, ", { term: "へ" }, " e ", { term: "に" }, " estão certos; ", { term: "へ" }, " olha o caminho, ", { term: "に" }, " a chegada."]
+              fr: ["Pour la destination, ", { term: "へ" }, " et ", { term: "に" }, " sont corrects ; ", { term: "へ" }, " regarde le trajet, ", { term: "に" }, " l’arrivée."]
+              de: ["Beim Ziel sind ", { term: "へ" }, " und ", { term: "に" }, " richtig; ", { term: "へ" }, " blickt auf den Weg, ", { term: "に" }, " auf die Ankunft."]
+              it: ["Per la meta vanno bene ", { term: "へ" }, " e ", { term: "に" }, "; ", { term: "へ" }, " guarda il percorso, ", { term: "に" }, " l’arrivo."]
+              pl: ["Dla celu poprawne są ", { term: "へ" }, " i ", { term: "に" }, "; ", { term: "へ" }, " patrzy na drogę, ", { term: "に" }, " na przybycie."]
+              tr: ["Varış yerinde ", { term: "へ" }, " de ", { term: "に" }, " de doğrudur; ", { term: "へ" }, " yola, ", { term: "に" }, " varışa bakar."]
+              id: ["Untuk tujuan, ", { term: "へ" }, " dan ", { term: "に" }, " sama-sama benar; ", { term: "へ" }, " melihat jalannya, ", { term: "に" }, " melihat kedatangan."]
+              vi: ["Với nơi đến, cả ", { term: "へ" }, " lẫn ", { term: "に" }, " đều đúng; ", { term: "へ" }, " nhìn vào đường đi, ", { term: "に" }, " nhìn vào việc tới nơi."]
+  - title:
+      en: "Compare: に and で"
+      uk: "Порівняння: に і で"
+      es: "Comparación: に y で"
+      pt: "Comparação: に e で"
+      fr: "Comparaison : に et で"
+      de: "Vergleich: に und で"
+      it: "Confronto: に e で"
+      pl: "Porównanie: に i で"
+      tr: "Karşılaştırma: に ve で"
+      id: "Perbandingan: に dan で"
+      vi: "So sánh: に và で"
+    role: "compare"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["Being at a place takes ", { term: "に" }, "; doing something at a place takes ", { term: "で" }, "."]
+              uk: ["Перебування в місці — ", { term: "に" }, "; дія в місці — ", { term: "で" }, "."]
+              es: ["Estar en un lugar lleva ", { term: "に" }, "; hacer algo en un lugar lleva ", { term: "で" }, "."]
+              pt: ["Estar num lugar leva ", { term: "に" }, "; fazer algo num lugar leva ", { term: "で" }, "."]
+              fr: ["Être quelque part prend ", { term: "に" }, " ; faire quelque chose quelque part prend ", { term: "で" }, "."]
+              de: ["Sich an einem Ort befinden steht mit ", { term: "に" }, "; an einem Ort etwas tun steht mit ", { term: "で" }, "."]
+              it: ["Essere in un luogo prende ", { term: "に" }, "; fare qualcosa in un luogo prende ", { term: "で" }, "."]
+              pl: ["Przebywanie w miejscu bierze ", { term: "に" }, "; robienie czegoś w miejscu bierze ", { term: "で" }, "."]
+              tr: ["Bir yerde bulunmak ", { term: "に" }, ", bir yerde bir şey yapmak ", { term: "で" }, " alır."]
+              id: ["Berada di suatu tempat memakai ", { term: "に" }, "; melakukan sesuatu di suatu tempat memakai ", { term: "で" }, "."]
+              vi: ["Có mặt ở một nơi dùng ", { term: "に" }, "; làm gì đó ở một nơi dùng ", { term: "で" }, "."]
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: "The same place, being and doing"
+              uk: "Те саме місце: бути й діяти"
+              es: "El mismo lugar: estar y hacer"
+              pt: "O mesmo lugar: estar e fazer"
+              fr: "Le même lieu : être et faire"
+              de: "Derselbe Ort: sein und tun"
+              it: "Lo stesso luogo: essere e fare"
+              pl: "To samo miejsce: być i robić"
+              tr: "Aynı yer: bulunmak ve yapmak"
+              id: "Tempat yang sama: berada dan melakukan"
+              vi: "Cùng một nơi: có mặt và làm việc"
+            ex: { examples: [["アンナさんはうち", { target: "に" }, "います。"], ["アンナさんはうち", { target: "で" }, "ごはんを", { kanji: "食", reading: "た" }, "べます。"]] }
+            tr: { en: { examples: ["Anna is at home.", "Anna eats at home."] }, uk: { examples: ["Анна вдома.", "Анна їсть удома."] }, es: { examples: ["Anna está en casa.", "Anna come en casa."] }, pt: { examples: ["A Anna está em casa.", "A Anna come em casa."] }, fr: { examples: ["Anna est à la maison.", "Anna mange à la maison."] }, de: { examples: ["Anna ist zu Hause.", "Anna isst zu Hause."] }, it: { examples: ["Anna è a casa.", "Anna mangia a casa."] }, pl: { examples: ["Anna jest w domu.", "Anna je w domu."] }, tr: { examples: ["Anna evde.", "Anna evde yemek yer."] }, id: { examples: ["Anna ada di rumah.", "Anna makan di rumah."] }, vi: { examples: ["Anna ở nhà.", "Anna ăn ở nhà."] } }
+          - level: "A2"
+            use:
+              en: ["An event takes place: ", { term: "で" }, " before ", { term: "あります" }]
+              uk: ["Подія відбувається: ", { term: "で" }, " перед ", { term: "あります" }]
+              es: ["Un evento tiene lugar: ", { term: "で" }, " ante ", { term: "あります" }]
+              pt: ["Um evento acontece: ", { term: "で" }, " antes de ", { term: "あります" }]
+              fr: ["Un événement a lieu : ", { term: "で" }, " devant ", { term: "あります" }]
+              de: ["Ein Ereignis findet statt: ", { term: "で" }, " vor ", { term: "あります" }]
+              it: ["Un evento ha luogo: ", { term: "で" }, " davanti a ", { term: "あります" }]
+              pl: ["Wydarzenie ma miejsce: ", { term: "で" }, " przed ", { term: "あります" }]
+              tr: ["Bir olay gerçekleşir: ", { term: "あります" }, " öncesinde ", { term: "で" }]
+              id: ["Sebuah acara berlangsung: ", { term: "で" }, " sebelum ", { term: "あります" }]
+              vi: ["Một sự kiện diễn ra: ", { term: "で" }, " trước ", { term: "あります" }]
+            ex: ["あした、うち", { target: "で" }, "パーティーがあります。"]
+            tr: { en: "Tomorrow there is a party at my house.", uk: "Завтра в мене вдома вечірка.", es: "Mañana hay una fiesta en mi casa.", pt: "Amanhã tem uma festa na minha casa.", fr: "Demain, il y a une fête chez moi.", de: "Morgen gibt es bei mir zu Hause eine Party.", it: "Domani c’è una festa a casa mia.", pl: "Jutro u mnie w domu jest przyjęcie.", tr: "Yarın bizim evde bir parti var.", id: "Besok ada pesta di rumah saya.", vi: "Ngày mai có một bữa tiệc ở nhà tôi." }
+  - title:
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      fr: "Erreurs fréquentes"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: ["ごはん", { kanji: "食", reading: "た" }, "べます。"]
+            right: ["ごはん", { target: "を" }, { kanji: "食", reading: "た" }, "べます。"]
+            rule:
+              en: ["write ", { term: "を" }, " after the object; casual speech may drop it, polite writing keeps it"]
+              uk: ["після додатка пишуть ", { term: "を" }, "; у невимушеній мові його можуть опускати, а в ввічливому письмі зберігають"]
+              es: ["se escribe ", { term: "を" }, " tras el complemento directo; el habla informal puede omitirlo, la escritura cortés lo mantiene"]
+              pt: ["escreve-se ", { term: "を" }, " depois do objeto direto; a fala informal pode omiti-lo, a escrita polida o mantém"]
+              fr: ["on écrit ", { term: "を" }, " après l’objet ; la langue familière peut l’omettre, l’écrit poli le garde"]
+              de: ["nach dem Objekt steht ", { term: "を" }, "; die Umgangssprache lässt es manchmal weg, die höfliche Schrift behält es"]
+              it: ["si scrive ", { term: "を" }, " dopo il complemento oggetto; il parlato informale può ometterlo, lo scritto cortese lo mantiene"]
+              pl: ["po dopełnieniu pisze się ", { term: "を" }, "; mowa potoczna może je pominąć, pismo grzecznościowe je zachowuje"]
+              tr: ["nesneden sonra ", { term: "を" }, " yazılır; gündelik konuşmada düşebilir, nazik yazıda kalır"]
+              id: [{ term: "を" }, " ditulis setelah objek; ragam santai boleh melesapkannya, tulisan sopan mempertahankannya"]
+              vi: ["sau tân ngữ viết ", { term: "を" }, "; văn nói thân mật có thể bỏ, văn viết lịch sự vẫn giữ"]
+            speakers: ["en", "fr", "es", "pt", "it", "id", "vi"]
+          - level: "A1"
+            wrong: ["うちにごはんを", { kanji: "食", reading: "た" }, "べます。"]
+            right: ["うち", { target: "で" }, "ごはんを", { kanji: "食", reading: "た" }, "べます。"]
+            rule:
+              en: ["the place where an action happens takes ", { term: "で" }]
+              uk: ["місце, де відбувається дія, стоїть із ", { term: "で" }]
+              es: ["el lugar donde ocurre una acción lleva ", { term: "で" }]
+              pt: ["o lugar onde uma ação acontece leva ", { term: "で" }]
+              fr: ["le lieu où se passe une action prend ", { term: "で" }]
+              de: ["der Ort, an dem eine Handlung geschieht, steht mit ", { term: "で" }]
+              it: ["il luogo in cui avviene un’azione prende ", { term: "で" }]
+              pl: ["miejsce, w którym dzieje się czynność, bierze ", { term: "で" }]
+              tr: ["eylemin gerçekleştiği yer ", { term: "で" }, " alır"]
+              id: ["tempat terjadinya kegiatan memakai ", { term: "で" }]
+              vi: ["nơi diễn ra hành động đi với ", { term: "で" }]
+          - level: "A1"
+            wrong: "アンナさんはうちでいます。"
+            right: ["アンナさんはうち", { target: "に" }, "います。"]
+            rule:
+              en: ["the place where someone is takes ", { term: "に" }]
+              uk: ["місце, де перебуває людина, стоїть із ", { term: "に" }]
+              es: ["el lugar donde está alguien lleva ", { term: "に" }]
+              pt: ["o lugar onde alguém está leva ", { term: "に" }]
+              fr: ["le lieu où se trouve quelqu’un prend ", { term: "に" }]
+              de: ["der Ort, an dem jemand ist, steht mit ", { term: "に" }]
+              it: ["il luogo in cui si trova qualcuno prende ", { term: "に" }]
+              pl: ["miejsce, w którym ktoś jest, bierze ", { term: "に" }]
+              tr: ["birinin bulunduğu yer ", { term: "に" }, " alır"]
+              id: ["tempat seseorang berada memakai ", { term: "に" }]
+              vi: ["nơi một người có mặt đi với ", { term: "に" }]
+          - level: "A1"
+            wrong: [{ kanji: "日本", reading: "にほん" }, "を", { kanji: "行", reading: "い" }, "きます。"]
+            right: [{ kanji: "日本", reading: "にほん" }, { target: "に" }, { kanji: "行", reading: "い" }, "きます。"]
+            rule:
+              en: ["the goal of ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " takes ", { term: "に" }, " or ", { term: "へ" }, ", not ", { term: "を" }]
+              uk: ["мета руху для ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " стоїть із ", { term: "に" }, " або ", { term: "へ" }, ", а не з ", { term: "を" }]
+              es: ["el destino de ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " lleva ", { term: "に" }, " o ", { term: "へ" }, ", no ", { term: "を" }]
+              pt: ["o destino de ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " leva ", { term: "に" }, " ou ", { term: "へ" }, ", não ", { term: "を" }]
+              fr: ["la destination de ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " prend ", { term: "に" }, " ou ", { term: "へ" }, ", pas ", { term: "を" }]
+              de: ["das Ziel von ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " steht mit ", { term: "に" }, " oder ", { term: "へ" }, ", nicht mit ", { term: "を" }]
+              it: ["la meta di ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " prende ", { term: "に" }, " o ", { term: "へ" }, ", non ", { term: "を" }]
+              pl: ["cel czasownika ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " bierze ", { term: "に" }, " lub ", { term: "へ" }, ", nie ", { term: "を" }]
+              tr: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, " fiilinin varış yeri ", { term: "に" }, " ya da ", { term: "へ" }, " alır, ", { term: "を" }, " almaz"]
+              id: ["tujuan ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " memakai ", { term: "に" }, " atau ", { term: "へ" }, ", bukan ", { term: "を" }]
+              vi: ["nơi đến của ", { term: [{ kanji: "行", reading: "い" }, "く"] }, " đi với ", { term: "に" }, " hoặc ", { term: "へ" }, ", không dùng ", { term: "を" }]
+          - level: "A1"
+            wrong: ["バスに", { kanji: "行", reading: "い" }, "きます。"]
+            right: ["バス", { target: "で" }, { kanji: "行", reading: "い" }, "きます。"]
+            rule:
+              en: ["a vehicle takes ", { term: "で" }, "; with ", { term: "に" }, " the bus would be the goal"]
+              uk: ["транспорт стоїть із ", { term: "で" }, "; із ", { term: "に" }, " автобус був би метою"]
+              es: ["el transporte lleva ", { term: "で" }, "; con ", { term: "に" }, " el autobús sería el destino"]
+              pt: ["o transporte leva ", { term: "で" }, "; com ", { term: "に" }, " o ônibus seria o destino"]
+              fr: ["le transport prend ", { term: "で" }, " ; avec ", { term: "に" }, ", le bus serait la destination"]
+              de: ["das Verkehrsmittel steht mit ", { term: "で" }, "; mit ", { term: "に" }, " wäre der Bus das Ziel"]
+              it: ["il mezzo prende ", { term: "で" }, "; con ", { term: "に" }, " l’autobus sarebbe la meta"]
+              pl: ["środek transportu bierze ", { term: "で" }, "; z ", { term: "に" }, " autobus byłby celem"]
+              tr: ["taşıt ", { term: "で" }, " alır; ", { term: "に" }, " ile otobüs varış yeri olurdu"]
+              id: ["kendaraan memakai ", { term: "で" }, "; dengan ", { term: "に" }, " bus menjadi tujuan"]
+              vi: ["phương tiện đi với ", { term: "で" }, "; với ", { term: "に" }, " thì xe buýt sẽ là nơi đến"]
+          - level: "A1"
+            wrong: ["あしたに", { kanji: "日本", reading: "にほん" }, "へ", { kanji: "行", reading: "い" }, "きます。"]
+            right: [{ target: "あした" }, "、", { kanji: "日本", reading: "にほん" }, "へ", { kanji: "行", reading: "い" }, "きます。"]
+            rule:
+              en: [{ term: "あした" }, " takes no ", { term: "に" }, "; ", { term: "に" }, " is for clock times, days and dates"]
+              uk: [{ term: "あした" }, " не береться з ", { term: "に" }, "; ", { term: "に" }, " — для годин, днів і дат"]
+              es: [{ term: "あした" }, " no lleva ", { term: "に" }, "; ", { term: "に" }, " es para horas, días y fechas"]
+              pt: [{ term: "あした" }, " não leva ", { term: "に" }, "; ", { term: "に" }, " é para horas, dias e datas"]
+              fr: [{ term: "あした" }, " ne prend pas ", { term: "に" }, " ; ", { term: "に" }, " sert aux heures, aux jours et aux dates"]
+              de: [{ term: "あした" }, " steht ohne ", { term: "に" }, "; ", { term: "に" }, " gehört zu Uhrzeiten, Tagen und Daten"]
+              it: [{ term: "あした" }, " non prende ", { term: "に" }, "; ", { term: "に" }, " è per ore, giorni e date"]
+              pl: [{ term: "あした" }, " nie bierze ", { term: "に" }, "; ", { term: "に" }, " służy do godzin, dni i dat"]
+              tr: [{ term: "あした" }, " ", { term: "に" }, " almaz; ", { term: "に" }, " saat, gün ve tarih içindir"]
+              id: [{ term: "あした" }, " tidak memakai ", { term: "に" }, "; ", { term: "に" }, " untuk jam, hari, dan tanggal"]
+              vi: [{ term: "あした" }, " không đi với ", { term: "に" }, "; ", { term: "に" }, " dành cho giờ, ngày và ngày tháng"]

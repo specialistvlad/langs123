@@ -1,0 +1,845 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.nom-determinants.demonstratifs"
+lang: "fr"
+kind: "grammar"
+tags: ["demonstratives", "determiners", "ça"]
+concepts: ["demonstratives"]
+related: ["fr.nom-determinants.articles", "fr.nom-determinants.genre", "fr.etre-avoir.c-est-il-est", "fr.bases.liaison-elision"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", uk: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", es: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", pt: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", de: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", it: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", pl: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", tr: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", id: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267", vi: "67ee86 de6d5b 1fcba8 96e91f 297298 50cc75 23f891 ea68e8 d98267" }
+title:
+  fr: "Les démonstratifs"
+  en: "Demonstratives"
+  uk: "Вказівні слова"
+  es: "Los demostrativos"
+  pt: "Os demonstrativos"
+  de: "Die Demonstrativpronomen"
+  it: "I dimostrativi"
+  pl: "Zaimki wskazujące"
+  tr: "İşaret sözcükleri"
+  id: "Kata tunjuk"
+  vi: "Từ chỉ định"
+summary:
+  lead:
+    fr: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " et ", { term: "ces" }, " montrent un nom ; ", { term: "ça" }, " montre une chose sans la nommer."]
+    en: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " and ", { term: "ces" }, " point to a noun; ", { term: "ça" }, " points to a thing without naming it."]
+    uk: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " і ", { term: "ces" }, " вказують на іменник; ", { term: "ça" }, " вказує на річ, не називаючи її."]
+    es: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " y ", { term: "ces" }, " señalan un nombre; ", { term: "ça" }, " señala una cosa sin nombrarla."]
+    pt: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " e ", { term: "ces" }, " apontam um substantivo; ", { term: "ça" }, " aponta uma coisa sem nomeá-la."]
+    de: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " und ", { term: "ces" }, " zeigen auf ein Nomen; ", { term: "ça" }, " zeigt auf eine Sache, ohne sie zu nennen."]
+    it: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " e ", { term: "ces" }, " indicano un nome; ", { term: "ça" }, " indica una cosa senza nominarla."]
+    pl: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " i ", { term: "ces" }, " wskazują rzeczownik; ", { term: "ça" }, " wskazuje rzecz bez jej nazywania."]
+    tr: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " ve ", { term: "ces" }, " bir ismi gösterir; ", { term: "ça" }, " bir şeyi adını söylemeden gösterir."]
+    id: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, ", dan ", { term: "ces" }, " menunjuk sebuah kata benda; ", { term: "ça" }, " menunjuk sesuatu tanpa menyebut namanya."]
+    vi: [{ term: "Ce" }, ", ", { term: "cet" }, ", ", { term: "cette" }, " và ", { term: "ces" }, " chỉ một danh từ; ", { term: "ça" }, " chỉ một thứ mà không gọi tên."]
+  rule:
+    fr: ["Le démonstratif s’accorde avec le nom : ", { term: "ce" }, " ou ", { term: "cet" }, " au masculin, ", { term: "cette" }, " au féminin, ", { term: "ces" }, " au pluriel :"]
+    en: ["The demonstrative agrees with the noun: ", { term: "ce" }, " or ", { term: "cet" }, " for masculine, ", { term: "cette" }, " for feminine, ", { term: "ces" }, " for plural:"]
+    uk: ["Вказівне слово узгоджується з іменником: ", { term: "ce" }, " або ", { term: "cet" }, " — чоловічий рід, ", { term: "cette" }, " — жіночий, ", { term: "ces" }, " — множина:"]
+    es: ["El demostrativo concuerda con el nombre: ", { term: "ce" }, " o ", { term: "cet" }, " en masculino, ", { term: "cette" }, " en femenino, ", { term: "ces" }, " en plural:"]
+    pt: ["O demonstrativo concorda com o substantivo: ", { term: "ce" }, " ou ", { term: "cet" }, " no masculino, ", { term: "cette" }, " no feminino, ", { term: "ces" }, " no plural:"]
+    de: ["Das Demonstrativum richtet sich nach dem Nomen: ", { term: "ce" }, " oder ", { term: "cet" }, " maskulin, ", { term: "cette" }, " feminin, ", { term: "ces" }, " im Plural:"]
+    it: ["Il dimostrativo concorda con il nome: ", { term: "ce" }, " o ", { term: "cet" }, " al maschile, ", { term: "cette" }, " al femminile, ", { term: "ces" }, " al plurale:"]
+    pl: ["Zaimek wskazujący zgadza się z rzeczownikiem: ", { term: "ce" }, " lub ", { term: "cet" }, " w rodzaju męskim, ", { term: "cette" }, " w żeńskim, ", { term: "ces" }, " w liczbie mnogiej:"]
+    tr: ["İşaret sözcüğü isimle uyum sağlar: eril için ", { term: "ce" }, " ya da ", { term: "cet" }, ", dişil için ", { term: "cette" }, ", çoğul için ", { term: "ces" }, ":"]
+    id: ["Kata tunjuk menyesuaikan diri dengan kata benda: ", { term: "ce" }, " atau ", { term: "cet" }, " untuk maskulin, ", { term: "cette" }, " untuk feminin, ", { term: "ces" }, " untuk jamak:"]
+    vi: ["Từ chỉ định hòa hợp với danh từ: ", { term: "ce" }, " hoặc ", { term: "cet" }, " cho giống đực, ", { term: "cette" }, " cho giống cái, ", { term: "ces" }, " cho số nhiều:"]
+  ex: { examples: [[{ target: "ce" }, " livre"], [{ target: "cet" }, " ami"], [{ target: "cette" }, " maison"], [{ target: "ces" }, " enfants"]] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" }
+          rule:
+            fr: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            en: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            uk: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            es: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            pt: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            de: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            it: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            pl: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            tr: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            id: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+            vi: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cet" }, { term: "cette" }, { term: "ces" }] }, { slot: "noun" }] }
+          ex: { examples: [[{ target: "Ce" }, " livre est à moi."], [{ target: "Ces" }, " livres sont à moi."]] }
+          tr: { en: { examples: ["This book is mine.", "These books are mine."] }, uk: { examples: ["Ця книжка моя.", "Ці книжки мої."] }, es: { examples: ["Este libro es mío.", "Estos libros son míos."] }, pt: { examples: ["Este livro é meu.", "Estes livros são meus."] }, de: { examples: ["Dieses Buch gehört mir.", "Diese Bücher gehören mir."] }, it: { examples: ["Questo libro è mio.", "Questi libri sono miei."] }, pl: { examples: ["Ta książka jest moja.", "Te książki są moje."] }, tr: { examples: ["Bu kitap benim.", "Bu kitaplar benim."] }, id: { examples: ["Buku ini milikku.", "Buku-buku ini milikku."] }, vi: { examples: ["Quyển sách này là của tôi.", "Những quyển sách này là của tôi."] } }
+        - level: "A1"
+          point: { fr: "Montrer", en: "Pointing", uk: "Вказати", es: "Señalar", pt: "Apontar", de: "Zeigen", it: "Indicare", pl: "Wskazywanie", tr: "Gösterme", id: "Menunjuk", vi: "Chỉ" }
+          rule:
+            fr: [{ term: "ce" }, ", ", { term: "cette" }, "… montrent une chose ou une personne précise"]
+            en: [{ term: "ce" }, ", ", { term: "cette" }, "… point to one particular thing or person"]
+            uk: [{ term: "ce" }, ", ", { term: "cette" }, "… вказують на конкретну річ чи особу"]
+            es: [{ term: "ce" }, ", ", { term: "cette" }, "… señalan una cosa o persona concreta"]
+            pt: [{ term: "ce" }, ", ", { term: "cette" }, "… apontam uma coisa ou pessoa precisa"]
+            de: [{ term: "ce" }, ", ", { term: "cette" }, "… zeigen auf eine bestimmte Sache oder Person"]
+            it: [{ term: "ce" }, ", ", { term: "cette" }, "… indicano una cosa o una persona precisa"]
+            pl: [{ term: "ce" }, ", ", { term: "cette" }, "… wskazują konkretną rzecz lub osobę"]
+            tr: [{ term: "ce" }, ", ", { term: "cette" }, "… belirli bir şeyi ya da kişiyi gösterir"]
+            id: [{ term: "ce" }, ", ", { term: "cette" }, "… menunjuk benda atau orang tertentu"]
+            vi: [{ term: "ce" }, ", ", { term: "cette" }, "… chỉ một vật hoặc một người cụ thể"]
+          ex: ["Je prends ", { target: "ce" }, " pain, s’il vous plaît."]
+          tr: { en: "I'll take this bread, please.", uk: "Я візьму цей хліб, будь ласка.", es: "Me llevo este pan, por favor.", pt: "Eu levo este pão, por favor.", de: "Ich nehme dieses Brot, bitte.", it: "Prendo questo pane, per favore.", pl: "Poproszę ten chleb.", tr: "Bu ekmeği alıyorum lütfen.", id: "Saya ambil roti ini, tolong.", vi: "Cho tôi lấy ổ bánh mì này." }
+        - level: "A1"
+          point: { fr: "Le moment", en: "The time", uk: "Час", es: "El momento", pt: "O momento", de: "Der Zeitpunkt", it: "Il momento", pl: "Czas", tr: "Zaman", id: "Waktu", vi: "Thời điểm" }
+          rule:
+            fr: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, " : le temps présent"]
+            en: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": the present period"]
+            uk: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": теперішній період"]
+            es: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": el período actual"]
+            pt: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": o período atual"]
+            de: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": der laufende Zeitraum"]
+            it: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": il periodo in corso"]
+            pl: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": bieżący okres"]
+            tr: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": içinde bulunulan dönem"]
+            id: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": periode saat ini"]
+            vi: [{ alternatives: [{ term: "ce matin" }, { term: "ce soir" }, { term: "cette semaine" }] }, ": khoảng thời gian hiện tại"]
+          ex: ["Je travaille ", { target: "ce" }, " soir."]
+          tr: { en: "I'm working this evening.", uk: "Я працюю цього вечора.", es: "Trabajo esta noche.", pt: "Eu trabalho esta noite.", de: "Ich arbeite heute Abend.", it: "Lavoro stasera.", pl: "Pracuję dziś wieczorem.", tr: "Bu akşam çalışıyorum.", id: "Aku bekerja malam ini.", vi: "Tối nay tôi làm việc." }
+        - level: "A1"
+          point: { fr: "Ça va ?", en: "Ça va?", uk: "Ça va ?", es: "Ça va?", pt: "Ça va?", de: "Ça va?", it: "Ça va?", pl: "Ça va?", tr: "Ça va?", id: "Ça va?", vi: "Ça va?" }
+          rule:
+            fr: [{ term: "ça" }, " : une chose qu’on ne nomme pas"]
+            en: [{ term: "ça" }, ": a thing you do not name"]
+            uk: [{ term: "ça" }, ": річ, яку не називають"]
+            es: [{ term: "ça" }, ": una cosa que no se nombra"]
+            pt: [{ term: "ça" }, ": uma coisa que não se nomeia"]
+            de: [{ term: "ça" }, ": eine Sache, die man nicht nennt"]
+            it: [{ term: "ça" }, ": una cosa che non si nomina"]
+            pl: [{ term: "ça" }, ": rzecz, której się nie nazywa"]
+            tr: [{ term: "ça" }, ": adı söylenmeyen bir şey"]
+            id: [{ term: "ça" }, ": sesuatu yang tidak disebut namanya"]
+            vi: [{ term: "ça" }, ": một thứ không gọi tên"]
+          ex: [{ target: "Ça" }, " va ?"]
+          tr: { en: "How are you?", uk: "Як справи?", es: "¿Qué tal?", pt: "Tudo bem?", de: "Wie geht’s?", it: "Come va?", pl: "Jak leci?", tr: "Nasılsın?", id: "Apa kabar?", vi: "Bạn khỏe không?" }
+        - level: "A1"
+          point: { fr: "Ça", en: "Ça", uk: "Ça", es: "Ça", pt: "Ça", de: "Ça", it: "Ça", pl: "Ça", tr: "Ça", id: "Ça", vi: "Ça" }
+          rule:
+            fr: [{ term: "ça" }, " après un verbe ou devant un verbe, jamais devant un nom"]
+            en: [{ term: "ça" }, " after or before a verb, never before a noun"]
+            uk: [{ term: "ça" }, " після дієслова чи перед ним, ніколи перед іменником"]
+            es: [{ term: "ça" }, " tras un verbo o ante un verbo, nunca ante un nombre"]
+            pt: [{ term: "ça" }, " depois ou antes de um verbo, nunca antes de um substantivo"]
+            de: [{ term: "ça" }, " nach oder vor einem Verb, nie vor einem Nomen"]
+            it: [{ term: "ça" }, " dopo o davanti a un verbo, mai davanti a un nome"]
+            pl: [{ term: "ça" }, " po czasowniku lub przed nim, nigdy przed rzeczownikiem"]
+            tr: [{ term: "ça" }, " fiilden sonra ya da önce gelir, isimden önce asla"]
+            id: [{ term: "ça" }, " sesudah atau sebelum kata kerja, tidak pernah sebelum kata benda"]
+            vi: [{ term: "ça" }, " đứng sau hoặc trước động từ, không bao giờ trước danh từ"]
+          ex: [{ target: "Ça" }, " coûte dix euros."]
+          tr: { en: "That costs ten euros.", uk: "Це коштує десять євро.", es: "Eso cuesta diez euros.", pt: "Isso custa dez euros.", de: "Das kostet zehn Euro.", it: "Costa dieci euro.", pl: "To kosztuje dziesięć euro.", tr: "Bu on avro.", id: "Ini harganya sepuluh euro.", vi: "Cái này giá mười euro." }
+        - level: "A2"
+          point: { fr: "-ci et -là", en: "-ci and -là", uk: "-ci і -là", es: "-ci y -là", pt: "-ci e -là", de: "-ci und -là", it: "-ci e -là", pl: "-ci i -là", tr: "-ci ve -là", id: "-ci dan -là", vi: "-ci và -là" }
+          rule:
+            fr: ["nom + ", { term: "-ci" }, " : près ; nom + ", { term: "-là" }, " : loin, ou pour montrer"]
+            en: ["noun + ", { term: "-ci" }, ": near; noun + ", { term: "-là" }, ": far, or just to point"]
+            uk: ["іменник + ", { term: "-ci" }, ": близько; іменник + ", { term: "-là" }, ": далеко або просто вказівка"]
+            es: ["nombre + ", { term: "-ci" }, ": cerca; nombre + ", { term: "-là" }, ": lejos, o simplemente para señalar"]
+            pt: ["substantivo + ", { term: "-ci" }, ": perto; substantivo + ", { term: "-là" }, ": longe, ou só para apontar"]
+            de: ["Nomen + ", { term: "-ci" }, ": nah; Nomen + ", { term: "-là" }, ": fern oder einfach zum Zeigen"]
+            it: ["nome + ", { term: "-ci" }, ": vicino; nome + ", { term: "-là" }, ": lontano, o solo per indicare"]
+            pl: ["rzeczownik + ", { term: "-ci" }, ": blisko; rzeczownik + ", { term: "-là" }, ": daleko lub po prostu do wskazania"]
+            tr: ["isim + ", { term: "-ci" }, ": yakın; isim + ", { term: "-là" }, ": uzak ya da yalnızca göstermek için"]
+            id: ["kata benda + ", { term: "-ci" }, ": dekat; kata benda + ", { term: "-là" }, ": jauh, atau sekadar menunjuk"]
+            vi: ["danh từ + ", { term: "-ci" }, ": gần; danh từ + ", { term: "-là" }, ": xa, hoặc chỉ để chỉ"]
+          ex: ["Je prends ce pull", { target: "-ci" }, ", pas ce pull", { target: "-là" }, "."]
+          tr: { en: "I'll take this jumper, not that one.", uk: "Я візьму цей светр, а не той.", es: "Me llevo este jersey, no ese.", pt: "Eu levo este suéter, não aquele.", de: "Ich nehme diesen Pullover, nicht jenen.", it: "Prendo questo maglione, non quello.", pl: "Wezmę ten sweter, nie tamten.", tr: "Bu kazağı alıyorum, şunu değil.", id: "Aku ambil sweter ini, bukan yang itu.", vi: "Tôi lấy cái áo len này, không phải cái kia." }
+        - level: "A1"
+          point: { fr: "Cet", en: "Cet", uk: "Cet", es: "Cet", pt: "Cet", de: "Cet", it: "Cet", pl: "Cet", tr: "Cet", id: "Cet", vi: "Cet" }
+          rule:
+            fr: [{ term: "cet" }, " devant un nom masculin qui commence par une voyelle ou un h muet"]
+            en: [{ term: "cet" }, " before a masculine noun that starts with a vowel or a mute h"]
+            uk: [{ term: "cet" }, " перед іменником чоловічого роду, що починається з голосної або німого h"]
+            es: [{ term: "cet" }, " ante un nombre masculino que empieza por vocal o h muda"]
+            pt: [{ term: "cet" }, " antes de um substantivo masculino que começa por vogal ou h mudo"]
+            de: [{ term: "cet" }, " vor einem maskulinen Nomen mit Vokal oder stummem h am Anfang"]
+            it: [{ term: "cet" }, " davanti a un nome maschile che inizia per vocale o h muta"]
+            pl: [{ term: "cet" }, " przed rzeczownikiem rodzaju męskiego zaczynającym się od samogłoski lub niemego h"]
+            tr: [{ term: "cet" }, " ünlüyle ya da sessiz h ile başlayan eril isimlerin önünde"]
+            id: [{ term: "cet" }, " sebelum kata benda maskulin yang diawali vokal atau h bisu"]
+            vi: [{ term: "cet" }, " trước danh từ giống đực bắt đầu bằng nguyên âm hoặc h câm"]
+          ex: [{ target: "Cet" }, " homme est grand."]
+          tr: { en: "This man is tall.", uk: "Цей чоловік високий.", es: "Este hombre es alto.", pt: "Este homem é alto.", de: "Dieser Mann ist groß.", it: "Quest'uomo è alto.", pl: "Ten mężczyzna jest wysoki.", tr: "Bu adam uzun boylu.", id: "Pria ini tinggi.", vi: "Người đàn ông này cao." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "cette" }, " pour le féminin, même avec une voyelle : ", { term: "cette amie" }]
+            en: [{ term: "cette" }, " for the feminine, even before a vowel: ", { term: "cette amie" }]
+            uk: [{ term: "cette" }, " — жіночий рід, навіть перед голосною: ", { term: "cette amie" }]
+            es: [{ term: "cette" }, " para el femenino, incluso ante vocal: ", { term: "cette amie" }]
+            pt: [{ term: "cette" }, " para o feminino, mesmo antes de vogal: ", { term: "cette amie" }]
+            de: [{ term: "cette" }, " für das Femininum, auch vor Vokal: ", { term: "cette amie" }]
+            it: [{ term: "cette" }, " per il femminile, anche davanti a vocale: ", { term: "cette amie" }]
+            pl: [{ term: "cette" }, " dla rodzaju żeńskiego, także przed samogłoską: ", { term: "cette amie" }]
+            tr: ["dişil için ", { term: "cette" }, ", ünlüden önce de: ", { term: "cette amie" }]
+            id: [{ term: "cette" }, " untuk feminin, juga sebelum vokal: ", { term: "cette amie" }]
+            vi: [{ term: "cette" }, " cho giống cái, cả trước nguyên âm: ", { term: "cette amie" }]
+          ex: [{ target: "Cette" }, " amie est drôle."]
+          tr: { en: "This friend is funny.", uk: "Ця подруга кумедна.", es: "Esta amiga es graciosa.", pt: "Esta amiga é engraçada.", de: "Diese Freundin ist lustig.", it: "Quest'amica è simpatica.", pl: "Ta przyjaciółka jest zabawna.", tr: "Bu arkadaş çok komik.", id: "Teman perempuan ini lucu.", vi: "Người bạn gái này vui tính." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "ça" }, " ne se met pas devant un nom : ", { term: "ce livre" }, ", pas ", { term: "ça livre" }]
+            en: [{ term: "ça" }, " does not go before a noun: ", { term: "ce livre" }, ", not ", { term: "ça livre" }]
+            uk: [{ term: "ça" }, " не ставлять перед іменником: ", { term: "ce livre" }, ", а не ", { term: "ça livre" }]
+            es: [{ term: "ça" }, " no va ante un nombre: ", { term: "ce livre" }, ", no ", { term: "ça livre" }]
+            pt: [{ term: "ça" }, " não vai antes de um substantivo: ", { term: "ce livre" }, ", não ", { term: "ça livre" }]
+            de: [{ term: "ça" }, " steht nicht vor einem Nomen: ", { term: "ce livre" }, ", nicht ", { term: "ça livre" }]
+            it: [{ term: "ça" }, " non sta davanti a un nome: ", { term: "ce livre" }, ", non ", { term: "ça livre" }]
+            pl: [{ term: "ça" }, " nie stoi przed rzeczownikiem: ", { term: "ce livre" }, ", nie ", { term: "ça livre" }]
+            tr: [{ term: "ça" }, " isimden önce gelmez: ", { term: "ce livre" }, ", ", { term: "ça livre" }, " değil"]
+            id: [{ term: "ça" }, " tidak berada sebelum kata benda: ", { term: "ce livre" }, ", bukan ", { term: "ça livre" }]
+            vi: [{ term: "ça" }, " không đứng trước danh từ: ", { term: "ce livre" }, ", không phải ", { term: "ça livre" }]
+          ex: [{ target: "Ce" }, " livre est bon."]
+          tr: { en: "This book is good.", uk: "Ця книжка хороша.", es: "Este libro es bueno.", pt: "Este livro é bom.", de: "Dieses Buch ist gut.", it: "Questo libro è buono.", pl: "Ta książka jest dobra.", tr: "Bu kitap iyi.", id: "Buku ini bagus.", vi: "Quyển sách này hay." }
+sections:
+  - title:
+      fr: "Vue d’ensemble"
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Le démonstratif prend la place de l’article : un seul mot devant le nom."
+              en: "The demonstrative takes the place of the article: one word before the noun."
+              uk: "Вказівне слово займає місце артикля: перед іменником стоїть лише одне слово."
+              es: "El demostrativo ocupa el lugar del artículo: una sola palabra ante el nombre."
+              pt: "O demonstrativo ocupa o lugar do artigo: uma só palavra antes do substantivo."
+              de: "Das Demonstrativum steht anstelle des Artikels: nur ein Wort vor dem Nomen."
+              it: "Il dimostrativo prende il posto dell'articolo: una sola parola davanti al nome."
+              pl: "Zaimek wskazujący zajmuje miejsce przedimka: przed rzeczownikiem stoi tylko jedno słowo."
+              tr: "İşaret sözcüğü artikelin yerini alır: ismin önünde tek bir sözcük durur."
+              id: "Kata tunjuk menggantikan artikel: hanya satu kata di depan kata benda."
+              vi: "Từ chỉ định thay chỗ của mạo từ: chỉ có một từ đứng trước danh từ."
+            ex: { examples: [[{ target: "Ce" }, " chat dort."], [{ target: "Ces" }, " chats dorment."]] }
+            tr: { en: { examples: ["This cat is asleep.", "These cats are asleep."] }, uk: { examples: ["Цей кіт спить.", "Ці коти сплять."] }, es: { examples: ["Este gato duerme.", "Estos gatos duermen."] }, pt: { examples: ["Este gato dorme.", "Estes gatos dormem."] }, de: { examples: ["Diese Katze schläft.", "Diese Katzen schlafen."] }, it: { examples: ["Questo gatto dorme.", "Questi gatti dormono."] }, pl: { examples: ["Ten kot śpi.", "Te koty śpią."] }, tr: { examples: ["Bu kedi uyuyor.", "Bu kediler uyuyor."] }, id: { examples: ["Kucing ini tidur.", "Kucing-kucing ini tidur."] }, vi: { examples: ["Con mèo này đang ngủ.", "Những con mèo này đang ngủ."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Un seul mot dit « ce » ou « cette » pour le proche et pour le lointain ; ", { term: "-ci" }, " et ", { term: "-là" }, " précisent la distance."]
+              en: ["One word covers “this” and “that”; ", { term: "-ci" }, " and ", { term: "-là" }, " tell the distance."]
+              uk: ["Одне слово означає і «цей», і «той»; відстань уточнюють ", { term: "-ci" }, " і ", { term: "-là" }, "."]
+              es: ["Una sola palabra vale para «este» y «ese»; ", { term: "-ci" }, " y ", { term: "-là" }, " precisan la distancia."]
+              pt: ["Uma só palavra vale para «este» e «esse»; ", { term: "-ci" }, " e ", { term: "-là" }, " precisam a distância."]
+              de: ["Ein Wort steht für „dieser“ und „jener“; ", { term: "-ci" }, " und ", { term: "-là" }, " geben die Entfernung an."]
+              it: ["Una sola parola vale per «questo» e «quello»; ", { term: "-ci" }, " e ", { term: "-là" }, " precisano la distanza."]
+              pl: ["Jedno słowo oznacza i „ten”, i „tamten”; odległość określają ", { term: "-ci" }, " i ", { term: "-là" }, "."]
+              tr: ["Tek bir sözcük hem “bu” hem “şu/o” anlamına gelir; ", { term: "-ci" }, " ve ", { term: "-là" }, " uzaklığı belirtir."]
+              id: ["Satu kata berarti “ini” sekaligus “itu”; ", { term: "-ci" }, " dan ", { term: "-là" }, " menentukan jaraknya."]
+              vi: ["Một từ vừa là “này” vừa là “kia”; ", { term: "-ci" }, " và ", { term: "-là" }, " chỉ rõ khoảng cách."]
+            ex: { examples: [["Prends ", { target: "ce" }, " livre, ici."], ["Regarde ", { target: "ce" }, " livre, là-bas."]] }
+            tr: { en: { examples: ["Take this book here.", "Look at that book over there."] }, uk: { examples: ["Візьми цю книжку тут.", "Подивись на ту книжку там."] }, es: { examples: ["Toma este libro, aquí.", "Mira ese libro, allá."] }, pt: { examples: ["Pegue este livro, aqui.", "Olhe aquele livro, lá."] }, de: { examples: ["Nimm dieses Buch hier.", "Sieh dir jenes Buch dort an."] }, it: { examples: ["Prendi questo libro, qui.", "Guarda quel libro, laggiù."] }, pl: { examples: ["Weź tę książkę, tutaj.", "Spójrz na tamtą książkę, tam."] }, tr: { examples: ["Bu kitabı al, burada.", "Şu kitaba bak, orada."] }, id: { examples: ["Ambil buku ini, di sini.", "Lihat buku itu, di sana."] }, vi: { examples: ["Cầm quyển sách này, ở đây.", "Nhìn quyển sách kia, ở đằng đó."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour les articles que le démonstratif remplace, voir ", { link: "Les articles", to: "fr.nom-determinants.articles" }, "."]
+              en: ["For the articles the demonstrative replaces, see ", { link: "Articles", to: "fr.nom-determinants.articles" }, "."]
+              uk: ["Про артиклі, які замінює вказівне слово, — див. ", { link: "Артиклі", to: "fr.nom-determinants.articles" }, "."]
+              es: ["Para los artículos que sustituye el demostrativo, ver ", { link: "Los artículos", to: "fr.nom-determinants.articles" }, "."]
+              pt: ["Para os artigos que o demonstrativo substitui, veja ", { link: "Os artigos", to: "fr.nom-determinants.articles" }, "."]
+              de: ["Zu den Artikeln, die das Demonstrativum ersetzt, siehe ", { link: "Die Artikel", to: "fr.nom-determinants.articles" }, "."]
+              it: ["Per gli articoli che il dimostrativo sostituisce, vedi ", { link: "Gli articoli", to: "fr.nom-determinants.articles" }, "."]
+              pl: ["O przedimkach, które zastępuje zaimek wskazujący — zob. ", { link: "Przedimki", to: "fr.nom-determinants.articles" }, "."]
+              tr: ["İşaret sözcüğünün yerini aldığı artikeller için bkz. ", { link: "Artikeller", to: "fr.nom-determinants.articles" }, "."]
+              id: ["Untuk artikel yang digantikan kata tunjuk, lihat ", { link: "Artikel", to: "fr.nom-determinants.articles" }, "."]
+              vi: ["Về các mạo từ mà từ chỉ định thay thế: xem ", { link: "Mạo từ", to: "fr.nom-determinants.articles" }, "."]
+  - title:
+      fr: "Forme : ce, cet, cette, ces"
+      en: "Form: ce, cet, cette, ces"
+      uk: "Форма: ce, cet, cette, ces"
+      es: "Forma: ce, cet, cette, ces"
+      pt: "Forma: ce, cet, cette, ces"
+      de: "Form: ce, cet, cette, ces"
+      it: "Forma: ce, cet, cette, ces"
+      pl: "Forma: ce, cet, cette, ces"
+      tr: "Biçim: ce, cet, cette, ces"
+      id: "Bentuk: ce, cet, cette, ces"
+      vi: "Dạng: ce, cet, cette, ces"
+    role: "form"
+    content:
+      - type: "paradigm"
+        columns:
+          - key: "kind"
+            label: { fr: "Le nom", en: "The noun", uk: "Іменник", es: "El nombre", pt: "O substantivo", de: "Das Nomen", it: "Il nome", pl: "Rzeczownik", tr: "İsim", id: "Kata benda", vi: "Danh từ" }
+          - { key: "form", label: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            features: { gender: "masc", number: "sg", deixis: "prox" }
+            kind: { fr: "masculin", en: "masculine", uk: "чоловічий рід", es: "masculino", pt: "masculino", de: "maskulin", it: "maschile", pl: "rodzaj męski", tr: "eril", id: "maskulin", vi: "giống đực" }
+            form: { target: "ce" }
+            ex: "ce garçon"
+          - level: "A1"
+            features: { gender: "masc", number: "sg" }
+            kind:
+              fr: "masculin devant une voyelle ou un h muet"
+              en: "masculine before a vowel or a mute h"
+              uk: "чоловічий рід перед голосною або німим h"
+              es: "masculino ante vocal o h muda"
+              pt: "masculino antes de vogal ou h mudo"
+              de: "maskulin vor Vokal oder stummem h"
+              it: "maschile davanti a vocale o h muta"
+              pl: "rodzaj męski przed samogłoską lub niemym h"
+              tr: "eril, ünlüden ya da sessiz h’den önce"
+              id: "maskulin sebelum vokal atau h bisu"
+              vi: "giống đực trước nguyên âm hoặc h câm"
+            form: { target: "cet" }
+            ex: { alternatives: ["cet ami", "cet homme"] }
+          - level: "A1"
+            features: { gender: "fem", number: "sg" }
+            kind: { fr: "féminin", en: "feminine", uk: "жіночий рід", es: "femenino", pt: "feminino", de: "feminin", it: "femminile", pl: "rodzaj żeński", tr: "dişil", id: "feminin", vi: "giống cái" }
+            form: { target: "cette" }
+            ex: { alternatives: ["cette fille", "cette amie"] }
+          - level: "A1"
+            features: { number: "pl" }
+            kind:
+              fr: "pluriel (masculin et féminin)"
+              en: "plural (masculine and feminine)"
+              uk: "множина (чоловічий і жіночий рід)"
+              es: "plural (masculino y femenino)"
+              pt: "plural (masculino e feminino)"
+              de: "Plural (maskulin und feminin)"
+              it: "plurale (maschile e femminile)"
+              pl: "liczba mnoga (rodzaj męski i żeński)"
+              tr: "çoğul (eril ve dişil)"
+              id: "jamak (maskulin dan feminin)"
+              vi: "số nhiều (giống đực và giống cái)"
+            form: { target: "ces" }
+            ex: { alternatives: ["ces garçons", "ces filles", "ces amis"] }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: [{ term: "Cet" }, " dépend du mot qui suit ", { term: "ce" }, " : devant un adjectif à consonne, on dit ", { term: "ce" }, "."]
+              en: [{ term: "Cet" }, " depends on the word right after ", { term: "ce" }, ": before an adjective that starts with a consonant, it is ", { term: "ce" }, "."]
+              uk: [{ term: "Cet" }, " залежить від слова, що стоїть одразу після ", { term: "ce" }, ": перед прикметником на приголосну — ", { term: "ce" }, "."]
+              es: [{ term: "Cet" }, " depende de la palabra que sigue a ", { term: "ce" }, ": ante un adjetivo que empieza por consonante, se dice ", { term: "ce" }, "."]
+              pt: [{ term: "Cet" }, " depende da palavra que vem logo depois de ", { term: "ce" }, ": antes de um adjetivo que começa por consoante, diz-se ", { term: "ce" }, "."]
+              de: [{ term: "Cet" }, " hängt vom Wort ab, das direkt nach ", { term: "ce" }, " folgt: Vor einem Adjektiv mit Konsonant am Anfang heißt es ", { term: "ce" }, "."]
+              it: [{ term: "Cet" }, " dipende dalla parola che segue subito ", { term: "ce" }, ": davanti a un aggettivo che inizia per consonante si dice ", { term: "ce" }, "."]
+              pl: [{ term: "Cet" }, " zależy od słowa stojącego zaraz po ", { term: "ce" }, ": przed przymiotnikiem na spółgłoskę mówi się ", { term: "ce" }, "."]
+              tr: [{ term: "Cet" }, ", ", { term: "ce" }, "’den hemen sonra gelen sözcüğe bağlıdır: ünsüzle başlayan bir sıfattan önce ", { term: "ce" }, " denir."]
+              id: [{ term: "Cet" }, " bergantung pada kata tepat sesudah ", { term: "ce" }, ": sebelum kata sifat berawalan konsonan dipakai ", { term: "ce" }, "."]
+              vi: [{ term: "Cet" }, " phụ thuộc vào từ đứng ngay sau ", { term: "ce" }, ": trước tính từ bắt đầu bằng phụ âm thì dùng ", { term: "ce" }, "."]
+            ex: { examples: [[{ target: "Cet" }, " arbre"], [{ target: "Ce" }, " grand arbre"], [{ target: "Cet" }, " ancien hôtel"]] }
+            tr: { en: { examples: ["this tree", "this tall tree", "this old hotel"] }, uk: { examples: ["це дерево", "це високе дерево", "цей старий готель"] }, es: { examples: ["este árbol", "este árbol grande", "este antiguo hotel"] }, pt: { examples: ["esta árvore", "esta árvore grande", "este antigo hotel"] }, de: { examples: ["dieser Baum", "dieser große Baum", "dieses alte Hotel"] }, it: { examples: ["quest'albero", "questo grande albero", "questo vecchio albergo"] }, pl: { examples: ["to drzewo", "to wysokie drzewo", "ten stary hotel"] }, tr: { examples: ["bu ağaç", "bu büyük ağaç", "bu eski otel"] }, id: { examples: ["pohon ini", "pohon besar ini", "hotel tua ini"] }, vi: { examples: ["cái cây này", "cái cây to này", "khách sạn cổ này"] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour le genre des noms, voir ", { link: "Le genre des noms", to: fr.nom-determinants.genre }, "."]
+              en: ["For the gender of nouns, see ", { link: "Noun Gender", to: fr.nom-determinants.genre }, "."]
+              uk: ["Про рід іменників — див. ", { link: "Рід іменників", to: fr.nom-determinants.genre }, "."]
+              es: ["Para el género de los nombres, ver ", { link: "El género de los sustantivos", to: fr.nom-determinants.genre }, "."]
+              pt: ["Para o gênero dos substantivos, veja ", { link: "O gênero dos substantivos", to: fr.nom-determinants.genre }, "."]
+              de: ["Zum Genus der Nomen siehe ", { link: "Das Genus der Nomen", to: fr.nom-determinants.genre }, "."]
+              it: ["Per il genere dei nomi, vedi ", { link: "Il genere dei nomi", to: fr.nom-determinants.genre }, "."]
+              pl: ["O rodzaju rzeczowników — zob. ", { link: "Rodzaj rzeczowników", to: fr.nom-determinants.genre }, "."]
+              tr: ["İsimlerin cinsiyeti için bkz. ", { link: "İsimlerin cinsiyeti", to: fr.nom-determinants.genre }, "."]
+              id: ["Untuk gender kata benda, lihat ", { link: "Gender kata benda", to: fr.nom-determinants.genre }, "."]
+              vi: ["Về giống của danh từ: xem ", { link: "Giống của danh từ", to: fr.nom-determinants.genre }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Pour les adjectifs qui se placent avant le nom, voir ", { link: "Les adjectifs", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              en: ["For adjectives that go before the noun, see ", { link: "Adjectives", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              uk: ["Про прикметники, що стоять перед іменником, — див. ", { link: "Прикметники", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              es: ["Para los adjetivos que van antes del nombre, ver ", { link: "Los adjetivos", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              pt: ["Para os adjetivos que vêm antes do substantivo, veja ", { link: "Os adjetivos", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              de: ["Zu den Adjektiven vor dem Nomen siehe ", { link: "Die Adjektive", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              it: ["Per gli aggettivi che stanno prima del nome, vedi ", { link: "Gli aggettivi", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              pl: ["O przymiotnikach stojących przed rzeczownikiem — zob. ", { link: "Przymiotniki", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              tr: ["İsmin önüne gelen sıfatlar için bkz. ", { link: "Sıfatlar", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              id: ["Untuk kata sifat yang berada di depan kata benda, lihat ", { link: "Kata sifat", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+              vi: ["Về các tính từ đứng trước danh từ: xem ", { link: "Tính từ", to: "fr.adjectif-adverbe.adjectifs" }, "."]
+  - title:
+      fr: "Prononciation : ce, cet, cette, ces"
+      en: "Pronunciation: ce, cet, cette, ces"
+      uk: "Вимова: ce, cet, cette, ces"
+      es: "Pronunciación: ce, cet, cette, ces"
+      pt: "Pronúncia: ce, cet, cette, ces"
+      de: "Aussprache: ce, cet, cette, ces"
+      it: "Pronuncia: ce, cet, cette, ces"
+      pl: "Wymowa: ce, cet, cette, ces"
+      tr: "Telaffuz: ce, cet, cette, ces"
+      id: "Pelafalan: ce, cet, cette, ces"
+      vi: "Phát âm: ce, cet, cette, ces"
+    role: "pronunciation"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "form", label: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - key: "ipa"
+            label: { fr: "Prononciation", en: "Pronunciation", uk: "Вимова", es: "Pronunciación", pt: "Pronúncia", de: "Aussprache", it: "Pronuncia", pl: "Wymowa", tr: "Telaffuz", id: "Pelafalan", vi: "Phát âm" }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - { level: "A1", features: { gender: "masc", number: "sg" }, form: { target: "ce" }, ipa: { ipa: "sə" }, ex: ["ce garçon ", { ipa: "sə ɡaʁsɔ̃" }] }
+          - { level: "A1", features: { gender: "masc", number: "sg" }, form: { target: "cet" }, ipa: { ipa: "sɛt" }, ex: ["cet ami ", { ipa: "sɛ tami" }] }
+          - { level: "A1", features: { gender: "fem", number: "sg" }, form: { target: "cette" }, ipa: { ipa: "sɛt" }, ex: ["cette amie ", { ipa: "sɛ tami" }] }
+          - { level: "A1", features: { number: "pl" }, form: { target: "ces" }, ipa: { ipa: "se" }, ex: ["ces amis ", { ipa: "se zami" }] }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Cet ami" }, " et ", { term: "cette amie" }, " se prononcent de la même façon : seule l’écriture marque le genre."]
+              en: [{ term: "Cet ami" }, " and ", { term: "cette amie" }, " sound the same: only the spelling shows the gender."]
+              uk: [{ term: "Cet ami" }, " і ", { term: "cette amie" }, " звучать однаково: рід показує лише написання."]
+              es: [{ term: "Cet ami" }, " y ", { term: "cette amie" }, " se pronuncian igual: solo la ortografía marca el género."]
+              pt: [{ term: "Cet ami" }, " e ", { term: "cette amie" }, " se pronunciam do mesmo modo: só a escrita marca o gênero."]
+              de: [{ term: "Cet ami" }, " und ", { term: "cette amie" }, " klingen gleich: Nur die Schreibung zeigt das Genus."]
+              it: [{ term: "Cet ami" }, " e ", { term: "cette amie" }, " si pronunciano allo stesso modo: solo l'ortografia segna il genere."]
+              pl: [{ term: "Cet ami" }, " i ", { term: "cette amie" }, " brzmią tak samo: rodzaj widać tylko w pisowni."]
+              tr: [{ term: "Cet ami" }, " ve ", { term: "cette amie" }, " aynı okunur: cinsiyeti yalnızca yazım gösterir."]
+              id: [{ term: "Cet ami" }, " dan ", { term: "cette amie" }, " dilafalkan sama: hanya ejaan yang menunjukkan gender."]
+              vi: [{ term: "Cet ami" }, " và ", { term: "cette amie" }, " phát âm giống nhau: chỉ chính tả cho biết giống."]
+            ex: { examples: [[{ target: "Cet" }, " ami ", { ipa: "sɛ tami" }], [{ target: "Cette" }, " amie ", { ipa: "sɛ tami" }]] }
+            tr: { en: { examples: ["this (male) friend", "this (female) friend"] }, uk: { examples: ["цей друг", "ця подруга"] }, es: { examples: ["este amigo", "esta amiga"] }, pt: { examples: ["este amigo", "esta amiga"] }, de: { examples: ["dieser Freund", "diese Freundin"] }, it: { examples: ["quest'amico", "quest'amica"] }, pl: { examples: ["ten przyjaciel", "ta przyjaciółka"] }, tr: { examples: ["bu arkadaş (erkek)", "bu arkadaş (kadın)"] }, id: { examples: ["teman laki-laki ini", "teman perempuan ini"] }, vi: { examples: ["người bạn nam này", "người bạn nữ này"] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour la liaison de ", { term: "ces" }, " devant une voyelle, voir ", { link: "La liaison et l’élision", to: fr.bases.liaison-elision }, "."]
+              en: ["For the liaison of ", { term: "ces" }, " before a vowel, see ", { link: "Liaison and Elision", to: fr.bases.liaison-elision }, "."]
+              uk: ["Про зв’язування ", { term: "ces" }, " перед голосною — див. ", { link: "Ліазон та елізія", to: fr.bases.liaison-elision }, "."]
+              es: ["Para el enlace de ", { term: "ces" }, " ante vocal, ver ", { link: "La liaison y la elisión", to: fr.bases.liaison-elision }, "."]
+              pt: ["Para a ligação de ", { term: "ces" }, " antes de vogal, veja ", { link: "A liaison e a elisão", to: fr.bases.liaison-elision }, "."]
+              de: ["Zur Liaison von ", { term: "ces" }, " vor Vokal siehe ", { link: "Liaison und Elision", to: "fr.bases.liaison-elision" }, "."]
+              it: ["Per il legamento di ", { term: "ces" }, " davanti a vocale, vedi ", { link: "La liaison e l'elisione", to: fr.bases.liaison-elision }, "."]
+              pl: ["O liaison w ", { term: "ces" }, " przed samogłoską — zob. ", { link: "Liaison i elizja", to: "fr.bases.liaison-elision" }, "."]
+              tr: [{ term: "ces" }, "’in ünlüden önceki bağlaması için bkz. ", { link: "Liaison ve ünlü düşmesi", to: fr.bases.liaison-elision }, "."]
+              id: ["Untuk liaison ", { term: "ces" }, " sebelum vokal, lihat ", { link: "Liaison dan elisi", to: "fr.bases.liaison-elision" }, "."]
+              vi: ["Về cách nối âm của ", { term: "ces" }, " trước nguyên âm: xem ", { link: "Nối âm và lược âm", to: "fr.bases.liaison-elision" }, "."]
+  - title:
+      fr: "Emploi : ce, cet, cette, ces"
+      en: "Use: ce, cet, cette, ces"
+      uk: "Вживання: ce, cet, cette, ces"
+      es: "Uso: ce, cet, cette, ces"
+      pt: "Uso: ce, cet, cette, ces"
+      de: "Gebrauch: ce, cet, cette, ces"
+      it: "Uso: ce, cet, cette, ces"
+      pl: "Użycie: ce, cet, cette, ces"
+      tr: "Kullanım: ce, cet, cette, ces"
+      id: "Penggunaan: ce, cet, cette, ces"
+      vi: "Cách dùng: ce, cet, cette, ces"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              fr: "Montrer ce qu’on voit"
+              en: "Pointing at what you see"
+              uk: "Показати те, що бачиш"
+              es: "Señalar lo que se ve"
+              pt: "Apontar o que se vê"
+              de: "Zeigen, was man sieht"
+              it: "Indicare ciò che si vede"
+              pl: "Wskazywać to, co widać"
+              tr: "Gördüğünü göstermek"
+              id: "Menunjuk apa yang terlihat"
+              vi: "Chỉ vào thứ đang thấy"
+            ex: { examples: [["Regarde ", { target: "ce" }, " chat !"], ["J’aime ", { target: "cette" }, " chanson."]] }
+            tr: { en: { examples: ["Look at this cat!", "I like this song."] }, uk: { examples: ["Подивись на цього кота!", "Мені подобається ця пісня."] }, es: { examples: ["¡Mira este gato!", "Me gusta esta canción."] }, pt: { examples: ["Olhe este gato!", "Eu gosto desta música."] }, de: { examples: ["Sieh dir diese Katze an!", "Ich mag dieses Lied."] }, it: { examples: ["Guarda questo gatto!", "Mi piace questa canzone."] }, pl: { examples: ["Spójrz na tego kota!", "Lubię tę piosenkę."] }, tr: { examples: ["Şu kedi bak!", "Bu şarkıyı seviyorum."] }, id: { examples: ["Lihat kucing ini!", "Aku suka lagu ini."] }, vi: { examples: ["Nhìn con mèo này kìa!", "Tôi thích bài hát này."] } }
+          - level: "A1"
+            use:
+              fr: "Choisir, acheter"
+              en: "Choosing, buying"
+              uk: "Вибирати, купувати"
+              es: "Elegir, comprar"
+              pt: "Escolher, comprar"
+              de: "Auswählen, kaufen"
+              it: "Scegliere, comprare"
+              pl: "Wybierać, kupować"
+              tr: "Seçmek, satın almak"
+              id: "Memilih, membeli"
+              vi: "Chọn, mua"
+            ex: { examples: [["Je prends ", { target: "ce" }, " pain, s’il vous plaît."], ["Combien coûtent ", { target: "ces" }, " pommes ?"]] }
+            tr: { en: { examples: ["I'll take this bread, please.", "How much are these apples?"] }, uk: { examples: ["Я візьму цей хліб, будь ласка.", "Скільки коштують ці яблука?"] }, es: { examples: ["Me llevo este pan, por favor.", "¿Cuánto cuestan estas manzanas?"] }, pt: { examples: ["Eu levo este pão, por favor.", "Quanto custam estas maçãs?"] }, de: { examples: ["Ich nehme dieses Brot, bitte.", "Wie viel kosten diese Äpfel?"] }, it: { examples: ["Prendo questo pane, per favore.", "Quanto costano queste mele?"] }, pl: { examples: ["Poproszę ten chleb.", "Ile kosztują te jabłka?"] }, tr: { examples: ["Bu ekmeği alıyorum lütfen.", "Bu elmalar kaç para?"] }, id: { examples: ["Saya ambil roti ini, tolong.", "Berapa harga apel-apel ini?"] }, vi: { examples: ["Cho tôi lấy ổ bánh mì này.", "Những quả táo này bao nhiêu tiền?"] } }
+          - level: "A1"
+            use:
+              fr: "Le moment présent"
+              en: "The present period"
+              uk: "Теперішній період"
+              es: "El período actual"
+              pt: "O período atual"
+              de: "Der laufende Zeitraum"
+              it: "Il periodo in corso"
+              pl: "Bieżący okres"
+              tr: "İçinde bulunulan dönem"
+              id: "Periode saat ini"
+              vi: "Khoảng thời gian hiện tại"
+            ex: { examples: [["Je travaille ", { target: "ce" }, " soir."], ["Nous partons ", { target: "cette" }, " semaine."], ["Il fait chaud ", { target: "cet" }, " après-midi."]] }
+            tr: { en: { examples: ["I'm working this evening.", "We're leaving this week.", "It is hot this afternoon."] }, uk: { examples: ["Я працюю цього вечора.", "Ми їдемо цього тижня.", "Сьогодні вдень спекотно."] }, es: { examples: ["Trabajo esta noche.", "Salimos esta semana.", "Hace calor esta tarde."] }, pt: { examples: ["Eu trabalho esta noite.", "Nós partimos esta semana.", "Está calor esta tarde."] }, de: { examples: ["Ich arbeite heute Abend.", "Wir reisen diese Woche ab.", "Heute Nachmittag ist es heiß."] }, it: { examples: ["Lavoro stasera.", "Partiamo questa settimana.", "Fa caldo questo pomeriggio."] }, pl: { examples: ["Pracuję dziś wieczorem.", "Wyjeżdżamy w tym tygodniu.", "Dziś po południu jest gorąco."] }, tr: { examples: ["Bu akşam çalışıyorum.", "Bu hafta yola çıkıyoruz.", "Bu öğleden sonra hava sıcak."] }, id: { examples: ["Aku bekerja malam ini.", "Kami berangkat minggu ini.", "Sore ini panas."] }, vi: { examples: ["Tối nay tôi làm việc.", "Tuần này chúng tôi đi.", "Chiều nay trời nóng."] } }
+          - level: "A2"
+            use:
+              fr: "Reprendre ce dont on vient de parler"
+              en: "Taking up what was just mentioned"
+              uk: "Повернутися до щойно згаданого"
+              es: "Retomar lo que se acaba de mencionar"
+              pt: "Retomar o que acabou de ser mencionado"
+              de: "Das gerade Genannte wieder aufnehmen"
+              it: "Riprendere ciò che si è appena detto"
+              pl: "Wrócić do tego, o czym właśnie mowa"
+              tr: "Az önce söz edilene dönmek"
+              id: "Merujuk kembali hal yang baru disebut"
+              vi: "Nhắc lại điều vừa nói"
+            ex: ["J’ai un chat. ", { target: "Ce" }, " chat est noir."]
+            tr: { en: "I have a cat. The cat is black.", uk: "У мене є кіт. Цей кіт чорний.", es: "Tengo un gato. Este gato es negro.", pt: "Eu tenho um gato. Este gato é preto.", de: "Ich habe eine Katze. Diese Katze ist schwarz.", it: "Ho un gatto. Questo gatto è nero.", pl: "Mam kota. Ten kot jest czarny.", tr: "Bir kedim var. Bu kedi siyah.", id: "Aku punya kucing. Kucing ini hitam.", vi: "Tôi có một con mèo. Con mèo này màu đen." }
+  - title:
+      fr: "Forme : -ci et -là"
+      en: "Form: -ci and -là"
+      uk: "Форма: -ci і -là"
+      es: "Forma: -ci y -là"
+      pt: "Forma: -ci e -là"
+      de: "Form: -ci und -là"
+      it: "Forma: -ci e -là"
+      pl: "Forma: -ci i -là"
+      tr: "Biçim: -ci ve -là"
+      id: "Bentuk: -ci dan -là"
+      vi: "Dạng: -ci và -là"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "meaning", label: { fr: "Sens", en: "Meaning", uk: "Значення", es: "Significado", pt: "Sentido", de: "Bedeutung", it: "Significato", pl: "Znaczenie", tr: "Anlam", id: "Arti", vi: "Ý nghĩa" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            form:
+              fr: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              en: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              uk: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              es: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              pt: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              de: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              it: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              pl: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              tr: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              id: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+              vi: { pattern: [{ slot: "noun" }, { term: "-ci" }] }
+            meaning:
+              fr: "proche de celui qui parle"
+              en: "near the speaker"
+              uk: "близько до мовця"
+              es: "cerca de quien habla"
+              pt: "perto de quem fala"
+              de: "nah beim Sprecher"
+              it: "vicino a chi parla"
+              pl: "blisko mówiącego"
+              tr: "konuşana yakın"
+              id: "dekat dengan pembicara"
+              vi: "gần người nói"
+            ex: ["Je prends ce pull", { target: "-ci" }, "."]
+            tr: { en: "I'll take this jumper.", uk: "Я візьму цей светр.", es: "Me llevo este jersey.", pt: "Eu levo este suéter.", de: "Ich nehme diesen Pullover.", it: "Prendo questo maglione.", pl: "Wezmę ten sweter.", tr: "Bu kazağı alıyorum.", id: "Aku ambil sweter ini.", vi: "Tôi lấy cái áo len này." }
+          - level: "A2"
+            form:
+              fr: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              en: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              uk: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              es: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              pt: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              de: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              it: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              pl: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              tr: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              id: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+              vi: { pattern: [{ slot: "noun" }, { term: "-là" }] }
+            meaning:
+              fr: "loin de celui qui parle, ou simplement pour montrer"
+              en: "far from the speaker, or just to point"
+              uk: "далеко від мовця або просто вказівка"
+              es: "lejos de quien habla, o solo para señalar"
+              pt: "longe de quem fala, ou só para apontar"
+              de: "fern vom Sprecher oder einfach zum Zeigen"
+              it: "lontano da chi parla, o solo per indicare"
+              pl: "daleko od mówiącego lub po prostu do wskazania"
+              tr: "konuşandan uzak ya da yalnızca göstermek için"
+              id: "jauh dari pembicara, atau sekadar menunjuk"
+              vi: "xa người nói, hoặc chỉ để chỉ"
+            ex: { examples: [["Je prends ce pull", { target: "-là" }, "."], ["Passe-moi ce stylo", { target: "-là" }, "."]] }
+            tr: { en: { examples: ["I'll take that jumper.", "Pass me that pen."] }, uk: { examples: ["Я візьму той светр.", "Подай мені ту ручку."] }, es: { examples: ["Me llevo ese jersey.", "Pásame ese bolígrafo."] }, pt: { examples: ["Eu levo aquele suéter.", "Passe-me aquela caneta."] }, de: { examples: ["Ich nehme jenen Pullover.", "Gib mir den Stift da."] }, it: { examples: ["Prendo quel maglione.", "Passami quella penna."] }, pl: { examples: ["Wezmę tamten sweter.", "Podaj mi tamten długopis."] }, tr: { examples: ["Şu kazağı alıyorum.", "Şu kalemi uzat."] }, id: { examples: ["Aku ambil sweter itu.", "Berikan aku pulpen itu."] }, vi: { examples: ["Tôi lấy cái áo len kia.", "Đưa tôi cây bút đó."] } }
+          - level: "A2"
+            form:
+              fr: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              en: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              uk: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              es: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              pt: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              de: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              it: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              pl: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              tr: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              id: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+              vi: { pattern: [{ alternatives: [{ term: "ce" }, { term: "cette" }] }, { slot: "noun" }, { term: "-là" }] }
+            meaning:
+              fr: "un moment du passé, éloigné"
+              en: "a moment in the past"
+              uk: "момент у минулому"
+              es: "un momento del pasado"
+              pt: "um momento do passado"
+              de: "ein Zeitpunkt in der Vergangenheit"
+              it: "un momento del passato"
+              pl: "moment w przeszłości"
+              tr: "geçmişte bir an"
+              id: "suatu saat di masa lalu"
+              vi: "một thời điểm trong quá khứ"
+            ex: [{ target: "Ce" }, " jour", { target: "-là" }, ", j’étais malade."]
+            tr: { en: "That day, I was ill.", uk: "Того дня я хворів.", es: "Ese día estaba enfermo.", pt: "Naquele dia eu estava doente.", de: "An jenem Tag war ich krank.", it: "Quel giorno ero malato.", pl: "Tamtego dnia byłem chory.", tr: "O gün hastaydım.", id: "Hari itu aku sakit.", vi: "Hôm đó tôi bị ốm." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: [{ term: "-ci" }, " et ", { term: "-là" }, " s’écrivent après le nom, avec un trait d’union."]
+              en: [{ term: "-ci" }, " and ", { term: "-là" }, " are written after the noun, with a hyphen."]
+              uk: [{ term: "-ci" }, " і ", { term: "-là" }, " пишуть після іменника, через дефіс."]
+              es: [{ term: "-ci" }, " y ", { term: "-là" }, " se escriben después del nombre, con guion."]
+              pt: [{ term: "-ci" }, " e ", { term: "-là" }, " escrevem-se depois do substantivo, com hífen."]
+              de: [{ term: "-ci" }, " und ", { term: "-là" }, " werden mit Bindestrich hinter das Nomen geschrieben."]
+              it: [{ term: "-ci" }, " e ", { term: "-là" }, " si scrivono dopo il nome, con il trattino."]
+              pl: [{ term: "-ci" }, " i ", { term: "-là" }, " pisze się po rzeczowniku, z łącznikiem."]
+              tr: [{ term: "-ci" }, " ve ", { term: "-là" }, ", isimden sonra tireyle yazılır."]
+              id: [{ term: "-ci" }, " dan ", { term: "-là" }, " ditulis setelah kata benda, dengan tanda hubung."]
+              vi: [{ term: "-ci" }, " và ", { term: "-là" }, " viết sau danh từ, có dấu gạch nối."]
+            ex: { examples: [["ce livre", { target: "-ci" }], ["cette table", { target: "-là" }]] }
+            tr: { en: { examples: ["this book", "that table"] }, uk: { examples: ["ця книжка", "той стіл"] }, es: { examples: ["este libro", "esa mesa"] }, pt: { examples: ["este livro", "aquela mesa"] }, de: { examples: ["dieses Buch", "jener Tisch"] }, it: { examples: ["questo libro", "quel tavolo"] }, pl: { examples: ["ta książka", "tamten stół"] }, tr: { examples: ["bu kitap", "şu masa"] }, id: { examples: ["buku ini", "meja itu"] }, vi: { examples: ["quyển sách này", "cái bàn kia"] } }
+  - title:
+      fr: "Le pronom ça"
+      en: "The pronoun ça"
+      uk: "Займенник ça"
+      es: "El pronombre ça"
+      pt: "O pronome ça"
+      de: "Das Pronomen ça"
+      it: "Il pronome ça"
+      pl: "Zaimek ça"
+      tr: "ça zamiri"
+      id: "Pronomina ça"
+      vi: "Đại từ ça"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              fr: "Salutations et nouvelles"
+              en: "Greetings and news"
+              uk: "Привітання й новини"
+              es: "Saludos y noticias"
+              pt: "Cumprimentos e notícias"
+              de: "Begrüßung und Befinden"
+              it: "Saluti e notizie"
+              pl: "Powitania i wieści"
+              tr: "Selamlaşma ve haberleşme"
+              id: "Salam dan kabar"
+              vi: "Chào hỏi và tin tức"
+            ex: { exchange: ["Ça va ?", "Ça va bien, merci."] }
+            tr: { en: "How are you? — I'm fine, thanks.", uk: "Як справи? — Добре, дякую.", es: "¿Qué tal? — Bien, gracias.", pt: "Tudo bem? — Tudo bem, obrigado.", de: "Wie geht’s? — Gut, danke.", it: "Come va? — Bene, grazie.", pl: "Jak leci? — Dobrze, dziękuję.", tr: "Nasılsın? — İyiyim, teşekkürler.", id: "Apa kabar? — Baik, terima kasih.", vi: "Bạn khỏe không? — Khỏe, cảm ơn." }
+          - level: "A1"
+            use:
+              fr: "Montrer sans nommer"
+              en: "Pointing without naming"
+              uk: "Показати, не називаючи"
+              es: "Señalar sin nombrar"
+              pt: "Apontar sem nomear"
+              de: "Zeigen, ohne zu nennen"
+              it: "Indicare senza nominare"
+              pl: "Wskazać bez nazywania"
+              tr: "Adını söylemeden göstermek"
+              id: "Menunjuk tanpa menyebut nama"
+              vi: "Chỉ mà không gọi tên"
+            ex: { examples: [[{ target: "Ça" }, ", c’est un stylo."], ["Tu veux ", { target: "ça" }, " ?"]] }
+            tr: { en: { examples: ["That is a pen.", "Do you want that?"] }, uk: { examples: ["Це ручка.", "Ти хочеш це?"] }, es: { examples: ["Eso es un bolígrafo.", "¿Quieres eso?"] }, pt: { examples: ["Isso é uma caneta.", "Você quer isso?"] }, de: { examples: ["Das ist ein Stift.", "Willst du das?"] }, it: { examples: ["Questa è una penna.", "Vuoi questo?"] }, pl: { examples: ["To jest długopis.", "Chcesz to?"] }, tr: { examples: ["Bu bir kalem.", "Bunu ister misin?"] }, id: { examples: ["Itu pulpen.", "Kamu mau itu?"] }, vi: { examples: ["Đây là cây bút.", "Bạn muốn cái đó không?"] } }
+          - level: "A1"
+            use:
+              fr: "Une chose, une idée dont on parle"
+              en: "A thing or idea under discussion"
+              uk: "Річ чи думка, про яку йдеться"
+              es: "Una cosa o idea de la que se habla"
+              pt: "Uma coisa ou ideia de que se fala"
+              de: "Eine Sache oder Idee, von der die Rede ist"
+              it: "Una cosa o un'idea di cui si parla"
+              pl: "Rzecz lub myśl, o której mowa"
+              tr: "Söz konusu bir şey ya da düşünce"
+              id: "Benda atau gagasan yang dibicarakan"
+              vi: "Một vật hoặc ý đang nói đến"
+            ex: { examples: [[{ target: "Ça" }, " coûte dix euros."], [{ target: "Ça" }, " sent bon."]] }
+            tr: { en: { examples: ["That costs ten euros.", "That smells good."] }, uk: { examples: ["Це коштує десять євро.", "Це приємно пахне."] }, es: { examples: ["Eso cuesta diez euros.", "Eso huele bien."] }, pt: { examples: ["Isso custa dez euros.", "Isso cheira bem."] }, de: { examples: ["Das kostet zehn Euro.", "Das riecht gut."] }, it: { examples: ["Costa dieci euro.", "Ha un buon profumo."] }, pl: { examples: ["To kosztuje dziesięć euro.", "To ładnie pachnie."] }, tr: { examples: ["Bu on avro.", "Güzel kokuyor."] }, id: { examples: ["Ini harganya sepuluh euro.", "Ini harum."] }, vi: { examples: ["Cái này giá mười euro.", "Cái này thơm."] } }
+          - level: "A2"
+            use:
+              fr: "Une situation en général"
+              en: "A situation in general"
+              uk: "Ситуація загалом"
+              es: "Una situación en general"
+              pt: "Uma situação em geral"
+              de: "Eine Lage im Allgemeinen"
+              it: "Una situazione in generale"
+              pl: "Sytuacja w ogóle"
+              tr: "Genel olarak bir durum"
+              id: "Suatu keadaan secara umum"
+              vi: "Một tình huống nói chung"
+            ex: { examples: [[{ target: "Ça" }, " dépend."], [{ target: "Ça" }, " marche !"]] }
+            tr: { en: { examples: ["It depends.", "Deal!"] }, uk: { examples: ["Залежить від обставин.", "Домовились!"] }, es: { examples: ["Depende.", "¡De acuerdo!"] }, pt: { examples: ["Depende.", "Combinado!"] }, de: { examples: ["Das hängt davon ab.", "Abgemacht!"] }, it: { examples: ["Dipende.", "D'accordo!"] }, pl: { examples: ["To zależy.", "Zgoda!"] }, tr: { examples: ["Duruma göre.", "Tamam, anlaştık!"] }, id: { examples: ["Tergantung.", "Setuju!"] }, vi: { examples: ["Tùy.", "Đồng ý!"] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Ça" }, " est un pronom : il remplace une chose et ne se met jamais devant un nom."]
+              en: [{ term: "Ça" }, " is a pronoun: it stands for a thing and never goes before a noun."]
+              uk: [{ term: "Ça" }, " — це займенник: він замінює річ і ніколи не стоїть перед іменником."]
+              es: [{ term: "Ça" }, " es un pronombre: sustituye una cosa y nunca va ante un nombre."]
+              pt: [{ term: "Ça" }, " é um pronome: substitui uma coisa e nunca vai antes de um substantivo."]
+              de: [{ term: "Ça" }, " ist ein Pronomen: Es steht für eine Sache und nie vor einem Nomen."]
+              it: [{ term: "Ça" }, " è un pronome: sostituisce una cosa e non sta mai davanti a un nome."]
+              pl: [{ term: "Ça" }, " jest zaimkiem: zastępuje rzecz i nigdy nie stoi przed rzeczownikiem."]
+              tr: [{ term: "Ça" }, " bir zamirdir: bir şeyin yerini tutar ve asla isimden önce gelmez."]
+              id: [{ term: "Ça" }, " adalah pronomina: ia menggantikan benda dan tidak pernah berada sebelum kata benda."]
+              vi: [{ term: "Ça" }, " là đại từ: nó thay cho một vật và không bao giờ đứng trước danh từ."]
+            ex: { examples: [[{ target: "Ça" }, " me plaît."], [{ target: "Ce" }, " livre me plaît."]] }
+            tr: { en: { examples: ["I like that.", "I like this book."] }, uk: { examples: ["Мені це подобається.", "Мені подобається ця книжка."] }, es: { examples: ["Eso me gusta.", "Me gusta este libro."] }, pt: { examples: ["Eu gosto disso.", "Eu gosto deste livro."] }, de: { examples: ["Das gefällt mir.", "Dieses Buch gefällt mir."] }, it: { examples: ["Questo mi piace.", "Questo libro mi piace."] }, pl: { examples: ["Podoba mi się to.", "Podoba mi się ta książka."] }, tr: { examples: ["Bunu beğeniyorum.", "Bu kitabı beğeniyorum."] }, id: { examples: ["Aku suka itu.", "Aku suka buku ini."] }, vi: { examples: ["Tôi thích cái đó.", "Tôi thích quyển sách này."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour ", { term: "c’est" }, " et ", { term: "ce sont" }, ", voir ", { link: "C’est et il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              en: ["For ", { term: "c’est" }, " and ", { term: "ce sont" }, ", see ", { link: "C’est and Il est", to: fr.etre-avoir.c-est-il-est }, "."]
+              uk: ["Про ", { term: "c’est" }, " і ", { term: "ce sont" }, " — див. ", { link: "C’est та il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              es: ["Para ", { term: "c’est" }, " y ", { term: "ce sont" }, ", ver ", { link: "C’est y il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              pt: ["Para ", { term: "c’est" }, " e ", { term: "ce sont" }, ", veja ", { link: "C’est e il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              de: ["Zu ", { term: "c’est" }, " und ", { term: "ce sont" }, " siehe ", { link: "C’est und il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              it: ["Per ", { term: "c’est" }, " e ", { term: "ce sont" }, ", vedi ", { link: "C’est e il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              pl: ["O ", { term: "c’est" }, " i ", { term: "ce sont" }, " — zob. ", { link: "C’est i il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              tr: [{ term: "c’est" }, " ve ", { term: "ce sont" }, " için bkz. ", { link: "C’est ve il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              id: ["Untuk ", { term: "c’est" }, " dan ", { term: "ce sont" }, ", lihat ", { link: "C’est dan il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              vi: ["Về ", { term: "c’est" }, " và ", { term: "ce sont" }, ": xem ", { link: "C’est và il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: "Ce amie est drôle."
+            right: [{ target: "Cette" }, " amie est drôle."]
+            rule:
+              fr: [{ term: "amie" }, " est féminin : ", { term: "cette amie" }]
+              en: [{ term: "amie" }, " is feminine: ", { term: "cette amie" }]
+              uk: [{ term: "amie" }, " жіночого роду: ", { term: "cette amie" }]
+              es: [{ term: "amie" }, " es femenino: ", { term: "cette amie" }]
+              pt: [{ term: "amie" }, " é feminino: ", { term: "cette amie" }]
+              de: [{ term: "amie" }, " ist feminin: ", { term: "cette amie" }]
+              it: [{ term: "amie" }, " è femminile: ", { term: "cette amie" }]
+              pl: [{ term: "amie" }, " jest rodzaju żeńskiego: ", { term: "cette amie" }]
+              tr: [{ term: "amie" }, " dişildir: ", { term: "cette amie" }]
+              id: [{ term: "amie" }, " feminin: ", { term: "cette amie" }]
+              vi: [{ term: "amie" }, " là giống cái: ", { term: "cette amie" }]
+          - level: "A1"
+            wrong: "Ce ami est drôle."
+            right: [{ target: "Cet" }, " ami est drôle."]
+            rule:
+              fr: ["devant une voyelle, le masculin est ", { term: "cet" }]
+              en: ["before a vowel, the masculine is ", { term: "cet" }]
+              uk: ["перед голосною чоловічий рід — ", { term: "cet" }]
+              es: ["ante vocal, el masculino es ", { term: "cet" }]
+              pt: ["antes de vogal, o masculino é ", { term: "cet" }]
+              de: ["vor einem Vokal lautet das Maskulinum ", { term: "cet" }]
+              it: ["davanti a vocale, il maschile è ", { term: "cet" }]
+              pl: ["przed samogłoską rodzaj męski to ", { term: "cet" }]
+              tr: ["ünlüden önce eril biçim ", { term: "cet" }, " olur"]
+              id: ["sebelum vokal, bentuk maskulinnya ", { term: "cet" }]
+              vi: ["trước nguyên âm, giống đực là ", { term: "cet" }]
+          - level: "A1"
+            speakers: ["en", "tr", "id", "vi"]
+            wrong: "Ce maison est grande."
+            right: [{ target: "Cette" }, " maison est grande."]
+            rule:
+              en: ["the demonstrative agrees with the noun: ", { term: "maison" }, " is feminine, so ", { term: "cette maison" }]
+              tr: ["işaret sözcüğü isimle uyum sağlar: ", { term: "maison" }, " dişildir, bu yüzden ", { term: "cette maison" }]
+              id: ["kata tunjuk menyesuaikan diri dengan kata benda: ", { term: "maison" }, " feminin, jadi ", { term: "cette maison" }]
+              vi: ["từ chỉ định hòa hợp với danh từ: ", { term: "maison" }, " là giống cái nên ", { term: "cette maison" }]
+          - level: "A1"
+            speakers: ["tr", "id", "vi"]
+            wrong: "Ce livres sont chers."
+            right: [{ target: "Ces" }, " livres sont chers."]
+            rule:
+              tr: ["çoğul isimden önce ", { term: "ces" }, " gelir: ", { term: "ces livres" }, "; ", { term: "ce" }, " yalnızca tekil içindir"]
+              id: ["sebelum kata benda jamak dipakai ", { term: "ces" }, ": ", { term: "ces livres" }, "; ", { term: "ce" }, " hanya untuk tunggal"]
+              vi: ["trước danh từ số nhiều dùng ", { term: "ces" }, ": ", { term: "ces livres" }, "; ", { term: "ce" }, " chỉ dành cho số ít"]
+          - level: "A1"
+            wrong: "Ça livre est bon."
+            right: [{ target: "Ce" }, " livre est bon."]
+            rule:
+              fr: [{ term: "ça" }, " ne se met pas devant un nom : ", { term: "ce livre" }]
+              en: [{ term: "ça" }, " does not go before a noun: ", { term: "ce livre" }]
+              uk: [{ term: "ça" }, " не ставлять перед іменником: ", { term: "ce livre" }]
+              es: [{ term: "ça" }, " no va ante un nombre: ", { term: "ce livre" }]
+              pt: [{ term: "ça" }, " não vai antes de um substantivo: ", { term: "ce livre" }]
+              de: [{ term: "ça" }, " steht nicht vor einem Nomen: ", { term: "ce livre" }]
+              it: [{ term: "ça" }, " non sta davanti a un nome: ", { term: "ce livre" }]
+              pl: [{ term: "ça" }, " nie stoi przed rzeczownikiem: ", { term: "ce livre" }]
+              tr: [{ term: "ça" }, " isimden önce gelmez: ", { term: "ce livre" }]
+              id: [{ term: "ça" }, " tidak berada sebelum kata benda: ", { term: "ce livre" }]
+              vi: [{ term: "ça" }, " không đứng trước danh từ: ", { term: "ce livre" }]
+          - level: "A1"
+            wrong: "Ça est bon."
+            right: [{ target: "C’" }, "est bon."]
+            rule:
+              fr: ["devant le verbe ", { term: "être" }, ", on dit ", { term: "c’est" }, ", pas ", { term: "ça est" }]
+              en: ["before the verb ", { term: "être" }, ", it is ", { term: "c’est" }, ", not ", { term: "ça est" }]
+              uk: ["перед дієсловом ", { term: "être" }, " кажуть ", { term: "c’est" }, ", а не ", { term: "ça est" }]
+              es: ["ante el verbo ", { term: "être" }, " se dice ", { term: "c’est" }, ", no ", { term: "ça est" }]
+              pt: ["antes do verbo ", { term: "être" }, " diz-se ", { term: "c’est" }, ", não ", { term: "ça est" }]
+              de: ["vor dem Verb ", { term: "être" }, " heißt es ", { term: "c’est" }, ", nicht ", { term: "ça est" }]
+              it: ["davanti al verbo ", { term: "être" }, " si dice ", { term: "c’est" }, ", non ", { term: "ça est" }]
+              pl: ["przed czasownikiem ", { term: "être" }, " mówi się ", { term: "c’est" }, ", nie ", { term: "ça est" }]
+              tr: [{ term: "être" }, " fiilinden önce ", { term: "c’est" }, " denir, ", { term: "ça est" }, " değil"]
+              id: ["sebelum kata kerja ", { term: "être" }, " dipakai ", { term: "c’est" }, ", bukan ", { term: "ça est" }]
+              vi: ["trước động từ ", { term: "être" }, " dùng ", { term: "c’est" }, ", không dùng ", { term: "ça est" }]
+          - level: "A2"
+            wrong: "Ce livre là est bon."
+            right: ["Ce livre", { target: "-là" }, " est bon."]
+            rule:
+              fr: [{ term: "-là" }, " se lie au nom par un trait d’union"]
+              en: [{ term: "-là" }, " is joined to the noun with a hyphen"]
+              uk: [{ term: "-là" }, " з’єднують з іменником дефісом"]
+              es: [{ term: "-là" }, " se une al nombre con guion"]
+              pt: [{ term: "-là" }, " liga-se ao substantivo com hífen"]
+              de: [{ term: "-là" }, " wird mit Bindestrich an das Nomen gehängt"]
+              it: [{ term: "-là" }, " si unisce al nome con il trattino"]
+              pl: [{ term: "-là" }, " łączy się z rzeczownikiem łącznikiem"]
+              tr: [{ term: "-là" }, " isme tireyle bağlanır"]
+              id: [{ term: "-là" }, " dihubungkan ke kata benda dengan tanda hubung"]
+              vi: [{ term: "-là" }, " nối với danh từ bằng dấu gạch nối"]

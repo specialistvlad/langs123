@@ -15,9 +15,11 @@ learned is written for the explanation languages its entry in `curriculum.yaml` 
 grows toward N languages, each explained in N languages.
 
 - `curriculum.yaml` lists the languages being learned and `site.yaml` the explanation languages.
-- `explain` on a language being learned lists the explanation languages it is written for, the
-  language itself first: its explanations are written in the language being learned, and each other
-  explanation language translates them (§6). A language without `explain` is written for every one,
+- `explain` on a language being learned lists the explanation languages it is written for, its source
+  first: its explanations are written in the source, and each other explanation language translates
+  them (§6). The source of a language that is also an explanation language is the language itself; a
+  language learned and never explained in, such as Japanese, lists `explain` with the source it is
+  written in first. A language without `explain` is written for every one,
   in `site.yaml` order. Its tracks, the links on its home page card, its `hreflang` links and its
   sitemap entries follow that list (§10).
 - Every topic exists in each explanation language of its language: one topic file holds its
@@ -27,7 +29,9 @@ grows toward N languages, each explained in N languages.
 - The library holds English (`en`), Spanish (`es`) and Ukrainian (`uk`) in eleven tracks each:
   explained in English, Ukrainian, Spanish, Portuguese (`pt`, Brazilian), French (`fr`), German (`de`),
   Italian (`it`), Polish (`pl`), Turkish (`tr`), Indonesian (`id`) and Vietnamese (`vi`). Each is written
-  in its own language first, and the other ten translate it.
+  in its own language first, and the other ten translate it. French (`fr`) and Japanese (`ja`) join from
+  A0 to A2 in eleven tracks each: French is written in French first, and Japanese, which is learned and
+  never explained in, in English first.
 - An explanation language is data alone: its entry in `site.yaml` and its text in the files of
   `languages/`. `npm run types` writes the languages of `site.yaml` into every schema.
 - Explanations use short sentences, present tense and plain words.
@@ -45,11 +49,30 @@ grows toward N languages, each explained in N languages.
   IPA in the three A0 topics on the alphabet, the sounds and the soft sign alone. Forms carried over
   from Russian (*хворі́ти гри́пом* for *хворі́ти на грип*) are typical errors for every reader. The dash
   between a subject and its noun predicate is Ukrainian punctuation and stands in examples: *Ма́ма — лі́кар.*
+- **French** topics follow the Council of Europe reference level descriptions for French, *Niveau A1.1*,
+  *Niveau A1* and *Niveau A2 pour le français*: their inventories set the topics and the level of each
+  rule, and the norm of France sets the forms. French text writes the apostrophe as ’ (*l’école*), quotes
+  in « », and a no-break space (U+00A0) before : ; ? ! » and after «: *Tu viens ?* The pronunciation of
+  France is the default; IPA follows it, with the vowels of Québec in `fr-CA` elements.
+- **Japanese** topics follow the Japan Foundation's JF Standard for Japanese-Language Education and the
+  Reference Framework for Japanese Language Education (日本語教育の参照枠, 2021): the A1 and A2 can-dos of
+  their coursebooks Marugoto and Irodori set the topics and the level of each rule. Japanese text is
+  written as Japan writes it, in kana and kanji without spaces, with 。 and 、, and in the polite です/ます
+  style but where a topic teaches plain forms. The A0 topics on hiragana, katakana and kana sounds teach
+  kana alone and give each kana and each example its romaji, in modified Hepburn (*shi*, *tsu*, *Tōkyō*),
+  beside its IPA; every other topic writes no romaji. A kanji in an example, a table cell or a form an
+  explanation discusses carries its reading in hiragana, `{ kanji: 食, reading: た }`: A0 examples are
+  written in kana alone, and A1 and A2 examples write in kanji the words learners read in kanji at their
+  level (日, 月, 人, 本, 何, 時, 食べる, 行く…) and every other word in kana.
 - **Varieties.** `varieties` on a language being learned lists the varieties a reader chooses
   between, the default first. Spanish has Latin America (`es-419`), the default, and Spain (`es-ES`).
   An element of one variety carries `variety`, and an element without it serves every variety: the
   `vosotros` forms and the rules about them carry `es-ES`, a rule that holds in Latin America alone,
   such as `ustedes` as the one plural of `tú`, carries `es-419`. Voseo appears in an `es-419` note.
+  French has France (`fr-FR`), the default, and Canada (`fr-CA`), the French of Québec after the Office
+  québécois de la langue française: the meals *petit-déjeuner, déjeuner, dîner* carry `fr-FR` and
+  *déjeuner, dîner, souper* carry `fr-CA`; the affricates of *tu* and *dis*, [tsy] and [dzi], and the
+  question particle *-tu* of speech (*Tu viens-tu ?*) appear in `fr-CA` notes.
 - **Swaps.** Where the varieties say one thing differently, the text holds a `variant` of each,
   side by side: `[{ variant: ve, variety: es-419 }, " ", { variant: uve, variety: es-ES }]`. Text
   outside the variants serves every variety. A form shared by both stays plain text.
@@ -198,7 +221,7 @@ named after its mark.
 |---|---|
 | `id`, `lang`, `kind`, `tags`, `concepts`, `related` | identity and links |
 | `status` | `draft` or `approved`, per explanation language |
-| `translated` | per explanation language but the source (the language being learned), the fingerprint of the source text its text follows (§6) |
+| `translated` | per explanation language but the source (the first language of its language's `explain`), the fingerprint of the source text its text follows (§6) |
 | `title` | localized |
 | `summary` | `lead` and `rule`, localized, and the rule's examples in `ex`; the rules below |
 | `cheatsheet` | `content`: the whole topic in one table, section 00 (§8) |
@@ -280,8 +303,8 @@ leaves out the key of a cell with nothing in it.
   an item, a paragraph or an example cell renders as *— translation* after the example.
 - When the two languages are the same, examples stand alone: a `tr` carries every explanation
   language but the language being learned.
-- Translations follow the source: the explanations in the language being learned, the first language
-  of its `explain`. English is the source of the English track, and Spanish of the Spanish track. Every
+- Translations follow the source: the explanations in the first language of the language's `explain`.
+  English is the source of the English and the Japanese tracks, and Spanish of the Spanish track. Every
   other explanation language of the topic's language carries in `translated` the fingerprint of the
   source text its text was written from: one hash per part, the title and summary, the cheatsheet, then
   each section, over the source explanations and the text in the language being learned. `npm run check`
@@ -420,7 +443,7 @@ Every page has a clean, stable, named URL.
 
 Topics are written one at a time. The next topic starts only after the current one is approved.
 
-1. Copy `templates/topic.yaml` into the topic folder and write it in the language being learned first,
+1. Copy `templates/topic.yaml` into the topic folder and write it in its source language first,
    with its cheatsheet, then translate it into each other explanation language of its language; set
    `status` to `draft` for each.
 2. Run `npm run translated -- {id}` once each translation is written, then `npm run check` until it

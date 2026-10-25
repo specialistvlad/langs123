@@ -1,0 +1,1342 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.bases.nombres"
+lang: "fr"
+kind: "foundations"
+tags: ["numbers", "counting", "ordinals"]
+concepts: ["numbers"]
+related: ["fr.bases.jours-mois-dates", "fr.bases.heure", "fr.nom-determinants.genre"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", uk: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", es: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", pt: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", de: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", it: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", pl: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", tr: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", id: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392", vi: "a660ee 852454 829879 fce8d9 15857a 4f6ab2 51bcea 3737b0 360ad4 6d7392" }
+title: { fr: "Les nombres", en: "Numbers", uk: "Числа", es: "Los números", pt: "Os números", de: "Zahlen", it: "I numeri", pl: "Liczebniki", tr: "Sayılar", id: "Angka", vi: "Số" }
+summary:
+  lead:
+    fr: ["Les nombres de 0 à un million, les ordinaux de ", { term: "premier" }, " à ", { term: "dixième" }, ", les prix et les numéros de téléphone."]
+    en: ["Numbers from 0 to a million, the ordinals ", { term: "premier" }, " to ", { term: "dixième" }, ", prices and phone numbers."]
+    uk: ["Числа від 0 до мільйона, порядкові числівники від ", { term: "premier" }, " до ", { term: "dixième" }, ", ціни та номери телефонів."]
+    es: ["Los números del 0 al millón, los ordinales de ", { term: "premier" }, " a ", { term: "dixième" }, ", los precios y los números de teléfono."]
+    pt: ["Os números de 0 a um milhão, os ordinais de ", { term: "premier" }, " a ", { term: "dixième" }, ", os preços e os números de telefone."]
+    de: ["Zahlen von 0 bis zu einer Million, die Ordnungszahlen ", { term: "premier" }, " bis ", { term: "dixième" }, ", Preise und Telefonnummern."]
+    it: ["I numeri da 0 a un milione, gli ordinali da ", { term: "premier" }, " a ", { term: "dixième" }, ", i prezzi e i numeri di telefono."]
+    pl: ["Liczby od 0 do miliona, liczebniki porządkowe od ", { term: "premier" }, " do ", { term: "dixième" }, ", ceny i numery telefonów."]
+    tr: ["Sıfırdan bir milyona kadar sayılar, ", { term: "premier" }, " ile ", { term: "dixième" }, " arasındaki sıra sayıları, fiyatlar ve telefon numaraları."]
+    id: ["Angka dari 0 sampai satu juta, bilangan ordinal ", { term: "premier" }, " sampai ", { term: "dixième" }, ", harga, dan nomor telepon."]
+    vi: ["Các số từ 0 đến một triệu, số thứ tự từ ", { term: "premier" }, " đến ", { term: "dixième" }, ", giá cả và số điện thoại."]
+  rule:
+    fr: ["Après ", { term: "soixante" }, ", on compte par vingt : ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20) :"]
+    en: ["After ", { term: "soixante" }, ", French counts in twenties: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    uk: ["Після ", { term: "soixante" }, " французька рахує двадцятками: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    es: ["Después de ", { term: "soixante" }, ", el francés cuenta de veinte en veinte: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    pt: ["Depois de ", { term: "soixante" }, ", o francês conta de vinte em vinte: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    de: ["Nach ", { term: "soixante" }, " zählt das Französische in Zwanzigern: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    it: ["Dopo ", { term: "soixante" }, ", il francese conta per venti: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    pl: ["Po ", { term: "soixante" }, " francuski liczy dwudziestkami: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    tr: ["Fransızcada ", { term: "soixante" }, "’tan sonra yirmilik sayılır: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    id: ["Setelah ", { term: "soixante" }, ", bahasa Prancis menghitung per dua puluh: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+    vi: ["Sau ", { term: "soixante" }, ", tiếng Pháp đếm theo hai mươi: ", { term: "soixante-dix" }, " (", { pattern: ["60", "10"] }, "), ", { term: "quatre-vingts" }, " (4 × 20):"]
+  ex: { examples: [{ target: "soixante-quinze" }, { target: "quatre-vingt-douze" }] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A0"
+          point: { fr: "0–16", en: "0–16", uk: "0–16", es: "0–16", pt: "0–16", de: "0–16", it: "0–16", pl: "0–16", tr: "0–16", id: "0–16", vi: "0–16" }
+          rule:
+            fr: ["chaque nombre a son mot, de ", { term: "zéro" }, " à ", { term: "seize" }]
+            en: ["each number has its own word, ", { term: "zéro" }, " to ", { term: "seize" }]
+            uk: ["кожне число має своє слово, від ", { term: "zéro" }, " до ", { term: "seize" }]
+            es: ["cada número tiene su palabra, de ", { term: "zéro" }, " a ", { term: "seize" }]
+            pt: ["cada número tem a sua palavra, de ", { term: "zéro" }, " a ", { term: "seize" }]
+            de: ["jede Zahl hat ihr eigenes Wort, von ", { term: "zéro" }, " bis ", { term: "seize" }]
+            it: ["ogni numero ha la sua parola, da ", { term: "zéro" }, " a ", { term: "seize" }]
+            pl: ["każda liczba ma własne słowo, od ", { term: "zéro" }, " do ", { term: "seize" }]
+            tr: ["her sayının kendi sözcüğü var, ", { term: "zéro" }, "’dan ", { term: "seize" }, "’e kadar"]
+            id: ["setiap angka punya kata sendiri, dari ", { term: "zéro" }, " sampai ", { term: "seize" }]
+            vi: ["mỗi số có một từ riêng, từ ", { term: "zéro" }, " đến ", { term: "seize" }]
+          ex: ["Il y a ", { numeral: { target: "douze" }, value: 12 }, " élèves."]
+          tr: { en: "There are twelve pupils.", uk: "Є дванадцять учнів.", es: "Hay doce alumnos.", pt: "Há doze alunos.", de: "Es gibt zwölf Schüler.", it: "Ci sono dodici alunni.", pl: "Jest dwunastu uczniów.", tr: "On iki öğrenci var.", id: "Ada dua belas murid.", vi: "Có mười hai học sinh." }
+        - level: "A0"
+          point: { fr: "17–69", en: "17–69", uk: "17–69", es: "17–69", pt: "17–69", de: "17–69", it: "17–69", pl: "17–69", tr: "17–69", id: "17–69", vi: "17–69" }
+          rule:
+            fr: ["de 17 à 19, ", { term: "dix" }, " et l’unité ; ensuite la dizaine, un trait d’union et l’unité"]
+            en: ["from 17 to 19, ", { term: "dix" }, " and the unit; then the ten, a hyphen and the unit"]
+            uk: ["від 17 до 19 — ", { term: "dix" }, " і одиниця; далі десяток, дефіс і одиниця"]
+            es: ["del 17 al 19, ", { term: "dix" }, " y la unidad; luego la decena, un guion y la unidad"]
+            pt: ["de 17 a 19, ", { term: "dix" }, " e a unidade; depois a dezena, um hífen e a unidade"]
+            de: ["von 17 bis 19 ", { term: "dix" }, " und der Einer; danach der Zehner, ein Bindestrich und der Einer"]
+            it: ["da 17 a 19, ", { term: "dix" }, " e l’unità; poi la decina, un trattino e l’unità"]
+            pl: ["od 17 do 19 ", { term: "dix" }, " i jedności; potem dziesiątki, łącznik i jedności"]
+            tr: ["17–19 arasında ", { term: "dix" }, " ve birler; sonra onluk, tire ve birler"]
+            id: ["untuk 17–19, ", { term: "dix" }, " dan satuan; setelahnya puluhan, tanda hubung, dan satuan"]
+            vi: ["từ 17 đến 19, ", { term: "dix" }, " và hàng đơn vị; sau đó là hàng chục, dấu gạch nối và hàng đơn vị"]
+          ex: { examples: [{ target: "dix-sept" }, { target: "vingt-deux" }, { target: "quarante-cinq" }] }
+          tr: { en: { examples: ["seventeen", "twenty-two", "forty-five"] }, uk: { examples: ["сімнадцять", "двадцять два", "сорок п’ять"] }, es: { examples: ["diecisiete", "veintidós", "cuarenta y cinco"] }, pt: { examples: ["dezessete", "vinte e dois", "quarenta e cinco"] }, de: { examples: ["siebzehn", "zweiundzwanzig", "fünfundvierzig"] }, it: { examples: ["diciassette", "ventidue", "quarantacinque"] }, pl: { examples: ["siedemnaście", "dwadzieścia dwa", "czterdzieści pięć"] }, tr: { examples: ["on yedi", "yirmi iki", "kırk beş"] }, id: { examples: ["tujuh belas", "dua puluh dua", "empat puluh lima"] }, vi: { examples: ["mười bảy", "hai mươi hai", "bốn mươi lăm"] } }
+        - level: "A0"
+          point: { fr: "21, 31… 71", en: "21, 31… 71", uk: "21, 31… 71", es: "21, 31… 71", pt: "21, 31… 71", de: "21, 31… 71", it: "21, 31… 71", pl: "21, 31… 71", tr: "21, 31… 71", id: "21, 31… 71", vi: "21, 31… 71" }
+          rule:
+            fr: [{ term: "et" }, " sans trait d’union dans 21, 31, 41, 51, 61 et 71 seulement"]
+            en: [{ term: "et" }, " with no hyphen in 21, 31, 41, 51, 61 and 71 only"]
+            uk: [{ term: "et" }, " без дефіса лише в 21, 31, 41, 51, 61 і 71"]
+            es: [{ term: "et" }, " sin guion solo en 21, 31, 41, 51, 61 y 71"]
+            pt: [{ term: "et" }, " sem hífen apenas em 21, 31, 41, 51, 61 e 71"]
+            de: [{ term: "et" }, " ohne Bindestrich nur bei 21, 31, 41, 51, 61 und 71"]
+            it: [{ term: "et" }, " senza trattino solo in 21, 31, 41, 51, 61 e 71"]
+            pl: [{ term: "et" }, " bez łącznika tylko w 21, 31, 41, 51, 61 i 71"]
+            tr: [{ term: "et" }, " yalnızca 21, 31, 41, 51, 61 ve 71’de, tiresiz"]
+            id: [{ term: "et" }, " tanpa tanda hubung hanya pada 21, 31, 41, 51, 61, dan 71"]
+            vi: [{ term: "et" }, " không có gạch nối chỉ ở 21, 31, 41, 51, 61 và 71"]
+          ex: { examples: [{ target: "vingt et un" }, { target: "soixante et onze" }] }
+          tr: { en: { examples: ["twenty-one", "seventy-one"] }, uk: { examples: ["двадцять один", "сімдесят один"] }, es: { examples: ["veintiuno", "setenta y uno"] }, pt: { examples: ["vinte e um", "setenta e um"] }, de: { examples: ["einundzwanzig", "einundsiebzig"] }, it: { examples: ["ventuno", "settantuno"] }, pl: { examples: ["dwadzieścia jeden", "siedemdziesiąt jeden"] }, tr: { examples: ["yirmi bir", "yetmiş bir"] }, id: { examples: ["dua puluh satu", "tujuh puluh satu"] }, vi: { examples: ["hai mươi mốt", "bảy mươi mốt"] } }
+        - level: "A1"
+          point: { fr: "70–99", en: "70–99", uk: "70–99", es: "70–99", pt: "70–99", de: "70–99", it: "70–99", pl: "70–99", tr: "70–99", id: "70–99", vi: "70–99" }
+          rule:
+            fr: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            en: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            uk: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            es: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            pt: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            de: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            it: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            pl: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            tr: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            id: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+            vi: [{ pattern: [{ term: "soixante" }, "10–19"] }, " ; ", { pattern: [{ term: "quatre-vingts" }, "1–19"] }]
+          ex: { examples: [{ target: "soixante-quinze" }, { target: "quatre-vingt-douze" }] }
+          tr: { en: { examples: ["seventy-five", "ninety-two"] }, uk: { examples: ["сімдесят п’ять", "дев’яносто два"] }, es: { examples: ["setenta y cinco", "noventa y dos"] }, pt: { examples: ["setenta e cinco", "noventa e dois"] }, de: { examples: ["fünfundsiebzig", "zweiundneunzig"] }, it: { examples: ["settantacinque", "novantadue"] }, pl: { examples: ["siedemdziesiąt pięć", "dziewięćdziesiąt dwa"] }, tr: { examples: ["yetmiş beş", "doksan iki"] }, id: { examples: ["tujuh puluh lima", "sembilan puluh dua"] }, vi: { examples: ["bảy mươi lăm", "chín mươi hai"] } }
+        - level: "A1"
+          point: { fr: "100–999", en: "100–999", uk: "100–999", es: "100–999", pt: "100–999", de: "100–999", it: "100–999", pl: "100–999", tr: "100–999", id: "100–999", vi: "100–999" }
+          rule:
+            fr: [{ term: "cent" }, " seul ; ", { term: "cents" }, " avec s dans ", { term: "deux cents" }, ", si rien ne suit"]
+            en: [{ term: "cent" }, " alone; ", { term: "cents" }, " with s in ", { term: "deux cents" }, ", if nothing follows"]
+            uk: [{ term: "cent" }, " без «un»; ", { term: "cents" }, " із s у ", { term: "deux cents" }, ", якщо далі нічого немає"]
+            es: [{ term: "cent" }, " solo; ", { term: "cents" }, " con s en ", { term: "deux cents" }, ", si nada sigue"]
+            pt: [{ term: "cent" }, " sozinho; ", { term: "cents" }, " com s em ", { term: "deux cents" }, ", se nada segue"]
+            de: [{ term: "cent" }, " allein; ", { term: "cents" }, " mit s in ", { term: "deux cents" }, ", wenn nichts folgt"]
+            it: [{ term: "cent" }, " da solo; ", { term: "cents" }, " con s in ", { term: "deux cents" }, ", se non segue nulla"]
+            pl: [{ term: "cent" }, " samo; ", { term: "cents" }, " z s w ", { term: "deux cents" }, ", jeśli nic nie następuje"]
+            tr: [{ term: "cent" }, " tek başına; ", { term: "deux cents" }, " içinde s’li ", { term: "cents" }, ", arkasından başka sayı gelmiyorsa"]
+            id: [{ term: "cent" }, " tanpa «un»; ", { term: "cents" }, " dengan s dalam ", { term: "deux cents" }, ", jika tidak ada angka lagi"]
+            vi: [{ term: "cent" }, " đứng riêng; ", { term: "cents" }, " có s trong ", { term: "deux cents" }, ", nếu không có số nào theo sau"]
+          ex: { examples: [[{ target: "cent" }, " euros"], [{ target: "deux cents" }, " euros"], [{ target: "deux cent" }, " un"]] }
+          tr: { en: { examples: ["a hundred euros", "two hundred euros", "two hundred and one"] }, uk: { examples: ["сто євро", "двісті євро", "двісті один"] }, es: { examples: ["cien euros", "doscientos euros", "doscientos uno"] }, pt: { examples: ["cem euros", "duzentos euros", "duzentos e um"] }, de: { examples: ["hundert Euro", "zweihundert Euro", "zweihunderteins"] }, it: { examples: ["cento euro", "duecento euro", "duecentouno"] }, pl: { examples: ["sto euro", "dwieście euro", "dwieście jeden"] }, tr: { examples: ["yüz euro", "iki yüz euro", "iki yüz bir"] }, id: { examples: ["seratus euro", "dua ratus euro", "dua ratus satu"] }, vi: { examples: ["một trăm euro", "hai trăm euro", "hai trăm linh một"] } }
+        - level: "A1"
+          point: { fr: "Mille", en: "Thousand", uk: "Тисяча", es: "Mil", pt: "Mil", de: "Tausend", it: "Mille", pl: "Tysiąc", tr: "Bin", id: "Ribu", vi: "Nghìn" }
+          rule:
+            fr: [{ term: "mille" }, " ne change jamais et ne prend pas ", { term: "un" }]
+            en: [{ term: "mille" }, " never changes and takes no ", { term: "un" }]
+            uk: [{ term: "mille" }, " ніколи не змінюється й не має ", { term: "un" }]
+            es: [{ term: "mille" }, " nunca cambia y no lleva ", { term: "un" }]
+            pt: [{ term: "mille" }, " nunca muda e não leva ", { term: "un" }]
+            de: [{ term: "mille" }, " ändert sich nie und steht ohne ", { term: "un" }]
+            it: [{ term: "mille" }, " non cambia mai e non vuole ", { term: "un" }]
+            pl: [{ term: "mille" }, " nigdy się nie zmienia i nie ma ", { term: "un" }]
+            tr: [{ term: "mille" }, " hiç değişmez ve ", { term: "un" }, " almaz"]
+            id: [{ term: "mille" }, " tidak pernah berubah dan tidak memakai ", { term: "un" }]
+            vi: [{ term: "mille" }, " không bao giờ đổi và không đi với ", { term: "un" }]
+          ex: { examples: [[{ target: "mille" }, " euros"], ["trois ", { target: "mille" }, " euros"]] }
+          tr: { en: { examples: ["a thousand euros", "three thousand euros"] }, uk: { examples: ["тисяча євро", "три тисячі євро"] }, es: { examples: ["mil euros", "tres mil euros"] }, pt: { examples: ["mil euros", "três mil euros"] }, de: { examples: ["tausend Euro", "dreitausend Euro"] }, it: { examples: ["mille euro", "tremila euro"] }, pl: { examples: ["tysiąc euro", "trzy tysiące euro"] }, tr: { examples: ["bin euro", "üç bin euro"] }, id: { examples: ["seribu euro", "tiga ribu euro"] }, vi: { examples: ["một nghìn euro", "ba nghìn euro"] } }
+        - level: "A2"
+          point: { fr: "Million", en: "Million", uk: "Мільйон", es: "Millón", pt: "Milhão", de: "Million", it: "Milione", pl: "Milion", tr: "Milyon", id: "Juta", vi: "Triệu" }
+          rule:
+            fr: [{ term: "million" }, " est un nom : ", { term: "millions" }, " au pluriel, ", { term: "de" }, " devant le nom"]
+            en: [{ term: "million" }, " is a noun: ", { term: "millions" }, " in the plural, ", { term: "de" }, " before the noun"]
+            uk: [{ term: "million" }, " — іменник: ", { term: "millions" }, " у множині, ", { term: "de" }, " перед іменником"]
+            es: [{ term: "million" }, " es un sustantivo: ", { term: "millions" }, " en plural, ", { term: "de" }, " ante el nombre"]
+            pt: [{ term: "million" }, " é um substantivo: ", { term: "millions" }, " no plural, ", { term: "de" }, " antes do nome"]
+            de: [{ term: "million" }, " ist ein Nomen: ", { term: "millions" }, " im Plural, ", { term: "de" }, " vor dem Nomen"]
+            it: [{ term: "million" }, " è un nome: ", { term: "millions" }, " al plurale, ", { term: "de" }, " davanti al nome"]
+            pl: [{ term: "million" }, " to rzeczownik: ", { term: "millions" }, " w liczbie mnogiej, ", { term: "de" }, " przed rzeczownikiem"]
+            tr: [{ term: "million" }, " bir addır: çoğulda ", { term: "millions" }, ", addan önce ", { term: "de" }]
+            id: [{ term: "million" }, " adalah kata benda: ", { term: "millions" }, " untuk jamak, ", { term: "de" }, " sebelum kata benda"]
+            vi: [{ term: "million" }, " là danh từ: ", { term: "millions" }, " ở số nhiều, ", { term: "de" }, " đứng trước danh từ"]
+          ex: ["deux ", { target: "millions d’" }, "habitants"]
+          tr: { en: "two million inhabitants", uk: "два мільйони жителів", es: "dos millones de habitantes", pt: "dois milhões de habitantes", de: "zwei Millionen Einwohner", it: "due milioni di abitanti", pl: "dwa miliony mieszkańców", tr: "iki milyon nüfus", id: "dua juta penduduk", vi: "hai triệu dân" }
+        - level: "A1"
+          point:
+            fr: "Ordinaux"
+            en: "Ordinals"
+            uk: "Порядкові числівники"
+            es: "Ordinales"
+            pt: "Ordinais"
+            de: "Ordnungszahlen"
+            it: "Ordinali"
+            pl: "Liczebniki porządkowe"
+            tr: "Sıra sayıları"
+            id: "Bilangan ordinal"
+            vi: "Số thứ tự"
+          rule:
+            fr: ["le nombre prend ", { ending: "ième" }, " ; seul ", { term: "premier" }, " est différent"]
+            en: ["the number takes ", { ending: "ième" }, "; only ", { term: "premier" }, " is different"]
+            uk: ["до числа додають ", { ending: "ième" }, "; лише ", { term: "premier" }, " відрізняється"]
+            es: ["el número toma ", { ending: "ième" }, "; solo ", { term: "premier" }, " es distinto"]
+            pt: ["o número recebe ", { ending: "ième" }, "; só ", { term: "premier" }, " é diferente"]
+            de: ["die Zahl erhält ", { ending: "ième" }, "; nur ", { term: "premier" }, " ist anders"]
+            it: ["il numero prende ", { ending: "ième" }, "; solo ", { term: "premier" }, " è diverso"]
+            pl: ["liczba otrzymuje ", { ending: "ième" }, "; tylko ", { term: "premier" }, " jest inne"]
+            tr: ["sayıya ", { ending: "ième" }, " eklenir; yalnızca ", { term: "premier" }, " farklıdır"]
+            id: ["angka mendapat ", { ending: "ième" }, "; hanya ", { term: "premier" }, " yang berbeda"]
+            vi: ["số đếm thêm ", { ending: "ième" }, "; chỉ ", { term: "premier" }, " khác"]
+          ex: { examples: [["le ", { target: "deuxième" }, " étage"], ["le ", { target: "premier" }, " étage"]] }
+          tr: { en: { examples: ["the second floor", "the first floor"] }, uk: { examples: ["другий поверх", "перший поверх"] }, es: { examples: ["el segundo piso", "el primer piso"] }, pt: { examples: ["o segundo andar", "o primeiro andar"] }, de: { examples: ["der zweite Stock", "der erste Stock"] }, it: { examples: ["il secondo piano", "il primo piano"] }, pl: { examples: ["drugie piętro", "pierwsze piętro"] }, tr: { examples: ["ikinci kat", "birinci kat"] }, id: { examples: ["lantai tiga", "lantai dua"] }, vi: { examples: ["tầng ba", "tầng hai"] } }
+        - level: "A1"
+          point: { fr: "Prix", en: "Prices", uk: "Ціни", es: "Precios", pt: "Preços", de: "Preise", it: "Prezzi", pl: "Ceny", tr: "Fiyatlar", id: "Harga", vi: "Giá cả" }
+          rule:
+            fr: ["le nombre d’euros ou de dollars, puis celui des centimes, sans le mot ", { term: "centimes" }]
+            en: ["the number of euros or dollars, then the cents, without the word ", { term: "centimes" }]
+            uk: ["кількість євро чи доларів, потім центів, без слова ", { term: "centimes" }]
+            es: ["los euros o los dólares, luego los céntimos, sin la palabra ", { term: "centimes" }]
+            pt: ["os euros ou os dólares, depois os centavos, sem a palavra ", { term: "centimes" }]
+            de: ["die Euro oder Dollar, dann die Cent, ohne das Wort ", { term: "centimes" }]
+            it: ["gli euro o i dollari, poi i centesimi, senza la parola ", { term: "centimes" }]
+            pl: ["euro lub dolary, potem centy, bez słowa ", { term: "centimes" }]
+            tr: ["önce euro ya da dolar sayısı, sonra sent sayısı, ", { term: "centimes" }, " sözcüğü olmadan"]
+            id: ["jumlah euro atau dolar, lalu sen, tanpa kata ", { term: "centimes" }]
+            vi: ["số euro hoặc đô la, rồi số xu, không có từ ", { term: "centimes" }]
+          ex: ["Ça fait ", { target: "douze euros cinquante" }, "."]
+          tr: { en: "That comes to €12.50.", uk: "Це коштує 12,50 євро.", es: "Son 12,50 euros.", pt: "Dá 12,50 euros.", de: "Das macht 12,50 Euro.", it: "Fa 12,50 euro.", pl: "To wychodzi 12,50 euro.", tr: "Tutar 12,50 euro.", id: "Totalnya 12,50 euro.", vi: "Tổng cộng là 12,50 euro." }
+        - level: "A1"
+          point: { fr: "Téléphone", en: "Phone numbers", uk: "Номери телефонів", es: "Teléfono", pt: "Telefone", de: "Telefonnummern", it: "Telefono", pl: "Telefon", tr: "Telefon", id: "Telepon", vi: "Điện thoại" }
+          rule:
+            fr: "dix chiffres, dits par petits groupes"
+            en: "ten digits, said in small groups"
+            uk: "десять цифр, які називають невеликими групами"
+            es: "diez cifras, dichas en grupos pequeños"
+            pt: "dez dígitos, ditos em grupos pequenos"
+            de: "zehn Ziffern, in kleinen Gruppen gesprochen"
+            it: "dieci cifre, dette in piccoli gruppi"
+            pl: "dziesięć cyfr, wymawianych w małych grupach"
+            tr: "on rakam, küçük gruplar halinde okunur"
+            id: "sepuluh digit, diucapkan dalam kelompok kecil"
+            vi: "mười chữ số, đọc theo từng nhóm nhỏ"
+          ex: { target: "zéro six, douze, trente-quatre" }
+          tr: { en: "zero six, twelve, thirty-four", uk: "нуль шість, дванадцять, тридцять чотири", es: "cero seis, doce, treinta y cuatro", pt: "zero seis, doze, trinta e quatro", de: "null sechs, zwölf, vierunddreißig", it: "zero sei, dodici, trentaquattro", pl: "zero sześć, dwanaście, trzydzieści cztery", tr: "sıfır altı, on iki, otuz dört", id: "nol enam, dua belas, tiga puluh empat", vi: "không sáu, mười hai, ba mươi bốn" }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "quatre-vingts" }, " et ", { term: "cents" }, " perdent leur s devant un autre nombre"]
+            en: [{ term: "quatre-vingts" }, " and ", { term: "cents" }, " lose their s before another number"]
+            uk: [{ term: "quatre-vingts" }, " і ", { term: "cents" }, " втрачають s перед іншим числом"]
+            es: [{ term: "quatre-vingts" }, " y ", { term: "cents" }, " pierden la s ante otro número"]
+            pt: [{ term: "quatre-vingts" }, " e ", { term: "cents" }, " perdem o s diante de outro número"]
+            de: [{ term: "quatre-vingts" }, " und ", { term: "cents" }, " verlieren ihr s vor einer weiteren Zahl"]
+            it: [{ term: "quatre-vingts" }, " e ", { term: "cents" }, " perdono la s davanti a un altro numero"]
+            pl: [{ term: "quatre-vingts" }, " i ", { term: "cents" }, " tracą s przed inną liczbą"]
+            tr: [{ term: "quatre-vingts" }, " ve ", { term: "cents" }, ", başka bir sayıdan önce s’yi kaybeder"]
+            id: [{ term: "quatre-vingts" }, " dan ", { term: "cents" }, " kehilangan s sebelum angka lain"]
+            vi: [{ term: "quatre-vingts" }, " và ", { term: "cents" }, " mất chữ s trước một số khác"]
+          ex: { examples: [[{ target: "quatre-vingt" }, "-deux"], [{ target: "deux cent" }, " un"]] }
+          tr: { en: { examples: ["eighty-two", "two hundred and one"] }, uk: { examples: ["вісімдесят два", "двісті один"] }, es: { examples: ["ochenta y dos", "doscientos uno"] }, pt: { examples: ["oitenta e dois", "duzentos e um"] }, de: { examples: ["zweiundachtzig", "zweihunderteins"] }, it: { examples: ["ottantadue", "duecentouno"] }, pl: { examples: ["osiemdziesiąt dwa", "dwieście jeden"] }, tr: { examples: ["seksen iki", "iki yüz bir"] }, id: { examples: ["delapan puluh dua", "dua ratus satu"] }, vi: { examples: ["tám mươi hai", "hai trăm linh một"] } }
+        - level: "A0"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "et" }, " seulement avec ", { term: "un" }, " : ", { term: "vingt et un" }, ", mais ", { term: "vingt-deux" }]
+            en: [{ term: "et" }, " only with ", { term: "un" }, ": ", { term: "vingt et un" }, ", but ", { term: "vingt-deux" }]
+            uk: [{ term: "et" }, " лише з ", { term: "un" }, ": ", { term: "vingt et un" }, ", але ", { term: "vingt-deux" }]
+            es: [{ term: "et" }, " solo con ", { term: "un" }, ": ", { term: "vingt et un" }, ", pero ", { term: "vingt-deux" }]
+            pt: [{ term: "et" }, " só com ", { term: "un" }, ": ", { term: "vingt et un" }, ", mas ", { term: "vingt-deux" }]
+            de: [{ term: "et" }, " nur mit ", { term: "un" }, ": ", { term: "vingt et un" }, ", aber ", { term: "vingt-deux" }]
+            it: [{ term: "et" }, " solo con ", { term: "un" }, ": ", { term: "vingt et un" }, ", ma ", { term: "vingt-deux" }]
+            pl: [{ term: "et" }, " tylko z ", { term: "un" }, ": ", { term: "vingt et un" }, ", ale ", { term: "vingt-deux" }]
+            tr: [{ term: "et" }, " yalnızca ", { term: "un" }, " ile: ", { term: "vingt et un" }, ", ama ", { term: "vingt-deux" }]
+            id: [{ term: "et" }, " hanya dengan ", { term: "un" }, ": ", { term: "vingt et un" }, ", tetapi ", { term: "vingt-deux" }]
+            vi: [{ term: "et" }, " chỉ đi với ", { term: "un" }, ": ", { term: "vingt et un" }, ", nhưng ", { term: "vingt-deux" }]
+          ex: [{ target: "vingt-deux" }, " ans"]
+          tr: { en: "twenty-two years", uk: "двадцять два роки", es: "veintidós años", pt: "vinte e dois anos", de: "zweiundzwanzig Jahre", it: "ventidue anni", pl: "dwadzieścia dwa lata", tr: "yirmi iki yıl", id: "dua puluh dua tahun", vi: "hai mươi hai năm" }
+sections:
+  - title:
+      fr: "De 0 à 16"
+      en: "0 to 16"
+      uk: "Від 0 до 16"
+      es: "Del 0 al 16"
+      pt: "De 0 a 16"
+      de: "Von 0 bis 16"
+      it: "Da 0 a 16"
+      pl: "Od 0 do 16"
+      tr: "0’dan 16’ya kadar"
+      id: "0 sampai 16"
+      vi: "Từ 0 đến 16"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { fr: "Nombre", en: "Number", uk: "Число", es: "Número", pt: "Número", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { fr: "Mot", en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - { level: "A0", value: 0, number: "0", word: "zéro", tr: { en: "zero", uk: "нуль", es: "cero", pt: "zero", de: "null", it: "zero", pl: "zero", tr: "sıfır", id: "nol", vi: "không" } }
+          - { level: "A0", value: 1, number: "1", word: "un", tr: { en: "one", uk: "один", es: "uno", pt: "um", de: "eins", it: "uno", pl: "jeden", tr: "bir", id: "satu", vi: "một" } }
+          - { level: "A0", value: 2, number: "2", word: "deux", tr: { en: "two", uk: "два", es: "dos", pt: "dois", de: "zwei", it: "due", pl: "dwa", tr: "iki", id: "dua", vi: "hai" } }
+          - { level: "A0", value: 3, number: "3", word: "trois", tr: { en: "three", uk: "три", es: "tres", pt: "três", de: "drei", it: "tre", pl: "trzy", tr: "üç", id: "tiga", vi: "ba" } }
+          - { level: "A0", value: 4, number: "4", word: "quatre", tr: { en: "four", uk: "чотири", es: "cuatro", pt: "quatro", de: "vier", it: "quattro", pl: "cztery", tr: "dört", id: "empat", vi: "bốn" } }
+          - { level: "A0", value: 5, number: "5", word: "cinq", tr: { en: "five", uk: "п’ять", es: "cinco", pt: "cinco", de: "fünf", it: "cinque", pl: "pięć", tr: "beş", id: "lima", vi: "năm" } }
+          - { level: "A0", value: 6, number: "6", word: "six", tr: { en: "six", uk: "шість", es: "seis", pt: "seis", de: "sechs", it: "sei", pl: "sześć", tr: "altı", id: "enam", vi: "sáu" } }
+          - { level: "A0", value: 7, number: "7", word: "sept", tr: { en: "seven", uk: "сім", es: "siete", pt: "sete", de: "sieben", it: "sette", pl: "siedem", tr: "yedi", id: "tujuh", vi: "bảy" } }
+          - { level: "A0", value: 8, number: "8", word: "huit", tr: { en: "eight", uk: "вісім", es: "ocho", pt: "oito", de: "acht", it: "otto", pl: "osiem", tr: "sekiz", id: "delapan", vi: "tám" } }
+          - { level: "A0", value: 9, number: "9", word: "neuf", tr: { en: "nine", uk: "дев’ять", es: "nueve", pt: "nove", de: "neun", it: "nove", pl: "dziewięć", tr: "dokuz", id: "sembilan", vi: "chín" } }
+          - { level: "A0", value: 10, number: "10", word: "dix", tr: { en: "ten", uk: "десять", es: "diez", pt: "dez", de: "zehn", it: "dieci", pl: "dziesięć", tr: "on", id: "sepuluh", vi: "mười" } }
+          - level: "A0"
+            value: 11
+            number: "11"
+            word: "onze"
+            tr: { en: "eleven", uk: "одинадцять", es: "once", pt: "onze", de: "elf", it: "undici", pl: "jedenaście", tr: "on bir", id: "sebelas", vi: "mười một" }
+          - level: "A0"
+            value: 12
+            number: "12"
+            word: "douze"
+            tr: { en: "twelve", uk: "дванадцять", es: "doce", pt: "doze", de: "zwölf", it: "dodici", pl: "dwanaście", tr: "on iki", id: "dua belas", vi: "mười hai" }
+          - level: "A0"
+            value: 13
+            number: "13"
+            word: "treize"
+            tr: { en: "thirteen", uk: "тринадцять", es: "trece", pt: "treze", de: "dreizehn", it: "tredici", pl: "trzynaście", tr: "on üç", id: "tiga belas", vi: "mười ba" }
+          - level: "A0"
+            value: 14
+            number: "14"
+            word: "quatorze"
+            tr: { en: "fourteen", uk: "чотирнадцять", es: "catorce", pt: "catorze", de: "vierzehn", it: "quattordici", pl: "czternaście", tr: "on dört", id: "empat belas", vi: "mười bốn" }
+          - level: "A0"
+            value: 15
+            number: "15"
+            word: "quinze"
+            tr: { en: "fifteen", uk: "п’ятнадцять", es: "quince", pt: "quinze", de: "fünfzehn", it: "quindici", pl: "piętnaście", tr: "on beş", id: "lima belas", vi: "mười lăm" }
+          - level: "A0"
+            value: 16
+            number: "16"
+            word: "seize"
+            tr: { en: "sixteen", uk: "шістнадцять", es: "dieciséis", pt: "dezesseis", de: "sechzehn", it: "sedici", pl: "szesnaście", tr: "on altı", id: "enam belas", vi: "mười sáu" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: "De 0 à 16, chaque nombre a son propre mot."
+              en: "From 0 to 16, each number has a word of its own."
+              uk: "Від 0 до 16 кожне число має власне слово."
+              es: "Del 0 al 16, cada número tiene su propia palabra."
+              pt: "De 0 a 16, cada número tem a sua própria palavra."
+              de: "Von 0 bis 16 hat jede Zahl ein eigenes Wort."
+              it: "Da 0 a 16, ogni numero ha una parola propria."
+              pl: "Od 0 do 16 każda liczba ma własne słowo."
+              tr: "0’dan 16’ya kadar her sayının kendine ait bir sözcüğü vardır."
+              id: "Dari 0 sampai 16, setiap angka punya kata sendiri."
+              vi: "Từ 0 đến 16, mỗi số có một từ riêng."
+            ex: ["J’ai ", { numeral: { target: "treize" }, value: 13 }, " ans."]
+            tr: { en: "I'm thirteen.", uk: "Мені тринадцять років.", es: "Tengo trece años.", pt: "Tenho treze anos.", de: "Ich bin dreizehn Jahre alt.", it: "Ho tredici anni.", pl: "Mam trzynaście lat.", tr: "On üç yaşındayım.", id: "Saya berusia tiga belas tahun.", vi: "Tôi mười ba tuổi." }
+          - type: "note"
+            level: "A0"
+            text:
+              fr: ["La fin de ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " et ", { term: "dix" }, " se prononce différemment selon le mot qui suit : voir ", { link: "La liaison et l’élision", to: fr.bases.liaison-elision }, "."]
+              en: ["The end of ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " and ", { term: "dix" }, " sounds different depending on the next word: see ", { link: "Liaison and Elision", to: fr.bases.liaison-elision }, "."]
+              uk: ["Кінець слів ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " і ", { term: "dix" }, " вимовляється по-різному залежно від наступного слова: див. ", { link: "Ліазон та елізія", to: fr.bases.liaison-elision }, "."]
+              es: ["El final de ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " y ", { term: "dix" }, " se pronuncia distinto según la palabra siguiente: ver ", { link: "La liaison y la elisión", to: fr.bases.liaison-elision }, "."]
+              pt: ["O final de ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " e ", { term: "dix" }, " se pronuncia de modo diferente conforme a palavra seguinte: veja ", { link: "A liaison e a elisão", to: fr.bases.liaison-elision }, "."]
+              de: ["Das Ende von ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " und ", { term: "dix" }, " wird je nach dem folgenden Wort anders gesprochen: siehe ", { link: "Liaison und Elision", to: "fr.bases.liaison-elision" }, "."]
+              it: ["La fine di ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " e ", { term: "dix" }, " si pronuncia in modo diverso secondo la parola che segue: vedi ", { link: "La liaison e l'elisione", to: fr.bases.liaison-elision }, "."]
+              pl: ["Końcówka słów ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " i ", { term: "dix" }, " brzmi różnie w zależności od następnego słowa: zob. ", { link: "Liaison i elizja", to: "fr.bases.liaison-elision" }, "."]
+              tr: [{ term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " ve ", { term: "dix" }, " sözcüklerinin sonu, ardından gelen sözcüğe göre farklı okunur: bkz. ", { link: "Liaison ve ünlü düşmesi", to: fr.bases.liaison-elision }, "."]
+              id: ["Bagian akhir ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, ", dan ", { term: "dix" }, " dilafalkan berbeda menurut kata sesudahnya: lihat ", { link: "Liaison dan elisi", to: "fr.bases.liaison-elision" }, "."]
+              vi: ["Phần cuối của ", { term: "cinq" }, ", ", { term: "six" }, ", ", { term: "huit" }, ", ", { term: "neuf" }, " và ", { term: "dix" }, " được đọc khác nhau tùy từ đứng sau: xem ", { link: "Nối âm và lược âm", to: fr.bases.liaison-elision }, "."]
+  - title:
+      fr: "De 17 à 69"
+      en: "17 to 69"
+      uk: "Від 17 до 69"
+      es: "Del 17 al 69"
+      pt: "De 17 a 69"
+      de: "Von 17 bis 69"
+      it: "Da 17 a 69"
+      pl: "Od 17 do 69"
+      tr: "17’den 69’a kadar"
+      id: "17 sampai 69"
+      vi: "Từ 17 đến 69"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { fr: "Nombre", en: "Number", uk: "Число", es: "Número", pt: "Número", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { fr: "Mot", en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - level: "A0"
+            value: 17
+            number: "17"
+            word: [{ target: "dix" }, "-sept"]
+            tr: { en: "seventeen", uk: "сімнадцять", es: "diecisiete", pt: "dezessete", de: "siebzehn", it: "diciassette", pl: "siedemnaście", tr: "on yedi", id: "tujuh belas", vi: "mười bảy" }
+          - level: "A0"
+            value: 18
+            number: "18"
+            word: [{ target: "dix" }, "-huit"]
+            tr: { en: "eighteen", uk: "вісімнадцять", es: "dieciocho", pt: "dezoito", de: "achtzehn", it: "diciotto", pl: "osiemnaście", tr: "on sekiz", id: "delapan belas", vi: "mười tám" }
+          - level: "A0"
+            value: 19
+            number: "19"
+            word: [{ target: "dix" }, "-neuf"]
+            tr: { en: "nineteen", uk: "дев’ятнадцять", es: "diecinueve", pt: "dezenove", de: "neunzehn", it: "diciannove", pl: "dziewiętnaście", tr: "on dokuz", id: "sembilan belas", vi: "mười chín" }
+          - level: "A0"
+            value: 20
+            number: "20"
+            word: "vingt"
+            tr: { en: "twenty", uk: "двадцять", es: "veinte", pt: "vinte", de: "zwanzig", it: "venti", pl: "dwadzieścia", tr: "yirmi", id: "dua puluh", vi: "hai mươi" }
+          - level: "A0"
+            value: 21
+            number: "21"
+            word: ["vingt ", { target: "et" }, " un"]
+            tr: { en: "twenty-one", uk: "двадцять один", es: "veintiuno", pt: "vinte e um", de: "einundzwanzig", it: "ventuno", pl: "dwadzieścia jeden", tr: "yirmi bir", id: "dua puluh satu", vi: "hai mươi mốt" }
+          - level: "A0"
+            value: 22
+            number: "22"
+            word: "vingt-deux"
+            tr: { en: "twenty-two", uk: "двадцять два", es: "veintidós", pt: "vinte e dois", de: "zweiundzwanzig", it: "ventidue", pl: "dwadzieścia dwa", tr: "yirmi iki", id: "dua puluh dua", vi: "hai mươi hai" }
+          - level: "A0"
+            value: 30
+            number: "30"
+            word: "trente"
+            tr: { en: "thirty", uk: "тридцять", es: "treinta", pt: "trinta", de: "dreißig", it: "trenta", pl: "trzydzieści", tr: "otuz", id: "tiga puluh", vi: "ba mươi" }
+          - level: "A0"
+            value: 31
+            number: "31"
+            word: ["trente ", { target: "et" }, " un"]
+            tr: { en: "thirty-one", uk: "тридцять один", es: "treinta y uno", pt: "trinta e um", de: "einunddreißig", it: "trentuno", pl: "trzydzieści jeden", tr: "otuz bir", id: "tiga puluh satu", vi: "ba mươi mốt" }
+          - level: "A0"
+            value: 40
+            number: "40"
+            word: "quarante"
+            tr: { en: "forty", uk: "сорок", es: "cuarenta", pt: "quarenta", de: "vierzig", it: "quaranta", pl: "czterdzieści", tr: "kırk", id: "empat puluh", vi: "bốn mươi" }
+          - level: "A0"
+            value: 45
+            number: "45"
+            word: "quarante-cinq"
+            tr: { en: "forty-five", uk: "сорок п’ять", es: "cuarenta y cinco", pt: "quarenta e cinco", de: "fünfundvierzig", it: "quarantacinque", pl: "czterdzieści pięć", tr: "kırk beş", id: "empat puluh lima", vi: "bốn mươi lăm" }
+          - level: "A0"
+            value: 50
+            number: "50"
+            word: "cinquante"
+            tr: { en: "fifty", uk: "п’ятдесят", es: "cincuenta", pt: "cinquenta", de: "fünfzig", it: "cinquanta", pl: "pięćdziesiąt", tr: "elli", id: "lima puluh", vi: "năm mươi" }
+          - level: "A0"
+            value: 60
+            number: "60"
+            word: "soixante"
+            tr: { en: "sixty", uk: "шістдесят", es: "sesenta", pt: "sessenta", de: "sechzig", it: "sessanta", pl: "sześćdziesiąt", tr: "altmış", id: "enam puluh", vi: "sáu mươi" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: ["De 17 à 19, on dit ", { term: "dix" }, " puis l’unité, avec un trait d’union."]
+              en: ["From 17 to 19, say ", { term: "dix" }, " and then the unit, with a hyphen."]
+              uk: ["Від 17 до 19 кажуть ", { term: "dix" }, ", а потім одиницю, через дефіс."]
+              es: ["Del 17 al 19 se dice ", { term: "dix" }, " y la unidad, con un guion."]
+              pt: ["De 17 a 19 diz-se ", { term: "dix" }, " e depois a unidade, com um hífen."]
+              de: ["Von 17 bis 19 sagt man ", { term: "dix" }, " und dann den Einer, mit Bindestrich."]
+              it: ["Da 17 a 19 si dice ", { term: "dix" }, " e poi l’unità, con un trattino."]
+              pl: ["Od 17 do 19 mówi się ", { term: "dix" }, " i jedności, przez łącznik."]
+              tr: ["17’den 19’a kadar önce ", { term: "dix" }, ", sonra birler basamağı söylenir; arada tire vardır."]
+              id: ["Untuk 17 sampai 19, ucapkan ", { term: "dix" }, " lalu satuan, dengan tanda hubung."]
+              vi: ["Từ 17 đến 19, nói ", { term: "dix" }, " rồi đến hàng đơn vị, có dấu gạch nối."]
+            ex: ["Elle a ", { numeral: { target: "dix-huit" }, value: 18 }, " ans."]
+            tr: { en: "She is eighteen.", uk: "Їй вісімнадцять років.", es: "Ella tiene dieciocho años.", pt: "Ela tem dezoito anos.", de: "Sie ist achtzehn Jahre alt.", it: "Ha diciotto anni.", pl: "Ona ma osiemnaście lat.", tr: "O on sekiz yaşında.", id: "Dia berusia delapan belas tahun.", vi: "Cô ấy mười tám tuổi." }
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: "À partir de 21, la dizaine et l’unité se joignent par un trait d’union."
+              en: "From 21 on, the ten and the unit are joined by a hyphen."
+              uk: "Від 21 десяток і одиниця з’єднуються дефісом."
+              es: "Desde el 21, la decena y la unidad se unen con un guion."
+              pt: "A partir de 21, a dezena e a unidade se unem com um hífen."
+              de: "Ab 21 werden Zehner und Einer mit einem Bindestrich verbunden."
+              it: "Dal 21 in poi, la decina e l’unità si uniscono con un trattino."
+              pl: "Od 21 dziesiątki i jedności łączy łącznik."
+              tr: "21’den itibaren onluk ve birler basamağı tireyle birleştirilir."
+              id: "Mulai 21, puluhan dan satuan dihubungkan dengan tanda hubung."
+              vi: "Từ 21 trở đi, hàng chục và hàng đơn vị nối với nhau bằng dấu gạch nối."
+            ex: ["Mon frère a ", { numeral: { target: "trente-cinq" }, value: 35 }, " ans."]
+            tr: { en: "My brother is thirty-five.", uk: "Моєму братові тридцять п’ять років.", es: "Mi hermano tiene treinta y cinco años.", pt: "Meu irmão tem trinta e cinco anos.", de: "Mein Bruder ist fünfunddreißig Jahre alt.", it: "Mio fratello ha trentacinque anni.", pl: "Mój brat ma trzydzieści pięć lat.", tr: "Ağabeyim otuz beş yaşında.", id: "Kakak saya berusia tiga puluh lima tahun.", vi: "Anh trai tôi ba mươi lăm tuổi." }
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: ["Avec 21, 31, 41, 51 et 61, on dit ", { term: "et" }, " ", { term: "un" }, ", sans trait d’union."]
+              en: ["With 21, 31, 41, 51 and 61, say ", { term: "et" }, " ", { term: "un" }, ", with no hyphen."]
+              uk: ["У 21, 31, 41, 51 і 61 кажуть ", { term: "et" }, " ", { term: "un" }, ", без дефіса."]
+              es: ["En 21, 31, 41, 51 y 61 se dice ", { term: "et" }, " ", { term: "un" }, ", sin guion."]
+              pt: ["Em 21, 31, 41, 51 e 61 diz-se ", { term: "et" }, " ", { term: "un" }, ", sem hífen."]
+              de: ["Bei 21, 31, 41, 51 und 61 sagt man ", { term: "et" }, " ", { term: "un" }, ", ohne Bindestrich."]
+              it: ["In 21, 31, 41, 51 e 61 si dice ", { term: "et" }, " ", { term: "un" }, ", senza trattino."]
+              pl: ["W 21, 31, 41, 51 i 61 mówi się ", { term: "et" }, " ", { term: "un" }, ", bez łącznika."]
+              tr: ["21, 31, 41, 51 ve 61’de ", { term: "et" }, " ", { term: "un" }, " denir, tire konmaz."]
+              id: ["Pada 21, 31, 41, 51, dan 61, ucapkan ", { term: "et" }, " ", { term: "un" }, ", tanpa tanda hubung."]
+              vi: ["Ở 21, 31, 41, 51 và 61, nói ", { term: "et" }, " ", { term: "un" }, ", không có gạch nối."]
+            ex: ["Il y a ", { numeral: { target: "vingt et un" }, value: 21 }, " élèves."]
+            tr: { en: "There are twenty-one pupils.", uk: "Є двадцять один учень.", es: "Hay veintiún alumnos.", pt: "Há vinte e um alunos.", de: "Es gibt einundzwanzig Schüler.", it: "Ci sono ventuno alunni.", pl: "Jest dwudziestu jeden uczniów.", tr: "Yirmi bir öğrenci var.", id: "Ada dua puluh satu murid.", vi: "Có hai mươi mốt học sinh." }
+  - title:
+      fr: "De 70 à 99"
+      en: "70 to 99"
+      uk: "Від 70 до 99"
+      es: "Del 70 al 99"
+      pt: "De 70 a 99"
+      de: "Von 70 bis 99"
+      it: "Da 70 a 99"
+      pl: "Od 70 do 99"
+      tr: "70’ten 99’a kadar"
+      id: "70 sampai 99"
+      vi: "Từ 70 đến 99"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { fr: "Nombre", en: "Number", uk: "Число", es: "Número", pt: "Número", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { fr: "Mot", en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - level: "A1"
+            value: 70
+            number: "70"
+            word: { target: "soixante-dix" }
+            tr: { en: "seventy", uk: "сімдесят", es: "setenta", pt: "setenta", de: "siebzig", it: "settanta", pl: "siedemdziesiąt", tr: "yetmiş", id: "tujuh puluh", vi: "bảy mươi" }
+          - level: "A1"
+            value: 71
+            number: "71"
+            word: [{ target: "soixante" }, " et onze"]
+            tr: { en: "seventy-one", uk: "сімдесят один", es: "setenta y uno", pt: "setenta e um", de: "einundsiebzig", it: "settantuno", pl: "siedemdziesiąt jeden", tr: "yetmiş bir", id: "tujuh puluh satu", vi: "bảy mươi mốt" }
+          - level: "A1"
+            value: 77
+            number: "77"
+            word: [{ target: "soixante" }, "-dix-sept"]
+            tr: { en: "seventy-seven", uk: "сімдесят сім", es: "setenta y siete", pt: "setenta e sete", de: "siebenundsiebzig", it: "settantasette", pl: "siedemdziesiąt siedem", tr: "yetmiş yedi", id: "tujuh puluh tujuh", vi: "bảy mươi bảy" }
+          - level: "A1"
+            value: 80
+            number: "80"
+            word: [{ target: "quatre-vingt" }, "s"]
+            tr: { en: "eighty", uk: "вісімдесят", es: "ochenta", pt: "oitenta", de: "achtzig", it: "ottanta", pl: "osiemdziesiąt", tr: "seksen", id: "delapan puluh", vi: "tám mươi" }
+          - level: "A1"
+            value: 81
+            number: "81"
+            word: [{ target: "quatre-vingt" }, "-un"]
+            tr: { en: "eighty-one", uk: "вісімдесят один", es: "ochenta y uno", pt: "oitenta e um", de: "einundachtzig", it: "ottantuno", pl: "osiemdziesiąt jeden", tr: "seksen bir", id: "delapan puluh satu", vi: "tám mươi mốt" }
+          - level: "A1"
+            value: 90
+            number: "90"
+            word: [{ target: "quatre-vingt" }, "-dix"]
+            tr: { en: "ninety", uk: "дев’яносто", es: "noventa", pt: "noventa", de: "neunzig", it: "novanta", pl: "dziewięćdziesiąt", tr: "doksan", id: "sembilan puluh", vi: "chín mươi" }
+          - level: "A1"
+            value: 91
+            number: "91"
+            word: [{ target: "quatre-vingt" }, "-onze"]
+            tr: { en: "ninety-one", uk: "дев’яносто один", es: "noventa y uno", pt: "noventa e um", de: "einundneunzig", it: "novantuno", pl: "dziewięćdziesiąt jeden", tr: "doksan bir", id: "sembilan puluh satu", vi: "chín mươi mốt" }
+          - level: "A1"
+            value: 99
+            number: "99"
+            word: [{ target: "quatre-vingt" }, "-dix-neuf"]
+            tr: { en: "ninety-nine", uk: "дев’яносто дев’ять", es: "noventa y nueve", pt: "noventa e nove", de: "neunundneunzig", it: "novantanove", pl: "dziewięćdziesiąt dziewięć", tr: "doksan dokuz", id: "sembilan puluh sembilan", vi: "chín mươi chín" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["De 70 à 79, on compte à partir de ", { term: "soixante" }, " : ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              en: ["From 70 to 79, count from ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              uk: ["Від 70 до 79 лічать від ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              es: ["Del 70 al 79 se cuenta desde ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              pt: ["De 70 a 79 conta-se a partir de ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              de: ["Von 70 bis 79 zählt man von ", { term: "soixante" }, " aus: ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, " …"]
+              it: ["Da 70 a 79 si conta a partire da ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              pl: ["Od 70 do 79 liczy się od ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              tr: ["70’ten 79’a kadar ", { term: "soixante" }, "’tan başlanarak sayılır: ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              id: ["Dari 70 sampai 79, hitung mulai ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+              vi: ["Từ 70 đến 79, đếm từ ", { term: "soixante" }, ": ", { pattern: ["60", "10"] }, ", ", { pattern: ["60", "11"] }, ", ", { pattern: ["60", "12"] }, "…"]
+            ex: ["Ma grand-mère a ", { numeral: { target: "soixante-quinze" }, value: 75 }, " ans."]
+            tr: { en: "My grandmother is seventy-five.", uk: "Моїй бабусі сімдесят п’ять років.", es: "Mi abuela tiene setenta y cinco años.", pt: "Minha avó tem setenta e cinco anos.", de: "Meine Großmutter ist fünfundsiebzig Jahre alt.", it: "Mia nonna ha settantacinque anni.", pl: "Moja babcia ma siedemdziesiąt pięć lat.", tr: "Büyükannem yetmiş beş yaşında.", id: "Nenek saya berusia tujuh puluh lima tahun.", vi: "Bà tôi bảy mươi lăm tuổi." }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["De 80 à 99, on compte à partir de ", { term: "quatre-vingts" }, " : 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              en: ["From 80 to 99, count from ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              uk: ["Від 80 до 99 лічать від ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              es: ["Del 80 al 99 se cuenta desde ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              pt: ["De 80 a 99 conta-se a partir de ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              de: ["Von 80 bis 99 zählt man von ", { term: "quatre-vingts" }, " aus: 4 × 20, ", { pattern: ["4 × 20", "10"] }, " …"]
+              it: ["Da 80 a 99 si conta a partire da ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              pl: ["Od 80 do 99 liczy się od ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              tr: ["80’den 99’a kadar ", { term: "quatre-vingts" }, "’ten başlanarak sayılır: 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              id: ["Dari 80 sampai 99, hitung mulai ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+              vi: ["Từ 80 đến 99, đếm từ ", { term: "quatre-vingts" }, ": 4 × 20, ", { pattern: ["4 × 20", "10"] }, "…"]
+            ex: ["Mon grand-père a ", { numeral: { target: "quatre-vingt-douze" }, value: 92 }, " ans."]
+            tr: { en: "My grandfather is ninety-two.", uk: "Моєму дідусеві дев’яносто два роки.", es: "Mi abuelo tiene noventa y dos años.", pt: "Meu avô tem noventa e dois anos.", de: "Mein Großvater ist zweiundneunzig Jahre alt.", it: "Mio nonno ha novantadue anni.", pl: "Mój dziadek ma dziewięćdziesiąt dwa lata.", tr: "Büyükbabam doksan iki yaşında.", id: "Kakek saya berusia sembilan puluh dua tahun.", vi: "Ông tôi chín mươi hai tuổi." }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "et" }, " n’apparaît que dans ", { term: "soixante et onze" }, " ; on dit ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              en: [{ term: "et" }, " appears only in ", { term: "soixante et onze" }, "; say ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              uk: [{ term: "et" }, " є лише в ", { term: "soixante et onze" }, "; кажуть ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              es: [{ term: "et" }, " solo aparece en ", { term: "soixante et onze" }, "; se dice ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              pt: [{ term: "et" }, " só aparece em ", { term: "soixante et onze" }, "; diz-se ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              de: [{ term: "et" }, " steht nur in ", { term: "soixante et onze" }, "; man sagt ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              it: [{ term: "et" }, " compare solo in ", { term: "soixante et onze" }, "; si dice ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              pl: [{ term: "et" }, " pojawia się tylko w ", { term: "soixante et onze" }, "; mówi się ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              tr: [{ term: "et" }, " yalnızca ", { term: "soixante et onze" }, " içinde bulunur; ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, " denir."]
+              id: [{ term: "et" }, " hanya muncul dalam ", { term: "soixante et onze" }, "; ucapkan ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+              vi: [{ term: "et" }, " chỉ xuất hiện trong ", { term: "soixante et onze" }, "; nói ", { term: "quatre-vingt-un" }, ", ", { term: "quatre-vingt-onze" }, "."]
+            ex: { examples: [{ target: "soixante et onze" }, { target: "quatre-vingt-onze" }] }
+            tr: { en: { examples: ["seventy-one", "ninety-one"] }, uk: { examples: ["сімдесят один", "дев’яносто один"] }, es: { examples: ["setenta y uno", "noventa y uno"] }, pt: { examples: ["setenta e um", "noventa e um"] }, de: { examples: ["einundsiebzig", "einundneunzig"] }, it: { examples: ["settantuno", "novantuno"] }, pl: { examples: ["siedemdziesiąt jeden", "dziewięćdziesiąt jeden"] }, tr: { examples: ["yetmiş bir", "doksan bir"] }, id: { examples: ["tujuh puluh satu", "sembilan puluh satu"] }, vi: { examples: ["bảy mươi mốt", "chín mươi mốt"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "quatre-vingts" }, " prend un s s’il termine le nombre : ", { term: "quatre-vingts" }, " ans, mais ", { term: "quatre-vingt-deux" }, " ans."]
+              en: [{ term: "quatre-vingts" }, " takes an s when it ends the number: ", { term: "quatre-vingts" }, " ans, but ", { term: "quatre-vingt-deux" }, " ans."]
+              uk: [{ term: "quatre-vingts" }, " має s, коли закінчує число: ", { term: "quatre-vingts" }, " ans, але ", { term: "quatre-vingt-deux" }, " ans."]
+              es: [{ term: "quatre-vingts" }, " lleva s cuando termina el número: ", { term: "quatre-vingts" }, " ans, pero ", { term: "quatre-vingt-deux" }, " ans."]
+              pt: [{ term: "quatre-vingts" }, " leva s quando termina o número: ", { term: "quatre-vingts" }, " ans, mas ", { term: "quatre-vingt-deux" }, " ans."]
+              de: [{ term: "quatre-vingts" }, " nimmt ein s, wenn es die Zahl beendet: ", { term: "quatre-vingts" }, " ans, aber ", { term: "quatre-vingt-deux" }, " ans."]
+              it: [{ term: "quatre-vingts" }, " prende una s quando chiude il numero: ", { term: "quatre-vingts" }, " ans, ma ", { term: "quatre-vingt-deux" }, " ans."]
+              pl: [{ term: "quatre-vingts" }, " dostaje s, gdy kończy liczbę: ", { term: "quatre-vingts" }, " ans, ale ", { term: "quatre-vingt-deux" }, " ans."]
+              tr: [{ term: "quatre-vingts" }, " sayıyı bitirdiğinde s alır: ", { term: "quatre-vingts" }, " ans, ama ", { term: "quatre-vingt-deux" }, " ans."]
+              id: [{ term: "quatre-vingts" }, " memakai s bila mengakhiri angka: ", { term: "quatre-vingts" }, " ans, tetapi ", { term: "quatre-vingt-deux" }, " ans."]
+              vi: [{ term: "quatre-vingts" }, " có s khi đứng cuối số: ", { term: "quatre-vingts" }, " ans, nhưng ", { term: "quatre-vingt-deux" }, " ans."]
+            ex: { examples: [["Elle a ", { numeral: { target: "quatre-vingts" }, value: 80 }, " ans."], ["Il a ", { numeral: [{ target: "quatre-vingt" }, "-deux"], value: 82 }, " ans."]] }
+            tr: { en: { examples: ["She is eighty.", "He is eighty-two."] }, uk: { examples: ["Їй вісімдесят років.", "Йому вісімдесят два роки."] }, es: { examples: ["Ella tiene ochenta años.", "Él tiene ochenta y dos años."] }, pt: { examples: ["Ela tem oitenta anos.", "Ele tem oitenta e dois anos."] }, de: { examples: ["Sie ist achtzig Jahre alt.", "Er ist zweiundachtzig Jahre alt."] }, it: { examples: ["Lei ha ottant’anni.", "Lui ha ottantadue anni."] }, pl: { examples: ["Ona ma osiemdziesiąt lat.", "On ma osiemdziesiąt dwa lata."] }, tr: { examples: ["O seksen yaşında.", "O seksen iki yaşında."] }, id: { examples: ["Dia berusia delapan puluh tahun.", "Dia berusia delapan puluh dua tahun."] }, vi: { examples: ["Bà ấy tám mươi tuổi.", "Ông ấy tám mươi hai tuổi."] } }
+  - title:
+      fr: "Cent, mille, million"
+      en: "Hundred, thousand, million"
+      uk: "Сто, тисяча, мільйон"
+      es: "Cien, mil, millón"
+      pt: "Cem, mil, milhão"
+      de: "Hundert, Tausend, Million"
+      it: "Cento, mille, milione"
+      pl: "Sto, tysiąc, milion"
+      tr: "Yüz, bin, milyon"
+      id: "Seratus, seribu, sejuta"
+      vi: "Trăm, nghìn, triệu"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "numbers"
+        columns:
+          - { key: "number", label: { fr: "Nombre", en: "Number", uk: "Число", es: "Número", pt: "Número", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - { key: "word", label: { fr: "Mot", en: "Word", uk: "Слово", es: "Palabra", pt: "Palavra", de: "Wort", it: "Parola", pl: "Słowo", tr: "Sözcük", id: "Kata", vi: "Từ" } }
+        rows:
+          - level: "A1"
+            value: 100
+            number: "100"
+            word: { target: "cent" }
+            tr: { en: "a hundred", uk: "сто", es: "cien", pt: "cem", de: "hundert", it: "cento", pl: "sto", tr: "yüz", id: "seratus", vi: "một trăm" }
+          - level: "A1"
+            value: 101
+            number: "101"
+            word: [{ target: "cent" }, " un"]
+            tr: { en: "a hundred and one", uk: "сто один", es: "ciento uno", pt: "cento e um", de: "hunderteins", it: "centouno", pl: "sto jeden", tr: "yüz bir", id: "seratus satu", vi: "một trăm linh một" }
+          - level: "A1"
+            value: 200
+            number: "200"
+            word: ["deux ", { target: "cents" }]
+            tr: { en: "two hundred", uk: "двісті", es: "doscientos", pt: "duzentos", de: "zweihundert", it: "duecento", pl: "dwieście", tr: "iki yüz", id: "dua ratus", vi: "hai trăm" }
+          - level: "A1"
+            value: 201
+            number: "201"
+            word: ["deux ", { target: "cent" }, " un"]
+            tr: { en: "two hundred and one", uk: "двісті один", es: "doscientos uno", pt: "duzentos e um", de: "zweihunderteins", it: "duecentouno", pl: "dwieście jeden", tr: "iki yüz bir", id: "dua ratus satu", vi: "hai trăm linh một" }
+          - level: "A1"
+            value: 1000
+            number: "1 000"
+            word: { target: "mille" }
+            tr: { en: "a thousand", uk: "тисяча", es: "mil", pt: "mil", de: "tausend", it: "mille", pl: "tysiąc", tr: "bin", id: "seribu", vi: "một nghìn" }
+          - level: "A1"
+            value: 2000
+            number: "2 000"
+            word: ["deux ", { target: "mille" }]
+            tr: { en: "two thousand", uk: "дві тисячі", es: "dos mil", pt: "dois mil", de: "zweitausend", it: "duemila", pl: "dwa tysiące", tr: "iki bin", id: "dua ribu", vi: "hai nghìn" }
+          - level: "A2"
+            value: 10000
+            number: "10 000"
+            word: ["dix ", { target: "mille" }]
+            tr: { en: "ten thousand", uk: "десять тисяч", es: "diez mil", pt: "dez mil", de: "zehntausend", it: "diecimila", pl: "dziesięć tysięcy", tr: "on bin", id: "sepuluh ribu", vi: "mười nghìn" }
+          - level: "A2"
+            value: 1000000
+            number: "1 000 000"
+            word: ["un ", { target: "million" }]
+            tr: { en: "a million", uk: "мільйон", es: "un millón", pt: "um milhão", de: "eine Million", it: "un milione", pl: "milion", tr: "bir milyon", id: "satu juta", vi: "một triệu" }
+          - level: "A2"
+            value: 2000000
+            number: "2 000 000"
+            word: ["deux ", { target: "millions" }]
+            tr: { en: "two million", uk: "два мільйони", es: "dos millones", pt: "dois milhões", de: "zwei Millionen", it: "due milioni", pl: "dwa miliony", tr: "iki milyon", id: "dua juta", vi: "hai triệu" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "cent" }, " et ", { term: "mille" }, " se disent sans ", { term: "un" }, "."]
+              en: [{ term: "cent" }, " and ", { term: "mille" }, " are said without ", { term: "un" }, "."]
+              uk: [{ term: "cent" }, " і ", { term: "mille" }, " кажуть без ", { term: "un" }, "."]
+              es: [{ term: "cent" }, " y ", { term: "mille" }, " se dicen sin ", { term: "un" }, "."]
+              pt: [{ term: "cent" }, " e ", { term: "mille" }, " dizem-se sem ", { term: "un" }, "."]
+              de: [{ term: "cent" }, " und ", { term: "mille" }, " sagt man ohne ", { term: "un" }, "."]
+              it: [{ term: "cent" }, " e ", { term: "mille" }, " si dicono senza ", { term: "un" }, "."]
+              pl: [{ term: "cent" }, " i ", { term: "mille" }, " mówi się bez ", { term: "un" }, "."]
+              tr: [{ term: "cent" }, " ve ", { term: "mille" }, ", ", { term: "un" }, " olmadan söylenir."]
+              id: [{ term: "cent" }, " dan ", { term: "mille" }, " diucapkan tanpa ", { term: "un" }, "."]
+              vi: [{ term: "cent" }, " và ", { term: "mille" }, " được nói không có ", { term: "un" }, "."]
+            ex: { examples: [["Ça coûte ", { target: "cent" }, " euros."], ["Ça coûte ", { target: "mille" }, " euros."]] }
+            tr: { en: { examples: ["It costs a hundred euros.", "It costs a thousand euros."] }, uk: { examples: ["Це коштує сто євро.", "Це коштує тисячу євро."] }, es: { examples: ["Cuesta cien euros.", "Cuesta mil euros."] }, pt: { examples: ["Custa cem euros.", "Custa mil euros."] }, de: { examples: ["Das kostet hundert Euro.", "Das kostet tausend Euro."] }, it: { examples: ["Costa cento euro.", "Costa mille euro."] }, pl: { examples: ["To kosztuje sto euro.", "To kosztuje tysiąc euro."] }, tr: { examples: ["Yüz euro tutuyor.", "Bin euro tutuyor."] }, id: { examples: ["Harganya seratus euro.", "Harganya seribu euro."] }, vi: { examples: ["Cái này giá một trăm euro.", "Cái này giá một nghìn euro."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "cent" }, " prend un s après un nombre, s’il termine le nombre : ", { term: "deux cents" }, ", mais ", { term: "deux cent un" }, "."]
+              en: [{ term: "cent" }, " takes an s after a number if it ends the number: ", { term: "deux cents" }, ", but ", { term: "deux cent un" }, "."]
+              uk: [{ term: "cent" }, " має s після числа, якщо закінчує числівник: ", { term: "deux cents" }, ", але ", { term: "deux cent un" }, "."]
+              es: [{ term: "cent" }, " lleva s tras un número si termina el numeral: ", { term: "deux cents" }, ", pero ", { term: "deux cent un" }, "."]
+              pt: [{ term: "cent" }, " leva s depois de um número se termina o numeral: ", { term: "deux cents" }, ", mas ", { term: "deux cent un" }, "."]
+              de: [{ term: "cent" }, " nimmt nach einer Zahl ein s, wenn es die Zahl beendet: ", { term: "deux cents" }, ", aber ", { term: "deux cent un" }, "."]
+              it: [{ term: "cent" }, " prende una s dopo un numero se chiude il numerale: ", { term: "deux cents" }, ", ma ", { term: "deux cent un" }, "."]
+              pl: [{ term: "cent" }, " dostaje s po liczbie, jeśli kończy liczebnik: ", { term: "deux cents" }, ", ale ", { term: "deux cent un" }, "."]
+              tr: [{ term: "cent" }, ", bir sayıdan sonra sayıyı bitiriyorsa s alır: ", { term: "deux cents" }, ", ama ", { term: "deux cent un" }, "."]
+              id: [{ term: "cent" }, " memakai s setelah angka bila mengakhiri bilangan: ", { term: "deux cents" }, ", tetapi ", { term: "deux cent un" }, "."]
+              vi: [{ term: "cent" }, " có s sau một số nếu đứng cuối số: ", { term: "deux cents" }, ", nhưng ", { term: "deux cent un" }, "."]
+            ex: { examples: [["Le livre coûte ", { numeral: { target: "trois cents" }, value: 300 }, " euros."], ["Il y a ", { numeral: [{ target: "trois cent" }, " dix"], value: 310 }, " élèves."]] }
+            tr: { en: { examples: ["The book costs three hundred euros.", "There are three hundred and ten pupils."] }, uk: { examples: ["Книжка коштує триста євро.", "Є триста десять учнів."] }, es: { examples: ["El libro cuesta trescientos euros.", "Hay trescientos diez alumnos."] }, pt: { examples: ["O livro custa trezentos euros.", "Há trezentos e dez alunos."] }, de: { examples: ["Das Buch kostet dreihundert Euro.", "Es gibt dreihundertzehn Schüler."] }, it: { examples: ["Il libro costa trecento euro.", "Ci sono trecentodieci alunni."] }, pl: { examples: ["Książka kosztuje trzysta euro.", "Jest trzystu dziesięciu uczniów."] }, tr: { examples: ["Kitap üç yüz euro.", "Üç yüz on öğrenci var."] }, id: { examples: ["Buku itu harganya tiga ratus euro.", "Ada tiga ratus sepuluh murid."] }, vi: { examples: ["Cuốn sách giá ba trăm euro.", "Có ba trăm mười học sinh."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "mille" }, " ne change jamais : ", { term: "trois mille" }, ", jamais ", { term: "trois milles" }, "."]
+              en: [{ term: "mille" }, " never changes: ", { term: "trois mille" }, ", never ", { term: "trois milles" }, "."]
+              uk: [{ term: "mille" }, " ніколи не змінюється: ", { term: "trois mille" }, ", а не ", { term: "trois milles" }, "."]
+              es: [{ term: "mille" }, " nunca cambia: ", { term: "trois mille" }, ", no ", { term: "trois milles" }, "."]
+              pt: [{ term: "mille" }, " nunca muda: ", { term: "trois mille" }, ", não ", { term: "trois milles" }, "."]
+              de: [{ term: "mille" }, " ändert sich nie: ", { term: "trois mille" }, ", nicht ", { term: "trois milles" }, "."]
+              it: [{ term: "mille" }, " non cambia mai: ", { term: "trois mille" }, ", non ", { term: "trois milles" }, "."]
+              pl: [{ term: "mille" }, " nigdy się nie zmienia: ", { term: "trois mille" }, ", nie ", { term: "trois milles" }, "."]
+              tr: [{ term: "mille" }, " hiç değişmez: ", { term: "trois mille" }, ", ", { term: "trois milles" }, " değil."]
+              id: [{ term: "mille" }, " tidak pernah berubah: ", { term: "trois mille" }, ", bukan ", { term: "trois milles" }, "."]
+              vi: [{ term: "mille" }, " không bao giờ đổi: ", { term: "trois mille" }, ", không phải ", { term: "trois milles" }, "."]
+            ex: ["Il y a ", { numeral: ["trois ", { target: "mille" }], value: 3000 }, " personnes."]
+            tr: { en: "There are three thousand people.", uk: "Є три тисячі людей.", es: "Hay tres mil personas.", pt: "Há três mil pessoas.", de: "Es gibt dreitausend Personen.", it: "Ci sono tremila persone.", pl: "Jest trzy tysiące osób.", tr: "Üç bin kişi var.", id: "Ada tiga ribu orang.", vi: "Có ba nghìn người." }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: [{ term: "million" }, " et ", { term: "milliard" }, " sont des noms : ils prennent un s au pluriel et ", { term: "de" }, " devant le nom."]
+              en: [{ term: "million" }, " and ", { term: "milliard" }, " are nouns: they take an s in the plural and ", { term: "de" }, " before the noun."]
+              uk: [{ term: "million" }, " і ", { term: "milliard" }, " — іменники: у множині вони мають s, а перед іменником стоїть ", { term: "de" }, "."]
+              es: [{ term: "million" }, " y ", { term: "milliard" }, " son sustantivos: llevan s en plural y ", { term: "de" }, " ante el nombre."]
+              pt: [{ term: "million" }, " e ", { term: "milliard" }, " são substantivos: levam s no plural e ", { term: "de" }, " antes do nome."]
+              de: [{ term: "million" }, " und ", { term: "milliard" }, " sind Nomen: Im Plural nehmen sie ein s, und vor dem Nomen steht ", { term: "de" }, "."]
+              it: [{ term: "million" }, " e ", { term: "milliard" }, " sono nomi: al plurale prendono la s e ", { term: "de" }, " davanti al nome."]
+              pl: [{ term: "million" }, " i ", { term: "milliard" }, " to rzeczowniki: w liczbie mnogiej mają s, a przed rzeczownikiem stoi ", { term: "de" }, "."]
+              tr: [{ term: "million" }, " ve ", { term: "milliard" }, " birer addır: çoğulda s alır, addan önce ", { term: "de" }, " gelir."]
+              id: [{ term: "million" }, " dan ", { term: "milliard" }, " adalah kata benda: bentuk jamaknya memakai s dan ", { term: "de" }, " muncul sebelum kata benda."]
+              vi: [{ term: "million" }, " và ", { term: "milliard" }, " là danh từ: số nhiều có s và ", { term: "de" }, " đứng trước danh từ."]
+            ex: ["Paris a plus de deux ", { target: "millions d’" }, "habitants."]
+            tr: { en: "Paris has more than two million inhabitants.", uk: "У Парижі понад два мільйони жителів.", es: "París tiene más de dos millones de habitantes.", pt: "Paris tem mais de dois milhões de habitantes.", de: "Paris hat mehr als zwei Millionen Einwohner.", it: "Parigi ha più di due milioni di abitanti.", pl: "Paryż ma ponad dwa miliony mieszkańców.", tr: "Paris’in iki milyondan fazla nüfusu var.", id: "Paris memiliki lebih dari dua juta penduduk.", vi: "Paris có hơn hai triệu dân." }
+          - type: "note"
+            level: "A2"
+            text:
+              fr: "Les grands nombres se découpent par trois chiffres avec une espace insécable : 10 000, 1 000 000."
+              en: "Large numbers are grouped in threes with a no-break space: 10 000, 1 000 000."
+              uk: "Великі числа ділять на групи по три цифри нерозривним пропуском: 10 000, 1 000 000."
+              es: "Los números grandes se separan de tres en tres cifras con un espacio de no separación: 10 000, 1 000 000."
+              pt: "Os números grandes separam-se de três em três algarismos com um espaço sem quebra: 10 000, 1 000 000."
+              de: "Große Zahlen werden in Dreiergruppen mit einem geschützten Leerzeichen gegliedert: 10 000, 1 000 000."
+              it: "I numeri grandi si dividono a gruppi di tre cifre con uno spazio non divisibile: 10 000, 1 000 000."
+              pl: "Duże liczby dzieli się na grupy po trzy cyfry twardą spacją: 10 000, 1 000 000."
+              tr: "Büyük sayılar, üçer basamaklı gruplara bölünüp aralarına bölünmeyen boşluk konur: 10 000, 1 000 000."
+              id: "Angka besar dikelompokkan per tiga digit dengan spasi tanpa putus: 10 000, 1 000 000."
+              vi: "Số lớn được chia thành nhóm ba chữ số bằng dấu cách không ngắt dòng: 10 000, 1 000 000."
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: ["Une virgule marque les décimales : 2,5 se dit ", { term: "deux virgule cinq" }, "."]
+              en: ["A comma marks the decimals: 2,5 is said ", { term: "deux virgule cinq" }, "."]
+              uk: ["Десяткову частину відокремлює кома: 2,5 читається ", { term: "deux virgule cinq" }, "."]
+              es: ["Una coma marca los decimales: 2,5 se dice ", { term: "deux virgule cinq" }, "."]
+              pt: ["Uma vírgula marca os decimais: 2,5 diz-se ", { term: "deux virgule cinq" }, "."]
+              de: ["Ein Komma trennt die Dezimalstellen: 2,5 spricht man ", { term: "deux virgule cinq" }, "."]
+              it: ["Una virgola segna i decimali: 2,5 si dice ", { term: "deux virgule cinq" }, "."]
+              pl: ["Przecinek oddziela ułamek dziesiętny: 2,5 czyta się ", { term: "deux virgule cinq" }, "."]
+              tr: ["Ondalık kısmı virgül ayırır: 2,5 ", { term: "deux virgule cinq" }, " diye okunur."]
+              id: ["Koma memisahkan desimal: 2,5 diucapkan ", { term: "deux virgule cinq" }, "."]
+              vi: ["Dấu phẩy ngăn phần thập phân: 2,5 đọc là ", { term: "deux virgule cinq" }, "."]
+            ex: ["Il fait ", { target: "deux virgule cinq" }, " mètres."]
+            tr: { en: "It is two point five metres long.", uk: "Він має два з половиною метра.", es: "Mide dos coma cinco metros.", pt: "Mede dois vírgula cinco metros.", de: "Er ist zwei Komma fünf Meter lang.", it: "Misura due virgola cinque metri.", pl: "Ma dwa przecinek pięć metra.", tr: "İki virgül beş metre.", id: "Panjangnya dua koma lima meter.", vi: "Nó dài hai phẩy năm mét." }
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Après la réforme de 1990, on peut relier tous les mots d’un nombre par des traits d’union : ", { term: "deux-cent-trois" }, "."]
+              en: ["Since the 1990 spelling reform, all the words of a number may be joined by hyphens: ", { term: "deux-cent-trois" }, "."]
+              uk: ["Після реформи правопису 1990 року всі слова числівника можна з’єднувати дефісами: ", { term: "deux-cent-trois" }, "."]
+              es: ["Desde la reforma ortográfica de 1990, todas las palabras de un número pueden unirse con guiones: ", { term: "deux-cent-trois" }, "."]
+              pt: ["Desde a reforma ortográfica de 1990, todas as palavras de um número podem ser ligadas por hífens: ", { term: "deux-cent-trois" }, "."]
+              de: ["Seit der Rechtschreibreform von 1990 dürfen alle Wörter einer Zahl mit Bindestrichen verbunden werden: ", { term: "deux-cent-trois" }, "."]
+              it: ["Dalla riforma ortografica del 1990, tutte le parole di un numero possono essere unite da trattini: ", { term: "deux-cent-trois" }, "."]
+              pl: ["Od reformy ortografii z 1990 roku wszystkie słowa liczebnika można łączyć łącznikami: ", { term: "deux-cent-trois" }, "."]
+              tr: ["1990 yazım reformundan beri bir sayının tüm sözcükleri tireyle birleştirilebilir: ", { term: "deux-cent-trois" }, "."]
+              id: ["Sejak reformasi ejaan 1990, semua kata dalam sebuah angka boleh dihubungkan dengan tanda hubung: ", { term: "deux-cent-trois" }, "."]
+              vi: ["Từ cải cách chính tả năm 1990, mọi từ trong một số có thể nối với nhau bằng dấu gạch nối: ", { term: "deux-cent-trois" }, "."]
+  - title: { fr: "Un et une", en: "Un and une", uk: "Un і une", es: "Un y une", pt: "Un e une", de: "Un und une", it: "Un e une", pl: "Un i une", tr: "Un ve une", id: "Un dan une", vi: "Un và une" }
+    role: "own"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "un" }, " devient ", { term: "une" }, " devant un nom féminin, aussi dans ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              en: [{ term: "un" }, " becomes ", { term: "une" }, " before a feminine noun, also in ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              uk: [{ term: "un" }, " стає ", { term: "une" }, " перед іменником жіночого роду, також у ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              es: [{ term: "un" }, " pasa a ", { term: "une" }, " ante un nombre femenino, también en ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              pt: [{ term: "un" }, " passa a ", { term: "une" }, " diante de um nome feminino, também em ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              de: [{ term: "un" }, " wird vor einem weiblichen Nomen zu ", { term: "une" }, ", auch in ", { term: "vingt et un" }, ", ", { term: "trente et un" }, " …"]
+              it: [{ term: "un" }, " diventa ", { term: "une" }, " davanti a un nome femminile, anche in ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              pl: [{ term: "un" }, " zmienia się w ", { term: "une" }, " przed rzeczownikiem rodzaju żeńskiego, także w ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              tr: [{ term: "un" }, ", dişil bir addan önce ", { term: "une" }, " olur; ", { term: "vingt et un" }, ", ", { term: "trente et un" }, " içinde de böyledir…"]
+              id: [{ term: "un" }, " menjadi ", { term: "une" }, " di depan kata benda feminin, juga dalam ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+              vi: [{ term: "un" }, " thành ", { term: "une" }, " trước danh từ giống cái, cả trong ", { term: "vingt et un" }, ", ", { term: "trente et un" }, "…"]
+            ex: { examples: [[{ target: "vingt et un" }, " ans"], [{ target: "vingt et une" }, " personnes"]] }
+            tr: { en: { examples: ["twenty-one years", "twenty-one people"] }, uk: { examples: ["двадцять один рік", "двадцять одна особа"] }, es: { examples: ["veintiún años", "veintiuna personas"] }, pt: { examples: ["vinte e um anos", "vinte e uma pessoas"] }, de: { examples: ["einundzwanzig Jahre", "einundzwanzig Personen"] }, it: { examples: ["ventun anni", "ventuno persone"] }, pl: { examples: ["dwadzieścia jeden lat", "dwadzieścia jeden osób"] }, tr: { examples: ["yirmi bir yıl", "yirmi bir kişi"] }, id: { examples: ["dua puluh satu tahun", "dua puluh satu orang"] }, vi: { examples: ["hai mươi mốt năm", "hai mươi mốt người"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Les autres nombres ne changent pas avec le genre du nom."
+              en: "The other numbers do not change with the gender of the noun."
+              uk: "Інші числівники не змінюються за родом іменника."
+              es: "Los demás números no cambian con el género del nombre."
+              pt: "Os outros números não mudam com o gênero do nome."
+              de: "Die übrigen Zahlen ändern sich nicht mit dem Genus des Nomens."
+              it: "Gli altri numeri non cambiano con il genere del nome."
+              pl: "Pozostałe liczebniki nie zmieniają się według rodzaju rzeczownika."
+              tr: "Diğer sayılar adın cinsiyetine göre değişmez."
+              id: "Angka lain tidak berubah menurut gender kata benda."
+              vi: "Các số khác không đổi theo giống của danh từ."
+            ex: ["Il y a ", { target: "deux" }, " garçons et ", { target: "deux" }, " filles."]
+            tr: { en: "There are two boys and two girls.", uk: "Є два хлопці й дві дівчини.", es: "Hay dos chicos y dos chicas.", pt: "Há dois meninos e duas meninas.", de: "Es gibt zwei Jungen und zwei Mädchen.", it: "Ci sono due ragazzi e due ragazze.", pl: "Jest dwóch chłopców i dwie dziewczyny.", tr: "İki erkek ve iki kız var.", id: "Ada dua anak laki-laki dan dua anak perempuan.", vi: "Có hai cậu bé và hai cô bé." }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour le genre des noms, voir ", { link: "Le genre des noms", to: fr.nom-determinants.genre }, "."]
+              en: ["For the gender of nouns, see ", { link: "Noun Gender", to: fr.nom-determinants.genre }, "."]
+              uk: ["Про рід іменників див. ", { link: "Рід іменників", to: fr.nom-determinants.genre }, "."]
+              es: ["Para el género de los nombres, ver ", { link: "El género de los sustantivos", to: fr.nom-determinants.genre }, "."]
+              pt: ["Para o gênero dos nomes, veja ", { link: "O gênero dos substantivos", to: fr.nom-determinants.genre }, "."]
+              de: ["Zum Genus der Nomen siehe ", { link: "Das Genus der Nomen", to: fr.nom-determinants.genre }, "."]
+              it: ["Per il genere dei nomi, vedi ", { link: "Il genere dei nomi", to: fr.nom-determinants.genre }, "."]
+              pl: ["O rodzaju rzeczowników zob. ", { link: "Rodzaj rzeczowników", to: fr.nom-determinants.genre }, "."]
+              tr: ["Adların cinsiyeti için bkz. ", { link: "İsimlerin cinsiyeti", to: fr.nom-determinants.genre }, "."]
+              id: ["Untuk gender kata benda, lihat ", { link: "Gender kata benda", to: fr.nom-determinants.genre }, "."]
+              vi: ["Về giống của danh từ, xem ", { link: "Giống của danh từ", to: fr.nom-determinants.genre }, "."]
+  - title:
+      fr: "Les ordinaux"
+      en: "Ordinals"
+      uk: "Порядкові числівники"
+      es: "Los ordinales"
+      pt: "Os ordinais"
+      de: "Ordnungszahlen"
+      it: "Gli ordinali"
+      pl: "Liczebniki porządkowe"
+      tr: "Sıra sayıları"
+      id: "Bilangan ordinal"
+      vi: "Số thứ tự"
+    role: "own"
+    content:
+      - type: "inventory"
+        set: "ordinals"
+        columns:
+          - { key: "number", label: { fr: "Nombre", en: "Number", uk: "Число", es: "Número", pt: "Número", de: "Zahl", it: "Numero", pl: "Liczba", tr: "Sayı", id: "Angka", vi: "Số" } }
+          - key: "ord"
+            label:
+              fr: "Ordinal"
+              en: "Ordinal"
+              uk: "Порядковий числівник"
+              es: "Ordinal"
+              pt: "Ordinal"
+              de: "Ordnungszahl"
+              it: "Ordinale"
+              pl: "Liczebnik porządkowy"
+              tr: "Sıra sayısı"
+              id: "Ordinal"
+              vi: "Số thứ tự"
+        rows:
+          - level: "A1"
+            value: 1
+            number: "1er, 1re"
+            ord: [{ target: "premier" }, ", ", { target: "première" }]
+            tr: { en: "first", uk: "перший", es: "primero", pt: "primeiro", de: "erste", it: "primo", pl: "pierwszy", tr: "birinci", id: "pertama", vi: "thứ nhất" }
+          - level: "A1"
+            value: 2
+            number: "2e"
+            ord: ["deux", { ending: "ième" }]
+            tr: { en: "second", uk: "другий", es: "segundo", pt: "segundo", de: "zweite", it: "secondo", pl: "drugi", tr: "ikinci", id: "kedua", vi: "thứ hai" }
+          - level: "A1"
+            value: 3
+            number: "3e"
+            ord: ["trois", { ending: "ième" }]
+            tr: { en: "third", uk: "третій", es: "tercero", pt: "terceiro", de: "dritte", it: "terzo", pl: "trzeci", tr: "üçüncü", id: "ketiga", vi: "thứ ba" }
+          - level: "A1"
+            value: 4
+            number: "4e"
+            ord: ["quatr", { ending: "ième" }]
+            tr: { en: "fourth", uk: "четвертий", es: "cuarto", pt: "quarto", de: "vierte", it: "quarto", pl: "czwarty", tr: "dördüncü", id: "keempat", vi: "thứ tư" }
+          - level: "A1"
+            value: 5
+            number: "5e"
+            ord: ["cinq", { letter: "u" }, { ending: "ième" }]
+            tr: { en: "fifth", uk: "п’ятий", es: "quinto", pt: "quinto", de: "fünfte", it: "quinto", pl: "piąty", tr: "beşinci", id: "kelima", vi: "thứ năm" }
+          - level: "A1"
+            value: 6
+            number: "6e"
+            ord: ["six", { ending: "ième" }]
+            tr: { en: "sixth", uk: "шостий", es: "sexto", pt: "sexto", de: "sechste", it: "sesto", pl: "szósty", tr: "altıncı", id: "keenam", vi: "thứ sáu" }
+          - level: "A1"
+            value: 7
+            number: "7e"
+            ord: ["sept", { ending: "ième" }]
+            tr: { en: "seventh", uk: "сьомий", es: "séptimo", pt: "sétimo", de: "siebte", it: "settimo", pl: "siódmy", tr: "yedinci", id: "ketujuh", vi: "thứ bảy" }
+          - level: "A1"
+            value: 8
+            number: "8e"
+            ord: ["huit", { ending: "ième" }]
+            tr: { en: "eighth", uk: "восьмий", es: "octavo", pt: "oitavo", de: "achte", it: "ottavo", pl: "ósmy", tr: "sekizinci", id: "kedelapan", vi: "thứ tám" }
+          - level: "A1"
+            value: 9
+            number: "9e"
+            ord: ["neu", { letter: "v" }, { ending: "ième" }]
+            tr: { en: "ninth", uk: "дев’ятий", es: "noveno", pt: "nono", de: "neunte", it: "nono", pl: "dziewiąty", tr: "dokuzuncu", id: "kesembilan", vi: "thứ chín" }
+          - level: "A1"
+            value: 10
+            number: "10e"
+            ord: ["dix", { ending: "ième" }]
+            tr: { en: "tenth", uk: "десятий", es: "décimo", pt: "décimo", de: "zehnte", it: "decimo", pl: "dziesiąty", tr: "onuncu", id: "kesepuluh", vi: "thứ mười" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["L’ordinal se forme avec le nombre et ", { ending: "ième" }, " : ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              en: ["The ordinal is the number and ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              uk: ["Порядковий числівник — це число з ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              es: ["El ordinal es el número y ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              pt: ["O ordinal é o número com ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              de: ["Die Ordnungszahl besteht aus der Zahl und ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              it: ["L’ordinale è il numero con ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              pl: ["Liczebnik porządkowy to liczba z ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              tr: ["Sıra sayısı, sayıya ", { ending: "ième" }, " eklenerek yapılır: ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              id: ["Ordinal dibentuk dari angka dan ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+              vi: ["Số thứ tự gồm số đếm và ", { ending: "ième" }, ": ", { mapping: [{ term: "deux" }, { term: "deuxième" }] }, "."]
+            ex: ["Elle habite au ", { ordinal: { target: "troisième" }, value: 3 }, " étage."]
+            tr: { en: "She lives on the third floor.", uk: "Вона живе на третьому поверсі.", es: "Vive en el tercer piso.", pt: "Ela mora no terceiro andar.", de: "Sie wohnt im dritten Stock.", it: "Abita al terzo piano.", pl: "Mieszka na trzecim piętrze.", tr: "Üçüncü katta oturuyor.", id: "Dia tinggal di lantai empat.", vi: "Cô ấy sống ở tầng ba." }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Premier" }, " est la seule exception ; il suit le genre du nom : ", { term: "premier" }, ", ", { term: "première" }, "."]
+              en: [{ term: "Premier" }, " is the only exception; it follows the gender of the noun: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              uk: [{ term: "Premier" }, " — єдиний виняток; воно узгоджується з родом іменника: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              es: [{ term: "Premier" }, " es la única excepción; sigue el género del nombre: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              pt: [{ term: "Premier" }, " é a única exceção; segue o gênero do nome: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              de: [{ term: "Premier" }, " ist die einzige Ausnahme; es richtet sich nach dem Genus des Nomens: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              it: [{ term: "Premier" }, " è l’unica eccezione; segue il genere del nome: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              pl: [{ term: "Premier" }, " to jedyny wyjątek; zgadza się z rodzajem rzeczownika: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              tr: [{ term: "Premier" }, " tek istisnadır; adın cinsiyetine uyar: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              id: [{ term: "Premier" }, " adalah satu-satunya pengecualian; mengikuti gender kata benda: ", { term: "premier" }, ", ", { term: "première" }, "."]
+              vi: [{ term: "Premier" }, " là ngoại lệ duy nhất; nó theo giống của danh từ: ", { term: "premier" }, ", ", { term: "première" }, "."]
+            ex: { examples: [["C’est le ", { ordinal: { target: "premier" }, value: 1 }, " jour."], ["C’est la ", { ordinal: { target: "première" }, value: 1 }, " rue à gauche."]] }
+            tr: { en: { examples: ["It's the first day.", "It's the first street on the left."] }, uk: { examples: ["Це перший день.", "Це перша вулиця ліворуч."] }, es: { examples: ["Es el primer día.", "Es la primera calle a la izquierda."] }, pt: { examples: ["É o primeiro dia.", "É a primeira rua à esquerda."] }, de: { examples: ["Es ist der erste Tag.", "Es ist die erste Straße links."] }, it: { examples: ["È il primo giorno.", "È la prima strada a sinistra."] }, pl: { examples: ["To pierwszy dzień.", "To pierwsza ulica po lewej."] }, tr: { examples: ["Bu ilk gün.", "Soldaki ilk sokak."] }, id: { examples: ["Ini hari pertama.", "Ini jalan pertama di sebelah kiri."] }, vi: { examples: ["Đây là ngày đầu tiên.", "Đây là con phố đầu tiên bên trái."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Le e final tombe devant ", { ending: "ième" }, " : ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              en: ["A final e drops before ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              uk: ["Кінцеве e зникає перед ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              es: ["La e final cae ante ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              pt: ["O e final cai diante de ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              de: ["Ein End-e fällt vor ", { ending: "ième" }, " weg: ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              it: ["La e finale cade davanti a ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              pl: ["Końcowe e odpada przed ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              tr: ["Sondaki e, ", { ending: "ième" }, " önünde düşer: ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              id: ["E di akhir hilang sebelum ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+              vi: ["Chữ e cuối bị bỏ trước ", { ending: "ième" }, ": ", { mapping: [{ term: "quatre" }, { term: "quatrième" }] }, "."]
+            ex: ["C’est la ", { target: "quatrième" }, " fois."]
+            tr: { en: "It's the fourth time.", uk: "Це вже четвертий раз.", es: "Es la cuarta vez.", pt: "É a quarta vez.", de: "Es ist das vierte Mal.", it: "È la quarta volta.", pl: "To już czwarty raz.", tr: "Bu dördüncü kez.", id: "Ini kali keempat.", vi: "Đây là lần thứ tư." }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "cinq" }, " prend un u, et ", { term: "neuf" }, " change son f en v : ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              en: [{ term: "cinq" }, " gains a u, and ", { term: "neuf" }, " changes its f to v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              uk: [{ term: "cinq" }, " отримує u, а ", { term: "neuf" }, " змінює f на v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              es: [{ term: "cinq" }, " recibe una u, y ", { term: "neuf" }, " cambia la f por v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              pt: [{ term: "cinq" }, " ganha um u, e ", { term: "neuf" }, " troca o f por v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              de: [{ term: "cinq" }, " erhält ein u, und ", { term: "neuf" }, " wechselt f zu v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              it: [{ term: "cinq" }, " prende una u, e ", { term: "neuf" }, " cambia la f in v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              pl: [{ term: "cinq" }, " dostaje u, a ", { term: "neuf" }, " zmienia f na v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              tr: [{ term: "cinq" }, " bir u alır, ", { term: "neuf" }, " ise f’sini v’ye çevirir: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              id: [{ term: "cinq" }, " mendapat u, dan ", { term: "neuf" }, " mengubah f menjadi v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+              vi: [{ term: "cinq" }, " thêm u, còn ", { term: "neuf" }, " đổi f thành v: ", { term: "cinquième" }, ", ", { term: "neuvième" }, "."]
+            ex: ["Mon bureau est au ", { target: "cinquième" }, " étage."]
+            tr: { en: "My office is on the fifth floor.", uk: "Мій офіс на п’ятому поверсі.", es: "Mi oficina está en el quinto piso.", pt: "Meu escritório fica no quinto andar.", de: "Mein Büro liegt im fünften Stock.", it: "Il mio ufficio è al quinto piano.", pl: "Moje biuro jest na piątym piętrze.", tr: "Ofisim beşinci katta.", id: "Kantor saya ada di lantai enam.", vi: "Văn phòng của tôi ở tầng năm." }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["On écrit ", { term: "1er" }, " et ", { term: "1re" }, ", puis ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              en: ["Write ", { term: "1er" }, " and ", { term: "1re" }, ", then ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              uk: ["Пишуть ", { term: "1er" }, " і ", { term: "1re" }, ", далі ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              es: ["Se escribe ", { term: "1er" }, " y ", { term: "1re" }, ", luego ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              pt: ["Escreve-se ", { term: "1er" }, " e ", { term: "1re" }, ", depois ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              de: ["Man schreibt ", { term: "1er" }, " und ", { term: "1re" }, ", dann ", { term: "2e" }, ", ", { term: "3e" }, " …"]
+              it: ["Si scrive ", { term: "1er" }, " e ", { term: "1re" }, ", poi ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              pl: ["Pisze się ", { term: "1er" }, " i ", { term: "1re" }, ", potem ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              tr: [{ term: "1er" }, " ve ", { term: "1re" }, " yazılır, sonra ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              id: ["Ditulis ", { term: "1er" }, " dan ", { term: "1re" }, ", lalu ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+              vi: ["Viết ", { term: "1er" }, " và ", { term: "1re" }, ", rồi ", { term: "2e" }, ", ", { term: "3e" }, "…"]
+            ex: ["le ", { target: "2e" }, " étage"]
+            tr: { en: "the second floor", uk: "другий поверх", es: "el segundo piso", pt: "o segundo andar", de: "der zweite Stock", it: "il secondo piano", pl: "drugie piętro", tr: "ikinci kat", id: "lantai tiga", vi: "tầng ba" }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["En France, le rez-de-chaussée n’est pas un étage : le ", { term: "premier étage" }, " est au-dessus."]
+              en: ["In France, the ", { term: "rez-de-chaussée" }, " is not counted as a floor: the ", { term: "premier étage" }, " is above it."]
+              uk: ["У Франції ", { term: "rez-de-chaussée" }, " не вважають поверхом: ", { term: "premier étage" }, " — над ним."]
+              es: ["En Francia, el ", { term: "rez-de-chaussée" }, " no cuenta como piso: el ", { term: "premier étage" }, " está encima."]
+              pt: ["Na França, o ", { term: "rez-de-chaussée" }, " não conta como andar: o ", { term: "premier étage" }, " fica acima dele."]
+              de: ["In Frankreich zählt das ", { term: "rez-de-chaussée" }, " nicht als Stockwerk: Das ", { term: "premier étage" }, " liegt darüber."]
+              it: ["In Francia il ", { term: "rez-de-chaussée" }, " non conta come piano: il ", { term: "premier étage" }, " è sopra."]
+              pl: ["We Francji ", { term: "rez-de-chaussée" }, " nie jest piętrem: ", { term: "premier étage" }, " jest nad nim."]
+              tr: ["Fransa’da ", { term: "rez-de-chaussée" }, " kat sayılmaz: ", { term: "premier étage" }, " onun üstündedir."]
+              id: ["Di Prancis, ", { term: "rez-de-chaussée" }, " tidak dihitung sebagai lantai: ", { term: "premier étage" }, " berada di atasnya."]
+              vi: ["Ở Pháp, ", { term: "rez-de-chaussée" }, " không tính là tầng: ", { term: "premier étage" }, " nằm phía trên nó."]
+            ex: ["Le café est au ", { target: "premier" }, " étage."]
+            tr: { en: "The café is on the first floor above the ground floor.", uk: "Кафе на другому поверсі, над першим.", es: "El café está en el primer piso, sobre la planta baja.", pt: "O café fica no primeiro andar, acima do térreo.", de: "Das Café liegt im ersten Stock, über dem Erdgeschoss.", it: "Il bar è al primo piano, sopra il piano terra.", pl: "Kawiarnia jest na pierwszym piętrze, nad parterem.", tr: "Kafe, zemin katın üstündeki birinci kattadır.", id: "Kafenya ada di lantai dua, di atas lantai dasar.", vi: "Quán cà phê ở tầng một, phía trên tầng trệt." }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: ["Au-delà de dix, la règle est la même : ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              en: ["Beyond ten, the rule is the same: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              uk: ["Після десяти правило те саме: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              es: ["Después del diez, la regla es la misma: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              pt: ["Depois do dez, a regra é a mesma: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              de: ["Nach der Zehn gilt dieselbe Regel: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              it: ["Dopo il dieci la regola è la stessa: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              pl: ["Po dziesięciu obowiązuje ta sama reguła: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              tr: ["Ondan sonra da kural aynıdır: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              id: ["Setelah sepuluh, aturannya sama: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+              vi: ["Sau mười, quy tắc vẫn như vậy: ", { term: "onzième" }, ", ", { term: "vingtième" }, ", ", { term: "vingt et unième" }, "."]
+            ex: ["C’est mon ", { ordinal: { target: "vingtième" }, value: 20 }, " anniversaire."]
+            tr: { en: "It's my twentieth birthday.", uk: "Це мій двадцятий день народження.", es: "Es mi vigésimo cumpleaños.", pt: "É o meu vigésimo aniversário.", de: "Es ist mein zwanzigster Geburtstag.", it: "È il mio ventesimo compleanno.", pl: "To moje dwudzieste urodziny.", tr: "Bu benim yirminci doğum günüm.", id: "Ini ulang tahun saya yang kedua puluh.", vi: "Đây là sinh nhật lần thứ hai mươi của tôi." }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: [{ term: "Second" }, " et ", { term: "seconde" }, " remplacent ", { term: "deuxième" }, " quand il n’y a que deux éléments."]
+              en: [{ term: "Second" }, " and ", { term: "seconde" }, " replace ", { term: "deuxième" }, " when there are only two items."]
+              uk: [{ term: "Second" }, " і ", { term: "seconde" }, " замінюють ", { term: "deuxième" }, ", коли є лише два елементи."]
+              es: [{ term: "Second" }, " y ", { term: "seconde" }, " sustituyen a ", { term: "deuxième" }, " cuando solo hay dos elementos."]
+              pt: [{ term: "Second" }, " e ", { term: "seconde" }, " substituem ", { term: "deuxième" }, " quando há só dois elementos."]
+              de: [{ term: "Second" }, " und ", { term: "seconde" }, " ersetzen ", { term: "deuxième" }, ", wenn es nur zwei Elemente gibt."]
+              it: [{ term: "Second" }, " e ", { term: "seconde" }, " sostituiscono ", { term: "deuxième" }, " quando gli elementi sono solo due."]
+              pl: [{ term: "Second" }, " i ", { term: "seconde" }, " zastępują ", { term: "deuxième" }, ", gdy są tylko dwa elementy."]
+              tr: [{ term: "Second" }, " ve ", { term: "seconde" }, ", yalnızca iki öğe olduğunda ", { term: "deuxième" }, " yerine kullanılır."]
+              id: [{ term: "Second" }, " dan ", { term: "seconde" }, " menggantikan ", { term: "deuxième" }, " bila hanya ada dua unsur."]
+              vi: [{ term: "Second" }, " và ", { term: "seconde" }, " thay cho ", { term: "deuxième" }, " khi chỉ có hai phần tử."]
+            ex: ["Je voyage en ", { target: "seconde" }, " classe."]
+            tr: { en: "I travel second class.", uk: "Я їду другим класом.", es: "Viajo en segunda clase.", pt: "Viajo em segunda classe.", de: "Ich fahre zweiter Klasse.", it: "Viaggio in seconda classe.", pl: "Podróżuję drugą klasą.", tr: "İkinci mevkide seyahat ediyorum.", id: "Saya bepergian di kelas dua.", vi: "Tôi đi bằng hạng hai." }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour les dates, voir ", { link: "Jours, mois et dates", to: "fr.bases.jours-mois-dates" }, "."]
+              en: ["For dates, see ", { link: "Days, Months and Dates", to: fr.bases.jours-mois-dates }, "."]
+              uk: ["Про дати див. ", { link: "Дні, місяці та дати", to: "fr.bases.jours-mois-dates" }, "."]
+              es: ["Para las fechas, ver ", { link: "Días, meses y fechas", to: "fr.bases.jours-mois-dates" }, "."]
+              pt: ["Para as datas, veja ", { link: "Dias, meses e datas", to: "fr.bases.jours-mois-dates" }, "."]
+              de: ["Zu den Datumsangaben siehe ", { link: "Tage, Monate und Datumsangaben", to: "fr.bases.jours-mois-dates" }, "."]
+              it: ["Per le date, vedi ", { link: "Giorni, mesi e date", to: "fr.bases.jours-mois-dates" }, "."]
+              pl: ["O datach zob. ", { link: "Dni, miesiące i daty", to: "fr.bases.jours-mois-dates" }, "."]
+              tr: ["Tarihler için bkz. ", { link: "Günler, aylar ve tarihler", to: "fr.bases.jours-mois-dates" }, "."]
+              id: ["Untuk tanggal, lihat ", { link: "Hari, bulan, dan tanggal", to: "fr.bases.jours-mois-dates" }, "."]
+              vi: ["Về ngày tháng, xem ", { link: "Thứ, tháng và ngày", to: "fr.bases.jours-mois-dates" }, "."]
+  - title:
+      fr: "Prix et numéros de téléphone"
+      en: "Prices and phone numbers"
+      uk: "Ціни та номери телефонів"
+      es: "Precios y números de teléfono"
+      pt: "Preços e números de telefone"
+      de: "Preise und Telefonnummern"
+      it: "Prezzi e numeri di telefono"
+      pl: "Ceny i numery telefonów"
+      tr: "Fiyatlar ve telefon numaraları"
+      id: "Harga dan nomor telepon"
+      vi: "Giá cả và số điện thoại"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - key: "written"
+            label:
+              fr: "À l’écrit"
+              en: "Written"
+              uk: "Письмово"
+              es: "Escrito"
+              pt: "Como se escreve"
+              de: "Geschrieben"
+              it: "Come si scrive"
+              pl: "Jak się pisze"
+              tr: "Yazılışı"
+              id: "Cara menulis"
+              vi: "Cách viết"
+          - key: "said"
+            label: { fr: "À l’oral", en: "Said", uk: "Усно", es: "Se dice", pt: "Como se diz", de: "Gesprochen", it: "Come si dice", pl: "Jak się mówi", tr: "Okunuşu", id: "Cara mengucapkan", vi: "Cách đọc" }
+        rows:
+          - level: "A1"
+            variety: "fr-FR"
+            written: "12,50 €"
+            said: ["Ça fait ", { target: "douze euros cinquante" }, "."]
+            tr: { en: "That comes to €12.50.", uk: "Це коштує 12,50 євро.", es: "Son 12,50 euros.", pt: "Dá 12,50 euros.", de: "Das macht 12,50 Euro.", it: "Fa 12,50 euro.", pl: "To wychodzi 12,50 euro.", tr: "Tutar 12,50 euro.", id: "Totalnya 12,50 euro.", vi: "Tổng cộng là 12,50 euro." }
+          - level: "A1"
+            variety: "fr-CA"
+            written: "12,50 $"
+            said: ["Ça fait ", { target: "douze dollars cinquante" }, "."]
+            tr: { en: "That comes to $12.50.", uk: "Це коштує 12,50 долара.", es: "Son 12,50 dólares.", pt: "Dá 12,50 dólares.", de: "Das macht 12,50 Dollar.", it: "Fa 12,50 dollari.", pl: "To wychodzi 12,50 dolara.", tr: "Tutar 12,50 dolar.", id: "Totalnya 12,50 dolar.", vi: "Tổng cộng là 12,50 đô la." }
+          - level: "A1"
+            variety: "fr-FR"
+            written: "06 12 34 56 78"
+            said: ["Mon numéro, c’est le ", { target: "zéro six, douze, trente-quatre, cinquante-six, soixante-dix-huit" }, "."]
+            tr: { en: "My number is 06 12 34 56 78.", uk: "Мій номер — 06 12 34 56 78.", es: "Mi número es el 06 12 34 56 78.", pt: "Meu número é 06 12 34 56 78.", de: "Meine Nummer ist 06 12 34 56 78.", it: "Il mio numero è 06 12 34 56 78.", pl: "Mój numer to 06 12 34 56 78.", tr: "Numaram 06 12 34 56 78.", id: "Nomor saya 06 12 34 56 78.", vi: "Số của tôi là 06 12 34 56 78." }
+          - level: "A1"
+            variety: "fr-CA"
+            written: "514 555-1234"
+            said: ["Mon numéro, c’est le ", { target: "cinq-un-quatre, cinq-cinq-cinq, un-deux-trois-quatre" }, "."]
+            tr: { en: "My number is 514 555-1234.", uk: "Мій номер — 514 555-1234.", es: "Mi número es el 514 555-1234.", pt: "Meu número é 514 555-1234.", de: "Meine Nummer ist 514 555-1234.", it: "Il mio numero è 514 555-1234.", pl: "Mój numer to 514 555-1234.", tr: "Numaram 514 555-1234.", id: "Nomor saya 514 555-1234.", vi: "Số của tôi là 514 555-1234." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Les centimes se disent comme un nombre, sans le mot ", { term: "centimes" }, " : ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              en: ["The cents are said as a plain number, without the word ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              uk: ["Центи називають простим числом, без слова ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              es: ["Los céntimos se dicen como un número simple, sin la palabra ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              pt: ["Os centavos dizem-se como um número simples, sem a palavra ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              de: ["Die Cent spricht man als einfache Zahl, ohne das Wort ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              it: ["I centesimi si dicono come un numero semplice, senza la parola ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              pl: ["Centy podaje się zwykłą liczbą, bez słowa ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              tr: ["Sent kısmı, ", { term: "centimes" }, " sözcüğü olmadan sade bir sayı olarak söylenir: ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              id: ["Sen diucapkan sebagai angka biasa, tanpa kata ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+              vi: ["Phần xu được đọc như một số bình thường, không có từ ", { term: "centimes" }, ": ", { mapping: [{ term: "3,20 €" }, { term: "trois euros vingt" }] }, "."]
+            ex: { exchange: ["Ça coûte combien ?", [{ target: "Trois euros vingt" }, "."]] }
+            tr: { en: "How much is it? — Three euros twenty.", uk: "Скільки це коштує? — Три євро двадцять.", es: "¿Cuánto cuesta? — Tres euros veinte.", pt: "Quanto custa? — Três euros e vinte.", de: "Wie viel kostet das? — Drei Euro zwanzig.", it: "Quanto costa? — Tre euro e venti.", pl: "Ile to kosztuje? — Trzy euro dwadzieścia.", tr: "Ne kadar? — Üç euro yirmi.", id: "Berapa harganya? — Tiga euro dua puluh.", vi: "Cái này bao nhiêu tiền? — Ba euro hai mươi." }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "euro" }, " prend un s à partir de deux : ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              en: [{ term: "euro" }, " takes an s from two on: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              uk: [{ term: "euro" }, " має s від двох: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              es: [{ term: "euro" }, " lleva s a partir de dos: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              pt: [{ term: "euro" }, " leva s a partir de dois: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              de: [{ term: "euro" }, " nimmt ab zwei ein s: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              it: [{ term: "euro" }, " prende la s da due in poi: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              pl: [{ term: "euro" }, " dostaje s od dwóch: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              tr: [{ term: "euro" }, ", ikiden itibaren s alır: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              id: [{ term: "euro" }, " memakai s mulai dua: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+              vi: [{ term: "euro" }, " có s từ hai trở lên: ", { term: "un euro" }, ", ", { term: "deux euros" }, "."]
+            ex: ["Un café, c’est ", { target: "un euro" }, " cinquante."]
+            tr: { en: "A coffee costs one euro fifty.", uk: "Кава коштує один євро п’ятдесят.", es: "Un café cuesta un euro cincuenta.", pt: "Um café custa um euro e cinquenta.", de: "Ein Kaffee kostet einen Euro fünfzig.", it: "Un caffè costa un euro e cinquanta.", pl: "Kawa kosztuje jedno euro pięćdziesiąt.", tr: "Bir kahve bir euro elli.", id: "Secangkir kopi harganya satu euro lima puluh.", vi: "Một ly cà phê giá một euro năm mươi." }
+          - type: "rule"
+            level: "A1"
+            variety: "fr-FR"
+            text:
+              fr: "Un numéro de téléphone français a dix chiffres, dits par groupes de deux."
+              en: "A French phone number has ten digits, said in groups of two."
+              uk: "Французький номер телефону має десять цифр, які називають парами."
+              es: "Un número de teléfono francés tiene diez cifras, que se dicen de dos en dos."
+              pt: "Um número de telefone francês tem dez dígitos, ditos de dois em dois."
+              de: "Eine französische Telefonnummer hat zehn Ziffern, die in Zweiergruppen gesprochen werden."
+              it: "Un numero di telefono francese ha dieci cifre, dette a gruppi di due."
+              pl: "Francuski numer telefonu ma dziesięć cyfr, wymawianych parami."
+              tr: "Bir Fransız telefon numarası on haneden oluşur ve ikişerli gruplar halinde okunur."
+              id: "Nomor telepon Prancis terdiri atas sepuluh digit yang diucapkan per dua angka."
+              vi: "Số điện thoại Pháp có mười chữ số, đọc từng cặp hai số."
+          - type: "rule"
+            level: "A1"
+            variety: "fr-CA"
+            text:
+              fr: "Un numéro québécois a dix chiffres en trois groupes : l’indicatif régional, puis trois chiffres et quatre."
+              en: "A Québec phone number has ten digits in three groups: the area code, then three digits and four."
+              uk: "Квебекський номер телефону має десять цифр у трьох групах: код регіону, потім три цифри й чотири."
+              es: "Un número de teléfono de Quebec tiene diez cifras en tres grupos: el prefijo regional, luego tres cifras y cuatro."
+              pt: "Um número de telefone do Quebec tem dez dígitos em três grupos: o código regional, depois três dígitos e quatro."
+              de: "Eine Telefonnummer in Québec hat zehn Ziffern in drei Gruppen: die Vorwahl, dann drei Ziffern und vier."
+              it: "Un numero di telefono del Québec ha dieci cifre in tre gruppi: il prefisso regionale, poi tre cifre e quattro."
+              pl: "Numer telefonu w Quebecu ma dziesięć cyfr w trzech grupach: numer kierunkowy, potem trzy cyfry i cztery."
+              tr: "Québec’te bir telefon numarası üç grupta on haneden oluşur: bölge kodu, sonra üç ve dört hane."
+              id: "Nomor telepon Québec terdiri atas sepuluh digit dalam tiga kelompok: kode area, lalu tiga digit dan empat digit."
+              vi: "Số điện thoại ở Québec có mười chữ số chia làm ba nhóm: mã vùng, rồi ba chữ số và bốn chữ số."
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A0"
+            wrong: "vingt et deux"
+            right: { target: "vingt-deux" }
+            rule:
+              fr: [{ term: "et" }, " ne s’emploie qu’avec ", { term: "un" }, " : ", { term: "vingt et un" }, ", mais ", { term: "vingt-deux" }]
+              en: [{ term: "et" }, " is used only with ", { term: "un" }, ": ", { term: "vingt et un" }, ", but ", { term: "vingt-deux" }]
+              uk: [{ term: "et" }, " вживається лише з ", { term: "un" }, ": ", { term: "vingt et un" }, ", але ", { term: "vingt-deux" }]
+              es: [{ term: "et" }, " solo se usa con ", { term: "un" }, ": ", { term: "vingt et un" }, ", pero ", { term: "vingt-deux" }]
+              pt: [{ term: "et" }, " só se usa com ", { term: "un" }, ": ", { term: "vingt et un" }, ", mas ", { term: "vingt-deux" }]
+              de: [{ term: "et" }, " steht nur bei ", { term: "un" }, ": ", { term: "vingt et un" }, ", aber ", { term: "vingt-deux" }]
+              it: [{ term: "et" }, " si usa solo con ", { term: "un" }, ": ", { term: "vingt et un" }, ", ma ", { term: "vingt-deux" }]
+              pl: [{ term: "et" }, " używa się tylko z ", { term: "un" }, ": ", { term: "vingt et un" }, ", ale ", { term: "vingt-deux" }]
+              tr: [{ term: "et" }, " yalnızca ", { term: "un" }, " ile kullanılır: ", { term: "vingt et un" }, ", ama ", { term: "vingt-deux" }]
+              id: [{ term: "et" }, " hanya dipakai dengan ", { term: "un" }, ": ", { term: "vingt et un" }, ", tetapi ", { term: "vingt-deux" }]
+              vi: [{ term: "et" }, " chỉ dùng với ", { term: "un" }, ": ", { term: "vingt et un" }, ", nhưng ", { term: "vingt-deux" }]
+          - level: "A1"
+            wrong: "deux et vingt"
+            right: { target: "vingt-deux" }
+            rule: { de: ["die Zehner stehen vor den Einern, ohne ", { term: "und" }, ": ", { term: "vingt-deux" }, ", nicht wie im Deutschen „zweiundzwanzig“"] }
+            speakers: ["de"]
+          - level: "A1"
+            wrong: "soixante-dix-un"
+            right: { target: "soixante et onze" }
+            rule:
+              fr: ["71 se dit ", { term: "soixante et onze" }, " : on compte ", { pattern: ["60", "11"] }]
+              en: ["71 is ", { term: "soixante et onze" }, ": it counts ", { pattern: ["60", "11"] }]
+              uk: ["71 — це ", { term: "soixante et onze" }, ": рахують ", { pattern: ["60", "11"] }]
+              es: ["71 se dice ", { term: "soixante et onze" }, ": se cuenta ", { pattern: ["60", "11"] }]
+              pt: ["71 diz-se ", { term: "soixante et onze" }, ": conta-se ", { pattern: ["60", "11"] }]
+              de: ["71 heißt ", { term: "soixante et onze" }, ": Man zählt ", { pattern: ["60", "11"] }]
+              it: ["71 si dice ", { term: "soixante et onze" }, ": si conta ", { pattern: ["60", "11"] }]
+              pl: ["71 to ", { term: "soixante et onze" }, ": liczy się ", { pattern: ["60", "11"] }]
+              tr: ["71, ", { term: "soixante et onze" }, " diye söylenir: ", { pattern: ["60", "11"] }, " sayılır"]
+              id: ["71 diucapkan ", { term: "soixante et onze" }, ": dihitung ", { pattern: ["60", "11"] }]
+              vi: ["71 đọc là ", { term: "soixante et onze" }, ": đếm ", { pattern: ["60", "11"] }]
+          - level: "A1"
+            wrong: "quatre-vingts-deux"
+            right: [{ target: "quatre-vingt" }, "-deux"]
+            rule:
+              fr: [{ term: "quatre-vingts" }, " perd son s devant un autre nombre"]
+              en: [{ term: "quatre-vingts" }, " loses its s before another number"]
+              uk: [{ term: "quatre-vingts" }, " втрачає s перед іншим числом"]
+              es: [{ term: "quatre-vingts" }, " pierde la s ante otro número"]
+              pt: [{ term: "quatre-vingts" }, " perde o s diante de outro número"]
+              de: [{ term: "quatre-vingts" }, " verliert sein s vor einer weiteren Zahl"]
+              it: [{ term: "quatre-vingts" }, " perde la s davanti a un altro numero"]
+              pl: [{ term: "quatre-vingts" }, " traci s przed inną liczbą"]
+              tr: [{ term: "quatre-vingts" }, ", başka bir sayıdan önce s’yi kaybeder"]
+              id: [{ term: "quatre-vingts" }, " kehilangan s sebelum angka lain"]
+              vi: [{ term: "quatre-vingts" }, " mất chữ s trước một số khác"]
+          - level: "A1"
+            wrong: "quatre-vingt ans"
+            right: [{ target: "quatre-vingts" }, " ans"]
+            rule:
+              fr: [{ term: "quatre-vingts" }, " prend un s quand il termine le nombre"]
+              en: [{ term: "quatre-vingts" }, " takes an s when it ends the number"]
+              uk: [{ term: "quatre-vingts" }, " має s, коли закінчує число"]
+              es: [{ term: "quatre-vingts" }, " lleva s cuando termina el número"]
+              pt: [{ term: "quatre-vingts" }, " leva s quando termina o número"]
+              de: [{ term: "quatre-vingts" }, " nimmt ein s, wenn es die Zahl beendet"]
+              it: [{ term: "quatre-vingts" }, " prende la s quando chiude il numero"]
+              pl: [{ term: "quatre-vingts" }, " dostaje s, gdy kończy liczbę"]
+              tr: [{ term: "quatre-vingts" }, " sayıyı bitirdiğinde s alır"]
+              id: [{ term: "quatre-vingts" }, " memakai s bila mengakhiri angka"]
+              vi: [{ term: "quatre-vingts" }, " có s khi đứng cuối số"]
+          - level: "A1"
+            wrong: "deux cent euros"
+            right: ["deux ", { target: "cents" }, " euros"]
+            rule:
+              fr: [{ term: "cent" }, " prend un s après un nombre, s’il termine le nombre"]
+              en: [{ term: "cent" }, " takes an s after a number if it ends the number"]
+              uk: [{ term: "cent" }, " має s після числа, якщо закінчує числівник"]
+              es: [{ term: "cent" }, " lleva s tras un número si termina el numeral"]
+              pt: [{ term: "cent" }, " leva s depois de um número se termina o numeral"]
+              de: [{ term: "cent" }, " nimmt nach einer Zahl ein s, wenn es die Zahl beendet"]
+              it: [{ term: "cent" }, " prende la s dopo un numero se chiude il numerale"]
+              pl: [{ term: "cent" }, " dostaje s po liczbie, jeśli kończy liczebnik"]
+              tr: [{ term: "cent" }, ", sayıyı bitiriyorsa bir sayıdan sonra s alır"]
+              id: [{ term: "cent" }, " memakai s setelah angka bila mengakhiri bilangan"]
+              vi: [{ term: "cent" }, " có s sau một số nếu đứng cuối số"]
+          - level: "A1"
+            wrong: "un cent euros"
+            right: [{ target: "cent" }, " euros"]
+            rule: { en: ["“a hundred” is ", { term: "cent" }, " alone, with no ", { term: "un" }], de: ["„hundert“ heißt ", { term: "cent" }, " allein, ohne ", { term: "un" }] }
+            speakers: ["en", "de"]
+          - level: "A1"
+            wrong: "trois milles personnes"
+            right: ["trois ", { target: "mille" }, " personnes"]
+            rule:
+              fr: [{ term: "mille" }, " ne prend jamais de s"]
+              en: [{ term: "mille" }, " never takes an s"]
+              uk: [{ term: "mille" }, " ніколи не має s"]
+              es: [{ term: "mille" }, " nunca lleva s"]
+              pt: [{ term: "mille" }, " nunca leva s"]
+              de: [{ term: "mille" }, " nimmt nie ein s"]
+              it: [{ term: "mille" }, " non prende mai la s"]
+              pl: [{ term: "mille" }, " nigdy nie ma s"]
+              tr: [{ term: "mille" }, " asla s almaz"]
+              id: [{ term: "mille" }, " tidak pernah memakai s"]
+              vi: [{ term: "mille" }, " không bao giờ có s"]
+          - level: "A1"
+            wrong: "C’est le unième étage."
+            right: ["C’est le ", { target: "premier" }, " étage."]
+            rule:
+              fr: ["pour 1, l’ordinal est ", { term: "premier" }, " ; ", { term: "unième" }, " n’existe que dans ", { term: "vingt et unième" }]
+              en: ["for 1, the ordinal is ", { term: "premier" }, "; ", { term: "unième" }, " exists only in ", { term: "vingt et unième" }]
+              uk: ["для 1 порядковий числівник — ", { term: "premier" }, "; ", { term: "unième" }, " є лише в ", { term: "vingt et unième" }]
+              es: ["para 1 el ordinal es ", { term: "premier" }, "; ", { term: "unième" }, " solo existe en ", { term: "vingt et unième" }]
+              pt: ["para 1 o ordinal é ", { term: "premier" }, "; ", { term: "unième" }, " só existe em ", { term: "vingt et unième" }]
+              de: ["für 1 lautet die Ordnungszahl ", { term: "premier" }, "; ", { term: "unième" }, " gibt es nur in ", { term: "vingt et unième" }]
+              it: ["per 1 l’ordinale è ", { term: "premier" }, "; ", { term: "unième" }, " esiste solo in ", { term: "vingt et unième" }]
+              pl: ["dla 1 liczebnik porządkowy to ", { term: "premier" }, "; ", { term: "unième" }, " istnieje tylko w ", { term: "vingt et unième" }]
+              tr: ["1 için sıra sayısı ", { term: "premier" }, "’dir; ", { term: "unième" }, " yalnızca ", { term: "vingt et unième" }, " içinde vardır"]
+              id: ["untuk 1, ordinalnya ", { term: "premier" }, "; ", { term: "unième" }, " hanya ada dalam ", { term: "vingt et unième" }]
+              vi: ["với 1, số thứ tự là ", { term: "premier" }, "; ", { term: "unième" }, " chỉ có trong ", { term: "vingt et unième" }]
+          - level: "A1"
+            wrong: "le cinqième étage"
+            right: ["le ", { target: "cinquième" }, " étage"]
+            rule:
+              fr: [{ term: "cinq" }, " prend un u devant ", { ending: "ième" }]
+              en: [{ term: "cinq" }, " gains a u before ", { ending: "ième" }]
+              uk: [{ term: "cinq" }, " отримує u перед ", { ending: "ième" }]
+              es: [{ term: "cinq" }, " recibe una u ante ", { ending: "ième" }]
+              pt: [{ term: "cinq" }, " ganha um u diante de ", { ending: "ième" }]
+              de: [{ term: "cinq" }, " erhält vor ", { ending: "ième" }, " ein u"]
+              it: [{ term: "cinq" }, " prende una u davanti a ", { ending: "ième" }]
+              pl: [{ term: "cinq" }, " dostaje u przed ", { ending: "ième" }]
+              tr: [{ term: "cinq" }, ", ", { ending: "ième" }, " öncesinde u alır"]
+              id: [{ term: "cinq" }, " mendapat u sebelum ", { ending: "ième" }]
+              vi: [{ term: "cinq" }, " thêm u trước ", { ending: "ième" }]
+          - level: "A1"
+            wrong: "le neufième étage"
+            right: ["le ", { target: "neuvième" }, " étage"]
+            rule:
+              fr: [{ term: "neuf" }, " change son f en v devant ", { ending: "ième" }]
+              en: [{ term: "neuf" }, " changes its f to v before ", { ending: "ième" }]
+              uk: [{ term: "neuf" }, " змінює f на v перед ", { ending: "ième" }]
+              es: [{ term: "neuf" }, " cambia la f por v ante ", { ending: "ième" }]
+              pt: [{ term: "neuf" }, " troca o f por v diante de ", { ending: "ième" }]
+              de: [{ term: "neuf" }, " wechselt vor ", { ending: "ième" }, " f zu v"]
+              it: [{ term: "neuf" }, " cambia la f in v davanti a ", { ending: "ième" }]
+              pl: [{ term: "neuf" }, " zmienia f na v przed ", { ending: "ième" }]
+              tr: [{ term: "neuf" }, ", ", { ending: "ième" }, " öncesinde f’sini v’ye çevirir"]
+              id: [{ term: "neuf" }, " mengubah f menjadi v sebelum ", { ending: "ième" }]
+              vi: [{ term: "neuf" }, " đổi f thành v trước ", { ending: "ième" }]
+          - level: "A2"
+            wrong: "un million personnes"
+            right: ["un million ", { target: "de" }, " personnes"]
+            rule:
+              fr: [{ term: "million" }, " est un nom : il prend ", { term: "de" }, " devant le nom"]
+              en: [{ term: "million" }, " is a noun: it takes ", { term: "de" }, " before the noun"]
+              uk: [{ term: "million" }, " — іменник: перед іменником він вимагає ", { term: "de" }]
+              es: [{ term: "million" }, " es un sustantivo: lleva ", { term: "de" }, " ante el nombre"]
+              pt: [{ term: "million" }, " é um substantivo: leva ", { term: "de" }, " antes do nome"]
+              de: [{ term: "million" }, " ist ein Nomen: Vor dem Nomen steht ", { term: "de" }]
+              it: [{ term: "million" }, " è un nome: vuole ", { term: "de" }, " davanti al nome"]
+              pl: [{ term: "million" }, " to rzeczownik: przed rzeczownikiem stoi ", { term: "de" }]
+              tr: [{ term: "million" }, " bir addır: addan önce ", { term: "de" }, " gelir"]
+              id: [{ term: "million" }, " adalah kata benda: sebelum kata benda muncul ", { term: "de" }]
+              vi: [{ term: "million" }, " là danh từ: trước danh từ có ", { term: "de" }]
+          - { level: "A2", wrong: "1,000 euros", right: "1 000 euros", rule: { en: ["a space groups the thousands and a comma marks the decimals: ", { term: "1 000,50" }] }, speakers: ["en"] }

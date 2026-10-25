@@ -1,0 +1,844 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "ja.sentence-basics.word-order"
+lang: "ja"
+kind: "grammar"
+tags: ["word order", "verb last", "particles", "modifiers", "dropped subject"]
+concepts: ["word-order"]
+related: ["ja.sentence-basics.wa-ga", "ja.sentence-basics.particles-o-ni-de-e", "ja.sentence-basics.desu", "ja.linking.noun-modification"]
+status: { en: "draft", uk: "draft", es: "draft", pt: "draft", fr: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { uk: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", es: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", pt: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", fr: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", de: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", it: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", pl: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", tr: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", id: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212", vi: "fbf3a2 16d8bf 33ffc4 a99c0a 55f6d1 65354e 33d191 1e903d c7c212" }
+title:
+  en: "Word Order"
+  uk: "Порядок слів"
+  es: "Orden de las palabras"
+  pt: "Ordem das palavras"
+  fr: "Ordre des mots"
+  de: "Wortstellung"
+  it: "Ordine delle parole"
+  pl: "Szyk zdania"
+  tr: "Sözcük sırası"
+  id: "Urutan kata"
+  vi: "Trật tự từ"
+summary:
+  lead:
+    en: "The verb comes last and particles mark each word’s role; time, place and object stand before it, and a modifier stands before its noun."
+    uk: "Дієслово стоїть наприкінці, а частки позначають роль кожного слова; час, місце й додаток стоять перед ним, а означення — перед іменником."
+    es: "El verbo va al final y las partículas marcan el papel de cada palabra; el tiempo, el lugar y el objeto van antes, y el modificador, antes de su sustantivo."
+    pt: "O verbo vem no fim e as partículas marcam a função de cada palavra; tempo, lugar e objeto vêm antes dele, e o modificador, antes do seu substantivo."
+    fr: "Le verbe vient en dernier et les particules marquent le rôle de chaque mot ; temps, lieu et objet le précèdent, et le déterminant précède son nom."
+    de: "Das Verb steht am Ende und Partikeln zeigen die Rolle jedes Wortes; Zeit, Ort und Objekt stehen davor, eine Bestimmung vor ihrem Nomen."
+    it: "Il verbo viene per ultimo e le particelle segnano il ruolo di ogni parola; tempo, luogo e oggetto lo precedono, il modificatore sta prima del nome."
+    pl: "Czasownik stoi na końcu, a partykuły wskazują rolę każdego wyrazu; czas, miejsce i dopełnienie stoją przed nim, a określenie przed rzeczownikiem."
+    tr: "Fiil sonda gelir, edatlar her sözcüğün görevini belirtir; zaman, yer ve nesne fiilden önce, tamlayan ise isimden önce gelir."
+    id: "Kata kerja berada di akhir dan partikel menandai peran tiap kata; waktu, tempat, dan objek mendahuluinya, penjelas berada sebelum kata bendanya."
+    vi: "Động từ đứng cuối câu, trợ từ đánh dấu vai trò từng từ; thời gian, nơi chốn, tân ngữ đứng trước nó, từ bổ nghĩa đứng trước danh từ."
+  rule:
+    en: "Put the verb last, and the other words with their particles before it:"
+    uk: "Поставте дієслово в кінець, а інші слова з їхніми частками — перед ним:"
+    es: "Pon el verbo al final y las demás palabras, con sus partículas, antes:"
+    pt: "Ponha o verbo no fim e as outras palavras, com suas partículas, antes dele:"
+    fr: "Mettez le verbe en dernier et les autres mots, avec leurs particules, avant lui :"
+    de: "Setze das Verb ans Ende und die übrigen Wörter mit ihren Partikeln davor:"
+    it: "Metti il verbo alla fine e le altre parole, con le loro particelle, prima:"
+    pl: "Postaw czasownik na końcu, a pozostałe wyrazy z ich partykułami przed nim:"
+    tr: "Fiili sona koy, diğer sözcükleri edatlarıyla birlikte önüne yerleştir:"
+    id: "Taruh kata kerja di akhir, dan kata lain beserta partikelnya sebelum itu:"
+    vi: "Đặt động từ ở cuối, các từ khác kèm trợ từ đứng trước nó:"
+  ex: [{ kanji: "私", reading: "わたし" }, "はパンを", { target: [{ kanji: "食", reading: "た" }, "べます"] }, "。"]
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point: { en: "Pattern", uk: "Модель", es: "Estructura", pt: "Estrutura", fr: "Structure", de: "Muster", it: "Struttura", pl: "Wzór", tr: "Kalıp", id: "Pola", vi: "Mẫu câu" }
+          rule:
+            en: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            uk: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            es: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            pt: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            fr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            de: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            it: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            pl: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            tr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            id: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            vi: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+          ex: [{ kanji: "私", reading: "わたし" }, "は", { target: "パンを" }, { kanji: "食", reading: "た" }, "べます。"]
+          tr: { en: "I eat bread.", uk: "Я їм хліб.", es: "Yo como pan.", pt: "Eu como pão.", fr: "Je mange du pain.", de: "Ich esse Brot.", it: "Mangio pane.", pl: "Jem chleb.", tr: "Ekmek yiyorum.", id: "Saya makan roti.", vi: "Tôi ăn bánh mì." }
+        - level: "A1"
+          point: { en: "Verb", uk: "Дієслово", es: "Verbo", pt: "Verbo", fr: "Verbe", de: "Verb", it: "Verbo", pl: "Czasownik", tr: "Fiil", id: "Kata kerja", vi: "Động từ" }
+          rule:
+            en: ["The verb, or ", { term: "です" }, ", ends the sentence."]
+            uk: ["Дієслово або ", { term: "です" }, " завершує речення."]
+            es: ["El verbo, o ", { term: "です" }, ", cierra la oración."]
+            pt: ["O verbo, ou ", { term: "です" }, ", fecha a frase."]
+            fr: ["Le verbe, ou ", { term: "です" }, ", termine la phrase."]
+            de: ["Das Verb oder ", { term: "です" }, " beendet den Satz."]
+            it: ["Il verbo, o ", { term: "です" }, ", chiude la frase."]
+            pl: ["Czasownik albo ", { term: "です" }, " kończy zdanie."]
+            tr: ["Fiil ya da ", { term: "です" }, " cümleyi bitirir."]
+            id: ["Kata kerja atau ", { term: "です" }, " menutup kalimat."]
+            vi: ["Động từ hoặc ", { term: "です" }, " kết thúc câu."]
+          ex: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, { target: "です" }, "。"]
+          tr: { en: "I am a student.", uk: "Я студент.", es: "Soy estudiante.", pt: "Eu sou estudante.", fr: "Je suis étudiant.", de: "Ich bin Student.", it: "Sono studente.", pl: "Jestem studentem.", tr: "Ben öğrenciyim.", id: "Saya mahasiswa.", vi: "Tôi là sinh viên." }
+        - level: "A1"
+          point: { en: "Particles", uk: "Частки", es: "Partículas", pt: "Partículas", fr: "Particules", de: "Partikeln", it: "Particelle", pl: "Partykuły", tr: "Edatlar", id: "Partikel", vi: "Trợ từ" }
+          rule:
+            en: "The particle marks the role, not the position."
+            uk: "Частка позначає роль, а не місце слова."
+            es: "La partícula marca el papel, no la posición."
+            pt: "A partícula marca a função, não a posição."
+            fr: "La particule marque le rôle, pas la place."
+            de: "Die Partikel zeigt die Rolle, nicht die Stellung."
+            it: "La particella segna il ruolo, non la posizione."
+            pl: "Partykuła wskazuje rolę, a nie miejsce."
+            tr: "Edat sırayı değil görevi belirtir."
+            id: "Partikel menandai peran, bukan posisi."
+            vi: "Trợ từ đánh dấu vai trò, không phải vị trí."
+          ex: { examples: [["いぬ", { target: "が" }, "ねこ", { target: "を" }, { kanji: "見", reading: "み" }, "ます。"], ["ねこ", { target: "が" }, "いぬ", { target: "を" }, { kanji: "見", reading: "み" }, "ます。"]] }
+          tr: { en: { examples: ["The dog looks at the cat.", "The cat looks at the dog."] }, uk: { examples: ["Пес дивиться на кота.", "Кіт дивиться на пса."] }, es: { examples: ["El perro mira al gato.", "El gato mira al perro."] }, pt: { examples: ["O cachorro olha para o gato.", "O gato olha para o cachorro."] }, fr: { examples: ["Le chien regarde le chat.", "Le chat regarde le chien."] }, de: { examples: ["Der Hund sieht die Katze an.", "Die Katze sieht den Hund an."] }, it: { examples: ["Il cane guarda il gatto.", "Il gatto guarda il cane."] }, pl: { examples: ["Pies patrzy na kota.", "Kot patrzy na psa."] }, tr: { examples: ["Köpek kediye bakıyor.", "Kedi köpeğe bakıyor."] }, id: { examples: ["Anjing melihat kucing.", "Kucing melihat anjing."] }, vi: { examples: ["Con chó nhìn con mèo.", "Con mèo nhìn con chó."] } }
+        - level: "A1"
+          point:
+            en: "Time and place"
+            uk: "Час і місце"
+            es: "Tiempo y lugar"
+            pt: "Tempo e lugar"
+            fr: "Temps et lieu"
+            de: "Zeit und Ort"
+            it: "Tempo e luogo"
+            pl: "Czas i miejsce"
+            tr: "Zaman ve yer"
+            id: "Waktu dan tempat"
+            vi: "Thời gian và nơi chốn"
+          rule:
+            en: "Time first, then place, then object, then the verb."
+            uk: "Спочатку час, потім місце, додаток і дієслово."
+            es: "Primero el tiempo, luego el lugar, el objeto y el verbo."
+            pt: "Primeiro o tempo, depois o lugar, o objeto e o verbo."
+            fr: "D’abord le temps, puis le lieu, l’objet et le verbe."
+            de: "Zuerst die Zeit, dann Ort, Objekt und Verb."
+            it: "Prima il tempo, poi il luogo, l’oggetto e il verbo."
+            pl: "Najpierw czas, potem miejsce, dopełnienie i czasownik."
+            tr: "Önce zaman, sonra yer, nesne ve fiil gelir."
+            id: "Waktu dulu, lalu tempat, objek, dan kata kerja."
+            vi: "Thời gian trước, rồi nơi chốn, tân ngữ và động từ."
+          ex: [{ kanji: "私", reading: "わたし" }, "は", { target: "けさ" }, "、", { target: "うちで" }, "パンを", { kanji: "食", reading: "た" }, "べました。"]
+          tr: { en: "I ate bread at home this morning.", uk: "Сьогодні вранці я їв хліб удома.", es: "Esta mañana comí pan en casa.", pt: "Hoje de manhã comi pão em casa.", fr: "Ce matin, j’ai mangé du pain à la maison.", de: "Heute Morgen habe ich zu Hause Brot gegessen.", it: "Stamattina ho mangiato pane a casa.", pl: "Dziś rano jadłem chleb w domu.", tr: "Bu sabah evde ekmek yedim.", id: "Pagi ini saya makan roti di rumah.", vi: "Sáng nay tôi ăn bánh mì ở nhà." }
+        - level: "A1"
+          point: { en: "Modifier", uk: "Означення", es: "Modificador", pt: "Modificador", fr: "Déterminant", de: "Bestimmung", it: "Modificatore", pl: "Określenie", tr: "Tamlayan", id: "Penjelas", vi: "Từ bổ nghĩa" }
+          rule:
+            en: "A modifier stands before its noun."
+            uk: "Означення стоїть перед своїм іменником."
+            es: "El modificador va antes de su sustantivo."
+            pt: "O modificador vem antes do seu substantivo."
+            fr: "Le déterminant précède son nom."
+            de: "Die Bestimmung steht vor ihrem Nomen."
+            it: "Il modificatore sta prima del suo nome."
+            pl: "Określenie stoi przed swoim rzeczownikiem."
+            tr: "Tamlayan, isimden önce gelir."
+            id: "Penjelas berada sebelum kata bendanya."
+            vi: "Từ bổ nghĩa đứng trước danh từ của nó."
+          ex: ["これは", { target: [{ kanji: "小", reading: "ちい" }, "さい"] }, "ねこです。"]
+          tr: { en: "This is a small cat.", uk: "Це маленький кіт.", es: "Este es un gato pequeño.", pt: "Este é um gato pequeno.", fr: "C’est un petit chat.", de: "Das ist eine kleine Katze.", it: "Questo è un gatto piccolo.", pl: "To mały kot.", tr: "Bu küçük bir kedi.", id: "Ini kucing kecil.", vi: "Đây là một con mèo nhỏ." }
+        - level: "A1"
+          point: { en: "Number", uk: "Кількість", es: "Cantidad", pt: "Quantidade", fr: "Quantité", de: "Menge", it: "Quantità", pl: "Liczba", tr: "Sayı", id: "Jumlah", vi: "Số lượng" }
+          rule:
+            en: "A number follows its noun and particle."
+            uk: "Число стоїть після іменника з часткою."
+            es: "El número va tras el sustantivo y su partícula."
+            pt: "O número vem depois do substantivo e da partícula."
+            fr: "Le nombre suit le nom et sa particule."
+            de: "Die Zahl folgt dem Nomen mit Partikel."
+            it: "Il numero segue il nome e la particella."
+            pl: "Liczba stoi po rzeczowniku i jego partykule."
+            tr: "Sayı, isimden ve edatından sonra gelir."
+            id: "Angka berada sesudah kata benda dan partikelnya."
+            vi: "Số lượng đứng sau danh từ và trợ từ."
+          ex: [{ kanji: "私", reading: "わたし" }, "はりんごを", { target: "ふたつ" }, { kanji: "食", reading: "た" }, "べます。"]
+          tr: { en: "I eat two apples.", uk: "Я їм два яблука.", es: "Como dos manzanas.", pt: "Eu como duas maçãs.", fr: "Je mange deux pommes.", de: "Ich esse zwei Äpfel.", it: "Mangio due mele.", pl: "Jem dwa jabłka.", tr: "İki elma yiyorum.", id: "Saya makan dua apel.", vi: "Tôi ăn hai quả táo." }
+        - level: "A1"
+          point:
+            en: "Dropped words"
+            uk: "Пропущені слова"
+            es: "Palabras omitidas"
+            pt: "Palavras omitidas"
+            fr: "Mots omis"
+            de: "Weggelassene Wörter"
+            it: "Parole omesse"
+            pl: "Pomijane słowa"
+            tr: "Atlanan sözcükler"
+            id: "Kata yang dilesapkan"
+            vi: "Từ được lược bỏ"
+          rule:
+            en: ["A subject that is clear stays unsaid, and so does ", { term: "あなた" }, "."]
+            uk: ["Зрозумілий підмет не промовляють, так само й ", { term: "あなた" }, "."]
+            es: ["El sujeto claro no se dice, ni tampoco ", { term: "あなた" }, "."]
+            pt: ["O sujeito claro não se diz, nem ", { term: "あなた" }, "."]
+            fr: ["Un sujet clair ne se dit pas, ni ", { term: "あなた" }, "."]
+            de: ["Ein klares Subjekt bleibt ungesagt, ebenso ", { term: "あなた" }, "."]
+            it: ["Il soggetto chiaro non si dice, e nemmeno ", { term: "あなた" }, "."]
+            pl: ["Jasny podmiot się pomija, tak samo ", { term: "あなた" }, "."]
+            tr: ["Anlaşılan özne söylenmez, ", { term: "あなた" }, " da söylenmez."]
+            id: ["Subjek yang jelas tidak diucapkan, begitu juga ", { term: "あなた" }, "."]
+            vi: ["Chủ ngữ đã rõ thì bỏ đi, ", { term: "あなた" }, " cũng vậy."]
+          ex: { exchange: [["コーヒーを", { kanji: "飲", reading: "の" }, "みますか。"], ["はい、", { kanji: "飲", reading: "の" }, "みます。"]] }
+          tr: { en: { exchange: ["Do you drink coffee?", "Yes, I do."] }, uk: { exchange: ["Ви п’єте каву?", "Так, п’ю."] }, es: { exchange: ["¿Tomas café?", "Sí, tomo."] }, pt: { exchange: ["Você toma café?", "Sim, tomo."] }, fr: { exchange: ["Vous prenez du café ?", "Oui, j’en prends."] }, de: { exchange: ["Trinkst du Kaffee?", "Ja, ich trinke welchen."] }, it: { exchange: ["Prendi il caffè?", "Sì, lo prendo."] }, pl: { exchange: ["Pijesz kawę?", "Tak, piję."] }, tr: { exchange: ["Kahve içer misin?", "Evet, içerim."] }, id: { exchange: ["Kamu minum kopi?", "Ya, saya minum."] }, vi: { exchange: ["Bạn có uống cà phê không?", "Có, tôi uống."] } }
+        - level: "A2"
+          point:
+            en: "Free order"
+            uk: "Вільний порядок"
+            es: "Orden libre"
+            pt: "Ordem livre"
+            fr: "Ordre libre"
+            de: "Freie Stellung"
+            it: "Ordine libero"
+            pl: "Swobodny szyk"
+            tr: "Serbest sıra"
+            id: "Urutan bebas"
+            vi: "Trật tự tự do"
+          rule:
+            en: "Particle phrases may swap; the verb stays last."
+            uk: "Звороти з частками можна міняти місцями; дієслово лишається останнім."
+            es: "Los grupos con partícula pueden cambiar de sitio; el verbo sigue al final."
+            pt: "Os grupos com partícula podem trocar de lugar; o verbo continua no fim."
+            fr: "Les groupes à particule peuvent permuter ; le verbe reste en dernier."
+            de: "Partikelgruppen dürfen die Plätze tauschen; das Verb bleibt am Ende."
+            it: "I gruppi con particella possono scambiarsi; il verbo resta alla fine."
+            pl: "Człony z partykułami mogą zamieniać się miejscami; czasownik zostaje na końcu."
+            tr: "Edatlı öbekler yer değiştirebilir; fiil sonda kalır."
+            id: "Frasa berpartikel boleh bertukar tempat; kata kerja tetap di akhir."
+            vi: "Các cụm có trợ từ có thể đổi chỗ; động từ vẫn ở cuối."
+          ex: { equivalence: [[{ kanji: "私", reading: "わたし" }, "はうちでパンを", { kanji: "食", reading: "た" }, "べます。"], [{ kanji: "私", reading: "わたし" }, "はパンをうちで", { kanji: "食", reading: "た" }, "べます。"]] }
+          tr: { en: "I eat bread at home.", uk: "Я їм хліб удома.", es: "Como pan en casa.", pt: "Eu como pão em casa.", fr: "Je mange du pain à la maison.", de: "Ich esse zu Hause Brot.", it: "Mangio pane a casa.", pl: "Jem chleb w domu.", tr: "Evde ekmek yiyorum.", id: "Saya makan roti di rumah.", vi: "Tôi ăn bánh mì ở nhà." }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["Nothing but ", { term: "か" }, ", ", { term: "ね" }, " or ", { term: "よ" }, " follows the verb."]
+            uk: ["Після дієслова може стояти лише ", { term: "か" }, ", ", { term: "ね" }, " або ", { term: "よ" }, "."]
+            es: ["Tras el verbo solo pueden ir ", { term: "か" }, ", ", { term: "ね" }, " o ", { term: "よ" }, "."]
+            pt: ["Depois do verbo só podem vir ", { term: "か" }, ", ", { term: "ね" }, " ou ", { term: "よ" }, "."]
+            fr: ["Seuls ", { term: "か" }, ", ", { term: "ね" }, " ou ", { term: "よ" }, " peuvent suivre le verbe."]
+            de: ["Nach dem Verb steht nur ", { term: "か" }, ", ", { term: "ね" }, " oder ", { term: "よ" }, "."]
+            it: ["Dopo il verbo possono seguire solo ", { term: "か" }, ", ", { term: "ね" }, " o ", { term: "よ" }, "."]
+            pl: ["Po czasowniku może stać tylko ", { term: "か" }, ", ", { term: "ね" }, " lub ", { term: "よ" }, "."]
+            tr: ["Fiilden sonra yalnızca ", { term: "か" }, ", ", { term: "ね" }, " ya da ", { term: "よ" }, " gelebilir."]
+            id: ["Setelah kata kerja hanya ", { term: "か" }, ", ", { term: "ね" }, ", atau ", { term: "よ" }, " yang boleh ada."]
+            vi: ["Sau động từ chỉ có thể là ", { term: "か" }, ", ", { term: "ね" }, " hoặc ", { term: "よ" }, "."]
+          ex: [{ kanji: "私", reading: "わたし" }, "はパンを", { target: [{ kanji: "食", reading: "た" }, "べます"] }, "。"]
+          tr: { en: "I eat bread.", uk: "Я їм хліб.", es: "Yo como pan.", pt: "Eu como pão.", fr: "Je mange du pain.", de: "Ich esse Brot.", it: "Mangio pane.", pl: "Jem chleb.", tr: "Ekmek yiyorum.", id: "Saya makan roti.", vi: "Tôi ăn bánh mì." }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " and ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " come before the noun they describe."]
+            uk: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " і ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " стоять перед іменником, який вони описують."]
+            es: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " y ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " van antes del sustantivo al que describen."]
+            pt: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " e ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " vêm antes do substantivo que descrevem."]
+            fr: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " et ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " précèdent le nom qu’ils décrivent."]
+            de: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " und ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " stehen vor dem Nomen, das sie beschreiben."]
+            it: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " e ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " stanno prima del nome che descrivono."]
+            pl: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " i ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " stoją przed rzeczownikiem, który opisują."]
+            tr: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " ve ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, ", niteledikleri isimden önce gelir."]
+            id: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " dan ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " berada sebelum kata benda yang dijelaskan."]
+            vi: [{ term: [{ kanji: "小", reading: "ちい" }, "さい"] }, " và ", { term: [{ kanji: "日本", reading: "にほん" }, "の"] }, " đứng trước danh từ mà chúng mô tả."]
+          ex: ["これは", { target: [{ kanji: "日本", reading: "にほん" }, "の"] }, { kanji: "本", reading: "ほん" }, "です。"]
+          tr: { en: "This is a Japanese book.", uk: "Це японська книга.", es: "Este es un libro japonés.", pt: "Este é um livro japonês.", fr: "C’est un livre japonais.", de: "Das ist ein japanisches Buch.", it: "Questo è un libro giapponese.", pl: "To japońska książka.", tr: "Bu Japonca bir kitap.", id: "Ini buku Jepang.", vi: "Đây là sách tiếng Nhật." }
+sections:
+  - title:
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      fr: "Vue d’ensemble"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["The verb comes last: the sentence ends with it, or with ", { term: "です" }, "."]
+              uk: ["Дієслово стоїть останнім: ним, або ", { term: "です" }, ", закінчується речення."]
+              es: ["El verbo va al final: la oración termina con él, o con ", { term: "です" }, "."]
+              pt: ["O verbo vem no fim: a frase termina com ele, ou com ", { term: "です" }, "."]
+              fr: ["Le verbe vient en dernier : la phrase se termine par lui, ou par ", { term: "です" }, "."]
+              de: ["Das Verb steht am Ende: Der Satz endet mit ihm oder mit ", { term: "です" }, "."]
+              it: ["Il verbo viene per ultimo: la frase finisce con lui, o con ", { term: "です" }, "."]
+              pl: ["Czasownik stoi na końcu: zdanie kończy się nim albo ", { term: "です" }, "."]
+              tr: ["Fiil sonda gelir: cümle onunla ya da ", { term: "です" }, " ile biter."]
+              id: ["Kata kerja berada di akhir: kalimat berakhir dengannya, atau dengan ", { term: "です" }, "."]
+              vi: ["Động từ đứng cuối: câu kết thúc bằng nó hoặc bằng ", { term: "です" }, "."]
+            ex: [{ kanji: "私", reading: "わたし" }, "はパンを", { target: [{ kanji: "食", reading: "た" }, "べます"] }, "。"]
+            tr: { en: "I eat bread.", uk: "Я їм хліб.", es: "Yo como pan.", pt: "Eu como pão.", fr: "Je mange du pain.", de: "Ich esse Brot.", it: "Mangio pane.", pl: "Jem chleb.", tr: "Ekmek yiyorum.", id: "Saya makan roti.", vi: "Tôi ăn bánh mì." }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: "A particle after each word marks its role; the meaning follows the particles, not the position."
+              uk: "Частка після кожного слова позначає його роль; зміст залежить від часток, а не від місця слова."
+              es: "Una partícula tras cada palabra marca su papel; el sentido depende de las partículas, no de la posición."
+              pt: "Uma partícula depois de cada palavra marca a sua função; o sentido depende das partículas, não da posição."
+              fr: "Une particule après chaque mot marque son rôle ; le sens dépend des particules, pas de la place."
+              de: "Eine Partikel hinter jedem Wort zeigt seine Rolle; die Bedeutung folgt den Partikeln, nicht der Stellung."
+              it: "Una particella dopo ogni parola ne segna il ruolo; il senso dipende dalle particelle, non dalla posizione."
+              pl: "Partykuła po każdym wyrazie wskazuje jego rolę; sens zależy od partykuł, nie od miejsca."
+              tr: "Her sözcükten sonra gelen edat görevini belirtir; anlam sıraya değil edatlara bağlıdır."
+              id: "Partikel setelah tiap kata menandai perannya; makna mengikuti partikel, bukan posisi."
+              vi: "Trợ từ sau mỗi từ đánh dấu vai trò của nó; ý nghĩa theo trợ từ chứ không theo vị trí."
+            ex: { examples: [["いぬ", { target: "が" }, "ねこ", { target: "を" }, { kanji: "見", reading: "み" }, "ます。"], ["ねこ", { target: "が" }, "いぬ", { target: "を" }, { kanji: "見", reading: "み" }, "ます。"]] }
+            tr: { en: { examples: ["The dog looks at the cat.", "The cat looks at the dog."] }, uk: { examples: ["Пес дивиться на кота.", "Кіт дивиться на пса."] }, es: { examples: ["El perro mira al gato.", "El gato mira al perro."] }, pt: { examples: ["O cachorro olha para o gato.", "O gato olha para o cachorro."] }, fr: { examples: ["Le chien regarde le chat.", "Le chat regarde le chien."] }, de: { examples: ["Der Hund sieht die Katze an.", "Die Katze sieht den Hund an."] }, it: { examples: ["Il cane guarda il gatto.", "Il gatto guarda il cane."] }, pl: { examples: ["Pies patrzy na kota.", "Kot patrzy na psa."] }, tr: { examples: ["Köpek kediye bakıyor.", "Kedi köpeğe bakıyor."] }, id: { examples: ["Anjing melihat kucing.", "Kucing melihat anjing."] }, vi: { examples: ["Con chó nhìn con mèo.", "Con mèo nhìn con chó."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: "A modifier stands before its noun, and the noun it describes comes last."
+              uk: "Означення стоїть перед іменником, а описуваний іменник завжди останній."
+              es: "El modificador va antes del sustantivo, y el sustantivo descrito va al final."
+              pt: "O modificador vem antes do substantivo, e o substantivo descrito vem no fim."
+              fr: "Le déterminant précède le nom, et le nom décrit vient en dernier."
+              de: "Die Bestimmung steht vor dem Nomen, und das beschriebene Nomen kommt zuletzt."
+              it: "Il modificatore sta prima del nome, e il nome descritto viene per ultimo."
+              pl: "Określenie stoi przed rzeczownikiem, a opisywany rzeczownik jest ostatni."
+              tr: "Tamlayan isimden önce gelir, tanımlanan isim en sonda durur."
+              id: "Penjelas berada sebelum kata benda, dan kata benda yang dijelaskan berada paling akhir."
+              vi: "Từ bổ nghĩa đứng trước danh từ, và danh từ được mô tả đứng cuối cùng."
+            ex: ["これは", { target: [{ kanji: "私", reading: "わたし" }, "の", { kanji: "小", reading: "ちい" }, "さい"] }, "ねこです。"]
+            tr: { en: "This is my small cat.", uk: "Це мій маленький кіт.", es: "Este es mi gato pequeño.", pt: "Este é o meu gato pequeno.", fr: "C’est mon petit chat.", de: "Das ist meine kleine Katze.", it: "Questo è il mio gatto piccolo.", pl: "To mój mały kot.", tr: "Bu benim küçük kedim.", id: "Ini kucing kecil saya.", vi: "Đây là con mèo nhỏ của tôi." }
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["A question keeps the order and ends in ", { term: "か" }, ". See ", { link: "Questions", to: "ja.sentence-basics.questions" }, "."]
+              uk: ["Питання зберігає порядок слів і закінчується на ", { term: "か" }, ". Див. ", { link: "Питання", to: "ja.sentence-basics.questions" }, "."]
+              es: ["La pregunta conserva el orden y termina en ", { term: "か" }, ". Véase ", { link: "Las preguntas", to: "ja.sentence-basics.questions" }, "."]
+              pt: ["A pergunta mantém a ordem e termina em ", { term: "か" }, ". Veja ", { link: "As perguntas", to: "ja.sentence-basics.questions" }, "."]
+              fr: ["La question garde l’ordre et se termine par ", { term: "か" }, ". Voir ", { link: "Les questions", to: "ja.sentence-basics.questions" }, "."]
+              de: ["Die Frage behält die Stellung und endet auf ", { term: "か" }, ". Siehe ", { link: "Fragen", to: "ja.sentence-basics.questions" }, "."]
+              it: ["La domanda mantiene l’ordine e finisce con ", { term: "か" }, ". Vedi ", { link: "Le domande", to: "ja.sentence-basics.questions" }, "."]
+              pl: ["Pytanie zachowuje szyk i kończy się na ", { term: "か" }, ". Zob. ", { link: "Pytania", to: "ja.sentence-basics.questions" }, "."]
+              tr: ["Soru sırayı korur ve ", { term: "か" }, " ile biter. Bkz. ", { link: "Soru cümleleri", to: "ja.sentence-basics.questions" }, "."]
+              id: ["Pertanyaan mempertahankan urutan dan diakhiri ", { term: "か" }, ". Lihat ", { link: "Kalimat tanya", to: "ja.sentence-basics.questions" }, "."]
+              vi: ["Câu hỏi giữ nguyên trật tự và kết thúc bằng ", { term: "か" }, ". Xem ", { link: "Câu hỏi", to: "ja.sentence-basics.questions" }, "."]
+  - title:
+      en: "Form: the order of a sentence"
+      uk: "Форма: порядок слів у реченні"
+      es: "Forma: el orden de la oración"
+      pt: "Forma: a ordem da frase"
+      fr: "Forme : l’ordre de la phrase"
+      de: "Form: die Satzstellung"
+      it: "Forma: l’ordine della frase"
+      pl: "Forma: szyk zdania"
+      tr: "Biçim: cümlenin sırası"
+      id: "Bentuk: urutan dalam kalimat"
+      vi: "Dạng: trật tự trong câu"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { en: "Form", uk: "Форма", es: "Forma", pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            form:
+              en: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              uk: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              es: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              pt: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              fr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              de: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              it: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              pl: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              tr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              id: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+              vi: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "verb" }] }
+            ex: ["アンナさんは", { target: [{ kanji: "来", reading: "き" }, "ます"] }, "。"]
+            tr: { en: "Anna is coming.", uk: "Анна прийде.", es: "Viene Anna.", pt: "A Anna vem.", fr: "Anna vient.", de: "Anna kommt.", it: "Anna viene.", pl: "Anna przyjdzie.", tr: "Anna geliyor.", id: "Anna datang.", vi: "Anna sẽ đến." }
+          - level: "A1"
+            form:
+              en: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              uk: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              es: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              pt: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              fr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              de: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              it: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              pl: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              tr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              id: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              vi: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            ex: [{ kanji: "私", reading: "わたし" }, "はパン", { target: "を" }, { kanji: "食", reading: "た" }, "べます。"]
+            tr: { en: "I eat bread.", uk: "Я їм хліб.", es: "Yo como pan.", pt: "Eu como pão.", fr: "Je mange du pain.", de: "Ich esse Brot.", it: "Mangio pane.", pl: "Jem chleb.", tr: "Ekmek yiyorum.", id: "Saya makan roti.", vi: "Tôi ăn bánh mì." }
+          - level: "A1"
+            form:
+              en: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              uk: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              es: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              pt: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              fr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              de: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              it: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              pl: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              tr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              id: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+              vi: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "noun" }, { term: "へ" }, { slot: "verb" }] }
+            ex: [{ kanji: "私", reading: "わたし" }, "はがっこう", { target: "へ" }, { kanji: "行", reading: "い" }, "きます。"]
+            tr: { en: "I go to school.", uk: "Я йду до школи.", es: "Voy a la escuela.", pt: "Eu vou à escola.", fr: "Je vais à l’école.", de: "Ich gehe zur Schule.", it: "Vado a scuola.", pl: "Idę do szkoły.", tr: "Okula gidiyorum.", id: "Saya pergi ke sekolah.", vi: "Tôi đi đến trường." }
+          - level: "A1"
+            form:
+              en: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              uk: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              es: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              pt: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              fr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              de: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              it: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              pl: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              tr: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              id: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+              vi: { pattern: [{ slot: "subject" }, { term: "は" }, { slot: "the time" }, { slot: "noun" }, { term: "で" }, { slot: "noun" }, { term: "を" }, { slot: "verb" }] }
+            ex: [{ kanji: "私", reading: "わたし" }, "はけさ、うち", { target: "で" }, "パンを", { kanji: "食", reading: "た" }, "べました。"]
+            tr: { en: "I ate bread at home this morning.", uk: "Сьогодні вранці я їв хліб удома.", es: "Esta mañana comí pan en casa.", pt: "Hoje de manhã comi pão em casa.", fr: "Ce matin, j’ai mangé du pain à la maison.", de: "Heute Morgen habe ich zu Hause Brot gegessen.", it: "Stamattina ho mangiato pane a casa.", pl: "Dziś rano jadłem chleb w domu.", tr: "Bu sabah evde ekmek yedim.", id: "Pagi ini saya makan roti di rumah.", vi: "Sáng nay tôi ăn bánh mì ở nhà." }
+          - level: "A1"
+            form:
+              en: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              uk: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              es: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              pt: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              fr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              de: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              it: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              pl: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              tr: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              id: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+              vi: { pattern: [{ slot: "noun" }, { term: "は" }, { slot: "noun" }, { term: "です" }] }
+            ex: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "学生", reading: "がくせい" }, { target: "です" }, "。"]
+            tr: { en: "I am a student.", uk: "Я студент.", es: "Soy estudiante.", pt: "Eu sou estudante.", fr: "Je suis étudiant.", de: "Ich bin Student.", it: "Sono studente.", pl: "Jestem studentem.", tr: "Ben öğrenciyim.", id: "Saya mahasiswa.", vi: "Tôi là sinh viên." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["Nothing follows the verb but ", { term: "か" }, ", ", { term: "ね" }, " or ", { term: "よ" }, "."]
+              uk: ["Після дієслова стоять лише ", { term: "か" }, ", ", { term: "ね" }, " або ", { term: "よ" }, "."]
+              es: ["Tras el verbo solo van ", { term: "か" }, ", ", { term: "ね" }, " o ", { term: "よ" }, "."]
+              pt: ["Depois do verbo só vêm ", { term: "か" }, ", ", { term: "ね" }, " ou ", { term: "よ" }, "."]
+              fr: ["Seuls ", { term: "か" }, ", ", { term: "ね" }, " ou ", { term: "よ" }, " suivent le verbe."]
+              de: ["Hinter dem Verb stehen nur ", { term: "か" }, ", ", { term: "ね" }, " oder ", { term: "よ" }, "."]
+              it: ["Dopo il verbo vengono solo ", { term: "か" }, ", ", { term: "ね" }, " o ", { term: "よ" }, "."]
+              pl: ["Po czasowniku stoją tylko ", { term: "か" }, ", ", { term: "ね" }, " lub ", { term: "よ" }, "."]
+              tr: ["Fiilden sonra yalnızca ", { term: "か" }, ", ", { term: "ね" }, " ya da ", { term: "よ" }, " gelir."]
+              id: ["Setelah kata kerja hanya ada ", { term: "か" }, ", ", { term: "ね" }, ", atau ", { term: "よ" }, "."]
+              vi: ["Sau động từ chỉ có ", { term: "か" }, ", ", { term: "ね" }, " hoặc ", { term: "よ" }, "."]
+            ex: ["アンナさんはパンを", { kanji: "食", reading: "た" }, "べ", { target: "ますか" }, "。"]
+            tr: { en: "Does Anna eat bread?", uk: "Анна їсть хліб?", es: "¿Anna come pan?", pt: "A Anna come pão?", fr: "Anna mange du pain ?", de: "Isst Anna Brot?", it: "Anna mangia il pane?", pl: "Czy Anna je chleb?", tr: "Anna ekmek yer mi?", id: "Apakah Anna makan roti?", vi: "Anna có ăn bánh mì không?" }
+          - type: "rule"
+            level: "A1"
+            text:
+              en: ["The topic with ", { term: "は" }, " stands first. See ", { link: "は and が", to: "ja.sentence-basics.wa-ga" }, "."]
+              uk: ["Тема з ", { term: "は" }, " стоїть першою. Див. ", { link: "は і が", to: "ja.sentence-basics.wa-ga" }, "."]
+              es: ["El tema con ", { term: "は" }, " va primero. Véase ", { link: "は y が", to: "ja.sentence-basics.wa-ga" }, "."]
+              pt: ["O tópico com ", { term: "は" }, " vem primeiro. Veja ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, "."]
+              fr: ["Le thème avec ", { term: "は" }, " vient en premier. Voir ", { link: "は et が", to: "ja.sentence-basics.wa-ga" }, "."]
+              de: ["Das Thema mit ", { term: "は" }, " steht zuerst. Siehe ", { link: "は und が", to: "ja.sentence-basics.wa-ga" }, "."]
+              it: ["Il tema con ", { term: "は" }, " viene per primo. Vedi ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, "."]
+              pl: ["Temat z ", { term: "は" }, " stoi na początku. Zob. ", { link: "は i が", to: "ja.sentence-basics.wa-ga" }, "."]
+              tr: [{ term: "は" }, " ile konu en başta gelir. Bkz. ", { link: "は ve が", to: "ja.sentence-basics.wa-ga" }, "."]
+              id: ["Topik dengan ", { term: "は" }, " berada di awal. Lihat ", { link: "は dan が", to: "ja.sentence-basics.wa-ga" }, "."]
+              vi: ["Chủ đề với ", { term: "は" }, " đứng đầu. Xem ", { link: "は và が", to: "ja.sentence-basics.wa-ga" }, "."]
+  - title:
+      en: "Time and place"
+      uk: "Час і місце"
+      es: "Tiempo y lugar"
+      pt: "Tempo e lugar"
+      fr: "Le temps et le lieu"
+      de: "Zeit und Ort"
+      it: "Tempo e luogo"
+      pl: "Czas i miejsce"
+      tr: "Zaman ve yer"
+      id: "Waktu dan tempat"
+      vi: "Thời gian và nơi chốn"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: "Time before place, place before object"
+              uk: "Час перед місцем, місце перед додатком"
+              es: "El tiempo antes del lugar, el lugar antes del objeto"
+              pt: "O tempo antes do lugar, o lugar antes do objeto"
+              fr: "Le temps avant le lieu, le lieu avant l’objet"
+              de: "Zeit vor Ort, Ort vor Objekt"
+              it: "Il tempo prima del luogo, il luogo prima dell’oggetto"
+              pl: "Czas przed miejscem, miejsce przed dopełnieniem"
+              tr: "Zaman yerden, yer nesneden önce"
+              id: "Waktu sebelum tempat, tempat sebelum objek"
+              vi: "Thời gian trước nơi chốn, nơi chốn trước tân ngữ"
+            ex: [{ kanji: "私", reading: "わたし" }, "は", { target: "けさ" }, "、", { target: "うちで" }, "パンを", { kanji: "食", reading: "た" }, "べました。"]
+            tr: { en: "I ate bread at home this morning.", uk: "Сьогодні вранці я їв хліб удома.", es: "Esta mañana comí pan en casa.", pt: "Hoje de manhã comi pão em casa.", fr: "Ce matin, j’ai mangé du pain à la maison.", de: "Heute Morgen habe ich zu Hause Brot gegessen.", it: "Stamattina ho mangiato pane a casa.", pl: "Dziś rano jadłem chleb w domu.", tr: "Bu sabah evde ekmek yedim.", id: "Pagi ini saya makan roti di rumah.", vi: "Sáng nay tôi ăn bánh mì ở nhà." }
+          - level: "A1"
+            use:
+              en: "A day word stands alone, with no particle"
+              uk: "Слово дня стоїть без частки"
+              es: "Una palabra de día va sola, sin partícula"
+              pt: "Uma palavra de dia fica sozinha, sem partícula"
+              fr: "Un mot de jour reste seul, sans particule"
+              de: "Ein Tageswort steht allein, ohne Partikel"
+              it: "Una parola di giorno sta da sola, senza particella"
+              pl: "Słowo oznaczające dzień stoi bez partykuły"
+              tr: "Gün sözcüğü edatsız tek başına durur"
+              id: "Kata hari berdiri sendiri tanpa partikel"
+              vi: "Từ chỉ ngày đứng một mình, không có trợ từ"
+            ex: [{ target: "あした" }, { kanji: "日本", reading: "にほん" }, "へ", { kanji: "行", reading: "い" }, "きます。"]
+            tr: { en: "I am going to Japan tomorrow.", uk: "Завтра я їду до Японії.", es: "Mañana voy a Japón.", pt: "Amanhã eu vou ao Japão.", fr: "Demain, je vais au Japon.", de: "Morgen fahre ich nach Japan.", it: "Domani vado in Giappone.", pl: "Jutro jadę do Japonii.", tr: "Yarın Japonya’ya gidiyorum.", id: "Besok saya pergi ke Jepang.", vi: "Ngày mai tôi đi Nhật." }
+          - level: "A1"
+            use:
+              en: "From the wide to the narrow: day, then hour"
+              uk: "Від широкого до вужчого: день, потім година"
+              es: "De lo amplio a lo estrecho: día y luego hora"
+              pt: "Do amplo ao estreito: dia e depois hora"
+              fr: "Du large à l’étroit : le jour, puis l’heure"
+              de: "Vom Weiten zum Engen: Tag, dann Stunde"
+              it: "Dall’ampio allo stretto: giorno, poi ora"
+              pl: "Od szerokiego do wąskiego: dzień, potem godzina"
+              tr: "Genişten dara: önce gün, sonra saat"
+              id: "Dari luas ke sempit: hari, lalu jam"
+              vi: "Từ rộng đến hẹp: ngày rồi đến giờ"
+            ex: [{ target: [{ kanji: "日曜日", reading: "にちようび" }, "の", { kanji: "十時", reading: "じゅうじ" }, "に"] }, "ともだちにあいます。"]
+            tr: { en: "On Sunday at ten o’clock I meet a friend.", uk: "У неділю о десятій я зустрічаюся з другом.", es: "El domingo a las diez me encuentro con un amigo.", pt: "No domingo às dez eu encontro um amigo.", fr: "Dimanche à dix heures, je retrouve un ami.", de: "Am Sonntag um zehn Uhr treffe ich einen Freund.", it: "Domenica alle dieci incontro un amico.", pl: "W niedzielę o dziesiątej spotykam się z przyjacielem.", tr: "Pazar günü saat onda bir arkadaşımla buluşuyorum.", id: "Hari Minggu jam sepuluh saya bertemu teman.", vi: "Chủ nhật lúc mười giờ tôi gặp một người bạn." }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["The times themselves are in ", { link: "Telling the Time", to: ja.foundations.telling-time }, "; the particles を, に, で, へ in ", { link: "Particles を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              uk: ["Самі години — у темі ", { link: "Котра година", to: "ja.foundations.telling-time" }, "; частки を, に, で, へ — у темі ", { link: "Частки を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              es: ["Las horas mismas están en ", { link: "La hora", to: "ja.foundations.telling-time" }, "; las partículas を, に, で, へ, en ", { link: "Las partículas を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              pt: ["As próprias horas estão em ", { link: "As horas", to: "ja.foundations.telling-time" }, "; as partículas を, に, で, へ, em ", { link: "As partículas を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              fr: ["Les heures elles-mêmes sont dans ", { link: "L’heure", to: "ja.foundations.telling-time" }, " ; les particules を, に, で, へ, dans ", { link: "Les particules を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              de: ["Die Uhrzeiten selbst stehen in ", { link: "Die Uhrzeit", to: ja.foundations.telling-time }, "; die Partikeln を, に, で, へ in ", { link: "Die Partikeln を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              it: ["Le ore stesse sono in ", { link: "Dire l'ora", to: ja.foundations.telling-time }, "; le particelle を, に, で, へ in ", { link: "Le particelle を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              pl: ["Same godziny są w temacie ", { link: "Podawanie godziny", to: ja.foundations.telling-time }, "; partykuły を, に, で, へ w temacie ", { link: "Partykuły を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              tr: ["Saatlerin kendisi ", { link: "Saati söyleme", to: ja.foundations.telling-time }, " konusunda; を, に, で, へ edatları ", { link: "を, に, で, へ edatları", to: "ja.sentence-basics.particles-o-ni-de-e" }, " konusundadır."]
+              id: ["Jamnya sendiri ada di ", { link: "Menyebutkan jam", to: ja.foundations.telling-time }, "; partikel を, に, で, へ di ", { link: "Partikel を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+              vi: ["Bản thân các giờ nằm ở ", { link: "Nói giờ", to: ja.foundations.telling-time }, "; các trợ từ を, に, で, へ nằm ở ", { link: "Trợ từ を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, "."]
+  - title:
+      en: "Particles carry the roles"
+      uk: "Частки позначають ролі"
+      es: "Las partículas marcan los papeles"
+      pt: "As partículas marcam as funções"
+      fr: "Les particules marquent les rôles"
+      de: "Partikeln zeigen die Rollen"
+      it: "Le particelle segnano i ruoli"
+      pl: "Partykuły wskazują role"
+      tr: "Edatlar görevleri belirtir"
+      id: "Partikel menandai peran"
+      vi: "Trợ từ đánh dấu vai trò"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: "Swap the particles and the meaning swaps"
+              uk: "Поміняйте частки — зміниться й зміст"
+              es: "Cambia las partículas y cambia el sentido"
+              pt: "Troque as partículas e o sentido muda"
+              fr: "Échangez les particules et le sens change"
+              de: "Tausche die Partikeln, und die Bedeutung tauscht"
+              it: "Scambia le particelle e cambia il senso"
+              pl: "Zamień partykuły, a zmieni się sens"
+              tr: "Edatları değiştirirsen anlam değişir"
+              id: "Tukar partikelnya dan maknanya berubah"
+              vi: "Đổi trợ từ thì nghĩa đổi theo"
+            ex: { examples: [["いぬ", { target: "が" }, "ねこ", { target: "を" }, { kanji: "見", reading: "み" }, "ます。"], ["ねこ", { target: "が" }, "いぬ", { target: "を" }, { kanji: "見", reading: "み" }, "ます。"]] }
+            tr: { en: { examples: ["The dog looks at the cat.", "The cat looks at the dog."] }, uk: { examples: ["Пес дивиться на кота.", "Кіт дивиться на пса."] }, es: { examples: ["El perro mira al gato.", "El gato mira al perro."] }, pt: { examples: ["O cachorro olha para o gato.", "O gato olha para o cachorro."] }, fr: { examples: ["Le chien regarde le chat.", "Le chat regarde le chien."] }, de: { examples: ["Der Hund sieht die Katze an.", "Die Katze sieht den Hund an."] }, it: { examples: ["Il cane guarda il gatto.", "Il gatto guarda il cane."] }, pl: { examples: ["Pies patrzy na kota.", "Kot patrzy na psa."] }, tr: { examples: ["Köpek kediye bakıyor.", "Kedi köpeğe bakıyor."] }, id: { examples: ["Anjing melihat kucing.", "Kucing melihat anjing."] }, vi: { examples: ["Con chó nhìn con mèo.", "Con mèo nhìn con chó."] } }
+          - level: "A2"
+            use:
+              en: "Swap the phrases and the meaning stays"
+              uk: "Поміняйте звороти — зміст лишиться"
+              es: "Cambia los grupos y el sentido se mantiene"
+              pt: "Troque os grupos e o sentido continua"
+              fr: "Échangez les groupes et le sens reste"
+              de: "Tausche die Gruppen, und die Bedeutung bleibt"
+              it: "Scambia i gruppi e il senso resta"
+              pl: "Zamień człony, a sens zostanie"
+              tr: "Öbekleri değiştirirsen anlam aynı kalır"
+              id: "Tukar frasanya dan maknanya tetap"
+              vi: "Đổi chỗ các cụm thì nghĩa vẫn giữ"
+            ex: { equivalence: [[{ kanji: "私", reading: "わたし" }, "はうちでパンを", { kanji: "食", reading: "た" }, "べます。"], [{ kanji: "私", reading: "わたし" }, "はパンをうちで", { kanji: "食", reading: "た" }, "べます。"]] }
+            tr: { en: "I eat bread at home.", uk: "Я їм хліб удома.", es: "Como pan en casa.", pt: "Eu como pão em casa.", fr: "Je mange du pain à la maison.", de: "Ich esse zu Hause Brot.", it: "Mangio pane a casa.", pl: "Jem chleb w domu.", tr: "Evde ekmek yiyorum.", id: "Saya makan roti di rumah.", vi: "Tôi ăn bánh mì ở nhà." }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["The particles themselves: ", { link: "は and が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Particles を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Particles と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              uk: ["Самі частки: ", { link: "は і が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Частки を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Частки と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              es: ["Las partículas mismas: ", { link: "は y が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Las partículas を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Las partículas と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              pt: ["As próprias partículas: ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "As partículas を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "As partículas と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              fr: ["Les particules elles-mêmes : ", { link: "は et が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Les particules を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Les particules と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              de: ["Die Partikeln selbst: ", { link: "は und が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Die Partikeln を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Die Partikeln と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              it: ["Le particelle stesse: ", { link: "は e が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Le particelle を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Le particelle と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              pl: ["Same partykuły: ", { link: "は i が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Partykuły を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Partykuły と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              tr: ["Edatların kendisi: ", { link: "は ve が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "を, に, で, へ edatları", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "と, も, の edatları", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              id: ["Partikelnya sendiri: ", { link: "は dan が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Partikel を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Partikel と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+              vi: ["Bản thân các trợ từ: ", { link: "は và が", to: "ja.sentence-basics.wa-ga" }, ", ", { link: "Trợ từ を, に, で, へ", to: "ja.sentence-basics.particles-o-ni-de-e" }, ", ", { link: "Trợ từ と, も, の", to: "ja.sentence-basics.particles-to-mo-no" }, "."]
+  - title:
+      en: "Modifiers before the noun"
+      uk: "Означення перед іменником"
+      es: "Los modificadores antes del sustantivo"
+      pt: "Os modificadores antes do substantivo"
+      fr: "Les déterminants avant le nom"
+      de: "Bestimmungen vor dem Nomen"
+      it: "I modificatori prima del nome"
+      pl: "Określenia przed rzeczownikiem"
+      tr: "Tamlayanlar isimden önce gelir"
+      id: "Penjelas sebelum kata benda"
+      vi: "Từ bổ nghĩa đứng trước danh từ"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              uk: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              es: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              pt: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              fr: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              de: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              it: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              pl: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              tr: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              id: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+              vi: { pattern: [{ slot: "adjective" }, { slot: "noun" }] }
+            ex: ["これは", { target: [{ kanji: "小", reading: "ちい" }, "さい"] }, "ねこです。"]
+            tr: { en: "This is a small cat.", uk: "Це маленький кіт.", es: "Este es un gato pequeño.", pt: "Este é um gato pequeno.", fr: "C’est un petit chat.", de: "Das ist eine kleine Katze.", it: "Questo è un gatto piccolo.", pl: "To mały kot.", tr: "Bu küçük bir kedi.", id: "Ini kucing kecil.", vi: "Đây là một con mèo nhỏ." }
+          - level: "A1"
+            use:
+              en: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              uk: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              es: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              pt: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              fr: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              de: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              it: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              pl: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              tr: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              id: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+              vi: { pattern: [{ slot: "noun" }, { term: "の" }, { slot: "noun" }] }
+            ex: { examples: [["これは", { target: [{ kanji: "私", reading: "わたし" }, "の"] }, { kanji: "本", reading: "ほん" }, "です。"], ["これは", { target: [{ kanji: "日本", reading: "にほん" }, "の"] }, { kanji: "本", reading: "ほん" }, "です。"]] }
+            tr: { en: { examples: ["This is my book.", "This is a Japanese book."] }, uk: { examples: ["Це моя книга.", "Це японська книга."] }, es: { examples: ["Este es mi libro.", "Este es un libro japonés."] }, pt: { examples: ["Este é o meu livro.", "Este é um livro japonês."] }, fr: { examples: ["C’est mon livre.", "C’est un livre japonais."] }, de: { examples: ["Das ist mein Buch.", "Das ist ein japanisches Buch."] }, it: { examples: ["Questo è il mio libro.", "Questo è un libro giapponese."] }, pl: { examples: ["To moja książka.", "To japońska książka."] }, tr: { examples: ["Bu benim kitabım.", "Bu Japonca bir kitap."] }, id: { examples: ["Ini buku saya.", "Ini buku Jepang."] }, vi: { examples: ["Đây là sách của tôi.", "Đây là sách tiếng Nhật."] } }
+          - level: "A1"
+            use:
+              en: "Number after the noun and its particle"
+              uk: "Число після іменника з часткою"
+              es: "Número tras el sustantivo y su partícula"
+              pt: "Número depois do substantivo e da partícula"
+              fr: "Nombre après le nom et sa particule"
+              de: "Zahl nach dem Nomen mit Partikel"
+              it: "Numero dopo il nome e la particella"
+              pl: "Liczba po rzeczowniku i jego partykule"
+              tr: "Sayı isimden ve edatından sonra"
+              id: "Angka sesudah kata benda dan partikelnya"
+              vi: "Số lượng sau danh từ và trợ từ"
+            ex: [{ kanji: "私", reading: "わたし" }, "はりんごを", { target: "ふたつ" }, { kanji: "食", reading: "た" }, "べます。"]
+            tr: { en: "I eat two apples.", uk: "Я їм два яблука.", es: "Como dos manzanas.", pt: "Eu como duas maçãs.", fr: "Je mange deux pommes.", de: "Ich esse zwei Äpfel.", it: "Mangio due mele.", pl: "Jem dwa jabłka.", tr: "İki elma yiyorum.", id: "Saya makan dua apel.", vi: "Tôi ăn hai quả táo." }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["The adjectives: ", { link: "い-Adjectives", to: ja.adjectives.i-adjectives }, " and ", { link: "な-Adjectives", to: ja.adjectives.na-adjectives }, ". The numbers: ", { link: "Counters", to: "ja.foundations.counters" }, ". ", { term: "この" }, " and ", { term: "その" }, ": ", { link: "こそあど: This, That, Which", to: ja.sentence-basics.ko-so-a-do }, "."]
+              uk: ["Прикметники: ", { link: "い-прикметники", to: "ja.adjectives.i-adjectives" }, " та ", { link: "な-прикметники", to: "ja.adjectives.na-adjectives" }, ". Числа: ", { link: "Лічильні слова", to: "ja.foundations.counters" }, ". ", { term: "この" }, " і ", { term: "その" }, ": ", { link: "こそあど: цей, той, який", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              es: ["Los adjetivos: ", { link: "Los adjetivos い", to: "ja.adjectives.i-adjectives" }, " y ", { link: "Los adjetivos な", to: "ja.adjectives.na-adjectives" }, ". Los números: ", { link: "Los contadores", to: "ja.foundations.counters" }, ". ", { term: "この" }, " y ", { term: "その" }, ": ", { link: "こそあど: este, ese, aquel, cuál", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              pt: ["Os adjetivos: ", { link: "Os adjetivos い", to: "ja.adjectives.i-adjectives" }, " e ", { link: "Os adjetivos な", to: "ja.adjectives.na-adjectives" }, ". Os números: ", { link: "Contadores", to: ja.foundations.counters }, ". ", { term: "この" }, " e ", { term: "その" }, ": ", { link: "こそあど: este, esse, aquele, qual", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              fr: ["Les adjectifs : ", { link: "Les adjectifs en い", to: "ja.adjectives.i-adjectives" }, " et ", { link: "Les adjectifs en な", to: "ja.adjectives.na-adjectives" }, ". Les nombres : ", { link: "Les compteurs", to: "ja.foundations.counters" }, ". ", { term: "この" }, " et ", { term: "その" }, " : ", { link: "こそあど : ce, ce, celui-là, lequel", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              de: ["Die Adjektive: ", { link: "Die い-Adjektive", to: "ja.adjectives.i-adjectives" }, " und ", { link: "Die な-Adjektive", to: "ja.adjectives.na-adjectives" }, ". Die Zahlen: ", { link: "Zählwörter", to: "ja.foundations.counters" }, ". ", { term: "この" }, " und ", { term: "その" }, ": ", { link: "こそあど: dieser, der, jener, welcher", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              it: ["Gli aggettivi: ", { link: "Gli aggettivi in い", to: "ja.adjectives.i-adjectives" }, " e ", { link: "Gli aggettivi in な", to: "ja.adjectives.na-adjectives" }, ". I numeri: ", { link: "I contatori", to: "ja.foundations.counters" }, ". ", { term: "この" }, " e ", { term: "その" }, ": ", { link: "こそあど: questo, codesto, quello, quale", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              pl: ["Przymiotniki: ", { link: "Przymiotniki い", to: "ja.adjectives.i-adjectives" }, " i ", { link: "Przymiotniki な", to: "ja.adjectives.na-adjectives" }, ". Liczby: ", { link: "Liczniki", to: "ja.foundations.counters" }, ". ", { term: "この" }, " i ", { term: "その" }, ": ", { link: "こそあど: ten, ten, tamten, który", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              tr: ["Sıfatlar: ", { link: "い sıfatları", to: "ja.adjectives.i-adjectives" }, " ve ", { link: "な sıfatları", to: "ja.adjectives.na-adjectives" }, ". Sayılar: ", { link: "Sayaçlar", to: "ja.foundations.counters" }, ". ", { term: "この" }, " ve ", { term: "その" }, ": ", { link: "こそあど: bu, şu, o, hangisi", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              id: ["Kata sifat: ", { link: "Kata sifat い", to: "ja.adjectives.i-adjectives" }, " dan ", { link: "Kata sifat な", to: "ja.adjectives.na-adjectives" }, ". Bilangan: ", { link: "Kata bantu bilangan", to: "ja.foundations.counters" }, ". ", { term: "この" }, " dan ", { term: "その" }, ": ", { link: "こそあど: ini, itu, yang di sana, yang mana", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+              vi: ["Tính từ: ", { link: "Tính từ い", to: "ja.adjectives.i-adjectives" }, " và ", { link: "Tính từ な", to: "ja.adjectives.na-adjectives" }, ". Số lượng: ", { link: "Lượng từ", to: "ja.foundations.counters" }, ". ", { term: "この" }, " và ", { term: "その" }, ": ", { link: "こそあど: này, đó, kia, nào", to: "ja.sentence-basics.ko-so-a-do" }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              en: ["A whole clause can stand before a noun too. See ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": Clauses Before Nouns"], to: ja.linking.noun-modification }, "."]
+              uk: ["Перед іменником може стояти й ціле підрядне речення. Див. ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": речення перед іменником"], to: ja.linking.noun-modification }, "."]
+              es: ["Una cláusula entera también puede ir antes de un sustantivo. Véase ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": oraciones antes del sustantivo"], to: ja.linking.noun-modification }, "."]
+              pt: ["Uma oração inteira também pode vir antes de um substantivo. Veja ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": orações antes do substantivo"], to: ja.linking.noun-modification }, "."]
+              fr: ["Une proposition entière peut aussi précéder un nom. Voir ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, " : une proposition devant le nom"], to: ja.linking.noun-modification }, "."]
+              de: ["Auch ein ganzer Nebensatz kann vor einem Nomen stehen. Siehe ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": Sätze vor dem Nomen"], to: ja.linking.noun-modification }, "."]
+              it: ["Anche un’intera frase può stare prima di un nome. Vedi ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": proposizioni prima del nome"], to: ja.linking.noun-modification }, "."]
+              pl: ["Przed rzeczownikiem może stać też całe zdanie. Zob. ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": zdanie przed rzeczownikiem"], to: ja.linking.noun-modification }, "."]
+              tr: ["İsimden önce bütün bir yan cümle de gelebilir. Bkz. ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": ismin önündeki cümle"], to: ja.linking.noun-modification }, "."]
+              id: ["Satu klausa utuh juga bisa berada sebelum kata benda. Lihat ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": klausa sebelum kata benda"], to: ja.linking.noun-modification }, "."]
+              vi: ["Cả một mệnh đề cũng có thể đứng trước danh từ. Xem ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": mệnh đề đứng trước danh từ"], to: ja.linking.noun-modification }, "."]
+  - title:
+      en: "Dropped words"
+      uk: "Пропущені слова"
+      es: "Palabras omitidas"
+      pt: "Palavras omitidas"
+      fr: "Mots omis"
+      de: "Weggelassene Wörter"
+      it: "Parole omesse"
+      pl: "Pomijane słowa"
+      tr: "Atlanan sözcükler"
+      id: "Kata yang dilesapkan"
+      vi: "Từ được lược bỏ"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              en: [{ term: "あなた" }, " stays unsaid: the question is enough"]
+              uk: [{ term: "あなた" }, " не кажуть: досить самого питання"]
+              es: [{ term: "あなた" }, " no se dice: basta la pregunta"]
+              pt: [{ term: "あなた" }, " não se diz: basta a pergunta"]
+              fr: [{ term: "あなた" }, " ne se dit pas : la question suffit"]
+              de: [{ term: "あなた" }, " bleibt ungesagt: Die Frage genügt"]
+              it: [{ term: "あなた" }, " non si dice: basta la domanda"]
+              pl: [{ term: "あなた" }, " się pomija: wystarczy samo pytanie"]
+              tr: [{ term: "あなた" }, " söylenmez: soru yeter"]
+              id: [{ term: "あなた" }, " tidak diucapkan: pertanyaannya sudah cukup"]
+              vi: [{ term: "あなた" }, " không nói ra: câu hỏi là đủ"]
+            ex: { exchange: [["コーヒーを", { kanji: "飲", reading: "の" }, "みますか。"], ["はい、", { kanji: "飲", reading: "の" }, "みます。"]] }
+            tr: { en: { exchange: ["Do you drink coffee?", "Yes, I do."] }, uk: { exchange: ["Ви п’єте каву?", "Так, п’ю."] }, es: { exchange: ["¿Tomas café?", "Sí, tomo."] }, pt: { exchange: ["Você toma café?", "Sim, tomo."] }, fr: { exchange: ["Vous prenez du café ?", "Oui, j’en prends."] }, de: { exchange: ["Trinkst du Kaffee?", "Ja, ich trinke welchen."] }, it: { exchange: ["Prendi il caffè?", "Sì, lo prendo."] }, pl: { exchange: ["Pijesz kawę?", "Tak, piję."] }, tr: { exchange: ["Kahve içer misin?", "Evet, içerim."] }, id: { exchange: ["Kamu minum kopi?", "Ya, saya minum."] }, vi: { exchange: ["Bạn có uống cà phê không?", "Có, tôi uống."] } }
+          - level: "A1"
+            use:
+              en: "A subject that has been named carries over to the next sentence"
+              uk: "Названий підмет переходить у наступне речення"
+              es: "El sujeto ya nombrado pasa a la oración siguiente"
+              pt: "O sujeito já nomeado passa para a frase seguinte"
+              fr: "Le sujet déjà nommé passe à la phrase suivante"
+              de: "Ein genanntes Subjekt gilt für den nächsten Satz weiter"
+              it: "Il soggetto già nominato passa alla frase seguente"
+              pl: "Podmiot, który już padł, przechodzi do następnego zdania"
+              tr: "Adı geçen özne sonraki cümleye geçer"
+              id: "Subjek yang sudah disebut berlanjut ke kalimat berikutnya"
+              vi: "Chủ ngữ đã nêu được giữ sang câu sau"
+            ex: ["きのう、ともだちにあいました。いっしょにごはんを", { kanji: "食", reading: "た" }, "べました。"]
+            tr: { en: "Yesterday I met a friend. We ate a meal together.", uk: "Вчора я зустрівся з другом. Ми разом поїли.", es: "Ayer me encontré con un amigo. Comimos juntos.", pt: "Ontem encontrei um amigo. Comemos juntos.", fr: "Hier, j’ai retrouvé un ami. Nous avons mangé ensemble.", de: "Gestern habe ich einen Freund getroffen. Wir haben zusammen gegessen.", it: "Ieri ho incontrato un amico. Abbiamo mangiato insieme.", pl: "Wczoraj spotkałem się z przyjacielem. Zjedliśmy razem posiłek.", tr: "Dün bir arkadaşımla buluştum. Birlikte yemek yedik.", id: "Kemarin saya bertemu teman. Kami makan bersama.", vi: "Hôm qua tôi gặp một người bạn. Chúng tôi cùng ăn cơm." }
+          - level: "A2"
+            use:
+              en: "Casual speech also drops the particles"
+              uk: "У невимушеній мові часто опускають і частки"
+              es: "El habla informal omite también las partículas"
+              pt: "A fala informal omite também as partículas"
+              fr: "La langue familière omet aussi les particules"
+              de: "Die Umgangssprache lässt auch die Partikeln weg"
+              it: "Il parlato informale omette anche le particelle"
+              pl: "W mowie potocznej pomija się też partykuły"
+              tr: "Günlük konuşmada edatlar da düşer"
+              id: "Ragam santai juga melesapkan partikel"
+              vi: "Văn nói thân mật cũng bỏ cả trợ từ"
+            ex: ["もう、ごはん", { kanji: "食", reading: "た" }, "べた？"]
+            tr: { en: "Have you eaten yet?", uk: "Ти вже поїв?", es: "¿Ya comiste?", pt: "Você já comeu?", fr: "Tu as déjà mangé ?", de: "Hast du schon gegessen?", it: "Hai già mangiato?", pl: "Jadłeś już?", tr: "Yemek yedin mi?", id: "Sudah makan?", vi: "Bạn ăn cơm chưa?" }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A2"
+            text:
+              en: ["Casual speech uses the plain form. See ", { link: "The Plain Form", to: ja.verbs.plain-form }, "."]
+              uk: ["У невимушеній мові вживають просту форму. Див. ", { link: "Проста форма", to: "ja.verbs.plain-form" }, "."]
+              es: ["El habla informal usa la forma simple. Véase ", { link: "La forma simple", to: "ja.verbs.plain-form" }, "."]
+              pt: ["A fala informal usa a forma simples. Veja ", { link: "A forma simples", to: "ja.verbs.plain-form" }, "."]
+              fr: ["La langue familière emploie la forme simple. Voir ", { link: "La forme simple", to: "ja.verbs.plain-form" }, "."]
+              de: ["Die Umgangssprache verwendet die einfache Form. Siehe ", { link: "Die einfache Form", to: "ja.verbs.plain-form" }, "."]
+              it: ["Il parlato informale usa la forma semplice. Vedi ", { link: "La forma semplice", to: "ja.verbs.plain-form" }, "."]
+              pl: ["W mowie potocznej używa się formy prostej. Zob. ", { link: "Forma prosta", to: "ja.verbs.plain-form" }, "."]
+              tr: ["Günlük konuşmada yalın biçim kullanılır. Bkz. ", { link: "Yalın biçim", to: "ja.verbs.plain-form" }, "."]
+              id: ["Ragam santai memakai bentuk biasa. Lihat ", { link: "Bentuk biasa", to: "ja.verbs.plain-form" }, "."]
+              vi: ["Văn nói thân mật dùng thể thường. Xem ", { link: "Thể thường", to: "ja.verbs.plain-form" }, "."]
+  - title:
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      fr: "Erreurs fréquentes"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: [{ kanji: "私", reading: "わたし" }, "は", { kanji: "食", reading: "た" }, "べますパンを。"]
+            right: [{ kanji: "私", reading: "わたし" }, "はパンを", { target: [{ kanji: "食", reading: "た" }, "べます"] }, "。"]
+            rule:
+              en: "the verb comes last, after the object with its particle"
+              uk: "дієслово стоїть останнім, після додатка з часткою"
+              es: "el verbo va al final, tras el objeto con su partícula"
+              pt: "o verbo vem no fim, depois do objeto com a sua partícula"
+              fr: "le verbe vient en dernier, après l’objet avec sa particule"
+              de: "das Verb steht am Ende, hinter dem Objekt mit seiner Partikel"
+              it: "il verbo viene per ultimo, dopo l’oggetto con la sua particella"
+              pl: "czasownik stoi na końcu, po dopełnieniu z jego partykułą"
+              tr: "fiil, partikelli nesneden sonra en sonda gelir"
+              id: "kata kerja berada di akhir, setelah objek beserta partikelnya"
+              vi: "động từ đứng cuối, sau tân ngữ cùng trợ từ của nó"
+            speakers: ["en", "uk", "es", "pt", "fr", "de", "it", "pl", "id", "vi"]
+          - level: "A1"
+            wrong: ["これはねこ", { kanji: "小", reading: "ちい" }, "さいです。"]
+            right: ["これは", { target: [{ kanji: "小", reading: "ちい" }, "さい"] }, "ねこです。"]
+            rule:
+              en: "an adjective stands before its noun"
+              uk: "прикметник стоїть перед іменником"
+              es: "el adjetivo va antes del sustantivo"
+              pt: "o adjetivo vem antes do substantivo"
+              fr: "l’adjectif précède le nom"
+              de: "das Adjektiv steht vor dem Nomen"
+              it: "l’aggettivo sta prima del nome"
+              pl: "przymiotnik stoi przed rzeczownikiem"
+              tr: "sıfat isimden önce gelir"
+              id: "kata sifat berada sebelum kata benda"
+              vi: "tính từ đứng trước danh từ"
+            speakers: ["es", "pt", "fr", "it", "id", "vi"]
+          - level: "A1"
+            wrong: ["これは", { kanji: "本", reading: "ほん" }, { kanji: "日本", reading: "にほん" }, "です。"]
+            right: ["これは", { target: [{ kanji: "日本", reading: "にほん" }, "の"] }, { kanji: "本", reading: "ほん" }, "です。"]
+            rule:
+              en: ["the describing noun comes first, joined by ", { term: "の" }]
+              uk: ["іменник-означення стоїть першим, з’єднаний через ", { term: "の" }]
+              es: ["el sustantivo que describe va primero, unido con ", { term: "の" }]
+              pt: ["o substantivo que descreve vem primeiro, ligado por ", { term: "の" }]
+              fr: ["le nom qui décrit vient d’abord, relié par ", { term: "の" }]
+              de: ["das beschreibende Nomen steht zuerst, verbunden mit ", { term: "の" }]
+              it: ["il nome che descrive viene per primo, unito da ", { term: "の" }]
+              pl: ["rzeczownik opisujący stoi pierwszy, połączony przez ", { term: "の" }]
+              tr: ["niteleyen isim önce gelir, ", { term: "の" }, " ile bağlanır"]
+              id: ["kata benda penjelas berada lebih dulu, dihubungkan dengan ", { term: "の" }]
+              vi: ["danh từ mô tả đứng trước, nối bằng ", { term: "の" }]
+            speakers: ["es", "pt", "fr", "it", "id", "vi"]
+          - level: "A1"
+            wrong: ["あなたはコーヒーを", { kanji: "飲", reading: "の" }, "みますか。"]
+            right: ["コーヒーを", { kanji: "飲", reading: "の" }, "みますか。"]
+            rule:
+              en: [{ term: "あなた" }, " sounds blunt; when the listener is clear, the question stands without a subject"]
+              fr: [{ term: "あなた" }, " sonne abrupt ; quand l’interlocuteur est clair, la question se pose sans sujet"]
+              de: [{ term: "あなた" }, " klingt schroff; ist der Angesprochene klar, steht die Frage ohne Subjekt"]
+            speakers: ["en", "fr", "de"]

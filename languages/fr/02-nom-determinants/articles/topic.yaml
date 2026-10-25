@@ -1,0 +1,1051 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.nom-determinants.articles"
+lang: "fr"
+kind: "grammar"
+tags: ["articles", "determiners"]
+concepts: ["articles"]
+related: ["fr.nom-determinants.genre", "fr.nom-determinants.pluriel", "fr.nom-determinants.partitifs-quantites", "fr.bases.liaison-elision"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", uk: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", es: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", pt: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", de: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", it: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", pl: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", tr: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", id: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a", vi: "b3b52d 59ab62 e89785 fd835f 108249 5c5b4d e46db4 5091ff 4d6e5a" }
+title: { fr: "Les articles", en: "Articles", uk: "Артиклі", es: "Los artículos", pt: "Os artigos", de: "Die Artikel", it: "Gli articoli", pl: "Przedimki", tr: "Artikeller", id: "Artikel", vi: "Mạo từ" }
+summary:
+  lead:
+    fr: ["Le nom prend un article : ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " pour ce qu’on connaît, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " pour ce qui est nouveau."]
+    en: ["A noun takes an article: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " for what is known, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " for what is new."]
+    uk: ["Іменник має артикль: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " для відомого, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " для нового."]
+    es: ["El sustantivo lleva artículo: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " para lo conocido, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " para lo nuevo."]
+    pt: ["O substantivo leva artigo: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " para o que se conhece, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " para o que é novo."]
+    de: ["Das Nomen hat einen Artikel: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " für Bekanntes, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " für Neues."]
+    it: ["Il sostantivo prende un articolo: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " per ciò che è noto, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " per ciò che è nuovo."]
+    pl: ["Rzeczownik ma przedimek: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " dla tego, co znane, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " dla nowego."]
+    tr: ["İsim bir artikel alır: bilinen için ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, "; yeni olan için ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, "."]
+    id: ["Kata benda memakai artikel: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " untuk yang sudah dikenal, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " untuk yang baru."]
+    vi: ["Danh từ có mạo từ: ", { term: "le" }, ", ", { term: "la" }, ", ", { term: "les" }, " cho điều đã biết, ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " cho điều mới."]
+  rule:
+    fr: "Une chose en général prend l’article défini :"
+    en: "Things in general take the definite article:"
+    uk: "Речі загалом мають означений артикль:"
+    es: "Las cosas en general llevan artículo determinado:"
+    pt: "As coisas em geral levam artigo definido:"
+    de: "Dinge im Allgemeinen stehen mit dem bestimmten Artikel:"
+    it: "Le cose in generale vogliono l'articolo determinativo:"
+    pl: "Rzeczy ogólne mają przedimek określony:"
+    tr: "Genel anlamda söz edilen şeyler belirli artikel alır:"
+    id: "Benda secara umum memakai artikel tentu:"
+    vi: "Sự vật nói chung dùng mạo từ xác định:"
+  ex: { examples: [["J’aime ", { target: "le" }, " café."], ["J’adore ", { target: "les" }, " fraises."]] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point: { fr: "Défini", en: "Definite", uk: "Означений", es: "Determinado", pt: "Definido", de: "Bestimmt", it: "Determinativo", pl: "Określony", tr: "Belirli", id: "Tentu", vi: "Xác định" }
+          rule:
+            fr: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            en: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            uk: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            es: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            pt: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            de: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            it: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            pl: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            tr: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            id: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            vi: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+          ex: [{ target: "Le" }, " livre est sur ", { target: "la" }, " table."]
+          tr: { en: "The book is on the table.", uk: "Книга лежить на столі.", es: "El libro está sobre la mesa.", pt: "O livro está sobre a mesa.", de: "Das Buch liegt auf dem Tisch.", it: "Il libro è sul tavolo.", pl: "Książka leży na stole.", tr: "Kitap masanın üstünde.", id: "Buku itu ada di atas meja.", vi: "Quyển sách ở trên bàn." }
+        - level: "A1"
+          point:
+            fr: "Indéfini"
+            en: "Indefinite"
+            uk: "Неозначений"
+            es: "Indeterminado"
+            pt: "Indefinido"
+            de: "Unbestimmt"
+            it: "Indeterminativo"
+            pl: "Nieokreślony"
+            tr: "Belirsiz"
+            id: "Tak tentu"
+            vi: "Không xác định"
+          rule:
+            fr: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            en: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            uk: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            es: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            pt: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            de: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            it: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            pl: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            tr: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            id: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            vi: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+          ex: ["J’ai ", { target: "un" }, " chat."]
+          tr: { en: "I have a cat.", uk: "У мене є кіт.", es: "Tengo un gato.", pt: "Eu tenho um gato.", de: "Ich habe eine Katze.", it: "Ho un gatto.", pl: "Mam kota.", tr: "Bir kedim var.", id: "Aku punya seekor kucing.", vi: "Tôi có một con mèo." }
+        - level: "A1"
+          point: { fr: "Voyelle", en: "Vowel", uk: "Голосна", es: "Vocal", pt: "Vogal", de: "Vokal", it: "Vocale", pl: "Samogłoska", tr: "Ünlü", id: "Vokal", vi: "Nguyên âm" }
+          rule:
+            fr: [{ term: "l’" }, " devant une voyelle ou un h muet"]
+            en: [{ term: "l’" }, " before a vowel or a mute h"]
+            uk: [{ term: "l’" }, " перед голосною або німим h"]
+            es: [{ term: "l’" }, " ante vocal o h muda"]
+            pt: [{ term: "l’" }, " antes de vogal ou h mudo"]
+            de: [{ term: "l’" }, " vor Vokal oder stummem h"]
+            it: [{ term: "l’" }, " davanti a vocale o h muta"]
+            pl: [{ term: "l’" }, " przed samogłoską lub niemym h"]
+            tr: ["ünlüden ya da sessiz h’den önce ", { term: "l’" }]
+            id: [{ term: "l’" }, " sebelum vokal atau h bisu"]
+            vi: [{ term: "l’" }, " trước nguyên âm hoặc h câm"]
+          ex: { examples: [[{ target: "l’" }, "école"], [{ target: "l’" }, "ami"]] }
+          tr: { en: { examples: ["the school", "the friend"] }, uk: { examples: ["школа", "друг"] }, es: { examples: ["la escuela", "el amigo"] }, pt: { examples: ["a escola", "o amigo"] }, de: { examples: ["die Schule", "der Freund"] }, it: { examples: ["la scuola", "l'amico"] }, pl: { examples: ["szkoła", "przyjaciel"] }, tr: { examples: ["okul", "arkadaş"] }, id: { examples: ["sekolah", "teman"] }, vi: { examples: ["trường học", "người bạn"] } }
+        - level: "A1"
+          point:
+            fr: "Contraction avec à"
+            en: "Contraction with à"
+            uk: "Злиття з à"
+            es: "Contracción con à"
+            pt: "Contração com à"
+            de: "Verschmelzung mit à"
+            it: "Contrazione con à"
+            pl: "Zlanie z à"
+            tr: "à ile birleşme"
+            id: "Kontraksi dengan à"
+            vi: "Rút gọn với à"
+          rule:
+            fr: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            en: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            uk: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            es: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            pt: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            de: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            it: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            pl: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            tr: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            id: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+            vi: [{ mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }, ", ", { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }]
+          ex: { examples: [["Je vais ", { target: "au" }, " café."], ["Elle parle ", { target: "aux" }, " enfants."]] }
+          tr: { en: { examples: ["I'm going to the café.", "She is talking to the children."] }, uk: { examples: ["Я йду в кафе.", "Вона розмовляє з дітьми."] }, es: { examples: ["Voy al café.", "Ella habla con los niños."] }, pt: { examples: ["Eu vou ao café.", "Ela fala com as crianças."] }, de: { examples: ["Ich gehe ins Café.", "Sie spricht mit den Kindern."] }, it: { examples: ["Vado al bar.", "Parla ai bambini."] }, pl: { examples: ["Idę do kawiarni.", "Ona rozmawia z dziećmi."] }, tr: { examples: ["Kafeye gidiyorum.", "Çocuklarla konuşuyor."] }, id: { examples: ["Aku pergi ke kafe.", "Dia berbicara dengan anak-anak."] }, vi: { examples: ["Tôi đi đến quán cà phê.", "Cô ấy nói chuyện với bọn trẻ."] } }
+        - level: "A1"
+          point:
+            fr: "Contraction avec de"
+            en: "Contraction with de"
+            uk: "Злиття з de"
+            es: "Contracción con de"
+            pt: "Contração com de"
+            de: "Verschmelzung mit de"
+            it: "Contrazione con de"
+            pl: "Zlanie z de"
+            tr: "de ile birleşme"
+            id: "Kontraksi dengan de"
+            vi: "Rút gọn với de"
+          rule:
+            fr: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            en: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            uk: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            es: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            pt: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            de: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            it: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            pl: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            tr: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            id: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+            vi: [{ mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }, ", ", { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }]
+          ex: { examples: [["le livre ", { target: "du" }, " professeur"], ["la voiture ", { target: "des" }, " voisins"]] }
+          tr: { en: { examples: ["the teacher's book", "the neighbours' car"] }, uk: { examples: ["підручник учителя", "машина сусідів"] }, es: { examples: ["el libro del profesor", "el coche de los vecinos"] }, pt: { examples: ["o livro do professor", "o carro dos vizinhos"] }, de: { examples: ["das Buch des Lehrers", "das Auto der Nachbarn"] }, it: { examples: ["il libro del professore", "la macchina dei vicini"] }, pl: { examples: ["książka nauczyciela", "samochód sąsiadów"] }, tr: { examples: ["öğretmenin kitabı", "komşuların arabası"] }, id: { examples: ["buku guru", "mobil para tetangga"] }, vi: { examples: ["sách của thầy giáo", "xe của hàng xóm"] } }
+        - level: "A1"
+          point:
+            fr: "Chose connue"
+            en: "Known thing"
+            uk: "Відома річ"
+            es: "Algo conocido"
+            pt: "Algo conhecido"
+            de: "Bekanntes"
+            it: "Cosa nota"
+            pl: "Rzecz znana"
+            tr: "Bilinen şey"
+            id: "Hal yang dikenal"
+            vi: "Điều đã biết"
+          rule:
+            fr: "défini : la chose est connue de tous les deux"
+            en: "definite: both people know the thing"
+            uk: "означений: обидва співрозмовники знають річ"
+            es: "determinado: los dos conocen la cosa"
+            pt: "definido: os dois conhecem a coisa"
+            de: "bestimmt: beide kennen die Sache"
+            it: "determinativo: la cosa è nota a entrambi"
+            pl: "określony: oboje znają tę rzecz"
+            tr: "belirli: her iki taraf da şeyi bilir"
+            id: "tentu: kedua orang tahu hal itu"
+            vi: "xác định: cả hai người đều biết sự vật"
+          ex: ["J’ai un chat. ", { target: "Le" }, " chat est noir."]
+          tr: { en: "I have a cat. The cat is black.", uk: "У мене є кіт. Кіт чорний.", es: "Tengo un gato. El gato es negro.", pt: "Eu tenho um gato. O gato é preto.", de: "Ich habe eine Katze. Die Katze ist schwarz.", it: "Ho un gatto. Il gatto è nero.", pl: "Mam kota. Kot jest czarny.", tr: "Bir kedim var. Kedi siyah.", id: "Aku punya seekor kucing. Kucing itu hitam.", vi: "Tôi có một con mèo. Con mèo màu đen." }
+        - level: "A1"
+          point: { fr: "En général", en: "In general", uk: "Загалом", es: "En general", pt: "Em geral", de: "Allgemein", it: "In generale", pl: "Ogólnie", tr: "Genel anlamda", id: "Secara umum", vi: "Nói chung" }
+          rule:
+            fr: ["défini après ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            en: ["definite after ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            uk: ["означений після ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            es: ["determinado tras ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            pt: ["definido depois de ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            de: ["bestimmt nach ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            it: ["determinativo dopo ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            pl: ["określony po ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            tr: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, " sonrasında belirli"]
+            id: ["tentu setelah ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+            vi: ["xác định sau ", { term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }]
+          ex: ["J’aime ", { target: "le" }, " café."]
+          tr: { en: "I like coffee.", uk: "Я люблю каву.", es: "Me gusta el café.", pt: "Eu gosto de café.", de: "Ich mag Kaffee.", it: "Mi piace il caffè.", pl: "Lubię kawę.", tr: "Kahveyi severim.", id: "Aku suka kopi.", vi: "Tôi thích cà phê." }
+        - level: "A1"
+          point: { fr: "Chose nouvelle", en: "New thing", uk: "Нова річ", es: "Algo nuevo", pt: "Algo novo", de: "Neues", it: "Cosa nuova", pl: "Rzecz nowa", tr: "Yeni şey", id: "Hal baru", vi: "Điều mới" }
+          rule:
+            fr: "indéfini : une chose ou plusieurs choses, sans plus de précision"
+            en: "indefinite: one thing or several, not specified"
+            uk: "неозначений: одна чи кілька речей, без уточнення"
+            es: "indeterminado: una o varias cosas, sin precisar"
+            pt: "indefinido: uma ou várias coisas, sem especificar"
+            de: "unbestimmt: eine oder mehrere Sachen, nicht näher bestimmt"
+            it: "indeterminativo: una o più cose, non precisate"
+            pl: "nieokreślony: jedna lub kilka rzeczy, bez doprecyzowania"
+            tr: "belirsiz: bir ya da birkaç şey, kesin olmayan"
+            id: "tak tentu: satu atau beberapa hal, tidak dirinci"
+            vi: "không xác định: một hay nhiều sự vật, không nói rõ"
+          ex: ["J’ai ", { target: "des" }, " amis à Paris."]
+          tr: { en: "I have friends in Paris.", uk: "У мене є друзі в Парижі.", es: "Tengo amigos en París.", pt: "Eu tenho amigos em Paris.", de: "Ich habe Freunde in Paris.", it: "Ho degli amici a Parigi.", pl: "Mam przyjaciół w Paryżu.", tr: "Paris’te arkadaşlarım var.", id: "Aku punya teman di Paris.", vi: "Tôi có bạn ở Paris." }
+        - level: "A2"
+          point: { fr: "Le corps", en: "The body", uk: "Тіло", es: "El cuerpo", pt: "O corpo", de: "Der Körper", it: "Il corpo", pl: "Ciało", tr: "Vücut", id: "Tubuh", vi: "Cơ thể" }
+          rule:
+            fr: "l’article défini à la place du possessif"
+            en: "the definite article in place of the possessive"
+            uk: "означений артикль замість присвійного слова"
+            es: "el artículo determinado en lugar del posesivo"
+            pt: "o artigo definido no lugar do possessivo"
+            de: "der bestimmte Artikel statt des Possessivs"
+            it: "l'articolo determinativo al posto del possessivo"
+            pl: "przedimek określony zamiast zaimka dzierżawczego"
+            tr: "iyelik yerine belirli artikel"
+            id: "artikel tentu menggantikan posesif"
+            vi: "mạo từ xác định thay cho từ sở hữu"
+          ex: ["Elle ferme ", { target: "les" }, " yeux."]
+          tr: { en: "She closes her eyes.", uk: "Вона заплющує очі.", es: "Cierra los ojos.", pt: "Ela fecha os olhos.", de: "Sie schließt die Augen.", it: "Chiude gli occhi.", pl: "Ona zamyka oczy.", tr: "Gözlerini kapatıyor.", id: "Dia menutup matanya.", vi: "Cô ấy nhắm mắt lại." }
+        - level: "A2"
+          point:
+            fr: "Sans article"
+            en: "No article"
+            uk: "Без артикля"
+            es: "Sin artículo"
+            pt: "Sem artigo"
+            de: "Ohne Artikel"
+            it: "Senza articolo"
+            pl: "Bez przedimka"
+            tr: "Artikelsiz"
+            id: "Tanpa artikel"
+            vi: "Không mạo từ"
+          rule:
+            fr: [{ term: "sans" }, " ou ", { term: "avec" }, " + nom abstrait : pas d’article"]
+            en: [{ term: "sans" }, " or ", { term: "avec" }, " + abstract noun: no article"]
+            uk: [{ term: "sans" }, " або ", { term: "avec" }, " + абстрактний іменник: без артикля"]
+            es: [{ term: "sans" }, " o ", { term: "avec" }, " + sustantivo abstracto: sin artículo"]
+            pt: [{ term: "sans" }, " ou ", { term: "avec" }, " + substantivo abstrato: sem artigo"]
+            de: [{ term: "sans" }, " oder ", { term: "avec" }, " + abstraktes Nomen: kein Artikel"]
+            it: [{ term: "sans" }, " o ", { term: "avec" }, " + sostantivo astratto: senza articolo"]
+            pl: [{ term: "sans" }, " lub ", { term: "avec" }, " + rzeczownik abstrakcyjny: bez przedimka"]
+            tr: [{ term: "sans" }, " ya da ", { term: "avec" }, " + soyut isim: artikel yok"]
+            id: [{ term: "sans" }, " atau ", { term: "avec" }, " + kata benda abstrak: tanpa artikel"]
+            vi: [{ term: "sans" }, " hoặc ", { term: "avec" }, " + danh từ trừu tượng: không mạo từ"]
+          ex: ["Un café ", { target: "sans" }, " sucre."]
+          tr: { en: "A coffee without sugar.", uk: "Кава без цукру.", es: "Un café sin azúcar.", pt: "Um café sem açúcar.", de: "Ein Kaffee ohne Zucker.", it: "Un caffè senza zucchero.", pl: "Kawa bez cukru.", tr: "Şekersiz bir kahve.", id: "Secangkir kopi tanpa gula.", vi: "Một ly cà phê không đường." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "à le" }, " devient ", { term: "au" }, ", ", { term: "à les" }, " devient ", { term: "aux" }]
+            en: [{ term: "à le" }, " becomes ", { term: "au" }, ", ", { term: "à les" }, " becomes ", { term: "aux" }]
+            uk: [{ term: "à le" }, " стає ", { term: "au" }, ", ", { term: "à les" }, " стає ", { term: "aux" }]
+            es: [{ term: "à le" }, " pasa a ", { term: "au" }, ", ", { term: "à les" }, " pasa a ", { term: "aux" }]
+            pt: [{ term: "à le" }, " vira ", { term: "au" }, ", ", { term: "à les" }, " vira ", { term: "aux" }]
+            de: [{ term: "à le" }, " wird zu ", { term: "au" }, ", ", { term: "à les" }, " wird zu ", { term: "aux" }]
+            it: [{ term: "à le" }, " diventa ", { term: "au" }, ", ", { term: "à les" }, " diventa ", { term: "aux" }]
+            pl: [{ term: "à le" }, " zmienia się w ", { term: "au" }, ", ", { term: "à les" }, " w ", { term: "aux" }]
+            tr: [{ term: "à le" }, ", ", { term: "au" }, " olur; ", { term: "à les" }, ", ", { term: "aux" }, " olur"]
+            id: [{ term: "à le" }, " menjadi ", { term: "au" }, ", ", { term: "à les" }, " menjadi ", { term: "aux" }]
+            vi: [{ term: "à le" }, " thành ", { term: "au" }, ", ", { term: "à les" }, " thành ", { term: "aux" }]
+          ex: ["Je vais ", { target: "au" }, " cinéma."]
+          tr: { en: "I'm going to the cinema.", uk: "Я йду в кіно.", es: "Voy al cine.", pt: "Eu vou ao cinema.", de: "Ich gehe ins Kino.", it: "Vado al cinema.", pl: "Idę do kina.", tr: "Sinemaya gidiyorum.", id: "Aku pergi ke bioskop.", vi: "Tôi đi xem phim." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: ["un nom en général garde son article après ", { term: "aimer" }]
+            en: ["a noun in general keeps its article after ", { term: "aimer" }]
+            uk: ["іменник загалом зберігає артикль після ", { term: "aimer" }]
+            es: ["un sustantivo en general conserva su artículo tras ", { term: "aimer" }]
+            pt: ["um substantivo em geral mantém o artigo depois de ", { term: "aimer" }]
+            de: ["ein Nomen im Allgemeinen behält nach ", { term: "aimer" }, " seinen Artikel"]
+            it: ["un sostantivo in generale mantiene l'articolo dopo ", { term: "aimer" }]
+            pl: ["rzeczownik ogólny zachowuje po ", { term: "aimer" }, " przedimek"]
+            tr: ["genel anlamdaki isim ", { term: "aimer" }, " sonrasında artikelini korur"]
+            id: ["kata benda umum tetap memakai artikel setelah ", { term: "aimer" }]
+            vi: ["danh từ nói chung vẫn giữ mạo từ sau ", { term: "aimer" }]
+          ex: ["J’aime ", { target: "les" }, " chats."]
+          tr: { en: "I like cats.", uk: "Я люблю котів.", es: "Me gustan los gatos.", pt: "Eu gosto de gatos.", de: "Ich mag Katzen.", it: "Mi piacciono i gatti.", pl: "Lubię koty.", tr: "Kedileri severim.", id: "Aku suka kucing.", vi: "Tôi thích mèo." }
+sections:
+  - title:
+      fr: "Vue d’ensemble"
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "Le nom s’emploie presque toujours avec un article."
+              en: "A noun almost always comes with an article."
+              uk: "Іменник майже завжди вживається з артиклем."
+              es: "El sustantivo casi siempre va con artículo."
+              pt: "O substantivo quase sempre vem com artigo."
+              de: "Das Nomen steht fast immer mit einem Artikel."
+              it: "Il sostantivo si usa quasi sempre con un articolo."
+              pl: "Rzeczownik prawie zawsze występuje z przedimkiem."
+              tr: "İsim neredeyse her zaman bir artikelle kullanılır."
+              id: "Kata benda hampir selalu dipakai dengan artikel."
+              vi: "Danh từ hầu như luôn đi kèm mạo từ."
+            ex: { examples: [[{ target: "Le" }, " stylo est rouge."], ["J’ai ", { target: "une" }, " gomme."]] }
+            tr: { en: { examples: ["The pen is red.", "I have an eraser."] }, uk: { examples: ["Ручка червона.", "У мене є гумка."] }, es: { examples: ["El bolígrafo es rojo.", "Tengo una goma."] }, pt: { examples: ["A caneta é vermelha.", "Eu tenho uma borracha."] }, de: { examples: ["Der Stift ist rot.", "Ich habe einen Radiergummi."] }, it: { examples: ["La penna è rossa.", "Ho una gomma."] }, pl: { examples: ["Długopis jest czerwony.", "Mam gumkę."] }, tr: { examples: ["Kalem kırmızı.", "Bir silgim var."] }, id: { examples: ["Pulpennya merah.", "Aku punya penghapus."] }, vi: { examples: ["Cây bút màu đỏ.", "Tôi có một cục tẩy."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: "L’article s’accorde avec le nom en genre et en nombre."
+              en: "The article agrees with the noun in gender and number."
+              uk: "Артикль узгоджується з іменником у роді й числі."
+              es: "El artículo concuerda con el sustantivo en género y número."
+              pt: "O artigo concorda com o substantivo em gênero e número."
+              de: "Der Artikel richtet sich nach dem Nomen in Genus und Numerus."
+              it: "L'articolo concorda con il sostantivo in genere e numero."
+              pl: "Przedimek zgadza się z rzeczownikiem w rodzaju i liczbie."
+              tr: "Artikel, isimle cinsiyet ve sayıda uyum sağlar."
+              id: "Artikel menyesuaikan diri dengan kata benda dalam gender dan jumlah."
+              vi: "Mạo từ hòa hợp với danh từ về giống và số."
+            ex: { examples: [[{ target: "le" }, " livre"], [{ target: "la" }, " table"], [{ target: "les" }, " livres"]] }
+            tr: { en: { examples: ["the book", "the table", "the books"] }, uk: { examples: ["книга", "стіл", "книги"] }, es: { examples: ["el libro", "la mesa", "los libros"] }, pt: { examples: ["o livro", "a mesa", "os livros"] }, de: { examples: ["das Buch", "der Tisch", "die Bücher"] }, it: { examples: ["il libro", "il tavolo", "i libri"] }, pl: { examples: ["książka", "stół", "książki"] }, tr: { examples: ["kitap", "masa", "kitaplar"] }, id: { examples: ["buku", "meja", "buku-buku"] }, vi: { examples: ["quyển sách", "cái bàn", "những quyển sách"] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour le genre des noms, voir ", { link: "Le genre des noms", to: "fr.nom-determinants.genre" }, "."]
+              en: ["For the gender of nouns, see ", { link: "Noun Gender", to: fr.nom-determinants.genre }, "."]
+              uk: ["Про рід іменників див. ", { link: "Рід іменників", to: "fr.nom-determinants.genre" }, "."]
+              es: ["Para el género de los sustantivos, ver ", { link: "El género de los sustantivos", to: "fr.nom-determinants.genre" }, "."]
+              pt: ["Para o gênero dos substantivos, veja ", { link: "O gênero dos substantivos", to: "fr.nom-determinants.genre" }, "."]
+              de: ["Zum Genus der Nomen siehe ", { link: "Das Genus der Nomen", to: "fr.nom-determinants.genre" }, "."]
+              it: ["Per il genere dei nomi, vedi ", { link: "Il genere dei nomi", to: "fr.nom-determinants.genre" }, "."]
+              pl: ["O rodzaju rzeczowników zob. ", { link: "Rodzaj rzeczowników", to: "fr.nom-determinants.genre" }, "."]
+              tr: ["İsimlerin cinsiyeti için bkz. ", { link: "İsimlerin cinsiyeti", to: "fr.nom-determinants.genre" }, "."]
+              id: ["Untuk gender kata benda, lihat ", { link: "Gender kata benda", to: "fr.nom-determinants.genre" }, "."]
+              vi: ["Về giống của danh từ, xem ", { link: "Giống của danh từ", to: "fr.nom-determinants.genre" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour le pluriel des noms, voir ", { link: "Le pluriel des noms", to: "fr.nom-determinants.pluriel" }, "."]
+              en: ["For the plural of nouns, see ", { link: "Plurals", to: fr.nom-determinants.pluriel }, "."]
+              uk: ["Про множину іменників див. ", { link: "Множина іменників", to: "fr.nom-determinants.pluriel" }, "."]
+              es: ["Para el plural de los sustantivos, ver ", { link: "El plural de los sustantivos", to: "fr.nom-determinants.pluriel" }, "."]
+              pt: ["Para o plural dos substantivos, veja ", { link: "O plural dos substantivos", to: "fr.nom-determinants.pluriel" }, "."]
+              de: ["Zum Plural der Nomen siehe ", { link: "Der Plural der Nomen", to: "fr.nom-determinants.pluriel" }, "."]
+              it: ["Per il plurale dei nomi, vedi ", { link: "Il plurale dei nomi", to: "fr.nom-determinants.pluriel" }, "."]
+              pl: ["O liczbie mnogiej rzeczowników zob. ", { link: "Liczba mnoga rzeczowników", to: "fr.nom-determinants.pluriel" }, "."]
+              tr: ["İsimlerin çoğulu için bkz. ", { link: "İsimlerin çoğulu", to: "fr.nom-determinants.pluriel" }, "."]
+              id: ["Untuk bentuk jamak kata benda, lihat ", { link: "Bentuk jamak kata benda", to: "fr.nom-determinants.pluriel" }, "."]
+              vi: ["Về số nhiều của danh từ, xem ", { link: "Số nhiều của danh từ", to: "fr.nom-determinants.pluriel" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: [{ term: "du" }, ", ", { term: "de la" }, " et ", { term: "de l’" }, " pour une quantité, et ", { term: "pas de" }, " : voir ", { link: "Les partitifs et les quantités", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              en: [{ term: "du" }, ", ", { term: "de la" }, " and ", { term: "de l’" }, " for an amount, and ", { term: "pas de" }, ": see ", { link: "Partitives and Quantities", to: fr.nom-determinants.partitifs-quantites }, "."]
+              uk: [{ term: "du" }, ", ", { term: "de la" }, " і ", { term: "de l’" }, " для кількості та ", { term: "pas de" }, ": див. ", { link: "Партитивні артиклі й кількість", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              es: [{ term: "du" }, ", ", { term: "de la" }, " y ", { term: "de l’" }, " para una cantidad, y ", { term: "pas de" }, ": ver ", { link: "Partitivos y cantidades", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              pt: [{ term: "du" }, ", ", { term: "de la" }, " e ", { term: "de l’" }, " para uma quantidade, e ", { term: "pas de" }, ": veja ", { link: "Partitivos e quantidades", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              de: [{ term: "du" }, ", ", { term: "de la" }, " und ", { term: "de l’" }, " für eine Menge sowie ", { term: "pas de" }, ": siehe ", { link: "Teilungsartikel und Mengen", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              it: [{ term: "du" }, ", ", { term: "de la" }, " e ", { term: "de l’" }, " per una quantità, e ", { term: "pas de" }, ": vedi ", { link: "Partitivi e quantità", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              pl: [{ term: "du" }, ", ", { term: "de la" }, " i ", { term: "de l’" }, " dla ilości oraz ", { term: "pas de" }, ": zob. ", { link: "Partytywy i ilości", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              tr: ["Miktar için ", { term: "du" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, " ve ", { term: "pas de" }, ": bkz. ", { link: "Bölme artikelleri ve miktarlar", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              id: [{ term: "du" }, ", ", { term: "de la" }, ", dan ", { term: "de l’" }, " untuk jumlah, serta ", { term: "pas de" }, ": lihat ", { link: "Partitif dan jumlah", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              vi: [{ term: "du" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, " chỉ lượng và ", { term: "pas de" }, ": xem ", { link: "Mạo từ bộ phận và lượng từ", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+  - title:
+      fr: "Forme : les articles"
+      en: "Form: the articles"
+      uk: "Форма: артиклі"
+      es: "Forma: los artículos"
+      pt: "Forma: os artigos"
+      de: "Form: die Artikel"
+      it: "Forma: gli articoli"
+      pl: "Forma: przedimki"
+      tr: "Biçim: artikeller"
+      id: "Bentuk: artikel"
+      vi: "Dạng: các mạo từ"
+    role: "form"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "art", label: { fr: "Article", en: "Article", uk: "Артикль", es: "Artículo", pt: "Artigo", de: "Artikel", it: "Articolo", pl: "Przedimek", tr: "Artikel", id: "Artikel", vi: "Mạo từ" } }
+          - key: "masc"
+            label: { fr: "Masculin", en: "Masculine", uk: "Чоловічий рід", es: "Masculino", pt: "Masculino", de: "Maskulinum", it: "Maschile", pl: "Rodzaj męski", tr: "Eril", id: "Maskulin", vi: "Giống đực" }
+            features: { gender: "masc", number: "sg" }
+          - key: "fem"
+            label: { fr: "Féminin", en: "Feminine", uk: "Жіночий рід", es: "Femenino", pt: "Feminino", de: "Femininum", it: "Femminile", pl: "Rodzaj żeński", tr: "Dişil", id: "Feminin", vi: "Giống cái" }
+            features: { gender: "fem", number: "sg" }
+          - key: "pl"
+            label: { fr: "Pluriel", en: "Plural", uk: "Множина", es: "Plural", pt: "Plural", de: "Plural", it: "Plurale", pl: "Liczba mnoga", tr: "Çoğul", id: "Jamak", vi: "Số nhiều" }
+            features: { number: "pl" }
+        rows:
+          - level: "A1"
+            features: { definiteness: "def" }
+            art: { fr: "Défini", en: "Definite", uk: "Означений", es: "Determinado", pt: "Definido", de: "Bestimmt", it: "Determinativo", pl: "Określony", tr: "Belirli", id: "Tentu", vi: "Xác định" }
+            masc: [{ target: "le" }, " livre"]
+            fem: [{ target: "la" }, " table"]
+            pl: [{ target: "les" }, " livres"]
+          - level: "A1"
+            features: { definiteness: "def" }
+            art:
+              fr: "Défini devant une voyelle"
+              en: "Definite before a vowel"
+              uk: "Означений перед голосною"
+              es: "Determinado ante vocal"
+              pt: "Definido antes de vogal"
+              de: "Bestimmt vor Vokal"
+              it: "Determinativo davanti a vocale"
+              pl: "Określony przed samogłoską"
+              tr: "Ünlüden önce belirli"
+              id: "Tentu sebelum vokal"
+              vi: "Xác định trước nguyên âm"
+            masc: [{ target: "l’" }, "ami"]
+            fem: [{ target: "l’" }, "école"]
+            pl: [{ target: "les" }, " amis"]
+          - level: "A1"
+            features: { definiteness: "indf" }
+            art:
+              fr: "Indéfini"
+              en: "Indefinite"
+              uk: "Неозначений"
+              es: "Indeterminado"
+              pt: "Indefinido"
+              de: "Unbestimmt"
+              it: "Indeterminativo"
+              pl: "Nieokreślony"
+              tr: "Belirsiz"
+              id: "Tak tentu"
+              vi: "Không xác định"
+            masc: [{ target: "un" }, " livre"]
+            fem: [{ target: "une" }, " table"]
+            pl: [{ target: "des" }, " livres"]
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Devant une voyelle ou un h muet, ", { term: "le" }, " et ", { term: "la" }, " deviennent ", { term: "l’" }, "."]
+              en: ["Before a vowel or a mute h, ", { term: "le" }, " and ", { term: "la" }, " become ", { term: "l’" }, "."]
+              uk: ["Перед голосною або німим h ", { term: "le" }, " і ", { term: "la" }, " стають ", { term: "l’" }, "."]
+              es: ["Ante vocal o h muda, ", { term: "le" }, " y ", { term: "la" }, " pasan a ", { term: "l’" }, "."]
+              pt: ["Antes de vogal ou h mudo, ", { term: "le" }, " e ", { term: "la" }, " viram ", { term: "l’" }, "."]
+              de: ["Vor einem Vokal oder stummen h werden ", { term: "le" }, " und ", { term: "la" }, " zu ", { term: "l’" }, "."]
+              it: ["Davanti a vocale o h muta, ", { term: "le" }, " e ", { term: "la" }, " diventano ", { term: "l’" }, "."]
+              pl: ["Przed samogłoską lub niemym h ", { term: "le" }, " i ", { term: "la" }, " zmieniają się w ", { term: "l’" }, "."]
+              tr: ["Ünlüden ya da sessiz h’den önce ", { term: "le" }, " ve ", { term: "la" }, ", ", { term: "l’" }, " olur."]
+              id: ["Sebelum vokal atau h bisu, ", { term: "le" }, " dan ", { term: "la" }, " menjadi ", { term: "l’" }, "."]
+              vi: ["Trước nguyên âm hoặc h câm, ", { term: "le" }, " và ", { term: "la" }, " thành ", { term: "l’" }, "."]
+            ex: { examples: [[{ target: "l’" }, "homme"], [{ target: "l’" }, "eau"]] }
+            tr: { en: { examples: ["the man", "the water"] }, uk: { examples: ["чоловік", "вода"] }, es: { examples: ["el hombre", "el agua"] }, pt: { examples: ["o homem", "a água"] }, de: { examples: ["der Mann", "das Wasser"] }, it: { examples: ["l'uomo", "l'acqua"] }, pl: { examples: ["mężczyzna", "woda"] }, tr: { examples: ["adam", "su"] }, id: { examples: ["laki-laki", "air"] }, vi: { examples: ["người đàn ông", "nước"] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Des" }, " est le pluriel de ", { term: "un" }, " et de ", { term: "une" }, "."]
+              en: [{ term: "Des" }, " is the plural of ", { term: "un" }, " and ", { term: "une" }, "."]
+              uk: [{ term: "Des" }, " — це множина від ", { term: "un" }, " і ", { term: "une" }, "."]
+              es: [{ term: "Des" }, " es el plural de ", { term: "un" }, " y ", { term: "une" }, "."]
+              pt: [{ term: "Des" }, " é o plural de ", { term: "un" }, " e ", { term: "une" }, "."]
+              de: [{ term: "Des" }, " ist der Plural von ", { term: "un" }, " und ", { term: "une" }, "."]
+              it: [{ term: "Des" }, " è il plurale di ", { term: "un" }, " e ", { term: "une" }, "."]
+              pl: [{ term: "Des" }, " to liczba mnoga od ", { term: "un" }, " i ", { term: "une" }, "."]
+              tr: [{ term: "Des" }, ", ", { term: "un" }, " ve ", { term: "une" }, " için çoğul biçimdir."]
+              id: [{ term: "Des" }, " adalah bentuk jamak dari ", { term: "un" }, " dan ", { term: "une" }, "."]
+              vi: [{ term: "Des" }, " là số nhiều của ", { term: "un" }, " và ", { term: "une" }, "."]
+            ex: { examples: ["un ami", [{ target: "des" }, " amis"]] }
+            tr: { en: { examples: ["a friend", "friends"] }, uk: { examples: ["друг", "друзі"] }, es: { examples: ["un amigo", "amigos"] }, pt: { examples: ["um amigo", "amigos"] }, de: { examples: ["ein Freund", "Freunde"] }, it: { examples: ["un amico", "amici"] }, pl: { examples: ["przyjaciel", "przyjaciele"] }, tr: { examples: ["bir arkadaş", "arkadaşlar"] }, id: { examples: ["seorang teman", "teman-teman"] }, vi: { examples: ["một người bạn", "những người bạn"] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour le h aspiré (le héros) et la liaison de ", { term: "les" }, " et ", { term: "des" }, ", voir ", { link: "La liaison et l’élision", to: fr.bases.liaison-elision }, "."]
+              en: ["For the aspirated h (le héros) and the liaison of ", { term: "les" }, " and ", { term: "des" }, ", see ", { link: "Liaison and Elision", to: fr.bases.liaison-elision }, "."]
+              uk: ["Про придихове h (le héros) і зв’язування ", { term: "les" }, " та ", { term: "des" }, " див. ", { link: "Ліазон та елізія", to: fr.bases.liaison-elision }, "."]
+              es: ["Para la h aspirada (le héros) y el enlace de ", { term: "les" }, " y ", { term: "des" }, ", ver ", { link: "La liaison y la elisión", to: fr.bases.liaison-elision }, "."]
+              pt: ["Para o h aspirado (le héros) e a ligação de ", { term: "les" }, " e ", { term: "des" }, ", veja ", { link: "A liaison e a elisão", to: fr.bases.liaison-elision }, "."]
+              de: ["Zum h aspiré (le héros) und zur Liaison von ", { term: "les" }, " und ", { term: "des" }, " siehe ", { link: "Liaison und Elision", to: "fr.bases.liaison-elision" }, "."]
+              it: ["Per la h aspirata (le héros) e il legamento di ", { term: "les" }, " e ", { term: "des" }, ", vedi ", { link: "La liaison e l'elisione", to: fr.bases.liaison-elision }, "."]
+              pl: ["O h aspiré (le héros) i liaison w ", { term: "les" }, " i ", { term: "des" }, " zob. ", { link: "Liaison i elizja", to: "fr.bases.liaison-elision" }, "."]
+              tr: ["h aspiré (le héros) ve ", { term: "les" }, " ile ", { term: "des" }, " bağlaması için bkz. ", { link: "Liaison ve ünlü düşmesi", to: fr.bases.liaison-elision }, "."]
+              id: ["Untuk h aspiré (le héros) dan liaison pada ", { term: "les" }, " dan ", { term: "des" }, ", lihat ", { link: "Liaison dan elisi", to: "fr.bases.liaison-elision" }, "."]
+              vi: ["Về h aspiré (le héros) và việc nối âm của ", { term: "les" }, " và ", { term: "des" }, ", xem ", { link: "Nối âm và lược âm", to: "fr.bases.liaison-elision" }, "."]
+  - title:
+      fr: "Forme : les contractions"
+      en: "Form: the contractions"
+      uk: "Форма: злиття"
+      es: "Forma: las contracciones"
+      pt: "Forma: as contrações"
+      de: "Form: die Verschmelzungen"
+      it: "Forma: le contrazioni"
+      pl: "Forma: zlania"
+      tr: "Biçim: birleşmeler"
+      id: "Bentuk: kontraksi"
+      vi: "Dạng: các dạng rút gọn"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "ex", label: { fr: "Exemples", en: "Examples", uk: "Приклади", es: "Ejemplos", pt: "Exemplos", de: "Beispiele", it: "Esempi", pl: "Przykłady", tr: "Örnekler", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            form: { mapping: [{ pattern: [{ term: "à" }, { term: "le" }] }, { target: "au" }] }
+            ex: { examples: [["Je vais ", { target: "au" }, " marché."], [{ target: "Au" }, " revoir !"]] }
+            tr: { en: { examples: ["I'm going to the market.", "Goodbye!"] }, uk: { examples: ["Я йду на ринок.", "До побачення!"] }, es: { examples: ["Voy al mercado.", "¡Adiós!"] }, pt: { examples: ["Eu vou ao mercado.", "Tchau!"] }, de: { examples: ["Ich gehe auf den Markt.", "Auf Wiedersehen!"] }, it: { examples: ["Vado al mercato.", "Arrivederci!"] }, pl: { examples: ["Idę na targ.", "Do widzenia!"] }, tr: { examples: ["Pazara gidiyorum.", "Hoşça kalın!"] }, id: { examples: ["Aku pergi ke pasar.", "Sampai jumpa!"] }, vi: { examples: ["Tôi đi chợ.", "Tạm biệt!"] } }
+          - level: "A1"
+            form: { mapping: [{ pattern: [{ term: "à" }, { term: "les" }] }, { target: "aux" }] }
+            ex: ["Elle parle ", { target: "aux" }, " enfants."]
+            tr: { en: "She is talking to the children.", uk: "Вона розмовляє з дітьми.", es: "Ella habla con los niños.", pt: "Ela fala com as crianças.", de: "Sie spricht mit den Kindern.", it: "Parla ai bambini.", pl: "Ona rozmawia z dziećmi.", tr: "Çocuklarla konuşuyor.", id: "Dia berbicara dengan anak-anak.", vi: "Cô ấy nói chuyện với bọn trẻ." }
+          - level: "A1"
+            form: { mapping: [{ pattern: [{ term: "de" }, { term: "le" }] }, { target: "du" }] }
+            ex: ["C’est le livre ", { target: "du" }, " professeur."]
+            tr: { en: "It's the teacher's book.", uk: "Це підручник учителя.", es: "Es el libro del profesor.", pt: "É o livro do professor.", de: "Das ist das Buch des Lehrers.", it: "È il libro del professore.", pl: "To książka nauczyciela.", tr: "Bu öğretmenin kitabı.", id: "Itu buku guru.", vi: "Đây là sách của thầy giáo." }
+          - level: "A1"
+            form: { mapping: [{ pattern: [{ term: "de" }, { term: "les" }] }, { target: "des" }] }
+            ex: ["Voici la voiture ", { target: "des" }, " voisins."]
+            tr: { en: "Here is the neighbours' car.", uk: "Ось машина сусідів.", es: "Aquí está el coche de los vecinos.", pt: "Aqui está o carro dos vizinhos.", de: "Hier ist das Auto der Nachbarn.", it: "Ecco la macchina dei vicini.", pl: "Oto samochód sąsiadów.", tr: "İşte komşuların arabası.", id: "Ini mobil para tetangga.", vi: "Đây là xe của hàng xóm." }
+          - level: "A1"
+            form:
+              fr: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, " : pas de contraction"]
+              en: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": no contraction"]
+              uk: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": без злиття"]
+              es: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": sin contracción"]
+              pt: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": sem contração"]
+              de: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": keine Verschmelzung"]
+              it: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": nessuna contrazione"]
+              pl: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": bez zlania"]
+              tr: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": birleşme yok"]
+              id: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": tanpa kontraksi"]
+              vi: [{ term: "à la" }, ", ", { term: "à l’" }, ", ", { term: "de la" }, ", ", { term: "de l’" }, ": không rút gọn"]
+            ex: { examples: [["Je vais ", { target: "à la" }, " gare."], ["Il arrive ", { target: "de l’" }, "école."]] }
+            tr: { en: { examples: ["I'm going to the station.", "He is coming from school."] }, uk: { examples: ["Я йду на вокзал.", "Він іде зі школи."] }, es: { examples: ["Voy a la estación.", "Viene de la escuela."] }, pt: { examples: ["Eu vou à estação.", "Ele vem da escola."] }, de: { examples: ["Ich gehe zum Bahnhof.", "Er kommt aus der Schule."] }, it: { examples: ["Vado alla stazione.", "Arriva da scuola."] }, pl: { examples: ["Idę na dworzec.", "Przychodzi ze szkoły."] }, tr: { examples: ["Gara gidiyorum.", "Okuldan geliyor."] }, id: { examples: ["Aku pergi ke stasiun.", "Dia datang dari sekolah."] }, vi: { examples: ["Tôi đi đến nhà ga.", "Cậu ấy từ trường về."] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: [{ term: "Des" }, " est un article indéfini ou la contraction de ", { term: "de" }, " + ", { term: "les" }, "."]
+              en: [{ term: "Des" }, " is either an indefinite article or the contraction of ", { term: "de" }, " + ", { term: "les" }, "."]
+              uk: [{ term: "Des" }, " — це неозначений артикль або злиття ", { term: "de" }, " + ", { term: "les" }, "."]
+              es: [{ term: "Des" }, " es un artículo indeterminado o la contracción de ", { term: "de" }, " + ", { term: "les" }, "."]
+              pt: [{ term: "Des" }, " é um artigo indefinido ou a contração de ", { term: "de" }, " + ", { term: "les" }, "."]
+              de: [{ term: "Des" }, " ist ein unbestimmter Artikel oder die Verschmelzung von ", { term: "de" }, " + ", { term: "les" }, "."]
+              it: [{ term: "Des" }, " è un articolo indeterminativo o la contrazione di ", { term: "de" }, " + ", { term: "les" }, "."]
+              pl: [{ term: "Des" }, " to przedimek nieokreślony albo zlanie ", { term: "de" }, " + ", { term: "les" }, "."]
+              tr: [{ term: "Des" }, " ya belirsiz bir artikeldir ya da ", { term: "de" }, " + ", { term: "les" }, " birleşmesidir."]
+              id: [{ term: "Des" }, " adalah artikel tak tentu atau kontraksi dari ", { term: "de" }, " + ", { term: "les" }, "."]
+              vi: [{ term: "Des" }, " là mạo từ không xác định hoặc dạng rút gọn của ", { term: "de" }, " + ", { term: "les" }, "."]
+            ex: { examples: [["Elle a ", { target: "des" }, " amis."], ["Voici la liste ", { target: "des" }, " élèves."]] }
+            tr: { en: { examples: ["She has friends.", "Here is the list of the pupils."] }, uk: { examples: ["У неї є друзі.", "Ось список учнів."] }, es: { examples: ["Tiene amigos.", "Aquí está la lista de los alumnos."] }, pt: { examples: ["Ela tem amigos.", "Aqui está a lista dos alunos."] }, de: { examples: ["Sie hat Freunde.", "Hier ist die Liste der Schüler."] }, it: { examples: ["Ha degli amici.", "Ecco l'elenco degli alunni."] }, pl: { examples: ["Ona ma przyjaciół.", "Oto lista uczniów."] }, tr: { examples: ["Arkadaşları var.", "İşte öğrencilerin listesi."] }, id: { examples: ["Dia punya teman.", "Ini daftar para murid."] }, vi: { examples: ["Cô ấy có bạn.", "Đây là danh sách học sinh."] } }
+  - title:
+      fr: "Emploi : l’article défini"
+      en: "Use: the definite article"
+      uk: "Вживання: означений артикль"
+      es: "Uso: el artículo determinado"
+      pt: "Uso: o artigo definido"
+      de: "Gebrauch: der bestimmte Artikel"
+      it: "Uso: l'articolo determinativo"
+      pl: "Użycie: przedimek określony"
+      tr: "Kullanım: belirli artikel"
+      id: "Penggunaan: artikel tentu"
+      vi: "Cách dùng: mạo từ xác định"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              fr: "Une chose que les deux personnes connaissent"
+              en: "A thing both people know"
+              uk: "Річ, яку знають обоє"
+              es: "Algo que conocen los dos"
+              pt: "Algo que os dois conhecem"
+              de: "Eine Sache, die beide kennen"
+              it: "Una cosa che conoscono entrambi"
+              pl: "Rzecz, którą znają oboje"
+              tr: "İki tarafın da bildiği şey"
+              id: "Hal yang diketahui kedua orang"
+              vi: "Sự vật cả hai đều biết"
+            ex: ["Ferme ", { target: "la" }, " porte, s’il te plaît."]
+            tr: { en: "Close the door, please.", uk: "Зачини двері, будь ласка.", es: "Cierra la puerta, por favor.", pt: "Feche a porta, por favor.", de: "Mach bitte die Tür zu.", it: "Chiudi la porta, per favore.", pl: "Zamknij drzwi, proszę.", tr: "Kapıyı kapat, lütfen.", id: "Tolong tutup pintunya.", vi: "Làm ơn đóng cửa lại." }
+          - level: "A1"
+            use:
+              fr: "Une chose déjà mentionnée"
+              en: "A thing already mentioned"
+              uk: "Річ, про яку вже згадували"
+              es: "Algo ya mencionado"
+              pt: "Algo já mencionado"
+              de: "Eine Sache, die schon erwähnt wurde"
+              it: "Una cosa già menzionata"
+              pl: "Rzecz już wspomniana"
+              tr: "Daha önce söz edilen şey"
+              id: "Hal yang sudah disebut"
+              vi: "Sự vật đã được nhắc đến"
+            ex: ["J’ai un chat. ", { target: "Le" }, " chat est noir."]
+            tr: { en: "I have a cat. The cat is black.", uk: "У мене є кіт. Кіт чорний.", es: "Tengo un gato. El gato es negro.", pt: "Eu tenho um gato. O gato é preto.", de: "Ich habe eine Katze. Die Katze ist schwarz.", it: "Ho un gatto. Il gatto è nero.", pl: "Mam kota. Kot jest czarny.", tr: "Bir kedim var. Kedi siyah.", id: "Aku punya seekor kucing. Kucing itu hitam.", vi: "Tôi có một con mèo. Con mèo màu đen." }
+          - level: "A1"
+            use:
+              fr: "Une chose unique"
+              en: "A unique thing"
+              uk: "Єдина в своєму роді річ"
+              es: "Algo único"
+              pt: "Algo único"
+              de: "Etwas Einzigartiges"
+              it: "Una cosa unica"
+              pl: "Rzecz jedyna w swoim rodzaju"
+              tr: "Tek olan şey"
+              id: "Hal yang tunggal"
+              vi: "Sự vật duy nhất"
+            ex: { examples: [[{ target: "Le" }, " soleil brille."], [{ target: "La" }, " lune est belle."]] }
+            tr: { en: { examples: ["The sun is shining.", "The moon is beautiful."] }, uk: { examples: ["Сонце світить.", "Місяць гарний."] }, es: { examples: ["El sol brilla.", "La luna es bonita."] }, pt: { examples: ["O sol brilha.", "A lua é bonita."] }, de: { examples: ["Die Sonne scheint.", "Der Mond ist schön."] }, it: { examples: ["Il sole splende.", "La luna è bella."] }, pl: { examples: ["Słońce świeci.", "Księżyc jest piękny."] }, tr: { examples: ["Güneş parlıyor.", "Ay çok güzel."] }, id: { examples: ["Matahari bersinar.", "Bulan itu indah."] }, vi: { examples: ["Mặt trời đang chiếu sáng.", "Mặt trăng đẹp."] } }
+          - level: "A1"
+            use:
+              fr: "Une langue qu’on étudie"
+              en: "A language you study"
+              uk: "Мова, яку вивчають"
+              es: "Una lengua que se estudia"
+              pt: "Uma língua que se estuda"
+              de: "Eine Sprache, die man lernt"
+              it: "Una lingua che si studia"
+              pl: "Język, którego się uczymy"
+              tr: "Öğrenilen dil"
+              id: "Bahasa yang dipelajari"
+              vi: "Ngôn ngữ đang học"
+            ex: ["J’apprends ", { target: "le" }, " français."]
+            tr: { en: "I am learning French.", uk: "Я вивчаю французьку.", es: "Aprendo francés.", pt: "Eu aprendo francês.", de: "Ich lerne Französisch.", it: "Imparo il francese.", pl: "Uczę się francuskiego.", tr: "Fransızca öğreniyorum.", id: "Aku belajar bahasa Prancis.", vi: "Tôi học tiếng Pháp." }
+          - level: "A2"
+            use:
+              fr: "Une partie du corps, à la place du possessif"
+              en: "A part of the body, in place of the possessive"
+              uk: "Частина тіла замість присвійного слова"
+              es: "Una parte del cuerpo, en lugar del posesivo"
+              pt: "Uma parte do corpo, no lugar do possessivo"
+              de: "Ein Körperteil statt des Possessivs"
+              it: "Una parte del corpo, al posto del possessivo"
+              pl: "Część ciała zamiast zaimka dzierżawczego"
+              tr: "İyelik yerine bir vücut bölümü"
+              id: "Bagian tubuh, menggantikan posesif"
+              vi: "Một bộ phận cơ thể, thay cho từ sở hữu"
+            ex: { examples: [["Elle ferme ", { target: "les" }, " yeux."], ["Il lève ", { target: "la" }, " main."]] }
+            tr: { en: { examples: ["She closes her eyes.", "He raises his hand."] }, uk: { examples: ["Вона заплющує очі.", "Він піднімає руку."] }, es: { examples: ["Cierra los ojos.", "Levanta la mano."] }, pt: { examples: ["Ela fecha os olhos.", "Ele levanta a mão."] }, de: { examples: ["Sie schließt die Augen.", "Er hebt die Hand."] }, it: { examples: ["Chiude gli occhi.", "Alza la mano."] }, pl: { examples: ["Ona zamyka oczy.", "On podnosi rękę."] }, tr: { examples: ["Gözlerini kapatıyor.", "Elini kaldırıyor."] }, id: { examples: ["Dia menutup matanya.", "Dia mengangkat tangannya."] }, vi: { examples: ["Cô ấy nhắm mắt lại.", "Anh ấy giơ tay lên."] } }
+          - level: "A2"
+            use:
+              fr: "Le prix à l’unité : « le kilo », « la pièce »"
+              en: "The price per unit: “a kilo”, “each”"
+              uk: "Ціна за одиницю: «за кілограм», «за штуку»"
+              es: "El precio por unidad: «el kilo», «la pieza»"
+              pt: "O preço por unidade: «o quilo», «a peça»"
+              de: "Der Preis pro Einheit: „das Kilo“, „das Stück“"
+              it: "Il prezzo per unità: «al chilo», «al pezzo»"
+              pl: "Cena za jednostkę: „za kilogram”, „za sztukę”"
+              tr: "Birim fiyat: “kilosu”, “tanesi”"
+              id: "Harga per satuan: “per kilo”, “per buah”"
+              vi: "Giá theo đơn vị: “một ký”, “một cái”"
+            ex: ["Les pommes coûtent deux euros ", { target: "le" }, " kilo."]
+            tr: { en: "The apples cost two euros a kilo.", uk: "Яблука коштують два євро за кілограм.", es: "Las manzanas cuestan dos euros el kilo.", pt: "As maçãs custam dois euros o quilo.", de: "Die Äpfel kosten zwei Euro das Kilo.", it: "Le mele costano due euro al chilo.", pl: "Jabłka kosztują dwa euro za kilogram.", tr: "Elmanın kilosu iki euro.", id: "Apel itu harganya dua euro per kilo.", vi: "Táo giá hai euro một ký." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Après ", { term: "parler" }, ", la langue s’emploie sans article."]
+              en: ["After ", { term: "parler" }, ", the language takes no article."]
+              uk: ["Після ", { term: "parler" }, " назва мови вживається без артикля."]
+              es: ["Después de ", { term: "parler" }, ", la lengua va sin artículo."]
+              pt: ["Depois de ", { term: "parler" }, ", a língua vai sem artigo."]
+              de: ["Nach ", { term: "parler" }, " steht die Sprache ohne Artikel."]
+              it: ["Dopo ", { term: "parler" }, ", la lingua va senza articolo."]
+              pl: ["Po ", { term: "parler" }, " nazwa języka stoi bez przedimka."]
+              tr: [{ term: "parler" }, " fiilinden sonra dil adı artikelsiz kullanılır."]
+              id: ["Setelah ", { term: "parler" }, ", nama bahasa tidak memakai artikel."]
+              vi: ["Sau ", { term: "parler" }, ", tên ngôn ngữ không có mạo từ."]
+            ex: ["Je parle ", { target: "français" }, " et anglais."]
+            tr: { en: "I speak French and English.", uk: "Я говорю французькою й англійською.", es: "Hablo francés e inglés.", pt: "Eu falo francês e inglês.", de: "Ich spreche Französisch und Englisch.", it: "Parlo francese e inglese.", pl: "Mówię po francusku i po angielsku.", tr: "Fransızca ve İngilizce konuşuyorum.", id: "Aku berbicara bahasa Prancis dan Inggris.", vi: "Tôi nói tiếng Pháp và tiếng Anh." }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour ", { term: "le lundi" }, " et les autres jours, voir ", { link: "Jours, mois et dates", to: fr.bases.jours-mois-dates }, "."]
+              en: ["For ", { term: "le lundi" }, " and the other days, see ", { link: "Days, Months and Dates", to: fr.bases.jours-mois-dates }, "."]
+              uk: ["Про ", { term: "le lundi" }, " та інші дні див. ", { link: "Дні, місяці та дати", to: "fr.bases.jours-mois-dates" }, "."]
+              es: ["Para ", { term: "le lundi" }, " y los demás días, ver ", { link: "Días, meses y fechas", to: fr.bases.jours-mois-dates }, "."]
+              pt: ["Para ", { term: "le lundi" }, " e os outros dias, veja ", { link: "Dias, meses e datas", to: fr.bases.jours-mois-dates }, "."]
+              de: ["Zu ", { term: "le lundi" }, " und den anderen Tagen siehe ", { link: "Tage, Monate und Datumsangaben", to: fr.bases.jours-mois-dates }, "."]
+              it: ["Per ", { term: "le lundi" }, " e gli altri giorni, vedi ", { link: "Giorni, mesi e date", to: fr.bases.jours-mois-dates }, "."]
+              pl: ["O ", { term: "le lundi" }, " i pozostałych dniach zob. ", { link: "Dni, miesiące i daty", to: "fr.bases.jours-mois-dates" }, "."]
+              tr: [{ term: "le lundi" }, " ve diğer günler için bkz. ", { link: "Günler, aylar ve tarihler", to: "fr.bases.jours-mois-dates" }, "."]
+              id: ["Untuk ", { term: "le lundi" }, " dan hari-hari lain, lihat ", { link: "Hari, bulan, dan tanggal", to: "fr.bases.jours-mois-dates" }, "."]
+              vi: ["Về ", { term: "le lundi" }, " và các ngày khác, xem ", { link: "Thứ, tháng và ngày", to: fr.bases.jours-mois-dates }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Pour les pays (", { term: "la France" }, ", ", { term: "le Canada" }, ") et leurs prépositions, voir ", { link: "Villes et pays", to: "fr.prepositions.villes-pays" }, "."]
+              en: ["For countries (", { term: "la France" }, ", ", { term: "le Canada" }, ") and their prepositions, see ", { link: "Cities and Countries", to: fr.prepositions.villes-pays }, "."]
+              uk: ["Про країни (", { term: "la France" }, ", ", { term: "le Canada" }, ") та їхні прийменники див. ", { link: "Міста й країни", to: "fr.prepositions.villes-pays" }, "."]
+              es: ["Para los países (", { term: "la France" }, ", ", { term: "le Canada" }, ") y sus preposiciones, ver ", { link: "Ciudades y países", to: "fr.prepositions.villes-pays" }, "."]
+              pt: ["Para os países (", { term: "la France" }, ", ", { term: "le Canada" }, ") e suas preposições, veja ", { link: "Cidades e países", to: "fr.prepositions.villes-pays" }, "."]
+              de: ["Zu den Ländern (", { term: "la France" }, ", ", { term: "le Canada" }, ") und ihren Präpositionen siehe ", { link: "Städte und Länder", to: "fr.prepositions.villes-pays" }, "."]
+              it: ["Per i paesi (", { term: "la France" }, ", ", { term: "le Canada" }, ") e le loro preposizioni, vedi ", { link: "Città e paesi", to: "fr.prepositions.villes-pays" }, "."]
+              pl: ["O krajach (", { term: "la France" }, ", ", { term: "le Canada" }, ") i ich przyimkach zob. ", { link: "Miasta i kraje", to: "fr.prepositions.villes-pays" }, "."]
+              tr: ["Ülkeler (", { term: "la France" }, ", ", { term: "le Canada" }, ") ve edatları için bkz. ", { link: "Şehirler ve ülkeler", to: "fr.prepositions.villes-pays" }, "."]
+              id: ["Untuk negara (", { term: "la France" }, ", ", { term: "le Canada" }, ") dan kata depannya, lihat ", { link: "Kota dan negara", to: "fr.prepositions.villes-pays" }, "."]
+              vi: ["Về các quốc gia (", { term: "la France" }, ", ", { term: "le Canada" }, ") và giới từ đi kèm, xem ", { link: "Thành phố và quốc gia", to: "fr.prepositions.villes-pays" }, "."]
+  - title:
+      fr: "Emploi : l’article indéfini et l’absence d’article"
+      en: "Use: the indefinite article and no article"
+      uk: "Вживання: неозначений артикль і відсутність артикля"
+      es: "Uso: el artículo indeterminado y la ausencia de artículo"
+      pt: "Uso: o artigo indefinido e a ausência de artigo"
+      de: "Gebrauch: der unbestimmte Artikel und der Nullartikel"
+      it: "Uso: l'articolo indeterminativo e l'assenza di articolo"
+      pl: "Użycie: przedimek nieokreślony i brak przedimka"
+      tr: "Kullanım: belirsiz artikel ve artikelsiz kullanım"
+      id: "Penggunaan: artikel tak tentu dan tanpa artikel"
+      vi: "Cách dùng: mạo từ không xác định và không mạo từ"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            use:
+              fr: "Une chose nouvelle dans la conversation"
+              en: "A new thing in the conversation"
+              uk: "Нова річ у розмові"
+              es: "Algo nuevo en la conversación"
+              pt: "Algo novo na conversa"
+              de: "Etwas Neues im Gespräch"
+              it: "Una cosa nuova nella conversazione"
+              pl: "Nowa rzecz w rozmowie"
+              tr: "Konuşmada yeni bir şey"
+              id: "Hal baru dalam percakapan"
+              vi: "Sự vật mới trong cuộc trò chuyện"
+            ex: ["Il y a ", { target: "un" }, " chat dans le jardin."]
+            tr: { en: "There is a cat in the garden.", uk: "У саду є кіт.", es: "Hay un gato en el jardín.", pt: "Há um gato no jardim.", de: "Im Garten ist eine Katze.", it: "C'è un gatto in giardino.", pl: "W ogrodzie jest kot.", tr: "Bahçede bir kedi var.", id: "Ada seekor kucing di kebun.", vi: "Có một con mèo trong vườn." }
+          - level: "A1"
+            use:
+              fr: "Le nombre un"
+              en: "The number one"
+              uk: "Число один"
+              es: "El número uno"
+              pt: "O número um"
+              de: "Die Zahl eins"
+              it: "Il numero uno"
+              pl: "Liczba jeden"
+              tr: "Bir sayısı"
+              id: "Bilangan satu"
+              vi: "Số một"
+            ex: ["J’ai ", { target: "un" }, " frère et deux sœurs."]
+            tr: { en: "I have one brother and two sisters.", uk: "У мене один брат і дві сестри.", es: "Tengo un hermano y dos hermanas.", pt: "Eu tenho um irmão e duas irmãs.", de: "Ich habe einen Bruder und zwei Schwestern.", it: "Ho un fratello e due sorelle.", pl: "Mam jednego brata i dwie siostry.", tr: "Bir erkek, iki kız kardeşim var.", id: "Aku punya satu saudara laki-laki dan dua saudara perempuan.", vi: "Tôi có một anh trai và hai chị gái." }
+          - level: "A1"
+            use:
+              fr: "Plusieurs choses, sans plus de précision"
+              en: "Several things, not specified"
+              uk: "Кілька речей без уточнення"
+              es: "Varias cosas, sin precisar"
+              pt: "Várias coisas, sem especificar"
+              de: "Mehrere Sachen, nicht näher bestimmt"
+              it: "Più cose, non precisate"
+              pl: "Kilka rzeczy bez doprecyzowania"
+              tr: "Birkaç şey, belirsiz"
+              id: "Beberapa hal, tidak dirinci"
+              vi: "Nhiều sự vật, không nói rõ"
+            ex: ["J’ai ", { target: "des" }, " amis à Paris."]
+            tr: { en: "I have friends in Paris.", uk: "У мене є друзі в Парижі.", es: "Tengo amigos en París.", pt: "Eu tenho amigos em Paris.", de: "Ich habe Freunde in Paris.", it: "Ho degli amici a Parigi.", pl: "Mam przyjaciół w Paryżu.", tr: "Paris’te arkadaşlarım var.", id: "Aku punya teman di Paris.", vi: "Tôi có bạn ở Paris." }
+          - level: "A2"
+            use:
+              fr: [{ term: "sans" }, " ou ", { term: "avec" }, " + nom abstrait"]
+              en: [{ term: "sans" }, " or ", { term: "avec" }, " + abstract noun"]
+              uk: [{ term: "sans" }, " або ", { term: "avec" }, " + абстрактний іменник"]
+              es: [{ term: "sans" }, " o ", { term: "avec" }, " + sustantivo abstracto"]
+              pt: [{ term: "sans" }, " ou ", { term: "avec" }, " + substantivo abstrato"]
+              de: [{ term: "sans" }, " oder ", { term: "avec" }, " + abstraktes Nomen"]
+              it: [{ term: "sans" }, " o ", { term: "avec" }, " + sostantivo astratto"]
+              pl: [{ term: "sans" }, " lub ", { term: "avec" }, " + rzeczownik abstrakcyjny"]
+              tr: [{ term: "sans" }, " ya da ", { term: "avec" }, " + soyut isim"]
+              id: [{ term: "sans" }, " atau ", { term: "avec" }, " + kata benda abstrak"]
+              vi: [{ term: "sans" }, " hoặc ", { term: "avec" }, " + danh từ trừu tượng"]
+            ex: { examples: [["Un café ", { target: "sans" }, " sucre."], ["Elle répond ", { target: "avec" }, " plaisir."]] }
+            tr: { en: { examples: ["A coffee without sugar.", "She answers with pleasure."] }, uk: { examples: ["Кава без цукру.", "Вона відповідає із задоволенням."] }, es: { examples: ["Un café sin azúcar.", "Responde con gusto."] }, pt: { examples: ["Um café sem açúcar.", "Ela responde com prazer."] }, de: { examples: ["Ein Kaffee ohne Zucker.", "Sie antwortet mit Vergnügen."] }, it: { examples: ["Un caffè senza zucchero.", "Risponde con piacere."] }, pl: { examples: ["Kawa bez cukru.", "Ona odpowiada z przyjemnością."] }, tr: { examples: ["Şekersiz bir kahve.", "Memnuniyetle cevap veriyor."] }, id: { examples: ["Secangkir kopi tanpa gula.", "Dia menjawab dengan senang hati."] }, vi: { examples: ["Một ly cà phê không đường.", "Cô ấy trả lời với niềm vui."] } }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Un métier ou une nationalité après ", { term: "être" }, " se dit sans article : voir ", { link: "Être et avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              en: ["A job or a nationality after ", { term: "être" }, " takes no article: see ", { link: "Être and avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              uk: ["Професія чи національність після ", { term: "être" }, " вживається без артикля: див. ", { link: "Être і avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              es: ["Una profesión o nacionalidad tras ", { term: "être" }, " va sin artículo: ver ", { link: "Être y avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              pt: ["Uma profissão ou nacionalidade depois de ", { term: "être" }, " vai sem artigo: veja ", { link: "Être e avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              de: ["Ein Beruf oder eine Nationalität nach ", { term: "être" }, " steht ohne Artikel: siehe ", { link: "Être und avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              it: ["Una professione o nazionalità dopo ", { term: "être" }, " va senza articolo: vedi ", { link: "Être e avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              pl: ["Zawód lub narodowość po ", { term: "être" }, " występuje bez przedimka: zob. ", { link: "Être i avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              tr: [{ term: "être" }, " sonrasında meslek ya da uyruk artikelsiz kullanılır: bkz. ", { link: "Être ve avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              id: ["Pekerjaan atau kewarganegaraan setelah ", { term: "être" }, " tidak memakai artikel: lihat ", { link: "Être dan avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+              vi: ["Nghề nghiệp hoặc quốc tịch sau ", { term: "être" }, " không có mạo từ: xem ", { link: "Être và avoir", to: "fr.etre-avoir.etre-avoir" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["À la négation, ", { term: "un" }, ", ", { term: "une" }, " et ", { term: "des" }, " deviennent ", { term: "de" }, " : voir ", { link: "Les partitifs et les quantités", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              en: ["In the negative, ", { term: "un" }, ", ", { term: "une" }, " and ", { term: "des" }, " become ", { term: "de" }, ": see ", { link: "Partitives and Quantities", to: fr.nom-determinants.partitifs-quantites }, "."]
+              uk: ["У запереченні ", { term: "un" }, ", ", { term: "une" }, " і ", { term: "des" }, " стають ", { term: "de" }, ": див. ", { link: "Партитивні артиклі й кількість", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              es: ["En la negación, ", { term: "un" }, ", ", { term: "une" }, " y ", { term: "des" }, " pasan a ", { term: "de" }, ": ver ", { link: "Partitivos y cantidades", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              pt: ["Na negação, ", { term: "un" }, ", ", { term: "une" }, " e ", { term: "des" }, " viram ", { term: "de" }, ": veja ", { link: "Partitivos e quantidades", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              de: ["In der Verneinung werden ", { term: "un" }, ", ", { term: "une" }, " und ", { term: "des" }, " zu ", { term: "de" }, ": siehe ", { link: "Teilungsartikel und Mengen", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              it: ["Nella negazione, ", { term: "un" }, ", ", { term: "une" }, " e ", { term: "des" }, " diventano ", { term: "de" }, ": vedi ", { link: "Partitivi e quantità", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              pl: ["W przeczeniu ", { term: "un" }, ", ", { term: "une" }, " i ", { term: "des" }, " zmieniają się w ", { term: "de" }, ": zob. ", { link: "Partytywy i ilości", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              tr: ["Olumsuzlukta ", { term: "un" }, ", ", { term: "une" }, " ve ", { term: "des" }, ", ", { term: "de" }, " olur: bkz. ", { link: "Bölme artikelleri ve miktarlar", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              id: ["Dalam kalimat negatif, ", { term: "un" }, ", ", { term: "une" }, ", dan ", { term: "des" }, " menjadi ", { term: "de" }, ": lihat ", { link: "Partitif dan jumlah", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              vi: ["Trong câu phủ định, ", { term: "un" }, ", ", { term: "une" }, " và ", { term: "des" }, " thành ", { term: "de" }, ": xem ", { link: "Mạo từ bộ phận và lượng từ", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour ", { term: "c’est un" }, " et ", { term: "c’est une" }, ", voir ", { link: "C’est et il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              en: ["For ", { term: "c’est un" }, " and ", { term: "c’est une" }, ", see ", { link: "C’est and Il est", to: fr.etre-avoir.c-est-il-est }, "."]
+              uk: ["Про ", { term: "c’est un" }, " і ", { term: "c’est une" }, " див. ", { link: "C’est та il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              es: ["Para ", { term: "c’est un" }, " y ", { term: "c’est une" }, ", ver ", { link: "C’est y il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              pt: ["Para ", { term: "c’est un" }, " e ", { term: "c’est une" }, ", veja ", { link: "C’est e il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              de: ["Zu ", { term: "c’est un" }, " und ", { term: "c’est une" }, " siehe ", { link: "C’est und il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              it: ["Per ", { term: "c’est un" }, " e ", { term: "c’est une" }, ", vedi ", { link: "C’est e il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              pl: ["O ", { term: "c’est un" }, " i ", { term: "c’est une" }, " zob. ", { link: "C’est i il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              tr: [{ term: "c’est un" }, " ve ", { term: "c’est une" }, " için bkz. ", { link: "C’est ve il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              id: ["Untuk ", { term: "c’est un" }, " dan ", { term: "c’est une" }, ", lihat ", { link: "C’est dan il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              vi: ["Về ", { term: "c’est un" }, " và ", { term: "c’est une" }, ", xem ", { link: "C’est và il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+  - title:
+      fr: "Comparaison : le général et le particulier"
+      en: "Compare: general and specific"
+      uk: "Порівняння: загальне й конкретне"
+      es: "Comparación: lo general y lo concreto"
+      pt: "Comparação: o geral e o concreto"
+      de: "Vergleich: allgemein und konkret"
+      it: "Confronto: generale e particolare"
+      pl: "Porównanie: ogólne i konkretne"
+      tr: "Karşılaştırma: genel ve belirli"
+      id: "Perbandingan: umum dan khusus"
+      vi: "So sánh: chung và cụ thể"
+    role: "compare"
+    content:
+      - type: "comparison"
+        columns:
+          - key: "ctx"
+            label: { fr: "Situation", en: "Situation", uk: "Ситуація", es: "Situación", pt: "Situação", de: "Situation", it: "Situazione", pl: "Sytuacja", tr: "Durum", id: "Situasi", vi: "Tình huống" }
+          - { key: "art", label: { fr: "Article", en: "Article", uk: "Артикль", es: "Artículo", pt: "Artigo", de: "Artikel", it: "Articolo", pl: "Przedimek", tr: "Artikel", id: "Artikel", vi: "Mạo từ" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            ctx:
+              fr: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, " : la chose en général"]
+              en: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": the thing in general"]
+              uk: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": річ загалом"]
+              es: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": la cosa en general"]
+              pt: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": a coisa em geral"]
+              de: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": die Sache im Allgemeinen"]
+              it: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": la cosa in generale"]
+              pl: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": rzecz ogólnie"]
+              tr: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": genel anlamda şey"]
+              id: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": hal secara umum"]
+              vi: [{ term: "aimer" }, ", ", { term: "adorer" }, ", ", { term: "détester" }, ", ", { term: "préférer" }, ": sự vật nói chung"]
+            art:
+              fr: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              en: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              uk: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              es: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              pt: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              de: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              it: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              pl: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              tr: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              id: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              vi: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            ex: { examples: [["J’aime ", { target: "le" }, " café."], ["Il déteste ", { target: "les" }, " chiens."]] }
+            tr: { en: { examples: ["I like coffee.", "He hates dogs."] }, uk: { examples: ["Я люблю каву.", "Він ненавидить собак."] }, es: { examples: ["Me gusta el café.", "Odia a los perros."] }, pt: { examples: ["Eu gosto de café.", "Ele odeia cachorros."] }, de: { examples: ["Ich mag Kaffee.", "Er hasst Hunde."] }, it: { examples: ["Mi piace il caffè.", "Odia i cani."] }, pl: { examples: ["Lubię kawę.", "On nie znosi psów."] }, tr: { examples: ["Kahveyi severim.", "Köpeklerden nefret ediyor."] }, id: { examples: ["Aku suka kopi.", "Dia benci anjing."] }, vi: { examples: ["Tôi thích cà phê.", "Anh ấy ghét chó."] } }
+          - level: "A1"
+            ctx:
+              fr: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, " : une chose ou plusieurs, précisées pour la première fois"]
+              en: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": one thing or several, mentioned for the first time"]
+              uk: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": одна чи кілька речей, названі вперше"]
+              es: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": una o varias cosas, mencionadas por primera vez"]
+              pt: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": uma ou várias coisas, mencionadas pela primeira vez"]
+              de: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": eine oder mehrere Sachen, zum ersten Mal genannt"]
+              it: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": una o più cose, nominate per la prima volta"]
+              pl: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": jedna lub kilka rzeczy, wspomniane po raz pierwszy"]
+              tr: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": ilk kez söz edilen bir ya da birkaç şey"]
+              id: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": satu atau beberapa hal yang baru disebut"]
+              vi: [{ term: "manger" }, ", ", { term: "acheter" }, ", ", { term: "prendre" }, ", ", { term: "avoir" }, ": một hay nhiều sự vật được nhắc lần đầu"]
+            art:
+              fr: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              en: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              uk: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              es: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              pt: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              de: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              it: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              pl: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              tr: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              id: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+              vi: { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }
+            ex: { examples: [["Je mange ", { target: "une" }, " pomme."], ["J’achète ", { target: "des" }, " pommes."]] }
+            tr: { en: { examples: ["I'm eating an apple.", "I'm buying apples."] }, uk: { examples: ["Я їм яблуко.", "Я купую яблука."] }, es: { examples: ["Como una manzana.", "Compro manzanas."] }, pt: { examples: ["Eu como uma maçã.", "Eu compro maçãs."] }, de: { examples: ["Ich esse einen Apfel.", "Ich kaufe Äpfel."] }, it: { examples: ["Mangio una mela.", "Compro delle mele."] }, pl: { examples: ["Jem jabłko.", "Kupuję jabłka."] }, tr: { examples: ["Bir elma yiyorum.", "Elma alıyorum."] }, id: { examples: ["Aku makan sebuah apel.", "Aku membeli apel."] }, vi: { examples: ["Tôi ăn một quả táo.", "Tôi mua táo."] } }
+          - level: "A1"
+            ctx:
+              fr: "une chose précise que l’on peut identifier"
+              en: "a specific thing you can identify"
+              uk: "конкретна річ, яку можна визначити"
+              es: "una cosa concreta que se puede identificar"
+              pt: "uma coisa concreta que se pode identificar"
+              de: "eine bestimmte Sache, die man erkennen kann"
+              it: "una cosa precisa che si può identificare"
+              pl: "konkretna rzecz, którą można zidentyfikować"
+              tr: "tanımlanabilen belirli bir şey"
+              id: "hal tertentu yang dapat dikenali"
+              vi: "một sự vật cụ thể có thể nhận ra"
+            art:
+              fr: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              en: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              uk: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              es: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              pt: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              de: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              it: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              pl: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              tr: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              id: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+              vi: { alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }] }
+            ex: ["Je prends ", { target: "le" }, " train de huit heures."]
+            tr: { en: "I'm taking the eight o'clock train.", uk: "Я їду потягом о восьмій.", es: "Cojo el tren de las ocho.", pt: "Eu pego o trem das oito.", de: "Ich nehme den Zug um acht Uhr.", it: "Prendo il treno delle otto.", pl: "Jadę pociągiem o ósmej.", tr: "Saat sekizdeki trene biniyorum.", id: "Aku naik kereta jam delapan.", vi: "Tôi đi chuyến tàu tám giờ." }
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: "Le ami de Paul est ici."
+            right: [{ target: "L’" }, "ami de Paul est ici."]
+            rule:
+              fr: [{ term: "le" }, " devient ", { term: "l’" }, " devant une voyelle"]
+              en: [{ term: "le" }, " becomes ", { term: "l’" }, " before a vowel"]
+              uk: ["перед голосною ", { term: "le" }, " стає ", { term: "l’" }]
+              es: ["ante vocal, ", { term: "le" }, " pasa a ", { term: "l’" }]
+              pt: ["antes de vogal, ", { term: "le" }, " vira ", { term: "l’" }]
+              de: ["vor einem Vokal wird ", { term: "le" }, " zu ", { term: "l’" }]
+              it: ["davanti a vocale, ", { term: "le" }, " diventa ", { term: "l’" }]
+              pl: ["przed samogłoską ", { term: "le" }, " zmienia się w ", { term: "l’" }]
+              tr: ["ünlüden önce ", { term: "le" }, ", ", { term: "l’" }, " olur"]
+              id: ["sebelum vokal, ", { term: "le" }, " menjadi ", { term: "l’" }]
+              vi: ["trước nguyên âm, ", { term: "le" }, " thành ", { term: "l’" }]
+          - level: "A1"
+            wrong: "Je vais à le cinéma."
+            right: ["Je vais ", { target: "au" }, " cinéma."]
+            rule:
+              fr: [{ term: "à" }, " + ", { term: "le" }, " devient ", { term: "au" }]
+              en: [{ term: "à" }, " + ", { term: "le" }, " becomes ", { term: "au" }]
+              uk: [{ term: "à" }, " + ", { term: "le" }, " стає ", { term: "au" }]
+              es: [{ term: "à" }, " + ", { term: "le" }, " pasa a ", { term: "au" }]
+              pt: [{ term: "à" }, " + ", { term: "le" }, " vira ", { term: "au" }]
+              de: [{ term: "à" }, " + ", { term: "le" }, " wird zu ", { term: "au" }]
+              it: [{ term: "à" }, " + ", { term: "le" }, " diventa ", { term: "au" }]
+              pl: [{ term: "à" }, " + ", { term: "le" }, " zmienia się w ", { term: "au" }]
+              tr: [{ term: "à" }, " + ", { term: "le" }, ", ", { term: "au" }, " olur"]
+              id: [{ term: "à" }, " + ", { term: "le" }, " menjadi ", { term: "au" }]
+              vi: [{ term: "à" }, " + ", { term: "le" }, " thành ", { term: "au" }]
+          - level: "A1"
+            wrong: "Il parle de les enfants."
+            right: ["Il parle ", { target: "des" }, " enfants."]
+            rule:
+              fr: [{ term: "de" }, " + ", { term: "les" }, " devient ", { term: "des" }]
+              en: [{ term: "de" }, " + ", { term: "les" }, " becomes ", { term: "des" }]
+              uk: [{ term: "de" }, " + ", { term: "les" }, " стає ", { term: "des" }]
+              es: [{ term: "de" }, " + ", { term: "les" }, " pasa a ", { term: "des" }]
+              pt: [{ term: "de" }, " + ", { term: "les" }, " vira ", { term: "des" }]
+              de: [{ term: "de" }, " + ", { term: "les" }, " wird zu ", { term: "des" }]
+              it: [{ term: "de" }, " + ", { term: "les" }, " diventa ", { term: "des" }]
+              pl: [{ term: "de" }, " + ", { term: "les" }, " zmienia się w ", { term: "des" }]
+              tr: [{ term: "de" }, " + ", { term: "les" }, ", ", { term: "des" }, " olur"]
+              id: [{ term: "de" }, " + ", { term: "les" }, " menjadi ", { term: "des" }]
+              vi: [{ term: "de" }, " + ", { term: "les" }, " thành ", { term: "des" }]
+          - level: "A1"
+            speakers: ["en", "uk", "de", "pl", "tr", "id", "vi"]
+            wrong: "J’aime café."
+            right: ["J’aime ", { target: "le" }, " café."]
+            rule:
+              en: ["a noun in general takes the article after ", { term: "aimer" }, ": ", { term: "j’aime le café" }, ", unlike “I like coffee”"]
+              uk: ["після ", { term: "aimer" }, " іменник у загальному значенні має артикль: ", { term: "j’aime le café" }, ", на відміну від «я люблю каву»"]
+              de: ["nach ", { term: "aimer" }, " steht das Nomen im allgemeinen Sinn mit Artikel: ", { term: "j’aime le café" }, ", anders als „Ich mag Kaffee“"]
+              pl: ["po ", { term: "aimer" }, " rzeczownik w znaczeniu ogólnym ma przedimek: ", { term: "j’aime le café" }, ", inaczej niż w „lubię kawę”"]
+              tr: [{ term: "aimer" }, " sonrasında genel anlamdaki isim artikel alır: ", { term: "j’aime le café" }, ", “kahveyi severim” gibi artikelsiz olmaz"]
+              id: ["setelah ", { term: "aimer" }, ", kata benda bermakna umum memakai artikel: ", { term: "j’aime le café" }, ", tidak seperti “aku suka kopi”"]
+              vi: ["sau ", { term: "aimer" }, ", danh từ nói chung có mạo từ: ", { term: "j’aime le café" }, ", khác với “tôi thích cà phê”"]
+          - level: "A1"
+            speakers: ["uk", "pl", "tr", "id", "vi"]
+            wrong: "J’ai un chat. Un chat est noir."
+            right: ["J’ai un chat. ", { target: "Le" }, " chat est noir."]
+            rule:
+              uk: ["річ, про яку вже згадували, має означений артикль: ", { term: "le chat" }]
+              pl: ["rzecz już wspomniana ma przedimek określony: ", { term: "le chat" }]
+              tr: ["daha önce söz edilen şey belirli artikel alır: ", { term: "le chat" }]
+              id: ["hal yang sudah disebut memakai artikel tentu: ", { term: "le chat" }]
+              vi: ["sự vật đã được nhắc đến dùng mạo từ xác định: ", { term: "le chat" }]
+          - level: "A2"
+            speakers: ["en", "tr", "id"]
+            wrong: "J’ai mal à ma tête."
+            right: ["J’ai mal à ", { target: "la" }, " tête."]
+            rule:
+              en: ["a part of the body takes the definite article, not a possessive: ", { term: "la tête" }, ", not “my head”"]
+              tr: ["vücut bölümü iyelik değil belirli artikel alır: “başım” değil ", { term: "la tête" }]
+              id: ["bagian tubuh memakai artikel tentu, bukan posesif: ", { term: "la tête" }, ", bukan “kepalaku”"]
+          - level: "A2"
+            wrong: "Un café sans le sucre."
+            right: ["Un café sans ", { target: "sucre" }, "."]
+            rule:
+              fr: ["pas d’article après ", { term: "sans" }, " : ", { term: "sans sucre" }]
+              en: ["no article after ", { term: "sans" }, ": ", { term: "sans sucre" }]
+              uk: ["після ", { term: "sans" }, " артикля немає: ", { term: "sans sucre" }]
+              es: ["no hay artículo tras ", { term: "sans" }, ": ", { term: "sans sucre" }]
+              pt: ["não há artigo depois de ", { term: "sans" }, ": ", { term: "sans sucre" }]
+              de: ["nach ", { term: "sans" }, " steht kein Artikel: ", { term: "sans sucre" }]
+              it: ["non c'è articolo dopo ", { term: "sans" }, ": ", { term: "sans sucre" }]
+              pl: ["po ", { term: "sans" }, " nie ma przedimka: ", { term: "sans sucre" }]
+              tr: [{ term: "sans" }, " sonrasında artikel gelmez: ", { term: "sans sucre" }]
+              id: ["tidak ada artikel setelah ", { term: "sans" }, ": ", { term: "sans sucre" }]
+              vi: ["sau ", { term: "sans" }, " không có mạo từ: ", { term: "sans sucre" }]

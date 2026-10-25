@@ -1,0 +1,826 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.pronoms.pronoms-sujets"
+lang: "fr"
+kind: "grammar"
+tags: ["pronouns", "subject", "on", "ils"]
+concepts: ["pronouns"]
+related: ["fr.pronoms.tu-vous", "fr.pronoms.pronoms-toniques", "fr.etre-avoir.etre-avoir", "fr.etre-avoir.c-est-il-est", "fr.bases.liaison-elision"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", uk: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", es: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", pt: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", de: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", it: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", pl: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", tr: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", id: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1", vi: "89ac59 f6fd6e 2bfdb8 8d8970 4d992c b9209a 279dd1" }
+title:
+  fr: "Les pronoms sujets"
+  en: "Subject Pronouns"
+  uk: "Підметові займенники"
+  es: "Los pronombres sujeto"
+  pt: "Os pronomes sujeito"
+  de: "Die Subjektpronomen"
+  it: "I pronomi soggetto"
+  pl: "Zaimki podmiotowe"
+  tr: "Özne zamirleri"
+  id: "Pronomina subjek"
+  vi: "Đại từ chủ ngữ"
+summary:
+  lead:
+    fr: ["Les pronoms sujets ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " et ", { term: "elles" }, " précèdent le verbe."]
+    en: ["The subject pronouns ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " and ", { term: "elles" }, " come before the verb."]
+    uk: ["Підметові займенники ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, ", ", { term: "elles" }, " стоять перед дієсловом."]
+    es: ["Los pronombres sujeto ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " y ", { term: "elles" }, " van antes del verbo."]
+    pt: ["Os pronomes sujeito ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " e ", { term: "elles" }, " vêm antes do verbo."]
+    de: ["Die Subjektpronomen ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " und ", { term: "elles" }, " stehen vor dem Verb."]
+    it: ["I pronomi soggetto ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " ed ", { term: "elles" }, " stanno prima del verbo."]
+    pl: ["Zaimki podmiotowe ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " i ", { term: "elles" }, " stoją przed czasownikiem."]
+    tr: ["Özne zamirleri ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " ve ", { term: "elles" }, " fiilin önünde yer alır."]
+    id: ["Pronomina subjek ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, ", dan ", { term: "elles" }, " berada sebelum kata kerja."]
+    vi: ["Các đại từ chủ ngữ ", { term: "je" }, ", ", { term: "tu" }, ", ", { term: "il" }, ", ", { term: "elle" }, ", ", { term: "on" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " và ", { term: "elles" }, " đứng trước động từ."]
+  rule:
+    fr: "Un verbe conjugué a toujours un sujet exprimé :"
+    en: "A conjugated verb always has a stated subject:"
+    uk: "Дієслово в особовій формі завжди має виражений підмет:"
+    es: "Un verbo conjugado siempre lleva un sujeto expreso:"
+    pt: "Um verbo conjugado sempre tem um sujeito expresso:"
+    de: "Ein konjugiertes Verb hat immer ein ausgedrücktes Subjekt:"
+    it: "Un verbo coniugato ha sempre un soggetto espresso:"
+    pl: "Czasownik w formie osobowej zawsze ma wyrażony podmiot:"
+    tr: "Çekimli bir fiilin her zaman belirtilmiş bir öznesi vardır:"
+    id: "Kata kerja yang dikonjugasikan selalu memiliki subjek yang disebutkan:"
+    vi: "Động từ đã chia luôn có chủ ngữ được nêu ra:"
+  ex: { examples: [[{ target: "Elle" }, " habite à Lyon."], [{ target: "Nous" }, " mangeons."]] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A0"
+          point: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" }
+          rule:
+            fr: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            en: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            uk: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            es: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            pt: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            de: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            it: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            pl: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            tr: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            id: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+            vi: { alternatives: [{ term: "je" }, { term: "tu" }, { term: "il" }, { term: "elle" }, { term: "nous" }, { term: "vous" }, { term: "ils" }, { term: "elles" }] }
+          ex: [{ target: "Elle" }, " habite à Nice."]
+          tr: { en: "She lives in Nice.", uk: "Вона живе в Ніцці.", es: "Vive en Niza.", pt: "Ela mora em Nice.", de: "Sie wohnt in Nizza.", it: "Abita a Nizza.", pl: "Mieszka w Nicei.", tr: "Nice’te yaşıyor.", id: "Dia tinggal di Nice.", vi: "Cô ấy sống ở Nice." }
+        - level: "A0"
+          point: { fr: "Élision", en: "Elision", uk: "Елізія", es: "Elisión", pt: "Elisão", de: "Elision", it: "Elisione", pl: "Elizja", tr: "Ünlü düşmesi", id: "Elisi", vi: "Lược âm" }
+          rule:
+            fr: [{ term: "je" }, " devient ", { term: "j’" }, " devant une voyelle"]
+            en: [{ term: "je" }, " becomes ", { term: "j’" }, " before a vowel"]
+            uk: ["перед голосною ", { term: "je" }, " стає ", { term: "j’" }]
+            es: [{ term: "je" }, " pasa a ", { term: "j’" }, " ante vocal"]
+            pt: [{ term: "je" }, " vira ", { term: "j’" }, " antes de vogal"]
+            de: [{ term: "je" }, " wird vor einem Vokal zu ", { term: "j’" }]
+            it: [{ term: "je" }, " diventa ", { term: "j’" }, " davanti a vocale"]
+            pl: ["przed samogłoską ", { term: "je" }, " zmienia się w ", { term: "j’" }]
+            tr: ["ünlüden önce ", { term: "je" }, ", ", { term: "j’" }, " olur"]
+            id: [{ term: "je" }, " menjadi ", { term: "j’" }, " sebelum vokal"]
+            vi: ["trước nguyên âm, ", { term: "je" }, " thành ", { term: "j’" }]
+          ex: [{ target: "J’" }, "habite à Nice."]
+          tr: { en: "I live in Nice.", uk: "Я живу в Ніцці.", es: "Vivo en Niza.", pt: "Eu moro em Nice.", de: "Ich wohne in Nizza.", it: "Abito a Nizza.", pl: "Mieszkam w Nicei.", tr: "Nice’te yaşıyorum.", id: "Aku tinggal di Nice.", vi: "Tôi sống ở Nice." }
+        - level: "A0"
+          point: { fr: "Tu et vous", en: "Tu and vous", uk: "Tu та vous", es: "Tu y vous", pt: "Tu e vous", de: "Tu und vous", it: "Tu e vous", pl: "Tu i vous", tr: "Tu ve vous", id: "Tu dan vous", vi: "Tu và vous" }
+          rule:
+            fr: [{ term: "tu" }, " pour un ami, ", { term: "vous" }, " pour la politesse ou plusieurs personnes"]
+            en: [{ term: "tu" }, " for a friend, ", { term: "vous" }, " for politeness or several people"]
+            uk: [{ term: "tu" }, " — для друга, ", { term: "vous" }, " — для ввічливості або кількох людей"]
+            es: [{ term: "tu" }, " para un amigo, ", { term: "vous" }, " para la cortesía o varias personas"]
+            pt: [{ term: "tu" }, " para um amigo, ", { term: "vous" }, " para a cortesia ou várias pessoas"]
+            de: [{ term: "tu" }, " für Freunde, ", { term: "vous" }, " für die Höflichkeit oder mehrere Personen"]
+            it: [{ term: "tu" }, " per un amico, ", { term: "vous" }, " per la cortesia o più persone"]
+            pl: [{ term: "tu" }, " do przyjaciela, ", { term: "vous" }, " dla grzeczności lub do kilku osób"]
+            tr: [{ term: "tu" }, " arkadaş için, ", { term: "vous" }, " nezaket için ya da birden çok kişi için"]
+            id: [{ term: "tu" }, " untuk teman, ", { term: "vous" }, " untuk kesopanan atau beberapa orang"]
+            vi: [{ term: "tu" }, " cho bạn bè, ", { term: "vous" }, " để lịch sự hoặc cho nhiều người"]
+          ex: [{ target: "Vous" }, " parlez anglais ?"]
+          tr: { en: "Do you speak English?", uk: "Ви говорите англійською?", es: "¿Habla usted inglés?", pt: "O senhor fala inglês?", de: "Sprechen Sie Englisch?", it: "Parla inglese?", pl: "Czy pan mówi po angielsku?", tr: "İngilizce konuşuyor musunuz?", id: "Apakah Anda berbicara bahasa Inggris?", vi: "Ông có nói tiếng Anh không?" }
+        - level: "A0"
+          point: { fr: "Il et elle", en: "Il and elle", uk: "Il та elle", es: "Il y elle", pt: "Il e elle", de: "Il und elle", it: "Il ed elle", pl: "Il i elle", tr: "Il ve elle", id: "Il dan elle", vi: "Il và elle" }
+          rule:
+            fr: [{ term: "il" }, " pour un homme, ", { term: "elle" }, " pour une femme"]
+            en: [{ term: "il" }, " for a man, ", { term: "elle" }, " for a woman"]
+            uk: [{ term: "il" }, " — про чоловіка, ", { term: "elle" }, " — про жінку"]
+            es: [{ term: "il" }, " para un hombre, ", { term: "elle" }, " para una mujer"]
+            pt: [{ term: "il" }, " para um homem, ", { term: "elle" }, " para uma mulher"]
+            de: [{ term: "il" }, " für einen Mann, ", { term: "elle" }, " für eine Frau"]
+            it: [{ term: "il" }, " per un uomo, ", { term: "elle" }, " per una donna"]
+            pl: [{ term: "il" }, " o mężczyźnie, ", { term: "elle" }, " o kobiecie"]
+            tr: ["erkek için ", { term: "il" }, ", kadın için ", { term: "elle" }]
+            id: [{ term: "il" }, " untuk laki-laki, ", { term: "elle" }, " untuk perempuan"]
+            vi: [{ term: "il" }, " chỉ đàn ông, ", { term: "elle" }, " chỉ phụ nữ"]
+          ex: ["Marc est là. ", { target: "Il" }, " travaille."]
+          tr: { en: "Marc is here. He's working.", uk: "Марк тут. Він працює.", es: "Marc está aquí. Trabaja.", pt: "O Marc está aqui. Ele está trabalhando.", de: "Marc ist da. Er arbeitet.", it: "Marc è qui. Lavora.", pl: "Marc jest tutaj. Pracuje.", tr: "Marc burada. Çalışıyor.", id: "Marc ada di sini. Dia sedang bekerja.", vi: "Marc ở đây. Anh ấy đang làm việc." }
+        - level: "A1"
+          point: { fr: "Il et elle", en: "Il and elle", uk: "Il та elle", es: "Il y elle", pt: "Il e elle", de: "Il und elle", it: "Il ed elle", pl: "Il i elle", tr: "Il ve elle", id: "Il dan elle", vi: "Il và elle" }
+          rule:
+            fr: "pour une chose, le genre du nom décide"
+            en: "for a thing, the gender of the noun decides"
+            uk: "про річ рішає рід іменника"
+            es: "para una cosa, decide el género del nombre"
+            pt: "para uma coisa, o gênero do substantivo decide"
+            de: "bei einer Sache entscheidet das Genus des Nomens"
+            it: "per una cosa decide il genere del nome"
+            pl: "przy rzeczy decyduje rodzaj rzeczownika"
+            tr: "bir nesnede ismin cinsiyeti belirler"
+            id: "untuk benda, gender kata bendanya yang menentukan"
+            vi: "với đồ vật, giống của danh từ quyết định"
+          ex: ["La clé ? ", { target: "Elle" }, " est là."]
+          tr: { en: "The key? It is here.", uk: "Ключ? Він тут.", es: "¿La llave? Está aquí.", pt: "A chave? Está aqui.", de: "Der Schlüssel? Er ist hier.", it: "La chiave? È qui.", pl: "Klucz? Jest tutaj.", tr: "Anahtar mı? Burada.", id: "Kuncinya? Ada di sini.", vi: "Chìa khóa à? Nó ở đây." }
+        - level: "A1"
+          point: { fr: "On", en: "On", uk: "On", es: "On", pt: "On", de: "On", it: "On", pl: "On", tr: "On", id: "On", vi: "On" }
+          rule:
+            fr: [{ term: "on" }, " remplace ", { term: "nous" }, " à l’oral et prend la forme de ", { term: "il" }]
+            en: [{ term: "on" }, " replaces ", { term: "nous" }, " in speech and takes the ", { term: "il" }, " form"]
+            uk: [{ term: "on" }, " замінює ", { term: "nous" }, " в усному мовленні й має форму ", { term: "il" }]
+            es: [{ term: "on" }, " sustituye a ", { term: "nous" }, " en la lengua hablada y lleva la forma de ", { term: "il" }]
+            pt: [{ term: "on" }, " substitui ", { term: "nous" }, " na fala e usa a forma de ", { term: "il" }]
+            de: [{ term: "on" }, " ersetzt mündlich ", { term: "nous" }, " und steht mit der Form von ", { term: "il" }]
+            it: [{ term: "on" }, " sostituisce ", { term: "nous" }, " nel parlato e prende la forma di ", { term: "il" }]
+            pl: [{ term: "on" }, " zastępuje ", { term: "nous" }, " w mowie i ma formę jak ", { term: "il" }]
+            tr: [{ term: "on" }, " konuşmada ", { term: "nous" }, " yerine geçer ve ", { term: "il" }, " biçimini alır"]
+            id: [{ term: "on" }, " menggantikan ", { term: "nous" }, " dalam percakapan dan memakai bentuk ", { term: "il" }]
+            vi: [{ term: "on" }, " thay ", { term: "nous" }, " trong lời nói và dùng dạng của ", { term: "il" }]
+          ex: [{ target: "On" }, " mange ensemble ?"]
+          tr: { en: "Shall we eat together?", uk: "Поїмо разом?", es: "¿Comemos juntos?", pt: "Vamos comer juntos?", de: "Essen wir zusammen?", it: "Mangiamo insieme?", pl: "Zjemy razem?", tr: "Birlikte yiyelim mi?", id: "Makan bersama, yuk?", vi: "Mình ăn cùng nhau nhé?" }
+        - level: "A1"
+          point: { fr: "Ils", en: "Ils", uk: "Ils", es: "Ils", pt: "Ils", de: "Ils", it: "Ils", pl: "Ils", tr: "Ils", id: "Ils", vi: "Ils" }
+          rule:
+            fr: [{ term: "ils" }, " pour un groupe d’hommes ou un groupe mixte"]
+            en: [{ term: "ils" }, " for a group of men or a mixed group"]
+            uk: [{ term: "ils" }, " — для групи чоловіків або змішаної групи"]
+            es: [{ term: "ils" }, " para un grupo de hombres o un grupo mixto"]
+            pt: [{ term: "ils" }, " para um grupo de homens ou um grupo misto"]
+            de: [{ term: "ils" }, " für eine Männergruppe oder eine gemischte Gruppe"]
+            it: [{ term: "ils" }, " per un gruppo di uomini o un gruppo misto"]
+            pl: [{ term: "ils" }, " dla grupy mężczyzn lub grupy mieszanej"]
+            tr: [{ term: "ils" }, " erkek grubu ya da karma grup için"]
+            id: [{ term: "ils" }, " untuk kelompok laki-laki atau kelompok campuran"]
+            vi: [{ term: "ils" }, " cho nhóm đàn ông hoặc nhóm hỗn hợp"]
+          ex: ["Léa et Paul sont là. ", { target: "Ils" }, " travaillent."]
+          tr: { en: "Léa and Paul are here. They're working.", uk: "Леа і Поль тут. Вони працюють.", es: "Léa y Paul están aquí. Trabajan.", pt: "A Léa e o Paul estão aqui. Eles estão trabalhando.", de: "Léa und Paul sind da. Sie arbeiten.", it: "Léa e Paul sono qui. Lavorano.", pl: "Léa i Paul są tutaj. Pracują.", tr: "Léa ile Paul burada. Çalışıyorlar.", id: "Léa dan Paul ada di sini. Mereka sedang bekerja.", vi: "Léa và Paul ở đây. Họ đang làm việc." }
+        - level: "A2"
+          point: { fr: "On", en: "On", uk: "On", es: "On", pt: "On", de: "On", it: "On", pl: "On", tr: "On", id: "On", vi: "On" }
+          rule:
+            fr: [{ term: "on" }, " désigne aussi les gens en général"]
+            en: [{ term: "on" }, " also means people in general"]
+            uk: [{ term: "on" }, " також означає людей узагалі"]
+            es: [{ term: "on" }, " también designa a la gente en general"]
+            pt: [{ term: "on" }, " também designa as pessoas em geral"]
+            de: [{ term: "on" }, " steht auch für „man“, die Leute allgemein"]
+            it: [{ term: "on" }, " indica anche le persone in generale"]
+            pl: [{ term: "on" }, " oznacza też ludzi w ogóle"]
+            tr: [{ term: "on" }, " genel olarak insanları da anlatır"]
+            id: [{ term: "on" }, " juga berarti orang pada umumnya"]
+            vi: [{ term: "on" }, " còn chỉ người ta nói chung"]
+          ex: ["En France, ", { target: "on" }, " parle français."]
+          tr: { en: "In France, people speak French.", uk: "У Франції говорять французькою.", es: "En Francia se habla francés.", pt: "Na França, fala-se francês.", de: "In Frankreich spricht man Französisch.", it: "In Francia si parla francese.", pl: "We Francji mówi się po francusku.", tr: "Fransa’da Fransızca konuşulur.", id: "Di Prancis orang berbicara bahasa Prancis.", vi: "Ở Pháp người ta nói tiếng Pháp." }
+        - level: "A0"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: "le verbe ne se passe jamais du pronom sujet"
+            en: "the verb never goes without its subject pronoun"
+            uk: "дієслово ніколи не вживається без підметового займенника"
+            es: "el verbo nunca va sin su pronombre sujeto"
+            pt: "o verbo nunca fica sem o pronome sujeito"
+            de: "das Verb steht nie ohne Subjektpronomen"
+            it: "il verbo non sta mai senza il pronome soggetto"
+            pl: "czasownik nigdy nie występuje bez zaimka podmiotowego"
+            tr: "fiil asla özne zamiri olmadan kullanılmaz"
+            id: "kata kerja tidak pernah berdiri tanpa pronomina subjek"
+            vi: "động từ không bao giờ đứng thiếu đại từ chủ ngữ"
+          ex: [{ target: "Il" }, " est à Paris."]
+          tr: { en: "He is in Paris.", uk: "Він у Парижі.", es: "Está en París.", pt: "Ele está em Paris.", de: "Er ist in Paris.", it: "È a Parigi.", pl: "Jest w Paryżu.", tr: "Paris’te.", id: "Dia ada di Paris.", vi: "Anh ấy ở Paris." }
+sections:
+  - title:
+      fr: "Vue d’ensemble"
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: "Le verbe conjugué a toujours un sujet : un pronom ou un nom."
+              en: "A conjugated verb always has a subject: a pronoun or a noun."
+              uk: "Дієслово в особовій формі завжди має підмет: займенник або іменник."
+              es: "El verbo conjugado siempre tiene un sujeto: un pronombre o un nombre."
+              pt: "O verbo conjugado sempre tem um sujeito: um pronome ou um substantivo."
+              de: "Das konjugierte Verb hat immer ein Subjekt: ein Pronomen oder ein Nomen."
+              it: "Il verbo coniugato ha sempre un soggetto: un pronome o un nome."
+              pl: "Czasownik w formie osobowej zawsze ma podmiot: zaimek lub rzeczownik."
+              tr: "Çekimli fiilin her zaman bir öznesi vardır: bir zamir ya da bir isim."
+              id: "Kata kerja yang dikonjugasikan selalu punya subjek: pronomina atau kata benda."
+              vi: "Động từ đã chia luôn có chủ ngữ: một đại từ hoặc một danh từ."
+            ex: { examples: [[{ target: "Je" }, " parle."], [{ target: "Léa" }, " parle."]] }
+            tr: { en: { examples: ["I speak.", "Léa speaks."] }, uk: { examples: ["Я говорю.", "Леа говорить."] }, es: { examples: ["Hablo.", "Léa habla."] }, pt: { examples: ["Eu falo.", "A Léa fala."] }, de: { examples: ["Ich spreche.", "Léa spricht."] }, it: { examples: ["Parlo.", "Léa parla."] }, pl: { examples: ["Mówię.", "Léa mówi."] }, tr: { examples: ["Konuşuyorum.", "Léa konuşuyor."] }, id: { examples: ["Aku berbicara.", "Léa berbicara."] }, vi: { examples: ["Tôi nói.", "Léa nói."] } }
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: "Le pronom sujet se place devant le verbe."
+              en: "The subject pronoun comes before the verb."
+              uk: "Підметовий займенник стоїть перед дієсловом."
+              es: "El pronombre sujeto va delante del verbo."
+              pt: "O pronome sujeito vem antes do verbo."
+              de: "Das Subjektpronomen steht vor dem Verb."
+              it: "Il pronome soggetto sta davanti al verbo."
+              pl: "Zaimek podmiotowy stoi przed czasownikiem."
+              tr: "Özne zamiri fiilin önüne gelir."
+              id: "Pronomina subjek diletakkan sebelum kata kerja."
+              vi: "Đại từ chủ ngữ đứng trước động từ."
+            ex: { examples: [[{ target: "Nous" }, " habitons à Lyon."], [{ target: "Ils" }, " arrivent."]] }
+            tr: { en: { examples: ["We live in Lyon.", "They are arriving."] }, uk: { examples: ["Ми живемо в Ліоні.", "Вони приходять."] }, es: { examples: ["Vivimos en Lyon.", "Llegan."] }, pt: { examples: ["Nós moramos em Lyon.", "Eles estão chegando."] }, de: { examples: ["Wir wohnen in Lyon.", "Sie kommen an."] }, it: { examples: ["Abitiamo a Lione.", "Arrivano."] }, pl: { examples: ["Mieszkamy w Lyonie.", "Przychodzą."] }, tr: { examples: ["Lyon’da yaşıyoruz.", "Geliyorlar."] }, id: { examples: ["Kami tinggal di Lyon.", "Mereka tiba."] }, vi: { examples: ["Chúng tôi sống ở Lyon.", "Họ đến."] } }
+          - type: "note"
+            level: "A0"
+            text:
+              fr: ["Pour choisir entre tu et vous, voir ", { link: "Tu et vous", to: "fr.pronoms.tu-vous" }, "."]
+              en: ["To choose between tu and vous, see ", { link: "Forms of Address: tu and vous", to: fr.pronoms.tu-vous }, "."]
+              uk: ["Про вибір між tu і vous — у темі ", { link: "Tu та vous", to: "fr.pronoms.tu-vous" }, "."]
+              es: ["Para elegir entre tu y vous, véase ", { link: "Tu y vous", to: "fr.pronoms.tu-vous" }, "."]
+              pt: ["Para escolher entre tu e vous, veja ", { link: "Tu e vous", to: "fr.pronoms.tu-vous" }, "."]
+              de: ["Zur Wahl zwischen tu und vous siehe ", { link: "Tu und vous", to: "fr.pronoms.tu-vous" }, "."]
+              it: ["Per scegliere tra tu e vous, vedi ", { link: "Tu e vous", to: "fr.pronoms.tu-vous" }, "."]
+              pl: ["O wyborze między tu i vous — zob. ", { link: "Tu i vous", to: "fr.pronoms.tu-vous" }, "."]
+              tr: ["tu ile vous arasındaki seçim için bkz. ", { link: "Tu ve vous", to: "fr.pronoms.tu-vous" }, "."]
+              id: ["Untuk memilih antara tu dan vous, lihat ", { link: "Tu dan vous", to: "fr.pronoms.tu-vous" }, "."]
+              vi: ["Về việc chọn giữa tu và vous, xem ", { link: "Tu và vous", to: "fr.pronoms.tu-vous" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Dans une question avec inversion, le pronom suit le verbe : voir ", { link: "Les questions", to: "fr.phrase.questions" }, "."]
+              en: ["In a question with inversion, the pronoun follows the verb: see ", { link: "Questions", to: "fr.phrase.questions" }, "."]
+              uk: ["У питанні з інверсією займенник стоїть після дієслова: див. ", { link: "Питання", to: "fr.phrase.questions" }, "."]
+              es: ["En una pregunta con inversión, el pronombre va detrás del verbo: véase ", { link: "Las preguntas", to: "fr.phrase.questions" }, "."]
+              pt: ["Numa pergunta com inversão, o pronome vem depois do verbo: veja ", { link: "As perguntas", to: "fr.phrase.questions" }, "."]
+              de: ["In einer Frage mit Inversion folgt das Pronomen dem Verb: siehe ", { link: "Fragen", to: "fr.phrase.questions" }, "."]
+              it: ["In una domanda con inversione, il pronome segue il verbo: vedi ", { link: "Le domande", to: "fr.phrase.questions" }, "."]
+              pl: ["W pytaniu z inwersją zaimek stoi po czasowniku: zob. ", { link: "Pytania", to: "fr.phrase.questions" }, "."]
+              tr: ["Devrik soruda zamir fiilin ardından gelir: bkz. ", { link: "Soru cümleleri", to: "fr.phrase.questions" }, "."]
+              id: ["Dalam pertanyaan dengan inversi, pronomina mengikuti kata kerja: lihat ", { link: "Kalimat tanya", to: "fr.phrase.questions" }, "."]
+              vi: ["Trong câu hỏi đảo ngữ, đại từ đứng sau động từ: xem ", { link: "Câu hỏi", to: "fr.phrase.questions" }, "."]
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour insister sur la personne (moi, je…), voir ", { link: "Les pronoms toniques", to: "fr.pronoms.pronoms-toniques" }, "."]
+              en: ["To stress the person (moi, je…), see ", { link: "Stressed Pronouns", to: fr.pronoms.pronoms-toniques }, "."]
+              uk: ["Щоб наголосити на особі (moi, je…), див. ", { link: "Наголошені займенники", to: "fr.pronoms.pronoms-toniques" }, "."]
+              es: ["Para destacar a la persona (moi, je…), véase ", { link: "Los pronombres tónicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pt: ["Para enfatizar a pessoa (moi, je…), veja ", { link: "Os pronomes tônicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              de: ["Zur Betonung der Person (moi, je…) siehe ", { link: "Die betonten Pronomen", to: "fr.pronoms.pronoms-toniques" }, "."]
+              it: ["Per mettere in rilievo la persona (moi, je…), vedi ", { link: "I pronomi tonici", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pl: ["O podkreślaniu osoby (moi, je…) — zob. ", { link: "Zaimki akcentowane", to: "fr.pronoms.pronoms-toniques" }, "."]
+              tr: ["Kişiyi vurgulamak için (moi, je…) bkz. ", { link: "Vurgulu zamirler", to: "fr.pronoms.pronoms-toniques" }, "."]
+              id: ["Untuk menekankan orangnya (moi, je…), lihat ", { link: "Pronomina tonik", to: "fr.pronoms.pronoms-toniques" }, "."]
+              vi: ["Để nhấn mạnh người nói (moi, je…), xem ", { link: "Đại từ nhấn mạnh", to: "fr.pronoms.pronoms-toniques" }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Les pronoms qui suivent ou précèdent le verbe comme compléments : voir ", { link: "Les pronoms compléments", to: "fr.pronoms.pronoms-complements" }, "."]
+              en: ["The pronouns that stand with the verb as objects: see ", { link: "Object Pronouns", to: fr.pronoms.pronoms-complements }, "."]
+              uk: ["Займенники, що стоять при дієслові як додатки: див. ", { link: "Займенники-додатки", to: "fr.pronoms.pronoms-complements" }, "."]
+              es: ["Los pronombres que acompañan al verbo como complementos: véase ", { link: "Los pronombres complemento", to: "fr.pronoms.pronoms-complements" }, "."]
+              pt: ["Os pronomes que acompanham o verbo como complementos: veja ", { link: "Os pronomes complemento", to: "fr.pronoms.pronoms-complements" }, "."]
+              de: ["Die Pronomen, die als Objekte beim Verb stehen: siehe ", { link: "Die Objektpronomen", to: "fr.pronoms.pronoms-complements" }, "."]
+              it: ["I pronomi che accompagnano il verbo come complementi: vedi ", { link: "I pronomi complemento", to: "fr.pronoms.pronoms-complements" }, "."]
+              pl: ["Zaimki, które towarzyszą czasownikowi jako dopełnienia: zob. ", { link: "Zaimki dopełnieniowe", to: fr.pronoms.pronoms-complements }, "."]
+              tr: ["Fiilin yanında nesne olarak duran zamirler için bkz. ", { link: "Nesne zamirleri", to: "fr.pronoms.pronoms-complements" }, "."]
+              id: ["Pronomina yang menyertai kata kerja sebagai objek: lihat ", { link: "Pronomina objek", to: "fr.pronoms.pronoms-complements" }, "."]
+              vi: ["Các đại từ đi với động từ làm bổ ngữ: xem ", { link: "Đại từ bổ ngữ", to: "fr.pronoms.pronoms-complements" }, "."]
+  - title:
+      fr: "Forme : les pronoms sujets"
+      en: "Form: the subject pronouns"
+      uk: "Форма: підметові займенники"
+      es: "Forma: los pronombres sujeto"
+      pt: "Forma: os pronomes sujeito"
+      de: "Form: die Subjektpronomen"
+      it: "Forma: i pronomi soggetto"
+      pl: "Forma: zaimki podmiotowe"
+      tr: "Biçim: özne zamirleri"
+      id: "Bentuk: pronomina subjek"
+      vi: "Dạng: đại từ chủ ngữ"
+    role: "form"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "person", label: { fr: "Personne", en: "Person", uk: "Особа", es: "Persona", pt: "Pessoa", de: "Person", it: "Persona", pl: "Osoba", tr: "Kişi", id: "Orang", vi: "Ngôi" } }
+          - key: "sg"
+            label: { fr: "Singulier", en: "Singular", uk: "Однина", es: "Singular", pt: "Singular", de: "Singular", it: "Singolare", pl: "Liczba pojedyncza", tr: "Tekil", id: "Tunggal", vi: "Số ít" }
+            features: { number: "sg" }
+          - key: "pl"
+            label: { fr: "Pluriel", en: "Plural", uk: "Множина", es: "Plural", pt: "Plural", de: "Plural", it: "Plurale", pl: "Liczba mnoga", tr: "Çoğul", id: "Jamak", vi: "Số nhiều" }
+            features: { number: "pl" }
+        rows:
+          - { level: "A0", features: { person: 1 }, person: "1", sg: { alternatives: ["je", "j’"] }, pl: "nous" }
+          - { level: "A0", features: { person: 2 }, person: "2", sg: "tu", pl: "vous" }
+          - { level: "A0", features: { person: 3 }, person: "3", sg: { alternatives: ["il", "elle"] }, pl: { alternatives: ["ils", "elles"] } }
+          - { level: "A1", features: { person: 3 }, person: "3", sg: "on" }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: ["Devant une voyelle ou un h muet, ", { term: "je" }, " devient ", { term: "j’" }, "."]
+              en: ["Before a vowel or a silent h, ", { term: "je" }, " becomes ", { term: "j’" }, "."]
+              uk: ["Перед голосною або німим h ", { term: "je" }, " стає ", { term: "j’" }, "."]
+              es: ["Ante vocal o h muda, ", { term: "je" }, " pasa a ", { term: "j’" }, "."]
+              pt: ["Antes de vogal ou h mudo, ", { term: "je" }, " vira ", { term: "j’" }, "."]
+              de: ["Vor einem Vokal oder stummen h wird ", { term: "je" }, " zu ", { term: "j’" }, "."]
+              it: ["Davanti a vocale o h muta, ", { term: "je" }, " diventa ", { term: "j’" }, "."]
+              pl: ["Przed samogłoską lub niemym h ", { term: "je" }, " zmienia się w ", { term: "j’" }, "."]
+              tr: ["Ünlüden ya da sessiz h’den önce ", { term: "je" }, ", ", { term: "j’" }, " olur."]
+              id: ["Sebelum vokal atau h bisu, ", { term: "je" }, " menjadi ", { term: "j’" }, "."]
+              vi: ["Trước nguyên âm hoặc h câm, ", { term: "je" }, " thành ", { term: "j’" }, "."]
+            ex: { examples: [[{ target: "J’" }, "aime le café."], [{ target: "J’" }, "habite à Nice."], [{ target: "Je" }, " parle."]] }
+            tr: { en: { examples: ["I like coffee.", "I live in Nice.", "I speak."] }, uk: { examples: ["Я люблю каву.", "Я живу в Ніцці.", "Я говорю."] }, es: { examples: ["Me gusta el café.", "Vivo en Niza.", "Hablo."] }, pt: { examples: ["Eu gosto de café.", "Eu moro em Nice.", "Eu falo."] }, de: { examples: ["Ich mag Kaffee.", "Ich wohne in Nizza.", "Ich spreche."] }, it: { examples: ["Mi piace il caffè.", "Abito a Nizza.", "Parlo."] }, pl: { examples: ["Lubię kawę.", "Mieszkam w Nicei.", "Mówię."] }, tr: { examples: ["Kahveyi severim.", "Nice’te yaşıyorum.", "Konuşuyorum."] }, id: { examples: ["Aku suka kopi.", "Aku tinggal di Nice.", "Aku berbicara."] }, vi: { examples: ["Tôi thích cà phê.", "Tôi sống ở Nice.", "Tôi nói."] } }
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: [{ term: "Il" }, " et ", { term: "elle" }, " existent pour un seul sujet ; ", { term: "ils" }, " et ", { term: "elles" }, " pour plusieurs."]
+              en: [{ term: "Il" }, " and ", { term: "elle" }, " stand for one subject; ", { term: "ils" }, " and ", { term: "elles" }, " for several."]
+              uk: [{ term: "Il" }, " і ", { term: "elle" }, " стосуються одного підмета; ", { term: "ils" }, " і ", { term: "elles" }, " — кількох."]
+              es: [{ term: "Il" }, " y ", { term: "elle" }, " se usan para un solo sujeto; ", { term: "ils" }, " y ", { term: "elles" }, ", para varios."]
+              pt: [{ term: "Il" }, " e ", { term: "elle" }, " valem para um só sujeito; ", { term: "ils" }, " e ", { term: "elles" }, ", para vários."]
+              de: [{ term: "Il" }, " und ", { term: "elle" }, " stehen für ein Subjekt; ", { term: "ils" }, " und ", { term: "elles" }, " für mehrere."]
+              it: [{ term: "Il" }, " ed ", { term: "elle" }, " valgono per un solo soggetto; ", { term: "ils" }, " ed ", { term: "elles" }, " per più soggetti."]
+              pl: [{ term: "Il" }, " i ", { term: "elle" }, " dotyczą jednego podmiotu; ", { term: "ils" }, " i ", { term: "elles" }, " — kilku."]
+              tr: [{ term: "Il" }, " ve ", { term: "elle" }, " tek özne için, ", { term: "ils" }, " ve ", { term: "elles" }, " birden çok özne içindir."]
+              id: [{ term: "Il" }, " dan ", { term: "elle" }, " untuk satu subjek; ", { term: "ils" }, " dan ", { term: "elles" }, " untuk beberapa subjek."]
+              vi: [{ term: "Il" }, " và ", { term: "elle" }, " dùng cho một chủ ngữ; ", { term: "ils" }, " và ", { term: "elles" }, " cho nhiều chủ ngữ."]
+            ex: { examples: [[{ target: "Elle" }, " travaille."], [{ target: "Elles" }, " travaillent."]] }
+            tr: { en: { examples: ["She is working.", "They are working."] }, uk: { examples: ["Вона працює.", "Вони працюють."] }, es: { examples: ["Ella trabaja.", "Ellas trabajan."] }, pt: { examples: ["Ela trabalha.", "Elas trabalham."] }, de: { examples: ["Sie arbeitet.", "Sie arbeiten."] }, it: { examples: ["Lei lavora.", "Loro lavorano."] }, pl: { examples: ["Ona pracuje.", "One pracują."] }, tr: { examples: ["O çalışıyor.", "Onlar çalışıyor."] }, id: { examples: ["Dia bekerja.", "Mereka bekerja."] }, vi: { examples: ["Cô ấy làm việc.", "Họ làm việc."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour les élisions et les liaisons, voir ", { link: "La liaison et l’élision", to: fr.bases.liaison-elision }, "."]
+              en: ["For elisions and liaisons, see ", { link: "Liaison and Elision", to: fr.bases.liaison-elision }, "."]
+              uk: ["Про елізії та зв’язування див. ", { link: "Ліазон та елізія", to: fr.bases.liaison-elision }, "."]
+              es: ["Para las elisiones y los enlaces, véase ", { link: "La liaison y la elisión", to: fr.bases.liaison-elision }, "."]
+              pt: ["Para elisões e ligações, veja ", { link: "A liaison e a elisão", to: fr.bases.liaison-elision }, "."]
+              de: ["Zu Elisionen und Liaisons siehe ", { link: "Liaison und Elision", to: "fr.bases.liaison-elision" }, "."]
+              it: ["Per elisioni e legamenti, vedi ", { link: "La liaison e l'elisione", to: fr.bases.liaison-elision }, "."]
+              pl: ["O elizjach i liaison — zob. ", { link: "Liaison i elizja", to: "fr.bases.liaison-elision" }, "."]
+              tr: ["Ünlü düşmesi ve bağlama için bkz. ", { link: "Liaison ve ünlü düşmesi", to: fr.bases.liaison-elision }, "."]
+              id: ["Untuk elisi dan liaison, lihat ", { link: "Liaison dan elisi", to: "fr.bases.liaison-elision" }, "."]
+              vi: ["Về lược âm và nối âm, xem ", { link: "Nối âm và lược âm", to: "fr.bases.liaison-elision" }, "."]
+  - title:
+      fr: "Emploi : qui désigne quel pronom"
+      en: "Use: who each pronoun stands for"
+      uk: "Вживання: кого позначає кожен займенник"
+      es: "Uso: a quién designa cada pronombre"
+      pt: "Uso: quem cada pronome designa"
+      de: "Gebrauch: wen jedes Pronomen bezeichnet"
+      it: "Uso: chi indica ogni pronome"
+      pl: "Użycie: kogo oznacza każdy zaimek"
+      tr: "Kullanım: her zamir kimi gösterir"
+      id: "Penggunaan: siapa yang ditunjuk tiap pronomina"
+      vi: "Cách dùng: mỗi đại từ chỉ ai"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { fr: "Emploi", en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A0"
+            use:
+              fr: [{ term: "je" }, " : la personne qui parle"]
+              en: [{ term: "je" }, ": the person speaking"]
+              uk: [{ term: "je" }, ": той, хто говорить"]
+              es: [{ term: "je" }, ": la persona que habla"]
+              pt: [{ term: "je" }, ": quem fala"]
+              de: [{ term: "je" }, ": die sprechende Person"]
+              it: [{ term: "je" }, ": la persona che parla"]
+              pl: [{ term: "je" }, ": osoba mówiąca"]
+              tr: [{ term: "je" }, ": konuşan kişi"]
+              id: [{ term: "je" }, ": orang yang berbicara"]
+              vi: [{ term: "je" }, ": người đang nói"]
+            ex: { examples: [[{ target: "Je" }, " m’appelle Léa."], [{ target: "Je" }, " suis français."]] }
+            tr: { en: { examples: ["My name is Léa.", "I'm French."] }, uk: { examples: ["Мене звати Леа.", "Я француз."] }, es: { examples: ["Me llamo Léa.", "Soy francés."] }, pt: { examples: ["Meu nome é Léa.", "Eu sou francês."] }, de: { examples: ["Ich heiße Léa.", "Ich bin Franzose."] }, it: { examples: ["Mi chiamo Léa.", "Sono francese."] }, pl: { examples: ["Nazywam się Léa.", "Jestem Francuzem."] }, tr: { examples: ["Adım Léa.", "Fransızım."] }, id: { examples: ["Namaku Léa.", "Aku orang Prancis."] }, vi: { examples: ["Tôi tên là Léa.", "Tôi là người Pháp."] } }
+          - level: "A0"
+            use:
+              fr: [{ term: "tu" }, " : une personne qu’on tutoie"]
+              en: [{ term: "tu" }, ": one person you are on familiar terms with"]
+              uk: [{ term: "tu" }, ": одна особа, до якої звертаються на «ти»"]
+              es: [{ term: "tu" }, ": una persona a la que se tutea"]
+              pt: [{ term: "tu" }, ": uma pessoa que se trata por tu"]
+              de: [{ term: "tu" }, ": eine Person, die man duzt"]
+              it: [{ term: "tu" }, ": una persona a cui si dà del tu"]
+              pl: [{ term: "tu" }, ": jedna osoba, do której mówi się na „ty”"]
+              tr: [{ term: "tu" }, ": “sen” diye hitap edilen tek kişi"]
+              id: [{ term: "tu" }, ": satu orang yang disapa akrab"]
+              vi: [{ term: "tu" }, ": một người mà ta xưng hô thân mật"]
+            ex: { examples: [[{ target: "Tu" }, " parles anglais ?"], [{ target: "Tu" }, " as faim ?"]] }
+            tr: { en: { examples: ["Do you speak English?", "Are you hungry?"] }, uk: { examples: ["Ти говориш англійською?", "Ти голодний?"] }, es: { examples: ["¿Hablas inglés?", "¿Tienes hambre?"] }, pt: { examples: ["Você fala inglês?", "Você está com fome?"] }, de: { examples: ["Sprichst du Englisch?", "Hast du Hunger?"] }, it: { examples: ["Parli inglese?", "Hai fame?"] }, pl: { examples: ["Mówisz po angielsku?", "Jesteś głodny?"] }, tr: { examples: ["İngilizce konuşuyor musun?", "Acıktın mı?"] }, id: { examples: ["Apakah kamu bisa berbahasa Inggris?", "Apakah kamu lapar?"] }, vi: { examples: ["Bạn nói tiếng Anh không?", "Bạn đói không?"] } }
+          - level: "A0"
+            use:
+              fr: [{ term: "vous" }, " : une personne qu’on vouvoie, ou plusieurs personnes"]
+              en: [{ term: "vous" }, ": one person you address politely, or several people"]
+              uk: [{ term: "vous" }, ": одна особа, до якої звертаються на «ви», або кілька осіб"]
+              es: [{ term: "vous" }, ": una persona a la que se trata de usted, o varias personas"]
+              pt: [{ term: "vous" }, ": uma pessoa tratada com formalidade, ou várias pessoas"]
+              de: [{ term: "vous" }, ": eine gesiezte Person oder mehrere Personen"]
+              it: [{ term: "vous" }, ": una persona a cui si dà del lei, o più persone"]
+              pl: [{ term: "vous" }, ": jedna osoba, do której zwracamy się grzecznie, lub kilka osób"]
+              tr: [{ term: "vous" }, ": “siz” diye hitap edilen tek kişi ya da birden çok kişi"]
+              id: [{ term: "vous" }, ": satu orang yang disapa sopan, atau beberapa orang"]
+              vi: [{ term: "vous" }, ": một người được xưng hô lịch sự, hoặc nhiều người"]
+            ex: { examples: [[{ target: "Vous" }, " habitez à Paris ?"], [{ target: "Vous" }, " avez faim, les enfants ?"]] }
+            tr: { en: { examples: ["Do you live in Paris?", "Are you hungry, children?"] }, uk: { examples: ["Ви живете в Парижі?", "Ви голодні, діти?"] }, es: { examples: ["¿Vive usted en París?", "¿Tienen hambre, niños?"] }, pt: { examples: ["O senhor mora em Paris?", "Vocês estão com fome, crianças?"] }, de: { examples: ["Wohnen Sie in Paris?", "Habt ihr Hunger, Kinder?"] }, it: { examples: ["Abita a Parigi?", "Avete fame, bambini?"] }, pl: { examples: ["Czy pan mieszka w Paryżu?", "Jesteście głodni, dzieci?"] }, tr: { examples: ["Paris’te mi yaşıyorsunuz?", "Acıktınız mı, çocuklar?"] }, id: { examples: ["Apakah Anda tinggal di Paris?", "Apakah kalian lapar, anak-anak?"] }, vi: { examples: ["Ông có sống ở Paris không?", "Các con đói không?"] } }
+          - level: "A0"
+            use:
+              fr: [{ term: "il" }, " et ", { term: "elle" }, " : un homme, une femme"]
+              en: [{ term: "il" }, " and ", { term: "elle" }, ": a man, a woman"]
+              uk: [{ term: "il" }, " і ", { term: "elle" }, ": чоловік, жінка"]
+              es: [{ term: "il" }, " y ", { term: "elle" }, ": un hombre, una mujer"]
+              pt: [{ term: "il" }, " e ", { term: "elle" }, ": um homem, uma mulher"]
+              de: [{ term: "il" }, " und ", { term: "elle" }, ": ein Mann, eine Frau"]
+              it: [{ term: "il" }, " ed ", { term: "elle" }, ": un uomo, una donna"]
+              pl: [{ term: "il" }, " i ", { term: "elle" }, ": mężczyzna, kobieta"]
+              tr: [{ term: "il" }, " ve ", { term: "elle" }, ": bir erkek, bir kadın"]
+              id: [{ term: "il" }, " dan ", { term: "elle" }, ": seorang laki-laki, seorang perempuan"]
+              vi: [{ term: "il" }, " và ", { term: "elle" }, ": một người đàn ông, một người phụ nữ"]
+            ex: { examples: [["Marc est là. ", { target: "Il" }, " travaille."], ["Léa est là. ", { target: "Elle" }, " travaille."]] }
+            tr: { en: { examples: ["Marc is here. He's working.", "Léa is here. She's working."] }, uk: { examples: ["Марк тут. Він працює.", "Леа тут. Вона працює."] }, es: { examples: ["Marc está aquí. Trabaja.", "Léa está aquí. Trabaja."] }, pt: { examples: ["O Marc está aqui. Ele está trabalhando.", "A Léa está aqui. Ela está trabalhando."] }, de: { examples: ["Marc ist da. Er arbeitet.", "Léa ist da. Sie arbeitet."] }, it: { examples: ["Marc è qui. Lavora.", "Léa è qui. Lavora."] }, pl: { examples: ["Marc jest tutaj. Pracuje.", "Léa jest tutaj. Pracuje."] }, tr: { examples: ["Marc burada. Çalışıyor.", "Léa burada. Çalışıyor."] }, id: { examples: ["Marc ada di sini. Dia sedang bekerja.", "Léa ada di sini. Dia sedang bekerja."] }, vi: { examples: ["Marc ở đây. Anh ấy đang làm việc.", "Léa ở đây. Cô ấy đang làm việc."] } }
+          - level: "A0"
+            use:
+              fr: [{ term: "nous" }, " : la personne qui parle et d’autres"]
+              en: [{ term: "nous" }, ": the speaker and others"]
+              uk: [{ term: "nous" }, ": той, хто говорить, та інші"]
+              es: [{ term: "nous" }, ": quien habla y otros"]
+              pt: [{ term: "nous" }, ": quem fala e outros"]
+              de: [{ term: "nous" }, ": die sprechende Person und andere"]
+              it: [{ term: "nous" }, ": chi parla e altri"]
+              pl: [{ term: "nous" }, ": mówiący i inni"]
+              tr: [{ term: "nous" }, ": konuşan ve başkaları"]
+              id: [{ term: "nous" }, ": pembicara dan orang lain"]
+              vi: [{ term: "nous" }, ": người nói và những người khác"]
+            ex: { examples: [[{ target: "Nous" }, " habitons à Lyon."], [{ target: "Nous" }, " sommes amis."]] }
+            tr: { en: { examples: ["We live in Lyon.", "We're friends."] }, uk: { examples: ["Ми живемо в Ліоні.", "Ми друзі."] }, es: { examples: ["Vivimos en Lyon.", "Somos amigos."] }, pt: { examples: ["Nós moramos em Lyon.", "Somos amigos."] }, de: { examples: ["Wir wohnen in Lyon.", "Wir sind Freunde."] }, it: { examples: ["Abitiamo a Lione.", "Siamo amici."] }, pl: { examples: ["Mieszkamy w Lyonie.", "Jesteśmy przyjaciółmi."] }, tr: { examples: ["Lyon’da yaşıyoruz.", "Arkadaşız."] }, id: { examples: ["Kami tinggal di Lyon.", "Kami berteman."] }, vi: { examples: ["Chúng tôi sống ở Lyon.", "Chúng tôi là bạn."] } }
+          - level: "A0"
+            use:
+              fr: [{ term: "ils" }, " et ", { term: "elles" }, " : plusieurs personnes"]
+              en: [{ term: "ils" }, " and ", { term: "elles" }, ": several people"]
+              uk: [{ term: "ils" }, " і ", { term: "elles" }, ": кілька осіб"]
+              es: [{ term: "ils" }, " y ", { term: "elles" }, ": varias personas"]
+              pt: [{ term: "ils" }, " e ", { term: "elles" }, ": várias pessoas"]
+              de: [{ term: "ils" }, " und ", { term: "elles" }, ": mehrere Personen"]
+              it: [{ term: "ils" }, " ed ", { term: "elles" }, ": più persone"]
+              pl: [{ term: "ils" }, " i ", { term: "elles" }, ": kilka osób"]
+              tr: [{ term: "ils" }, " ve ", { term: "elles" }, ": birden çok kişi"]
+              id: [{ term: "ils" }, " dan ", { term: "elles" }, ": beberapa orang"]
+              vi: [{ term: "ils" }, " và ", { term: "elles" }, ": nhiều người"]
+            ex: { examples: [["Paul et Marc sont là. ", { target: "Ils" }, " travaillent."], ["Léa et Anna sont là. ", { target: "Elles" }, " travaillent."]] }
+            tr: { en: { examples: ["Paul and Marc are here. They're working.", "Léa and Anna are here. They're working."] }, uk: { examples: ["Поль і Марк тут. Вони працюють.", "Леа й Анна тут. Вони працюють."] }, es: { examples: ["Paul y Marc están aquí. Trabajan.", "Léa y Anna están aquí. Trabajan."] }, pt: { examples: ["O Paul e o Marc estão aqui. Eles estão trabalhando.", "A Léa e a Anna estão aqui. Elas estão trabalhando."] }, de: { examples: ["Paul und Marc sind da. Sie arbeiten.", "Léa und Anna sind da. Sie arbeiten."] }, it: { examples: ["Paul e Marc sono qui. Lavorano.", "Léa e Anna sono qui. Lavorano."] }, pl: { examples: ["Paul i Marc są tutaj. Pracują.", "Léa i Anna są tutaj. Pracują."] }, tr: { examples: ["Paul ile Marc burada. Çalışıyorlar.", "Léa ile Anna burada. Çalışıyorlar."] }, id: { examples: ["Paul dan Marc ada di sini. Mereka sedang bekerja.", "Léa dan Anna ada di sini. Mereka sedang bekerja."] }, vi: { examples: ["Paul và Marc ở đây. Họ đang làm việc.", "Léa và Anna ở đây. Họ đang làm việc."] } }
+          - level: "A1"
+            use:
+              fr: [{ term: "il" }, " et ", { term: "elle" }, " : une chose ou un animal"]
+              en: [{ term: "il" }, " and ", { term: "elle" }, ": a thing or an animal"]
+              uk: [{ term: "il" }, " і ", { term: "elle" }, ": річ або тварина"]
+              es: [{ term: "il" }, " y ", { term: "elle" }, ": una cosa o un animal"]
+              pt: [{ term: "il" }, " e ", { term: "elle" }, ": uma coisa ou um animal"]
+              de: [{ term: "il" }, " und ", { term: "elle" }, ": eine Sache oder ein Tier"]
+              it: [{ term: "il" }, " ed ", { term: "elle" }, ": una cosa o un animale"]
+              pl: [{ term: "il" }, " i ", { term: "elle" }, ": rzecz lub zwierzę"]
+              tr: [{ term: "il" }, " ve ", { term: "elle" }, ": bir nesne ya da hayvan"]
+              id: [{ term: "il" }, " dan ", { term: "elle" }, ": benda atau hewan"]
+              vi: [{ term: "il" }, " và ", { term: "elle" }, ": đồ vật hoặc con vật"]
+            ex: { examples: [["Où est le livre ? ‖ ", { target: "Il" }, " est sur la table."], ["Où est la clé ? ‖ ", { target: "Elle" }, " est là."]] }
+            tr: { en: { examples: ["Where is the book? ‖ It is on the table.", "Where is the key? ‖ It is here."] }, uk: { examples: ["Де книга? ‖ Вона на столі.", "Де ключ? ‖ Він тут."] }, es: { examples: ["¿Dónde está el libro? ‖ Está sobre la mesa.", "¿Dónde está la llave? ‖ Está aquí."] }, pt: { examples: ["Onde está o livro? ‖ Está em cima da mesa.", "Onde está a chave? ‖ Está aqui."] }, de: { examples: ["Wo ist das Buch? ‖ Es liegt auf dem Tisch.", "Wo ist der Schlüssel? ‖ Er ist hier."] }, it: { examples: ["Dov’è il libro? ‖ È sul tavolo.", "Dov’è la chiave? ‖ È qui."] }, pl: { examples: ["Gdzie jest książka? ‖ Jest na stole.", "Gdzie jest klucz? ‖ Jest tutaj."] }, tr: { examples: ["Kitap nerede? ‖ Masanın üstünde.", "Anahtar nerede? ‖ Burada."] }, id: { examples: ["Di mana bukunya? ‖ Ada di atas meja.", "Di mana kuncinya? ‖ Ada di sini."] }, vi: { examples: ["Quyển sách đâu? ‖ Nó ở trên bàn.", "Chìa khóa đâu? ‖ Nó ở đây."] } }
+          - level: "A1"
+            use:
+              fr: [{ term: "ils" }, " : un groupe d’hommes ou un groupe mixte"]
+              en: [{ term: "ils" }, ": a group of men or a mixed group"]
+              uk: [{ term: "ils" }, ": група чоловіків або змішана група"]
+              es: [{ term: "ils" }, ": un grupo de hombres o un grupo mixto"]
+              pt: [{ term: "ils" }, ": um grupo de homens ou um grupo misto"]
+              de: [{ term: "ils" }, ": eine Männergruppe oder eine gemischte Gruppe"]
+              it: [{ term: "ils" }, ": un gruppo di uomini o un gruppo misto"]
+              pl: [{ term: "ils" }, ": grupa mężczyzn lub grupa mieszana"]
+              tr: [{ term: "ils" }, ": erkek grubu ya da karma grup"]
+              id: [{ term: "ils" }, ": kelompok laki-laki atau kelompok campuran"]
+              vi: [{ term: "ils" }, ": nhóm đàn ông hoặc nhóm hỗn hợp"]
+            ex: { examples: [["Léa et Paul sont là. ", { target: "Ils" }, " travaillent."], ["Anna, Léa et Paul sont là. ", { target: "Ils" }, " travaillent."]] }
+            tr: { en: { examples: ["Léa and Paul are here. They're working.", "Anna, Léa and Paul are here. They're working."] }, uk: { examples: ["Леа і Поль тут. Вони працюють.", "Анна, Леа й Поль тут. Вони працюють."] }, es: { examples: ["Léa y Paul están aquí. Trabajan.", "Anna, Léa y Paul están aquí. Trabajan."] }, pt: { examples: ["A Léa e o Paul estão aqui. Eles estão trabalhando.", "A Anna, a Léa e o Paul estão aqui. Eles estão trabalhando."] }, de: { examples: ["Léa und Paul sind da. Sie arbeiten.", "Anna, Léa und Paul sind da. Sie arbeiten."] }, it: { examples: ["Léa e Paul sono qui. Lavorano.", "Anna, Léa e Paul sono qui. Lavorano."] }, pl: { examples: ["Léa i Paul są tutaj. Pracują.", "Anna, Léa i Paul są tutaj. Pracują."] }, tr: { examples: ["Léa ile Paul burada. Çalışıyorlar.", "Anna, Léa ve Paul burada. Çalışıyorlar."] }, id: { examples: ["Léa dan Paul ada di sini. Mereka sedang bekerja.", "Anna, Léa, dan Paul ada di sini. Mereka sedang bekerja."] }, vi: { examples: ["Léa và Paul ở đây. Họ đang làm việc.", "Anna, Léa và Paul ở đây. Họ đang làm việc."] } }
+          - level: "A1"
+            use:
+              fr: [{ term: "on" }, " : « nous » à l’oral, avec la forme de ", { term: "il" }]
+              en: [{ term: "on" }, ": “we” in speech, with the ", { term: "il" }, " form"]
+              uk: [{ term: "on" }, ": «ми» в усному мовленні, з формою ", { term: "il" }]
+              es: [{ term: "on" }, ": «nosotros» en la lengua hablada, con la forma de ", { term: "il" }]
+              pt: [{ term: "on" }, ": «nós» na fala, com a forma de ", { term: "il" }]
+              de: [{ term: "on" }, ": mündlich „wir“, mit der Form von ", { term: "il" }]
+              it: [{ term: "on" }, ": «noi» nel parlato, con la forma di ", { term: "il" }]
+              pl: [{ term: "on" }, ": w mowie „my”, z formą jak ", { term: "il" }]
+              tr: [{ term: "on" }, ": konuşmada “biz”, ", { term: "il" }, " biçimiyle"]
+              id: [{ term: "on" }, ": “kami/kita” dalam percakapan, dengan bentuk ", { term: "il" }]
+              vi: [{ term: "on" }, ": “chúng ta” trong lời nói, dùng dạng của ", { term: "il" }]
+            ex: { examples: [[{ target: "On" }, " mange ensemble ?"], [{ target: "On" }, " est amis."]] }
+            tr: { en: { examples: ["Shall we eat together?", "We're friends."] }, uk: { examples: ["Поїмо разом?", "Ми друзі."] }, es: { examples: ["¿Comemos juntos?", "Somos amigos."] }, pt: { examples: ["Vamos comer juntos?", "Somos amigos."] }, de: { examples: ["Essen wir zusammen?", "Wir sind Freunde."] }, it: { examples: ["Mangiamo insieme?", "Siamo amici."] }, pl: { examples: ["Zjemy razem?", "Jesteśmy przyjaciółmi."] }, tr: { examples: ["Birlikte yiyelim mi?", "Arkadaşız."] }, id: { examples: ["Makan bersama, yuk?", "Kami berteman."] }, vi: { examples: ["Mình ăn cùng nhau nhé?", "Chúng tôi là bạn."] } }
+          - level: "A1"
+            use:
+              fr: [{ term: "il" }, " sans personne : la météo"]
+              en: [{ term: "il" }, " with no person behind it: the weather"]
+              uk: [{ term: "il" }, " без реальної особи: погода"]
+              es: [{ term: "il" }, " sin persona detrás: el tiempo"]
+              pt: [{ term: "il" }, " sem pessoa por trás: o tempo"]
+              de: [{ term: "il" }, " ohne Person dahinter: das Wetter"]
+              it: [{ term: "il" }, " senza persona: il tempo atmosferico"]
+              pl: [{ term: "il" }, " bez osoby: pogoda"]
+              tr: [{ term: "il" }, " arkasında kişi olmadan: hava durumu"]
+              id: [{ term: "il" }, " tanpa orang: cuaca"]
+              vi: [{ term: "il" }, " không chỉ người nào: thời tiết"]
+            ex: { examples: [[{ target: "Il" }, " pleut."], [{ target: "Il" }, " neige."]] }
+            tr: { en: { examples: ["It's raining.", "It's snowing."] }, uk: { examples: ["Іде дощ.", "Іде сніг."] }, es: { examples: ["Llueve.", "Nieva."] }, pt: { examples: ["Está chovendo.", "Está nevando."] }, de: { examples: ["Es regnet.", "Es schneit."] }, it: { examples: ["Piove.", "Nevica."] }, pl: { examples: ["Pada deszcz.", "Pada śnieg."] }, tr: { examples: ["Yağmur yağıyor.", "Kar yağıyor."] }, id: { examples: ["Hujan.", "Turun salju."] }, vi: { examples: ["Trời mưa.", "Trời có tuyết."] } }
+          - level: "A2"
+            use:
+              fr: [{ term: "on" }, " : les gens en général"]
+              en: [{ term: "on" }, ": people in general"]
+              uk: [{ term: "on" }, ": люди загалом"]
+              es: [{ term: "on" }, ": la gente en general"]
+              pt: [{ term: "on" }, ": as pessoas em geral"]
+              de: [{ term: "on" }, ": die Leute im Allgemeinen"]
+              it: [{ term: "on" }, ": le persone in generale"]
+              pl: [{ term: "on" }, ": ludzie w ogóle"]
+              tr: [{ term: "on" }, ": genel olarak insanlar"]
+              id: [{ term: "on" }, ": orang pada umumnya"]
+              vi: [{ term: "on" }, ": người ta nói chung"]
+            ex: { examples: [["En France, ", { target: "on" }, " parle français."], [{ target: "On" }, " mange bien ici."]] }
+            tr: { en: { examples: ["In France, people speak French.", "The food is good here."] }, uk: { examples: ["У Франції говорять французькою.", "Тут добре готують."] }, es: { examples: ["En Francia se habla francés.", "Aquí se come bien."] }, pt: { examples: ["Na França, fala-se francês.", "Aqui se come bem."] }, de: { examples: ["In Frankreich spricht man Französisch.", "Hier isst man gut."] }, it: { examples: ["In Francia si parla francese.", "Qui si mangia bene."] }, pl: { examples: ["We Francji mówi się po francusku.", "Tutaj dobrze się je."] }, tr: { examples: ["Fransa’da Fransızca konuşulur.", "Burada iyi yemek yenir."] }, id: { examples: ["Di Prancis orang berbicara bahasa Prancis.", "Di sini makanannya enak."] }, vi: { examples: ["Ở Pháp người ta nói tiếng Pháp.", "Ở đây ăn rất ngon."] } }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Il" }, " et ", { term: "elle" }, " suivent le genre du nom, même pour une chose."]
+              en: [{ term: "Il" }, " and ", { term: "elle" }, " follow the gender of the noun, even for a thing."]
+              uk: [{ term: "Il" }, " і ", { term: "elle" }, " відповідають роду іменника, навіть коли йдеться про річ."]
+              es: [{ term: "Il" }, " y ", { term: "elle" }, " siguen el género del nombre, incluso para una cosa."]
+              pt: [{ term: "Il" }, " e ", { term: "elle" }, " seguem o gênero do substantivo, mesmo para uma coisa."]
+              de: [{ term: "Il" }, " und ", { term: "elle" }, " richten sich nach dem Genus des Nomens, auch bei einer Sache."]
+              it: [{ term: "Il" }, " ed ", { term: "elle" }, " seguono il genere del nome, anche per una cosa."]
+              pl: [{ term: "Il" }, " i ", { term: "elle" }, " zależą od rodzaju rzeczownika, także gdy mowa o rzeczy."]
+              tr: [{ term: "Il" }, " ve ", { term: "elle" }, " bir nesne için bile ismin cinsiyetine uyar."]
+              id: [{ term: "Il" }, " dan ", { term: "elle" }, " mengikuti gender kata benda, bahkan untuk benda mati."]
+              vi: [{ term: "Il" }, " và ", { term: "elle" }, " theo giống của danh từ, kể cả với đồ vật."]
+            ex: { examples: [["Le téléphone ? ", { target: "Il" }, " est neuf."], ["La voiture ? ", { target: "Elle" }, " est neuve."]] }
+            tr: { en: { examples: ["The phone? It is new.", "The car? It is new."] }, uk: { examples: ["Телефон? Він новий.", "Машина? Вона нова."] }, es: { examples: ["¿El teléfono? Es nuevo.", "¿El coche? Es nuevo."] }, pt: { examples: ["O telefone? É novo.", "O carro? É novo."] }, de: { examples: ["Das Telefon? Es ist neu.", "Das Auto? Es ist neu."] }, it: { examples: ["Il telefono? È nuovo.", "L’auto? È nuova."] }, pl: { examples: ["Telefon? Jest nowy.", "Samochód? Jest nowy."] }, tr: { examples: ["Telefon mu? Yeni.", "Araba mı? Yeni."] }, id: { examples: ["Teleponnya? Baru.", "Mobilnya? Baru."] }, vi: { examples: ["Điện thoại à? Nó mới.", "Xe hơi à? Nó mới."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Le genre des noms : voir ", { link: "Le genre des noms", to: "fr.nom-determinants.genre" }, "."]
+              en: ["The gender of nouns: see ", { link: "Noun Gender", to: fr.nom-determinants.genre }, "."]
+              uk: ["Рід іменників: див. ", { link: "Рід іменників", to: "fr.nom-determinants.genre" }, "."]
+              es: ["El género de los nombres: véase ", { link: "El género de los sustantivos", to: fr.nom-determinants.genre }, "."]
+              pt: ["O gênero dos substantivos: veja ", { link: "O gênero dos substantivos", to: "fr.nom-determinants.genre" }, "."]
+              de: ["Das Genus der Nomen: siehe ", { link: "Das Genus der Nomen", to: "fr.nom-determinants.genre" }, "."]
+              it: ["Il genere dei nomi: vedi ", { link: "Il genere dei nomi", to: "fr.nom-determinants.genre" }, "."]
+              pl: ["Rodzaj rzeczowników: zob. ", { link: "Rodzaj rzeczowników", to: "fr.nom-determinants.genre" }, "."]
+              tr: ["İsimlerde cinsiyet için bkz. ", { link: "İsimlerin cinsiyeti", to: fr.nom-determinants.genre }, "."]
+              id: ["Gender kata benda: lihat ", { link: "Gender kata benda", to: "fr.nom-determinants.genre" }, "."]
+              vi: ["Giống của danh từ: xem ", { link: "Giống của danh từ", to: "fr.nom-determinants.genre" }, "."]
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Un seul homme dans le groupe suffit pour dire ", { term: "ils" }, " ; ", { term: "elles" }, " ne désigne que des femmes."]
+              en: ["A single man in the group is enough for ", { term: "ils" }, "; ", { term: "elles" }, " stands for women only."]
+              uk: ["Достатньо одного чоловіка в групі, щоб сказати ", { term: "ils" }, "; ", { term: "elles" }, " стосується лише жінок."]
+              es: ["Basta un solo hombre en el grupo para decir ", { term: "ils" }, "; ", { term: "elles" }, " designa solo a mujeres."]
+              pt: ["Basta um só homem no grupo para dizer ", { term: "ils" }, "; ", { term: "elles" }, " designa só mulheres."]
+              de: ["Ein einziger Mann in der Gruppe genügt für ", { term: "ils" }, "; ", { term: "elles" }, " steht nur für Frauen."]
+              it: ["Basta un solo uomo nel gruppo per dire ", { term: "ils" }, "; ", { term: "elles" }, " indica solo donne."]
+              pl: ["Wystarczy jeden mężczyzna w grupie, by użyć ", { term: "ils" }, "; ", { term: "elles" }, " dotyczy tylko kobiet."]
+              tr: ["Grupta tek bir erkek bile varsa ", { term: "ils" }, " denir; ", { term: "elles" }, " yalnızca kadınlar içindir."]
+              id: ["Satu laki-laki dalam kelompok sudah cukup untuk memakai ", { term: "ils" }, "; ", { term: "elles" }, " hanya untuk perempuan."]
+              vi: ["Chỉ cần một người đàn ông trong nhóm là dùng ", { term: "ils" }, "; ", { term: "elles" }, " chỉ dành cho phụ nữ."]
+            ex: { examples: [["Anna, Léa et Paul sont là : ", { target: "ils" }, " travaillent."], ["Anna et Léa sont là : ", { target: "elles" }, " travaillent."]] }
+            tr: { en: { examples: ["Anna, Léa and Paul are here: they're working.", "Anna and Léa are here: they're working."] }, uk: { examples: ["Анна, Леа й Поль тут: вони працюють.", "Анна й Леа тут: вони працюють."] }, es: { examples: ["Anna, Léa y Paul están aquí: trabajan.", "Anna y Léa están aquí: trabajan."] }, pt: { examples: ["A Anna, a Léa e o Paul estão aqui: eles estão trabalhando.", "A Anna e a Léa estão aqui: elas estão trabalhando."] }, de: { examples: ["Anna, Léa und Paul sind da: Sie arbeiten.", "Anna und Léa sind da: Sie arbeiten."] }, it: { examples: ["Anna, Léa e Paul sono qui: lavorano.", "Anna e Léa sono qui: lavorano."] }, pl: { examples: ["Anna, Léa i Paul są tutaj: pracują.", "Anna i Léa są tutaj: pracują."] }, tr: { examples: ["Anna, Léa ve Paul burada: çalışıyorlar.", "Anna ile Léa burada: çalışıyorlar."] }, id: { examples: ["Anna, Léa, dan Paul ada di sini: mereka sedang bekerja.", "Anna dan Léa ada di sini: mereka sedang bekerja."] }, vi: { examples: ["Anna, Léa và Paul ở đây: họ đang làm việc.", "Anna và Léa ở đây: họ đang làm việc."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "On" }, " prend le verbe à la forme de ", { term: "il" }, "."]
+              en: [{ term: "On" }, " takes the verb in the ", { term: "il" }, " form."]
+              uk: ["З ", { term: "on" }, " дієслово стоїть у формі ", { term: "il" }, "."]
+              es: [{ term: "On" }, " lleva el verbo en la forma de ", { term: "il" }, "."]
+              pt: [{ term: "On" }, " leva o verbo na forma de ", { term: "il" }, "."]
+              de: [{ term: "On" }, " steht mit dem Verb in der Form von ", { term: "il" }, "."]
+              it: [{ term: "On" }, " vuole il verbo nella forma di ", { term: "il" }, "."]
+              pl: ["Z ", { term: "on" }, " czasownik ma formę jak przy ", { term: "il" }, "."]
+              tr: [{ term: "On" }, " ile fiil ", { term: "il" }, " biçiminde kullanılır."]
+              id: [{ term: "On" }, " memakai kata kerja dalam bentuk ", { term: "il" }, "."]
+              vi: [{ term: "On" }, " đi với động từ ở dạng của ", { term: "il" }, "."]
+            ex: { examples: [[{ target: "On" }, " parle français."], [{ target: "On" }, " a faim."]] }
+            tr: { en: { examples: ["We speak French.", "We're hungry."] }, uk: { examples: ["Ми говоримо французькою.", "Ми голодні."] }, es: { examples: ["Hablamos francés.", "Tenemos hambre."] }, pt: { examples: ["Nós falamos francês.", "Estamos com fome."] }, de: { examples: ["Wir sprechen Französisch.", "Wir haben Hunger."] }, it: { examples: ["Parliamo francese.", "Abbiamo fame."] }, pl: { examples: ["Mówimy po francusku.", "Jesteśmy głodni."] }, tr: { examples: ["Fransızca konuşuyoruz.", "Acıktık."] }, id: { examples: ["Kami berbicara bahasa Prancis.", "Kami lapar."] }, vi: { examples: ["Chúng tôi nói tiếng Pháp.", "Chúng tôi đói."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour dire ce qu’est quelqu’un ou quelque chose avec c’est et il est : voir ", { link: "C’est et il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              en: ["To say what someone or something is with c’est and il est: see ", { link: "C’est and Il est", to: fr.etre-avoir.c-est-il-est }, "."]
+              uk: ["Про c’est і il est для опису людей і речей див. ", { link: "C’est та il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              es: ["Para decir qué es alguien o algo con c’est e il est: véase ", { link: "C’est y il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              pt: ["Para dizer o que alguém ou algo é com c’est e il est: veja ", { link: "C’est e il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              de: ["Zu c’est und il est für Personen und Dinge siehe ", { link: "C’est und il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              it: ["Per dire che cos’è qualcuno o qualcosa con c’est e il est: vedi ", { link: "C’est e il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              pl: ["O użyciu c’est i il est przy osobach i rzeczach — zob. ", { link: "C’est i il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              tr: ["Kişi ve nesneleri c’est ve il est ile tanıtmak için bkz. ", { link: "C’est ve il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              id: ["Untuk menyatakan siapa atau apa sesuatu dengan c’est dan il est: lihat ", { link: "C’est dan il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+              vi: ["Về cách nói ai hay cái gì là gì với c’est và il est: xem ", { link: "C’est và il est", to: "fr.etre-avoir.c-est-il-est" }, "."]
+  - title:
+      fr: "Prononciation : les pronoms sujets"
+      en: "Pronunciation: the subject pronouns"
+      uk: "Вимова: підметові займенники"
+      es: "Pronunciación: los pronombres sujeto"
+      pt: "Pronúncia: os pronomes sujeito"
+      de: "Aussprache: die Subjektpronomen"
+      it: "Pronuncia: i pronomi soggetto"
+      pl: "Wymowa: zaimki podmiotowe"
+      tr: "Telaffuz: özne zamirleri"
+      id: "Pelafalan: pronomina subjek"
+      vi: "Phát âm: đại từ chủ ngữ"
+    role: "pronunciation"
+    content:
+      - type: "paradigm"
+        columns:
+          - { key: "pro", label: { fr: "Pronom", en: "Pronoun", uk: "Займенник", es: "Pronombre", pt: "Pronome", de: "Pronomen", it: "Pronome", pl: "Zaimek", tr: "Zamir", id: "Pronomina", vi: "Đại từ" } }
+          - key: "c"
+            label:
+              fr: "Devant une consonne"
+              en: "Before a consonant"
+              uk: "Перед приголосною"
+              es: "Ante consonante"
+              pt: "Antes de consoante"
+              de: "Vor einem Konsonanten"
+              it: "Davanti a consonante"
+              pl: "Przed spółgłoską"
+              tr: "Ünsüzden önce"
+              id: "Sebelum konsonan"
+              vi: "Trước phụ âm"
+          - key: "v"
+            label:
+              fr: "Devant une voyelle"
+              en: "Before a vowel"
+              uk: "Перед голосною"
+              es: "Ante vocal"
+              pt: "Antes de vogal"
+              de: "Vor einem Vokal"
+              it: "Davanti a vocale"
+              pl: "Przed samogłoską"
+              tr: "Ünlüden önce"
+              id: "Sebelum vokal"
+              vi: "Trước nguyên âm"
+        rows:
+          - { level: "A0", features: { person: 1, number: "sg" }, pro: "je", c: [{ term: "je parle" }, " ", { ipa: "ʒə paʁl" }], v: [{ term: "j’aime" }, " ", { ipa: "ʒɛm" }] }
+          - { level: "A1", features: { person: 3 }, pro: "on", c: [{ term: "on parle" }, " ", { ipa: "ɔ̃ paʁl" }], v: [{ term: "on aime" }, " ", { ipa: "ɔ̃ nɛm" }] }
+          - { level: "A1", features: { person: 1, number: "pl" }, pro: "nous", c: [{ term: "nous parlons" }, " ", { ipa: "nu paʁlɔ̃" }], v: [{ term: "nous aimons" }, " ", { ipa: "nu zɛmɔ̃" }] }
+          - { level: "A1", features: { person: 2 }, pro: "vous", c: [{ term: "vous parlez" }, " ", { ipa: "vu paʁle" }], v: [{ term: "vous aimez" }, " ", { ipa: "vu zɛme" }] }
+          - { level: "A1", features: { person: 3, number: "pl", gender: "masc" }, pro: "ils", c: [{ term: "ils parlent" }, " ", { ipa: "il paʁl" }], v: [{ term: "ils aiment" }, " ", { ipa: "il zɛm" }] }
+          - { level: "A1", features: { person: 3, number: "pl", gender: "fem" }, pro: "elles", c: [{ term: "elles parlent" }, " ", { ipa: "ɛl paʁl" }], v: [{ term: "elles aiment" }, " ", { ipa: "ɛl zɛm" }] }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Devant une voyelle, ", { term: "on" }, " se lie en ", { ipa: "n" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " et ", { term: "elles" }, " en ", { ipa: "z" }, "."]
+              en: ["Before a vowel, ", { term: "on" }, " links with ", { ipa: "n" }, ", and ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " and ", { term: "elles" }, " with ", { ipa: "z" }, "."]
+              uk: ["Перед голосною ", { term: "on" }, " зв’язується з ", { ipa: "n" }, ", а ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, ", ", { term: "elles" }, " — з ", { ipa: "z" }, "."]
+              es: ["Ante vocal, ", { term: "on" }, " se enlaza con ", { ipa: "n" }, ", y ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " y ", { term: "elles" }, " con ", { ipa: "z" }, "."]
+              pt: ["Antes de vogal, ", { term: "on" }, " se liga com ", { ipa: "n" }, ", e ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " e ", { term: "elles" }, " com ", { ipa: "z" }, "."]
+              de: ["Vor einem Vokal bindet ", { term: "on" }, " mit ", { ipa: "n" }, ", ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " und ", { term: "elles" }, " mit ", { ipa: "z" }, "."]
+              it: ["Davanti a vocale, ", { term: "on" }, " si lega con ", { ipa: "n" }, ", e ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " ed ", { term: "elles" }, " con ", { ipa: "z" }, "."]
+              pl: ["Przed samogłoską ", { term: "on" }, " łączy się z ", { ipa: "n" }, ", a ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " i ", { term: "elles" }, " z ", { ipa: "z" }, "."]
+              tr: ["Ünlüden önce ", { term: "on" }, " ", { ipa: "n" }, " ile, ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, " ve ", { term: "elles" }, " ", { ipa: "z" }, " ile bağlanır."]
+              id: ["Sebelum vokal, ", { term: "on" }, " bertaut dengan ", { ipa: "n" }, ", sedangkan ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, ", dan ", { term: "elles" }, " dengan ", { ipa: "z" }, "."]
+              vi: ["Trước nguyên âm, ", { term: "on" }, " nối với ", { ipa: "n" }, ", còn ", { term: "nous" }, ", ", { term: "vous" }, ", ", { term: "ils" }, ", ", { term: "elles" }, " nối với ", { ipa: "z" }, "."]
+            ex: { examples: [[{ target: "On" }, " a faim."], [{ target: "Nous" }, " avons faim."], [{ target: "Ils" }, " ont faim."]] }
+            tr: { en: { examples: ["We're hungry.", "We're hungry.", "They're hungry."] }, uk: { examples: ["Ми голодні.", "Ми голодні.", "Вони голодні."] }, es: { examples: ["Tenemos hambre.", "Tenemos hambre.", "Tienen hambre."] }, pt: { examples: ["Estamos com fome.", "Estamos com fome.", "Eles estão com fome."] }, de: { examples: ["Wir haben Hunger.", "Wir haben Hunger.", "Sie haben Hunger."] }, it: { examples: ["Abbiamo fame.", "Abbiamo fame.", "Hanno fame."] }, pl: { examples: ["Jesteśmy głodni.", "Jesteśmy głodni.", "Są głodni."] }, tr: { examples: ["Acıktık.", "Acıktık.", "Acıktılar."] }, id: { examples: ["Kami lapar.", "Kami lapar.", "Mereka lapar."] }, vi: { examples: ["Chúng tôi đói.", "Chúng tôi đói.", "Họ đói."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Il" }, " et ", { term: "ils" }, " se disent tous deux ", { ipa: "il" }, " ; la liaison en ", { ipa: "z" }, " ou la forme du verbe fait la différence."]
+              en: [{ term: "Il" }, " and ", { term: "ils" }, " both sound ", { ipa: "il" }, "; the liaison in ", { ipa: "z" }, " or the verb form tells them apart."]
+              uk: [{ term: "Il" }, " і ", { term: "ils" }, " звучать однаково, ", { ipa: "il" }, "; різницю показує зв’язування на ", { ipa: "z" }, " або форма дієслова."]
+              es: [{ term: "Il" }, " e ", { term: "ils" }, " suenan igual, ", { ipa: "il" }, "; el enlace en ", { ipa: "z" }, " o la forma del verbo marcan la diferencia."]
+              pt: [{ term: "Il" }, " e ", { term: "ils" }, " soam igual, ", { ipa: "il" }, "; a ligação em ", { ipa: "z" }, " ou a forma do verbo mostram a diferença."]
+              de: [{ term: "Il" }, " und ", { term: "ils" }, " klingen gleich, ", { ipa: "il" }, "; die Liaison mit ", { ipa: "z" }, " oder die Verbform zeigt den Unterschied."]
+              it: [{ term: "Il" }, " e ", { term: "ils" }, " suonano uguali, ", { ipa: "il" }, "; il legamento in ", { ipa: "z" }, " o la forma del verbo mostrano la differenza."]
+              pl: [{ term: "Il" }, " i ", { term: "ils" }, " brzmią tak samo, ", { ipa: "il" }, "; różnicę pokazuje liaison na ", { ipa: "z" }, " lub forma czasownika."]
+              tr: [{ term: "Il" }, " ile ", { term: "ils" }, " aynı okunur, ", { ipa: "il" }, "; farkı ", { ipa: "z" }, " bağlaması ya da fiil biçimi gösterir."]
+              id: [{ term: "Il" }, " dan ", { term: "ils" }, " terdengar sama, ", { ipa: "il" }, "; perbedaannya terlihat dari liaison ", { ipa: "z" }, " atau bentuk kata kerja."]
+              vi: [{ term: "Il" }, " và ", { term: "ils" }, " đều đọc là ", { ipa: "il" }, "; nối âm ", { ipa: "z" }, " hoặc dạng động từ cho biết sự khác nhau."]
+            ex: { examples: [[{ target: "Il a" }, " faim ", { ipa: "il a" }, "."], [{ target: "Ils ont" }, " faim ", { ipa: "il zɔ̃" }, "."], [{ target: "Ils sont" }, " là ", { ipa: "il sɔ̃" }, "."]] }
+            tr: { en: { examples: ["He is hungry.", "They are hungry.", "They are here."] }, uk: { examples: ["Він голодний.", "Вони голодні.", "Вони тут."] }, es: { examples: ["Tiene hambre.", "Tienen hambre.", "Están aquí."] }, pt: { examples: ["Ele está com fome.", "Eles estão com fome.", "Eles estão aqui."] }, de: { examples: ["Er hat Hunger.", "Sie haben Hunger.", "Sie sind da."] }, it: { examples: ["Ha fame.", "Hanno fame.", "Sono qui."] }, pl: { examples: ["Jest głodny.", "Są głodni.", "Są tutaj."] }, tr: { examples: ["Acıktı.", "Acıktılar.", "Buradalar."] }, id: { examples: ["Dia lapar.", "Mereka lapar.", "Mereka ada di sini."] }, vi: { examples: ["Anh ấy đói.", "Họ đói.", "Họ ở đây."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Toutes les liaisons et les élisions : voir ", { link: "La liaison et l’élision", to: fr.bases.liaison-elision }, "."]
+              en: ["All liaisons and elisions: see ", { link: "Liaison and Elision", to: fr.bases.liaison-elision }, "."]
+              uk: ["Усі зв’язування й елізії: див. ", { link: "Ліазон та елізія", to: fr.bases.liaison-elision }, "."]
+              es: ["Todos los enlaces y elisiones: véase ", { link: "La liaison y la elisión", to: fr.bases.liaison-elision }, "."]
+              pt: ["Todas as ligações e elisões: veja ", { link: "A liaison e a elisão", to: fr.bases.liaison-elision }, "."]
+              de: ["Alle Liaisons und Elisionen: siehe ", { link: "Liaison und Elision", to: "fr.bases.liaison-elision" }, "."]
+              it: ["Tutti i legamenti e le elisioni: vedi ", { link: "La liaison e l'elisione", to: fr.bases.liaison-elision }, "."]
+              pl: ["Wszystkie liaison i elizje: zob. ", { link: "Liaison i elizja", to: "fr.bases.liaison-elision" }, "."]
+              tr: ["Tüm bağlama ve ünlü düşmeleri için bkz. ", { link: "Liaison ve ünlü düşmesi", to: fr.bases.liaison-elision }, "."]
+              id: ["Semua liaison dan elisi: lihat ", { link: "Liaison dan elisi", to: "fr.bases.liaison-elision" }, "."]
+              vi: ["Mọi trường hợp nối âm và lược âm: xem ", { link: "Nối âm và lược âm", to: "fr.bases.liaison-elision" }, "."]
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A0"
+            wrong: "Je habite à Lyon."
+            right: [{ target: "J’" }, "habite à Lyon."]
+            rule:
+              fr: [{ term: "je" }, " devient ", { term: "j’" }, " devant une voyelle ou un h muet"]
+              en: [{ term: "je" }, " becomes ", { term: "j’" }, " before a vowel or a silent h"]
+              uk: ["перед голосною або німим h ", { term: "je" }, " стає ", { term: "j’" }]
+              es: [{ term: "je" }, " pasa a ", { term: "j’" }, " ante vocal o h muda"]
+              pt: [{ term: "je" }, " vira ", { term: "j’" }, " antes de vogal ou h mudo"]
+              de: ["vor Vokal oder stummem h wird ", { term: "je" }, " zu ", { term: "j’" }]
+              it: [{ term: "je" }, " diventa ", { term: "j’" }, " davanti a vocale o h muta"]
+              pl: ["przed samogłoską lub niemym h ", { term: "je" }, " zmienia się w ", { term: "j’" }]
+              tr: ["ünlüden ya da sessiz h’den önce ", { term: "je" }, ", ", { term: "j’" }, " olur"]
+              id: [{ term: "je" }, " menjadi ", { term: "j’" }, " sebelum vokal atau h bisu"]
+              vi: ["trước nguyên âm hoặc h câm, ", { term: "je" }, " thành ", { term: "j’" }]
+          - level: "A0"
+            speakers: ["es", "pt", "it", "pl", "tr"]
+            wrong: "Habite à Paris."
+            right: [{ target: "Elle" }, " habite à Paris."]
+            rule:
+              es: ["el pronombre sujeto es obligatorio: ", { term: "elle habite" }, ", aunque en español se dice «Vive en París»"]
+              pt: ["o pronome sujeito é obrigatório: ", { term: "elle habite" }, ", embora em português se diga «Mora em Paris»"]
+              it: ["il pronome soggetto è obbligatorio: ", { term: "elle habite" }, ", anche se in italiano si dice «Abita a Parigi»"]
+              pl: ["zaimek podmiotowy jest obowiązkowy: ", { term: "elle habite" }, ", choć po polsku mówimy „Mieszka w Paryżu”"]
+              tr: ["özne zamiri zorunludur: ", { term: "elle habite" }, ", Türkçede “Paris’te yaşıyor” desek de"]
+          - level: "A1"
+            wrong: "Où est la clé ? Il est sur la table."
+            right: ["Où est la clé ? ", { target: "Elle" }, " est sur la table."]
+            rule:
+              fr: [{ term: "la clé" }, " est féminin : ", { term: "elle" }, " ; ", { term: "le livre" }, " est masculin : ", { term: "il" }]
+              en: [{ term: "la clé" }, " is feminine: ", { term: "elle" }, "; ", { term: "le livre" }, " is masculine: ", { term: "il" }]
+              uk: [{ term: "la clé" }, " жіночого роду: ", { term: "elle" }, "; ", { term: "le livre" }, " чоловічого: ", { term: "il" }]
+              es: [{ term: "la clé" }, " es femenino: ", { term: "elle" }, "; ", { term: "le livre" }, " es masculino: ", { term: "il" }]
+              pt: [{ term: "la clé" }, " é feminino: ", { term: "elle" }, "; ", { term: "le livre" }, " é masculino: ", { term: "il" }]
+              de: [{ term: "la clé" }, " ist feminin: ", { term: "elle" }, "; ", { term: "le livre" }, " ist maskulin: ", { term: "il" }]
+              it: [{ term: "la clé" }, " è femminile: ", { term: "elle" }, "; ", { term: "le livre" }, " è maschile: ", { term: "il" }]
+              pl: [{ term: "la clé" }, " jest rodzaju żeńskiego: ", { term: "elle" }, "; ", { term: "le livre" }, " męskiego: ", { term: "il" }]
+              tr: [{ term: "la clé" }, " dişildir: ", { term: "elle" }, "; ", { term: "le livre" }, " eziltir: ", { term: "il" }]
+              id: [{ term: "la clé" }, " berjenis feminin: ", { term: "elle" }, "; ", { term: "le livre" }, " maskulin: ", { term: "il" }]
+              vi: [{ term: "la clé" }, " là giống cái: ", { term: "elle" }, "; ", { term: "le livre" }, " là giống đực: ", { term: "il" }]
+          - level: "A1"
+            wrong: "Léa et Paul sont là. Elles travaillent."
+            right: ["Léa et Paul sont là. ", { target: "Ils" }, " travaillent."]
+            rule:
+              fr: ["un groupe mixte se dit ", { term: "ils" }]
+              en: ["a mixed group is ", { term: "ils" }]
+              uk: ["змішана група — це ", { term: "ils" }]
+              es: ["un grupo mixto es ", { term: "ils" }]
+              pt: ["um grupo misto é ", { term: "ils" }]
+              de: ["eine gemischte Gruppe heißt ", { term: "ils" }]
+              it: ["un gruppo misto è ", { term: "ils" }]
+              pl: ["grupa mieszana to ", { term: "ils" }]
+              tr: ["karma grup ", { term: "ils" }, " ile gösterilir"]
+              id: ["kelompok campuran disebut ", { term: "ils" }]
+              vi: ["nhóm hỗn hợp là ", { term: "ils" }]
+          - level: "A1"
+            wrong: "On parlons français."
+            right: ["On ", { target: "parle" }, " français."]
+            rule:
+              fr: [{ term: "on" }, " prend la forme de ", { term: "il" }]
+              en: [{ term: "on" }, " takes the ", { term: "il" }, " form"]
+              uk: ["з ", { term: "on" }, " дієслово стоїть у формі ", { term: "il" }]
+              es: [{ term: "on" }, " lleva la forma de ", { term: "il" }]
+              pt: [{ term: "on" }, " leva a forma de ", { term: "il" }]
+              de: [{ term: "on" }, " steht mit der Form von ", { term: "il" }]
+              it: [{ term: "on" }, " vuole la forma di ", { term: "il" }]
+              pl: [{ term: "on" }, " wymaga formy jak ", { term: "il" }]
+              tr: [{ term: "on" }, " ile ", { term: "il" }, " biçimi kullanılır"]
+              id: [{ term: "on" }, " memakai bentuk ", { term: "il" }]
+              vi: [{ term: "on" }, " dùng dạng của ", { term: "il" }]

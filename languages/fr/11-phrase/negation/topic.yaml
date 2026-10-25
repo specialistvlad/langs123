@@ -1,0 +1,808 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "fr.phrase.negation"
+lang: "fr"
+kind: "grammar"
+tags: ["negation", "sentence"]
+concepts: ["questions-negatives"]
+related: ["fr.phrase.questions", "fr.nom-determinants.partitifs-quantites", "fr.etre-avoir.etre-avoir", "fr.pronoms.pronoms-toniques"]
+status: { fr: "draft", en: "draft", uk: "draft", es: "draft", pt: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { en: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", uk: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", es: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", pt: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", de: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", it: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", pl: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", tr: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", id: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a", vi: "8b0934 360ec9 672083 51c8ea 0ec450 0329f7 d05784 64244a" }
+title: { fr: "La négation", en: "Negation", uk: "Заперечення", es: "La negación", pt: "A negação", de: "Die Verneinung", it: "La negazione", pl: "Przeczenie", tr: "Olumsuzluk", id: "Negasi", vi: "Phủ định" }
+summary:
+  lead:
+    fr: ["On nie un verbe avec ", { term: "ne" }, " … ", { term: "pas" }, " autour de lui ; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " et ", { term: "personne" }, " remplacent ", { term: "pas" }, "."]
+    en: ["A verb is negated with ", { term: "ne" }, " … ", { term: "pas" }, " around it; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " and ", { term: "personne" }, " replace ", { term: "pas" }, "."]
+    uk: ["Дієслово заперечують за допомогою ", { term: "ne" }, " … ", { term: "pas" }, " навколо нього; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " і ", { term: "personne" }, " замінюють ", { term: "pas" }, "."]
+    es: ["El verbo se niega con ", { term: "ne" }, " … ", { term: "pas" }, " a su alrededor; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " y ", { term: "personne" }, " sustituyen a ", { term: "pas" }, "."]
+    pt: ["O verbo se nega com ", { term: "ne" }, " … ", { term: "pas" }, " em volta dele; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " e ", { term: "personne" }, " substituem ", { term: "pas" }, "."]
+    de: ["Ein Verb wird mit ", { term: "ne" }, " … ", { term: "pas" }, " um das Verb verneint; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " und ", { term: "personne" }, " ersetzen ", { term: "pas" }, "."]
+    it: ["Il verbo si nega con ", { term: "ne" }, " … ", { term: "pas" }, " intorno ad esso; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " e ", { term: "personne" }, " sostituiscono ", { term: "pas" }, "."]
+    pl: ["Czasownik neguje się przez ", { term: "ne" }, " … ", { term: "pas" }, " wokół niego; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " i ", { term: "personne" }, " zastępują ", { term: "pas" }, "."]
+    tr: ["Fiil, çevresine gelen ", { term: "ne" }, " … ", { term: "pas" }, " ile olumsuz yapılır; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " ve ", { term: "personne" }, " ", { term: "pas" }, " yerine geçer."]
+    id: ["Kata kerja dinegasikan dengan ", { term: "ne" }, " … ", { term: "pas" }, " di sekelilingnya; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, ", dan ", { term: "personne" }, " menggantikan ", { term: "pas" }, "."]
+    vi: ["Động từ được phủ định bằng ", { term: "ne" }, " … ", { term: "pas" }, " bao quanh nó; ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " và ", { term: "personne" }, " thay cho ", { term: "pas" }, "."]
+  rule:
+    fr: [{ term: "Ne" }, " se place devant le verbe conjugué et ", { term: "pas" }, " juste après lui :"]
+    en: [{ term: "Ne" }, " goes before the conjugated verb and ", { term: "pas" }, " right after it:"]
+    uk: [{ term: "Ne" }, " стоїть перед дієсловом у особовій формі, а ", { term: "pas" }, " — одразу після нього:"]
+    es: [{ term: "Ne" }, " va delante del verbo conjugado y ", { term: "pas" }, " justo detrás:"]
+    pt: [{ term: "Ne" }, " vem antes do verbo conjugado e ", { term: "pas" }, " logo depois dele:"]
+    de: [{ term: "Ne" }, " steht vor dem konjugierten Verb und ", { term: "pas" }, " direkt danach:"]
+    it: [{ term: "Ne" }, " sta davanti al verbo coniugato e ", { term: "pas" }, " subito dopo:"]
+    pl: [{ term: "Ne" }, " stoi przed odmienionym czasownikiem, a ", { term: "pas" }, " tuż po nim:"]
+    tr: [{ term: "Ne" }, " çekimli fiilin önüne, ", { term: "pas" }, " hemen arkasına gelir:"]
+    id: [{ term: "Ne" }, " diletakkan di depan kata kerja terkonjugasi dan ", { term: "pas" }, " tepat sesudahnya:"]
+    vi: [{ term: "Ne" }, " đứng trước động từ chia, còn ", { term: "pas" }, " đứng ngay sau nó:"]
+  ex: { examples: [["Je ", { target: "ne parle pas" }, " anglais."], ["Elle ", { target: "n’aime pas" }, " le café."]] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { fr: "Point", en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { fr: "Règle", en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A0"
+          point:
+            fr: "Phrases toutes faites"
+            en: "Set phrases"
+            uk: "Усталені фрази"
+            es: "Frases hechas"
+            pt: "Frases feitas"
+            de: "Feste Wendungen"
+            it: "Frasi fatte"
+            pl: "Utarte zwroty"
+            tr: "Kalıp cümleler"
+            id: "Ungkapan baku"
+            vi: "Câu cố định"
+          rule:
+            fr: [{ term: "ne" }, " … ", { term: "pas" }, " autour du verbe"]
+            en: [{ term: "ne" }, " … ", { term: "pas" }, " around the verb"]
+            uk: [{ term: "ne" }, " … ", { term: "pas" }, " навколо дієслова"]
+            es: [{ term: "ne" }, " … ", { term: "pas" }, " alrededor del verbo"]
+            pt: [{ term: "ne" }, " … ", { term: "pas" }, " em volta do verbo"]
+            de: [{ term: "ne" }, " … ", { term: "pas" }, " um das Verb"]
+            it: [{ term: "ne" }, " … ", { term: "pas" }, " intorno al verbo"]
+            pl: [{ term: "ne" }, " … ", { term: "pas" }, " wokół czasownika"]
+            tr: [{ term: "ne" }, " … ", { term: "pas" }, " fiilin çevresinde"]
+            id: [{ term: "ne" }, " … ", { term: "pas" }, " di sekeliling kata kerja"]
+            vi: [{ term: "ne" }, " … ", { term: "pas" }, " bao quanh động từ"]
+          ex: { examples: [["Je ", { target: "ne comprends pas" }, "."], ["Je ", { target: "ne sais pas" }, "."]] }
+          tr: { en: { examples: ["I don't understand.", "I don't know."] }, uk: { examples: ["Я не розумію.", "Я не знаю."] }, es: { examples: ["No entiendo.", "No sé."] }, pt: { examples: ["Eu não entendo.", "Eu não sei."] }, de: { examples: ["Ich verstehe nicht.", "Ich weiß nicht."] }, it: { examples: ["Non capisco.", "Non so."] }, pl: { examples: ["Nie rozumiem.", "Nie wiem."] }, tr: { examples: ["Anlamıyorum.", "Bilmiyorum."] }, id: { examples: ["Aku tidak mengerti.", "Aku tidak tahu."] }, vi: { examples: ["Tôi không hiểu.", "Tôi không biết."] } }
+        - level: "A1"
+          point: { fr: "Ne … pas", en: "Ne … pas", uk: "Ne … pas", es: "Ne … pas", pt: "Ne … pas", de: "Ne … pas", it: "Ne … pas", pl: "Ne … pas", tr: "Ne … pas", id: "Ne … pas", vi: "Ne … pas" }
+          rule:
+            fr: [{ term: "ne" }, " devant le verbe, ", { term: "pas" }, " après ; ", { term: "n’" }, " devant une voyelle"]
+            en: [{ term: "ne" }, " before the verb, ", { term: "pas" }, " after it; ", { term: "n’" }, " before a vowel"]
+            uk: [{ term: "ne" }, " перед дієсловом, ", { term: "pas" }, " після; ", { term: "n’" }, " перед голосною"]
+            es: [{ term: "ne" }, " delante del verbo, ", { term: "pas" }, " detrás; ", { term: "n’" }, " ante vocal"]
+            pt: [{ term: "ne" }, " antes do verbo, ", { term: "pas" }, " depois; ", { term: "n’" }, " antes de vogal"]
+            de: [{ term: "ne" }, " vor dem Verb, ", { term: "pas" }, " danach; ", { term: "n’" }, " vor Vokal"]
+            it: [{ term: "ne" }, " davanti al verbo, ", { term: "pas" }, " dopo; ", { term: "n’" }, " davanti a vocale"]
+            pl: [{ term: "ne" }, " przed czasownikiem, ", { term: "pas" }, " po nim; ", { term: "n’" }, " przed samogłoską"]
+            tr: [{ term: "ne" }, " fiilden önce, ", { term: "pas" }, " sonra; ünlüden önce ", { term: "n’" }]
+            id: [{ term: "ne" }, " sebelum kata kerja, ", { term: "pas" }, " sesudahnya; ", { term: "n’" }, " sebelum vokal"]
+            vi: [{ term: "ne" }, " trước động từ, ", { term: "pas" }, " sau; ", { term: "n’" }, " trước nguyên âm"]
+          ex: { examples: [["Nous ", { target: "ne mangeons pas" }, " de viande."], ["Elle ", { target: "n’aime pas" }, " le thé."]] }
+          tr: { en: { examples: ["We don't eat meat.", "She doesn't like tea."] }, uk: { examples: ["Ми не їмо м’яса.", "Вона не любить чай."] }, es: { examples: ["No comemos carne.", "No le gusta el té."] }, pt: { examples: ["Nós não comemos carne.", "Ela não gosta de chá."] }, de: { examples: ["Wir essen kein Fleisch.", "Sie mag keinen Tee."] }, it: { examples: ["Non mangiamo carne.", "Non le piace il tè."] }, pl: { examples: ["Nie jemy mięsa.", "Ona nie lubi herbaty."] }, tr: { examples: ["Et yemiyoruz.", "O çayı sevmez."] }, id: { examples: ["Kami tidak makan daging.", "Dia tidak suka teh."] }, vi: { examples: ["Chúng tôi không ăn thịt.", "Cô ấy không thích trà."] } }
+        - level: "A1"
+          point: { fr: "Pas de", en: "Pas de", uk: "Pas de", es: "Pas de", pt: "Pas de", de: "Pas de", it: "Pas de", pl: "Pas de", tr: "Pas de", id: "Pas de", vi: "Pas de" }
+          rule:
+            fr: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " deviennent ", { term: "de" }, " (devant une voyelle ", { term: "d’" }, ")"]
+            en: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " become ", { term: "de" }, " (", { term: "d’" }, " before a vowel)"]
+            uk: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " стають ", { term: "de" }, " (перед голосною ", { term: "d’" }, ")"]
+            es: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " pasan a ", { term: "de" }, " (ante vocal ", { term: "d’" }, ")"]
+            pt: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " viram ", { term: "de" }, " (antes de vogal ", { term: "d’" }, ")"]
+            de: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " werden zu ", { term: "de" }, " (vor Vokal ", { term: "d’" }, ")"]
+            it: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " diventano ", { term: "de" }, " (davanti a vocale ", { term: "d’" }, ")"]
+            pl: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " zmieniają się w ", { term: "de" }, " (przed samogłoską ", { term: "d’" }, ")"]
+            tr: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " ", { term: "de" }, " olur (ünlüden önce ", { term: "d’" }, ")"]
+            id: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " menjadi ", { term: "de" }, " (", { term: "d’" }, " sebelum vokal)"]
+            vi: [{ term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", ", { term: "du" }, ", ", { term: "de la" }, " thành ", { term: "de" }, " (", { term: "d’" }, " trước nguyên âm)"]
+          ex: { examples: [["Je n’ai ", { target: "pas de" }, " voiture."], ["Elle n’a ", { target: "pas d’" }, "amis."]] }
+          tr: { en: { examples: ["I don't have a car.", "She has no friends."] }, uk: { examples: ["У мене немає машини.", "У неї немає друзів."] }, es: { examples: ["No tengo coche.", "Ella no tiene amigos."] }, pt: { examples: ["Eu não tenho carro.", "Ela não tem amigos."] }, de: { examples: ["Ich habe kein Auto.", "Sie hat keine Freunde."] }, it: { examples: ["Non ho la macchina.", "Lei non ha amici."] }, pl: { examples: ["Nie mam samochodu.", "Ona nie ma przyjaciół."] }, tr: { examples: ["Arabam yok.", "Onun arkadaşı yok."] }, id: { examples: ["Aku tidak punya mobil.", "Dia tidak punya teman."] }, vi: { examples: ["Tôi không có xe hơi.", "Cô ấy không có bạn."] } }
+        - level: "A1"
+          point:
+            fr: "Passé composé"
+            en: "Passé composé"
+            uk: "Passé composé"
+            es: "Passé composé"
+            pt: "Passé composé"
+            de: "Passé composé"
+            it: "Passé composé"
+            pl: "Passé composé"
+            tr: "Passé composé"
+            id: "Passé composé"
+            vi: "Passé composé"
+          rule:
+            fr: [{ term: "ne" }, " + auxiliaire + ", { term: "pas" }, " + participe"]
+            en: [{ term: "ne" }, " + auxiliary + ", { term: "pas" }, " + participle"]
+            uk: [{ term: "ne" }, " + допоміжне дієслово + ", { term: "pas" }, " + дієприкметник"]
+            es: [{ term: "ne" }, " + auxiliar + ", { term: "pas" }, " + participio"]
+            pt: [{ term: "ne" }, " + auxiliar + ", { term: "pas" }, " + particípio"]
+            de: [{ term: "ne" }, " + Hilfsverb + ", { term: "pas" }, " + Partizip"]
+            it: [{ term: "ne" }, " + ausiliare + ", { term: "pas" }, " + participio"]
+            pl: [{ term: "ne" }, " + czasownik posiłkowy + ", { term: "pas" }, " + imiesłów"]
+            tr: [{ term: "ne" }, " + yardımcı fiil + ", { term: "pas" }, " + ortaç"]
+            id: [{ term: "ne" }, " + kata kerja bantu + ", { term: "pas" }, " + partisip"]
+            vi: [{ term: "ne" }, " + trợ động từ + ", { term: "pas" }, " + phân từ"]
+          ex: ["Je ", { target: "n’ai pas" }, " mangé."]
+          tr: { en: "I haven't eaten.", uk: "Я не їв.", es: "No he comido.", pt: "Eu não comi.", de: "Ich habe nicht gegessen.", it: "Non ho mangiato.", pl: "Nie jadłem.", tr: "Yemek yemedim.", id: "Aku belum makan.", vi: "Tôi chưa ăn." }
+        - level: "A1"
+          point:
+            fr: "Jamais, plus, rien"
+            en: "Jamais, plus, rien"
+            uk: "Jamais, plus, rien"
+            es: "Jamais, plus, rien"
+            pt: "Jamais, plus, rien"
+            de: "Jamais, plus, rien"
+            it: "Jamais, plus, rien"
+            pl: "Jamais, plus, rien"
+            tr: "Jamais, plus, rien"
+            id: "Jamais, plus, rien"
+            vi: "Jamais, plus, rien"
+          rule:
+            fr: ["à la place de ", { term: "pas" }, " : jamais, plus, rien"]
+            en: ["in place of ", { term: "pas" }, ": jamais (never), plus (no longer), rien (nothing)"]
+            uk: ["замість ", { term: "pas" }, ": jamais (ніколи), plus (більше не), rien (нічого)"]
+            es: ["en lugar de ", { term: "pas" }, ": jamais (nunca), plus (ya no), rien (nada)"]
+            pt: ["no lugar de ", { term: "pas" }, ": jamais (nunca), plus (não mais), rien (nada)"]
+            de: ["anstelle von ", { term: "pas" }, ": jamais (nie), plus (nicht mehr), rien (nichts)"]
+            it: ["al posto di ", { term: "pas" }, ": jamais (mai), plus (non più), rien (niente)"]
+            pl: ["zamiast ", { term: "pas" }, ": jamais (nigdy), plus (już nie), rien (nic)"]
+            tr: [{ term: "pas" }, " yerine: jamais (asla), plus (artık değil), rien (hiçbir şey)"]
+            id: ["menggantikan ", { term: "pas" }, ": jamais (tidak pernah), plus (tidak lagi), rien (tidak ada apa-apa)"]
+            vi: ["thay cho ", { term: "pas" }, ": jamais (không bao giờ), plus (không còn), rien (không gì cả)"]
+          ex: ["Je ne bois ", { target: "jamais" }, " de café."]
+          tr: { en: "I never drink coffee.", uk: "Я ніколи не п’ю кави.", es: "Nunca bebo café.", pt: "Eu nunca bebo café.", de: "Ich trinke nie Kaffee.", it: "Non bevo mai caffè.", pl: "Nigdy nie piję kawy.", tr: "Hiç kahve içmem.", id: "Aku tidak pernah minum kopi.", vi: "Tôi không bao giờ uống cà phê." }
+        - level: "A2"
+          point: { fr: "Personne", en: "Personne", uk: "Personne", es: "Personne", pt: "Personne", de: "Personne", it: "Personne", pl: "Personne", tr: "Personne", id: "Personne", vi: "Personne" }
+          rule:
+            fr: ["après le verbe ; en tête de phrase, comme sujet : ", { term: "personne ne" }]
+            en: ["after the verb; at the start, as the subject: ", { term: "personne ne" }]
+            uk: ["після дієслова; на початку речення як підмет: ", { term: "personne ne" }]
+            es: ["tras el verbo; al principio, como sujeto: ", { term: "personne ne" }]
+            pt: ["depois do verbo; no início, como sujeito: ", { term: "personne ne" }]
+            de: ["nach dem Verb; am Satzanfang als Subjekt: ", { term: "personne ne" }]
+            it: ["dopo il verbo; all'inizio, come soggetto: ", { term: "personne ne" }]
+            pl: ["po czasowniku; na początku jako podmiot: ", { term: "personne ne" }]
+            tr: ["fiilden sonra; cümle başında özne olarak: ", { term: "personne ne" }]
+            id: ["setelah kata kerja; di awal sebagai subjek: ", { term: "personne ne" }]
+            vi: ["sau động từ; đầu câu làm chủ ngữ: ", { term: "personne ne" }]
+          ex: { examples: [["Je ne vois ", { target: "personne" }, "."], [{ target: "Personne" }, " ne parle."]] }
+          tr: { en: { examples: ["I can't see anyone.", "Nobody is speaking."] }, uk: { examples: ["Я нікого не бачу.", "Ніхто не говорить."] }, es: { examples: ["No veo a nadie.", "Nadie habla."] }, pt: { examples: ["Eu não vejo ninguém.", "Ninguém fala."] }, de: { examples: ["Ich sehe niemanden.", "Niemand spricht."] }, it: { examples: ["Non vedo nessuno.", "Nessuno parla."] }, pl: { examples: ["Nikogo nie widzę.", "Nikt nie mówi."] }, tr: { examples: ["Kimseyi görmüyorum.", "Kimse konuşmuyor."] }, id: { examples: ["Aku tidak melihat siapa pun.", "Tidak ada yang berbicara."] }, vi: { examples: ["Tôi không thấy ai.", "Không ai nói."] } }
+        - level: "A1"
+          point: { fr: "Réponse", en: "Answer", uk: "Відповідь", es: "Respuesta", pt: "Resposta", de: "Antwort", it: "Risposta", pl: "Odpowiedź", tr: "Cevap", id: "Jawaban", vi: "Câu trả lời" }
+          rule:
+            fr: [{ term: "si" }, " contredit une question négative"]
+            en: [{ term: "si" }, " contradicts a negative question"]
+            uk: [{ term: "si" }, " заперечує негативне питання"]
+            es: [{ term: "si" }, " contradice una pregunta negativa"]
+            pt: [{ term: "si" }, " contradiz uma pergunta negativa"]
+            de: [{ term: "si" }, " widerspricht einer verneinten Frage"]
+            it: [{ term: "si" }, " contraddice una domanda negativa"]
+            pl: [{ term: "si" }, " zaprzecza pytaniu przeczącemu"]
+            tr: [{ term: "si" }, " olumsuz bir soruyu çürütür"]
+            id: [{ term: "si" }, " membantah pertanyaan negatif"]
+            vi: [{ term: "si" }, " phản bác một câu hỏi phủ định"]
+          ex: { exchange: ["Tu ne viens pas ?", [{ target: "Si" }, ", je viens !"]] }
+          tr: { en: "Aren't you coming? — Yes, I am!", uk: "Ти не йдеш? — Ні, іду!", es: "¿No vienes? — ¡Sí, voy!", pt: "Você não vem? — Venho sim!", de: "Kommst du nicht? — Doch, ich komme!", it: "Non vieni? — Sì, vengo!", pl: "Nie idziesz? — Idę!", tr: "Gelmiyor musun? — Geliyorum!", id: "Kamu tidak datang? — Datang, kok!", vi: "Bạn không đến à? — Có chứ, tôi đến!" }
+        - level: "A2"
+          point:
+            fr: "À l’oral"
+            en: "In speech"
+            uk: "В усному мовленні"
+            es: "Al hablar"
+            pt: "Na fala"
+            de: "In der gesprochenen Sprache"
+            it: "Nel parlato"
+            pl: "W mowie"
+            tr: "Konuşmada"
+            id: "Dalam percakapan"
+            vi: "Khi nói"
+          rule:
+            fr: [{ term: "ne" }, " tombe souvent"]
+            en: [{ term: "ne" }, " often drops"]
+            uk: [{ term: "ne" }, " часто випадає"]
+            es: [{ term: "ne" }, " suele caer"]
+            pt: [{ term: "ne" }, " costuma cair"]
+            de: [{ term: "ne" }, " fällt oft weg"]
+            it: [{ term: "ne" }, " cade spesso"]
+            pl: [{ term: "ne" }, " często znika"]
+            tr: [{ term: "ne" }, " sık sık düşer"]
+            id: [{ term: "ne" }, " sering dihilangkan"]
+            vi: [{ term: "ne" }, " thường bị lược"]
+          ex: { examples: [["Je ", { target: "sais pas" }, "."], ["J’", { target: "ai pas" }, " faim."]] }
+          tr: { en: { examples: ["I don't know.", "I'm not hungry."] }, uk: { examples: ["Я не знаю.", "Я не голодний."] }, es: { examples: ["No sé.", "No tengo hambre."] }, pt: { examples: ["Eu não sei.", "Eu não estou com fome."] }, de: { examples: ["Ich weiß nicht.", "Ich habe keinen Hunger."] }, it: { examples: ["Non so.", "Non ho fame."] }, pl: { examples: ["Nie wiem.", "Nie jestem głodny."] }, tr: { examples: ["Bilmiyorum.", "Aç değilim."] }, id: { examples: ["Aku tidak tahu.", "Aku tidak lapar."] }, vi: { examples: ["Tôi không biết.", "Tôi không đói."] } }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: [{ term: "ne" }, " … ", { term: "pas" }, " entoure le verbe"]
+            en: [{ term: "ne" }, " … ", { term: "pas" }, " surrounds the verb"]
+            uk: [{ term: "ne" }, " … ", { term: "pas" }, " оточує дієслово"]
+            es: [{ term: "ne" }, " … ", { term: "pas" }, " rodea el verbo"]
+            pt: [{ term: "ne" }, " … ", { term: "pas" }, " envolve o verbo"]
+            de: [{ term: "ne" }, " … ", { term: "pas" }, " umschließt das Verb"]
+            it: [{ term: "ne" }, " … ", { term: "pas" }, " circonda il verbo"]
+            pl: [{ term: "ne" }, " … ", { term: "pas" }, " otacza czasownik"]
+            tr: [{ term: "ne" }, " … ", { term: "pas" }, " fiili çevreler"]
+            id: [{ term: "ne" }, " … ", { term: "pas" }, " mengapit kata kerja"]
+            vi: [{ term: "ne" }, " … ", { term: "pas" }, " bao quanh động từ"]
+          ex: ["Je ", { target: "ne parle pas" }, " anglais."]
+          tr: { en: "I don't speak English.", uk: "Я не розмовляю англійською.", es: "No hablo inglés.", pt: "Eu não falo inglês.", de: "Ich spreche kein Englisch.", it: "Non parlo inglese.", pl: "Nie mówię po angielsku.", tr: "İngilizce konuşmuyorum.", id: "Aku tidak berbicara bahasa Inggris.", vi: "Tôi không nói tiếng Anh." }
+        - level: "A1"
+          point: { fr: "Piège", en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            fr: ["un seul mot négatif : pas de ", { term: "pas" }, " avec ", { term: "jamais" }]
+            en: ["one negative word only: no ", { term: "pas" }, " with ", { term: "jamais" }]
+            uk: ["лише одне заперечне слово: без ", { term: "pas" }, " разом із ", { term: "jamais" }]
+            es: ["una sola palabra negativa: no ", { term: "pas" }, " con ", { term: "jamais" }]
+            pt: ["uma só palavra negativa: nada de ", { term: "pas" }, " com ", { term: "jamais" }]
+            de: ["nur ein Verneinungswort: kein ", { term: "pas" }, " mit ", { term: "jamais" }]
+            it: ["una sola parola negativa: niente ", { term: "pas" }, " con ", { term: "jamais" }]
+            pl: ["tylko jedno słowo przeczące: bez ", { term: "pas" }, " przy ", { term: "jamais" }]
+            tr: ["tek bir olumsuz sözcük: ", { term: "jamais" }, " ile ", { term: "pas" }, " kullanılmaz"]
+            id: ["satu kata negatif saja: tanpa ", { term: "pas" }, " bersama ", { term: "jamais" }]
+            vi: ["chỉ một từ phủ định: không dùng ", { term: "pas" }, " cùng ", { term: "jamais" }]
+          ex: ["Il ne dort ", { target: "jamais" }, "."]
+          tr: { en: "He never sleeps.", uk: "Він ніколи не спить.", es: "Nunca duerme.", pt: "Ele nunca dorme.", de: "Er schläft nie.", it: "Non dorme mai.", pl: "On nigdy nie śpi.", tr: "O hiç uyumaz.", id: "Dia tidak pernah tidur.", vi: "Anh ấy không bao giờ ngủ." }
+sections:
+  - title:
+      fr: "Vue d’ensemble"
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A0"
+            text:
+              fr: ["La négation a deux parties : ", { term: "ne" }, " devant le verbe et un mot négatif après lui."]
+              en: ["Negation has two parts: ", { term: "ne" }, " before the verb and a negative word after it."]
+              uk: ["Заперечення має дві частини: ", { term: "ne" }, " перед дієсловом і заперечне слово після нього."]
+              es: ["La negación tiene dos partes: ", { term: "ne" }, " delante del verbo y una palabra negativa detrás."]
+              pt: ["A negação tem duas partes: ", { term: "ne" }, " antes do verbo e uma palavra negativa depois dele."]
+              de: ["Die Verneinung hat zwei Teile: ", { term: "ne" }, " vor dem Verb und ein Verneinungswort danach."]
+              it: ["La negazione ha due parti: ", { term: "ne" }, " davanti al verbo e una parola negativa dopo."]
+              pl: ["Przeczenie ma dwie części: ", { term: "ne" }, " przed czasownikiem i słowo przeczące po nim."]
+              tr: ["Olumsuzluk iki parçalıdır: fiilin önünde ", { term: "ne" }, ", arkasında olumsuz bir sözcük."]
+              id: ["Negasi terdiri dari dua bagian: ", { term: "ne" }, " di depan kata kerja dan kata negatif setelahnya."]
+              vi: ["Phủ định gồm hai phần: ", { term: "ne" }, " trước động từ và một từ phủ định sau nó."]
+            ex: { examples: [["Je ", { target: "ne" }, " parle ", { target: "pas" }, "."], ["Tu ", { target: "n’" }, "aimes ", { target: "pas" }, " ça."]] }
+            tr: { en: { examples: ["I don't speak.", "You don't like that."] }, uk: { examples: ["Я не розмовляю.", "Тобі це не подобається."] }, es: { examples: ["No hablo.", "No te gusta eso."] }, pt: { examples: ["Eu não falo.", "Você não gosta disso."] }, de: { examples: ["Ich spreche nicht.", "Du magst das nicht."] }, it: { examples: ["Non parlo.", "Non ti piace."] }, pl: { examples: ["Nie mówię.", "Nie lubisz tego."] }, tr: { examples: ["Konuşmuyorum.", "Bunu sevmiyorsun."] }, id: { examples: ["Aku tidak berbicara.", "Kamu tidak suka itu."] }, vi: { examples: ["Tôi không nói.", "Bạn không thích cái đó."] } }
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: [{ term: "Pas" }, " ne s’ajoute pas à ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " ou ", { term: "personne" }, "."]
+              en: [{ term: "Pas" }, " is never added to ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " or ", { term: "personne" }, "."]
+              uk: [{ term: "Pas" }, " не додається до ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " чи ", { term: "personne" }, "."]
+              es: [{ term: "Pas" }, " no se añade a ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " ni ", { term: "personne" }, "."]
+              pt: [{ term: "Pas" }, " não se acrescenta a ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " nem ", { term: "personne" }, "."]
+              de: [{ term: "Pas" }, " tritt nicht zu ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " oder ", { term: "personne" }, " hinzu."]
+              it: [{ term: "Pas" }, " non si aggiunge a ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " o ", { term: "personne" }, "."]
+              pl: [{ term: "Pas" }, " nie dodaje się do ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " ani ", { term: "personne" }, "."]
+              tr: [{ term: "pas" }, ", ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " ya da ", { term: "personne" }, " ile birlikte kullanılmaz."]
+              id: [{ term: "Pas" }, " tidak ditambahkan pada ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, ", atau ", { term: "personne" }, "."]
+              vi: [{ term: "Pas" }, " không được thêm vào ", { term: "jamais" }, ", ", { term: "plus" }, ", ", { term: "rien" }, " hay ", { term: "personne" }, "."]
+            ex: { examples: [["Je ne mange ", { target: "jamais" }, " de viande."], ["Il ne dit ", { target: "rien" }, "."]] }
+            tr: { en: { examples: ["I never eat meat.", "He says nothing."] }, uk: { examples: ["Я ніколи не їм м’яса.", "Він нічого не каже."] }, es: { examples: ["Nunca como carne.", "No dice nada."] }, pt: { examples: ["Eu nunca como carne.", "Ele não diz nada."] }, de: { examples: ["Ich esse nie Fleisch.", "Er sagt nichts."] }, it: { examples: ["Non mangio mai carne.", "Non dice niente."] }, pl: { examples: ["Nigdy nie jem mięsa.", "On nic nie mówi."] }, tr: { examples: ["Hiç et yemem.", "O hiçbir şey söylemez."] }, id: { examples: ["Aku tidak pernah makan daging.", "Dia tidak mengatakan apa-apa."] }, vi: { examples: ["Tôi không bao giờ ăn thịt.", "Anh ấy không nói gì."] } }
+          - type: "note"
+            level: "A1"
+            text:
+              fr: ["Pour répondre à une phrase négative par « moi non plus », voir ", { link: "Les pronoms toniques", to: "fr.pronoms.pronoms-toniques" }, "."]
+              en: ["To reply to a negative sentence with “me neither” (moi non plus), see ", { link: "Stressed Pronouns", to: fr.pronoms.pronoms-toniques }, "."]
+              uk: ["Про відповідь на заперечне речення «я теж ні» (moi non plus) — див. ", { link: "Наголошені займенники", to: "fr.pronoms.pronoms-toniques" }, "."]
+              es: ["Para responder a una frase negativa con «yo tampoco» (moi non plus), ver ", { link: "Los pronombres tónicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pt: ["Para responder a uma frase negativa com «eu também não» (moi non plus), veja ", { link: "Os pronomes tônicos", to: "fr.pronoms.pronoms-toniques" }, "."]
+              de: ["Zur Antwort auf einen verneinten Satz mit „ich auch nicht“ (moi non plus) siehe ", { link: "Die betonten Pronomen", to: "fr.pronoms.pronoms-toniques" }, "."]
+              it: ["Per rispondere a una frase negativa con «neanch'io» (moi non plus), vedi ", { link: "I pronomi tonici", to: "fr.pronoms.pronoms-toniques" }, "."]
+              pl: ["O odpowiedzi na zdanie przeczące „ja też nie” (moi non plus) — zob. ", { link: "Zaimki akcentowane", to: "fr.pronoms.pronoms-toniques" }, "."]
+              tr: ["Olumsuz bir cümleye “ben de değil” (moi non plus) diye karşılık vermek için bkz. ", { link: "Vurgulu zamirler", to: "fr.pronoms.pronoms-toniques" }, "."]
+              id: ["Untuk menjawab kalimat negatif dengan “saya juga tidak” (moi non plus), lihat ", { link: "Pronomina tonik", to: "fr.pronoms.pronoms-toniques" }, "."]
+              vi: ["Về cách đáp lại câu phủ định bằng “tôi cũng không” (moi non plus), xem ", { link: "Đại từ nhấn mạnh", to: "fr.pronoms.pronoms-toniques" }, "."]
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Pour les questions, voir ", { link: "Les questions", to: "fr.phrase.questions" }, "."]
+              en: ["For questions, see ", { link: "Questions", to: "fr.phrase.questions" }, "."]
+              uk: ["Про питання — див. ", { link: "Питання", to: "fr.phrase.questions" }, "."]
+              es: ["Para las preguntas, ver ", { link: "Las preguntas", to: "fr.phrase.questions" }, "."]
+              pt: ["Para as perguntas, veja ", { link: "As perguntas", to: "fr.phrase.questions" }, "."]
+              de: ["Zu den Fragen siehe ", { link: "Fragen", to: "fr.phrase.questions" }, "."]
+              it: ["Per le domande, vedi ", { link: "Le domande", to: "fr.phrase.questions" }, "."]
+              pl: ["O pytaniach — zob. ", { link: "Pytania", to: "fr.phrase.questions" }, "."]
+              tr: ["Sorular için bkz. ", { link: "Soru cümleleri", to: "fr.phrase.questions" }, "."]
+              id: ["Untuk pertanyaan, lihat ", { link: "Kalimat tanya", to: "fr.phrase.questions" }, "."]
+              vi: ["Về câu hỏi, xem ", { link: "Câu hỏi", to: "fr.phrase.questions" }, "."]
+  - title:
+      fr: "Forme : ne … pas"
+      en: "Form: ne … pas"
+      uk: "Форма: ne … pas"
+      es: "Forma: ne … pas"
+      pt: "Forma: ne … pas"
+      de: "Form: ne … pas"
+      it: "Forma: ne … pas"
+      pl: "Forma: ne … pas"
+      tr: "Biçim: ne … pas"
+      id: "Bentuk: ne … pas"
+      vi: "Dạng: ne … pas"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { term: "ne" }, { slot: "verb" }, { term: "pas" }] }
+            ex: { examples: [["Je ", { target: "ne parle pas" }, " anglais."], ["Ils ", { target: "ne travaillent pas" }, "."]] }
+            tr: { en: { examples: ["I don't speak English.", "They aren't working."] }, uk: { examples: ["Я не розмовляю англійською.", "Вони не працюють."] }, es: { examples: ["No hablo inglés.", "No trabajan."] }, pt: { examples: ["Eu não falo inglês.", "Eles não trabalham."] }, de: { examples: ["Ich spreche kein Englisch.", "Sie arbeiten nicht."] }, it: { examples: ["Non parlo inglese.", "Non lavorano."] }, pl: { examples: ["Nie mówię po angielsku.", "Oni nie pracują."] }, tr: { examples: ["İngilizce konuşmuyorum.", "Çalışmıyorlar."] }, id: { examples: ["Aku tidak berbicara bahasa Inggris.", "Mereka tidak bekerja."] }, vi: { examples: ["Tôi không nói tiếng Anh.", "Họ không làm việc."] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { term: "n’" }, { slot: "verb" }, { term: "pas" }] }
+            ex: { examples: [["Elle ", { target: "n’aime pas" }, " le café."], ["Nous ", { target: "n’habitons pas" }, " ici."]] }
+            tr: { en: { examples: ["She doesn't like coffee.", "We don't live here."] }, uk: { examples: ["Вона не любить каву.", "Ми тут не живемо."] }, es: { examples: ["No le gusta el café.", "No vivimos aquí."] }, pt: { examples: ["Ela não gosta de café.", "Nós não moramos aqui."] }, de: { examples: ["Sie mag keinen Kaffee.", "Wir wohnen nicht hier."] }, it: { examples: ["Non le piace il caffè.", "Non abitiamo qui."] }, pl: { examples: ["Ona nie lubi kawy.", "Nie mieszkamy tutaj."] }, tr: { examples: ["Kahveyi sevmez.", "Burada oturmuyoruz."] }, id: { examples: ["Dia tidak suka kopi.", "Kami tidak tinggal di sini."] }, vi: { examples: ["Cô ấy không thích cà phê.", "Chúng tôi không sống ở đây."] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { term: "ne" }, { slot: "verb" }, { term: "pas" }, { slot: "infinitive" }] }
+            ex: { examples: [["Je ", { target: "ne veux pas" }, " partir."], ["Il ", { target: "ne peut pas" }, " venir."]] }
+            tr: { en: { examples: ["I don't want to leave.", "He can't come."] }, uk: { examples: ["Я не хочу йти.", "Він не може прийти."] }, es: { examples: ["No quiero irme.", "No puede venir."] }, pt: { examples: ["Eu não quero ir embora.", "Ele não pode vir."] }, de: { examples: ["Ich will nicht gehen.", "Er kann nicht kommen."] }, it: { examples: ["Non voglio partire.", "Non può venire."] }, pl: { examples: ["Nie chcę wyjść.", "On nie może przyjść."] }, tr: { examples: ["Gitmek istemiyorum.", "O gelemez."] }, id: { examples: ["Aku tidak mau pergi.", "Dia tidak bisa datang."] }, vi: { examples: ["Tôi không muốn đi.", "Anh ấy không thể đến."] } }
+          - level: "A1"
+            form: { pattern: [{ slot: "subject" }, { term: "ne" }, { slot: "helper" }, { term: "pas" }, { slot: "past participle" }] }
+            ex: { examples: [["Je ", { target: "n’ai pas" }, " mangé."], ["Elle ", { target: "n’est pas" }, " venue."]] }
+            tr: { en: { examples: ["I haven't eaten.", "She hasn't come."] }, uk: { examples: ["Я не їв.", "Вона не прийшла."] }, es: { examples: ["No he comido.", "No ha venido."] }, pt: { examples: ["Eu não comi.", "Ela não veio."] }, de: { examples: ["Ich habe nicht gegessen.", "Sie ist nicht gekommen."] }, it: { examples: ["Non ho mangiato.", "Non è venuta."] }, pl: { examples: ["Nie jadłem.", "Ona nie przyszła."] }, tr: { examples: ["Yemek yemedim.", "O gelmedi."] }, id: { examples: ["Aku belum makan.", "Dia belum datang."] }, vi: { examples: ["Tôi chưa ăn.", "Cô ấy chưa đến."] } }
+          - level: "A2"
+            form: { pattern: [{ term: "ne pas" }, { slot: "infinitive" }] }
+            ex: { examples: [["Je préfère ", { target: "ne pas" }, " sortir."], ["Il décide de ", { target: "ne pas" }, " partir."]] }
+            tr: { en: { examples: ["I prefer not to go out.", "He decides not to leave."] }, uk: { examples: ["Я волію не виходити.", "Він вирішує не їхати."] }, es: { examples: ["Prefiero no salir.", "Decide no irse."] }, pt: { examples: ["Prefiro não sair.", "Ele decide não ir embora."] }, de: { examples: ["Ich gehe lieber nicht aus.", "Er beschließt, nicht zu gehen."] }, it: { examples: ["Preferisco non uscire.", "Decide di non partire."] }, pl: { examples: ["Wolę nie wychodzić.", "Postanawia nie wyjeżdżać."] }, tr: { examples: ["Dışarı çıkmamayı tercih ederim.", "Gitmemeye karar verir."] }, id: { examples: ["Aku lebih suka tidak keluar.", "Dia memutuskan untuk tidak pergi."] }, vi: { examples: ["Tôi thích không ra ngoài hơn.", "Anh ấy quyết định không đi."] } }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Un pronom complément se place entre ", { term: "ne" }, " et le verbe : voir ", { link: "Les pronoms compléments", to: "fr.pronoms.pronoms-complements" }, "."]
+              en: ["An object pronoun goes between ", { term: "ne" }, " and the verb: see ", { link: "Object Pronouns", to: fr.pronoms.pronoms-complements }, "."]
+              uk: ["Займенник-додаток стоїть між ", { term: "ne" }, " і дієсловом: див. ", { link: "Займенники-додатки", to: "fr.pronoms.pronoms-complements" }, "."]
+              es: ["Un pronombre complemento va entre ", { term: "ne" }, " y el verbo: ver ", { link: "Los pronombres complemento", to: "fr.pronoms.pronoms-complements" }, "."]
+              pt: ["Um pronome complemento fica entre ", { term: "ne" }, " e o verbo: veja ", { link: "Os pronomes complemento", to: "fr.pronoms.pronoms-complements" }, "."]
+              de: ["Ein Objektpronomen steht zwischen ", { term: "ne" }, " und dem Verb: siehe ", { link: "Die Objektpronomen", to: "fr.pronoms.pronoms-complements" }, "."]
+              it: ["Un pronome complemento sta tra ", { term: "ne" }, " e il verbo: vedi ", { link: "I pronomi complemento", to: "fr.pronoms.pronoms-complements" }, "."]
+              pl: ["Zaimek dopełnieniowy stoi między ", { term: "ne" }, " a czasownikiem: zob. ", { link: "Zaimki dopełnieniowe", to: "fr.pronoms.pronoms-complements" }, "."]
+              tr: ["Nesne zamiri ", { term: "ne" }, " ile fiil arasına girer: bkz. ", { link: "Nesne zamirleri", to: "fr.pronoms.pronoms-complements" }, "."]
+              id: ["Pronomina objek diletakkan di antara ", { term: "ne" }, " dan kata kerja: lihat ", { link: "Pronomina objek", to: "fr.pronoms.pronoms-complements" }, "."]
+              vi: ["Đại từ bổ ngữ đứng giữa ", { term: "ne" }, " và động từ: xem ", { link: "Đại từ bổ ngữ", to: "fr.pronoms.pronoms-complements" }, "."]
+            ex: { examples: [["Je ", { target: "ne le" }, " vois ", { target: "pas" }, "."], ["Il ", { target: "ne lui" }, " parle ", { target: "pas" }, "."]] }
+            tr: { en: { examples: ["I can't see it.", "He isn't talking to him."] }, uk: { examples: ["Я цього не бачу.", "Він з ним не розмовляє."] }, es: { examples: ["No lo veo.", "No le habla."] }, pt: { examples: ["Eu não o vejo.", "Ele não fala com ele."] }, de: { examples: ["Ich sehe es nicht.", "Er spricht nicht mit ihm."] }, it: { examples: ["Non lo vedo.", "Non gli parla."] }, pl: { examples: ["Nie widzę go.", "On do niego nie mówi."] }, tr: { examples: ["Onu görmüyorum.", "Onunla konuşmuyor."] }, id: { examples: ["Aku tidak melihatnya.", "Dia tidak berbicara dengannya."] }, vi: { examples: ["Tôi không thấy nó.", "Anh ấy không nói chuyện với anh ta."] } }
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["À l’oral, ", { term: "ne" }, " tombe souvent et ", { term: "pas" }, " reste."]
+              en: ["In speech, ", { term: "ne" }, " often drops and ", { term: "pas" }, " stays."]
+              uk: ["В усному мовленні ", { term: "ne" }, " часто випадає, а ", { term: "pas" }, " залишається."]
+              es: ["En la lengua hablada, ", { term: "ne" }, " suele caer y ", { term: "pas" }, " se queda."]
+              pt: ["Na fala, ", { term: "ne" }, " costuma cair e ", { term: "pas" }, " fica."]
+              de: ["In der gesprochenen Sprache fällt ", { term: "ne" }, " oft weg, und ", { term: "pas" }, " bleibt."]
+              it: ["Nel parlato, ", { term: "ne" }, " cade spesso e ", { term: "pas" }, " resta."]
+              pl: ["W mowie potocznej ", { term: "ne" }, " często znika, a ", { term: "pas" }, " zostaje."]
+              tr: ["Konuşmada ", { term: "ne" }, " sık sık düşer, ", { term: "pas" }, " kalır."]
+              id: ["Dalam percakapan, ", { term: "ne" }, " sering dihilangkan dan ", { term: "pas" }, " tetap ada."]
+              vi: ["Trong lời nói, ", { term: "ne" }, " thường bị lược còn ", { term: "pas" }, " được giữ lại."]
+            ex: { examples: [["Je ", { target: "sais pas" }, "."], ["Tu ", { target: "viens pas" }, " ?"]] }
+            tr: { en: { examples: ["I don't know.", "Aren't you coming?"] }, uk: { examples: ["Я не знаю.", "Ти не йдеш?"] }, es: { examples: ["No sé.", "¿No vienes?"] }, pt: { examples: ["Eu não sei.", "Você não vem?"] }, de: { examples: ["Ich weiß nicht.", "Kommst du nicht?"] }, it: { examples: ["Non so.", "Non vieni?"] }, pl: { examples: ["Nie wiem.", "Nie idziesz?"] }, tr: { examples: ["Bilmiyorum.", "Gelmiyor musun?"] }, id: { examples: ["Aku tidak tahu.", "Kamu tidak datang?"] }, vi: { examples: ["Tôi không biết.", "Bạn không đến à?"] } }
+  - title:
+      fr: "Forme : pas de"
+      en: "Form: pas de"
+      uk: "Форма: pas de"
+      es: "Forma: pas de"
+      pt: "Forma: pas de"
+      de: "Form: pas de"
+      it: "Forma: pas de"
+      pl: "Forma: pas de"
+      tr: "Biçim: pas de"
+      id: "Bentuk: pas de"
+      vi: "Dạng: pas de"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "form", label: { fr: "Forme", en: "Form", uk: "Форма", es: "Forma", pt: "Forma", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            form: { mapping: [{ alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }, { target: "pas de" }] }
+            ex: { examples: [["Je n’ai ", { target: "pas de" }, " frère."], ["Elle n’a ", { target: "pas de" }, " voiture."]] }
+            tr: { en: { examples: ["I don't have a brother.", "She doesn't have a car."] }, uk: { examples: ["У мене немає брата.", "У неї немає машини."] }, es: { examples: ["No tengo hermano.", "Ella no tiene coche."] }, pt: { examples: ["Eu não tenho irmão.", "Ela não tem carro."] }, de: { examples: ["Ich habe keinen Bruder.", "Sie hat kein Auto."] }, it: { examples: ["Non ho fratelli.", "Lei non ha la macchina."] }, pl: { examples: ["Nie mam brata.", "Ona nie ma samochodu."] }, tr: { examples: ["Erkek kardeşim yok.", "Onun arabası yok."] }, id: { examples: ["Aku tidak punya saudara laki-laki.", "Dia tidak punya mobil."] }, vi: { examples: ["Tôi không có anh em trai.", "Cô ấy không có xe hơi."] } }
+          - level: "A1"
+            form: { mapping: [{ alternatives: [{ term: "du" }, { term: "de la" }, { term: "de l’" }] }, { target: "pas de" }] }
+            ex: { examples: [["Je ne bois ", { target: "pas de" }, " café."], ["Il ne mange ", { target: "pas de" }, " pain."]] }
+            tr: { en: { examples: ["I don't drink coffee.", "He doesn't eat bread."] }, uk: { examples: ["Я не п’ю кави.", "Він не їсть хліба."] }, es: { examples: ["No bebo café.", "No come pan."] }, pt: { examples: ["Eu não bebo café.", "Ele não come pão."] }, de: { examples: ["Ich trinke keinen Kaffee.", "Er isst kein Brot."] }, it: { examples: ["Non bevo caffè.", "Non mangia pane."] }, pl: { examples: ["Nie piję kawy.", "On nie je chleba."] }, tr: { examples: ["Kahve içmem.", "Ekmek yemez."] }, id: { examples: ["Aku tidak minum kopi.", "Dia tidak makan roti."] }, vi: { examples: ["Tôi không uống cà phê.", "Anh ấy không ăn bánh mì."] } }
+          - level: "A1"
+            form: { pattern: [{ term: "pas d’" }, { slot: "noun" }] }
+            ex: { examples: [["Elle n’a ", { target: "pas d’" }, "amis."], ["Nous n’avons ", { target: "pas d’" }, "enfants."]] }
+            tr: { en: { examples: ["She has no friends.", "We have no children."] }, uk: { examples: ["У неї немає друзів.", "У нас немає дітей."] }, es: { examples: ["Ella no tiene amigos.", "No tenemos hijos."] }, pt: { examples: ["Ela não tem amigos.", "Nós não temos filhos."] }, de: { examples: ["Sie hat keine Freunde.", "Wir haben keine Kinder."] }, it: { examples: ["Lei non ha amici.", "Non abbiamo figli."] }, pl: { examples: ["Ona nie ma przyjaciół.", "Nie mamy dzieci."] }, tr: { examples: ["Onun arkadaşı yok.", "Çocuğumuz yok."] }, id: { examples: ["Dia tidak punya teman.", "Kami tidak punya anak."] }, vi: { examples: ["Cô ấy không có bạn.", "Chúng tôi không có con."] } }
+          - level: "A1"
+            form:
+              fr: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, " : inchangé"]
+              en: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": unchanged"]
+              uk: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": без змін"]
+              es: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": sin cambio"]
+              pt: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": sem mudança"]
+              de: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": unverändert"]
+              it: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": invariato"]
+              pl: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": bez zmian"]
+              tr: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": değişmez"]
+              id: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": tidak berubah"]
+              vi: [{ alternatives: [{ term: "le" }, { term: "la" }, { term: "l’" }, { term: "les" }, { term: "mon" }, { term: "ma" }, { term: "mes" }] }, ": không đổi"]
+            ex: { examples: [["Je n’ai pas ", { target: "mon" }, " passeport."], ["Il n’aime pas ", { target: "le" }, " café."]] }
+            tr: { en: { examples: ["I don't have my passport.", "He doesn't like coffee."] }, uk: { examples: ["У мене немає мого паспорта.", "Він не любить каву."] }, es: { examples: ["No tengo mi pasaporte.", "No le gusta el café."] }, pt: { examples: ["Eu não tenho meu passaporte.", "Ele não gosta de café."] }, de: { examples: ["Ich habe meinen Pass nicht.", "Er mag keinen Kaffee."] }, it: { examples: ["Non ho il mio passaporto.", "Non gli piace il caffè."] }, pl: { examples: ["Nie mam swojego paszportu.", "On nie lubi kawy."] }, tr: { examples: ["Pasaportum yanımda değil.", "Kahveyi sevmez."] }, id: { examples: ["Aku tidak punya paspor milikku.", "Dia tidak suka kopi."] }, vi: { examples: ["Tôi không có hộ chiếu của mình.", "Anh ấy không thích cà phê."] } }
+          - level: "A1"
+            form: { pattern: [{ term: "ce n’est pas" }, { alternatives: [{ term: "un" }, { term: "une" }, { term: "des" }] }, { slot: "noun" }] }
+            ex: { examples: [["Ce n’est pas ", { target: "un" }, " chat."], ["Ce ne sont pas ", { target: "des" }, " amis."]] }
+            tr: { en: { examples: ["It isn't a cat.", "They aren't friends."] }, uk: { examples: ["Це не кіт.", "Це не друзі."] }, es: { examples: ["No es un gato.", "No son amigos."] }, pt: { examples: ["Não é um gato.", "Não são amigos."] }, de: { examples: ["Das ist keine Katze.", "Das sind keine Freunde."] }, it: { examples: ["Non è un gatto.", "Non sono amici."] }, pl: { examples: ["To nie jest kot.", "To nie są przyjaciele."] }, tr: { examples: ["Bu bir kedi değil.", "Bunlar arkadaş değil."] }, id: { examples: ["Itu bukan kucing.", "Mereka bukan teman."] }, vi: { examples: ["Đó không phải là một con mèo.", "Họ không phải là bạn."] } }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A2"
+            text:
+              fr: ["Pour ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " et les autres quantités, voir ", { link: "Les partitifs et les quantités", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              en: ["For ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " and the other quantities, see ", { link: "Partitives and Quantities", to: fr.nom-determinants.partitifs-quantites }, "."]
+              uk: ["Про ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " та інші вирази кількості — див. ", { link: "Партитивні артиклі й кількість", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              es: ["Para ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " y las demás cantidades, ver ", { link: "Partitivos y cantidades", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              pt: ["Para ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " e as outras quantidades, veja ", { link: "Partitivos e quantidades", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              de: ["Zu ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " und den übrigen Mengenangaben siehe ", { link: "Teilungsartikel und Mengen", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              it: ["Per ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " e le altre quantità, vedi ", { link: "Partitivi e quantità", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              pl: ["O ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " i innych wyrażeniach ilości — zob. ", { link: "Partytywy i ilości", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              tr: [{ term: "beaucoup de" }, ", ", { term: "un peu de" }, " ve diğer miktar sözcükleri için bkz. ", { link: "Bölme artikelleri ve miktarlar", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              id: ["Untuk ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, ", dan ungkapan jumlah lainnya, lihat ", { link: "Partitif dan jumlah", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+              vi: ["Về ", { term: "beaucoup de" }, ", ", { term: "un peu de" }, " và các lượng từ khác, xem ", { link: "Mạo từ bộ phận và lượng từ", to: "fr.nom-determinants.partitifs-quantites" }, "."]
+  - title:
+      fr: "Forme : jamais, plus, rien, personne"
+      en: "Form: jamais, plus, rien, personne"
+      uk: "Форма: jamais, plus, rien, personne"
+      es: "Forma: jamais, plus, rien, personne"
+      pt: "Forma: jamais, plus, rien, personne"
+      de: "Form: jamais, plus, rien, personne"
+      it: "Forma: jamais, plus, rien, personne"
+      pl: "Forma: jamais, plus, rien, personne"
+      tr: "Biçim: jamais, plus, rien, personne"
+      id: "Bentuk: jamais, plus, rien, personne"
+      vi: "Dạng: jamais, plus, rien, personne"
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - key: "neg"
+            label: { fr: "Négation", en: "Negation", uk: "Заперечення", es: "Negación", pt: "Negação", de: "Verneinung", it: "Negazione", pl: "Przeczenie", tr: "Olumsuzluk", id: "Negasi", vi: "Phủ định" }
+          - key: "meaning"
+            label: { fr: "Sens", en: "Meaning", uk: "Значення", es: "Significado", pt: "Significado", de: "Bedeutung", it: "Significato", pl: "Znaczenie", tr: "Anlam", id: "Arti", vi: "Ý nghĩa" }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            neg: { pattern: [{ term: "ne" }, { slot: "verb" }, { term: "jamais" }] }
+            meaning: { fr: "à aucun moment", en: "never", uk: "ніколи", es: "nunca", pt: "nunca", de: "nie", it: "mai", pl: "nigdy", tr: "asla", id: "tidak pernah", vi: "không bao giờ" }
+            ex: { examples: [["Il ne dort ", { target: "jamais" }, " ici."], ["Je ne mange ", { target: "jamais" }, " de viande."]] }
+            tr: { en: { examples: ["He never sleeps here.", "I never eat meat."] }, uk: { examples: ["Він ніколи тут не спить.", "Я ніколи не їм м’яса."] }, es: { examples: ["Nunca duerme aquí.", "Nunca como carne."] }, pt: { examples: ["Ele nunca dorme aqui.", "Eu nunca como carne."] }, de: { examples: ["Er schläft hier nie.", "Ich esse nie Fleisch."] }, it: { examples: ["Non dorme mai qui.", "Non mangio mai carne."] }, pl: { examples: ["On nigdy tu nie śpi.", "Nigdy nie jem mięsa."] }, tr: { examples: ["Burada hiç uyumaz.", "Hiç et yemem."] }, id: { examples: ["Dia tidak pernah tidur di sini.", "Aku tidak pernah makan daging."] }, vi: { examples: ["Anh ấy không bao giờ ngủ ở đây.", "Tôi không bao giờ ăn thịt."] } }
+          - level: "A1"
+            neg: { pattern: [{ term: "ne" }, { slot: "verb" }, { term: "plus" }] }
+            meaning:
+              fr: "ne … plus : ce qui était vrai ne l’est plus"
+              en: "no longer, no more"
+              uk: "більше не"
+              es: "ya no"
+              pt: "não mais"
+              de: "nicht mehr"
+              it: "non più"
+              pl: "już nie"
+              tr: "artık değil"
+              id: "tidak lagi"
+              vi: "không còn"
+            ex: { examples: [["Je n’habite ", { target: "plus" }, " à Paris."], ["Il n’y a ", { target: "plus" }, " de pain."]] }
+            tr: { en: { examples: ["I no longer live in Paris.", "There is no more bread."] }, uk: { examples: ["Я більше не живу в Парижі.", "Хліба більше немає."] }, es: { examples: ["Ya no vivo en París.", "Ya no hay pan."] }, pt: { examples: ["Eu não moro mais em Paris.", "Não tem mais pão."] }, de: { examples: ["Ich wohne nicht mehr in Paris.", "Es gibt kein Brot mehr."] }, it: { examples: ["Non abito più a Parigi.", "Non c'è più pane."] }, pl: { examples: ["Już nie mieszkam w Paryżu.", "Nie ma już chleba."] }, tr: { examples: ["Artık Paris’te oturmuyorum.", "Ekmek kalmadı."] }, id: { examples: ["Aku tidak tinggal di Paris lagi.", "Rotinya sudah habis."] }, vi: { examples: ["Tôi không sống ở Paris nữa.", "Hết bánh mì rồi."] } }
+          - level: "A1"
+            neg: { pattern: [{ term: "ne" }, { slot: "verb" }, { term: "rien" }] }
+            meaning: { fr: "aucune chose", en: "nothing", uk: "нічого", es: "nada", pt: "nada", de: "nichts", it: "niente", pl: "nic", tr: "hiçbir şey", id: "tidak ada apa-apa", vi: "không gì cả" }
+            ex: { examples: [["Je ne mange ", { target: "rien" }, "."], ["Elle ne dit ", { target: "rien" }, "."]] }
+            tr: { en: { examples: ["I'm not eating anything.", "She says nothing."] }, uk: { examples: ["Я нічого не їм.", "Вона нічого не каже."] }, es: { examples: ["No como nada.", "Ella no dice nada."] }, pt: { examples: ["Eu não como nada.", "Ela não diz nada."] }, de: { examples: ["Ich esse nichts.", "Sie sagt nichts."] }, it: { examples: ["Non mangio niente.", "Lei non dice niente."] }, pl: { examples: ["Nic nie jem.", "Ona nic nie mówi."] }, tr: { examples: ["Hiçbir şey yemiyorum.", "O hiçbir şey söylemiyor."] }, id: { examples: ["Aku tidak makan apa-apa.", "Dia tidak mengatakan apa-apa."] }, vi: { examples: ["Tôi không ăn gì cả.", "Cô ấy không nói gì."] } }
+          - level: "A2"
+            neg: { pattern: [{ term: "ne" }, { slot: "verb" }, { term: "personne" }] }
+            meaning:
+              fr: "aucune personne"
+              en: "nobody, no one"
+              uk: "ніхто, нікого"
+              es: "nadie"
+              pt: "ninguém"
+              de: "niemand"
+              it: "nessuno"
+              pl: "nikt, nikogo"
+              tr: "hiç kimse"
+              id: "tidak ada siapa pun"
+              vi: "không ai"
+            ex: { examples: [["Je ne vois ", { target: "personne" }, "."], ["Il n’appelle ", { target: "personne" }, "."]] }
+            tr: { en: { examples: ["I can't see anyone.", "He isn't calling anyone."] }, uk: { examples: ["Я нікого не бачу.", "Він нікому не телефонує."] }, es: { examples: ["No veo a nadie.", "No llama a nadie."] }, pt: { examples: ["Eu não vejo ninguém.", "Ele não liga para ninguém."] }, de: { examples: ["Ich sehe niemanden.", "Er ruft niemanden an."] }, it: { examples: ["Non vedo nessuno.", "Non chiama nessuno."] }, pl: { examples: ["Nikogo nie widzę.", "On do nikogo nie dzwoni."] }, tr: { examples: ["Kimseyi görmüyorum.", "Kimseyi aramıyor."] }, id: { examples: ["Aku tidak melihat siapa pun.", "Dia tidak menelepon siapa pun."] }, vi: { examples: ["Tôi không thấy ai.", "Anh ấy không gọi cho ai."] } }
+          - level: "A2"
+            neg: { pattern: [{ alternatives: [{ term: "personne" }, { term: "rien" }] }, { term: "ne" }, { slot: "verb" }] }
+            meaning:
+              fr: "sujet : personne ne … , rien ne …"
+              en: "as subject: nobody …, nothing …"
+              uk: "як підмет: ніхто …, ніщо …"
+              es: "como sujeto: nadie …, nada …"
+              pt: "como sujeito: ninguém …, nada …"
+              de: "als Subjekt: niemand …, nichts …"
+              it: "come soggetto: nessuno …, niente …"
+              pl: "jako podmiot: nikt …, nic …"
+              tr: "özne olarak: kimse …, hiçbir şey …"
+              id: "sebagai subjek: tidak ada yang …, tidak ada apa pun yang …"
+              vi: "làm chủ ngữ: không ai …, không gì …"
+            ex: { examples: [[{ target: "Personne ne" }, " parle."], [{ target: "Rien ne" }, " change."]] }
+            tr: { en: { examples: ["Nobody is speaking.", "Nothing changes."] }, uk: { examples: ["Ніхто не говорить.", "Нічого не змінюється."] }, es: { examples: ["Nadie habla.", "Nada cambia."] }, pt: { examples: ["Ninguém fala.", "Nada muda."] }, de: { examples: ["Niemand spricht.", "Nichts ändert sich."] }, it: { examples: ["Nessuno parla.", "Niente cambia."] }, pl: { examples: ["Nikt nie mówi.", "Nic się nie zmienia."] }, tr: { examples: ["Kimse konuşmuyor.", "Hiçbir şey değişmiyor."] }, id: { examples: ["Tidak ada yang berbicara.", "Tidak ada yang berubah."] }, vi: { examples: ["Không ai nói.", "Không có gì thay đổi."] } }
+          - level: "A2"
+            neg: { pattern: [{ term: "ne" }, { slot: "verb" }, { term: "pas encore" }] }
+            meaning: { fr: "pas encore : cela va arriver", en: "not yet", uk: "ще ні", es: "todavía no", pt: "ainda não", de: "noch nicht", it: "non ancora", pl: "jeszcze nie", tr: "henüz değil", id: "belum", vi: "chưa" }
+            ex: { examples: [["Il n’est ", { target: "pas encore" }, " là."], ["Je n’ai ", { target: "pas encore" }, " faim."]] }
+            tr: { en: { examples: ["He isn't here yet.", "I'm not hungry yet."] }, uk: { examples: ["Його ще немає.", "Я ще не голодний."] }, es: { examples: ["Todavía no está aquí.", "Todavía no tengo hambre."] }, pt: { examples: ["Ele ainda não está aqui.", "Eu ainda não estou com fome."] }, de: { examples: ["Er ist noch nicht da.", "Ich habe noch keinen Hunger."] }, it: { examples: ["Non è ancora qui.", "Non ho ancora fame."] }, pl: { examples: ["Jeszcze go nie ma.", "Jeszcze nie jestem głodny."] }, tr: { examples: ["O henüz burada değil.", "Henüz aç değilim."] }, id: { examples: ["Dia belum ada di sini.", "Aku belum lapar."] }, vi: { examples: ["Anh ấy chưa ở đây.", "Tôi chưa đói."] } }
+          - level: "A2"
+            neg: { pattern: [{ term: "ne" }, { slot: "verb" }, { term: "pas du tout" }] }
+            meaning:
+              fr: "pas du tout : pas le moins du monde"
+              en: "not at all"
+              uk: "зовсім ні"
+              es: "en absoluto"
+              pt: "de modo nenhum"
+              de: "überhaupt nicht"
+              it: "per niente"
+              pl: "wcale nie"
+              tr: "hiç değil"
+              id: "sama sekali tidak"
+              vi: "hoàn toàn không"
+            ex: ["Je n’aime ", { target: "pas du tout" }, " ça."]
+            tr: { en: "I don't like that at all.", uk: "Мені це зовсім не подобається.", es: "No me gusta nada eso.", pt: "Eu não gosto nada disso.", de: "Das mag ich überhaupt nicht.", it: "Non mi piace per niente.", pl: "Wcale tego nie lubię.", tr: "Bunu hiç sevmiyorum.", id: "Aku sama sekali tidak suka itu.", vi: "Tôi hoàn toàn không thích cái đó." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["Après ", { term: "ne" }, " … ", { term: "plus" }, " et ", { term: "ne" }, " … ", { term: "jamais" }, ", ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " et ", { term: "du" }, " deviennent ", { term: "de" }, "."]
+              en: ["After ", { term: "ne" }, " … ", { term: "plus" }, " and ", { term: "ne" }, " … ", { term: "jamais" }, ", ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " and ", { term: "du" }, " become ", { term: "de" }, "."]
+              uk: ["Після ", { term: "ne" }, " … ", { term: "plus" }, " і ", { term: "ne" }, " … ", { term: "jamais" }, " слова ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " і ", { term: "du" }, " стають ", { term: "de" }, "."]
+              es: ["Tras ", { term: "ne" }, " … ", { term: "plus" }, " y ", { term: "ne" }, " … ", { term: "jamais" }, ", ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " y ", { term: "du" }, " pasan a ", { term: "de" }, "."]
+              pt: ["Depois de ", { term: "ne" }, " … ", { term: "plus" }, " e ", { term: "ne" }, " … ", { term: "jamais" }, ", ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " e ", { term: "du" }, " viram ", { term: "de" }, "."]
+              de: ["Nach ", { term: "ne" }, " … ", { term: "plus" }, " und ", { term: "ne" }, " … ", { term: "jamais" }, " werden ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " und ", { term: "du" }, " zu ", { term: "de" }, "."]
+              it: ["Dopo ", { term: "ne" }, " … ", { term: "plus" }, " e ", { term: "ne" }, " … ", { term: "jamais" }, ", ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " e ", { term: "du" }, " diventano ", { term: "de" }, "."]
+              pl: ["Po ", { term: "ne" }, " … ", { term: "plus" }, " i ", { term: "ne" }, " … ", { term: "jamais" }, " formy ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " i ", { term: "du" }, " zmieniają się w ", { term: "de" }, "."]
+              tr: [{ term: "ne" }, " … ", { term: "plus" }, " ve ", { term: "ne" }, " … ", { term: "jamais" }, " sonrasında ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " ve ", { term: "du" }, ", ", { term: "de" }, " olur."]
+              id: ["Setelah ", { term: "ne" }, " … ", { term: "plus" }, " dan ", { term: "ne" }, " … ", { term: "jamais" }, ", ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, ", dan ", { term: "du" }, " menjadi ", { term: "de" }, "."]
+              vi: ["Sau ", { term: "ne" }, " … ", { term: "plus" }, " và ", { term: "ne" }, " … ", { term: "jamais" }, ", ", { term: "un" }, ", ", { term: "une" }, ", ", { term: "des" }, " và ", { term: "du" }, " thành ", { term: "de" }, "."]
+            ex: { examples: [["Je n’ai plus ", { target: "de" }, " pain."], ["Il ne boit jamais ", { target: "de" }, " café."]] }
+            tr: { en: { examples: ["I have no more bread.", "He never drinks coffee."] }, uk: { examples: ["У мене більше немає хліба.", "Він ніколи не п’є кави."] }, es: { examples: ["Ya no tengo pan.", "Nunca bebe café."] }, pt: { examples: ["Eu não tenho mais pão.", "Ele nunca bebe café."] }, de: { examples: ["Ich habe kein Brot mehr.", "Er trinkt nie Kaffee."] }, it: { examples: ["Non ho più pane.", "Non beve mai caffè."] }, pl: { examples: ["Nie mam już chleba.", "On nigdy nie pije kawy."] }, tr: { examples: ["Ekmeğim kalmadı.", "Hiç kahve içmez."] }, id: { examples: ["Aku tidak punya roti lagi.", "Dia tidak pernah minum kopi."] }, vi: { examples: ["Tôi không còn bánh mì nữa.", "Anh ấy không bao giờ uống cà phê."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              fr: ["Au passé composé, ", { term: "jamais" }, ", ", { term: "plus" }, " et ", { term: "rien" }, " se placent entre l’auxiliaire et le participe ; ", { term: "personne" }, " se place après le participe."]
+              en: ["In the passé composé, ", { term: "jamais" }, ", ", { term: "plus" }, " and ", { term: "rien" }, " go between the auxiliary and the participle; ", { term: "personne" }, " goes after the participle."]
+              uk: ["У passé composé слова ", { term: "jamais" }, ", ", { term: "plus" }, " і ", { term: "rien" }, " стоять між допоміжним дієсловом і дієприкметником; ", { term: "personne" }, " — після дієприкметника."]
+              es: ["En el passé composé, ", { term: "jamais" }, ", ", { term: "plus" }, " y ", { term: "rien" }, " van entre el auxiliar y el participio; ", { term: "personne" }, " va después del participio."]
+              pt: ["No passé composé, ", { term: "jamais" }, ", ", { term: "plus" }, " e ", { term: "rien" }, " ficam entre o auxiliar e o particípio; ", { term: "personne" }, " fica depois do particípio."]
+              de: ["Im passé composé stehen ", { term: "jamais" }, ", ", { term: "plus" }, " und ", { term: "rien" }, " zwischen Hilfsverb und Partizip; ", { term: "personne" }, " steht nach dem Partizip."]
+              it: ["Nel passé composé, ", { term: "jamais" }, ", ", { term: "plus" }, " e ", { term: "rien" }, " stanno tra l'ausiliare e il participio; ", { term: "personne" }, " sta dopo il participio."]
+              pl: ["W passé composé ", { term: "jamais" }, ", ", { term: "plus" }, " i ", { term: "rien" }, " stoją między czasownikiem posiłkowym a imiesłowem; ", { term: "personne" }, " stoi po imiesłowie."]
+              tr: ["Passé composé’da ", { term: "jamais" }, ", ", { term: "plus" }, " ve ", { term: "rien" }, " yardımcı fiil ile ortaç arasına girer; ", { term: "personne" }, " ortaçtan sonra gelir."]
+              id: ["Dalam passé composé, ", { term: "jamais" }, ", ", { term: "plus" }, ", dan ", { term: "rien" }, " diletakkan di antara kata kerja bantu dan partisip; ", { term: "personne" }, " diletakkan setelah partisip."]
+              vi: ["Ở passé composé, ", { term: "jamais" }, ", ", { term: "plus" }, " và ", { term: "rien" }, " đứng giữa trợ động từ và phân từ; ", { term: "personne" }, " đứng sau phân từ."]
+            ex: { examples: [["Je n’ai ", { target: "jamais" }, " vu ce film."], ["Elle n’a ", { target: "rien" }, " dit."], ["Nous n’avons vu ", { target: "personne" }, "."]] }
+            tr: { en: { examples: ["I have never seen this film.", "She said nothing.", "We saw no one."] }, uk: { examples: ["Я ніколи не бачив цього фільму.", "Вона нічого не сказала.", "Ми нікого не бачили."] }, es: { examples: ["Nunca he visto esta película.", "Ella no dijo nada.", "No vimos a nadie."] }, pt: { examples: ["Eu nunca vi este filme.", "Ela não disse nada.", "Nós não vimos ninguém."] }, de: { examples: ["Ich habe diesen Film nie gesehen.", "Sie hat nichts gesagt.", "Wir haben niemanden gesehen."] }, it: { examples: ["Non ho mai visto questo film.", "Lei non ha detto niente.", "Non abbiamo visto nessuno."] }, pl: { examples: ["Nigdy nie widziałem tego filmu.", "Ona nic nie powiedziała.", "Nikogo nie widzieliśmy."] }, tr: { examples: ["Bu filmi hiç görmedim.", "O hiçbir şey söylemedi.", "Kimseyi görmedik."] }, id: { examples: ["Aku belum pernah menonton film ini.", "Dia tidak mengatakan apa-apa.", "Kami tidak melihat siapa pun."] }, vi: { examples: ["Tôi chưa bao giờ xem phim này.", "Cô ấy không nói gì.", "Chúng tôi không thấy ai."] } }
+  - title:
+      fr: "Emploi : oui, non, si"
+      en: "Use: oui, non, si"
+      uk: "Вживання: oui, non, si"
+      es: "Uso: oui, non, si"
+      pt: "Uso: oui, non, si"
+      de: "Gebrauch: oui, non, si"
+      it: "Uso: oui, non, si"
+      pl: "Użycie: oui, non, si"
+      tr: "Kullanım: oui, non, si"
+      id: "Penggunaan: oui, non, si"
+      vi: "Cách dùng: oui, non, si"
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - key: "answer"
+            label: { fr: "Réponse", en: "Answer", uk: "Відповідь", es: "Respuesta", pt: "Resposta", de: "Antwort", it: "Risposta", pl: "Odpowiedź", tr: "Cevap", id: "Jawaban", vi: "Câu trả lời" }
+          - { key: "after", label: { fr: "Après", en: "After", uk: "Після", es: "Tras", pt: "Depois de", de: "Nach", it: "Dopo", pl: "Po", tr: "Sonrasında", id: "Setelah", vi: "Sau" } }
+          - { key: "ex", label: { fr: "Exemple", en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A0"
+            answer: { target: "oui" }
+            after:
+              fr: "une question à laquelle on répond « d’accord »"
+              en: "a question answered yes"
+              uk: "питання, на яке відповідають «так»"
+              es: "una pregunta que se contesta que sí"
+              pt: "uma pergunta respondida com sim"
+              de: "eine Frage, die man bejaht"
+              it: "una domanda a cui si risponde di sì"
+              pl: "pytanie, na które odpowiada się twierdząco"
+              tr: "evet diye cevaplanan soru"
+              id: "pertanyaan yang dijawab ya"
+              vi: "câu hỏi được trả lời là có"
+            ex: { exchange: ["Tu aimes le thé ?", [{ target: "Oui" }, ", j’aime le thé."]] }
+            tr: { en: "Do you like tea? — Yes, I like tea.", uk: "Ти любиш чай? — Так, люблю чай.", es: "¿Te gusta el té? — Sí, me gusta el té.", pt: "Você gosta de chá? — Sim, eu gosto de chá.", de: "Magst du Tee? — Ja, ich mag Tee.", it: "Ti piace il tè? — Sì, mi piace il tè.", pl: "Lubisz herbatę? — Tak, lubię herbatę.", tr: "Çayı sever misin? — Evet, çayı severim.", id: "Apakah kamu suka teh? — Ya, saya suka teh.", vi: "Bạn có thích trà không? — Có, tôi thích trà." }
+          - level: "A0"
+            answer: { target: "non" }
+            after:
+              fr: "une question à laquelle on répond « pas d’accord »"
+              en: "a question answered no"
+              uk: "питання, на яке відповідають «ні»"
+              es: "una pregunta que se contesta que no"
+              pt: "uma pergunta respondida com não"
+              de: "eine Frage, die man verneint"
+              it: "una domanda a cui si risponde di no"
+              pl: "pytanie, na które odpowiada się przecząco"
+              tr: "hayır diye cevaplanan soru"
+              id: "pertanyaan yang dijawab tidak"
+              vi: "câu hỏi được trả lời là không"
+            ex: { exchange: ["Tu es français ?", [{ target: "Non" }, ", je suis italien."]] }
+            tr: { en: "Are you French? — No, I'm Italian.", uk: "Ти француз? — Ні, я італієць.", es: "¿Eres francés? — No, soy italiano.", pt: "Você é francês? — Não, sou italiano.", de: "Bist du Franzose? — Nein, ich bin Italiener.", it: "Sei francese? — No, sono italiano.", pl: "Jesteś Francuzem? — Nie, jestem Włochem.", tr: "Fransız mısın? — Hayır, İtalyanım.", id: "Apakah kamu orang Prancis? — Bukan, saya orang Italia.", vi: "Bạn là người Pháp à? — Không, tôi là người Ý." }
+          - level: "A1"
+            answer: { target: "si" }
+            after:
+              fr: "une question négative à laquelle on répond « mais oui »"
+              en: "a negative question answered yes"
+              uk: "заперечне питання, на яке відповідають «так»"
+              es: "una pregunta negativa que se contesta que sí"
+              pt: "uma pergunta negativa respondida com sim"
+              de: "eine verneinte Frage, die man bejaht"
+              it: "una domanda negativa a cui si risponde di sì"
+              pl: "pytanie przeczące, na które odpowiada się twierdząco"
+              tr: "evet diye cevaplanan olumsuz soru"
+              id: "pertanyaan negatif yang dijawab ya"
+              vi: "câu hỏi phủ định được trả lời là có"
+            ex: { exchange: ["Tu n’as pas de frère ?", [{ target: "Si" }, ", j’ai un frère."]] }
+            tr: { en: "Don't you have a brother? — Yes, I do have a brother.", uk: "У тебе немає брата? — Є, в мене є брат.", es: "¿No tienes hermano? — Sí, tengo un hermano.", pt: "Você não tem irmão? — Tenho sim, tenho um irmão.", de: "Hast du keinen Bruder? — Doch, ich habe einen Bruder.", it: "Non hai un fratello? — Sì, ho un fratello.", pl: "Nie masz brata? — Mam, mam brata.", tr: "Erkek kardeşin yok mu? — Var, bir erkek kardeşim var.", id: "Kamu tidak punya saudara laki-laki? — Punya, saya punya satu.", vi: "Bạn không có anh em trai à? — Có chứ, tôi có một người anh." }
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              fr: ["À une question négative, ", { term: "non" }, " confirme la négation ; ", { term: "si" }, " la contredit."]
+              en: ["To a negative question, ", { term: "non" }, " confirms the negative; ", { term: "si" }, " contradicts it."]
+              uk: ["На заперечне питання ", { term: "non" }, " підтверджує заперечення, а ", { term: "si" }, " його спростовує."]
+              es: ["A una pregunta negativa, ", { term: "non" }, " confirma la negación; ", { term: "si" }, " la contradice."]
+              pt: ["A uma pergunta negativa, ", { term: "non" }, " confirma a negação; ", { term: "si" }, " a contradiz."]
+              de: ["Auf eine verneinte Frage bestätigt ", { term: "non" }, " die Verneinung; ", { term: "si" }, " widerspricht ihr."]
+              it: ["A una domanda negativa, ", { term: "non" }, " conferma la negazione; ", { term: "si" }, " la contraddice."]
+              pl: ["Na pytanie przeczące ", { term: "non" }, " potwierdza przeczenie, a ", { term: "si" }, " mu zaprzecza."]
+              tr: ["Olumsuz bir soruya ", { term: "non" }, " olumsuzluğu onaylar; ", { term: "si" }, " onu çürütür."]
+              id: ["Pada pertanyaan negatif, ", { term: "non" }, " membenarkan negasi; ", { term: "si" }, " membantahnya."]
+              vi: ["Với câu hỏi phủ định, ", { term: "non" }, " xác nhận phủ định; ", { term: "si" }, " phản bác nó."]
+            ex: { exchange: ["Tu ne viens pas ?", [{ target: "Non" }, ", je ne viens pas."]] }
+            tr: { en: "Aren't you coming? — No, I'm not coming.", uk: "Ти не йдеш? — Ні, не йду.", es: "¿No vienes? — No, no vengo.", pt: "Você não vem? — Não, não venho.", de: "Kommst du nicht? — Nein, ich komme nicht.", it: "Non vieni? — No, non vengo.", pl: "Nie idziesz? — Nie, nie idę.", tr: "Gelmiyor musun? — Hayır, gelmiyorum.", id: "Kamu tidak datang? — Bukan, saya tidak datang.", vi: "Bạn không đến à? — Ừ, tôi không đến." }
+  - title:
+      fr: "Erreurs fréquentes"
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: "Je ne pas parle anglais."
+            right: ["Je ", { target: "ne parle pas" }, " anglais."]
+            rule:
+              fr: [{ term: "ne" }, " … ", { term: "pas" }, " entoure le verbe conjugué"]
+              en: [{ term: "ne" }, " … ", { term: "pas" }, " surrounds the conjugated verb"]
+              uk: [{ term: "ne" }, " … ", { term: "pas" }, " оточує дієслово в особовій формі"]
+              es: [{ term: "ne" }, " … ", { term: "pas" }, " rodea el verbo conjugado"]
+              pt: [{ term: "ne" }, " … ", { term: "pas" }, " envolve o verbo conjugado"]
+              de: [{ term: "ne" }, " … ", { term: "pas" }, " umschließt das konjugierte Verb"]
+              it: [{ term: "ne" }, " … ", { term: "pas" }, " circonda il verbo coniugato"]
+              pl: [{ term: "ne" }, " … ", { term: "pas" }, " otacza odmieniony czasownik"]
+              tr: [{ term: "ne" }, " … ", { term: "pas" }, " çekimli fiili çevreler"]
+              id: [{ term: "ne" }, " … ", { term: "pas" }, " mengapit kata kerja terkonjugasi"]
+              vi: [{ term: "ne" }, " … ", { term: "pas" }, " bao quanh động từ đã chia"]
+          - level: "A1"
+            wrong: "Je ne aime pas le café."
+            right: ["Je ", { target: "n’" }, "aime pas le café."]
+            rule:
+              fr: [{ term: "ne" }, " devient ", { term: "n’" }, " devant une voyelle"]
+              en: [{ term: "ne" }, " becomes ", { term: "n’" }, " before a vowel"]
+              uk: [{ term: "ne" }, " стає ", { term: "n’" }, " перед голосною"]
+              es: [{ term: "ne" }, " pasa a ", { term: "n’" }, " ante vocal"]
+              pt: [{ term: "ne" }, " vira ", { term: "n’" }, " antes de vogal"]
+              de: [{ term: "ne" }, " wird vor Vokal zu ", { term: "n’" }]
+              it: [{ term: "ne" }, " diventa ", { term: "n’" }, " davanti a vocale"]
+              pl: [{ term: "ne" }, " zmienia się w ", { term: "n’" }, " przed samogłoską"]
+              tr: [{ term: "ne" }, " ünlüden önce ", { term: "n’" }, " olur"]
+              id: [{ term: "ne" }, " menjadi ", { term: "n’" }, " sebelum vokal"]
+              vi: [{ term: "ne" }, " thành ", { term: "n’" }, " trước nguyên âm"]
+          - level: "A1"
+            wrong: "Je n’ai pas un frère."
+            right: ["Je n’ai ", { target: "pas de" }, " frère."]
+            rule:
+              fr: ["après ", { term: "pas" }, ", ", { term: "un" }, " devient ", { term: "de" }]
+              en: ["after ", { term: "pas" }, ", ", { term: "un" }, " becomes ", { term: "de" }]
+              uk: ["після ", { term: "pas" }, " слово ", { term: "un" }, " стає ", { term: "de" }]
+              es: ["tras ", { term: "pas" }, ", ", { term: "un" }, " pasa a ", { term: "de" }]
+              pt: ["depois de ", { term: "pas" }, ", ", { term: "un" }, " vira ", { term: "de" }]
+              de: ["nach ", { term: "pas" }, " wird ", { term: "un" }, " zu ", { term: "de" }]
+              it: ["dopo ", { term: "pas" }, ", ", { term: "un" }, " diventa ", { term: "de" }]
+              pl: ["po ", { term: "pas" }, " ", { term: "un" }, " zmienia się w ", { term: "de" }]
+              tr: [{ term: "pas" }, " sonrasında ", { term: "un" }, ", ", { term: "de" }, " olur"]
+              id: ["setelah ", { term: "pas" }, ", ", { term: "un" }, " menjadi ", { term: "de" }]
+              vi: ["sau ", { term: "pas" }, ", ", { term: "un" }, " thành ", { term: "de" }]
+          - level: "A1"
+            wrong: "Je ne bois pas du café."
+            right: ["Je ne bois ", { target: "pas de" }, " café."]
+            rule:
+              fr: ["après ", { term: "pas" }, ", ", { term: "du" }, " devient ", { term: "de" }]
+              en: ["after ", { term: "pas" }, ", ", { term: "du" }, " becomes ", { term: "de" }]
+              uk: ["після ", { term: "pas" }, " слово ", { term: "du" }, " стає ", { term: "de" }]
+              es: ["tras ", { term: "pas" }, ", ", { term: "du" }, " pasa a ", { term: "de" }]
+              pt: ["depois de ", { term: "pas" }, ", ", { term: "du" }, " vira ", { term: "de" }]
+              de: ["nach ", { term: "pas" }, " wird ", { term: "du" }, " zu ", { term: "de" }]
+              it: ["dopo ", { term: "pas" }, ", ", { term: "du" }, " diventa ", { term: "de" }]
+              pl: ["po ", { term: "pas" }, " ", { term: "du" }, " zmienia się w ", { term: "de" }]
+              tr: [{ term: "pas" }, " sonrasında ", { term: "du" }, ", ", { term: "de" }, " olur"]
+              id: ["setelah ", { term: "pas" }, ", ", { term: "du" }, " menjadi ", { term: "de" }]
+              vi: ["sau ", { term: "pas" }, ", ", { term: "du" }, " thành ", { term: "de" }]
+          - level: "A1"
+            speakers: ["es", "pt", "it", "pl", "uk"]
+            wrong: "Je ne mange pas jamais de viande."
+            right: ["Je ne mange ", { target: "jamais" }, " de viande."]
+            rule:
+              uk: [{ term: "jamais" }, " замінює ", { term: "pas" }, ": українською кажуть «ніколи не їм», але у французькій ", { term: "pas" }, " не додають"]
+              es: [{ term: "jamais" }, " sustituye a ", { term: "pas" }, ": se dice «no como nunca» en español, pero en francés no se añade ", { term: "pas" }]
+              pt: [{ term: "jamais" }, " substitui ", { term: "pas" }, ": em português se diz «não como nunca», mas em francês não se acrescenta ", { term: "pas" }]
+              it: [{ term: "jamais" }, " sostituisce ", { term: "pas" }, ": in italiano si dice «non mangio mai», ma in francese non si aggiunge ", { term: "pas" }]
+              pl: [{ term: "jamais" }, " zastępuje ", { term: "pas" }, ": po polsku mówi się „nigdy nie jem”, ale po francusku nie dodaje się ", { term: "pas" }]
+          - level: "A1"
+            speakers: ["es", "pt", "it", "pl", "uk"]
+            wrong: "Je ne dis pas rien."
+            right: ["Je ne dis ", { target: "rien" }, "."]
+            rule:
+              uk: [{ term: "rien" }, " замінює ", { term: "pas" }, ": українською «нічого не кажу» має одне заперечне слово, і у французькій так само"]
+              es: [{ term: "rien" }, " sustituye a ", { term: "pas" }, ": en español «no digo nada» lleva una sola negación detrás del verbo, y en francés también"]
+              pt: [{ term: "rien" }, " substitui ", { term: "pas" }, ": em português «não digo nada» tem uma só negação depois do verbo, e em francês também"]
+              it: [{ term: "rien" }, " sostituisce ", { term: "pas" }, ": in italiano «non dico niente» ha una sola negazione dopo il verbo, e in francese lo stesso"]
+              pl: [{ term: "rien" }, " zastępuje ", { term: "pas" }, ": po polsku „nic nie mówię” ma jedno słowo przeczące po czasowniku, tak samo po francusku"]
+          - level: "A1"
+            speakers: ["en", "uk", "pl", "tr", "id", "vi"]
+            wrong: "Oui, je viens."
+            right: [{ target: "Si" }, ", je viens."]
+            rule:
+              en: ["to contradict a negative question, French says ", { term: "si" }, ", not ", { term: "oui" }]
+              uk: ["щоб заперечити негативне питання, французька каже ", { term: "si" }, ", а не ", { term: "oui" }]
+              pl: ["aby zaprzeczyć pytaniu przeczącemu, po francusku mówi się ", { term: "si" }, ", nie ", { term: "oui" }]
+              tr: ["olumsuz bir soruyu çürütmek için Fransızca ", { term: "oui" }, " değil ", { term: "si" }, " der"]
+              id: ["untuk membantah pertanyaan negatif, bahasa Prancis memakai ", { term: "si" }, ", bukan ", { term: "oui" }]
+              vi: ["để phản bác một câu hỏi phủ định, tiếng Pháp dùng ", { term: "si" }, ", không dùng ", { term: "oui" }]
+          - level: "A2"
+            wrong: "Je n’ai personne vu."
+            right: ["Je n’ai vu ", { target: "personne" }, "."]
+            rule:
+              fr: [{ term: "personne" }, " se place après le participe"]
+              en: [{ term: "personne" }, " goes after the participle"]
+              uk: [{ term: "personne" }, " стоїть після дієприкметника"]
+              es: [{ term: "personne" }, " va después del participio"]
+              pt: [{ term: "personne" }, " vem depois do particípio"]
+              de: [{ term: "personne" }, " steht nach dem Partizip"]
+              it: [{ term: "personne" }, " sta dopo il participio"]
+              pl: [{ term: "personne" }, " stoi po imiesłowie"]
+              tr: [{ term: "personne" }, " ortaçtan sonra gelir"]
+              id: [{ term: "personne" }, " diletakkan setelah partisip"]
+              vi: [{ term: "personne" }, " đứng sau phân từ"]

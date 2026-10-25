@@ -1,0 +1,770 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "ja.linking.toki-tara"
+lang: "ja"
+kind: "grammar"
+tags: ["とき", "たら", "when", "if", "conditional"]
+concepts: ["conditionals"]
+related: ["ja.verbs.plain-form", "ja.linking.noun-modification", "ja.verbs.te-kudasai"]
+status: { en: "draft", uk: "draft", es: "draft", pt: "draft", fr: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { uk: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", es: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", pt: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", fr: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", de: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", it: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", pl: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", tr: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", id: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811", vi: "f634ae 288720 79c02a c00af0 ce388e 81b715 22070a 456811" }
+title:
+  en: "とき and たら: When and If"
+  uk: "とき і たら: коли й якщо"
+  es: "とき y たら: cuando y si"
+  pt: "とき e たら: quando e se"
+  fr: "とき et たら : quand et si"
+  de: "とき und たら: wenn und falls"
+  it: "とき e たら: quando e se"
+  pl: "とき i たら: kiedy i jeśli"
+  tr: "とき ve たら: -dığında ve eğer"
+  id: "とき dan たら: ketika dan kalau"
+  vi: "とき và たら: khi và nếu"
+summary:
+  lead:
+    en: [{ term: "とき" }, " makes a clause a time “when”; ", { term: "たら" }, " makes it a condition “if” or a step “once” that the main clause follows."]
+    uk: [{ term: "とき" }, " робить частину часом «коли»; ", { term: "たら" }, " робить її умовою «якщо» або кроком «коли вже», за яким іде головна частина."]
+    es: [{ term: "とき" }, " convierte una oración en un momento «cuando»; ", { term: "たら" }, " en una condición «si» o un paso «una vez que» al que sigue la principal."]
+    pt: [{ term: "とき" }, " faz de uma oração um momento «quando»; ", { term: "たら" }, " a faz uma condição «se» ou um passo «depois que», seguido pela principal."]
+    fr: [{ term: "とき" }, " fait d’une proposition un moment « quand » ; ", { term: "たら" }, " en fait une condition « si » ou une étape « une fois que », suivie de la principale."]
+    de: [{ term: "とき" }, " macht einen Teilsatz zum Zeitpunkt „wenn“; ", { term: "たら" }, " macht ihn zur Bedingung „falls“ oder zum Schritt „sobald“, dem der Hauptsatz folgt."]
+    it: [{ term: "とき" }, " fa di una proposizione un momento «quando»; ", { term: "たら" }, " una condizione «se» o un passo «una volta che», a cui segue la principale."]
+    pl: [{ term: "とき" }, " czyni ze zdania moment „kiedy”; ", { term: "たら" }, " czyni je warunkiem „jeśli” lub etapem „gdy już”, po którym idzie zdanie główne."]
+    tr: [{ term: "とき" }, " bir yan cümleyi “-dığında” diyen bir zaman, ", { term: "たら" }, " ise “eğer” diyen bir koşul ya da “-ince” diyen bir adım yapar."]
+    id: [{ term: "とき" }, " menjadikan klausa sebuah saat “ketika”; ", { term: "たら" }, " menjadikannya syarat “kalau” atau langkah “setelah” yang diikuti klausa utama."]
+    vi: [{ term: "とき" }, " biến mệnh đề thành thời điểm “khi”; ", { term: "たら" }, " biến nó thành điều kiện “nếu” hoặc bước “sau khi” mà mệnh đề chính nối theo."]
+  rule:
+    en: [{ term: "たら" }, " is the plain past form plus ", { term: "ら" }, ":"]
+    uk: [{ term: "たら" }, " — це проста минула форма плюс ", { term: "ら" }, ":"]
+    es: [{ term: "たら" }, " es la forma simple del pasado más ", { term: "ら" }, ":"]
+    pt: [{ term: "たら" }, " é a forma simples do passado mais ", { term: "ら" }, ":"]
+    fr: [{ term: "たら" }, " est la forme simple du passé plus ", { term: "ら" }, " :"]
+    de: [{ term: "たら" }, " ist die einfache Vergangenheitsform plus ", { term: "ら" }, ":"]
+    it: [{ term: "たら" }, " è la forma semplice del passato più ", { term: "ら" }, ":"]
+    pl: [{ term: "たら" }, " to forma prosta czasu przeszłego plus ", { term: "ら" }, ":"]
+    tr: [{ term: "たら" }, ", yalın geçmiş biçime ", { term: "ら" }, " eklenmiş hâlidir:"]
+    id: [{ term: "たら" }, " adalah bentuk lampau biasa ditambah ", { term: "ら" }, ":"]
+    vi: [{ term: "たら" }, " là thể quá khứ thường cộng với ", { term: "ら" }, ":"]
+  ex: [{ kanji: "安", reading: "やす" }, "かっ", { target: "たら" }, "、", { kanji: "買", reading: "か" }, "います。"]
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A2"
+          point:
+            en: { term: "とき" }
+            uk: { term: "とき" }
+            es: { term: "とき" }
+            pt: { term: "とき" }
+            fr: { term: "とき" }
+            de: { term: "とき" }
+            it: { term: "とき" }
+            pl: { term: "とき" }
+            tr: { term: "とき" }
+            id: { term: "とき" }
+            vi: { term: "とき" }
+          rule:
+            en: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            uk: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            es: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            pt: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            fr: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            de: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            it: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            pl: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            tr: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            id: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+            vi: { pattern: [{ slot: "clause" }, { term: "とき" }] }
+          ex: ["ひまな", { target: "とき" }, "、えいがを", { kanji: "見", reading: "み" }, "ます。"]
+          tr: { en: "When I'm free, I watch movies.", uk: "Коли маю вільний час, дивлюся фільми.", es: "Cuando estoy libre, veo películas.", pt: "Quando estou livre, assisto a filmes.", fr: "Quand je suis libre, je regarde des films.", de: "Wenn ich Zeit habe, sehe ich Filme.", it: "Quando sono libero, guardo i film.", pl: "Kiedy mam wolny czas, oglądam filmy.", tr: "Boş olduğumda film izlerim.", id: "Kalau senggang, saya menonton film.", vi: "Khi rảnh, tôi xem phim." }
+        - level: "A2"
+          point: { en: "Before とき", uk: "Перед とき", es: "Antes de とき", pt: "Antes de とき", fr: "Devant とき", de: "Vor とき", it: "Prima di とき", pl: "Przed とき", tr: "とき öncesi", id: "Sebelum とき", vi: "Trước とき" }
+          rule:
+            en: ["Plain form; a noun takes ", { term: "の" }, ", a な-adjective ", { term: "な" }, "."]
+            uk: ["Проста форма; іменник бере ", { term: "の" }, ", な-прикметник — ", { term: "な" }, "."]
+            es: ["Forma simple; el sustantivo lleva ", { term: "の" }, ", el adjetivo な lleva ", { term: "な" }, "."]
+            pt: ["Forma simples; o substantivo leva ", { term: "の" }, ", o adjetivo な leva ", { term: "な" }, "."]
+            fr: ["Forme simple ; le nom prend ", { term: "の" }, ", l’adjectif en な prend ", { term: "な" }, "."]
+            de: ["Einfache Form; das Nomen steht mit ", { term: "の" }, ", das な-Adjektiv mit ", { term: "な" }, "."]
+            it: ["Forma semplice; il nome prende ", { term: "の" }, ", l’aggettivo in な prende ", { term: "な" }, "."]
+            pl: ["Forma prosta; rzeczownik bierze ", { term: "の" }, ", przymiotnik な bierze ", { term: "な" }, "."]
+            tr: ["Yalın biçim; isim ", { term: "の" }, ", な sıfatı ", { term: "な" }, " alır."]
+            id: ["Bentuk biasa; kata benda memakai ", { term: "の" }, ", kata sifat な memakai ", { term: "な" }, "."]
+            vi: ["Thể thường; danh từ dùng ", { term: "の" }, ", tính từ な dùng ", { term: "な" }, "."]
+          ex: [{ kanji: "雨", reading: "あめ" }, "の", { target: "とき" }, "、うちにいます。"]
+          tr: { en: "When it rains, I stay home.", uk: "Коли йде дощ, я сиджу вдома.", es: "Cuando llueve, me quedo en casa.", pt: "Quando chove, fico em casa.", fr: "Quand il pleut, je reste à la maison.", de: "Wenn es regnet, bleibe ich zu Hause.", it: "Quando piove, resto a casa.", pl: "Kiedy pada deszcz, siedzę w domu.", tr: "Yağmur yağdığında evde kalırım.", id: "Kalau hujan, saya tinggal di rumah.", vi: "Khi trời mưa, tôi ở nhà." }
+        - level: "A2"
+          point:
+            en: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            uk: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            es: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            pt: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            fr: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            de: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            it: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            pl: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            tr: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            id: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+            vi: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "くとき"] }, { term: [{ kanji: "行", reading: "い" }, "ったとき"] }] }
+          rule:
+            en: "Dictionary form: before or on the way; past form: after."
+            uk: "Словникова форма: до дії або в дорозі; минула: після."
+            es: "Forma de diccionario: antes o de camino; pasado: después."
+            pt: "Forma do dicionário: antes ou a caminho; passado: depois."
+            fr: "Forme du dictionnaire : avant ou en chemin ; passé : après."
+            de: "Wörterbuchform: davor oder unterwegs; Vergangenheit: danach."
+            it: "Forma del dizionario: prima o in viaggio; passato: dopo."
+            pl: "Forma słownikowa: przed lub w drodze; przeszła: po."
+            tr: "Sözlük biçimi: önce ya da yolda; geçmiş: sonra."
+            id: "Bentuk kamus: sebelum atau dalam perjalanan; lampau: sesudah."
+            vi: "Thể từ điển: trước hoặc trên đường; quá khứ: sau."
+          ex: [{ kanji: "日本", reading: "にほん" }, "へ", { target: [{ kanji: "行", reading: "い" }, "くとき"] }, "、かばんを", { kanji: "買", reading: "か" }, "いました。"]
+          tr: { en: "When I was about to go to Japan, I bought a bag.", uk: "Коли я збирався до Японії, я купив сумку.", es: "Cuando iba a viajar a Japón, compré una bolsa.", pt: "Quando eu ia viajar para o Japão, comprei uma bolsa.", fr: "Au moment de partir pour le Japon, j’ai acheté un sac.", de: "Als ich nach Japan reisen wollte, habe ich eine Tasche gekauft.", it: "Quando stavo per andare in Giappone, ho comprato una borsa.", pl: "Kiedy wybierałem się do Japonii, kupiłem torbę.", tr: "Japonya’ya gitmeye hazırlanırken bir çanta aldım.", id: "Saat hendak pergi ke Jepang, saya membeli tas.", vi: "Khi chuẩn bị đi Nhật Bản, tôi đã mua một cái túi." }
+        - level: "A2"
+          point:
+            en: { term: "たら" }
+            uk: { term: "たら" }
+            es: { term: "たら" }
+            pt: { term: "たら" }
+            fr: { term: "たら" }
+            de: { term: "たら" }
+            it: { term: "たら" }
+            pl: { term: "たら" }
+            tr: { term: "たら" }
+            id: { term: "たら" }
+            vi: { term: "たら" }
+          rule:
+            en: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            uk: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            es: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            pt: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            fr: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            de: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            it: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            pl: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            tr: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            id: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+            vi: { pattern: [{ slot: "clause" }, { term: "たら" }] }
+          ex: [{ kanji: "安", reading: "やす" }, "かっ", { target: "たら" }, "、", { kanji: "買", reading: "か" }, "います。"]
+          tr: { en: "If it's cheap, I'll buy it.", uk: "Якщо буде дешево, куплю.", es: "Si es barato, lo compraré.", pt: "Se for barato, vou comprar.", fr: "Si c’est bon marché, je l’achèterai.", de: "Wenn es billig ist, kaufe ich es.", it: "Se è economico, lo compro.", pl: "Jeśli będzie tanie, kupię.", tr: "Ucuzsa alırım.", id: "Kalau murah, saya akan membelinya.", vi: "Nếu rẻ, tôi sẽ mua." }
+        - level: "A2"
+          point: { en: "“If”", uk: "«Якщо»", es: "«Si»", pt: "«Se»", fr: "« Si »", de: "„Falls“", it: "«Se»", pl: "„Jeśli”", tr: "“Eğer”", id: "“Kalau”", vi: "“Nếu”" }
+          rule:
+            en: "A condition for what the main clause says."
+            uk: "Умова для того, що каже головна частина."
+            es: "Una condición para lo que dice la principal."
+            pt: "Uma condição para o que diz a principal."
+            fr: "Une condition pour ce que dit la principale."
+            de: "Eine Bedingung für das, was der Hauptsatz sagt."
+            it: "Una condizione per ciò che dice la principale."
+            pl: "Warunek tego, co mówi zdanie główne."
+            tr: "Ana cümlenin söylediği şey için bir koşul."
+            id: "Syarat bagi apa yang dikatakan klausa utama."
+            vi: "Một điều kiện cho điều mệnh đề chính nói."
+          ex: ["あした", { kanji: "雨", reading: "あめ" }, "だっ", { target: "たら" }, "、", { kanji: "行", reading: "い" }, "きません。"]
+          tr: { en: "If it rains tomorrow, I won't go.", uk: "Якщо завтра буде дощ, я не піду.", es: "Si mañana llueve, no iré.", pt: "Se chover amanhã, não vou.", fr: "S’il pleut demain, je n’irai pas.", de: "Wenn es morgen regnet, gehe ich nicht.", it: "Se domani piove, non vado.", pl: "Jeśli jutro będzie padać, nie pójdę.", tr: "Yarın yağmur yağarsa gitmem.", id: "Kalau besok hujan, saya tidak akan pergi.", vi: "Nếu ngày mai trời mưa, tôi sẽ không đi." }
+        - level: "A2"
+          point:
+            en: "“Once”"
+            uk: "«Коли вже»"
+            es: "«Una vez que»"
+            pt: "«Depois que»"
+            fr: "« Une fois que »"
+            de: "„Sobald“"
+            it: "«Una volta che»"
+            pl: "„Gdy już”"
+            tr: "“-ince”"
+            id: "“Setelah”"
+            vi: "“Sau khi”"
+          rule:
+            en: "A step that is done before the main clause."
+            uk: "Крок, виконаний до головної частини."
+            es: "Un paso que se cumple antes de la principal."
+            pt: "Um passo cumprido antes da principal."
+            fr: "Une étape accomplie avant la principale."
+            de: "Ein Schritt, der vor dem Hauptsatz geschieht."
+            it: "Un passo compiuto prima della principale."
+            pl: "Etap zakończony przed zdaniem głównym."
+            tr: "Ana cümleden önce tamamlanan bir adım."
+            id: "Langkah yang selesai sebelum klausa utama."
+            vi: "Một bước đã xong trước mệnh đề chính."
+          ex: ["うちにかえっ", { target: "たら" }, "、でんわします。"]
+          tr: { en: "When I get home, I'll call you.", uk: "Коли прийду додому, зателефоную.", es: "Cuando llegue a casa, te llamaré.", pt: "Quando chegar em casa, vou ligar.", fr: "Quand je serai rentré, je téléphonerai.", de: "Wenn ich nach Hause komme, rufe ich an.", it: "Quando torno a casa, telefono.", pl: "Jak wrócę do domu, zadzwonię.", tr: "Eve dönünce arayacağım.", id: "Kalau sudah pulang, saya akan menelepon.", vi: "Khi về đến nhà, tôi sẽ gọi điện." }
+        - level: "A2"
+          point:
+            en: "Main clause"
+            uk: "Головна частина"
+            es: "Oración principal"
+            pt: "Oração principal"
+            fr: "Principale"
+            de: "Hauptsatz"
+            it: "Principale"
+            pl: "Zdanie główne"
+            tr: "Ana cümle"
+            id: "Klausa utama"
+            vi: "Mệnh đề chính"
+          rule:
+            en: ["After ", { term: "たら" }, " it may be a request or an invitation."]
+            uk: ["Після ", { term: "たら" }, " вона може бути проханням чи запрошенням."]
+            es: ["Tras ", { term: "たら" }, " puede ser una petición o una invitación."]
+            pt: ["Depois de ", { term: "たら" }, " pode ser um pedido ou um convite."]
+            fr: ["Après ", { term: "たら" }, " elle peut être une demande ou une invitation."]
+            de: ["Nach ", { term: "たら" }, " kann sie eine Bitte oder Einladung sein."]
+            it: ["Dopo ", { term: "たら" }, " può essere una richiesta o un invito."]
+            pl: ["Po ", { term: "たら" }, " może być prośbą lub zaproszeniem."]
+            tr: [{ term: "たら" }, " sonrasında bir rica ya da davet olabilir."]
+            id: ["Setelah ", { term: "たら" }, " dapat berupa permintaan atau ajakan."]
+            vi: ["Sau ", { term: "たら" }, " có thể là lời nhờ hoặc lời mời."]
+          ex: ["わからなかっ", { target: "たら" }, "、", { kanji: "先生", reading: "せんせい" }, "にきいてください。"]
+          tr: { en: "If you don't understand, please ask the teacher.", uk: "Якщо не зрозумієте, запитайте вчителя.", es: "Si no entiende, pregunte al profesor.", pt: "Se não entender, pergunte ao professor.", fr: "Si vous ne comprenez pas, demandez au professeur.", de: "Wenn Sie etwas nicht verstehen, fragen Sie den Lehrer.", it: "Se non capite, chiedete all’insegnante.", pl: "Jeśli czegoś nie rozumiesz, zapytaj nauczyciela.", tr: "Anlamazsanız öğretmene sorun.", id: "Kalau tidak mengerti, tolong tanya guru.", vi: "Nếu không hiểu, hãy hỏi thầy giáo." }
+        - level: "A2"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["A plain form before ", { term: "とき" }, ", never ", { term: "ます" }, "."]
+            uk: ["Перед ", { term: "とき" }, " проста форма, ніколи не ", { term: "ます" }, "."]
+            es: ["Antes de ", { term: "とき" }, " va la forma simple, nunca ", { term: "ます" }, "."]
+            pt: ["Antes de ", { term: "とき" }, " vai a forma simples, nunca ", { term: "ます" }, "."]
+            fr: ["Devant ", { term: "とき" }, " se met la forme simple, jamais ", { term: "ます" }, "."]
+            de: ["Vor ", { term: "とき" }, " steht die einfache Form, nie ", { term: "ます" }, "."]
+            it: ["Davanti a ", { term: "とき" }, " va la forma semplice, mai ", { term: "ます" }, "."]
+            pl: ["Przed ", { term: "とき" }, " stoi forma prosta, nigdy ", { term: "ます" }, "."]
+            tr: [{ term: "とき" }, " öncesinde yalın biçim gelir, asla ", { term: "ます" }, " gelmez."]
+            id: ["Sebelum ", { term: "とき" }, " dipakai bentuk biasa, tidak pernah ", { term: "ます" }, "."]
+            vi: ["Trước ", { term: "とき" }, " dùng thể thường, không bao giờ dùng ", { term: "ます" }, "."]
+          ex: [{ kanji: "日本", reading: "にほん" }, "へ", { target: [{ kanji: "行", reading: "い" }, "く"] }, "とき、かばんを", { kanji: "買", reading: "か" }, "いました。"]
+          tr: { en: "When I was about to go to Japan, I bought a bag.", uk: "Коли я збирався до Японії, я купив сумку.", es: "Cuando iba a viajar a Japón, compré una bolsa.", pt: "Quando eu ia viajar para o Japão, comprei uma bolsa.", fr: "Au moment de partir pour le Japon, j’ai acheté un sac.", de: "Als ich nach Japan reisen wollte, habe ich eine Tasche gekauft.", it: "Quando stavo per andare in Giappone, ho comprato una borsa.", pl: "Kiedy wybierałem się do Japonii, kupiłem torbę.", tr: "Japonya’ya gitmeye hazırlanırken bir çanta aldım.", id: "Saat hendak pergi ke Jepang, saya membeli tas.", vi: "Khi chuẩn bị đi Nhật Bản, tôi đã mua một cái túi." }
+        - level: "A2"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: [{ term: "たら" }, " follows the ", { term: "た" }, "-form, not the dictionary form."]
+            uk: [{ term: "たら" }, " стоїть після форми на ", { term: "た" }, ", а не словникової."]
+            es: [{ term: "たら" }, " sigue a la forma en ", { term: "た" }, ", no a la de diccionario."]
+            pt: [{ term: "たら" }, " segue a forma em ", { term: "た" }, ", não a do dicionário."]
+            fr: [{ term: "たら" }, " suit la forme en ", { term: "た" }, ", non celle du dictionnaire."]
+            de: [{ term: "たら" }, " folgt auf die ", { term: "た" }, "-Form, nicht auf die Wörterbuchform."]
+            it: [{ term: "たら" }, " segue la forma in ", { term: "た" }, ", non quella del dizionario."]
+            pl: [{ term: "たら" }, " idzie za formą na ", { term: "た" }, ", nie słownikową."]
+            tr: [{ term: "たら" }, ", sözlük biçimini değil ", { term: "た" }, " biçimini izler."]
+            id: [{ term: "たら" }, " mengikuti bentuk ", { term: "た" }, ", bukan bentuk kamus."]
+            vi: [{ term: "たら" }, " đi sau thể ", { term: "た" }, ", không phải thể từ điển."]
+          ex: ["あした", { kanji: "雨", reading: "あめ" }, "だっ", { target: "たら" }, "、", { kanji: "行", reading: "い" }, "きません。"]
+          tr: { en: "If it rains tomorrow, I won't go.", uk: "Якщо завтра буде дощ, я не піду.", es: "Si mañana llueve, no iré.", pt: "Se chover amanhã, não vou.", fr: "S’il pleut demain, je n’irai pas.", de: "Wenn es morgen regnet, gehe ich nicht.", it: "Se domani piove, non vado.", pl: "Jeśli jutro będzie padać, nie pójdę.", tr: "Yarın yağmur yağarsa gitmem.", id: "Kalau besok hujan, saya tidak akan pergi.", vi: "Nếu ngày mai trời mưa, tôi sẽ không đi." }
+sections:
+  - title:
+      en: "Overview"
+      uk: "Огляд"
+      es: "Visión general"
+      pt: "Visão geral"
+      fr: "Vue d’ensemble"
+      de: "Überblick"
+      it: "Panoramica"
+      pl: "Przegląd"
+      tr: "Genel bakış"
+      id: "Gambaran umum"
+      vi: "Tổng quan"
+    role: "overview"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A2"
+            text:
+              en: [{ term: "とき" }, " and ", { term: "たら" }, " join a first clause to a main clause; the main clause ends the sentence and may be polite."]
+              uk: [{ term: "とき" }, " і ", { term: "たら" }, " з’єднують першу частину з головною; головна частина завершує речення й може бути ввічливою."]
+              es: [{ term: "とき" }, " y ", { term: "たら" }, " unen una primera oración con la principal; la principal cierra la frase y puede ser cortés."]
+              pt: [{ term: "とき" }, " e ", { term: "たら" }, " ligam uma primeira oração à principal; a principal encerra a frase e pode ser polida."]
+              fr: [{ term: "とき" }, " et ", { term: "たら" }, " relient une première proposition à la principale ; la principale termine la phrase et peut être polie."]
+              de: [{ term: "とき" }, " und ", { term: "たら" }, " verbinden einen ersten Teilsatz mit dem Hauptsatz; der Hauptsatz beschließt den Satz und kann höflich sein."]
+              it: [{ term: "とき" }, " e ", { term: "たら" }, " collegano una prima proposizione alla principale; la principale chiude la frase e può essere cortese."]
+              pl: [{ term: "とき" }, " i ", { term: "たら" }, " łączą pierwsze zdanie ze zdaniem głównym; zdanie główne kończy całość i może być grzecznościowe."]
+              tr: [{ term: "とき" }, " ve ", { term: "たら" }, " ilk yan cümleyi ana cümleye bağlar; ana cümle cümleyi bitirir ve nazik biçimde olabilir."]
+              id: [{ term: "とき" }, " dan ", { term: "たら" }, " menghubungkan klausa pertama dengan klausa utama; klausa utama mengakhiri kalimat dan boleh berbentuk sopan."]
+              vi: [{ term: "とき" }, " và ", { term: "たら" }, " nối mệnh đề đầu với mệnh đề chính; mệnh đề chính kết thúc câu và có thể ở thể lịch sự."]
+            ex: { examples: [["ひまな", { target: "とき" }, "、えいがを", { kanji: "見", reading: "み" }, "ます。"], [{ kanji: "安", reading: "やす" }, "かっ", { target: "たら" }, "、", { kanji: "買", reading: "か" }, "います。"]] }
+            tr: { en: { examples: ["When I'm free, I watch movies.", "If it's cheap, I'll buy it."] }, uk: { examples: ["Коли маю вільний час, дивлюся фільми.", "Якщо буде дешево, куплю."] }, es: { examples: ["Cuando estoy libre, veo películas.", "Si es barato, lo compraré."] }, pt: { examples: ["Quando estou livre, assisto a filmes.", "Se for barato, vou comprar."] }, fr: { examples: ["Quand je suis libre, je regarde des films.", "Si c’est bon marché, je l’achèterai."] }, de: { examples: ["Wenn ich Zeit habe, sehe ich Filme.", "Wenn es billig ist, kaufe ich es."] }, it: { examples: ["Quando sono libero, guardo i film.", "Se è economico, lo compro."] }, pl: { examples: ["Kiedy mam wolny czas, oglądam filmy.", "Jeśli będzie tanie, kupię."] }, tr: { examples: ["Boş olduğumda film izlerim.", "Ucuzsa alırım."] }, id: { examples: ["Kalau senggang, saya menonton film.", "Kalau murah, saya akan membelinya."] }, vi: { examples: ["Khi rảnh, tôi xem phim.", "Nếu rẻ, tôi sẽ mua."] } }
+          - type: "rule"
+            level: "A2"
+            text:
+              en: [{ term: "とき" }, " is a noun, so a clause before it works like a clause before a noun. See ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": Clauses Before Nouns"], to: "ja.linking.noun-modification" }, "."]
+              uk: [{ term: "とき" }, " — іменник, тож частина перед ним діє, як частина перед іменником. Див. ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": речення перед іменником"], to: "ja.linking.noun-modification" }, "."]
+              es: [{ term: "とき" }, " es un sustantivo, así que la oración que lo precede funciona como una oración antes de un sustantivo. Véase ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": oraciones antes del sustantivo"], to: "ja.linking.noun-modification" }, "."]
+              pt: [{ term: "とき" }, " é um substantivo, então a oração antes dele funciona como uma oração antes de um substantivo. Veja ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": orações antes do substantivo"], to: "ja.linking.noun-modification" }, "."]
+              fr: [{ term: "とき" }, " est un nom, donc la proposition qui le précède fonctionne comme une proposition devant un nom. Voir ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, " : une proposition devant le nom"], to: "ja.linking.noun-modification" }, "."]
+              de: [{ term: "とき" }, " ist ein Nomen, daher wirkt der Teilsatz davor wie ein Teilsatz vor einem Nomen. Siehe ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": Sätze vor dem Nomen"], to: "ja.linking.noun-modification" }, "."]
+              it: [{ term: "とき" }, " è un nome, quindi la proposizione che lo precede funziona come una proposizione prima di un nome. Vedi ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": proposizioni prima del nome"], to: "ja.linking.noun-modification" }, "."]
+              pl: [{ term: "とき" }, " jest rzeczownikiem, więc zdanie przed nim działa jak zdanie przed rzeczownikiem. Zob. ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": zdanie przed rzeczownikiem"], to: "ja.linking.noun-modification" }, "."]
+              tr: [{ term: "とき" }, " bir isimdir; bu yüzden önündeki yan cümle, ismin önündeki yan cümle gibi çalışır. Bkz. ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": ismin önündeki cümle"], to: "ja.linking.noun-modification" }, "."]
+              id: [{ term: "とき" }, " adalah kata benda, jadi klausa di depannya bekerja seperti klausa sebelum kata benda. Lihat ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": klausa sebelum kata benda"], to: "ja.linking.noun-modification" }, "."]
+              vi: [{ term: "とき" }, " là danh từ, nên mệnh đề đứng trước nó hoạt động như mệnh đề trước danh từ. Xem ", { link: [{ kanji: "買", reading: "か" }, "った", { kanji: "本", reading: "ほん" }, ": mệnh đề đứng trước danh từ"], to: "ja.linking.noun-modification" }, "."]
+            ex: ["ひまな", { target: "とき" }, "、えいがを", { kanji: "見", reading: "み" }, "ます。"]
+            tr: { en: "When I'm free, I watch movies.", uk: "Коли маю вільний час, дивлюся фільми.", es: "Cuando estoy libre, veo películas.", pt: "Quando estou livre, assisto a filmes.", fr: "Quand je suis libre, je regarde des films.", de: "Wenn ich Zeit habe, sehe ich Filme.", it: "Quando sono libero, guardo i film.", pl: "Kiedy mam wolny czas, oglądam filmy.", tr: "Boş olduğumda film izlerim.", id: "Kalau senggang, saya menonton film.", vi: "Khi rảnh, tôi xem phim." }
+          - type: "rule"
+            level: "A2"
+            text:
+              en: [{ term: "たら" }, " is the plain past form plus ", { term: "ら" }, "; the plain forms are in ", { link: "The Plain Form", to: ja.verbs.plain-form }, "."]
+              uk: [{ term: "たら" }, " — проста минула форма плюс ", { term: "ら" }, "; прості форми описано в ", { link: "Проста форма", to: "ja.verbs.plain-form" }, "."]
+              es: [{ term: "たら" }, " es la forma simple del pasado más ", { term: "ら" }, "; las formas simples están en ", { link: "La forma simple", to: "ja.verbs.plain-form" }, "."]
+              pt: [{ term: "たら" }, " é a forma simples do passado mais ", { term: "ら" }, "; as formas simples estão em ", { link: "A forma simples", to: "ja.verbs.plain-form" }, "."]
+              fr: [{ term: "たら" }, " est la forme simple du passé plus ", { term: "ら" }, " ; les formes simples sont dans ", { link: "La forme simple", to: "ja.verbs.plain-form" }, "."]
+              de: [{ term: "たら" }, " ist die einfache Vergangenheitsform plus ", { term: "ら" }, "; die einfachen Formen stehen unter ", { link: "Die einfache Form", to: "ja.verbs.plain-form" }, "."]
+              it: [{ term: "たら" }, " è la forma semplice del passato più ", { term: "ら" }, "; le forme semplici sono in ", { link: "La forma semplice", to: "ja.verbs.plain-form" }, "."]
+              pl: [{ term: "たら" }, " to forma prosta czasu przeszłego plus ", { term: "ら" }, "; formy proste opisano w ", { link: "Forma prosta", to: "ja.verbs.plain-form" }, "."]
+              tr: [{ term: "たら" }, ", yalın geçmiş biçime ", { term: "ら" }, " eklenerek kurulur; yalın biçimler ", { link: "Yalın biçim", to: "ja.verbs.plain-form" }, " konusundadır."]
+              id: [{ term: "たら" }, " adalah bentuk lampau biasa ditambah ", { term: "ら" }, "; bentuk biasa ada di ", { link: "Bentuk biasa", to: "ja.verbs.plain-form" }, "."]
+              vi: [{ term: "たら" }, " là thể quá khứ thường cộng ", { term: "ら" }, "; các thể thường nằm ở ", { link: "Thể thường", to: "ja.verbs.plain-form" }, "."]
+            ex: [{ kanji: "安", reading: "やす" }, "かっ", { target: "たら" }, "、", { kanji: "買", reading: "か" }, "います。"]
+            tr: { en: "If it's cheap, I'll buy it.", uk: "Якщо буде дешево, куплю.", es: "Si es barato, lo compraré.", pt: "Se for barato, vou comprar.", fr: "Si c’est bon marché, je l’achèterai.", de: "Wenn es billig ist, kaufe ich es.", it: "Se è economico, lo compro.", pl: "Jeśli będzie tanie, kupię.", tr: "Ucuzsa alırım.", id: "Kalau murah, saya akan membelinya.", vi: "Nếu rẻ, tôi sẽ mua." }
+  - title: { en: "Form: とき", uk: "Форма: とき", es: "Forma: とき", pt: "Forma: とき", fr: "Forme : とき", de: "Form: とき", it: "Forma: とき", pl: "Forma: とき", tr: "Biçim: とき", id: "Bentuk: とき", vi: "Dạng: とき" }
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - key: "type"
+            label:
+              en: "Word type"
+              uk: "Тип слова"
+              es: "Tipo de palabra"
+              pt: "Tipo de palavra"
+              fr: "Type de mot"
+              de: "Wortart"
+              it: "Tipo di parola"
+              pl: "Rodzaj wyrazu"
+              tr: "Sözcük türü"
+              id: "Jenis kata"
+              vi: "Loại từ"
+          - key: "form"
+            label: { en: "Before とき", uk: "Перед とき", es: "Antes de とき", pt: "Antes de とき", fr: "Devant とき", de: "Vor とき", it: "Prima di とき", pl: "Przed とき", tr: "とき öncesi", id: "Sebelum とき", vi: "Trước とき" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            type: { en: "Verb", uk: "Дієслово", es: "Verbo", pt: "Verbo", fr: "Verbe", de: "Verb", it: "Verbo", pl: "Czasownik", tr: "Fiil", id: "Kata kerja", vi: "Động từ" }
+            form:
+              en: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              uk: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              es: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              pt: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              fr: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              de: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              it: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              pl: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              tr: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              id: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+              vi: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "く"] }, { term: [{ kanji: "行", reading: "い" }, "った"] }] }
+            ex: [{ kanji: "日本", reading: "にほん" }, "へ", { kanji: "行", reading: "い" }, "く", { target: "とき" }, "、かばんを", { kanji: "買", reading: "か" }, "いました。"]
+            tr: { en: "When I was about to go to Japan, I bought a bag.", uk: "Коли я збирався до Японії, я купив сумку.", es: "Cuando iba a viajar a Japón, compré una bolsa.", pt: "Quando eu ia viajar para o Japão, comprei uma bolsa.", fr: "Au moment de partir pour le Japon, j’ai acheté un sac.", de: "Als ich nach Japan reisen wollte, habe ich eine Tasche gekauft.", it: "Quando stavo per andare in Giappone, ho comprato una borsa.", pl: "Kiedy wybierałem się do Japonii, kupiłem torbę.", tr: "Japonya’ya gitmeye hazırlanırken bir çanta aldım.", id: "Saat hendak pergi ke Jepang, saya membeli tas.", vi: "Khi chuẩn bị đi Nhật Bản, tôi đã mua một cái túi." }
+          - level: "A2"
+            type: { en: "Negative", uk: "Заперечення", es: "Negación", pt: "Negação", fr: "Négation", de: "Verneinung", it: "Negazione", pl: "Przeczenie", tr: "Olumsuz", id: "Negasi", vi: "Phủ định" }
+            form:
+              en: { term: "ない" }
+              uk: { term: "ない" }
+              es: { term: "ない" }
+              pt: { term: "ない" }
+              fr: { term: "ない" }
+              de: { term: "ない" }
+              it: { term: "ない" }
+              pl: { term: "ない" }
+              tr: { term: "ない" }
+              id: { term: "ない" }
+              vi: { term: "ない" }
+            ex: ["じかんがない", { target: "とき" }, "、パンを", { kanji: "食", reading: "た" }, "べます。"]
+            tr: { en: "When I have no time, I eat bread.", uk: "Коли в мене немає часу, я їм хліб.", es: "Cuando no tengo tiempo, como pan.", pt: "Quando não tenho tempo, como pão.", fr: "Quand je n’ai pas le temps, je mange du pain.", de: "Wenn ich keine Zeit habe, esse ich Brot.", it: "Quando non ho tempo, mangio pane.", pl: "Kiedy nie mam czasu, jem chleb.", tr: "Vaktim olmadığında ekmek yerim.", id: "Kalau tidak punya waktu, saya makan roti.", vi: "Khi không có thời gian, tôi ăn bánh mì." }
+          - level: "A2"
+            type:
+              en: "い-adjective"
+              uk: "い-прикметник"
+              es: "Adjetivo い"
+              pt: "Adjetivo い"
+              fr: "Adjectif en い"
+              de: "い-Adjektiv"
+              it: "Aggettivo in い"
+              pl: "Przymiotnik い"
+              tr: "い sıfatı"
+              id: "Kata sifat い"
+              vi: "Tính từ い"
+            form:
+              en: { term: "さむい" }
+              uk: { term: "さむい" }
+              es: { term: "さむい" }
+              pt: { term: "さむい" }
+              fr: { term: "さむい" }
+              de: { term: "さむい" }
+              it: { term: "さむい" }
+              pl: { term: "さむい" }
+              tr: { term: "さむい" }
+              id: { term: "さむい" }
+              vi: { term: "さむい" }
+            ex: ["さむい", { target: "とき" }, "、おふろにはいります。"]
+            tr: { en: "When it's cold, I take a bath.", uk: "Коли холодно, я приймаю ванну.", es: "Cuando hace frío, me doy un baño.", pt: "Quando está frio, tomo banho de banheira.", fr: "Quand il fait froid, je prends un bain.", de: "Wenn es kalt ist, nehme ich ein Bad.", it: "Quando fa freddo, faccio un bagno.", pl: "Kiedy jest zimno, biorę kąpiel.", tr: "Hava soğuk olduğunda banyo yaparım.", id: "Kalau dingin, saya berendam di bak mandi.", vi: "Khi trời lạnh, tôi tắm bồn." }
+          - level: "A2"
+            type:
+              en: "な-adjective"
+              uk: "な-прикметник"
+              es: "Adjetivo な"
+              pt: "Adjetivo な"
+              fr: "Adjectif en な"
+              de: "な-Adjektiv"
+              it: "Aggettivo in な"
+              pl: "Przymiotnik な"
+              tr: "な sıfatı"
+              id: "Kata sifat な"
+              vi: "Tính từ な"
+            form:
+              en: { term: "ひまな" }
+              uk: { term: "ひまな" }
+              es: { term: "ひまな" }
+              pt: { term: "ひまな" }
+              fr: { term: "ひまな" }
+              de: { term: "ひまな" }
+              it: { term: "ひまな" }
+              pl: { term: "ひまな" }
+              tr: { term: "ひまな" }
+              id: { term: "ひまな" }
+              vi: { term: "ひまな" }
+            ex: ["ひまな", { target: "とき" }, "、えいがを", { kanji: "見", reading: "み" }, "ます。"]
+            tr: { en: "When I'm free, I watch movies.", uk: "Коли маю вільний час, дивлюся фільми.", es: "Cuando estoy libre, veo películas.", pt: "Quando estou livre, assisto a filmes.", fr: "Quand je suis libre, je regarde des films.", de: "Wenn ich Zeit habe, sehe ich Filme.", it: "Quando sono libero, guardo i film.", pl: "Kiedy mam wolny czas, oglądam filmy.", tr: "Boş olduğumda film izlerim.", id: "Kalau senggang, saya menonton film.", vi: "Khi rảnh, tôi xem phim." }
+          - level: "A2"
+            type: { en: "Noun", uk: "Іменник", es: "Sustantivo", pt: "Substantivo", fr: "Nom", de: "Nomen", it: "Nome", pl: "Rzeczownik", tr: "Isim", id: "Kata benda", vi: "Danh từ" }
+            form:
+              en: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              uk: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              es: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              pt: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              fr: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              de: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              it: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              pl: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              tr: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              id: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+              vi: { term: [{ kanji: "雨", reading: "あめ" }, "の"] }
+            ex: [{ kanji: "雨", reading: "あめ" }, "の", { target: "とき" }, "、うちにいます。"]
+            tr: { en: "When it rains, I stay home.", uk: "Коли йде дощ, я сиджу вдома.", es: "Cuando llueve, me quedo en casa.", pt: "Quando chove, fico em casa.", fr: "Quand il pleut, je reste à la maison.", de: "Wenn es regnet, bleibe ich zu Hause.", it: "Quando piove, resto a casa.", pl: "Kiedy pada deszcz, siedzę w domu.", tr: "Yağmur yağdığında evde kalırım.", id: "Kalau hujan, saya tinggal di rumah.", vi: "Khi trời mưa, tôi ở nhà." }
+  - title: { en: "Form: たら", uk: "Форма: たら", es: "Forma: たら", pt: "Forma: たら", fr: "Forme : たら", de: "Form: たら", it: "Forma: たら", pl: "Forma: たら", tr: "Biçim: たら", id: "Bentuk: たら", vi: "Dạng: たら" }
+    role: "form"
+    content:
+      - type: "usage"
+        columns:
+          - key: "type"
+            label:
+              en: "Word type"
+              uk: "Тип слова"
+              es: "Tipo de palabra"
+              pt: "Tipo de palavra"
+              fr: "Type de mot"
+              de: "Wortart"
+              it: "Tipo di parola"
+              pl: "Rodzaj wyrazu"
+              tr: "Sözcük türü"
+              id: "Jenis kata"
+              vi: "Loại từ"
+          - key: "form"
+            label: { en: "Before たら", uk: "Перед たら", es: "Antes de たら", pt: "Antes de たら", fr: "Devant たら", de: "Vor たら", it: "Prima di たら", pl: "Przed たら", tr: "たら öncesi", id: "Sebelum たら", vi: "Trước たら" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            type: { en: "Verb", uk: "Дієслово", es: "Verbo", pt: "Verbo", fr: "Verbe", de: "Verb", it: "Verbo", pl: "Czasownik", tr: "Fiil", id: "Kata kerja", vi: "Động từ" }
+            form:
+              en: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              uk: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              es: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              pt: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              fr: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              de: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              it: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              pl: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              tr: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              id: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+              vi: { alternatives: [{ term: [{ kanji: "行", reading: "い" }, "ったら"] }, { term: [{ kanji: "行", reading: "い" }, "かなかったら"] }] }
+            ex: [{ kanji: "日本", reading: "にほん" }, "へ", { kanji: "行", reading: "い" }, "っ", { target: "たら" }, "、おみやげを", { kanji: "買", reading: "か" }, "います。"]
+            tr: { en: "If I go to Japan, I'll buy souvenirs.", uk: "Якщо поїду до Японії, куплю сувеніри.", es: "Si voy a Japón, compraré recuerdos.", pt: "Se eu for ao Japão, vou comprar lembranças.", fr: "Si je vais au Japon, j’achèterai des souvenirs.", de: "Wenn ich nach Japan fahre, kaufe ich Souvenirs.", it: "Se vado in Giappone, comprerò dei souvenir.", pl: "Jeśli pojadę do Japonii, kupię pamiątki.", tr: "Japonya’ya gidersem hediyelik eşya alacağım.", id: "Kalau saya pergi ke Jepang, saya akan membeli oleh-oleh.", vi: "Nếu đến Nhật Bản, tôi sẽ mua quà lưu niệm." }
+          - level: "A2"
+            type:
+              en: "い-adjective"
+              uk: "い-прикметник"
+              es: "Adjetivo い"
+              pt: "Adjetivo い"
+              fr: "Adjectif en い"
+              de: "い-Adjektiv"
+              it: "Aggettivo in い"
+              pl: "Przymiotnik い"
+              tr: "い sıfatı"
+              id: "Kata sifat い"
+              vi: "Tính từ い"
+            form:
+              en: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              uk: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              es: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              pt: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              fr: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              de: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              it: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              pl: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              tr: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              id: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+              vi: { alternatives: [{ term: [{ kanji: "安", reading: "やす" }, "かったら"] }, { term: [{ kanji: "安", reading: "やす" }, "くなかったら"] }] }
+            ex: [{ kanji: "安", reading: "やす" }, "かっ", { target: "たら" }, "、", { kanji: "買", reading: "か" }, "います。"]
+            tr: { en: "If it's cheap, I'll buy it.", uk: "Якщо буде дешево, куплю.", es: "Si es barato, lo compraré.", pt: "Se for barato, vou comprar.", fr: "Si c’est bon marché, je l’achèterai.", de: "Wenn es billig ist, kaufe ich es.", it: "Se è economico, lo compro.", pl: "Jeśli będzie tanie, kupię.", tr: "Ucuzsa alırım.", id: "Kalau murah, saya akan membelinya.", vi: "Nếu rẻ, tôi sẽ mua." }
+          - level: "A2"
+            type:
+              en: "な-adjective"
+              uk: "な-прикметник"
+              es: "Adjetivo な"
+              pt: "Adjetivo な"
+              fr: "Adjectif en な"
+              de: "な-Adjektiv"
+              it: "Aggettivo in な"
+              pl: "Przymiotnik な"
+              tr: "な sıfatı"
+              id: "Kata sifat な"
+              vi: "Tính từ な"
+            form:
+              en: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              uk: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              es: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              pt: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              fr: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              de: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              it: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              pl: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              tr: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              id: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+              vi: { alternatives: [{ term: "ひまだったら" }, { term: "ひまじゃなかったら" }] }
+            ex: ["あした、ひまだっ", { target: "たら" }, "、あそびに", { kanji: "来", reading: "き" }, "てください。"]
+            tr: { en: "If you're free tomorrow, please come over.", uk: "Якщо завтра будеш вільний, заходь у гості.", es: "Si mañana estás libre, ven a verme.", pt: "Se estiver livre amanhã, venha me visitar.", fr: "Si tu es libre demain, viens me voir.", de: "Wenn du morgen Zeit hast, komm vorbei.", it: "Se domani sei libero, vieni a trovarmi.", pl: "Jeśli jutro będziesz wolny, wpadnij do mnie.", tr: "Yarın boşsan bize gel.", id: "Kalau besok kamu senggang, silakan main ke rumah.", vi: "Nếu ngày mai bạn rảnh, hãy đến chơi nhé." }
+          - level: "A2"
+            type: { en: "Noun", uk: "Іменник", es: "Sustantivo", pt: "Substantivo", fr: "Nom", de: "Nomen", it: "Nome", pl: "Rzeczownik", tr: "Isim", id: "Kata benda", vi: "Danh từ" }
+            form:
+              en: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              uk: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              es: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              pt: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              fr: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              de: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              it: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              pl: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              tr: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              id: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+              vi: { alternatives: [{ term: [{ kanji: "雨", reading: "あめ" }, "だったら"] }, { term: [{ kanji: "雨", reading: "あめ" }, "じゃなかったら"] }] }
+            ex: ["あした", { kanji: "雨", reading: "あめ" }, "だっ", { target: "たら" }, "、", { kanji: "行", reading: "い" }, "きません。"]
+            tr: { en: "If it rains tomorrow, I won't go.", uk: "Якщо завтра буде дощ, я не піду.", es: "Si mañana llueve, no iré.", pt: "Se chover amanhã, não vou.", fr: "S’il pleut demain, je n’irai pas.", de: "Wenn es morgen regnet, gehe ich nicht.", it: "Se domani piove, non vado.", pl: "Jeśli jutro będzie padać, nie pójdę.", tr: "Yarın yağmur yağarsa gitmem.", id: "Kalau besok hujan, saya tidak akan pergi.", vi: "Nếu ngày mai trời mưa, tôi sẽ không đi." }
+  - title: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" }
+    role: "use"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            use:
+              en: [{ term: "とき" }, ": the time at which something happens."]
+              uk: [{ term: "とき" }, ": час, коли щось відбувається."]
+              es: [{ term: "とき" }, ": el momento en que algo ocurre."]
+              pt: [{ term: "とき" }, ": o momento em que algo acontece."]
+              fr: [{ term: "とき" }, " : le moment où quelque chose se passe."]
+              de: [{ term: "とき" }, ": der Zeitpunkt, zu dem etwas geschieht."]
+              it: [{ term: "とき" }, ": il momento in cui accade qualcosa."]
+              pl: [{ term: "とき" }, ": moment, w którym coś się dzieje."]
+              tr: [{ term: "とき" }, ": bir şeyin gerçekleştiği zaman."]
+              id: [{ term: "とき" }, ": saat sesuatu terjadi."]
+              vi: [{ term: "とき" }, ": thời điểm một việc xảy ra."]
+            ex: ["さむい", { target: "とき" }, "、おふろにはいります。"]
+            tr: { en: "When it's cold, I take a bath.", uk: "Коли холодно, я приймаю ванну.", es: "Cuando hace frío, me doy un baño.", pt: "Quando está frio, tomo banho de banheira.", fr: "Quand il fait froid, je prends un bain.", de: "Wenn es kalt ist, nehme ich ein Bad.", it: "Quando fa freddo, faccio un bagno.", pl: "Kiedy jest zimno, biorę kąpiel.", tr: "Hava soğuk olduğunda banyo yaparım.", id: "Kalau dingin, saya berendam di bak mandi.", vi: "Khi trời lạnh, tôi tắm bồn." }
+          - level: "A2"
+            use:
+              en: [{ term: "たら" }, ": a condition, “if”."]
+              uk: [{ term: "たら" }, ": умова, «якщо»."]
+              es: [{ term: "たら" }, ": una condición, «si»."]
+              pt: [{ term: "たら" }, ": uma condição, «se»."]
+              fr: [{ term: "たら" }, " : une condition, « si »."]
+              de: [{ term: "たら" }, ": eine Bedingung, „falls“."]
+              it: [{ term: "たら" }, ": una condizione, «se»."]
+              pl: [{ term: "たら" }, ": warunek, „jeśli”."]
+              tr: [{ term: "たら" }, ": bir koşul, “eğer”."]
+              id: [{ term: "たら" }, ": syarat, “kalau”."]
+              vi: [{ term: "たら" }, ": điều kiện, “nếu”."]
+            ex: [{ kanji: "安", reading: "やす" }, "かっ", { target: "たら" }, "、", { kanji: "買", reading: "か" }, "います。"]
+            tr: { en: "If it's cheap, I'll buy it.", uk: "Якщо буде дешево, куплю.", es: "Si es barato, lo compraré.", pt: "Se for barato, vou comprar.", fr: "Si c’est bon marché, je l’achèterai.", de: "Wenn es billig ist, kaufe ich es.", it: "Se è economico, lo compro.", pl: "Jeśli będzie tanie, kupię.", tr: "Ucuzsa alırım.", id: "Kalau murah, saya akan membelinya.", vi: "Nếu rẻ, tôi sẽ mua." }
+          - level: "A2"
+            use:
+              en: [{ term: "たら" }, ": a step done first, “once, when”."]
+              uk: [{ term: "たら" }, ": крок, зроблений першим, «коли вже»."]
+              es: [{ term: "たら" }, ": un paso que se hace primero, «una vez que, cuando»."]
+              pt: [{ term: "たら" }, ": um passo feito primeiro, «depois que, quando»."]
+              fr: [{ term: "たら" }, " : une étape faite d’abord, « une fois que, quand »."]
+              de: [{ term: "たら" }, ": ein Schritt, der zuerst geschieht, „sobald, wenn“."]
+              it: [{ term: "たら" }, ": un passo fatto prima, «una volta che, quando»."]
+              pl: [{ term: "たら" }, ": etap wykonany najpierw, „gdy już, jak”."]
+              tr: [{ term: "たら" }, ": önce yapılan bir adım, “-ince, -dığında”."]
+              id: [{ term: "たら" }, ": langkah yang dilakukan lebih dulu, “setelah, kalau sudah”."]
+              vi: [{ term: "たら" }, ": bước làm trước, “sau khi, khi”."]
+            ex: ["うちにかえっ", { target: "たら" }, "、でんわします。"]
+            tr: { en: "When I get home, I'll call you.", uk: "Коли прийду додому, зателефоную.", es: "Cuando llegue a casa, te llamaré.", pt: "Quando chegar em casa, vou ligar.", fr: "Quand je serai rentré, je téléphonerai.", de: "Wenn ich nach Hause komme, rufe ich an.", it: "Quando torno a casa, telefono.", pl: "Jak wrócę do domu, zadzwonię.", tr: "Eve dönünce arayacağım.", id: "Kalau sudah pulang, saya akan menelepon.", vi: "Khi về đến nhà, tôi sẽ gọi điện." }
+          - level: "A2"
+            use:
+              en: [{ term: "たら" }, ": the main clause may ask or invite. See ", { link: "Requests: てください", to: ja.verbs.te-kudasai }, "."]
+              uk: [{ term: "たら" }, ": головна частина може просити чи запрошувати. Див. ", { link: "Прохання: てください", to: ja.verbs.te-kudasai }, "."]
+              es: [{ term: "たら" }, ": la principal puede pedir o invitar. Véase ", { link: "Peticiones: てください", to: ja.verbs.te-kudasai }, "."]
+              pt: [{ term: "たら" }, ": a principal pode pedir ou convidar. Veja ", { link: "Pedidos: てください", to: ja.verbs.te-kudasai }, "."]
+              fr: [{ term: "たら" }, " : la principale peut demander ou inviter. Voir ", { link: "Demandes : てください", to: ja.verbs.te-kudasai }, "."]
+              de: [{ term: "たら" }, ": der Hauptsatz darf bitten oder einladen. Siehe ", { link: "Bitten: てください", to: ja.verbs.te-kudasai }, "."]
+              it: [{ term: "たら" }, ": la principale può chiedere o invitare. Vedi ", { link: "Richieste: てください", to: ja.verbs.te-kudasai }, "."]
+              pl: [{ term: "たら" }, ": zdanie główne może prosić lub zapraszać. Zob. ", { link: "Prośby: てください", to: ja.verbs.te-kudasai }, "."]
+              tr: [{ term: "たら" }, ": ana cümle rica ya da davet edebilir. Bkz. ", { link: "Rica: てください", to: ja.verbs.te-kudasai }, "."]
+              id: [{ term: "たら" }, ": klausa utama boleh meminta atau mengajak. Lihat ", { link: "Permintaan: てください", to: ja.verbs.te-kudasai }, "."]
+              vi: [{ term: "たら" }, ": mệnh đề chính có thể nhờ hoặc mời. Xem ", { link: "Lời nhờ: てください", to: ja.verbs.te-kudasai }, "."]
+            ex: ["わからなかっ", { target: "たら" }, "、", { kanji: "先生", reading: "せんせい" }, "にきいてください。"]
+            tr: { en: "If you don't understand, please ask the teacher.", uk: "Якщо не зрозумієте, запитайте вчителя.", es: "Si no entiende, pregunte al profesor.", pt: "Se não entender, pergunte ao professor.", fr: "Si vous ne comprenez pas, demandez au professeur.", de: "Wenn Sie etwas nicht verstehen, fragen Sie den Lehrer.", it: "Se non capite, chiedete all’insegnante.", pl: "Jeśli czegoś nie rozumiesz, zapytaj nauczyciela.", tr: "Anlamazsanız öğretmene sorun.", id: "Kalau tidak mengerti, tolong tanya guru.", vi: "Nếu không hiểu, hãy hỏi thầy giáo." }
+  - title:
+      en: "Compare: 行くとき and 行ったとき"
+      uk: "Порівняння: 行くとき і 行ったとき"
+      es: "Comparación: 行くとき y 行ったとき"
+      pt: "Comparação: 行くとき e 行ったとき"
+      fr: "Comparaison : 行くとき et 行ったとき"
+      de: "Vergleich: 行くとき und 行ったとき"
+      it: "Confronto: 行くとき e 行ったとき"
+      pl: "Porównanie: 行くとき i 行ったとき"
+      tr: "Karşılaştırma: 行くとき ve 行ったとき"
+      id: "Perbandingan: 行くとき dan 行ったとき"
+      vi: "So sánh: 行くとき và 行ったとき"
+    role: "compare"
+    content:
+      - type: "comparison"
+        columns:
+          - { key: "form", label: { en: "Form", uk: "Форма", es: "Forma", pt: "Forma", fr: "Forme", de: "Form", it: "Forma", pl: "Forma", tr: "Biçim", id: "Bentuk", vi: "Dạng" } }
+          - key: "meaning"
+            label: { en: "Meaning", uk: "Значення", es: "Significado", pt: "Significado", fr: "Sens", de: "Bedeutung", it: "Significato", pl: "Znaczenie", tr: "Anlam", id: "Arti", vi: "Nghĩa" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A2"
+            form:
+              en: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              uk: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              es: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              pt: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              fr: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              de: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              it: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              pl: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              tr: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              id: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+              vi: { term: [{ kanji: "行", reading: "い" }, "くとき"] }
+            meaning:
+              en: "The action is still to come: before leaving, on the way."
+              uk: "Дія ще попереду: перед від’їздом, у дорозі."
+              es: "La acción aún está por venir: antes de salir, de camino."
+              pt: "A ação ainda vai acontecer: antes de sair, a caminho."
+              fr: "L’action est encore à venir : avant de partir, en chemin."
+              de: "Die Handlung steht noch bevor: vor der Abreise, unterwegs."
+              it: "L’azione deve ancora avvenire: prima di partire, in viaggio."
+              pl: "Czynność jest jeszcze przed nami: przed wyjazdem, w drodze."
+              tr: "Eylem henüz gerçekleşmedi: yola çıkmadan önce, yolda."
+              id: "Tindakan belum terjadi: sebelum berangkat, di perjalanan."
+              vi: "Hành động chưa xảy ra: trước khi đi, trên đường."
+            ex: [{ kanji: "日本", reading: "にほん" }, "へ", { target: [{ kanji: "行", reading: "い" }, "くとき"] }, "、かばんを", { kanji: "買", reading: "か" }, "いました。"]
+            tr: { en: "When I was about to go to Japan, I bought a bag.", uk: "Коли я збирався до Японії, я купив сумку.", es: "Cuando iba a viajar a Japón, compré una bolsa.", pt: "Quando eu ia viajar para o Japão, comprei uma bolsa.", fr: "Au moment de partir pour le Japon, j’ai acheté un sac.", de: "Als ich nach Japan reisen wollte, habe ich eine Tasche gekauft.", it: "Quando stavo per andare in Giappone, ho comprato una borsa.", pl: "Kiedy wybierałem się do Japonii, kupiłem torbę.", tr: "Japonya’ya gitmeye hazırlanırken bir çanta aldım.", id: "Saat hendak pergi ke Jepang, saya membeli tas.", vi: "Khi chuẩn bị đi Nhật Bản, tôi đã mua một cái túi." }
+          - level: "A2"
+            form:
+              en: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              uk: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              es: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              pt: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              fr: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              de: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              it: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              pl: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              tr: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              id: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+              vi: { term: [{ kanji: "行", reading: "い" }, "ったとき"] }
+            meaning:
+              en: "The action is done: after arriving, at the destination."
+              uk: "Дія виконана: після прибуття, на місці."
+              es: "La acción ya se cumplió: tras llegar, en el destino."
+              pt: "A ação já aconteceu: depois de chegar, no destino."
+              fr: "L’action est accomplie : après l’arrivée, à destination."
+              de: "Die Handlung ist geschehen: nach der Ankunft, am Ziel."
+              it: "L’azione è compiuta: dopo l’arrivo, a destinazione."
+              pl: "Czynność jest zakończona: po przyjeździe, na miejscu."
+              tr: "Eylem tamamlandı: vardıktan sonra, varış yerinde."
+              id: "Tindakan sudah selesai: setelah tiba, di tempat tujuan."
+              vi: "Hành động đã xong: sau khi đến, tại nơi đến."
+            ex: [{ kanji: "日本", reading: "にほん" }, "へ", { target: [{ kanji: "行", reading: "い" }, "ったとき"] }, "、かばんを", { kanji: "買", reading: "か" }, "いました。"]
+            tr: { en: "When I went to Japan, I bought a bag there.", uk: "Коли я їздив до Японії, там я купив сумку.", es: "Cuando fui a Japón, compré allí una bolsa.", pt: "Quando fui ao Japão, comprei lá uma bolsa.", fr: "Quand je suis allé au Japon, j’y ai acheté un sac.", de: "Als ich in Japan war, habe ich dort eine Tasche gekauft.", it: "Quando sono andato in Giappone, ci ho comprato una borsa.", pl: "Kiedy pojechałem do Japonii, kupiłem tam torbę.", tr: "Japonya’ya gittiğimde orada bir çanta aldım.", id: "Saat saya pergi ke Jepang, saya membeli tas di sana.", vi: "Khi tôi đến Nhật Bản, tôi đã mua một cái túi ở đó." }
+  - title:
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      fr: "Erreurs fréquentes"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A2"
+            wrong: [{ kanji: "日本", reading: "にほん" }, "へ", { kanji: "行", reading: "い" }, "きますとき、かばんを", { kanji: "買", reading: "か" }, "いました。"]
+            right: [{ kanji: "日本", reading: "にほん" }, "へ", { target: [{ kanji: "行", reading: "い" }, "く"] }, "とき、かばんを", { kanji: "買", reading: "か" }, "いました。"]
+            rule:
+              en: ["the clause before ", { term: "とき" }, " is in the plain form, not the polite ", { term: "ます" }, "-form"]
+              uk: ["частина перед ", { term: "とき" }, " стоїть у простій формі, а не у ввічливій на ", { term: "ます" }]
+              es: ["la oración antes de ", { term: "とき" }, " va en forma simple, no en la forma cortés en ", { term: "ます" }]
+              pt: ["a oração antes de ", { term: "とき" }, " fica na forma simples, não na forma polida em ", { term: "ます" }]
+              fr: ["la proposition devant ", { term: "とき" }, " est à la forme simple, non à la forme polie en ", { term: "ます" }]
+              de: ["der Teilsatz vor ", { term: "とき" }, " steht in der einfachen Form, nicht in der höflichen ", { term: "ます" }, "-Form"]
+              it: ["la proposizione davanti a ", { term: "とき" }, " è alla forma semplice, non alla forma cortese in ", { term: "ます" }]
+              pl: ["zdanie przed ", { term: "とき" }, " jest w formie prostej, nie w grzecznościowej na ", { term: "ます" }]
+              tr: [{ term: "とき" }, " öncesindeki yan cümle yalın biçimdedir, nazik ", { term: "ます" }, " biçiminde değil"]
+              id: ["klausa sebelum ", { term: "とき" }, " berbentuk biasa, bukan bentuk sopan ", { term: "ます" }]
+              vi: ["mệnh đề trước ", { term: "とき" }, " ở thể thường, không phải thể lịch sự ", { term: "ます" }]
+          - level: "A2"
+            wrong: [{ kanji: "雨", reading: "あめ" }, "とき、うちにいます。"]
+            right: [{ kanji: "雨", reading: "あめ" }, { target: "の" }, "とき、うちにいます。"]
+            rule:
+              en: ["a noun needs ", { term: "の" }, " before ", { term: "とき" }]
+              uk: ["іменник перед ", { term: "とき" }, " вимагає ", { term: "の" }]
+              es: ["el sustantivo necesita ", { term: "の" }, " antes de ", { term: "とき" }]
+              pt: ["o substantivo precisa de ", { term: "の" }, " antes de ", { term: "とき" }]
+              fr: ["le nom demande ", { term: "の" }, " devant ", { term: "とき" }]
+              de: ["ein Nomen braucht ", { term: "の" }, " vor ", { term: "とき" }]
+              it: ["il nome richiede ", { term: "の" }, " davanti a ", { term: "とき" }]
+              pl: ["rzeczownik wymaga ", { term: "の" }, " przed ", { term: "とき" }]
+              tr: ["isim, ", { term: "とき" }, " öncesinde ", { term: "の" }, " ister"]
+              id: ["kata benda memerlukan ", { term: "の" }, " sebelum ", { term: "とき" }]
+              vi: ["danh từ cần ", { term: "の" }, " trước ", { term: "とき" }]
+          - level: "A2"
+            wrong: ["ひまだとき、えいがを", { kanji: "見", reading: "み" }, "ます。"]
+            right: ["ひま", { target: "な" }, "とき、えいがを", { kanji: "見", reading: "み" }, "ます。"]
+            rule:
+              en: ["a な-adjective takes ", { term: "な" }, " before ", { term: "とき" }, ", not ", { term: "だ" }]
+              uk: ["な-прикметник перед ", { term: "とき" }, " бере ", { term: "な" }, ", а не ", { term: "だ" }]
+              es: ["el adjetivo な lleva ", { term: "な" }, " antes de ", { term: "とき" }, ", no ", { term: "だ" }]
+              pt: ["o adjetivo な leva ", { term: "な" }, " antes de ", { term: "とき" }, ", não ", { term: "だ" }]
+              fr: ["l’adjectif en な prend ", { term: "な" }, " devant ", { term: "とき" }, ", non ", { term: "だ" }]
+              de: ["das な-Adjektiv steht vor ", { term: "とき" }, " mit ", { term: "な" }, ", nicht mit ", { term: "だ" }]
+              it: ["l’aggettivo in な prende ", { term: "な" }, " davanti a ", { term: "とき" }, ", non ", { term: "だ" }]
+              pl: ["przymiotnik な bierze przed ", { term: "とき" }, " ", { term: "な" }, ", nie ", { term: "だ" }]
+              tr: ["な sıfatı ", { term: "とき" }, " öncesinde ", { term: "だ" }, " değil ", { term: "な" }, " alır"]
+              id: ["kata sifat な memakai ", { term: "な" }, " sebelum ", { term: "とき" }, ", bukan ", { term: "だ" }]
+              vi: ["tính từ な dùng ", { term: "な" }, " trước ", { term: "とき" }, ", không dùng ", { term: "だ" }]
+          - level: "A2"
+            wrong: ["あした", { kanji: "雨", reading: "あめ" }, "がふるたら、", { kanji: "行", reading: "い" }, "きません。"]
+            right: ["あした", { kanji: "雨", reading: "あめ" }, "がふっ", { target: "たら" }, "、", { kanji: "行", reading: "い" }, "きません。"]
+            rule:
+              en: [{ term: "たら" }, " follows the plain past form, not the dictionary form"]
+              uk: [{ term: "たら" }, " стоїть після простої минулої форми, а не словникової"]
+              es: [{ term: "たら" }, " sigue a la forma simple del pasado, no a la de diccionario"]
+              pt: [{ term: "たら" }, " segue a forma simples do passado, não a do dicionário"]
+              fr: [{ term: "たら" }, " suit la forme simple du passé, non celle du dictionnaire"]
+              de: [{ term: "たら" }, " folgt auf die einfache Vergangenheitsform, nicht auf die Wörterbuchform"]
+              it: [{ term: "たら" }, " segue la forma semplice del passato, non quella del dizionario"]
+              pl: [{ term: "たら" }, " idzie za formą prostą czasu przeszłego, nie słownikową"]
+              tr: [{ term: "たら" }, ", sözlük biçimini değil yalın geçmiş biçimi izler"]
+              id: [{ term: "たら" }, " mengikuti bentuk lampau biasa, bukan bentuk kamus"]
+              vi: [{ term: "たら" }, " đi sau thể quá khứ thường, không phải thể từ điển"]

@@ -1,0 +1,1478 @@
+# yaml-language-server: $schema=../../../schema/topic.schema.json
+id: "ja.foundations.kanji"
+lang: "ja"
+kind: "foundations"
+tags: ["kanji", "on reading", "kun reading", "furigana", "okurigana"]
+concepts: ["alphabet"]
+related: ["ja.foundations.hiragana", "ja.foundations.katakana", "ja.foundations.numbers", "ja.foundations.counters", "ja.foundations.days-months-dates"]
+status: { en: "draft", uk: "draft", es: "draft", pt: "draft", fr: "draft", de: "draft", it: "draft", pl: "draft", tr: "draft", id: "draft", vi: "draft" }
+translated: { uk: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", es: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", pt: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", fr: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", de: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", it: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", pl: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", tr: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", id: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa", vi: "a29e31 5bdb5e 5aa88a 3aa2a6 461cc8 5b31a9 886268 c5e88a ca8e4f f50a4d 401ae0 7617fa" }
+title: { en: "Kanji", uk: "Кандзі", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji (Hán tự)" }
+summary:
+  lead:
+    en: "Kanji carry meaning and have on and kun readings; furigana show a reading and okurigana finish a word in kana."
+    uk: "Кандзі несуть значення й мають онне та кунне читання; фуріґана показує читання, а окуріґана завершує слово каною."
+    es: "Los kanji llevan el significado y tienen lecturas on y kun; el furigana muestra la lectura y la okurigana termina la palabra en kana."
+    pt: "Os kanji levam o significado e têm leituras on e kun; o furigana mostra a leitura e o okurigana termina a palavra em kana."
+    fr: "Les kanji portent le sens et ont des lectures on et kun ; le furigana montre la lecture, l’okurigana finit le mot en kana."
+    de: "Kanji tragen die Bedeutung und haben On- und Kun-Lesungen; Furigana zeigen die Lesung, Okurigana beenden das Wort in Kana."
+    it: "I kanji portano il significato e hanno letture on e kun; il furigana mostra la lettura, l’okurigana chiude la parola in kana."
+    pl: "Kanji niosą znaczenie i mają czytania on i kun; furigana pokazuje czytanie, a okurigana kończy wyraz kaną."
+    tr: "Kanjiler anlamı taşır, on ve kun okunuşları vardır; furigana okunuşu gösterir, okurigana sözcüğü kanayla bitirir."
+    id: "Kanji membawa makna dan punya bacaan on dan kun; furigana menunjukkan bacaan, okurigana mengakhiri kata dengan kana."
+    vi: "Kanji mang nghĩa và có âm on, âm kun; furigana cho biết cách đọc, okurigana kết thúc từ bằng kana."
+  rule:
+    en: "A kanji with okurigana takes its kun reading; a word of two kanji takes on readings:"
+    uk: "Кандзі з окуріґана читається за кунним читанням, а слово з двох кандзі — за онним:"
+    es: "Un kanji con okurigana se lee con la lectura kun; una palabra de dos kanji, con las lecturas on:"
+    pt: "Um kanji com okurigana usa a leitura kun; uma palavra de dois kanji usa as leituras on:"
+    fr: "Un kanji suivi d’okurigana se lit en lecture kun ; un mot de deux kanji se lit en lectures on :"
+    de: "Ein Kanji mit Okurigana wird kun gelesen; ein Wort aus zwei Kanji meist on:"
+    it: "Un kanji con okurigana si legge kun; una parola di due kanji si legge on:"
+    pl: "Kanji z okurigana czyta się czytaniem kun, a wyraz z dwóch kanji czytaniem on:"
+    tr: "Okurigana alan kanji kun okunuşuyla, iki kanjili sözcük on okunuşlarıyla okunur:"
+    id: "Kanji dengan okurigana dibaca kun; kata dua kanji dibaca on:"
+    vi: "Kanji kèm okurigana đọc theo âm kun; từ hai kanji đọc theo âm on:"
+  ex: { examples: [[{ target: { kanji: "食", reading: "た" } }, "べます"], { target: { kanji: "学生", reading: "がくせい" } }] }
+cheatsheet:
+  content:
+    - type: "usage"
+      columns:
+        - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+        - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+        - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+      rows:
+        - level: "A1"
+          point: { en: "Scripts", uk: "Види письма", es: "Escrituras", pt: "Escritas", fr: "Écritures", de: "Schriften", it: "Scritture", pl: "Pisma", tr: "Yazılar", id: "Aksara", vi: "Chữ viết" }
+          rule:
+            en: "Kanji give the meaning, hiragana the grammar, katakana foreign words."
+            uk: "Кандзі дають значення, хірагана — граматику, катакана — іншомовні слова."
+            es: "El kanji da el significado, el hiragana la gramática, el katakana las palabras extranjeras."
+            pt: "O kanji dá o significado, o hiragana a gramática, o katakana as palavras estrangeiras."
+            fr: "Le kanji donne le sens, l’hiragana la grammaire, le katakana les mots étrangers."
+            de: "Kanji geben die Bedeutung, Hiragana die Grammatik, Katakana Fremdwörter."
+            it: "Il kanji dà il significato, l’hiragana la grammatica, il katakana le parole straniere."
+            pl: "Kanji dają znaczenie, hiragana gramatykę, katakana wyrazy obce."
+            tr: "Kanji anlamı, hiragana dilbilgisini, katakana yabancı sözcükleri verir."
+            id: "Kanji memberi makna, hiragana tata bahasa, katakana kata asing."
+            vi: "Kanji cho nghĩa, hiragana cho ngữ pháp, katakana cho từ nước ngoài."
+          ex: [{ target: { kanji: "私", reading: "わたし" } }, "は", { target: "コーヒー" }, "を", { target: { kanji: "飲", reading: "の" } }, "みます。"]
+          tr: { en: "I drink coffee.", uk: "Я п’ю каву.", es: "Bebo café.", pt: "Eu bebo café.", fr: "Je bois du café.", de: "Ich trinke Kaffee.", it: "Bevo il caffè.", pl: "Piję kawę.", tr: "Kahve içiyorum.", id: "Saya minum kopi.", vi: "Tôi uống cà phê." }
+        - level: "A1"
+          point:
+            en: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            uk: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            es: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            pt: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            fr: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            de: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            it: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            pl: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            tr: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            id: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            vi: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+          rule:
+            en: "From Chinese; heard in words of two or more kanji."
+            uk: "Із китайської; чути в словах із двох і більше кандзі."
+            es: "Del chino; se oye en palabras de dos o más kanji."
+            pt: "Do chinês; ouve-se em palavras de dois ou mais kanji."
+            fr: "Venue du chinois ; dans les mots de deux kanji ou plus."
+            de: "Aus dem Chinesischen; in Wörtern aus zwei oder mehr Kanji."
+            it: "Dal cinese; si sente in parole di due o più kanji."
+            pl: "Z chińskiego; w wyrazach z dwóch lub więcej kanji."
+            tr: "Çinceden; iki ya da daha çok kanjili sözcüklerde."
+            id: "Dari bahasa Tionghoa; pada kata berkanji dua atau lebih."
+            vi: "Gốc Hán; trong từ có hai kanji trở lên."
+          ex: { target: { kanji: "学生", reading: "がくせい" } }
+          tr: { en: "student", uk: "студент", es: "estudiante", pt: "estudante", fr: "étudiant", de: "Student", it: "studente", pl: "student", tr: "öğrenci", id: "mahasiswa", vi: "sinh viên" }
+        - level: "A1"
+          point:
+            en: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            uk: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            es: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            pt: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            fr: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            de: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            it: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            pl: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            tr: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            id: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            vi: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+          rule:
+            en: "Native Japanese; used for a kanji alone or with okurigana."
+            uk: "Власне японське; для кандзі окремо або з окуріґана."
+            es: "Japonesa nativa; para un kanji solo o con okurigana."
+            pt: "Japonesa nativa; para um kanji sozinho ou com okurigana."
+            fr: "Japonaise d’origine ; pour un kanji seul ou avec okurigana."
+            de: "Ursprünglich japanisch; für ein Kanji allein oder mit Okurigana."
+            it: "Giapponese nativa; per un kanji da solo o con okurigana."
+            pl: "Rdzennie japońskie; dla kanji osobno lub z okurigana."
+            tr: "Öz Japonca; tek başına ya da okurigana ile kullanılan kanji için."
+            id: "Asli Jepang; untuk kanji sendiri atau dengan okurigana."
+            vi: "Gốc Nhật; cho kanji đứng riêng hoặc kèm okurigana."
+          ex: [{ target: { kanji: "食", reading: "た" } }, "べます"]
+          tr: { en: "I eat.", uk: "Я їм.", es: "Como.", pt: "Eu como.", fr: "Je mange.", de: "Ich esse.", it: "Mangio.", pl: "Jem.", tr: "Yerim.", id: "Saya makan.", vi: "Tôi ăn." }
+        - level: "A1"
+          point: { en: "furigana", uk: "furigana", es: "furigana", pt: "furigana", fr: "furigana", de: "furigana", it: "furigana", pl: "furigana", tr: "furigana", id: "furigana", vi: "furigana" }
+          rule:
+            en: "Small hiragana over a kanji give its reading."
+            uk: "Маленька хірагана над кандзі показує його читання."
+            es: "Pequeñas hiragana sobre un kanji dan su lectura."
+            pt: "Pequenos hiragana sobre um kanji dão a sua leitura."
+            fr: "De petits hiragana au-dessus d’un kanji donnent sa lecture."
+            de: "Kleine Hiragana über einem Kanji geben seine Lesung an."
+            it: "Piccoli hiragana sopra un kanji ne danno la lettura."
+            pl: "Małe hiragana nad kanji podają jego czytanie."
+            tr: "Kanjinin üstündeki küçük hiragana okunuşunu verir."
+            id: "Hiragana kecil di atas kanji menunjukkan bacaannya."
+            vi: "Hiragana nhỏ phía trên kanji cho biết cách đọc."
+          ex: { target: { kanji: "私", reading: "わたし" } }
+          tr: { en: "I, me", uk: "я", es: "yo", pt: "eu", fr: "je, moi", de: "ich", it: "io", pl: "ja", tr: "ben", id: "saya", vi: "tôi" }
+        - level: "A1"
+          point: { en: "okurigana", uk: "okurigana", es: "okurigana", pt: "okurigana", fr: "okurigana", de: "okurigana", it: "okurigana", pl: "okurigana", tr: "okurigana", id: "okurigana", vi: "okurigana" }
+          rule:
+            en: "Okurigana stay in kana and change with the form; the kanji stays."
+            uk: "Окуріґана лишаються каною й змінюються разом із формою; кандзі не змінюється."
+            es: "La okurigana queda en kana y cambia con la forma; el kanji no cambia."
+            pt: "O okurigana fica em kana e muda com a forma; o kanji não muda."
+            fr: "L’okurigana reste en kana et change avec la forme ; le kanji ne change pas."
+            de: "Okurigana bleiben Kana und ändern sich mit der Form; das Kanji bleibt."
+            it: "L’okurigana resta in kana e cambia con la forma; il kanji non cambia."
+            pl: "Okurigana zostaje kaną i zmienia się z formą; kanji się nie zmienia."
+            tr: "Okurigana kana kalır ve biçimle değişir; kanji değişmez."
+            id: "Okurigana tetap kana dan berubah menurut bentuk; kanji tetap."
+            vi: "Okurigana vẫn là kana và đổi theo dạng; kanji không đổi."
+          ex: [{ kanji: "食", reading: "た" }, { target: "べません" }]
+          tr: { en: "I do not eat.", uk: "Я не їм.", es: "No como.", pt: "Eu não como.", fr: "Je ne mange pas.", de: "Ich esse nicht.", it: "Non mangio.", pl: "Nie jem.", tr: "Yemem.", id: "Saya tidak makan.", vi: "Tôi không ăn." }
+        - level: "A1"
+          point: { en: "A1 kanji", uk: "Кандзі А1", es: "Kanji A1", pt: "Kanji A1", fr: "Kanji A1", de: "Kanji A1", it: "Kanji A1", pl: "Kanji A1", tr: "A1 kanjileri", id: "Kanji A1", vi: "Kanji A1" }
+          rule:
+            en: "Numbers, days and time, people, places, actions, qualities."
+            uk: "Числа, дні й час, люди, місця, дії, якості."
+            es: "Números, días y tiempo, personas, lugares, acciones, cualidades."
+            pt: "Números, dias e tempo, pessoas, lugares, ações, qualidades."
+            fr: "Nombres, jours et temps, personnes, lieux, actions, qualités."
+            de: "Zahlen, Tage und Zeit, Menschen, Orte, Handlungen, Eigenschaften."
+            it: "Numeri, giorni e tempo, persone, luoghi, azioni, qualità."
+            pl: "Liczby, dni i czas, ludzie, miejsca, czynności, cechy."
+            tr: "Sayılar, günler ve zaman, insanlar, yerler, eylemler, nitelikler."
+            id: "Angka, hari dan waktu, orang, tempat, tindakan, sifat."
+            vi: "Số, ngày giờ, con người, nơi chốn, hành động, tính chất."
+          ex: [{ target: { kanji: "月曜日", reading: "げつようび" } }, "に", { target: { kanji: "学校", reading: "がっこう" } }, "に", { target: { kanji: "行", reading: "い" } }, "きます。"]
+          tr: { en: "I go to school on Monday.", uk: "У понеділок я йду до школи.", es: "El lunes voy a la escuela.", pt: "Na segunda-feira vou à escola.", fr: "Le lundi, je vais à l’école.", de: "Am Montag gehe ich zur Schule.", it: "Il lunedì vado a scuola.", pl: "W poniedziałek idę do szkoły.", tr: "Pazartesi okula giderim.", id: "Pada hari Senin saya pergi ke sekolah.", vi: "Thứ Hai tôi đi học." }
+        - level: "A2"
+          point: { en: "A2 kanji", uk: "Кандзі А2", es: "Kanji A2", pt: "Kanji A2", fr: "Kanji A2", de: "Kanji A2", it: "Kanji A2", pl: "Kanji A2", tr: "A2 kanjileri", id: "Kanji A2", vi: "Kanji A2" }
+          rule:
+            en: "Each theme grows: more verbs, qualities, places and time words."
+            uk: "Кожна тема росте: більше дієслів, якостей, місць і слів часу."
+            es: "Cada tema crece: más verbos, cualidades, lugares y palabras de tiempo."
+            pt: "Cada tema cresce: mais verbos, qualidades, lugares e palavras de tempo."
+            fr: "Chaque thème s’étend : plus de verbes, qualités, lieux et mots de temps."
+            de: "Jedes Thema wächst: mehr Verben, Eigenschaften, Orte und Zeitwörter."
+            it: "Ogni tema cresce: più verbi, qualità, luoghi e parole di tempo."
+            pl: "Każdy temat rośnie: więcej czasowników, cech, miejsc i słów czasu."
+            tr: "Her konu büyür: daha çok fiil, nitelik, yer ve zaman sözcüğü."
+            id: "Setiap tema bertambah: lebih banyak kata kerja, sifat, tempat, dan kata waktu."
+            vi: "Mỗi chủ đề mở rộng: thêm động từ, tính chất, nơi chốn và từ chỉ thời gian."
+          ex: [{ target: { kanji: "毎日", reading: "まいにち" } }, { target: { kanji: "勉強", reading: "べんきょう" } }, "します。"]
+          tr: { en: "I study every day.", uk: "Я вчуся щодня.", es: "Estudio todos los días.", pt: "Eu estudo todos os dias.", fr: "J’étudie tous les jours.", de: "Ich lerne jeden Tag.", it: "Studio ogni giorno.", pl: "Uczę się codziennie.", tr: "Her gün ders çalışıyorum.", id: "Saya belajar setiap hari.", vi: "Tôi học mỗi ngày." }
+        - level: "A2"
+          point:
+            en: "Own readings"
+            uk: "Власні читання"
+            es: "Lecturas propias"
+            pt: "Leituras próprias"
+            fr: "Lectures propres"
+            de: "Eigene Lesungen"
+            it: "Letture proprie"
+            pl: "Własne czytania"
+            tr: "Özel okunuşlar"
+            id: "Bacaan khusus"
+            vi: "Cách đọc riêng"
+          rule:
+            en: "Today, tomorrow, yesterday and adult have a reading of their own."
+            uk: "Сьогодні, завтра, вчора й дорослий мають власне читання."
+            es: "Hoy, mañana, ayer y adulto tienen una lectura propia."
+            pt: "Hoje, amanhã, ontem e adulto têm uma leitura própria."
+            fr: "Aujourd’hui, demain, hier et adulte ont une lecture propre."
+            de: "Heute, morgen, gestern und Erwachsener haben eine eigene Lesung."
+            it: "Oggi, domani, ieri e adulto hanno una lettura propria."
+            pl: "Dzisiaj, jutro, wczoraj i dorosły mają własne czytanie."
+            tr: "Bugün, yarın, dün ve yetişkin kendine özgü okunuşa sahiptir."
+            id: "Hari ini, besok, kemarin, dan orang dewasa punya bacaan tersendiri."
+            vi: "Hôm nay, ngày mai, hôm qua và người lớn có cách đọc riêng."
+          ex: { target: { kanji: "昨日", reading: "きのう" } }
+          tr: { en: "yesterday", uk: "вчора", es: "ayer", pt: "ontem", fr: "hier", de: "gestern", it: "ieri", pl: "wczoraj", tr: "dün", id: "kemarin", vi: "hôm qua" }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["Always write the okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            uk: ["Завжди пишіть окуріґана: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            es: ["Escribe siempre la okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            pt: ["Escreva sempre o okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            fr: ["Écrivez toujours l’okurigana : ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            de: ["Schreibe immer das Okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            it: ["Scrivi sempre l’okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            pl: ["Zawsze pisz okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            tr: ["Okuriganayı her zaman yazın: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            id: ["Selalu tulis okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+            vi: ["Luôn viết okurigana: ", { term: [{ kanji: "食", reading: "た" }, "べます"] }, "."]
+          ex: [{ target: [{ kanji: "食", reading: "た" }, "べ"] }, "ます"]
+          tr: { en: "I eat.", uk: "Я їм.", es: "Como.", pt: "Eu como.", fr: "Je mange.", de: "Ich esse.", it: "Mangio.", pl: "Jem.", tr: "Yerim.", id: "Saya makan.", vi: "Tôi ăn." }
+        - level: "A1"
+          point: { en: "Trap", uk: "Пастка", es: "Trampa", pt: "Armadilha", fr: "Piège", de: "Falle", it: "Trappola", pl: "Pułapka", tr: "Tuzak", id: "Jebakan", vi: "Bẫy" }
+          rule:
+            en: ["After a number, ", { term: { kanji: "人", reading: "にん" } }, " reads にん: only ", { term: { kanji: "一人", reading: "ひとり" } }, " and ", { term: { kanji: "二人", reading: "ふたり" } }, " differ."]
+            uk: ["Після числа ", { term: { kanji: "人", reading: "にん" } }, " читається にん: інакше лише ", { term: { kanji: "一人", reading: "ひとり" } }, " і ", { term: { kanji: "二人", reading: "ふたり" } }, "."]
+            es: ["Tras un número, ", { term: { kanji: "人", reading: "にん" } }, " se lee にん: solo ", { term: { kanji: "一人", reading: "ひとり" } }, " y ", { term: { kanji: "二人", reading: "ふたり" } }, " difieren."]
+            pt: ["Depois de um número, ", { term: { kanji: "人", reading: "にん" } }, " lê-se にん: só ", { term: { kanji: "一人", reading: "ひとり" } }, " e ", { term: { kanji: "二人", reading: "ふたり" } }, " diferem."]
+            fr: ["Après un nombre, ", { term: { kanji: "人", reading: "にん" } }, " se lit にん : seuls ", { term: { kanji: "一人", reading: "ひとり" } }, " et ", { term: { kanji: "二人", reading: "ふたり" } }, " diffèrent."]
+            de: ["Nach einer Zahl liest man ", { term: { kanji: "人", reading: "にん" } }, " にん: nur ", { term: { kanji: "一人", reading: "ひとり" } }, " und ", { term: { kanji: "二人", reading: "ふたり" } }, " weichen ab."]
+            it: ["Dopo un numero, ", { term: { kanji: "人", reading: "にん" } }, " si legge にん: solo ", { term: { kanji: "一人", reading: "ひとり" } }, " e ", { term: { kanji: "二人", reading: "ふたり" } }, " fanno eccezione."]
+            pl: ["Po liczbie ", { term: { kanji: "人", reading: "にん" } }, " czyta się にん: tylko ", { term: { kanji: "一人", reading: "ひとり" } }, " i ", { term: { kanji: "二人", reading: "ふたり" } }, " są inne."]
+            tr: ["Sayıdan sonra ", { term: { kanji: "人", reading: "にん" } }, " にん okunur: yalnızca ", { term: { kanji: "一人", reading: "ひとり" } }, " ve ", { term: { kanji: "二人", reading: "ふたり" } }, " farklıdır."]
+            id: ["Setelah angka, ", { term: { kanji: "人", reading: "にん" } }, " dibaca にん: hanya ", { term: { kanji: "一人", reading: "ひとり" } }, " dan ", { term: { kanji: "二人", reading: "ふたり" } }, " berbeda."]
+            vi: ["Sau số đếm, ", { term: { kanji: "人", reading: "にん" } }, " đọc là にん: chỉ ", { term: { kanji: "一人", reading: "ひとり" } }, " và ", { term: { kanji: "二人", reading: "ふたり" } }, " khác."]
+          ex: { target: { kanji: "三人", reading: "さんにん" } }
+          tr: { en: "three people", uk: "троє людей", es: "tres personas", pt: "três pessoas", fr: "trois personnes", de: "drei Personen", it: "tre persone", pl: "trzy osoby", tr: "üç kişi", id: "tiga orang", vi: "ba người" }
+sections:
+  - title:
+      en: "Kanji and kana"
+      uk: "Кандзі та кана"
+      es: "Kanji y kana"
+      pt: "Kanji e kana"
+      fr: "Kanji et kana"
+      de: "Kanji und Kana"
+      it: "Kanji e kana"
+      pl: "Kanji i kana"
+      tr: "Kanji ve kana"
+      id: "Kanji dan kana"
+      vi: "Kanji và kana"
+    role: "own"
+    content:
+      - type: "list"
+        items:
+          - type: "rule"
+            level: "A1"
+            text:
+              en: "Kanji came from China; each character stands for a meaning."
+              uk: "Кандзі прийшли з Китаю; кожен знак передає значення."
+              es: "Los kanji vienen de China; cada carácter representa un significado."
+              pt: "Os kanji vieram da China; cada caractere representa um significado."
+              fr: "Les kanji viennent de Chine ; chaque caractère représente un sens."
+              de: "Kanji stammen aus China; jedes Zeichen steht für eine Bedeutung."
+              it: "I kanji vengono dalla Cina; ogni carattere rappresenta un significato."
+              pl: "Kanji pochodzą z Chin; każdy znak oznacza jakieś znaczenie."
+              tr: "Kanjiler Çin'den gelmiştir; her karakter bir anlamı gösterir."
+              id: "Kanji berasal dari Tiongkok; setiap aksara mewakili satu makna."
+              vi: "Kanji đến từ Trung Quốc; mỗi chữ biểu thị một nghĩa."
+            ex: { target: { kanji: "山", reading: "やま" } }
+            tr: { en: "mountain", uk: "гора", es: "montaña", pt: "montanha", fr: "montagne", de: "Berg", it: "montagna", pl: "góra", tr: "dağ", id: "gunung", vi: "núi" }
+      - type: "usage"
+        columns:
+          - { key: "script", label: { en: "Script", uk: "Письмо", es: "Escritura", pt: "Escrita", fr: "Écriture", de: "Schrift", it: "Scrittura", pl: "Pismo", tr: "Yazı", id: "Aksara", vi: "Chữ viết" } }
+          - { key: "use", label: { en: "Use", uk: "Вживання", es: "Uso", pt: "Uso", fr: "Emploi", de: "Gebrauch", it: "Uso", pl: "Użycie", tr: "Kullanım", id: "Penggunaan", vi: "Cách dùng" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            script:
+              en: { term: { kanji: "漢字", reading: "かんじ" } }
+              uk: { term: { kanji: "漢字", reading: "かんじ" } }
+              es: { term: { kanji: "漢字", reading: "かんじ" } }
+              pt: { term: { kanji: "漢字", reading: "かんじ" } }
+              fr: { term: { kanji: "漢字", reading: "かんじ" } }
+              de: { term: { kanji: "漢字", reading: "かんじ" } }
+              it: { term: { kanji: "漢字", reading: "かんじ" } }
+              pl: { term: { kanji: "漢字", reading: "かんじ" } }
+              tr: { term: { kanji: "漢字", reading: "かんじ" } }
+              id: { term: { kanji: "漢字", reading: "かんじ" } }
+              vi: { term: { kanji: "漢字", reading: "かんじ" } }
+            use:
+              en: "The meaning: nouns and the stems of verbs and adjectives."
+              uk: "Значення: іменники та основи дієслів і прикметників."
+              es: "El significado: sustantivos y raíces de verbos y adjetivos."
+              pt: "O significado: substantivos e radicais de verbos e adjetivos."
+              fr: "Le sens : noms et radicaux des verbes et des adjectifs."
+              de: "Die Bedeutung: Nomen sowie Stämme von Verben und Adjektiven."
+              it: "Il significato: nomi e radici di verbi e aggettivi."
+              pl: "Znaczenie: rzeczowniki oraz tematy czasowników i przymiotników."
+              tr: "Anlam: isimler ile fiil ve sıfat kökleri."
+              id: "Makna: kata benda serta pangkal kata kerja dan kata sifat."
+              vi: "Nghĩa: danh từ và gốc của động từ, tính từ."
+            ex: [{ target: { kanji: "日本", reading: "にほん" } }, "に", { kanji: "行", reading: "い" }, "きます。"]
+            tr: { en: "I go to Japan.", uk: "Я їду до Японії.", es: "Voy a Japón.", pt: "Eu vou ao Japão.", fr: "Je vais au Japon.", de: "Ich fahre nach Japan.", it: "Vado in Giappone.", pl: "Jadę do Japonii.", tr: "Japonya'ya gidiyorum.", id: "Saya pergi ke Jepang.", vi: "Tôi đi Nhật Bản." }
+          - level: "A1"
+            script:
+              en: { term: "ひらがな" }
+              uk: { term: "ひらがな" }
+              es: { term: "ひらがな" }
+              pt: { term: "ひらがな" }
+              fr: { term: "ひらがな" }
+              de: { term: "ひらがな" }
+              it: { term: "ひらがな" }
+              pl: { term: "ひらがな" }
+              tr: { term: "ひらがな" }
+              id: { term: "ひらがな" }
+              vi: { term: "ひらがな" }
+            use:
+              en: "The grammar: endings, particles and words without kanji."
+              uk: "Граматика: закінчення, частки й слова без кандзі."
+              es: "La gramática: terminaciones, partículas y palabras sin kanji."
+              pt: "A gramática: terminações, partículas e palavras sem kanji."
+              fr: "La grammaire : terminaisons, particules et mots sans kanji."
+              de: "Die Grammatik: Endungen, Partikeln und Wörter ohne Kanji."
+              it: "La grammatica: desinenze, particelle e parole senza kanji."
+              pl: "Gramatyka: końcówki, partykuły i wyrazy bez kanji."
+              tr: "Dilbilgisi: ekler, edatlar ve kanjisiz sözcükler."
+              id: "Tata bahasa: akhiran, partikel, dan kata tanpa kanji."
+              vi: "Ngữ pháp: đuôi từ, trợ từ và từ không có kanji."
+            ex: [{ kanji: "日本", reading: "にほん" }, { target: "に" }, { kanji: "行", reading: "い" }, "き", { target: "ます" }, "。"]
+            tr: { en: "I go to Japan.", uk: "Я їду до Японії.", es: "Voy a Japón.", pt: "Eu vou ao Japão.", fr: "Je vais au Japon.", de: "Ich fahre nach Japan.", it: "Vado in Giappone.", pl: "Jadę do Japonii.", tr: "Japonya'ya gidiyorum.", id: "Saya pergi ke Jepang.", vi: "Tôi đi Nhật Bản." }
+          - level: "A1"
+            script:
+              en: { term: "カタカナ" }
+              uk: { term: "カタカナ" }
+              es: { term: "カタカナ" }
+              pt: { term: "カタカナ" }
+              fr: { term: "カタカナ" }
+              de: { term: "カタカナ" }
+              it: { term: "カタカナ" }
+              pl: { term: "カタカナ" }
+              tr: { term: "カタカナ" }
+              id: { term: "カタカナ" }
+              vi: { term: "カタカナ" }
+            use:
+              en: "Foreign words and names."
+              uk: "Іншомовні слова й імена."
+              es: "Palabras y nombres extranjeros."
+              pt: "Palavras e nomes estrangeiros."
+              fr: "Mots et noms étrangers."
+              de: "Fremdwörter und fremde Namen."
+              it: "Parole e nomi stranieri."
+              pl: "Wyrazy i imiona obce."
+              tr: "Yabancı sözcükler ve adlar."
+              id: "Kata dan nama asing."
+              vi: "Từ và tên nước ngoài."
+            ex: [{ target: "コーヒー" }, "を", { kanji: "飲", reading: "の" }, "みます。"]
+            tr: { en: "I drink coffee.", uk: "Я п’ю каву.", es: "Bebo café.", pt: "Eu bebo café.", fr: "Je bois du café.", de: "Ich trinke Kaffee.", it: "Bevo il caffè.", pl: "Piję kawę.", tr: "Kahve içiyorum.", id: "Saya minum kopi.", vi: "Tôi uống cà phê." }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              en: "Japanese has no spaces; the change from kanji to kana shows where words begin."
+              uk: "У японській немає пробілів; перехід від кандзі до кани показує межі слів."
+              es: "El japonés no usa espacios; el paso de kanji a kana marca dónde empiezan las palabras."
+              pt: "O japonês não usa espaços; a passagem de kanji para kana mostra onde as palavras começam."
+              fr: "Le japonais n’emploie pas d’espaces ; le passage du kanji au kana montre où les mots commencent."
+              de: "Das Japanische schreibt ohne Leerzeichen; der Wechsel von Kanji zu Kana zeigt, wo Wörter beginnen."
+              it: "Il giapponese non usa spazi; il passaggio da kanji a kana mostra dove iniziano le parole."
+              pl: "Japoński pisze się bez spacji; przejście od kanji do kany pokazuje początek wyrazów."
+              tr: "Japoncada boşluk yoktur; kanjiden kanaya geçiş sözcüklerin nerede başladığını gösterir."
+              id: "Bahasa Jepang tidak memakai spasi; peralihan dari kanji ke kana menunjukkan awal kata."
+              vi: "Tiếng Nhật không dùng dấu cách; chỗ chuyển từ kanji sang kana cho biết từ bắt đầu ở đâu."
+            ex: [{ kanji: "私", reading: "わたし" }, "はコーヒーを", { kanji: "飲", reading: "の" }, "みます。"]
+            tr: { en: "I drink coffee.", uk: "Я п’ю каву.", es: "Bebo café.", pt: "Eu bebo café.", fr: "Je bois du café.", de: "Ich trinke Kaffee.", it: "Bevo il caffè.", pl: "Piję kawę.", tr: "Kahve içiyorum.", id: "Saya minum kopi.", vi: "Tôi uống cà phê." }
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["The kana are taught in ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " and ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              uk: ["Кани викладено в темах ", { link: "Хірагана", to: "ja.foundations.hiragana" }, " і ", { link: "Катакана", to: "ja.foundations.katakana" }, "."]
+              es: ["Las kana se explican en ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " y ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              pt: ["Os kana são explicados em ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " e ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              fr: ["Les kana sont présentés dans ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " et ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              de: ["Die Kana stehen in ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " und ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              it: ["I kana sono presentati in ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " e ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              pl: ["Kany omówiono w tematach ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " i ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              tr: ["Kanalar ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " ve ", { link: "Katakana", to: "ja.foundations.katakana" }, " konularında anlatılır."]
+              id: ["Kana dijelaskan dalam ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " dan ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+              vi: ["Kana được giải thích trong ", { link: "Hiragana", to: "ja.foundations.hiragana" }, " và ", { link: "Katakana", to: "ja.foundations.katakana" }, "."]
+  - title:
+      en: "Readings: on and kun"
+      uk: "Читання: онне й кунне"
+      es: "Lecturas: on y kun"
+      pt: "Leituras: on e kun"
+      fr: "Lectures : on et kun"
+      de: "Lesungen: On und Kun"
+      it: "Letture: on e kun"
+      pl: "Czytania: on i kun"
+      tr: "Okunuşlar: on ve kun"
+      id: "Bacaan: on dan kun"
+      vi: "Cách đọc: on và kun"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+          - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            point:
+              en: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              uk: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              es: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              pt: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              fr: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              de: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              it: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              pl: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              tr: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              id: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+              vi: { term: [{ kanji: "音", reading: "おん" }, { kanji: "読", reading: "よ" }, "み"] }
+            rule:
+              en: "From Chinese; katakana in dictionaries; mostly in words of two or more kanji."
+              uk: "Із китайської; у словниках катакана; здебільшого в словах із двох і більше кандзі."
+              es: "Del chino; katakana en los diccionarios; sobre todo en palabras de dos o más kanji."
+              pt: "Do chinês; katakana nos dicionários; sobretudo em palavras de dois ou mais kanji."
+              fr: "Venue du chinois ; en katakana dans les dictionnaires ; surtout dans les mots de deux kanji ou plus."
+              de: "Aus dem Chinesischen; im Wörterbuch in Katakana; meist in Wörtern aus zwei oder mehr Kanji."
+              it: "Dal cinese; in katakana nei dizionari; soprattutto in parole di due o più kanji."
+              pl: "Z chińskiego; w słownikach katakaną; głównie w wyrazach z dwóch lub więcej kanji."
+              tr: "Çinceden; sözlüklerde katakana; çoğunlukla iki ya da daha fazla kanjili sözcüklerde."
+              id: "Dari bahasa Tionghoa; katakana di kamus; terutama pada kata berkanji dua atau lebih."
+              vi: "Gốc Hán; viết katakana trong từ điển; chủ yếu trong từ có hai kanji trở lên."
+            ex: { kanji: "学生", reading: "がくせい" }
+            tr: { en: "student", uk: "студент", es: "estudiante", pt: "estudante", fr: "étudiant", de: "Student", it: "studente", pl: "student", tr: "öğrenci", id: "mahasiswa", vi: "sinh viên" }
+          - level: "A1"
+            point:
+              en: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              uk: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              es: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              pt: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              fr: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              de: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              it: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              pl: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              tr: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              id: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+              vi: { term: [{ kanji: "訓", reading: "くん" }, { kanji: "読", reading: "よ" }, "み"] }
+            rule:
+              en: "Native Japanese; hiragana in dictionaries; a kanji alone or with okurigana."
+              uk: "Власне японське; у словниках хірагана; кандзі окремо або з окуріґана."
+              es: "Japonesa nativa; hiragana en los diccionarios; un kanji solo o con okurigana."
+              pt: "Japonesa nativa; hiragana nos dicionários; um kanji sozinho ou com okurigana."
+              fr: "Japonaise d’origine ; en hiragana dans les dictionnaires ; un kanji seul ou avec okurigana."
+              de: "Ursprünglich japanisch; im Wörterbuch in Hiragana; ein Kanji allein oder mit Okurigana."
+              it: "Giapponese nativa; in hiragana nei dizionari; un kanji da solo o con okurigana."
+              pl: "Rdzennie japońskie; w słownikach hiraganą; pojedyncze kanji lub kanji z okurigana."
+              tr: "Öz Japonca; sözlüklerde hiragana; tek başına ya da okurigana ile bir kanji."
+              id: "Asli Jepang; hiragana di kamus; satu kanji sendiri atau dengan okurigana."
+              vi: "Gốc Nhật; viết hiragana trong từ điển; một kanji đứng riêng hoặc kèm okurigana."
+            ex: [{ kanji: "食", reading: "た" }, "べます"]
+            tr: { en: "I eat.", uk: "Я їм.", es: "Como.", pt: "Eu como.", fr: "Je mange.", de: "Ich esse.", it: "Mangio.", pl: "Jem.", tr: "Yerim.", id: "Saya makan.", vi: "Tôi ăn." }
+          - level: "A1"
+            point:
+              en: "Several readings"
+              uk: "Кілька читань"
+              es: "Varias lecturas"
+              pt: "Várias leituras"
+              fr: "Plusieurs lectures"
+              de: "Mehrere Lesungen"
+              it: "Più letture"
+              pl: "Kilka czytań"
+              tr: "Birkaç okunuş"
+              id: "Beberapa bacaan"
+              vi: "Nhiều cách đọc"
+            rule:
+              en: "One kanji has several readings; the word decides which."
+              uk: "Одне кандзі має кілька читань; яке саме — вирішує слово."
+              es: "Un kanji tiene varias lecturas; la palabra decide cuál."
+              pt: "Um kanji tem várias leituras; a palavra decide qual."
+              fr: "Un kanji a plusieurs lectures ; le mot décide laquelle."
+              de: "Ein Kanji hat mehrere Lesungen; das Wort entscheidet, welche."
+              it: "Un kanji ha più letture; la parola decide quale."
+              pl: "Jedno kanji ma kilka czytań; o wyborze decyduje wyraz."
+              tr: "Bir kanjinin birkaç okunuşu vardır; hangisinin kullanılacağını sözcük belirler."
+              id: "Satu kanji punya beberapa bacaan; kata menentukan yang mana."
+              vi: "Một kanji có nhiều cách đọc; từ quyết định cách nào."
+            ex: { examples: [{ kanji: "日", reading: "ひ" }, { kanji: "日本", reading: "にほん" }, { kanji: "日曜日", reading: "にちようび" }] }
+            tr: { en: { examples: ["day", "Japan", "Sunday"] }, uk: { examples: ["день", "Японія", "неділя"] }, es: { examples: ["día", "Japón", "domingo"] }, pt: { examples: ["dia", "Japão", "domingo"] }, fr: { examples: ["jour", "Japon", "dimanche"] }, de: { examples: ["Tag", "Japan", "Sonntag"] }, it: { examples: ["giorno", "Giappone", "domenica"] }, pl: { examples: ["dzień", "Japonia", "niedziela"] }, tr: { examples: ["gün", "Japonya", "pazar"] }, id: { examples: ["hari", "Jepang", "hari Minggu"] }, vi: { examples: ["ngày", "Nhật Bản", "Chủ nhật"] } }
+          - level: "A1"
+            point: { en: "Numbers", uk: "Числа", es: "Números", pt: "Números", fr: "Nombres", de: "Zahlen", it: "Numeri", pl: "Liczby", tr: "Sayılar", id: "Angka", vi: "Số" }
+            rule:
+              en: "A number before a counter takes the on reading."
+              uk: "Число перед лічильним словом читається за онним читанням."
+              es: "Un número ante un contador se lee con la lectura on."
+              pt: "Um número antes de um contador usa a leitura on."
+              fr: "Un nombre devant un compteur se lit en lecture on."
+              de: "Eine Zahl vor einem Zählwort wird on gelesen."
+              it: "Un numero davanti a un contatore si legge on."
+              pl: "Liczba przed licznikiem czyta się czytaniem on."
+              tr: "Sayaçtan önceki sayı on okunuşuyla okunur."
+              id: "Angka sebelum kata bantu bilangan dibaca on."
+              vi: "Số đứng trước lượng từ đọc theo âm on."
+            ex: { examples: [{ kanji: "三人", reading: "さんにん" }, { kanji: "五分", reading: "ごふん" }] }
+            tr: { en: { examples: ["three people", "five minutes"] }, uk: { examples: ["троє людей", "п’ять хвилин"] }, es: { examples: ["tres personas", "cinco minutos"] }, pt: { examples: ["três pessoas", "cinco minutos"] }, fr: { examples: ["trois personnes", "cinq minutes"] }, de: { examples: ["drei Personen", "fünf Minuten"] }, it: { examples: ["tre persone", "cinque minuti"] }, pl: { examples: ["trzy osoby", "pięć minut"] }, tr: { examples: ["üç kişi", "beş dakika"] }, id: { examples: ["tiga orang", "lima menit"] }, vi: { examples: ["ba người", "năm phút"] } }
+          - level: "A1"
+            point:
+              en: "Own readings"
+              uk: "Власні читання"
+              es: "Lecturas propias"
+              pt: "Leituras próprias"
+              fr: "Lectures propres"
+              de: "Eigene Lesungen"
+              it: "Letture proprie"
+              pl: "Własne czytania"
+              tr: "Özel okunuşlar"
+              id: "Bacaan khusus"
+              vi: "Cách đọc riêng"
+            rule:
+              en: "Some common words have a reading of their own."
+              uk: "Деякі поширені слова мають власне читання."
+              es: "Algunas palabras comunes tienen una lectura propia."
+              pt: "Algumas palavras comuns têm uma leitura própria."
+              fr: "Certains mots courants ont une lecture propre."
+              de: "Manche häufigen Wörter haben eine eigene Lesung."
+              it: "Alcune parole comuni hanno una lettura propria."
+              pl: "Niektóre częste wyrazy mają własne czytanie."
+              tr: "Bazı yaygın sözcüklerin kendine özgü bir okunuşu vardır."
+              id: "Beberapa kata umum punya bacaan tersendiri."
+              vi: "Một số từ thông dụng có cách đọc riêng."
+            ex: { examples: [{ kanji: "今日", reading: "きょう" }, { kanji: "一人", reading: "ひとり" }] }
+            tr: { en: { examples: ["today", "one person"] }, uk: { examples: ["сьогодні", "одна людина"] }, es: { examples: ["hoy", "una persona"] }, pt: { examples: ["hoje", "uma pessoa"] }, fr: { examples: ["aujourd’hui", "une personne"] }, de: { examples: ["heute", "eine Person"] }, it: { examples: ["oggi", "una persona"] }, pl: { examples: ["dzisiaj", "jedna osoba"] }, tr: { examples: ["bugün", "bir kişi"] }, id: { examples: ["hari ini", "satu orang"] }, vi: { examples: ["hôm nay", "một người"] } }
+          - level: "A2"
+            point:
+              en: "Own readings"
+              uk: "Власні читання"
+              es: "Lecturas propias"
+              pt: "Leituras próprias"
+              fr: "Lectures propres"
+              de: "Eigene Lesungen"
+              it: "Letture proprie"
+              pl: "Własne czytania"
+              tr: "Özel okunuşlar"
+              id: "Bacaan khusus"
+              vi: "Cách đọc riêng"
+            rule:
+              en: "Learn these words whole, not kanji by kanji."
+              uk: "Вивчайте ці слова цілими, а не по одному кандзі."
+              es: "Aprende estas palabras enteras, no kanji por kanji."
+              pt: "Aprenda estas palavras inteiras, não kanji por kanji."
+              fr: "Apprenez ces mots en entier, non kanji par kanji."
+              de: "Lerne diese Wörter als Ganzes, nicht Kanji für Kanji."
+              it: "Impara queste parole intere, non kanji per kanji."
+              pl: "Ucz się tych wyrazów w całości, nie kanji po kanji."
+              tr: "Bu sözcükleri kanji kanji değil, bütün olarak öğrenin."
+              id: "Pelajari kata-kata ini secara utuh, bukan kanji demi kanji."
+              vi: "Hãy học nguyên cả từ, không học từng kanji."
+            ex: { examples: [{ kanji: "明日", reading: "あした" }, { kanji: "昨日", reading: "きのう" }, { kanji: "大人", reading: "おとな" }] }
+            tr: { en: { examples: ["tomorrow", "yesterday", "adult"] }, uk: { examples: ["завтра", "вчора", "дорослий"] }, es: { examples: ["mañana", "ayer", "adulto"] }, pt: { examples: ["amanhã", "ontem", "adulto"] }, fr: { examples: ["demain", "hier", "adulte"] }, de: { examples: ["morgen", "gestern", "Erwachsener"] }, it: { examples: ["domani", "ieri", "adulto"] }, pl: { examples: ["jutro", "wczoraj", "dorosły"] }, tr: { examples: ["yarın", "dün", "yetişkin"] }, id: { examples: ["besok", "kemarin", "orang dewasa"] }, vi: { examples: ["ngày mai", "hôm qua", "người lớn"] } }
+  - title:
+      en: "Furigana and okurigana"
+      uk: "Фуріґана й окуріґана"
+      es: "Furigana y okurigana"
+      pt: "Furigana e okurigana"
+      fr: "Furigana et okurigana"
+      de: "Furigana und Okurigana"
+      it: "Furigana e okurigana"
+      pl: "Furigana i okurigana"
+      tr: "Furigana ve okurigana"
+      id: "Furigana dan okurigana"
+      vi: "Furigana và okurigana"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "point", label: { en: "Point", uk: "Пункт", es: "Punto", pt: "Ponto", fr: "Point", de: "Aspekt", it: "Punto", pl: "Zagadnienie", tr: "Konu", id: "Poin", vi: "Điểm ngữ pháp" } }
+          - { key: "rule", label: { en: "Rule", uk: "Правило", es: "Regla", pt: "Regra", fr: "Règle", de: "Regel", it: "Regola", pl: "Zasada", tr: "Kural", id: "Aturan", vi: "Quy tắc" } }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            point: { en: "furigana", uk: "furigana", es: "furigana", pt: "furigana", fr: "furigana", de: "furigana", it: "furigana", pl: "furigana", tr: "furigana", id: "furigana", vi: "furigana" }
+            rule:
+              en: "Small hiragana beside or above a kanji give its reading."
+              uk: "Маленька хірагана поряд із кандзі або над ним показує його читання."
+              es: "Pequeñas hiragana junto a un kanji o sobre él dan su lectura."
+              pt: "Pequenos hiragana ao lado de um kanji ou sobre ele dão a sua leitura."
+              fr: "De petits hiragana à côté d’un kanji ou au-dessus donnent sa lecture."
+              de: "Kleine Hiragana neben oder über einem Kanji geben seine Lesung an."
+              it: "Piccoli hiragana accanto o sopra un kanji ne danno la lettura."
+              pl: "Małe hiragana obok kanji lub nad nim podają jego czytanie."
+              tr: "Kanjinin yanındaki ya da üstündeki küçük hiragana okunuşunu verir."
+              id: "Hiragana kecil di samping atau di atas kanji menunjukkan bacaannya."
+              vi: "Hiragana nhỏ bên cạnh hoặc phía trên kanji cho biết cách đọc."
+            ex: { target: { kanji: "私", reading: "わたし" } }
+            tr: { en: "I, me", uk: "я", es: "yo", pt: "eu", fr: "je, moi", de: "ich", it: "io", pl: "ja", tr: "ben", id: "saya", vi: "tôi" }
+          - level: "A1"
+            point: { en: "okurigana", uk: "okurigana", es: "okurigana", pt: "okurigana", fr: "okurigana", de: "okurigana", it: "okurigana", pl: "okurigana", tr: "okurigana", id: "okurigana", vi: "okurigana" }
+            rule:
+              en: "Okurigana are the kana after a kanji: the kanji gives the stem, the kana the ending."
+              uk: "Окуріґана — кана після кандзі: кандзі дає основу, кана — закінчення."
+              es: "Las okurigana son la kana tras un kanji: el kanji da la raíz y la kana la terminación."
+              pt: "Okurigana são os kana depois de um kanji: o kanji dá o radical e o kana a terminação."
+              fr: "Les okurigana sont les kana après un kanji : le kanji donne le radical, le kana la terminaison."
+              de: "Okurigana sind die Kana nach einem Kanji: Das Kanji gibt den Stamm, das Kana die Endung."
+              it: "Le okurigana sono i kana dopo un kanji: il kanji dà la radice, il kana la desinenza."
+              pl: "Okurigana to kana po kanji: kanji daje temat, kana końcówkę."
+              tr: "Okurigana, kanjiden sonra gelen kanadır: kanji kökü, kana eki verir."
+              id: "Okurigana adalah kana setelah kanji: kanji memberi pangkal, kana memberi akhiran."
+              vi: "Okurigana là kana đứng sau kanji: kanji cho gốc từ, kana cho đuôi."
+            ex: [{ kanji: "食", reading: "た" }, { target: "べる" }]
+            tr: { en: "to eat", uk: "їсти", es: "comer", pt: "comer", fr: "manger", de: "essen", it: "mangiare", pl: "jeść", tr: "yemek", id: "makan", vi: "ăn" }
+          - level: "A1"
+            point:
+              en: "Verb endings"
+              uk: "Закінчення дієслів"
+              es: "Terminaciones verbales"
+              pt: "Terminações verbais"
+              fr: "Terminaisons verbales"
+              de: "Verbendungen"
+              it: "Desinenze verbali"
+              pl: "Końcówki czasowników"
+              tr: "Fiil ekleri"
+              id: "Akhiran kata kerja"
+              vi: "Đuôi động từ"
+            rule:
+              en: "The ending changes with the form; the kanji never changes."
+              uk: "Закінчення змінюється з формою; кандзі не змінюється ніколи."
+              es: "La terminación cambia con la forma; el kanji nunca cambia."
+              pt: "A terminação muda com a forma; o kanji nunca muda."
+              fr: "La terminaison change avec la forme ; le kanji ne change jamais."
+              de: "Die Endung ändert sich mit der Form; das Kanji nie."
+              it: "La desinenza cambia con la forma; il kanji non cambia mai."
+              pl: "Końcówka zmienia się z formą; kanji nigdy się nie zmienia."
+              tr: "Ek biçime göre değişir; kanji asla değişmez."
+              id: "Akhiran berubah menurut bentuk; kanji tidak pernah berubah."
+              vi: "Đuôi thay đổi theo dạng; kanji không bao giờ đổi."
+            ex: { examples: [[{ kanji: "食", reading: "た" }, { target: "べます" }], [{ kanji: "食", reading: "た" }, { target: "べません" }], [{ kanji: "食", reading: "た" }, { target: "べましょう" }]] }
+            tr: { en: { examples: ["I eat.", "I do not eat.", "Let’s eat."] }, uk: { examples: ["Я їм.", "Я не їм.", "Давайте їсти."] }, es: { examples: ["Como.", "No como.", "Comamos."] }, pt: { examples: ["Eu como.", "Eu não como.", "Vamos comer."] }, fr: { examples: ["Je mange.", "Je ne mange pas.", "Mangeons."] }, de: { examples: ["Ich esse.", "Ich esse nicht.", "Lasst uns essen."] }, it: { examples: ["Mangio.", "Non mangio.", "Mangiamo."] }, pl: { examples: ["Jem.", "Nie jem.", "Jedzmy."] }, tr: { examples: ["Yerim.", "Yemem.", "Yiyelim."] }, id: { examples: ["Saya makan.", "Saya tidak makan.", "Ayo makan."] }, vi: { examples: ["Tôi ăn.", "Tôi không ăn.", "Chúng ta ăn nhé."] } }
+          - level: "A1"
+            point:
+              en: "い-adjectives"
+              uk: "い-прикметники"
+              es: "Los adjetivos い"
+              pt: "Os adjetivos い"
+              fr: "Les adjectifs en い"
+              de: "Die い-Adjektive"
+              it: "Gli aggettivi in い"
+              pl: "Przymiotniki い"
+              tr: "い sıfatları"
+              id: "Kata sifat い"
+              vi: "Tính từ い"
+            rule:
+              en: "A い-adjective writes its ending in kana: only the kana change."
+              uk: "У い-прикметнику закінчення пишеться каною: змінюється лише вона."
+              es: "Un adjetivo い escribe su terminación en kana: solo cambian las kana."
+              pt: "Um adjetivo い escreve a terminação em kana: só os kana mudam."
+              fr: "Un adjectif en い écrit sa terminaison en kana : seuls les kana changent."
+              de: "Ein い-Adjektiv schreibt seine Endung in Kana: nur die Kana ändern sich."
+              it: "Un aggettivo in い scrive la desinenza in kana: cambiano solo i kana."
+              pl: "Przymiotnik い zapisuje końcówkę kaną: zmienia się tylko kana."
+              tr: "Bir い sıfatı ekini kanayla yazar: yalnızca kana değişir."
+              id: "Kata sifat い menulis akhirannya dengan kana: hanya kana yang berubah."
+              vi: "Tính từ い viết đuôi bằng kana: chỉ kana thay đổi."
+            ex: { examples: [[{ kanji: "大", reading: "おお" }, { target: "きい" }, "です"], [{ kanji: "大", reading: "おお" }, { target: "きくない" }, "です"]] }
+            tr: { en: { examples: ["It is big.", "It is not big."] }, uk: { examples: ["Це велике.", "Це не велике."] }, es: { examples: ["Es grande.", "No es grande."] }, pt: { examples: ["É grande.", "Não é grande."] }, fr: { examples: ["C’est grand.", "Ce n’est pas grand."] }, de: { examples: ["Es ist groß.", "Es ist nicht groß."] }, it: { examples: ["È grande.", "Non è grande."] }, pl: { examples: ["To jest duże.", "To nie jest duże."] }, tr: { examples: ["Büyük.", "Büyük değil."] }, id: { examples: ["Besar.", "Tidak besar."] }, vi: { examples: ["Nó to.", "Nó không to."] } }
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["The forms of verbs and adjectives are taught in ", { link: "The ます-Form", to: ja.verbs.masu-form }, " and ", { link: "い-Adjectives", to: ja.adjectives.i-adjectives }, "."]
+              uk: ["Форми дієслів і прикметників викладено в темах ", { link: "ます-форма", to: ja.verbs.masu-form }, " та ", { link: "い-прикметники", to: "ja.adjectives.i-adjectives" }, "."]
+              es: ["Las formas de verbos y adjetivos se explican en ", { link: "La forma ます", to: "ja.verbs.masu-form" }, " y ", { link: "Los adjetivos い", to: "ja.adjectives.i-adjectives" }, "."]
+              pt: ["As formas de verbos e adjetivos são explicadas em ", { link: "A forma ます", to: "ja.verbs.masu-form" }, " e ", { link: "Os adjetivos い", to: "ja.adjectives.i-adjectives" }, "."]
+              fr: ["Les formes des verbes et des adjectifs sont présentées dans ", { link: "La forme en ます", to: "ja.verbs.masu-form" }, " et ", { link: "Les adjectifs en い", to: "ja.adjectives.i-adjectives" }, "."]
+              de: ["Die Formen von Verben und Adjektiven stehen in ", { link: "Die ます-Form", to: "ja.verbs.masu-form" }, " und ", { link: "Die い-Adjektive", to: "ja.adjectives.i-adjectives" }, "."]
+              it: ["Le forme di verbi e aggettivi sono presentate in ", { link: "La forma in ます", to: "ja.verbs.masu-form" }, " e ", { link: "Gli aggettivi in い", to: "ja.adjectives.i-adjectives" }, "."]
+              pl: ["Formy czasowników i przymiotników omówiono w tematach ", { link: "Forma ます", to: "ja.verbs.masu-form" }, " i ", { link: "Przymiotniki い", to: "ja.adjectives.i-adjectives" }, "."]
+              tr: ["Fiil ve sıfat biçimleri ", { link: "ます biçimi", to: "ja.verbs.masu-form" }, " ve ", { link: "い sıfatları", to: "ja.adjectives.i-adjectives" }, " konularında anlatılır."]
+              id: ["Bentuk kata kerja dan kata sifat dijelaskan dalam ", { link: "Bentuk ます", to: "ja.verbs.masu-form" }, " dan ", { link: "Kata sifat い", to: "ja.adjectives.i-adjectives" }, "."]
+              vi: ["Các dạng của động từ và tính từ được giải thích trong ", { link: "Thể ます", to: "ja.verbs.masu-form" }, " và ", { link: "Tính từ い", to: "ja.adjectives.i-adjectives" }, "."]
+  - title:
+      en: "Numbers and money"
+      uk: "Числа й гроші"
+      es: "Números y dinero"
+      pt: "Números e dinheiro"
+      fr: "Nombres et argent"
+      de: "Zahlen und Geld"
+      it: "Numeri e denaro"
+      pl: "Liczby i pieniądze"
+      tr: "Sayılar ve para"
+      id: "Angka dan uang"
+      vi: "Số và tiền"
+    role: "own"
+    content:
+      - type: "list"
+        items:
+          - type: "note"
+            level: "A1"
+            text:
+              en: "Each row gives the on readings in katakana, then after the slash the kun readings in hiragana; a dot sets the okurigana apart."
+              uk: "У кожному рядку спершу онні читання катаканою, а після скісної риски кунні читання хіраганою; крапка відокремлює окуріґана."
+              es: "Cada fila da las lecturas on en katakana y, tras la barra, las lecturas kun en hiragana; un punto separa la okurigana."
+              pt: "Cada linha traz as leituras on em katakana e, depois da barra, as leituras kun em hiragana; um ponto separa o okurigana."
+              fr: "Chaque ligne donne les lectures on en katakana, puis après la barre les lectures kun en hiragana ; un point sépare l’okurigana."
+              de: "Jede Zeile nennt die On-Lesungen in Katakana, nach dem Schrägstrich die Kun-Lesungen in Hiragana; ein Punkt trennt das Okurigana ab."
+              it: "Ogni riga dà le letture on in katakana e, dopo la barra, le letture kun in hiragana; un punto separa l’okurigana."
+              pl: "Każdy wiersz podaje czytania on katakaną, a po ukośniku czytania kun hiraganą; kropka oddziela okurigana."
+              tr: "Her satır on okunuşlarını katakanayla, eğik çizgiden sonra kun okunuşlarını hiraganayla verir; nokta okuriganayı ayırır."
+              id: "Setiap baris memuat bacaan on dalam katakana, lalu setelah garis miring bacaan kun dalam hiragana; titik memisahkan okurigana."
+              vi: "Mỗi hàng nêu âm on bằng katakana, sau dấu gạch chéo là âm kun bằng hiragana; dấu chấm tách okurigana."
+          - type: "note"
+            level: "A1"
+            text:
+              en: ["Numbers and counters have topics of their own: see ", { link: "Numbers", to: "ja.foundations.numbers" }, " and ", { link: "Counters", to: "ja.foundations.counters" }, "."]
+              uk: ["Числам і лічильним словам присвячено окремі теми: див. ", { link: "Числа", to: "ja.foundations.numbers" }, " та ", { link: "Лічильні слова", to: "ja.foundations.counters" }, "."]
+              es: ["Los números y los contadores tienen sus propios temas: véase ", { link: "Los números", to: "ja.foundations.numbers" }, " y ", { link: "Los contadores", to: "ja.foundations.counters" }, "."]
+              pt: ["Os números e os contadores têm tópicos próprios: veja ", { link: "Números", to: ja.foundations.numbers }, " e ", { link: "Contadores", to: ja.foundations.counters }, "."]
+              fr: ["Les nombres et les compteurs ont leurs propres sujets : voir ", { link: "Nombres", to: ja.foundations.numbers }, " et ", { link: "Les compteurs", to: "ja.foundations.counters" }, "."]
+              de: ["Zahlen und Zählwörter haben eigene Themen: siehe ", { link: "Zahlen", to: "ja.foundations.numbers" }, " und ", { link: "Zählwörter", to: "ja.foundations.counters" }, "."]
+              it: ["I numeri e i contatori hanno argomenti propri: vedi ", { link: "Numeri", to: ja.foundations.numbers }, " e ", { link: "I contatori", to: "ja.foundations.counters" }, "."]
+              pl: ["Liczby i liczniki mają własne tematy: zob. ", { link: "Liczebniki", to: ja.foundations.numbers }, " i ", { link: "Liczniki", to: "ja.foundations.counters" }, "."]
+              tr: ["Sayıların ve sayaçların kendi konuları vardır: bkz. ", { link: "Sayılar", to: "ja.foundations.numbers" }, " ve ", { link: "Sayaçlar", to: "ja.foundations.counters" }, "."]
+              id: ["Angka dan kata bantu bilangan punya topik sendiri: lihat ", { link: "Angka", to: "ja.foundations.numbers" }, " dan ", { link: "Kata bantu bilangan", to: "ja.foundations.counters" }, "."]
+              vi: ["Số đếm và lượng từ có chủ đề riêng: xem ", { link: "Số", to: ja.foundations.numbers }, " và ", { link: "Lượng từ", to: "ja.foundations.counters" }, "."]
+      - type: "usage"
+        columns:
+          - { key: "kanji", label: { en: "Kanji", uk: "Кандзі", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+          - key: "readings"
+            label: { en: "Readings", uk: "Читання", es: "Lecturas", pt: "Leituras", fr: "Lectures", de: "Lesungen", it: "Letture", pl: "Czytania", tr: "Okunuşlar", id: "Bacaan", vi: "Cách đọc" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            kanji: { target: [{ kanji: "一", reading: "いち" }, { kanji: "二", reading: "に" }, { kanji: "三", reading: "さん" }, { kanji: "四", reading: "よん" }, { kanji: "五", reading: "ご" }] }
+            readings: "イチ・ニ・サン・シ・ヨン・ゴ"
+            ex: { kanji: "五人", reading: "ごにん" }
+            tr: { en: "five people", uk: "п’ятеро людей", es: "cinco personas", pt: "cinco pessoas", fr: "cinq personnes", de: "fünf Personen", it: "cinque persone", pl: "pięć osób", tr: "beş kişi", id: "lima orang", vi: "năm người" }
+          - level: "A1"
+            kanji: { target: [{ kanji: "六", reading: "ろく" }, { kanji: "七", reading: "なな" }, { kanji: "八", reading: "はち" }, { kanji: "九", reading: "きゅう" }, { kanji: "十", reading: "じゅう" }] }
+            readings: "ロク・シチ・ナナ・ハチ・キュウ・ク・ジュウ"
+            ex: { kanji: "十人", reading: "じゅうにん" }
+            tr: { en: "ten people", uk: "десять людей", es: "diez personas", pt: "dez pessoas", fr: "dix personnes", de: "zehn Personen", it: "dieci persone", pl: "dziesięć osób", tr: "on kişi", id: "sepuluh orang", vi: "mười người" }
+          - level: "A1"
+            kanji: { target: [{ kanji: "百", reading: "ひゃく" }, { kanji: "千", reading: "せん" }, { kanji: "万", reading: "まん" }] }
+            readings: "ヒャク・セン・マン"
+            ex: [{ kanji: "三百", reading: "さんびゃく" }, { kanji: "円", reading: "えん" }]
+            tr: { en: "300 yen", uk: "300 єн", es: "300 yenes", pt: "300 ienes", fr: "300 yens", de: "300 Yen", it: "300 yen", pl: "300 jenów", tr: "300 yen", id: "300 yen", vi: "300 yên" }
+          - level: "A1"
+            kanji: { target: { kanji: "円", reading: "えん" } }
+            readings: "エン"
+            ex: [{ kanji: "千", reading: "せん" }, { kanji: "円", reading: "えん" }]
+            tr: { en: "1,000 yen", uk: "1000 єн", es: "1000 yenes", pt: "1000 ienes", fr: "1 000 yens", de: "1000 Yen", it: "1000 yen", pl: "1000 jenów", tr: "1000 yen", id: "1000 yen", vi: "1000 yên" }
+  - title:
+      en: "Days and time"
+      uk: "Дні й час"
+      es: "Días y tiempo"
+      pt: "Dias e tempo"
+      fr: "Jours et temps"
+      de: "Tage und Zeit"
+      it: "Giorni e tempo"
+      pl: "Dni i czas"
+      tr: "Günler ve zaman"
+      id: "Hari dan waktu"
+      vi: "Ngày và thời gian"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "kanji", label: { en: "Kanji", uk: "Кандзі", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+          - key: "readings"
+            label: { en: "Readings", uk: "Читання", es: "Lecturas", pt: "Leituras", fr: "Lectures", de: "Lesungen", it: "Letture", pl: "Czytania", tr: "Okunuşlar", id: "Bacaan", vi: "Cách đọc" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            kanji: { target: { kanji: "日", reading: "にち" } }
+            readings: "ニチ・ジツ／ひ・か"
+            ex: { kanji: "日曜日", reading: "にちようび" }
+            tr: { en: "Sunday", uk: "неділя", es: "domingo", pt: "domingo", fr: "dimanche", de: "Sonntag", it: "domenica", pl: "niedziela", tr: "pazar", id: "hari Minggu", vi: "Chủ nhật" }
+          - level: "A1"
+            kanji: { target: { kanji: "月", reading: "げつ" } }
+            readings: "ゲツ・ガツ／つき"
+            ex: { kanji: "月曜日", reading: "げつようび" }
+            tr: { en: "Monday", uk: "понеділок", es: "lunes", pt: "segunda-feira", fr: "lundi", de: "Montag", it: "lunedì", pl: "poniedziałek", tr: "pazartesi", id: "hari Senin", vi: "thứ Hai" }
+          - level: "A1"
+            kanji: { target: { kanji: "火", reading: "か" } }
+            readings: "カ／ひ"
+            ex: { kanji: "火曜日", reading: "かようび" }
+            tr: { en: "Tuesday", uk: "вівторок", es: "martes", pt: "terça-feira", fr: "mardi", de: "Dienstag", it: "martedì", pl: "wtorek", tr: "salı", id: "hari Selasa", vi: "thứ Ba" }
+          - level: "A1"
+            kanji: { target: { kanji: "水", reading: "すい" } }
+            readings: "スイ／みず"
+            ex: { kanji: "水曜日", reading: "すいようび" }
+            tr: { en: "Wednesday", uk: "середа", es: "miércoles", pt: "quarta-feira", fr: "mercredi", de: "Mittwoch", it: "mercoledì", pl: "środa", tr: "çarşamba", id: "hari Rabu", vi: "thứ Tư" }
+          - level: "A1"
+            kanji: { target: { kanji: "木", reading: "もく" } }
+            readings: "モク・ボク／き"
+            ex: { kanji: "木曜日", reading: "もくようび" }
+            tr: { en: "Thursday", uk: "четвер", es: "jueves", pt: "quinta-feira", fr: "jeudi", de: "Donnerstag", it: "giovedì", pl: "czwartek", tr: "perşembe", id: "hari Kamis", vi: "thứ Năm" }
+          - level: "A1"
+            kanji: { target: { kanji: "金", reading: "きん" } }
+            readings: "キン・コン／かね"
+            ex: { kanji: "金曜日", reading: "きんようび" }
+            tr: { en: "Friday", uk: "п’ятниця", es: "viernes", pt: "sexta-feira", fr: "vendredi", de: "Freitag", it: "venerdì", pl: "piątek", tr: "cuma", id: "hari Jumat", vi: "thứ Sáu" }
+          - level: "A1"
+            kanji: { target: { kanji: "土", reading: "ど" } }
+            readings: "ド・ト／つち"
+            ex: { kanji: "土曜日", reading: "どようび" }
+            tr: { en: "Saturday", uk: "субота", es: "sábado", pt: "sábado", fr: "samedi", de: "Samstag", it: "sabato", pl: "sobota", tr: "cumartesi", id: "hari Sabtu", vi: "thứ Bảy" }
+          - level: "A1"
+            kanji: { target: { kanji: "曜", reading: "よう" } }
+            readings: "ヨウ"
+            ex: { kanji: "何曜日", reading: "なんようび" }
+            tr: { en: "which day of the week", uk: "який день тижня", es: "qué día de la semana", pt: "que dia da semana", fr: "quel jour de la semaine", de: "welcher Wochentag", it: "che giorno della settimana", pl: "jaki dzień tygodnia", tr: "haftanın hangi günü", id: "hari apa", vi: "thứ mấy" }
+          - level: "A1"
+            kanji: { target: { kanji: "年", reading: "ねん" } }
+            readings: "ネン／とし"
+            ex: { kanji: "来年", reading: "らいねん" }
+            tr: { en: "next year", uk: "наступного року", es: "el año que viene", pt: "no ano que vem", fr: "l’année prochaine", de: "nächstes Jahr", it: "l’anno prossimo", pl: "w przyszłym roku", tr: "gelecek yıl", id: "tahun depan", vi: "năm sau" }
+          - level: "A1"
+            kanji: { target: { kanji: "時", reading: "じ" } }
+            readings: "ジ／とき"
+            ex: { kanji: "三時", reading: "さんじ" }
+            tr: { en: "three o’clock", uk: "третя година", es: "las tres", pt: "três horas", fr: "trois heures", de: "drei Uhr", it: "le tre", pl: "godzina trzecia", tr: "saat üç", id: "jam tiga", vi: "ba giờ" }
+          - level: "A1"
+            kanji: { target: { kanji: "分", reading: "ふん" } }
+            readings: "フン・ブン／わ.ける"
+            ex: { kanji: "五分", reading: "ごふん" }
+            tr: { en: "five minutes", uk: "п’ять хвилин", es: "cinco minutos", pt: "cinco minutos", fr: "cinq minutes", de: "fünf Minuten", it: "cinque minuti", pl: "pięć minut", tr: "beş dakika", id: "lima menit", vi: "năm phút" }
+          - level: "A1"
+            kanji: { target: { kanji: "半", reading: "はん" } }
+            readings: "ハン／なか.ば"
+            ex: { kanji: "三時半", reading: "さんじはん" }
+            tr: { en: "half past three", uk: "пів на четверту", es: "las tres y media", pt: "três e meia", fr: "trois heures et demie", de: "halb vier", it: "le tre e mezza", pl: "wpół do czwartej", tr: "üç buçuk", id: "setengah empat", vi: "ba giờ rưỡi" }
+          - level: "A1"
+            kanji: { target: { kanji: "今", reading: "いま" } }
+            readings: "コン・キン／いま"
+            ex: { kanji: "今", reading: "いま" }
+            tr: { en: "now", uk: "зараз", es: "ahora", pt: "agora", fr: "maintenant", de: "jetzt", it: "adesso", pl: "teraz", tr: "şimdi", id: "sekarang", vi: "bây giờ" }
+          - level: "A1"
+            kanji: { target: { kanji: "午", reading: "ご" } }
+            readings: "ゴ"
+            ex: { kanji: "午前", reading: "ごぜん" }
+            tr: { en: "a.m., morning", uk: "до полудня", es: "de la mañana", pt: "da manhã", fr: "du matin", de: "vormittags", it: "di mattina", pl: "przed południem", tr: "öğleden önce", id: "pagi hari", vi: "buổi sáng" }
+          - level: "A1"
+            kanji: { target: { kanji: "後", reading: "ご" } }
+            readings: "ゴ・コウ／あと・うし.ろ・のち"
+            ex: { kanji: "午後", reading: "ごご" }
+            tr: { en: "p.m., afternoon", uk: "по обіді", es: "de la tarde", pt: "da tarde", fr: "de l’après-midi", de: "nachmittags", it: "del pomeriggio", pl: "po południu", tr: "öğleden sonra", id: "siang hingga sore", vi: "buổi chiều" }
+          - level: "A1"
+            kanji: { target: { kanji: "前", reading: "まえ" } }
+            readings: "ゼン／まえ"
+            ex: { kanji: "前", reading: "まえ" }
+            tr: { en: "front, before", uk: "перед, раніше", es: "delante, antes", pt: "frente, antes", fr: "devant, avant", de: "vor, vorher", it: "davanti, prima", pl: "przed, przód", tr: "ön, önce", id: "depan, sebelum", vi: "trước" }
+          - level: "A1"
+            kanji: { target: { kanji: "何", reading: "なに" } }
+            readings: "カ／なに・なん"
+            ex: { kanji: "何時", reading: "なんじ" }
+            tr: { en: "what time", uk: "котра година", es: "qué hora", pt: "que horas", fr: "quelle heure", de: "wie viel Uhr", it: "che ora", pl: "która godzina", tr: "saat kaç", id: "jam berapa", vi: "mấy giờ" }
+          - level: "A2"
+            kanji: { target: { kanji: "毎", reading: "まい" } }
+            readings: "マイ"
+            ex: { kanji: "毎日", reading: "まいにち" }
+            tr: { en: "every day", uk: "щодня", es: "todos los días", pt: "todos os dias", fr: "tous les jours", de: "jeden Tag", it: "ogni giorno", pl: "codziennie", tr: "her gün", id: "setiap hari", vi: "mỗi ngày" }
+          - level: "A2"
+            kanji: { target: { kanji: "週", reading: "しゅう" } }
+            readings: "シュウ"
+            ex: { kanji: "来週", reading: "らいしゅう" }
+            tr: { en: "next week", uk: "наступного тижня", es: "la semana que viene", pt: "na semana que vem", fr: "la semaine prochaine", de: "nächste Woche", it: "la settimana prossima", pl: "w przyszłym tygodniu", tr: "gelecek hafta", id: "minggu depan", vi: "tuần sau" }
+          - level: "A2"
+            kanji: { target: { kanji: "朝", reading: "あさ" } }
+            readings: "チョウ／あさ"
+            ex: { kanji: "朝", reading: "あさ" }
+            tr: { en: "morning", uk: "ранок", es: "mañana", pt: "manhã", fr: "matin", de: "Morgen", it: "mattina", pl: "poranek", tr: "sabah", id: "pagi", vi: "buổi sáng" }
+          - level: "A2"
+            kanji: { target: { kanji: "昼", reading: "ひる" } }
+            readings: "チュウ／ひる"
+            ex: { kanji: "昼", reading: "ひる" }
+            tr: { en: "noon, daytime", uk: "полудень, день", es: "mediodía, día", pt: "meio-dia, dia", fr: "midi, jour", de: "Mittag, Tag", it: "mezzogiorno, giorno", pl: "południe, dzień", tr: "öğle, gündüz", id: "siang", vi: "buổi trưa, ban ngày" }
+          - level: "A2"
+            kanji: { target: { kanji: "夜", reading: "よる" } }
+            readings: "ヤ／よる"
+            ex: { kanji: "夜", reading: "よる" }
+            tr: { en: "night", uk: "ніч, вечір", es: "noche", pt: "noite", fr: "nuit, soir", de: "Nacht, Abend", it: "notte, sera", pl: "noc, wieczór", tr: "gece, akşam", id: "malam", vi: "đêm, buổi tối" }
+          - level: "A2"
+            kanji: { target: { kanji: "間", reading: "かん" } }
+            readings: "カン・ケン／あいだ・ま"
+            ex: { kanji: "時間", reading: "じかん" }
+            tr: { en: "time, hours", uk: "час, години", es: "tiempo, horas", pt: "tempo, horas", fr: "temps, heures", de: "Zeit, Stunden", it: "tempo, ore", pl: "czas, godziny", tr: "zaman, saat", id: "waktu, jam", vi: "thời gian, giờ" }
+  - title:
+      en: "People and family"
+      uk: "Люди й родина"
+      es: "Personas y familia"
+      pt: "Pessoas e família"
+      fr: "Personnes et famille"
+      de: "Menschen und Familie"
+      it: "Persone e famiglia"
+      pl: "Ludzie i rodzina"
+      tr: "İnsanlar ve aile"
+      id: "Orang dan keluarga"
+      vi: "Con người và gia đình"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "kanji", label: { en: "Kanji", uk: "Кандзі", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+          - key: "readings"
+            label: { en: "Readings", uk: "Читання", es: "Lecturas", pt: "Leituras", fr: "Lectures", de: "Lesungen", it: "Letture", pl: "Czytania", tr: "Okunuşlar", id: "Bacaan", vi: "Cách đọc" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            kanji: { target: { kanji: "人", reading: "じん" } }
+            readings: "ジン・ニン／ひと"
+            ex: { kanji: "日本人", reading: "にほんじん" }
+            tr: { en: "Japanese person", uk: "японець, японка", es: "persona japonesa", pt: "pessoa japonesa", fr: "Japonais, Japonaise", de: "Japaner, Japanerin", it: "giapponese", pl: "Japończyk, Japonka", tr: "Japon", id: "orang Jepang", vi: "người Nhật" }
+          - level: "A1"
+            kanji: { target: { kanji: "私", reading: "わたし" } }
+            readings: "シ／わたし"
+            ex: { kanji: "私", reading: "わたし" }
+            tr: { en: "I, me", uk: "я", es: "yo", pt: "eu", fr: "je, moi", de: "ich", it: "io", pl: "ja", tr: "ben", id: "saya", vi: "tôi" }
+          - level: "A1"
+            kanji: { target: { kanji: "学", reading: "がく" } }
+            readings: "ガク／まな.ぶ"
+            ex: { kanji: "学生", reading: "がくせい" }
+            tr: { en: "student", uk: "студент", es: "estudiante", pt: "estudante", fr: "étudiant", de: "Student", it: "studente", pl: "student", tr: "öğrenci", id: "mahasiswa", vi: "sinh viên" }
+          - level: "A1"
+            kanji: { target: { kanji: "生", reading: "せい" } }
+            readings: "セイ・ショウ／い.きる・う.まれる・なま"
+            ex: { kanji: "先生", reading: "せんせい" }
+            tr: { en: "teacher", uk: "учитель", es: "profesor", pt: "professor", fr: "professeur", de: "Lehrer", it: "insegnante", pl: "nauczyciel", tr: "öğretmen", id: "guru", vi: "giáo viên" }
+          - level: "A1"
+            kanji: { target: { kanji: "先", reading: "せん" } }
+            readings: "セン／さき"
+            ex: { kanji: "先月", reading: "せんげつ" }
+            tr: { en: "last month", uk: "минулого місяця", es: "el mes pasado", pt: "no mês passado", fr: "le mois dernier", de: "letzten Monat", it: "il mese scorso", pl: "w zeszłym miesiącu", tr: "geçen ay", id: "bulan lalu", vi: "tháng trước" }
+          - level: "A1"
+            kanji: { target: { kanji: "男", reading: "おとこ" } }
+            readings: "ダン・ナン／おとこ"
+            ex: [{ kanji: "男", reading: "おとこ" }, "の", { kanji: "人", reading: "ひと" }]
+            tr: { en: "man", uk: "чоловік", es: "hombre", pt: "homem", fr: "homme", de: "Mann", it: "uomo", pl: "mężczyzna", tr: "erkek", id: "laki-laki", vi: "đàn ông" }
+          - level: "A1"
+            kanji: { target: { kanji: "女", reading: "おんな" } }
+            readings: "ジョ／おんな"
+            ex: [{ kanji: "女", reading: "おんな" }, "の", { kanji: "人", reading: "ひと" }]
+            tr: { en: "woman", uk: "жінка", es: "mujer", pt: "mulher", fr: "femme", de: "Frau", it: "donna", pl: "kobieta", tr: "kadın", id: "perempuan", vi: "phụ nữ" }
+          - level: "A1"
+            kanji: { target: { kanji: "子", reading: "こ" } }
+            readings: "シ／こ"
+            ex: [{ kanji: "子", reading: "こ" }, "ども"]
+            tr: { en: "child", uk: "дитина", es: "niño", pt: "criança", fr: "enfant", de: "Kind", it: "bambino", pl: "dziecko", tr: "çocuk", id: "anak", vi: "đứa trẻ" }
+          - level: "A1"
+            kanji: { target: { kanji: "友", reading: "とも" } }
+            readings: "ユウ／とも"
+            ex: [{ kanji: "友", reading: "とも" }, "だち"]
+            tr: { en: "friend", uk: "друг", es: "amigo", pt: "amigo", fr: "ami", de: "Freund", it: "amico", pl: "przyjaciel", tr: "arkadaş", id: "teman", vi: "bạn" }
+          - level: "A1"
+            kanji: { target: { kanji: "父", reading: "ちち" } }
+            readings: "フ／ちち"
+            ex: ["お", { kanji: "父", reading: "とう" }, "さん"]
+            tr: { en: "father", uk: "тато", es: "padre", pt: "pai", fr: "père", de: "Vater", it: "padre", pl: "ojciec", tr: "baba", id: "ayah", vi: "bố" }
+          - level: "A1"
+            kanji: { target: { kanji: "母", reading: "はは" } }
+            readings: "ボ／はは"
+            ex: ["お", { kanji: "母", reading: "かあ" }, "さん"]
+            tr: { en: "mother", uk: "мама", es: "madre", pt: "mãe", fr: "mère", de: "Mutter", it: "madre", pl: "matka", tr: "anne", id: "ibu", vi: "mẹ" }
+          - level: "A1"
+            kanji: { target: { kanji: "名", reading: "な" } }
+            readings: "メイ／な"
+            ex: { kanji: "名前", reading: "なまえ" }
+            tr: { en: "name", uk: "ім’я", es: "nombre", pt: "nome", fr: "nom", de: "Name", it: "nome", pl: "imię", tr: "ad", id: "nama", vi: "tên" }
+          - level: "A2"
+            kanji: { target: { kanji: "兄", reading: "あに" } }
+            readings: "ケイ・キョウ／あに"
+            ex: ["お", { kanji: "兄", reading: "にい" }, "さん"]
+            tr: { en: "older brother", uk: "старший брат", es: "hermano mayor", pt: "irmão mais velho", fr: "grand frère", de: "großer Bruder", it: "fratello maggiore", pl: "starszy brat", tr: "ağabey", id: "kakak laki-laki", vi: "anh trai" }
+          - level: "A2"
+            kanji: { target: { kanji: "姉", reading: "あね" } }
+            readings: "シ／あね"
+            ex: ["お", { kanji: "姉", reading: "ねえ" }, "さん"]
+            tr: { en: "older sister", uk: "старша сестра", es: "hermana mayor", pt: "irmã mais velha", fr: "grande sœur", de: "große Schwester", it: "sorella maggiore", pl: "starsza siostra", tr: "abla", id: "kakak perempuan", vi: "chị gái" }
+          - level: "A2"
+            kanji: { target: { kanji: "弟", reading: "おとうと" } }
+            readings: "ダイ・テイ／おとうと"
+            ex: { kanji: "弟", reading: "おとうと" }
+            tr: { en: "younger brother", uk: "молодший брат", es: "hermano menor", pt: "irmão mais novo", fr: "petit frère", de: "kleiner Bruder", it: "fratello minore", pl: "młodszy brat", tr: "erkek kardeş", id: "adik laki-laki", vi: "em trai" }
+          - level: "A2"
+            kanji: { target: { kanji: "妹", reading: "いもうと" } }
+            readings: "マイ／いもうと"
+            ex: { kanji: "妹", reading: "いもうと" }
+            tr: { en: "younger sister", uk: "молодша сестра", es: "hermana menor", pt: "irmã mais nova", fr: "petite sœur", de: "kleine Schwester", it: "sorella minore", pl: "młodsza siostra", tr: "kız kardeş", id: "adik perempuan", vi: "em gái" }
+  - title:
+      en: "Places, nature and things"
+      uk: "Місця, природа й речі"
+      es: "Lugares, naturaleza y cosas"
+      pt: "Lugares, natureza e coisas"
+      fr: "Lieux, nature et choses"
+      de: "Orte, Natur und Dinge"
+      it: "Luoghi, natura e cose"
+      pl: "Miejsca, przyroda i rzeczy"
+      tr: "Yerler, doğa ve nesneler"
+      id: "Tempat, alam, dan benda"
+      vi: "Nơi chốn, thiên nhiên và đồ vật"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "kanji", label: { en: "Kanji", uk: "Кандзі", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+          - key: "readings"
+            label: { en: "Readings", uk: "Читання", es: "Lecturas", pt: "Leituras", fr: "Lectures", de: "Lesungen", it: "Letture", pl: "Czytania", tr: "Okunuşlar", id: "Bacaan", vi: "Cách đọc" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            kanji: { target: { kanji: "本", reading: "ほん" } }
+            readings: "ホン／もと"
+            ex: { kanji: "本", reading: "ほん" }
+            tr: { en: "book", uk: "книга", es: "libro", pt: "livro", fr: "livre", de: "Buch", it: "libro", pl: "książka", tr: "kitap", id: "buku", vi: "sách" }
+          - level: "A1"
+            kanji: { target: { kanji: "国", reading: "くに" } }
+            readings: "コク／くに"
+            ex: { kanji: "国", reading: "くに" }
+            tr: { en: "country", uk: "країна", es: "país", pt: "país", fr: "pays", de: "Land", it: "paese", pl: "kraj", tr: "ülke", id: "negara", vi: "đất nước" }
+          - level: "A1"
+            kanji: { target: { kanji: "中", reading: "なか" } }
+            readings: "チュウ・ジュウ／なか"
+            ex: { kanji: "中国", reading: "ちゅうごく" }
+            tr: { en: "China", uk: "Китай", es: "China", pt: "China", fr: "Chine", de: "China", it: "Cina", pl: "Chiny", tr: "Çin", id: "Tiongkok", vi: "Trung Quốc" }
+          - level: "A1"
+            kanji: { target: { kanji: "上", reading: "うえ" } }
+            readings: "ジョウ／うえ・あ.がる"
+            ex: { kanji: "上", reading: "うえ" }
+            tr: { en: "above, on", uk: "угорі, на", es: "arriba, encima", pt: "em cima, sobre", fr: "dessus, sur", de: "oben, auf", it: "sopra, su", pl: "góra, na", tr: "üst, üzeri", id: "atas", vi: "trên" }
+          - level: "A1"
+            kanji: { target: { kanji: "下", reading: "した" } }
+            readings: "カ・ゲ／した・さ.がる"
+            ex: { kanji: "下", reading: "した" }
+            tr: { en: "below, under", uk: "унизу, під", es: "abajo, debajo", pt: "embaixo, sob", fr: "dessous, sous", de: "unten, unter", it: "sotto", pl: "dół, pod", tr: "alt, altı", id: "bawah", vi: "dưới" }
+          - level: "A1"
+            kanji: { target: { kanji: "右", reading: "みぎ" } }
+            readings: "ウ・ユウ／みぎ"
+            ex: { kanji: "右", reading: "みぎ" }
+            tr: { en: "right", uk: "праворуч", es: "derecha", pt: "direita", fr: "droite", de: "rechts", it: "destra", pl: "prawo", tr: "sağ", id: "kanan", vi: "phải" }
+          - level: "A1"
+            kanji: { target: { kanji: "左", reading: "ひだり" } }
+            readings: "サ／ひだり"
+            ex: { kanji: "左", reading: "ひだり" }
+            tr: { en: "left", uk: "ліворуч", es: "izquierda", pt: "esquerda", fr: "gauche", de: "links", it: "sinistra", pl: "lewo", tr: "sol", id: "kiri", vi: "trái" }
+          - level: "A1"
+            kanji: { target: [{ kanji: "東", reading: "ひがし" }, { kanji: "西", reading: "にし" }, { kanji: "南", reading: "みなみ" }, { kanji: "北", reading: "きた" }] }
+            readings: "トウ・サイ・ナン・ホク"
+            ex: [{ kanji: "東", reading: "ひがし" }, "と", { kanji: "西", reading: "にし" }]
+            tr: { en: "east and west", uk: "схід і захід", es: "este y oeste", pt: "leste e oeste", fr: "l’est et l’ouest", de: "Ost und West", it: "est e ovest", pl: "wschód i zachód", tr: "doğu ve batı", id: "timur dan barat", vi: "đông và tây" }
+          - level: "A1"
+            kanji: { target: { kanji: "山", reading: "やま" } }
+            readings: "サン／やま"
+            ex: { kanji: "山", reading: "やま" }
+            tr: { en: "mountain", uk: "гора", es: "montaña", pt: "montanha", fr: "montagne", de: "Berg", it: "montagna", pl: "góra", tr: "dağ", id: "gunung", vi: "núi" }
+          - level: "A1"
+            kanji: { target: { kanji: "川", reading: "かわ" } }
+            readings: "セン／かわ"
+            ex: { kanji: "川", reading: "かわ" }
+            tr: { en: "river", uk: "річка", es: "río", pt: "rio", fr: "rivière", de: "Fluss", it: "fiume", pl: "rzeka", tr: "nehir", id: "sungai", vi: "sông" }
+          - level: "A1"
+            kanji: { target: { kanji: "雨", reading: "あめ" } }
+            readings: "ウ／あめ"
+            ex: { kanji: "雨", reading: "あめ" }
+            tr: { en: "rain", uk: "дощ", es: "lluvia", pt: "chuva", fr: "pluie", de: "Regen", it: "pioggia", pl: "deszcz", tr: "yağmur", id: "hujan", vi: "mưa" }
+          - level: "A1"
+            kanji: { target: { kanji: "花", reading: "はな" } }
+            readings: "カ／はな"
+            ex: { kanji: "花", reading: "はな" }
+            tr: { en: "flower", uk: "квітка", es: "flor", pt: "flor", fr: "fleur", de: "Blume", it: "fiore", pl: "kwiat", tr: "çiçek", id: "bunga", vi: "hoa" }
+          - level: "A1"
+            kanji: { target: { kanji: "校", reading: "こう" } }
+            readings: "コウ"
+            ex: { kanji: "学校", reading: "がっこう" }
+            tr: { en: "school", uk: "школа", es: "escuela", pt: "escola", fr: "école", de: "Schule", it: "scuola", pl: "szkoła", tr: "okul", id: "sekolah", vi: "trường học" }
+          - level: "A1"
+            kanji: { target: { kanji: "電", reading: "でん" } }
+            readings: "デン"
+            ex: { kanji: "電車", reading: "でんしゃ" }
+            tr: { en: "train", uk: "електричка", es: "tren", pt: "trem", fr: "train", de: "Zug", it: "treno", pl: "pociąg", tr: "tren", id: "kereta api", vi: "tàu điện" }
+          - level: "A1"
+            kanji: { target: { kanji: "車", reading: "くるま" } }
+            readings: "シャ／くるま"
+            ex: { kanji: "車", reading: "くるま" }
+            tr: { en: "car", uk: "автомобіль", es: "coche", pt: "carro", fr: "voiture", de: "Auto", it: "auto", pl: "samochód", tr: "araba", id: "mobil", vi: "xe hơi" }
+          - level: "A2"
+            kanji: { target: { kanji: "駅", reading: "えき" } }
+            readings: "エキ"
+            ex: { kanji: "駅", reading: "えき" }
+            tr: { en: "station", uk: "станція", es: "estación", pt: "estação", fr: "gare", de: "Bahnhof", it: "stazione", pl: "stacja", tr: "istasyon", id: "stasiun", vi: "nhà ga" }
+          - level: "A2"
+            kanji: { target: { kanji: "店", reading: "みせ" } }
+            readings: "テン／みせ"
+            ex: { kanji: "店", reading: "みせ" }
+            tr: { en: "shop", uk: "магазин", es: "tienda", pt: "loja", fr: "magasin", de: "Geschäft", it: "negozio", pl: "sklep", tr: "dükkân", id: "toko", vi: "cửa hàng" }
+          - level: "A2"
+            kanji: { target: { kanji: "家", reading: "いえ" } }
+            readings: "カ・ケ／いえ・うち"
+            ex: { kanji: "家", reading: "いえ" }
+            tr: { en: "house", uk: "будинок", es: "casa", pt: "casa", fr: "maison", de: "Haus", it: "casa", pl: "dom", tr: "ev", id: "rumah", vi: "nhà" }
+          - level: "A2"
+            kanji: { target: { kanji: "道", reading: "みち" } }
+            readings: "ドウ／みち"
+            ex: { kanji: "道", reading: "みち" }
+            tr: { en: "road, way", uk: "дорога", es: "camino", pt: "caminho", fr: "chemin", de: "Weg", it: "strada", pl: "droga", tr: "yol", id: "jalan", vi: "con đường" }
+          - level: "A2"
+            kanji: { target: { kanji: "町", reading: "まち" } }
+            readings: "チョウ／まち"
+            ex: { kanji: "町", reading: "まち" }
+            tr: { en: "town", uk: "містечко", es: "pueblo", pt: "cidade", fr: "ville", de: "Stadt", it: "città", pl: "miasto", tr: "kasaba", id: "kota", vi: "thị trấn" }
+          - level: "A2"
+            kanji: { target: { kanji: "外", reading: "がい" } }
+            readings: "ガイ・ゲ／そと"
+            ex: { kanji: "外国", reading: "がいこく" }
+            tr: { en: "foreign country", uk: "іноземна країна", es: "país extranjero", pt: "país estrangeiro", fr: "pays étranger", de: "Ausland", it: "paese straniero", pl: "obcy kraj", tr: "yabancı ülke", id: "luar negeri", vi: "nước ngoài" }
+          - level: "A2"
+            kanji: { target: { kanji: "空", reading: "そら" } }
+            readings: "クウ／そら・あ.く"
+            ex: { kanji: "空", reading: "そら" }
+            tr: { en: "sky", uk: "небо", es: "cielo", pt: "céu", fr: "ciel", de: "Himmel", it: "cielo", pl: "niebo", tr: "gökyüzü", id: "langit", vi: "bầu trời" }
+          - level: "A2"
+            kanji: { target: { kanji: "海", reading: "うみ" } }
+            readings: "カイ／うみ"
+            ex: { kanji: "海", reading: "うみ" }
+            tr: { en: "sea", uk: "море", es: "mar", pt: "mar", fr: "mer", de: "Meer", it: "mare", pl: "morze", tr: "deniz", id: "laut", vi: "biển" }
+          - level: "A2"
+            kanji: { target: { kanji: "犬", reading: "いぬ" } }
+            readings: "ケン／いぬ"
+            ex: { kanji: "犬", reading: "いぬ" }
+            tr: { en: "dog", uk: "собака", es: "perro", pt: "cachorro", fr: "chien", de: "Hund", it: "cane", pl: "pies", tr: "köpek", id: "anjing", vi: "con chó" }
+          - level: "A2"
+            kanji: { target: { kanji: "魚", reading: "さかな" } }
+            readings: "ギョ／さかな"
+            ex: { kanji: "魚", reading: "さかな" }
+            tr: { en: "fish", uk: "риба", es: "pescado", pt: "peixe", fr: "poisson", de: "Fisch", it: "pesce", pl: "ryba", tr: "balık", id: "ikan", vi: "cá" }
+          - level: "A2"
+            kanji: { target: { kanji: "肉", reading: "にく" } }
+            readings: "ニク"
+            ex: { kanji: "肉", reading: "にく" }
+            tr: { en: "meat", uk: "м’ясо", es: "carne", pt: "carne", fr: "viande", de: "Fleisch", it: "carne", pl: "mięso", tr: "et", id: "daging", vi: "thịt" }
+          - level: "A2"
+            kanji: { target: { kanji: "茶", reading: "ちゃ" } }
+            readings: "チャ・サ"
+            ex: ["お", { kanji: "茶", reading: "おちゃ" }]
+            tr: { en: "tea", uk: "чай", es: "té", pt: "chá", fr: "thé", de: "Tee", it: "tè", pl: "herbata", tr: "çay", id: "teh", vi: "trà" }
+  - title: { en: "Actions", uk: "Дії", es: "Acciones", pt: "Ações", fr: "Actions", de: "Handlungen", it: "Azioni", pl: "Czynności", tr: "Eylemler", id: "Tindakan", vi: "Hành động" }
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "kanji", label: { en: "Kanji", uk: "Кандзі", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+          - key: "readings"
+            label: { en: "Readings", uk: "Читання", es: "Lecturas", pt: "Leituras", fr: "Lectures", de: "Lesungen", it: "Letture", pl: "Czytania", tr: "Okunuşlar", id: "Bacaan", vi: "Cách đọc" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            kanji: { target: { kanji: "行", reading: "い" } }
+            readings: "コウ／い.く"
+            ex: [{ kanji: "行", reading: "い" }, "きます"]
+            tr: { en: "I go.", uk: "Я йду.", es: "Voy.", pt: "Eu vou.", fr: "Je vais.", de: "Ich gehe.", it: "Vado.", pl: "Idę.", tr: "Gidiyorum.", id: "Saya pergi.", vi: "Tôi đi." }
+          - level: "A1"
+            kanji: { target: { kanji: "来", reading: "き" } }
+            readings: "ライ／く.る"
+            ex: [{ kanji: "来", reading: "き" }, "ます"]
+            tr: { en: "I come.", uk: "Я приходжу.", es: "Vengo.", pt: "Eu venho.", fr: "Je viens.", de: "Ich komme.", it: "Vengo.", pl: "Przychodzę.", tr: "Geliyorum.", id: "Saya datang.", vi: "Tôi đến." }
+          - level: "A1"
+            kanji: { target: { kanji: "見", reading: "み" } }
+            readings: "ケン／み.る"
+            ex: [{ kanji: "見", reading: "み" }, "ます"]
+            tr: { en: "I look.", uk: "Я дивлюся.", es: "Miro.", pt: "Eu olho.", fr: "Je regarde.", de: "Ich schaue.", it: "Guardo.", pl: "Patrzę.", tr: "Bakıyorum.", id: "Saya melihat.", vi: "Tôi nhìn." }
+          - level: "A1"
+            kanji: { target: { kanji: "食", reading: "た" } }
+            readings: "ショク／た.べる"
+            ex: [{ kanji: "食", reading: "た" }, "べます"]
+            tr: { en: "I eat.", uk: "Я їм.", es: "Como.", pt: "Eu como.", fr: "Je mange.", de: "Ich esse.", it: "Mangio.", pl: "Jem.", tr: "Yerim.", id: "Saya makan.", vi: "Tôi ăn." }
+          - level: "A1"
+            kanji: { target: { kanji: "飲", reading: "の" } }
+            readings: "イン／の.む"
+            ex: [{ kanji: "飲", reading: "の" }, "みます"]
+            tr: { en: "I drink.", uk: "Я п’ю.", es: "Bebo.", pt: "Eu bebo.", fr: "Je bois.", de: "Ich trinke.", it: "Bevo.", pl: "Piję.", tr: "İçiyorum.", id: "Saya minum.", vi: "Tôi uống." }
+          - level: "A1"
+            kanji: { target: { kanji: "買", reading: "か" } }
+            readings: "バイ／か.う"
+            ex: [{ kanji: "買", reading: "か" }, "います"]
+            tr: { en: "I buy.", uk: "Я купую.", es: "Compro.", pt: "Eu compro.", fr: "J’achète.", de: "Ich kaufe.", it: "Compro.", pl: "Kupuję.", tr: "Satın alıyorum.", id: "Saya membeli.", vi: "Tôi mua." }
+          - level: "A1"
+            kanji: { target: { kanji: "聞", reading: "き" } }
+            readings: "ブン・モン／き.く"
+            ex: [{ kanji: "聞", reading: "き" }, "きます"]
+            tr: { en: "I listen.", uk: "Я слухаю.", es: "Escucho.", pt: "Eu escuto.", fr: "J’écoute.", de: "Ich höre zu.", it: "Ascolto.", pl: "Słucham.", tr: "Dinliyorum.", id: "Saya mendengarkan.", vi: "Tôi nghe." }
+          - level: "A1"
+            kanji: { target: { kanji: "読", reading: "よ" } }
+            readings: "ドク／よ.む"
+            ex: [{ kanji: "読", reading: "よ" }, "みます"]
+            tr: { en: "I read.", uk: "Я читаю.", es: "Leo.", pt: "Eu leio.", fr: "Je lis.", de: "Ich lese.", it: "Leggo.", pl: "Czytam.", tr: "Okuyorum.", id: "Saya membaca.", vi: "Tôi đọc." }
+          - level: "A1"
+            kanji: { target: { kanji: "書", reading: "か" } }
+            readings: "ショ／か.く"
+            ex: [{ kanji: "書", reading: "か" }, "きます"]
+            tr: { en: "I write.", uk: "Я пишу.", es: "Escribo.", pt: "Eu escrevo.", fr: "J’écris.", de: "Ich schreibe.", it: "Scrivo.", pl: "Piszę.", tr: "Yazıyorum.", id: "Saya menulis.", vi: "Tôi viết." }
+          - level: "A1"
+            kanji: { target: { kanji: "話", reading: "はな" } }
+            readings: "ワ／はな.す"
+            ex: [{ kanji: "話", reading: "はな" }, "します"]
+            tr: { en: "I speak.", uk: "Я розмовляю.", es: "Hablo.", pt: "Eu falo.", fr: "Je parle.", de: "Ich spreche.", it: "Parlo.", pl: "Mówię.", tr: "Konuşuyorum.", id: "Saya berbicara.", vi: "Tôi nói." }
+          - level: "A1"
+            kanji: { target: { kanji: "出", reading: "で" } }
+            readings: "シュツ／で.る・だ.す"
+            ex: [{ kanji: "出", reading: "で" }, "ます"]
+            tr: { en: "I go out.", uk: "Я виходжу.", es: "Salgo.", pt: "Eu saio.", fr: "Je sors.", de: "Ich gehe hinaus.", it: "Esco.", pl: "Wychodzę.", tr: "Çıkıyorum.", id: "Saya keluar.", vi: "Tôi đi ra." }
+          - level: "A1"
+            kanji: { target: { kanji: "入", reading: "はい" } }
+            readings: "ニュウ／はい.る"
+            ex: [{ kanji: "入", reading: "はい" }, "ります"]
+            tr: { en: "I go in.", uk: "Я заходжу.", es: "Entro.", pt: "Eu entro.", fr: "J’entre.", de: "Ich gehe hinein.", it: "Entro.", pl: "Wchodzę.", tr: "Giriyorum.", id: "Saya masuk.", vi: "Tôi đi vào." }
+          - level: "A1"
+            kanji: { target: { kanji: "休", reading: "やす" } }
+            readings: "キュウ／やす.む"
+            ex: [{ kanji: "休", reading: "やす" }, "みます"]
+            tr: { en: "I rest.", uk: "Я відпочиваю.", es: "Descanso.", pt: "Eu descanso.", fr: "Je me repose.", de: "Ich ruhe mich aus.", it: "Mi riposo.", pl: "Odpoczywam.", tr: "Dinleniyorum.", id: "Saya beristirahat.", vi: "Tôi nghỉ." }
+          - level: "A1"
+            kanji: { target: { kanji: "会", reading: "あ" } }
+            readings: "カイ／あ.う"
+            ex: [{ kanji: "会", reading: "あ" }, "います"]
+            tr: { en: "I meet someone.", uk: "Я зустрічаюся з кимось.", es: "Me encuentro con alguien.", pt: "Eu encontro alguém.", fr: "Je rencontre quelqu’un.", de: "Ich treffe jemanden.", it: "Incontro qualcuno.", pl: "Spotykam kogoś.", tr: "Biriyle buluşuyorum.", id: "Saya bertemu seseorang.", vi: "Tôi gặp ai đó." }
+          - level: "A2"
+            kanji: { target: { kanji: "使", reading: "つか" } }
+            readings: "シ／つか.う"
+            ex: [{ kanji: "使", reading: "つか" }, "います"]
+            tr: { en: "I use.", uk: "Я користуюся.", es: "Uso.", pt: "Eu uso.", fr: "J’utilise.", de: "Ich benutze.", it: "Uso.", pl: "Używam.", tr: "Kullanıyorum.", id: "Saya memakai.", vi: "Tôi dùng." }
+          - level: "A2"
+            kanji: { target: { kanji: "持", reading: "も" } }
+            readings: "ジ／も.つ"
+            ex: [{ kanji: "持", reading: "も" }, "ちます"]
+            tr: { en: "I hold.", uk: "Я тримаю.", es: "Llevo en la mano.", pt: "Eu seguro.", fr: "Je tiens.", de: "Ich halte.", it: "Tengo in mano.", pl: "Trzymam.", tr: "Tutuyorum.", id: "Saya memegang.", vi: "Tôi cầm." }
+          - level: "A2"
+            kanji: { target: { kanji: "作", reading: "つく" } }
+            readings: "サク・サ／つく.る"
+            ex: [{ kanji: "作", reading: "つく" }, "ります"]
+            tr: { en: "I make.", uk: "Я роблю.", es: "Hago.", pt: "Eu faço.", fr: "Je fais.", de: "Ich mache.", it: "Faccio.", pl: "Robię.", tr: "Yapıyorum.", id: "Saya membuat.", vi: "Tôi làm." }
+          - level: "A2"
+            kanji: { target: { kanji: "思", reading: "おも" } }
+            readings: "シ／おも.う"
+            ex: [{ kanji: "思", reading: "おも" }, "います"]
+            tr: { en: "I think.", uk: "Я думаю.", es: "Pienso.", pt: "Eu penso.", fr: "Je pense.", de: "Ich denke.", it: "Penso.", pl: "Myślę.", tr: "Düşünüyorum.", id: "Saya berpikir.", vi: "Tôi nghĩ." }
+          - level: "A2"
+            kanji: { target: { kanji: "住", reading: "す" } }
+            readings: "ジュウ／す.む"
+            ex: [{ kanji: "住", reading: "す" }, "んでいます"]
+            tr: { en: "I live there.", uk: "Я там живу.", es: "Vivo allí.", pt: "Eu moro lá.", fr: "J’y habite.", de: "Ich wohne dort.", it: "Abito lì.", pl: "Mieszkam tam.", tr: "Orada oturuyorum.", id: "Saya tinggal di sana.", vi: "Tôi sống ở đó." }
+          - level: "A2"
+            kanji: { target: { kanji: "歩", reading: "ある" } }
+            readings: "ホ・ブ／ある.く"
+            ex: [{ kanji: "歩", reading: "ある" }, "きます"]
+            tr: { en: "I walk.", uk: "Я йду пішки.", es: "Camino.", pt: "Eu ando.", fr: "Je marche.", de: "Ich gehe zu Fuß.", it: "Cammino.", pl: "Chodzę.", tr: "Yürüyorum.", id: "Saya berjalan.", vi: "Tôi đi bộ." }
+          - level: "A2"
+            kanji: { target: { kanji: "教", reading: "おし" } }
+            readings: "キョウ／おし.える"
+            ex: [{ kanji: "教", reading: "おし" }, "えます"]
+            tr: { en: "I teach.", uk: "Я навчаю.", es: "Enseño.", pt: "Eu ensino.", fr: "J’enseigne.", de: "Ich unterrichte.", it: "Insegno.", pl: "Uczę.", tr: "Öğretiyorum.", id: "Saya mengajar.", vi: "Tôi dạy." }
+          - level: "A2"
+            kanji: { target: [{ kanji: "勉", reading: "べん" }, { kanji: "強", reading: "きょう" }] }
+            readings: "ベン・キョウ／つよ.い"
+            ex: [{ kanji: "勉強", reading: "べんきょう" }, "します"]
+            tr: { en: "I study.", uk: "Я вчуся.", es: "Estudio.", pt: "Eu estudo.", fr: "J’étudie.", de: "Ich lerne.", it: "Studio.", pl: "Uczę się.", tr: "Ders çalışıyorum.", id: "Saya belajar.", vi: "Tôi học." }
+          - level: "A2"
+            kanji: { target: { kanji: "働", reading: "はたら" } }
+            readings: "ドウ／はたら.く"
+            ex: [{ kanji: "働", reading: "はたら" }, "きます"]
+            tr: { en: "I work.", uk: "Я працюю.", es: "Trabajo.", pt: "Eu trabalho.", fr: "Je travaille.", de: "Ich arbeite.", it: "Lavoro.", pl: "Pracuję.", tr: "Çalışıyorum.", id: "Saya bekerja.", vi: "Tôi làm việc." }
+          - level: "A2"
+            kanji: { target: { kanji: "待", reading: "ま" } }
+            readings: "タイ／ま.つ"
+            ex: [{ kanji: "待", reading: "ま" }, "ちます"]
+            tr: { en: "I wait.", uk: "Я чекаю.", es: "Espero.", pt: "Eu espero.", fr: "J’attends.", de: "Ich warte.", it: "Aspetto.", pl: "Czekam.", tr: "Bekliyorum.", id: "Saya menunggu.", vi: "Tôi đợi." }
+          - level: "A2"
+            kanji: { target: { kanji: "乗", reading: "の" } }
+            readings: "ジョウ／の.る"
+            ex: [{ kanji: "乗", reading: "の" }, "ります"]
+            tr: { en: "I get on.", uk: "Я сідаю.", es: "Subo.", pt: "Eu embarco.", fr: "Je monte.", de: "Ich steige ein.", it: "Salgo.", pl: "Wsiadam.", tr: "Biniyorum.", id: "Saya naik.", vi: "Tôi lên xe." }
+          - level: "A2"
+            kanji: { target: { kanji: "歌", reading: "うた" } }
+            readings: "カ／うた.う"
+            ex: [{ kanji: "歌", reading: "うた" }, "います"]
+            tr: { en: "I sing.", uk: "Я співаю.", es: "Canto.", pt: "Eu canto.", fr: "Je chante.", de: "Ich singe.", it: "Canto.", pl: "Śpiewam.", tr: "Şarkı söylüyorum.", id: "Saya menyanyi.", vi: "Tôi hát." }
+  - title:
+      en: "Qualities and colours"
+      uk: "Якості й кольори"
+      es: "Cualidades y colores"
+      pt: "Qualidades e cores"
+      fr: "Qualités et couleurs"
+      de: "Eigenschaften und Farben"
+      it: "Qualità e colori"
+      pl: "Cechy i kolory"
+      tr: "Nitelikler ve renkler"
+      id: "Sifat dan warna"
+      vi: "Tính chất và màu sắc"
+    role: "own"
+    content:
+      - type: "usage"
+        columns:
+          - { key: "kanji", label: { en: "Kanji", uk: "Кандзі", es: "Kanji", pt: "Kanji", fr: "Kanji", de: "Kanji", it: "Kanji", pl: "Kanji", tr: "Kanji", id: "Kanji", vi: "Kanji" } }
+          - key: "readings"
+            label: { en: "Readings", uk: "Читання", es: "Lecturas", pt: "Leituras", fr: "Lectures", de: "Lesungen", it: "Letture", pl: "Czytania", tr: "Okunuşlar", id: "Bacaan", vi: "Cách đọc" }
+          - { key: "ex", label: { en: "Example", uk: "Приклад", es: "Ejemplo", pt: "Exemplo", fr: "Exemple", de: "Beispiel", it: "Esempio", pl: "Przykład", tr: "Örnek", id: "Contoh", vi: "Ví dụ" } }
+        rows:
+          - level: "A1"
+            kanji: { target: { kanji: "大", reading: "おお" } }
+            readings: "ダイ・タイ／おお.きい"
+            ex: [{ kanji: "大", reading: "おお" }, "きい"]
+            tr: { en: "big", uk: "великий", es: "grande", pt: "grande", fr: "grand", de: "groß", it: "grande", pl: "duży", tr: "büyük", id: "besar", vi: "to" }
+          - level: "A1"
+            kanji: { target: { kanji: "小", reading: "ちい" } }
+            readings: "ショウ／ちい.さい・こ"
+            ex: [{ kanji: "小", reading: "ちい" }, "さい"]
+            tr: { en: "small", uk: "малий", es: "pequeño", pt: "pequeno", fr: "petit", de: "klein", it: "piccolo", pl: "mały", tr: "küçük", id: "kecil", vi: "nhỏ" }
+          - level: "A1"
+            kanji: { target: { kanji: "新", reading: "あたら" } }
+            readings: "シン／あたら.しい"
+            ex: [{ kanji: "新", reading: "あたら" }, "しい"]
+            tr: { en: "new", uk: "новий", es: "nuevo", pt: "novo", fr: "nouveau", de: "neu", it: "nuovo", pl: "nowy", tr: "yeni", id: "baru", vi: "mới" }
+          - level: "A1"
+            kanji: { target: { kanji: "古", reading: "ふる" } }
+            readings: "コ／ふる.い"
+            ex: [{ kanji: "古", reading: "ふる" }, "い"]
+            tr: { en: "old (not for people)", uk: "старий (про речі)", es: "viejo (de cosas)", pt: "velho (de coisas)", fr: "vieux (pour les choses)", de: "alt (bei Dingen)", it: "vecchio (di cose)", pl: "stary (o rzeczach)", tr: "eski (eşya için)", id: "lama (untuk benda)", vi: "cũ (đồ vật)" }
+          - level: "A1"
+            kanji: { target: { kanji: "高", reading: "たか" } }
+            readings: "コウ／たか.い"
+            ex: [{ kanji: "高", reading: "たか" }, "い"]
+            tr: { en: "high, expensive", uk: "високий, дорогий", es: "alto, caro", pt: "alto, caro", fr: "haut, cher", de: "hoch, teuer", it: "alto, caro", pl: "wysoki, drogi", tr: "yüksek, pahalı", id: "tinggi, mahal", vi: "cao, đắt" }
+          - level: "A1"
+            kanji: { target: { kanji: "安", reading: "やす" } }
+            readings: "アン／やす.い"
+            ex: [{ kanji: "安", reading: "やす" }, "い"]
+            tr: { en: "cheap", uk: "дешевий", es: "barato", pt: "barato", fr: "bon marché", de: "billig", it: "economico", pl: "tani", tr: "ucuz", id: "murah", vi: "rẻ" }
+          - level: "A1"
+            kanji: { target: { kanji: "長", reading: "なが" } }
+            readings: "チョウ／なが.い"
+            ex: [{ kanji: "長", reading: "なが" }, "い"]
+            tr: { en: "long", uk: "довгий", es: "largo", pt: "longo", fr: "long", de: "lang", it: "lungo", pl: "długi", tr: "uzun", id: "panjang", vi: "dài" }
+          - level: "A1"
+            kanji: { target: { kanji: "白", reading: "しろ" } }
+            readings: "ハク／しろ.い"
+            ex: [{ kanji: "白", reading: "しろ" }, "い"]
+            tr: { en: "white", uk: "білий", es: "blanco", pt: "branco", fr: "blanc", de: "weiß", it: "bianco", pl: "biały", tr: "beyaz", id: "putih", vi: "trắng" }
+          - level: "A1"
+            kanji: { target: { kanji: "多", reading: "おお" } }
+            readings: "タ／おお.い"
+            ex: [{ kanji: "多", reading: "おお" }, "い"]
+            tr: { en: "many, a lot", uk: "багато", es: "mucho", pt: "muito", fr: "beaucoup", de: "viel", it: "molto", pl: "dużo", tr: "çok", id: "banyak", vi: "nhiều" }
+          - level: "A1"
+            kanji: { target: { kanji: "少", reading: "すこ" } }
+            readings: "ショウ／すこ.し・すく.ない"
+            ex: [{ kanji: "少", reading: "すこ" }, "し"]
+            tr: { en: "a little", uk: "трохи", es: "un poco", pt: "um pouco", fr: "un peu", de: "ein bisschen", it: "un po’", pl: "trochę", tr: "biraz", id: "sedikit", vi: "một chút" }
+          - level: "A2"
+            kanji: { target: { kanji: "好", reading: "す" } }
+            readings: "コウ／す.き・この.む"
+            ex: [{ kanji: "好", reading: "す" }, "き"]
+            tr: { en: "liked, favourite", uk: "улюблений", es: "gustar", pt: "gostar", fr: "aimé", de: "gemocht", it: "piacere", pl: "lubiany", tr: "sevilen", id: "suka", vi: "thích" }
+          - level: "A2"
+            kanji: { target: { kanji: "早", reading: "はや" } }
+            readings: "ソウ／はや.い"
+            ex: [{ kanji: "早", reading: "はや" }, "い"]
+            tr: { en: "early", uk: "ранній", es: "temprano", pt: "cedo", fr: "tôt", de: "früh", it: "presto", pl: "wczesny", tr: "erken", id: "awal", vi: "sớm" }
+          - level: "A2"
+            kanji: { target: { kanji: "遠", reading: "とお" } }
+            readings: "エン／とお.い"
+            ex: [{ kanji: "遠", reading: "とお" }, "い"]
+            tr: { en: "far", uk: "далекий", es: "lejos", pt: "longe", fr: "loin", de: "weit", it: "lontano", pl: "daleki", tr: "uzak", id: "jauh", vi: "xa" }
+          - level: "A2"
+            kanji: { target: { kanji: "近", reading: "ちか" } }
+            readings: "キン／ちか.い"
+            ex: [{ kanji: "近", reading: "ちか" }, "い"]
+            tr: { en: "near", uk: "близький", es: "cerca", pt: "perto", fr: "près", de: "nah", it: "vicino", pl: "bliski", tr: "yakın", id: "dekat", vi: "gần" }
+          - level: "A2"
+            kanji: { target: { kanji: "暑", reading: "あつ" } }
+            readings: "ショ／あつ.い"
+            ex: [{ kanji: "暑", reading: "あつ" }, "い"]
+            tr: { en: "hot (weather)", uk: "спекотний", es: "caluroso", pt: "quente", fr: "chaud", de: "heiß", it: "caldo", pl: "gorący", tr: "sıcak", id: "panas", vi: "nóng" }
+          - level: "A2"
+            kanji: { target: { kanji: "寒", reading: "さむ" } }
+            readings: "カン／さむ.い"
+            ex: [{ kanji: "寒", reading: "さむ" }, "い"]
+            tr: { en: "cold (weather)", uk: "холодний", es: "frío", pt: "frio", fr: "froid", de: "kalt", it: "freddo", pl: "zimny", tr: "soğuk", id: "dingin", vi: "lạnh" }
+          - level: "A2"
+            kanji: { target: { kanji: "赤", reading: "あか" } }
+            readings: "セキ／あか.い"
+            ex: [{ kanji: "赤", reading: "あか" }, "い"]
+            tr: { en: "red", uk: "червоний", es: "rojo", pt: "vermelho", fr: "rouge", de: "rot", it: "rosso", pl: "czerwony", tr: "kırmızı", id: "merah", vi: "đỏ" }
+          - level: "A2"
+            kanji: { target: { kanji: "青", reading: "あお" } }
+            readings: "セイ／あお.い"
+            ex: [{ kanji: "青", reading: "あお" }, "い"]
+            tr: { en: "blue", uk: "синій", es: "azul", pt: "azul", fr: "bleu", de: "blau", it: "blu", pl: "niebieski", tr: "mavi", id: "biru", vi: "xanh lam" }
+          - level: "A2"
+            kanji: { target: { kanji: "黒", reading: "くろ" } }
+            readings: "コク／くろ.い"
+            ex: [{ kanji: "黒", reading: "くろ" }, "い"]
+            tr: { en: "black", uk: "чорний", es: "negro", pt: "preto", fr: "noir", de: "schwarz", it: "nero", pl: "czarny", tr: "siyah", id: "hitam", vi: "đen" }
+  - title:
+      en: "Typical errors"
+      uk: "Типові помилки"
+      es: "Errores frecuentes"
+      pt: "Erros comuns"
+      fr: "Erreurs fréquentes"
+      de: "Typische Fehler"
+      it: "Errori frequenti"
+      pl: "Typowe błędy"
+      tr: "Sık yapılan hatalar"
+      id: "Kesalahan umum"
+      vi: "Lỗi thường gặp"
+    role: "errors"
+    content:
+      - type: "errors"
+        rows:
+          - level: "A1"
+            wrong: [{ kanji: "食", reading: "た" }, "ます"]
+            right: [{ kanji: "食", reading: "た" }, { target: "べ" }, "ます"]
+            rule:
+              en: ["the okurigana ", { term: "べ" }, " belongs to the spelling and stays"]
+              uk: ["окуріґана ", { term: "べ" }, " входить до написання й лишається"]
+              es: ["la okurigana ", { term: "べ" }, " forma parte de la escritura y se mantiene"]
+              pt: ["o okurigana ", { term: "べ" }, " faz parte da escrita e permanece"]
+              fr: ["l’okurigana ", { term: "べ" }, " fait partie de l’écriture et reste"]
+              de: ["das Okurigana ", { term: "べ" }, " gehört zur Schreibung und bleibt"]
+              it: ["l’okurigana ", { term: "べ" }, " fa parte della grafia e resta"]
+              pl: ["okurigana ", { term: "べ" }, " należy do pisowni i zostaje"]
+              tr: ["okurigana ", { term: "べ" }, " yazımın parçasıdır ve kalır"]
+              id: ["okurigana ", { term: "べ" }, " bagian dari ejaan dan tetap ada"]
+              vi: ["okurigana ", { term: "べ" }, " là một phần của chính tả và được giữ lại"]
+          - level: "A1"
+            wrong: [{ kanji: "大", reading: "おお" }, "い"]
+            right: [{ kanji: "大", reading: "おお" }, { target: "きい" }]
+            rule:
+              en: ["the adjective needs ", { term: "きい" }, " after the kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " is another word (“many”)"]
+              uk: ["прикметник потребує ", { term: "きい" }, " після кандзі; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " — інше слово («багато»)"]
+              es: ["el adjetivo lleva ", { term: "きい" }, " tras el kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " es otra palabra («mucho»)"]
+              pt: ["o adjetivo leva ", { term: "きい" }, " depois do kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " é outra palavra («muito»)"]
+              fr: ["l’adjectif prend ", { term: "きい" }, " après le kanji ; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " est un autre mot (« nombreux »)"]
+              de: ["das Adjektiv braucht ", { term: "きい" }, " nach dem Kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " ist ein anderes Wort („viel“)"]
+              it: ["l’aggettivo vuole ", { term: "きい" }, " dopo il kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " è un’altra parola («molto»)"]
+              pl: ["przymiotnik wymaga ", { term: "きい" }, " po kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " to inny wyraz („dużo”)"]
+              tr: ["sıfat kanjiden sonra ", { term: "きい" }, " ister; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " başka bir sözcüktür (“çok”)"]
+              id: ["kata sifat ini memerlukan ", { term: "きい" }, " setelah kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " adalah kata lain (“banyak”)"]
+              vi: ["tính từ cần ", { term: "きい" }, " sau kanji; ", { term: [{ kanji: "多", reading: "おお" }, "い"] }, " là từ khác (“nhiều”)"]
+          - level: "A1"
+            wrong: { kanji: "三人", reading: "さんひと" }
+            right: { target: { kanji: "三人", reading: "さんにん" } }
+            rule:
+              en: ["after a number, ", { term: { kanji: "人", reading: "にん" } }, " takes the on reading; only ", { term: { kanji: "一人", reading: "ひとり" } }, " and ", { term: { kanji: "二人", reading: "ふたり" } }, " differ"]
+              uk: ["після числа ", { term: { kanji: "人", reading: "にん" } }, " читається за онним читанням; інакше лише ", { term: { kanji: "一人", reading: "ひとり" } }, " і ", { term: { kanji: "二人", reading: "ふたり" } }]
+              es: ["tras un número, ", { term: { kanji: "人", reading: "にん" } }, " se lee con la lectura on; solo ", { term: { kanji: "一人", reading: "ひとり" } }, " y ", { term: { kanji: "二人", reading: "ふたり" } }, " difieren"]
+              pt: ["depois de um número, ", { term: { kanji: "人", reading: "にん" } }, " usa a leitura on; só ", { term: { kanji: "一人", reading: "ひとり" } }, " e ", { term: { kanji: "二人", reading: "ふたり" } }, " diferem"]
+              fr: ["après un nombre, ", { term: { kanji: "人", reading: "にん" } }, " se lit en lecture on ; seuls ", { term: { kanji: "一人", reading: "ひとり" } }, " et ", { term: { kanji: "二人", reading: "ふたり" } }, " diffèrent"]
+              de: ["nach einer Zahl wird ", { term: { kanji: "人", reading: "にん" } }, " on gelesen; nur ", { term: { kanji: "一人", reading: "ひとり" } }, " und ", { term: { kanji: "二人", reading: "ふたり" } }, " weichen ab"]
+              it: ["dopo un numero, ", { term: { kanji: "人", reading: "にん" } }, " si legge on; solo ", { term: { kanji: "一人", reading: "ひとり" } }, " e ", { term: { kanji: "二人", reading: "ふたり" } }, " fanno eccezione"]
+              pl: ["po liczbie ", { term: { kanji: "人", reading: "にん" } }, " czyta się czytaniem on; tylko ", { term: { kanji: "一人", reading: "ひとり" } }, " i ", { term: { kanji: "二人", reading: "ふたり" } }, " są inne"]
+              tr: ["sayıdan sonra ", { term: { kanji: "人", reading: "にん" } }, " on okunuşuyla okunur; yalnızca ", { term: { kanji: "一人", reading: "ひとり" } }, " ve ", { term: { kanji: "二人", reading: "ふたり" } }, " farklıdır"]
+              id: ["setelah angka, ", { term: { kanji: "人", reading: "にん" } }, " dibaca on; hanya ", { term: { kanji: "一人", reading: "ひとり" } }, " dan ", { term: { kanji: "二人", reading: "ふたり" } }, " berbeda"]
+              vi: ["sau số đếm, ", { term: { kanji: "人", reading: "にん" } }, " đọc theo âm on; chỉ ", { term: { kanji: "一人", reading: "ひとり" } }, " và ", { term: { kanji: "二人", reading: "ふたり" } }, " khác"]
+          - level: "A2"
+            wrong: { kanji: "明日", reading: "めいにち" }
+            right: { target: { kanji: "明日", reading: "あした" } }
+            rule:
+              en: [{ term: { kanji: "明日", reading: "あした" } }, " has a reading of its own; learn it as a whole word"]
+              uk: [{ term: { kanji: "明日", reading: "あした" } }, " має власне читання; вивчайте його як ціле слово"]
+              es: [{ term: { kanji: "明日", reading: "あした" } }, " tiene una lectura propia; apréndela como palabra entera"]
+              pt: [{ term: { kanji: "明日", reading: "あした" } }, " tem uma leitura própria; aprenda-a como palavra inteira"]
+              fr: [{ term: { kanji: "明日", reading: "あした" } }, " a une lecture propre ; apprenez-le comme un mot entier"]
+              de: [{ term: { kanji: "明日", reading: "あした" } }, " hat eine eigene Lesung; lerne es als ganzes Wort"]
+              it: [{ term: { kanji: "明日", reading: "あした" } }, " ha una lettura propria; imparala come parola intera"]
+              pl: [{ term: { kanji: "明日", reading: "あした" } }, " ma własne czytanie; ucz się go jako całego wyrazu"]
+              tr: [{ term: { kanji: "明日", reading: "あした" } }, " kendine özgü bir okunuşa sahiptir; onu bütün sözcük olarak öğrenin"]
+              id: [{ term: { kanji: "明日", reading: "あした" } }, " punya bacaan tersendiri; pelajari sebagai satu kata utuh"]
+              vi: [{ term: { kanji: "明日", reading: "あした" } }, " có cách đọc riêng; hãy học nó như một từ nguyên vẹn"]
