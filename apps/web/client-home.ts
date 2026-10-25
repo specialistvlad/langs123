@@ -87,6 +87,8 @@ export function homeSearch(): void {
     clear.hidden = input.value === "";
     const terms = tokens(input.value);
     const on = terms.length > 0;
+    // A query hides the page's header, as the results take its place.
+    root.classList.toggle("hm-query", on);
     results.hidden = !on;
     cards.hidden = on;
     if (!on) return;

@@ -10,16 +10,19 @@ export const searchForm = (t: Ui): string =>
   `<form class="hm-search glass" id="hm-form" role="search" action="#">${SEARCH}<input type="search" id="hm-q" placeholder="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search"><button type="button" class="hm-clear" id="hm-clear" aria-label="${escapeHtml(t.clear)}" hidden>${CLEAR}</button></form>`;
 
 // Read in: the page in each language it is read in, the current one named on the button. A choice is kept
-// (client-read.ts), so the first Home stays in it.
-export function readMenu(t: Ui, choices: Choice[]): string {
+// (client-read.ts), so the first Home stays in it. On the Home (ticked) the menu ticks the current language as the
+// theme menu ticks its choice; elsewhere it highlights it.
+export function readMenu(t: Ui, choices: Choice[], ticked = false): string {
   const current = escapeHtml(choices.find((c) => c.on)?.label ?? "");
   const links = choices
-    .map(
-      (c) =>
-        `<a href="${c.href}" hreflang="${c.lang}" data-read="${c.lang}"${c.on ? ' aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`,
+    .map((c) =>
+      ticked
+        ? `<a href="${c.href}" hreflang="${c.lang}" data-read="${c.lang}" role="menuitemradio" class="ix-item" aria-checked="${String(c.on)}"><span class="ix-tick" aria-hidden="true">${TICK}</span><span class="ix-text"><span class="ix-title">${escapeHtml(c.label)}</span></span></a>`
+        : `<a href="${c.href}" hreflang="${c.lang}" data-read="${c.lang}"${c.on ? ' aria-current="page"' : ""}>${escapeHtml(c.label)}</a>`,
     )
     .join("");
-  return `<details class="hm-read"><summary aria-label="${escapeHtml(t.read)}: ${current}">${LANGUAGES}<span>${current}</span></summary><div class="hm-menu">${links}</div></details>`;
+  const menu = ticked ? `<div class="hm-menu hm-ticks" role="menu" aria-label="${escapeHtml(t.read)}">` : '<div class="hm-menu">';
+  return `<details class="hm-read"><summary aria-label="${escapeHtml(t.read)}: ${current}" aria-haspopup="menu">${LANGUAGES}<span>${current}</span></summary>${menu}${links}</div></details>`;
 }
 
 export const closeButton = (t: Ui): string =>
@@ -44,10 +47,14 @@ const themeItems = (t: Ui): string =>
 export const themeMenu = (t: Ui): string =>
   `<div class="ix-menu ix-menu-theme" id="hm-themes" popover role="menu" aria-label="${escapeHtml(t.theme)}">${themeItems(t)}</div>`;
 
-// More, on a phone's Home in place of Read in, the theme and the credits (home-more.css): one button whose menu
-// names the three, the language read in and the theme under theirs; Read in and the theme open their lists in its
-// place, under a way back to More (client-more.ts).
-export function moreMenu(t: Ui, choices: Choice[], credits: { href: string; label: string }): string {
+// More, on a phone's Home in place of the theme and the credits, beside Read in (home-more.css): a button whose menu
+// names the two, the theme in use under its name; the theme opens its list in its place, under a way back to More
+// (client-more.ts).
+export function moreButton(t: Ui): string {
+  const more = escapeHtml(t.more);
+  return `<button type="button" class="hm-more" popovertarget="hm-more" aria-haspopup="menu" aria-expanded="false" aria-label="${more}" title="${more}">${MORE}</button>`;
+}
+export function moreMenu(t: Ui, credits: { href: string; label: string }): string {
   const more = escapeHtml(t.more);
   const text = (title: string, sub: string): string =>
     `<span class="ix-tick" aria-hidden="true"></span><span class="ix-text"><span class="ix-title">${escapeHtml(title)}</span>${sub}</span>`;
@@ -55,17 +62,9 @@ export function moreMenu(t: Ui, choices: Choice[], credits: { href: string; labe
   const open = (panel: string, title: string, under: string, end: string): string =>
     `<button type="button" role="menuitem" class="ix-item" data-more="${panel}" aria-haspopup="menu">${text(title, under)}<span class="ix-end">${end}</span></button>`;
   const back = `<button type="button" class="ix-item hm-back" data-more="main"><span class="ix-tick" aria-hidden="true">${MENU_BACK}</span><span class="ix-text"><span class="ix-title">${more}</span></span></button>`;
-  const languages = choices
-    .map(
-      (c) =>
-        `<a href="${c.href}" hreflang="${c.lang}" data-read="${c.lang}" role="menuitemradio" class="ix-item" aria-checked="${String(c.on)}"><span class="ix-tick" aria-hidden="true">${TICK}</span><span class="ix-text"><span class="ix-title">${escapeHtml(c.label)}</span></span></a>`,
-    )
-    .join("");
   const main = [
-    open("read", t.read, sub(choices.find((c) => c.on)?.label ?? ""), LANGUAGES),
     open("theme", t.theme, sub(t.themeAuto, " data-theme-now"), THEME),
     `<a href="${credits.href}" role="menuitem" class="ix-item">${text(credits.label, "")}<span class="ix-end">${INFO}</span></a>`,
   ].join("");
-  return `<button type="button" class="hm-more glass" popovertarget="hm-more" aria-haspopup="menu" aria-expanded="false" aria-label="${more}" title="${more}">${MORE}</button>
-<div class="ix-menu hm-more-menu" id="hm-more" popover role="menu" aria-label="${more}"><div data-panel="main">${main}</div><div data-panel="read" hidden>${back}${languages}</div><div data-panel="theme" hidden>${back}${themeItems(t)}</div></div>`;
+  return `<div class="ix-menu hm-more-menu" id="hm-more" popover role="menu" aria-label="${more}"><div data-panel="main">${main}</div><div data-panel="theme" hidden>${back}${themeItems(t)}</div></div>`;
 }

@@ -1,6 +1,7 @@
-// More on a phone's Home in a browser: one button in place of Read in, the theme and the credits; its menu names the
-// three, Read in and the theme open their lists in its place under a way back, a choice of theme closes it, and it
-// opens again on the three, naming the theme chosen. Wide screens keep the three buttons.
+// The Home's menus in a browser. On a phone Read in stays and More takes the theme's and the credits' place: More's
+// menu names the two, the theme opens its list in its place under a way back, and a theme chosen closes it, which
+// opens again naming the theme chosen. Read in ticks the language read in. Wide screens keep the theme and the
+// credits. A query hides the page's header; an empty search keeps it.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -16,27 +17,30 @@ afterAll(async () => {
   await page.close();
 });
 
-const shown = (panel: string): Promise<boolean> => page.locator(`#hm-more [data-panel="${panel}"]`).isVisible();
+const visible = (selector: string): Promise<boolean> => page.locator(selector).first().isVisible();
 
 test(
-  "More opens the three, a list in their place and back, and a theme chosen closes it",
+  "on a phone Read in stays beside More, whose menu holds the theme and the credits",
   async () => {
     await page.goto(new URL("/", base).href);
-    expect([await page.locator(".hm-folds").isVisible(), await page.locator(".hm-more").isVisible()]).toEqual([false, true]);
+    expect(await Promise.all([".hm-read summary", ".hm-more", ".hm-folds .hm-theme", ".hm-folds .hm-credits"].map(visible))).toEqual([
+      true,
+      true,
+      false,
+      false,
+    ]);
     await page.locator(".hm-more").click();
     await page.waitForSelector('.hm-more[aria-expanded="true"]');
-    expect(await shown("main")).toBe(true);
-    await page.locator('#hm-more [data-more="read"]').click();
-    expect([await shown("main"), await shown("read")]).toEqual([false, true]);
-    expect(await page.locator('#hm-more [data-panel="read"] a[aria-checked="true"]').count()).toBe(1);
-    await page.locator('#hm-more [data-panel="read"] .hm-back').click();
+    expect(await page.locator('#hm-more [data-panel="main"] .ix-title').allTextContents()).toEqual(["Theme", "Credits"]);
+    await page.locator('#hm-more [data-more="theme"]').click();
+    expect([await visible('#hm-more [data-panel="main"]'), await visible('#hm-more [data-panel="theme"]')]).toEqual([false, true]);
+    await page.locator('#hm-more [data-panel="theme"] .hm-back').click();
     await page.locator('#hm-more [data-more="theme"]').click();
     await page.locator('#hm-more [data-panel="theme"] [data-set-theme="dark"]').click();
     expect(await page.evaluate(() => document.documentElement.dataset["theme"])).toBe("dark");
     await page.waitForSelector('.hm-more[aria-expanded="false"]');
-    expect(await page.locator("#hm-more").evaluate((m) => m.matches(":popover-open"))).toBe(false);
     await page.locator(".hm-more").click();
-    expect([await shown("main"), await page.locator("[data-theme-now]").textContent()]).toEqual([true, "Dark"]);
+    expect([await visible('#hm-more [data-panel="main"]'), await page.locator("[data-theme-now]").textContent()]).toEqual([true, "Dark"]);
     await page.evaluate(() => {
       localStorage.removeItem("ln-theme");
     });
@@ -45,11 +49,41 @@ test(
 );
 
 test(
-  "a wide screen keeps Read in, the theme and the credits",
+  "Read in ticks the language read in, alone",
+  async () => {
+    await page.goto(new URL("/", base).href);
+    await page.locator(".hm-read summary").click();
+    const ticked = page.locator('.hm-ticks [aria-checked="true"]');
+    expect([await ticked.count(), await ticked.getAttribute("hreflang"), await ticked.locator(".ix-tick").isVisible()]).toEqual([
+      1,
+      "en",
+      true,
+    ]);
+  },
+  SLOW,
+);
+
+test(
+  "a query hides the page's header, an empty search keeps it",
+  async () => {
+    await page.goto(new URL("/", base).href);
+    await page.locator("#hm-q").focus();
+    expect(await visible(".hm-title")).toBe(true);
+    await page.locator("#hm-q").fill("past");
+    await page.locator(".hm-row").first().waitFor();
+    expect([await visible(".hm-brand"), await visible(".hm-title")]).toEqual([false, false]);
+    await page.locator("#hm-q").fill("");
+    expect(await visible(".hm-title")).toBe(true);
+  },
+  SLOW,
+);
+
+test(
+  "a wide screen keeps the theme and the credits",
   async () => {
     const wide = await browser.newPage({ viewport: { width: 1032, height: 900 } });
     await wide.goto(new URL("/", base).href);
-    expect([await wide.locator(".hm-folds").isVisible(), await wide.locator(".hm-more").isVisible()]).toEqual([true, false]);
+    expect([await wide.locator(".hm-folds .hm-theme").isVisible(), await wide.locator(".hm-more").isVisible()]).toEqual([true, false]);
     await wide.close();
   },
   SLOW,
