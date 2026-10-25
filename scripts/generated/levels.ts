@@ -12,10 +12,6 @@ export interface LevelScale {
     code: Level;
     name: Localized;
     description: Localized;
-    /**
-     * The level's hue on the OKLCH colour wheel, in degrees; the theme sets lightness and chroma.
-     */
-    hue: number;
   }[];
 }
 /**
