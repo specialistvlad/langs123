@@ -18,6 +18,13 @@
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04);
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* The level mark (level-mark.css): its capsule, a bar it leaves empty, its range text, and the ring of a lit bar
+     in its level's ink, drawn in the light theme alone. */
+  --lvm-fill: rgba(118, 118, 128, 0.12);
+  --lvm-off: rgba(118, 118, 128, 0.2);
+  --lvm-hover: rgba(118, 118, 128, 0.2);
+  --lvm-text: var(--muted);
+  --lvm-ring: 1px;
   color-scheme: light;
 }
 
@@ -38,6 +45,10 @@
     --warn: #f0b545;
     --warn-soft: #3a2c12;
     --shadow: none;
+    --lvm-fill: rgba(118, 118, 128, 0.24);
+    --lvm-off: rgba(118, 118, 128, 0.32);
+    --lvm-hover: rgba(118, 118, 128, 0.36);
+    --lvm-ring: 0;
     color-scheme: dark;
   }
 }
@@ -58,6 +69,10 @@
   --warn: #f0b545;
   --warn-soft: #3a2c12;
   --shadow: none;
+  --lvm-fill: rgba(118, 118, 128, 0.24);
+  --lvm-off: rgba(118, 118, 128, 0.32);
+  --lvm-hover: rgba(118, 118, 128, 0.36);
+  --lvm-ring: 0;
   color-scheme: dark;
 }
 

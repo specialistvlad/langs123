@@ -9,7 +9,7 @@
   padding: 4px 7px;
   border: 0;
   border-radius: 999px;
-  background: var(--pg-fill, rgba(118, 118, 128, 0.12));
+  background: var(--lvm-fill);
   color: inherit;
   font: inherit;
   line-height: 0;
@@ -20,7 +20,7 @@
   width: 5px;
   height: 12px;
   border-radius: 2px;
-  background: var(--lvm-off, rgba(118, 118, 128, 0.2));
+  background: var(--lvm-off);
 }
 .lvm-sm {
   gap: 1.5px;
@@ -37,27 +37,17 @@
   font-weight: 600;
   line-height: 12px;
   letter-spacing: -0.1px;
-  color: var(--muted);
+  color: var(--lvm-text);
   white-space: nowrap;
 }
 .lvm-b {
   cursor: pointer;
 }
 .lvm-b:hover {
-  background: var(--lvm-hover, rgba(118, 118, 128, 0.2));
+  background: var(--lvm-hover);
 }
 .lvm-b[aria-expanded="true"] {
   box-shadow: 0 0 0 2px var(--accent);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --lvm-off: rgba(118, 118, 128, 0.32);
-    --lvm-hover: rgba(118, 118, 128, 0.36);
-  }
-}
-:root[data-theme="dark"] {
-  --lvm-off: rgba(118, 118, 128, 0.32);
-  --lvm-hover: rgba(118, 118, 128, 0.36);
 }
 
 /* The popover: a glass panel under its mark on a wide screen, from the bottom on a phone */

@@ -67,8 +67,11 @@ export async function clientJs(): Promise<string> {
 // fades the half above the filter (layout.css draws the faded half); a mark dims the bars above it.
 export function levelsCss(): string {
   const codes = LEVEL_INFO.map((l) => l.code);
-  // A mark's bar of a level it holds: the level's strong colour.
-  const bars = codes.map((code) => `.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); }`);
+  // A mark's bar of a level it holds: the level's strong colour, ringed in its ink where the theme draws the ring.
+  const bars = codes.map(
+    (code) =>
+      `.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); box-shadow: inset 0 0 0 var(--lvm-ring) var(--lvl-${code}-ink); }`,
+  );
   const filter = codes.flatMap((code, i) => {
     const above = codes.slice(i + 1).map((c) => `[data-level="${c}"]`);
     if (above.length === 0) return [];
