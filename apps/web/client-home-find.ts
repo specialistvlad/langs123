@@ -1,85 +1,9 @@
-// The Home's search over every course (search/<language>.json, pages/home-search.ts): the topics whose title
-// holds every term of the query first, then every topic the index finds for any of them (search-index.ts), most
-// relevant first, and the text with each place a term appears in bold.
-import { fold, type Index, scores } from "./search-index.ts";
+// The Home's search on the page (search/<language>.json, pages/home-search.ts): the ranking and the filters live in
+// search-index.ts, which the build and the tests share; here, the text with each place a term appears in bold.
+import { fold } from "./search-index.ts";
 
+export { type Filters, filtered, find, type SearchData, type Topic, topicsOf } from "./search-find.ts";
 export { tokens } from "./search-index.ts";
-
-export interface Topic {
-  title: string;
-  url: string;
-  // The levels the topic holds, lowest first.
-  levels: string[];
-  summary: string;
-  flag: string;
-  course: string;
-  other: string;
-  otherLang: string;
-  // The course's code, per level what the topic holds there (the level popover's entry), and the topic's id.
-  code: string;
-  entry: Record<string, string>;
-  id: string;
-  order: number;
-  t: string;
-}
-type Row = [string, string, string, string, string, string, string, string, string, string, Record<string, string>, string];
-export interface SearchData {
-  levels: string[];
-  topics: Row[];
-  // The parts of the index there are, by first letter (search-index.ts, partOf).
-  parts: string[];
-}
-
-export const topicsOf = (data: SearchData): Topic[] =>
-  data.topics.map(([title, url, levels, summary, , flag, course, other, otherLang, code, entry, id], order) => ({
-    title,
-    url,
-    levels: levels.split(" "),
-    summary,
-    flag,
-    course,
-    other,
-    otherLang,
-    code,
-    entry,
-    id,
-    order,
-    t: fold(title),
-  }));
-
-// The filters of the Home's search (search-filters.ts): one course, or all ("" for all); and the levels up to one,
-// a topic counting when its lowest level sits at or below it ("" for every level).
-export interface Filters {
-  course: string;
-  upTo: string;
-}
-export const filtered = (topics: Topic[], filters: Filters, scale: string[]): Topic[] =>
-  topics.filter(
-    (t) =>
-      (filters.course === "" || t.code === filters.course) &&
-      (filters.upTo === "" || scale.indexOf(t.levels[0] ?? "") <= scale.indexOf(filters.upTo)),
-  );
-
-// A term's worth in a title: one that starts with it, a word of it, any part of it; 0 when the title lacks it.
-function worth(term: string, t: Topic): number {
-  if (t.t.startsWith(term)) return 100;
-  if (` ${t.t}`.includes(` ${term}`)) return 70;
-  if (t.t.includes(term)) return 40;
-  return 0;
-}
-
-// The topics a query finds, most relevant first: those whose title holds every term, by how the title holds
-// them, then the rest by the index; the index, then the cards' order, between equals.
-export function find(topics: Topic[], index: Index, words: readonly string[], terms: string[]): Topic[] {
-  const ranked = scores(index, words, terms);
-  const found = topics.flatMap((topic) => {
-    const worths = terms.map((term) => worth(term, topic));
-    const title = worths.includes(0) ? 0 : worths.reduce((a, b) => a + b, 0);
-    const score = ranked.get(topic.order) ?? 0;
-    return title > 0 || score > 0 ? [{ topic, title, score }] : [];
-  });
-  return found.sort((a, b) => b.title - a.title || b.score - a.score || a.topic.order - b.topic.order).map((f) => f.topic);
-}
 
 export const el = (tag: string, className = "", text?: string): HTMLElement => {
   const node = document.createElement(tag);

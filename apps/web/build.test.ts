@@ -4,6 +4,7 @@ import { expect, test } from "bun:test";
 import { join } from "node:path";
 import { ENABLED_EXPLAIN, LEVELS } from "../../scripts/lib.ts";
 import { SAMPLE } from "./sample.ts";
+import { type SearchData, topicsOf } from "./search-find.ts";
 import { type Index, partOf, scores } from "./search-index.ts";
 import { SITE_DIR, testSite } from "./test-site.ts";
 
@@ -44,6 +45,17 @@ test("each home page has its search data: every topic of the sample with its cou
     other,
     lang,
   ]).toEqual([true, true, true, true, "", "uk"]);
+});
+
+test("a search row reads as a topic: its title, levels, course, level popover entry and id", async () => {
+  const data = (await Bun.file(join(SITE_DIR, "search", "en.json")).json()) as SearchData;
+  const topic = topicsOf(data).find((t) => t.id === "en.verbs.irregular-verbs-table");
+  expect([topic?.code, topic?.levels[0], topic?.url, Object.keys(topic?.entry ?? {}).length > 0]).toEqual([
+    "en",
+    "A1",
+    "/en/english/verbs/irregular-verbs-table/",
+    true,
+  ]);
 });
 
 test("each home page's search data comes with its index in parts, and a word of a lesson finds its topic", async () => {

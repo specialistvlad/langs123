@@ -6,13 +6,25 @@
 // of those topics in the language each is read in (search-index.ts), one file per first letter,
 // search/<language>/<part>.json. The Home's search (client-home.ts) ranks the topics whose title holds the query
 // first, then the rest by the index.
+import { join } from "node:path";
 import { topicTexts, topicTitle } from "../../../scripts/content.ts";
-import { type Explain, explainName, LEVELS, localize, type Text, type Topic } from "../../../scripts/lib.ts";
+import {
+  type CurriculumLanguage,
+  type Explain,
+  explainName,
+  LEVELS,
+  loadCurriculum,
+  loadTopics,
+  localize,
+  type Text,
+  type Topic,
+  type TopicRef,
+} from "../../../scripts/lib.ts";
 import { topicLevels } from "../../../scripts/levels.ts";
 import { foldText, plainText, reading, type TextOutput, textIn } from "../../../scripts/text.ts";
 import { type Context, explainsOf } from "../context.ts";
 import { STRONG } from "../html.ts";
-import { indexOf, partsOf, tokens, type TopicWords } from "../search-index.ts";
+import { type Index, indexOf, partsOf, tokens, type TopicWords } from "../search-index.ts";
 import { topicEntryOf } from "../level-popover.ts";
 import { topicUrl } from "../urls.ts";
 
@@ -51,13 +63,15 @@ function topicWords(topic: Topic, title: string, section: string, explain: Expla
   };
 }
 
-export function homeSearch(ctx: Context, home: Explain): void {
+// The search data of an explanation language: every written topic of the languages given, its row, and the index of
+// their words. Another app reads the same through api.ts (searchData).
+export function searchOf(languages: CurriculumLanguage[], refs: TopicRef[], home: Explain): SearchFile {
   const words: TopicWords[] = [];
-  const topics = ctx.languages.flatMap((lang) => {
+  const topics = languages.flatMap((lang) => {
     const explains = explainsOf(lang);
     const e = explains.includes(home) ? home : (explains[0] ?? home);
     const other = e === home ? ["", e] : [explainName(e), e];
-    return ctx.refs.flatMap((ref) => {
+    return refs.flatMap((ref) => {
       const levels = ref.lang === lang.code && ref.topic !== null ? topicLevels(ref.topic, e) : [];
       if (ref.topic === null || levels.length === 0) return [];
       const title = topicTitle(ref, e);
@@ -81,7 +95,34 @@ export function homeSearch(ctx: Context, home: Explain): void {
       ];
     });
   });
-  const parts = partsOf(indexOf(words));
-  ctx.file(homeSearchUrl(home), JSON.stringify({ levels: LEVELS, topics, parts: Object.keys(parts) }));
-  for (const [part, index] of Object.entries(parts)) ctx.file(homeSearchPartUrl(home, part), JSON.stringify(index));
+  return { levels: [...LEVELS], topics, index: indexOf(words) };
+}
+
+// The cases the search's tests hold (search-cases.json): a fixture, its index, and the words and topics each query
+// finds, for another app's tests to hold as well.
+export const SEARCH_CASES = join(import.meta.dir, "..", "search-cases.json");
+
+export interface SearchFile {
+  levels: string[];
+  topics: unknown[][];
+  index: Index;
+}
+
+export function homeSearch(ctx: Context, home: Explain): void {
+  const { levels, topics, index } = searchOf(ctx.languages, ctx.refs, home);
+  const parts = partsOf(index);
+  ctx.file(homeSearchUrl(home), JSON.stringify({ levels, topics, parts: Object.keys(parts) }));
+  for (const [part, words] of Object.entries(parts)) ctx.file(homeSearchPartUrl(home, part), JSON.stringify(words));
+}
+
+// The search data of an explanation language over the whole library, as the website builds it: the enabled
+// languages being learned, each topic read in this language or, for a course not written for it, in its first.
+export async function searchData(explain: Explain): Promise<SearchFile> {
+  const curriculum = await loadCurriculum();
+  const refs = await loadTopics(curriculum);
+  return searchOf(
+    curriculum.languages.filter((l) => l.enabled && refs.some((r) => r.lang === l.code)),
+    refs,
+    explain,
+  );
 }

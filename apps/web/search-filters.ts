@@ -31,12 +31,15 @@ export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguag
     ` data-filter="level" data-all-label="${escapeHtml(t.allLevels)}" data-up-to="${escapeHtml(upTo)}"`,
   );
   const readIn = chip("hm-f-read", `${LANGUAGES}${escapeHtml(current)}`);
+  // "Variety: Spain", the label meeting its value as each language writes it ("Variété : Espagne"); the page names the
+  // value it keeps for the course.
+  const [before = "", after = ""] = say("labelled", home, { label: t.variety }).split("{value}");
   const varieties = courses
     .filter((c) => c.varieties.length > 0)
     .map((c) =>
       chip(
         `hm-f-variety-${c.code}`,
-        `${escapeHtml(t.variety)}: <span data-variety-of="${c.code}">${escapeHtml(varietyName(c.varieties[0] ?? "en-GB", home))}</span>`,
+        `${escapeHtml(before)}<span data-variety-of="${c.code}">${escapeHtml(varietyName(c.varieties[0] ?? "en-GB", home))}</span>${escapeHtml(after)}`,
         ` data-variety-course="${c.code}" hidden`,
       ),
     );
