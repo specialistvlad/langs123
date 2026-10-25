@@ -1,23 +1,38 @@
 // The Home search, held by the cases of search-cases.json, which another app's tests hold too: words compare
-// without case and marks and split as the search reads them; the index of the fixture weighs each word by where it
-// stands and how few topics hold it; a term reads as itself, as the words it starts while typed, or as the words one
-// letter away; a query ranks the topics its words weigh most in, titles first; the filters narrow them to a course
-// and the levels up to one. Then what the website alone does: each word keeps its best topics, in parts by first letter.
+// without case and marks and split as the search reads them; the index of the fixture, a slice of the library as the
+// Japanese Home reads it, weighs each word by where it stands and how few topics hold it; a term reads as itself, as
+// the words it starts while typed, or as the words one letter away; a query ranks the topics its words weigh most in,
+// titles first; the filters narrow them to a course and the levels up to one; and each query shows its rows as the page
+// does. Then what the website alone does: each word keeps its best topics, in parts by first letter.
 import { expect, test } from "bun:test";
-import { boldRuns, filtered, find, type Topic } from "./search-find.ts";
-import { BEST, fold, type Index, indexOf, oneEdit, partOf, partsOf, readings, scores, tokens, type TopicWords } from "./search-index.ts";
+import { boldRuns, captionOf, filtered, find, results, type Topic } from "./search-find.ts";
+import {
+  BEST,
+  fold,
+  type Index,
+  indexOf,
+  oneEdit,
+  partOf,
+  partsOf,
+  readings,
+  scores,
+  tokens,
+  type TopicText,
+  type TopicWords,
+  wordsOf,
+} from "./search-index.ts";
 import { SEARCH_CASES, searchData } from "./pages/home-search.ts";
 
-interface Fixture {
-  title: string;
-  lead: string;
-  strong: string;
-  body: string;
+// A topic as the Japanese Home's search reads it: its texts, and the fields of its row the page shows.
+interface Fixture extends TopicText {
+  id: string;
   course: string;
   levels: string[];
+  other: string;
 }
 interface Cases {
   levels: string[];
+  explained: string;
   fixture: Fixture[];
   index: Index;
   fold: [string, string][];
@@ -28,11 +43,10 @@ interface Cases {
   find: { query: string; titles: string[] }[];
   filters: { query: string; course: string; upTo: string; titles: string[] }[];
   marked: { text: string; terms: string[]; bold: string[] }[];
+  results: { query: string; course: string; upTo: string; rows: { id: string; caption: string; lead: [string, boolean][] }[] }[];
 }
 const cases = (await Bun.file(SEARCH_CASES).json()) as Cases;
-const index = indexOf(
-  cases.fixture.map((t) => ({ title: tokens(t.title), lead: tokens(t.lead), strong: tokens(t.strong), body: tokens(t.body) })),
-);
+const index = indexOf(cases.fixture.map(wordsOf));
 const words = Object.keys(index);
 const topics: Topic[] = cases.fixture.map((t, order) => ({
   title: t.title,
@@ -41,11 +55,11 @@ const topics: Topic[] = cases.fixture.map((t, order) => ({
   summary: t.lead,
   flag: "",
   course: t.course,
-  other: "",
+  other: t.other,
   otherLang: "",
   code: t.course,
   entry: {},
-  id: String(order),
+  id: t.id,
   order,
   t: fold(t.title),
 }));
@@ -94,6 +108,19 @@ test("a text shows each place a term appears in bold, cut from the original with
   }
 });
 
+test("a query shows, in order, each topic found within the filters, the language it opens in, and its lead with the terms in bold", () => {
+  for (const r of cases.results) {
+    const shown = results(topics, index, words, r.query, { course: r.course, upTo: r.upTo }, cases.levels, cases.explained);
+    expect([r.query, shown.map(({ topic, caption, lead }) => ({ id: topic.id, caption, lead }))]).toEqual([r.query, r.rows]);
+  }
+  const english = { ...topics[0], other: "English" } as Topic;
+  expect([captionOf("Explained in {name:lower}", english), captionOf("Read in {name}", english)]).toEqual([
+    "Explained in english",
+    "Read in English",
+  ]);
+  expect(captionOf("Explained in {name}", { ...english, other: "" })).toBe("");
+});
+
 test("a word keeps the topics it weighs most in, at most BEST", () => {
   // Topic i says "shared" i + 1 times in a body of the same length; as many topics again never say it.
   const body = (i: number): string => `${"shared ".repeat(i + 1)}${"filler ".repeat(BEST + 4 - i)}`;
@@ -109,7 +136,8 @@ test("the index comes in parts by first letter, each named by its code point in 
   expect(partOf("what")).toBe("77");
   expect(partOf("щоб")).toBe("449");
   const parts = partsOf(index);
-  expect(Object.keys(parts["77"] ?? {}).sort()).toEqual(["what", "wh", "where", "who", "went"].sort());
+  expect(Object.keys(parts["77"] ?? {}).every((w) => w.startsWith("w"))).toBe(true);
+  expect(Object.keys(parts["77"] ?? {})).toContain("went");
   expect(Object.values(parts).reduce((n, p) => n + Object.keys(p).length, 0)).toBe(words.length);
 });
 

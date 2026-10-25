@@ -2,7 +2,7 @@
 // two of at least 320px fit; the filters under the field narrow them (client-search-filters.ts); Close, Escape and the
 // clear button end or empty it; the Read in menu closes on a tap outside it; on phones the toolbar rises above the
 // on-screen keyboard (--hm-kb, home-phone.css).
-import { el, filtered, find, marked, type SearchData, tokens, type Topic, topicsOf } from "./client-home-find.ts";
+import { el, type Result, results as searchResults, type SearchData, tokens, type Topic, topicsOf } from "./client-home-find.ts";
 import { addLevelEntries } from "./client-levels.ts";
 import { searchFilters } from "./client-search-filters.ts";
 import { type Index, partOf } from "./search-index.ts";
@@ -10,7 +10,7 @@ import { type Index, partOf } from "./search-index.ts";
 // One result row: the course's flag and the topic's title, a link over the whole row; its small level mark, a button
 // that opens the level popover, with its range in words on wide screens; the language it opens in when it is not the
 // page's; and its lead with the terms in bold.
-function row(topic: Topic, terms: string[], scale: string[], explained: string): HTMLElement {
+function row({ topic, caption, lead }: Result, scale: string[]): HTMLElement {
   const item = el("div", "hm-row");
   const head = el("span", "hm-row-head");
   const a = el("a", "hm-row-a") as HTMLAnchorElement;
@@ -31,16 +31,9 @@ function row(topic: Topic, terms: string[], scale: string[], explained: string):
   mark.append(el("span", "lvm-t", from === to ? from : `${from}–${to}`));
   head.append(a, mark);
   item.append(head);
-  if (topic.other !== "") {
-    const caption = el(
-      "span",
-      "hm-row-cap",
-      explained.replace(/\{name(:lower)?\}/, (_all, lower?: string) => (lower === undefined ? topic.other : topic.other.toLowerCase())),
-    );
-    item.append(caption);
-  }
+  if (caption !== "") item.append(el("span", "hm-row-cap", caption));
   const text = el("span", "hm-row-text");
-  text.append(marked(topic.summary, terms));
+  for (const [run, bold] of lead) text.append(bold ? el("b", "", run) : run);
   item.append(text);
   return item;
 }
@@ -117,7 +110,7 @@ export function homeSearch(): void {
     await load();
     await loadParts(terms);
     if (mine !== version || topics === null) return;
-    const found = filtered(find(topics, index, words, terms), filters(), scale);
+    const found = searchResults(topics, index, words, input.value, filters(), scale, results.dataset["explained"] ?? "");
     list.replaceChildren();
     if (heading) heading.textContent = (heading.dataset["count"] ?? "").replace("{n}", String(found.length));
     if (heading) heading.hidden = found.length === 0;
@@ -130,7 +123,7 @@ export function homeSearch(): void {
     const half = Math.ceil(found.length / 2);
     for (const part of found.length > 1 ? [found.slice(0, half), found.slice(half)] : found.length > 0 ? [found] : []) {
       const rows = el("div", "hm-rows");
-      rows.append(...part.map((topic) => row(topic, terms, scale, results.dataset["explained"] ?? "")));
+      rows.append(...part.map((result) => row(result, scale)));
       list.append(rows);
     }
   }

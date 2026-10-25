@@ -34,6 +34,20 @@ export interface TopicWords {
   body: string[];
 }
 type Field = keyof TopicWords;
+// A topic's texts as the search reads them: the lead shown under its title weighs with its section's name as one field.
+export interface TopicText {
+  title: string;
+  lead: string;
+  section: string;
+  strong: string;
+  body: string;
+}
+export const wordsOf = (t: TopicText): TopicWords => ({
+  title: tokens(t.title),
+  lead: tokens(`${t.lead} ${t.section}`),
+  strong: tokens(t.strong),
+  body: tokens(t.body),
+});
 
 // Each word: how many topics hold it, then its best topics, each as its place in the topics and its weight ×100.
 export type Index = Record<string, number[]>;

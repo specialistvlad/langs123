@@ -1,7 +1,7 @@
 // The topics a query finds in the Home's search data (search/<language>.json, pages/home-search.ts): those whose
 // title holds every term first, by how the title holds them, then the rest by the index (search-index.ts); the
 // filters of the Home (a course, the levels up to one) narrow them. The page, the build's tests and other apps share it.
-import { fold, type Index, scores } from "./search-index.ts";
+import { fold, type Index, scores, tokens } from "./search-index.ts";
 
 export interface Topic {
   title: string;
@@ -110,4 +110,34 @@ export function boldRuns(text: string, terms: readonly string[]): [string, boole
   }
   if (end < text.length) runs.push([text.slice(end), false]);
   return runs;
+}
+
+// A topic as a query's results show it: the topic, the caption naming the language it opens in when that is not the
+// page's (explained: "Explained in {name}", from the page's wording), and its lead with the terms in bold.
+export interface Result {
+  topic: Topic;
+  caption: string;
+  lead: [string, boolean][];
+}
+export const captionOf = (explained: string, topic: Topic): string =>
+  topic.other === ""
+    ? ""
+    : explained.replace(/\{name(:lower)?\}/, (_all, lower?: string) => (lower === undefined ? topic.other : topic.other.toLowerCase()));
+
+// What a query shows, in order: its terms found, the filters applied, each topic with its caption and its lead.
+export function results(
+  topics: Topic[],
+  index: Index,
+  words: readonly string[],
+  query: string,
+  filters: Filters,
+  scale: string[],
+  explained: string,
+): Result[] {
+  const terms = tokens(query);
+  return filtered(find(topics, index, words, terms), filters, scale).map((topic) => ({
+    topic,
+    caption: captionOf(explained, topic),
+    lead: boldRuns(topic.summary, terms),
+  }));
 }

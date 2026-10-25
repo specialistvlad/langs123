@@ -21,10 +21,10 @@ import {
   type TopicRef,
 } from "../../../scripts/lib.ts";
 import { topicLevels } from "../../../scripts/levels.ts";
-import { foldText, plainText, reading, type TextOutput, textIn } from "../../../scripts/text.ts";
+import { foldText, reading, type TextOutput, textIn } from "../../../scripts/text.ts";
 import { type Context, explainsOf } from "../context.ts";
 import { STRONG } from "../html.ts";
-import { type Index, indexOf, partsOf, tokens, type TopicWords } from "../search-index.ts";
+import { type Index, indexOf, partsOf, type TopicText, wordsOf } from "../search-index.ts";
 import { topicEntryOf } from "../level-popover.ts";
 import { topicUrl } from "../urls.ts";
 
@@ -46,9 +46,9 @@ const READ: TextOutput<Read> = {
 };
 const read = (t: Text, explain: Explain, plain: boolean): Read => foldText(t, READ, reading(explain, plain));
 
-// A topic's words in an explanation language: the title, the lead with the section's name, the bold forms, and
+// A topic's texts in an explanation language: the title, the lead and the section's name, the bold forms, and
 // every other text of the lesson (topicTexts).
-function topicWords(topic: Topic, title: string, section: string, explain: Explain): TopicWords {
+function topicText(topic: Topic, title: string, section: string, explain: Explain): TopicText {
   const lead = read(textIn(topic.summary.lead, explain), explain, false);
   const strong = [lead.strong];
   const body: string[] = [];
@@ -58,18 +58,12 @@ function topicWords(topic: Topic, title: string, section: string, explain: Expla
     body.push(r.all);
     strong.push(r.strong);
   }
-  return {
-    title: tokens(title),
-    lead: tokens(`${lead.all} ${section}`),
-    strong: tokens(strong.join(" ")),
-    body: tokens(body.join(" ")),
-  };
+  return { title, lead: lead.all, section, strong: strong.join(" "), body: body.join(" ") };
 }
 
-// The search data of an explanation language: every written topic of the languages given, its row, and the index of
-// their words. Another app reads the same through api.ts (searchData).
-export function searchOf(languages: CurriculumLanguage[], refs: TopicRef[], home: Explain): SearchFile {
-  const words: TopicWords[] = [];
+// Every written topic of the languages given in an explanation language: its row, and its texts.
+export function searchRows(languages: CurriculumLanguage[], refs: TopicRef[], home: Explain): { topics: unknown[][]; texts: TopicText[] } {
+  const texts: TopicText[] = [];
   const topics = languages.flatMap((lang) => {
     const explains = explainsOf(lang);
     const e = explains.includes(home) ? home : (explains[0] ?? home);
@@ -79,16 +73,15 @@ export function searchOf(languages: CurriculumLanguage[], refs: TopicRef[], home
       const levels = ref.lang === lang.code && ref.topic !== null ? topicLevels(ref.topic, e) : [];
       if (ref.topic === null || levels.length === 0) return [];
       const title = topicTitle(ref, e);
-      const lead = plainText(textIn(ref.topic.summary.lead, e), reading(e, false));
-      const section = localize(ref.section.title, e);
-      words.push(topicWords(ref.topic, title, section, e));
+      const text = topicText(ref.topic, title, localize(ref.section.title, e), e);
+      texts.push(text);
       return [
         [
           title,
           topicUrl(e, lang, ref),
           levels.join(" "),
-          lead,
-          section,
+          text.lead,
+          text.section,
           lang.flag,
           localize(lang.name, home),
           ...other,
@@ -99,11 +92,18 @@ export function searchOf(languages: CurriculumLanguage[], refs: TopicRef[], home
       ];
     });
   });
-  return { levels: [...LEVELS], topics, index: indexOf(words) };
+  return { topics, texts };
 }
 
-// The cases the search's tests hold (search-cases.json): a fixture, its index, and the words and topics each query
-// finds, for another app's tests to hold as well.
+// The search data of an explanation language: the rows, and the index of their words. Another app reads the same
+// through api.ts (searchData).
+export function searchOf(languages: CurriculumLanguage[], refs: TopicRef[], home: Explain): SearchFile {
+  const { topics, texts } = searchRows(languages, refs, home);
+  return { levels: [...LEVELS], topics, index: indexOf(texts.map(wordsOf)) };
+}
+
+// The cases the search's tests hold (search-cases.json): a slice of the library, its index, and the words, topics and
+// rows each query finds, for another app's tests to hold as well.
 export const SEARCH_CASES = join(import.meta.dir, "..", "search-cases.json");
 
 export interface SearchFile {
