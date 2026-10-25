@@ -774,6 +774,9 @@
         },
         {
           "$ref": "#/definitions/patternMark"
+        },
+        {
+          "$ref": "#/definitions/kanjiMark"
         }
       ]
     },
@@ -1089,6 +1092,25 @@
         "ipa": {
           "type": "string",
           "pattern": "^[^/*\\[\\]()]+$"
+        }
+      }
+    },
+    "kanjiMark": {
+      "description": "A word or part of one written in kanji, with its reading in kana (furigana): a page sets the reading over the kanji, and plain text keeps the kanji alone.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kanji",
+        "reading"
+      ],
+      "properties": {
+        "kanji": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reading": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },

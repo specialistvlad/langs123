@@ -32,6 +32,7 @@ export const LEARNED = new Set<MarkName>([
   "ordinal",
   "optional",
   "variant",
+  "kanji",
 ]);
 // Marks whose text is explanation: a phrase in the reader's language, a topic's title.
 const EXPLAINING = new Set<MarkName>(["l1", "link"]);

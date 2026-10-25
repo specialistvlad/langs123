@@ -59,6 +59,7 @@ function htmlOutput(ctx: Ctx): TextOutput<string> {
     ...(ctx.lesson === true ? LESSON : {}),
     text: ctx.lesson === true ? (s) => keepHyphen(escapeHtml(s)) : escapeHtml,
     join: (parts) => parts.join(""),
+    ruby: (kanji, kana) => `<ruby>${kanji}<rt>${escapeHtml(kana)}</rt></ruby>`,
     mark(name: MarkName, inner: string, m: Mark, c: FoldContext): string {
       const lang = markLang(name, m, c, ctx);
       const attrs = ` data-mark="${name}"${lang === "" ? "" : ` lang="${lang}"`}`;

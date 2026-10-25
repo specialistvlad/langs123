@@ -22,12 +22,12 @@ export const VALUE_MARKS = ["date", "weekday", "time", "numeral", "ordinal"] as 
 // Structures: pieces of text the renderer joins.
 export const LIST_MARKS = ["alternatives", "examples", "mapping", "takes", "exchange", "pattern", "equivalence", "contrast"] as const;
 // The other marks.
-export const OTHER_MARKS = ["gloss", "ipa", "link", "intonation", "gap", "variant", "slot", "optional"] as const;
+export const OTHER_MARKS = ["gloss", "ipa", "link", "intonation", "gap", "variant", "slot", "optional", "kanji"] as const;
 export const MARKS = [...SPAN_MARKS, ...VALUE_MARKS, ...LIST_MARKS, ...OTHER_MARKS] as const;
 export type MarkName = (typeof MARKS)[number];
 
-// The keys of a mark that are not its name: its value, target, variety or position.
-const ATTRIBUTES = new Set(["value", "to", "variety", "follows"]);
+// The keys of a mark that are not its name: its value, target, variety, position or reading.
+const ATTRIBUTES = new Set(["value", "to", "variety", "follows", "reading"]);
 
 export function markName(m: Mark): MarkName {
   const name = Object.keys(m).find((k) => !ATTRIBUTES.has(k));
@@ -50,6 +50,8 @@ export interface TextOutput<T> {
   joiner?: (sep: string) => T;
   ipa?: (transcription: string) => T;
   label?: (name: string) => T;
+  // Kanji with its reading set over it; without it, the kanji alone.
+  ruby?: (kanji: T, reading: string) => T;
 }
 
 export interface FoldContext {
@@ -101,6 +103,10 @@ function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
       return wrap(out.text((m as { intonation: string }).intonation === "rise" ? "↗" : "↘"));
     case "gap":
       return wrap(out.text("…"));
+    case "kanji": {
+      const k = m as { kanji: string; reading: string };
+      return wrap(out.ruby === undefined ? out.text(k.kanji) : out.ruby(out.text(k.kanji), k.reading));
+    }
     case "slot": {
       const slot = (m as { slot: string | Localized }).slot;
       return wrap(typeof slot === "string" ? out.text(slotName(slot, c.explain)) : fold(textIn(slot, c.explain), { plain: false }));

@@ -50,6 +50,10 @@ export function validDate(value: string): boolean {
   return Number(day) >= 1 && Number(day) <= max;
 }
 
+// A kanji mark holds kanji alone, and its reading kana alone.
+const KANJI = /^[\p{Script=Han}々〆ヶ]+$/u;
+const KANA = /^[\p{Script=Hiragana}\p{Script=Katakana}ー]+$/u;
+
 const isLocalizedValue = (v: unknown): v is Localized => typeof v === "object" && v !== null && !Array.isArray(v) && isLocalized(v);
 
 export function checkMarks(topic: Topic, where: string, report: Report, explain: readonly Explain[] = EXPLAIN_CODES): void {
@@ -81,6 +85,15 @@ export function checkMarks(topic: Topic, where: string, report: Report, explain:
           }
           if (name === "date" && !validDate(String((m as { value: unknown }).value))) {
             report(where, `${path} has a date with no such day: ${String((m as { value: unknown }).value)}`);
+          }
+          if (name === "kanji") {
+            const { kanji, reading } = m as { kanji: string; reading: string };
+            if (!KANJI.test(kanji)) {
+              report(where, `${path} has kanji "${kanji}" holding more than kanji: the kana around it stays outside the mark`);
+            }
+            if (!KANA.test(reading)) {
+              report(where, `${path} has kanji "${kanji}" read "${reading}": a reading is kana alone`);
+            }
           }
         },
         missing(m, l) {

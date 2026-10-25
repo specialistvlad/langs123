@@ -42,7 +42,8 @@ export type Mark =
   | GapMark
   | VariantMark
   | SlotMark
-  | PatternMark;
+  | PatternMark
+  | KanjiMark;
 /**
  * A variety of the language being learned, as a BCP 47 tag. English: en-GB when absent. A language with varieties in curriculum.yaml: an element without one serves every variety.
  */
@@ -436,6 +437,13 @@ export interface PatternMark {
    */
   pattern: Text[];
   follows?: true;
+}
+/**
+ * A word or part of one written in kanji, with its reading in kana (furigana): a page sets the reading over the kanji, and plain text keeps the kanji alone.
+ */
+export interface KanjiMark {
+  kanji: string;
+  reading: string;
 }
 /**
  * The lead and the rule of the summary, and the rule's examples.

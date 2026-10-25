@@ -86,6 +86,11 @@ describe("marks are whole", () => {
   test("a list of parts holds a mark", () => {
     expect(problems(learned(["a ", "b"])).join("\n")).toContain("a list of plain strings");
   });
+  test("kanji holds kanji alone, and its reading kana alone", () => {
+    expect(problems(learned({ kanji: "食", reading: "た" }))).toEqual([]);
+    expect(problems(learned({ kanji: "食べ", reading: "たべ" })).join("\n")).toContain('kanji "食べ" holding more than kanji');
+    expect(problems(learned({ kanji: "食", reading: "ta" })).join("\n")).toContain('kanji "食" read "ta": a reading is kana alone');
+  });
   test("a date is one the calendar holds", () => {
     expect(problems(learned({ date: "30 February", value: "--02-30" })).join("\n")).toContain("a date with no such day: --02-30");
     expect(problems(learned({ date: "29 February 2023", value: "2023-02-29" })).join("\n")).toContain("no such day");

@@ -65,6 +65,7 @@ describe("every mark reads as its text", () => {
     [{ pattern: [{ ending: "es" }], follows: true }, "+ es"],
     [{ equivalence: ["Ana's tired.", "Ana is tired."] }, "Ana's tired. = Ana is tired."],
     [{ contrast: ["short /ɪ/", "long /iː/"] }, "short /ɪ/ ≠ long /iː/"],
+    [{ kanji: "食", reading: "た" }, "食"],
   ];
   test.each(cases.map(([m, plain, explained]) => [m, plain, explained ?? plain] as const))("%j", (m, plain, explained) => {
     expect(read(m)).toBe(plain);

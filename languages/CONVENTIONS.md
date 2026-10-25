@@ -559,6 +559,7 @@ structure; text without marks is one string.
 | `slot` | a slot of a pattern: a code from the slot list, or a localized description of what fills it | be + V-ing | V-ing |
 | `optional` | an optional part | He said (that) he was tired. | that |
 | `gap` | an open slot, or the gap in a split form | Could you…? | … |
+| `kanji` | a word or part of a word in kanji, with its kana reading in `reading` (furigana) | 食べます | 食 = た |
 | `intonation` | the voice rising or falling: `rise`, `fall` | Really? ↗ | ↗ |
 | `variant` | the form in another variety, with its `variety`; on a language with varieties, the form of its `variety`, shown to readers of that variety (§1) | at the weekend (US: on the weekend) | on the weekend |
 
@@ -573,7 +574,7 @@ The renderer writes each slot code in the reader's language, from `slots` in `in
 
 Marks nest: `{ target: { ipa: θɜːˈtiːn } }` marks a transcription as the form taught. The text of
 `target`, `aux`, `subj`, `verb`, `ending`, `stress`, `term`, `letter`, `signal`, `sound`, `optional`,
-`variant` and the value marks is in the language being learned, wherever it stands; a `gloss` or a
+`variant`, `kanji` and the value marks is in the language being learned, wherever it stands; a `gloss` or a
 `slot` description inside it is localized and carries each language its text serves. The value of
 a `date`, `weekday`, `time`, `numeral` or `ordinal` mark is the same in every language: the renderer
 can show it in the reader's language beside the lesson's written form.
@@ -601,3 +602,4 @@ can show it in the reader's language beside the lesson's written form.
 | `features` | the grammar features of a row, a column or a section |
 | `value` | the value of an inventory member or of a value mark |
 | `follows` | a `mapping`, `takes` or `pattern` that continues the form under discussion: `true` |
+| `reading` | the kana reading of a `kanji` mark, which a page sets over it as furigana and plain text leaves out: `た` |

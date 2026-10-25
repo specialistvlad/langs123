@@ -1,11 +1,13 @@
-// The exported library matches its schema, holds every written topic, and keeps each block's type.
+// The exported library matches its schema, holds every written topic, keeps each block's type, and writes
+// kanji with its reading.
 import { expect, setDefaultTimeout, test } from "bun:test";
 import Ajv from "ajv";
 import { join } from "node:path";
 import { exportLibrary, type LibraryItem } from "./export.ts";
 import { topic } from "./export/blocks.ts";
-import { inTrack } from "./export/text.ts";
-import { CONTENT, EXPLAIN_CODES, type ListBlock, loadCurriculum, loadTopics, readYaml } from "./lib.ts";
+import { inTrack, learned } from "./export/text.ts";
+import { CONTENT, EXPLAIN_CODES, type ListBlock, loadCurriculum, loadTopics, readYaml, type Text } from "./lib.ts";
+import { plainText, reading } from "./text.ts";
 import { SAMPLE as SAMPLE_TOPIC } from "./sample-topic.ts";
 
 // Each export reads every topic file: about a second here, and up to 15 s on a CI runner shared with the
@@ -58,4 +60,11 @@ test("an export of some topics holds their content alone, and every topic in its
   const some = await exportLibrary(["en.verbs.to-be"]);
   expect(Object.keys(some.topics)).toEqual(["en.verbs.to-be"]);
   expect(some.languages.flatMap((l) => l.sections.flatMap((s) => s.topics)).length).toBe(Object.keys(library.topics).length);
+});
+
+test("kanji is followed by its reading, each a mark of its own, and plain text keeps the kanji alone", () => {
+  const eat: Text = ["私は", { target: [{ kanji: "食", reading: "た" }, "べます"] }, "。"];
+  expect(learned(eat, "en")).toBe("私は[**食**](m:kanji)[**た**](m:reading)**べます**。");
+  expect(learned([{ kanji: "日本", reading: "にほん" }, "です"], "en")).toBe("[日本](m:kanji)[にほん](m:reading)です");
+  expect(plainText(eat, reading("en", true))).toBe("私は食べます。");
 });

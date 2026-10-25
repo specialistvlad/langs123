@@ -17,8 +17,9 @@ interface Run {
 
 // The marks written `[text](m:tag,tag)`: IPA in the mono face, a joiner between the pieces of a list in
 // muted grey, an optional word and a gap in the secondary ink, a slot as a chip, an intonation arrow in the
-// accent, and a variety named inline, its label apart from its form.
-const TAGS = new Set(["ipa", "optional", "gap", "slot", "intonation", "variant"]);
+// accent, a variety named inline, its label apart from its form, and kanji followed by its reading,
+// `[食](m:kanji)[た](m:reading)`, which an app sets over it as ruby.
+const TAGS = new Set(["ipa", "optional", "gap", "slot", "intonation", "variant", "kanji"]);
 const LISTS = new Set(["alternatives", "examples", "mapping", "takes", "exchange", "pattern", "equivalence", "contrast"]);
 const JOINER = /^\s*(\/|·|→|—|\+|=|≠)\s*$/;
 const tagged = (runs: Run[], tag: string, only: (r: Run) => boolean = () => true): Run[] =>
@@ -31,6 +32,7 @@ const RUNS: TextOutput<Run[]> = {
     if (EMPHASIS.has(name)) return inner.map((r) => ({ ...r, italic: true }));
     if (name === "link") return inner.map((r) => ({ ...r, link: (m as { to: string }).to }));
     if (TAGS.has(name)) {
+      if (name === "kanji") return tagged(inner, name, (r) => r.tags?.includes("reading") !== true);
       if (name !== "variant") return tagged(inner, name);
       // A variety named inline: "US: " is the label of the form after it; swapped in place it is the form alone.
       const label = `${c.variety((m as { variety: Variety }).variety)}: `;
@@ -40,6 +42,7 @@ const RUNS: TextOutput<Run[]> = {
     if (LISTS.has(name)) return tagged(inner, "joiner", (r) => r.tags === undefined && JOINER.test(r.s));
     return inner;
   },
+  ruby: (kanji, kana) => [...kanji, { s: kana, bold: false, italic: false, tags: ["reading"] }],
   // Neighbouring variants, of which one variety's shows: one run, without the spaces between them.
   swap: (variants) => variants.flat(),
 };

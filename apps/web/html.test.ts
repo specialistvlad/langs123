@@ -49,6 +49,12 @@ describe("every mark is an element that names it", () => {
       '<span data-mark="variant" data-variety="en-US">(US: on the weekend)</span>',
     );
   });
+  test("kanji carries its reading over it, inside the form it is part of", () => {
+    expect(html({ kanji: "食", reading: "た" })).toBe('<span data-mark="kanji"><ruby>食<rt>た</rt></ruby></span>');
+    expect(html({ target: [{ kanji: "食", reading: "た" }, "べます"] })).toBe(
+      '<strong data-mark="target"><span data-mark="kanji"><ruby>食<rt>た</rt></ruby></span>べます</strong>',
+    );
+  });
   test("structures and the other marks keep their name", () => {
     expect(html({ ipa: "wɜːk" })).toBe('<span data-mark="ipa">/wɜːk/</span>');
     expect(html({ pattern: ["be", { slot: "V-ing" }] })).toBe('<span data-mark="pattern">be + <span data-mark="slot">V-ing</span></span>');
@@ -75,6 +81,7 @@ describe("every mark is an element that names it", () => {
                 ipa: { ipa: "i" },
                 intonation: { intonation: "rise" },
                 gap: { gap: true },
+                kanji: { kanji: "k", reading: "r" },
                 variant: { variant: "v", variety: "en-US" },
                 gloss: { gloss: { en: "g" } },
                 slot: { slot: "V" },

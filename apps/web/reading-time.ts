@@ -28,6 +28,7 @@ const NOT_TEXT = new Set([
   "to",
   "follows",
   "columns",
+  "reading",
 ]);
 
 // Whether an element serves this reader in this variety: its variety, its speakers and its readers.
