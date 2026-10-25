@@ -138,6 +138,13 @@ most frequent forms first, and an overview after its parts.
   filter hides the levels above the chosen one.
 - `npm run check` enforces the steps; `npm test` and `npm run e2e` test the pages built from them.
 
+**Each step builds on the steps before it.** A topic's examples, explanations and tables use the grammar and
+script that earlier steps of its language's study path teach, or that earlier parts of the same topic teach:
+forms, endings, particles, letters, kana, kanji and grammar terms. A set phrase a learner needs before its grammar
+(*bonjour*, はじめまして, *¿Cómo te llamas?*) stands as a fixed phrase, its meaning given where it appears and linked
+to the topic that teaches it. Everyday words follow §7: at or below the section's level, each example carrying its
+translation. When a topic needs a form a later step teaches, the example changes or the path order does.
+
 ## 3. Levels
 
 `levels.yaml` defines the scale, lowest first; every app takes level codes, names, descriptions
@@ -227,22 +234,29 @@ named after its mark.
 | `cheatsheet` | `content`: the whole topic in one table, section 00 (§8) |
 | `sections` | the full guide, in order: each with its `title`, `role` and `content` |
 
-**The summary.** The page shows the summary above the guide; topic cards and the meta description
-show its lead. The lead and the rule are one sentence each, and the summary holds at most 50 words
-with its examples:
+**The intro.** A topic page opens with its intro, above the guide: the lead, the rule and the rule's
+examples in one paragraph. Topic cards and the meta description show the lead. The intro explains the
+topic as a teacher opens a lesson: every sentence states a fact of the language, in words at the
+topic's lowest level, and where the reader's language has a close counterpart it starts from it. The
+intro holds at most 50 words with its examples.
 
-1. **The lead** (`summary.lead`) names the forms and what they do, so it stands alone in a search
-   result or on a card: "Can for ability, permission and requests; could for past ability, polite
-   requests and possibility." It starts with a capital letter and has at most 160 characters.
-2. **The rule to get right** (`summary.rule`): the one rule a learner most needs, "Can and could
-   never change and take the base verb without to:", followed by its examples in `summary.ex` with
-   the target form marked: `{ examples: [["She ", { target: can }, " swim."], [{ target: Can }, " she swim?"]] }`.
-   The page joins them as they read: a comma after a phrase, a space after a sentence. A rule that
-   shows its examples inside its own sentence keeps them there, their forms marked `target`.
+1. **The lead** (`summary.lead`) is one sentence with a verb: what the subject is and how it works,
+   with the one insight that makes it make sense. "Hiragana is the Japanese syllabary: each sign
+   writes a whole syllable, as か writes ka." "Can and could say what someone is able or allowed to
+   do, and could makes a request polite." It starts with a capital letter, has at most 160 characters
+   and stands alone on a card or in a search result.
+2. **The rule to get right** (`summary.rule`) is the fact a learner most often gets wrong, a fact
+   beyond the lead: "Can and could never change and take the base verb without to:", followed
+   by its examples in `summary.ex` with the target form marked:
+   `{ examples: [["She ", { target: can }, " swim."], [{ target: Can }, " she swim?"]] }`. The examples
+   are whole sentences, each ending in its punctuation, in words earlier steps teach or the rule
+   glosses, since the intro shows no translation. The page joins them as they read: a comma after a
+   phrase, a space after a sentence. A rule that shows its examples inside its own sentence keeps them
+   there, their forms marked `target`.
 
-Both sentences talk about the language itself. The rail lists the sections and the badges show the
-levels, so each sentence opens with a form, a meaning or a rule. Each explanation language has its
-own summary, written for its readers.
+The rail lists the sections and the badges show the levels; the intro speaks of the language alone,
+and its facts are facts the sections hold. Each explanation language has its own intro, written in its
+own words and terms from the facts of the source.
 `npm run check` enforces the length, the capital letters, the one-sentence lead, and sentences free
 of page tours, level codes and openers such as "You need it to…".
 
@@ -277,6 +291,14 @@ continuous: use" has `{ tense: prs, aspect: prog }`.
 
 Foundations topics take one section per part of what they set out, with role `own`: the letters,
 the sounds, the numbers by range, the days, the months, the times; then Typical errors.
+
+**Sections teach.** A Use or Form table opens each row with what the learner wants to say, named in
+the reader's language, and the form follows; a paradigm keeps its person or feature first. A rule
+gives its reason in a clause wherever the language has one: the literal meaning, how the form is
+built, the logic behind it (*なければならない*, "if I don't, it won't do"). The overview holds the
+rules that span the sections; a rule of one section stays in it, and the cheatsheet is the one
+summary. An errors row holds a form that is wrong; a choice of register or style belongs to Use or
+Compare.
 
 `related` lists related topics by ID; guides carry no links section.
 
@@ -320,6 +342,10 @@ leaves out the key of a cell with nothing in it.
   being learned, rows list errors typical of speakers of the explanation language and name them in
   `speakers`: the page shows such a row to readers of the explanation languages it names. Rows
   without `speakers` serve all.
+- Each explanation language explains from its readers' language. Where that language has a close
+  counterpart, the explanation starts from it; where it misleads, a note for those readers
+  (`readers`) states the difference: for Ukrainian readers, *なくてもいい* is «не обов’язково», and
+  «не можна» is *てはいけない*.
 
 ## 7. Tables and writing style
 
@@ -348,7 +374,9 @@ the sentence. The tense cheatsheets use one: Tense, then Question (Helper, Subje
 - Tables first. Use text only for a rule that a table cannot hold.
 - One rule per list item, at most 20 words.
 - State the correct form. Incorrect forms appear only in `errors` blocks.
-- Examples use everyday vocabulary at or below the section's level.
+- An example is a sentence someone says in a situation it makes plain, in everyday words at or below
+  the section's level; its translation is what a speaker of the reader's language says in that
+  situation.
 - Pronunciation is IPA in an `ipa` mark, `{ ipa: wɜːks }`, which renders /wɜːks/.
 - Patterns name their slots from the slot list of §12: `V` = base verb, `V-s`, `V-ing`, `V-ed`,
   `subject`, `noun`, `clause`…
