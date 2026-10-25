@@ -5,10 +5,13 @@ import { describe, expect, test } from "bun:test";
 import { ENABLED_EXPLAIN, type Explain, explainName, say } from "../../scripts/lib.ts";
 import { type Choice, readChoices } from "./context.ts";
 import { readItems } from "./read-menu.ts";
-import { readPage } from "./test-site.ts";
+import { readPage, testSite } from "./test-site.ts";
 import { readMenu } from "./toolbar.ts";
 import { ui } from "./ui.ts";
 import { homeUrl } from "./urls.ts";
+
+// The sample site, built once before the tests read its pages.
+await testSite();
 
 const choices = (home: Explain): Choice[] => readChoices(home, homeUrl);
 const homeFile = (e: Explain): string => `${homeUrl(e).slice(1)}index.html`;
