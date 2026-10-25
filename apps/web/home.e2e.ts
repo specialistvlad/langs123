@@ -94,3 +94,33 @@ test(
   },
   SLOW,
 );
+
+test(
+  "a course index searches its own course first, and the reader can switch the course chip to all courses",
+  async () => {
+    await page.goto(new URL("/en/spanish/", base).href);
+    await page.locator("#hm-q").fill("present");
+    await page.locator(".hm-row").first().waitFor();
+    const chip = page.locator('[data-filter="course"]');
+    expect([await chip.textContent(), await chip.getAttribute("aria-pressed")]).toEqual(["Spanish", "false"]);
+    expect(await page.locator('[data-variety-course="es"]').isVisible()).toBe(true);
+    const own = await page.locator(".hm-row").count();
+    expect(await page.locator(".hm-row-flag").allTextContents()).toEqual(Array<string>(own).fill("🇪🇸"));
+    // The Home button stays on a wide screen while a query is typed.
+    expect(await page.locator(".ix-up").isVisible()).toBe(true);
+    await chip.click();
+    await page.locator('#hm-f-course [data-course=""]').click();
+    await page.waitForFunction(() => document.querySelector('[data-filter="course"]')?.textContent === "All courses");
+    await page.waitForFunction((n) => document.querySelectorAll(".hm-row").length > n, own);
+    expect(await chip.getAttribute("aria-pressed")).toBe("true");
+    // A tap on the chip brings the course index's own course back.
+    await chip.click();
+    await page.waitForFunction(() => document.querySelector('[data-filter="course"]')?.textContent === "Spanish");
+    expect(await page.locator(".hm-row").count()).toBe(own);
+    // On a phone the Home button leaves while a query is typed.
+    await page.setViewportSize({ width: 402, height: 874 });
+    expect(await page.locator(".ix-up").isVisible()).toBe(false);
+    await page.setViewportSize({ width: 1280, height: 800 });
+  },
+  SLOW,
+);

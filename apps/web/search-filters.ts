@@ -19,13 +19,20 @@ const chip = (target: string, label: string, attrs = ""): string =>
 const menu = (id: string, label: string, items: string, more = ""): string =>
   `<div class="ix-menu hm-fmenu${more}" id="${id}" popover role="menu" aria-label="${escapeHtml(label)}">${items}</div>`;
 
-export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguage[], read: Choice[]): string {
+// `start` is the course the chip starts on ("" for all courses: the Home's); a course index starts on its own.
+export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguage[], read: Choice[], start = ""): string {
   const all = say("searchAllCourses", home);
   const upTo = say("searchUpTo", home);
-  const courses = languages.map((l) => ({ code: l.code, label: `${l.flag} ${localize(l.name, home)}`, varieties: l.varieties ?? [] }));
+  const courses = languages.map((l) => ({
+    code: l.code,
+    name: localize(l.name, home),
+    label: `${l.flag} ${localize(l.name, home)}`,
+    varieties: l.varieties ?? [],
+  }));
   const top = LEVEL_INFO.at(-1)?.code ?? "";
   const current = read.find((c) => c.on)?.label ?? "";
-  const course = chip("hm-f-course", escapeHtml(all), ` data-filter="course" data-all-label="${escapeHtml(all)}"`);
+  const first = courses.find((c) => c.code === start);
+  const course = chip("hm-f-course", escapeHtml(first?.name ?? all), ` data-filter="course" data-all-label="${escapeHtml(all)}"`);
   const level = chip(
     "hm-f-level",
     escapeHtml(t.allLevels),
@@ -48,7 +55,10 @@ export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguag
     menu(
       "hm-f-course",
       all,
-      [item('data-course=""', all, true), ...courses.map((c) => item(`data-course="${c.code}"`, c.label, false))].join(""),
+      [
+        item('data-course=""', all, first === undefined),
+        ...courses.map((c) => item(`data-course="${c.code}" data-name="${escapeHtml(c.name)}"`, c.label, c === first)),
+      ].join(""),
     ),
     menu(
       "hm-f-level",
@@ -69,6 +79,6 @@ export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguag
         ),
       ),
   ];
-  return `<div class="hm-filters" id="hm-filters" role="group" aria-label="${escapeHtml(t.search)}">${[course, level, ...varieties, readIn].join("")}</div>
+  return `<div class="hm-filters" id="hm-filters" data-start="${escapeHtml(first?.code ?? "")}" role="group" aria-label="${escapeHtml(t.search)}">${[course, level, ...varieties, readIn].join("")}</div>
 ${menus.join("\n")}`;
 }

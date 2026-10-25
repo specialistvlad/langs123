@@ -10,7 +10,8 @@ import { glyph } from "./glyphs.ts";
 import { escapeHtml } from "./html.ts";
 import { type LevelEntry, topicEntryOf } from "./level-popover.ts";
 import { bars, levelsLabel, markButton } from "./level-mark.ts";
-import { levelAttrs, refLevels, refsRange, single } from "./parts.ts";
+import { levelAttrs, refLevels, single } from "./parts.ts";
+import { moreRows } from "./track-more.ts";
 import { topicUrl } from "./urls.ts";
 
 const CHEVRON =
@@ -34,80 +35,81 @@ export const pill = (r: Range): string =>
 interface Row {
   attrs: string;
   name: string;
-  href?: string;
+  href: string;
   step?: string;
-  // The topic's levels, and the key of its entry in the page's level data when it has one.
+  // The topic's levels, and the key of its entry in the page's level data.
   levels: Level[];
-  key?: string;
+  key: string;
   label: string;
-  explain: Explain;
 }
 // A row: the topic's link over the whole row, its level mark above the link, and a chevron.
 function row(r: Row): string {
-  const mark = r.key === undefined ? bars(r.levels, r.explain) : markButton(r.levels, r.key, r.label);
-  if (r.href === undefined) {
-    return `<li${r.attrs} class="ix-todo"><span class="ix-row"><span class="ix-name">${escapeHtml(r.name)}</span>${mark}</span></li>`;
-  }
   const step = r.step === undefined ? "" : ` data-path-step="${r.step}"`;
-  return `<li${r.attrs}><span class="ix-row"><a class="ix-cover" href="${r.href}"${step}><span class="ix-name">${escapeHtml(r.name)}</span></a>${mark}${CHEVRON}</span></li>`;
+  return `<li${r.attrs}><span class="ix-row"><a class="ix-cover" href="${r.href}"${step}><span class="ix-name">${escapeHtml(r.name)}</span></a>${markButton(r.levels, r.key, r.label)}${CHEVRON}</span></li>`;
 }
-const list = (attrs: string, head: string, rows: Row[]): string =>
-  `<section class="ix-sec"${attrs}><h2 class="ix-h">${head}</h2><ol class="ix-rows">${rows.map(row).join("")}</ol></section>`;
+// A list of rows, its Show more row (track-more.ts) last; `lows` are the levels its topics start at.
+const list = (attrs: string, head: string, rows: Row[], more: string): string =>
+  `<section class="ix-sec"${attrs}><h2 class="ix-h">${head}</h2><ol class="ix-rows">${rows.map(row).join("")}${more}</ol></section>`;
 
-// A written topic's row keeps its entry in the page's level data, once for both orders.
-function keyed(ref: TopicRef, explain: Explain, entries: Record<string, LevelEntry>): { key?: string } {
-  if (ref.topic === null) return {};
+// A topic's row keeps its entry in the page's level data, once for both orders.
+function keyed(ref: TopicRef, explain: Explain, entries: Record<string, LevelEntry>): string {
   entries[ref.id] ??= topicEntryOf(ref, explain);
-  return { key: ref.id };
+  return ref.id;
 }
 
-// The topics by category: a card per section of the curriculum, each topic with its levels.
+// A topic counts by its lowest level: the level it starts at.
+const lowest = (ref: TopicRef, explain: Explain): Level | undefined => refRange(ref, explain)?.from;
+const lowests = (refs: TopicRef[], explain: Explain): Level[] => refs.flatMap((r) => lowest(r, explain) ?? []);
+
+// The topics by category: a card per section of the curriculum holding written topics, each topic with its levels,
+// the section staying while the chosen level hides some of its topics.
 export function byCategory(track: Track, entries: Record<string, LevelEntry>): string {
   const { lang, explain, langRefs } = track;
   return lang.sections
     .map((section) => {
-      const refs = langRefs.filter((r) => r.section === section);
+      const refs = langRefs.filter((r) => r.section === section && r.topic !== null);
+      if (refs.length === 0) return "";
       const rows = refs.map((ref): Row => {
         const levels = refLevels(ref, explain);
         return {
           attrs: levelAttrs(refRange(ref, explain)),
           name: topicTitle(ref, explain),
-          ...(ref.topic === null ? {} : { href: topicUrl(explain, lang, ref) }),
+          href: topicUrl(explain, lang, ref),
           levels,
           label: levelsLabel(levels, explain),
-          explain,
-          ...keyed(ref, explain, entries),
+          key: keyed(ref, explain, entries),
         };
       });
       const head = `<span class="ix-num">${section.dir.slice(0, 2)}</span><span>${escapeHtml(localize(section.title, explain))}</span>`;
-      return list(levelAttrs(refsRange(refs, explain)), head, rows);
+      return list("", head, rows, moreRows(lowests(refs, explain), explain));
     })
     .join("");
 }
 
-// The topics along the study path: a card per level, each step leading where its level starts.
+// The topics along the study path: a card per level, each step leading where its level starts, and one Show more row
+// for the levels the chosen level hides.
 export function byLevel(track: Track, entries: Record<string, LevelEntry>): string {
   const { explain } = track;
-  return track.path
-    .map((stage) => {
-      const level = single(stage.level);
-      const rows = stage.steps.map((s): Row => {
-        const levels = refLevels(s.ref, explain);
-        return {
-          attrs: levelAttrs(level),
-          name: topicTitle(s.ref, explain),
-          href: s.href,
-          step: stage.level.toLowerCase(),
-          levels,
-          label: levelsLabel(levels, explain),
-          explain,
-          ...keyed(s.ref, explain, entries),
-        };
-      });
-      const head = `${bars([stage.level], explain)}<span class="ix-lv-name">${stage.level} ${escapeHtml(levelName(stage.level, explain))}</span><span class="ix-lv-n">${escapeHtml(count("topics", explain, rows.length))}</span>`;
-      return list(levelAttrs(level), head, rows);
-    })
-    .join("");
+  const cards = track.path.map((stage) => {
+    const level = single(stage.level);
+    const rows = stage.steps.map((s): Row => {
+      const levels = refLevels(s.ref, explain);
+      return {
+        attrs: levelAttrs(level),
+        name: topicTitle(s.ref, explain),
+        href: s.href,
+        step: stage.level.toLowerCase(),
+        levels,
+        label: levelsLabel(levels, explain),
+        key: keyed(s.ref, explain, entries),
+      };
+    });
+    const head = `${bars([stage.level], explain)}<span class="ix-lv-name">${stage.level} ${escapeHtml(levelName(stage.level, explain))}</span><span class="ix-lv-n">${escapeHtml(count("topics", explain, rows.length))}</span>`;
+    return list(levelAttrs(level), head, rows, "");
+  });
+  const refs = new Map(track.path.flatMap((stage) => stage.steps.map((s) => [s.ref.id, s.ref] as const)));
+  const more = moreRows(lowests([...refs.values()], explain), explain);
+  return cards.join("") + (more === "" ? "" : `<section class="ix-sec-more"><ol class="ix-rows">${more}</ol></section>`);
 }
 
 // A menu's item: a tick, its title and what it says, and an end piece (a pill, a glyph).
@@ -142,15 +144,24 @@ export const varietyMenu = (title: string, varieties: { code: string; name: stri
   `<div class="ix-menu ix-menu-variety" id="ix-varieties" popover role="menu" aria-label="${escapeHtml(title)}">${varieties.map((v) => item(`data-set-variety="${v.code}"`, v.name, false)).join("")}</div>`;
 
 // The level button: All levels, or the chosen level's bar lit and its name (client-chips.ts); it opens the menu `target`.
+// A course's button (`course`: its key in the page's level data and the levels it holds) names the chosen level only
+// and opens the level popover of the course under the toolbar's group (client-levels.ts).
 export function levelButton(
   explain: Explain,
   words: { level: string; all: string },
   target: string,
   cls = "ix-btn ix-level",
   label = "ix-label",
+  course?: { key: string; levels: string[] },
 ): string {
-  const names = Object.fromEntries(LEVEL_INFO.map((l) => [l.code, `${l.code} ${levelName(l.code, explain)}`]));
+  const name = (code: Level): string => (course === undefined ? `${code} ${levelName(code, explain)}` : levelName(code, explain));
+  const names = Object.fromEntries(LEVEL_INFO.map((l) => [l.code, name(l.code)]));
   const cells = LEVEL_INFO.map((l) => `<i class="lv-${l.code}"></i>`).join("");
   const all = escapeHtml(words.all);
-  return `<button type="button" class="${cls}" popovertarget="${target}" aria-haspopup="menu">${FILTER}<span class="lvm lvm-one" aria-hidden="true" hidden>${cells}</span><span class="${label}"><span class="sr-only">${escapeHtml(say("labelled", explain, { label: words.level, value: "" }))}</span><span data-level-label data-all="${all}" data-names="${escapeHtml(JSON.stringify(names))}">${all}</span></span></button>`;
+  const mark = course === undefined ? `<span class="lvm lvm-one" aria-hidden="true" hidden>${cells}</span>` : "";
+  const opens =
+    course === undefined
+      ? ' aria-haspopup="menu"'
+      : ` aria-haspopup="dialog" data-lv="${escapeHtml(course.key)}" data-lv-levels="${course.levels.join(" ")}" data-lv-under=".hm-group"`;
+  return `<button type="button" class="${cls}" popovertarget="${target}"${opens}>${FILTER}${mark}<span class="${label}"><span class="sr-only">${escapeHtml(say("labelled", explain, { label: words.level, value: "" }))}</span><span data-level-label data-all="${all}" data-names="${escapeHtml(JSON.stringify(names))}">${all}</span></span></button>`;
 }

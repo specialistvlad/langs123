@@ -37,7 +37,9 @@ describe.each(spanishPages)("%s", (path) => {
     const doc = await readPage(path);
     expect(doc.documentElement.getAttribute("data-variety")).toBe(spanish.varieties?.[0] ?? null);
     expect(doc.documentElement.getAttribute("data-varieties")).toBe(spanish.varieties?.join(" ") ?? null);
-    const buttons = [...doc.querySelectorAll("[data-set-variety]")].map((b) => b.getAttribute("data-set-variety"));
+    // The search's variety filters (hm-f-variety-*) offer each course's varieties; the switch is the rest.
+    const switchOnly = [...doc.querySelectorAll("[data-set-variety]")].filter((b) => b.closest('[id^="hm-f-"]') === null);
+    const buttons = switchOnly.map((b) => b.getAttribute("data-set-variety"));
     expect(buttons).toEqual(spanish.varieties ?? []);
   });
 });

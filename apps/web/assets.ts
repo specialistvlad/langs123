@@ -3,6 +3,7 @@
 import { join } from "node:path";
 import { LEVEL_INFO } from "../../scripts/lib.ts";
 import { levelColoursCss } from "./level-colours.ts";
+import { moreCss } from "./track-more.ts";
 import { tokensCss } from "./tokens.ts";
 
 const APP = import.meta.dir;
@@ -99,7 +100,7 @@ export function levelsCss(): string {
   });
   // Previous, next and Up next of the other levels (sequence.ts), at every level the top one included.
   const around = codes.map((code) => `html[data-level="${code}"] [data-at]:not([data-at~="${code}"]) { display: none !important; }`);
-  return [levelColoursCss(), ...bars, ...filter, ...around].join("\n") + "\n";
+  return [levelColoursCss(), ...bars, ...filter, ...around, ...moreCss()].join("\n") + "\n";
 }
 
 // The variety switch, for each language being learned with varieties (curriculum.yaml): the page names

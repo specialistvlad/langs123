@@ -7,11 +7,16 @@
   background: var(--surface);
   overflow: hidden;
 }
+.ix-rows li {
+  position: relative;
+}
 .ix-rows li + li::before {
   content: "";
-  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 20px;
   height: 0.5px;
-  margin-left: 20px;
   background: var(--ix-sep);
 }
 .ix-row {
@@ -61,4 +66,54 @@
 .ix-chev {
   flex-shrink: 0;
   color: var(--ix-chev);
+}
+/* Show more (track-more.ts): the last row of a list the chosen level partly hides, a topic row tall, its count in the
+   accent colour and the next level's pill at the end; the level filter shows the row of the level chosen (levels.css) */
+.ix-more,
+.ix-sec-more {
+  display: none;
+}
+.ix-sec-more {
+  break-inside: avoid;
+  margin-bottom: 28px;
+}
+.ix-more-b {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  min-height: 52px;
+  padding: 0 16px 0 20px;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.ix-more-b:hover {
+  background: var(--hm-fill);
+}
+.ix-more-b:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.ix-more-t {
+  flex-grow: 1;
+  min-width: 0;
+  padding: 14px 0;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+.ix-more .badge {
+  --badge-pad: 0 7px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.ix-more .lvl > .half {
+  opacity: 1 !important;
 }

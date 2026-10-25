@@ -2,7 +2,9 @@
 // the page's level data (its name) and from the levels the mark lights, before the popover opens. The head shows the
 // name, the bars and the range as a pill; a level the mark lacks below the top one dims and cannot be chosen, the top
 // one (All levels) staying active; the rows tick the chosen level, the top one while none is chosen. Choosing a row sets the filter (client.ts) and closes the
-// popover. On a wide screen the popover opens under its mark, on a phone it rises from the bottom as a sheet.
+// popover. On a wide screen the popover opens under its mark, on a phone it rises from the bottom as a sheet. The
+// toolbar's Level button opens it for the course (data-lv-levels names the levels the course holds, data-lv-under the
+// toolbar's group it opens under).
 export interface Entry {
   t: string;
 }
@@ -61,9 +63,14 @@ export function levelPopover(root: HTMLElement): void {
   function fill(button: HTMLElement): void {
     const entry = data[button.dataset["lv"] ?? ""] ?? added[button.dataset["lv"] ?? ""];
     if (entry === undefined) return;
-    const lit = [...button.querySelectorAll("i.on")].flatMap((bar) =>
-      [...bar.classList].filter((c) => c.startsWith("lv-")).map((c) => c.slice(3)),
-    );
+    // A button that names its levels (data-lv-levels, the course's) holds them; a mark holds the levels it lights.
+    const named = button.dataset["lvLevels"];
+    const lit =
+      named === undefined
+        ? [...button.querySelectorAll("i.on")].flatMap((bar) =>
+            [...bar.classList].filter((c) => c.startsWith("lv-")).map((c) => c.slice(3)),
+          )
+        : named.split(" ");
     const held = scale.filter((level) => lit.includes(level));
     if (title) title.textContent = entry.t;
     pop.querySelectorAll<HTMLElement>(".lv-pop-m i").forEach((bar, at) => {
@@ -93,7 +100,9 @@ export function levelPopover(root: HTMLElement): void {
       for (const p of ["top", "left", "max-height"]) pop.style.removeProperty(p);
       return;
     }
-    const at = opener.getBoundingClientRect();
+    // A button naming a group it sits in (data-lv-under) opens under the group, on the group's right edge.
+    const group = opener.dataset["lvUnder"];
+    const at = (group === undefined ? opener : (opener.closest(group) ?? opener)).getBoundingClientRect();
     const width = pop.offsetWidth;
     const left = Math.min(at.right - width >= 12 ? at.right - width : at.left, innerWidth - width - 12);
     const below = at.bottom + 8;

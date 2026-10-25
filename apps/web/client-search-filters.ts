@@ -1,7 +1,8 @@
-// The filters of the Home's search (search-filters.ts): the course chosen in its menu; the level the site's level
+// The filters of the Home's search (search-filters.ts): the course chosen in its menu, the one the row starts on
+// (data-start: a course index's own course, else all) until the reader chooses; the level the site's level
 // choice holds (data-level on <html>); and, for the chosen course with varieties, the variety the site keeps for it.
-// Each chip names its choice; a chosen course or level fills its chip, and a tap on it clears the choice. A chip's
-// menu opens under it.
+// Each chip names its choice; a course or level that differs from the start fills its chip, and a tap on it returns
+// the choice to the start. A chip's menu opens under it.
 import type { Filters } from "./client-home-find.ts";
 import { store } from "./client-store.ts";
 
@@ -15,7 +16,8 @@ export function searchFilters(changed: () => void): () => Filters {
   const courseChip: HTMLElement = foundCourse;
   const levelChip: HTMLElement = foundLevel;
   const top = document.querySelector<HTMLElement>("#hm-f-level [data-all]")?.dataset["setLevel"] ?? "";
-  let course = "";
+  const start = filters.dataset["start"] ?? "";
+  let course = start;
   const level = (): string => {
     const chosen = root.dataset["level"] ?? "";
     return chosen === top ? "" : chosen;
@@ -31,8 +33,8 @@ export function searchFilters(changed: () => void): () => Filters {
   function show(): void {
     const items = [...document.querySelectorAll<HTMLElement>("#hm-f-course [data-course]")];
     for (const item of items) item.setAttribute("aria-checked", String(item.dataset["course"] === course));
-    const name = items.find((i) => i.dataset["course"] === course)?.querySelector(".ix-title")?.textContent ?? "";
-    label(courseChip, course === "" ? (courseChip.dataset["allLabel"] ?? "") : name, course !== "");
+    const name = items.find((i) => i.dataset["course"] === course)?.dataset["name"] ?? "";
+    label(courseChip, course === "" ? (courseChip.dataset["allLabel"] ?? "") : name, course !== start);
     const up = level();
     label(
       levelChip,
@@ -61,7 +63,7 @@ export function searchFilters(changed: () => void): () => Filters {
     const pressed = target?.closest<HTMLElement>('.hm-fchip[aria-pressed="true"]');
     // A tap that clears a choice opens no menu, though the chip takes its menu back before the tap ends.
     if (pressed) event.preventDefault();
-    if (pressed === courseChip) course = "";
+    if (pressed === courseChip) course = start;
     if (pressed === levelChip) document.querySelector<HTMLElement>("#hm-f-level [data-all]")?.click();
     if (picked || pressed || target?.closest("[data-set-variety]")) queueMicrotask(show);
   });
