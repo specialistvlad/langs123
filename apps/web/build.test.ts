@@ -4,6 +4,7 @@ import { expect, test } from "bun:test";
 import { join } from "node:path";
 import { ENABLED_EXPLAIN, LEVELS } from "../../scripts/lib.ts";
 import { SAMPLE } from "./sample.ts";
+import { type Index, partOf, scores } from "./search-index.ts";
 import { SITE_DIR, testSite } from "./test-site.ts";
 
 const pages = await testSite();
@@ -42,4 +43,17 @@ test("each home page has its search data: every topic of the sample with its cou
     other,
     lang,
   ]).toEqual([true, true, true, true, "", "uk"]);
+});
+
+test("each home page's search data comes with its index in parts, and a word of a lesson finds its topic", async () => {
+  const dir = join(SITE_DIR, "search");
+  const { topics, parts } = (await Bun.file(join(dir, "en.json")).json()) as { topics: string[][]; parts: string[] };
+  const index: Index = {};
+  for (const part of parts) Object.assign(index, await Bun.file(join(dir, "en", `${part}.json`)).json());
+  expect(Object.keys(index).every((w) => parts.includes(partOf(w)))).toBe(true);
+  // "went" stands in no title or lead: only the lessons hold it.
+  const found = [...scores(index, Object.keys(index), ["went"])].sort((a, b) => b[1] - a[1]);
+  expect(found.length).toBeGreaterThan(0);
+  expect(topics.some((t) => (t[0] ?? "").toLowerCase().includes("went") || (t[3] ?? "").toLowerCase().includes("went"))).toBe(false);
+  expect(topics[found[0]?.[0] ?? -1]?.[1]).toBe("/en/english/verbs/irregular-verbs-table/");
 });

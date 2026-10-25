@@ -1,7 +1,8 @@
 // The Home's toolbar (pages/home.ts): the search lists the topics of every course that match, in two columns
 // on wide screens; Close, Escape and the clear button end or empty it; the Read in menu closes on a tap outside
 // it; on phones the toolbar rises above the on-screen keyboard (--hm-kb, home-phone.css).
-import { el, find, marked, tokens, type Topic, topicsOf } from "./client-home-find.ts";
+import { el, find, marked, type SearchData, tokens, type Topic, topicsOf } from "./client-home-find.ts";
+import { type Index, partOf } from "./search-index.ts";
 
 // One result row: the course's flag and the topic's title, the language it opens in when it is not the page's,
 // its level mark, and its lead with the terms in bold.
@@ -39,19 +40,46 @@ export function homeSearch(): void {
   const [form, clear, close, cards, results, list] = ["hm-form", "hm-clear", "hm-close", "hm-cards", "hm-results", "hm-list"].map($);
   if (!input || !form || !clear || !close || !cards || !results || !list) return;
   let topics: Topic[] | null = null;
+  let parts = new Set<string>();
+  const index: Index = {};
+  let words: string[] = [];
   let scale: string[] = [];
   let loading: Promise<void> | null = null;
   let version = 0;
   const load = (): Promise<void> =>
     (loading ??= fetch(`/search/${root.lang}.json`)
-      .then((r) => r.json() as Promise<Parameters<typeof topicsOf>[0]>)
+      .then((r) => r.json() as Promise<SearchData>)
       .then((data) => {
         topics = topicsOf(data);
+        parts = new Set(data.parts);
         scale = data.levels;
       })
       .catch(() => {
         loading = null;
       }));
+  // The parts of the index the terms start with, each fetched once.
+  const loaded = new Map<string, Promise<void>>();
+  const loadParts = (terms: string[]): Promise<unknown> =>
+    Promise.all(
+      [...new Set(terms.map(partOf))]
+        .filter((part) => parts.has(part))
+        .map((part) => {
+          let got = loaded.get(part);
+          if (got === undefined) {
+            got = fetch(`/search/${root.lang}/${part}.json`)
+              .then((r) => r.json() as Promise<Index>)
+              .then((more) => {
+                Object.assign(index, more);
+                words = Object.keys(index);
+              })
+              .catch(() => {
+                loaded.delete(part);
+              });
+            loaded.set(part, got);
+          }
+          return got;
+        }),
+    );
 
   async function update(): Promise<void> {
     if (!input || !clear || !close || !cards || !results || !list) return;
@@ -63,8 +91,9 @@ export function homeSearch(): void {
     cards.hidden = on;
     if (!on) return;
     await load();
+    await loadParts(terms);
     if (mine !== version || topics === null) return;
-    const found = find(topics, terms).slice(0, 40);
+    const found = find(topics, index, words, terms).slice(0, 40);
     list.replaceChildren();
     if (found.length === 0) {
       list.append(el("p", "hm-empty", results.dataset["empty"]));

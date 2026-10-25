@@ -1,5 +1,9 @@
-// The Home's search over every course (search/<language>.json, pages/home-search.ts): topics that hold every
-// term of the query, most relevant first, and the text with each place a term appears in bold.
+// The Home's search over every course (search/<language>.json, pages/home-search.ts): the topics whose title
+// holds every term of the query first, then every topic the index finds for any of them (search-index.ts), most
+// relevant first, and the text with each place a term appears in bold.
+import { fold, type Index, scores } from "./search-index.ts";
+
+export { tokens } from "./search-index.ts";
 
 export interface Topic {
   title: string;
@@ -13,20 +17,17 @@ export interface Topic {
   otherLang: string;
   order: number;
   t: string;
-  s: string;
-  d: string;
 }
 type Row = [string, string, string, string, string, string, string, string, string];
+export interface SearchData {
+  levels: string[];
+  topics: Row[];
+  // The parts of the index there are, by first letter (search-index.ts, partOf).
+  parts: string[];
+}
 
-// Words compare without case, accents and marks: "Preterito" finds "Pretérito".
-export const fold = (s: string): string => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
-export const tokens = (s: string): string[] =>
-  fold(s)
-    .split(/[^\p{L}\p{N}]+/u)
-    .filter(Boolean);
-
-export const topicsOf = (data: { levels: string[]; topics: Row[] }): Topic[] =>
-  data.topics.map(([title, url, levels, summary, section, flag, course, other, otherLang], order) => ({
+export const topicsOf = (data: SearchData): Topic[] =>
+  data.topics.map(([title, url, levels, summary, , flag, course, other, otherLang], order) => ({
     title,
     url,
     levels: levels.split(" "),
@@ -37,38 +38,27 @@ export const topicsOf = (data: { levels: string[]; topics: Row[] }): Topic[] =>
     otherLang,
     order,
     t: fold(title),
-    s: fold(section),
-    d: fold(summary),
   }));
 
-// A term's worth in a topic: a title that starts with it, a word of the title, any part of it, then the
-// section, then the summary; 0 when the topic lacks it.
+// A term's worth in a title: one that starts with it, a word of it, any part of it; 0 when the title lacks it.
 function worth(term: string, t: Topic): number {
   if (t.t.startsWith(term)) return 100;
   if (` ${t.t}`.includes(` ${term}`)) return 70;
   if (t.t.includes(term)) return 40;
-  if (` ${t.s}`.includes(` ${term}`)) return 20;
-  if (` ${t.d}`.includes(` ${term}`)) return 15;
-  if (t.d.includes(term)) return 8;
   return 0;
 }
 
-// Every topic that holds all the terms, most relevant first, the cards' order between equals.
-export function find(topics: Topic[], terms: string[]): Topic[] {
-  const found: { topic: Topic; score: number }[] = [];
-  for (const topic of topics) {
-    let score = 0;
-    for (const term of terms) {
-      const w = worth(term, topic);
-      if (w === 0) {
-        score = 0;
-        break;
-      }
-      score += w;
-    }
-    if (score > 0) found.push({ topic, score });
-  }
-  return found.sort((a, b) => b.score - a.score || a.topic.order - b.topic.order).map((f) => f.topic);
+// The topics a query finds, most relevant first: those whose title holds every term, by how the title holds
+// them, then the rest by the index; the index, then the cards' order, between equals.
+export function find(topics: Topic[], index: Index, words: readonly string[], terms: string[]): Topic[] {
+  const ranked = scores(index, words, terms);
+  const found = topics.flatMap((topic) => {
+    const worths = terms.map((term) => worth(term, topic));
+    const title = worths.includes(0) ? 0 : worths.reduce((a, b) => a + b, 0);
+    const score = ranked.get(topic.order) ?? 0;
+    return title > 0 || score > 0 ? [{ topic, title, score }] : [];
+  });
+  return found.sort((a, b) => b.title - a.title || b.score - a.score || a.topic.order - b.topic.order).map((f) => f.topic);
 }
 
 export const el = (tag: string, className = "", text?: string): HTMLElement => {
