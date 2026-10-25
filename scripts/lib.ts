@@ -5,6 +5,7 @@ import levelsFile from "../languages/levels.yaml";
 import siteFile from "../languages/site.yaml";
 import type { Langs123Concepts as ConceptsFile } from "./generated/concepts.ts";
 import type { Langs123Curriculum as CurriculumFile } from "./generated/curriculum.ts";
+import type { CountKey, TextKey } from "./generated/interface-keys.ts";
 import type { InterfaceWording as InterfaceFile } from "./generated/interface.ts";
 import type { LevelScale as LevelsFile } from "./generated/levels.ts";
 import type { SiteIdentityLicencesAndExplanationLanguages as SiteFile } from "./generated/site.ts";
@@ -19,7 +20,12 @@ export const CONTENT = join(ROOT, "languages");
 export type { Explain, Level } from "./generated/topic.ts";
 export type Site = SiteFile;
 export type LevelInfo = LevelsFile["levels"][number];
-export type Interface = InterfaceFile;
+export type { CountKey, TextKey } from "./generated/interface-keys.ts";
+// interface.yaml: the wording every app built on the library shares, each key of its text and counts typed.
+export type Interface = Omit<InterfaceFile, "text" | "counts"> & {
+  text: Record<TextKey, InterfaceFile["text"][string]>;
+  counts: Record<CountKey, NonNullable<InterfaceFile["counts"]>[string]>;
+};
 
 // A configuration string in an explanation language: a name or a title; npm run check guarantees it exists.
 export function localize(value: Partial<Record<Explain, string>>, explain: Explain): string {
@@ -51,9 +57,9 @@ export const levelName = (level: Level, explain: Explain): string => LEVEL_INFO.
 
 export const INTERFACE = interfaceFile as Interface;
 
-// Interface wording in an explanation language: {key} placeholders take values, {key:lower} lowercased.
-export function say(key: string, explain: Explain, values: Record<string, string | number> = {}): string {
-  const template = INTERFACE.text[key]?.[explain];
+// Interface wording in an explanation language: {key} placeholders take values, {key:lower} lowercased; a key the file lacks throws.
+export function say(key: TextKey, explain: Explain, values: Record<string, string | number> = {}): string {
+  const template = (INTERFACE.text as Partial<Interface["text"]>)[key]?.[explain];
   if (template === undefined) throw new Error(`interface.yaml has no "${key}" in "${explain}"`);
   return template.replace(/\{(\w+)(:lower)?\}/g, (_match, name: string, lower: string | undefined) => {
     const value = String(values[name] ?? `{${name}}`);
@@ -62,8 +68,8 @@ export function say(key: string, explain: Explain, values: Record<string, string
 }
 
 // A count in an explanation language: the form its plural rules pick for n (interface.yaml counts).
-export function count(key: string, explain: Explain, n: number): string {
-  const forms = INTERFACE.counts?.[key]?.[explain];
+export function count(key: CountKey, explain: Explain, n: number): string {
+  const forms = (INTERFACE.counts as Partial<Interface["counts"]>)[key]?.[explain];
   if (forms === undefined) throw new Error(`interface.yaml has no count "${key}" in "${explain}"`);
   const rule = new Intl.PluralRules(explain).select(n);
   return (forms[rule] ?? forms.other).replace("{n}", String(n));

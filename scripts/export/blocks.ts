@@ -11,6 +11,7 @@ import {
   type Localized,
   say,
   type Text,
+  type TextKey,
   type Topic,
   type Variety,
 } from "../lib.ts";
@@ -72,7 +73,7 @@ const cell = (value: Cell | undefined): LibraryCell => {
 };
 
 const SLOT_TITLE = { aux: "slotAux", subj: "slotSubj", verb: "slotVerb", rest: "slotRest" } as const;
-const every = (key: string): Keyed => Object.fromEntries(TRACK.explain.map((e) => [e, say(key, e)]));
+const every = (key: TextKey): Keyed => Object.fromEntries(TRACK.explain.map((e) => [e, say(key, e)]));
 
 // A column: a slot paradigm's columns take their titles from interface.yaml, group by the sentence their
 // features name, merge down where neighbours read the same but for the subject, and centre; any other

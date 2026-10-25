@@ -60,9 +60,25 @@ for (const name of NAMES) {
     stale++;
   }
 }
+// The keys of interface.yaml's text and counts, so a key an app asks for and the file lacks fails the typecheck.
+const wording = Bun.YAML.parse(await Bun.file(join(SCHEMAS, "..", "interface.yaml")).text()) as Record<"text" | "counts", object>;
+const union = (keys: string[]): string => keys.map((k) => `"${k}"`).join(" | ");
+const keys = [
+  "// Generated from languages/interface.yaml by npm run types. Add or remove a key there, then regenerate.",
+  "",
+  `export type TextKey = ${union(Object.keys(wording.text))};`,
+  `export type CountKey = ${union(Object.keys(wording.counts))};`,
+  "",
+].join("\n");
+const keysFile = join(OUT, "interface-keys.ts");
+if (!check) await Bun.write(keysFile, keys);
+else if (!(await Bun.file(keysFile).exists()) || (await Bun.file(keysFile).text()) !== keys) {
+  console.log("  ✗ scripts/generated/interface-keys.ts is out of date with interface.yaml: run npm run types");
+  stale++;
+}
 console.log(
   check
     ? `stale files: ${stale}`
-    : `wrote the explanation languages of site.yaml into the schemas and generated ${NAMES.length} type files into scripts/generated/`,
+    : `wrote the explanation languages of site.yaml into the schemas and generated ${NAMES.length + 1} type files into scripts/generated/`,
 );
 process.exit(stale > 0 ? 1 : 0);

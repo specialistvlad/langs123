@@ -1,11 +1,25 @@
 // Generated from languages/schema/interface.schema.json by npm run types. Edit the schema, then regenerate.
 
+/**
+ * The wording every app built on the library shares, in each explanation language; the library export carries it whole as its interface.
+ */
 export interface InterfaceWording {
   /**
    * Wording by key, one string per explanation language.
    */
   text: {
     [k: string]: Localized;
+  };
+  /**
+   * The name of each variety of a language being learned (the variety enum of curriculum.schema.json and topic.schema.json) in every explanation language: the renderer writes it beside text that serves one variety alone.
+   */
+  varieties: {
+    "en-GB": Localized;
+    "en-US": Localized;
+    "es-419": Localized;
+    "es-ES": Localized;
+    "fr-FR": Localized;
+    "fr-CA": Localized;
   };
   /**
    * The name of each slot code of CONVENTIONS.md §12 in every explanation language; a code without a name renders as written.

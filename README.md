@@ -49,7 +49,7 @@ langs123/
 │   ├── CONVENTIONS.md         rules for the data
 │   ├── site.yaml              name, URLs, credit and licences, explanation languages
 │   ├── levels.yaml            level scale: names, descriptions, colours
-│   ├── interface.yaml         interface wording
+│   ├── interface.yaml         the wording every app built on the library shares, carried by the export
 │   ├── curriculum.yaml        languages being learned: topics by category, and the study path
 │   ├── concepts.yaml          concept keys that pair topics across languages
 │   ├── schema/                JSON Schemas

@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=schema/interface.schema.json
-# Interface wording every app shares, in each explanation language.
+# The wording every app built on the library shares, in each explanation language: the web app reads it,
+# and the export carries it whole as `interface` in library.json (CONVENTIONS.md §2).
 # Placeholders take values from the app: {name}, {n}, {total}; {name:lower} lowercases the value.
 
 text:
@@ -102,19 +103,7 @@ text:
     tr: "{name} açıklamalı"
     id: "dijelaskan dalam {name}"
     vi: "giải thích bằng tiếng Việt"
-  # The home page's matrix: a row per language to learn, a column per explanation language
-  matrixLearn:
-    en: Learn
-    uk: Вивчати
-    es: Aprender
-    pt: Aprender
-    fr: Apprendre
-    de: Lernen
-    it: Imparare
-    pl: Nauka
-    tr: Öğren
-    id: Belajar
-    vi: Học
+  # The home page's matrix: a column per explanation language
   matrixExplained:
     en: Explained in
     uk: Мова пояснень
@@ -261,18 +250,6 @@ text:
     tr: "Varyant"
     id: "Varian"
     vi: "Biến thể"
-  extended:
-    en: Extended
-    uk: "Розгорнуто"
-    es: "Completa"
-    pt: "Completo"
-    fr: "Complet"
-    de: "Ausführlich"
-    it: "Completa"
-    pl: "Rozszerzona"
-    tr: "Genişletilmiş"
-    id: "Lengkap"
-    vi: "Đầy đủ"
   upTo:
     en: Up to
     uk: "До"
@@ -716,78 +693,6 @@ text:
     vi: "Quy tắc"
 
   # Topic content: names the renderer writes from the data (CONVENTIONS.md §12)
-  varietyUs:
-    en: US
-    uk: "амер."
-    es: "EE. UU."
-    pt: "EUA"
-    fr: "amér."
-    de: "amerik."
-    it: "USA"
-    pl: "amer."
-    tr: "ABD"
-    id: "AS"
-    vi: "Mỹ"
-  varietyGb:
-    en: British
-    uk: "брит."
-    es: "Reino Unido"
-    pt: "Reino Unido"
-    fr: "brit."
-    de: "brit."
-    it: "Regno Unito"
-    pl: "bryt."
-    tr: "İngiltere"
-    id: "Britania"
-    vi: "Anh"
-  varietyLatam:
-    en: Latin America
-    uk: "Латинська Америка"
-    es: "Latinoamérica"
-    pt: "América Latina"
-    fr: "Amérique latine"
-    de: "Lateinamerika"
-    it: "America Latina"
-    pl: "Ameryka Łacińska"
-    tr: "Latin Amerika"
-    id: "Amerika Latin"
-    vi: "Mỹ Latinh"
-  varietySpain:
-    en: Spain
-    uk: "Іспанія"
-    es: "España"
-    pt: "Espanha"
-    fr: "Espagne"
-    de: "Spanien"
-    it: "Spagna"
-    pl: "Hiszpania"
-    tr: "İspanya"
-    id: "Spanyol"
-    vi: "Tây Ban Nha"
-  varietyFrance:
-    en: France
-    uk: "Франція"
-    es: "Francia"
-    pt: "França"
-    fr: "France"
-    de: "Frankreich"
-    it: "Francia"
-    pl: "Francja"
-    tr: "Fransa"
-    id: "Prancis"
-    vi: "Pháp"
-  varietyCanada:
-    en: Canada
-    uk: "Канада"
-    es: "Canadá"
-    pt: "Canadá"
-    fr: "Canada"
-    de: "Kanada"
-    it: "Canada"
-    pl: "Kanada"
-    tr: "Kanada"
-    id: "Kanada"
-    vi: "Canada"
   slotAux:
     en: Helper
     uk: "Доп."
@@ -874,30 +779,6 @@ text:
     vi: "Phủ định"
 
   # Cheatsheets
-  sheets:
-    en: Cheatsheets
-    uk: "Шпаргалки"
-    es: "Guías rápidas"
-    pt: "Guias rápidos"
-    fr: "Fiches mémo"
-    de: "Spickzettel"
-    it: "Schede riassuntive"
-    pl: "Ściągi"
-    tr: "Özet sayfalar"
-    id: "Lembar ringkasan"
-    vi: "Bảng tóm tắt"
-  sheet:
-    en: Cheatsheet
-    uk: "Шпаргалка"
-    es: "Guía rápida"
-    pt: "Guia rápido"
-    fr: "Fiche mémo"
-    de: "Spickzettel"
-    it: "Scheda riassuntiva"
-    pl: "Ściąga"
-    tr: "Özet sayfa"
-    id: "Ringkasan"
-    vi: "Bảng tóm tắt"
   levels:
     en: Levels
     uk: "Рівні"
@@ -910,18 +791,6 @@ text:
     tr: "Seviyeler"
     id: "Tingkat"
     vi: "Trình độ"
-  progressive:
-    en: Progressive
-    uk: "Накопичувальні"
-    es: "Progresivas"
-    pt: "Progressivos"
-    fr: "Progressives"
-    de: "Aufbauend"
-    it: "Cumulative"
-    pl: "Narastające"
-    tr: "Birikimli"
-    id: "Kumulatif"
-    vi: "Tích lũy"
   sections:
     en: Sections
     uk: "Розділи"
@@ -1142,6 +1011,15 @@ text:
     tr: "{site} adı ve logosu projeye aittir; her iki lisansın da dışında kalır."
     id: "Nama {site} dan logonya menjadi milik proyek dan berada di luar kedua lisensi."
     vi: "Tên {site} và logo của trang thuộc về dự án, nằm ngoài cả hai giấy phép."
+
+# The name of each variety (curriculum.yaml, topic.yaml): the renderer writes it beside text that serves one variety alone.
+varieties:
+  en-GB: { en: "British", uk: "брит.", es: "Reino Unido", pt: "Reino Unido", fr: "brit.", de: "brit.", it: "Regno Unito", pl: "bryt.", tr: "İngiltere", id: "Britania", vi: "Anh" }
+  en-US: { en: "US", uk: "амер.", es: "EE. UU.", pt: "EUA", fr: "amér.", de: "amerik.", it: "USA", pl: "amer.", tr: "ABD", id: "AS", vi: "Mỹ" }
+  es-419: { en: "Latin America", uk: "Латинська Америка", es: "Latinoamérica", pt: "América Latina", fr: "Amérique latine", de: "Lateinamerika", it: "America Latina", pl: "Ameryka Łacińska", tr: "Latin Amerika", id: "Amerika Latin", vi: "Mỹ Latinh" }
+  es-ES: { en: "Spain", uk: "Іспанія", es: "España", pt: "Espanha", fr: "Espagne", de: "Spanien", it: "Spagna", pl: "Hiszpania", tr: "İspanya", id: "Spanyol", vi: "Tây Ban Nha" }
+  fr-FR: { en: "France", uk: "Франція", es: "Francia", pt: "França", fr: "France", de: "Frankreich", it: "Francia", pl: "Francja", tr: "Fransa", id: "Prancis", vi: "Pháp" }
+  fr-CA: { en: "Canada", uk: "Канада", es: "Canadá", pt: "Canadá", fr: "Canada", de: "Kanada", it: "Canada", pl: "Kanada", tr: "Kanada", id: "Kanada", vi: "Canada" }
 
 # The name of each slot code a pattern names (CONVENTIONS.md §12). V, V-s, V-ing, V-ed and -ing render as written.
 slots:

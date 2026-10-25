@@ -1,6 +1,6 @@
 // Text and its marks (CONVENTIONS.md §12): what each mark is, how text folds into output with its
 // separators, and how to walk it.
-import { EXPLAIN, type Explain, type Localized, type Mark, say, slotName, type Text, type Variety } from "./lib.ts";
+import { EXPLAIN, type Explain, INTERFACE, type Localized, type Mark, slotName, type Text, type Variety } from "./lib.ts";
 import { JOINERS } from "./joiners.ts";
 import { afterExample } from "./words.ts";
 
@@ -183,18 +183,8 @@ const PLAIN: TextOutput<string> = { text: (s) => s, join: (p) => p.join(""), mar
 // The text a reader sees, without markup.
 export const plainText = (t: Text, c: FoldContext): string => foldText(t, PLAIN, c);
 
-// Each variety's name in interface.yaml.
-const VARIETY_KEYS: Record<Variety, string> = {
-  "en-GB": "varietyGb",
-  "en-US": "varietyUs",
-  "es-419": "varietyLatam",
-  "es-ES": "varietySpain",
-  "fr-FR": "varietyFrance",
-  "fr-CA": "varietyCanada",
-};
-
-// A variety's name in an explanation language: "US", "Spain".
-export const varietyName = (v: Variety, explain: Explain): string => say(VARIETY_KEYS[v], explain);
+// A variety's name in an explanation language, from interface.yaml's varieties: "US", "Spain".
+export const varietyName = (v: Variety, explain: Explain): string => INTERFACE.varieties[v][explain];
 
 // How text reads in an explanation language: in the language being learned (plain) or explaining it.
 export const reading = (explain: Explain, plain: boolean): FoldContext => ({ explain, plain, variety: (v) => varietyName(v, explain) });

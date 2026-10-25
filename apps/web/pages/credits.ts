@@ -4,7 +4,7 @@
 // the product's own rows, then grouped cards: the authors, the licences, how to credit (the credit line with a
 // copy button, client-credits.ts), the ways to contribute and the name note, and the product's closing line.
 // Two columns above 860px, one below. The product's own lines come from the build's brand option (brand.ts).
-import { type Explain, say, SITE } from "../../../scripts/lib.ts";
+import { type Explain, say, SITE, type TextKey } from "../../../scripts/lib.ts";
 import { type Brand, LIBRARY_BRAND } from "../brand.ts";
 import { alternates, type Context, EXPLAINS } from "../context.ts";
 import { CHECK, COPY, GLYPHS, row } from "../credits-parts.ts";
@@ -23,7 +23,7 @@ function creditsIn(ctx: Context, e: Explain, brand: Brand): void {
   const t = ui(e);
   const site = SITE.name;
   const { content, code } = SITE.licences;
-  const words = (key: string): string => escapeHtml(say(key, e, { site }));
+  const words = (key: TextKey): string => escapeHtml(say(key, e, { site }));
   const authors = words("creditsAuthors").replace("{credit}", link(`${SITE.repository}/graphs/contributors`, SITE.credit));
   const licences = [
     row({ glyph: "doc", title: content.name, sub: say("contentLicence", e, { site }), href: content.url, rel: "license" }),

@@ -4,7 +4,8 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "text"
+    "text",
+    "varieties"
   ],
   "properties": {
     "text": {
@@ -15,6 +16,39 @@
       },
       "additionalProperties": {
         "$ref": "#/definitions/localized"
+      }
+    },
+    "varieties": {
+      "description": "The name of each variety of a language being learned (the variety enum of curriculum.schema.json and topic.schema.json) in every explanation language: the renderer writes it beside text that serves one variety alone.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en-GB",
+        "en-US",
+        "es-419",
+        "es-ES",
+        "fr-FR",
+        "fr-CA"
+      ],
+      "properties": {
+        "en-GB": {
+          "$ref": "#/definitions/localized"
+        },
+        "en-US": {
+          "$ref": "#/definitions/localized"
+        },
+        "es-419": {
+          "$ref": "#/definitions/localized"
+        },
+        "es-ES": {
+          "$ref": "#/definitions/localized"
+        },
+        "fr-FR": {
+          "$ref": "#/definitions/localized"
+        },
+        "fr-CA": {
+          "$ref": "#/definitions/localized"
+        }
       }
     },
     "slots": {
@@ -483,5 +517,6 @@
         }
       }
     }
-  }
+  },
+  "description": "The wording every app built on the library shares, in each explanation language; the library export carries it whole as its interface."
 }
