@@ -111,6 +111,8 @@ describe("separators", () => {
     expect(plainText({ examples: ["Are you a student?", "It is cold."] }, summary)).toBe("Are you a student? It is cold.");
     expect(plainText({ examples: ["three children", "The people are nice."] }, summary)).toBe("three children, The people are nice.");
     expect(plainText({ examples: [{ alternatives: ["a", "b"] }, "c"] }, summary)).toBe("a / b, c");
+    expect(plainText({ examples: ["私は学生です。", "寒いです。"] }, summary)).toBe("私は学生です。寒いです。");
+    expect(plainText({ examples: ["大きい本", "小さい本"] }, summary)).toBe("大きい本、小さい本");
   });
 });
 

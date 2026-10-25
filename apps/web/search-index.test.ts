@@ -29,6 +29,12 @@ test("words compare without case, accents and marks, and split at anything not a
   expect(tokens("Wh-questions, 2 forms")).toEqual(["wh", "questions", "2", "forms"]);
 });
 
+test("kana keep their voicing marks, and a run of Japanese reads as its overlapping pairs", () => {
+  expect([fold("が"), fold("パ"), fold("か")]).toEqual(["が", "パ", "か"]);
+  expect(tokens("私は食べます。")).toEqual(["私は", "は食", "食べ", "べま", "ます"]);
+  expect(tokens("食 is ok")).toEqual(["食", "is", "ok"]);
+});
+
 test("each word holds how many topics have it, then each topic with its weight, the best first", () => {
   expect(index["what"]?.[0]).toBe(2);
   expect(index["what"]?.[1]).toBe(0);

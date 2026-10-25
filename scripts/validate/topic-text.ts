@@ -8,7 +8,8 @@ import type { Report } from "./report.ts";
 
 // The value each kind of inventory gives its members.
 const VALUES: Record<string, (v: unknown) => boolean> = {
-  letters: (v) => typeof v === "string" && /^\p{Ll}$/u.test(v),
+  // A lowercase letter, or a kana, alone or with the small kana that joins it: き, きゃ.
+  letters: (v) => typeof v === "string" && /^(\p{Ll}|[\p{Script=Hiragana}\p{Script=Katakana}][ゃゅょャュョァィゥェォ]?)$/u.test(v),
   sounds: (v) => typeof v === "string" && v.length > 0,
   numbers: (v) => typeof v === "number",
   ordinals: (v) => typeof v === "number" && Number.isInteger(v) && v >= 1,

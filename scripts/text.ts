@@ -2,6 +2,7 @@
 // separators, and how to walk it.
 import { EXPLAIN, type Explain, type Localized, type Mark, say, slotName, type Text, type Variety } from "./lib.ts";
 import { JOINERS } from "./joiners.ts";
+import { afterExample } from "./words.ts";
 
 // A localized value names explanation languages only; an empty one names none, and the check reports it.
 export const isLocalized = (value: object): value is Localized => Object.keys(value).every((k) => k in EXPLAIN);
@@ -145,7 +146,7 @@ function foldMark<T>(m: Mark, out: TextOutput<T>, c: FoldContext): T {
       items.forEach((item, n) => {
         if (n > 0) {
           const previous = items[n - 1];
-          parts.push(!sentences ? joiner(sep) : out.text(previous !== undefined && /[.!?]$/.test(plainText(previous, c)) ? " " : ", "));
+          parts.push(!sentences ? joiner(sep) : out.text(previous === undefined ? ", " : afterExample(plainText(previous, c))));
         }
         parts.push(fold(item, { sentences: false }));
       });

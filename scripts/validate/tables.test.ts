@@ -98,6 +98,14 @@ describe("a table holds what its type names", () => {
       expect(problems(inventory(bad)).join("\n")).toContain(`no ${set} value`);
     }
   });
+  test("a letter is a lowercase letter, or a kana alone or joined by a small one", () => {
+    const letter = (value: string) => (t: Topic) => {
+      Object.assign(table(t), { type: "inventory", set: "letters" });
+      firstRow(t).value = value;
+    };
+    for (const kana of ["き", "きゃ", "シ", "ショ"]) expect(problems(letter(kana))).toEqual([]);
+    for (const not of ["ab", "食", "きき"]) expect(problems(letter(not)).join("\n")).toContain("no letters value");
+  });
   test("a table fits four columns, a slot paradigm ten", () => {
     const wide = (t: Topic): void => {
       table(t).columns = ["a", "b", "c", "d", "e"].map((key) => ({ key, label: key }));

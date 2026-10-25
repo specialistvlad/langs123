@@ -28,9 +28,11 @@ describe("the summary", () => {
     expect(of(summary("lead", { en: "lead." }))).toContain("starts with a lowercase letter");
     expect(of(summary("lead", { en: "One. Two." }))).toContain("is one sentence");
     expect(of(summary("rule", { en: "rule:" }))).toContain("summary.rule.en starts with a lowercase letter");
+    expect(of(summary("lead", { en: [{ term: "です" }, " ends a polite sentence."] }))).not.toContain("lowercase");
   });
   test("at most 50 words, about the language itself", () => {
     expect(of(summary("ex", "word ".repeat(60).trim()))).toContain("words (max 50)");
+    expect(of(summary("ex", "私は学生です。".repeat(15)))).toContain("words (max 50)");
     expect(of(summary("rule", { en: "This page lists the forms:" }))).toContain("describes the page");
     expect(of(summary("rule", { en: "Rule. You need it to talk:" }))).toContain('opens a sentence with "You need"');
     expect(of(summary("rule", { en: "At A1 the forms are:" }))).toContain("names level A1");

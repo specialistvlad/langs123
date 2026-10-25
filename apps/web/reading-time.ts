@@ -6,6 +6,7 @@
 //   headers, and the fields that name, level, tag or link the data.
 import type { Explain, Topic } from "../../scripts/lib.ts";
 import { isLocalized } from "../../scripts/text.ts";
+import { words } from "../../scripts/words.ts";
 
 export const WORDS_PER_MINUTE = 120;
 
@@ -41,7 +42,7 @@ function serves(el: Record<string, unknown>, explain: Explain, variety: string |
 }
 
 export function topicWords(value: unknown, explain: Explain, variety?: string): number {
-  if (typeof value === "string") return value.split(/\s+/).filter((w) => w !== "").length;
+  if (typeof value === "string") return words(value).length;
   if (Array.isArray(value)) return value.reduce((n: number, v) => n + topicWords(v, explain, variety), 0);
   if (value === null || typeof value !== "object") return 0;
   if (isLocalized(value)) return topicWords((value as Record<string, unknown>)[explain], explain, variety);

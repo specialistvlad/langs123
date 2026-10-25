@@ -3,12 +3,27 @@
 // a topic, how often, and how few topics hold it (BM25F): the title most, then the forms a rule is about, the lead
 // and the section, then the rest of the lesson. Nothing here touches the page, so the build and the browser share it.
 
-// Words compare without case, accents and marks: "Preterito" finds "Pretérito".
-export const fold = (s: string): string => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+// Words compare without case, accents and marks: "Preterito" finds "Pretérito". The voicing marks of kana stay,
+// as they make another sound: が is not か.
+export const fold = (s: string): string =>
+  s
+    .normalize("NFD")
+    .replace(/(?![\u3099\u309a])\p{M}/gu, "")
+    .normalize("NFC")
+    .toLowerCase();
+
+// Japanese writes no spaces between words, so a run of it reads as its overlapping pairs of characters, the same
+// in the build and in any browser: 食べます is 食べ, べま, ます, and 食べる finds it by 食べ.
+const JAPANESE = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u;
+const pairs = (run: string): string[] => {
+  const chars = Array.from(run);
+  return chars.length < 2 ? chars : chars.slice(1).map((c, i) => `${chars[i] ?? ""}${c}`);
+};
 export const tokens = (s: string): string[] =>
   fold(s)
     .split(/[^\p{L}\p{N}]+/u)
-    .filter(Boolean);
+    .filter(Boolean)
+    .flatMap((w) => (JAPANESE.test(w) ? pairs(w) : [w]));
 
 // A topic's words by where they stand: the title, the lead with the section's name, the forms the text shows in
 // bold, and every text of the lesson.
