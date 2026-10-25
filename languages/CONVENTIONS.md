@@ -92,7 +92,7 @@ Structured YAML is the source; the web pages are rendered from it.
 languages/
 ├── LICENSE                         CC BY 4.0, the licence of everything in languages/
 ├── site.yaml                       product name, URLs, credit and licences, explanation languages
-├── levels.yaml                     level scale: names, descriptions, colours
+├── levels.yaml                     level scale: names, descriptions
 ├── interface.yaml                  interface wording of the site
 ├── curriculum.yaml                 every planned topic: sections by category, and the study path
 ├── concepts.yaml                   concept keys that pair topics across languages
@@ -104,7 +104,7 @@ languages/
 | File | Schema | Holds |
 |---|---|---|
 | `site.yaml` | `schema/site.schema.json` | product name, URLs, the credit and licences every page shows, explanation languages with their names and `enabled` switch |
-| `levels.yaml` | `schema/levels.schema.json` | the level scale: code, name, description, hue per level |
+| `levels.yaml` | `schema/levels.schema.json` | the level scale: code, name, description per level |
 | `interface.yaml` | `schema/interface.schema.json` | interface wording by key, per explanation language; block headings and column titles the generator writes; the name of each slot code (§12) |
 | `curriculum.yaml` | `schema/curriculum.schema.json` | languages (with an `enabled` switch, their explanation languages and varieties) → sections → topics (slug, optional title, levels of a planned topic); the study path: levels → topic IDs |
 | `concepts.yaml` | `schema/concepts.schema.json` | concept key → title, description |
@@ -147,8 +147,8 @@ translation. When a topic needs a form a later step teaches, the example changes
 
 ## 3. Levels
 
-`levels.yaml` defines the scale, lowest first; every app takes level codes, names, descriptions
-and colours from it, and the schemas list exactly its codes (`npm run check` compares them).
+`levels.yaml` defines the scale, lowest first; every app takes level codes, names and descriptions
+from it, and the schemas list exactly its codes (`npm run check` compares them).
 
 | Level | Name |
 |---|---|
@@ -172,13 +172,11 @@ section in the menu.
 
 **Levels on the page.**
 
-- Each level has a colour, and the levels run through the rainbow, lowest first: A0 red, A1
-  orange, A2 yellow, B1 green, B2 blue, C1 indigo, C2 violet. `levels.yaml` gives each level its
-  hue; each theme gives every level the same tones (`apps/web/level-colours.ts`): a lightness, and a
-  saturation that takes the same share of the chroma sRGB holds at each hue. The light theme writes
-  a deep code on a pale tint and the dark theme a bright code on a deep tint, so a level keeps its
-  colour in both. Every level colour lies inside sRGB (`npm test` checks it), and a level's code
-  reads on its tint at a contrast of at least 4.5:1 in both themes (`npm run e2e` measures it).
+- Each level has a colour, and the levels run from blue to red, lowest first: A0 blue, A1 cyan,
+  A2 green, B1 lime, B2 yellow, C1 orange, C2 red. The design tokens (`apps/web/tokens.json`) give
+  each level three colours in each theme: its ink writes the level's code, its tint lies behind the
+  code in a pill, and its strong colour fills the level's bar in a level mark. A level's code in its
+  badge reads on its tint at a contrast of at least 4.5:1 in both themes (`npm test` checks it).
 - A level mark is seven bars, A0 to C2, in a grey capsule, each level the element holds lit in its
   level's colour and the others grey, so a gap reads as a gap. Table rows, list items and errors take
   a smaller mark. A course's card on the home page adds its range in words, its lowest level and
