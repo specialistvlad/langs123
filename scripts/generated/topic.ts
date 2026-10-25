@@ -54,7 +54,7 @@ export type Block = ProseBlock | ListBlock | ParadigmBlock | UsageBlock | Compar
  * A level from languages/levels.yaml. Every leaf carries one; sections, cheatsheets and topics take their range from their leaves.
  */
 export type Level = "A0" | "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
-export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi";
+export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi" | "ja";
 /**
  * Explanation languages an element serves; all when absent.
  *
@@ -132,6 +132,7 @@ export interface Langs123Topic {
     tr?: Status;
     id?: Status;
     vi?: Status;
+    ja?: Status;
   };
   /**
    * Per explanation language but the source, the fingerprint of the source text its text was written from: one hash per part, the title and summary, the cheatsheet, then each section (npm run translated).
@@ -171,6 +172,7 @@ export interface Localized {
   tr?: Text;
   id?: Text;
   vi?: Text;
+  ja?: Text;
 }
 /**
  * The form the topic teaches; in an error, the corrected part.

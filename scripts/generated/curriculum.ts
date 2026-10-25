@@ -1,6 +1,6 @@
 // Generated from languages/schema/curriculum.schema.json by npm run types. Edit the schema, then regenerate.
 
-export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi";
+export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi" | "ja";
 /**
  * A variety of a language being learned, as a BCP 47 tag.
  */
@@ -88,6 +88,7 @@ export interface Localized {
   tr: string;
   id: string;
   vi: string;
+  ja: string;
 }
 /**
  * Text in each explanation language of the language being learned; npm run check requires exactly those.
@@ -104,4 +105,5 @@ export interface TrackLocalized {
   tr?: string;
   id?: string;
   vi?: string;
+  ja?: string;
 }

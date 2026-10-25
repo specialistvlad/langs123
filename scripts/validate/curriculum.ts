@@ -6,16 +6,18 @@ import { contains, refRange, topicLevels } from "../levels.ts";
 import type { Report } from "./report.ts";
 
 // A language being learned: the explanation languages it names start with the source its other explanation
-// languages translate, itself when it is an explanation language; a language never explained in names them;
-// its varieties are its own, and its section and topic titles carry exactly its explanation languages.
+// languages translate, itself when its topics are written in it; a language outside site.yaml's explanation
+// languages names them; its varieties are its own, and its section and topic titles carry exactly its
+// explanation languages.
 export function checkLanguage(language: CurriculumLanguage, report: Report): void {
   const where = "curriculum.yaml";
   const explain = explainOf(language);
   const explained = (EXPLAIN_CODES as string[]).includes(language.code);
+  const writtenInItself = (explain as string[]).includes(language.code);
   if (!explained && language.explain === undefined) {
     report(where, `${language.code}: explain names the explanation languages, the source first, as ${language.code} is not one of them`);
   }
-  if (explained && language.explain !== undefined && explain[0] !== language.code) {
+  if (writtenInItself && explain[0] !== language.code) {
     report(where, `${language.code}: explain starts with ${language.code}, the source the other explanation languages translate`);
   }
   for (const v of language.varieties ?? []) {

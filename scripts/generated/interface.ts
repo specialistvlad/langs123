@@ -49,6 +49,7 @@ export interface Localized {
   tr: string;
   id: string;
   vi: string;
+  ja: string;
 }
 /**
  * A count's forms in every explanation language.
@@ -135,6 +136,14 @@ export interface Counted {
     other: string;
   };
   vi: {
+    zero?: string;
+    one?: string;
+    two?: string;
+    few?: string;
+    many?: string;
+    other: string;
+  };
+  ja: {
     zero?: string;
     one?: string;
     two?: string;

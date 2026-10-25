@@ -85,7 +85,8 @@
         "pl",
         "tr",
         "id",
-        "vi"
+        "vi",
+        "ja"
       ],
       "properties": {
         "en": {
@@ -129,6 +130,10 @@
           "minLength": 1
         },
         "vi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ja": {
           "type": "string",
           "minLength": 1
         }
@@ -149,7 +154,8 @@
         "pl",
         "tr",
         "id",
-        "vi"
+        "vi",
+        "ja"
       ],
       "properties": {
         "en": {
@@ -483,6 +489,39 @@
           }
         },
         "vi": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "other"
+          ],
+          "properties": {
+            "zero": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "one": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "two": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "few": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "many": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            },
+            "other": {
+              "type": "string",
+              "pattern": "\\{n\\}"
+            }
+          }
+        },
+        "ja": {
           "type": "object",
           "additionalProperties": false,
           "required": [

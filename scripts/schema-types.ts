@@ -8,6 +8,8 @@ import { join } from "node:path";
 const SCHEMAS = join(import.meta.dir, "..", "languages", "schema");
 const OUT = join(import.meta.dir, "generated");
 const NAMES = ["site", "levels", "interface", "curriculum", "concepts", "topic"];
+// The export's schema takes the explanation languages of site.yaml too; scripts/export/types.ts types the export.
+const SYNCED = [...NAMES, "library"];
 const check = process.argv.includes("--check");
 
 const site = Bun.YAML.parse(await Bun.file(join(SCHEMAS, "..", "site.yaml")).text()) as { explain: { code: string }[] };
@@ -32,7 +34,7 @@ function withCodes(node: unknown): unknown {
 }
 
 let stale = 0;
-for (const name of NAMES) {
+for (const name of SYNCED) {
   const path = join(SCHEMAS, `${name}.schema.json`);
   const source = await Bun.file(path).text();
   const synced = `${JSON.stringify(withCodes(JSON.parse(source)), null, 2)}\n`;
@@ -42,6 +44,7 @@ for (const name of NAMES) {
       stale++;
     } else await Bun.write(path, synced);
   }
+  if (!NAMES.includes(name)) continue;
   const types = await compileFromFile(path, {
     bannerComment: `// Generated from languages/schema/${name}.schema.json by npm run types. Edit the schema, then regenerate.`,
     cwd: SCHEMAS,

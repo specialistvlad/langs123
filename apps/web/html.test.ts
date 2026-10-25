@@ -119,7 +119,7 @@ describe("on a page in another language, every piece names its language", () => 
       'Після <strong data-mark="term" lang="en">Did</strong> — <span data-mark="ipa">/dɪd/</span>',
     );
     expect(inline([{ variant: "on the weekend", variety: "en-US" }], uk, false)).toBe(
-      '<span data-mark="variant" data-variety="en-US">амер.: on the weekend</span>',
+      '<span data-mark="variant" data-variety="en-US">США: on the weekend</span>',
     );
   });
   test("a gloss and a named slot inside an example are in the reader's language; V reads as written", () => {

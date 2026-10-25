@@ -29,4 +29,5 @@ export interface Localized {
   tr: string;
   id: string;
   vi: string;
+  ja: string;
 }

@@ -3,7 +3,7 @@
 import { describe, expect, test } from "bun:test";
 import Ajv from "ajv";
 import { join } from "node:path";
-import { CONTENT, EXPLAIN_CODES, type Localized, type Text, type Topic } from "../lib.ts";
+import { CONTENT, EXPLAIN_CODES, explainOf, loadCurriculum, type Localized, type Text, type Topic } from "../lib.ts";
 import { problemsAfter, SAMPLE, sampleBlocks } from "../sample-topic.ts";
 import { links } from "./notation.ts";
 import { checkSummary } from "./topic-summary.ts";
@@ -63,8 +63,11 @@ describe("the topic template", () => {
     const validate = new Ajv({ allErrors: true, strict: true }).compile(schema);
     const topic = Bun.YAML.parse(filled) as Topic;
     expect(validate(topic)).toBe(true);
+    // The template is an English topic, written for English's explanation languages.
+    const english = (await loadCurriculum()).languages.find((l) => l.code === "en");
+    if (!english) throw new Error("curriculum.yaml has no English");
     const out: string[] = [];
-    checkText(topic, "template", (_w, m) => out.push(m));
+    checkText(topic, "template", (_w, m) => out.push(m), explainOf(english));
     expect(out).toEqual([]);
   }, 30_000);
 });

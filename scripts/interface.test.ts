@@ -6,7 +6,7 @@ import { join } from "node:path";
 import { INTERFACE, ROOT } from "./lib.ts";
 
 // Wording the export carries for programs built on the library, which the web app shows nowhere.
-const FOR_PROGRAMS = ["tagline"];
+const FOR_PROGRAMS = ["tagline", "searchAllCourses", "searchUpTo", "searchTopicsCount", "searchNoResults", "searchNoResultsHint"];
 
 const SOURCES = ["apps/**/*.ts", "scripts/**/*.ts"]
   .flatMap((pattern) => [...new Glob(pattern).scanSync(ROOT)])
