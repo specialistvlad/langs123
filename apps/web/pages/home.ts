@@ -8,7 +8,7 @@ import { join, refRange, topicLevels } from "../../../scripts/levels.ts";
 import { LIBRARY_BRAND } from "../brand.ts";
 import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
 import { INFO } from "../glyphs.ts";
-import { closeButton, readMenu, results, searchForm, themeButton, themeMenu } from "../toolbar.ts";
+import { closeButton, moreMenu, readMenu, results, searchForm, themeButton, themeMenu } from "../toolbar.ts";
 import { escapeHtml } from "../html.ts";
 import { courseEntry, type LevelEntry, levelData, levelPopover } from "../level-popover.ts";
 import { levelsLabel, levelsOf, markButton } from "../level-mark.ts";
@@ -55,17 +55,20 @@ function courseLevels(refs: Parameters<typeof refRange>[0][]): Level[] {
   return [...held];
 }
 
-// The toolbar: the search, the Read in menu, the theme and the credits, and Close while searching.
+// The toolbar: the search, the Read in menu, the theme and the credits, folded into More on a phone, and Close
+// while searching.
 function toolbar(home: Explain): string {
   const t = ui(home);
-  const credits = escapeHtml(say("credits", home));
+  const words = say("credits", home);
+  const credits = escapeHtml(words);
   return `<nav class="hm-bar">
 ${searchForm(t)}
-<div class="hm-group glass">
+<div class="hm-group hm-folds glass">
 ${readMenu(t, readChoices(home, homeUrl))}
 ${themeButton(t)}
 <a class="hm-credits" href="${creditsUrl(home)}" aria-label="${credits}" title="${credits}">${INFO}</a>
 </div>
+${moreMenu(t, readChoices(home, homeUrl), { href: creditsUrl(home), label: words })}
 ${closeButton(t)}
 ${themeMenu(t)}
 </nav>

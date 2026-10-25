@@ -29,6 +29,7 @@ const STYLES = [
   "track-rows",
   "track-menu",
   "track-phone",
+  "home-more",
   "credits",
   "credits-cards",
   "level-mark",

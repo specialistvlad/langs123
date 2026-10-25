@@ -27,5 +27,9 @@ export const SUN = glyph(
   2,
 );
 export const MOON = glyph('<path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/>', 20, 2);
+// More: three dots, filled; and the way back from one of its lists.
+export const MORE =
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></svg>';
+export const MENU_BACK = glyph('<path d="M15 5l-7 7 7 7"/>', 18, 2.4);
 // The house of the up link to Home.
 export const HOME = glyph('<path d="M3.5 10.5L12 3.5l8.5 7"/><path d="M5.5 9v10.5h13V9"/><path d="M10 19.5v-5h4v5"/>', 20, 2);

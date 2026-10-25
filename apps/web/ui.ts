@@ -38,6 +38,7 @@ const TEXT_KEYS = [
   "levelHidden",
   "readingTime",
   "theme",
+  "more",
   "themeAuto",
   "themeSystem",
   "themeLight",

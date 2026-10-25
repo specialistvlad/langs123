@@ -15,7 +15,7 @@ import { topicUrl } from "./urls.ts";
 
 const CHEVRON =
   '<svg class="ix-chev" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L6.5 7l-5 5.5"/></svg>';
-const TICK =
+export const TICK =
   '<svg width="15" height="13" viewBox="0 0 16 14" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 7.5l4.5 4.5L14.5 1.5"/></svg>';
 export const FILTER = glyph('<path d="M4 7h16M7 12h10M10 17h4"/>', 20, 2);
 export const GLOBE = glyph(

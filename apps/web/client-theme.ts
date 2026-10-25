@@ -11,6 +11,11 @@ export function themeMenu(root: HTMLElement): void {
     document.querySelectorAll<HTMLElement>("[data-set-theme]").forEach((b) => {
       b.setAttribute("aria-checked", String(b.dataset["setTheme"] === name));
     });
+    // The theme named where a menu shows it, as its item reads.
+    const title = document.querySelector(`[data-set-theme="${name}"] .ix-title`)?.textContent ?? "";
+    document.querySelectorAll<HTMLElement>("[data-theme-now]").forEach((n) => {
+      n.textContent = title;
+    });
   };
   const saved = store.get("ln-theme");
   apply(saved !== null && THEMES.includes(saved) ? saved : "auto");
