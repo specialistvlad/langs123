@@ -5,7 +5,7 @@ import Ajv from "ajv";
 import { join } from "node:path";
 import { exportLibrary, type LibraryItem } from "./export.ts";
 import { topic } from "./export/blocks.ts";
-import { inTrack, learned } from "./export/text.ts";
+import { explained, inTrack, learned } from "./export/text.ts";
 import { CONTENT, EXPLAIN_CODES, type ListBlock, loadCurriculum, loadTopics, readYaml, type Text } from "./lib.ts";
 import { plainText, reading } from "./text.ts";
 import { SAMPLE as SAMPLE_TOPIC } from "./sample-topic.ts";
@@ -67,4 +67,6 @@ test("kanji is followed by its reading, each a mark of its own, and plain text k
   expect(learned(eat, "en")).toBe("私は[**食**](m:kanji)[**た**](m:reading)**べます**。");
   expect(learned([{ kanji: "日本", reading: "にほん" }, "です"], "en")).toBe("[日本](m:kanji)[にほん](m:reading)です");
   expect(plainText(eat, reading("en", true))).toBe("私は食べます。");
+  const link: Text = { link: ["と", { kanji: "思", reading: "おも" }, "います: Opinions"], to: "ja.linking.to-omou" };
+  expect(explained(link, "en")).toBe("[と思います: Opinions](id:ja.linking.to-omou)");
 });

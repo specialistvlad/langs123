@@ -30,7 +30,12 @@ const RUNS: TextOutput<Run[]> = {
   mark: (name, inner, m, c) => {
     if (STRONG.has(name)) return inner.map((r) => ({ ...r, bold: true }));
     if (EMPHASIS.has(name)) return inner.map((r) => ({ ...r, italic: true }));
-    if (name === "link") return inner.map((r) => ({ ...r, link: (m as { to: string }).to }));
+    // A link is one run of text: the marks inside it have no look of their own there, and kanji drops its reading,
+    // as in a title.
+    if (name === "link") {
+      const to = (m as { to: string }).to;
+      return inner.filter((r) => r.tags?.includes("reading") !== true).map((r) => ({ s: r.s, bold: r.bold, italic: r.italic, link: to }));
+    }
     if (TAGS.has(name)) {
       if (name === "kanji") return tagged(inner, name, (r) => r.tags?.includes("reading") !== true);
       if (name !== "variant") return tagged(inner, name);
