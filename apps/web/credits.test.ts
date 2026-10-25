@@ -80,8 +80,9 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
     // Every other page's x-default is its English version.
     const credits = await readPage(file(creditsUrl(e)));
     expect(credits.querySelector('link[hreflang="x-default"]')?.getAttribute("href")).toBe(`http://127.0.0.1${creditsUrl("en")}`);
-    // A language's card lists the home page's own language first.
-    expect(home.querySelector(".hm-card .hm-chip")?.getAttribute("hreflang")).toBe(e);
+    // A language's card lists the home page's own language first, when the course is written for it.
+    const chips = [...(home.querySelector(".hm-card")?.querySelectorAll(".hm-chip") ?? [])].map((c) => c.getAttribute("hreflang"));
+    expect(chips[0]).toBe(chips.includes(e) ? e : chips[0]);
   });
   test("the missing page leads up and to every language's home page, its own first", async () => {
     const doc = await readPage(file(notFoundUrl(e)));

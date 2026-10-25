@@ -37,7 +37,6 @@ function row(topic: Topic, terms: string[], scale: string[], explained: string):
       "hm-row-cap",
       explained.replace(/\{name(:lower)?\}/, (_all, lower?: string) => (lower === undefined ? topic.other : topic.other.toLowerCase())),
     );
-    caption.lang = topic.otherLang;
     item.append(caption);
   }
   const text = el("span", "hm-row-text");

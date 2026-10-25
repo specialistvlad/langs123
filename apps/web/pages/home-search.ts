@@ -1,7 +1,7 @@
 // The Home's search data, one file per explanation language, search/<language>.json: every written topic of
 // every course in the cards' order, each as [title, address, its levels ("A1 A2 B1"), lead, section, flag,
-// course, the name and code of the language it opens in when the course is not written for this language (else
-// "" and this one), the course's code, per level what the topic holds there for the level popover, and the
+// course, the name (in this language) and code of the language it opens in when the course is not written for this
+// language (else "" and this one), the course's code, per level what the topic holds there for the level popover, and the
 // topic's id], after the scale of levels the marks draw, and the parts of the index; then the index of every word
 // of those topics in the language each is read in (search-index.ts), one file per first letter,
 // search/<language>/<part>.json. The Home's search (client-home.ts) ranks the topics whose title holds the query
@@ -11,11 +11,11 @@ import { topicTexts, topicTitle } from "../../../scripts/content.ts";
 import {
   type CurriculumLanguage,
   type Explain,
-  explainName,
   LEVELS,
   loadCurriculum,
   loadTopics,
   localize,
+  SITE,
   type Text,
   type Topic,
   type TopicRef,
@@ -27,6 +27,9 @@ import { STRONG } from "../html.ts";
 import { type Index, indexOf, partsOf, tokens, type TopicWords } from "../search-index.ts";
 import { topicEntryOf } from "../level-popover.ts";
 import { topicUrl } from "../urls.ts";
+
+// Each explanation language's name in every other.
+const NAMES: Record<string, Partial<Record<Explain, string>>> = Object.fromEntries(SITE.explain.map((x) => [x.code, x.name]));
 
 export const homeSearchUrl = (explain: Explain): string => `/search/${explain}.json`;
 export const homeSearchPartUrl = (explain: Explain, part: string): string => `/search/${explain}/${part}.json`;
@@ -70,7 +73,8 @@ export function searchOf(languages: CurriculumLanguage[], refs: TopicRef[], home
   const topics = languages.flatMap((lang) => {
     const explains = explainsOf(lang);
     const e = explains.includes(home) ? home : (explains[0] ?? home);
-    const other = e === home ? ["", e] : [explainName(e), e];
+    // The language a topic opens in, when it is not this one, named in this one: 英語 on the Japanese Home.
+    const other = e === home ? ["", e] : [localize(NAMES[e] ?? {}, home), e];
     return refs.flatMap((ref) => {
       const levels = ref.lang === lang.code && ref.topic !== null ? topicLevels(ref.topic, e) : [];
       if (ref.topic === null || levels.length === 0) return [];
