@@ -1,0 +1,118 @@
+/* A topic's parts in the right pane (topic-parts.ts): the topic page carries them hidden; the split view's pane shows
+   them: the title with its mark and reading time, the lead, Contents as the rows above with the part's number
+   first, then Up next under the order the reader chose */
+.tpp {
+  display: none;
+}
+.sp-body .tpp {
+  display: block;
+}
+.tpp-title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.tpp-flag {
+  margin-right: 8px;
+}
+.tpp-props {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--muted);
+}
+.tpp-props .prop {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.tpp-props .prop::before {
+  content: "·";
+  margin-right: 4px;
+}
+.tpp-lead {
+  max-width: none;
+  margin: 0;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.43px;
+  color: var(--tp-body);
+}
+.tpp-caps {
+  margin: 20px 0 0;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tp-caps);
+}
+.tpp-rows {
+  margin: 0;
+}
+.tpp-n {
+  flex-shrink: 0;
+  width: 40px;
+  font:
+    700 17px ui-monospace,
+    Menlo,
+    monospace;
+  letter-spacing: -0.02em;
+  line-height: 22px;
+  padding: 14px 0;
+  color: var(--muted);
+}
+.tpp-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  column-gap: 10px;
+  padding: 14px 16px 14px 20px;
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--text);
+}
+.tpp-link:hover {
+  background: color-mix(in srgb, var(--surface) 94%, var(--text));
+}
+.tpp-link strong {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: -0.43px;
+}
+.tpp-link .ix-chev {
+  grid-column: 3;
+  grid-row: 1;
+}
+.tpp-link .lvm {
+  grid-column: 2;
+  grid-row: 1;
+}
+.tpp-sum {
+  grid-column: 1 / -1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+  color: var(--muted);
+}
+.tpp-next .tpp-caps {
+  margin-top: 24px;
+}
+html[data-order="path"] .tpp-next[data-order="categories"],
+html:not([data-order="path"]) .tpp-next[data-order="path"] {
+  display: none;
+}

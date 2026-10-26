@@ -31,7 +31,8 @@ describe.each(spanishPages)("%s", (path) => {
     // x-default is the English counterpart.
     const href = (lang: string): string | null | undefined => links.find((l) => l.getAttribute("hreflang") === lang)?.getAttribute("href");
     expect(href("x-default")).toBe(href("en"));
-    expect(doc.querySelectorAll(".lang-menu .menu-list a, .hm-read .hm-menu a")).toHaveLength(explains.length);
+    // A course index holds the group twice (the phone's bar, the right pane's tools): each offers every language.
+    expect(doc.querySelector(".lang-menu .menu-list, .hm-read .hm-menu")?.querySelectorAll("a")).toHaveLength(explains.length);
   });
   test("opens on the default variety and offers each in the Variety switch", async () => {
     const doc = await readPage(path);
@@ -60,7 +61,8 @@ describe.each(ENABLED_EXPLAIN)("the home page in %s", (home) => {
 test("a page of a language without varieties has no Variety switch", async () => {
   const doc = await readPage("en/ukrainian/foundations/alphabet-handwriting/index.html");
   expect(doc.documentElement.hasAttribute("data-variety")).toBe(false);
-  expect(doc.querySelector("[data-set-variety]")).toBeNull();
+  // The search's variety filters (hm-f-variety-*) name every course's varieties; the switch is the rest.
+  expect([...doc.querySelectorAll("[data-set-variety]")].filter((b) => b.closest('[id^="hm-f-"]') === null)).toEqual([]);
 });
 
 test("levels.css hides, for each chosen variety, the elements of the others, keeping rows and cell copies in the column widths", async () => {

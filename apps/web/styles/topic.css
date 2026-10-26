@@ -8,13 +8,12 @@ html[data-frame] {
   --tp-caps: #6e6e73;
   --tp-note: rgba(118, 118, 128, 0.08);
   --tp-dash: rgba(60, 60, 67, 0.33);
-  --tp-seg-on: #ffffff;
-  --tp-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   --tp-fade: rgba(242, 242, 247, 0.85);
-  --tp-edge: rgba(242, 242, 247, 0.96);
   --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.18);
   --tp-back: rgba(0, 0, 0, 0.18);
   --tp-current: rgba(47, 91, 211, 0.08);
+  --tp-bad: #c2362f;
+  --tp-good: #1c7d45;
 }
 @media (prefers-color-scheme: dark) {
   html[data-frame]:not([data-theme="light"]) {
@@ -25,13 +24,12 @@ html[data-frame] {
     --tp-caps: rgba(235, 235, 245, 0.55);
     --tp-note: rgba(118, 118, 128, 0.18);
     --tp-dash: rgba(235, 235, 245, 0.3);
-    --tp-seg-on: #636366;
-    --tp-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     --tp-fade: rgba(0, 0, 0, 0.85);
-    --tp-edge: rgba(0, 0, 0, 0.96);
     --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.6);
     --tp-back: rgba(0, 0, 0, 0.5);
     --tp-current: rgba(126, 162, 255, 0.14);
+    --tp-bad: #ff7a72;
+    --tp-good: #5cc98a;
   }
 }
 html[data-frame][data-theme="dark"] {
@@ -42,13 +40,12 @@ html[data-frame][data-theme="dark"] {
   --tp-caps: rgba(235, 235, 245, 0.55);
   --tp-note: rgba(118, 118, 128, 0.18);
   --tp-dash: rgba(235, 235, 245, 0.3);
-  --tp-seg-on: #636366;
-  --tp-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   --tp-fade: rgba(0, 0, 0, 0.85);
-  --tp-edge: rgba(0, 0, 0, 0.96);
   --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.6);
   --tp-back: rgba(0, 0, 0, 0.5);
   --tp-current: rgba(126, 162, 255, 0.14);
+  --tp-bad: #ff7a72;
+  --tp-good: #5cc98a;
 }
 
 html[data-page="topic"] a {
@@ -113,12 +110,9 @@ html[data-page="topic"] .doc p > .lvl {
   vertical-align: 2px;
 }
 
-/* Glass: the up link, the toolbar and the bars */
+/* Glass: the up link in a phone's title row (the split's title row has its own, topic-sheets.css) and the toolbar's
+   buttons; the group sits in the bottom bar on a phone and in the right pane's tools above 860px */
 :where(html[data-page="topic"]) .tp-up {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 31;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,17 +120,6 @@ html[data-page="topic"] .doc p > .lvl {
   height: 44px;
   border-radius: 999px;
   color: var(--text);
-}
-:where(html[data-page="topic"]) .tp-top {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 31;
-  display: flex;
-  gap: 10px;
-}
-:where(html[data-page="topic"]) .tp-top .hm-group {
-  height: 44px;
 }
 :where(html[data-page="topic"]) .tp-btn {
   display: flex;
@@ -153,10 +136,21 @@ html[data-page="topic"] .doc p > .lvl {
   white-space: nowrap;
   cursor: pointer;
 }
-:where(html[data-page="topic"]) .tp-edge,
 :where(html[data-page="topic"]) .tp-fade {
   display: none;
 }
 :where(html[data-page="topic"]) .tp-bar-left {
   display: none;
+}
+
+/* The variety menu: 300px wide, under the tools' right edge on a wide screen (a phone: topic-phone.css) */
+:where(html[data-page="topic"]) .ix-menu-variety {
+  width: 300px;
+  padding: 4px 0;
+}
+:where(html[data-page="topic"]) .ix-menu-variety .ix-item {
+  min-height: 48px;
+}
+:where(html[data-page="topic"]) .ix-menu-variety .ix-item + .ix-item::before {
+  left: 42px;
 }

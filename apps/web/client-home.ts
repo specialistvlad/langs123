@@ -182,10 +182,10 @@ export function homeSearch(): void {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && root.classList.contains("hm-searching")) stop();
   });
-  // The Read in menu closes on a tap outside it.
-  const read = document.querySelector<HTMLDetailsElement>(".hm-read");
   document.addEventListener("click", (event) => {
-    if (read?.open === true && event.target instanceof Node && !read.contains(event.target)) read.open = false;
+    document.querySelectorAll<HTMLDetailsElement>(".hm-read[open]").forEach((read) => {
+      if (event.target instanceof Node && !read.contains(event.target)) read.open = false;
+    });
   });
   // The toolbar rises above the on-screen keyboard.
   const view = window.visualViewport;

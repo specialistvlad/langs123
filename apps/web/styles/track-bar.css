@@ -1,7 +1,5 @@
 /* A course index's bar (pages/track.ts): on a phone the group at the left and the round Search button at the right
-   end, the button opening the field across the bar with Close (client-home.ts sets html.hm-searching); on a wide
-   screen the field and the group at the top right, and while a query is typed the filters share the Home button's
-   row, the field and Close at its right end */
+   end, the button opening the field across the bar with Close (client-home.ts sets html.hm-searching) */
 .ix-search-open {
   display: none;
 }
@@ -31,15 +29,16 @@
     display: none;
   }
 }
+/* A wide screen: the field under the title row (the Home's left pane rules, split-home.css), its filters and results
+   after it, the group in the right pane (the tools), so the bar's own copy stays out */
 @media (min-width: 861px) {
-  html[data-page="track"].hm-query .hm-results {
-    padding-top: 0;
+  html.hm-query .sp-track .hm-results {
+    padding-top: 16px;
   }
-  html[data-page="track"].hm-query .hm-filters {
-    box-sizing: border-box;
-    align-content: center;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 474px 0 56px;
+  .sp.sp-track .hm-bar {
+    margin-top: 14px;
+  }
+  .sp-track .hm-none {
+    margin-top: 72px;
   }
 }

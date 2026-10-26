@@ -1,14 +1,5 @@
-/* Phones, continued */
+/* Phones, continued: the lesson's tables and the contents sheet */
 @media screen and (max-width: 860px) {
-  :where(html[data-page="topic"]) .tp-fade {
-    transition: opacity 0.25s ease;
-  }
-  :where(html[data-page="topic"]) .tp-end {
-    display: block;
-  }
-  :where(html[data-page="topic"]) .tp-end .up-next .tp-caps {
-    margin-top: 26px;
-  }
   :where(html[data-page="topic"]) .tp-main .tp-card table {
     font-size: 15px;
     line-height: 21px;
@@ -72,7 +63,7 @@
     inset: auto 8px 8px 8px;
     width: auto;
     max-width: none;
-    max-height: calc(100dvh - 100px);
+    max-height: calc(100dvh - 108px);
     padding: 0;
     border-radius: 40px;
   }
@@ -86,24 +77,5 @@
     margin-left: -18px;
     border-radius: 999px;
     background: var(--tp-hair);
-  }
-  :where(html[data-page="topic"]) .tp-index[popover] {
-    inset: auto 8px 8px 8px;
-    width: auto;
-    max-width: none;
-    max-height: calc(100dvh - 100px);
-  }
-  :where(html[data-page="topic"]) .tp-seg {
-    margin-bottom: 18px;
-  }
-}
-
-/* Phones with reduced motion: the bars appear and hide without sliding */
-@media screen and (max-width: 860px) and (prefers-reduced-motion: reduce) {
-  :where(html[data-page="topic"]) .tp-up,
-  :where(html[data-page="topic"]) .tp-top,
-  :where(html[data-page="topic"]) .tp-bar,
-  :where(html[data-page="topic"]) .tp-fade {
-    transition: none;
   }
 }

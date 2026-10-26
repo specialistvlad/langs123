@@ -7,6 +7,7 @@ import { markChips } from "./client-chips.ts";
 import { levelPopover } from "./client-levels.ts";
 import { closePanel, panels } from "./client-panel.ts";
 import { stepLinks, studyStep } from "./client-path.ts";
+import { splitView } from "./client-split.ts";
 import { themeMenu } from "./client-theme.ts";
 import { store } from "./client-store.ts";
 import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
@@ -35,6 +36,7 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   hidingBar();
 
   themeMenu(root);
+  splitView();
 
   document.addEventListener("click", (event) => {
     const target = event.target;
@@ -83,6 +85,12 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
     lanes();
     spy();
   }
+  // What the split view puts in its right pane follows the page's state: the level and the variety on it, the order
+  // switch's pressed button.
+  document.addEventListener("sp:shown", () => {
+    root.setAttribute("data-order", root.dataset["order"] ?? "categories");
+    refresh();
+  });
 
   // The address wins over the stored choices, also where storage is off.
   const params = new URL(location.href).searchParams;

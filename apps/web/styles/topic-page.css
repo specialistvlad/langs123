@@ -1,39 +1,16 @@
-/* The page: a head, the contents column and the lesson */
+/* The page: the lesson in the split's right pane (topic-wide.css), a head over its sections */
 :where(html[data-page="topic"]) .tp-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  grid-template-rows: auto 1fr;
-  column-gap: 32px;
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 84px 20px 140px;
-  align-items: start;
+  display: block;
 }
 :where(html[data-page="topic"]) .tp-head {
-  grid-column: 1;
-  grid-row: 1;
   min-width: 0;
 }
-:where(html[data-page="topic"]) .tp-rail {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  position: sticky;
-  top: 84px;
-  max-height: calc(100vh - 84px - 24px);
-  overflow-y: auto;
-  scrollbar-width: none;
-}
 :where(html[data-page="topic"]) .tp-main {
-  grid-column: 1;
-  grid-row: 2;
   min-width: 0;
   container-type: inline-size;
 }
 :where(html[data-page="topic"]) .tp-main .doc {
   max-width: none;
-}
-:where(html[data-page="topic"]) .tp-end {
-  display: none;
 }
 :where(html[data-page="topic"]) .tp-head .title-row {
   display: flex;
@@ -61,7 +38,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 4px 8px;
-  margin: 6px 0 12px;
+  margin: 0;
   font-size: 15px;
   line-height: 22px;
   color: var(--tp-sec);
@@ -84,7 +61,7 @@
   flex: none;
 }
 :where(html[data-page="topic"]) .tp-main .doc > blockquote:first-of-type {
-  margin: 0 0 4px;
+  margin: 0;
   font-size: 17px;
   line-height: 25px;
   letter-spacing: -0.43px;

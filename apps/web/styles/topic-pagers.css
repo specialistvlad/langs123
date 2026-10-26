@@ -1,4 +1,5 @@
-/* Previous and Next: one glass capsule, the titles beside the arrows on wide screens */
+/* The bottom bar of a phone (topic-phone.css places it) and the contents sheet: along the bottom on a phone; above
+   860px the left pane holds the contents and the bar and the sheet stay out (topic-wide.css) */
 :where(html[data-page="topic"]) .tp-bar {
   position: fixed;
   left: 0;
@@ -12,48 +13,6 @@
 :where(html[data-page="topic"]) .tp-bar > * {
   pointer-events: auto;
 }
-:where(html[data-page="topic"]) .tp-pagers {
-  display: flex;
-}
-:where(html[data-page="topic"]) .tp-pager {
-  display: flex;
-  align-items: center;
-  height: 48px;
-  border-radius: 999px;
-  color: var(--text);
-}
-:where(html[data-page="topic"]) .tp-side {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: 100%;
-  padding: 0 16px;
-  border-radius: 999px;
-  font-size: 17px;
-  white-space: nowrap;
-}
-:where(html[data-page="topic"]) .tp-pt {
-  max-width: 220px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-:where(html[data-page="topic"]) a.tp-side:hover {
-  background: var(--hm-fill);
-}
-:where(html[data-page="topic"]) .tp-off {
-  opacity: 0.3;
-}
-:where(html[data-page="topic"]) .tp-div {
-  width: 0.5px;
-  height: 24px;
-  background: var(--tp-hair);
-}
-:where(html[data-page="topic"]) .tp-restart {
-  font-weight: 600;
-}
-
-/* Sheets and panels: along the bottom on phones, under the button on wider screens */
 :where(html[data-page="topic"]) .tp-sheet[popover] {
   box-sizing: border-box;
   margin: 0;
@@ -108,15 +67,8 @@
   margin-bottom: 0;
 }
 :where(html[data-page="topic"]) .tp-sheet-body .tp-contents .toc a {
-  min-height: 44px;
+  min-height: 43.5px;
 }
 :where(html[data-page="topic"]) .tp-sheet-body .tp-contents .toc .name {
-  padding: 11px 0;
-}
-:where(html[data-page="topic"]) .tp-index[popover] {
-  inset: 74px 20px auto auto;
-  width: 460px;
-  max-width: calc(100vw - 32px);
-  max-height: calc(100vh - 100px);
-  border-radius: 30px;
+  padding: 10.75px 0;
 }

@@ -4,7 +4,7 @@
 // stays while the field has focus and leaves once a query is typed (the layout: track-layout.e2e.ts).
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
-import type { Page } from "playwright";
+import type { Locator, Page } from "playwright";
 import { LEVELS } from "../../scripts/lib.ts";
 import { shared } from "./browser.ts";
 
@@ -24,8 +24,10 @@ async function open(width: number, address = COURSE, height = 900): Promise<void
   await page.goto(new URL(address, base).href);
 }
 const panelOpen = (id: string): Promise<boolean> => page.evaluate((p) => document.getElementById(p)?.matches(":popover-open") ?? false, id);
+// The first of the elements that are shown: the group is in the phone's bar and in the right pane's tools.
+const shown = (selector: string): Locator => page.locator(selector).filter({ visible: true }).first();
 const box = async (selector: string): Promise<{ x: number; y: number; right: number; bottom: number }> => {
-  const b = await page.locator(selector).first().boundingBox();
+  const b = await shown(selector).boundingBox();
   return { x: b?.x ?? 0, y: b?.y ?? 0, right: (b?.x ?? 0) + (b?.width ?? 0), bottom: (b?.y ?? 0) + (b?.height ?? 0) };
 };
 
@@ -34,8 +36,8 @@ test(
   async () => {
     for (const width of [1032, 1440]) {
       await open(width);
-      expect(await page.locator(".ix-level [data-level-label]").textContent()).toBe("All levels");
-      await page.click(".ix-level");
+      expect(await shown(".ix-level [data-level-label]").textContent()).toBe("All levels");
+      await shown(".ix-level").click();
       expect(await panelOpen("lv-pop")).toBe(true);
       // The popover takes its place as it opens (client-levels.ts, on its toggle).
       await page.waitForFunction(() => document.getElementById("lv-pop")?.style.top !== "");
@@ -62,15 +64,15 @@ test(
   "choosing a level in the popover names it on the button alone and ticks it, the top row bringing back All levels",
   async () => {
     await open(1440);
-    await page.click(".ix-level");
+    await shown(".ix-level").click();
     await page.click('#lv-pop [data-row="B1"]');
     expect(await panelOpen("lv-pop")).toBe(false);
-    expect(await page.locator(".ix-level [data-level-label]").textContent()).toBe("Intermediate");
-    expect(await page.locator(".ix-level .lvm").count()).toBe(0);
-    await page.click(".ix-level");
+    expect(await shown(".ix-level [data-level-label]").textContent()).toBe("Intermediate");
+    expect(await shown(".ix-level").locator(".lvm").count()).toBe(0);
+    await shown(".ix-level").click();
     expect(await page.locator('#lv-pop [data-row="B1"]').getAttribute("aria-checked")).toBe("true");
     await page.click('#lv-pop [data-row="C2"]');
-    expect(await page.locator(".ix-level [data-level-label]").textContent()).toBe("All levels");
+    expect(await shown(".ix-level [data-level-label]").textContent()).toBe("All levels");
   },
   SLOW,
 );
@@ -79,7 +81,7 @@ test(
   "on a phone the Level button opens the course's sheet from the bottom with a close button",
   async () => {
     await open(402, COURSE, 874);
-    await page.click(".ix-level");
+    await shown(".ix-level").click();
     expect(await panelOpen("lv-pop")).toBe(true);
     const sheet = await box("#lv-pop");
     expect([Math.round(sheet.x), Math.round(sheet.right), Math.round(sheet.bottom)]).toEqual([8, 394, 866]);
@@ -95,13 +97,13 @@ test(
   async () => {
     await open(1440);
     for (const level of LEVELS) {
-      await page.click(".ix-level");
+      await shown(".ix-level").click();
       await page.click(`#lv-pop [data-row="${level}"]`);
-      const shown = await page.$$eval(
+      const listed = await page.$$eval(
         '.ix-flow[data-order="categories"] .ix-rows > li:not(.ix-more)',
         (rows) => rows.filter((row) => row.getClientRects().length > 0).length,
       );
-      expect(Number.parseInt((await page.locator(".ix-count").textContent()) ?? "", 10)).toBe(shown);
+      expect(Number.parseInt((await shown(".ix-count").textContent()) ?? "", 10)).toBe(listed);
     }
   },
   SLOW,

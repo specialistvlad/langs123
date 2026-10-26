@@ -33,7 +33,11 @@ const STYLES = [
   "track-menu",
   "track-phone",
   "track-bar",
+  "track-topic",
   "home-more",
+  "split",
+  "split-parts",
+  "split-home",
   "credits",
   "credits-cards",
   "level-mark",
@@ -89,8 +93,8 @@ export function levelsCss(): string {
       .map((c) => `.lvl-${c}`)
       .join(", ")})`;
     return [
-      `${at}:is([data-page="topic"], [data-page="track"]) ${list}:not(.toc > li) { display: none !important; }`,
-      `${at}:is([data-page="topic"], [data-page="track"]) .lvl > .half${halves} { opacity: 0.55; }`,
+      `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) ${list}:not(.toc > li) { display: none !important; }`,
+      `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) .lvl > .half${halves} { opacity: 0.55; }`,
       `${at}[data-page="topic"] .toc > li${list} { opacity: 0.4; pointer-events: none; }`,
       `${at} .lvm > i:is(${codes
         .slice(i + 1)
@@ -127,7 +131,7 @@ export function varietiesCss(varieties: readonly (readonly string[])[]): string 
         if (above.length === 0) return [];
         const at = `html[data-variety="${chosen}"][data-level="${code}"]`;
         return [
-          `${at}:is([data-page="topic"], [data-page="track"]) :is(${above.join(", ")}):not(.toc > li) { display: none !important; }`,
+          `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) :is(${above.join(", ")}):not(.toc > li) { display: none !important; }`,
           `${at}[data-page="topic"] .toc > li:is(${above.join(", ")}) { opacity: 0.4; pointer-events: none; }`,
         ];
       });

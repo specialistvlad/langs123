@@ -1,0 +1,110 @@
+/* The Home and the credits page in the split view (pages/home.ts, split.ts): above 860px the toolbar is the search
+   alone in the left pane under the title row, the Read in, theme and credits groups sit in the title row and the right
+   pane; the course chosen is outlined, its topic list fills the right pane in one column (two where the pane is wide).
+   On a phone the title row holds the brand and the toolbar stays at the bottom (home-bar.css, home-phone.css). */
+:where(.sp-home .sp-left) a {
+  color: inherit;
+  text-decoration: none;
+}
+.sp-home .hm-card[data-sp-chosen] {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+.sp-home .hm-brand {
+  margin-block: 0;
+}
+.sp-home .hm-main {
+  padding: 0 20px 48px;
+}
+.sp-home .hm-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+  column-gap: 16px;
+}
+/* The right pane shows the course index's list and its toolbar group as the course index draws them */
+.sp-home .sp-body .ix-name-h {
+  min-height: 0;
+  padding-left: 0;
+}
+.sp-home .sp-body .ix-seg {
+  width: auto;
+  max-width: none;
+}
+.sp-home .sp-body .ix-flow {
+  column-count: 1;
+}
+.sp-home .sp-body .ix-head {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.sp-home .sp-body .cr-main a:not(.cr-row) {
+  color: var(--accent);
+}
+@container (min-width: 900px) {
+  .sp-home .sp-body .ix-flow {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 861px) {
+  .sp-home .hm-bar {
+    position: static;
+    margin: 12px 20px 0;
+  }
+  html .sp-home .hm-bar .hm-group,
+  .sp-home .hm-bar .hm-more-menu {
+    display: none;
+  }
+  html .sp-home .hm-search {
+    flex: 1;
+    width: auto;
+    max-width: none;
+  }
+  html.hm-searching .sp-right .hm-group {
+    display: flex;
+  }
+  .sp-home .hm-title {
+    margin: 16px 0;
+  }
+  html.hm-query .sp-home .hm-results {
+    padding-top: 16px;
+  }
+  .sp:not([data-sp-open]) .sp-own {
+    display: none;
+  }
+  .sp-home[data-sp-open] #hm-themes {
+    right: auto;
+    left: calc(var(--sp-left) - 20px - 260px);
+  }
+  /* The results in one card, the halves reading as one list */
+  .sp-home .hm-list {
+    display: block;
+  }
+  .sp-home .hm-rows + .hm-rows .hm-row:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 0;
+    height: 0.5px;
+    background: var(--hm-sep);
+  }
+  .sp-home .hm-rows:first-child:not(:last-child) {
+    border-radius: 22px 22px 0 0;
+  }
+  .sp-home .hm-rows:last-child:not(:first-child) {
+    border-radius: 0 0 22px 22px;
+  }
+}
+
+@media (max-width: 860px) {
+  .sp-title {
+    margin: 16px 20px 12px;
+  }
+  .sp-own {
+    display: none;
+  }
+  .sp-home .hm-main {
+    padding: 0 20px 120px;
+  }
+  html.hm-query .sp-home .sp-title {
+    display: none;
+  }
+}

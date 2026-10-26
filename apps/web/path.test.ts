@@ -1,6 +1,6 @@
-// The study path on the built pages: the menu and the track index list curriculum.yaml's path level by
-// level; every step leads to the place its level starts in its topic; Up next follows each step of a
-// topic to the step after it.
+// The study path on the built pages: the track index lists curriculum.yaml's path level by level; every
+// step leads to the place its level starts in its topic; a topic holds a row of the study path for each of
+// its steps, and Up next follows each step of a topic to the step after it.
 import { describe, expect, test } from "bun:test";
 import { loadCurriculum, LEVELS, lv } from "../../scripts/lib.ts";
 import { SAMPLE } from "./sample.ts";
@@ -16,14 +16,12 @@ const path = Object.fromEntries(
     return own.length > 0 ? [[level, own]] : [];
   }),
 );
-// The track page holds the index; every topic page of the track holds the menu.
+// The track page holds the index.
 const index = await readPage("en/english/index.html");
-const topic = await readPage("en/english/foundations/numbers/index.html");
-const menu = '.nav-list[data-order="path"]';
-const steps = [...topic.querySelectorAll<HTMLAnchorElement>(`${menu} a.tp-row`)];
+const steps = [...index.querySelectorAll<HTMLAnchorElement>('.ix-flow[data-order="path"] a.ix-cover')];
 // The page a step link opens, and the section its anchor names.
 const pageOf = (href: string): string => `${href.split(/[?#]/)[0]?.replace(/^\//, "") ?? ""}index.html`;
-const levelOf = (el: Element): string => el.getAttribute("data-level") ?? "";
+const levelOf = (el: Element): string => el.closest("[data-level]")?.getAttribute("data-level") ?? "";
 // The address a link opens: its href, with the step its data-path-step names as the reader's click adds it.
 const opensOf = (el: Element | null | undefined): string | undefined => {
   const href = el?.getAttribute("href") ?? null;
@@ -33,10 +31,9 @@ const opensOf = (el: Element | null | undefined): string | undefined => {
   return `${base}?step=${step}${hash === undefined ? "" : `#${hash}`}`;
 };
 
-describe("the menu and the index", () => {
-  test("list the levels of the path, lowest first, each with its steps", () => {
+describe("the index", () => {
+  test("lists the levels of the path, lowest first, each with its steps", () => {
     const levels = Object.keys(path);
-    expect([...topic.querySelectorAll(`${menu} .tp-ix-sec`)].map(levelOf)).toEqual(levels);
     expect([...index.querySelectorAll('.ix-flow[data-order="path"] .ix-sec')].map(levelOf)).toEqual(levels);
     for (const level of levels) {
       expect(steps.filter((a) => levelOf(a) === level).length).toBe(path[level]?.length ?? 0);
@@ -45,8 +42,7 @@ describe("the menu and the index", () => {
     expect(LEVELS.slice(0, levels.length)).toEqual(levels as never);
   });
 
-  test("give both orders a switch, the menu and the index each", () => {
-    expect(topic.querySelectorAll('.tp-seg [data-set-order="categories"], .tp-seg [data-set-order="path"]').length).toBe(2);
+  test("gives both orders a switch", () => {
     expect(index.querySelectorAll('.ix-seg [data-set-order="categories"], .ix-seg [data-set-order="path"]').length).toBe(2);
   });
 });
@@ -86,60 +82,50 @@ describe("a topic page", () => {
   });
 
   interface Lead {
-    prev: string | undefined;
     next: string | undefined;
     restart: boolean;
   }
-  // Where a page at position i leads at a level of the filter: the shown pages around it, and from the
+  // Where a page at position i leads at a level of the filter: the shown page after it, and from the
   // last shown page back to the first.
   function expected(list: { level: string; href: string }[], i: number, level: string): Lead {
     const shown = (e: { level: string }): boolean => lv(e.level) <= lv(level);
-    const prev = list.slice(0, i).filter(shown).pop();
     const after = list.slice(i + 1).find(shown);
     const first = list.find(shown);
     const restart = after === undefined && first !== undefined && first !== list[i];
-    return { prev: prev?.href, next: after?.href ?? (restart ? first.href : undefined), restart };
+    return { next: after?.href ?? (restart ? first.href : undefined), restart };
   }
-  // The capsule of a page for one grouping (and one step) at a level in the bottom bar, and Up next in the rail.
-  function seen(doc: Document, rows: string, level: string): (Lead & { upNext: string | undefined })[] {
-    const at = `[data-at~="${level}"]`;
-    const out = [".tp-bar"].map((bar) => {
-      const row = doc.querySelectorAll(`${bar} .tp-pager${rows}${at}`);
-      expect(row.length).toBe(1);
-      const prev = doc.querySelector(`${bar} .tp-pager${rows}${at} .tp-prev`);
-      const next = doc.querySelector(`${bar} .tp-pager${rows}${at} .tp-next`);
-      expect(prev?.matches("a") ?? false).not.toBe(prev?.matches(".tp-off") ?? false);
-      return {
-        prev: opensOf(prev),
-        next: opensOf(next),
-        restart: next?.textContent.includes("Start over") ?? false,
-        upNext: opensOf(doc.querySelector(`.up-next${rows}${at} a.next`)),
-      };
-    });
-    return out;
+  // Up next of a page for one grouping (and one step) at a level: where it leads, and whether it starts over.
+  function seen(doc: Document, rows: string, level: string): { next: string | undefined; restart: boolean } {
+    const found = doc.querySelectorAll(`.tp-end .up-next${rows}[data-at~="${level}"]`);
+    expect(found.length).toBeLessThanOrEqual(1);
+    return {
+      next: opensOf(found[0]?.querySelector("a.next")),
+      restart: found[0]?.querySelector(".tp-caps")?.textContent === "Start over",
+    };
   }
 
-  test.each(topicsOnPath)("%s marks its steps; at every level each step leads to the shown steps around it", async (file) => {
-    const doc = await readPage(file);
-    const own = all.flatMap((s, i) => (pageOf(s.href) === file ? [{ ...s, i }] : []));
-    expect([...doc.querySelectorAll(`${menu} a.on`)].map(levelOf)).toEqual(own.map((s) => s.level));
-    for (const s of own) {
-      for (const level of LEVELS) {
-        const want = expected(all, s.i, level);
-        for (const got of seen(doc, `[data-order="path"][data-step="${s.level}"]`, level)) {
-          expect(got).toEqual({ ...want, upNext: want.next });
+  test.each(topicsOnPath)(
+    "%s holds a row for each of its steps; at every level each step's Up next leads to the shown step after it",
+    async (file) => {
+      const doc = await readPage(file);
+      const own = all.flatMap((s, i) => (pageOf(s.href) === file ? [{ ...s, i }] : []));
+      expect([...doc.querySelectorAll(".tp-path-row")].map(levelOf)).toEqual(own.map((s) => s.level));
+      for (const s of own) {
+        for (const level of LEVELS) {
+          const want = expected(all, s.i, level);
+          expect(seen(doc, `[data-order="path"][data-step="${s.level}"]`, level)).toEqual({ next: want.next, restart: want.restart });
         }
       }
-    }
-  });
+    },
+  );
 
   test.each(written.map((w, i) => [w.href, i] as const))(
-    "%s, by category, leads at every level to the shown topics around it",
+    "%s, by category, leads at every level to the shown topic after it",
     async (href, i) => {
       const doc = await readPage(pageOf(href));
       for (const level of LEVELS) {
         const want = expected(written, i, level);
-        for (const got of seen(doc, '[data-order="categories"]', level)) expect(got).toEqual({ ...want, upNext: want.next });
+        expect(seen(doc, '[data-order="categories"]', level)).toEqual({ next: want.next, restart: want.restart });
       }
     },
   );

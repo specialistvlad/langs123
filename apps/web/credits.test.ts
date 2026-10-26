@@ -48,11 +48,11 @@ describe.each(pages)("%s", (path) => {
 
 test("the credits page names the authors, both licences, the credit line and the ways to contribute", async () => {
   const doc = await readPage("credits/index.html");
-  const hrefs = [...doc.querySelectorAll("main a")].map((a) => a.getAttribute("href") ?? "");
+  const hrefs = [...doc.querySelectorAll(".cr-main a")].map((a) => a.getAttribute("href") ?? "");
   const { content, code } = SITE.licences;
   expect(doc.querySelector('link[rel="canonical"]')?.getAttribute("href")).toBe("http://127.0.0.1/credits/");
-  expect(doc.querySelector(`main a[href="${SITE.repository}/graphs/contributors"]`)?.textContent).toBe(SITE.credit);
-  expect(doc.querySelector('main a[rel="license"]')?.getAttribute("href")).toBe(content.url);
+  expect(doc.querySelector(`.cr-main a[href="${SITE.repository}/graphs/contributors"]`)?.textContent).toBe(SITE.credit);
+  expect(doc.querySelector('.cr-main a[rel="license"]')?.getAttribute("href")).toBe(content.url);
   expect(hrefs).toContain(code.url);
   expect(doc.querySelector(".credit-line")?.textContent).toBe(`${SITE.credit}, ${SITE.url} — ${content.name}`);
   expect(hrefs).toContain(SITE.repository);

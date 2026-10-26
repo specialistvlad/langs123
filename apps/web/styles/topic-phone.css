@@ -1,64 +1,46 @@
-/* Phones: the up link and a glass group at the top, a glass bar at the bottom holding Contents and Index on the
-   left and Previous and Next on the right; both hide while the reader scrolls down (html.bar-hidden) */
+/* Phones: the lesson is the page (the split's left pane stays out); the title row holds the up link beside the title;
+   the glass bar at the bottom holds Contents, the group of Level, Variety and Read in, and the round Search button at
+   its right end, which opens the field (the split's left pane holds it, over a phone's bottom edge) with Close
+   (client-home.ts sets html.hm-searching) and, with a query, the results in place of the lesson; the bar hides while
+   the reader scrolls down (html.bar-hidden) and rises with the on-screen keyboard (--hm-kb) */
 @media screen and (max-width: 860px) {
   :where(html[data-page="topic"]) .tp-wrap {
     display: block;
-    padding: 76px 20px 140px;
+    padding: max(16px, calc(env(safe-area-inset-top) + 8px)) 20px 130px;
   }
-  :where(html[data-page="topic"]) .tp-rail {
-    display: none;
-  }
-  :where(html[data-page="topic"]) .tp-head h1 {
-    font-size: 28px;
-  }
-  :where(html[data-page="topic"]) .tp-up {
-    top: max(20px, calc(env(safe-area-inset-top) + 8px));
-  }
-  :where(html[data-page="topic"]) .tp-top {
-    top: max(20px, calc(env(safe-area-inset-top) + 8px));
-  }
-  :where(html[data-page="topic"]) .tp-ixgroup {
-    display: none;
-  }
-  :where(html[data-page="topic"]) .tp-top .tp-btn,
-  :where(html[data-page="topic"]) .tp-top .hm-read summary {
-    width: 50px;
+  .sp-topic .sp-body {
     padding: 0;
   }
-  :where(html[data-page="topic"]) .tp-top .tp-variety {
-    width: auto;
-    padding: 0 12px;
+  .sp.sp-topic .sp-left {
+    display: contents;
   }
-  :where(html[data-page="topic"]) .tp-top .tp-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
+  .sp-topic .sp-left > :not(.tp-sbar, .tp-results) {
+    display: none;
   }
-  :where(html[data-page="topic"]) .tp-top .tp-variety .tp-label {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip-path: none;
+  .sp-topic .tp-sbar,
+  .sp-topic .tp-results,
+  .sp-topic #hm-cards {
+    display: none;
   }
-  :where(html[data-page="topic"]) .tp-top .hm-menu {
-    top: calc(100% + 12px);
-    bottom: auto;
-    right: 0;
+  html.hm-searching .sp-topic .tp-sbar {
+    display: flex;
   }
-  :where(html[data-page="topic"]) .tp-edge {
+  html.hm-query .sp-topic .tp-results {
     display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 25;
-    height: 56px;
-    background: linear-gradient(to bottom, var(--tp-edge) 40%, transparent);
-    pointer-events: none;
+  }
+  html.hm-query .sp-topic .sp-right {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-head .title-row {
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+  }
+  :where(html[data-page="topic"]) .tp-head .page-icon {
+    display: none;
+  }
+  :where(html[data-page="topic"]) .tp-up {
+    flex: none;
   }
   :where(html[data-page="topic"]) .tp-fade {
     display: block;
@@ -75,54 +57,69 @@
     left: 16px;
     right: 16px;
     bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
   }
   :where(html[data-page="topic"]) .tp-bar-left {
     display: flex;
+  }
+  :where(html[data-page="topic"]) .tp-bar .hm-group {
     height: 48px;
   }
-  :where(html[data-page="topic"]) .tp-bar-left .tp-btn {
+  :where(html[data-page="topic"]) .tp-bar .tp-btn,
+  :where(html[data-page="topic"]) .tp-bar .hm-read summary {
     width: 52px;
     padding: 0;
   }
-  :where(html[data-page="topic"]) .tp-side {
-    width: 52px;
-    padding: 0;
+  :where(html[data-page="topic"]) .tp-bar .tp-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
-  :where(html[data-page="topic"]) .tp-pt:not(.tp-start) {
-    display: none;
+  :where(html[data-page="topic"]) .tp-bar .ix-search-open {
+    margin-left: auto;
   }
-  :where(html[data-page="topic"]) .tp-div {
-    display: none;
+  :where(html[data-page="topic"]) .tp-bar .hm-menu {
+    top: auto;
+    bottom: calc(100% + 14px);
+    right: 0;
   }
-  :where(html[data-page="topic"]) .tp-restart {
-    width: auto;
-    padding: 0 16px;
+  :where(html[data-page="topic"]) .tp-bar,
+  :where(html[data-page="topic"]) .tp-fade {
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
   }
-  :where(html[data-page="topic"]) .tp-restart .tp-pt {
-    display: inline;
-  }
-  :where(html[data-page="topic"]) .tp-up,
-  :where(html[data-page="topic"]) .tp-top,
-  :where(html[data-page="topic"]) .tp-bar {
-    transition: transform 0.25s ease;
-  }
-  html:where([data-page="topic"]).bar-hidden .tp-up,
-  html:where([data-page="topic"]).bar-hidden .tp-top {
-    transform: translateY(-120px);
-  }
-  html:where([data-page="topic"]).bar-hidden .tp-bar {
+  html:where([data-page="topic"]):not(.hm-searching, .hm-query).bar-hidden .tp-bar:not(:has(:popover-open)) {
     transform: translateY(calc(100% + 60px));
   }
-  html:where([data-page="topic"]).bar-hidden .tp-fade {
+  html:where([data-page="topic"]):not(.hm-searching, .hm-query).bar-hidden .tp-fade {
     opacity: 0;
+  }
+  :where(html[data-page="topic"]) .tp-results {
+    padding-bottom: 120px;
+  }
+  html:where([data-page="topic"]).hm-searching .tp-results {
+    padding-bottom: calc(var(--hm-kb, 0px) + 110px);
+  }
+  :where(html[data-page="topic"]) .ix-menu-variety {
+    left: 16px;
+    right: auto;
+    bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 88px);
+  }
+  :where(html[data-page="topic"]) .hm-fmenu {
+    bottom: auto;
   }
 }
 
-/* Phones: the level and variety menus open under the top group they belong to */
-@media (max-width: 860px) {
-  :where(html[data-page="topic"]) .ix-menu {
-    top: 74px;
-    bottom: auto;
+/* Phones with reduced motion: the bar appears and hides without sliding */
+@media screen and (max-width: 860px) and (prefers-reduced-motion: reduce) {
+  :where(html[data-page="topic"]) .tp-bar,
+  :where(html[data-page="topic"]) .tp-fade {
+    transition: none;
   }
 }

@@ -87,17 +87,10 @@ describe("the labels that meet their values", () => {
     const [before = ""] = say("labelled", "fr", { label: ui("fr").variety }).split("{value}");
     expect(text(fr.querySelector(".hm-fchip[data-variety-course] .hm-fchip-l")).startsWith(before)).toBe(true);
   });
-  test("a topic's variety button, Previous and Next read as each language writes them", async () => {
+  test("a topic's variety button reads as each language writes it", async () => {
     for (const e of ["en", "uk", "es"] as const) {
       const doc = await readPage(`${e}/spanish/presente/presente-regular/index.html`);
       expect(text(doc.querySelector(".tp-variety .sr-only"))).toBe(say("labelled", e, { label: ui(e).variety, value: "" }));
-      const prefix = say("labelled", e, { label: ui(e).previous, value: "" });
-      const labels = [...doc.querySelectorAll(".tp-prev")].map((a) => a.getAttribute("aria-label") ?? "");
-      expect(labels.length).toBeGreaterThan(0);
-      for (const label of labels) expect(label === prefix.trimEnd() || label.startsWith(prefix)).toBe(true);
-      const next = say("labelled", e, { label: ui(e).next, value: "" });
-      const nexts = [...doc.querySelectorAll(".tp-next:not(.tp-restart)")].map((a) => a.getAttribute("aria-label") ?? "");
-      for (const label of nexts) expect(label.startsWith(next)).toBe(true);
     }
   });
 });

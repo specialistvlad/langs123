@@ -1,0 +1,172 @@
+/* The split view (split.ts, client-split.ts): above 860px the page sits in the left pane and what it opens fills the
+   right pane, each scrolling on its own; the list button and the divider set the left pane's width: equal (half the
+   window, or the width a drag chose in --sp-w), slim (320px) or hidden, where the title row moves to the top left of
+   the content. A phone shows one screen: the left pane, or the right pane alone on a page that is the item itself
+   (.sp-item). Without script the left pane fills a page that has nothing open. */
+.sp {
+  --sp-left: var(--sp-w, 50%);
+}
+.sp[data-split="slim"] {
+  --sp-left: 320px;
+}
+.sp[data-split="hidden"] {
+  --sp-left: 0px;
+}
+.sp:not([data-split], [data-sp-open]) {
+  --sp-left: 100%;
+}
+.sp-right {
+  position: relative;
+}
+.sp-div,
+.sp-list {
+  display: none;
+}
+.sp-body {
+  padding: 20px 20px 56px;
+}
+
+@media (min-width: 861px) {
+  .sp {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  .sp-left {
+    flex: none;
+    width: var(--sp-left);
+    overflow: hidden auto;
+    box-shadow: inset -0.5px 0 0 var(--pg-sep);
+    transition: width 0.2s ease;
+  }
+  .sp-right {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden auto;
+    container-type: inline-size;
+  }
+  .sp:not([data-split], [data-sp-open]) .sp-right {
+    display: none;
+  }
+  .sp-body {
+    padding: 64px 20px 48px;
+  }
+  .sp-body:has(.sp-choose) {
+    padding: 0;
+  }
+  /* The tools float over the pane's top right and stay there as it scrolls; only they take the pointer */
+  .sp-tools {
+    position: sticky;
+    top: 20px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    height: 44px;
+    margin: 20px 20px -44px;
+    pointer-events: none;
+  }
+  .sp-tools > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+  }
+  .sp[data-split] .sp-list {
+    display: flex;
+  }
+  .sp[data-split="equal"] .sp-div,
+  .sp[data-split="slim"] .sp-div {
+    display: block;
+  }
+  /* The divider: a 14px strip over the pane's edge, its grip at the middle of the window's height */
+  .sp-div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--sp-left);
+    z-index: 7;
+    width: 14px;
+    margin-left: -7px;
+    cursor: col-resize;
+    touch-action: none;
+    transition: left 0.2s ease;
+  }
+  .sp-div::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 6px;
+    height: 44px;
+    margin-top: -22px;
+    border-radius: 3px;
+    background: var(--ix-chev);
+  }
+  .sp-div:hover::after,
+  .sp-drag .sp-div::after {
+    background: var(--accent);
+  }
+  .sp-drag {
+    cursor: col-resize;
+    user-select: none;
+  }
+  .sp-drag .sp-left,
+  .sp-drag .sp-div {
+    transition: none;
+  }
+  /* Hidden: the left pane is its title row alone, over the content's top left */
+  .sp[data-split="hidden"] .sp-left {
+    overflow: visible;
+    box-shadow: none;
+  }
+  .sp[data-split="hidden"] .sp-left > :not(.sp-title) {
+    display: none;
+  }
+  .sp[data-split="hidden"] .sp-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    margin: 20px;
+  }
+  .sp[data-split="hidden"] .sp-title > :not(:first-child, .sp-list) {
+    display: none;
+  }
+  .sp[data-split="hidden"] .sp-title > :first-child {
+    margin-right: 0;
+  }
+  .sp[data-split="slim"] .hm-brand span {
+    display: none;
+  }
+}
+
+/* The divider is a desktop's: a touch screen reaches the three widths through the list button */
+@media (min-width: 861px) and (pointer: coarse) {
+  .sp[data-split] .sp-div {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .sp-right {
+    display: none;
+  }
+  .sp-item .sp-right {
+    display: block;
+  }
+  .sp-item .sp-left {
+    display: none;
+  }
+  .sp-tools {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-left,
+  .sp-div {
+    transition: none;
+  }
+}

@@ -1,11 +1,13 @@
-// A track's index in the frame (frame.css, track.css): a glass Home button sharing the title row with the course's
-// flag and name (on a wide screen the topic count ends the order switch's row, on a phone the title's), the count
-// the topics the chosen level shows, the order switch as a segmented control, the topics in both
-// orders with their level marks (track-parts.ts) and the level popover they open, and the Home's glass toolbar: the
-// Level button, which opens the same popover headed by the course, the variety menu on a course with varieties, and
-// Read in; a phone's bar ends in a round Search button that opens the field (track-bar.css). The order switch, the level filter and the variety switch are the client's own (data-set-order,
-// data-set-level, data-set-variety); client-track.ts follows their state in the menus and the switch, client-chips.ts
-// the count.
+// A track's index in the split view (split.ts): the left pane holds the title row (the Home button, the list button, the
+// course's flag and name; on a phone the topic count ends the row), the search, the order switch as a segmented
+// control with the count, and the topics in both orders with their level marks (track-parts.ts); a topic is an item
+// that opens its parts in the right pane (topic-parts.ts, which the topic page declares as its fragment), whose tools
+// are the Level, Variety and Read in group and whose placeholder is "Choose a topic". The list, with the course's
+// heading, is the fragment and the group the tools the Home's right pane takes when a course is chosen there. A phone
+// keeps the Home layout of one screen: the group sits in the bottom bar with a round Search button that opens the
+// field (track-bar.css). The Level button opens the level popover headed by the course. The order switch, the level
+// filter and the variety switch are the client's own (data-set-order, data-set-level, data-set-variety);
+// client-track.ts follows their state in the menus and the switch, client-chips.ts the count.
 import { count, type Explain, LEVELS, localize, lv, say, SITE, type TopicRef } from "../../../scripts/lib.ts";
 import { refRange } from "../../../scripts/levels.ts";
 import { varietyName } from "../../../scripts/text.ts";
@@ -15,7 +17,8 @@ import { ranged, refsRange } from "../parts.ts";
 import { closeButton, readMenu, results, searchButton, searchForm } from "../toolbar.ts";
 import { courseEntry, type LevelEntry, levelData, levelPopover } from "../level-popover.ts";
 import { HOME } from "../glyphs.ts";
-import { byCategory, byLevel, GLOBE, levelButton, varietyMenu } from "../track-parts.ts";
+import { choose, listButton, split } from "../split.ts";
+import { byCategory, byLevel, CHOOSE_TOPIC, GLOBE, levelButton, varietyMenu } from "../track-parts.ts";
 import { searchFilters } from "../search-filters.ts";
 import { homeUrl, trackUrl } from "../urls.ts";
 
@@ -50,42 +53,49 @@ export function trackIndex(track: Track): void {
     varieties.length === 0
       ? ""
       : `<button type="button" class="ix-btn ix-variety" popovertarget="ix-varieties" aria-haspopup="menu">${GLOBE}<span class="ix-label"><span class="sr-only">${escapeHtml(say("labelled", explain, { label: t.variety, value: "" }))}</span><span data-variety-label>${escapeHtml(varieties[0]?.name ?? "")}</span></span></button>`;
-  const body = `<main class="hm-main ix-main">
-<a class="ix-up glass" href="${homeUrl(explain)}" aria-label="${escapeHtml(SITE.name)}">${HOME}</a>
-<div id="hm-cards">
-<header class="ix-head">
-<div class="ix-line"><h1 class="ix-name-h"><span class="ix-flag" aria-hidden="true">${lang.flag}</span><span aria-hidden="true">${escapeHtml(localize(lang.name, explain))}</span><span class="sr-only">${escapeHtml(title)}</span></h1><span class="ix-count" data-counts="${escapeHtml(countsByLevel(written, explain))}">${escapeHtml(count("topics", explain, written.length))}</span></div>
-<div class="ix-seg" role="group" aria-label="${escapeHtml(t.grouping)}">${seg}</div>
-</header>
+  const read = readChoices(explain, (e) => trackUrl(e, lang), track.explains);
+  const group = (attrs: string): string =>
+    `<div class="hm-group glass"${attrs}>
+${levelButton(explain, { level: t.level, all: t.allLevels }, "lv-pop", "ix-btn ix-level", "ix-label", course)}
+${variety}
+${readMenu(t, read)}
+</div>`;
+  const flag = `<span class="ix-flag" aria-hidden="true">${lang.flag}</span>`;
+  const name = escapeHtml(localize(lang.name, explain));
+  const counts = `data-counts="${escapeHtml(countsByLevel(written, explain))}"`;
+  const total = escapeHtml(count("topics", explain, written.length));
+  const up = `<a class="ix-up glass" href="${homeUrl(explain)}" aria-label="${escapeHtml(SITE.name)}">${HOME}</a>`;
+  // The left pane: the title row (Home, the list button, the course; on a phone the count ends it), the search, and
+  // the list, whose head, switch and topics are the fragment the Home's right pane takes (split.ts).
+  const left = `<div class="sp-title">
+${up}
+${listButton(t)}
+<h1 class="ix-name-h">${flag}<span aria-hidden="true">${name}</span><span class="sr-only">${escapeHtml(title)}</span></h1><span class="ix-count ix-count-t" ${counts}>${total}</span>
+</div>
+<nav class="hm-bar ix-bar">
+${searchForm(t)}
+${group("")}
+${searchButton(t)}
+${closeButton(t)}
+${varieties.length === 0 ? "" : varietyMenu(t.variety, varieties, " data-sp-extras")}
+</nav>
+<main class="hm-main ix-main">
+<div id="hm-cards" class="ix-frag" data-sp-fragment>
+<h2 class="ix-name-h ix-frag-h">${flag}${name}</h2>
+<header class="ix-head"><div class="ix-seg" role="group" aria-label="${escapeHtml(t.grouping)}">${seg}</div><span class="ix-count" ${counts}>${total}</span></header>
 <div class="ix-flow" data-order="categories">${categories}</div>
 <div class="ix-flow" data-order="path">${path}</div>
 </div>
-${results(
-  t,
-  searchFilters(
-    t,
-    explain,
-    ctx.languages,
-    readChoices(explain, (e) => trackUrl(e, lang), track.explains),
-    lang.code,
-  ),
-)}
+${results(t, searchFilters(t, explain, ctx.languages, read, lang.code))}
 </main>
-<div class="ix-fade" aria-hidden="true"></div>
-<nav class="hm-bar ix-bar">
-${searchForm(t)}
-<div class="hm-group glass">
-${levelButton(explain, { level: t.level, all: t.allLevels }, "lv-pop", "ix-btn ix-level", "ix-label", course)}
-${variety}
-${readMenu(
-  t,
-  readChoices(explain, (e) => trackUrl(e, lang), track.explains),
-)}
-</div>
-${searchButton(t)}
-${closeButton(t)}
-${varieties.length === 0 ? "" : varietyMenu(t.variety, varieties)}
-</nav>
+<div class="ix-fade" aria-hidden="true"></div>`;
+  const body = `${split({
+    t,
+    cls: "sp-home sp-track",
+    left,
+    tools: group(" data-sp-tools"),
+    body: choose({ title: t.chooseTopic, hint: t.chooseTopicHint, icon: CHOOSE_TOPIC }),
+  })}
 ${levelPopover(explain)}
 ${levelData(entries)}`;
   ctx.add({

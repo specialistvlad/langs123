@@ -1,7 +1,7 @@
 // The Home's menus in a browser. On a phone Read in stays and More takes the theme's and the credits' place: More's
 // menu names the two, the theme opens its list in its place under a way back, and a theme chosen closes it, which
 // opens again naming the theme chosen. Read in ticks the language read in. Wide screens keep the theme and the
-// credits. A query hides the page's header; an empty search keeps it.
+// credits in the split view's panes. A query hides the page's header; an empty search keeps it.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -23,12 +23,9 @@ test(
   "on a phone Read in stays beside More, whose menu holds the theme and the credits",
   async () => {
     await page.goto(new URL("/", base).href);
-    expect(await Promise.all([".hm-read summary", ".hm-more", ".hm-folds .hm-theme", ".hm-folds .hm-credits"].map(visible))).toEqual([
-      true,
-      true,
-      false,
-      false,
-    ]);
+    expect(
+      await Promise.all([".hm-folds .hm-read summary", ".hm-more", ".hm-folds .hm-theme", ".hm-folds .hm-credits"].map(visible)),
+    ).toEqual([true, true, false, false]);
     await page.locator(".hm-more").click();
     await page.waitForSelector('.hm-more[aria-expanded="true"]');
     expect(await page.locator('#hm-more [data-panel="main"] .ix-title').allTextContents()).toEqual(["Theme", "Credits"]);
@@ -52,8 +49,8 @@ test(
   "Read in ticks the language read in, alone",
   async () => {
     await page.goto(new URL("/", base).href);
-    await page.locator(".hm-read summary").click();
-    const ticked = page.locator('.hm-read .hm-ticks [aria-checked="true"]');
+    await page.locator(".hm-folds .hm-read summary").click();
+    const ticked = page.locator('.hm-folds .hm-read .hm-ticks [aria-checked="true"]');
     expect([await ticked.count(), await ticked.getAttribute("hreflang"), await ticked.locator(".ix-tick").isVisible()]).toEqual([
       1,
       "en",
@@ -79,11 +76,14 @@ test(
 );
 
 test(
-  "a wide screen keeps the theme and the credits",
+  "a wide screen keeps the theme and the credits beside Read in in the right pane, without More",
   async () => {
     const wide = await browser.newPage({ viewport: { width: 1032, height: 900 } });
     await wide.goto(new URL("/", base).href);
-    expect([await wide.locator(".hm-folds .hm-theme").isVisible(), await wide.locator(".hm-more").isVisible()]).toEqual([true, false]);
+    const shown = (selector: string): Promise<boolean> => wide.locator(selector).first().isVisible();
+    expect(
+      await Promise.all([".sp-tools .hm-read", ".sp-tools .hm-theme", ".sp-tools .hm-credits", ".hm-more", ".hm-folds"].map(shown)),
+    ).toEqual([true, true, true, false, false]);
     await wide.close();
   },
   SLOW,

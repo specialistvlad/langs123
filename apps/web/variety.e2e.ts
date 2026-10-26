@@ -22,9 +22,9 @@ const url = (path: string): string => new URL(path, base).href;
 const shows = (page: Page, variety: string): Promise<boolean> =>
   page.$$eval(`main [data-variety="${variety}"]`, (els) => els.some((el) => el.checkVisibility({ visibilityProperty: true })));
 const chosen = (page: Page): Promise<string | undefined> => page.evaluate(() => document.documentElement.dataset["variety"]);
-// Chooses a variety in the menu its button in the top bar opens.
+// Chooses a variety in the menu its button in the right pane's tools opens.
 async function choose(page: Page, variety: string): Promise<void> {
-  await page.click('.tp-top [popovertarget="ix-varieties"]');
+  await page.click('.sp-tools [popovertarget="ix-varieties"]');
   await page.click(`#ix-varieties [data-set-variety="${variety}"]`);
 }
 

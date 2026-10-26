@@ -1,13 +1,14 @@
-/* Sections: a number, the title, the range pill */
+/* Sections: a number, the title, the range pill. The head, the lead, the headings and a card's caption follow one
+   another with no gap of their own; a block's bottom margin parts it from the next */
 :where(html[data-page="topic"]) .tp-main .sections > .part {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 20px;
   min-width: 0;
 }
 :where(html[data-page="topic"]) .tp-main .doc h2 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 18px 0 10px;
+  margin: 0;
   padding: 0;
   border: 0;
   font-size: 20px;
@@ -133,4 +134,30 @@
   font-size: 15px;
   line-height: 21px;
   letter-spacing: -0.2px;
+}
+
+/* A slot table as cards by tense and sentence type: the tense a line, its sentence types captioned over their cards */
+:where(html[data-page="topic"]) .tp-main .doc .tp-slot-cards .tp-tense {
+  margin: 0;
+  font-size: 17px;
+  line-height: 22px;
+}
+:where(html[data-page="topic"]) .tp-main .doc p.tp-caps {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+}
+:where(html[data-page="topic"]) .tp-main .doc .tp-slot-cards p.tp-caps {
+  margin: 0 0 0 8px;
+}
+:where(html[data-page="topic"]) .tp-slot-cards .tp-card {
+  margin: 4px 0 10px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-cards .tp-card td {
+  font-size: 15px;
+  line-height: 21px;
+}
+:where(html[data-page="topic"]) .tp-main .tp-slot-cards .tp-card th {
+  font-size: 12px;
+  line-height: 16px;
 }

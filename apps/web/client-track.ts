@@ -1,3 +1,18 @@
+// The topic open in the split view's right pane (split.ts) is marked in both orders of the list, and its row comes into
+// view in the list.
+function openTopic(): void {
+  document.addEventListener("sp:shown", () => {
+    const open = document.querySelector<HTMLElement>(".sp")?.dataset["spOpen"];
+    document.querySelectorAll<HTMLAnchorElement>(".sp-left a.ix-cover").forEach((a) => {
+      const on = open !== undefined && a.pathname === open;
+      a.closest("li")?.toggleAttribute("data-sp-chosen", on);
+      if (on) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+    document.querySelector(".sp-left li[data-sp-chosen] a.ix-cover")?.scrollIntoView({ block: "nearest" });
+  });
+}
+
 // The menus of a track's index (pages/track.ts) and a topic page (pages/topic.ts), and the Home's theme menu: the
 // level filter, the variety and the order are the client's own, set by a click on [data-set-level],
 // [data-set-variety] or [data-set-order]; this follows their state in the menus' checkmarks (All levels at the top
@@ -6,6 +21,7 @@
 export function trackMenus(): void {
   const root = document.documentElement;
   if (document.querySelector(".ix-menu") === null) return;
+  openTopic();
   const top = document.querySelector<HTMLElement>(".ix-item[data-all]")?.dataset["setLevel"];
   const sync = (): void => {
     const level = root.dataset["level"];

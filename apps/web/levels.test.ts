@@ -110,20 +110,14 @@ describe.each(topicPages)("%s", (path) => {
     }
   });
 
-  test("the header, the rail and the menu agree with the sections", async () => {
+  test("the header and the contents agree with the sections", async () => {
     const doc = await readPage(path);
     const sections = [...doc.querySelectorAll("section.part")];
     expect(lit(doc.querySelector(".doc-head .props .lvm"))).toBe(held(sections.flatMap(leavesOf)));
-    for (const li of doc.querySelectorAll(".tp-rail .toc > li")) {
+    for (const li of doc.querySelectorAll("#hm-cards .toc > li")) {
       const target = doc.getElementById(li.querySelector("a")?.getAttribute("href")?.slice(1) ?? "");
       expect(target === null ? "missing" : label(from(li), to(li))).toBe(target === null ? "missing" : rangeOf(leavesOf(target)));
       expect(lit(li.querySelector(".lvm"))).toBe(target === null ? "none" : held(leavesOf(target)));
-    }
-    const current = doc.querySelector('.nav-list[data-order="categories"] a.tp-row.on');
-    expect(current === null ? "" : label(from(current), to(current))).toBe(rangeOf(sections.flatMap(leavesOf)));
-    // A section of the course's index covers the topics listed in it.
-    for (const card of doc.querySelectorAll('.nav-list[data-order="categories"] .tp-ix-sec')) {
-      expect(label(from(card), to(card))).toBe(rangeOf([...card.querySelectorAll("a.tp-row")]));
     }
   });
 });
@@ -140,11 +134,11 @@ test("levels.css hides each level above the filter, dims the badge halves and th
     if (above.length === 0) continue;
     expect(css).toContain(`html[data-level="${code}"] .lvm > i:is(${above.map((c) => `.lv-${c}`).join(", ")}).on { opacity: 0.35; }`);
     expect(css).toContain(
-      `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"]) :is(${above.map((c) => `[data-level="${c}"]`).join(", ")})`,
+      `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) :is(${above.map((c) => `[data-level="${c}"]`).join(", ")})`,
     );
     // Badge halves above the filter dim.
     expect(css).toContain(
-      `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"]) .lvl > .half:is(${above.map((c) => `.lvl-${c}`).join(", ")}) { opacity: 0.55; }`,
+      `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) .lvl > .half:is(${above.map((c) => `.lvl-${c}`).join(", ")}) { opacity: 0.55; }`,
     );
   }
 });
