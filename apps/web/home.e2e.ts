@@ -69,6 +69,7 @@ test(
     const flags = await page.locator(".hm-row-flag").allTextContents();
     expect([flags.length < all, flags.every((f) => f === "🇪🇸")]).toEqual([true, true]);
     expect(await page.locator('[data-variety-course="es"]').isVisible()).toBe(true);
+    expect(await page.locator('[data-variety-course="es"]').textContent()).toBe("Variety");
     await page.locator('[data-filter="level"]').click();
     await page.locator('#hm-f-level [data-set-level="A1"]').click();
     await page.waitForFunction(() => document.querySelector('[data-filter="level"]')?.textContent === "Up to A1");
@@ -102,7 +103,7 @@ test(
     await page.locator("#hm-q").fill("present");
     await page.locator(".hm-row").first().waitFor();
     const chip = page.locator('[data-filter="course"]');
-    expect([await chip.textContent(), await chip.getAttribute("aria-pressed")]).toEqual(["Spanish", "false"]);
+    expect([await chip.textContent(), await chip.getAttribute("aria-pressed")]).toEqual(["🇪🇸 Spanish", "false"]);
     expect(await page.locator('[data-variety-course="es"]').isVisible()).toBe(true);
     const own = await page.locator(".hm-row").count();
     expect(await page.locator(".hm-row-flag").allTextContents()).toEqual(Array<string>(own).fill("🇪🇸"));
@@ -115,7 +116,7 @@ test(
     expect(await chip.getAttribute("aria-pressed")).toBe("true");
     // A tap on the chip brings the course index's own course back.
     await chip.click();
-    await page.waitForFunction(() => document.querySelector('[data-filter="course"]')?.textContent === "Spanish");
+    await page.waitForFunction(() => document.querySelector('[data-filter="course"]')?.textContent === "🇪🇸 Spanish");
     expect(await page.locator(".hm-row").count()).toBe(own);
     // On a phone the Home button leaves while a query is typed.
     await page.setViewportSize({ width: 402, height: 874 });

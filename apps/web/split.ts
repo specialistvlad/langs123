@@ -1,5 +1,5 @@
 // The split view (board v212): on a tablet or desktop (860px and up) the page sits in the left pane and what it opens
-// fills the right pane; a phone shows one screen at a time. The Home, a course index and the credits are built on it
+// fills the right pane; a phone shows one screen at a time. The Home, a course index and a topic are built on it
 // (client-split.ts keeps the states and opens the items).
 //
 // MARKUP (split() below builds it; a page puts its own content in the three slots)
@@ -7,17 +7,17 @@
 //     <section class="sp-left">   the page: its title row (with listButton()), its search, its list
 //     <div class="sp-div" data-sp-div role="separator">   the divider, dragged on a wide screen
 //     <section class="sp-right">
-//       <div class="sp-tools">    the pane's glass groups at its top right (Read in, Level, Close ...)
+//       <div class="sp-tools">    the pane's glass groups at its top right (Read in, Level ...)
 //       <div class="sp-body">     the pane's content: a choose() placeholder, or what an item opened
 //   data-split is the reader's state, set before first paint (the boot script) and kept in the site's store
 //   (ln-split: equal 50%, slim 320px, hidden; ln-split-w: the width a drag chose). Where script is off, a page with
 //   nothing open shows the left pane alone, full width. data-sp-open names the path of the item the right pane
-//   shows and is absent while it shows its placeholder; a page that opens with an item shown (credits) renders it.
+//   shows and is absent while it shows its placeholder; a page that opens with an item shown (a topic) renders it.
 //   The list button (listButton()) steps equal -> slim -> hidden -> equal and its label names the next step
 //   (narrowList, hideList, showList). The left pane's first child is its .sp-title row (44px: the Home or Back
 //   button or the brand first, the glass buttons after, the list button last); hidden shows that row alone, at the
 //   top left of the content. Modifier classes: sp-home (the Home's left pane: its search, its toolbar), sp-item (on a
-//   phone the right pane is the page and the left pane is out: the credits).
+//   phone the right pane is the page and the left pane is out: a topic).
 //
 // ITEMS (opening what a link leads to in the right pane)
 //   <a href="/en/english/" data-sp-item>   in the left pane or the tools. On a wide screen a plain click fetches the target page,
@@ -30,10 +30,8 @@
 //
 // THE TARGET PAGE declares its fragment (its own markup stays complete, so the page works on its own):
 //   data-sp-fragment   the element whose copy becomes the right pane's body (its id, if any, is dropped)
-//   data-sp-tools      the elements (any number) that become the pane's tools: the glass groups, a Close link
+//   data-sp-tools      the elements (any number) that become the pane's tools: the glass groups
 //   data-sp-extras     the menus and popovers the tools open (copied beside the tools)
-//   data-sp-close      on a link in the fragment or the tools: closes the pane to its placeholder where the pane
-//     was opened by an item, and navigates (its href) where the page itself shows the item
 //   A link inside the fragment whose path lies below the item's moves the item into the left pane: it goes to
 //   "<item path>?open=<its path>" (the course index with the topic chosen); one to the item's own path (a part
 //   of the topic, #section) and any other link keep their address.

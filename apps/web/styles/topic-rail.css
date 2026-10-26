@@ -106,11 +106,16 @@
   padding: 0;
   list-style: none;
 }
+:where(html[data-page="topic"]) .tp-contents .toc li {
+  position: relative;
+}
 :where(html[data-page="topic"]) .tp-contents .toc li + li::before {
   content: "";
-  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 20px;
   height: 0.5px;
-  margin-left: 20px;
   background: var(--tp-hair);
 }
 :where(html[data-page="topic"]) .tp-contents .toc a {
@@ -137,6 +142,7 @@
 :where(html[data-page="topic"]) .tp-contents .toc .tp-n {
   width: 22px;
   font-size: 15px;
+  color: var(--tp-sec);
 }
 :where(html[data-page="topic"]) .tp-contents .toc a.on .tp-n {
   color: var(--accent);

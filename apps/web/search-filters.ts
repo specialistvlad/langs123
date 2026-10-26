@@ -1,7 +1,8 @@
 // The filters of the Home's search, a row of chips under the field (client-search-filters.ts): the course, the
 // level (the site's own level choice, data-set-level), Read in (the language the Home is read in) and, once a course
 // with varieties is chosen, its variety (the site's variety choice, data-set-variety). Each chip opens a menu of its
-// choices; a chosen course or level fills the chip with the accent and a tap on it clears the choice.
+// choices; a chosen course or level fills the chip with the accent and a tap on it clears the choice. A chosen course
+// shows its flag with its name; the variety chip reads "Variety" and its menu ticks the choice.
 import { type CurriculumLanguage, type Explain, LEVEL_INFO, levelName, localize, say } from "../../scripts/lib.ts";
 import { varietyName } from "../../scripts/text.ts";
 import type { Choice } from "./context.ts";
@@ -32,32 +33,23 @@ export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguag
   const top = LEVEL_INFO.at(-1)?.code ?? "";
   const current = read.find((c) => c.on)?.label ?? "";
   const first = courses.find((c) => c.code === start);
-  const course = chip("hm-f-course", escapeHtml(first?.name ?? all), ` data-filter="course" data-all-label="${escapeHtml(all)}"`);
+  const course = chip("hm-f-course", escapeHtml(first?.label ?? all), ` data-filter="course" data-all-label="${escapeHtml(all)}"`);
   const level = chip(
     "hm-f-level",
     escapeHtml(t.allLevels),
     ` data-filter="level" data-all-label="${escapeHtml(t.allLevels)}" data-up-to="${escapeHtml(upTo)}"`,
   );
   const readIn = chip("hm-f-read", `${LANGUAGES}${escapeHtml(current)}`);
-  // "Variety: Spain", the label meeting its value as each language writes it ("Variété : Espagne"); the page names the
-  // value it keeps for the course.
-  const [before = "", after = ""] = say("labelled", home, { label: t.variety }).split("{value}");
   const varieties = courses
     .filter((c) => c.varieties.length > 0)
-    .map((c) =>
-      chip(
-        `hm-f-variety-${c.code}`,
-        `${escapeHtml(before)}<span data-variety-of="${c.code}">${escapeHtml(varietyName(c.varieties[0] ?? "en-GB", home))}</span>${escapeHtml(after)}`,
-        ` data-variety-course="${c.code}" hidden`,
-      ),
-    );
+    .map((c) => chip(`hm-f-variety-${c.code}`, escapeHtml(t.variety), ` data-variety-course="${c.code}" hidden`));
   const menus = [
     menu(
       "hm-f-course",
       all,
       [
         item('data-course=""', all, first === undefined),
-        ...courses.map((c) => item(`data-course="${c.code}" data-name="${escapeHtml(c.name)}"`, c.label, c === first)),
+        ...courses.map((c) => item(`data-course="${c.code}" data-name="${escapeHtml(c.label)}"`, c.label, c === first)),
       ].join(""),
     ),
     menu(

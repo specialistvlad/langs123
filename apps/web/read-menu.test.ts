@@ -77,15 +77,14 @@ describe.each(ENABLED_EXPLAIN)("the Home in %s", (home) => {
 });
 
 describe("the labels that meet their values", () => {
-  test("the variety chip reads the label and the variety's name as the language writes them", async () => {
+  test("the variety chip reads the label alone, in each language's own word", async () => {
     const en = await readPage(homeFile("en"));
     const chip = en.querySelector(".hm-fchip[data-variety-course] .hm-fchip-l");
-    expect(text(chip).replace(/\s+/g, " ")).toMatch(/^Variety: \S+$/);
+    expect(text(chip)).toBe("Variety");
     expect(en.querySelectorAll("#hm-filters [data-set-variety], [id^=hm-f-variety-] [data-set-variety]").length).toBeGreaterThan(0);
     expect(en.querySelector('[id^="hm-f-variety-"] [data-all]')).toBeNull();
     const fr = await readPage(homeFile("fr"));
-    const [before = ""] = say("labelled", "fr", { label: ui("fr").variety }).split("{value}");
-    expect(text(fr.querySelector(".hm-fchip[data-variety-course] .hm-fchip-l")).startsWith(before)).toBe(true);
+    expect(text(fr.querySelector(".hm-fchip[data-variety-course] .hm-fchip-l"))).toBe(ui("fr").variety);
   });
   test("a topic's variety button reads as each language writes it", async () => {
     for (const e of ["en", "uk", "es"] as const) {

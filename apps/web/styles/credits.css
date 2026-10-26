@@ -1,11 +1,22 @@
 /* The credits page (pages/credits.ts) in the frame: the product's card, its links and the grouped cards in one
-   column, the right pane of the split view above 860px (split.css) and the page alone on a phone, where the Home
-   button shares the heading's row */
+   centred column of at most 680px on every screen, the Home button sharing the heading's row */
 .cr-main {
-  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 20px 56px;
+}
+.cr-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin-bottom: 16px;
+}
+.cr-head .pg-up {
+  position: static;
+  flex-shrink: 0;
 }
 .cr-heading {
-  margin-bottom: 16px !important;
   font-size: 28px;
   line-height: 1.2;
   font-weight: 700;
@@ -66,14 +77,15 @@
   gap: 12px;
   min-height: 52px;
   padding: 8px 16px;
+  line-height: 22px;
   color: var(--text) !important;
 }
-.cr-row:not(:last-child)::after {
+.cr-row + .cr-row::before {
   content: "";
   position: absolute;
   left: 58px;
   right: 0;
-  bottom: 0;
+  top: 0;
   height: 0.5px;
   background: var(--pg-sep);
 }
@@ -102,7 +114,7 @@
 }
 .cr-sub {
   font-size: 15px;
-  line-height: 1.3;
+  line-height: 20px;
   color: var(--muted);
 }
 .cr-row:has(.cr-value) .cr-text {

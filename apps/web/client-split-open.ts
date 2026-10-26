@@ -1,6 +1,6 @@
 // The items of the split view (split.ts has the contract): on a wide screen a plain click on an item link fetches the
 // target page, takes its fragment into the right pane and pushes "?open=<item path>", so Back and reload show the item
-// chosen; a close link, Back and a reload that names no item bring the pane's own content back.
+// chosen; Back and a reload that names no item bring the pane's own content back.
 import { addLevelEntries, type Entry } from "./client-levels.ts";
 import { store } from "./client-store.ts";
 
@@ -149,12 +149,6 @@ export function openItems(sp: HTMLElement): void {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     if (link.pathname !== shown) void show(link.pathname, true);
-  });
-  // A close link closes what an item opened; where the page itself shows the item, it navigates.
-  right.addEventListener("click", (event) => {
-    if (shown === null || !(event.target instanceof Element) || event.target.closest("[data-sp-close]") === null) return;
-    event.preventDefault();
-    void show(null, true);
   });
 
   const asked = (): string | null => new URL(location.href).searchParams.get("open");

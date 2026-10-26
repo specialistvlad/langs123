@@ -72,9 +72,9 @@ export async function clientJs(): Promise<string> {
 
 // Everything about levels that depends on the scale in languages/levels.yaml: the rule handing each level's colours
 // to its elements (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its
-// lowest level; it hides while the filter (data-level on <html>) sits below it. The rail keeps its entries and greys
-// them out; a section whose content all sits above the filter shows its note instead. A pill keeps its range and
-// dims the half above the filter; a mark dims the bars above it.
+// lowest level; it hides while the filter (data-level on <html>) sits below it. The contents keep every row at full
+// strength, their marks dimming the bars above the filter; a section whose content all sits above the filter shows its
+// note instead. A pill keeps its range and dims the half above the filter; a mark dims the bars above it.
 export function levelsCss(): string {
   const codes = LEVEL_INFO.map((l) => l.code);
   // A mark's bar of a level it holds: the level's strong colour.
@@ -95,7 +95,6 @@ export function levelsCss(): string {
     return [
       `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) ${list}:not(.toc > li) { display: none !important; }`,
       `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) .lvl > .half${halves} { opacity: 0.55; }`,
-      `${at}[data-page="topic"] .toc > li${list} { opacity: 0.4; pointer-events: none; }`,
       `${at} .lvm > i:is(${codes
         .slice(i + 1)
         .map((c) => `.lv-${c}`)
@@ -132,7 +131,6 @@ export function varietiesCss(varieties: readonly (readonly string[])[]): string 
         const at = `html[data-variety="${chosen}"][data-level="${code}"]`;
         return [
           `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) :is(${above.join(", ")}):not(.toc > li) { display: none !important; }`,
-          `${at}[data-page="topic"] .toc > li:is(${above.join(", ")}) { opacity: 0.4; pointer-events: none; }`,
         ];
       });
       return [...hidden, ...filter];

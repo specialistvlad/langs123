@@ -1,5 +1,5 @@
 // The split view's markup (split.ts) and the pages built on it: the Home's panes with its placeholder and item links,
-// the credits page showing the credits in the right pane beside the Home's left pane.
+// and the Home's Credits link, which leads to the credits page of its own.
 import { describe, expect, test } from "bun:test";
 import { runInNewContext } from "node:vm";
 import { parseHTML } from "linkedom";
@@ -34,10 +34,10 @@ describe("split()", () => {
   test("names the open item and the modifier classes when the page gives them", () => {
     expect(doc.querySelector(".sp")?.className).toBe("sp");
     expect(doc.querySelector(".sp")?.hasAttribute("data-sp-open")).toBe(false);
-    const open = parse(split({ t: ui("en"), cls: "sp-home sp-item", left: "", tools: "", body: "", open: "/credits/" })).querySelector(
+    const open = parse(split({ t: ui("en"), cls: "sp-home sp-item", left: "", tools: "", body: "", open: "/en/english/" })).querySelector(
       ".sp",
     );
-    expect([open?.className, open?.getAttribute("data-sp-open")]).toEqual(["sp sp-home sp-item", "/credits/"]);
+    expect([open?.className, open?.getAttribute("data-sp-open")]).toEqual(["sp sp-home sp-item", "/en/english/"]);
   });
   test("sets the reader's state before the panes paint", () => {
     const script = html.slice(html.indexOf("<script>") + 8, html.indexOf("</script>"));
@@ -90,7 +90,7 @@ test("the placeholder names what to choose and what opens", () => {
   ]).toEqual([false, "Choose <x>", "Opens here."]);
 });
 
-describe.each(ENABLED_EXPLAIN)("the Home and the credits page in %s", (e) => {
+describe.each(ENABLED_EXPLAIN)("the Home in %s", (e) => {
   const file = (url: string): string => `${url.slice(1)}index.html`;
   const t = ui(e);
   test("the Home's left pane holds the title row, the search and the courses; its right pane asks for a course", async () => {
@@ -123,19 +123,10 @@ describe.each(ENABLED_EXPLAIN)("the Home and the credits page in %s", (e) => {
     const course = await readPage(file(trackUrl("en", { slug: "english" })));
     expect(course.querySelectorAll("[data-sp-fragment]").length).toBe(1);
     expect(course.querySelectorAll("[data-sp-tools]").length).toBeGreaterThan(0);
-    expect(doc.querySelector(".sp-title a[data-sp-item]")?.getAttribute("href")).toBe(creditsUrl(e));
+    // Credits is a page of its own: its links navigate.
+    const credits = [...doc.querySelectorAll(`a[href="${creditsUrl(e)}"]`)];
+    expect(credits.length).toBeGreaterThan(0);
+    expect(credits.some((a) => a.hasAttribute("data-sp-item"))).toBe(false);
     expect(doc.querySelector(`a[href="${trackUrl("en", { slug: "english" })}"]`)).not.toBeNull();
-  });
-  test("the credits page shows the credits in the right pane with Close, and the Home's panes on the left", async () => {
-    const doc = await readPage(file(creditsUrl(e)));
-    expect(doc.querySelector(".sp")?.getAttribute("data-sp-open")).toBe(creditsUrl(e));
-    expect(doc.querySelector(".sp")?.className).toBe("sp sp-home sp-credits sp-item");
-    expect(doc.querySelector(".sp-left .hm-card")).not.toBeNull();
-    const close = doc.querySelector(".sp-tools a[data-sp-close][data-sp-tools]");
-    expect([close?.getAttribute("href"), close?.getAttribute("aria-label")]).toEqual([homeUrl(e), t.closeCredits]);
-    expect(doc.querySelectorAll("[data-sp-fragment]").length).toBe(1);
-    expect(doc.querySelector(".sp-body > .pg-up")?.getAttribute("href")).toBe(homeUrl(e));
-    expect(doc.querySelector("[data-sp-fragment] > .cr-heading")).not.toBeNull();
-    expect(doc.querySelectorAll(".cr-col, .cr-cols").length).toBe(0);
   });
 });

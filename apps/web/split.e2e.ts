@@ -1,6 +1,6 @@
 // The split view in a browser: the Home's right pane asks for a course and shows the course chosen with its address
 // (Back and reload keep it), a topic opened there leads to the course index with the topic chosen in the address, the
-// credits open in the pane and Close returns it, the list button steps equal -> slim -> hidden and the reader's state
+// credits link leads to the credits page, the list button steps equal -> slim -> hidden and the reader's state
 // stays, the divider drags, and a phone navigates as before.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
@@ -83,25 +83,24 @@ test(
 );
 
 test(
-  "the credits open in the right pane, Close brings the placeholder back, and /credits/ shows the same split",
+  "the Credits link leads to the credits page: one centred column of at most 680px with Home beside the heading",
   async () => {
     await page.goto(new URL("/", base).href);
     await page.locator(".sp-tools .hm-credits").click();
-    await page.locator(".sp-body .cr-heading").waitFor();
-    expect(new URL(page.url()).search).toBe("?open=/credits/");
-    expect(await page.locator(".sp-tools .sp-x").isVisible()).toBe(true);
+    await page.waitForURL(new URL("/credits/", base).href);
+    expect(await page.locator(".sp").count()).toBe(0);
     expect(await page.locator("#cr-credit").textContent()).toContain("CC BY");
-    await page.locator(".sp-tools .sp-x").click();
-    await page.locator(".sp-choose").waitFor();
-    expect(new URL(page.url()).search).toBe("");
-    await page.goto(new URL("/credits/", base).href);
-    expect([(await page.locator(".sp-left .hm-card").count()) > 0, await page.locator(".sp-body .cr-heading").isVisible()]).toEqual([
-      true,
-      true,
-    ]);
-    expect(await page.locator(".sp-body .pg-up").isVisible()).toBe(false);
-    // Close leaves for Home where the page itself shows the credits.
-    await page.locator(".sp-tools .sp-x").click();
+    const box = (selector: string): Promise<{ left: number; right: number; mid: number; width: number }> =>
+      page.locator(selector).evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        return { left: r.left, right: r.right, mid: r.top + r.height / 2, width: r.width };
+      });
+    const main = await box(".cr-main");
+    expect([main.width, Math.abs(main.left + main.right - 1280) < 2]).toEqual([680, true]);
+    const [up, heading] = [await box(".cr-head .pg-up"), await box(".cr-heading")];
+    expect([up.width, up.right < heading.left, Math.abs(up.mid - heading.mid) < 4]).toEqual([44, true, true]);
+    expect(await page.locator("[data-sp-close], .sp-x").count()).toBe(0);
+    await page.locator(".cr-head .pg-up").click();
     await page.waitForURL(new URL("/", base).href);
   },
   SLOW,
@@ -190,10 +189,10 @@ test(
     await phone.waitForURL(new URL(path, base).href);
     await phone.goto(new URL("/credits/", base).href);
     expect([
-      await phone.locator(".sp-left").isVisible(),
-      await phone.locator(".sp-body .pg-up").isVisible(),
+      await phone.locator(".sp").count(),
+      await phone.locator(".cr-head .pg-up").isVisible(),
       await phone.locator(".cr-heading").isVisible(),
-    ]).toEqual([false, true, true]);
+    ]).toEqual([0, true, true]);
     await phone.close();
   },
   SLOW,

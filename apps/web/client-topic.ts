@@ -41,17 +41,27 @@ export function topicPage(): void {
   );
   const list = left?.querySelector(".toc");
   const sheet = document.querySelector("#tp-contents .toc");
-  if (left && list) {
-    new MutationObserver(() => {
-      const mine = sheet?.querySelectorAll("a");
-      list.querySelectorAll("a").forEach((a, i) => mine?.[i]?.classList.toggle("on", a.classList.contains("on")));
+  if (left && list && sheet) {
+    // The sheet holds the left list's mark: client.ts's scroll handler marks the links by position and clears the
+    // sheet's on every pass, so a change to either list copies the left list's marks over again.
+    const mine = [...sheet.querySelectorAll("a")];
+    const theirs = [...list.querySelectorAll("a")];
+    const follow = (): void => {
+      theirs.forEach((a, i) => mine[i]?.classList.toggle("on", a.classList.contains("on")));
       const on = list.querySelector<HTMLElement>("a.on");
       if (on === null) return;
       const at = on.getBoundingClientRect();
       const box = left.getBoundingClientRect();
       if (at.top < box.top) left.scrollTop += at.top - box.top - 8;
       else if (at.bottom > box.bottom) left.scrollTop += at.bottom - box.bottom + 8;
-    }).observe(list, { subtree: true, attributes: true, attributeFilter: ["class"] });
+    };
+    const watch = new MutationObserver(follow);
+    for (const toc of [list, sheet]) watch.observe(toc, { subtree: true, attributes: true, attributeFilter: ["class"] });
+    follow();
+    // The sheet opens with the part being read in view.
+    document.getElementById("tp-contents")?.addEventListener("toggle", (event) => {
+      if (event.newState === "open") sheet.querySelector("a.on")?.scrollIntoView({ block: "nearest" });
+    });
   }
   document.addEventListener("click", (event) => {
     const target = event.target instanceof Element ? event.target : null;

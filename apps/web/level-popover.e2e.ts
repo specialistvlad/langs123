@@ -80,6 +80,42 @@ test(
 );
 
 test(
+  "on a wide screen the popover opens under its mark and shifts up to end inside the window, whatever the mark's height",
+  async () => {
+    await open(1440, "/en/english/", 1200);
+    const marks = page.locator(".ix-row .lvm-b:visible");
+    const edges = async (): Promise<{ top: number; bottom: number }> => {
+      await settled();
+      const box = await page.locator("#lv-pop").boundingBox();
+      return { top: box?.y ?? 0, bottom: (box?.y ?? 0) + (box?.height ?? 0) };
+    };
+    // A mark near the top: the popover sits under it.
+    await marks.nth(1).click();
+    const high = await marks.nth(1).boundingBox();
+    const under = await edges();
+    expect(Math.round(under.top)).toBe(Math.round((high?.y ?? 0) + (high?.height ?? 0) + 8));
+    await page.keyboard.press("Escape");
+    // A window too short to leave room under the mark: the popover ends at the window's bottom and stays whole.
+    await page.setViewportSize({ width: 1440, height: 900 });
+    const low = marks.nth(1);
+    await low.click();
+    const shifted = await edges();
+    expect(Math.round(shifted.bottom)).toBe(900);
+    expect(shifted.top).toBeLessThan(under.top);
+    expect(await page.locator("#lv-pop").evaluate((el) => el.scrollHeight <= el.clientHeight + 1)).toBe(true);
+    await page.keyboard.press("Escape");
+    // A window shorter than the popover: it fills the window and scrolls.
+    await page.setViewportSize({ width: 1440, height: 400 });
+    await low.click();
+    const short = await edges();
+    expect([Math.round(short.top), Math.round(short.bottom)]).toEqual([12, 400]);
+    expect(await page.locator("#lv-pop").evaluate((el) => el.scrollHeight > el.clientHeight)).toBe(true);
+    await page.keyboard.press("Escape");
+  },
+  SLOW,
+);
+
+test(
   "on a phone the popover is a sheet 8px from the edges with a close button, and the page holds still behind it",
   async () => {
     await open(390, "/en/english/verbs/to-be/?level=c2");

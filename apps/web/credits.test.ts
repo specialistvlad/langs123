@@ -4,6 +4,7 @@ import { describe, expect, test } from "bun:test";
 import { join } from "node:path";
 import { parseHTML } from "linkedom";
 import { ENABLED_EXPLAIN, type Explain, SITE, say } from "../../scripts/lib.ts";
+import { ui } from "./ui.ts";
 import { readPage, SITE_DIR, testSite } from "./test-site.ts";
 import { creditsUrl, homeUrl, notFoundUrl } from "./urls.ts";
 
@@ -105,4 +106,28 @@ test("the up link leads a topic to the track's index, named by its language, the
   expect([index?.getAttribute("href"), index?.getAttribute("aria-label")]).toEqual(["/uk/", SITE.name]);
   // Home has no up link.
   expect((await readPage("index.html")).querySelector(".tp-up, .ix-up, .pg-up")).toBeNull();
+});
+
+describe.each(ENABLED_EXPLAIN)("the credits page in %s", (e) => {
+  test("is a page of its own: one column, Home beside the heading, no split view and no Close", async () => {
+    const doc = await readPage(`${creditsUrl(e).slice(1)}index.html`);
+    const t = ui(e);
+    expect(doc.querySelector(".sp, .sp-left, .sp-right, [data-sp-fragment], [data-sp-close], .sp-x")).toBeNull();
+    const head = doc.querySelector("main.cr-main > .cr-head");
+    expect([...(head?.children ?? [])].map((el) => el.tagName)).toEqual(["A", "H1"]);
+    expect([head?.querySelector(".pg-up")?.getAttribute("href"), head?.querySelector(".pg-up")?.getAttribute("aria-label")]).toEqual([
+      homeUrl(e),
+      t.backHome,
+    ]);
+    expect(head?.querySelector("h1")?.textContent).toBe(say("credits", e));
+  });
+  test("opens with the app card, then the website row and the four groups", async () => {
+    const doc = await readPage(`${creditsUrl(e).slice(1)}index.html`);
+    const parts = [...doc.querySelectorAll("main.cr-main > *")].map((el) => el.className.split(" ").slice(0, 2).join(" "));
+    expect(parts.slice(0, 2)).toEqual(["cr-head", "cr-card cr-app"]);
+    expect(parts).toContain("cr-card cr-links");
+    expect(doc.querySelector(".cr-app .cr-name")?.textContent).toBe(SITE.name);
+    expect(doc.querySelector(".cr-links .cr-row")?.getAttribute("href")).toBe(SITE.url);
+    expect(doc.querySelectorAll("main.cr-main > .cr-h2").length).toBe(4);
+  });
 });

@@ -1,5 +1,6 @@
 // The filters of the Home's search: the course chip starts on all courses on the Home and on a course's own course on
-// its index, which ticks that course in the menu; a course with varieties brings its variety chip and menu.
+// its index, which ticks that course in the menu; a chosen course shows its flag with its name; a course with
+// varieties brings its variety chip, which reads "Variety", and its menu.
 import { describe, expect, test } from "bun:test";
 import { parseHTML } from "linkedom";
 import { loadCurriculum } from "../../scripts/lib.ts";
@@ -24,13 +25,14 @@ describe("the course chip", () => {
     expect(course(d)?.textContent).toBe("All courses");
     expect(ticked(d)).toEqual([""]);
   });
-  test("starts on the course a course index gives, ticked in its menu with its name for the chip", () => {
-    const code = languages.find((l) => l.code === "es")?.code ?? "";
+  test("starts on the course a course index gives, ticked in its menu with its flag and name for the chip", () => {
+    const spanish = languages.find((l) => l.code === "es");
+    const code = spanish?.code ?? "";
     const d = build(code);
     expect(d.getElementById("hm-filters")?.getAttribute("data-start")).toBe(code);
-    expect(course(d)?.textContent).toBe("Spanish");
+    expect(course(d)?.textContent).toBe(`${spanish?.flag ?? ""} Spanish`);
     expect(ticked(d)).toEqual([code]);
-    expect(d.querySelector(`#hm-f-course [data-course="${code}"]`)?.getAttribute("data-name")).toBe("Spanish");
+    expect(d.querySelector(`#hm-f-course [data-course="${code}"]`)?.getAttribute("data-name")).toBe(`${spanish?.flag ?? ""} Spanish`);
   });
   test("starts on all courses when the course is unknown", () => {
     const d = build("zz");
@@ -49,5 +51,18 @@ describe("the chips", () => {
       "read",
     ]);
     expect(chips.filter((c) => c.hasAttribute("hidden"))).toHaveLength(chips.length - 3);
+  });
+});
+
+describe("the variety chip", () => {
+  test("reads the label alone, and its menu offers the course's varieties with the first ticked", () => {
+    const d = build();
+    const english = languages.find((l) => l.code === "en");
+    const chip = d.querySelector('[data-variety-course="en"]');
+    expect(chip?.textContent).toBe("Variety");
+    expect(chip?.querySelector("[data-variety-of]")).toBeNull();
+    const items = [...d.querySelectorAll("#hm-f-variety-en [data-set-variety]")];
+    expect(items.map((i) => i.getAttribute("data-set-variety"))).toEqual(english?.varieties ?? []);
+    expect(items.map((i) => i.getAttribute("aria-checked"))).toEqual(items.map((_, at) => String(at === 0)));
   });
 });

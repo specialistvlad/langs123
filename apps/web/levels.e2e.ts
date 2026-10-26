@@ -1,5 +1,5 @@
 // The level filter in a browser: on every topic and track page, each level in the level menu shows exactly what
-// starts at or below it, leaves no table or list empty, greys out the rail entries above it, keeps every level
+// starts at or below it, leaves no table or list empty, keeps the contents rows at full strength, keeps every level
 // mark's bars and dims the bars above it, each lit bar in its own level's colour, and shows a section's note
 // exactly when the filter hides all of the section. A page with varieties shows the default variety's elements
 // and those of every variety.
@@ -83,9 +83,7 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
       const wrongly = levelled.filter((el) => visible(el) !== fits(el)).map((el) => `${visible(el) ? "shown" : "hidden"}: ${name(el)}`);
       const containers = [...document.querySelectorAll(".blk table, .blk ul")].filter(visible);
       const empty = containers.filter((c) => ![...c.querySelectorAll("tbody tr:not(.gap-row), li")].some(visible)).map(name);
-      const rail = [...document.querySelectorAll(".toc > li")]
-        .filter((li) => (getComputedStyle(li).opacity === "1") === rank(li) > at)
-        .map(name);
+      const rail = [...document.querySelectorAll(".toc > li")].filter((li) => getComputedStyle(li).opacity !== "1").map(name);
       // A lit bar above the filter dims; every lit bar of a mark shows its own level's colour.
       const marks = [...document.querySelectorAll(".lvm:not(.lvm-one)")]
         .filter(visible)

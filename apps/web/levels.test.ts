@@ -141,4 +141,6 @@ test("levels.css hides each level above the filter, dims the badge halves and th
       `html[data-level="${code}"]:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) .lvl > .half:is(${above.map((c) => `.lvl-${c}`).join(", ")}) { opacity: 0.55; }`,
     );
   }
+  // The contents' rows stay at full strength: only the hiding rule names them, to leave them out.
+  expect(css).not.toMatch(/\.toc > li[^{]*\{[^}]*(opacity|pointer-events)/);
 });

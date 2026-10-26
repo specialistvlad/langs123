@@ -3,9 +3,9 @@
 // toolbar at the bottom on phones, with Read in), the heading and a card per language to learn with its levels and a
 // chip per explanation language it is written for, the home page's own first; the right pane holds "Choose a
 // course" with Read in, the theme and the credits, and a course that is chosen (its card outlined) opens its topic
-// list there, the credits open there too. The search reads search/<language>.json (home-search.ts) and shows the
-// topics that match in the left pane. A course's levels open the level popover: what each level covers in the course.
-// homePane() gives the credits page the same left pane.
+// list there; the credits link leads to the credits page. The search reads search/<language>.json (home-search.ts)
+// and shows the topics that match in the left pane. A course's levels open the level popover: what each level
+// covers in the course.
 import { type Explain, explainName, listOf, localize, say, SITE } from "../../../scripts/lib.ts";
 import { join, refRange, topicLevels } from "../../../scripts/levels.ts";
 import { type Brand, LIBRARY_BRAND } from "../brand.ts";
@@ -60,10 +60,10 @@ function courseLevels(refs: Parameters<typeof refRange>[0][]): Level[] {
   return [...held];
 }
 
-// The credits link: an item of the split view, the credits open in its right pane.
+// The credits link: it navigates to the credits page.
 function creditsLink(home: Explain, cls: string): string {
   const words = escapeHtml(say("credits", home));
-  return `<a class="${cls}" href="${creditsUrl(home)}" data-sp-item aria-label="${words}" title="${words}">${INFO}</a>`;
+  return `<a class="${cls}" href="${creditsUrl(home)}" aria-label="${words}" title="${words}">${INFO}</a>`;
 }
 
 // The toolbar: the search, the Read in menu, the theme and the credits, the last two folded into More on a phone,
@@ -97,7 +97,7 @@ ${listButton(ui(home))}
 </div>`;
 }
 
-export interface HomePane {
+interface HomePane {
   left: string;
   // The right pane's tools while it shows its placeholder.
   tools: string;
@@ -105,8 +105,8 @@ export interface HomePane {
   extras: string;
 }
 
-// The panes of a Home in `home`, shared with the credits page.
-export function homePane(ctx: Context, home: Explain): HomePane {
+// The panes of a Home in `home`.
+function homePane(ctx: Context, home: Explain): HomePane {
   const t = ui(home);
   const brand = ctx.o.brand ?? LIBRARY_BRAND;
   const entries: Record<string, LevelEntry> = {};

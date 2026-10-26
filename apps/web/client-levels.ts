@@ -2,7 +2,7 @@
 // the page's level data (its name) and from the levels the mark lights, before the popover opens. The head shows the
 // name, the bars and the range as a pill; a level the mark lacks below the top one dims and cannot be chosen, the top
 // one (All levels) staying active; the rows tick the chosen level, the top one while none is chosen. Choosing a row sets the filter (client.ts) and closes the
-// popover. On a wide screen the popover opens under its mark, on a phone it rises from the bottom as a sheet. The
+// popover. On a wide screen the popover opens under its mark, shifted up to fit the window; on a phone it rises from the bottom as a sheet. The
 // toolbar's Level button opens it for the course (data-lv-levels names the levels the course holds, data-lv-under the
 // toolbar's group it opens under).
 export interface Entry {
@@ -92,9 +92,9 @@ export function levelPopover(root: HTMLElement): void {
   }
 
   // On a wide screen, under the mark, its right edge on the mark's, or its left edge where the window leaves no room
-  // for that, inside the window and as tall as the window leaves it, 20px from the bottom; above the mark when less
-  // than a third of the window is left below and the popover does not fit there. A phone's popover is a sheet at the
-  // bottom (level-mark.css).
+  // for that, inside the window. Where the window leaves too little room below the mark the popover shifts up until
+  // it ends at the window's bottom (over the mark when it must), and where it is taller than the window it fills it
+  // from 12px under its top and scrolls. A phone's popover is a sheet at the bottom (level-mark.css).
   function place(): void {
     if (opener === null || !matchMedia("(min-width: 861px)").matches) {
       for (const p of ["top", "left", "max-height"]) pop.style.removeProperty(p);
@@ -105,11 +105,8 @@ export function levelPopover(root: HTMLElement): void {
     const at = (group === undefined ? opener : (opener.closest(group) ?? opener)).getBoundingClientRect();
     const width = pop.offsetWidth;
     const left = Math.min(at.right - width >= 12 ? at.right - width : at.left, innerWidth - width - 12);
-    const below = at.bottom + 8;
-    const room = innerHeight - below - 20;
-    const under = room >= Math.min(pop.scrollHeight, innerHeight / 3);
-    const height = under ? room : at.top - 8 - 20;
-    const top = under ? below : at.top - 8 - Math.min(pop.scrollHeight, height);
+    const height = Math.min(pop.scrollHeight + 1, innerHeight - 12);
+    const top = Math.max(12, Math.min(at.bottom + 8, innerHeight - height));
     pop.style.left = `${String(Math.round(left))}px`;
     pop.style.top = `${String(Math.round(top))}px`;
     pop.style.maxHeight = `${String(Math.round(height))}px`;
