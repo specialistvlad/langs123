@@ -32,11 +32,11 @@ test(
     await page.locator("#hm-q").fill("qxqxqz");
     await page.locator("#hm-none:not([hidden])").waitFor();
     expect(await page.locator(".hm-none-t").textContent()).toBe("No results for “qxqxqz”");
-    // Four topics to try, each title on one line, with its level mark and range beside it.
+    // Four topics to try, each title in whole 22px lines beside its flag, with its level mark and range beside it.
     await page.locator("#hm-sugg-list .hm-row").first().waitFor();
     expect(await page.locator("#hm-sugg-list .hm-row").count()).toBe(4);
     const row = page.locator("#hm-sugg-list .hm-row").first();
-    expect(await row.locator(".hm-row-a").evaluate((a) => a.getBoundingClientRect().height)).toBeLessThanOrEqual(20);
+    expect(await row.locator(".hm-row-a").evaluate((a) => Math.round(a.getBoundingClientRect().height) % 22)).toBe(0);
     expect(await row.locator(".lvm-t").isVisible()).toBe(true);
     await page.locator("#hm-q").press("Escape");
     expect(await page.locator("#hm-cards").isVisible()).toBe(true);
