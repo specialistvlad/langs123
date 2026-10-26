@@ -1,7 +1,7 @@
 // The Home's toolbar (pages/home.ts): the search lists the topics of every course that match, in two columns where
 // two of at least 320px fit; the filters under the field narrow them (client-search-filters.ts); Close, Escape and the
-// clear button end or empty it; the Read in menu closes on a tap outside it; on phones the toolbar rises above the
-// on-screen keyboard (--hm-kb, home-phone.css).
+// clear button end or empty it; a course index's phone Search button opens the field; the Read in menu closes on a
+// tap outside it; on phones the toolbar rises above the on-screen keyboard (--hm-kb, home-phone.css).
 import {
   el,
   type Result,
@@ -170,6 +170,11 @@ export function homeSearch(): void {
     void update();
   });
   close.addEventListener("click", stop);
+  // A course index's round Search button on a phone opens the field in its place.
+  $("ix-search")?.addEventListener("click", () => {
+    root.classList.add("hm-searching");
+    input.focus();
+  });
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     list.querySelector("a")?.click();

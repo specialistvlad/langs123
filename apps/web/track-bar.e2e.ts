@@ -1,6 +1,7 @@
-// A course index's toolbar and header in a browser: the Level button opens Home's level popover headed by the course
-// (under the toolbar's group, on its right edge, on a wide screen; as a sheet on a phone) and names the chosen level
-// only; the topic count follows the chosen level; a topic's level popover opens just under its mark.
+// A course index's toolbar in a browser: the Level button opens Home's level popover headed by the course (under the
+// toolbar's group, on its right edge, on a wide screen; as a sheet on a phone) and names the chosen level only; the
+// topic count follows the chosen level; a topic's level popover opens just under its mark; on a phone the Home button
+// stays while the field has focus and leaves once a query is typed (the layout: track-layout.e2e.ts).
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -112,6 +113,7 @@ test(
     await open(1440);
     await page.locator(".ix-row .lvm-b").first().click();
     expect(await panelOpen("lv-pop")).toBe(true);
+    await page.waitForFunction(() => document.getElementById("lv-pop")?.style.top !== "");
     const mark = await box(".ix-row .lvm-b");
     const pop = await box("#lv-pop");
     expect(Math.round(pop.y - mark.bottom)).toBe(8);
@@ -124,7 +126,7 @@ test(
   "on a phone the Home button stays while the search field has focus and leaves once a query is typed",
   async () => {
     await open(402, COURSE, 874);
-    await page.click("#hm-q");
+    await page.click("#ix-search");
     expect(await page.locator(".ix-up").isVisible()).toBe(true);
     await page.keyboard.type("past");
     await page.locator(".hm-row").first().waitFor();

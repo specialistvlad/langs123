@@ -11,6 +11,11 @@ import type { Ui } from "./ui.ts";
 export const searchForm = (t: Ui): string =>
   `<form class="hm-search glass" id="hm-form" role="search" action="#">${SEARCH}<input type="search" id="hm-q" placeholder="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search"><button type="button" class="hm-clear" id="hm-clear" aria-label="${escapeHtml(t.clear)}" hidden>${CLEAR}</button></form>`;
 
+// A phone's round Search button, on a course index in the bar's place for the field until it is tapped
+// (client-home.ts opens the field; track-bar.css shows it on phones only).
+export const searchButton = (t: Ui): string =>
+  `<button type="button" class="ix-search-open glass" id="ix-search" aria-label="${escapeHtml(t.search)}" title="${escapeHtml(t.search)}">${SEARCH}</button>`;
+
 // Read in: the page in each language it is read in, the current one named on the button and ticked in the menu
 // (read-menu.ts). A choice is kept (client-read.ts), so the first Home stays in it.
 export function readMenu(t: Ui, choices: Choice[]): string {

@@ -6,20 +6,17 @@
   }
 }
 
-/* Phones: one column, the toolbar at the bottom, the buttons as icons, a fade under the toolbar, and both
-   bars hiding while the reader scrolls down (the public client sets html.bar-hidden) */
+/* Phones: one column, the toolbar at the bottom, the buttons as icons, a fade under the toolbar, and the bar
+   hiding while the reader scrolls down (the public client sets html.bar-hidden) */
 @media (max-width: 860px) {
   .ix-main {
-    padding-top: 72px;
+    --ix-top: max(16px, calc(env(safe-area-inset-top) + 8px));
   }
   .ix-flow {
     column-count: 1;
   }
   .ix-seg {
     width: 100%;
-  }
-  .ix-up {
-    top: max(20px, calc(env(safe-area-inset-top) + 8px));
   }
   .ix-btn {
     width: 52px;
@@ -54,15 +51,11 @@
     background: linear-gradient(to bottom, transparent, var(--ix-fade) 60%);
     pointer-events: none;
   }
-  .hm-bar,
-  .ix-up {
+  .hm-bar {
     transition: transform 0.25s ease;
   }
   html.bar-hidden:not(.hm-searching) .hm-bar:not(:has(:popover-open)) {
     transform: translateY(calc(100% + 60px));
-  }
-  html.bar-hidden:not(.hm-searching) .ix-up {
-    transform: translateY(-100px);
   }
   html.bar-hidden:not(.hm-searching) .ix-fade {
     opacity: 0;
@@ -72,8 +65,7 @@
   }
 }
 @media (max-width: 860px) and (prefers-reduced-motion: reduce) {
-  .hm-bar,
-  .ix-up {
+  .hm-bar {
     transition: none;
   }
 }

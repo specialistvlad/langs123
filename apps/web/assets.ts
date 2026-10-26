@@ -32,6 +32,7 @@ const STYLES = [
   "track-rows",
   "track-menu",
   "track-phone",
+  "track-bar",
   "home-more",
   "credits",
   "credits-cards",

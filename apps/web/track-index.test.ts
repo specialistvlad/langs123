@@ -1,5 +1,6 @@
-// A course index's header and toolbar as built: the Home button, the topic count with its text per chosen level, the
-// Level button opening the level popover for the course, and the variety button of a course with varieties.
+// A course index's header and toolbar as built: the Home button sharing the title row, the topic count with its text
+// per chosen level, the phone's Search button, the Level button opening the level popover for the course, and the
+// variety button of a course with varieties.
 import { expect, test } from "bun:test";
 import { LEVELS } from "../../scripts/lib.ts";
 import { readPage } from "./test-site.ts";
@@ -14,6 +15,34 @@ test("a Home button leads the page and the header names the course with its topi
   expect(up?.getAttribute("href")).toBe(homeUrl("en"));
   expect(english.querySelector(".ix-name-h")?.textContent).toContain("English");
   expect(english.querySelector(".ix-count")?.textContent).toMatch(/^\d+ topics$/);
+});
+
+test("the Home button opens the page's content and shares the title row, with no row of its own above it", () => {
+  const main = english.querySelector("main.ix-main");
+  expect(main?.firstElementChild?.matches("a.ix-up")).toBe(true);
+  expect(main?.children[1]?.matches("#hm-cards")).toBe(true);
+  const header = english.querySelector("#hm-cards > .ix-head");
+  expect(header?.firstElementChild?.matches(".ix-line")).toBe(true);
+  expect(header?.querySelector(".ix-line > .ix-name-h")?.textContent).toContain("English");
+  expect(header?.querySelector(".ix-line > .ix-count")).not.toBeNull();
+  expect(header?.lastElementChild?.matches(".ix-seg")).toBe(true);
+  expect(english.querySelectorAll(".ix-up").length).toBe(1);
+});
+
+test("the bar holds the search field, the phone's round Search button, the group and Close", () => {
+  const bar = english.querySelector("nav.ix-bar");
+  expect([...(bar?.children ?? [])].map((el) => el.id || el.className.split(" ")[0])).toEqual([
+    "hm-form",
+    "hm-group",
+    "ix-search",
+    "hm-close",
+    "ix-varieties",
+  ]);
+  const button = english.querySelector("#ix-search");
+  expect(button?.tagName).toBe("BUTTON");
+  expect(button?.getAttribute("aria-label")).toBe(english.querySelector("#hm-q")?.getAttribute("aria-label"));
+  expect(button?.querySelector("svg")).not.toBeNull();
+  expect(english.querySelector(".hm-group + #ix-search")).not.toBeNull();
 });
 
 test("the count has its text for every level, a topic counting from its lowest level up, the top level's text on the page", () => {

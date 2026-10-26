@@ -1,0 +1,45 @@
+/* A course index's bar (pages/track.ts): on a phone the group at the left and the round Search button at the right
+   end, the button opening the field across the bar with Close (client-home.ts sets html.hm-searching); on a wide
+   screen the field and the group at the top right, and while a query is typed the filters share the Home button's
+   row, the field and Close at its right end */
+.ix-search-open {
+  display: none;
+}
+@media (max-width: 860px) {
+  .ix-bar {
+    justify-content: space-between;
+  }
+  .ix-bar .hm-search {
+    display: none;
+  }
+  .hm-searching .ix-bar .hm-search {
+    display: flex;
+  }
+  .ix-search-open {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 48px;
+    padding: 0;
+    border-radius: 999px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .hm-searching .ix-search-open {
+    display: none;
+  }
+}
+@media (min-width: 861px) {
+  html[data-page="track"].hm-query .hm-results {
+    padding-top: 0;
+  }
+  html[data-page="track"].hm-query .hm-filters {
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 474px 0 56px;
+  }
+}
