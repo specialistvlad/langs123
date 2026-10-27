@@ -49,7 +49,8 @@ test(
     expect(await visible("#ix-groups")).toBe(false);
     expect(await page.getAttribute('#ix-groups [data-set-order="path"]', "aria-checked")).toBe("true");
     const first = shown('.ix-flow[data-order="path"] .ix-h');
-    expect(await first.innerText()).toMatch(/^A0\s+A0 \w+\s+\d+ topics$/);
+    expect(await first.innerText()).toMatch(/^A0\s*Starter\s+\d+ topics$/);
+    expect(await first.locator(".lvm").count()).toBe(0);
     expect(await visible('.ix-flow[data-order="categories"]')).toBe(false);
     await page.evaluate(() => {
       localStorage.clear();

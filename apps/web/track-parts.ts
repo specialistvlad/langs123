@@ -8,7 +8,6 @@ import { refRange } from "../../scripts/levels.ts";
 import type { Track } from "./context.ts";
 import { glyph } from "./glyphs.ts";
 import { escapeHtml } from "./html.ts";
-import { bars } from "./level-mark.ts";
 import { levelAttrs, single } from "./parts.ts";
 import { countsByLevel, moreRows } from "./track-more.ts";
 import { topicUrl } from "./urls.ts";
@@ -110,7 +109,8 @@ export function byLevel(track: Track, current?: TopicRef): string {
       explains: s.ref.explain.join(" "),
       current: s.ref === current,
     }));
-    const head = `${bars([stage.level], explain)}<span class="ix-lv-name">${stage.level} ${escapeHtml(levelName(stage.level, explain))}</span>`;
+    // The level's code set as Categories' section number, then its name.
+    const head = `<span class="ix-ht"><span class="ix-num">${stage.level}</span><span>${escapeHtml(levelName(stage.level, explain))}</span></span>`;
     const n = `<span class="ix-count ix-sec-n">${escapeHtml(count("topics", explain, rows.length))}</span>`;
     return list(levelAttrs(level), head, n, rows, "");
   });

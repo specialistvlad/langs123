@@ -139,3 +139,13 @@ test("a course with varieties has a Variety button with the globe, naming the va
   }
   expect(ukrainian.querySelector(".ix-variety, #ix-varieties")).toBeNull();
 });
+
+test("a By level heading sets its level's code as Categories set a section's number, then its name and count, with no bar", () => {
+  const heads = [...english.querySelectorAll('[data-order="path"] .ix-sec > h2.ix-h')];
+  expect(heads.length).toBeGreaterThan(0);
+  for (const h of heads) {
+    expect(h.querySelector(".ix-ht > .ix-num")?.textContent).toMatch(/^[ABC][0-2]$/);
+    expect([h.querySelector(".lvm"), h.querySelector("button")]).toEqual([null, null]);
+    expect(h.querySelector(".ix-sec-n")?.textContent).toMatch(/\d/);
+  }
+});
