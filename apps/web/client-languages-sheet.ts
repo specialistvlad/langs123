@@ -62,13 +62,15 @@ function followNote(env: Env, course: Course, now: Resolved): string {
   return fill((missing ? w["nowLanguageMissing"] : w["nowLanguage"]) ?? "", values);
 }
 
-// Opens the sheet; onPick runs after a choice is kept.
-export function openSheet(env: Env, course: Course, onPick: () => void): void {
+// Opens the sheet; onPick runs after a choice is kept. Opened from the keyboard, the chosen row takes the focus; opened
+// by a tap or a click, the sheet itself does, since Safari rings a row a script focuses.
+export function openSheet(env: Env, course: Course, keyboard: boolean, onPick: () => void): void {
   const w = env.text.words;
   const pin = pinOf(course.code);
   const now = resolved(env, course);
   const current = now.via === "none" ? null : now.lang;
   const dialog = el("dialog", "xl-sheet");
+  dialog.tabIndex = -1;
   dialog.setAttribute("aria-label", w["explanationLanguage"] ?? "");
   const close = el("button", "xl-close glass");
   close.type = "button";
@@ -122,5 +124,5 @@ export function openSheet(env: Env, course: Course, onPick: () => void): void {
   });
   document.body.append(dialog);
   dialog.showModal();
-  dialog.querySelector<HTMLElement>('[aria-pressed="true"]')?.focus();
+  (keyboard ? dialog.querySelector<HTMLElement>('[aria-pressed="true"]') : dialog)?.focus();
 }

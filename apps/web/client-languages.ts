@@ -66,7 +66,8 @@ export function languages(): void {
       const course = target === null ? null : target.matches(".xl-line") ? courseOfLine(target) : courseOf();
       if (course === null) return;
       event.preventDefault();
-      openSheet(env, course, () => {
+      // A click from Enter or Space counts no presses.
+      openSheet(env, course, event.detail === 0, () => {
         writeLanguages(env);
         follow(env);
       });
