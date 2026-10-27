@@ -145,7 +145,8 @@ export function openItems(sp: HTMLElement): void {
 
   sp.addEventListener("click", (event) => {
     const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>("a[data-sp-item]") : null;
-    if (link === null || !wide() || event.defaultPrevented || event.button !== 0) return;
+    // An item opens in the pane from the left pane or the tools; the pane's own links lead to their pages.
+    if (link === null || body.contains(link) || !wide() || event.defaultPrevented || event.button !== 0) return;
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     if (link.pathname !== shown) void show(link.pathname, true);
