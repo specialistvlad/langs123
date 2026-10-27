@@ -39,7 +39,6 @@ const TEXT_KEYS = [
   "searchTryThese",
   "clear",
   "close",
-  "closeCredits",
   "narrowList",
   "hideList",
   "showList",

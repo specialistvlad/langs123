@@ -69,7 +69,7 @@ test(
     const flags = await page.locator(".hm-row-flag").allTextContents();
     expect([flags.length < all, flags.every((f) => f === "🇪🇸")]).toEqual([true, true]);
     expect(await page.locator('[data-variety-course="es"]').isVisible()).toBe(true);
-    expect(await page.locator('[data-variety-course="es"]').textContent()).toBe("Variety");
+    expect(await page.locator('[data-variety-course="es"]').textContent()).toMatch(/^Variety: \S/);
     await page.locator('[data-filter="level"]').click();
     await page.locator('#hm-f-level [data-set-level="A1"]').click();
     await page.waitForFunction(() => document.querySelector('[data-filter="level"]')?.textContent === "Up to A1");

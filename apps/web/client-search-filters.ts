@@ -1,8 +1,8 @@
 // The filters of the Home's search (search-filters.ts): the course chosen in its menu, the one the row starts on
 // (data-start: a course index's own course, else all) until the reader chooses; the level the site's level
-// choice holds (data-level on <html>); and, for the chosen course with varieties, the variety the site keeps for it,
-// ticked in the variety chip's menu. The course and level chips name their choice; a course or level that differs
-// from the start fills its chip, and a tap on it returns the choice to the start. A chip's menu opens under it.
+// choice holds (data-level on <html>); and, for the chosen course with varieties, the variety the site keeps for it.
+// Each chip names its choice, the variety's menu ticking it too; a course or level that differs from the start fills
+// its chip, and a tap on it returns the choice to the start. A chip's menu opens under it.
 import type { Filters } from "./client-home-find.ts";
 import { store } from "./client-store.ts";
 
@@ -41,7 +41,7 @@ export function searchFilters(changed: () => void): () => Filters {
       up === "" ? (levelChip.dataset["allLabel"] ?? "") : (levelChip.dataset["upTo"] ?? "").replace("{level}", up),
       up !== "",
     );
-    // The chosen course's variety chip shows; its menu ticks the variety the site keeps for the course, else the first.
+    // The chosen course's variety chip shows and names the variety the site keeps for the course, else its first.
     for (const chip of filters.querySelectorAll<HTMLElement>("[data-variety-course]")) {
       const code = chip.dataset["varietyCourse"] ?? "";
       chip.hidden = code !== course;
@@ -50,6 +50,8 @@ export function searchFilters(changed: () => void): () => Filters {
       const options = [...(menu?.querySelectorAll<HTMLElement>("[data-set-variety]") ?? [])];
       const chosen = options.find((i) => i.dataset["setVariety"] === kept) ?? options[0];
       for (const option of options) option.setAttribute("aria-checked", String(option === chosen));
+      const shown = chip.querySelector("[data-variety-of]");
+      if (shown) shown.textContent = chosen?.querySelector(".ix-title")?.textContent ?? "";
     }
     changed();
   }

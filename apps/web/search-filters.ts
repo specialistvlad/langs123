@@ -2,7 +2,7 @@
 // level (the site's own level choice, data-set-level), Read in (the language the Home is read in) and, once a course
 // with varieties is chosen, its variety (the site's variety choice, data-set-variety). Each chip opens a menu of its
 // choices; a chosen course or level fills the chip with the accent and a tap on it clears the choice. A chosen course
-// shows its flag with its name; the variety chip reads "Variety" and its menu ticks the choice.
+// shows its flag with its name; the variety chip names the variety in force and its menu ticks it.
 import { type CurriculumLanguage, type Explain, LEVEL_INFO, levelName, localize, say } from "../../scripts/lib.ts";
 import { varietyName } from "../../scripts/text.ts";
 import type { Choice } from "./context.ts";
@@ -40,9 +40,18 @@ export function searchFilters(t: Ui, home: Explain, languages: CurriculumLanguag
     ` data-filter="level" data-all-label="${escapeHtml(t.allLevels)}" data-up-to="${escapeHtml(upTo)}"`,
   );
   const readIn = chip("hm-f-read", `${LANGUAGES}${escapeHtml(current)}`);
+  // "Variety: UK", the label meeting its value as each language writes it ("Variété : Royaume-Uni"); the page names the
+  // value it keeps for the course.
+  const [before = "", after = ""] = say("labelled", home, { label: t.variety }).split("{value}");
   const varieties = courses
     .filter((c) => c.varieties.length > 0)
-    .map((c) => chip(`hm-f-variety-${c.code}`, escapeHtml(t.variety), ` data-variety-course="${c.code}" hidden`));
+    .map((c) =>
+      chip(
+        `hm-f-variety-${c.code}`,
+        `${escapeHtml(before)}<span data-variety-of="${c.code}">${escapeHtml(varietyName(c.varieties[0] ?? "en-GB", home))}</span>${escapeHtml(after)}`,
+        ` data-variety-course="${c.code}" hidden`,
+      ),
+    );
   const menus = [
     menu(
       "hm-f-course",

@@ -1,6 +1,6 @@
 // The filters of the Home's search: the course chip starts on all courses on the Home and on a course's own course on
 // its index, which ticks that course in the menu; a chosen course shows its flag with its name; a course with
-// varieties brings its variety chip, which reads "Variety", and its menu.
+// varieties brings its variety chip, which names the variety in force, and its menu.
 import { describe, expect, test } from "bun:test";
 import { parseHTML } from "linkedom";
 import { loadCurriculum } from "../../scripts/lib.ts";
@@ -55,12 +55,12 @@ describe("the chips", () => {
 });
 
 describe("the variety chip", () => {
-  test("reads the label alone, and its menu offers the course's varieties with the first ticked", () => {
+  test("names the course's first variety, and its menu offers the course's varieties with the first ticked", () => {
     const d = build();
     const english = languages.find((l) => l.code === "en");
     const chip = d.querySelector('[data-variety-course="en"]');
-    expect(chip?.textContent).toBe("Variety");
-    expect(chip?.querySelector("[data-variety-of]")).toBeNull();
+    expect(chip?.textContent).toBe("Variety: UK");
+    expect(chip?.querySelector("[data-variety-of]")?.textContent).toBe("UK");
     const items = [...d.querySelectorAll("#hm-f-variety-en [data-set-variety]")];
     expect(items.map((i) => i.getAttribute("data-set-variety"))).toEqual(english?.varieties ?? []);
     expect(items.map((i) => i.getAttribute("aria-checked"))).toEqual(items.map((_, at) => String(at === 0)));
