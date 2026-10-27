@@ -18,6 +18,7 @@ const WORDS = [
   "notInCourse",
   "languagesIKnow",
   "courseOtherLanguages",
+  "editLanguagesIKnow",
   "topicFallback",
   "changeLanguage",
   "close",

@@ -35,7 +35,7 @@ test(
 );
 
 test(
-  "the sheet opens from a line: Follow my languages ticked, the reader's languages with those the course lacks dimmed, the course's others",
+  "the sheet opens from a line: Follow my languages ticked, the reader's languages with those the course lacks dimmed, the course's others, Languages I know… last",
   async () => {
     const page = await reader(["uk", "en", "pl"], { stored: "uk en pl", width: 402 });
     await page.goto(at("/uk/fx/home/"));
@@ -43,13 +43,9 @@ test(
     const sheet = page.locator("dialog.xl-sheet");
     await sheet.waitFor({ state: "visible" });
     expect(await sheet.locator("h2").textContent()).toBe("Мова пояснень");
-    expect(await sheet.locator(".xl-row").evaluateAll((rows) => rows.map((r) => (r as HTMLButtonElement).dataset["pick"]))).toEqual([
-      "",
-      "uk",
-      "en",
-      "pl",
-      "pt",
-    ]);
+    expect(
+      await sheet.locator(".xl-row[data-pick]").evaluateAll((rows) => rows.map((r) => (r as HTMLButtonElement).dataset["pick"])),
+    ).toEqual(["", "uk", "en", "pl", "pt"]);
     expect(
       await sheet.locator(".xl-row:disabled").evaluateAll((rows) => rows.map((r) => (r as HTMLButtonElement).dataset["pick"])),
     ).toEqual(["uk", "pl"]);
@@ -58,6 +54,8 @@ test(
     expect((await sheet.locator(".xl-course").textContent())?.toLowerCase()).toContain("французька");
     const now = (await sheet.locator('.xl-row[data-pick=""] small').textContent())?.toLowerCase() ?? "";
     expect([now.includes("англійська"), now.includes("українськ")]).toEqual([true, true]);
+    const edit = sheet.locator(".xl-row:last-child").last();
+    expect([await edit.textContent(), await edit.getAttribute("href")]).toEqual(["Мови, які я знаю…", "/uk/languages/"]);
     await sheet.locator(".xl-close").click();
     await sheet.waitFor({ state: "hidden" });
     await page.locator('.xl-line[data-course="fr"]').click();

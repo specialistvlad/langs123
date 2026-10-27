@@ -82,6 +82,7 @@ describe.each(ENABLED_EXPLAIN)("in %s", (e: Explain) => {
     expect(data.words["courseLabel"]).toContain("{course");
     expect(data.words["nowLanguageMissing"]).toContain("{first");
     expect(data.words["close"]).toBe(say("close", e));
+    expect(data.words["editLanguagesIKnow"]).toBe(say("editLanguagesIKnow", e));
   });
 });
 

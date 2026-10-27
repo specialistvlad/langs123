@@ -1,5 +1,5 @@
 /* The Explanation language sheet (client-languages-sheet.ts): a bottom sheet on a phone, a centred one of 460px on
-   larger screens */
+   larger screens; its last card, Languages I know…, ends in a chevron */
 .xl-sheet {
   position: fixed;
   inset: auto 0 0;
@@ -93,6 +93,23 @@
 .xl-row:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
+}
+.xl-card + .xl-card {
+  margin-top: 18px;
+}
+a.xl-edit {
+  text-decoration: none;
+}
+.xl-edit::after {
+  content: "";
+  width: 8px;
+  height: 14px;
+  margin-left: auto;
+  background: var(--xl-chev);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5L6.5 7l-5 5.5'/%3E%3C/svg%3E")
+    center / 8px 14px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5L6.5 7l-5 5.5'/%3E%3C/svg%3E")
+    center / 8px 14px no-repeat;
 }
 .xl-tick {
   display: flex;

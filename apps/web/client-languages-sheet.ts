@@ -1,6 +1,7 @@
 // The Explanation language sheet of a course: Follow my languages, the reader's languages (those the course lacks
 // dimmed, "Not in this course") and the course's other languages; choosing one pins it for the course, Follow my
-// languages lifts the pin. A bottom sheet on a phone, a centred one on larger screens (languages-sheet.css).
+// languages lifts the pin. Its last row, on its own, leads to the languages page. A bottom sheet on a phone, a centred
+// one on larger screens (languages-sheet.css).
 import { type Course, type Env, named, own, pinOf, resolved } from "./client-languages-lines.ts";
 import { fill, pinKey, type Resolved } from "./client-languages-model.ts";
 import { store } from "./client-store.ts";
@@ -96,6 +97,8 @@ export function openSheet(env: Env, course: Course, onPick: () => void): void {
   const rest = course.explains
     .filter((code) => !env.list.includes(code))
     .map((code) => row({ pick: code, title: own(env, code), sub: named(env, code), on: pin === code, tick: current === code }));
+  const edit = el("a", "xl-row xl-edit", w["editLanguagesIKnow"] ?? "");
+  edit.href = env.text.languages.find((l) => l.code === env.text.lang)?.page ?? "";
   dialog.append(
     el("span", "xl-grab"),
     head,
@@ -103,6 +106,7 @@ export function openSheet(env: Env, course: Course, onPick: () => void): void {
     card([follow]),
     ...group(w["languagesIKnow"] ?? "", mine),
     ...group(w["courseOtherLanguages"] ?? "", rest),
+    card([edit]),
   );
   dialog.addEventListener("click", (event) => {
     const target = event.target instanceof Element ? event.target : null;
