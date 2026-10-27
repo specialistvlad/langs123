@@ -64,3 +64,12 @@ export const inLanguage = (path: string, code: string): string => path.replace(/
 
 // A path inside the site, to go back to after the first run; anything else is not one.
 export const backPath = (raw: string | null): string | null => (raw !== null && /^\/(?!\/)[^\\\s]*$/.test(raw) ? raw : null);
+
+// A crawler or a measuring tool, which reads a page as a search engine indexes it, without the first visit's redirect:
+// a user agent that names one (Googlebot, Bingbot, Google-InspectionTool, Chrome-Lighthouse…) or names the phone
+// Lighthouse emulates in PageSpeed, or the brands Lighthouse gives the browser: Chromium and Google Chrome alone,
+// where every Chromium browser adds a decoy brand.
+const AUTOMATED = /bot|crawl|spider|slurp|lighthouse|inspectiontool|moto g power \(2022\)\)/i;
+export const automated = (userAgent: string, brands: readonly { brand: string }[] | undefined): boolean =>
+  AUTOMATED.test(userAgent) ||
+  (brands !== undefined && brands.length > 0 && brands.every((b) => b.brand === "Chromium" || b.brand === "Google Chrome"));

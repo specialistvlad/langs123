@@ -10,9 +10,12 @@ const contexts: BrowserContext[] = [];
 export const closeReaders = (): Promise<unknown> => Promise.all(contexts.map((c) => c.close()));
 
 // A reader whose browser prefers these languages; `automated: false` hides the browser's automation flag, which
-// keeps the first visit's redirect from running in test browsers.
-export async function reader(languages: string[], o: { stored?: string; automated?: boolean; width?: number } = {}): Promise<Page> {
-  const context = await browser.newContext({ viewport: { width: o.width ?? 1032, height: 900 } });
+// keeps the first visit's redirect from running in test browsers, and `touch` gives it a touch screen.
+export async function reader(
+  languages: string[],
+  o: { stored?: string; automated?: boolean; width?: number; touch?: boolean } = {},
+): Promise<Page> {
+  const context = await browser.newContext({ viewport: { width: o.width ?? 1032, height: 900 }, hasTouch: o.touch === true });
   contexts.push(context);
   await context.addInitScript(
     ([langs, stored, automated]) => {

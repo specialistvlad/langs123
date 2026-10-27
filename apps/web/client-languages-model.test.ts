@@ -1,6 +1,7 @@
 // The reader's languages as pure rules (client-languages-model.ts).
 import { describe, expect, test } from "bun:test";
 import {
+  automated,
   aroundName,
   backPath,
   fill,
@@ -89,5 +90,43 @@ describe("the wording and the addresses", () => {
     expect(backPath("/uk/english/?level=a1#x")).toBe("/uk/english/?level=a1#x");
     expect(backPath("/")).toBe("/");
     for (const bad of [null, "", "//evil.example/", "https://evil.example/", "/\\evil", "/a b"]) expect(backPath(bad)).toBeNull();
+  });
+});
+
+describe("the first visit's redirect", () => {
+  const CHROME = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36";
+  const ANDROID = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Mobile Safari/537.36";
+  const chrome = [{ brand: "Chromium" }, { brand: "Google Chrome" }, { brand: "Not_A Brand" }];
+
+  test("crawlers and Google's inspection tool skip it, by the names in their user agents", () => {
+    for (const ua of [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/153.0.0.0 Safari/537.36",
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/116.0.1938.76 Safari/537.36",
+      "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0;)",
+      "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)",
+      `${ANDROID} Chrome-Lighthouse`,
+    ]) {
+      expect(automated(ua, undefined)).toBe(true);
+    }
+  });
+
+  test("PageSpeed skips it: its phone by name, and on both form factors the brands Lighthouse gives the browser", () => {
+    const lighthouse = [{ brand: "Chromium" }, { brand: "Google Chrome" }];
+    const phone =
+      "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Mobile Safari/537.36";
+    expect([automated(phone, undefined), automated(phone, lighthouse), automated(CHROME, lighthouse)]).toEqual([true, true, true]);
+  });
+
+  test("readers keep it: Chrome with its decoy brand, the same phone in an app's web view, Safari and Firefox without brands", () => {
+    const webView =
+      "Mozilla/5.0 (Linux; Android 11; moto g power (2022) Build/RRQS31.Q3-68-16-2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/153.0.0.0 Mobile Safari/537.36";
+    expect([automated(CHROME, chrome), automated(ANDROID, chrome), automated(webView, chrome)]).toEqual([false, false, false]);
+    expect(automated(CHROME, [])).toBe(false);
+    for (const ua of [
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:146.0) Gecko/20100101 Firefox/146.0",
+    ]) {
+      expect(automated(ua, undefined)).toBe(false);
+    }
   });
 });

@@ -12,19 +12,20 @@
 //                                          data-course-explains of its course
 //   [data-xl-open]                         opens the sheet of the page's course (a course's 文A)
 import { type Env, courseOf, courseOfLine, pinOf, resolved, topicHas, writeLanguages } from "./client-languages-lines.ts";
-import { fromBrowser, inLanguage, LANGS_KEY, resolveTopic } from "./client-languages-model.ts";
+import { automated, fromBrowser, inLanguage, LANGS_KEY, resolveTopic } from "./client-languages-model.ts";
 import { languagesPage } from "./client-languages-page.ts";
 import { openSheet } from "./client-languages-sheet.ts";
 import { codesOf, type LanguagesText, loadText, readerList } from "./client-languages-text.ts";
 import { store } from "./client-store.ts";
 
 const root = document.documentElement;
-const AUTOMATED = /bot|crawl|spider|slurp|lighthouse/i;
+// The brands a Chromium browser gives scripts (User-Agent Client Hints); other browsers give none.
+const brands = (navigator as Navigator & { userAgentData?: { brands: { brand: string }[] } }).userAgentData?.brands;
 
 // A first visit: the list is kept and the reader goes to the first-run page; with storage off, or in an automated
 // browser, the pages simply follow the browser's languages.
 function firstVisit(text: LanguagesText): boolean {
-  if (store.get(LANGS_KEY) !== null || navigator.webdriver || AUTOMATED.test(navigator.userAgent) || root.dataset["page"] === "404") {
+  if (store.get(LANGS_KEY) !== null || navigator.webdriver || automated(navigator.userAgent, brands) || root.dataset["page"] === "404") {
     return false;
   }
   const list = fromBrowser(navigator.languages, codesOf(text), root.lang);
@@ -57,17 +58,27 @@ export function languages(): void {
   }
   const used = document.querySelector(".xl-line, [data-topic-explains]") !== null;
   if (!used && store.get(LANGS_KEY) !== null) return;
-  void loadText(root.lang).then((text) => {
-    if (text === null || firstVisit(text)) return;
+  const ready = loadText(root.lang).then((text) => {
+    if (text === null || firstVisit(text)) return null;
     const env: Env = { text, list: readerList(codesOf(text), root.lang) };
     writeLanguages(env);
-    document.addEventListener("click", (event) => {
-      const target = event.target instanceof Element ? event.target.closest<HTMLElement>(".xl-line, [data-xl-open]") : null;
-      const course = target === null ? null : target.matches(".xl-line") ? courseOfLine(target) : courseOf();
-      if (course === null) return;
-      event.preventDefault();
-      // A click from Enter or Space counts no presses.
-      openSheet(env, course, event.detail === 0, () => {
+    return env;
+  });
+  // A tap before the wording arrives opens the sheet when it does; the taps made while it waits open it once.
+  let waiting = false;
+  document.addEventListener("click", (event) => {
+    const target = event.target instanceof Element ? event.target.closest<HTMLElement>(".xl-line, [data-xl-open]") : null;
+    const course = target === null ? null : target.matches(".xl-line") ? courseOfLine(target) : courseOf();
+    if (course === null) return;
+    event.preventDefault();
+    if (waiting) return;
+    waiting = true;
+    // A click from Enter or Space counts no presses.
+    const keyboard = event.detail === 0;
+    void ready.then((env) => {
+      waiting = false;
+      if (env === null) return;
+      openSheet(env, course, keyboard, () => {
         writeLanguages(env);
         follow(env);
       });
