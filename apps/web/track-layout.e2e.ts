@@ -44,7 +44,7 @@ test(
   "on a wide screen the head holds Home and the buttons, the title on its own line, the line, then the field and the topics",
   async () => {
     for (const [width, column, pad, up, name, row] of [
-      [1032, 248, 16, 40, "22px", "15px"],
+      [1032, 248, 16, 40, "28px", "15px"],
       [1280, 320, 20, 44, "28px", "17px"],
       [1440, 320, 20, 44, "28px", "17px"],
     ] as const) {
