@@ -8,19 +8,6 @@ import { INTERFACE, ROOT } from "./lib.ts";
 // Wording the export carries for programs built on the library, which the web app shows nowhere.
 const FOR_PROGRAMS = ["tagline"];
 
-// Wording no app asks for any more, waiting for languages/interface.yaml to drop it; each entry goes with its key.
-const RETIRED = [
-  "read",
-  "readNote",
-  "grouping",
-  "resizeList",
-  "chooseLanguage",
-  "trackIntro",
-  "pathIntro",
-  "onThisPage",
-  "matrixExplained",
-];
-
 const SOURCES = ["apps/**/*.ts", "scripts/**/*.ts"]
   .flatMap((pattern) => [...new Glob(pattern).scanSync(ROOT)])
   .filter((file) => !/\.(test|e2e)\.ts$/.test(file) && !file.startsWith("scripts/generated/"));
@@ -29,14 +16,9 @@ const asked = (key: string): boolean => ["'", '"', "`"].some((q) => code.include
 
 test("every key of interface.yaml's text and counts is one an app asks for", () => {
   const keys = [...Object.keys(INTERFACE.text), ...Object.keys(INTERFACE.counts)];
-  expect(keys.filter((key) => !asked(key) && !FOR_PROGRAMS.includes(key) && !RETIRED.includes(key))).toEqual([]);
+  expect(keys.filter((key) => !asked(key) && !FOR_PROGRAMS.includes(key))).toEqual([]);
 });
 
 test("the wording kept for programs is wording the web app shows nowhere", () => {
   expect(FOR_PROGRAMS.filter(asked)).toEqual([]);
-});
-
-test("the retired wording is still in interface.yaml and asked for nowhere", () => {
-  const keys = [...Object.keys(INTERFACE.text), ...Object.keys(INTERFACE.counts)];
-  expect(RETIRED.filter((key) => !keys.includes(key) || asked(key))).toEqual([]);
 });
