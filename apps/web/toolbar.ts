@@ -1,12 +1,13 @@
-// The glass toolbar of the pages in the frame, the Home's and a track index's: the search field with its clear
-// button (client-home.ts), Close while searching, and More, the one menu that ends every toolbar.
+// The glass toolbar of the pages in the frame, the Home's and a course's: the search field with its clear button
+// (client-home.ts), Close while searching, Languages I know (文A), which every toolbar has as its own button, and the
+// Home's More.
 import { CLEAR, CLOSE, glyph, INFO, LANGUAGES, MENU_BACK, MENU_GLYPHS, MOON, MORE, SEARCH, SUN, THEME } from "./glyphs.ts";
 import { type Explain, say } from "../../scripts/lib.ts";
 import { type Brand, LIBRARY_BRAND } from "./brand.ts";
 import { escapeHtml } from "./html.ts";
 import { item } from "./track-parts.ts";
 import type { Ui } from "./ui.ts";
-import { creditsUrl, pageUrl } from "./urls.ts";
+import { creditsUrl, languagesUrl, pageUrl } from "./urls.ts";
 
 export const searchForm = (t: Ui): string =>
   `<form class="hm-search glass" id="hm-form" role="search" action="#">${SEARCH}<input type="search" id="hm-q" placeholder="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search"><button type="button" class="hm-clear" id="hm-clear" aria-label="${escapeHtml(t.clear)}" hidden>${CLEAR}</button></form>`;
@@ -40,10 +41,18 @@ const themeItems = (t: Ui): string =>
     item('data-set-theme="light"', t.themeLight, false, "", `<span class="ix-end">${SUN}</span>`),
     item('data-set-theme="dark"', t.themeDark, false, "", `<span class="ix-end">${MOON}</span>`),
   ].join("");
-// More: a button ending the toolbar of every page, top right (bottom left on a phone, beside Search), whose menu
-// (client-more.ts) opens under it, upward on a phone: Languages I know first with the reader's languages under it
-// (client-languages.ts fills data-langs-list), then Theme, whose list opens in its place under a way back to More,
-// the theme in use under its name, then Credits and the brand's pages after it.
+// Languages I know (文A): on the Home a link to the languages page; on a course's pages a button opening the course's
+// Explanation language sheet (client-languages.ts, data-xl-open), whose last row leads to the languages page.
+export function languagesButton(t: Ui, home: Explain | null, cls = ""): string {
+  const label = escapeHtml(t.languagesIKnow);
+  const attrs = `class="hm-langs${cls === "" ? "" : ` ${cls}`}" aria-label="${label}" title="${label}"`;
+  return home === null
+    ? `<button type="button" ${attrs} data-xl-open aria-haspopup="dialog">${LANGUAGES}</button>`
+    : `<a ${attrs} href="${languagesUrl(home)}">${LANGUAGES}</a>`;
+}
+
+// More, the Home's alone, at the window's top right, whose menu (client-more.ts) opens under it: Theme, whose list opens
+// in its place under a way back to More, the theme in use under its name, then Credits and the brand's pages after it.
 export function moreButton(t: Ui): string {
   const more = escapeHtml(t.more);
   return `<button type="button" class="hm-more" popovertarget="hm-more" aria-haspopup="menu" aria-expanded="false" aria-label="${more}" title="${more}">${MORE}</button>`;
@@ -67,7 +76,6 @@ export function moreMenu(t: Ui, home: Explain, brand: Brand = LIBRARY_BRAND): st
     `<a href="${escapeHtml(href)}" role="menuitem" class="ix-item">${text(title, sub)}<span class="ix-end">${end}</span></a>`;
   const back = `<button type="button" class="ix-item hm-back" data-more="main"><span class="ix-tick" aria-hidden="true">${MENU_BACK}</span><span class="ix-text"><span class="ix-title">${more}</span></span></button>`;
   const main = [
-    link(pageUrl(home, "languages"), t.languagesIKnow, `<span class="ix-sub"><span data-langs-list></span></span>`, LANGUAGES),
     `<button type="button" role="menuitem" class="ix-item" data-more="theme" aria-haspopup="menu">${text(t.theme, `<span class="ix-sub" data-theme-now>${escapeHtml(t.themeAuto)}</span>`)}<span class="ix-end">${THEME}</span></button>`,
     link(creditsUrl(home), say("credits", home), "", INFO),
     ...menuLinks(home, brand).map((p) => link(p.href, p.label, "", p.glyph)),

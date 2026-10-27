@@ -58,9 +58,9 @@ test("a page with a menu entry follows the credits in the Home's More menu, and 
     const home = await read(i === 0 ? "" : e);
     const url = pageUrl(e, "terms");
     const more = [...home.querySelectorAll("#hm-more [data-panel=main] a.ix-item")];
-    expect(more.map((a) => a.getAttribute("href"))).toEqual([pageUrl(e, "languages"), creditsUrl(e), url]);
-    expect(more[2]?.querySelector(".ix-title")?.textContent).toBe(`Title 0 ${e}`);
-    expect(more[2]?.querySelector(".ix-end svg path")).not.toBeNull();
+    expect(more.map((a) => a.getAttribute("href"))).toEqual([creditsUrl(e), url]);
+    expect(more[1]?.querySelector(".ix-title")?.textContent).toBe(`Title 0 ${e}`);
+    expect(more[1]?.querySelector(".ix-end svg path")).not.toBeNull();
     expect(home.querySelectorAll("a.hm-page, .hm-credits")).toHaveLength(0);
   }
   expect((await read("data-use")).getElementById("hm-more")).toBeNull();

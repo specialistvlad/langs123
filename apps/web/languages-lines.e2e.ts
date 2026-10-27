@@ -29,7 +29,6 @@ test(
       "/en/french/",
       "/pt/japanese/".replace("/pt/", "/ja/"),
     ]);
-    expect(await page.locator("[data-langs-list]").first().textContent()).toBe("Українська, English, Polski");
   },
   SLOW,
 );

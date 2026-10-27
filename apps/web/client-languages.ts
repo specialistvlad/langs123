@@ -10,8 +10,7 @@
 //                                          the languages the topic has; holds
 //                                          [data-xl-tag] and, on the header, [data-xl-note] and data-course,
 //                                          data-course-explains of its course
-//   [data-xl-open]                         opens the sheet of the page's course
-//   [data-langs-list]                      the list under Languages I know in the ⋯ menu
+//   [data-xl-open]                         opens the sheet of the page's course (a course's 文A)
 import { type Env, courseOf, courseOfLine, pinOf, resolved, topicHas, writeLanguages } from "./client-languages-lines.ts";
 import { fromBrowser, inLanguage, LANGS_KEY, resolveTopic } from "./client-languages-model.ts";
 import { languagesPage } from "./client-languages-page.ts";
@@ -56,7 +55,7 @@ export function languages(): void {
     languagesPage(main);
     return;
   }
-  const used = document.querySelector(".xl-line, [data-topic-explains], [data-langs-list]") !== null;
+  const used = document.querySelector(".xl-line, [data-topic-explains]") !== null;
   if (!used && store.get(LANGS_KEY) !== null) return;
   void loadText(root.lang).then((text) => {
     if (text === null || firstVisit(text)) return;

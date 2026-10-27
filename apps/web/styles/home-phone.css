@@ -1,6 +1,7 @@
-/* The Home on phones and tablets narrower than 1024px (pages/home.ts): the brand heads the page and the bar floats at
-   the bottom, More at the left and Search at the right, the field and Close taking the bar while searching, over a
-   fade of the page's colour; a query takes the brand off the page and the filters lead it */
+/* The Home on phones and tablets narrower than 1024px (pages/home.ts): the brand heads the page with More, a round glass
+   button, at the row's right end; the bar floats at the bottom, Search at the left and 文A at the right, the field and
+   Close taking the bar while searching, over a fade of the page's colour; a query takes the brand off the page and the
+   filters lead it */
 @media (max-width: 1023px) {
   .hm-home {
     max-width: 1120px;
@@ -42,12 +43,15 @@
     width: 52px;
     height: 48px;
   }
-  .hm-home .hm-group {
-    height: 48px;
+  .hm-home .hm-tools {
+    margin: 0 -4px 0 auto;
+    width: 44px;
   }
-  .hm-home .hm-more-menu {
-    right: 16px;
-    left: auto;
+  .hm-home .hm-tools .hm-langs {
+    display: none;
+  }
+  .hm-home .hm-tools .hm-more {
+    width: 44px;
   }
   .hm-home .ix-search-open {
     display: flex;
@@ -65,6 +69,7 @@
     display: flex;
   }
   html.hm-searching .hm-home .hm-group,
+  html.hm-searching .hm-home .hm-langs-solo,
   html.hm-searching .hm-home .ix-search-open {
     display: none;
   }

@@ -1,6 +1,6 @@
 // The home pages, one per explanation language, in the frame (frame.css, home.css): one page whatever the width. A
-// header line holds the brand, the search over every course centred (up to 520 wide) and More, which ends it (on a
-// phone the brand heads the page and More and a Search button make the bottom bar); under it a card per language to
+// header line holds the brand, the search over every course centred (up to 520 wide) and 文A and More at its end (on a
+// phone the brand row ends with More, and Search and 文A make the bottom bar); under it a card per language to
 // learn, in a grid of three columns on a wide screen and two on a tablet: its flag and name, "Up to" and the
 // course's top level, and the "Explained in" line (explained-line.ts). A card opens the course's page. The search
 // reads search/<language>.json (home-search.ts) and shows the topics that match under the same header, centred
@@ -9,7 +9,7 @@ import { type Explain, LEVELS, listOf, localize, say, SITE } from "../../../scri
 import { join, refRange, topicLevels } from "../../../scripts/levels.ts";
 import { LIBRARY_BRAND } from "../brand.ts";
 import { alternates, type Context, EXPLAINS, homeLanguage } from "../context.ts";
-import { closeButton, moreButton, moreMenu, results, searchButton, searchForm } from "../toolbar.ts";
+import { closeButton, languagesButton, moreButton, moreMenu, results, searchButton, searchForm } from "../toolbar.ts";
 import { escapeHtml } from "../html.ts";
 import { defaultExplain, explainedLine } from "../explained-line.ts";
 import { levelData, levelPopover } from "../level-popover.ts";
@@ -59,7 +59,8 @@ function courseLevels(refs: Parameters<typeof refRange>[0][]): Level[] {
   return [...held];
 }
 
-// The header line: the brand, the search and Close (centred), and More, which ends the toolbar.
+// The header line: the brand, the search and Close (centred), and the group of 文A and More at the top right. A phone
+// keeps More at the brand row's right end and has Search and 文A in the bottom bar.
 function header(ctx: Context, home: Explain): string {
   const t = ui(home);
   const brand = ctx.o.brand ?? LIBRARY_BRAND;
@@ -67,9 +68,10 @@ function header(ctx: Context, home: Explain): string {
 <a class="hm-brand" href="${homeUrl(home)}">${brand.mark(28)}<span>${escapeHtml(SITE.name)}</span></a>
 <nav class="hm-bar">
 <div class="hm-mid">${searchForm(t)}${closeButton(t)}</div>
-<div class="hm-group glass">${moreButton(t)}</div>
 ${searchButton(t)}
+${languagesButton(t, home, "glass hm-langs-solo")}
 </nav>
+<div class="hm-group glass hm-tools">${languagesButton(t, home)}${moreButton(t)}</div>
 </header>
 ${moreMenu(t, home, brand)}
 <noscript><style>.hm-search,.hm-close,.ix-search-open{display:none}</style></noscript>`;

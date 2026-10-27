@@ -6,6 +6,7 @@
 import { expect, test } from "bun:test";
 import { LEVELS } from "../../scripts/lib.ts";
 import { readPage } from "./test-site.ts";
+import { ui } from "./ui.ts";
 import { homeUrl } from "./urls.ts";
 
 const english = await readPage("en/english/index.html");
@@ -60,22 +61,28 @@ test("the column holds the search under the head and the topics in both grouping
   expect(english.querySelectorAll("[data-sp-item], .sp, .ix-seg").length).toBe(0);
 });
 
-test("the nav holds the search field, Close, the glass bar and the phone's round Search button", () => {
+test("the nav holds the search field, Close, the phone's round Search button, the glass bar and the phone's 文A", () => {
   const nav = english.querySelector("nav.cl-nav");
-  expect([...(nav?.children ?? [])].map((el) => el.id || tag(el))).toEqual(["hm-form", "hm-close", "hm-group", "ix-search"]);
+  expect([...(nav?.children ?? [])].map((el) => el.id || tag(el))).toEqual(["hm-form", "hm-close", "ix-search", "hm-group", "hm-langs"]);
   const button = english.querySelector("#ix-search");
   expect(button?.tagName).toBe("BUTTON");
   expect(button?.getAttribute("aria-label")).toBe(english.querySelector("#hm-q")?.getAttribute("aria-label"));
   expect(button?.querySelector("svg")).not.toBeNull();
 });
 
-test("the glass bar ends with More, after Level, Variety and Group; the Home's More menu opens from it", () => {
+test("the glass bar ends with 文A, after Level, Variety and Group, and opens the course's sheet; the page has no More", () => {
   const kinds = (g: Element | null): string[] =>
-    [...(g?.children ?? [])].map((el) => (el.matches(".hm-more") ? "more" : (el.className.split(" ")[1] ?? el.className)));
-  expect(kinds(english.querySelector(".cl-bar"))).toEqual(["ix-level", "ix-variety", "ix-group", "more"]);
-  expect(kinds(ukrainian.querySelector(".cl-bar"))).toEqual(["ix-level", "ix-group", "more"]);
-  expect(english.querySelector(".cl-bar .hm-more")?.getAttribute("popovertarget")).toBe("hm-more");
-  expect(english.querySelectorAll("#hm-more").length).toBe(1);
+    [...(g?.children ?? [])].map((el) => (el.matches(".hm-langs") ? "langs" : (el.className.split(" ")[1] ?? el.className)));
+  expect(kinds(english.querySelector(".cl-bar"))).toEqual(["ix-level", "ix-variety", "ix-group", "langs"]);
+  expect(kinds(ukrainian.querySelector(".cl-bar"))).toEqual(["ix-level", "ix-group", "langs"]);
+  for (const button of english.querySelectorAll(".hm-langs")) {
+    expect([button.tagName, button.hasAttribute("data-xl-open"), button.getAttribute("aria-label")]).toEqual([
+      "BUTTON",
+      true,
+      ui("en").languagesIKnow,
+    ]);
+  }
+  expect(english.querySelectorAll(".hm-more, #hm-more").length).toBe(0);
   expect(english.querySelector(".hm-read, .hm-folds")).toBeNull();
 });
 

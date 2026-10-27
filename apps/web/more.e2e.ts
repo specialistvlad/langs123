@@ -1,8 +1,9 @@
-// The Home's toolbar in a browser. A phone has the brand over the cards and a bottom bar: More at the left, Search at
-// the right, which opens the field across the bar with Close; More's menu names Languages I know, the theme (whose
-// list opens in its place under a way back, a theme chosen closing the menu, which opens again naming the theme
-// chosen) and the credits. From 1024px one More sits at the top right and its menu opens under it; the search field is
-// in the header line, centred up to 520 wide. A query takes the brand off a phone; an empty search keeps it.
+// The Home's toolbar in a browser. A phone has the brand row over the cards, More at its right end with its menu opening
+// under it, and a bottom bar: Search at the left, which opens the field across the bar with Close, and Languages I know
+// (文A) at the right. More's menu names the theme (whose list opens in its place under a way back, a theme chosen closing
+// the menu, which opens again naming the theme chosen) and the credits. From 1024px 文A and More sit together at the top
+// right and More's menu opens under them; the search field is in the header line, centred up to 520 wide. A query takes
+// the brand off a phone; an empty search keeps it.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -26,37 +27,44 @@ const box = async (target: Page, selector: string): Promise<{ x: number; y: numb
 };
 
 test(
-  "on a phone More is at the left of the bottom bar and Search at the right, with no Read in, theme or credits button",
+  "on a phone More ends the brand row, and the bottom bar has Search at the left and 文A at the right",
   async () => {
     await page.goto(new URL("/", base).href);
-    expect(await Promise.all([".hm-more", ".ix-search-open", "#hm-form", ".hm-read", ".hm-theme", ".hm-credits"].map(visible))).toEqual([
+    expect(await Promise.all([".hm-more", ".ix-search-open", ".hm-langs-solo", "#hm-form", ".hm-tools .hm-langs"].map(visible))).toEqual([
       true,
       true,
-      false,
-      false,
+      true,
       false,
       false,
     ]);
-    const [more, search] = [await box(page, ".hm-more"), await box(page, ".ix-search-open")];
-    expect([more.x < 40, search.x + search.width > 402 - 40, Math.abs(more.y - search.y) < 4]).toEqual([true, true, true]);
-    expect(await page.locator(".hm-more").count()).toBe(1);
+    const [brand, more, search, langs] = [
+      await box(page, ".hm-brand"),
+      await box(page, ".hm-more"),
+      await box(page, ".ix-search-open"),
+      await box(page, ".hm-langs-solo"),
+    ];
+    expect([
+      more.x + more.width > 402 - 24,
+      Math.abs(more.y + more.height / 2 - (brand.y + brand.height / 2)) < 4,
+      search.x < 24,
+      langs.x + langs.width > 402 - 24,
+      Math.abs(langs.y - search.y) < 4,
+      search.y > 874 - 80,
+    ]).toEqual([true, true, true, true, true, true]);
+    expect(await page.locator(".hm-langs-solo").getAttribute("href")).toBe("/languages/");
   },
   SLOW,
 );
 
 test(
-  "More's menu holds Languages I know, the theme and the credits; the theme opens its list in the menu's place",
+  "More's menu opens under it with the theme and the credits; the theme opens its list in the menu's place",
   async () => {
     await page.goto(new URL("/", base).href);
     await page.locator(".hm-more").click();
     await page.waitForSelector('.hm-more[aria-expanded="true"]');
-    expect(await page.locator('#hm-more [data-panel="main"] .ix-title').allTextContents()).toEqual([
-      "Languages I know",
-      "Theme",
-      "Credits",
-    ]);
-    expect(await page.locator('#hm-more [data-panel="main"] a.ix-item').first().getAttribute("href")).toBe("/languages/");
-    expect(await page.locator("#hm-more [data-langs-list]").count()).toBe(1);
+    expect(await page.locator('#hm-more [data-panel="main"] .ix-title').allTextContents()).toEqual(["Theme", "Credits"]);
+    const [more, menu] = [await box(page, ".hm-more"), await box(page, "#hm-more")];
+    expect([menu.y > more.y + more.height, Math.abs(menu.x + menu.width - (more.x + more.width)) < 4]).toEqual([true, true]);
     await page.locator('#hm-more [data-more="theme"]').click();
     expect([await visible('#hm-more [data-panel="main"]'), await visible('#hm-more [data-panel="theme"]')]).toEqual([false, true]);
     await page.locator('#hm-more [data-panel="theme"] .hm-back').click();
@@ -78,7 +86,13 @@ test(
   async () => {
     await page.goto(new URL("/", base).href);
     await page.locator(".ix-search-open").click();
-    expect(await Promise.all(["#hm-form", "#hm-close", ".hm-more", ".ix-search-open"].map(visible))).toEqual([true, true, false, false]);
+    expect(await Promise.all(["#hm-form", "#hm-close", ".hm-more", ".ix-search-open", ".hm-langs-solo"].map(visible))).toEqual([
+      true,
+      true,
+      false,
+      false,
+      false,
+    ]);
     expect(await visible(".hm-brand")).toBe(true);
     await page.locator("#hm-q").fill("past");
     await page.locator(".hm-row").first().waitFor();
@@ -86,13 +100,18 @@ test(
     await page.locator("#hm-q").fill("");
     expect(await visible(".hm-brand")).toBe(true);
     await page.locator("#hm-close").click();
-    expect(await Promise.all(["#hm-form", ".hm-more", ".ix-search-open"].map(visible))).toEqual([false, true, true]);
+    expect(await Promise.all(["#hm-form", ".hm-more", ".ix-search-open", ".hm-langs-solo"].map(visible))).toEqual([
+      false,
+      true,
+      true,
+      true,
+    ]);
   },
   SLOW,
 );
 
 test(
-  "from 1024px the header holds the brand, the field centred up to 520 and the one More at the top right, its menu under it",
+  "from 1024px the header holds the brand, the field centred up to 520 and 文A then More at the top right, More's menu under them",
   async () => {
     const wide = await browser.newPage({ viewport: { width: 1440, height: 900 } });
     await wide.goto(new URL("/", base).href);
@@ -104,9 +123,13 @@ test(
       true,
       1,
     ]);
-    expect(
-      await Promise.all([".hm-read", ".hm-theme", ".hm-credits", ".ix-search-open"].map((s) => wide.locator(s).first().isVisible())),
-    ).toEqual([false, false, false, false]);
+    const langs = await box(wide, ".hm-tools .hm-langs");
+    expect([langs.x + langs.width <= more.x + 1, Math.abs(langs.y - more.y) < 2]).toEqual([true, true]);
+    expect(await Promise.all([".hm-read", ".hm-langs-solo", ".ix-search-open"].map((s) => wide.locator(s).first().isVisible()))).toEqual([
+      false,
+      false,
+      false,
+    ]);
     await wide.locator(".hm-more").click();
     const menu = await box(wide, "#hm-more");
     expect([menu.y > more.y + more.height, Math.abs(menu.x + menu.width - (more.x + more.width)) < 12]).toEqual([true, true]);

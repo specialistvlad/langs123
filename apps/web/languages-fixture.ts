@@ -15,16 +15,13 @@ ${card("es", "spanish", "es en")}
 ${card("fr", "french", "pt en")}
 ${card("ja", "japanese", "ja")}
 </div><section class="xl-other" data-xl-other hidden><h2>Other</h2><p>None</p><div data-xl-other-cards></div></section>
-<span data-langs-list></span></main>${TAIL}`.replace("<html", '<html data-page="home"');
+</main>${TAIL}`.replace("<html", '<html data-page="home"');
 
 const row = (slug: string, has: string): string =>
   `<li data-topic-explains="${has}"><a href="/uk/fx/f/${slug}/">${slug}</a><span data-xl-tag hidden></span></li>`;
 // A course page: its line, a topic in Ukrainian and English, one in English alone.
 export const COURSE = `${HEAD}<body><main class="cr-main"><h1>English</h1>${line("en", "en uk")}
-<ul class="cr-card">${row("alphabet", "uk en")}${row("days", "en")}</ul><span data-langs-list></span></main>${TAIL}`.replace(
-  "<html",
-  '<html data-page="track"',
-);
+<ul class="cr-card">${row("alphabet", "uk en")}${row("days", "en")}</ul></main>${TAIL}`.replace("<html", '<html data-page="track"');
 
 // A topic page in English that lacks Ukrainian; its course is explained in Ukrainian and English.
 export const TOPIC =

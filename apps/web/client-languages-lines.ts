@@ -1,10 +1,8 @@
 // Writes the reader's languages into a page: every course's "Explained in" line (.xl-line) and the links to the course,
 // the Home's courses that none of the reader's languages explains moved under their own heading, each topic's link
-// and "EN" tag, the topic page's fallback note, and the list under Languages I know in the ⋯ menu. The page's markup
-// is described in client-languages.ts.
+// and "EN" tag, and the topic page's fallback note. The page's markup is described in client-languages.ts.
 import { aroundName, fill, inLanguage, pinKey, resolveCourse, type Resolved, resolveTopic } from "./client-languages-model.ts";
 import type { LanguagesText } from "./client-languages-text.ts";
-import { ownNames } from "./client-languages-text.ts";
 import { store } from "./client-store.ts";
 
 export interface Env {
@@ -152,7 +150,4 @@ function fallbackNote(env: Env, wanted: string, shown: string): Node[] {
 export function writeLanguages(env: Env): void {
   lines(env);
   topics(env);
-  document.querySelectorAll<HTMLElement>("[data-langs-list]").forEach((el) => {
-    el.textContent = ownNames(env.text, env.list);
-  });
 }

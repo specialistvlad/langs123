@@ -43,19 +43,12 @@ describe("the two columns", () => {
     expect(head?.querySelector(".cl-topic")?.textContent).toBe(topic.querySelector(".tp-head h1")?.textContent);
   });
 
-  test("the bar holds Level, Variety and More, with Group in the head's toolbar line alone", () => {
-    const bar = topic.querySelector(".cl-bar");
-    expect([...(bar?.children ?? [])].map((el) => (el.matches(".hm-more") ? "more" : (el.className.split(" ")[1] ?? "")))).toEqual([
-      "ix-level",
-      "ix-variety",
-      "more",
-    ]);
-    const spanishBar = spanish.querySelector(".cl-bar");
-    expect([...(spanishBar?.children ?? [])].map((el) => (el.matches(".hm-more") ? "more" : (el.className.split(" ")[1] ?? "")))).toEqual([
-      "ix-level",
-      "ix-variety",
-      "more",
-    ]);
+  test("the bar holds Level, Variety and 文A, with Group in the head's toolbar line alone", () => {
+    const kinds = (bar: Element | null): string[] =>
+      [...(bar?.children ?? [])].map((el) => (el.matches(".hm-langs") ? "langs" : (el.className.split(" ")[1] ?? "")));
+    expect(kinds(topic.querySelector(".cl-bar"))).toEqual(["ix-level", "ix-variety", "langs"]);
+    expect(kinds(spanish.querySelector(".cl-bar"))).toEqual(["ix-level", "ix-variety", "langs"]);
+    expect(topic.querySelectorAll(".hm-more, #hm-more").length).toBe(0);
     expect(topic.querySelectorAll(".ix-group").length).toBe(1);
     expect(topic.querySelector(".cl-tools .ix-group")).not.toBeNull();
     expect(topic.querySelector("#ix-groups")).not.toBeNull();

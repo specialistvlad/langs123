@@ -34,7 +34,3 @@ export function readerList(enabled: readonly string[], fallback: string): string
   const stored = parseList(store.get(LANGS_KEY), enabled);
   return stored.length > 0 ? stored : fromBrowser(navigator.languages, enabled, fallback);
 }
-
-// The names of the reader's languages, as the Home's menu lists them under Languages I know.
-export const ownNames = (text: LanguagesText, list: readonly string[]): string =>
-  list.map((code) => text.languages.find((l) => l.code === code)?.own ?? code).join(", ");

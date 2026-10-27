@@ -2,22 +2,22 @@
 // (pages/topic.ts) share, so both pages render the same list. From 1024px a course is two columns: this one on the left,
 // the page's reading on the right. The column holds the head (a toolbar line of Home and, as icon buttons, Level and
 // Group; the course's title on its own line with its flag; "66 topics · Explained in: English ›"), the search field,
-// and the topics in both groupings, the shown topic marked. The glass bar of Level, Variety, Group and More sits at the
-// top right, Level and Group in it only while the field searches. A phone shows the column on the course index alone:
-// the title row with the topic count at its end, the line, the topics, and the bottom bar of the same buttons with
-// Search at its right end; a topic page keeps the bar and the results. The Explained in line is the Languages page's
-// client's (explained-line.ts). The page adds the level popover and its data beside menus().
+// and the topics in both groupings, the shown topic marked. The glass bar of Level, Variety, Group and Languages I know
+// (文A) sits at the top right, Level and Group in it only while the field searches. A phone shows the column on the
+// course index alone: the title row with the topic count at its end, the line, the topics, and the bottom bar, Search
+// at its left end, the same buttons at its right and 文A on its own after them; a topic page keeps the bar and the
+// results. The Explained in line and 文A are the Languages page's client's (explained-line.ts). The page adds the level
+// popover and its data beside menus().
 import { count, localize, say, SITE, type TopicRef } from "../../scripts/lib.ts";
 import { refRange } from "../../scripts/levels.ts";
 import { varietyName } from "../../scripts/text.ts";
-import { LIBRARY_BRAND } from "./brand.ts";
 import type { Track } from "./context.ts";
 import { explainedLine } from "./explained-line.ts";
 import { escapeHtml } from "./html.ts";
 import { glyph } from "./glyphs.ts";
 import { courseEntry, type LevelEntry } from "./level-popover.ts";
 import { searchFilters } from "./search-filters.ts";
-import { closeButton, moreButton, moreMenu, results, searchButton, searchForm } from "./toolbar.ts";
+import { closeButton, languagesButton, results, searchButton, searchForm } from "./toolbar.ts";
 import { countsByLevel } from "./track-more.ts";
 import { BACK, byCategory, byLevel, GLOBE, groupButton, groupMenu, levelButton, varietyMenu } from "./track-parts.ts";
 import { homeUrl, trackUrl } from "./urls.ts";
@@ -52,7 +52,8 @@ const level = (track: Track, cls: string, extra = ""): string =>
     extra,
   );
 
-// The glass bar: Level, Variety, Group (the index's), More. Above 1024px it sits at the top right.
+// The glass bar: Level, Variety, Group (the index's), 文A. Above 1024px it sits at the top right; a phone shows 文A on
+// its own after it.
 function glassBar(track: Track, shown: Shown | undefined): string {
   const { explain, t } = track;
   const [first] = varietiesOf(track);
@@ -61,7 +62,7 @@ function glassBar(track: Track, shown: Shown | undefined): string {
       ? ""
       : `<button type="button" class="ix-btn ix-variety" popovertarget="ix-varieties" aria-haspopup="menu">${GLOBE}<span class="ix-label"><span class="sr-only">${escapeHtml(say("labelled", explain, { label: t.variety, value: "" }))}</span><span data-variety-label>${escapeHtml(first.name)}</span></span></button>`;
   const group = shown === undefined ? groupButton(t.groupBy, "ix-btn ix-group cl-gr") : "";
-  return `<div class="hm-group glass cl-bar">${level(track, "cl-lv")}${variety}${group}${moreButton(t)}</div>`;
+  return `<div class="hm-group glass cl-bar">${level(track, "cl-lv")}${variety}${group}${languagesButton(t, null)}</div>`;
 }
 
 // The head: Home (and Back to the course with the topic's title while a topic page searches), the toolbar line's
@@ -94,8 +95,8 @@ ${heading}<span class="ix-count cl-count" ${counts}>${total}</span>
 </header>`;
 }
 
-// The column: its head, the search field with Close, the glass bar and the phone's Search button (the top, which stays in
-// view above the scrolling list), then the topics in both groupings (data-order picks the one shown) and the search's results in their place while the field has a query.
+// The column: its head, the search field with Close, the phone's Search button, the glass bar and the phone's 文A (the
+// top, which stays in view above the scrolling list), then the topics in both groupings (data-order picks the one shown) and the search's results in their place while the field has a query.
 export function courseSide(track: Track, shown?: Shown): string {
   const { ctx, lang, explain, t } = track;
   const marked = shown?.ref;
@@ -105,8 +106,9 @@ ${head(track, shown)}
 <nav class="cl-nav" aria-label="${escapeHtml(t.search)}">
 ${searchForm(t)}
 ${closeButton(t)}
-${glassBar(track, shown)}
 ${searchButton(t)}
+${glassBar(track, shown)}
+${languagesButton(t, null, "glass cl-langs")}
 </nav>
 </div>
 <div class="cl-list" id="hm-cards">
@@ -118,11 +120,10 @@ ${results(t, searchFilters(t, explain, ctx.languages, lang.code))}
 </aside>`;
 }
 
-// The menus the toolbars open: Group by, the variety's (a topic page's begins with what the choice hides) and More.
+// The menus the toolbars open: Group by and the variety's (a topic page's begins with what the choice hides).
 export function menus(track: Track, shown?: Shown): string {
-  const { ctx, explain, t } = track;
+  const { t } = track;
   const varieties = varietiesOf(track);
   return `${groupMenu(t)}
-${varieties.length === 0 ? "" : varietyMenu(t.variety, varieties, shown === undefined ? "" : t.varietyHidden)}
-${moreMenu(t, explain, ctx.o.brand ?? LIBRARY_BRAND)}`;
+${varieties.length === 0 ? "" : varietyMenu(t.variety, varieties, shown === undefined ? "" : t.varietyHidden)}`;
 }

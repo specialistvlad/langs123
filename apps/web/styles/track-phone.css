@@ -1,6 +1,7 @@
 /* A course on phones (below 1024px): the index is one column, the title row (Home, the course, the count), the line, the
-   topics, and the toolbar at the bottom: Level, Variety, Group and More as icons in one glass bar, a fade under it, and
-   the round Search button at the right end, which opens the field across the bar with Close. The bar hides while the
+   topics, and the toolbar at the bottom over a fade: the round Search button at the left end, which opens the field
+   across the bar with Close, then at the right Level, Variety and Group as icons in one glass bar and 文A on its own,
+   their menus opening above them at the right (the Level sheet across the window). The bar hides while the
    reader scrolls down (the public client sets html.bar-hidden). A topic page keeps the bar and the results alone of the
    column. The reading is topic-phone.css's */
 @media screen and (max-width: 1023px) {
@@ -57,8 +58,8 @@
   }
   .ix-menu-variety,
   .ix-menu-group {
-    left: 16px;
-    right: auto;
+    left: auto;
+    right: 16px;
   }
   .ix-menu-variety {
     bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 88px);
@@ -67,28 +68,21 @@
   .ix-menu-group {
     width: 240px;
   }
-  .hm-more-menu {
-    left: 16px;
-    right: auto;
-    top: auto;
-    bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 62px);
-  }
   .cl-nav {
     position: fixed;
     left: 16px;
     right: 16px;
     bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
     z-index: 30;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 12px;
     transition: transform 0.25s ease;
   }
   .cl-bar {
     height: 48px;
+    margin-left: auto;
   }
-  .cl-bar .hm-more {
-    display: flex;
-    width: 52px;
+  .cl-bar .hm-langs {
+    display: none;
   }
   .cl-nav .hm-search {
     display: none;
@@ -97,6 +91,7 @@
     display: flex;
     flex: 1;
     width: auto;
+    max-width: none;
     height: 48px;
   }
   html.hm-searching .cl-nav .hm-close {
@@ -104,7 +99,7 @@
     width: 48px;
     height: 48px;
   }
-  html.hm-searching .cl-bar {
+  html.hm-searching .cl-nav :is(.cl-bar, .cl-langs) {
     display: none;
   }
   html .cl-nav .ix-search-open {
@@ -118,6 +113,13 @@
     border-radius: 999px;
     color: var(--text);
     cursor: pointer;
+  }
+  html .cl-nav .cl-langs {
+    display: flex;
+    flex-shrink: 0;
+    width: 52px;
+    height: 48px;
+    color: var(--text);
   }
   html.hm-searching .cl-nav .ix-search-open {
     display: none;

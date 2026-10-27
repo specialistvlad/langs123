@@ -1,7 +1,8 @@
 /* A course's search field and glass bar (course-column.ts; client-home.ts sets html.hm-searching while the field is in
    use and html.hm-query once it holds a query). From 1024px the field and Close share a row under the head and the bar
-   sits at the window's top right: Variety and More, with Level and Group too while the field searches. A phone shows
-   the bar at the bottom, the round Search button at its right end opening the field across the bar (track-phone.css) */
+   sits at the window's top right: Variety and 文A, with Level and Group too while the field searches. A phone shows
+   the bar at the bottom between the round Search button at its left end, which opens the field across the bar, and 文A
+   on its own at its right end (track-phone.css) */
 .cl-nav {
   display: flex;
   align-items: center;
@@ -9,6 +10,7 @@
 }
 .cl-nav .hm-close,
 .cl-nav .ix-search-open,
+.cl-nav .cl-langs,
 .cl-nav .hm-clear {
   display: none;
 }
@@ -54,8 +56,7 @@
   html.hm-searching .cl-bar :is(.cl-lv, .cl-gr) {
     display: flex;
   }
-  .cl-bar .hm-more {
-    display: flex;
+  .cl-bar .hm-langs {
     width: 50px;
   }
   /* Searching: Home beside the title, the toolbar line and the count gone; a topic page shows Back to the course with the

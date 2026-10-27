@@ -1,5 +1,5 @@
 // The Home (pages/home.ts) in each explanation language: one page whatever the width, a header line with the brand, the
-// search and More, a card per course with its flag and name, "Up to" and its top level, and the "Explained in" line;
+// search, Languages I know (文A) and More, a card per course with its flag and name, "Up to" and its top level, and the "Explained in" line;
 // no split view, level bar, language chips, Read in or "Language references" heading; the More menu (toolbar.ts).
 import { describe, expect, test } from "bun:test";
 import { ENABLED_EXPLAIN, say, SITE } from "../../scripts/lib.ts";
@@ -21,18 +21,23 @@ describe.each(ENABLED_EXPLAIN)("the Home in %s", (e) => {
     expect(doc.querySelectorAll(".sp, .sp-left, .sp-right, .sp-div, [data-sp-item]")).toHaveLength(0);
     expect(doc.querySelector(".hm-main h1.sr-only")?.textContent).toBe(SITE.name);
   });
-  test("the header line holds the brand, the search with Close, More and the phone's Search button, in that order", async () => {
+  test("the header line holds the brand, the bar of the search with Close and the phone's Search and 文A, then 文A and More", async () => {
     const doc = await home(e);
-    expect([...doc.querySelectorAll(".hm-head > *")].map((el) => el.className.split(" ")[0])).toEqual(["hm-brand", "hm-bar"]);
+    expect([...doc.querySelectorAll(".hm-head > *")].map((el) => el.className.split(" ")[0])).toEqual(["hm-brand", "hm-bar", "hm-group"]);
     expect(doc.querySelector(".hm-brand")?.getAttribute("href")).toBe(homeUrl(e));
     expect([...doc.querySelectorAll(".hm-bar > *")].map((el) => el.className.split(" ")[0])).toEqual([
       "hm-mid",
-      "hm-group",
       "ix-search-open",
+      "hm-langs",
     ]);
     expect([...doc.querySelectorAll(".hm-mid > *")].map((el) => el.id)).toEqual(["hm-form", "hm-close"]);
     expect(doc.querySelectorAll(".hm-more")).toHaveLength(1);
     expect(doc.querySelector(".hm-group .hm-more")?.getAttribute("aria-label")).toBe(t.more);
+    const langs = [...doc.querySelectorAll("a.hm-langs")];
+    expect(langs.map((a) => [a.parentElement?.className, a.getAttribute("href"), a.getAttribute("aria-label")])).toEqual([
+      ["hm-bar", pageUrl(e, "languages"), t.languagesIKnow],
+      ["hm-group glass hm-tools", pageUrl(e, "languages"), t.languagesIKnow],
+    ]);
     expect(doc.querySelector("#hm-q")?.getAttribute("placeholder")).toBe(t.search);
     expect(doc.querySelector(".ix-search-open")?.getAttribute("aria-label")).toBe(t.search);
   });
@@ -74,15 +79,13 @@ describe.each(ENABLED_EXPLAIN)("the Home in %s", (e) => {
     expect(doc.querySelectorAll(".hm-read, .hm-theme, .hm-credits, a.hm-page, #hm-themes, #hm-f-read")).toHaveLength(0);
     expect(doc.documentElement.innerHTML).not.toContain("ln-read");
   });
-  test("the More menu holds Languages I know with its list, the theme, the credits", async () => {
+  test("the More menu holds the theme and the credits", async () => {
     const doc = await home(e);
     const items = [...doc.querySelectorAll('#hm-more [data-panel="main"] > .ix-item')];
-    expect(items.map((i) => i.querySelector(".ix-title")?.textContent)).toEqual([t.languagesIKnow, t.theme, say("credits", e)]);
-    expect(items[0]?.getAttribute("href")).toBe(pageUrl(e, "languages"));
-    expect(items[0]?.querySelector(".ix-sub [data-langs-list]")).not.toBeNull();
-    expect(items[1]?.getAttribute("data-more")).toBe("theme");
-    expect(items[1]?.querySelector("[data-theme-now]")?.textContent).toBe(t.themeAuto);
-    expect(items[2]?.getAttribute("href")).toBe(creditsUrl(e));
+    expect(items.map((i) => i.querySelector(".ix-title")?.textContent)).toEqual([t.theme, say("credits", e)]);
+    expect(items[0]?.getAttribute("data-more")).toBe("theme");
+    expect(items[0]?.querySelector("[data-theme-now]")?.textContent).toBe(t.themeAuto);
+    expect(items[1]?.getAttribute("href")).toBe(creditsUrl(e));
     const theme = [...doc.querySelectorAll('#hm-more [data-panel="theme"] [data-set-theme]')];
     expect(theme.map((i) => i.getAttribute("data-set-theme"))).toEqual(["auto", "light", "dark"]);
     expect(doc.querySelector('#hm-more [data-panel="theme"] .hm-back')?.getAttribute("data-more")).toBe("main");

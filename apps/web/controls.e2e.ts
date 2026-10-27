@@ -1,8 +1,8 @@
 // A topic page's controls: the Level button opens the level popover headed by the course and names the chosen level; on
 // a wide screen the outline at the reading's top right marks the part in view as the page scrolls and scrolls to the
 // part chosen, and a search puts its results in the topics column; on a small screen the title row holds Back, the bottom
-// bar holds Level, Variety, More and Search and slides away on a scroll down, and a search puts its results in place of
-// the lesson.
+// bar holds Search at the left, then Level and Variety and Languages I know (文A) at the right, and slides away on a
+// scroll down, and a search puts its results in place of the lesson.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -143,10 +143,13 @@ test(
     const title = await box(".tp-head h1");
     expect(Math.abs(up.y + up.height / 2 - (title.y + title.height / 2))).toBeLessThan(30);
     expect(up.x + up.width).toBeLessThanOrEqual(title.x);
-    const [group, search] = await Promise.all([box(".cl-bar"), box("#ix-search")]);
-    expect(group.x + group.width).toBeLessThanOrEqual(search.x);
-    expect(Math.round(search.x + search.width)).toBe(390 - 16);
-    expect(await page.locator(".cl-bar .ix-btn, .cl-bar .hm-more").filter({ visible: true }).count()).toBe(3);
+    const [search, group, langs] = await Promise.all([box("#ix-search"), box(".cl-bar"), box(".cl-langs")]);
+    expect([Math.round(search.x), Math.round(langs.x - (group.x + group.width)), Math.round(langs.x + langs.width)]).toEqual([
+      16,
+      12,
+      390 - 16,
+    ]);
+    expect(await page.locator(".cl-bar .ix-btn, .cl-bar .hm-langs").filter({ visible: true }).count()).toBe(2);
     expect(await page.locator(".cl-side .cl-head").isVisible()).toBe(false);
   },
   SLOW,

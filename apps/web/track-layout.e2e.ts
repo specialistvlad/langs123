@@ -1,9 +1,10 @@
 // A course index's layout in a browser. From 1024px a course is two columns: the topics column (248 wide from 1024,
 // 320 from 1280) holds the toolbar line (Home, Level and Group as icon buttons), the course's title on its own line, "66
 // topics · Explained in: English ›", the field and the topics; the reading's placeholder fills the rest, with Variety
-// and More at its top right. While the field searches the head gives way (Home beside the title) and the bar gains Level
-// and Group. A phone: the Home button, the title and the count share the title row, the line under it; the bar at the
-// bottom holds the buttons and the Search button at its right end, which opens the field; Group by opens from either.
+// and Languages I know (文A) at its top right. While the field searches the head gives way (Home beside the title) and
+// the bar gains Level and Group. A phone: the Home button, the title and the count share the title row, the line under
+// it; the bar at the bottom holds the Search button at its left end, which opens the field, then the buttons and 文A on
+// its own at its right end; Group by opens from either, above its button at the right.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Locator, Page } from "playwright";
@@ -69,12 +70,13 @@ test(
       expect(await visible("#ix-search")).toBe(false);
       expect(await visible(".cl-count")).toBe(false);
       expect(await visible(".cl-choose")).toBe(true);
-      // Variety and More sit at the window's top right; Level and Group are in the head.
+      // Variety and 文A sit at the window's top right; Level and Group are in the head.
       const bar = await box(".cl-bar");
       expect(Math.round(bar.right)).toBe(width - 20);
       expect(bar.y).toBe(20);
       expect(await visible(".cl-bar .ix-variety")).toBe(true);
-      expect(await visible(".cl-bar .hm-more")).toBe(true);
+      expect(await visible(".cl-bar .hm-langs")).toBe(true);
+      expect(await visible(".cl-langs")).toBe(false);
       expect(await visible(".cl-bar .ix-level, .cl-bar .ix-group")).toBe(false);
     }
   },
@@ -116,15 +118,16 @@ test(
 );
 
 test(
-  "on a phone the bar holds the buttons at the left and a round Search button at the right end, which opens the field and Close closes it",
+  "on a phone the bar holds a round Search button at the left end, which opens the field and Close closes it, then the buttons and 文A at the right",
   async () => {
     await open(402, COURSE, 874);
     expect(await visible("#hm-form")).toBe(false);
     const group = await box(".cl-bar");
     const button = await box("#ix-search");
-    expect(Math.round(group.x)).toBe(16);
-    expect(await page.locator(".cl-bar .ix-btn, .cl-bar .hm-more").filter({ visible: true }).count()).toBe(4);
-    expect([Math.round(button.right), Math.round(button.right - button.x), Math.round(button.bottom - button.y)]).toEqual([386, 52, 48]);
+    const langs = await box(".cl-langs");
+    expect([Math.round(langs.x - group.right), Math.round(langs.right)]).toEqual([12, 386]);
+    expect(await page.locator(".cl-bar .ix-btn, .cl-bar .hm-langs").filter({ visible: true }).count()).toBe(3);
+    expect([Math.round(button.x), Math.round(button.right - button.x), Math.round(button.bottom - button.y)]).toEqual([16, 52, 48]);
     await page.click("#ix-search");
     expect(await visible("#hm-form")).toBe(true);
     expect(await page.evaluate(() => document.activeElement?.id)).toBe("hm-q");
@@ -164,9 +167,31 @@ test(
       expect(middle(close)).toBe(middle(field));
       expect(field.right).toBeLessThan(close.x);
       expect(chip.y).toBeGreaterThan(field.bottom);
-      expect(await page.locator(".cl-bar .ix-btn, .cl-bar .hm-more").filter({ visible: true }).count()).toBe(4);
+      expect(await page.locator(".cl-bar .ix-btn, .cl-bar .hm-langs").filter({ visible: true }).count()).toBe(4);
       expect(await visible("#hm-cards")).toBe(false);
     }
+  },
+  SLOW,
+);
+
+test(
+  "on a phone Group by and Variety open above their buttons, 16 from the right edge, and 文A opens the course's Explanation language sheet",
+  async () => {
+    await open(402, COURSE, 874);
+    const bar = await box(".cl-bar");
+    for (const [button, menu] of [
+      [".cl-bar .ix-group", "#ix-groups"],
+      [".cl-bar .ix-variety", "#ix-varieties"],
+    ] as const) {
+      await page.click(button);
+      const opened = await box(menu);
+      expect([opened.bottom < bar.y, Math.round(opened.right)]).toEqual([true, 386]);
+      await page.keyboard.press("Escape");
+    }
+    await page.click(".cl-langs");
+    const sheet = page.locator("dialog.xl-sheet");
+    await sheet.waitFor({ state: "visible" });
+    expect(await sheet.locator(".xl-edit").getAttribute("href")).toBe("/languages/");
   },
   SLOW,
 );
