@@ -10,6 +10,7 @@ import { writeSite } from "./output.ts";
 import { brandPages, checkBrandPages } from "./pages/brand-pages.ts";
 import { creditsPage } from "./pages/credits.ts";
 import { homePage } from "./pages/home.ts";
+import { languagesPage } from "./pages/languages.ts";
 import { notFoundPage } from "./pages/notfound.ts";
 import { topicPages } from "./pages/topic.ts";
 import type { LinkFn } from "./html.ts";
@@ -56,6 +57,7 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
   homePage(ctx);
   creditsPage(ctx);
   brandPages(ctx);
+  languagesPage(ctx);
   for (const lang of ctx.languages) {
     const langRefs = refs.filter((r) => r.lang === lang.code);
     const written = langRefs.filter((r) => r.topic);

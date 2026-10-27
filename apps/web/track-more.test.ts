@@ -52,7 +52,7 @@ test("the level filter shows a row at the levels it names and drops the separato
 });
 
 test("a category keeps its card at every level and ends with the Show more rows of its hidden topics", () => {
-  const sections = [...dom(byCategory(track, {})).querySelectorAll("section.ix-sec")];
+  const sections = [...dom(byCategory(track)).querySelectorAll("section.ix-sec")];
   expect(sections.length).toBeGreaterThan(0);
   for (const section of sections) {
     expect(section.hasAttribute("data-level")).toBe(false);
@@ -64,7 +64,7 @@ test("a category keeps its card at every level and ends with the Show more rows 
 });
 
 test("the study path ends with one card of Show more rows for the whole list, counting topics by their lowest level", () => {
-  const doc = dom(byLevel(track, {}));
+  const doc = dom(byLevel(track));
   const ids = new Set(track.path.flatMap((s) => s.steps.map((x) => x.ref.id)));
   const lows = [...ids].flatMap((id) => lowOf(id) ?? []);
   const rows = [...doc.querySelectorAll(".ix-sec-more li.ix-more")];
@@ -77,10 +77,47 @@ test("a topic not written yet is not listed, and a section with none written is 
   const written = langRefs.find((r) => r.topic !== null);
   if (written === undefined) throw new Error("the curriculum has no written topic");
   const planned = { ...written, topic: null, entry: { ...written.entry, levels: "A1-B1" } };
-  const entries = {};
-  expect(byCategory({ ...track, langRefs: [planned] }, entries)).toBe("");
-  expect(entries).toEqual({});
-  const html = byCategory({ ...track, langRefs: [planned, written] }, entries);
+  expect(byCategory({ ...track, langRefs: [planned] })).toBe("");
+  const html = byCategory({ ...track, langRefs: [planned, written] });
   expect(dom(html).querySelectorAll("li:not(.ix-more)").length).toBe(1);
-  expect(Object.keys(entries)).toEqual([written.id]);
+});
+
+test("a heading ends with the count of its topics, a category's count following the chosen level", () => {
+  for (const section of dom(byCategory(track)).querySelectorAll("section.ix-sec")) {
+    const n = section.querySelector("h2 > .ix-sec-n");
+    const texts = JSON.parse(n?.getAttribute("data-counts") ?? "{}") as Record<string, string>;
+    const lows = [...section.querySelectorAll("li[data-level]")].map((li) => li.getAttribute("data-level") ?? "");
+    expect(Object.keys(texts)).toEqual([...LEVELS]);
+    for (const level of LEVELS) {
+      const shown = lows.filter((low) => LEVELS.indexOf(low as Level) <= LEVELS.indexOf(level)).length;
+      expect(texts[level]).toBe(count("topics", "en", shown));
+    }
+    expect(texts[LEVELS.at(-1) ?? ""]).toBe(n?.textContent ?? "");
+    expect(section.querySelector("h2")?.lastElementChild).toBe(n ?? null);
+  }
+  for (const section of dom(byLevel(track)).querySelectorAll("section.ix-sec")) {
+    expect(section.querySelector("h2")?.lastElementChild?.textContent).toBe(count("topics", "en", section.querySelectorAll("li").length));
+  }
+});
+
+test("a topic's row is its title and a chevron with no level mark, the Languages client's tag and the languages it is written in", () => {
+  const rows = [...dom(byCategory(track)).querySelectorAll("li:not(.ix-more)")];
+  expect(rows.length).toBeGreaterThan(0);
+  for (const row of rows) {
+    expect(row.querySelector(".lvm")).toBeNull();
+    expect(row.querySelector("a.ix-cover > .ix-name")?.textContent).not.toBe("");
+    expect(row.querySelector("[data-xl-tag][hidden] + svg.ix-chev")).not.toBeNull();
+    expect(row.getAttribute("data-topic-explains")).not.toBe("");
+  }
+});
+
+test("the topic the page shows is marked in both groupings, each step it is on the study path included", () => {
+  const written = langRefs.filter((r) => r.topic !== null);
+  const shown = written[0];
+  if (shown === undefined) throw new Error("the curriculum has no written topic");
+  const marked = (html: string): number => dom(html).querySelectorAll('li[data-current] > .ix-row > a[aria-current="true"]').length;
+  expect(marked(byCategory(track, shown))).toBe(1);
+  expect(marked(byCategory(track))).toBe(0);
+  const steps = track.path.flatMap((s) => s.steps).filter((s) => s.ref === shown).length;
+  expect(marked(byLevel(track, shown))).toBe(steps);
 });

@@ -1,7 +1,6 @@
-// The Home's toolbar (pages/home.ts): the search lists the topics of every course that match, in two columns where
-// two of at least 320px fit; the filters under the field narrow them (client-search-filters.ts); Close, Escape and the
-// clear button end or empty it; a course index's phone Search button opens the field; the Read in menu closes on a
-// tap outside it; on phones the toolbar rises above the on-screen keyboard (--hm-kb, home-phone.css).
+// The Home's toolbar (pages/home.ts): the search lists the topics of every course that match in one card; the filters
+// under the field narrow them (client-search-filters.ts); Close, Escape and the clear button end or empty it; a phone's
+// Search button opens the field; on phones the toolbar rises above the on-screen keyboard (--hm-kb, home-phone.css).
 import {
   el,
   type Result,
@@ -48,16 +47,13 @@ function row({ topic, caption, lead }: Result, scale: string[]): HTMLElement {
   return item;
 }
 
-// Rows in the card or two cards of a list: the first half fills the left card, so the order reads down the left, then
-// down the right.
+// The rows of a list in one card.
 function fill(list: HTMLElement, shown: Result[], scale: string[]): void {
-  const half = Math.ceil(shown.length / 2);
   list.replaceChildren();
-  for (const part of shown.length > 1 ? [shown.slice(0, half), shown.slice(half)] : shown.length > 0 ? [shown] : []) {
-    const rows = el("div", "hm-rows");
-    rows.append(...part.map((result) => row(result, scale)));
-    list.append(rows);
-  }
+  if (shown.length === 0) return;
+  const rows = el("div", "hm-rows");
+  rows.append(...shown.map((result) => row(result, scale)));
+  list.append(rows);
 }
 
 export function homeSearch(): void {
@@ -181,11 +177,6 @@ export function homeSearch(): void {
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && root.classList.contains("hm-searching")) stop();
-  });
-  document.addEventListener("click", (event) => {
-    document.querySelectorAll<HTMLDetailsElement>(".hm-read[open]").forEach((read) => {
-      if (event.target instanceof Node && !read.contains(event.target)) read.open = false;
-    });
   });
   // The toolbar rises above the on-screen keyboard.
   const view = window.visualViewport;

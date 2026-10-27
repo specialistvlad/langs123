@@ -1,6 +1,12 @@
-/* The page: the lesson in the split's right pane (topic-wide.css), a head over its sections */
+/* The page: the lesson (the reading) in the course's right column (topic-wide.css), a head over its sections */
 :where(html[data-page="topic"]) .tp-wrap {
   display: block;
+}
+:where(html[data-page="topic"]) .tp-col {
+  min-width: 0;
+}
+:where(html[data-page="topic"]) .tp-outline {
+  display: none;
 }
 :where(html[data-page="topic"]) .tp-head {
   min-width: 0;
@@ -14,13 +20,9 @@
 }
 :where(html[data-page="topic"]) .tp-head .title-row {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 12px;
   margin: 0;
-}
-:where(html[data-page="topic"]) .tp-head .page-icon {
-  font-size: 28px;
-  line-height: 1.2;
 }
 :where(html[data-page="topic"]) .tp-head h1 {
   margin: 0;

@@ -1,5 +1,5 @@
-/* A track index's up link, toolbar buttons and menus (pages/track.ts, track-parts.ts) */
-/* The up link: a glass circle starting the title row (track.css) */
+/* A course's up link, toolbar buttons and menus (course-column.ts, track-parts.ts) */
+/* The up link: a glass circle starting the head (track.css) */
 .ix-up {
   flex-shrink: 0;
   display: flex;
@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-/* Menus: glass, radius 26, grown from the toolbar (below it above 860px) */
+/* Menus: glass, radius 22, grown from the toolbar (below it from 1024px) */
 .ix-menu {
   position: fixed;
   inset: auto;
@@ -140,11 +140,39 @@
   opacity: 0.55;
 }
 
-/* Wide and short, an unfolded phone held horizontally: menus open beside the vertical bar */
-@media (min-width: 900px) and (max-height: 800px) and (orientation: landscape) {
-  .ix-menu {
-    top: 20px;
-    right: 84px;
-    max-height: calc(100vh - 40px);
-  }
+/* Group by: a heading and the two groupings, under the head's toolbar line (at the bar's right while the field searches) */
+.ix-menu-group {
+  top: 72px;
+  right: auto;
+  left: 20px;
+  width: 240px;
+  padding: 4px 0;
+}
+html.hm-searching .ix-menu-group {
+  right: 20px;
+  left: auto;
+}
+.ix-menu-h {
+  margin: 10px 16px 4px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ix-menu-group .ix-item {
+  min-height: 48px;
+}
+.ix-menu-group .ix-tick {
+  color: var(--accent);
+}
+.ix-btn[aria-expanded="true"] {
+  background: var(--hm-fill);
+}
+.ix-menu-group .ix-menu-h + .ix-item::before {
+  display: none;
+}
+.ix-menu-group .ix-item + .ix-item::before {
+  left: 42px;
 }

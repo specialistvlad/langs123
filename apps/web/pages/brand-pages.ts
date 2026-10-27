@@ -12,7 +12,7 @@ const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 // The build refuses an address that is not a lowercase segment, is the credits' or repeats, before it builds a page.
 export function checkBrandPages(pages: BrandPage[] = []): void {
-  const taken = new Set(["credits"]);
+  const taken = new Set(["credits", "languages"]);
   for (const { slug } of pages) {
     if (!SLUG.test(slug) || taken.has(slug)) throw new Error(`brand page "${slug}" is not a free address segment`);
     taken.add(slug);

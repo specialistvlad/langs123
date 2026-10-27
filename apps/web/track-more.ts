@@ -39,6 +39,15 @@ export const moreRows = (lows: readonly Level[], explain: Explain): string =>
     )
     .join("");
 
+// The topic count at each chosen level, as a list's heading says it: a topic counts from its lowest level up
+// (`lows`), and a topic with no level counts at every one. The count's text per level is client-chips.ts's to pick
+// (data-counts).
+export function countsByLevel(lows: readonly (Level | null)[], explain: Explain): string {
+  return JSON.stringify(
+    Object.fromEntries(LEVELS.map((level) => [level, count("topics", explain, lows.filter((low) => lv(low) <= lv(level)).length)])),
+  );
+}
+
 // What shows at each chosen level: its Show more row (and, on the study path, the card holding it), and the
 // separator over a row the hidden rows before it leave first.
 export function moreCss(): string[] {

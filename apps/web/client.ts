@@ -1,13 +1,12 @@
-// Progressive enhancement for the static pages: level filter, variety, order, the level and variety labels, the frame pages' parts, hiding bars, study-path step, theme, on-this-page highlight, study-path links, lanes, live reload.
+// Progressive enhancement for the static pages: level filter, variety, order, the level and variety labels, the frame pages' parts, hiding bars, study-path step, theme, study-path links, lanes, live reload.
 // The build bundles it with its modules into client.js for the browser.
 import { hidingBar } from "./client-bar.ts";
 import { liveReload } from "./client-dev.ts";
 import { framePages } from "./client-frame.ts";
 import { markChips } from "./client-chips.ts";
 import { levelPopover } from "./client-levels.ts";
-import { closePanel, panels } from "./client-panel.ts";
+import { languages } from "./client-languages.ts";
 import { stepLinks, studyStep } from "./client-path.ts";
-import { splitView } from "./client-split.ts";
 import { themeMenu } from "./client-theme.ts";
 import { store } from "./client-store.ts";
 import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
@@ -30,22 +29,18 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
 
   const step = studyStep(root);
   stepLinks();
-  panels();
   framePages();
   levelPopover(root);
   hidingBar();
 
   themeMenu(root);
-  splitView();
+  languages();
 
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
     const level = target.closest<HTMLElement>("[data-set-level]")?.dataset["setLevel"];
-    if (level !== undefined) {
-      choose("level", level);
-      closePanel(target);
-    }
+    if (level !== undefined) choose("level", level);
     const order = target.closest<HTMLElement>("[data-set-order]")?.dataset["setOrder"];
     if (order !== undefined) choose("order", order);
     const variety = target.closest<HTMLElement>("[data-set-variety]")?.dataset["setVariety"];
@@ -53,7 +48,6 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
       chooseVariety(root, variety);
       showState();
       refresh();
-      closePanel(target);
     }
   });
 
@@ -83,14 +77,7 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
     mark();
     step();
     lanes();
-    spy();
   }
-  // What the split view puts in its right pane follows the page's state: the level and the variety on it, the order
-  // switch's pressed button.
-  document.addEventListener("sp:shown", () => {
-    root.setAttribute("data-order", root.dataset["order"] ?? "categories");
-    refresh();
-  });
 
   // The address wins over the stored choices, also where storage is off.
   const params = new URL(location.href).searchParams;
@@ -104,38 +91,6 @@ import { askedVariety, chooseVariety, markVariety } from "./client-variety.ts";
   showState();
   mark();
   step();
-
-  // On this page: highlights the section being read, the lowest section top above 30% of the window
-  // (or the first section on screen before any reaches that line).
-  const tocLinks = [...document.querySelectorAll<HTMLAnchorElement>(".toc a[href^='#']")];
-  const tocParts = tocLinks.map((a) => document.getElementById(decodeURIComponent(a.hash.slice(1))));
-  let spyFrame = 0;
-  function spy(): void {
-    spyFrame = 0;
-    const line = innerHeight * 0.3;
-    let current = -1;
-    let currentTop = -Infinity;
-    let first = -1;
-    let firstTop = Infinity;
-    tocParts.forEach((part, i) => {
-      if (part === null || part.offsetHeight === 0) return;
-      const top = part.getBoundingClientRect().top;
-      if (top <= line && top > currentTop) [current, currentTop] = [i, top];
-      if (top < firstTop) [first, firstTop] = [i, top];
-    });
-    if (current < 0) current = first;
-    tocLinks.forEach((a, i) => {
-      a.classList.toggle("on", i === current);
-    });
-  }
-  const scheduleSpy = (): void => {
-    if (spyFrame === 0) spyFrame = requestAnimationFrame(spy);
-  };
-  if (tocLinks.length > 0) {
-    addEventListener("scroll", scheduleSpy, { passive: true });
-    addEventListener("resize", scheduleSpy);
-    spy();
-  }
 
   // Lanes without grid-lanes: CSS sets the column count, this places each visible block, in order,
   // at the top of the shortest column on a grid of 4px rows.

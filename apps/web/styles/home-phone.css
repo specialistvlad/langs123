@@ -1,73 +1,99 @@
-/* The Home on phones, on an unfolded phone held horizontally, and with reduced motion */
-/* Phones: the toolbar floats at the bottom and rises with the keyboard (home.js sets --hm-kb) */
-@media (max-width: 860px) {
-  .hm-main {
-    padding: 16px 20px 120px;
+/* The Home on phones and tablets narrower than 1024px (pages/home.ts): the brand heads the page and the bar floats at
+   the bottom, More at the left and Search at the right, the field and Close taking the bar while searching, over a
+   fade of the page's colour; a query takes the brand off the page and the filters lead it */
+@media (max-width: 1023px) {
+  .hm-home {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 16px 20px 130px;
   }
-  .hm-bar {
+  .hm-home .hm-head {
+    display: flex;
+    align-items: center;
+  }
+  .hm-home .hm-brand {
+    margin: 0;
+  }
+  .hm-home .hm-main {
+    padding: 0;
+  }
+  .hm-home .hm-grid {
+    margin-top: 20px;
+  }
+  .hm-home .hm-bar {
     top: auto;
     left: 16px;
     right: 16px;
     bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
+    justify-content: space-between;
   }
-  .hm-search {
-    flex-grow: 1;
+  .hm-home .hm-mid {
+    display: none;
+    flex: 1;
+    min-width: 0;
+    gap: 10px;
+  }
+  .hm-home .hm-search {
+    flex: 1;
     width: auto;
     height: 48px;
   }
-  .hm-group {
+  .hm-home .hm-close {
+    width: 52px;
     height: 48px;
   }
-  .hm-read summary {
-    width: 52px;
-    padding: 0;
+  .hm-home .hm-group {
+    height: 48px;
   }
-  .hm-read summary span {
+  .hm-home .hm-more-menu {
+    right: 16px;
+    left: auto;
+  }
+  .hm-home .ix-search-open {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 48px;
+    padding: 0;
+    border-radius: 999px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  html.hm-searching .hm-home .hm-mid {
+    display: flex;
+  }
+  html.hm-searching .hm-home .hm-group,
+  html.hm-searching .hm-home .ix-search-open {
     display: none;
   }
-  .hm-credits,
-  .hm-page {
-    width: 52px;
-  }
-  .hm-menu {
-    top: auto;
-    bottom: calc(100% + 14px);
-  }
-  .hm-menu.hm-ticks {
-    max-height: calc(100vh - 140px);
-  }
-  .hm-searching .hm-search {
-    width: auto;
-    max-width: none;
-  }
-  .hm-searching .hm-bar {
+  html.hm-searching .hm-home .hm-bar {
     bottom: max(30px, calc(var(--hm-kb, 0px) + 10px));
   }
-  .hm-searching .hm-main {
+  html.hm-searching .hm-home .hm-main {
     padding-bottom: calc(var(--hm-kb, 0px) + 110px);
   }
-  /* With a query the filters lead the page, 20px under its top, and no results sit 72px under them */
-  html.hm-query .hm-main {
-    padding-top: 20px;
+  .hm-home::after {
+    content: "";
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    height: 130px;
+    background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--hm-bg) 85%, transparent) 60%);
+    pointer-events: none;
   }
-  html.hm-query .hm-none {
+  /* A query takes the page's brand off a phone, the filters leading the page; no results sit 72px under them */
+  html.hm-query .hm-home .hm-brand {
+    display: none;
+  }
+  html.hm-query .hm-home .hm-main {
+    padding-top: 0;
+  }
+  html.hm-query .hm-home .hm-none {
     margin-top: 72px;
-  }
-}
-
-/* Wide and short, an unfolded phone held horizontally (1133 × 744): two columns whose gap sits on the
-   fold in the middle, equal margins either side, the results in the same two columns */
-@media (min-width: 900px) and (max-height: 800px) and (orientation: landscape) {
-  .hm-main {
-    max-width: none;
-    padding-inline: 88px;
-  }
-  .hm-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 56px;
-  }
-  .hm-list {
-    column-gap: 56px;
   }
 }
 

@@ -1,5 +1,5 @@
-// More on a phone's Home (toolbar.ts moreMenu): Read in and the theme open their lists in its place and the way back
-// returns to the three; it opens on the three, and its button shows pressed while it is open.
+// The More menu (toolbar.ts moreMenu): the theme opens its list in the menu's place and the way back returns to the
+// main list; it opens on the main list, and its button shows pressed while it is open.
 export function moreMenu(): void {
   const menu = document.getElementById("hm-more");
   const button = document.querySelector<HTMLElement>('[popovertarget="hm-more"]');

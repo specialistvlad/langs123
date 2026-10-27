@@ -18,6 +18,11 @@ afterAll(async () => {
   await page.close();
 });
 const open = (address: string): Promise<unknown> => page.goto(new URL(address, base).href);
+// Chooses a grouping in the Group by menu of the course's head.
+async function chooseOrder(order: string): Promise<void> {
+  await page.locator(".ix-group").filter({ visible: true }).first().click();
+  await page.click(`#ix-groups [data-set-order="${order}"]`);
+}
 
 // What the lists of the order shown hold at the level chosen, measured in the browser: each problem as a sentence.
 function check(order: string, levels: readonly string[]): Promise<string[]> {
@@ -27,8 +32,15 @@ function check(order: string, levels: readonly string[]): Promise<string[]> {
       const root = document.documentElement;
       const rank = (level: string): number => scale.indexOf(level);
       const visible = (el: Element): boolean => el.checkVisibility();
-      const lowest = (li: Element): string => (li.querySelector(".lvm-t")?.textContent ?? "").split("–")[0] ?? "";
       const topic = (li: Element): string => (li.querySelector("a")?.getAttribute("href") ?? "").split("#")[0] ?? "";
+      // A topic's lowest level is its row's in the categories (a step on the study path carries its level's).
+      const startOf = new Map(
+        [...document.querySelectorAll('.ix-flow[data-order="categories"] li[data-level]')].map((li) => [
+          topic(li),
+          li.getAttribute("data-level") ?? "",
+        ]),
+      );
+      const lowest = (li: Element): string => startOf.get(topic(li)) ?? "";
       const lists = [...document.querySelectorAll(`.ix-flow[data-order="${chosen}"] ol.ix-rows`)];
       const topics = (ol: Element): Element[] => [...ol.children].filter((li) => !li.matches(".ix-more"));
       // Expected from the topics that belong to the Show more row of `ols`, hidden above `at`.
@@ -87,7 +99,7 @@ for (const order of ["categories", "path"]) {
     `the lists of the ${order} order show their topics and one Show more row at every level`,
     async () => {
       await open(`/en/english/?level=a0`);
-      await page.click(`.ix-seg [data-set-order="${order}"]`);
+      await chooseOrder(order);
       expect(await check(order, LEVELS)).toEqual([]);
     },
     SLOW,
@@ -98,7 +110,7 @@ test(
   "a tap on Show more sets the level filter to the row's level, and the rows leave when nothing is hidden",
   async () => {
     await open("/en/english/?level=a0");
-    await page.click('.ix-seg [data-set-order="categories"]');
+    await chooseOrder("categories");
     const rows = page.locator(".ix-flow[data-order='categories'] .ix-more:visible");
     let level = await page.evaluate(() => document.documentElement.dataset["level"] ?? "");
     for (let taps = 0; (await rows.count()) > 0; taps++) {

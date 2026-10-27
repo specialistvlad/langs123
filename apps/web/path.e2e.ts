@@ -23,11 +23,12 @@ const shown = (selector: string): Promise<boolean> => page.locator(selector).fir
 // Chooses an order in the course's index.
 async function chooseOrder(order: string): Promise<void> {
   await open("/en/english/");
-  await page.click(`.ix-seg [data-set-order="${order}"]`);
+  await page.locator(".ix-group").filter({ visible: true }).first().click();
+  await page.click(`#ix-groups [data-set-order="${order}"]`);
 }
-// Chooses a level in the popover the tools' Level button opens.
+// Chooses a level in the popover the head's Level button opens.
 async function chooseLevel(code: string): Promise<void> {
-  await page.click('.sp-tools [popovertarget="lv-pop"]');
+  await page.click('.cl-tools [popovertarget="lv-pop"]');
   await page.click(`#lv-pop [data-set-level="${code}"]`);
 }
 // The study path's visible rows, by level.
@@ -96,20 +97,15 @@ test(
   async () => {
     await chooseOrder("path");
     await open("/en/english/?level=b2");
-    // The first step of a topic, below its later steps; on a phone's width a link leads to the page, where a wide screen
-    // opens the topic in the split view's right pane.
-    await page.setViewportSize({ width: 800, height: 1000 });
+    // The first step of a topic, below its later steps.
     await page.click('.ix-flow[data-order="path"] li[data-level="A0"] a[href^="/en/english/verbs/to-be/"]');
     await page.waitForURL(/step=a0/);
-    await page.setViewportSize({ width: 1600, height: 1000 });
     expect(await current()).toBe("A0");
     expect(await next()).toBe("/en/english/sentence-building/word-order/?step=a0");
     // Two steps that open the same section; a filter below the step shows the highest step it leaves.
     await open("/en/english/?level=b2");
-    await page.setViewportSize({ width: 800, height: 1000 });
     await page.click('.ix-flow[data-order="path"] li[data-level="B1"] a[href^="/en/english/verbs/irregular-verbs-table/"]');
     await page.waitForURL(/step=b1/);
-    await page.setViewportSize({ width: 1600, height: 1000 });
     expect(await current()).toBe("B1");
     await chooseLevel("A1");
     expect(await current()).toBe("A1");

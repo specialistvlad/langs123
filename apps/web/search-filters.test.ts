@@ -4,14 +4,12 @@
 import { describe, expect, test } from "bun:test";
 import { parseHTML } from "linkedom";
 import { loadCurriculum } from "../../scripts/lib.ts";
-import { readChoices } from "./context.ts";
 import { searchFilters } from "./search-filters.ts";
 import { ui } from "./ui.ts";
-import { homeUrl } from "./urls.ts";
 
 const { languages } = await loadCurriculum();
 const build = (start?: string): Document => {
-  const html = searchFilters(ui("en"), "en", languages, readChoices("en", homeUrl), start);
+  const html = searchFilters(ui("en"), "en", languages, start);
   return parseHTML(`<main>${html}</main>`).document;
 };
 const course = (d: Document): Element | null => d.querySelector('[data-filter="course"]');
@@ -42,15 +40,15 @@ describe("the course chip", () => {
 });
 
 describe("the chips", () => {
-  test("come in the Home's order: course, level, variety (hidden until its course is chosen), Read in", () => {
+  test("come in the Home's order: course, level, variety (hidden until its course is chosen), and no Read in", () => {
     const chips = [...build("es").querySelectorAll(".hm-fchip")];
-    expect(chips.map((c) => c.getAttribute("data-filter") ?? c.getAttribute("data-variety-course") ?? "read")).toEqual([
+    expect(chips.map((c) => c.getAttribute("data-filter") ?? c.getAttribute("data-variety-course") ?? "")).toEqual([
       "course",
       "level",
       ...languages.filter((l) => (l.varieties ?? []).length > 0).map((l) => l.code),
-      "read",
     ]);
-    expect(chips.filter((c) => c.hasAttribute("hidden"))).toHaveLength(chips.length - 3);
+    expect(chips.filter((c) => c.hasAttribute("hidden"))).toHaveLength(chips.length - 2);
+    expect(build().getElementById("hm-f-read")).toBeNull();
   });
 });
 

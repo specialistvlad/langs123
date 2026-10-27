@@ -1,7 +1,7 @@
-// The parts of a topic page in the frame (pages/topic.ts): the contents, numbered from the summary's 00, Up next and the
-// study path, a line per level the topic is a step of.
+// The parts of a topic page in the frame (pages/topic.ts): the parts' lists, numbered from the summary's 00, Up next and
+// the study path, a line per level the topic is a step of.
 import { topicTitle } from "../../scripts/content.ts";
-import { type Explain, levelName, say, type TopicRef } from "../../scripts/lib.ts";
+import { levelName, say, type TopicRef } from "../../scripts/lib.ts";
 
 import type { Track } from "./context.ts";
 import { glyph } from "./glyphs.ts";
@@ -13,9 +13,6 @@ import { stepLink } from "./path.ts";
 import { placed } from "./sequence.ts";
 
 const sym = (body: string, size = 22, width = 1.9): string => glyph(body, size, width);
-export const LIST = sym(
-  '<path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1" fill="currentColor"/><circle cx="4.5" cy="12" r="1" fill="currentColor"/><circle cx="4.5" cy="18" r="1" fill="currentColor"/>',
-);
 const PREV = sym('<path d="M15 4.5L7.5 12l7.5 7.5"/>', 16);
 const NEXT = sym('<path d="M9 4.5l7.5 7.5L9 19.5"/>', 16);
 export const CHEVRON =
@@ -25,16 +22,25 @@ export const CLOCK =
 
 export const num = (n: number): string => String(n).padStart(2, "0");
 
-// The contents: the summary as 00, then each section numbered, with its level mark and, where `chevron` is set, a
-// chevron at the end of the row (the narrow list shows it).
-export function contents(sections: GuideSection[], ids: string[], explain: Explain, chevron = false): string {
+// The topic's parts, numbered from the summary's 00, as a phone's contents page lists them (a row each with a chevron)
+// and as the outline at the top right of a wide reading lists them (Contents, number and title, the first marked until
+// the reader scrolls: client-topic.ts follows the scroll). Neither carries level marks.
+export function parts(sections: GuideSection[], ids: string[]): { rows: string; outline: string } {
   let n = 0;
-  return sections
-    .map((s, i) => {
-      const label = s.kind === "summary" ? 0 : ++n;
-      return `<li class="guide"${levelAttrs(s.range)}${s.varietyLevels}><a href="#${ids[i] ?? ""}"><span class="tp-n">${num(label)}</span><span class="name">${s.heading}</span>${bars(s.levels, explain)}${chevron ? CHEVRON : ""}</a></li>`;
-    })
+  const numbered = sections.map((s, i) => ({ s, label: num(s.kind === "summary" ? 0 : ++n), href: `#${ids[i] ?? ""}` }));
+  const rows = numbered
+    .map(
+      ({ s, label, href }, i) =>
+        `<li><a href="${href}"${i === 0 ? ' class="on"' : ""}><span class="tp-n">${label}</span><span class="name">${s.heading}</span>${CHEVRON}</a></li>`,
+    )
     .join("");
+  const outline = numbered
+    .map(
+      ({ s, label, href }, i) =>
+        `<a href="${href}"${i === 0 ? ' class="on" aria-current="location"' : ""}><b>${label}</b><span>${s.heading}</span></a>`,
+    )
+    .join("");
+  return { rows, outline };
 }
 
 // Up next: the next page, or the first to start over, with its range and first sentence.

@@ -1,7 +1,8 @@
-// The Home's menus in a browser. On a phone Read in stays and More takes the theme's and the credits' place: More's
-// menu names the two, the theme opens its list in its place under a way back, and a theme chosen closes it, which
-// opens again naming the theme chosen. Read in ticks the language read in. Wide screens keep the theme and the
-// credits in the split view's panes. A query hides the page's header; an empty search keeps it.
+// The Home's toolbar in a browser. A phone has the brand over the cards and a bottom bar: More at the left, Search at
+// the right, which opens the field across the bar with Close; More's menu names Languages I know, the theme (whose
+// list opens in its place under a way back, a theme chosen closing the menu, which opens again naming the theme
+// chosen) and the credits. From 1024px one More sits at the top right and its menu opens under it; the search field is
+// in the header line, centred up to 520 wide. A query takes the brand off a phone; an empty search keeps it.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Page } from "playwright";
@@ -18,17 +19,44 @@ afterAll(async () => {
 });
 
 const visible = (selector: string): Promise<boolean> => page.locator(selector).first().isVisible();
+const box = async (target: Page, selector: string): Promise<{ x: number; y: number; width: number; height: number }> => {
+  const found = await target.locator(selector).first().boundingBox();
+  if (found === null) throw new Error(`${selector} has no box`);
+  return found;
+};
 
 test(
-  "on a phone Read in stays beside More, whose menu holds the theme and the credits",
+  "on a phone More is at the left of the bottom bar and Search at the right, with no Read in, theme or credits button",
   async () => {
     await page.goto(new URL("/", base).href);
-    expect(
-      await Promise.all([".hm-folds .hm-read summary", ".hm-more", ".hm-folds .hm-theme", ".hm-folds .hm-credits"].map(visible)),
-    ).toEqual([true, true, false, false]);
+    expect(await Promise.all([".hm-more", ".ix-search-open", "#hm-form", ".hm-read", ".hm-theme", ".hm-credits"].map(visible))).toEqual([
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+    ]);
+    const [more, search] = [await box(page, ".hm-more"), await box(page, ".ix-search-open")];
+    expect([more.x < 40, search.x + search.width > 402 - 40, Math.abs(more.y - search.y) < 4]).toEqual([true, true, true]);
+    expect(await page.locator(".hm-more").count()).toBe(1);
+  },
+  SLOW,
+);
+
+test(
+  "More's menu holds Languages I know, the theme and the credits; the theme opens its list in the menu's place",
+  async () => {
+    await page.goto(new URL("/", base).href);
     await page.locator(".hm-more").click();
     await page.waitForSelector('.hm-more[aria-expanded="true"]');
-    expect(await page.locator('#hm-more [data-panel="main"] .ix-title').allTextContents()).toEqual(["Theme", "Credits"]);
+    expect(await page.locator('#hm-more [data-panel="main"] .ix-title').allTextContents()).toEqual([
+      "Languages I know",
+      "Theme",
+      "Credits",
+    ]);
+    expect(await page.locator('#hm-more [data-panel="main"] a.ix-item').first().getAttribute("href")).toBe("/languages/");
+    expect(await page.locator("#hm-more [data-langs-list]").count()).toBe(1);
     await page.locator('#hm-more [data-more="theme"]').click();
     expect([await visible('#hm-more [data-panel="main"]'), await visible('#hm-more [data-panel="theme"]')]).toEqual([false, true]);
     await page.locator('#hm-more [data-panel="theme"] .hm-back').click();
@@ -46,44 +74,60 @@ test(
 );
 
 test(
-  "Read in ticks the language read in, alone",
+  "Search opens the field across the bar with Close; a query takes the brand off the page, an empty search keeps it",
   async () => {
     await page.goto(new URL("/", base).href);
-    await page.locator(".hm-folds .hm-read summary").click();
-    const ticked = page.locator('.hm-folds .hm-read .hm-ticks [aria-checked="true"]');
-    expect([await ticked.count(), await ticked.getAttribute("hreflang"), await ticked.locator(".ix-tick").isVisible()]).toEqual([
-      1,
-      "en",
-      true,
-    ]);
-  },
-  SLOW,
-);
-
-test(
-  "a query hides the page's header, an empty search keeps it",
-  async () => {
-    await page.goto(new URL("/", base).href);
-    await page.locator("#hm-q").focus();
-    expect(await visible(".hm-title")).toBe(true);
+    await page.locator(".ix-search-open").click();
+    expect(await Promise.all(["#hm-form", "#hm-close", ".hm-more", ".ix-search-open"].map(visible))).toEqual([true, true, false, false]);
+    expect(await visible(".hm-brand")).toBe(true);
     await page.locator("#hm-q").fill("past");
     await page.locator(".hm-row").first().waitFor();
-    expect([await visible(".hm-brand"), await visible(".hm-title")]).toEqual([false, false]);
+    expect(await visible(".hm-brand")).toBe(false);
     await page.locator("#hm-q").fill("");
-    expect(await visible(".hm-title")).toBe(true);
+    expect(await visible(".hm-brand")).toBe(true);
+    await page.locator("#hm-close").click();
+    expect(await Promise.all(["#hm-form", ".hm-more", ".ix-search-open"].map(visible))).toEqual([false, true, true]);
   },
   SLOW,
 );
 
 test(
-  "a wide screen keeps the theme and the credits beside Read in in the right pane, without More",
+  "from 1024px the header holds the brand, the field centred up to 520 and the one More at the top right, its menu under it",
   async () => {
-    const wide = await browser.newPage({ viewport: { width: 1032, height: 900 } });
+    const wide = await browser.newPage({ viewport: { width: 1440, height: 900 } });
     await wide.goto(new URL("/", base).href);
-    const shown = (selector: string): Promise<boolean> => wide.locator(selector).first().isVisible();
+    const [brand, field, more] = [await box(wide, ".hm-brand"), await box(wide, "#hm-form"), await box(wide, ".hm-more")];
+    expect([brand.x < field.x, Math.round(field.width), more.x > 1440 - 90, more.y < 40, await wide.locator(".hm-more").count()]).toEqual([
+      true,
+      520,
+      true,
+      true,
+      1,
+    ]);
     expect(
-      await Promise.all([".sp-tools .hm-read", ".sp-tools .hm-theme", ".sp-tools .hm-credits", ".hm-more", ".hm-folds"].map(shown)),
-    ).toEqual([true, true, true, false, false]);
+      await Promise.all([".hm-read", ".hm-theme", ".hm-credits", ".ix-search-open"].map((s) => wide.locator(s).first().isVisible())),
+    ).toEqual([false, false, false, false]);
+    await wide.locator(".hm-more").click();
+    const menu = await box(wide, "#hm-more");
+    expect([menu.y > more.y + more.height, Math.abs(menu.x + menu.width - (more.x + more.width)) < 12]).toEqual([true, true]);
+    await wide.close();
+  },
+  SLOW,
+);
+
+test(
+  "the cards stand in two columns from 1024px and three from 1280px, and a card opens its course",
+  async () => {
+    const wide = await browser.newPage({ viewport: { width: 1100, height: 800 } });
+    await wide.goto(new URL("/", base).href);
+    const columns = (): Promise<number> =>
+      wide.evaluate(() => getComputedStyle(document.querySelector("#hm-cards") ?? document.body).gridTemplateColumns.split(" ").length);
+    expect(await columns()).toBe(2);
+    await wide.setViewportSize({ width: 1440, height: 900 });
+    expect(await columns()).toBe(3);
+    const href = await wide.locator(".hm-course-a").first().getAttribute("href");
+    await wide.locator(".hm-card").first().locator(".hm-name").click();
+    await wide.waitForURL((url) => url.pathname === href);
     await wide.close();
   },
   SLOW,

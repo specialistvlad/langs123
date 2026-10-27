@@ -6,7 +6,7 @@ import { parseHTML } from "linkedom";
 import { ENABLED_EXPLAIN, ROOT } from "../../scripts/lib.ts";
 import { build } from "./build.ts";
 import { SAMPLE } from "./sample.ts";
-import { pageUrl } from "./urls.ts";
+import { creditsUrl, pageUrl } from "./urls.ts";
 
 const out = join(ROOT, "build", "test", "brand-pages");
 const options = (pages: { slug: string }[]): Parameters<typeof build>[0] => ({
@@ -48,30 +48,22 @@ test("a page appears in every explanation language at the credits' kind of addre
 test("a page without a description uses its title, and every page is in the facts and the sitemap", async () => {
   const doc = await read("data-use");
   expect(doc.querySelector('meta[name="description"]')?.getAttribute("content")).toBe("Title 1 en");
-  const own = facts.filter((f) => f.kind === "page");
+  const own = facts.filter((f) => f.kind === "page" && !f.path.includes("/languages/"));
   expect(own.map((f) => f.path)).toEqual(["terms", "data-use"].flatMap((slug) => ENABLED_EXPLAIN.map((e) => pageUrl(e, slug))));
   expect(own.every((f) => f.sitemap && f.alternates.length === ENABLED_EXPLAIN.length + 1)).toBe(true);
 });
 
-test("a page with a menu entry follows the credits in the toolbar, the title row, the right pane's tools and the phone's More menu", async () => {
+test("a page with a menu entry follows the credits in the Home's More menu, and a page without one is left out; the pages themselves carry no toolbar", async () => {
   for (const [i, e] of ENABLED_EXPLAIN.entries()) {
     const home = await read(i === 0 ? "" : e);
     const url = pageUrl(e, "terms");
-    const links = [...home.querySelectorAll("a.hm-page")];
-    expect(links).toHaveLength(3);
-    for (const link of links) {
-      expect(link.getAttribute("href")).toBe(url);
-      expect(link.getAttribute("aria-label")).toBe(`Title 0 ${e}`);
-      expect(link.getAttribute("title")).toBe(`Title 0 ${e}`);
-      expect(link.querySelector("svg path")).not.toBeNull();
-      expect(link.previousElementSibling?.classList.contains("hm-credits")).toBe(true);
-    }
-    const more = home.querySelectorAll("#hm-more [data-panel=main] a.ix-item");
-    expect([...more].map((a) => a.getAttribute("href")?.endsWith("credits/"))).toEqual([true, false]);
-    expect(more[1]?.querySelector(".ix-title")?.textContent).toBe(`Title 0 ${e}`);
-    expect(more[1]?.getAttribute("href")).toBe(url);
+    const more = [...home.querySelectorAll("#hm-more [data-panel=main] a.ix-item")];
+    expect(more.map((a) => a.getAttribute("href"))).toEqual([pageUrl(e, "languages"), creditsUrl(e), url]);
+    expect(more[2]?.querySelector(".ix-title")?.textContent).toBe(`Title 0 ${e}`);
+    expect(more[2]?.querySelector(".ix-end svg path")).not.toBeNull();
+    expect(home.querySelectorAll("a.hm-page, .hm-credits")).toHaveLength(0);
   }
-  expect((await read("data-use")).querySelector("a.hm-page")).toBeNull();
+  expect((await read("data-use")).getElementById("hm-more")).toBeNull();
 });
 
 const refusal = (pages: { slug: string }[]): Promise<string> =>
@@ -81,6 +73,6 @@ const refusal = (pages: { slug: string }[]): Promise<string> =>
   );
 
 test("an address that is not a lowercase segment, is the credits' or repeats is refused", async () => {
-  for (const slug of ["Terms", "a/b", "credits"]) expect(await refusal([{ slug }])).toContain(`"${slug}"`);
+  for (const slug of ["Terms", "a/b", "credits", "languages"]) expect(await refusal([{ slug }])).toContain(`"${slug}"`);
   expect(await refusal([{ slug: "terms" }, { slug: "terms" }])).toContain('"terms"');
 });

@@ -1,6 +1,6 @@
 // The page shell: the head, the page's own body drawn in the frame (frame.css), and the script that runs before first paint.
 import { type Explain, LEVELS, type Variety } from "../../scripts/lib.ts";
-import type { Choice, HeadChange, PageFacts } from "./context.ts";
+import type { HeadChange, PageFacts } from "./context.ts";
 import { escapeHtml } from "./html.ts";
 
 export type PageKind = "home" | "track" | "topic" | "credits" | "page" | "404";
@@ -17,8 +17,6 @@ export interface PageOptions {
   // The varieties of the language being learned, the default first: the page shows the default's
   // elements until the reader chooses another.
   varieties?: Variety[] | undefined;
-  // The page in each explanation language it is read in.
-  read?: Choice[];
   // The level filter applies to the page.
   level?: boolean;
   // The page's body, drawn edge to edge in the frame of frame.css.

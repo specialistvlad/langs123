@@ -42,8 +42,12 @@ describe("the index", () => {
     expect(LEVELS.slice(0, levels.length)).toEqual(levels as never);
   });
 
-  test("gives both orders a switch", () => {
-    expect(index.querySelectorAll('.ix-seg [data-set-order="categories"], .ix-seg [data-set-order="path"]').length).toBe(2);
+  test("gives both orders a place in the Group by menu", () => {
+    expect([...index.querySelectorAll("#ix-groups [data-set-order]")].map((b) => b.getAttribute("data-set-order"))).toEqual([
+      "categories",
+      "path",
+    ]);
+    expect(index.querySelector(".ix-seg")).toBeNull();
   });
 });
 

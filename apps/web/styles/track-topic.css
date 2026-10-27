@@ -1,118 +1,136 @@
-/* A topic's parts in the right pane (topic-parts.ts): the topic page carries them hidden; the split view's pane shows
-   them: the title with its mark and reading time, the lead, Contents as the rows above with the part's number
-   first, then Up next under the order the reader chose */
-.tpp {
+/* A course's two columns (course-column.ts, pages/track.ts, pages/topic.ts). From 1024px the topics column sticks to the
+   window's left, 248px wide with the compact scale (titles 22, rows 15, the line 13), 320px from 1280px at full size,
+   with its own scroll; the page's reading takes the rest and scrolls with the window. Below 1024px the page is one
+   column: the course index alone, or the topic's reading (track-phone.css, topic-phone.css) */
+.cl-side {
+  --cl-up: 40px;
+  --cl-name: 22px;
+  --cl-name-lh: 28px;
+  --cl-line: 13px;
+  --cl-line-lh: 18px;
+  --cl-h: 17px;
+  --cl-h-lh: 22px;
+  --cl-h-x: 16px;
+  --cl-n: 13px;
+  --cl-pad: 16px;
+  --cl-row: 15px;
+  --cl-row-lh: 20px;
+  --cl-row-ls: -0.3px;
+  box-sizing: border-box;
+}
+.cl-choose {
   display: none;
 }
-.sp-body .tpp {
-  display: block;
+@media (min-width: 1024px) {
+  /* The head and the search stay at the top of the column while the topics scroll under them */
+  .cl-top {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    margin: 0 calc(var(--cl-pad) * -1 + 1px) 0 calc(var(--cl-pad) * -1);
+    padding: var(--cl-pad) calc(var(--cl-pad) - 1px) 14px var(--cl-pad);
+    background: var(--pg-bg);
+  }
+  .cl {
+    display: flex;
+    align-items: flex-start;
+  }
+  .cl-side {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    --cl-chev: 2px;
+    flex: none;
+    width: 248px;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0 var(--cl-pad) 40px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    box-shadow: inset -0.5px 0 0 var(--pg-sep);
+  }
+  .cl-main {
+    flex: 1;
+    min-width: 0;
+  }
+  .cl-side .ix-up {
+    width: var(--cl-up);
+    height: var(--cl-up);
+  }
+  .cl-name {
+    font-size: var(--cl-name);
+    line-height: var(--cl-name-lh);
+  }
+  .cl-line {
+    font-size: var(--cl-line);
+    line-height: var(--cl-line-lh);
+  }
+  .cl-side .ix-h {
+    margin-left: var(--cl-h-x);
+    font-size: var(--cl-h);
+    line-height: var(--cl-h-lh);
+  }
+  .cl-side .ix-sec-n {
+    font-size: var(--cl-n);
+  }
+  .cl-side .ix-row,
+  .cl-side .ix-more-b {
+    padding: 0 var(--cl-row-r, 12px) 0 var(--cl-h-x);
+  }
+  .cl-side .ix-rows li + li::before {
+    left: var(--cl-h-x);
+  }
+  .cl-side .ix-name,
+  .cl-side .ix-more-t {
+    font-size: var(--cl-row);
+    line-height: var(--cl-row-lh);
+    letter-spacing: var(--cl-row-ls);
+  }
+  /* "Choose a topic" fills the reading's window until a topic is chosen */
+  .cl-choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0 40px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .cl-choose-t {
+    margin: 6px 0 0;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .cl-choose-s {
+    margin: 0;
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
-.tpp-title {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  font-size: 28px;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-.tpp-flag {
-  margin-right: 8px;
-}
-.tpp-props {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
-  font-size: 15px;
-  line-height: 22px;
-  color: var(--muted);
-}
-.tpp-props .prop {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-.tpp-props .prop::before {
-  content: "·";
-  margin-right: 4px;
-}
-.tpp-lead {
-  max-width: none;
-  margin: 0;
-  font-size: 17px;
-  line-height: 25px;
-  letter-spacing: -0.43px;
-  color: var(--tp-body);
-}
-.tpp-caps {
-  margin: 20px 0 0;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--tp-caps);
-}
-.tpp-rows {
-  margin: 0;
-}
-.tpp-n {
-  flex-shrink: 0;
-  width: 40px;
-  font:
-    700 17px ui-monospace,
-    Menlo,
-    monospace;
-  letter-spacing: -0.02em;
-  line-height: 22px;
-  padding: 14px 0;
-  color: var(--muted);
-}
-.tpp-link {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  align-items: center;
-  column-gap: 10px;
-  padding: 14px 16px 14px 20px;
-  border-radius: 22px;
-  background: var(--surface);
-  color: var(--text);
-}
-.tpp-link:hover {
-  background: color-mix(in srgb, var(--surface) 94%, var(--text));
-}
-.tpp-link strong {
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 600;
-  letter-spacing: -0.43px;
-}
-.tpp-link .ix-chev {
-  grid-column: 3;
-  grid-row: 1;
-}
-.tpp-link .lvm {
-  grid-column: 2;
-  grid-row: 1;
-}
-.tpp-sum {
-  grid-column: 1 / -1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin: 6px 0 0;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: -0.2px;
-  color: var(--muted);
-}
-.tpp-next .tpp-caps {
-  margin-top: 24px;
-}
-html[data-order="path"] .tpp-next[data-order="categories"],
-html:not([data-order="path"]) .tpp-next[data-order="path"] {
-  display: none;
+@media (min-width: 1280px) {
+  .cl-side {
+    --cl-up: 44px;
+    --cl-name: 28px;
+    --cl-name-lh: 34px;
+    --cl-line: 15px;
+    --cl-line-lh: 20px;
+    --cl-h: 20px;
+    --cl-h-lh: 25px;
+    --cl-h-x: 20px;
+    --cl-n: 15px;
+    --cl-pad: 20px;
+    --cl-chev: 8px;
+    --cl-row: 17px;
+    --cl-row-lh: 22px;
+    --cl-row-ls: -0.43px;
+    --cl-row-r: 16px;
+    width: 320px;
+  }
 }

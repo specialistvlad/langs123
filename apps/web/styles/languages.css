@@ -1,0 +1,177 @@
+/* The Languages I know page (pages/languages.ts) in the credits' column (credits.css): the ranked list, the languages
+   to add and, on the first-run page, Continue. A row holds every control and the list it sits in shows its own. */
+.ml-intro {
+  margin: 0 4px 14px;
+  font-size: 17px;
+  line-height: 24px;
+  color: color-mix(in srgb, var(--text) 85%, var(--pg-bg));
+}
+.ml-mark {
+  display: flex;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.ml-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ml-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px 16px;
+  box-shadow: inset 0 -0.5px 0 var(--pg-sep);
+  background: var(--surface);
+}
+.ml-row:last-child {
+  box-shadow: none;
+}
+.ml-rank {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--pg-fill);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+.ml-rank.ml-1 {
+  background: var(--accent);
+  color: #fff;
+}
+.ml-name {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  text-align: left;
+}
+.ml-name span {
+  font-size: 17px;
+  line-height: 22px;
+}
+.ml-name small {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--muted);
+}
+.ml-grip,
+.ml-remove,
+.ml-add {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+.ml-grip {
+  width: 36px;
+  height: 36px;
+  margin-right: -6px;
+  color: var(--pg-chev);
+  cursor: grab;
+  touch-action: none;
+}
+.ml-remove {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--pg-fill);
+  color: var(--muted);
+}
+.ml-add {
+  order: -1;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #34c759;
+  color: #fff;
+}
+.ml-grip:focus-visible,
+.ml-remove:focus-visible,
+.ml-add:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.ml-ranked .ml-add,
+.ml-others .ml-rank,
+.ml-others .ml-remove,
+.ml-others .ml-grip {
+  display: none;
+}
+.ml-add:disabled,
+.ml-remove:disabled,
+.ml-grip:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.ml-row.ml-lift {
+  z-index: 2;
+  border-radius: 14px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18),
+    0 0 0 0.5px var(--pg-sep);
+  transform: translateY(var(--ml-dy, 0)) scale(1.03);
+}
+.ml-hint {
+  margin: 8px 4px 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--muted);
+}
+.ml-label {
+  margin: 22px 4px 8px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ml-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff !important;
+  font-size: 17px;
+  font-weight: 600;
+}
+.ml-foot {
+  margin-top: 24px;
+}
+/* On a phone Continue rests at the foot of the screen, over a fade of the page's ground */
+@media (max-width: 599px) {
+  .ml-page[data-first] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    box-sizing: border-box;
+  }
+  .ml-foot {
+    position: sticky;
+    bottom: 34px;
+    margin: auto -20px 0;
+    padding: 0 20px;
+  }
+  .ml-foot::before {
+    content: "";
+    position: absolute;
+    inset: -40px 0 -34px;
+    z-index: -1;
+    background: linear-gradient(to bottom, transparent, var(--pg-bg) 60%);
+  }
+}

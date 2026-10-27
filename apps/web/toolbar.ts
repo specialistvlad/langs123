@@ -1,12 +1,12 @@
 // The glass toolbar of the pages in the frame, the Home's and a track index's: the search field with its clear
-// button (client-home.ts), the Read in menu, the theme menu, More on a phone's Home, and Close while searching.
-import type { Choice } from "./context.ts";
-import { CLEAR, CLOSE, glyph, INFO, LANGUAGES, MENU_BACK, MOON, MORE, SEARCH, SUN, THEME } from "./glyphs.ts";
-import { say } from "../../scripts/lib.ts";
+// button (client-home.ts), Close while searching, and More, the one menu that ends every toolbar.
+import { CLEAR, CLOSE, glyph, INFO, LANGUAGES, MENU_BACK, MENU_GLYPHS, MOON, MORE, SEARCH, SUN, THEME } from "./glyphs.ts";
+import { type Explain, say } from "../../scripts/lib.ts";
+import { type Brand, LIBRARY_BRAND } from "./brand.ts";
 import { escapeHtml } from "./html.ts";
-import { readItems } from "./read-menu.ts";
 import { item } from "./track-parts.ts";
 import type { Ui } from "./ui.ts";
+import { creditsUrl, pageUrl } from "./urls.ts";
 
 export const searchForm = (t: Ui): string =>
   `<form class="hm-search glass" id="hm-form" role="search" action="#">${SEARCH}<input type="search" id="hm-q" placeholder="${escapeHtml(t.search)}" aria-label="${escapeHtml(t.search)}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search"><button type="button" class="hm-clear" id="hm-clear" aria-label="${escapeHtml(t.clear)}" hidden>${CLEAR}</button></form>`;
@@ -15,15 +15,6 @@ export const searchForm = (t: Ui): string =>
 // (client-home.ts opens the field; track-bar.css shows it on phones only).
 export const searchButton = (t: Ui): string =>
   `<button type="button" class="ix-search-open glass" id="ix-search" aria-label="${escapeHtml(t.search)}" title="${escapeHtml(t.search)}">${SEARCH}</button>`;
-
-// Read in: the page in each language it is read in, the current one named on the button and ticked in the menu
-// (read-menu.ts). A choice is kept (client-read.ts), so the first Home stays in it.
-export function readMenu(t: Ui, choices: Choice[]): string {
-  const here = choices.find((c) => c.on);
-  const current = escapeHtml(here?.label ?? "");
-  const named = here === undefined ? t.read : say("labelled", here.lang, { label: t.read, value: here.label });
-  return `<details class="hm-read"><summary aria-label="${escapeHtml(named)}" aria-haspopup="menu">${LANGUAGES}<span>${current}</span></summary><div class="hm-menu hm-ticks" role="menu" aria-label="${escapeHtml(t.read)}">${readItems(t, choices)}</div></details>`;
-}
 
 export const closeButton = (t: Ui): string =>
   `<button type="button" class="hm-close glass" id="hm-close" aria-label="${escapeHtml(t.close)}">${CLOSE}</button>`;
@@ -41,46 +32,45 @@ ${filters}
 </div>`;
 const NONE = glyph('<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/>', 44, 1.8, ' class="hm-none-i"');
 
-// The theme: a button that opens its menu, Auto (the system's), Light or Dark (client-theme.ts keeps the choice).
-export const themeButton = (t: Ui): string =>
-  `<button type="button" class="ix-btn hm-theme" popovertarget="hm-themes" aria-haspopup="menu" aria-label="${escapeHtml(t.theme)}" title="${escapeHtml(t.theme)}">${THEME}</button>`;
+// The theme: Auto (the system's), Light or Dark, listed in More in place of its main list (client-theme.ts keeps the
+// choice).
 const themeItems = (t: Ui): string =>
   [
     item('data-set-theme="auto"', t.themeAuto, true, t.themeSystem, `<span class="ix-end">${THEME}</span>`),
     item('data-set-theme="light"', t.themeLight, false, "", `<span class="ix-end">${SUN}</span>`),
     item('data-set-theme="dark"', t.themeDark, false, "", `<span class="ix-end">${MOON}</span>`),
   ].join("");
-export const themeMenu = (t: Ui): string =>
-  `<div class="ix-menu ix-menu-theme" id="hm-themes" popover role="menu" aria-label="${escapeHtml(t.theme)}">${themeItems(t)}</div>`;
-
-// More, on a phone's Home in place of the theme and the credits, beside Read in (home-more.css): a button whose menu
-// names the two, the theme in use under its name; the theme opens its list in its place, under a way back to More
-// (client-more.ts).
+// More: a button ending the toolbar of every page, top right (bottom left on a phone, beside Search), whose menu
+// (client-more.ts) opens under it, upward on a phone: Languages I know first with the reader's languages under it
+// (client-languages.ts fills data-langs-list), then Theme, whose list opens in its place under a way back to More,
+// the theme in use under its name, then Credits and the brand's pages after it.
 export function moreButton(t: Ui): string {
   const more = escapeHtml(t.more);
   return `<button type="button" class="hm-more" popovertarget="hm-more" aria-haspopup="menu" aria-expanded="false" aria-label="${more}" title="${more}">${MORE}</button>`;
 }
-// A page the Home links to beside the credits: its address, its title and the icon it draws.
+// A page the More menu links to beside the credits: its address, its title and the icon it draws.
 export interface MenuLink {
   href: string;
   label: string;
   glyph: string;
 }
-export function moreMenu(t: Ui, credits: { href: string; label: string }, pages: MenuLink[] = []): string {
+// The brand's pages that carry a menu entry, to follow the credits wherever the credits are offered.
+export const menuLinks = (home: Explain, brand: Brand): MenuLink[] =>
+  (brand.pages ?? []).flatMap((p) =>
+    p.menu === undefined ? [] : [{ href: pageUrl(home, p.slug), label: p.title(home), glyph: MENU_GLYPHS[p.menu.glyph] }],
+  );
+export function moreMenu(t: Ui, home: Explain, brand: Brand = LIBRARY_BRAND): string {
   const more = escapeHtml(t.more);
   const text = (title: string, sub: string): string =>
     `<span class="ix-tick" aria-hidden="true"></span><span class="ix-text"><span class="ix-title">${escapeHtml(title)}</span>${sub}</span>`;
-  const sub = (s: string, attrs = ""): string => `<span class="ix-sub"${attrs}>${escapeHtml(s)}</span>`;
-  const open = (panel: string, title: string, under: string, end: string): string =>
-    `<button type="button" role="menuitem" class="ix-item" data-more="${panel}" aria-haspopup="menu">${text(title, under)}<span class="ix-end">${end}</span></button>`;
+  const link = (href: string, title: string, sub: string, end: string): string =>
+    `<a href="${escapeHtml(href)}" role="menuitem" class="ix-item">${text(title, sub)}<span class="ix-end">${end}</span></a>`;
   const back = `<button type="button" class="ix-item hm-back" data-more="main"><span class="ix-tick" aria-hidden="true">${MENU_BACK}</span><span class="ix-text"><span class="ix-title">${more}</span></span></button>`;
   const main = [
-    open("theme", t.theme, sub(t.themeAuto, " data-theme-now"), THEME),
-    `<a href="${credits.href}" role="menuitem" class="ix-item">${text(credits.label, "")}<span class="ix-end">${INFO}</span></a>`,
-    ...pages.map(
-      (p) =>
-        `<a href="${escapeHtml(p.href)}" role="menuitem" class="ix-item">${text(p.label, "")}<span class="ix-end">${p.glyph}</span></a>`,
-    ),
+    link(pageUrl(home, "languages"), t.languagesIKnow, `<span class="ix-sub"><span data-langs-list></span></span>`, LANGUAGES),
+    `<button type="button" role="menuitem" class="ix-item" data-more="theme" aria-haspopup="menu">${text(t.theme, `<span class="ix-sub" data-theme-now>${escapeHtml(t.themeAuto)}</span>`)}<span class="ix-end">${THEME}</span></button>`,
+    link(creditsUrl(home), say("credits", home), "", INFO),
+    ...menuLinks(home, brand).map((p) => link(p.href, p.label, "", p.glyph)),
   ].join("");
   return `<div class="ix-menu hm-more-menu" id="hm-more" popover role="menu" aria-label="${more}"><div data-panel="main">${main}</div><div data-panel="theme" hidden>${back}${themeItems(t)}</div></div>`;
 }

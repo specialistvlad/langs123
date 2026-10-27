@@ -1,45 +1,17 @@
-/* The menus of the toolbars (toolbar.ts): Read in ticks the language read in, 280px wide under its note, scrolling
-   where the screen is short; the theme menu is 260px wide; on a
-   phone More (client-more.ts) takes the theme and the credits' place beside Read in, its menu grown upward from it,
-   260px wide; wide screens keep the theme and the credits */
-.hm-ticks {
-  width: 280px;
-  max-height: calc(100vh - 100px);
-  padding: 4px 0;
-  overflow-y: auto;
-  border-radius: 22px;
-  background: linear-gradient(var(--ix-menu-bg), var(--ix-menu-bg)), var(--surface);
-  -webkit-backdrop-filter: blur(40px) saturate(1.8);
-  backdrop-filter: blur(40px) saturate(1.8);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
-}
-.hm-ticks a.ix-item {
-  min-height: 48px;
-  padding: 8px 16px 8px 12px;
-  border-radius: 0;
-  color: inherit;
-  text-decoration: none;
-}
-.hm-ticks .ix-hint {
-  padding: 12px 16px 8px 42px;
-  line-height: 18px;
-}
-.hm-ticks .ix-hint + .ix-item::before,
-.hm-ticks .ix-item + .ix-item::before {
-  left: 42px;
-}
-.hm-folds .hm-read[open] summary,
+/* The menus of the toolbars (toolbar.ts): More (client-more.ts) holds Languages I know, Theme, Credits and the brand's
+   pages, 260px wide */
 .hm-more[aria-expanded="true"] {
   background: var(--hm-fill);
 }
 .ix-menu-theme {
   width: 260px;
 }
+/* More ends every toolbar: its menu opens under it at the top right, upward from the bottom bar on a phone */
 .hm-more {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
+  width: 50px;
   height: 100%;
   padding: 0;
   border: 0;
@@ -50,10 +22,16 @@
 }
 .hm-more-menu {
   width: 260px;
+  padding: 4px 0;
 }
-.hm-more-menu a.ix-item {
+.hm-more-menu .ix-item {
+  min-height: 48px;
+  padding: 8px 16px 8px 12px;
   color: inherit;
   text-decoration: none;
+}
+.hm-more-menu .ix-item + .ix-item::before {
+  left: 42px;
 }
 .hm-back {
   color: var(--accent);
@@ -61,14 +39,9 @@
 .hm-back .ix-tick {
   visibility: visible;
 }
-@media (max-width: 860px) {
-  .hm-folds .hm-theme,
-  .hm-folds .hm-credits,
-  .hm-folds .hm-page {
-    display: none;
-  }
+@media (max-width: 1023px) {
   .hm-more {
-    display: flex;
+    width: 52px;
   }
   .hm-more-menu {
     top: auto;

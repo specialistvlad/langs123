@@ -1,5 +1,5 @@
-/* The Home (pages/home.ts) in the frame (frame.css): the brand, the heading and a card per language to learn
-   with a chip per explanation language */
+/* The Home (pages/home.ts) in the frame (frame.css): the brand and a card per language to learn: its flag and name,
+   "Up to" with its top level, and the "Explained in" line (xl-line) */
 html[data-frame] {
   --hm-bg: #f2f2f7;
   --hm-fill: rgba(118, 118, 128, 0.12);
@@ -31,8 +31,7 @@ html[data-page="home"] a {
   text-decoration: none;
 }
 
-/* The Home and the course index span the window, 20px from each side, the logo at the left as the toolbar sits at
-   the right */
+/* The Home and the course index span the window, 20px from each side */
 .hm-main {
   padding: 20px 20px 40px;
 }
@@ -50,15 +49,8 @@ html[data-page="home"] a {
   display: block;
   border-radius: 7px;
 }
-.hm-title {
-  margin: 0 0 16px;
-  font-size: 28px;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
 
-/* Courses: a card per language to learn, a chip per explanation language */
+/* Courses: a card per language to learn; its name is a link stretched over the whole card, the "Explained in" line above it */
 .hm-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
@@ -66,6 +58,7 @@ html[data-page="home"] a {
   align-items: start;
 }
 .hm-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -98,49 +91,61 @@ html[data-page="home"] a {
   font-weight: 600;
   letter-spacing: -0.01em;
 }
-.hm-course .lvm,
+.hm-course-a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+}
+.hm-upto {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.hm-pill {
+  --badge-pad: 0 7px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
 .hm-row .lvm {
   flex-shrink: 0;
   margin: 0;
 }
-.hm-label {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
+/* The "Explained in" line (xl-line, languages-lines.css) sits above the card's link */
+.hm-explained {
+  position: relative;
+  z-index: 1;
 }
-.hm-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.hm-course-a:focus-visible {
+  outline: none;
 }
-.hm-chip {
-  padding: 7px 12px;
-  border-radius: 999px;
-  font-size: 15px;
-  background: var(--hm-fill);
+.hm-course-a:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
-.hm-chip:hover {
-  filter: brightness(0.94);
-}
-.hm-chip.here {
-  background: var(--accent);
-  color: var(--hm-on-accent);
-}
-.hm-chip.here:hover {
-  filter: brightness(1.08);
-}
-.hm-course-a:focus-visible,
-.hm-chip:focus-visible,
 .hm-row:focus-visible,
-.hm-credits:focus-visible,
-.hm-page:focus-visible,
-.hm-read summary:focus-visible,
-.hm-menu a:focus-visible,
 .hm-close:focus-visible,
+.hm-more:focus-visible,
 .hm-clear:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+/* Courses none of the reader's languages explains sit under their own heading (client-languages-lines.ts); a search
+   leaves them out */
+.hm-home .xl-other .hm-grid {
+  margin-top: 0;
+}
+html.hm-query .hm-home .xl-other {
+  display: none;
+}
+/* Close ends a search, so the field carries no clear button of its own */
+.hm-home .hm-clear {
+  display: none;
 }

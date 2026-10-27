@@ -9,6 +9,10 @@ interface LangSlug {
 const root = (explain: Explain): string => (explain === ENABLED_EXPLAIN[0] ? "/" : `/${explain}/`);
 export const homeUrl = (explain: Explain): string => root(explain);
 export const creditsUrl = (explain: Explain): string => `${root(explain)}credits/`;
+// The languages page, its first-run form and the data the client reads in that language.
+export const languagesUrl = (explain: Explain): string => `${root(explain)}languages/`;
+export const languagesFirstUrl = (explain: Explain): string => `${languagesUrl(explain)}first/`;
+export const languagesDataUrl = (explain: Explain): string => `/${explain}/languages.json`;
 export const pageUrl = (explain: Explain, slug: string): string => `${root(explain)}${slug}/`;
 export const notFoundUrl = (explain: Explain): string => `${root(explain)}404.html`;
 export const trackUrl = (explain: Explain, lang: LangSlug): string => `/${explain}/${lang.slug}/`;

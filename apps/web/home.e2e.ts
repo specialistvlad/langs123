@@ -1,6 +1,6 @@
 // The Home's search in a browser: a query lists the topics of every course that match with the query in bold under
 // "Topics · N", a word met only inside a lesson finds it, a query that matches nothing names it and offers four topics
-// to try, a query keeps the logo in place on wide screens and hides the heading, Escape empties the search and
+// to try, a query keeps the logo in place on wide screens, Escape empties the search and
 // brings the cards back; the filters narrow the topics to a course and the levels up to one, and a tap
 // on a chosen filter clears it; a result's level mark opens the level popover on its topic.
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
@@ -26,7 +26,7 @@ test(
     await page.locator("#hm-q").fill("present");
     await page.locator(".hm-row").first().waitFor();
     expect(await page.locator("#hm-cards").isVisible()).toBe(false);
-    expect([await page.locator(".hm-brand").isVisible(), await page.locator(".hm-title").isVisible()]).toEqual([true, false]);
+    expect(await page.locator(".hm-brand").isVisible()).toBe(true);
     expect((await page.locator(".hm-row b").first().textContent())?.toLowerCase()).toBe("present");
     expect(await page.locator("#hm-results > .hm-heading").textContent()).toBe(`Topics · ${String(await page.locator(".hm-row").count())}`);
     await page.locator("#hm-q").fill("qxqxqz");

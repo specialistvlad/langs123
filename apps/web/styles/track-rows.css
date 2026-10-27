@@ -1,4 +1,5 @@
-/* A track index's topics: inset lists, a row per topic with its levels and a chevron (track-parts.ts) */
+/* A course's topics: inset lists, a row per topic with its title and a chevron (track-parts.ts); the topic the page
+   shows is tinted, its title in the accent colour */
 .ix-rows {
   margin: 0;
   padding: 0;
@@ -28,7 +29,7 @@
   box-sizing: border-box;
   padding: 0 16px 0 20px;
 }
-/* The topic's link covers the row; its level mark sits above the link */
+/* The topic's link covers the row */
 .ix-cover {
   display: flex;
   flex-grow: 1;
@@ -40,17 +41,12 @@
   position: absolute;
   inset: 0;
 }
-.ix-row .lvm-b {
-  position: relative;
-  z-index: 1;
-}
 .ix-row:has(.ix-cover:hover) {
   background: var(--hm-fill);
 }
 .ix-cover:focus-visible,
 .ix-up:focus-visible,
 .ix-btn:focus-visible,
-.ix-seg button:focus-visible,
 .ix-item:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -117,10 +113,10 @@
 .ix-more .lvl > .half {
   opacity: 1 !important;
 }
-/* The topic open in the split view's right pane: its row tinted, its name in the accent colour */
-.ix-rows li[data-sp-chosen] .ix-row {
+.ix-rows li[data-current] .ix-row {
   background: color-mix(in srgb, var(--accent) 8%, var(--surface));
 }
-.ix-rows li[data-sp-chosen] .ix-name {
+.ix-rows li[data-current] .ix-name {
   color: var(--accent);
+  font-weight: 600;
 }

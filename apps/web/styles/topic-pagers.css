@@ -1,74 +1,57 @@
-/* The bottom bar of a phone (topic-phone.css places it) and the contents sheet: along the bottom on a phone; above
-   860px the left pane holds the contents and the bar and the sheet stay out (topic-wide.css) */
-:where(html[data-page="topic"]) .tp-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 30px;
-  z-index: 30;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
+/* The contents page of a phone (pages/topic.ts, topic-phone.css): "Contents" over a card of the parts, each row its
+   number, title and a chevron, the part last read tinted; there are no level marks */
+:where(html[data-page="topic"]) .tp-parts {
+  margin-top: 36px;
 }
-:where(html[data-page="topic"]) .tp-bar > * {
-  pointer-events: auto;
+:where(html[data-page="topic"]) .tp-parts .tp-caps {
+  margin: 0 0 8px 4px;
 }
-:where(html[data-page="topic"]) .tp-sheet[popover] {
-  box-sizing: border-box;
+:where(html[data-page="topic"]) .tp-list {
   margin: 0;
-  border: 0;
-  color: var(--text);
-  background: var(--hm-bg);
-  box-shadow: var(--tp-sheet-shadow);
-  overflow-y: auto;
-}
-:where(html[data-page="topic"]) .tp-sheet::backdrop {
-  background: var(--tp-back);
-}
-:where(html[data-page="topic"]) .tp-sheet-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 16px 12px 24px;
-}
-:where(html[data-page="topic"]) .tp-sheet-head h2 {
-  margin: 0;
-  font-size: 22px;
-  line-height: 28px;
-  font-weight: 700;
-}
-:where(html[data-page="topic"]) .tp-x {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
   padding: 0;
-  border-radius: 999px;
-  color: var(--text);
-  cursor: pointer;
+  list-style: none;
 }
-:where(html[data-page="topic"]) .tp-sheet[popover]:popover-open {
+:where(html[data-page="topic"]) .tp-list li {
+  position: relative;
+}
+:where(html[data-page="topic"]) .tp-list li + li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 20px;
+  height: 0.5px;
+  background: var(--tp-hair);
+}
+:where(html[data-page="topic"]) .tp-list a {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-:where(html[data-page="topic"]) .tp-sheet-head {
-  flex: none;
-}
-:where(html[data-page="topic"]) .tp-sheet-body {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  padding: 0 12px 20px;
-  overscroll-behavior: contain;
-}
-:where(html[data-page="topic"]) .tp-sheet-body .tp-card {
-  margin-bottom: 0;
-}
-:where(html[data-page="topic"]) .tp-sheet-body .tp-contents .toc a {
+  align-items: center;
+  gap: 10px;
   min-height: 44px;
+  padding: 0 16px 0 20px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
 }
-:where(html[data-page="topic"]) .tp-sheet-body .tp-contents .toc .name {
+:where(html[data-page="topic"]) .tp-list a:hover {
+  background: var(--hm-fill);
+}
+:where(html[data-page="topic"]) .tp-list a.on {
+  background: var(--tp-current);
+  color: var(--accent);
+  font-weight: 600;
+}
+:where(html[data-page="topic"]) .tp-list .tp-n {
+  width: 24px;
+  font-size: 15px;
+  color: var(--tp-sec);
+}
+:where(html[data-page="topic"]) .tp-list a.on .tp-n {
+  color: var(--accent);
+}
+:where(html[data-page="topic"]) .tp-list .name {
+  flex: 1;
+  min-width: 0;
   padding: 11px 0;
 }

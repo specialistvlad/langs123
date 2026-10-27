@@ -1,23 +1,23 @@
-/* The topic page above 860px as a split view (pages/topic.ts, split.css, topic-sheets.css for the left pane): the
-   lesson fills the right pane 32px from its edges under the glass group at its top right; the list hidden centres it
-   in a 760px column; the bottom bar and the contents sheet are a phone's */
-@media (min-width: 861px) {
-  :where(html[data-page="topic"]) .tp-bar,
-  :where(html[data-page="topic"]) .tp-fade {
+/* The topic page from 1024px (pages/topic.ts, track-topic.css for the course's column): the reading 32px from the
+   column and 24px from the window's right, with the topic's parts pinned at its top right as an outline, 220px wide from
+   1280px and 168px under it; the bar's buttons fixed at the window's top right, the head 84px under the top. A table
+   wider than the reading scrolls sideways inside its card (client-topic.ts); in a narrow reading a table of five or more
+   columns keeps its first column fixed, and on a phone a slot table becomes cards */
+@media (min-width: 1024px) {
+  :where(html[data-page="topic"]) .tp-wrap {
+    padding: 84px 16px 48px 24px;
+  }
+  :where(html[data-page="topic"]) .tp-cols {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  :where(html[data-page="topic"]) .tp-col {
+    flex: 1;
+  }
+  :where(html[data-page="topic"]) .tp-back,
+  :where(html[data-page="topic"]) .tp-parts {
     display: none;
-  }
-  .sp-topic .sp-body {
-    padding: 64px 32px 56px;
-  }
-  .sp-topic[data-split="hidden"] .tp-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-  }
-  .sp-topic .tp-head .tp-up {
-    display: none;
-  }
-  .sp-topic .tp-tools {
-    height: 44px;
   }
   :where(html[data-page="topic"]) .tp-main .lanes {
     --lane-col-gap: 32px;
@@ -25,6 +25,72 @@
   :where(html[data-page="topic"]) .tp-main .tp-card th:last-child,
   :where(html[data-page="topic"]) .tp-main .tp-card td:last-child {
     padding-right: 16px;
+  }
+  :where(html[data-page="topic"]) .tp-main .sections > .part {
+    scroll-margin-top: 84px;
+  }
+  /* The outline follows the window's scroll: it sticks under the bar, the part in view marked with an accent rule */
+  :where(html[data-page="topic"]) .tp-outline {
+    display: block;
+    position: sticky;
+    top: 84px;
+    flex: none;
+    box-sizing: border-box;
+    width: 168px;
+    max-height: calc(100vh - 104px);
+    max-height: calc(100dvh - 104px);
+    padding-left: 4px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+  }
+  :where(html[data-page="topic"]) .tp-outline .tp-caps {
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+  }
+  :where(html[data-page="topic"]) .tp-outline a {
+    display: flex;
+    gap: 8px;
+    padding: 5px 10px 5px 12px;
+    border-left: 2px solid var(--tp-hair);
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tp-body);
+  }
+  :where(html[data-page="topic"]) .tp-outline a:hover {
+    color: var(--text);
+  }
+  :where(html[data-page="topic"]) .tp-outline b {
+    flex: none;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--tp-sec);
+  }
+  :where(html[data-page="topic"]) .tp-outline a.on {
+    border-left-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  :where(html[data-page="topic"]) .tp-outline a.on b {
+    color: var(--accent);
+  }
+}
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  html:where([data-page="topic"]) {
+    scroll-behavior: smooth;
+  }
+}
+@media (min-width: 1280px) {
+  :where(html[data-page="topic"]) .tp-wrap {
+    padding: 84px 24px 48px 32px;
+  }
+  :where(html[data-page="topic"]) .tp-cols {
+    gap: 28px;
+  }
+  :where(html[data-page="topic"]) .tp-outline {
+    width: 220px;
   }
 }
 /* A narrow lesson column (a phone, the right pane of a tablet): a table of five or more columns scrolls sideways with

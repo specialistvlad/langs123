@@ -23,7 +23,7 @@ test("a language's pages exist in the explanation languages it lists, and in no 
 });
 
 describe.each(spanishPages)("%s", (path) => {
-  test("names its counterparts in its explanation languages alone, and offers those in the language switch", async () => {
+  test("names its counterparts in its explanation languages alone, and offers no Read in", async () => {
     const doc = await readPage(path);
     const links = [...doc.querySelectorAll('link[rel="alternate"]')];
     const alternates = links.map((l) => l.getAttribute("hreflang"));
@@ -31,8 +31,8 @@ describe.each(spanishPages)("%s", (path) => {
     // x-default is the English counterpart.
     const href = (lang: string): string | null | undefined => links.find((l) => l.getAttribute("hreflang") === lang)?.getAttribute("href");
     expect(href("x-default")).toBe(href("en"));
-    // A course index holds the group twice (the phone's bar, the right pane's tools): each offers every language.
-    expect(doc.querySelector(".lang-menu .menu-list, .hm-read .hm-menu")?.querySelectorAll("a")).toHaveLength(explains.length);
+    // Read in is retired: no page offers the language switch.
+    expect(doc.querySelector(".lang-menu, .hm-read")).toBeNull();
   });
   test("opens on the default variety and offers each in the Variety switch", async () => {
     const doc = await readPage(path);
@@ -46,14 +46,13 @@ describe.each(spanishPages)("%s", (path) => {
 });
 
 describe.each(ENABLED_EXPLAIN)("the home page in %s", (home) => {
-  test("has a card per language that links each explanation language it is written for, the home page's own first", async () => {
+  test("has a card per language that opens it in the home page's language when written for it, else in its first, and lists the languages it is written for", async () => {
     const doc = await readPage(homeFile(home));
     for (const lang of curriculum.languages.filter((l) => l.enabled)) {
       const card = [...doc.querySelectorAll(".hm-card")].find((c) => c.querySelector(`a[href$="/${lang.slug}/"]`) !== null);
-      const linked = [...(card?.querySelectorAll(".hm-chip") ?? [])].map((a) => a.getAttribute("hreflang") ?? "");
       const own = explainOf(lang).filter((e) => ENABLED_EXPLAIN.includes(e));
-      expect(new Set(linked)).toEqual(new Set(own));
-      expect(linked[0]).toBe(own.includes(home) ? home : own[0]);
+      expect(card?.querySelector("a.hm-course-a")?.getAttribute("href")).toBe(`/${own.includes(home) ? home : own[0]}/${lang.slug}/`);
+      expect(card?.querySelector("button.xl-line")?.getAttribute("data-explains")).toBe(own.join(" "));
     }
   });
 });

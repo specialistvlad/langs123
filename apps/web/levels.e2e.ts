@@ -45,7 +45,6 @@ interface Seen {
   level: string;
   wrongly: string[];
   empty: string[];
-  rail: string[];
   marks: string[];
   notes: string[];
 }
@@ -78,12 +77,11 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
     const measure = (): Seen => {
       const levelled = [...document.querySelectorAll("[data-level]")].filter(
         // What the layout hides at every level (a closed sheet, a slot table's other layout) is not the filter's.
-        (el) => el !== document.documentElement && !el.matches("[data-set-level], .toc > li, .toc > li *") && !laidOut.has(el),
+        (el) => el !== document.documentElement && !el.matches("[data-set-level]") && !laidOut.has(el),
       );
       const wrongly = levelled.filter((el) => visible(el) !== fits(el)).map((el) => `${visible(el) ? "shown" : "hidden"}: ${name(el)}`);
       const containers = [...document.querySelectorAll(".blk table, .blk ul")].filter(visible);
       const empty = containers.filter((c) => ![...c.querySelectorAll("tbody tr:not(.gap-row), li")].some(visible)).map(name);
-      const rail = [...document.querySelectorAll(".toc > li")].filter((li) => getComputedStyle(li).opacity !== "1").map(name);
       // A lit bar above the filter dims; every lit bar of a mark shows its own level's colour.
       const marks = [...document.querySelectorAll(".lvm:not(.lvm-one)")]
         .filter(visible)
@@ -103,7 +101,7 @@ async function look(page: Page, levels: readonly string[]): Promise<Record<strin
           return note === null || visible(note) === shown;
         })
         .map(name);
-      return { level: order[at] ?? "", wrongly, empty, rail, marks, notes };
+      return { level: order[at] ?? "", wrongly, empty, marks, notes };
     };
     // At the top level the filter hides nothing, so what is hidden then is the layout's.
     const top = document.querySelector(".ix-menu [data-set-level][data-all]");
@@ -145,7 +143,6 @@ describe.concurrent.each(pages)("%s", (path) => {
       expect(at.level).toBe(level);
       expect(at.wrongly).toEqual([]);
       expect(at.empty).toEqual([]);
-      expect(at.rail).toEqual([]);
       expect(at.marks).toEqual([]);
       expect(at.notes).toEqual([]);
     },

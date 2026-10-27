@@ -97,14 +97,7 @@ describe.each(ENABLED_EXPLAIN)("the pages in %s", (e) => {
   });
 });
 
-test("the up link leads a topic to the track's index, named by its language, the index to Home, and Home nowhere", async () => {
-  // A topic draws its own up button, to its track's index named by its language.
-  const topic = (await readPage("en/english/verbs/to-be/index.html")).querySelector(".tp-up");
-  expect([topic?.getAttribute("href"), topic?.getAttribute("aria-label")]).toEqual(["/en/english/", "English"]);
-  // The track's index draws its own up button, to Home.
-  const index = (await readPage("uk/spanish/index.html")).querySelector(".ix-up");
-  expect([index?.getAttribute("href"), index?.getAttribute("aria-label")]).toEqual(["/uk/", SITE.name]);
-  // Home has no up link.
+test("Home has no up link", async () => {
   expect((await readPage("index.html")).querySelector(".tp-up, .ix-up, .pg-up")).toBeNull();
 });
 

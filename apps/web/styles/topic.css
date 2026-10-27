@@ -8,8 +8,6 @@ html[data-frame] {
   --tp-caps: #6e6e73;
   --tp-note: rgba(118, 118, 128, 0.08);
   --tp-dash: rgba(60, 60, 67, 0.33);
-  --tp-fade: rgba(242, 242, 247, 0.85);
-  --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.18);
   --tp-back: rgba(0, 0, 0, 0.18);
   --tp-current: rgba(47, 91, 211, 0.08);
   --tp-bad: #c2362f;
@@ -24,8 +22,6 @@ html[data-frame] {
     --tp-caps: rgba(235, 235, 245, 0.55);
     --tp-note: rgba(118, 118, 128, 0.18);
     --tp-dash: rgba(235, 235, 245, 0.3);
-    --tp-fade: rgba(0, 0, 0, 0.85);
-    --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.6);
     --tp-back: rgba(0, 0, 0, 0.5);
     --tp-current: rgba(126, 162, 255, 0.14);
     --tp-bad: #ff7a72;
@@ -40,8 +36,6 @@ html[data-frame][data-theme="dark"] {
   --tp-caps: rgba(235, 235, 245, 0.55);
   --tp-note: rgba(118, 118, 128, 0.18);
   --tp-dash: rgba(235, 235, 245, 0.3);
-  --tp-fade: rgba(0, 0, 0, 0.85);
-  --tp-sheet-shadow: 0 -4px 40px rgba(0, 0, 0, 0.6);
   --tp-back: rgba(0, 0, 0, 0.5);
   --tp-current: rgba(126, 162, 255, 0.14);
   --tp-bad: #ff7a72;
@@ -110,47 +104,20 @@ html[data-page="topic"] .doc p > .lvl {
   vertical-align: 2px;
 }
 
-/* Glass: the up link in a phone's title row (the split's title row has its own, topic-sheets.css) and the toolbar's
-   buttons; the group sits in the bottom bar on a phone and in the right pane's tools above 860px */
-:where(html[data-page="topic"]) .tp-up {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
+/* The back links of a phone's title row (the head, topic-page.css) */
+:where(html[data-page="topic"]) .tp-back {
+  flex: none;
   color: var(--text);
 }
-:where(html[data-page="topic"], html[data-sp-page="topic"]) .tp-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: 100%;
-  padding: 0 14px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: inherit;
-  font-size: 17px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-:where(html[data-page="topic"]) .tp-fade {
-  display: none;
-}
-:where(html[data-page="topic"]) .tp-bar-left {
-  display: none;
-}
 
-/* The variety menu: 300px wide, under the tools' right edge on a wide screen (a phone: topic-phone.css) */
-:where(html[data-page="topic"], html[data-sp-page="topic"]) .ix-menu-variety {
+/* The variety menu: 300px wide, under the bar's right edge on a wide screen (a phone: track-phone.css) */
+:where(html[data-page="topic"]) .ix-menu-variety {
   width: 300px;
   padding: 4px 0;
 }
-:where(html[data-page="topic"], html[data-sp-page="topic"]) .ix-menu-variety .ix-item {
+:where(html[data-page="topic"]) .ix-menu-variety .ix-item {
   min-height: 48px;
 }
-:where(html[data-page="topic"], html[data-sp-page="topic"]) .ix-menu-variety .ix-item + .ix-item::before {
+:where(html[data-page="topic"]) .ix-menu-variety .ix-item + .ix-item::before {
   left: 42px;
 }

@@ -1,5 +1,5 @@
-/* A track's index (pages/track.ts) in the frame: a title line, the order switch, then the topics in two
-   columns above 860px */
+/* A course (pages/track.ts, pages/topic.ts) in the frame: its colours, the head of the topics column, the grouping
+   and the headings of the topics' lists. The column's frame is track-topic.css, its rows track-rows.css */
 html[data-frame] {
   --ix-sep: rgba(60, 60, 67, 0.29);
   --ix-chev: rgba(60, 60, 67, 0.45);
@@ -32,30 +32,103 @@ html[data-frame][data-theme="dark"] {
   --ix-band: rgba(118, 118, 128, 0.24);
   --ix-fade: rgba(0, 0, 0, 0.85);
 }
-html[data-page="track"] a {
+html:is([data-page="track"], [data-page="topic"]) a {
   color: inherit;
   text-decoration: none;
 }
 
-/* The title row (split.ts): the Home button, the list button and the course; on a phone the count ends it, on a wide
-   screen the count ends the switch's row */
-.sp-track .sp-title > :first-child {
-  margin-right: 0;
+/* The head (course-column.ts): the toolbar line (Home, Level and Group as icon buttons), the course's title on its own
+   line, "66 topics · Explained in: English ›". A phone: Home, the title and the count share a row, the line under it
+   (track-phone.css). While the field searches, the toolbar line gives way: Home beside the title, the count out */
+.cl-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "home . tools"
+    "name name name"
+    "line line line";
+  align-items: center;
 }
-.ix-name-h {
+.cl-home,
+.cl-back {
+  grid-area: home;
+}
+.cl-head :is(.cl-back, .cl-topic, .cl-count) {
+  display: none;
+}
+.cl-tools {
+  grid-area: tools;
+  height: 44px;
+}
+.cl-name {
+  grid-area: name;
   display: flex;
   align-items: center;
-  flex-grow: 1;
   min-width: 0;
-  min-height: 44px;
-  margin: 0;
+  margin: 16px 0 0;
   font-size: 28px;
-  line-height: 1.2;
+  line-height: 34px;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
+.cl-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .ix-flag {
   margin-right: 8px;
+}
+.cl-topic {
+  grid-area: name;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cl-line {
+  grid-area: line;
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--muted);
+}
+.cl-line .xl-line {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.cl-line .xl-line b {
+  font-weight: 600;
+  color: var(--text);
+}
+.cl-line .xl-line::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: var(--cl-chev, 8px);
+  vertical-align: -2px;
+  background: var(--ix-chev);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5L6.5 7l-5 5.5'/%3E%3C/svg%3E")
+    center / 8px 14px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5L6.5 7l-5 5.5'/%3E%3C/svg%3E")
+    center / 8px 14px no-repeat;
+}
+.cl-line .xl-line:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 .ix-count {
   flex-shrink: 0;
@@ -63,70 +136,14 @@ html[data-page="track"] a {
   line-height: 20px;
   color: var(--muted);
 }
-/* The heading the Home's right pane takes with the list; the title row names the course on the page itself */
-.sp-track .ix-frag > .ix-frag-h,
-.ix-head .ix-count {
-  display: none;
-}
-.ix-seg {
-  display: flex;
-  gap: 2px;
-  box-sizing: border-box;
-  width: 360px;
-  max-width: 100%;
-  margin: 14px 0 22px;
-  padding: 2px;
-  border-radius: 999px;
-  background: var(--hm-fill);
-}
-.ix-seg button {
-  flex: 1;
-  height: 32px;
-  padding: 0 8px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text);
-  font: inherit;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: -0.2px;
-  cursor: pointer;
-}
-html[data-order="path"] .ix-seg [data-set-order="path"],
-html:not([data-order="path"]) .ix-seg [data-set-order="categories"] {
-  background: var(--ix-seg-on);
-  box-shadow: var(--ix-seg-shadow);
-  font-weight: 600;
-}
 
+/* The grouping: the list of the chosen order shows */
 .ix-flow[data-order="path"],
 html[data-order="path"] .ix-flow[data-order="categories"] {
   display: none;
 }
 html[data-order="path"] .ix-flow[data-order="path"] {
   display: block;
-}
-/* A wide screen: the order switch and the topic count share a row */
-@media (min-width: 861px) {
-  .ix-count-t {
-    display: none;
-  }
-  .ix-head {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 14px 0 22px;
-  }
-  .ix-head .ix-count {
-    display: block;
-  }
-  .ix-seg {
-    flex: 1;
-    width: auto;
-    max-width: none;
-    margin: 0;
-  }
 }
 .ix-sec {
   break-inside: avoid;
@@ -143,7 +160,12 @@ html[data-order="path"] .ix-flow[data-order="path"] {
   letter-spacing: -0.45px;
   break-after: avoid;
 }
+.ix-ht {
+  flex-grow: 1;
+  min-width: 0;
+}
 .ix-num {
+  margin-right: 10px;
   font:
     600 17px ui-monospace,
     Menlo,
@@ -157,12 +179,11 @@ html[data-order="path"] .ix-flow[data-order="path"] {
 .ix-h .lvm {
   margin: 0;
 }
-/* A level's heading on the study path: its name, then its topic count at the end */
+/* A level's heading on the study path: its mark and name; each heading ends with its count */
 .ix-lv-name {
   flex-grow: 1;
+  min-width: 0;
 }
-.ix-lv-n {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--muted);
+.ix-sec-n {
+  font-weight: inherit;
 }

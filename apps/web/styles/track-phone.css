@@ -1,12 +1,40 @@
-/* A track's index on phones and with reduced motion */
-/* Phones: one column, the toolbar at the bottom, the buttons as icons, a fade under the toolbar, and the bar
-   hiding while the reader scrolls down (the public client sets html.bar-hidden) */
-@media (max-width: 860px) {
-  .sp-track .sp-title {
-    margin-top: max(16px, calc(env(safe-area-inset-top) + 8px));
+/* A course on phones (below 1024px): the index is one column, the title row (Home, the course, the count), the line, the
+   topics, and the toolbar at the bottom: Level, Variety, Group and More as icons in one glass bar, a fade under it, and
+   the round Search button at the right end, which opens the field across the bar with Close. The bar hides while the
+   reader scrolls down (the public client sets html.bar-hidden). A topic page keeps the bar and the results alone of the
+   column. The reading is topic-phone.css's */
+@media screen and (max-width: 1023px) {
+  .cl[data-cl="track"] .cl-main {
+    display: none;
   }
-  .ix-seg {
-    width: 100%;
+  .cl-side {
+    padding: max(16px, calc(env(safe-area-inset-top) + 8px)) 20px 130px;
+  }
+  .cl-head {
+    grid-template-areas:
+      "home name count"
+      "line line line";
+    column-gap: 12px;
+  }
+  .cl-name {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .cl-head .cl-count {
+    display: block;
+    grid-area: count;
+  }
+  .cl-line {
+    margin: 2px 0 18px 56px;
+  }
+  .cl-n,
+  .cl-dot,
+  .cl-tools {
+    display: none;
+  }
+  .cl-list {
+    margin-top: 0;
   }
   .ix-btn {
     width: 52px;
@@ -23,12 +51,79 @@
   .ix-menu {
     top: auto;
     right: 16px;
-    bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 58px);
+    bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 62px);
     width: 300px;
     max-height: calc(100vh - 180px);
   }
+  .ix-menu-variety,
+  .ix-menu-group {
+    left: 16px;
+    right: auto;
+  }
   .ix-menu-variety {
+    bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 88px);
+    width: 300px;
+  }
+  .ix-menu-group {
     width: 240px;
+  }
+  .hm-more-menu {
+    left: 16px;
+    right: auto;
+    top: auto;
+    bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 62px);
+  }
+  .cl-nav {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
+    z-index: 30;
+    justify-content: space-between;
+    gap: 10px;
+    transition: transform 0.25s ease;
+  }
+  .cl-bar {
+    height: 48px;
+  }
+  .cl-bar .hm-more {
+    display: flex;
+    width: 52px;
+  }
+  .cl-nav .hm-search {
+    display: none;
+  }
+  html.hm-searching .cl-nav .hm-search {
+    display: flex;
+    flex: 1;
+    width: auto;
+    height: 48px;
+  }
+  html.hm-searching .cl-nav .hm-close {
+    display: flex;
+    width: 48px;
+    height: 48px;
+  }
+  html.hm-searching .cl-bar {
+    display: none;
+  }
+  html .cl-nav .ix-search-open {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 48px;
+    padding: 0;
+    border-radius: 999px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  html.hm-searching .cl-nav .ix-search-open {
+    display: none;
+  }
+  html.hm-searching .cl-nav {
+    bottom: max(30px, calc(var(--hm-kb, 0px) + 10px));
   }
   .ix-fade {
     display: block;
@@ -40,19 +135,48 @@
     height: 130px;
     background: linear-gradient(to bottom, transparent, var(--ix-fade) 60%);
     pointer-events: none;
+    transition: opacity 0.25s ease;
   }
-  .hm-bar {
-    transition: transform 0.25s ease;
-  }
-  html.bar-hidden:not(.hm-searching) .hm-bar:not(:has(:popover-open)) {
+  html.bar-hidden:not(.hm-searching) .cl-nav:not(:has(:popover-open)) {
     transform: translateY(calc(100% + 60px));
   }
   html.bar-hidden:not(.hm-searching) .ix-fade {
     opacity: 0;
   }
+  /* With a query the filters lead the page and the results sit above the field */
+  html.hm-query .cl-head {
+    display: none;
+  }
+  html.hm-query .cl-side {
+    padding-top: 20px;
+  }
+  html.hm-searching .cl-side {
+    padding-bottom: calc(var(--hm-kb, 0px) + 110px);
+  }
+  html.hm-query .cl-side .hm-none {
+    margin-top: 72px;
+  }
+  /* A topic page: the column gives way to the reading, keeping the bar, the fade and the results */
+  .cl[data-cl="topic"] .cl-side {
+    display: contents;
+  }
+  .cl-top {
+    display: contents;
+  }
+  .cl[data-cl="topic"] .cl-side > :not(.cl-top, .hm-results, .ix-fade),
+  .cl[data-cl="topic"] .cl-head {
+    display: none;
+  }
+  .cl[data-cl="topic"] .hm-results {
+    padding: 20px 20px calc(var(--hm-kb, 0px) + 120px);
+  }
+  html.hm-query .cl[data-cl="topic"] .cl-main {
+    display: none;
+  }
 }
-@media (max-width: 860px) and (prefers-reduced-motion: reduce) {
-  .hm-bar {
+@media screen and (max-width: 1023px) and (prefers-reduced-motion: reduce) {
+  .cl-nav,
+  .ix-fade {
     transition: none;
   }
 }

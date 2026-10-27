@@ -13,7 +13,6 @@ const STYLES = [
   "base",
   "topbar",
   "head",
-  "panels",
   "layout",
   "document",
   "tables",
@@ -35,11 +34,11 @@ const STYLES = [
   "track-bar",
   "track-topic",
   "home-more",
-  "split",
-  "split-parts",
-  "split-home",
   "credits",
   "credits-cards",
+  "languages",
+  "languages-lines",
+  "languages-sheet",
   "level-mark",
   "level-popover",
   "topic",
@@ -49,7 +48,6 @@ const STYLES = [
   "topic-slots",
   "topic-rail",
   "topic-pagers",
-  "topic-sheets",
   "topic-wide",
   "topic-phone",
   "topic-phone-bar",
@@ -72,9 +70,8 @@ export async function clientJs(): Promise<string> {
 
 // Everything about levels that depends on the scale in languages/levels.yaml: the rule handing each level's colours
 // to its elements (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its
-// lowest level; it hides while the filter (data-level on <html>) sits below it. The contents keep every row at full
-// strength, their marks dimming the bars above the filter; a section whose content all sits above the filter shows its
-// note instead. A pill keeps its range and dims the half above the filter; a mark dims the bars above it.
+// lowest level; it hides while the filter (data-level on <html>) sits below it; a section whose content all sits above
+// the filter shows its note instead. A pill keeps its range and dims the half above the filter; a mark dims the bars above it.
 export function levelsCss(): string {
   const codes = LEVEL_INFO.map((l) => l.code);
   // A mark's bar of a level it holds: the level's strong colour.
@@ -93,8 +90,8 @@ export function levelsCss(): string {
       .map((c) => `.lvl-${c}`)
       .join(", ")})`;
     return [
-      `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) ${list}:not(.toc > li) { display: none !important; }`,
-      `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) .lvl > .half${halves} { opacity: 0.55; }`,
+      `${at}:is([data-page="topic"], [data-page="track"]) ${list} { display: none !important; }`,
+      `${at}:is([data-page="topic"], [data-page="track"]) .lvl > .half${halves} { opacity: 0.55; }`,
       `${at} .lvm > i:is(${codes
         .slice(i + 1)
         .map((c) => `.lv-${c}`)
@@ -129,9 +126,7 @@ export function varietiesCss(varieties: readonly (readonly string[])[]): string 
         const above = codes.slice(i + 1).map((c) => `[${attr}="${c}"]`);
         if (above.length === 0) return [];
         const at = `html[data-variety="${chosen}"][data-level="${code}"]`;
-        return [
-          `${at}:is([data-page="topic"], [data-page="track"], [data-sp-page="track"]) :is(${above.join(", ")}):not(.toc > li) { display: none !important; }`,
-        ];
+        return [`${at}:is([data-page="topic"], [data-page="track"]) :is(${above.join(", ")}) { display: none !important; }`];
       });
       return [...hidden, ...filter];
     }),

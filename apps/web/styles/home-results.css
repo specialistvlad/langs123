@@ -1,6 +1,5 @@
-/* The Home's search results (pages/home.ts, client-home.ts): "Topics · N" under the filters, then the results in two
-   cards where two of at least 320px fit (a content width of 656px), the first half in the left one, else one card;
-   the view for no results, with four topics to try in the same cards. */
+/* The Home's search results (pages/home.ts, client-home.ts): "Topics · N" under the filters, then the results in one
+   card; the view for no results, with four topics to try in the same card. */
 .hm-heading {
   margin: 0 0 4px;
   font-size: 13px;
@@ -10,12 +9,7 @@
   text-transform: uppercase;
   color: var(--muted);
 }
-.hm-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  align-items: start;
-}
+
 .hm-rows {
   border-radius: 22px;
   background: var(--surface);
@@ -72,7 +66,7 @@
   opacity: 1 !important;
 }
 .hm-row-flag {
-  margin-right: 6px;
+  margin-right: 8px;
 }
 .hm-row-cap,
 .hm-row-text {
@@ -127,46 +121,8 @@
 .hm-sugg .hm-heading {
   margin-bottom: 12px;
 }
-/* One card where two of 320px do not fit: the two halves read as one list */
-@media (max-width: 695px) {
-  .hm-list {
-    display: block;
-  }
-  .hm-rows + .hm-rows .hm-row:first-child::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 16px;
-    right: 0;
-    height: 0.5px;
-    background: var(--hm-sep);
-  }
-  .hm-rows:first-child:not(:last-child) {
-    border-radius: 22px 22px 0 0;
-  }
-  .hm-rows:last-child:not(:first-child) {
-    border-radius: 0 0 22px 22px;
-  }
-}
-
-/* A query hides the page's heading and, on a phone, its logo: the results take their place (client-home.ts) */
-.hm-query .hm-title {
-  display: none;
-}
-@media (max-width: 860px) {
-  .hm-query .hm-brand {
-    display: none;
-  }
-}
-/* On a wide screen the logo fills the band under the field, the filters 20px below it (the band: home-filters.css) */
 @media (min-width: 861px) {
-  html.hm-query .hm-results {
-    padding-top: 8px;
-  }
-  .hm-none {
-    margin-top: 72px;
-  }
-  /* Results: a 17px title that wraps beside its flag, a 15px lead in the body colour, the hit on a soft accent */
+  /* On a wide screen a result has a 17px title that wraps beside its flag, a 15px lead in the body colour, the hit on a soft accent */
   .hm-row {
     gap: 5px;
     padding: 14px 16px;

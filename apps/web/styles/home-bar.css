@@ -58,29 +58,6 @@
   border-radius: 999px;
   color: var(--text);
 }
-.hm-read summary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: 100%;
-  padding: 0 14px;
-  border-radius: 999px;
-  list-style: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.hm-read summary::-webkit-details-marker {
-  display: none;
-}
-.hm-credits,
-.hm-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  border-radius: 999px;
-}
 .hm-close {
   display: none;
   flex-shrink: 0;
@@ -93,26 +70,6 @@
   color: var(--text);
   cursor: pointer;
 }
-.hm-menu {
-  position: absolute;
-  background: var(--surface);
-  border: 0.5px solid var(--glass-border);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.18),
-    0 2px 6px rgba(0, 0, 0, 0.08);
-  top: calc(100% + 12px);
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-  max-height: min(70vh, 520px);
-  overflow-y: auto;
-  padding: 6px;
-  border-radius: 20px;
-}
-.hm-menu a {
-  white-space: nowrap;
-}
 .hm-searching .hm-search {
   width: 420px;
   max-width: calc(100vw - 100px);
@@ -122,4 +79,82 @@
 }
 .hm-searching .hm-close {
   display: flex;
+}
+
+/* The Home on a wide screen (pages/home.ts): the header line holds the brand, the search centred up to 520 wide and
+   More, which is fixed at the top right; the cards stand in two columns, three from 1280px; the results in a column of
+   664px centred under the field */
+@media (min-width: 1024px) {
+  .hm-home {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px 32px 56px;
+  }
+  .hm-home .hm-brand {
+    margin: 0;
+  }
+  .hm-home .hm-main {
+    padding: 0;
+  }
+  .hm-home .hm-head {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 48px;
+    padding-right: 180px;
+  }
+  .hm-home .hm-bar {
+    position: static;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+  .hm-home .hm-mid {
+    display: flex;
+    width: 100%;
+    max-width: 520px;
+    gap: 12px;
+  }
+  .hm-home .hm-search,
+  html.hm-searching .hm-home .hm-search {
+    flex: 1;
+    width: auto;
+    max-width: none;
+  }
+  .hm-home .hm-close {
+    width: 50px;
+    height: 44px;
+  }
+  .hm-home .ix-search-open {
+    display: none;
+  }
+  .hm-home .hm-group {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 30;
+    height: 44px;
+  }
+  html.hm-searching .hm-home .hm-group {
+    display: flex;
+  }
+  html.hm-query .hm-home .hm-main {
+    padding-top: 24px;
+  }
+  .hm-home .hm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 28px;
+  }
+  .hm-home .hm-results {
+    max-width: 664px;
+    margin: 0 auto;
+  }
+  .hm-home .hm-none {
+    margin-top: 72px;
+  }
+}
+@media (min-width: 1280px) {
+  .hm-home .hm-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

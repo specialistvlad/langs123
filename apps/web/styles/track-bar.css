@@ -1,44 +1,91 @@
-/* A course index's bar (pages/track.ts): on a phone the group at the left and the round Search button at the right
-   end, the button opening the field across the bar with Close (client-home.ts sets html.hm-searching) */
-.ix-search-open {
+/* A course's search field and glass bar (course-column.ts; client-home.ts sets html.hm-searching while the field is in
+   use and html.hm-query once it holds a query). From 1024px the field and Close share a row under the head and the bar
+   sits at the window's top right: Variety and More, with Level and Group too while the field searches. A phone shows
+   the bar at the bottom, the round Search button at its right end opening the field across the bar (track-phone.css) */
+.cl-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cl-nav .hm-close,
+.cl-nav .ix-search-open,
+.cl-nav .hm-clear {
   display: none;
 }
-@media (max-width: 860px) {
-  .ix-bar {
-    justify-content: space-between;
-  }
-  .ix-bar .hm-search {
-    display: none;
-  }
-  .hm-searching .ix-bar .hm-search {
-    display: flex;
-  }
-  .ix-search-open {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 48px;
-    padding: 0;
-    border-radius: 999px;
-    color: var(--text);
-    cursor: pointer;
-  }
-  .hm-searching .ix-search-open {
-    display: none;
-  }
-}
-/* A wide screen: the field under the title row (the Home's left pane rules, split-home.css), its filters and results
-   after it, the group in the right pane (the tools), so the bar's own copy stays out */
-@media (min-width: 861px) {
-  html.hm-query .sp-track .hm-results {
-    padding-top: 16px;
-  }
-  .sp.sp-track .hm-bar {
+@media (min-width: 1024px) {
+  .cl-nav {
     margin-top: 14px;
   }
-  .sp-track .hm-none {
+  html .cl-nav .hm-search {
+    flex: 1;
+    width: auto;
+    max-width: none;
+    height: 44px;
+  }
+  html.hm-searching .cl-nav .hm-close {
+    display: flex;
+  }
+  .cl-tools .ix-btn {
+    width: 50px;
+    padding: 0;
+  }
+  .cl-tools .ix-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .cl-bar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 30;
+    height: 44px;
+  }
+  .cl-bar .cl-lv,
+  .cl-bar .cl-gr {
+    display: none;
+  }
+  html.hm-searching .cl-bar {
+    display: flex;
+  }
+  html.hm-searching .cl-bar :is(.cl-lv, .cl-gr) {
+    display: flex;
+  }
+  .cl-bar .hm-more {
+    display: flex;
+    width: 50px;
+  }
+  /* Searching: Home beside the title, the toolbar line and the count gone; a topic page shows Back to the course with the
+     topic's title; the results take the list's place */
+  html.hm-searching .cl-head {
+    grid-template-areas:
+      "home name"
+      "line line";
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  html.hm-searching :is(.cl-tools, .cl-n, .cl-dot) {
+    display: none;
+  }
+  html.hm-searching .cl-name {
+    margin: 0 0 0 12px;
+  }
+  html.hm-searching .cl[data-cl="topic"] :is(.cl-home, .cl-name, .cl-line) {
+    display: none;
+  }
+  html.hm-searching .cl[data-cl="topic"] .cl-back {
+    display: flex;
+  }
+  html.hm-searching .cl[data-cl="topic"] .cl-topic {
+    display: block;
+    margin-left: 12px;
+  }
+  html.hm-query .cl-side .hm-results {
+    padding-top: 16px;
+  }
+  .cl-side .hm-none {
     margin-top: 72px;
   }
 }

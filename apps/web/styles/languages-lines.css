@@ -1,0 +1,129 @@
+/* Where the reader's languages show in a page (client-languages-lines.ts): the "Explained in" line with its fallback
+   mark, a course with none of the reader's languages, the Home's section for those courses, a topic's tag and the
+   note of a topic in a fallback language. The chevron takes the board's shade on every page. */
+:root {
+  --xl-chev: rgba(60, 60, 67, 0.45);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --xl-chev: rgba(235, 235, 245, 0.4);
+  }
+}
+:root[data-theme="dark"] {
+  --xl-chev: rgba(235, 235, 245, 0.4);
+}
+.xl-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+}
+.xl-line b {
+  font-weight: 600;
+  color: var(--text);
+}
+.xl-line:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.xl-line::after {
+  content: "";
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  background: var(--xl-chev);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+.xl-fb {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--pg-fill);
+  font-size: 12px;
+  color: var(--muted);
+}
+.xl-source {
+  color: var(--text);
+}
+.xl-dim {
+  opacity: 0.48;
+}
+.xl-other[hidden] {
+  display: none;
+}
+.xl-other h2 {
+  margin: 28px 0 4px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.xl-other p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--muted);
+}
+/* A topic in another language than the course's: its code on the row and on the header */
+[data-xl-tag] {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: var(--pg-fill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+[data-xl-tag][hidden] {
+  display: none;
+}
+[data-xl-note] {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--surface);
+  font-size: 15px;
+  line-height: 21px;
+  color: var(--text);
+}
+[data-xl-note][hidden] {
+  display: none;
+}
+[data-xl-note] p {
+  margin: 0;
+}
+[data-xl-note] .xl-fb {
+  margin-top: 1px;
+}
+.xl-change {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+}

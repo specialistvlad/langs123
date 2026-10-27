@@ -1,7 +1,7 @@
 // A course index's toolbar in a browser: the Level button opens Home's level popover headed by the course (under the
-// toolbar's group, on its right edge, on a wide screen; as a sheet on a phone) and names the chosen level only; the
-// topic count follows the chosen level; a topic's level popover opens just under its mark; on a phone the Home button
-// stays while the field has focus and leaves once a query is typed (the layout: track-layout.e2e.ts).
+// head's buttons, on its right edge, on a wide screen; as a sheet on a phone) and names the chosen level only; the
+// topic count follows the chosen level; a topic's row carries no level mark; on a phone the Home button stays while
+// the field has focus and leaves once a query is typed (the layout: track-layout.e2e.ts).
 // Run: npm run e2e (Chromium from Playwright: bunx playwright install chromium)
 import { afterAll, beforeAll, expect, test } from "bun:test";
 import type { Locator, Page } from "playwright";
@@ -24,7 +24,7 @@ async function open(width: number, address = COURSE, height = 900): Promise<void
   await page.goto(new URL(address, base).href);
 }
 const panelOpen = (id: string): Promise<boolean> => page.evaluate((p) => document.getElementById(p)?.matches(":popover-open") ?? false, id);
-// The first of the elements that are shown: the group is in the phone's bar and in the right pane's tools.
+// The first of the elements that are shown: the Level button is in the head, in the bar and in the phone's bar.
 const shown = (selector: string): Locator => page.locator(selector).filter({ visible: true }).first();
 const box = async (selector: string): Promise<{ x: number; y: number; right: number; bottom: number }> => {
   const b = await shown(selector).boundingBox();
@@ -32,21 +32,21 @@ const box = async (selector: string): Promise<{ x: number; y: number; right: num
 };
 
 test(
-  "on a wide screen the Level button opens the course's level popover under the group, on its right edge",
+  "on a wide screen the Level button opens the course's level popover under the head's buttons, from the column's left edge",
   async () => {
     for (const width of [1032, 1440]) {
       await open(width);
-      expect(await shown(".ix-level [data-level-label]").textContent()).toBe("All levels");
-      await shown(".ix-level").click();
+      expect(await page.locator(".ix-level [data-level-label]").first().textContent()).toBe("All levels");
+      await shown(".cl-tools .ix-level, .cl-bar .ix-level").click();
       expect(await panelOpen("lv-pop")).toBe(true);
       // The popover takes its place as it opens (client-levels.ts, on its toggle).
       await page.waitForFunction(() => document.getElementById("lv-pop")?.style.top !== "");
       expect(await page.locator("#lv-pop .lv-pop-t").textContent()).toBe("English");
       expect(await page.locator("#lv-pop .lv-pop-note").textContent()).toBe("Content above the chosen level is hidden.");
       const pop = await box("#lv-pop");
-      const group = await box(".hm-group");
+      const group = await box(".cl-tools");
       expect(Math.round(pop.y - group.bottom)).toBe(8);
-      expect(Math.round(pop.right)).toBe(Math.round(group.right));
+      expect(Math.round(pop.x)).toBe(width < 1280 ? 16 : 20);
       // The levels the course does not reach dim; Proficiency (All levels) stays active and ticked.
       const rows = await page.$$eval("#lv-pop .lv-row", (els) =>
         els.map((el) => [el.getAttribute("data-row"), el.classList.contains("lv-off")]),
@@ -64,15 +64,15 @@ test(
   "choosing a level in the popover names it on the button alone and ticks it, the top row bringing back All levels",
   async () => {
     await open(1440);
-    await shown(".ix-level").click();
+    await shown(".cl-tools .ix-level, .cl-bar .ix-level").click();
     await page.click('#lv-pop [data-row="B1"]');
     expect(await panelOpen("lv-pop")).toBe(false);
-    expect(await shown(".ix-level [data-level-label]").textContent()).toBe("Intermediate");
-    expect(await shown(".ix-level").locator(".lvm").count()).toBe(0);
-    await shown(".ix-level").click();
+    expect(await page.locator(".ix-level [data-level-label]").first().textContent()).toBe("Intermediate");
+    expect(await shown(".cl-tools .ix-level, .cl-bar .ix-level").locator(".lvm").count()).toBe(0);
+    await shown(".cl-tools .ix-level, .cl-bar .ix-level").click();
     expect(await page.locator('#lv-pop [data-row="B1"]').getAttribute("aria-checked")).toBe("true");
     await page.click('#lv-pop [data-row="C2"]');
-    expect(await shown(".ix-level [data-level-label]").textContent()).toBe("All levels");
+    expect(await page.locator(".ix-level [data-level-label]").first().textContent()).toBe("All levels");
   },
   SLOW,
 );
@@ -81,7 +81,7 @@ test(
   "on a phone the Level button opens the course's sheet from the bottom with a close button",
   async () => {
     await open(402, COURSE, 874);
-    await shown(".ix-level").click();
+    await shown(".cl-tools .ix-level, .cl-bar .ix-level").click();
     expect(await panelOpen("lv-pop")).toBe(true);
     const sheet = await box("#lv-pop");
     expect([Math.round(sheet.x), Math.round(sheet.right), Math.round(sheet.bottom)]).toEqual([8, 394, 866]);
@@ -97,29 +97,24 @@ test(
   async () => {
     await open(1440);
     for (const level of LEVELS) {
-      await shown(".ix-level").click();
+      await shown(".cl-tools .ix-level, .cl-bar .ix-level").click();
       await page.click(`#lv-pop [data-row="${level}"]`);
       const listed = await page.$$eval(
         '.ix-flow[data-order="categories"] .ix-rows > li:not(.ix-more)',
         (rows) => rows.filter((row) => row.getClientRects().length > 0).length,
       );
-      expect(Number.parseInt((await shown(".ix-count").textContent()) ?? "", 10)).toBe(listed);
+      expect(Number.parseInt((await shown(".cl-n").textContent()) ?? "", 10)).toBe(listed);
     }
   },
   SLOW,
 );
 
 test(
-  "a topic's level popover opens just under its mark, on the mark's right edge",
+  "a topic's row is its title and a chevron: no level mark opens a popover from the list",
   async () => {
     await open(1440);
-    await page.locator(".ix-row .lvm-b").first().click();
-    expect(await panelOpen("lv-pop")).toBe(true);
-    await page.waitForFunction(() => document.getElementById("lv-pop")?.style.top !== "");
-    const mark = await box(".ix-row .lvm-b");
-    const pop = await box("#lv-pop");
-    expect(Math.round(pop.y - mark.bottom)).toBe(8);
-    expect(Math.round(pop.right)).toBe(Math.round(mark.right));
+    expect(await page.locator(".ix-row .lvm, .ix-row [data-lv]").count()).toBe(0);
+    expect(await page.locator(".ix-row .ix-chev").count()).toBeGreaterThan(0);
   },
   SLOW,
 );
@@ -129,14 +124,14 @@ test(
   async () => {
     await open(402, COURSE, 874);
     await page.click("#ix-search");
-    expect(await page.locator(".ix-up").isVisible()).toBe(true);
+    expect(await page.locator(".cl-home").isVisible()).toBe(true);
     await page.keyboard.type("past");
     await page.locator(".hm-row").first().waitFor();
-    expect(await page.locator(".ix-up").isVisible()).toBe(false);
+    expect(await page.locator(".cl-home").isVisible()).toBe(false);
     await open(1440);
     await page.click("#hm-q");
     await page.keyboard.type("past");
-    expect(await page.locator(".ix-up").isVisible()).toBe(true);
+    expect(await page.locator(".cl-home").isVisible()).toBe(true);
   },
   SLOW,
 );

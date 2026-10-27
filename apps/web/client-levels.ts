@@ -4,7 +4,7 @@
 // one (All levels) staying active; the rows tick the chosen level, the top one while none is chosen. Choosing a row sets the filter (client.ts) and closes the
 // popover. On a wide screen the popover opens under its mark, shifted up to fit the window; on a phone it rises from the bottom as a sheet. The
 // toolbar's Level button opens it for the course (data-lv-levels names the levels the course holds, data-lv-under the
-// toolbar's group it opens under).
+// toolbar's groups, as a selector, the one it sits in opening it under).
 export interface Entry {
   t: string;
 }
@@ -96,7 +96,7 @@ export function levelPopover(root: HTMLElement): void {
   // it ends at the window's bottom (over the mark when it must), and where it is taller than the window it fills it
   // from 12px under its top and scrolls. A phone's popover is a sheet at the bottom (level-mark.css).
   function place(): void {
-    if (opener === null || !matchMedia("(min-width: 861px)").matches) {
+    if (opener === null || !matchMedia("(min-width: 1024px)").matches) {
       for (const p of ["top", "left", "max-height"]) pop.style.removeProperty(p);
       return;
     }
@@ -104,7 +104,10 @@ export function levelPopover(root: HTMLElement): void {
     const group = opener.dataset["lvUnder"];
     const at = (group === undefined ? opener : (opener.closest(group) ?? opener)).getBoundingClientRect();
     const width = pop.offsetWidth;
-    const left = Math.min(at.right - width >= 12 ? at.right - width : at.left, innerWidth - width - 12);
+    // A button that starts its group's column (data-lv-start) opens it from the column's left padding.
+    const side = opener.dataset["lvStart"] === undefined ? null : opener.closest("[data-cl-side]");
+    const start = side === null ? at.left : side.getBoundingClientRect().left + parseFloat(getComputedStyle(side).paddingLeft);
+    const left = Math.min(at.right - width >= 12 ? at.right - width : start, innerWidth - width - 12);
     const height = Math.min(pop.scrollHeight + 1, innerHeight - 12);
     const top = Math.max(12, Math.min(at.bottom + 8, innerHeight - height));
     pop.style.left = `${String(Math.round(left))}px`;

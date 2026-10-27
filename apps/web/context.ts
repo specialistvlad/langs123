@@ -1,14 +1,5 @@
 // What every page builder shares: build options, curriculum data, links and the page list.
-import {
-  type CurriculumLanguage,
-  ENABLED_EXPLAIN,
-  type Explain,
-  explainName,
-  explainOf,
-  localize,
-  SITE,
-  type TopicRef,
-} from "../../scripts/lib.ts";
+import { type CurriculumLanguage, ENABLED_EXPLAIN, type Explain, explainOf, type TopicRef } from "../../scripts/lib.ts";
 import type { Range } from "../../scripts/levels.ts";
 import type { Brand } from "./brand.ts";
 import type { Sample } from "./sample.ts";
@@ -16,16 +7,6 @@ import type { PageInput, PageKind } from "./layout.ts";
 import type { Ui } from "./ui.ts";
 import type { Stage } from "./path.ts";
 import type { LinkFn } from "./html.ts";
-
-// One language a page is read in: its own name, its name in the language the page is read in (empty when the two are
-// the same), the page in it, and whether it is this page.
-export interface Choice {
-  label: string;
-  sub: string;
-  href: string;
-  on: boolean;
-  lang: Explain;
-}
 
 export interface BuildOptions {
   outDir: string;
@@ -122,17 +103,5 @@ export function homeLanguage(): Explain {
   return home;
 }
 
-// Each explanation language's name in every other.
-const NAMES: Record<string, Partial<Record<Explain, string>>> = Object.fromEntries(SITE.explain.map((x) => [x.code, x.name]));
-
-// The choice whose link leads to this page is on; a track's pages offer the languages it is explained in.
-export function readChoices(explain: Explain, pathFor: (e: Explain) => string, langs: readonly Explain[] = EXPLAINS): Choice[] {
-  const here = pathFor(explain);
-  return langs.map((e) => {
-    const label = explainName(e);
-    const named = localize(NAMES[e] ?? {}, explain);
-    return { label, sub: named === label ? "" : named, href: pathFor(e), on: pathFor(e) === here, lang: e };
-  });
-}
 export const alternates = (pathFor: (e: Explain) => string, langs: readonly Explain[] = EXPLAINS): { lang: Explain; path: string }[] =>
   langs.map((e) => ({ lang: e, path: pathFor(e) }));

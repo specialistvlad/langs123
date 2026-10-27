@@ -1,125 +1,43 @@
-/* Phones: the lesson is the page (the split's left pane stays out); the title row holds the up link beside the title;
-   the glass bar at the bottom holds Contents, the group of Level, Variety and Read in, and the round Search button at
-   its right end, which opens the field (the split's left pane holds it, over a phone's bottom edge) with Close
-   (client-home.ts sets html.hm-searching) and, with a query, the results in place of the lesson; the bar hides while
-   the reader scrolls down (html.bar-hidden) and rises with the on-screen keyboard (--hm-kb) */
-@media screen and (max-width: 860px) {
+/* A topic on phones (below 1024px): two pages in one document. The contents page: Back to the course, the title with
+   the topic's levels, the lead, and the parts as rows with chevrons (topic-pagers.css). Once the address names a part
+   (#part) the reading takes its place: Back to the contents, the head and the lead, then the sections, the browser
+   having scrolled to the part. The bottom bar, the fade and the results are the course column's (track-phone.css) */
+@media screen and (max-width: 1023px) {
   :where(html[data-page="topic"]) .tp-wrap {
     display: block;
-    padding: max(16px, calc(env(safe-area-inset-top) + 8px)) 20px 130px;
+    padding: 0 20px 130px;
   }
-  .sp-topic .sp-body {
-    padding: 0;
-  }
-  .sp.sp-topic .sp-left {
+  /* The title row, Back and the title, stays at the top while the page scrolls (the head's boxes give way so its
+     containing block is the whole page) and the part the address names opens right under it; the summary opens at the
+     top of the page, its head in view */
+  :where(html[data-page="topic"]) :is(.tp-head, .doc-head) {
     display: contents;
   }
-  .sp-topic .sp-left > :not(.tp-sbar, .tp-results) {
-    display: none;
-  }
-  .sp-topic .tp-sbar,
-  .sp-topic .tp-results,
-  .sp-topic #hm-cards {
-    display: none;
-  }
-  html.hm-searching .sp-topic .tp-sbar {
-    display: flex;
-  }
-  html.hm-query .sp-topic .tp-results {
-    display: block;
-  }
-  html.hm-query .sp-topic .sp-right {
-    display: none;
-  }
   :where(html[data-page="topic"]) .tp-head .title-row {
-    align-items: center;
-    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-sizing: border-box;
     min-height: 44px;
+    margin: 0 -20px;
+    padding: max(16px, calc(env(safe-area-inset-top) + 8px)) 20px 8px;
+    background: var(--pg-bg);
   }
-  :where(html[data-page="topic"]) .tp-head .page-icon {
+  :where(html[data-page="topic"]) .tp-main .sections > .part {
+    scroll-margin-top: 76px;
+  }
+  :where(html[data-page="topic"]) .tp-main .sections > .part.summary {
+    scroll-margin-top: 2000px;
+  }
+  :where(html[data-page="topic"]) .tp-back-r,
+  html:where([data-page="topic"]):has(.tp-body :target) .tp-back-c,
+  html:where([data-page="topic"]):has(.tp-body :target) .tp-parts {
     display: none;
   }
-  :where(html[data-page="topic"]) .tp-up {
-    flex: none;
-  }
-  :where(html[data-page="topic"]) .tp-fade {
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 20;
-    height: 130px;
-    background: linear-gradient(to bottom, transparent, var(--tp-fade) 60%);
-    pointer-events: none;
-  }
-  :where(html[data-page="topic"]) .tp-bar {
-    left: 16px;
-    right: 16px;
-    bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-  }
-  :where(html[data-page="topic"]) .tp-bar-left {
+  html:where([data-page="topic"]):has(.tp-body :target) .tp-back-r {
     display: flex;
   }
-  :where(html[data-page="topic"]) .tp-bar .hm-group {
-    height: 48px;
-  }
-  :where(html[data-page="topic"]) .tp-bar .tp-btn,
-  :where(html[data-page="topic"]) .tp-bar .hm-read summary {
-    width: 52px;
-    padding: 0;
-  }
-  :where(html[data-page="topic"]) .tp-bar .tp-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-  :where(html[data-page="topic"]) .tp-bar .ix-search-open {
-    margin-left: auto;
-  }
-  :where(html[data-page="topic"]) .tp-bar .hm-menu {
-    top: auto;
-    bottom: calc(100% + 14px);
-    right: 0;
-  }
-  :where(html[data-page="topic"]) .tp-bar,
-  :where(html[data-page="topic"]) .tp-fade {
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease;
-  }
-  html:where([data-page="topic"]):not(.hm-searching, .hm-query).bar-hidden .tp-bar:not(:has(:popover-open)) {
-    transform: translateY(calc(100% + 60px));
-  }
-  html:where([data-page="topic"]):not(.hm-searching, .hm-query).bar-hidden .tp-fade {
-    opacity: 0;
-  }
-  :where(html[data-page="topic"]) .tp-results {
-    padding-bottom: 120px;
-  }
-  html:where([data-page="topic"]).hm-searching .tp-results {
-    padding-bottom: calc(var(--hm-kb, 0px) + 110px);
-  }
-  :where(html[data-page="topic"]) .ix-menu-variety {
-    left: 16px;
-    right: auto;
-    bottom: calc(max(12px, calc(env(safe-area-inset-bottom) + 8px)) + 88px);
-  }
-  :where(html[data-page="topic"]) .hm-fmenu {
-    bottom: auto;
-  }
-}
-
-/* Phones with reduced motion: the bar appears and hides without sliding */
-@media screen and (max-width: 860px) and (prefers-reduced-motion: reduce) {
-  :where(html[data-page="topic"]) .tp-bar,
-  :where(html[data-page="topic"]) .tp-fade {
-    transition: none;
+  html:where([data-page="topic"]):not(:has(.tp-body :target)) .tp-body {
+    display: none;
   }
 }
