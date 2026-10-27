@@ -7,6 +7,7 @@ import { page, pageFacts } from "./layout.ts";
 import { studyPath } from "./path.ts";
 import { ui } from "./ui.ts";
 import { writeSite } from "./output.ts";
+import { brandPages, checkBrandPages } from "./pages/brand-pages.ts";
 import { creditsPage } from "./pages/credits.ts";
 import { homePage } from "./pages/home.ts";
 import { notFoundPage } from "./pages/notfound.ts";
@@ -19,6 +20,7 @@ export type { BuildOptions, HeadChange, PageFacts } from "./context.ts";
 
 // Builds the site into o.outDir and returns the facts of every page it holds.
 export async function build(o: BuildOptions): Promise<PageFacts[]> {
+  checkBrandPages(o.brand?.pages);
   const curriculum = await loadCurriculum();
   const all = await loadTopics(curriculum);
   const refs = o.sample === undefined ? all : all.filter((r) => o.sample?.topics.includes(r.id) === true);
@@ -53,6 +55,7 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
 
   homePage(ctx);
   creditsPage(ctx);
+  brandPages(ctx);
   for (const lang of ctx.languages) {
     const langRefs = refs.filter((r) => r.lang === lang.code);
     const written = langRefs.filter((r) => r.topic);

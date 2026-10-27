@@ -10,8 +10,8 @@ import { type Explain, explainName, listOf, localize, say, SITE } from "../../..
 import { join, refRange, topicLevels } from "../../../scripts/levels.ts";
 import { type Brand, LIBRARY_BRAND } from "../brand.ts";
 import { alternates, type Context, EXPLAINS, explainsOf, homeLanguage, readChoices } from "../context.ts";
-import { INFO } from "../glyphs.ts";
-import { closeButton, moreButton, moreMenu, readMenu, results, searchForm, themeButton, themeMenu } from "../toolbar.ts";
+import { INFO, MENU_GLYPHS } from "../glyphs.ts";
+import { closeButton, type MenuLink, moreButton, moreMenu, readMenu, results, searchForm, themeButton, themeMenu } from "../toolbar.ts";
 import { CHOOSE_COURSE, choose, listButton, split } from "../split.ts";
 import { escapeHtml } from "../html.ts";
 import { courseEntry, type LevelEntry, levelData, levelPopover } from "../level-popover.ts";
@@ -19,7 +19,7 @@ import { levelsLabel, levelsOf, markButton } from "../level-mark.ts";
 import type { Level } from "../../../scripts/lib.ts";
 import { ui } from "../ui.ts";
 import { searchFilters } from "../search-filters.ts";
-import { creditsUrl, homeUrl, trackUrl } from "../urls.ts";
+import { creditsUrl, homeUrl, pageUrl, trackUrl } from "../urls.ts";
 import { homeSearch } from "./home-search.ts";
 
 // The course cards of a home page: each opens in the home page's language when the course is written for it,
@@ -66,10 +66,23 @@ function creditsLink(home: Explain, cls: string): string {
   return `<a class="${cls}" href="${creditsUrl(home)}" aria-label="${words}" title="${words}">${INFO}</a>`;
 }
 
+// The brand's pages that carry a menu entry, to follow the credits wherever the credits are offered.
+const menuLinks = (home: Explain, brand: Brand): MenuLink[] =>
+  (brand.pages ?? []).flatMap((p) =>
+    p.menu === undefined ? [] : [{ href: pageUrl(home, p.slug), label: p.title(home), glyph: MENU_GLYPHS[p.menu.glyph] }],
+  );
+const pageLinks = (links: MenuLink[]): string =>
+  links
+    .map(
+      (l) =>
+        `<a class="hm-page" href="${escapeHtml(l.href)}" aria-label="${escapeHtml(l.label)}" title="${escapeHtml(l.label)}">${l.glyph}</a>`,
+    )
+    .join("");
+
 // The toolbar: the search, the Read in menu, the theme and the credits, the last two folded into More on a phone,
 // and Close while searching. On a wide screen it holds the search and Close alone: the title row and the right pane
 // carry the rest.
-function toolbar(home: Explain): string {
+function toolbar(home: Explain, links: MenuLink[]): string {
   const t = ui(home);
   const words = say("credits", home);
   return `<nav class="hm-bar">
@@ -77,10 +90,10 @@ ${searchForm(t)}
 <div class="hm-group hm-folds glass">
 ${readMenu(t, readChoices(home, homeUrl))}
 ${themeButton(t)}
-${creditsLink(home, "hm-credits")}
+${creditsLink(home, "hm-credits")}${pageLinks(links)}
 ${moreButton(t)}
 </div>
-${moreMenu(t, { href: creditsUrl(home), label: words })}
+${moreMenu(t, { href: creditsUrl(home), label: words }, links)}
 ${closeButton(t)}
 ${themeMenu(t)}
 </nav>
@@ -89,10 +102,10 @@ ${themeMenu(t)}
 
 // The left pane's title row: the brand, the theme and the credits (while the right pane shows a course or the credits),
 // the list button.
-function titleRow(home: Explain, brand: Brand): string {
+function titleRow(home: Explain, brand: Brand, links: MenuLink[]): string {
   return `<div class="sp-title">
 <a class="hm-brand" href="${homeUrl(home)}">${brand.mark(28)}<span>${escapeHtml(SITE.name)}</span></a>
-<div class="sp-group glass sp-own">${themeButton(ui(home))}${creditsLink(home, "hm-credits")}</div>
+<div class="sp-group glass sp-own">${themeButton(ui(home))}${creditsLink(home, "hm-credits")}${pageLinks(links)}</div>
 ${listButton(ui(home))}
 </div>`;
 }
@@ -109,10 +122,11 @@ interface HomePane {
 function homePane(ctx: Context, home: Explain): HomePane {
   const t = ui(home);
   const brand = ctx.o.brand ?? LIBRARY_BRAND;
+  const links = menuLinks(home, brand);
   const entries: Record<string, LevelEntry> = {};
   const grid = cards(ctx, home, entries);
-  const left = `${titleRow(home, brand)}
-${toolbar(home)}
+  const left = `${titleRow(home, brand, links)}
+${toolbar(home, links)}
 <main class="hm-main">
 <h1 class="hm-title">${escapeHtml(say("homeHeading", home))}</h1>
 <div class="hm-grid" id="hm-cards">
@@ -120,7 +134,7 @@ ${grid}
 </div>
 ${results(t, searchFilters(t, home, ctx.languages, readChoices(home, homeUrl)))}
 </main>`;
-  const tools = `<div class="sp-group glass">${readMenu(t, readChoices(home, homeUrl))}${themeButton(t)}${creditsLink(home, "hm-credits")}</div>`;
+  const tools = `<div class="sp-group glass">${readMenu(t, readChoices(home, homeUrl))}${themeButton(t)}${creditsLink(home, "hm-credits")}${pageLinks(links)}</div>`;
   return { left, tools, extras: `${levelPopover(home)}\n${levelData(entries)}` };
 }
 

@@ -3,7 +3,7 @@ import { type Explain, LEVELS, type Variety } from "../../scripts/lib.ts";
 import type { Choice, HeadChange, PageFacts } from "./context.ts";
 import { escapeHtml } from "./html.ts";
 
-export type PageKind = "home" | "track" | "topic" | "credits" | "404";
+export type PageKind = "home" | "track" | "topic" | "credits" | "page" | "404";
 
 export interface PageOptions {
   kind: PageKind;

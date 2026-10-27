@@ -60,7 +60,13 @@ export function moreButton(t: Ui): string {
   const more = escapeHtml(t.more);
   return `<button type="button" class="hm-more" popovertarget="hm-more" aria-haspopup="menu" aria-expanded="false" aria-label="${more}" title="${more}">${MORE}</button>`;
 }
-export function moreMenu(t: Ui, credits: { href: string; label: string }): string {
+// A page the Home links to beside the credits: its address, its title and the icon it draws.
+export interface MenuLink {
+  href: string;
+  label: string;
+  glyph: string;
+}
+export function moreMenu(t: Ui, credits: { href: string; label: string }, pages: MenuLink[] = []): string {
   const more = escapeHtml(t.more);
   const text = (title: string, sub: string): string =>
     `<span class="ix-tick" aria-hidden="true"></span><span class="ix-text"><span class="ix-title">${escapeHtml(title)}</span>${sub}</span>`;
@@ -71,6 +77,10 @@ export function moreMenu(t: Ui, credits: { href: string; label: string }): strin
   const main = [
     open("theme", t.theme, sub(t.themeAuto, " data-theme-now"), THEME),
     `<a href="${credits.href}" role="menuitem" class="ix-item">${text(credits.label, "")}<span class="ix-end">${INFO}</span></a>`,
+    ...pages.map(
+      (p) =>
+        `<a href="${escapeHtml(p.href)}" role="menuitem" class="ix-item">${text(p.label, "")}<span class="ix-end">${p.glyph}</span></a>`,
+    ),
   ].join("");
   return `<div class="ix-menu hm-more-menu" id="hm-more" popover role="menu" aria-label="${more}"><div data-panel="main">${main}</div><div data-panel="theme" hidden>${back}${themeItems(t)}</div></div>`;
 }
