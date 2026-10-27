@@ -1,4 +1,6 @@
-// Writes the built site: every page, the sitemap and the assets, swapped in place at once.
+// Writes the built site: every page, the sitemap and the assets, swapped in place at once. Each asset is also written
+// under a name carrying its content's hash (style.3f9a1c2b0d.css), and every page asks for that name: a release that
+// changes a file gives it a new address, so a browser holding the old one fetches the new one with the new pages.
 import { mkdir, rename, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { clientJs, levelsCss, styleCss, varietiesCss } from "./assets.ts";
@@ -15,6 +17,13 @@ export function leftovers(text: string): string[] {
   });
 }
 
+// An asset's name with the first ten hex digits of its content's SHA-256 before its extension.
+export function hashed(name: string, text: string): string {
+  const hash = new Bun.CryptoHasher("sha256").update(text).digest("hex").slice(0, 10);
+  const dot = name.lastIndexOf(".");
+  return `${name.slice(0, dot)}.${hash}${name.slice(dot)}`;
+}
+
 // varieties: the varieties of each language being learned that has them. A page that holds a leftover stops
 // the build, naming it.
 export async function writeSite(pages: Page[], o: BuildOptions, varieties: readonly (readonly string[])[] = []): Promise<void> {
@@ -27,6 +36,14 @@ ${pages
 </urlset>
 `;
 
+  const assets: [string, string][] = [
+    ["style.css", await styleCss()],
+    ["levels.css", levelsCss() + varietiesCss(varieties)],
+    ["client.js", await clientJs()],
+  ];
+  const named = assets.map(([name, text]) => [name, hashed(name, text), text] as const);
+  const pinned = (html: string): string => named.reduce((h, [name, file]) => h.replaceAll(`"/${name}"`, `"/${file}"`), html);
+
   const left = pages.flatMap((p) => leftovers(p.html).map((l) => `${p.path}: ${l}`));
   if (left.length > 0) throw new Error(`${String(left.length)} leftovers in the built pages:\n${left.slice(0, 10).join("\n")}`);
 
@@ -37,12 +54,13 @@ ${pages
   await mkdir(tmp, { recursive: true });
   for (const p of pages) {
     const file = p.path.endsWith("/") ? join(tmp, p.path, "index.html") : join(tmp, p.path);
-    await Bun.write(file, p.html);
+    await Bun.write(file, pinned(p.html));
   }
   await Bun.write(join(tmp, "sitemap.xml"), sitemap);
-  await Bun.write(join(tmp, "style.css"), await styleCss());
-  await Bun.write(join(tmp, "levels.css"), levelsCss() + varietiesCss(varieties));
-  await Bun.write(join(tmp, "client.js"), await clientJs());
+  for (const [name, file, text] of named) {
+    await Bun.write(join(tmp, name), text);
+    await Bun.write(join(tmp, file), text);
+  }
   await rm(old, { recursive: true, force: true });
   await rename(o.outDir, old).catch(() => {
     // No earlier build to move aside.

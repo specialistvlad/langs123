@@ -1,5 +1,5 @@
 // The sample site holds every kind of page: each home, credits and missing page with the Home's search data, and per
-// track of the sample its index and its topics.
+// track of the sample its index and its topics; every page asks for its styles and script under their hashed names.
 import { expect, test } from "bun:test";
 import { join } from "node:path";
 import { ENABLED_EXPLAIN, LEVELS } from "../../scripts/lib.ts";
@@ -69,4 +69,18 @@ test("each home page's search data comes with its index in parts, and a word of 
   expect(found.length).toBeGreaterThan(0);
   expect(topics.some((t) => (t[0] ?? "").toLowerCase().includes("went") || (t[3] ?? "").toLowerCase().includes("went"))).toBe(false);
   expect(topics[found[0]?.[0] ?? -1]?.[1]).toBe("/en/english/verbs/irregular-verbs-table/");
+});
+
+test("every page asks for its styles and script under their hashed names, each written beside its plain name", async () => {
+  const home = await Bun.file(join(SITE_DIR, "index.html")).text();
+  for (const [name, ext] of [
+    ["style", "css"],
+    ["levels", "css"],
+    ["client", "js"],
+  ] as const) {
+    const file = new RegExp(`"/(${name}\\.[0-9a-f]{10}\\.${ext})"`).exec(home)?.[1] ?? "";
+    expect(file).not.toBe("");
+    expect(home).not.toContain(`"/${name}.${ext}"`);
+    expect(await Bun.file(join(SITE_DIR, file)).text()).toBe(await Bun.file(join(SITE_DIR, `${name}.${ext}`)).text());
+  }
 });
