@@ -526,10 +526,10 @@ Source: §1 Languages and variants (Ukrainian)
 
 ### NO-13 Ukrainian writes the dash before a noun predicate
 Requirements: 2.10
-Rule: The dash between a subject and its noun predicate stands in Ukrainian examples: Ма́ма — лі́кар.
+Rule: The dash between a noun subject and its noun predicate stands in Ukrainian examples: Ма́ма — лі́кар.
 Not this: (written case) "Ма́ма лі́кар." with no dash.
 Check: question
-Question: [sentence] Yes or no: does this Ukrainian sentence with a noun predicate write the dash between subject and predicate?
+Question: [sentence] Yes or no: does this Ukrainian sentence with a noun subject and a noun predicate write the dash between them?
 Languages: uk
 Courses: uk
 Source: §1 Languages and variants (Ukrainian)
@@ -694,9 +694,9 @@ Languages: es-419
 Courses: es
 Source: §1 Languages and variants (Varieties)
 
-### NO-31 Voseo appears in an es-419 note
+### NO-31 Voseo appears in an es-419 fact block
 Requirements: 2.10
-Rule: Voseo appears in a note that carries es-419.
+Rule: Voseo appears in a fact block that carries es-419.
 Not this: (written case) Voseo forms in a table row serving every variety.
 Check: lint
 Languages: es-419
@@ -722,10 +722,10 @@ Languages: fr-CA
 Courses: fr
 Source: §1 Languages and variants (Varieties)
 
-### NO-49 The question particle -tu appears in fr-CA notes
+### NO-49 The question particle -tu appears in fr-CA fact blocks
 Requirements: 2.10
-Rule: The question particle -tu of speech (Tu viens-tu ?) appears in notes that carry fr-CA.
-Not this: (written case) The question particle -tu in a note that serves every variety.
+Rule: The question particle -tu of speech (Tu viens-tu ?) appears in fact blocks that carry fr-CA.
+Not this: (written case) The question particle -tu in a fact block that serves every variety.
 Check: question
 Question: [block] Yes or no: does this block hold a speech form used in Québec alone, such as the question particle -tu?
 Languages: fr-CA
@@ -848,6 +848,55 @@ Requirements: 2.10
 Rule: An ellipsis is the single character U+2026, set close to the word before it.
 Not this: "If I had arrived earlier..." with three full stops (es/13-escritura/puntuacion).
 Check: lint
+
+### NO-52 German writes „ “ and ß
+Requirements: 2.10
+Rule: German text writes quotation marks as „ “ and keeps ß where the spelling has it: Straße.
+Not this: (written case) "Strasse" for Straße, or quotation marks written as " ".
+Check: lint
+Languages: de
+
+### NO-53 Italian writes the accent on a final stressed vowel
+Requirements: 2.10
+Rule: Italian text writes the grave or acute accent on a final stressed vowel: città, perché, però.
+Not this: (written case) "citta" or "perche" with no accent.
+Check: lint
+Languages: it
+
+### NO-54 Polish writes „ ”
+Requirements: 2.10
+Rule: Polish text writes quotation marks as „ ”.
+Not this: (written case) Quotation marks written as " " or „ “ in Polish text.
+Check: lint
+Languages: pl
+
+### NO-55 Turkish writes ’ before a suffix on a proper name
+Requirements: 2.10
+Rule: Turkish text writes ’ between a proper name and its suffix: İstanbul’da, Ayşe’nin.
+Not this: (written case) "İstanbulda" with no apostrophe, or "İstanbul'da" with a straight one.
+Check: lint
+Languages: tr
+
+### NO-56 Vietnamese writes every tone mark
+Requirements: 2.10
+Rule: Vietnamese text writes every tone mark and diacritic of each word: tiếng Việt.
+Not this: (written case) "tieng Viet" with the marks dropped.
+Check: lint
+Languages: vi
+
+### NO-57 Japanese explanations write kanji without readings
+Requirements: 2.10
+Rule: A Japanese explanation writes kanji as a Japanese reader reads them, with no furigana or romaji; readings belong to the Japanese course's examples (NO-22).
+Not this: (written case) 説明（せつめい） with a reading after a kanji word in an explanation.
+Check: lint
+Languages: ja
+
+### NO-58 Japanese addresses the reader without a word for "you"
+Requirements: 2.10
+Rule: A Japanese explanation addresses the reader with no word for "you": the sentence is built without あなた.
+Not this: (written case) あなたは… opening an instruction to the reader.
+Check: lint
+Languages: ja
 
 ## The index
 
