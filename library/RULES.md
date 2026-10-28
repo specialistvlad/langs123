@@ -242,7 +242,7 @@ Check: schema
 
 ### VO-01 A sentence holds at most 20 words
 Requirements: 2.4
-Rule: A sentence of explanation holds at most 20 words; Japanese is measured in characters, at most 50.
+Rule: A sentence of explanation holds at most 20 words; Japanese is measured in characters, at most 50. A sentence ends at . ! or ?, so a colon or a semicolon stays inside it.
 Not this: "In most of Latin America, an action finished earlier today takes the preterite; Andean Spanish (Peru, Bolivia, highland Ecuador) takes the perfect, as Spain does:" (es/07-pasados/preterito-perfecto).
 Check: lint
 Source: §7 Tables and writing style (One rule per list item, at most 20 words)
@@ -319,7 +319,7 @@ Check: lint
 ### FT-03 An example is written out in full
 Requirements: 2.9
 Rule: An example is the whole word or the whole sentence, written out in full.
-Not this: "B /biː/ / C /siː/ / T /tiː/" (en/01-foundations/alphabet-spelling), three examples for eight letters.
+Not this: (written case) "I like apples, bananas, etc." or "A, B, C…" as an example, the list cut short.
 Check: lint
 
 ### FT-04 A group's rule is a sentence ahead of its items
@@ -589,7 +589,7 @@ Source: §1 Languages and variants (Japanese)
 ### NO-20 Japanese punctuation is 。 and 、
 Requirements: 2.10
 Rule: Japanese text ends a sentence with 。 and separates clauses with 、.
-Not this: (written case) A Japanese example ending in a Latin full stop or comma.
+Not this: (written case) きょうは月曜日です. with a Latin full stop, or あした, 行きます with a Latin comma.
 Check: lint
 Languages: ja
 Source: §1 Languages and variants (Japanese)
@@ -1285,7 +1285,7 @@ Source: §12 Semantic data (Rules)
 ### ST-07 An ipa mark holds symbols alone
 Requirements: 9.5 marks, 2.10
 Rule: An `ipa` mark holds the IPA symbols of one transcription, and the reader sees them between slashes.
-Not this: (written case) `{ ipa: "/eɪ/" }` with the slashes written in the mark.
+Not this: (written case) {ipa /eɪ/} with the slashes written inside the mark.
 Check: lint
 Source: §7 Tables and writing style (Pronunciation is IPA in an ipa mark)
 
