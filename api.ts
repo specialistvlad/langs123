@@ -3,7 +3,7 @@
 // its version), the readers of the curriculum, its topics, their levels, titles and addresses, and the reader of the
 // new library's rule catalog (library/RULES.md) with its check. A program that imports only this module keeps working
 // as the modules behind it change.
-export { build, type BuildOptions, type HeadChange, type PageFacts } from "./apps/web/build.ts";
+export { build, type BuildOptions, type HeadChange, libraryArg, type PageFacts, rootArg } from "./apps/web/build.ts";
 export { SAMPLE, type Sample } from "./apps/web/sample.ts";
 export { designArg } from "./apps/web/tokens.ts";
 // Each block's text as the web's reading shows it, for another reader of the export to hold its own text to.
