@@ -80,14 +80,14 @@ test("IX-13, IX-18, IX-19 and IX-20: the library's reach, checked with --reach a
     lintCase(
       "IX-19",
       (c) => {
-        c.course("fr", "fr");
+        c.course("fr", "fr", ["fr-FR", "fr-CA"]);
       },
       reach,
     ),
   ).toEqual(["A2: the course has no topic at this level"]);
-  expect(lintCase("IX-19", (c) => (c.course("fr", "fr"), (entry(c).path = { A0: 1, A1: 1, A2: 1, B1: 1 })), reach)).toEqual([
-    "B1: the course reaches no further than A2 at v1",
-  ]);
+  expect(
+    lintCase("IX-19", (c) => (c.course("fr", "fr", ["fr-FR", "fr-CA"]), (entry(c).path = { A0: 1, A1: 1, A2: 1, B1: 1 })), reach),
+  ).toEqual(["B1: the course reaches no further than A2 at v1"]);
   expect(lintCase("IX-20", undefined, reach)).toEqual([
     "es: the library holds this course",
     "uk: the library holds this course",

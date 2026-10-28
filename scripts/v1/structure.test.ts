@@ -26,7 +26,7 @@ test("the fixture's layout holds", () => {
 
 test("IX-01: a course has its index, naming its own folder", () => {
   expect(said(check((f) => Reflect.deleteProperty(f.courses[0] ?? {}, "index")))).toEqual(["IX-01 the course has no index.yaml"]);
-  expect(said(check((f) => (index(f).course = "es")))).toEqual(["IX-01 the index names course es in the folder of en"]);
+  expect(said(check((f) => (index(f).course = "de")))).toEqual(["IX-01 the index names course de in the folder of en"]);
 });
 
 test("IX-26: section and topic ids are unique in the course", () => {

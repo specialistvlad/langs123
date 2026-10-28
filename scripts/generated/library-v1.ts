@@ -1,5 +1,9 @@
 // Generated from library/schema/library.schema.json by npm run types. Edit the schema, then regenerate.
 
+/**
+ * A course's index: its name, source language, varieties, sources and sections, each with its topics in order.
+ */
+export type CourseIndex = Index;
 export type Text = string;
 /**
  * A variety of a course, such as en-GB or es-419.
@@ -153,10 +157,7 @@ export interface Langs123LibraryV1 {
   kanji?: KanjiByLevel;
   needs?: SearchNeeds;
 }
-/**
- * A course's index: its name, source language, varieties, sources and sections, each with its topics in order.
- */
-export interface CourseIndex {
+export interface Index {
   course: string;
   name: Localized;
   /**

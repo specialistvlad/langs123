@@ -1444,7 +1444,93 @@
             }
           }
         }
-      }
+      },
+      "allOf": [
+        {
+          "x-rule": "NO-27",
+          "if": {
+            "properties": {
+              "course": {
+                "const": "en"
+              }
+            },
+            "required": [
+              "course"
+            ]
+          },
+          "then": {
+            "x-rule": "NO-27",
+            "required": [
+              "varieties"
+            ],
+            "properties": {
+              "varieties": {
+                "x-rule": "NO-27",
+                "const": [
+                  "en-GB",
+                  "en-US"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "x-rule": "NO-27",
+          "if": {
+            "properties": {
+              "course": {
+                "const": "es"
+              }
+            },
+            "required": [
+              "course"
+            ]
+          },
+          "then": {
+            "x-rule": "NO-27",
+            "required": [
+              "varieties"
+            ],
+            "properties": {
+              "varieties": {
+                "x-rule": "NO-27",
+                "const": [
+                  "es-419",
+                  "es-ES"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "x-rule": "NO-27",
+          "if": {
+            "properties": {
+              "course": {
+                "const": "fr"
+              }
+            },
+            "required": [
+              "course"
+            ]
+          },
+          "then": {
+            "x-rule": "NO-27",
+            "required": [
+              "varieties"
+            ],
+            "properties": {
+              "varieties": {
+                "x-rule": "NO-27",
+                "const": [
+                  "fr-FR",
+                  "fr-CA"
+                ]
+              }
+            }
+          }
+        }
+      ]
     },
     "finding": {
       "x-component": "build",

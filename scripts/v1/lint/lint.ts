@@ -17,8 +17,8 @@ export interface Lexicon {
 export interface LintOptions {
   // The rules of the library's reach run too.
   reach?: boolean;
-  // The root holds the samples, which the owner approves as a whole (RV-08): their indexes draw on no source and
-  // none is approved.
+  // The root holds the samples, which the owner approves as a whole (RV-08): their topics stand outside the waves,
+  // their indexes draw on no source and none is approved.
   samples?: boolean;
 }
 

@@ -43,9 +43,16 @@ test("NO-28: every variety is one its course lists", () => {
   expect(check((s) => (s.definition.text = "The {variant en-AU letters}."))).toEqual([
     "NO-28 source.yaml def: en-AU is no variety of the course",
   ]);
-  expect(check((_, __, f) => Reflect.deleteProperty(f.courses[0]?.index?.data as object, "varieties"))).toContain(
-    "NO-28 source.yaml ess.z: en-GB is no variety of the course",
-  );
+  const unvaried = (f: LibraryFiles): void => {
+    const index = f.courses[0]?.index?.data as { course: string; varieties?: string[] };
+    index.course = "de";
+    Reflect.deleteProperty(index, "varieties");
+  };
+  expect(
+    check((_, __, f) => {
+      unvaried(f);
+    }),
+  ).toContain("NO-28 source.yaml ess.z: en-GB is no variety of the course");
   expect(check((_, __, f) => Reflect.deleteProperty(f.courses[0] ?? {}, "index"))).toEqual(["IX-01 en : the course has no index.yaml"]);
 });
 

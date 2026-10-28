@@ -1,7 +1,7 @@
 // The review of each topic: a topic in review or approved keeps its record (RV-16), naming its writer, one per
 // course beside the leading writer (LA-04); its status moves one step at a time (RV-02); its reviewer is a session
 // apart from the writer's (RV-05); each finding cites a rule or a source (RV-06) and has the writer's answer
-// (RV-07); the owner approves the index and each wave before the next (RV-08), reads every flagged topic (RV-09) and
+// (RV-07); the owner approves the index and each wave before the next, the samples being one gate (RV-08), reads every flagged topic (RV-09) and
 // one in ten of the rest (RV-10) in Ukrainian and English, and alone sets the Ukrainian flag (RV-14).
 import type { TopicReviewRecord } from "../../generated/library-v1.ts";
 import { LEVELS } from "../../lib.ts";
@@ -108,7 +108,7 @@ export const REVIEW: LintRule[] = [
             const before = LEVELS[LEVELS.indexOf(level as (typeof LEVELS)[number]) - 1];
             const written = t.review?.data.statuses[0]?.date;
             const approved = before === undefined ? undefined : approvalOf(lint, `wave:${before}`);
-            if (before === undefined || written === undefined) return [];
+            if (before === undefined || written === undefined || lint.options.samples === true) return [];
             return approved !== undefined && approved <= written
               ? []
               : [at("RV-08", t.source.file, t.source.data.id, `the ${level} wave is written after the owner approves the ${before} wave`)];

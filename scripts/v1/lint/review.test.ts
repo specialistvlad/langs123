@@ -96,7 +96,7 @@ test("RV-07: a finding with no answer, and one declined with no reason", () => {
   ]);
 });
 
-test("RV-08: an approved index without the owner's approval, and a wave written before the last is approved", () => {
+test("RV-08: an approved index without the owner's approval, and a wave written before the last is approved, the samples aside", () => {
   expect(lintCase("RV-08", (c) => Reflect.deleteProperty(c.files, "approvals"))).toEqual([
     "en: an approved index carries the owner's approval in approvals.yaml",
   ]);
@@ -104,6 +104,7 @@ test("RV-08: an approved index without the owner's approval, and a wave written 
     if (c.source.subtopics[0]) c.source.subtopics[0].level = "A1";
   });
   expect(lintCase("RV-08", a1)).toEqual(["en.letters: the A1 wave is written after the owner approves the A0 wave"]);
+  expect(lintCase("RV-08", a1, { beside: { options: { samples: true } } })).toEqual([]);
   const approved = (c: Case): void => {
     a1(c);
     (c.files.approvals?.data as Approvals).push({ what: "wave:A0", by: "owner", date: "2026-11-01" });

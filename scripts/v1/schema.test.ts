@@ -83,6 +83,12 @@ describe("each schema rule's written case fails with its id", () => {
     expect(rules(index((i) => Reflect.deleteProperty(i.sources[0] ?? {}, "licence")))).toEqual(["IX-09"]);
     expect(rules(index((i) => Reflect.deleteProperty(i, "source")))).toEqual(["LA-09"]);
     expect(rules(index((i) => (i.varieties = ["en-GB"])))).toEqual(["NO-27"]);
+    expect(rules(index((i) => (i.varieties = ["en-US", "en-GB"])))).toEqual(["NO-27"]);
+    expect(rules(index((i) => Reflect.deleteProperty(i, "varieties")))).toEqual(["NO-27"]);
+    expect(rules(index((i) => Object.assign(i, { course: "es", varieties: ["es-ES", "es-419"] })))).toEqual(["NO-27"]);
+    expect(rules(index((i) => Object.assign(i, { course: "fr", varieties: ["fr-FR", "fr-CA"] })))).toEqual([]);
+    expect(rules(index((i) => Object.assign(i, { course: "fr", varieties: ["fr-FR", "fr-BE"] })))).toEqual(["NO-27"]);
+    expect(rules(index((i) => Object.assign(i, { course: "de", varieties: undefined })))).toEqual([]);
     expect(rules(index((i) => Reflect.deleteProperty(i, "sections")))).toEqual(["IX-02"]);
   });
   test("the review record and the approvals", () => {

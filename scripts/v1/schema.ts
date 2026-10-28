@@ -49,8 +49,8 @@ function message(e: ErrorObject): string {
 export function schemaProblems(kind: FileKind, data: unknown, file: string): Problem[] {
   const validate = ajv.getSchema(`library.schema.json#/definitions/${kind}`) as ValidateFunction;
   if (validate(data)) return [];
-  // An anyOf names each branch that failed, then itself; the reader needs the last line alone.
-  const errors = (validate.errors ?? []).filter((e) => !/\/anyOf\/\d+\//.test(e.schemaPath));
+  // An anyOf names each branch that failed, then itself, and an if names its then; the reader needs the line that says why.
+  const errors = (validate.errors ?? []).filter((e) => !/\/anyOf\/\d+\//.test(e.schemaPath) && e.keyword !== "if");
   return errors.map((e) => {
     const rule = ruleOf(e);
     return { ...(rule !== undefined && { rule }), file, message: message(e) };
