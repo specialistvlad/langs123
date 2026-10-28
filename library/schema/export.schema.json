@@ -766,8 +766,67 @@
       "description": "A language's own text, shown in its layer alone: its blocks after the block each follows, its speakers' errors and reasons."
     },
     "picture": {
+      "description": "A scene grid: one cell per essence line, placing the figure against the ground.",
       "x-component": "R7",
-      "type": "object"
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "figure",
+        "ground",
+        "cells"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "kind": {
+          "x-component": "R7",
+          "const": "scene-grid"
+        },
+        "figure": {
+          "$ref": "#/definitions/drawnObject"
+        },
+        "ground": {
+          "$ref": "#/definitions/drawnObject"
+        },
+        "cells": {
+          "x-component": "R7",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "line",
+              "place"
+            ],
+            "properties": {
+              "line": {
+                "$ref": "#/definitions/id"
+              },
+              "place": {
+                "$ref": "#/definitions/place"
+              },
+              "ground": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/drawnObject"
+                  },
+                  {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "$ref": "#/definitions/drawnObject"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
     },
     "topic": {
       "type": "object",
@@ -1079,6 +1138,35 @@
       },
       "title": "Library file",
       "description": "What the index screens read: every course with its sections, its topics' titles, definitions, levels and reading minutes, and its study path."
+    },
+    "place": {
+      "x-component": "R7",
+      "enum": [
+        "contained",
+        "on-surface",
+        "under",
+        "under-covered",
+        "front",
+        "back",
+        "beside",
+        "near",
+        "between",
+        "above",
+        "below",
+        "across",
+        "outside"
+      ]
+    },
+    "drawnObject": {
+      "description": "An object the picture library draws.",
+      "x-component": "R7",
+      "enum": [
+        "ball",
+        "box",
+        "house",
+        "cover"
+      ],
+      "title": "Drawn object"
     }
   }
 }

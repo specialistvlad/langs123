@@ -5,6 +5,24 @@ export type Variety = string;
 export type Level = "A0" | "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 export type Id = string;
 export type Form = string | string[];
+/**
+ * An object the picture library draws.
+ */
+export type DrawnObject = "ball" | "box" | "house" | "cover";
+export type Place =
+  | "contained"
+  | "on-surface"
+  | "under"
+  | "under-covered"
+  | "front"
+  | "back"
+  | "beside"
+  | "near"
+  | "between"
+  | "above"
+  | "below"
+  | "across"
+  | "outside";
 export type Block = Fact | Why | ExampleBlock | List | Table;
 
 /**
@@ -129,7 +147,23 @@ export interface Example {
   };
   variety?: Variety;
 }
-export interface Picture {}
+/**
+ * A scene grid: one cell per essence line, placing the figure against the ground.
+ */
+export interface Picture {
+  id: Id;
+  kind: "scene-grid";
+  figure: DrawnObject;
+  ground: DrawnObject;
+  /**
+   * @minItems 1
+   */
+  cells: {
+    line: Id;
+    place: Place;
+    ground?: DrawnObject | DrawnObject[];
+  }[];
+}
 export interface Subtopic {
   id: Id;
   number: number;
