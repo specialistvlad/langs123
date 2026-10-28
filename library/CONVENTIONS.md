@@ -192,7 +192,7 @@ says how an error is written.
 - Spanish text opens a question with ¿ and an exclamation with ¡ (NO-05) and writes every accent its words need
   (NO-06): *¿Estás bien?*
 - The *vosotros* forms and the rules about them carry es-ES (NO-29). A rule that holds in Latin America alone,
-  such as *ustedes* as the one plural of *tú*, carries es-419 (NO-30). Voseo appears in a block that carries
+  such as *ustedes* as the one plural of *tú*, carries es-419 (NO-30). Voseo appears in a fact block that carries
   es-419 (NO-31).
 
 ### 7.3 Ukrainian
@@ -207,7 +207,7 @@ says how an error is written.
 - A Latin transliteration after the national system of 2010 appears beside the IPA in exactly three A0 topics:
   the alphabet, the sounds and the soft sign (NO-11).
 - A form carried over from Russian is a common error whose speakers are Ukrainian (NO-12).
-- The dash between a subject and its noun predicate stands in Ukrainian examples: *Ма́ма — лі́кар* (NO-13).
+- The dash between a noun subject and its noun predicate stands in Ukrainian examples: *Ма́ма — лі́кар* (NO-13).
 
 ### 7.4 French
 
@@ -219,7 +219,7 @@ says how an error is written.
   (NO-18).
 - The meals *petit-déjeuner, déjeuner, dîner* carry fr-FR, and *déjeuner, dîner, souper* carry fr-CA (NO-32).
 - The affricates of *tu* and *dis*, [tsy] and [dzi], appear in elements that carry fr-CA (NO-33). The question
-  particle *-tu* of speech, *Tu viens-tu ?*, appears in a block that carries fr-CA (NO-49).
+  particle *-tu* of speech, *Tu viens-tu ?*, appears in fact blocks that carry fr-CA (NO-49).
 
 ### 7.5 Japanese
 
@@ -233,8 +233,20 @@ says how an error is written.
   reading in hiragana: 食(た)べます (NO-24). Examples at A0 are written in kana (NO-25); examples at A1 and A2 write
   in kanji the words learners read in kanji at their level (日, 月, 人, 本, 何, 時, 食べる, 行く…) and every other
   word in kana (NO-26).
+- A Japanese explanation writes kanji as a Japanese reader reads them, with no furigana or romaji; readings
+  belong to the Japanese course's examples (NO-57).
+- A Japanese explanation addresses the reader with no word for "you": the sentence is built without あなた
+  (NO-58).
 
-### 7.6 Varieties
+### 7.6 German, Italian, Polish, Turkish and Vietnamese
+
+- German text writes quotation marks as „ “ and keeps ß where the spelling has it: *Straße* (NO-52).
+- Italian text writes the grave or acute accent on a final stressed vowel: *città*, *perché*, *però* (NO-53).
+- Polish text writes quotation marks as „ ” (NO-54).
+- Turkish text writes ’ between a proper name and its suffix: *İstanbul’da*, *Ayşe’nin* (NO-55).
+- Vietnamese text writes every tone mark and diacritic of each word: *tiếng Việt* (NO-56).
+
+### 7.7 Varieties
 
 - A course with varieties lists them with the default first: en-GB then en-US, es-419 then es-ES, fr-FR then
   fr-CA (NO-27).
@@ -244,7 +256,7 @@ says how an error is written.
   en-GB and /ziː/ for en-US. A form both varieties share stays plain text, so the two forms of a swap differ
   (NO-51).
 
-### 7.7 Address and shared typography
+### 7.8 Address and shared typography
 
 Each explanation language addresses the reader in its own way:
 
@@ -260,6 +272,7 @@ Each explanation language addresses the reader in its own way:
 | Turkish | siz (NO-42) |
 | Indonesian | Anda (NO-43) |
 | Vietnamese | bạn (NO-44) |
+| Japanese | no word for "you" (NO-58) |
 
 - Every language names a topic with its own word: topic (en), тема (uk), tema (es), tópico (pt), thème (fr), Thema
   (de), argomento (it), temat (pl), konu (tr), topik (id), chủ đề (vi), トピック (ja) (NO-45).
