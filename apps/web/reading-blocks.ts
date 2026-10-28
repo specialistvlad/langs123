@@ -43,8 +43,32 @@ export function examples(r: Reading, b: Extract<Block, { type: "example" }>): st
     .join("")}</div>`;
 }
 
+// A list whose every item is a form with a one-word example lays out as tiles: the form, its transcription, the word and its
+// translation, as many across as the column holds (reading-tiles.css). A list with a text or a sentence anywhere keeps rows.
+export function tiled(r: Reading, b: Extract<Block, { type: "list" }>): boolean {
+  return (
+    b.items.length > 0 &&
+    b.items.every((i) => i.text === undefined && i.ex !== undefined && !/\s/.test(plain(parseMarks(i.ex.text), r.ctx)))
+  );
+}
+
+function tiles(r: Reading, b: Extract<Block, { type: "list" }>): string {
+  return `<div class="rd-tiles">${b.items
+    .filter((i) => r.shows(i.variety))
+    .map((i) => {
+      const ex = i.ex;
+      const tr = ex === undefined || r.main === r.source ? "" : r.say(ex.id, ex.tr);
+      const sound = i.ipa === undefined ? "" : `<span class="rd-tile-s">${r.m(`{ipa ${i.ipa}}`)}</span>`;
+      const word = ex === undefined ? "" : `<span class="rd-tile-w">${r.m(ex.text)}</span>`;
+      const layers = ex === undefined ? "" : r.layers((l) => (l === r.source ? "" : r.in(l, ex.tr)));
+      return `<div class="rd-tile"><b class="rd-term">${r.m(formText(i.form))}</b>${sound}${word}${tr === "" ? "" : `<span class="lx-tr">${r.m(tr)}</span>`}${layers}${r.pin(i.id)}</div>`;
+    })
+    .join("")}</div>`;
+}
+
 // An item with a text leads with it; one without leads with its form and the transcription after it.
 export function list(r: Reading, b: Extract<Block, { type: "list" }>): string {
+  if (tiled(r, b)) return tiles(r, b);
   const items = b.items.filter((i) => r.shows(i.variety));
   return `<ul class="lx-list">${items
     .map((i) => {

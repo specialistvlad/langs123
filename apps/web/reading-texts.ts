@@ -15,7 +15,10 @@ const ENTITIES: Record<string, string> = { "&amp;": "&", "&lt;": "<", "&gt;": ">
 export const words = (html: string): string =>
   html
     .replace(/<(p|span) class="(lx-label|lx-capsule)">[^<]*<\/\1>/g, "")
-    .replace(/<(br|\/p|li|\/li|\/td|\/th|\/tr|div|\/div)\b[^>]*>|<span class="(lx-ex|lx-tr|rd-trl|rd-lang|lx-j)"[^>]*>/g, " ")
+    .replace(
+      /<(br|\/p|li|\/li|\/td|\/th|\/tr|div|\/div)\b[^>]*>|<span class="(lx-ex|lx-tr|rd-trl|rd-lang|lx-j|rd-tile-s|rd-tile-w)"[^>]*>/g,
+      " ",
+    )
     .replace(/<[^>]*>/g, "")
     .replace(/&(amp|lt|gt|quot);/g, (e) => ENTITIES[e] ?? e)
     .replace(/\s+/g, " ")

@@ -45,8 +45,8 @@ function picture(r: Reading): string {
 }
 
 // R4 and R7: part 00, the essence's lines in the first language, each linked to the subtopic that teaches it, in two cards
-// on a wide column. A line leads with its sentence, or its form (with its transcription, and its example word and that
-// word's translation under it), or its form and its gloss; it carries its level mark only where the topic's subtopics span
+// on a wide column. A line leads with its sentence, or its form with its transcription and its example word (the word's
+// translation under them), or its form and its gloss; it carries its level mark only where the topic's subtopics span
 // more than one level, as the head's mark says the rest.
 export function essence(r: Reading): string {
   const still = (text: string): string => marks(text, { ...r.ctx, still: true });
@@ -55,13 +55,11 @@ export function essence(r: Reading): string {
     .filter((e) => r.shows(e.variety))
     .map((e) => {
       let form: string;
-      let sub = "";
+      let sub: string;
       if (e.ipa !== undefined) {
-        form = `${still(formText(e.form))}<span class="lx-j" aria-hidden="true"></span>${still(`{ipa ${e.ipa}}`)}`;
-        if (e.ex !== undefined) {
-          const tr = r.say(e.ex.id, e.ex.tr);
-          sub = `${still(e.ex.text)}${tr === "" ? "" : `<span class="lx-j" aria-hidden="true"></span>${still(tr)}`}`;
-        }
+        const word = e.ex === undefined ? "" : `<span class="lx-j" aria-hidden="true"></span>${still(e.ex.text)}`;
+        form = `${still(formText(e.form))}<span class="lx-j" aria-hidden="true"></span>${still(`{ipa ${e.ipa}}`)}${word}`;
+        sub = e.ex === undefined ? "" : still(r.say(e.ex.id, e.ex.tr));
       } else if (e.ex !== undefined) {
         form = still(e.ex.text);
         sub = still(r.say(e.ex.id, e.ex.tr));
