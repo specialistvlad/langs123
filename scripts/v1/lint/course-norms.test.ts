@@ -125,6 +125,13 @@ test("NO-29 and NO-31: Spanish vosotros carries es-ES, and voseo stands in an es
     "forms.office: sois belongs to es-ES and carries it",
   ]);
   expect(lintCase("NO-29", all(es, writes("¿{target Vosotros} sois de aquí?", "es-ES")), { words: [ES] })).toEqual([]);
+  expect(
+    lintCase(
+      "NO-29",
+      all(es, (c) => (fact(c).text[0] = { id: "names.fact.1", text: "Viene de {l1 es vuestra merced}." } as never)),
+      { words: [{ ...ES, vosotros: ["vuestra"] }] },
+    ),
+  ).toEqual([]);
   expect(lintCase("NO-29", all(es, writes("{target {variant es-419 Ustedes} {variant es-ES Vosotros}}.")), { words: [ES] })).toEqual([]);
   const vos = { id: "names.fact.1", text: "En Argentina, {term vos} ocupa el lugar de tú." };
   expect(
