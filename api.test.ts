@@ -1,12 +1,14 @@
-// The library's interface holds what programs built on it read: the build, the export, the search and the readers.
+// The library's interface holds what programs built on it read: the build, the export, the search, the readers
+// and the rule catalog.
 import { expect, test } from "bun:test";
 import * as api from "./api.ts";
 
-test("api.ts exports the build, the export, the search and the library's readers", () => {
+test("api.ts exports the build, the export, the search, the library's readers and the rule catalog", () => {
   expect(Object.keys(api).sort()).toEqual(
     [
       "LEVELS",
       "LIBRARY_FILE",
+      "RULES_FILE",
       "ROOT",
       "SAMPLE",
       "SEARCH_CASES",
@@ -17,8 +19,10 @@ test("api.ts exports the build, the export, the search and the library's readers
       "loadTopics",
       "localize",
       "plainText",
+      "readRules",
       "reading",
       "refRange",
+      "ruleProblems",
       "searchData",
       "served",
       "say",
