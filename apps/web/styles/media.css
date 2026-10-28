@@ -7,8 +7,8 @@
     max-width: none;
     height: auto;
     margin: 0;
-    padding: 16px 16px calc(22px + env(safe-area-inset-bottom));
-    border-radius: 16px 16px 0 0;
+    padding: var(--s-16) var(--s-16) calc(var(--s-22) + env(safe-area-inset-bottom));
+    border-radius: var(--r-16) var(--r-16) 0 0;
     box-shadow: var(--sh-sheet);
   }
   .panel[popover]::backdrop {
@@ -31,7 +31,7 @@
 @media print {
   @page {
     size: A4;
-    margin: 16mm;
+    margin: var(--print-margin);
   }
 
   .rail {

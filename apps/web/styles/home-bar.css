@@ -7,18 +7,18 @@
   z-index: 30;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--s-10);
 }
 .hm-search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--s-8);
   min-width: 0;
   width: 260px;
   height: 44px;
   margin: 0;
-  padding: 0 16px;
-  border-radius: 999px;
+  padding: 0 var(--s-16);
+  border-radius: var(--r-pill);
   color: var(--c-muted);
   font-size: 17px;
   transition: width 0.2s ease;
@@ -55,7 +55,7 @@
   position: relative;
   display: flex;
   height: 44px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   color: var(--c-text);
 }
 .hm-close {
@@ -66,7 +66,7 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   color: var(--c-text);
   cursor: pointer;
 }
@@ -88,7 +88,7 @@
   .hm-home {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 20px 32px 56px;
+    padding: var(--s-20) var(--s-32) var(--s-56);
   }
   .hm-home .hm-brand {
     margin: 0;
@@ -99,9 +99,9 @@
   .hm-home .hm-head {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: var(--s-24);
     height: 48px;
-    padding-right: 180px;
+    padding-right: var(--head-tools-clearance);
   }
   .hm-home .hm-bar {
     position: static;
@@ -113,7 +113,7 @@
     display: flex;
     width: 100%;
     max-width: 520px;
-    gap: 12px;
+    gap: var(--s-12);
   }
   .hm-home .hm-search,
   html.hm-searching .hm-home .hm-search {
@@ -139,18 +139,18 @@
     display: flex;
   }
   html.hm-query .hm-home .hm-main {
-    padding-top: 24px;
+    padding-top: var(--s-24);
   }
   .hm-home .hm-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 28px;
+    margin-top: var(--s-28);
   }
   .hm-home .hm-results {
     max-width: 664px;
     margin: 0 auto;
   }
   .hm-home .hm-none {
-    margin-top: 72px;
+    margin-top: var(--s-72);
   }
 }
 @media (min-width: 1280px) {

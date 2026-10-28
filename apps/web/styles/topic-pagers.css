@@ -1,10 +1,10 @@
 /* The contents page of a phone (pages/topic.ts, topic-phone.css): "Contents" over a card of the parts, each row its
    number, title and a chevron, the part last read tinted; there are no level marks */
 :where(html[data-page="topic"]) .tp-parts {
-  margin-top: 36px;
+  margin-top: var(--s-36);
 }
 :where(html[data-page="topic"]) .tp-parts .tp-caps {
-  margin: 0 0 8px 4px;
+  margin: 0 0 var(--s-8) var(--s-4);
 }
 :where(html[data-page="topic"]) .tp-list {
   margin: 0;
@@ -26,9 +26,9 @@
 :where(html[data-page="topic"]) .tp-list a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--s-10);
   min-height: 44px;
-  padding: 0 16px 0 20px;
+  padding: 0 var(--s-16) 0 var(--s-20);
   color: var(--c-text);
   font-size: 17px;
   line-height: 22px;
@@ -53,5 +53,5 @@
 :where(html[data-page="topic"]) .tp-list .name {
   flex: 1;
   min-width: 0;
-  padding: 11px 0;
+  padding: var(--s-11) 0;
 }

@@ -1,22 +1,22 @@
 /* The credits page's cards: the authors, how to credit with the copy button, the note and the closing line */
 .cr-people {
   display: flex;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: var(--s-12);
+  padding: var(--s-14) var(--s-16);
 }
 .cr-people p {
   line-height: 1.35;
 }
 .cr-how {
-  padding: 14px 16px;
+  padding: var(--s-14) var(--s-16);
 }
 .cr-line {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 12px;
-  padding: 11px 12px 11px 14px;
-  border-radius: 12px;
+  gap: var(--s-10);
+  margin-top: var(--s-12);
+  padding: var(--s-11) var(--s-12) var(--s-11) var(--s-14);
+  border-radius: var(--r-12);
   background: var(--c-fill);
 }
 .credit-line {
@@ -40,7 +40,7 @@
   height: 32px;
   padding: 0;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: none;
   color: var(--c-accent);
   cursor: pointer;
@@ -58,30 +58,30 @@
   display: block;
 }
 .cr-changes {
-  margin-top: 12px !important;
+  margin-top: var(--s-12) !important;
   line-height: 1.35;
 }
 .cr-note {
-  margin: 8px 16px 0 !important;
+  margin: var(--s-8) var(--s-16) 0 !important;
   font-size: 13px;
   line-height: 1.35;
   color: var(--c-muted);
 }
 .cr-lead {
-  margin: 0 0 4px;
+  margin: 0 0 var(--s-4);
   font-size: 19px;
   line-height: 1.4;
   font-weight: 600;
 }
 .cr-card > .cr-para {
-  padding: 14px 16px;
+  padding: var(--s-14) var(--s-16);
   line-height: 1.45;
 }
 .cr-card > .cr-para + .cr-para {
   padding-top: 0;
 }
 .cr-updated {
-  margin: 20px 16px 0;
+  margin: var(--s-20) var(--s-16) 0;
   font-size: 13px;
   line-height: 1.35;
   color: var(--c-muted);
@@ -90,8 +90,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  margin-top: 32px !important;
+  gap: var(--s-6);
+  margin-top: var(--s-32) !important;
   font-size: 14px;
   color: var(--c-muted);
 }
@@ -105,7 +105,7 @@
 }
 .cr-row:focus-visible {
   outline-offset: -2px;
-  border-radius: 22px;
+  border-radius: var(--r-22);
 }
 
 @media (max-width: 400px) {
@@ -113,7 +113,7 @@
     font-size: 14px;
   }
   .cr-row {
-    gap: 10px;
+    gap: var(--s-10);
   }
   .cr-row:has(.cr-value) .cr-trail {
     display: none;
@@ -121,6 +121,6 @@
 }
 @media (max-width: 860px) {
   .cr-main {
-    padding-top: 16px;
+    padding-top: var(--s-16);
   }
 }

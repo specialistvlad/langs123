@@ -6,7 +6,7 @@
 //   type      --t-<style>-size|lh|weight|track     --t-body-size  --t-reading-body-lh  --t-label-track
 //   family    --f-<family>                         --f-sans  --f-sans-uk  --f-mono
 //   spacing   --s-<token without space->           space-16 is --s-16
-//   radius    --r-<px>, --r-pill                   radius-xl (12px) is --r-12
+//   radius    --r-<px>, --r-pill                   radius-xl (12px) is --r-12, radius-1_5 (1.5px) --r-1_5
 //   layout    --bp-<name without breakpoint->      breakpoint-phone is --bp-phone; every other layout token keeps its
 //             --<name>                             name: --measure  --content-width  --topbar-height
 // The colours and the shadows whose two themes differ take their light values on :root and their dark ones under the two
@@ -79,7 +79,10 @@ export function tokenVariables(t: Tokens = TOKENS): { root: Declaration[]; light
       ]),
     ...Object.entries(t.type.families).map(([name, value]): Declaration => [`--f-${name}`, squash(value)]),
     ...t.spacing.tokens.map((s): Declaration => [`--s-${without(s.name, "space-")}`, s.value]),
-    ...t.radius.tokens.map((r): Declaration => [r.name === "radius-pill" ? "--r-pill" : `--r-${r.value.replace(/px$/, "")}`, r.value]),
+    ...t.radius.tokens.map((r): Declaration => [
+      r.name === "radius-pill" ? "--r-pill" : `--r-${r.value.replace(/px$/, "").replace(".", "_")}`,
+      r.value,
+    ]),
     ...t.layout.tokens.map((l): Declaration => [
       l.name.startsWith("breakpoint-") ? `--bp-${without(l.name, "breakpoint-")}` : `--${l.name}`,
       l.value,

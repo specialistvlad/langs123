@@ -2,9 +2,9 @@
 
 .table-wrap {
   overflow-x: auto;
-  margin: 12px 0;
+  margin: var(--s-12) 0;
   border: 1px solid var(--c-border);
-  border-radius: 10px;
+  border-radius: var(--r-10);
   background: var(--c-surface);
   box-shadow: var(--sh-card);
 }
@@ -16,7 +16,7 @@
 }
 .doc th,
 .doc td {
-  padding: 7px 12px;
+  padding: var(--s-7) var(--s-12);
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--c-border);
@@ -48,15 +48,15 @@
 }
 /* Tables with merged cells list one word per row: tight rows keep each list together. */
 .doc table.compact :is(th, td):not(.gap) {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: var(--s-8);
+  padding-right: var(--s-8);
 }
 .doc table.compact td.center {
   white-space: nowrap;
 }
 .doc table.compact td {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: var(--s-2);
+  padding-bottom: var(--s-2);
   line-height: 1.35;
 }
 /* Every column after the first has a line on its left; a merged cell at the bottom edge leaves it to the box. */
@@ -105,10 +105,10 @@
 }
 
 .empty {
-  margin-top: 40px;
-  padding: 28px;
+  margin-top: var(--s-40);
+  padding: var(--s-28);
   border: 1px dashed var(--c-border);
-  border-radius: 12px;
+  border-radius: var(--r-12);
   color: var(--c-muted);
   text-align: center;
 }
@@ -120,7 +120,7 @@
 }
 .sheet h3 {
   font-size: 17px;
-  margin-top: 28px;
-  padding-bottom: 4px;
+  margin-top: var(--s-28);
+  padding-bottom: var(--s-4);
   border-bottom: 1px solid var(--c-border);
 }

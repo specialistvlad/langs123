@@ -33,7 +33,7 @@ html:is([data-page="track"], [data-page="topic"]) a {
   display: flex;
   align-items: center;
   min-width: 0;
-  margin: 16px 0 0;
+  margin: var(--s-16) 0 0;
   font-size: 28px;
   line-height: 34px;
   font-weight: 700;
@@ -46,7 +46,7 @@ html:is([data-page="track"], [data-page="topic"]) a {
   white-space: nowrap;
 }
 .ix-flag {
-  margin-right: 8px;
+  margin-right: var(--s-8);
 }
 .cl-topic {
   grid-area: name;
@@ -61,7 +61,7 @@ html:is([data-page="track"], [data-page="topic"]) a {
 }
 .cl-line {
   grid-area: line;
-  margin: 4px 0 0;
+  margin: var(--s-4) 0 0;
   font-size: 15px;
   line-height: 20px;
   color: var(--c-muted);
@@ -86,7 +86,7 @@ html:is([data-page="track"], [data-page="topic"]) a {
   display: inline-block;
   width: 14px;
   height: 14px;
-  margin-left: var(--cl-chev, 8px);
+  margin-left: var(--cl-chev, var(--s-8));
   vertical-align: -2px;
   background: var(--c-faint);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5L6.5 7l-5 5.5'/%3E%3C/svg%3E")
@@ -115,13 +115,13 @@ html[data-order="path"] .ix-flow[data-order="path"] {
 }
 .ix-sec {
   break-inside: avoid;
-  margin-bottom: 28px;
+  margin-bottom: var(--s-28);
 }
 .ix-h {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  margin: 0 0 8px 20px;
+  gap: var(--s-10);
+  margin: 0 0 var(--s-8) var(--s-20);
   font-size: 20px;
   line-height: 25px;
   font-weight: 700;
@@ -133,7 +133,7 @@ html[data-order="path"] .ix-flow[data-order="path"] {
   min-width: 0;
 }
 .ix-num {
-  margin-right: 10px;
+  margin-right: var(--s-10);
   font:
     600 17px ui-monospace,
     Menlo,

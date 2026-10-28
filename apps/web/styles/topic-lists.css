@@ -7,7 +7,7 @@
 :where(html[data-page="topic"]) .tp-main .doc h2 {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--s-10);
   margin: 0;
   padding: 0;
   border: 0;
@@ -38,28 +38,28 @@
   margin: 0;
 }
 :where(html[data-page="topic"]) .blk-level {
-  margin: 0 0 8px;
+  margin: 0 0 var(--s-8);
 }
 :where(html[data-page="topic"]) .tp-main .doc p {
-  margin: 0 0 14px;
+  margin: 0 0 var(--s-14);
   font-size: 17px;
   line-height: 25px;
   letter-spacing: -0.43px;
 }
 :where(html[data-page="topic"]) .tp-main .doc p:has(> .tp-ex) {
-  margin-bottom: 14px;
+  margin-bottom: var(--s-14);
 }
 
 /* Lists: a rule, a note, an example */
 :where(html[data-page="topic"]) .tp-main .doc ul {
-  margin: 0 0 14px;
+  margin: 0 0 var(--s-14);
   padding: 0;
   list-style: none;
 }
 :where(html[data-page="topic"]) .tp-main .doc li {
   display: flex;
-  gap: 12px;
-  margin: 0 0 12px;
+  gap: var(--s-12);
+  margin: 0 0 var(--s-12);
   font-size: 17px;
   line-height: 25px;
   letter-spacing: -0.43px;
@@ -73,14 +73,14 @@
   flex: none;
   width: 6px;
   height: 6px;
-  margin: 10px 0 0 4px;
-  border-radius: 999px;
+  margin: var(--s-10) 0 0 var(--s-4);
+  border-radius: var(--r-pill);
   background: var(--c-tertiary);
 }
 :where(html[data-page="topic"]) .tp-main .doc li[data-type="note"] {
-  gap: 10px;
-  padding: 10px 14px 10px 12px;
-  border-radius: 14px;
+  gap: var(--s-10);
+  padding: var(--s-10) var(--s-14) var(--s-10) var(--s-12);
+  border-radius: var(--r-14);
   background: var(--c-note);
   font-size: 16px;
   line-height: 22px;
@@ -92,7 +92,7 @@
   flex: none;
   width: 18px;
   height: 18px;
-  margin-top: 2px;
+  margin-top: var(--s-2);
   background: var(--c-secondary);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Ccircle cx='10' cy='10' r='8.5' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M10 9v5' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='6' r='1.1' fill='black'/%3E%3C/svg%3E")
     center / contain no-repeat;
@@ -100,18 +100,18 @@
     center / contain no-repeat;
 }
 :where(html[data-page="topic"]) .tp-main .doc li[data-type="example"] {
-  margin-left: 4px;
+  margin-left: var(--s-4);
 }
 :where(html[data-page="topic"]) .tp-ex {
   display: flex;
-  gap: 12px;
-  margin-top: 6px;
+  gap: var(--s-12);
+  margin-top: var(--s-6);
 }
 :where(html[data-page="topic"]) .tp-ex::before {
   content: "";
   flex: none;
   width: 3px;
-  border-radius: 2px;
+  border-radius: var(--r-2);
   background: var(--c-accent);
   opacity: 0.55;
 }
@@ -130,7 +130,7 @@
 }
 :where(html[data-page="topic"]) .tp-tr {
   display: block;
-  margin-top: 1px;
+  margin-top: var(--s-1);
   font-size: 15px;
   line-height: 21px;
   letter-spacing: -0.2px;
@@ -148,10 +148,10 @@
   letter-spacing: 0.04em;
 }
 :where(html[data-page="topic"]) .tp-main .doc .tp-slot-cards p.tp-caps {
-  margin: 0 0 0 8px;
+  margin: 0 0 0 var(--s-8);
 }
 :where(html[data-page="topic"]) .tp-slot-cards .tp-card {
-  margin: 4px 0 10px;
+  margin: var(--s-4) 0 var(--s-10);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-cards .tp-card td {
   font-size: 15px;

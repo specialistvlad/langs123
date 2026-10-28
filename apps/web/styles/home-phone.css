@@ -6,7 +6,7 @@
   .hm-home {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 16px 20px 130px;
+    padding: var(--s-16) var(--s-20) var(--bar-clearance);
   }
   .hm-home .hm-head {
     display: flex;
@@ -19,7 +19,7 @@
     padding: 0;
   }
   .hm-home .hm-grid {
-    margin-top: 20px;
+    margin-top: var(--s-20);
   }
   .hm-home .hm-bar {
     top: auto;
@@ -32,7 +32,7 @@
     display: none;
     flex: 1;
     min-width: 0;
-    gap: 10px;
+    gap: var(--s-10);
   }
   .hm-home .hm-search {
     flex: 1;
@@ -44,7 +44,7 @@
     height: 48px;
   }
   .hm-home .hm-tools {
-    margin: 0 -4px 0 auto;
+    margin: 0 calc(-1 * var(--s-4)) 0 auto;
     width: 44px;
   }
   .hm-home .hm-tools .hm-langs {
@@ -61,7 +61,7 @@
     width: 52px;
     height: 48px;
     padding: 0;
-    border-radius: 999px;
+    border-radius: var(--r-pill);
     color: var(--c-text);
     cursor: pointer;
   }
@@ -77,7 +77,7 @@
     bottom: max(30px, calc(var(--hm-kb, 0px) + 10px));
   }
   html.hm-searching .hm-home .hm-main {
-    padding-bottom: calc(var(--hm-kb, 0px) + 110px);
+    padding-bottom: calc(var(--hm-kb, 0px) + var(--search-clearance));
   }
   .hm-home::after {
     content: "";
@@ -98,7 +98,7 @@
     padding-top: 0;
   }
   html.hm-query .hm-home .hm-none {
-    margin-top: 72px;
+    margin-top: var(--s-72);
   }
 }
 

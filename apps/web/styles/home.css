@@ -10,49 +10,49 @@ html[data-page="home"] a {
 
 /* The Home and the course index span the window, 20px from each side */
 .hm-main {
-  padding: 20px 20px 40px;
+  padding: var(--s-20) var(--s-20) var(--s-40);
 }
 .hm-brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--s-8);
   height: 44px;
-  margin-bottom: 12px;
+  margin-bottom: var(--s-12);
   font-size: 17px;
   font-weight: 650;
   letter-spacing: -0.01em;
 }
 .hm-brand svg {
   display: block;
-  border-radius: 7px;
+  border-radius: var(--r-7);
 }
 
 /* Courses: a card per language to learn; its name is a link stretched over the whole card, the "Explained in" line above it */
 .hm-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
-  gap: 16px;
+  gap: var(--s-16);
   align-items: start;
 }
 .hm-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 18px;
-  border-radius: 22px;
+  gap: var(--s-14);
+  padding: var(--s-18);
+  border-radius: var(--r-22);
   background: var(--c-surface);
 }
 .hm-course {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--s-12);
 }
 .hm-course-a {
   display: flex;
   flex-grow: 1;
   align-items: center;
-  gap: 12px;
+  gap: var(--s-12);
   min-width: 0;
   color: var(--c-text);
 }
@@ -72,13 +72,13 @@ html[data-page="home"] a {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 22px;
+  border-radius: var(--r-22);
 }
 .hm-upto {
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 6px;
+  gap: var(--s-6);
   font-size: 13px;
   line-height: 18px;
   font-weight: 500;
@@ -86,7 +86,7 @@ html[data-page="home"] a {
   white-space: nowrap;
 }
 .hm-pill {
-  --badge-pad: 0 7px;
+  --badge-pad: 0 var(--s-7);
   margin: 0;
   font-size: 12px;
   font-weight: 700;

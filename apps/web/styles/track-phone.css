@@ -9,13 +9,13 @@
     display: none;
   }
   .cl-side {
-    padding: max(16px, calc(env(safe-area-inset-top) + 8px)) 20px 130px;
+    padding: max(var(--s-16), calc(env(safe-area-inset-top) + var(--s-8))) var(--s-20) var(--bar-clearance);
   }
   .cl-head {
     grid-template-areas:
       "home name count"
       "line line line";
-    column-gap: 12px;
+    column-gap: var(--s-12);
   }
   .cl-name {
     margin: 0;
@@ -27,7 +27,7 @@
     grid-area: count;
   }
   .cl-line {
-    margin: 2px 0 18px 56px;
+    margin: var(--s-2) 0 var(--s-18) var(--s-56);
   }
   .cl-n,
   .cl-dot,
@@ -74,7 +74,7 @@
     right: 16px;
     bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
     z-index: 30;
-    gap: 12px;
+    gap: var(--s-12);
     transition: transform 0.25s ease;
   }
   .cl-bar {
@@ -110,7 +110,7 @@
     width: 52px;
     height: 48px;
     padding: 0;
-    border-radius: 999px;
+    border-radius: var(--r-pill);
     color: var(--c-text);
     cursor: pointer;
   }
@@ -150,13 +150,13 @@
     display: none;
   }
   html.hm-query .cl-side {
-    padding-top: 20px;
+    padding-top: var(--s-20);
   }
   html.hm-searching .cl-side {
-    padding-bottom: calc(var(--hm-kb, 0px) + 110px);
+    padding-bottom: calc(var(--hm-kb, 0px) + var(--search-clearance));
   }
   html.hm-query .cl-side .hm-none {
-    margin-top: 72px;
+    margin-top: var(--s-72);
   }
   /* A topic page: the column gives way to the reading, keeping the bar, the fade and the results */
   .cl[data-cl="topic"] .cl-side {
@@ -170,7 +170,7 @@
     display: none;
   }
   .cl[data-cl="topic"] .hm-results {
-    padding: 20px 20px calc(var(--hm-kb, 0px) + 120px);
+    padding: var(--s-20) var(--s-20) calc(var(--hm-kb, 0px) + var(--search-results-clearance));
   }
   html.hm-query .cl[data-cl="topic"] .cl-main {
     display: none;

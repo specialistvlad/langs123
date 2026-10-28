@@ -5,12 +5,12 @@
    columns keeps its first column fixed, and on a phone a slot table becomes cards */
 @media (min-width: 1024px) {
   :where(html[data-page="topic"]) .tp-wrap {
-    padding: 84px 16px 48px 24px;
+    padding: var(--s-84) var(--s-16) var(--s-48) var(--s-24);
   }
   :where(html[data-page="topic"]) .tp-cols {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: var(--s-20);
   }
   :where(html[data-page="topic"]) .tp-col {
     flex: 1;
@@ -20,11 +20,11 @@
     display: none;
   }
   :where(html[data-page="topic"]) .tp-main .lanes {
-    --lane-col-gap: 32px;
+    --lane-col-gap: var(--s-32);
   }
   :where(html[data-page="topic"]) .tp-main .tp-card th:last-child,
   :where(html[data-page="topic"]) .tp-main .tp-card td:last-child {
-    padding-right: 16px;
+    padding-right: var(--s-16);
   }
   :where(html[data-page="topic"]) .tp-main .sections > .part {
     scroll-margin-top: 84px;
@@ -39,7 +39,7 @@
     width: 168px;
     max-height: calc(100vh - 104px);
     max-height: calc(100dvh - 104px);
-    padding-left: 4px;
+    padding-left: var(--s-4);
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: none;
@@ -52,8 +52,8 @@
   }
   :where(html[data-page="topic"]) .tp-outline a {
     display: flex;
-    gap: 8px;
-    padding: 5px 10px 5px 12px;
+    gap: var(--s-8);
+    padding: var(--s-5) var(--s-10) var(--s-5) var(--s-12);
     border-left: 2px solid var(--c-sep);
     font-size: 13px;
     line-height: 18px;
@@ -84,10 +84,10 @@
 }
 @media (min-width: 1280px) {
   :where(html[data-page="topic"]) .tp-wrap {
-    padding: 84px 24px 48px 32px;
+    padding: var(--s-84) var(--s-24) var(--s-48) var(--s-32);
   }
   :where(html[data-page="topic"]) .tp-cols {
-    gap: 28px;
+    gap: var(--s-28);
   }
   :where(html[data-page="topic"]) .tp-outline {
     width: 220px;

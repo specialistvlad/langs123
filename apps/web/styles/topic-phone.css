@@ -5,7 +5,7 @@
 @media screen and (max-width: 1023px) {
   :where(html[data-page="topic"]) .tp-wrap {
     display: block;
-    padding: 0 20px 130px;
+    padding: 0 var(--s-20) var(--bar-clearance);
   }
   /* The title row, Back and the title, stays at the top while the page scrolls (the head's boxes give way so its
      containing block is the whole page) and the part the address names opens right under it; the summary opens at the
@@ -19,8 +19,8 @@
     z-index: 10;
     box-sizing: border-box;
     min-height: 44px;
-    margin: 0 -20px;
-    padding: max(16px, calc(env(safe-area-inset-top) + 8px)) 20px 8px;
+    margin: 0 calc(-1 * var(--s-20));
+    padding: max(var(--s-16), calc(env(safe-area-inset-top) + var(--s-8))) var(--s-20) var(--s-8);
     background: var(--c-bg);
   }
   :where(html[data-page="topic"]) .tp-main .sections > .part {

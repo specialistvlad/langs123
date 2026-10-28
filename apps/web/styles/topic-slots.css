@@ -6,14 +6,14 @@
   line-height: 20px;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th {
-  padding: 9px 5px 6px;
+  padding: var(--s-9) var(--s-5) var(--s-6);
   font-size: 11.5px;
   line-height: 15px;
   text-align: center;
   white-space: nowrap;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th:first-child {
-  padding-left: 14px;
+  padding-left: var(--s-14);
   text-align: left;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th.group {
@@ -28,7 +28,7 @@
   border-left: 0;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td {
-  padding: 5px 6px;
+  padding: var(--s-5) var(--s-6);
   border: 0;
   border-left: 0.5px solid var(--c-sep);
   text-align: center;
@@ -37,12 +37,12 @@
   line-height: 20px;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.key {
-  padding-left: 14px;
+  padding-left: var(--s-14);
   text-align: left;
   border-left: 0;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td:first-child:not(.key) {
-  padding-left: 6px;
+  padding-left: var(--s-6);
   border-left: 0;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.key + td,
@@ -71,11 +71,11 @@
   background: var(--c-bg);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.tp-lvl {
-  padding: 5px 12px 5px 5px;
+  padding: var(--s-5) var(--s-12) var(--s-5) var(--s-5);
   border: 0;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th.tp-lvl {
-  padding-right: 12px;
+  padding-right: var(--s-12);
   border: 0;
 }
 :where(html[data-page="topic"]) .tp-slot-cards {
@@ -84,8 +84,8 @@
 :where(html[data-page="topic"]) .tp-tense {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 18px 0 8px 8px;
+  gap: var(--s-10);
+  margin: var(--s-18) 0 var(--s-8) var(--s-8);
   font-size: 17px;
   line-height: 22px;
   font-weight: 600;
@@ -94,13 +94,13 @@
   flex-grow: 1;
 }
 :where(html[data-page="topic"]) .tp-slot .tp-caps {
-  margin: 4px 0 6px 8px;
+  margin: var(--s-4) 0 var(--s-6) var(--s-8);
 }
 :where(html[data-page="topic"]) .tp-slot .tp-card {
-  margin-bottom: 8px;
+  margin-bottom: var(--s-8);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td {
-  padding: 9px 10px;
+  padding: var(--s-9) var(--s-10);
   font-size: 16px;
   line-height: 22px;
 }
@@ -111,10 +111,10 @@
   border-top: 0;
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td:first-child {
-  padding-left: 10px;
+  padding-left: var(--s-10);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td.c0 {
-  padding-left: 20px;
+  padding-left: var(--s-20);
 }
 
 /* Errors: the wrong form in red under a cross, the right one in green under a check, then the rule */
@@ -135,7 +135,7 @@
   display: inline-block;
   width: 13px;
   height: 13px;
-  margin-right: 8px;
+  margin-right: var(--s-8);
   vertical-align: -1px;
 }
 :where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(1)::before {
@@ -159,24 +159,24 @@
 /* When the level filter leaves a view nothing: a dashed box and a button that shows the level */
 :where(html[data-page="topic"]) .tp-main .filter-empty {
   margin: 0;
-  padding: 22px 20px 20px;
+  padding: var(--s-22) var(--s-20) var(--s-20);
   border: 1.5px dashed var(--c-dashed);
-  border-radius: 22px;
+  border-radius: var(--r-22);
   background: none;
   text-align: center;
   color: var(--c-body);
 }
 :where(html[data-page="topic"]) .tp-main .filter-empty p {
-  margin: 0 0 16px;
+  margin: 0 0 var(--s-16);
   font-size: 17px;
   line-height: 25px;
   letter-spacing: -0.43px;
 }
 :where(html[data-page="topic"]) .tp-main .filter-empty button {
   height: 44px;
-  padding: 0 24px;
+  padding: 0 var(--s-24);
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--c-accent);
   color: var(--c-on-accent);
   font-size: 17px;

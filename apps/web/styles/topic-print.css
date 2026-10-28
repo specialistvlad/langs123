@@ -2,7 +2,7 @@
 @media print {
   @page {
     size: A4;
-    margin: 16mm;
+    margin: var(--print-margin);
     @bottom-left {
       font: 11px sans-serif;
       color: var(--c-print-muted);
@@ -50,15 +50,15 @@
     background: var(--c-print-slot);
   }
   :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td {
-    padding: 4px 4px;
+    padding: var(--s-4) var(--s-4);
     font-size: 12px;
   }
   :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.tp-lvl {
-    padding: 4px 6px 4px 2px;
+    padding: var(--s-4) var(--s-6) var(--s-4) var(--s-2);
   }
   :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: var(--s-3);
+    padding-right: var(--s-3);
     font-size: 10.5px;
   }
   :where(html[data-page="topic"]) .tp-main .doc h2,

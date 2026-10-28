@@ -7,10 +7,10 @@
   max-width: none;
   max-height: calc(100dvh - 60px);
   margin: 0;
-  padding: 8px 16px 34px;
+  padding: var(--s-8) var(--s-16) var(--s-34);
   overflow-y: auto;
   border: 0;
-  border-radius: 28px 28px 0 0;
+  border-radius: var(--r-28) var(--r-28) 0 0;
   background: var(--c-bg);
   color: var(--c-text);
   box-shadow: var(--sh-sheet);
@@ -23,16 +23,16 @@
   display: block;
   width: 36px;
   height: 5px;
-  margin: 0 auto 10px;
-  border-radius: 3px;
+  margin: 0 auto var(--s-10);
+  border-radius: var(--r-3);
   background: var(--c-quaternary);
 }
 .xl-head {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--s-12);
   min-height: 44px;
-  margin-bottom: 6px;
+  margin-bottom: var(--s-6);
 }
 .xl-head h2 {
   flex: 1;
@@ -53,18 +53,18 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   color: var(--c-text);
   cursor: pointer;
 }
 .xl-course {
-  margin: -4px 0 10px;
+  margin: calc(-1 * var(--s-4)) 0 var(--s-10);
   text-align: center;
   font-size: 13px;
   color: var(--c-muted);
 }
 .xl-sheet .ml-label {
-  margin: 18px 4px 8px;
+  margin: var(--s-18) var(--s-4) var(--s-8);
 }
 .xl-card {
   margin: 0;
@@ -72,10 +72,10 @@
 .xl-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--s-12);
   width: 100%;
   min-height: 56px;
-  padding: 8px 16px;
+  padding: var(--s-8) var(--s-16);
   border: 0;
   border-radius: 0;
   box-shadow: inset 0 -0.5px 0 var(--c-hairline);
@@ -103,7 +103,7 @@
   outline-offset: -2px;
 }
 .xl-card + .xl-card {
-  margin-top: 18px;
+  margin-top: var(--s-18);
 }
 a.xl-edit {
   text-decoration: none;
@@ -128,8 +128,8 @@ a.xl-edit {
   .xl-sheet {
     inset: 50% auto auto 50%;
     width: 460px;
-    padding: 16px 16px 20px;
-    border-radius: 24px;
+    padding: var(--s-16) var(--s-16) var(--s-20);
+    border-radius: var(--r-24);
     transform: translate(-50%, -50%);
     box-shadow: var(--sh-dialog);
   }

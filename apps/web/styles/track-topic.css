@@ -10,9 +10,9 @@
   --cl-line-lh: 18px;
   --cl-h: 17px;
   --cl-h-lh: 22px;
-  --cl-h-x: 16px;
+  --cl-h-x: var(--s-16);
   --cl-n: 13px;
-  --cl-pad: 16px;
+  --cl-pad: var(--s-16);
   --cl-row: 15px;
   --cl-row-lh: 20px;
   --cl-row-ls: -0.3px;
@@ -27,8 +27,8 @@
     position: sticky;
     top: 0;
     z-index: 3;
-    margin: 0 calc(var(--cl-pad) * -1 + 1px) 0 calc(var(--cl-pad) * -1);
-    padding: var(--cl-pad) calc(var(--cl-pad) - 1px) 14px var(--cl-pad);
+    margin: 0 calc(var(--cl-pad) * -1 + var(--s-1)) 0 calc(var(--cl-pad) * -1);
+    padding: var(--cl-pad) calc(var(--cl-pad) - var(--s-1)) var(--s-14) var(--cl-pad);
     background: var(--c-bg);
   }
   .cl {
@@ -39,12 +39,12 @@
     position: sticky;
     top: 0;
     z-index: 5;
-    --cl-chev: 2px;
+    --cl-chev: var(--s-2);
     flex: none;
     width: 248px;
     height: 100vh;
     height: 100dvh;
-    padding: 0 var(--cl-pad) 40px;
+    padding: 0 var(--cl-pad) var(--s-40);
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
@@ -76,7 +76,7 @@
   }
   .cl-side .ix-row,
   .cl-side .ix-more-b {
-    padding: 0 var(--cl-row-r, 12px) 0 var(--cl-h-x);
+    padding: 0 var(--cl-row-r, var(--s-12)) 0 var(--cl-h-x);
   }
   .cl-side .ix-rows li + li::before {
     left: var(--cl-h-x);
@@ -93,16 +93,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: var(--s-8);
     box-sizing: border-box;
     min-height: 100vh;
     min-height: 100dvh;
-    padding: 0 40px;
+    padding: 0 var(--s-40);
     text-align: center;
     color: var(--c-muted);
   }
   .cl-choose-t {
-    margin: 6px 0 0;
+    margin: var(--s-6) 0 0;
     font-size: 22px;
     line-height: 28px;
     font-weight: 700;
@@ -121,14 +121,14 @@
     --cl-line-lh: 20px;
     --cl-h: 20px;
     --cl-h-lh: 25px;
-    --cl-h-x: 20px;
+    --cl-h-x: var(--s-20);
     --cl-n: 15px;
-    --cl-pad: 20px;
-    --cl-chev: 8px;
+    --cl-pad: var(--s-20);
+    --cl-chev: var(--s-8);
     --cl-row: 17px;
     --cl-row-lh: 22px;
     --cl-row-ls: -0.43px;
-    --cl-row-r: 16px;
+    --cl-row-r: var(--s-16);
     width: 320px;
   }
 }

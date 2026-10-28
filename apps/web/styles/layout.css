@@ -2,7 +2,7 @@
 
 .badge {
   display: inline-flex;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   overflow: hidden;
   font-size: 11px;
   font-weight: 650;
@@ -16,24 +16,24 @@
    halves, and each half writes its level's code in its pill ink (--level-pill-ink) on its pill colour
    (--level-pill), both set per level and theme in levels.css. --badge-pad sizes the halves. */
 .lvl {
-  margin-left: 8px;
+  margin-left: var(--s-8);
 }
 .lvl > .half {
-  padding: var(--badge-pad, 1px 7px);
+  padding: var(--badge-pad, var(--s-1) var(--s-7));
   background: var(--level-pill);
   color: var(--level-pill-ink);
 }
 .lvl > .half:first-child {
-  border-radius: 999px 0 0 999px;
+  border-radius: var(--r-pill) 0 0 var(--r-pill);
 }
 .lvl > .half:last-child {
-  border-radius: 0 999px 999px 0;
+  border-radius: 0 var(--r-pill) var(--r-pill) 0;
 }
 .lvl > .half:only-child {
-  border-radius: 999px;
+  border-radius: var(--r-pill);
 }
 .blk-level {
-  margin: 0 0 6px;
+  margin: 0 0 var(--s-6);
 }
 .blk-level .lvl {
   margin: 0;
@@ -41,5 +41,5 @@
 td .lvl,
 li > .lvl,
 p > .lvl {
-  margin: 0 6px 0 0;
+  margin: 0 var(--s-6) 0 0;
 }

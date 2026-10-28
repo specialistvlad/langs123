@@ -1,7 +1,7 @@
 /* The missing page (pages/home.ts notFoundPage): a 404 whose 0 is the languages glyph, the heading, the
    title in the other languages as a soft line, and a chip per language leading to its home page */
 html[data-page="404"] {
-  --nf-d: 210px;
+  --nf-d: var(--t-not-found-digits-size);
 }
 .nf-main {
   box-sizing: border-box;
@@ -13,7 +13,7 @@ html[data-page="404"] {
   min-height: 100vh;
   min-height: 100svh;
   margin: 0 auto;
-  padding: 88px 32px 56px;
+  padding: var(--s-88) var(--s-32) var(--s-56);
   text-align: center;
 }
 .nf-num {
@@ -42,7 +42,7 @@ html[data-page="404"] {
   height: calc(var(--nf-d) * 0.72);
   margin: 0 calc(var(--nf-d) * 0.03);
   border: calc(var(--nf-d) * 0.1224) solid var(--c-accent);
-  border-radius: 999px;
+  border-radius: var(--r-pill);
 }
 .nf-zero svg {
   display: block;
@@ -50,7 +50,7 @@ html[data-page="404"] {
   height: calc(var(--nf-d) * 0.36);
 }
 .nf-heading {
-  margin-top: 26px !important;
+  margin-top: var(--s-26) !important;
   font-size: 28px;
   line-height: 1.2;
   font-weight: 700;
@@ -58,7 +58,7 @@ html[data-page="404"] {
 }
 .nf-others {
   max-width: 640px;
-  margin-top: 14px !important;
+  margin-top: var(--s-14) !important;
   font-size: 15px;
   line-height: 1.7;
   color: var(--c-muted);
@@ -67,16 +67,16 @@ html[data-page="404"] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: var(--s-8);
   max-width: 900px;
-  margin-top: 28px;
+  margin-top: var(--s-28);
 }
 .nf-chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 14px 7px 8px;
-  border-radius: 999px;
+  gap: var(--s-8);
+  padding: var(--s-7) var(--s-14) var(--s-7) var(--s-8);
+  border-radius: var(--r-pill);
   background: var(--c-surface);
   color: var(--c-text) !important;
   font-size: 15px;
@@ -85,8 +85,8 @@ html[data-page="404"] {
   filter: brightness(0.96);
 }
 .nf-chip b {
-  padding: 2px 7px;
-  border-radius: 999px;
+  padding: var(--s-2) var(--s-7);
+  border-radius: var(--r-pill);
   background: var(--c-accent-soft);
   color: var(--c-accent);
   font-size: 11px;
@@ -111,17 +111,17 @@ html[data-page="404"] {
 
 @media (max-width: 860px) {
   html[data-page="404"] {
-    --nf-d: 128px;
+    --nf-d: var(--t-not-found-digits-phone-size);
   }
   .nf-main {
-    padding: 96px 20px 32px;
+    padding: var(--s-96) var(--s-20) var(--s-32);
   }
   .nf-others {
     font-size: 14px;
     line-height: 1.6;
   }
   .nf-chips {
-    gap: 7px;
+    gap: var(--s-7);
   }
   .nf-chip {
     font-size: 14px;
@@ -131,31 +131,31 @@ html[data-page="404"] {
 /* The narrowest phones (375px and below): the 404 and the chips shrink so the page keeps to one screen */
 @media (max-width: 400px) {
   html[data-page="404"] {
-    --nf-d: 104px;
+    --nf-d: var(--t-not-found-digits-small-size);
   }
   .nf-main {
-    padding: 84px 16px 24px;
+    padding: var(--s-84) var(--s-16) var(--s-24);
   }
   .nf-heading {
-    margin-top: 20px !important;
+    margin-top: var(--s-20) !important;
     font-size: 26px;
   }
   .nf-others {
-    margin-top: 10px !important;
+    margin-top: var(--s-10) !important;
     font-size: 13px;
     line-height: 1.5;
   }
   .nf-chips {
-    gap: 6px;
-    margin-top: 20px;
+    gap: var(--s-6);
+    margin-top: var(--s-20);
   }
   .nf-chip {
-    gap: 6px;
-    padding: 5px 12px 5px 6px;
+    gap: var(--s-6);
+    padding: var(--s-5) var(--s-12) var(--s-5) var(--s-6);
     font-size: 13px;
   }
   .nf-chip b {
     font-size: 10px;
-    padding: 2px 6px;
+    padding: var(--s-2) var(--s-6);
   }
 }
