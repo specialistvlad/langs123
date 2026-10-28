@@ -3,7 +3,7 @@ import { describe, expect, test } from "bun:test";
 import { mkdtemp, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { parseRules, readRules, ruleProblems } from "./rule-catalog.ts";
+import { parseRules, readRules, ruleProblems, unstated } from "./rule-catalog.ts";
 
 const CATALOG = `# Rules
 
@@ -167,5 +167,11 @@ describe("problems", () => {
       "7 R-1: Rule is given twice",
       '7 R-1: unknown field "Not That:"',
     ]);
+  });
+
+  test("the conventions text restates every rule by its id, and a longer id names no shorter one", () => {
+    const catalog = parseRules(CATALOG);
+    expect(unstated(catalog, "E-01 and E-02 in the order a writer meets them.")).toEqual([]);
+    expect(unstated(catalog, "E-01, then E-020 and XE-02.")).toEqual(["21 E-02: CONVENTIONS.md doesn't restate it by its id"]);
   });
 });

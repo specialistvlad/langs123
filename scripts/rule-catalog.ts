@@ -5,7 +5,7 @@
 // this"), and names its check: the schema, the linter, one question asked of one block or one sentence, or a
 // test of the apps, the build or the pipeline. `Languages:` names the languages of the text a rule checks and
 // `Courses:` the courses it holds for. ruleProblems names every covered requirement no rule serves and every
-// rule missing a part.
+// rule missing a part, and unstated every rule the conventions text leaves unnamed.
 import { join } from "node:path";
 import { ROOT } from "./lib.ts";
 
@@ -169,5 +169,11 @@ export function ruleProblems(catalog: Catalog): string[] {
   for (const c of catalog.covers) if (!served.has(c.id)) problems.push(`${c.line} Covers: no rule serves ${c.id}`);
   return problems;
 }
+
+// The rules the conventions text leaves unnamed (CA-01): a writer reads every rule there, by its id.
+export const unstated = (catalog: Catalog, conventions: string): string[] =>
+  catalog.rules
+    .filter((r) => !new RegExp(`(?<![\\w-])${r.id.replace(/[.]/g, "\\.")}(?![\\w-])`).test(conventions))
+    .map((r) => `${r.line} ${r.id}: CONVENTIONS.md doesn't restate it by its id`);
 
 export const readRules = async (file = RULES_FILE): Promise<Catalog> => parseRules(await Bun.file(file).text());
