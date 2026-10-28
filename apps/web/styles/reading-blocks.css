@@ -1,0 +1,184 @@
+/* The reading's components: the parts, the marks, the why box, the examples, the buttons and the errors' frame. */
+/* Text on a fill reads in body (muted is 4.15:1 there in light). Dots and joiners are decoration, drawn by the stylesheet so they stay out of the text; the slashes of an IPA transcription are text, in muted. */
+.lx-capsule,
+.rd-why .lx-label {
+  color: var(--c-body);
+}
+
+.lx-ipa .lx-sl {
+  color: var(--c-muted);
+}
+
+.lx-dot::before {
+  content: "·";
+}
+
+.lx-j::before {
+  content: " — ";
+  white-space: pre;
+}
+
+.rd-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-20);
+}
+
+.rd-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-12);
+}
+
+.rd-head {
+  display: flex;
+  flex-direction: column;
+}
+
+.rd-head .lx-meta {
+  margin-top: var(--s-8);
+}
+
+.rd-head .lx-lead {
+  margin-top: var(--s-12);
+}
+
+.rd-part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-12);
+}
+
+.rd-head + .rd-part {
+  margin-top: var(--s-40);
+}
+
+.rd-part + .rd-part {
+  margin-top: var(--s-28);
+}
+
+.rd-wrong {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.rd-term {
+  font-weight: var(--t-mark-strong-weight);
+  color: var(--c-text);
+}
+
+.rd-var {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: var(--t-mark-strong-weight);
+  color: var(--c-accent);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--c-accent-line);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.rd-l1 {
+  font-style: normal;
+  color: var(--c-text);
+}
+
+.rd-why {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  padding: var(--s-12) var(--s-14);
+  border-radius: var(--r-16);
+  background: var(--c-fill);
+}
+
+.rd-why p {
+  margin: 0;
+  font-size: var(--t-reading-note-size);
+  line-height: var(--t-reading-note-lh);
+  letter-spacing: var(--t-reading-note-track);
+}
+
+.rd-exs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-12);
+}
+
+.rd-exs .lx-ex {
+  margin: 0;
+}
+
+.rd-exs .lx-tr + .lx-tr {
+  margin-top: var(--s-2);
+}
+
+.rd-tag-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  align-items: flex-start;
+}
+
+.rd-tag-row .lx-capsule {
+  margin-right: 0;
+}
+
+.rd-trl {
+  display: flex;
+  gap: var(--s-6);
+  align-items: baseline;
+}
+
+.rd-trl .lx-capsule {
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.rd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-6);
+  min-height: 44px;
+  padding: 0 var(--s-14);
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--c-fill);
+  color: var(--c-text);
+  font: inherit;
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  font-weight: var(--t-emphasis-weight);
+  cursor: pointer;
+}
+
+.rd-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rd-err {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-18);
+  background: var(--c-surface);
+}
+
+.rd-err-body {
+  display: grid;
+  grid-template-columns: var(--s-20) minmax(0, 1fr);
+  gap: var(--s-4) var(--s-8);
+  padding: var(--s-12) var(--s-14) var(--s-12) var(--s-16);
+  font-size: var(--t-reading-note-size);
+  line-height: var(--t-reading-note-lh);
+  letter-spacing: var(--t-reading-note-track);
+}
+
+.rd-err-body > p,
+.rd-err-body > ul {
+  margin: 0;
+}

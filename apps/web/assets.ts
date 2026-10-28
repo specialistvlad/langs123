@@ -51,6 +51,13 @@ const STYLES = [
   "topic-wide",
   "topic-phone",
   "topic-phone-bar",
+  "reading-base",
+  "reading-tables",
+  "reading-levels",
+  "reading-blocks",
+  "reading-errors",
+  "reading-forms",
+  "reading-web",
   "topic-print",
 ];
 
@@ -60,13 +67,18 @@ export async function styleCss(design?: string): Promise<string> {
   return [tokensCss(designTokens(design)), ...parts].join("\n");
 }
 
-// The browser script: client.ts and its modules bundled, types stripped.
-export async function clientJs(): Promise<string> {
-  const out = await Bun.build({ entrypoints: [join(APP, "client.ts")], target: "browser", format: "iife" });
+// A browser script: an entry and its modules bundled, types stripped.
+async function bundle(entry: string): Promise<string> {
+  const out = await Bun.build({ entrypoints: [join(APP, entry)], target: "browser", format: "iife" });
   const [file] = out.outputs;
-  if (!out.success || file === undefined) throw new Error(`client.ts does not build: ${out.logs.map((l) => l.message).join("\n")}`);
+  if (!out.success || file === undefined) throw new Error(`${entry} does not build: ${out.logs.map((l) => l.message).join("\n")}`);
   return file.text();
 }
+
+// The browser script of every page: client.ts and its modules.
+export const clientJs = (): Promise<string> => bundle("client.ts");
+// The new library's reading in the browser (client-reading.ts), on its pages alone.
+export const readingJs = (): Promise<string> => bundle("client-reading.ts");
 
 // Everything about levels that depends on the scale in languages/levels.yaml: the rule handing each level's colours
 // to its elements (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its

@@ -25,9 +25,9 @@ import { homeUrl, trackUrl } from "./urls.ts";
 // The house of the Home button.
 const HOME = glyph('<path d="M3.5 10.5L12 3.5l8.5 7"/><path d="M5.5 9v11h13V9"/><path d="M10 20v-6h4v6"/>', 22, 2);
 
-// A topic page's own: the topic the column marks, and its title.
+// A topic page's own: the topic the column marks, where the column lists it, and its title.
 export interface Shown {
-  ref: TopicRef;
+  ref?: TopicRef;
   title: string;
 }
 

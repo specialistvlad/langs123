@@ -1,0 +1,178 @@
+/* The reading of the new library (reading*.ts), its Lib classes: the root, the rows and their cards, the heads, the lists and the capsule. */
+.lx {
+  font-family: var(--f-sans);
+  background: var(--c-bg);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.lx,
+.lx *,
+.lx *::before,
+.lx *::after {
+  box-sizing: border-box;
+}
+
+.lx a {
+  color: var(--c-accent);
+  text-decoration: none;
+}
+
+.lx p,
+.lx h1,
+.lx h2,
+.lx h3,
+.lx ul,
+.lx figure {
+  margin: 0;
+}
+
+/* The page of a Lib file: the ground, the title, and a panel for each state, drawn in the theme the page's class names. */
+/* The Lib classes the components reuse. Margins belong to the container that stacks them. */
+.lx-card {
+  background: var(--c-surface);
+  border-radius: var(--r-22);
+  overflow: hidden;
+}
+
+.lx-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--s-10);
+  min-height: 52px;
+  padding: 0 var(--s-16) 0 var(--s-20);
+  font-size: var(--t-reading-body-size);
+  line-height: var(--t-reading-body-lh);
+  letter-spacing: var(--t-reading-body-track);
+}
+
+.lx .lx-row-a {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--s-10);
+  color: var(--c-text);
+}
+
+.lx-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.lx-ladder,
+.lx-row .lx-chev,
+.lx-row .lx-tick {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lx-ladder {
+  pointer-events: auto;
+}
+
+.lx-row + .lx-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--s-20);
+  right: 0;
+  height: 0.5px;
+  background: var(--c-sep);
+}
+
+.lx-row-t {
+  flex-grow: 1;
+  min-width: 0;
+  padding: var(--s-14) 0;
+}
+
+.lx-row-sub {
+  display: block;
+  margin-top: var(--s-4);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-muted);
+}
+
+.lx-n {
+  flex-shrink: 0;
+  font-family: var(--f-mono);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  font-weight: var(--t-emphasis-weight);
+  color: var(--c-muted);
+}
+
+.lx-row.lx-cur.lx-here {
+  background: var(--c-accent-soft);
+}
+
+.lx-chev {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--c-faint);
+}
+
+.lx-tick {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--c-accent);
+}
+
+.lx-h1 {
+  font-size: var(--t-reading-title-size);
+  line-height: var(--t-reading-title-lh);
+  letter-spacing: var(--t-reading-title-track);
+  font-weight: var(--t-reading-title-weight);
+}
+
+.lx-h2 {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-10);
+  font-size: var(--t-reading-subtitle-size);
+  line-height: var(--t-reading-subtitle-lh);
+  letter-spacing: var(--t-reading-subtitle-track);
+  font-weight: var(--t-reading-subtitle-weight);
+}
+
+.lx-h2 > .lx-t {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.lx-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-8);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-muted);
+}
+
+.lx-meta-i {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.lx-dot {
+  color: var(--c-faint);
+}
+
+.lx-num {
+  margin-right: var(--s-10);
+  font-family: var(--f-mono);
+  font-size: var(--t-section-number-size);
+  font-weight: var(--t-section-number-weight);
+  letter-spacing: var(--t-section-number-track);
+  color: var(--c-muted);
+}

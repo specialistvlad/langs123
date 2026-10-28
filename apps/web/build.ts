@@ -1,8 +1,9 @@
 // Static site build: every page of every track rendered to HTML, plus the sitemap.
 // Run: npm run build   (SITE_URL sets the public URL for canonical links and the sitemap; the site is served from the domain root)
 //      npm run build -- --design <name>   builds it in that design (tokens.ts)
-//      npm run build -- --library v1   writes the new library's export beside the pages (BuildOptions.library)
-import { join } from "node:path";
+//      npm run build -- --library v1 [--root <folder>]   writes the new library's pages and its export beside today's
+//                                                       pages, from library/ or the folder (BuildOptions.library)
+import { join, resolve } from "node:path";
 import { type CurriculumLanguage, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
 import { type BuildOptions, type Context, explainsOf, type Page, type PageFacts } from "./context.ts";
 import { page, pageFacts } from "./layout.ts";
@@ -19,7 +20,8 @@ import type { LinkFn } from "./html.ts";
 import { trackIndex } from "./pages/track.ts";
 import { topicUrl } from "./urls.ts";
 import { designArg } from "./tokens.ts";
-import { exportV1 } from "../../scripts/v1/export/library.ts";
+import { exportV1, type LibraryV1 } from "../../scripts/v1/export/library.ts";
+import { readingPages } from "./pages/reading.ts";
 
 export type { BuildOptions, HeadChange, PageFacts } from "./context.ts";
 
@@ -34,23 +36,35 @@ export function libraryArg(args: readonly string[]): "today" | "v1" {
   return library;
 }
 
-// The new library's export as the build writes it, by path (BuildOptions.library).
-async function v1Data(o: BuildOptions): Promise<[string, string][]> {
-  const v1 = await exportV1({
+// The new library's root a command line names, --root <folder> from core's root (library/samples for the samples).
+export function rootArg(args: readonly string[]): string | undefined {
+  const at = args.indexOf("--root");
+  if (at < 0) return undefined;
+  const folder = args[at + 1];
+  if (folder === undefined || folder.startsWith("--")) throw new Error("--root takes a folder");
+  return resolve(ROOT, folder);
+}
+
+// The new library's export, for a build of library "v1": the approved topics, and every draft too in dev (RV-03).
+function readV1(o: BuildOptions): Promise<LibraryV1> {
+  return exportV1({
     library: "v1",
     drafts: o.dev,
     ...(o.root !== undefined && { root: o.root }),
     ...(o.design !== undefined && { design: o.design }),
   });
-  return [
-    [`${V1_DATA}/library.json`, JSON.stringify(v1.library)],
-    ...v1.courses.map((c): [string, string] => [`${V1_DATA}/${c.course}.json`, JSON.stringify(c)]),
-  ];
 }
+
+// The export as the build writes it beside the pages, by path.
+const v1Data = (v1: LibraryV1): [string, string][] => [
+  [`${V1_DATA}/library.json`, JSON.stringify(v1.library)],
+  ...v1.courses.map((c): [string, string] => [`${V1_DATA}/${c.course}.json`, JSON.stringify(c)]),
+];
 
 // Builds the site into o.outDir and returns the facts of every page it holds.
 export async function build(o: BuildOptions): Promise<PageFacts[]> {
   checkBrandPages(o.brand?.pages);
+  const v1 = o.library === "v1" ? await readV1(o) : undefined;
   const curriculum = await loadCurriculum();
   const all = await loadTopics(curriculum);
   const refs = o.sample === undefined ? all : all.filter((r) => o.sample?.topics.includes(r.id) === true);
@@ -97,6 +111,7 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
       const track = { ctx, lang, explain, explains, t, title: t.track(localize(lang.name, explain)), langRefs, written, path };
       trackIndex(track);
       topicPages(track);
+      if (v1 !== undefined) readingPages(track, v1);
     }
   }
   notFoundPage(ctx);
@@ -105,7 +120,7 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
     pages,
     o,
     ctx.languages.flatMap((l) => (l.varieties === undefined ? [] : [l.varieties])),
-    o.library === "v1" ? await v1Data(o) : [],
+    v1 === undefined ? [] : v1Data(v1),
   );
   return facts;
 }
@@ -113,7 +128,8 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
 if (import.meta.main) {
   const siteUrl = (process.env["SITE_URL"] ?? "http://127.0.0.1:47380").replace(/\/$/, "");
   const args = process.argv.slice(2);
-  const count = (await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl, design: designArg(args), library: libraryArg(args) }))
-    .length;
+  const root = rootArg(args);
+  const options = { design: designArg(args), library: libraryArg(args), ...(root !== undefined && { root }) };
+  const count = (await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl, ...options })).length;
   console.log(`built ${count} pages into build/web/ for ${siteUrl}`);
 }

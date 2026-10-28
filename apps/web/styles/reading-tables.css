@@ -1,0 +1,181 @@
+/* The reading's labels, examples, tables and level marks. */
+.lx-label {
+  font-size: var(--t-reading-label-size);
+  line-height: var(--t-reading-label-lh);
+  letter-spacing: var(--t-reading-label-track);
+  font-weight: var(--t-reading-label-weight);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.lx-lead {
+  font-size: var(--t-reading-body-size);
+  line-height: var(--t-reading-body-lh);
+  letter-spacing: var(--t-reading-body-track);
+  color: var(--c-body);
+}
+
+.lx-p {
+  font-size: var(--t-reading-body-size);
+  line-height: var(--t-reading-body-lh);
+  letter-spacing: var(--t-reading-body-track);
+}
+
+.lx-b {
+  font-weight: var(--t-mark-strong-weight);
+  color: var(--c-accent);
+}
+
+.lx-ipa {
+  font-family: var(--f-mono);
+  font-size: var(--t-reading-translation-size);
+  letter-spacing: var(--t-ipa-track);
+  color: var(--c-body);
+}
+
+.lx-sl,
+.lx-j {
+  font-style: normal;
+  color: var(--c-faint);
+}
+
+.lx-capsule {
+  display: inline-block;
+  margin-right: var(--s-6);
+  padding: 0 var(--s-8);
+  border-radius: var(--r-pill);
+  background: var(--c-fill);
+  color: var(--c-muted);
+  font-size: var(--t-reading-small-size);
+  line-height: var(--t-reading-small-lh);
+  font-weight: var(--t-emphasis-weight);
+  vertical-align: 1px;
+}
+
+.lx-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-10);
+}
+
+.lx-li {
+  display: grid;
+  grid-template-columns: var(--s-20) minmax(0, 1fr);
+  font-size: var(--t-reading-body-size);
+  line-height: var(--t-reading-body-lh);
+  letter-spacing: var(--t-reading-body-track);
+}
+
+.lx-li::before {
+  content: "";
+  grid-column: 1;
+  width: var(--s-6);
+  height: var(--s-6);
+  margin: var(--s-10) 0 0 var(--s-4);
+  border-radius: 50%;
+  background: var(--c-faint);
+}
+
+.lx-li > .lx-c {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.lx-ex {
+  display: block;
+  margin-top: var(--s-6);
+  padding: var(--s-2) 0 var(--s-2) var(--s-12);
+  border-left: var(--s-2) solid var(--c-accent-line);
+  color: var(--c-text);
+}
+
+.lx-tr {
+  display: block;
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  font-style: italic;
+  color: var(--c-muted);
+}
+
+.lx-tcard {
+  background: var(--c-surface);
+  border-radius: var(--r-22);
+  overflow: hidden;
+}
+
+.lx-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lx-table th {
+  padding: var(--s-12) var(--s-10) var(--s-8);
+  font-size: var(--t-reading-label-size);
+  line-height: var(--t-reading-label-lh);
+  letter-spacing: var(--t-reading-label-track);
+  font-weight: var(--t-reading-label-weight);
+  text-transform: uppercase;
+  color: var(--c-muted);
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.lx-table td {
+  padding: var(--s-8) var(--s-10);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  vertical-align: middle;
+  border-top: 0.5px solid var(--c-sep);
+}
+
+.lx-table :is(th, td):first-child {
+  padding-left: var(--s-20);
+}
+
+/* The level mark: a capsule behind seven bars and the range in words. */
+.lx-ladder {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.lx-cells {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-4) var(--s-6);
+  border-radius: var(--r-pill);
+  background: var(--c-level-mark-fill);
+}
+
+.lx-cell {
+  width: var(--s-6);
+  height: var(--s-12);
+  border-radius: var(--r-4);
+  background: var(--c-level-mark-off);
+}
+
+.lx-lvt {
+  margin-left: var(--s-6);
+  font-size: var(--t-reading-label-size);
+  line-height: var(--s-12);
+  font-weight: var(--t-reading-label-weight);
+  color: var(--c-level-mark-text);
+  white-space: nowrap;
+}
+
+.lx-ladder.lx-sm .lx-lvt {
+  margin-left: var(--s-4);
+  font-size: var(--t-badge-size);
+}

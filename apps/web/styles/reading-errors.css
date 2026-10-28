@@ -1,0 +1,142 @@
+/* The reading's errors, the picture's cells and the layers' lines. */
+.rd-err-i {
+  display: flex;
+  padding-top: var(--s-2);
+}
+
+.rd-err-w {
+  color: var(--c-bad);
+}
+
+.rd-err-r {
+  color: var(--c-good);
+}
+
+.rd-fix {
+  padding: 0 var(--s-2);
+  border-radius: var(--r-4);
+  background: var(--c-good-soft);
+  font-weight: var(--t-mark-strong-weight);
+}
+
+.rd-err-r .lx-tr {
+  margin-top: var(--s-2);
+}
+
+.rd-err-rule {
+  grid-column: 2;
+  margin-top: var(--s-4);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-body);
+}
+
+.rd-err-why {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  margin-top: var(--s-4);
+  padding: 0;
+  list-style: none;
+}
+
+.rd-err-why li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-4);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-muted);
+}
+
+.rd-err-why .lx-capsule {
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.rd-err-foot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+  min-height: 44px;
+  padding: 0 var(--s-16);
+  border-top: 0.5px solid var(--c-sep);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+}
+
+.rd-err-foot a {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+}
+
+.rd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-16);
+}
+
+.rd-cell {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-18);
+  background: var(--c-surface);
+}
+
+.rd-cell svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rd-cell-t {
+  padding: 0 var(--s-12) var(--s-12);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  font-weight: var(--t-emphasis-weight);
+}
+
+.rd-blk {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+}
+
+.rd-blk > p {
+  margin: 0;
+  font-size: var(--t-reading-body-size);
+  line-height: var(--t-reading-body-lh);
+  letter-spacing: var(--t-reading-body-track);
+}
+
+.rd-lang {
+  display: flex;
+  gap: var(--s-6);
+  align-items: baseline;
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-muted);
+}
+
+.rd-lang .lx-capsule {
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.rd-card-s {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-12);
+}
