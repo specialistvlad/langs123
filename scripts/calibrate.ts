@@ -1,7 +1,9 @@
 // Calibrates the review's questions in Claude Code sessions on each model named (scripts/review/calibrate.ts), and
 // writes build/review/calibration.md and calibration.json; then the budget (scripts/review/budget.ts), from every
-// session build/review/sessions.jsonl holds, into build/review/budget.md.
-// Run: npm run calibrate -- [--models claude-sonnet-5-5 claude-haiku-5-5] [--per-day 150] [--budget-only]
+// session build/review/sessions.jsonl holds, into build/review/budget.md. With --rules, the planted requests holding
+// a case of the rules named run alone (RV-11 runs the pairs), and their tallies replace those of the same model and
+// rule in calibration.json; each session's findings stay in sessions.jsonl.
+// Run: npm run calibrate -- [--models claude-sonnet-5-5 claude-haiku-5-5] [--rules SH-20 ST-02] [--per-day 150] [--budget-only]
 import { appendFile, mkdir, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { budgetReport, type SessionLine } from "./review/budget.ts";
@@ -20,6 +22,8 @@ const after = (flag: string): string[] => {
   return at < 0 ? [] : args.slice(at + 1).filter((_, n, rest) => !rest.slice(0, n + 1).some((a) => a.startsWith("--")));
 };
 const models = after("--models").length > 0 ? after("--models") : ["claude-sonnet-5-5", "claude-haiku-5-5"];
+const only = after("--rules");
+const asked = (rule: string): boolean => only.length === 0 || only.includes(rule);
 const perDay = Number(after("--per-day")[0] ?? 150);
 const date = new Date().toISOString().slice(0, 10);
 const yaml = async (path: string): Promise<unknown> => Bun.YAML.parse(await Bun.file(path).text());
@@ -41,20 +45,29 @@ if (!args.includes("--budget-only")) {
     lines.push({ topic, kind: request.kind, language: request.language ?? null, run: 1, ...session });
     return session;
   };
+  const unplanted = only.filter((r) => r !== "RV-11" && !plants.some((p) => p.rule === r));
+  if (unplanted.length > 0) throw new Error(`no planted case of ${unplanted.join(", ")} (library/calibration/questions.yaml)`);
+  const planted = plantedRequests(library, rules, plants).filter((p) => p.plants.some((c) => asked(c.rule)));
+  const pairsRun = asked("RV-11") ? pairs : [];
   for (const model of models) {
-    const planted = plantedRequests(library, rules, plants);
     await Promise.all(
-      planted.map(async (p) => tallies.push(...tally(model, p, await run(p.request, model, `planted ${p.request.topic}`)))),
+      planted.map(async (p) =>
+        tallies.push(...tally(model, p, await run(p.request, model, `planted ${p.request.topic}`)).filter((t) => asked(t.rule))),
+      ),
     );
     await Promise.all(
-      pairs.map(async (p) =>
+      pairsRun.map(async (p) =>
         tallies.push(tallyPairs(model, p.pairs, await run(pairsRequest(p.language, p.pairs, rules), model, "calibration"))),
       ),
     );
-    console.log(`${model}: ${String(planted.length + pairs.length)} sessions`);
+    console.log(`${model}: ${String(planted.length + pairsRun.length)} sessions`);
   }
-  await Bun.write(join(REVIEW_DIR, "calibration.json"), JSON.stringify(tallies, null, 2));
-  await Bun.write(join(REVIEW_DIR, "calibration.md"), calibrationReport(tallies, date));
+  const file = Bun.file(join(REVIEW_DIR, "calibration.json"));
+  const before = (await file.exists()) ? ((await file.json()) as Tally[]) : [];
+  const ran = new Set(tallies.map((t) => `${t.model} ${t.rule}`));
+  const all = [...before.filter((t) => !ran.has(`${t.model} ${t.rule}`)), ...tallies];
+  await Bun.write(file, JSON.stringify(all, null, 2));
+  await Bun.write(join(REVIEW_DIR, "calibration.md"), calibrationReport(all, date));
   await appendFile(join(REVIEW_DIR, "sessions.jsonl"), lines.map((l) => `${JSON.stringify(l)}\n`).join(""));
 }
 
