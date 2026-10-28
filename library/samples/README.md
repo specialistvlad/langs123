@@ -45,8 +45,9 @@ An error's `speakers` maps each language whose speakers make it to the reason, `
 contrast with that language that leads its speakers to the error.
 
 Every block, sentence, item, example and reason has an `id`, unique in its topic and kept when its text changes.
-Text in the language being learned is an example's `text`, a `word`, a `wrong` form, an item's form or a cell;
-every other `text` is an explanation in the source language.
+Text in the language being learned is an example's `text`, a `word`, an error's `wrong` and `right`, an item's
+form or a cell; every other `text` is an explanation in the source language. A form is one string, left
+untranslated; a sentence is `{ id, text }`, translated in each language file.
 
 A block of one variety carries `variety`; a block without it serves every variety.
 
