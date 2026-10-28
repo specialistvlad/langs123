@@ -1,7 +1,7 @@
 // The review of each topic: a topic in review or approved keeps its record (RV-16), naming its writer, one per
 // course beside the leading writer (LA-04); its status moves one step at a time (RV-02); its reviewer is a session
-// apart from the writer's (RV-05); each finding cites a rule or a source (RV-06) and has the writer's answer
-// (RV-07); the owner approves the index and each wave before the next, the samples being one gate (RV-08), reads every flagged topic (RV-09) and
+// apart from the writer's (RV-05); each finding cites a rule or a source (RV-06) and has the writer's answer, but one
+// raised again after an answer, which the owner reads (RV-07); the owner approves the index and each wave before the next, the samples being one gate (RV-08), reads every flagged topic (RV-09) and
 // one in ten of the rest (RV-10) in Ukrainian and English, and alone sets the Ukrainian flag (RV-14).
 import type { TopicReviewRecord } from "../../generated/library-v1.ts";
 import { LEVELS } from "../../lib.ts";
@@ -89,7 +89,7 @@ export const REVIEW: LintRule[] = [
       reviewed(lint, scope.courses).flatMap(({ review: { file, data } }) =>
         (data.reviews ?? []).flatMap((r) =>
           r.findings
-            .filter((f) => f.answer === undefined || (f.answer === "declined" && f.reason === undefined))
+            .filter((f) => f.again === undefined && (f.answer === undefined || (f.answer === "declined" && f.reason === undefined)))
             .map((f) => at("RV-07", file, f.id, "the writer answers the finding: fixed, or declined with a reason")),
         ),
       ),

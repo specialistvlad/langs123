@@ -14,33 +14,10 @@ import { review, reviewQueue } from "./index.ts";
 import { drawn, requestsOf, reviewTopic, verdicts } from "./pipeline.ts";
 import { queueOf } from "./queue.ts";
 import { reportOf, withReview } from "./record.ts";
-import type { Finding, Runner, Session } from "./run.ts";
+import type { Runner } from "./run.ts";
+import { finding, scripted, session } from "./stand-in.ts";
 
 const catalog = await readRules(RULES_FILE);
-const finding = (rule: string, at: string, confidence: Finding["confidence"] = "high"): Finding => ({
-  rule,
-  at,
-  text: "It breaks.",
-  fix: "Fixed.",
-  confidence,
-});
-const session = (findings: Finding[], n = 1): Session => ({
-  session: `s${String(n)}`,
-  model: "claude-sonnet-5-5",
-  findings,
-  tokens: { input: 10, output: 5, cacheRead: 20, cacheWrite: 0 },
-  ms: 2000,
-});
-// A runner that answers each request's runs from a list, by its language.
-const scripted = (answers: Record<string, Finding[][]>): Runner => {
-  const seen: Record<string, number> = {};
-  return (request) => {
-    const k = request.language ?? "source";
-    seen[k] = (seen[k] ?? 0) + 1;
-    return Promise.resolve(session(answers[k]?.[(seen[k] ?? 1) - 1] ?? [], seen[k]));
-  };
-};
-
 test("findings both runs report stand, the others are disputed, and one run's findings stand", () => {
   expect(
     verdicts([session([finding("SH-04", "def"), finding("VO-02", "x")]), session([finding("SH-04", "def"), finding("FT-05", "y")])]),
@@ -102,7 +79,7 @@ test("the source runs twice, a clean language request once, one with findings tw
   expect(reportOf(clean)).toContain("Disputed, reported by one run alone:");
 });
 
-test("a request asking a rule of the stronger model runs on it, the others on the policy's model", async () => {
+test("the stronger model's rules leave each request for one of their own on that model; the kinds given run alone", async () => {
   const { files } = fixture();
   const { library } = typedLibrary(files);
   const [course] = library.courses;
@@ -110,18 +87,22 @@ test("a request asking a rule of the stronger model runs on it, the others on th
   if (course === undefined || topic === undefined) throw new Error("the fixture holds a course and a topic");
   const [source, uk] = requestsOf(topic, course, catalog);
   const sourceOnly = Object.keys(source?.asked ?? {}).filter((r) => uk?.asked[r] === undefined);
+  const [rest, own, ukAgain] = requestsOf(topic, course, catalog, sourceOnly);
+  expect(Object.keys(own?.asked ?? {})).toEqual(sourceOnly);
+  expect(own?.only).toEqual(sourceOnly);
+  expect(Object.keys(rest?.asked ?? {}).some((r) => sourceOnly.includes(r))).toBe(false);
+  expect(ukAgain?.asked).toEqual(uk?.asked);
   const models: string[] = [];
   const runner: Runner = (request, model) => {
     models.push(`${request.language ?? "source"} ${model}`);
     return Promise.resolve(session([finding("RV-11", "def")]));
   };
-  await reviewTopic(topic, course, catalog, runner, {
-    model: "m",
-    date: "2026-11-02",
-    sessions: 1,
-    stronger: { model: "o", rules: sourceOnly },
-  });
-  expect(models).toEqual(["source o", "source o", "uk m", "uk m"]);
+  const policy = { model: "m", date: "2026-11-02", sessions: 1, stronger: { model: "o", rules: sourceOnly } };
+  await reviewTopic(topic, course, catalog, runner, policy);
+  expect(models).toEqual(["source m", "source m", "source o", "source o", "uk m", "uk m"]);
+  models.length = 0;
+  await reviewTopic(topic, course, catalog, runner, { ...policy, kinds: ["source"] });
+  expect(models).toEqual(["source m", "source m", "source o", "source o"]);
 });
 
 test("the queue holds each flagged topic and the one-in-ten draw of each wave's clean ones", () => {
@@ -158,7 +139,7 @@ afterAll(async () => {
   await rm(scratch, { recursive: true });
 });
 
-test("review writes each topic's record beside it, its report, the sessions and the queue; a topic the checks fail stays out", async () => {
+test("review writes each topic's record beside it, its report, the sessions and the queue; an open record enters again, a topic the checks fail stays out", async () => {
   const root = join(scratch, "samples");
   await cp(SAMPLES_ROOT, root, { recursive: true, filter: (from) => basename(from) !== "review.yaml" });
   const out = join(scratch, "out");
@@ -179,6 +160,7 @@ test("review writes each topic's record beside it, its report, the sessions and 
     { topic: "en.alphabet", wave: "A0", why: "flagged", flagged: ["VO-07"], reads: ["uk", "en"] },
   ]);
   expect((await reviewQueue(root)).map((q) => q.topic)).toEqual(["en.alphabet"]);
+  expect((await review(root, ["en.alphabet"], options))[0]?.requests).toHaveLength(3);
   await Bun.write(join(root, "en", "alphabet", "uk.yaml"), "language: uk\nnativeReview: false\ntext: {}\n");
   expect(review(root, ["en.alphabet"], options)).rejects.toThrow("en.alphabet enters review once the checks pass");
 });

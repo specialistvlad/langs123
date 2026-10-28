@@ -80,13 +80,14 @@ test("RV-06: a finding that cites neither a rule nor a source", () => {
   ).toEqual([]);
 });
 
-test("RV-07: a finding with no answer, and one declined with no reason", () => {
+test("RV-07: a finding with no answer, and one declined with no reason; one raised again goes to the owner", () => {
   const said = lintCase(
     "RV-07",
     inReview((r) =>
       r.reviews?.[0]?.findings.push(
         { id: "f2", at: "def", rule: "SH-03", text: "x" },
         { id: "f3", at: "def", rule: "SH-03", text: "x", answer: "declined" },
+        { id: "f4", at: "def", rule: "SH-03", text: "x", again: "declined" },
       ),
     ),
   );

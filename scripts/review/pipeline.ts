@@ -1,12 +1,14 @@
 // A topic's review (12.2 to 12.5): its source request and one request per language file, each run in its own
 // Claude Code session. The source request runs twice; a language request runs once, and again where the first run
 // finds something or a one-in-ten draw of the clean ones falls on it. Where two runs answer, a finding both report
-// stands and a finding one reports is disputed; a single run's findings stand. Every run is kept. A request runs on
-// the policy's model, or on its stronger model where it asks a rule the default misses (12.3).
+// stands and a finding one reports is disputed; a single run's findings stand. Every run is kept. Each question runs on
+// the model it was calibrated on (12.3): the rules of the policy's stronger model leave each request that asks them
+// for a request of their own on that model, and the rest run on the policy's model.
 import { createHash } from "node:crypto";
 import type { Catalog } from "../rule-catalog.ts";
 import type { Course, Topic } from "../v1/library.ts";
-import { languageRequest, type Request, sourceRequest } from "./request.ts";
+import type { RequestKind } from "./questions.ts";
+import { languageRequest, type Request, type Selection, sourceRequest } from "./request.ts";
 import type { Finding, Runner, Session } from "./run.ts";
 
 export interface RequestReview {
@@ -20,12 +22,16 @@ export interface TopicReview {
   topic: string;
   date: string;
   requests: RequestReview[];
+  // The review ran some kinds of request alone.
+  partial?: true;
 }
 
 export interface Policy {
   model: string;
-  // The model of the requests asking any of its rules.
+  // The model of the rules named, asked in requests of their own.
   stronger?: { model: string; rules: string[] };
+  // The kinds of request that run; every kind when none is given.
+  kinds?: RequestKind[];
   date: string;
   // How many sessions run at once.
   sessions?: number;
@@ -50,7 +56,7 @@ export function verdicts(runs: Session[]): Pick<RequestReview, "standing" | "dis
 }
 
 export const modelOf = (request: Request, policy: Policy): string =>
-  policy.stronger?.rules.some((r) => request.asked[r] !== undefined) === true ? policy.stronger.model : policy.model;
+  request.only !== undefined && policy.stronger !== undefined ? policy.stronger.model : policy.model;
 
 async function runRequest(request: Request, runner: Runner, policy: Policy): Promise<RequestReview> {
   const model = modelOf(request, policy);
@@ -74,12 +80,27 @@ async function pooled<T>(tasks: (() => Promise<T>)[], n: number): Promise<T[]> {
   return results;
 }
 
-export const requestsOf = (topic: Topic, course: Course, catalog: Catalog): Request[] => [
-  sourceRequest(topic, course, catalog),
-  ...topic.languages.map((l) => languageRequest(topic, course, l.data, catalog)),
-];
+// A topic's requests: its source's and each language file's, each asking the stronger rules in a request of their own.
+export function requestsOf(topic: Topic, course: Course, catalog: Catalog, stronger: string[] = []): Request[] {
+  const makers: ((s?: Selection) => Request)[] = [
+    (s) => sourceRequest(topic, course, catalog, s),
+    ...topic.languages.map((l) => (s?: Selection) => languageRequest(topic, course, l.data, catalog, s)),
+  ];
+  return makers.flatMap((make) => {
+    const whole = make();
+    const own = stronger.filter((r) => whole.asked[r] !== undefined);
+    return own.length === 0 ? [whole] : [make({ except: own }), make({ only: own })];
+  });
+}
 
 export async function reviewTopic(topic: Topic, course: Course, catalog: Catalog, runner: Runner, policy: Policy): Promise<TopicReview> {
-  const requests = requestsOf(topic, course, catalog).map((r) => () => runRequest(r, runner, policy));
-  return { topic: topic.source.data.id, date: policy.date, requests: await pooled(requests, policy.sessions ?? 4) };
+  const requests = requestsOf(topic, course, catalog, policy.stronger?.rules)
+    .filter((r) => policy.kinds?.includes(r.kind) ?? true)
+    .map((r) => () => runRequest(r, runner, policy));
+  return {
+    topic: topic.source.data.id,
+    date: policy.date,
+    requests: await pooled(requests, policy.sessions ?? 4),
+    ...(policy.kinds !== undefined && { partial: true as const }),
+  };
 }

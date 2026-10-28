@@ -2,7 +2,8 @@
 // file; a language request asks those of one language file beside its source. Each carries the review's instructions
 // as its system prompt, and as its prompt the context the questions name, the questions with what each is asked of,
 // and the text as the files hold it. The session answers with its findings alone, in the schema below; the request
-// knows how many questions it asks, so the rules that hold need no answer.
+// knows how many questions it asks, so the rules that hold need no answer. A selection narrows the rules a request asks:
+// all but some, or some alone, which then run as a request of their own.
 import type { TopicLanguageFile } from "../generated/library-v1.ts";
 import type { Catalog } from "../rule-catalog.ts";
 import type { Course, Topic } from "../v1/library.ts";
@@ -21,7 +22,16 @@ export interface Request {
   asked: Record<string, number>;
   // The rules that wait on an input M6 brings, unasked.
   pending: string[];
+  // The rules a request of its own asks alone.
+  only?: string[];
 }
+
+export interface Selection {
+  only?: string[];
+  except?: string[];
+}
+
+const selected = (q: Question, s: Selection): boolean => (s.only?.includes(q.rule) ?? true) && s.except?.includes(q.rule) !== true;
 
 export const ANSWER_SCHEMA = {
   type: "object",
@@ -109,10 +119,10 @@ function context(topic: Topic, course: Course): string[] {
   ];
 }
 
-export function sourceRequest(topic: Topic, course: Course, catalog: Catalog): Request {
+export function sourceRequest(topic: Topic, course: Course, catalog: Catalog, selection: Selection = {}): Request {
   const source = course.index?.data.source ?? course.course;
   const asked = questions(
-    questionsOf(catalog, "source").filter((q) => holds(q, course.course, [course.course, source])),
+    questionsOf(catalog, "source").filter((q) => holds(q, course.course, [course.course, source]) && selected(q, selection)),
     (q) => targetIds(topic, q.target),
   );
   const prompt = [
@@ -134,15 +144,22 @@ export function sourceRequest(topic: Topic, course: Course, catalog: Catalog): R
     prompt: prompt.join("\n"),
     asked: asked.asked,
     pending: asked.pending,
+    ...(selection.only !== undefined && { only: selection.only }),
   };
 }
 
 const withoutFingerprints = (file: TopicLanguageFile): object =>
   Object.fromEntries(Object.entries(file).filter(([k]) => k !== "fingerprints"));
 
-export function languageRequest(topic: Topic, course: Course, file: TopicLanguageFile, catalog: Catalog): Request {
+export function languageRequest(
+  topic: Topic,
+  course: Course,
+  file: TopicLanguageFile,
+  catalog: Catalog,
+  selection: Selection = {},
+): Request {
   const asked = questions(
-    questionsOf(catalog, "language").filter((q) => holds(q, course.course, [file.language, course.course])),
+    questionsOf(catalog, "language").filter((q) => holds(q, course.course, [file.language, course.course]) && selected(q, selection)),
     (q) => targetIds(topic, q.target, file),
   );
   const prompt = [
@@ -171,5 +188,6 @@ export function languageRequest(topic: Topic, course: Course, file: TopicLanguag
     prompt: prompt.join("\n"),
     asked: asked.asked,
     pending: asked.pending,
+    ...(selection.only !== undefined && { only: selection.only }),
   };
 }

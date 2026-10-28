@@ -1,8 +1,9 @@
 // Reviews topics of the new library in Claude Code sessions (scripts/review/index.ts): each topic folder's source and
 // language files, the records written beside them, the reports, sessions and flagged queue into build/review/.
-// A request asking a rule --stronger names runs on its model.
+// The rules --stronger names leave each request that asks them for a request of their own on its model;
+// --source-only runs the source requests alone.
 // Run: npm run review -- <topic folder>… --writer <session> <model> [--model <version>] [--stronger <model> <rule>…]
-//      [--dry-run]
+//      [--source-only] [--dry-run]
 import { dirname, join, resolve } from "node:path";
 import { catalog } from "./v1/check.ts";
 import { typedLibrary } from "./v1/library.ts";
@@ -34,6 +35,7 @@ const [strongerModel, ...strongerRules] = flag("--stronger", args.length).filter
 const policy: Omit<Policy, "date"> = {
   model,
   ...(strongerModel !== undefined && { stronger: { model: strongerModel, rules: strongerRules } }),
+  ...(args.includes("--source-only") && { kinds: ["source" as const] }),
 };
 
 if (args.includes("--dry-run")) {
@@ -41,10 +43,10 @@ if (args.includes("--dry-run")) {
   const rules = await catalog();
   for (const course of library.courses) {
     for (const topic of course.topics.filter((t) => ids.includes(t.source.data.id))) {
-      for (const r of requestsOf(topic, course, rules)) {
+      for (const r of requestsOf(topic, course, rules, policy.stronger?.rules).filter((q) => policy.kinds?.includes(q.kind) ?? true)) {
         const asked = Object.values(r.asked).reduce((a, b) => a + b, 0);
         console.log(
-          `${r.topic} ${r.language ?? "source"} on ${modelOf(r, { ...policy, date: "" })}: ${String(asked)} questions, ${String(Object.keys(r.asked).length)} rules, ${String(r.prompt.length)} characters; pending ${r.pending.join(", ") || "none"}`,
+          `${r.topic} ${r.language ?? "source"}${r.only === undefined ? "" : ` (${r.only.join(", ")} alone)`} on ${modelOf(r, { ...policy, date: "" })}: ${String(asked)} questions, ${String(Object.keys(r.asked).length)} rules, ${String(r.prompt.length)} characters; pending ${r.pending.join(", ") || "none"}`,
         );
       }
     }

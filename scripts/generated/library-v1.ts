@@ -519,6 +519,10 @@ export interface Finding {
   fix?: Text;
   answer?: "fixed" | "declined";
   reason?: Text;
+  /**
+   * A finding raised again on an element and rule the writer answered before: the earlier answer, fixed or declined. It goes to the owner's reading.
+   */
+  again?: "fixed" | "declined";
 }
 /**
  * The concept keys every course's index names its topics' concepts from.

@@ -1,5 +1,5 @@
-// The review of the topics of a library's root, from the command line or through api.ts: each topic that passes the
-// checks is reviewed (pipeline.ts); its record joins its folder as review.yaml, its report and the run's sessions go
+// The review of the topics of a library's root, from the command line or through api.ts: each topic whose files pass
+// the checks is reviewed (pipeline.ts), its record's open findings aside; its record joins its folder as review.yaml, its report and the run's sessions go
 // to build/review/, and the flagged queue is written again from every record of the root.
 import { appendFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
@@ -30,13 +30,13 @@ export async function review(root: string, ids: string[], options: ReviewOptions
   const reviews: TopicReview[] = [];
   for (const course of library.courses) {
     for (const topic of course.topics.filter((t) => ids.includes(t.source.data.id))) {
-      const own = problems.filter((p) => p.file.includes(`/${topic.course}/${topic.slug}/`));
+      const own = problems.filter((p) => p.file.includes(`/${topic.course}/${topic.slug}/`) && !p.file.endsWith("/review.yaml"));
       if (own.length > 0) throw new Error(`${topic.source.data.id} enters review once the checks pass: ${String(own.length)} problems`);
       const done = await reviewTopic(topic, course, rules, options.runner, options);
       const record: TopicReviewRecord = withReview(topic.review?.data, done, options.writer);
       await Bun.write(join(ROOT, topic.source.file.replace(/source\.yaml$/, "review.yaml")), toYaml(record));
       await mkdir(join(out, topic.course), { recursive: true });
-      await Bun.write(join(out, topic.course, `${topic.slug}.md`), reportOf(done));
+      await Bun.write(join(out, topic.course, `${topic.slug}.md`), reportOf(done, topic.review?.data));
       const sessions = done.requests.flatMap((r) =>
         r.runs.map((s, i) => ({
           date: done.date,
