@@ -43,5 +43,5 @@ export interface Brand {
 
 export const LIBRARY_BRAND: Brand = {
   mark: (size, label) =>
-    `<svg width="${size}" height="${size}" viewBox="0 0 28 28"${label === undefined ? ' aria-hidden="true"' : ` role="img" aria-label="${label}"`}><rect width="28" height="28" rx="7" style="fill: var(--accent)"/><text x="14" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10.5" font-weight="800" style="fill: var(--bg)">123</text></svg>`,
+    `<svg width="${size}" height="${size}" viewBox="0 0 28 28"${label === undefined ? ' aria-hidden="true"' : ` role="img" aria-label="${label}"`}><rect width="28" height="28" rx="7" style="fill: var(--c-accent)"/><text x="14" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10.5" font-weight="800" style="fill: var(--c-bg)">123</text></svg>`,
 };

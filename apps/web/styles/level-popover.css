@@ -17,7 +17,7 @@
   -webkit-backdrop-filter: blur(40px) saturate(1.8);
   backdrop-filter: blur(40px) saturate(1.8);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
-  color: var(--text);
+  color: var(--c-text);
 }
 .lv-pop-x {
   display: none;
@@ -50,7 +50,7 @@
     padding: 0;
     border: 0;
     border-radius: 999px;
-    background: var(--lvm-fill);
+    background: var(--c-level-mark-fill);
     color: inherit;
     cursor: pointer;
   }
@@ -90,7 +90,7 @@
   padding: 12px 16px 8px;
   font-size: 13px;
   line-height: 18px;
-  color: var(--ix-menu-sub, var(--muted));
+  color: var(--ix-menu-sub, var(--c-muted));
 }
 .lv-row {
   position: relative;
@@ -109,7 +109,7 @@
   cursor: pointer;
 }
 .lv-row:hover {
-  background: var(--hm-fill, var(--pg-fill));
+  background: var(--c-fill, var(--c-fill));
 }
 .lv-pop-note + .lv-rows > .lv-row:first-child::before,
 .lv-row + .lv-row::before {
@@ -119,14 +119,14 @@
   left: 42px;
   right: 16px;
   height: 0.5px;
-  background: var(--ix-sep, var(--pg-sep));
+  background: var(--c-sep, var(--pg-sep));
 }
 .lv-tick {
   display: flex;
   flex-shrink: 0;
   justify-content: center;
   width: 18px;
-  color: var(--accent);
+  color: var(--c-accent);
   visibility: hidden;
 }
 .lv-row[aria-checked="true"] .lv-tick {
@@ -147,7 +147,7 @@
   margin-top: 1px;
   font-size: 13px;
   line-height: 17px;
-  color: var(--ix-menu-sub, var(--muted));
+  color: var(--ix-menu-sub, var(--c-muted));
 }
 /* A level the element lacks */
 .lv-off,
@@ -156,7 +156,7 @@
   cursor: default;
 }
 .lv-off .lv-name {
-  color: var(--muted);
+  color: var(--c-muted);
 }
 .lv-off .lv-sub {
   opacity: 0.6;

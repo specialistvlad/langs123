@@ -121,10 +121,11 @@ test("levels.css hides each level above the filter, dims the badge halves and th
   await testSite();
   const css = await Bun.file(join(SITE_DIR, "levels.css")).text();
   for (const [i, { code }] of LEVEL_INFO.entries()) {
+    const lower = code.toLowerCase();
     expect(css).toContain(
-      `.lvl-${code} { --lvl: var(--lvl-${code}-ink); --level-tint: var(--lvl-${code}-tint); --level-strong: var(--lvl-${code}-strong); --level-pill: var(--lvl-${code}-pill); --level-pill-ink: var(--lvl-${code}-pill-ink); }`,
+      `.lvl-${code} { --lvl: var(--c-level-${lower}-ink); --level-tint: var(--c-level-${lower}-tint); --level-strong: var(--c-level-${lower}-strong); --level-pill: var(--c-level-${lower}-pill); --level-pill-ink: var(--c-level-${lower}-pill-ink); }`,
     );
-    expect(css).toContain(`.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); }`);
+    expect(css).toContain(`.lvm > i.lv-${code}.on { background: var(--c-level-${lower}-strong); }`);
     const above = LEVELS.slice(i + 1);
     if (above.length === 0) continue;
     expect(css).toContain(`html[data-level="${code}"] .lvm > i:is(${above.map((c) => `.lv-${c}`).join(", ")}).on { opacity: 0.35; }`);

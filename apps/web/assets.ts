@@ -54,7 +54,7 @@ const STYLES = [
   "topic-print",
 ];
 
-// style.css: the colours and shadows of tokens.json (tokens.ts), then the parts of apps/web/styles/ joined in order.
+// style.css: the variables of tokens.json (tokens.ts), then the parts of apps/web/styles/ joined in order.
 export async function styleCss(): Promise<string> {
   const parts = await Promise.all(STYLES.map((name) => Bun.file(join(APP, "styles", `${name}.css`)).text()));
   return [tokensCss(), ...parts].join("\n");
@@ -75,7 +75,7 @@ export async function clientJs(): Promise<string> {
 export function levelsCss(): string {
   const codes = LEVEL_INFO.map((l) => l.code);
   // A mark's bar of a level it holds: the level's strong colour.
-  const bars = codes.map((code) => `.lvm > i.lv-${code}.on { background: var(--lvl-${code}-strong); }`);
+  const bars = codes.map((code) => `.lvm > i.lv-${code}.on { background: var(--c-level-${code.toLowerCase()}-strong); }`);
   const filter = codes.flatMap((code, i) => {
     const above = codes.slice(i + 1).map((c) => `[data-level="${c}"]`);
     if (above.length === 0) return [];

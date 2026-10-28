@@ -1,8 +1,6 @@
 /* The page base; its colours and shadows come from tokens.json (tokens.ts), set before this file */
 
 :root {
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   /* The level mark (level-mark.css): a mark's capsule as the pointer rests on it. */
   --lvm-hover: rgba(118, 118, 128, 0.2);
   color-scheme: light;
@@ -30,19 +28,19 @@ body {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font: 15px/1.55 var(--font);
+  background: var(--c-bg);
+  color: var(--c-text);
+  font: 15px/1.55 var(--f-sans);
   -webkit-font-smoothing: antialiased;
 }
 
 /* Chrome's macOS system font places a stress mark (U+0301) beside Cyrillic е and о instead of over them,
    so Ukrainian text skips it; Safari keeps the system font through -apple-system. */
 :lang(uk) {
-  --font: -apple-system, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --f-sans: var(--f-sans-uk);
 }
 [lang="uk"] {
-  font-family: var(--font);
+  font-family: var(--f-sans);
 }
 
 button {

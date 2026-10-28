@@ -8,14 +8,14 @@
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 0.88em;
   letter-spacing: -0.02em;
-  color: color-mix(in srgb, var(--text) 82%, transparent);
+  color: color-mix(in srgb, var(--c-text) 82%, transparent);
 }
 :where(html[data-page="topic"]) .doc strong [data-mark="ipa"] {
   color: inherit;
 }
 :where(html[data-page="topic"]) .doc .sl {
   font-style: normal;
-  color: color-mix(in srgb, var(--text) 35%, transparent);
+  color: color-mix(in srgb, var(--c-text) 35%, transparent);
 }
 :where(html[data-page="topic"]) .doc strong .sl {
   color: inherit;
@@ -36,7 +36,7 @@
   margin-top: 3px;
   padding: 0 8px;
   border-radius: 999px;
-  background: var(--hm-fill);
+  background: var(--c-fill);
   color: var(--tp-sec);
   font-size: 12px;
   font-weight: 600;
@@ -53,13 +53,13 @@
 }
 :where(html[data-page="topic"]) .doc a[data-mark="link"] {
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--c-accent) 35%, transparent);
   text-underline-offset: 3px;
 }
 :where(html[data-page="topic"]) .doc [data-mark="slot"] {
   padding: 1px 7px;
   border-radius: 7px;
-  background: var(--hm-fill);
+  background: var(--c-fill);
   color: var(--tp-sec);
   font-size: 0.9em;
   white-space: nowrap;
@@ -68,7 +68,7 @@
   color: var(--tp-sec);
 }
 :where(html[data-page="topic"]) .doc [data-mark="intonation"] {
-  color: var(--accent);
+  color: var(--c-accent);
   font-weight: 700;
 }
 :where(html[data-page="topic"]) .doc [data-mark="gap"] {
@@ -80,7 +80,7 @@
   margin-right: 6px;
   padding: 0 8px;
   border-radius: 999px;
-  background: var(--hm-fill);
+  background: var(--c-fill);
   color: var(--tp-sec);
   font-size: 12px;
   font-weight: 600;
@@ -122,12 +122,12 @@
   text-transform: none;
   letter-spacing: -0.3px;
   font-size: 15px;
-  color: var(--text);
+  color: var(--c-text);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card td {
   padding: 11px 10px;
   border: 0;
-  border-top: 0.5px solid var(--tp-hair);
+  border-top: 0.5px solid var(--c-sep);
   vertical-align: middle;
 }
 :where(html[data-page="topic"]) .tp-main .tp-card tr:last-child td {
@@ -171,7 +171,7 @@
   .tp-card
   table[data-type="comparison"]
   :is(th, :where(html[data-page="topic"]) td):not(:first-child, :where(html[data-page="topic"]) .tp-lvl) {
-  border-left: 0.5px solid var(--tp-hair);
+  border-left: 0.5px solid var(--c-sep);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card td.tp-none {
   color: var(--tp-mute);

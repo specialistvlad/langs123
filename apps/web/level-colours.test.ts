@@ -36,6 +36,6 @@ test.each([...THEMES])("in the %s theme every level's code reads clearly on its 
 
 test("levels.css hands each level's colours to its elements", () => {
   expect(levelColoursCss()).toContain(
-    ".lvl-A1 { --lvl: var(--lvl-A1-ink); --level-tint: var(--lvl-A1-tint); --level-strong: var(--lvl-A1-strong); --level-pill: var(--lvl-A1-pill); --level-pill-ink: var(--lvl-A1-pill-ink); }",
+    ".lvl-A1 { --lvl: var(--c-level-a1-ink); --level-tint: var(--c-level-a1-tint); --level-strong: var(--c-level-a1-strong); --level-pill: var(--c-level-a1-pill); --level-pill-ink: var(--c-level-a1-pill-ink); }",
   );
 });

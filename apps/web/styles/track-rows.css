@@ -5,7 +5,7 @@
   padding: 0;
   list-style: none;
   border-radius: 22px;
-  background: var(--surface);
+  background: var(--c-surface);
   overflow: hidden;
 }
 .ix-rows li {
@@ -18,7 +18,7 @@
   right: 0;
   left: 20px;
   height: 0.5px;
-  background: var(--ix-sep);
+  background: var(--c-sep);
 }
 .ix-row {
   position: relative;
@@ -42,13 +42,13 @@
   inset: 0;
 }
 .ix-row:has(.ix-cover:hover) {
-  background: var(--hm-fill);
+  background: var(--c-fill);
 }
 .ix-cover:focus-visible,
 .ix-up:focus-visible,
 .ix-btn:focus-visible,
 .ix-item:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--c-accent);
   outline-offset: 2px;
 }
 .ix-name {
@@ -61,7 +61,7 @@
 }
 .ix-chev {
   flex-shrink: 0;
-  color: var(--ix-chev);
+  color: var(--c-faint);
 }
 /* Show more (track-more.ts): the last row of a list the chosen level partly hides, a topic row tall, its count in the
    accent colour and the next level's pill at the end; the level filter shows the row of the level chosen (levels.css) */
@@ -83,16 +83,16 @@
   padding: 0 16px 0 20px;
   border: 0;
   background: transparent;
-  color: var(--accent);
+  color: var(--c-accent);
   font: inherit;
   text-align: left;
   cursor: pointer;
 }
 .ix-more-b:hover {
-  background: var(--hm-fill);
+  background: var(--c-fill);
 }
 .ix-more-b:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--c-accent);
   outline-offset: -2px;
 }
 .ix-more-t {
@@ -114,9 +114,9 @@
   opacity: 1 !important;
 }
 .ix-rows li[data-current] .ix-row {
-  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  background: color-mix(in srgb, var(--c-accent) 8%, var(--c-surface));
 }
 .ix-rows li[data-current] .ix-name {
-  color: var(--accent);
+  color: var(--c-accent);
   font-weight: 600;
 }

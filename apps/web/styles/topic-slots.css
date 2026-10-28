@@ -18,11 +18,11 @@
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th.group {
   border-left: 0;
-  border-bottom: 0.5px solid var(--tp-hair);
-  color: var(--accent);
+  border-bottom: 0.5px solid var(--c-sep);
+  color: var(--c-accent);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact thead tr + tr th {
-  border-left: 0.5px solid var(--tp-hair);
+  border-left: 0.5px solid var(--c-sep);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact thead tr + tr th.group-start {
   border-left: 0;
@@ -30,7 +30,7 @@
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td {
   padding: 5px 6px;
   border: 0;
-  border-left: 0.5px solid var(--tp-hair);
+  border-left: 0.5px solid var(--c-sep);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -55,20 +55,20 @@
   table.compact
   tr:not(.tp-first):not(.gap-row)
   td:not([rowspan], :where(html[data-page="topic"]) .gap) {
-  border-top: 0.5px solid var(--tp-hair);
+  border-top: 0.5px solid var(--c-sep);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact :is(th, :where(html[data-page="topic"]) td).gap {
   width: 8px;
   min-width: 8px;
   padding: 0;
   border: 0;
-  background: var(--hm-bg);
+  background: var(--c-bg);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact tr.gap-row td {
   height: 8px;
   padding: 0;
   border: 0;
-  background: var(--hm-bg);
+  background: var(--c-bg);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.tp-lvl {
   padding: 5px 12px 5px 5px;
@@ -120,11 +120,11 @@
 /* Errors: the wrong form in red under a cross, the right one in green under a check, then the rule */
 :where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(1) {
   background: none;
-  color: var(--tp-bad);
+  color: var(--c-bad);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(2) {
   background: none;
-  color: var(--tp-good);
+  color: var(--c-good);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(3):not(.tp-lvl) {
   color: var(--tp-sec);
@@ -139,14 +139,14 @@
   vertical-align: -1px;
 }
 :where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(1)::before {
-  background: var(--tp-bad);
+  background: var(--c-bad);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2 2l10 10M12 2L2 12' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
     center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2 2l10 10M12 2L2 12' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
     center / contain no-repeat;
 }
 :where(html[data-page="topic"]) .tp-main .tp-card table.errors td:nth-child(2)::before {
-  background: var(--tp-good);
+  background: var(--c-good);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' fill='none'%3E%3Cpath d='M1.5 7.5l4.5 4.5L14.5 1.5' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
     center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' fill='none'%3E%3Cpath d='M1.5 7.5l4.5 4.5L14.5 1.5' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
@@ -164,7 +164,7 @@
   border-radius: 22px;
   background: none;
   text-align: center;
-  color: var(--tp-body);
+  color: var(--c-body);
 }
 :where(html[data-page="topic"]) .tp-main .filter-empty p {
   margin: 0 0 16px;
@@ -177,7 +177,7 @@
   padding: 0 24px;
   border: 0;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--c-accent);
   color: var(--hm-on-accent);
   font-size: 17px;
   font-weight: 600;

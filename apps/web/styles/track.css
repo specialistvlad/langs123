@@ -1,35 +1,23 @@
 /* A course (pages/track.ts, pages/topic.ts) in the frame: its colours, the head of the topics column, the grouping
    and the headings of the topics' lists. The column's frame is track-topic.css, its rows track-rows.css */
 html[data-frame] {
-  --ix-sep: rgba(60, 60, 67, 0.29);
-  --ix-chev: rgba(60, 60, 67, 0.45);
-  --ix-seg-on: #ffffff;
   --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   --ix-menu-bg: rgba(250, 250, 252, 0.94);
   --ix-menu-sub: rgba(60, 60, 67, 0.6);
-  --ix-band: rgba(118, 118, 128, 0.12);
   --ix-fade: rgba(242, 242, 247, 0.85);
 }
 @media (prefers-color-scheme: dark) {
   html[data-frame]:not([data-theme="light"]) {
-    --ix-sep: rgba(84, 84, 88, 0.65);
-    --ix-chev: rgba(235, 235, 245, 0.4);
-    --ix-seg-on: #636366;
     --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     --ix-menu-bg: rgba(44, 44, 48, 0.94);
     --ix-menu-sub: rgba(235, 235, 245, 0.6);
-    --ix-band: rgba(118, 118, 128, 0.24);
     --ix-fade: rgba(0, 0, 0, 0.85);
   }
 }
 html[data-frame][data-theme="dark"] {
-  --ix-sep: rgba(84, 84, 88, 0.65);
-  --ix-chev: rgba(235, 235, 245, 0.4);
-  --ix-seg-on: #636366;
   --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   --ix-menu-bg: rgba(44, 44, 48, 0.94);
   --ix-menu-sub: rgba(235, 235, 245, 0.6);
-  --ix-band: rgba(118, 118, 128, 0.24);
   --ix-fade: rgba(0, 0, 0, 0.85);
 }
 html:is([data-page="track"], [data-page="topic"]) a {
@@ -96,7 +84,7 @@ html:is([data-page="track"], [data-page="topic"]) a {
   margin: 4px 0 0;
   font-size: 15px;
   line-height: 20px;
-  color: var(--muted);
+  color: var(--c-muted);
 }
 .cl-line .xl-line {
   display: inline;
@@ -111,7 +99,7 @@ html:is([data-page="track"], [data-page="topic"]) a {
 }
 .cl-line .xl-line b {
   font-weight: 600;
-  color: var(--text);
+  color: var(--c-text);
 }
 .cl-line .xl-line::after {
   content: "";
@@ -120,21 +108,21 @@ html:is([data-page="track"], [data-page="topic"]) a {
   height: 14px;
   margin-left: var(--cl-chev, 8px);
   vertical-align: -2px;
-  background: var(--ix-chev);
+  background: var(--c-faint);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5L6.5 7l-5 5.5'/%3E%3C/svg%3E")
     center / 8px 14px no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5L6.5 7l-5 5.5'/%3E%3C/svg%3E")
     center / 8px 14px no-repeat;
 }
 .cl-line .xl-line:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--c-accent);
   outline-offset: 2px;
 }
 .ix-count {
   flex-shrink: 0;
   font-size: 15px;
   line-height: 20px;
-  color: var(--muted);
+  color: var(--c-muted);
 }
 
 /* The grouping: the list of the chosen order shows */
@@ -171,7 +159,7 @@ html[data-order="path"] .ix-flow[data-order="path"] {
     Menlo,
     monospace;
   letter-spacing: -0.02em;
-  color: var(--muted);
+  color: var(--c-muted);
 }
 .ix-sec-n {
   font-weight: inherit;
