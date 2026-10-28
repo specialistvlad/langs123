@@ -288,10 +288,10 @@ Source: §7 Tables and writing style (State the correct form)
 
 ### VO-07 An example is something a speaker says
 Requirements: 2.4, 2.9
-Rule: An example is a sentence someone says in a situation it makes plain, in words at or below the subtopic's level, and it carries a scene line (who says it, to whom, where) that the sentence fits; a word example of an inventory, such as a letter's word or a vocabulary item, stands alone.
-Not this: "The colour of the centre is grey." (en/01-foundations/spelling-rules), a sentence built to carry spelling pairs, with no scene line.
+Rule: An example is a sentence someone says, and the sentence alone makes its situation plain: who says it, and where or why; a word example of an inventory, such as a letter's word or a vocabulary item, stands alone.
+Not this: "The colour of the centre is grey." (en/01-foundations/spelling-rules), a sentence built to carry spelling pairs, that nobody says anywhere.
 Check: question
-Question: [sentence] Given its scene line {scene}: Yes or no: from this sentence example alone, can you name who says it and where or why, as the scene line does?
+Question: [sentence] Yes or no: from this sentence example alone, can you name who says it and where or why?
 Source: §7 Tables and writing style (An example is a sentence someone says)
 
 ### VO-08 A translation says what a speaker would say
