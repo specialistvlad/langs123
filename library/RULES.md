@@ -175,7 +175,7 @@ Question: [block] Given essence line {line}: Yes or no: does this block expand t
 
 ### SH-16 A subtopic states the fact, then an example
 Requirements: 2.8, 2.4
-Rule: A subtopic gives its fact in one block and its example in the block after it.
+Rule: A subtopic gives its fact in one block and its example in the block after it; fact blocks of different varieties stand as alternatives, each read by its variety's reader, and count as one block.
 Not this: (written case) Two fact blocks in a row with no example block between, or an example before its fact.
 Check: lint
 Source: §7 Tables and writing style (an example is a sentence someone says)
@@ -695,9 +695,9 @@ Languages: es-419
 Courses: es
 Source: §1 Languages and variants (Varieties)
 
-### NO-31 Voseo appears in an es-419 fact block
+### NO-31 Voseo appears in an es-419 element
 Requirements: 2.10
-Rule: Voseo appears in a fact block that carries es-419.
+Rule: Voseo appears in an element that carries es-419: a fact block, an example block or an essence line.
 Not this: (written case) Voseo forms in a table row serving every variety.
 Check: lint
 Languages: es-419
