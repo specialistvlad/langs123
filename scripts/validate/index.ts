@@ -11,14 +11,27 @@ import { checkTopic } from "./topic.ts";
 
 export type { Problem } from "./report.ts";
 
-const ajv = new Ajv({ allErrors: true, strict: true });
+// Each file is checked in two passes: the first stops at its first error, so a file that holds passes fast; a file
+// that breaks its schema is checked again for every error, by a validator compiled the first time one is needed.
+const quick = new Ajv({ allErrors: false, strict: true });
+const thorough = new Ajv({ allErrors: true, strict: true });
 const compiled = new Map<string, ValidateFunction>();
 async function schema(name: string): Promise<ValidateFunction> {
   const known = compiled.get(name);
   if (known) return known;
-  const compiledSchema = ajv.compile(await readYaml<object>(join(CONTENT, "schema", `${name}.schema.json`)));
-  compiled.set(name, compiledSchema);
-  return compiledSchema;
+  const source = await readYaml<object>(join(CONTENT, "schema", `${name}.schema.json`));
+  const first = quick.compile(source);
+  let every: ValidateFunction | undefined;
+  const twoPass = ((data: unknown): boolean => {
+    twoPass.errors = null;
+    if (first(data)) return true;
+    every ??= thorough.compile(source);
+    const valid = every(data);
+    twoPass.errors = every.errors ?? null;
+    return valid;
+  }) as ValidateFunction;
+  compiled.set(name, twoPass);
+  return twoPass;
 }
 
 export async function validate(): Promise<Problem[]> {
