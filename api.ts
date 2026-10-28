@@ -29,6 +29,8 @@ export {
 } from "./scripts/export.ts";
 // The version of the new library's export, of its JSON Schema and of this interface (9.8): 0.x until v1.
 export { EXPORT_VERSION as VERSION } from "./scripts/v1/export/library.ts";
+// The new library's samples, a root the export reads with drafts, as SAMPLE serves today's library.
+export { SAMPLES_ROOT as V1_SAMPLES } from "./scripts/v1/load.ts";
 export { topicTitle } from "./scripts/content.ts";
 export { type Catalog, type Covered, readRules, type Rule, RULES_FILE, ruleProblems } from "./scripts/rule-catalog.ts";
 export { type Range, refRange } from "./scripts/levels.ts";

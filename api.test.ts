@@ -14,6 +14,7 @@ test("api.ts exports the build, the export, the search, the library's readers an
       "SAMPLE",
       "SEARCH_CASES",
       "SITE",
+      "V1_SAMPLES",
       "VERSION",
       "build",
       "designArg",

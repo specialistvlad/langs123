@@ -35,6 +35,9 @@ export interface LibraryFiles {
   unreadable: { file: string; message: string }[];
 }
 
+export const LIBRARY_ROOT = join(ROOT, "library");
+// The samples' root: four topics in the new shape, with their courses' indexes.
+export const SAMPLES_ROOT = join(LIBRARY_ROOT, "samples");
 export const OTHER_FOLDERS = ["schema", "samples", "words", "needs"];
 const LANGUAGE_FILE = /^([a-z]{2})\.yaml$/;
 

@@ -1,5 +1,5 @@
 // The index of each course: its concepts come from the registry (IX-05); a replaces entry names a topic of today's
-// library (IX-07); it draws on two sources or more (IX-10); its topics answer search needs that exist (IX-16); a
+// library (IX-07); it draws on two sources or more, the samples' indexes aside (IX-10); its topics answer search needs that exist (IX-16); a
 // topic receives its text once the index is approved (IX-22), and a draft index holds drafts (IX-25); a topic's
 // subtopics stand at the levels its index plans (ST-14). At the library's reach: every practical cluster has a
 // topic in each course (IX-13), the courses reach their levels (IX-18, IX-19), and every course is there (IX-20).
@@ -57,7 +57,7 @@ export const indexRules = (needs: Needs[]): LintRule[] => [
   {
     id: "IX-10",
     check: (lint, scope) =>
-      indexed(lint, scope.courses)
+      indexed(lint, lint.options.samples === true ? [] : scope.courses)
         .filter((c) => c.index.data.sources.length < 2)
         .map((c) => at("IX-10", c.index.file, c.course, "the index draws on two sources or more")),
   },

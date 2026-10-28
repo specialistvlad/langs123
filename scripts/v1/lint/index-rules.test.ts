@@ -29,6 +29,7 @@ test("IX-07: a replaces entry naming a topic today's library lacks", () => {
 
 test("IX-10: an index drawn from one source", () => {
   expect(lintCase("IX-10", (c) => c.index.sources.pop())).toEqual(["en: the index draws on two sources or more"]);
+  expect(lintCase("IX-10", (c) => c.index.sources.pop(), { beside: { options: { samples: true } } })).toEqual([]);
 });
 
 test("IX-16: a search need that doesn't exist, and a need answered by no topic", () => {

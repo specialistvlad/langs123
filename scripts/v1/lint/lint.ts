@@ -17,7 +17,8 @@ export interface Lexicon {
 export interface LintOptions {
   // The rules of the library's reach run too.
   reach?: boolean;
-  // The root holds the samples, which the owner approves as a whole (RV-08): no index of theirs is approved.
+  // The root holds the samples, which the owner approves as a whole (RV-08): their indexes draw on no source and
+  // none is approved.
   samples?: boolean;
 }
 
@@ -67,11 +68,14 @@ export function textsIn(lint: Lint, scope: Scope): Text[] {
   return lint.texts.filter((t) => (scope.courses?.includes(t.topic.course) ?? true) && (languages?.includes(t.language) ?? true));
 }
 
-// The text a reader sees, with the content of the marks left out that the test names: a check of one language's
-// text leaves out the words of another language inside it, its terms, its phrases in other languages and its
-// transcriptions, or a variety's forms.
+// The text a reader sees, with the content of the marks left out that the test names, each in its place: a check of
+// one language's text leaves out the words of another language inside it, its terms, its phrases in other
+// languages and its transcriptions, or a variety's forms.
 export const plainWithout = (runs: Run[], skip: (mark: Mark) => boolean): string =>
-  runs.map((r) => (typeof r === "string" ? r : skip(r) ? " " : plainWithout(r.content, skip))).join("");
+  runs.map((r) => (typeof r === "string" ? r : skip(r) ? MASK : plainWithout(r.content, skip))).join("");
+// What stands in place of a mark left out: no letter, no space, and no script's own, so the words around it stay
+// apart and the spacing around it stays as written.
+export const MASK = "\ufffc";
 export const without =
   (...names: MarkName[]) =>
   (mark: Mark): boolean =>
