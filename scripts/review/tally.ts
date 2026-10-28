@@ -14,14 +14,15 @@ export interface Tally {
   flagged: number;
 }
 
-// Per rule a request asked: the planted cases the session caught, and the sound elements it flagged.
+// Per rule a request asked: the planted cases the session caught, and the sound elements it flagged. A case planted for
+// another rule may break this one too, so a finding on it counts as neither.
 export function tally(model: string, planted: Planted, session: Session): Tally[] {
   return Object.entries(planted.request.asked).map(([rule, asked]) => {
     const cases = planted.plants.filter((p) => p.rule === rule);
     const found = session.findings.filter((f) => f.rule === rule);
     const names = (p: Plant, at: string): boolean => planted.ids.get(p)?.includes(at) ?? false;
     const caught = cases.filter((p) => found.some((f) => names(p, f.at))).length;
-    const flagged = new Set(found.filter((f) => !cases.some((p) => names(p, f.at))).map((f) => f.at)).size;
+    const flagged = new Set(found.filter((f) => !planted.plants.some((p) => names(p, f.at))).map((f) => f.at)).size;
     return { model, rule, planted: cases.length, caught, sound: asked - cases.length, flagged };
   });
 }

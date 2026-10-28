@@ -6,16 +6,17 @@
 // question's target.
 import { LEVELS } from "../lib.ts";
 import { PLAN } from "../v1/export/synthetic.ts";
+import type { Session } from "./run.ts";
 import { meets, summed, type Tally } from "./tally.ts";
 
-export interface SessionLine {
+// A line of sessions.jsonl: a session with the request it answered; the review keeps its findings' count, the calibration
+// the findings.
+export interface SessionLine extends Omit<Session, "findings"> {
+  findings: Session["findings"] | number;
   topic: string;
   kind: string;
   language: string | null;
   run: number;
-  model: string;
-  tokens: { input: number; output: number; cacheRead: number; cacheWrite: number };
-  ms: number;
 }
 
 export interface BudgetInput {

@@ -2,8 +2,10 @@
 // writes build/review/calibration.md and calibration.json; then the budget (scripts/review/budget.ts), from every
 // session build/review/sessions.jsonl holds, into build/review/budget.md. With --rules, the planted requests holding
 // a case of the rules named run alone (RV-11 runs the pairs), and their tallies replace those of the same model and
-// rule in calibration.json; each session's findings stay in sessions.jsonl.
-// Run: npm run calibrate -- [--models claude-sonnet-5-5 claude-haiku-5-5] [--rules SH-20 ST-02] [--per-day 150] [--budget-only]
+// rule in calibration.json; each session's findings stay in sessions.jsonl, and --retally counts the latest saved
+// session of each request again in place of a new one.
+// Run: npm run calibrate -- [--models claude-sonnet-5-5 claude-haiku-5-5] [--rules SH-20 ST-02] [--retally] [--per-day 150]
+//      [--budget-only]
 import { appendFile, mkdir, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { budgetReport, type SessionLine } from "./review/budget.ts";
@@ -28,6 +30,11 @@ const perDay = Number(after("--per-day")[0] ?? 150);
 const date = new Date().toISOString().slice(0, 10);
 const yaml = async (path: string): Promise<unknown> => Bun.YAML.parse(await Bun.file(path).text());
 await mkdir(REVIEW_DIR, { recursive: true });
+const readSessions = async (): Promise<SessionLine[]> =>
+  (await Bun.file(join(REVIEW_DIR, "sessions.jsonl")).text())
+    .trim()
+    .split("\n")
+    .map((l) => JSON.parse(l) as SessionLine);
 
 if (!args.includes("--budget-only")) {
   const rules = await catalog();
@@ -40,9 +47,18 @@ if (!args.includes("--budget-only")) {
   const runner = runnerOf(claudeAttempt);
   const tallies: Tally[] = [];
   const lines: SessionLine[] = [];
+  const saved = await readSessions();
   const run = async (request: Request, model: string, topic: string): Promise<Session> => {
+    const language = request.language ?? null;
+    if (args.includes("--retally")) {
+      const last = saved.findLast((l) => l.topic === topic && l.language === language && l.model === model);
+      if (last === undefined || typeof last.findings === "number") {
+        throw new Error(`no saved session of ${topic} ${language ?? "source"} on ${model}`);
+      }
+      return { ...last, findings: last.findings };
+    }
     const session = await runner(request, model);
-    lines.push({ topic, kind: request.kind, language: request.language ?? null, run: 1, ...session });
+    lines.push({ topic, kind: request.kind, language, run: 1, ...session });
     return session;
   };
   const unplanted = only.filter((r) => r !== "RV-11" && !plants.some((p) => p.rule === r));
@@ -60,7 +76,7 @@ if (!args.includes("--budget-only")) {
         tallies.push(tallyPairs(model, p.pairs, await run(pairsRequest(p.language, p.pairs, rules), model, "calibration"))),
       ),
     );
-    console.log(`${model}: ${String(planted.length + pairsRun.length)} sessions`);
+    console.log(`${model}: ${String(planted.length + pairsRun.length)} sessions${args.includes("--retally") ? ", counted again" : ""}`);
   }
   const file = Bun.file(join(REVIEW_DIR, "calibration.json"));
   const before = (await file.exists()) ? ((await file.json()) as Tally[]) : [];
@@ -71,10 +87,7 @@ if (!args.includes("--budget-only")) {
   await appendFile(join(REVIEW_DIR, "sessions.jsonl"), lines.map((l) => `${JSON.stringify(l)}\n`).join(""));
 }
 
-const sessions = (await Bun.file(join(REVIEW_DIR, "sessions.jsonl")).text())
-  .trim()
-  .split("\n")
-  .map((l) => JSON.parse(l) as SessionLine);
+const sessions = await readSessions();
 const tallies = (await Bun.file(join(REVIEW_DIR, "calibration.json")).json()) as Tally[];
 // The writing's tokens per topic, from the samples' files at about 3.5 characters a token: the files written, out;
 // the conventions, the catalog and the source a translator reads, in.

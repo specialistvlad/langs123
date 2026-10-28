@@ -53,8 +53,10 @@ test("a session's findings tally as planted cases caught and sound elements flag
       { rule: "VO-02", at: "names-ee.fact.1" },
       { rule: "SH-17", at: "names-ei.fact.1" },
       { rule: "SH-17", at: "names-ei.fact.1" },
+      { rule: "SH-20", at: "def" },
     ]),
   );
+  expect(tallies.find((t) => t.rule === "SH-20")).toMatchObject({ planted: 1, caught: 0, flagged: 0 });
   expect(tallies.find((t) => t.rule === "SH-17")).toMatchObject({ planted: 1, caught: 1, flagged: 0 });
   expect(tallies.find((t) => t.rule === "SH-04")).toEqual({ model: "m", rule: "SH-04", planted: 1, caught: 1, sound: 0, flagged: 0 });
   expect(tallies.find((t) => t.rule === "VO-02")).toMatchObject({ planted: 1, caught: 0, flagged: 1 });
