@@ -23,8 +23,9 @@ const LAN = Object.values(networkInterfaces())
   .filter((i) => i?.family === "IPv4" && !i.internal)
   .map((i) => i?.address ?? "");
 const DEV_URL = `http://${HOST === "0.0.0.0" ? (LAN[0] ?? "127.0.0.1") : HOST}:${PORT}`;
-// Its own output folder: `npm run build` writes build/web/ without the live-reload hook.
-const OUT = join(ROOT, "build/dev");
+// Its own output folder, build/dev/ or BUILD_DIR, so a second preview builds beside the first: `npm run build` writes
+// build/web/ without the live-reload hook.
+const OUT = join(ROOT, process.env["BUILD_DIR"] ?? "build/dev");
 const NO_STORE = { "Cache-Control": "no-store" };
 const args = process.argv.slice(2);
 const FULL = args.includes("--full");
