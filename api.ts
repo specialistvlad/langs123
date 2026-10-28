@@ -10,6 +10,8 @@ export { designArg } from "./apps/web/tokens.ts";
 export { readingTexts } from "./apps/web/reading-texts.ts";
 // The quotation marks of a phrase in another language (the l1 mark), by language, as the reading sets them.
 export { l1Quotes } from "./apps/web/reading-marks.ts";
+// Each id of a topic's text by the element the reading draws it in, where the review preview pins a finding.
+export { anchorsOf } from "./apps/web/review.ts";
 // The pictures of the library (8.9): a scene per place, a primitive alone, and the grid of a topic's cells.
 export {
   type Figure,
