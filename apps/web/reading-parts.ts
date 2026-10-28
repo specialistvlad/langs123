@@ -10,14 +10,15 @@ import { formText, ladder, partHead, SVG_CHEV, SVG_CLOCK, SVG_TICK, SVG_X } from
 
 const num = (n: number): string => String(n).padStart(2, "0");
 
-// R1: the head under the title, with the topic's levels and its reading time in the first language, and its definition.
-export function head(r: Reading): string {
+// R1: the head under the title, with the topic's levels and its reading time in the first language, and its definition in
+// the first language alone (side by side sets each language's in its column).
+export function head(r: Reading, lead = true): string {
   const minutes = String(r.topic.minutes[r.main] ?? r.topic.minutes[r.source] ?? 1);
-  const lead = r.m(r.say(r.topic.definition.id, r.topic.definition.text));
+  const definition = lead ? `<p class="lx-lead">${r.m(r.say(r.topic.definition.id, r.topic.definition.text))}</p>` : "";
   return (
     `<header class="rd-head"><p class="lx-meta">${ladder(r.topic.levels, r.words)}<span class="lx-dot" aria-hidden="true"></span>` +
     `<span class="lx-meta-i">${SVG_CLOCK} ${esc(r.words.say("minutes", { n: minutes }))}</span></p>` +
-    `<p class="lx-lead">${lead}</p>${r.layers((l) => r.in(l, r.topic.definition.text))}</header>`
+    `${definition}</header>`
   );
 }
 
@@ -44,7 +45,8 @@ function picture(r: Reading): string {
   return `<div class="rd-pic">${sceneGrid(cells)}</div>`;
 }
 
-// R4 and R7: part 00, the essence's lines, each linked to the subtopic that teaches it, in two cards on a wide column.
+// R4 and R7: part 00, the essence's lines in the first language, each linked to the subtopic that teaches it, in two cards
+// on a wide column.
 export function essence(r: Reading): string {
   const still = (text: string): string => marks(text, { ...r.ctx, still: true });
   const rows = r.topic.essence
@@ -61,10 +63,7 @@ export function essence(r: Reading): string {
         gloss = e.text;
       }
       const first = gloss === undefined ? "" : r.say(e.ex?.id ?? e.id, gloss);
-      const subs = [
-        first === "" ? "" : `<span class="lx-row-sub">${still(first)}</span>`,
-        gloss === undefined ? "" : r.layers((l) => r.in(l, gloss)),
-      ];
+      const subs = [first === "" ? "" : `<span class="lx-row-sub">${still(first)}</span>`];
       const to = e.to === undefined ? "" : ` href="#${e.to}"`;
       return `<div class="lx-row"><a${to} class="lx-row-a lx-cover"><span class="lx-row-t">${form}${subs.join("")}</span></a>${ladder([e.level ?? "A1"], r.words, true)}<span class="lx-chev">${SVG_CHEV}</span></div>`;
     });

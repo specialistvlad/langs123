@@ -23,6 +23,17 @@ test("every block of every sample written in the language has its text, and so d
   expect(Object.keys(readingTexts(v1, "fr"))).toEqual([]);
 });
 
+test("no text runs two items together or sets a space before its punctuation, on the page or in the texts", () => {
+  for (const language of ["uk", "en", "ja"]) {
+    for (const [topic, blocks] of Object.entries(readingTexts(v1, language))) {
+      for (const [id, text] of Object.entries(blocks)) {
+        expect(text, `${topic} ${id}`).not.toMatch(/ [?!.,;:]/);
+        expect(text, `${topic} ${id}`).not.toMatch(/[.?!][A-ZА-ЯЁЇІЄҐ]/u);
+      }
+    }
+  }
+});
+
 test("the words of a block keep each word whole, set a space where a line or a translation ends and leave out the labels", () => {
   expect(words('<div class="rd-why"><p class="lx-label">Чому</p><p><b class="lx-b">a</b>pple &amp; <i>pear</i></p></div>')).toBe(
     "apple & pear",

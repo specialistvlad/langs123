@@ -4,10 +4,10 @@
 // gives the column 1000 once the panes beside it give way.
 import type { Block, Example, Subtopic, Table } from "../../scripts/generated/export-v1.ts";
 import { Reading, THREE, WIDE } from "./reading.ts";
-import { block, cellLines } from "./reading-blocks.ts";
-import { essence, errors, head, interleaved } from "./reading-parts.ts";
+import { block, cellLines, ownBlock, subtopic } from "./reading-blocks.ts";
+import { essence, errors, head } from "./reading-parts.ts";
 import { esc, tag } from "./reading-marks.ts";
-import { ladder, partHead, SVG_CHEV } from "./reading-words.ts";
+import { formText, ladder, partHead, SVG_CHEV } from "./reading-words.ts";
 
 export const FORMS = ["interleaved", "reveal", "side"] as const;
 export type Form = (typeof FORMS)[number];
@@ -118,25 +118,58 @@ function sideBlock(r: Reading, b: Block): string {
   return sideTable(r, b);
 }
 
+// The own blocks of each language that follow a block, each in its language's column.
+function sideOwn(r: Reading, part: string, after: string): string {
+  return r.languages
+    .flatMap((l) =>
+      (r.topic.own[l]?.blocks ?? []).filter((o) => o.in === part && o.after === after && r.shows(o.variety)).map((o) => ({ l, o })),
+    )
+    .map(({ l, o }) => r.languages.map((c) => cell(c === l ? ownBlock(r, l, o) : "", c)).join(""))
+    .join("");
+}
+
 function sideSubtopic(r: Reading, s: Subtopic, index: number): string {
   const title = partHead(String(index + 1).padStart(2, "0"), r.m(r.say(s.title.id, s.title.text)), ladder([s.level], r.words));
-  const rows = s.blocks.filter((b) => r.shows(b.variety)).map((b) => sideBlock(r, b));
+  const rows = s.blocks.filter((b) => r.shows(b.variety)).map((b) => sideBlock(r, b) + sideOwn(r, s.id, b.id));
   return `<div class="rd-lspan rd-part" id="${s.id}">${title}</div>${rows.join("")}`;
 }
 
-// The reading in a form; a form the column cannot take falls back to interleaved.
+// R4 side by side: part 00's head across the columns, then a row per line, its form or example across and each language's
+// gloss or translation in its column.
+function sideEssence(r: Reading): string {
+  const rows = r.topic.essence
+    .filter((e) => r.shows(e.variety))
+    .map((e) => {
+      if (e.ex !== undefined) return exampleRow(r, e.ex);
+      const sound = e.ipa === undefined ? "" : `<span class="lx-j" aria-hidden="true"></span>${r.m(`{ipa ${e.ipa}}`)}`;
+      const form = `<b class="lx-b">${r.m(formText(e.form))}</b>${sound}`;
+      const gloss = (l: string): string => (e.text === undefined ? "" : l === r.main ? r.say(e.id, e.text) : r.in(l, e.text));
+      return `<div class="rd-lrow"><span class="rd-lsent">${form}</span>${r.languages.map((l) => cell(gloss(l) === "" ? "" : `<span class="lx-tr">${r.m(gloss(l))}</span>`, l)).join("")}</div>`;
+    });
+  return `<div class="rd-lspan rd-part" id="essence">${partHead("00", esc(r.words.say("essence")))}</div>${rows.join("")}`;
+}
+
+// The reading in a form: the head, the switch, then the parts; a form the column cannot take falls back to interleaved.
 export function article(r: Reading, wanted: Form): string {
   const form = forms(r).includes(wanted) ? wanted : "interleaved";
   const bar = switcher(r, form);
-  if (form === "interleaved") return `<div class="rd-form" data-form="interleaved">${bar}${interleaved(r)}</div>`;
+  const subs = r.topic.subtopics;
+  if (form === "interleaved") {
+    const body = essence(r) + subs.map((s, i) => subtopic(r, s, i)).join("") + errors(r);
+    return `<div class="rd-form" data-form="interleaved">${head(r)}${bar}${body}</div>`;
+  }
   if (form === "reveal") {
-    const subs = r.topic.subtopics.map((s, i) => {
-      const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => reveal(r, b, r.m(r.say(s.title.id, s.title.text))));
-      return `<section class="rd-part" id="${s.id}">${partHead(String(i + 1).padStart(2, "0"), r.m(r.say(s.title.id, s.title.text)), ladder([s.level], r.words))}<div class="rd-flow">${blocks.join("")}</div></section>`;
+    const parts = subs.map((s, i) => {
+      const title = r.m(r.say(s.title.id, s.title.text));
+      const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => reveal(r, b, title));
+      return `<section class="rd-part" id="${s.id}">${partHead(String(i + 1).padStart(2, "0"), title, ladder([s.level], r.words))}<div class="rd-flow">${blocks.join("")}</div></section>`;
     });
-    return `<div class="rd-form" data-form="reveal">${bar}${head(r)}${essence(r)}${subs.join("")}${errors(r)}</div>`;
+    return `<div class="rd-form" data-form="reveal">${head(r)}${bar}${essence(r)}${parts.join("")}${errors(r)}</div>`;
   }
   const heads = r.languages.map((l) => cell(`<span class="rd-lhead">${tag(l.toUpperCase())}${esc(r.words.name(l))}</span>`, l)).join("");
-  const grid = `<div class="rd-lgrid rd-l${String(r.languages.length)}">${heads}${r.topic.subtopics.map((s, i) => sideSubtopic(r, s, i)).join("")}</div>`;
-  return `<div class="rd-form" data-form="side">${bar}${head(r)}${essence(r)}${grid}${errors(r)}</div>`;
+  const define = (l: string): string =>
+    l === r.main ? r.say(r.topic.definition.id, r.topic.definition.text) : r.in(l, r.topic.definition.text);
+  const lead = r.languages.map((l) => cell(`<p class="lx-lead">${r.m(define(l))}</p>`, l)).join("");
+  const grid = `<div class="rd-lgrid rd-l${String(r.languages.length)}">${heads}${lead}${sideEssence(r)}${subs.map((s, i) => sideSubtopic(r, s, i)).join("")}</div>`;
+  return `<div class="rd-form" data-form="side">${head(r, false)}${bar}${grid}${errors(r)}</div>`;
 }

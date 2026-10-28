@@ -74,6 +74,18 @@ export function parseMarks(src: string): Node[] {
   return run(false);
 }
 
+// Where a variety's form drops it leaves this mark, a character of the private use area; closeGaps() takes it out with the
+// spaces beside it where the text or a tag opens, or where punctuation (after closing tags) or the text's end follows, and
+// leaves one space where spaces stood beside it otherwise.
+const DROP = "\uE000";
+function closeGaps(text: string): string {
+  return text
+    .replace(/\uE000(\s*\uE000)+/g, DROP)
+    .replace(/(^|>)\s*\uE000\s*/g, "$1")
+    .replace(/\s*\uE000\s*(?=(?:<\/[a-z]+>)*(?:[?!.,;:…)\]»”’]|$))/g, "")
+    .replace(/\s*\uE000\s*/g, (m) => (/\s/.test(m) ? " " : ""));
+}
+
 // Marked text as plain text, for captions and alternative texts: the varieties side by side read "opposite / across from".
 export function plain(nodes: Node[], ctx: Ctx): string {
   let seen = false;
@@ -81,13 +93,13 @@ export function plain(nodes: Node[], ctx: Ctx): string {
     .map((n): string => {
       if (typeof n === "string") return n;
       if (n.mark !== "variant") return plain(n.kids, ctx);
-      if (ctx.variety !== "all") return n.arg === ctx.variety ? plain(n.kids, ctx) : "";
+      if (ctx.variety !== "all") return n.arg === ctx.variety ? plain(n.kids, ctx) : DROP;
       const lead = seen ? " / " : "";
       seen = true;
       return lead + plain(n.kids, ctx);
     })
     .join("");
-  return text.replace(/\s+/g, " ").trim();
+  return closeGaps(text).replace(/\s+/g, " ").trim();
 }
 
 function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
@@ -105,7 +117,7 @@ function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
           return n.kids.some((k) => typeof k !== "string" && k.mark === "variant") ? inner(true) : ipa(inner(true));
         case "variant": {
           if (ctx.variety === "all") return `<span class="rd-vr">${tag(varietyLabel(arg))}${inIpa ? ipa(inner()) : inner()}</span>`;
-          if (arg !== ctx.variety) return "";
+          if (arg !== ctx.variety) return DROP;
           const form = inIpa ? ipa(inner()) : inner();
           if (ctx.still === true) return form;
           return `<button type="button" class="rd-var" data-variety="${esc(arg)}" aria-label="${esc(plain(n.kids, ctx))}, ${esc(varietyLabel(arg))}">${form}</button>`;
@@ -124,5 +136,9 @@ function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
 // Marked text as HTML; with a chosen variety the forms of the others drop and the gaps close.
 export function marks(src: string, ctx: Ctx): string {
   const html = render(parseMarks(src), ctx);
-  return ctx.variety === "all" ? html : html.replace(/\s{2,}/g, " ").trim();
+  return ctx.variety === "all"
+    ? html
+    : closeGaps(html)
+        .replace(/\s{2,}/g, " ")
+        .trim();
 }

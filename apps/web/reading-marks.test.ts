@@ -32,6 +32,17 @@ test("a variant shows the chosen variety with its tap, or still, or every variet
   );
 });
 
+test("a dropped variety's form takes its space with it before punctuation, and leaves one space between words", () => {
+  const src = "¿y {target {variant es-419 ustedes} {variant es-ES vosotros}}?";
+  expect(marks(src, { variety: "es-419", still: true })).toBe('¿y <b class="lx-b">ustedes</b>?');
+  expect(marks(src, { variety: "es-ES", still: true })).toBe('¿y <b class="lx-b">vosotros</b>?');
+  expect(plain(parseMarks(src), { variety: "es-419" })).toBe("¿y ustedes?");
+  expect(marks("the {variant en-GB lorry} {variant en-US truck} {variant xx a} stops", { variety: "en-US", still: true })).toBe(
+    "the truck stops",
+  );
+  expect(marks("a{variant en-GB b}{variant en-US c}d", { variety: "en-US", still: true })).toBe("acd");
+});
+
 test("plain text keeps the words, the chosen variety's or every variety's side by side", () => {
   const nodes = parseMarks("{target {variant en-GB opposite}{variant en-US across from}} it");
   expect(plain(nodes, { variety: "en-US" })).toBe("across from it");

@@ -54,6 +54,7 @@ test("each form draws every language, reviewed or not, in the same form", () => 
   expect(side).toContain(`${words("uk").say("layersSideBySide")}</button>`);
   for (const l of ["uk", "ja", "en"]) expect(side).toContain(`<div class="rd-lc" lang="${l}">`);
   expect(side).toContain('<span class="rd-th2" lang="ja">');
+  expect(side).toContain('<div class="rd-lc" lang="ja"><div class="rd-blk" lang="ja">');
   expect(article(read("es.subject-pronouns", ["uk", "en"], 700, "es-ES"), "side")).toContain('<div class="rd-lgrid rd-l2">');
   expect(article(read("en.alphabet", ["uk", "ja"], 362), "reveal")).toContain("rd-rv");
 });

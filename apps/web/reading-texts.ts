@@ -9,12 +9,13 @@ import { Words } from "./reading-words.ts";
 
 const ENTITIES: Record<string, string> = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"' };
 
-// The words of some HTML: its labels and capsules out, a space where a line, a cell or a translation ends, its other tags
+// The words of some HTML: its labels and capsules out, a space where a line, an item, an example, a cell or a translation
+// begins or ends, its other tags
 // gone, its entities decoded, its spaces one.
 export const words = (html: string): string =>
   html
     .replace(/<(p|span) class="(lx-label|lx-capsule)">[^<]*<\/\1>/g, "")
-    .replace(/<(br|\/p|\/li|\/td|\/th|\/tr|div|\/div)\b[^>]*>|<span class="(lx-tr|rd-trl|rd-lang|lx-j)"[^>]*>/g, " ")
+    .replace(/<(br|\/p|li|\/li|\/td|\/th|\/tr|div|\/div)\b[^>]*>|<span class="(lx-ex|lx-tr|rd-trl|rd-lang|lx-j)"[^>]*>/g, " ")
     .replace(/<[^>]*>/g, "")
     .replace(/&(amp|lt|gt|quot);/g, (e) => ENTITIES[e] ?? e)
     .replace(/\s+/g, " ")
