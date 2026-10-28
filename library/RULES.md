@@ -24,7 +24,7 @@ Every rule a v1 topic, index and review follows, each with its check: the schema
 | 3.6 | The rework builds seven courses |
 | 3.7 | One index file per course |
 | 5.1 | An index and a topic each move from draft to in review to approved |
-| 5.2 | A reviewer from another model family than the writer's checks each draft against the conventions and the sources, and the writer fixes what it finds |
+| 5.2 | A Claude Code review session, separate from the writer's, checks each draft against the conventions and the sources, and the writer fixes what it finds. |
 | 5.3 | The owner approves the conventions, every index, the samples and each level wave |
 | 5.4 | A topic carries a flag for each language it is written in |
 | 6.1 | Adding a course, or an explanation language, takes data and text alone, with no code change, and the checks name every gap |
@@ -624,7 +624,7 @@ Source: §1 Languages and variants (Japanese)
 
 ### NO-24 A kanji carries its reading
 Requirements: 2.10
-Rule: A kanji in an example, a table cell or a form an explanation discusses carries its reading in hiragana, `{ kanji: 食, reading: た }`.
+Rule: A kanji in an example, a table cell or a form an explanation discusses carries its reading in hiragana in the kanji mark, `{kanji た 食}べる`.
 Not this: (written case) 食べる with 食 bare, outside a kanji mark.
 Check: lint
 Languages: ja
@@ -642,7 +642,7 @@ Source: §1 Languages and variants (Japanese)
 
 ### NO-26 Japanese A1 and A2 examples use the kanji of their level
 Requirements: 2.10
-Rule: Japanese examples at A1 and A2 write in kanji the words of the index's lists `kanji.A1` and `kanji.A2` up to their level, and every other word in kana.
+Rule: Japanese examples at A1 and A2 write in kanji the words of the course's `kanji.yaml` lists for A1 and A2 up to their level, and every other word in kana.
 Not this: (written case) An A1 example that writes in kanji a word above the `kanji.A1` list, such as 経済 for けいざい.
 Check: lint
 Languages: ja
@@ -957,7 +957,7 @@ Question: [block] Given today's topics {ids, titles}: Yes or no: does this index
 
 ### IX-08 A topic is defined first
 Requirements: 3.1
-Rule: Each topic in the index states its subject, what it covers and its planned levels before any text of the topic is written.
+Rule: Each topic in the index states its subject, what it covers and its planned levels (the keys of its `path`) before any text of the topic is written.
 Not this: `- { slug: alphabet-spelling }` (curriculum.yaml), a topic listed by its slug alone.
 Check: schema
 
@@ -1106,10 +1106,10 @@ Rule: A topic in review or approved has a review record.
 Not this: (written case) A topic in review whose record is missing.
 Check: lint
 
-### RV-05 The reviewer is from another model family
+### RV-05 The reviewer is a session apart from the writer's
 Requirements: 5.2
-Rule: The review record names the writer's model family and the reviewer's, and the two differ.
-Not this: (written case) A review record whose reviewer is the writer's own model.
+Rule: The review record names the writer's session and model version and the reviewer's, and the reviewer's session is another than the writer's.
+Not this: (written case) A review record whose reviewer is the writer's own session.
 Check: lint
 
 ### RV-06 A finding cites a rule or a source
@@ -1151,8 +1151,8 @@ Question: [sentence] Given source {source}: Yes or no: does this sentence state 
 
 ### RV-12 A language's own errors and norms are checked twice
 Requirements: 5.3
-Rule: Each language's own errors and norms are checked by two models whose verdicts agree. Its test reads the two verdicts recorded for each language's errors and norms and finds them equal.
-Not this: (written case) A language's norms checked by one model.
+Rule: Each language's own errors and norms are checked in two review runs whose verdicts agree. Its test reads the two verdicts recorded for each language's errors and norms and finds them equal.
+Not this: (written case) A language's norms checked in one run.
 Check: test
 
 ### RV-13 A topic carries a native-review flag per language
@@ -1217,7 +1217,7 @@ Check: lint
 ### LA-07 A join or a split is recorded
 Requirements: 6.3
 Rule: A translation that joins or splits sentences where its language needs it records the pairing: which source sentences make which translated sentence. The schema requires a pairing map wherever the sentence counts of a block differ.
-Not this: (written case) Source sentences s1 and s2 written as one translated sentence with no `from: [s1, s2]`.
+Not this: (written case) Source sentences s1 and s2 written as one translated sentence under the key of s1 alone, with no `s1 + s2` key.
 Check: schema
 
 ### LA-08 A fingerprint belongs to a sentence
@@ -1333,7 +1333,7 @@ Check: lint
 
 ### ST-14 A topic's levels are planned in the index
 Requirements: 9.5 levels
-Rule: The index states each topic's planned levels, and the levels of the topic's subtopics equal them.
+Rule: The index states each topic's planned levels (the keys of its `path`), and the levels of the topic's subtopics equal them.
 Not this: "A written topic's range comes from its data." (§3 of today's CONVENTIONS.md), the range known once the text exists.
 Check: lint
 Source: §3 Levels
