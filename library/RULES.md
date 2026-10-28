@@ -41,7 +41,7 @@ Every rule a v1 topic, index and review follows, each with its check: the schema
 ### CA-01 Every rule reaches the writer
 Requirements: 2.1
 Rule: The conventions text restates every rule of this catalog by its id, in the order a writer meets them: what a topic is, how an explanation sounds, where it takes the reader.
-Not this: The intro, cheatsheet and section-menu rules of §5, §7 and §8, with no id and no named check (today's CONVENTIONS.md).
+Not this: (written case) A catalog id such as SH-07 that the conventions text never names.
 Check: lint
 
 ### CA-02 A rule says what to do
@@ -49,24 +49,24 @@ Requirements: 2.2
 Rule: A rule statement says what holds, what a thing is or does; its contrast stands in Not this.
 Not this: "A topic is a short path through its sections, not a set of overlapping views" (§7 of today's CONVENTIONS.md).
 Check: question
-Question: [sentence] Yes or no: does this rule statement say what holds, without defining by contrast or by prohibition?
+Question: [sentence] Yes or no: is this rule statement free of negation and contrast words (not, never, no, unlike, instead of)?
 
 ### CA-03 A rule carries a negative example
 Requirements: 2.2
-Rule: Every rule quotes a Not this from today's pages, short and exact, with its file in parentheses.
-Not this: "Tables first. Use text only for a rule that a table cannot hold." (§7 of today's CONVENTIONS.md), a rule with no page that breaks it.
+Rule: Every rule carries a Not this: a short exact quote from today's pages with its file in parentheses, or, where no page of today breaks the rule, a "(written case)" description.
+Not this: "Tables first. Use text only for a rule that a table cannot hold." (§7 of today's CONVENTIONS.md), a rule stated with neither a quote of a page that breaks it nor a written case.
 Check: lint
 
 ### CA-04 A rule names one check
 Requirements: 2.2
-Rule: Every rule names exactly one check: schema, lint, question or test; a question asks one typed question about one block or one sentence, and a test names a test of the apps, the build or the pipeline.
-Not this: "`npm run check` enforces them." (the opening of today's CONVENTIONS.md), one line for every rule at once.
+Rule: Every rule names exactly one check: schema, lint, question or test; a question asks one typed question about one block or one sentence, and a rule whose check is a test names, in its Rule line, the test of the apps, the build or the pipeline that holds it.
+Not this: (written case) "Check: test" with no test named.
 Check: lint
 
 ### CA-05 One set for every course
 Requirements: 2.3
 Rule: A rule holds for every course and every explanation language, or for the courses its Courses line and the languages its Languages line list, and the catalog is the one place that sets rules.
-Not this: "# Written in English, its source, and translated for the ten languages after it." (a course's rule in a comment of curriculum.yaml).
+Not this: (written case) A check that applies NO-09 to the Spanish course while the rule's Courses line says uk.
 Check: lint
 
 ## Topic shape
@@ -92,36 +92,36 @@ Source: §5 Topic structure (the lead)
 
 ### SH-04 The definition has a verb
 Requirements: 2.7
-Rule: The definition is a complete sentence with a main verb.
+Rule: The definition is a complete sentence whose predicate is a finite verb or a copula.
 Not this: "Numbers from 0 to a million, and the ordinals first, second, third." (en/01-foundations/numbers).
 Check: question
-Question: [sentence] Yes or no: does this sentence have a main verb?
+Question: [sentence] Yes or no: is this a full clause with a finite verb or a copula (is, є/—, です, -dir), not a noun phrase?
 Source: §5 Topic structure (the lead is one sentence with a verb)
 
 ### SH-05 The definition says what the subject is
 Requirements: 2.7
 Rule: The definition says what the subject is.
-Not this: "The 26 letters of the English alphabet and their names, used to spell words aloud." (en/01-foundations/alphabet-spelling), which says what the page covers.
+Not this: (written case) "This topic covers the English alphabet and how to spell words aloud."
 Check: question
-Question: [sentence] Yes or no: does this sentence say what the subject is, rather than what the page covers?
+Question: [sentence] Given title {title}: Yes or no: does this sentence say what {title} is, rather than what the page covers?
 
 ### SH-06 The definition names the key characteristics
 Requirements: 2.7
 Rule: The definition names the characteristics that set the subject apart from its neighbours.
-Not this: "The six vowel sounds, hard and soft, voiced and voiceless consonants, and the sounds дж and дз." (uk/01-foundations/vowels-consonants), a list of parts with no characteristic named.
+Not this: (written case) "Modal verbs are verbs used in English.", true of every verb.
 Check: question
-Question: [sentence] Yes or no: does this sentence name at least one characteristic that sets the subject apart from related subjects?
+Question: [sentence] Given title {title} and the neighbour topics {titles}: Yes or no: does this sentence name a characteristic of {title} that none of them shares?
 
 ### SH-07 Every opening sentence speaks about the subject
 Requirements: 2.7
 Rule: Every sentence of the opening speaks about the subject itself.
-Not this: "A letter's name differs from its sound in a word: A is said /eɪ/, but apple starts with /æ/." (en/01-foundations/alphabet-spelling), a detail of letter names after a sentence about the page.
+Not this: (written case) "This guide lists every tense on one page."
 Check: question
-Question: [sentence] Yes or no: does this sentence speak about the subject itself?
+Question: [sentence] Given title {title}: Yes or no: is this sentence true of {title} itself, not of the page, the course or the reader's study?
 
 ### SH-08 The opening speaks of the subject
 Requirements: 2.7
-Rule: The opening states what the subject is and does, and every word of it concerns the subject.
+Rule: The opening states what the subject is and does, and every word of it concerns the subject; the words page, topic, guide and course appear in none of its sentences (this page, on one page, this guide).
 Not this: "Every tense on one page, placed by time and aspect, with form, main use, example and time words." (en/05-tenses/tense-map).
 Check: lint
 Source: §5 Topic structure (sentences free of page tours)
@@ -131,19 +131,19 @@ Requirements: 2.7, 2.9
 Rule: The definition uses words and terms a reader at the topic's lowest level knows, apart from the term it defines.
 Not this: "Telling the time: hours are feminine ordinal numbers, minutes are cardinal numbers, and о says when something happens." (uk/01-foundations/telling-time).
 Check: question
-Question: [sentence] Yes or no: does this sentence use only words and terms a reader at the topic's lowest level knows, apart from the term it defines?
+Question: [sentence] Given the vocabulary of the topic's lowest level {level}: Yes or no: does this sentence use only words of that vocabulary, apart from the term {term} it defines?
 Source: §5 Topic structure (words at the topic's lowest level)
 
 ### SH-10 The essence shows the subject
 Requirements: 2.8
-Rule: Part 00 is the essence: the subject at a glance, in its shortest complete form, set out as the subject itself (the alphabet's essence sets out the alphabet, one letter per line).
+Rule: Part 00 is the essence: the subject at a glance, set out as the subject itself, each line one point of it (the alphabet's essence sets out the alphabet, one letter per line).
 Not this: Part 00 "Summary" of the alphabet, with the row "Trap | the name's vowel tells G from J and E from I" (en/01-foundations/alphabet-spelling).
 Check: question
-Question: [block] Yes or no: does this block set out the subject itself in its shortest complete form?
+Question: [block] Given title {title}: Yes or no: does every line of this block state one point of {title} itself, not a trap, a tip or a remark about the page?
 
 ### SH-11 The essence is a list
 Requirements: 2.8, 9.5 blocks
-Rule: The essence block holds one line per point of the subject.
+Rule: The essence block is a list holding one line per point of the subject, each line one point in a single phrase.
 Not this: The alphabet's `usage` table of Point, Rule and Example under `cheatsheet:` (en/01-foundations/alphabet-spelling).
 Check: schema
 Source: §8 Cheatsheets
@@ -156,8 +156,8 @@ Check: lint
 
 ### SH-13 An essence line takes its subtopic's level
 Requirements: 2.8, 9.5 levels
-Rule: An essence line carries the level of the subtopic it points to, and shows or hides with it.
-Not this: The cheatsheet row `{ level: A0, point: { letter: B C D E G P T V }` with a level of its own (en/01-foundations/alphabet-spelling).
+Rule: An essence line takes its level from the subtopic it points to, in that subtopic's level field, and shows or hides with it.
+Not this: (written case) An essence line at B1 pointing at an A1 subtopic.
 Check: lint
 
 ### SH-14 Subtopics are numbered from 01
@@ -169,28 +169,29 @@ Check: schema
 ### SH-15 A subtopic expands one point
 Requirements: 2.8
 Rule: A subtopic expands one point of the essence.
-Not this: "Punctuation and Capital Letters" (en/01-foundations/punctuation), one topic carrying two subjects.
+Not this: (written case) A subtopic "Articles" whose blocks give both the a/an rule and the zero-article rule.
 Check: question
-Question: [block] Yes or no: does this block state the one point of the essence that its subtopic expands?
+Question: [block] Given essence line {line}: Yes or no: does this block expand that line and no other point of the essence?
 
 ### SH-16 A subtopic states the fact, then an example
 Requirements: 2.8, 2.4
 Rule: A subtopic gives its fact in one block and its example in the block after it.
-Not this: "A letter's name and its sound in a word can differ: A is /eɪ/, but apple starts with /æ/." (en/01-foundations/alphabet-spelling), the fact and its example in one sentence.
+Not this: (written case) Two fact blocks in a row with no example block between, or an example before its fact.
 Check: lint
 Source: §7 Tables and writing style (an example is a sentence someone says)
 
 ### SH-17 A why is a block of its own
 Requirements: 2.5
 Rule: A reason stands in a why block after the example, and the fact is stated in its own block.
-Not this: "An asserted reason is a real fact, so the verb is in the indicative." (es/12-oracion/causales), the reason welded to the rule.
-Check: schema
+Not this: (written case) A why block before the example block, or a fact block that ends in its reason.
+Check: question
+Question: [block] Given the blocks of its subtopic in order: Yes or no: does this block either state no reason, or stand as the why block after the example block?
 Source: §5 Topic structure (Sections teach)
 
 ### SH-18 A subtopic holds at most one why
 Requirements: 2.5
 Rule: A subtopic holds at most one why block.
-Not this: "A rule gives its reason in a clause wherever the language has one" (§5 of today's CONVENTIONS.md), a reason on every rule.
+Not this: (written case) A subtopic of five fact blocks, each followed by its own why block.
 Check: lint
 Source: §5 Topic structure (Sections teach)
 
@@ -199,37 +200,37 @@ Requirements: 2.5
 Rule: A why block gives the reason that makes the fact easy to remember, such as how the form is built or what it literally means.
 Not this: (written case) A reason that restates the rule in other words, such as a why block saying a form is used because it is the form for that use.
 Check: question
-Question: [block] Yes or no: does this why block give a reason that helps a learner remember the fact it follows?
+Question: [block] Given the fact block it follows {fact}: Yes or no: does this why block say how the form is built or what it literally means?
 Source: §5 Topic structure (Sections teach)
 
 ### SH-20 A why is neutral
 Requirements: 2.5
-Rule: A why block states its reason in a neutral voice, and the facts carry the topic.
+Rule: A why block states its reason in a neutral voice, as statements about the language, and the facts carry the topic.
 Not this: "In informal Latin American speech you will hear cuál before a noun, as in ¿Cuál libro quieres?; the rule is qué:" (es/12-oracion/preguntas-negacion), a note that addresses the reader.
 Check: question
-Question: [block] Yes or no: does this why block state its reason without addressing the reader, advising or judging?
+Question: [block] Yes or no: is every sentence of this why block free of the second person, imperatives and words of advice or judgment (you, should, best)?
 
 ### SH-21 A subtopic states facts
 Requirements: 2.4
-Rule: A subtopic states the rule, the forms and the use of its point as facts.
-Not this: "Everyday writing uses digits (1, 2, 3); kanji numerals appear later in this topic." (ja/01-foundations/numbers), a tour in place of a fact.
+Rule: The fact blocks of a subtopic state the rule, the forms and the use of its point as facts.
+Not this: (written case) A block that holds only "Kanji numerals appear later in this topic."
 Check: question
-Question: [block] Yes or no: does this block state a rule, a form or a use of the subject as a fact?
+Question: [block] Given title {title}: Yes or no: does this fact block state a rule, a form or a use of {title} as a fact?
 
 ### SH-22 One subject per topic
 Requirements: 2.8
 Rule: Every block of a topic belongs to the subject its title names.
-Not this: "Punctuation and Capital Letters" (en/01-foundations/punctuation), a title naming two subjects.
+Not this: (written case) A topic titled "Capital Letters" with a subtopic on the apostrophe.
 Check: question
-Question: [block] Yes or no: does this block belong to the subject its topic's title names?
+Question: [block] Given title {title}: Yes or no: does this block teach {title} and no other subject?
 Source: §5 Topic structure (One subject per topic)
 
 ### SH-23 Each fact appears once
 Requirements: 2.8
-Rule: A fact appears in one subtopic; the essence points to it and the common errors name it.
+Rule: A fact appears in one subtopic; the essence points to it and the common errors name it. Lint holds each fact by its id: a fact id appears in one subtopic.
 Not this: "a letter's name can differ from its sound in a word" in the alphabet's Summary, its rule to get right and its list (en/01-foundations/alphabet-spelling).
 Check: question
-Question: [block] Yes or no: does this block state a fact that no other subtopic of its topic states?
+Question: [block] Given the blocks of the other subtopics of its topic: Yes or no: does this block state a fact that none of them states?
 Source: §7 Tables and writing style (Each fact appears once)
 
 ### SH-24 Common errors close the topic
@@ -249,30 +250,30 @@ Source: §7 Tables and writing style (One rule per list item, at most 20 words)
 
 ### VO-02 An explanation is in the present tense
 Requirements: 2.4
-Rule: The sentences of an explanation are in the present tense.
+Rule: The sentences of an explanation that hold a verb are in the present tense: the non-past in Japanese, and the unmarked verb in Indonesian and Vietnamese; a gloss or a label stands as it is.
 Not this: "In informal Latin American speech you will hear cuál before a noun" (es/12-oracion/preguntas-negacion).
 Check: question
-Question: [sentence] Yes or no: is the verb of this explanation sentence in the present tense?
+Question: [sentence] Yes or no: is every verb of this sentence's own clauses in the present tense (Japanese: non-past; Indonesian and Vietnamese: no past or future marker), quoted forms apart and a gloss or a label with no verb answering yes?
 Source: §1 Languages and variants (short sentences, present tense and plain words)
 
 ### VO-03 An explanation uses plain words
 Requirements: 2.4, 2.9
 Rule: An explanation sentence uses words a reader at its subtopic's level knows, apart from the term it explains.
-Not this: "School grammar sorts nouns into four declensions." (uk/02-nouns-cases/declension-alternations).
+Not this: (written case) In an A1 subtopic on the days of the week: "Weekdays decline like nouns of the second declension."
 Check: question
-Question: [sentence] Yes or no: does this sentence use only words a reader at its subtopic's level knows, apart from the term it explains?
+Question: [sentence] Given the vocabulary of the subtopic's level {level}: Yes or no: does this sentence use only words of that vocabulary, apart from the term it explains?
 Source: §1 Languages and variants (short sentences, present tense and plain words)
 
 ### VO-04 A subtopic speaks of the subject
 Requirements: 2.4
-Rule: The sentences of a subtopic speak about the subject.
+Rule: Every sentence speaks of the subject; the words guide, page and topic appear in no sentence.
 Not this: "Romaji spells Japanese in Latin letters; this guide uses modified Hepburn, which writes し as shi." (ja/01-foundations/hiragana).
 Check: lint
 Source: §5 Topic structure (sentences free of page tours)
 
 ### VO-05 A level lives in the level field
 Requirements: 2.4
-Rule: A level appears in the subtopic's level field, and explanation sentences speak in the words of the subject.
+Rule: A level code A0 to C2 appears in the level field alone; the sentences, cells and titles around it speak in the words of the subject.
 Not this: "The Level column shows when a verb is usually met: A1 first, C2 last." (en/04-verbs/irregular-verbs-table).
 Check: lint
 Source: §5 Topic structure (sentences free of level codes)
@@ -282,15 +283,15 @@ Requirements: 2.4, 2.6
 Rule: A fact, a form and an example state the correct form; wrong forms stand in the common errors.
 Not this: (written case) A wrong form shown among the examples of a rule instead of in the errors block.
 Check: question
-Question: [sentence] Yes or no: is every form in this sentence correct in the language it belongs to?
+Question: [sentence] Given {language} and its variety {variety}: Yes or no: is every form in this sentence correct in {language} ({variety}), unless the sentence stands in an errors block?
 Source: §7 Tables and writing style (State the correct form)
 
 ### VO-07 An example is something a speaker says
 Requirements: 2.4, 2.9
-Rule: An example is a sentence someone says in a situation it makes plain, in words at or below the subtopic's level.
-Not this: "The colour of the centre is grey." (en/01-foundations/spelling-rules), a sentence built to carry spelling pairs.
+Rule: An example is a sentence someone says in a situation it makes plain, in words at or below the subtopic's level, and it carries a scene line (who says it, to whom, where) that the sentence fits; a word example of an inventory, such as a letter's word or a vocabulary item, stands alone.
+Not this: "The colour of the centre is grey." (en/01-foundations/spelling-rules), a sentence built to carry spelling pairs, with no scene line.
 Check: question
-Question: [sentence] Yes or no: is this example a sentence someone says in a situation it makes plain?
+Question: [sentence] Given its scene line {scene}: Yes or no: from this sentence example alone, can you name who says it and where or why, as the scene line does?
 Source: §7 Tables and writing style (An example is a sentence someone says)
 
 ### VO-08 A translation says what a speaker would say
@@ -298,17 +299,17 @@ Requirements: 2.4, 2.9
 Rule: The translation of an example is what a speaker of the reader's language says in the same situation.
 Not this: (written case) A word-for-word translation of an idiom, such as a gloss that keeps the source's word order where the reader's language puts the words elsewhere.
 Check: question
-Question: [sentence] Yes or no: is this translation what a speaker of its language would say in the situation of the example?
+Question: [sentence] Given source {source}: Yes or no: is this what a {language} speaker would say in that situation?
 Source: §7 Tables and writing style (An example is a sentence someone says)
 
 ## The first-time reader
 
 ### FT-01 One item per line
 Requirements: 2.9
-Rule: Every item stands on a line of its own; a line holds one item.
+Rule: Every item stands on a line of its own; an item is a letter, a word or a form with its notation, and a line holds exactly one.
 Not this: "B C D E G P T V · names end in /iː/ · B /biː/ · C /siː/ · T /tiː/" (en/01-foundations/alphabet-spelling), eight letters, a rule and three transcriptions in one row.
 Check: question
-Question: [block] Yes or no: does each line of this block hold one item?
+Question: [block] Yes or no: does each line of this block state exactly one item (a letter, a word or a form with its notation)?
 
 ### FT-02 Every item has its own example
 Requirements: 2.9
@@ -319,7 +320,7 @@ Check: lint
 ### FT-03 An example is written out in full
 Requirements: 2.9
 Rule: An example is the whole word or the whole sentence, written out in full.
-Not this: (written case) "I like apples, bananas, etc." or "A, B, C…" as an example, the list cut short.
+Not this: (written case) "I like apples, bananas, etc." or "A, B, C…" as an example, the list cut short; or a collapsed frame, "I like tea / coffee / milk." or "…ます".
 Check: lint
 
 ### FT-04 A group's rule is a sentence ahead of its items
@@ -330,17 +331,17 @@ Check: lint
 
 ### FT-05 Notation sits beside its word
 Requirements: 2.9
-Rule: A notation such as IPA sits beside the one word it belongs to.
+Rule: A notation such as IPA sits beside the one word it belongs to; the notation of a sound sits beside its sound symbol, which counts as its item.
 Not this: "names start with /e/" for F L M N S X (en/01-foundations/alphabet-spelling), one transcription for six letters.
 Check: question
-Question: [sentence] Yes or no: does each notation in this sentence sit beside the one word it belongs to?
+Question: [sentence] Yes or no: does each notation in this sentence sit beside the one word, or for a sound the one sound symbol, it belongs to?
 
 ### FT-06 An item stands on its own
 Requirements: 2.9
-Rule: A reader who meets the subject for the first time understands each item as it stands.
+Rule: A reader who meets the subject for the first time understands each item as it stands: every term, symbol and form is explained in its block or known at the subtopic's level, and an essence line is read beside the title of its subtopic.
 Not this: The Summary row "Trap | the name's vowel tells G from J and E from I | G /dʒiː/ / J /dʒeɪ/ / E /iː/ / I /aɪ/" (en/01-foundations/alphabet-spelling).
 Check: question
-Question: [block] Yes or no: can a reader who meets the subject for the first time understand this item without reading another item?
+Question: [block] Given level {level}: Yes or no: is every term, symbol and form in this block explained in the block or known at level {level}, an essence line being read beside the title of its subtopic?
 
 ### FT-07 An example comes with each of the reader's languages
 Requirements: 2.9
@@ -351,10 +352,10 @@ Source: §6 Translations and readers
 
 ### FT-08 Each step builds on the steps before it
 Requirements: 2.9
-Rule: An example, an explanation and a table use only the grammar, script and forms that earlier steps of the study path teach or that earlier parts of the same topic teach; a set phrase a learner needs earlier stands as a fixed phrase with its meaning.
+Rule: An example, an explanation and a table use only the grammar, script and forms that earlier steps of the study path teach or that earlier parts of the same topic teach; a set phrase a learner needs earlier stands as a fixed phrase with its meaning, and the IPA notation and the `ipa` mark count as taught from the course's first topic.
 Not this: (written case) An A0 example in a tense or construction that a later topic of the path teaches.
 Check: question
-Question: [sentence] Yes or no: does this sentence use only grammar, script and forms that earlier steps of the study path teach?
+Question: [sentence] Given the grammar, script and forms taught before this step {list}: Yes or no: does this sentence use only grammar, script and forms from that list or from earlier parts of its own topic, the IPA notation and the `ipa` mark counting as taught from the course's first topic?
 Source: §2 Data files (Each step builds on the steps before it)
 
 ## Errors
@@ -374,20 +375,20 @@ Check: schema
 ### ER-03 An error names every language whose speakers make it
 Requirements: 2.6
 Rule: An error lists exactly the explanation languages whose speakers make it, each with its reason: a source that documents the error or a known contrast with that language.
-Not this: "I like very much football." in one row for Ukrainian speakers and another for Spanish speakers (en/07-sentence-building/word-order).
+Not this: (written case) An error that lists Polish alone though Ukrainian and Spanish speakers make it too, or lists a language whose speakers do not.
 Check: question
-Question: [block] Yes or no: do speakers of {language} make the error in this block?
+Question: [block] Given the reason this block gives for {language}: Yes or no: does that source or contrast account for the wrong form?
 
 ### ER-04 A reader sees the errors of each of their languages
 Requirements: 2.6
-Rule: A reader sees the errors whose speakers include any of the reader's languages, and a reader with several languages sees the errors of each.
+Rule: A reader sees the errors whose speakers include any of the reader's languages, and a reader with several languages sees the errors of each. Its test builds the page for a reader with two languages and finds exactly the errors whose speakers include either.
 Not this: "Rows without `speakers` serve all." (§6 of today's CONVENTIONS.md), generic errors shown to every reader.
 Check: test
 Source: §6 Translations and readers (Typical errors match the readers)
 
 ### ER-05 A language's file holds its speakers' errors
 Requirements: 2.6
-Rule: The errors of a new explanation language's speakers arrive as blocks in that language's own file, each naming that language among its speakers.
+Rule: The errors of a new explanation language's speakers arrive as blocks in that language's own file, each naming that language among its speakers and carrying `after:` the source block it follows.
 Not this: `speakers: [uk]` rows inside the English course's topic file beside the other ten languages (en/07-sentence-building/questions-negatives).
 Check: lint
 
@@ -408,7 +409,7 @@ Source: §5 Topic structure (Sections teach)
 
 ### ER-08 A block for a language's readers names where their language misleads
 Requirements: 2.6
-Rule: Where a language has a close counterpart that misleads, a block of that language's own, in its file, states the difference for its readers.
+Rule: The index lists each misleading counterpart as `misleads: {lang, form, counterpart}`; each entry has a block of that language's own, in its file, stating the difference for its readers and carrying `after:` the source block it follows.
 Not this: (written case) A Ukrainian explanation of てはいけない that gives «не можна» as its plain translation.
 Check: question
 Question: [block] Yes or no: does this note state how the readers' language differs from the language being learned?
@@ -436,8 +437,8 @@ Source: §1 Languages and variants (English)
 
 ### NO-03 A US form stands beside its British form
 Requirements: 2.10
-Rule: Each US form stands beside its British form as a swap, for example at the weekend and on the weekend.
-Not this: "Z is /ziː/ (zee) and R is /ɑːr/." as a note of its own, apart from the letters it replaces (en/01-foundations/alphabet-spelling).
+Rule: An element tagged en-US exists only as one half of a swap with an en-GB half, for example on the weekend beside at the weekend.
+Not this: (written case) An en-US element with no en-GB element beside it.
 Check: schema
 Languages: en-US
 Courses: en
@@ -445,10 +446,10 @@ Source: §1 Languages and variants (English)
 
 ### NO-04 Spanish forms follow the reference norm
 Requirements: 2.10
-Rule: Spanish forms follow the reference norm of the Plan Curricular del Instituto Cervantes.
-Not this: (written case) A form that the norm does not give, written as the Spanish form.
+Rule: Spanish forms follow the reference norm of the Plan Curricular del Instituto Cervantes, and forms tagged es-419 follow Latin American usage.
+Not this: (written case) "la agua" for "el agua".
 Check: question
-Question: [sentence] Yes or no: does every Spanish form in this sentence belong to the reference norm of the Plan Curricular del Instituto Cervantes?
+Question: [sentence] Given the PCIC entry {extract}: Yes or no: is every Spanish form in this sentence consistent with it, apart from forms tagged es-419?
 Languages: es
 Courses: es
 Source: §1 Languages and variants (Spanish)
@@ -473,9 +474,9 @@ Source: §1 Languages and variants (Spanish)
 ### NO-07 Ukrainian forms follow the state standard
 Requirements: 2.10
 Rule: Ukrainian forms follow the examples of the state standard «Українська мова як іноземна. Рівні загального володіння А1–С2» (2024).
-Not this: (written case) A form that the standard does not give, written as the Ukrainian form.
+Not this: (written case) A Ukrainian form that contradicts the standard's entry for it, named together with that entry.
 Check: question
-Question: [sentence] Yes or no: does every Ukrainian form in this sentence belong to the examples of the state standard?
+Question: [sentence] Given the standard's extract {extract}: Yes or no: is every Ukrainian form in this sentence consistent with it?
 Languages: uk
 Courses: uk
 Source: §1 Languages and variants (Ukrainian)
@@ -516,8 +517,8 @@ Source: §1 Languages and variants (Ukrainian)
 
 ### NO-12 A form carried over from Russian is an error of Ukrainian speakers
 Requirements: 2.10, 2.6
-Rule: A form carried over from Russian is a common error whose speakers are Ukrainian.
-Not this: "Я живу́ на Украї́ні." as a row with no speakers (uk/02-nouns-cases/locative).
+Rule: A form carried over from Russian is a common error whose speakers are Ukrainian. A yes to the question means the error carries `speakers: [uk]`, which lint holds.
+Not this: "Я живу́ на Украї́ні." as a row with no speakers, or the same row with `speakers: [es]` (uk/02-nouns-cases/locative).
 Check: question
 Question: [block] Yes or no: is the wrong form of this error a form that Ukrainian carries over from Russian?
 Languages: uk
@@ -526,10 +527,10 @@ Source: §1 Languages and variants (Ukrainian)
 
 ### NO-13 Ukrainian writes the dash before a noun predicate
 Requirements: 2.10
-Rule: The dash between a noun subject and its noun predicate stands in Ukrainian examples: Ма́ма — лі́кар.
+Rule: In an affirmative Ukrainian sentence whose subject and predicate are both nouns, the dash stands between them: Ма́ма — лі́кар.
 Not this: (written case) "Ма́ма лі́кар." with no dash.
 Check: question
-Question: [sentence] Yes or no: does this Ukrainian sentence with a noun subject and a noun predicate write the dash between them?
+Question: [sentence] Yes or no: if this Ukrainian sentence is affirmative with a noun subject and a noun predicate, does it write — between them (a sentence of another shape answers yes)?
 Languages: uk
 Courses: uk
 Source: §1 Languages and variants (Ukrainian)
@@ -537,7 +538,7 @@ Source: §1 Languages and variants (Ukrainian)
 ### NO-14 French forms follow the norm of France
 Requirements: 2.10
 Rule: French forms follow the norm of France, as the Council of Europe reference level descriptions give them.
-Not this: (written case) A form of another norm written as the French form.
+Not this: (written case) "septante" and "nonante" given as the French 70 and 90.
 Check: question
 Question: [sentence] Yes or no: does every French form in this sentence belong to the norm of France?
 Languages: fr
@@ -599,7 +600,7 @@ Requirements: 2.10
 Rule: Japanese text is in the polite です/ます style, except where a topic teaches plain forms.
 Not this: (written case) A plain-form sentence in a topic on です and ます.
 Check: question
-Question: [sentence] Yes or no: is this Japanese sentence in the polite です/ます style?
+Question: [sentence] Given that its topic teaches plain forms = {plain}: Yes or no: does the sentence-final predicate end in です/ます or a polite equivalent, or is {plain} yes?
 Languages: ja
 Source: §1 Languages and variants (Japanese)
 
@@ -641,8 +642,8 @@ Source: §1 Languages and variants (Japanese)
 
 ### NO-26 Japanese A1 and A2 examples use the kanji of their level
 Requirements: 2.10
-Rule: Japanese examples at A1 and A2 write in kanji the words learners read in kanji at their level (日, 月, 人, 本, 何, 時, 食べる, 行く…) and every other word in kana.
-Not this: (written case) An A1 example that writes a word of a later level in kanji.
+Rule: Japanese examples at A1 and A2 write in kanji the words of the index's lists `kanji.A1` and `kanji.A2` up to their level, and every other word in kana.
+Not this: (written case) An A1 example that writes in kanji a word above the `kanji.A1` list, such as 経済 for けいざい.
 Check: lint
 Languages: ja
 Courses: ja
@@ -667,8 +668,8 @@ Source: §1 Languages and variants (Varieties)
 
 ### NO-50 A block of one variety carries its tag
 Requirements: 2.10
-Rule: A block that holds a form of one variety alone carries that variety's tag.
-Not this: (written case) A US-only note without `en-US`, so that British readers see it.
+Rule: A block that holds a form of one variety alone carries that variety's tag. A yes to the question means the block carries that variety's tag, which lint holds.
+Not this: (written case) A US-only note tagged en-GB, or with no tag, so that British readers see it.
 Check: question
 Question: [block] Yes or no: does this block hold a form that only one variety of its language uses?
 Languages: en, es, fr
@@ -686,10 +687,10 @@ Source: §1 Languages and variants (Varieties)
 
 ### NO-30 Spanish ustedes as the one plural belongs to es-419
 Requirements: 2.10
-Rule: A rule that holds in Latin America alone, such as ustedes as the one plural of tú, carries es-419.
-Not this: (written case) A note on ustedes as the plural of tú with no variety.
+Rule: A form or rule of es-419 that differs from standard es-ES, such as ustedes as the one plural of tú, carries es-419. A yes to the question means the block carries es-419, which lint holds.
+Not this: (written case) A note on ustedes as the plural of tú with no variety, or tagged es-ES.
 Check: question
-Question: [block] Yes or no: does this block state a rule that holds in Latin America alone?
+Question: [block] Yes or no: does this block state a form or rule of es-419 that standard es-ES does not use?
 Languages: es-419
 Courses: es
 Source: §1 Languages and variants (Varieties)
@@ -705,10 +706,10 @@ Source: §1 Languages and variants (Varieties)
 
 ### NO-32 French meals carry their variety
 Requirements: 2.10
-Rule: The meals petit-déjeuner, déjeuner, dîner carry fr-FR, and déjeuner, dîner, souper carry fr-CA.
-Not this: (written case) The meals written as one list that serves both varieties.
+Rule: The meals petit-déjeuner, déjeuner, dîner carry fr-FR, and déjeuner, dîner, souper carry fr-CA. A yes to the question means the block carries the variety tag of each meal it names, which lint holds.
+Not this: (written case) The meals with their tags swapped, petit-déjeuner, déjeuner and dîner under fr-CA and souper under fr-FR, or written as one list that serves both varieties.
 Check: question
-Question: [block] Yes or no: does this block name a meal whose word differs between France and Canada?
+Question: [block] Yes or no: does this block name a meal of the day in French (petit-déjeuner, déjeuner, dîner, souper)?
 Languages: fr-FR, fr-CA
 Courses: fr
 Source: §1 Languages and variants (Varieties)
@@ -724,7 +725,7 @@ Source: §1 Languages and variants (Varieties)
 
 ### NO-49 The question particle -tu appears in fr-CA fact blocks
 Requirements: 2.10
-Rule: The question particle -tu of speech (Tu viens-tu ?) appears in fact blocks that carry fr-CA.
+Rule: The question particle -tu of speech (Tu viens-tu ?) appears in fact blocks that carry fr-CA. A yes to the question means the block carries fr-CA, which lint holds.
 Not this: (written case) The question particle -tu in a fact block that serves every variety.
 Check: question
 Question: [block] Yes or no: does this block hold a speech form used in Québec alone, such as the question particle -tu?
@@ -734,9 +735,9 @@ Source: §1 Languages and variants (Varieties)
 
 ### NO-34 A swap holds both forms side by side
 Requirements: 2.10
-Rule: Where varieties say one thing differently, the text holds a `variant` of each, side by side.
+Rule: Where varieties say one thing differently, the text holds a `variant` of each, side by side. Lint finds each variety's form in its own `variant` and reads every string for " / " or "or" between variety forms.
 Not this: (written case) Both forms in one string, such as "at the weekend / on the weekend".
-Check: schema
+Check: lint
 Languages: en, es, fr
 Courses: en, es, fr
 Source: §1 Languages and variants (Swaps)
@@ -886,7 +887,7 @@ Languages: vi
 
 ### NO-57 Japanese explanations write kanji without readings
 Requirements: 2.10
-Rule: A Japanese explanation writes kanji as a Japanese reader reads them, with no furigana or romaji; readings belong to the Japanese course's examples (NO-22).
+Rule: A Japanese explanation writes kanji as a Japanese reader reads them, with no furigana or romaji; readings belong to the Japanese course's examples (NO-24).
 Not this: (written case) 説明（せつめい） with a reading after a kanji word in an explanation.
 Check: lint
 Languages: ja
@@ -916,20 +917,20 @@ Source: §2 Data files (NN-section)
 
 ### IX-03 A section lists its topics in order
 Requirements: 3.7
-Rule: Each section lists its topics in the order a reader meets them.
-Not this: `- { slug: alphabet-spelling }` listed in the order of a separate `path:` list that repeats the same ids (curriculum.yaml).
-Check: schema
+Rule: Each section lists its topics in the order a reader meets them, and those lists are the one place the index writes that order.
+Not this: (written case) A section listing an A1 topic before the A0 topic it builds on.
+Check: lint
 
 ### IX-04 A topic's section comes from the index alone
 Requirements: 3.7
-Rule: A topic's section is named once, in the index; the topic's file and path carry the topic's slug.
+Rule: A topic's section is named once, in the index; the topic's file and path carry the topic's slug alone.
 Not this: `en/01-foundations/alphabet-spelling` with `id: en.foundations.alphabet-spelling` (en/01-foundations/alphabet-spelling), the section written in the path and again in the id.
 Check: lint
 Source: §2 Data files (ID)
 
 ### IX-05 A topic names its concepts from one registry
 Requirements: 3.7
-Rule: Each topic in the index names its concepts, and every concept comes from the one registry shared by every course.
+Rule: Concepts sit in the index alone: each topic's entry names its concepts, and every concept comes from the one registry shared by every course.
 Not this: `concepts: [alphabet]` inside the topic file (en/01-foundations/alphabet-spelling), apart from the index.
 Check: lint
 Source: §9 Concepts
@@ -949,10 +950,10 @@ Check: lint
 
 ### IX-24 A topic that continues one of today's names it
 Requirements: 3.7
-Rule: A topic in the index that treats the subject of a topic of today's library names that topic in `replaces`.
-Not this: (written case) A new topic that continues one of today's 288 with no `replaces` entry.
+Rule: A topic in the index that treats the subject of a topic of today's library names that topic in `replaces`. A yes to the question means the entry carries `replaces`, which lint holds.
+Not this: (written case) An entry on the same subject as en/05-tenses/simple-tenses, with no `replaces`.
 Check: question
-Question: [block] Yes or no: does the topic this entry defines treat the subject of a topic of today's library?
+Question: [block] Given today's topics {ids, titles}: Yes or no: does this index entry treat the same subject as one of them?
 
 ### IX-08 A topic is defined first
 Requirements: 3.1
@@ -975,14 +976,14 @@ Source: §1 Languages and variants (each language's standard)
 
 ### IX-11 The index takes facts from its sources, never text
 Requirements: 3.2
-Rule: The index takes topics and levels from its sources, and its own sentences are worded independently of them.
+Rule: The index takes topics and levels from its sources, and its own sentences are worded in its own words: a sentence and its source passage share fewer than five consecutive words, which lint holds.
 Not this: (written case) A topic definition that copies the wording of a syllabus entry.
 Check: question
-Question: [sentence] Yes or no: is this sentence worded independently of the source it draws its fact from?
+Question: [sentence] Given source {passage}: Yes or no: does this sentence avoid any run of five or more consecutive words from it?
 
 ### IX-12 Practical topics are marked
 Requirements: 3.3
-Rule: A practical topic carries the mark `practical` in the index, so that the clusters real life needs are listed apart from the standard syllabus.
+Rule: A topic that fills a practical cluster of IX-13 carries `practical: <cluster id>` in the index, so that the clusters real life needs are listed apart from the standard syllabus.
 Not this: A practical cluster in today's English course, such as place-movement (en/09-prepositions/place-movement), filed among the grammar topics with nothing to mark it.
 Check: schema
 
@@ -994,17 +995,17 @@ Check: lint
 
 ### IX-14 A reference table is complete
 Requirements: 3.3
-Rule: A full reference table topic holds the whole set, such as every irregular verb in one table.
+Rule: A full reference table topic holds the whole set, such as every irregular verb in one table; the index entry carries `size: N`, and lint counts the table's entries against N.
 Not this: "The most common irregular verbs: base form, past simple and past participle, grouped by the pattern each verb follows." (en/04-verbs/irregular-verbs-table).
 Check: question
-Question: [block] Yes or no: does this block set out the whole set its topic names, such as every irregular verb?
+Question: [block] Given the reference list {list}: Yes or no: does this block hold every entry of it?
 
 ### IX-15 A practical topic is adapted to its language
 Requirements: 3.3
-Rule: A practical topic lists the words and forms of its course's language.
-Not this: (written case) A Spanish topic of words of place that lists the English prepositions in, on, under in the same order.
+Rule: A practical topic sets out the words and forms of its course's language, grouped by the distinctions that language itself makes, such as por and para in Spanish.
+Not this: (written case) A Spanish list of three words (en, sobre, bajo) mirroring in, on, under, with no a, de, entre, encima de.
 Check: question
-Question: [block] Yes or no: does this block list the words and forms of its course's language rather than a translation of another language's list?
+Question: [block] Yes or no: does this block group its words by distinctions that its course's language itself makes (such as por and para)?
 
 ### IX-16 Search needs become topics
 Requirements: 3.3
@@ -1028,8 +1029,8 @@ Courses: en, es, uk
 
 ### IX-19 The other courses reach A2
 Requirements: 3.6, 3.5
-Rule: The French, Japanese, Italian and German courses hold topics at the levels A0, A1 and A2 at v1.
-Not this: (written case) A French index with a topic at B1 before the A0 to A2 waves are approved.
+Rule: The French, Japanese, Italian and German courses hold topics at the levels A0, A1 and A2, and A2 is the highest level of their topics at v1.
+Not this: (written case) A French index with a topic at B1.
 Check: lint
 Courses: fr, ja, it, de
 
@@ -1066,8 +1067,8 @@ Source: §2 Data files (topic)
 
 ### IX-26 Ids are unique where they are read
 Requirements: 3.7
-Rule: A section id is unique within a course, and a topic id within a section.
-Not this: (written case) Two sections of one course with the id tenses.
+Rule: A section id is unique within a course, and a topic id within a course, since the path carries the slug alone (IX-04).
+Not this: (written case) Two sections of one course with the id tenses, or the same topic id in two sections of one course.
 Check: lint
 Source: §10 URLs (Section slugs are unique within a language)
 
@@ -1082,21 +1083,21 @@ Source: §5 Topic structure (status)
 
 ### RV-02 A status moves in order
 Requirements: 5.1
-Rule: A status moves from draft to in review to approved, one step at a time.
-Not this: (written case) A topic set from draft to approved without a review record.
+Rule: A status moves from draft to in review to approved, one step at a time, as the topic's git history shows.
+Not this: (written case) A topic whose history goes from draft to approved in one commit.
 Check: lint
 Source: §11 Workflow per topic
 
 ### RV-03 Only approved topics reach the site
 Requirements: 5.1
-Rule: Drafts and work in review stay off the published site; a topic reaches it once it is approved.
+Rule: Drafts and work in review stay off the published site; a topic reaches it once it is approved. Its test builds the site from one draft, one in-review and one approved topic and finds only the approved topic's pages.
 Not this: `status: draft` on every topic file, all of which the site serves (en/01-foundations/alphabet-spelling).
 Check: test
 
 ### RV-04 Each topic keeps a review record
 Requirements: 5.2
 Rule: Each topic's review record holds each finding, its decision and what the writer changed.
-Not this: `translated` fingerprints in the topic file and no record of any review (en/01-foundations/alphabet-spelling).
+Not this: (written case) A review record with a finding and no decision.
 Check: schema
 
 ### RV-16 A topic in review or approved has a review record
@@ -1125,8 +1126,8 @@ Check: lint
 
 ### RV-08 The owner approves the gates of the work
 Requirements: 5.3
-Rule: The conventions, every index, the samples and each level wave carry the owner's approval with its date.
-Not this: (written case) A level wave written before the previous wave has the owner's approval.
+Rule: The conventions, every index, the samples and each level wave carry the owner's approval with its date, and each wave is written after the previous gate carries its approval.
+Not this: (written case) A wave marked approved with no owner date.
 Check: lint
 
 ### RV-09 The owner reads the flagged topics in Ukrainian and English
@@ -1143,14 +1144,14 @@ Check: lint
 
 ### RV-11 A translation says what its source says
 Requirements: 5.3, 6.3
-Rule: Each sentence of a translation says exactly what its source sentence says.
+Rule: Each sentence of a translation states the same rule, form, condition and example as its source sentence.
 Not this: (written case) A translated sentence that adds a condition the source lacks.
 Check: question
-Question: [sentence] Yes or no: does this sentence say what its source sentence says, no more and no less?
+Question: [sentence] Given source {source}: Yes or no: does this sentence state the same rule, form, condition and example, with no condition added or dropped?
 
 ### RV-12 A language's own errors and norms are checked twice
 Requirements: 5.3
-Rule: Each language's own errors and norms are checked by two models whose verdicts agree.
+Rule: Each language's own errors and norms are checked by two models whose verdicts agree. Its test reads the two verdicts recorded for each language's errors and norms and finds them equal.
 Not this: (written case) A language's norms checked by one model.
 Check: test
 
@@ -1168,7 +1169,7 @@ Check: lint
 
 ### RV-15 Every language shows in the same form
 Requirements: 5.4
-Rule: Every language shows on the site in the same form, reviewed or not.
+Rule: Every language shows on the site in the same form, reviewed or not. Its test builds the page of a reviewed and an unreviewed language and finds the two in the same form.
 Not this: (written case) A page that marks one language as unreviewed.
 Check: test
 
@@ -1183,14 +1184,14 @@ Source: §2 Data files
 
 ### LA-02 A new course or language is data and text alone
 Requirements: 6.1
-Rule: Adding a course or an explanation language is an entry in the data and its text; every list of languages in the build and the checks is read from that data.
+Rule: Adding a course or an explanation language is an entry in the data and its text; every list of languages in the build and the checks is read from that data. Its test adds a course and an explanation language to a copy of the data and finds the build and the checks run with no code change.
 Not this: (written case) A language list written into a script, so that adding a language needs a code change.
 Check: test
 Source: §1 Languages and variants (An explanation language is data alone)
 
 ### LA-03 The checks name every gap
 Requirements: 6.1
-Rule: For each course and each explanation language, the checks name every missing file, id, name and string with its path.
+Rule: For each course and each explanation language, the checks name every missing file, id, name and string with its path. Its test removes a file, an id, a name and a string from a copy of the data and finds each named with its path.
 Not this: (written case) A check that reports "a translation is missing" without naming the topic and the language.
 Check: test
 
@@ -1202,7 +1203,7 @@ Check: lint
 
 ### LA-05 Blocks align one to one
 Requirements: 6.3
-Rule: Each block of an explanation language's file pairs with one block of the source, by the block's id.
+Rule: Each block of an explanation language's file that translates the source pairs with one block of the source, by the block's id; a block of that language's own (ER-05, ER-08) carries `after:` the source block it follows in place of a pairing.
 Not this: `en:` and `uk:` under one key (en/01-foundations/alphabet-spelling), aligned by position in one record and by no id.
 Check: lint
 Source: §6 Translations and readers
@@ -1215,8 +1216,8 @@ Check: lint
 
 ### LA-07 A join or a split is recorded
 Requirements: 6.3
-Rule: A translation that joins or splits sentences where its language needs it records the pairing: which source sentences make which translated sentence.
-Not this: "В англійському алфавіті 26 літер; за їхніми назвами слова диктують по літерах." for "The 26 letters of the English alphabet and their names, used to spell words aloud." (en/01-foundations/alphabet-spelling), a recast with no pairing.
+Rule: A translation that joins or splits sentences where its language needs it records the pairing: which source sentences make which translated sentence. The schema requires a pairing map wherever the sentence counts of a block differ.
+Not this: (written case) Source sentences s1 and s2 written as one translated sentence with no `from: [s1, s2]`.
 Check: schema
 
 ### LA-08 A fingerprint belongs to a sentence
@@ -1251,9 +1252,10 @@ Source: §5 Topic structure (Block types)
 
 ### ST-02 A list holds one item per line
 Requirements: 9.5 blocks
-Rule: A list holds its items one per line, and each item is one entry.
+Rule: A run of three or more parallel items is a list block, its items one per line, each item one entry.
 Not this: The paragraph "26 letters. Vowels: a, e, i, o, u. The other 21 are consonants; y works as both (yes, my)." (en/01-foundations/alphabet-spelling), a list run into a paragraph.
-Check: schema
+Check: question
+Question: [block] Yes or no: is this fact block free of three or more parallel items run together in a paragraph?
 
 ### ST-03 A table is a true grid
 Requirements: 9.5 blocks
@@ -1271,7 +1273,7 @@ Source: §6 Translations and readers
 ### ST-05 A mark names why it exists
 Requirements: 9.5 marks
 Rule: Each mark in the vocabulary records why it exists: the way the reader sees it, the way the reader hears it, or the planned feature that reads it.
-Not this: `{ aux: Will }` (en/05-tenses/simple-tenses), a mark that exports as plain bold; about 30 marks collapse to bold and italic.
+Not this: (written case) A vocabulary entry `aux` with no `why`, or `why: bold`.
 Check: lint
 Source: §12 Semantic data (Inline marks)
 
@@ -1305,20 +1307,20 @@ Source: §5 Topic structure (Sections are a menu)
 
 ### ST-10 A role marks a change of order or layout
 Requirements: 9.5 roles
-Rule: A subtopic carries a role where the role changes the order or the layout.
+Rule: A subtopic carries a role only where the role changes the order or the layout.
 Not this: `role: own` on 907 of 2,276 parts, as on the alphabet's only section (en/01-foundations/alphabet-spelling).
 Check: lint
 
 ### ST-11 A level sits on the subtopic
 Requirements: 9.5 levels
 Rule: Each subtopic carries exactly one level.
-Not this: `level: A0` on each of the alphabet's 26 inventory rows (en/01-foundations/alphabet-spelling).
+Not this: (written case) A subtopic with no level, or with `levels: [A0, A1]`.
 Check: schema
 Source: §3 Levels
 
 ### ST-12 Rows and items take the level of their subtopic
 Requirements: 9.5 levels
-Rule: Rows, items, paragraphs and errors inside a subtopic take the level of the subtopic.
+Rule: Rows, items, paragraphs and errors take the level of their subtopic; the level field is the subtopic's alone.
 Not this: `{ level: B2, wrong: "Surprising by the news, she sat down."` (en/07-sentence-building/participle-clauses), a level on an error row.
 Check: lint
 Source: §3 Levels (Levels live on the leaves)
