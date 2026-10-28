@@ -11,10 +11,10 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 20px;
-  line-height: 25px;
-  font-weight: 700;
-  letter-spacing: -0.45px;
+  font-size: var(--t-section-heading-size);
+  line-height: var(--t-section-heading-lh);
+  font-weight: var(--t-section-heading-weight);
+  letter-spacing: var(--t-section-heading-track);
 }
 :where(html[data-page="topic"]) .tp-main .doc h2 .lvm {
   margin-left: auto;
@@ -23,12 +23,8 @@
   content: attr(data-n);
   flex: none;
   margin: 0;
-  font:
-    600 17px ui-monospace,
-    "SF Mono",
-    Menlo,
-    monospace;
-  letter-spacing: -0.02em;
+  font: var(--t-section-number-weight) var(--t-section-number-size) var(--f-numerals);
+  letter-spacing: var(--t-section-number-track);
   color: var(--c-tertiary);
 }
 :where(html[data-page="topic"]) .doc.one-level .sections > section > h2 .lvl {
@@ -42,9 +38,9 @@
 }
 :where(html[data-page="topic"]) .tp-main .doc p {
   margin: 0 0 var(--s-14);
-  font-size: 17px;
-  line-height: 25px;
-  letter-spacing: -0.43px;
+  font-size: var(--t-topic-body-size);
+  line-height: var(--t-topic-body-lh);
+  letter-spacing: var(--t-topic-body-track);
 }
 :where(html[data-page="topic"]) .tp-main .doc p:has(> .tp-ex) {
   margin-bottom: var(--s-14);
@@ -60,9 +56,9 @@
   display: flex;
   gap: var(--s-12);
   margin: 0 0 var(--s-12);
-  font-size: 17px;
-  line-height: 25px;
-  letter-spacing: -0.43px;
+  font-size: var(--t-topic-body-size);
+  line-height: var(--t-topic-body-lh);
+  letter-spacing: var(--t-topic-body-track);
 }
 :where(html[data-page="topic"]) .tp-li {
   flex: 1;
@@ -82,9 +78,9 @@
   padding: var(--s-10) var(--s-14) var(--s-10) var(--s-12);
   border-radius: var(--r-14);
   background: var(--c-note);
-  font-size: 16px;
-  line-height: 22px;
-  letter-spacing: -0.3px;
+  font-size: var(--t-topic-note-size);
+  line-height: var(--t-topic-note-lh);
+  letter-spacing: var(--t-topic-note-track);
   color: var(--c-body);
 }
 :where(html[data-page="topic"]) .tp-main .doc li[data-type="note"]::before {
@@ -121,9 +117,9 @@
   color: var(--c-text);
 }
 :where(html[data-page="topic"]) .tp-main .doc li[data-type="note"] .tp-ex-body {
-  font-size: 17px;
-  line-height: 25px;
-  letter-spacing: -0.43px;
+  font-size: var(--t-topic-body-size);
+  line-height: var(--t-topic-body-lh);
+  letter-spacing: var(--t-topic-body-track);
 }
 :where(html[data-page="topic"]) li[data-type="example"] .tp-li > .tp-ex:first-child {
   margin-top: 0;
@@ -131,21 +127,21 @@
 :where(html[data-page="topic"]) .tp-tr {
   display: block;
   margin-top: var(--s-1);
-  font-size: 15px;
-  line-height: 21px;
-  letter-spacing: -0.2px;
+  font-size: var(--t-topic-translation-size);
+  line-height: var(--t-topic-translation-lh);
+  letter-spacing: var(--t-topic-translation-track);
 }
 
 /* A slot table as cards by tense and sentence type: the tense a line, its sentence types captioned over their cards */
 :where(html[data-page="topic"]) .tp-main .doc .tp-slot-cards .tp-tense {
   margin: 0;
-  font-size: 17px;
-  line-height: 22px;
+  font-size: var(--t-row-title-size);
+  line-height: var(--t-row-title-lh);
 }
 :where(html[data-page="topic"]) .tp-main .doc p.tp-caps {
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: 0.04em;
+  font-size: var(--t-caps-size);
+  line-height: var(--t-caps-lh);
+  letter-spacing: var(--t-caps-track);
 }
 :where(html[data-page="topic"]) .tp-main .doc .tp-slot-cards p.tp-caps {
   margin: 0 0 0 var(--s-8);
@@ -154,10 +150,10 @@
   margin: var(--s-4) 0 var(--s-10);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-cards .tp-card td {
-  font-size: 15px;
-  line-height: 21px;
+  font-size: var(--t-callout-size);
+  line-height: var(--t-callout-lh);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-cards .tp-card th {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: var(--t-slot-caption-size);
+  line-height: var(--t-slot-caption-lh);
 }

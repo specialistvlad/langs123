@@ -5,7 +5,7 @@
   padding: var(--s-14) var(--s-16);
 }
 .cr-people p {
-  line-height: 1.35;
+  line-height: var(--t-frame-body-lh);
 }
 .cr-how {
   padding: var(--s-14) var(--s-16);
@@ -22,11 +22,7 @@
 .credit-line {
   flex-grow: 1;
   min-width: 0;
-  font:
-    500 14px/1.4 ui-monospace,
-    "SF Mono",
-    Menlo,
-    monospace;
+  font: var(--t-credit-line-weight) var(--t-credit-line-size)/var(--t-credit-line-lh) var(--f-numerals);
   overflow-wrap: anywhere;
   user-select: all;
 }
@@ -59,31 +55,31 @@
 }
 .cr-changes {
   margin-top: var(--s-12) !important;
-  line-height: 1.35;
+  line-height: var(--t-frame-body-lh);
 }
 .cr-note {
   margin: var(--s-8) var(--s-16) 0 !important;
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: var(--t-credits-note-size);
+  line-height: var(--t-credits-note-lh);
   color: var(--c-muted);
 }
 .cr-lead {
   margin: 0 0 var(--s-4);
-  font-size: 19px;
-  line-height: 1.4;
-  font-weight: 600;
+  font-size: var(--t-credits-lead-size);
+  line-height: var(--t-credits-lead-lh);
+  font-weight: var(--t-credits-lead-weight);
 }
 .cr-card > .cr-para {
   padding: var(--s-14) var(--s-16);
-  line-height: 1.45;
+  line-height: var(--t-caption-lh);
 }
 .cr-card > .cr-para + .cr-para {
   padding-top: 0;
 }
 .cr-updated {
   margin: var(--s-20) var(--s-16) 0;
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: var(--t-credits-note-size);
+  line-height: var(--t-credits-note-lh);
   color: var(--c-muted);
 }
 .cr-made {
@@ -92,7 +88,7 @@
   justify-content: center;
   gap: var(--s-6);
   margin-top: var(--s-32) !important;
-  font-size: 14px;
+  font-size: var(--t-body-small-size);
   color: var(--c-muted);
 }
 .cr-heart {
@@ -110,7 +106,7 @@
 
 @media (max-width: 400px) {
   .cr-value {
-    font-size: 14px;
+    font-size: var(--t-body-small-size);
   }
   .cr-row {
     gap: var(--s-10);

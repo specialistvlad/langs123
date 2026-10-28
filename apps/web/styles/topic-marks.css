@@ -5,9 +5,9 @@
 }
 :where(html[data-page="topic"]) .doc [data-mark="ipa"] {
   white-space: nowrap;
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.88em;
-  letter-spacing: -0.02em;
+  font-family: var(--f-numerals);
+  font-size: var(--t-ipa-size);
+  letter-spacing: var(--t-ipa-track);
   color: color-mix(in srgb, var(--c-text) 82%, transparent);
 }
 :where(html[data-page="topic"]) .doc strong [data-mark="ipa"] {
@@ -28,7 +28,7 @@
   color: var(--c-secondary);
 }
 :where(html[data-page="topic"]) .doc .vl {
-  font-weight: 600;
+  font-weight: var(--t-emphasis-weight);
 }
 :where(html[data-page="topic"]) .tp-vtag {
   display: block;
@@ -38,10 +38,10 @@
   border-radius: var(--r-pill);
   background: var(--c-fill);
   color: var(--c-secondary);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--t-tag-size);
+  font-weight: var(--t-tag-weight);
   letter-spacing: 0;
-  line-height: 1.6;
+  line-height: var(--t-tag-lh);
 }
 :where(html[data-page="topic"]) .blk-level .tp-vtag {
   display: inline-block;
@@ -61,7 +61,7 @@
   border-radius: var(--r-7);
   background: var(--c-fill);
   color: var(--c-secondary);
-  font-size: 0.9em;
+  font-size: var(--t-slot-mark-size);
   white-space: nowrap;
 }
 :where(html[data-page="topic"]) .doc [data-mark="optional"] {
@@ -69,11 +69,11 @@
 }
 :where(html[data-page="topic"]) .doc [data-mark="intonation"] {
   color: var(--c-accent);
-  font-weight: 700;
+  font-weight: var(--t-bold-weight);
 }
 :where(html[data-page="topic"]) .doc [data-mark="gap"] {
   color: var(--c-tertiary);
-  letter-spacing: 0.12em;
+  letter-spacing: var(--t-gap-mark-track);
 }
 :where(html[data-page="topic"]) .doc [data-mark="variety"] {
   display: inline-block;
@@ -82,9 +82,9 @@
   border-radius: var(--r-pill);
   background: var(--c-fill);
   color: var(--c-secondary);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.6;
+  font-size: var(--t-tag-size);
+  font-weight: var(--t-tag-weight);
+  line-height: var(--t-tag-lh);
   vertical-align: 1px;
   white-space: nowrap;
 }
@@ -101,18 +101,18 @@
 :where(html[data-page="topic"]) .tp-main .tp-card table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 17px;
-  line-height: 23px;
-  letter-spacing: -0.3px;
+  font-size: var(--t-topic-table-size);
+  line-height: var(--t-topic-table-lh);
+  letter-spacing: var(--t-topic-table-track);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card th {
   padding: var(--s-12) var(--s-10) var(--s-8);
   border: 0;
   background: none;
-  font-size: 13px;
-  line-height: 17px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-size: var(--t-topic-table-head-size);
+  line-height: var(--t-topic-table-head-lh);
+  font-weight: var(--t-topic-table-head-weight);
+  letter-spacing: var(--t-topic-table-head-track);
   text-transform: uppercase;
   color: var(--c-caps);
   text-align: left;
@@ -120,8 +120,8 @@
 }
 :where(html[data-page="topic"]) .tp-main .tp-card th:has([data-mark]) {
   text-transform: none;
-  letter-spacing: -0.3px;
-  font-size: 15px;
+  letter-spacing: var(--t-topic-table-head-word-track);
+  font-size: var(--t-topic-table-head-word-size);
   color: var(--c-text);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card td {
@@ -137,25 +137,21 @@
   padding-left: var(--s-20);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card td.key {
-  font-weight: 600;
+  font-weight: var(--t-emphasis-weight);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card table.errors td.key {
-  font-weight: 400;
+  font-weight: var(--t-regular-weight);
 }
 :where(html[data-page="topic"]) .tp-mono {
-  font:
-    600 17px ui-monospace,
-    "SF Mono",
-    Menlo,
-    monospace;
+  font: var(--t-section-number-weight) var(--t-section-number-size) var(--f-numerals);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--t-section-number-track);
 }
 :where(html[data-page="topic"]) .tp-letter {
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-size: var(--t-letter-size);
+  line-height: var(--t-letter-lh);
+  font-weight: var(--t-letter-weight);
+  letter-spacing: var(--t-letter-track);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card .tp-lvl {
   width: 1%;
@@ -182,8 +178,8 @@
 }
 :where(html[data-page="topic"]) .tp-main .tp-card td .tp-tr {
   margin-top: var(--s-2);
-  font-size: 15px;
-  line-height: 19px;
+  font-size: var(--t-cell-translation-size);
+  line-height: var(--t-cell-translation-lh);
 }
 :where(html[data-page="topic"]) .tp-main .tp-card td .cell-variety {
   display: block;

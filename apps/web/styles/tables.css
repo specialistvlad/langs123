@@ -12,7 +12,7 @@
 .doc table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 14px;
+  font-size: var(--t-body-small-size);
 }
 .doc th,
 .doc td {
@@ -23,17 +23,17 @@
 }
 .doc th {
   background: var(--c-surface-2);
-  font-size: 12px;
-  font-weight: 650;
+  font-size: var(--t-table-head-size);
+  font-weight: var(--t-table-head-weight);
   color: var(--c-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--t-table-head-track);
 }
 .doc tr:last-child td {
   border-bottom: 0;
 }
 .doc td.key {
-  font-weight: 550;
+  font-weight: var(--t-key-weight);
 }
 .doc th.group,
 .doc th.group-start {
@@ -57,7 +57,7 @@
 .doc table.compact td {
   padding-top: var(--s-2);
   padding-bottom: var(--s-2);
-  line-height: 1.35;
+  line-height: var(--t-frame-body-lh);
 }
 /* Every column after the first has a line on its left; a merged cell at the bottom edge leaves it to the box. */
 .doc table.compact td:not(.key),
@@ -116,10 +116,10 @@
 /* Sheets */
 
 .sheet h2 {
-  font-size: 22px;
+  font-size: var(--t-sheet-title-size);
 }
 .sheet h3 {
-  font-size: 17px;
+  font-size: var(--t-lead-size);
   margin-top: var(--s-28);
   padding-bottom: var(--s-4);
   border-bottom: 1px solid var(--c-border);

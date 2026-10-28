@@ -26,10 +26,10 @@
 }
 :where(html[data-page="topic"]) .tp-head h1 {
   margin: 0;
-  font-size: 28px;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  font-size: var(--t-page-heading-size);
+  line-height: var(--t-page-heading-lh);
+  font-weight: var(--t-page-heading-weight);
+  letter-spacing: var(--t-page-heading-track);
   overflow-wrap: anywhere;
 }
 :where(html[data-page="topic"]) .tp-head .doc-head {
@@ -41,8 +41,8 @@
   align-items: center;
   gap: var(--s-4) var(--s-8);
   margin: 0;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: var(--t-facts-size);
+  line-height: var(--t-facts-lh);
   color: var(--c-secondary);
 }
 :where(html[data-page="topic"]) .tp-head .props > :not(:first-child)::before {
@@ -64,9 +64,9 @@
 }
 :where(html[data-page="topic"]) .tp-main .doc > blockquote:first-of-type {
   margin: 0;
-  font-size: 17px;
-  line-height: 25px;
-  letter-spacing: -0.43px;
+  font-size: var(--t-topic-body-size);
+  line-height: var(--t-topic-body-lh);
+  letter-spacing: var(--t-topic-body-track);
   color: var(--c-body);
 }
 :where(html[data-page="topic"]) .tp-main .doc > blockquote p {

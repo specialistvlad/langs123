@@ -34,10 +34,10 @@ html:is([data-page="track"], [data-page="topic"]) a {
   align-items: center;
   min-width: 0;
   margin: var(--s-16) 0 0;
-  font-size: 28px;
-  line-height: 34px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  font-size: var(--t-course-name-size);
+  line-height: var(--t-course-name-lh);
+  font-weight: var(--t-course-name-weight);
+  letter-spacing: var(--t-course-name-track);
 }
 .cl-text {
   min-width: 0;
@@ -53,17 +53,17 @@ html:is([data-page="track"], [data-page="topic"]) a {
   min-width: 0;
   margin: 0;
   overflow: hidden;
-  font-size: 22px;
-  line-height: 28px;
-  font-weight: 700;
+  font-size: var(--t-state-title-size);
+  line-height: var(--t-state-title-lh);
+  font-weight: var(--t-state-title-weight);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .cl-line {
   grid-area: line;
   margin: var(--s-4) 0 0;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: var(--t-subheadline-size);
+  line-height: var(--t-subheadline-lh);
   color: var(--c-muted);
 }
 .cl-line .xl-line {
@@ -78,7 +78,7 @@ html:is([data-page="track"], [data-page="topic"]) a {
   cursor: pointer;
 }
 .cl-line .xl-line b {
-  font-weight: 600;
+  font-weight: var(--t-emphasis-weight);
   color: var(--c-text);
 }
 .cl-line .xl-line::after {
@@ -100,8 +100,8 @@ html:is([data-page="track"], [data-page="topic"]) a {
 }
 .ix-count {
   flex-shrink: 0;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: var(--t-subheadline-size);
+  line-height: var(--t-subheadline-lh);
   color: var(--c-muted);
 }
 
@@ -122,10 +122,10 @@ html[data-order="path"] .ix-flow[data-order="path"] {
   align-items: baseline;
   gap: var(--s-10);
   margin: 0 0 var(--s-8) var(--s-20);
-  font-size: 20px;
-  line-height: 25px;
-  font-weight: 700;
-  letter-spacing: -0.45px;
+  font-size: var(--t-section-heading-size);
+  line-height: var(--t-section-heading-lh);
+  font-weight: var(--t-section-heading-weight);
+  letter-spacing: var(--t-section-heading-track);
   break-after: avoid;
 }
 .ix-ht {
@@ -134,11 +134,8 @@ html[data-order="path"] .ix-flow[data-order="path"] {
 }
 .ix-num {
   margin-right: var(--s-10);
-  font:
-    600 17px ui-monospace,
-    Menlo,
-    monospace;
-  letter-spacing: -0.02em;
+  font: var(--t-section-number-weight) var(--t-section-number-size) var(--f-numerals-index);
+  letter-spacing: var(--t-section-number-track);
   color: var(--c-muted);
 }
 .ix-sec-n {

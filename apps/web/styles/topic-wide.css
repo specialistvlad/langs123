@@ -46,17 +46,17 @@
   }
   :where(html[data-page="topic"]) .tp-outline .tp-caps {
     margin: 0;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.06em;
+    font-size: var(--t-outline-caps-size);
+    line-height: var(--t-outline-caps-lh);
+    letter-spacing: var(--t-outline-caps-track);
   }
   :where(html[data-page="topic"]) .tp-outline a {
     display: flex;
     gap: var(--s-8);
     padding: var(--s-5) var(--s-10) var(--s-5) var(--s-12);
     border-left: 2px solid var(--c-sep);
-    font-size: 13px;
-    line-height: 18px;
+    font-size: var(--t-footnote-size);
+    line-height: var(--t-footnote-lh);
     color: var(--c-body);
   }
   :where(html[data-page="topic"]) .tp-outline a:hover {
@@ -64,14 +64,14 @@
   }
   :where(html[data-page="topic"]) .tp-outline b {
     flex: none;
-    font-weight: 600;
+    font-weight: var(--t-emphasis-weight);
     font-variant-numeric: tabular-nums;
     color: var(--c-secondary);
   }
   :where(html[data-page="topic"]) .tp-outline a.on {
     border-left-color: var(--c-accent);
     color: var(--c-accent);
-    font-weight: 600;
+    font-weight: var(--t-emphasis-weight);
   }
   :where(html[data-page="topic"]) .tp-outline a.on b {
     color: var(--c-accent);

@@ -4,18 +4,18 @@
    column: the course index alone, or the topic's reading (track-phone.css, topic-phone.css) */
 .cl-side {
   --cl-up: 40px;
-  --cl-name: 28px;
-  --cl-name-lh: 34px;
-  --cl-line: 13px;
-  --cl-line-lh: 18px;
-  --cl-h: 17px;
-  --cl-h-lh: 22px;
+  --cl-name: var(--t-course-name-size);
+  --cl-name-lh: var(--t-course-name-lh);
+  --cl-line: var(--t-footnote-size);
+  --cl-line-lh: var(--t-footnote-lh);
+  --cl-h: var(--t-section-heading-compact-size);
+  --cl-h-lh: var(--t-section-heading-compact-lh);
   --cl-h-x: var(--s-16);
-  --cl-n: 13px;
+  --cl-n: var(--t-caption-size);
   --cl-pad: var(--s-16);
-  --cl-row: 15px;
-  --cl-row-lh: 20px;
-  --cl-row-ls: -0.3px;
+  --cl-row: var(--t-row-title-compact-size);
+  --cl-row-lh: var(--t-row-title-compact-lh);
+  --cl-row-ls: var(--t-row-title-compact-track);
   box-sizing: border-box;
 }
 .cl-choose {
@@ -103,31 +103,31 @@
   }
   .cl-choose-t {
     margin: var(--s-6) 0 0;
-    font-size: 22px;
-    line-height: 28px;
-    font-weight: 700;
+    font-size: var(--t-state-title-size);
+    line-height: var(--t-state-title-lh);
+    font-weight: var(--t-state-title-weight);
     color: var(--c-text);
   }
   .cl-choose-s {
     margin: 0;
-    font-size: 15px;
-    line-height: 20px;
+    font-size: var(--t-subheadline-size);
+    line-height: var(--t-subheadline-lh);
   }
 }
 @media (min-width: 1280px) {
   .cl-side {
     --cl-up: 44px;
-    --cl-line: 15px;
-    --cl-line-lh: 20px;
-    --cl-h: 20px;
-    --cl-h-lh: 25px;
+    --cl-line: var(--t-subheadline-size);
+    --cl-line-lh: var(--t-subheadline-lh);
+    --cl-h: var(--t-section-heading-size);
+    --cl-h-lh: var(--t-section-heading-lh);
     --cl-h-x: var(--s-20);
-    --cl-n: 15px;
+    --cl-n: var(--t-subheadline-size);
     --cl-pad: var(--s-20);
     --cl-chev: var(--s-8);
-    --cl-row: 17px;
-    --cl-row-lh: 22px;
-    --cl-row-ls: -0.43px;
+    --cl-row: var(--t-row-title-size);
+    --cl-row-lh: var(--t-row-title-lh);
+    --cl-row-ls: var(--t-row-title-track);
     --cl-row-r: var(--s-16);
     width: 320px;
   }

@@ -2,10 +2,10 @@
    card; the view for no results, with four topics to try in the same card. */
 .hm-heading {
   margin: 0 0 var(--s-4);
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: var(--t-caps-size);
+  line-height: var(--t-caps-lh);
+  font-weight: var(--t-caps-weight);
+  letter-spacing: var(--t-caps-track);
   text-transform: uppercase;
   color: var(--c-muted);
 }
@@ -43,9 +43,9 @@
 .hm-row-a {
   flex-grow: 1;
   min-width: 0;
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 600;
+  font-size: var(--t-subheadline-strong-size);
+  line-height: var(--t-subheadline-strong-lh);
+  font-weight: var(--t-subheadline-strong-weight);
   color: inherit;
   text-decoration: none;
   white-space: nowrap;
@@ -70,8 +70,8 @@
 }
 .hm-row-cap,
 .hm-row-text {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: var(--t-footnote-size);
+  line-height: var(--t-footnote-lh);
   color: var(--c-muted);
 }
 .hm-row-text {
@@ -81,7 +81,7 @@
   overflow: hidden;
 }
 .hm-row-text b {
-  font-weight: 700;
+  font-weight: var(--t-bold-weight);
   color: var(--c-text);
 }
 /* No results: centred under the filters, the query named, then "Try one of these" over four topics */
@@ -105,14 +105,14 @@
 }
 .hm-none-t {
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
-  font-weight: 700;
+  font-size: var(--t-state-title-size);
+  line-height: var(--t-state-title-lh);
+  font-weight: var(--t-state-title-weight);
 }
 .hm-none-s {
   margin: 0;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: var(--t-subheadline-size);
+  line-height: var(--t-subheadline-lh);
   color: var(--c-muted);
 }
 .hm-sugg {
@@ -130,8 +130,8 @@
   .hm-row-a {
     display: flex;
     align-items: flex-start;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: var(--t-row-title-size);
+    line-height: var(--t-row-title-lh);
     white-space: normal;
     overflow: visible;
   }
@@ -139,14 +139,14 @@
     flex-shrink: 0;
   }
   .hm-row-text {
-    font-size: 15px;
-    line-height: 1.35;
+    font-size: var(--t-snippet-size);
+    line-height: var(--t-snippet-lh);
     color: var(--c-snippet);
   }
   .hm-row-text b {
     padding: 0 var(--s-1);
     border-radius: var(--r-4);
     background: color-mix(in srgb, var(--c-accent) 10%, transparent);
-    font-weight: 650;
+    font-weight: var(--t-mark-strong-weight);
   }
 }

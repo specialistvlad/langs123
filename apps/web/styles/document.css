@@ -1,9 +1,9 @@
 /* Document */
 
 .doc h1 {
-  font-size: 30px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: var(--t-page-title-size);
+  line-height: var(--t-page-title-lh);
+  letter-spacing: var(--t-page-title-track);
   margin: 0 0 var(--s-10);
 }
 
@@ -24,31 +24,31 @@
   margin: 0 0 var(--s-28);
   padding: 0;
   border: 0;
-  font-size: 17px;
+  font-size: var(--t-lead-size);
   color: var(--c-muted);
 }
 
 .doc h2 {
-  font-size: 20px;
-  letter-spacing: -0.01em;
+  font-size: var(--t-section-title-size);
+  letter-spacing: var(--t-section-title-track);
   margin: var(--s-40) 0 var(--s-12);
   padding-top: var(--s-18);
   border-top: 1px solid var(--c-border);
 }
 
 .doc h3 {
-  font-size: 16px;
+  font-size: var(--t-subhead-size);
   margin: var(--s-24) 0 var(--s-8);
 }
 .doc h4 {
-  font-size: 14px;
+  font-size: var(--t-doc-h4-size);
   margin: var(--s-18) 0 var(--s-6);
   color: var(--c-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--t-doc-h4-track);
 }
 .doc h5 {
-  font-size: 13px;
+  font-size: var(--t-caption-size);
   margin: var(--s-14) 0 var(--s-6);
 }
 
@@ -77,7 +77,7 @@
     [data-mark="signal"]
   ) {
   color: var(--c-accent);
-  font-weight: 650;
+  font-weight: var(--t-mark-strong-weight);
 }
 .doc :is([data-mark="sound"], [data-mark="gloss"], [data-mark="l1"], [data-mark="translation"]) {
   color: var(--c-muted);
@@ -92,7 +92,7 @@
   cursor: help;
 }
 .doc code {
-  font: 13px var(--f-mono);
+  font: var(--t-code-size) var(--f-mono);
   background: var(--c-surface-2);
   padding: var(--s-1) var(--s-5);
   border-radius: var(--r-4);

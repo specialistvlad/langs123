@@ -1,6 +1,7 @@
 // The stylesheets take their look from tokens.json alone: every colour is a colour token's variable, every shadow
 // with a blur is a shadow token's, every padding, margin, gap and corner radius reads the spacing, radius or layout
-// tokens, and every token variable they read is one tokens.ts sets. A ::backdrop's colour keeps a literal fallback, for
+// tokens, every font size, line height, tracking, weight and family reads a type token, and every token variable they
+// read is one tokens.ts sets. A ::backdrop's colour keeps a literal fallback, for
 // browsers whose backdrop doesn't inherit the page's variables.
 import { expect, test } from "bun:test";
 import { readdirSync } from "node:fs";
@@ -13,6 +14,7 @@ const COLOUR = /#[0-9a-fA-F]{3,8}\b|\b(?:rgba?|hsla?)\(/;
 const LENGTH = /(?:^|[\s(,])-?(?:\d*\.)?\d+(?:px|em|rem|mm|pt)\b/g;
 const SPACING = /^(?:padding|margin|gap|row-gap|column-gap)(?:-[a-z]+)?$/;
 const RADIUS = /^border(?:-[a-z]+)*-radius$/;
+const TYPE = /^(?:font|font-size|line-height|letter-spacing|font-weight|font-family)$/;
 
 interface Declaration {
   file: string;
@@ -62,6 +64,20 @@ test("every padding, margin, gap and corner radius reads a token, and so does ea
   const written = [...measured, ...all.filter((d) => read.has(d.property))].filter((d) =>
     [...d.value.matchAll(LENGTH)].some((m) => Number.parseFloat(m[0].replace(/^[\s(,]/, "")) !== 0),
   );
+  expect(written.map(name)).toEqual([]);
+});
+
+test("every font size, line height, tracking, weight and family reads a type token, and so does each variable they read", async () => {
+  const all = await declarations();
+  const typed = all.filter((d) => TYPE.test(d.property));
+  const read = new Set(typed.flatMap((d) => [...d.value.matchAll(/var\((--[\w-]+)/g)].map((m) => m[1])));
+  const written = [...typed, ...all.filter((d) => read.has(d.property))].filter((d) => {
+    const rest = d.value
+      .replace(/var\(--[\w-]+\)/g, "")
+      .replace(/\b(?:inherit|normal)\b/g, "")
+      .replace(/[\s/]/g, "");
+    return rest !== "" && !(rest === "0" && d.property !== "font-size") && !(rest === "1" && d.property === "line-height");
+  });
   expect(written.map(name)).toEqual([]);
 });
 

@@ -2,13 +2,13 @@
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact {
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--t-wide-table-size);
+  line-height: var(--t-wide-table-lh);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact th {
   padding: var(--s-9) var(--s-5) var(--s-6);
-  font-size: 11.5px;
-  line-height: 15px;
+  font-size: var(--t-wide-table-small-size);
+  line-height: var(--t-wide-table-small-lh);
   text-align: center;
   white-space: nowrap;
 }
@@ -34,7 +34,7 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  line-height: 20px;
+  line-height: var(--t-wide-table-lh);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot-wide table.compact td.key {
   padding-left: var(--s-14);
@@ -86,9 +86,9 @@
   align-items: center;
   gap: var(--s-10);
   margin: var(--s-18) 0 var(--s-8) var(--s-8);
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 600;
+  font-size: var(--t-tense-name-size);
+  line-height: var(--t-tense-name-lh);
+  font-weight: var(--t-tense-name-weight);
 }
 :where(html[data-page="topic"]) .tp-tense span:first-child {
   flex-grow: 1;
@@ -101,8 +101,8 @@
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot .tp-card td {
   padding: var(--s-9) var(--s-10);
-  font-size: 16px;
-  line-height: 22px;
+  font-size: var(--t-path-name-size);
+  line-height: var(--t-path-name-lh);
 }
 :where(html[data-page="topic"]) .tp-main .tp-slot .tp-card tbody tr:first-child td {
   border-top: 0;
@@ -168,9 +168,9 @@
 }
 :where(html[data-page="topic"]) .tp-main .filter-empty p {
   margin: 0 0 var(--s-16);
-  font-size: 17px;
-  line-height: 25px;
-  letter-spacing: -0.43px;
+  font-size: var(--t-topic-body-size);
+  line-height: var(--t-topic-body-lh);
+  letter-spacing: var(--t-topic-body-track);
 }
 :where(html[data-page="topic"]) .tp-main .filter-empty button {
   height: 44px;
@@ -179,8 +179,8 @@
   border-radius: var(--r-pill);
   background: var(--c-accent);
   color: var(--c-on-accent);
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: -0.3px;
+  font-size: var(--t-topic-button-size);
+  font-weight: var(--t-topic-button-weight);
+  letter-spacing: var(--t-topic-button-track);
   cursor: pointer;
 }

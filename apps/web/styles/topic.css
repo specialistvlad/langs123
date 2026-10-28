@@ -10,21 +10,17 @@ html[data-page="topic"] button {
 }
 :where(html[data-page="topic"]) .tp-caps {
   margin: 0 0 var(--s-8) var(--s-8);
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: var(--t-caps-size);
+  line-height: var(--t-caps-lh);
+  font-weight: var(--t-caps-weight);
+  letter-spacing: var(--t-caps-track);
   text-transform: uppercase;
   color: var(--c-caps);
 }
 :where(html[data-page="topic"]) .tp-n {
   flex: none;
-  font:
-    600 17px ui-monospace,
-    "SF Mono",
-    Menlo,
-    monospace;
-  letter-spacing: -0.02em;
+  font: var(--t-section-number-weight) var(--t-section-number-size) var(--f-numerals);
+  letter-spacing: var(--t-section-number-track);
   color: var(--c-tertiary);
 }
 :where(html[data-page="topic"]) .tp-chev {
@@ -47,9 +43,9 @@ html[data-page="topic"] button {
 
 /* Levels: one pill, or two joined halves */
 html[data-page="topic"] .badge {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.6;
+  font-size: var(--t-pill-size);
+  font-weight: var(--t-pill-weight);
+  line-height: var(--t-pill-lh);
   letter-spacing: 0;
   --badge-pad: 0 var(--s-7);
   flex: none;
