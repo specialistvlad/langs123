@@ -21,17 +21,18 @@ The rules every topic follows.
 ### E-01 Each error names its speakers
 Requirements: 2.6
 Rule: Each error is written once and names every language whose speakers make it.
-Not this: generic errors shown to every reader,
+Not this: (written case) generic errors shown to every reader,
 or the same mistake copied once per language.
 Check: schema
 
 ### E-02 An error's rule says why
 - **Requirements:** 2.6, 9.5 levels
 - **Rule:** An error's rule states the correct form.
-- **Not this**: “Eight letters, a rule and three transcriptions are packed into one row.”
+- **Not this**: “B C D E G P T V · names end in /iː/” (en/01-foundations/alphabet-spelling), eight letters in one row.
 - **Check:** question
 - **Question:** [sentence] Does this sentence state the correct form?
 - **Languages:** uk, fr-CA
+- **Courses:** en
 - **Source:** §6 Translations and readers
 
 #### Notes under a rule stay outside its fields
@@ -45,7 +46,7 @@ Check: schema
 const problems = (text: string): string[] => ruleProblems(parseRules(text));
 const rule = (fields: string, id = "R-1 A rule"): string =>
   `## Covers\n\n| Requirement | Name |\n|---|---|\n| 2.6 | Errors |\n\n### ${id}\n${fields}\n`;
-const FULL = "Requirements: 2.6\nRule: Do this.\nNot this: that.\nCheck: lint";
+const FULL = "Requirements: 2.6\nRule: Do this.\nNot this: (written case) that.\nCheck: lint";
 
 describe("reading", () => {
   test("a catalog reads its Covers table and its rules, each field's lines joined", () => {
@@ -58,8 +59,15 @@ describe("reading", () => {
       ["E-01", "Each error names its speakers", 14],
       ["E-02", "An error's rule says why", 21],
     ]);
-    expect(catalog.rules[0]?.fields.notThis).toBe("generic errors shown to every reader, or the same mistake copied once per language.");
-    expect(catalog.rules[1]?.fields).toMatchObject({ requirements: "2.6, 9.5 levels", check: "question", languages: "uk, fr-CA" });
+    expect(catalog.rules[0]?.fields.notThis).toBe(
+      "(written case) generic errors shown to every reader, or the same mistake copied once per language.",
+    );
+    expect(catalog.rules[1]?.fields).toMatchObject({
+      requirements: "2.6, 9.5 levels",
+      check: "question",
+      languages: "uk, fr-CA",
+      courses: "en",
+    });
   });
 
   test("a whole catalog with every part in place has no problems", () => {
@@ -68,9 +76,9 @@ describe("reading", () => {
 
   test("labels match in any case, and text outside a rule or before its first field stays out", () => {
     const catalog = parseRules(
-      `Intro: free text\n${rule(`A line before the fields\nNOT THIS: that.\n${FULL.replace("Not this: that.\n", "")}`)}`,
+      `Intro: free text\n${rule(`A line before the fields\nNOT THIS: (written case) that.\n${FULL.replace("Not this: (written case) that.\n", "")}`)}`,
     );
-    expect(catalog.rules[0]?.fields.notThis).toBe("that.");
+    expect(catalog.rules[0]?.fields.notThis).toBe("(written case) that.");
     expect(ruleProblems(catalog)).toEqual([]);
   });
 
@@ -116,8 +124,9 @@ describe("problems", () => {
     ]);
   });
 
-  test("a check that is none of the three, and a Question on the wrong check", () => {
-    expect(problems(rule(FULL.replace("lint", "review")))).toEqual(['7 R-1: Check is "review", not one of schema, lint, question']);
+  test("a check that is none of the four, and a Question on the wrong check", () => {
+    expect(problems(rule(FULL.replace("lint", "test")))).toEqual([]);
+    expect(problems(rule(FULL.replace("lint", "review")))).toEqual(['7 R-1: Check is "review", not one of schema, lint, question, test']);
     expect(problems(rule(`${FULL}\nQuestion: [block] Is it?`))).toEqual(["7 R-1: has a Question but its Check is lint"]);
     expect(problems(rule(FULL.replace("lint", "question")))).toEqual(["7 R-1: is a question check without its Question"]);
   });
@@ -131,12 +140,24 @@ describe("problems", () => {
     expect(ask("[block] Does it agree with each [sentence] in it?")).toEqual(["7 R-1: Question names more than one subject"]);
   });
 
-  test("Languages and Source hold their values", () => {
-    expect(problems(rule(`${FULL}\nLanguages: uk, Ukrainian\nSource: §1`))).toEqual([
+  test("a Not this cites its file of today's library, or is a written case", () => {
+    const not = (text: string): string[] => problems(rule(FULL.replace("(written case) that.", text)));
+    expect(not('"Modal Verbs in the Past" (en/06-modals/modal-perfect).')).toEqual([]);
+    expect(not('"Я живу на Україні." as a row with no speakers (uk/02-nouns-cases/locative).')).toEqual([]);
+    expect(not("`- { slug: alphabet-spelling }` (curriculum.yaml)")).toEqual([]);
+    expect(not('"Tables first." (§7 of today\'s CONVENTIONS.md), a rule with no page.')).toEqual([]);
+    const cites = '7 R-1: Not this neither cites its file of today\'s library in parentheses nor opens with "(written case)"';
+    expect(not("A row whose names end in (/iː/).")).toEqual([cites]);
+    expect(not("generic errors shown to every reader")).toEqual([cites]);
+  });
+
+  test("Languages, Courses and Source hold their values", () => {
+    expect(problems(rule(`${FULL}\nLanguages: uk, Ukrainian\nCourses: uk\nSource: §1`))).toEqual([
       '7 R-1: Languages holds "Ukrainian", not a language tag',
     ]);
-    expect(problems(rule(`${FULL}\nLanguages:\nSource:`))).toEqual([
+    expect(problems(rule(`${FULL}\nLanguages:\nCourses:\nSource:`))).toEqual([
       "7 R-1: Languages names no language",
+      "7 R-1: Courses names no course",
       "7 R-1: Source names no section",
     ]);
   });

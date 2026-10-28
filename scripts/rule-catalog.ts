@@ -1,13 +1,16 @@
 // The rule catalog of the new library, library/RULES.md: a Covers table of the requirements it covers, then one
 // `### <id> <name>` heading per rule with its fields, each a line `Label: value` that may wrap onto the lines
 // after it. A rule names the requirements it serves, states what to do, quotes a negative example from today's
-// pages ("Not this") and names its check: the schema, the linter, or one question asked of one block or one
-// sentence. ruleProblems names every covered requirement no rule serves and every rule missing a part.
+// pages with its file in parentheses, or opens with "(written case)" and describes the form it forbids ("Not
+// this"), and names its check: the schema, the linter, one question asked of one block or one sentence, or a
+// test of the apps, the build or the pipeline. `Languages:` names the languages of the text a rule checks and
+// `Courses:` the courses it holds for. ruleProblems names every covered requirement no rule serves and every
+// rule missing a part.
 import { join } from "node:path";
 import { ROOT } from "./lib.ts";
 
 export const RULES_FILE = join(ROOT, "library", "RULES.md");
-export const CHECKS = ["schema", "lint", "question"] as const;
+export const CHECKS = ["schema", "lint", "question", "test"] as const;
 
 const LABELS = {
   requirements: "Requirements",
@@ -16,6 +19,7 @@ const LABELS = {
   check: "Check",
   question: "Question",
   languages: "Languages",
+  courses: "Courses",
   source: "Source",
 } as const;
 type Field = keyof typeof LABELS;
@@ -49,6 +53,9 @@ const COVERED_ID = /^\d+\.\d+(?: [a-z]+)?$/;
 const RULE_ID = /^[A-Za-z0-9][A-Za-z0-9.-]*$/;
 const LANGUAGE = /^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/;
 const SUBJECT = /^\[(block|sentence)\]\s+\S/;
+const WRITTEN_CASE = /^\(written case\)\s+\S/;
+// A file of today's library in parentheses: a topic's path, a data file, or a section of its conventions.
+const CITATION = /\((?:[^()]*\b[a-z]{2}\/\d{2}-[a-z0-9-]+\/[a-z0-9-]+|[^()]*\b[\w-]+\.(?:ya?ml|md|json)\b|§\d)[^()]*\)/;
 
 const fieldOf = (label: string): Field | undefined => FIELDS.find((f) => LABELS[f].toLowerCase() === label.toLowerCase());
 const cells = (line: string): string[] =>
@@ -129,8 +136,14 @@ function problemsOf(rule: Rule, covered: Set<string>): string[] {
     if ((question.match(/\?/g) ?? []).length !== 1 || !question.endsWith("?")) problems.push("Question doesn't ask exactly one question");
     if (/\[(?:block|sentence)\]/.test(question.replace(SUBJECT, ""))) problems.push("Question names more than one subject");
   }
-  if ("languages" in fields && list(fields.languages).length === 0) problems.push("Languages names no language");
-  for (const tag of list(fields.languages)) if (!LANGUAGE.test(tag)) problems.push(`Languages holds "${tag}", not a language tag`);
+  const notThis = fields.notThis ?? "";
+  if (notThis !== "" && !WRITTEN_CASE.test(notThis) && !CITATION.test(notThis)) {
+    problems.push('Not this neither cites its file of today\'s library in parentheses nor opens with "(written case)"');
+  }
+  for (const f of ["languages", "courses"] as const) {
+    if (f in fields && list(fields[f]).length === 0) problems.push(`${LABELS[f]} names no ${f === "courses" ? "course" : "language"}`);
+    for (const tag of list(fields[f])) if (!LANGUAGE.test(tag)) problems.push(`${LABELS[f]} holds "${tag}", not a language tag`);
+  }
   if ("source" in fields && fields.source === "") problems.push("Source names no section");
   return problems;
 }
