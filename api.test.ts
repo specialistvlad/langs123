@@ -14,6 +14,7 @@ test("api.ts exports the build, the export, the search, the library's readers an
       "SEARCH_CASES",
       "SITE",
       "build",
+      "designArg",
       "exportLibrary",
       "loadCurriculum",
       "loadTopics",
