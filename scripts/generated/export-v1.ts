@@ -1,5 +1,9 @@
 // Generated from library/schema/export.schema.json by npm run types. Edit the schema, then regenerate.
 
+/**
+ * A colour as #rrggbb, or #rrggbbaa where it is translucent.
+ */
+export type Colour = string;
 export type Explain = "en" | "uk" | "es" | "pt" | "fr" | "de" | "it" | "pl" | "tr" | "id" | "vi" | "ja";
 export type Variety = string;
 export type Level = "A0" | "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
@@ -26,7 +30,7 @@ export type Place =
 export type Block = Fact | Why | ExampleBlock | List | Table;
 
 /**
- * The new library's export, version 0.1.0 (requirements 9.2, 9.8, 9.10): library.json for the index screens and one file per course for its topics. Text keeps the inline marks of library/schema/library.schema.json; x-component names the component of the presentation map that shows each part.
+ * The new library's export, version 0.2.0 (requirements 9.2, 9.8, 9.10): library.json for the index screens and one file per course for its topics. Text keeps the inline marks of library/schema/library.schema.json; x-component names the component of the presentation map that shows each part.
  */
 export interface Langs123LibraryV1Export {
   library?: LibraryFile;
@@ -36,7 +40,7 @@ export interface Langs123LibraryV1Export {
  * What the index screens read: every course with its sections, its topics' titles, definitions, levels and reading minutes, and its study path.
  */
 export interface LibraryFile {
-  version: "0.1.0";
+  version: "0.2.0";
   source: {
     commit: string;
   };
@@ -45,11 +49,41 @@ export interface LibraryFile {
    */
   site: {};
   levels: {}[];
+  design: Design;
   /**
    * languages/interface.yaml: the wording every app shares.
    */
   interface: {};
   courses: Course[];
+}
+/**
+ * The chosen design's tokens as an app draws with them: every colour token in its light and dark theme, and every type style.
+ */
+export interface Design {
+  name: string;
+  colours: ColourToken[];
+  type: TypeStyle[];
+}
+/**
+ * A colour token of the design: its name, as the stylesheets' --c-<name>, and its value in each theme.
+ */
+export interface ColourToken {
+  name: string;
+  light: Colour;
+  dark: Colour;
+}
+/**
+ * A type style of the design: its name, its group, its family's role, its size in its unit (px, pt, or em of the text around it), its line height and tracking in that unit, and its weight. A style with no line height takes the font's own.
+ */
+export interface TypeStyle {
+  name: string;
+  group: string;
+  family: "sans" | "mono" | "print";
+  size: number;
+  unit: "px" | "pt" | "em";
+  lineHeight?: number;
+  tracking: number;
+  weight: number;
 }
 export interface Course {
   code: string;
@@ -94,7 +128,7 @@ export interface Translated {
  * One course's topics, loaded when a reader opens the course (9.10).
  */
 export interface CourseFile {
-  version: "0.1.0";
+  version: "0.2.0";
   course: string;
   topics: Topic[];
 }

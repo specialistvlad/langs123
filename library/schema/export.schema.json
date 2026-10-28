@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "export.schema.json",
   "title": "langs123 library v1 export",
-  "description": "The new library's export, version 0.1.0 (requirements 9.2, 9.8, 9.10): library.json for the index screens and one file per course for its topics. Text keeps the inline marks of library/schema/library.schema.json; x-component names the component of the presentation map that shows each part.",
+  "description": "The new library's export, version 0.2.0 (requirements 9.2, 9.8, 9.10): library.json for the index screens and one file per course for its topics. Text keeps the inline marks of library/schema/library.schema.json; x-component names the component of the presentation map that shows each part.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -923,7 +923,7 @@
       ],
       "properties": {
         "version": {
-          "const": "0.1.0"
+          "const": "0.2.0"
         },
         "course": {
           "type": "string",
@@ -1095,12 +1095,13 @@
         "source",
         "site",
         "levels",
+        "design",
         "interface",
         "courses"
       ],
       "properties": {
         "version": {
-          "const": "0.1.0"
+          "const": "0.2.0"
         },
         "source": {
           "type": "object",
@@ -1124,6 +1125,9 @@
             "type": "object",
             "x-component": "R1"
           }
+        },
+        "design": {
+          "$ref": "#/definitions/design"
         },
         "interface": {
           "type": "object",
@@ -1170,6 +1174,116 @@
         "across",
         "outside"
       ]
+    },
+    "colour": {
+      "description": "A colour as #rrggbb, or #rrggbbaa where it is translucent.",
+      "type": "string",
+      "pattern": "^#[0-9a-f]{6}([0-9a-f]{2})?$"
+    },
+    "colourToken": {
+      "title": "Colour token",
+      "description": "A colour token of the design: its name, as the stylesheets' --c-<name>, and its value in each theme.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "light",
+        "dark"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "light": {
+          "$ref": "#/definitions/colour"
+        },
+        "dark": {
+          "$ref": "#/definitions/colour"
+        }
+      }
+    },
+    "typeStyle": {
+      "title": "Type style",
+      "description": "A type style of the design: its name, its group, its family's role, its size in its unit (px, pt, or em of the text around it), its line height and tracking in that unit, and its weight. A style with no line height takes the font's own.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "group",
+        "family",
+        "size",
+        "unit",
+        "tracking",
+        "weight"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string",
+          "enum": [
+            "sans",
+            "mono",
+            "print"
+          ]
+        },
+        "size": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "enum": [
+            "px",
+            "pt",
+            "em"
+          ]
+        },
+        "lineHeight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tracking": {
+          "type": "number"
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 1000
+        }
+      }
+    },
+    "design": {
+      "title": "Design",
+      "description": "The chosen design's tokens as an app draws with them: every colour token in its light and dark theme, and every type style.",
+      "x-component": "R1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "colours",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "colours": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/colourToken"
+          }
+        },
+        "type": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/typeStyle"
+          }
+        }
+      }
     }
   }
 }
