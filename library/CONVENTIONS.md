@@ -71,7 +71,8 @@ The title is the name of the subject, in one phrase of at most six words, or at 
 - A subtopic expands one point of the essence (SH-15) and states the rule, the forms and the use of that point as
   facts (SH-21).
 - It gives its fact in one block and its example in the block after it (SH-16): a fact, then a list whose items
-  each carry their example, or a fact, then an example block.
+  each carry their example, or a fact, then an example block. Fact blocks of different varieties stand as
+  alternatives, each read by its variety's reader, and count as one block.
 - Every block of a topic belongs to the subject its title names (SH-22).
 - A fact appears in one subtopic; the essence points to it and the common errors name it (SH-23).
 
@@ -198,8 +199,8 @@ says how an error is written.
 - Spanish text opens a question with ¿ and an exclamation with ¡ (NO-05) and writes every accent its words need
   (NO-06): *¿Estás bien?*
 - The *vosotros* forms and the rules about them carry es-ES (NO-29). A form or rule of es-419 that differs from
-  standard es-ES, such as *ustedes* as the one plural of *tú*, carries es-419 (NO-30). Voseo appears in a fact block that carries
-  es-419 (NO-31).
+  standard es-ES, such as *ustedes* as the one plural of *tú*, carries es-419 (NO-30). Voseo appears in an element
+  that carries es-419: a fact block, an example block or an essence line (NO-31).
 
 ### 7.3 Ukrainian
 
