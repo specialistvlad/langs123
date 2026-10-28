@@ -46,6 +46,9 @@ export {
 } from "./scripts/export.ts";
 // The version of the new library's export, of its JSON Schema and of this interface (9.8): 0.x until v1.
 export { EXPORT_VERSION as VERSION } from "./scripts/v1/export/library.ts";
+// The review of the new library's topics in Claude Code sessions, and the flagged queue its records make.
+export { review, reviewQueue } from "./scripts/review/index.ts";
+export { claudeAttempt, runnerOf } from "./scripts/review/run.ts";
 // The new library's samples, a root the export reads with drafts, as SAMPLE serves today's library.
 export { SAMPLES_ROOT as V1_SAMPLES } from "./scripts/v1/load.ts";
 export { topicTitle } from "./scripts/content.ts";
