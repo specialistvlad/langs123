@@ -2,6 +2,7 @@
 import { expect, test } from "bun:test";
 import { BUDGET, exportSizes, PLAN, syntheticLibrary } from "./synthetic.ts";
 
+// Building and exporting the full-size library takes about 4 s, and longer on a loaded machine.
 test("every file of the full-size library's export stays within its budget", () => {
   const library = syntheticLibrary();
   expect(library.courses.map((c) => [c.course, c.topics.length])).toEqual(Object.entries(PLAN));
@@ -12,4 +13,4 @@ test("every file of the full-size library's export stays within its budget", () 
     expect([s.file, s.bytes <= budget.bytes, s.gzipped <= budget.gzipped]).toEqual([s.file, true, true]);
     expect(s.gzipped).toBeLessThan(s.bytes / 3);
   }
-});
+}, 30_000);
