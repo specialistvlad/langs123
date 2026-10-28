@@ -1,6 +1,7 @@
 // Static site build: every page of every track rendered to HTML, plus the sitemap.
 // Run: npm run build   (SITE_URL sets the public URL for canonical links and the sitemap; the site is served from the domain root)
 //      npm run build -- --design <name>   builds it in that design (tokens.ts)
+//      npm run build -- --library v1   writes the new library's export beside the pages (BuildOptions.library)
 import { join } from "node:path";
 import { type CurriculumLanguage, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
 import { type BuildOptions, type Context, explainsOf, type Page, type PageFacts } from "./context.ts";
@@ -18,8 +19,34 @@ import type { LinkFn } from "./html.ts";
 import { trackIndex } from "./pages/track.ts";
 import { topicUrl } from "./urls.ts";
 import { designArg } from "./tokens.ts";
+import { exportV1 } from "../../scripts/v1/export/library.ts";
 
 export type { BuildOptions, HeadChange, PageFacts } from "./context.ts";
+
+// Where the new library's export stands in the built site: library.json and one file per course.
+export const V1_DATA = "data/v1";
+
+// The library a command line names, --library today or --library v1, and today's without it.
+export function libraryArg(args: readonly string[]): "today" | "v1" {
+  const at = args.indexOf("--library");
+  const library = at < 0 ? "today" : args[at + 1];
+  if (library !== "today" && library !== "v1") throw new Error(`--library takes today or v1, not ${library ?? "nothing"}`);
+  return library;
+}
+
+// The new library's export as the build writes it, by path (BuildOptions.library).
+async function v1Data(o: BuildOptions): Promise<[string, string][]> {
+  const v1 = await exportV1({
+    library: "v1",
+    drafts: o.dev,
+    ...(o.root !== undefined && { root: o.root }),
+    ...(o.design !== undefined && { design: o.design }),
+  });
+  return [
+    [`${V1_DATA}/library.json`, JSON.stringify(v1.library)],
+    ...v1.courses.map((c): [string, string] => [`${V1_DATA}/${c.course}.json`, JSON.stringify(c)]),
+  ];
+}
 
 // Builds the site into o.outDir and returns the facts of every page it holds.
 export async function build(o: BuildOptions): Promise<PageFacts[]> {
@@ -78,13 +105,15 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
     pages,
     o,
     ctx.languages.flatMap((l) => (l.varieties === undefined ? [] : [l.varieties])),
+    o.library === "v1" ? await v1Data(o) : [],
   );
   return facts;
 }
 
 if (import.meta.main) {
   const siteUrl = (process.env["SITE_URL"] ?? "http://127.0.0.1:47380").replace(/\/$/, "");
-  const design = designArg(process.argv.slice(2));
-  const count = (await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl, design })).length;
+  const args = process.argv.slice(2);
+  const count = (await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl, design: designArg(args), library: libraryArg(args) }))
+    .length;
   console.log(`built ${count} pages into build/web/ for ${siteUrl}`);
 }

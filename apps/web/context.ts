@@ -21,6 +21,11 @@ export interface BuildOptions {
   head?: (page: PageFacts) => HeadChange;
   // The design whose tokens the stylesheet reads (tokens.ts): its name, the default design when none is given.
   design?: string;
+  // The library the pages come from: today's, the default; or with "v1" today's pages and beside them the new library's
+  // export, read from library/ or root, in data/v1/: its approved topics, and every draft too in dev (RV-03).
+  library?: "today" | "v1";
+  // The new library's root, library/ when none is given.
+  root?: string;
 }
 
 // What a built page is. build() returns these for every page, in the order it builds them.

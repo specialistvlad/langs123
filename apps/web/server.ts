@@ -2,13 +2,14 @@
 // reloads open pages over server-sent events. Run: npm start → listens on every interface, port 47380.
 // It builds the sample (sample.ts) in about a second, with every topic named after it and every topic whose
 // file changes while it runs: npm start -- en.verbs.would. npm start -- --full builds the whole library;
-// npm start -- --design <name> builds it in that design (tokens.ts).
+// npm start -- --design <name> builds it in that design (tokens.ts); npm start -- --library v1 writes the new library's
+// export beside the pages, its drafts among it, and rebuilds when library/ changes.
 import { watch } from "node:fs";
 import { networkInterfaces } from "node:os";
 import { join } from "node:path";
 import { ROOT, SITE, topicId } from "../../scripts/lib.ts";
 import { validate } from "../../scripts/validate/index.ts";
-import { build } from "./build.ts";
+import { build, libraryArg } from "./build.ts";
 import { served } from "./serve.ts";
 import { SAMPLE } from "./sample.ts";
 import { designArg } from "./tokens.ts";
@@ -27,8 +28,12 @@ const NO_STORE = { "Cache-Control": "no-store" };
 const args = process.argv.slice(2);
 const FULL = args.includes("--full");
 const DESIGN = designArg(args);
+const LIBRARY = libraryArg(args);
 // The topics the preview builds beyond the sample: those named on the command line, then those edited.
-const shown = new Set([...SAMPLE.topics, ...args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--design")]);
+const shown = new Set([
+  ...SAMPLE.topics,
+  ...args.filter((a, i) => !a.startsWith("--") && !["--design", "--library"].includes(args[i - 1] ?? "")),
+]);
 const encoder = new TextEncoder();
 const clients = new Set<ReadableStreamDefaultController<Uint8Array>>();
 
@@ -48,7 +53,7 @@ function rebuild(reason: string): Promise<void> {
     const started = performance.now();
     try {
       const sample = FULL ? {} : { sample: { topics: [...shown], explain: SAMPLE.explain } };
-      const count = (await build({ outDir: OUT, dev: true, siteUrl: DEV_URL, design: DESIGN, ...sample })).length;
+      const count = (await build({ outDir: OUT, dev: true, siteUrl: DEV_URL, design: DESIGN, library: LIBRARY, ...sample })).length;
       console.log(`built ${count} pages in ${Math.round(performance.now() - started)} ms (${reason})`);
       send("data: reload\n\n");
     } catch (error) {
@@ -71,7 +76,9 @@ watch(ROOT, { recursive: true }, (_event, filename) => {
   if (filename === null) return;
   const file = filename;
   const relevant =
-    (file.startsWith("languages/") && /\.(ya?ml|json)$/.test(file)) || /^apps\/web\/(styles\/[\w-]+\.css|client(-[\w-]+)?\.ts)$/.test(file);
+    (file.startsWith("languages/") && /\.(ya?ml|json)$/.test(file)) ||
+    (LIBRARY === "v1" && file.startsWith("library/") && /\.ya?ml$/.test(file)) ||
+    /^apps\/web\/(styles\/[\w-]+\.css|client(-[\w-]+)?\.ts)$/.test(file);
   if (!relevant) return;
   const topic = /^languages\/(\w+)\/([\w-]+)\/([\w-]+)\/topic\.yaml$/.exec(file);
   if (topic) shown.add(topicId(topic[1] ?? "", topic[2] ?? "", topic[3] ?? ""));

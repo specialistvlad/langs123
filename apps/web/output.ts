@@ -24,9 +24,14 @@ export function hashed(name: string, text: string): string {
   return `${name.slice(0, dot)}.${hash}${name.slice(dot)}`;
 }
 
-// varieties: the varieties of each language being learned that has them. A page that holds a leftover stops
-// the build, naming it.
-export async function writeSite(pages: Page[], o: BuildOptions, varieties: readonly (readonly string[])[] = []): Promise<void> {
+// varieties: the varieties of each language being learned that has them; data: files written as they are, by path. A
+// page that holds a leftover stops the build, naming it.
+export async function writeSite(
+  pages: Page[],
+  o: BuildOptions,
+  varieties: readonly (readonly string[])[] = [],
+  data: readonly (readonly [string, string])[] = [],
+): Promise<void> {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages
@@ -57,6 +62,7 @@ ${pages
     await Bun.write(file, pinned(p.html));
   }
   await Bun.write(join(tmp, "sitemap.xml"), sitemap);
+  for (const [path, text] of data) await Bun.write(join(tmp, path), text);
   for (const [name, file, text] of named) {
     await Bun.write(join(tmp, name), text);
     await Bun.write(join(tmp, file), text);
