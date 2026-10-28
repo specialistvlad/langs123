@@ -1,34 +1,5 @@
-/* A topic page (pages/topic.ts) in the frame: its colours, level pills and glass. Every rule holds on topic pages
+/* A topic page (pages/topic.ts) in the frame: its links, level pills and glass. Every rule holds on topic pages
    alone, :where() keeping its own specificity */
-html[data-frame] {
-  --tp-sec: rgba(60, 60, 67, 0.6);
-  --tp-mute: rgba(60, 60, 67, 0.45);
-  --tp-caps: #6e6e73;
-  --tp-note: rgba(118, 118, 128, 0.08);
-  --tp-dash: rgba(60, 60, 67, 0.33);
-  --tp-back: rgba(0, 0, 0, 0.18);
-  --tp-current: rgba(47, 91, 211, 0.08);
-}
-@media (prefers-color-scheme: dark) {
-  html[data-frame]:not([data-theme="light"]) {
-    --tp-sec: rgba(235, 235, 245, 0.6);
-    --tp-mute: rgba(235, 235, 245, 0.45);
-    --tp-caps: rgba(235, 235, 245, 0.55);
-    --tp-note: rgba(118, 118, 128, 0.18);
-    --tp-dash: rgba(235, 235, 245, 0.3);
-    --tp-back: rgba(0, 0, 0, 0.5);
-    --tp-current: rgba(126, 162, 255, 0.14);
-  }
-}
-html[data-frame][data-theme="dark"] {
-  --tp-sec: rgba(235, 235, 245, 0.6);
-  --tp-mute: rgba(235, 235, 245, 0.45);
-  --tp-caps: rgba(235, 235, 245, 0.55);
-  --tp-note: rgba(118, 118, 128, 0.18);
-  --tp-dash: rgba(235, 235, 245, 0.3);
-  --tp-back: rgba(0, 0, 0, 0.5);
-  --tp-current: rgba(126, 162, 255, 0.14);
-}
 
 html[data-page="topic"] a {
   color: inherit;
@@ -44,7 +15,7 @@ html[data-page="topic"] button {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--tp-caps);
+  color: var(--c-caps);
 }
 :where(html[data-page="topic"]) .tp-n {
   flex: none;
@@ -54,11 +25,11 @@ html[data-page="topic"] button {
     Menlo,
     monospace;
   letter-spacing: -0.02em;
-  color: var(--tp-mute);
+  color: var(--c-tertiary);
 }
 :where(html[data-page="topic"]) .tp-chev {
   flex: none;
-  color: var(--tp-mute);
+  color: var(--c-tertiary);
 }
 :where(html[data-page="topic"]) .tp-card {
   position: relative;

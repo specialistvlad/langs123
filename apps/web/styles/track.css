@@ -1,25 +1,5 @@
-/* A course (pages/track.ts, pages/topic.ts) in the frame: its colours, the head of the topics column, the grouping
+/* A course (pages/track.ts, pages/topic.ts) in the frame: its links, the head of the topics column, the grouping
    and the headings of the topics' lists. The column's frame is track-topic.css, its rows track-rows.css */
-html[data-frame] {
-  --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-  --ix-menu-bg: rgba(250, 250, 252, 0.94);
-  --ix-menu-sub: rgba(60, 60, 67, 0.6);
-  --ix-fade: rgba(242, 242, 247, 0.85);
-}
-@media (prefers-color-scheme: dark) {
-  html[data-frame]:not([data-theme="light"]) {
-    --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    --ix-menu-bg: rgba(44, 44, 48, 0.94);
-    --ix-menu-sub: rgba(235, 235, 245, 0.6);
-    --ix-fade: rgba(0, 0, 0, 0.85);
-  }
-}
-html[data-frame][data-theme="dark"] {
-  --ix-seg-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  --ix-menu-bg: rgba(44, 44, 48, 0.94);
-  --ix-menu-sub: rgba(235, 235, 245, 0.6);
-  --ix-fade: rgba(0, 0, 0, 0.85);
-}
 html:is([data-page="track"], [data-page="topic"]) a {
   color: inherit;
   text-decoration: none;

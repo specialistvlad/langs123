@@ -9,10 +9,10 @@
     margin: 0;
     padding: 16px 16px calc(22px + env(safe-area-inset-bottom));
     border-radius: 16px 16px 0 0;
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.18);
+    box-shadow: var(--sh-sheet);
   }
   .panel[popover]::backdrop {
-    background: rgba(0, 0, 0, 0.28);
+    background: var(--c-scrim-sheet, rgba(0, 0, 0, 0.28));
   }
   .panel .seg {
     max-width: 100%;
@@ -38,7 +38,7 @@
     display: none;
   }
   body {
-    background: #fff;
+    background: var(--c-print-bg);
     font-size: 11pt;
   }
   .table-wrap {
