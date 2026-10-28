@@ -27,6 +27,7 @@ test("api.ts exports the build, the export, the search, the library's readers an
       "scene",
       "sceneGrid",
       "exportLibrary",
+      "l1Quotes",
       "loadCurriculum",
       "loadTopics",
       "localize",

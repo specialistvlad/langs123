@@ -23,17 +23,20 @@ export const tag = (label: string): string => `<span class="lx-capsule">${esc(la
 const SL = '<i class="lx-sl">/</i>';
 export const ipa = (inner: string): string => `<span class="lx-ipa">${SL}${inner}${SL}</span>`;
 
-// The quotation marks of a phrase in its language: French sets a no-break space inside its guillemets.
-const DEFAULT_QUOTES: [string, string] = ["“", "”"];
-const QUOTES: Record<string, [string, string]> = {
-  en: ["‘", "’"],
-  uk: ["«", "»"],
-  es: ["«", "»"],
-  it: ["«", "»"],
-  fr: ["« ", " »"],
-  de: ["„", "“"],
-  pl: ["„", "”"],
-  ja: ["「", "」"],
+// The quotation marks of a phrase in its language (the l1 mark), the fallback for a language the table lacks: French sets a
+// no-break space inside its guillemets. api.ts gives the table to the apps that read the library.
+export const l1Quotes: { fallback: readonly [string, string]; languages: Readonly<Record<string, readonly [string, string]>> } = {
+  fallback: ["“", "”"],
+  languages: {
+    en: ["‘", "’"],
+    uk: ["«", "»"],
+    es: ["«", "»"],
+    it: ["«", "»"],
+    fr: ["« ", " »"],
+    de: ["„", "“"],
+    pl: ["„", "”"],
+    ja: ["「", "」"],
+  },
 };
 
 export function parseMarks(src: string): Node[] {
@@ -81,7 +84,7 @@ const DROP = "\uE000";
 function closeGaps(text: string): string {
   return text
     .replace(/\uE000(\s*\uE000)+/g, DROP)
-    .replace(/(^|>)\s*\uE000\s*/g, "$1")
+    .replace(/(^|<[a-z][^>]*>)\s*\uE000\s*/g, "$1")
     .replace(/\s*\uE000\s*(?=(?:<\/[a-z]+>)*(?:[?!.,;:…)\]»”’]|$))/g, "")
     .replace(/\s*\uE000\s*/g, (m) => (/\s/.test(m) ? " " : ""));
 }
@@ -123,7 +126,7 @@ function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
           return `<button type="button" class="rd-var" data-variety="${esc(arg)}" aria-label="${esc(plain(n.kids, ctx))}, ${esc(varietyLabel(arg))}">${form}</button>`;
         }
         case "l1": {
-          const [open, close] = QUOTES[arg] ?? DEFAULT_QUOTES;
+          const [open, close] = l1Quotes.languages[arg] ?? l1Quotes.fallback;
           return `<span class="rd-l1" lang="${esc(arg)}">${open}${inner()}${close}</span>`;
         }
         default:

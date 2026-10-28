@@ -19,6 +19,9 @@ test("every block of every sample written in the language has its text, and so d
     expect(Object.values(texts[topic.id] ?? {}).filter((text) => text === "")).toEqual([]);
   }
   expect(texts["en.alphabet"]?.["names-ei.list"]).toStartWith("A /eɪ/ apple яблуко H /eɪtʃ/ house будинок");
+  // A space outside a mark whose variants drop belongs to the sentence and stays.
+  expect(texts["en.present-simple"]?.["sound.list"]).toContain("She works /wɜːks/ in a shop.");
+  expect(texts["en.present-simple"]?.["sound.list"]).toContain("She watches /ˈwɒtʃɪz/ TV.");
   expect(Object.keys(readingTexts(v1, "es"))).toEqual(["es.subject-pronouns"]);
   expect(Object.keys(readingTexts(v1, "fr"))).toEqual([]);
 });

@@ -41,6 +41,14 @@ test("a dropped variety's form takes its space with it before punctuation, and l
     "the truck stops",
   );
   expect(marks("a{variant en-GB b}{variant en-US c}d", { variety: "en-US", still: true })).toBe("acd");
+  const sound = "She works {ipa {variant en-GB wɜːks} {variant en-US wɜːrks}} in a shop.";
+  expect(plain(parseMarks(sound), { variety: "en-GB" })).toBe("She works wɜːks in a shop.");
+  expect(marks(sound, { variety: "en-US", still: true })).toBe(
+    'She works <span class="lx-ipa"><i class="lx-sl">/</i>wɜːrks<i class="lx-sl">/</i></span> in a shop.',
+  );
+  expect(marks(sound, { variety: "en-GB", still: true })).toBe(
+    'She works <span class="lx-ipa"><i class="lx-sl">/</i>wɜːks<i class="lx-sl">/</i></span> in a shop.',
+  );
 });
 
 test("plain text keeps the words, the chosen variety's or every variety's side by side", () => {

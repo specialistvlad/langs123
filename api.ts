@@ -8,6 +8,8 @@ export { SAMPLE, type Sample } from "./apps/web/sample.ts";
 export { designArg } from "./apps/web/tokens.ts";
 // Each block's text as the web's reading shows it, for another reader of the export to hold its own text to.
 export { readingTexts } from "./apps/web/reading-texts.ts";
+// The quotation marks of a phrase in another language (the l1 mark), by language, as the reading sets them.
+export { l1Quotes } from "./apps/web/reading-marks.ts";
 // The pictures of the library (8.9): a scene per place, a primitive alone, and the grid of a topic's cells.
 export {
   type Figure,
