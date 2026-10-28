@@ -1,0 +1,128 @@
+// The marks of the new library's text as HTML, for the reading (reading-*.ts): `{mark content}` pieces, nested;
+// `{variant en-GB text}` carries its variety and `{l1 uk text}` its language. A target is the word a line teaches, a term
+// an English word compared with it, an ipa a transcription between slashes, an l1 a phrase in another language in that
+// language's quotation marks. With one variety chosen the forms of the others drop; with "all" each shows with its name.
+export type Node = string | { mark: string; arg?: string; kids: Node[] };
+
+export interface Ctx {
+  // "all" or a variety's code.
+  variety: string;
+  // Target marks draw as the corrected word of an error.
+  fix?: boolean;
+  // A variant shows the chosen form as text with no tap, inside an essence row, which is one tap target.
+  still?: boolean;
+}
+
+// The short names of the varieties, on a capsule.
+export const VARIETIES: Record<string, string> = { "en-GB": "GB", "en-US": "US", "es-419": "Latin America", "es-ES": "Spain" };
+export const varietyLabel = (code: string): string => VARIETIES[code] ?? code;
+
+export const esc = (text: string): string =>
+  text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+export const tag = (label: string): string => `<span class="lx-capsule">${esc(label)}</span>`;
+const SL = '<i class="lx-sl">/</i>';
+export const ipa = (inner: string): string => `<span class="lx-ipa">${SL}${inner}${SL}</span>`;
+
+// The quotation marks of a phrase in its language: French sets a no-break space inside its guillemets.
+const DEFAULT_QUOTES: [string, string] = ["“", "”"];
+const QUOTES: Record<string, [string, string]> = {
+  en: ["‘", "’"],
+  uk: ["«", "»"],
+  es: ["«", "»"],
+  it: ["«", "»"],
+  fr: ["« ", " »"],
+  de: ["„", "“"],
+  pl: ["„", "”"],
+  ja: ["「", "」"],
+};
+
+export function parseMarks(src: string): Node[] {
+  let i = 0;
+  const run = (closing: boolean): Node[] => {
+    const out: Node[] = [];
+    let text = "";
+    const flush = (): void => {
+      if (text !== "") out.push(text);
+      text = "";
+    };
+    while (i < src.length) {
+      const ch = src.charAt(i);
+      if (ch === "{") {
+        flush();
+        const space = src.indexOf(" ", i + 1);
+        const mark = src.slice(i + 1, space);
+        i = space + 1;
+        let arg: string | undefined;
+        if (mark === "variant" || mark === "l1") {
+          const next = src.indexOf(" ", i);
+          arg = src.slice(i, next);
+          i = next + 1;
+        }
+        out.push({ mark, ...(arg !== undefined && { arg }), kids: run(true) });
+      } else if (ch === "}" && closing) {
+        i++;
+        flush();
+        return out;
+      } else {
+        text += ch;
+        i++;
+      }
+    }
+    flush();
+    return out;
+  };
+  return run(false);
+}
+
+// Marked text as plain text, for captions and alternative texts: the varieties side by side read "opposite / across from".
+export function plain(nodes: Node[], ctx: Ctx): string {
+  let seen = false;
+  const text = nodes
+    .map((n): string => {
+      if (typeof n === "string") return n;
+      if (n.mark !== "variant") return plain(n.kids, ctx);
+      if (ctx.variety !== "all") return n.arg === ctx.variety ? plain(n.kids, ctx) : "";
+      const lead = seen ? " / " : "";
+      seen = true;
+      return lead + plain(n.kids, ctx);
+    })
+    .join("");
+  return text.replace(/\s+/g, " ").trim();
+}
+
+function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
+  return nodes
+    .map((n): string => {
+      if (typeof n === "string") return esc(n);
+      const inner = (nested = inIpa): string => render(n.kids, ctx, nested);
+      const arg = n.arg ?? "";
+      switch (n.mark) {
+        case "target":
+          return ctx.fix === true ? `<span class="rd-fix">${inner()}</span>` : `<b class="lx-b">${inner()}</b>`;
+        case "term":
+          return `<b class="rd-term">${inner()}</b>`;
+        case "ipa":
+          return n.kids.some((k) => typeof k !== "string" && k.mark === "variant") ? inner(true) : ipa(inner(true));
+        case "variant": {
+          if (ctx.variety === "all") return `<span class="rd-vr">${tag(varietyLabel(arg))}${inIpa ? ipa(inner()) : inner()}</span>`;
+          if (arg !== ctx.variety) return "";
+          const form = inIpa ? ipa(inner()) : inner();
+          if (ctx.still === true) return form;
+          return `<button type="button" class="rd-var" data-variety="${esc(arg)}" aria-label="${esc(plain(n.kids, ctx))}, ${esc(varietyLabel(arg))}">${form}</button>`;
+        }
+        case "l1": {
+          const [open, close] = QUOTES[arg] ?? DEFAULT_QUOTES;
+          return `<span class="rd-l1" lang="${esc(arg)}">${open}${inner()}${close}</span>`;
+        }
+        default:
+          return inner();
+      }
+    })
+    .join("");
+}
+
+// Marked text as HTML; with a chosen variety the forms of the others drop and the gaps close.
+export function marks(src: string, ctx: Ctx): string {
+  const html = render(parseMarks(src), ctx);
+  return ctx.variety === "all" ? html : html.replace(/\s{2,}/g, " ").trim();
+}

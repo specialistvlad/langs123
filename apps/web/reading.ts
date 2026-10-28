@@ -1,0 +1,72 @@
+// A topic of the new library read in the reader's languages (R1–R9 of the presentation map): the first language explains,
+// the others follow it as layers. Reading holds what every block needs: the topic, its languages, the variety on show, the
+// width of the reading column and the wording. The blocks are reading-blocks.ts, the parts reading-parts.ts, the layers'
+// forms reading-layers.ts; each returns HTML, on the server and in the browser alike.
+import type { Sentence, Topic, Translated } from "../../scripts/generated/export-v1.ts";
+import { type Ctx, marks, tag, varietyLabel } from "./reading-marks.ts";
+import { flat, type Words } from "./reading-words.ts";
+
+// Where the reading column is wide enough for two languages side by side; the essence's two columns and an error's three
+// follow the same width in the stylesheet.
+export const WIDE = 640;
+// Where three languages stand side by side.
+export const THREE = 1000;
+
+export class Reading {
+  readonly ctx: Ctx;
+  // The ids of the texts the first language lacks: the course's own text stands in for them.
+  readonly missing: string[] = [];
+  constructor(
+    readonly topic: Topic,
+    // The course's own language: the language of its text.
+    readonly source: string,
+    // The reader's languages that the topic has, the first the one that explains.
+    readonly languages: readonly string[],
+    readonly words: Words,
+    readonly column: number,
+    variety: string,
+  ) {
+    this.ctx = { variety };
+  }
+  get main(): string {
+    return this.languages[0] ?? this.source;
+  }
+  get others(): readonly string[] {
+    return this.languages.slice(1);
+  }
+  // The first language's text of a map; where it lacks one, the course's own text, and the id is noted.
+  say(id: string, text: Translated | undefined): string {
+    const found = flat(text?.[this.main]);
+    if (found === undefined) this.missing.push(id);
+    return found ?? flat(text?.[this.source]) ?? "";
+  }
+  // A layer language's text of a map, or nothing.
+  in(language: string, text: Translated | undefined): string {
+    return flat(text?.[language]) ?? "";
+  }
+  // The sentences of a block in a language, as one paragraph.
+  sentences(list: readonly Sentence[], language = this.main): string {
+    return list
+      .map((s) => (language === this.main ? this.say(s.id, s.text) : this.in(language, s.text)))
+      .join(" ")
+      .trim();
+  }
+  shows(variety: string | undefined): boolean {
+    return variety === undefined || this.ctx.variety === "all" || variety === this.ctx.variety;
+  }
+  m(text: string): string {
+    return marks(text, this.ctx);
+  }
+  // A block that serves one variety wears its name.
+  wear(variety: string | undefined, html: string): string {
+    return variety === undefined ? html : `<div class="rd-tag-row">${tag(varietyLabel(variety))}${html}</div>`;
+  }
+  // A layer's line under a block: the language's code on a capsule and its text.
+  layer(language: string, text: string): string {
+    return text === "" ? "" : `<span class="rd-lang" lang="${language}">${tag(language.toUpperCase())}<span>${this.m(text)}</span></span>`;
+  }
+  // The layers' lines of a map, in the reader's order.
+  layers(text: (language: string) => string): string {
+    return this.others.map((l) => this.layer(l, text(l))).join("");
+  }
+}
