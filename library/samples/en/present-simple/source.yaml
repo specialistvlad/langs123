@@ -84,7 +84,7 @@ subtopics:
             text: "{term Do} adds {term -es}: {term does}."
             ex: { id: spelling.do.ex, text: "She {target does} her homework in the evening." }
           - id: spelling.y
-            text: "After a consonant, {term y} becomes {term ies}: {term study}, {term studies}."
+            text: "After a consonant, such as {term d} in {term study}, {term y} becomes {term ies}: {term studies}."
             ex: { id: spelling.y.ex, text: "She {target studies} French." }
           - id: spelling.have
             text: "{term Have} becomes {term has}."
@@ -118,7 +118,7 @@ subtopics:
       - id: sound.why
         type: why
         text:
-          - { id: sound.why.1, text: "Two sounds like {term s} and {term sh} can't stand next to each other in one syllable." }
+          - { id: sound.why.1, text: "Two sounds like {ipa s} and {ipa ʃ} can't stand next to each other in one syllable." }
           - { id: sound.why.2, text: "So {term watches} has a vowel between them, and one syllable more than {term watch}." }
   - id: do-does
     level: A1
@@ -211,8 +211,11 @@ subtopics:
             text: "{term Does} starts a question."
             ex: { id: do-does.does.ex, text: "{target Does} your sister {target work} here?" }
           - id: do-does.short
-            text: A short answer repeats {term do} or {term does}.
-            ex: { id: do-does.short.ex, text: "Yes, I {target do}." }
+            text: "A short answer to a question with {term do} repeats {term do}."
+            ex: { id: do-does.short.ex, text: "—{target Do} you {target like} tea? —Yes, I {target do}." }
+          - id: do-does.short-does
+            text: "A short answer to a question with {term does} repeats {term does}."
+            ex: { id: do-does.short-does.ex, text: "—{target Does} Tom {target work} here? —Yes, he {target does}." }
       - id: do-does.why
         type: why
         text:
@@ -360,7 +363,7 @@ errors:
       pl: { id: err.no-do.pl, text: "Polish asks with a question word and the verb, with no helper verb: {l1 pl Gdzie mieszkasz?}" }
       tr: { id: err.no-do.tr, text: "Turkish puts the question word before the verb, with no helper verb: {l1 tr Nerede oturuyorsun?}" }
       id: { id: err.no-do.id, text: "Indonesian asks with a question word and the words of a statement: {l1 id Di mana kamu tinggal?}" }
-      vi: { id: err.no-do.vi, text: "Vietnamese puts the question word where the answer goes, with no helper verb: {l1 vi Bạn sống ở đâu?}" }
+      vi: { id: err.no-do.vi, text: "Vietnamese asks with a question word and the words of a statement, with no helper verb: {l1 vi Bạn sống ở đâu?}" }
       ja: { id: err.no-do.ja, text: "Japanese asks with a question word and {l1 ja か}, with no helper verb: {l1 ja どこに住んでいますか。}" }
   - id: err.verb-first
     in: do-does
