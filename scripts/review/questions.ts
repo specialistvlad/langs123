@@ -25,17 +25,22 @@ export type Target =
   | "translations"
   | "example translations"
   | "own blocks"
+  | "untagged blocks"
   | "entries";
 
 interface Asks {
   kinds: RequestKind[];
   target: Target;
+  // The answer that makes a finding, where a yes does: a question that sorts its elements, an element it sorts in
+  // breaking its rule.
+  fails?: { answer: "yes"; when: string };
   // The input the question waits on, which M6 brings.
   pending?: string;
 }
 
 const BOTH: RequestKind[] = ["source", "language"];
 const VOCABULARY = "the vocabulary of each level";
+const UNTAGGED = { answer: "yes", when: "the block carries no variety" } as const;
 
 export const ASKS: Record<string, Asks> = {
   "SH-04": { kinds: BOTH, target: "definition" },
@@ -71,16 +76,16 @@ export const ASKS: Record<string, Asks> = {
   "NO-14": { kinds: ["source"], target: "course text" },
   "NO-18": { kinds: ["source"], target: "blocks" },
   "NO-21": { kinds: BOTH, target: "sentences" },
-  "NO-50": { kinds: ["source"], target: "blocks" },
-  "NO-30": { kinds: ["source"], target: "blocks" },
-  "NO-32": { kinds: ["source"], target: "blocks" },
-  "NO-49": { kinds: ["source"], target: "blocks" },
+  "NO-50": { kinds: ["source"], target: "untagged blocks", fails: UNTAGGED },
+  "NO-30": { kinds: ["source"], target: "untagged blocks", fails: UNTAGGED },
+  "NO-32": { kinds: ["source"], target: "untagged blocks", fails: UNTAGGED },
+  "NO-49": { kinds: ["source"], target: "untagged blocks", fails: UNTAGGED },
   "NO-39": { kinds: BOTH, target: "explanations" },
   "NO-44": { kinds: BOTH, target: "explanations" },
   "IX-11": { kinds: ["index"], target: "entries", pending: "the sources' passages" },
   "IX-14": { kinds: ["index"], target: "entries", pending: "each reference list" },
   "IX-15": { kinds: ["index"], target: "entries" },
-  "IX-24": { kinds: ["index"], target: "entries" },
+  "IX-24": { kinds: ["index"], target: "entries", fails: { answer: "yes", when: "the entry names no topic in replaces" } },
   "RV-11": { kinds: ["language"], target: "translations" },
   "ST-02": { kinds: BOTH, target: "facts" },
 };
@@ -93,6 +98,7 @@ export interface Question {
   target: Target;
   scope: Scope;
   pending?: string;
+  fails?: { answer: "yes"; when: string };
 }
 
 const SUBJECT = /^\[(block|sentence)\]\s+/;
@@ -112,6 +118,7 @@ export function questionsOf(catalog: Catalog, kind: RequestKind): Question[] {
         target: asks.target,
         scope: scopeOf(catalog, r.id),
         ...(asks.pending !== undefined && { pending: asks.pending }),
+        ...(asks.fails !== undefined && { fails: asks.fails }),
       },
     ];
   });

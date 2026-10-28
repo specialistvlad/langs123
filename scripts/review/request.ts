@@ -48,7 +48,7 @@ export const ANSWER_SCHEMA = {
 
 export const INSTRUCTIONS = [
   "You review one topic of a language library against the rules of its catalog. Each question below is a yes-or-no question, asked of every element its line names, by id.",
-  "Answer each question for each element. Report only the elements whose answer is no, each as a finding: the rule's id, the id of the element (`at`), what breaks the rule, in one or two sentences, and the fix, written as the text should read.",
+  "Answer each question for each element. Report only the elements whose answer is no, or yes where the question says a yes makes a finding, each as a finding: the rule's id, the id of the element (`at`), what breaks the rule, in one or two sentences, and the fix, written as the text should read.",
   "A question names its context in braces: {title} is the topic's title; {level} the level of the element's subtopic; {line} the essence line whose `to` names the element's subtopic; {fact} the fact block before the element; {source} the source sentence of the same id; {language} the language the element is written in, or whose speakers a reason concerns; {variety} the course's default variety, or the element's own; the other names are given in the context.",
   "The text writes inline marks as {mark content} or {mark attribute content}: target, term, ipa, variant, l1, kanji, romaji, translit and the value marks. Keep them in your fixes.",
   "Give confidence low where the answer turns on a judgment of style or of a usage that varies, and high elsewhere. Reply through the schema alone.",
@@ -72,6 +72,7 @@ const DESCRIBED: Record<Question["target"], string> = {
   translations: "every translated sentence, beside its source sentence",
   "example translations": "every translated example, beside its source example",
   "own blocks": "every block of the file's own",
+  "untagged blocks": "every block that carries no variety",
   entries: "every entry of the index",
 };
 
@@ -87,8 +88,9 @@ function questions(qs: Question[], ids: (q: Question) => string[]): { lines: str
     const of = ids(q);
     if (of.length === 0) continue;
     asked[q.rule] = of.length;
+    const fails = q.fails === undefined ? "" : ` A finding is a yes answer, where ${q.fails.when}.`;
     lines.push(
-      `- ${q.rule} [${q.subject}], asked of ${of.length > 6 ? `${DESCRIBED[q.target]} (${of.length})` : of.join(", ")}: ${q.text}`,
+      `- ${q.rule} [${q.subject}], asked of ${of.length > 6 ? `${DESCRIBED[q.target]} (${of.length})` : of.join(", ")}: ${q.text}${fails}`,
     );
   }
   return { lines, asked, pending };

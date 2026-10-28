@@ -43,6 +43,7 @@ test("each target names its elements in the source, and in a language file besid
   expect(targetIds(topic, "sentences")).toContain("names.fact.1");
   expect(targetIds(topic, "explanations")).not.toContain("ex.apple");
   expect(targetIds(topic, "blocks")).toHaveLength(6);
+  expect(targetIds(topic, "untagged blocks")).toHaveLength(6);
   expect(targetIds(topic, "translations")).toEqual([]);
   expect(targetIds(topic, "translations", uk)).toContain("names.fact.1");
   expect(targetIds(topic, "example translations", uk)).toContain("ex.apple");
@@ -68,7 +69,7 @@ test("each target names its elements in the source, and in a language file besid
   expect(targetIds(topic, "errors", { ...uk, errors: [ownError] })).toEqual(["uk.err.1"]);
   expect(targetIds(topic, "reasons", { ...uk, errors: [ownError] })).toEqual(["err.a.uk", "err.s.ja", "uk.err.1.uk"]);
   expect(targetIds(topic, "opening", uk)).toEqual(["title", "def"]);
-  for (const t of ["lists", "blocks", "course text", "entries", "essence", "examples"] as const) {
+  for (const t of ["lists", "blocks", "untagged blocks", "course text", "entries", "essence", "examples"] as const) {
     expect(targetIds(topic, t, uk)).toEqual([]);
   }
 });
@@ -77,6 +78,7 @@ test("a source request asks its questions where they hold, counts them, and list
   const r = sourceRequest(topic, course, catalog);
   expect(r).toMatchObject({ kind: "source", topic: "en.letters" });
   expect(r.asked).toMatchObject({ "SH-04": 1, "SH-21": 2, "NO-50": 6 });
+  expect(r.prompt).toContain("A finding is a yes answer, where the block carries no variety.");
   expect(r.asked).not.toHaveProperty("NO-13");
   expect(r.pending).toEqual(["SH-09", "VO-03", "FT-08"]);
   expect(r.prompt).toContain("- SH-04 [sentence], asked of def: Yes or no:");

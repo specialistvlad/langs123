@@ -30,6 +30,8 @@ function inSource(topic: Topic, target: Target): string[] {
       return ["essence"];
     case "blocks":
       return blocks.map((b) => b.id);
+    case "untagged blocks":
+      return blocks.filter((b) => b.variety === undefined).map((b) => b.id);
     case "facts":
     case "whys":
     case "lists":
@@ -75,6 +77,7 @@ function inLanguage(topic: Topic, file: TopicLanguageFile, target: Target): stri
     case "own blocks":
       return own.map((b) => b.id);
     case "blocks":
+    case "untagged blocks":
     case "course text":
     case "entries":
     case "essence":

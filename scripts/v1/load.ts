@@ -1,7 +1,7 @@
 // Reads a root of the new library (library/, or library/samples/) from disk: each course's index, each topic's
 // source, language files and review record, the approvals and the concept registry, each file parsed and named by
 // its path from core's root. A folder of the root is a course when it holds an index.yaml or a topic folder;
-// schema/, samples/, words/ and needs/ hold the library's other data.
+// schema/, samples/, words/, needs/, calibration/ and review/ hold the library's other data.
 import { readdir } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { ROOT } from "../lib.ts";
@@ -38,7 +38,7 @@ export interface LibraryFiles {
 export const LIBRARY_ROOT = join(ROOT, "library");
 // The samples' root: four topics in the new shape, with their courses' indexes.
 export const SAMPLES_ROOT = join(LIBRARY_ROOT, "samples");
-export const OTHER_FOLDERS = ["schema", "samples", "words", "needs"];
+export const OTHER_FOLDERS = ["schema", "samples", "words", "needs", "calibration", "review"];
 const LANGUAGE_FILE = /^([a-z]{2})\.yaml$/;
 
 const folders = async (dir: string): Promise<string[]> =>
