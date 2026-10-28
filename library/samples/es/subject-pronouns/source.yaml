@@ -23,9 +23,9 @@ essence:
     text: "{variant es-419 quienes escuchan} {variant es-ES quienes escuchan, con respeto}"
   - { id: ess.ellos, to: genero, form: ellos, text: "otros hombres, o un grupo de hombres y mujeres" }
   - { id: ess.ellas, to: genero, form: ellas, text: otras mujeres }
-  - { id: ess.hablo, to: sin-pronombre, ex: { id: ess.hablo.ex, text: "{target Hablo} español." } }
+  - { id: ess.hablo, to: sin-pronombre, ex: { id: ess.hablo.ex, text: "Me llamo Ana y {target hablo} español." } }
   - { id: ess.contraste, to: con-pronombre, ex: { id: ess.contraste.ex, text: "{target Yo} trabajo y {target tú} estudias." } }
-  - { id: ess.llueve, to: cosas, ex: { id: ess.llueve.ex, text: "{target Llueve}." } }
+  - { id: ess.llueve, to: cosas, ex: { id: ess.llueve.ex, text: "Hoy {target llueve} y no vamos al parque." } }
 subtopics:
   - id: personas
     level: A1
@@ -99,9 +99,9 @@ subtopics:
       - id: tu-usted.fact
         type: fact
         text:
-          - { id: tu-usted.fact.1, text: "{term Tú} se usa en confianza: con amigos, con la familia y con niños." }
+          - { id: tu-usted.fact.1, text: "{term Tú} se usa en confianza: con amigos y con la familia." }
           - id: tu-usted.fact.2
-            text: "{term Usted} se usa con respeto: con personas mayores, con personas desconocidas y con un jefe o un cliente."
+            text: "{term Usted} se usa con respeto: con personas mayores y con personas desconocidas."
           - { id: tu-usted.fact.3, text: "{term Usted} usa el verbo de {term él} y {term ella}." }
       - id: tu-usted.example
         type: example
@@ -119,7 +119,7 @@ subtopics:
         variety: es-419
         text:
           - id: tu-usted.vos.1
-            text: En Argentina, Uruguay, Paraguay y gran parte de Centroamérica, {term vos} ocupa el lugar de {term tú}.
+            text: "En muchas regiones de América Latina, como Argentina, {term vos} ocupa el lugar de {term tú}."
       - id: tu-usted.vos-example
         type: example
         variety: es-419
@@ -161,12 +161,12 @@ subtopics:
       - id: sin-pronombre.list
         type: list
         items:
-          - { id: sin-pronombre.o, text: "{term -o} es {term yo}.", ex: { id: sin-pronombre.o.ex, text: "{target Hablo} español." } }
-          - { id: sin-pronombre.as, text: "{term -as} es {term tú}.", ex: { id: sin-pronombre.as.ex, text: "¿{target Hablas} español?" } }
-          - { id: sin-pronombre.es, text: "{term -es} es {term tú}.", ex: { id: sin-pronombre.es.ex, text: "¿{target Vives} aquí?" } }
+          - { id: sin-pronombre.o, text: "{term -o} es {term yo}.", ex: { id: sin-pronombre.o.ex, text: "Me llamo Ana y {target hablo} español." } }
+          - { id: sin-pronombre.as, text: "{term -as} es {term tú}.", ex: { id: sin-pronombre.as.ex, text: "Marta, ¿{target hablas} inglés? No entiendo este menú." } }
+          - { id: sin-pronombre.es, text: "{term -es} es {term tú}.", ex: { id: sin-pronombre.es.ex, text: "Soy la vecina del tercer piso. ¿{target Vives} aquí también?" } }
           - id: sin-pronombre.mos
             text: "{term -mos} es {term nosotros} o {term nosotras}."
-            ex: { id: sin-pronombre.mos.ex, text: "{target Comemos} a las dos." }
+            ex: { id: sin-pronombre.mos.ex, text: "En mi casa {target comemos} a las dos." }
   - id: con-pronombre
     level: A2
     title: { id: con-pronombre.title, text: Cuándo se dice el pronombre }
@@ -194,13 +194,19 @@ subtopics:
       - id: cosas.fact
         type: fact
         text:
-          - { id: cosas.fact.1, text: "Para las cosas, el tiempo y la hora, el verbo va sin pronombre de sujeto." }
-      - id: cosas.example
-        type: example
+          - { id: cosas.fact.1, text: "Cuando el verbo no habla de una persona, va sin pronombre de sujeto." }
+      - id: cosas.list
+        type: list
         items:
-          - { id: cosas.llueve, text: "{target Llueve}." }
-          - { id: cosas.tarde, text: "{target Es} tarde." }
-          - { id: cosas.mesa, text: "—¿Dónde está el libro? —{target Está} en la mesa." }
+          - id: cosas.cosas
+            text: Una cosa.
+            ex: { id: cosas.mesa, text: "—¿Dónde está el libro? —{target Está} en la mesa." }
+          - id: cosas.tiempo
+            text: El tiempo que hace.
+            ex: { id: cosas.llueve, text: "Hoy {target llueve} y no vamos al parque." }
+          - id: cosas.hora
+            text: La hora.
+            ex: { id: cosas.tarde, text: "Ya {target es} tarde y mañana trabajo." }
 errors:
   - id: err.ello
     in: cosas

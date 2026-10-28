@@ -17,9 +17,9 @@ text:
   ess.ustedes: "{variant es-419 the people listening} {variant es-ES the people listening, politely}"
   ess.ellos: other men, or a group of men and women
   ess.ellas: other women
-  ess.hablo.ex: I speak Spanish.
+  ess.hablo.ex: My name's Ana and I speak Spanish.
   ess.contraste.ex: I work and you study.
-  ess.llueve.ex: It's raining.
+  ess.llueve.ex: It's raining today, so we're not going to the park.
 
   personas.title: "Grammatical person"
   personas.fact.1: "Subject pronouns change with the person: the one speaking, the one listening, or someone else."
@@ -50,8 +50,8 @@ text:
   genero.ellos.ex: They work and we rest.
 
   tu-usted.title: "{term Tú} and {term usted}"
-  tu-usted.fact.1: "{term Tú} is used between people who are close: with friends, family and children."
-  tu-usted.fact.2: "{term Usted} shows respect: with older people, with strangers and with a boss or a client."
+  tu-usted.fact.1: "{term Tú} is used between people who are close: with friends and family."
+  tu-usted.fact.2: "{term Usted} shows respect: with older people and with strangers."
   tu-usted.fact.3: "{term Usted} takes the verb of {term él} and {term ella}."
   tu-usted.senora: How are you, Mrs García?
   tu-usted.gracias:
@@ -60,7 +60,7 @@ text:
   tu-usted.profesor: Are you the English teacher?
   tu-usted.why.1: "{term Usted} comes from {l1 es vuestra merced}, an old form of respect."
   tu-usted.why.2: "So it takes the verb of {term él} and {term ella}."
-  tu-usted.vos.1: "In Argentina, Uruguay, Paraguay and much of Central America, {term vos} takes the place of {term tú}."
+  tu-usted.vos.1: "In many parts of Latin America, such as Argentina, {term vos} takes the place of {term tú}."
   tu-usted.vos.sos: Are you from here?
 
   ustedes-vosotros.title: "{term Ustedes} and {term vosotros}"
@@ -74,11 +74,11 @@ text:
   sin-pronombre.fact.1: The ending of the verb already says who does the action.
   sin-pronombre.fact.2: So the pronoun usually goes unsaid.
   sin-pronombre.o: "{term -o} is {term yo}."
-  sin-pronombre.o.ex: I speak Spanish.
+  sin-pronombre.o.ex: My name's Ana and I speak Spanish.
   sin-pronombre.as: "{term -as} is {term tú}."
-  sin-pronombre.as.ex: "Do you speak Spanish?"
+  sin-pronombre.as.ex: "Marta, do you speak English? I don't understand this menu."
   sin-pronombre.mos: "{term -mos} is {term nosotros} or {term nosotras}."
-  sin-pronombre.mos.ex: We have lunch at two.
+  sin-pronombre.mos.ex: At home we have lunch at two.
 
   con-pronombre.title: When the pronoun is said
   con-pronombre.fact.1: The pronoun is said when the verb alone is not enough.
@@ -90,10 +90,13 @@ text:
   con-pronombre.solo.ex: Who wants coffee? Me.
 
   cosas.title: Things, weather and time
-  cosas.fact.1: For things, the weather and the time, the verb goes without a subject pronoun.
-  cosas.llueve: It's raining.
-  cosas.tarde: It's late.
+  cosas.fact.1: When the verb is not about a person, it goes without a subject pronoun.
+  cosas.cosas: A thing.
   cosas.mesa: Where's the book? On the table.
+  cosas.tiempo: The weather.
+  cosas.llueve: It's raining today, so we're not going to the park.
+  cosas.hora: The time.
+  cosas.tarde: "It's late, and I've got work tomorrow."
 
   err.ello.right: It's late.
   err.ello.rule: For the weather and the time, the verb stands alone, with no pronoun.
@@ -106,27 +109,28 @@ text:
 
   ess.vos: "the person listening, informally"
   sin-pronombre.es: "{term -es} is {term tú}."
-  sin-pronombre.es.ex: "Do you live here?"
+  sin-pronombre.es.ex: "I'm the neighbour from the third floor. Do you live here too?"
 blocks:
   - id: en.tu-usted.you
     in: tu-usted
     after: tu-usted.example
     type: fact
     text:
-      - { id: en.tu-usted.you.1, text: "English has one word, you, for {term tú}, {term usted} and {term ustedes}." }
+      - { id: en.tu-usted.you.1, text: "English has one word, {l1 en you}, for one person or several, with respect or without it." }
   - id: en.tu-usted.you-example
     in: tu-usted
     after: tu-usted.example
     type: example
     items:
-      - { id: en.tu-usted.profesor, text: "¿{target Usted} es el profesor de inglés?", tr: "Are you the English teacher?" }
+      - { id: en.tu-usted.tu, text: "¿{target Tú} eres de aquí?", tr: "Are you from here?" }
+      - { id: en.tu-usted.usted, text: "¿{target Usted} es de aquí?", tr: "Are you from here?" }
   - id: en.tu-usted.vosotros
     in: tu-usted
     after: tu-usted.example
     type: fact
     variety: es-ES
     text:
-      - { id: en.tu-usted.vosotros.1, text: "English also says you for {term vosotros}." }
+      - { id: en.tu-usted.vosotros.1, text: "English also says {l1 en you} for {term vosotros}." }
 fingerprints:
   con-pronombre.aclarar: 5421b914
   con-pronombre.aclarar.ex: 772753ac
@@ -136,10 +140,13 @@ fingerprints:
   con-pronombre.solo: e94c5629
   con-pronombre.solo.ex: 0a7c35a5
   con-pronombre.title: 99d2ee87
-  cosas.fact.1: 6625fba3
-  cosas.llueve: e77e81ad
+  cosas.cosas: 0902edc2
+  cosas.fact.1: 442afd52
+  cosas.hora: fdb79038
+  cosas.llueve: f50368f2
   cosas.mesa: 8ca0d0d2
-  cosas.tarde: cc756dcd
+  cosas.tarde: 906bc090
+  cosas.tiempo: d09a8610
   cosas.title: 919c0da8
   def: ba509509
   err.ello.de: 58da815c
@@ -155,8 +162,8 @@ fingerprints:
   ess.ella: 4bbcaa97
   ess.ellas: 04f2bf6e
   ess.ellos: 4825c7d7
-  ess.hablo.ex: e53f89b1
-  ess.llueve.ex: e77e81ad
+  ess.hablo.ex: 23d54b73
+  ess.llueve.ex: f50368f2
   ess.nosotras: d3b279e2
   ess.nosotros: e72f5d46
   ess.tu: ede25407
@@ -191,25 +198,25 @@ fingerprints:
   personas.title: 671b0951
   personas.usted.name: 0b3bafaf
   sin-pronombre.as: b52bd1aa
-  sin-pronombre.as.ex: 8fbbe82a
+  sin-pronombre.as.ex: 081eade6
   sin-pronombre.es: 018e370a
-  sin-pronombre.es.ex: 95a3220c
+  sin-pronombre.es.ex: 5001e4db
   sin-pronombre.fact.1: c190868c
   sin-pronombre.fact.2: 66313db3
   sin-pronombre.mos: e634c18f
-  sin-pronombre.mos.ex: 2ca9c748
+  sin-pronombre.mos.ex: cfa0b90b
   sin-pronombre.o: 25379f1f
-  sin-pronombre.o.ex: e53f89b1
+  sin-pronombre.o.ex: 23d54b73
   sin-pronombre.title: 4b1de475
   title: b0f08bc8
-  tu-usted.fact.1: 607f53fa
-  tu-usted.fact.2: ae793c55
+  tu-usted.fact.1: "723240e1"
+  tu-usted.fact.2: 88c39c01
   tu-usted.fact.3: 67215c42
   tu-usted.gracias: 1cf516f4
   tu-usted.profesor: abda7e28
   tu-usted.senora: ab0b9764
   tu-usted.title: 4e286b79
-  tu-usted.vos.1: e455e62f
+  tu-usted.vos.1: aea74bea
   tu-usted.vos.sos: f46c0ed3
   tu-usted.why.1: cc139f81
   tu-usted.why.2: 2575215b

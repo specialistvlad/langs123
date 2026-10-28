@@ -21,10 +21,10 @@ text:
   ess.starts.ex: 映画は8時に始まります。
 
   forms.title: 形
-  forms.fact.1: "{term I}、{term you}、{term we}、{term they}のとき、現在形は動詞の原形、つまり辞書に載っている形です。"
+  forms.fact.1: "{term he}、{term she}、{term it}以外の主語のとき、現在形は動詞の原形、つまり辞書に載っている形です。"
   forms.fact.2: "{term he}、{term she}、{term it}のときは、動詞に{term -s}が付きます。"
   forms.col.person: 人称
-  forms.why.1: "古英語では、動詞に人称ごとの語尾があります。"
+  forms.why.1: "{term he}、{term she}、{term it}の{term -s}は、人称ごとにあった動詞の古い語尾のうち、最後に残ったものです。"
 
   spelling.title: つづり：-sと-es
   spelling.fact.2: "いくつかの動詞は、{term -s}の語尾を別のつづりで書きます。"
@@ -42,11 +42,13 @@ text:
   sound.s: "{ipa p}、{ipa t}、{ipa k}、{ipa f}、{ipa θ}の音の後では{ipa s}です。"
   sound.s.ex: 彼女は店で働いています。
   sound.z: "母音と、{ipa b}、{ipa d}、{ipa ɡ}、{ipa v}、{ipa l}、{ipa m}、{ipa n}、{ipa ŋ}の音の後では{ipa z}です。"
-  sound.z.ex: 彼はサッカーをします。
+  sound.z.ex: 彼はテニスをします。
   sound.iz: "{ipa s}、{ipa z}、{ipa ʃ}、{ipa tʃ}、{ipa dʒ}の音の後では{ipa ɪz}です。"
   sound.iz.ex: 彼女はテレビを見ます。
-  sound.says: "{term Says} {ipa sez}と{term does} {ipa dʌz}は母音が変わります。"
+  sound.says: "{term Says} {ipa sez}は母音が変わります。"
   sound.says.ex: 彼女は誰にでもあいさつします。
+  sound.does: "{term Does} {ipa dʌz}は母音が変わります。"
+  sound.does.ex: 彼は夕食の後に宿題をします。
   sound.why.1: "{term s}や{term sh}のような音は、1つの音節の中で2つ並べて言えません。"
 
   do-does.title: Doとdoes
@@ -87,21 +89,17 @@ text:
   facts.lions: ライオンはアフリカに住んでいます。
 
   frequency.title: always、usually、neverと一緒に
-  frequency.fact.1:
-    - "頻度を表す語は、主な動詞の前に置きます。"
-    - "{term always}、{term usually}、{term sometimes}、{term never}などです。"
+  frequency.fact.1: "{term always}のような頻度を表す語は、主な動詞の前に置きます。"
   frequency.always: 彼女はいつも歩いて仕事に行きます。
   frequency.usually: 私はたいてい家で朝ごはんを食べます。
   frequency.never: 私たちはテレビを全然見ません。
 
   states.title: 状態
-  states.fact.1:
-    - "状態を表す動詞は、今本当であることにも現在形を使います。"
-    - "{term like}、{term want}、{term need}、{term know}、{term understand}などです。"
+  states.fact.1: "{term know}のような状態を表す動詞は、今本当であることにも現在形を使います。"
   states.know: 私は彼女の名前を知っています。
   states.understand: わかりますか。
   states.want: 彼女は新しいスマホを欲しがっています。
-  states.why.1: "状態は少しずつ変わるものではないので、現在形を使います。"
+  states.why.1: "{term -ing}形は動作を一歩ずつ表しますが、状態には段階がないので、単純な形のままです。"
 
   timetables.title: 時刻表と予定
   timetables.fact.1: 現在形は、時刻表や予定で決まっていることがいつ起こるかを、未来のことでも表します。
@@ -122,7 +120,6 @@ text:
   forms.hospital: "姉は病院で働いています。"
   forms.sundays: "彼らは日曜日に働きます。"
   forms.here: "兄はここで働いています。"
-  forms.why.2: "{term he}、{term she}、{term it}の{term -s}は、今も残っている唯一の語尾です。"
   sound.why.2: "そのため、{term watches}では間に母音が入り、{term watch}より音節が1つ多くなります。"
   err.no-s.ja: "日本語の動詞は、どの人称でも同じ形です。"
   err.no-s.id: "インドネシア語の動詞は、どの人称でも同じ形です。"
@@ -167,7 +164,7 @@ blocks:
     after: forms.example
     type: fact
     text:
-      - { id: ja.forms.fact.1, text: "日本語の動詞は、主語によって形が変わりません。" }
+      - { id: ja.forms.fact.1, text: "日本語の動詞は主語によって形が変わりませんが、英語では{term he}、{term she}、{term it}のとき動詞に{term -s}が付きます。" }
   - id: ja.forms.example
     in: forms
     after: forms.example
@@ -247,7 +244,7 @@ fingerprints:
   forms.col.person: 6007db63
   forms.col.plural: 18fb6be3
   forms.col.singular: 64c445c3
-  forms.fact.1: bd29a3b2
+  forms.fact.1: 6d361310
   forms.fact.2: 1943ba28
   forms.first.name: c90de754
   forms.here: e14b065c
@@ -257,10 +254,9 @@ fingerprints:
   forms.sundays: 5ce2011c
   forms.third.name: edddcb03
   forms.title: 6dd89c82
-  forms.why.1: f6a6c9ba
-  forms.why.2: b1b5ae9b
+  forms.why.1: d0a1338b
   frequency.always: a8c8ceaf
-  frequency.fact.1: 8f21caf1
+  frequency.fact.1: c2efe598
   frequency.never: 276b4f4a
   frequency.title: 028239a4
   frequency.usually: 6498fc84
@@ -269,18 +265,20 @@ fingerprints:
   habits.tea: 819907cc
   habits.title: 86bde100
   habits.up: 3433bff5
+  sound.does: ff615e39
+  sound.does.ex: f4cf1f46
   sound.fact.1: 018794cc
   sound.iz: c8d7ef5e
   sound.iz.ex: 54ac2ad6
   sound.s: 3a62725e
   sound.s.ex: afcef791
-  sound.says: 021ad02f
+  sound.says: f0d4a8e5
   sound.says.ex: ff46ca5d
   sound.title: 2d5e9123
   sound.why.1: 0f90d187
   sound.why.2: dad8300b
   sound.z: 8a6e11e2
-  sound.z.ex: 2f082d86
+  sound.z.ex: 9de704cb
   spelling.do: 834361b9
   spelling.do.ex: 01077f26
   spelling.es: 2fd332f0
@@ -293,12 +291,12 @@ fingerprints:
   spelling.title: c04c8e32
   spelling.y: 912f9450
   spelling.y.ex: 78fdfe24
-  states.fact.1: cc133b58
+  states.fact.1: ad66a594
   states.know: cdb1735a
   states.title: 2f6e9dae
   states.understand: 19fd8675
   states.want: 9ff12abe
-  states.why.1: 61ebb985
+  states.why.1: 9a84d007
   subject-questions.fact.1: 1621b91c
   subject-questions.title: 33a2a27d
   subject-questions.what: 9dab6ead
