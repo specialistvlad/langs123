@@ -97,10 +97,13 @@ The topic ends with the errors that learners make, each written once:
 - **its speakers**: every explanation language whose speakers make the error.
 
 An error belongs to its speakers. A reader sees the errors their languages' speakers make, and a reader with
-several languages sees the errors of each. A writer names a language among the speakers when that language's
-structure leads its speakers to the error: it lacks the form, builds it another way, or names it with a word that
-sounds alike. An error made by learners of every first language names all twelve explanation languages but the
-course's own.
+several languages sees the errors of each.
+
+Each language named among an error's speakers is a claim about those speakers, made for that language alone and
+recorded with its reason: a source that documents the error, or a known contrast with that language, where it
+lacks the form, builds it another way, or names it with a word that sounds alike. An error made by speakers of
+many languages names each of them, every one with its own reason. An error stands in a language's list only where
+that language's speakers make it.
 
 A wrong form appears in Common errors alone. Everywhere else a topic states the right form.
 
@@ -204,7 +207,7 @@ language writes them.
 A topic's source file holds the structure and the source text. Each explanation language's file holds its
 translations, keyed by the ids of the source's blocks and sentences, and blocks of its own:
 
-- its speakers' errors, when they joined after the source was written;
+- its speakers' errors, when the language joined after the source was written, each with its reason (§2.5);
 - notes for its readers alone, where their language has a close counterpart or misleads them: for Ukrainian
   readers, «я працюю» says both *I work* and *I am working*, and English chooses between the two.
 
@@ -277,7 +280,7 @@ The reader is addressed as each language addresses one reader in a friendly, res
 - A Latin transliteration, after the national system of 2010, stands beside the IPA in the A0 topics on the
   alphabet, the sounds and the soft sign.
 - Forms carried over from Russian (*хворі́ти гри́пом* for *хворі́ти на грип*) are common errors whose speakers are
-  all twelve explanation languages, Ukrainian among them.
+  Ukrainian, the speakers who make them.
 
 ### 7.5 Varieties
 
