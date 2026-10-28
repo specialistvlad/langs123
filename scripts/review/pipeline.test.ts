@@ -11,7 +11,7 @@ import { fixture } from "../v1/fixture.ts";
 import { typedLibrary } from "../v1/library.ts";
 import { SAMPLES_ROOT } from "../v1/load.ts";
 import { review, reviewQueue } from "./index.ts";
-import { drawn, reviewTopic, verdicts } from "./pipeline.ts";
+import { drawn, requestsOf, reviewTopic, verdicts } from "./pipeline.ts";
 import { queueOf } from "./queue.ts";
 import { reportOf, withReview } from "./record.ts";
 import type { Finding, Runner, Session } from "./run.ts";
@@ -100,6 +100,28 @@ test("the source runs twice, a clean language request once, one with findings tw
   expect(report).toContain("Pending, unasked until M6 brings their input: SH-09, VO-03, FT-08.");
   expect(report).toContain("Run 2: session s2, claude-sonnet-5-5, 30 tokens in, 5 out, 2 s.");
   expect(reportOf(clean)).toContain("Disputed, reported by one run alone:");
+});
+
+test("a request asking a rule of the stronger model runs on it, the others on the policy's model", async () => {
+  const { files } = fixture();
+  const { library } = typedLibrary(files);
+  const [course] = library.courses;
+  const [topic] = course?.topics ?? [];
+  if (course === undefined || topic === undefined) throw new Error("the fixture holds a course and a topic");
+  const [source, uk] = requestsOf(topic, course, catalog);
+  const sourceOnly = Object.keys(source?.asked ?? {}).filter((r) => uk?.asked[r] === undefined);
+  const models: string[] = [];
+  const runner: Runner = (request, model) => {
+    models.push(`${request.language ?? "source"} ${model}`);
+    return Promise.resolve(session([finding("RV-11", "def")]));
+  };
+  await reviewTopic(topic, course, catalog, runner, {
+    model: "m",
+    date: "2026-11-02",
+    sessions: 1,
+    stronger: { model: "o", rules: sourceOnly },
+  });
+  expect(models).toEqual(["source o", "source o", "uk m", "uk m"]);
 });
 
 test("the queue holds each flagged topic and the one-in-ten draw of each wave's clean ones", () => {

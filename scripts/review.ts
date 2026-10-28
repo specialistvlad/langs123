@@ -1,12 +1,14 @@
 // Reviews topics of the new library in Claude Code sessions (scripts/review/index.ts): each topic folder's source and
 // language files, the records written beside them, the reports, sessions and flagged queue into build/review/.
-// Run: npm run review -- <topic folder>… --writer <session> <model> [--model <version>] [--dry-run]
+// A request asking a rule --stronger names runs on its model.
+// Run: npm run review -- <topic folder>… --writer <session> <model> [--model <version>] [--stronger <model> <rule>…]
+//      [--dry-run]
 import { dirname, join, resolve } from "node:path";
 import { catalog } from "./v1/check.ts";
 import { typedLibrary } from "./v1/library.ts";
 import { readLibrary } from "./v1/load.ts";
 import { review } from "./review/index.ts";
-import { requestsOf } from "./review/pipeline.ts";
+import { modelOf, type Policy, requestsOf } from "./review/pipeline.ts";
 import { claudeAttempt, runnerOf } from "./review/run.ts";
 
 const args = process.argv.slice(2);
@@ -26,6 +28,13 @@ const dirs = args
 const root = dirname(dirname(dirs[0] ?? "."));
 const ids = dirs.map((d) => `${d.split("/").at(-2) ?? ""}.${d.split("/").at(-1) ?? ""}`);
 const model = flag("--model")[0] ?? "claude-sonnet-5-5";
+const [strongerModel, ...strongerRules] = flag("--stronger", args.length).filter(
+  (_, n, rest) => !rest.slice(0, n + 1).some((a) => a.startsWith("--")),
+);
+const policy: Omit<Policy, "date"> = {
+  model,
+  ...(strongerModel !== undefined && { stronger: { model: strongerModel, rules: strongerRules } }),
+};
 
 if (args.includes("--dry-run")) {
   const { library } = typedLibrary(await readLibrary(root));
@@ -35,7 +44,7 @@ if (args.includes("--dry-run")) {
       for (const r of requestsOf(topic, course, rules)) {
         const asked = Object.values(r.asked).reduce((a, b) => a + b, 0);
         console.log(
-          `${r.topic} ${r.language ?? "source"}: ${String(asked)} questions, ${String(Object.keys(r.asked).length)} rules, ${String(r.prompt.length)} characters; pending ${r.pending.join(", ") || "none"}`,
+          `${r.topic} ${r.language ?? "source"} on ${modelOf(r, { ...policy, date: "" })}: ${String(asked)} questions, ${String(Object.keys(r.asked).length)} rules, ${String(r.prompt.length)} characters; pending ${r.pending.join(", ") || "none"}`,
         );
       }
     }
@@ -48,7 +57,7 @@ if (args.includes("--dry-run")) {
   const done = await review(root, ids, {
     runner: runnerOf(claudeAttempt),
     writer: { session, model: writerModel },
-    model,
+    ...policy,
     date: new Date().toISOString().slice(0, 10),
   });
   for (const d of done) {

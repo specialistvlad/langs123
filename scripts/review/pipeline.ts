@@ -1,7 +1,8 @@
 // A topic's review (12.2 to 12.5): its source request and one request per language file, each run in its own
 // Claude Code session. The source request runs twice; a language request runs once, and again where the first run
 // finds something or a one-in-ten draw of the clean ones falls on it. Where two runs answer, a finding both report
-// stands and a finding one reports is disputed; a single run's findings stand. Every run is kept.
+// stands and a finding one reports is disputed; a single run's findings stand. Every run is kept. A request runs on
+// the policy's model, or on its stronger model where it asks a rule the default misses (12.3).
 import { createHash } from "node:crypto";
 import type { Catalog } from "../rule-catalog.ts";
 import type { Course, Topic } from "../v1/library.ts";
@@ -23,6 +24,8 @@ export interface TopicReview {
 
 export interface Policy {
   model: string;
+  // The model of the requests asking any of its rules.
+  stronger?: { model: string; rules: string[] };
   date: string;
   // How many sessions run at once.
   sessions?: number;
@@ -46,10 +49,14 @@ export function verdicts(runs: Session[]): Pick<RequestReview, "standing" | "dis
   };
 }
 
+export const modelOf = (request: Request, policy: Policy): string =>
+  policy.stronger?.rules.some((r) => request.asked[r] !== undefined) === true ? policy.stronger.model : policy.model;
+
 async function runRequest(request: Request, runner: Runner, policy: Policy): Promise<RequestReview> {
-  const first = await runner(request, policy.model);
+  const model = modelOf(request, policy);
+  const first = await runner(request, model);
   const again = request.kind === "source" || first.findings.length > 0 || drawn(request.topic, request.language ?? "", policy.date);
-  const runs = again ? [first, await runner(request, policy.model)] : [first];
+  const runs = again ? [first, await runner(request, model)] : [first];
   return { request, runs, ...verdicts(runs) };
 }
 
