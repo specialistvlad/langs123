@@ -29,14 +29,15 @@ afterAll(async () => {
 
 test("the queue leads to a draft, which reads in the language the address names with its findings pinned", async () => {
   await page.goto(new URL("/review/", server.url).href);
-  expect(await page.locator(".rv .lx-row a").count()).toBe(4);
+  expect(await page.locator(".rv .lx-irow a").count()).toBe(4);
   await page.locator('.rv a[href="/review/en.present-simple/"]').click();
-  await page.locator("#rv .rv-langs").waitFor();
-  expect(await page.locator('#rv .rv-langs [aria-selected="true"]').textContent()).toBe("English");
-  const source = await page.locator("#rv .rv-pins .rv-card").count();
-  await page.locator('#rv .rv-langs a[href="?lang=ja"]').click();
-  await page.waitForURL(/lang=ja$/);
-  await page.locator('#rv .rv-langs [aria-selected="true"]', { hasText: "Japanese" }).waitFor();
-  expect(await page.locator("#rv .rv-pins .rv-card").count()).toBeGreaterThanOrEqual(source);
+  await page.locator("#rv .rd-seg").waitFor();
+  expect(await page.locator('#rv .rd-seg [aria-selected="true"]').textContent()).toBe("English");
+  const source = await page.locator("#rv .rv-pins .rv-fc").count();
+  await page.locator('#rv .rd-seg [data-lang="ja"]').click();
+  expect(page.url()).toEndWith("?lang=ja");
+  expect(await page.locator('#rv .rd-seg [aria-selected="true"]').textContent()).toBe("Japanese");
+  expect(await page.locator("#rv-title").textContent()).not.toBe("");
+  expect(await page.locator("#rv .rv-pins .rv-fc").count()).toBeGreaterThanOrEqual(source);
   expect(await page.locator("#rv .rv-rest").count()).toBe(0);
 }, 30_000);

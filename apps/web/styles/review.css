@@ -1,0 +1,198 @@
+/* The review preview (pages/review.ts), in a v1 preview build alone: the page, its status card, the queue's rows and the
+   findings' cards. */
+.rv {
+  padding: var(--s-16) var(--s-20) calc(var(--s-40) + var(--s-8));
+}
+@media (min-width: 1024px) {
+  .rv {
+    width: calc(var(--s-40) * 20 + var(--s-16));
+    margin: 0 auto;
+    padding: var(--s-40) 0 calc(var(--s-40) + var(--s-8));
+  }
+}
+.rv-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-12);
+  min-height: calc(var(--s-40) + var(--s-4));
+}
+.rv-bar .lx-h1 {
+  margin: 0;
+}
+.rv-up {
+  position: static;
+  flex-shrink: 0;
+  color: var(--c-text);
+}
+.rv-counts {
+  margin-top: var(--s-8);
+}
+.rv-secs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-28);
+  margin-top: var(--s-28);
+}
+.rv-sec {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-8);
+}
+.rv-sec > .lx-h2 {
+  margin-left: var(--s-20);
+}
+.rv-sec .lx-card {
+  margin-top: var(--s-4);
+}
+.rv .lx-ix-count {
+  flex-shrink: 0;
+  font-size: var(--t-reading-small-size);
+  line-height: var(--t-reading-small-lh);
+  letter-spacing: var(--t-reading-small-track);
+  font-weight: var(--t-reading-small-weight);
+  color: var(--c-muted);
+}
+.lx-irow {
+  align-items: center;
+  padding: var(--s-12) var(--s-16) var(--s-12) var(--s-20);
+}
+.lx-irow-t {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.lx .lx-irow-title {
+  font-size: var(--t-reading-body-size);
+  line-height: var(--t-reading-body-lh);
+  letter-spacing: var(--t-reading-body-track);
+  font-weight: var(--t-emphasis-weight);
+  color: var(--c-text);
+}
+.lx-irow-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+  margin-top: var(--s-6);
+}
+.lx-irow-t .lx-ladder {
+  align-self: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.rv-caps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-6);
+  margin-top: var(--s-4);
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-muted);
+}
+.rv-caps .lx-capsule,
+.rv-fc-head .lx-capsule {
+  margin-right: 0;
+}
+.lx-capsule.rv-warn {
+  background: var(--c-warn-soft);
+  color: var(--c-warn);
+}
+.lx-capsule.rv-accent {
+  background: var(--c-accent-soft);
+  color: var(--c-accent);
+}
+.rv-sum {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  margin-top: var(--s-20);
+  padding: var(--s-14) var(--s-16);
+}
+.rv-l,
+.rv-problems {
+  margin: 0;
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-body);
+}
+.rv-k {
+  font-weight: var(--t-emphasis-weight);
+  color: var(--c-muted);
+}
+.rv-l .rv-caps {
+  display: inline-flex;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.rv-sum + .rd-article > .rd-seg {
+  margin-top: var(--s-12);
+}
+.rv-pins {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-8);
+  margin-top: var(--s-8);
+}
+.lx-card .rv-pins {
+  margin: 0;
+  padding: var(--s-8) var(--s-16) var(--s-12) var(--s-20);
+}
+.lx-li .rv-pins,
+.rd-exs .rv-pins {
+  margin-top: var(--s-6);
+}
+.rv-fc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  padding: var(--s-10) var(--s-12) var(--s-10) var(--s-14);
+  border: 0.5px solid var(--c-border);
+  border-left: var(--s-4) solid var(--c-border);
+  border-radius: var(--r-12);
+  background: var(--c-surface);
+}
+.rv-fc.rv-open {
+  border-left-color: var(--c-warn);
+}
+.rv-fc p {
+  margin: 0;
+  font-size: var(--t-reading-translation-size);
+  line-height: var(--t-reading-translation-lh);
+  letter-spacing: var(--t-reading-translation-track);
+  color: var(--c-body);
+}
+.rv-fc-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+}
+.rv-fc-head:empty {
+  display: none;
+}
+.rv-fc-fix b {
+  font-weight: var(--t-mark-strong-weight);
+  color: var(--c-text);
+}
+.rv-fc .rv-fc-ans {
+  color: var(--c-muted);
+}
+.rv-fc.rv-open .rv-fc-ans {
+  font-weight: var(--t-emphasis-weight);
+  color: var(--c-warn);
+}
+.rv-fc .rv-fc-foot {
+  font-size: var(--t-reading-small-size);
+  line-height: var(--t-reading-small-lh);
+  letter-spacing: var(--t-reading-small-track);
+  color: var(--c-muted);
+}
+.rv-rest {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-8);
+  margin-top: var(--s-40);
+}

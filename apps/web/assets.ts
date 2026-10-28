@@ -58,6 +58,7 @@ const STYLES = [
   "reading-errors",
   "reading-forms",
   "reading-web",
+  "review",
   "topic-print",
 ];
 

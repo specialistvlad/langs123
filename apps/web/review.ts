@@ -30,7 +30,8 @@ export interface ReviewEntry {
   wave: string;
   status: string;
   writer: { session: string; model: string };
-  reviews: { model: string; runs: number }[];
+  // Each model's review, in the order the record first names it, and the runs it took.
+  reviews: { model: string; runs: number[] }[];
   flagged: string[];
   // The languages the owner still reads it in, and why it is in the queue; neither for a draft outside it.
   reads: string[];
@@ -44,13 +45,14 @@ export const LABELS = {
   every: "Every draft",
   flagged: "Flagged",
   sampled: "Sampled",
-  reads: "Owner reads",
-  writer: "Written by",
-  reviews: "Reviewed by",
+  readIn: "Read in:",
+  status: "Status:",
+  writer: "Writer:",
+  review: "Review",
   runs: "runs",
-  problems: "Check",
-  noProblems: "No problems",
-  fix: "Fix",
+  flaggedRules: "Flagged:",
+  checks: "Checks:",
+  fix: "Fix:",
   fixed: "Fixed",
   declined: "Declined",
   open: "Open",
@@ -58,6 +60,9 @@ export const LABELS = {
   elsewhere: "Elsewhere in the topic",
   wave: "Wave",
 };
+
+// A count with its noun: 1 topic, 4 topics.
+export const count = (n: number, noun: string): string => `${String(n)} ${noun}${n === 1 ? "" : "s"}`;
 
 // Each id of the topic's text by the id of the element the reading draws it in: a subtopic's title its subtopic, a fact's
 // or a why's sentence its block, a table's column, row and cell its table, an example and an item themselves, the head's
@@ -103,13 +108,20 @@ export const shown = (findings: readonly ReviewFinding[], language: string): Rev
 
 const ctx = { variety: "all" };
 
+// A finding's card: its rule, the finding, the fix, the answer (fixed and declined quiet, declined with its reason, open in
+// the warn colour) and the model and run at its foot.
 export function card(f: ReviewFinding): string {
   const state = f.answer ?? "open";
-  const answer = { fixed: LABELS.fixed, declined: LABELS.declined, open: LABELS.open }[state];
+  const answer =
+    state === "fixed"
+      ? LABELS.fixed
+      : state === "open"
+        ? LABELS.open
+        : `${LABELS.declined}${f.reason === undefined ? "" : `: ${marks(f.reason, ctx)}`}`;
   return (
-    `<aside class="rv-card rv-${state}" data-finding="${esc(f.id)}"><p class="rv-head">${f.rule === undefined ? "" : tag(f.rule)}<span class="rv-answer">${answer}</span></p>` +
-    `<p class="rv-text">${marks(f.text, ctx)}</p>${f.fix === undefined ? "" : `<p class="rv-fix"><b>${LABELS.fix}</b> ${marks(f.fix, ctx)}</p>`}` +
-    `${f.reason === undefined ? "" : `<p class="rv-reason">${marks(f.reason, ctx)}</p>`}<p class="rv-foot">${esc(f.model)} · ${LABELS.run} ${String(f.run)}</p></aside>`
+    `<aside class="rv-fc rv-${state}" data-finding="${esc(f.id)}"><p class="rv-fc-head">${f.rule === undefined ? "" : tag(f.rule)}</p>` +
+    `<p class="rv-fc-text">${marks(f.text, ctx)}</p>${f.fix === undefined ? "" : `<p class="rv-fc-fix"><b>${LABELS.fix}</b> ${marks(f.fix, ctx)}</p>`}` +
+    `<p class="rv-fc-ans">${answer}</p><p class="rv-fc-foot">${esc(f.model)} · ${LABELS.run} ${String(f.run)}</p></aside>`
   );
 }
 

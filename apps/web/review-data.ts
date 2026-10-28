@@ -15,8 +15,13 @@ export function reviewEntries(library: Library, problems: readonly Problem[], qu
     course.topics.map((t): ReviewEntry => {
       const record = t.review?.data;
       const queued = queue.find((q) => q.topic === t.source.data.id);
-      const runs = new Map<string, number>();
-      for (const r of record?.reviews ?? []) runs.set(r.model, (runs.get(r.model) ?? 0) + 1);
+      // Each model's review, in the order the record first names it, with the runs it took.
+      const reviews: ReviewEntry["reviews"] = [];
+      for (const r of record?.reviews ?? []) {
+        const found = reviews.find((x) => x.model === r.model);
+        if (found === undefined) reviews.push({ model: r.model, runs: [r.run] });
+        else if (!found.runs.includes(r.run)) found.runs = [...found.runs, r.run].sort();
+      }
       return {
         topic: t.source.data.id,
         course: t.course,
@@ -24,7 +29,7 @@ export function reviewEntries(library: Library, problems: readonly Problem[], qu
         wave: waveOf(t),
         status: record?.statuses.at(-1)?.status ?? t.source.data.status,
         writer: record?.writer ?? { session: "", model: "" },
-        reviews: [...runs].map(([model, n]) => ({ model, runs: n })),
+        reviews,
         flagged: record?.flagged ?? [],
         reads: queued?.reads ?? [],
         ...(queued !== undefined && { why: queued.why }),
