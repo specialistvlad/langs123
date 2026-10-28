@@ -1,0 +1,1084 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "export.schema.json",
+  "title": "langs123 library v1 export",
+  "description": "The new library's export, version 0.1.0 (requirements 9.2, 9.8, 9.10): library.json for the index screens and one file per course for its topics. Text keeps the inline marks of library/schema/library.schema.json; x-component names the component of the presentation map that shows each part.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "library": {
+      "$ref": "#/definitions/libraryFile"
+    },
+    "course": {
+      "$ref": "#/definitions/courseFile"
+    }
+  },
+  "definitions": {
+    "explain": {
+      "enum": [
+        "en",
+        "uk",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "pl",
+        "tr",
+        "id",
+        "vi",
+        "ja"
+      ]
+    },
+    "level": {
+      "enum": [
+        "A0",
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ]
+    },
+    "variety": {
+      "type": "string",
+      "pattern": "^[a-z]{2}-(?:[A-Z]{2}|[0-9]{3})$"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "translated": {
+      "description": "A text in each explanation language that has it: one string, or a list where a translation splits a sentence. Text keeps the library's inline marks.",
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/definitions/explain"
+      },
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ]
+      }
+    },
+    "sentence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "text": {
+          "$ref": "#/definitions/translated"
+        },
+        "span": {
+          "description": "Where a translation joins this sentence with the ones after it: how many it spans, by language; those sentences lack that language.",
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/explain"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 2
+          }
+        }
+      },
+      "x-component": "R2"
+    },
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "tr"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tr": {
+          "description": "The example's translation into each explanation language but the course's own.",
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/explain"
+          },
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        }
+      },
+      "x-component": "R3"
+    },
+    "form": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "form": {
+          "$ref": "#/definitions/form"
+        },
+        "ipa": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "$ref": "#/definitions/translated"
+        },
+        "ex": {
+          "$ref": "#/definitions/example"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "to": {
+          "$ref": "#/definitions/id"
+        },
+        "level": {
+          "$ref": "#/definitions/level"
+        }
+      },
+      "x-component": "R4"
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "fact"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "text": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/sentence"
+          }
+        }
+      },
+      "x-component": "R2"
+    },
+    "why": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "why"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "text": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/sentence"
+          }
+        }
+      },
+      "x-component": "R2"
+    },
+    "exampleBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "example"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/example"
+          }
+        }
+      },
+      "x-component": "R3"
+    },
+    "list": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "list"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/item"
+          }
+        }
+      },
+      "x-component": "R4"
+    },
+    "table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "axes",
+        "columns",
+        "rows"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "table"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "axes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rows",
+            "columns"
+          ],
+          "properties": {
+            "rows": {
+              "type": "string",
+              "minLength": 1
+            },
+            "columns": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "key",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "$ref": "#/definitions/translated"
+              }
+            }
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "features",
+              "cells"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "features": {
+                "type": "object",
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                }
+              },
+              "cells": {
+                "type": "object",
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "$ref": "#/definitions/sentence"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "form",
+                              "variety"
+                            ],
+                            "properties": {
+                              "form": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "variety": {
+                                "$ref": "#/definitions/variety"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-component": "R5"
+    },
+    "block": {
+      "type": "object",
+      "discriminator": {
+        "propertyName": "type"
+      },
+      "required": [
+        "type"
+      ],
+      "oneOf": [
+        {
+          "$ref": "#/definitions/fact"
+        },
+        {
+          "$ref": "#/definitions/why"
+        },
+        {
+          "$ref": "#/definitions/exampleBlock"
+        },
+        {
+          "$ref": "#/definitions/list"
+        },
+        {
+          "$ref": "#/definitions/table"
+        }
+      ]
+    },
+    "subtopic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "number",
+        "level",
+        "title",
+        "blocks"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "level": {
+          "$ref": "#/definitions/level"
+        },
+        "title": {
+          "$ref": "#/definitions/sentence"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/block"
+          }
+        }
+      },
+      "x-component": "R1"
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "in",
+        "level",
+        "wrong",
+        "right",
+        "rule",
+        "speakers"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "in": {
+          "$ref": "#/definitions/id"
+        },
+        "level": {
+          "$ref": "#/definitions/level"
+        },
+        "wrong": {
+          "type": "string",
+          "minLength": 1
+        },
+        "right": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "$ref": "#/definitions/example"
+            }
+          ]
+        },
+        "rule": {
+          "$ref": "#/definitions/sentence"
+        },
+        "speakers": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/explain"
+          },
+          "additionalProperties": {
+            "$ref": "#/definitions/sentence"
+          }
+        }
+      },
+      "x-component": "R6",
+      "title": "Common error"
+    },
+    "own": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blocks",
+        "errors",
+        "speakers"
+      ],
+      "properties": {
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "type",
+              "in",
+              "after"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "type": {
+                "enum": [
+                  "fact",
+                  "why",
+                  "example"
+                ]
+              },
+              "in": {
+                "$ref": "#/definitions/id"
+              },
+              "after": {
+                "$ref": "#/definitions/id"
+              },
+              "variety": {
+                "$ref": "#/definitions/variety"
+              },
+              "text": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "text"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "text",
+                    "tr"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "tr": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "in",
+              "level",
+              "wrong",
+              "right",
+              "rule",
+              "speakers"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "in": {
+                "$ref": "#/definitions/id"
+              },
+              "level": {
+                "$ref": "#/definitions/level"
+              },
+              "after": {
+                "$ref": "#/definitions/id"
+              },
+              "wrong": {
+                "type": "string",
+                "minLength": 1
+              },
+              "right": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "id",
+                      "text",
+                      "tr"
+                    ],
+                    "properties": {
+                      "id": {
+                        "$ref": "#/definitions/id"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "tr": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                ]
+              },
+              "rule": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "text"
+                ],
+                "properties": {
+                  "id": {
+                    "$ref": "#/definitions/id"
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "speakers": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "text"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "speakers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "x-component": "R9",
+      "description": "A language's own text, shown in its layer alone: its blocks after the block each follows, its speakers' errors and reasons."
+    },
+    "picture": {
+      "x-component": "R7",
+      "type": "object"
+    },
+    "topic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "slug",
+        "status",
+        "title",
+        "definition",
+        "levels",
+        "minutes",
+        "essence",
+        "subtopics",
+        "errors",
+        "own"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "slug": {
+          "$ref": "#/definitions/id"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "in-review",
+            "approved"
+          ]
+        },
+        "title": {
+          "$ref": "#/definitions/sentence"
+        },
+        "definition": {
+          "$ref": "#/definitions/sentence"
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/level"
+          }
+        },
+        "minutes": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/explain"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "essence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/item"
+          }
+        },
+        "picture": {
+          "$ref": "#/definitions/picture"
+        },
+        "subtopics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/subtopic"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "own": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/explain"
+          },
+          "additionalProperties": {
+            "$ref": "#/definitions/own"
+          }
+        }
+      },
+      "x-component": "R1"
+    },
+    "courseFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "course",
+        "topics"
+      ],
+      "properties": {
+        "version": {
+          "const": "0.1.0"
+        },
+        "course": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/topic"
+          }
+        }
+      },
+      "title": "Course file",
+      "description": "One course's topics, loaded when a reader opens the course (9.10)."
+    },
+    "course": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "name",
+        "source",
+        "varieties",
+        "levels",
+        "sections",
+        "path"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/explain"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source": {
+          "$ref": "#/definitions/explain"
+        },
+        "varieties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "code",
+              "name"
+            ],
+            "properties": {
+              "code": {
+                "$ref": "#/definitions/variety"
+              },
+              "name": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/level"
+          }
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name",
+              "topics"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "name": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "title",
+                    "definition",
+                    "levels",
+                    "minutes"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                      "$ref": "#/definitions/translated"
+                    },
+                    "definition": {
+                      "$ref": "#/definitions/translated"
+                    },
+                    "levels": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/level"
+                      }
+                    },
+                    "minutes": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "x-component": "I1"
+                }
+              }
+            },
+            "x-component": "R1"
+          }
+        },
+        "path": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "level",
+              "topics"
+            ],
+            "properties": {
+              "level": {
+                "$ref": "#/definitions/level"
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/id"
+                }
+              }
+            },
+            "x-component": "R1"
+          }
+        }
+      },
+      "x-component": "I1"
+    },
+    "libraryFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "source",
+        "site",
+        "levels",
+        "interface",
+        "courses"
+      ],
+      "properties": {
+        "version": {
+          "const": "0.1.0"
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "commit"
+          ],
+          "properties": {
+            "commit": {
+              "type": "string"
+            }
+          }
+        },
+        "site": {
+          "type": "object",
+          "description": "languages/site.yaml: the name, the URL, the credit and the licences, and the explanation languages."
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "x-component": "R1"
+          }
+        },
+        "interface": {
+          "type": "object",
+          "description": "languages/interface.yaml: the wording every app shares."
+        },
+        "courses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/course"
+          }
+        }
+      },
+      "title": "Library file",
+      "description": "What the index screens read: every course with its sections, its topics' titles, definitions, levels and reading minutes, and its study path."
+    }
+  }
+}

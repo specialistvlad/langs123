@@ -1,7 +1,7 @@
 // The topic's shape and voice: each rule passes the fixture and names its written case.
 import { expect, test } from "bun:test";
 import type { Block } from "../../generated/library-v1.ts";
-import { lintCase } from "./case.ts";
+import { type Case, lintCase } from "./case.ts";
 import { sentences, wordCount } from "./shape.ts";
 
 const tour = { language: "en" as const, tour: { page: ["page"], topic: ["topic"], guide: ["guide"], course: ["course"] } };
@@ -57,11 +57,17 @@ test("SH-16: two facts in a row, and an example before its fact", () => {
     "forms: the subtopic opens with its fact",
     "forms: the subtopic gives the example of forms.fact in the block after it",
   ]);
-  expect(
-    lintCase("SH-16", (c) => {
-      c.course("en", "en", []);
-    }),
-  ).toEqual([]);
+  const alternatives = (c: Case): void => {
+    c.course("es", "es", ["es-419", "es-ES"]);
+    const facts: Block[] = ["es-419", "es-ES"].map((variety) => ({
+      id: `names.${variety}`,
+      type: "fact",
+      variety,
+      text: [{ id: `names.${variety}.1`, text: "Una regla." }],
+    }));
+    c.source.subtopics[0]?.blocks.unshift(...facts);
+  };
+  expect(lintCase("SH-16", alternatives)).toEqual([]);
 });
 
 test("SH-18: a subtopic of two whys", () => {

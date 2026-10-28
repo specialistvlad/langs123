@@ -15,6 +15,28 @@ function tones(theme: "light" | "dark", code: string, design?: string): LevelTon
   return { ink: t.ink, tint: t.tint, strong: t.strong, pill: t.pill, pillInk: t["pill-ink"] };
 }
 
+// The level scale with each level's colours in the design given, the default design when none is (tokens.ts).
+export const levelScale = (design?: string): Library["levels"] =>
+  LEVEL_INFO.map((l) => ({
+    code: l.code,
+    name: l.name,
+    description: l.description,
+    colors: { light: tones("light", l.code, design), dark: tones("dark", l.code, design) },
+  }));
+
+// The commit the library is exported from.
+export const commitOf = (): string => Bun.spawnSync(["git", "-C", ROOT, "rev-parse", "--short", "HEAD"]).stdout.toString().trim();
+
+// The site's identity as an export carries it.
+export const siteOf = (): Library["site"] => ({
+  name: SITE.name,
+  url: SITE.url,
+  repository: SITE.repository,
+  credit: SITE.credit,
+  licences: SITE.licences,
+  explain: SITE.explain,
+});
+
 // The whole library: configuration every reader shares (site, credit and licences, explanation languages,
 // level scale, interface wording), the languages being learned with their sections and study path, and
 // every written topic by id.
@@ -24,23 +46,10 @@ function tones(theme: "light" | "dark", code: string, design?: string): LevelTon
 export async function exportLibrary(only?: readonly string[], design?: string): Promise<Library> {
   const curriculum = await loadCurriculum();
   const refs = await loadTopics(curriculum);
-  const commit = Bun.spawnSync(["git", "-C", ROOT, "rev-parse", "--short", "HEAD"]).stdout.toString().trim();
   return {
-    source: { commit },
-    site: {
-      name: SITE.name,
-      url: SITE.url,
-      repository: SITE.repository,
-      credit: SITE.credit,
-      licences: SITE.licences,
-      explain: SITE.explain,
-    },
-    levels: LEVEL_INFO.map((l) => ({
-      code: l.code,
-      name: l.name,
-      description: l.description,
-      colors: { light: tones("light", l.code, design), dark: tones("dark", l.code, design) },
-    })),
+    source: { commit: commitOf() },
+    site: siteOf(),
+    levels: levelScale(design),
     interface: INTERFACE,
     languages: curriculum.languages.map((lang) => ({
       code: lang.code,

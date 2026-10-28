@@ -19,6 +19,7 @@ const SYNCED: Synced[] = [
   ...NAMES.map((name) => ({ dir: "languages/schema", name, out: name })),
   { dir: "languages/schema", name: "library" },
   { dir: "library/schema", name: "library", out: "library-v1" },
+  { dir: "library/schema", name: "export", out: "export-v1" },
 ];
 const check = process.argv.includes("--check");
 
@@ -92,6 +93,6 @@ else if (!(await Bun.file(keysFile).exists()) || (await Bun.file(keysFile).text(
 console.log(
   check
     ? `stale files: ${stale}`
-    : `wrote the explanation languages of site.yaml into the schemas and generated ${NAMES.length + 2} type files into scripts/generated/`,
+    : `wrote the explanation languages of site.yaml into the schemas and generated ${NAMES.length + 3} type files into scripts/generated/`,
 );
 process.exit(stale > 0 ? 1 : 0);

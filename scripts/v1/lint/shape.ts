@@ -1,6 +1,7 @@
 // The topic's shape: the title names the subject (SH-01), the definition is one sentence (SH-03), the opening
 // speaks of the subject (SH-08), every essence line opens a subtopic and every subtopic is opened (SH-12), a
-// subtopic gives its fact, then its example (SH-16), and holds at most one why (SH-18).
+// subtopic gives its fact, then its example, its variety alternatives counting as one fact (SH-16), and holds at
+// most one why for each reader (SH-18).
 import type { Block } from "../../generated/library-v1.ts";
 import type { Topic } from "../library.ts";
 import { plain } from "../marks.ts";
@@ -20,6 +21,15 @@ export const sentences = (text: string): string[] =>
 
 const topicsOf = (lint: Lint, courses: string[] | undefined): Topic[] =>
   lint.library.courses.filter((c) => courses?.includes(c.course) ?? true).flatMap((c) => c.topics);
+
+// A subtopic's blocks with each run of fact blocks that stand as alternatives, a block of a variety beside
+// another, counted as one: a reader reads one of them (SH-16).
+function alternativesAsOne(blocks: Block[]): Block[] {
+  return blocks.filter((b, n) => {
+    const before = blocks[n - 1];
+    return !(b.type === "fact" && before?.type === "fact" && (b.variety !== undefined || before.variety !== undefined));
+  });
+}
 
 // The blocks of a subtopic that a reader of each variety sees, for every variety of the course, or once.
 function views(blocks: Block[], varieties: string[]): Block[][] {
@@ -98,10 +108,12 @@ export const SHAPE: LintRule[] = [
               const found = new Set<string>();
               for (const blocks of views(s.blocks, c.index?.data.varieties ?? [])) {
                 if (id === "SH-18" && blocks.filter((b) => b.type === "why").length > 1) found.add("holds at most one why");
-                if (id === "SH-16" && blocks[0]?.type !== "fact") found.add("opens with its fact");
-                blocks.forEach((b, n) => {
-                  const next = blocks[n + 1]?.type ?? "";
-                  if (id === "SH-16" && b.type === "fact" && !["example", "list", "table"].includes(next)) {
+              }
+              if (id === "SH-16") {
+                const order = alternativesAsOne(s.blocks);
+                if (order[0]?.type !== "fact") found.add("opens with its fact");
+                order.forEach((b, n) => {
+                  if (b.type === "fact" && !["example", "list", "table"].includes(order[n + 1]?.type ?? "")) {
                     found.add(`gives the example of ${b.id} in the block after it`);
                   }
                 });

@@ -11,19 +11,49 @@
 // columns carry their titles, their sentence as a group, merge and center, as the website lays them out.
 // `for` lists the explanation languages an element serves. Every leaf keeps its level; readers derive the
 // ranges of blocks, sections and topics from the leaves, as levels.ts does.
-// Run: npm run export; npm run export -- --design <name> carries that design's level colours (tokens.ts).
+// With --library v1, it writes the new library's export (scripts/v1/export/library.ts) into build/data/v1/:
+// library.json and one file per course, described by library/schema/export.schema.json.
+// Run: npm run export; npm run export -- --design <name> carries that design's level colours (tokens.ts);
+//      npm run export -- --library v1 [root] [--drafts]
 import { mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { designArg } from "../apps/web/tokens.ts";
-import { exportLibrary } from "./export/library.ts";
+import { exportLibrary as exportToday } from "./export/library.ts";
+import type { Library } from "./export/types.ts";
 import { ROOT } from "./lib.ts";
+import { exportV1, type LibraryV1, type V1Options } from "./v1/export/library.ts";
 
 export type * from "./export/types.ts";
-export { exportLibrary } from "./export/library.ts";
+export type { LibraryV1, V1Options } from "./v1/export/library.ts";
 
 export const LIBRARY_FILE = join(ROOT, "build", "data", "library.json");
+export const LIBRARY_V1_DIR = join(ROOT, "build", "data", "v1");
 
-if (import.meta.main) {
+// The library's export: today's library.json, of the topics given or all, in a design; or, given { library: "v1" },
+// the new library's files.
+export function exportLibrary(options: V1Options): Promise<LibraryV1>;
+export function exportLibrary(only?: readonly string[], design?: string): Promise<Library>;
+export function exportLibrary(first?: readonly string[] | V1Options, design?: string): Promise<Library | LibraryV1> {
+  return first !== undefined && "library" in first ? exportV1(first) : exportToday(first, design);
+}
+
+const args = process.argv.slice(2);
+const at = args.indexOf("--library");
+if (import.meta.main && at >= 0 && args[at + 1] === "v1") {
+  const root = args[at + 2]?.startsWith("--") === false ? args[at + 2] : undefined;
+  const v1 = await exportLibrary({
+    library: "v1",
+    drafts: args.includes("--drafts"),
+    design: designArg(args),
+    ...(root !== undefined && { root }),
+  });
+  await mkdir(LIBRARY_V1_DIR, { recursive: true });
+  await Bun.write(join(LIBRARY_V1_DIR, "library.json"), JSON.stringify(v1.library));
+  for (const course of v1.courses) await Bun.write(join(LIBRARY_V1_DIR, `${course.course}.json`), JSON.stringify(course));
+  console.log(
+    `build/data/v1: library.json and ${v1.courses.length} course files, ${v1.courses.reduce((n, c) => n + c.topics.length, 0)} topics`,
+  );
+} else if (import.meta.main) {
   const library = await exportLibrary(undefined, designArg(process.argv.slice(2)));
   await mkdir(dirname(LIBRARY_FILE), { recursive: true });
   await Bun.write(LIBRARY_FILE, JSON.stringify(library));

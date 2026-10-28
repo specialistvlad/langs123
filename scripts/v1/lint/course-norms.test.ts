@@ -133,7 +133,7 @@ test("NO-29 and NO-31: Spanish vosotros carries es-ES, and voseo stands in an es
       all(es, (c) => (fact(c).text[0] = vos as never)),
       { words: [ES] },
     ),
-  ).toEqual(["names.fact.1: vos stands in a fact block carrying es-419"]);
+  ).toEqual(["names.fact.1: vos stands in an element carrying es-419"]);
   expect(
     lintCase(
       "NO-31",

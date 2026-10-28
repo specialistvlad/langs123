@@ -8,11 +8,13 @@ test("api.ts exports the build, the export, the search, the library's readers an
     [
       "LEVELS",
       "LIBRARY_FILE",
+      "LIBRARY_V1_DIR",
       "RULES_FILE",
       "ROOT",
       "SAMPLE",
       "SEARCH_CASES",
       "SITE",
+      "VERSION",
       "build",
       "designArg",
       "exportLibrary",

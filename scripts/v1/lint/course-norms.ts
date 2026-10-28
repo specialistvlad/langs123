@@ -5,7 +5,7 @@
 // in its own script beyond them (NO-23), every kanji with its reading, in its text and in the terms of any
 // explanation (NO-24), A0 examples in kana (NO-25) and A1
 // and A2 examples with the kanji of their level (NO-26); Spanish vosotros carries es-ES (NO-29) and voseo stands in
-// es-419 fact blocks (NO-31); the affricates of Québec carry fr-CA (NO-33); a swap holds each variety's form once,
+// elements carrying es-419 (NO-31); the affricates of Québec carry fr-CA (NO-33); a swap holds each variety's form once,
 // side by side (NO-34), the forms differing (NO-51).
 import { plain, marksOf, swapsOf } from "../marks.ts";
 import type { Topic } from "../library.ts";
@@ -146,9 +146,9 @@ export const COURSE_NORMS: LintRule[] = [
     id: "NO-31",
     check: (lint, scope) =>
       textsIn(lint, scope).flatMap((t) => {
-        if (t.part === "title" || t.part === "subtopic title" || (t.variety === "es-419" && t.blockType === "fact")) return [];
+        if (t.part === "title" || t.part === "subtopic title" || t.variety === "es-419") return [];
         const found = wordsIn(spanishOutside(t, "es-419"), lint.lexicon.words.get("es")?.voseo);
-        return found.map((w) => problem("NO-31", t, `${w} stands in a fact block carrying es-419`));
+        return found.map((w) => problem("NO-31", t, `${w} stands in an element carrying es-419`));
       }),
   },
   {
