@@ -6,7 +6,7 @@
 // question's target.
 import { LEVELS } from "../lib.ts";
 import { PLAN } from "../v1/export/synthetic.ts";
-import { meets, summed, type Tally } from "./calibrate.ts";
+import { meets, summed, type Tally } from "./tally.ts";
 
 export interface SessionLine {
   topic: string;

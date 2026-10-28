@@ -4,7 +4,7 @@
 import { afterAll, expect, test } from "bun:test";
 import { cp, mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import type { TopicReviewRecord } from "../generated/library-v1.ts";
 import { readRules, RULES_FILE } from "../rule-catalog.ts";
 import { fixture } from "../v1/fixture.ts";
@@ -138,7 +138,7 @@ afterAll(async () => {
 
 test("review writes each topic's record beside it, its report, the sessions and the queue; a topic the checks fail stays out", async () => {
   const root = join(scratch, "samples");
-  await cp(SAMPLES_ROOT, root, { recursive: true });
+  await cp(SAMPLES_ROOT, root, { recursive: true, filter: (from) => basename(from) !== "review.yaml" });
   const out = join(scratch, "out");
   const options = {
     runner: scripted({ source: [[finding("VO-07", "ex.apple")], [finding("VO-07", "ex.apple")]] }),

@@ -4,7 +4,7 @@
 import { afterAll, expect, test } from "bun:test";
 import { cp, mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import { checkRoot } from "./check.ts";
 import { convertSource, sampleIndex } from "./convert.ts";
 import { convertSamples } from "./convert-samples.ts";
@@ -132,7 +132,7 @@ afterAll(async () => {
 
 test("the four samples convert, and hold the schema, the layout and the alignment; the lint names only content's marks", async () => {
   const root = join(scratch, "samples");
-  await cp(SAMPLES_ROOT, root, { recursive: true });
+  await cp(SAMPLES_ROOT, root, { recursive: true, filter: (from) => basename(from) !== "review.yaml" });
   expect(await convertSamples(root)).toEqual([
     "en/index.yaml",
     "en/alphabet",

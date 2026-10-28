@@ -5,8 +5,9 @@ import { readRules, RULES_FILE } from "../rule-catalog.ts";
 import { typedLibrary } from "../v1/library.ts";
 import { LIBRARY_ROOT, readLibrary, SAMPLES_ROOT } from "../v1/load.ts";
 import { budgetReport, type SessionLine, topicsPerLevel } from "./budget.ts";
-import { calibrationReport, meets, type Pair, pairsRequest, type Plant, plantedRequests, summed, tally, tallyPairs } from "./calibrate.ts";
+import { type Pair, pairsRequest, type Plant, plantedRequests } from "./calibrate.ts";
 import type { Finding, Session } from "./run.ts";
+import { calibrationReport, meets, summed, tally, tallyPairs } from "./tally.ts";
 
 const catalog = await readRules(RULES_FILE);
 const { library } = typedLibrary(await readLibrary(SAMPLES_ROOT));
@@ -28,7 +29,10 @@ test("every planted case stands in a request that asks its rule, its text in pla
   expect(source?.request.prompt).toContain("The 26 letters of the English alphabet and their names");
   const de = planted.find((p) => p.request.language === "de");
   expect(de?.request.prompt).toContain("Merken Sie sich");
-  expect(planted.find((p) => p.request.language === "uk")?.request.prompt).toContain("Цю частину варто прочитати двічі.");
+  expect(planted.find((p) => p.request.language === "uk")?.request.prompt).toContain("Українське {l1 uk під} — це {term under}.");
+  const ft01 = planted.flatMap((p) => [...p.ids].filter(([c]) => c.rule === "FT-01").map(([, ids]) => ids))[0];
+  expect(ft01).toContain("spelling.list");
+  expect(ft01).toContain("spelling.have");
   expect(() =>
     plantedRequests(library, catalog, [
       { rule: "SH-04", topic: "en.alphabet", file: "source", at: "def", set: { id: "nowhere", text: "x" } },
@@ -47,8 +51,11 @@ test("a session's findings tally as planted cases caught and sound elements flag
     session([
       { rule: "SH-04", at: "def" },
       { rule: "VO-02", at: "names-ee.fact.1" },
+      { rule: "SH-17", at: "names-ei.fact.1" },
+      { rule: "SH-17", at: "names-ei.fact.1" },
     ]),
   );
+  expect(tallies.find((t) => t.rule === "SH-17")).toMatchObject({ planted: 1, caught: 1, flagged: 0 });
   expect(tallies.find((t) => t.rule === "SH-04")).toEqual({ model: "m", rule: "SH-04", planted: 1, caught: 1, sound: 0, flagged: 0 });
   expect(tallies.find((t) => t.rule === "VO-02")).toMatchObject({ planted: 1, caught: 0, flagged: 1 });
   expect(meets({ model: "m", rule: "SH-04", planted: 1, caught: 1, sound: 0, flagged: 0 })).toBe(true);

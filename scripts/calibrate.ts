@@ -5,19 +5,11 @@
 import { appendFile, mkdir, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { budgetReport, type SessionLine } from "./review/budget.ts";
-import {
-  calibrationReport,
-  type Pair,
-  pairsRequest,
-  type Plant,
-  plantedRequests,
-  type Tally,
-  tally,
-  tallyPairs,
-} from "./review/calibrate.ts";
+import { type Pair, pairsRequest, type Plant, plantedRequests } from "./review/calibrate.ts";
 import { REVIEW_DIR } from "./review/index.ts";
 import type { Request } from "./review/request.ts";
 import { claudeAttempt, runnerOf, type Session } from "./review/run.ts";
+import { calibrationReport, type Tally, tally, tallyPairs } from "./review/tally.ts";
 import { catalog } from "./v1/check.ts";
 import { typedLibrary } from "./v1/library.ts";
 import { LIBRARY_ROOT, readLibrary, SAMPLES_ROOT } from "./v1/load.ts";
