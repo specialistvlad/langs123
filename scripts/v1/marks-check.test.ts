@@ -11,7 +11,9 @@ const check = (change: (source: TopicSource, uk: TopicLanguageFile, f: LibraryFi
   const copy = files();
   const topic = copy.courses[0]?.topics[0];
   change(topic?.source?.data as TopicSource, topic?.languages[0]?.data as TopicLanguageFile, copy);
-  return checkFiles(copy, rules).problems.map((p) => `${p.rule ?? ""} ${p.file.split("/").pop() ?? ""} ${p.id ?? ""}: ${p.message}`);
+  return checkFiles(copy, rules)
+    .problems.filter((p) => p.rule !== "LA-10")
+    .map((p) => `${p.rule ?? ""} ${p.file.split("/").pop() ?? ""} ${p.id ?? ""}: ${p.message}`);
 };
 
 test("ST-06: each mark stands in the text it serves, and the grammar holds", () => {

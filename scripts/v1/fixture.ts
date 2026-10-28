@@ -6,6 +6,7 @@ import { tmpdir } from "node:os";
 import { join, relative } from "node:path";
 import type { CourseIndex, Localized, TopicLanguageFile } from "../generated/library-v1.ts";
 import { EXPLAIN_CODES, ROOT } from "../lib.ts";
+import { stamped } from "./fingerprints.ts";
 import { SOURCE } from "./fixture-source.ts";
 import type { LibraryFiles } from "./load.ts";
 
@@ -84,6 +85,8 @@ export const UK: TopicLanguageFile = {
     },
   ],
 };
+
+UK.fingerprints = stamped(SOURCE, UK);
 
 // A fresh copy of the library's files, as the loader gives them.
 export function files(): LibraryFiles {

@@ -1,11 +1,22 @@
 // The loader reads a library root from disk as the checks read it in memory, and names what it can't read.
-import { expect, test } from "bun:test";
-import { mkdir, writeFile } from "node:fs/promises";
+import { afterAll, expect, test } from "bun:test";
+import { mkdir, rm, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { ROOT } from "../lib.ts";
 import { checkRoot } from "./check.ts";
-import { files, named, write } from "./fixture.ts";
-import { languageOfFile, readLibrary } from "./load.ts";
+import { files, named, write as writeFiles } from "./fixture.ts";
+import { languageOfFile, type LibraryFiles, readLibrary } from "./load.ts";
+
+// Each library written here, removed once the tests end.
+const roots: string[] = [];
+const write = async (library: LibraryFiles): Promise<string> => {
+  const root = await writeFiles(library);
+  roots.push(root);
+  return root;
+};
+afterAll(async () => {
+  await Promise.all(roots.map((root) => rm(root, { recursive: true })));
+});
 
 test("readLibrary reads every course, topic and file of a root, and checkRoot finds the fixture whole", async () => {
   const library = files();

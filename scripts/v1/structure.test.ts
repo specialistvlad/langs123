@@ -48,7 +48,7 @@ test("LA-01 and LA-09: a language file names its own language, and none holds th
     const [uk] = topic(f).languages;
     topic(f).languages.push({ file: "library/en/letters/en.yaml", data: { ...(uk?.data as object), language: "en", blocks: [] } });
   });
-  expect(said(en)).toEqual(["LA-09 en is the course's source language, which source.yaml holds"]);
+  expect(said(en).filter((p) => !p.startsWith("FT-07"))).toEqual(["LA-09 en is the course's source language, which source.yaml holds"]);
   const misnamed = check((f) => Object.assign(topic(f).languages[0] ?? {}, { file: "library/en/letters/ja.yaml" }));
   expect(said(misnamed)).toEqual(["LA-01 the file of ja names the language uk"]);
 });
