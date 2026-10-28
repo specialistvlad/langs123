@@ -51,7 +51,7 @@ export function list(r: Reading, b: Extract<Block, { type: "list" }>): string {
       let lead: string;
       if (i.text === undefined) {
         const sound = i.ipa === undefined ? "" : `<span class="lx-j" aria-hidden="true"></span>${r.m(`{ipa ${i.ipa}}`)}`;
-        lead = `<p class="lx-p"><b class="rd-term">${esc(formText(i.form))}</b>${sound}</p>`;
+        lead = `<p class="lx-p"><b class="rd-term">${r.m(formText(i.form))}</b>${sound}</p>`;
       } else {
         const text = i.text;
         const lines = r.layers((l) => r.in(l, text));

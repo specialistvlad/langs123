@@ -157,3 +157,24 @@ test("a language's own errors and its speakers' own reasons show to readers of t
   expect(html).toContain('<span class="rd-fix">on</span> the table<span class="lx-tr">на столі</span>');
   expect(html).toContain('<p class="rd-err-r">on the table</p>');
 });
+
+test("no form, item or line of the samples shows a raw mark, in any language, variety or form", () => {
+  for (const t of v1.courses.flatMap((c) => c.topics)) {
+    const source = t.id.startsWith("es.") ? "es" : "en";
+    for (const language of Object.keys(t.title.text)) {
+      for (const variety of ["en-GB", "en-US", "es-ES", "es-419", "all"]) {
+        const r = new Reading(
+          t,
+          source,
+          Object.keys(t.title.text).sort((a) => (a === language ? -1 : 1)),
+          words(language),
+          1100,
+          variety,
+        );
+        for (const form of ["interleaved", "reveal", "side"] as const) {
+          expect(article(r, form), `${t.id} ${language} ${variety} ${form}`).not.toMatch(/\{(variant|term|target|ipa|l1)\b/);
+        }
+      }
+    }
+  }
+});

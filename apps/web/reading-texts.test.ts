@@ -19,6 +19,10 @@ test("every block of every sample written in the language has its text, and so d
     expect(Object.values(texts[topic.id] ?? {}).filter((text) => text === "")).toEqual([]);
   }
   expect(texts["en.alphabet"]?.["names-ei.list"]).toStartWith("A /eɪ/ apple яблуко H /eɪtʃ/ house будинок");
+  // A list item's form reads with its marks resolved, in each language's view.
+  for (const language of ["en", "uk", "ja"]) {
+    expect(readingTexts(v1, language)["en.words-of-place"]?.["opposite.list"]).toStartWith("opposite The bank is opposite the hotel.");
+  }
   // A space outside a mark whose variants drop belongs to the sentence and stays.
   expect(texts["en.present-simple"]?.["sound.list"]).toContain("She works /wɜːks/ in a shop.");
   expect(texts["en.present-simple"]?.["sound.list"]).toContain("She watches /ˈwɒtʃɪz/ TV.");

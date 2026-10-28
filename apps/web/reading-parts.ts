@@ -54,7 +54,7 @@ export function essence(r: Reading): string {
     .map((e) => {
       let form: string;
       let gloss: Translated | undefined;
-      if (e.ipa !== undefined) form = `${esc(formText(e.form))}<span class="lx-j" aria-hidden="true"></span>${still(`{ipa ${e.ipa}}`)}`;
+      if (e.ipa !== undefined) form = `${still(formText(e.form))}<span class="lx-j" aria-hidden="true"></span>${still(`{ipa ${e.ipa}}`)}`;
       else if (e.ex !== undefined) {
         form = still(e.ex.text);
         gloss = e.ex.tr;
