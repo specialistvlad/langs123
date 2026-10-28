@@ -180,7 +180,8 @@ says how an error is written.
   role only where the role changes the order or the layout (ST-10).
 - Each subtopic carries exactly one level (ST-11). Its rows, items, paragraphs and errors take that level, and the
   level field is the subtopic's alone (ST-12). A chosen level shows or hides whole subtopics.
-- The index states each topic's planned levels, and the levels of the topic's subtopics equal them (ST-14).
+- The index states each topic's planned levels, the keys of its `path`, and the levels of the topic's subtopics
+  equal them (ST-14).
 
 ## 7. Each language's norms
 
@@ -235,9 +236,9 @@ says how an error is written.
   Hepburn (*shi*, *tsu*, *Tōkyō*), beside its IPA (NO-22). Every other Japanese topic is written in Japanese
   script (NO-23).
 - In the Japanese course, a kanji in an example, a table cell or a form an explanation discusses carries its
-  reading in hiragana: 食(た)べます (NO-24). Examples at A0 are written in kana (NO-25); examples at A1 and A2 write
-  in kanji the words learners read in kanji at their level (日, 月, 人, 本, 何, 時, 食べる, 行く…) and every other
-  word in kana (NO-26).
+  reading in hiragana inside its kanji mark: `{kanji た 食}べます` (NO-24). Examples at A0 are written in kana
+  (NO-25); examples at A1 and A2 write in kanji the words of the course's `kanji.yaml` lists for A1 and A2 up to
+  their level (日, 月, 人, 本, 何, 時, 食べる, 行く…) and every other word in kana (NO-26).
 - A Japanese explanation writes kanji as a Japanese reader reads them, with no furigana or romaji; readings
   belong to the Japanese course's examples (NO-24, NO-57).
 - A Japanese explanation addresses the reader with no word for "you": the sentence is built without あなた
@@ -299,7 +300,8 @@ Each explanation language addresses the reader in its own way:
   the block's id; a block of that language's own carries `after:` the source block it follows (LA-05). Inside a
   block, each translated sentence pairs with a source sentence, by the sentence's id (LA-06).
 - A translation that joins or splits sentences where its language needs it records the pairing: which source
-  sentences make which translated sentence (LA-07).
+  sentences make which translated sentence (LA-07). A split is a list under its source sentence's id; a join stands
+  under the key of the sentences it joins, `s1 + s2`.
 - A fingerprint belongs to one source sentence, and a changed source sentence flags exactly that sentence
   (LA-08); a translated sentence carries the current fingerprint of its source sentence (LA-10).
 - A translation states the same facts in its own language's words and grammar terms. A language's file also
@@ -319,8 +321,8 @@ A course is defined through its index before any topic of it is written.
   course (IX-05). Each topic names its place in the study path, level by level (IX-06).
 - Each `replaces` entry names a topic that exists in today's library (IX-07), and a topic that treats the subject
   of one of today's topics names it in `replaces` (IX-24).
-- Each topic in the index states its subject, what it covers and its planned levels before any text of it is
-  written (IX-08).
+- Each topic in the index states its subject, what it covers and its planned levels, the keys of its `path`,
+  before any text of it is written (IX-08).
 - A course's index lists the sources it was drawn from, each with its name, its licence and what the index took
   from it (IX-09). It draws on at least two international, CEFR-aligned sources for its language (IX-10), and
   takes topics and levels from them while its own sentences are worded independently (IX-11).
@@ -343,14 +345,15 @@ A course is defined through its index before any topic of it is written.
   topic reaches it once it is approved (RV-03).
 - Each topic's review record holds each finding, its decision and what the writer changed (RV-04); a topic in
   review or approved has one (RV-16).
-- The review record names the writer's model family and the reviewer's, and the two differ (RV-05). Each finding
+- The review record names the writer's session and model version and the reviewer's, and the reviewer works in a
+  session apart from the writer's (RV-05). Each finding
   cites a rule id of the catalog or the source it rests on (RV-06), and every finding has the writer's answer:
   fixed, or declined with a reason (RV-07).
 - The conventions, every index, the samples and each level wave carry the owner's approval with its date,
   and each wave is written after the previous gate carries its approval (RV-08). Within a wave, the owner reads the Ukrainian and the English of every topic the checks flag (RV-09)
   and of one topic in ten of the rest, drawn at random (RV-10).
 - Each sentence of a translation says exactly what its source sentence says (RV-11). Each language's own errors
-  and norms are checked by two models whose verdicts agree (RV-12).
+  and norms are checked in two review runs whose verdicts agree (RV-12).
 - A topic carries one flag for each language it is written in: reviewed by a native speaker, yes or no (RV-13).
   The Ukrainian flag is yes on the topics the owner read in Ukrainian, and every other flag is no until native
   contributors join (RV-14). Every language shows on the site in the same form, reviewed or not (RV-15).
@@ -367,7 +370,8 @@ and the design system draws the picture.
 1. Read the topic's index entry: its subject, what it covers, its planned levels and its sources.
 2. Write the topic in its source language: title, definition, essence, subtopics, common errors.
 3. Translate it into each other explanation language, sentence by sentence (§8), with each language's norms (§7).
-4. A reviewer from another model family checks the draft against this catalog and the sources (§10).
+4. A Claude Code review session, apart from the writer's, checks the draft against this catalog and the sources
+   (§10).
 
 A writer works from the requirements, these conventions, the rule catalog, the course's index and the sources it
 names. Today's topics, in `languages/`, stay unread while the new library is written.
