@@ -37,6 +37,7 @@
   "definitions": {
     "explain": {
       "description": "An explanation language, from site.yaml.",
+      "x-component": "R9",
       "enum": [
         "en",
         "uk",
@@ -55,6 +56,7 @@
     "level": {
       "description": "A level of the CEFR scale, from levels.yaml.",
       "x-rule": "IX-17",
+      "x-component": "R1",
       "enum": [
         "A0",
         "A1",
@@ -68,6 +70,7 @@
     "status": {
       "description": "Where an index, an index entry or a topic stands in its review.",
       "x-rule": "RV-01",
+      "x-component": "build",
       "enum": [
         "draft",
         "in-review",
@@ -75,6 +78,7 @@
       ]
     },
     "date": {
+      "x-component": "build",
       "type": "string",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
       "title": "ISO date"
@@ -82,31 +86,37 @@
     "slug": {
       "description": "A section, topic or subtopic id: lowercase letters, digits and hyphens.",
       "x-rule": "IX-23",
+      "x-component": "build",
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "id": {
       "description": "The id of a block, sentence, item, example or reason: slugs joined by dots, unique in its topic and kept when its text changes.",
+      "x-component": "build",
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)*$"
     },
     "topicId": {
       "description": "A topic's address, <course>.<slug>.",
+      "x-component": "build",
       "type": "string",
       "pattern": "^[a-z]{2}\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "variety": {
       "description": "A variety of a course, such as en-GB or es-419.",
       "x-rule": "NO-28",
+      "x-component": "R8",
       "type": "string",
       "pattern": "^[a-z]{2}-(?:[A-Z]{2}|[0-9]{3})$"
     },
     "text": {
+      "x-component": "R2",
       "type": "string",
       "minLength": 1
     },
     "localized": {
       "description": "A name in every explanation language.",
+      "x-component": "I1",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -164,6 +174,7 @@
     },
     "sentence": {
       "description": "A sentence of explanation in the source language, translated in each language file under its id.",
+      "x-component": "R2",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -181,11 +192,13 @@
     },
     "form": {
       "description": "A form in the course language, left untranslated.",
+      "x-component": "R4",
       "type": "string",
       "minLength": 1
     },
     "example": {
       "description": "A sentence in the course language, translated as a whole under its id.",
+      "x-component": "R3",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -210,6 +223,7 @@
       "x-extra": {
         "level": "SH-13"
       },
+      "x-component": "R4",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -241,6 +255,7 @@
           "$ref": "#/definitions/id"
         },
         "form": {
+          "x-component": "R4",
           "anyOf": [
             {
               "$ref": "#/definitions/form"
@@ -261,6 +276,7 @@
           "$ref": "#/definitions/text"
         },
         "ex": {
+          "x-component": "R3",
           "$ref": "#/definitions/example"
         },
         "variety": {
@@ -277,6 +293,7 @@
       "x-extra": {
         "level": "ST-12"
       },
+      "x-component": "R4",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -307,6 +324,7 @@
           "$ref": "#/definitions/id"
         },
         "form": {
+          "x-component": "R4",
           "anyOf": [
             {
               "$ref": "#/definitions/form"
@@ -327,6 +345,7 @@
           "$ref": "#/definitions/text"
         },
         "ex": {
+          "x-component": "R3",
           "$ref": "#/definitions/example"
         },
         "variety": {
@@ -336,6 +355,7 @@
     },
     "fact": {
       "description": "The rule: its sentences.",
+      "x-component": "R2",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -348,12 +368,14 @@
           "$ref": "#/definitions/id"
         },
         "type": {
+          "x-component": "R2",
           "const": "fact"
         },
         "variety": {
           "$ref": "#/definitions/variety"
         },
         "text": {
+          "x-component": "R2",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -364,6 +386,7 @@
     },
     "why": {
       "description": "The one reason that helps a learner remember the rule: its sentences.",
+      "x-component": "R2",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -376,12 +399,14 @@
           "$ref": "#/definitions/id"
         },
         "type": {
+          "x-component": "R2",
           "const": "why"
         },
         "variety": {
           "$ref": "#/definitions/variety"
         },
         "text": {
+          "x-component": "R2",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -391,6 +416,7 @@
       }
     },
     "exampleBlock": {
+      "x-component": "R3",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -403,12 +429,14 @@
           "$ref": "#/definitions/id"
         },
         "type": {
+          "x-component": "R3",
           "const": "example"
         },
         "variety": {
           "$ref": "#/definitions/variety"
         },
         "items": {
+          "x-component": "R3",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -418,6 +446,7 @@
       }
     },
     "list": {
+      "x-component": "R4",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -430,12 +459,14 @@
           "$ref": "#/definitions/id"
         },
         "type": {
+          "x-component": "R4",
           "const": "list"
         },
         "variety": {
           "$ref": "#/definitions/variety"
         },
         "items": {
+          "x-component": "R4",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -446,6 +477,7 @@
     },
     "feature": {
       "description": "A grammatical feature a table crosses, after UniMorph.",
+      "x-component": "R5",
       "enum": [
         "person",
         "number",
@@ -456,6 +488,7 @@
     },
     "features": {
       "description": "The values a table row carries; a feature it omits covers every value.",
+      "x-component": "R5",
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -497,11 +530,13 @@
       }
     },
     "key": {
+      "x-component": "R5",
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "cell": {
       "description": "A form, a list of forms (each of one variety where it carries one), or a sentence naming its row.",
+      "x-component": "R5",
       "anyOf": [
         {
           "$ref": "#/definitions/form"
@@ -541,6 +576,7 @@
     "table": {
       "description": "A true grid: the two features it crosses, its columns and its rows.",
       "x-rule": "ST-03",
+      "x-component": "R5",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -555,12 +591,14 @@
           "$ref": "#/definitions/id"
         },
         "type": {
+          "x-component": "R5",
           "const": "table"
         },
         "variety": {
           "$ref": "#/definitions/variety"
         },
         "axes": {
+          "x-component": "R5",
           "type": "object",
           "additionalProperties": false,
           "required": [
@@ -577,6 +615,7 @@
           }
         },
         "columns": {
+          "x-component": "R5",
           "type": "array",
           "minItems": 2,
           "items": {
@@ -601,6 +640,7 @@
           }
         },
         "rows": {
+          "x-component": "R5",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -638,6 +678,12 @@
     "block": {
       "description": "A block of a subtopic: a fact, a why, an example, a list or a table.",
       "x-rule": "ST-01",
+      "x-component": [
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
       "type": "object",
       "discriminator": {
         "propertyName": "type"
@@ -665,6 +711,7 @@
     },
     "subtopic": {
       "description": "A numbered part of a topic: its level, its title and its blocks.",
+      "x-component": "R1",
       "type": "object",
       "x-extra": {
         "role": "ST-10"
@@ -688,6 +735,7 @@
           "$ref": "#/definitions/sentence"
         },
         "blocks": {
+          "x-component": "R1",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -699,6 +747,7 @@
     "speakers": {
       "description": "Each language whose speakers make an error, with its reason.",
       "x-rule": "ER-02",
+      "x-component": "R6",
       "type": "object",
       "minProperties": 1,
       "propertyNames": {
@@ -715,6 +764,7 @@
         "level": "ST-12"
       },
       "x-rule": "ER-06",
+      "x-component": "R6",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -737,6 +787,7 @@
           "$ref": "#/definitions/form"
         },
         "right": {
+          "x-component": "R6",
           "anyOf": [
             {
               "$ref": "#/definitions/form"
@@ -755,6 +806,7 @@
       }
     },
     "place": {
+      "x-component": "R7",
       "enum": [
         "contained",
         "on-surface",
@@ -773,6 +825,7 @@
     },
     "object": {
       "description": "An object the picture library draws.",
+      "x-component": "R7",
       "enum": [
         "ball",
         "box",
@@ -783,6 +836,7 @@
     },
     "picture": {
       "description": "A scene grid: one cell per essence line, placing the figure against the ground.",
+      "x-component": "R7",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -797,6 +851,7 @@
           "$ref": "#/definitions/id"
         },
         "kind": {
+          "x-component": "R7",
           "const": "scene-grid"
         },
         "figure": {
@@ -806,6 +861,7 @@
           "$ref": "#/definitions/object"
         },
         "cells": {
+          "x-component": "R7",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -845,6 +901,7 @@
       "title": "Topic source",
       "description": "A topic's source file: its structure, its text in the course language, its explanations in the source language, its errors and its status.",
       "x-rule": "SH-02",
+      "x-component": "R1",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -866,6 +923,7 @@
         },
         "nativeReview": {
           "x-rule": "RV-13",
+          "x-component": "build",
           "type": "boolean"
         },
         "title": {
@@ -876,6 +934,7 @@
         },
         "essence": {
           "x-rule": "SH-11",
+          "x-component": "R4",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -884,6 +943,7 @@
         },
         "subtopics": {
           "x-rule": "SH-14",
+          "x-component": "R1",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -892,6 +952,7 @@
         },
         "errors": {
           "x-rule": "SH-24",
+          "x-component": "R6",
           "type": "array",
           "items": {
             "$ref": "#/definitions/error"
@@ -904,6 +965,7 @@
     },
     "translation": {
       "description": "A source sentence's translation: one string, or a list where it splits the sentence.",
+      "x-component": "R9",
       "anyOf": [
         {
           "$ref": "#/definitions/text"
@@ -918,6 +980,7 @@
       ]
     },
     "ownExample": {
+      "x-component": "R9",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -940,6 +1003,7 @@
     "ownBlock": {
       "description": "A block of a language's own, for its readers alone: placed in a subtopic after a source block.",
       "x-rule": "ER-05",
+      "x-component": "R9",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -953,6 +1017,7 @@
           "$ref": "#/definitions/id"
         },
         "type": {
+          "x-component": "R9",
           "enum": [
             "fact",
             "why",
@@ -969,6 +1034,7 @@
           "$ref": "#/definitions/variety"
         },
         "text": {
+          "x-component": "R9",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -976,6 +1042,7 @@
           }
         },
         "items": {
+          "x-component": "R9",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -1014,6 +1081,10 @@
     "ownError": {
       "description": "An error of a language's own speakers, in its errors part.",
       "x-rule": "ER-05",
+      "x-component": [
+        "R6",
+        "R9"
+      ],
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1038,6 +1109,7 @@
           "$ref": "#/definitions/form"
         },
         "right": {
+          "x-component": "R9",
           "anyOf": [
             {
               "$ref": "#/definitions/form"
@@ -1058,6 +1130,7 @@
     "language": {
       "title": "Topic language file",
       "description": "One explanation language of a topic: its translations keyed by the source's ids, the fingerprints they were written from, and its own blocks, errors and speakers.",
+      "x-component": "R9",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1071,10 +1144,12 @@
         },
         "nativeReview": {
           "x-rule": "RV-13",
+          "x-component": "build",
           "type": "boolean"
         },
         "text": {
           "x-rule": "LA-07",
+          "x-component": "R9",
           "type": "object",
           "propertyNames": {
             "x-rule": "LA-07",
@@ -1085,6 +1160,7 @@
           }
         },
         "fingerprints": {
+          "x-component": "build",
           "type": "object",
           "propertyNames": {
             "$ref": "#/definitions/id"
@@ -1095,18 +1171,21 @@
           }
         },
         "blocks": {
+          "x-component": "R9",
           "type": "array",
           "items": {
             "$ref": "#/definitions/ownBlock"
           }
         },
         "errors": {
+          "x-component": "R9",
           "type": "array",
           "items": {
             "$ref": "#/definitions/ownError"
           }
         },
         "speakers": {
+          "x-component": "R9",
           "type": "object",
           "propertyNames": {
             "$ref": "#/definitions/id"
@@ -1120,6 +1199,7 @@
     "cluster": {
       "description": "A practical cluster (IX-13).",
       "x-rule": "IX-12",
+      "x-component": "build",
       "enum": [
         "question-words",
         "words-of-place",
@@ -1139,6 +1219,7 @@
     "entry": {
       "description": "A topic in its section of the index, defined before its text is written.",
       "x-rule": "IX-08",
+      "x-component": "I1",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1156,6 +1237,7 @@
           "$ref": "#/definitions/text"
         },
         "covers": {
+          "x-component": "build",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -1165,6 +1247,10 @@
         "path": {
           "description": "The topic's place in the study path at each level it is planned at.",
           "x-rule": "IX-06",
+          "x-component": [
+            "I1",
+            "R1"
+          ],
           "type": "object",
           "minProperties": 1,
           "propertyNames": {
@@ -1180,12 +1266,14 @@
           "$ref": "#/definitions/status"
         },
         "concepts": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "$ref": "#/definitions/slug"
           }
         },
         "replaces": {
+          "x-component": "build",
           "type": "string",
           "pattern": "^[a-z]{2}\\.[a-z0-9-]+\\.[a-z0-9-]+$"
         },
@@ -1193,10 +1281,12 @@
           "$ref": "#/definitions/cluster"
         },
         "size": {
+          "x-component": "build",
           "type": "integer",
           "minimum": 1
         },
         "script": {
+          "x-component": "build",
           "enum": [
             "alphabet",
             "sounds",
@@ -1205,12 +1295,14 @@
           ]
         },
         "needs": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "$ref": "#/definitions/id"
           }
         },
         "misleads": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "object",
@@ -1239,6 +1331,7 @@
       "title": "Course index",
       "description": "A course's index: its name, source language, varieties, sources and sections, each with its topics in order.",
       "x-rule": "IX-01",
+      "x-component": "I1",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1251,6 +1344,7 @@
       ],
       "properties": {
         "course": {
+          "x-component": "I1",
           "type": "string",
           "pattern": "^[a-z]{2}$"
         },
@@ -1263,6 +1357,7 @@
         },
         "varieties": {
           "x-rule": "NO-27",
+          "x-component": "Variety control",
           "type": "array",
           "minItems": 2,
           "uniqueItems": true,
@@ -1275,6 +1370,7 @@
         },
         "sources": {
           "x-rule": "IX-09",
+          "x-component": "R4",
           "type": "array",
           "items": {
             "x-rule": "IX-09",
@@ -1317,6 +1413,7 @@
         },
         "sections": {
           "x-rule": "IX-02",
+          "x-component": "R1",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -1347,6 +1444,7 @@
       }
     },
     "finding": {
+      "x-component": "build",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1365,6 +1463,7 @@
           "$ref": "#/definitions/explain"
         },
         "rule": {
+          "x-component": "build",
           "type": "string",
           "pattern": "^[A-Z]{2}-\\d{2}$"
         },
@@ -1378,6 +1477,7 @@
           "$ref": "#/definitions/text"
         },
         "answer": {
+          "x-component": "build",
           "enum": [
             "fixed",
             "declined"
@@ -1392,6 +1492,7 @@
       "title": "Topic review record",
       "description": "A topic's review record: its writer, its statuses, each review run with its findings and the writer's answers, and the owner's readings.",
       "x-rule": "RV-04",
+      "x-component": "build",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1403,6 +1504,7 @@
           "$ref": "#/definitions/session"
         },
         "statuses": {
+          "x-component": "build",
           "type": "array",
           "minItems": 1,
           "items": {
@@ -1427,6 +1529,7 @@
           }
         },
         "reviews": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "object",
@@ -1464,6 +1567,7 @@
           }
         },
         "flagged": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "string",
@@ -1471,6 +1575,7 @@
           }
         },
         "owner": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "object",
@@ -1500,6 +1605,7 @@
       }
     },
     "session": {
+      "x-component": "build",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1519,6 +1625,7 @@
       "title": "Approvals",
       "description": "The owner's approvals of the work's gates, each with its date; a wave carries the seed of its one-in-ten draw.",
       "x-rule": "RV-08",
+      "x-component": "build",
       "type": "array",
       "items": {
         "type": "object",
@@ -1549,6 +1656,7 @@
     "concepts": {
       "title": "Concept registry",
       "description": "The concept keys every course's index names its topics' concepts from.",
+      "x-component": "build",
       "type": "object",
       "propertyNames": {
         "$ref": "#/definitions/slug"
@@ -1569,6 +1677,7 @@
     "words": {
       "title": "Word lists",
       "description": "The words the linter reads for one explanation language: the words that turn a sentence away from the subject (SH-08, VO-04), the word for a topic (NO-45), the forms of address an explanation leaves out (NO-35 to NO-44, NO-58), spellings (NO-01, NO-52, NO-53, NO-56), the Spanish vosotros and voseo forms (NO-29, NO-31) and the Turkish proper names (NO-55). An entry all in lowercase matches in any case; one with a capital matches as written.",
+      "x-component": "build",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1579,6 +1688,7 @@
           "$ref": "#/definitions/explain"
         },
         "tour": {
+          "x-component": "build",
           "type": "object",
           "additionalProperties": false,
           "properties": {
@@ -1613,6 +1723,7 @@
           }
         },
         "topic": {
+          "x-component": "build",
           "type": "object",
           "additionalProperties": false,
           "required": [
@@ -1633,6 +1744,7 @@
           }
         },
         "address": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "string",
@@ -1640,6 +1752,7 @@
           }
         },
         "spellings": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "object",
@@ -1659,6 +1772,7 @@
           }
         },
         "vosotros": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "string",
@@ -1666,6 +1780,7 @@
           }
         },
         "voseo": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "string",
@@ -1673,6 +1788,7 @@
           }
         },
         "names": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "string",
@@ -1685,6 +1801,7 @@
       "title": "Kanji by level",
       "description": "The words Japanese examples write in kanji at A1 and at A2, with the source of the list and its licence (NO-26).",
       "x-rule": "NO-26",
+      "x-component": "build",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -1692,6 +1809,7 @@
       ],
       "properties": {
         "source": {
+          "x-component": "build",
           "type": "object",
           "additionalProperties": false,
           "required": [
@@ -1713,6 +1831,7 @@
           }
         },
         "A1": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "object",
@@ -1733,6 +1852,7 @@
           }
         },
         "A2": {
+          "x-component": "build",
           "type": "array",
           "items": {
             "type": "object",
@@ -1758,6 +1878,7 @@
       "title": "Search needs",
       "description": "The search needs of one explanation language's readers, each with the queries behind it, where it was found, and the topic that answers it or the reason none does (IX-16).",
       "x-rule": "IX-16",
+      "x-component": "build",
       "type": "array",
       "items": {
         "type": "object",

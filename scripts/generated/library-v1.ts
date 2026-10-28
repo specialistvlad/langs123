@@ -71,7 +71,7 @@ export type ListItem = ListItem1 & {
   form?: Form | Form[];
   ipa?: Form;
   text?: Text;
-  ex?: Example;
+  ex?: Example2;
   variety?: Variety;
 };
 export type ListItem1 = {};
@@ -320,7 +320,15 @@ export interface ExampleBlock {
   /**
    * @minItems 1
    */
-  items: Example[];
+  items: Example1[];
+}
+/**
+ * A sentence in the course language, translated as a whole under its id.
+ */
+export interface Example1 {
+  id: Id;
+  text: Text;
+  variety?: Variety;
 }
 export interface List {
   id: Id;
@@ -330,6 +338,14 @@ export interface List {
    * @minItems 1
    */
   items: ListItem[];
+}
+/**
+ * A sentence in the course language, translated as a whole under its id.
+ */
+export interface Example2 {
+  id: Id;
+  text: Text;
+  variety?: Variety;
 }
 /**
  * A true grid: the two features it crosses, its columns and its rows.
@@ -381,7 +397,7 @@ export interface CommonError {
    */
   in: string;
   wrong: Form;
-  right: Form | Example;
+  right: Form | Example1;
   rule: Sentence;
   speakers: Speakers;
 }
