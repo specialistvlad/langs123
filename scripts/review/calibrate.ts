@@ -29,6 +29,8 @@ export interface Pair {
 
 export interface Planted {
   request: Request;
+  // The planted copy of the sample the request reads.
+  topic: Topic;
   plants: Plant[];
   // Each case's ids a finding may name: the element's, those inside it and its block's.
   ids: Map<Plant, string[]>;
@@ -100,6 +102,7 @@ export function plantedRequests(library: Library, catalog: Catalog, plants: Plan
         const plantsHere = own.filter((p) => p.file === file);
         const language = topic.languages.find((l) => l.data.language === file)?.data;
         out.push({
+          topic,
           request: language === undefined ? sourceRequest(topic, copy, catalog) : languageRequest(topic, copy, language, catalog),
           plants: plantsHere,
           ids: new Map(plantsHere.map((p) => [p, idsOf(topic, p)])),
