@@ -786,10 +786,10 @@
           "const": "scene-grid"
         },
         "figure": {
-          "$ref": "#/definitions/drawnObject"
+          "$ref": "#/definitions/object"
         },
         "ground": {
-          "$ref": "#/definitions/drawnObject"
+          "$ref": "#/definitions/object"
         },
         "cells": {
           "x-component": "R7",
@@ -812,13 +812,13 @@
               "ground": {
                 "anyOf": [
                   {
-                    "$ref": "#/definitions/drawnObject"
+                    "$ref": "#/definitions/object"
                   },
                   {
                     "type": "array",
                     "minItems": 2,
                     "items": {
-                      "$ref": "#/definitions/drawnObject"
+                      "$ref": "#/definitions/object"
                     }
                   }
                 ]
@@ -1139,6 +1139,20 @@
       "title": "Library file",
       "description": "What the index screens read: every course with its sections, its topics' titles, definitions, levels and reading minutes, and its study path."
     },
+    "object": {
+      "description": "An object the picture library draws.",
+      "x-component": "R7",
+      "enum": [
+        "ball",
+        "box",
+        "house",
+        "cover",
+        "table",
+        "shelf",
+        "road"
+      ],
+      "title": "Drawn object"
+    },
     "place": {
       "x-component": "R7",
       "enum": [
@@ -1156,17 +1170,6 @@
         "across",
         "outside"
       ]
-    },
-    "drawnObject": {
-      "description": "An object the picture library draws.",
-      "x-component": "R7",
-      "enum": [
-        "ball",
-        "box",
-        "house",
-        "cover"
-      ],
-      "title": "Drawn object"
     }
   }
 }

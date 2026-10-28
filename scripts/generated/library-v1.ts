@@ -96,7 +96,7 @@ export type Cell =
 /**
  * An object the picture library draws.
  */
-export type DrawnObject = "ball" | "box" | "house" | "cover";
+export type DrawnObject = "ball" | "box" | "house" | "cover" | "table" | "shelf" | "road";
 export type Place =
   | "contained"
   | "on-surface"

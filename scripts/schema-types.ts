@@ -1,4 +1,5 @@
 // Generates TypeScript types from the JSON Schemas into scripts/generated/: schemas and code share one source.
+// The new library's export schema takes its picture, drawn objects and places from the data schema.
 // The explanation languages come from site.yaml alone: every list of them in a schema, an enum, a
 // required list or the properties of a localized value, is written from it first.
 // Run: npm run types   (--check fails when a schema or a generated file is out of date)
@@ -44,11 +45,23 @@ function withCodes(node: unknown): unknown {
   );
 }
 
+// The definitions the new library's export takes from its data schema, so each list stands in one place: a picture,
+// the objects it draws and the places it puts them in.
+interface Schema {
+  definitions: Record<string, unknown>;
+}
+const LIBRARY = (await Bun.file(join(import.meta.dir, "..", "library", "schema", "library.schema.json")).json()) as Schema;
+const SHARED = ["picture", "object", "place"];
+const withShared = (name: string, schema: Schema): Schema =>
+  name !== "export"
+    ? schema
+    : { ...schema, definitions: { ...schema.definitions, ...Object.fromEntries(SHARED.map((d) => [d, LIBRARY.definitions[d]])) } };
+
 let stale = 0;
 for (const { dir, name, out } of SYNCED) {
   const path = join(import.meta.dir, "..", dir, `${name}.schema.json`);
   const source = await Bun.file(path).text();
-  const synced = `${JSON.stringify(withCodes(JSON.parse(source)), null, 2)}\n`;
+  const synced = `${JSON.stringify(withCodes(withShared(dir === "library/schema" ? name : "", JSON.parse(source) as Schema)), null, 2)}\n`;
   if (synced !== source) {
     if (check) {
       console.log(`  ✗ ${dir}/${name}.schema.json is out of date with site.yaml: run npm run types`);
