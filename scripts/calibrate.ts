@@ -12,6 +12,7 @@ import { join } from "node:path";
 import { budgetReport, type SessionLine } from "./review/budget.ts";
 import { type Pair, pairsRequest, type Plant, plantedRequests } from "./review/calibrate.ts";
 import { flagsOf, flagsReport, mergeFlags } from "./review/flags.ts";
+import { REVIEW_MODELS } from "./review/pipeline.ts";
 import { REVIEW_DIR } from "./review/index.ts";
 import type { Request } from "./review/request.ts";
 import { claudeAttempt, runnerOf, type Session } from "./review/run.ts";
@@ -125,6 +126,6 @@ if (flagged.length === 0) {
       (await Bun.file(join(LIBRARY_ROOT, "RULES.md")).text()).length) /
     3.5;
   const writing = { output: Math.round((perFile * sizes.length) / topics / 3) * 12, input: Math.round((conventions + perFile) * 12) };
-  await Bun.write(join(REVIEW_DIR, "budget.md"), budgetReport({ sessions, tallies, writing, perDay }, date));
+  await Bun.write(join(REVIEW_DIR, "budget.md"), budgetReport({ sessions, tallies, writing, perDay, models: REVIEW_MODELS }, date));
   console.log(`${join("build", "review")}: calibration.md, budget.md`);
 }

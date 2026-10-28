@@ -1,7 +1,7 @@
 // Reviews topics of the new library in Claude Code sessions (scripts/review/index.ts): each topic folder's source and
 // language files, the records written beside them, the reports, sessions and flagged queue into build/review/.
-// The rules --stronger names leave each request that asks them for a request of their own on its model;
-// --source-only runs the source requests alone.
+// The rules --stronger names leave each request that asks them for a request of their own on its model; the review's
+// models (pipeline.ts) stand where neither --model nor --stronger is given. --source-only runs the source requests alone.
 // Run: npm run review -- <topic folder>… --writer <session> <model> [--model <version>] [--stronger <model> <rule>…]
 //      [--source-only] [--dry-run]
 import { dirname, join, resolve } from "node:path";
@@ -9,7 +9,7 @@ import { catalog } from "./v1/check.ts";
 import { typedLibrary } from "./v1/library.ts";
 import { readLibrary } from "./v1/load.ts";
 import { review } from "./review/index.ts";
-import { modelOf, type Policy, requestsOf } from "./review/pipeline.ts";
+import { modelOf, type Policy, requestsOf, REVIEW_MODELS } from "./review/pipeline.ts";
 import { claudeAttempt, runnerOf } from "./review/run.ts";
 
 const args = process.argv.slice(2);
@@ -28,13 +28,15 @@ const dirs = args
   .map((d) => resolve(d));
 const root = dirname(dirname(dirs[0] ?? "."));
 const ids = dirs.map((d) => `${d.split("/").at(-2) ?? ""}.${d.split("/").at(-1) ?? ""}`);
-const model = flag("--model")[0] ?? "claude-sonnet-5-5";
+const model = flag("--model")[0] ?? REVIEW_MODELS.model;
 const [strongerModel, ...strongerRules] = flag("--stronger", args.length).filter(
   (_, n, rest) => !rest.slice(0, n + 1).some((a) => a.startsWith("--")),
 );
 const policy: Omit<Policy, "date"> = {
   model,
-  ...(strongerModel !== undefined && { stronger: { model: strongerModel, rules: strongerRules } }),
+  ...(strongerModel !== undefined
+    ? { stronger: { model: strongerModel, rules: strongerRules } }
+    : flag("--model").length === 0 && REVIEW_MODELS.stronger !== undefined && { stronger: REVIEW_MODELS.stronger }),
   ...(args.includes("--source-only") && { kinds: ["source" as const] }),
 };
 

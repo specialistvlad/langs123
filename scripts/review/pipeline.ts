@@ -55,6 +55,13 @@ export function verdicts(runs: Session[]): Pick<RequestReview, "standing" | "dis
   };
 }
 
+// The review's models (12.3, decision 8): every question on the model it was calibrated on, sonnet, and NO-30 and
+// FT-01 on opus in requests of their own.
+export const REVIEW_MODELS: Pick<Policy, "model" | "stronger"> = {
+  model: "claude-sonnet-5-5",
+  stronger: { model: "claude-opus-5-5", rules: ["NO-30", "FT-01"] },
+};
+
 export const modelOf = (request: Request, policy: Policy): string =>
   request.only !== undefined && policy.stronger !== undefined ? policy.stronger.model : policy.model;
 

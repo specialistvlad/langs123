@@ -43,6 +43,7 @@ export async function review(root: string, ids: string[], options: ReviewOptions
           topic: done.topic,
           kind: r.request.kind,
           language: r.request.language ?? null,
+          ...(r.request.only !== undefined && { only: r.request.only }),
           run: i + 1,
           ...s,
           findings: s.findings.length,

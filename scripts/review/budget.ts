@@ -6,6 +6,7 @@
 // question's target.
 import { LEVELS } from "../lib.ts";
 import { PLAN } from "../v1/export/synthetic.ts";
+import type { Policy } from "./pipeline.ts";
 import type { Session } from "./run.ts";
 import { meets, summed, type Tally } from "./tally.ts";
 
@@ -16,6 +17,8 @@ export interface SessionLine extends Omit<Session, "findings"> {
   topic: string;
   kind: string;
   language: string | null;
+  // The rules a request of its own asked alone.
+  only?: string[];
   run: number;
 }
 
@@ -26,6 +29,8 @@ export interface BudgetInput {
   writing: { input: number; output: number };
   // Sessions the owner's subscription runs in a day.
   perDay: number;
+  // The model each question runs on.
+  models: Pick<Policy, "model" | "stronger">;
 }
 
 // The cheapest models first.
@@ -33,6 +38,22 @@ export const MODELS = ["claude-haiku-5-5", "claude-sonnet-5-5", "claude-opus-5-5
 const LANGUAGES = 11;
 
 const tokensIn = (s: SessionLine): number => s.tokens.input + s.tokens.cacheRead + s.tokens.cacheWrite;
+const kindOf = (s: SessionLine): string =>
+  s.topic === "calibration" || s.topic.startsWith("planted ")
+    ? "calibration"
+    : s.only === undefined
+      ? s.kind
+      : `${s.kind}, ${s.only.join(" and ")} alone`;
+
+// The latest runs of each request of the topics reviewed: a first run starts a request's review again.
+export function latestRuns(sessions: SessionLine[]): SessionLine[] {
+  const runs = new Map<string, SessionLine[]>();
+  for (const s of sessions.filter((x) => kindOf(x) !== "calibration")) {
+    const k = [s.topic, s.kind, s.language, s.only?.join(" ")].join(" ");
+    runs.set(k, [...(s.run === 1 ? [] : (runs.get(k) ?? [])), s]);
+  }
+  return [...runs.values()].flat();
+}
 const mean = (xs: number[]): number => (xs.length === 0 ? 0 : Math.round(xs.reduce((a, b) => a + b, 0) / xs.length));
 const thousands = (n: number): string => `${String(Math.round(n / 1000))}k`;
 
@@ -49,21 +70,26 @@ export function topicsPerLevel(plan: Record<string, number> = PLAN): Record<stri
 }
 
 export function budgetReport(input: BudgetInput, date: string): string {
-  const review = input.sessions.filter((s) => s.topic !== "calibration" && !s.topic.startsWith("planted"));
-  const kinds = [...new Set(input.sessions.map((s) => (s.topic === "calibration" ? "calibration" : s.kind)))];
+  const review = latestRuns(input.sessions);
+  const measured = [...review, ...input.sessions.filter((s) => kindOf(s) === "calibration")];
+  const kinds = [...new Set(measured.map(kindOf))];
   const language = review.filter((s) => s.kind === "language");
   const languageRequests = new Set(language.map((s) => `${s.topic} ${s.language ?? ""}`)).size;
   const second = languageRequests === 0 ? 0 : language.filter((s) => s.run === 2).length / languageRequests;
-  const perTopic = 2 + LANGUAGES * (1 + second);
-  const sourceIn = mean(review.filter((s) => s.kind === "source").map(tokensIn));
-  const languageIn = mean(language.map(tokensIn));
-  const topicIn = 2 * sourceIn + LANGUAGES * (1 + second) * languageIn;
+  const source = review.filter((s) => s.kind === "source");
+  // The source runs twice, and so does its stronger model's request where the measured reviews ran one.
+  const parts = [source.filter((s) => s.only === undefined), source.filter((s) => s.only !== undefined)].filter((p) => p.length > 0);
+  const perTopic = 2 * Math.max(1, parts.length) + LANGUAGES * (1 + second);
+  const topicIn = parts.reduce((n, p) => n + 2 * mean(p.map(tokensIn)), 0) + LANGUAGES * (1 + second) * mean(language.map(tokensIn));
+  const reviewed = new Set(review.map((s) => s.topic)).size;
   const levels = topicsPerLevel();
+  const runsOn = (rule: string): string =>
+    input.models.stronger?.rules.includes(rule) === true ? input.models.stronger.model : input.models.model;
   const cheapest = [...new Set(input.tallies.map((t) => t.rule))].map((rule) => {
     const met = summed(input.tallies.filter((t) => t.rule === rule))
       .filter(meets)
       .map((t) => t.model);
-    return `| ${rule} | ${MODELS.find((m) => met.includes(m)) ?? "none yet"} |`;
+    return `| ${rule} | ${MODELS.find((m) => met.includes(m)) ?? "none yet"} | ${runsOn(rule)} |`;
   });
   return [
     `# Review and writing budget, ${date}`,
@@ -73,13 +99,15 @@ export function budgetReport(input: BudgetInput, date: string): string {
     "| Kind | Sessions | Tokens in, mean | Tokens out, mean | Time, mean |",
     "|---|---|---|---|---|",
     ...kinds.map((k) => {
-      const of = input.sessions.filter((s) => (s.topic === "calibration" ? "calibration" : s.kind) === k);
+      const of = measured.filter((s) => kindOf(s) === k);
       return `| ${k} | ${String(of.length)} | ${thousands(mean(of.map(tokensIn)))} | ${thousands(mean(of.map((s) => s.tokens.output)))} | ${String(Math.round(mean(of.map((s) => s.ms)) / 1000))} s |`;
     }),
     "",
     "## Per topic at v1",
     "",
-    `A topic's review takes ${perTopic.toFixed(1)} sessions: its source twice, and its ${String(LANGUAGES)} language files once each and again ${String(Math.round(second * 100))}% of the time, as the samples ran; about ${thousands(topicIn)} tokens in. Writing it takes a session for its source and one per language file, about ${thousands(input.writing.output)} tokens out and ${thousands(input.writing.input)} in.`,
+    `The latest review of each sample ran ${String(review.length)} sessions over ${String(reviewed)} topics, about ${thousands(reviewed === 0 ? 0 : review.reduce((n, s) => n + tokensIn(s), 0) / reviewed)} tokens in per topic with the samples' language files.`,
+    "",
+    `A topic's review at v1 takes ${perTopic.toFixed(1)} sessions: its source request twice${parts.length > 1 ? ", the request of the stronger model's rules twice" : ""}, and its ${String(LANGUAGES)} language files once each and again ${String(Math.round(second * 100))}% of the time, as the samples ran; about ${thousands(topicIn)} tokens in. Writing it takes a session for its source and one per language file, about ${thousands(input.writing.output)} tokens out and ${thousands(input.writing.input)} in.`,
     "",
     "## Per wave",
     "",
@@ -94,8 +122,8 @@ export function budgetReport(input: BudgetInput, date: string): string {
     "",
     "## The cheapest model per question",
     "",
-    "| Rule | Cheapest model at its target |",
-    "|---|---|",
+    "| Rule | Cheapest model at its target | Runs on |",
+    "|---|---|---|",
     ...cheapest,
     "",
   ].join("\n");
