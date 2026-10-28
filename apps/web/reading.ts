@@ -25,6 +25,11 @@ export class Reading {
     readonly words: Words,
     readonly column: number,
     variety: string,
+    // The width the column takes once the panes beside it give way: the side-by-side form of three languages asks for it.
+    readonly room: number = column,
+    // The languages of the reader whose speakers' errors show: Languages I know, the page's first, whether the topic is
+    // written in them or not.
+    readonly speakers: readonly string[] = languages,
   ) {
     this.ctx = { variety };
   }

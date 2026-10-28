@@ -99,17 +99,18 @@ function card(r: Reading, c: Card): string {
 const reason = (r: Reading, speakers: string, language: string, text: string): string =>
   `<li data-speakers="${speakers}">${tag(r.words.say("speakersOf", { language: r.words.name(speakers) }))}<span lang="${language}">${r.m(text)}</span></li>`;
 
-// R6: the errors whose speakers are among the reader's languages, each with the reasons of those languages' speakers, then
+// R6: the errors whose speakers are among the reader's languages, each with the reasons of those languages' speakers in the
+// first language, then
 // each reader language's own errors and reasons, in that language. Its three columns, the wrong form, the right form and the
 // rule, stand side by side on a wide column and stack on a narrow one.
 export function errors(r: Reading): string {
   const owned = (l: string): NonNullable<Reading["topic"]["own"][string]> => r.topic.own[l] ?? { blocks: [], errors: [], speakers: {} };
   const shared = r.topic.errors.flatMap((e) => {
-    const reasons = r.languages.flatMap((l) => {
+    const reasons = r.speakers.flatMap((l) => {
       const s = e.speakers[l];
       const own = owned(l).speakers[e.id];
       return [
-        ...(s === undefined ? [] : [reason(r, l, l, l === r.main ? r.say(s.id, s.text) : r.in(l, s.text))]),
+        ...(s === undefined ? [] : [reason(r, l, r.main, r.say(s.id, s.text))]),
         ...(own === undefined ? [] : [reason(r, l, l, own.text)]),
       ];
     });
@@ -123,7 +124,7 @@ export function errors(r: Reading): string {
     owned(l).errors.map((e) => {
       const right = typeof e.right === "string" ? { text: e.right, tr: "" } : e.right;
       const speakers = Object.keys(e.speakers);
-      const reasons = speakers.filter((s) => r.languages.includes(s)).map((s) => reason(r, s, l, e.speakers[s]?.text ?? ""));
+      const reasons = speakers.filter((s) => r.speakers.includes(s)).map((s) => reason(r, s, l, e.speakers[s]?.text ?? ""));
       const rule = `<p class="rd-err-rule" lang="${l}">${r.m(e.rule.text)}</p>`;
       return card(r, { id: e.id, in: e.in, speakers, wrong: e.wrong, right: right.text, tr: right.tr, rule, reasons });
     }),

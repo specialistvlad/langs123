@@ -32,6 +32,7 @@ test("api.ts exports the build, the export, the search, the library's readers an
       "localize",
       "plainText",
       "readRules",
+      "readingTexts",
       "reading",
       "review",
       "reviewQueue",

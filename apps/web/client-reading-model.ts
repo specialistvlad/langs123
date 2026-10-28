@@ -11,3 +11,9 @@ export function readerLanguages(page: string, kept: string | null, has: readonly
 }
 
 export const keptForm = (raw: string | null): Form => FORMS.find((f) => f === raw) ?? "interleaved";
+
+// The languages whose speakers' errors the reader sees: the page's, then the kept list's, three at most.
+export function readerSpeakers(page: string, kept: string | null): string[] {
+  const list = (kept ?? "").split(/[\s,]+/).filter((l) => l !== "" && l !== page);
+  return [page, ...list].slice(0, MAX_LANGS);
+}

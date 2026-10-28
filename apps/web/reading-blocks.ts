@@ -8,7 +8,7 @@ import { columnWidth, splitColumns } from "./reading-table.ts";
 import { formText, ladder, partHead, SVG_FULL } from "./reading-words.ts";
 
 type Cell = Table["rows"][number]["cells"][string];
-type Own = NonNullable<Reading["topic"]["own"][string]>["blocks"][number];
+export type Own = NonNullable<Reading["topic"]["own"][string]>["blocks"][number];
 
 export function fact(r: Reading, b: Extract<Block, { type: "fact" }>): string {
   const lines = r.layers((l) => r.sentences(b.text, l));
@@ -88,8 +88,8 @@ function tableHtml(r: Reading, b: Table, columns: Table["columns"]): string {
 }
 
 // R5: a table wider than the reading column splits into column groups that fit, each repeating the first column; Full screen
-// opens the whole table in a dialog.
-export function table(r: Reading, b: Extract<Block, { type: "table" }>): string {
+// opens a sheet over the dimmed page with the subtopic's title and Close, the whole table fitted to its width (client-reading.ts).
+export function table(r: Reading, b: Extract<Block, { type: "table" }>, title = ""): string {
   const width = (c: Table["columns"][number]): number => {
     const lines = b.rows.flatMap((row) => cellLines(r, row.cells[c.key])).map((l) => plain(parseMarks(l), r.ctx).length);
     return columnWidth(r.say(c.id, c.text).length, lines, c === b.columns[0]);
@@ -97,49 +97,49 @@ export function table(r: Reading, b: Extract<Block, { type: "table" }>): string 
   const groups = splitColumns(b.columns, width, r.column);
   if (groups.length < 2) return tableHtml(r, b, b.columns);
   const full = esc(r.words.say("fullScreen"));
-  return (
-    `<div class="rd-card-s"><div class="rd-bar"><button type="button" class="rd-btn" data-full="${b.id}">${SVG_FULL} ${full}</button></div>` +
-    groups.map((g) => tableHtml(r, b, g)).join("") +
-    `<dialog class="rd-full" id="full-${b.id}" aria-label="${full}"><form method="dialog" class="rd-full-bar"><button class="rd-btn">${esc(r.words.say("close"))}</button></form>` +
-    `<div class="rd-full-t">${tableHtml(r, b, b.columns)}</div></dialog></div>`
-  );
+  const sheet =
+    `<dialog class="rd-full" id="full-${b.id}" aria-label="${full}"><div class="rd-fs-dlg"><header class="rd-fs-bar"><h2 class="rd-fs-t">${title}</h2>` +
+    `<form method="dialog"><button class="rd-btn">${esc(r.words.say("close"))}</button></form></header>` +
+    `<div class="rd-fs-body"><div class="rd-fit">${tableHtml(r, b, b.columns)}</div></div></div></dialog>`;
+  return `<div class="rd-card-s"><div class="rd-bar"><button type="button" class="rd-btn" data-full="${b.id}">${SVG_FULL} ${full}</button></div>${groups.map((g) => tableHtml(r, b, g)).join("")}${sheet}</div>`;
 }
 
-// The own blocks of each reader language that follow a block: a fact, a why or examples written for that language alone.
+// A block written for one language alone: a fact, a why or examples, with the language's code.
+export function ownBlock(r: Reading, l: string, o: Own): string {
+  const text = marks((o.text ?? []).map((s) => s.text).join(" "), r.ctx);
+  const code = `<span class="rd-lang">${tag(l.toUpperCase())}</span>`;
+  if (o.type === "fact") return r.wear(o.variety, `<div class="rd-blk" lang="${l}">${code}<p>${text}</p></div>`);
+  if (o.type === "why") {
+    return r.wear(
+      o.variety,
+      `<div class="rd-why" lang="${l}"><p class="lx-label">${esc(r.words.in(l).say("why"))}</p>${code}<p>${text}</p></div>`,
+    );
+  }
+  const items = (o.items ?? []).map((i) => `<span class="lx-ex">${r.m(i.text)}<span class="lx-tr" lang="${l}">${r.m(i.tr)}</span></span>`);
+  return r.wear(o.variety, `<div class="rd-exs">${items.join("")}</div>`);
+}
+
+// The own blocks of each reader language that follow a block.
 function own(r: Reading, part: string, after: string): string {
-  const owned = (l: string): { l: string; o: Own }[] =>
-    (r.topic.own[l]?.blocks ?? []).filter((o) => o.in === part && o.after === after && r.shows(o.variety)).map((o) => ({ l, o }));
   return r.languages
-    .flatMap(owned)
-    .map(({ l, o }) => {
-      const text = marks((o.text ?? []).map((s) => s.text).join(" "), r.ctx);
-      const code = `<span class="rd-lang">${tag(l.toUpperCase())}</span>`;
-      if (o.type === "fact") return r.wear(o.variety, `<div class="rd-blk" lang="${l}">${code}<p>${text}</p></div>`);
-      if (o.type === "why") {
-        return r.wear(
-          o.variety,
-          `<div class="rd-why" lang="${l}"><p class="lx-label">${esc(r.words.in(l).say("why"))}</p>${code}<p>${text}</p></div>`,
-        );
-      }
-      const items = (o.items ?? []).map(
-        (i) => `<span class="lx-ex">${r.m(i.text)}<span class="lx-tr" lang="${l}">${r.m(i.tr)}</span></span>`,
-      );
-      return r.wear(o.variety, `<div class="rd-exs">${items.join("")}</div>`);
-    })
+    .flatMap((l) =>
+      (r.topic.own[l]?.blocks ?? []).filter((o) => o.in === part && o.after === after && r.shows(o.variety)).map((o) => ownBlock(r, l, o)),
+    )
     .join("");
 }
 
-export function block(r: Reading, b: Block): string {
+export function block(r: Reading, b: Block, title = ""): string {
   if (b.type === "fact") return fact(r, b);
   if (b.type === "why") return why(r, b);
   if (b.type === "example") return examples(r, b);
   if (b.type === "list") return list(r, b);
-  return table(r, b);
+  return table(r, b, title);
 }
 
 // R1: a subtopic's head, numbered from 01, with its level, and its blocks.
 export function subtopic(r: Reading, s: Subtopic, index: number): string {
   const num = String(index + 1).padStart(2, "0");
-  const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => block(r, b) + own(r, s.id, b.id));
-  return `<section class="rd-part" id="${s.id}">${partHead(num, r.m(r.say(s.title.id, s.title.text)), ladder([s.level], r.words))}<div class="rd-flow">${blocks.join("")}</div></section>`;
+  const title = r.m(r.say(s.title.id, s.title.text));
+  const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => block(r, b, title) + own(r, s.id, b.id));
+  return `<section class="rd-part" id="${s.id}">${partHead(num, title, ladder([s.level], r.words))}<div class="rd-flow">${blocks.join("")}</div></section>`;
 }

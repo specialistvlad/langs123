@@ -36,6 +36,8 @@ test("the forms follow the width rule: side by side from 640 for two languages a
   expect(forms(read("en.present-simple", ["uk", "ja"], 640))).toEqual(["interleaved", "reveal", "side"]);
   expect(forms(read("en.present-simple", ["uk", "ja", "en"], 816))).toEqual(["interleaved", "reveal"]);
   expect(forms(read("en.present-simple", ["uk", "ja", "en"], 1000))).toEqual(["interleaved", "reveal", "side"]);
+  const roomy = new Reading(topic("en.present-simple"), "en", ["uk", "ja", "en"], words("uk"), 816, "en-GB", 1384);
+  expect(forms(roomy)).toEqual(["interleaved", "reveal", "side"]);
   expect(article(read("en.present-simple", ["uk", "ja"], 362), "side")).toContain('data-form="interleaved"');
 });
 
@@ -63,8 +65,9 @@ test("a reader sees the errors of their languages' speakers alone, with those sp
   expect(es.match(/<article class="rd-err"/g)).toHaveLength(4);
   expect(uk).toContain(words("uk").say("speakersOf", { language: words("uk").name("uk") }));
   expect(uk).not.toContain('data-speakers="es"');
-  const both = interleaved(read("en.words-of-place", ["uk", "es"]));
+  const both = interleaved(new Reading(topic("en.words-of-place"), "en", ["uk"], words("uk"), 362, "en-GB", 362, ["uk", "es"]));
   expect(both.match(/<article class="rd-err"/g)).toHaveLength(5);
+  expect(both).toContain(`<li data-speakers="es">`);
   expect(interleaved(read("en.present-simple", ["en"]))).not.toContain('class="rd-err"');
 });
 
