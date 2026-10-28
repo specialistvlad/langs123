@@ -103,9 +103,9 @@ says how an error is written.
   code, A0 to C2, appears in the level field alone, and the sentences, cells and titles around it speak in the
   words of the subject (VO-05).
 - A fact, a form and an example state the correct form; wrong forms stand in the common errors (VO-06).
-- An example is a sentence someone says in a situation it makes plain, in words at or below the subtopic's level,
-  and it carries a scene line, who says it, to whom and where, that the sentence fits; a word example of an
-  inventory, such as a letter's word or a vocabulary item, stands alone (VO-07).
+- An example is a sentence someone says, and the sentence alone makes its situation plain: who says it, and
+  where or why; a word example of an inventory, such as a letter's word or a vocabulary item, stands alone
+  (VO-07).
 - The translation of an example is what a speaker of the reader's language says in the same situation (VO-08):
   *Ellos llegan hoy, y ellas, mañana* is in Ukrainian «Чоловіки приїжджають сьогодні, а жінки — завтра».
 
