@@ -1,7 +1,6 @@
 // The parts of a topic around its subtopics (R1, R4, R6, R7): the head with the levels, the reading time and the definition;
 // part 00, the essence's linked lines with the picture of a topic that has one; and the common errors of the reader's
 // languages' speakers, each with its wrong form, its right form, its rule and why those speakers make it.
-import type { Translated } from "../../scripts/generated/export-v1.ts";
 import { type Ground, sceneGrid } from "./pictures.ts";
 import type { Reading } from "./reading.ts";
 import { subtopic } from "./reading-blocks.ts";
@@ -46,26 +45,33 @@ function picture(r: Reading): string {
 }
 
 // R4 and R7: part 00, the essence's lines in the first language, each linked to the subtopic that teaches it, in two cards
-// on a wide column.
+// on a wide column. A line leads with its sentence, or its form (with its transcription, and its example word and that
+// word's translation under it), or its form and its gloss; it carries its level mark only where the topic's subtopics span
+// more than one level, as the head's mark says the rest.
 export function essence(r: Reading): string {
   const still = (text: string): string => marks(text, { ...r.ctx, still: true });
+  const levelled = new Set(r.topic.subtopics.map((s) => s.level)).size > 1;
   const rows = r.topic.essence
     .filter((e) => r.shows(e.variety))
     .map((e) => {
       let form: string;
-      let gloss: Translated | undefined;
-      if (e.ipa !== undefined) form = `${still(formText(e.form))}<span class="lx-j" aria-hidden="true"></span>${still(`{ipa ${e.ipa}}`)}`;
-      else if (e.ex !== undefined) {
+      let sub = "";
+      if (e.ipa !== undefined) {
+        form = `${still(formText(e.form))}<span class="lx-j" aria-hidden="true"></span>${still(`{ipa ${e.ipa}}`)}`;
+        if (e.ex !== undefined) {
+          const tr = r.say(e.ex.id, e.ex.tr);
+          sub = `${still(e.ex.text)}${tr === "" ? "" : `<span class="lx-j" aria-hidden="true"></span>${still(tr)}`}`;
+        }
+      } else if (e.ex !== undefined) {
         form = still(e.ex.text);
-        gloss = e.ex.tr;
+        sub = still(r.say(e.ex.id, e.ex.tr));
       } else {
         form = `${e.variety === undefined ? "" : `${tag(varietyLabel(e.variety))} `}<b class="lx-b">${still(formText(e.form))}</b>`;
-        gloss = e.text;
+        sub = e.text === undefined ? "" : still(r.say(e.id, e.text));
       }
-      const first = gloss === undefined ? "" : r.say(e.ex?.id ?? e.id, gloss);
-      const subs = [first === "" ? "" : `<span class="lx-row-sub">${still(first)}</span>`];
       const to = e.to === undefined ? "" : ` href="#${e.to}"`;
-      return `<div class="lx-row"><a${to} class="lx-row-a lx-cover"><span class="lx-row-t">${form}${subs.join("")}</span></a>${ladder([e.level ?? "A1"], r.words, true)}<span class="lx-chev">${SVG_CHEV}</span></div>${r.pin(e.id)}`;
+      const mark = levelled ? ladder([e.level ?? "A1"], r.words, true) : "";
+      return `<div class="lx-row"><a${to} class="lx-row-a lx-cover"><span class="lx-row-t">${form}${sub === "" ? "" : `<span class="lx-row-sub">${sub}</span>`}</span></a>${mark}<span class="lx-chev">${SVG_CHEV}</span></div>${r.pin(e.id)}`;
     });
   const half = Math.ceil(rows.length / 2);
   const cards = [rows.slice(0, half), rows.slice(half)].filter((c) => c.length > 0).map((c) => `<div class="lx-card">${c.join("")}</div>`);

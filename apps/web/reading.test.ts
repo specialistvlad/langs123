@@ -178,3 +178,23 @@ test("no form, item or line of the samples shows a raw mark, in any language, va
     }
   }
 });
+
+test("an essence line carries its level mark only where the topic spans levels, and a letter's example word reads under it", () => {
+  const essenceOf = (html: string): string =>
+    html.slice(html.indexOf('id="essence"'), html.indexOf("</section>", html.indexOf('id="essence"')));
+  expect(essenceOf(interleaved(read("en.alphabet", ["uk"])))).not.toContain("lx-ladder");
+  expect(essenceOf(interleaved(read("en.present-simple", ["uk"])))).toContain('class="lx-ladder lx-sm"');
+  const base = topic("en.alphabet");
+  const [first] = base.essence;
+  if (first === undefined) throw new Error("no line");
+  const withWord: Topic = {
+    ...base,
+    essence: [
+      { ...first, ex: { id: "ess.a.ex", text: "{target a}pple", tr: { uk: "яблуко" } } },
+      { ...first, id: "ess.b", ex: { id: "ess.b.ex", text: "bee", tr: {} } },
+    ],
+  };
+  const html = essenceOf(interleaved(new Reading(withWord, "en", ["uk"], words("uk"), 362, "en-GB")));
+  expect(html).toContain('<span class="lx-row-sub"><b class="lx-b">a</b>pple<span class="lx-j" aria-hidden="true"></span>яблуко</span>');
+  expect(html).toContain('<span class="lx-row-sub">bee</span>');
+});
