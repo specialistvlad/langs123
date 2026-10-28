@@ -100,7 +100,7 @@ test(
 );
 
 test(
-  "a reader sees only the errors of their languages' speakers",
+  "a reader sees only the errors of their languages' speakers, and the outline names the errors where they show",
   async () => {
     const uk = await reader("uk", 1440);
     await open(uk, PLACE);
@@ -110,6 +110,14 @@ test(
     expect(await both.locator("#rd .rd-err").count()).toBe(5);
     const heads = await both.locator("#rd .rd-err-why li").evaluateAll((all) => all.map((li) => li.getAttribute("data-speakers")));
     expect(new Set(heads)).toEqual(new Set(["uk", "es"]));
+    expect(await uk.locator('.tp-outline a[href="#errors"]').isVisible()).toBe(true);
+    const none = await reader("uk", 1440);
+    await open(none, "/uk/spanish/v1/subject-pronouns/");
+    expect(await none.locator("#rd .rd-err").count()).toBe(0);
+    expect(await none.locator('.tp-outline a[href="#errors"]').isVisible()).toBe(false);
+    const en = await reader("uk en", 1440);
+    await open(en, "/uk/spanish/v1/subject-pronouns/");
+    expect(await en.locator('.tp-outline a[href="#errors"]').isVisible()).toBe(true);
   },
   SLOW,
 );

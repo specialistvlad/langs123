@@ -45,6 +45,10 @@ function start(): void {
     host.innerHTML = article(reading, keptForm(store.get(FORM_KEY)));
     // Side by side takes the page's width: the course column and the outline give way (reading-web.css).
     root.dataset["rdForm"] = host.querySelector<HTMLElement>(".rd-form")?.dataset["form"] ?? "";
+    // The outline shows the parts this reading has.
+    for (const a of document.querySelectorAll<HTMLAnchorElement>(".tp-outline a")) {
+      a.hidden = document.getElementById(decodeURIComponent(a.hash.slice(1))) === null;
+    }
   };
   host.addEventListener("click", (event) => {
     const target = event.target instanceof Element ? event.target : null;

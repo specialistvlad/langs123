@@ -61,7 +61,11 @@ export function readingPages(track: Track, v1: LibraryV1): void {
     const reading = new Reading(topic, course.source, [explain], words, PHONE_COLUMN, varieties[0] ?? "all");
     const title = plain(parseMarks(reading.say(topic.title.id, topic.title.text)), reading.ctx);
     const own = readingUrl(explain, track, topic);
-    const list = parts(reading);
+    // The outline names every part a reader can have, the errors with every speaker's; reading.js hides those the reader lacks.
+    const speakers = [...new Set(topic.errors.flatMap((e) => Object.keys(e.speakers)))];
+    const list = parts(
+      new Reading(topic, course.source, [explain], words, PHONE_COLUMN, varieties[0] ?? "all", PHONE_COLUMN, [explain, ...speakers]),
+    );
     const outline = list.map(
       (p, i) => `<a href="#${p.id}"${i === 0 ? ' class="on" aria-current="location"' : ""}><b>${p.n}</b><span>${esc(p.title)}</span></a>`,
     );
