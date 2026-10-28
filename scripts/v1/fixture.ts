@@ -19,9 +19,10 @@ export const INDEX: CourseIndex = {
   name: everywhere("English"),
   source: "en",
   varieties: ["en-GB", "en-US"],
-  status: "draft",
+  status: "approved",
   sources: [
     { id: "profile", name: "A grammar profile", licence: "CC BY 4.0", url: "https://example.org/profile", took: ["topics", "levels"] },
+    { id: "syllabus", name: "A syllabus", licence: "CC BY 4.0", url: "https://example.org/syllabus", took: ["topics"] },
   ],
   sections: [
     {
@@ -33,7 +34,7 @@ export const INDEX: CourseIndex = {
           subject: "The letters",
           covers: ["names of letters"],
           path: { A0: 1, A1: 2 },
-          status: "draft",
+          status: "approved",
           script: "alphabet",
         },
       ],
@@ -88,28 +89,33 @@ export const UK: TopicLanguageFile = {
 
 UK.fingerprints = stamped(SOURCE, UK);
 
-// A fresh copy of the library's files, as the loader gives them.
-export function files(): LibraryFiles {
+type CourseFiles = LibraryFiles["courses"][number];
+type TopicFiles = CourseFiles["topics"][number];
+
+// A fresh copy of the library's files, as the loader gives them, with its course's and its topic's files.
+export function fixture(): { files: LibraryFiles; course: CourseFiles; topic: TopicFiles } {
   const copy = structuredClone({ INDEX, SOURCE, UK });
-  return {
-    courses: [
-      {
-        course: "en",
-        dir: "library/en",
-        index: { file: "library/en/index.yaml", data: copy.INDEX },
-        topics: [
-          {
-            slug: "letters",
-            source: { file: "library/en/letters/source.yaml", data: copy.SOURCE },
-            languages: [{ file: "library/en/letters/uk.yaml", data: copy.UK }],
-            unknown: [],
-          },
-        ],
-      },
-    ],
+  const topic: TopicFiles = {
+    slug: "letters",
+    source: { file: "library/en/letters/source.yaml", data: copy.SOURCE },
+    languages: [{ file: "library/en/letters/uk.yaml", data: copy.UK }],
+    unknown: [],
+  };
+  const course: CourseFiles = {
+    course: "en",
+    dir: "library/en",
+    index: { file: "library/en/index.yaml", data: copy.INDEX },
+    topics: [topic],
+  };
+  const files: LibraryFiles = {
+    courses: [course],
+    approvals: { file: "library/approvals.yaml", data: [{ what: "index:en", by: "owner", date: "2026-10-28" }] },
     unreadable: [],
   };
+  return { files, course, topic };
 }
+
+export const files = (): LibraryFiles => fixture().files;
 
 // Writes the files to a new folder and returns it, the library's root; each file's path then reads from that root.
 export async function write(library: LibraryFiles): Promise<string> {

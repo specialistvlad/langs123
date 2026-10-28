@@ -76,7 +76,7 @@ langs123/
 | `npm run build` | builds the whole static site into `build/web/` and stops on any page that shows unrendered text (`**`, a topic link, `undefined`); `SITE_URL=https://…` sets the public URL, and `-- --design <name>` builds it in that design |
 | `npm run export` | writes the library as one JSON file, `build/data/library.json`, described by `languages/schema/library.schema.json`: every language, topic and block with its levels, text as inline Markdown per explanation language, and the level colours of the default design, or of the one `-- --design <name>` names |
 | `npm run check` | validates all data against the schemas and conventions, and names the parts of a topic whose English changed since its translations |
-| `npm run check -- --library v1 [root]` | checks the new library at `library/`, or at the root given: each file against `library/schema/`, its layout, and the marks and varieties of its text; each problem names its rule in `library/RULES.md`; the alignment holds each language file to its source sentence by sentence, with the fingerprint each translation was written from |
+| `npm run check -- --library v1 [root] [--reach]` | checks the new library at `library/`, or at the root given: each file against `library/schema/`, its layout, the marks and varieties of its text, each language file's alignment with its source sentence by sentence, with the fingerprint each translation was written from, and every rule of the linter, reading the word lists of `library/words/` and `library/ja/kanji.yaml`; each problem names its rule in `library/RULES.md`; `--reach` adds the rules the whole library holds at its gates: every course, its levels and its practical clusters |
 | `npm run ids -- <topic folder>…` | gives each element of a topic of the new library that lacks an id one, from its parent's id and its kind, and keeps every id already written |
 | `npm run stamp -- <topic folder>… [--languages uk ja] [--ids …]` | records in each language file the fingerprint of every source sentence it translates, once its translations follow the source again |
 | `npm run translated -- <id> [uk es]` | stamps a topic's translations as up to date with its English; `--all` stamps every topic |
@@ -99,6 +99,7 @@ GitHub. [CONTRIBUTING.md](CONTRIBUTING.md) holds the rules;
 | Part | Licence |
 |---|---|
 | Content: everything in `languages/` | [CC BY 4.0](languages/LICENSE) |
+| Content: everything in `library/` | [CC BY 4.0](languages/LICENSE) |
 | Code: everything else | [MIT](LICENSE) |
 
 Anyone may copy, adapt and sell the content, with this credit, naming any changes:

@@ -7,6 +7,8 @@ import type { Course, Library, Topic } from "./library.ts";
 import type { Problem } from "./schema.ts";
 import { languageOfFile } from "./load.ts";
 
+export const STRUCTURE_RULES = ["IX-01", "IX-03", "IX-04", "IX-26", "LA-01", "LA-05", "LA-06", "LA-09"];
+
 // Every `id` of an element, at any depth.
 export function idsIn(node: unknown): string[] {
   if (Array.isArray(node)) return node.flatMap(idsIn);

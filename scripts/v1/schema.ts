@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { ROOT } from "../lib.ts";
 
 export const SCHEMA_FILE = join(ROOT, "library", "schema", "library.schema.json");
-export type FileKind = "index" | "source" | "language" | "review" | "approvals" | "concepts";
+export type FileKind = "index" | "source" | "language" | "review" | "approvals" | "concepts" | "words" | "kanji" | "needs";
 
 export interface Problem {
   rule?: string;
@@ -18,21 +18,26 @@ export const formatProblem = (p: Problem): string => `${p.rule ?? "schema"} ${p.
 
 interface Annotated {
   "x-rule"?: string;
-  "x-extra"?: string;
+  "x-extra"?: Record<string, string>;
   properties?: Record<string, Annotated>;
 }
 
 const ajv = new Ajv({ allErrors: true, strict: true, strictRequired: false, discriminator: true, verbose: true });
 ajv.addVocabulary(["x-rule", "x-extra", "x-component"]);
-ajv.addSchema((await Bun.file(SCHEMA_FILE).json()) as object);
+// The schema itself, for the checks that read its vocabularies: the features a table crosses and their values.
+export const SCHEMA = (await Bun.file(SCHEMA_FILE).json()) as {
+  definitions: Record<string, { properties?: Record<string, { enum?: unknown[] }> }>;
+};
+ajv.addSchema(SCHEMA);
 
-// The rule a schema error breaks: a missing property's own rule, a property the schema lacks its x-extra, else the
-// rule of the schema that failed.
+// The rule a schema error breaks: a missing property's own rule, the rule x-extra names for a property the schema
+// lacks, else the rule of the schema that failed.
 function ruleOf(e: ErrorObject): string | undefined {
   const parent = e.parentSchema as Annotated | undefined;
-  const missing = (e.params as { missingProperty?: string }).missingProperty;
-  const own = missing === undefined ? undefined : parent?.properties?.[missing]?.["x-rule"];
-  return own ?? (e.keyword === "additionalProperties" ? parent?.["x-extra"] : undefined) ?? parent?.["x-rule"];
+  const { missingProperty, additionalProperty } = e.params as { missingProperty?: string; additionalProperty?: string };
+  const own = missingProperty === undefined ? undefined : parent?.properties?.[missingProperty]?.["x-rule"];
+  const extra = additionalProperty === undefined ? undefined : parent?.["x-extra"]?.[additionalProperty];
+  return own ?? extra ?? parent?.["x-rule"];
 }
 
 function message(e: ErrorObject): string {

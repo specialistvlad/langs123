@@ -18,6 +18,8 @@ export interface Piece {
   // The block it stands in.
   block?: string;
   variety?: string;
+  // An item's transcription, written without its ipa mark.
+  ipa?: true;
 }
 
 type Place = Pick<Piece, "subtopic" | "block" | "variety">;
@@ -31,7 +33,7 @@ function item(i: EssenceLine | ListItem, place: Place): Piece[] {
   const forms = i.form === undefined ? [] : Array.isArray(i.form) ? i.form : [i.form];
   return [
     ...forms.map((f) => form(f, i.id, here)),
-    ...(i.ipa === undefined ? [] : [form(i.ipa, i.id, here)]),
+    ...(i.ipa === undefined ? [] : [{ ...form(i.ipa, i.id, here), ipa: true as const }]),
     ...(i.text === undefined ? [] : [sentence({ id: i.id, text: i.text }, here)]),
     ...(i.ex === undefined
       ? []

@@ -12,6 +12,8 @@ import { languageOfFile } from "./load.ts";
 import type { Problem } from "./schema.ts";
 import { type Piece, translated } from "./texts.ts";
 
+export const ALIGNMENT_RULES = ["LA-01", "LA-05", "LA-06", "LA-07", "LA-10", "FT-07"];
+
 function placeProblems(topic: Topic, file: string, data: TopicLanguageFile): Problem[] {
   const source = topic.source.data;
   const subtopics = new Map(source.subtopics.map((s) => [s.id, s.blocks.map((b) => b.id)]));

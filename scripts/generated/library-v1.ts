@@ -125,9 +125,22 @@ export type Approvals = {
   date: ISODate;
   seed?: number;
 }[];
+/**
+ * The search needs of one explanation language's readers, each with the queries behind it, where it was found, and the topic that answers it or the reason none does (IX-16).
+ */
+export type SearchNeeds = ({} & {
+  id: Slug;
+  /**
+   * @minItems 1
+   */
+  queries: Text[];
+  from: "search-console" | "keyword-research";
+  topic?: TopicId;
+  declined?: Text;
+})[];
 
 /**
- * Every data file of the new library (library/): a course's index, a topic's source file, its language files and its review record, the approvals and the concept registry. Each file is checked against its definition; x-rule names the rule of library/RULES.md a definition holds, and x-extra the rule a property it lacks breaks.
+ * Every data file of the new library (library/): a course's index, a topic's source file, its language files and its review record, the approvals and the concept registry. Each file is checked against its definition; x-rule names the rule of library/RULES.md a definition holds, and x-extra the rule each property it lacks breaks.
  */
 export interface Langs123LibraryV1 {
   index?: CourseIndex;
@@ -136,6 +149,9 @@ export interface Langs123LibraryV1 {
   review?: TopicReviewRecord;
   approvals?: Approvals;
   concepts?: ConceptRegistry;
+  words?: WordLists;
+  kanji?: KanjiByLevel;
+  needs?: SearchNeeds;
 }
 /**
  * A course's index: its name, source language, varieties, sources and sections, each with its topics in order.
@@ -494,4 +510,46 @@ export interface ConceptRegistry {
   [k: string]: {
     description: Text;
   };
+}
+/**
+ * The words the linter reads for one explanation language: the words that turn a sentence away from the subject (SH-08, VO-04), the word for a topic (NO-45), the forms of address an explanation leaves out (NO-35 to NO-44, NO-58), spellings (NO-01, NO-52, NO-53, NO-56), the Spanish vosotros and voseo forms (NO-29, NO-31) and the Turkish proper names (NO-55). An entry all in lowercase matches in any case; one with a capital matches as written.
+ */
+export interface WordLists {
+  language: Explain;
+  tour?: {
+    page?: string[];
+    topic?: string[];
+    guide?: string[];
+    course?: string[];
+  };
+  topic?: {
+    word: Text;
+    synonyms: string[];
+  };
+  address?: string[];
+  spellings?: {
+    wrong: Text;
+    right: Text;
+  }[];
+  vosotros?: string[];
+  voseo?: string[];
+  names?: string[];
+}
+/**
+ * The words Japanese examples write in kanji at A1 and at A2, with the source of the list and its licence (NO-26).
+ */
+export interface KanjiByLevel {
+  source: {
+    name: Text;
+    licence: Text;
+    url: string;
+  };
+  A1?: {
+    word: Text;
+    reading: string;
+  }[];
+  A2?: {
+    word: Text;
+    reading: string;
+  }[];
 }

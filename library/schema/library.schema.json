@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "library.schema.json",
   "title": "langs123 library v1",
-  "description": "Every data file of the new library (library/): a course's index, a topic's source file, its language files and its review record, the approvals and the concept registry. Each file is checked against its definition; x-rule names the rule of library/RULES.md a definition holds, and x-extra the rule a property it lacks breaks.",
+  "description": "Every data file of the new library (library/): a course's index, a topic's source file, its language files and its review record, the approvals and the concept registry. Each file is checked against its definition; x-rule names the rule of library/RULES.md a definition holds, and x-extra the rule each property it lacks breaks.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -23,6 +23,15 @@
     },
     "concepts": {
       "$ref": "#/definitions/concepts"
+    },
+    "words": {
+      "$ref": "#/definitions/words"
+    },
+    "kanji": {
+      "$ref": "#/definitions/kanji"
+    },
+    "needs": {
+      "$ref": "#/definitions/needs"
     }
   },
   "definitions": {
@@ -198,6 +207,9 @@
     "essenceLine": {
       "description": "A line of the essence, part 00: a form, its transcription, a gloss or an example, and the subtopic it opens.",
       "x-rule": "SH-12",
+      "x-extra": {
+        "level": "SH-13"
+      },
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -262,6 +274,9 @@
     "listItem": {
       "description": "One line of a list: a form, its transcription, a sentence and its example.",
       "x-rule": "ST-02",
+      "x-extra": {
+        "level": "ST-12"
+      },
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -589,6 +604,9 @@
           "type": "array",
           "minItems": 1,
           "items": {
+            "x-extra": {
+              "level": "ST-12"
+            },
             "type": "object",
             "additionalProperties": false,
             "required": [
@@ -648,7 +666,9 @@
     "subtopic": {
       "description": "A numbered part of a topic: its level, its title and its blocks.",
       "type": "object",
-      "x-extra": "ST-09",
+      "x-extra": {
+        "role": "ST-10"
+      },
       "additionalProperties": false,
       "required": [
         "id",
@@ -691,6 +711,9 @@
     "error": {
       "title": "Common error",
       "description": "A common error: the wrong form, its correction and its rule, in its subtopic, with its speakers.",
+      "x-extra": {
+        "level": "ST-12"
+      },
       "x-rule": "ER-06",
       "type": "object",
       "additionalProperties": false,
@@ -1538,6 +1561,247 @@
         ],
         "properties": {
           "description": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "words": {
+      "title": "Word lists",
+      "description": "The words the linter reads for one explanation language: the words that turn a sentence away from the subject (SH-08, VO-04), the word for a topic (NO-45), the forms of address an explanation leaves out (NO-35 to NO-44, NO-58), spellings (NO-01, NO-52, NO-53, NO-56), the Spanish vosotros and voseo forms (NO-29, NO-31) and the Turkish proper names (NO-55). An entry all in lowercase matches in any case; one with a capital matches as written.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language"
+      ],
+      "properties": {
+        "language": {
+          "$ref": "#/definitions/explain"
+        },
+        "tour": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "page": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "topic": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "guide": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "course": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "topic": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "word",
+            "synonyms"
+          ],
+          "properties": {
+            "word": {
+              "$ref": "#/definitions/text"
+            },
+            "synonyms": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "spellings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "wrong",
+              "right"
+            ],
+            "properties": {
+              "wrong": {
+                "$ref": "#/definitions/text"
+              },
+              "right": {
+                "$ref": "#/definitions/text"
+              }
+            }
+          }
+        },
+        "vosotros": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "voseo": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "kanji": {
+      "title": "Kanji by level",
+      "description": "The words Japanese examples write in kanji at A1 and at A2, with the source of the list and its licence (NO-26).",
+      "x-rule": "NO-26",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source"
+      ],
+      "properties": {
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "licence",
+            "url"
+          ],
+          "properties": {
+            "name": {
+              "$ref": "#/definitions/text"
+            },
+            "licence": {
+              "$ref": "#/definitions/text"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https?://"
+            }
+          }
+        },
+        "A1": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "word",
+              "reading"
+            ],
+            "properties": {
+              "word": {
+                "$ref": "#/definitions/text"
+              },
+              "reading": {
+                "type": "string",
+                "pattern": "^[ぁ-ゟー]+$"
+              }
+            }
+          }
+        },
+        "A2": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "word",
+              "reading"
+            ],
+            "properties": {
+              "word": {
+                "$ref": "#/definitions/text"
+              },
+              "reading": {
+                "type": "string",
+                "pattern": "^[ぁ-ゟー]+$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "needs": {
+      "title": "Search needs",
+      "description": "The search needs of one explanation language's readers, each with the queries behind it, where it was found, and the topic that answers it or the reason none does (IX-16).",
+      "x-rule": "IX-16",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "queries",
+          "from"
+        ],
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "topic"
+            ]
+          },
+          {
+            "type": "object",
+            "required": [
+              "declined"
+            ]
+          }
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/slug"
+          },
+          "queries": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/text"
+            }
+          },
+          "from": {
+            "enum": [
+              "search-console",
+              "keyword-research"
+            ]
+          },
+          "topic": {
+            "$ref": "#/definitions/topicId"
+          },
+          "declined": {
             "$ref": "#/definitions/text"
           }
         }

@@ -20,7 +20,13 @@ afterAll(async () => {
 
 test("readLibrary reads every course, topic and file of a root, and checkRoot finds the fixture whole", async () => {
   const library = files();
-  library.approvals = { file: "library/approvals.yaml", data: [{ what: "samples", by: "owner", date: "2026-10-28" }] };
+  library.approvals = {
+    file: "library/approvals.yaml",
+    data: [
+      { what: "samples", by: "owner", date: "2026-10-28" },
+      { what: "index:en", by: "owner", date: "2026-10-28" },
+    ],
+  };
   library.concepts = { file: "library/concepts.yaml", data: { alphabet: { description: "The letters of a script." } } };
   const topic = library.courses[0]?.topics[0];
   if (topic) {
@@ -42,7 +48,7 @@ test("readLibrary reads every course, topic and file of a root, and checkRoot fi
   const { library: checked, problems } = await checkRoot(root);
   expect(problems).toEqual([]);
   expect(checked.courses[0]?.topics[0]?.review?.data.writer.session).toBe("w");
-  expect(checked.approvals?.data).toHaveLength(1);
+  expect(checked.approvals?.data).toHaveLength(2);
 });
 
 test("a file whose YAML doesn't parse, a file the topic's folder doesn't hold, and a folder without source.yaml are named", async () => {

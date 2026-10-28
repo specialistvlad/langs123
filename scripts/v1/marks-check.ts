@@ -9,6 +9,8 @@ import type { Problem } from "./schema.ts";
 import { inCourse, scopeOf } from "./scope.ts";
 import { languagePieces, type Piece, sourcePieces } from "./texts.ts";
 
+export const MARK_RULES = ["ST-06", "ST-08", "NO-24", "NO-28", "NO-03"];
+
 // The marks a piece of each kind takes: a form takes those of the course language.
 const TAKES = { course: ["course", "any"], form: ["course", "any"], explanation: ["explanation", "any"] } as const;
 

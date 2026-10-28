@@ -12,7 +12,7 @@ const check = (change: (source: TopicSource, uk: TopicLanguageFile, f: LibraryFi
   const topic = copy.courses[0]?.topics[0];
   change(topic?.source?.data as TopicSource, topic?.languages[0]?.data as TopicLanguageFile, copy);
   return checkFiles(copy, rules)
-    .problems.filter((p) => p.rule !== "LA-10")
+    .problems.filter((p) => ["ST-06", "NO-28", "NO-03", "IX-01"].includes(p.rule ?? ""))
     .map((p) => `${p.rule ?? ""} ${p.file.split("/").pop() ?? ""} ${p.id ?? ""}: ${p.message}`);
 };
 

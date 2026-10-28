@@ -49,7 +49,7 @@ describe("each schema rule's written case fails with its id", () => {
   test("subtopics, blocks and items", () => {
     expect(rules(source((s) => Reflect.deleteProperty(s.subtopics[0] ?? {}, "level")))).toEqual(["ST-11"]);
     expect(rules(source((s) => Object.assign(s.subtopics[0] ?? {}, { level: "A3" })))).toEqual(["IX-17"]);
-    expect(rules(source((s) => Object.assign(s.subtopics[0] ?? {}, { role: "form" })))).toEqual(["ST-09"]);
+    expect(rules(source((s) => Object.assign(s.subtopics[0] ?? {}, { role: "form" })))).toEqual(["ST-10"]);
     expect(rules(source((s) => s.subtopics[0]?.blocks.push({ id: "p", type: "paradigm" } as never)))).toEqual(["ST-01"]);
     expect(rules(source((s) => Object.assign(s.subtopics[0] ?? {}, { id: "Names" })))).toEqual(["IX-23"]);
     expect(rules(source((s) => (s.essence[0] = { id: "ess.a", form: "A" } as never)))).toEqual(["SH-12"]);
