@@ -1,14 +1,11 @@
 # Present simple: a sample topic of the new library, written in English first (samples/README.md).
 id: en.present-simple
-course: en
-source: en
 status: draft
 nativeReview: false
 title: { id: title, text: Present simple }
 definition:
   id: def
-  text: "The present simple, for habits and facts, is the verb's dictionary form, with {term -s} after {term he}, {term she} and {term it}."
-
+  text: The present simple, for habits and facts, is the verb's dictionary form, with {term -s} after {term he}, {term she} and {term it}.
 essence:
   - { id: ess.work, to: forms, ex: { id: ess.work.ex, text: "I {target work}." } }
   - { id: ess.works, to: forms, ex: { id: ess.works.ex, text: "She {target works}." } }
@@ -24,7 +21,6 @@ essence:
   - { id: ess.always, to: frequency, ex: { id: ess.always.ex, text: "She always {target walks} to work." } }
   - { id: ess.know, to: states, ex: { id: ess.know.ex, text: "I {target know} her name." } }
   - { id: ess.starts, to: timetables, ex: { id: ess.starts.ex, text: "The film {target starts} at eight." } }
-
 subtopics:
   - id: forms
     level: A1
@@ -34,31 +30,28 @@ subtopics:
         type: fact
         text:
           - id: forms.fact.1
-            text: "With {term I}, {term you}, {term we} and {term they}, the present simple is the base verb, as a dictionary gives it."
+            text: With {term I}, {term you}, {term we} and {term they}, the present simple is the base verb, as a dictionary gives it.
           - { id: forms.fact.2, text: "With {term he}, {term she} and {term it}, the verb adds {term -s}." }
       - id: forms.table
         type: table
-        axes: [person, number]
+        axes: { rows: person, columns: number }
         columns:
           - { id: forms.col.person, key: person, text: Person }
-          - { id: forms.col.singular, key: singular, text: Singular }
-          - { id: forms.col.plural, key: plural, text: Plural }
+          - { id: forms.col.singular, key: sg, text: Singular }
+          - { id: forms.col.plural, key: pl, text: Plural }
         rows:
           - id: forms.first
             features: { person: 1 }
-            person: { id: forms.first.name, text: first person }
-            singular: ["I {target work}."]
-            plural: ["We {target work}."]
+            cells: { person: { id: forms.first.name, text: first person }, sg: ["I {target work}."], pl: ["We {target work}."] }
           - id: forms.second
             features: { person: 2 }
-            person: { id: forms.second.name, text: second person }
-            singular: ["You {target work}."]
-            plural: ["You {target work}."]
+            cells: { person: { id: forms.second.name, text: second person }, sg: ["You {target work}."], pl: ["You {target work}."] }
           - id: forms.third
             features: { person: 3 }
-            person: { id: forms.third.name, text: third person }
-            singular: ["He {target works}.", "She {target works}.", "It {target works}."]
-            plural: ["They {target work}."]
+            cells:
+              person: { id: forms.third.name, text: third person }
+              sg: ["He {target works}.", "She {target works}.", "It {target works}."]
+              pl: ["They {target work}."]
       - id: forms.example
         type: example
         items:
@@ -69,9 +62,8 @@ subtopics:
       - id: forms.why
         type: why
         text:
-          - { id: forms.why.1, text: "Old English has an ending on the verb for each person." }
+          - { id: forms.why.1, text: Old English has an ending on the verb for each person. }
           - { id: forms.why.2, text: "The {term -s} of {term he}, {term she} and {term it} is the one that remains." }
-
   - id: spelling
     level: A1
     title: { id: spelling.title, text: "Spelling: -s and -es" }
@@ -84,7 +76,7 @@ subtopics:
         type: list
         items:
           - id: spelling.es
-            text: "After {term s}, {term ss}, {term sh}, {term ch}, {term x} and {term z}, the verb adds {term -es}."
+            text: After {term s}, {term ss}, {term sh}, {term ch}, {term x} and {term z}, the verb adds {term -es}.
             ex: { id: spelling.es.ex, text: "She {target watches} TV every evening." }
           - id: spelling.o
             text: "{term Go} adds {term -es}: {term goes}."
@@ -98,10 +90,9 @@ subtopics:
           - id: spelling.have
             text: "{term Have} becomes {term has}."
             ex: { id: spelling.have.ex, text: "She {target has} two brothers." }
-
   - id: sound
     level: A2
-    title: { id: sound.title, text: "Saying the -s" }
+    title: { id: sound.title, text: Saying the -s }
     blocks:
       - id: sound.fact
         type: fact
@@ -127,75 +118,81 @@ subtopics:
         text:
           - { id: sound.why.1, text: "Two sounds like {term s} and {term sh} can't stand next to each other in one syllable." }
           - { id: sound.why.2, text: "So {term watches} has a vowel between them, and one syllable more than {term watch}." }
-
   - id: do-does
     level: A1
-    title: { id: do-does.title, text: "Do and does" }
+    title: { id: do-does.title, text: Do and does }
     blocks:
       - id: do-does.fact
         type: fact
         text:
           - id: do-does.fact.1
-            text: "In negatives and questions, {term do} or {term does} changes with the subject, and the main verb keeps its dictionary form."
+            text: In negatives and questions, {term do} or {term does} changes with the subject, and the main verb keeps its dictionary form.
       - id: do-does.table
         type: table
-        axes: [person, sentence]
+        axes: { rows: person, columns: sentence }
         columns:
           - { id: do-does.col.person, key: person, text: Person }
           - { id: do-does.col.negative, key: negative, text: Negative }
           - { id: do-does.col.question, key: question, text: Question }
-          - { id: do-does.col.yes, key: yes, text: "Short answer: yes" }
-          - { id: do-does.col.no, key: no, text: "Short answer: no" }
+          - { id: do-does.col.yes, key: "yes", text: "Short answer: yes" }
+          - { id: do-does.col.no, key: "no", text: "Short answer: no" }
         rows:
           - id: do-does.i
             features: { person: 1, number: sg }
-            person: I
-            negative: "I {target don't work}."
-            question: "{target Do} I {target work}?"
-            yes: "Yes, I {target do}."
-            no: "No, I {target don't}."
+            cells:
+              person: I
+              negative: I {target don't work}.
+              question: "{target Do} I {target work}?"
+              "yes": Yes, I {target do}.
+              "no": No, I {target don't}.
           - id: do-does.you
             features: { person: 2 }
-            person: you
-            negative: "You {target don't work}."
-            question: "{target Do} you {target work}?"
-            yes: "Yes, you {target do}."
-            no: "No, you {target don't}."
+            cells:
+              person: you
+              negative: You {target don't work}.
+              question: "{target Do} you {target work}?"
+              "yes": Yes, you {target do}.
+              "no": No, you {target don't}.
           - id: do-does.he
             features: { person: 3, number: sg, gender: masc }
-            person: he
-            negative: "He {target doesn't work}."
-            question: "{target Does} he {target work}?"
-            yes: "Yes, he {target does}."
-            no: "No, he {target doesn't}."
+            cells:
+              person: he
+              negative: He {target doesn't work}.
+              question: "{target Does} he {target work}?"
+              "yes": Yes, he {target does}.
+              "no": No, he {target doesn't}.
           - id: do-does.she
             features: { person: 3, number: sg, gender: fem }
-            person: she
-            negative: "She {target doesn't work}."
-            question: "{target Does} she {target work}?"
-            yes: "Yes, she {target does}."
-            no: "No, she {target doesn't}."
+            cells:
+              person: she
+              negative: She {target doesn't work}.
+              question: "{target Does} she {target work}?"
+              "yes": Yes, she {target does}.
+              "no": No, she {target doesn't}.
           - id: do-does.it
             features: { person: 3, number: sg, gender: neut }
-            person: it
-            negative: "It {target doesn't work}."
-            question: "{target Does} it {target work}?"
-            yes: "Yes, it {target does}."
-            no: "No, it {target doesn't}."
+            cells:
+              person: it
+              negative: It {target doesn't work}.
+              question: "{target Does} it {target work}?"
+              "yes": Yes, it {target does}.
+              "no": No, it {target doesn't}.
           - id: do-does.we
             features: { person: 1, number: pl }
-            person: we
-            negative: "We {target don't work}."
-            question: "{target Do} we {target work}?"
-            yes: "Yes, we {target do}."
-            no: "No, we {target don't}."
+            cells:
+              person: we
+              negative: We {target don't work}.
+              question: "{target Do} we {target work}?"
+              "yes": Yes, we {target do}.
+              "no": No, we {target don't}.
           - id: do-does.they
             features: { person: 3, number: pl }
-            person: they
-            negative: "They {target don't work}."
-            question: "{target Do} they {target work}?"
-            yes: "Yes, they {target do}."
-            no: "No, they {target don't}."
+            cells:
+              person: they
+              negative: They {target don't work}.
+              question: "{target Do} they {target work}?"
+              "yes": Yes, they {target do}.
+              "no": No, they {target don't}.
       - id: do-does.list
         type: list
         items:
@@ -212,14 +209,13 @@ subtopics:
             text: "{term Does} starts a question."
             ex: { id: do-does.does.ex, text: "{target Does} your sister {target work} here?" }
           - id: do-does.short
-            text: "A short answer repeats {term do} or {term does}."
+            text: A short answer repeats {term do} or {term does}.
             ex: { id: do-does.short.ex, text: "Yes, I {target do}." }
       - id: do-does.why
         type: why
         text:
           - id: do-does.why.1
             text: "{term Does} already carries the {term -s}, so the verb after it needs none: {term she doesn't work}, {term does she work}."
-
   - id: wh
     level: A1
     title: { id: wh.title, text: Questions with a question word }
@@ -234,22 +230,20 @@ subtopics:
           - { id: wh.where, text: "Where {target do} you {target live}?" }
           - { id: wh.what, text: "What {target does} she {target do}?" }
           - { id: wh.when, text: "When {target does} the shop {target open}?" }
-
   - id: subject-questions
     level: A2
-    title: { id: subject-questions.title, text: "Who and what as the subject" }
+    title: { id: subject-questions.title, text: Who and what as the subject }
     blocks:
       - id: subject-questions.fact
         type: fact
         text:
           - id: subject-questions.fact.1
-            text: "When {term who} or {term what} is the subject, the question keeps the order of a statement and takes no {term do}."
+            text: When {term who} or {term what} is the subject, the question keeps the order of a statement and takes no {term do}.
       - id: subject-questions.example
         type: example
         items:
           - { id: subject-questions.who, text: "Who {target lives} here?" }
           - { id: subject-questions.what, text: "What {target happens} next?" }
-
   - id: habits
     level: A1
     title: { id: habits.title, text: Habits and routines }
@@ -257,14 +251,13 @@ subtopics:
       - id: habits.fact
         type: fact
         text:
-          - { id: habits.fact.1, text: "The present simple says what someone does regularly." }
+          - { id: habits.fact.1, text: The present simple says what someone does regularly. }
       - id: habits.example
         type: example
         items:
           - { id: habits.up, text: "I {target get up} at seven every day." }
           - { id: habits.gym, text: "We {target go} to the gym on Mondays." }
           - { id: habits.tea, text: "She {target drinks} tea in the morning." }
-
   - id: facts
     level: A1
     title: { id: facts.title, text: Facts }
@@ -272,14 +265,13 @@ subtopics:
       - id: facts.fact
         type: fact
         text:
-          - { id: facts.fact.1, text: "The present simple says what is always or generally true." }
+          - { id: facts.fact.1, text: The present simple says what is always or generally true. }
       - id: facts.example
         type: example
         items:
           - { id: facts.water, text: "Water {target boils} at a hundred degrees." }
           - { id: facts.sun, text: "The sun {target rises} in the east." }
           - { id: facts.lions, text: "Lions {target live} in Africa." }
-
   - id: frequency
     level: A1
     title: { id: frequency.title, text: "With always, usually, never" }
@@ -288,14 +280,13 @@ subtopics:
         type: fact
         text:
           - id: frequency.fact.1
-            text: "Words of how often, such as {term always}, {term usually}, {term sometimes} and {term never}, go before the main verb."
+            text: Words of how often, such as {term always}, {term usually}, {term sometimes} and {term never}, go before the main verb.
       - id: frequency.example
         type: example
         items:
           - { id: frequency.always, text: "She always {target walks} to work." }
           - { id: frequency.usually, text: "I usually {target have} breakfast at home." }
           - { id: frequency.never, text: "We never {target watch} TV." }
-
   - id: states
     level: A2
     title: { id: states.title, text: States }
@@ -304,7 +295,7 @@ subtopics:
         type: fact
         text:
           - id: states.fact.1
-            text: "Verbs of states, such as {term like}, {term want}, {term need}, {term know} and {term understand}, take the present simple for what is true now."
+            text: Verbs of states, such as {term like}, {term want}, {term need}, {term know} and {term understand}, take the present simple for what is true now.
       - id: states.example
         type: example
         items:
@@ -315,7 +306,6 @@ subtopics:
         type: why
         text:
           - { id: states.why.1, text: "A state does not change step by step, so it takes the simple form." }
-
   - id: timetables
     level: A2
     title: { id: timetables.title, text: Timetables and programmes }
@@ -324,14 +314,13 @@ subtopics:
         type: fact
         text:
           - id: timetables.fact.1
-            text: "The present simple says when something happens by a timetable or a programme, in the future too."
+            text: The present simple says when something happens by a timetable or a programme, in the future too.
       - id: timetables.example
         type: example
         items:
           - { id: timetables.film, text: "The film {target starts} at eight." }
           - { id: timetables.train, text: "Our train {target leaves} at a quarter past six tomorrow." }
           - { id: timetables.shop, text: "The shop {target opens} at nine on Sundays." }
-
 errors:
   - id: err.no-s
     in: forms
@@ -339,46 +328,43 @@ errors:
     right: { id: err.no-s.right, text: "She {target works} in a bank." }
     rule: { id: err.no-s.rule, text: "After {term he}, {term she} and {term it}, the verb adds {term -s}." }
     speakers:
-      ja: { id: err.no-s.ja, text: "Japanese verbs have one form for every person." }
-      id: { id: err.no-s.id, text: "Indonesian verbs have one form for every person." }
-      vi: { id: err.no-s.vi, text: "Vietnamese verbs have one form for every person." }
-
+      ja: { id: err.no-s.ja, text: Japanese verbs have one form for every person. }
+      id: { id: err.no-s.id, text: Indonesian verbs have one form for every person. }
+      vi: { id: err.no-s.vi, text: Vietnamese verbs have one form for every person. }
   - id: err.does-s
     in: do-does
     wrong: Does she works here?
     right: { id: err.does-s.right, text: "{target Does} she {target work} here?" }
     rule: { id: err.does-s.rule, text: "After {term does} and {term doesn't}, the verb stays in its base form." }
     speakers:
-      uk: { id: err.does-s.uk, text: "Ukrainian marks the person on the main verb in a question too." }
-      es: { id: err.does-s.es, text: "Spanish marks the person on the main verb in a question too." }
-      pt: { id: err.does-s.pt, text: "Portuguese marks the person on the main verb in a question too." }
-      fr: { id: err.does-s.fr, text: "French marks the person on the main verb in a question too." }
-      de: { id: err.does-s.de, text: "German marks the person on the main verb in a question too." }
-      it: { id: err.does-s.it, text: "Italian marks the person on the main verb in a question too." }
-      pl: { id: err.does-s.pl, text: "Polish marks the person on the main verb in a question too." }
-
+      uk: { id: err.does-s.uk, text: Ukrainian marks the person on the main verb in a question too. }
+      es: { id: err.does-s.es, text: Spanish marks the person on the main verb in a question too. }
+      pt: { id: err.does-s.pt, text: Portuguese marks the person on the main verb in a question too. }
+      fr: { id: err.does-s.fr, text: French marks the person on the main verb in a question too. }
+      de: { id: err.does-s.de, text: German marks the person on the main verb in a question too. }
+      it: { id: err.does-s.it, text: Italian marks the person on the main verb in a question too. }
+      pl: { id: err.does-s.pl, text: Polish marks the person on the main verb in a question too. }
   - id: err.no-do
     in: wh
     wrong: Where you live?
     right: { id: err.no-do.right, text: "Where {target do} you {target live}?" }
     rule: { id: err.no-do.rule, text: "After a question word, {term do} or {term does} comes before the subject." }
     speakers:
-      uk: { id: err.no-do.uk, text: "Ukrainian asks with a question word and the words of a statement: Де ти живеш?" }
-      es: { id: err.no-do.es, text: "Spanish asks with a question word and the verb, with no helper verb: ¿Dónde vives?" }
-      pt: { id: err.no-do.pt, text: "Portuguese asks with a question word and the words of a statement: Onde você mora?" }
-      fr: { id: err.no-do.fr, text: "Spoken French asks with a question word and the words of a statement: Où tu habites ?" }
-      it: { id: err.no-do.it, text: "Italian asks with a question word and the verb, with no helper verb: Dove abiti?" }
-      pl: { id: err.no-do.pl, text: "Polish asks with a question word and the verb, with no helper verb: Gdzie mieszkasz?" }
-      tr: { id: err.no-do.tr, text: "Turkish puts the question word before the verb, with no helper verb: Nerede oturuyorsun?" }
-      id: { id: err.no-do.id, text: "Indonesian asks with a question word and the words of a statement: Di mana kamu tinggal?" }
-      vi: { id: err.no-do.vi, text: "Vietnamese puts the question word where the answer goes, with no helper verb: Bạn sống ở đâu?" }
-      ja: { id: err.no-do.ja, text: "Japanese asks with a question word and か, with no helper verb: どこに住んでいますか。" }
-
+      uk: { id: err.no-do.uk, text: "Ukrainian asks with a question word and the words of a statement: {l1 uk Де ти живеш?}" }
+      es: { id: err.no-do.es, text: "Spanish asks with a question word and the verb, with no helper verb: {l1 es ¿Dónde vives?}" }
+      pt: { id: err.no-do.pt, text: "Portuguese asks with a question word and the words of a statement: {l1 pt Onde você mora?}" }
+      fr: { id: err.no-do.fr, text: "Spoken French asks with a question word and the words of a statement: {l1 fr Où tu habites ?}" }
+      it: { id: err.no-do.it, text: "Italian asks with a question word and the verb, with no helper verb: {l1 it Dove abiti?}" }
+      pl: { id: err.no-do.pl, text: "Polish asks with a question word and the verb, with no helper verb: {l1 pl Gdzie mieszkasz?}" }
+      tr: { id: err.no-do.tr, text: "Turkish puts the question word before the verb, with no helper verb: {l1 tr Nerede oturuyorsun?}" }
+      id: { id: err.no-do.id, text: "Indonesian asks with a question word and the words of a statement: {l1 id Di mana kamu tinggal?}" }
+      vi: { id: err.no-do.vi, text: "Vietnamese puts the question word where the answer goes, with no helper verb: {l1 vi Bạn sống ở đâu?}" }
+      ja: { id: err.no-do.ja, text: "Japanese asks with a question word and {l1 ja か}, with no helper verb: {l1 ja どこに住んでいますか。}" }
   - id: err.verb-first
     in: do-does
     wrong: Like you coffee?
     right: { id: err.verb-first.right, text: "{target Do} you {target like} coffee?" }
     rule: { id: err.verb-first.rule, text: "A question puts {term do} or {term does} before the subject, and the main verb after it." }
     speakers:
-      de: { id: err.verb-first.de, text: "German asks by putting the main verb before the subject." }
-      fr: { id: err.verb-first.fr, text: "French can ask by putting the main verb before the subject." }
+      de: { id: err.verb-first.de, text: German asks by putting the main verb before the subject. }
+      fr: { id: err.verb-first.fr, text: French can ask by putting the main verb before the subject. }

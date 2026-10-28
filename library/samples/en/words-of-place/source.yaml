@@ -1,32 +1,31 @@
 # Words of place: a sample practical topic of the new library, written in English first (samples/README.md).
 id: en.words-of-place
-course: en
-source: en
 status: draft
 nativeReview: false
 title: { id: title, text: Words of place }
 definition: { id: def, text: "Words of place are small words, such as {term in} and {term under}, that say where something is." }
-
 essence:
-  - { id: ess.in, to: in-on-under, word: in, ex: { id: ess.in.ex, text: "The ball is {target in} the box." } }
-  - { id: ess.on, to: in-on-under, word: on, ex: { id: ess.on.ex, text: "The ball is {target on} the box." } }
-  - { id: ess.under, to: in-on-under, word: under, ex: { id: ess.under.ex, text: "The ball is {target under} the box." } }
-  - { id: ess.front, to: front-behind, word: in front of, ex: { id: ess.front.ex, text: "The ball is {target in front of} the box." } }
-  - { id: ess.behind, to: front-behind, word: behind, ex: { id: ess.behind.ex, text: "The ball is {target behind} the box." } }
-  - { id: ess.next, to: next-near, word: next to, ex: { id: ess.next.ex, text: "The ball is {target next to} the box." } }
-  - { id: ess.near, to: next-near, word: near, ex: { id: ess.near.ex, text: "The ball is {target near} the box." } }
-  - { id: ess.between, to: between, word: between, ex: { id: ess.between.ex, text: "The ball is {target between} the boxes." } }
-  - { id: ess.above, to: above-below, word: above, ex: { id: ess.above.ex, text: "The ball is {target above} the box." } }
-  - { id: ess.below, to: above-below, word: below, ex: { id: ess.below.ex, text: "The ball is {target below} the box." } }
-  - { id: ess.opposite, to: opposite, word: "{variant en-GB opposite} {variant en-US across from}", ex: { id: ess.opposite.ex, text: "The ball is {target {variant en-GB opposite} {variant en-US across from}} the box." } }
-  - { id: ess.inside, to: inside-outside, word: inside, ex: { id: ess.inside.ex, text: "The ball is {target inside} the house." } }
-  - { id: ess.outside, to: inside-outside, word: outside, ex: { id: ess.outside.ex, text: "The ball is {target outside} the box." } }
+  - { id: ess.in, to: in-on-under, form: in, ex: { id: ess.in.ex, text: "The ball is {target in} the box." } }
+  - { id: ess.on, to: in-on-under, form: "on", ex: { id: ess.on.ex, text: "The ball is {target on} the box." } }
+  - { id: ess.under, to: in-on-under, form: under, ex: { id: ess.under.ex, text: "The ball is {target under} the box." } }
+  - { id: ess.front, to: front-behind, form: in front of, ex: { id: ess.front.ex, text: "The ball is {target in front of} the box." } }
+  - { id: ess.behind, to: front-behind, form: behind, ex: { id: ess.behind.ex, text: "The ball is {target behind} the box." } }
+  - { id: ess.next, to: next-near, form: next to, ex: { id: ess.next.ex, text: "The ball is {target next to} the box." } }
+  - { id: ess.near, to: next-near, form: near, ex: { id: ess.near.ex, text: "The ball is {target near} the box." } }
+  - { id: ess.between, to: between, form: between, ex: { id: ess.between.ex, text: "The ball is {target between} the boxes." } }
+  - { id: ess.above, to: above-below, form: above, ex: { id: ess.above.ex, text: "The ball is {target above} the box." } }
+  - { id: ess.below, to: above-below, form: below, ex: { id: ess.below.ex, text: "The ball is {target below} the box." } }
+  - id: ess.opposite
+    to: opposite
+    form: "{variant en-GB opposite} {variant en-US across from}"
+    ex: { id: ess.opposite.ex, text: "The ball is {target {variant en-GB opposite} {variant en-US across from}} the box." }
+  - { id: ess.inside, to: inside-outside, form: inside, ex: { id: ess.inside.ex, text: "The ball is {target inside} the house." } }
+  - { id: ess.outside, to: inside-outside, form: outside, ex: { id: ess.outside.ex, text: "The ball is {target outside} the box." } }
   - id: ess.underneath
     to: underneath
-    word: underneath
+    form: underneath
     ex: { id: ess.underneath.ex, text: "The ball is {target underneath} the cloth." }
-  - { id: ess.beneath, to: beneath, word: beneath, ex: { id: ess.beneath.ex, text: "The ball is {target beneath} the box." } }
-
+  - { id: ess.beneath, to: beneath, form: beneath, ex: { id: ess.beneath.ex, text: "The ball is {target beneath} the box." } }
 subtopics:
   - id: in-on-under
     level: A1
@@ -35,24 +34,22 @@ subtopics:
       - id: in-on-under.fact
         type: fact
         text:
-          - id: in-on-under.fact.1
-            text: "These three words say whether something is in another thing, on it, or lower than it."
+          - { id: in-on-under.fact.1, text: "These three words say whether something is in another thing, on it, or lower than it." }
       - id: in-on-under.list
         type: list
         items:
           - id: in
-            word: in
+            form: in
             text: "{term In} puts something in a space with sides around it: a box, a bag, a room, a town."
             ex: { id: in.ex, text: "My keys are {target in} my bag." }
-          - id: on
-            word: on
+          - id: "on"
+            form: "on"
             text: "{term On} puts something on a thing, with no space between them: a table, a wall, the floor."
             ex: { id: on.ex, text: "Your phone is {target on} the table." }
           - id: under
-            word: under
+            form: under
             text: "{term Under} puts something lower than another thing, often covered by it."
             ex: { id: under.ex, text: "The cat is {target under} the bed." }
-
   - id: front-behind
     level: A1
     title: { id: front-behind.title, text: "In front of, behind" }
@@ -67,14 +64,13 @@ subtopics:
         type: list
         items:
           - id: front
-            word: in front of
+            form: in front of
             text: "{term In front of} puts something on the front side of another thing."
             ex: { id: front.ex, text: "The bus stop is {target in front of} the school." }
           - id: behind
-            word: behind
+            form: behind
             text: "{term Behind} puts something at the back of another thing."
             ex: { id: behind.ex, text: "The garden is {target behind} the house." }
-
   - id: next-near
     level: A1
     title: { id: next-near.title, text: "Next to, near" }
@@ -88,17 +84,16 @@ subtopics:
         type: list
         items:
           - id: next
-            word: next to
+            form: next to
             text: "{term Next to} puts something right at the side of another thing, very close."
             ex: { id: next.ex, text: "Sit {target next to} me." }
           - id: near
-            word: near
+            form: near
             text: "{term Near} puts something a short distance away."
             ex: { id: near.ex, text: "I live {target near} the station." }
-
   - id: between
     level: A1
-    title: { id: between.title, text: "Between" }
+    title: { id: between.title, text: Between }
     blocks:
       - id: between.fact
         type: fact
@@ -108,10 +103,9 @@ subtopics:
         type: list
         items:
           - id: between-item
-            word: between
+            form: between
             text: "{term Between} joins the two things with {term and}."
             ex: { id: between.ex, text: "The bank is {target between} the café and the shop." }
-
   - id: above-below
     level: A2
     title: { id: above-below.title, text: "Above, below" }
@@ -125,22 +119,22 @@ subtopics:
         type: list
         items:
           - id: above
-            word: above
+            form: above
             text: "{term Above} puts something higher than another thing."
             ex: { id: above.ex, text: "There's a lamp {target above} the table." }
           - id: below
-            word: below
+            form: below
             text: "{term Below} puts something lower than another thing."
             ex: { id: below.ex, text: "The kitchen is {target below} my room." }
       - id: above-below.why
         type: why
         text:
-          - { id: above-below.why.1, text: "{term On} and {term under} can touch what they name, and {term above} and {term below} keep a space." }
+          - id: above-below.why.1
+            text: "{term On} and {term under} can touch what they name, and {term above} and {term below} keep a space."
           - { id: above-below.why.2, text: "So a lamp hangs above a table, and a cup stands on it." }
-
   - id: opposite
     level: A2
-    title: { id: opposite.title, text: "Opposite" }
+    title: { id: opposite.title, text: Opposite }
     blocks:
       - id: opposite.fact
         type: fact
@@ -151,10 +145,9 @@ subtopics:
         type: list
         items:
           - id: opposite-item
-            word: "{variant en-GB opposite} {variant en-US across from}"
+            form: "{variant en-GB opposite} {variant en-US across from}"
             text: "{term Opposite} goes straight before its noun, and in the US {term across from} is the usual word."
             ex: { id: opposite.ex, text: "The bank is {target {variant en-GB opposite} {variant en-US across from}} the hotel." }
-
   - id: inside-outside
     level: A2
     title: { id: inside-outside.title, text: "Inside, outside" }
@@ -168,17 +161,16 @@ subtopics:
         type: list
         items:
           - id: inside
-            word: inside
+            form: inside
             text: "{term Inside} says that walls or sides are all around something, more strongly than {term in}."
             ex: { id: inside.ex, text: "It's warm {target inside} the house." }
           - id: outside
-            word: outside
+            form: outside
             text: "{term Outside} puts something just beyond the walls of a place."
             ex: { id: outside.ex, text: "There's a taxi {target outside} the hotel." }
-
   - id: underneath
     level: B1
-    title: { id: underneath.title, text: "Underneath" }
+    title: { id: underneath.title, text: Underneath }
     blocks:
       - id: underneath.fact
         type: fact
@@ -189,13 +181,12 @@ subtopics:
         type: list
         items:
           - id: underneath-item
-            word: underneath
+            form: underneath
             text: "{term Underneath} often names something found or hidden."
             ex: { id: underneath.ex, text: "I found my keys {target underneath} the newspaper." }
-
   - id: beneath
     level: B2
-    title: { id: beneath.title, text: "Beneath" }
+    title: { id: beneath.title, text: Beneath }
     blocks:
       - id: beneath.fact
         type: fact
@@ -205,10 +196,9 @@ subtopics:
         type: list
         items:
           - id: beneath-item
-            word: beneath
+            form: beneath
             text: "{term Beneath} often names something large: the ground, a river, the sea."
             ex: { id: beneath.ex, text: "The tunnel runs {target beneath} the river." }
-
 errors:
   - id: err.near-of
     in: next-near
@@ -216,55 +206,50 @@ errors:
     right: { id: err.near-of.right, text: "I live {target near} the station." }
     rule: { id: err.near-of.rule, text: "{term Near} goes straight before its noun, with no {term of}." }
     speakers:
-      es: { id: err.near-of.es, text: "Spanish says cerca de, with de." }
-      pt: { id: err.near-of.pt, text: "Portuguese says perto de, with de." }
-      fr: { id: err.near-of.fr, text: "French says près de, with de." }
-
+      es: { id: err.near-of.es, text: "Spanish says {l1 es cerca de}, with {l1 es de}." }
+      pt: { id: err.near-of.pt, text: "Portuguese says {l1 pt perto de}, with {l1 pt de}." }
+      fr: { id: err.near-of.fr, text: "French says {l1 fr près de}, with {l1 fr de}." }
   - id: err.behind-of
     in: front-behind
     wrong: The garden is behind of the house.
     right: { id: err.behind-of.right, text: "The garden is {target behind} the house." }
     rule: { id: err.behind-of.rule, text: "{term Behind} goes straight before its noun, with no {term of}." }
     speakers:
-      es: { id: err.behind-of.es, text: "Spanish says detrás de, with de." }
-      pt: { id: err.behind-of.pt, text: "Portuguese says atrás de, with de." }
-
+      es: { id: err.behind-of.es, text: "Spanish says {l1 es detrás de}, with {l1 es de}." }
+      pt: { id: err.behind-of.pt, text: "Portuguese says {l1 pt atrás de}, with {l1 pt de}." }
   - id: err.in-front-opposite
     in: opposite
     wrong: The bank is in front of the hotel, on the other side of the street.
     right: { id: err.in-front-opposite.right, text: "The bank is {target {variant en-GB opposite} {variant en-US across from}} the hotel." }
     rule:
       id: err.in-front-opposite.rule
-      text: "Across a street, facing each other, is {term {variant en-GB opposite} {variant en-US across from}}; {term in front of} stays on the same side."
+      text: Across a street, facing each other, is {term {variant en-GB opposite} {variant en-US across from}}; {term in front of} stays on the same side.
     speakers:
-      es: { id: err.in-front-opposite.es, text: "Spanish enfrente de means opposite and reads like in front of." }
-      pt: { id: err.in-front-opposite.pt, text: "Portuguese em frente de means both opposite and in front of." }
-      fr: { id: err.in-front-opposite.fr, text: "French en face de means opposite and reads like in front of." }
-      it: { id: err.in-front-opposite.it, text: "Italian di fronte a means opposite and reads like in front of." }
-
+      es: { id: err.in-front-opposite.es, text: "Spanish {l1 es enfrente de} means {term opposite} and reads like {term in front of}." }
+      pt: { id: err.in-front-opposite.pt, text: "Portuguese {l1 pt em frente de} means both {term opposite} and {term in front of}." }
+      fr: { id: err.in-front-opposite.fr, text: "French {l1 fr en face de} means {term opposite} and reads like {term in front of}." }
+      it: { id: err.in-front-opposite.it, text: "Italian {l1 it di fronte a} means {term opposite} and reads like {term in front of}." }
   - id: err.in-table
     in: in-on-under
     wrong: The book is in the table.
     right: { id: err.in-table.right, text: "The book is {target on} the table." }
     rule: { id: err.in-table.rule, text: "On a surface, English says {term on}; {term in} is inside a space with sides." }
     speakers:
-      es: { id: err.in-table.es, text: "Spanish en says both in and on." }
-      pt: { id: err.in-table.pt, text: "Portuguese em says both in and on." }
-      tr: { id: err.in-table.tr, text: "Turkish says both in and on with one ending, -da or -de." }
-      id: { id: err.in-table.id, text: "Indonesian di says both in and on." }
-      ja: { id: err.in-table.ja, text: "Japanese に marks a place without saying in or on." }
-
+      es: { id: err.in-table.es, text: "Spanish {l1 es en} says both {term in} and {term on}." }
+      pt: { id: err.in-table.pt, text: "Portuguese {l1 pt em} says both {term in} and {term on}." }
+      tr: { id: err.in-table.tr, text: "Turkish says both {term in} and {term on} with one ending, {l1 tr -da} or {l1 tr -de}." }
+      id: { id: err.in-table.id, text: "Indonesian {l1 id di} says both {term in} and {term on}." }
+      ja: { id: err.in-table.ja, text: "Japanese {l1 ja に} marks a place without saying {term in} or {term on}." }
   - id: err.on-photo
     in: in-on-under
     wrong: Who is on the photo?
     right: { id: err.on-photo.right, text: "Who is {target in} the photo?" }
     rule: { id: err.on-photo.rule, text: "What a photo or a picture shows is {term in} it." }
     speakers:
-      uk: { id: err.on-photo.uk, text: "Ukrainian says на фото, with на, the word for on." }
-      pl: { id: err.on-photo.pl, text: "Polish says na zdjęciu, with na, the word for on." }
-      de: { id: err.on-photo.de, text: "German says auf dem Foto, with auf, the word for on." }
-      fr: { id: err.on-photo.fr, text: "French says sur la photo, with sur, the word for on." }
-
+      uk: { id: err.on-photo.uk, text: "Ukrainian says {l1 uk на фото}, with {l1 uk на}, the word for {term on}." }
+      pl: { id: err.on-photo.pl, text: "Polish says {l1 pl na zdjęciu}, with {l1 pl na}, the word for {term on}." }
+      de: { id: err.on-photo.de, text: "German says {l1 de auf dem Foto}, with {l1 de auf}, the word for {term on}." }
+      fr: { id: err.on-photo.fr, text: "French says {l1 fr sur la photo}, with {l1 fr sur}, the word for {term on}." }
 picture:
   id: picture
   kind: scene-grid

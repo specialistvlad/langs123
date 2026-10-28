@@ -1,32 +1,31 @@
 # Los pronombres personales de sujeto: a sample topic of the Spanish course, written in Spanish first (samples/README.md).
 id: es.subject-pronouns
-course: es
-source: es
 status: draft
 nativeReview: false
 title: { id: title, text: Los pronombres personales de sujeto }
 definition:
   id: def
-  text: "Los pronombres de sujeto, como {term yo} y {term tú}, nombran a quien hace la acción, y a menudo no se dicen."
-
+  text: Los pronombres de sujeto, como {term yo} y {term tú}, nombran a quien hace la acción, y a menudo no se dicen.
 essence:
-  - { id: ess.yo, to: personas, word: yo, text: "quien habla" }
-  - { id: ess.tu, to: tu-usted, word: tú, text: "quien escucha, en confianza" }
-  - { id: ess.usted, to: tu-usted, word: usted, text: "quien escucha, con respeto" }
-  - { id: ess.vos, to: tu-usted, variety: es-419, word: vos, text: "quien escucha, en confianza" }
-  - { id: ess.el, to: personas, word: él, text: "otro hombre" }
-  - { id: ess.ella, to: personas, word: ella, text: "otra mujer" }
-  - { id: ess.nosotros, to: genero, word: nosotros, text: "yo y otras personas" }
-  - { id: ess.nosotras, to: genero, word: nosotras, text: "yo y otras mujeres" }
-  - { id: ess.vosotros, to: ustedes-vosotros, variety: es-ES, word: vosotros, text: "tú y otras personas" }
-  - { id: ess.vosotras, to: ustedes-vosotros, variety: es-ES, word: vosotras, text: "tú y otras mujeres" }
-  - { id: ess.ustedes, to: ustedes-vosotros, word: ustedes, text: "{variant es-419 quienes escuchan} {variant es-ES quienes escuchan, con respeto}" }
-  - { id: ess.ellos, to: genero, word: ellos, text: "otros hombres, o un grupo de hombres y mujeres" }
-  - { id: ess.ellas, to: genero, word: ellas, text: "otras mujeres" }
+  - { id: ess.yo, to: personas, form: yo, text: quien habla }
+  - { id: ess.tu, to: tu-usted, form: tú, text: "quien escucha, en confianza" }
+  - { id: ess.usted, to: tu-usted, form: usted, text: "quien escucha, con respeto" }
+  - { id: ess.vos, to: tu-usted, variety: es-419, form: vos, text: "quien escucha, en confianza" }
+  - { id: ess.el, to: personas, form: él, text: otro hombre }
+  - { id: ess.ella, to: personas, form: ella, text: otra mujer }
+  - { id: ess.nosotros, to: genero, form: nosotros, text: yo y otras personas }
+  - { id: ess.nosotras, to: genero, form: nosotras, text: yo y otras mujeres }
+  - { id: ess.vosotros, to: ustedes-vosotros, variety: es-ES, form: vosotros, text: tú y otras personas }
+  - { id: ess.vosotras, to: ustedes-vosotros, variety: es-ES, form: vosotras, text: tú y otras mujeres }
+  - id: ess.ustedes
+    to: ustedes-vosotros
+    form: ustedes
+    text: "{variant es-419 quienes escuchan} {variant es-ES quienes escuchan, con respeto}"
+  - { id: ess.ellos, to: genero, form: ellos, text: "otros hombres, o un grupo de hombres y mujeres" }
+  - { id: ess.ellas, to: genero, form: ellas, text: otras mujeres }
   - { id: ess.hablo, to: sin-pronombre, ex: { id: ess.hablo.ex, text: "{target Hablo} español." } }
   - { id: ess.contraste, to: con-pronombre, ex: { id: ess.contraste.ex, text: "{target Yo} trabajo y {target tú} estudias." } }
   - { id: ess.llueve, to: cosas, ex: { id: ess.llueve.ex, text: "{target Llueve}." } }
-
 subtopics:
   - id: personas
     level: A1
@@ -35,44 +34,40 @@ subtopics:
       - id: personas.fact
         type: fact
         text:
-          - id: personas.fact.1
-            text: "Los pronombres de sujeto cambian según la persona: quien habla, quien escucha u otra persona."
+          - { id: personas.fact.1, text: "Los pronombres de sujeto cambian según la persona: quien habla, quien escucha u otra persona." }
           - { id: personas.fact.2, text: "También cambian según el número: una persona o varias." }
       - id: personas.table
         type: table
-        axes: [persona, número]
+        axes: { rows: person, columns: number }
         columns:
-          - { id: personas.col.persona, key: persona, text: Persona }
-          - { id: personas.col.singular, key: singular, text: Singular }
-          - { id: personas.col.plural, key: plural, text: Plural }
+          - { id: personas.col.persona, key: person, text: Persona }
+          - { id: personas.col.singular, key: sg, text: Singular }
+          - { id: personas.col.plural, key: pl, text: Plural }
         rows:
           - id: personas.primera
             features: { person: 1 }
-            persona: { id: personas.primera.name, text: primera persona }
-            singular: [yo]
-            plural: [nosotros, nosotras]
+            cells: { person: { id: personas.primera.name, text: primera persona }, sg: [yo], pl: [nosotros, nosotras] }
           - id: personas.segunda
             features: { person: 2, politeness: infm }
-            persona: { id: personas.segunda.name, text: segunda persona }
-            singular: [tú]
-            plural: ["{variant es-419 ustedes}", "{variant es-ES vosotros}", "{variant es-ES vosotras}"]
+            cells:
+              person: { id: personas.segunda.name, text: segunda persona }
+              sg: [tú]
+              pl:
+                - { form: ustedes, variety: es-419 }
+                - { form: vosotros, variety: es-ES }
+                - { form: vosotras, variety: es-ES }
           - id: personas.usted
             features: { person: 2, politeness: form }
-            persona: { id: personas.usted.name, text: "segunda persona, con respeto" }
-            singular: [usted]
-            plural: [ustedes]
+            cells: { person: { id: personas.usted.name, text: "segunda persona, con respeto" }, sg: [usted], pl: [ustedes] }
           - id: personas.tercera
             features: { person: 3 }
-            persona: { id: personas.tercera.name, text: tercera persona }
-            singular: [él, ella]
-            plural: [ellos, ellas]
+            cells: { person: { id: personas.tercera.name, text: tercera persona }, sg: [él, ella], pl: [ellos, ellas] }
       - id: personas.example
         type: example
         items:
           - { id: personas.ana, text: "{target Yo} soy Ana, y {target él} es Pedro." }
           - { id: personas.medica, text: "{target Ella} es médica, y {target él} es profesor." }
           - { id: personas.chile, text: "{target Nosotros} somos de Chile, ¿y {target {variant es-419 ustedes} {variant es-ES vosotros}}?" }
-
   - id: genero
     level: A1
     title: { id: genero.title, text: Masculino y femenino }
@@ -97,16 +92,16 @@ subtopics:
           - id: genero.ellos
             text: "{term Ellos}: otros hombres, o un grupo de hombres y mujeres."
             ex: { id: genero.ellos.ex, text: "{target Ellos} trabajan, y nosotros descansamos." }
-
   - id: tu-usted
     level: A1
-    title: { id: tu-usted.title, text: Tú y usted }
+    title: { id: tu-usted.title, text: "{term Tú} y {term usted}" }
     blocks:
       - id: tu-usted.fact
         type: fact
         text:
           - { id: tu-usted.fact.1, text: "{term Tú} se usa en confianza: con amigos, con la familia y con niños." }
-          - { id: tu-usted.fact.2, text: "{term Usted} se usa con respeto: con personas mayores, con personas desconocidas y con un jefe o un cliente." }
+          - id: tu-usted.fact.2
+            text: "{term Usted} se usa con respeto: con personas mayores, con personas desconocidas y con un jefe o un cliente."
           - { id: tu-usted.fact.3, text: "{term Usted} usa el verbo de {term él} y {term ella}." }
       - id: tu-usted.example
         type: example
@@ -117,22 +112,22 @@ subtopics:
       - id: tu-usted.why
         type: why
         text:
-          - { id: tu-usted.why.1, text: "{term Usted} viene de {term vuestra merced}, una forma antigua de respeto." }
+          - { id: tu-usted.why.1, text: "{term Usted} viene de {l1 es vuestra merced}, una forma antigua de respeto." }
           - { id: tu-usted.why.2, text: "Por eso usa el verbo de {term él} y {term ella}." }
       - id: tu-usted.vos
         type: fact
         variety: es-419
         text:
-          - { id: tu-usted.vos.1, text: "En Argentina, Uruguay, Paraguay y gran parte de Centroamérica, {term vos} ocupa el lugar de {term tú}." }
+          - id: tu-usted.vos.1
+            text: En Argentina, Uruguay, Paraguay y gran parte de Centroamérica, {term vos} ocupa el lugar de {term tú}.
       - id: tu-usted.vos-example
         type: example
         variety: es-419
         items:
           - { id: tu-usted.vos.sos, text: "¿{target Vos} sos de acá?" }
-
   - id: ustedes-vosotros
     level: A1
-    title: { id: ustedes-vosotros.title, text: Ustedes y vosotros }
+    title: { id: ustedes-vosotros.title, text: "{term Ustedes} y {term vosotros}" }
     blocks:
       - id: ustedes-vosotros.america
         type: fact
@@ -144,7 +139,7 @@ subtopics:
         variety: es-ES
         text:
           - id: ustedes-vosotros.espana.1
-            text: "En España, {term vosotros} y {term vosotras} son el plural de {term tú}, y {term ustedes} es el plural de {term usted}."
+            text: En España, {term vosotros} y {term vosotras} son el plural de {term tú}, y {term ustedes} es el plural de {term usted}.
       - id: ustedes-vosotros.fact
         type: fact
         text:
@@ -154,7 +149,6 @@ subtopics:
         items:
           - { id: ustedes-vosotros.aqui, text: "¿{target Ustedes} son de aquí?" }
           - { id: ustedes-vosotros.sois, variety: es-ES, text: "¿{target Vosotros} sois de aquí?" }
-
   - id: sin-pronombre
     level: A1
     title: { id: sin-pronombre.title, text: El verbo sin pronombre }
@@ -162,24 +156,17 @@ subtopics:
       - id: sin-pronombre.fact
         type: fact
         text:
-          - { id: sin-pronombre.fact.1, text: "La terminación del verbo ya dice quién hace la acción." }
-          - { id: sin-pronombre.fact.2, text: "Por eso el pronombre normalmente no se dice." }
+          - { id: sin-pronombre.fact.1, text: La terminación del verbo ya dice quién hace la acción. }
+          - { id: sin-pronombre.fact.2, text: Por eso el pronombre normalmente no se dice. }
       - id: sin-pronombre.list
         type: list
         items:
-          - id: sin-pronombre.o
-            text: "{term -o} es {term yo}."
-            ex: { id: sin-pronombre.o.ex, text: "{target Hablo} español." }
-          - id: sin-pronombre.as
-            text: "{term -as} es {term tú}."
-            ex: { id: sin-pronombre.as.ex, text: "¿{target Hablas} español?" }
-          - id: sin-pronombre.es
-            text: "{term -es} es {term tú}."
-            ex: { id: sin-pronombre.es.ex, text: "¿{target Vives} aquí?" }
+          - { id: sin-pronombre.o, text: "{term -o} es {term yo}.", ex: { id: sin-pronombre.o.ex, text: "{target Hablo} español." } }
+          - { id: sin-pronombre.as, text: "{term -as} es {term tú}.", ex: { id: sin-pronombre.as.ex, text: "¿{target Hablas} español?" } }
+          - { id: sin-pronombre.es, text: "{term -es} es {term tú}.", ex: { id: sin-pronombre.es.ex, text: "¿{target Vives} aquí?" } }
           - id: sin-pronombre.mos
             text: "{term -mos} es {term nosotros} o {term nosotras}."
             ex: { id: sin-pronombre.mos.ex, text: "{target Comemos} a las dos." }
-
   - id: con-pronombre
     level: A2
     title: { id: con-pronombre.title, text: Cuándo se dice el pronombre }
@@ -187,20 +174,19 @@ subtopics:
       - id: con-pronombre.fact
         type: fact
         text:
-          - { id: con-pronombre.fact.1, text: "El pronombre se dice cuando el verbo solo no basta." }
+          - { id: con-pronombre.fact.1, text: El pronombre se dice cuando el verbo solo no basta. }
       - id: con-pronombre.list
         type: list
         items:
           - id: con-pronombre.contraste
-            text: "Para comparar a dos personas."
+            text: Para comparar a dos personas.
             ex: { id: con-pronombre.contraste.ex, text: "{target Yo} trabajo y {target tú} estudias." }
           - id: con-pronombre.aclarar
-            text: "Para saber si es {term usted}, {term él} o {term ella}."
+            text: Para saber si es {term usted}, {term él} o {term ella}.
             ex: { id: con-pronombre.aclarar.ex, text: "¿Habla {target usted} inglés?" }
           - id: con-pronombre.solo
-            text: "Sin verbo, en una respuesta corta."
+            text: Sin verbo, en una respuesta corta.
             ex: { id: con-pronombre.solo.ex, text: "—¿Quién quiere café? —{target Yo}." }
-
   - id: cosas
     level: A1
     title: { id: cosas.title, text: Las cosas y el tiempo }
@@ -215,7 +201,6 @@ subtopics:
           - { id: cosas.llueve, text: "{target Llueve}." }
           - { id: cosas.tarde, text: "{target Es} tarde." }
           - { id: cosas.mesa, text: "—¿Dónde está el libro? —{target Está} en la mesa." }
-
 errors:
   - id: err.ello
     in: cosas
@@ -223,14 +208,12 @@ errors:
     right: { id: err.ello.right, text: "{target Es} tarde." }
     rule: { id: err.ello.rule, text: "Para el tiempo y la hora, el verbo va solo, sin pronombre." }
     speakers:
-      en: { id: err.ello.en, text: "El inglés pone it como sujeto: it's late." }
-      fr: { id: err.ello.fr, text: "El francés pone il como sujeto: il est tard." }
-      de: { id: err.ello.de, text: "El alemán pone es como sujeto: es ist spät." }
-
+      en: { id: err.ello.en, text: "El inglés pone {l1 en it} como sujeto: {l1 en it's late}." }
+      fr: { id: err.ello.fr, text: "El francés pone {l1 fr il} como sujeto: {l1 fr il est tard}." }
+      de: { id: err.ello.de, text: "El alemán pone {l1 de es} como sujeto: {l1 de es ist spät}." }
   - id: err.usted-tu
     in: tu-usted
     wrong: ¿Usted tienes hijos?
     right: { id: err.usted-tu.right, text: "¿{target Usted tiene} hijos?" }
     rule: { id: err.usted-tu.rule, text: "{term Usted} usa el verbo de {term él} y {term ella}." }
-    speakers:
-      en: { id: err.usted-tu.en, text: "El inglés usa una sola palabra, you, para tú y usted." }
+    speakers: { en: { id: err.usted-tu.en, text: "El inglés usa una sola palabra, {l1 en you}, para {term tú} y {term usted}." } }
