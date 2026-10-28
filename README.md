@@ -55,6 +55,12 @@ langs123/
 │   ├── schema/                JSON Schemas
 │   ├── templates/topic.yaml   skeleton for a new topic
 │   └── {lang}/                topics of a language being learned: {NN-section}/{topic}/topic.yaml
+├── library/                   the new library, written beside languages/ until it takes its place
+│   ├── RULES.md               the rule catalog every topic, index and review follows
+│   ├── CONVENTIONS.md         the rules restated for writers
+│   ├── schema/                the JSON Schema of its files
+│   ├── samples/               four topics written to the rules
+│   └── {course}/              a course: index.yaml, and {topic}/ with source.yaml and one file per language
 ├── api.ts                     what programs built on the library import: the build, the export, the readers
 ├── apps/web/                  the web app
 ├── scripts/                   shared tooling: data loading, schema types, checks
@@ -70,6 +76,7 @@ langs123/
 | `npm run build` | builds the whole static site into `build/web/` and stops on any page that shows unrendered text (`**`, a topic link, `undefined`); `SITE_URL=https://…` sets the public URL |
 | `npm run export` | writes the library as one JSON file, `build/data/library.json`, described by `languages/schema/library.schema.json`: every language, topic and block with its levels, text as inline Markdown per explanation language |
 | `npm run check` | validates all data against the schemas and conventions, and names the parts of a topic whose English changed since its translations |
+| `npm run check -- --library v1 [root]` | checks the new library at `library/`, or at the root given: each file against `library/schema/`, its layout, and the marks and varieties of its text; each problem names its rule in `library/RULES.md` |
 | `npm run translated -- <id> [uk es]` | stamps a topic's translations as up to date with its English; `--all` stamps every topic |
 | `npm test` | unit tests, and checks on the pages of the sample site, side by side; the sample uses every feature the library uses (`apps/web/sample.test.ts` names a topic to add when it does not); fails below full line and function coverage of the modules `bunfig.toml` holds to it; `bun test <file>` runs one file |
 | `npm run e2e` | drives the sample's topic and track pages in one Chromium: the level filter at every level and view, the bars, sheets and panels, the variety switch and the study path; `bunx playwright install chromium` installs the browser |

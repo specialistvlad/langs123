@@ -1,0 +1,1547 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "library.schema.json",
+  "title": "langs123 library v1",
+  "description": "Every data file of the new library (library/): a course's index, a topic's source file, its language files and its review record, the approvals and the concept registry. Each file is checked against its definition; x-rule names the rule of library/RULES.md a definition holds, and x-extra the rule a property it lacks breaks.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "index": {
+      "$ref": "#/definitions/index"
+    },
+    "source": {
+      "$ref": "#/definitions/source"
+    },
+    "language": {
+      "$ref": "#/definitions/language"
+    },
+    "review": {
+      "$ref": "#/definitions/review"
+    },
+    "approvals": {
+      "$ref": "#/definitions/approvals"
+    },
+    "concepts": {
+      "$ref": "#/definitions/concepts"
+    }
+  },
+  "definitions": {
+    "explain": {
+      "description": "An explanation language, from site.yaml.",
+      "enum": [
+        "en",
+        "uk",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "pl",
+        "tr",
+        "id",
+        "vi",
+        "ja"
+      ]
+    },
+    "level": {
+      "description": "A level of the CEFR scale, from levels.yaml.",
+      "x-rule": "IX-17",
+      "enum": [
+        "A0",
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ]
+    },
+    "status": {
+      "description": "Where an index, an index entry or a topic stands in its review.",
+      "x-rule": "RV-01",
+      "enum": [
+        "draft",
+        "in-review",
+        "approved"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "title": "ISO date"
+    },
+    "slug": {
+      "description": "A section, topic or subtopic id: lowercase letters, digits and hyphens.",
+      "x-rule": "IX-23",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "id": {
+      "description": "The id of a block, sentence, item, example or reason: slugs joined by dots, unique in its topic and kept when its text changes.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)*$"
+    },
+    "topicId": {
+      "description": "A topic's address, <course>.<slug>.",
+      "type": "string",
+      "pattern": "^[a-z]{2}\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "variety": {
+      "description": "A variety of a course, such as en-GB or es-419.",
+      "x-rule": "NO-28",
+      "type": "string",
+      "pattern": "^[a-z]{2}-(?:[A-Z]{2}|[0-9]{3})$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "localized": {
+      "description": "A name in every explanation language.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "uk",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "pl",
+        "tr",
+        "id",
+        "vi",
+        "ja"
+      ],
+      "properties": {
+        "en": {
+          "$ref": "#/definitions/text"
+        },
+        "uk": {
+          "$ref": "#/definitions/text"
+        },
+        "es": {
+          "$ref": "#/definitions/text"
+        },
+        "pt": {
+          "$ref": "#/definitions/text"
+        },
+        "fr": {
+          "$ref": "#/definitions/text"
+        },
+        "de": {
+          "$ref": "#/definitions/text"
+        },
+        "it": {
+          "$ref": "#/definitions/text"
+        },
+        "pl": {
+          "$ref": "#/definitions/text"
+        },
+        "tr": {
+          "$ref": "#/definitions/text"
+        },
+        "id": {
+          "$ref": "#/definitions/text"
+        },
+        "vi": {
+          "$ref": "#/definitions/text"
+        },
+        "ja": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "sentence": {
+      "description": "A sentence of explanation in the source language, translated in each language file under its id.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "text": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "form": {
+      "description": "A form in the course language, left untranslated.",
+      "type": "string",
+      "minLength": 1
+    },
+    "example": {
+      "description": "A sentence in the course language, translated as a whole under its id.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "text": {
+          "$ref": "#/definitions/text"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        }
+      }
+    },
+    "essenceLine": {
+      "description": "A line of the essence, part 00: a form, its transcription, a gloss or an example, and the subtopic it opens.",
+      "x-rule": "SH-12",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "to"
+      ],
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "form"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "ex"
+          ]
+        }
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "form": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/form"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/form"
+              }
+            }
+          ]
+        },
+        "ipa": {
+          "$ref": "#/definitions/form"
+        },
+        "text": {
+          "$ref": "#/definitions/text"
+        },
+        "ex": {
+          "$ref": "#/definitions/example"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "to": {
+          "$ref": "#/definitions/slug"
+        }
+      }
+    },
+    "listItem": {
+      "description": "One line of a list: a form, its transcription, a sentence and its example.",
+      "x-rule": "ST-02",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "form"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "ex"
+          ]
+        }
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "form": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/form"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/form"
+              }
+            }
+          ]
+        },
+        "ipa": {
+          "$ref": "#/definitions/form"
+        },
+        "text": {
+          "$ref": "#/definitions/text"
+        },
+        "ex": {
+          "$ref": "#/definitions/example"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        }
+      }
+    },
+    "fact": {
+      "description": "The rule: its sentences.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "fact"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "text": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/sentence"
+          }
+        }
+      }
+    },
+    "why": {
+      "description": "The one reason that helps a learner remember the rule: its sentences.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "why"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "text": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/sentence"
+          }
+        }
+      }
+    },
+    "exampleBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "example"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/example"
+          }
+        }
+      }
+    },
+    "list": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "list"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/listItem"
+          }
+        }
+      }
+    },
+    "feature": {
+      "description": "A grammatical feature a table crosses, after UniMorph.",
+      "enum": [
+        "person",
+        "number",
+        "gender",
+        "politeness",
+        "sentence"
+      ]
+    },
+    "features": {
+      "description": "The values a table row carries; a feature it omits covers every value.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "person": {
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "number": {
+          "enum": [
+            "sg",
+            "pl"
+          ]
+        },
+        "gender": {
+          "enum": [
+            "masc",
+            "fem",
+            "neut"
+          ]
+        },
+        "politeness": {
+          "enum": [
+            "infm",
+            "form"
+          ]
+        },
+        "sentence": {
+          "enum": [
+            "statement",
+            "negative",
+            "question",
+            "yes",
+            "no"
+          ]
+        }
+      }
+    },
+    "key": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "cell": {
+      "description": "A form, a list of forms (each of one variety where it carries one), or a sentence naming its row.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/form"
+        },
+        {
+          "$ref": "#/definitions/sentence"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/form"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "form",
+                  "variety"
+                ],
+                "properties": {
+                  "form": {
+                    "$ref": "#/definitions/form"
+                  },
+                  "variety": {
+                    "$ref": "#/definitions/variety"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "table": {
+      "description": "A true grid: the two features it crosses, its columns and its rows.",
+      "x-rule": "ST-03",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "axes",
+        "columns",
+        "rows"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "const": "table"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "axes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rows",
+            "columns"
+          ],
+          "properties": {
+            "rows": {
+              "$ref": "#/definitions/feature"
+            },
+            "columns": {
+              "$ref": "#/definitions/feature"
+            }
+          }
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "key",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "key": {
+                "$ref": "#/definitions/key"
+              },
+              "text": {
+                "$ref": "#/definitions/text"
+              }
+            }
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "features",
+              "cells"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "features": {
+                "$ref": "#/definitions/features"
+              },
+              "cells": {
+                "type": "object",
+                "propertyNames": {
+                  "$ref": "#/definitions/key"
+                },
+                "additionalProperties": {
+                  "$ref": "#/definitions/cell"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "block": {
+      "description": "A block of a subtopic: a fact, a why, an example, a list or a table.",
+      "x-rule": "ST-01",
+      "type": "object",
+      "discriminator": {
+        "propertyName": "type"
+      },
+      "required": [
+        "type"
+      ],
+      "oneOf": [
+        {
+          "$ref": "#/definitions/fact"
+        },
+        {
+          "$ref": "#/definitions/why"
+        },
+        {
+          "$ref": "#/definitions/exampleBlock"
+        },
+        {
+          "$ref": "#/definitions/list"
+        },
+        {
+          "$ref": "#/definitions/table"
+        }
+      ]
+    },
+    "subtopic": {
+      "description": "A numbered part of a topic: its level, its title and its blocks.",
+      "type": "object",
+      "x-extra": "ST-09",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "level",
+        "title",
+        "blocks"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/slug"
+        },
+        "level": {
+          "x-rule": "ST-11",
+          "$ref": "#/definitions/level"
+        },
+        "title": {
+          "$ref": "#/definitions/sentence"
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/block"
+          }
+        }
+      }
+    },
+    "speakers": {
+      "description": "Each language whose speakers make an error, with its reason.",
+      "x-rule": "ER-02",
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "#/definitions/explain"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/sentence"
+      }
+    },
+    "error": {
+      "title": "Common error",
+      "description": "A common error: the wrong form, its correction and its rule, in its subtopic, with its speakers.",
+      "x-rule": "ER-06",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "in",
+        "wrong",
+        "right",
+        "rule",
+        "speakers"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "in": {
+          "x-rule": "ST-13",
+          "$ref": "#/definitions/slug"
+        },
+        "wrong": {
+          "$ref": "#/definitions/form"
+        },
+        "right": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/form"
+            },
+            {
+              "$ref": "#/definitions/example"
+            }
+          ]
+        },
+        "rule": {
+          "$ref": "#/definitions/sentence"
+        },
+        "speakers": {
+          "$ref": "#/definitions/speakers"
+        }
+      }
+    },
+    "place": {
+      "enum": [
+        "contained",
+        "on-surface",
+        "under",
+        "under-covered",
+        "front",
+        "back",
+        "beside",
+        "near",
+        "between",
+        "above",
+        "below",
+        "across",
+        "outside"
+      ]
+    },
+    "object": {
+      "description": "An object the picture library draws.",
+      "enum": [
+        "ball",
+        "box",
+        "house",
+        "cover"
+      ],
+      "title": "Drawn object"
+    },
+    "picture": {
+      "description": "A scene grid: one cell per essence line, placing the figure against the ground.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "figure",
+        "ground",
+        "cells"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "kind": {
+          "const": "scene-grid"
+        },
+        "figure": {
+          "$ref": "#/definitions/object"
+        },
+        "ground": {
+          "$ref": "#/definitions/object"
+        },
+        "cells": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "line",
+              "place"
+            ],
+            "properties": {
+              "line": {
+                "$ref": "#/definitions/id"
+              },
+              "place": {
+                "$ref": "#/definitions/place"
+              },
+              "ground": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/object"
+                  },
+                  {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "$ref": "#/definitions/object"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "title": "Topic source",
+      "description": "A topic's source file: its structure, its text in the course language, its explanations in the source language, its errors and its status.",
+      "x-rule": "SH-02",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status",
+        "nativeReview",
+        "title",
+        "definition",
+        "essence",
+        "subtopics",
+        "errors"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/topicId"
+        },
+        "status": {
+          "$ref": "#/definitions/status"
+        },
+        "nativeReview": {
+          "x-rule": "RV-13",
+          "type": "boolean"
+        },
+        "title": {
+          "$ref": "#/definitions/sentence"
+        },
+        "definition": {
+          "$ref": "#/definitions/sentence"
+        },
+        "essence": {
+          "x-rule": "SH-11",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/essenceLine"
+          }
+        },
+        "subtopics": {
+          "x-rule": "SH-14",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/subtopic"
+          }
+        },
+        "errors": {
+          "x-rule": "SH-24",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "picture": {
+          "$ref": "#/definitions/picture"
+        }
+      }
+    },
+    "translation": {
+      "description": "A source sentence's translation: one string, or a list where it splits the sentence.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/text"
+        },
+        {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      ]
+    },
+    "ownExample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "tr"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "text": {
+          "$ref": "#/definitions/text"
+        },
+        "tr": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "ownBlock": {
+      "description": "A block of a language's own, for its readers alone: placed in a subtopic after a source block.",
+      "x-rule": "ER-05",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "in",
+        "after"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "enum": [
+            "fact",
+            "why",
+            "example"
+          ]
+        },
+        "in": {
+          "$ref": "#/definitions/slug"
+        },
+        "after": {
+          "$ref": "#/definitions/id"
+        },
+        "variety": {
+          "$ref": "#/definitions/variety"
+        },
+        "text": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/sentence"
+          }
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/ownExample"
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "type": {
+            "const": "example"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "items"
+        ],
+        "not": {
+          "required": [
+            "text"
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "text"
+        ],
+        "not": {
+          "required": [
+            "items"
+          ]
+        }
+      }
+    },
+    "ownError": {
+      "description": "An error of a language's own speakers, in its errors part.",
+      "x-rule": "ER-05",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "in",
+        "wrong",
+        "right",
+        "rule",
+        "speakers"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "in": {
+          "$ref": "#/definitions/slug"
+        },
+        "after": {
+          "$ref": "#/definitions/id"
+        },
+        "wrong": {
+          "$ref": "#/definitions/form"
+        },
+        "right": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/form"
+            },
+            {
+              "$ref": "#/definitions/ownExample"
+            }
+          ]
+        },
+        "rule": {
+          "$ref": "#/definitions/sentence"
+        },
+        "speakers": {
+          "$ref": "#/definitions/speakers"
+        }
+      }
+    },
+    "language": {
+      "title": "Topic language file",
+      "description": "One explanation language of a topic: its translations keyed by the source's ids, the fingerprints they were written from, and its own blocks, errors and speakers.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language",
+        "nativeReview",
+        "text"
+      ],
+      "properties": {
+        "language": {
+          "$ref": "#/definitions/explain"
+        },
+        "nativeReview": {
+          "x-rule": "RV-13",
+          "type": "boolean"
+        },
+        "text": {
+          "x-rule": "LA-07",
+          "type": "object",
+          "propertyNames": {
+            "x-rule": "LA-07",
+            "pattern": "^[a-z0-9.-]+(?: \\+ [a-z0-9.-]+)*$"
+          },
+          "additionalProperties": {
+            "$ref": "#/definitions/translation"
+          }
+        },
+        "fingerprints": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/id"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}$"
+          }
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ownBlock"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ownError"
+          }
+        },
+        "speakers": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/definitions/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/definitions/sentence"
+          }
+        }
+      }
+    },
+    "cluster": {
+      "description": "A practical cluster (IX-13).",
+      "x-rule": "IX-12",
+      "enum": [
+        "question-words",
+        "words-of-place",
+        "words-of-movement",
+        "words-of-time",
+        "how-often",
+        "how-much",
+        "linking-words",
+        "comparing",
+        "numbers-in-daily-life",
+        "polite-words",
+        "asking-the-way",
+        "small-talk",
+        "reference-tables"
+      ]
+    },
+    "entry": {
+      "description": "A topic in its section of the index, defined before its text is written.",
+      "x-rule": "IX-08",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "subject",
+        "covers",
+        "path",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/slug"
+        },
+        "subject": {
+          "$ref": "#/definitions/text"
+        },
+        "covers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        },
+        "path": {
+          "description": "The topic's place in the study path at each level it is planned at.",
+          "x-rule": "IX-06",
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "$ref": "#/definitions/level"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "status": {
+          "x-rule": "IX-21",
+          "$ref": "#/definitions/status"
+        },
+        "concepts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/slug"
+          }
+        },
+        "replaces": {
+          "type": "string",
+          "pattern": "^[a-z]{2}\\.[a-z0-9-]+\\.[a-z0-9-]+$"
+        },
+        "practical": {
+          "$ref": "#/definitions/cluster"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "script": {
+          "enum": [
+            "alphabet",
+            "sounds",
+            "soft-sign",
+            "kana"
+          ]
+        },
+        "needs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/id"
+          }
+        },
+        "misleads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "lang",
+              "form",
+              "counterpart"
+            ],
+            "properties": {
+              "lang": {
+                "$ref": "#/definitions/explain"
+              },
+              "form": {
+                "$ref": "#/definitions/text"
+              },
+              "counterpart": {
+                "$ref": "#/definitions/text"
+              }
+            }
+          }
+        }
+      }
+    },
+    "index": {
+      "title": "Course index",
+      "description": "A course's index: its name, source language, varieties, sources and sections, each with its topics in order.",
+      "x-rule": "IX-01",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "course",
+        "name",
+        "source",
+        "status",
+        "sources",
+        "sections"
+      ],
+      "properties": {
+        "course": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "name": {
+          "$ref": "#/definitions/localized"
+        },
+        "source": {
+          "x-rule": "LA-09",
+          "$ref": "#/definitions/explain"
+        },
+        "varieties": {
+          "x-rule": "NO-27",
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/variety"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/status"
+        },
+        "sources": {
+          "x-rule": "IX-09",
+          "type": "array",
+          "items": {
+            "x-rule": "IX-09",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name",
+              "licence",
+              "url",
+              "took"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/slug"
+              },
+              "name": {
+                "$ref": "#/definitions/text"
+              },
+              "licence": {
+                "$ref": "#/definitions/text"
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https?://"
+              },
+              "took": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "topics",
+                    "levels"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "sections": {
+          "x-rule": "IX-02",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name",
+              "topics"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/slug"
+              },
+              "name": {
+                "$ref": "#/definitions/localized"
+              },
+              "topics": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/entry"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "at",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "at": {
+          "$ref": "#/definitions/id"
+        },
+        "language": {
+          "$ref": "#/definitions/explain"
+        },
+        "rule": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}-\\d{2}$"
+        },
+        "source": {
+          "$ref": "#/definitions/slug"
+        },
+        "text": {
+          "$ref": "#/definitions/text"
+        },
+        "fix": {
+          "$ref": "#/definitions/text"
+        },
+        "answer": {
+          "enum": [
+            "fixed",
+            "declined"
+          ]
+        },
+        "reason": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "review": {
+      "title": "Topic review record",
+      "description": "A topic's review record: its writer, its statuses, each review run with its findings and the writer's answers, and the owner's readings.",
+      "x-rule": "RV-04",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "writer",
+        "statuses"
+      ],
+      "properties": {
+        "writer": {
+          "$ref": "#/definitions/session"
+        },
+        "statuses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "date",
+              "by"
+            ],
+            "properties": {
+              "status": {
+                "$ref": "#/definitions/status"
+              },
+              "date": {
+                "$ref": "#/definitions/date"
+              },
+              "by": {
+                "$ref": "#/definitions/text"
+              }
+            }
+          }
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "session",
+              "model",
+              "date",
+              "run",
+              "findings"
+            ],
+            "properties": {
+              "session": {
+                "$ref": "#/definitions/text"
+              },
+              "model": {
+                "$ref": "#/definitions/text"
+              },
+              "date": {
+                "$ref": "#/definitions/date"
+              },
+              "run": {
+                "enum": [
+                  1,
+                  2
+                ]
+              },
+              "findings": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/finding"
+                }
+              }
+            }
+          }
+        },
+        "flagged": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}-\\d{2}$"
+          }
+        },
+        "owner": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "language",
+              "date",
+              "why"
+            ],
+            "properties": {
+              "language": {
+                "type": "string",
+                "pattern": "^(?:uk|en)$"
+              },
+              "date": {
+                "$ref": "#/definitions/date"
+              },
+              "why": {
+                "enum": [
+                  "flagged",
+                  "sampled"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session",
+        "model"
+      ],
+      "properties": {
+        "session": {
+          "$ref": "#/definitions/text"
+        },
+        "model": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Approvals",
+      "description": "The owner's approvals of the work's gates, each with its date; a wave carries the seed of its one-in-ten draw.",
+      "x-rule": "RV-08",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "what",
+          "by",
+          "date"
+        ],
+        "properties": {
+          "what": {
+            "x-rule": "RV-08",
+            "type": "string",
+            "pattern": "^(?:conventions|samples|index:[a-z]{2}|wave:(?:A0|A1|A2|B1|B2|C1|C2))$"
+          },
+          "by": {
+            "const": "owner"
+          },
+          "date": {
+            "$ref": "#/definitions/date"
+          },
+          "seed": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "concepts": {
+      "title": "Concept registry",
+      "description": "The concept keys every course's index names its topics' concepts from.",
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/definitions/slug"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "description"
+        ],
+        "properties": {
+          "description": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    }
+  }
+}

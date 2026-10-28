@@ -8,8 +8,18 @@ import { join } from "node:path";
 const SCHEMAS = join(import.meta.dir, "..", "languages", "schema");
 const OUT = join(import.meta.dir, "generated");
 const NAMES = ["site", "levels", "interface", "curriculum", "concepts", "topic"];
-// The export's schema takes the explanation languages of site.yaml too; scripts/export/types.ts types the export.
-const SYNCED = [...NAMES, "library"];
+// Each schema with the folder it sits in and the file its types go to: today's library's schemas, its export's
+// (typed by scripts/export/types.ts), and the new library's data files (library/schema/).
+interface Synced {
+  dir: string;
+  name: string;
+  out?: string;
+}
+const SYNCED: Synced[] = [
+  ...NAMES.map((name) => ({ dir: "languages/schema", name, out: name })),
+  { dir: "languages/schema", name: "library" },
+  { dir: "library/schema", name: "library", out: "library-v1" },
+];
 const check = process.argv.includes("--check");
 
 const site = Bun.YAML.parse(await Bun.file(join(SCHEMAS, "..", "site.yaml")).text()) as { explain: { code: string }[] };
@@ -34,32 +44,32 @@ function withCodes(node: unknown): unknown {
 }
 
 let stale = 0;
-for (const name of SYNCED) {
-  const path = join(SCHEMAS, `${name}.schema.json`);
+for (const { dir, name, out } of SYNCED) {
+  const path = join(import.meta.dir, "..", dir, `${name}.schema.json`);
   const source = await Bun.file(path).text();
   const synced = `${JSON.stringify(withCodes(JSON.parse(source)), null, 2)}\n`;
   if (synced !== source) {
     if (check) {
-      console.log(`  ✗ languages/schema/${name}.schema.json is out of date with site.yaml: run npm run types`);
+      console.log(`  ✗ ${dir}/${name}.schema.json is out of date with site.yaml: run npm run types`);
       stale++;
     } else await Bun.write(path, synced);
   }
-  if (!NAMES.includes(name)) continue;
+  if (out === undefined) continue;
   const types = await compileFromFile(path, {
-    bannerComment: `// Generated from languages/schema/${name}.schema.json by npm run types. Edit the schema, then regenerate.`,
-    cwd: SCHEMAS,
+    bannerComment: `// Generated from ${dir}/${name}.schema.json by npm run types. Edit the schema, then regenerate.`,
+    cwd: join(import.meta.dir, "..", dir),
     additionalProperties: false,
     ignoreMinAndMaxItems: true,
     style: { printWidth: 140 },
   });
-  const file = join(OUT, `${name}.ts`);
+  const file = join(OUT, `${out}.ts`);
   if (!check) {
     await Bun.write(file, types);
     continue;
   }
   const current = (await Bun.file(file).exists()) ? await Bun.file(file).text() : "";
   if (current !== types) {
-    console.log(`  ✗ scripts/generated/${name}.ts is out of date: run npm run types`);
+    console.log(`  ✗ scripts/generated/${out}.ts is out of date: run npm run types`);
     stale++;
   }
 }
@@ -82,6 +92,6 @@ else if (!(await Bun.file(keysFile).exists()) || (await Bun.file(keysFile).text(
 console.log(
   check
     ? `stale files: ${stale}`
-    : `wrote the explanation languages of site.yaml into the schemas and generated ${NAMES.length + 1} type files into scripts/generated/`,
+    : `wrote the explanation languages of site.yaml into the schemas and generated ${NAMES.length + 2} type files into scripts/generated/`,
 );
 process.exit(stale > 0 ? 1 : 0);

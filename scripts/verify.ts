@@ -31,6 +31,7 @@ const GROUPS: Record<string, Check[]> = {
   verify: [
     ["generated types", ["bun", "run", "scripts/schema-types.ts", "--check"]],
     ...["typecheck", "lint", "format:check", "check", "rules"].map((script): Check => [script, ["bun", "run", script]]),
+    ["check of the new library", ["bun", "run", "scripts/check.ts", "--library", "v1"]],
     ...UNIT,
     ...E2E,
   ],
