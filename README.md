@@ -62,7 +62,7 @@ langs123/
 │   ├── samples/               four topics written to the rules
 │   └── {course}/              a course: index.yaml, and {topic}/ with source.yaml and one file per language
 ├── api.ts                     what programs built on the library import: the build, the export, the readers
-├── apps/web/                  the web app
+├── apps/web/                  the web app; tokens.json holds its look, the default design, and each tokens.<name>.json another
 ├── scripts/                   shared tooling: data loading, schema types, checks
 ├── ROADMAP.md                 project phases
 └── build/                     generated output
@@ -72,9 +72,9 @@ langs123/
 
 | Command | What it does |
 |---|---|
-| `npm start` | serves the sample site (`apps/web/sample.ts`) from `build/dev/` on port 47380 on every interface (open the printed network address on a phone), rebuilds it in about a second and reloads on every change, and lists the problems `npm run check` finds; a topic whose file changes joins the sample, `npm start -- <topic id>` adds one, and `npm start -- --full` serves the whole library |
-| `npm run build` | builds the whole static site into `build/web/` and stops on any page that shows unrendered text (`**`, a topic link, `undefined`); `SITE_URL=https://…` sets the public URL |
-| `npm run export` | writes the library as one JSON file, `build/data/library.json`, described by `languages/schema/library.schema.json`: every language, topic and block with its levels, text as inline Markdown per explanation language |
+| `npm start` | serves the sample site (`apps/web/sample.ts`) from `build/dev/` on port 47380 on every interface (open the printed network address on a phone), rebuilds it in about a second and reloads on every change, and lists the problems `npm run check` finds; a topic whose file changes joins the sample, `npm start -- <topic id>` adds one, `npm start -- --full` serves the whole library, and `npm start -- --design <name>` serves it in that design |
+| `npm run build` | builds the whole static site into `build/web/` and stops on any page that shows unrendered text (`**`, a topic link, `undefined`); `SITE_URL=https://…` sets the public URL, and `-- --design <name>` builds it in that design |
+| `npm run export` | writes the library as one JSON file, `build/data/library.json`, described by `languages/schema/library.schema.json`: every language, topic and block with its levels, text as inline Markdown per explanation language, and the level colours of the default design, or of the one `-- --design <name>` names |
 | `npm run check` | validates all data against the schemas and conventions, and names the parts of a topic whose English changed since its translations |
 | `npm run check -- --library v1 [root]` | checks the new library at `library/`, or at the root given: each file against `library/schema/`, its layout, and the marks and varieties of its text; each problem names its rule in `library/RULES.md`; the alignment holds each language file to its source sentence by sentence, with the fingerprint each translation was written from |
 | `npm run ids -- <topic folder>…` | gives each element of a topic of the new library that lacks an id one, from its parent's id and its kind, and keeps every id already written |

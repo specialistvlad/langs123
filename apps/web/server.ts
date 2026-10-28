@@ -1,7 +1,8 @@
 // Development server: builds the static site, serves it, rebuilds on every change and
 // reloads open pages over server-sent events. Run: npm start → listens on every interface, port 47380.
 // It builds the sample (sample.ts) in about a second, with every topic named after it and every topic whose
-// file changes while it runs: npm start -- en.verbs.would. npm start -- --full builds the whole library.
+// file changes while it runs: npm start -- en.verbs.would. npm start -- --full builds the whole library;
+// npm start -- --design <name> builds it in that design (tokens.ts).
 import { watch } from "node:fs";
 import { networkInterfaces } from "node:os";
 import { join } from "node:path";
@@ -10,6 +11,7 @@ import { validate } from "../../scripts/validate/index.ts";
 import { build } from "./build.ts";
 import { served } from "./serve.ts";
 import { SAMPLE } from "./sample.ts";
+import { designArg } from "./tokens.ts";
 
 const HOST = process.env["HOST"] ?? "0.0.0.0";
 const PORT = Number(process.env["PORT"] ?? 47380);
@@ -24,8 +26,9 @@ const OUT = join(ROOT, "build/dev");
 const NO_STORE = { "Cache-Control": "no-store" };
 const args = process.argv.slice(2);
 const FULL = args.includes("--full");
+const DESIGN = designArg(args);
 // The topics the preview builds beyond the sample: those named on the command line, then those edited.
-const shown = new Set([...SAMPLE.topics, ...args.filter((a) => !a.startsWith("--"))]);
+const shown = new Set([...SAMPLE.topics, ...args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--design")]);
 const encoder = new TextEncoder();
 const clients = new Set<ReadableStreamDefaultController<Uint8Array>>();
 
@@ -45,7 +48,7 @@ function rebuild(reason: string): Promise<void> {
     const started = performance.now();
     try {
       const sample = FULL ? {} : { sample: { topics: [...shown], explain: SAMPLE.explain } };
-      const count = (await build({ outDir: OUT, dev: true, siteUrl: DEV_URL, ...sample })).length;
+      const count = (await build({ outDir: OUT, dev: true, siteUrl: DEV_URL, design: DESIGN, ...sample })).length;
       console.log(`built ${count} pages in ${Math.round(performance.now() - started)} ms (${reason})`);
       send("data: reload\n\n");
     } catch (error) {

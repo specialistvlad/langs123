@@ -1,8 +1,8 @@
 // The tokens: every token sets its variable, named by its group; the colours and the shadows whose themes differ take
 // their light values on :root and their dark ones under the reader's choice and the system's; a value missing in a
-// theme is named.
+// theme is named. Every design sets the same variables, and a command line names its design with --design.
 import { expect, test } from "bun:test";
-import { type Tokens, token, tokensCss, tokenVariables } from "./tokens.ts";
+import { DEFAULT_DESIGN, DESIGNS, designArg, designTokens, type Tokens, token, tokensCss, tokenVariables } from "./tokens.ts";
 
 const SAMPLE: Tokens = {
   color: {
@@ -107,4 +107,39 @@ test("every colour has a value in each theme, and a missing one is named", () =>
   expect(token("level-a0-strong", "dark")).toMatch(/^#/);
   expect(() => token("no-such-token", "light")).toThrow("tokens.json has no light value for no-such-token");
   expect(() => token("accent", "dark", [{ name: "accent", value: { light: "#000" } }])).toThrow("no dark value for accent");
+});
+
+test("the designs are tokens.json, the default, and each tokens.<name>.json beside it", () => {
+  expect(DESIGNS).toEqual([DEFAULT_DESIGN, "proof"]);
+  expect(designTokens()).toBe(designTokens(DEFAULT_DESIGN));
+  expect(designTokens("proof")).toBe(designTokens("proof"));
+  expect(token("accent", "light", designTokens("proof").color.tokens)).not.toBe(token("accent", "light"));
+  expect(() => designTokens("nope")).toThrow("no design nope; the designs are default, proof");
+});
+
+test("every design sets the variables the default design sets, in the same order", () => {
+  const names = (design: string): string[][] =>
+    Object.values(tokenVariables(designTokens(design))).map((declarations) => declarations.map(([name]) => name));
+  for (const design of DESIGNS) expect(names(design)).toEqual(names(DEFAULT_DESIGN));
+});
+
+test("a radius token keeps the variable its px gives it in the default design, whatever its value", () => {
+  const { root } = tokenVariables({
+    ...SAMPLE,
+    radius: {
+      tokens: [
+        { name: "radius-xl", value: "4px" },
+        { name: "radius-new", value: "9px" },
+      ],
+    },
+  });
+  expect(root).toContainEqual(["--r-12", "4px"]);
+  expect(root).toContainEqual(["--r-9", "9px"]);
+});
+
+test("a command line names its design with --design, and the default design without it", () => {
+  expect(designArg(["--full"])).toBe(DEFAULT_DESIGN);
+  expect(designArg(["en.verbs.would", "--design", "proof"])).toBe("proof");
+  expect(() => designArg(["--design", "nope"])).toThrow("no design nope");
+  expect(() => designArg(["--design"])).toThrow("--design takes a design's name: default, proof");
 });

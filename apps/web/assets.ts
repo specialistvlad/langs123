@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { LEVEL_INFO } from "../../scripts/lib.ts";
 import { levelColoursCss } from "./level-colours.ts";
 import { moreCss } from "./track-more.ts";
-import { tokensCss } from "./tokens.ts";
+import { designTokens, tokensCss } from "./tokens.ts";
 
 const APP = import.meta.dir;
 
@@ -54,10 +54,10 @@ const STYLES = [
   "topic-print",
 ];
 
-// style.css: the variables of tokens.json (tokens.ts), then the parts of apps/web/styles/ joined in order.
-export async function styleCss(): Promise<string> {
+// style.css: the variables of a design's tokens (tokens.ts), then the parts of apps/web/styles/ joined in order.
+export async function styleCss(design?: string): Promise<string> {
   const parts = await Promise.all(STYLES.map((name) => Bun.file(join(APP, "styles", `${name}.css`)).text()));
-  return [tokensCss(), ...parts].join("\n");
+  return [tokensCss(designTokens(design)), ...parts].join("\n");
 }
 
 // The browser script: client.ts and its modules bundled, types stripped.

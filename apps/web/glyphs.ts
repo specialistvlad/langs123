@@ -24,7 +24,7 @@ export const HAND = glyph(
 export const MENU_GLYPHS = { hand: HAND };
 export const CLOSE = glyph('<path d="M6 6l12 12M18 6L6 18"/>', 18, 2.4);
 export const CLEAR =
-  '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#8e8e93"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/></svg>';
+  '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke-width="2" stroke-linecap="round"/></svg>';
 
 // The theme: half of a circle filled (Auto), a sun (Light), a moon (Dark).
 export const THEME = glyph('<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/>', 20, 2);

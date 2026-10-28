@@ -1,0 +1,2099 @@
+{
+  "name": "proof",
+  "version": 1,
+  "meta": {
+    "usage": "A proof that the design swaps as a unit: the default design with a few values changed, for the tests and npm start -- --design proof."
+  },
+  "color": {
+    "themes": [
+      {
+        "id": "light",
+        "name": "Light"
+      },
+      {
+        "id": "dark",
+        "name": "Dark"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "bg",
+        "value": {
+          "light": "#f2f2f7",
+          "dark": "#000000"
+        },
+        "usage": "Page ground behind every screen: the grouped grey in light, black in dark, as the web frame and Home paint it. The top bar sits on it at 88% with a blur."
+      },
+      {
+        "name": "surface",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#1c1c1e"
+        },
+        "usage": "Cards, panels and popovers. Dark is iOS's own secondary grouped background, so the site, the apps and the board paint the same card."
+      },
+      {
+        "name": "surface-2",
+        "value": {
+          "light": "#f0eee9",
+          "dark": "#26262a"
+        },
+        "usage": "Recessed fills: the search field, segmented-control tracks, explanation-language pills, table header rows."
+      },
+      {
+        "name": "fill",
+        "value": {
+          "light": "rgba(118, 118, 128, 0.12)",
+          "dark": "rgba(118, 118, 128, 0.24)"
+        },
+        "usage": "Translucent grey over any ground: chips, language tags, the why box, search, segmented tracks, tiles. Text on it reads in body or text; muted reads 4.15:1 on it over bg in light, under the 4.5:1 body text needs."
+      },
+      {
+        "name": "segment",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#636366"
+        },
+        "usage": "The chosen segment of a segmented control, raised on its fill track: the card's white in light, iOS's own raised grey in dark, where surface would vanish into the track (text on it reads 5.1:1 in dark)."
+      },
+      {
+        "name": "text",
+        "value": {
+          "light": "#1d1d1f",
+          "dark": "#ececef"
+        },
+        "usage": "Body text and headings on bg, surface and surface-2 (15.1:1 on bg in light, 17.8:1 in dark). The board's text variable takes these values."
+      },
+      {
+        "name": "body",
+        "value": {
+          "light": "#3c3c43",
+          "dark": "rgba(235, 235, 245, 0.85)"
+        },
+        "usage": "Lead text, snippets and IPA: one step quieter than text (9.8:1 on bg in light, 12.6:1 in dark; 8.6:1 on fill over bg in light)."
+      },
+      {
+        "name": "muted",
+        "value": {
+          "light": "#6b6b70",
+          "dark": "#9a9aa2"
+        },
+        "usage": "Secondary text: labels, captions, counts, inactive tabs and segments. 4.7:1 on bg, 4.6:1 on surface-2 in light."
+      },
+      {
+        "name": "faint",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.45)",
+          "dark": "rgba(235, 235, 245, 0.4)"
+        },
+        "usage": "Decorative glyphs alone: chevrons, the dots and dashes that join facts, list bullets, dashed empty-state edges. It reads 2.4:1 on surface in light and 3.4:1 in dark, under the 3:1 of a graphic that carries meaning, so no text, no icon that stands by itself and no control edge takes it."
+      },
+      {
+        "name": "border",
+        "value": {
+          "light": "#e2dfd8",
+          "dark": "#33333a"
+        },
+        "usage": "1px hairlines: card and chip outlines, table rules, the top bar's bottom edge."
+      },
+      {
+        "name": "sep",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.29)",
+          "dark": "rgba(84, 84, 88, 0.65)"
+        },
+        "usage": "Translucent hairlines between rows and between table rows, 0.5px on the board and in the apps."
+      },
+      {
+        "name": "accent",
+        "value": {
+          "light": "#c2410c",
+          "dark": "#fb923c"
+        },
+        "usage": "The one brand hue: links, the chosen explanation language, the active tab underline, the mark's ground. White text on it reads 5.9:1 in light; in dark put bg-coloured text on it (7.5:1)."
+      },
+      {
+        "name": "accent-soft",
+        "value": {
+          "light": "#e8eefc",
+          "dark": "#1f2a48"
+        },
+        "usage": "Accent tint behind a selected list row and the focus halo of the search field; accent text on it reads 5.1:1 in light and 5.7:1 in dark."
+      },
+      {
+        "name": "accent-line",
+        "value": {
+          "light": "rgba(47, 91, 211, 0.35)",
+          "dark": "rgba(126, 162, 255, 0.45)"
+        },
+        "usage": "The accent at line strength: the 2px rule beside an example, the dotted underline of a variant, a link's underline."
+      },
+      {
+        "name": "good",
+        "value": {
+          "light": "#1c7d45",
+          "dark": "#5cc98a"
+        },
+        "usage": "The right form in a typical error. 4.6:1 on good-soft and 5.2:1 on surface in light; darkened from the website’s #1f8a4c to reach 4.5:1."
+      },
+      {
+        "name": "good-soft",
+        "value": {
+          "light": "#e6f4ec",
+          "dark": "#17301f"
+        },
+        "usage": "Highlight behind the corrected words of a typical error."
+      },
+      {
+        "name": "bad",
+        "value": {
+          "light": "#c2362f",
+          "dark": "#ff7a72"
+        },
+        "usage": "The wrong form in a typical error and its ✕ mark; 5.4:1 on surface in light."
+      },
+      {
+        "name": "bad-soft",
+        "value": {
+          "light": "#fbeceb",
+          "dark": "#3a1d1b"
+        },
+        "usage": "Ground behind a wrong form when it is highlighted."
+      },
+      {
+        "name": "warn",
+        "value": {
+          "light": "#985f00",
+          "dark": "#f0b545"
+        },
+        "usage": "Notes that need attention, such as a draft translation. 4.7:1 on warn-soft and 5.3:1 on surface in light; darkened from the website’s #a86a00 to reach 4.5:1."
+      },
+      {
+        "name": "warn-soft",
+        "value": {
+          "light": "#fbf1dd",
+          "dark": "#3a2c12"
+        },
+        "usage": "Ground behind a warning note."
+      },
+      {
+        "name": "secondary",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.6)",
+          "dark": "rgba(235, 235, 245, 0.6)"
+        },
+        "usage": "Secondary text in the frame: a menu's subtitle and hint, a topic's facts line, the marks of an optional word, a slot, a variant and a variety, a table's translation column, the counts of the topics' list."
+      },
+      {
+        "name": "tertiary",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.45)",
+          "dark": "rgba(235, 235, 245, 0.45)"
+        },
+        "usage": "Quieter than secondary: a topic's chevrons and numbers, a rule's bullet, the joins and gaps in an example, an empty table cell, the dots between a topic's facts."
+      },
+      {
+        "name": "quaternary",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.3)",
+          "dark": "rgba(235, 235, 245, 0.3)"
+        },
+        "usage": "The quietest glyphs: a Credits row's chevron, the grip that reorders Languages I know, a sheet's grab handle."
+      },
+      {
+        "name": "dashed",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.33)",
+          "dark": "rgba(235, 235, 245, 0.3)"
+        },
+        "usage": "The dashed outline of a topic's box that the level filter leaves empty."
+      },
+      {
+        "name": "caps",
+        "value": {
+          "light": "#6e6e73",
+          "dark": "rgba(235, 235, 245, 0.55)"
+        },
+        "usage": "Small capitals over a topic's sections and a table's head row."
+      },
+      {
+        "name": "snippet",
+        "value": {
+          "light": "#3c3c43",
+          "dark": "rgba(235, 235, 245, 0.75)"
+        },
+        "usage": "A search result's snippet under its title."
+      },
+      {
+        "name": "note",
+        "value": {
+          "light": "rgba(118, 118, 128, 0.08)",
+          "dark": "rgba(118, 118, 128, 0.18)"
+        },
+        "usage": "The ground of a note in a topic."
+      },
+      {
+        "name": "fill-hover",
+        "value": {
+          "light": "rgba(118, 118, 128, 0.2)",
+          "dark": "rgba(118, 118, 128, 0.36)"
+        },
+        "usage": "A level mark's capsule while the pointer rests on it."
+      },
+      {
+        "name": "hairline",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.29)",
+          "dark": "rgba(84, 84, 88, 0.6)"
+        },
+        "usage": "Hairlines between the rows of a card (Credits, Languages I know, the Explanation language sheet) and the edge of a course's topics column."
+      },
+      {
+        "name": "sep-faint",
+        "value": {
+          "light": "rgba(60, 60, 67, 0.18)",
+          "dark": "rgba(84, 84, 88, 0.6)"
+        },
+        "usage": "Hairlines between search results."
+      },
+      {
+        "name": "accent-wash",
+        "value": {
+          "light": "rgba(47, 91, 211, 0.08)",
+          "dark": "rgba(126, 162, 255, 0.14)"
+        },
+        "usage": "The accent at its faintest: the ground of the open topic in a course's list."
+      },
+      {
+        "name": "on-accent",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#10131a"
+        },
+        "usage": "Text and glyphs on the accent: the chip of the page the reader is on, the button of a topic's empty box."
+      },
+      {
+        "name": "on-accent-fill",
+        "value": {
+          "light": "rgba(255, 255, 255, 0.22)",
+          "dark": "rgba(16, 19, 26, 0.16)"
+        },
+        "usage": "A fill on the accent: the count inside the chip of the page the reader is on."
+      },
+      {
+        "name": "on-colour",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "usage": "White text on a coloured ground in both themes: the chosen filter chip, the first language's rank, the add button."
+      },
+      {
+        "name": "add",
+        "value": {
+          "light": "#34c759",
+          "dark": "#34c759"
+        },
+        "usage": "The ground of the button that adds a language the reader knows."
+      },
+      {
+        "name": "clear",
+        "value": {
+          "light": "#8e8e93",
+          "dark": "#8e8e93"
+        },
+        "usage": "The disc of a search field's clear button, under its cross in on-colour."
+      },
+      {
+        "name": "glass",
+        "value": {
+          "light": "rgba(250, 250, 252, 0.92)",
+          "dark": "rgba(40, 40, 44, 0.92)"
+        },
+        "usage": "The ground of a glass button over the page."
+      },
+      {
+        "name": "glass-border",
+        "value": {
+          "light": "rgba(0, 0, 0, 0.06)",
+          "dark": "rgba(255, 255, 255, 0.1)"
+        },
+        "usage": "The edge of glass buttons, menus and the level popover."
+      },
+      {
+        "name": "menu",
+        "value": {
+          "light": "rgba(250, 250, 252, 0.94)",
+          "dark": "rgba(44, 44, 48, 0.94)"
+        },
+        "usage": "The ground of menus and the level popover."
+      },
+      {
+        "name": "bg-fade",
+        "value": {
+          "light": "rgba(242, 242, 247, 0.85)",
+          "dark": "rgba(0, 0, 0, 0.85)"
+        },
+        "usage": "The page's ground where a phone's list fades out under the bottom bar."
+      },
+      {
+        "name": "scrim",
+        "value": {
+          "light": "rgba(0, 0, 0, 0.18)",
+          "dark": "rgba(0, 0, 0, 0.5)"
+        },
+        "usage": "The shade behind the level popover."
+      },
+      {
+        "name": "scrim-sheet",
+        "value": {
+          "light": "rgba(0, 0, 0, 0.28)",
+          "dark": "rgba(0, 0, 0, 0.28)"
+        },
+        "usage": "The shade behind a sheet and a phone's panel."
+      },
+      {
+        "name": "print-bg",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "usage": "The printed page's ground and its cards."
+      },
+      {
+        "name": "print-text",
+        "value": {
+          "light": "#000000",
+          "dark": "#000000"
+        },
+        "usage": "Printed text."
+      },
+      {
+        "name": "print-muted",
+        "value": {
+          "light": "#6e6e73",
+          "dark": "#6e6e73"
+        },
+        "usage": "The printed page's running heads."
+      },
+      {
+        "name": "print-line",
+        "value": {
+          "light": "#8a8a8e",
+          "dark": "#8a8a8e"
+        },
+        "usage": "A printed card's outline."
+      },
+      {
+        "name": "print-slot",
+        "value": {
+          "light": "#eeeeef",
+          "dark": "#eeeeef"
+        },
+        "usage": "The ground of a slot on paper."
+      },
+      {
+        "name": "print-link",
+        "value": {
+          "light": "#1f3f9c",
+          "dark": "#1f3f9c"
+        },
+        "usage": "A printed link."
+      },
+      {
+        "name": "level-a0-ink",
+        "value": {
+          "light": "#145ab4",
+          "dark": "#a8ceff"
+        },
+        "usage": "A0 Starter, blue on the blue-to-red scale: writes the level's code on its tint (5.8:1 or more)."
+      },
+      {
+        "name": "level-a0-tint",
+        "value": {
+          "light": "#e5f0fe",
+          "dark": "#17273c"
+        },
+        "usage": "A0: ground of its badge in the level popover and the level menu."
+      },
+      {
+        "name": "level-a0-strong",
+        "value": {
+          "light": "#007aff",
+          "dark": "#3792fd"
+        },
+        "usage": "A0: fills its bar in the level mark, at blue's own lightness so the colour reads clear in both themes."
+      },
+      {
+        "name": "level-a0-pill",
+        "value": {
+          "light": "#a6d0ff",
+          "dark": "#325f96"
+        },
+        "usage": "A0: fill of its level pill: the bar colour at 35% over white in light, 50% over the dark ground in dark."
+      },
+      {
+        "name": "level-a0-pill-ink",
+        "value": {
+          "light": "#0b54ad",
+          "dark": "#bedaff"
+        },
+        "usage": "A0: the code inside its level pill, 4.5:1 on the light fill, 4.6:1 on the dark fill."
+      },
+      {
+        "name": "level-a1-ink",
+        "value": {
+          "light": "#256585",
+          "dark": "#73dee9"
+        },
+        "usage": "A1 Beginner, cyan on the blue-to-red scale: writes the level's code on its tint (5.5:1 or more)."
+      },
+      {
+        "name": "level-a1-tint",
+        "value": {
+          "light": "#fde68a",
+          "dark": "#713f12"
+        },
+        "usage": "A1: ground of its badge in the level popover and the level menu."
+      },
+      {
+        "name": "level-a1-strong",
+        "value": {
+          "light": "#32ade6",
+          "dark": "#11c8d8"
+        },
+        "usage": "A1: fills its bar in the level mark, at cyan's own lightness so the colour reads clear in both themes."
+      },
+      {
+        "name": "level-a1-pill",
+        "value": {
+          "light": "#b7e2f6",
+          "dark": "#1e7a83"
+        },
+        "usage": "A1: fill of its level pill: the bar colour at 35% over white in light, 50% over the dark ground in dark."
+      },
+      {
+        "name": "level-a1-pill-ink",
+        "value": {
+          "light": "#256585",
+          "dark": "#d3fbff"
+        },
+        "usage": "A1: the code inside its level pill, 4.7:1 on the light fill, 4.6:1 on the dark fill."
+      },
+      {
+        "name": "level-a2-ink",
+        "value": {
+          "light": "#14702d",
+          "dark": "#9bdda8"
+        },
+        "usage": "A2 Elementary, green on the blue-to-red scale: writes the level's code on its tint (5.4:1 or more)."
+      },
+      {
+        "name": "level-a2-tint",
+        "value": {
+          "light": "#dbf8de",
+          "dark": "#152d1a"
+        },
+        "usage": "A2: ground of its badge in the level popover and the level menu."
+      },
+      {
+        "name": "level-a2-strong",
+        "value": {
+          "light": "#34c759",
+          "dark": "#47c86e"
+        },
+        "usage": "A2: fills its bar in the level mark, at green's own lightness so the colour reads clear in both themes."
+      },
+      {
+        "name": "level-a2-pill",
+        "value": {
+          "light": "#b8ebc5",
+          "dark": "#3a7a4e"
+        },
+        "usage": "A2: fill of its level pill: the bar colour at 35% over white in light, 50% over the dark ground in dark."
+      },
+      {
+        "name": "level-a2-pill-ink",
+        "value": {
+          "light": "#14702d",
+          "dark": "#c6ffd1"
+        },
+        "usage": "A2: the code inside its level pill, 4.7:1 on the light fill, 4.6:1 on the dark fill."
+      },
+      {
+        "name": "level-b1-ink",
+        "value": {
+          "light": "#51670c",
+          "dark": "#c2d58a"
+        },
+        "usage": "B1 Intermediate, lime on the blue-to-red scale: writes the level's code on its tint (5.6:1 or more)."
+      },
+      {
+        "name": "level-b1-tint",
+        "value": {
+          "light": "#e8f5d3",
+          "dark": "#242a0f"
+        },
+        "usage": "B1: ground of its badge in the level popover and the level menu."
+      },
+      {
+        "name": "level-b1-strong",
+        "value": {
+          "light": "#a8d600",
+          "dark": "#b6d431"
+        },
+        "usage": "B1: fills its bar in the level mark, at lime's own lightness so the colour reads clear in both themes."
+      },
+      {
+        "name": "level-b1-pill",
+        "value": {
+          "light": "#e1f1a6",
+          "dark": "#718030"
+        },
+        "usage": "B1: fill of its level pill: the bar colour at 35% over white in light, 50% over the dark ground in dark."
+      },
+      {
+        "name": "level-b1-pill-ink",
+        "value": {
+          "light": "#51670c",
+          "dark": "#ffffff"
+        },
+        "usage": "B1: the code inside its level pill, 5.2:1 on the light fill, 4.6:1 on the dark fill."
+      },
+      {
+        "name": "level-b2-ink",
+        "value": {
+          "light": "#735a00",
+          "dark": "#e4c87c"
+        },
+        "usage": "B2 Upper intermediate, yellow on the blue-to-red scale: writes the level's code on its tint (5.7:1 or more)."
+      },
+      {
+        "name": "level-b2-tint",
+        "value": {
+          "light": "#faeecd",
+          "dark": "#2f2509"
+        },
+        "usage": "B2: ground of its badge in the level popover and the level menu."
+      },
+      {
+        "name": "level-b2-strong",
+        "value": {
+          "light": "#ffcc00",
+          "dark": "#facb39"
+        },
+        "usage": "B2: fills its bar in the level mark, at yellow's own lightness so the colour reads clear in both themes."
+      },
+      {
+        "name": "level-b2-pill",
+        "value": {
+          "light": "#ffeda6",
+          "dark": "#937b34"
+        },
+        "usage": "B2: fill of its level pill: the bar colour at 35% over white in light, 50% over the dark ground in dark."
+      },
+      {
+        "name": "level-b2-pill-ink",
+        "value": {
+          "light": "#735a00",
+          "dark": "#ffffff"
+        },
+        "usage": "B2: the code inside its level pill, 5.6:1 on the light fill, 4.6:1 on the dark fill."
+      },
+      {
+        "name": "level-c1-ink",
+        "value": {
+          "light": "#874c00",
+          "dark": "#feb98b"
+        },
+        "usage": "C1 Advanced, orange on the blue-to-red scale: writes the level's code on its tint (5.8:1 or more)."
+      },
+      {
+        "name": "level-c1-tint",
+        "value": {
+          "light": "#fdebdb",
+          "dark": "#372010"
+        },
+        "usage": "C1: ground of its badge in the level popover and the level menu."
+      },
+      {
+        "name": "level-c1-strong",
+        "value": {
+          "light": "#ff9500",
+          "dark": "#fe8c2c"
+        },
+        "usage": "C1: fills its bar in the level mark, at orange's own lightness so the colour reads clear in both themes."
+      },
+      {
+        "name": "level-c1-pill",
+        "value": {
+          "light": "#ffdaa6",
+          "dark": "#955c2d"
+        },
+        "usage": "C1: fill of its level pill: the bar colour at 35% over white in light, 50% over the dark ground in dark."
+      },
+      {
+        "name": "level-c1-pill-ink",
+        "value": {
+          "light": "#874c00",
+          "dark": "#ffe5d5"
+        },
+        "usage": "C1: the code inside its level pill, 5.2:1 on the light fill, 4.5:1 on the dark fill."
+      },
+      {
+        "name": "level-c2-ink",
+        "value": {
+          "light": "#a32920",
+          "dark": "#feb5ae"
+        },
+        "usage": "C2 Proficiency, red on the blue-to-red scale: writes the level's code on its tint (6.1:1 or more)."
+      },
+      {
+        "name": "level-c2-tint",
+        "value": {
+          "light": "#fee9e6",
+          "dark": "#3a1d1b"
+        },
+        "usage": "C2: ground of its badge in the level popover and the level menu."
+      },
+      {
+        "name": "level-c2-strong",
+        "value": {
+          "light": "#ff3b30",
+          "dark": "#f75d59"
+        },
+        "usage": "C2: fills its bar in the level mark, at red's own lightness so the colour reads clear in both themes."
+      },
+      {
+        "name": "level-c2-pill",
+        "value": {
+          "light": "#ffbab7",
+          "dark": "#924444"
+        },
+        "usage": "C2: fill of its level pill: the bar colour at 35% over white in light, 50% over the dark ground in dark."
+      },
+      {
+        "name": "level-c2-pill-ink",
+        "value": {
+          "light": "#a0251d",
+          "dark": "#ffc8c2"
+        },
+        "usage": "C2: the code inside its level pill, 4.7:1 on the light fill, 4.6:1 on the dark fill."
+      },
+      {
+        "name": "level-mark-fill",
+        "value": {
+          "light": "rgba(118, 118, 128, 0.12)",
+          "dark": "rgba(118, 118, 128, 0.24)"
+        },
+        "usage": "The level mark's capsule behind its seven bars."
+      },
+      {
+        "name": "level-mark-off",
+        "value": {
+          "light": "rgba(118, 118, 128, 0.2)",
+          "dark": "rgba(118, 118, 128, 0.32)"
+        },
+        "usage": "A bar of the level mark whose level the part does not hold."
+      },
+      {
+        "name": "level-mark-text",
+        "value": {
+          "light": "#5c5c62",
+          "dark": "#9a9aa2"
+        },
+        "usage": "The level mark's range in words, A0–C2, beside its bars (5.2:1 on the light ground)."
+      }
+    ]
+  },
+  "type": {
+    "fonts": [],
+    "families": {
+      "sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Roboto, \"Helvetica Neue\", Arial, sans-serif",
+      "sans-uk": "-apple-system, \"Segoe UI\", Inter, Roboto, \"Helvetica Neue\", Arial, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+      "numerals": "ui-monospace, \"SF Mono\", Menlo, monospace",
+      "numerals-index": "ui-monospace, Menlo, monospace",
+      "print": "sans-serif"
+    },
+    "groups": [
+      {
+        "name": "Display",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "topic-title",
+            "fontSize": "38px",
+            "lineHeight": 1.15,
+            "fontWeight": 650,
+            "letterSpacing": "-0.025em",
+            "sample": "Present Tense: Regular Verbs",
+            "usage": "A topic's title in its page head; 28px at phone width."
+          },
+          {
+            "name": "home-title",
+            "fontSize": "34px",
+            "lineHeight": 1.15,
+            "fontWeight": 650,
+            "letterSpacing": "-0.025em",
+            "sample": "Language references",
+            "usage": "The home page's title."
+          },
+          {
+            "name": "page-title",
+            "fontSize": "30px",
+            "lineHeight": 1.2,
+            "fontWeight": 650,
+            "letterSpacing": "-0.02em",
+            "sample": "Index",
+            "usage": "h1 of track, cheatsheet and credits pages; 24px at phone width."
+          },
+          {
+            "name": "not-found-digits",
+            "fontSize": "210px",
+            "lineHeight": 1,
+            "fontWeight": 800,
+            "letterSpacing": "-0.04em",
+            "sample": "404",
+            "usage": "The 404 of the not-found page, its zero drawn as a ring of the same size."
+          },
+          {
+            "name": "not-found-digits-phone",
+            "fontSize": "128px",
+            "lineHeight": 1,
+            "fontWeight": 800,
+            "letterSpacing": "-0.04em",
+            "sample": "404",
+            "usage": "The 404 of the not-found page on phones."
+          },
+          {
+            "name": "not-found-digits-small",
+            "fontSize": "104px",
+            "lineHeight": 1,
+            "fontWeight": 800,
+            "letterSpacing": "-0.04em",
+            "sample": "404",
+            "usage": "The 404 of the not-found page on the narrowest phones, 400px and below."
+          }
+        ]
+      },
+      {
+        "name": "Headings",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "sheet-title",
+            "fontSize": "22px",
+            "lineHeight": 1.55,
+            "fontWeight": 650,
+            "sample": "Cheatsheet A1",
+            "usage": "h2 of a printed or on-screen cheatsheet. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "section-title",
+            "fontSize": "20px",
+            "lineHeight": 1.55,
+            "fontWeight": 650,
+            "letterSpacing": "-0.01em",
+            "sample": "01 Form: -ar, -er and -ir",
+            "usage": "A topic's numbered section (h2) and a language card's name. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "card-title",
+            "fontSize": "17px",
+            "lineHeight": 1.55,
+            "fontWeight": 650,
+            "sample": "Foundations",
+            "usage": "An index card's section name and a cheatsheet's topic heading (h3). Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "subhead",
+            "fontSize": "16px",
+            "lineHeight": 1.55,
+            "fontWeight": 650,
+            "sample": "Endings by person",
+            "usage": "h3 inside a topic section. Line height inherits the body’s 1.55."
+          }
+        ]
+      },
+      {
+        "name": "Text",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "lead",
+            "fontSize": "17px",
+            "lineHeight": 1.55,
+            "fontWeight": 400,
+            "sample": "Regular verbs in -ar, -er and -ir drop the infinitive ending.",
+            "usage": "A topic's summary under its title."
+          },
+          {
+            "name": "body",
+            "fontSize": "16px",
+            "lineHeight": 1.55,
+            "fontWeight": 400,
+            "sample": "The ending names the person, so the subject pronoun usually drops.",
+            "usage": "Running text everywhere; the page default."
+          },
+          {
+            "name": "body-small",
+            "fontSize": "14px",
+            "lineHeight": 1.55,
+            "fontWeight": 400,
+            "sample": "Hablo español.",
+            "usage": "Table cells, tabs, the page's contents rail, breadcrumbs and search results. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "ui",
+            "fontSize": "13.5px",
+            "lineHeight": 1.55,
+            "fontWeight": 400,
+            "sample": "English",
+            "usage": "Controls: the search field, the language menu, explanation-language pills, page tools. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "caption",
+            "fontSize": "13px",
+            "lineHeight": 1.45,
+            "fontWeight": 400,
+            "sample": "Latin America",
+            "usage": "Chips, segmented-control options, Up next summaries."
+          },
+          {
+            "name": "small",
+            "fontSize": "12px",
+            "lineHeight": 1.55,
+            "fontWeight": 400,
+            "sample": "5 topics",
+            "usage": "Counts and the pager's direction line. Line height inherits the body’s 1.55."
+          }
+        ]
+      },
+      {
+        "name": "Labels",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "table-head",
+            "fontSize": "12px",
+            "lineHeight": 1.55,
+            "fontWeight": 650,
+            "letterSpacing": "0.04em",
+            "sample": "RULE",
+            "usage": "Table column heads, upper case. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "label",
+            "fontSize": "11px",
+            "lineHeight": 1.55,
+            "fontWeight": 650,
+            "letterSpacing": "0.06em",
+            "sample": "EXPLAINED IN",
+            "usage": "Group labels in sidebars, panels, cards and search results, upper case in muted. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "badge",
+            "fontSize": "11px",
+            "lineHeight": 1.6,
+            "fontWeight": 650,
+            "letterSpacing": "0.02em",
+            "sample": "A1",
+            "usage": "A level badge's code, in the level's ink on its tint."
+          },
+          {
+            "name": "level-mini",
+            "fontSize": "10px",
+            "lineHeight": 1.55,
+            "fontWeight": 650,
+            "sample": "B1",
+            "usage": "The smallest level marks beside sidebar and contents entries. Line height inherits the body’s 1.55."
+          }
+        ]
+      },
+      {
+        "name": "Mono",
+        "family": "mono",
+        "styles": [
+          {
+            "name": "section-number",
+            "fontSize": "17px",
+            "lineHeight": 1.55,
+            "fontWeight": 600,
+            "letterSpacing": "-0.02em",
+            "sample": "01",
+            "usage": "Section and card numbers: 00 for the cheatsheet, then 01, 02. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "code",
+            "fontSize": "13px",
+            "lineHeight": 1.55,
+            "fontWeight": 400,
+            "sample": "en.tenses.simple-tenses",
+            "usage": "Inline code and identifiers. Line height inherits the body’s 1.55."
+          },
+          {
+            "name": "kbd",
+            "fontSize": "11px",
+            "lineHeight": 1.55,
+            "fontWeight": 400,
+            "sample": "/",
+            "usage": "Keyboard hints in the search field. Line height inherits the body’s 1.55."
+          }
+        ]
+      },
+      {
+        "name": "Reading",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "reading-title",
+            "fontSize": "28px",
+            "lineHeight": "34px",
+            "fontWeight": 700,
+            "letterSpacing": "0.01em",
+            "sample": "Present Simple",
+            "usage": "A topic's title at the head of its reading; the title of an index page."
+          },
+          {
+            "name": "reading-subtitle",
+            "fontSize": "20px",
+            "lineHeight": "26px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.02em",
+            "sample": "01 Forms",
+            "usage": "A part's head in the reading (a numbered subtopic, 00 Essence, Common errors) and a section or By level group head on the index screens."
+          },
+          {
+            "name": "reading-body",
+            "fontSize": "17px",
+            "lineHeight": "25px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.025em",
+            "sample": "Present Simple is the dictionary form of the verb, with -s after he, she and it.",
+            "usage": "The reading's running text: a topic's definition, facts, list items and example sentences; in semibold, an index row's title."
+          },
+          {
+            "name": "reading-note",
+            "fontSize": "16px",
+            "lineHeight": "23px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.02em",
+            "sample": "Old English had an ending on the verb for every person.",
+            "usage": "The why box, a note and the forms of a common error."
+          },
+          {
+            "name": "reading-translation",
+            "fontSize": "15px",
+            "lineHeight": "21px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Я працюю в офісі.",
+            "usage": "A translation under its sentence, italic in muted; the same size and line height set the rule under an error, the tag lines of a language, a button's label and a picture's caption."
+          },
+          {
+            "name": "reading-label",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 600,
+            "letterSpacing": "0.04em",
+            "sample": "WHY",
+            "usage": "A group's label in upper case: Why, Up next, a language's name above its column."
+          },
+          {
+            "name": "reading-small",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Recognise letters, numbers and a few fixed phrases",
+            "usage": "Quiet lines: a level group's description, an index row's reading time, a count, a caption."
+          },
+          {
+            "name": "reading-ruby",
+            "fontSize": "12px",
+            "lineHeight": "40px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "なん",
+            "usage": "The reading above a kanji, at 12px in muted. A line that carries ruby runs on a 40px line height in place of the body's 25px; the annotation itself sets its line height to its size."
+          }
+        ]
+      },
+      {
+        "name": "Frame",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "frame-body",
+            "fontSize": "17px",
+            "lineHeight": 1.35,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The frame's body text."
+          },
+          {
+            "name": "row-title",
+            "fontSize": "17px",
+            "lineHeight": "22px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.43px",
+            "sample": "Aa",
+            "usage": "A row's name in a list, a menu's item, a search result's title, a slot card's head."
+          },
+          {
+            "name": "row-title-strong",
+            "fontSize": "17px",
+            "lineHeight": "22px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.43px",
+            "sample": "Aa",
+            "usage": "The level popover's title."
+          },
+          {
+            "name": "row-title-compact",
+            "fontSize": "15px",
+            "lineHeight": "20px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.3px",
+            "sample": "Aa",
+            "usage": "A row's name in the topics column at its compact scale, 1024px to 1279px."
+          },
+          {
+            "name": "tense-name",
+            "fontSize": "17px",
+            "lineHeight": "22px",
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A tense's name in a topic's slot."
+          },
+          {
+            "name": "subheadline",
+            "fontSize": "15px",
+            "lineHeight": "20px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "Secondary lines: a subtitle, a count, the Explained in line, a filter chip, the hint of an empty state."
+          },
+          {
+            "name": "subheadline-strong",
+            "fontSize": "15px",
+            "lineHeight": "20px",
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A search result's title on phones."
+          },
+          {
+            "name": "callout",
+            "fontSize": "15px",
+            "lineHeight": "21px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A topic's note in a fallback language and a slot card's text."
+          },
+          {
+            "name": "footnote",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "Small lines under a row: a result's course, a language's own name, the hints of Languages I know."
+          },
+          {
+            "name": "row-sub",
+            "fontSize": "13px",
+            "lineHeight": "17px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A menu item's subtitle and a menu's hint."
+          },
+          {
+            "name": "up-to",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 500,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "Up to on a course's Home card."
+          },
+          {
+            "name": "caps",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 600,
+            "letterSpacing": "0.04em",
+            "sample": "Aa",
+            "usage": "Small capitals over a group of rows and a topic's sections."
+          },
+          {
+            "name": "snippet",
+            "fontSize": "15px",
+            "lineHeight": 1.35,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A search result's snippet."
+          },
+          {
+            "name": "state-title",
+            "fontSize": "22px",
+            "lineHeight": "28px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The title of an empty state: nothing found, choose a topic."
+          },
+          {
+            "name": "page-heading",
+            "fontSize": "28px",
+            "lineHeight": 1.2,
+            "fontWeight": 700,
+            "letterSpacing": "0.01em",
+            "sample": "Aa",
+            "usage": "A page's title in the frame: Credits, the not-found page, a topic."
+          },
+          {
+            "name": "page-heading-small",
+            "fontSize": "26px",
+            "lineHeight": 1.2,
+            "fontWeight": 700,
+            "letterSpacing": "0.01em",
+            "sample": "Aa",
+            "usage": "The not-found page's title on phones."
+          },
+          {
+            "name": "course-name",
+            "fontSize": "28px",
+            "lineHeight": "34px",
+            "fontWeight": 700,
+            "letterSpacing": "0.01em",
+            "sample": "Aa",
+            "usage": "A course's name over its index."
+          },
+          {
+            "name": "section-heading",
+            "fontSize": "20px",
+            "lineHeight": "25px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.45px",
+            "sample": "Aa",
+            "usage": "A group's heading: a topic's section, a course's group, Up next's title, a sheet's group."
+          },
+          {
+            "name": "section-heading-compact",
+            "fontSize": "17px",
+            "lineHeight": "22px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.45px",
+            "sample": "Aa",
+            "usage": "A group's heading in the topics column at its compact scale."
+          },
+          {
+            "name": "sheet-heading",
+            "fontSize": "20px",
+            "lineHeight": "26px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A sheet's title."
+          },
+          {
+            "name": "card-name",
+            "fontSize": "22px",
+            "lineHeight": "normal",
+            "fontWeight": 600,
+            "letterSpacing": "-0.01em",
+            "sample": "Aa",
+            "usage": "A language's name on its Home card."
+          },
+          {
+            "name": "brand",
+            "fontSize": "17px",
+            "lineHeight": "normal",
+            "fontWeight": 650,
+            "letterSpacing": "-0.01em",
+            "sample": "Aa",
+            "usage": "The brand's name on Home."
+          },
+          {
+            "name": "flag",
+            "fontSize": "30px",
+            "lineHeight": 1,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A course's flag on its Home card."
+          },
+          {
+            "name": "intro",
+            "fontSize": "17px",
+            "lineHeight": "24px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The introduction of Languages I know."
+          },
+          {
+            "name": "rank",
+            "fontSize": "13px",
+            "lineHeight": "normal",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A language's rank in Languages I know."
+          },
+          {
+            "name": "button",
+            "fontSize": "17px",
+            "lineHeight": "normal",
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A full-width button's label."
+          },
+          {
+            "name": "pill",
+            "fontSize": "12px",
+            "lineHeight": 1.6,
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A level's code in a pill."
+          },
+          {
+            "name": "tag",
+            "fontSize": "12px",
+            "lineHeight": 1.6,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A variety's tag on a word or a topic."
+          },
+          {
+            "name": "language-tag",
+            "fontSize": "11px",
+            "lineHeight": "normal",
+            "fontWeight": 700,
+            "letterSpacing": "0.02em",
+            "sample": "Aa",
+            "usage": "A topic's language tag."
+          },
+          {
+            "name": "level-mark",
+            "fontSize": "13px",
+            "lineHeight": "12px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.1px",
+            "sample": "Aa",
+            "usage": "The range in words beside a level mark."
+          },
+          {
+            "name": "level-mark-small",
+            "fontSize": "11px",
+            "lineHeight": "12px",
+            "fontWeight": 600,
+            "letterSpacing": "-0.1px",
+            "sample": "Aa",
+            "usage": "The range beside a small level mark."
+          },
+          {
+            "name": "chip-count",
+            "fontSize": "11px",
+            "lineHeight": "normal",
+            "fontWeight": 700,
+            "letterSpacing": "0.04em",
+            "sample": "Aa",
+            "usage": "The count inside a chip of the not-found page."
+          },
+          {
+            "name": "chip-count-small",
+            "fontSize": "10px",
+            "lineHeight": "normal",
+            "fontWeight": 700,
+            "letterSpacing": "0.04em",
+            "sample": "Aa",
+            "usage": "That count on the narrowest phones."
+          },
+          {
+            "name": "others-line",
+            "fontSize": "15px",
+            "lineHeight": 1.7,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The not-found page's line of other pages."
+          },
+          {
+            "name": "others-line-phone",
+            "fontSize": "14px",
+            "lineHeight": 1.6,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "That line on phones."
+          },
+          {
+            "name": "others-line-small",
+            "fontSize": "13px",
+            "lineHeight": 1.5,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "That line on the narrowest phones."
+          }
+        ]
+      },
+      {
+        "name": "Topic",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "topic-body",
+            "fontSize": "17px",
+            "lineHeight": "25px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.43px",
+            "sample": "Aa",
+            "usage": "A topic's paragraphs and list items."
+          },
+          {
+            "name": "topic-note",
+            "fontSize": "16px",
+            "lineHeight": "22px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.3px",
+            "sample": "Aa",
+            "usage": "A note in a topic."
+          },
+          {
+            "name": "topic-translation",
+            "fontSize": "15px",
+            "lineHeight": "21px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.2px",
+            "sample": "Aa",
+            "usage": "A translation under a topic's line."
+          },
+          {
+            "name": "topic-summary",
+            "fontSize": "15px",
+            "lineHeight": "21px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.3px",
+            "sample": "Aa",
+            "usage": "Up next's summary."
+          },
+          {
+            "name": "topic-table",
+            "fontSize": "17px",
+            "lineHeight": "23px",
+            "fontWeight": 400,
+            "letterSpacing": "-0.3px",
+            "sample": "Aa",
+            "usage": "A topic table's cells."
+          },
+          {
+            "name": "topic-table-head",
+            "fontSize": "13px",
+            "lineHeight": "17px",
+            "fontWeight": 600,
+            "letterSpacing": "0.02em",
+            "sample": "Aa",
+            "usage": "A topic table's head row."
+          },
+          {
+            "name": "topic-table-head-word",
+            "fontSize": "15px",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "-0.3px",
+            "sample": "Aa",
+            "usage": "A head cell that holds a word."
+          },
+          {
+            "name": "topic-button",
+            "fontSize": "17px",
+            "lineHeight": "normal",
+            "fontWeight": 600,
+            "letterSpacing": "-0.3px",
+            "sample": "Aa",
+            "usage": "The button of a topic's box the level filter leaves empty."
+          },
+          {
+            "name": "letter",
+            "fontSize": "22px",
+            "lineHeight": "26px",
+            "fontWeight": 600,
+            "letterSpacing": "0.01em",
+            "sample": "Aa",
+            "usage": "A letter of the alphabet's table."
+          },
+          {
+            "name": "facts",
+            "fontSize": "15px",
+            "lineHeight": "22px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A topic's facts line under its title."
+          },
+          {
+            "name": "path-name",
+            "fontSize": "16px",
+            "lineHeight": "22px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A step's name in a topic's study path and a slot card's word."
+          },
+          {
+            "name": "cell-translation",
+            "fontSize": "15px",
+            "lineHeight": "19px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A translation inside a table cell."
+          },
+          {
+            "name": "cell-translation-phone",
+            "fontSize": "14px",
+            "lineHeight": "19px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "That translation on phones."
+          },
+          {
+            "name": "outline-caps",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 400,
+            "letterSpacing": "0.06em",
+            "sample": "Aa",
+            "usage": "Small capitals in a topic's outline."
+          },
+          {
+            "name": "slot-caption",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A slot card's caption."
+          },
+          {
+            "name": "wide-table",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A wide slot table's cells."
+          },
+          {
+            "name": "wide-table-small",
+            "fontSize": "11.5px",
+            "lineHeight": "15px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A wide slot table's cells on phones."
+          },
+          {
+            "name": "wide-table-print",
+            "fontSize": "10.5px",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A wide slot table's cells on paper."
+          },
+          {
+            "name": "ipa",
+            "fontSize": "0.88em",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "-0.02em",
+            "sample": "Aa",
+            "usage": "IPA inside a line, a step smaller than its text."
+          },
+          {
+            "name": "slot-mark",
+            "fontSize": "0.9em",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A slot's mark inside a line."
+          },
+          {
+            "name": "gap-mark",
+            "fontSize": "1em",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0.12em",
+            "sample": "Aa",
+            "usage": "The blank of a gap inside a line."
+          }
+        ]
+      },
+      {
+        "name": "Emphasis",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "emphasis",
+            "fontSize": "1em",
+            "lineHeight": "normal",
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The strong part of a line and the chosen row, at its text's size."
+          },
+          {
+            "name": "mark-strong",
+            "fontSize": "1em",
+            "lineHeight": "normal",
+            "fontWeight": 650,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A marked word in an example and a search result's matched words."
+          },
+          {
+            "name": "bold",
+            "fontSize": "1em",
+            "lineHeight": "normal",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "Bold words: a matched word on phones, an intonation mark."
+          },
+          {
+            "name": "key",
+            "fontSize": "1em",
+            "lineHeight": "normal",
+            "fontWeight": 550,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A table's key column."
+          },
+          {
+            "name": "regular",
+            "fontSize": "1em",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "Text kept at the regular weight inside a bold row."
+          }
+        ]
+      },
+      {
+        "name": "Credits",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "credits-name",
+            "fontSize": "22px",
+            "lineHeight": 1.2,
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The project's name on Credits."
+          },
+          {
+            "name": "credits-h2",
+            "fontSize": "20px",
+            "lineHeight": 1.2,
+            "fontWeight": 700,
+            "letterSpacing": "0.01em",
+            "sample": "Aa",
+            "usage": "A section's title on Credits."
+          },
+          {
+            "name": "credits-lead",
+            "fontSize": "19px",
+            "lineHeight": 1.4,
+            "fontWeight": 600,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The lead line of a Credits card."
+          },
+          {
+            "name": "credits-note",
+            "fontSize": "13px",
+            "lineHeight": 1.35,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A note and the update date on Credits."
+          },
+          {
+            "name": "credit-line",
+            "fontSize": "14px",
+            "lineHeight": 1.4,
+            "fontWeight": 500,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A library line on Credits, in numerals."
+          },
+          {
+            "name": "tag-line",
+            "fontSize": "15px",
+            "lineHeight": 1.3,
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A tag line under a name."
+          }
+        ]
+      },
+      {
+        "name": "Document",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "doc-h4",
+            "fontSize": "14px",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0.04em",
+            "sample": "Aa",
+            "usage": "A document's fourth-level heading."
+          },
+          {
+            "name": "topic-title-phone",
+            "fontSize": "28px",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A document's title and icon on phones."
+          },
+          {
+            "name": "page-title-phone",
+            "fontSize": "24px",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A document's title on phones."
+          },
+          {
+            "name": "rail-head",
+            "fontSize": "13px",
+            "lineHeight": "normal",
+            "fontWeight": 650,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "A heading of the side rail."
+          }
+        ]
+      },
+      {
+        "name": "Print",
+        "family": "print",
+        "styles": [
+          {
+            "name": "print-body",
+            "fontSize": "11pt",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "Text on paper."
+          },
+          {
+            "name": "print-head",
+            "fontSize": "11px",
+            "lineHeight": "normal",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Aa",
+            "usage": "The running heads of a printed page."
+          }
+        ]
+      }
+    ]
+  },
+  "spacing": {
+    "tokens": [
+      {
+        "name": "space-1",
+        "value": "1px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-1_5",
+        "value": "1.5px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-2",
+        "value": "2px",
+        "usage": "Gap between a badge's halves' neighbours and tight icon gaps."
+      },
+      {
+        "name": "space-3",
+        "value": "3px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-4",
+        "value": "4px",
+        "usage": "Gap between tabs and segmented options; vertical padding of pills."
+      },
+      {
+        "name": "space-5",
+        "value": "5px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-6",
+        "value": "6px",
+        "usage": "The most used gap: chips, pills, explanation-language lists."
+      },
+      {
+        "name": "space-7",
+        "value": "7px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-8",
+        "value": "8px",
+        "usage": "Gap inside controls and between a label and its control."
+      },
+      {
+        "name": "space-9",
+        "value": "9px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-10",
+        "value": "10px",
+        "usage": "Horizontal padding of chips, pills and segments."
+      },
+      {
+        "name": "space-11",
+        "value": "11px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-12",
+        "value": "12px",
+        "usage": "Top bar gaps, panel padding, table cell side padding."
+      },
+      {
+        "name": "space-14",
+        "value": "14px",
+        "usage": "Top bar side padding and gaps between tabs."
+      },
+      {
+        "name": "space-16",
+        "value": "20px",
+        "usage": "Gap between cards in a grid."
+      },
+      {
+        "name": "space-18",
+        "value": "18px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-20",
+        "value": "20px",
+        "usage": "Card padding at the bottom edge; block spacing in a topic."
+      },
+      {
+        "name": "space-22",
+        "value": "22px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-24",
+        "value": "24px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-26",
+        "value": "26px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-28",
+        "value": "28px",
+        "usage": "Space above a section heading."
+      },
+      {
+        "name": "space-32",
+        "value": "32px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-34",
+        "value": "34px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-36",
+        "value": "36px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-40",
+        "value": "40px",
+        "usage": "Page padding above the title on wide screens."
+      },
+      {
+        "name": "space-48",
+        "value": "48px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-56",
+        "value": "56px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-72",
+        "value": "72px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-84",
+        "value": "84px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-88",
+        "value": "88px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      },
+      {
+        "name": "space-96",
+        "value": "96px",
+        "usage": "A step of the spacing scale the stylesheets use."
+      }
+    ]
+  },
+  "radius": {
+    "tokens": [
+      {
+        "name": "radius-1_5",
+        "value": "1.5px",
+        "usage": "A step of the radius scale the stylesheets use."
+      },
+      {
+        "name": "radius-2",
+        "value": "2px",
+        "usage": "A step of the radius scale the stylesheets use."
+      },
+      {
+        "name": "radius-3",
+        "value": "3px",
+        "usage": "A step of the radius scale the stylesheets use."
+      },
+      {
+        "name": "radius-xs",
+        "value": "4px",
+        "usage": "Small marks inside controls."
+      },
+      {
+        "name": "radius-5",
+        "value": "5px",
+        "usage": "A step of the radius scale the stylesheets use."
+      },
+      {
+        "name": "radius-sm",
+        "value": "6px",
+        "usage": "Chips, segments, explanation-language pills, buttons."
+      },
+      {
+        "name": "radius-7",
+        "value": "7px",
+        "usage": "A step of the radius scale the stylesheets use."
+      },
+      {
+        "name": "radius-md",
+        "value": "8px",
+        "usage": "The search field and inputs."
+      },
+      {
+        "name": "radius-lg",
+        "value": "10px",
+        "usage": "Popover panels (Level, Variety, language menu)."
+      },
+      {
+        "name": "radius-xl",
+        "value": "4px",
+        "usage": "Language cards on the home page."
+      },
+      {
+        "name": "radius-2xl",
+        "value": "14px",
+        "usage": "Index cards; the mark's corner (14 of 64)."
+      },
+      {
+        "name": "radius-3xl",
+        "value": "16px",
+        "usage": "The why box and notes in the reading."
+      },
+      {
+        "name": "radius-4xl",
+        "value": "18px",
+        "usage": "A common error's card and a picture's cell."
+      },
+      {
+        "name": "radius-5xl",
+        "value": "22px",
+        "usage": "Grouped lists, table cards and menus."
+      },
+      {
+        "name": "radius-24",
+        "value": "24px",
+        "usage": "A step of the radius scale the stylesheets use."
+      },
+      {
+        "name": "radius-28",
+        "value": "28px",
+        "usage": "A step of the radius scale the stylesheets use."
+      },
+      {
+        "name": "radius-pill",
+        "value": "999px",
+        "usage": "Level badges: one pill, or two joined halves."
+      }
+    ]
+  },
+  "shadow": {
+    "tokens": [
+      {
+        "name": "shadow-card",
+        "value": {
+          "light": "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04)",
+          "dark": "none"
+        },
+        "usage": "Cards on bg in light; dark relies on the surface step and border instead."
+      },
+      {
+        "name": "shadow-segment",
+        "value": "0 1px 2px rgba(0, 0, 0, 0.12)",
+        "usage": "The chosen option of a segmented control, lifted off its surface-2 track."
+      },
+      {
+        "name": "shadow-panel",
+        "value": "0 12px 32px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06)",
+        "usage": "Popover panels and menus."
+      },
+      {
+        "name": "shadow-sheet",
+        "value": "0 -10px 40px rgba(0, 0, 0, 0.18)",
+        "usage": "The phone's bottom sheet."
+      },
+      {
+        "name": "shadow-glass",
+        "value": {
+          "light": "0 8px 28px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9)",
+          "dark": "0 8px 28px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08)"
+        },
+        "usage": "Glass buttons over the page, with the light catching their top edge."
+      },
+      {
+        "name": "shadow-menu",
+        "value": "0 18px 50px rgba(0, 0, 0, 0.22)",
+        "usage": "Menus and the level popover."
+      },
+      {
+        "name": "shadow-dialog",
+        "value": "0 24px 80px rgba(0, 0, 0, 0.3)",
+        "usage": "The Explanation language sheet where it opens as a dialog on wider screens."
+      },
+      {
+        "name": "shadow-lift",
+        "value": "0 10px 30px rgba(0, 0, 0, 0.18)",
+        "usage": "A row of Languages I know lifted while it is dragged."
+      }
+    ]
+  },
+  "layout": {
+    "tokens": [
+      {
+        "name": "topbar-height",
+        "value": "48px",
+        "usage": "The sticky top bar."
+      },
+      {
+        "name": "control-height",
+        "value": "28px",
+        "usage": "Chips and compact controls in the page head."
+      },
+      {
+        "name": "search-height",
+        "value": "30px",
+        "usage": "The search field in the top bar."
+      },
+      {
+        "name": "content-width",
+        "value": "860px",
+        "usage": "Readable column of a topic page."
+      },
+      {
+        "name": "breakpoint-phone",
+        "value": "860px",
+        "usage": "At and below this width the sidebar becomes a menu and the phone bottom bar appears."
+      },
+      {
+        "name": "breakpoint-wide",
+        "value": "1400px",
+        "usage": "From this width the contents rail sits beside the topic."
+      },
+      {
+        "name": "measure",
+        "value": "70ch",
+        "usage": "The longest line of the reading: a column wider than 70 characters stops there and the extra width goes to the margins."
+      },
+      {
+        "name": "breakpoint-columns-2",
+        "value": "640px",
+        "usage": "From a reading column this wide, up to two languages stand side by side, on the web and in the apps."
+      },
+      {
+        "name": "breakpoint-columns-3",
+        "value": "1000px",
+        "usage": "From a reading column this wide, up to three languages stand side by side."
+      },
+      {
+        "name": "bar-clearance",
+        "value": "130px",
+        "usage": "The space a phone's page keeps under its content for the floating bottom bar."
+      },
+      {
+        "name": "search-clearance",
+        "value": "110px",
+        "usage": "The space a phone's page keeps under its content while searching, above the field and the keyboard."
+      },
+      {
+        "name": "search-results-clearance",
+        "value": "120px",
+        "usage": "The space under a topic page's search results on a phone, above the field and the keyboard."
+      },
+      {
+        "name": "head-tools-clearance",
+        "value": "180px",
+        "usage": "The space Home's head keeps at its right for the buttons of the top corner on wider screens."
+      },
+      {
+        "name": "print-margin",
+        "value": "16mm",
+        "usage": "The printed page's margin."
+      }
+    ]
+  }
+}

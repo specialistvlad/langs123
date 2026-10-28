@@ -1,5 +1,6 @@
 // Static site build: every page of every track rendered to HTML, plus the sitemap.
 // Run: npm run build   (SITE_URL sets the public URL for canonical links and the sitemap; the site is served from the domain root)
+//      npm run build -- --design <name>   builds it in that design (tokens.ts)
 import { join } from "node:path";
 import { type CurriculumLanguage, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
 import { type BuildOptions, type Context, explainsOf, type Page, type PageFacts } from "./context.ts";
@@ -16,6 +17,7 @@ import { topicPages } from "./pages/topic.ts";
 import type { LinkFn } from "./html.ts";
 import { trackIndex } from "./pages/track.ts";
 import { topicUrl } from "./urls.ts";
+import { designArg } from "./tokens.ts";
 
 export type { BuildOptions, HeadChange, PageFacts } from "./context.ts";
 
@@ -82,6 +84,7 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
 
 if (import.meta.main) {
   const siteUrl = (process.env["SITE_URL"] ?? "http://127.0.0.1:47380").replace(/\/$/, "");
-  const count = (await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl })).length;
+  const design = designArg(process.argv.slice(2));
+  const count = (await build({ outDir: join(ROOT, "build/web"), dev: false, siteUrl, design })).length;
   console.log(`built ${count} pages into build/web/ for ${siteUrl}`);
 }

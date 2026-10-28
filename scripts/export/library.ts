@@ -7,10 +7,10 @@ import { topic } from "./blocks.ts";
 import { inTrack, localized } from "./text.ts";
 import type { LevelTones, Library } from "./types.ts";
 
-// A level's colours in a theme, as the website shows them (level-colours.ts, from tokens.json): ink writes the
-// level's code on its tint, strong fills its bar in a level mark, and a level pill writes the code in pill ink on pill.
-function tones(theme: "light" | "dark", code: string): LevelTones {
-  const t = levelColours(theme)[code];
+// A level's colours in a theme, as the website shows them in a design (level-colours.ts, from its tokens): ink writes
+// the level's code on its tint, strong fills its bar in a level mark, and a level pill writes the code in pill ink on pill.
+function tones(theme: "light" | "dark", code: string, design?: string): LevelTones {
+  const t = levelColours(theme, design)[code];
   if (t === undefined) throw new Error(`No ${theme} colours for level ${code}`);
   return { ink: t.ink, tint: t.tint, strong: t.strong, pill: t.pill, pillInk: t["pill-ink"] };
 }
@@ -19,8 +19,9 @@ function tones(theme: "light" | "dark", code: string): LevelTones {
 // level scale, interface wording), the languages being learned with their sections and study path, and
 // every written topic by id.
 // only: just these topics' content, as a build of the sample needs it; every language and section still
-// lists all of its topics.
-export async function exportLibrary(only?: readonly string[]): Promise<Library> {
+// lists all of its topics. design: the design whose level colours the export carries, the default design when none is
+// given (tokens.ts).
+export async function exportLibrary(only?: readonly string[], design?: string): Promise<Library> {
   const curriculum = await loadCurriculum();
   const refs = await loadTopics(curriculum);
   const commit = Bun.spawnSync(["git", "-C", ROOT, "rev-parse", "--short", "HEAD"]).stdout.toString().trim();
@@ -38,7 +39,7 @@ export async function exportLibrary(only?: readonly string[]): Promise<Library> 
       code: l.code,
       name: l.name,
       description: l.description,
-      colors: { light: tones("light", l.code), dark: tones("dark", l.code) },
+      colors: { light: tones("light", l.code, design), dark: tones("dark", l.code, design) },
     })),
     interface: INTERFACE,
     languages: curriculum.languages.map((lang) => ({

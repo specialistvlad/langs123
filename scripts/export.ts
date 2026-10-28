@@ -11,9 +11,10 @@
 // columns carry their titles, their sentence as a group, merge and center, as the website lays them out.
 // `for` lists the explanation languages an element serves. Every leaf keeps its level; readers derive the
 // ranges of blocks, sections and topics from the leaves, as levels.ts does.
-// Run: npm run export
+// Run: npm run export; npm run export -- --design <name> carries that design's level colours (tokens.ts).
 import { mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
+import { designArg } from "../apps/web/tokens.ts";
 import { exportLibrary } from "./export/library.ts";
 import { ROOT } from "./lib.ts";
 
@@ -23,7 +24,7 @@ export { exportLibrary } from "./export/library.ts";
 export const LIBRARY_FILE = join(ROOT, "build", "data", "library.json");
 
 if (import.meta.main) {
-  const library = await exportLibrary();
+  const library = await exportLibrary(undefined, designArg(process.argv.slice(2)));
   await mkdir(dirname(LIBRARY_FILE), { recursive: true });
   await Bun.write(LIBRARY_FILE, JSON.stringify(library));
   console.log(`library.json: ${Object.keys(library.topics).length} topics from ${library.source.commit} into build/data/`);

@@ -37,7 +37,7 @@ ${pages
 `;
 
   const assets: [string, string][] = [
-    ["style.css", await styleCss()],
+    ["style.css", await styleCss(o.design)],
     ["levels.css", levelsCss() + varietiesCss(varieties)],
     ["client.js", await clientJs()],
   ];

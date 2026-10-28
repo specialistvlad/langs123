@@ -11,6 +11,10 @@
 //             --<name>                             name: --measure  --content-width  --topbar-height
 // The colours and the shadows whose two themes differ take their light values on :root and their dark ones under the two
 // selectors of a reader's choice and the system's; every other variable stands on :root.
+// A design is one tokens file: tokens.json is the default design, and each tokens.<name>.json beside it is the design
+// <name>, the same tokens with values of its own. The build, the export and npm start take a design by name.
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import file from "./tokens.json";
 
 export interface Token {
@@ -37,6 +41,33 @@ export interface Tokens {
   layout: { tokens: Measure[] };
 }
 const TOKENS = file as unknown as Tokens;
+export const DEFAULT_DESIGN = "default";
+export const DESIGNS = [
+  DEFAULT_DESIGN,
+  ...readdirSync(import.meta.dir).flatMap((f) => /^tokens\.([\w-]+)\.json$/.exec(f)?.[1] ?? []),
+] as readonly string[];
+const read = new Map<string, Tokens>([[DEFAULT_DESIGN, TOKENS]]);
+
+// A design's tokens; a name no design has stops, naming the designs.
+export function designTokens(design: string = DEFAULT_DESIGN): Tokens {
+  if (!DESIGNS.includes(design)) throw new Error(`no design ${design}; the designs are ${DESIGNS.join(", ")}`);
+  let tokens = read.get(design);
+  if (tokens === undefined) {
+    tokens = JSON.parse(readFileSync(join(import.meta.dir, `tokens.${design}.json`), "utf8")) as Tokens;
+    read.set(design, tokens);
+  }
+  return tokens;
+}
+
+// The design a command line names, --design <name>, and the default design when it names none.
+export function designArg(args: readonly string[]): string {
+  const at = args.indexOf("--design");
+  const design = at < 0 ? DEFAULT_DESIGN : args[at + 1];
+  if (design === undefined) throw new Error(`--design takes a design's name: ${DESIGNS.join(", ")}`);
+  designTokens(design);
+  return design;
+}
+
 export const THEMES = ["light", "dark"] as const;
 export type Theme = (typeof THEMES)[number];
 
@@ -55,6 +86,13 @@ export function token(name: string, theme: Theme, tokens: Token[] = TOKENS.color
 // The variable of a colour token, and of a shadow token.
 export const colourVariable = (name: string): string => `--c-${name}`;
 export const shadowVariable = (name: string): string => `--sh-${without(name, "shadow-")}`;
+// The variable of a radius token: --r-pill, or --r- and the token's px in the default design, so every design sets the
+// variables the stylesheets read (radius-xl is --r-12 whatever its value).
+function radiusVariable(r: Measure): string {
+  if (r.name === "radius-pill") return "--r-pill";
+  const named = TOKENS.radius.tokens.find((d) => d.name === r.name) ?? r;
+  return `--r-${named.value.replace(/px$/, "").replace(".", "_")}`;
+}
 
 type Declaration = [string, string];
 
@@ -79,10 +117,7 @@ export function tokenVariables(t: Tokens = TOKENS): { root: Declaration[]; light
       ]),
     ...Object.entries(t.type.families).map(([name, value]): Declaration => [`--f-${name}`, squash(value)]),
     ...t.spacing.tokens.map((s): Declaration => [`--s-${without(s.name, "space-")}`, s.value]),
-    ...t.radius.tokens.map((r): Declaration => [
-      r.name === "radius-pill" ? "--r-pill" : `--r-${r.value.replace(/px$/, "").replace(".", "_")}`,
-      r.value,
-    ]),
+    ...t.radius.tokens.map((r): Declaration => [radiusVariable(r), r.value]),
     ...t.layout.tokens.map((l): Declaration => [
       l.name.startsWith("breakpoint-") ? `--bp-${without(l.name, "breakpoint-")}` : `--${l.name}`,
       l.value,

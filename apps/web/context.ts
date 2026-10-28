@@ -19,6 +19,8 @@ export interface BuildOptions {
   brand?: Brand;
   // Each page's head, changed from what the page is: build() calls it once per page with the page's facts.
   head?: (page: PageFacts) => HeadChange;
+  // The design whose tokens the stylesheet reads (tokens.ts): its name, the default design when none is given.
+  design?: string;
 }
 
 // What a built page is. build() returns these for every page, in the order it builds them.
