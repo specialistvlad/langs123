@@ -41,6 +41,10 @@ test("a dropped variety's form takes its space with it before punctuation, and l
     "the truck stops",
   );
   expect(marks("a{variant en-GB b}{variant en-US c}d", { variety: "en-US", still: true })).toBe("acd");
+  const term = "{term {variant en-GB Opposite} {variant en-US Across from}}は、";
+  expect(marks(term, { variety: "en-GB", still: true })).toBe('<b class="rd-term">Opposite</b>は、');
+  expect(marks(term, { variety: "en-US", still: true })).toBe('<b class="rd-term">Across from</b>は、');
+  expect(plain(parseMarks(term), { variety: "en-GB" })).toBe("Oppositeは、");
   const sound = "She works {ipa {variant en-GB wɜːks} {variant en-US wɜːrks}} in a shop.";
   expect(plain(parseMarks(sound), { variety: "en-GB" })).toBe("She works wɜːks in a shop.");
   expect(marks(sound, { variety: "en-US", still: true })).toBe(

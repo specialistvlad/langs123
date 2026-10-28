@@ -77,15 +77,15 @@ export function parseMarks(src: string): Node[] {
   return run(false);
 }
 
-// Where a variety's form drops it leaves this mark, a character of the private use area; closeGaps() takes it out with the
-// spaces beside it where the text or a tag opens, or where punctuation (after closing tags) or the text's end follows, and
-// leaves one space where spaces stood beside it otherwise.
+// Where a variety's form drops it leaves this mark, a character of the private use area. The space that separates two
+// forms belongs to their mark: closeGaps(), run on each mark's content and on the whole text, takes the mark out with the
+// spaces beside it where the content starts or ends or punctuation follows, and leaves one space between two words.
 const DROP = "\uE000";
 function closeGaps(text: string): string {
   return text
     .replace(/\uE000(\s*\uE000)+/g, DROP)
-    .replace(/(^|<[a-z][^>]*>)\s*\uE000\s*/g, "$1")
-    .replace(/\s*\uE000\s*(?=(?:<\/[a-z]+>)*(?:[?!.,;:…)\]»”’]|$))/g, "")
+    .replace(/^\s*\uE000\s*/, "")
+    .replace(/\s*\uE000\s*(?=[?!.,;:…)\]»”’]|$)/g, "")
     .replace(/\s*\uE000\s*/g, (m) => (/\s/.test(m) ? " " : ""));
 }
 
@@ -109,7 +109,7 @@ function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
   return nodes
     .map((n): string => {
       if (typeof n === "string") return esc(n);
-      const inner = (nested = inIpa): string => render(n.kids, ctx, nested);
+      const inner = (nested = inIpa): string => closeGaps(render(n.kids, ctx, nested));
       const arg = n.arg ?? "";
       switch (n.mark) {
         case "target":
