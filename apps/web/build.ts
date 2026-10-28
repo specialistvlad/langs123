@@ -22,6 +22,11 @@ import { topicUrl } from "./urls.ts";
 import { designArg } from "./tokens.ts";
 import { exportV1, type LibraryV1 } from "../../scripts/v1/export/library.ts";
 import { readingPages } from "./pages/reading.ts";
+import { reviewPages } from "./pages/review.ts";
+import { reviewEntries } from "./review-data.ts";
+import { checkRoot } from "../../scripts/v1/check.ts";
+import { queueOf } from "../../scripts/review/queue.ts";
+import type { ReviewEntry } from "./review.ts";
 
 export type { BuildOptions, HeadChange, PageFacts } from "./context.ts";
 
@@ -53,6 +58,12 @@ function readV1(o: BuildOptions): Promise<LibraryV1> {
     ...(o.root !== undefined && { root: o.root }),
     ...(o.design !== undefined && { design: o.design }),
   });
+}
+
+// The review preview's entries of a v1 preview build: the root checked, its records and its flagged queue.
+async function readReview(o: BuildOptions): Promise<ReviewEntry[]> {
+  const { library, problems } = await checkRoot(o.root ?? join(ROOT, "library"));
+  return reviewEntries(library, problems, queueOf(library));
 }
 
 // The export as the build writes it beside the pages, by path.
@@ -114,6 +125,7 @@ export async function build(o: BuildOptions): Promise<PageFacts[]> {
       if (v1 !== undefined) readingPages(track, v1);
     }
   }
+  if (v1 !== undefined && o.dev) reviewPages(ctx, v1, await readReview(o));
   notFoundPage(ctx);
 
   await writeSite(

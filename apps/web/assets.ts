@@ -79,6 +79,8 @@ async function bundle(entry: string): Promise<string> {
 export const clientJs = (): Promise<string> => bundle("client.ts");
 // The new library's reading in the browser (client-reading.ts), on its pages alone.
 export const readingJs = (): Promise<string> => bundle("client-reading.ts");
+// The review preview's drafts in the browser (client-review.ts), in a v1 preview build alone.
+export const reviewJs = (): Promise<string> => bundle("client-review.ts");
 
 // Everything about levels that depends on the scale in languages/levels.yaml: the rule handing each level's colours
 // to its elements (level-colours.ts), the level marks' bars, and the level filter. An element's data-level is its

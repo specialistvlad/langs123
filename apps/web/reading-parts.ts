@@ -18,7 +18,7 @@ export function head(r: Reading, lead = true): string {
   return (
     `<header class="rd-head"><p class="lx-meta">${ladder(r.topic.levels, r.words)}<span class="lx-dot" aria-hidden="true"></span>` +
     `<span class="lx-meta-i">${SVG_CLOCK} ${esc(r.words.say("minutes", { n: minutes }))}</span></p>` +
-    `${definition}</header>`
+    `${definition}</header>${r.pin("head")}`
   );
 }
 
@@ -42,7 +42,7 @@ function picture(r: Reading): string {
       },
     ];
   });
-  return `<div class="rd-pic">${sceneGrid(cells)}</div>`;
+  return `<div class="rd-pic">${sceneGrid(cells)}</div>${r.pin(data.id)}`;
 }
 
 // R4 and R7: part 00, the essence's lines in the first language, each linked to the subtopic that teaches it, in two cards
@@ -65,7 +65,7 @@ export function essence(r: Reading): string {
       const first = gloss === undefined ? "" : r.say(e.ex?.id ?? e.id, gloss);
       const subs = [first === "" ? "" : `<span class="lx-row-sub">${still(first)}</span>`];
       const to = e.to === undefined ? "" : ` href="#${e.to}"`;
-      return `<div class="lx-row"><a${to} class="lx-row-a lx-cover"><span class="lx-row-t">${form}${subs.join("")}</span></a>${ladder([e.level ?? "A1"], r.words, true)}<span class="lx-chev">${SVG_CHEV}</span></div>`;
+      return `<div class="lx-row"><a${to} class="lx-row-a lx-cover"><span class="lx-row-t">${form}${subs.join("")}</span></a>${ladder([e.level ?? "A1"], r.words, true)}<span class="lx-chev">${SVG_CHEV}</span></div>${r.pin(e.id)}`;
     });
   const half = Math.ceil(rows.length / 2);
   const cards = [rows.slice(0, half), rows.slice(half)].filter((c) => c.length > 0).map((c) => `<div class="lx-card">${c.join("")}</div>`);
@@ -117,7 +117,10 @@ export function errors(r: Reading): string {
     const right = typeof e.right === "string" ? { id: e.id, text: e.right, tr: undefined } : e.right;
     const rule = `<p class="rd-err-rule">${r.m(r.say(e.rule.id, e.rule.text))}</p>${r.others.map((l) => r.layer(l, r.in(l, e.rule.text))).join("")}`;
     const tr = right.tr === undefined ? "" : r.say(right.id, right.tr);
-    return [card(r, { id: e.id, in: e.in, speakers: Object.keys(e.speakers), wrong: e.wrong, right: right.text, tr, rule, reasons })];
+    return [
+      card(r, { id: e.id, in: e.in, speakers: Object.keys(e.speakers), wrong: e.wrong, right: right.text, tr, rule, reasons }) +
+        r.pin(e.id),
+    ];
   });
   const own = r.languages.flatMap((l) =>
     owned(l).errors.map((e) => {
@@ -125,7 +128,7 @@ export function errors(r: Reading): string {
       const speakers = Object.keys(e.speakers);
       const reasons = speakers.filter((s) => r.speakers.includes(s)).map((s) => reason(r, s, l, e.speakers[s]?.text ?? ""));
       const rule = `<p class="rd-err-rule" lang="${l}">${r.m(e.rule.text)}</p>`;
-      return card(r, { id: e.id, in: e.in, speakers, wrong: e.wrong, right: right.text, tr: right.tr, rule, reasons });
+      return card(r, { id: e.id, in: e.in, speakers, wrong: e.wrong, right: right.text, tr: right.tr, rule, reasons }) + r.pin(e.id);
     }),
   );
   const cards = [...shared, ...own];

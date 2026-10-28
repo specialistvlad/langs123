@@ -43,7 +43,7 @@ test("today's library builds exactly as before, and v1 adds its export and its s
   expect(differ).toEqual([]);
 });
 
-test("in dev the draft topic has its page in each explanation language it is written in, with its data and the script", async () => {
+test("in dev the draft topic has its page in each explanation language it is written in, with its data and the script, and the review preview", async () => {
   const pages = (await list(DEV_DIR)).filter((f) => f.includes("/v1/") && f.endsWith("index.html"));
   expect(pages).toEqual(["en/english/v1/letters/index.html", "uk/english/v1/letters/index.html"]);
   const html = await Bun.file(join(DEV_DIR, "uk/english/v1/letters/index.html")).text();
@@ -51,6 +51,11 @@ test("in dev the draft topic has its page in each explanation language it is wri
   expect(html).toContain('<script type="application/json" id="rd-data">');
   expect(html).toMatch(/<script src="\/reading\.[0-9a-f]{10}\.js" defer><\/script>/);
   expect(html).toContain('<nav class="tp-outline"');
+  // The review preview is a v1 preview's alone: its queue and a draft per topic, with their script.
+  const all = await list(DEV_DIR);
+  expect(all.filter((f) => f.startsWith("review/") && f.endsWith(".html"))).toEqual(["review/en.letters/index.html", "review/index.html"]);
+  expect(all.some((f) => /^review\.([0-9a-f]{10}\.)?js$/.test(f))).toBe(true);
+  expect((await list(V1_DIR)).filter((f) => f.startsWith("review"))).toEqual([]);
 });
 
 test("the export holds the approved topics alone, and in dev every draft too (RV-03)", async () => {

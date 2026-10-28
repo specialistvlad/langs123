@@ -3,7 +3,7 @@
 // changes a file gives it a new address, so a browser holding the old one fetches the new one with the new pages.
 import { mkdir, rename, rm } from "node:fs/promises";
 import { join } from "node:path";
-import { clientJs, levelsCss, readingJs, styleCss, varietiesCss } from "./assets.ts";
+import { clientJs, levelsCss, readingJs, reviewJs, styleCss, varietiesCss } from "./assets.ts";
 import type { BuildOptions, Page } from "./context.ts";
 
 // What a page must never show: Markdown, a topic link or an object the renderer left unrendered.
@@ -46,6 +46,7 @@ ${pages
     ["levels.css", levelsCss() + varietiesCss(varieties)],
     ["client.js", await clientJs()],
     ...(o.library === "v1" ? [["reading.js", await readingJs()] as [string, string]] : []),
+    ...(o.library === "v1" && o.dev ? [["review.js", await reviewJs()] as [string, string]] : []),
   ];
   const named = assets.map(([name, text]) => [name, hashed(name, text), text] as const);
   const pinned = (html: string): string => named.reduce((h, [name, file]) => h.replaceAll(`"/${name}"`, `"/${file}"`), html);

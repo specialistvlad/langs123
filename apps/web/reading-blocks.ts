@@ -39,7 +39,7 @@ export function example(r: Reading, ex: Example): string {
 export function examples(r: Reading, b: Extract<Block, { type: "example" }>): string {
   return `<div class="rd-exs">${b.items
     .filter((i) => r.shows(i.variety))
-    .map((i) => r.wear(i.variety, example(r, i)))
+    .map((i) => r.wear(i.variety, example(r, i)) + r.pin(i.id))
     .join("")}</div>`;
 }
 
@@ -58,7 +58,7 @@ export function list(r: Reading, b: Extract<Block, { type: "list" }>): string {
         const first = r.m(r.say(i.id, text));
         lead = lines === "" ? first : `<span class="rd-stk"><span>${first}</span>${lines}</span>`;
       }
-      return `<li class="lx-li"><div class="lx-c">${lead}${i.ex === undefined ? "" : example(r, i.ex)}</div></li>`;
+      return `<li class="lx-li"><div class="lx-c">${lead}${i.ex === undefined ? "" : example(r, i.ex)}${r.pin(i.id)}</div></li>`;
     })
     .join("")}</ul>`;
 }
@@ -123,7 +123,9 @@ export function ownBlock(r: Reading, l: string, o: Own): string {
 function own(r: Reading, part: string, after: string): string {
   return r.languages
     .flatMap((l) =>
-      (r.topic.own[l]?.blocks ?? []).filter((o) => o.in === part && o.after === after && r.shows(o.variety)).map((o) => ownBlock(r, l, o)),
+      (r.topic.own[l]?.blocks ?? [])
+        .filter((o) => o.in === part && o.after === after && r.shows(o.variety))
+        .map((o) => ownBlock(r, l, o) + r.pin(o.id)),
     )
     .join("");
 }
@@ -140,6 +142,6 @@ export function block(r: Reading, b: Block, title = ""): string {
 export function subtopic(r: Reading, s: Subtopic, index: number): string {
   const num = String(index + 1).padStart(2, "0");
   const title = r.m(r.say(s.title.id, s.title.text));
-  const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => block(r, b, title) + own(r, s.id, b.id));
-  return `<section class="rd-part" id="${s.id}">${partHead(num, title, ladder([s.level], r.words))}<div class="rd-flow">${blocks.join("")}</div></section>`;
+  const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => block(r, b, title) + r.pin(b.id) + own(r, s.id, b.id));
+  return `<section class="rd-part" id="${s.id}">${partHead(num, title, ladder([s.level], r.words))}${r.pin(s.id)}<div class="rd-flow">${blocks.join("")}</div></section>`;
 }

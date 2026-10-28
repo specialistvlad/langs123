@@ -33,6 +33,8 @@ export class Reading {
   ) {
     this.ctx = { variety };
   }
+  // What a reviewer's page sets under an element, by the id the reading draws it with (pages/review.ts); nothing elsewhere.
+  pin: (id: string) => string = () => "";
   get main(): string {
     return this.languages[0] ?? this.source;
   }
