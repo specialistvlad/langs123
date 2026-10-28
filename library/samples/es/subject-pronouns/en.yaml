@@ -21,7 +21,7 @@ text:
   ess.contraste.ex: I work and you study.
   ess.llueve.ex: It's raining.
 
-  personas.title: The persons
+  personas.title: "Grammatical person"
   personas.fact.1: "Subject pronouns change with the person: the one speaking, the one listening, or someone else."
   personas.fact.2: "They change with the number too: one person or several."
   personas.col.persona: Person
@@ -33,28 +33,32 @@ text:
   personas.tercera.name: third person
   personas.ana: I'm Ana, and he's Pedro.
   personas.medica: She's a doctor, and he's a teacher.
-  personas.chile: We're from Chile. And you?
+  personas.chile:
+    - "We're from Chile."
+    - "And you?"
 
   genero.title: Masculine and feminine
   genero.fact.1: "In the plural, {term nosotras} and {term ellas} name a group of women only."
   genero.fact.2: "A group with at least one man takes the masculine form: {term nosotros}, {term ellos}."
   genero.nosotras: "{term Nosotras}: me and other women, when a woman speaks."
-  genero.nosotras.ex: We're making dinner, and you're laying the table.
+  genero.nosotras.ex: "We're making dinner, and they're laying the table."
   genero.nosotros: "{term Nosotros}: me and other people, with at least one man among them."
   genero.nosotros.ex: We're walking, and they're taking a taxi.
   genero.ellas: "{term Ellas}: other women."
-  genero.ellas.ex: The boys arrive today, and the girls tomorrow.
+  genero.ellas.ex: "The men arrive today, and the women tomorrow."
   genero.ellos: "{term Ellos}: other men, or a group of men and women."
   genero.ellos.ex: They work and we rest.
 
   tu-usted.title: Tú and usted
   tu-usted.fact.1: "{term Tú} is used between people who are close: with friends, family and children."
-  tu-usted.fact.2: "{term Usted} shows respect: with older people, with strangers and at work."
+  tu-usted.fact.2: "{term Usted} shows respect: with older people, with strangers and with a boss or a client."
   tu-usted.fact.3: "{term Usted} takes the verb of {term él} and {term ella}."
   tu-usted.senora: How are you, Mrs García?
-  tu-usted.gracias: Fine, thanks. And you?
+  tu-usted.gracias:
+    - "Fine, thanks, Ana."
+    - "And you?"
   tu-usted.profesor: Are you the English teacher?
-  tu-usted.why.1: "{term Usted} comes from {term vuestra merced}, \"your grace\", an old form of respect."
+  tu-usted.why.1: "{term Usted} comes from {term vuestra merced}, an old form of respect."
   tu-usted.why.2: "So it takes the verb of {term él} and {term ella}."
   tu-usted.vos.1: "In Argentina, Uruguay, Paraguay and much of Central America, {term vos} takes the place of {term tú}."
   tu-usted.vos.sos: Are you from here?
@@ -71,16 +75,16 @@ text:
   sin-pronombre.fact.2: So the pronoun usually goes unsaid.
   sin-pronombre.o: "{term -o} is {term yo}."
   sin-pronombre.o.ex: I speak Spanish.
-  sin-pronombre.as: "{term -as} and {term -es} are {term tú}."
-  sin-pronombre.as.ex: Do you live here?
+  sin-pronombre.as: "{term -as} is {term tú}."
+  sin-pronombre.as.ex: "Do you speak Spanish?"
   sin-pronombre.mos: "{term -mos} is {term nosotros} or {term nosotras}."
   sin-pronombre.mos.ex: We have lunch at two.
 
   con-pronombre.title: When the pronoun is said
   con-pronombre.fact.1: The pronoun is said when the verb alone is not enough.
-  con-pronombre.contraste: To set two people against each other.
+  con-pronombre.contraste: "To compare two people."
   con-pronombre.contraste.ex: I work and you study.
-  con-pronombre.aclarar: "To make clear who it is, because {term él}, {term ella} and {term usted} share one verb form."
+  con-pronombre.aclarar: "To tell whether it is {term usted}, {term él} or {term ella}."
   con-pronombre.aclarar.ex: Do you speak English?
   con-pronombre.solo: Without a verb, in a short answer.
   con-pronombre.solo.ex: Who wants coffee? Me.
@@ -91,32 +95,35 @@ text:
   cosas.tarde: It's late.
   cosas.mesa: Where's the book? On the table.
 
-  err.yo-yo.right: My name's Tom. I'm from London. I work in a bank.
-  err.yo-yo.rule: The verb already says who it is, and the pronoun is said only to contrast or to make clear.
-  err.yo-yo.en: English always says the subject before the verb.
-  err.yo-yo.fr: French always says the subject before the verb.
-  err.yo-yo.de: German always says the subject with the verb.
-  err.yo-yo.pt: Brazilian Portuguese says the subject much more often than Spanish.
   err.ello.right: It's late.
   err.ello.rule: For the weather and the time, the verb stands alone, with no pronoun.
   err.ello.en: "English puts it as the subject: it's late."
   err.ello.fr: "French puts il as the subject: il est tard."
   err.ello.de: "German puts es as the subject: es ist spät."
-  err.ellas-cosas.right: The keys? They're on the table.
-  err.ellas-cosas.rule: For things, the verb goes without a subject pronoun.
-  err.ellas-cosas.en: English puts they as the subject for things too.
-  err.ellas-cosas.fr: French puts elles as the subject for things too.
-  err.ellas-cosas.de: German puts sie as the subject for things too.
-  err.ellas-cosas.pt: Brazilian Portuguese says elas for things too.
   err.usted-tu.right: Do you have children?
   err.usted-tu.rule: "{term Usted} takes the verb of {term él} and {term ella}."
   err.usted-tu.en: English has one word, you, for both tú and usted.
 
+  ess.vos: "the person listening, informally"
+  sin-pronombre.es: "{term -es} is {term tú}."
+  sin-pronombre.es.ex: "Do you live here?"
 blocks:
-  - id: en.tu-usted.fact
+  - id: en.tu-usted.you
     in: tu-usted
     after: tu-usted.example
     type: fact
     text:
-      - id: en.tu-usted.fact.1
-        text: "English has one word, you, for {term tú}, {term usted}, {term vosotros} and {term ustedes}."
+      - { id: en.tu-usted.you.1, text: "English has one word, you, for {term tú}, {term usted} and {term ustedes}." }
+  - id: en.tu-usted.you-example
+    in: tu-usted
+    after: tu-usted.example
+    type: example
+    items:
+      - { id: en.tu-usted.profesor, text: "¿{target Usted} es el profesor de inglés?", tr: "Are you the English teacher?" }
+  - id: en.tu-usted.vosotros
+    in: tu-usted
+    after: tu-usted.example
+    type: fact
+    variety: es-ES
+    text:
+      - { id: en.tu-usted.vosotros.1, text: "English also says you for {term vosotros}." }

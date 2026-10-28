@@ -13,6 +13,7 @@ essence:
   - { id: ess.yo, to: personas, word: yo, text: "quien habla" }
   - { id: ess.tu, to: tu-usted, word: tú, text: "quien escucha, en confianza" }
   - { id: ess.usted, to: tu-usted, word: usted, text: "quien escucha, con respeto" }
+  - { id: ess.vos, to: tu-usted, variety: es-419, word: vos, text: "quien escucha, en confianza" }
   - { id: ess.el, to: personas, word: él, text: "otro hombre" }
   - { id: ess.ella, to: personas, word: ella, text: "otra mujer" }
   - { id: ess.nosotros, to: genero, word: nosotros, text: "yo y otras personas" }
@@ -86,7 +87,7 @@ subtopics:
         items:
           - id: genero.nosotras
             text: "{term Nosotras}: quien habla y otras mujeres, si quien habla es mujer."
-            ex: { id: genero.nosotras.ex, text: "{target Nosotras} preparamos la cena, y ustedes ponen la mesa." }
+            ex: { id: genero.nosotras.ex, text: "{target Nosotras} preparamos la cena, y ellos ponen la mesa." }
           - id: genero.nosotros
             text: "{term Nosotros}: quien habla y otras personas, con al menos un hombre."
             ex: { id: genero.nosotros.ex, text: "{target Nosotros} vamos a pie, y ellas van en taxi." }
@@ -105,19 +106,19 @@ subtopics:
         type: fact
         text:
           - { id: tu-usted.fact.1, text: "{term Tú} se usa en confianza: con amigos, con la familia y con niños." }
-          - { id: tu-usted.fact.2, text: "{term Usted} se usa con respeto: con personas mayores, con personas desconocidas y en el trabajo." }
-          - { id: tu-usted.fact.3, text: "{term Usted} va con el verbo de {term él} y {term ella}." }
+          - { id: tu-usted.fact.2, text: "{term Usted} se usa con respeto: con personas mayores, con personas desconocidas y con un jefe o un cliente." }
+          - { id: tu-usted.fact.3, text: "{term Usted} usa el verbo de {term él} y {term ella}." }
       - id: tu-usted.example
         type: example
         items:
           - { id: tu-usted.senora, text: "¿Cómo está {target usted}, señora García?" }
-          - { id: tu-usted.gracias, text: "Bien, gracias, ¿y {target tú}?" }
+          - { id: tu-usted.gracias, text: "Bien, gracias, Ana, ¿y {target tú}?" }
           - { id: tu-usted.profesor, text: "¿{target Usted} es el profesor de inglés?" }
       - id: tu-usted.why
         type: why
         text:
           - { id: tu-usted.why.1, text: "{term Usted} viene de {term vuestra merced}, una forma antigua de respeto." }
-          - { id: tu-usted.why.2, text: "Por eso va con el verbo de {term él} y {term ella}." }
+          - { id: tu-usted.why.2, text: "Por eso usa el verbo de {term él} y {term ella}." }
       - id: tu-usted.vos
         type: fact
         variety: es-419
@@ -147,7 +148,7 @@ subtopics:
       - id: ustedes-vosotros.fact
         type: fact
         text:
-          - { id: ustedes-vosotros.fact.1, text: "{term Ustedes} va con el verbo de {term ellos} y {term ellas}." }
+          - { id: ustedes-vosotros.fact.1, text: "{term Ustedes} usa el verbo de {term ellos} y {term ellas}." }
       - id: ustedes-vosotros.example
         type: example
         items:
@@ -170,8 +171,11 @@ subtopics:
             text: "{term -o} es {term yo}."
             ex: { id: sin-pronombre.o.ex, text: "{target Hablo} español." }
           - id: sin-pronombre.as
-            text: "{term -as} y {term -es} son {term tú}."
-            ex: { id: sin-pronombre.as.ex, text: "¿{target Vives} aquí?" }
+            text: "{term -as} es {term tú}."
+            ex: { id: sin-pronombre.as.ex, text: "¿{target Hablas} español?" }
+          - id: sin-pronombre.es
+            text: "{term -es} es {term tú}."
+            ex: { id: sin-pronombre.es.ex, text: "¿{target Vives} aquí?" }
           - id: sin-pronombre.mos
             text: "{term -mos} es {term nosotros} o {term nosotras}."
             ex: { id: sin-pronombre.mos.ex, text: "{target Comemos} a las dos." }
@@ -188,10 +192,10 @@ subtopics:
         type: list
         items:
           - id: con-pronombre.contraste
-            text: "Para oponer a dos personas."
+            text: "Para comparar a dos personas."
             ex: { id: con-pronombre.contraste.ex, text: "{target Yo} trabajo y {target tú} estudias." }
           - id: con-pronombre.aclarar
-            text: "Para aclarar quién es, porque {term él}, {term ella} y {term usted} van con el mismo verbo."
+            text: "Para saber si es {term usted}, {term él} o {term ella}."
             ex: { id: con-pronombre.aclarar.ex, text: "¿Habla {target usted} inglés?" }
           - id: con-pronombre.solo
             text: "Sin verbo, en una respuesta corta."
@@ -213,17 +217,6 @@ subtopics:
           - { id: cosas.mesa, text: "—¿Dónde está el libro? —{target Está} en la mesa." }
 
 errors:
-  - id: err.yo-yo
-    in: sin-pronombre
-    wrong: Yo me llamo Tom. Yo soy de Londres. Yo trabajo en un banco.
-    right: { id: err.yo-yo.right, text: "{target Me llamo} Tom. {target Soy} de Londres. {target Trabajo} en un banco." }
-    rule: { id: err.yo-yo.rule, text: "El verbo ya dice quién es, y el pronombre se dice solo para oponer o aclarar." }
-    speakers:
-      en: { id: err.yo-yo.en, text: "El inglés dice siempre el sujeto delante del verbo." }
-      fr: { id: err.yo-yo.fr, text: "El francés dice siempre el sujeto delante del verbo." }
-      de: { id: err.yo-yo.de, text: "El alemán dice siempre el sujeto con el verbo." }
-      pt: { id: err.yo-yo.pt, text: "El portugués de Brasil dice el sujeto mucho más que el español." }
-
   - id: err.ello
     in: cosas
     wrong: Ello es tarde.
@@ -234,21 +227,10 @@ errors:
       fr: { id: err.ello.fr, text: "El francés pone il como sujeto: il est tard." }
       de: { id: err.ello.de, text: "El alemán pone es como sujeto: es ist spät." }
 
-  - id: err.ellas-cosas
-    in: cosas
-    wrong: ¿Las llaves? Ellas están en la mesa.
-    right: { id: err.ellas-cosas.right, text: "¿Las llaves? {target Están} en la mesa." }
-    rule: { id: err.ellas-cosas.rule, text: "Para las cosas, el verbo va sin pronombre de sujeto." }
-    speakers:
-      en: { id: err.ellas-cosas.en, text: "El inglés pone they como sujeto también para las cosas." }
-      fr: { id: err.ellas-cosas.fr, text: "El francés pone elles como sujeto también para las cosas." }
-      de: { id: err.ellas-cosas.de, text: "El alemán pone sie como sujeto también para las cosas." }
-      pt: { id: err.ellas-cosas.pt, text: "El portugués de Brasil dice elas también para las cosas." }
-
   - id: err.usted-tu
     in: tu-usted
     wrong: ¿Usted tienes hijos?
     right: { id: err.usted-tu.right, text: "¿{target Usted tiene} hijos?" }
-    rule: { id: err.usted-tu.rule, text: "{term Usted} va con el verbo de {term él} y {term ella}." }
+    rule: { id: err.usted-tu.rule, text: "{term Usted} usa el verbo de {term él} y {term ella}." }
     speakers:
       en: { id: err.usted-tu.en, text: "El inglés usa una sola palabra, you, para tú y usted." }

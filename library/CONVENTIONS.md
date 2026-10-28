@@ -25,7 +25,8 @@ that sets rules (CA-05).
 - **The source language** of a course is the language its explanations are written in first: the course's own
   language, and English for Japanese; the index names it (LA-09).
 - **Levels** are the CEFR scale: A0, A1, A2, B1, B2, C1, C2 (IX-17). English, Spanish and Ukrainian hold topics at
-  every level from A0 to C2 (IX-18); French, Japanese, Italian and German hold A0, A1 and A2 at v1 (IX-19).
+  every level from A0 to C2 (IX-18); French, Japanese, Italian and German hold A0, A1 and A2, and A2 is their
+  highest level at v1 (IX-19).
 - **A course is defined through its topics:** its index first (§9), then the text of each topic.
 
 ## 2. One shape for every topic
@@ -58,10 +59,11 @@ The title is the name of the subject, in one phrase of at most six words, or at 
 - Part 00 is the essence: the subject at a glance, in its shortest complete form, set out as the subject itself
   (SH-10). The alphabet's essence sets out the alphabet, one letter per line; the present simple's sets out its
   forms, one sentence per line; the words of place set out each word with its example.
-- The essence block holds one line per point of the subject (SH-11).
+- The essence block is a list of one line per point of the subject, each line one point in a single phrase (SH-11).
 - Each essence line points to the one subtopic that expands it, and every subtopic is pointed to by at least one
   line (SH-12).
-- An essence line carries the level of the subtopic it points to, and shows or hides with it (SH-13).
+- An essence line takes its level from the subtopic it points to, in that subtopic's level field, and shows or
+  hides with it (SH-13).
 
 ### 2.4 Subtopics
 
@@ -97,13 +99,15 @@ says how an error is written.
   too: *Usted viene de vuestra merced.*
 - An explanation sentence uses words a reader at its subtopic's level knows, apart from the term it explains
   (VO-03).
-- The sentences of a subtopic speak about the subject (VO-04). A level appears in the subtopic's level field, and
-  explanation sentences speak in the words of the subject (VO-05).
+- Every sentence speaks of the subject; the words guide, page and topic appear in no sentence (VO-04). A level
+  code, A0 to C2, appears in the level field alone, and the sentences, cells and titles around it speak in the
+  words of the subject (VO-05).
 - A fact, a form and an example state the correct form; wrong forms stand in the common errors (VO-06).
-- An example is a sentence someone says in a situation it makes plain, in words at or below the subtopic's level
-  (VO-07).
+- An example is a sentence someone says in a situation it makes plain, in words at or below the subtopic's level,
+  and it carries a scene line, who says it, to whom and where, that the sentence fits; a word example of an
+  inventory, such as a letter's word or a vocabulary item, stands alone (VO-07).
 - The translation of an example is what a speaker of the reader's language says in the same situation (VO-08):
-  *Ellos llegan hoy, y ellas, mañana* is in Ukrainian «Хлопці приїжджають сьогодні, а дівчата — завтра».
+  *Ellos llegan hoy, y ellas, mañana* is in Ukrainian «Чоловіки приїжджають сьогодні, а жінки — завтра».
 
 ## 4. Written for a first-time reader
 
@@ -140,8 +144,9 @@ says how an error is written.
 - An error holds the wrong form, its correct form and the rule it breaks (ER-06).
 - The wrong form is wrong in the language; a choice of register or style belongs to the subtopic on use or
   comparison (ER-07).
-- Where a language has a close counterpart that misleads, a block of that language's own, in its file, states
-  the difference for its readers (ER-08): for Ukrainian readers, «ви» covers both *usted* and *ustedes*.
+- The index lists each misleading counterpart as `misleads: {lang, form, counterpart}`, and each entry has a block
+  of that language's own, in its file, that states the difference for its readers and carries `after:` the source
+  block it follows (ER-08): for Ukrainian readers, «ви» to one person with respect is *usted*.
 - Each error names its subtopic in `in:` and takes that subtopic's level (ST-13).
 
 > *She work in a bank.* → *She **works** in a bank.* After *he*, *she* and *it*, the verb adds *-s*.
@@ -172,9 +177,9 @@ says how an error is written.
 ### 6.3 Roles and levels
 
 - Each subtopic role in the schema names the order or the layout it changes (ST-09), and a subtopic carries a
-  role where the role changes the order or the layout (ST-10).
-- Each subtopic carries exactly one level (ST-11), and its rows, items, paragraphs and errors take that level
-  (ST-12). A chosen level shows or hides whole subtopics.
+  role only where the role changes the order or the layout (ST-10).
+- Each subtopic carries exactly one level (ST-11). Its rows, items, paragraphs and errors take that level, and the
+  level field is the subtopic's alone (ST-12). A chosen level shows or hides whole subtopics.
 - The index states each topic's planned levels, and the levels of the topic's subtopics equal them (ST-14).
 
 ## 7. Each language's norms
@@ -191,8 +196,8 @@ says how an error is written.
 - Spanish forms follow the reference norm of the Plan Curricular del Instituto Cervantes (NO-04).
 - Spanish text opens a question with ¿ and an exclamation with ¡ (NO-05) and writes every accent its words need
   (NO-06): *¿Estás bien?*
-- The *vosotros* forms and the rules about them carry es-ES (NO-29). A rule that holds in Latin America alone,
-  such as *ustedes* as the one plural of *tú*, carries es-419 (NO-30). Voseo appears in a fact block that carries
+- The *vosotros* forms and the rules about them carry es-ES (NO-29). A form or rule of es-419 that differs from
+  standard es-ES, such as *ustedes* as the one plural of *tú*, carries es-419 (NO-30). Voseo appears in a fact block that carries
   es-419 (NO-31).
 
 ### 7.3 Ukrainian
@@ -206,7 +211,7 @@ says how an error is written.
   (NO-10).
 - A Latin transliteration after the national system of 2010 appears beside the IPA in exactly three A0 topics:
   the alphabet, the sounds and the soft sign (NO-11).
-- A form carried over from Russian is a common error whose speakers are Ukrainian (NO-12).
+- A form carried over from Russian is a common error whose speakers are Ukrainian, `speakers: [uk]` (NO-12).
 - The dash between a noun subject and its noun predicate stands in Ukrainian examples: *Ма́ма — лі́кар* (NO-13).
 
 ### 7.4 French
@@ -234,7 +239,7 @@ says how an error is written.
   in kanji the words learners read in kanji at their level (日, 月, 人, 本, 何, 時, 食べる, 行く…) and every other
   word in kana (NO-26).
 - A Japanese explanation writes kanji as a Japanese reader reads them, with no furigana or romaji; readings
-  belong to the Japanese course's examples (NO-57).
+  belong to the Japanese course's examples (NO-24, NO-57).
 - A Japanese explanation addresses the reader with no word for "you": the sentence is built without あなた
   (NO-58).
 
@@ -252,8 +257,8 @@ says how an error is written.
   fr-CA (NO-27).
 - The `variety` of an element is one of the varieties its course lists, and an element without it serves every
   variety (NO-28). A block that holds a form of one variety alone carries that variety's tag (NO-50).
-- Where varieties say one thing differently, the text holds a variant of each, side by side (NO-34): /zed/ for
-  en-GB and /ziː/ for en-US. A form both varieties share stays plain text, so the two forms of a swap differ
+- Where varieties say one thing differently, the text holds a variant of each, side by side, each variety's form
+  in its own `variant`, with no slash or "or" between them (NO-34): /zed/ for en-GB and /ziː/ for en-US. A form both varieties share stays plain text, so the two forms of a swap differ
   (NO-51).
 
 ### 7.8 Address and shared typography
@@ -290,8 +295,9 @@ Each explanation language addresses the reader in its own way:
 - A topic is written whole in its source language first: its structure, its text in the language being learned,
   its explanations, its varieties and its errors with their speakers (LA-09). Each other explanation language
   translates it.
-- Each block of an explanation language's file pairs with one block of the source, by the block's id (LA-05), and
-  inside a block each translated sentence pairs with a source sentence, by the sentence's id (LA-06).
+- Each block of an explanation language's file that translates the source pairs with one block of the source, by
+  the block's id; a block of that language's own carries `after:` the source block it follows (LA-05). Inside a
+  block, each translated sentence pairs with a source sentence, by the sentence's id (LA-06).
 - A translation that joins or splits sentences where its language needs it records the pairing: which source
   sentences make which translated sentence (LA-07).
 - A fingerprint belongs to one source sentence, and a changed source sentence flags exactly that sentence
@@ -308,9 +314,9 @@ A course is defined through its index before any topic of it is written.
 - The index lists the course's sections in order; each section has its own id, free of any order number, and its
   name in all twelve explanation languages (IX-02). Each section lists its topics in the order a reader meets
   them (IX-03).
-- A topic's section is named once, in the index; the topic's file and path carry the topic's slug (IX-04).
-- Each topic in the index names its concepts from the one registry shared by every course (IX-05) and its place
-  in the study path, level by level (IX-06).
+- A topic's section is named once, in the index; the topic's file and path carry the topic's slug alone (IX-04).
+- Concepts sit in the index alone: each topic's entry names its concepts, from the one registry shared by every
+  course (IX-05). Each topic names its place in the study path, level by level (IX-06).
 - Each `replaces` entry names a topic that exists in today's library (IX-07), and a topic that treats the subject
   of one of today's topics names it in `replaces` (IX-24).
 - Each topic in the index states its subject, what it covers and its planned levels before any text of it is
@@ -318,7 +324,7 @@ A course is defined through its index before any topic of it is written.
 - A course's index lists the sources it was drawn from, each with its name, its licence and what the index took
   from it (IX-09). It draws on at least two international, CEFR-aligned sources for its language (IX-10), and
   takes topics and levels from them while its own sentences are worded independently (IX-11).
-- A practical topic carries the mark `practical` in the index (IX-12). Each course's index holds a topic for each
+- A topic that fills a practical cluster carries `practical: <cluster id>` in the index (IX-12). Each course's index holds a topic for each
   practical cluster: question words, words of place, of movement and of time, how often, how much, linking words,
   comparing, numbers in daily life, polite words, asking the way, small talk, and full reference tables (IX-13). A
   full reference table holds the whole set, such as every irregular verb in one table (IX-14). A practical topic
@@ -328,7 +334,7 @@ A course is defined through its index before any topic of it is written.
 - Each index entry carries a status of draft, in review or approved (IX-21); while its course's index is a draft,
   every entry in it is a draft (IX-25). A topic receives its text once its course's index is approved (IX-22).
 - A section id and a topic id are lowercase letters, digits and hyphens (IX-23). A section id is unique within a
-  course, and a topic id within a section (IX-26).
+  course, and a topic id within a course too, since the path carries the slug alone (IX-26).
 
 ## 10. Review
 
@@ -340,8 +346,8 @@ A course is defined through its index before any topic of it is written.
 - The review record names the writer's model family and the reviewer's, and the two differ (RV-05). Each finding
   cites a rule id of the catalog or the source it rests on (RV-06), and every finding has the writer's answer:
   fixed, or declined with a reason (RV-07).
-- The conventions, every index, the samples and each level wave carry the owner's approval with its date
-  (RV-08). Within a wave, the owner reads the Ukrainian and the English of every topic the checks flag (RV-09)
+- The conventions, every index, the samples and each level wave carry the owner's approval with its date,
+  and each wave is written after the previous gate carries its approval (RV-08). Within a wave, the owner reads the Ukrainian and the English of every topic the checks flag (RV-09)
   and of one topic in ten of the rest, drawn at random (RV-10).
 - Each sentence of a translation says exactly what its source sentence says (RV-11). Each language's own errors
   and norms are checked by two models whose verdicts agree (RV-12).

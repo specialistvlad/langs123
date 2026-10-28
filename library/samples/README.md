@@ -79,7 +79,7 @@ A cell's label is its line's word and its alt text the line's example, in each o
 | `language` | the explanation language |
 | `nativeReview` | reviewed by a native speaker: `true` or `false` |
 | `text` | each source id with its text in this language: an explanation, an example's translation, a reason |
-| `blocks` | the blocks of its own: facts for its readers, each placed `in` a subtopic `after` a block, each sentence with its `id` |
+| `blocks` | the blocks of its own: facts and examples for its readers, each placed `in` a subtopic `after` a source block, each sentence with its `id`; an own example holds its `text` in the language being learned and its `tr` in the file's language |
 
 A translation that splits a source sentence gives a list of sentences under its id; one that joins two is keyed
 by both ids, `a + b`.

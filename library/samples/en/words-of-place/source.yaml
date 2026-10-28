@@ -5,7 +5,7 @@ source: en
 status: draft
 nativeReview: false
 title: { id: title, text: Words of place }
-definition: { id: def, text: "Words of place are prepositions, such as {term in} and {term under}, that go before a noun and say where something is." }
+definition: { id: def, text: "Words of place are small words, such as {term in} and {term under}, that say where something is." }
 
 essence:
   - { id: ess.in, to: in-on-under, word: in, ex: { id: ess.in.ex, text: "The ball is {target in} the box." } }
@@ -18,7 +18,7 @@ essence:
   - { id: ess.between, to: between, word: between, ex: { id: ess.between.ex, text: "The ball is {target between} the boxes." } }
   - { id: ess.above, to: above-below, word: above, ex: { id: ess.above.ex, text: "The ball is {target above} the box." } }
   - { id: ess.below, to: above-below, word: below, ex: { id: ess.below.ex, text: "The ball is {target below} the box." } }
-  - { id: ess.opposite, to: opposite, word: opposite, ex: { id: ess.opposite.ex, text: "The ball is {target opposite} the box." } }
+  - { id: ess.opposite, to: opposite, word: "{variant en-GB opposite} {variant en-US across from}", ex: { id: ess.opposite.ex, text: "The ball is {target {variant en-GB opposite} {variant en-US across from}} the box." } }
   - { id: ess.inside, to: inside-outside, word: inside, ex: { id: ess.inside.ex, text: "The ball is {target inside} the box." } }
   - { id: ess.outside, to: inside-outside, word: outside, ex: { id: ess.outside.ex, text: "The ball is {target outside} the box." } }
   - id: ess.underneath
@@ -36,17 +36,17 @@ subtopics:
         type: fact
         text:
           - id: in-on-under.fact.1
-            text: "These three words say whether something is inside another thing, on its surface, or lower than it."
+            text: "These three words say whether something is in another thing, on it, or lower than it."
       - id: in-on-under.list
         type: list
         items:
           - id: in
             word: in
-            text: "{term In} puts something inside a space with sides around it: a box, a bag, a room, a town."
+            text: "{term In} puts something in a space with sides around it: a box, a bag, a room, a town."
             ex: { id: in.ex, text: "My keys are {target in} my bag." }
           - id: on
             word: on
-            text: "{term On} puts something on a surface, touching it: a table, a wall, the floor."
+            text: "{term On} puts something on a thing, with no space between them: a table, a wall, the floor."
             ex: { id: on.ex, text: "Your phone is {target on} the table." }
           - id: under
             word: under
@@ -61,14 +61,14 @@ subtopics:
         type: fact
         text:
           - id: front-behind.fact.1
-            text: "{term In front of} and {term behind} say where something is from the front of another thing."
+            text: "{term In front of} and {term behind} say whether something is at the front or at the back of another thing."
           - { id: front-behind.fact.2, text: "{term In front of} is three words that work as one." }
       - id: front-behind.list
         type: list
         items:
           - id: front
             word: in front of
-            text: "{term In front of} puts something before the front of another thing."
+            text: "{term In front of} puts something on the front side of another thing."
             ex: { id: front.ex, text: "The bus stop is {target in front of} the school." }
           - id: behind
             word: behind
@@ -89,7 +89,7 @@ subtopics:
         items:
           - id: next
             word: next to
-            text: "{term Next to} puts something right at the side of another thing, with nothing between them."
+            text: "{term Next to} puts something right at the side of another thing, very close."
             ex: { id: next.ex, text: "Sit {target next to} me." }
           - id: near
             word: near
@@ -103,7 +103,7 @@ subtopics:
       - id: between.fact
         type: fact
         text:
-          - { id: between.fact.1, text: "{term Between} puts something in the space with one thing on each side of it." }
+          - { id: between.fact.1, text: "{term Between} puts something in the space that has one thing on each side." }
       - id: between.list
         type: list
         items:
@@ -232,10 +232,10 @@ errors:
   - id: err.in-front-opposite
     in: opposite
     wrong: The bank is in front of the hotel, on the other side of the street.
-    right: { id: err.in-front-opposite.right, text: "The bank is {target opposite} the hotel." }
+    right: { id: err.in-front-opposite.right, text: "The bank is {target {variant en-GB opposite} {variant en-US across from}} the hotel." }
     rule:
       id: err.in-front-opposite.rule
-      text: "Across a street or a room, facing each other, is {term opposite}; {term in front of} stays on the same side."
+      text: "Across a street, facing each other, is {term {variant en-GB opposite} {variant en-US across from}}; {term in front of} stays on the same side."
     speakers:
       es: { id: err.in-front-opposite.es, text: "Spanish enfrente de means opposite and reads like in front of." }
       pt: { id: err.in-front-opposite.pt, text: "Portuguese em frente de means both opposite and in front of." }
