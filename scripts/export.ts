@@ -14,7 +14,7 @@
 // With --library v1, it writes the new library's export (scripts/v1/export/library.ts) into build/data/v1/:
 // library.json and one file per course, described by library/schema/export.schema.json.
 // Run: npm run export; npm run export -- --design <name> carries that design's level colours (tokens.ts);
-//      npm run export -- --library v1 [root] [--drafts]
+//      npm run export -- --library v1 [root] [--drafts] [--design <name>], the design's colours and type styles too
 import { mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { designArg } from "../apps/web/tokens.ts";
