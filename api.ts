@@ -55,6 +55,9 @@ export { EXPORT_VERSION as VERSION } from "./scripts/v1/export/library.ts";
 // The review of the new library's topics in Claude Code sessions, and the flagged queue its records make.
 export { review, reviewQueue } from "./scripts/review/index.ts";
 export { claudeAttempt, runnerOf } from "./scripts/review/run.ts";
+// The similar-topic check (M6): the index entries of a course that stand close by a lexical TF-IDF cosine, the
+// candidates a Choice question decides on.
+export { type SimilarPair, SIMILAR_THRESHOLD, similarTopicsOf } from "./scripts/review/similar.ts";
 // The new library's samples, a root the export reads with drafts, as SAMPLE serves today's library.
 export { SAMPLES_ROOT as V1_SAMPLES } from "./scripts/v1/load.ts";
 export { topicTitle } from "./scripts/content.ts";

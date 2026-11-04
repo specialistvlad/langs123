@@ -42,6 +42,8 @@ test("api.ts exports the build, the export, the search, the library's readers an
       "reviewQueue",
       "claudeAttempt",
       "runnerOf",
+      "SIMILAR_THRESHOLD",
+      "similarTopicsOf",
       "refRange",
       "ruleProblems",
       "searchData",
