@@ -1,12 +1,11 @@
 // Gate 4b check 12: a review session is a headless Claude Code session with its model named, its environment holding
 // no provider's key, and no module of the review calling a model's HTTP API. A stand-in `claude` on the PATH shows
 // the arguments and the environment a session receives; a failed session runs once more and the second decides.
-import { afterAll, expect, test } from "bun:test";
-import { chmod, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { expect, test } from "bun:test";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { Request } from "./request.ts";
-import { claudeAttempt, COMMAND, parseReply, runnerOf, type Session, sessionArgs, sessionEnv } from "./run.ts";
+import { attemptWith, bunSpawn, COMMAND, parseReply, runnerOf, type Session, type Spawn, sessionArgs, sessionEnv } from "./run.ts";
 
 const REQUEST: Request = { kind: "source", topic: "en.letters", system: "Review.", prompt: "The text.", asked: {}, pending: [] };
 const reply = (extra: object = {}): string =>
@@ -18,11 +17,6 @@ const reply = (extra: object = {}): string =>
     duration_ms: 900,
     ...extra,
   });
-
-const bin = await mkdtemp(join(tmpdir(), "claude-"));
-afterAll(async () => {
-  await rm(bin, { recursive: true });
-});
 
 test("the session runs `claude -p` with the model named, no tools, no project settings and no MCP servers", () => {
   expect(COMMAND).toEqual(["claude", "-p", "--output-format", "json", "--tools", "", "--strict-mcp-config", "--setting-sources", ""]);
@@ -57,21 +51,42 @@ test("no module of the review calls a model's HTTP API", async () => {
   expect(calls).toEqual([]);
 });
 
-test("a stand-in claude receives the prompt, and no provider's key", async () => {
-  const script = `#!/bin/sh\nprompt=$(cat)\nkey=\${ANTHROPIC_API_KEY:-none}\nprintf '%s' '{"session_id":"stand-in","structured_output":{"findings":[{"rule":"SH-04","at":"def","text":"'"$prompt"' '"$key"'","fix":"x","confidence":"high"}]},"modelUsage":{"claude-sonnet-5-5":{}}}'\n`;
-  await writeFile(join(bin, "claude"), script);
-  await chmod(join(bin, "claude"), 0o755);
-  const path = process.env["PATH"];
-  process.env["PATH"] = `${bin}:${path ?? ""}`;
+test("the attempt feeds the session the prompt on its stdin, with no provider's key in its environment", async () => {
+  let seen: { args: string[]; env: Record<string, string>; stdin: string } | undefined;
+  const standIn: Spawn = (args, io) => {
+    seen = { args, env: io.env, stdin: new TextDecoder().decode(io.stdin) };
+    const key = io.env["ANTHROPIC_API_KEY"] ?? "none";
+    return Promise.resolve({
+      stdout: JSON.stringify({
+        session_id: "stand-in",
+        structured_output: { findings: [{ rule: "SH-04", at: "def", text: `${seen.stdin} ${key}`, fix: "x", confidence: "high" }] },
+        modelUsage: { "claude-sonnet-5-5": {} },
+      }),
+      stderr: "",
+    });
+  };
   process.env["ANTHROPIC_API_KEY"] = "secret";
   try {
-    const session = (await claudeAttempt(REQUEST, "claude-sonnet-5-5")) as Session;
+    const session = (await attemptWith(standIn)(REQUEST, "claude-sonnet-5-5")) as Session;
     expect(session.session).toBe("stand-in");
     expect(session.findings[0]?.text).toBe("The text. none");
   } finally {
-    process.env["PATH"] = path;
     Reflect.deleteProperty(process.env, "ANTHROPIC_API_KEY");
   }
+  expect(seen?.stdin).toBe("The text.");
+  expect(seen?.args.slice(0, COMMAND.length)).toEqual(COMMAND);
+  expect(seen?.args).toContain("claude-sonnet-5-5");
+  expect(seen?.env["ANTHROPIC_API_KEY"]).toBeUndefined();
+});
+
+test("the spawn runs the command and gives back its standard output and error as text", async () => {
+  const { stdout, stderr } = await bunSpawn(["true"], {
+    cwd: tmpdir(),
+    env: { PATH: process.env["PATH"] ?? "" },
+    stdin: new TextEncoder().encode(""),
+  });
+  expect(stdout).toBe("");
+  expect(stderr).toBe("");
 });
 
 test("a reply gives its session, model, findings and tokens, or names why it holds none", () => {

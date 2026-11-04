@@ -89,22 +89,40 @@ export function parseReply(text: string): Session | string {
 // One attempt: a session, or why it failed.
 export type Attempt = (request: Request, model: string) => Promise<Session | string>;
 
-export const claudeAttempt: Attempt = async (request, model) => {
-  const cwd = await mkdtemp(join(tmpdir(), "review-"));
-  try {
-    const child = Bun.spawn(sessionArgs(request, model), {
-      cwd,
-      env: sessionEnv(process.env),
-      stdin: new TextEncoder().encode(request.prompt),
-      stdout: "pipe",
-      stderr: "pipe",
-    });
-    const [out, err] = await Promise.all([new Response(child.stdout).text(), new Response(child.stderr).text(), child.exited]);
-    return parseReply(out === "" ? err : out);
-  } finally {
-    await rm(cwd, { recursive: true });
-  }
+// What a command's run gives back: its standard output and its standard error.
+export interface Spawned {
+  stdout: string;
+  stderr: string;
+}
+
+// How an attempt runs its command, as a seam a test fills with its own stand-in: the production runner is bunSpawn.
+export type Spawn = (args: string[], io: { cwd: string; env: Record<string, string>; stdin: Uint8Array }) => Promise<Spawned>;
+
+export const bunSpawn: Spawn = async (args, { cwd, env, stdin }) => {
+  const child = Bun.spawn(args, { cwd, env, stdin, stdout: "pipe", stderr: "pipe" });
+  const [stdout, stderr] = await Promise.all([new Response(child.stdout).text(), new Response(child.stderr).text(), child.exited]);
+  return { stdout, stderr };
 };
+
+// An attempt over a spawn: a scratch folder, the prompt on stdin, the environment without a provider's key, and the
+// reply parsed. A stand-in spawn stands in its place in tests.
+export const attemptWith =
+  (spawn: Spawn): Attempt =>
+  async (request, model) => {
+    const cwd = await mkdtemp(join(tmpdir(), "review-"));
+    try {
+      const { stdout, stderr } = await spawn(sessionArgs(request, model), {
+        cwd,
+        env: sessionEnv(process.env),
+        stdin: new TextEncoder().encode(request.prompt),
+      });
+      return parseReply(stdout === "" ? stderr : stdout);
+    } finally {
+      await rm(cwd, { recursive: true });
+    }
+  };
+
+export const claudeAttempt: Attempt = attemptWith(bunSpawn);
 
 // A runner from an attempt: a failed attempt runs once more, and the second decides.
 export const runnerOf =
