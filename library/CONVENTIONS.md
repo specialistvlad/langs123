@@ -123,7 +123,10 @@ says how an error is written.
   >
   > C /siː/ *cat*
 
-- A notation such as IPA sits beside the one word it belongs to (FT-05): *works* /wɜːks/.
+- A notation such as IPA stands in an explanation, a title or a letter's line, beside the one word it belongs
+  to, a sound's notation beside its sound symbol, which counts as its item (FT-05): *works* /wɜːks/. An
+  example's sentence carries no notation; its pronunciation is added at build by the library's IPA processor,
+  for the reader's accent (owner, 4 November).
 - A reader who meets the subject for the first time understands each item as it stands (FT-06).
 - An example is in the language being learned and carries its translation in each of the reader's languages;
   where the reader's language is the language being learned, the example stands alone (FT-07).
