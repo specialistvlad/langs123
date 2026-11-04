@@ -331,10 +331,10 @@ Check: lint
 
 ### FT-05 Notation sits beside its word
 Requirements: 2.9
-Rule: A notation such as IPA sits beside the one word it belongs to; the notation of a sound sits beside its sound symbol, which counts as its item.
+Rule: A notation such as IPA stands in an explanation, a title or a letter's line, beside the one word it belongs to; the notation of a sound sits beside its sound symbol, which counts as its item. An example's sentence carries no notation: its pronunciation is added by the library's IPA processor for the reader's accent (owner, 4 November).
 Not this: "names start with /e/" for F L M N S X (en/01-foundations/alphabet-spelling), one transcription for six letters.
 Check: question
-Question: [sentence] Yes or no: does each notation in this sentence sit beside the one word, or for a sound the one sound symbol, it belongs to?
+Question: [sentence] Yes or no: does each notation in this sentence sit beside the one word, or for a sound the one sound symbol, it belongs to, with no notation inside an example's sentence?
 
 ### FT-06 An item stands on its own
 Requirements: 2.9
