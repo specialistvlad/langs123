@@ -23,9 +23,9 @@ test("every block of every sample written in the language has its text, and so d
   for (const language of ["en", "uk", "ja"]) {
     expect(readingTexts(v1, language)["en.words-of-place"]?.["opposite.list"]).toStartWith("opposite The bank is opposite the hotel.");
   }
-  // A space outside a mark whose variants drop belongs to the sentence and stays.
-  expect(texts["en.present-simple"]?.["sound.list"]).toContain("She works /wɜːks/ in a shop.");
-  expect(texts["en.present-simple"]?.["sound.list"]).toContain("She watches /ˈwɒtʃɪz/ TV.");
+  // A variant mark reads in the course's first variety with the sentence's spacing intact: one space before it, and its
+  // dropped variety takes its own space, so none stands before the following punctuation (here es-ES "vosotros" drops).
+  expect(readingTexts(v1, "es")["es.subject-pronouns"]?.["personas.example"]).toContain("¿y ustedes?");
   expect(Object.keys(readingTexts(v1, "es"))).toEqual(["es.subject-pronouns"]);
   expect(Object.keys(readingTexts(v1, "fr"))).toEqual([]);
 });
