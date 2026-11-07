@@ -6,8 +6,10 @@ import { parseHTML } from "linkedom";
 import { ROOT } from "../../scripts/lib.ts";
 import { build } from "./build.ts";
 import { SAMPLE } from "./sample.ts";
-import { readPage } from "./test-site.ts";
+import { readPage, testSite } from "./test-site.ts";
 
+// The sample site the brandless credits come from, built before the tests so no test waits on it.
+await testSite();
 const out = join(ROOT, "build", "test", "brand");
 await build({
   outDir: out,
