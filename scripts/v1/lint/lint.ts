@@ -90,15 +90,65 @@ export const ownWordsOutside = (t: Text, variety: string): string =>
 
 export const problem = (rule: string, t: Text, message: string): Problem => ({ rule, file: t.file, id: t.id, message });
 
-// The words of the list a text holds: whole words, an all-lowercase entry in any case, and an entry with a capital
-// as written, past the first word of a sentence, where every word takes its capital; a Japanese entry anywhere,
-// since Japanese runs its words together.
+// A list's matcher, built once per list: one expression for its all-lowercase entries, matched in any case, one for
+// its entries with a capital, matched as written, and its Japanese entries, which stand anywhere in a text since
+// Japanese runs its words together. Each expression matches whole words, the longest entry first.
+interface Matcher {
+  japanese: string[];
+  lower?: RegExp;
+  cased?: RegExp;
+  // Each lowercase entry by its own text, to give the entry as the list writes it.
+  entries: Map<string, string>;
+}
+const MATCHERS = new Map<string, Matcher>();
+const JAPANESE = /^[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]+$/u;
+const SENTENCE_START = /(?:^|[.!?…:]\s)[\s\p{Ps}\p{Pi}¿¡«"„—-]*$/u;
+const escaped = (word: string): string => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const whole = (words: string[], flags: string): RegExp | undefined =>
+  words.length === 0
+    ? undefined
+    : new RegExp(
+        `(?<![\\p{L}\\p{M}])(?:${[...words]
+          .sort((a, b) => b.length - a.length)
+          .map(escaped)
+          .join("|")})(?![\\p{L}\\p{M}])`,
+        flags,
+      );
+
+function matcherOf(list: readonly string[]): Matcher {
+  const key = list.join("\u0000");
+  const kept = MATCHERS.get(key);
+  if (kept !== undefined) return kept;
+  const words = list.filter((w) => !JAPANESE.test(w));
+  const lower = words.filter((w) => w === w.toLowerCase());
+  const lowerMatcher = whole(lower, "giu");
+  const casedMatcher = whole(
+    words.filter((w) => w !== w.toLowerCase()),
+    "gu",
+  );
+  const matcher: Matcher = {
+    japanese: list.filter((w) => JAPANESE.test(w)),
+    ...(lowerMatcher !== undefined && { lower: lowerMatcher }),
+    ...(casedMatcher !== undefined && { cased: casedMatcher }),
+    entries: new Map(lower.map((w) => [w.toLowerCase(), w])),
+  };
+  MATCHERS.set(key, matcher);
+  return matcher;
+}
+
+// The words of the list a text holds, in the list's order: whole words, an all-lowercase entry in any case, and an
+// entry with a capital as written, past the first word of a sentence, where every word takes its capital; a Japanese
+// entry anywhere.
 export function wordsIn(text: string, list: readonly string[] | undefined): string[] {
-  return (list ?? []).filter((word) => {
-    if (/^[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]+$/u.test(word)) return text.includes(word);
-    const lower = word === word.toLowerCase();
-    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const found = text.matchAll(new RegExp(`(?<![\\p{L}\\p{M}])${escaped}(?![\\p{L}\\p{M}])`, lower ? "giu" : "gu"));
-    return [...found].some((m) => lower || !/(?:^|[.!?…:]\s)[\s\p{Ps}\p{Pi}¿¡«"„—-]*$/u.test(text.slice(0, m.index)));
-  });
+  if (list === undefined || list.length === 0) return [];
+  const matcher = matcherOf(list);
+  const found = new Set(matcher.japanese.filter((w) => text.includes(w)));
+  for (const m of matcher.lower === undefined ? [] : text.matchAll(matcher.lower)) {
+    const entry = matcher.entries.get(m[0].toLowerCase());
+    if (entry !== undefined) found.add(entry);
+  }
+  for (const m of matcher.cased === undefined ? [] : text.matchAll(matcher.cased)) {
+    if (!SENTENCE_START.test(text.slice(0, m.index))) found.add(m[0]);
+  }
+  return list.filter((w) => found.has(w));
 }
