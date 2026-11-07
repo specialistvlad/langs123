@@ -25,7 +25,7 @@ export function head(r: Reading, lead = true): string {
   const more = r.layers((l) => r.in(l, r.topic.definition.text));
   const definition = !lead ? "" : more === "" ? first : `<div class="rd-blk">${first}${more}</div>`;
   return (
-    `<header class="rd-head"><p class="lx-meta">${ladder(r.topic.levels, r.words)}<span class="lx-dot" aria-hidden="true"></span>` +
+    `<header class="rd-head"><p class="lx-meta">${ladder(r.topic.levels, r.words, false, "topic")}<span class="lx-dot" aria-hidden="true"></span>` +
     `<span class="lx-meta-i">${SVG_CLOCK} ${esc(r.words.say("minutes", { n: minutes }))}</span></p>` +
     `${definition}</header>${r.pin("head")}`
   );
@@ -107,7 +107,7 @@ export function essence(r: Reading): string {
   const half = Math.ceil(rows.length / 2);
   const cards = [rows.slice(0, half), rows.slice(half)].filter((c) => c.length > 0).map((c) => `<div class="lx-card">${c.join("")}</div>`);
   const levels = essenceLevels(r);
-  const mark = levels.length === 0 ? "" : ladder(levels, r.words);
+  const mark = levels.length === 0 ? "" : ladder(levels, r.words, false, "essence");
   return `<section class="rd-part" id="essence">${partHead("00", esc(r.words.say("essence")), mark)}${picture(r)}<div class="rd-two">${cards.join("")}</div></section>`;
 }
 

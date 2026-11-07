@@ -8,6 +8,9 @@ import type { Ui } from "./ui.ts";
 import type { Stage } from "./path.ts";
 import type { LinkFn } from "./html.ts";
 
+// The folder of the new library's export beside the pages: library.json, each course's file and each topic's layer files.
+export const V1_DATA = "data/v1";
+
 export interface BuildOptions {
   outDir: string;
   dev: boolean;

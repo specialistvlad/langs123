@@ -3,11 +3,13 @@
 // the reading in place of the lesson. The page reads in its language alone, at a phone's column; reading.js (client-reading.ts)
 // draws it again in the browser for the reader's languages from Languages I know, the form they chose and the column's width.
 import type { LibraryV1 } from "../../../scripts/export.ts";
-import type { Explain } from "../../../scripts/lib.ts";
+import { count, type Explain, type Level } from "../../../scripts/lib.ts";
 import type { Topic } from "../../../scripts/generated/export-v1.ts";
-import { alternates, type Track } from "../context.ts";
+import { layerPath, topicIn } from "../../../scripts/v1/export/layers.ts";
+import { alternates, type Track, V1_DATA } from "../context.ts";
 import { courseSide, menus } from "../course-column.ts";
 import { escapeHtml } from "../html.ts";
+import { type LevelEntry, levelData, levelPopover, topicEntry } from "../level-popover.ts";
 import { Reading } from "../reading.ts";
 import { article } from "../reading-layers.ts";
 import { esc, parseMarks, plain } from "../reading-marks.ts";
@@ -32,13 +34,18 @@ export const READING_KEYS = [
   "minutes",
   "level",
   "levels",
+  "variantTap",
 ];
 
-// What the browser draws the page from: the topic, its course's language and varieties, the wording and the names.
+// What the browser draws the page from: the topic cut to the page's language and the course's own, its course's code,
+// language and varieties, the wording and the names, and the layer file of each other language the topic has (7.4),
+// which the browser loads on top of the page for the reader's other languages.
 export interface ReadingData {
   topic: Topic;
+  course: string;
   source: string;
   language: string;
+  layers: Record<string, string>;
   varieties: string[];
   text: Record<string, Record<string, string>>;
   names: Record<string, Record<string, string>>;
@@ -50,7 +57,7 @@ export const readingUrl = (explain: Explain, track: Pick<Track, "lang">, topic: 
   `${trackUrl(explain, track.lang)}v1/${topic.slug}/`;
 
 // The languages a topic is written in: its title's, the course's own among them.
-const languagesOf = (topic: Topic): string[] => Object.keys(topic.title.text);
+const languagesOf = (topic: Topic): Explain[] => Object.keys(topic.title.text) as Explain[];
 
 export function readingPages(track: Track, v1: LibraryV1): void {
   const { ctx, lang, explain, t } = track;
@@ -71,16 +78,38 @@ export function readingPages(track: Track, v1: LibraryV1): void {
     const outline = list.map(
       (p, i) => `<a href="#${p.id}"${i === 0 ? ' class="on" aria-current="location"' : ""}><b>${p.n}</b><span>${esc(p.title)}</span></a>`,
     );
+    const embedded = [...new Set([course.source, explain])];
+    const layers = Object.fromEntries(
+      languagesOf(topic)
+        .filter((l) => !embedded.includes(l))
+        .map((l) => [l, `/${V1_DATA}/${layerPath(lang.code, topic.slug, l)}`]),
+    );
     const data: ReadingData = {
-      topic,
+      topic: topicIn(topic, embedded),
+      course: lang.code,
       source: course.source,
       language: explain,
+      layers,
       varieties,
       text: Object.fromEntries(READING_KEYS.map((k) => [k, words.text[k] ?? {}])),
       names: words.names,
       varietyNames: words.varieties,
     };
     const json = JSON.stringify(data).replace(/</g, "\\u003c");
+    // The level popover the page's marks open: the topic by the levels of its parts, part 00 by its lines' and each subtopic
+    // by its blocks', as today's topic page names its sections.
+    const name = (s: Topic["subtopics"][number]): string => plain(parseMarks(reading.say(s.title.id, s.title.text)), reading.ctx);
+    const lines = (levels: Level[]): LevelEntry["l"] =>
+      Object.fromEntries([...new Set(levels)].sort().map((l) => [l, count("lines", explain, levels.filter((x) => x === l).length)]));
+    const entries: Record<string, LevelEntry> = {
+      topic: topicEntry(
+        title,
+        topic.subtopics.map((s) => ({ title: name(s), levels: [s.level] })),
+        explain,
+      ),
+      essence: { t: words.say("essence"), k: "section", l: lines(topic.essence.map((e) => e.level ?? "A1")) },
+      ...Object.fromEntries(topic.subtopics.map((s) => [s.id, { t: name(s), k: "section", l: lines(s.blocks.map(() => s.level)) }])),
+    };
     const back = `<a class="ix-up glass tp-back tp-back-c" href="${trackUrl(explain, lang)}" aria-label="${escapeHtml(track.title)}">${BACK}</a>`;
     const contents = escapeHtml(t.contents);
     const body = `<div class="cl" data-cl="topic">
@@ -94,6 +123,8 @@ ${courseSide(track, { title })}
 </div></div></div>
 </div>
 ${menus(track, { title })}
+${levelPopover(explain)}
+${levelData(entries)}
 <script type="application/json" id="rd-data">${json}</script>
 <script src="/reading.js" defer></script>`;
     ctx.add(

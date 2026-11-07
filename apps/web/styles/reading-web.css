@@ -175,9 +175,16 @@
   zoom: 1;
   cursor: zoom-out;
 }
-/* Side by side takes the page's width: the course column and the outline give way. */
+/* Side by side takes the page's width: the course column and the outline give way, while the column's glass bar, fixed
+   at the window's top right with Variety and 文A, stays as on every form (8.2). */
 @media (min-width: 1024px) {
-  html[data-rd-form="side"] :is(.cl-side, .tp-outline) {
+  html[data-rd-form="side"] :is(.cl-side, .cl-top) {
+    display: contents;
+  }
+  html[data-rd-form="side"] .tp-outline,
+  html[data-rd-form="side"] .cl-side > :not(.cl-top),
+  html[data-rd-form="side"] .cl-top > :not(.cl-nav),
+  html[data-rd-form="side"] .cl-nav > :not(.cl-bar) {
     display: none;
   }
 }

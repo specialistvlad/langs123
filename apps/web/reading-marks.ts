@@ -13,6 +13,8 @@ export interface Ctx {
   still?: boolean;
   // A variety's name in the reader's language (the interface's `varieties`), where the reading has the wording.
   name?: (code: string) => string | undefined;
+  // The hint a variant's button carries after its form and variety: a tap switches the variety (the wording's variantTap).
+  tap?: string;
 }
 
 // The short names of the varieties, on a capsule, where no wording names them.
@@ -125,7 +127,8 @@ function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
           if (arg !== ctx.variety) return DROP;
           const form = inIpa ? ipa(inner()) : inner();
           if (ctx.still === true) return form;
-          return `<button type="button" class="rd-var" data-variety="${esc(arg)}" aria-label="${esc(plain(n.kids, ctx))}, ${esc(varietyLabel(arg, ctx))}">${form}</button>`;
+          const hint = ctx.tap === undefined ? "" : `; ${esc(ctx.tap)}`;
+          return `<button type="button" class="rd-var" data-variety="${esc(arg)}" aria-label="${esc(plain(n.kids, ctx))}, ${esc(varietyLabel(arg, ctx))}${hint}">${form}</button>`;
         }
         case "l1": {
           const [open, close] = l1Quotes.languages[arg] ?? l1Quotes.fallback;

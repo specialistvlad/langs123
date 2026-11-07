@@ -55,14 +55,16 @@ export const LEVELS = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"];
 export const pill = (level: string, words: Words): string =>
   `<span class="lx-pill lx-pill-${level}" aria-label="${esc(`${words.say("level")} ${level}`)}">${level}</span>`;
 
-// The level mark: seven bars, those of the levels on, and the range in words.
-export function ladder(levels: readonly string[], words: Words, small = false): string {
+// The level mark: seven bars, those of the levels on, and the range in words; `opens` names the entry of the page's level
+// popover a tap opens (level-popover.ts), the mark naming its levels for it.
+export function ladder(levels: readonly string[], words: Words, small = false, opens = ""): string {
   const on = new Set(levels);
   const cells = LEVELS.map((l) => `<span class="lx-cell${on.has(l) ? ` lx-on-${l}` : ""}"></span>`).join("");
   const first = levels[0] ?? "";
   const range = levels.length > 1 ? `${first}–${levels[levels.length - 1] ?? ""}` : first;
   const label = `${words.say(levels.length > 1 ? "levels" : "level")} ${range}`;
-  return `<button type="button" class="lx-ladder${small ? " lx-sm" : ""}" aria-haspopup="dialog" aria-label="${esc(label)}"><span class="lx-cells" aria-hidden="true">${cells}<span class="lx-lvt">${range}</span></span></button>`;
+  const popover = opens === "" ? "" : ` data-lv="${esc(opens)}" data-lv-levels="${levels.join(" ")}" popovertarget="lv-pop"`;
+  return `<button type="button" class="lx-ladder${small ? " lx-sm" : ""}"${popover} aria-haspopup="dialog" aria-label="${esc(label)}"><span class="lx-cells" aria-hidden="true">${cells}<span class="lx-lvt">${range}</span></span></button>`;
 }
 
 // A part's head: its number, its title and its level mark.

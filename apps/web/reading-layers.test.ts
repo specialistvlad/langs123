@@ -94,3 +94,12 @@ test("a variety wears its name in the reader's language", () => {
   expect(uk).toContain('<span class="lx-capsule">Іспанія</span>');
   expect(interleaved(read("en.alphabet", ["en"], 362, "all"))).toContain('<span class="lx-capsule">UK</span>');
 });
+
+test("the level marks open the page's popover: the head names the topic, part 00 its lines, each part itself", () => {
+  const html = interleaved(read("en.present-simple", ["uk"]));
+  expect(html).toContain('class="lx-ladder" data-lv="topic" data-lv-levels="A1 A2" popovertarget="lv-pop"');
+  expect(html).toContain('data-lv="essence" data-lv-levels="A1 A2" popovertarget="lv-pop"');
+  const [first] = topic("en.present-simple").subtopics;
+  expect(html).toContain(`data-lv="${first?.id ?? ""}" data-lv-levels="${first?.level ?? ""}" popovertarget="lv-pop"`);
+  expect(html).toContain('class="lx-ladder lx-sm" data-lv="');
+});

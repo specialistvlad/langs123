@@ -107,7 +107,7 @@ function sideOwn(r: Reading, part: string, after: string): string {
 }
 
 function sideSubtopic(r: Reading, s: Subtopic, index: number): string {
-  const title = partHead(String(index + 1).padStart(2, "0"), r.m(r.say(s.title.id, s.title.text)), ladder([s.level], r.words));
+  const title = partHead(String(index + 1).padStart(2, "0"), r.m(r.say(s.title.id, s.title.text)), ladder([s.level], r.words, false, s.id));
   const rows = s.blocks.filter((b) => r.shows(b.variety)).map((b) => sideBlock(r, b) + sideOwn(r, s.id, b.id));
   return `<div class="rd-lspan rd-part" id="${s.id}">${title}</div>${rows.join("")}`;
 }
@@ -122,7 +122,7 @@ function sideEssence(r: Reading): string {
       return glossRow(r, form, gloss, (t) => marks(t, { ...r.ctx, still: true }), e.ex !== undefined);
     });
   const levels = essenceLevels(r);
-  const mark = levels.length === 0 ? "" : ladder(levels, r.words);
+  const mark = levels.length === 0 ? "" : ladder(levels, r.words, false, "essence");
   return `<div class="rd-lspan rd-part" id="essence">${partHead("00", esc(r.words.say("essence")), mark)}</div>${rows.join("")}`;
 }
 

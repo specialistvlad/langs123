@@ -52,6 +52,14 @@ test("in dev the draft topic has its page in each explanation language it is wri
   expect(html).toContain('<script type="application/json" id="rd-data">');
   expect(html).toMatch(/<script src="\/reading\.[0-9a-f]{10}\.js" defer><\/script>/);
   expect(html).toContain('<nav class="tp-outline"');
+  // The page embeds the topic in its own language and the course's and names the other languages' layer files (7.4), and
+  // holds the level popover with its entries: the topic, part 00 and each subtopic.
+  const en = await Bun.file(join(DEV_DIR, "en/english/v1/letters/index.html")).text();
+  expect(en).toContain(`"layers":{"uk":"/${V1_DATA}/en/letters.uk.json"}`);
+  expect(html).toContain('"layers":{}');
+  expect(html).toContain('id="lv-pop"');
+  expect(html).toContain('<script type="application/json" id="lv-data">{"topic":{"t":');
+  expect(html).toContain('"essence":{"t":');
   // The review preview is a v1 preview's alone: its queue and a draft per topic, with their script.
   const all = await list(DEV_DIR);
   expect(all.filter((f) => f.startsWith("review/") && f.endsWith(".html"))).toEqual(["review/en.letters/index.html", "review/index.html"]);

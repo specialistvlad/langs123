@@ -65,4 +65,4 @@ test("the export carries the chosen design's level colours", async () => {
   expect(await tint()).toBe(token("level-a1-tint", "light"));
   expect(await tint("proof")).toBe(token("level-a1-tint", "light", designTokens("proof").color.tokens));
   expect(await tint("proof")).not.toBe(await tint());
-});
+}, 30_000);

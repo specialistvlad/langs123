@@ -31,7 +31,7 @@ export class Reading {
     // written in them or not.
     readonly speakers: readonly string[] = languages,
   ) {
-    this.ctx = { variety, name: (code) => words.variety(code) };
+    this.ctx = { variety, name: (code) => words.variety(code), tap: words.say("variantTap") };
   }
   // What a reviewer's page sets under an element, by the id the reading draws it with (pages/review.ts); nothing elsewhere.
   pin: (id: string) => string = () => "";

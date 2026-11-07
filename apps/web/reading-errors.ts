@@ -34,7 +34,7 @@ function card(r: Reading, c: Card): string {
   const foot =
     sub === undefined
       ? ""
-      : `<div class="rd-err-foot"><a href="#${sub.id}" class="lx-cover"><span class="lx-n">${num(r.topic.subtopics.indexOf(sub) + 1)}</span><span>${r.m(r.say(sub.title.id, sub.title.text))}</span></a>${ladder([sub.level], r.words, true)}<span class="lx-chev">${SVG_CHEV}</span></div>`;
+      : `<div class="rd-err-foot"><a href="#${sub.id}" class="lx-cover"><span class="lx-n">${num(r.topic.subtopics.indexOf(sub) + 1)}</span><span>${r.m(r.say(sub.title.id, sub.title.text))}</span></a>${ladder([sub.level], r.words, true, sub.id)}<span class="lx-chev">${SVG_CHEV}</span></div>`;
   return `<article class="rd-err ${tagged ? "rd-err-2" : "rd-err-3"}" data-speakers="${c.speakers.join(" ")}"><div class="rd-err-body">${columns}<div class="rd-err-rules">${c.rule}</div><ul class="rd-err-why">${c.reasons.join("")}</ul></div>${foot}</article>`;
 }
 

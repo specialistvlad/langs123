@@ -183,5 +183,5 @@ export function subtopic(r: Reading, s: Subtopic, index: number): string {
   const title = r.m(r.say(s.title.id, s.title.text));
   const name = esc(plain(parseMarks(r.say(s.title.id, s.title.text)), r.ctx));
   const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => block(r, b, name) + r.pin(b.id) + own(r, s.id, b.id));
-  return `<section class="rd-part" id="${s.id}">${partHead(num, title, ladder([s.level], r.words))}${r.pin(s.id)}<div class="rd-flow">${blocks.join("")}</div></section>`;
+  return `<section class="rd-part" id="${s.id}">${partHead(num, title, ladder([s.level], r.words, false, s.id))}${r.pin(s.id)}<div class="rd-flow">${blocks.join("")}</div></section>`;
 }

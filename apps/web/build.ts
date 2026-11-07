@@ -5,7 +5,7 @@
 //                                                       pages, from library/ or the folder (BuildOptions.library)
 import { join, resolve } from "node:path";
 import { type CurriculumLanguage, loadCurriculum, loadTopics, localize, ROOT, type TopicRef } from "../../scripts/lib.ts";
-import { type BuildOptions, type Context, explainsOf, type Page, type PageFacts } from "./context.ts";
+import { type BuildOptions, type Context, explainsOf, type Page, type PageFacts, V1_DATA } from "./context.ts";
 import { page, pageFacts } from "./layout.ts";
 import { studyPath } from "./path.ts";
 import { ui } from "./ui.ts";
@@ -30,8 +30,8 @@ import type { ReviewEntry } from "./review.ts";
 
 export type { BuildOptions, HeadChange, PageFacts } from "./context.ts";
 
-// Where the new library's export stands in the built site: library.json and one file per course.
-export const V1_DATA = "data/v1";
+// Where the new library's export stands in the built site (context.ts): library.json, one file per course and the layer files.
+export { V1_DATA };
 
 // The library a command line names, --library today or --library v1, and today's without it.
 export function libraryArg(args: readonly string[]): "today" | "v1" {

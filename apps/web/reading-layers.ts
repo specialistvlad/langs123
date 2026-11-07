@@ -106,7 +106,7 @@ export function article(r: Reading, wanted: Form): string {
       const title = r.m(r.say(s.title.id, s.title.text));
       const name = esc(plain(parseMarks(r.say(s.title.id, s.title.text)), r.ctx));
       const blocks = s.blocks.filter((b) => r.shows(b.variety)).map((b) => reveal(r, b, name));
-      return `<section class="rd-part" id="${s.id}">${partHead(String(i + 1).padStart(2, "0"), title, ladder([s.level], r.words))}<div class="rd-flow">${blocks.join("")}</div></section>`;
+      return `<section class="rd-part" id="${s.id}">${partHead(String(i + 1).padStart(2, "0"), title, ladder([s.level], r.words, false, s.id))}<div class="rd-flow">${blocks.join("")}</div></section>`;
     });
     return `<div class="rd-form" data-form="reveal">${head(one)}${bar}${essence(one)}${parts.join("")}${errors(r)}</div>`;
   }

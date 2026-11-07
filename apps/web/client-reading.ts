@@ -1,12 +1,14 @@
 // The new library's reading in the browser (pages/reading.ts): it draws the topic again from the page's data in the reader's
-// languages, the page's first and then those of Languages I know that the topic has, three at most; in the form the reader
-// chose, which the browser keeps; at the reading column's width, again as it changes; and in the variety <html> names. The
-// switch picks the form, a layer's control opens it under its block, Full screen opens a table whole and fitted to the sheet,
-// a tap on it shows it at its own size to scroll, and a variant's tap switches the variety.
+// languages, the page's first and then those of Languages I know that the topic has, three at most, each other language
+// loaded from its layer file and merged into the topic (7.4); in the form the reader chose, which the browser keeps; at the
+// reading column's width, again as it changes; and in the variety <html> names. The switch picks the form, a layer's
+// control opens it under its block, Full screen opens a table whole and fitted to the sheet, a tap on it shows it at its
+// own size to scroll, and a variant's tap switches the variety.
+import type { LayerFile } from "../../scripts/generated/export-v1.ts";
 import { chooseVariety } from "./client-variety.ts";
 import { store } from "./client-store.ts";
 import { LANGS_KEY } from "./client-languages-model.ts";
-import { FORM_KEY, keptForm, readerLanguages, readerSpeakers } from "./client-reading-model.ts";
+import { FORM_KEY, keptForm, layersToLoad, mergeLayer, readerLanguages, readerSpeakers } from "./client-reading-model.ts";
 import type { ReadingData } from "./pages/reading.ts";
 import { Reading } from "./reading.ts";
 import { article } from "./reading-layers.ts";
@@ -27,14 +29,31 @@ function fitTable(dialog: HTMLDialogElement): void {
   fit.style.setProperty("--rd-fit", String(Math.min(1, room / fit.getBoundingClientRect().width)));
 }
 
-function start(): void {
+// A language's layer file, merged into the page's topic; nothing where it does not arrive, and the reading goes on without
+// that language.
+async function load(data: ReadingData, language: string): Promise<string | null> {
+  try {
+    const response = await fetch(data.layers[language] ?? "");
+    if (!response.ok) return null;
+    data.topic = mergeLayer(data.topic, (await response.json()) as LayerFile);
+    return language;
+  } catch {
+    return null;
+  }
+}
+
+async function start(): Promise<void> {
   const host = document.getElementById("rd");
   const raw = document.getElementById("rd-data")?.textContent;
   if (host === null || raw === undefined) return;
   const data = JSON.parse(raw) as ReadingData;
   const root = document.documentElement;
   const words = new Words(data.text, data.names, data.language, data.varietyNames);
-  const languages = readerLanguages(data.language, store.get(LANGS_KEY), Object.keys(data.topic.title.text));
+  // The topic's languages are the keys of its minutes; the page embeds its own and the course's, the rest have layer files.
+  const wanted = readerLanguages(data.language, store.get(LANGS_KEY), Object.keys(data.topic.minutes));
+  const embedded = wanted.filter((l) => !(l in data.layers));
+  const loaded = await Promise.all(layersToLoad(wanted, embedded).map((l) => load(data, l)));
+  const languages = wanted.filter((l) => embedded.includes(l) || loaded.includes(l));
   const speakers = readerSpeakers(data.language, store.get(LANGS_KEY));
   let width = 0;
   const draw = (): void => {
@@ -86,4 +105,4 @@ function start(): void {
   draw();
 }
 
-if (typeof document !== "undefined") start();
+if (typeof document !== "undefined") void start();
