@@ -50,7 +50,6 @@ function inSource(topic: Topic, target: Target): string[] {
     case "entries":
     case "practical entries":
     case "new entries":
-    case "sourced entries":
       return [];
   }
 }
@@ -91,7 +90,6 @@ function inLanguage(topic: Topic, file: TopicLanguageFile, target: Target): stri
     case "entries":
     case "practical entries":
     case "new entries":
-    case "sourced entries":
     case "tables":
     case "essence":
     case "examples":

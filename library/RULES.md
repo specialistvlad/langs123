@@ -971,14 +971,14 @@ Check: schema
 Requirements: 3.2
 Rule: Retired (owner, 7 November): langs123 writes its indexes itself (IX-09), so no count of sources applies.
 Not this: "# The study path follows the levels of the Plan Curricular del Instituto Cervantes (PCIC)." (curriculum.yaml), one source for the Spanish course.
-Check: lint
+Check: retired
 Source: §1 Languages and variants (each language's standard)
 
 ### IX-11 Retired: no source passage to compare
 Requirements: 3.2
 Rule: Retired (owner, 7 November): with no outside source (IX-09) there is no passage to compare a sentence against.
 Not this: (written case) A topic definition that copies the wording of a syllabus entry.
-Check: question
+Check: retired
 
 ### IX-12 Practical topics are marked
 Requirements: 3.3
@@ -1111,9 +1111,9 @@ Rule: The review record names the writer's session and model version and the rev
 Not this: (written case) A review record whose reviewer is the writer's own session.
 Check: lint
 
-### RV-06 A finding cites a rule or a source
+### RV-06 A finding cites a rule
 Requirements: 5.2
-Rule: Each finding of the review cites the rule id of this catalog or the source it rests on.
+Rule: Each finding of the review cites the rule id of this catalog it rests on.
 Not this: (written case) A finding that says a topic reads badly and cites nothing.
 Check: lint
 

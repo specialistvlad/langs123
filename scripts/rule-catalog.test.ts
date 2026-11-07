@@ -126,7 +126,9 @@ describe("problems", () => {
 
   test("a check that is none of the four, and a Question on the wrong check", () => {
     expect(problems(rule(FULL.replace("lint", "test")))).toEqual([]);
-    expect(problems(rule(FULL.replace("lint", "review")))).toEqual(['7 R-1: Check is "review", not one of schema, lint, question, test']);
+    expect(problems(rule(FULL.replace("lint", "review")))).toEqual([
+      '7 R-1: Check is "review", not one of schema, lint, question, test, retired',
+    ]);
     expect(problems(rule(`${FULL}\nQuestion: [block] Is it?`))).toEqual(["7 R-1: has a Question but its Check is lint"]);
     expect(problems(rule(FULL.replace("lint", "question")))).toEqual(["7 R-1: is a question check without its Question"]);
   });

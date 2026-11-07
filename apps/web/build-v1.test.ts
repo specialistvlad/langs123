@@ -75,7 +75,7 @@ test("the export holds the approved topics alone, and in dev every draft too (RV
   // One layer file per topic and language beside the course file, for the drafts in dev and none for the approved set here.
   const layers = (dir: string): Promise<string[]> => list(dir).then((all) => all.filter((f) => f.startsWith(`${V1_DATA}/en/`)));
   expect(await layers(V1_DIR)).toEqual([]);
-  expect(await layers(DEV_DIR)).toEqual([`${V1_DATA}/en/${topic.slug}.en.json`, `${V1_DATA}/en/${topic.slug}.uk.json`]);
+  expect(await layers(DEV_DIR)).toEqual([`${V1_DATA}/en/${topic.slug}.uk.json`]);
   const layer = await json<{ version: string; language: string; topic: string }>(DEV_DIR, `en/${topic.slug}.uk.json`);
   expect([layer.language, layer.topic]).toEqual(["uk", topic.slug]);
 });

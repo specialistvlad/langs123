@@ -101,7 +101,7 @@ test("a course's index holds its samples in order, each placed at its levels", (
     sample("alphabet", ["A0"]),
     sample("present-simple", ["A1", "A0"]),
   ]);
-  expect(index).toMatchObject({ course: "en", source: "en", varieties: ["en-GB", "en-US"], status: "draft", sources: [] });
+  expect(index).toMatchObject({ course: "en", source: "en", varieties: ["en-GB", "en-US"], status: "draft" });
   const topics = (index["sections"] as { topics: Record<string, unknown>[] }[])[0]?.topics;
   expect(topics).toEqual([
     {

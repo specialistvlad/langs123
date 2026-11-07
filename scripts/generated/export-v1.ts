@@ -325,7 +325,7 @@ export interface Own {
   };
 }
 /**
- * One language's part of a topic (7.4): each sentence's and item's text and span in it, each example's translation into it, its own blocks, errors and speakers, and its reading minutes, loaded on top of a page built in another language.
+ * One language's part of a topic, for every language but the course's source, which each page embeds (7.4): each sentence's and item's text and span in it, each example's translation into it, its own blocks, errors and speakers, and its reading minutes, loaded on top of a page built in another language.
  */
 export interface LayerFile {
   version: "0.3.0";

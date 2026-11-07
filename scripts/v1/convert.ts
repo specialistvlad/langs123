@@ -134,7 +134,6 @@ export function sampleIndex(course: string, name: unknown, varieties: string[] |
     source: course,
     ...(varieties !== undefined && { varieties }),
     status: "draft",
-    sources: [],
     sections: [{ id: "topics", name: section, topics }],
   };
 }

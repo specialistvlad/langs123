@@ -1,7 +1,7 @@
 // The review of each topic and of each course's index: a topic in review or approved keeps its record (RV-16), naming
 // its writer, one per course beside the leading writer (LA-04); each record, a topic's or an index's, moves its status
 // one step at a time to the status of what it reviews (RV-02), names a reviewer apart from the writer's session (RV-05),
-// and holds findings that each cite a rule or a source (RV-06) and have the writer's answer, but one raised again after
+// and holds findings that each cite a rule (RV-06) and have the writer's answer, but one raised again after
 // an answer, which the owner reads (RV-07); the owner approves the index and each wave before the next, the samples being
 // one gate (RV-08), reads every flagged topic (RV-09) and one in ten of the rest (RV-10) in Ukrainian and English, and
 // alone sets the Ukrainian flag (RV-14).
@@ -84,12 +84,11 @@ export const REVIEW: LintRule[] = [
     id: "RV-06",
     check: (lint: Lint, scope: Scope): Problem[] => {
       const rules = new Set(lint.catalog.rules.map((r) => r.id));
-      return reviewed(lint, scope.courses).flatMap(({ file, data, course }) => {
-        const sources = lint.library.courses.find((c) => c.course === course)?.index?.data.sources.map((s) => s.id) ?? [];
+      return reviewed(lint, scope.courses).flatMap(({ file, data }) => {
         return (data.reviews ?? []).flatMap((r) =>
           r.findings
-            .filter((f) => !(f.rule !== undefined && rules.has(f.rule)) && !(f.source !== undefined && sources.includes(f.source)))
-            .map((f) => at("RV-06", file, f.id, "the finding cites a rule of the catalog or a source of the index")),
+            .filter((f) => !(f.rule !== undefined && rules.has(f.rule)))
+            .map((f) => at("RV-06", file, f.id, "the finding cites a rule of the catalog")),
         );
       });
     },

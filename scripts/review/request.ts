@@ -10,7 +10,7 @@ import type { Course, Topic } from "../v1/library.ts";
 import { toYaml } from "../v1/yaml.ts";
 import { asking, holds, type Selection, selected } from "./asking.ts";
 import { type Question, questionsOf, type RequestKind } from "./questions.ts";
-import { type CourseSources, topicSources } from "./sources.ts";
+import { topicInputs } from "./steps.ts";
 import { targetIds } from "./targets.ts";
 
 export interface Request {
@@ -26,8 +26,6 @@ export interface Request {
   // The rules that wait on an input the request lacks, unasked, and the input each waits on.
   pending: string[];
   inputs: Record<string, string>;
-  // What the request leaves unasked by a rule of its own, for the report.
-  notes?: string[];
   // The rules a request of its own asks alone.
   only?: string[];
 }
@@ -77,15 +75,15 @@ function context(topic: Topic, course: Course): string[] {
   return [
     `Course: ${course.course}, explained first in ${course.index?.data.source ?? course.course}; its varieties: ${(course.index?.data.varieties ?? ["none"]).join(", ")}, the default first.`,
     `Neighbour topics ({titles}): ${titles.length === 0 ? "none" : titles.join("; ")}.`,
+    `The topic's lowest level, SH-09's {level}: ${[...topic.source.data.subtopics].map((s) => s.level).sort()[0] ?? "A0"}.`,
     `The topic teaches plain forms ({plain}): ${course.index?.data.sections.flatMap((s) => s.topics).find((e) => e.id === topic.slug)?.script === "kana" ? "yes" : "no"}.`,
   ];
 }
 
-export function sourceRequest(topic: Topic, course: Course, catalog: Catalog, selection: Selection = {}, sources?: CourseSources): Request {
+export function sourceRequest(topic: Topic, course: Course, catalog: Catalog, selection: Selection = {}): Request {
   const source = course.index?.data.source ?? course.course;
-  const given = topicSources(sources, course, topic);
-  // The elements a question is asked of: those the sources decide, else its target's.
-  const ids = (q: Question): string[] => given.asks[q.rule] ?? targetIds(topic, q.target);
+  const given = topicInputs(course.index?.data, topic.slug);
+  const ids = (q: Question): string[] => targetIds(topic, q.target);
   const asked = asking(
     questionsOf(catalog, "source").filter((q) => holds(q, course.course, [course.course, source]) && selected(q, selection)),
     ids,
@@ -112,7 +110,6 @@ export function sourceRequest(topic: Topic, course: Course, catalog: Catalog, se
     asked: asked.asked,
     pending: asked.pending,
     inputs: asked.inputs,
-    ...(given.notes.length > 0 && { notes: given.notes }),
     ...(selection.only !== undefined && { only: selection.only }),
   };
 }

@@ -1,6 +1,6 @@
 // The question rules of library/RULES.md as the review asks them (12.2): each rule's question, from the catalog, with
 // the request that asks it (a topic's source, one of its language files, or a course's index), the part of that
-// text it is asked of, and the input it waits on where M6 brings it, until when it stays unasked. CA-02 is asked of
+// text it is asked of, and the input it waits on where it needs one, until when it stays unasked. CA-02 is asked of
 // the catalog's own rules, outside a topic's review.
 import type { Catalog } from "../rule-catalog.ts";
 import { type Scope, scopeOf } from "../v1/scope.ts";
@@ -30,11 +30,9 @@ export type Target =
   | "untagged blocks"
   | "tables"
   | "entries"
-  // The entries of an index that carry a practical cluster, those that name no topic of today's library in replaces,
-  // and those a source passage fed.
+  // The entries of an index that carry a practical cluster, and those that name no topic of today's library in replaces.
   | "practical entries"
-  | "new entries"
-  | "sourced entries";
+  | "new entries";
 
 interface Asks {
   kinds: RequestKind[];
@@ -42,12 +40,11 @@ interface Asks {
   // The answer that makes a finding, where a yes does: a question that sorts its elements, an element it sorts in
   // breaking its rule.
   fails?: { answer: "yes"; when: string };
-  // The input the question waits on, which M6 brings.
+  // The input the question waits on, which the request may lack.
   pending?: string;
 }
 
 const BOTH: RequestKind[] = ["source", "language"];
-const VOCABULARY = "the vocabulary of each level";
 const UNTAGGED = { answer: "yes", when: "the block carries no variety" } as const;
 
 export const ASKS: Record<string, Asks> = {
@@ -55,7 +52,7 @@ export const ASKS: Record<string, Asks> = {
   "SH-05": { kinds: BOTH, target: "definition" },
   "SH-06": { kinds: ["source"], target: "definition" },
   "SH-07": { kinds: BOTH, target: "opening" },
-  "SH-09": { kinds: ["source"], target: "opening", pending: VOCABULARY },
+  "SH-09": { kinds: ["source"], target: "opening" },
   "SH-10": { kinds: ["source"], target: "essence" },
   "SH-15": { kinds: ["source"], target: "blocks" },
   "SH-17": { kinds: ["source"], target: "blocks" },
@@ -65,20 +62,20 @@ export const ASKS: Record<string, Asks> = {
   "SH-22": { kinds: ["source"], target: "blocks" },
   "SH-23": { kinds: ["source"], target: "blocks" },
   "VO-02": { kinds: BOTH, target: "explanations" },
-  "VO-03": { kinds: ["source"], target: "explanations", pending: VOCABULARY },
+  "VO-03": { kinds: ["source"], target: "explanations" },
   "VO-06": { kinds: ["source"], target: "course text" },
   "VO-07": { kinds: ["source"], target: "examples" },
   "VO-08": { kinds: ["language"], target: "example translations" },
   "FT-01": { kinds: ["source"], target: "lists" },
   "FT-05": { kinds: BOTH, target: "explanations" },
   "FT-06": { kinds: ["source"], target: "blocks" },
-  "FT-08": { kinds: ["source"], target: "sentences", pending: "the grammar, script and forms each step teaches" },
+  "FT-08": { kinds: ["source"], target: "sentences", pending: "the topic's place in the index's path" },
   "ER-03": { kinds: BOTH, target: "reasons" },
   "ER-07": { kinds: BOTH, target: "errors" },
   "ER-08": { kinds: ["language"], target: "own notes" },
-  "NO-04": { kinds: ["source"], target: "course text", pending: "the PCIC's entries" },
+  "NO-04": { kinds: ["source"], target: "course text" },
   "NO-06": { kinds: BOTH, target: "sentences" },
-  "NO-07": { kinds: ["source"], target: "course text", pending: "the standard's extracts" },
+  "NO-07": { kinds: ["source"], target: "course text" },
   "NO-12": { kinds: ["source"], target: "errors" },
   "NO-13": { kinds: BOTH, target: "sentences" },
   "NO-14": { kinds: ["source"], target: "course text" },
@@ -90,8 +87,7 @@ export const ASKS: Record<string, Asks> = {
   "NO-49": { kinds: ["source"], target: "untagged blocks", fails: UNTAGGED },
   "NO-39": { kinds: BOTH, target: "explanations" },
   "NO-44": { kinds: BOTH, target: "explanations" },
-  "IX-11": { kinds: ["index"], target: "sourced entries", pending: "the sources' passages" },
-  "IX-14": { kinds: ["source"], target: "tables", pending: "the reference list" },
+  "IX-14": { kinds: ["source"], target: "tables", pending: "the topic's entry in the index" },
   "IX-15": { kinds: ["index"], target: "practical entries" },
   "IX-24": { kinds: ["index"], target: "new entries", fails: { answer: "yes", when: "the entry names no topic in replaces" } },
   "RV-11": { kinds: ["language"], target: "translations" },

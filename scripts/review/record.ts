@@ -101,7 +101,6 @@ function section(r: RequestReview, record: TopicReviewRecord | undefined): strin
           `Pending, unasked until the request has their input: ${r.request.pending.map((p) => `${p} (${r.request.inputs[p] ?? ""})`).join("; ")}.`,
         ]
       : []),
-    ...(r.request.notes === undefined ? [] : ["", ...r.request.notes]),
     "",
     ...r.runs.map(
       (s, i) =>

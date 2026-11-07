@@ -1,5 +1,5 @@
 // The index request (M6): IX-15 asked of the entries that carry a practical cluster, IX-24 of those that name no
-// topic of today's in replaces while today's library holds the course's topics, IX-11 and IX-14 pending; its review
+// topic of today's in replaces while today's library holds the course's topics; its review
 // runs twice as the source's does, a request asking nothing runs no session, and review() keeps a course's record
 // beside its index with its report and sessions.
 import { afterAll, expect, test } from "bun:test";
@@ -34,8 +34,8 @@ test("the index request asks IX-15 of practical entries and IX-24 of entries nam
     kind: "index",
     topic: "en",
     asked: { "IX-24": 1 },
-    pending: ["IX-11"],
-    inputs: { "IX-11": "the sources' passages" },
+    pending: [],
+    inputs: {},
   });
   expect(r.asked).not.toHaveProperty("IX-15");
   expect(r.prompt).toContain("- IX-24 [block], asked of letters: Given today's topics {ids, titles}: Yes or no:");
@@ -90,7 +90,7 @@ test("the index review runs its request twice, as the source's; a request asking
   expect(report).toStartWith("# Review of en, 2026-11-06");
   expect(report).toContain("## the index (1 questions, 1 rules)");
   expect(report).toContain("| IX-24 | `letters`: It breaks. Fix: Fixed. |");
-  expect(report).toContain("Pending, unasked until the request has their input: IX-11 (the sources' passages).");
+  expect(report).not.toContain("Pending");
   const nothing = await reviewIndex(course, catalog, [], runner, { model: "m", date: "2026-11-06" });
   expect(runs).toHaveLength(2);
   expect(nothing.requests[0]).toMatchObject({ runs: [], standing: [], disputed: [] });

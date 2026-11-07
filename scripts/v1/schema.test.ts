@@ -80,7 +80,7 @@ describe("each schema rule's written case fails with its id", () => {
     expect(rules(index((i) => Object.assign(i.sections[0]?.topics[0] ?? {}, { path: {} })))).toEqual(["IX-06"]);
     expect(rules(index((i) => Reflect.deleteProperty(i.sections[0]?.topics[0] ?? {}, "status")))).toEqual(["IX-21"]);
     expect(rules(index((i) => Object.assign(i.sections[0]?.topics[0] ?? {}, { practical: "verbs" })))).toEqual(["IX-12"]);
-    expect(rules(index((i) => Reflect.deleteProperty(i.sources[0] ?? {}, "licence")))).toEqual(["IX-09"]);
+    expect(rules(index((i) => Object.assign(i, { sources: [{ id: "profile" }] })))).toEqual(["IX-09"]);
     expect(rules(index((i) => Reflect.deleteProperty(i, "source")))).toEqual(["LA-09"]);
     expect(rules(index((i) => (i.varieties = ["en-GB"])))).toEqual(["NO-27"]);
     expect(rules(index((i) => (i.varieties = ["en-US", "en-GB"])))).toEqual(["NO-27"]);

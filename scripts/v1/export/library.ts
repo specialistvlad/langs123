@@ -1,7 +1,8 @@
 // The new library's export (9.2, 9.8, 9.10), described by library/schema/export.schema.json: library.json, what the
 // index screens read, the chosen design's colours and type styles, every course with its sections, its topics' titles,
 // definitions, levels and reading minutes, and its study path; one file per course with its topics, loaded when a
-// reader opens the course; and one layer file per topic and language, loaded on top of a web page (7.4, layers.ts).
+// reader opens the course; and one layer file per topic and language but the source, loaded on top of a web page
+// (7.4, layers.ts).
 // The export holds the approved topics, and every topic with drafts, for the samples, the tests and the preview (RV-03).
 import { join } from "node:path";
 import type { Course as CourseEntry, CourseFile, LayerFile, LibraryFile, Topic as Exported } from "../../generated/export-v1.ts";
@@ -87,7 +88,7 @@ export function exportCourses(library: Library, options: Omit<V1Options, "librar
       courses: courses.map((c, n) => entryOf(c, files[n]?.topics ?? [])),
     },
     courses: files,
-    layers: layersOf(files),
+    layers: layersOf(files, (code) => courses.find((c) => c.course === code)?.index.data.source ?? code),
   };
 }
 

@@ -86,10 +86,11 @@ test.each(KINDS)("RV-05: %s whose reviewer is the writer's own session", (_kind,
   expect(lintCase("RV-05", own)).toEqual(["2026-11-03: the reviewer is a session apart from the writer's"]);
 });
 
-test.each(KINDS)("RV-06: %s whose finding cites neither a rule of the catalog nor a source of the index", (_kind, inReviewOf) => {
+test.each(KINDS)("RV-06: %s whose finding cites no rule of the catalog", (_kind, inReviewOf) => {
   const cites = (cited: object) => inReviewOf((r) => Object.assign(r.reviews?.[0]?.findings[0] ?? {}, { rule: undefined }, cited));
-  expect(lintCase("RV-06", cites({ rule: "XX-99" }))).toEqual(["f1: the finding cites a rule of the catalog or a source of the index"]);
-  expect(lintCase("RV-06", cites({ source: "profile" }))).toEqual([]);
+  expect(lintCase("RV-06", cites({ rule: "XX-99" }))).toEqual(["f1: the finding cites a rule of the catalog"]);
+  expect(lintCase("RV-06", cites({ source: "profile" }))).toEqual(["f1: the finding cites a rule of the catalog"]);
+  expect(lintCase("RV-06", cites({ rule: "SH-03" }))).toEqual([]);
 });
 
 test.each(KINDS)(

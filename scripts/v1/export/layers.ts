@@ -1,4 +1,4 @@
-// The layer files of the export (7.4): one small file per topic and explanation language beside the course file,
+// The layer files of the export (7.4): one small file per topic and explanation language but the course's source,
 // <course>/<slug>.<language>.json under the export's folder, holding that language's part of the topic alone, so a
 // web page built in one language loads the reader's other languages on top of it when asked; and a topic cut to the
 // languages given, what such a page embeds. A page finds a topic's layers by its course, its slug and the keys of its
@@ -54,14 +54,17 @@ export function layerOf(topic: Exported, course: string, language: Explain): Lay
   };
 }
 
-// Every layer of the course files: one per topic and language it has, with the path it is written at.
-export const layersOf = (courses: CourseFile[]): { path: string; data: LayerFile }[] =>
+// Every layer of the course files: one per topic and language it has but its course's source, which every page
+// embeds, with the path it is written at.
+export const layersOf = (courses: CourseFile[], sourceOf: (course: string) => string): { path: string; data: LayerFile }[] =>
   courses.flatMap((c) =>
     c.topics.flatMap((t) =>
-      (Object.keys(t.minutes) as Explain[]).map((language) => ({
-        path: layerPath(c.course, t.slug, language),
-        data: layerOf(t, c.course, language),
-      })),
+      (Object.keys(t.minutes) as Explain[])
+        .filter((language) => language !== sourceOf(c.course))
+        .map((language) => ({
+          path: layerPath(c.course, t.slug, language),
+          data: layerOf(t, c.course, language),
+        })),
     ),
   );
 

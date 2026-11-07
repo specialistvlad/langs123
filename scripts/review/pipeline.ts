@@ -13,7 +13,6 @@ import { type Indexed, indexRequest, type TodayTopic } from "./index-request.ts"
 import type { RequestKind } from "./questions.ts";
 import { languageRequest, type Request, sourceRequest } from "./request.ts";
 import type { Finding, Runner, Session } from "./run.ts";
-import type { CourseSources } from "./sources.ts";
 
 export interface RequestReview {
   request: Request;
@@ -60,11 +59,11 @@ export function verdicts(runs: Session[]): Pick<RequestReview, "standing" | "dis
   };
 }
 
-// The review's models (12.3, decision 8): every question on the model it was calibrated on, sonnet, and NO-30 and
-// FT-01 on opus in requests of their own.
+// The review's models (12.3, decision 8): every question on the model it was calibrated on, sonnet, and NO-30, FT-01
+// and FT-06 on opus in requests of their own, the rules whose planted cases sonnet misses.
 export const REVIEW_MODELS: Pick<Policy, "model" | "stronger"> = {
   model: "claude-sonnet-5-5",
-  stronger: { model: "claude-opus-5-5", rules: ["NO-30", "FT-01"] },
+  stronger: { model: "claude-opus-5-5", rules: ["NO-30", "FT-01", "FT-06"] },
 };
 
 export const modelOf = (request: Request, policy: Policy): string =>
@@ -101,24 +100,19 @@ const split = (makers: ((s?: Selection) => Request)[], stronger: string[]): Requ
     return own.length === 0 ? [whole] : [make({ except: own }), make({ only: own })];
   });
 
-// A topic's requests: its source's, with the course's sources, and each language file's.
-export const requestsOf = (topic: Topic, course: Course, catalog: Catalog, stronger: string[] = [], sources?: CourseSources): Request[] =>
+// A topic's requests: its source's and each language file's.
+export const requestsOf = (topic: Topic, course: Course, catalog: Catalog, stronger: string[] = []): Request[] =>
   split(
     [
-      (s) => sourceRequest(topic, course, catalog, s, sources),
+      (s) => sourceRequest(topic, course, catalog, s),
       ...topic.languages.map((l) => (s?: Selection) => languageRequest(topic, course, l.data, catalog, s)),
     ],
     stronger,
   );
 
-// A course's index request, with the course's sources.
-export const indexRequestsOf = (
-  course: Indexed,
-  catalog: Catalog,
-  today: TodayTopic[],
-  stronger: string[] = [],
-  sources?: CourseSources,
-): Request[] => split([(s) => indexRequest(course, catalog, today, s, sources)], stronger);
+// A course's index request.
+export const indexRequestsOf = (course: Indexed, catalog: Catalog, today: TodayTopic[], stronger: string[] = []): Request[] =>
+  split([(s) => indexRequest(course, catalog, today, s)], stronger);
 
 async function run(topic: string, requests: Request[], runner: Runner, policy: Policy): Promise<TopicReview> {
   const tasks = requests.filter((r) => policy.kinds?.includes(r.kind) ?? true).map((r) => () => runRequest(r, runner, policy));
@@ -130,21 +124,9 @@ async function run(topic: string, requests: Request[], runner: Runner, policy: P
   };
 }
 
-export const reviewTopic = (
-  topic: Topic,
-  course: Course,
-  catalog: Catalog,
-  runner: Runner,
-  policy: Policy,
-  sources?: CourseSources,
-): Promise<TopicReview> => run(topic.source.data.id, requestsOf(topic, course, catalog, policy.stronger?.rules, sources), runner, policy);
+export const reviewTopic = (topic: Topic, course: Course, catalog: Catalog, runner: Runner, policy: Policy): Promise<TopicReview> =>
+  run(topic.source.data.id, requestsOf(topic, course, catalog, policy.stronger?.rules), runner, policy);
 
 // A course's index review, in a topic review's shape with the course's code as its topic.
-export const reviewIndex = (
-  course: Indexed,
-  catalog: Catalog,
-  today: TodayTopic[],
-  runner: Runner,
-  policy: Policy,
-  sources?: CourseSources,
-): Promise<TopicReview> => run(course.course, indexRequestsOf(course, catalog, today, policy.stronger?.rules, sources), runner, policy);
+export const reviewIndex = (course: Indexed, catalog: Catalog, today: TodayTopic[], runner: Runner, policy: Policy): Promise<TopicReview> =>
+  run(course.course, indexRequestsOf(course, catalog, today, policy.stronger?.rules), runner, policy);

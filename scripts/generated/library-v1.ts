@@ -1,7 +1,7 @@
 // Generated from library/schema/library.schema.json by npm run types. Edit the schema, then regenerate.
 
 /**
- * A course's index: its name, source language, varieties, sources and sections, each with its topics in order.
+ * A course's index: its name, source language, varieties, and sections, each with its topics in order.
  */
 export type CourseIndex = Index;
 export type Text = string;
@@ -138,7 +138,7 @@ export type SearchNeeds = ({} & {
    * @minItems 1
    */
   queries: Text[];
-  from: "search-console" | "keyword-research";
+  from: "search-console" | "keyword-research" | "writers";
   topic?: TopicId;
   declined?: Text;
 })[];
@@ -169,16 +169,6 @@ export interface Index {
    */
   varieties?: Variety[];
   status: Status;
-  sources: {
-    id: Slug;
-    name: Text;
-    licence: Text;
-    url: string;
-    /**
-     * @minItems 1
-     */
-    took: ("topics" | "levels")[];
-  }[];
   /**
    * @minItems 1
    */

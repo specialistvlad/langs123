@@ -7,7 +7,7 @@ const entry = (c: Case): CourseIndex["sections"][number]["topics"][number] => c.
 const reach = { beside: { options: { reach: true } } };
 
 test("the fixture holds every rule of the index", () => {
-  for (const rule of ["IX-05", "IX-07", "IX-10", "IX-16", "IX-22", "IX-25", "ST-14"]) expect(lintCase(rule)).toEqual([]);
+  for (const rule of ["IX-05", "IX-07", "IX-16", "IX-22", "IX-25", "ST-14"]) expect(lintCase(rule)).toEqual([]);
 });
 
 test("IX-05: a concept the registry lacks", () => {
@@ -25,11 +25,6 @@ test("IX-07: a replaces entry naming a topic today's library lacks", () => {
   };
   expect(lintCase("IX-07", replaces)).toEqual(["letters: today's library has no topic en.foundations.alphabet-spelling"]);
   expect(lintCase("IX-07", replaces, { beside: { today: new Set(["en.foundations.alphabet-spelling"]) } })).toEqual([]);
-});
-
-test("IX-10: an index drawn from one source", () => {
-  expect(lintCase("IX-10", (c) => c.index.sources.pop())).toEqual(["en: the index draws on two sources or more"]);
-  expect(lintCase("IX-10", (c) => c.index.sources.pop(), { beside: { options: { samples: true } } })).toEqual([]);
 });
 
 test("IX-16: a search need that doesn't exist, and a need answered by no topic", () => {

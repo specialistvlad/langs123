@@ -39,7 +39,6 @@ const DESCRIBED: Record<Question["target"], string> = {
   entries: "every entry of the index",
   "practical entries": "every entry that carries a practical cluster",
   "new entries": "every entry that names no topic in replaces",
-  "sourced entries": "every entry a source passage fed",
 };
 
 export interface Asked {

@@ -11,6 +11,8 @@ import { exportCourses } from "./library.ts";
 // The topics of each course at v1: English, Spanish and Ukrainian from A0 to C2, the others to A2.
 export const PLAN: Record<string, number> = { en: 120, es: 120, uk: 120, fr: 45, ja: 45, it: 45, de: 45 };
 const GROWTH = 5;
+// Each course's varieties as NO-27 lists them, the default first; the other courses have none.
+const VARIETIES: Partial<Record<string, string[]>> = { en: ["en-GB", "en-US"], es: ["es-419", "es-ES"], fr: ["fr-FR", "fr-CA"] };
 
 // Each id of a copy of the topic's text, renamed for its copy n.
 const renamed = (value: unknown, n: number): unknown =>
@@ -71,6 +73,7 @@ export function syntheticLibrary(plan: Record<string, number> = PLAN): Library {
       ...structuredClone(INDEX),
       course: code,
       source,
+      varieties: VARIETIES[code],
       sections: [{ ...structuredClone(INDEX.sections[0]), topics: entries }],
     } as unknown as typeof INDEX;
     return { course: code, dir: code, index: { file: "index.yaml", data: index }, topics };

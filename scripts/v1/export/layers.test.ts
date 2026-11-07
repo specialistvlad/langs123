@@ -36,11 +36,13 @@ const nodeOf = (node: unknown, id: string): Record<string, unknown> | undefined 
 const topic = v1.courses[0]?.topics[0];
 if (topic === undefined) throw new Error("the fixture's export holds a topic");
 
-test("one layer per topic and language, at <course>/<slug>.<language>.json, each valid against its schema", () => {
-  expect(v1.layers.map((l) => l.path)).toEqual(["en/letters.en.json", "en/letters.uk.json"]);
-  expect(layersOf(v1.courses)).toEqual(v1.layers);
+test("one layer per topic and language but the source, at <course>/<slug>.<language>.json, each valid against its schema", () => {
+  expect(v1.layers.map((l) => l.path)).toEqual(["en/letters.uk.json"]);
+  expect(layersOf(v1.courses, () => "en")).toEqual(v1.layers);
+  expect(layersOf(v1.courses, () => "xx").map((l) => l.path)).toEqual(["en/letters.en.json", "en/letters.uk.json"]);
   for (const l of v1.layers) expect([l.path, ajv.validate("export.schema.json#/definitions/layerFile", l.data)]).toEqual([l.path, true]);
-  const [en, layer] = v1.layers.map((l) => l.data);
+  const [layer] = v1.layers.map((l) => l.data);
+  const en = layersOf(v1.courses, () => "xx")[0]?.data;
   expect(layer).toMatchObject({ version: VERSION, course: "en", topic: "letters", language: "uk", minutes: topic.minutes["uk"] });
   expect(layer?.text["title"]).toBe("Літери");
   expect(layer?.text["names.fact.1"]).toBe("Кожна літера має назву, а назва Z залежить від варіанта.");

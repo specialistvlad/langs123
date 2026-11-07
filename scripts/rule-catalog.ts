@@ -10,7 +10,8 @@ import { join } from "node:path";
 import { ROOT } from "./lib.ts";
 
 export const RULES_FILE = join(ROOT, "library", "RULES.md");
-export const CHECKS = ["schema", "lint", "question", "test"] as const;
+// A retired rule keeps its id and its history and has no check.
+export const CHECKS = ["schema", "lint", "question", "test", "retired"] as const;
 
 const LABELS = {
   requirements: "Requirements",

@@ -1,11 +1,12 @@
 // The review's questions, targets and requests: every question rule of the catalog is asked by its request, of its
-// part of the text, where its catalog lines say it holds, or stays pending until M6 brings its input.
+// part of the text, where its catalog lines say it holds, or stays pending until the index gives its input.
 import { expect, test } from "bun:test";
 import type { TopicLanguageFile } from "../generated/library-v1.ts";
 import { readRules, RULES_FILE } from "../rule-catalog.ts";
 import { files } from "../v1/fixture.ts";
 import { typedLibrary } from "../v1/library.ts";
 import { ASKS, questionsOf } from "./questions.ts";
+import { reportOf } from "./record.ts";
 import { languageRequest, sourceRequest } from "./request.ts";
 import { targetIds } from "./targets.ts";
 
@@ -25,7 +26,7 @@ test("every question rule of the catalog but the catalog's own is asked by a req
       .filter((q) => q.pending !== undefined)
       .map((q) => q.rule),
   );
-  expect([...new Set(pending)].sort()).toEqual(["FT-08", "IX-11", "IX-14", "NO-04", "NO-07", "SH-09", "VO-03"]);
+  expect([...new Set(pending)].sort()).toEqual(["FT-08", "IX-14"]);
   expect(questionsOf(catalog, "language").find((q) => q.rule === "RV-11")).toMatchObject({ subject: "sentence", target: "translations" });
 });
 
@@ -93,12 +94,16 @@ test("a source request asks its questions where they hold, counts them, and list
   expect(r.asked).toMatchObject({ "SH-04": 1, "SH-21": 2, "NO-50": 6 });
   expect(r.prompt).toContain("A finding is a yes answer, where the block carries no variety.");
   expect(r.asked).not.toHaveProperty("NO-13");
-  expect(r.pending).toEqual(["SH-09", "VO-03", "IX-14"]);
-  expect(r.inputs).toEqual({
-    "SH-09": "the vocabulary of each level",
-    "VO-03": "the vocabulary of each level",
-    "IX-14": "the reference list",
-  });
+  expect(r.pending).toEqual([]);
+  expect(r.asked).toMatchObject({ "SH-09": 5, "IX-14": 1 });
+  expect(r.prompt).toContain("- IX-14, the topic's subject ({subject}): The letters");
+  expect(r.prompt).toContain("The topic's lowest level, SH-09's {level}: A0.");
+  const unplaced = sourceRequest(topic, { ...course, index: undefined } as never, catalog);
+  expect(unplaced.pending).toEqual(["FT-08", "IX-14"]);
+  expect(unplaced.inputs).toEqual({ "FT-08": "the topic's place in the index's path", "IX-14": "the topic's entry in the index" });
+  expect(reportOf({ topic: "en.letters", date: "d", requests: [{ request: unplaced, runs: [], standing: [], disputed: [] }] })).toContain(
+    "Pending, unasked until the request has their input: FT-08 (the topic's place in the index's path); IX-14 (the topic's entry in the index).",
+  );
   expect(r.asked["FT-08"]).toBeGreaterThan(0);
   expect(r.prompt).toContain(
     "- FT-08, the steps before this topic ({list}), each with its subject and what it covers: none, this is the first",

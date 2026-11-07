@@ -20,10 +20,6 @@ export const INDEX: CourseIndex = {
   source: "en",
   varieties: ["en-GB", "en-US"],
   status: "approved",
-  sources: [
-    { id: "profile", name: "A grammar profile", licence: "CC BY 4.0", url: "https://example.org/profile", took: ["topics", "levels"] },
-    { id: "syllabus", name: "A syllabus", licence: "CC BY 4.0", url: "https://example.org/syllabus", took: ["topics"] },
-  ],
   sections: [
     {
       id: "foundations",
