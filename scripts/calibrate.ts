@@ -3,15 +3,18 @@
 // session build/review/sessions.jsonl holds, into build/review/budget.md. With --rules, the planted requests holding
 // a case of the rules named run alone (RV-11 runs the pairs), and their tallies replace those of the same model and
 // rule in calibration.json; each session's findings stay in sessions.jsonl, and --retally counts the latest saved
-// session of each request again in place of a new one. --flags writes build/review/flags.md alone, from the saved
-// sessions of the models named: each element they flagged against the rules given, for the owner to label.
+// session of each request again in place of a new one. --flags writes build/review/flags.md from the saved sessions of
+// the models named, each element they flagged against the rules given, for the owner to label; with the labels in
+// library/review/labels.yaml, or in the file --labels names, it then counts those rules again from the saved sessions
+// with the labels applied (scripts/review/labels.ts) and rewrites calibration.md.
 // Run: npm run calibrate -- [--models claude-sonnet-5-5 claude-haiku-5-5] [--rules SH-20 ST-02] [--retally] [--per-day 150]
-//      [--budget-only] [--flags ST-02 SH-19 ER-08]
+//      [--budget-only] [--flags ST-02 SH-19 ER-08 [--labels <file>]]
 import { appendFile, mkdir, readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { budgetReport, type SessionLine } from "./review/budget.ts";
 import { type Pair, pairsRequest, type Plant, plantedRequests } from "./review/calibrate.ts";
 import { flagsOf, flagsReport, mergeFlags } from "./review/flags.ts";
+import { labelledTally, readLabels } from "./review/labels.ts";
 import { type Indexed, todayTopics } from "./review/index-request.ts";
 import { REVIEW_MODELS } from "./review/pipeline.ts";
 import { REVIEW_DIR } from "./review/index.ts";
@@ -30,6 +33,8 @@ const after = (flag: string): string[] => {
 const models = after("--models").length > 0 ? after("--models") : ["claude-sonnet-5-5", "claude-haiku-5-5"];
 const only = after("--rules");
 const flagged = after("--flags");
+const DEFAULT_LABELS = join(LIBRARY_ROOT, "review", "labels.yaml");
+const labelsFile = after("--labels")[0] ?? ((await Bun.file(DEFAULT_LABELS).exists()) ? DEFAULT_LABELS : undefined);
 const asked = (rule: string): boolean => only.length === 0 || only.includes(rule);
 const perDay = Number(after("--per-day")[0] ?? 150);
 const date = new Date().toISOString().slice(0, 10);
@@ -68,6 +73,25 @@ if (flagged.length > 0) {
   const merged = mergeFlags(flags, flagged);
   await Bun.write(join(REVIEW_DIR, "flags.md"), flagsReport(merged, rules, date));
   console.log(`build/review/flags.md: ${String(merged.length)} elements`);
+  if (labelsFile !== undefined) {
+    const labels = await readLabels(labelsFile);
+    const counted = plantedRequests(library, rules, plants, today).flatMap((p) =>
+      models.flatMap((model) => {
+        const last = latest(saved, `planted ${p.request.topic}`, p.request.language ?? null, model);
+        return last === undefined ? [] : labelledTally(model, p, last, flagged, labels).filter((t) => flagged.includes(t.rule));
+      }),
+    );
+    const file = Bun.file(join(REVIEW_DIR, "calibration.json"));
+    const before = (await file.exists()) ? ((await file.json()) as Tally[]) : [];
+    const ran = new Set(counted.map((t) => `${t.model} ${t.rule}`));
+    const all = [...before.filter((t) => !ran.has(`${t.model} ${t.rule}`)), ...counted];
+    const note = `Labels: ${String(labels.length)} from ${labelsFile}, ${String(labels.filter((l) => l.breaks).length)} breaking, applied to ${flagged.join(", ")} on ${models.join(", ")}.`;
+    await Bun.write(file, JSON.stringify(all, null, 2));
+    await Bun.write(join(REVIEW_DIR, "calibration.md"), calibrationReport(all, date, note));
+    for (const line of calibrationReport(counted, date).split("\n")) {
+      if (/^(## |\| [A-Z]{2}-\d{2} )/.test(line)) console.log(line);
+    }
+  }
 } else if (!args.includes("--budget-only")) {
   const pairsDir = join(LIBRARY_ROOT, "calibration", "translations");
   const pairs = await Promise.all(

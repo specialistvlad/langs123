@@ -63,13 +63,15 @@ export const meets = (t: Tally): boolean =>
 
 const share = (a: number, b: number): string => (b === 0 ? "—" : `${String(a)}/${String(b)} (${String(Math.round((100 * a) / b))}%)`);
 
-export function calibrationReport(tallies: Tally[], date: string): string {
+// The report, with a line on the labels applied where the recount read any.
+export function calibrationReport(tallies: Tally[], date: string, labels?: string): string {
   const rows = summed(tallies);
   const models = [...new Set(rows.map((t) => t.model))];
   return [
     `# Calibration of the review's questions, ${date}`,
     "",
-    `Target: ${String(TARGET.caught * 100)}% of planted cases caught and at most ${String(TARGET.flagged * 100)}% of sound elements flagged, until the owner sets each question's rate (12.3). Sound elements are those of the samples the question reads, the owner's labels to come.`,
+    `Target: ${String(TARGET.caught * 100)}% of planted cases caught and at most ${String(TARGET.flagged * 100)}% of sound elements flagged, until the owner sets each question's rate (12.3). Sound elements are those of the samples the question reads${labels === undefined ? ", the owner's labels to come" : ""}.`,
+    ...(labels === undefined ? [] : ["", labels]),
     ...models.flatMap((m) => [
       "",
       `## ${m}`,
