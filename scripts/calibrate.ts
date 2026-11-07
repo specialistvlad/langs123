@@ -12,6 +12,7 @@ import { join } from "node:path";
 import { budgetReport, type SessionLine } from "./review/budget.ts";
 import { type Pair, pairsRequest, type Plant, plantedRequests } from "./review/calibrate.ts";
 import { flagsOf, flagsReport, mergeFlags } from "./review/flags.ts";
+import { type Indexed, todayTopics } from "./review/index-request.ts";
 import { REVIEW_MODELS } from "./review/pipeline.ts";
 import { REVIEW_DIR } from "./review/index.ts";
 import type { Request } from "./review/request.ts";
@@ -48,10 +49,17 @@ const latest = (saved: SessionLine[], topic: string, language: string | null, mo
 const rules = await catalog();
 const { library } = typedLibrary(await readLibrary(SAMPLES_ROOT));
 const plants = (await yaml(join(LIBRARY_ROOT, "calibration", "questions.yaml"))) as Plant[];
+// Today's topics of each course whose index holds a planted case, for IX-24.
+const indexed = library.courses.filter(
+  (c): c is Indexed => c.index !== undefined && plants.some((p) => p.file === "index" && p.topic === c.course),
+);
+const today = Object.fromEntries(
+  await Promise.all(indexed.map(async (c) => [c.course, await todayTopics(c.course, c.index.data.source)] as const)),
+);
 
 if (flagged.length > 0) {
   const saved = await readSessions();
-  const flags = plantedRequests(library, rules, plants).flatMap((p) =>
+  const flags = plantedRequests(library, rules, plants, today).flatMap((p) =>
     models.flatMap((model) => {
       const last = latest(saved, `planted ${p.request.topic}`, p.request.language ?? null, model);
       return last === undefined ? [] : flagsOf(p, model, last.findings, flagged);
@@ -82,7 +90,7 @@ if (flagged.length > 0) {
   };
   const unplanted = only.filter((r) => r !== "RV-11" && !plants.some((p) => p.rule === r));
   if (unplanted.length > 0) throw new Error(`no planted case of ${unplanted.join(", ")} (library/calibration/questions.yaml)`);
-  const planted = plantedRequests(library, rules, plants).filter((p) => p.plants.some((c) => asked(c.rule)));
+  const planted = plantedRequests(library, rules, plants, today).filter((p) => p.plants.some((c) => asked(c.rule)));
   const pairsRun = asked("RV-11") ? pairs : [];
   for (const model of models) {
     await Promise.all(

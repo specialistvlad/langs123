@@ -31,20 +31,20 @@ export function elementText(topic: Topic, language: string | undefined, at: stri
 }
 
 // The flags of one session: its findings of the rules named on no planted case. A language's finding on an element the
-// language holds no text of is a finding on the source's text.
+// language holds no text of is a finding on the source's text; an index's finding names an entry.
 export function flagsOf(planted: Planted, model: string, findings: Finding[], rules: string[]): Flag[] {
   const plantedIds = new Set([...planted.ids.values()].flat());
   return findings
     .filter((f) => rules.includes(f.rule) && !plantedIds.has(f.at))
     .map((f) => {
-      const own = elementText(planted.topic, planted.request.language, f.at);
+      const own = planted.text(planted.request.language, f.at);
       const language = own.length === 0 ? undefined : planted.request.language;
       return {
         rule: f.rule,
         topic: planted.request.topic,
         language: language ?? "source",
         at: f.at,
-        text: language === undefined ? elementText(planted.topic, undefined, f.at) : own,
+        text: language === undefined ? planted.text(undefined, f.at) : own,
         findings: [{ model, request: planted.request.language ?? "source", at: f.at, text: f.text }],
       };
     });

@@ -1,8 +1,10 @@
 # Planted cases for calibrating the review's questions (M4 gate 4b): each question rule's written case (library/RULES.md,
 # Not this) put into a copy of a sample, where its question must find it at `at`; the rest of the sample stays as it is.
-# `set` names the element whose text the case replaces, or, with `field`, an error's form; `file` is the sample's
-# source or one of its language files, which the case adds where the sample has none. The rules whose course or
-# language no sample holds (NO-12, NO-13, NO-14, NO-18, NO-32, NO-49) and the index's are planted when M6 brings them.
+# `set` names the element whose text the case replaces, or, with `field`, another field of it (a list where the field
+# holds one; null drops it), one setting or several; `file` is the sample's source or one of its language files, which
+# the case adds where the sample has none, or `index`, the index of the course `topic` names, which the index
+# questions read. The rules whose course or language no sample holds (NO-12, NO-13, NO-14, NO-18, NO-32, NO-49), and
+# IX-11 and IX-14 with their sources, are planted when M6 brings them.
 - { rule: SH-04, topic: en.alphabet, file: source, at: def, set: { id: def, text: "The 26 letters of the English alphabet and their names, used to spell words aloud." } }
 - { rule: SH-05, topic: en.words-of-place, file: source, at: def, set: { id: def, text: "Nine groups of words of place follow, each with its use, an example and its common errors." } }
 - { rule: SH-06, topic: en.present-simple, file: source, at: def, set: { id: def, text: "The present simple is a part of English that learners meet in their first year." } }
@@ -32,3 +34,13 @@
 - { rule: ER-08, topic: en.words-of-place, file: uk, at: uk.above-below.fact, set: { id: uk.above-below.fact.2, text: "Українське {l1 uk під} — це {term under}." } }
 - { rule: NO-39, topic: en.alphabet, file: de, at: names-u.why.1, set: { id: names-u.why.1, text: "Merken Sie sich: {term W} besteht aus zwei {term u}, die nebeneinander stehen." } }
 - { rule: NO-44, topic: en.alphabet, file: vi, at: names-u.why.1, set: { id: names-u.why.1, text: "Anh hãy nhớ rằng {term W} là hai chữ {term u} đứng cạnh nhau." } }
+- { rule: IX-24, topic: en, file: index, at: present-simple, set: { id: present-simple, field: replaces, text: null } }
+- rule: IX-15
+  topic: es
+  file: index
+  at: words-of-place
+  set:
+    - { id: subject-pronouns, field: subject, text: Palabras de lugar }
+    - { id: subject-pronouns, field: covers, text: ["En (in)", "Sobre (on)", "Bajo (under)"] }
+    - { id: subject-pronouns, field: practical, text: words-of-place }
+    - { id: subject-pronouns, field: id, text: words-of-place }

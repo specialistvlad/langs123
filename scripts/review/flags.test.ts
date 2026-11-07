@@ -15,12 +15,12 @@ const planted = plantedRequests(library, catalog, plants);
 const finding = (rule: string, at: string, text = "Found."): Finding => ({ rule, at, text, fix: "", confidence: "high" });
 
 test("an element's text: the source's sentences or block, a language's translations and its own blocks", () => {
-  const ja = planted.find((p) => p.request.topic === "en.present-simple" && p.request.language === "ja");
+  const ja = planted.find((p) => p.request.topic === "en.present-simple" && p.request.language === "ja")?.topic;
   if (ja === undefined) throw new Error("no planted ja request");
-  expect(elementText(ja.topic, undefined, "states.fact")[0]).toContain("Verbs of states");
-  expect(elementText(ja.topic, "ja", "states.fact.1")[0]).toContain("状態を表す動詞");
-  expect(elementText(ja.topic, "ja", "ja.forms.fact").length).toBeGreaterThan(0);
-  expect(elementText(ja.topic, "ja", "nowhere")).toEqual([]);
+  expect(elementText(ja, undefined, "states.fact")[0]).toContain("Verbs of states");
+  expect(elementText(ja, "ja", "states.fact.1")[0]).toContain("状態を表す動詞");
+  expect(elementText(ja, "ja", "ja.forms.fact").length).toBeGreaterThan(0);
+  expect(elementText(ja, "ja", "nowhere")).toEqual([]);
 });
 
 test("a session's flags leave the planted cases and the other rules out, and a language's flag on the source's text is the source's", () => {

@@ -1,5 +1,6 @@
-// Gate 4b check 13's tools: every planted case stands in a request that asks its rule; a session's findings tally as
-// cases caught and sound elements flagged; the pairs tally per language, and the report follows.
+// Gate 4b check 13's tools: every planted case stands in a request that asks its rule, an index question's in a copy of
+// its course's index; a session's findings tally as cases caught and sound elements flagged; the pairs tally per
+// language, and the report follows.
 import { expect, test } from "bun:test";
 import { readRules, RULES_FILE } from "../rule-catalog.ts";
 import { typedLibrary } from "../v1/library.ts";
@@ -12,6 +13,7 @@ const catalog = await readRules(RULES_FILE);
 const { library } = typedLibrary(await readLibrary(SAMPLES_ROOT));
 const plants = Bun.YAML.parse(await Bun.file(`${LIBRARY_ROOT}/calibration/questions.yaml`).text()) as Plant[];
 const uk = Bun.YAML.parse(await Bun.file(`${LIBRARY_ROOT}/calibration/translations/uk.yaml`).text()) as Pair[];
+const today = { en: [{ id: "en.tenses.simple-tenses", title: "Simple tenses" }] };
 const session = (findings: Partial<Finding>[]): Session => ({
   session: "s",
   model: "m",
@@ -21,7 +23,7 @@ const session = (findings: Partial<Finding>[]): Session => ({
 });
 
 test("every planted case stands in a request that asks its rule, its text in place", () => {
-  const planted = plantedRequests(library, catalog, plants);
+  const planted = plantedRequests(library, catalog, plants, today);
   expect(planted.flatMap((p) => p.plants)).toHaveLength(plants.length);
   for (const p of planted) for (const c of p.plants) expect([c.rule, p.request.asked[c.rule] !== undefined]).toEqual([c.rule, true]);
   const source = planted.find((p) => p.request.topic === "en.alphabet" && p.request.language === undefined);
@@ -37,6 +39,27 @@ test("every planted case stands in a request that asks its rule, its text in pla
       { rule: "SH-04", topic: "en.alphabet", file: "source", at: "def", set: { id: "nowhere", text: "x" } },
     ]),
   ).toThrow("en.alphabet holds no nowhere");
+});
+
+test("an index question's case is planted in a copy of its course's index: a field set, a list, a dropped field", () => {
+  const planted = plantedRequests(library, catalog, plants, today);
+  const es = planted.find((p) => p.request.kind === "index" && p.request.topic === "es");
+  expect(es?.request.asked).toEqual({ "IX-15": 1 });
+  expect(es?.request.prompt).toContain("Palabras de lugar");
+  expect(es?.request.prompt).toContain("Sobre (on)");
+  expect(es?.text(undefined, "words-of-place")).toEqual(["Palabras de lugar", "En (in)", "Sobre (on)", "Bajo (under)"]);
+  expect(es?.text(undefined, "nowhere")).toEqual([]);
+  expect([...(es?.ids.values() ?? [])]).toEqual([["words-of-place"]]);
+  const en = planted.find((p) => p.request.kind === "index" && p.request.topic === "en");
+  expect(en?.request.asked).toEqual({ "IX-15": 1, "IX-24": 1 });
+  expect(en?.request.prompt).toContain("asked of present-simple:");
+  expect(en?.request.prompt).not.toContain("replaces: en.tenses.simple-tenses");
+  expect(plantedRequests(library, catalog, plants).find((p) => p.request.topic === "en")?.request.asked).toEqual({ "IX-15": 1 });
+  const missing: Plant = { rule: "IX-15", topic: "es", file: "index", at: "x", set: { id: "nowhere", field: "subject", text: "x" } };
+  expect(() => plantedRequests(library, catalog, [missing])).toThrow("IX-15: the index of es holds no nowhere");
+  expect(() => plantedRequests({ courses: [{ course: "es", dir: "d", topics: [] }] }, catalog, [missing])).toThrow(
+    "IX-15: es has no index",
+  );
 });
 
 test("a session's findings tally as planted cases caught and sound elements flagged", () => {
