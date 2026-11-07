@@ -162,7 +162,9 @@ says how an error is written.
 
 - A block is an essence, a fact, an example, a list, a table, a why or errors; the essence is the block of part
   00 and errors are the block of the common errors (ST-01).
-- A list holds its items one per line, and each item is one entry (ST-02).
+- A run of three or more entries a reader learns, words, forms or uses, is a list block, its items one per line and
+  each item one entry; a sentence that states a rule and names the words it concerns, or shows it with examples that
+  are no entries, stays a sentence (ST-02).
 - A table declares the two axes it crosses, such as person and tense, and every cell sits at one crossing
   (ST-03).
 - A table of forms holds the forms; its examples stand below it, each with its translation (ST-04).
