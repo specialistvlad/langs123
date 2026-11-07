@@ -1,4 +1,5 @@
-// The review: each rule passes a topic whose record holds and names its written case.
+// The review: each rule passes a topic whose record holds and names its written case; the rules an index's record
+// keeps too (RV-02, RV-05 to RV-07) pass an index whose record holds and name its written case there.
 import { expect, test } from "bun:test";
 import type { Approvals, TopicReviewRecord } from "../../generated/library-v1.ts";
 import { type Case, lintCase } from "./case.ts";
@@ -27,10 +28,24 @@ const inReview =
     change(record, c);
     c.review(record);
   };
+// The course's index in review, its record beside it naming a finding on an entry, changed as a case says.
+const indexInReview =
+  (change: (r: TopicReviewRecord, c: Case) => void = () => undefined) =>
+  (c: Case): void => {
+    c.index.status = "in-review";
+    const record = structuredClone(RECORD);
+    Object.assign(record.reviews?.[0]?.findings[0] ?? {}, { at: "letters", rule: "IX-15", text: "Its covers group no contrast." });
+    change(record, c);
+    if (c.files.courses[0] !== undefined) c.files.courses[0].review = { file: "library/en/review.yaml", data: record };
+  };
 const RULES = ["RV-02", "RV-05", "RV-06", "RV-07", "RV-08", "RV-09", "RV-10", "RV-14", "RV-16", "LA-04"];
+const KINDS = [
+  ["a topic", inReview],
+  ["an index", indexInReview],
+] as const;
 
-test("a topic in review whose record holds passes every rule of the review", () => {
-  for (const rule of RULES) expect(lintCase(rule, inReview())).toEqual([]);
+test.each(KINDS)("%s in review whose record holds passes every rule of the review", (_kind, inReviewOf) => {
+  for (const rule of RULES) expect(lintCase(rule, inReviewOf())).toEqual([]);
 });
 
 test("RV-16: a topic in review with no record", () => {
@@ -54,48 +69,48 @@ test("RV-02: a status that skips a step, starts past its draft, or differs from 
   ).toEqual(["statuses: a topic starts as a draft"]);
 });
 
-test("RV-05: a reviewer who is the writer's own session", () => {
-  expect(
-    lintCase(
-      "RV-05",
-      inReview((r) => Object.assign(r.reviews?.[0] ?? {}, { session: "writer-en" })),
-    ),
-  ).toEqual(["2026-11-03: the reviewer is a session apart from the writer's"]);
+test("RV-02: an index's record whose last status differs from the index's, that skips a step, or starts past its draft", () => {
+  const approved = indexInReview((_, c) => (c.index.status = "approved"));
+  expect(lintCase("RV-02", approved)).toEqual(["statuses: the last status is the index's, approved"]);
+  const skipped = indexInReview((r, c) => {
+    c.index.status = "approved";
+    r.statuses.splice(1, 1, { status: "approved", date: "2026-11-03", by: "w" });
+  });
+  expect(lintCase("RV-02", skipped)).toEqual(["statuses: the status moves from draft to approved in one step"]);
+  const started = indexInReview((r) => r.statuses.shift());
+  expect(lintCase("RV-02", started)).toEqual(["statuses: an index starts as a draft"]);
 });
 
-test("RV-06: a finding that cites neither a rule nor a source", () => {
-  expect(
-    lintCase(
-      "RV-06",
-      inReview((r) => Object.assign(r.reviews?.[0]?.findings[0] ?? {}, { rule: "XX-99" })),
-    ),
-  ).toEqual(["f1: the finding cites a rule of the catalog or a source of the index"]);
-  expect(
-    lintCase(
-      "RV-06",
-      inReview((r) =>
-        r.reviews?.[0]?.findings.splice(0, 1, { id: "f2", at: "def", source: "profile", text: "Its level.", answer: "fixed" }),
-      ),
-    ),
-  ).toEqual([]);
+test.each(KINDS)("RV-05: %s whose reviewer is the writer's own session", (_kind, inReviewOf) => {
+  const own = inReviewOf((r) => Object.assign(r.reviews?.[0] ?? {}, { session: "writer-en" }));
+  expect(lintCase("RV-05", own)).toEqual(["2026-11-03: the reviewer is a session apart from the writer's"]);
 });
 
-test("RV-07: a finding with no answer, and one declined with no reason; one raised again goes to the owner", () => {
-  const said = lintCase(
-    "RV-07",
-    inReview((r) =>
-      r.reviews?.[0]?.findings.push(
-        { id: "f2", at: "def", rule: "SH-03", text: "x" },
-        { id: "f3", at: "def", rule: "SH-03", text: "x", answer: "declined" },
-        { id: "f4", at: "def", rule: "SH-03", text: "x", again: "declined" },
-      ),
-    ),
-  );
-  expect(said).toEqual([
-    "f2: the writer answers the finding: fixed, or declined with a reason",
-    "f3: the writer answers the finding: fixed, or declined with a reason",
-  ]);
+test.each(KINDS)("RV-06: %s whose finding cites neither a rule of the catalog nor a source of the index", (_kind, inReviewOf) => {
+  const cites = (cited: object) => inReviewOf((r) => Object.assign(r.reviews?.[0]?.findings[0] ?? {}, { rule: undefined }, cited));
+  expect(lintCase("RV-06", cites({ rule: "XX-99" }))).toEqual(["f1: the finding cites a rule of the catalog or a source of the index"]);
+  expect(lintCase("RV-06", cites({ source: "profile" }))).toEqual([]);
 });
+
+test.each(KINDS)(
+  "RV-07: %s whose finding has no answer, or is declined with no reason; one raised again goes to the owner",
+  (_kind, inReviewOf) => {
+    const said = lintCase(
+      "RV-07",
+      inReviewOf((r) =>
+        r.reviews?.[0]?.findings.push(
+          { id: "f2", at: "def", rule: "SH-03", text: "x" },
+          { id: "f3", at: "def", rule: "SH-03", text: "x", answer: "declined" },
+          { id: "f4", at: "def", rule: "SH-03", text: "x", again: "declined" },
+        ),
+      ),
+    );
+    expect(said).toEqual([
+      "f2: the writer answers the finding: fixed, or declined with a reason",
+      "f3: the writer answers the finding: fixed, or declined with a reason",
+    ]);
+  },
+);
 
 test("RV-08: an approved index without the owner's approval, and a wave written before the last is approved, the samples aside", () => {
   expect(lintCase("RV-08", (c) => Reflect.deleteProperty(c.files, "approvals"))).toEqual([

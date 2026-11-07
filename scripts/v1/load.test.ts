@@ -39,7 +39,14 @@ test("readLibrary reads every course, topic and file of a root, and checkRoot fi
   if (course) {
     course.review = {
       file: "library/en/review.yaml",
-      data: { writer: { session: "w", model: "m" }, statuses: [{ status: "draft", date: "2026-10-28", by: "w" }] },
+      data: {
+        writer: { session: "w", model: "m" },
+        statuses: [
+          { status: "draft", date: "2026-10-26", by: "w" },
+          { status: "in-review", date: "2026-10-27", by: "w" },
+          { status: "approved", date: "2026-10-28", by: "owner" },
+        ],
+      },
     };
   }
   const root = await write(library);
