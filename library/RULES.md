@@ -1252,10 +1252,10 @@ Source: §5 Topic structure (Block types)
 
 ### ST-02 A list holds one item per line
 Requirements: 9.5 blocks
-Rule: A run of three or more parallel items is a list block, its items one per line, each item one entry.
+Rule: A run of three or more entries a reader learns (words, forms or uses) is a list block, its items one per line, each item one entry. A sentence that states a rule and names the words it is about, or illustrates a rule with examples that are no entries, holds no such run.
 Not this: The paragraph "26 letters. Vowels: a, e, i, o, u. The other 21 are consonants; y works as both (yes, my)." (en/01-foundations/alphabet-spelling), a list run into a paragraph.
 Check: question
-Question: [block] Yes or no: is this fact block free of three or more parallel items run together in a paragraph?
+Question: [block] Given that a sentence stating a rule and naming the words it is about, or illustrating a rule with examples that are no entries, holds no such run: Yes or no: is this fact block free of a run of three or more entries a reader learns, such as the words, forms or uses a list or table should set out one per line?
 
 ### ST-03 A table is a true grid
 Requirements: 9.5 blocks
