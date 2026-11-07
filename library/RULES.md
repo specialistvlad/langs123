@@ -131,7 +131,7 @@ Requirements: 2.7, 2.9
 Rule: The definition uses words and terms a reader at the topic's lowest level knows, apart from the term it defines.
 Not this: "Telling the time: hours are feminine ordinal numbers, minutes are cardinal numbers, and о says when something happens." (uk/01-foundations/telling-time).
 Check: question
-Question: [sentence] Given the vocabulary of the topic's lowest level {level}: Yes or no: does this sentence use only words of that vocabulary, apart from the term {term} it defines?
+Question: [sentence] Given the topic's lowest level {level}: Yes or no: does this sentence use only words a reader at that level knows, apart from the term {term} it defines?
 Source: §5 Topic structure (words at the topic's lowest level)
 
 ### SH-10 The essence shows the subject
@@ -261,7 +261,7 @@ Requirements: 2.4, 2.9
 Rule: An explanation sentence uses words a reader at its subtopic's level knows, apart from the term it explains.
 Not this: (written case) In an A1 subtopic on the days of the week: "Weekdays decline like nouns of the second declension."
 Check: question
-Question: [sentence] Given the vocabulary of the subtopic's level {level}: Yes or no: does this sentence use only words of that vocabulary, apart from the term it explains?
+Question: [sentence] Given the subtopic's level {level}: Yes or no: does this sentence use only words a reader at that level knows, apart from the term it explains?
 Source: §1 Languages and variants (short sentences, present tense and plain words)
 
 ### VO-04 A subtopic speaks of the subject
@@ -446,10 +446,10 @@ Source: §1 Languages and variants (English)
 
 ### NO-04 Spanish forms follow the reference norm
 Requirements: 2.10
-Rule: Spanish forms follow the reference norm of the Plan Curricular del Instituto Cervantes, and forms tagged es-419 follow Latin American usage.
+Rule: Spanish forms follow the standard norm of Spain's educated usage, and forms tagged es-419 follow Latin American usage.
 Not this: (written case) "la agua" for "el agua".
 Check: question
-Question: [sentence] Given the PCIC entry {extract}: Yes or no: is every Spanish form in this sentence consistent with it, apart from forms tagged es-419?
+Question: [sentence] Yes or no: is every Spanish form in this sentence standard Spanish, apart from forms tagged es-419, which follow Latin American usage?
 Languages: es
 Courses: es
 Source: §1 Languages and variants (Spanish)
@@ -473,10 +473,10 @@ Source: §1 Languages and variants (Spanish)
 
 ### NO-07 Ukrainian forms follow the state standard
 Requirements: 2.10
-Rule: Ukrainian forms follow the examples of the state standard «Українська мова як іноземна. Рівні загального володіння А1–С2» (2024).
-Not this: (written case) A Ukrainian form that contradicts the standard's entry for it, named together with that entry.
+Rule: Ukrainian forms follow the current orthography (Український правопис, 2019) and standard literary usage.
+Not this: (written case) A Ukrainian form outside standard literary usage, such as «приймати участь» for «брати участь».
 Check: question
-Question: [sentence] Given the standard's extract {extract}: Yes or no: is every Ukrainian form in this sentence consistent with it?
+Question: [sentence] Yes or no: is every Ukrainian form in this sentence standard literary Ukrainian, spelt as the current orthography sets it?
 Languages: uk
 Courses: uk
 Source: §1 Languages and variants (Ukrainian)
@@ -961,25 +961,24 @@ Rule: Each topic in the index states its subject, what it covers and its planned
 Not this: `- { slug: alphabet-spelling }` (curriculum.yaml), a topic listed by its slug alone.
 Check: schema
 
-### IX-09 The index holds its sources
+### IX-09 The index is langs123's own
 Requirements: 3.1, 3.2
-Rule: A course's index lists the sources it was drawn from, each with its name, the licence it is published under and what the index took from it.
+Rule: langs123 writes a course's index itself, from its writers' own knowledge of the language and the CEFR scale; the index names no outside source, and no text, list, passage or data of a syllabus, coursebook, dictionary or word list enters it (owner, 7 November).
 Not this: "# for Japanese-Language Education and its coursebooks Marugoto and Irodori (A1, A2)" (curriculum.yaml), sources in a comment.
 Check: schema
 
-### IX-10 The index draws on several sources
+### IX-10 Retired: the index draws on no outside source
 Requirements: 3.2
-Rule: A course's index draws on at least two international, CEFR-aligned sources for its language.
+Rule: Retired (owner, 7 November): langs123 writes its indexes itself (IX-09), so no count of sources applies.
 Not this: "# The study path follows the levels of the Plan Curricular del Instituto Cervantes (PCIC)." (curriculum.yaml), one source for the Spanish course.
 Check: lint
 Source: §1 Languages and variants (each language's standard)
 
-### IX-11 The index takes facts from its sources, never text
+### IX-11 Retired: no source passage to compare
 Requirements: 3.2
-Rule: The index takes topics and levels from its sources, and its own sentences are worded in its own words: a sentence and its source passage share fewer than five consecutive words, which lint holds.
+Rule: Retired (owner, 7 November): with no outside source (IX-09) there is no passage to compare a sentence against.
 Not this: (written case) A topic definition that copies the wording of a syllabus entry.
 Check: question
-Question: [sentence] Given source {passage}: Yes or no: does this sentence avoid any run of five or more consecutive words from it?
 
 ### IX-12 Practical topics are marked
 Requirements: 3.3
@@ -998,7 +997,7 @@ Requirements: 3.3
 Rule: A full reference table topic holds the whole set, such as every irregular verb in one table; the index entry carries `size: N`, and lint counts the table's entries against N.
 Not this: "The most common irregular verbs: base form, past simple and past participle, grouped by the pattern each verb follows." (en/04-verbs/irregular-verbs-table).
 Check: question
-Question: [block] Given the reference list {list}: Yes or no: does this block hold every entry of it?
+Question: [block] Given the topic's subject {subject}: Yes or no: does this block hold the whole set that subject names, with no common entry of it left out?
 
 ### IX-15 A practical topic is adapted to its language
 Requirements: 3.3
