@@ -28,6 +28,14 @@ Framework for Japanese Language Education, written in English with Japanese exam
   a typical error, with grammar features after UniMorph; the renderer decides how it looks (§12).
 - **Checked.** JSON Schemas define every file, and `npm run check` validates the data against them and
   the conventions.
+- **The new library.** `library/` is the library written again beside this one, to the rules of
+  [library/RULES.md](library/RULES.md): seven courses, English, Spanish, Ukrainian, French, Japanese,
+  Italian and German, each written first in its own language (English for Japanese) and explained in
+  twelve explanation languages, today's eleven and Japanese; English, Spanish and Ukrainian from A0 to
+  C2, French, Japanese, Italian and German from A0 to A2, each growing to C2 after that. A course's
+  index draws its topics and levels from several CEFR-aligned sources for its language and names each
+  with its licence; every topic is reviewed in Claude Code sessions against the catalog's questions
+  (`npm run review`) before the owner approves it. It takes this library's place at its release.
 
 The web app in `apps/web/` renders the library as a static site.
 
