@@ -37,13 +37,18 @@ test("an essence line carries its level mark only where the topic spans levels, 
   );
 });
 
-test("a list of forms with one-word examples lays out as tiles, and a list with a sentence keeps its rows", () => {
+test("a list of forms with one-word examples lays out as tiles, wider where they carry other languages' translations, and a list with a sentence keeps its rows", () => {
   const html = interleaved(read("en.alphabet", ["uk", "ja"]));
-  expect(html.match(/<div class="rd-tiles">/g)).toHaveLength(6);
+  expect(html.match(/<div class="rd-tiles rd-tl">/g)).toHaveLength(6);
   expect(html).toContain(
     '<div class="rd-tile"><b class="rd-term">A</b><span class="rd-tile-s"><span class="lx-ipa"><i class="lx-sl">/</i>eɪ<i class="lx-sl">/</i></span></span><span class="rd-tile-w"><b class="lx-b">a</b>pple</span><span class="lx-tr">яблуко</span><span class="rd-lang" lang="ja">',
   );
-  expect(interleaved(read("en.alphabet", ["en"]))).not.toContain('<span class="lx-tr">');
+  const alone = interleaved(read("en.alphabet", ["uk"]));
+  expect(alone.match(/<div class="rd-tiles">/g)).toHaveLength(6);
+  expect(alone).toContain('<span class="lx-tr">яблуко</span>');
+  const own = interleaved(read("en.alphabet", ["en"]));
+  expect(own.match(/<div class="rd-tiles">/g)).toHaveLength(6);
+  expect(own).not.toContain('<span class="lx-tr">');
   const place = interleaved(read("en.words-of-place", ["uk"]));
   expect(place.slice(place.indexOf('id="opposite"'))).toContain('<ul class="lx-list">');
 });

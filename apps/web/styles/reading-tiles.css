@@ -1,10 +1,14 @@
 /* The reading's tiles (reading-blocks.ts): a list of forms with one-word examples as cards that fill the column, 104 px at
-   the least, so three stand across on a phone and more on a wider column. */
+   the least, so three stand across on a phone and more on a wider column; a tile that carries the word's translations under
+   their language tags stands 150 at the least, two across on a phone, so a word stands whole. */
 .rd-tiles {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
   gap: var(--s-12);
   margin: var(--s-12) 0;
+}
+.rd-tiles.rd-tl {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 .rd-tile {
   display: flex;

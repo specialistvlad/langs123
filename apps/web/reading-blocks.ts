@@ -44,7 +44,8 @@ export function examples(r: Reading, b: Extract<Block, { type: "example" }>): st
 }
 
 // A list whose every item is a form with a one-word example lays out as tiles: the form, its transcription, the word and its
-// translation, as many across as the column holds (reading-tiles.css). A list with a text or a sentence anywhere keeps rows.
+// translation, as many across as the column holds, 104 wide at the least and 150 where a tile carries the other languages'
+// translations under their tags (reading-tiles.css). A list with a text or a sentence anywhere keeps rows.
 export function tiled(r: Reading, b: Extract<Block, { type: "list" }>): boolean {
   return (
     b.items.length > 0 &&
@@ -53,7 +54,7 @@ export function tiled(r: Reading, b: Extract<Block, { type: "list" }>): boolean 
 }
 
 function tiles(r: Reading, b: Extract<Block, { type: "list" }>): string {
-  return `<div class="rd-tiles">${b.items
+  return `<div class="rd-tiles${r.others.length > 0 ? " rd-tl" : ""}">${b.items
     .filter((i) => r.shows(i.variety))
     .map((i) => {
       const ex = i.ex;
