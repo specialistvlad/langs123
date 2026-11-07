@@ -201,7 +201,8 @@ says how an error is written.
 
 ### 7.2 Spanish
 
-- Spanish forms follow the reference norm of the Plan Curricular del Instituto Cervantes (NO-04).
+- Spanish forms follow the standard norm of Spain's educated usage, and forms tagged es-419 follow Latin American
+  usage (NO-04).
 - Spanish text opens a question with ¿ and an exclamation with ¡ (NO-05) and writes every accent its words need
   (NO-06): *¿Estás bien?*
 - The *vosotros* forms and the rules about them carry es-ES (NO-29). A form or rule of es-419 that differs from
@@ -210,8 +211,7 @@ says how an error is written.
 
 ### 7.3 Ukrainian
 
-- Ukrainian forms follow the examples of the state standard «Українська мова як іноземна. Рівні загального
-  володіння А1–С2» (2024) (NO-07).
+- Ukrainian forms follow the current orthography (Український правопис, 2019) and standard literary usage (NO-07).
 - Ukrainian text writes the apostrophe as ’: *п’ять* (NO-08).
 - In the Ukrainian course, every word of more than one syllable in an example, a table cell or a form an
   explanation discusses carries its stress, an acute accent (U+0301): *Я чита́ю кни́жку* (NO-09). Ukrainian titles
@@ -330,9 +330,10 @@ A course is defined through its index before any topic of it is written.
   of one of today's topics names it in `replaces` (IX-24).
 - Each topic in the index states its subject, what it covers and its planned levels, the keys of its `path`,
   before any text of it is written (IX-08).
-- A course's index lists the sources it was drawn from, each with its name, its licence and what the index took
-  from it (IX-09). It draws on at least two international, CEFR-aligned sources for its language (IX-10), and
-  takes topics and levels from them while its own sentences are worded independently (IX-11).
+- langs123 writes a course's index itself, from its writers' own knowledge of the language and the CEFR scale; the
+  index names no outside source, and no text, list, passage or data of a syllabus, coursebook, dictionary or word
+  list enters it (IX-09). IX-10 and IX-11 are retired with the outside sources: no count of sources and no source
+  passage to compare applies.
 - A topic that fills a practical cluster carries `practical: <cluster id>` in the index (IX-12). Each course's index holds a topic for each
   practical cluster: question words, words of place, of movement and of time, how often, how much, linking words,
   comparing, numbers in daily life, polite words, asking the way, small talk, and full reference tables (IX-13). A
@@ -374,11 +375,10 @@ and the design system draws the picture.
 
 ## 12. Writing a topic
 
-1. Read the topic's index entry: its subject, what it covers, its planned levels and its sources.
+1. Read the topic's index entry: its subject, what it covers and its planned levels.
 2. Write the topic in its source language: title, definition, essence, subtopics, common errors.
 3. Translate it into each other explanation language, sentence by sentence (§8), with each language's norms (§7).
-4. A Claude Code review session, apart from the writer's, checks the draft against this catalog and the sources
-   (§10).
+4. A Claude Code review session, apart from the writer's, checks the draft against this catalog (§10).
 
-A writer works from the requirements, these conventions, the rule catalog, the course's index and the sources it
-names. Today's topics, in `languages/`, stay unread while the new library is written.
+A writer works from the requirements, these conventions, the rule catalog and the course's index, and from its own
+knowledge of the language and the CEFR scale; no outside source enters the text (requirement 3.2). Today's topics, in `languages/`, stay unread while the new library is written.
