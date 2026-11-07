@@ -1,5 +1,6 @@
 // The elements of a topic each question's target names, by id: in its source file, or in one language file beside
-// it. A request counts the questions it asks from them, and a finding names one of them.
+// it. A request counts the questions it asks from them, and a finding names one of them. The entries of an index are
+// index-request.ts's.
 import type { TopicLanguageFile } from "../generated/library-v1.ts";
 import type { Topic } from "../v1/library.ts";
 import { idsIn } from "../v1/structure.ts";
@@ -44,6 +45,8 @@ function inSource(topic: Topic, target: Target): string[] {
     case "example translations":
     case "own blocks":
     case "entries":
+    case "practical entries":
+    case "new entries":
       return [];
   }
 }
@@ -80,6 +83,8 @@ function inLanguage(topic: Topic, file: TopicLanguageFile, target: Target): stri
     case "untagged blocks":
     case "course text":
     case "entries":
+    case "practical entries":
+    case "new entries":
     case "essence":
     case "examples":
     case "lists":

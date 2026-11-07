@@ -1,4 +1,4 @@
-// A review's record and report. Each run joins the topic's review record (RV-04): its session, the model that
+// A review's record and report, of a topic or of a course's index. Each run joins the review record (RV-04): its session, the model that
 // answered, the date, the run's number and its findings, each citing its rule (RV-06) for the writer to answer
 // (RV-07), but a finding on an element and rule the writer answered before, which is raised again with that answer
 // for the owner's reading; `flagged` takes the rules of the standing and disputed findings (RV-09). The report, one
@@ -63,7 +63,9 @@ const row = (f: Finding): string =>
   `| ${f.rule} | \`${f.at}\`: ${f.text} Fix: ${f.fix}${f.confidence === "low" ? " (low confidence)" : ""} |`;
 
 function section(r: RequestReview, record: TopicReviewRecord | undefined): string[] {
-  const name = `${r.request.language === undefined ? "the source" : `the ${r.request.language} file`}${r.request.only === undefined ? "" : `, ${r.request.only.join(" and ")} alone`}`;
+  const what =
+    r.request.kind === "index" ? "the index" : r.request.language === undefined ? "the source" : `the ${r.request.language} file`;
+  const name = `${what}${r.request.only === undefined ? "" : `, ${r.request.only.join(" and ")} alone`}`;
   const asked = Object.values(r.request.asked).reduce((a, b) => a + b, 0);
   const found = new Set([...r.standing, ...r.disputed].map((f) => f.rule));
   const holds = Object.keys(r.request.asked).filter((rule) => !found.has(rule));
@@ -86,6 +88,7 @@ function section(r: RequestReview, record: TopicReviewRecord | undefined): strin
     "|---|---|",
     ...fresh(r.standing).map(row),
     ...(holds.length > 0 ? [`| ${holds.join(", ")} | hold |`] : []),
+    ...(asked === 0 ? ["| — | nothing asked |"] : []),
     ...table("Disputed, reported by one run alone:", fresh(r.disputed).map(row)),
     ...table(
       "Raised again after the writer's answer, for the owner's reading:",

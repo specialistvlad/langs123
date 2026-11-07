@@ -35,6 +35,13 @@ test("readLibrary reads every course, topic and file of a root, and checkRoot fi
       data: { writer: { session: "w", model: "m" }, statuses: [{ status: "draft", date: "2026-10-28", by: "w" }] },
     };
   }
+  const course = library.courses[0];
+  if (course) {
+    course.review = {
+      file: "library/en/review.yaml",
+      data: { writer: { session: "w", model: "m" }, statuses: [{ status: "draft", date: "2026-10-28", by: "w" }] },
+    };
+  }
   const root = await write(library);
   await mkdir(join(root, "schema"));
   await mkdir(join(root, "ja"));
@@ -43,11 +50,13 @@ test("readLibrary reads every course, topic and file of a root, and checkRoot fi
   expect(read.courses.map((c) => [c.course, c.topics.map((t) => t.slug)])).toEqual([["en", ["letters"]]]);
   expect(read.courses[0]?.topics[0]?.languages.map((l) => l.file)).toEqual([named(root, "library/en/letters/uk.yaml")]);
   expect(read.courses[0]?.topics[0]?.review?.data).toEqual(topic?.review?.data);
+  expect(read.courses[0]?.review?.data).toEqual(course?.review?.data);
   expect(read.approvals?.data).toEqual(library.approvals.data);
   expect(read.concepts?.data).toEqual(library.concepts.data);
   const { library: checked, problems } = await checkRoot(root);
   expect(problems).toEqual([]);
   expect(checked.courses[0]?.topics[0]?.review?.data.writer.session).toBe("w");
+  expect(checked.courses[0]?.review?.data.writer.session).toBe("w");
   expect(checked.approvals?.data).toHaveLength(2);
 });
 

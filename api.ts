@@ -52,7 +52,7 @@ export {
 } from "./scripts/export.ts";
 // The version of the new library's export, of its JSON Schema and of this interface (9.8): 0.x until v1.
 export { EXPORT_VERSION as VERSION } from "./scripts/v1/export/library.ts";
-// The review of the new library's topics in Claude Code sessions, and the flagged queue its records make.
+// The review of the new library's topics and indexes in Claude Code sessions, and the flagged queue its records make.
 export { review, reviewQueue } from "./scripts/review/index.ts";
 export { claudeAttempt, runnerOf } from "./scripts/review/run.ts";
 // The similar-topic check (M6): the index entries of a course that stand close by a lexical TF-IDF cosine, the

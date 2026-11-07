@@ -29,6 +29,8 @@ export interface Course {
   course: string;
   dir: string;
   index?: Typed<CourseIndex>;
+  // The index's review record, review.yaml beside it.
+  review?: Typed<TopicReviewRecord>;
   topics: Topic[];
 }
 
@@ -64,7 +66,13 @@ export function typedLibrary(files: LibraryFiles): { library: Library; problems:
       const review = typed<TopicReviewRecord>("review", t.review);
       return source === undefined ? [] : [{ course: c.course, slug: t.slug, source, languages, ...given("review", review) }];
     });
-    return { course: c.course, dir: c.dir, ...given("index", typed<CourseIndex>("index", c.index)), topics };
+    return {
+      course: c.course,
+      dir: c.dir,
+      ...given("index", typed<CourseIndex>("index", c.index)),
+      ...given("review", typed<TopicReviewRecord>("review", c.review)),
+      topics,
+    };
   });
   const library: Library = {
     courses,

@@ -1,14 +1,17 @@
 // A topic's review (12.2 to 12.5): its source request and one request per language file, each run in its own
-// Claude Code session. The source request runs twice; a language request runs once, and again where the first run
-// finds something or a one-in-ten draw of the clean ones falls on it. Where two runs answer, a finding both report
-// stands and a finding one reports is disputed; a single run's findings stand. Every run is kept. Each question runs on
-// the model it was calibrated on (12.3): the rules of the policy's stronger model leave each request that asks them
-// for a request of their own on that model, and the rest run on the policy's model.
+// Claude Code session; and a course's index review, its index request. The source and the index requests run twice;
+// a language request runs once, and again where the first run finds something or a one-in-ten draw of the clean
+// ones falls on it; a request that asks nothing, its every question pending, runs no session. Where two runs answer,
+// a finding both report stands and a finding one reports is disputed; a single run's findings stand. Every run is
+// kept. Each question runs on the model it was calibrated on (12.3): the rules of the policy's stronger model leave
+// each request that asks them for a request of their own on that model, and the rest run on the policy's model.
 import { createHash } from "node:crypto";
 import type { Catalog } from "../rule-catalog.ts";
 import type { Course, Topic } from "../v1/library.ts";
+import type { Selection } from "./asking.ts";
+import { type Indexed, indexRequest, type TodayTopic } from "./index-request.ts";
 import type { RequestKind } from "./questions.ts";
-import { languageRequest, type Request, type Selection, sourceRequest } from "./request.ts";
+import { languageRequest, type Request, sourceRequest } from "./request.ts";
 import type { Finding, Runner, Session } from "./run.ts";
 
 export interface RequestReview {
@@ -19,6 +22,7 @@ export interface RequestReview {
 }
 
 export interface TopicReview {
+  // The topic's id, or the course's code for its index.
   topic: string;
   date: string;
   requests: RequestReview[];
@@ -66,9 +70,10 @@ export const modelOf = (request: Request, policy: Policy): string =>
   request.only !== undefined && policy.stronger !== undefined ? policy.stronger.model : policy.model;
 
 async function runRequest(request: Request, runner: Runner, policy: Policy): Promise<RequestReview> {
+  if (Object.keys(request.asked).length === 0) return { request, runs: [], standing: [], disputed: [] };
   const model = modelOf(request, policy);
   const first = await runner(request, model);
-  const again = request.kind === "source" || first.findings.length > 0 || drawn(request.topic, request.language ?? "", policy.date);
+  const again = request.kind !== "language" || first.findings.length > 0 || drawn(request.topic, request.language ?? "", policy.date);
   const runs = again ? [first, await runner(request, model)] : [first];
   return { request, runs, ...verdicts(runs) };
 }
@@ -87,27 +92,41 @@ async function pooled<T>(tasks: (() => Promise<T>)[], n: number): Promise<T[]> {
   return results;
 }
 
-// A topic's requests: its source's and each language file's, each asking the stronger rules in a request of their own.
-export function requestsOf(topic: Topic, course: Course, catalog: Catalog, stronger: string[] = []): Request[] {
-  const makers: ((s?: Selection) => Request)[] = [
-    (s) => sourceRequest(topic, course, catalog, s),
-    ...topic.languages.map((l) => (s?: Selection) => languageRequest(topic, course, l.data, catalog, s)),
-  ];
-  return makers.flatMap((make) => {
+// Each request as its maker gives it, the stronger rules it asks leaving it for a request of their own.
+const split = (makers: ((s?: Selection) => Request)[], stronger: string[]): Request[] =>
+  makers.flatMap((make) => {
     const whole = make();
     const own = stronger.filter((r) => whole.asked[r] !== undefined);
     return own.length === 0 ? [whole] : [make({ except: own }), make({ only: own })];
   });
-}
 
-export async function reviewTopic(topic: Topic, course: Course, catalog: Catalog, runner: Runner, policy: Policy): Promise<TopicReview> {
-  const requests = requestsOf(topic, course, catalog, policy.stronger?.rules)
-    .filter((r) => policy.kinds?.includes(r.kind) ?? true)
-    .map((r) => () => runRequest(r, runner, policy));
+// A topic's requests: its source's and each language file's.
+export const requestsOf = (topic: Topic, course: Course, catalog: Catalog, stronger: string[] = []): Request[] =>
+  split(
+    [
+      (s) => sourceRequest(topic, course, catalog, s),
+      ...topic.languages.map((l) => (s?: Selection) => languageRequest(topic, course, l.data, catalog, s)),
+    ],
+    stronger,
+  );
+
+// A course's index request.
+export const indexRequestsOf = (course: Indexed, catalog: Catalog, today: TodayTopic[], stronger: string[] = []): Request[] =>
+  split([(s) => indexRequest(course, catalog, today, s)], stronger);
+
+async function run(topic: string, requests: Request[], runner: Runner, policy: Policy): Promise<TopicReview> {
+  const tasks = requests.filter((r) => policy.kinds?.includes(r.kind) ?? true).map((r) => () => runRequest(r, runner, policy));
   return {
-    topic: topic.source.data.id,
+    topic,
     date: policy.date,
-    requests: await pooled(requests, policy.sessions ?? 4),
+    requests: await pooled(tasks, policy.sessions ?? 4),
     ...(policy.kinds !== undefined && { partial: true as const }),
   };
 }
+
+export const reviewTopic = (topic: Topic, course: Course, catalog: Catalog, runner: Runner, policy: Policy): Promise<TopicReview> =>
+  run(topic.source.data.id, requestsOf(topic, course, catalog, policy.stronger?.rules), runner, policy);
+
+// A course's index review, in a topic review's shape with the course's code as its topic.
+export const reviewIndex = (course: Indexed, catalog: Catalog, today: TodayTopic[], runner: Runner, policy: Policy): Promise<TopicReview> =>
+  run(course.course, indexRequestsOf(course, catalog, today, policy.stronger?.rules), runner, policy);

@@ -123,7 +123,7 @@ export async function write(library: LibraryFiles): Promise<string> {
   const all = [
     library.approvals,
     library.concepts,
-    ...library.courses.flatMap((c) => [c.index, ...c.topics.flatMap((t) => [t.source, t.review, ...t.languages])]),
+    ...library.courses.flatMap((c) => [c.index, c.review, ...c.topics.flatMap((t) => [t.source, t.review, ...t.languages])]),
   ];
   for (const f of all) {
     if (f === undefined) continue;

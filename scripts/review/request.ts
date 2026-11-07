@@ -1,18 +1,20 @@
 // A review request: one Claude Code session's task (12.2). The source request asks every question of a topic's source
-// file; a language request asks those of one language file beside its source. Each carries the review's instructions
-// as its system prompt, and as its prompt the context the questions name, the questions with what each is asked of,
-// and the text as the files hold it. The session answers with its findings alone, in the schema below; the request
-// knows how many questions it asks, so the rules that hold need no answer. A selection narrows the rules a request asks:
-// all but some, or some alone, which then run as a request of their own.
+// file; a language request asks those of one language file beside its source; the index request (index-request.ts)
+// those of a course's index. Each carries the review's instructions as its system prompt, and as its prompt the
+// context the questions name, the questions with what each is asked of (asking.ts), and the text as the files hold
+// it. The session answers with its findings alone, in the schema below; the request knows how many questions it asks,
+// so the rules that hold need no answer.
 import type { TopicLanguageFile } from "../generated/library-v1.ts";
 import type { Catalog } from "../rule-catalog.ts";
 import type { Course, Topic } from "../v1/library.ts";
 import { toYaml } from "../v1/yaml.ts";
-import { type Question, questionsOf, type RequestKind } from "./questions.ts";
+import { asking, holds, type Selection, selected } from "./asking.ts";
+import { questionsOf, type RequestKind } from "./questions.ts";
 import { targetIds } from "./targets.ts";
 
 export interface Request {
   kind: RequestKind;
+  // The topic's id, or the course's code for its index.
   topic: string;
   // The language file a language request reads.
   language?: string;
@@ -25,13 +27,6 @@ export interface Request {
   // The rules a request of its own asks alone.
   only?: string[];
 }
-
-export interface Selection {
-  only?: string[];
-  except?: string[];
-}
-
-const selected = (q: Question, s: Selection): boolean => (s.only?.includes(q.rule) ?? true) && s.except?.includes(q.rule) !== true;
 
 export const ANSWER_SCHEMA = {
   type: "object",
@@ -56,59 +51,22 @@ export const ANSWER_SCHEMA = {
   },
 };
 
-export const INSTRUCTIONS = [
-  "You review one topic of a language library against the rules of its catalog. Each question below is a yes-or-no question, asked of every element its line names, by id.",
-  "Answer each question for each element. Report only the elements whose answer is no, or yes where the question says a yes makes a finding, each as a finding: the rule's id, the id of the element (`at`), what breaks the rule, in one or two sentences, and the fix, written as the text should read.",
-  "A question names its context in braces: {title} is the topic's title; {level} the level of the element's subtopic; {line} the essence line whose `to` names the element's subtopic; {fact} the fact block before the element; {source} the source sentence of the same id; {language} the language the element is written in, or whose speakers a reason concerns; {variety} the course's default variety, or the element's own; the other names are given in the context.",
-  "The text writes inline marks as {mark content} or {mark attribute content}: target, term, ipa, variant, l1, kanji, romaji, translit and the value marks. Keep them in your fixes.",
-  "Give confidence low where the answer turns on a judgment of style or of a usage that varies, and high elsewhere. Reply through the schema alone.",
-].join("\n\n");
+// The review's instructions, a session's system prompt: what it reviews, what each question is asked of, and what
+// the questions' braces name.
+export const instructions = (reviewed: string, elements: string, braces: string): string =>
+  [
+    `You review ${reviewed} against the rules of its catalog. Each question below is a yes-or-no question, asked of ${elements}, by id.`,
+    "Answer each question for each element. Report only the elements whose answer is no, or yes where the question says a yes makes a finding, each as a finding: the rule's id, the id of the element (`at`), what breaks the rule, in one or two sentences, and the fix, written as the text should read.",
+    `A question names its context in braces: ${braces}`,
+    "The text writes inline marks as {mark content} or {mark attribute content}: target, term, ipa, variant, l1, kanji, romaji, translit and the value marks. Keep them in your fixes.",
+    "Give confidence low where the answer turns on a judgment of style or of a usage that varies, and high elsewhere. Reply through the schema alone.",
+  ].join("\n\n");
 
-// What a target names, where its ids are too many to list.
-const DESCRIBED: Record<Question["target"], string> = {
-  definition: "the definition",
-  opening: "the title, the definition and each essence line",
-  explanations: "every sentence of explanation",
-  sentences: "every sentence",
-  examples: "every example",
-  "course text": "every example, cell and form",
-  essence: "the essence",
-  blocks: "every block",
-  facts: "every fact block",
-  whys: "every why block",
-  lists: "every list block",
-  errors: "every error",
-  reasons: "every reason of an error's speakers",
-  translations: "every translated sentence, beside its source sentence",
-  "example translations": "every translated example, beside its source example",
-  "own blocks": "every block of the file's own",
-  "untagged blocks": "every block that carries no variety",
-  entries: "every entry of the index",
-};
-
-function questions(qs: Question[], ids: (q: Question) => string[]): { lines: string[]; asked: Record<string, number>; pending: string[] } {
-  const asked: Record<string, number> = {};
-  const lines: string[] = [];
-  const pending: string[] = [];
-  for (const q of qs) {
-    if (q.pending !== undefined) {
-      pending.push(q.rule);
-      continue;
-    }
-    const of = ids(q);
-    if (of.length === 0) continue;
-    asked[q.rule] = of.length;
-    const fails = q.fails === undefined ? "" : ` A finding is a yes answer, where ${q.fails.when}.`;
-    lines.push(
-      `- ${q.rule} [${q.subject}], asked of ${of.length > 6 ? `${DESCRIBED[q.target]} (${of.length})` : of.join(", ")}: ${q.text}${fails}`,
-    );
-  }
-  return { lines, asked, pending };
-}
-
-// Whether a question holds for a text in these languages of this course, as its catalog lines say.
-const holds = (q: Question, course: string, languages: string[]): boolean =>
-  (q.scope.courses?.includes(course) ?? true) && (q.scope.languages?.some((l) => languages.includes(l.split("-")[0] ?? "")) ?? true);
+export const INSTRUCTIONS = instructions(
+  "one topic of a language library",
+  "every element its line names",
+  "{title} is the topic's title; {level} the level of the element's subtopic; {line} the essence line whose `to` names the element's subtopic; {fact} the fact block before the element; {source} the source sentence of the same id; {language} the language the element is written in, or whose speakers a reason concerns; {variety} the course's default variety, or the element's own; the other names are given in the context.",
+);
 
 function context(topic: Topic, course: Course): string[] {
   const titles = course.topics.filter((t) => t !== topic).map((t) => t.source.data.title.text);
@@ -121,7 +79,7 @@ function context(topic: Topic, course: Course): string[] {
 
 export function sourceRequest(topic: Topic, course: Course, catalog: Catalog, selection: Selection = {}): Request {
   const source = course.index?.data.source ?? course.course;
-  const asked = questions(
+  const asked = asking(
     questionsOf(catalog, "source").filter((q) => holds(q, course.course, [course.course, source]) && selected(q, selection)),
     (q) => targetIds(topic, q.target),
   );
@@ -158,7 +116,7 @@ export function languageRequest(
   catalog: Catalog,
   selection: Selection = {},
 ): Request {
-  const asked = questions(
+  const asked = asking(
     questionsOf(catalog, "language").filter((q) => holds(q, course.course, [file.language, course.course]) && selected(q, selection)),
     (q) => targetIds(topic, q.target, file),
   );

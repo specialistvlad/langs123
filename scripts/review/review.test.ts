@@ -69,9 +69,20 @@ test("each target names its elements in the source, and in a language file besid
   expect(targetIds(topic, "errors", { ...uk, errors: [ownError] })).toEqual(["uk.err.1"]);
   expect(targetIds(topic, "reasons", { ...uk, errors: [ownError] })).toEqual(["err.a.uk", "err.s.ja", "uk.err.1.uk"]);
   expect(targetIds(topic, "opening", uk)).toEqual(["title", "def"]);
-  for (const t of ["lists", "blocks", "untagged blocks", "course text", "entries", "essence", "examples"] as const) {
+  for (const t of [
+    "lists",
+    "blocks",
+    "untagged blocks",
+    "course text",
+    "entries",
+    "practical entries",
+    "new entries",
+    "essence",
+    "examples",
+  ] as const) {
     expect(targetIds(topic, t, uk)).toEqual([]);
   }
+  for (const t of ["entries", "practical entries", "new entries"] as const) expect(targetIds(topic, t)).toEqual([]);
 });
 
 test("a source request asks its questions where they hold, counts them, and lists the pending ones", () => {

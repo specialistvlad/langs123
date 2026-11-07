@@ -1,5 +1,5 @@
-// Reads a root of the new library (library/, or library/samples/) from disk: each course's index, each topic's
-// source, language files and review record, the approvals and the concept registry, each file parsed and named by
+// Reads a root of the new library (library/, or library/samples/) from disk: each course's index and the record of
+// its review, each topic's source, language files and review record, the approvals and the concept registry, each file parsed and named by
 // its path from core's root. A folder of the root is a course when it holds an index.yaml or a topic folder;
 // schema/, samples/, words/, needs/, calibration/ and review/ hold the library's other data.
 import { readdir } from "node:fs/promises";
@@ -24,6 +24,8 @@ export interface CourseFiles {
   course: string;
   dir: string;
   index?: DataFile;
+  // The index's review record, review.yaml beside it.
+  review?: DataFile;
   topics: TopicFiles[];
 }
 
@@ -82,8 +84,15 @@ export async function readLibrary(root: string): Promise<LibraryFiles> {
     const dir = join(root, course);
     const topics = await Promise.all((await folders(dir)).map((slug) => topic(join(dir, slug), slug)));
     const index = await read(join(dir, "index.yaml"));
+    const review = await read(join(dir, "review.yaml"));
     if (index === undefined && topics.length === 0) continue;
-    courses.push({ course, dir: relative(ROOT, dir), ...(index !== undefined && { index }), topics });
+    courses.push({
+      course,
+      dir: relative(ROOT, dir),
+      ...(index !== undefined && { index }),
+      ...(review !== undefined && { review }),
+      topics,
+    });
   }
   const approvals = await read(join(root, "approvals.yaml"));
   const concepts = await read(join(root, "concepts.yaml"));
