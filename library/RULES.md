@@ -197,10 +197,10 @@ Source: §5 Topic structure (Sections teach)
 
 ### SH-19 A why helps a learner remember
 Requirements: 2.5
-Rule: A why block gives the reason that makes the fact easy to remember, such as how the form is built or what it literally means.
+Rule: A why block gives the reason that makes the fact easy to remember: how the form is built, what it literally means, where it comes from, or what tells it apart from its neighbour.
 Not this: (written case) A reason that restates the rule in other words, such as a why block saying a form is used because it is the form for that use.
 Check: question
-Question: [block] Given the fact block it follows {fact}: Yes or no: does this why block say how the form is built or what it literally means?
+Question: [block] Given the fact block it follows {fact}: Yes or no: does this why block give a reason a learner remembers the fact by — how the form is built, what it literally means, where it comes from (a history of the form among them), or what tells it apart from its neighbour — rather than a remark that explains nothing about the fact?
 Source: §5 Topic structure (Sections teach)
 
 ### SH-20 A why is neutral
