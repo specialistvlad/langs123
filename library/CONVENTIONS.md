@@ -80,8 +80,9 @@ The title is the name of the subject, in one phrase of at most six words, or at 
 
 - A reason stands in a why block after the example, and the fact is stated in its own block (SH-17).
 - A subtopic holds at most one why block (SH-18).
-- A why block gives the reason that makes the fact easy to remember, such as how the form is built or what it
-  literally means (SH-19), and states it in a neutral voice; the facts carry the topic (SH-20).
+- A why block gives the reason that makes the fact easy to remember: how the form is built, what it literally means,
+  where it comes from, or what tells it apart from its neighbour (SH-19). It states the reason in a neutral voice; the
+  facts carry the topic (SH-20).
 
 > *B*, *D*, *P* and *T* stand for sounds that stop at once. Their names put the vowel after them: /biː/, /diː/,
 > /piː/, /tiː/.
