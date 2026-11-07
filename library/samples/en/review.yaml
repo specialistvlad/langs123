@@ -1,0 +1,29 @@
+writer: { session: langs123-content, model: claude-opus-5-5 }
+statuses:
+  - { status: draft, date: "2026-11-07", by: langs123-content }
+reviews:
+  - session: df5e1f8e-1ff6-469e-a7da-3f30f563573b
+    model: claude-sonnet-5-5
+    date: "2026-11-07"
+    run: 1
+    findings:
+      - id: f1
+        at: words-of-place
+        rule: IX-15
+        text: The covers are grouped by spatial relation (front/behind, above/below, inside/outside) and by loose lists such as 'In, on, under'. They do not group words by contrasts English itself makes, such as in/on/at, above/over, under/below, next to/beside/near. 'Underneath' and 'Beneath' are listed alone, though they are close synonyms of 'under'.
+        fix: "Regroup covers around English's own contrasts, for example: In, on, at; Above, over, below, under; Under, underneath, beneath; Next to, beside, near, by; Between, among; In front of, behind, opposite; Inside, outside."
+        answer: declined
+        reason: "The entry lists the sample topic's parts as the owner read them in M1, and each pair is a contrast English itself draws: in front of and behind, next to and near (touching or close), above and below, inside and outside, with under, underneath and beneath as three words requirement 3.3 names apart and the topic tells apart (covered, formal). At, over and among lie outside the sample's set; the English course's own words-of-place entry in the M6 index groups the full set (in, on, at; over, above; under, below, beneath, underneath; by, next to, beside, near; between, among)."
+  - session: d8488b06-1f70-4b4c-b71d-546db1ad9961
+    model: claude-sonnet-5-5
+    date: "2026-11-07"
+    run: 2
+    findings:
+      - id: f2
+        at: words-of-place
+        rule: IX-15
+        text: The covers list arranges the words by spatial position (pairs of opposites such as above/below and inside/outside, plus single words). It does not group them by distinctions English itself makes, such as in/on/at, above/over, under/below/beneath, or between/among. Underneath and Beneath stand alone as near-synonyms of under with no contrast drawn.
+        fix: "Regroup the covers by English contrasts: In, on, at; Under, below, underneath, beneath; Above and over; Next to, beside, near; Between and among; In front of, behind, opposite; Inside and outside."
+        answer: declined
+        reason: "The entry lists the sample topic's parts as the owner read them in M1, and each pair is a contrast English itself draws: in front of and behind, next to and near (touching or close), above and below, inside and outside, with under, underneath and beneath as three words requirement 3.3 names apart and the topic tells apart (covered, formal). At, over and among lie outside the sample's set; the English course's own words-of-place entry in the M6 index groups the full set (in, on, at; over, above; under, below, beneath, underneath; by, next to, beside, near; between, among)."
+flagged: [IX-15]
