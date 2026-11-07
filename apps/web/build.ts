@@ -66,10 +66,12 @@ async function readReview(o: BuildOptions): Promise<ReviewEntry[]> {
   return reviewEntries(library, problems, queueOf(library));
 }
 
-// The export as the build writes it beside the pages, by path.
+// The export as the build writes it beside the pages, by path: the library, each course's file, and each topic's layer file
+// per language (7.4), which a page loads on top of its own.
 const v1Data = (v1: LibraryV1): [string, string][] => [
   [`${V1_DATA}/library.json`, JSON.stringify(v1.library)],
   ...v1.courses.map((c): [string, string] => [`${V1_DATA}/${c.course}.json`, JSON.stringify(c)]),
+  ...v1.layers.map((l): [string, string] => [`${V1_DATA}/${l.path}`, JSON.stringify(l.data)]),
 ];
 
 // Builds the site into o.outDir and returns the facts of every page it holds.

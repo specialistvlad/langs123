@@ -31,7 +31,7 @@ export class Reading {
     // written in them or not.
     readonly speakers: readonly string[] = languages,
   ) {
-    this.ctx = { variety };
+    this.ctx = { variety, name: (code) => words.variety(code) };
   }
   // What a reviewer's page sets under an element, by the id the reading draws it with (pages/review.ts); nothing elsewhere.
   pin: (id: string) => string = () => "";
@@ -66,14 +66,15 @@ export class Reading {
   }
   // A block that serves one variety wears its name.
   wear(variety: string | undefined, html: string): string {
-    return variety === undefined ? html : `<div class="rd-tag-row">${tag(varietyLabel(variety))}${html}</div>`;
+    return variety === undefined ? html : `<div class="rd-tag-row">${tag(varietyLabel(variety, this.ctx))}${html}</div>`;
   }
-  // A layer's line under a block: the language's code on a capsule and its text.
-  layer(language: string, text: string): string {
-    return text === "" ? "" : `<span class="rd-lang" lang="${language}">${tag(language.toUpperCase())}<span>${this.m(text)}</span></span>`;
+  // A layer's line under a block: the language's code on a capsule and its text; a translation's line wears the classes of
+  // one (lx-tr rd-trl), and an essence row's gloss draws its marks still.
+  layer(language: string, text: string, cls = "rd-lang", mark: (text: string) => string = (t) => this.m(t)): string {
+    return text === "" ? "" : `<span class="${cls}" lang="${language}">${tag(language.toUpperCase())}<span>${mark(text)}</span></span>`;
   }
   // The layers' lines of a map, in the reader's order.
-  layers(text: (language: string) => string): string {
-    return this.others.map((l) => this.layer(l, text(l))).join("");
+  layers(text: (language: string) => string, cls = "rd-lang", mark?: (text: string) => string): string {
+    return this.others.map((l) => this.layer(l, text(l), cls, mark)).join("");
   }
 }

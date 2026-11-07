@@ -42,6 +42,8 @@ export interface ReadingData {
   varieties: string[];
   text: Record<string, Record<string, string>>;
   names: Record<string, Record<string, string>>;
+  // The varieties' names by code, in every interface language.
+  varietyNames: Record<string, Record<string, string>>;
 }
 
 export const readingUrl = (explain: Explain, track: Pick<Track, "lang">, topic: Pick<Topic, "slug">): string =>
@@ -76,6 +78,7 @@ export function readingPages(track: Track, v1: LibraryV1): void {
       varieties,
       text: Object.fromEntries(READING_KEYS.map((k) => [k, words.text[k] ?? {}])),
       names: words.names,
+      varietyNames: words.varieties,
     };
     const json = JSON.stringify(data).replace(/</g, "\\u003c");
     const back = `<a class="ix-up glass tp-back tp-back-c" href="${trackUrl(explain, lang)}" aria-label="${escapeHtml(track.title)}">${BACK}</a>`;

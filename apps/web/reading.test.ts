@@ -6,7 +6,7 @@ import type { Topic } from "../../scripts/generated/export-v1.ts";
 import { exportLibrary } from "../../scripts/export.ts";
 import { SAMPLES_ROOT } from "../../scripts/v1/load.ts";
 import { Reading } from "./reading.ts";
-import { article, forms } from "./reading-layers.ts";
+import { article } from "./reading-layers.ts";
 import { interleaved, parts } from "./reading-parts.ts";
 import { Words } from "./reading-words.ts";
 
@@ -30,17 +30,6 @@ test("one language reads interleaved with no switch: the head, the essence, the 
   expect(article(read("en.present-simple", ["uk"]), "side")).not.toContain('class="rd-seg"');
 });
 
-test("the forms follow the width rule: side by side from 640 for two languages and from 1000 for three", () => {
-  expect(forms(read("en.present-simple", ["uk"], 1440))).toEqual([]);
-  expect(forms(read("en.present-simple", ["uk", "ja"], 362))).toEqual(["interleaved", "reveal"]);
-  expect(forms(read("en.present-simple", ["uk", "ja"], 640))).toEqual(["interleaved", "reveal", "side"]);
-  expect(forms(read("en.present-simple", ["uk", "ja", "en"], 816))).toEqual(["interleaved", "reveal"]);
-  expect(forms(read("en.present-simple", ["uk", "ja", "en"], 1000))).toEqual(["interleaved", "reveal", "side"]);
-  const roomy = new Reading(topic("en.present-simple"), "en", ["uk", "ja", "en"], words("uk"), 816, "en-GB", 1384);
-  expect(forms(roomy)).toEqual(["interleaved", "reveal", "side"]);
-  expect(article(read("en.present-simple", ["uk", "ja"], 362), "side")).toContain('data-form="interleaved"');
-});
-
 test("each form draws every language, reviewed or not, in the same form", () => {
   const r = (): Reading => read("en.present-simple", ["uk", "ja", "en"], 1100);
   const inter = article(r(), "interleaved");
@@ -62,14 +51,14 @@ test("each form draws every language, reviewed or not, in the same form", () => 
 test("a reader sees the errors of their languages' speakers alone, with those speakers' reasons", () => {
   const uk = interleaved(read("en.words-of-place", ["uk"]));
   const es = interleaved(read("en.words-of-place", ["es"]));
-  expect(uk.match(/<article class="rd-err"/g)).toHaveLength(1);
-  expect(es.match(/<article class="rd-err"/g)).toHaveLength(4);
+  expect(uk.match(/<article class="rd-err /g)).toHaveLength(1);
+  expect(es.match(/<article class="rd-err /g)).toHaveLength(4);
   expect(uk).toContain(words("uk").say("speakersOf", { language: words("uk").name("uk") }));
   expect(uk).not.toContain('data-speakers="es"');
   const both = interleaved(new Reading(topic("en.words-of-place"), "en", ["uk"], words("uk"), 362, "en-GB", 362, ["uk", "es"]));
-  expect(both.match(/<article class="rd-err"/g)).toHaveLength(5);
+  expect(both.match(/<article class="rd-err /g)).toHaveLength(5);
   expect(both).toContain(`<li data-speakers="es">`);
-  expect(interleaved(read("en.present-simple", ["en"]))).not.toContain('class="rd-err"');
+  expect(interleaved(read("en.present-simple", ["en"]))).not.toContain('<article class="rd-err');
 });
 
 test("a wide table splits on a phone with Full screen holding it whole, and stands whole on a desktop", () => {

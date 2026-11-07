@@ -33,7 +33,7 @@ function start(): void {
   if (host === null || raw === undefined) return;
   const data = JSON.parse(raw) as ReadingData;
   const root = document.documentElement;
-  const words = new Words(data.text, data.names, data.language);
+  const words = new Words(data.text, data.names, data.language, data.varietyNames);
   const languages = readerLanguages(data.language, store.get(LANGS_KEY), Object.keys(data.topic.title.text));
   const speakers = readerSpeakers(data.language, store.get(LANGS_KEY));
   let width = 0;

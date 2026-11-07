@@ -17,6 +17,7 @@ export interface ReviewData {
   entry: ReviewEntry;
   text: Record<string, Record<string, string>>;
   names: Record<string, Record<string, string>>;
+  varietyNames?: Record<string, Record<string, string>>;
 }
 
 // A topic's languages in the export's order.
@@ -43,7 +44,7 @@ export function summary(entry: ReviewEntry): string {
 export const titleIn = (data: ReviewData, language: string): string =>
   plain(
     parseMarks(
-      new Reading(data.topic, data.source, [language], new Words(data.text, data.names, language), COLUMN, "all").say(
+      new Reading(data.topic, data.source, [language], new Words(data.text, data.names, language, data.varietyNames), COLUMN, "all").say(
         data.topic.title.id,
         data.topic.title.text,
       ),
@@ -53,7 +54,7 @@ export const titleIn = (data: ReviewData, language: string): string =>
 
 // A draft read in a language: the switch, the reading with each shown finding pinned under its element, and the rest.
 export function draft(data: ReviewData, language: string): string {
-  const words = new Words(data.text, data.names, language);
+  const words = new Words(data.text, data.names, language, data.varietyNames);
   const r = new Reading(data.topic, data.source, [language], words, COLUMN, data.varieties[0] ?? "all");
   const findings = shown(data.entry.findings, language);
   const { pin, drawn } = pinsOf(data.topic, findings);

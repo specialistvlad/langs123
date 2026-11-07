@@ -11,11 +11,13 @@ export interface Ctx {
   fix?: boolean;
   // A variant shows the chosen form as text with no tap, inside an essence row, which is one tap target.
   still?: boolean;
+  // A variety's name in the reader's language (the interface's `varieties`), where the reading has the wording.
+  name?: (code: string) => string | undefined;
 }
 
-// The short names of the varieties, on a capsule.
+// The short names of the varieties, on a capsule, where no wording names them.
 export const VARIETIES: Record<string, string> = { "en-GB": "GB", "en-US": "US", "es-419": "Latin America", "es-ES": "Spain" };
-export const varietyLabel = (code: string): string => VARIETIES[code] ?? code;
+export const varietyLabel = (code: string, ctx?: Ctx): string => ctx?.name?.(code) ?? VARIETIES[code] ?? code;
 
 export const esc = (text: string): string =>
   text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -119,11 +121,11 @@ function render(nodes: Node[], ctx: Ctx, inIpa = false): string {
         case "ipa":
           return n.kids.some((k) => typeof k !== "string" && k.mark === "variant") ? inner(true) : ipa(inner(true));
         case "variant": {
-          if (ctx.variety === "all") return `<span class="rd-vr">${tag(varietyLabel(arg))}${inIpa ? ipa(inner()) : inner()}</span>`;
+          if (ctx.variety === "all") return `<span class="rd-vr">${tag(varietyLabel(arg, ctx))}${inIpa ? ipa(inner()) : inner()}</span>`;
           if (arg !== ctx.variety) return DROP;
           const form = inIpa ? ipa(inner()) : inner();
           if (ctx.still === true) return form;
-          return `<button type="button" class="rd-var" data-variety="${esc(arg)}" aria-label="${esc(plain(n.kids, ctx))}, ${esc(varietyLabel(arg))}">${form}</button>`;
+          return `<button type="button" class="rd-var" data-variety="${esc(arg)}" aria-label="${esc(plain(n.kids, ctx))}, ${esc(varietyLabel(arg, ctx))}">${form}</button>`;
         }
         case "l1": {
           const [open, close] = l1Quotes.languages[arg] ?? l1Quotes.fallback;

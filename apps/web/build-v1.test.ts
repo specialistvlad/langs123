@@ -1,5 +1,6 @@
 // The build reads the library it is given: with "v1" it writes today's pages as they are and, beside them in data/v1/,
-// the new library's export of the fixture library, its approved topics alone, and every draft too in dev (RV-03).
+// the new library's export of the fixture library, its approved topics alone, and every draft too in dev (RV-03), with one
+// layer file per topic and language beside the course file (7.4).
 import { afterAll, expect, test } from "bun:test";
 import { rm } from "node:fs/promises";
 import { join } from "node:path";
@@ -63,6 +64,12 @@ test("the export holds the approved topics alone, and in dev every draft too (RV
   expect(library.courses.map((c) => c.code)).toEqual(["en"]);
   expect((await json<CourseFile>(V1_DIR, "en.json")).topics).toEqual([]);
   expect((await json<CourseFile>(DEV_DIR, "en.json")).topics.map((t) => t.slug)).toEqual([topic.slug]);
+  // One layer file per topic and language beside the course file, for the drafts in dev and none for the approved set here.
+  const layers = (dir: string): Promise<string[]> => list(dir).then((all) => all.filter((f) => f.startsWith(`${V1_DATA}/en/`)));
+  expect(await layers(V1_DIR)).toEqual([]);
+  expect(await layers(DEV_DIR)).toEqual([`${V1_DATA}/en/${topic.slug}.en.json`, `${V1_DATA}/en/${topic.slug}.uk.json`]);
+  const layer = await json<{ version: string; language: string; topic: string }>(DEV_DIR, `en/${topic.slug}.uk.json`);
+  expect([layer.language, layer.topic]).toEqual(["uk", topic.slug]);
 });
 
 test("a command line names its library with --library, and today's without it", () => {

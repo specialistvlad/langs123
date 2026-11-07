@@ -43,6 +43,7 @@ export function reviewPages(ctx: Context, v1: LibraryV1, entries: readonly Revie
     entry,
     text: Object.fromEntries(READING_KEYS.map((k) => [k, words.text[k] ?? {}])),
     names: words.names,
+    varietyNames: words.varieties,
   });
   // Each row titled in the language the owner reads first, else the course's own.
   const rowOf = (e: ReviewEntry): string => {

@@ -10,15 +10,17 @@ export class Words {
     readonly text: Text,
     readonly names: Text,
     readonly language: string,
+    // The varieties' names by code (the interface's `varieties`: "Британія", "Латинська Америка").
+    readonly varieties: Text = {},
   ) {}
   static of(library: Pick<LibraryFile, "interface" | "site">, language: string): Words {
-    const { text } = library.interface as { text: Text };
+    const { text, varieties } = library.interface as { text: Text; varieties?: Text };
     const { explain } = library.site as { explain: { code: string; name: Record<string, string> }[] };
-    return new Words(text, Object.fromEntries(explain.map((e) => [e.code, e.name])), language);
+    return new Words(text, Object.fromEntries(explain.map((e) => [e.code, e.name])), language, varieties ?? {});
   }
   // The same wording in another language.
   in(language: string): Words {
-    return new Words(this.text, this.names, language);
+    return new Words(this.text, this.names, language, this.varieties);
   }
   // A key's wording; `{n}`, `{language}` and `{language:lower}` take their values from the call.
   say(key: string, values: Record<string, string> = {}): string {
@@ -33,6 +35,10 @@ export class Words {
   name(code: string): string {
     return this.names[code]?.[this.language] ?? this.names[code]?.["en"] ?? code;
   }
+  // A variety's name in this language, English where it lacks one, nothing where the wording has no such variety.
+  variety(code: string): string | undefined {
+    return this.varieties[code]?.[this.language] ?? this.varieties[code]?.["en"];
+  }
 }
 
 const svg = (w: number, h: number, box: string, weight: string, body: string): string =>
@@ -43,7 +49,11 @@ export const SVG_TICK = svg(18, 18, "0 0 24 24", "2.6", '<path d="M4.5 12.5l5 5 
 export const SVG_X = svg(18, 18, "0 0 24 24", "2.6", '<path d="M6 6l12 12M18 6L6 18"></path>');
 export const SVG_FULL = svg(16, 16, "0 0 24 24", "2", '<path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>');
 
-const LEVELS = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"];
+export const LEVELS = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"];
+
+// The level pill: a level's code alone on the level's colour, in the essence rows of a topic whose subtopics span levels.
+export const pill = (level: string, words: Words): string =>
+  `<span class="lx-pill lx-pill-${level}" aria-label="${esc(`${words.say("level")} ${level}`)}">${level}</span>`;
 
 // The level mark: seven bars, those of the levels on, and the range in words.
 export function ladder(levels: readonly string[], words: Words, small = false): string {
