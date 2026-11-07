@@ -12,7 +12,8 @@
 // `for` lists the explanation languages an element serves. Every leaf keeps its level; readers derive the
 // ranges of blocks, sections and topics from the leaves, as levels.ts does.
 // With --library v1, it writes the new library's export (scripts/v1/export/library.ts) into build/data/v1/:
-// library.json and one file per course, described by library/schema/export.schema.json.
+// library.json, one file per course and one layer file per topic and language, described by
+// library/schema/export.schema.json.
 // Run: npm run export; npm run export -- --design <name> carries that design's level colours (tokens.ts);
 //      npm run export -- --library v1 [root] [--drafts] [--design <name>], the design's colours and type styles too
 import { mkdir } from "node:fs/promises";
@@ -50,8 +51,12 @@ if (import.meta.main && at >= 0 && args[at + 1] === "v1") {
   await mkdir(LIBRARY_V1_DIR, { recursive: true });
   await Bun.write(join(LIBRARY_V1_DIR, "library.json"), JSON.stringify(v1.library));
   for (const course of v1.courses) await Bun.write(join(LIBRARY_V1_DIR, `${course.course}.json`), JSON.stringify(course));
+  for (const layer of v1.layers) {
+    await mkdir(dirname(join(LIBRARY_V1_DIR, layer.path)), { recursive: true });
+    await Bun.write(join(LIBRARY_V1_DIR, layer.path), JSON.stringify(layer.data));
+  }
   console.log(
-    `build/data/v1: library.json and ${v1.courses.length} course files, ${v1.courses.reduce((n, c) => n + c.topics.length, 0)} topics`,
+    `build/data/v1: library.json, ${v1.courses.length} course files, ${v1.courses.reduce((n, c) => n + c.topics.length, 0)} topics, ${v1.layers.length} layer files`,
   );
 } else if (import.meta.main) {
   const library = await exportLibrary(undefined, designArg(process.argv.slice(2)));

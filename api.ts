@@ -51,7 +51,11 @@ export {
   type V1Options,
 } from "./scripts/export.ts";
 // The version of the new library's export, of its JSON Schema and of this interface (9.8): 0.x until v1.
-export { EXPORT_VERSION as VERSION } from "./scripts/v1/export/library.ts";
+export { EXPORT_VERSION as VERSION } from "./scripts/v1/export/version.ts";
+// The export's layer files (7.4): each one's path under the export's folder, and a topic cut to the languages a page
+// embeds; the layers themselves come with exportLibrary({ library: "v1" }).
+export { layerPath, topicIn } from "./scripts/v1/export/layers.ts";
+export type { LayerFile } from "./scripts/generated/export-v1.ts";
 // The review of the new library's topics and indexes in Claude Code sessions, and the flagged queue its records make.
 export { review, reviewQueue } from "./scripts/review/index.ts";
 export { claudeAttempt, runnerOf } from "./scripts/review/run.ts";

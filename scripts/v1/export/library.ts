@@ -1,19 +1,21 @@
 // The new library's export (9.2, 9.8, 9.10), described by library/schema/export.schema.json: library.json, what the
 // index screens read, the chosen design's colours and type styles, every course with its sections, its topics' titles,
-// definitions, levels and reading minutes, and its study path; and one file per course with its topics, loaded when a
-// reader opens the course. The export holds the approved topics, and every topic with drafts, for the samples, the
-// tests and the preview (RV-03).
+// definitions, levels and reading minutes, and its study path; one file per course with its topics, loaded when a
+// reader opens the course; and one layer file per topic and language, loaded on top of a web page (7.4, layers.ts).
+// The export holds the approved topics, and every topic with drafts, for the samples, the tests and the preview (RV-03).
 import { join } from "node:path";
-import type { Course as CourseEntry, CourseFile, LibraryFile, Topic as Exported } from "../../generated/export-v1.ts";
+import type { Course as CourseEntry, CourseFile, LayerFile, LibraryFile, Topic as Exported } from "../../generated/export-v1.ts";
 import { EXPLAIN_CODES, INTERFACE, LEVELS, ROOT } from "../../lib.ts";
 import { varietyName } from "../../text.ts";
 import { commitOf, levelScale, siteOf } from "../../export/library.ts";
 import { type Course, type Library, typedLibrary } from "../library.ts";
 import { readLibrary } from "../load.ts";
 import { designOf } from "./design.ts";
+import { layersOf } from "./layers.ts";
 import { exportTopic } from "./topic.ts";
+import { EXPORT_VERSION } from "./version.ts";
 
-export const EXPORT_VERSION = "0.2.0";
+export { EXPORT_VERSION } from "./version.ts";
 
 export interface V1Options {
   library: "v1";
@@ -27,6 +29,8 @@ export interface V1Options {
 export interface LibraryV1 {
   library: LibraryFile;
   courses: CourseFile[];
+  // One layer per topic and language, at its path under the export's folder.
+  layers: { path: string; data: LayerFile }[];
 }
 
 function entryOf(c: Course & { index: NonNullable<Course["index"]> }, topics: Exported[]): CourseEntry {
@@ -83,6 +87,7 @@ export function exportCourses(library: Library, options: Omit<V1Options, "librar
       courses: courses.map((c, n) => entryOf(c, files[n]?.topics ?? [])),
     },
     courses: files,
+    layers: layersOf(files),
   };
 }
 

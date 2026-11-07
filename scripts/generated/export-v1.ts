@@ -30,17 +30,18 @@ export type Place =
 export type Block = Fact | Why | ExampleBlock | List | Table;
 
 /**
- * The new library's export, version 0.2.0 (requirements 9.2, 9.8, 9.10): library.json for the index screens and one file per course for its topics. Text keeps the inline marks of library/schema/library.schema.json; x-component names the component of the presentation map that shows each part.
+ * The new library's export, version 0.3.0 (requirements 7.4, 9.2, 9.8, 9.10): library.json for the index screens, one file per course for its topics, and one layer file per topic and language for a page to load the reader's other languages on top of its own. Text keeps the inline marks of library/schema/library.schema.json; x-component names the component of the presentation map that shows each part.
  */
 export interface Langs123LibraryV1Export {
   library?: LibraryFile;
   course?: CourseFile;
+  layer?: LayerFile;
 }
 /**
  * What the index screens read: every course with its sections, its topics' titles, definitions, levels and reading minutes, and its study path.
  */
 export interface LibraryFile {
-  version: "0.2.0";
+  version: "0.3.0";
   source: {
     commit: string;
   };
@@ -128,7 +129,7 @@ export interface Translated {
  * One course's topics, loaded when a reader opens the course (9.10).
  */
 export interface CourseFile {
-  version: "0.2.0";
+  version: "0.3.0";
   course: string;
   topics: Topic[];
 }
@@ -322,4 +323,33 @@ export interface Own {
       text: string;
     };
   };
+}
+/**
+ * One language's part of a topic (7.4): each sentence's and item's text and span in it, each example's translation into it, its own blocks, errors and speakers, and its reading minutes, loaded on top of a page built in another language.
+ */
+export interface LayerFile {
+  version: "0.3.0";
+  course: string;
+  topic: Id;
+  language: Explain;
+  /**
+   * Each sentence's and item's text in the language, by id: one string, or a list where the translation splits a sentence.
+   */
+  text: {
+    [k: string]: string | string[];
+  };
+  /**
+   * Where the language's translation joins a sentence with the ones after it: how many it spans, by the first sentence's id.
+   */
+  span?: {
+    [k: string]: number;
+  };
+  /**
+   * Each example's translation into the language, by id.
+   */
+  tr: {
+    [k: string]: string | string[];
+  };
+  own: Own;
+  minutes: number;
 }
