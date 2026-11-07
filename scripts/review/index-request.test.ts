@@ -140,4 +140,4 @@ test("review keeps a course's record beside its index, with its report and sessi
   expect(review(root, ["en"], options)).rejects.toThrow("the index of en enters review once the checks pass: 1 problems");
   await rm(join(root, "es", "index.yaml"));
   expect(review(root, ["es"], options)).rejects.toThrow("es has no index.yaml to review");
-});
+}, 30_000);

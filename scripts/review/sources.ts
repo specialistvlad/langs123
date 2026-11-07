@@ -1,13 +1,15 @@
 // The sources' text the review reads beside a course (12.2, M6), from a folder the caller names: one folder per course,
 // one file per source with the passages it took facts from, each naming the index entries it fed, and the vocabulary
 // of each level. The pipeline reads the folder for its requests alone, so the library carries the sources' facts and
-// none of their text (3.2). A topic's request carries the passages for it under the rules their file is for, the
-// vocabulary to the topic's highest level and, from the index alone, the steps before the topic; an index's request
-// carries the passages each entry was drawn from. A rule whose input is absent stays pending, the input named.
+// none of their text (3.2). A topic's request carries the passages for it under the rules their file is for, the words
+// of each element the vocabulary to its level lacks (vocabulary.ts) and, from the index alone, the steps before the
+// topic; an index's request carries the passages each entry was drawn from. A rule whose input is absent stays pending.
 import { readdir } from "node:fs/promises";
 import { join } from "node:path";
 import type { CourseIndex } from "../generated/library-v1.ts";
 import { LEVELS } from "../lib.ts";
+import type { Course, Topic } from "../v1/library.ts";
+import { unknownIn } from "./vocabulary.ts";
 
 export interface Passage {
   id: string;
@@ -31,14 +33,11 @@ export interface SourceFile {
 }
 
 export interface Vocabulary {
-  // The source the words come from, or the sources in the order of the levels they cover.
+  // The source the words come from, or the sources in the order of the levels they cover; each level's words at the
+  // level they are first learned.
   source: string | string[];
   levels: Partial<Record<string, string[]>>;
 }
-
-// The level to which SH-09 and VO-03 are asked with each level's vocabulary (the lead, 6 November): above it the lists
-// outgrow a request, and the elements stay unasked until a program check looks their words up.
-export const VOCABULARY_TO = "B1";
 
 export interface CourseSources {
   course: string;
@@ -105,15 +104,6 @@ const forRule = (sources: CourseSources | undefined, rule: string): { source: st
 export const passagesFor = (sources: CourseSources | undefined, rule: string, slug: string): { source: string; passage: Passage }[] =>
   forRule(sources, rule).filter((p) => p.passage.topics.includes(slug));
 
-// The vocabulary of each level to the one given, VOCABULARY_TO at the most, where the file holds every level to it.
-export function vocabularyTo(sources: CourseSources | undefined, level: string): [string, string[]][] | undefined {
-  const levels = sources?.vocabulary?.levels;
-  if (levels === undefined) return undefined;
-  const to = Math.min(LEVELS.indexOf(level as (typeof LEVELS)[number]), LEVELS.indexOf(VOCABULARY_TO));
-  const lists = LEVELS.slice(0, to + 1).map((l): [string, string[]] => [l, levels[l] ?? []]);
-  return lists.length > 0 && lists.every(([, words]) => words.length > 0) ? lists : undefined;
-}
-
 // The steps before a topic in the index's study path (FT-08): the entries placed at a lower level, and those placed
 // before it at its own first level; nothing where the index does not place the topic.
 export function stepsBefore(index: CourseIndex | undefined, slug: string): Step[] | undefined {
@@ -134,17 +124,26 @@ const passageLines = (rule: string, found: { source: string; passage: Passage }[
       `- ${rule}, ${what} from ${source} (${passage.ref}): ${passage.items === undefined ? (passage.text ?? "") : passage.items.join("; ")}`,
   );
 
+export interface TopicSources {
+  lines: string[];
+  // The rules the sources give their input.
+  given: Set<string>;
+  // The elements a rule is asked of where the sources decide them: SH-09 and VO-03, the elements with words their
+  // level's vocabulary lacks.
+  asks: Partial<Record<string, string[]>>;
+  // What the request settles by itself, for the report.
+  notes: string[];
+}
+
 // The sources part of a topic's request, and the rules it gives their input: the passages for the topic under NO-04,
-// NO-07 and IX-14, the vocabulary to the topic's highest level for SH-09 and VO-03, and the steps before the topic
-// for FT-08.
-export function topicSources(
-  sources: CourseSources | undefined,
-  index: CourseIndex | undefined,
-  slug: string,
-  highest: string,
-): { lines: string[]; given: Set<string>; notes: string[] } {
+// NO-07 and IX-14, the words of each element the vocabulary to its level lacks for SH-09 and VO-03, and the steps
+// before the topic for FT-08.
+export function topicSources(sources: CourseSources | undefined, course: Course, topic: Topic): TopicSources {
+  const slug = topic.slug;
+  const index = course.index?.data;
   const given = new Set<string>();
   const lines: string[] = [];
+  const asks: TopicSources["asks"] = {};
   const notes: string[] = [];
   for (const rule of ["NO-04", "NO-07", "IX-14"]) {
     const found = passagesFor(sources, rule, slug);
@@ -152,17 +151,25 @@ export function topicSources(
     given.add(rule);
     lines.push(...passageLines(rule, found, rule === "IX-14" ? "the reference list ({list})" : "the entry ({extract})"));
   }
-  const vocabulary = vocabularyTo(sources, highest);
-  if (vocabulary !== undefined) {
+  if (sources?.vocabulary !== undefined) {
+    const { opening, explanations, missing } = unknownIn(course, topic, sources.vocabulary);
     given.add("SH-09").add("VO-03");
-    const from = [sources?.vocabulary?.source ?? []].flat().join(", ");
+    asks["SH-09"] = opening.map((u) => u.id);
+    asks["VO-03"] = explanations.map((u) => u.id);
+    const from = [sources.vocabulary.source].flat().join(", ");
+    const found = [...opening, ...explanations];
     lines.push(
-      `- SH-09 and VO-03, the vocabulary of each level ({level}) to ${VOCABULARY_TO}, from ${from}, each word at the level it is first learned:`,
-      ...vocabulary.map(([level, words]) => `  - ${level}: ${words.join(", ")}`),
+      `- SH-09 and VO-03, the words of each element that the vocabulary of the levels to its own ({level}) lacks, the lists from ${from}:`,
+      ...(found.length === 0
+        ? ["  - none: every word stands in the lists"]
+        : found.map((u) => `  - ${u.id} (${u.level}): ${u.words.join(", ")}`)),
     );
-    if (LEVELS.indexOf(highest as (typeof LEVELS)[number]) > LEVELS.indexOf(VOCABULARY_TO)) {
-      notes.push(`SH-09 and VO-03 are asked of the elements at ${VOCABULARY_TO} or below; those above it stay unasked.`);
+    if (found.length === 0) {
+      notes.push(
+        "SH-09 and VO-03 hold by the lists: every word of the opening and the explanations stands in the vocabulary to its level.",
+      );
     }
+    if (missing.length > 0) notes.push(`SH-09 and VO-03 wait on the vocabulary of ${missing.join(", ")} for the elements at those levels.`);
   }
   const steps = stepsBefore(index, slug);
   if (steps !== undefined) {
@@ -172,7 +179,7 @@ export function topicSources(
       ...steps.map((s) => `  - ${s.id}: ${s.subject}; ${s.covers.join(", ")}`),
     );
   }
-  return { lines: lines.length === 0 ? [] : ["", "## Sources", ...lines], given, notes };
+  return { lines: lines.length === 0 ? [] : ["", "## Sources", ...lines], given, asks, notes };
 }
 
 // The sources part of an index's request: the passages each entry was drawn from, for IX-11, and the entries they name.

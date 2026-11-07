@@ -6,13 +6,11 @@
 // so the rules that hold need no answer.
 import type { TopicLanguageFile } from "../generated/library-v1.ts";
 import type { Catalog } from "../rule-catalog.ts";
-import { lv } from "../lib.ts";
 import type { Course, Topic } from "../v1/library.ts";
-import { idsIn } from "../v1/structure.ts";
 import { toYaml } from "../v1/yaml.ts";
 import { asking, holds, type Selection, selected } from "./asking.ts";
 import { type Question, questionsOf, type RequestKind } from "./questions.ts";
-import { type CourseSources, topicSources, VOCABULARY_TO } from "./sources.ts";
+import { type CourseSources, topicSources } from "./sources.ts";
 import { targetIds } from "./targets.ts";
 
 export interface Request {
@@ -83,23 +81,11 @@ function context(topic: Topic, course: Course): string[] {
   ];
 }
 
-// The levels of a topic's subtopics, lowest and highest.
-const levelsOf = (topic: Topic): [string, string] => {
-  const sorted = [...topic.source.data.subtopics].map((s) => s.level).sort((a, b) => lv(a) - lv(b));
-  return [sorted[0] ?? "A0", sorted.at(-1) ?? "A0"];
-};
-
 export function sourceRequest(topic: Topic, course: Course, catalog: Catalog, selection: Selection = {}, sources?: CourseSources): Request {
   const source = course.index?.data.source ?? course.course;
-  const [lowest, highest] = levelsOf(topic);
-  const given = topicSources(sources, course.index?.data, topic.slug, highest);
-  // The elements the vocabulary questions read: those at VOCABULARY_TO or below.
-  const within = new Set(topic.source.data.subtopics.filter((s) => lv(s.level) <= lv(VOCABULARY_TO)).flatMap((s) => idsIn(s)));
-  const ids = (q: Question): string[] => {
-    if (q.rule === "VO-03") return targetIds(topic, q.target).filter((id) => within.has(id));
-    if (q.rule === "SH-09" && lv(lowest) > lv(VOCABULARY_TO)) return [];
-    return targetIds(topic, q.target);
-  };
+  const given = topicSources(sources, course, topic);
+  // The elements a question is asked of: those the sources decide, else its target's.
+  const ids = (q: Question): string[] => given.asks[q.rule] ?? targetIds(topic, q.target);
   const asked = asking(
     questionsOf(catalog, "source").filter((q) => holds(q, course.course, [course.course, source]) && selected(q, selection)),
     ids,

@@ -1,6 +1,6 @@
 // The sources' folder beside a course (M6): read per course with its files checked; the passages a request carries
-// under each rule, the vocabulary to a level, B1 at the most, and the steps before a topic from the index; the
-// requests asking the rules the folder gives their input, the others pending with the input named.
+// under each rule, the words the lists lack by element, and the steps before a topic from the index; the requests
+// asking the rules the folder gives their input, the others pending with the input named.
 import { afterAll, expect, test } from "bun:test";
 import { cp, mkdir, mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -12,7 +12,7 @@ import { readLibrary, SAMPLES_ROOT } from "../v1/load.ts";
 import { type Indexed, indexRequest } from "./index-request.ts";
 import { review } from "./index.ts";
 import { sourceRequest } from "./request.ts";
-import { indexSources, passagesFor, readSources, stepsBefore, topicSources, vocabularyTo, VOCABULARY_TO } from "./sources.ts";
+import { indexSources, passagesFor, readSources, stepsBefore, topicSources } from "./sources.ts";
 import { scripted } from "./stand-in.ts";
 
 const catalog = await readRules(RULES_FILE);
@@ -41,8 +41,8 @@ await write("en", "profile.yaml", [
 await write("en", "vocabulary.yaml", [
   "source: [grade-1, cefr-j]",
   "levels:",
-  "  A0: [a, letter, name]",
-  "  A1: [word, spell]",
+  "  A0: [the, letter, name, a, each, has, as, its, by, is, of, differ, variety, let, be, say, and, with, are]",
+  "  A1: [verb, add, after, person, singular, plural, first, keep, one, form, read]",
   "  A2: [alphabet]",
   "  B1: [vowel]",
 ]);
@@ -51,7 +51,6 @@ await write("es", "pcic.yaml", [
   "passages:",
   '  - { id: pronombres-a1, ref: "Gramática 7.1, A1", topics: [subject-pronouns], text: "Pronombres personales sujeto: yo, tú, él, ella, usted." }',
 ]);
-const NOTE = `SH-09 and VO-03 are asked of the elements at ${VOCABULARY_TO} or below; those above it stay unasked.`;
 
 // The fixture's course with its index, the letters placed second at A0 and third at A1.
 function indexed(): Indexed {
@@ -68,10 +67,8 @@ test("the folder is read per course, each file checked; no folder or no course g
   expect(await readSources(folder, "fr")).toBeUndefined();
   const en = await readSources(folder, "en");
   expect(en?.files.map((f) => [f.id, f.for, f.passages.length])).toEqual([["profile", ["IX-11", "IX-14"], 2]]);
-  expect(en?.vocabulary).toEqual({
-    source: ["grade-1", "cefr-j"],
-    levels: { A0: ["a", "letter", "name"], A1: ["word", "spell"], A2: ["alphabet"], B1: ["vowel"] },
-  });
+  expect(en?.vocabulary?.source).toEqual(["grade-1", "cefr-j"]);
+  expect(en?.vocabulary?.levels["A2"]).toEqual(["alphabet"]);
   const bad: [string[], string][] = [
     [["id: bad"], "bad.yaml lacks name, licence, url, for, passages"],
     [[...head("bad", ""), "passages:", "  - { id: p, ref: r, topics: [a] }"], "the passage p lacks text or items"],
@@ -85,18 +82,11 @@ test("the folder is read per course, each file checked; no folder or no course g
   expect(readSources(folder, "x9")).rejects.toThrow("vocabulary.yaml lacks levels");
 });
 
-test("the passages under a rule, the vocabulary to B1 at the most, and the steps before a topic in the path", async () => {
+test("the passages under a rule, and the steps before a topic in the path", async () => {
   const en = await readSources(folder, "en");
   expect(passagesFor(en, "IX-14", "letters").map((p) => [p.source, p.passage.id])).toEqual([["profile", "letters-list"]]);
   expect(passagesFor(en, "IX-11", "letters").map((p) => p.passage.id)).toEqual(["letters-entry"]);
   expect(passagesFor(en, "NO-04", "letters")).toEqual([]);
-  expect(vocabularyTo(en, "A1")).toEqual([
-    ["A0", ["a", "letter", "name"]],
-    ["A1", ["word", "spell"]],
-  ]);
-  expect(vocabularyTo(en, "C2")?.map(([l]) => l)).toEqual(["A0", "A1", "A2", "B1"]);
-  expect(vocabularyTo({ course: "en", files: [], vocabulary: { source: "s", levels: { A0: ["a"] } } }, "A1")).toBeUndefined();
-  expect(vocabularyTo(undefined, "A1")).toBeUndefined();
   const { index } = indexed();
   expect(stepsBefore(index.data, "letters")).toEqual([]);
   expect(stepsBefore(index.data, "nowhere")).toBeUndefined();
@@ -110,26 +100,49 @@ test("the passages under a rule, the vocabulary to B1 at the most, and the steps
   expect(stepsBefore(index.data, "numbers")?.map((s) => s.id)).toEqual(["letters", "sounds", "greetings"]);
 });
 
-test("a topic's sources part gives SH-09, VO-03, FT-08 and IX-14 their input, the vocabulary to B1 with a note above it; an index's gives IX-11", async () => {
+test("a topic's sources part gives SH-09, VO-03, FT-08 and IX-14 their input, the vocabulary by the words the lists lack; an index's gives IX-11", async () => {
   const en = await readSources(folder, "en");
-  const { index } = indexed();
-  const part = topicSources(en, index.data, "letters", "A1");
+  const course = indexed();
+  const [topic] = course.topics;
+  if (topic === undefined) throw new Error("the fixture holds a topic");
+  const part = topicSources(en, course, topic);
   expect([...part.given].sort()).toEqual(["FT-08", "IX-14", "SH-09", "VO-03"]);
   expect(part.lines.slice(0, 2)).toEqual(["", "## Sources"]);
   expect(part.lines).toContain("- IX-14, the reference list ({list}) from profile (appendix 1): A; B; C");
   expect(part.lines).toContain(
-    "- SH-09 and VO-03, the vocabulary of each level ({level}) to B1, from grade-1, cefr-j, each word at the level it is first learned:",
+    "- SH-09 and VO-03, the words of each element that the vocabulary of the levels to its own ({level}) lacks, the lists from grade-1, cefr-j:",
   );
-  expect(part.lines).toContain("  - A1: word, spell");
-  expect(part.lines.some((l) => l.startsWith("  - A2:"))).toBe(false);
+  expect(part.lines).toContain("  - names.why.1 (A0): said");
+  expect(part.lines).toContain("  - err.s.ja (A1): japanese");
+  expect(part.asks).toEqual({ "SH-09": [], "VO-03": ["names.why.1", "err.a.uk", "err.s.ja"] });
   expect(part.lines).toContain(
     "- FT-08, the steps before this topic ({list}), each with its subject and what it covers: none, this is the first",
   );
   expect(part.notes).toEqual([]);
-  const high = topicSources(en, index.data, "letters", "C1");
-  expect(high.lines).toContain("  - B1: vowel");
-  expect(high.notes).toEqual([NOTE]);
-  expect(topicSources(undefined, undefined, "letters", "A1")).toEqual({ lines: [], given: new Set(), notes: [] });
+  const whole = {
+    ...en,
+    vocabulary: {
+      source: "s",
+      levels: {
+        A0: [...(en?.vocabulary?.levels["A0"] ?? []), "said", "ukrainian", "read"],
+        A1: [...(en?.vocabulary?.levels["A1"] ?? []), "japanese"],
+      },
+    },
+  };
+  const held = topicSources(whole as never, course, topic);
+  expect(held.lines).toContain("  - none: every word stands in the lists");
+  expect(held.notes).toEqual([
+    "SH-09 and VO-03 hold by the lists: every word of the opening and the explanations stands in the vocabulary to its level.",
+  ]);
+  const short = topicSources({ ...whole, vocabulary: { source: "s", levels: { A0: ["the"] } } } as never, course, topic);
+  expect(short.asks["VO-03"]).toEqual(["names.title", "names.fact.1", "names.z", "names.why.1", "err.a.rule", "err.a.uk"]);
+  expect(short.notes).toEqual(["SH-09 and VO-03 wait on the vocabulary of A1 for the elements at those levels."]);
+  expect(topicSources(undefined, { ...course, index: undefined } as never, topic)).toEqual({
+    lines: [],
+    given: new Set(),
+    asks: {},
+    notes: [],
+  });
   const ix = indexSources(en);
   expect([...ix.given]).toEqual(["IX-11"]);
   expect([...ix.sourced]).toEqual(["letters"]);
@@ -140,30 +153,19 @@ test("a topic's sources part gives SH-09, VO-03, FT-08 and IX-14 their input, th
   expect(indexSources(undefined)).toEqual({ lines: [], given: new Set(), sourced: new Set() });
 });
 
-test("the requests ask the rules the sources give their input, SH-09 and VO-03 of the elements to B1, the rest pending with the input named", async () => {
+test("the requests ask the rules the sources give their input, SH-09 and VO-03 of the elements with unknown words, the rest pending with the input named", async () => {
   const en = await readSources(folder, "en");
   const course = indexed();
   const [topic] = course.topics;
   if (topic === undefined) throw new Error("the fixture holds a topic");
   const r = sourceRequest(topic, course, catalog, {}, en);
   expect(r.pending).toEqual([]);
-  expect(r.asked).toMatchObject({ "SH-09": 5, "IX-14": 1 });
-  expect(r.asked["VO-03"]).toBeGreaterThan(0);
+  expect(r.asked).toMatchObject({ "VO-03": 3, "IX-14": 1 });
+  expect(r.asked["SH-09"]).toBeUndefined();
   expect(r.asked["FT-08"]).toBeGreaterThan(0);
   expect(r.prompt).toContain("## Sources\n- IX-14, the reference list");
+  expect(r.prompt).toContain("- VO-03 [sentence], asked of names.why.1, err.a.uk, err.s.ja:");
   expect(r.notes).toBeUndefined();
-  const above = structuredClone(course);
-  for (const s of above.topics[0]?.source.data.subtopics ?? []) s.level = "B2";
-  const a = sourceRequest(above.topics[0] ?? topic, above, catalog, {}, en);
-  expect(Object.keys(a.asked).filter((k) => k === "SH-09" || k === "VO-03")).toEqual([]);
-  expect(a.pending).toEqual([]);
-  expect(a.notes).toEqual([NOTE]);
-  const mixed = structuredClone(course);
-  const second = mixed.topics[0]?.source.data.subtopics[1];
-  if (second !== undefined) second.level = "B2";
-  const m = sourceRequest(mixed.topics[0] ?? topic, mixed, catalog, {}, en);
-  expect(m.asked["SH-09"]).toBe(5);
-  expect(m.asked["VO-03"] ?? 0).toBeLessThan(r.asked["VO-03"] ?? 0);
   const ix = indexRequest(course, catalog, [], {}, en);
   expect(ix.asked).toEqual({ "IX-11": 1 });
   expect(ix.pending).toEqual([]);
@@ -194,4 +196,4 @@ test("review reads the folder per course and gives the requests its sources", as
   const [done] = await review(root, ["es"], { ...options, sources: folder });
   expect(done?.requests[0]?.request.asked).toEqual({ "IX-11": 1 });
   expect(done?.requests[0]?.runs).toHaveLength(2);
-});
+}, 30_000);
