@@ -14,6 +14,7 @@ import { type Policy, reviewIndex, reviewTopic, type TopicReview } from "./pipel
 import { queueOf } from "./queue.ts";
 import { reportOf, withReview, type Writer } from "./record.ts";
 import type { Runner } from "./run.ts";
+import { readSources } from "./sources.ts";
 
 export const REVIEW_DIR = join(ROOT, "build", "review");
 
@@ -23,6 +24,8 @@ export interface ReviewOptions extends Policy {
   writer: Writer;
   // Where the reports, the sessions and the queue go: build/review/ when none is given.
   out?: string;
+  // The folder of the sources' text, one folder per course (sources.ts); without it the rules that read them stay pending.
+  sources?: string;
 }
 
 // Keeps a review: its record at the path given from core's root, where a session ran, its report at the path given
@@ -66,6 +69,7 @@ export async function review(root: string, ids: string[], options: ReviewOptions
   const rules = await catalog();
   const reviews: TopicReview[] = [];
   for (const course of library.courses) {
+    const sources = await readSources(options.sources, course.course);
     if (ids.includes(course.course)) {
       const index = course.index;
       if (index === undefined) throw new Error(`${course.course} has no index.yaml to review`);
@@ -79,6 +83,7 @@ export async function review(root: string, ids: string[], options: ReviewOptions
         await todayTopics(course.course, index.data.source),
         options.runner,
         options,
+        sources,
       );
       const at = { record: index.file.replace(/index\.yaml$/, "review.yaml"), report: join(course.course, "index.md") };
       await keep(done, course.review?.data, at, options, out);
@@ -89,7 +94,7 @@ export async function review(root: string, ids: string[], options: ReviewOptions
         problems.filter((p) => p.file.includes(`/${topic.course}/${topic.slug}/`) && !p.file.endsWith("/review.yaml")),
         topic.source.data.id,
       );
-      const done = await reviewTopic(topic, course, rules, options.runner, options);
+      const done = await reviewTopic(topic, course, rules, options.runner, options, sources);
       const at = { record: topic.source.file.replace(/source\.yaml$/, "review.yaml"), report: join(topic.course, `${topic.slug}.md`) };
       await keep(done, topic.review?.data, at, options, out);
       reviews.push(done);

@@ -91,7 +91,16 @@ test("a source request asks its questions where they hold, counts them, and list
   expect(r.asked).toMatchObject({ "SH-04": 1, "SH-21": 2, "NO-50": 6 });
   expect(r.prompt).toContain("A finding is a yes answer, where the block carries no variety.");
   expect(r.asked).not.toHaveProperty("NO-13");
-  expect(r.pending).toEqual(["SH-09", "VO-03", "FT-08"]);
+  expect(r.pending).toEqual(["SH-09", "VO-03", "IX-14"]);
+  expect(r.inputs).toEqual({
+    "SH-09": "the vocabulary of each level",
+    "VO-03": "the vocabulary of each level",
+    "IX-14": "the reference list",
+  });
+  expect(r.asked["FT-08"]).toBeGreaterThan(0);
+  expect(r.prompt).toContain(
+    "- FT-08, the steps before this topic ({list}), each with its subject and what it covers: none, this is the first",
+  );
   expect(r.prompt).toContain("- SH-04 [sentence], asked of def: Yes or no:");
   expect(r.prompt).toContain("asked of every sentence of explanation (");
   expect(r.prompt).toContain("Neighbour topics ({titles}): none.");

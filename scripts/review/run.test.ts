@@ -7,7 +7,15 @@ import { join } from "node:path";
 import type { Request } from "./request.ts";
 import { attemptWith, bunSpawn, COMMAND, parseReply, runnerOf, type Session, type Spawn, sessionArgs, sessionEnv } from "./run.ts";
 
-const REQUEST: Request = { kind: "source", topic: "en.letters", system: "Review.", prompt: "The text.", asked: {}, pending: [] };
+const REQUEST: Request = {
+  kind: "source",
+  topic: "en.letters",
+  system: "Review.",
+  prompt: "The text.",
+  asked: {},
+  pending: [],
+  inputs: {},
+};
 const reply = (extra: object = {}): string =>
   JSON.stringify({
     session_id: "s1",

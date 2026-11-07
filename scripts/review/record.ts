@@ -95,7 +95,13 @@ function section(r: RequestReview, record: TopicReviewRecord | undefined): strin
       again,
       "| Rule | Finding | Verdict | The writer's answer |\n|---|---|---|---|",
     ),
-    ...(r.request.pending.length > 0 ? ["", `Pending, unasked until M6 brings their input: ${r.request.pending.join(", ")}.`] : []),
+    ...(r.request.pending.length > 0
+      ? [
+          "",
+          `Pending, unasked until the request has their input: ${r.request.pending.map((p) => `${p} (${r.request.inputs[p] ?? ""})`).join("; ")}.`,
+        ]
+      : []),
+    ...(r.request.notes === undefined ? [] : ["", ...r.request.notes]),
     "",
     ...r.runs.map(
       (s, i) =>

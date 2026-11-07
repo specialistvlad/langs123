@@ -2,15 +2,18 @@
 // source and language files, and each course folder's index, the records written beside them, the reports, sessions
 // and flagged queue into build/review/. The rules --stronger names leave each request that asks them for a request
 // of their own on its model; the review's models (pipeline.ts) stand where neither --model nor --stronger is given.
-// --source-only runs the source requests alone.
+// --source-only runs the source requests alone. --sources names the folder of the sources' text, one folder per
+// course (scripts/review/sources.ts), which the questions that read a source passage, a reference list or each
+// level's vocabulary wait on.
 // Run: npm run review -- <topic or course folder>… --writer <session> <model> [--model <version>]
-//      [--stronger <model> <rule>…] [--source-only] [--dry-run]
+//      [--stronger <model> <rule>…] [--source-only] [--sources <folder>] [--dry-run]
 import { basename, dirname, join, resolve } from "node:path";
 import { todayTopics } from "./review/index-request.ts";
 import { review } from "./review/index.ts";
 import { indexRequestsOf, modelOf, type Policy, requestsOf, REVIEW_MODELS } from "./review/pipeline.ts";
 import type { Request } from "./review/request.ts";
 import { claudeAttempt, runnerOf } from "./review/run.ts";
+import { readSources } from "./review/sources.ts";
 import { catalog } from "./v1/check.ts";
 import { typedLibrary } from "./v1/library.ts";
 import { readLibrary } from "./v1/load.ts";
@@ -46,19 +49,21 @@ const policy: Omit<Policy, "date"> = {
   ...(args.includes("--source-only") && { kinds: ["source" as const] }),
 };
 const what = (r: Request): string => (r.kind === "index" ? "index" : (r.language ?? "source"));
+const sourcesDir = flag("--sources")[0];
 
 if (args.includes("--dry-run")) {
   const { library } = typedLibrary(await readLibrary(root));
   const rules = await catalog();
   for (const course of library.courses) {
     const index = course.index;
+    const sources = await readSources(sourcesDir, course.course);
     const ofIndex =
       ids.includes(course.course) && index !== undefined
-        ? indexRequestsOf({ ...course, index }, rules, await todayTopics(course.course, index.data.source), policy.stronger?.rules)
+        ? indexRequestsOf({ ...course, index }, rules, await todayTopics(course.course, index.data.source), policy.stronger?.rules, sources)
         : [];
     const ofTopics = course.topics
       .filter((t) => ids.includes(t.source.data.id))
-      .flatMap((topic) => requestsOf(topic, course, rules, policy.stronger?.rules));
+      .flatMap((topic) => requestsOf(topic, course, rules, policy.stronger?.rules, sources));
     for (const r of [...ofIndex, ...ofTopics].filter((q) => policy.kinds?.includes(q.kind) ?? true)) {
       const asked = Object.values(r.asked).reduce((a, b) => a + b, 0);
       console.log(
@@ -75,6 +80,7 @@ if (args.includes("--dry-run")) {
     runner: runnerOf(claudeAttempt),
     writer: { session, model: writerModel },
     ...policy,
+    ...(sourcesDir !== undefined && { sources: sourcesDir }),
     date: new Date().toISOString().slice(0, 10),
   });
   for (const d of done) {

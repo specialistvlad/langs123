@@ -74,7 +74,9 @@ test("the source runs twice, a clean language request once, one with findings tw
   const report = reportOf(found);
   expect(report).toStartWith("# Review of en.letters, 2026-11-02");
   expect(report).toContain("| RV-11 | `def`: It breaks. Fix: Fixed. (low confidence) |");
-  expect(report).toContain("Pending, unasked until M6 brings their input: SH-09, VO-03, FT-08.");
+  expect(report).toContain(
+    "Pending, unasked until the request has their input: SH-09 (the vocabulary of each level); VO-03 (the vocabulary of each level); IX-14 (the reference list).",
+  );
   expect(report).toContain("Run 2: session s2, claude-sonnet-5-5, 30 tokens in, 5 out, 2 s.");
   expect(reportOf(clean)).toContain("Disputed, reported by one run alone:");
 });

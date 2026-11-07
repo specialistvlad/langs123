@@ -1,7 +1,7 @@
 // What a request asks (12.2): the questions of its kind that hold for its course and languages, as the catalog's
 // Courses and Languages lines say, narrowed by a selection (all but some rules, or some alone, which then run as a
 // request of their own); each question counted over the elements its target names and written as a line of the
-// request's prompt; the rules that wait on an input M6 brings stay pending, unasked.
+// request's prompt; a rule that waits on an input stays pending, its input named, until the request is given it.
 import type { Question } from "./questions.ts";
 
 export interface Selection {
@@ -34,24 +34,31 @@ const DESCRIBED: Record<Question["target"], string> = {
   "example translations": "every translated example, beside its source example",
   "own blocks": "every block of the file's own",
   "untagged blocks": "every block that carries no variety",
+  tables: "every table block",
   entries: "every entry of the index",
   "practical entries": "every entry that carries a practical cluster",
   "new entries": "every entry that names no topic in replaces",
+  "sourced entries": "every entry a source passage fed",
 };
 
 export interface Asked {
   lines: string[];
   asked: Record<string, number>;
   pending: string[];
+  // The input each pending rule waits on.
+  inputs: Record<string, string>;
 }
 
-export function asking(qs: Question[], ids: (q: Question) => string[]): Asked {
+// The lines, counts and pending rules of the questions given, the rules in `given` having their input.
+export function asking(qs: Question[], ids: (q: Question) => string[], given = new Set<string>()): Asked {
   const asked: Record<string, number> = {};
   const lines: string[] = [];
   const pending: string[] = [];
+  const inputs: Record<string, string> = {};
   for (const q of qs) {
-    if (q.pending !== undefined) {
+    if (q.pending !== undefined && !given.has(q.rule)) {
       pending.push(q.rule);
+      inputs[q.rule] = q.pending;
       continue;
     }
     const of = ids(q);
@@ -62,5 +69,5 @@ export function asking(qs: Question[], ids: (q: Question) => string[]): Asked {
       `- ${q.rule} [${q.subject}], asked of ${of.length > 6 ? `${DESCRIBED[q.target]} (${of.length})` : of.join(", ")}: ${q.text}${fails}`,
     );
   }
-  return { lines, asked, pending };
+  return { lines, asked, pending, inputs };
 }

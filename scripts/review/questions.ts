@@ -26,10 +26,13 @@ export type Target =
   | "example translations"
   | "own blocks"
   | "untagged blocks"
+  | "tables"
   | "entries"
-  // The entries of an index that carry a practical cluster, and those that name no topic of today's library in replaces.
+  // The entries of an index that carry a practical cluster, those that name no topic of today's library in replaces,
+  // and those a source passage fed.
   | "practical entries"
-  | "new entries";
+  | "new entries"
+  | "sourced entries";
 
 interface Asks {
   kinds: RequestKind[];
@@ -85,8 +88,8 @@ export const ASKS: Record<string, Asks> = {
   "NO-49": { kinds: ["source"], target: "untagged blocks", fails: UNTAGGED },
   "NO-39": { kinds: BOTH, target: "explanations" },
   "NO-44": { kinds: BOTH, target: "explanations" },
-  "IX-11": { kinds: ["index"], target: "entries", pending: "the sources' passages" },
-  "IX-14": { kinds: ["index"], target: "entries", pending: "each reference list" },
+  "IX-11": { kinds: ["index"], target: "sourced entries", pending: "the sources' passages" },
+  "IX-14": { kinds: ["source"], target: "tables", pending: "the reference list" },
   "IX-15": { kinds: ["index"], target: "practical entries" },
   "IX-24": { kinds: ["index"], target: "new entries", fails: { answer: "yes", when: "the entry names no topic in replaces" } },
   "RV-11": { kinds: ["language"], target: "translations" },

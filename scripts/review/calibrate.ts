@@ -177,5 +177,14 @@ export function pairsRequest(language: string, pairs: Pair[], catalog: Catalog):
     toYaml(text).trimEnd(),
     "```",
   ].join("\n");
-  return { kind: "language", topic: "calibration", language, system: INSTRUCTIONS, prompt, asked: { "RV-11": pairs.length }, pending: [] };
+  return {
+    kind: "language",
+    topic: "calibration",
+    language,
+    system: INSTRUCTIONS,
+    prompt,
+    asked: { "RV-11": pairs.length },
+    pending: [],
+    inputs: {},
+  };
 }

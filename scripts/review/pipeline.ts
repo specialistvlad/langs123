@@ -13,6 +13,7 @@ import { type Indexed, indexRequest, type TodayTopic } from "./index-request.ts"
 import type { RequestKind } from "./questions.ts";
 import { languageRequest, type Request, sourceRequest } from "./request.ts";
 import type { Finding, Runner, Session } from "./run.ts";
+import type { CourseSources } from "./sources.ts";
 
 export interface RequestReview {
   request: Request;
@@ -100,19 +101,24 @@ const split = (makers: ((s?: Selection) => Request)[], stronger: string[]): Requ
     return own.length === 0 ? [whole] : [make({ except: own }), make({ only: own })];
   });
 
-// A topic's requests: its source's and each language file's.
-export const requestsOf = (topic: Topic, course: Course, catalog: Catalog, stronger: string[] = []): Request[] =>
+// A topic's requests: its source's, with the course's sources, and each language file's.
+export const requestsOf = (topic: Topic, course: Course, catalog: Catalog, stronger: string[] = [], sources?: CourseSources): Request[] =>
   split(
     [
-      (s) => sourceRequest(topic, course, catalog, s),
+      (s) => sourceRequest(topic, course, catalog, s, sources),
       ...topic.languages.map((l) => (s?: Selection) => languageRequest(topic, course, l.data, catalog, s)),
     ],
     stronger,
   );
 
-// A course's index request.
-export const indexRequestsOf = (course: Indexed, catalog: Catalog, today: TodayTopic[], stronger: string[] = []): Request[] =>
-  split([(s) => indexRequest(course, catalog, today, s)], stronger);
+// A course's index request, with the course's sources.
+export const indexRequestsOf = (
+  course: Indexed,
+  catalog: Catalog,
+  today: TodayTopic[],
+  stronger: string[] = [],
+  sources?: CourseSources,
+): Request[] => split([(s) => indexRequest(course, catalog, today, s, sources)], stronger);
 
 async function run(topic: string, requests: Request[], runner: Runner, policy: Policy): Promise<TopicReview> {
   const tasks = requests.filter((r) => policy.kinds?.includes(r.kind) ?? true).map((r) => () => runRequest(r, runner, policy));
@@ -124,9 +130,21 @@ async function run(topic: string, requests: Request[], runner: Runner, policy: P
   };
 }
 
-export const reviewTopic = (topic: Topic, course: Course, catalog: Catalog, runner: Runner, policy: Policy): Promise<TopicReview> =>
-  run(topic.source.data.id, requestsOf(topic, course, catalog, policy.stronger?.rules), runner, policy);
+export const reviewTopic = (
+  topic: Topic,
+  course: Course,
+  catalog: Catalog,
+  runner: Runner,
+  policy: Policy,
+  sources?: CourseSources,
+): Promise<TopicReview> => run(topic.source.data.id, requestsOf(topic, course, catalog, policy.stronger?.rules, sources), runner, policy);
 
 // A course's index review, in a topic review's shape with the course's code as its topic.
-export const reviewIndex = (course: Indexed, catalog: Catalog, today: TodayTopic[], runner: Runner, policy: Policy): Promise<TopicReview> =>
-  run(course.course, indexRequestsOf(course, catalog, today, policy.stronger?.rules), runner, policy);
+export const reviewIndex = (
+  course: Indexed,
+  catalog: Catalog,
+  today: TodayTopic[],
+  runner: Runner,
+  policy: Policy,
+  sources?: CourseSources,
+): Promise<TopicReview> => run(course.course, indexRequestsOf(course, catalog, today, policy.stronger?.rules, sources), runner, policy);

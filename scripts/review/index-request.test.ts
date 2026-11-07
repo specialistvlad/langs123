@@ -30,7 +30,13 @@ function indexed(): Indexed {
 test("the index request asks IX-15 of practical entries and IX-24 of entries naming no replaces, given today's topics", () => {
   const course = indexed();
   const r = indexRequest(course, catalog, today);
-  expect(r).toMatchObject({ kind: "index", topic: "en", asked: { "IX-24": 1 }, pending: ["IX-11", "IX-14"] });
+  expect(r).toMatchObject({
+    kind: "index",
+    topic: "en",
+    asked: { "IX-24": 1 },
+    pending: ["IX-11"],
+    inputs: { "IX-11": "the sources' passages" },
+  });
   expect(r.asked).not.toHaveProperty("IX-15");
   expect(r.prompt).toContain("- IX-24 [block], asked of letters: Given today's topics {ids, titles}: Yes or no:");
   expect(r.prompt).toContain("A finding is a yes answer, where the entry names no topic in replaces.");
@@ -84,7 +90,7 @@ test("the index review runs its request twice, as the source's; a request asking
   expect(report).toStartWith("# Review of en, 2026-11-06");
   expect(report).toContain("## the index (1 questions, 1 rules)");
   expect(report).toContain("| IX-24 | `letters`: It breaks. Fix: Fixed. |");
-  expect(report).toContain("Pending, unasked until M6 brings their input: IX-11, IX-14.");
+  expect(report).toContain("Pending, unasked until the request has their input: IX-11 (the sources' passages).");
   const nothing = await reviewIndex(course, catalog, [], runner, { model: "m", date: "2026-11-06" });
   expect(runs).toHaveLength(2);
   expect(nothing.requests[0]).toMatchObject({ runs: [], standing: [], disputed: [] });
