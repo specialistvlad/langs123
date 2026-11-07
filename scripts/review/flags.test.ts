@@ -66,7 +66,8 @@ test("one flag per rule and element, with every model's finding, in the rules' o
   ]);
   const report = flagsReport([...merged, flag("XX-99", "b", "m", [])], catalog, "2026-10-28");
   expect(report).toContain("- { rule: ST-02, topic: en.alphabet, language: source, at: a.fact, breaks: true }");
-  expect(report).toContain("## ST-02 A list holds one item per line\n\nRule: A run of three or more parallel items is a list block");
+  const st02 = catalog.rules.find((r) => r.id === "ST-02");
+  expect(report).toContain(`## ST-02 ${st02?.name ?? ""}\n\nRule: ${st02?.fields.rule ?? ""}`);
   expect(report).toContain(
     "> A text.\n> Another.\n\n- m: m found it.\n- o: o found it.\n- m (at `a.fact.1`): m found it.\n\n```yaml\n- { rule: ST-02, topic: en.alphabet, language: source, at: a.fact, breaks: }",
   );

@@ -52,6 +52,8 @@ test("each target names its elements in the source, and in a language file besid
   expect(targetIds(topic, "facts", uk)).toEqual(["names.fact", "forms.fact", "uk.names.fact"]);
   expect(targetIds(topic, "whys", uk)).toEqual(["names.why"]);
   expect(targetIds(topic, "own blocks", uk)).toEqual(["uk.names.fact", "uk.names.example"]);
+  expect(targetIds(topic, "own notes", uk)).toEqual(["uk.names.fact"]);
+  expect(targetIds(topic, "own notes")).toEqual([]);
   expect(targetIds(topic, "reasons", { ...uk, speakers: { "err.s": { id: "uk.err.s.uk", text: "П." } } })).toEqual([
     "err.a.uk",
     "err.s.ja",
@@ -110,7 +112,7 @@ test("a source request asks its questions where they hold, counts them, and list
 test("a language request reads the file beside its source, without its fingerprints", () => {
   const r = languageRequest(topic, course, uk, catalog);
   expect(r).toMatchObject({ kind: "language", language: "uk" });
-  expect(r.asked).toMatchObject({ "RV-11": Object.keys(uk.text).length, "ER-08": 2 });
+  expect(r.asked).toMatchObject({ "RV-11": Object.keys(uk.text).length, "ER-08": 1 });
   expect(r.prompt).toContain("## The uk file");
   expect(r.prompt).not.toContain("fingerprints:");
   const ja = languageRequest(topic, { ...course, index: undefined } as never, { ...uk, language: "ja" }, catalog);

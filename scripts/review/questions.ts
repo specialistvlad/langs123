@@ -25,6 +25,8 @@ export type Target =
   | "translations"
   | "example translations"
   | "own blocks"
+  // A language file's own fact and why blocks, the notes that state a difference.
+  | "own notes"
   | "untagged blocks"
   | "tables"
   | "entries"
@@ -73,7 +75,7 @@ export const ASKS: Record<string, Asks> = {
   "FT-08": { kinds: ["source"], target: "sentences", pending: "the grammar, script and forms each step teaches" },
   "ER-03": { kinds: BOTH, target: "reasons" },
   "ER-07": { kinds: BOTH, target: "errors" },
-  "ER-08": { kinds: ["language"], target: "own blocks" },
+  "ER-08": { kinds: ["language"], target: "own notes" },
   "NO-04": { kinds: ["source"], target: "course text", pending: "the PCIC's entries" },
   "NO-06": { kinds: BOTH, target: "sentences" },
   "NO-07": { kinds: ["source"], target: "course text", pending: "the standard's extracts" },

@@ -46,6 +46,7 @@ function inSource(topic: Topic, target: Target): string[] {
     case "translations":
     case "example translations":
     case "own blocks":
+    case "own notes":
     case "entries":
     case "practical entries":
     case "new entries":
@@ -82,6 +83,8 @@ function inLanguage(topic: Topic, file: TopicLanguageFile, target: Target): stri
       return (file.errors ?? []).map((e) => e.id);
     case "own blocks":
       return own.map((b) => b.id);
+    case "own notes":
+      return own.filter((b) => b.type !== "example").map((b) => b.id);
     case "blocks":
     case "untagged blocks":
     case "course text":

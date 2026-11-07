@@ -33,6 +33,7 @@ const DESCRIBED: Record<Question["target"], string> = {
   translations: "every translated sentence, beside its source sentence",
   "example translations": "every translated example, beside its source example",
   "own blocks": "every block of the file's own",
+  "own notes": "every fact and why block of the file's own",
   "untagged blocks": "every block that carries no variety",
   tables: "every table block",
   entries: "every entry of the index",
