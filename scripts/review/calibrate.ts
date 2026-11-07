@@ -97,7 +97,8 @@ function nodeOf(node: unknown, id: string): unknown {
         .find((n) => n !== undefined);
 }
 
-// The ids a finding may name for a case: the element's, those inside it, and the block it stands in.
+// The ids a finding may name for a case: the element's, those inside it, the block it stands in, and each element the
+// case sets, such as an essence line of a case planted at the essence.
 function idsOf(topic: Topic, p: Plant): string[] {
   const file = topic.languages.find((l) => l.data.language === p.file)?.data;
   const where = [topic.source.data, file?.blocks, file?.errors];
@@ -108,7 +109,7 @@ function idsOf(topic: Topic, p: Plant): string[] {
     ...(file?.errors ?? []),
   ];
   const block = blocks.find((b) => b.id !== p.at && idsIn(b).includes(p.at))?.id;
-  return [...new Set([p.at, ...idsIn(nodeOf(where, p.at)), ...(block === undefined ? [] : [block])])];
+  return [...new Set([p.at, ...idsIn(nodeOf(where, p.at)), ...(block === undefined ? [] : [block]), ...sets(p).map((s) => s.id)])];
 }
 
 // The subject and the covers of an index entry, as the index request shows them.

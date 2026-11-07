@@ -34,6 +34,8 @@ test("every planted case stands in a request that asks its rule, its text in pla
   const ft01 = planted.flatMap((p) => [...p.ids].filter(([c]) => c.rule === "FT-01").map(([, ids]) => ids))[0];
   expect(ft01).toContain("spelling.list");
   expect(ft01).toContain("spelling.have");
+  const sh10 = planted.flatMap((p) => [...p.ids].filter(([c]) => c.rule === "SH-10").map(([, ids]) => ids))[0];
+  expect(sh10).toEqual(["essence", "ess.yo"]);
   expect(() =>
     plantedRequests(library, catalog, [
       { rule: "SH-04", topic: "en.alphabet", file: "source", at: "def", set: { id: "nowhere", text: "x" } },
