@@ -98,6 +98,29 @@ langs123/
 | `npm run format` | Prettier; `npm run format:check` only reports |
 | `npm run verify` | all of the checks above, side by side, each in a process of its own (`scripts/verify.ts`), in about 15 s; it fails when it takes longer than 60 s outside CI; CI runs it on every push and pull request |
 
+## Writing a topic of the new library
+
+A writer session takes a topic of `library/` from its first file to its record in this order, each step a command
+of the table above:
+
+1. The course's index places the topic first: its entry in `library/<course>/index.yaml`, with its subject, what it
+   covers and its planned levels, in an index the owner has approved.
+2. Write `library/<course>/<slug>/source.yaml` in the course's source language, then `npm run ids -- library/<course>/<slug>`
+   gives every element without an id one and keeps those written.
+3. Write one file per explanation language beside it, each translation under the source's ids, then
+   `npm run stamp -- library/<course>/<slug>` records the fingerprint of each source sentence a translation follows;
+   run it again for the files whose source sentences change.
+4. `npm run check -- --library v1` holds the files to the schema, the layout, the marks, the alignment and every
+   rule of the linter; a topic enters review once it reports no problem of its own.
+5. `npm run review -- library/<course>/<slug> --writer <session> <model> [--sources <folder>]` asks the catalog's
+   questions in Claude Code sessions and writes `review.yaml` beside the source, with its report in
+   `build/review/<course>/<slug>.md`; `npm run review -- library/<course>` reviews the course's index the same way.
+6. Answer every finding in `review.yaml`: `answer: fixed` once the text is changed (and stamped again where a source
+   sentence changed), or `answer: declined` with a `reason`; a finding the record marks `again` waits for the owner.
+   `npm run check` holds that each finding has its answer, and a topic with open findings can enter review again.
+7. The topic's `status` moves from `draft` to `in-review` to `approved`, one step at a time, in `source.yaml` and in
+   the record's `statuses` with the date and who moved it; the export and the site carry the approved topics alone.
+
 ## Contributing
 
 Teachers, learners and native speakers keep the library correct and growing: report a mistake from

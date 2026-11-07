@@ -1,8 +1,11 @@
 // Runs the checks of npm test, npm run e2e or npm run verify side by side, each in a process of its own, and
 // prints each check as it ends with its time; a check that fails prints its output, and the run exits 1.
 // Every test process builds the sample site (apps/web/sample.ts) into a folder of its own, build/test/<check>/,
-// in under a second. A verify run that takes longer than its budget fails, outside CI, so the checks stay fast.
+// in under a second. A verify run that takes longer than its budget fails, outside CI, so the checks stay fast; the
+// budget is measured on a machine with a core to spare, so a run over it while the load average stands above the
+// machine's cores reports the time and the load and passes.
 // Run: npm test | npm run e2e | npm run verify
+import { availableParallelism, loadavg } from "node:os";
 import { join } from "node:path";
 import { ROOT } from "./lib.ts";
 
@@ -67,6 +70,15 @@ const results = await Promise.all(
 );
 const failed = results.filter((ok) => !ok).length;
 console.log(`${checks.length - failed} of ${checks.length} checks passed in ${seconds(start)}`);
-const slow = group === "verify" && process.env["CI"] === undefined && performance.now() - start > BUDGET_SECONDS * 1000;
-if (slow) console.log(`✗ verify took longer than its budget of ${String(BUDGET_SECONDS)} s: make the slowest check faster`);
-process.exit(failed > 0 || slow ? 1 : 0);
+const over = group === "verify" && process.env["CI"] === undefined && performance.now() - start > BUDGET_SECONDS * 1000;
+const load = loadavg()[0] ?? 0;
+const loaded = load >= availableParallelism();
+if (over && loaded) {
+  console.log(`over budget under load: ${seconds(start)} at load ${load.toFixed(0)}, past the ${String(BUDGET_SECONDS)} s budget`);
+}
+if (over && !loaded) {
+  console.log(
+    `✗ verify took longer than its budget of ${String(BUDGET_SECONDS)} s: ${seconds(start)} at load ${load.toFixed(0)}; make the slowest check faster`,
+  );
+}
+process.exit(failed > 0 || (over && !loaded) ? 1 : 0);
